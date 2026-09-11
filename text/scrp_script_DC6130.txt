@@ -1,0 +1,8 @@
+// Legacy reference view of SP_M26_1.SPC; edit text/nfp/SP_M26_1.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000110 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
+@000193 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
+@0001DE OBJ_V.SPC  // LITERAL: OBJ_V.SPC (usage not inferred)
+@000226 OBJ_D.SPC  // LITERAL: OBJ_D.SPC (usage not inferred)

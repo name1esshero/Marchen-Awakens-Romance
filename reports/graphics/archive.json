@@ -1,0 +1,5812 @@
+[
+  {
+    "name": "AD0_B_A.KMP",
+    "rom_offset": 1850688,
+    "directory_offset": 1837408,
+    "end": 1875456,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD0_P_0A.KCG",
+    "rom_offset": 1875456,
+    "directory_offset": 1837424,
+    "end": 1898416,
+    "size_with_padding": 22960
+  },
+  {
+    "name": "AD0_P_0A.KCL",
+    "rom_offset": 1898416,
+    "directory_offset": 1837440,
+    "end": 1898736,
+    "size_with_padding": 320
+  },
+  {
+    "name": "AD0_P_0A.KMP",
+    "rom_offset": 1898736,
+    "directory_offset": 1837456,
+    "end": 1906608,
+    "size_with_padding": 7872
+  },
+  {
+    "name": "AD0_P_1A.KMP",
+    "rom_offset": 1906608,
+    "directory_offset": 1837472,
+    "end": 1914480,
+    "size_with_padding": 7872
+  },
+  {
+    "name": "AD0_P_2A.KMP",
+    "rom_offset": 1914480,
+    "directory_offset": 1837488,
+    "end": 1922352,
+    "size_with_padding": 7872
+  },
+  {
+    "name": "AD0_P_3A.KMP",
+    "rom_offset": 1922352,
+    "directory_offset": 1837504,
+    "end": 1930224,
+    "size_with_padding": 7872
+  },
+  {
+    "name": "AD0_P_4A.KMP",
+    "rom_offset": 1930224,
+    "directory_offset": 1837520,
+    "end": 1941936,
+    "size_with_padding": 11712
+  },
+  {
+    "name": "AD0_P_5A.KMP",
+    "rom_offset": 1941936,
+    "directory_offset": 1837536,
+    "end": 1953648,
+    "size_with_padding": 11712
+  },
+  {
+    "name": "AD0_P_6A.KMP",
+    "rom_offset": 1953648,
+    "directory_offset": 1837552,
+    "end": 1965360,
+    "size_with_padding": 11712
+  },
+  {
+    "name": "AD0_P_7A.KMP",
+    "rom_offset": 1965360,
+    "directory_offset": 1837568,
+    "end": 1977072,
+    "size_with_padding": 11712
+  },
+  {
+    "name": "AD0_R_0A.KMP",
+    "rom_offset": 1977072,
+    "directory_offset": 1837584,
+    "end": 2001840,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD0_R_1A.KMP",
+    "rom_offset": 2001840,
+    "directory_offset": 1837600,
+    "end": 2026608,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD0_R_2A.KMP",
+    "rom_offset": 2026608,
+    "directory_offset": 1837616,
+    "end": 2051376,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD0_R_3A.KMP",
+    "rom_offset": 2051376,
+    "directory_offset": 1837632,
+    "end": 2076144,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD0_R_4A.KMP",
+    "rom_offset": 2076144,
+    "directory_offset": 1837648,
+    "end": 2100912,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD0_R_5A.KMP",
+    "rom_offset": 2100912,
+    "directory_offset": 1837664,
+    "end": 2125680,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD0_R_6A.KMP",
+    "rom_offset": 2125680,
+    "directory_offset": 1837680,
+    "end": 2150448,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD0_R_7A.KMP",
+    "rom_offset": 2150448,
+    "directory_offset": 1837696,
+    "end": 2175216,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD0_R_8A.KMP",
+    "rom_offset": 2175216,
+    "directory_offset": 1837712,
+    "end": 2199984,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD0_R_9A.KMP",
+    "rom_offset": 2199984,
+    "directory_offset": 1837728,
+    "end": 2224752,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD0_R_AA.KMP",
+    "rom_offset": 2224752,
+    "directory_offset": 1837744,
+    "end": 2249520,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD0_R_BA.KMP",
+    "rom_offset": 2249520,
+    "directory_offset": 1837760,
+    "end": 2274288,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD0_R_CA.KMP",
+    "rom_offset": 2274288,
+    "directory_offset": 1837776,
+    "end": 2299056,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD1_B_A.KMP",
+    "rom_offset": 2299056,
+    "directory_offset": 1837792,
+    "end": 2323824,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD1_P_0A.KCG",
+    "rom_offset": 2323824,
+    "directory_offset": 1837808,
+    "end": 2342688,
+    "size_with_padding": 18864
+  },
+  {
+    "name": "AD1_P_0A.KCL",
+    "rom_offset": 2342688,
+    "directory_offset": 1837824,
+    "end": 2342912,
+    "size_with_padding": 224
+  },
+  {
+    "name": "AD1_P_0A.KMP",
+    "rom_offset": 2342912,
+    "directory_offset": 1837840,
+    "end": 2350784,
+    "size_with_padding": 7872
+  },
+  {
+    "name": "AD1_P_1A.KMP",
+    "rom_offset": 2350784,
+    "directory_offset": 1837856,
+    "end": 2358656,
+    "size_with_padding": 7872
+  },
+  {
+    "name": "AD1_P_2A.KMP",
+    "rom_offset": 2358656,
+    "directory_offset": 1837872,
+    "end": 2366528,
+    "size_with_padding": 7872
+  },
+  {
+    "name": "AD1_P_3A.KMP",
+    "rom_offset": 2366528,
+    "directory_offset": 1837888,
+    "end": 2374400,
+    "size_with_padding": 7872
+  },
+  {
+    "name": "AD1_P_4A.KMP",
+    "rom_offset": 2374400,
+    "directory_offset": 1837904,
+    "end": 2386112,
+    "size_with_padding": 11712
+  },
+  {
+    "name": "AD1_P_5A.KMP",
+    "rom_offset": 2386112,
+    "directory_offset": 1837920,
+    "end": 2397824,
+    "size_with_padding": 11712
+  },
+  {
+    "name": "AD1_P_6A.KMP",
+    "rom_offset": 2397824,
+    "directory_offset": 1837936,
+    "end": 2409536,
+    "size_with_padding": 11712
+  },
+  {
+    "name": "AD1_P_7A.KMP",
+    "rom_offset": 2409536,
+    "directory_offset": 1837952,
+    "end": 2421248,
+    "size_with_padding": 11712
+  },
+  {
+    "name": "AD1_R_0A.KMP",
+    "rom_offset": 2421248,
+    "directory_offset": 1837968,
+    "end": 2446016,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD1_R_1A.KMP",
+    "rom_offset": 2446016,
+    "directory_offset": 1837984,
+    "end": 2470784,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD1_R_2A.KMP",
+    "rom_offset": 2470784,
+    "directory_offset": 1838000,
+    "end": 2495552,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD1_R_3A.KMP",
+    "rom_offset": 2495552,
+    "directory_offset": 1838016,
+    "end": 2520320,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD1_R_4A.KMP",
+    "rom_offset": 2520320,
+    "directory_offset": 1838032,
+    "end": 2545088,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD1_R_5A.KMP",
+    "rom_offset": 2545088,
+    "directory_offset": 1838048,
+    "end": 2569856,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD1_R_6A.KMP",
+    "rom_offset": 2569856,
+    "directory_offset": 1838064,
+    "end": 2594624,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD1_R_7A.KMP",
+    "rom_offset": 2594624,
+    "directory_offset": 1838080,
+    "end": 2619392,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD1_R_8A.KMP",
+    "rom_offset": 2619392,
+    "directory_offset": 1838096,
+    "end": 2644160,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD1_R_9A.KMP",
+    "rom_offset": 2644160,
+    "directory_offset": 1838112,
+    "end": 2668928,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD1_R_AA.KMP",
+    "rom_offset": 2668928,
+    "directory_offset": 1838128,
+    "end": 2693696,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD1_R_BA.KMP",
+    "rom_offset": 2693696,
+    "directory_offset": 1838144,
+    "end": 2718464,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD1_R_CA.KMP",
+    "rom_offset": 2718464,
+    "directory_offset": 1838160,
+    "end": 2743232,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD3_B_A.KMP",
+    "rom_offset": 2743232,
+    "directory_offset": 1838176,
+    "end": 2768000,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD3_P_0A.KCG",
+    "rom_offset": 2768000,
+    "directory_offset": 1838192,
+    "end": 2787600,
+    "size_with_padding": 19600
+  },
+  {
+    "name": "AD3_P_0A.KCL",
+    "rom_offset": 2787600,
+    "directory_offset": 1838208,
+    "end": 2787792,
+    "size_with_padding": 192
+  },
+  {
+    "name": "AD3_P_0A.KMP",
+    "rom_offset": 2787792,
+    "directory_offset": 1838224,
+    "end": 2795664,
+    "size_with_padding": 7872
+  },
+  {
+    "name": "AD3_P_1A.KMP",
+    "rom_offset": 2795664,
+    "directory_offset": 1838240,
+    "end": 2803536,
+    "size_with_padding": 7872
+  },
+  {
+    "name": "AD3_P_2A.KMP",
+    "rom_offset": 2803536,
+    "directory_offset": 1838256,
+    "end": 2811408,
+    "size_with_padding": 7872
+  },
+  {
+    "name": "AD3_P_3A.KMP",
+    "rom_offset": 2811408,
+    "directory_offset": 1838272,
+    "end": 2819280,
+    "size_with_padding": 7872
+  },
+  {
+    "name": "AD3_P_4A.KMP",
+    "rom_offset": 2819280,
+    "directory_offset": 1838288,
+    "end": 2830992,
+    "size_with_padding": 11712
+  },
+  {
+    "name": "AD3_P_5A.KMP",
+    "rom_offset": 2830992,
+    "directory_offset": 1838304,
+    "end": 2842704,
+    "size_with_padding": 11712
+  },
+  {
+    "name": "AD3_P_6A.KMP",
+    "rom_offset": 2842704,
+    "directory_offset": 1838320,
+    "end": 2854416,
+    "size_with_padding": 11712
+  },
+  {
+    "name": "AD3_P_7A.KMP",
+    "rom_offset": 2854416,
+    "directory_offset": 1838336,
+    "end": 2866128,
+    "size_with_padding": 11712
+  },
+  {
+    "name": "AD3_R_0A.KMP",
+    "rom_offset": 2866128,
+    "directory_offset": 1838352,
+    "end": 2890896,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD3_R_1A.KMP",
+    "rom_offset": 2890896,
+    "directory_offset": 1838368,
+    "end": 2915664,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD3_R_2A.KMP",
+    "rom_offset": 2915664,
+    "directory_offset": 1838384,
+    "end": 2940432,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD3_R_3A.KMP",
+    "rom_offset": 2940432,
+    "directory_offset": 1838400,
+    "end": 2965200,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD3_R_4A.KMP",
+    "rom_offset": 2965200,
+    "directory_offset": 1838416,
+    "end": 2989968,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD3_R_5A.KMP",
+    "rom_offset": 2989968,
+    "directory_offset": 1838432,
+    "end": 3014736,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD3_R_6A.KMP",
+    "rom_offset": 3014736,
+    "directory_offset": 1838448,
+    "end": 3039504,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD3_R_7A.KMP",
+    "rom_offset": 3039504,
+    "directory_offset": 1838464,
+    "end": 3064272,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD3_R_8A.KMP",
+    "rom_offset": 3064272,
+    "directory_offset": 1838480,
+    "end": 3089040,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD3_R_9A.KMP",
+    "rom_offset": 3089040,
+    "directory_offset": 1838496,
+    "end": 3113808,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD3_R_AA.KMP",
+    "rom_offset": 3113808,
+    "directory_offset": 1838512,
+    "end": 3138576,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD3_R_BA.KMP",
+    "rom_offset": 3138576,
+    "directory_offset": 1838528,
+    "end": 3163344,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD3_R_CA.KMP",
+    "rom_offset": 3163344,
+    "directory_offset": 1838544,
+    "end": 3188112,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD4_B_A.KMP",
+    "rom_offset": 3188112,
+    "directory_offset": 1838560,
+    "end": 3212880,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD4_P_0A.KCG",
+    "rom_offset": 3212880,
+    "directory_offset": 1838576,
+    "end": 3227024,
+    "size_with_padding": 14144
+  },
+  {
+    "name": "AD4_P_0A.KCL",
+    "rom_offset": 3227024,
+    "directory_offset": 1838592,
+    "end": 3227120,
+    "size_with_padding": 96
+  },
+  {
+    "name": "AD4_P_0A.KMP",
+    "rom_offset": 3227120,
+    "directory_offset": 1838608,
+    "end": 3234992,
+    "size_with_padding": 7872
+  },
+  {
+    "name": "AD4_P_1A.KMP",
+    "rom_offset": 3234992,
+    "directory_offset": 1838624,
+    "end": 3242864,
+    "size_with_padding": 7872
+  },
+  {
+    "name": "AD4_P_2A.KMP",
+    "rom_offset": 3242864,
+    "directory_offset": 1838640,
+    "end": 3250736,
+    "size_with_padding": 7872
+  },
+  {
+    "name": "AD4_P_3A.KMP",
+    "rom_offset": 3250736,
+    "directory_offset": 1838656,
+    "end": 3258608,
+    "size_with_padding": 7872
+  },
+  {
+    "name": "AD4_P_4A.KMP",
+    "rom_offset": 3258608,
+    "directory_offset": 1838672,
+    "end": 3270320,
+    "size_with_padding": 11712
+  },
+  {
+    "name": "AD4_P_5A.KMP",
+    "rom_offset": 3270320,
+    "directory_offset": 1838688,
+    "end": 3282032,
+    "size_with_padding": 11712
+  },
+  {
+    "name": "AD4_P_6A.KMP",
+    "rom_offset": 3282032,
+    "directory_offset": 1838704,
+    "end": 3293744,
+    "size_with_padding": 11712
+  },
+  {
+    "name": "AD4_P_7A.KMP",
+    "rom_offset": 3293744,
+    "directory_offset": 1838720,
+    "end": 3305456,
+    "size_with_padding": 11712
+  },
+  {
+    "name": "AD4_R_0A.KMP",
+    "rom_offset": 3305456,
+    "directory_offset": 1838736,
+    "end": 3330224,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD4_R_1A.KMP",
+    "rom_offset": 3330224,
+    "directory_offset": 1838752,
+    "end": 3354992,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD4_R_2A.KMP",
+    "rom_offset": 3354992,
+    "directory_offset": 1838768,
+    "end": 3379760,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD4_R_3A.KMP",
+    "rom_offset": 3379760,
+    "directory_offset": 1838784,
+    "end": 3404528,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD4_R_4A.KMP",
+    "rom_offset": 3404528,
+    "directory_offset": 1838800,
+    "end": 3429296,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD4_R_5A.KMP",
+    "rom_offset": 3429296,
+    "directory_offset": 1838816,
+    "end": 3454064,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD4_R_6A.KMP",
+    "rom_offset": 3454064,
+    "directory_offset": 1838832,
+    "end": 3478832,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD4_R_7A.KMP",
+    "rom_offset": 3478832,
+    "directory_offset": 1838848,
+    "end": 3503600,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD4_R_8A.KMP",
+    "rom_offset": 3503600,
+    "directory_offset": 1838864,
+    "end": 3528368,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD4_R_9A.KMP",
+    "rom_offset": 3528368,
+    "directory_offset": 1838880,
+    "end": 3553136,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD4_R_AA.KMP",
+    "rom_offset": 3553136,
+    "directory_offset": 1838896,
+    "end": 3577904,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD4_R_BA.KMP",
+    "rom_offset": 3577904,
+    "directory_offset": 1838912,
+    "end": 3602672,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD4_R_CA.KMP",
+    "rom_offset": 3602672,
+    "directory_offset": 1838928,
+    "end": 3627440,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "AD_BG01.KCG",
+    "rom_offset": 3627440,
+    "directory_offset": 1838944,
+    "end": 3634992,
+    "size_with_padding": 7552
+  },
+  {
+    "name": "AD_BG01.KCL",
+    "rom_offset": 3634992,
+    "directory_offset": 1838960,
+    "end": 3635024,
+    "size_with_padding": 32
+  },
+  {
+    "name": "AD_BG01.KMP",
+    "rom_offset": 3635024,
+    "directory_offset": 1838976,
+    "end": 3637264,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "AD_BG02.KCG",
+    "rom_offset": 3637264,
+    "directory_offset": 1838992,
+    "end": 3639648,
+    "size_with_padding": 2384
+  },
+  {
+    "name": "AD_BG02.KCL",
+    "rom_offset": 3639648,
+    "directory_offset": 1839008,
+    "end": 3639680,
+    "size_with_padding": 32
+  },
+  {
+    "name": "AD_BG02.KMP",
+    "rom_offset": 3639680,
+    "directory_offset": 1839024,
+    "end": 3641920,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "AL_BG01.KCG",
+    "rom_offset": 3641920,
+    "directory_offset": 1839040,
+    "end": 3650352,
+    "size_with_padding": 8432
+  },
+  {
+    "name": "AL_BG01.KCL",
+    "rom_offset": 3650352,
+    "directory_offset": 1839056,
+    "end": 3650384,
+    "size_with_padding": 32
+  },
+  {
+    "name": "AL_BG01.KMP",
+    "rom_offset": 3650384,
+    "directory_offset": 1839072,
+    "end": 3652624,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "AL_BG02.KCG",
+    "rom_offset": 3652624,
+    "directory_offset": 1839088,
+    "end": 3655328,
+    "size_with_padding": 2704
+  },
+  {
+    "name": "AL_BG02.KCL",
+    "rom_offset": 3655328,
+    "directory_offset": 1839104,
+    "end": 3655360,
+    "size_with_padding": 32
+  },
+  {
+    "name": "AL_BG02.KMP",
+    "rom_offset": 3655360,
+    "directory_offset": 1839120,
+    "end": 3657600,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "AS_BG01.KCG",
+    "rom_offset": 3657600,
+    "directory_offset": 1839136,
+    "end": 3666624,
+    "size_with_padding": 9024
+  },
+  {
+    "name": "AS_BG01.KCL",
+    "rom_offset": 3666624,
+    "directory_offset": 1839152,
+    "end": 3666656,
+    "size_with_padding": 32
+  },
+  {
+    "name": "AS_BG01.KMP",
+    "rom_offset": 3666656,
+    "directory_offset": 1839168,
+    "end": 3668896,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "AS_BG02.KCG",
+    "rom_offset": 3668896,
+    "directory_offset": 1839184,
+    "end": 3674048,
+    "size_with_padding": 5152
+  },
+  {
+    "name": "AS_BG02.KCL",
+    "rom_offset": 3674048,
+    "directory_offset": 1839200,
+    "end": 3674080,
+    "size_with_padding": 32
+  },
+  {
+    "name": "AS_BG02.KMP",
+    "rom_offset": 3674080,
+    "directory_offset": 1839216,
+    "end": 3676320,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "AT_BG01.KCG",
+    "rom_offset": 3676320,
+    "directory_offset": 1839232,
+    "end": 3683792,
+    "size_with_padding": 7472
+  },
+  {
+    "name": "AT_BG01.KCL",
+    "rom_offset": 3683792,
+    "directory_offset": 1839248,
+    "end": 3683824,
+    "size_with_padding": 32
+  },
+  {
+    "name": "AT_BG01.KMP",
+    "rom_offset": 3683824,
+    "directory_offset": 1839264,
+    "end": 3686064,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "BA06.TCG",
+    "rom_offset": 3686064,
+    "directory_offset": 1839280,
+    "end": 3697920,
+    "size_with_padding": 11856
+  },
+  {
+    "name": "BA06.TCL",
+    "rom_offset": 3697920,
+    "directory_offset": 1839296,
+    "end": 3698016,
+    "size_with_padding": 96
+  },
+  {
+    "name": "BA06_00.TSC",
+    "rom_offset": 3698016,
+    "directory_offset": 1839312,
+    "end": 3700064,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "BA06_01.TSC",
+    "rom_offset": 3700064,
+    "directory_offset": 1839328,
+    "end": 3702112,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "BA06_BG.TCG",
+    "rom_offset": 3702112,
+    "directory_offset": 1839344,
+    "end": 3714144,
+    "size_with_padding": 12032
+  },
+  {
+    "name": "BA06_BG.TCL",
+    "rom_offset": 3714144,
+    "directory_offset": 1839360,
+    "end": 3714240,
+    "size_with_padding": 96
+  },
+  {
+    "name": "BA06_BG0.TSC",
+    "rom_offset": 3714240,
+    "directory_offset": 1839376,
+    "end": 3716288,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "BA06_BG1.TSC",
+    "rom_offset": 3716288,
+    "directory_offset": 1839392,
+    "end": 3718336,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "BA06_BG2.TSC",
+    "rom_offset": 3718336,
+    "directory_offset": 1839408,
+    "end": 3720384,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "BA07.TCG",
+    "rom_offset": 3720384,
+    "directory_offset": 1839424,
+    "end": 3723008,
+    "size_with_padding": 2624
+  },
+  {
+    "name": "BA07.TCL",
+    "rom_offset": 3723008,
+    "directory_offset": 1839440,
+    "end": 3723104,
+    "size_with_padding": 96
+  },
+  {
+    "name": "BA07.TSC",
+    "rom_offset": 3723104,
+    "directory_offset": 1839456,
+    "end": 3725152,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "BGM_SET.SPC",
+    "rom_offset": 3725152,
+    "directory_offset": 1839472,
+    "end": 3729616,
+    "size_with_padding": 4464
+  },
+  {
+    "name": "BTIM00.SPC",
+    "rom_offset": 3729616,
+    "directory_offset": 1839488,
+    "end": 3730608,
+    "size_with_padding": 992
+  },
+  {
+    "name": "BTIM01_3.SPC",
+    "rom_offset": 3730608,
+    "directory_offset": 1839504,
+    "end": 3731536,
+    "size_with_padding": 928
+  },
+  {
+    "name": "BTIM03.SPC",
+    "rom_offset": 3731536,
+    "directory_offset": 1839520,
+    "end": 3731680,
+    "size_with_padding": 144
+  },
+  {
+    "name": "BTIM04.SPC",
+    "rom_offset": 3731680,
+    "directory_offset": 1839536,
+    "end": 3735456,
+    "size_with_padding": 3776
+  },
+  {
+    "name": "BTIM04_4.SPC",
+    "rom_offset": 3735456,
+    "directory_offset": 1839552,
+    "end": 3737136,
+    "size_with_padding": 1680
+  },
+  {
+    "name": "BTIM05.SPC",
+    "rom_offset": 3737136,
+    "directory_offset": 1839568,
+    "end": 3737904,
+    "size_with_padding": 768
+  },
+  {
+    "name": "BTIM07.SPC",
+    "rom_offset": 3737904,
+    "directory_offset": 1839584,
+    "end": 3742800,
+    "size_with_padding": 4896
+  },
+  {
+    "name": "BTIM24_1.SPC",
+    "rom_offset": 3742800,
+    "directory_offset": 1839600,
+    "end": 3745440,
+    "size_with_padding": 2640
+  },
+  {
+    "name": "BTIM24_2.SPC",
+    "rom_offset": 3745440,
+    "directory_offset": 1839616,
+    "end": 3747728,
+    "size_with_padding": 2288
+  },
+  {
+    "name": "BTIM24_4.SPC",
+    "rom_offset": 3747728,
+    "directory_offset": 1839632,
+    "end": 3749920,
+    "size_with_padding": 2192
+  },
+  {
+    "name": "BTIM25_1.SPC",
+    "rom_offset": 3749920,
+    "directory_offset": 1839648,
+    "end": 3753712,
+    "size_with_padding": 3792
+  },
+  {
+    "name": "BTIM25_2.SPC",
+    "rom_offset": 3753712,
+    "directory_offset": 1839664,
+    "end": 3756144,
+    "size_with_padding": 2432
+  },
+  {
+    "name": "BTIM25_4.SPC",
+    "rom_offset": 3756144,
+    "directory_offset": 1839680,
+    "end": 3762288,
+    "size_with_padding": 6144
+  },
+  {
+    "name": "BTIM26_1.SPC",
+    "rom_offset": 3762288,
+    "directory_offset": 1839696,
+    "end": 3764944,
+    "size_with_padding": 2656
+  },
+  {
+    "name": "BTIM26_3.SPC",
+    "rom_offset": 3764944,
+    "directory_offset": 1839712,
+    "end": 3768592,
+    "size_with_padding": 3648
+  },
+  {
+    "name": "BTIM26_5.SPC",
+    "rom_offset": 3768592,
+    "directory_offset": 1839728,
+    "end": 3776272,
+    "size_with_padding": 7680
+  },
+  {
+    "name": "BTIM40.SPC",
+    "rom_offset": 3776272,
+    "directory_offset": 1839744,
+    "end": 3777264,
+    "size_with_padding": 992
+  },
+  {
+    "name": "BTIM41.SPC",
+    "rom_offset": 3777264,
+    "directory_offset": 1839760,
+    "end": 3778224,
+    "size_with_padding": 960
+  },
+  {
+    "name": "BTIM42.SPC",
+    "rom_offset": 3778224,
+    "directory_offset": 1839776,
+    "end": 3780432,
+    "size_with_padding": 2208
+  },
+  {
+    "name": "BTI_DUNG.SPC",
+    "rom_offset": 3780432,
+    "directory_offset": 1839792,
+    "end": 3781520,
+    "size_with_padding": 1088
+  },
+  {
+    "name": "BTI_N.SPC",
+    "rom_offset": 3781520,
+    "directory_offset": 1839808,
+    "end": 3785072,
+    "size_with_padding": 3552
+  },
+  {
+    "name": "BTI_PSET.SPC",
+    "rom_offset": 3785072,
+    "directory_offset": 1839824,
+    "end": 3786656,
+    "size_with_padding": 1584
+  },
+  {
+    "name": "BTL_ESCP.SPC",
+    "rom_offset": 3786656,
+    "directory_offset": 1839840,
+    "end": 3788080,
+    "size_with_padding": 1424
+  },
+  {
+    "name": "BTOM00.SPC",
+    "rom_offset": 3788080,
+    "directory_offset": 1839856,
+    "end": 3788176,
+    "size_with_padding": 96
+  },
+  {
+    "name": "BTOM01_3.SPC",
+    "rom_offset": 3788176,
+    "directory_offset": 1839872,
+    "end": 3788592,
+    "size_with_padding": 416
+  },
+  {
+    "name": "BTOM03.SPC",
+    "rom_offset": 3788592,
+    "directory_offset": 1839888,
+    "end": 3788896,
+    "size_with_padding": 304
+  },
+  {
+    "name": "BTOM04.SPC",
+    "rom_offset": 3788896,
+    "directory_offset": 1839904,
+    "end": 3788992,
+    "size_with_padding": 96
+  },
+  {
+    "name": "BTOM04_4.SPC",
+    "rom_offset": 3788992,
+    "directory_offset": 1839920,
+    "end": 3789088,
+    "size_with_padding": 96
+  },
+  {
+    "name": "BTOM04_6.SPC",
+    "rom_offset": 3789088,
+    "directory_offset": 1839936,
+    "end": 3789392,
+    "size_with_padding": 304
+  },
+  {
+    "name": "BTOM05.SPC",
+    "rom_offset": 3789392,
+    "directory_offset": 1839952,
+    "end": 3789856,
+    "size_with_padding": 464
+  },
+  {
+    "name": "BTOM07.SPC",
+    "rom_offset": 3789856,
+    "directory_offset": 1839968,
+    "end": 3790336,
+    "size_with_padding": 480
+  },
+  {
+    "name": "BTOM07_3.SPC",
+    "rom_offset": 3790336,
+    "directory_offset": 1839984,
+    "end": 3790496,
+    "size_with_padding": 160
+  },
+  {
+    "name": "BTOM24_1.SPC",
+    "rom_offset": 3790496,
+    "directory_offset": 1840000,
+    "end": 3790592,
+    "size_with_padding": 96
+  },
+  {
+    "name": "BTOM24_2.SPC",
+    "rom_offset": 3790592,
+    "directory_offset": 1840016,
+    "end": 3790688,
+    "size_with_padding": 96
+  },
+  {
+    "name": "BTOM24_4.SPC",
+    "rom_offset": 3790688,
+    "directory_offset": 1840032,
+    "end": 3790992,
+    "size_with_padding": 304
+  },
+  {
+    "name": "BTOM25_1.SPC",
+    "rom_offset": 3790992,
+    "directory_offset": 1840048,
+    "end": 3791088,
+    "size_with_padding": 96
+  },
+  {
+    "name": "BTOM25_2.SPC",
+    "rom_offset": 3791088,
+    "directory_offset": 1840064,
+    "end": 3791184,
+    "size_with_padding": 96
+  },
+  {
+    "name": "BTOM25_4.SPC",
+    "rom_offset": 3791184,
+    "directory_offset": 1840080,
+    "end": 3791280,
+    "size_with_padding": 96
+  },
+  {
+    "name": "BTOM25_5.SPC",
+    "rom_offset": 3791280,
+    "directory_offset": 1840096,
+    "end": 3791440,
+    "size_with_padding": 160
+  },
+  {
+    "name": "BTOM26_1.SPC",
+    "rom_offset": 3791440,
+    "directory_offset": 1840112,
+    "end": 3791536,
+    "size_with_padding": 96
+  },
+  {
+    "name": "BTOM26_2.SPC",
+    "rom_offset": 3791536,
+    "directory_offset": 1840128,
+    "end": 3791696,
+    "size_with_padding": 160
+  },
+  {
+    "name": "BTOM26_3.SPC",
+    "rom_offset": 3791696,
+    "directory_offset": 1840144,
+    "end": 3791792,
+    "size_with_padding": 96
+  },
+  {
+    "name": "BTOM26_5.SPC",
+    "rom_offset": 3791792,
+    "directory_offset": 1840160,
+    "end": 3791888,
+    "size_with_padding": 96
+  },
+  {
+    "name": "BTOM26_6.SPC",
+    "rom_offset": 3791888,
+    "directory_offset": 1840176,
+    "end": 3791984,
+    "size_with_padding": 96
+  },
+  {
+    "name": "BTOM40.SPC",
+    "rom_offset": 3791984,
+    "directory_offset": 1840192,
+    "end": 3792240,
+    "size_with_padding": 256
+  },
+  {
+    "name": "BTOM41.SPC",
+    "rom_offset": 3792240,
+    "directory_offset": 1840208,
+    "end": 3792336,
+    "size_with_padding": 96
+  },
+  {
+    "name": "BTOM42.SPC",
+    "rom_offset": 3792336,
+    "directory_offset": 1840224,
+    "end": 3792592,
+    "size_with_padding": 256
+  },
+  {
+    "name": "BTO_DEF.SPC",
+    "rom_offset": 3792592,
+    "directory_offset": 1840240,
+    "end": 3794576,
+    "size_with_padding": 1984
+  },
+  {
+    "name": "BTO_DEF2.SPC",
+    "rom_offset": 3794576,
+    "directory_offset": 1840256,
+    "end": 3795696,
+    "size_with_padding": 1120
+  },
+  {
+    "name": "BTO_DUNG.SPC",
+    "rom_offset": 3795696,
+    "directory_offset": 1840272,
+    "end": 3797936,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "BTO_N.SPC",
+    "rom_offset": 3797936,
+    "directory_offset": 1840288,
+    "end": 3801040,
+    "size_with_padding": 3104
+  },
+  {
+    "name": "CHR.NCD",
+    "rom_offset": 3801040,
+    "directory_offset": 1840304,
+    "end": 5669824,
+    "size_with_padding": 1868784
+  },
+  {
+    "name": "CH_ESC.SPC",
+    "rom_offset": 5669824,
+    "directory_offset": 1840320,
+    "end": 5676032,
+    "size_with_padding": 6208
+  },
+  {
+    "name": "CH_M00A.SPC",
+    "rom_offset": 5676032,
+    "directory_offset": 1840336,
+    "end": 5676848,
+    "size_with_padding": 816
+  },
+  {
+    "name": "CH_M01_3.SPC",
+    "rom_offset": 5676848,
+    "directory_offset": 1840352,
+    "end": 5677600,
+    "size_with_padding": 752
+  },
+  {
+    "name": "CH_M03A.SPC",
+    "rom_offset": 5677600,
+    "directory_offset": 1840368,
+    "end": 5677696,
+    "size_with_padding": 96
+  },
+  {
+    "name": "CH_M05A.SPC",
+    "rom_offset": 5677696,
+    "directory_offset": 1840384,
+    "end": 5678592,
+    "size_with_padding": 896
+  },
+  {
+    "name": "CH_M08A.SPC",
+    "rom_offset": 5678592,
+    "directory_offset": 1840400,
+    "end": 5679280,
+    "size_with_padding": 688
+  },
+  {
+    "name": "CH_M09A.SPC",
+    "rom_offset": 5679280,
+    "directory_offset": 1840416,
+    "end": 5682704,
+    "size_with_padding": 3424
+  },
+  {
+    "name": "CH_M10.SPC",
+    "rom_offset": 5682704,
+    "directory_offset": 1840432,
+    "end": 5682896,
+    "size_with_padding": 192
+  },
+  {
+    "name": "CH_M11.SPC",
+    "rom_offset": 5682896,
+    "directory_offset": 1840448,
+    "end": 5684944,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "CH_M24_3.SPC",
+    "rom_offset": 5684944,
+    "directory_offset": 1840464,
+    "end": 5685152,
+    "size_with_padding": 208
+  },
+  {
+    "name": "CH_M24_A.SPC",
+    "rom_offset": 5685152,
+    "directory_offset": 1840480,
+    "end": 5686256,
+    "size_with_padding": 1104
+  },
+  {
+    "name": "CH_M26_6.SPC",
+    "rom_offset": 5686256,
+    "directory_offset": 1840496,
+    "end": 5692208,
+    "size_with_padding": 5952
+  },
+  {
+    "name": "CLPASS.KCG",
+    "rom_offset": 5692208,
+    "directory_offset": 1840512,
+    "end": 5694864,
+    "size_with_padding": 2656
+  },
+  {
+    "name": "CLPASS.KCL",
+    "rom_offset": 5694864,
+    "directory_offset": 1840528,
+    "end": 5694896,
+    "size_with_padding": 32
+  },
+  {
+    "name": "CLPASS.KMP",
+    "rom_offset": 5694896,
+    "directory_offset": 1840544,
+    "end": 5697136,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "CM_BG01.KCG",
+    "rom_offset": 5697136,
+    "directory_offset": 1840560,
+    "end": 5703536,
+    "size_with_padding": 6400
+  },
+  {
+    "name": "CM_BG01.KCL",
+    "rom_offset": 5703536,
+    "directory_offset": 1840576,
+    "end": 5703568,
+    "size_with_padding": 32
+  },
+  {
+    "name": "CM_BG01.KMP",
+    "rom_offset": 5703568,
+    "directory_offset": 1840592,
+    "end": 5705808,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "CM_BG02.KCG",
+    "rom_offset": 5705808,
+    "directory_offset": 1840608,
+    "end": 5710192,
+    "size_with_padding": 4384
+  },
+  {
+    "name": "CM_BG02.KCL",
+    "rom_offset": 5710192,
+    "directory_offset": 1840624,
+    "end": 5710224,
+    "size_with_padding": 32
+  },
+  {
+    "name": "CM_BG02.KMP",
+    "rom_offset": 5710224,
+    "directory_offset": 1840640,
+    "end": 5712464,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "D0_BOSS.SPC",
+    "rom_offset": 5712464,
+    "directory_offset": 1840656,
+    "end": 5714688,
+    "size_with_padding": 2224
+  },
+  {
+    "name": "D0_ENEMY.SPC",
+    "rom_offset": 5714688,
+    "directory_offset": 1840672,
+    "end": 5719248,
+    "size_with_padding": 4560
+  },
+  {
+    "name": "D0_ITEM.SPC",
+    "rom_offset": 5719248,
+    "directory_offset": 1840688,
+    "end": 5722224,
+    "size_with_padding": 2976
+  },
+  {
+    "name": "D0_MAKE.SPC",
+    "rom_offset": 5722224,
+    "directory_offset": 1840704,
+    "end": 5723840,
+    "size_with_padding": 1616
+  },
+  {
+    "name": "D0_NORM.SPC",
+    "rom_offset": 5723840,
+    "directory_offset": 1840720,
+    "end": 5724496,
+    "size_with_padding": 656
+  },
+  {
+    "name": "D1_BOSS.SPC",
+    "rom_offset": 5724496,
+    "directory_offset": 1840736,
+    "end": 5726640,
+    "size_with_padding": 2144
+  },
+  {
+    "name": "D1_ENEMY.SPC",
+    "rom_offset": 5726640,
+    "directory_offset": 1840752,
+    "end": 5735328,
+    "size_with_padding": 8688
+  },
+  {
+    "name": "D1_ITEM.SPC",
+    "rom_offset": 5735328,
+    "directory_offset": 1840768,
+    "end": 5742576,
+    "size_with_padding": 7248
+  },
+  {
+    "name": "D1_MAKE.SPC",
+    "rom_offset": 5742576,
+    "directory_offset": 1840784,
+    "end": 5745216,
+    "size_with_padding": 2640
+  },
+  {
+    "name": "D2_BOSS.SPC",
+    "rom_offset": 5745216,
+    "directory_offset": 1840800,
+    "end": 5747360,
+    "size_with_padding": 2144
+  },
+  {
+    "name": "D2_ENEMY.SPC",
+    "rom_offset": 5747360,
+    "directory_offset": 1840816,
+    "end": 5760656,
+    "size_with_padding": 13296
+  },
+  {
+    "name": "D2_ITEM.SPC",
+    "rom_offset": 5760656,
+    "directory_offset": 1840832,
+    "end": 5778208,
+    "size_with_padding": 17552
+  },
+  {
+    "name": "D2_MAKE.SPC",
+    "rom_offset": 5778208,
+    "directory_offset": 1840848,
+    "end": 5781872,
+    "size_with_padding": 3664
+  },
+  {
+    "name": "D3_BOSS.SPC",
+    "rom_offset": 5781872,
+    "directory_offset": 1840864,
+    "end": 5784016,
+    "size_with_padding": 2144
+  },
+  {
+    "name": "D3_ENEMY.SPC",
+    "rom_offset": 5784016,
+    "directory_offset": 1840880,
+    "end": 5801504,
+    "size_with_padding": 17488
+  },
+  {
+    "name": "D3_ITEM.SPC",
+    "rom_offset": 5801504,
+    "directory_offset": 1840896,
+    "end": 5823200,
+    "size_with_padding": 21696
+  },
+  {
+    "name": "D3_MAKE.SPC",
+    "rom_offset": 5823200,
+    "directory_offset": 1840912,
+    "end": 5827888,
+    "size_with_padding": 4688
+  },
+  {
+    "name": "D4_BOSS.SPC",
+    "rom_offset": 5827888,
+    "directory_offset": 1840928,
+    "end": 5830032,
+    "size_with_padding": 2144
+  },
+  {
+    "name": "D4_ENEMY.SPC",
+    "rom_offset": 5830032,
+    "directory_offset": 1840944,
+    "end": 5851760,
+    "size_with_padding": 21728
+  },
+  {
+    "name": "D4_ITEM.SPC",
+    "rom_offset": 5851760,
+    "directory_offset": 1840960,
+    "end": 5874608,
+    "size_with_padding": 22848
+  },
+  {
+    "name": "D4_MAKE.SPC",
+    "rom_offset": 5874608,
+    "directory_offset": 1840976,
+    "end": 5880560,
+    "size_with_padding": 5952
+  },
+  {
+    "name": "DBG_BTL.SPC",
+    "rom_offset": 5880560,
+    "directory_offset": 1840992,
+    "end": 5881456,
+    "size_with_padding": 896
+  },
+  {
+    "name": "DBG_BTLQ.SPC",
+    "rom_offset": 5881456,
+    "directory_offset": 1841008,
+    "end": 5886672,
+    "size_with_padding": 5216
+  },
+  {
+    "name": "DBG_ESC.SPC",
+    "rom_offset": 5886672,
+    "directory_offset": 1841024,
+    "end": 5890080,
+    "size_with_padding": 3408
+  },
+  {
+    "name": "DBG_FACE.SPC",
+    "rom_offset": 5890080,
+    "directory_offset": 1841040,
+    "end": 5923504,
+    "size_with_padding": 33424
+  },
+  {
+    "name": "DITEMCOM.SPC",
+    "rom_offset": 5923504,
+    "directory_offset": 1841056,
+    "end": 5926816,
+    "size_with_padding": 3312
+  },
+  {
+    "name": "DS_BG01.KCG",
+    "rom_offset": 5926816,
+    "directory_offset": 1841072,
+    "end": 5939856,
+    "size_with_padding": 13040
+  },
+  {
+    "name": "DS_BG01.KCL",
+    "rom_offset": 5939856,
+    "directory_offset": 1841088,
+    "end": 5939888,
+    "size_with_padding": 32
+  },
+  {
+    "name": "DS_BG01.KMP",
+    "rom_offset": 5939888,
+    "directory_offset": 1841104,
+    "end": 5942128,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "DS_BG02.KCG",
+    "rom_offset": 5942128,
+    "directory_offset": 1841120,
+    "end": 5946032,
+    "size_with_padding": 3904
+  },
+  {
+    "name": "DS_BG02.KCL",
+    "rom_offset": 5946032,
+    "directory_offset": 1841136,
+    "end": 5946064,
+    "size_with_padding": 32
+  },
+  {
+    "name": "DS_BG02.KMP",
+    "rom_offset": 5946064,
+    "directory_offset": 1841152,
+    "end": 5948304,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "DUNG_DEF.SPC",
+    "rom_offset": 5948304,
+    "directory_offset": 1841168,
+    "end": 5949856,
+    "size_with_padding": 1552
+  },
+  {
+    "name": "DUNG_END.SPC",
+    "rom_offset": 5949856,
+    "directory_offset": 1841184,
+    "end": 5952816,
+    "size_with_padding": 2960
+  },
+  {
+    "name": "D_VS_R.SPC",
+    "rom_offset": 5952816,
+    "directory_offset": 1841200,
+    "end": 5956144,
+    "size_with_padding": 3328
+  },
+  {
+    "name": "EFCSTART.KMP",
+    "rom_offset": 5956144,
+    "directory_offset": 1841216,
+    "end": 5958384,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "EFFECT.NCD",
+    "rom_offset": 5958384,
+    "directory_offset": 1841232,
+    "end": 7934048,
+    "size_with_padding": 1975664
+  },
+  {
+    "name": "END2.SPC",
+    "rom_offset": 7934048,
+    "directory_offset": 1841248,
+    "end": 7942464,
+    "size_with_padding": 8416
+  },
+  {
+    "name": "ENE_SET.SPC",
+    "rom_offset": 7942464,
+    "directory_offset": 1841264,
+    "end": 7951056,
+    "size_with_padding": 8592
+  },
+  {
+    "name": "EV_AL01.SPC",
+    "rom_offset": 7951056,
+    "directory_offset": 1841280,
+    "end": 7954704,
+    "size_with_padding": 3648
+  },
+  {
+    "name": "EV_AL02.SPC",
+    "rom_offset": 7954704,
+    "directory_offset": 1841296,
+    "end": 7958160,
+    "size_with_padding": 3456
+  },
+  {
+    "name": "EV_AL02B.SPC",
+    "rom_offset": 7958160,
+    "directory_offset": 1841312,
+    "end": 7963632,
+    "size_with_padding": 5472
+  },
+  {
+    "name": "EV_AL03.SPC",
+    "rom_offset": 7963632,
+    "directory_offset": 1841328,
+    "end": 7967408,
+    "size_with_padding": 3776
+  },
+  {
+    "name": "EV_AL04.SPC",
+    "rom_offset": 7967408,
+    "directory_offset": 1841344,
+    "end": 7968112,
+    "size_with_padding": 704
+  },
+  {
+    "name": "EV_BA01.SPC",
+    "rom_offset": 7968112,
+    "directory_offset": 1841360,
+    "end": 7971984,
+    "size_with_padding": 3872
+  },
+  {
+    "name": "EV_BA02.SPC",
+    "rom_offset": 7971984,
+    "directory_offset": 1841376,
+    "end": 7974128,
+    "size_with_padding": 2144
+  },
+  {
+    "name": "EV_BA03.SPC",
+    "rom_offset": 7974128,
+    "directory_offset": 1841392,
+    "end": 7975744,
+    "size_with_padding": 1616
+  },
+  {
+    "name": "EV_BA04.SPC",
+    "rom_offset": 7975744,
+    "directory_offset": 1841408,
+    "end": 7977744,
+    "size_with_padding": 2000
+  },
+  {
+    "name": "EV_BIN01.SPC",
+    "rom_offset": 7977744,
+    "directory_offset": 1841424,
+    "end": 7978832,
+    "size_with_padding": 1088
+  },
+  {
+    "name": "EV_BIN02.SPC",
+    "rom_offset": 7978832,
+    "directory_offset": 1841440,
+    "end": 7979952,
+    "size_with_padding": 1120
+  },
+  {
+    "name": "EV_BIN03.SPC",
+    "rom_offset": 7979952,
+    "directory_offset": 1841456,
+    "end": 7981168,
+    "size_with_padding": 1216
+  },
+  {
+    "name": "EV_EDO01.SPC",
+    "rom_offset": 7981168,
+    "directory_offset": 1841472,
+    "end": 7984928,
+    "size_with_padding": 3760
+  },
+  {
+    "name": "EV_GO01.SPC",
+    "rom_offset": 7984928,
+    "directory_offset": 1841488,
+    "end": 7987936,
+    "size_with_padding": 3008
+  },
+  {
+    "name": "EV_GO02.SPC",
+    "rom_offset": 7987936,
+    "directory_offset": 1841504,
+    "end": 7990112,
+    "size_with_padding": 2176
+  },
+  {
+    "name": "EV_GO03.SPC",
+    "rom_offset": 7990112,
+    "directory_offset": 1841520,
+    "end": 7991200,
+    "size_with_padding": 1088
+  },
+  {
+    "name": "EV_GO04.SPC",
+    "rom_offset": 7991200,
+    "directory_offset": 1841536,
+    "end": 7993888,
+    "size_with_padding": 2688
+  },
+  {
+    "name": "EV_GO05.SPC",
+    "rom_offset": 7993888,
+    "directory_offset": 1841552,
+    "end": 7995872,
+    "size_with_padding": 1984
+  },
+  {
+    "name": "EV_GO06.SPC",
+    "rom_offset": 7995872,
+    "directory_offset": 1841568,
+    "end": 7997312,
+    "size_with_padding": 1440
+  },
+  {
+    "name": "EV_GO07.SPC",
+    "rom_offset": 7997312,
+    "directory_offset": 1841584,
+    "end": 7998896,
+    "size_with_padding": 1584
+  },
+  {
+    "name": "EV_GO08.SPC",
+    "rom_offset": 7998896,
+    "directory_offset": 1841600,
+    "end": 7999856,
+    "size_with_padding": 960
+  },
+  {
+    "name": "EV_GO09.SPC",
+    "rom_offset": 7999856,
+    "directory_offset": 1841616,
+    "end": 8002544,
+    "size_with_padding": 2688
+  },
+  {
+    "name": "EV_GO10.SPC",
+    "rom_offset": 8002544,
+    "directory_offset": 1841632,
+    "end": 8004224,
+    "size_with_padding": 1680
+  },
+  {
+    "name": "EV_GO11.SPC",
+    "rom_offset": 8004224,
+    "directory_offset": 1841648,
+    "end": 8008416,
+    "size_with_padding": 4192
+  },
+  {
+    "name": "EV_GO12.SPC",
+    "rom_offset": 8008416,
+    "directory_offset": 1841664,
+    "end": 8010464,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "EV_GTOB.SPC",
+    "rom_offset": 8010464,
+    "directory_offset": 1841680,
+    "end": 8012784,
+    "size_with_padding": 2320
+  },
+  {
+    "name": "EV_GTOB2.SPC",
+    "rom_offset": 8012784,
+    "directory_offset": 1841696,
+    "end": 8013952,
+    "size_with_padding": 1168
+  },
+  {
+    "name": "EV_ICE01.SPC",
+    "rom_offset": 8013952,
+    "directory_offset": 1841712,
+    "end": 8016496,
+    "size_with_padding": 2544
+  },
+  {
+    "name": "EV_ICE02.SPC",
+    "rom_offset": 8016496,
+    "directory_offset": 1841728,
+    "end": 8020000,
+    "size_with_padding": 3504
+  },
+  {
+    "name": "EV_ICE03.SPC",
+    "rom_offset": 8020000,
+    "directory_offset": 1841744,
+    "end": 8021328,
+    "size_with_padding": 1328
+  },
+  {
+    "name": "EV_ICE04.SPC",
+    "rom_offset": 8021328,
+    "directory_offset": 1841760,
+    "end": 8022128,
+    "size_with_padding": 800
+  },
+  {
+    "name": "EV_ICE05.SPC",
+    "rom_offset": 8022128,
+    "directory_offset": 1841776,
+    "end": 8022752,
+    "size_with_padding": 624
+  },
+  {
+    "name": "EV_ICE06.SPC",
+    "rom_offset": 8022752,
+    "directory_offset": 1841792,
+    "end": 8023312,
+    "size_with_padding": 560
+  },
+  {
+    "name": "EV_ICE07.SPC",
+    "rom_offset": 8023312,
+    "directory_offset": 1841808,
+    "end": 8025376,
+    "size_with_padding": 2064
+  },
+  {
+    "name": "EV_ICE08.SPC",
+    "rom_offset": 8025376,
+    "directory_offset": 1841824,
+    "end": 8026032,
+    "size_with_padding": 656
+  },
+  {
+    "name": "EV_ICE09.SPC",
+    "rom_offset": 8026032,
+    "directory_offset": 1841840,
+    "end": 8031264,
+    "size_with_padding": 5232
+  },
+  {
+    "name": "EV_ICE10.SPC",
+    "rom_offset": 8031264,
+    "directory_offset": 1841856,
+    "end": 8035136,
+    "size_with_padding": 3872
+  },
+  {
+    "name": "EV_ICE11.SPC",
+    "rom_offset": 8035136,
+    "directory_offset": 1841872,
+    "end": 8038832,
+    "size_with_padding": 3696
+  },
+  {
+    "name": "EV_ICE12.SPC",
+    "rom_offset": 8038832,
+    "directory_offset": 1841888,
+    "end": 8045456,
+    "size_with_padding": 6624
+  },
+  {
+    "name": "EV_IWA.SPC",
+    "rom_offset": 8045456,
+    "directory_offset": 1841904,
+    "end": 8046416,
+    "size_with_padding": 960
+  },
+  {
+    "name": "EV_JA01.SPC",
+    "rom_offset": 8046416,
+    "directory_offset": 1841920,
+    "end": 8052000,
+    "size_with_padding": 5584
+  },
+  {
+    "name": "EV_JA02.SPC",
+    "rom_offset": 8052000,
+    "directory_offset": 1841936,
+    "end": 8054128,
+    "size_with_padding": 2128
+  },
+  {
+    "name": "EV_JA03.SPC",
+    "rom_offset": 8054128,
+    "directory_offset": 1841952,
+    "end": 8056880,
+    "size_with_padding": 2752
+  },
+  {
+    "name": "EV_JA04.SPC",
+    "rom_offset": 8056880,
+    "directory_offset": 1841968,
+    "end": 8059424,
+    "size_with_padding": 2544
+  },
+  {
+    "name": "EV_JA04B.SPC",
+    "rom_offset": 8059424,
+    "directory_offset": 1841984,
+    "end": 8062432,
+    "size_with_padding": 3008
+  },
+  {
+    "name": "EV_JA04C.SPC",
+    "rom_offset": 8062432,
+    "directory_offset": 1842000,
+    "end": 8063376,
+    "size_with_padding": 944
+  },
+  {
+    "name": "EV_MON01.SPC",
+    "rom_offset": 8063376,
+    "directory_offset": 1842016,
+    "end": 8065024,
+    "size_with_padding": 1648
+  },
+  {
+    "name": "EV_MON02.SPC",
+    "rom_offset": 8065024,
+    "directory_offset": 1842032,
+    "end": 8066736,
+    "size_with_padding": 1712
+  },
+  {
+    "name": "EV_MON03.SPC",
+    "rom_offset": 8066736,
+    "directory_offset": 1842048,
+    "end": 8067552,
+    "size_with_padding": 816
+  },
+  {
+    "name": "EV_MON04.SPC",
+    "rom_offset": 8067552,
+    "directory_offset": 1842064,
+    "end": 8068704,
+    "size_with_padding": 1152
+  },
+  {
+    "name": "EV_MON05.SPC",
+    "rom_offset": 8068704,
+    "directory_offset": 1842080,
+    "end": 8069312,
+    "size_with_padding": 608
+  },
+  {
+    "name": "EV_MON06.SPC",
+    "rom_offset": 8069312,
+    "directory_offset": 1842096,
+    "end": 8070000,
+    "size_with_padding": 688
+  },
+  {
+    "name": "EV_PA01.SPC",
+    "rom_offset": 8070000,
+    "directory_offset": 1842112,
+    "end": 8071536,
+    "size_with_padding": 1536
+  },
+  {
+    "name": "EV_RT01.SPC",
+    "rom_offset": 8071536,
+    "directory_offset": 1842128,
+    "end": 8072736,
+    "size_with_padding": 1200
+  },
+  {
+    "name": "EV_RT02.SPC",
+    "rom_offset": 8072736,
+    "directory_offset": 1842144,
+    "end": 8074960,
+    "size_with_padding": 2224
+  },
+  {
+    "name": "EV_RT03.SPC",
+    "rom_offset": 8074960,
+    "directory_offset": 1842160,
+    "end": 8078240,
+    "size_with_padding": 3280
+  },
+  {
+    "name": "EV_START.SPC",
+    "rom_offset": 8078240,
+    "directory_offset": 1842176,
+    "end": 8079936,
+    "size_with_padding": 1696
+  },
+  {
+    "name": "EV_T1KIL.SPC",
+    "rom_offset": 8079936,
+    "directory_offset": 1842192,
+    "end": 8082096,
+    "size_with_padding": 2160
+  },
+  {
+    "name": "EV_T2KIL.SPC",
+    "rom_offset": 8082096,
+    "directory_offset": 1842208,
+    "end": 8084816,
+    "size_with_padding": 2720
+  },
+  {
+    "name": "EV_T3KIL.SPC",
+    "rom_offset": 8084816,
+    "directory_offset": 1842224,
+    "end": 8091264,
+    "size_with_padding": 6448
+  },
+  {
+    "name": "EV_T4KIL.SPC",
+    "rom_offset": 8091264,
+    "directory_offset": 1842240,
+    "end": 8095776,
+    "size_with_padding": 4512
+  },
+  {
+    "name": "EV_UTA01.SPC",
+    "rom_offset": 8095776,
+    "directory_offset": 1842256,
+    "end": 8099488,
+    "size_with_padding": 3712
+  },
+  {
+    "name": "EV_VE01.SPC",
+    "rom_offset": 8099488,
+    "directory_offset": 1842272,
+    "end": 8100992,
+    "size_with_padding": 1504
+  },
+  {
+    "name": "EV_VE02.SPC",
+    "rom_offset": 8100992,
+    "directory_offset": 1842288,
+    "end": 8104336,
+    "size_with_padding": 3344
+  },
+  {
+    "name": "FONT.NFT",
+    "rom_offset": 8104336,
+    "directory_offset": 1842304,
+    "end": 8168304,
+    "size_with_padding": 63968
+  },
+  {
+    "name": "FULL_ITM.SPC",
+    "rom_offset": 8168304,
+    "directory_offset": 1842320,
+    "end": 8169312,
+    "size_with_padding": 1008
+  },
+  {
+    "name": "GA08.TCG",
+    "rom_offset": 8169312,
+    "directory_offset": 1842336,
+    "end": 8179136,
+    "size_with_padding": 9824
+  },
+  {
+    "name": "GA08.TCL",
+    "rom_offset": 8179136,
+    "directory_offset": 1842352,
+    "end": 8179232,
+    "size_with_padding": 96
+  },
+  {
+    "name": "GA08_00.TSC",
+    "rom_offset": 8179232,
+    "directory_offset": 1842368,
+    "end": 8183328,
+    "size_with_padding": 4096
+  },
+  {
+    "name": "GA08_01.TSC",
+    "rom_offset": 8183328,
+    "directory_offset": 1842384,
+    "end": 8187424,
+    "size_with_padding": 4096
+  },
+  {
+    "name": "GA08_02.TSC",
+    "rom_offset": 8187424,
+    "directory_offset": 1842400,
+    "end": 8191520,
+    "size_with_padding": 4096
+  },
+  {
+    "name": "GA08_03.TSC",
+    "rom_offset": 8191520,
+    "directory_offset": 1842416,
+    "end": 8195616,
+    "size_with_padding": 4096
+  },
+  {
+    "name": "GA08_10.TSC",
+    "rom_offset": 8195616,
+    "directory_offset": 1842432,
+    "end": 8199712,
+    "size_with_padding": 4096
+  },
+  {
+    "name": "GA08_11.TSC",
+    "rom_offset": 8199712,
+    "directory_offset": 1842448,
+    "end": 8203808,
+    "size_with_padding": 4096
+  },
+  {
+    "name": "GA08_12.TSC",
+    "rom_offset": 8203808,
+    "directory_offset": 1842464,
+    "end": 8207904,
+    "size_with_padding": 4096
+  },
+  {
+    "name": "GA08_13.TSC",
+    "rom_offset": 8207904,
+    "directory_offset": 1842480,
+    "end": 8212000,
+    "size_with_padding": 4096
+  },
+  {
+    "name": "GA13.TCG",
+    "rom_offset": 8212000,
+    "directory_offset": 1842496,
+    "end": 8216864,
+    "size_with_padding": 4864
+  },
+  {
+    "name": "GA13.TCL",
+    "rom_offset": 8216864,
+    "directory_offset": 1842512,
+    "end": 8216960,
+    "size_with_padding": 96
+  },
+  {
+    "name": "GA13_00.TSC",
+    "rom_offset": 8216960,
+    "directory_offset": 1842528,
+    "end": 8219008,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA13_01.TSC",
+    "rom_offset": 8219008,
+    "directory_offset": 1842544,
+    "end": 8221056,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA13_02.TSC",
+    "rom_offset": 8221056,
+    "directory_offset": 1842560,
+    "end": 8223104,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA13_03.TSC",
+    "rom_offset": 8223104,
+    "directory_offset": 1842576,
+    "end": 8225152,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA13_04.TSC",
+    "rom_offset": 8225152,
+    "directory_offset": 1842592,
+    "end": 8227200,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA13_05.TSC",
+    "rom_offset": 8227200,
+    "directory_offset": 1842608,
+    "end": 8229248,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA13_06.TSC",
+    "rom_offset": 8229248,
+    "directory_offset": 1842624,
+    "end": 8231296,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA13_10.TSC",
+    "rom_offset": 8231296,
+    "directory_offset": 1842640,
+    "end": 8233344,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA13_11.TSC",
+    "rom_offset": 8233344,
+    "directory_offset": 1842656,
+    "end": 8235392,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA24.TCG",
+    "rom_offset": 8235392,
+    "directory_offset": 1842672,
+    "end": 8243072,
+    "size_with_padding": 7680
+  },
+  {
+    "name": "GA24.TCL",
+    "rom_offset": 8243072,
+    "directory_offset": 1842688,
+    "end": 8243168,
+    "size_with_padding": 96
+  },
+  {
+    "name": "GA24_00.TSC",
+    "rom_offset": 8243168,
+    "directory_offset": 1842704,
+    "end": 8245216,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA24_01.TSC",
+    "rom_offset": 8245216,
+    "directory_offset": 1842720,
+    "end": 8247264,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA24_02.TSC",
+    "rom_offset": 8247264,
+    "directory_offset": 1842736,
+    "end": 8249312,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA24_03.TSC",
+    "rom_offset": 8249312,
+    "directory_offset": 1842752,
+    "end": 8251360,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA24_10.TSC",
+    "rom_offset": 8251360,
+    "directory_offset": 1842768,
+    "end": 8253408,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA24_11.TSC",
+    "rom_offset": 8253408,
+    "directory_offset": 1842784,
+    "end": 8255456,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA24_12.TSC",
+    "rom_offset": 8255456,
+    "directory_offset": 1842800,
+    "end": 8257504,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA24_13.TSC",
+    "rom_offset": 8257504,
+    "directory_offset": 1842816,
+    "end": 8259552,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA25.TCG",
+    "rom_offset": 8259552,
+    "directory_offset": 1842832,
+    "end": 8267808,
+    "size_with_padding": 8256
+  },
+  {
+    "name": "GA25.TCL",
+    "rom_offset": 8267808,
+    "directory_offset": 1842848,
+    "end": 8267904,
+    "size_with_padding": 96
+  },
+  {
+    "name": "GA25_00.TSC",
+    "rom_offset": 8267904,
+    "directory_offset": 1842864,
+    "end": 8269952,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA25_01.TSC",
+    "rom_offset": 8269952,
+    "directory_offset": 1842880,
+    "end": 8272000,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA25_02.TSC",
+    "rom_offset": 8272000,
+    "directory_offset": 1842896,
+    "end": 8274048,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA25_03.TSC",
+    "rom_offset": 8274048,
+    "directory_offset": 1842912,
+    "end": 8276096,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA25_10.TSC",
+    "rom_offset": 8276096,
+    "directory_offset": 1842928,
+    "end": 8278144,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA25_11.TSC",
+    "rom_offset": 8278144,
+    "directory_offset": 1842944,
+    "end": 8280192,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA25_12.TSC",
+    "rom_offset": 8280192,
+    "directory_offset": 1842960,
+    "end": 8282240,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA25_13.TSC",
+    "rom_offset": 8282240,
+    "directory_offset": 1842976,
+    "end": 8284288,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA26.TCG",
+    "rom_offset": 8284288,
+    "directory_offset": 1842992,
+    "end": 8287936,
+    "size_with_padding": 3648
+  },
+  {
+    "name": "GA26.TCL",
+    "rom_offset": 8287936,
+    "directory_offset": 1843008,
+    "end": 8288032,
+    "size_with_padding": 96
+  },
+  {
+    "name": "GA26_00.TSC",
+    "rom_offset": 8288032,
+    "directory_offset": 1843024,
+    "end": 8290080,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA26_01.TSC",
+    "rom_offset": 8290080,
+    "directory_offset": 1843040,
+    "end": 8292128,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA26_10.TSC",
+    "rom_offset": 8292128,
+    "directory_offset": 1843056,
+    "end": 8294176,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA26_11.TSC",
+    "rom_offset": 8294176,
+    "directory_offset": 1843072,
+    "end": 8296224,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA60.TCG",
+    "rom_offset": 8296224,
+    "directory_offset": 1843088,
+    "end": 8302272,
+    "size_with_padding": 6048
+  },
+  {
+    "name": "GA60.TCL",
+    "rom_offset": 8302272,
+    "directory_offset": 1843104,
+    "end": 8302368,
+    "size_with_padding": 96
+  },
+  {
+    "name": "GA60_00.TSC",
+    "rom_offset": 8302368,
+    "directory_offset": 1843120,
+    "end": 8304416,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA60_01.TSC",
+    "rom_offset": 8304416,
+    "directory_offset": 1843136,
+    "end": 8306464,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA60_02.TSC",
+    "rom_offset": 8306464,
+    "directory_offset": 1843152,
+    "end": 8308512,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA60_03.TSC",
+    "rom_offset": 8308512,
+    "directory_offset": 1843168,
+    "end": 8310560,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA60_04.TSC",
+    "rom_offset": 8310560,
+    "directory_offset": 1843184,
+    "end": 8312608,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA60_05.TSC",
+    "rom_offset": 8312608,
+    "directory_offset": 1843200,
+    "end": 8314656,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA60_06.TSC",
+    "rom_offset": 8314656,
+    "directory_offset": 1843216,
+    "end": 8316704,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA60_10.TSC",
+    "rom_offset": 8316704,
+    "directory_offset": 1843232,
+    "end": 8318752,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA60_11.TSC",
+    "rom_offset": 8318752,
+    "directory_offset": 1843248,
+    "end": 8320800,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA60_12.TSC",
+    "rom_offset": 8320800,
+    "directory_offset": 1843264,
+    "end": 8322848,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA60_13.TSC",
+    "rom_offset": 8322848,
+    "directory_offset": 1843280,
+    "end": 8324896,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA60_14.TSC",
+    "rom_offset": 8324896,
+    "directory_offset": 1843296,
+    "end": 8326944,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA60_15.TSC",
+    "rom_offset": 8326944,
+    "directory_offset": 1843312,
+    "end": 8328992,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA60_16.TSC",
+    "rom_offset": 8328992,
+    "directory_offset": 1843328,
+    "end": 8331040,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "GA_BG01.KCG",
+    "rom_offset": 8331040,
+    "directory_offset": 1843344,
+    "end": 8338224,
+    "size_with_padding": 7184
+  },
+  {
+    "name": "GA_BG01.KCL",
+    "rom_offset": 8338224,
+    "directory_offset": 1843360,
+    "end": 8338256,
+    "size_with_padding": 32
+  },
+  {
+    "name": "GA_BG01.KMP",
+    "rom_offset": 8338256,
+    "directory_offset": 1843376,
+    "end": 8340496,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "GMAP27_A.SPC",
+    "rom_offset": 8340496,
+    "directory_offset": 1843392,
+    "end": 8340736,
+    "size_with_padding": 240
+  },
+  {
+    "name": "G_EV001.SPC",
+    "rom_offset": 8340736,
+    "directory_offset": 1843408,
+    "end": 8342048,
+    "size_with_padding": 1312
+  },
+  {
+    "name": "G_EV002.SPC",
+    "rom_offset": 8342048,
+    "directory_offset": 1843424,
+    "end": 8343040,
+    "size_with_padding": 992
+  },
+  {
+    "name": "G_EV003.SPC",
+    "rom_offset": 8343040,
+    "directory_offset": 1843440,
+    "end": 8347424,
+    "size_with_padding": 4384
+  },
+  {
+    "name": "G_EV004.SPC",
+    "rom_offset": 8347424,
+    "directory_offset": 1843456,
+    "end": 8347856,
+    "size_with_padding": 432
+  },
+  {
+    "name": "G_EV005.SPC",
+    "rom_offset": 8347856,
+    "directory_offset": 1843472,
+    "end": 8351264,
+    "size_with_padding": 3408
+  },
+  {
+    "name": "G_EV006.SPC",
+    "rom_offset": 8351264,
+    "directory_offset": 1843488,
+    "end": 8354208,
+    "size_with_padding": 2944
+  },
+  {
+    "name": "G_EV007.SPC",
+    "rom_offset": 8354208,
+    "directory_offset": 1843504,
+    "end": 8356400,
+    "size_with_padding": 2192
+  },
+  {
+    "name": "G_EV010.SPC",
+    "rom_offset": 8356400,
+    "directory_offset": 1843520,
+    "end": 8357344,
+    "size_with_padding": 944
+  },
+  {
+    "name": "G_EV011.SPC",
+    "rom_offset": 8357344,
+    "directory_offset": 1843536,
+    "end": 8361776,
+    "size_with_padding": 4432
+  },
+  {
+    "name": "G_EV011B.SPC",
+    "rom_offset": 8361776,
+    "directory_offset": 1843552,
+    "end": 8363616,
+    "size_with_padding": 1840
+  },
+  {
+    "name": "G_EV011C.SPC",
+    "rom_offset": 8363616,
+    "directory_offset": 1843568,
+    "end": 8366480,
+    "size_with_padding": 2864
+  },
+  {
+    "name": "G_EV012.SPC",
+    "rom_offset": 8366480,
+    "directory_offset": 1843584,
+    "end": 8368192,
+    "size_with_padding": 1712
+  },
+  {
+    "name": "G_EV013.SPC",
+    "rom_offset": 8368192,
+    "directory_offset": 1843600,
+    "end": 8369744,
+    "size_with_padding": 1552
+  },
+  {
+    "name": "G_EV020.SPC",
+    "rom_offset": 8369744,
+    "directory_offset": 1843616,
+    "end": 8374528,
+    "size_with_padding": 4784
+  },
+  {
+    "name": "G_EV020B.SPC",
+    "rom_offset": 8374528,
+    "directory_offset": 1843632,
+    "end": 8379136,
+    "size_with_padding": 4608
+  },
+  {
+    "name": "G_EV020C.SPC",
+    "rom_offset": 8379136,
+    "directory_offset": 1843648,
+    "end": 8381616,
+    "size_with_padding": 2480
+  },
+  {
+    "name": "G_EV021.SPC",
+    "rom_offset": 8381616,
+    "directory_offset": 1843664,
+    "end": 8385600,
+    "size_with_padding": 3984
+  },
+  {
+    "name": "G_EV022.SPC",
+    "rom_offset": 8385600,
+    "directory_offset": 1843680,
+    "end": 8385648,
+    "size_with_padding": 48
+  },
+  {
+    "name": "G_EV023.SPC",
+    "rom_offset": 8385648,
+    "directory_offset": 1843696,
+    "end": 8390288,
+    "size_with_padding": 4640
+  },
+  {
+    "name": "G_EV023B.SPC",
+    "rom_offset": 8390288,
+    "directory_offset": 1843712,
+    "end": 8390768,
+    "size_with_padding": 480
+  },
+  {
+    "name": "G_EV023C.SPC",
+    "rom_offset": 8390768,
+    "directory_offset": 1843728,
+    "end": 8393120,
+    "size_with_padding": 2352
+  },
+  {
+    "name": "G_EV024.SPC",
+    "rom_offset": 8393120,
+    "directory_offset": 1843744,
+    "end": 8396928,
+    "size_with_padding": 3808
+  },
+  {
+    "name": "G_EV025.SPC",
+    "rom_offset": 8396928,
+    "directory_offset": 1843760,
+    "end": 8399600,
+    "size_with_padding": 2672
+  },
+  {
+    "name": "G_EV025B.SPC",
+    "rom_offset": 8399600,
+    "directory_offset": 1843776,
+    "end": 8404480,
+    "size_with_padding": 4880
+  },
+  {
+    "name": "G_EV030.SPC",
+    "rom_offset": 8404480,
+    "directory_offset": 1843792,
+    "end": 8407616,
+    "size_with_padding": 3136
+  },
+  {
+    "name": "G_EV031.SPC",
+    "rom_offset": 8407616,
+    "directory_offset": 1843808,
+    "end": 8409536,
+    "size_with_padding": 1920
+  },
+  {
+    "name": "G_EV032.SPC",
+    "rom_offset": 8409536,
+    "directory_offset": 1843824,
+    "end": 8409584,
+    "size_with_padding": 48
+  },
+  {
+    "name": "G_EV040.SPC",
+    "rom_offset": 8409584,
+    "directory_offset": 1843840,
+    "end": 8411504,
+    "size_with_padding": 1920
+  },
+  {
+    "name": "G_EV041.SPC",
+    "rom_offset": 8411504,
+    "directory_offset": 1843856,
+    "end": 8413424,
+    "size_with_padding": 1920
+  },
+  {
+    "name": "G_EV042.SPC",
+    "rom_offset": 8413424,
+    "directory_offset": 1843872,
+    "end": 8415648,
+    "size_with_padding": 2224
+  },
+  {
+    "name": "G_EV043.SPC",
+    "rom_offset": 8415648,
+    "directory_offset": 1843888,
+    "end": 8417584,
+    "size_with_padding": 1936
+  },
+  {
+    "name": "G_EV044.SPC",
+    "rom_offset": 8417584,
+    "directory_offset": 1843904,
+    "end": 8419200,
+    "size_with_padding": 1616
+  },
+  {
+    "name": "G_EV050.SPC",
+    "rom_offset": 8419200,
+    "directory_offset": 1843920,
+    "end": 8423616,
+    "size_with_padding": 4416
+  },
+  {
+    "name": "G_EV051.SPC",
+    "rom_offset": 8423616,
+    "directory_offset": 1843936,
+    "end": 8426976,
+    "size_with_padding": 3360
+  },
+  {
+    "name": "G_EV052.SPC",
+    "rom_offset": 8426976,
+    "directory_offset": 1843952,
+    "end": 8427904,
+    "size_with_padding": 928
+  },
+  {
+    "name": "G_EV060.SPC",
+    "rom_offset": 8427904,
+    "directory_offset": 1843968,
+    "end": 8430320,
+    "size_with_padding": 2416
+  },
+  {
+    "name": "G_EV061.SPC",
+    "rom_offset": 8430320,
+    "directory_offset": 1843984,
+    "end": 8434384,
+    "size_with_padding": 4064
+  },
+  {
+    "name": "G_EV062.SPC",
+    "rom_offset": 8434384,
+    "directory_offset": 1844000,
+    "end": 8442224,
+    "size_with_padding": 7840
+  },
+  {
+    "name": "G_EV063.SPC",
+    "rom_offset": 8442224,
+    "directory_offset": 1844016,
+    "end": 8443472,
+    "size_with_padding": 1248
+  },
+  {
+    "name": "G_VS_R.SPC",
+    "rom_offset": 8443472,
+    "directory_offset": 1844032,
+    "end": 8444144,
+    "size_with_padding": 672
+  },
+  {
+    "name": "HI_DUNG.SPC",
+    "rom_offset": 8444144,
+    "directory_offset": 1844048,
+    "end": 8444848,
+    "size_with_padding": 704
+  },
+  {
+    "name": "HI_M00.SPC",
+    "rom_offset": 8444848,
+    "directory_offset": 1844064,
+    "end": 8446416,
+    "size_with_padding": 1568
+  },
+  {
+    "name": "HI_M01_1.SPC",
+    "rom_offset": 8446416,
+    "directory_offset": 1844080,
+    "end": 8447024,
+    "size_with_padding": 608
+  },
+  {
+    "name": "HI_M01_2.SPC",
+    "rom_offset": 8447024,
+    "directory_offset": 1844096,
+    "end": 8447808,
+    "size_with_padding": 784
+  },
+  {
+    "name": "HI_M04.SPC",
+    "rom_offset": 8447808,
+    "directory_offset": 1844112,
+    "end": 8448368,
+    "size_with_padding": 560
+  },
+  {
+    "name": "HI_M07.SPC",
+    "rom_offset": 8448368,
+    "directory_offset": 1844128,
+    "end": 8450576,
+    "size_with_padding": 2208
+  },
+  {
+    "name": "HI_M07_2.SPC",
+    "rom_offset": 8450576,
+    "directory_offset": 1844144,
+    "end": 8450720,
+    "size_with_padding": 144
+  },
+  {
+    "name": "HI_M09.SPC",
+    "rom_offset": 8450720,
+    "directory_offset": 1844160,
+    "end": 8451312,
+    "size_with_padding": 592
+  },
+  {
+    "name": "HI_M11.SPC",
+    "rom_offset": 8451312,
+    "directory_offset": 1844176,
+    "end": 8452784,
+    "size_with_padding": 1472
+  },
+  {
+    "name": "HI_M24.SPC",
+    "rom_offset": 8452784,
+    "directory_offset": 1844192,
+    "end": 8458048,
+    "size_with_padding": 5264
+  },
+  {
+    "name": "HI_M24_1.SPC",
+    "rom_offset": 8458048,
+    "directory_offset": 1844208,
+    "end": 8460432,
+    "size_with_padding": 2384
+  },
+  {
+    "name": "HI_M24_2.SPC",
+    "rom_offset": 8460432,
+    "directory_offset": 1844224,
+    "end": 8464528,
+    "size_with_padding": 4096
+  },
+  {
+    "name": "HI_M24_4.SPC",
+    "rom_offset": 8464528,
+    "directory_offset": 1844240,
+    "end": 8469104,
+    "size_with_padding": 4576
+  },
+  {
+    "name": "HI_M25_1.SPC",
+    "rom_offset": 8469104,
+    "directory_offset": 1844256,
+    "end": 8470112,
+    "size_with_padding": 1008
+  },
+  {
+    "name": "HI_M25_2.SPC",
+    "rom_offset": 8470112,
+    "directory_offset": 1844272,
+    "end": 8471600,
+    "size_with_padding": 1488
+  },
+  {
+    "name": "HI_M26_2.SPC",
+    "rom_offset": 8471600,
+    "directory_offset": 1844288,
+    "end": 8472352,
+    "size_with_padding": 752
+  },
+  {
+    "name": "HI_M42.SPC",
+    "rom_offset": 8472352,
+    "directory_offset": 1844304,
+    "end": 8472512,
+    "size_with_padding": 160
+  },
+  {
+    "name": "HI_NORM.SPC",
+    "rom_offset": 8472512,
+    "directory_offset": 1844320,
+    "end": 8473392,
+    "size_with_padding": 880
+  },
+  {
+    "name": "IT_BG01.KCG",
+    "rom_offset": 8473392,
+    "directory_offset": 1844336,
+    "end": 8479216,
+    "size_with_padding": 5824
+  },
+  {
+    "name": "IT_BG01.KCL",
+    "rom_offset": 8479216,
+    "directory_offset": 1844352,
+    "end": 8479248,
+    "size_with_padding": 32
+  },
+  {
+    "name": "IT_BG01.KMP",
+    "rom_offset": 8479248,
+    "directory_offset": 1844368,
+    "end": 8481488,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "IT_BG02.KCG",
+    "rom_offset": 8481488,
+    "directory_offset": 1844384,
+    "end": 8485776,
+    "size_with_padding": 4288
+  },
+  {
+    "name": "IT_BG02.KCL",
+    "rom_offset": 8485776,
+    "directory_offset": 1844400,
+    "end": 8485808,
+    "size_with_padding": 32
+  },
+  {
+    "name": "IT_BG02.KMP",
+    "rom_offset": 8485808,
+    "directory_offset": 1844416,
+    "end": 8488048,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "JA05.TCG",
+    "rom_offset": 8488048,
+    "directory_offset": 1844432,
+    "end": 8494112,
+    "size_with_padding": 6064
+  },
+  {
+    "name": "JA05.TCL",
+    "rom_offset": 8494112,
+    "directory_offset": 1844448,
+    "end": 8494208,
+    "size_with_padding": 96
+  },
+  {
+    "name": "JA05_A.TSC",
+    "rom_offset": 8494208,
+    "directory_offset": 1844464,
+    "end": 8496256,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "JA05_B.TSC",
+    "rom_offset": 8496256,
+    "directory_offset": 1844480,
+    "end": 8498304,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "JA05_C.TSC",
+    "rom_offset": 8498304,
+    "directory_offset": 1844496,
+    "end": 8500352,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "JA05_D.TSC",
+    "rom_offset": 8500352,
+    "directory_offset": 1844512,
+    "end": 8502400,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "J_HOLE.SPC",
+    "rom_offset": 8502400,
+    "directory_offset": 1844528,
+    "end": 8504016,
+    "size_with_padding": 1616
+  },
+  {
+    "name": "J_VS_M.SPC",
+    "rom_offset": 8504016,
+    "directory_offset": 1844544,
+    "end": 8504784,
+    "size_with_padding": 768
+  },
+  {
+    "name": "L11_0_0.SPC",
+    "rom_offset": 8504784,
+    "directory_offset": 1844560,
+    "end": 8507632,
+    "size_with_padding": 2848
+  },
+  {
+    "name": "L11_0_2.SPC",
+    "rom_offset": 8507632,
+    "directory_offset": 1844576,
+    "end": 8510304,
+    "size_with_padding": 2672
+  },
+  {
+    "name": "L11_0_3.SPC",
+    "rom_offset": 8510304,
+    "directory_offset": 1844592,
+    "end": 8511472,
+    "size_with_padding": 1168
+  },
+  {
+    "name": "L24_0_0.SPC",
+    "rom_offset": 8511472,
+    "directory_offset": 1844608,
+    "end": 8515200,
+    "size_with_padding": 3728
+  },
+  {
+    "name": "L24_1_0.SPC",
+    "rom_offset": 8515200,
+    "directory_offset": 1844624,
+    "end": 8515616,
+    "size_with_padding": 416
+  },
+  {
+    "name": "L25_4_0.SPC",
+    "rom_offset": 8515616,
+    "directory_offset": 1844640,
+    "end": 8517568,
+    "size_with_padding": 1952
+  },
+  {
+    "name": "MAP00_A.KCG",
+    "rom_offset": 8517568,
+    "directory_offset": 1844656,
+    "end": 8538656,
+    "size_with_padding": 21088
+  },
+  {
+    "name": "MAP00_A.KCL",
+    "rom_offset": 8538656,
+    "directory_offset": 1844672,
+    "end": 8538912,
+    "size_with_padding": 256
+  },
+  {
+    "name": "MAP00_A.KMP",
+    "rom_offset": 8538912,
+    "directory_offset": 1844688,
+    "end": 8760288,
+    "size_with_padding": 221376
+  },
+  {
+    "name": "MAP00_A.SPC",
+    "rom_offset": 8760288,
+    "directory_offset": 1844704,
+    "end": 8761120,
+    "size_with_padding": 832
+  },
+  {
+    "name": "MAP01_1A.KCG",
+    "rom_offset": 8761120,
+    "directory_offset": 1844720,
+    "end": 8784864,
+    "size_with_padding": 23744
+  },
+  {
+    "name": "MAP01_1A.KCL",
+    "rom_offset": 8784864,
+    "directory_offset": 1844736,
+    "end": 8785184,
+    "size_with_padding": 320
+  },
+  {
+    "name": "MAP01_1A.KMP",
+    "rom_offset": 8785184,
+    "directory_offset": 1844752,
+    "end": 8808416,
+    "size_with_padding": 23232
+  },
+  {
+    "name": "MAP01_1A.SPC",
+    "rom_offset": 8808416,
+    "directory_offset": 1844768,
+    "end": 8809008,
+    "size_with_padding": 592
+  },
+  {
+    "name": "MAP01_2A.KCG",
+    "rom_offset": 8809008,
+    "directory_offset": 1844784,
+    "end": 8831424,
+    "size_with_padding": 22416
+  },
+  {
+    "name": "MAP01_2A.KCL",
+    "rom_offset": 8831424,
+    "directory_offset": 1844800,
+    "end": 8831744,
+    "size_with_padding": 320
+  },
+  {
+    "name": "MAP01_2A.KMP",
+    "rom_offset": 8831744,
+    "directory_offset": 1844816,
+    "end": 8844224,
+    "size_with_padding": 12480
+  },
+  {
+    "name": "MAP01_2A.SPC",
+    "rom_offset": 8844224,
+    "directory_offset": 1844832,
+    "end": 8844480,
+    "size_with_padding": 256
+  },
+  {
+    "name": "MAP01_3A.KCG",
+    "rom_offset": 8844480,
+    "directory_offset": 1844848,
+    "end": 8870608,
+    "size_with_padding": 26128
+  },
+  {
+    "name": "MAP01_3A.KCL",
+    "rom_offset": 8870608,
+    "directory_offset": 1844864,
+    "end": 8870928,
+    "size_with_padding": 320
+  },
+  {
+    "name": "MAP01_3A.KMP",
+    "rom_offset": 8870928,
+    "directory_offset": 1844880,
+    "end": 8914128,
+    "size_with_padding": 43200
+  },
+  {
+    "name": "MAP01_3A.SPC",
+    "rom_offset": 8914128,
+    "directory_offset": 1844896,
+    "end": 8914880,
+    "size_with_padding": 752
+  },
+  {
+    "name": "MAP01_4A.KMP",
+    "rom_offset": 8914880,
+    "directory_offset": 1844912,
+    "end": 8939648,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "MAP01_4A.SPC",
+    "rom_offset": 8939648,
+    "directory_offset": 1844928,
+    "end": 8940080,
+    "size_with_padding": 432
+  },
+  {
+    "name": "MAP01_5A.KMP",
+    "rom_offset": 8940080,
+    "directory_offset": 1844944,
+    "end": 8964848,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "MAP01_5A.SPC",
+    "rom_offset": 8964848,
+    "directory_offset": 1844960,
+    "end": 8965408,
+    "size_with_padding": 560
+  },
+  {
+    "name": "MAP01_6A.KMP",
+    "rom_offset": 8965408,
+    "directory_offset": 1844976,
+    "end": 8987200,
+    "size_with_padding": 21792
+  },
+  {
+    "name": "MAP01_A.KCG",
+    "rom_offset": 8987200,
+    "directory_offset": 1844992,
+    "end": 9013760,
+    "size_with_padding": 26560
+  },
+  {
+    "name": "MAP01_A.KCL",
+    "rom_offset": 9013760,
+    "directory_offset": 1845008,
+    "end": 9014048,
+    "size_with_padding": 288
+  },
+  {
+    "name": "MAP01_A.KMP",
+    "rom_offset": 9014048,
+    "directory_offset": 1845024,
+    "end": 9038816,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "MAP01_A.SPC",
+    "rom_offset": 9038816,
+    "directory_offset": 1845040,
+    "end": 9039328,
+    "size_with_padding": 512
+  },
+  {
+    "name": "MAP03_A.KCG",
+    "rom_offset": 9039328,
+    "directory_offset": 1845056,
+    "end": 9063120,
+    "size_with_padding": 23792
+  },
+  {
+    "name": "MAP03_A.KCL",
+    "rom_offset": 9063120,
+    "directory_offset": 1845072,
+    "end": 9063440,
+    "size_with_padding": 320
+  },
+  {
+    "name": "MAP03_A.KMP",
+    "rom_offset": 9063440,
+    "directory_offset": 1845088,
+    "end": 9088208,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "MAP03_A.SPC",
+    "rom_offset": 9088208,
+    "directory_offset": 1845104,
+    "end": 9088560,
+    "size_with_padding": 352
+  },
+  {
+    "name": "MAP04_4A.KMP",
+    "rom_offset": 9088560,
+    "directory_offset": 1845120,
+    "end": 9229104,
+    "size_with_padding": 140544
+  },
+  {
+    "name": "MAP04_4A.SPC",
+    "rom_offset": 9229104,
+    "directory_offset": 1845136,
+    "end": 9229600,
+    "size_with_padding": 496
+  },
+  {
+    "name": "MAP04_5A.KMP",
+    "rom_offset": 9229600,
+    "directory_offset": 1845152,
+    "end": 9262240,
+    "size_with_padding": 32640
+  },
+  {
+    "name": "MAP04_5A.SPC",
+    "rom_offset": 9262240,
+    "directory_offset": 1845168,
+    "end": 9262832,
+    "size_with_padding": 592
+  },
+  {
+    "name": "MAP04_6A.KCG",
+    "rom_offset": 9262832,
+    "directory_offset": 1845184,
+    "end": 9289040,
+    "size_with_padding": 26208
+  },
+  {
+    "name": "MAP04_6A.KCL",
+    "rom_offset": 9289040,
+    "directory_offset": 1845200,
+    "end": 9289360,
+    "size_with_padding": 320
+  },
+  {
+    "name": "MAP04_6A.KMP",
+    "rom_offset": 9289360,
+    "directory_offset": 1845216,
+    "end": 9314128,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "MAP04_6A.SPC",
+    "rom_offset": 9314128,
+    "directory_offset": 1845232,
+    "end": 9314416,
+    "size_with_padding": 288
+  },
+  {
+    "name": "MAP04_7A.KCG",
+    "rom_offset": 9314416,
+    "directory_offset": 1845248,
+    "end": 9331328,
+    "size_with_padding": 16912
+  },
+  {
+    "name": "MAP04_7A.KCL",
+    "rom_offset": 9331328,
+    "directory_offset": 1845264,
+    "end": 9331648,
+    "size_with_padding": 320
+  },
+  {
+    "name": "MAP04_7A.KMP",
+    "rom_offset": 9331648,
+    "directory_offset": 1845280,
+    "end": 9356416,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "MAP04_A.KCG",
+    "rom_offset": 9356416,
+    "directory_offset": 1845296,
+    "end": 9381088,
+    "size_with_padding": 24672
+  },
+  {
+    "name": "MAP04_A.KCL",
+    "rom_offset": 9381088,
+    "directory_offset": 1845312,
+    "end": 9381408,
+    "size_with_padding": 320
+  },
+  {
+    "name": "MAP04_A.KMP",
+    "rom_offset": 9381408,
+    "directory_offset": 1845328,
+    "end": 9676512,
+    "size_with_padding": 295104
+  },
+  {
+    "name": "MAP04_A.SPC",
+    "rom_offset": 9676512,
+    "directory_offset": 1845344,
+    "end": 9677808,
+    "size_with_padding": 1296
+  },
+  {
+    "name": "MAP05_A.KCG",
+    "rom_offset": 9677808,
+    "directory_offset": 1845360,
+    "end": 9697280,
+    "size_with_padding": 19472
+  },
+  {
+    "name": "MAP05_A.KCL",
+    "rom_offset": 9697280,
+    "directory_offset": 1845376,
+    "end": 9697568,
+    "size_with_padding": 288
+  },
+  {
+    "name": "MAP05_A.KMP",
+    "rom_offset": 9697568,
+    "directory_offset": 1845392,
+    "end": 9746912,
+    "size_with_padding": 49344
+  },
+  {
+    "name": "MAP05_A.SPC",
+    "rom_offset": 9746912,
+    "directory_offset": 1845408,
+    "end": 9747792,
+    "size_with_padding": 880
+  },
+  {
+    "name": "MAP06_1A.KCG",
+    "rom_offset": 9747792,
+    "directory_offset": 1845424,
+    "end": 9772432,
+    "size_with_padding": 24640
+  },
+  {
+    "name": "MAP06_1A.KCL",
+    "rom_offset": 9772432,
+    "directory_offset": 1845440,
+    "end": 9772656,
+    "size_with_padding": 224
+  },
+  {
+    "name": "MAP06_1A.KMP",
+    "rom_offset": 9772656,
+    "directory_offset": 1845456,
+    "end": 9812784,
+    "size_with_padding": 40128
+  },
+  {
+    "name": "MAP06_1A.SPC",
+    "rom_offset": 9812784,
+    "directory_offset": 1845472,
+    "end": 9813536,
+    "size_with_padding": 752
+  },
+  {
+    "name": "MAP06_2A.KCG",
+    "rom_offset": 9813536,
+    "directory_offset": 1845488,
+    "end": 9837488,
+    "size_with_padding": 23952
+  },
+  {
+    "name": "MAP06_2A.KCL",
+    "rom_offset": 9837488,
+    "directory_offset": 1845504,
+    "end": 9837776,
+    "size_with_padding": 288
+  },
+  {
+    "name": "MAP06_2A.KMP",
+    "rom_offset": 9837776,
+    "directory_offset": 1845520,
+    "end": 9845648,
+    "size_with_padding": 7872
+  },
+  {
+    "name": "MAP06_2A.SPC",
+    "rom_offset": 9845648,
+    "directory_offset": 1845536,
+    "end": 9846112,
+    "size_with_padding": 464
+  },
+  {
+    "name": "MAP06_A.KCG",
+    "rom_offset": 9846112,
+    "directory_offset": 1845552,
+    "end": 9870752,
+    "size_with_padding": 24640
+  },
+  {
+    "name": "MAP06_A.KCL",
+    "rom_offset": 9870752,
+    "directory_offset": 1845568,
+    "end": 9870976,
+    "size_with_padding": 224
+  },
+  {
+    "name": "MAP06_A.KMP",
+    "rom_offset": 9870976,
+    "directory_offset": 1845584,
+    "end": 9883456,
+    "size_with_padding": 12480
+  },
+  {
+    "name": "MAP06_A.SPC",
+    "rom_offset": 9883456,
+    "directory_offset": 1845600,
+    "end": 9883744,
+    "size_with_padding": 288
+  },
+  {
+    "name": "MAP07_1A.KMP",
+    "rom_offset": 9883744,
+    "directory_offset": 1845616,
+    "end": 9964832,
+    "size_with_padding": 81088
+  },
+  {
+    "name": "MAP07_1A.SPC",
+    "rom_offset": 9964832,
+    "directory_offset": 1845632,
+    "end": 9964992,
+    "size_with_padding": 160
+  },
+  {
+    "name": "MAP07_2A.KCG",
+    "rom_offset": 9964992,
+    "directory_offset": 1845648,
+    "end": 9984512,
+    "size_with_padding": 19520
+  },
+  {
+    "name": "MAP07_2A.KCL",
+    "rom_offset": 9984512,
+    "directory_offset": 1845664,
+    "end": 9984704,
+    "size_with_padding": 192
+  },
+  {
+    "name": "MAP07_2A.KMP",
+    "rom_offset": 9984704,
+    "directory_offset": 1845680,
+    "end": 9996416,
+    "size_with_padding": 11712
+  },
+  {
+    "name": "MAP07_2A.SPC",
+    "rom_offset": 9996416,
+    "directory_offset": 1845696,
+    "end": 9996640,
+    "size_with_padding": 224
+  },
+  {
+    "name": "MAP07_3A.KCG",
+    "rom_offset": 9996640,
+    "directory_offset": 1845712,
+    "end": 10021120,
+    "size_with_padding": 24480
+  },
+  {
+    "name": "MAP07_3A.KCL",
+    "rom_offset": 10021120,
+    "directory_offset": 1845728,
+    "end": 10021408,
+    "size_with_padding": 288
+  },
+  {
+    "name": "MAP07_3A.KMP",
+    "rom_offset": 10021408,
+    "directory_offset": 1845744,
+    "end": 10036896,
+    "size_with_padding": 15488
+  },
+  {
+    "name": "MAP07_3A.SPC",
+    "rom_offset": 10036896,
+    "directory_offset": 1845760,
+    "end": 10037056,
+    "size_with_padding": 160
+  },
+  {
+    "name": "MAP07_A.KCG",
+    "rom_offset": 10037056,
+    "directory_offset": 1845776,
+    "end": 10058512,
+    "size_with_padding": 21456
+  },
+  {
+    "name": "MAP07_A.KCL",
+    "rom_offset": 10058512,
+    "directory_offset": 1845792,
+    "end": 10058640,
+    "size_with_padding": 128
+  },
+  {
+    "name": "MAP07_A.KMP",
+    "rom_offset": 10058640,
+    "directory_offset": 1845808,
+    "end": 10555696,
+    "size_with_padding": 497056
+  },
+  {
+    "name": "MAP07_A.SPC",
+    "rom_offset": 10555696,
+    "directory_offset": 1845824,
+    "end": 10557328,
+    "size_with_padding": 1632
+  },
+  {
+    "name": "MAP08_A.KCG",
+    "rom_offset": 10557328,
+    "directory_offset": 1845840,
+    "end": 10578640,
+    "size_with_padding": 21312
+  },
+  {
+    "name": "MAP08_A.KCL",
+    "rom_offset": 10578640,
+    "directory_offset": 1845856,
+    "end": 10578896,
+    "size_with_padding": 256
+  },
+  {
+    "name": "MAP08_A.KMP",
+    "rom_offset": 10578896,
+    "directory_offset": 1845872,
+    "end": 10603664,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "MAP08_A.SPC",
+    "rom_offset": 10603664,
+    "directory_offset": 1845888,
+    "end": 10604128,
+    "size_with_padding": 464
+  },
+  {
+    "name": "MAP09_A.KCG",
+    "rom_offset": 10604128,
+    "directory_offset": 1845904,
+    "end": 10627648,
+    "size_with_padding": 23520
+  },
+  {
+    "name": "MAP09_A.KCL",
+    "rom_offset": 10627648,
+    "directory_offset": 1845920,
+    "end": 10627968,
+    "size_with_padding": 320
+  },
+  {
+    "name": "MAP09_A.KMP",
+    "rom_offset": 10627968,
+    "directory_offset": 1845936,
+    "end": 10693056,
+    "size_with_padding": 65088
+  },
+  {
+    "name": "MAP09_A.SPC",
+    "rom_offset": 10693056,
+    "directory_offset": 1845952,
+    "end": 10694096,
+    "size_with_padding": 1040
+  },
+  {
+    "name": "MAP10_1A.KCG",
+    "rom_offset": 10694096,
+    "directory_offset": 1845968,
+    "end": 10712800,
+    "size_with_padding": 18704
+  },
+  {
+    "name": "MAP10_1A.KCL",
+    "rom_offset": 10712800,
+    "directory_offset": 1845984,
+    "end": 10713056,
+    "size_with_padding": 256
+  },
+  {
+    "name": "MAP10_1A.KMP",
+    "rom_offset": 10713056,
+    "directory_offset": 1846000,
+    "end": 10724000,
+    "size_with_padding": 10944
+  },
+  {
+    "name": "MAP10_1A.SPC",
+    "rom_offset": 10724000,
+    "directory_offset": 1846016,
+    "end": 10724480,
+    "size_with_padding": 480
+  },
+  {
+    "name": "MAP10_A.KCG",
+    "rom_offset": 10724480,
+    "directory_offset": 1846032,
+    "end": 10748704,
+    "size_with_padding": 24224
+  },
+  {
+    "name": "MAP10_A.KCL",
+    "rom_offset": 10748704,
+    "directory_offset": 1846048,
+    "end": 10749024,
+    "size_with_padding": 320
+  },
+  {
+    "name": "MAP10_A.KMP",
+    "rom_offset": 10749024,
+    "directory_offset": 1846064,
+    "end": 10776864,
+    "size_with_padding": 27840
+  },
+  {
+    "name": "MAP10_A.SPC",
+    "rom_offset": 10776864,
+    "directory_offset": 1846080,
+    "end": 10777536,
+    "size_with_padding": 672
+  },
+  {
+    "name": "MAP11_1A.KCG",
+    "rom_offset": 10777536,
+    "directory_offset": 1846096,
+    "end": 10800304,
+    "size_with_padding": 22768
+  },
+  {
+    "name": "MAP11_1A.KCL",
+    "rom_offset": 10800304,
+    "directory_offset": 1846112,
+    "end": 10800592,
+    "size_with_padding": 288
+  },
+  {
+    "name": "MAP11_1A.KMP",
+    "rom_offset": 10800592,
+    "directory_offset": 1846128,
+    "end": 10825360,
+    "size_with_padding": 24768
+  },
+  {
+    "name": "MAP11_1A.SPC",
+    "rom_offset": 10825360,
+    "directory_offset": 1846144,
+    "end": 10826144,
+    "size_with_padding": 784
+  },
+  {
+    "name": "MAP11_2.SPC",
+    "rom_offset": 10826144,
+    "directory_offset": 1846160,
+    "end": 10826384,
+    "size_with_padding": 240
+  },
+  {
+    "name": "MAP11_2A.KCG",
+    "rom_offset": 10826384,
+    "directory_offset": 1846176,
+    "end": 10849616,
+    "size_with_padding": 23232
+  },
+  {
+    "name": "MAP11_2A.KCL",
+    "rom_offset": 10849616,
+    "directory_offset": 1846192,
+    "end": 10849808,
+    "size_with_padding": 192
+  },
+  {
+    "name": "MAP11_2A.KMP",
+    "rom_offset": 10849808,
+    "directory_offset": 1846208,
+    "end": 10868432,
+    "size_with_padding": 18624
+  },
+  {
+    "name": "MAP11_2G.SPC",
+    "rom_offset": 10868432,
+    "directory_offset": 1846224,
+    "end": 10868672,
+    "size_with_padding": 240
+  },
+  {
+    "name": "MAP11_A.KCG",
+    "rom_offset": 10868672,
+    "directory_offset": 1846240,
+    "end": 10891824,
+    "size_with_padding": 23152
+  },
+  {
+    "name": "MAP11_A.KCL",
+    "rom_offset": 10891824,
+    "directory_offset": 1846256,
+    "end": 10892144,
+    "size_with_padding": 320
+  },
+  {
+    "name": "MAP11_A.KMP",
+    "rom_offset": 10892144,
+    "directory_offset": 1846272,
+    "end": 10941488,
+    "size_with_padding": 49344
+  },
+  {
+    "name": "MAP11_A.SPC",
+    "rom_offset": 10941488,
+    "directory_offset": 1846288,
+    "end": 10942512,
+    "size_with_padding": 1024
+  },
+  {
+    "name": "MAP24_1A.KCG",
+    "rom_offset": 10942512,
+    "directory_offset": 1846304,
+    "end": 10961792,
+    "size_with_padding": 19280
+  },
+  {
+    "name": "MAP24_1A.KCL",
+    "rom_offset": 10961792,
+    "directory_offset": 1846320,
+    "end": 10962016,
+    "size_with_padding": 224
+  },
+  {
+    "name": "MAP24_1A.KMP",
+    "rom_offset": 10962016,
+    "directory_offset": 1846336,
+    "end": 11105056,
+    "size_with_padding": 143040
+  },
+  {
+    "name": "MAP24_1A.SPC",
+    "rom_offset": 11105056,
+    "directory_offset": 1846352,
+    "end": 11106128,
+    "size_with_padding": 1072
+  },
+  {
+    "name": "MAP24_2A.KMP",
+    "rom_offset": 11106128,
+    "directory_offset": 1846368,
+    "end": 11284496,
+    "size_with_padding": 178368
+  },
+  {
+    "name": "MAP24_2A.SPC",
+    "rom_offset": 11284496,
+    "directory_offset": 1846384,
+    "end": 11285392,
+    "size_with_padding": 896
+  },
+  {
+    "name": "MAP24_4A.KCG",
+    "rom_offset": 11285392,
+    "directory_offset": 1846400,
+    "end": 11307152,
+    "size_with_padding": 21760
+  },
+  {
+    "name": "MAP24_4A.KCL",
+    "rom_offset": 11307152,
+    "directory_offset": 1846416,
+    "end": 11307472,
+    "size_with_padding": 320
+  },
+  {
+    "name": "MAP24_4A.KMP",
+    "rom_offset": 11307472,
+    "directory_offset": 1846432,
+    "end": 11445904,
+    "size_with_padding": 138432
+  },
+  {
+    "name": "MAP24_4A.SPC",
+    "rom_offset": 11445904,
+    "directory_offset": 1846448,
+    "end": 11446736,
+    "size_with_padding": 832
+  },
+  {
+    "name": "MAP24_A.KCG",
+    "rom_offset": 11446736,
+    "directory_offset": 1846464,
+    "end": 11470272,
+    "size_with_padding": 23536
+  },
+  {
+    "name": "MAP24_A.KCL",
+    "rom_offset": 11470272,
+    "directory_offset": 1846480,
+    "end": 11470592,
+    "size_with_padding": 320
+  },
+  {
+    "name": "MAP24_A.KMP",
+    "rom_offset": 11470592,
+    "directory_offset": 1846496,
+    "end": 11483072,
+    "size_with_padding": 12480
+  },
+  {
+    "name": "MAP24_A.SPC",
+    "rom_offset": 11483072,
+    "directory_offset": 1846512,
+    "end": 11483744,
+    "size_with_padding": 672
+  },
+  {
+    "name": "MAP25_1A.KCG",
+    "rom_offset": 11483744,
+    "directory_offset": 1846528,
+    "end": 11508848,
+    "size_with_padding": 25104
+  },
+  {
+    "name": "MAP25_1A.KCL",
+    "rom_offset": 11508848,
+    "directory_offset": 1846544,
+    "end": 11509168,
+    "size_with_padding": 320
+  },
+  {
+    "name": "MAP25_1A.KMP",
+    "rom_offset": 11509168,
+    "directory_offset": 1846560,
+    "end": 11659888,
+    "size_with_padding": 150720
+  },
+  {
+    "name": "MAP25_1A.SPC",
+    "rom_offset": 11659888,
+    "directory_offset": 1846576,
+    "end": 11660368,
+    "size_with_padding": 480
+  },
+  {
+    "name": "MAP25_2A.KMP",
+    "rom_offset": 11660368,
+    "directory_offset": 1846592,
+    "end": 11857168,
+    "size_with_padding": 196800
+  },
+  {
+    "name": "MAP25_2A.SPC",
+    "rom_offset": 11857168,
+    "directory_offset": 1846608,
+    "end": 11858464,
+    "size_with_padding": 1296
+  },
+  {
+    "name": "MAP25_4A.KMP",
+    "rom_offset": 11858464,
+    "directory_offset": 1846624,
+    "end": 12350176,
+    "size_with_padding": 491712
+  },
+  {
+    "name": "MAP25_4A.SPC",
+    "rom_offset": 12350176,
+    "directory_offset": 1846640,
+    "end": 12351360,
+    "size_with_padding": 1184
+  },
+  {
+    "name": "MAP25_5A.KCG",
+    "rom_offset": 12351360,
+    "directory_offset": 1846656,
+    "end": 12375328,
+    "size_with_padding": 23968
+  },
+  {
+    "name": "MAP25_5A.KCL",
+    "rom_offset": 12375328,
+    "directory_offset": 1846672,
+    "end": 12375648,
+    "size_with_padding": 320
+  },
+  {
+    "name": "MAP25_5A.KMP",
+    "rom_offset": 12375648,
+    "directory_offset": 1846688,
+    "end": 12423456,
+    "size_with_padding": 47808
+  },
+  {
+    "name": "MAP25_5A.SPC",
+    "rom_offset": 12423456,
+    "directory_offset": 1846704,
+    "end": 12424208,
+    "size_with_padding": 752
+  },
+  {
+    "name": "MAP26_1A.KCG",
+    "rom_offset": 12424208,
+    "directory_offset": 1846720,
+    "end": 12445472,
+    "size_with_padding": 21264
+  },
+  {
+    "name": "MAP26_1A.KCL",
+    "rom_offset": 12445472,
+    "directory_offset": 1846736,
+    "end": 12445664,
+    "size_with_padding": 192
+  },
+  {
+    "name": "MAP26_1A.KMP",
+    "rom_offset": 12445664,
+    "directory_offset": 1846752,
+    "end": 12610448,
+    "size_with_padding": 164784
+  },
+  {
+    "name": "MAP26_1A.SPC",
+    "rom_offset": 12610448,
+    "directory_offset": 1846768,
+    "end": 12611280,
+    "size_with_padding": 832
+  },
+  {
+    "name": "MAP26_2A.KCG",
+    "rom_offset": 12611280,
+    "directory_offset": 1846784,
+    "end": 12635568,
+    "size_with_padding": 24288
+  },
+  {
+    "name": "MAP26_2A.KCL",
+    "rom_offset": 12635568,
+    "directory_offset": 1846800,
+    "end": 12635888,
+    "size_with_padding": 320
+  },
+  {
+    "name": "MAP26_2A.KMP",
+    "rom_offset": 12635888,
+    "directory_offset": 1846816,
+    "end": 12682160,
+    "size_with_padding": 46272
+  },
+  {
+    "name": "MAP26_2A.SPC",
+    "rom_offset": 12682160,
+    "directory_offset": 1846832,
+    "end": 12682672,
+    "size_with_padding": 512
+  },
+  {
+    "name": "MAP26_3A.KMP",
+    "rom_offset": 12682672,
+    "directory_offset": 1846848,
+    "end": 12954736,
+    "size_with_padding": 272064
+  },
+  {
+    "name": "MAP26_3A.SPC",
+    "rom_offset": 12954736,
+    "directory_offset": 1846864,
+    "end": 12955680,
+    "size_with_padding": 944
+  },
+  {
+    "name": "MAP26_5A.KMP",
+    "rom_offset": 12955680,
+    "directory_offset": 1846880,
+    "end": 13339920,
+    "size_with_padding": 384240
+  },
+  {
+    "name": "MAP26_5A.SPC",
+    "rom_offset": 13339920,
+    "directory_offset": 1846896,
+    "end": 13341456,
+    "size_with_padding": 1536
+  },
+  {
+    "name": "MAP26_6A.KMP",
+    "rom_offset": 13341456,
+    "directory_offset": 1846912,
+    "end": 13405008,
+    "size_with_padding": 63552
+  },
+  {
+    "name": "MAP26_6A.SPC",
+    "rom_offset": 13405008,
+    "directory_offset": 1846928,
+    "end": 13405376,
+    "size_with_padding": 368
+  },
+  {
+    "name": "MAP27_A.KCG",
+    "rom_offset": 13405376,
+    "directory_offset": 1846944,
+    "end": 13416512,
+    "size_with_padding": 11136
+  },
+  {
+    "name": "MAP27_A.KCL",
+    "rom_offset": 13416512,
+    "directory_offset": 1846960,
+    "end": 13416608,
+    "size_with_padding": 96
+  },
+  {
+    "name": "MAP27_A.KMP",
+    "rom_offset": 13416608,
+    "directory_offset": 1846976,
+    "end": 13422944,
+    "size_with_padding": 6336
+  },
+  {
+    "name": "MAP40_A.KMP",
+    "rom_offset": 13422944,
+    "directory_offset": 1846992,
+    "end": 13651232,
+    "size_with_padding": 228288
+  },
+  {
+    "name": "MAP40_A.SPC",
+    "rom_offset": 13651232,
+    "directory_offset": 1847008,
+    "end": 13652064,
+    "size_with_padding": 832
+  },
+  {
+    "name": "MAP41_A.KMP",
+    "rom_offset": 13652064,
+    "directory_offset": 1847024,
+    "end": 13701408,
+    "size_with_padding": 49344
+  },
+  {
+    "name": "MAP41_A.SPC",
+    "rom_offset": 13701408,
+    "directory_offset": 1847040,
+    "end": 13701808,
+    "size_with_padding": 400
+  },
+  {
+    "name": "MAP42_A.KMP",
+    "rom_offset": 13701808,
+    "directory_offset": 1847056,
+    "end": 13933168,
+    "size_with_padding": 231360
+  },
+  {
+    "name": "MAP42_A.SPC",
+    "rom_offset": 13933168,
+    "directory_offset": 1847072,
+    "end": 13933904,
+    "size_with_padding": 736
+  },
+  {
+    "name": "MAP99_A.KCG",
+    "rom_offset": 13933904,
+    "directory_offset": 1847088,
+    "end": 13933936,
+    "size_with_padding": 32
+  },
+  {
+    "name": "MAP99_A.KCL",
+    "rom_offset": 13933936,
+    "directory_offset": 1847104,
+    "end": 13933968,
+    "size_with_padding": 32
+  },
+  {
+    "name": "MAP99_A.KMP",
+    "rom_offset": 13933968,
+    "directory_offset": 1847120,
+    "end": 13940304,
+    "size_with_padding": 6336
+  },
+  {
+    "name": "ML_BG01.KCG",
+    "rom_offset": 13940304,
+    "directory_offset": 1847136,
+    "end": 13948752,
+    "size_with_padding": 8448
+  },
+  {
+    "name": "ML_BG01.KCL",
+    "rom_offset": 13948752,
+    "directory_offset": 1847152,
+    "end": 13948784,
+    "size_with_padding": 32
+  },
+  {
+    "name": "ML_BG01.KMP",
+    "rom_offset": 13948784,
+    "directory_offset": 1847168,
+    "end": 13951024,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "MWA.KCG",
+    "rom_offset": 13951024,
+    "directory_offset": 1847184,
+    "end": 13952096,
+    "size_with_padding": 1072
+  },
+  {
+    "name": "MWA.KCL",
+    "rom_offset": 13952096,
+    "directory_offset": 1847200,
+    "end": 13952128,
+    "size_with_padding": 32
+  },
+  {
+    "name": "MWA.KMP",
+    "rom_offset": 13952128,
+    "directory_offset": 1847216,
+    "end": 13956416,
+    "size_with_padding": 4288
+  },
+  {
+    "name": "NE01.TCG",
+    "rom_offset": 13956416,
+    "directory_offset": 1847232,
+    "end": 13963456,
+    "size_with_padding": 7040
+  },
+  {
+    "name": "NE01.TCL",
+    "rom_offset": 13963456,
+    "directory_offset": 1847248,
+    "end": 13963552,
+    "size_with_padding": 96
+  },
+  {
+    "name": "NE01.TSC",
+    "rom_offset": 13963552,
+    "directory_offset": 1847264,
+    "end": 13963808,
+    "size_with_padding": 256
+  },
+  {
+    "name": "NE05.TCL",
+    "rom_offset": 13963808,
+    "directory_offset": 1847280,
+    "end": 13963904,
+    "size_with_padding": 96
+  },
+  {
+    "name": "NE13.TCG",
+    "rom_offset": 13963904,
+    "directory_offset": 1847296,
+    "end": 13970304,
+    "size_with_padding": 6400
+  },
+  {
+    "name": "NE13.TCL",
+    "rom_offset": 13970304,
+    "directory_offset": 1847312,
+    "end": 13970400,
+    "size_with_padding": 96
+  },
+  {
+    "name": "NE13_A.TSC",
+    "rom_offset": 13970400,
+    "directory_offset": 1847328,
+    "end": 13970656,
+    "size_with_padding": 256
+  },
+  {
+    "name": "NE13_B.TSC",
+    "rom_offset": 13970656,
+    "directory_offset": 1847344,
+    "end": 13970912,
+    "size_with_padding": 256
+  },
+  {
+    "name": "NE13_C.TSC",
+    "rom_offset": 13970912,
+    "directory_offset": 1847360,
+    "end": 13971168,
+    "size_with_padding": 256
+  },
+  {
+    "name": "NE21.TCG",
+    "rom_offset": 13971168,
+    "directory_offset": 1847376,
+    "end": 13983152,
+    "size_with_padding": 11984
+  },
+  {
+    "name": "NE21.TCL",
+    "rom_offset": 13983152,
+    "directory_offset": 1847392,
+    "end": 13983248,
+    "size_with_padding": 96
+  },
+  {
+    "name": "NE21_00.TSC",
+    "rom_offset": 13983248,
+    "directory_offset": 1847408,
+    "end": 13985296,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "NE21_01.TSC",
+    "rom_offset": 13985296,
+    "directory_offset": 1847424,
+    "end": 13987344,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "NE21_02.TSC",
+    "rom_offset": 13987344,
+    "directory_offset": 1847440,
+    "end": 13989392,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "NE21_03.TSC",
+    "rom_offset": 13989392,
+    "directory_offset": 1847456,
+    "end": 13991440,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "NE21_04.TSC",
+    "rom_offset": 13991440,
+    "directory_offset": 1847472,
+    "end": 13993488,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "NE21_05.TSC",
+    "rom_offset": 13993488,
+    "directory_offset": 1847488,
+    "end": 13995536,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "NE32.TCG",
+    "rom_offset": 13995536,
+    "directory_offset": 1847504,
+    "end": 14003088,
+    "size_with_padding": 7552
+  },
+  {
+    "name": "NE32.TCL",
+    "rom_offset": 14003088,
+    "directory_offset": 1847520,
+    "end": 14003184,
+    "size_with_padding": 96
+  },
+  {
+    "name": "NE32.TSC",
+    "rom_offset": 14003184,
+    "directory_offset": 1847536,
+    "end": 14011376,
+    "size_with_padding": 8192
+  },
+  {
+    "name": "NE33.TCG",
+    "rom_offset": 14011376,
+    "directory_offset": 1847552,
+    "end": 14017696,
+    "size_with_padding": 6320
+  },
+  {
+    "name": "NE33.TCL",
+    "rom_offset": 14017696,
+    "directory_offset": 1847568,
+    "end": 14017792,
+    "size_with_padding": 96
+  },
+  {
+    "name": "NE33_A.TSC",
+    "rom_offset": 14017792,
+    "directory_offset": 1847584,
+    "end": 14018048,
+    "size_with_padding": 256
+  },
+  {
+    "name": "NE33_B.TSC",
+    "rom_offset": 14018048,
+    "directory_offset": 1847600,
+    "end": 14018304,
+    "size_with_padding": 256
+  },
+  {
+    "name": "NE33_C.TSC",
+    "rom_offset": 14018304,
+    "directory_offset": 1847616,
+    "end": 14018560,
+    "size_with_padding": 256
+  },
+  {
+    "name": "NET_00_A.KMP",
+    "rom_offset": 14018560,
+    "directory_offset": 1847632,
+    "end": 14024896,
+    "size_with_padding": 6336
+  },
+  {
+    "name": "NET_03_A.KMP",
+    "rom_offset": 14024896,
+    "directory_offset": 1847648,
+    "end": 14031232,
+    "size_with_padding": 6336
+  },
+  {
+    "name": "NET_04_A.KMP",
+    "rom_offset": 14031232,
+    "directory_offset": 1847664,
+    "end": 14037568,
+    "size_with_padding": 6336
+  },
+  {
+    "name": "NET_05_A.KMP",
+    "rom_offset": 14037568,
+    "directory_offset": 1847680,
+    "end": 14043904,
+    "size_with_padding": 6336
+  },
+  {
+    "name": "NET_07_A.KMP",
+    "rom_offset": 14043904,
+    "directory_offset": 1847696,
+    "end": 14050240,
+    "size_with_padding": 6336
+  },
+  {
+    "name": "NET_24_A.KMP",
+    "rom_offset": 14050240,
+    "directory_offset": 1847712,
+    "end": 14056576,
+    "size_with_padding": 6336
+  },
+  {
+    "name": "NET_25_A.KMP",
+    "rom_offset": 14056576,
+    "directory_offset": 1847728,
+    "end": 14062912,
+    "size_with_padding": 6336
+  },
+  {
+    "name": "NET_26_A.KMP",
+    "rom_offset": 14062912,
+    "directory_offset": 1847744,
+    "end": 14069248,
+    "size_with_padding": 6336
+  },
+  {
+    "name": "NET_AD_A.KMP",
+    "rom_offset": 14069248,
+    "directory_offset": 1847760,
+    "end": 14075584,
+    "size_with_padding": 6336
+  },
+  {
+    "name": "OBJ_D.SPC",
+    "rom_offset": 14075584,
+    "directory_offset": 1847776,
+    "end": 14076352,
+    "size_with_padding": 768
+  },
+  {
+    "name": "OBJ_G.SPC",
+    "rom_offset": 14076352,
+    "directory_offset": 1847792,
+    "end": 14077152,
+    "size_with_padding": 800
+  },
+  {
+    "name": "OBJ_J.SPC",
+    "rom_offset": 14077152,
+    "directory_offset": 1847808,
+    "end": 14078144,
+    "size_with_padding": 992
+  },
+  {
+    "name": "OBJ_S.SPC",
+    "rom_offset": 14078144,
+    "directory_offset": 1847824,
+    "end": 14078800,
+    "size_with_padding": 656
+  },
+  {
+    "name": "OBJ_V.SPC",
+    "rom_offset": 14078800,
+    "directory_offset": 1847840,
+    "end": 14079712,
+    "size_with_padding": 912
+  },
+  {
+    "name": "OPEN.SPC",
+    "rom_offset": 14079712,
+    "directory_offset": 1847856,
+    "end": 14084784,
+    "size_with_padding": 5072
+  },
+  {
+    "name": "OP_01_A.KCG",
+    "rom_offset": 14084784,
+    "directory_offset": 1847872,
+    "end": 14100336,
+    "size_with_padding": 15552
+  },
+  {
+    "name": "OP_01_A.KCL",
+    "rom_offset": 14100336,
+    "directory_offset": 1847888,
+    "end": 14100432,
+    "size_with_padding": 96
+  },
+  {
+    "name": "OP_01_A.KMP",
+    "rom_offset": 14100432,
+    "directory_offset": 1847904,
+    "end": 14104224,
+    "size_with_padding": 3792
+  },
+  {
+    "name": "OP_04_A.KCG",
+    "rom_offset": 14104224,
+    "directory_offset": 1847920,
+    "end": 14118512,
+    "size_with_padding": 14288
+  },
+  {
+    "name": "OP_04_A.KCL",
+    "rom_offset": 14118512,
+    "directory_offset": 1847936,
+    "end": 14118608,
+    "size_with_padding": 96
+  },
+  {
+    "name": "OP_04_A.KMP",
+    "rom_offset": 14118608,
+    "directory_offset": 1847952,
+    "end": 14122400,
+    "size_with_padding": 3792
+  },
+  {
+    "name": "OP_05_A.KCG",
+    "rom_offset": 14122400,
+    "directory_offset": 1847968,
+    "end": 14138752,
+    "size_with_padding": 16352
+  },
+  {
+    "name": "OP_05_A.KCL",
+    "rom_offset": 14138752,
+    "directory_offset": 1847984,
+    "end": 14138848,
+    "size_with_padding": 96
+  },
+  {
+    "name": "OP_05_A.KMP",
+    "rom_offset": 14138848,
+    "directory_offset": 1848000,
+    "end": 14142640,
+    "size_with_padding": 3792
+  },
+  {
+    "name": "OP_06_A.KCG",
+    "rom_offset": 14142640,
+    "directory_offset": 1848016,
+    "end": 14155920,
+    "size_with_padding": 13280
+  },
+  {
+    "name": "OP_06_A.KCL",
+    "rom_offset": 14155920,
+    "directory_offset": 1848032,
+    "end": 14156112,
+    "size_with_padding": 192
+  },
+  {
+    "name": "OP_06_A.KMP",
+    "rom_offset": 14156112,
+    "directory_offset": 1848048,
+    "end": 14162064,
+    "size_with_padding": 5952
+  },
+  {
+    "name": "OP_07_A.KCG",
+    "rom_offset": 14162064,
+    "directory_offset": 1848064,
+    "end": 14171312,
+    "size_with_padding": 9248
+  },
+  {
+    "name": "OP_07_A.KCL",
+    "rom_offset": 14171312,
+    "directory_offset": 1848080,
+    "end": 14171632,
+    "size_with_padding": 320
+  },
+  {
+    "name": "OP_07_A.KMP",
+    "rom_offset": 14171632,
+    "directory_offset": 1848096,
+    "end": 14177968,
+    "size_with_padding": 6336
+  },
+  {
+    "name": "OP_08_A.KCG",
+    "rom_offset": 14177968,
+    "directory_offset": 1848112,
+    "end": 14188384,
+    "size_with_padding": 10416
+  },
+  {
+    "name": "OP_08_A.KCL",
+    "rom_offset": 14188384,
+    "directory_offset": 1848128,
+    "end": 14188704,
+    "size_with_padding": 320
+  },
+  {
+    "name": "OP_08_A.KMP",
+    "rom_offset": 14188704,
+    "directory_offset": 1848144,
+    "end": 14195040,
+    "size_with_padding": 6336
+  },
+  {
+    "name": "OP_09_A.KCG",
+    "rom_offset": 14195040,
+    "directory_offset": 1848160,
+    "end": 14209152,
+    "size_with_padding": 14112
+  },
+  {
+    "name": "OP_09_A.KCL",
+    "rom_offset": 14209152,
+    "directory_offset": 1848176,
+    "end": 14209472,
+    "size_with_padding": 320
+  },
+  {
+    "name": "OP_09_A.KMP",
+    "rom_offset": 14209472,
+    "directory_offset": 1848192,
+    "end": 14215808,
+    "size_with_padding": 6336
+  },
+  {
+    "name": "OP_0A_A.KCG",
+    "rom_offset": 14215808,
+    "directory_offset": 1848208,
+    "end": 14221216,
+    "size_with_padding": 5408
+  },
+  {
+    "name": "OP_0A_A.KCL",
+    "rom_offset": 14221216,
+    "directory_offset": 1848224,
+    "end": 14221536,
+    "size_with_padding": 320
+  },
+  {
+    "name": "OP_0A_A.KMP",
+    "rom_offset": 14221536,
+    "directory_offset": 1848240,
+    "end": 14227872,
+    "size_with_padding": 6336
+  },
+  {
+    "name": "PHANTOM.SPC",
+    "rom_offset": 14227872,
+    "directory_offset": 1848256,
+    "end": 14228608,
+    "size_with_padding": 736
+  },
+  {
+    "name": "PS_BG01.KCG",
+    "rom_offset": 14228608,
+    "directory_offset": 1848272,
+    "end": 14242464,
+    "size_with_padding": 13856
+  },
+  {
+    "name": "PS_BG01.KCL",
+    "rom_offset": 14242464,
+    "directory_offset": 1848288,
+    "end": 14242496,
+    "size_with_padding": 32
+  },
+  {
+    "name": "PS_BG01.KMP",
+    "rom_offset": 14242496,
+    "directory_offset": 1848304,
+    "end": 14244736,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "PV_BG01.KCG",
+    "rom_offset": 14244736,
+    "directory_offset": 1848320,
+    "end": 14252464,
+    "size_with_padding": 7728
+  },
+  {
+    "name": "PV_BG01.KCL",
+    "rom_offset": 14252464,
+    "directory_offset": 1848336,
+    "end": 14252496,
+    "size_with_padding": 32
+  },
+  {
+    "name": "PV_BG01.KMP",
+    "rom_offset": 14252496,
+    "directory_offset": 1848352,
+    "end": 14254736,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "PV_BG11.KCG",
+    "rom_offset": 14254736,
+    "directory_offset": 1848368,
+    "end": 14255824,
+    "size_with_padding": 1088
+  },
+  {
+    "name": "PV_BG11.KCL",
+    "rom_offset": 14255824,
+    "directory_offset": 1848384,
+    "end": 14255856,
+    "size_with_padding": 32
+  },
+  {
+    "name": "PV_BG11.KMP",
+    "rom_offset": 14255856,
+    "directory_offset": 1848400,
+    "end": 14258096,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "PW_BG01.KCG",
+    "rom_offset": 14258096,
+    "directory_offset": 1848416,
+    "end": 14263760,
+    "size_with_padding": 5664
+  },
+  {
+    "name": "PW_BG01.KCL",
+    "rom_offset": 14263760,
+    "directory_offset": 1848432,
+    "end": 14263792,
+    "size_with_padding": 32
+  },
+  {
+    "name": "PW_BG01.KMP",
+    "rom_offset": 14263792,
+    "directory_offset": 1848448,
+    "end": 14266032,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "PW_BOX.KCG",
+    "rom_offset": 14266032,
+    "directory_offset": 1848464,
+    "end": 14271008,
+    "size_with_padding": 4976
+  },
+  {
+    "name": "PW_BOX.KCL",
+    "rom_offset": 14271008,
+    "directory_offset": 1848480,
+    "end": 14271040,
+    "size_with_padding": 32
+  },
+  {
+    "name": "PW_BOX.KMP",
+    "rom_offset": 14271040,
+    "directory_offset": 1848496,
+    "end": 14273280,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "SBA06.TCG",
+    "rom_offset": 14273280,
+    "directory_offset": 1848512,
+    "end": 14285136,
+    "size_with_padding": 11856
+  },
+  {
+    "name": "SBA06.TCL",
+    "rom_offset": 14285136,
+    "directory_offset": 1848528,
+    "end": 14285232,
+    "size_with_padding": 96
+  },
+  {
+    "name": "SBA06_00.TSC",
+    "rom_offset": 14285232,
+    "directory_offset": 1848544,
+    "end": 14287280,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "SBA06_01.TSC",
+    "rom_offset": 14287280,
+    "directory_offset": 1848560,
+    "end": 14289328,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "SHOPPA01.SPC",
+    "rom_offset": 14289328,
+    "directory_offset": 1848576,
+    "end": 14290224,
+    "size_with_padding": 896
+  },
+  {
+    "name": "SHOPPA02.SPC",
+    "rom_offset": 14290224,
+    "directory_offset": 1848592,
+    "end": 14291136,
+    "size_with_padding": 912
+  },
+  {
+    "name": "SHOPPA03.SPC",
+    "rom_offset": 14291136,
+    "directory_offset": 1848608,
+    "end": 14291952,
+    "size_with_padding": 816
+  },
+  {
+    "name": "SHOPPA04.SPC",
+    "rom_offset": 14291952,
+    "directory_offset": 1848624,
+    "end": 14292784,
+    "size_with_padding": 832
+  },
+  {
+    "name": "SHOPPA05.SPC",
+    "rom_offset": 14292784,
+    "directory_offset": 1848640,
+    "end": 14294192,
+    "size_with_padding": 1408
+  },
+  {
+    "name": "SHOPPE01.SPC",
+    "rom_offset": 14294192,
+    "directory_offset": 1848656,
+    "end": 14295024,
+    "size_with_padding": 832
+  },
+  {
+    "name": "SHOPPE02.SPC",
+    "rom_offset": 14295024,
+    "directory_offset": 1848672,
+    "end": 14295920,
+    "size_with_padding": 896
+  },
+  {
+    "name": "SK02.TCG",
+    "rom_offset": 14295920,
+    "directory_offset": 1848688,
+    "end": 14300544,
+    "size_with_padding": 4624
+  },
+  {
+    "name": "SK02.TCL",
+    "rom_offset": 14300544,
+    "directory_offset": 1848704,
+    "end": 14300640,
+    "size_with_padding": 96
+  },
+  {
+    "name": "SK02_00.TSC",
+    "rom_offset": 14300640,
+    "directory_offset": 1848720,
+    "end": 14300896,
+    "size_with_padding": 256
+  },
+  {
+    "name": "SK02_01.TSC",
+    "rom_offset": 14300896,
+    "directory_offset": 1848736,
+    "end": 14301152,
+    "size_with_padding": 256
+  },
+  {
+    "name": "SK02_02.TSC",
+    "rom_offset": 14301152,
+    "directory_offset": 1848752,
+    "end": 14301408,
+    "size_with_padding": 256
+  },
+  {
+    "name": "SK02_03.TSC",
+    "rom_offset": 14301408,
+    "directory_offset": 1848768,
+    "end": 14301664,
+    "size_with_padding": 256
+  },
+  {
+    "name": "SK03.TCG",
+    "rom_offset": 14301664,
+    "directory_offset": 1848784,
+    "end": 14306288,
+    "size_with_padding": 4624
+  },
+  {
+    "name": "SK03.TCL",
+    "rom_offset": 14306288,
+    "directory_offset": 1848800,
+    "end": 14306384,
+    "size_with_padding": 96
+  },
+  {
+    "name": "SK03_00.TSC",
+    "rom_offset": 14306384,
+    "directory_offset": 1848816,
+    "end": 14307408,
+    "size_with_padding": 1024
+  },
+  {
+    "name": "SK03_01.TSC",
+    "rom_offset": 14307408,
+    "directory_offset": 1848832,
+    "end": 14308432,
+    "size_with_padding": 1024
+  },
+  {
+    "name": "SK03_02.TSC",
+    "rom_offset": 14308432,
+    "directory_offset": 1848848,
+    "end": 14309456,
+    "size_with_padding": 1024
+  },
+  {
+    "name": "SK03_03.TSC",
+    "rom_offset": 14309456,
+    "directory_offset": 1848864,
+    "end": 14310480,
+    "size_with_padding": 1024
+  },
+  {
+    "name": "SM_BG01.KCG",
+    "rom_offset": 14310480,
+    "directory_offset": 1848880,
+    "end": 14319792,
+    "size_with_padding": 9312
+  },
+  {
+    "name": "SM_BG01.KCL",
+    "rom_offset": 14319792,
+    "directory_offset": 1848896,
+    "end": 14319824,
+    "size_with_padding": 32
+  },
+  {
+    "name": "SM_BG01.KMP",
+    "rom_offset": 14319824,
+    "directory_offset": 1848912,
+    "end": 14322064,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "SM_BG12.KCG",
+    "rom_offset": 14322064,
+    "directory_offset": 1848928,
+    "end": 14326736,
+    "size_with_padding": 4672
+  },
+  {
+    "name": "SM_BG12.KCL",
+    "rom_offset": 14326736,
+    "directory_offset": 1848944,
+    "end": 14326768,
+    "size_with_padding": 32
+  },
+  {
+    "name": "SM_BG12.KMP",
+    "rom_offset": 14326768,
+    "directory_offset": 1848960,
+    "end": 14329008,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "SN06.TCG",
+    "rom_offset": 14329008,
+    "directory_offset": 1848976,
+    "end": 14332896,
+    "size_with_padding": 3888
+  },
+  {
+    "name": "SN06.TCL",
+    "rom_offset": 14332896,
+    "directory_offset": 1848992,
+    "end": 14332992,
+    "size_with_padding": 96
+  },
+  {
+    "name": "SN06.TSC",
+    "rom_offset": 14332992,
+    "directory_offset": 1849008,
+    "end": 14335040,
+    "size_with_padding": 2048
+  },
+  {
+    "name": "SN07.TCG",
+    "rom_offset": 14335040,
+    "directory_offset": 1849024,
+    "end": 14346736,
+    "size_with_padding": 11696
+  },
+  {
+    "name": "SN07.TCL",
+    "rom_offset": 14346736,
+    "directory_offset": 1849040,
+    "end": 14346832,
+    "size_with_padding": 96
+  },
+  {
+    "name": "SN07_A.TSC",
+    "rom_offset": 14346832,
+    "directory_offset": 1849056,
+    "end": 14355024,
+    "size_with_padding": 8192
+  },
+  {
+    "name": "SN07_B.TSC",
+    "rom_offset": 14355024,
+    "directory_offset": 1849072,
+    "end": 14363216,
+    "size_with_padding": 8192
+  },
+  {
+    "name": "SPR_DUNG.SPC",
+    "rom_offset": 14363216,
+    "directory_offset": 1849088,
+    "end": 14364176,
+    "size_with_padding": 960
+  },
+  {
+    "name": "SPR_NORM.SPC",
+    "rom_offset": 14364176,
+    "directory_offset": 1849104,
+    "end": 14365600,
+    "size_with_padding": 1424
+  },
+  {
+    "name": "SP_BG01.KCG",
+    "rom_offset": 14365600,
+    "directory_offset": 1849120,
+    "end": 14374784,
+    "size_with_padding": 9184
+  },
+  {
+    "name": "SP_BG01.KCL",
+    "rom_offset": 14374784,
+    "directory_offset": 1849136,
+    "end": 14374816,
+    "size_with_padding": 32
+  },
+  {
+    "name": "SP_BG01.KMP",
+    "rom_offset": 14374816,
+    "directory_offset": 1849152,
+    "end": 14377056,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "SP_BG11.KCG",
+    "rom_offset": 14377056,
+    "directory_offset": 1849168,
+    "end": 14387664,
+    "size_with_padding": 10608
+  },
+  {
+    "name": "SP_BG11.KCL",
+    "rom_offset": 14387664,
+    "directory_offset": 1849184,
+    "end": 14387696,
+    "size_with_padding": 32
+  },
+  {
+    "name": "SP_BG11.KMP",
+    "rom_offset": 14387696,
+    "directory_offset": 1849200,
+    "end": 14389936,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "SP_BG12.KCG",
+    "rom_offset": 14389936,
+    "directory_offset": 1849216,
+    "end": 14392640,
+    "size_with_padding": 2704
+  },
+  {
+    "name": "SP_BG12.KCL",
+    "rom_offset": 14392640,
+    "directory_offset": 1849232,
+    "end": 14392672,
+    "size_with_padding": 32
+  },
+  {
+    "name": "SP_BG12.KMP",
+    "rom_offset": 14392672,
+    "directory_offset": 1849248,
+    "end": 14394912,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "SP_BG21.KCG",
+    "rom_offset": 14394912,
+    "directory_offset": 1849264,
+    "end": 14403936,
+    "size_with_padding": 9024
+  },
+  {
+    "name": "SP_BG21.KCL",
+    "rom_offset": 14403936,
+    "directory_offset": 1849280,
+    "end": 14403968,
+    "size_with_padding": 32
+  },
+  {
+    "name": "SP_BG21.KMP",
+    "rom_offset": 14403968,
+    "directory_offset": 1849296,
+    "end": 14406208,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "SP_BG22.KCG",
+    "rom_offset": 14406208,
+    "directory_offset": 1849312,
+    "end": 14416400,
+    "size_with_padding": 10192
+  },
+  {
+    "name": "SP_BG22.KCL",
+    "rom_offset": 14416400,
+    "directory_offset": 1849328,
+    "end": 14416432,
+    "size_with_padding": 32
+  },
+  {
+    "name": "SP_BG22.KMP",
+    "rom_offset": 14416432,
+    "directory_offset": 1849344,
+    "end": 14418672,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "SP_M00.SPC",
+    "rom_offset": 14418672,
+    "directory_offset": 1849360,
+    "end": 14419968,
+    "size_with_padding": 1296
+  },
+  {
+    "name": "SP_M01.SPC",
+    "rom_offset": 14419968,
+    "directory_offset": 1849376,
+    "end": 14421520,
+    "size_with_padding": 1552
+  },
+  {
+    "name": "SP_M01_1.SPC",
+    "rom_offset": 14421520,
+    "directory_offset": 1849392,
+    "end": 14421712,
+    "size_with_padding": 192
+  },
+  {
+    "name": "SP_M01_3.SPC",
+    "rom_offset": 14421712,
+    "directory_offset": 1849408,
+    "end": 14423040,
+    "size_with_padding": 1328
+  },
+  {
+    "name": "SP_M01_4.SPC",
+    "rom_offset": 14423040,
+    "directory_offset": 1849424,
+    "end": 14423232,
+    "size_with_padding": 192
+  },
+  {
+    "name": "SP_M01_5.SPC",
+    "rom_offset": 14423232,
+    "directory_offset": 1849440,
+    "end": 14423472,
+    "size_with_padding": 240
+  },
+  {
+    "name": "SP_M01_6.SPC",
+    "rom_offset": 14423472,
+    "directory_offset": 1849456,
+    "end": 14423888,
+    "size_with_padding": 416
+  },
+  {
+    "name": "SP_M04.SPC",
+    "rom_offset": 14423888,
+    "directory_offset": 1849472,
+    "end": 14424752,
+    "size_with_padding": 864
+  },
+  {
+    "name": "SP_M04_4.SPC",
+    "rom_offset": 14424752,
+    "directory_offset": 1849488,
+    "end": 14424944,
+    "size_with_padding": 192
+  },
+  {
+    "name": "SP_M04_5.SPC",
+    "rom_offset": 14424944,
+    "directory_offset": 1849504,
+    "end": 14425168,
+    "size_with_padding": 224
+  },
+  {
+    "name": "SP_M05.SPC",
+    "rom_offset": 14425168,
+    "directory_offset": 1849520,
+    "end": 14425440,
+    "size_with_padding": 272
+  },
+  {
+    "name": "SP_M06_1.SPC",
+    "rom_offset": 14425440,
+    "directory_offset": 1849536,
+    "end": 14426176,
+    "size_with_padding": 736
+  },
+  {
+    "name": "SP_M06_2.SPC",
+    "rom_offset": 14426176,
+    "directory_offset": 1849552,
+    "end": 14426368,
+    "size_with_padding": 192
+  },
+  {
+    "name": "SP_M07.SPC",
+    "rom_offset": 14426368,
+    "directory_offset": 1849568,
+    "end": 14426864,
+    "size_with_padding": 496
+  },
+  {
+    "name": "SP_M07_1.SPC",
+    "rom_offset": 14426864,
+    "directory_offset": 1849584,
+    "end": 14428336,
+    "size_with_padding": 1472
+  },
+  {
+    "name": "SP_M08.SPC",
+    "rom_offset": 14428336,
+    "directory_offset": 1849600,
+    "end": 14429312,
+    "size_with_padding": 976
+  },
+  {
+    "name": "SP_M09.SPC",
+    "rom_offset": 14429312,
+    "directory_offset": 1849616,
+    "end": 14429552,
+    "size_with_padding": 240
+  },
+  {
+    "name": "SP_M10.SPC",
+    "rom_offset": 14429552,
+    "directory_offset": 1849632,
+    "end": 14429776,
+    "size_with_padding": 224
+  },
+  {
+    "name": "SP_M10_1.SPC",
+    "rom_offset": 14429776,
+    "directory_offset": 1849648,
+    "end": 14430304,
+    "size_with_padding": 528
+  },
+  {
+    "name": "SP_M24.SPC",
+    "rom_offset": 14430304,
+    "directory_offset": 1849664,
+    "end": 14430592,
+    "size_with_padding": 288
+  },
+  {
+    "name": "SP_M24_1.SPC",
+    "rom_offset": 14430592,
+    "directory_offset": 1849680,
+    "end": 14431008,
+    "size_with_padding": 416
+  },
+  {
+    "name": "SP_M24_2.SPC",
+    "rom_offset": 14431008,
+    "directory_offset": 1849696,
+    "end": 14431392,
+    "size_with_padding": 384
+  },
+  {
+    "name": "SP_M24_3.SPC",
+    "rom_offset": 14431392,
+    "directory_offset": 1849712,
+    "end": 14431712,
+    "size_with_padding": 320
+  },
+  {
+    "name": "SP_M24_4.SPC",
+    "rom_offset": 14431712,
+    "directory_offset": 1849728,
+    "end": 14435760,
+    "size_with_padding": 4048
+  },
+  {
+    "name": "SP_M25_1.SPC",
+    "rom_offset": 14435760,
+    "directory_offset": 1849744,
+    "end": 14436016,
+    "size_with_padding": 256
+  },
+  {
+    "name": "SP_M25_2.SPC",
+    "rom_offset": 14436016,
+    "directory_offset": 1849760,
+    "end": 14436464,
+    "size_with_padding": 448
+  },
+  {
+    "name": "SP_M25_4.SPC",
+    "rom_offset": 14436464,
+    "directory_offset": 1849776,
+    "end": 14438016,
+    "size_with_padding": 1552
+  },
+  {
+    "name": "SP_M25_5.SPC",
+    "rom_offset": 14438016,
+    "directory_offset": 1849792,
+    "end": 14442800,
+    "size_with_padding": 4784
+  },
+  {
+    "name": "SP_M26_1.SPC",
+    "rom_offset": 14442800,
+    "directory_offset": 1849808,
+    "end": 14443168,
+    "size_with_padding": 368
+  },
+  {
+    "name": "SP_M26_2.SPC",
+    "rom_offset": 14443168,
+    "directory_offset": 1849824,
+    "end": 14445680,
+    "size_with_padding": 2512
+  },
+  {
+    "name": "SP_M26_3.SPC",
+    "rom_offset": 14445680,
+    "directory_offset": 1849840,
+    "end": 14446080,
+    "size_with_padding": 400
+  },
+  {
+    "name": "SP_M26_5.SPC",
+    "rom_offset": 14446080,
+    "directory_offset": 1849856,
+    "end": 14449152,
+    "size_with_padding": 3072
+  },
+  {
+    "name": "SP_M40.SPC",
+    "rom_offset": 14449152,
+    "directory_offset": 1849872,
+    "end": 14449824,
+    "size_with_padding": 672
+  },
+  {
+    "name": "SP_M41.SPC",
+    "rom_offset": 14449824,
+    "directory_offset": 1849888,
+    "end": 14450016,
+    "size_with_padding": 192
+  },
+  {
+    "name": "SP_M42.SPC",
+    "rom_offset": 14450016,
+    "directory_offset": 1849904,
+    "end": 14450816,
+    "size_with_padding": 800
+  },
+  {
+    "name": "SROLL.SPC",
+    "rom_offset": 14450816,
+    "directory_offset": 1849920,
+    "end": 14451216,
+    "size_with_padding": 400
+  },
+  {
+    "name": "SSN07.TCG",
+    "rom_offset": 14451216,
+    "directory_offset": 1849936,
+    "end": 14462912,
+    "size_with_padding": 11696
+  },
+  {
+    "name": "SSN07.TCL",
+    "rom_offset": 14462912,
+    "directory_offset": 1849952,
+    "end": 14463008,
+    "size_with_padding": 96
+  },
+  {
+    "name": "SSN07_A.TSC",
+    "rom_offset": 14463008,
+    "directory_offset": 1849968,
+    "end": 14471200,
+    "size_with_padding": 8192
+  },
+  {
+    "name": "SSN07_B.TSC",
+    "rom_offset": 14471200,
+    "directory_offset": 1849984,
+    "end": 14479392,
+    "size_with_padding": 8192
+  },
+  {
+    "name": "ST_BG01.KCG",
+    "rom_offset": 14479392,
+    "directory_offset": 1850000,
+    "end": 14484384,
+    "size_with_padding": 4992
+  },
+  {
+    "name": "ST_BG01.KCL",
+    "rom_offset": 14484384,
+    "directory_offset": 1850016,
+    "end": 14484416,
+    "size_with_padding": 32
+  },
+  {
+    "name": "ST_BG01.KMP",
+    "rom_offset": 14484416,
+    "directory_offset": 1850032,
+    "end": 14486656,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "ST_BG02.KCG",
+    "rom_offset": 14486656,
+    "directory_offset": 1850048,
+    "end": 14490896,
+    "size_with_padding": 4240
+  },
+  {
+    "name": "ST_BG02.KCL",
+    "rom_offset": 14490896,
+    "directory_offset": 1850064,
+    "end": 14490928,
+    "size_with_padding": 32
+  },
+  {
+    "name": "ST_BG02.KMP",
+    "rom_offset": 14490928,
+    "directory_offset": 1850080,
+    "end": 14493168,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "ST_BG03.KCG",
+    "rom_offset": 14493168,
+    "directory_offset": 1850096,
+    "end": 14497328,
+    "size_with_padding": 4160
+  },
+  {
+    "name": "ST_BG03.KCL",
+    "rom_offset": 14497328,
+    "directory_offset": 1850112,
+    "end": 14497360,
+    "size_with_padding": 32
+  },
+  {
+    "name": "ST_BG03.KMP",
+    "rom_offset": 14497360,
+    "directory_offset": 1850128,
+    "end": 14499600,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "ST_BG11.KCG",
+    "rom_offset": 14499600,
+    "directory_offset": 1850144,
+    "end": 14508288,
+    "size_with_padding": 8688
+  },
+  {
+    "name": "ST_BG11.KCL",
+    "rom_offset": 14508288,
+    "directory_offset": 1850160,
+    "end": 14508320,
+    "size_with_padding": 32
+  },
+  {
+    "name": "ST_BG11.KMP",
+    "rom_offset": 14508320,
+    "directory_offset": 1850176,
+    "end": 14510560,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "SYSTEM.NCD",
+    "rom_offset": 14510560,
+    "directory_offset": 1850192,
+    "end": 15803280,
+    "size_with_padding": 1292720
+  },
+  {
+    "name": "S_BTLIRQ.SPC",
+    "rom_offset": 15803280,
+    "directory_offset": 1850208,
+    "end": 15803536,
+    "size_with_padding": 256
+  },
+  {
+    "name": "S_BTLOUT.SPC",
+    "rom_offset": 15803536,
+    "directory_offset": 1850224,
+    "end": 15803792,
+    "size_with_padding": 256
+  },
+  {
+    "name": "S_CHRIRQ.SPC",
+    "rom_offset": 15803792,
+    "directory_offset": 1850240,
+    "end": 15805488,
+    "size_with_padding": 1696
+  },
+  {
+    "name": "S_DUNG.SPC",
+    "rom_offset": 15805488,
+    "directory_offset": 1850256,
+    "end": 15807584,
+    "size_with_padding": 2096
+  },
+  {
+    "name": "S_HITIRQ.SPC",
+    "rom_offset": 15807584,
+    "directory_offset": 1850272,
+    "end": 15807840,
+    "size_with_padding": 256
+  },
+  {
+    "name": "S_MAIN.SPC",
+    "rom_offset": 15807840,
+    "directory_offset": 1850288,
+    "end": 15807984,
+    "size_with_padding": 144
+  },
+  {
+    "name": "S_MAP11.SPC",
+    "rom_offset": 15807984,
+    "directory_offset": 1850304,
+    "end": 15810000,
+    "size_with_padding": 2016
+  },
+  {
+    "name": "S_MAPIRQ.SPC",
+    "rom_offset": 15810000,
+    "directory_offset": 1850320,
+    "end": 15832512,
+    "size_with_padding": 22512
+  },
+  {
+    "name": "S_SIOBTL.SPC",
+    "rom_offset": 15832512,
+    "directory_offset": 1850336,
+    "end": 15833456,
+    "size_with_padding": 944
+  },
+  {
+    "name": "S_SPRIRQ.SPC",
+    "rom_offset": 15833456,
+    "directory_offset": 1850352,
+    "end": 15833760,
+    "size_with_padding": 304
+  },
+  {
+    "name": "T_C01.KCG",
+    "rom_offset": 15833760,
+    "directory_offset": 1850368,
+    "end": 15835904,
+    "size_with_padding": 2144
+  },
+  {
+    "name": "T_C01.KCL",
+    "rom_offset": 15835904,
+    "directory_offset": 1850384,
+    "end": 15835936,
+    "size_with_padding": 32
+  },
+  {
+    "name": "T_C01.KMP",
+    "rom_offset": 15835936,
+    "directory_offset": 1850400,
+    "end": 15838176,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "T_C02.KCG",
+    "rom_offset": 15838176,
+    "directory_offset": 1850416,
+    "end": 15839280,
+    "size_with_padding": 1104
+  },
+  {
+    "name": "T_C02.KCL",
+    "rom_offset": 15839280,
+    "directory_offset": 1850432,
+    "end": 15839312,
+    "size_with_padding": 32
+  },
+  {
+    "name": "T_C02.KMP",
+    "rom_offset": 15839312,
+    "directory_offset": 1850448,
+    "end": 15841552,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "T_ML_BG.KCG",
+    "rom_offset": 15841552,
+    "directory_offset": 1850464,
+    "end": 15853136,
+    "size_with_padding": 11584
+  },
+  {
+    "name": "T_ML_BG.KCL",
+    "rom_offset": 15853136,
+    "directory_offset": 1850480,
+    "end": 15853200,
+    "size_with_padding": 64
+  },
+  {
+    "name": "T_ML_BG.KMP",
+    "rom_offset": 15853200,
+    "directory_offset": 1850496,
+    "end": 15855440,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "T_TTL06.KCG",
+    "rom_offset": 15855440,
+    "directory_offset": 1850512,
+    "end": 15864736,
+    "size_with_padding": 9296
+  },
+  {
+    "name": "T_TTL06.KCL",
+    "rom_offset": 15864736,
+    "directory_offset": 1850528,
+    "end": 15864864,
+    "size_with_padding": 128
+  },
+  {
+    "name": "T_TTL06.KMP",
+    "rom_offset": 15864864,
+    "directory_offset": 1850544,
+    "end": 15867104,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "VSMAP01.KMP",
+    "rom_offset": 15867104,
+    "directory_offset": 1850560,
+    "end": 15875616,
+    "size_with_padding": 8512
+  },
+  {
+    "name": "WM_BG01.KCG",
+    "rom_offset": 15875616,
+    "directory_offset": 1850576,
+    "end": 15883376,
+    "size_with_padding": 7760
+  },
+  {
+    "name": "WM_BG01.KCL",
+    "rom_offset": 15883376,
+    "directory_offset": 1850592,
+    "end": 15883408,
+    "size_with_padding": 32
+  },
+  {
+    "name": "WM_BG01.KMP",
+    "rom_offset": 15883408,
+    "directory_offset": 1850608,
+    "end": 15885648,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "WM_BG02.KCG",
+    "rom_offset": 15885648,
+    "directory_offset": 1850624,
+    "end": 15889936,
+    "size_with_padding": 4288
+  },
+  {
+    "name": "WM_BG02.KCL",
+    "rom_offset": 15889936,
+    "directory_offset": 1850640,
+    "end": 15889968,
+    "size_with_padding": 32
+  },
+  {
+    "name": "WM_BG02.KMP",
+    "rom_offset": 15889968,
+    "directory_offset": 1850656,
+    "end": 15892208,
+    "size_with_padding": 2240
+  },
+  {
+    "name": "W_MAP.SPC",
+    "rom_offset": 15892208,
+    "directory_offset": 1850672,
+    "end": 15893520,
+    "size_with_padding": 1312
+  }
+]

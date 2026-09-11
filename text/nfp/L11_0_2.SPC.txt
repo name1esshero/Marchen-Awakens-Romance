@@ -1,0 +1,65 @@
+// L11_0_2.SPC: ROM 81D0F0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000006 MAP11_2A  // LITERAL: MAP11_2A (usage not inferred)
+@000040 A  // LITERAL: A (usage not inferred)
+@000249 F09A02  // LITERAL: F09A02 (usage not inferred)
+@000430  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00044F  C0F04 ギンタンとジャックの  // TODO: English translation
+@000476 魔力（まりょく）を感じる…  // TODO: English translation
+@0004F4 F09A01  // LITERAL: F09A01 (usage not inferred)
+@000552  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000571  C0F04 ここだね…！  // TODO: English translation
+@0006B5 MAP24_A  // LITERAL: MAP24_A (usage not inferred)
+@000713 MAP24_o  // LITERAL: MAP24_o (usage not inferred)
+@000879 MAP24_o  // LITERAL: MAP24_o (usage not inferred)
+@0009C0 A  // LITERAL: A (usage not inferred)
+@000BEB F09A07  // LITERAL: F09A07 (usage not inferred)
+@000C79  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000C98  C0F04 ん…？  // TODO: English translation
+@000CB1 あーらなーんか…  // TODO: English translation
+@000D25 F09A03  // LITERAL: F09A03 (usage not inferred)
+@000D83  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000DA2  C0F04 お宝なにおい  // TODO: English translation
+@000DFF  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000E1E  C0F04 ………  // TODO: English translation
+@000EBC F09A07  // LITERAL: F09A07 (usage not inferred)
+@000F3B  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000F5A  C0F04 …ん？  // EN: ...Huh?
+@001140 F09A05  // LITERAL: F09A05 (usage not inferred)
+@00122E  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00124D  C0F04 …げ！！  // TODO: English translation
+@0012B3 F39A01  // LITERAL: F39A01 (usage not inferred)
+@001374  C0D04 ［彫金師］  // EN: [Metalworker]
+@001391  C0F04 ……  // TODO: English translation
+@001492  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0014B1  C0F04 ……  // TODO: English translation
+@00152C F09A06  // LITERAL: F09A06 (usage not inferred)
+@00158A  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0015A9  C0F04 （な…なんなのよぅ！）  // TODO: English translation
+@0015FC  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00161B  C0F04 （この、ドコかからきりとって  // TODO: English translation
+@00164A 　はこんできたような空間は！）  // TODO: English translation
+@001692  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0016B1  C0F04 ……  // TODO: English translation
+@001722  C0D04 ［彫金師］  // EN: [Metalworker]
+@00173F  C0F04 ……  // TODO: English translation
+@0017B0  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0017CF  C0F04 ……  // TODO: English translation
+@001973  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001992  C0F04 ……  // TODO: English translation
+@0019DD F09A07  // LITERAL: F09A07 (usage not inferred)
+@001A5C  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001A7B  C0F04 ……  // TODO: English translation
+@001AEC  C0D04 ［彫金師］  // EN: [Metalworker]
+@001B09  C0F04 ……  // TODO: English translation
+@001B54 F09A05  // LITERAL: F09A05 (usage not inferred)
+@001C42  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001C61  C0F04 （イヤーーーーーーーー！！  // TODO: English translation
+@001C8E 　こっち見てるーーー！！）  // TODO: English translation
+@001CFD F09A06  // LITERAL: F09A06 (usage not inferred)
+@001D2B  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001D4A  C0F04 −−−−−−−！！  // TODO: English translation
+@001F34 L24_1_0.SPC  // LITERAL: L24_1_0.SPC (usage not inferred)
+@000DC1 バッチリじゃな〜い<F0><40>  // TODO: English translation

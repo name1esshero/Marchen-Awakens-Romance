@@ -1,0 +1,4 @@
+// DUNG_DEF.SPC: ROM 5AC390
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+

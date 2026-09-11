@@ -1,0 +1,19 @@
+// MAP11_1A.SPC: ROM A52E90
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00004B MAP11_1A  // LITERAL: MAP11_1A (usage not inferred)
+@000091 MAP11_1O  // LITERAL: MAP11_1O (usage not inferred)
+@00010D MAP11_1O  // LITERAL: MAP11_1O (usage not inferred)
+@000189 MAP11_1O  // LITERAL: MAP11_1O (usage not inferred)
+@000205 MAP11_1O  // LITERAL: MAP11_1O (usage not inferred)
+@000281 MAP11_1O  // LITERAL: MAP11_1O (usage not inferred)
+@0002FD MAP11_1O  // LITERAL: MAP11_1O (usage not inferred)
+@000379 MAP11_1O  // LITERAL: MAP11_1O (usage not inferred)
+@0003F5 MAP11_1O  // LITERAL: MAP11_1O (usage not inferred)
+@000471 MAP11_1O  // LITERAL: MAP11_1O (usage not inferred)
+@0004ED MAP11_1O  // LITERAL: MAP11_1O (usage not inferred)
+@000569 MAP11_1O  // LITERAL: MAP11_1O (usage not inferred)
+@0005E5 MAP11_1O  // LITERAL: MAP11_1O (usage not inferred)
+@000661 MAP11_1O  // LITERAL: MAP11_1O (usage not inferred)
+@0006DD MAP11_1O  // LITERAL: MAP11_1O (usage not inferred)

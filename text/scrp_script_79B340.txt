@@ -1,0 +1,46 @@
+// Legacy reference view of EV_BA04.SPC; edit text/nfp/EV_BA04.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000118 F09A01  // LITERAL: F09A01 (usage not inferred)
+@000150 F01A01  // LITERAL: F01A01 (usage not inferred)
+@0002A4  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0002C3  C0F04 ＯＫＯＫ！  // EN: OK, OK!
+@000314  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00036A ２０コが限界だからね  // EN: ...is limited to twenty.
+@0003A8  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0003FE その中から２０コをえらばなきゃいけないわ  // EN: ...you'll have to choose twenty of them.
+@000450  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00049A  C0904 『デッキ』 C0F04 というの  // EN: ...is called a deck.
+@0004E4  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000503  C0904 『デッキ』 C0F04 をかえるには C0904 コマンド C0F04 を  // EN: To change your deck, open the command menu...
+@00054B ひらいて、 C0904 デッキエディット C0F04 をえらんでね  // EN: ...and select Deck Edit.
+@0005A9  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0005C8  C0904 コマンド C0F04 をひらくのは、 C0904 スタートボタン C0F04 よ  // EN: Press START to open the command menu.
+@0006AA F02A01  // LITERAL: F02A01 (usage not inferred)
+@00078C  C0D04 ［ギンタ］  // EN: [Ginta]
+@0007A9  C0F04 ねぇ、ほんとにコレもらっていいの！？  // EN: Hey, can I really keep this?!
+@000814 F09A03  // LITERAL: F09A03 (usage not inferred)
+@000842  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000861  C0F04 いいのよ〜〜  // EN: Of course you can!
+@000880 そんなブサイク趣味じゃないし！  // EN: Ugly things like that aren't my style!
+@0008C8  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000954  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000973  C0F04 ありがと！助けてくれて！！  // EN: Thanks for helping me!!
+@0009CA  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0009E9  C0F04 また会えるとうれしいよ！  // EN: I'd be happy to see you again!
+@000A14 バイバイ、ギンタ！！  // EN: Bye-bye, Ginta!!
+@000B54 09A01  // LITERAL: 09A01 (usage not inferred)
+@000CFE  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000D1D  C0F04 「でもね…」  // EN: "But listen..."
+@000D66  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000D85  C0F04 「それをもってると、いろんなヤツに  // EN: "If you carry that around, all kinds of people...
+@000DBA 　ねらわれると思う」  // EN: ...will probably come after you."
+@000DF8  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000E48 　レア中のレアだからね」  // EN: ...is the rarest of the rare."
+@001041  C0904 【コマンド】 C0F04 … C0D04 スタートボタン  // EN: [Command menu] ... START
+@00107E  C0F04 デッキをへんしゅうしたり  // EN: You can edit your deck...
+@0010A9 ステータスを見ることができます  // EN: ...and view your status.
+@0010F1  C0904 【セーブ】 C0F04 … C0D04 セレクトボタン  // EN: [Save] ... SELECT
+@00112C  C0F04 ゲームのとちゅうけいかを  // EN: You can save...
+@001157 きろくすることができます  // EN: ...your progress in the game.

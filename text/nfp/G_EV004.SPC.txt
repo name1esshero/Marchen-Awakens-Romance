@@ -1,0 +1,6 @@
+// G_EV004.SPC: ROM 7F5F20
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000124  C0D04 ［手下］  // EN: [Henchman]
+@00013F  C0F04 ボスが奥の部屋でお待ちです。  // TODO: English translation

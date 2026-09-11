@@ -1,0 +1,7 @@
+// Legacy reference view of FULL_ITM.SPC; edit text/nfp/FULL_ITM.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000086 アイテム入れ中  // EN: Adding items.
+@0009B4 マジックストーン１０コずつ入れ中  // EN: Adding ten of each Magic Stone.
+@000B78 マジックストーン１０コずつ入れ中　おわり  // EN: Adding ten of each Magic Stone: done.

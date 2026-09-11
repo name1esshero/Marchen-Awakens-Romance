@@ -1,0 +1,3019 @@
+{
+  "totals": {
+    "scripts": 334,
+    "records": 8640,
+    "english_comments": 3701,
+    "untranslated": 4939,
+    "byte_matching": 334,
+    "ascii_literal_comments": 3073,
+    "pending_translation": 1866
+  },
+  "scripts": [
+    {
+      "name": "BGM_SET.SPC",
+      "records": 47,
+      "english_comments": 0,
+      "untranslated": 47,
+      "byte_matching": true,
+      "ascii_literal_comments": 47,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTIM00.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTIM01_3.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTIM03.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTIM04.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTIM04_4.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTIM05.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTIM07.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTIM24_1.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTIM24_2.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTIM24_4.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTIM25_1.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTIM25_2.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTIM25_4.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTIM26_1.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTIM26_3.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTIM26_5.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTIM40.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTIM41.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTIM42.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTI_DUNG.SPC",
+      "records": 5,
+      "english_comments": 0,
+      "untranslated": 5,
+      "byte_matching": true,
+      "ascii_literal_comments": 5,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTI_N.SPC",
+      "records": 52,
+      "english_comments": 0,
+      "untranslated": 52,
+      "byte_matching": true,
+      "ascii_literal_comments": 52,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTI_PSET.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTL_ESCP.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTOM00.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTOM01_3.SPC",
+      "records": 4,
+      "english_comments": 0,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTOM03.SPC",
+      "records": 4,
+      "english_comments": 0,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTOM04.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTOM04_4.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTOM04_6.SPC",
+      "records": 4,
+      "english_comments": 0,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTOM05.SPC",
+      "records": 5,
+      "english_comments": 0,
+      "untranslated": 5,
+      "byte_matching": true,
+      "ascii_literal_comments": 5,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTOM07.SPC",
+      "records": 6,
+      "english_comments": 0,
+      "untranslated": 6,
+      "byte_matching": true,
+      "ascii_literal_comments": 6,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTOM07_3.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTOM24_1.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTOM24_2.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTOM24_4.SPC",
+      "records": 3,
+      "english_comments": 0,
+      "untranslated": 3,
+      "byte_matching": true,
+      "ascii_literal_comments": 3,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTOM25_1.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTOM25_2.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTOM25_4.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTOM25_5.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTOM26_1.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTOM26_2.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTOM26_3.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTOM26_5.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTOM26_6.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTOM40.SPC",
+      "records": 3,
+      "english_comments": 0,
+      "untranslated": 3,
+      "byte_matching": true,
+      "ascii_literal_comments": 3,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTOM41.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTOM42.SPC",
+      "records": 3,
+      "english_comments": 0,
+      "untranslated": 3,
+      "byte_matching": true,
+      "ascii_literal_comments": 3,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTO_DEF.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTO_DEF2.SPC",
+      "records": 0,
+      "english_comments": 0,
+      "untranslated": 0,
+      "byte_matching": true,
+      "ascii_literal_comments": 0,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTO_DUNG.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "BTO_N.SPC",
+      "records": 54,
+      "english_comments": 0,
+      "untranslated": 54,
+      "byte_matching": true,
+      "ascii_literal_comments": 54,
+      "pending_translation": 0
+    },
+    {
+      "name": "CH_ESC.SPC",
+      "records": 105,
+      "english_comments": 60,
+      "untranslated": 45,
+      "byte_matching": true,
+      "ascii_literal_comments": 45,
+      "pending_translation": 0
+    },
+    {
+      "name": "CH_M00A.SPC",
+      "records": 11,
+      "english_comments": 2,
+      "untranslated": 9,
+      "byte_matching": true,
+      "ascii_literal_comments": 6,
+      "pending_translation": 3
+    },
+    {
+      "name": "CH_M01_3.SPC",
+      "records": 10,
+      "english_comments": 5,
+      "untranslated": 5,
+      "byte_matching": true,
+      "ascii_literal_comments": 5,
+      "pending_translation": 0
+    },
+    {
+      "name": "CH_M03A.SPC",
+      "records": 0,
+      "english_comments": 0,
+      "untranslated": 0,
+      "byte_matching": true,
+      "ascii_literal_comments": 0,
+      "pending_translation": 0
+    },
+    {
+      "name": "CH_M05A.SPC",
+      "records": 13,
+      "english_comments": 3,
+      "untranslated": 10,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 6
+    },
+    {
+      "name": "CH_M08A.SPC",
+      "records": 9,
+      "english_comments": 3,
+      "untranslated": 6,
+      "byte_matching": true,
+      "ascii_literal_comments": 3,
+      "pending_translation": 3
+    },
+    {
+      "name": "CH_M09A.SPC",
+      "records": 109,
+      "english_comments": 96,
+      "untranslated": 13,
+      "byte_matching": true,
+      "ascii_literal_comments": 13,
+      "pending_translation": 0
+    },
+    {
+      "name": "CH_M10.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "CH_M11.SPC",
+      "records": 64,
+      "english_comments": 56,
+      "untranslated": 8,
+      "byte_matching": true,
+      "ascii_literal_comments": 8,
+      "pending_translation": 0
+    },
+    {
+      "name": "CH_M24_3.SPC",
+      "records": 0,
+      "english_comments": 0,
+      "untranslated": 0,
+      "byte_matching": true,
+      "ascii_literal_comments": 0,
+      "pending_translation": 0
+    },
+    {
+      "name": "CH_M24_A.SPC",
+      "records": 24,
+      "english_comments": 20,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 3
+    },
+    {
+      "name": "CH_M26_6.SPC",
+      "records": 112,
+      "english_comments": 28,
+      "untranslated": 84,
+      "byte_matching": true,
+      "ascii_literal_comments": 43,
+      "pending_translation": 41
+    },
+    {
+      "name": "D0_BOSS.SPC",
+      "records": 4,
+      "english_comments": 0,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 0
+    },
+    {
+      "name": "D0_ENEMY.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "D0_ITEM.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "D0_MAKE.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "D0_NORM.SPC",
+      "records": 0,
+      "english_comments": 0,
+      "untranslated": 0,
+      "byte_matching": true,
+      "ascii_literal_comments": 0,
+      "pending_translation": 0
+    },
+    {
+      "name": "D1_BOSS.SPC",
+      "records": 4,
+      "english_comments": 0,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 0
+    },
+    {
+      "name": "D1_ENEMY.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "D1_ITEM.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "D1_MAKE.SPC",
+      "records": 4,
+      "english_comments": 0,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 0
+    },
+    {
+      "name": "D2_BOSS.SPC",
+      "records": 4,
+      "english_comments": 0,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 0
+    },
+    {
+      "name": "D2_ENEMY.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "D2_ITEM.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "D2_MAKE.SPC",
+      "records": 6,
+      "english_comments": 0,
+      "untranslated": 6,
+      "byte_matching": true,
+      "ascii_literal_comments": 6,
+      "pending_translation": 0
+    },
+    {
+      "name": "D3_BOSS.SPC",
+      "records": 4,
+      "english_comments": 0,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 0
+    },
+    {
+      "name": "D3_ENEMY.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "D3_ITEM.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "D3_MAKE.SPC",
+      "records": 8,
+      "english_comments": 0,
+      "untranslated": 8,
+      "byte_matching": true,
+      "ascii_literal_comments": 8,
+      "pending_translation": 0
+    },
+    {
+      "name": "D4_BOSS.SPC",
+      "records": 4,
+      "english_comments": 0,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 0
+    },
+    {
+      "name": "D4_ENEMY.SPC",
+      "records": 3,
+      "english_comments": 0,
+      "untranslated": 3,
+      "byte_matching": true,
+      "ascii_literal_comments": 3,
+      "pending_translation": 0
+    },
+    {
+      "name": "D4_ITEM.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "D4_MAKE.SPC",
+      "records": 10,
+      "english_comments": 0,
+      "untranslated": 10,
+      "byte_matching": true,
+      "ascii_literal_comments": 10,
+      "pending_translation": 0
+    },
+    {
+      "name": "DBG_BTL.SPC",
+      "records": 3,
+      "english_comments": 0,
+      "untranslated": 3,
+      "byte_matching": true,
+      "ascii_literal_comments": 3,
+      "pending_translation": 0
+    },
+    {
+      "name": "DBG_BTLQ.SPC",
+      "records": 3,
+      "english_comments": 0,
+      "untranslated": 3,
+      "byte_matching": true,
+      "ascii_literal_comments": 3,
+      "pending_translation": 0
+    },
+    {
+      "name": "DBG_ESC.SPC",
+      "records": 17,
+      "english_comments": 0,
+      "untranslated": 17,
+      "byte_matching": true,
+      "ascii_literal_comments": 17,
+      "pending_translation": 0
+    },
+    {
+      "name": "DBG_FACE.SPC",
+      "records": 297,
+      "english_comments": 35,
+      "untranslated": 262,
+      "byte_matching": true,
+      "ascii_literal_comments": 148,
+      "pending_translation": 114
+    },
+    {
+      "name": "DITEMCOM.SPC",
+      "records": 8,
+      "english_comments": 4,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 0,
+      "pending_translation": 4
+    },
+    {
+      "name": "DUNG_DEF.SPC",
+      "records": 0,
+      "english_comments": 0,
+      "untranslated": 0,
+      "byte_matching": true,
+      "ascii_literal_comments": 0,
+      "pending_translation": 0
+    },
+    {
+      "name": "DUNG_END.SPC",
+      "records": 9,
+      "english_comments": 2,
+      "untranslated": 7,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 5
+    },
+    {
+      "name": "D_VS_R.SPC",
+      "records": 28,
+      "english_comments": 17,
+      "untranslated": 11,
+      "byte_matching": true,
+      "ascii_literal_comments": 6,
+      "pending_translation": 5
+    },
+    {
+      "name": "END2.SPC",
+      "records": 220,
+      "english_comments": 72,
+      "untranslated": 148,
+      "byte_matching": true,
+      "ascii_literal_comments": 52,
+      "pending_translation": 96
+    },
+    {
+      "name": "ENE_SET.SPC",
+      "records": 0,
+      "english_comments": 0,
+      "untranslated": 0,
+      "byte_matching": true,
+      "ascii_literal_comments": 0,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_AL01.SPC",
+      "records": 63,
+      "english_comments": 41,
+      "untranslated": 22,
+      "byte_matching": true,
+      "ascii_literal_comments": 22,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_AL02.SPC",
+      "records": 50,
+      "english_comments": 34,
+      "untranslated": 16,
+      "byte_matching": true,
+      "ascii_literal_comments": 16,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_AL02B.SPC",
+      "records": 153,
+      "english_comments": 127,
+      "untranslated": 26,
+      "byte_matching": true,
+      "ascii_literal_comments": 26,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_AL03.SPC",
+      "records": 96,
+      "english_comments": 77,
+      "untranslated": 19,
+      "byte_matching": true,
+      "ascii_literal_comments": 19,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_AL04.SPC",
+      "records": 11,
+      "english_comments": 4,
+      "untranslated": 7,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 5
+    },
+    {
+      "name": "EV_BA01.SPC",
+      "records": 70,
+      "english_comments": 50,
+      "untranslated": 20,
+      "byte_matching": true,
+      "ascii_literal_comments": 20,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_BA02.SPC",
+      "records": 44,
+      "english_comments": 33,
+      "untranslated": 11,
+      "byte_matching": true,
+      "ascii_literal_comments": 11,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_BA03.SPC",
+      "records": 41,
+      "english_comments": 37,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_BA04.SPC",
+      "records": 49,
+      "english_comments": 44,
+      "untranslated": 5,
+      "byte_matching": true,
+      "ascii_literal_comments": 5,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_BIN01.SPC",
+      "records": 13,
+      "english_comments": 4,
+      "untranslated": 9,
+      "byte_matching": true,
+      "ascii_literal_comments": 3,
+      "pending_translation": 6
+    },
+    {
+      "name": "EV_BIN02.SPC",
+      "records": 11,
+      "english_comments": 3,
+      "untranslated": 8,
+      "byte_matching": true,
+      "ascii_literal_comments": 3,
+      "pending_translation": 5
+    },
+    {
+      "name": "EV_BIN03.SPC",
+      "records": 16,
+      "english_comments": 9,
+      "untranslated": 7,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 3
+    },
+    {
+      "name": "EV_EDO01.SPC",
+      "records": 83,
+      "english_comments": 61,
+      "untranslated": 22,
+      "byte_matching": true,
+      "ascii_literal_comments": 22,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_GO01.SPC",
+      "records": 67,
+      "english_comments": 53,
+      "untranslated": 14,
+      "byte_matching": true,
+      "ascii_literal_comments": 14,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_GO02.SPC",
+      "records": 39,
+      "english_comments": 30,
+      "untranslated": 9,
+      "byte_matching": true,
+      "ascii_literal_comments": 9,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_GO03.SPC",
+      "records": 15,
+      "english_comments": 11,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_GO04.SPC",
+      "records": 52,
+      "english_comments": 41,
+      "untranslated": 11,
+      "byte_matching": true,
+      "ascii_literal_comments": 11,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_GO05.SPC",
+      "records": 39,
+      "english_comments": 29,
+      "untranslated": 10,
+      "byte_matching": true,
+      "ascii_literal_comments": 10,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_GO06.SPC",
+      "records": 25,
+      "english_comments": 19,
+      "untranslated": 6,
+      "byte_matching": true,
+      "ascii_literal_comments": 6,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_GO07.SPC",
+      "records": 40,
+      "english_comments": 32,
+      "untranslated": 8,
+      "byte_matching": true,
+      "ascii_literal_comments": 8,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_GO08.SPC",
+      "records": 12,
+      "english_comments": 8,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_GO09.SPC",
+      "records": 71,
+      "english_comments": 53,
+      "untranslated": 18,
+      "byte_matching": true,
+      "ascii_literal_comments": 18,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_GO10.SPC",
+      "records": 24,
+      "english_comments": 19,
+      "untranslated": 5,
+      "byte_matching": true,
+      "ascii_literal_comments": 5,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_GO11.SPC",
+      "records": 105,
+      "english_comments": 78,
+      "untranslated": 27,
+      "byte_matching": true,
+      "ascii_literal_comments": 27,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_GO12.SPC",
+      "records": 37,
+      "english_comments": 23,
+      "untranslated": 14,
+      "byte_matching": true,
+      "ascii_literal_comments": 14,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_GTOB.SPC",
+      "records": 36,
+      "english_comments": 27,
+      "untranslated": 9,
+      "byte_matching": true,
+      "ascii_literal_comments": 9,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_GTOB2.SPC",
+      "records": 28,
+      "english_comments": 22,
+      "untranslated": 6,
+      "byte_matching": true,
+      "ascii_literal_comments": 6,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_ICE01.SPC",
+      "records": 60,
+      "english_comments": 49,
+      "untranslated": 11,
+      "byte_matching": true,
+      "ascii_literal_comments": 11,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_ICE02.SPC",
+      "records": 79,
+      "english_comments": 62,
+      "untranslated": 17,
+      "byte_matching": true,
+      "ascii_literal_comments": 17,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_ICE03.SPC",
+      "records": 21,
+      "english_comments": 15,
+      "untranslated": 6,
+      "byte_matching": true,
+      "ascii_literal_comments": 6,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_ICE04.SPC",
+      "records": 11,
+      "english_comments": 9,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_ICE05.SPC",
+      "records": 9,
+      "english_comments": 7,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_ICE06.SPC",
+      "records": 6,
+      "english_comments": 5,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_ICE07.SPC",
+      "records": 63,
+      "english_comments": 53,
+      "untranslated": 10,
+      "byte_matching": true,
+      "ascii_literal_comments": 10,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_ICE08.SPC",
+      "records": 7,
+      "english_comments": 5,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_ICE09.SPC",
+      "records": 114,
+      "english_comments": 89,
+      "untranslated": 25,
+      "byte_matching": true,
+      "ascii_literal_comments": 25,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_ICE10.SPC",
+      "records": 74,
+      "english_comments": 47,
+      "untranslated": 27,
+      "byte_matching": true,
+      "ascii_literal_comments": 27,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_ICE11.SPC",
+      "records": 60,
+      "english_comments": 36,
+      "untranslated": 24,
+      "byte_matching": true,
+      "ascii_literal_comments": 24,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_ICE12.SPC",
+      "records": 175,
+      "english_comments": 141,
+      "untranslated": 34,
+      "byte_matching": true,
+      "ascii_literal_comments": 34,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_IWA.SPC",
+      "records": 13,
+      "english_comments": 5,
+      "untranslated": 8,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 6
+    },
+    {
+      "name": "EV_JA01.SPC",
+      "records": 125,
+      "english_comments": 91,
+      "untranslated": 34,
+      "byte_matching": true,
+      "ascii_literal_comments": 34,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_JA02.SPC",
+      "records": 36,
+      "english_comments": 28,
+      "untranslated": 8,
+      "byte_matching": true,
+      "ascii_literal_comments": 8,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_JA03.SPC",
+      "records": 37,
+      "english_comments": 24,
+      "untranslated": 13,
+      "byte_matching": true,
+      "ascii_literal_comments": 13,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_JA04.SPC",
+      "records": 52,
+      "english_comments": 35,
+      "untranslated": 17,
+      "byte_matching": true,
+      "ascii_literal_comments": 17,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_JA04B.SPC",
+      "records": 69,
+      "english_comments": 51,
+      "untranslated": 18,
+      "byte_matching": true,
+      "ascii_literal_comments": 18,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_JA04C.SPC",
+      "records": 8,
+      "english_comments": 2,
+      "untranslated": 6,
+      "byte_matching": true,
+      "ascii_literal_comments": 3,
+      "pending_translation": 3
+    },
+    {
+      "name": "EV_MON01.SPC",
+      "records": 34,
+      "english_comments": 28,
+      "untranslated": 6,
+      "byte_matching": true,
+      "ascii_literal_comments": 6,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_MON02.SPC",
+      "records": 32,
+      "english_comments": 28,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_MON03.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_MON04.SPC",
+      "records": 8,
+      "english_comments": 2,
+      "untranslated": 6,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 4
+    },
+    {
+      "name": "EV_MON05.SPC",
+      "records": 8,
+      "english_comments": 2,
+      "untranslated": 6,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 4
+    },
+    {
+      "name": "EV_MON06.SPC",
+      "records": 11,
+      "english_comments": 3,
+      "untranslated": 8,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 6
+    },
+    {
+      "name": "EV_PA01.SPC",
+      "records": 35,
+      "english_comments": 31,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_RT01.SPC",
+      "records": 25,
+      "english_comments": 21,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_RT02.SPC",
+      "records": 45,
+      "english_comments": 32,
+      "untranslated": 13,
+      "byte_matching": true,
+      "ascii_literal_comments": 13,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_RT03.SPC",
+      "records": 79,
+      "english_comments": 60,
+      "untranslated": 19,
+      "byte_matching": true,
+      "ascii_literal_comments": 19,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_START.SPC",
+      "records": 14,
+      "english_comments": 4,
+      "untranslated": 10,
+      "byte_matching": true,
+      "ascii_literal_comments": 6,
+      "pending_translation": 4
+    },
+    {
+      "name": "EV_T1KIL.SPC",
+      "records": 45,
+      "english_comments": 12,
+      "untranslated": 33,
+      "byte_matching": true,
+      "ascii_literal_comments": 16,
+      "pending_translation": 17
+    },
+    {
+      "name": "EV_T2KIL.SPC",
+      "records": 48,
+      "english_comments": 15,
+      "untranslated": 33,
+      "byte_matching": true,
+      "ascii_literal_comments": 17,
+      "pending_translation": 16
+    },
+    {
+      "name": "EV_T3KIL.SPC",
+      "records": 143,
+      "english_comments": 47,
+      "untranslated": 96,
+      "byte_matching": true,
+      "ascii_literal_comments": 43,
+      "pending_translation": 53
+    },
+    {
+      "name": "EV_T4KIL.SPC",
+      "records": 79,
+      "english_comments": 52,
+      "untranslated": 27,
+      "byte_matching": true,
+      "ascii_literal_comments": 27,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_UTA01.SPC",
+      "records": 101,
+      "english_comments": 28,
+      "untranslated": 73,
+      "byte_matching": true,
+      "ascii_literal_comments": 28,
+      "pending_translation": 45
+    },
+    {
+      "name": "EV_VE01.SPC",
+      "records": 15,
+      "english_comments": 9,
+      "untranslated": 6,
+      "byte_matching": true,
+      "ascii_literal_comments": 6,
+      "pending_translation": 0
+    },
+    {
+      "name": "EV_VE02.SPC",
+      "records": 68,
+      "english_comments": 52,
+      "untranslated": 16,
+      "byte_matching": true,
+      "ascii_literal_comments": 16,
+      "pending_translation": 0
+    },
+    {
+      "name": "FULL_ITM.SPC",
+      "records": 4,
+      "english_comments": 4,
+      "untranslated": 0,
+      "byte_matching": true,
+      "ascii_literal_comments": 0,
+      "pending_translation": 0
+    },
+    {
+      "name": "GMAP27_A.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "G_EV001.SPC",
+      "records": 13,
+      "english_comments": 4,
+      "untranslated": 9,
+      "byte_matching": true,
+      "ascii_literal_comments": 5,
+      "pending_translation": 4
+    },
+    {
+      "name": "G_EV002.SPC",
+      "records": 13,
+      "english_comments": 3,
+      "untranslated": 10,
+      "byte_matching": true,
+      "ascii_literal_comments": 7,
+      "pending_translation": 3
+    },
+    {
+      "name": "G_EV003.SPC",
+      "records": 78,
+      "english_comments": 23,
+      "untranslated": 55,
+      "byte_matching": true,
+      "ascii_literal_comments": 30,
+      "pending_translation": 25
+    },
+    {
+      "name": "G_EV004.SPC",
+      "records": 2,
+      "english_comments": 1,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 0,
+      "pending_translation": 1
+    },
+    {
+      "name": "G_EV005.SPC",
+      "records": 49,
+      "english_comments": 16,
+      "untranslated": 33,
+      "byte_matching": true,
+      "ascii_literal_comments": 14,
+      "pending_translation": 19
+    },
+    {
+      "name": "G_EV006.SPC",
+      "records": 49,
+      "english_comments": 12,
+      "untranslated": 37,
+      "byte_matching": true,
+      "ascii_literal_comments": 18,
+      "pending_translation": 19
+    },
+    {
+      "name": "G_EV007.SPC",
+      "records": 53,
+      "english_comments": 19,
+      "untranslated": 34,
+      "byte_matching": true,
+      "ascii_literal_comments": 14,
+      "pending_translation": 20
+    },
+    {
+      "name": "G_EV010.SPC",
+      "records": 8,
+      "english_comments": 2,
+      "untranslated": 6,
+      "byte_matching": true,
+      "ascii_literal_comments": 3,
+      "pending_translation": 3
+    },
+    {
+      "name": "G_EV011.SPC",
+      "records": 111,
+      "english_comments": 34,
+      "untranslated": 77,
+      "byte_matching": true,
+      "ascii_literal_comments": 31,
+      "pending_translation": 46
+    },
+    {
+      "name": "G_EV011B.SPC",
+      "records": 25,
+      "english_comments": 7,
+      "untranslated": 18,
+      "byte_matching": true,
+      "ascii_literal_comments": 9,
+      "pending_translation": 9
+    },
+    {
+      "name": "G_EV011C.SPC",
+      "records": 81,
+      "english_comments": 30,
+      "untranslated": 51,
+      "byte_matching": true,
+      "ascii_literal_comments": 20,
+      "pending_translation": 31
+    },
+    {
+      "name": "G_EV012.SPC",
+      "records": 13,
+      "english_comments": 4,
+      "untranslated": 9,
+      "byte_matching": true,
+      "ascii_literal_comments": 8,
+      "pending_translation": 1
+    },
+    {
+      "name": "G_EV013.SPC",
+      "records": 27,
+      "english_comments": 8,
+      "untranslated": 19,
+      "byte_matching": true,
+      "ascii_literal_comments": 10,
+      "pending_translation": 9
+    },
+    {
+      "name": "G_EV020.SPC",
+      "records": 102,
+      "english_comments": 29,
+      "untranslated": 73,
+      "byte_matching": true,
+      "ascii_literal_comments": 32,
+      "pending_translation": 41
+    },
+    {
+      "name": "G_EV020B.SPC",
+      "records": 100,
+      "english_comments": 29,
+      "untranslated": 71,
+      "byte_matching": true,
+      "ascii_literal_comments": 24,
+      "pending_translation": 47
+    },
+    {
+      "name": "G_EV020C.SPC",
+      "records": 70,
+      "english_comments": 21,
+      "untranslated": 49,
+      "byte_matching": true,
+      "ascii_literal_comments": 15,
+      "pending_translation": 34
+    },
+    {
+      "name": "G_EV021.SPC",
+      "records": 88,
+      "english_comments": 30,
+      "untranslated": 58,
+      "byte_matching": true,
+      "ascii_literal_comments": 19,
+      "pending_translation": 39
+    },
+    {
+      "name": "G_EV022.SPC",
+      "records": 0,
+      "english_comments": 0,
+      "untranslated": 0,
+      "byte_matching": true,
+      "ascii_literal_comments": 0,
+      "pending_translation": 0
+    },
+    {
+      "name": "G_EV023.SPC",
+      "records": 111,
+      "english_comments": 39,
+      "untranslated": 72,
+      "byte_matching": true,
+      "ascii_literal_comments": 30,
+      "pending_translation": 42
+    },
+    {
+      "name": "G_EV023B.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "G_EV023C.SPC",
+      "records": 53,
+      "english_comments": 20,
+      "untranslated": 33,
+      "byte_matching": true,
+      "ascii_literal_comments": 14,
+      "pending_translation": 19
+    },
+    {
+      "name": "G_EV024.SPC",
+      "records": 78,
+      "english_comments": 23,
+      "untranslated": 55,
+      "byte_matching": true,
+      "ascii_literal_comments": 27,
+      "pending_translation": 28
+    },
+    {
+      "name": "G_EV025.SPC",
+      "records": 50,
+      "english_comments": 14,
+      "untranslated": 36,
+      "byte_matching": true,
+      "ascii_literal_comments": 20,
+      "pending_translation": 16
+    },
+    {
+      "name": "G_EV025B.SPC",
+      "records": 125,
+      "english_comments": 35,
+      "untranslated": 90,
+      "byte_matching": true,
+      "ascii_literal_comments": 32,
+      "pending_translation": 58
+    },
+    {
+      "name": "G_EV030.SPC",
+      "records": 92,
+      "english_comments": 28,
+      "untranslated": 64,
+      "byte_matching": true,
+      "ascii_literal_comments": 27,
+      "pending_translation": 37
+    },
+    {
+      "name": "G_EV031.SPC",
+      "records": 21,
+      "english_comments": 5,
+      "untranslated": 16,
+      "byte_matching": true,
+      "ascii_literal_comments": 10,
+      "pending_translation": 6
+    },
+    {
+      "name": "G_EV032.SPC",
+      "records": 0,
+      "english_comments": 0,
+      "untranslated": 0,
+      "byte_matching": true,
+      "ascii_literal_comments": 0,
+      "pending_translation": 0
+    },
+    {
+      "name": "G_EV040.SPC",
+      "records": 24,
+      "english_comments": 7,
+      "untranslated": 17,
+      "byte_matching": true,
+      "ascii_literal_comments": 9,
+      "pending_translation": 8
+    },
+    {
+      "name": "G_EV041.SPC",
+      "records": 12,
+      "english_comments": 2,
+      "untranslated": 10,
+      "byte_matching": true,
+      "ascii_literal_comments": 7,
+      "pending_translation": 3
+    },
+    {
+      "name": "G_EV042.SPC",
+      "records": 21,
+      "english_comments": 6,
+      "untranslated": 15,
+      "byte_matching": true,
+      "ascii_literal_comments": 9,
+      "pending_translation": 6
+    },
+    {
+      "name": "G_EV043.SPC",
+      "records": 43,
+      "english_comments": 14,
+      "untranslated": 29,
+      "byte_matching": true,
+      "ascii_literal_comments": 12,
+      "pending_translation": 17
+    },
+    {
+      "name": "G_EV044.SPC",
+      "records": 30,
+      "english_comments": 10,
+      "untranslated": 20,
+      "byte_matching": true,
+      "ascii_literal_comments": 10,
+      "pending_translation": 10
+    },
+    {
+      "name": "G_EV050.SPC",
+      "records": 83,
+      "english_comments": 26,
+      "untranslated": 57,
+      "byte_matching": true,
+      "ascii_literal_comments": 28,
+      "pending_translation": 29
+    },
+    {
+      "name": "G_EV051.SPC",
+      "records": 61,
+      "english_comments": 18,
+      "untranslated": 43,
+      "byte_matching": true,
+      "ascii_literal_comments": 19,
+      "pending_translation": 24
+    },
+    {
+      "name": "G_EV052.SPC",
+      "records": 11,
+      "english_comments": 3,
+      "untranslated": 8,
+      "byte_matching": true,
+      "ascii_literal_comments": 5,
+      "pending_translation": 3
+    },
+    {
+      "name": "G_EV060.SPC",
+      "records": 52,
+      "english_comments": 19,
+      "untranslated": 33,
+      "byte_matching": true,
+      "ascii_literal_comments": 15,
+      "pending_translation": 18
+    },
+    {
+      "name": "G_EV061.SPC",
+      "records": 80,
+      "english_comments": 26,
+      "untranslated": 54,
+      "byte_matching": true,
+      "ascii_literal_comments": 28,
+      "pending_translation": 26
+    },
+    {
+      "name": "G_EV062.SPC",
+      "records": 161,
+      "english_comments": 48,
+      "untranslated": 113,
+      "byte_matching": true,
+      "ascii_literal_comments": 50,
+      "pending_translation": 63
+    },
+    {
+      "name": "G_EV063.SPC",
+      "records": 20,
+      "english_comments": 7,
+      "untranslated": 13,
+      "byte_matching": true,
+      "ascii_literal_comments": 6,
+      "pending_translation": 7
+    },
+    {
+      "name": "G_VS_R.SPC",
+      "records": 11,
+      "english_comments": 4,
+      "untranslated": 7,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 5
+    },
+    {
+      "name": "HI_DUNG.SPC",
+      "records": 8,
+      "english_comments": 0,
+      "untranslated": 8,
+      "byte_matching": true,
+      "ascii_literal_comments": 6,
+      "pending_translation": 2
+    },
+    {
+      "name": "HI_M00.SPC",
+      "records": 26,
+      "english_comments": 9,
+      "untranslated": 17,
+      "byte_matching": true,
+      "ascii_literal_comments": 3,
+      "pending_translation": 14
+    },
+    {
+      "name": "HI_M01_1.SPC",
+      "records": 7,
+      "english_comments": 3,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 2
+    },
+    {
+      "name": "HI_M01_2.SPC",
+      "records": 14,
+      "english_comments": 9,
+      "untranslated": 5,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 3
+    },
+    {
+      "name": "HI_M04.SPC",
+      "records": 5,
+      "english_comments": 2,
+      "untranslated": 3,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 1
+    },
+    {
+      "name": "HI_M07.SPC",
+      "records": 46,
+      "english_comments": 15,
+      "untranslated": 31,
+      "byte_matching": true,
+      "ascii_literal_comments": 15,
+      "pending_translation": 16
+    },
+    {
+      "name": "HI_M07_2.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "HI_M09.SPC",
+      "records": 5,
+      "english_comments": 1,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 2
+    },
+    {
+      "name": "HI_M11.SPC",
+      "records": 31,
+      "english_comments": 15,
+      "untranslated": 16,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 14
+    },
+    {
+      "name": "HI_M24.SPC",
+      "records": 135,
+      "english_comments": 45,
+      "untranslated": 90,
+      "byte_matching": true,
+      "ascii_literal_comments": 30,
+      "pending_translation": 60
+    },
+    {
+      "name": "HI_M24_1.SPC",
+      "records": 64,
+      "english_comments": 18,
+      "untranslated": 46,
+      "byte_matching": true,
+      "ascii_literal_comments": 16,
+      "pending_translation": 30
+    },
+    {
+      "name": "HI_M24_2.SPC",
+      "records": 134,
+      "english_comments": 47,
+      "untranslated": 87,
+      "byte_matching": true,
+      "ascii_literal_comments": 29,
+      "pending_translation": 58
+    },
+    {
+      "name": "HI_M24_4.SPC",
+      "records": 111,
+      "english_comments": 38,
+      "untranslated": 73,
+      "byte_matching": true,
+      "ascii_literal_comments": 26,
+      "pending_translation": 47
+    },
+    {
+      "name": "HI_M25_1.SPC",
+      "records": 20,
+      "english_comments": 7,
+      "untranslated": 13,
+      "byte_matching": true,
+      "ascii_literal_comments": 6,
+      "pending_translation": 7
+    },
+    {
+      "name": "HI_M25_2.SPC",
+      "records": 32,
+      "english_comments": 10,
+      "untranslated": 22,
+      "byte_matching": true,
+      "ascii_literal_comments": 9,
+      "pending_translation": 13
+    },
+    {
+      "name": "HI_M26_2.SPC",
+      "records": 10,
+      "english_comments": 3,
+      "untranslated": 7,
+      "byte_matching": true,
+      "ascii_literal_comments": 3,
+      "pending_translation": 4
+    },
+    {
+      "name": "HI_M42.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "HI_NORM.SPC",
+      "records": 44,
+      "english_comments": 0,
+      "untranslated": 44,
+      "byte_matching": true,
+      "ascii_literal_comments": 44,
+      "pending_translation": 0
+    },
+    {
+      "name": "J_HOLE.SPC",
+      "records": 18,
+      "english_comments": 0,
+      "untranslated": 18,
+      "byte_matching": true,
+      "ascii_literal_comments": 18,
+      "pending_translation": 0
+    },
+    {
+      "name": "J_VS_M.SPC",
+      "records": 17,
+      "english_comments": 11,
+      "untranslated": 6,
+      "byte_matching": true,
+      "ascii_literal_comments": 0,
+      "pending_translation": 6
+    },
+    {
+      "name": "L11_0_0.SPC",
+      "records": 59,
+      "english_comments": 16,
+      "untranslated": 43,
+      "byte_matching": true,
+      "ascii_literal_comments": 20,
+      "pending_translation": 23
+    },
+    {
+      "name": "L11_0_2.SPC",
+      "records": 61,
+      "english_comments": 20,
+      "untranslated": 41,
+      "byte_matching": true,
+      "ascii_literal_comments": 18,
+      "pending_translation": 23
+    },
+    {
+      "name": "L11_0_3.SPC",
+      "records": 10,
+      "english_comments": 3,
+      "untranslated": 7,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 3
+    },
+    {
+      "name": "L24_0_0.SPC",
+      "records": 90,
+      "english_comments": 44,
+      "untranslated": 46,
+      "byte_matching": true,
+      "ascii_literal_comments": 12,
+      "pending_translation": 34
+    },
+    {
+      "name": "L24_1_0.SPC",
+      "records": 3,
+      "english_comments": 0,
+      "untranslated": 3,
+      "byte_matching": true,
+      "ascii_literal_comments": 3,
+      "pending_translation": 0
+    },
+    {
+      "name": "L25_4_0.SPC",
+      "records": 41,
+      "english_comments": 15,
+      "untranslated": 26,
+      "byte_matching": true,
+      "ascii_literal_comments": 10,
+      "pending_translation": 16
+    },
+    {
+      "name": "MAP00_A.SPC",
+      "records": 6,
+      "english_comments": 0,
+      "untranslated": 6,
+      "byte_matching": true,
+      "ascii_literal_comments": 6,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP01_1A.SPC",
+      "records": 4,
+      "english_comments": 0,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP01_2A.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP01_3A.SPC",
+      "records": 5,
+      "english_comments": 0,
+      "untranslated": 5,
+      "byte_matching": true,
+      "ascii_literal_comments": 5,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP01_4A.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP01_5A.SPC",
+      "records": 3,
+      "english_comments": 0,
+      "untranslated": 3,
+      "byte_matching": true,
+      "ascii_literal_comments": 3,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP01_A.SPC",
+      "records": 3,
+      "english_comments": 0,
+      "untranslated": 3,
+      "byte_matching": true,
+      "ascii_literal_comments": 3,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP03_A.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP04_4A.SPC",
+      "records": 4,
+      "english_comments": 0,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP04_5A.SPC",
+      "records": 4,
+      "english_comments": 0,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP04_6A.SPC",
+      "records": 3,
+      "english_comments": 0,
+      "untranslated": 3,
+      "byte_matching": true,
+      "ascii_literal_comments": 3,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP04_A.SPC",
+      "records": 9,
+      "english_comments": 0,
+      "untranslated": 9,
+      "byte_matching": true,
+      "ascii_literal_comments": 9,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP05_A.SPC",
+      "records": 7,
+      "english_comments": 0,
+      "untranslated": 7,
+      "byte_matching": true,
+      "ascii_literal_comments": 7,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP06_1A.SPC",
+      "records": 5,
+      "english_comments": 0,
+      "untranslated": 5,
+      "byte_matching": true,
+      "ascii_literal_comments": 5,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP06_2A.SPC",
+      "records": 3,
+      "english_comments": 0,
+      "untranslated": 3,
+      "byte_matching": true,
+      "ascii_literal_comments": 3,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP06_A.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP07_1A.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP07_2A.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP07_3A.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP07_A.SPC",
+      "records": 11,
+      "english_comments": 0,
+      "untranslated": 11,
+      "byte_matching": true,
+      "ascii_literal_comments": 11,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP08_A.SPC",
+      "records": 3,
+      "english_comments": 0,
+      "untranslated": 3,
+      "byte_matching": true,
+      "ascii_literal_comments": 3,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP09_A.SPC",
+      "records": 14,
+      "english_comments": 0,
+      "untranslated": 14,
+      "byte_matching": true,
+      "ascii_literal_comments": 14,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP10_1A.SPC",
+      "records": 3,
+      "english_comments": 0,
+      "untranslated": 3,
+      "byte_matching": true,
+      "ascii_literal_comments": 3,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP10_A.SPC",
+      "records": 5,
+      "english_comments": 0,
+      "untranslated": 5,
+      "byte_matching": true,
+      "ascii_literal_comments": 5,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP11_1A.SPC",
+      "records": 15,
+      "english_comments": 0,
+      "untranslated": 15,
+      "byte_matching": true,
+      "ascii_literal_comments": 15,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP11_2.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP11_2G.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP11_A.SPC",
+      "records": 16,
+      "english_comments": 0,
+      "untranslated": 16,
+      "byte_matching": true,
+      "ascii_literal_comments": 16,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP24_1A.SPC",
+      "records": 6,
+      "english_comments": 0,
+      "untranslated": 6,
+      "byte_matching": true,
+      "ascii_literal_comments": 6,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP24_2A.SPC",
+      "records": 6,
+      "english_comments": 0,
+      "untranslated": 6,
+      "byte_matching": true,
+      "ascii_literal_comments": 6,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP24_4A.SPC",
+      "records": 4,
+      "english_comments": 0,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP24_A.SPC",
+      "records": 4,
+      "english_comments": 0,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP25_1A.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP25_2A.SPC",
+      "records": 9,
+      "english_comments": 0,
+      "untranslated": 9,
+      "byte_matching": true,
+      "ascii_literal_comments": 9,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP25_4A.SPC",
+      "records": 9,
+      "english_comments": 0,
+      "untranslated": 9,
+      "byte_matching": true,
+      "ascii_literal_comments": 9,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP25_5A.SPC",
+      "records": 4,
+      "english_comments": 0,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP26_1A.SPC",
+      "records": 5,
+      "english_comments": 0,
+      "untranslated": 5,
+      "byte_matching": true,
+      "ascii_literal_comments": 5,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP26_2A.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP26_3A.SPC",
+      "records": 6,
+      "english_comments": 0,
+      "untranslated": 6,
+      "byte_matching": true,
+      "ascii_literal_comments": 6,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP26_5A.SPC",
+      "records": 12,
+      "english_comments": 0,
+      "untranslated": 12,
+      "byte_matching": true,
+      "ascii_literal_comments": 12,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP26_6A.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP40_A.SPC",
+      "records": 6,
+      "english_comments": 0,
+      "untranslated": 6,
+      "byte_matching": true,
+      "ascii_literal_comments": 6,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP41_A.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "MAP42_A.SPC",
+      "records": 5,
+      "english_comments": 0,
+      "untranslated": 5,
+      "byte_matching": true,
+      "ascii_literal_comments": 5,
+      "pending_translation": 0
+    },
+    {
+      "name": "OBJ_D.SPC",
+      "records": 6,
+      "english_comments": 3,
+      "untranslated": 3,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 2
+    },
+    {
+      "name": "OBJ_G.SPC",
+      "records": 8,
+      "english_comments": 3,
+      "untranslated": 5,
+      "byte_matching": true,
+      "ascii_literal_comments": 3,
+      "pending_translation": 2
+    },
+    {
+      "name": "OBJ_J.SPC",
+      "records": 11,
+      "english_comments": 2,
+      "untranslated": 9,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 5
+    },
+    {
+      "name": "OBJ_S.SPC",
+      "records": 4,
+      "english_comments": 2,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 1
+    },
+    {
+      "name": "OBJ_V.SPC",
+      "records": 6,
+      "english_comments": 2,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 3,
+      "pending_translation": 1
+    },
+    {
+      "name": "OPEN.SPC",
+      "records": 170,
+      "english_comments": 56,
+      "untranslated": 114,
+      "byte_matching": true,
+      "ascii_literal_comments": 26,
+      "pending_translation": 88
+    },
+    {
+      "name": "PHANTOM.SPC",
+      "records": 0,
+      "english_comments": 0,
+      "untranslated": 0,
+      "byte_matching": true,
+      "ascii_literal_comments": 0,
+      "pending_translation": 0
+    },
+    {
+      "name": "SHOPPA01.SPC",
+      "records": 9,
+      "english_comments": 4,
+      "untranslated": 5,
+      "byte_matching": true,
+      "ascii_literal_comments": 0,
+      "pending_translation": 5
+    },
+    {
+      "name": "SHOPPA02.SPC",
+      "records": 9,
+      "english_comments": 4,
+      "untranslated": 5,
+      "byte_matching": true,
+      "ascii_literal_comments": 0,
+      "pending_translation": 5
+    },
+    {
+      "name": "SHOPPA03.SPC",
+      "records": 9,
+      "english_comments": 4,
+      "untranslated": 5,
+      "byte_matching": true,
+      "ascii_literal_comments": 0,
+      "pending_translation": 5
+    },
+    {
+      "name": "SHOPPA04.SPC",
+      "records": 11,
+      "english_comments": 4,
+      "untranslated": 7,
+      "byte_matching": true,
+      "ascii_literal_comments": 0,
+      "pending_translation": 7
+    },
+    {
+      "name": "SHOPPA05.SPC",
+      "records": 12,
+      "english_comments": 5,
+      "untranslated": 7,
+      "byte_matching": true,
+      "ascii_literal_comments": 0,
+      "pending_translation": 7
+    },
+    {
+      "name": "SHOPPE01.SPC",
+      "records": 6,
+      "english_comments": 3,
+      "untranslated": 3,
+      "byte_matching": true,
+      "ascii_literal_comments": 0,
+      "pending_translation": 3
+    },
+    {
+      "name": "SHOPPE02.SPC",
+      "records": 9,
+      "english_comments": 5,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 0,
+      "pending_translation": 4
+    },
+    {
+      "name": "SPR_DUNG.SPC",
+      "records": 15,
+      "english_comments": 5,
+      "untranslated": 10,
+      "byte_matching": true,
+      "ascii_literal_comments": 10,
+      "pending_translation": 0
+    },
+    {
+      "name": "SPR_NORM.SPC",
+      "records": 80,
+      "english_comments": 0,
+      "untranslated": 80,
+      "byte_matching": true,
+      "ascii_literal_comments": 80,
+      "pending_translation": 0
+    },
+    {
+      "name": "SP_M00.SPC",
+      "records": 13,
+      "english_comments": 4,
+      "untranslated": 9,
+      "byte_matching": true,
+      "ascii_literal_comments": 6,
+      "pending_translation": 3
+    },
+    {
+      "name": "SP_M01.SPC",
+      "records": 17,
+      "english_comments": 4,
+      "untranslated": 13,
+      "byte_matching": true,
+      "ascii_literal_comments": 7,
+      "pending_translation": 6
+    },
+    {
+      "name": "SP_M01_1.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "SP_M01_3.SPC",
+      "records": 15,
+      "english_comments": 3,
+      "untranslated": 12,
+      "byte_matching": true,
+      "ascii_literal_comments": 8,
+      "pending_translation": 4
+    },
+    {
+      "name": "SP_M01_4.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "SP_M01_5.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "SP_M01_6.SPC",
+      "records": 4,
+      "english_comments": 0,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 0
+    },
+    {
+      "name": "SP_M04.SPC",
+      "records": 10,
+      "english_comments": 0,
+      "untranslated": 10,
+      "byte_matching": true,
+      "ascii_literal_comments": 9,
+      "pending_translation": 1
+    },
+    {
+      "name": "SP_M04_4.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "SP_M04_5.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "SP_M05.SPC",
+      "records": 3,
+      "english_comments": 0,
+      "untranslated": 3,
+      "byte_matching": true,
+      "ascii_literal_comments": 3,
+      "pending_translation": 0
+    },
+    {
+      "name": "SP_M06_1.SPC",
+      "records": 7,
+      "english_comments": 2,
+      "untranslated": 5,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 1
+    },
+    {
+      "name": "SP_M06_2.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "SP_M07.SPC",
+      "records": 9,
+      "english_comments": 0,
+      "untranslated": 9,
+      "byte_matching": true,
+      "ascii_literal_comments": 9,
+      "pending_translation": 0
+    },
+    {
+      "name": "SP_M07_1.SPC",
+      "records": 17,
+      "english_comments": 0,
+      "untranslated": 17,
+      "byte_matching": true,
+      "ascii_literal_comments": 16,
+      "pending_translation": 1
+    },
+    {
+      "name": "SP_M08.SPC",
+      "records": 10,
+      "english_comments": 3,
+      "untranslated": 7,
+      "byte_matching": true,
+      "ascii_literal_comments": 0,
+      "pending_translation": 7
+    },
+    {
+      "name": "SP_M09.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "SP_M10.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "SP_M10_1.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 1
+    },
+    {
+      "name": "SP_M24.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 0,
+      "pending_translation": 2
+    },
+    {
+      "name": "SP_M24_1.SPC",
+      "records": 5,
+      "english_comments": 0,
+      "untranslated": 5,
+      "byte_matching": true,
+      "ascii_literal_comments": 5,
+      "pending_translation": 0
+    },
+    {
+      "name": "SP_M24_2.SPC",
+      "records": 4,
+      "english_comments": 0,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 0
+    },
+    {
+      "name": "SP_M24_3.SPC",
+      "records": 3,
+      "english_comments": 1,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 0,
+      "pending_translation": 2
+    },
+    {
+      "name": "SP_M24_4.SPC",
+      "records": 55,
+      "english_comments": 15,
+      "untranslated": 40,
+      "byte_matching": true,
+      "ascii_literal_comments": 21,
+      "pending_translation": 19
+    },
+    {
+      "name": "SP_M25_1.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "SP_M25_2.SPC",
+      "records": 8,
+      "english_comments": 0,
+      "untranslated": 8,
+      "byte_matching": true,
+      "ascii_literal_comments": 8,
+      "pending_translation": 0
+    },
+    {
+      "name": "SP_M25_4.SPC",
+      "records": 31,
+      "english_comments": 6,
+      "untranslated": 25,
+      "byte_matching": true,
+      "ascii_literal_comments": 15,
+      "pending_translation": 10
+    },
+    {
+      "name": "SP_M25_5.SPC",
+      "records": 71,
+      "english_comments": 19,
+      "untranslated": 52,
+      "byte_matching": true,
+      "ascii_literal_comments": 23,
+      "pending_translation": 29
+    },
+    {
+      "name": "SP_M26_1.SPC",
+      "records": 4,
+      "english_comments": 0,
+      "untranslated": 4,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 0
+    },
+    {
+      "name": "SP_M26_2.SPC",
+      "records": 26,
+      "english_comments": 7,
+      "untranslated": 19,
+      "byte_matching": true,
+      "ascii_literal_comments": 10,
+      "pending_translation": 9
+    },
+    {
+      "name": "SP_M26_3.SPC",
+      "records": 5,
+      "english_comments": 0,
+      "untranslated": 5,
+      "byte_matching": true,
+      "ascii_literal_comments": 5,
+      "pending_translation": 0
+    },
+    {
+      "name": "SP_M26_5.SPC",
+      "records": 52,
+      "english_comments": 18,
+      "untranslated": 34,
+      "byte_matching": true,
+      "ascii_literal_comments": 17,
+      "pending_translation": 17
+    },
+    {
+      "name": "SP_M40.SPC",
+      "records": 5,
+      "english_comments": 0,
+      "untranslated": 5,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 1
+    },
+    {
+      "name": "SP_M41.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "SP_M42.SPC",
+      "records": 11,
+      "english_comments": 2,
+      "untranslated": 9,
+      "byte_matching": true,
+      "ascii_literal_comments": 5,
+      "pending_translation": 4
+    },
+    {
+      "name": "SROLL.SPC",
+      "records": 3,
+      "english_comments": 0,
+      "untranslated": 3,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 1
+    },
+    {
+      "name": "S_BTLIRQ.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "S_BTLOUT.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "S_CHRIRQ.SPC",
+      "records": 28,
+      "english_comments": 0,
+      "untranslated": 28,
+      "byte_matching": true,
+      "ascii_literal_comments": 28,
+      "pending_translation": 0
+    },
+    {
+      "name": "S_DUNG.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "S_HITIRQ.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "S_MAIN.SPC",
+      "records": 1,
+      "english_comments": 0,
+      "untranslated": 1,
+      "byte_matching": true,
+      "ascii_literal_comments": 1,
+      "pending_translation": 0
+    },
+    {
+      "name": "S_MAP11.SPC",
+      "records": 7,
+      "english_comments": 2,
+      "untranslated": 5,
+      "byte_matching": true,
+      "ascii_literal_comments": 4,
+      "pending_translation": 1
+    },
+    {
+      "name": "S_MAPIRQ.SPC",
+      "records": 123,
+      "english_comments": 0,
+      "untranslated": 123,
+      "byte_matching": true,
+      "ascii_literal_comments": 123,
+      "pending_translation": 0
+    },
+    {
+      "name": "S_SIOBTL.SPC",
+      "records": 0,
+      "english_comments": 0,
+      "untranslated": 0,
+      "byte_matching": true,
+      "ascii_literal_comments": 0,
+      "pending_translation": 0
+    },
+    {
+      "name": "S_SPRIRQ.SPC",
+      "records": 2,
+      "english_comments": 0,
+      "untranslated": 2,
+      "byte_matching": true,
+      "ascii_literal_comments": 2,
+      "pending_translation": 0
+    },
+    {
+      "name": "W_MAP.SPC",
+      "records": 16,
+      "english_comments": 0,
+      "untranslated": 16,
+      "byte_matching": true,
+      "ascii_literal_comments": 15,
+      "pending_translation": 1
+    }
+  ]
+}

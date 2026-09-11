@@ -1,0 +1,71 @@
+// EV_GO01.SPC: ROM 79D720
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@0000BD MAP07_A.SPC  // LITERAL: MAP07_A.SPC (usage not inferred)
+@0001A6 A  // LITERAL: A (usage not inferred)
+@000232 B  // LITERAL: B (usage not inferred)
+@00042F  C0D04 ［？？？］  // EN: [???]
+@00044C  C0F04 ま、 C0D04 まり C0F04 ょく！！  // EN: M-magic!!
+@0004A7  C0D04 ［？？？］  // EN: [???]
+@0004C4  C0F04 へ！マヌケなてめぇでも  // EN: Heh! Even an idiot like you...
+@0004ED 気付いたか！！  // EN: ...noticed it!!
+@000525  C0D04 ［？？？］  // EN: [???]
+@000542  C0B04 う C0F04 、う C0904 ん C0F04 ！  // EN: Y-yeah!
+@00059E  C0D04 ［？？？］  // EN: [???]
+@0005BB  C0F04 ３人だ！！  // EN: Three of them!!
+@00079B F21A02  // LITERAL: F21A02 (usage not inferred)
+@000874  C0D04 ［ギロム］  // EN: [Girom]
+@000891  C0F04 村のれんちゅうじゃねぇな…  // EN: They're not from the village...
+@0008F8 F20A01  // LITERAL: F20A01 (usage not inferred)
+@0009D1  C0D04 ［オルコ］  // EN: [Orco]
+@0009EE  C0F04 …  // EN: ...
+@000A2D  C0D04 ［オルコ］  // EN: [Orco]
+@000A4A  C0F04 … C0B04 なん C0F04 で C0904 も C0F04 いい！  // EN: ...Who cares!
+@000AC3 F21A01  // LITERAL: F21A01 (usage not inferred)
+@000AF1  C0D04 ［ギロム］  // EN: [Girom]
+@000B0E  C0F04 少しは手ごたえのあるヤツと  // EN: Looks like we might finally get...
+@000B3B たたかえそうだぜ！！  // EN: ...a halfway decent fight!!
+@000DD0 A  // LITERAL: A (usage not inferred)
+@000E5C A  // LITERAL: A (usage not inferred)
+@000FE8 F09A01  // LITERAL: F09A01 (usage not inferred)
+@0010C1  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0010E0  C0F04 …ギンタン…  // EN: ...Gintan...
+@0010FF かおがこわ〜〜い  // EN: You look so scary!
+@001139  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001158  C0F04 何おこってるの？？  // EN: What are you angry about??
+@0011B7 F01B04  // LITERAL: F01B04 (usage not inferred)
+@001290  C0D04 ［ギンタ］  // EN: [Ginta]
+@0012AD  C0F04 あたりまえだろ！！  // EN: Of course I'm angry!!
+@0012FC  C0D04 ［ギンタ］  // EN: [Ginta]
+@001319  C0F04 …  // EN: ...
+@001358  C0D04 ［ギンタ］  // EN: [Ginta]
+@001375  C0F04 オレ、あの人たちに  // EN: I don't want those people...
+@00139A あきらめてほしくないんだ！  // EN: ...to give up!
+@0013DE  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0013FD  C0F04 （ギンタン…）  // EN: (Gintan...)
+@001458 F08A01  // LITERAL: F08A01 (usage not inferred)
+@00159D  C0D04 ［ナナシ］  // EN: [Nanashi]
+@0015E7 うわさはきいたことある  // EN: ...that there's an ÄRM hidden here.
+@001627  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001644  C0F04 それで、チェスに  // EN: That must be why...
+@001667 ねらわれたんやろな  // EN: ...the Chess Pieces targeted them.
+@0016A3  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0016C2  C0F04 なるほどねぇ…  // EN: I see...
+@00171D F08A03  // LITERAL: F08A03 (usage not inferred)
+@00174B  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001768  C0F04 …それにしても…  // EN: ...Still...
+@0017B5  C0D04 ［ナナシ］  // EN: [Nanashi]
+@0017D2  C0F04 なんや、うすらさむい気が  // EN: There's this eerie chill...
+@0017FD じゅうまんしてるのぉ〜  // EN: ...hanging over the whole place.
+@001883 F08A05  // LITERAL: F08A05 (usage not inferred)
+@0018E7  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001904  C0F04 …ぜったい、なんかいるで！  // EN: ...There's definitely something here!
+@0019D7 F09A05  // LITERAL: F09A05 (usage not inferred)
+@001A71  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001A90  C0F04 ちょちょちょちょっと！  // EN: W-w-w-wait a second!
+@001AB9 おどかさないでちょうだい！  // EN: Don't scare me like that!
+@001AFD  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001B1C  C0F04 わたし、そういうの  // EN: I really can't stand...
+@001B41 にがてなんだから！！  // EN: ...that sort of thing!!
+@0015BA  C0F04 ここに<F0><56>ＲＭがかくされとる  // EN: I've heard rumors...

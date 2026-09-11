@@ -1,0 +1,15 @@
+// Legacy reference view of G_VS_R.SPC; edit text/nfp/G_VS_R.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000051 F30A01  // LITERAL: F30A01 (usage not inferred)
+@000112  C0D04 ［親岩］  // EN: [Parent Rock]
+@00012D  C0F04 ボッチャンに、このあいだのお礼を  // TODO: English translation
+@000160 させてください  // TODO: English translation
+@0001EC  C0D04 ガトリングバッボ C0F04 を  // TODO: English translation
+@000218 もらった！  // EN: Received it!
+@00029A  C0D04 ［親岩］  // EN: [Parent Rock]
+@0002B5  C0F04 気をつけてお行きなさい  // TODO: English translation
+@000317 F30A01  // LITERAL: F30A01 (usage not inferred)
+@0003D8  C0D04 ［親岩］  // EN: [Parent Rock]
+@0003F3  C0F04 ボッチャン、気をつけてお行きなさい  // TODO: English translation

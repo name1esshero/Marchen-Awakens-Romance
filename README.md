@@ -1,0 +1,338 @@
+# MAR — Knockin' on Heaven's Door (Japan)
+
+A work-in-progress GBA decompilation with a byte-identical ROM rebuild.
+The original ROM is required locally; it is not supplied by the tools.
+
+```sh
+make -j4
+make compare
+```
+
+Expected SHA-1: `5ed178bfbdf459867d64e5b91a9d9c72654e4051` (16,777,216 bytes).
+`make compare` checks every ROM byte.
+
+**Toolchain.** arm-none-eabi binutils for assembling and linking, and **agbcc**
+for C. agbcc is the period compiler preserved by the pret projects, and it is
+required rather than preferred: modern GCC allocates registers differently for
+identical source, so C only reproduces the original bytes when agbcc compiles
+it. Build and install it once:
+
+```sh
+git clone https://github.com/pret/agbcc && cd agbcc
+./build.sh && ./install.sh /path/to/this/project
+```
+
+That places the compiler under `tools/agbcc`. Sources are preprocessed with
+`arm-none-eabi-cpp`, compiled by agbcc, then assembled, because agbcc is a cc1
+only. Python tools use the standard library.
+
+## Browse the recovered assets
+
+[Graphics folder guide](graphics/README.md) · [Named background art](graphics/backgrounds/index.html).
+The frame manifests retain 9,252 records while sharing 6,627 distinct PNG
+sources. Consolidation removed 2,625 identical copies and 104 redundant
+palette sidecars; named palettes remain authoritative.
+
+- [Character animations](graphics/battle/characters/index.html): 2,498 editable frames.
+- [Battle effects](graphics/battle/effects/index.html): 4,817 editable frames.
+- [UI, item art, and panels](graphics/ui/index.html): 1,937 editable frames.
+- [152 dialogue portraits](graphics/portraits/index.html): original resource names,
+  all expressions, and links to their palette banks.
+- [84 icon frames](graphics/icons/index.html): `ICON` and `ICONMINI`, 42 each.
+- [1,734 named sprite previews](reports/sprites/index.html): first frame of each
+  named group's first animation, assembled using its actual cells and palettes.
+- [Graphics audit and colored tile previews](reports/graphics/index.html).
+- [Font preview](graphics/fonts/preview.png), [editable font sheet](graphics/fonts/font.png),
+  [Unicode-labelled glyph index](graphics/fonts/glyphs.tsv).
+
+Preview frame composition reproduces stored cell positions and ordinary flip
+bits. Runtime affine transforms, animation playback, and priority behavior
+have not been checked against an emulator.
+
+## Editable build sources
+
+| Content | Edit here | Notes |
+|---|---|---|
+| Portrait pixels | `graphics/portraits/F*.png` | 152 individual 64×64 indexed PNGs |
+| Icon pixels | `graphics/icons/ICON_*.png`, `ICONMINI_*.png` | Individual indexed frames |
+| Assembled character/effect frames | `graphics/battle/*/frames/*.png` | Indexed, transparent, original cell palettes |
+| Assembled UI frames | `graphics/ui/frames/*.png` | Includes item art and portrait resources |
+| Individual sprite cells | `graphics/battle/*/cells/*/*.png`, `graphics/ui/cells/*/*.png` | Complete pixels, including occluded layers |
+| Animation and layout tables | Each sprite category’s `source/*.json` | Groups, animations, frames, cells, and container metadata |
+| Sprite palettes | Each sprite category’s `palettes/*.pal` | 762 original 16-color BGR555 banks |
+| Background tile pixels | Paths in `assets.json` marked with `archive_name` | 104 named KCG/TCG resources |
+| Background palettes | `graphics/palettes/*.pal` | 105 named KCL/TCL members |
+| Font pixels | `graphics/fonts/font.png` | 8×8 glyphs, 1bpp, 32 slots per row |
+| Script strings | `text/nfp/*.SPC.txt` | All 334 named SPC members, compressed and uncompressed |
+| Tilemap entries | `graphics/tilemaps/nfp/*.TSC.bin` | 90 named members, one 32x32 screenblock each |
+| Map data | `maps/nfp/*.KMP.bin` | 193 named members; internal layout not yet decoded |
+| Matching C | `src/*.c` | Addresses and occupied ranges in `src/decompiled.json` |
+
+Keep PNG dimensions and palette indices intact. Sprite PNG palette colors are
+viewing aids; edit the linked `.pal` file to change the actual ROM colors.
+Portrait and icon edits are merged into SYSTEM.NCD; unchanged copies do not
+mask changes to individual cell images. Incompatible edits to shared bytes are
+rejected. Shared sprite tiles and palette banks can affect multiple images.
+
+The animation galleries run locally without a server. Playback FPS is a preview
+control; stored frame durations are displayed without claiming exact game timing.
+Run `python3 tools/scenes.py extract` to regenerate the galleries; existing frame
+PNGs with authored edits are preserved; unchanged views refresh from the cell sources. Frame edits must stay within existing cells and use their
+palette indices. Edits that cannot be represented because of overlapping or
+shared tiles are rejected; use the individual cell images for those changes.
+
+Builds stage files under `build/` and do not overwrite source art. Every PNG
+is converted and compressed with the matching VRAM-safe encoder. Timestamp or
+display-palette changes cannot alter pixel indices. Compressed pixel edits
+must fit the original reserved span. Intentional pixel, palette, or Japanese
+text edits change the ROM; comments alone do not.
+
+NCD containers are compiled from individual PNGs, palettes and readable JSON
+tables; no original NCD or large tile-sheet image is a build input. The font
+currently retains its original `.nft` header source. Files under
+`reports/` and contact-sheet/preview PNGs are inspection artifacts, not editable
+ROM inputs.
+
+## What was recovered
+
+The initialization code registers `MAR.NFP` at ROM `[0x1C0920, 0xF28410)`.
+Its `NFP2.0` directory contains 830 members. Each directory record has a
+12-byte filename and a 32-bit archive-relative offset. Directory counts and
+table access are recovered from `0x0807AAD0`, `0x0807AB08`, `0x0807AC28`, and
+`0x0807AC3C`; `tools/nfp.py` validates the directory and member boundaries.
+
+The three `NCD` containers contain 32,265 sprite cells. Their source-level build
+is documented in [the graphics guide](graphics/README.md). The old
+`graphics/ncd` directory has been removed. Their group, animation,
+frame, cell, palette, and tile tables are resolved by `0x0807B96C`. The palette
+lookup at `0x0807BAF8` uses `cell.paletteIndex * 32`; the following graphics
+lookup uses `cell.tileIndex * 32`. Every cell's geometry and palette index
+validates, and the maximum referenced tile end exactly matches each NCD member
+boundary. See [include/ncd.h](include/ncd.h) and
+[src/nonmatching/ncd.c](src/nonmatching/ncd.c).
+
+All 105 KCL/TCL palette members and all 762 NCD palette banks round-trip to
+BGR555 without losing bits. Backgrounds may select multiple banks; the gallery
+exposes bank variants instead of asserting one palette for an entire tile
+sheet. Five 8bpp TCG previews place their palette at index 192 based on the
+observed pixel-index range; this placement is marked as inferred in the manifest.
+
+### The old raw graphics folder
+
+`graphics/raw` was generated by a statistical detector, not a resource parser.
+Its 300 PNGs included map bytes, animation tables, and tile-pool fragments,
+including fragments starting halfway through a tile. Those images and seven
+false LZ77 image detections have been removed with `reports/graphics/legacy`.
+Their hashes, classifications and manifest records remain in
+`reports/graphics/retired-scan.json`; they are not build inputs. Future heuristic
+extractions report JSON candidates without creating image/source files.
+
+The 104 named KCG/TCG resources use archive filenames. Of these, 82 now build
+from 116 assembled image layers under `graphics/backgrounds`, using decoded
+KMP dimensions, tile indices, flips and palette banks, or affine TSC byte indices. The remaining 22 retain
+tile-sheet sources under `graphics/tilesets` pending other map profiles. See
+[the mapped-image guide](graphics/backgrounds/README.md). The previous
+sprite/tilemap labels were shape guesses.
+Run `python3 tools/audit_graphics_sources.py` to account for every active PNG
+and detect missing, untracked or misfiled sources. Unknown map fields and
+unclassified bytes outside named resources remain unresolved.
+
+## Font and charmap
+
+`FONT.NFT` begins at ROM `0x7BA990`. Its 96-byte header/palette area is followed
+by exactly 63,872 bitmap bytes: 7,984 slots × 8 bytes. There are 950 deliberately
+blank slots. The extracted font ends at `0x7CA370`, exactly the next archive
+member boundary; unrelated data is not attached to the font image.
+
+[char­map.txt](charmap.txt) documents the engine reader, full glyph mapping,
+private codes, and fallback behavior. [engine_charmap.tsv](graphics/fonts/engine_charmap.tsv)
+contains all 65,536 16-bit inputs. `tests/test_font.py` executes the original
+THUMB mapping routine and verifies every result against the readable port.
+The private codes `F056` and `F040` select Ä and heart glyphs. Text files retain
+these as `<F0><56>` and `<F0><40>` so the ROM bytes are preserved.
+
+Full-width Shift-JIS Latin characters select the clean Latin glyphs seen in
+the preview. Single-byte ASCII uses a different index formula; the tools do
+not silently substitute full-width input. The glyph mapping is complete;
+the dialogue reader at 08011AF4 interprets Cxxxx as ink/shadow colors and
+Txxxx as delay. Ordinary ASCII is skipped on that path. See the
+[English layout notes](text/translation/README.md).
+
+## Text and translations
+
+[Browse scripts with English comments and portrait references](reports/text/index.html).
+The browser sorts records by CODE offset and links exact portrait resource IDs;
+it does not reconstruct branches or infer which portrait is currently displayed.
+Regenerate it after annotation changes with `python3 tools/text_gallery.py`.
+
+`text/nfp` contains 8,640 conservatively detected, length-framed string records
+from all 334 named scripts. This includes 1,021 records missed by the older
+compressed-only/standard-Shift-JIS extraction. A `0x10` opcode, 16-bit length,
+and exact single terminator establish each candidate's framing. This is not
+claimed to be a complete bytecode disassembly; some strings are resource names
+or other internal literals rather than dialogue.
+
+Record addresses are CODE-local opcode offsets. Two spaces followed by `//`
+introduce a comment; original trailing spaces before those two separators are
+significant. English annotations use `// EN:`; unresolved translations retain
+`// TODO:`. ASCII literals have separate `// LITERAL:` notes and are not counted
+as translated dialogue. Names are transliterations, not asserted official
+localization spellings.
+
+There are currently 3,701 named-script records with English comments. Full
+translation is **not complete**. The exact remaining counts are generated in
+[reports/text/audit.json](reports/text/audit.json). Reviewed exact-string
+translations shared across scripts are maintained in `text/translation/english.json`.
+Scene-specific wording is maintained in `text/translation/scripts.json`, keyed by
+the original SPC filename; these entries override shared wording only in that
+script. Keep sentence fragments here to avoid changing unrelated dialogue. Run
+`python3 tools/translate_comments.py` to apply them without changing Japanese.
+Legacy `text/scrp_*.txt` files are retained for reference; edit `text/nfp` for
+script changes. Loose ROM text outside named sources still uses `text/script_*`.
+
+## Decompilation status
+
+**The build compiles C with agbcc**, the period compiler the pret projects
+preserve. This is what lets ordinary C reproduce the original instruction
+bytes: modern GCC allocates registers differently for identical source and
+will not match. Installed under `tools/agbcc`, and the effect is immediate.
+`NfpGetArchiveBase` matches instruction for instruction, literal pool
+included, where modern GCC differed on two counts in every function:
+
+| | agbcc / ROM | modern GCC |
+|---|---|---|
+| Leaf prologue | `push {lr}` | `push {r4, lr}`, saving a register it never uses |
+| `index * 24` | `((i * 2) + i) * 8` with shifts | load 24, then `muls` |
+
+The current manifest declares 53 linked ranges: 43 compiled-C ranges and ten
+BIOS inline-assembly wrapper ranges. One range may contain multiple contiguous
+functions and alignment bytes. The [build provenance audit](reports/build/README.md)
+checks their linked object providers and distinguishes them from preserved
+assembly literals and original compressed data. A forced rebuild and deliberate
+C/sprite/font source mutations verified that source changes reach the final ROM.
+
+### A note on section padding
+
+A function whose body is not a multiple of four bytes needs its alignment tail
+declared in the same section. Left alone the assembler pads the tail with a
+THUMB nop (`0xC046`) where the cartridge holds zeros. Contiguous functions
+should share one section so the compiler's own `.align 2, 0` supplies the gap,
+as `SetEntityRenderOverride` and `GetEntityRenderOverride` now do. Pinning
+each function to its own section is an artifact of this project's layout, not
+how the original was built.
+
+### The filesystem
+
+`src/nfp.c` and `include/nfp.h` decompile the accessors every asset load goes
+through: `NfpGetArchiveBase`, `NfpGetDirectory`, `NfpGetData` and
+`NfpGetEntryCount`, from `0x0807AAA0`, `0x0807AAD0`, `0x0807AAE0` and
+`0x0807AB08`. The header fields they read at `+0x34`, `+0x38` and `+0x3C` are
+exactly the count, directory and data offsets the extraction tools rely on, so
+the C and the tooling agree on one documented structure.
+
+Two details worth keeping: the IWRAM global at `0x03006114` points at
+filesystem state whose first field is the mount array, so there are two
+indirections before the index; and mounts are 24-byte records indexed by
+handle, so the design supports several archives open at once even though this
+cartridge ships one.
+
+Readable nonmatching C still documents the glyph-index function, font glyph
+addressing, engine character reading, and NCD table lookup, excluded from the
+matching build. `src/nonmatching/archive.c` holds partial readings of the
+background loader: `0x08027EAE` is inside `ArchiveTaskStep`, and its corrected
+structures are in `include/archive.h`.
+
+The analyzer's 19,536 labels are not a reliable function count: several labels
+are inside routines. For example `0x080032C4`, `0x080032CC`, `0x080032DC`, and
+`0x080032F2` belong to the routine beginning at `0x080032B8`. Check control flow
+before choosing a decompilation unit.
+
+To replace assembly with C, add the source and alias, record the original ROM
+address and occupied size in `src/decompiled.json`, regenerate the code split with `tools/split.py`'s `write_code` API, and run
+`make compare`. Full extraction can reset edited asset sources; do not use it
+as a routine C-only regeneration step.
+
+## Filesystem coverage
+
+Every NFP member now builds from a named source. `tools/named_maps.py` covers
+the last two types that were still reaching the ROM as anonymous chunks, the
+90 `TSC` tilemaps and 193 `KMP` maps, with extract, build and verify modes.
+
+| Source of the ROM image | Bytes |
+|---|---|
+| Named assets | 14.43 MB |
+| Anonymous `data/` chunks | 0.91 MB |
+
+A `TSC` member is not always a 2048-byte screenblock. The five decoded 8bpp resources use 256/1024-byte affine maps with one byte per tile. Regular background maps use 16-bit entries,
+with the tile index in bits 0-9, horizontal and vertical flip at bits 10 and
+11, and the palette bank in bits 12-15.
+
+What remains outside the filesystem is 0.91 MB, and it is not one thing. Four
+large regions sit past the directory's end at `0xF28410`; three of those are
+filler, one 256 KB region is real data. The rest is roughly 70 KB of
+name-keyed tables between the code and the archive, plus around a hundred
+alignment gaps of 14 to 15 bytes each.
+
+## Checks and regeneration
+
+```sh
+python3 -m unittest discover -s tests -v
+make graphics-audit
+python3 tools/named_scripts.py audit
+make -j4 compare
+make clean
+make -j4 compare
+```
+
+`make extract` re-extracts original assets from `baserom.gba` and regenerates the
+split. Extraction can reset edited graphics; ordinary builds do not. Named
+script extraction preserves existing records/comments and adds missing records.
+The generated `asm/data` sources choose named font, palettes, scripts, and NCD
+containers ahead of overlapping heuristic scan hits.
+
+### Recovery snapshots
+
+`make snapshot` creates a verified archive under `backups/clean-<UTC time>/`.
+It includes editable graphics, palettes, animation tables, translations, C,
+assembly, raw data, analysis, tools, the bundled agbcc compiler and the original
+ROM. It excludes earlier backups, build output, caches and local agent/Git
+configuration. Every archived file is checked against its SHA-256; file modes
+and symbolic links are preserved. Errors stop snapshot creation.
+
+Each backup includes `SHA256SUMS`, a per-file `manifest.json`, and `RESTORE.txt`.
+Restore into an empty directory, then run `make -j4 compare` there. System
+Python dependencies and the ARM binutils/preprocessor still need to be installed.
+Snapshots do not automatically delete earlier recovery points.
+
+The obsolete `assets_rle/` scan output is no longer a build input. See
+[the graphics notes](graphics/README.md#retired-rle-scan-output) for the retained
+unclassified region and the limits of the former RLE identification.
+
+## Audio and translation audit
+
+[115 editable driver-referenced WAV samples](sound/README.md) replace the old
+statistical sound guesses. Audio now rebuilds from WAV and header JSON, including
+computed loop interpolation guards. Song tables are documented, but musical
+sequencing and PSG reconstruction remain unfinished.
+
+[Translation and English layout notes](text/translation/README.md) explain the
+actual dialogue printer, its double-byte English font mapping, and strict row
+limits. The optional `make english` build hooks the recovered dialogue constructor;
+pagination and complete script/text discovery are still unfinished. Run `python3 tools/audit_setup.py`
+for reproducible archive ownership and audio source checks.
+
+### Generated compression files and cleanup
+
+`make english` builds `mar_english.gba`; `make compare` verifies `mar.gba`.
+`make clean` removes both ROM outputs and `build/`, including generated `.lz`,
+`.4bpp`, `.8bpp`, objects and localization tables.
+
+All 344 loose source `.lz` files have been removed: 240 duplicate script copies
+and 104 graphics templates. Named SPC sources under `scripts/nfp` still own the
+script bytecode and compressed framing; edit their text through `text/nfp`.
+Graphics compression is fully generated: the VRAM-safe encoder reproduces all
+104 original streams from PNG/layout sources, including its nearest-match tie
+policy. No ROM, original LZ file, or compression recipe supplies output bytes.
+Edited graphics must fit their original compressed allocation; shorter streams
+receive zero fill within that allocation. The default unedited sources match
+both the original streams and complete ROM byte for byte.

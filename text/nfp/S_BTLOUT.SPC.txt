@@ -1,0 +1,6 @@
+// S_BTLOUT.SPC: ROM F12490
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00003B BTO_N.SPC  // LITERAL: BTO_N.SPC (usage not inferred)
+@000081 BTO_DUNG.SPC  // LITERAL: BTO_DUNG.SPC (usage not inferred)

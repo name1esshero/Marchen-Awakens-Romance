@@ -1,0 +1,40 @@
+// EV_GTOB.SPC: ROM 7A3AE0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00006D A  // LITERAL: A (usage not inferred)
+@000230 F01A07  // LITERAL: F01A07 (usage not inferred)
+@0002F1  C0D04 ［ギンタ］  // EN: [Ginta]
+@00030E  C0F04 見たことも無い虫とかキノコでいっぱいだ！  // EN: So many bugs and mushrooms I've never seen!
+@000349 やっぱこのせかいすげーな！！  // EN: This world really is amazing!!
+@000399 F02A01  // LITERAL: F02A01 (usage not inferred)
+@00045A  C0D04 ［バッボ］  // EN: [Babbo]
+@000477  C0F04 ギンタ…おまえ本当に違うせかいから  // EN: Ginta... you really did come...
+@0004AC きたんじゃな！  // EN: ...from another world!
+@0004EE F01A09  // LITERAL: F01A09 (usage not inferred)
+@00051C  C0D04 ［ギンタ］  // EN: [Ginta]
+@000539  C0F04 うん、さっき来たばっかりだ  // EN: Yeah, I only just got here.
+@000590  C0D04 ［ギンタ］  // EN: [Ginta]
+@0005AD  C0F04 でも…ずっとあこがれてたせかいなんだ！  // EN: But... I've always longed for this world!
+@0005E6 ユメに何度も見たくらいに  // EN: I've dreamed about it so many times.
+@000632 F02A09  // LITERAL: F02A09 (usage not inferred)
+@000660  C0D04 ［バッボ］  // EN: [Babbo]
+@00067D  C0F04 そうか…ならばこのせかいを一人で  // EN: I see... Then enjoy this world...
+@0006B0 充分楽しむがよい  // EN: ...to the fullest, on your own.
+@000724 F02A13  // LITERAL: F02A13 (usage not inferred)
+@000782  C0D04 ［バッボ］  // EN: [Babbo]
+@00079F  C0F04 さらばだ！ギンタ君！！  // EN: Farewell, young Ginta!
+@000985 F01A10  // LITERAL: F01A10 (usage not inferred)
+@0009E3  C0D04 ［ギンタ］  // EN: [Ginta]
+@000A00  C0F04 あ！こら待てって！  // EN: Hey! Wait a second!
+@000A25 おまえ一人じゃあぶないだろ！！  // EN: It's dangerous to go alone!!
+@000AC8 F02A12  // LITERAL: F02A12 (usage not inferred)
+@000B89  C0D04 ［バッボ］  // EN: [Babbo]
+@000BA6  C0F04 のわーーーー！！  // EN: Waaaah!!
+@000BF3  C0D04 ［バッボ］  // EN: [Babbo]
+@000C10  C0F04 ギンタ！！ギンタぁぁ！！！！！！  // EN: Ginta!! Gintaaaa!!!!!!
+@001124 F02A12  // LITERAL: F02A12 (usage not inferred)
+@0012C6  C0D04 ［バッボ］  // EN: [Babbo]
+@0012E3  C0F04 ギンタぁ！！  // EN: Gintaaa!!
+@00132C  C0D04 ［バッボ］  // EN: [Babbo]
+@001349  C0F04 はやく助けにこんかーーーーーー！  // EN: Hurry up and save meee!

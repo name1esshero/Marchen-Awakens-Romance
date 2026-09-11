@@ -1,0 +1,12 @@
+// D3_MAKE.SPC: ROM 58DAE0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00027D D3_BOSS.SPC  // LITERAL: D3_BOSS.SPC (usage not inferred)
+@00044A D3_BOSS.SPC  // LITERAL: D3_BOSS.SPC (usage not inferred)
+@000617 D3_BOSS.SPC  // LITERAL: D3_BOSS.SPC (usage not inferred)
+@0007E4 D3_BOSS.SPC  // LITERAL: D3_BOSS.SPC (usage not inferred)
+@0009B1 D3_BOSS.SPC  // LITERAL: D3_BOSS.SPC (usage not inferred)
+@000B7E D3_BOSS.SPC  // LITERAL: D3_BOSS.SPC (usage not inferred)
+@000D4B D3_BOSS.SPC  // LITERAL: D3_BOSS.SPC (usage not inferred)
+@000F18 D3_BOSS.SPC  // LITERAL: D3_BOSS.SPC (usage not inferred)

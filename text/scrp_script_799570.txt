@@ -1,0 +1,72 @@
+// Legacy reference view of EV_BA01.SPC; edit text/nfp/EV_BA01.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000191 A  // LITERAL: A (usage not inferred)
+@0003BF F01A01  // LITERAL: F01A01 (usage not inferred)
+@000498  C0D04 ［ギンタ］  // EN: [Ginta]
+@0004B5  C0F04 これだな！！  // EN: This is it!!
+@00050E F09A07  // LITERAL: F09A07 (usage not inferred)
+@0005E7  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000606  C0F04 あれれ？？あかないな…  // EN: Huh?? It won't open...
+@00062F なんか封印されてるのかな…  // EN: Maybe it's sealed somehow...
+@000683 F09A01  // LITERAL: F09A01 (usage not inferred)
+@0006B1  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0006D0  C0F04 ボウヤ、キミのバカぢからで  // EN: Kid, with that ridiculous strength of yours...
+@0006FD ちょっとあけてみてくれない？？  // EN: ...could you try opening it for me??
+@000755 F01A08  // LITERAL: F01A08 (usage not inferred)
+@000783  C0D04 ［ギンタ］  // EN: [Ginta]
+@0007A0  C0F04 ＯＫ！！  // EN: OK!!
+@000B2B A  // LITERAL: A (usage not inferred)
+@000CFB F01A13  // LITERAL: F01A13 (usage not inferred)
+@000E0B F02A08  // LITERAL: F02A08 (usage not inferred)
+@000F62  C0D04 ［ギンタ］  // EN: [Ginta]
+@000F7F  C0F04 …！！  // EN: ...!!
+@001008 F02A14  // LITERAL: F02A14 (usage not inferred)
+@00106C  C0D04 ［？？？］  // EN: [???]
+@001089  C0F04 なんじゃい、おまえは  // EN: Who on earth are you?
+@0010EA F02A10  // LITERAL: F02A10 (usage not inferred)
+@00114E  C0D04 ［？？？］  // EN: [???]
+@00116B  C0F04 それにここはどこじゃ？  // EN: And where am I?
+@001194 なんも思いだせんが…名前だけは覚えとるな  // EN: I can't remember anything... except my name.
+@0011F6 F02A01  // LITERAL: F02A01 (usage not inferred)
+@00125A  C0D04 ［バッボ］  // EN: [Babbo]
+@001277  C0F04 ワシはバッボ！  // EN: I am Babbo!
+@0017B2 F46A01  // LITERAL: F46A01 (usage not inferred)
+@00188B オオオオオオオォォォォ  // EN: Roooooooar!
+@001C3B F09A05  // LITERAL: F09A05 (usage not inferred)
+@001D14  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001D86  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001DA5  C0F04 やっぱりトラップがしかけられてたか！！  // EN: So there was a trap after all!!
+@001E18 F01A07  // LITERAL: F01A07 (usage not inferred)
+@001EF1  C0D04 ［ギンタ］  // EN: [Ginta]
+@001F3B あいつぶったおすぞ！！  // EN: Let's take that thing down!!
+@001FF7 F02A14  // LITERAL: F02A14 (usage not inferred)
+@0020D0  C0D04 ［バッボ］  // EN: [Babbo]
+@0020ED  C0F04 いやじゃ、ワシはまだ寝るんじゃ  // EN: No. I'm going back to sleep.
+@002158 F01A03  // LITERAL: F01A03 (usage not inferred)
+@002231  C0D04 ［ギンタ］  // EN: [Ginta]
+@00224E  C0F04 こらーーーーーー！！！  // EN: Heeeey!!!
+@002277 あいつたおすほうが先だ！！  // EN: We have to beat that thing first!!
+@0022CB F02A05  // LITERAL: F02A05 (usage not inferred)
+@0022F9  C0D04 ［バッボ］  // EN: [Babbo]
+@002316  C0F04 あーーーーーー！！！  // EN: Aaaaaah!!!
+@002367  C0D04 ［バッボ］  // EN: [Babbo]
+@002384  C0F04 やかましい！あいつか！  // EN: Quiet! Is it that thing?!
+@0023AD あいつがワシの眠りをジャマするのか！！  // EN: Is that what's disturbing my sleep?!!
+@00240D F02A03  // LITERAL: F02A03 (usage not inferred)
+@00243B  C0D04 ［バッボ］  // EN: [Babbo]
+@002458  C0F04 小僧！下におりてバトル開始じゃ！  // EN: Boy! Get down there and start fighting!
+@0024B5  C0D04 ［バッボ］  // EN: [Babbo]
+@0024D2  C0F04 バトルにはいったら  // EN: Once the battle starts...
+@0024F7  C0904 Ｂボタン C0F04 でこうげきするんじゃ！！  // EN: ...press the B Button to attack!!
+@00254F  C0D04 ［バッボ］  // EN: [Babbo]
+@00256C  C0904 バッボ C0F04 の C0904 Ｂ C0F04 とおぼえるがよい  // EN: Remember it as B for Babbo.
+@0025AE わかったか小僧！  // EN: Got it, boy?!
+@0025F8 F01A01  // LITERAL: F01A01 (usage not inferred)
+@002626  C0D04 ［ギンタ］  // EN: [Ginta]
+@002643  C0F04 ああ！  // EN: Yeah!
+@00265C いっくぞーーーーーーーー！！  // EN: Here we gooooo!!
+@00271E F09A05  // LITERAL: F09A05 (usage not inferred)
+@0027F7  C0D04 ［ドロシー］  // EN: [Dorothy]
+@002816  C0F04 あ、ちょっとキミ！！  // EN: Hey, wait a second!!

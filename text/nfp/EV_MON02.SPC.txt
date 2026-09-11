@@ -1,0 +1,36 @@
+// EV_MON02.SPC: ROM 7B1000
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000373 F26A01  // LITERAL: F26A01 (usage not inferred)
+@000455  C0D04 ［メリロ］  // EN: [Merilo]
+@000472  C0F04 …以上が、しれんのないようです  // EN: ...And that explains the trial.
+@0004A3 わかりました？  // EN: Do you understand?
+@0004E5 F01B01  // LITERAL: F01B01 (usage not inferred)
+@0005A6  C0D04 ［ギンタ］  // EN: [Ginta]
+@0005C3  C0F04 ようするに、どんどん進んでいけば  // EN: Basically, we just keep moving forward...
+@0005F6 いいんだな？  // EN: ...right?
+@00062C  C0D04 ［メリロ］  // EN: [Merilo]
+@000649  C0F04 あなたのシックスセンスをとぎすまして  // EN: Sharpen your sixth sense...
+@000680 正しい道をみつけてください  // EN: ...and find the right path.
+@0006C4  C0D04 ［ギンタ］  // EN: [Ginta]
+@0006E1  C0F04 ジャックもちがう空間で  // EN: Jack must be working hard...
+@00070A がんばってるんだろうな  // EN: ...in another dimension too.
+@0007B4 F01B03  // LITERAL: F01B03 (usage not inferred)
+@000842  C0D04 ［ギンタ］  // EN: [Ginta]
+@00085F  C0F04 いっちょやるか  // EN: Let's give it a shot!
+@000880 スノウ！  // EN: Snow!
+@0008BC F04A05  // LITERAL: F04A05 (usage not inferred)
+@00097D  C0D04 ［スノウ］  // EN: [Snow]
+@00099A  C0F04 うんっ！！  // EN: Yeah!!
+@0009E1  C0D04 ［メリロ］  // EN: [Merilo]
+@0009FE  C0F04 アラン様からギンタさんに  // EN: Ginta, there's a delivery for you...
+@000A29 とどけものがあります  // EN: ...from Master Alan.
+@000B17  C0D04 ハンマーアーム C0F04 、 C0D04 ダガーアーム C0F04 、  // EN: Hammer Arm, Dagger Arm, and...
+@000B5D  C0D04 バブルランチャー C0F04 を  // EN: ...Bubble Launcher:
+@000B89 もらった！  // EN: Received it!
+@000BFF  C0D04 ［メリロ］  // EN: [Merilo]
+@000C1C  C0F04 マジックストーンを使うときは、デッキに  // EN: When using Magic Stones, don't forget...
+@000C55 入れるのをわすれないでくださいね  // EN: ...to put them in your deck.
+@000C9F  C0D04 ［メリロ］  // EN: [Merilo]
+@000CBC  C0F04 では、ゴールでまたお会いしましょう  // EN: Well then, I'll see you at the goal.

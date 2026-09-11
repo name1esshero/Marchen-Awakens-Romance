@@ -1,0 +1,56 @@
+// EV_GO04.SPC: ROM 79EFA0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@0000DD A  // LITERAL: A (usage not inferred)
+@0001A5 A  // LITERAL: A (usage not inferred)
+@000716 F20A02  // LITERAL: F20A02 (usage not inferred)
+@0007EF  C0D04 ［オルコ］  // EN: [Orco]
+@00080C  C0F04 ま C0D04 りょ C0F04 く！！  // EN: Magic!!
+@000863  C0D04 ［オルコ］  // EN: [Orco]
+@000880  C0904 つよ C0F04 い C0B04 ま C0F04 りょく！！  // EN: Strong magic!!
+@0008E4  C0D04 ［オルコ］  // EN: [Orco]
+@000901  C0F04 おまえら… C0B04 て C0D04 き C0F04 ？？  // EN: You... enemies??
+@000975 F09A05  // LITERAL: F09A05 (usage not inferred)
+@000A4E  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000A6D  C0F04 うっわ…！  // EN: Ugh...!
+@000A8A 気色わる…！！  // EN: How creepy...!!
+@000AD2 F20A03  // LITERAL: F20A03 (usage not inferred)
+@000B6C  C0D04 ［オルコ］  // EN: [Orco]
+@000B89  C0F04 お、 C0B04 お C0F04 れ！！  // EN: I-I'm!!
+@000BB6  C0904 きも C0F04 ちわる C0D04 く C0F04 ない！！！  // EN: I'm not creepy!!!
+@000C22 F09A06  // LITERAL: F09A06 (usage not inferred)
+@000D59 F09A05  // LITERAL: F09A05 (usage not inferred)
+@000D87  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000DA6  C0F04 あ、あぶないわね！  // EN: H-hey, watch it!
+@000E05 F08A01  // LITERAL: F08A01 (usage not inferred)
+@000EDE  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000EFB  C0F04 下がっとってえーーよーー！  // EN: You can stand back!
+@000F52  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000F6F  C0F04 じぶんにまかしとき！！  // EN: Leave this to me!!
+@000FD2 F09A01  // LITERAL: F09A01 (usage not inferred)
+@001000  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00101F  C0F04 あらま、よゆうねぇ？  // EN: My, aren't you confident?
+@001070  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00108F  C0F04 でも、あいつ…  // EN: But that guy...
+@0010DA  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0010F9  C0F04 からだがすっごく、かたくなるタイプの  // EN: ...has an ÄRM that makes...
+@00117C F08A05  // LITERAL: F08A05 (usage not inferred)
+@0011AA  C0D04 ［ナナシ］  // EN: [Nanashi]
+@0011C7  C0F04 そんなんわかってる  // EN: I know that.
+@0011EC じぶんをだれやと思ってる？  // EN: Who do you think I am?
+@001230  C0D04 ［ナナシ］  // EN: [Nanashi]
+@00124D  C0F04 ルベリアのボス、ナナシや！  // EN: I'm Nanashi, boss of Luberia!
+@0012A4  C0D04 ［ナナシ］  // EN: [Nanashi]
+@0012C1  C0F04 チェスの兵隊  // EN: When it comes to the Chess Pieces...
+@0012E0 ぶちのめしたいきもちやったらな…  // EN: ...and wanting to beat them senseless...
+@001370 F08A04  // LITERAL: F08A04 (usage not inferred)
+@0013D4  C0D04 ［ナナシ］  // EN: [Nanashi]
+@0013F1  C0F04 ギンタにだって  // EN: ...even Ginta...
+@001412 負けてへんのや！！  // EN: ...doesn't want it more than I do!!
+@00144E  C0D04 ［オルコ］  // EN: [Orco]
+@00146B  C0F04 おま C0B04 えら C0F04 …  // EN: You lot...
+@001496 おれ、 C0904 だれ C0F04 かしら C0D04 ない C0F04 のか？  // EN: Don't you know who I am?
+@0014F6  C0D04 ［オルコ］  // EN: [Orco]
+@001513  C0F04 チェス C0B04 の C0904 こま C0F04 、 C0D04 オル C0F04 コだぞ！！  // EN: I'm Orco of the Chess Pieces!!
+@001130 <F0><56>ＲＭつけてるわよ  // EN: ...his body incredibly hard.

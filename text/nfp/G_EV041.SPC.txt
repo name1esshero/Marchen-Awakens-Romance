@@ -1,0 +1,16 @@
+// G_EV041.SPC: ROM 805970
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00010B MAP11_2.SPC  // LITERAL: MAP11_2.SPC (usage not inferred)
+@0001F8 A  // LITERAL: A (usage not inferred)
+@0002AB A  // LITERAL: A (usage not inferred)
+@00035E A  // LITERAL: A (usage not inferred)
+@000DEC F03A03  // LITERAL: F03A03 (usage not inferred)
+@000EC5  C0D04 ［ジャック］  // EN: [Jack]
+@000EE4  C0F04 だ、だいじょうぶっスか？  // TODO: English translation
+@000F49 F09A04  // LITERAL: F09A04 (usage not inferred)
+@001049  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001068  C0F04 だいじょぶよ  // TODO: English translation
+@001087 とほほ…  // TODO: English translation
+@0017A9 G_EV042.SPC  // LITERAL: G_EV042.SPC (usage not inferred)

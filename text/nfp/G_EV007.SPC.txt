@@ -1,0 +1,57 @@
+// G_EV007.SPC: ROM 7F79A0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000138 A  // LITERAL: A (usage not inferred)
+@00039D  C0D04 ［手下］  // EN: [Henchman]
+@0003B8  C0F04 ボス！  // TODO: English translation
+@000432 F08A01  // LITERAL: F08A01 (usage not inferred)
+@00050B  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000528  C0F04 なんや！？  // TODO: English translation
+@00056F  C0D04 ［手下］  // EN: [Henchman]
+@00058A  C0F04 うごきのあるチェスをはっけん！！  // TODO: English translation
+@0006B9 F08A04  // LITERAL: F08A04 (usage not inferred)
+@0006E7  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000704  C0F04 ！！！  // TODO: English translation
+@000747  C0D04 ［手下］  // EN: [Henchman]
+@000762  C0F04 ヒルドたいりくの北西！  // TODO: English translation
+@00078B まだあばれているらしい！  // TODO: English translation
+@0007DD F08A03  // LITERAL: F08A03 (usage not inferred)
+@00080B  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000828  C0F04 …ちていこのヴェストリか…  // TODO: English translation
+@00088F F08A02  // LITERAL: F08A02 (usage not inferred)
+@0008BD  C0D04 ［ナナシ］  // EN: [Nanashi]
+@0008DA  C0F04 それなら、ワイの持っている  // TODO: English translation
+@000951  C0D04 ［ナナシ］  // EN: [Nanashi]
+@00096E  C0F04 …どうや、メル？  // TODO: English translation
+@0009BB  C0D04 ［ナナシ］  // EN: [Nanashi]
+@0009D8  C0F04 自分をつれてってみんか？  // TODO: English translation
+@000A03 いっしゅんでヤツらのところに行けるで！  // TODO: English translation
+@000A63 F03A03  // LITERAL: F03A03 (usage not inferred)
+@000B3C  C0D04 ［ジャック］  // EN: [Jack]
+@000B5B  C0F04 と、とうぞくを、なかまにぃ？？  // TODO: English translation
+@000BFC F09A03  // LITERAL: F09A03 (usage not inferred)
+@000CD5  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000CF4  C0F04 わたしいいよぉ！！  // TODO: English translation
+@000D89 F02A05  // LITERAL: F02A05 (usage not inferred)
+@000E62  C0D04 ［バッボ］  // EN: [Babbo]
+@000E7F  C0F04 かってに決めるなブス！  // TODO: English translation
+@000F4E F01B01  // LITERAL: F01B01 (usage not inferred)
+@001027  C0D04 ［ギンタ］  // EN: [Ginta]
+@001044  C0F04 ヴェストリまで飛ばせてくれ！！  // TODO: English translation
+@0010AF F01B02  // LITERAL: F01B02 (usage not inferred)
+@0010DD  C0D04 ［ギンタ］  // EN: [Ginta]
+@0010FA  C0F04 ナナシ！！  // EN: Nanashi!!
+@001187 F08A02  // LITERAL: F08A02 (usage not inferred)
+@001260  C0D04 ［ナナシ］  // EN: [Nanashi]
+@00127D  C0F04 よっしゃ行くで！！  // TODO: English translation
+@001312 F08A01  // LITERAL: F08A01 (usage not inferred)
+@001376  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001400 F08A02  // LITERAL: F08A02 (usage not inferred)
+@00142E  C0D04 ［ナナシ］  // EN: [Nanashi]
+@00144B  C0F04 このメンバーを…  // TODO: English translation
+@001498  C0D04 ［ナナシ］  // EN: [Nanashi]
+@0014B5  C0F04 ヴェストリへ！！！  // TODO: English translation
+@00165C EV_VE01.SPC  // LITERAL: EV_VE01.SPC (usage not inferred)
+@000907 ディメンション<F0><56>ＲＭで行ける！！  // TODO: English translation
+@001393  C0F04 ディメンション<F0><56>ＲＭはつどう！！  // TODO: English translation

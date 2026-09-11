@@ -1,0 +1,6 @@
+// Legacy reference view of CH_M10.SPC; edit text/nfp/CH_M10.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000033 SHOPPE01.SPC  // LITERAL: SHOPPE01.SPC (usage not inferred)
+@00007E SHOPPE02.SPC  // LITERAL: SHOPPE02.SPC (usage not inferred)

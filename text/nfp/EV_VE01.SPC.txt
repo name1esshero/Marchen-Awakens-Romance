@@ -1,0 +1,19 @@
+// EV_VE01.SPC: ROM 7B96A0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00027E A  // LITERAL: A (usage not inferred)
+@00030A A  // LITERAL: A (usage not inferred)
+@000386 MAP11_A.SPC  // LITERAL: MAP11_A.SPC (usage not inferred)
+@00075D F08A01  // LITERAL: F08A01 (usage not inferred)
+@000836  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000853  C0F04 水と森の村  // EN: A village of water and forests...
+@000870 ヴェストリ…  // EN: Vestri...
+@0008A6  C0D04 ［ナナシ］  // EN: [Nanashi]
+@0008C3  C0F04 美しいとこやったのに…  // EN: It used to be such a beautiful place...
+@000926 F01B01  // LITERAL: F01B01 (usage not inferred)
+@0009FF  C0D04 ［ギンタ］  // EN: [Ginta]
+@000A1C  C0F04 ……！！！！  // EN: ...!!!!
+@000A75 F03A01  // LITERAL: F03A01 (usage not inferred)
+@000B4E  C0D04 ［ジャック］  // EN: [Jack]
+@000B6D  C0F04 ひでぇ…  // EN: This is awful...

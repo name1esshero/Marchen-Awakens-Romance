@@ -1,0 +1,15 @@
+// EV_BIN02.SPC: ROM 79BF50
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@0001F4 A  // LITERAL: A (usage not inferred)
+@0005EC F01A01  // LITERAL: F01A01 (usage not inferred)
+@0006C5  C0D04 ［ギンタ］  // EN: [Ginta]
+@000719 あるんだ  // TODO: English translation
+@00075B F09A01  // LITERAL: F09A01 (usage not inferred)
+@000834  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000853  C0F04 そうよ  // TODO: English translation
+@000896  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0006E2  C0F04 …じゃあ<F0><56>ＲＭってたくさんしゅるいが  // TODO: English translation
+@0008B5  C0F04 武器となるウェポン<F0><56>ＲＭ  // TODO: English translation
+@0008E0 守護者を呼ぶガーディアン<F0><56>ＲＭ…とかね  // TODO: English translation

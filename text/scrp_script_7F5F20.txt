@@ -1,0 +1,6 @@
+// Legacy reference view of G_EV004.SPC; edit text/nfp/G_EV004.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000124  C0D04 ［手下］  // EN: [Henchman]
+@00013F  C0F04 ボスが奥の部屋でお待ちです。  // TODO: English translation

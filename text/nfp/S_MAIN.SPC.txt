@@ -1,0 +1,5 @@
+// S_MAIN.SPC: ROM F13560
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00001D OPEN.SPC  // LITERAL: OPEN.SPC (usage not inferred)

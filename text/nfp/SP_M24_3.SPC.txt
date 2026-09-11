@@ -1,0 +1,7 @@
+// SP_M24_3.SPC: ROM DC34A0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@0000EC  C0D04 ［ギンタ］  // EN: [Ginta]
+@000109  C0F04 閉まってる…  // TODO: English translation
+@000128 ちょっと開きそうにないな  // TODO: English translation

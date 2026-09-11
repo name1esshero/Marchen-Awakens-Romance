@@ -1,0 +1,9 @@
+// BTI_DUNG.SPC: ROM 39AF50
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000244 D0_ENEMY.SPC  // LITERAL: D0_ENEMY.SPC (usage not inferred)
+@000273 D1_ENEMY.SPC  // LITERAL: D1_ENEMY.SPC (usage not inferred)
+@0002A2 D2_ENEMY.SPC  // LITERAL: D2_ENEMY.SPC (usage not inferred)
+@0002D1 D3_ENEMY.SPC  // LITERAL: D3_ENEMY.SPC (usage not inferred)
+@000300 D4_ENEMY.SPC  // LITERAL: D4_ENEMY.SPC (usage not inferred)

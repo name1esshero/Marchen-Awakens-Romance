@@ -1,0 +1,21 @@
+// J_VS_M.SPC: ROM 81C2D0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000047  C0D04 ［ジャックの母］  // EN: [Jack's mother]
+@00006A  C0F04 たびびとに野菜をあげたら  // EN: When I gave some vegetables to a traveler...
+@0000D9  C0D04 ［ジャックの母］  // EN: [Jack's mother]
+@0000FC  C0F04 これでギンタちゃんを助けておやり  // EN: Use this to help Ginta.
+@0001AD  C0D04 ラフレシア C0F04 を  // TODO: English translation
+@0001D3 もらった！  // EN: Received it!
+@00029B  C0D04 ［ジャックの母］  // EN: [Jack's mother]
+@0002BE  C0F04 たびびとに野菜をあげたら  // EN: When I gave some vegetables to a traveler...
+@00032D  C0D04 ［ジャックの母］  // EN: [Jack's mother]
+@000350  C0F04 これでギンタちゃんを助けておやり  // EN: Use this to help Ginta.
+@000401  C0D04 ジン　ＣＬ３ C0F04 を  // TODO: English translation
+@000429 もらった！  // EN: Received it!
+@0004B0  C0D04 ［ジャックの母］  // EN: [Jack's mother]
+@0004D3  C0F04 私のことはしんぱいしないで  // TODO: English translation
+@000500 いいんだよ  // TODO: English translation
+@000095 お礼に<F0><56>ＲＭをくれたんだよ  // TODO: English translation
+@0002E9 お礼に<F0><56>ＲＭをくれたんだよ  // TODO: English translation

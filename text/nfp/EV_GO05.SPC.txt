@@ -1,0 +1,43 @@
+// EV_GO05.SPC: ROM 79FA20
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00014F A  // LITERAL: A (usage not inferred)
+@0001DB A  // LITERAL: A (usage not inferred)
+@000434 F08A01  // LITERAL: F08A01 (usage not inferred)
+@00050D  C0D04 ［ナナシ］  // EN: [Nanashi]
+@00052A  C0F04 ヴェストリをおそったのは  // EN: You're the one who attacked Vestri...
+@000555 ワレやな？  // EN: ...aren't you?
+@000599 F20A03  // LITERAL: F20A03 (usage not inferred)
+@000672  C0D04 ［オルコ］  // EN: [Orco]
+@00068F  C0904 ああ C0B04 ああ C0F04 …  // EN: Aaaaah...
+@0006BA で、で C0D04 も C0F04 ！  // EN: B-but!
+@0006FC  C0D04 ［オルコ］  // EN: [Orco]
+@000719  C0F04 人こ C0D04 ろし C0F04 たのは C0B04 ギロム C0F04 ！！  // EN: Girom was the one who killed people!!
+@000760 お C0904 れ C0F04 あん C0D04 まり C0F04 ころしてない！  // EN: I didn't kill that many!
+@0007D0 F08A03  // LITERAL: F08A03 (usage not inferred)
+@0007FE  C0D04 ［ナナシ］  // EN: [Nanashi]
+@00081B  C0F04 かんけいあらへん…  // EN: That makes no difference...
+@00086A  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000887  C0F04 エレクトリック・アイ！！  // EN: Electric Eye!!
+@000928 ARM_NE41  // LITERAL: ARM_NE41 (usage not inferred)
+@000B4A  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000B67  C0F04 ふう…  // EN: Phew...
+@000BBA F09A01  // LITERAL: F09A01 (usage not inferred)
+@000C93  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000CE3 　かみなりつかい…か）  // EN: So he uses lightning...)
+@000D33 F08A05  // LITERAL: F08A05 (usage not inferred)
+@000D61  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000D7E  C0F04 ま、こんなとこやね♪  // EN: Well, that about does it. ♪
+@000DCF  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000DEE  C0F04 ふん、やるじゃない！  // EN: Hmph. Not bad!
+@000E3F  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000E5C  C0F04 さてと…あと一人…  // EN: Now then... one more to go...
+@000EBB F09A07  // LITERAL: F09A07 (usage not inferred)
+@000EE9  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000F08  C0F04 ギロム…とか言ってたわね…  // EN: Girom... was that his name...?
+@000F35 ギンタンのほうにいるのかしら？  // EN: I wonder if he's over where Gintan went.
+@000F7D  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000F9A  C0F04 …行ってみよか  // EN: ...Let's go see.
+@001249 EV_GO06.SPC  // LITERAL: EV_GO06.SPC (usage not inferred)
+@000CB2  C0F04 （かみなりのネイチャー<F0><56>ＲＭ！  // EN: (A lightning Nature ÄRM!

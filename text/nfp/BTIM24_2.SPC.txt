@@ -1,0 +1,5 @@
+// BTIM24_2.SPC: ROM 3926A0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000760 BTI_PSET.SPC  // LITERAL: BTI_PSET.SPC (usage not inferred)

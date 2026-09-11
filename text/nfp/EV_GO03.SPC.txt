@@ -1,0 +1,19 @@
+// EV_GO03.SPC: ROM 79EB60
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00012D MAP07_A.SPC  // LITERAL: MAP07_A.SPC (usage not inferred)
+@000225 A  // LITERAL: A (usage not inferred)
+@0003B1 F09A01  // LITERAL: F09A01 (usage not inferred)
+@00048A  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0004A9  C0F04 まっすぐで、元気で…  // EN: He's honest, full of energy...
+@0004D0 他人のために本気でおこれる  // EN: And he really gets angry on other people's behalf.
+@000514  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000533  C0F04 かわいいヤツよ  // EN: He's such a sweetheart...
+@00059A F08A06  // LITERAL: F08A06 (usage not inferred)
+@000673  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000690  C0F04 じぶんもそういうタイプやで！！  // EN: I'm that type too!!
+@0006FF  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00071E  C0F04 （バカね…こいつ…）  // EN: (What an idiot...)
+@000554 ギンタって<F0><40>  // EN: ...that Ginta. ♥
+@0006C1 カワイイって言ーて<F0><40>  // EN: Call me a sweetheart too! ♥

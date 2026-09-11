@@ -1,0 +1,2429 @@
+{
+  "candidates": [
+    {
+      "rom_offset": 1916864,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_1D3FC0",
+      "confidence": {
+        "step": 17.5,
+        "spread": 242
+      },
+      "owners": [
+        "AD0_P_2A.KMP"
+      ],
+      "sha256": "1e9ebe613df7f8012c5b776d7e11cbc47d5224db4d2fc3828b791f1e94c72515",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 1925056,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_1D5FC0",
+      "confidence": {
+        "step": 2.2,
+        "spread": 97
+      },
+      "owners": [
+        "AD0_P_3A.KMP"
+      ],
+      "sha256": "423e5067f53659b391335424c1fdf1667e81dac913dfab79ff447b6df77abf13",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 2115520,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_2047C0",
+      "confidence": {
+        "step": 4.7,
+        "spread": 122
+      },
+      "owners": [
+        "AD0_R_5A.KMP"
+      ],
+      "sha256": "387d7b2ed83c75f9448039c38c6119347b73e18a116b64e744d5c3b99a58694c",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 2133952,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_208FC0",
+      "confidence": {
+        "step": 4.6,
+        "spread": 187
+      },
+      "owners": [
+        "AD0_R_6A.KMP"
+      ],
+      "sha256": "cce28ab49f5d3f684f94520a0ee0be59444c624798f2c19681ce9d8318061f3b",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 2158528,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_20EFC0",
+      "confidence": {
+        "step": 7.9,
+        "spread": 246
+      },
+      "owners": [
+        "AD0_R_7A.KMP"
+      ],
+      "sha256": "3f8665e48d8baaa954cd09dd8fad528871772eff970965b78fca6fa717ae81ae",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 2183104,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_214FC0",
+      "confidence": {
+        "step": 17.9,
+        "spread": 252
+      },
+      "owners": [
+        "AD0_R_8A.KMP"
+      ],
+      "sha256": "71cba60c2a3dfa4e7dcc44bcb8feb16584abde5af663aaf6dc86824e112c9d3d",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 2361120,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_240720",
+      "confidence": {
+        "step": 12.7,
+        "spread": 225
+      },
+      "owners": [
+        "AD1_P_2A.KMP"
+      ],
+      "sha256": "62967391b5a42f7b16a61f348ed412f8ea0bd5718eff096ef1d1a6b76666d430",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 2389792,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_247720",
+      "confidence": {
+        "step": 16.5,
+        "spread": 96
+      },
+      "owners": [
+        "AD1_P_5A.KMP"
+      ],
+      "sha256": "07cfd13061abd4390f9d4c9b2e1236c6045430704d6188432eee56e30f106aab",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 2559776,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_270F20",
+      "confidence": {
+        "step": 9.5,
+        "spread": 122
+      },
+      "owners": [
+        "AD1_R_5A.KMP"
+      ],
+      "sha256": "7e3c0ad5baac878d3f3223ba2cf990c10cd6423492e3502e53f000ee44000f92",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 2578208,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_275720",
+      "confidence": {
+        "step": 1.5,
+        "spread": 96
+      },
+      "owners": [
+        "AD1_R_6A.KMP"
+      ],
+      "sha256": "532d698cf40485aa81abbb9b447dd068b2c2d56696ce021e823771e0cfac8bab",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 2602784,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_27B720",
+      "confidence": {
+        "step": 10.5,
+        "spread": 204
+      },
+      "owners": [
+        "AD1_R_7A.KMP"
+      ],
+      "sha256": "ad7aedefbc302697c59af02ef6880bb3eb4e9958c40b63eab4167b75d3d7b50f",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 2627360,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_281720",
+      "confidence": {
+        "step": 17.3,
+        "spread": 226
+      },
+      "owners": [
+        "AD1_R_8A.KMP"
+      ],
+      "sha256": "cfd1bbb4770c6c56fdcd8d32feb3311875e6c0b25f9ddf89c0027cc9b1f8692b",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 2690848,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_290F20",
+      "confidence": {
+        "step": 15.4,
+        "spread": 188
+      },
+      "owners": [
+        "AD1_R_AA.KMP"
+      ],
+      "sha256": "9c71ba491255876b81e66fb66eb1df96c028542133a8c9c8ef9284232c4979c0",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 2797856,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_2AB120",
+      "confidence": {
+        "step": 13.5,
+        "spread": 235
+      },
+      "owners": [
+        "AD3_P_1A.KMP"
+      ],
+      "sha256": "89e5b9d81d08a09e1a3f130038cc3ecc3d5e58018ae949c59c74f864dc73441d",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 2806048,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_2AD120",
+      "confidence": {
+        "step": 6.3,
+        "spread": 228
+      },
+      "owners": [
+        "AD3_P_2A.KMP"
+      ],
+      "sha256": "c4cdf7cf669d6a861ca34381cf43439e5502492c99b5707dca3e353688893c83",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 2834720,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_2B4120",
+      "confidence": {
+        "step": 7.0,
+        "spread": 80
+      },
+      "owners": [
+        "AD3_P_5A.KMP"
+      ],
+      "sha256": "75fd4029dce56a86899e3f6823c27621cfd340ab9d0220ddf611682abe62e1fb",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 2873632,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_2BD920",
+      "confidence": {
+        "step": 12.2,
+        "spread": 202
+      },
+      "owners": [
+        "AD3_R_0A.KMP"
+      ],
+      "sha256": "775129386dad917c375a67e01d7d32aa11ab8b2b77e4c972f2571434b6ad14b8",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 3004704,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_2DD920",
+      "confidence": {
+        "step": 12.4,
+        "spread": 122
+      },
+      "owners": [
+        "AD3_R_5A.KMP"
+      ],
+      "sha256": "2572c44e679ece444684572876aa564db2d12be5acf973fe537075515f2ad7dc",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 3029280,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_2E3920",
+      "confidence": {
+        "step": 0.9,
+        "spread": 122
+      },
+      "owners": [
+        "AD3_R_6A.KMP"
+      ],
+      "sha256": "fed5195626656e2cc4ee6ac9a632feb309a2e189053701ac1a4923a1b3bcc74a",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 3047712,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_2E8120",
+      "confidence": {
+        "step": 6.9,
+        "spread": 163
+      },
+      "owners": [
+        "AD3_R_7A.KMP"
+      ],
+      "sha256": "0ff0f1fc239d8fa57a1bda34d9cd290ad6314390ca266a4419486be8e2400692",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 3072288,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_2EE120",
+      "confidence": {
+        "step": 15.1,
+        "spread": 215
+      },
+      "owners": [
+        "AD3_R_8A.KMP"
+      ],
+      "sha256": "e4d41c7c09d1676a25b3e6741d6b7efe8c2e0d1aad0706029dce5ef1412dd33f",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 3245472,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_3185A0",
+      "confidence": {
+        "step": 6.5,
+        "spread": 219
+      },
+      "owners": [
+        "AD4_P_2A.KMP"
+      ],
+      "sha256": "a4d26f8c316335c6fda45f04ab389a738e86a07c7d094709158f79f873b971ce",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 3274144,
+      "raw_size": 4096,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_31F5A0",
+      "confidence": {
+        "step": 6.3,
+        "spread": 198
+      },
+      "owners": [
+        "AD4_P_5A.KMP"
+      ],
+      "sha256": "0793dd10597d72846c5ef8f80016c4221471618b53c4a202a81200cebca087b4",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 3468704,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_34EDA0",
+      "confidence": {
+        "step": 6.7,
+        "spread": 122
+      },
+      "owners": [
+        "AD4_R_6A.KMP"
+      ],
+      "sha256": "f87bca80c2e16d7f1e868191f5ef58b2384402351b1cff72781e4364a67d1738",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 3487136,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_3535A0",
+      "confidence": {
+        "step": 2.4,
+        "spread": 114
+      },
+      "owners": [
+        "AD4_R_7A.KMP"
+      ],
+      "sha256": "da9547d93a604dd04ae7474954e8e8c56769792e43cf9b0ade68660e21f88f71",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 3536288,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_35F5A0",
+      "confidence": {
+        "step": 14.6,
+        "spread": 201
+      },
+      "owners": [
+        "AD4_R_9A.KMP"
+      ],
+      "sha256": "bdeb26ecd622206b746c21892f686d485e392edcd337993449510278d132d1ad",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 3560864,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_3655A0",
+      "confidence": {
+        "step": 17.0,
+        "spread": 194
+      },
+      "owners": [
+        "AD4_R_AA.KMP"
+      ],
+      "sha256": "c4fd43bfecff8a34df1a00a9e0f36fda8751754c327e59f49c18bfa27c7375d9",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 3639648,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_378960",
+      "confidence": {
+        "step": 15.0,
+        "spread": 255
+      },
+      "owners": [
+        "AD_BG02.KCL",
+        "AD_BG02.KMP"
+      ],
+      "sha256": "b601997a5ba6c8876bfd2f9934c1977672d11dfbf142e001d98fbadecadb90e7",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 3674048,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_380FC0",
+      "confidence": {
+        "step": 14.7,
+        "spread": 255
+      },
+      "owners": [
+        "AS_BG02.KCL",
+        "AS_BG02.KMP"
+      ],
+      "sha256": "835f6ec00f2d0afd1705e07422c7b955409f1f2c33c9521078ca8ead8a1c894b",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 3813120,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_3A2F00",
+      "confidence": {
+        "step": 17.5,
+        "spread": 255
+      },
+      "owners": [
+        "CHR.NCD"
+      ],
+      "sha256": "c3fb28faecac01e69241bdbe9b7bfdea1154b0b16e13193f219edfdcaabb1340",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 4239488,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_40B080",
+      "confidence": {
+        "step": 9.4,
+        "spread": 181
+      },
+      "owners": [
+        "CHR.NCD"
+      ],
+      "sha256": "466963fba0341f6897a29ab8424b708803fecc5fdfb91086e15544187f078c97",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 5256352,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_5034A0",
+      "confidence": {
+        "step": 8.6,
+        "spread": 185
+      },
+      "owners": [
+        "CHR.NCD"
+      ],
+      "sha256": "961cc48cb5102590b2ab3582be9d98d73dd70c70752becfdb1fa693fdcf20eda",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 5487776,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_53BCA0",
+      "confidence": {
+        "step": 16.5,
+        "spread": 142
+      },
+      "owners": [
+        "CHR.NCD"
+      ],
+      "sha256": "d722a2591f6d2d63c1ae6930b43d0fde0dc03aa4e9937ee6fd87854c37a99344",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 5519808,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_5439C0",
+      "confidence": {
+        "step": 15.1,
+        "spread": 231
+      },
+      "owners": [
+        "CHR.NCD"
+      ],
+      "sha256": "cc1748149bdeb991e2749b2b3c0c4f7fbed0bf4102963d24a9fb89e636e037df",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 5532096,
+      "raw_size": 6144,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_5469C0",
+      "confidence": {
+        "step": 10.0,
+        "spread": 255
+      },
+      "owners": [
+        "CHR.NCD"
+      ],
+      "sha256": "99716091860b59351f36bf4d7f2aa34e16eee5fafc496525443ffe068ae9c5cc",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 5566912,
+      "raw_size": 8192,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_54F1C0",
+      "confidence": {
+        "step": 15.4,
+        "spread": 252
+      },
+      "owners": [
+        "CHR.NCD"
+      ],
+      "sha256": "7294938d8ac66878cb7ad320a04bf0bdf7eab2d50e546009041478ae3202763b",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 5587392,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_5541C0",
+      "confidence": {
+        "step": 12.6,
+        "spread": 177
+      },
+      "owners": [
+        "CHR.NCD"
+      ],
+      "sha256": "0cc86074ce6accfefa0a2f9a5e65605fea9ed2d96504b71181ea55e87e959a3a",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 5591488,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_5551C0",
+      "confidence": {
+        "step": 12.9,
+        "spread": 136
+      },
+      "owners": [
+        "CHR.NCD"
+      ],
+      "sha256": "39d37ddfe9d32ccffed511e452a233f80dd997ff2c807e8b58dd4e1bdc7ce16d",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 5595584,
+      "raw_size": 4096,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_5561C0",
+      "confidence": {
+        "step": 17.0,
+        "spread": 136
+      },
+      "owners": [
+        "CHR.NCD"
+      ],
+      "sha256": "27d5a1bfc9dd2e1ae69771b238e534f4b46b8fe90111163d6f45b34ba77ac59c",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 5703552,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_570780",
+      "confidence": {
+        "step": 16.8,
+        "spread": 255
+      },
+      "owners": [
+        "CM_BG01.KCL",
+        "CM_BG01.KMP"
+      ],
+      "sha256": "74a0c600f68b363848293091a58500a8d29f9d284c593da668354c802ea9064f",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 5946048,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_5ABAC0",
+      "confidence": {
+        "step": 15.9,
+        "spread": 255
+      },
+      "owners": [
+        "DS_BG02.KCL",
+        "DS_BG02.KMP"
+      ],
+      "sha256": "d679ad7e189278e6038b25db8dcc5f4b9ee85048a6d0c5ee0185f6b682197de6",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 5958336,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_5AEAC0",
+      "confidence": {
+        "step": 17.2,
+        "spread": 253
+      },
+      "owners": [
+        "EFCSTART.KMP",
+        "EFFECT.NCD"
+      ],
+      "sha256": "4026e320d1cb83e17dbb018375e8c5bbac466282d58e3de71208350a4ed8be5a",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 5976768,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_5B32C0",
+      "confidence": {
+        "step": 17.7,
+        "spread": 252
+      },
+      "owners": [
+        "EFFECT.NCD"
+      ],
+      "sha256": "a73853f3b496ec26a8ee52afa222945c9e8d20c37171704dc90395cc1cdcdeec",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 6501056,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_6332C0",
+      "confidence": {
+        "step": 10.1,
+        "spread": 198
+      },
+      "owners": [
+        "EFFECT.NCD"
+      ],
+      "sha256": "791a99c2ab64d728489419c4ab9d164458c0d956f96f54ff41412c0eec4cf64d",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 6507200,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_634AC0",
+      "confidence": {
+        "step": 9.0,
+        "spread": 77
+      },
+      "owners": [
+        "EFFECT.NCD"
+      ],
+      "sha256": "850035156ce213091a29c048337b082db71a28dfda9b7e2afce2353e274641c2",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 6576832,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_645AC0",
+      "confidence": {
+        "step": 9.8,
+        "spread": 80
+      },
+      "owners": [
+        "EFFECT.NCD"
+      ],
+      "sha256": "fdae46c8a7b2a6fc884b6e92befbcd2c1bad60b32142ea6a109b02c6e84b4348",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 6771392,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_6752C0",
+      "confidence": {
+        "step": 12.9,
+        "spread": 173
+      },
+      "owners": [
+        "EFFECT.NCD"
+      ],
+      "sha256": "6c97232ea0fbeaddfc5501015d9632ab5049ebafc64ca9966ccb5fb096f68809",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 6884032,
+      "raw_size": 6144,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_690AC0",
+      "confidence": {
+        "step": 3.3,
+        "spread": 79
+      },
+      "owners": [
+        "EFFECT.NCD"
+      ],
+      "sha256": "313975ce5e0bcfdca576be1fd3f81d4989b26a004d03a32048a82b13c12d2232",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 6931136,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_69C2C0",
+      "confidence": {
+        "step": 11.5,
+        "spread": 76
+      },
+      "owners": [
+        "EFFECT.NCD"
+      ],
+      "sha256": "d4bb19d149a55d91035a81c0b268ec0a7c09459ebd31b054a96f79afb85b9d3a",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 6959808,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_6A32C0",
+      "confidence": {
+        "step": 11.0,
+        "spread": 196
+      },
+      "owners": [
+        "EFFECT.NCD"
+      ],
+      "sha256": "4df523f22c62ad4b926383e9d0d047822fa9806e2ca2aeca7b549dd09f169d73",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 7080640,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_6C0AC0",
+      "confidence": {
+        "step": 13.2,
+        "spread": 250
+      },
+      "owners": [
+        "EFFECT.NCD"
+      ],
+      "sha256": "1fa76b06995714c3787bc3cc406de8a78e1fde0cd1efe080a77fd0d0b3161325",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 7084736,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_6C1AC0",
+      "confidence": {
+        "step": 12.3,
+        "spread": 251
+      },
+      "owners": [
+        "EFFECT.NCD"
+      ],
+      "sha256": "7770340b43091f68c820b8fff6f2c468c70571f042b4bedf7842e4a9491b419f",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 7263040,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_6ED340",
+      "confidence": {
+        "step": 14.0,
+        "spread": 217
+      },
+      "owners": [
+        "EFFECT.NCD"
+      ],
+      "sha256": "3514cfcd4c8550e451750859eac8f5c2a8421f2ff69737944e155578bb6f7c49",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 7297856,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_6F5B40",
+      "confidence": {
+        "step": 7.4,
+        "spread": 248
+      },
+      "owners": [
+        "EFFECT.NCD"
+      ],
+      "sha256": "2bfca76ab2f0f1a163031bf40bc3dfccf0769e138a9b3c26f2a586d1b7caee24",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 7363392,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_705B40",
+      "confidence": {
+        "step": 5.7,
+        "spread": 237
+      },
+      "owners": [
+        "EFFECT.NCD"
+      ],
+      "sha256": "4b971bfd922e8f3c8002fad118554fb95538031511a31a0562724fa11f305b19",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 7367488,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_706B40",
+      "confidence": {
+        "step": 2.3,
+        "spread": 229
+      },
+      "owners": [
+        "EFFECT.NCD"
+      ],
+      "sha256": "1ee5ca5a5209e8e2932f92ced526881102c995a84ea13cbdd5bda269a6fecaba",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 7371584,
+      "raw_size": 8192,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_707B40",
+      "confidence": {
+        "step": 3.3,
+        "spread": 220
+      },
+      "owners": [
+        "EFFECT.NCD"
+      ],
+      "sha256": "368527f0325ea841f635fc007c2cd3577fb32e60b121b3ed57a3b156c4380754",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 7400256,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_70EB40",
+      "confidence": {
+        "step": 16.1,
+        "spread": 253
+      },
+      "owners": [
+        "EFFECT.NCD"
+      ],
+      "sha256": "01fb8832db34afa6f60d1ae769772a0c0ed9bb14182878e8ea5e2f6be2b9625e",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 7445312,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_719B40",
+      "confidence": {
+        "step": 10.6,
+        "spread": 84
+      },
+      "owners": [
+        "EFFECT.NCD"
+      ],
+      "sha256": "882d37d90d509b3cbeb9f44773533d0de3f346ec74647800b91cec8b2e71c818",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 7484224,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_723340",
+      "confidence": {
+        "step": 7.3,
+        "spread": 115
+      },
+      "owners": [
+        "EFFECT.NCD"
+      ],
+      "sha256": "2a95beea9883a8bddf615d5db1d9644d8bd5085cc2b14ca6b2ce80345bd09d2d",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 7492416,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_725340",
+      "confidence": {
+        "step": 5.4,
+        "spread": 95
+      },
+      "owners": [
+        "EFFECT.NCD"
+      ],
+      "sha256": "bca5673ff68d711ba7ff95ce2dc67effb0b9b8ab0db8c64350ff501af70e9fb7",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 7537472,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_730340",
+      "confidence": {
+        "step": 8.3,
+        "spread": 121
+      },
+      "owners": [
+        "EFFECT.NCD"
+      ],
+      "sha256": "03b55de8ee6830e10b55d3471af90295d086a74c202a76f1f4d2f5bd30bd0f63",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 7547712,
+      "raw_size": 4096,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_732B40",
+      "confidence": {
+        "step": 12.4,
+        "spread": 253
+      },
+      "owners": [
+        "EFFECT.NCD"
+      ],
+      "sha256": "5244f29dd5a60c47c5695e1980c518a0e19159d612956422511bc9f294535120",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 7643968,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_74A340",
+      "confidence": {
+        "step": 4.4,
+        "spread": 217
+      },
+      "owners": [
+        "EFFECT.NCD"
+      ],
+      "sha256": "6fe5a829c0ed348ff81cf85b92bb1e71dca96888554739b7b0e68aa2efb8acaf",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 7666496,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_74FB40",
+      "confidence": {
+        "step": 2.8,
+        "spread": 121
+      },
+      "owners": [
+        "EFFECT.NCD"
+      ],
+      "sha256": "65b918bc4fa2253d73a19fe459d3d84da89f3c5ce46d60c3378d0edeba50c7cd",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 7711552,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_75AB40",
+      "confidence": {
+        "step": 0.8,
+        "spread": 51
+      },
+      "owners": [
+        "EFFECT.NCD"
+      ],
+      "sha256": "2227ba52c0eb686870646babd7ddf0be214c3cb99fca2ffffdd4dddd3a9058d9",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 7719744,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_75CB40",
+      "confidence": {
+        "step": 0.5,
+        "spread": 51
+      },
+      "owners": [
+        "EFFECT.NCD"
+      ],
+      "sha256": "7dc3934dbf07723a57cb6a501fd27e12d3a275ddf4109c4f4ffe4aad6f801c53",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 7738176,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_761340",
+      "confidence": {
+        "step": 2.8,
+        "spread": 92
+      },
+      "owners": [
+        "EFFECT.NCD"
+      ],
+      "sha256": "002e497f1bb56cb2ff3bfacb17d5fba9cb0b58683d1132ce8d66b07a03c61212",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 7750464,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_764340",
+      "confidence": {
+        "step": 1.6,
+        "spread": 118
+      },
+      "owners": [
+        "EFFECT.NCD"
+      ],
+      "sha256": "9c76c00a07a24dcc1accd0a0d33639f406e1807fd37ef479f94912a4104c82df",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 7889728,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_786340",
+      "confidence": {
+        "step": 12.2,
+        "spread": 252
+      },
+      "owners": [
+        "EFFECT.NCD"
+      ],
+      "sha256": "1591af8422be1e25468d790eb5ae54ad4c10979d705545ef750a38821c115f5d",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 7910208,
+      "raw_size": 6144,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_78B340",
+      "confidence": {
+        "step": 11.5,
+        "spread": 254
+      },
+      "owners": [
+        "EFFECT.NCD"
+      ],
+      "sha256": "f5136072f33962fc5b3897b1a390f38b17f1211172c1b611fd9d3465db1e2aca",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 8108448,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_7BB9A0",
+      "confidence": {
+        "step": 11.6,
+        "spread": 135
+      },
+      "owners": [
+        "FONT.NFT"
+      ],
+      "sha256": "211389b7937f1d67ade5f7510c7fb8bc7546bb509c634fa9ae7684efe15e3c61",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 8243072,
+      "raw_size": 16384,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_7DC780",
+      "confidence": {
+        "step": 11.6,
+        "spread": 255
+      },
+      "owners": [
+        "GA24.TCL",
+        "GA24_00.TSC",
+        "GA24_01.TSC",
+        "GA24_02.TSC",
+        "GA24_03.TSC",
+        "GA24_10.TSC",
+        "GA24_11.TSC",
+        "GA24_12.TSC",
+        "GA24_13.TSC"
+      ],
+      "sha256": "def5b8aa1ea9e9fdd560ac975a1d715702d8c6d7f97d6fa71b1d78de580847e0",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 8267808,
+      "raw_size": 16384,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_7E2820",
+      "confidence": {
+        "step": 11.1,
+        "spread": 255
+      },
+      "owners": [
+        "GA25.TCL",
+        "GA25_00.TSC",
+        "GA25_01.TSC",
+        "GA25_02.TSC",
+        "GA25_03.TSC",
+        "GA25_10.TSC",
+        "GA25_11.TSC",
+        "GA25_12.TSC",
+        "GA25_13.TSC"
+      ],
+      "sha256": "abea3244432b720bb5217214f3bfe6e10acbed275ee0a4f45daed05fb3454531",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 8287936,
+      "raw_size": 8192,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_7E76C0",
+      "confidence": {
+        "step": 16.0,
+        "spread": 255
+      },
+      "owners": [
+        "GA26.TCL",
+        "GA26_00.TSC",
+        "GA26_01.TSC",
+        "GA26_10.TSC",
+        "GA26_11.TSC"
+      ],
+      "sha256": "758578abd3cf781759ac983d76500ea500402807bb58b61e94a724fe55937d48",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 8479232,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_816200",
+      "confidence": {
+        "step": 16.0,
+        "spread": 255
+      },
+      "owners": [
+        "IT_BG01.KCL",
+        "IT_BG01.KMP"
+      ],
+      "sha256": "553977bd5dca532205a186748223e24683d1028a206db828254709bd39426416",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 8494112,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_819C20",
+      "confidence": {
+        "step": 5.8,
+        "spread": 196
+      },
+      "owners": [
+        "JA05.TCL",
+        "JA05_A.TSC"
+      ],
+      "sha256": "7153eafae21a1d6cf45d6c7e2dd4f8530baf33552d1c2fdbbd2b25eab5f10df6",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 8498208,
+      "raw_size": 4096,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_81AC20",
+      "confidence": {
+        "step": 11.9,
+        "spread": 255
+      },
+      "owners": [
+        "JA05_B.TSC",
+        "JA05_C.TSC",
+        "JA05_D.TSC"
+      ],
+      "sha256": "47f7661c2c8f54cb006d94d331521b1f422a72f8a4a49ac19ae3259c6fa330d3",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 8616480,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_837A20",
+      "confidence": {
+        "step": 14.7,
+        "spread": 255
+      },
+      "owners": [
+        "MAP00_A.KMP"
+      ],
+      "sha256": "c9a5b96d595c7cd26a0d5ac690299d81dc30b81b055d680fa470fbbcd41190c6",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 8628768,
+      "raw_size": 4096,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_83AA20",
+      "confidence": {
+        "step": 14.6,
+        "spread": 255
+      },
+      "owners": [
+        "MAP00_A.KMP"
+      ],
+      "sha256": "2e5519bdee919290bff46593136835d70beccaa5300b5403adbafc35a85156db",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 8634912,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_83C220",
+      "confidence": {
+        "step": 15.1,
+        "spread": 255
+      },
+      "owners": [
+        "MAP00_A.KMP"
+      ],
+      "sha256": "2c92c77f7e8f7b7e5921f7d7906817da0a52176b4e743fbc4343c3202d843d08",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 8643104,
+      "raw_size": 4096,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_83E220",
+      "confidence": {
+        "step": 11.2,
+        "spread": 255
+      },
+      "owners": [
+        "MAP00_A.KMP"
+      ],
+      "sha256": "88f96c521de568fa3630e960e3e7fac077c461c158e987e9d458f9809cef1d17",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 8657440,
+      "raw_size": 6144,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_841A20",
+      "confidence": {
+        "step": 8.8,
+        "spread": 255
+      },
+      "owners": [
+        "MAP00_A.KMP"
+      ],
+      "sha256": "874cfa4d99a756ad1dcac5958527ffe196e5c5a2ab69f3eaa26dc9ffe52aedec",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 8673824,
+      "raw_size": 6144,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_845A20",
+      "confidence": {
+        "step": 11.4,
+        "spread": 255
+      },
+      "owners": [
+        "MAP00_A.KMP"
+      ],
+      "sha256": "4d85f0936e831be9c22a32636cd43909908f37144aaa6f787d2bc0d553669b04",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 8684064,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_848220",
+      "confidence": {
+        "step": 7.2,
+        "spread": 254
+      },
+      "owners": [
+        "MAP00_A.KMP"
+      ],
+      "sha256": "a11849ef65bceb951304e1e95e5e16273b572aadb3f1ed929524ef1cf4f2d069",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 8793056,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_862BE0",
+      "confidence": {
+        "step": 11.4,
+        "spread": 226
+      },
+      "owners": [
+        "MAP01_1A.KMP"
+      ],
+      "sha256": "df1ccf67e70106ac0889604aca21334461e1ee305f61a8d3e9e99de0dafcef51",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 8835520,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_86D1C0",
+      "confidence": {
+        "step": 10.1,
+        "spread": 255
+      },
+      "owners": [
+        "MAP01_2A.KMP"
+      ],
+      "sha256": "54638de69c96eceb5e5ab998cc163020daf1344f2704a466b693c1202467c49e",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 8889056,
+      "raw_size": 4096,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_87A2E0",
+      "confidence": {
+        "step": 2.0,
+        "spread": 164
+      },
+      "owners": [
+        "MAP01_3A.KMP"
+      ],
+      "sha256": "fab3fa4cf383df2e6bc88b1b69812556470a2a122d7b2ebfaa1827d77004299d",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 8895200,
+      "raw_size": 4096,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_87BAE0",
+      "confidence": {
+        "step": 1.0,
+        "spread": 148
+      },
+      "owners": [
+        "MAP01_3A.KMP"
+      ],
+      "sha256": "07846f64467dfcc7fe9c50424d9a68c9a31c54df57f70e3bcfec3acc932fa36a",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 8925120,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_882FC0",
+      "confidence": {
+        "step": 1.7,
+        "spread": 110
+      },
+      "owners": [
+        "MAP01_4A.KMP"
+      ],
+      "sha256": "7ed2070546fa625615d0da771afcf952de980ff319964f1197d91e6cc0b2c719",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 8950336,
+      "raw_size": 4096,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_889240",
+      "confidence": {
+        "step": 2.9,
+        "spread": 184
+      },
+      "owners": [
+        "MAP01_5A.KMP"
+      ],
+      "sha256": "bf4be225b49b223f469235331210abcaf9b5454f61dbfb673bc616b5fac266c0",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 8973600,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_88ED20",
+      "confidence": {
+        "step": 11.5,
+        "spread": 101
+      },
+      "owners": [
+        "MAP01_6A.KMP"
+      ],
+      "sha256": "19aa6eaa6051fa3b28e2aa8eef7a882f58de36f342582c129d429daa9d779429",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 9299296,
+      "raw_size": 4096,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_8DE560",
+      "confidence": {
+        "step": 12.1,
+        "spread": 242
+      },
+      "owners": [
+        "MAP04_6A.KMP"
+      ],
+      "sha256": "f5588b11e2a0001e37f00e0d81a9a91cb072fdea8c3c923300e5b3dc0cc705f1",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 9717760,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_944800",
+      "confidence": {
+        "step": 1.0,
+        "spread": 108
+      },
+      "owners": [
+        "MAP05_A.KMP"
+      ],
+      "sha256": "93381f58f935572ccc750d7b9f50511914c4b092b8b2f0b8c73b019ab957b9e9",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 9874848,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_96ADA0",
+      "confidence": {
+        "step": 15.1,
+        "spread": 245
+      },
+      "owners": [
+        "MAP06_A.KMP"
+      ],
+      "sha256": "33546aefdaafeb90f45452cf344ff8ca1709f0633b0fb33059fddcf4ad9f5be5",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 10582752,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_A17AE0",
+      "confidence": {
+        "step": 10.6,
+        "spread": 188
+      },
+      "owners": [
+        "MAP08_A.KMP"
+      ],
+      "sha256": "11e32e09fc5d4858f3f5cda0b36467a39d680cc3f234cd57bbdbfd5fc201587f",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 10586848,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_A18AE0",
+      "confidence": {
+        "step": 9.9,
+        "spread": 255
+      },
+      "owners": [
+        "MAP08_A.KMP"
+      ],
+      "sha256": "8d88b753a34cd5fce0027b94f50e87dcece31812cd7df14c3957e8df149dc483",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 10590944,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_A19AE0",
+      "confidence": {
+        "step": 8.8,
+        "spread": 243
+      },
+      "owners": [
+        "MAP08_A.KMP"
+      ],
+      "sha256": "540c5a39ae70b5e53e1dbd9cdd6d5127ff654852216d2f7731dd10d2456f9f17",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 10857824,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_A5AD60",
+      "confidence": {
+        "step": 0.4,
+        "spread": 48
+      },
+      "owners": [
+        "MAP11_2A.KMP"
+      ],
+      "sha256": "64d2f8823286db7a67f109d2abcbe57014b330062926dcbd89df5dfa3587e4e2",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 10863968,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_A5C560",
+      "confidence": {
+        "step": 16.4,
+        "spread": 185
+      },
+      "owners": [
+        "MAP11_2A.KMP"
+      ],
+      "sha256": "d8e7c36286a27a7bf422c1baf708798b6135ef7620575aa52c76069c5315ff50",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 10916416,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_A69240",
+      "confidence": {
+        "step": 12.2,
+        "spread": 242
+      },
+      "owners": [
+        "MAP11_A.KMP"
+      ],
+      "sha256": "51d98eb873424da5d058196a7cded62af0c7fa51ff886edba95b21337f242473",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 11165536,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_AA5F60",
+      "confidence": {
+        "step": 8.2,
+        "spread": 96
+      },
+      "owners": [
+        "MAP24_2A.KMP"
+      ],
+      "sha256": "c1106ce4f0615e7b47e27e92c6e7d30822a72ee5a7b7f7e445bafe7d337acaeb",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 11725920,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_B2EC60",
+      "confidence": {
+        "step": 5.7,
+        "spread": 228
+      },
+      "owners": [
+        "MAP25_2A.KMP"
+      ],
+      "sha256": "942b0f073b751eec1aff314fe410db9ec0b0de4686ee2389d6748d99e58dad00",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 11801696,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_B41460",
+      "confidence": {
+        "step": 15.0,
+        "spread": 199
+      },
+      "owners": [
+        "MAP25_2A.KMP"
+      ],
+      "sha256": "e5ea5a7981a16616e16d8aa32252633ef90eb4aae671f9fb2271a96890da416d",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 12022304,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_B77220",
+      "confidence": {
+        "step": 5.7,
+        "spread": 61
+      },
+      "owners": [
+        "MAP25_4A.KMP"
+      ],
+      "sha256": "1d257f664a6e8e344b761e8ae38fd24f8434d711a9ffa66c2d3f504ddfcbebb3",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 12412192,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_BD6520",
+      "confidence": {
+        "step": 15.3,
+        "spread": 122
+      },
+      "owners": [
+        "MAP25_5A.KMP"
+      ],
+      "sha256": "6a7aefb0fcf90a74a93417873160ce8a43a8ccdead330bb6dccddd7ce5de0a7e",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 13500480,
+      "raw_size": 4096,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_CE0040",
+      "confidence": {
+        "step": 11.6,
+        "spread": 254
+      },
+      "owners": [
+        "MAP40_A.KMP"
+      ],
+      "sha256": "f0e4a87877536f12a98900422539c84ed90d08e5938785087295929a17586f7b",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 13506624,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_CE1840",
+      "confidence": {
+        "step": 16.5,
+        "spread": 255
+      },
+      "owners": [
+        "MAP40_A.KMP"
+      ],
+      "sha256": "fae439a7267a20c56d17efc45fbf8687329a436053737e03d9f2b5206c7669f3",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 13512768,
+      "raw_size": 4096,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_CE3040",
+      "confidence": {
+        "step": 10.7,
+        "spread": 255
+      },
+      "owners": [
+        "MAP40_A.KMP"
+      ],
+      "sha256": "49ed70430e46b83973e2c38832db7e2409bd3bab541625639ccd20c30e2c57a2",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 13520960,
+      "raw_size": 6144,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_CE5040",
+      "confidence": {
+        "step": 11.3,
+        "spread": 255
+      },
+      "owners": [
+        "MAP40_A.KMP"
+      ],
+      "sha256": "aac850d6c643b7581ae8069085285e7bf0dc2f779394dddee96789b41029e045",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 13529152,
+      "raw_size": 4096,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_CE7040",
+      "confidence": {
+        "step": 12.9,
+        "spread": 255
+      },
+      "owners": [
+        "MAP40_A.KMP"
+      ],
+      "sha256": "cfd2c7bff02dfd2c4bc95ef9466059b7abea03823a4ccadf8007e45fa4ac2a02",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 13541440,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_CEA040",
+      "confidence": {
+        "step": 9.5,
+        "spread": 255
+      },
+      "owners": [
+        "MAP40_A.KMP"
+      ],
+      "sha256": "67f5ec74d2d413882e8036083fd32ccd897794e58a585bafd9cf2dfee265e77c",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 13547584,
+      "raw_size": 4096,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_CEB840",
+      "confidence": {
+        "step": 14.1,
+        "spread": 255
+      },
+      "owners": [
+        "MAP40_A.KMP"
+      ],
+      "sha256": "935d08bf83027ef46d6a66310f5105069eaf32be6e7b058d5a9aeb748ccca764",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 13557824,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_CEE040",
+      "confidence": {
+        "step": 9.5,
+        "spread": 255
+      },
+      "owners": [
+        "MAP40_A.KMP"
+      ],
+      "sha256": "1fd5674de0ab210091365faefb045c49a688645a6f2831bb312c1db7dcab57e0",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 13566016,
+      "raw_size": 8192,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_CF0040",
+      "confidence": {
+        "step": 15.2,
+        "spread": 255
+      },
+      "owners": [
+        "MAP40_A.KMP"
+      ],
+      "sha256": "fb2e74934634930068a44cee3b4e9ce880daa537198a385f49fc756aa00d3bd1",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 13668448,
+      "raw_size": 12288,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_D09060",
+      "confidence": {
+        "step": 14.5,
+        "spread": 255
+      },
+      "owners": [
+        "MAP41_A.KMP"
+      ],
+      "sha256": "4f60acb9e1c0ae36ca39681ea3fd1520257eec57ac14f6f72d9559deee273bb0",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 13682784,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_D0C860",
+      "confidence": {
+        "step": 11.8,
+        "spread": 255
+      },
+      "owners": [
+        "MAP41_A.KMP"
+      ],
+      "sha256": "d499d01d733e7391eb8c540770f474f0b97efe5b025b33dc0f16dde213903994",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 13779648,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_D242C0",
+      "confidence": {
+        "step": 14.2,
+        "spread": 254
+      },
+      "owners": [
+        "MAP42_A.KMP"
+      ],
+      "sha256": "f87021ba4eb184a5f1a4739a9b57a944a8c75515ed124c83aac5c08bcc8a66f5",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 13785792,
+      "raw_size": 28672,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_D25AC0",
+      "confidence": {
+        "step": 13.0,
+        "spread": 255
+      },
+      "owners": [
+        "MAP42_A.KMP"
+      ],
+      "sha256": "320969f0d8097dde6dcf3e7f548536996c9b18e1a0735ad7d5c074b51d4e95cb",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 13816512,
+      "raw_size": 6144,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_D2D2C0",
+      "confidence": {
+        "step": 14.9,
+        "spread": 255
+      },
+      "owners": [
+        "MAP42_A.KMP"
+      ],
+      "sha256": "217eb17df86f721c29cbab9a7723f96919b6067a4cfd9e997f8f27facb632eb2",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 13824704,
+      "raw_size": 10240,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_D2F2C0",
+      "confidence": {
+        "step": 5.6,
+        "spread": 255
+      },
+      "owners": [
+        "MAP42_A.KMP"
+      ],
+      "sha256": "9cfb4f4b6fc959acd34754b0168874677b9146b8bffda413408ab85852a31786",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 13836992,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_D322C0",
+      "confidence": {
+        "step": 1.1,
+        "spread": 231
+      },
+      "owners": [
+        "MAP42_A.KMP"
+      ],
+      "sha256": "0889c6e1dd028f4bf9c467cec2dcb4a4535c431291d4a90f214e0129bc445a77",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 13841088,
+      "raw_size": 14336,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_D332C0",
+      "confidence": {
+        "step": 12.4,
+        "spread": 254
+      },
+      "owners": [
+        "MAP42_A.KMP"
+      ],
+      "sha256": "80e396d4995525d88f1c05bf4c0eea9381673937f7d05c324275820eea82b28d",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 13933952,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_D49D80",
+      "confidence": {
+        "step": 2.4,
+        "spread": 159
+      },
+      "owners": [
+        "MAP99_A.KCL",
+        "MAP99_A.KMP"
+      ],
+      "sha256": "c0504f4598a40e5e9c5a4b31756c1600902d4b8cde6138420d276cb028235343",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 14052512,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_D66CA0",
+      "confidence": {
+        "step": 1.9,
+        "spread": 122
+      },
+      "owners": [
+        "NET_24_A.KMP"
+      ],
+      "sha256": "57c6d57b64b9cdeae5a6f61d2f84ea40a27fadf31c97b39ce16821ea1add5f4b",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 14058656,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_D684A0",
+      "confidence": {
+        "step": 4.5,
+        "spread": 191
+      },
+      "owners": [
+        "NET_25_A.KMP"
+      ],
+      "sha256": "74d86304391a78cf7d2b2b5e56bac76a0b5c544c97e37bcda2b22a7da169c93e",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 14064800,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_D69CA0",
+      "confidence": {
+        "step": 10.2,
+        "spread": 133
+      },
+      "owners": [
+        "NET_26_A.KMP"
+      ],
+      "sha256": "ac437a87bddb846c8a4e76f2cad37bd21b0e8cf6d2a2e59adc363e49d7f439bd",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 14157984,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_D808A0",
+      "confidence": {
+        "step": 3.7,
+        "spread": 122
+      },
+      "owners": [
+        "OP_06_A.KMP"
+      ],
+      "sha256": "c1326d59a15e65b76bc8066c62d40078647df8838753299b71348b2ebd25008e",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 14255840,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_D986E0",
+      "confidence": {
+        "step": 1.4,
+        "spread": 247
+      },
+      "owners": [
+        "PV_BG11.KCL",
+        "PV_BG11.KMP"
+      ],
+      "sha256": "1785dab09bcb621e46956dd588da7540b1be59ead4e07019ce9720006c906d1f",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 14271008,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_D9C220",
+      "confidence": {
+        "step": 15.3,
+        "spread": 255
+      },
+      "owners": [
+        "PW_BOX.KCL",
+        "PW_BOX.KMP"
+      ],
+      "sha256": "055d7a4754e9a4957cb6dfee07da84138a128e176976582fca7e967202919a42",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 14306304,
+      "raw_size": 4096,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_DA4C00",
+      "confidence": {
+        "step": 11.8,
+        "spread": 255
+      },
+      "owners": [
+        "SK03.TCL",
+        "SK03_00.TSC",
+        "SK03_01.TSC",
+        "SK03_02.TSC",
+        "SK03_03.TSC"
+      ],
+      "sha256": "d480fce5fb2da724c9801116b344bada3c2b8eed709af948dbc0e6e790b91f44",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 14484384,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_DD03A0",
+      "confidence": {
+        "step": 15.0,
+        "spread": 255
+      },
+      "owners": [
+        "ST_BG01.KCL",
+        "ST_BG01.KMP"
+      ],
+      "sha256": "65b67b36b27435aa5fcf6307e53496602708db1511c7e2862687c6ff7d84a3b5",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 14497344,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_DD3640",
+      "confidence": {
+        "step": 11.2,
+        "spread": 255
+      },
+      "owners": [
+        "ST_BG03.KCL",
+        "ST_BG03.KMP"
+      ],
+      "sha256": "0fc99ff426f3e4e971bdd689941c9b197dcf95060b7ec32456765fb289a08da6",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 14512384,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_DD7100",
+      "confidence": {
+        "step": 17.6,
+        "spread": 197
+      },
+      "owners": [
+        "SYSTEM.NCD"
+      ],
+      "sha256": "6b124d9e787bf080b13fc721cc6a2c6e529ee410540764b4148d555d3e536394",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 14520576,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_DD9100",
+      "confidence": {
+        "step": 15.7,
+        "spread": 142
+      },
+      "owners": [
+        "SYSTEM.NCD"
+      ],
+      "sha256": "edb1d6a516fe39ddd51c7a7439ea2e8f2c152d1382f642952f4eab89878bbf4e",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 14524672,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_DDA100",
+      "confidence": {
+        "step": 16.0,
+        "spread": 129
+      },
+      "owners": [
+        "SYSTEM.NCD"
+      ],
+      "sha256": "5668b148b701a7af9d9f732a93855d253d6d2b932223e012625fc6b85a36ee82",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 15016192,
+      "raw_size": 8192,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_E52100",
+      "confidence": {
+        "step": 14.0,
+        "spread": 206
+      },
+      "owners": [
+        "SYSTEM.NCD"
+      ],
+      "sha256": "7538a1c74c06644e3757d894c7da68431850f8fd139782aead7ba6b4168c3488",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 15026432,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_E54900",
+      "confidence": {
+        "step": 17.6,
+        "spread": 243
+      },
+      "owners": [
+        "SYSTEM.NCD"
+      ],
+      "sha256": "9933f04cd05194702c3e3122cffed0175b945b2c1955c4b744edb8f315dd0564",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 15429888,
+      "raw_size": 8192,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_EB7100",
+      "confidence": {
+        "step": 15.1,
+        "spread": 240
+      },
+      "owners": [
+        "SYSTEM.NCD"
+      ],
+      "sha256": "cb27cd8cbdfb4791ae01a9a7beacf65f594001e1ae28e2698ced580a2714100e",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 15524096,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_ECE100",
+      "confidence": {
+        "step": 6.8,
+        "spread": 101
+      },
+      "owners": [
+        "SYSTEM.NCD"
+      ],
+      "sha256": "bed34b7ea0a8c8e93c6d1dcd77319f06cfc61167637e6a4104b1f2b0da3ffe4f",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 15614208,
+      "raw_size": 16384,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_EE4100",
+      "confidence": {
+        "step": 12.1,
+        "spread": 101
+      },
+      "owners": [
+        "SYSTEM.NCD"
+      ],
+      "sha256": "5d8fc5e10c3b8f70b51fc5ce5d71bed74188443fd9dc89431103e7ddcea15ea0",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 15716928,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_EFD240",
+      "confidence": {
+        "step": 16.1,
+        "spread": 99
+      },
+      "owners": [
+        "SYSTEM.NCD"
+      ],
+      "sha256": "aac421b8218eb12c9ec5868bb62aced6967866dda4760737aa95fd46253639af",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 15721024,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_EFE240",
+      "confidence": {
+        "step": 14.1,
+        "spread": 99
+      },
+      "owners": [
+        "SYSTEM.NCD"
+      ],
+      "sha256": "1c1381e37d59301d1f731a24eb383f9bcaa8591202ded6c834c3e015d929f1f0",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 15743552,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_F03A40",
+      "confidence": {
+        "step": 16.9,
+        "spread": 249
+      },
+      "owners": [
+        "SYSTEM.NCD"
+      ],
+      "sha256": "c31dd5a29713804be50db2099257993bf3807438c85c57888572ec44b285d147",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 15835904,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_F1A300",
+      "confidence": {
+        "step": 6.8,
+        "spread": 251
+      },
+      "owners": [
+        "T_C01.KCL",
+        "T_C01.KMP"
+      ],
+      "sha256": "d4532a7478981634283ae3955ae3559daf34f38b682c513dc766d7c858f74438",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 15839296,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_F1B040",
+      "confidence": {
+        "step": 5.0,
+        "spread": 226
+      },
+      "owners": [
+        "T_C02.KCL",
+        "T_C02.KMP"
+      ],
+      "sha256": "3567cd7a9a69fac28eb7d74db9e340f20964d3cf4361eea62c64365a44697b24",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 15870880,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_F22BA0",
+      "confidence": {
+        "step": 5.2,
+        "spread": 122
+      },
+      "owners": [
+        "VSMAP01.KMP"
+      ],
+      "sha256": "ee2c955f071960606e60e863339d388331430e4b7b7aff8d60afe8c2bf644d71",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 15889952,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_F27620",
+      "confidence": {
+        "step": 16.0,
+        "spread": 255
+      },
+      "owners": [
+        "WM_BG02.KCL",
+        "WM_BG02.KMP"
+      ],
+      "sha256": "36f265fc08ace29b5098e53b38aae4078e3e2552aec72b089b752d3e9f0e07cb",
+      "status": "non_audio_archive_fragment"
+    },
+    {
+      "rom_offset": 16657440,
+      "raw_size": 2048,
+      "kind": "sound",
+      "compressed": false,
+      "path": "sound/sound_FE2C20",
+      "confidence": {
+        "step": 3.8,
+        "spread": 230
+      },
+      "owners": [],
+      "sha256": "d75427c5a0df07fbbda8a55edf42fa002e5f2fb5adb566c3eedc98d36a6c2627",
+      "status": "unclassified_region_contains_ARM_code"
+    }
+  ],
+  "accepted_as_sound": 0,
+  "reason": "Smooth signed-byte values do not establish audio. 148 runs overlap named non-audio resources; FE2C20 contains ARM instructions at FE3008 and pointers to their ROM mirror."
+}

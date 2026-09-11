@@ -1,0 +1,4 @@
+// D0_NORM.SPC: ROM 5756C0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+

@@ -1,0 +1,766 @@
+// MAR script block 1B0000
+// One record per line: @<rom offset> <text>
+// <XX> is a raw control byte. Text is re-encoded to Shift-JIS at build time;
+// a line may not grow past its original byte length.
+// Anything after // is a comment and never reaches the ROM.
+
+@1B2BFC フレイムボール　ＣＬ４  // fureimubo-ru ???
+@1B2C1E 長い炎を飛ばす  // EN: Launches a long stream of flame.
+@1B2C7C パワーリング　ＣＬ１  // pawa-ringu ???
+@1B2C9E 腕力がすこし強くなる  // EN: Slightly increases physical strength.
+@1B2CFC パワーリング　ＣＬ２  // pawa-ringu ???
+@1B2D1E 腕力がかなり強くなる  // EN: Greatly increases physical strength.
+@1B2D7C パワーリング　ＣＬ３  // pawa-ringu ???
+@1B2D9E 腕力がすごく強くなる  // EN: Dramatically increases physical strength.
+@1B2DFC パワーリング　ＣＬ４  // pawa-ringu ???
+@1B2E1E 腕力がとてつもなく強くなる  // EN: Enormously increases physical strength.
+@1B2E7C ヴィンダールブ　ＣＬ３  // ?inda-rubu ???
+@1B2E9E 突風をぶつける  // EN: Hits the target with a gust of wind.
+@1B2EFC ヴィンダールブ　ＣＬ４  // ?inda-rubu ???
+@1B2F1E 竜巻を作ってぶつける  // EN: Creates a tornado and sends it at the target.
+@1B2F7C ヴィンダールブ　ＣＬ５  // ?inda-rubu ???
+@1B2F9E 台風を発生させる  // EN: Creates a typhoon.
+@1B2FFC ジッパー  // jippa-
+@1B301E 何が出るかはお楽しみ  // EN: What comes out is a surprise.
+@1B307C レインドッグ  // reindoggu
+@1B309E 敵を食い尽くすどう猛な犬  // EN: A ferocious dog that devours enemies.
+@1B30FC レインドッグ　ＳＰ  // reindoggu ??
+@1B311E すごいレインドッグ！  // sugoireindoggu!
+@1B317C スクリューサーベル  // sukuryu-sa-beru
+@1B319E うず巻きサーベルで刺す  // EN: Stabs with a spiral saber.
+@1B31FC ストーンキューブ　ＣＬ２  // suto-nkyu-bu ???
+@1B321E 自爆する石が降ってくる  // EN: Exploding stones rain down.
+@1B327C ストーンキューブ　ＣＬ３  // suto-nkyu-bu ???
+@1B329E 自爆する石が多く降ってくる  // EN: Many exploding stones rain down.
+@1B32FC ストーンキューブ　ＣＬ４  // suto-nkyu-bu ???
+@1B331E 自爆する石がたくさん降ってくる  // EN: A great many exploding stones rain down.
+@1B337C ストーンキューブ　ＣＬ５  // suto-nkyu-bu ???
+@1B339E マグマのヘビが飛び回る  // EN: A magma snake flies around.
+@1B33FC シャドーマン  // shado-man
+@1B341E 自分の分身が戦う  // EN: A duplicate of the user fights.
+@1B347C ナイフリング  // naifuringu
+@1B349E 前向きにナイフで刺す  // EN: Stabs forward with a knife.
+@1B34FC クラブリング  // kuraburingu
+@1B351E 前向きにこん棒でなぐる  // EN: Strikes forward with a club.
+@1B357C ソードリング  // so-doringu
+@1B359E 前向きに剣で斬る  // EN: Slashes forward with a sword.
+@1B35FC アックスリング  // akkusuringu
+@1B361E 前向きにオノをふりおろす  // EN: Swings an axe down in front.
+@1B367C カタナリング  // katanaringu
+@1B369E 前向きに日本刀で斬る  // EN: Slashes forward with a katana.
+@1B36FC ウォーターナイフリング  // uo-ta-naifuringu
+@1B371E 前向きに水属性のナイフで刺す  // EN: Stabs forward with a water-element knife.
+@1B377C ウォータークラブリング  // uo-ta-kuraburingu
+@1B379E 前向きに水属性のこん棒でなぐる  // EN: Strikes forward with a water-element club.
+@1B37FC ウォーターソードリング  // uo-ta-so-doringu
+@1B381E 前向きに水属性の剣で斬る  // EN: Slashes forward with a water-element sword.
+@1B387C ウォーターアックスリング  // uo-ta-akkusuringu
+@1B389E 前向きに水属性のオノをふりおろす  // EN: Swings down a water-element axe.
+@1B38FC ウォーターカタナリング  // uo-ta-katanaringu
+@1B391E 前向きに水属性の日本刀で斬る  // EN: Slashes forward with a water-element katana.
+@1B397C ファイアナイフリング  // fuaianaifuringu
+@1B399E 前向きに火属性のナイフで刺す  // EN: Stabs forward with a fire-element knife.
+@1B39FC ファイアクラブリング  // fuaiakuraburingu
+@1B3A1E 前向きに火属性のこん棒でなぐる  // EN: Strikes forward with a fire-element club.
+@1B3A7C ファイアソードリング  // fuaiaso-doringu
+@1B3A9E 前向きに火属性の剣で斬る  // EN: Slashes forward with a fire-element sword.
+@1B3AFC ファイアアックスリング  // fuaiaakkusuringu
+@1B3B1E 前向きに火属性のオノをふりおろす  // EN: Swings down a fire-element axe.
+@1B3B7C ファイアカタナリング  // fuaiakatanaringu
+@1B3B9E 前向きに火属性の日本刀で斬る  // EN: Slashes forward with a fire-element katana.
+@1B3BFC リーフナイフリング  // ri-funaifuringu
+@1B3C1E 前向きに木属性のナイフで刺す  // EN: Stabs forward with a wood-element knife.
+@1B3C7C リーフクラブリング  // ri-fukuraburingu
+@1B3C9E 前向きに木属性のこん棒でなぐる  // EN: Strikes forward with a wood-element club.
+@1B3CFC リーフソードリング  // ri-fuso-doringu
+@1B3D1E 前向きに木属性の剣で斬る  // EN: Slashes forward with a wood-element sword.
+@1B3D7C リーフアックスリング  // ri-fuakkusuringu
+@1B3D9E 前向きに木属性のオノをふりおろす  // EN: Swings down a wood-element axe.
+@1B3DFC リーフカタナリング  // ri-fukatanaringu
+@1B3E1E 前向きに木属性の日本刀で斬る  // EN: Slashes forward with a wood-element katana.
+@1B3E7C ウィンドナイフリング  // uindonaifuringu
+@1B3E9E 前向きに風属性のナイフで刺す  // EN: Stabs forward with a wind-element knife.
+@1B3EFC ウィンドクラブリング  // uindokuraburingu
+@1B3F1E 前向きに風属性のこん棒でなぐる  // EN: Strikes forward with a wind-element club.
+@1B3F7C ウィンドソードリング  // uindoso-doringu
+@1B3F9E 前向きに風属性の剣で斬る  // EN: Slashes forward with a wind-element sword.
+@1B3FFC ウィンドアックスリング  // uindoakkusuringu
+@1B401E 前向きに風属性のオノをふりおろす  // EN: Swings down a wind-element axe.
+@1B407C ウィンドカタナリング  // uindokatanaringu
+@1B409E 前向きに風属性の日本刀で斬る  // EN: Slashes forward with a wind-element katana.
+@1B40FC アースナイフリング  // a-sunaifuringu
+@1B411E 前向きに地属性のナイフで刺す  // EN: Stabs forward with a earth-element knife.
+@1B417C アースクラブリング  // a-sukuraburingu
+@1B419E 前向きに地属性のこん棒でなぐる  // EN: Strikes forward with a earth-element club.
+@1B41FC アースソードリング  // a-suso-doringu
+@1B421E 前向きに地属性の剣で斬る  // EN: Slashes forward with a earth-element sword.
+@1B427C アースアックスリング  // a-suakkusuringu
+@1B429E 前向きに地属性のオノをふりおろす  // EN: Swings down a earth-element axe.
+@1B42FC アースカタナリング  // a-sukatanaringu
+@1B431E 前向きに地属性の日本刀で斬る  // EN: Slashes forward with a earth-element katana.
+@1B437C サンダーナイフリング  // sanda-naifuringu
+@1B439E 前向きに雷属性のナイフで刺す  // EN: Stabs forward with a lightning-element knife.
+@1B43FC サンダークラブリング  // sanda-kuraburingu
+@1B441E 前向きに雷属性のこん棒でなぐる  // EN: Strikes forward with a lightning-element club.
+@1B447C サンダーソードリング  // sanda-so-doringu
+@1B449E 前向きに雷属性の剣で斬る  // EN: Slashes forward with a lightning-element sword.
+@1B44FC サンダーアックスリング  // sanda-akkusuringu
+@1B451E 前向きに雷属性のオノをふりおろす  // EN: Swings down a lightning-element axe.
+@1B457C サンダーカタナリング  // sanda-katanaringu
+@1B459E 前向きに雷属性の日本刀で斬る  // EN: Slashes forward with a lightning-element katana.
+@1B45FC ウォーターパワー　ＣＬ１  // uo-ta-pawa- ???
+@1B461E 攻撃力を増やして水属性にチェンジ  // EN: Increases attack and changes to the water element.
+@1B467C ウォーターパワー　ＣＬ２  // uo-ta-pawa- ???
+@1B469E 攻撃力を増やして水属性にチェンジ  // EN: Increases attack and changes to the water element.
+@1B46FC ウォーターパワー　ＣＬ３  // uo-ta-pawa- ???
+@1B471E 攻撃力を増やして水属性にチェンジ  // EN: Increases attack and changes to the water element.
+@1B477C ウォーターパワー　ＣＬ４  // uo-ta-pawa- ???
+@1B479E 攻撃力を増やして水属性にチェンジ  // EN: Increases attack and changes to the water element.
+@1B47FC ウォーターパワー　ＣＬ５  // uo-ta-pawa- ???
+@1B481E 攻撃力を増やして水属性にチェンジ  // EN: Increases attack and changes to the water element.
+@1B487C ファイアパワー　ＣＬ１  // fuaiapawa- ???
+@1B489E 攻撃力を増やして火属性にチェンジ  // EN: Increases attack and changes to the fire element.
+@1B48FC ファイアパワー　ＣＬ２  // fuaiapawa- ???
+@1B491E 攻撃力を増やして火属性にチェンジ  // EN: Increases attack and changes to the fire element.
+@1B497C ファイアパワー　ＣＬ３  // fuaiapawa- ???
+@1B499E 攻撃力を増やして火属性にチェンジ  // EN: Increases attack and changes to the fire element.
+@1B49FC ファイアパワー　ＣＬ４  // fuaiapawa- ???
+@1B4A1E 攻撃力を増やして火属性にチェンジ  // EN: Increases attack and changes to the fire element.
+@1B4A7C ファイアパワー　ＣＬ５  // fuaiapawa- ???
+@1B4A9E 攻撃力を増やして火属性にチェンジ  // EN: Increases attack and changes to the fire element.
+@1B4AFC リーフパワー　ＣＬ１  // ri-fupawa- ???
+@1B4B1E 攻撃力を増やして木属性にチェンジ  // EN: Increases attack and changes to the wood element.
+@1B4B7C リーフパワー　ＣＬ２  // ri-fupawa- ???
+@1B4B9E 攻撃力を増やして木属性にチェンジ  // EN: Increases attack and changes to the wood element.
+@1B4BFC リーフパワー　ＣＬ３  // ri-fupawa- ???
+@1B4C1E 攻撃力を増やして木属性にチェンジ  // EN: Increases attack and changes to the wood element.
+@1B4C7C リーフパワー　ＣＬ４  // ri-fupawa- ???
+@1B4C9E 攻撃力を増やして木属性にチェンジ  // EN: Increases attack and changes to the wood element.
+@1B4CFC リーフパワー　ＣＬ５  // ri-fupawa- ???
+@1B4D1E 攻撃力を増やして木属性にチェンジ  // EN: Increases attack and changes to the wood element.
+@1B4D7C ウィンドパワー　ＣＬ１  // uindopawa- ???
+@1B4D9E 攻撃力を増やして風属性にチェンジ  // EN: Increases attack and changes to the wind element.
+@1B4DFC ウィンドパワー　ＣＬ２  // uindopawa- ???
+@1B4E1E 攻撃力を増やして風属性にチェンジ  // EN: Increases attack and changes to the wind element.
+@1B4E7C ウィンドパワー　ＣＬ３  // uindopawa- ???
+@1B4E9E 攻撃力を増やして風属性にチェンジ  // EN: Increases attack and changes to the wind element.
+@1B4EFC ウィンドパワー　ＣＬ４  // uindopawa- ???
+@1B4F1E 攻撃力を増やして風属性にチェンジ  // EN: Increases attack and changes to the wind element.
+@1B4F7C ウィンドパワー　ＣＬ５  // uindopawa- ???
+@1B4F9E 攻撃力を増やして風属性にチェンジ  // EN: Increases attack and changes to the wind element.
+@1B4FFC アースパワー　ＣＬ１  // a-supawa- ???
+@1B501E 攻撃力を増やして地属性にチェンジ  // EN: Increases attack and changes to the earth element.
+@1B507C アースパワー　ＣＬ２  // a-supawa- ???
+@1B509E 攻撃力を増やして地属性にチェンジ  // EN: Increases attack and changes to the earth element.
+@1B50FC アースパワー　ＣＬ３  // a-supawa- ???
+@1B511E 攻撃力を増やして地属性にチェンジ  // EN: Increases attack and changes to the earth element.
+@1B517C アースパワー　ＣＬ４  // a-supawa- ???
+@1B519E 攻撃力を増やして地属性にチェンジ  // EN: Increases attack and changes to the earth element.
+@1B51FC アースパワー　ＣＬ５  // a-supawa- ???
+@1B521E 攻撃力を増やして地属性にチェンジ  // EN: Increases attack and changes to the earth element.
+@1B527C サンダーパワー　ＣＬ１  // sanda-pawa- ???
+@1B529E 攻撃力を増やして雷属性にチェンジ  // EN: Increases attack and changes to the lightning element.
+@1B52FC サンダーパワー　ＣＬ２  // sanda-pawa- ???
+@1B531E 攻撃力を増やして雷属性にチェンジ  // EN: Increases attack and changes to the lightning element.
+@1B537C サンダーパワー　ＣＬ３  // sanda-pawa- ???
+@1B539E 攻撃力を増やして雷属性にチェンジ  // EN: Increases attack and changes to the lightning element.
+@1B53FC サンダーパワー　ＣＬ４  // sanda-pawa- ???
+@1B541E 攻撃力を増やして雷属性にチェンジ  // EN: Increases attack and changes to the lightning element.
+@1B547C サンダーパワー　ＣＬ５  // sanda-pawa- ???
+@1B549E 攻撃力を増やして雷属性にチェンジ  // EN: Increases attack and changes to the lightning element.
+@1B54FC ウォーターコート　ＣＬ１  // uo-ta-ko-to ???
+@1B551E 防御力を高めて水属性にチェンジ  // EN: Increases defense and changes to the water element.
+@1B557C ウォーターコート　ＣＬ２  // uo-ta-ko-to ???
+@1B559E 防御力を高めて水属性にチェンジ  // EN: Increases defense and changes to the water element.
+@1B55FC ウォーターコート　ＣＬ３  // uo-ta-ko-to ???
+@1B561E 防御力を高めて水属性にチェンジ  // EN: Increases defense and changes to the water element.
+@1B567C ウォーターコート　ＣＬ４  // uo-ta-ko-to ???
+@1B569E 防御力を高めて水属性にチェンジ  // EN: Increases defense and changes to the water element.
+@1B56FC ウォーターコート　ＣＬ５  // uo-ta-ko-to ???
+@1B571E 防御力を高めて水属性にチェンジ  // EN: Increases defense and changes to the water element.
+@1B577C ファイアコート　ＣＬ１  // fuaiako-to ???
+@1B579E 防御力を高めて火属性にチェンジ  // EN: Increases defense and changes to the fire element.
+@1B57FC ファイアコート　ＣＬ２  // fuaiako-to ???
+@1B581E 防御力を高めて火属性にチェンジ  // EN: Increases defense and changes to the fire element.
+@1B587C ファイアコート　ＣＬ３  // fuaiako-to ???
+@1B589E 防御力を高めて火属性にチェンジ  // EN: Increases defense and changes to the fire element.
+@1B58FC ファイアコート　ＣＬ４  // fuaiako-to ???
+@1B591E 防御力を高めて火属性にチェンジ  // EN: Increases defense and changes to the fire element.
+@1B597C ファイアコート　ＣＬ５  // fuaiako-to ???
+@1B599E 防御力を高めて火属性にチェンジ  // EN: Increases defense and changes to the fire element.
+@1B59FC リーフコート　ＣＬ１  // ri-fuko-to ???
+@1B5A1E 防御力を高めて木属性にチェンジ  // EN: Increases defense and changes to the wood element.
+@1B5A7C リーフコート　ＣＬ２  // ri-fuko-to ???
+@1B5A9E 防御力を高めて木属性にチェンジ  // EN: Increases defense and changes to the wood element.
+@1B5AFC リーフコート　ＣＬ３  // ri-fuko-to ???
+@1B5B1E 防御力を高めて木属性にチェンジ  // EN: Increases defense and changes to the wood element.
+@1B5B7C リーフコート　ＣＬ４  // ri-fuko-to ???
+@1B5B9E 防御力を高めて木属性にチェンジ  // EN: Increases defense and changes to the wood element.
+@1B5BFC リーフコート　ＣＬ５  // ri-fuko-to ???
+@1B5C1E 防御力を高めて木属性にチェンジ  // EN: Increases defense and changes to the wood element.
+@1B5C7C ウィンドコート　ＣＬ１  // uindoko-to ???
+@1B5C9E 防御力を高めて風属性にチェンジ  // EN: Increases defense and changes to the wind element.
+@1B5CFC ウィンドコート　ＣＬ２  // uindoko-to ???
+@1B5D1E 防御力を高めて風属性にチェンジ  // EN: Increases defense and changes to the wind element.
+@1B5D7C ウィンドコート　ＣＬ３  // uindoko-to ???
+@1B5D9E 防御力を高めて風属性にチェンジ  // EN: Increases defense and changes to the wind element.
+@1B5DFC ウィンドコート　ＣＬ４  // uindoko-to ???
+@1B5E1E 防御力を高めて風属性にチェンジ  // EN: Increases defense and changes to the wind element.
+@1B5E7C ウィンドコート　ＣＬ５  // uindoko-to ???
+@1B5E9E 防御力を高めて風属性にチェンジ  // EN: Increases defense and changes to the wind element.
+@1B5EFC アースコート　ＣＬ１  // a-suko-to ???
+@1B5F1E 防御力を高めて地属性にチェンジ  // EN: Increases defense and changes to the earth element.
+@1B5F7C アースコート　ＣＬ２  // a-suko-to ???
+@1B5F9E 防御力を高めて地属性にチェンジ  // EN: Increases defense and changes to the earth element.
+@1B5FFC アースコート　ＣＬ３  // a-suko-to ???
+@1B601E 防御力を高めて地属性にチェンジ  // EN: Increases defense and changes to the earth element.
+@1B607C アースコート　ＣＬ４  // a-suko-to ???
+@1B609E 防御力を高めて地属性にチェンジ  // EN: Increases defense and changes to the earth element.
+@1B60FC アースコート　ＣＬ５  // a-suko-to ???
+@1B611E 防御力を高めて地属性にチェンジ  // EN: Increases defense and changes to the earth element.
+@1B617C サンダーコート　ＣＬ１  // sanda-ko-to ???
+@1B619E 防御力を高めて雷属性にチェンジ  // EN: Increases defense and changes to the lightning element.
+@1B61FC サンダーコート　ＣＬ２  // sanda-ko-to ???
+@1B621E 防御力を高めて雷属性にチェンジ  // EN: Increases defense and changes to the lightning element.
+@1B627C サンダーコート　ＣＬ３  // sanda-ko-to ???
+@1B629E 防御力を高めて雷属性にチェンジ  // EN: Increases defense and changes to the lightning element.
+@1B62FC サンダーコート　ＣＬ４  // sanda-ko-to ???
+@1B631E 防御力を高めて雷属性にチェンジ  // EN: Increases defense and changes to the lightning element.
+@1B637C サンダーコート　ＣＬ５  // sanda-ko-to ???
+@1B639E 防御力を高めて雷属性にチェンジ  // EN: Increases defense and changes to the lightning element.
+@1B63FC エスケイプ　ＣＬ２  // esukeipu ???
+@1B641E うまくいけば戦闘から逃げられる  // EN: May let you escape from battle.
+@1B647C エスケイプ　ＣＬ３  // esukeipu ???
+@1B649E 戦闘から高い確率で逃げられる  // EN: High chance of escaping from battle.
+@1B64FC エスケイプ　ＣＬ４  // esukeipu ???
+@1B651E ほぼ確実に戦闘から逃げられる  // EN: Almost certain escape from battle.
+@1B657C 天使の口づけ  // EN: Angel's Kiss
+@1B659E ダークネス効果を消し去る  // EN: Removes Darkness effects.
+@1B65FC フェニックス  // fuenikkusu
+@1B661E 体力が０になると自動的に回復する  // EN: Automatically restores HP when it reaches zero.
+@1B667C スリーピーリング　ＣＬ１  // suri-pi-ringu ???
+@1B669E 敵を少し眠らせる  // EN: Briefly puts the enemy to sleep.
+@1B66FC スリーピーリング　ＣＬ２  // suri-pi-ringu ???
+@1B671E 敵を眠らせる  // EN: Puts the enemy to sleep.
+@1B677C スリーピーリング　ＣＬ３  // suri-pi-ringu ???
+@1B679E 敵を熟睡させる  // EN: Puts the enemy into a deep sleep.
+@1B67FC スリーピーリング　ＣＬ４  // suri-pi-ringu ???
+@1B681E 敵を長い時間眠らせる  // EN: Puts the enemy to sleep for a long time.
+@1B687C スリーピーリング　ＣＬ５  // suri-pi-ringu ???
+@1B689E 敵をかなり長時間眠らせる  // EN: Puts the enemy to sleep for a very long time.
+@1B68FC アームフリーズ　ＣＬ１  // a-mufuri-zu ???
+@1B697C アームフリーズ　ＣＬ２  // a-mufuri-zu ???
+@1B69FC アームフリーズ　ＣＬ３  // a-mufuri-zu ???
+@1B6A7C アームフリーズ　ＣＬ４  // a-mufuri-zu ???
+@1B6AFC カウントダウン　ＣＬ１  // kauntodaun ???
+@1B6B1E パラメータを減らすカウントダウン  // EN: A countdown that lowers stats.
+@1B6B7C カウントダウン　ＣＬ２  // kauntodaun ???
+@1B6B9E パラメータを減らすカウントダウン  // EN: A countdown that lowers stats.
+@1B6BFC カウントダウン　ＣＬ３  // kauntodaun ???
+@1B6C1E パラメータを減らすカウントダウン  // EN: A countdown that lowers stats.
+@1B6C7C カウントダウン　ＣＬ４  // kauntodaun ???
+@1B6C9E パラメータを減らすカウントダウン  // EN: A countdown that lowers stats.
+@1B6CFC カウントダウン　ＣＬ５  // kauntodaun ???
+@1B6D1E パラメータを減らすカウントダウン  // EN: A countdown that lowers stats.
+@1B6D7C デッキダウン　ＣＬ２  // dekkidaun ???
+@1B6DFC デッキダウン　ＣＬ３  // dekkidaun ???
+@1B6E7C デッキダウン　ＣＬ４  // dekkidaun ???
+@1B6EFC デッキダウン　ＣＬ５  // dekkidaun ???
+@1B6F7C ミノタウロ　ＣＬ２  // minotauro ???
+@1B6F9E ミノタウロのタックル攻撃  // EN: Minotauro attacks with a tackle.
+@1B6FFC ミノタウロ　ＣＬ３  // minotauro ???
+@1B701E ミノタウロの連続タックル  // EN: Minotauro tackles repeatedly.
+@1B707C ミノタウロ　ＣＬ４  // minotauro ???
+@1B709E ミノタウロの連続パンチ  // EN: Minotauro punches repeatedly.
+@1B70FC ミノタウロ　ＣＬ５  // minotauro ???
+@1B711E ミノタウロの必殺コンボ  // EN: Minotauro unleashes a finishing combo.
+@1B717C サーペント　ＣＬ２  // sa-pento ???
+@1B719E サーペントが水属性に変えて防御  // EN: Serpent changes to the water element and defends.
+@1B71FC サーペント　ＣＬ３  // sa-pento ???
+@1B721E サーペントがうず巻きを発生させる  // EN: Serpent creates a whirlpool.
+@1B727C サーペント　ＣＬ４  // sa-pento ???
+@1B729E サーペントが津波をおこす  // EN: Serpent creates a tidal wave.
+@1B72FC サーペント　ＣＬ５  // sa-pento ???
+@1B731E サーペントが津波をおこし凍らせる  // EN: Serpent creates a tidal wave and freezes the enemy.
+@1B737C サラマンダー　ＣＬ２  // saramanda- ???
+@1B739E サラマンダーが火属性に変えて防御  // EN: Salamander changes to the fire element and defends.
+@1B73FC サラマンダー　ＣＬ３  // saramanda- ???
+@1B741E サラマンダーが敵にアタック  // EN: Salamander attacks the enemy.
+@1B747C サラマンダー　ＣＬ４  // saramanda- ???
+@1B749E サラマンダーから炎が飛び出す  // EN: Flames shoot out of Salamander.
+@1B74FC サラマンダー　ＣＬ５  // saramanda- ???
+@1B751E 巨大サラマンダーが炎をはく  // EN: A giant Salamander breathes fire.
+@1B757C トレント　ＣＬ２  // torento ???
+@1B759E トレントが木属性に変えて防御  // EN: Treant changes to the wood element and defends.
+@1B75FC トレント　ＣＬ３  // torento ???
+@1B761E トレントの葉攻撃＆体力回復  // EN: Treant attacks with leaves and restores HP.
+@1B767C トレント　ＣＬ４  // torento ???
+@1B769E トレントの倒木攻撃＆体力回復  // EN: Treant attacks with a falling tree and restores HP.
+@1B76FC トレント　ＣＬ５  // torento ???
+@1B771E トレントの殴り攻撃＆体力回復  // EN: Treant strikes the enemy and restores HP.
+@1B777C ジン　ＣＬ２  // jin ???
+@1B779E ジンが風属性に変えて防御  // EN: Djinn changes to the wind element and defends.
+@1B77FC ジン　ＣＬ３  // jin ???
+@1B781E ジンの体当たり攻撃  // EN: Djinn attacks with a body slam.
+@1B787C ジン　ＣＬ４  // jin ???
+@1B789E ジンの分裂体当たり攻撃  // EN: Djinn splits into copies that attack with body slams.
+@1B78FC ジン　ＣＬ５  // jin ???
+@1B791E ジンの大分裂＆超アタック  // EN: Djinn splits into many copies and unleashes a powerful attack.
+@1B797C クエイク　ＣＬ２  // kueiku ???
+@1B799E クエイクが地属性に変え防御と回復  // EN: Quake changes to the earth element, defends and heals.
+@1B79FC クエイク　ＣＬ３  // kueiku ???
+@1B7A1E クエイクの大地の攻撃＆体力回復  // EN: Quake attacks with earth and restores HP.
+@1B7A7C クエイク　ＣＬ４  // kueiku ???
+@1B7A9E クエイクの大地連続攻撃＆体力回復  // EN: Quake attacks repeatedly with earth and restores HP.
+@1B7AFC クエイク　ＣＬ５  // kueiku ???
+@1B7B1E クエイクの大噴火攻撃＆体力回復  // EN: Quake attacks with a massive eruption and restores HP.
+@1B7B7C インドラ　ＣＬ２  // indora ???
+@1B7B9E インドラが雷属性に変えて防御  // EN: Indra changes to the lightning element and defends.
+@1B7BFC インドラ　ＣＬ３  // indora ???
+@1B7C1E インドラの電撃で１体が動作不能  // EN: Indra's electric shock immobilizes one target.
+@1B7C7C インドラ　ＣＬ４  // indora ???
+@1B7C9E インドラの大電撃で１体が動作不能  // EN: Indra's powerful electric shock immobilizes one target.
+@1B7CFC インドラ　ＣＬ５  // indora ???
+@1B7D1E インドラの超電撃で１体が動作不能  // EN: Indra's supercharged electric shock immobilizes one target.
+@1B7D7C アイス＆ウォーター　ＣＬ１  // aisu?uo-ta- ???
+@1B7D9E 水のかたまりを前方向に投げる  // EN: Throws a mass of water forward.
+@1B7DFC アイス＆ウォーター　ＣＬ２  // aisu?uo-ta- ???
+@1B7E1E 氷のかたまりを前方向に投げる  // EN: Throws a chunk of ice forward.
+@1B7E7C アイス＆ウォーター　ＣＬ３  // aisu?uo-ta- ???
+@1B7E9E 多くの氷を前方向にばらまく  // EN: Scatters a shower of ice forward.
+@1B7EFC アイス＆ウォーター　ＣＬ４  // aisu?uo-ta- ???
+@1B7F1E 大量の氷を前にばらまく  // EN: Scatters a huge shower of ice forward.
+@1B7F7C アイス＆ウォーター　ＣＬ５  // aisu?uo-ta- ???
+@1B7F9E 氷河が敵を飲みこむ  // EN: A glacier engulfs the enemy.
+@1B7FFC ファイアバーニング　ＣＬ１  // fuaiaba-ningu ???
+@1B801E 小さな火の玉を飛ばす  // EN: Launches a small fireball.
+@1B807C ファイアバーニング　ＣＬ２  // fuaiaba-ningu ???
+@1B809E 大きな火の玉を飛ばす  // EN: Launches a large fireball.
+@1B80FC ファイアバーニング　ＣＬ３  // fuaiaba-ningu ???
+@1B811E 火の玉を渦巻きのように飛ばす  // EN: Launches fireballs in a spiral.
+@1B817C ファイアバーニング　ＣＬ４  // fuaiaba-ningu ???
+@1B819E 上下から炎攻撃  // EN: Attacks with flames from above and below.
+@1B81FC ファイアバーニング　ＣＬ５  // fuaiaba-ningu ???
+@1B821E 小さな超新星爆発をおこす  // EN: Creates a small supernova explosion.
+@1B827C プランツアタック　ＣＬ１  // purantsuatakku ???
+@1B829E 体を葉で包み、動きを遅くする  // EN: Wraps the body in leaves, slowing movement.
+@1B82FC プランツアタック　ＣＬ２  // purantsuatakku ???
+@1B831E ツタを足に絡ませて動きを止める  // EN: Entangles the feet in vines, stopping movement.
+@1B837C プランツアタック　ＣＬ３  // purantsuatakku ???
+@1B839E ツタを体に絡ませて動きを止める  // EN: Entangles the body in vines, stopping movement.
+@1B83FC プランツアタック　ＣＬ４  // purantsuatakku ???
+@1B841E 木から大量の虫を飛ばす  // EN: Sends a swarm of insects flying out of a tree.
+@1B847C プランツアタック　ＣＬ５  // purantsuatakku ???
+@1B849E 大木がすべてにダメージを与える  // EN: A huge tree damages everything.
+@1B84FC デンジャラスストーム　ＣＬ１  // denjarasusuto-mu ???
+@1B851E 悪臭のつまった風船を飛ばす  // EN: Launches a balloon filled with a foul smell.
+@1B857C デンジャラスストーム　ＣＬ２  // denjarasusuto-mu ???
+@1B859E たくさんの悪臭風船を飛ばす  // EN: Launches many foul-smelling balloons.
+@1B85FC デンジャラスストーム　ＣＬ３  // denjarasusuto-mu ???
+@1B861E 大量の悪臭風船を飛ばす  // EN: Launches a huge barrage of foul-smelling balloons.
+@1B867C デンジャラスストーム　ＣＬ４  // denjarasusuto-mu ???
+@1B869E 砂嵐で攻撃し、目に砂を入れる  // EN: Attacks with a sandstorm, getting sand in the enemy's eyes.
+@1B86FC デンジャラスストーム　ＣＬ５  // denjarasusuto-mu ???
+@1B871E ハリケーンからいろいろ飛び出す  // EN: Various objects fly out of a hurricane.
+@1B877C アースフォース　ＣＬ１  // a-sufuo-su ???
+@1B879E 足元をドロにして移動できなくする  // EN: Turns the ground underfoot to mud, preventing movement.
+@1B87FC アースフォース　ＣＬ２  // a-sufuo-su ???
+@1B881E 水晶がガードする  // EN: A crystal guards the user.
+@1B887C アースフォース　ＣＬ３  // a-sufuo-su ???
+@1B889E 宝石がガードする  // EN: A gemstone guards the user.
+@1B88FC アースフォース　ＣＬ４  // a-sufuo-su ???
+@1B891E 地震をおこし岩を落とす  // EN: Causes an earthquake and falling rocks.
+@1B897C アースフォース　ＣＬ５  // a-sufuo-su ???
+@1B899E 地割れをおこしマグマが噴き出す  // EN: Splits the ground, sending magma gushing out.
+@1B89FC ライトニングボルト　ＣＬ１  // raitoninguboruto ???
+@1B8A1E プラズマ電気をぶつける  // EN: Hits the target with electrical plasma.
+@1B8A7C ライトニングボルト　ＣＬ２  // raitoninguboruto ???
+@1B8A9E 雷をおとす  // EN: Calls down lightning.
+@1B8AFC ライトニングボルト　ＣＬ３  // raitoninguboruto ???
+@1B8B1E 大きな雷をおとす  // EN: Calls down a massive lightning strike.
+@1B8B7C ライトニングボルト　ＣＬ４  // raitoninguboruto ???
+@1B8B9E たくさんの雷をおとす  // EN: Calls down many lightning strikes.
+@1B8BFC ライトニングボルト　ＣＬ５  // raitoninguboruto ???
+@1B8C1E 巨大雷をおとしまわりに放電させる  // EN: Calls down a massive lightning strike that discharges electricity around it.
+@1B8C7C スキャンリング  // sukyanringu
+@1B8CFC ストックリング  // sutokkuringu
+@1B8D7C シャッフルリング  // shaffururingu
+@1B8DFC ダミー  // dami-
+@1B8E1E ダミー  // dami-
+@1B8E7C ダミー  // dami-
+@1B8E9E ダミー  // dami-
+@1B8EFC ダミー  // dami-
+@1B8F1E ダミー  // dami-
+@1B8F7C ダミー  // dami-
+@1B8F9E ダミー  // dami-
+@1B8FFC ダミー  // dami-
+@1B901E ダミー  // dami-
+@1B907C ダミー  // dami-
+@1B909E ダミー  // dami-
+@1B90FC ダミー  // dami-
+@1B911E ダミー  // dami-
+@1B917C ダミー  // dami-
+@1B919E ダミー  // dami-
+@1B91FC ダミー  // dami-
+@1B921E ダミー  // dami-
+@1B927C ダミー  // dami-
+@1B929E ダミー  // dami-
+@1B92FC ダミー  // dami-
+@1B931E ダミー  // dami-
+@1B937C ダミー  // dami-
+@1B939E ダミー  // dami-
+@1B93FC ダミー  // dami-
+@1B941E ダミー  // dami-
+@1B947C ダミー  // dami-
+@1B949E ダミー  // dami-
+@1B94FC ダミー  // dami-
+@1B951E ダミー  // dami-
+@1B957C ダミー  // dami-
+@1B959E ダミー  // dami-
+@1B95FC ダミー  // dami-
+@1B961E ダミー  // dami-
+@1B967C ダミー  // dami-
+@1B969E ダミー  // dami-
+@1B96FC ダミー  // dami-
+@1B971E ダミー  // dami-
+@1B977C ダミー  // dami-
+@1B979E ダミー  // dami-
+@1B97FC ダミー  // dami-
+@1B981E ダミー  // dami-
+@1B987C ダミー  // dami-
+@1B989E ダミー  // dami-
+@1B98FC ダミー  // dami-
+@1B991E ダミー  // dami-
+@1B997C ダミー  // dami-
+@1B999E ダミー  // dami-
+@1B99FC ダミー  // dami-
+@1B9A1E ダミー  // dami-
+@1B9A7C ダミー  // dami-
+@1B9A9E ダミー  // dami-
+@1B9AFC ダミー  // dami-
+@1B9B1E ダミー  // dami-
+@1B9B7C ダミー  // dami-
+@1B9B9E ダミー  // dami-
+@1B9BFC ダミー  // dami-
+@1B9C1E ダミー  // dami-
+@1B9C7C ダミー  // dami-
+@1B9C9E ダミー  // dami-
+@1B9CFC ダミー  // dami-
+@1B9D1E ダミー  // dami-
+@1B9D7C ダミー  // dami-
+@1B9D9E ダミー  // dami-
+@1B9DFC ダミー  // dami-
+@1B9E1E ダミー  // dami-
+@1B9E7C ダミー  // dami-
+@1B9E9E ダミー  // dami-
+@1B9EFC ダミー  // dami-
+@1B9F1E ダミー  // dami-
+@1B9F7C ビッグバッボ  // biggubabbo
+@1B9F9E 巨大化したバッボを前にふりおろす  // EN: Swings an enlarged Babbo down in front.
+@1B9FFC ハンマーアーム  // hanma-a-mu
+@1BA01E 腕を鉄球にしてアタック  // EN: Turns the arm into an iron ball and attacks.
+@1BA07C ダガーアーム  // daga-a-mu
+@1BA09E 腕を剣にして斬る  // EN: Turns the arm into a sword and slashes.
+@1BA0FC バブルランチャー  // babururancha-
+@1BA11E シャボン玉ばくだんを発射する  // EN: Fires bubble bombs.
+@1BA17C ガーゴイル　ＣＬ４  // ga-goiru ???
+@1BA19E ガーゴイルのパンチがさくれつ  // ga-goirunopanchigasakuretsu
+@1BA1FC ガーゴイル　ＣＬ５  // ga-goiru ???
+@1BA21E ガーゴイルがビームをはなつ  // ga-goirugabi-muwohanatsu
+@1BA27C ガーゴイル　ＳＰ  // ga-goiru ??
+@1BA29E すごいガーゴイル！  // sugoiga-goiru!
+@1BA2FC アリス  // arisu
+@1BA31E ダークネス効果を消して体力回復  // EN: Removes Darkness effects and restores HP.
+@1BA37C ガトリングバッボ  // gatoringubabbo
+@1BA39E 小さなバッボを連射する  // EN: Rapidly fires small Babbos.
+@1BA3FC アーマーストーン　ＣＬ１  // a-ma-suto-n ???
+@1BA41E リングアーマーの一撃  // EN: Ring Armor delivers a strike.
+@1BA47C アーマーストーン　ＣＬ２  // a-ma-suto-n ???
+@1BA49E リングアーマーの連続攻撃  // EN: Ring Armor attacks repeatedly.
+@1BA4FC ５ダガーストーン  // ?daga-suto-n
+@1BA51E ５本のダガーを前に飛ばす  // EN: Launches five daggers forward.
+@1BA57C １０ダガーストーン  // ??daga-suto-n
+@1BA59E １０本のダガーを前に飛ばす  // EN: Launches ten daggers forward.
+@1BA5FC ２０ダガーストーン  // ??daga-suto-n
+@1BA61E ２０本のダガーを前後に飛ばす  // EN: Launches twenty daggers forward and backward.
+@1BA67C ブレードストーン  // bure-dosuto-n
+@1BA69E 大きな剣が敵を斬る  // EN: A large sword slashes the enemy.
+@1BA6FC メルトアイスストーン  // merutoaisusuto-n
+@1BA71E 熱い空気を広げる  // EN: Spreads hot air.
+@1BA77C 癒しの天使石　ＣＬ１  // EN: Healing Angel Stone CL1
+@1BA79E 使用者の体力を少し回復する  // EN: Restores a little of the user's HP.
+@1BA7FC 癒しの天使石　ＣＬ２  // EN: Healing Angel Stone CL2
+@1BA81E 使用者の体力をかなり回復する  // EN: Restores a large amount of the user's HP.
+@1BA87C パワーストーン　ＣＬ１  // pawa-suto-n ???
+@1BA89E 腕力がすこし強くなる  // EN: Slightly increases physical strength.
+@1BA8FC パワーストーン　ＣＬ２  // pawa-suto-n ???
+@1BA91E 腕力がかなり強くなる  // EN: Greatly increases physical strength.
+@1BA97C パワーストーン　ＣＬ３  // pawa-suto-n ???
+@1BA99E 腕力がすごく強くなる  // EN: Dramatically increases physical strength.
+@1BA9FC ナイフストーン  // naifusuto-n
+@1BAA1E 前向きにナイフで刺す  // EN: Stabs forward with a knife.
+@1BAA7C クラブストーン  // kurabusuto-n
+@1BAA9E 前向きにこん棒でなぐる  // EN: Strikes forward with a club.
+@1BAAFC ソードストーン  // so-dosuto-n
+@1BAB1E 前向きに剣で斬る  // EN: Slashes forward with a sword.
+@1BAB7C アックスストーン  // akkususuto-n
+@1BAB9E 前向きにオノをふりおろす  // EN: Swings an axe down in front.
+@1BABFC カタナストーン  // katanasuto-n
+@1BAC1E 前向きに日本刀で斬る  // EN: Slashes forward with a katana.
+@1BAC7C ウォーターナイフストーン  // uo-ta-naifusuto-n
+@1BAC9E 前向きに水属性のナイフで刺す  // EN: Stabs forward with a water-element knife.
+@1BACFC ウォータークラブストーン  // uo-ta-kurabusuto-n
+@1BAD1E 前向きに水属性のこん棒でなぐる  // EN: Strikes forward with a water-element club.
+@1BAD7C ウォーターソードストーン  // uo-ta-so-dosuto-n
+@1BAD9E 前向きに水属性の剣で斬る  // EN: Slashes forward with a water-element sword.
+@1BADFC ウォーターアックスストーン  // uo-ta-akkususuto-n
+@1BAE1E 前向きに水属性のオノをふりおろす  // EN: Swings down a water-element axe.
+@1BAE7C ウォーターカタナストーン  // uo-ta-katanasuto-n
+@1BAE9E 前向きに水属性の日本刀で斬る  // EN: Slashes forward with a water-element katana.
+@1BAEFC ファイアナイフストーン  // fuaianaifusuto-n
+@1BAF1E 前向きに火属性のナイフで刺す  // EN: Stabs forward with a fire-element knife.
+@1BAF7C ファイアクラブストーン  // fuaiakurabusuto-n
+@1BAF9E 前向きに火属性のこん棒でなぐる  // EN: Strikes forward with a fire-element club.
+@1BAFFC ファイアソードストーン  // fuaiaso-dosuto-n
+@1BB01E 前向きに火属性の剣で斬る  // EN: Slashes forward with a fire-element sword.
+@1BB07C ファイアアックスストーン  // fuaiaakkususuto-n
+@1BB09E 前向きに火属性のオノをふりおろす  // EN: Swings down a fire-element axe.
+@1BB0FC ファイアカタナストーン  // fuaiakatanasuto-n
+@1BB11E 前向きに火属性の日本刀で斬る  // EN: Slashes forward with a fire-element katana.
+@1BB17C リーフナイフストーン  // ri-funaifusuto-n
+@1BB19E 前向きに木属性のナイフで刺す  // EN: Stabs forward with a wood-element knife.
+@1BB1FC リーフクラブストーン  // ri-fukurabusuto-n
+@1BB21E 前向きに木属性のこん棒でなぐる  // EN: Strikes forward with a wood-element club.
+@1BB27C リーフソードストーン  // ri-fuso-dosuto-n
+@1BB29E 前向きに木属性の剣で斬る  // EN: Slashes forward with a wood-element sword.
+@1BB2FC リーフアックスストーン  // ri-fuakkususuto-n
+@1BB31E 前向きに木属性のオノをふりおろす  // EN: Swings down a wood-element axe.
+@1BB37C リーフカタナストーン  // ri-fukatanasuto-n
+@1BB39E 前向きに木属性の日本刀で斬る  // EN: Slashes forward with a wood-element katana.
+@1BB3FC ウィンドナイフストーン  // uindonaifusuto-n
+@1BB41E 前向きに風属性のナイフで刺す  // EN: Stabs forward with a wind-element knife.
+@1BB47C ウィンドクラブストーン  // uindokurabusuto-n
+@1BB49E 前向きに風属性のこん棒でなぐる  // EN: Strikes forward with a wind-element club.
+@1BB4FC ウィンドソードストーン  // uindoso-dosuto-n
+@1BB51E 前向きに風属性の剣で斬る  // EN: Slashes forward with a wind-element sword.
+@1BB57C ウィンドアックスストーン  // uindoakkususuto-n
+@1BB59E 前向きに風属性のオノをふりおろす  // EN: Swings down a wind-element axe.
+@1BB5FC ウィンドカタナストーン  // uindokatanasuto-n
+@1BB61E 前向きに風属性の日本刀で斬る  // EN: Slashes forward with a wind-element katana.
+@1BB67C アースナイフストーン  // a-sunaifusuto-n
+@1BB69E 前向きに地属性のナイフで刺す  // EN: Stabs forward with a earth-element knife.
+@1BB6FC アースクラブストーン  // a-sukurabusuto-n
+@1BB71E 前向きに地属性のこん棒でなぐる  // EN: Strikes forward with a earth-element club.
+@1BB77C アースソードストーン  // a-suso-dosuto-n
+@1BB79E 前向きに地属性の剣で斬る  // EN: Slashes forward with a earth-element sword.
+@1BB7FC アースアックスストーン  // a-suakkususuto-n
+@1BB81E 前向きに地属性のオノをふりおろす  // EN: Swings down a earth-element axe.
+@1BB87C アースカタナストーン  // a-sukatanasuto-n
+@1BB89E 前向きに地属性の日本刀で斬る  // EN: Slashes forward with a earth-element katana.
+@1BB8FC サンダーナイフストーン  // sanda-naifusuto-n
+@1BB91E 前向きに雷属性のナイフで刺す  // EN: Stabs forward with a lightning-element knife.
+@1BB97C サンダークラブストーン  // sanda-kurabusuto-n
+@1BB99E 前向きに雷属性のこん棒でなぐる  // EN: Strikes forward with a lightning-element club.
+@1BB9FC サンダーソードストーン  // sanda-so-dosuto-n
+@1BBA1E 前向きに雷属性の剣で斬る  // EN: Slashes forward with a lightning-element sword.
+@1BBA7C サンダーアックスストーン  // sanda-akkususuto-n
+@1BBA9E 前向きに雷属性のオノをふりおろす  // EN: Swings down a lightning-element axe.
+@1BBAFC サンダーカタナストーン  // sanda-katanasuto-n
+@1BBB1E 前向きに雷属性の日本刀で斬る  // EN: Slashes forward with a lightning-element katana.
+@1BBB7C ウォーターパワーストーン　ＣＬ１  // uo-ta-pawa-suto-n ???
+@1BBB9E 攻撃力を増やして水属性にチェンジ  // EN: Increases attack and changes to the water element.
+@1BBBFC ウォーターパワーストーン　ＣＬ２  // uo-ta-pawa-suto-n ???
+@1BBC1E 攻撃力を増やして水属性にチェンジ  // EN: Increases attack and changes to the water element.
+@1BBC7C ウォーターパワーストーン　ＣＬ３  // uo-ta-pawa-suto-n ???
+@1BBC9E 攻撃力を増やして水属性にチェンジ  // EN: Increases attack and changes to the water element.
+@1BBCFC ウォーターパワーストーン　ＣＬ４  // uo-ta-pawa-suto-n ???
+@1BBD1E 攻撃力を増やして水属性にチェンジ  // EN: Increases attack and changes to the water element.
+@1BBD7C ファイアパワーストーン　ＣＬ１  // fuaiapawa-suto-n ???
+@1BBD9E 攻撃力を増やして火属性にチェンジ  // EN: Increases attack and changes to the fire element.
+@1BBDFC ファイアパワーストーン　ＣＬ２  // fuaiapawa-suto-n ???
+@1BBE1E 攻撃力を増やして火属性にチェンジ  // EN: Increases attack and changes to the fire element.
+@1BBE7C ファイアパワーストーン　ＣＬ３  // fuaiapawa-suto-n ???
+@1BBE9E 攻撃力を増やして火属性にチェンジ  // EN: Increases attack and changes to the fire element.
+@1BBEFC ファイアパワーストーン　ＣＬ４  // fuaiapawa-suto-n ???
+@1BBF1E 攻撃力を増やして火属性にチェンジ  // EN: Increases attack and changes to the fire element.
+@1BBF7C リーフパワーストーン　ＣＬ１  // ri-fupawa-suto-n ???
+@1BBF9E 攻撃力を増やして木属性にチェンジ  // EN: Increases attack and changes to the wood element.
+@1BBFFC リーフパワーストーン　ＣＬ２  // ri-fupawa-suto-n ???
+@1BC01E 攻撃力を増やして木属性にチェンジ  // EN: Increases attack and changes to the wood element.
+@1BC07C リーフパワーストーン　ＣＬ３  // ri-fupawa-suto-n ???
+@1BC09E 攻撃力を増やして木属性にチェンジ  // EN: Increases attack and changes to the wood element.
+@1BC0FC リーフパワーストーン　ＣＬ４  // ri-fupawa-suto-n ???
+@1BC11E 攻撃力を増やして木属性にチェンジ  // EN: Increases attack and changes to the wood element.
+@1BC17C ウィンドパワーストーン　ＣＬ１  // uindopawa-suto-n ???
+@1BC19E 攻撃力を増やして風属性にチェンジ  // EN: Increases attack and changes to the wind element.
+@1BC1FC ウィンドパワーストーン　ＣＬ２  // uindopawa-suto-n ???
+@1BC21E 攻撃力を増やして風属性にチェンジ  // EN: Increases attack and changes to the wind element.
+@1BC27C ウィンドパワーストーン　ＣＬ３  // uindopawa-suto-n ???
+@1BC29E 攻撃力を増やして風属性にチェンジ  // EN: Increases attack and changes to the wind element.
+@1BC2FC ウィンドパワーストーン　ＣＬ４  // uindopawa-suto-n ???
+@1BC31E 攻撃力を増やして風属性にチェンジ  // EN: Increases attack and changes to the wind element.
+@1BC37C アースパワーストーン　ＣＬ１  // a-supawa-suto-n ???
+@1BC39E 攻撃力を増やして地属性にチェンジ  // EN: Increases attack and changes to the earth element.
+@1BC3FC アースパワーストーン　ＣＬ２  // a-supawa-suto-n ???
+@1BC41E 攻撃力を増やして地属性にチェンジ  // EN: Increases attack and changes to the earth element.
+@1BC47C アースパワーストーン　ＣＬ３  // a-supawa-suto-n ???
+@1BC49E 攻撃力を増やして地属性にチェンジ  // EN: Increases attack and changes to the earth element.
+@1BC4FC アースパワーストーン　ＣＬ４  // a-supawa-suto-n ???
+@1BC51E 攻撃力を増やして地属性にチェンジ  // EN: Increases attack and changes to the earth element.
+@1BC57C サンダーパワーストーン　ＣＬ１  // sanda-pawa-suto-n ???
+@1BC59E 攻撃力を増やして雷属性にチェンジ  // EN: Increases attack and changes to the lightning element.
+@1BC5FC サンダーパワーストーン　ＣＬ２  // sanda-pawa-suto-n ???
+@1BC61E 攻撃力を増やして雷属性にチェンジ  // EN: Increases attack and changes to the lightning element.
+@1BC67C サンダーパワーストーン　ＣＬ３  // sanda-pawa-suto-n ???
+@1BC69E 攻撃力を増やして雷属性にチェンジ  // EN: Increases attack and changes to the lightning element.
+@1BC6FC サンダーパワーストーン　ＣＬ４  // sanda-pawa-suto-n ???
+@1BC71E 攻撃力を増やして雷属性にチェンジ  // EN: Increases attack and changes to the lightning element.
+@1BC77C ウォーターコートストーン　ＣＬ１  // uo-ta-ko-tosuto-n ???
+@1BC79E 防御力を高めて水属性にチェンジ  // EN: Increases defense and changes to the water element.
+@1BC7FC ウォーターコートストーン　ＣＬ２  // uo-ta-ko-tosuto-n ???
+@1BC81E 防御力を高めて水属性にチェンジ  // EN: Increases defense and changes to the water element.
+@1BC87C ウォーターコートストーン　ＣＬ３  // uo-ta-ko-tosuto-n ???
+@1BC89E 防御力を高めて水属性にチェンジ  // EN: Increases defense and changes to the water element.
+@1BC8FC ウォーターコートストーン　ＣＬ４  // uo-ta-ko-tosuto-n ???
+@1BC91E 防御力を高めて水属性にチェンジ  // EN: Increases defense and changes to the water element.
+@1BC97C ファイアコートストーン　ＣＬ１  // fuaiako-tosuto-n ???
+@1BC99E 防御力を高めて火属性にチェンジ  // EN: Increases defense and changes to the fire element.
+@1BC9FC ファイアコートストーン　ＣＬ２  // fuaiako-tosuto-n ???
+@1BCA1E 防御力を高めて火属性にチェンジ  // EN: Increases defense and changes to the fire element.
+@1BCA7C ファイアコートストーン　ＣＬ３  // fuaiako-tosuto-n ???
+@1BCA9E 防御力を高めて火属性にチェンジ  // EN: Increases defense and changes to the fire element.
+@1BCAFC ファイアコートストーン　ＣＬ４  // fuaiako-tosuto-n ???
+@1BCB1E 防御力を高めて火属性にチェンジ  // EN: Increases defense and changes to the fire element.
+@1BCB7C リーフコートストーン　ＣＬ１  // ri-fuko-tosuto-n ???
+@1BCB9E 防御力を高めて木属性にチェンジ  // EN: Increases defense and changes to the wood element.
+@1BCBFC リーフコートストーン　ＣＬ２  // ri-fuko-tosuto-n ???
+@1BCC1E 防御力を高めて木属性にチェンジ  // EN: Increases defense and changes to the wood element.
+@1BCC7C リーフコートストーン　ＣＬ３  // ri-fuko-tosuto-n ???
+@1BCC9E 防御力を高めて木属性にチェンジ  // EN: Increases defense and changes to the wood element.
+@1BCCFC リーフコートストーン　ＣＬ４  // ri-fuko-tosuto-n ???
+@1BCD1E 防御力を高めて木属性にチェンジ  // EN: Increases defense and changes to the wood element.
+@1BCD7C ウィンドコートストーン　ＣＬ１  // uindoko-tosuto-n ???
+@1BCD9E 防御力を高めて風属性にチェンジ  // EN: Increases defense and changes to the wind element.
+@1BCDFC ウィンドコートストーン　ＣＬ２  // uindoko-tosuto-n ???
+@1BCE1E 防御力を高めて風属性にチェンジ  // EN: Increases defense and changes to the wind element.
+@1BCE7C ウィンドコートストーン　ＣＬ３  // uindoko-tosuto-n ???
+@1BCE9E 防御力を高めて風属性にチェンジ  // EN: Increases defense and changes to the wind element.
+@1BCEFC ウィンドコートストーン　ＣＬ４  // uindoko-tosuto-n ???
+@1BCF1E 防御力を高めて風属性にチェンジ  // EN: Increases defense and changes to the wind element.
+@1BCF7C アースコートストーン　ＣＬ１  // a-suko-tosuto-n ???
+@1BCF9E 防御力を高めて地属性にチェンジ  // EN: Increases defense and changes to the earth element.
+@1BCFFC アースコートストーン　ＣＬ２  // a-suko-tosuto-n ???
+@1BD01E 防御力を高めて地属性にチェンジ  // EN: Increases defense and changes to the earth element.
+@1BD07C アースコートストーン　ＣＬ３  // a-suko-tosuto-n ???
+@1BD09E 防御力を高めて地属性にチェンジ  // EN: Increases defense and changes to the earth element.
+@1BD0FC アースコートストーン　ＣＬ４  // a-suko-tosuto-n ???
+@1BD11E 防御力を高めて地属性にチェンジ  // EN: Increases defense and changes to the earth element.
+@1BD17C サンダーコートストーン　ＣＬ１  // sanda-ko-tosuto-n ???
+@1BD19E 防御力を高めて雷属性にチェンジ  // EN: Increases defense and changes to the lightning element.
+@1BD1FC サンダーコートストーン　ＣＬ２  // sanda-ko-tosuto-n ???
+@1BD21E 防御力を高めて雷属性にチェンジ  // EN: Increases defense and changes to the lightning element.
+@1BD27C サンダーコートストーン　ＣＬ３  // sanda-ko-tosuto-n ???
+@1BD29E 防御力を高めて雷属性にチェンジ  // EN: Increases defense and changes to the lightning element.
+@1BD2FC サンダーコートストーン　ＣＬ４  // sanda-ko-tosuto-n ???
+@1BD31E 防御力を高めて雷属性にチェンジ  // EN: Increases defense and changes to the lightning element.
+@1BD37C フリーズストーン　ＣＬ１  // furi-zusuto-n ???
+@1BD3FC フリーズストーン　ＣＬ２  // furi-zusuto-n ???
+@1BD47C フリーズストーン　ＣＬ３  // furi-zusuto-n ???
+@1BD4FC カウントダウンストーン　ＣＬ１  // kauntodaunsuto-n ???
+@1BD51E パラメータを減らすカウントダウン  // EN: A countdown that lowers stats.
+@1BD57C カウントダウンストーン　ＣＬ２  // kauntodaunsuto-n ???
+@1BD59E パラメータを減らすカウントダウン  // EN: A countdown that lowers stats.
+@1BD5FC カウントダウンストーン　ＣＬ３  // kauntodaunsuto-n ???
+@1BD61E パラメータを減らすカウントダウン  // EN: A countdown that lowers stats.
+@1BD67C デッキダウンストーン　ＣＬ２  // dekkidaunsuto-n ???
+@1BD6FC デッキダウンストーン　ＣＬ３  // dekkidaunsuto-n ???
+@1BD77C ミノタウロストーン　ＣＬ２  // minotaurosuto-n ???
+@1BD79E ミノタウロのタックル攻撃  // EN: Minotauro attacks with a tackle.
+@1BD7FC ミノタウロストーン　ＣＬ３  // minotaurosuto-n ???
+@1BD81E ミノタウロの連続タックル  // EN: Minotauro tackles repeatedly.
+@1BD87C サーペントストーン　ＣＬ２  // sa-pentosuto-n ???
+@1BD89E サーペントが水属性に変えて防御  // EN: Serpent changes to the water element and defends.
+@1BD8FC サーペントストーン　ＣＬ３  // sa-pentosuto-n ???
+@1BD91E サーペントが渦巻きを発生させる  // EN: Serpent creates a whirlpool.
+@1BD97C サラマンダーストーン　ＣＬ２  // saramanda-suto-n ???
+@1BD99E サラマンダーが火属性に変えて防御  // EN: Salamander changes to the fire element and defends.
+@1BD9FC サラマンダーストーン　ＣＬ３  // saramanda-suto-n ???
+@1BDA1E サラマンダーが敵にアタック  // EN: Salamander attacks the enemy.
+@1BDA7C トレントストーン　ＣＬ２  // torentosuto-n ???
+@1BDA9E トレントが木属性に変えて防御  // EN: Treant changes to the wood element and defends.
+@1BDAFC トレントストーン　ＣＬ３  // torentosuto-n ???
+@1BDB1E トレントの葉攻撃＆体力回復  // EN: Treant attacks with leaves and restores HP.
+@1BDB7C ジンストーン　ＣＬ２  // jinsuto-n ???
+@1BDB9E ジンが風属性に変えて防御  // EN: Djinn changes to the wind element and defends.
+@1BDBFC ジンストーン　ＣＬ３  // jinsuto-n ???
+@1BDC1E ジンの体当たり攻撃  // EN: Djinn attacks with a body slam.
+@1BDC7C クエイクストーン　ＣＬ２  // kueikusuto-n ???
+@1BDC9E クエイクが地属性に変え防御と回復  // EN: Quake changes to the earth element, defends and heals.
+@1BDCFC クエイクストーン　ＣＬ３  // kueikusuto-n ???
+@1BDD1E クエイクの大地の攻撃＆体力回復  // EN: Quake attacks with earth and restores HP.
+@1BDD7C インドラストーン　ＣＬ２  // indorasuto-n ???
+@1BDD9E インドラが雷属性に変えて防御  // EN: Indra changes to the lightning element and defends.
+@1BDDFC インドラストーン　ＣＬ３  // indorasuto-n ???
+@1BDE1E インドラの電撃で１体が動作不能  // EN: Indra's electric shock immobilizes one target.
+@1BDE7C アイスストーン　ＣＬ１  // aisusuto-n ???
+@1BDE9E 水のかたまりを前方向に投げる  // EN: Throws a mass of water forward.
+@1BDEFC アイスストーン　ＣＬ２  // aisusuto-n ???
+@1BDF1E 氷のかたまりを前方向に投げる  // EN: Throws a chunk of ice forward.
+@1BDF7C アイスストーン　ＣＬ３  // aisusuto-n ???
+@1BDF9E 多くの氷を前方向にばらまく  // EN: Scatters a shower of ice forward.
+@1BDFFC ファイアストーン　ＣＬ１  // fuaiasuto-n ???
+@1BE01E 小さな火の玉を飛ばす  // EN: Launches a small fireball.
+@1BE07C ファイアストーン　ＣＬ２  // fuaiasuto-n ???
+@1BE09E 大きな火の玉を飛ばす  // EN: Launches a large fireball.
+@1BE0FC ファイアストーン　ＣＬ３  // fuaiasuto-n ???
+@1BE11E 火の玉を渦巻きのように飛ばす  // EN: Launches fireballs in a spiral.
+@1BE17C プランツストーン　ＣＬ１  // purantsusuto-n ???
+@1BE19E 体を葉で包み、動きを遅くする  // EN: Wraps the body in leaves, slowing movement.
+@1BE1FC プランツストーン　ＣＬ２  // purantsusuto-n ???
+@1BE21E ツタを足に絡ませて動きを止める  // EN: Entangles the feet in vines, stopping movement.
+@1BE27C プランツストーン　ＣＬ３  // purantsusuto-n ???
+@1BE29E ツタを体に絡ませて動きを止める  // EN: Entangles the body in vines, stopping movement.
+@1BE2FC ストームストーン　ＣＬ１  // suto-musuto-n ???
+@1BE31E 悪臭のつまった風船を飛ばす  // EN: Launches a balloon filled with a foul smell.
+@1BE37C ストームストーン　ＣＬ２  // suto-musuto-n ???
+@1BE39E たくさんの悪臭風船を飛ばす  // EN: Launches many foul-smelling balloons.
+@1BE3FC ストームストーン　ＣＬ３  // suto-musuto-n ???
+@1BE41E 大量の悪臭風船を飛ばす  // EN: Launches a huge barrage of foul-smelling balloons.
+@1BE47C アースストーン　ＣＬ１  // a-susuto-n ???
+@1BE49E 足元をドロにして移動できなくする  // EN: Turns the ground underfoot to mud, preventing movement.
+@1BE4FC アースストーン　ＣＬ２  // a-susuto-n ???
+@1BE51E 水晶がガードする  // EN: A crystal guards the user.
+@1BE57C アースストーン　ＣＬ３  // a-susuto-n ???
+@1BE59E 宝石がガードする  // EN: A gemstone guards the user.
+@1BE5FC ライトニングストーン　ＣＬ１  // raitoningusuto-n ???
+@1BE61E プラズマ電気をぶつける  // EN: Hits the target with electrical plasma.
+@1BE67C ライトニングストーン　ＣＬ２  // raitoningusuto-n ???
+@1BE69E 雷をおとす  // EN: Calls down lightning.
+@1BE6FC ライトニングストーン　ＣＬ３  // raitoningusuto-n ???
+@1BE71E 大きな雷をおとす  // EN: Calls down a massive lightning strike.
+@1BE83C サックリの実  // EN: Crisp Fruit
+@1BE85E 体力を５０回復する  // EN: Restores 50 HP.
+@1BE88C ジュクした実  // EN: Ripe Fruit
+@1BE8AE 体力を１５０回復する  // EN: Restores 150 HP.
+@1BE8DC ニガい実  // EN: Bitter Fruit
+@1BE8FE 体力を４５０回復する  // EN: Restores 450 HP.
+@1BE92C ヘブンズリーフ  // hebunzuri-fu
+@1BE94E 体力を全回復する  // EN: Fully restores HP.
+@1BE97C 大きなヘブンズリーフ  // EN: Large Heaven's Leaf
+@1BE99E パーティーの体力を全回復する  // EN: Fully restores the party's HP.
+@1BE9CC ライフシード  // raifushi-do
+@1BE9EE 体力の最大値をふやす  // EN: Raises maximum HP.
+@1BEA1C マジックシード  // majikkushi-do
+@1BEA3E 魔力の最大値をふやす  // EN: Raises maximum magic power.
+@1BEA6C パワーシード  // pawa-shi-do
+@1BEA8E 攻撃力の最大値をふやす  // EN: Raises maximum attack.
+@1BEABC ガードシード  // ga-doshi-do
+@1BEADE 防御力の最大値をふやす  // EN: Raises maximum defense.
+@1BEB0C アームシルバー  // a-mushiruba-
+@1BEB2E 彫金の材料になる  // EN: Used as an engraving material.
+@1BEB5C アームゴールド  // a-mugo-rudo
+@1BEB7E 彫金の材料になる  // EN: Used as an engraving material.
+@1BEBAC アームプラチナ  // a-mupurachina
+@1BEBCE 彫金の材料になる  // EN: Used as an engraving material.
+@1BEBFC アームジュエル  // a-mujueru
+@1BEC1E 彫金の材料になる  // EN: Used as an engraving material.

@@ -1,0 +1,10 @@
+// Legacy reference view of MAP40_A.SPC; edit text/nfp/MAP40_A.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000006 MAP40_A  // LITERAL: MAP40_A (usage not inferred)
+@000090 TAKARA  // LITERAL: TAKARA (usage not inferred)
+@000258 TAKARA  // LITERAL: TAKARA (usage not inferred)
+@000420 TAKARA  // LITERAL: TAKARA (usage not inferred)
+@00060D MAP00_O  // LITERAL: MAP00_O (usage not inferred)
+@0007A1 EV_GTOB.SPC  // LITERAL: EV_GTOB.SPC (usage not inferred)

@@ -1,0 +1,12 @@
+{
+  "command": [
+    "make clean",
+    "make -j4 all"
+  ],
+  "byte_matching": true,
+  "size": 16777216,
+  "sha1": "5ed178bfbdf459867d64e5b91a9d9c72654e4051",
+  "python_original_rom_reads": "blocked",
+  "legacy_folder_absent": true,
+  "mapped_c_manifest_ranges": 48
+}

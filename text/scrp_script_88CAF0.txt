@@ -1,0 +1,7 @@
+// Legacy reference view of MAP01_5A.SPC; edit text/nfp/MAP01_5A.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@00004B MAP01_5A  // LITERAL: MAP01_5A (usage not inferred)
+@0000B2 TAKARA  // LITERAL: TAKARA (usage not inferred)
+@00029F PS_WK02  // LITERAL: PS_WK02 (usage not inferred)

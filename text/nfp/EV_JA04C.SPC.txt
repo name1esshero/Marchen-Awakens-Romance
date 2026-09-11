@@ -1,0 +1,12 @@
+// EV_JA04C.SPC: ROM 7B05E0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000055 MAP03_A  // LITERAL: MAP03_A (usage not inferred)
+@0004A3  C0D04 ［ジャックの母］  // EN: [Jack's mother]
+@0004C6  C0F04 （ただし……）  // TODO: English translation
+@000511  C0D04 ［ジャックの母］  // EN: [Jack's mother]
+@000534  C0F04 （必ず元気でかえってくるんだよ…  // TODO: English translation
+@000567 　ジャック…！）  // TODO: English translation
+@00069E MAP41_A  // LITERAL: MAP41_A (usage not inferred)
+@000726 G_EV001.SPC  // LITERAL: G_EV001.SPC (usage not inferred)

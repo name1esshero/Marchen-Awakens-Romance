@@ -1,0 +1,36 @@
+{
+  "verified_utc": "2026-09-11T20:47:29.627147+00:00",
+  "archive_sha256": "0139d55c7f89c82ce9d52a2046ae0e0683e990a54f4f477db538458d80bf9862",
+  "archive_entries": 27690,
+  "restored_into_empty_directory": true,
+  "agbcc_forced_rebuild_byte_matching": true,
+  "python_original_rom_reads_during_build": "blocked",
+  "source_mutations": {
+    "files": [
+      "src/entity.c",
+      "graphics/battle/characters/frames/0000.png",
+      "graphics/fonts/font.png",
+      "graphics/battle/characters/cells/LAST03/tile_50275.png",
+      "graphics/battle/characters/source/frames.json"
+    ],
+    "differing_offsets": [
+      "0032A8",
+      "3A2B36",
+      "3DF70B",
+      "568340",
+      "7BA9F0"
+    ],
+    "differing_bytes": 5,
+    "compare_exit_code": 1
+  },
+  "restored_rom_sha1": "5ed178bfbdf459867d64e5b91a9d9c72654e4051",
+  "unit_tests_passed": 14,
+  "removed_backup_directories": [
+    "backup from before agbcc",
+    "backups/20260911-041435",
+    "backups/clean-20260911-204133-894627Z"
+  ],
+  "rle_candidates_retired": 68,
+  "unclassified_raw_region": "data/data_1B0720.bin",
+  "backup": "backups/clean-20260911-204411-394706Z"
+}

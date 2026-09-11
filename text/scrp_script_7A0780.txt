@@ -1,0 +1,42 @@
+// Legacy reference view of EV_GO07.SPC; edit text/nfp/EV_GO07.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000103 A  // LITERAL: A (usage not inferred)
+@000396 F22A01  // LITERAL: F22A01 (usage not inferred)
+@00046F  C0D04 ［トム］  // EN: [Tom]
+@00048A  C0F04 キミ、なんて名前？  // EN: What's your name?
+@0004E9 F01B01  // LITERAL: F01B01 (usage not inferred)
+@0005C2  C0D04 ［ギンタ］  // EN: [Ginta]
+@0005DF  C0F04 ギンタ！！  // EN: Ginta!!
+@0005FC 虎水ギンタ！！  // EN: Ginta Toramizu!!
+@000634  C0D04 ［トム］  // EN: [Tom]
+@00064F  C0F04 かわった名前だね  // EN: That's an unusual name.
+@00069C  C0D04 ［ギンタ］  // EN: [Ginta]
+@0006B9  C0F04 そうか？  // EN: Is it?
+@0006FE  C0D04 ［ギンタ］  // EN: [Ginta]
+@00071B  C0F04 ちがうせかいからきた  // EN: Maybe it's because...
+@000742 人間だからかな？  // EN: ...I'm from another world?
+@00077C  C0D04 ［トム］  // EN: [Tom]
+@000797  C0F04 ちがう…せかい…  // EN: Another... world...
+@0007E4  C0D04 ［ギンタ］  // EN: [Ginta]
+@000830 よばれてきたんだ！  // EN: ...summoned me here!
+@00087C F02A03  // LITERAL: F02A03 (usage not inferred)
+@0009C1  C0D04 ［ギンタ］  // EN: [Ginta]
+@000A0F いっしょにチェスをたおすんだ！  // EN: We're going to beat the Chess Pieces together!
+@000A67 F22A02  // LITERAL: F22A02 (usage not inferred)
+@000A95  C0D04 ［トム］  // EN: [Tom]
+@000AB0  C0F04 …ふーーーーん  // EN: ...Oh, reaaally.
+@000B0B F01B04  // LITERAL: F01B04 (usage not inferred)
+@000B6F  C0D04 ［ギンタ］  // EN: [Ginta]
+@000B8C  C0F04 ふーんってなんだ！  // EN: What do you mean, 'oh, really'?!
+@000BB1 ふーん！って  // EN: 'Oh, really'?!
+@000BF7 F22A01  // LITERAL: F22A01 (usage not inferred)
+@000C5B  C0D04 ［トム］  // EN: [Tom]
+@000C76  C0F04 いたたた、ごめんよ…！  // EN: Ow, ow, ow! Sorry...!
+@000CD9 F22A02  // LITERAL: F22A02 (usage not inferred)
+@000D07  C0D04 ［トム］  // EN: [Tom]
+@000D22  C0F04 …でも  // EN: ...But...
+@000D3B ワクワクしてきた…  // EN: ...I'm getting excited...
+@000D77  C0D04 ［トム］  // EN: [Tom]
+@000D92  C0F04 きたい、してるよ！  // EN: I'm counting on you!

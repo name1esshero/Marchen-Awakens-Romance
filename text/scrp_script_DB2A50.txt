@@ -1,0 +1,19 @@
+// Legacy reference view of SPR_DUNG.SPC; edit text/nfp/SPR_DUNG.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000107 D0_ITEM.SPC  // LITERAL: D0_ITEM.SPC (usage not inferred)
+@000158 D0_ITEM.SPC  // LITERAL: D0_ITEM.SPC (usage not inferred)
+@0001B6 からっぽだ！  // EN: It's empty!
+@00028C D1_ITEM.SPC  // LITERAL: D1_ITEM.SPC (usage not inferred)
+@0002DD D1_ITEM.SPC  // LITERAL: D1_ITEM.SPC (usage not inferred)
+@00033B からっぽだ！  // EN: It's empty!
+@000411 D2_ITEM.SPC  // LITERAL: D2_ITEM.SPC (usage not inferred)
+@000462 D2_ITEM.SPC  // LITERAL: D2_ITEM.SPC (usage not inferred)
+@0004C0 からっぽだ！  // EN: It's empty!
+@000596 D3_ITEM.SPC  // LITERAL: D3_ITEM.SPC (usage not inferred)
+@0005E7 D3_ITEM.SPC  // LITERAL: D3_ITEM.SPC (usage not inferred)
+@000645 からっぽだ！  // EN: It's empty!
+@00071B D4_ITEM.SPC  // LITERAL: D4_ITEM.SPC (usage not inferred)
+@00076C D4_ITEM.SPC  // LITERAL: D4_ITEM.SPC (usage not inferred)
+@0007CA からっぽだ！  // EN: It's empty!

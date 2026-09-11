@@ -1,0 +1,4 @@
+// ENE_SET.SPC: ROM 793140
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+

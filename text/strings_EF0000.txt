@@ -1,0 +1,34 @@
+// MAR strings block EF0000
+// One record per line: @<rom offset> <text>
+// <XX> is a raw control byte. Text is re-encoded to Shift-JIS at build time;
+// a line may not grow past its original byte length.
+// Anything after // is a comment and never reaches the ROM.
+
+@EFC438 """"""""""""""""
+@EFC458 """"""""""""""""
+@EFC478 """"""""""""""""
+@EFC498 """"""""""""""""
+@EFC4B8 ffffffffffffffff
+@EFC4D8 ffffffffffffffff
+@EFC4F8 ffffffffffffffff
+@EFC518 ffffffffffffffff
+@EFC538 DDDDDDDDDDDDDDDD
+@EFC558 DDDDDDDDDDDDDDDD
+@EFC578 DDDDDDDDDDDDDDDD
+@EFC598 DDDDDDDDDDDDDDDD
+@EFC5B8 3333333333333333
+@EFC5D8 3333333333333333
+@EFC5F8 3333333333333333
+@EFC618 3333333333333333
+@EFC638 UUUUUUUUUUUUUUUU
+@EFC658 UUUUUUUUUUUUUUUU
+@EFC678 UUUUUUUUUUUUUUUU
+@EFC698 UUUUUUUUUUUUUUUU
+@EFC6B8 wwwwwwwwwwwwwwww
+@EFC6D8 wwwwwwwwwwwwwwww
+@EFC6F8 wwwwwwwwwwwwwwww
+@EFC718 wwwwwwwwwwwwwwww
+@EFC73F !<11><11><11><12><11><11><11>!
+@EFC758 ""22"""3""22"""3
+@EFC778 3CCD33DD3CCD33DD
+@EFC798 DEUUDTUUDEUUDTUU

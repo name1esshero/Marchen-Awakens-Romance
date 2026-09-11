@@ -1,0 +1,29 @@
+// EV_RT01.SPC: ROM 7B2970
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00013D F01A01  // LITERAL: F01A01 (usage not inferred)
+@000216  C0D04 ［ギンタ］  // EN: [Ginta]
+@000233  C0F04 それに…こんなに走り回ってもつかれないし  // EN: And... I don't get tired even after all this running around.
+@00026E なんか　はやく走れてる気がする…！！  // EN: I feel like I can run faster, too...!
+@0002CC F30A01  // LITERAL: F30A01 (usage not inferred)
+@0003A5  C0D04 ［親岩］  // EN: [Parent Rock]
+@0003C0  C0F04 ボッチャン！ずいぶんとゴキゲンそうですが  // EN: Young man! You seem to be in quite a good mood.
+@0003FB 何かたのしいことでもありましたかなー？  // EN: Has something nice happened to you?
+@00045B F30A04  // LITERAL: F30A04 (usage not inferred)
+@0005A0  C0D04 ［子岩］  // EN: [Child Rock]
+@0005BB  C0F04 ありましたかなー？  // EN: Has something nice happened?
+@00061A F01A08  // LITERAL: F01A08 (usage not inferred)
+@000648  C0D04 ［ギンタ］  // EN: [Ginta]
+@000665  C0F04 しゃべる…岩！！  // EN: A talking... rock!
+@000688 …あったあった！ここに来られたことがな！  // EN: ...Yeah, it has! I got to come here!
+@0006DA  C0D04 ［親岩］  // EN: [Parent Rock]
+@0006F5  C0F04 それはなによりです  // EN: That's wonderful.
+@00071A ところで、おねがいがあるのですが…  // EN: By the way, I have a favor to ask...
+@000766  C0D04 ［親岩］  // EN: [Parent Rock]
+@000781  C0F04 今日は日差しがきつくてたまりません  // EN: The sun is unbearably strong today.
+@0007B6 この先、北のほうに小川があるのですが…  // EN: There's a stream farther north...
+@000806  C0D04 ［親岩］  // EN: [Parent Rock]
+@000821  C0F04 そこから水をくんできてくれませんか？  // EN: Could you fetch some water from it for us?
+@000882  C0D04 ［ギンタ］  // EN: [Ginta]
+@00089F  C0F04 オッケーーーーーーーーー！！  // EN: Okaaaaaay!

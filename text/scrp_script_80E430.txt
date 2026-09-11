@@ -1,0 +1,16 @@
+// Legacy reference view of HI_M01_2.SPC; edit text/nfp/HI_M01_2.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000133 F01A01  // LITERAL: F01A01 (usage not inferred)
+@00016B F09A01  // LITERAL: F09A01 (usage not inferred)
+@0002BF  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0002DE  C0F04 あたしは、そのなかでも  // TODO: English translation
+@000349  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000368  C0F04 『バッボ』を手に入れたら  // EN: Once you get Babbo...
+@0003DB  C0D04 ［ギンタ］  // EN: [Ginta]
+@0003F8  C0F04 その『バッボ』ほしいな！  // EN: I'd like to have that Babbo!
+@00044D  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00046C  C0F04 ダ・メ！  // EN: No way!
+@0004B1  C0D04 ［ギンタ］  // EN: [Ginta]
+@0004CE  C0F04 なんだよ、ケチ！！  // EN: Aw, you cheapskate!!

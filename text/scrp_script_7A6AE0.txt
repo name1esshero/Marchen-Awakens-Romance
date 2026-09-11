@@ -1,0 +1,9 @@
+// Legacy reference view of EV_ICE06.SPC; edit text/nfp/EV_ICE06.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000137 F09A01  // LITERAL: F09A01 (usage not inferred)
+@000237  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000256  C0F04 …  // EN: ...
+@000295  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0002B4  C0F04 ここから先はギンタンに  // EN: From here on,

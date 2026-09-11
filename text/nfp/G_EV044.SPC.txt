@@ -1,0 +1,34 @@
+// G_EV044.SPC: ROM 807130
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000233 F09A02  // LITERAL: F09A02 (usage not inferred)
+@00030D F09A02  // LITERAL: F09A02 (usage not inferred)
+@000434  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000453  C0F04 ふんだふんだふうんだ！！  // TODO: English translation
+@000740 F01B04  // LITERAL: F01B04 (usage not inferred)
+@000840  C0D04 ［ギンタ］  // EN: [Ginta]
+@00085D  C0F04 （おこることないのに…）  // TODO: English translation
+@0008C2 F09A04  // LITERAL: F09A04 (usage not inferred)
+@000926  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000945  C0F04 ふーーーんだ！！  // TODO: English translation
+@000BE1 F08A06  // LITERAL: F08A06 (usage not inferred)
+@000CBA  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000CD7  C0F04 おーーギンタか  // EN: Oh, it's you, Ginta.
+@000D32 F08A03  // LITERAL: F08A03 (usage not inferred)
+@000D60  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000D7D  C0F04 …  // TODO: English translation
+@000DCC F08A05  // LITERAL: F08A05 (usage not inferred)
+@000DFA  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000E17  C0F04 アカン、はらイッパイになったら  // TODO: English translation
+@000E48 ちょっとねむたなってきたで  // TODO: English translation
+@000E9C F02A10  // LITERAL: F02A10 (usage not inferred)
+@000FAB  C0D04 ［バッボ］  // EN: [Babbo]
+@000FC8  C0F04 なさけない…  // TODO: English translation
+@001021 F02A14  // LITERAL: F02A14 (usage not inferred)
+@00104F  C0D04 ［バッボ］  // EN: [Babbo]
+@00106C  C0F04 つくづくなさけない！！  // TODO: English translation
+@0010CF F08A06  // LITERAL: F08A06 (usage not inferred)
+@0010FD  C0D04 ［ナナシ］  // EN: [Nanashi]
+@00111A  C0F04 ねたいときには  // TODO: English translation
+@00113B ねるのがいちばんや  // TODO: English translation

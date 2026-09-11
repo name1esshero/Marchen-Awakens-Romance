@@ -1,0 +1,1255 @@
+[
+ {
+  "kind": "script",
+  "bank": "1B0000",
+  "path": "text/script_1B0000.txt",
+  "count": 760,
+  "bytes": 17276
+ },
+ {
+  "kind": "script",
+  "bank": "1E0000",
+  "path": "text/script_1E0000.txt",
+  "count": 2,
+  "bytes": 40
+ },
+ {
+  "kind": "script",
+  "bank": "1F0000",
+  "path": "text/script_1F0000.txt",
+  "count": 1,
+  "bytes": 17
+ },
+ {
+  "kind": "script",
+  "bank": "210000",
+  "path": "text/script_210000.txt",
+  "count": 1,
+  "bytes": 17
+ },
+ {
+  "kind": "script",
+  "bank": "590000",
+  "path": "text/script_590000.txt",
+  "count": 37,
+  "bytes": 510
+ },
+ {
+  "kind": "script",
+  "bank": "5A0000",
+  "path": "text/script_5A0000.txt",
+  "count": 121,
+  "bytes": 1341
+ },
+ {
+  "kind": "script",
+  "bank": "6A0000",
+  "path": "text/script_6A0000.txt",
+  "count": 1,
+  "bytes": 20
+ },
+ {
+  "kind": "script",
+  "bank": "830000",
+  "path": "text/script_830000.txt",
+  "count": 2,
+  "bytes": 38
+ },
+ {
+  "kind": "script",
+  "bank": "940000",
+  "path": "text/script_940000.txt",
+  "count": 1,
+  "bytes": 47
+ },
+ {
+  "kind": "script",
+  "bank": "B20000",
+  "path": "text/script_B20000.txt",
+  "count": 2,
+  "bytes": 34
+ },
+ {
+  "kind": "script",
+  "bank": "B50000",
+  "path": "text/script_B50000.txt",
+  "count": 4,
+  "bytes": 68
+ },
+ {
+  "kind": "script",
+  "bank": "CE0000",
+  "path": "text/script_CE0000.txt",
+  "count": 1,
+  "bytes": 22
+ },
+ {
+  "kind": "script",
+  "bank": "E40000",
+  "path": "text/script_E40000.txt",
+  "count": 1,
+  "bytes": 12
+ },
+ {
+  "kind": "script",
+  "bank": "F10000",
+  "path": "text/script_F10000.txt",
+  "count": 2,
+  "bytes": 47
+ },
+ {
+  "kind": "strings",
+  "bank": "1B0000",
+  "path": "text/strings_1B0000.txt",
+  "count": 442,
+  "bytes": 3354
+ },
+ {
+  "kind": "strings",
+  "bank": "1C0000",
+  "path": "text/strings_1C0000.txt",
+  "count": 580,
+  "bytes": 6336
+ },
+ {
+  "kind": "strings",
+  "bank": "1D0000",
+  "path": "text/strings_1D0000.txt",
+  "count": 28,
+  "bytes": 210
+ },
+ {
+  "kind": "strings",
+  "bank": "1E0000",
+  "path": "text/strings_1E0000.txt",
+  "count": 13,
+  "bytes": 94
+ },
+ {
+  "kind": "strings",
+  "bank": "1F0000",
+  "path": "text/strings_1F0000.txt",
+  "count": 12,
+  "bytes": 86
+ },
+ {
+  "kind": "strings",
+  "bank": "210000",
+  "path": "text/strings_210000.txt",
+  "count": 5,
+  "bytes": 42
+ },
+ {
+  "kind": "strings",
+  "bank": "220000",
+  "path": "text/strings_220000.txt",
+  "count": 7,
+  "bytes": 52
+ },
+ {
+  "kind": "strings",
+  "bank": "230000",
+  "path": "text/strings_230000.txt",
+  "count": 51,
+  "bytes": 1263
+ },
+ {
+  "kind": "strings",
+  "bank": "240000",
+  "path": "text/strings_240000.txt",
+  "count": 112,
+  "bytes": 3504
+ },
+ {
+  "kind": "strings",
+  "bank": "250000",
+  "path": "text/strings_250000.txt",
+  "count": 5,
+  "bytes": 30
+ },
+ {
+  "kind": "strings",
+  "bank": "260000",
+  "path": "text/strings_260000.txt",
+  "count": 33,
+  "bytes": 706
+ },
+ {
+  "kind": "strings",
+  "bank": "270000",
+  "path": "text/strings_270000.txt",
+  "count": 23,
+  "bytes": 1091
+ },
+ {
+  "kind": "strings",
+  "bank": "290000",
+  "path": "text/strings_290000.txt",
+  "count": 13,
+  "bytes": 553
+ },
+ {
+  "kind": "strings",
+  "bank": "2A0000",
+  "path": "text/strings_2A0000.txt",
+  "count": 8,
+  "bytes": 64
+ },
+ {
+  "kind": "strings",
+  "bank": "2B0000",
+  "path": "text/strings_2B0000.txt",
+  "count": 59,
+  "bytes": 1765
+ },
+ {
+  "kind": "strings",
+  "bank": "2D0000",
+  "path": "text/strings_2D0000.txt",
+  "count": 6,
+  "bytes": 40
+ },
+ {
+  "kind": "strings",
+  "bank": "2E0000",
+  "path": "text/strings_2E0000.txt",
+  "count": 7,
+  "bytes": 351
+ },
+ {
+  "kind": "strings",
+  "bank": "300000",
+  "path": "text/strings_300000.txt",
+  "count": 21,
+  "bytes": 553
+ },
+ {
+  "kind": "strings",
+  "bank": "310000",
+  "path": "text/strings_310000.txt",
+  "count": 35,
+  "bytes": 2853
+ },
+ {
+  "kind": "strings",
+  "bank": "320000",
+  "path": "text/strings_320000.txt",
+  "count": 92,
+  "bytes": 1666
+ },
+ {
+  "kind": "strings",
+  "bank": "330000",
+  "path": "text/strings_330000.txt",
+  "count": 68,
+  "bytes": 1339
+ },
+ {
+  "kind": "strings",
+  "bank": "340000",
+  "path": "text/strings_340000.txt",
+  "count": 95,
+  "bytes": 1270
+ },
+ {
+  "kind": "strings",
+  "bank": "350000",
+  "path": "text/strings_350000.txt",
+  "count": 57,
+  "bytes": 901
+ },
+ {
+  "kind": "strings",
+  "bank": "360000",
+  "path": "text/strings_360000.txt",
+  "count": 24,
+  "bytes": 292
+ },
+ {
+  "kind": "strings",
+  "bank": "370000",
+  "path": "text/strings_370000.txt",
+  "count": 38,
+  "bytes": 643
+ },
+ {
+  "kind": "strings",
+  "bank": "380000",
+  "path": "text/strings_380000.txt",
+  "count": 47,
+  "bytes": 501
+ },
+ {
+  "kind": "strings",
+  "bank": "390000",
+  "path": "text/strings_390000.txt",
+  "count": 271,
+  "bytes": 2721
+ },
+ {
+  "kind": "strings",
+  "bank": "3A0000",
+  "path": "text/strings_3A0000.txt",
+  "count": 12,
+  "bytes": 50
+ },
+ {
+  "kind": "strings",
+  "bank": "3B0000",
+  "path": "text/strings_3B0000.txt",
+  "count": 33,
+  "bytes": 132
+ },
+ {
+  "kind": "strings",
+  "bank": "3D0000",
+  "path": "text/strings_3D0000.txt",
+  "count": 5,
+  "bytes": 34
+ },
+ {
+  "kind": "strings",
+  "bank": "420000",
+  "path": "text/strings_420000.txt",
+  "count": 5,
+  "bytes": 85
+ },
+ {
+  "kind": "strings",
+  "bank": "430000",
+  "path": "text/strings_430000.txt",
+  "count": 11,
+  "bytes": 101
+ },
+ {
+  "kind": "strings",
+  "bank": "440000",
+  "path": "text/strings_440000.txt",
+  "count": 1,
+  "bytes": 16
+ },
+ {
+  "kind": "strings",
+  "bank": "460000",
+  "path": "text/strings_460000.txt",
+  "count": 8,
+  "bytes": 177
+ },
+ {
+  "kind": "strings",
+  "bank": "470000",
+  "path": "text/strings_470000.txt",
+  "count": 1,
+  "bytes": 33
+ },
+ {
+  "kind": "strings",
+  "bank": "4B0000",
+  "path": "text/strings_4B0000.txt",
+  "count": 3,
+  "bytes": 29
+ },
+ {
+  "kind": "strings",
+  "bank": "4F0000",
+  "path": "text/strings_4F0000.txt",
+  "count": 2,
+  "bytes": 24
+ },
+ {
+  "kind": "strings",
+  "bank": "500000",
+  "path": "text/strings_500000.txt",
+  "count": 4,
+  "bytes": 112
+ },
+ {
+  "kind": "strings",
+  "bank": "530000",
+  "path": "text/strings_530000.txt",
+  "count": 1,
+  "bytes": 12
+ },
+ {
+  "kind": "strings",
+  "bank": "540000",
+  "path": "text/strings_540000.txt",
+  "count": 1,
+  "bytes": 14
+ },
+ {
+  "kind": "strings",
+  "bank": "550000",
+  "path": "text/strings_550000.txt",
+  "count": 9,
+  "bytes": 258
+ },
+ {
+  "kind": "strings",
+  "bank": "560000",
+  "path": "text/strings_560000.txt",
+  "count": 2,
+  "bytes": 56
+ },
+ {
+  "kind": "strings",
+  "bank": "570000",
+  "path": "text/strings_570000.txt",
+  "count": 97,
+  "bytes": 1043
+ },
+ {
+  "kind": "strings",
+  "bank": "580000",
+  "path": "text/strings_580000.txt",
+  "count": 85,
+  "bytes": 839
+ },
+ {
+  "kind": "strings",
+  "bank": "590000",
+  "path": "text/strings_590000.txt",
+  "count": 83,
+  "bytes": 783
+ },
+ {
+  "kind": "strings",
+  "bank": "5A0000",
+  "path": "text/strings_5A0000.txt",
+  "count": 85,
+  "bytes": 956
+ },
+ {
+  "kind": "strings",
+  "bank": "5B0000",
+  "path": "text/strings_5B0000.txt",
+  "count": 3,
+  "bytes": 12
+ },
+ {
+  "kind": "strings",
+  "bank": "5C0000",
+  "path": "text/strings_5C0000.txt",
+  "count": 13,
+  "bytes": 53
+ },
+ {
+  "kind": "strings",
+  "bank": "5D0000",
+  "path": "text/strings_5D0000.txt",
+  "count": 2,
+  "bytes": 10
+ },
+ {
+  "kind": "strings",
+  "bank": "5F0000",
+  "path": "text/strings_5F0000.txt",
+  "count": 7,
+  "bytes": 35
+ },
+ {
+  "kind": "strings",
+  "bank": "600000",
+  "path": "text/strings_600000.txt",
+  "count": 17,
+  "bytes": 477
+ },
+ {
+  "kind": "strings",
+  "bank": "610000",
+  "path": "text/strings_610000.txt",
+  "count": 17,
+  "bytes": 711
+ },
+ {
+  "kind": "strings",
+  "bank": "630000",
+  "path": "text/strings_630000.txt",
+  "count": 22,
+  "bytes": 596
+ },
+ {
+  "kind": "strings",
+  "bank": "640000",
+  "path": "text/strings_640000.txt",
+  "count": 3,
+  "bytes": 34
+ },
+ {
+  "kind": "strings",
+  "bank": "650000",
+  "path": "text/strings_650000.txt",
+  "count": 15,
+  "bytes": 295
+ },
+ {
+  "kind": "strings",
+  "bank": "660000",
+  "path": "text/strings_660000.txt",
+  "count": 9,
+  "bytes": 146
+ },
+ {
+  "kind": "strings",
+  "bank": "670000",
+  "path": "text/strings_670000.txt",
+  "count": 27,
+  "bytes": 1193
+ },
+ {
+  "kind": "strings",
+  "bank": "690000",
+  "path": "text/strings_690000.txt",
+  "count": 2,
+  "bytes": 34
+ },
+ {
+  "kind": "strings",
+  "bank": "6A0000",
+  "path": "text/strings_6A0000.txt",
+  "count": 4,
+  "bytes": 69
+ },
+ {
+  "kind": "strings",
+  "bank": "6D0000",
+  "path": "text/strings_6D0000.txt",
+  "count": 18,
+  "bytes": 239
+ },
+ {
+  "kind": "strings",
+  "bank": "6E0000",
+  "path": "text/strings_6E0000.txt",
+  "count": 4,
+  "bytes": 96
+ },
+ {
+  "kind": "strings",
+  "bank": "710000",
+  "path": "text/strings_710000.txt",
+  "count": 12,
+  "bytes": 121
+ },
+ {
+  "kind": "strings",
+  "bank": "730000",
+  "path": "text/strings_730000.txt",
+  "count": 3,
+  "bytes": 13
+ },
+ {
+  "kind": "strings",
+  "bank": "740000",
+  "path": "text/strings_740000.txt",
+  "count": 1,
+  "bytes": 28
+ },
+ {
+  "kind": "strings",
+  "bank": "780000",
+  "path": "text/strings_780000.txt",
+  "count": 18,
+  "bytes": 222
+ },
+ {
+  "kind": "strings",
+  "bank": "7B0000",
+  "path": "text/strings_7B0000.txt",
+  "count": 9,
+  "bytes": 70
+ },
+ {
+  "kind": "strings",
+  "bank": "7C0000",
+  "path": "text/strings_7C0000.txt",
+  "count": 1,
+  "bytes": 6
+ },
+ {
+  "kind": "strings",
+  "bank": "7F0000",
+  "path": "text/strings_7F0000.txt",
+  "count": 7,
+  "bytes": 154
+ },
+ {
+  "kind": "strings",
+  "bank": "800000",
+  "path": "text/strings_800000.txt",
+  "count": 2,
+  "bytes": 10
+ },
+ {
+  "kind": "strings",
+  "bank": "820000",
+  "path": "text/strings_820000.txt",
+  "count": 9,
+  "bytes": 50
+ },
+ {
+  "kind": "strings",
+  "bank": "830000",
+  "path": "text/strings_830000.txt",
+  "count": 7,
+  "bytes": 138
+ },
+ {
+  "kind": "strings",
+  "bank": "840000",
+  "path": "text/strings_840000.txt",
+  "count": 22,
+  "bytes": 782
+ },
+ {
+  "kind": "strings",
+  "bank": "850000",
+  "path": "text/strings_850000.txt",
+  "count": 2,
+  "bytes": 8
+ },
+ {
+  "kind": "strings",
+  "bank": "860000",
+  "path": "text/strings_860000.txt",
+  "count": 46,
+  "bytes": 476
+ },
+ {
+  "kind": "strings",
+  "bank": "870000",
+  "path": "text/strings_870000.txt",
+  "count": 73,
+  "bytes": 513
+ },
+ {
+  "kind": "strings",
+  "bank": "880000",
+  "path": "text/strings_880000.txt",
+  "count": 93,
+  "bytes": 1688
+ },
+ {
+  "kind": "strings",
+  "bank": "890000",
+  "path": "text/strings_890000.txt",
+  "count": 13,
+  "bytes": 113
+ },
+ {
+  "kind": "strings",
+  "bank": "8A0000",
+  "path": "text/strings_8A0000.txt",
+  "count": 93,
+  "bytes": 1074
+ },
+ {
+  "kind": "strings",
+  "bank": "8B0000",
+  "path": "text/strings_8B0000.txt",
+  "count": 229,
+  "bytes": 1925
+ },
+ {
+  "kind": "strings",
+  "bank": "8C0000",
+  "path": "text/strings_8C0000.txt",
+  "count": 54,
+  "bytes": 414
+ },
+ {
+  "kind": "strings",
+  "bank": "8D0000",
+  "path": "text/strings_8D0000.txt",
+  "count": 44,
+  "bytes": 421
+ },
+ {
+  "kind": "strings",
+  "bank": "8E0000",
+  "path": "text/strings_8E0000.txt",
+  "count": 10,
+  "bytes": 138
+ },
+ {
+  "kind": "strings",
+  "bank": "8F0000",
+  "path": "text/strings_8F0000.txt",
+  "count": 191,
+  "bytes": 1648
+ },
+ {
+  "kind": "strings",
+  "bank": "900000",
+  "path": "text/strings_900000.txt",
+  "count": 224,
+  "bytes": 1907
+ },
+ {
+  "kind": "strings",
+  "bank": "910000",
+  "path": "text/strings_910000.txt",
+  "count": 128,
+  "bytes": 1028
+ },
+ {
+  "kind": "strings",
+  "bank": "920000",
+  "path": "text/strings_920000.txt",
+  "count": 10,
+  "bytes": 44
+ },
+ {
+  "kind": "strings",
+  "bank": "930000",
+  "path": "text/strings_930000.txt",
+  "count": 58,
+  "bytes": 599
+ },
+ {
+  "kind": "strings",
+  "bank": "940000",
+  "path": "text/strings_940000.txt",
+  "count": 187,
+  "bytes": 1784
+ },
+ {
+  "kind": "strings",
+  "bank": "950000",
+  "path": "text/strings_950000.txt",
+  "count": 86,
+  "bytes": 842
+ },
+ {
+  "kind": "strings",
+  "bank": "960000",
+  "path": "text/strings_960000.txt",
+  "count": 31,
+  "bytes": 271
+ },
+ {
+  "kind": "strings",
+  "bank": "970000",
+  "path": "text/strings_970000.txt",
+  "count": 40,
+  "bytes": 656
+ },
+ {
+  "kind": "strings",
+  "bank": "980000",
+  "path": "text/strings_980000.txt",
+  "count": 31,
+  "bytes": 669
+ },
+ {
+  "kind": "strings",
+  "bank": "990000",
+  "path": "text/strings_990000.txt",
+  "count": 25,
+  "bytes": 359
+ },
+ {
+  "kind": "strings",
+  "bank": "9A0000",
+  "path": "text/strings_9A0000.txt",
+  "count": 155,
+  "bytes": 1621
+ },
+ {
+  "kind": "strings",
+  "bank": "9B0000",
+  "path": "text/strings_9B0000.txt",
+  "count": 138,
+  "bytes": 2318
+ },
+ {
+  "kind": "strings",
+  "bank": "9C0000",
+  "path": "text/strings_9C0000.txt",
+  "count": 42,
+  "bytes": 283
+ },
+ {
+  "kind": "strings",
+  "bank": "9D0000",
+  "path": "text/strings_9D0000.txt",
+  "count": 27,
+  "bytes": 172
+ },
+ {
+  "kind": "strings",
+  "bank": "9E0000",
+  "path": "text/strings_9E0000.txt",
+  "count": 5,
+  "bytes": 33
+ },
+ {
+  "kind": "strings",
+  "bank": "9F0000",
+  "path": "text/strings_9F0000.txt",
+  "count": 15,
+  "bytes": 60
+ },
+ {
+  "kind": "strings",
+  "bank": "A00000",
+  "path": "text/strings_A00000.txt",
+  "count": 5,
+  "bytes": 20
+ },
+ {
+  "kind": "strings",
+  "bank": "A10000",
+  "path": "text/strings_A10000.txt",
+  "count": 33,
+  "bytes": 466
+ },
+ {
+  "kind": "strings",
+  "bank": "A20000",
+  "path": "text/strings_A20000.txt",
+  "count": 18,
+  "bytes": 221
+ },
+ {
+  "kind": "strings",
+  "bank": "A30000",
+  "path": "text/strings_A30000.txt",
+  "count": 16,
+  "bytes": 249
+ },
+ {
+  "kind": "strings",
+  "bank": "A40000",
+  "path": "text/strings_A40000.txt",
+  "count": 11,
+  "bytes": 136
+ },
+ {
+  "kind": "strings",
+  "bank": "A50000",
+  "path": "text/strings_A50000.txt",
+  "count": 18,
+  "bytes": 693
+ },
+ {
+  "kind": "strings",
+  "bank": "A60000",
+  "path": "text/strings_A60000.txt",
+  "count": 20,
+  "bytes": 680
+ },
+ {
+  "kind": "strings",
+  "bank": "A70000",
+  "path": "text/strings_A70000.txt",
+  "count": 96,
+  "bytes": 1747
+ },
+ {
+  "kind": "strings",
+  "bank": "A80000",
+  "path": "text/strings_A80000.txt",
+  "count": 4,
+  "bytes": 16
+ },
+ {
+  "kind": "strings",
+  "bank": "A90000",
+  "path": "text/strings_A90000.txt",
+  "count": 85,
+  "bytes": 1416
+ },
+ {
+  "kind": "strings",
+  "bank": "AA0000",
+  "path": "text/strings_AA0000.txt",
+  "count": 129,
+  "bytes": 3116
+ },
+ {
+  "kind": "strings",
+  "bank": "AB0000",
+  "path": "text/strings_AB0000.txt",
+  "count": 16,
+  "bytes": 64
+ },
+ {
+  "kind": "strings",
+  "bank": "AC0000",
+  "path": "text/strings_AC0000.txt",
+  "count": 58,
+  "bytes": 1732
+ },
+ {
+  "kind": "strings",
+  "bank": "AE0000",
+  "path": "text/strings_AE0000.txt",
+  "count": 12,
+  "bytes": 48
+ },
+ {
+  "kind": "strings",
+  "bank": "AF0000",
+  "path": "text/strings_AF0000.txt",
+  "count": 10,
+  "bytes": 94
+ },
+ {
+  "kind": "strings",
+  "bank": "B00000",
+  "path": "text/strings_B00000.txt",
+  "count": 11,
+  "bytes": 194
+ },
+ {
+  "kind": "strings",
+  "bank": "B10000",
+  "path": "text/strings_B10000.txt",
+  "count": 30,
+  "bytes": 274
+ },
+ {
+  "kind": "strings",
+  "bank": "B20000",
+  "path": "text/strings_B20000.txt",
+  "count": 40,
+  "bytes": 531
+ },
+ {
+  "kind": "strings",
+  "bank": "B40000",
+  "path": "text/strings_B40000.txt",
+  "count": 7,
+  "bytes": 62
+ },
+ {
+  "kind": "strings",
+  "bank": "B50000",
+  "path": "text/strings_B50000.txt",
+  "count": 34,
+  "bytes": 541
+ },
+ {
+  "kind": "strings",
+  "bank": "B60000",
+  "path": "text/strings_B60000.txt",
+  "count": 31,
+  "bytes": 407
+ },
+ {
+  "kind": "strings",
+  "bank": "B70000",
+  "path": "text/strings_B70000.txt",
+  "count": 4,
+  "bytes": 38
+ },
+ {
+  "kind": "strings",
+  "bank": "BA0000",
+  "path": "text/strings_BA0000.txt",
+  "count": 4,
+  "bytes": 16
+ },
+ {
+  "kind": "strings",
+  "bank": "BB0000",
+  "path": "text/strings_BB0000.txt",
+  "count": 10,
+  "bytes": 40
+ },
+ {
+  "kind": "strings",
+  "bank": "BC0000",
+  "path": "text/strings_BC0000.txt",
+  "count": 2,
+  "bytes": 24
+ },
+ {
+  "kind": "strings",
+  "bank": "BD0000",
+  "path": "text/strings_BD0000.txt",
+  "count": 8,
+  "bytes": 56
+ },
+ {
+  "kind": "strings",
+  "bank": "BF0000",
+  "path": "text/strings_BF0000.txt",
+  "count": 2,
+  "bytes": 8
+ },
+ {
+  "kind": "strings",
+  "bank": "C00000",
+  "path": "text/strings_C00000.txt",
+  "count": 2,
+  "bytes": 24
+ },
+ {
+  "kind": "strings",
+  "bank": "C10000",
+  "path": "text/strings_C10000.txt",
+  "count": 6,
+  "bytes": 40
+ },
+ {
+  "kind": "strings",
+  "bank": "C40000",
+  "path": "text/strings_C40000.txt",
+  "count": 8,
+  "bytes": 32
+ },
+ {
+  "kind": "strings",
+  "bank": "C50000",
+  "path": "text/strings_C50000.txt",
+  "count": 71,
+  "bytes": 1133
+ },
+ {
+  "kind": "strings",
+  "bank": "C60000",
+  "path": "text/strings_C60000.txt",
+  "count": 42,
+  "bytes": 706
+ },
+ {
+  "kind": "strings",
+  "bank": "CA0000",
+  "path": "text/strings_CA0000.txt",
+  "count": 10,
+  "bytes": 40
+ },
+ {
+  "kind": "strings",
+  "bank": "CB0000",
+  "path": "text/strings_CB0000.txt",
+  "count": 13,
+  "bytes": 72
+ },
+ {
+  "kind": "strings",
+  "bank": "CC0000",
+  "path": "text/strings_CC0000.txt",
+  "count": 6,
+  "bytes": 52
+ },
+ {
+  "kind": "strings",
+  "bank": "CD0000",
+  "path": "text/strings_CD0000.txt",
+  "count": 1,
+  "bytes": 260
+ },
+ {
+  "kind": "strings",
+  "bank": "CE0000",
+  "path": "text/strings_CE0000.txt",
+  "count": 10,
+  "bytes": 243
+ },
+ {
+  "kind": "strings",
+  "bank": "CF0000",
+  "path": "text/strings_CF0000.txt",
+  "count": 2,
+  "bytes": 8
+ },
+ {
+  "kind": "strings",
+  "bank": "D00000",
+  "path": "text/strings_D00000.txt",
+  "count": 2,
+  "bytes": 22
+ },
+ {
+  "kind": "strings",
+  "bank": "D10000",
+  "path": "text/strings_D10000.txt",
+  "count": 10,
+  "bytes": 54
+ },
+ {
+  "kind": "strings",
+  "bank": "D30000",
+  "path": "text/strings_D30000.txt",
+  "count": 1,
+  "bytes": 86
+ },
+ {
+  "kind": "strings",
+  "bank": "D40000",
+  "path": "text/strings_D40000.txt",
+  "count": 8,
+  "bytes": 192
+ },
+ {
+  "kind": "strings",
+  "bank": "D50000",
+  "path": "text/strings_D50000.txt",
+  "count": 32,
+  "bytes": 250
+ },
+ {
+  "kind": "strings",
+  "bank": "D60000",
+  "path": "text/strings_D60000.txt",
+  "count": 25,
+  "bytes": 155
+ },
+ {
+  "kind": "strings",
+  "bank": "D70000",
+  "path": "text/strings_D70000.txt",
+  "count": 26,
+  "bytes": 858
+ },
+ {
+  "kind": "strings",
+  "bank": "D80000",
+  "path": "text/strings_D80000.txt",
+  "count": 16,
+  "bytes": 477
+ },
+ {
+  "kind": "strings",
+  "bank": "D90000",
+  "path": "text/strings_D90000.txt",
+  "count": 19,
+  "bytes": 441
+ },
+ {
+  "kind": "strings",
+  "bank": "DA0000",
+  "path": "text/strings_DA0000.txt",
+  "count": 7,
+  "bytes": 188
+ },
+ {
+  "kind": "strings",
+  "bank": "DB0000",
+  "path": "text/strings_DB0000.txt",
+  "count": 21,
+  "bytes": 616
+ },
+ {
+  "kind": "strings",
+  "bank": "DD0000",
+  "path": "text/strings_DD0000.txt",
+  "count": 12,
+  "bytes": 339
+ },
+ {
+  "kind": "strings",
+  "bank": "DE0000",
+  "path": "text/strings_DE0000.txt",
+  "count": 2,
+  "bytes": 8
+ },
+ {
+  "kind": "strings",
+  "bank": "DF0000",
+  "path": "text/strings_DF0000.txt",
+  "count": 94,
+  "bytes": 403
+ },
+ {
+  "kind": "strings",
+  "bank": "E00000",
+  "path": "text/strings_E00000.txt",
+  "count": 7,
+  "bytes": 38
+ },
+ {
+  "kind": "strings",
+  "bank": "E40000",
+  "path": "text/strings_E40000.txt",
+  "count": 4,
+  "bytes": 96
+ },
+ {
+  "kind": "strings",
+  "bank": "E50000",
+  "path": "text/strings_E50000.txt",
+  "count": 110,
+  "bytes": 2958
+ },
+ {
+  "kind": "strings",
+  "bank": "E60000",
+  "path": "text/strings_E60000.txt",
+  "count": 2,
+  "bytes": 22
+ },
+ {
+  "kind": "strings",
+  "bank": "E70000",
+  "path": "text/strings_E70000.txt",
+  "count": 10,
+  "bytes": 200
+ },
+ {
+  "kind": "strings",
+  "bank": "E90000",
+  "path": "text/strings_E90000.txt",
+  "count": 3,
+  "bytes": 58
+ },
+ {
+  "kind": "strings",
+  "bank": "EB0000",
+  "path": "text/strings_EB0000.txt",
+  "count": 3,
+  "bytes": 60
+ },
+ {
+  "kind": "strings",
+  "bank": "ED0000",
+  "path": "text/strings_ED0000.txt",
+  "count": 10,
+  "bytes": 205
+ },
+ {
+  "kind": "strings",
+  "bank": "EE0000",
+  "path": "text/strings_EE0000.txt",
+  "count": 3,
+  "bytes": 26
+ },
+ {
+  "kind": "strings",
+  "bank": "EF0000",
+  "path": "text/strings_EF0000.txt",
+  "count": 28,
+  "bytes": 441
+ },
+ {
+  "kind": "strings",
+  "bank": "F00000",
+  "path": "text/strings_F00000.txt",
+  "count": 76,
+  "bytes": 996
+ },
+ {
+  "kind": "strings",
+  "bank": "F10000",
+  "path": "text/strings_F10000.txt",
+  "count": 173,
+  "bytes": 2047
+ },
+ {
+  "kind": "strings",
+  "bank": "F20000",
+  "path": "text/strings_F20000.txt",
+  "count": 13,
+  "bytes": 152
+ },
+ {
+  "kind": "strings",
+  "bank": "FE0000",
+  "path": "text/strings_FE0000.txt",
+  "count": 8,
+  "bytes": 59
+ }
+]

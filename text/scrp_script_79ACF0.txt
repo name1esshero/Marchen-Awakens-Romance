@@ -1,0 +1,33 @@
+// Legacy reference view of EV_BA03.SPC; edit text/nfp/EV_BA03.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000134 F01A01  // LITERAL: F01A01 (usage not inferred)
+@00016C F09A01  // LITERAL: F09A01 (usage not inferred)
+@0002C0  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0002DF  C0F04 いい？よく聞いてね  // EN: All right? Listen carefully.
+@00032E  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00034D  C0F04 まず、この C0904 マジックストーン C0F04 を  // EN: First, these Magic Stones...
+@00038A あげるわ  // EN: are for you.
+@0003F9 マジックストーンを  // EN: You received
+@000417 ２０コもらった！  // EN: 20 Magic Stones!
+@00049F  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0004F3 使えないの  // EN: ...you can't use them.
+@000527  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000546  C0F04 マジックストーンは、魔力のひくいキミでも  // EN: Magic Stones can be used even by someone with little magical power like you.
+@0005C9  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0005E8  C0F04 バトル中に C0904 Ａボタン C0F04 をおすと  // EN: If you press the A Button during battle...
+@000669  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0006BC わかった？  // EN: Got it?
+@0006F0  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000796  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000816  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000868  C0904 シンクロ C0F04 するまで時間が必要なの  // EN: you'll need some time to synchronize with it.
+@0008BE  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0008DD  C0904 シンクロゲージ C0F04 が光ったら  // EN: When the Synchronization Gauge lights up...
+@00094D  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0009D3  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000A49  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000A68  C0F04 このさきに魔物の気配がしてるわ  // EN: I sense a monster up ahead.
+@000C07 09A01  // LITERAL: 09A01 (usage not inferred)
+@000C8D 09A00  // LITERAL: 09A00 (usage not inferred)

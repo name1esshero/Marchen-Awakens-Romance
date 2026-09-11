@@ -1,0 +1,2630 @@
+[
+ {
+  "name": "AD0_B_A.KMP",
+  "path": "maps/nfp/AD0_B_A.KMP.bin",
+  "rom_offset": 1850688,
+  "size": 24768
+ },
+ {
+  "name": "AD0_P_0A.KMP",
+  "path": "maps/nfp/AD0_P_0A.KMP.bin",
+  "rom_offset": 1898736,
+  "size": 7872
+ },
+ {
+  "name": "AD0_P_1A.KMP",
+  "path": "maps/nfp/AD0_P_1A.KMP.bin",
+  "rom_offset": 1906608,
+  "size": 7872
+ },
+ {
+  "name": "AD0_P_2A.KMP",
+  "path": "maps/nfp/AD0_P_2A.KMP.bin",
+  "rom_offset": 1914480,
+  "size": 7872
+ },
+ {
+  "name": "AD0_P_3A.KMP",
+  "path": "maps/nfp/AD0_P_3A.KMP.bin",
+  "rom_offset": 1922352,
+  "size": 7872
+ },
+ {
+  "name": "AD0_P_4A.KMP",
+  "path": "maps/nfp/AD0_P_4A.KMP.bin",
+  "rom_offset": 1930224,
+  "size": 11712
+ },
+ {
+  "name": "AD0_P_5A.KMP",
+  "path": "maps/nfp/AD0_P_5A.KMP.bin",
+  "rom_offset": 1941936,
+  "size": 11712
+ },
+ {
+  "name": "AD0_P_6A.KMP",
+  "path": "maps/nfp/AD0_P_6A.KMP.bin",
+  "rom_offset": 1953648,
+  "size": 11712
+ },
+ {
+  "name": "AD0_P_7A.KMP",
+  "path": "maps/nfp/AD0_P_7A.KMP.bin",
+  "rom_offset": 1965360,
+  "size": 11712
+ },
+ {
+  "name": "AD0_R_0A.KMP",
+  "path": "maps/nfp/AD0_R_0A.KMP.bin",
+  "rom_offset": 1977072,
+  "size": 24768
+ },
+ {
+  "name": "AD0_R_1A.KMP",
+  "path": "maps/nfp/AD0_R_1A.KMP.bin",
+  "rom_offset": 2001840,
+  "size": 24768
+ },
+ {
+  "name": "AD0_R_2A.KMP",
+  "path": "maps/nfp/AD0_R_2A.KMP.bin",
+  "rom_offset": 2026608,
+  "size": 24768
+ },
+ {
+  "name": "AD0_R_3A.KMP",
+  "path": "maps/nfp/AD0_R_3A.KMP.bin",
+  "rom_offset": 2051376,
+  "size": 24768
+ },
+ {
+  "name": "AD0_R_4A.KMP",
+  "path": "maps/nfp/AD0_R_4A.KMP.bin",
+  "rom_offset": 2076144,
+  "size": 24768
+ },
+ {
+  "name": "AD0_R_5A.KMP",
+  "path": "maps/nfp/AD0_R_5A.KMP.bin",
+  "rom_offset": 2100912,
+  "size": 24768
+ },
+ {
+  "name": "AD0_R_6A.KMP",
+  "path": "maps/nfp/AD0_R_6A.KMP.bin",
+  "rom_offset": 2125680,
+  "size": 24768
+ },
+ {
+  "name": "AD0_R_7A.KMP",
+  "path": "maps/nfp/AD0_R_7A.KMP.bin",
+  "rom_offset": 2150448,
+  "size": 24768
+ },
+ {
+  "name": "AD0_R_8A.KMP",
+  "path": "maps/nfp/AD0_R_8A.KMP.bin",
+  "rom_offset": 2175216,
+  "size": 24768
+ },
+ {
+  "name": "AD0_R_9A.KMP",
+  "path": "maps/nfp/AD0_R_9A.KMP.bin",
+  "rom_offset": 2199984,
+  "size": 24768
+ },
+ {
+  "name": "AD0_R_AA.KMP",
+  "path": "maps/nfp/AD0_R_AA.KMP.bin",
+  "rom_offset": 2224752,
+  "size": 24768
+ },
+ {
+  "name": "AD0_R_BA.KMP",
+  "path": "maps/nfp/AD0_R_BA.KMP.bin",
+  "rom_offset": 2249520,
+  "size": 24768
+ },
+ {
+  "name": "AD0_R_CA.KMP",
+  "path": "maps/nfp/AD0_R_CA.KMP.bin",
+  "rom_offset": 2274288,
+  "size": 24768
+ },
+ {
+  "name": "AD1_B_A.KMP",
+  "path": "maps/nfp/AD1_B_A.KMP.bin",
+  "rom_offset": 2299056,
+  "size": 24768
+ },
+ {
+  "name": "AD1_P_0A.KMP",
+  "path": "maps/nfp/AD1_P_0A.KMP.bin",
+  "rom_offset": 2342912,
+  "size": 7872
+ },
+ {
+  "name": "AD1_P_1A.KMP",
+  "path": "maps/nfp/AD1_P_1A.KMP.bin",
+  "rom_offset": 2350784,
+  "size": 7872
+ },
+ {
+  "name": "AD1_P_2A.KMP",
+  "path": "maps/nfp/AD1_P_2A.KMP.bin",
+  "rom_offset": 2358656,
+  "size": 7872
+ },
+ {
+  "name": "AD1_P_3A.KMP",
+  "path": "maps/nfp/AD1_P_3A.KMP.bin",
+  "rom_offset": 2366528,
+  "size": 7872
+ },
+ {
+  "name": "AD1_P_4A.KMP",
+  "path": "maps/nfp/AD1_P_4A.KMP.bin",
+  "rom_offset": 2374400,
+  "size": 11712
+ },
+ {
+  "name": "AD1_P_5A.KMP",
+  "path": "maps/nfp/AD1_P_5A.KMP.bin",
+  "rom_offset": 2386112,
+  "size": 11712
+ },
+ {
+  "name": "AD1_P_6A.KMP",
+  "path": "maps/nfp/AD1_P_6A.KMP.bin",
+  "rom_offset": 2397824,
+  "size": 11712
+ },
+ {
+  "name": "AD1_P_7A.KMP",
+  "path": "maps/nfp/AD1_P_7A.KMP.bin",
+  "rom_offset": 2409536,
+  "size": 11712
+ },
+ {
+  "name": "AD1_R_0A.KMP",
+  "path": "maps/nfp/AD1_R_0A.KMP.bin",
+  "rom_offset": 2421248,
+  "size": 24768
+ },
+ {
+  "name": "AD1_R_1A.KMP",
+  "path": "maps/nfp/AD1_R_1A.KMP.bin",
+  "rom_offset": 2446016,
+  "size": 24768
+ },
+ {
+  "name": "AD1_R_2A.KMP",
+  "path": "maps/nfp/AD1_R_2A.KMP.bin",
+  "rom_offset": 2470784,
+  "size": 24768
+ },
+ {
+  "name": "AD1_R_3A.KMP",
+  "path": "maps/nfp/AD1_R_3A.KMP.bin",
+  "rom_offset": 2495552,
+  "size": 24768
+ },
+ {
+  "name": "AD1_R_4A.KMP",
+  "path": "maps/nfp/AD1_R_4A.KMP.bin",
+  "rom_offset": 2520320,
+  "size": 24768
+ },
+ {
+  "name": "AD1_R_5A.KMP",
+  "path": "maps/nfp/AD1_R_5A.KMP.bin",
+  "rom_offset": 2545088,
+  "size": 24768
+ },
+ {
+  "name": "AD1_R_6A.KMP",
+  "path": "maps/nfp/AD1_R_6A.KMP.bin",
+  "rom_offset": 2569856,
+  "size": 24768
+ },
+ {
+  "name": "AD1_R_7A.KMP",
+  "path": "maps/nfp/AD1_R_7A.KMP.bin",
+  "rom_offset": 2594624,
+  "size": 24768
+ },
+ {
+  "name": "AD1_R_8A.KMP",
+  "path": "maps/nfp/AD1_R_8A.KMP.bin",
+  "rom_offset": 2619392,
+  "size": 24768
+ },
+ {
+  "name": "AD1_R_9A.KMP",
+  "path": "maps/nfp/AD1_R_9A.KMP.bin",
+  "rom_offset": 2644160,
+  "size": 24768
+ },
+ {
+  "name": "AD1_R_AA.KMP",
+  "path": "maps/nfp/AD1_R_AA.KMP.bin",
+  "rom_offset": 2668928,
+  "size": 24768
+ },
+ {
+  "name": "AD1_R_BA.KMP",
+  "path": "maps/nfp/AD1_R_BA.KMP.bin",
+  "rom_offset": 2693696,
+  "size": 24768
+ },
+ {
+  "name": "AD1_R_CA.KMP",
+  "path": "maps/nfp/AD1_R_CA.KMP.bin",
+  "rom_offset": 2718464,
+  "size": 24768
+ },
+ {
+  "name": "AD3_B_A.KMP",
+  "path": "maps/nfp/AD3_B_A.KMP.bin",
+  "rom_offset": 2743232,
+  "size": 24768
+ },
+ {
+  "name": "AD3_P_0A.KMP",
+  "path": "maps/nfp/AD3_P_0A.KMP.bin",
+  "rom_offset": 2787792,
+  "size": 7872
+ },
+ {
+  "name": "AD3_P_1A.KMP",
+  "path": "maps/nfp/AD3_P_1A.KMP.bin",
+  "rom_offset": 2795664,
+  "size": 7872
+ },
+ {
+  "name": "AD3_P_2A.KMP",
+  "path": "maps/nfp/AD3_P_2A.KMP.bin",
+  "rom_offset": 2803536,
+  "size": 7872
+ },
+ {
+  "name": "AD3_P_3A.KMP",
+  "path": "maps/nfp/AD3_P_3A.KMP.bin",
+  "rom_offset": 2811408,
+  "size": 7872
+ },
+ {
+  "name": "AD3_P_4A.KMP",
+  "path": "maps/nfp/AD3_P_4A.KMP.bin",
+  "rom_offset": 2819280,
+  "size": 11712
+ },
+ {
+  "name": "AD3_P_5A.KMP",
+  "path": "maps/nfp/AD3_P_5A.KMP.bin",
+  "rom_offset": 2830992,
+  "size": 11712
+ },
+ {
+  "name": "AD3_P_6A.KMP",
+  "path": "maps/nfp/AD3_P_6A.KMP.bin",
+  "rom_offset": 2842704,
+  "size": 11712
+ },
+ {
+  "name": "AD3_P_7A.KMP",
+  "path": "maps/nfp/AD3_P_7A.KMP.bin",
+  "rom_offset": 2854416,
+  "size": 11712
+ },
+ {
+  "name": "AD3_R_0A.KMP",
+  "path": "maps/nfp/AD3_R_0A.KMP.bin",
+  "rom_offset": 2866128,
+  "size": 24768
+ },
+ {
+  "name": "AD3_R_1A.KMP",
+  "path": "maps/nfp/AD3_R_1A.KMP.bin",
+  "rom_offset": 2890896,
+  "size": 24768
+ },
+ {
+  "name": "AD3_R_2A.KMP",
+  "path": "maps/nfp/AD3_R_2A.KMP.bin",
+  "rom_offset": 2915664,
+  "size": 24768
+ },
+ {
+  "name": "AD3_R_3A.KMP",
+  "path": "maps/nfp/AD3_R_3A.KMP.bin",
+  "rom_offset": 2940432,
+  "size": 24768
+ },
+ {
+  "name": "AD3_R_4A.KMP",
+  "path": "maps/nfp/AD3_R_4A.KMP.bin",
+  "rom_offset": 2965200,
+  "size": 24768
+ },
+ {
+  "name": "AD3_R_5A.KMP",
+  "path": "maps/nfp/AD3_R_5A.KMP.bin",
+  "rom_offset": 2989968,
+  "size": 24768
+ },
+ {
+  "name": "AD3_R_6A.KMP",
+  "path": "maps/nfp/AD3_R_6A.KMP.bin",
+  "rom_offset": 3014736,
+  "size": 24768
+ },
+ {
+  "name": "AD3_R_7A.KMP",
+  "path": "maps/nfp/AD3_R_7A.KMP.bin",
+  "rom_offset": 3039504,
+  "size": 24768
+ },
+ {
+  "name": "AD3_R_8A.KMP",
+  "path": "maps/nfp/AD3_R_8A.KMP.bin",
+  "rom_offset": 3064272,
+  "size": 24768
+ },
+ {
+  "name": "AD3_R_9A.KMP",
+  "path": "maps/nfp/AD3_R_9A.KMP.bin",
+  "rom_offset": 3089040,
+  "size": 24768
+ },
+ {
+  "name": "AD3_R_AA.KMP",
+  "path": "maps/nfp/AD3_R_AA.KMP.bin",
+  "rom_offset": 3113808,
+  "size": 24768
+ },
+ {
+  "name": "AD3_R_BA.KMP",
+  "path": "maps/nfp/AD3_R_BA.KMP.bin",
+  "rom_offset": 3138576,
+  "size": 24768
+ },
+ {
+  "name": "AD3_R_CA.KMP",
+  "path": "maps/nfp/AD3_R_CA.KMP.bin",
+  "rom_offset": 3163344,
+  "size": 24768
+ },
+ {
+  "name": "AD4_B_A.KMP",
+  "path": "maps/nfp/AD4_B_A.KMP.bin",
+  "rom_offset": 3188112,
+  "size": 24768
+ },
+ {
+  "name": "AD4_P_0A.KMP",
+  "path": "maps/nfp/AD4_P_0A.KMP.bin",
+  "rom_offset": 3227120,
+  "size": 7872
+ },
+ {
+  "name": "AD4_P_1A.KMP",
+  "path": "maps/nfp/AD4_P_1A.KMP.bin",
+  "rom_offset": 3234992,
+  "size": 7872
+ },
+ {
+  "name": "AD4_P_2A.KMP",
+  "path": "maps/nfp/AD4_P_2A.KMP.bin",
+  "rom_offset": 3242864,
+  "size": 7872
+ },
+ {
+  "name": "AD4_P_3A.KMP",
+  "path": "maps/nfp/AD4_P_3A.KMP.bin",
+  "rom_offset": 3250736,
+  "size": 7872
+ },
+ {
+  "name": "AD4_P_4A.KMP",
+  "path": "maps/nfp/AD4_P_4A.KMP.bin",
+  "rom_offset": 3258608,
+  "size": 11712
+ },
+ {
+  "name": "AD4_P_5A.KMP",
+  "path": "maps/nfp/AD4_P_5A.KMP.bin",
+  "rom_offset": 3270320,
+  "size": 11712
+ },
+ {
+  "name": "AD4_P_6A.KMP",
+  "path": "maps/nfp/AD4_P_6A.KMP.bin",
+  "rom_offset": 3282032,
+  "size": 11712
+ },
+ {
+  "name": "AD4_P_7A.KMP",
+  "path": "maps/nfp/AD4_P_7A.KMP.bin",
+  "rom_offset": 3293744,
+  "size": 11712
+ },
+ {
+  "name": "AD4_R_0A.KMP",
+  "path": "maps/nfp/AD4_R_0A.KMP.bin",
+  "rom_offset": 3305456,
+  "size": 24768
+ },
+ {
+  "name": "AD4_R_1A.KMP",
+  "path": "maps/nfp/AD4_R_1A.KMP.bin",
+  "rom_offset": 3330224,
+  "size": 24768
+ },
+ {
+  "name": "AD4_R_2A.KMP",
+  "path": "maps/nfp/AD4_R_2A.KMP.bin",
+  "rom_offset": 3354992,
+  "size": 24768
+ },
+ {
+  "name": "AD4_R_3A.KMP",
+  "path": "maps/nfp/AD4_R_3A.KMP.bin",
+  "rom_offset": 3379760,
+  "size": 24768
+ },
+ {
+  "name": "AD4_R_4A.KMP",
+  "path": "maps/nfp/AD4_R_4A.KMP.bin",
+  "rom_offset": 3404528,
+  "size": 24768
+ },
+ {
+  "name": "AD4_R_5A.KMP",
+  "path": "maps/nfp/AD4_R_5A.KMP.bin",
+  "rom_offset": 3429296,
+  "size": 24768
+ },
+ {
+  "name": "AD4_R_6A.KMP",
+  "path": "maps/nfp/AD4_R_6A.KMP.bin",
+  "rom_offset": 3454064,
+  "size": 24768
+ },
+ {
+  "name": "AD4_R_7A.KMP",
+  "path": "maps/nfp/AD4_R_7A.KMP.bin",
+  "rom_offset": 3478832,
+  "size": 24768
+ },
+ {
+  "name": "AD4_R_8A.KMP",
+  "path": "maps/nfp/AD4_R_8A.KMP.bin",
+  "rom_offset": 3503600,
+  "size": 24768
+ },
+ {
+  "name": "AD4_R_9A.KMP",
+  "path": "maps/nfp/AD4_R_9A.KMP.bin",
+  "rom_offset": 3528368,
+  "size": 24768
+ },
+ {
+  "name": "AD4_R_AA.KMP",
+  "path": "maps/nfp/AD4_R_AA.KMP.bin",
+  "rom_offset": 3553136,
+  "size": 24768
+ },
+ {
+  "name": "AD4_R_BA.KMP",
+  "path": "maps/nfp/AD4_R_BA.KMP.bin",
+  "rom_offset": 3577904,
+  "size": 24768
+ },
+ {
+  "name": "AD4_R_CA.KMP",
+  "path": "maps/nfp/AD4_R_CA.KMP.bin",
+  "rom_offset": 3602672,
+  "size": 24768
+ },
+ {
+  "name": "AD_BG01.KMP",
+  "path": "maps/nfp/AD_BG01.KMP.bin",
+  "rom_offset": 3635024,
+  "size": 2240
+ },
+ {
+  "name": "AD_BG02.KMP",
+  "path": "maps/nfp/AD_BG02.KMP.bin",
+  "rom_offset": 3639680,
+  "size": 2240
+ },
+ {
+  "name": "AL_BG01.KMP",
+  "path": "maps/nfp/AL_BG01.KMP.bin",
+  "rom_offset": 3650384,
+  "size": 2240
+ },
+ {
+  "name": "AL_BG02.KMP",
+  "path": "maps/nfp/AL_BG02.KMP.bin",
+  "rom_offset": 3655360,
+  "size": 2240
+ },
+ {
+  "name": "AS_BG01.KMP",
+  "path": "maps/nfp/AS_BG01.KMP.bin",
+  "rom_offset": 3666656,
+  "size": 2240
+ },
+ {
+  "name": "AS_BG02.KMP",
+  "path": "maps/nfp/AS_BG02.KMP.bin",
+  "rom_offset": 3674080,
+  "size": 2240
+ },
+ {
+  "name": "AT_BG01.KMP",
+  "path": "maps/nfp/AT_BG01.KMP.bin",
+  "rom_offset": 3683824,
+  "size": 2240
+ },
+ {
+  "name": "BA06_00.TSC",
+  "path": "graphics/tilemaps/nfp/BA06_00.TSC.bin",
+  "rom_offset": 3698016,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 108,
+   "max_tile": 518,
+   "palettes": [
+    0,
+    13
+   ],
+   "flipped": 40
+  }
+ },
+ {
+  "name": "BA06_01.TSC",
+  "path": "graphics/tilemaps/nfp/BA06_01.TSC.bin",
+  "rom_offset": 3700064,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 411,
+   "max_tile": 412,
+   "palettes": [
+    0,
+    12,
+    13,
+    14
+   ],
+   "flipped": 149
+  }
+ },
+ {
+  "name": "BA06_BG0.TSC",
+  "path": "graphics/tilemaps/nfp/BA06_BG0.TSC.bin",
+  "rom_offset": 3714240,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 161,
+   "max_tile": 491,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 0
+  }
+ },
+ {
+  "name": "BA06_BG1.TSC",
+  "path": "graphics/tilemaps/nfp/BA06_BG1.TSC.bin",
+  "rom_offset": 3716288,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 161,
+   "max_tile": 501,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 0
+  }
+ },
+ {
+  "name": "BA06_BG2.TSC",
+  "path": "graphics/tilemaps/nfp/BA06_BG2.TSC.bin",
+  "rom_offset": 3718336,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 161,
+   "max_tile": 511,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 0
+  }
+ },
+ {
+  "name": "BA07.TSC",
+  "path": "graphics/tilemaps/nfp/BA07.TSC.bin",
+  "rom_offset": 3723104,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 149,
+   "max_tile": 149,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 450
+  }
+ },
+ {
+  "name": "CLPASS.KMP",
+  "path": "maps/nfp/CLPASS.KMP.bin",
+  "rom_offset": 5694896,
+  "size": 2240
+ },
+ {
+  "name": "CM_BG01.KMP",
+  "path": "maps/nfp/CM_BG01.KMP.bin",
+  "rom_offset": 5703568,
+  "size": 2240
+ },
+ {
+  "name": "CM_BG02.KMP",
+  "path": "maps/nfp/CM_BG02.KMP.bin",
+  "rom_offset": 5710224,
+  "size": 2240
+ },
+ {
+  "name": "DS_BG01.KMP",
+  "path": "maps/nfp/DS_BG01.KMP.bin",
+  "rom_offset": 5939888,
+  "size": 2240
+ },
+ {
+  "name": "DS_BG02.KMP",
+  "path": "maps/nfp/DS_BG02.KMP.bin",
+  "rom_offset": 5946064,
+  "size": 2240
+ },
+ {
+  "name": "EFCSTART.KMP",
+  "path": "maps/nfp/EFCSTART.KMP.bin",
+  "rom_offset": 5956144,
+  "size": 2240
+ },
+ {
+  "name": "GA08_00.TSC",
+  "path": "graphics/tilemaps/nfp/GA08_00.TSC.bin",
+  "rom_offset": 8179232,
+  "size": 4096,
+  "screenblocks": 2.0,
+  "shape": {
+   "entries": 2048,
+   "tiles": 331,
+   "max_tile": 347,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 0
+  }
+ },
+ {
+  "name": "GA08_01.TSC",
+  "path": "graphics/tilemaps/nfp/GA08_01.TSC.bin",
+  "rom_offset": 8183328,
+  "size": 4096,
+  "screenblocks": 2.0,
+  "shape": {
+   "entries": 2048,
+   "tiles": 331,
+   "max_tile": 398,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 0
+  }
+ },
+ {
+  "name": "GA08_02.TSC",
+  "path": "graphics/tilemaps/nfp/GA08_02.TSC.bin",
+  "rom_offset": 8187424,
+  "size": 4096,
+  "screenblocks": 2.0,
+  "shape": {
+   "entries": 2048,
+   "tiles": 329,
+   "max_tile": 445,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 0
+  }
+ },
+ {
+  "name": "GA08_03.TSC",
+  "path": "graphics/tilemaps/nfp/GA08_03.TSC.bin",
+  "rom_offset": 8191520,
+  "size": 4096,
+  "screenblocks": 2.0,
+  "shape": {
+   "entries": 2048,
+   "tiles": 332,
+   "max_tile": 445,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 0
+  }
+ },
+ {
+  "name": "GA08_10.TSC",
+  "path": "graphics/tilemaps/nfp/GA08_10.TSC.bin",
+  "rom_offset": 8195616,
+  "size": 4096,
+  "screenblocks": 2.0,
+  "shape": {
+   "entries": 2048,
+   "tiles": 331,
+   "max_tile": 347,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 1525
+  }
+ },
+ {
+  "name": "GA08_11.TSC",
+  "path": "graphics/tilemaps/nfp/GA08_11.TSC.bin",
+  "rom_offset": 8199712,
+  "size": 4096,
+  "screenblocks": 2.0,
+  "shape": {
+   "entries": 2048,
+   "tiles": 331,
+   "max_tile": 398,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 1522
+  }
+ },
+ {
+  "name": "GA08_12.TSC",
+  "path": "graphics/tilemaps/nfp/GA08_12.TSC.bin",
+  "rom_offset": 8203808,
+  "size": 4096,
+  "screenblocks": 2.0,
+  "shape": {
+   "entries": 2048,
+   "tiles": 329,
+   "max_tile": 445,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 1525
+  }
+ },
+ {
+  "name": "GA08_13.TSC",
+  "path": "graphics/tilemaps/nfp/GA08_13.TSC.bin",
+  "rom_offset": 8207904,
+  "size": 4096,
+  "screenblocks": 2.0,
+  "shape": {
+   "entries": 2048,
+   "tiles": 280,
+   "max_tile": 445,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 1272
+  }
+ },
+ {
+  "name": "GA13_00.TSC",
+  "path": "graphics/tilemaps/nfp/GA13_00.TSC.bin",
+  "rom_offset": 8216960,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 21,
+   "max_tile": 154,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 550
+  }
+ },
+ {
+  "name": "GA13_01.TSC",
+  "path": "graphics/tilemaps/nfp/GA13_01.TSC.bin",
+  "rom_offset": 8219008,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 48,
+   "max_tile": 474,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 580
+  }
+ },
+ {
+  "name": "GA13_02.TSC",
+  "path": "graphics/tilemaps/nfp/GA13_02.TSC.bin",
+  "rom_offset": 8221056,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 94,
+   "max_tile": 331,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 132
+  }
+ },
+ {
+  "name": "GA13_03.TSC",
+  "path": "graphics/tilemaps/nfp/GA13_03.TSC.bin",
+  "rom_offset": 8223104,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 85,
+   "max_tile": 279,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 112
+  }
+ },
+ {
+  "name": "GA13_04.TSC",
+  "path": "graphics/tilemaps/nfp/GA13_04.TSC.bin",
+  "rom_offset": 8225152,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 38,
+   "max_tile": 407,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 56
+  }
+ },
+ {
+  "name": "GA13_05.TSC",
+  "path": "graphics/tilemaps/nfp/GA13_05.TSC.bin",
+  "rom_offset": 8227200,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 24,
+   "max_tile": 471,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 36
+  }
+ },
+ {
+  "name": "GA13_06.TSC",
+  "path": "graphics/tilemaps/nfp/GA13_06.TSC.bin",
+  "rom_offset": 8229248,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 16,
+   "max_tile": 394,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 37
+  }
+ },
+ {
+  "name": "GA13_10.TSC",
+  "path": "graphics/tilemaps/nfp/GA13_10.TSC.bin",
+  "rom_offset": 8231296,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 21,
+   "max_tile": 154,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 50
+  }
+ },
+ {
+  "name": "GA13_11.TSC",
+  "path": "graphics/tilemaps/nfp/GA13_11.TSC.bin",
+  "rom_offset": 8233344,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 48,
+   "max_tile": 474,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 20
+  }
+ },
+ {
+  "name": "GA24_00.TSC",
+  "path": "graphics/tilemaps/nfp/GA24_00.TSC.bin",
+  "rom_offset": 8243168,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 132,
+   "max_tile": 242,
+   "palettes": [
+    0,
+    12,
+    13
+   ],
+   "flipped": 0
+  }
+ },
+ {
+  "name": "GA24_01.TSC",
+  "path": "graphics/tilemaps/nfp/GA24_01.TSC.bin",
+  "rom_offset": 8245216,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 132,
+   "max_tile": 246,
+   "palettes": [
+    0,
+    12,
+    13
+   ],
+   "flipped": 0
+  }
+ },
+ {
+  "name": "GA24_02.TSC",
+  "path": "graphics/tilemaps/nfp/GA24_02.TSC.bin",
+  "rom_offset": 8247264,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 135,
+   "max_tile": 305,
+   "palettes": [
+    0,
+    12,
+    13
+   ],
+   "flipped": 0
+  }
+ },
+ {
+  "name": "GA24_03.TSC",
+  "path": "graphics/tilemaps/nfp/GA24_03.TSC.bin",
+  "rom_offset": 8249312,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 135,
+   "max_tile": 307,
+   "palettes": [
+    0,
+    12,
+    13
+   ],
+   "flipped": 0
+  }
+ },
+ {
+  "name": "GA24_10.TSC",
+  "path": "graphics/tilemaps/nfp/GA24_10.TSC.bin",
+  "rom_offset": 8251360,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 132,
+   "max_tile": 242,
+   "palettes": [
+    0,
+    12,
+    13
+   ],
+   "flipped": 131
+  }
+ },
+ {
+  "name": "GA24_11.TSC",
+  "path": "graphics/tilemaps/nfp/GA24_11.TSC.bin",
+  "rom_offset": 8253408,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 132,
+   "max_tile": 246,
+   "palettes": [
+    0,
+    12,
+    13
+   ],
+   "flipped": 131
+  }
+ },
+ {
+  "name": "GA24_12.TSC",
+  "path": "graphics/tilemaps/nfp/GA24_12.TSC.bin",
+  "rom_offset": 8255456,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 135,
+   "max_tile": 305,
+   "palettes": [
+    0,
+    12,
+    13
+   ],
+   "flipped": 134
+  }
+ },
+ {
+  "name": "GA24_13.TSC",
+  "path": "graphics/tilemaps/nfp/GA24_13.TSC.bin",
+  "rom_offset": 8257504,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 135,
+   "max_tile": 307,
+   "palettes": [
+    0,
+    12,
+    13
+   ],
+   "flipped": 134
+  }
+ },
+ {
+  "name": "GA25_00.TSC",
+  "path": "graphics/tilemaps/nfp/GA25_00.TSC.bin",
+  "rom_offset": 8267904,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 131,
+   "max_tile": 249,
+   "palettes": [
+    0,
+    12,
+    13
+   ],
+   "flipped": 0
+  }
+ },
+ {
+  "name": "GA25_01.TSC",
+  "path": "graphics/tilemaps/nfp/GA25_01.TSC.bin",
+  "rom_offset": 8269952,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 132,
+   "max_tile": 254,
+   "palettes": [
+    0,
+    13
+   ],
+   "flipped": 0
+  }
+ },
+ {
+  "name": "GA25_02.TSC",
+  "path": "graphics/tilemaps/nfp/GA25_02.TSC.bin",
+  "rom_offset": 8272000,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 135,
+   "max_tile": 317,
+   "palettes": [
+    0,
+    12,
+    13
+   ],
+   "flipped": 0
+  }
+ },
+ {
+  "name": "GA25_03.TSC",
+  "path": "graphics/tilemaps/nfp/GA25_03.TSC.bin",
+  "rom_offset": 8274048,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 135,
+   "max_tile": 319,
+   "palettes": [
+    0,
+    13
+   ],
+   "flipped": 0
+  }
+ },
+ {
+  "name": "GA25_10.TSC",
+  "path": "graphics/tilemaps/nfp/GA25_10.TSC.bin",
+  "rom_offset": 8276096,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 131,
+   "max_tile": 249,
+   "palettes": [
+    0,
+    12,
+    13
+   ],
+   "flipped": 130
+  }
+ },
+ {
+  "name": "GA25_11.TSC",
+  "path": "graphics/tilemaps/nfp/GA25_11.TSC.bin",
+  "rom_offset": 8278144,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 132,
+   "max_tile": 254,
+   "palettes": [
+    0,
+    13
+   ],
+   "flipped": 131
+  }
+ },
+ {
+  "name": "GA25_12.TSC",
+  "path": "graphics/tilemaps/nfp/GA25_12.TSC.bin",
+  "rom_offset": 8280192,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 135,
+   "max_tile": 317,
+   "palettes": [
+    0,
+    12,
+    13
+   ],
+   "flipped": 134
+  }
+ },
+ {
+  "name": "GA25_13.TSC",
+  "path": "graphics/tilemaps/nfp/GA25_13.TSC.bin",
+  "rom_offset": 8282240,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 135,
+   "max_tile": 319,
+   "palettes": [
+    0,
+    13
+   ],
+   "flipped": 134
+  }
+ },
+ {
+  "name": "GA26_00.TSC",
+  "path": "graphics/tilemaps/nfp/GA26_00.TSC.bin",
+  "rom_offset": 8288032,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 132,
+   "max_tile": 154,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 0
+  }
+ },
+ {
+  "name": "GA26_01.TSC",
+  "path": "graphics/tilemaps/nfp/GA26_01.TSC.bin",
+  "rom_offset": 8290080,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 135,
+   "max_tile": 162,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 0
+  }
+ },
+ {
+  "name": "GA26_10.TSC",
+  "path": "graphics/tilemaps/nfp/GA26_10.TSC.bin",
+  "rom_offset": 8292128,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 132,
+   "max_tile": 154,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 132
+  }
+ },
+ {
+  "name": "GA26_11.TSC",
+  "path": "graphics/tilemaps/nfp/GA26_11.TSC.bin",
+  "rom_offset": 8294176,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 135,
+   "max_tile": 162,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 135
+  }
+ },
+ {
+  "name": "GA60_00.TSC",
+  "path": "graphics/tilemaps/nfp/GA60_00.TSC.bin",
+  "rom_offset": 8302368,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 63,
+   "max_tile": 238,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 3
+  }
+ },
+ {
+  "name": "GA60_01.TSC",
+  "path": "graphics/tilemaps/nfp/GA60_01.TSC.bin",
+  "rom_offset": 8304416,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 66,
+   "max_tile": 239,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 0
+  }
+ },
+ {
+  "name": "GA60_02.TSC",
+  "path": "graphics/tilemaps/nfp/GA60_02.TSC.bin",
+  "rom_offset": 8306464,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 66,
+   "max_tile": 240,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 0
+  }
+ },
+ {
+  "name": "GA60_03.TSC",
+  "path": "graphics/tilemaps/nfp/GA60_03.TSC.bin",
+  "rom_offset": 8308512,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 70,
+   "max_tile": 1023,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 0
+  }
+ },
+ {
+  "name": "GA60_04.TSC",
+  "path": "graphics/tilemaps/nfp/GA60_04.TSC.bin",
+  "rom_offset": 8310560,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 75,
+   "max_tile": 345,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 0
+  }
+ },
+ {
+  "name": "GA60_05.TSC",
+  "path": "graphics/tilemaps/nfp/GA60_05.TSC.bin",
+  "rom_offset": 8312608,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 70,
+   "max_tile": 1023,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 0
+  }
+ },
+ {
+  "name": "GA60_06.TSC",
+  "path": "graphics/tilemaps/nfp/GA60_06.TSC.bin",
+  "rom_offset": 8314656,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 60,
+   "max_tile": 1023,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 0
+  }
+ },
+ {
+  "name": "GA60_10.TSC",
+  "path": "graphics/tilemaps/nfp/GA60_10.TSC.bin",
+  "rom_offset": 8316704,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 63,
+   "max_tile": 238,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 63
+  }
+ },
+ {
+  "name": "GA60_11.TSC",
+  "path": "graphics/tilemaps/nfp/GA60_11.TSC.bin",
+  "rom_offset": 8318752,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 66,
+   "max_tile": 239,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 65
+  }
+ },
+ {
+  "name": "GA60_12.TSC",
+  "path": "graphics/tilemaps/nfp/GA60_12.TSC.bin",
+  "rom_offset": 8320800,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 66,
+   "max_tile": 240,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 65
+  }
+ },
+ {
+  "name": "GA60_13.TSC",
+  "path": "graphics/tilemaps/nfp/GA60_13.TSC.bin",
+  "rom_offset": 8322848,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 70,
+   "max_tile": 1023,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 70
+  }
+ },
+ {
+  "name": "GA60_14.TSC",
+  "path": "graphics/tilemaps/nfp/GA60_14.TSC.bin",
+  "rom_offset": 8324896,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 75,
+   "max_tile": 345,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 75
+  }
+ },
+ {
+  "name": "GA60_15.TSC",
+  "path": "graphics/tilemaps/nfp/GA60_15.TSC.bin",
+  "rom_offset": 8326944,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 70,
+   "max_tile": 1023,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 76
+  }
+ },
+ {
+  "name": "GA60_16.TSC",
+  "path": "graphics/tilemaps/nfp/GA60_16.TSC.bin",
+  "rom_offset": 8328992,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 60,
+   "max_tile": 1023,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 68
+  }
+ },
+ {
+  "name": "GA_BG01.KMP",
+  "path": "maps/nfp/GA_BG01.KMP.bin",
+  "rom_offset": 8338256,
+  "size": 2240
+ },
+ {
+  "name": "IT_BG01.KMP",
+  "path": "maps/nfp/IT_BG01.KMP.bin",
+  "rom_offset": 8479248,
+  "size": 2240
+ },
+ {
+  "name": "IT_BG02.KMP",
+  "path": "maps/nfp/IT_BG02.KMP.bin",
+  "rom_offset": 8485808,
+  "size": 2240
+ },
+ {
+  "name": "JA05_A.TSC",
+  "path": "graphics/tilemaps/nfp/JA05_A.TSC.bin",
+  "rom_offset": 8494208,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 43,
+   "max_tile": 47,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 0
+  }
+ },
+ {
+  "name": "JA05_B.TSC",
+  "path": "graphics/tilemaps/nfp/JA05_B.TSC.bin",
+  "rom_offset": 8496256,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 73,
+   "max_tile": 117,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 0
+  }
+ },
+ {
+  "name": "JA05_C.TSC",
+  "path": "graphics/tilemaps/nfp/JA05_C.TSC.bin",
+  "rom_offset": 8498304,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 105,
+   "max_tile": 207,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 0
+  }
+ },
+ {
+  "name": "JA05_D.TSC",
+  "path": "graphics/tilemaps/nfp/JA05_D.TSC.bin",
+  "rom_offset": 8500352,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 148,
+   "max_tile": 329,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 0
+  }
+ },
+ {
+  "name": "MAP00_A.KMP",
+  "path": "maps/nfp/MAP00_A.KMP.bin",
+  "rom_offset": 8538912,
+  "size": 221376
+ },
+ {
+  "name": "MAP01_1A.KMP",
+  "path": "maps/nfp/MAP01_1A.KMP.bin",
+  "rom_offset": 8785184,
+  "size": 23232
+ },
+ {
+  "name": "MAP01_2A.KMP",
+  "path": "maps/nfp/MAP01_2A.KMP.bin",
+  "rom_offset": 8831744,
+  "size": 12480
+ },
+ {
+  "name": "MAP01_3A.KMP",
+  "path": "maps/nfp/MAP01_3A.KMP.bin",
+  "rom_offset": 8870928,
+  "size": 43200
+ },
+ {
+  "name": "MAP01_4A.KMP",
+  "path": "maps/nfp/MAP01_4A.KMP.bin",
+  "rom_offset": 8914880,
+  "size": 24768
+ },
+ {
+  "name": "MAP01_5A.KMP",
+  "path": "maps/nfp/MAP01_5A.KMP.bin",
+  "rom_offset": 8940080,
+  "size": 24768
+ },
+ {
+  "name": "MAP01_6A.KMP",
+  "path": "maps/nfp/MAP01_6A.KMP.bin",
+  "rom_offset": 8965408,
+  "size": 21792
+ },
+ {
+  "name": "MAP01_A.KMP",
+  "path": "maps/nfp/MAP01_A.KMP.bin",
+  "rom_offset": 9014048,
+  "size": 24768
+ },
+ {
+  "name": "MAP03_A.KMP",
+  "path": "maps/nfp/MAP03_A.KMP.bin",
+  "rom_offset": 9063440,
+  "size": 24768
+ },
+ {
+  "name": "MAP04_4A.KMP",
+  "path": "maps/nfp/MAP04_4A.KMP.bin",
+  "rom_offset": 9088560,
+  "size": 140544
+ },
+ {
+  "name": "MAP04_5A.KMP",
+  "path": "maps/nfp/MAP04_5A.KMP.bin",
+  "rom_offset": 9229600,
+  "size": 32640
+ },
+ {
+  "name": "MAP04_6A.KMP",
+  "path": "maps/nfp/MAP04_6A.KMP.bin",
+  "rom_offset": 9289360,
+  "size": 24768
+ },
+ {
+  "name": "MAP04_7A.KMP",
+  "path": "maps/nfp/MAP04_7A.KMP.bin",
+  "rom_offset": 9331648,
+  "size": 24768
+ },
+ {
+  "name": "MAP04_A.KMP",
+  "path": "maps/nfp/MAP04_A.KMP.bin",
+  "rom_offset": 9381408,
+  "size": 295104
+ },
+ {
+  "name": "MAP05_A.KMP",
+  "path": "maps/nfp/MAP05_A.KMP.bin",
+  "rom_offset": 9697568,
+  "size": 49344
+ },
+ {
+  "name": "MAP06_1A.KMP",
+  "path": "maps/nfp/MAP06_1A.KMP.bin",
+  "rom_offset": 9772656,
+  "size": 40128
+ },
+ {
+  "name": "MAP06_2A.KMP",
+  "path": "maps/nfp/MAP06_2A.KMP.bin",
+  "rom_offset": 9837776,
+  "size": 7872
+ },
+ {
+  "name": "MAP06_A.KMP",
+  "path": "maps/nfp/MAP06_A.KMP.bin",
+  "rom_offset": 9870976,
+  "size": 12480
+ },
+ {
+  "name": "MAP07_1A.KMP",
+  "path": "maps/nfp/MAP07_1A.KMP.bin",
+  "rom_offset": 9883744,
+  "size": 81088
+ },
+ {
+  "name": "MAP07_2A.KMP",
+  "path": "maps/nfp/MAP07_2A.KMP.bin",
+  "rom_offset": 9984704,
+  "size": 11712
+ },
+ {
+  "name": "MAP07_3A.KMP",
+  "path": "maps/nfp/MAP07_3A.KMP.bin",
+  "rom_offset": 10021408,
+  "size": 15488
+ },
+ {
+  "name": "MAP07_A.KMP",
+  "path": "maps/nfp/MAP07_A.KMP.bin",
+  "rom_offset": 10058640,
+  "size": 497056
+ },
+ {
+  "name": "MAP08_A.KMP",
+  "path": "maps/nfp/MAP08_A.KMP.bin",
+  "rom_offset": 10578896,
+  "size": 24768
+ },
+ {
+  "name": "MAP09_A.KMP",
+  "path": "maps/nfp/MAP09_A.KMP.bin",
+  "rom_offset": 10627968,
+  "size": 65088
+ },
+ {
+  "name": "MAP10_1A.KMP",
+  "path": "maps/nfp/MAP10_1A.KMP.bin",
+  "rom_offset": 10713056,
+  "size": 10944
+ },
+ {
+  "name": "MAP10_A.KMP",
+  "path": "maps/nfp/MAP10_A.KMP.bin",
+  "rom_offset": 10749024,
+  "size": 27840
+ },
+ {
+  "name": "MAP11_1A.KMP",
+  "path": "maps/nfp/MAP11_1A.KMP.bin",
+  "rom_offset": 10800592,
+  "size": 24768
+ },
+ {
+  "name": "MAP11_2A.KMP",
+  "path": "maps/nfp/MAP11_2A.KMP.bin",
+  "rom_offset": 10849808,
+  "size": 18624
+ },
+ {
+  "name": "MAP11_A.KMP",
+  "path": "maps/nfp/MAP11_A.KMP.bin",
+  "rom_offset": 10892144,
+  "size": 49344
+ },
+ {
+  "name": "MAP24_1A.KMP",
+  "path": "maps/nfp/MAP24_1A.KMP.bin",
+  "rom_offset": 10962016,
+  "size": 143040
+ },
+ {
+  "name": "MAP24_2A.KMP",
+  "path": "maps/nfp/MAP24_2A.KMP.bin",
+  "rom_offset": 11106128,
+  "size": 178368
+ },
+ {
+  "name": "MAP24_4A.KMP",
+  "path": "maps/nfp/MAP24_4A.KMP.bin",
+  "rom_offset": 11307472,
+  "size": 138432
+ },
+ {
+  "name": "MAP24_A.KMP",
+  "path": "maps/nfp/MAP24_A.KMP.bin",
+  "rom_offset": 11470592,
+  "size": 12480
+ },
+ {
+  "name": "MAP25_1A.KMP",
+  "path": "maps/nfp/MAP25_1A.KMP.bin",
+  "rom_offset": 11509168,
+  "size": 150720
+ },
+ {
+  "name": "MAP25_2A.KMP",
+  "path": "maps/nfp/MAP25_2A.KMP.bin",
+  "rom_offset": 11660368,
+  "size": 196800
+ },
+ {
+  "name": "MAP25_4A.KMP",
+  "path": "maps/nfp/MAP25_4A.KMP.bin",
+  "rom_offset": 11858464,
+  "size": 491712
+ },
+ {
+  "name": "MAP25_5A.KMP",
+  "path": "maps/nfp/MAP25_5A.KMP.bin",
+  "rom_offset": 12375648,
+  "size": 47808
+ },
+ {
+  "name": "MAP26_1A.KMP",
+  "path": "maps/nfp/MAP26_1A.KMP.bin",
+  "rom_offset": 12445664,
+  "size": 164784
+ },
+ {
+  "name": "MAP26_2A.KMP",
+  "path": "maps/nfp/MAP26_2A.KMP.bin",
+  "rom_offset": 12635888,
+  "size": 46272
+ },
+ {
+  "name": "MAP26_3A.KMP",
+  "path": "maps/nfp/MAP26_3A.KMP.bin",
+  "rom_offset": 12682672,
+  "size": 272064
+ },
+ {
+  "name": "MAP26_5A.KMP",
+  "path": "maps/nfp/MAP26_5A.KMP.bin",
+  "rom_offset": 12955680,
+  "size": 384240
+ },
+ {
+  "name": "MAP26_6A.KMP",
+  "path": "maps/nfp/MAP26_6A.KMP.bin",
+  "rom_offset": 13341456,
+  "size": 63552
+ },
+ {
+  "name": "MAP27_A.KMP",
+  "path": "maps/nfp/MAP27_A.KMP.bin",
+  "rom_offset": 13416608,
+  "size": 6336
+ },
+ {
+  "name": "MAP40_A.KMP",
+  "path": "maps/nfp/MAP40_A.KMP.bin",
+  "rom_offset": 13422944,
+  "size": 228288
+ },
+ {
+  "name": "MAP41_A.KMP",
+  "path": "maps/nfp/MAP41_A.KMP.bin",
+  "rom_offset": 13652064,
+  "size": 49344
+ },
+ {
+  "name": "MAP42_A.KMP",
+  "path": "maps/nfp/MAP42_A.KMP.bin",
+  "rom_offset": 13701808,
+  "size": 231360
+ },
+ {
+  "name": "MAP99_A.KMP",
+  "path": "maps/nfp/MAP99_A.KMP.bin",
+  "rom_offset": 13933968,
+  "size": 6336
+ },
+ {
+  "name": "ML_BG01.KMP",
+  "path": "maps/nfp/ML_BG01.KMP.bin",
+  "rom_offset": 13948784,
+  "size": 2240
+ },
+ {
+  "name": "MWA.KMP",
+  "path": "maps/nfp/MWA.KMP.bin",
+  "rom_offset": 13952128,
+  "size": 4288
+ },
+ {
+  "name": "NE01.TSC",
+  "path": "graphics/tilemaps/nfp/NE01.TSC.bin",
+  "rom_offset": 13963552,
+  "size": 256,
+  "shape": {
+   "entries": 256,
+   "max_tile": 251,
+   "tiles": 225
+  },
+  "format": "affine_tsc_u8"
+ },
+ {
+  "name": "NE13_A.TSC",
+  "path": "graphics/tilemaps/nfp/NE13_A.TSC.bin",
+  "rom_offset": 13970400,
+  "size": 256,
+  "shape": {
+   "entries": 256,
+   "max_tile": 119,
+   "tiles": 64
+  },
+  "format": "affine_tsc_u8"
+ },
+ {
+  "name": "NE13_B.TSC",
+  "path": "graphics/tilemaps/nfp/NE13_B.TSC.bin",
+  "rom_offset": 13970656,
+  "size": 256,
+  "shape": {
+   "entries": 256,
+   "max_tile": 127,
+   "tiles": 65
+  },
+  "format": "affine_tsc_u8"
+ },
+ {
+  "name": "NE13_C.TSC",
+  "path": "graphics/tilemaps/nfp/NE13_C.TSC.bin",
+  "rom_offset": 13970912,
+  "size": 256,
+  "shape": {
+   "entries": 256,
+   "max_tile": 247,
+   "tiles": 65
+  },
+  "format": "affine_tsc_u8"
+ },
+ {
+  "name": "NE21_00.TSC",
+  "path": "graphics/tilemaps/nfp/NE21_00.TSC.bin",
+  "rom_offset": 13983248,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 122,
+   "max_tile": 495,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 0
+  }
+ },
+ {
+  "name": "NE21_01.TSC",
+  "path": "graphics/tilemaps/nfp/NE21_01.TSC.bin",
+  "rom_offset": 13985296,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 298,
+   "max_tile": 1023,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 14
+  }
+ },
+ {
+  "name": "NE21_02.TSC",
+  "path": "graphics/tilemaps/nfp/NE21_02.TSC.bin",
+  "rom_offset": 13987344,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 308,
+   "max_tile": 1023,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 27
+  }
+ },
+ {
+  "name": "NE21_03.TSC",
+  "path": "graphics/tilemaps/nfp/NE21_03.TSC.bin",
+  "rom_offset": 13989392,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 298,
+   "max_tile": 1023,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 14
+  }
+ },
+ {
+  "name": "NE21_04.TSC",
+  "path": "graphics/tilemaps/nfp/NE21_04.TSC.bin",
+  "rom_offset": 13991440,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 298,
+   "max_tile": 1023,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 14
+  }
+ },
+ {
+  "name": "NE21_05.TSC",
+  "path": "graphics/tilemaps/nfp/NE21_05.TSC.bin",
+  "rom_offset": 13993488,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 193,
+   "max_tile": 492,
+   "palettes": [
+    12
+   ],
+   "flipped": 1
+  }
+ },
+ {
+  "name": "NE32.TSC",
+  "path": "graphics/tilemaps/nfp/NE32.TSC.bin",
+  "rom_offset": 14003184,
+  "size": 8192,
+  "screenblocks": 4.0,
+  "shape": {
+   "entries": 4096,
+   "tiles": 486,
+   "max_tile": 486,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 1024
+  }
+ },
+ {
+  "name": "NE33_A.TSC",
+  "path": "graphics/tilemaps/nfp/NE33_A.TSC.bin",
+  "rom_offset": 14017792,
+  "size": 256,
+  "shape": {
+   "entries": 256,
+   "max_tile": 119,
+   "tiles": 64
+  },
+  "format": "affine_tsc_u8"
+ },
+ {
+  "name": "NE33_B.TSC",
+  "path": "graphics/tilemaps/nfp/NE33_B.TSC.bin",
+  "rom_offset": 14018048,
+  "size": 256,
+  "shape": {
+   "entries": 256,
+   "max_tile": 127,
+   "tiles": 65
+  },
+  "format": "affine_tsc_u8"
+ },
+ {
+  "name": "NE33_C.TSC",
+  "path": "graphics/tilemaps/nfp/NE33_C.TSC.bin",
+  "rom_offset": 14018304,
+  "size": 256,
+  "shape": {
+   "entries": 256,
+   "max_tile": 247,
+   "tiles": 65
+  },
+  "format": "affine_tsc_u8"
+ },
+ {
+  "name": "NET_00_A.KMP",
+  "path": "maps/nfp/NET_00_A.KMP.bin",
+  "rom_offset": 14018560,
+  "size": 6336
+ },
+ {
+  "name": "NET_03_A.KMP",
+  "path": "maps/nfp/NET_03_A.KMP.bin",
+  "rom_offset": 14024896,
+  "size": 6336
+ },
+ {
+  "name": "NET_04_A.KMP",
+  "path": "maps/nfp/NET_04_A.KMP.bin",
+  "rom_offset": 14031232,
+  "size": 6336
+ },
+ {
+  "name": "NET_05_A.KMP",
+  "path": "maps/nfp/NET_05_A.KMP.bin",
+  "rom_offset": 14037568,
+  "size": 6336
+ },
+ {
+  "name": "NET_07_A.KMP",
+  "path": "maps/nfp/NET_07_A.KMP.bin",
+  "rom_offset": 14043904,
+  "size": 6336
+ },
+ {
+  "name": "NET_24_A.KMP",
+  "path": "maps/nfp/NET_24_A.KMP.bin",
+  "rom_offset": 14050240,
+  "size": 6336
+ },
+ {
+  "name": "NET_25_A.KMP",
+  "path": "maps/nfp/NET_25_A.KMP.bin",
+  "rom_offset": 14056576,
+  "size": 6336
+ },
+ {
+  "name": "NET_26_A.KMP",
+  "path": "maps/nfp/NET_26_A.KMP.bin",
+  "rom_offset": 14062912,
+  "size": 6336
+ },
+ {
+  "name": "NET_AD_A.KMP",
+  "path": "maps/nfp/NET_AD_A.KMP.bin",
+  "rom_offset": 14069248,
+  "size": 6336
+ },
+ {
+  "name": "OP_01_A.KMP",
+  "path": "maps/nfp/OP_01_A.KMP.bin",
+  "rom_offset": 14100432,
+  "size": 3792
+ },
+ {
+  "name": "OP_04_A.KMP",
+  "path": "maps/nfp/OP_04_A.KMP.bin",
+  "rom_offset": 14118608,
+  "size": 3792
+ },
+ {
+  "name": "OP_05_A.KMP",
+  "path": "maps/nfp/OP_05_A.KMP.bin",
+  "rom_offset": 14138848,
+  "size": 3792
+ },
+ {
+  "name": "OP_06_A.KMP",
+  "path": "maps/nfp/OP_06_A.KMP.bin",
+  "rom_offset": 14156112,
+  "size": 5952
+ },
+ {
+  "name": "OP_07_A.KMP",
+  "path": "maps/nfp/OP_07_A.KMP.bin",
+  "rom_offset": 14171632,
+  "size": 6336
+ },
+ {
+  "name": "OP_08_A.KMP",
+  "path": "maps/nfp/OP_08_A.KMP.bin",
+  "rom_offset": 14188704,
+  "size": 6336
+ },
+ {
+  "name": "OP_09_A.KMP",
+  "path": "maps/nfp/OP_09_A.KMP.bin",
+  "rom_offset": 14209472,
+  "size": 6336
+ },
+ {
+  "name": "OP_0A_A.KMP",
+  "path": "maps/nfp/OP_0A_A.KMP.bin",
+  "rom_offset": 14221536,
+  "size": 6336
+ },
+ {
+  "name": "PS_BG01.KMP",
+  "path": "maps/nfp/PS_BG01.KMP.bin",
+  "rom_offset": 14242496,
+  "size": 2240
+ },
+ {
+  "name": "PV_BG01.KMP",
+  "path": "maps/nfp/PV_BG01.KMP.bin",
+  "rom_offset": 14252496,
+  "size": 2240
+ },
+ {
+  "name": "PV_BG11.KMP",
+  "path": "maps/nfp/PV_BG11.KMP.bin",
+  "rom_offset": 14255856,
+  "size": 2240
+ },
+ {
+  "name": "PW_BG01.KMP",
+  "path": "maps/nfp/PW_BG01.KMP.bin",
+  "rom_offset": 14263792,
+  "size": 2240
+ },
+ {
+  "name": "PW_BOX.KMP",
+  "path": "maps/nfp/PW_BOX.KMP.bin",
+  "rom_offset": 14271040,
+  "size": 2240
+ },
+ {
+  "name": "SBA06_00.TSC",
+  "path": "graphics/tilemaps/nfp/SBA06_00.TSC.bin",
+  "rom_offset": 14285232,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 108,
+   "max_tile": 518,
+   "palettes": [
+    0,
+    13
+   ],
+   "flipped": 40
+  }
+ },
+ {
+  "name": "SBA06_01.TSC",
+  "path": "graphics/tilemaps/nfp/SBA06_01.TSC.bin",
+  "rom_offset": 14287280,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 411,
+   "max_tile": 412,
+   "palettes": [
+    0,
+    12,
+    13,
+    14
+   ],
+   "flipped": 149
+  }
+ },
+ {
+  "name": "SK02_00.TSC",
+  "path": "graphics/tilemaps/nfp/SK02_00.TSC.bin",
+  "rom_offset": 14300640,
+  "size": 256,
+  "shape": {
+   "entries": 256,
+   "max_tile": 195,
+   "tiles": 52
+  },
+  "format": "affine_tsc_u8"
+ },
+ {
+  "name": "SK02_01.TSC",
+  "path": "graphics/tilemaps/nfp/SK02_01.TSC.bin",
+  "rom_offset": 14300896,
+  "size": 256,
+  "shape": {
+   "entries": 256,
+   "max_tile": 199,
+   "tiles": 53
+  },
+  "format": "affine_tsc_u8"
+ },
+ {
+  "name": "SK02_02.TSC",
+  "path": "graphics/tilemaps/nfp/SK02_02.TSC.bin",
+  "rom_offset": 14301152,
+  "size": 256,
+  "shape": {
+   "entries": 256,
+   "max_tile": 203,
+   "tiles": 53
+  },
+  "format": "affine_tsc_u8"
+ },
+ {
+  "name": "SK02_03.TSC",
+  "path": "graphics/tilemaps/nfp/SK02_03.TSC.bin",
+  "rom_offset": 14301408,
+  "size": 256,
+  "shape": {
+   "entries": 256,
+   "max_tile": 207,
+   "tiles": 53
+  },
+  "format": "affine_tsc_u8"
+ },
+ {
+  "name": "SK03_00.TSC",
+  "path": "graphics/tilemaps/nfp/SK03_00.TSC.bin",
+  "rom_offset": 14306384,
+  "size": 1024,
+  "shape": {
+   "entries": 1024,
+   "max_tile": 207,
+   "tiles": 208
+  },
+  "format": "affine_tsc_u8"
+ },
+ {
+  "name": "SK03_01.TSC",
+  "path": "graphics/tilemaps/nfp/SK03_01.TSC.bin",
+  "rom_offset": 14307408,
+  "size": 1024,
+  "shape": {
+   "entries": 1024,
+   "max_tile": 207,
+   "tiles": 208
+  },
+  "format": "affine_tsc_u8"
+ },
+ {
+  "name": "SK03_02.TSC",
+  "path": "graphics/tilemaps/nfp/SK03_02.TSC.bin",
+  "rom_offset": 14308432,
+  "size": 1024,
+  "shape": {
+   "entries": 1024,
+   "max_tile": 207,
+   "tiles": 208
+  },
+  "format": "affine_tsc_u8"
+ },
+ {
+  "name": "SK03_03.TSC",
+  "path": "graphics/tilemaps/nfp/SK03_03.TSC.bin",
+  "rom_offset": 14309456,
+  "size": 1024,
+  "shape": {
+   "entries": 1024,
+   "max_tile": 207,
+   "tiles": 208
+  },
+  "format": "affine_tsc_u8"
+ },
+ {
+  "name": "SM_BG01.KMP",
+  "path": "maps/nfp/SM_BG01.KMP.bin",
+  "rom_offset": 14319824,
+  "size": 2240
+ },
+ {
+  "name": "SM_BG12.KMP",
+  "path": "maps/nfp/SM_BG12.KMP.bin",
+  "rom_offset": 14326768,
+  "size": 2240
+ },
+ {
+  "name": "SN06.TSC",
+  "path": "graphics/tilemaps/nfp/SN06.TSC.bin",
+  "rom_offset": 14332992,
+  "size": 2048,
+  "screenblocks": 1.0,
+  "shape": {
+   "entries": 1024,
+   "tiles": 512,
+   "max_tile": 511,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 0
+  }
+ },
+ {
+  "name": "SN07_A.TSC",
+  "path": "graphics/tilemaps/nfp/SN07_A.TSC.bin",
+  "rom_offset": 14346832,
+  "size": 8192,
+  "screenblocks": 4.0,
+  "shape": {
+   "entries": 4096,
+   "tiles": 519,
+   "max_tile": 519,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 2
+  }
+ },
+ {
+  "name": "SN07_B.TSC",
+  "path": "graphics/tilemaps/nfp/SN07_B.TSC.bin",
+  "rom_offset": 14355024,
+  "size": 8192,
+  "screenblocks": 4.0,
+  "shape": {
+   "entries": 4096,
+   "tiles": 519,
+   "max_tile": 519,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 2442
+  }
+ },
+ {
+  "name": "SP_BG01.KMP",
+  "path": "maps/nfp/SP_BG01.KMP.bin",
+  "rom_offset": 14374816,
+  "size": 2240
+ },
+ {
+  "name": "SP_BG11.KMP",
+  "path": "maps/nfp/SP_BG11.KMP.bin",
+  "rom_offset": 14387696,
+  "size": 2240
+ },
+ {
+  "name": "SP_BG12.KMP",
+  "path": "maps/nfp/SP_BG12.KMP.bin",
+  "rom_offset": 14392672,
+  "size": 2240
+ },
+ {
+  "name": "SP_BG21.KMP",
+  "path": "maps/nfp/SP_BG21.KMP.bin",
+  "rom_offset": 14403968,
+  "size": 2240
+ },
+ {
+  "name": "SP_BG22.KMP",
+  "path": "maps/nfp/SP_BG22.KMP.bin",
+  "rom_offset": 14416432,
+  "size": 2240
+ },
+ {
+  "name": "SSN07_A.TSC",
+  "path": "graphics/tilemaps/nfp/SSN07_A.TSC.bin",
+  "rom_offset": 14463008,
+  "size": 8192,
+  "screenblocks": 4.0,
+  "shape": {
+   "entries": 4096,
+   "tiles": 519,
+   "max_tile": 519,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 2
+  }
+ },
+ {
+  "name": "SSN07_B.TSC",
+  "path": "graphics/tilemaps/nfp/SSN07_B.TSC.bin",
+  "rom_offset": 14471200,
+  "size": 8192,
+  "screenblocks": 4.0,
+  "shape": {
+   "entries": 4096,
+   "tiles": 519,
+   "max_tile": 519,
+   "palettes": [
+    0,
+    12
+   ],
+   "flipped": 2442
+  }
+ },
+ {
+  "name": "ST_BG01.KMP",
+  "path": "maps/nfp/ST_BG01.KMP.bin",
+  "rom_offset": 14484416,
+  "size": 2240
+ },
+ {
+  "name": "ST_BG02.KMP",
+  "path": "maps/nfp/ST_BG02.KMP.bin",
+  "rom_offset": 14490928,
+  "size": 2240
+ },
+ {
+  "name": "ST_BG03.KMP",
+  "path": "maps/nfp/ST_BG03.KMP.bin",
+  "rom_offset": 14497360,
+  "size": 2240
+ },
+ {
+  "name": "ST_BG11.KMP",
+  "path": "maps/nfp/ST_BG11.KMP.bin",
+  "rom_offset": 14508320,
+  "size": 2240
+ },
+ {
+  "name": "T_C01.KMP",
+  "path": "maps/nfp/T_C01.KMP.bin",
+  "rom_offset": 15835936,
+  "size": 2240
+ },
+ {
+  "name": "T_C02.KMP",
+  "path": "maps/nfp/T_C02.KMP.bin",
+  "rom_offset": 15839312,
+  "size": 2240
+ },
+ {
+  "name": "T_ML_BG.KMP",
+  "path": "maps/nfp/T_ML_BG.KMP.bin",
+  "rom_offset": 15853200,
+  "size": 2240
+ },
+ {
+  "name": "T_TTL06.KMP",
+  "path": "maps/nfp/T_TTL06.KMP.bin",
+  "rom_offset": 15864864,
+  "size": 2240
+ },
+ {
+  "name": "VSMAP01.KMP",
+  "path": "maps/nfp/VSMAP01.KMP.bin",
+  "rom_offset": 15867104,
+  "size": 8512
+ },
+ {
+  "name": "WM_BG01.KMP",
+  "path": "maps/nfp/WM_BG01.KMP.bin",
+  "rom_offset": 15883408,
+  "size": 2240
+ },
+ {
+  "name": "WM_BG02.KMP",
+  "path": "maps/nfp/WM_BG02.KMP.bin",
+  "rom_offset": 15889968,
+  "size": 2240
+ }
+]

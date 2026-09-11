@@ -1,0 +1,15 @@
+// Legacy reference view of EV_AL04.SPC; edit text/nfp/EV_AL04.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000151 F03A01  // LITERAL: F03A01 (usage not inferred)
+@00022A  C0D04 ［ジャック］  // EN: [Jack]
+@000249  C0F04 つよくなるには…  // TODO: English translation
+@0002A6 F01B01  // LITERAL: F01B01 (usage not inferred)
+@00037F  C0D04 ［ギンタ］  // EN: [Ginta]
+@00039C  C0F04 魔物とたたかうのが  // TODO: English translation
+@0003C1 いちばんだ！！  // TODO: English translation
+@0003F9  C0D04 ［ギンタ］  // EN: [Ginta]
+@000416  C0F04 ガンガンいくぜ！  // TODO: English translation
+@000463  C0D04 ［ジャック］  // EN: [Jack]
+@000482  C0F04 いくっス！！  // TODO: English translation

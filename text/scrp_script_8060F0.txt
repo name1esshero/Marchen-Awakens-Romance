@@ -1,0 +1,25 @@
+// Legacy reference view of G_EV042.SPC; edit text/nfp/G_EV042.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@00019A A  // LITERAL: A (usage not inferred)
+@000226 A  // LITERAL: A (usage not inferred)
+@0002B2 A  // LITERAL: A (usage not inferred)
+@000410 MAP11_A.SPC  // LITERAL: MAP11_A.SPC (usage not inferred)
+@000E05 F01B01  // LITERAL: F01B01 (usage not inferred)
+@000EDE  C0D04 ［ギンタ］  // EN: [Ginta]
+@000EFB  C0F04 スノウ！  // EN: Snow!
+@000F16 ちょっと力をかしてほしいんだ！  // TODO: English translation
+@000FA4 F38A02  // LITERAL: F38A02 (usage not inferred)
+@00107D  C0D04 ［マール］  // EN: [Marl]
+@00109A  C0F04 おねがいします！！  // TODO: English translation
+@0010F9 F04A06  // LITERAL: F04A06 (usage not inferred)
+@0011D2  C0D04 ［スノウ］  // EN: [Snow]
+@0011EF  C0F04 …え…とー…  // TODO: English translation
+@001248 F01B01  // LITERAL: F01B01 (usage not inferred)
+@00138D  C0D04 ［ギンタ］  // EN: [Ginta]
+@0013AA  C0F04 こいつはマール！  // TODO: English translation
+@001407 F01B08  // LITERAL: F01B08 (usage not inferred)
+@001435  C0D04 ［ギンタ］  // EN: [Ginta]
+@001452  C0F04 くわしいことは  // TODO: English translation
+@001473 行きながら話すからさ！  // TODO: English translation

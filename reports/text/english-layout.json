@@ -1,0 +1,18 @@
+{
+  "profile": "08011790 dialogue, 21 glyphs x 3 rows",
+  "limitation": "Not proof that every record uses this printer.",
+  "runtime_integrated": true,
+  "counts": {
+    "fits_profile": 3700,
+    "rejected": 1
+  },
+  "failures": [
+    {
+      "script": "EV_BA03.SPC.txt",
+      "offset": "@000546",
+      "english": "Magic Stones can be used even by someone with little magical power like you.",
+      "reason": "Message needs 4 rows; available: 3"
+    }
+  ],
+  "runtime_scope": "Optional DialogueStart bridge; whole-message Japanese fallback; no pagination."
+}

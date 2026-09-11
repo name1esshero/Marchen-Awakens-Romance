@@ -1,0 +1,7 @@
+// Legacy reference view of MAP06_2A.SPC; edit text/nfp/MAP06_2A.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000034 MAP06_2A  // LITERAL: MAP06_2A (usage not inferred)
+@00007A TAKARA  // LITERAL: TAKARA (usage not inferred)
+@000279 G_EV005.SPC  // LITERAL: G_EV005.SPC (usage not inferred)

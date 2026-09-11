@@ -1,0 +1,626 @@
+[
+  {
+    "path": "graphics/tilesets/tileset_1C9E00.pal",
+    "replacement": "graphics/palettes/AD0_P_0A.KCL.pal",
+    "sha256": "6493a2532304380b150d8a3436557705decb418e33a93a9d6523dc7f3de858fc",
+    "bytes": 178
+  },
+  {
+    "path": "graphics/tilesets/tileset_237570.pal",
+    "replacement": "graphics/palettes/AD1_P_0A.KCL.pal",
+    "sha256": "27989a4f66edf0816d0fc64c1be7a40f467a91d57d7080cfbf71b441897aa6de",
+    "bytes": 178
+  },
+  {
+    "path": "graphics/tilesets/tileset_2A3C80.pal",
+    "replacement": "graphics/palettes/AD3_P_0A.KCL.pal",
+    "sha256": "949591b6afab25e088a2ef284a6aa5b47a265b0eba676fca33b6d88835015328",
+    "bytes": 165
+  },
+  {
+    "path": "graphics/tilesets/tileset_310650.pal",
+    "replacement": "graphics/palettes/AD4_P_0A.KCL.pal",
+    "sha256": "1f091820c61dd367919ca4485b93fd4fb6ce085b7e8fd13823afc22023193940",
+    "bytes": 178
+  },
+  {
+    "path": "graphics/tilesets/tileset_3759B0.pal",
+    "replacement": "graphics/palettes/AD_BG01.KCL.pal",
+    "sha256": "b35d3d46238479faa3898bc4e2ae5d01bd5da12ad10822a5fe4ce7191052345c",
+    "bytes": 177
+  },
+  {
+    "path": "graphics/sprites/sprite_378010.pal",
+    "replacement": "graphics/palettes/AD_BG02.KCL.pal",
+    "sha256": "11ef44261e208501f52ef83400756d9086f6163f5d34cbdf70954ccaa329566a",
+    "bytes": 185
+  },
+  {
+    "path": "graphics/tilesets/tileset_379240.pal",
+    "replacement": "graphics/palettes/AL_BG01.KCL.pal",
+    "sha256": "4bf69f7dec0459ab4531ab6b8de8d208ed8926f4e6007ad763d3edd12f384856",
+    "bytes": 172
+  },
+  {
+    "path": "graphics/sprites/sprite_37BC10.pal",
+    "replacement": "graphics/palettes/AL_BG02.KCL.pal",
+    "sha256": "676122bf7949e0c5340da6196f4da5b29b034b6aac7dfdb8a5d2f0c3ec95928f",
+    "bytes": 189
+  },
+  {
+    "path": "graphics/tilesets/tileset_37CF80.pal",
+    "replacement": "graphics/palettes/AS_BG01.KCL.pal",
+    "sha256": "ab821b7b0943e71c296ace6b5d699c808d6321f16583c4a9d12b1a65a4696294",
+    "bytes": 176
+  },
+  {
+    "path": "graphics/sprites/sprite_37FBA0.pal",
+    "replacement": "graphics/palettes/AS_BG02.KCL.pal",
+    "sha256": "9fece8879bb9a7090b4486863c7c02b284554e7f063a54b09100948e3d9e43b2",
+    "bytes": 177
+  },
+  {
+    "path": "graphics/tilesets/tileset_3818A0.pal",
+    "replacement": "graphics/palettes/AT_BG01.KCL.pal",
+    "sha256": "34ce4dde2362ced355a3470b8b4e5ca6d0545a4a638e435b25e55be9f4b7a21e",
+    "bytes": 176
+  },
+  {
+    "path": "graphics/tilesets/tileset_383EB0.pal",
+    "replacement": "graphics/palettes/BA06.TCL.pal",
+    "sha256": "2f309acc75fef8f7cef1626be3963f2284ab73181de66f6f5c90347dcaaf18ed",
+    "bytes": 182
+  },
+  {
+    "path": "graphics/tilesets/tileset_387D60.pal",
+    "replacement": "graphics/palettes/BA06_BG.TCL.pal",
+    "sha256": "07916698cae4e30509126da1fa653b9a01a14fbc127f0a3545481ac8a828cfdd",
+    "bytes": 182
+  },
+  {
+    "path": "graphics/sprites/sprite_38C4C0.pal",
+    "replacement": "graphics/palettes/BA07.TCL.pal",
+    "sha256": "1499a6200e3dd99a14e3052066c9f6e8e4b2dae9ec07042738cf33873c97f67f",
+    "bytes": 200
+  },
+  {
+    "path": "graphics/sprites/sprite_56DB30.pal",
+    "replacement": "graphics/palettes/CLPASS.KCL.pal",
+    "sha256": "319c210a8aaba123572552a1040013d2376a7c11077c986ef1dd6ec8ba787450",
+    "bytes": 187
+  },
+  {
+    "path": "graphics/sprites/sprite_56EE70.pal",
+    "replacement": "graphics/palettes/CM_BG01.KCL.pal",
+    "sha256": "32fffc59e576597a67214dbd4d2ffb8db03896d72134061136e78e5c9d75ecc7",
+    "bytes": 172
+  },
+  {
+    "path": "graphics/sprites/sprite_571050.pal",
+    "replacement": "graphics/palettes/CM_BG02.KCL.pal",
+    "sha256": "e81b9556f0015e428f910ba542a532d6e13e9d79c7a37593f9f89e906c58acdb",
+    "bytes": 173
+  },
+  {
+    "path": "graphics/tilesets/tileset_5A6FA0.pal",
+    "replacement": "graphics/palettes/DS_BG01.KCL.pal",
+    "sha256": "fa6583b0b59b8ced0cf199da2f6c90a5dfd91a463101195d4816d1272406ef1b",
+    "bytes": 174
+  },
+  {
+    "path": "graphics/tilesets/tileset_5AAB70.pal",
+    "replacement": "graphics/palettes/DS_BG02.KCL.pal",
+    "sha256": "55b4954cbf69cc0e06f0882ad5da747f5e78a873d42ce2f84b026ffafcb121ad",
+    "bytes": 184
+  },
+  {
+    "path": "graphics/tilesets/tileset_7CA760.pal",
+    "replacement": "graphics/palettes/GA08.TCL.pal",
+    "sha256": "033dd24f5c88042b6c2110091faa26e41c95b290d1b90b655f050c4a7c90506e",
+    "bytes": 190
+  },
+  {
+    "path": "graphics/tilemaps/tilemap_7D4E20.pal",
+    "replacement": "graphics/palettes/GA13.TCL.pal",
+    "sha256": "519f650af1125dc2cfaf0d5e385541d8e6838d4f5a62c5529ba296e86c3c97ff",
+    "bytes": 170
+  },
+  {
+    "path": "graphics/tilesets/tileset_7DA980.pal",
+    "replacement": "graphics/palettes/GA24.TCL.pal",
+    "sha256": "5958cd1cc8bae61ba571f3e5d59d6c327349150ed10d8aaf761322ebf37468f4",
+    "bytes": 184
+  },
+  {
+    "path": "graphics/tilesets/tileset_7E07E0.pal",
+    "replacement": "graphics/palettes/GA25.TCL.pal",
+    "sha256": "f427111c436ddc81c1bce65876fa22cd076cb556d016cb45eb11cbd478420551",
+    "bytes": 172
+  },
+  {
+    "path": "graphics/sprites/sprite_7E6880.pal",
+    "replacement": "graphics/palettes/GA26.TCL.pal",
+    "sha256": "0d46fa9e4b32e198fd2cafbc40d2925a6b9eb8b0da7f2a355539a4373ce24915",
+    "bytes": 205
+  },
+  {
+    "path": "graphics/tilesets/tileset_7E9720.pal",
+    "replacement": "graphics/palettes/GA60.TCL.pal",
+    "sha256": "23945359486f19169d19500018031f9a215facd427efa7952504c501b2270965",
+    "bytes": 182
+  },
+  {
+    "path": "graphics/tilesets/tileset_7F1F20.pal",
+    "replacement": "graphics/palettes/GA_BG01.KCL.pal",
+    "sha256": "f410b7a0df74e2a0efd1d1aa324b65999e5da7fcb3b9718d9d0e501ed5138ff3",
+    "bytes": 161
+  },
+  {
+    "path": "graphics/sprites/sprite_814B30.pal",
+    "replacement": "graphics/palettes/IT_BG01.KCL.pal",
+    "sha256": "b8d16782b7d2f02ec77f441f41b4ed0fe3ed66b83c3c63875dfdf150ed8d81fa",
+    "bytes": 178
+  },
+  {
+    "path": "graphics/sprites/sprite_816AD0.pal",
+    "replacement": "graphics/palettes/IT_BG02.KCL.pal",
+    "sha256": "32fffc59e576597a67214dbd4d2ffb8db03896d72134061136e78e5c9d75ecc7",
+    "bytes": 172
+  },
+  {
+    "path": "graphics/tilesets/tileset_818470.pal",
+    "replacement": "graphics/palettes/JA05.TCL.pal",
+    "sha256": "b1aaa4bad9a0d98b026795d9236b6e20e6ab8e341ddcfa2ce47baf220c5939d1",
+    "bytes": 168
+  },
+  {
+    "path": "graphics/tilesets/tileset_81F7C0.pal",
+    "replacement": "graphics/palettes/MAP00_A.KCL.pal",
+    "sha256": "2cc4e22ec3b5e474ed16e7b43ed16520e22ab25352851868031431eed93f59c3",
+    "bytes": 172
+  },
+  {
+    "path": "graphics/tilesets/tileset_85AF20.pal",
+    "replacement": "graphics/palettes/MAP01_1A.KCL.pal",
+    "sha256": "857f7af2a2e09b54fa6d8212a0974b6cd5bb85673310db9ebef6fb4c63c23f98",
+    "bytes": 181
+  },
+  {
+    "path": "graphics/tilesets/tileset_866A30.pal",
+    "replacement": "graphics/palettes/MAP01_2A.KCL.pal",
+    "sha256": "857f7af2a2e09b54fa6d8212a0974b6cd5bb85673310db9ebef6fb4c63c23f98",
+    "bytes": 181
+  },
+  {
+    "path": "graphics/tilesets/tileset_86F4C0.pal",
+    "replacement": "graphics/palettes/MAP01_3A.KCL.pal",
+    "sha256": "dd12338e585309120ab54b9df13dbd3c5b6926fe8adf3bb2ebacf4647c372b79",
+    "bytes": 188
+  },
+  {
+    "path": "graphics/tilesets/tileset_892240.pal",
+    "replacement": "graphics/palettes/MAP01_A.KCL.pal",
+    "sha256": "7a34510375934fcf3c5459ae6ea5f5a0cc66f892dfb33389c2508a0031a32666",
+    "bytes": 184
+  },
+  {
+    "path": "graphics/tilesets/tileset_89EDE0.pal",
+    "replacement": "graphics/palettes/MAP03_A.KCL.pal",
+    "sha256": "febd8f39671bf481d3a14af7bc43d9a2c13dd0ef73c7d82cc80635d2c394250a",
+    "bytes": 180
+  },
+  {
+    "path": "graphics/tilesets/tileset_8D56F0.pal",
+    "replacement": "graphics/palettes/MAP04_6A.KCL.pal",
+    "sha256": "fd029ff0c201a40a6f944ada0d318c5914ebda1fb2772592d09eeb2ccec4c4cd",
+    "bytes": 185
+  },
+  {
+    "path": "graphics/tilesets/tileset_8E2070.pal",
+    "replacement": "graphics/palettes/MAP04_7A.KCL.pal",
+    "sha256": "f92db5b5f7e359e62bbe2e2932c4f37932230d0785b4606af13f759af6bccaef",
+    "bytes": 185
+  },
+  {
+    "path": "graphics/tilesets/tileset_8EC480.pal",
+    "replacement": "graphics/palettes/MAP04_A.KCL.pal",
+    "sha256": "260246e43eb8f073dfeb3bcbae47c1229b90d7f76e23cebbe2b1817741892e68",
+    "bytes": 185
+  },
+  {
+    "path": "graphics/tilesets/tileset_93ABF0.pal",
+    "replacement": "graphics/palettes/MAP05_A.KCL.pal",
+    "sha256": "75fe39b28f9fcb547cfa27f6ae19ca9b52155cdce3cb0e3515dac2adc0504cbe",
+    "bytes": 184
+  },
+  {
+    "path": "graphics/tilesets/tileset_94BD50.pal",
+    "replacement": "graphics/palettes/MAP06_1A.KCL.pal",
+    "sha256": "12bcce2e8d074130239cae8fc86edd37eb6d973323066563c2b6e510366b1295",
+    "bytes": 178
+  },
+  {
+    "path": "graphics/tilesets/tileset_95BE20.pal",
+    "replacement": "graphics/palettes/MAP06_2A.KCL.pal",
+    "sha256": "fce462e52ace33637aea3e5e0ab107175e55eb26fdefd2cbf0f826f9e1c34350",
+    "bytes": 165
+  },
+  {
+    "path": "graphics/tilesets/tileset_963D60.pal",
+    "replacement": "graphics/palettes/MAP06_A.KCL.pal",
+    "sha256": "12bcce2e8d074130239cae8fc86edd37eb6d973323066563c2b6e510366b1295",
+    "bytes": 178
+  },
+  {
+    "path": "graphics/tilesets/tileset_980DC0.pal",
+    "replacement": "graphics/palettes/MAP07_2A.KCL.pal",
+    "sha256": "c3a4ce82f849d4b4988c24d33f0f635b8a6a62285f3239f109dd02ba0faec584",
+    "bytes": 161
+  },
+  {
+    "path": "graphics/tilesets/tileset_988960.pal",
+    "replacement": "graphics/palettes/MAP07_3A.KCL.pal",
+    "sha256": "81ee9a6257e3ea72c0e54090a1d5497076d29815670f36d460d336c97b47157d",
+    "bytes": 163
+  },
+  {
+    "path": "graphics/tilesets/tileset_992740.pal",
+    "replacement": "graphics/palettes/MAP07_A.KCL.pal",
+    "sha256": "a57fc14e636b1de6b7b5d3fa2dd092890433bad823e3bca4817b1d58ec84f5cd",
+    "bytes": 183
+  },
+  {
+    "path": "graphics/tilesets/tileset_A11790.pal",
+    "replacement": "graphics/palettes/MAP08_A.KCL.pal",
+    "sha256": "b923b396a4b8e1477bf0c01ece4e7b6485b15d93b7b99fb7a984865da414aa35",
+    "bytes": 183
+  },
+  {
+    "path": "graphics/tilesets/tileset_A1CE60.pal",
+    "replacement": "graphics/palettes/MAP09_A.KCL.pal",
+    "sha256": "1e0a6c57e5d1e4fb570e411d41756905eb90c7874be42e2008457238bb455e1d",
+    "bytes": 185
+  },
+  {
+    "path": "graphics/tilesets/tileset_A32DD0.pal",
+    "replacement": "graphics/palettes/MAP10_1A.KCL.pal",
+    "sha256": "5d02b1073d800f1c7e5bb50d73d025f185cb70a2802af13b023d673e7fc8150e",
+    "bytes": 183
+  },
+  {
+    "path": "graphics/tilesets/tileset_A3A480.pal",
+    "replacement": "graphics/palettes/MAP10_A.KCL.pal",
+    "sha256": "a8daf1cb048837af6b03d2aaf14256299fb8fb6264366b606a0eed7c99bba683",
+    "bytes": 186
+  },
+  {
+    "path": "graphics/tilesets/tileset_A473C0.pal",
+    "replacement": "graphics/palettes/MAP11_1A.KCL.pal",
+    "sha256": "c6cf67cfcb63a8052ab82a7d7ee9613c65a854dc3f95dd55ee93ee12bd767575",
+    "bytes": 191
+  },
+  {
+    "path": "graphics/tilesets/tileset_A53290.pal",
+    "replacement": "graphics/palettes/MAP11_2A.KCL.pal",
+    "sha256": "f2034d3c74655efff2d95345ab5dc3683ef3c5f72795b6e900abf6d80a0201f1",
+    "bytes": 172
+  },
+  {
+    "path": "graphics/tilesets/tileset_A5D7C0.pal",
+    "replacement": "graphics/palettes/MAP11_A.KCL.pal",
+    "sha256": "9140cc00d53e21660a6d055e082262744e1c9a1d716b5c138b2b7ab0bf722b69",
+    "bytes": 171
+  },
+  {
+    "path": "graphics/tilesets/tileset_A6F830.pal",
+    "replacement": "graphics/palettes/MAP24_1A.KCL.pal",
+    "sha256": "27989a4f66edf0816d0fc64c1be7a40f467a91d57d7080cfbf71b441897aa6de",
+    "bytes": 178
+  },
+  {
+    "path": "graphics/tilesets/tileset_AC3390.pal",
+    "replacement": "graphics/palettes/MAP24_4A.KCL.pal",
+    "sha256": "27989a4f66edf0816d0fc64c1be7a40f467a91d57d7080cfbf71b441897aa6de",
+    "bytes": 178
+  },
+  {
+    "path": "graphics/tilesets/tileset_AEA9D0.pal",
+    "replacement": "graphics/palettes/MAP24_A.KCL.pal",
+    "sha256": "ae64dc5dbdeac61ec08b6c17f58b70f031b02b97c5e7ce963004464077c9e7dd",
+    "bytes": 171
+  },
+  {
+    "path": "graphics/tilesets/tileset_AF3A60.pal",
+    "replacement": "graphics/palettes/MAP25_1A.KCL.pal",
+    "sha256": "6493a2532304380b150d8a3436557705decb418e33a93a9d6523dc7f3de858fc",
+    "bytes": 178
+  },
+  {
+    "path": "graphics/tilesets/tileset_BC7780.pal",
+    "replacement": "graphics/palettes/MAP25_5A.KCL.pal",
+    "sha256": "6493a2532304380b150d8a3436557705decb418e33a93a9d6523dc7f3de858fc",
+    "bytes": 178
+  },
+  {
+    "path": "graphics/tilesets/tileset_BD9410.pal",
+    "replacement": "graphics/palettes/MAP26_1A.KCL.pal",
+    "sha256": "949591b6afab25e088a2ef284a6aa5b47a265b0eba676fca33b6d88835015328",
+    "bytes": 165
+  },
+  {
+    "path": "graphics/tilesets/tileset_C06ED0.pal",
+    "replacement": "graphics/palettes/MAP26_2A.KCL.pal",
+    "sha256": "949591b6afab25e088a2ef284a6aa5b47a265b0eba676fca33b6d88835015328",
+    "bytes": 165
+  },
+  {
+    "path": "graphics/tilesets/tileset_CC8CC0.pal",
+    "replacement": "graphics/palettes/MAP27_A.KCL.pal",
+    "sha256": "5c63a931b2bfc0d6e413e177508bd522e4d6d8a8424cf07f485e8b92df409eb3",
+    "bytes": 194
+  },
+  {
+    "path": "graphics/tilemaps/tilemap_D49D50.pal",
+    "replacement": "graphics/palettes/MAP99_A.KCL.pal",
+    "sha256": "e2863a103dcc6fe6fdf1ae7f084286b5453742956b78b924f9c560561f6f08c8",
+    "bytes": 115
+  },
+  {
+    "path": "graphics/tilesets/tileset_D4B650.pal",
+    "replacement": "graphics/palettes/ML_BG01.KCL.pal",
+    "sha256": "4bf69f7dec0459ab4531ab6b8de8d208ed8926f4e6007ad763d3edd12f384856",
+    "bytes": 172
+  },
+  {
+    "path": "graphics/tilemaps/tilemap_D4E030.pal",
+    "replacement": "graphics/palettes/MWA.KCL.pal",
+    "sha256": "86054a850895d3b5933cea9b7a3273bab488eb4dcb07a4955bfab82b8b8a8b3e",
+    "bytes": 174
+  },
+  {
+    "path": "graphics/tilesets/tileset_D4F540.pal",
+    "replacement": "graphics/palettes/NE01.TCL.pal",
+    "sha256": "29f4abdc1adf8ffca666d586321d51a9bae552fae503cdfa9c889cf768f6f8c1",
+    "bytes": 1681
+  },
+  {
+    "path": "graphics/tilemaps/tilemap_D51280.pal",
+    "replacement": "graphics/palettes/NE13.TCL.pal",
+    "sha256": "bb5be7a2081cd601008472e3e0a5a0e4106cba2efc67f313279520cf38c7d5c1",
+    "bytes": 1626
+  },
+  {
+    "path": "graphics/tilesets/tileset_D52EE0.pal",
+    "replacement": "graphics/palettes/NE21.TCL.pal",
+    "sha256": "ddd393902f5a23a56f390d6dc10606980e6b086b8de11b28cd512603c0bd32d1",
+    "bytes": 200
+  },
+  {
+    "path": "graphics/tilesets/tileset_D58E10.pal",
+    "replacement": "graphics/palettes/NE32.TCL.pal",
+    "sha256": "7031c27bfc03b4b2aa4148309f69b0732f228ba5fc5627b6a6b5c988d82767ce",
+    "bytes": 189
+  },
+  {
+    "path": "graphics/tilesets/tileset_D5CBF0.pal",
+    "replacement": "graphics/palettes/NE33.TCL.pal",
+    "sha256": "b0b1735e31a33fc46b153e33a98bf9b5aeb53f8c3f9c66619abf18163d6361d0",
+    "bytes": 1595
+  },
+  {
+    "path": "graphics/tilesets/tileset_D6EAB0.pal",
+    "replacement": "graphics/palettes/OP_01_A.KCL.pal",
+    "sha256": "867b224bad040a96d5f3b8a8b4a3b47b50262942d2bc91232f0711bafaf2bd6a",
+    "bytes": 192
+  },
+  {
+    "path": "graphics/tilesets/tileset_D736A0.pal",
+    "replacement": "graphics/palettes/OP_04_A.KCL.pal",
+    "sha256": "9a02aebd355fa85c3e48de7092221bac7291bfe62ca455137768d58d95773f8b",
+    "bytes": 196
+  },
+  {
+    "path": "graphics/tilesets/tileset_D77DA0.pal",
+    "replacement": "graphics/palettes/OP_05_A.KCL.pal",
+    "sha256": "522791e04a84038ca4d45b5d755469804bcf0d467b8a980d6a98bfe6b5d07fc9",
+    "bytes": 194
+  },
+  {
+    "path": "graphics/tilesets/tileset_D7CCB0.pal",
+    "replacement": "graphics/palettes/OP_06_A.KCL.pal",
+    "sha256": "8a4afc020e2582c9ac786d5e613f83f604d86220e8da5b2e03b31a23954c91c5",
+    "bytes": 202
+  },
+  {
+    "path": "graphics/tilesets/tileset_D81890.pal",
+    "replacement": "graphics/palettes/OP_07_A.KCL.pal",
+    "sha256": "03415f73bed63ab8e10f951e69c0ef9380129efec781652df265765be1e9efd3",
+    "bytes": 184
+  },
+  {
+    "path": "graphics/tilesets/tileset_D856B0.pal",
+    "replacement": "graphics/palettes/OP_08_A.KCL.pal",
+    "sha256": "6799f3473d2da6c78af3ab9aacf76a6e0d14e959f7aa0fd602046bf67d42248b",
+    "bytes": 186
+  },
+  {
+    "path": "graphics/tilesets/tileset_D89960.pal",
+    "replacement": "graphics/palettes/OP_09_A.KCL.pal",
+    "sha256": "d7464b8a3fc5e305dff4f15a284fee97879f71b6d17c2706557cdaedd63cca95",
+    "bytes": 194
+  },
+  {
+    "path": "graphics/sprites/sprite_D8EA80.pal",
+    "replacement": "graphics/palettes/OP_0A_A.KCL.pal",
+    "sha256": "750a7e69a04835bb19a8dcdd41691d74bbccfe7caf15717950c8988093fbb67b",
+    "bytes": 183
+  },
+  {
+    "path": "graphics/tilesets/tileset_D91C80.pal",
+    "replacement": "graphics/palettes/PS_BG01.KCL.pal",
+    "sha256": "41c7e3857b8836b3967e8335173c33a0fbd666d096e9bb366a9e0d4bac769a7b",
+    "bytes": 172
+  },
+  {
+    "path": "graphics/tilesets/tileset_D95B80.pal",
+    "replacement": "graphics/palettes/PV_BG01.KCL.pal",
+    "sha256": "0b9c4076cd81466dbec93291171fa9d03de07f85139f16d3ae190bd5c97192ca",
+    "bytes": 165
+  },
+  {
+    "path": "graphics/sprites/sprite_D98290.pal",
+    "replacement": "graphics/palettes/PV_BG11.KCL.pal",
+    "sha256": "89a32923942f0c2b3895bc1a57e13d22f155cc36df60c86ac08396b43d94472c",
+    "bytes": 171
+  },
+  {
+    "path": "graphics/sprites/sprite_D98FB0.pal",
+    "replacement": "graphics/palettes/PW_BG01.KCL.pal",
+    "sha256": "75e722be86b340ef29c4134f08cd7b5b0f5da0a7e07693a3b16715780a3015df",
+    "bytes": 183
+  },
+  {
+    "path": "graphics/tilesets/tileset_D9AEB0.pal",
+    "replacement": "graphics/palettes/PW_BOX.KCL.pal",
+    "sha256": "330065c46edd07c8e81847ec3e714332a11eed343a4db98a6b17b431cebe313a",
+    "bytes": 171
+  },
+  {
+    "path": "graphics/tilesets/tileset_D9CB00.pal",
+    "replacement": "graphics/palettes/SBA06.TCL.pal",
+    "sha256": "a912d76678a48b6ad7d40566af2ef79dbe88eaa0fb110d857c682aaf656d72e3",
+    "bytes": 180
+  },
+  {
+    "path": "graphics/sprites/sprite_DA2370.pal",
+    "replacement": "graphics/palettes/SK02.TCL.pal",
+    "sha256": "2f75d10ce84d5b759d592d915d7c08730af27a517270a0bba8ae42c6444172f3",
+    "bytes": 1542
+  },
+  {
+    "path": "graphics/sprites/sprite_DA39E0.pal",
+    "replacement": "graphics/palettes/SK03.TCL.pal",
+    "sha256": "2f75d10ce84d5b759d592d915d7c08730af27a517270a0bba8ae42c6444172f3",
+    "bytes": 1542
+  },
+  {
+    "path": "graphics/tilesets/tileset_DA5C50.pal",
+    "replacement": "graphics/palettes/SM_BG01.KCL.pal",
+    "sha256": "1114fb6f51b6c6c6dc5cddd1fa578a40502317d685103ae73067b9ff11a11b33",
+    "bytes": 177
+  },
+  {
+    "path": "graphics/sprites/sprite_DA8990.pal",
+    "replacement": "graphics/palettes/SM_BG12.KCL.pal",
+    "sha256": "ecdf542564bbf48261d35d2be1958a7db858465d8a88901aba3e3fad2c971074",
+    "bytes": 172
+  },
+  {
+    "path": "graphics/tilesets/tileset_DAA4B0.pal",
+    "replacement": "graphics/palettes/SN06.TCL.pal",
+    "sha256": "d135d85537f1a72505cb26a86f9a3d4fa06d7a22cb13dae87300d7dac345f363",
+    "bytes": 207
+  },
+  {
+    "path": "graphics/tilesets/tileset_DABC40.pal",
+    "replacement": "graphics/palettes/SN07.TCL.pal",
+    "sha256": "9495b33a9dd52f2382e6f210cdcffdc0dc3fcae23f00379ff8df9560893ae5e7",
+    "bytes": 199
+  },
+  {
+    "path": "graphics/tilesets/tileset_DB33A0.pal",
+    "replacement": "graphics/palettes/SP_BG01.KCL.pal",
+    "sha256": "22714129d23661528ebbac87d68120b46c293709a3f60524f1fa7df925e4acc7",
+    "bytes": 170
+  },
+  {
+    "path": "graphics/tilesets/tileset_DB6060.pal",
+    "replacement": "graphics/palettes/SP_BG11.KCL.pal",
+    "sha256": "de5a119c274bc6ec4c3d100c6ad0a7a42cb75d591430c08981775f1d03c5cc48",
+    "bytes": 168
+  },
+  {
+    "path": "graphics/sprites/sprite_DB92B0.pal",
+    "replacement": "graphics/palettes/SP_BG12.KCL.pal",
+    "sha256": "676122bf7949e0c5340da6196f4da5b29b034b6aac7dfdb8a5d2f0c3ec95928f",
+    "bytes": 189
+  },
+  {
+    "path": "graphics/tilesets/tileset_DBA620.pal",
+    "replacement": "graphics/palettes/SP_BG21.KCL.pal",
+    "sha256": "22714129d23661528ebbac87d68120b46c293709a3f60524f1fa7df925e4acc7",
+    "bytes": 170
+  },
+  {
+    "path": "graphics/tilesets/tileset_DBD240.pal",
+    "replacement": "graphics/palettes/SP_BG22.KCL.pal",
+    "sha256": "de5a119c274bc6ec4c3d100c6ad0a7a42cb75d591430c08981775f1d03c5cc48",
+    "bytes": 168
+  },
+  {
+    "path": "graphics/tilesets/tileset_DC8210.pal",
+    "replacement": "graphics/palettes/SSN07.TCL.pal",
+    "sha256": "74cdf193d55235036c767e4c514fc4f4a834451110e6bea516797f6898532962",
+    "bytes": 198
+  },
+  {
+    "path": "graphics/sprites/sprite_DCF020.pal",
+    "replacement": "graphics/palettes/ST_BG01.KCL.pal",
+    "sha256": "d9fd03afd236970f7e52b55e07c21d8ba80f1187b7c4e25c5459e5d860759e2f",
+    "bytes": 172
+  },
+  {
+    "path": "graphics/sprites/sprite_DD0C80.pal",
+    "replacement": "graphics/palettes/ST_BG02.KCL.pal",
+    "sha256": "d9fd03afd236970f7e52b55e07c21d8ba80f1187b7c4e25c5459e5d860759e2f",
+    "bytes": 172
+  },
+  {
+    "path": "graphics/sprites/sprite_DD25F0.pal",
+    "replacement": "graphics/palettes/ST_BG03.KCL.pal",
+    "sha256": "d9fd03afd236970f7e52b55e07c21d8ba80f1187b7c4e25c5459e5d860759e2f",
+    "bytes": 172
+  },
+  {
+    "path": "graphics/tilesets/tileset_DD3F10.pal",
+    "replacement": "graphics/palettes/ST_BG11.KCL.pal",
+    "sha256": "f4770f8c53981f9a6c60482a438e1a9943e9d6aab1b0a7fe61fbce41d2d0b405",
+    "bytes": 163
+  },
+  {
+    "path": "graphics/sprites/sprite_F19AA0.pal",
+    "replacement": "graphics/palettes/T_C01.KCL.pal",
+    "sha256": "590c932ab3bef99c1d0cb19f49a5b437bccb947cfa62ed8ed913d521354c6cb9",
+    "bytes": 184
+  },
+  {
+    "path": "graphics/sprites/sprite_F1ABE0.pal",
+    "replacement": "graphics/palettes/T_C02.KCL.pal",
+    "sha256": "db343391e13ed6a1145ff716608b3a2b71daa964061ee57f037a958fcd01107d",
+    "bytes": 188
+  },
+  {
+    "path": "graphics/tilesets/tileset_F1B910.pal",
+    "replacement": "graphics/palettes/T_ML_BG.KCL.pal",
+    "sha256": "a5abd2d28b001da6682267a630bfc85e2ebed25878764ba66adab490fa08342d",
+    "bytes": 151
+  },
+  {
+    "path": "graphics/tilesets/tileset_F1EF50.pal",
+    "replacement": "graphics/palettes/T_TTL06.KCL.pal",
+    "sha256": "bef18e3b4c66350ceebc4f17e41fd56aa795f0625410f5b740a1663f09a58178",
+    "bytes": 185
+  },
+  {
+    "path": "graphics/tilesets/tileset_F23E20.pal",
+    "replacement": "graphics/palettes/WM_BG01.KCL.pal",
+    "sha256": "a96b45f53293866b91317573131a9551d8e26750ed2a8ed4d802ac767bfc11dc",
+    "bytes": 175
+  },
+  {
+    "path": "graphics/sprites/sprite_F26550.pal",
+    "replacement": "graphics/palettes/WM_BG02.KCL.pal",
+    "sha256": "a36a7d8162eff3e7f7b21f2b588f9c29e5b1de844b887c590f54e4ef1195280d",
+    "bytes": 176
+  }
+]

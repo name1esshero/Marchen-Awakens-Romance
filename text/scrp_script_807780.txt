@@ -1,0 +1,86 @@
+// Legacy reference view of G_EV050.SPC; edit text/nfp/G_EV050.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@00016D MAP11_2.SPC  // LITERAL: MAP11_2.SPC (usage not inferred)
+@000255 B  // LITERAL: B (usage not inferred)
+@0002F8 A  // LITERAL: A (usage not inferred)
+@000384 A  // LITERAL: A (usage not inferred)
+@000410 A  // LITERAL: A (usage not inferred)
+@00049C A  // LITERAL: A (usage not inferred)
+@00056C A  // LITERAL: A (usage not inferred)
+@000854 F08A02  // LITERAL: F08A02 (usage not inferred)
+@000954  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000971  C0F04 なるほどなぁ…それで  // TODO: English translation
+@000998 ドロシーちゃんプンプンなんや  // TODO: English translation
+@000A30 F09A04  // LITERAL: F09A04 (usage not inferred)
+@000B9C  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000BBB  C0F04 …ふん！  // TODO: English translation
+@000CB2 F08A06  // LITERAL: F08A06 (usage not inferred)
+@000DC8 F08A06  // LITERAL: F08A06 (usage not inferred)
+@000EDE F08A06  // LITERAL: F08A06 (usage not inferred)
+@000F78  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000F95  C0F04 わははは  // TODO: English translation
+@000FB0 ま、それはともかく…  // TODO: English translation
+@000FFE F08A02  // LITERAL: F08A02 (usage not inferred)
+@00102C  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001049  C0F04 なんや、とうぞくダマシイを  // TODO: English translation
+@0010CC F01B09  // LITERAL: F01B09 (usage not inferred)
+@0011A5  C0D04 ［ギンタ］  // EN: [Ginta]
+@0011C2  C0F04 でっかい『うで』と  // TODO: English translation
+@0011E7 たたかったんだ！  // TODO: English translation
+@00129D F02A02  // LITERAL: F02A02 (usage not inferred)
+@001376  C0D04 ［バッボ］  // EN: [Babbo]
+@001393  C0F04 ま、ワシらの前では  // TODO: English translation
+@0013B8 オモチャのようだったがな！  // TODO: English translation
+@001478 F38A01  // LITERAL: F38A01 (usage not inferred)
+@001578  C0D04 ［マール］  // EN: [Marl]
+@001595  C0F04 おそらく…次は『あし』の封印を  // TODO: English translation
+@0015C6 とくことになると思います  // TODO: English translation
+@001618 F08A05  // LITERAL: F08A05 (usage not inferred)
+@001646  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001663  C0F04 ワイもいっしょに行ってエエ？  // TODO: English translation
+@001692 ギンタやないけど…  // TODO: English translation
+@00174A F08A06  // LITERAL: F08A06 (usage not inferred)
+@0017E4  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001801  C0F04 なんかワクワクするで！  // TODO: English translation
+@001864 F01B01  // LITERAL: F01B01 (usage not inferred)
+@001892  C0D04 ［ギンタ］  // EN: [Ginta]
+@0018AF  C0F04 おう！  // EN: Yeah!
+@0018C8 いっしょに行こうよ！！  // TODO: English translation
+@001918 F08A02  // LITERAL: F08A02 (usage not inferred)
+@001946  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001963  C0F04 というわけでよろしくな！  // EN: So, I'm counting on you!
+@00198E マール！！  // EN: Marl!!
+@0019D2 F38A04  // LITERAL: F38A04 (usage not inferred)
+@001A00  C0D04 ［マール］  // EN: [Marl]
+@001A1D  C0F04 はい！  // EN: Yes!
+@001A36 とっても心づよいです！！  // TODO: English translation
+@001E11 F04A01  // LITERAL: F04A01 (usage not inferred)
+@001EEA  C0D04 ［スノウ］  // EN: [Snow]
+@001F07  C0F04 あ、あのう…  // TODO: English translation
+@001F26 ドロシー…？？  // TODO: English translation
+@001F6E F09A03  // LITERAL: F09A03 (usage not inferred)
+@00206E  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00208D  C0F04 …  // TODO: English translation
+@0020DC F04A06  // LITERAL: F04A06 (usage not inferred)
+@00210A  C0D04 ［スノウ］  // EN: [Snow]
+@002127  C0F04 …  // TODO: English translation
+@002166  C0D04 ［ドロシー］  // EN: [Dorothy]
+@002185  C0F04 …  // TODO: English translation
+@0021C4  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0021E3  C0F04 …  // TODO: English translation
+@002268 F09A04  // LITERAL: F09A04 (usage not inferred)
+@0022CC  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0022EB  C0F04 ふん！  // TODO: English translation
+@002821 F04A06  // LITERAL: F04A06 (usage not inferred)
+@0028FA  C0D04 ［スノウ］  // EN: [Snow]
+@002917  C0F04 わ、わたしのせいなのかな…  // TODO: English translation
+@00297E F03A01  // LITERAL: F03A01 (usage not inferred)
+@002A57  C0D04 ［ジャック］  // EN: [Jack]
+@002A76  C0F04 ちがうと思うっス…  // TODO: English translation
+@002AD5 F03A01  // LITERAL: F03A01 (usage not inferred)
+@002B03  C0D04 ［ジャック］  // EN: [Jack]
+@002B22  C0F04 今はほうっておくっスよ…  // TODO: English translation
+@003599 ダンジョンモードに  // EN: Into Dungeon Mode...
+@0035B7  C0904 練磨（れんま）の門 C0F04 が追加されました  // TODO: English translation

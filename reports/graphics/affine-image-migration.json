@@ -1,0 +1,42 @@
+[
+  {
+    "name": "NE01.TCG",
+    "old_path": "graphics/tilesets/NE01.TCG",
+    "new_path": "graphics/backgrounds/NE01.TCG",
+    "frames": 1,
+    "width": 128,
+    "height": 128
+  },
+  {
+    "name": "NE13.TCG",
+    "old_path": "graphics/tilesets/NE13.TCG",
+    "new_path": "graphics/backgrounds/NE13.TCG",
+    "frames": 3,
+    "width": 128,
+    "height": 128
+  },
+  {
+    "name": "NE33.TCG",
+    "old_path": "graphics/tilesets/NE33.TCG",
+    "new_path": "graphics/backgrounds/NE33.TCG",
+    "frames": 3,
+    "width": 128,
+    "height": 128
+  },
+  {
+    "name": "SK02.TCG",
+    "old_path": "graphics/tilesets/SK02.TCG",
+    "new_path": "graphics/backgrounds/SK02.TCG",
+    "frames": 4,
+    "width": 128,
+    "height": 128
+  },
+  {
+    "name": "SK03.TCG",
+    "old_path": "graphics/tilesets/SK03.TCG",
+    "new_path": "graphics/backgrounds/SK03.TCG",
+    "frames": 4,
+    "width": 256,
+    "height": 256
+  }
+]

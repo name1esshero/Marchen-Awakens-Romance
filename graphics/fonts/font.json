@@ -1,0 +1,14 @@
+{
+  "name": "FONT.NFT",
+  "rom_offset": 8104336,
+  "directory_offset": 1842304,
+  "end": 8168304,
+  "size_with_padding": 63968,
+  "width": 8,
+  "height": 8,
+  "bpp": 1,
+  "count": 7984,
+  "palette_offset": 64,
+  "glyph_offset": 96,
+  "stride": 8
+}

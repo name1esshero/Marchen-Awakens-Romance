@@ -1,0 +1,127 @@
+// MAR script block 5A0000
+// One record per line: @<rom offset> <text>
+// <XX> is a raw control byte. Text is re-encoded to Shift-JIS at build time;
+// a line may not grow past its original byte length.
+// Anything after // is a comment and never reaches the ROM.
+
+@5A002A バッボ７  // babbo?
+@5A003E バッボ８  // babbo?
+@5A0052 バッボ９  // babbo?
+@5A024C バッボ１０  // babbo??
+@5A0262 バッボ１１  // babbo??
+@5A0278 バッボ１２  // babbo??
+@5A040C バッボ１３  // babbo??
+@5A0422 バッボ１４  // babbo??
+@5A067E ジャック１  // jakku?
+@5A0694 ジャック２  // jakku?
+@5A06AA ジャック３  // jakku?
+@5A08A6 ジャック４  // jakku?
+@5A08BC ジャック５  // jakku?
+@5A08D2 ジャック６  // jakku?
+@5A0A66 ジャック７  // jakku?
+@5A0A7C ジャック８  // jakku?
+@5A0B84 ジャック鳥１  // EN: Jack (bird) 1
+@5A0E42 スノウ１  // sunou?
+@5A0E56 スノウ２  // sunou?
+@5A0E6A スノウ３  // sunou?
+@5A1064 スノウ４  // sunou?
+@5A1078 スノウ５  // sunou?
+@5A108C スノウ６  // sunou?
+@5A1286 スノウ７  // sunou?
+@5A129A スノウ８  // sunou?
+@5A12AE スノウ９  // sunou?
+@5A14A8 エド１  // edo?
+@5A14BA エド２  // edo?
+@5A14CC エド３  // edo?
+@5A165C エド４  // edo?
+@5A166E エド５  // edo?
+@5A18C6 アラン１  // aran?
+@5A18DA アラン２  // aran?
+@5A18EE アラン３  // aran?
+@5A1AE8 アラン４  // aran?
+@5A1AFC アラン５  // aran?
+@5A1B10 アラン６  // aran?
+@5A1D0A アルヴィス１  // aru?isu?
+@5A1D22 アルヴィス２  // aru?isu?
+@5A1D3A アルヴィス３  // aru?isu?
+@5A1F38 アルヴィス４  // aru?isu?
+@5A1F50 アルヴィス５  // aru?isu?
+@5A1F68 アルヴィス６  // aru?isu?
+@5A2166 ナナシ１  // nanashi?
+@5A217A ナナシ２  // nanashi?
+@5A218E ナナシ３  // nanashi?
+@5A2388 ナナシ４  // nanashi?
+@5A239C ナナシ５  // nanashi?
+@5A23B0 ナナシ６  // nanashi?
+@5A25AA ドロシー１  // doroshi-?
+@5A25C0 ドロシー２  // doroshi-?
+@5A25D6 ドロシー３  // doroshi-?
+@5A27D2 ドロシー４  // doroshi-?
+@5A27E8 ドロシー５  // doroshi-?
+@5A27FE ドロシー６  // doroshi-?
+@5A292A ドロシー７  // doroshi-?
+@5A2BE6 ルーガ１  // ru-ga?
+@5A2BFA ルーガ２  // ru-ga?
+@5A2C0E ルーガ３  // ru-ga?
+@5A2D38 ルーガ４  // ru-ga?
+@5A2FF2 ガルー１  // garu-?
+@5A3006 ガルー２  // garu-?
+@5A301A ガルー３  // garu-?
+@5A3144 ガルー４  // garu-?
+@5A33FE イアン１  // ian?
+@5A3412 イアン２  // ian?
+@5A3426 イアン３  // ian?
+@5A3550 イアン４  // ian?
+@5A371E ギド１  // gido?
+@5A3730 ギド２  // gido?
+@5A3742 ギド３  // gido?
+@5A398E オルコ１  // oruko?
+@5A39A2 オルコ２  // oruko?
+@5A39B6 オルコ３  // oruko?
+@5A3BB0 ギロム１  // giromu?
+@5A3BC4 ギロム２  // giromu?
+@5A3BD8 ギロム３  // giromu?
+@5A3DD2 ファントム１  // fuantomu?
+@5A3DEA ファントム２  // fuantomu?
+@5A3E02 ファントム３  // fuantomu?
+@5A3F98 ファントム４  // fuantomu?
+@5A3FB0 ファントム５  // fuantomu?
+@5A4122 ハロウィン１  // harouin?
+@5A413A ハロウィン２  // harouin?
+@5A42AC ペタ１  // peta?
+@5A42BE ペタ２  // peta?
+@5A442A ロコ１  // roko?
+@5A443C ロコ２  // roko?
+@5A45A8 メリロ１  // meriro?
+@5A45BC ブモル１  // bumoru?
+@5A472A ベル１  // beru?
+@5A473C ベル２  // beru?
+@5A4994 ジャックの母１  // EN: Jack's mother 1
+@5A49AE ジャックの母２  // EN: Jack's mother 2
+@5A49C8 ジャックの母３  // EN: Jack's mother 3
+@5A519A ブリキン１  // burikin?
+@5A51B0 リングアーマー１  // ringua-ma-?
+@5A5412 マール１  // ma-ru?
+@5A5426 マール２  // ma-ru?
+@5A543A マール３  // ma-ru?
+@5A5634 マール４  // ma-ru?
+@5A5648 マール５  // ma-ru?
+@5A565C ベリーニ１  // beri-ni?
+@5A6400 からっぽだ！  // EN: It's empty!
+@5A65AD これ以上アイテムを持てません  // EN: You can't carry any more items.
+@5A68C3 手に入れた！  // EN: Obtained it!
+@5A6C1E 手に入れた！  // EN: Obtained it!
+@5ACAF2 ダンジョンクリア！！  // danjonkuria!!
+@5ACED7 ダンジョンモードに  // EN: Into Dungeon Mode...
+@5AD0B5 ファントムを  // fuantomuwo
+@5AD0CD 使えるようになりました  // EN: You can now use it.
+@5AD15F ファントムをえらべます  // fuantomuwoerabemasu
+@5AD76A  C0F04 ドッチをむいてもいいお天気ですな  // EN: Lovely weather whichever way you look, eh?
+@5AD7E2  C0F04 ことりがおとしていったものですが  // EN: A little bird dropped this...
+@5AD815 よろしければお使いください  // EN: Please use it if you'd like.
+@5AD901 もらった！  // EN: Received it!
+@5ADBA9  C0F04 ドウキがするほどいいお天気ですな  // EN: Such lovely weather, it makes my heart flutter.
+@5ADC21  C0F04 ことりがおとしていったものですが  // EN: A little bird dropped this...
+@5ADC54 よろしければお使いください  // EN: Please use it if you'd like.
+@5ADD44 もらった！  // EN: Received it!
+@5ADFAB  C0F04 ドコまでもいいお天気ですな  // EN: Lovely weather as far as the eye can see, eh?

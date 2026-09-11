@@ -1,0 +1,6 @@
+// Legacy reference view of MAP01_2A.SPC; edit text/nfp/MAP01_2A.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000034 MAP01_2A  // LITERAL: MAP01_2A (usage not inferred)
+@000095 EV_BIN02.SPC  // LITERAL: EV_BIN02.SPC (usage not inferred)

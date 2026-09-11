@@ -1,0 +1,15 @@
+// Legacy reference view of CH_M00A.SPC; edit text/nfp/CH_M00A.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000140 G_VS_R.SPC  // LITERAL: G_VS_R.SPC (usage not inferred)
+@00019C D_VS_R.SPC  // LITERAL: D_VS_R.SPC (usage not inferred)
+@0001D3 F30A01  // LITERAL: F30A01 (usage not inferred)
+@000294  C0D04 ［親岩］  // EN: [Parent Rock]
+@0002AF  C0F04 何かごようがおありですかな  // TODO: English translation
+@0003A7 EV_RT02.SPC  // LITERAL: EV_RT02.SPC (usage not inferred)
+@0004D9 F30A01  // LITERAL: F30A01 (usage not inferred)
+@00059A  C0D04 ［親岩］  // EN: [Parent Rock]
+@0005B5  C0F04 この先、北のほうに小川があるので  // TODO: English translation
+@0005E8 水をくんできてくれませんか？  // TODO: English translation
+@0006AA EV_RT01.SPC  // LITERAL: EV_RT01.SPC (usage not inferred)

@@ -1,0 +1,15 @@
+// Legacy reference view of G_EV052.SPC; edit text/nfp/G_EV052.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@00020F F01B01  // LITERAL: F01B01 (usage not inferred)
+@00031F F09A02  // LITERAL: F09A02 (usage not inferred)
+@000450 F09A04  // LITERAL: F09A04 (usage not inferred)
+@0004B4  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0004D3  C0F04 …ぷい！  // TODO: English translation
+@000528 F01B04  // LITERAL: F01B04 (usage not inferred)
+@000556  C0D04 ［ギンタ］  // EN: [Ginta]
+@000573  C0F04 （まだおこってる…）  // TODO: English translation
+@00060A F03A03  // LITERAL: F03A03 (usage not inferred)
+@00073A  C0D04 ［ジャック］  // EN: [Jack]
+@000759  C0F04 （ねにもつタイプみたいっス…）  // TODO: English translation

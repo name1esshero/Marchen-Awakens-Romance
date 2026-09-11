@@ -1,0 +1,16 @@
+// Legacy reference view of MAP26_5A.SPC; edit text/nfp/MAP26_5A.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000006 MAP26_5A  // LITERAL: MAP26_5A (usage not inferred)
+@0000B6 MAP00_O  // LITERAL: MAP00_O (usage not inferred)
+@00021D MAP00_O  // LITERAL: MAP00_O (usage not inferred)
+@000362 MAP00_O  // LITERAL: MAP00_O (usage not inferred)
+@0004E9 MAP00_O  // LITERAL: MAP00_O (usage not inferred)
+@00064B TAKARA  // LITERAL: TAKARA (usage not inferred)
+@000813 TAKARA  // LITERAL: TAKARA (usage not inferred)
+@0009DB TAKARA  // LITERAL: TAKARA (usage not inferred)
+@000BA3 TAKARA  // LITERAL: TAKARA (usage not inferred)
+@000D6B TAKARA  // LITERAL: TAKARA (usage not inferred)
+@000F58 MAP00_O  // LITERAL: MAP00_O (usage not inferred)
+@0010BE MAP00_O  // LITERAL: MAP00_O (usage not inferred)

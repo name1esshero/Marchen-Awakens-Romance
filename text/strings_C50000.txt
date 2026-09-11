@@ -1,0 +1,77 @@
+// MAR strings block C50000
+// One record per line: @<rom offset> <text>
+// <XX> is a raw control byte. Text is re-encoded to Shift-JIS at build time;
+// a line may not grow past its original byte length.
+// Anything after // is a comment and never reaches the ROM.
+
+@C5083C X<02>Y<02>
+@C509BC Y<02>Y<02>
+@C51526 X<02>Y<02>
+@C516A6 Y<02>Y<02>
+@C5190C X<02>Y<02>
+@C51A8C Y<02>Y<02>
+@C52C34 X<02>Y<02>
+@C52DB4 Y<02>Y<02>
+@C54826 X<02>Y<02>
+@C549A6 Y<02>Y<02>
+@C56C2E X<02>Y<02>
+@C56DAE Y<02>Y<02>
+@C5B03C MAP26_1A.KCG
+@C5B07C MAP26_1A.KCL
+@C5B0F8 !P!P!P!P!P!P!P!P!P!P!P!P!P`
+@C5B1CE !P!P <11>!<11>"<11>#<11>!P!P`
+@C5B2F4 !P!P"P#P$P%P&P'P(P)P*P+P,P`
+@C5B3C6 !P!P@<11>A<11>B<11>C<11>!P!P`
+@C5B458 !P!P <11>!<11>"<11>#<11>!P!P`
+@C5B4EC !PAPBPCPDPEPFPGPHPIPJPKPLP`
+@C5B50E !P!P`<12>a<12>b<12>c<12>!P!P`
+@C5B5BE !P!P`<11>a<11>b<11>c<11>!P!P`
+@C5B650 !P!P@<11>A<11>B<11>C<11>!P!P`
+@C5B6E4 `PaPbPcPdPePfPgPhPiPjPkPlP`
+@C5B7E2 !P!P <11>!<11>"<11>#<11>!P!P`
+@C5B7F4  3!3"<03>#3$3%<03>&3!P`
+@C5B848 !P!P`<11>a<11>b<11>c<11>!P!P`
+@C5B880 !P!P <11>!<11>"<11>#<11>!P!P`
+@C5B9DA !P!P@<11>A<11>B<11>C<11>!P!P`
+@C5B9EC @3A<03>B<03>C#D#E3F3!P`
+@C5BA78 !P!P@<11>A<11>B<11>C<11>!P!P`
+@C5BBD2 !P!P`<11>a<11>b<11>c<11>!P!P`
+@C5BBE4 `3a#b#c#d#e<03>f<03>g3`
+@C5BC18 !P!P <12>!<12>"<12>#<12>!P!P`
+@C5BC70 !P!P`<11>a<11>b<11>c<11>!P!P`
+@C5BE10 !P!P@<12>A<12>B<12>C<12>!P!P`
+@C5C004 !P!P!P!P`<12>a<12>b<12>c<12>!P!P!P`
+@C5C0A0 !P <11>!<11>"<11>#<11>!P!P`
+@C5C18E !P!P <12>!<12>"<12>#<12>!P!P`
+@C5C1E0 !P!P!P!P!P!P!P!P!P`
+@C5C200 !P!Ph<13>i<13>j<13>k<13>!P!P`
+@C5C386 !P!P@<12>A<12>B<12>C<12>!P!P`
+@C5C3D8 "<03>#3$3%<03>!P!P!P!P!P`
+@C5C430  3!3"<03>#3$3%<03>&3!P`
+@C5C57E !P!P`<12>a<12>b<12>c<12>!P!P`
+@C5C628 @3A<03>B<03>C#D#E3F3!P`
+@C5C776 !P!Ph<13>i<13>j<13>k<13>!P!P`
+@C5C820 `3a#b#c#d#e<03>f<03>g3`
+@C5CA2A W<02>X<02>Y<02>Z<02>[<02>`
+@C5CB7C W<02>X<02>Y<02>Z<02>[<02>`
+@C5CC22 w<02>x<02>y"z<02>{<02>`
+@C5CD74 w<02>x<02>y"z<02>{<02>!X!P!P`
+@C5E1E6 !P!P`<11>a<11>b<11>c<11>!P!P`
+@C5EBFC !P!P!P!P!P!P`
+@C5EDB6 !P!P <12>!<12>"<12>#<12>!P!P`
+@C5EDF4 !P!P!P!P!P!P`
+@C5EF18 !P!P-<08>j"k<12>n<12>o<12>p<12>m<12>n<12>o<12>p<12>q<12>r<12>s<12>t<12>u"v2!P`
+@C5EF42 !P!PQ7P<07>!P!P!PP<07>!P!PQ7P<07>!P!P!P`
+@C5EFAE !P!P@<12>A<12>B<12>C<12>!P!P`
+@C5EFEC !P!P!P!P!P!P`
+@C5EFFA !P!P 4\A]A^A_AzA{A 0!P!P!P@<12>A<12>B<12>C<12>!P!P`
+@C5F13A !P!P <11>!<11>"<11>#<11>!P!P!P!P!P!P!P!P!P`
+@C5F1A6 !P!P`<12>a<12>b<12>c<12>!P!P`
+@C5F1E4 !P!P!P!P!P!P`
+@C5F39E !P!Ph<13>i<13>j<13>k<13>!P!P`
+@C5F3DC !P!P!P!P!P!P!P<0D>0<0E>
+@C5F5D4 !P!P!P!P!P!P!P-
+@C5FCF0 !P!P!PP<03>Q3!P!P!P!P!P!P`
+@C5FDAC  3!3"<03>#3$3%<03>&3!P!P!P`
+@C5FEEC W<02>X<02>Y<02>Z<02>[<02>`
+@C5FFA4 @3A<03>B<03>C#D#E3F3!P!P!P`

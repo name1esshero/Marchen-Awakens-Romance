@@ -1,0 +1,17 @@
+// SP_M00.SPC: ROM DC02F0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00011B F01A01  // LITERAL: F01A01 (usage not inferred)
+@0001DC  C0D04 ［ギンタ］  // EN: [Ginta]
+@0001F9  C0F04 いくぞ！　バッボ！！  // EN: Let's go, Babbo!!
+@000254 F02A12  // LITERAL: F02A12 (usage not inferred)
+@000315  C0D04 ［バッボ］  // EN: [Babbo]
+@000332  C0F04 え？　ワシ！？  // TODO: English translation
+@00045E TEST_E02  // LITERAL: TEST_E02 (usage not inferred)
+@000679 F01A11  // LITERAL: F01A11 (usage not inferred)
+@000779  C0D04 ［ギンタ］  // EN: [Ginta]
+@000796  C0F04 でっかい岩だなー  // TODO: English translation
+@0008A6 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
+@000A65  C0D04 ４８Ｐ C0F04 が入っていた！  // TODO: English translation
+@000BC7 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)

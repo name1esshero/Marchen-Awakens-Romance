@@ -1,0 +1,7 @@
+// D4_ENEMY.SPC: ROM 58F590
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@0047EB PHANTOM.SPC  // LITERAL: PHANTOM.SPC (usage not inferred)
+@0049B1 BTI_PSET.SPC  // LITERAL: BTI_PSET.SPC (usage not inferred)
+@004A27 ENE_SET.SPC  // LITERAL: ENE_SET.SPC (usage not inferred)

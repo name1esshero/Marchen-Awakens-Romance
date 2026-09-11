@@ -1,0 +1,25 @@
+// G_EV031.SPC: ROM 804A40
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@0000F2 A  // LITERAL: A (usage not inferred)
+@0001F3 57A00  // LITERAL: 57A00 (usage not inferred)
+@00026E MAP27_A  // LITERAL: MAP27_A (usage not inferred)
+@000442 F01B11  // LITERAL: F01B11 (usage not inferred)
+@00051B  C0D04 ［ギンタ］  // EN: [Ginta]
+@000538  C0F04 …うん？  // TODO: English translation
+@00069B ARM_UT20  // LITERAL: ARM_UT20 (usage not inferred)
+@000F10 F04A03  // LITERAL: F04A03 (usage not inferred)
+@000FE9  C0D04 ［スノウ］  // EN: [Snow]
+@001006  C0F04 きゃーーーーー！！  // TODO: English translation
+@001065 F05A04  // LITERAL: F05A04 (usage not inferred)
+@00113E  C0D04 ［エド］  // EN: [Ed]
+@001159  C0F04 ひめさまぁ〜〜！！  // TODO: English translation
+@001224 F03A07  // LITERAL: F03A07 (usage not inferred)
+@0012FD  C0D04 ［ジャック］  // EN: [Jack]
+@00131C  C0F04 うわ！うわ！うわーー！！  // TODO: English translation
+@0013B7 F02A05  // LITERAL: F02A05 (usage not inferred)
+@001490  C0D04 ［バッボ］  // EN: [Babbo]
+@0014AD  C0F04 紳士（しんし）はこういうときこそ  // TODO: English translation
+@0014E0 おちついて…！！  // TODO: English translation
+@001623 G_EV003.SPC  // LITERAL: G_EV003.SPC (usage not inferred)

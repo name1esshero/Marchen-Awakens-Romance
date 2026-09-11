@@ -1,0 +1,34 @@
+// MAR strings block 1D0000
+// One record per line: @<rom offset> <text>
+// <XX> is a raw control byte. Text is re-encoded to Shift-JIS at build time;
+// a line may not grow past its original byte length.
+// Anything after // is a comment and never reaches the ROM.
+
+@1D368C AD0_P_0A.KCG
+@1D36CC AD0_P_0A.KCL
+@1D740C AD0_P_0A.KCG
+@1D744C AD0_P_0A.KCL
+@1D7575 @<17> <18><10><19>0<1A><10><1B>
+@1D9416 -<01>/<01>
+@1D9452 -<01>/<01>
+@1D948E -<01>/<01>
+@1D94CA -<01>/<01>
+@1D9506 -<01>/<01>
+@1DA1CC AD0_P_0A.KCG
+@1DA20C AD0_P_0A.KCL
+@1DA6F5 @<17> <18><10><19>0<1A><10><1B>
+@1DC596 -<01>/<01>
+@1DC5D2 -<01>/<01>
+@1DC60E -<01>/<01>
+@1DC64A -<01>/<01>
+@1DC686 -<01>/<01>
+@1DCF8C AD0_P_0A.KCG
+@1DCFCC AD0_P_0A.KCL
+@1DD875 @<17> <18><10><19>0<1A><10><1B>
+@1DF716 -<01>/<01>
+@1DF752 -<01>/<01>
+@1DF78E -<01>/<01>
+@1DF7CA -<01>/<01>
+@1DF806 -<01>/<01>
+@1DFD4C AD0_P_0A.KCG
+@1DFD8C AD0_P_0A.KCL

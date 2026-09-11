@@ -1,0 +1,50 @@
+// Legacy reference view of EV_T2KIL.SPC; edit text/nfp/EV_T2KIL.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@00007B MAP25_5A  // LITERAL: MAP25_5A (usage not inferred)
+@0001E0 B  // LITERAL: B (usage not inferred)
+@0002B4 A  // LITERAL: A (usage not inferred)
+@000388 TAKARA  // LITERAL: TAKARA (usage not inferred)
+@000671 F09A01  // LITERAL: F09A01 (usage not inferred)
+@000771  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000790  C0F04 どうよ！？  // TODO: English translation
+@0007E7 F01B09  // LITERAL: F01B09 (usage not inferred)
+@0008E7  C0D04 ［ギンタ］  // EN: [Ginta]
+@000904  C0F04 やったぁ！！  // TODO: English translation
+@000993 F09A07  // LITERAL: F09A07 (usage not inferred)
+@0009F7  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000A16  C0F04 どれどれ？  // TODO: English translation
+@000D9C F38A04  // LITERAL: F38A04 (usage not inferred)
+@000E9C  C0D04 ［マール］  // EN: [Marl]
+@000EB9  C0F04 ありがとうございました！  // TODO: English translation
+@0010BC F09A01  // LITERAL: F09A01 (usage not inferred)
+@0011E3  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001202  C0F04 え、えええと…  // TODO: English translation
+@00124D  C0D04 ［マール］  // EN: [Marl]
+@00126A  C0F04 …  // TODO: English translation
+@0012B9 F38A03  // LITERAL: F38A03 (usage not inferred)
+@0012E7  C0D04 ［マール］  // EN: [Marl]
+@00139B F09A02  // LITERAL: F09A02 (usage not inferred)
+@0013FF  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00141E  C0F04 …！！  // EN: ...!!
+@001471 F38A01  // LITERAL: F38A01 (usage not inferred)
+@00149F  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0014BE  C0F04 （こいつ…今…  // TODO: English translation
+@0014DF 　なんだろう、このイヤなかんじの魔力…）  // TODO: English translation
+@001577 F01B01  // LITERAL: F01B01 (usage not inferred)
+@001677  C0D04 ［ギンタ］  // EN: [Ginta]
+@001694  C0F04 これでふたつそろった！  // TODO: English translation
+@0016BD もうひとつのとびらもあいているよな！  // TODO: English translation
+@001751 F38A02  // LITERAL: F38A02 (usage not inferred)
+@0017B5  C0D04 ［マール］  // EN: [Marl]
+@0017D2  C0F04 はい！  // EN: Yes!
+@0017EB のこりのパーツはあたまです！！  // TODO: English translation
+@001879 F01B01  // LITERAL: F01B01 (usage not inferred)
+@0018DD  C0D04 ［ギンタ］  // EN: [Ginta]
+@0018FA  C0F04 よし！ドロシー！  // TODO: English translation
+@00191D いったんもどろう！  // TODO: English translation
+@00199F F09A07  // LITERAL: F09A07 (usage not inferred)
+@001A9F  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001ABE  C0F04 え、ええ…  // TODO: English translation
+@00209C G_EV061.SPC  // LITERAL: G_EV061.SPC (usage not inferred)

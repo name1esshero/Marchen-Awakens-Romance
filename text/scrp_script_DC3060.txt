@@ -1,0 +1,6 @@
+// Legacy reference view of SP_M24.SPC; edit text/nfp/SP_M24.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@0000EC  C0D04   // TODO: English translation
+@0000FF  C0F04 　　　　　　閉まっている  // TODO: English translation

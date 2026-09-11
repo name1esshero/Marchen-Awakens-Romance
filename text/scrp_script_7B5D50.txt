@@ -1,0 +1,143 @@
+// Legacy reference view of EV_T3KIL.SPC; edit text/nfp/EV_T3KIL.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@00007B MAP26_2A  // LITERAL: MAP26_2A (usage not inferred)
+@00026A A  // LITERAL: A (usage not inferred)
+@00041D TAKARA  // LITERAL: TAKARA (usage not inferred)
+@000635 F01B01  // LITERAL: F01B01 (usage not inferred)
+@000735  C0D04 ［ギンタ］  // EN: [Ginta]
+@000752  C0F04 よっし！  // TODO: English translation
+@00076D これでみっつそろったぞ！  // TODO: English translation
+@0007F7 F38A01  // LITERAL: F38A01 (usage not inferred)
+@0008F7  C0D04 ［マール］  // EN: [Marl]
+@000914  C0F04 ふふふ…  // TODO: English translation
+@00099F F01B11  // LITERAL: F01B11 (usage not inferred)
+@000A03  C0D04 ［ギンタ］  // EN: [Ginta]
+@000A20  C0F04 マール？？  // TODO: English translation
+@000AAD F38A04  // LITERAL: F38A04 (usage not inferred)
+@000B11  C0D04 ［マール］  // EN: [Marl]
+@000B2E  C0F04 はははははははははははぁ！  // TODO: English translation
+@000BCB F38A03  // LITERAL: F38A03 (usage not inferred)
+@000C2F  C0D04 ［マール］  // EN: [Marl]
+@000C4C  C0F04 こんなにうまくいくとはなぁ…  // TODO: English translation
+@000C7B おどろきだよ、まったく！  // TODO: English translation
+@000CBD  C0D04 ［ギンタ］  // EN: [Ginta]
+@000CDA  C0F04 な…  // TODO: English translation
+@000D61 F38A03  // LITERAL: F38A03 (usage not inferred)
+@000DC5  C0D04 ［マール］  // EN: [Marl]
+@000DE2  C0F04 自分のよみではもうすこし  // TODO: English translation
+@000E0D てこずる、と思っていたんだが…  // TODO: English translation
+@000E55  C0D04 ［マール］  // EN: [Marl]
+@000E72  C0F04 うれしい誤算（ごさん）というやつだ  // TODO: English translation
+@000EE1 F01B10  // LITERAL: F01B10 (usage not inferred)
+@000F0F  C0D04 ［ギンタ］  // EN: [Ginta]
+@000F2C  C0F04 な…なに言ってるんだ？  // TODO: English translation
+@000F7F  C0D04 ［マール］  // EN: [Marl]
+@000F9C  C0F04 あとかたづけは、キチっとしないとな  // TODO: English translation
+@000FD1 キレイ好きなんだ、オレは！  // TODO: English translation
+@0011D2 78A01  // LITERAL: 78A01 (usage not inferred)
+@0014D7 F01B10  // LITERAL: F01B10 (usage not inferred)
+@0015D7  C0D04 ［ギンタ］  // EN: [Ginta]
+@0015F4  C0F04 な…なに！？  // TODO: English translation
+@00164D F38A01  // LITERAL: F38A01 (usage not inferred)
+@00174D  C0D04 ［マール］  // EN: [Marl]
+@00176A  C0F04 こいつのなまえは…  // TODO: English translation
+@0017FF F38A03  // LITERAL: F38A03 (usage not inferred)
+@001863  C0D04 ［マール］  // EN: [Marl]
+@001931 F38A01  // LITERAL: F38A01 (usage not inferred)
+@001995  C0D04 ［マール］  // EN: [Marl]
+@0019B2  C0F04 古代の秘術（ひじゅつ）で  // TODO: English translation
+@001A29  C0D04 ［マール］  // EN: [Marl]
+@001A46  C0F04 ひかくてき、よわい魔力（まりょく）でも  // TODO: English translation
+@001A7F あやつることができる  // TODO: English translation
+@001ABD  C0D04 ［マール］  // EN: [Marl]
+@001ADA  C0F04 術者（じゅつしゃ）の欲望に  // TODO: English translation
+@001B07 忠実なガーディアンさ！！  // TODO: English translation
+@001B59 F01B11  // LITERAL: F01B11 (usage not inferred)
+@001B87  C0D04 ［ギンタ］  // EN: [Ginta]
+@001BA4  C0F04 タ…タロス？？  // TODO: English translation
+@001C6B F38A03  // LITERAL: F38A03 (usage not inferred)
+@001D05  C0D04 ［マール］  // EN: [Marl]
+@001D22  C0F04 礼を言うぜ、ギンタ！  // TODO: English translation
+@001D49 そしてさようなら、だ！  // TODO: English translation
+@0020D2 F01B10  // LITERAL: F01B10 (usage not inferred)
+@0021D2  C0D04 ［ギンタ］  // EN: [Ginta]
+@0021EF  C0F04 う…あ…  // TODO: English translation
+@002244 F02A05  // LITERAL: F02A05 (usage not inferred)
+@002344  C0D04 ［バッボ］  // EN: [Babbo]
+@002361  C0F04 ギンタ！！  // EN: Ginta!!
+@00237E ぼーっとするな！！ギンタ！！  // TODO: English translation
+@00250B F38A03  // LITERAL: F38A03 (usage not inferred)
+@00260B  C0D04 ［マール］  // EN: [Marl]
+@002628  C0F04 死ね！！！  // TODO: English translation
+@0026FC 78A03  // LITERAL: 78A03 (usage not inferred)
+@0028F1 A  // LITERAL: A (usage not inferred)
+@0029E4 78A01  // LITERAL: 78A01 (usage not inferred)
+@002CA3 F09A02  // LITERAL: F09A02 (usage not inferred)
+@002DA3  C0D04 ［ドロシー］  // EN: [Dorothy]
+@002DC2  C0F04 …！！  // EN: ...!!
+@002E15 F01B10  // LITERAL: F01B10 (usage not inferred)
+@002F15  C0D04 ［ギンタ］  // EN: [Ginta]
+@002F32  C0F04 ド…ドロシー！！  // TODO: English translation
+@003013 F09A01  // LITERAL: F09A01 (usage not inferred)
+@003077  C0D04 ［ドロシー］  // EN: [Dorothy]
+@003096  C0F04 だから言ったじゃない  // TODO: English translation
+@00316D F38A03  // LITERAL: F38A03 (usage not inferred)
+@00326D  C0D04 ［マール］  // EN: [Marl]
+@00328A  C0F04 おあつらえだ…！  // TODO: English translation
+@0032AD タロス！！  // TODO: English translation
+@003357 A  // LITERAL: A (usage not inferred)
+@003448 78A03  // LITERAL: 78A03 (usage not inferred)
+@003600 78A01  // LITERAL: 78A01 (usage not inferred)
+@003A95 F01B10  // LITERAL: F01B10 (usage not inferred)
+@003B6E  C0D04 ［ギンタ］  // EN: [Ginta]
+@003B8B  C0F04 ドロシーーーー！！  // TODO: English translation
+@003BEA F09A06  // LITERAL: F09A06 (usage not inferred)
+@003CEA  C0D04 ［ドロシー］  // EN: [Dorothy]
+@003D09  C0F04 いった〜〜〜  // TODO: English translation
+@003D52  C0D04 ［ドロシー］  // EN: [Dorothy]
+@003D71  C0F04 あたし、やっぱこういうバカ力タイプの  // TODO: English translation
+@003DA8 ガーディアンにがてだわ…  // TODO: English translation
+@003E30 F38A01  // LITERAL: F38A01 (usage not inferred)
+@003F30  C0D04 ［マール］  // EN: [Marl]
+@003F4D  C0F04 そうそう、ギンタ  // TODO: English translation
+@003FB6  C0D04 ［マール］  // EN: [Marl]
+@003FD3  C0F04 返してくれよ  // TODO: English translation
+@004052 F01B05  // LITERAL: F01B05 (usage not inferred)
+@004080  C0D04 ［ギンタ］  // EN: [Ginta]
+@00409D  C0F04 …！！  // EN: ...!!
+@0040B6 おまえ、まさか…！！！  // TODO: English translation
+@004106 F38A03  // LITERAL: F38A03 (usage not inferred)
+@004134  C0D04 ［マール］  // EN: [Marl]
+@004151  C0F04 そうだよ  // TODO: English translation
+@004196  C0D04 ［マール］  // EN: [Marl]
+@0041B3  C0F04 どこにでもいる、平凡な  // TODO: English translation
+@0041DC 『チェスの兵隊』さ  // TODO: English translation
+@004218  C0D04 ［マール］  // EN: [Marl]
+@004235  C0F04 言わなかったっけ？？  // TODO: English translation
+@0042CC F02A04  // LITERAL: F02A04 (usage not inferred)
+@0043F3  C0D04 ［バッボ］  // EN: [Babbo]
+@004410  C0F04 きさま！！  // TODO: English translation
+@00442D このワシをだましおったのか！！  // TODO: English translation
+@0044F1 F09A04  // LITERAL: F09A04 (usage not inferred)
+@0045F1  C0D04 ［ドロシー］  // EN: [Dorothy]
+@004610  C0F04 …！！  // EN: ...!!
+@004689 F01B10  // LITERAL: F01B10 (usage not inferred)
+@004789  C0D04 ［ギンタ］  // EN: [Ginta]
+@0047A6  C0F04 ドロシー！！  // EN: Dorothy!!
+@004835 F01B12  // LITERAL: F01B12 (usage not inferred)
+@004899  C0D04 ［ギンタ］  // EN: [Ginta]
+@0048B6  C0F04 …  // TODO: English translation
+@004905 F01B05  // LITERAL: F01B05 (usage not inferred)
+@004933  C0D04 ［ギンタ］  // EN: [Ginta]
+@004950  C0F04 バッボ！！  // EN: Babbo!!
+@00496D いったん、ドロシーをつれてにげるぞ！  // TODO: English translation
+@004A01 F02A12  // LITERAL: F02A12 (usage not inferred)
+@004B01  C0D04 ［バッボ］  // EN: [Babbo]
+@004B1E  C0F04 な！？  // TODO: English translation
+@004B37 チェスをまえにしてにげるだと！？  // TODO: English translation
+@004F2C F38A04  // LITERAL: F38A04 (usage not inferred)
+@00502C  C0D04 ［マール］  // EN: [Marl]
+@005049  C0F04 ふはははははは！  // TODO: English translation
+@0051C0 G_EV062.SPC  // LITERAL: G_EV062.SPC (usage not inferred)

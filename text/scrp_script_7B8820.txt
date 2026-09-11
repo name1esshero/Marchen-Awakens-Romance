@@ -1,0 +1,104 @@
+// Legacy reference view of EV_UTA01.SPC; edit text/nfp/EV_UTA01.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@0002CD A  // LITERAL: A (usage not inferred)
+@0003A1 A  // LITERAL: A (usage not inferred)
+@000475 A  // LITERAL: A (usage not inferred)
+@000549 A  // LITERAL: A (usage not inferred)
+@00061D A  // LITERAL: A (usage not inferred)
+@0006EB A  // LITERAL: A (usage not inferred)
+@0007B9 A  // LITERAL: A (usage not inferred)
+@00088D A  // LITERAL: A (usage not inferred)
+@000961 A  // LITERAL: A (usage not inferred)
+@000A35 A  // LITERAL: A (usage not inferred)
+@000B09 A  // LITERAL: A (usage not inferred)
+@000BDD A  // LITERAL: A (usage not inferred)
+@000D88 MAP11_O  // LITERAL: MAP11_O (usage not inferred)
+@000E6E MAP11_A  // LITERAL: MAP11_A (usage not inferred)
+@000FA7 F08A06  // LITERAL: F08A06 (usage not inferred)
+@001068  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001085  C0F04 ギンターーーー！！  // EN: Gintaaaa!!
+@0010AA やっとるかーーー！！  // TODO: English translation
+@0010E8  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001105  C0F04 こっちはたのしんでるでーー！  // TODO: English translation
+@001134 見てみぃ！  // TODO: English translation
+@001168  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001185  C0F04 両手に花や！！  // TODO: English translation
+@001200  C0D04 ［村の女の子］  // EN: [Village girl]
+@001221  C0F04 きゃーー！  // TODO: English translation
+@00123E もうナナシさんたら！！  // TODO: English translation
+@001288 F01B09  // LITERAL: F01B09 (usage not inferred)
+@00136A  C0D04 ［ギンタ］  // EN: [Ginta]
+@001387  C0F04 はははは…  // TODO: English translation
+@0013A4 （ハァ…）  // TODO: English translation
+@001429 F05A01  // LITERAL: F05A01 (usage not inferred)
+@0014EA  C0D04 ［エド］  // EN: [Ed]
+@001505  C0F04 ひめさま…  // TODO: English translation
+@001522 ワタクシ、ワタクシ…  // TODO: English translation
+@00156A F04A01  // LITERAL: F04A01 (usage not inferred)
+@00162B  C0D04 ［スノウ］  // EN: [Snow]
+@001648  C0F04 うん？  // TODO: English translation
+@001695 F05A03  // LITERAL: F05A03 (usage not inferred)
+@0016C3  C0D04 ［エド］  // EN: [Ed]
+@0016DE  C0F04 このような人のあたたかみに  // TODO: English translation
+@00170B ふれることができる日が…  // TODO: English translation
+@00174D  C0D04 ［エド］  // EN: [Ed]
+@001768  C0F04 ひめさまにおとずれようとは…！  // TODO: English translation
+@001799 ワダクシ…ワダグジはぁ…  // TODO: English translation
+@001815 F04A05  // LITERAL: F04A05 (usage not inferred)
+@001843  C0D04 ［スノウ］  // EN: [Snow]
+@00187D ほら、ハンカチ…  // TODO: English translation
+@0018C1 F05A01  // LITERAL: F05A01 (usage not inferred)
+@0018EF  C0D04 ［エド］  // EN: [Ed]
+@00190A  C0F04 あああありがとうございまぶ…  // TODO: English translation
+@001963  C0D04 ［スノウ］  // EN: [Snow]
+@001980  C0F04 あ…ははははは…  // TODO: English translation
+@001A4E F01B09  // LITERAL: F01B09 (usage not inferred)
+@001B30  C0D04 ［ギンタ］  // EN: [Ginta]
+@001B4D  C0F04 …  // TODO: English translation
+@001BC6 F09A01  // LITERAL: F09A01 (usage not inferred)
+@001C87  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001CA6  C0F04 みんなけっこう  // TODO: English translation
+@001CC7 元気じゃない  // TODO: English translation
+@001CFD  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001D1C  C0F04 あーんなにおちこんでたのにねぇ…  // TODO: English translation
+@001D79  C0D04 ［村の人］  // EN: [Villager]
+@001D96  C0F04 ほんとうに…  // TODO: English translation
+@001DB5 生きるゆうきをとりもどした…  // TODO: English translation
+@001DFB  C0D04 ［村の人］  // EN: [Villager]
+@001E18  C0F04 ジャックさんの作物も  // TODO: English translation
+@001E3F たったひとばんでたくさん実をつけた  // TODO: English translation
+@001EC5 F03A06  // LITERAL: F03A06 (usage not inferred)
+@001F86  C0D04 ［ジャック］  // EN: [Jack]
+@001FA5  C0F04 いやいやいや…！  // TODO: English translation
+@001FC8 てれるっスよ！  // TODO: English translation
+@002047  C0D04 ［村の人］  // EN: [Villager]
+@002064  C0F04 スノウさんは村のみんなを  // TODO: English translation
+@00208F ちりょうしてくれた…  // TODO: English translation
+@0020CD  C0D04 ［村の人］  // EN: [Villager]
+@0020EA  C0F04 そしてギンタさんたち…  // TODO: English translation
+@00213D  C0D04 ［村の人］  // EN: [Villager]
+@00215A  C0F04 あの『チェスの兵隊』を  // TODO: English translation
+@002183 たおしてしまった  // TODO: English translation
+@0021BD  C0D04 ［村の人］  // EN: [Villager]
+@0021DA  C0F04 あなたのような子供が  // TODO: English translation
+@002201 チェスとたたかってがんばっている  // TODO: English translation
+@00224B  C0D04 ［村の人］  // EN: [Villager]
+@002268  C0F04 大人のわれわれが  // TODO: English translation
+@00228B くすぶってるわけにはいきません  // TODO: English translation
+@0022DD F01B09  // LITERAL: F01B09 (usage not inferred)
+@0023BF  C0D04 ［ギンタ］  // EN: [Ginta]
+@0023DC  C0F04 へへへへ！  // TODO: English translation
+@00242D F01B01  // LITERAL: F01B01 (usage not inferred)
+@00245B  C0D04 ［ギンタ］  // EN: [Ginta]
+@002478  C0F04 …ジャック、ちょっと  // TODO: English translation
+@00249F さんぽでもしないか？  // TODO: English translation
+@002517 F03A06  // LITERAL: F03A06 (usage not inferred)
+@0025D8  C0D04 ［ジャック］  // EN: [Jack]
+@0025F7  C0F04 ギンタもいっちょまえに  // TODO: English translation
+@002620 てれるんスね！！  // TODO: English translation
+@00265A  C0D04 ［ギンタ］  // EN: [Ginta]
+@002677  C0F04 う、うるさいなぁ…  // TODO: English translation
+@00269C いくぞ！  // TODO: English translation
+@0028D2 L11_0_0.SPC  // LITERAL: L11_0_0.SPC (usage not inferred)

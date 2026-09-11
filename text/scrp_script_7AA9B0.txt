@@ -1,0 +1,179 @@
+// Legacy reference view of EV_ICE12.SPC; edit text/nfp/EV_ICE12.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@0000A1 MAP04_7A  // LITERAL: MAP04_7A (usage not inferred)
+@00022E A  // LITERAL: A (usage not inferred)
+@0002BA A  // LITERAL: A (usage not inferred)
+@000346 A  // LITERAL: A (usage not inferred)
+@0003D2 A  // LITERAL: A (usage not inferred)
+@00045E A  // LITERAL: A (usage not inferred)
+@0005FB F02A12  // LITERAL: F02A12 (usage not inferred)
+@0006E7 F03A07  // LITERAL: F03A07 (usage not inferred)
+@0007C9  C0D04 ［バッボ＆ジャック］  // EN: [Babbo & Jack]
+@0007F0  C0F04 …！！  // EN: ...!!
+@000AAA F04A04  // LITERAL: F04A04 (usage not inferred)
+@000B6B  C0D04 ［スノウ］  // EN: [Snow]
+@000B88  C0F04 …と…あ！！  // EN: ...Oh... Ah!
+@000BA7 エド！！  // EN: Ed!!
+@000D08  C0D04 ［スノウ］  // EN: [Snow]
+@000D25  C0F04 やっぱり助けにきてくれた！！  // EN: I knew you'd come to rescue me!
+@000D88 F06A01  // LITERAL: F06A01 (usage not inferred)
+@000E49  C0D04 ［エド］  // EN: [Ed]
+@000E64  C0F04 ちがうぜ、助けたのは  // EN: Nope. Your rescuer is
+@000E8B となりでボーっとしてるボウズだ  // EN: the kid standing there in a daze.
+@000F64 F01B14  // LITERAL: F01B14 (usage not inferred)
+@00102F F04A06  // LITERAL: F04A06 (usage not inferred)
+@00105D  C0D04 ［スノウ］  // EN: [Snow]
+@00107A  C0F04 …  // EN: ...
+@00134D  C0D04 ［？？？］  // EN: [???]
+@00136A  C0F04 おそくなったな、ロコ！  // EN: Sorry I'm late, Loco!
+@001393 ひめさま、まだ生きてるか？  // EN: Is the princess still alive?
+@001417 A  // LITERAL: A (usage not inferred)
+@001735 F06A03  // LITERAL: F06A03 (usage not inferred)
+@001817  C0D04 ［エド］  // EN: [Ed]
+@001832  C0F04 …！！  // EN: ...!!
+@0018B5 F25A01  // LITERAL: F25A01 (usage not inferred)
+@00198E  C0D04 ［ロコ］  // EN: [Loco]
+@0019A9  C0F04 じょうきょうはよくないですよ  // EN: The situation isn't good.
+@0019D8 あなたがおそいからです！  // EN: Because you took so long!
+@001A2A F23A01  // LITERAL: F23A01 (usage not inferred)
+@001B2A  C0D04 ［ハロウィン］  // EN: [Halloween]
+@001B4B  C0F04 こっちのじょうきょうも  // EN: Things have changed
+@001B74 かわったからな  // EN: on my end, too.
+@001BAC  C0D04 ［ハロウィン］  // EN: [Halloween]
+@001BCD  C0F04 チェスの兵隊、全員しゅうけつ！  // EN: All Chess Pieces, assemble!
+@001BFE あらたな指令だ  // EN: We've got new orders.
+@001C36  C0D04 ［ロコ］  // EN: [Loco]
+@001C51  C0F04 いよいよ、チェスの兵隊が  // EN: So the Chess Pieces are finally
+@001C7C ほんかくてきにあばれるのですね？  // EN: going to unleash their full fury?
+@001CC6  C0D04 ［ハロウィン］  // EN: [Halloween]
+@001CE7  C0F04 ＹＥＳ！  // EN: YES!
+@001D2C  C0D04 ［ハロウィン］  // EN: [Halloween]
+@001D4D  C0F04 ひめさまをつれもどすのも  // EN: Bringing the princess back
+@001D78 いちじ、中止だよ  // EN: is on hold for now, too.
+@001DB2  C0D04 ［ハロウィン］  // EN: [Halloween]
+@001DD3  C0F04 ファントムはこう言ったよ  // EN: This is what Phantom said:
+@001E28  C0D04 ［ハロウィン］  // EN: [Halloween]
+@001E49  C0904 『チェスの兵隊をもういちど  // EN: "I'll remind them once again
+@001E76 　思い出させてやる』  // EN: what the Chess Pieces are."
+@001EB4  C0D04 ［ハロウィン］  // EN: [Halloween]
+@001ED5  C0904 『だれがこのメルヘヴンの  // EN: "Who will stand
+@001F00 　ちょうてんに立つのかを！』  // EN: at the pinnacle of MÄR Heaven!"
+@001F46  C0D04 ［ハロウィン］  // EN: [Halloween]
+@001F67  C0904 『私はよみがえった…！！！』  // EN: "I have returned to life...!!!"
+@001FC0  C0D04 ［ロコ］  // EN: [Loco]
+@001FDB  C0F04 …  // EN: ...
+@00201A  C0D04 ［ハロウィン］  // EN: [Halloween]
+@00203B  C0F04 たのしくなってきたよな…  // EN: Things are getting interesting...
+@0020D0 F06A03  // LITERAL: F06A03 (usage not inferred)
+@002191  C0D04 ［エド］  // EN: [Ed]
+@0021AC  C0F04 おいコラ！！  // EN: Hey, you!
+@0021F5  C0D04 ［エド］  // EN: [Ed]
+@002210  C0F04 こそこそしゃべってんじゃねぇぞ  // EN: Quit whispering over there,
+@002241 このトマトやろう！！  // EN: you tomato-headed jerk!
+@0022C5 F23A02  // LITERAL: F23A02 (usage not inferred)
+@002329  C0D04 ［ハロウィン］  // EN: [Halloween]
+@00234A  C0F04 …ほう…  // EN: ...Oh...
+@002365 本当におまえか、アラン  // EN: It really is you, Alan.
+@0023DF F06A02  // LITERAL: F06A02 (usage not inferred)
+@00243D  C0D04 ［エド］  // EN: [Ed]
+@002458  C0F04 今はエドだがな…  // EN: It's Ed right now...
+@00247B ６年ぶりか？あ？  // EN: Been six years, huh?
+@0024EF F01B05  // LITERAL: F01B05 (usage not inferred)
+@0025B0  C0D04 ［ギンタ］  // EN: [Ginta]
+@0025CD  C0F04 おまえも…  // EN: You're a...
+@0025EA チェスの兵隊か！？  // EN: Chess Piece too!?
+@002636 F23A01  // LITERAL: F23A01 (usage not inferred)
+@002664  C0D04 ［ハロウィン］  // EN: [Halloween]
+@002685  C0F04 …  // EN: ...
+@0026C4  C0D04 ［ハロウィン］  // EN: [Halloween]
+@0026E5  C0F04 なんだ？  // EN: What's this?
+@002700 このトンガリあたま…  // EN: Who's the spiky-haired kid...?
+@00274E F15A02  // LITERAL: F15A02 (usage not inferred)
+@00288D  C0D04 ［イアン］  // EN: [Ian]
+@0028AA  C0F04 オレっちのみぎうで、おったやつ！  // EN: He's the guy who broke my right arm!
+@0028DD ギンタっていうんだぜ！  // EN: His name's Ginta!
+@00291D  C0D04 ［ハロウィン］  // EN: [Halloween]
+@00293E  C0F04 …マジ？  // EN: ...Seriously?
+@002983  C0D04 ［イアン］  // EN: [Ian]
+@0029A0  C0F04 マジ  // EN: Seriously.
+@002A27 F23A02  // LITERAL: F23A02 (usage not inferred)
+@002A8B  C0D04 ［ハロウィン］  // EN: [Halloween]
+@002AAC  C0F04 ひゅはははははははは！！  // EN: Hyahahahahahaha!
+@002B01  C0D04 ［ハロウィン］  // EN: [Halloween]
+@002B22  C0F04 …コゾウ…  // EN: ...Boy...
+@002B3F なにものだ？？  // EN: Who are you?
+@002B77  C0D04 ［ギンタ］  // EN: [Ginta]
+@002B94  C0F04 ギンタ！！  // EN: Ginta!!
+@002C15 F02A03  // LITERAL: F02A03 (usage not inferred)
+@002C73  C0D04 ［バッボ］  // EN: [Babbo]
+@002C90  C0F04 なんじゃきさまは！  // EN: Who do you think you are!?
+@002CB5 ぶれいなたちふるまいをしおって！  // EN: Such insolent behavior!
+@002CFF  C0D04 ［ハロウィン］  // EN: [Halloween]
+@002D20  C0F04 バッボ…！  // EN: Babbo...!
+@002DA1 F03A03  // LITERAL: F03A03 (usage not inferred)
+@002DFF  C0D04 ［ジャック］  // EN: [Jack]
+@002E1E  C0F04 ギンタはいせかいからきたっス！  // EN: Ginta came from another world!
+@002E4F なめないほうがいいっスよ！！  // EN: You'd better not underestimate him!
+@002ECB  C0D04 ［ハロウィン］  // EN: [Halloween]
+@002EEC  C0F04 本当のことかぁ！？  // EN: Is that true!?
+@002F45 F03A04  // LITERAL: F03A04 (usage not inferred)
+@002FA3  C0D04 ［ハロウィン］  // EN: [Halloween]
+@002FC4  C0F04 いかいの住人…  // EN: A visitor from another world...
+@002FE5 『あの男』といっしょか  // EN: Just like "that man."
+@003025  C0D04 ［ハロウィン］  // EN: [Halloween]
+@003046  C0F04 …なるほど、それならイアンのうでくらい  // EN: ...I see. In that case, breaking Ian's arm
+@00307F おっちまうかもしれないなぁ…  // EN: might be well within his capabilities...
+@0030C5  C0D04 ［イアン］  // EN: [Ian]
+@0030E2  C0F04 …  // EN: ...
+@003161 F25A01  // LITERAL: F25A01 (usage not inferred)
+@003270  C0D04 ［ロコ］  // EN: [Loco]
+@00328B  C0F04 ロコがこのコを  // EN: Loco will
+@0032AC たおします！  // EN: defeat this boy!
+@003328 F23A01  // LITERAL: F23A01 (usage not inferred)
+@00338C  C0D04 ［ハロウィン］  // EN: [Halloween]
+@0033AD  C0F04 いや…なにをさておいても  // EN: No... Whatever else happens,
+@0033D8 いったんもどるよ  // EN: we're going back for now.
+@003412  C0D04 ［ハロウィン］  // EN: [Halloween]
+@003433  C0F04 それがファントムの指令だからね  // EN: Those are Phantom's orders.
+@00348E  C0D04 ［ロコ］  // EN: [Loco]
+@0034A9  C0F04 …  // EN: ...
+@00352E F23A02  // LITERAL: F23A02 (usage not inferred)
+@003592  C0D04 ［ハロウィン］  // EN: [Halloween]
+@0035B3  C0F04 今回もたのしいことに  // EN: It looks like we're in
+@0035DA なりそうだなぁ…  // EN: for some fun again...
+@003614  C0D04 ［ハロウィン］  // EN: [Halloween]
+@003635  C0F04 ひゅはははははは…  // EN: Hyahahahaha...
+@003ABC F01B06  // LITERAL: F01B06 (usage not inferred)
+@003B7D  C0D04 ［ギンタ］  // EN: [Ginta]
+@003B9A  C0F04 まて！！にげるのか！！  // EN: Wait! Running away, are you!?
+@003BC3 チェスの兵隊ーーーーー！！  // EN: Chess Pieces!
+@003C11 F06A03  // LITERAL: F06A03 (usage not inferred)
+@003CD2  C0D04 ［エド］  // EN: [Ed]
+@003CED  C0F04 あっさりひきあげやがって！  // EN: They pulled out awfully easily!
+@003D1A イヤなよかん、するぜ…  // EN: I've got a bad feeling about this...
+@003D5A  C0D04 ［エド］  // EN: [Ed]
+@003D75  C0F04 （いせかいから来た…か）  // EN: (He came from another world, huh...)
+@003DCA  C0D04 ［エド］  // EN: [Ed]
+@003DE5  C0F04 （なつかしいにおい、するはずだぜ…）  // EN: (No wonder he has such a familiar scent...)
+@004126 F04A01  // LITERAL: F04A01 (usage not inferred)
+@0041E7  C0D04 ［スノウ］  // EN: [Snow]
+@004204  C0F04 はじめまして！  // EN: Nice to meet you!
+@004225 スノウっていいます！  // EN: My name is Snow!
+@004263  C0D04 ［スノウ］  // EN: [Snow]
+@004280  C0F04 助けてくれてありがとう！  // EN: Thank you for saving me!
+@0042DF F01B11  // LITERAL: F01B11 (usage not inferred)
+@0043A0  C0D04 ［ギンタ］  // EN: [Ginta]
+@0043BD  C0F04 （…かおだけじゃない  // EN: (...It's not just her face.
+@0043E4 　しぐさも、こえも…）  // EN: Her gestures, her voice, too...)
+@004424  C0D04 ［ギンタ］  // EN: [Ginta]
+@004441  C0F04 なつかしい…かんじだ…  // EN: It feels... so familiar...
+@00459C F06A04  // LITERAL: F06A04 (usage not inferred)
+@00467E  C0D04 ［エド］  // EN: [Ed]
+@004699  C0F04 …さて  // EN: ...Well, then.
+@0046DC  C0D04 ［エド］  // EN: [Ed]
+@0046F7  C0F04 ちょいとはらごしらえに行くか！  // EN: How about we go get something to eat?
+@004752  C0D04 ［エド］  // EN: [Ed]
+@00476D  C0F04 犬のなかにいるとラクチンだが  // EN: Being inside a dog is easy enough,
+@00479C はらがへるぜ…  // EN: but it sure makes me hungry...

@@ -1,0 +1,65 @@
+// MAR strings block 2B0000
+// One record per line: @<rom offset> <text>
+// <XX> is a raw control byte. Text is re-encoded to Shift-JIS at build time;
+// a line may not grow past its original byte length.
+// Anything after // is a comment and never reaches the ROM.
+
+@2B5676 -<01>/<01>
+@2B56B2 -<01>/<01>
+@2B56EE -<01>/<01>
+@2B572A -<01>/<01>
+@2B5766 -<01>/<01>
+@2B606C AD3_P_0A.KCG
+@2B60AC AD3_P_0A.KCL
+@2B6116 !P!P!P!P!P!P!P`
+@2B6130 !P!P!P!P!P!P!P`
+@2B614A !P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P`
+@2B61CA !P!P!P!P!P!P!P`
+@2B61E4 !P!P!P!P!P!P!P`
+@2B61FE !P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P`
+@2B627E !P!P!P!P!P!P!P`
+@2B6298 !P!P!P!P!P!P!P`
+@2B62B2 !P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P`
+@2B6332 !P!P!P!P!P!P!P`
+@2B634C !P!P!P!P!P!P!P`
+@2B6366 !P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P`
+@2B63E6 !P!P!P!P!P!P!P`
+@2B6400 !P!P!P!P!P!P!P`
+@2B641A !P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P`
+@2B649A !P!P!P!P!P!P!P`
+@2B64B4 !P!P!P!P!P!P!P`
+@2B64D6 !P!P!P!P!P!P!P`
+@2B64F0 !P!P!P!P!P!P!P`
+@2B650A !P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P`
+@2B65C6 !P!P <11>!<11>"<11>#<11>!P!P`
+@2B65E0 !P!P!P!P!P!P!P`
+@2B65FA !P!P!P!P!P!P@<11>A<11>B<11>C<11>!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P`<11>a<11>b<11>c<11>!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P`
+@2B6694 !P!P!P!P!P!P!P`
+@2B672E !P!P`<12>a<12>b<12>c<12>!P!P`
+@2B6748 !P!P!P!P!P!P!P`
+@2B67FC @3A<03>B<03>C#D#E3F3!P!P`
+@2B6D0A !P!P 3!3"<03>#3$3%<03>&3!P!P!P <11>!<11>"<11>#<11>!P!P!Pw<02>x<02>y"z<02>{<02>!P!P!P`
+@2B6D4A @3A<03>B<03>C#D#E3F3!P!P!P@<11>A<11>B<11>C<11>!P!P`
+@2B6D86 `3a#b#c#d#e<03>f<03>g3!P!P`<11>a<11>b<11>c<11>!P!P`
+@2B7000 !P!P!P!P!P!P!P!P
+@2B87F6 -<01>/<01>
+@2B8832 -<01>/<01>
+@2B886E -<01>/<01>
+@2B88AA -<01>/<01>
+@2B88E6 -<01>/<01>
+@2B8E2C AD3_P_0A.KCG
+@2B8E6C AD3_P_0A.KCL
+@2B8ED0 !P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P`
+@2B9744 !P!P!P <11>!<11>"<11>#<11>!P!P`
+@2B9760 !P!P!P!P!P!P!P`
+@2B977A !P!P!P!P!P!P@<11>A<11>B<11>C<11>!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P`<11>a<11>b<11>c<11>!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P!P`
+@2B9814 !P!P!P!P!P!P!P`
+@2B98AC !P!P!P`<12>a<12>b<12>c<12>!P!P`
+@2B98C8 !P!P!P!P!P!P!P`
+@2BB976 -<01>/<01>
+@2BB9B2 -<01>/<01>
+@2BB9EE -<01>/<01>
+@2BBA2A -<01>/<01>
+@2BBA66 -<01>/<01>
+@2BBBEC AD3_P_0A.KCG
+@2BBC2C AD3_P_0A.KCL

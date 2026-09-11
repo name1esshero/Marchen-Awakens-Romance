@@ -1,0 +1,4 @@
+// G_EV032.SPC: ROM 8051C0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+

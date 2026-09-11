@@ -1,0 +1,320 @@
+[
+ {
+  "addr": "080032A8",
+  "size": 4,
+  "name": "GetEntityField20",
+  "file": "src/entity.c"
+ },
+ {
+  "addr": "080032AC",
+  "size": 4,
+  "name": "GetEntityField24",
+  "file": "src/entity.c"
+ },
+ {
+  "addr": "080032B0",
+  "size": 4,
+  "name": "GetEntityField28",
+  "file": "src/entity.c"
+ },
+ {
+  "addr": "080032B4",
+  "size": 4,
+  "name": "GetEntityField2C",
+  "file": "src/entity.c"
+ },
+ {
+  "addr": "08079E98",
+  "size": 4,
+  "name": "ArcTan2",
+  "file": "src/bios_calls.c"
+ },
+ {
+  "addr": "08079E9C",
+  "size": 4,
+  "name": "BgAffineSet",
+  "file": "src/bios_calls.c"
+ },
+ {
+  "addr": "08079EA0",
+  "size": 4,
+  "name": "CpuFastSet",
+  "file": "src/bios_calls.c"
+ },
+ {
+  "addr": "08079EA4",
+  "size": 4,
+  "name": "CpuSet",
+  "file": "src/bios_calls.c"
+ },
+ {
+  "addr": "08079EB0",
+  "size": 4,
+  "name": "LZ77UnCompVram",
+  "file": "src/bios_calls.c"
+ },
+ {
+  "addr": "08079EB4",
+  "size": 4,
+  "name": "LZ77UnCompWram",
+  "file": "src/bios_calls.c"
+ },
+ {
+  "addr": "08079EB8",
+  "size": 4,
+  "name": "RLUnCompWram",
+  "file": "src/bios_calls.c"
+ },
+ {
+  "addr": "08079EBC",
+  "size": 4,
+  "name": "RegisterRamReset",
+  "file": "src/bios_calls.c"
+ },
+ {
+  "addr": "08079ED8",
+  "size": 4,
+  "name": "Sqrt",
+  "file": "src/bios_calls.c"
+ },
+ {
+  "addr": "08079EC0",
+  "size": 24,
+  "name": "SoftReset",
+  "file": "src/bios_calls.c"
+ },
+ {
+  "addr": "08003348",
+  "size": 16,
+  "name": "SetEntityRenderOverride",
+  "file": "src/entity.c"
+ },
+ {
+  "addr": "0807ADE0",
+  "size": 4,
+  "name": "SetFontData",
+  "file": "src/font.c"
+ },
+ {
+  "addr": "0807AAA0",
+  "size": 24,
+  "name": "NfpGetArchiveBase",
+  "file": "src/nfp.c"
+ },
+ {
+  "addr": "0807AAD0",
+  "size": 16,
+  "name": "NfpGetDirectory",
+  "file": "src/nfp.c"
+ },
+ {
+  "addr": "0807AAE0",
+  "size": 16,
+  "name": "NfpGetData",
+  "file": "src/nfp.c"
+ },
+ {
+  "addr": "0807AB08",
+  "size": 12,
+  "name": "NfpGetEntryCount",
+  "file": "src/nfp.c"
+ },
+ {
+  "addr": "0807AA18",
+  "size": 24,
+  "name": "NfpMountIsActive",
+  "file": "src/nfp.c"
+ },
+ {
+  "addr": "0807AC28",
+  "size": 20,
+  "name": "NfpGetEntry",
+  "file": "src/nfp.c"
+ },
+ {
+  "addr": "0807AC3C",
+  "size": 60,
+  "name": "NfpOpenByName",
+  "file": "src/nfp.c"
+ },
+ {
+  "addr": "0807AA30",
+  "size": 24,
+  "name": "NfpSetMountActive",
+  "file": "src/nfp.c"
+ },
+ {
+  "addr": "0807AB7C",
+  "size": 64,
+  "name": "NfpFindArchive",
+  "file": "src/nfp.c"
+ },
+ {
+  "addr": "0807AAB8",
+  "size": 24,
+  "name": "NfpSetArchiveBase",
+  "file": "src/nfp.c"
+ },
+ {
+  "addr": "0807ABF0",
+  "size": 56,
+  "name": "NfpFindFreeSlot",
+  "file": "src/nfp.c"
+ },
+ {
+  "addr": "0807AB14",
+  "size": 92,
+  "name": "NfpMount",
+  "file": "src/nfp.c"
+ },
+ {
+  "addr": "080282F8",
+  "size": 44,
+  "name": "ObjectSetFlag4",
+  "file": "src/object.c"
+ },
+ {
+  "addr": "08028324",
+  "size": 48,
+  "name": "ObjectSetFlag400",
+  "file": "src/object.c"
+ },
+ {
+  "addr": "08028354",
+  "size": 44,
+  "name": "ObjectSetFlag2",
+  "file": "src/object.c"
+ },
+ {
+  "addr": "08028380",
+  "size": 8,
+  "name": "ObjectSetField26",
+  "file": "src/object.c"
+ },
+ {
+  "addr": "08028388",
+  "size": 8,
+  "name": "ObjectSetFields34And36",
+  "file": "src/object.c"
+ },
+ {
+  "addr": "08028390",
+  "size": 4,
+  "name": "ObjectSetField36",
+  "file": "src/object.c"
+ },
+ {
+  "addr": "08028394",
+  "size": 4,
+  "name": "ObjectSetField34",
+  "file": "src/object.c"
+ },
+ {
+  "addr": "08053960",
+  "size": 24,
+  "name": "StepCounterInit",
+  "file": "src/step_counter.c"
+ },
+ {
+  "addr": "08053978",
+  "size": 12,
+  "name": "StepCounterReset",
+  "file": "src/step_counter.c"
+ },
+ {
+  "addr": "08078A64",
+  "size": 12,
+  "name": "SoundUpdate",
+  "file": "src/sound.c"
+ },
+ {
+  "addr": "08078C08",
+  "size": 16,
+  "name": "SoundFadeOut",
+  "file": "src/sound.c"
+ },
+ {
+  "addr": "08079240",
+  "size": 64,
+  "name": "SoundPlayerStop",
+  "file": "src/sound.c"
+ },
+ {
+  "addr": "080025E4",
+  "size": 32,
+  "name": "IsEngineDoubleByte",
+  "file": "src/font.c"
+ },
+ {
+  "addr": "0807ADC4",
+  "size": 28,
+  "name": "InitFont",
+  "file": "src/font.c"
+ },
+ {
+  "addr": "0807ADE4",
+  "size": 16,
+  "name": "ClearFont",
+  "file": "src/font.c"
+ },
+ {
+  "addr": "0807ADF4",
+  "size": 20,
+  "name": "FontGlyphStride",
+  "file": "src/font.c"
+ },
+ {
+  "addr": "0807AE08",
+  "size": 8,
+  "name": "FontPalette",
+  "file": "src/font.c"
+ },
+ {
+  "addr": "08053984",
+  "size": 92,
+  "name": "StepCounterAdvance",
+  "file": "src/step_counter.c"
+ },
+ {
+  "addr": "08011C1C",
+  "size": 76,
+  "name": "DialogueReadHex4",
+  "file": "src/dialogue.c"
+ },
+ {
+  "addr": "080025BC",
+  "size": 40,
+  "name": "ReadEngineCharacter",
+  "file": "src/font.c"
+ },
+ {
+  "addr": "08002604",
+  "size": 44,
+  "name": "KmpInitViewport",
+  "file": "src/kmp.c"
+ },
+ {
+  "addr": "08003160",
+  "size": 24,
+  "name": "KmpAttributeAddress",
+  "file": "src/kmp.c"
+ },
+ {
+  "addr": "08003104",
+  "size": 92,
+  "name": "KmpReadAttribute",
+  "file": "src/kmp.c"
+ },
+ {
+  "addr": "08011AF4",
+  "size": 296,
+  "name": "DialogueNextGlyph",
+  "file": "src/dialogue.c"
+ },
+ {
+  "addr": "08011790",
+  "size": 224,
+  "name": "DialogueStart",
+  "file": "src/dialogue_start.c"
+ }
+]

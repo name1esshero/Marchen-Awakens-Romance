@@ -1,0 +1,99 @@
+// MAR strings block 8A0000
+// One record per line: @<rom offset> <text>
+// <XX> is a raw control byte. Text is re-encoded to Shift-JIS at build time;
+// a line may not grow past its original byte length.
+// Anything after // is a comment and never reaches the ROM.
+
+@8A4C2C MAP03_A.KCG
+@8A4C6C MAP03_A.KCL
+@8A4ED8 @<10>A<10>B
+@8A4F52 R<10>S<10>T<10>U<10>V<10>W<10>X<10>Y
+@8A4F6E ]<10>^<10>^<10>_<10>R<10>Q
+@8A4F7A ]<10>^<10>_<10>R<10>Q
+@8A4F84 `<10>a<10>b<10>c<10>d<10>e
+@8A4FD2 f<10>g<10>h<10>i<10>j<10>k<10>l<10>m
+@8A6DA2 9w@w4w6w5w4w3wBwAw@w?w<3E>w4w3wBwAw@w?w<3E>w6w@w?w<3E>w
+@8A6E22 Dw6w3w4w@w?w<3E>w6w5w4w3wIw?w<3E>w6w5w4w3wIw3s4w3wIw
+@8A6EA2 KwJw6w5w4w3wIw3s4s5s6s7s3wIw3s4s5s6s7s4s5s6s7s
+@8A7024 9w6w?wGs;s<3C>s3wGsHs0s1s;s<3C>s3wGsHs0s1sGsHs0s1s
+@8A71AC Jw6w7w5w4w3w5w4w3wBwAw@w4s@w@sAs4w3w
+@8A8B40 KwJw6w5w4w3wIw6w
+@8A9914 X<02>Y<02>
+@8A9994 Y<02>Y<02>
+@8AAE4C MAP04_A.KCG
+@8AAE8C MAP04_A.KCL
+@8AB614 "<04>8<04>:<01>;<01><3C><01>=<01><3E><01>^
+@8AB628 a 8<04>Y
+@8AB62E Z [ \ ] ^
+@8AB63C a 8<04>Y
+@8AB642 Z [ \ ] ^
+@8AB650 a 8<04>?<01>"
+@8AB724 "<04>@<01>A<01>B<01>C<01>D<01>E<01>h
+@8AB73E d e f g h
+@8AB752 d e f g h
+@8AB834 "<04>F!G<01>H<01>I<01>J<01>K<01>L<01>u v w x o p q r s
+@8AB856 t u v w x o p q r s
+@8AB86A t u v w x <1A>
+@8ABCF8 "<04>8<04>:<01>;<01><3C><01>=<01><3E><01>^
+@8ABD0C a 8<04>Y
+@8ABD12 Z [ \ ] ^
+@8ABD20 a 8<04>Y
+@8ABD26 Z [ \ ] ^
+@8ABD34 a 8<04>Y
+@8ABD3A Z [ \ ] ^
+@8ABD48 a 8<04>Y
+@8ABD4E Z [ \ ] ^
+@8ABD5C a 8<04>Y
+@8ABD62 Z [ \ ] ^
+@8ABD70 a 8<04>?<01>"
+@8ABE08 "<04>@<01>A<01>B<01>C<01>D<01>E<01>h
+@8ABE22 d e f g h
+@8ABE36 d e f g h
+@8ABE4A d e f g h
+@8ABE5E d e f g h
+@8ABE72 n e f g h
+@8ABF18 "<04>F!G<01>H<01>I<01>J<01>K<01>L<01>u v w x o z { |
+@8ABF4E t u v w x o z { |
+@8ABF76 t u v w x o z { |
+@8AC926 Z [ \ ] ^
+@8AC94F  <0F> <10>
+@8AC959  <14> <15>
+@8AC96D  <14> <15>
+@8ACA36 d e f g h
+@8ACF27  <0F> <10>
+@8ACF31  <14> <15>
+@8ACF37  <0F> <10>
+@8ACF3F  <14> <15>
+@8AD494 "<04>&<04>-
+@8ADAFB  <0F> <10>
+@8ADB05  <14> <15>
+@8ADB0F  <0F> <10>
+@8ADB19  <14> <15>
+@8ADB23  <0F> <10>
+@8ADB2D  <14> <15>
+@8ADB37  <0F> <10>
+@8ADB41  <14> <15>
+@8ADB4B  <0F> <10>
+@8ADB55  <14> <15>
+@8AEB90 "<04>8<04>:<01>;<01><3C><01>=<01><3E><01>^
+@8AEBA4 a 8<04>Y
+@8AEBAA Z <3C><01>=<01><3E><01>^
+@8AEBD6 Z [ \ ] ^
+@8AEBE4 a 8<04>?<01>"
+@8AECA0 "<04>@<01>A<01>B<01>C<01>D<01>E<01>h
+@8AECBA d e f g h
+@8AECE6 d e f g h
+@8AEDB0 "<04>F!G<01>H<01>I<01>J<01>K<01>L<01>u v w x o p q r s
+@8AEDFE t u v w x <1A>
+@8AF7B0 "<04>8<04>:<01>;<01><3C><01>=<01><3E><01>^
+@8AF7C4 a 8<04>Y
+@8AF7CA Z [ \ ] ^
+@8AF7D8 a 8<04>Y
+@8AF7DE Z [ \ ] ^
+@8AF7EC a 8<04>?<01>"
+@8AF8C0 "<04>@<01>A<01>B<01>C<01>D<01>E<01>h
+@8AF8DA d e f g h
+@8AF8EE d e f g h
+@8AF9D0 "<04>F!G<01>H<01>I<01>J<01>K<01>L<01>u v w x o p q r s
+@8AF9F2 t u v w x o p q r s
+@8AFA06 t u v w x <1A>

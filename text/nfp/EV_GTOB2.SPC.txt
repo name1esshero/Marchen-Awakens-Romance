@@ -1,0 +1,32 @@
+// EV_GTOB2.SPC: ROM 7A43F0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000127 F02A01  // LITERAL: F02A01 (usage not inferred)
+@0001E8  C0D04 ［バッボ］  // EN: [Babbo]
+@000205  C0F04 いや、助かった、すまなかったな、ギンタ！  // EN: You saved me! Sorry for the trouble, Ginta!
+@000274 F01A01  // LITERAL: F01A01 (usage not inferred)
+@000335  C0D04 ［ギンタ］  // EN: [Ginta]
+@000352  C0F04 いやー、オレも…  // EN: Well, I also...
+@0003D9 F02A09  // LITERAL: F02A09 (usage not inferred)
+@000437  C0D04 ［バッボ］  // EN: [Babbo]
+@000454  C0F04 おまえをワシの家来として  // EN: I shall permit you to accompany me...
+@00047F 同行させることを許そう！！  // EN: ...as my servant!!
+@0004C3  C0D04 ［ギンタ］  // EN: [Ginta]
+@0004E0  C0F04 …  // EN: ...
+@000559 F01A09  // LITERAL: F01A09 (usage not inferred)
+@0005B7  C0D04 ［ギンタ］  // EN: [Ginta]
+@0005D4  C0F04 イヤーおまえってほんっっっっっっと  // EN: Man, you really, really are...
+@000647  C0D04 ［ギンタ］  // EN: [Ginta]
+@000664  C0F04 これからもオレが守ってやるからな！！  // EN: I'll keep protecting you from now on!!
+@0006F5  C0D04 ［バッボ］  // EN: [Babbo]
+@000712  C0F04 …  // EN: ...
+@000781  C0D04 ［ギンタ］  // EN: [Ginta]
+@00079E  C0F04 …  // EN: ...
+@000847 F02A05  // LITERAL: F02A05 (usage not inferred)
+@0008D5  C0D04 ［バッボ］  // EN: [Babbo]
+@0008F2  C0F04 何を言うかぶれいもの！！  // EN: How dare you, insolent wretch!!
+@0009B1 F01A06  // LITERAL: F01A06 (usage not inferred)
+@000A3F  C0D04 ［ギンタ］  // EN: [Ginta]
+@000A5C  C0F04 何が家来だこのケン玉！！  // EN: Who's your servant, you kendama?!
+@000609 ダメ<F0><56>ＲＭだよな！！  // EN: ...a useless ÄRM!!

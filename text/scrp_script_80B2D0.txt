@@ -1,0 +1,161 @@
+// Legacy reference view of G_EV062.SPC; edit text/nfp/G_EV062.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000196 A  // LITERAL: A (usage not inferred)
+@000222 A  // LITERAL: A (usage not inferred)
+@0002AE A  // LITERAL: A (usage not inferred)
+@000313 A  // LITERAL: A (usage not inferred)
+@00039F A  // LITERAL: A (usage not inferred)
+@0003DD A  // LITERAL: A (usage not inferred)
+@000427 MAP11_2G.SPC  // LITERAL: MAP11_2G.SPC (usage not inferred)
+@000751 F06A06  // LITERAL: F06A06 (usage not inferred)
+@00082A  C0D04 ［エド］  // EN: [Ed]
+@000845  C0F04 ふぁ〜〜〜！！  // TODO: English translation
+@000866 よくねたわ…  // TODO: English translation
+@0008E2 F04A03  // LITERAL: F04A03 (usage not inferred)
+@0009BB  C0D04 ［スノウ］  // EN: [Snow]
+@0009D8  C0F04 エド！エド！  // TODO: English translation
+@0009F7 きいて！  // TODO: English translation
+@000AA5 F06A05  // LITERAL: F06A05 (usage not inferred)
+@000B2A  C0D04 ［エド］  // EN: [Ed]
+@000B45  C0F04 さわぐなって…  // TODO: English translation
+@000B66 犬の中からだいたい見てたぜ  // TODO: English translation
+@000C26 F04A02  // LITERAL: F04A02 (usage not inferred)
+@000CC0  C0D04 ［スノウ］  // EN: [Snow]
+@000CDD  C0F04 それで…あのマールってコはともかく…  // TODO: English translation
+@000D76 F06A01  // LITERAL: F06A01 (usage not inferred)
+@000DA4  C0D04 ［エド］  // EN: [Ed]
+@000DBF  C0F04 ふーーん…  // TODO: English translation
+@000DDC そうかい  // TODO: English translation
+@000E8A F07A05  // LITERAL: F07A05 (usage not inferred)
+@000F63  C0D04 ［アルヴィス］  // EN: [Alviss]
+@000F84  C0F04 アランさん！  // TODO: English translation
+@00157B F07A01  // LITERAL: F07A01 (usage not inferred)
+@001664 F06A01  // LITERAL: F06A01 (usage not inferred)
+@00173D  C0D04 ［エド］  // EN: [Ed]
+@001758  C0F04 よう…てめぇも気付いたようだな  // TODO: English translation
+@0017C3 F07A01  // LITERAL: F07A01 (usage not inferred)
+@0017F1  C0D04 ［アルヴィス］  // EN: [Alviss]
+@001812  C0F04 ええ…イヤなかんじの  // TODO: English translation
+@001839 魔力（まりょく）がはね上がるのを…ね  // TODO: English translation
+@001887  C0D04 ［アルヴィス］  // EN: [Alviss]
+@0018A8  C0F04 邪（よこしま）な魔力だ  // TODO: English translation
+@00190B F06A04  // LITERAL: F06A04 (usage not inferred)
+@001939  C0D04 ［エド］  // EN: [Ed]
+@001954  C0F04 ま、そういうこったな  // TODO: English translation
+@0019CC  C0D04 ［エド］  // EN: [Ed]
+@0019E7  C0F04 …ん？  // EN: ...Huh?
+@0020AC F08A06  // LITERAL: F08A06 (usage not inferred)
+@002185  C0D04 ［ナナシ］  // EN: [Nanashi]
+@0021A2  C0F04 わかったーー！！  // TODO: English translation
+@0021C5 わかったでぇーーー！！  // TODO: English translation
+@002205  C0D04 ［ナナシ］  // EN: [Nanashi]
+@002222  C0F04 今、ワイらがほりおこそうとしてる  // TODO: English translation
+@0022A3 F06A01  // LITERAL: F06A01 (usage not inferred)
+@0023FA  C0D04 ［エド］  // EN: [Ed]
+@002415  C0F04 邪悪（じゃあく）な欲望を  // TODO: English translation
+@002440 もつものにしか  // TODO: English translation
+@002478  C0D04 ［エド］  // EN: [Ed]
+@002493  C0F04 封印をとくことができない  // TODO: English translation
+@0024BE ってシロモノだな  // TODO: English translation
+@002508 F08A05  // LITERAL: F08A05 (usage not inferred)
+@002536  C0D04 ［ナナシ］  // EN: [Nanashi]
+@002553  C0F04 邪悪な…  // TODO: English translation
+@0025A8 F06A05  // LITERAL: F06A05 (usage not inferred)
+@0025E6 F08A03  // LITERAL: F08A03 (usage not inferred)
+@002614  C0D04 ［エド］  // EN: [Ed]
+@00262F  C0F04 なんだ、わざわざしらべに  // TODO: English translation
+@00265A もどってたのかよ、はたらきものだな  // TODO: English translation
+@002712  C0D04 ［ナナシ］  // EN: [Nanashi]
+@00272F  C0F04 …  // TODO: English translation
+@00279F F06A01  // LITERAL: F06A01 (usage not inferred)
+@0027CD  C0D04 ［エド］  // EN: [Ed]
+@0027E8  C0F04 こんなだれでもわかるような  // TODO: English translation
+@002815 ワナにひっかかりやがって  // TODO: English translation
+@002867 F06A04  // LITERAL: F06A04 (usage not inferred)
+@002895  C0D04 ［エド］  // EN: [Ed]
+@0028B0  C0F04 ギンタもなさけねぇやつだ  // TODO: English translation
+@002915 F08A03  // LITERAL: F08A03 (usage not inferred)
+@002979  C0D04 ［ナナシ］  // EN: [Nanashi]
+@002996  C0F04 （ワイもビミョーになさけないで…）  // TODO: English translation
+@003307 F04A04  // LITERAL: F04A04 (usage not inferred)
+@0033E0  C0D04 ［スノウ］  // EN: [Snow]
+@0033FD  C0F04 あ…！！  // TODO: English translation
+@003452 F03A07  // LITERAL: F03A07 (usage not inferred)
+@00352B  C0D04 ［ジャック］  // EN: [Jack]
+@00354A  C0F04 ギンタ！！  // EN: Ginta!!
+@00360D F01B05  // LITERAL: F01B05 (usage not inferred)
+@0036E6  C0D04 ［ギンタ］  // EN: [Ginta]
+@003703  C0F04 …はぁ！…はぁ！  // TODO: English translation
+@003A56 F01B12  // LITERAL: F01B12 (usage not inferred)
+@003B3F F09A01  // LITERAL: F09A01 (usage not inferred)
+@003C18  C0D04 ［ドロシー］  // EN: [Dorothy]
+@003C37  C0F04 あ、ありがと、ギンタン…  // TODO: English translation
+@003CF9 F01B12  // LITERAL: F01B12 (usage not inferred)
+@003D5D  C0D04 ［ギンタ］  // EN: [Ginta]
+@003D7A  C0F04 ありがとうなんて  // TODO: English translation
+@003D9D 言わないでくれよ…！！  // TODO: English translation
+@003DDD  C0D04 ［ギンタ］  // EN: [Ginta]
+@003DFA  C0F04 オレ、ドロシーにあんな  // TODO: English translation
+@003E23 ひどいこと言ったのに！！  // TODO: English translation
+@003E65  C0D04 ［ドロシー］  // EN: [Dorothy]
+@003EEF F09A03  // LITERAL: F09A03 (usage not inferred)
+@003F89  C0D04 ［ドロシー］  // EN: [Dorothy]
+@003FFF F01B04  // LITERAL: F01B04 (usage not inferred)
+@00408A  C0D04 ［ギンタ］  // EN: [Ginta]
+@0040A7  C0F04 …えーと…  // TODO: English translation
+@0040C4 ドロシー、けがは？？  // TODO: English translation
+@0041E9 F04A02  // LITERAL: F04A02 (usage not inferred)
+@0042E7  C0D04 ［スノウ］  // EN: [Snow]
+@004304  C0F04 …  // TODO: English translation
+@0043BF F01B10  // LITERAL: F01B10 (usage not inferred)
+@004433 F09A06  // LITERAL: F09A06 (usage not inferred)
+@004461  C0D04 ［ドロシー］  // EN: [Dorothy]
+@004480  C0F04 …いた！  // TODO: English translation
+@0044C5  C0D04 ［スノウ］  // EN: [Snow]
+@0044E2  C0F04 …  // TODO: English translation
+@00463F F09A02  // LITERAL: F09A02 (usage not inferred)
+@0046D9  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0046F8  C0F04 なにすんのさ！  // TODO: English translation
+@004753 F04A02  // LITERAL: F04A02 (usage not inferred)
+@0047C7 F09A06  // LITERAL: F09A06 (usage not inferred)
+@004871 F09A02  // LITERAL: F09A02 (usage not inferred)
+@00489F  C0D04 ［スノウ］  // EN: [Snow]
+@0048BC  C0F04 …！！  // EN: ...!!
+@00497B F04A07  // LITERAL: F04A07 (usage not inferred)
+@004A25 F04A02  // LITERAL: F04A02 (usage not inferred)
+@004A53  C0D04 ［ドロシー］  // EN: [Dorothy]
+@004A72  C0F04 いた！  // TODO: English translation
+@004A8B こ、この！！  // TODO: English translation
+@004B07 F04A03  // LITERAL: F04A03 (usage not inferred)
+@004BE7 F04A03  // LITERAL: F04A03 (usage not inferred)
+@004C81  C0D04 ［スノウ］  // EN: [Snow]
+@004C9E  C0F04 …もうぜっんぜん大丈夫みたいよ！！  // TODO: English translation
+@004F33 F07A01  // LITERAL: F07A01 (usage not inferred)
+@00500C  C0D04 ［アルヴィス］  // EN: [Alviss]
+@00502D  C0F04 …まったく…  // TODO: English translation
+@00504C なさけないやつだ…  // TODO: English translation
+@0050BE F01B11  // LITERAL: F01B11 (usage not inferred)
+@005197  C0D04 ［ギンタ］  // EN: [Ginta]
+@0051B4  C0F04 ア！アルヴィス！！  // TODO: English translation
+@005213 F07A06  // LITERAL: F07A06 (usage not inferred)
+@005241  C0D04 ［アルヴィス］  // EN: [Alviss]
+@005262  C0F04 今、おまえのやるべきことはなんだ？  // TODO: English translation
+@0052D1 F07A01  // LITERAL: F07A01 (usage not inferred)
+@0052FF  C0D04 ［アルヴィス］  // EN: [Alviss]
+@005320  C0F04 まさか、オレにそれをせつめい  // TODO: English translation
+@00534F させようってんじゃないだろうな？  // TODO: English translation
+@0053F7 F02A03  // LITERAL: F02A03 (usage not inferred)
+@0054D0  C0D04 ［バッボ］  // EN: [Babbo]
+@0054ED  C0F04 そうじゃ！あのナマイキなコゾウを  // TODO: English translation
+@005520 よもやゆるすつもりではあるまいな！？  // TODO: English translation
+@00557E F01B03  // LITERAL: F01B03 (usage not inferred)
+@0055AC  C0D04 ［ギンタ］  // EN: [Ginta]
+@0055C9  C0F04 ああ！！  // EN: Yeah!!
+@0055E4 もちろんだぜ！！  // TODO: English translation
+@006153  C0904 【パーティーへんこう】  // TODO: English translation
+@00617C  C0F04 コマンドが追加されました  // TODO: English translation
+@0061A7 バトルに出るパーティーを自由にえらべます  // TODO: English translation
+@0061F9 ダンジョンモードに  // EN: Into Dungeon Mode...
+@006217  C0904 練武（れんぶ）の門 C0F04 が追加されました  // TODO: English translation

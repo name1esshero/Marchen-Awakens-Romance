@@ -1,0 +1,16 @@
+// Legacy reference view of EV_GO08.SPC; edit text/nfp/EV_GO08.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000103 A  // LITERAL: A (usage not inferred)
+@000396 F01B01  // LITERAL: F01B01 (usage not inferred)
+@00046F  C0D04 ［ギンタ］  // EN: [Ginta]
+@00048C  C0F04 しっかしキミの  // EN: Still, this place...
+@0004AD わるいところだよなぁ…ココ  // EN: ...really gives me the creeps...
+@000501 F22A01  // LITERAL: F22A01 (usage not inferred)
+@0005DA  C0D04 ［トム］  // EN: [Tom]
+@0005F5  C0F04 うん…  // EN: Yeah...
+@00060E ゆうれいが出るからね  // EN: It's haunted, after all.
+@000692 F01B10  // LITERAL: F01B10 (usage not inferred)
+@0006F6  C0D04 ［ギンタ］  // EN: [Ginta]
+@000713  C0F04 うわ、それでか！！  // EN: Whoa, so that's why!!

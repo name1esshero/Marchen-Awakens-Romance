@@ -1,0 +1,52 @@
+// MAR strings block 860000
+// One record per line: @<rom offset> <text>
+// <XX> is a raw control byte. Text is re-encoded to Shift-JIS at build time;
+// a line may not grow past its original byte length.
+// Anything after // is a comment and never reaches the ROM.
+
+@860D3C MAP01_1A.KCG
+@860D7C MAP01_1A.KCL
+@860E10 9#9#<1C><10><1D><10> 
+@860E88 Y#Y#<3C><10>=<10> 
+@860EA0 =<14><3C><14>r q  
+@860F00 y#9#\<10>]<10> 
+@860F78 Y#y#|<10>}<10> 
+@8611B1  <11> <11> <11> <12> <13> <14> <15> <12> <13> <11> <11>  
+@861228 1 1 1 1 2 3 4 5 2 3 1 1  
+@86143A <3C>%;%'
+@861440 v"w"x"<19>! 
+@861570 yrzr{r|r}r~r<14>!<15>!<12>!<13>!<11>!<11>! 
+@861780 p3q3rcs3i<01>j<01>k<01>l<01> 
+@8618D8 Z![!\!]!<03>
+@8618E2  b!b"b#b$b%bJ<02>#
+@861979  <11> <11> <11> t!u!<11> <11> <12> <13> <11> <11>  
+@861C38 6!7!8!9! 
+@861CA4 K<02>K<02>,<02>+<02>#
+@861CB0 V!W!X!Y! 
+@861F08 J<02>K<02>+<02>%
+@862336 &2'b(b)2@
+@862341 !<17>!<18>!<19>! 
+@8623AC K<02>FbGbHbIb<02>
+@8623B8 6!7!8!9! 
+@862426 fbgbhbibf
+@862430 V!W!X!Y! 
+@862614 ;!<3C>! 
+@8635E8 P(v!w!x!
+@8637E1  <1A> <1B> <0E>$ 
+@863D81  <17> <18> N$ 
+@863DF8 6 7 8 <0E>$ 
+@863E70 V W X <0E>$ 
+@863EE8 v w x <0E>$ 
+@863F48 N <19> <1A> <1B> 
+@8644E8 E!<16> <17> <18> 
+@864560 e!6 7 8 
+@86464E  <04>.(v w x 
+@8646E1  <1A> <1B> <0E>$ 
+@8648A6  <04><0E> 
+@86C31C MAP01_2A.KCG
+@86C35C MAP01_2A.KCL
+@86C7FC  B!B"r#r"
+@86C87C @BABBrCr<04>
+@86C88A  <08>6b7b <08> 
+@86C8AE 8b <08> 
+@86C98A  <08>vbwb 

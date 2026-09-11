@@ -1,0 +1,10 @@
+// MAR strings block B70000
+// One record per line: @<rom offset> <text>
+// <XX> is a raw control byte. Text is re-encoded to Shift-JIS at build time;
+// a line may not grow past its original byte length.
+// Anything after // is a comment and never reaches the ROM.
+
+@B71497 @<17> <18><10><19>0<1A><10><1B>
+@B7266F @<17> <18><10><19>0"
+@B743B1 @<17> <18><10><19>0<1A><10><1B>
+@B743D5 @<17> <18><10><19>0<1A><10><1B>

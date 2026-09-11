@@ -1,0 +1,53 @@
+// Legacy reference view of EV_AL02.SPC; edit text/nfp/EV_AL02.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@0000A1 MAP42_A.SPC  // LITERAL: MAP42_A.SPC (usage not inferred)
+@000275 A  // LITERAL: A (usage not inferred)
+@000301 A  // LITERAL: A (usage not inferred)
+@00038D A  // LITERAL: A (usage not inferred)
+@000419 A  // LITERAL: A (usage not inferred)
+@0004A5 A  // LITERAL: A (usage not inferred)
+@000531 A  // LITERAL: A (usage not inferred)
+@000884 F01B11  // LITERAL: F01B11 (usage not inferred)
+@00095D  C0D04 ［ギンタ］  // EN: [Ginta]
+@00097A  C0F04 ななな！  // EN: Wh-wh-wha!
+@000995 なんだ！  // EN: What is it?!
+@0009D7 F03A01  // LITERAL: F03A01 (usage not inferred)
+@000AB0  C0D04 ［ジャック］  // EN: [Jack]
+@000ACF  C0F04 向こうのほうっス！  // EN: Over that way!
+@001201  C0D04 ［おやぶん］  // EN: [Boss]
+@001220  C0F04 まっま…まってくれ！！  // EN: W-w... wait!!
+@001273  C0D04 ［おやぶん］  // EN: [Boss]
+@001292  C0F04 わ、わるかったって！  // EN: I-I said I'm sorry!
+@0012B9 あ！あぎゃぁ！！  // EN: Aah! Aaargh!!
+@0013AA EF_GEN12  // LITERAL: EF_GEN12 (usage not inferred)
+@0018BC  C0D04 ［こぶん］  // EN: [Henchman]
+@0018D9  C0F04 あ！あわわわわ…！  // EN: Ah! A-a-a-aah...!
+@001C4B F07A01  // LITERAL: F07A01 (usage not inferred)
+@001D4B  C0D04 ［アルヴィス］  // EN: [Alviss]
+@001D6C  C0F04 …  // EN: ...
+@001DAB  C0D04 ［アルヴィス］  // EN: [Alviss]
+@001DCC  C0F04 さて…  // EN: Now then...
+@00217B F02A14  // LITERAL: F02A14 (usage not inferred)
+@002254  C0D04 ［バッボ］  // EN: [Babbo]
+@002271  C0F04 ギンター！！  // EN: Gintaaa!!
+@002290 おそいぞバカもの！！  // EN: You're late, you fool!!
+@0022DE F01B01  // LITERAL: F01B01 (usage not inferred)
+@0023B7  C0D04 ［ギンタ］  // EN: [Ginta]
+@0023D4  C0F04 バッボ！！  // EN: Babbo!!
+@0023F1 …よかったぶじか！！  // EN: ...Thank goodness you're safe!!
+@0025B1 F07A01  // LITERAL: F07A01 (usage not inferred)
+@0026B1  C0D04 ［アルヴィス］  // EN: [Alviss]
+@0026D2  C0F04 …  // EN: ...
+@002711  C0D04 ［アルヴィス］  // EN: [Alviss]
+@002732  C0F04 バッボの封印をといたんだな  // EN: So you broke Babbo's seal.
+@002805 F01B11  // LITERAL: F01B11 (usage not inferred)
+@00289F  C0D04 ［ギンタ］  // EN: [Ginta]
+@0028BC  C0F04 え…あ…！！！  // EN: Huh... ah...!!!
+@0028DD そのこえ…このせかいにくるときの…！  // EN: That voice... from when I came to this world...!
+@00292B  C0D04 ［アルヴィス］  // EN: [Alviss]
+@00294C  C0F04 …  // EN: ...
+@00299D  C0D04 ［アルヴィス］  // EN: [Alviss]
+@0029BE  C0F04 『カゴの鳥』  // EN: 'Caged Bird.'
+@002ABA EV_AL02B.SPC  // LITERAL: EV_AL02B.SPC (usage not inferred)

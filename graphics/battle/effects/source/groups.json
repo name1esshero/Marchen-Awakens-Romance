@@ -1,0 +1,1012 @@
+[
+  {
+    "name": "ARM_AR01",
+    "first_animation": 0,
+    "animation_count": 3
+  },
+  {
+    "name": "ARM_BA01",
+    "first_animation": 3,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_BA02",
+    "first_animation": 5,
+    "animation_count": 3
+  },
+  {
+    "name": "ARM_BA03",
+    "first_animation": 8,
+    "animation_count": 3
+  },
+  {
+    "name": "ARM_BA04",
+    "first_animation": 11,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_BA05",
+    "first_animation": 12,
+    "animation_count": 3
+  },
+  {
+    "name": "ARM_BA06",
+    "first_animation": 15,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_BA07",
+    "first_animation": 17,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_BA08",
+    "first_animation": 18,
+    "animation_count": 4
+  },
+  {
+    "name": "ARM_BR00",
+    "first_animation": 22,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_BR01",
+    "first_animation": 24,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_BR02",
+    "first_animation": 26,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_BR03",
+    "first_animation": 28,
+    "animation_count": 4
+  },
+  {
+    "name": "ARM_BR04",
+    "first_animation": 32,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_CT01",
+    "first_animation": 33,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_CT02",
+    "first_animation": 34,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_CT03",
+    "first_animation": 35,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_CT04",
+    "first_animation": 36,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_CT05",
+    "first_animation": 37,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_CT06",
+    "first_animation": 38,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_DA01",
+    "first_animation": 39,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_DA03",
+    "first_animation": 41,
+    "animation_count": 5
+  },
+  {
+    "name": "ARM_DA05",
+    "first_animation": 46,
+    "animation_count": 9
+  },
+  {
+    "name": "ARM_DA10",
+    "first_animation": 55,
+    "animation_count": 6
+  },
+  {
+    "name": "ARM_DA11",
+    "first_animation": 61,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_DA13",
+    "first_animation": 63,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_DA14",
+    "first_animation": 65,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_DA15",
+    "first_animation": 67,
+    "animation_count": 6
+  },
+  {
+    "name": "ARM_DE02",
+    "first_animation": 73,
+    "animation_count": 3
+  },
+  {
+    "name": "ARM_DE05",
+    "first_animation": 76,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_DE06",
+    "first_animation": 77,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_DE07",
+    "first_animation": 78,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_DE08",
+    "first_animation": 79,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_DE10",
+    "first_animation": 80,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_GA01",
+    "first_animation": 81,
+    "animation_count": 9
+  },
+  {
+    "name": "ARM_GA02",
+    "first_animation": 90,
+    "animation_count": 3
+  },
+  {
+    "name": "ARM_GA03",
+    "first_animation": 93,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_GA06",
+    "first_animation": 95,
+    "animation_count": 5
+  },
+  {
+    "name": "ARM_GA08",
+    "first_animation": 100,
+    "animation_count": 8
+  },
+  {
+    "name": "ARM_GA10",
+    "first_animation": 108,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_GA11",
+    "first_animation": 109,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_GA12",
+    "first_animation": 110,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_GA13",
+    "first_animation": 112,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_GA14",
+    "first_animation": 113,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_GA15",
+    "first_animation": 115,
+    "animation_count": 4
+  },
+  {
+    "name": "ARM_GA16",
+    "first_animation": 119,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_GA17",
+    "first_animation": 120,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_GA20",
+    "first_animation": 122,
+    "animation_count": 3
+  },
+  {
+    "name": "ARM_GA21",
+    "first_animation": 125,
+    "animation_count": 6
+  },
+  {
+    "name": "ARM_GA22",
+    "first_animation": 131,
+    "animation_count": 6
+  },
+  {
+    "name": "ARM_GA23",
+    "first_animation": 137,
+    "animation_count": 6
+  },
+  {
+    "name": "ARM_GA24",
+    "first_animation": 143,
+    "animation_count": 3
+  },
+  {
+    "name": "ARM_GA25",
+    "first_animation": 146,
+    "animation_count": 4
+  },
+  {
+    "name": "ARM_GA26",
+    "first_animation": 150,
+    "animation_count": 7
+  },
+  {
+    "name": "ARM_GA60",
+    "first_animation": 157,
+    "animation_count": 3
+  },
+  {
+    "name": "ARM_GA61",
+    "first_animation": 160,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_HO01",
+    "first_animation": 162,
+    "animation_count": 10
+  },
+  {
+    "name": "ARM_HO08",
+    "first_animation": 172,
+    "animation_count": 4
+  },
+  {
+    "name": "ARM_JA01",
+    "first_animation": 176,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_JA02",
+    "first_animation": 177,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_JA03",
+    "first_animation": 179,
+    "animation_count": 3
+  },
+  {
+    "name": "ARM_JA04",
+    "first_animation": 182,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_JA05",
+    "first_animation": 183,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_JA06",
+    "first_animation": 184,
+    "animation_count": 5
+  },
+  {
+    "name": "ARM_JA07",
+    "first_animation": 189,
+    "animation_count": 4
+  },
+  {
+    "name": "ARM_JA08",
+    "first_animation": 193,
+    "animation_count": 7
+  },
+  {
+    "name": "ARM_NE02",
+    "first_animation": 200,
+    "animation_count": 4
+  },
+  {
+    "name": "ARM_NE05",
+    "first_animation": 204,
+    "animation_count": 3
+  },
+  {
+    "name": "ARM_NE07",
+    "first_animation": 207,
+    "animation_count": 4
+  },
+  {
+    "name": "ARM_NE08",
+    "first_animation": 211,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_NE09",
+    "first_animation": 212,
+    "animation_count": 4
+  },
+  {
+    "name": "ARM_NE11",
+    "first_animation": 216,
+    "animation_count": 3
+  },
+  {
+    "name": "ARM_NE12",
+    "first_animation": 219,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_NE14",
+    "first_animation": 220,
+    "animation_count": 3
+  },
+  {
+    "name": "ARM_NE15",
+    "first_animation": 223,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_NE16",
+    "first_animation": 225,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_NE17",
+    "first_animation": 226,
+    "animation_count": 4
+  },
+  {
+    "name": "ARM_NE22",
+    "first_animation": 230,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_NE23",
+    "first_animation": 231,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_NE24",
+    "first_animation": 232,
+    "animation_count": 5
+  },
+  {
+    "name": "ARM_NE25",
+    "first_animation": 237,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_NE30",
+    "first_animation": 238,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_NE32",
+    "first_animation": 240,
+    "animation_count": 3
+  },
+  {
+    "name": "ARM_NE33",
+    "first_animation": 243,
+    "animation_count": 7
+  },
+  {
+    "name": "ARM_NE34",
+    "first_animation": 250,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_NE35",
+    "first_animation": 252,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_NE36",
+    "first_animation": 254,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_NE37",
+    "first_animation": 256,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_NE38",
+    "first_animation": 258,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_NE39",
+    "first_animation": 259,
+    "animation_count": 4
+  },
+  {
+    "name": "ARM_NE41",
+    "first_animation": 263,
+    "animation_count": 5
+  },
+  {
+    "name": "ARM_PW00",
+    "first_animation": 268,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_PW01",
+    "first_animation": 270,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_PW02",
+    "first_animation": 272,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_PW03",
+    "first_animation": 274,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_PW04",
+    "first_animation": 276,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_PW05",
+    "first_animation": 278,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_PW06",
+    "first_animation": 280,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_PW99",
+    "first_animation": 282,
+    "animation_count": 7
+  },
+  {
+    "name": "ARM_SB00",
+    "first_animation": 289,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_SB01",
+    "first_animation": 290,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_SB02",
+    "first_animation": 291,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_SB03",
+    "first_animation": 292,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_SK00",
+    "first_animation": 293,
+    "animation_count": 3
+  },
+  {
+    "name": "ARM_SK01",
+    "first_animation": 296,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_SK02",
+    "first_animation": 298,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_SK03",
+    "first_animation": 300,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_SN01",
+    "first_animation": 302,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_SN02",
+    "first_animation": 304,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_SN03",
+    "first_animation": 305,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_SN04",
+    "first_animation": 306,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_SN05",
+    "first_animation": 308,
+    "animation_count": 4
+  },
+  {
+    "name": "ARM_SN06",
+    "first_animation": 312,
+    "animation_count": 3
+  },
+  {
+    "name": "ARM_SN07",
+    "first_animation": 315,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_UT00",
+    "first_animation": 316,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT01",
+    "first_animation": 318,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT02",
+    "first_animation": 320,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT03",
+    "first_animation": 322,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT04",
+    "first_animation": 324,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT05",
+    "first_animation": 326,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT06",
+    "first_animation": 328,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT10",
+    "first_animation": 330,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT11",
+    "first_animation": 332,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT12",
+    "first_animation": 334,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT13",
+    "first_animation": 336,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT14",
+    "first_animation": 338,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT15",
+    "first_animation": 340,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT16",
+    "first_animation": 342,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT20",
+    "first_animation": 344,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT21",
+    "first_animation": 346,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT22",
+    "first_animation": 348,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT23",
+    "first_animation": 350,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT24",
+    "first_animation": 352,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT25",
+    "first_animation": 354,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT26",
+    "first_animation": 356,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT30",
+    "first_animation": 358,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT31",
+    "first_animation": 360,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT32",
+    "first_animation": 362,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT33",
+    "first_animation": 364,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT34",
+    "first_animation": 366,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT35",
+    "first_animation": 368,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT36",
+    "first_animation": 370,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT40",
+    "first_animation": 372,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT41",
+    "first_animation": 374,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT42",
+    "first_animation": 376,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT43",
+    "first_animation": 378,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT44",
+    "first_animation": 380,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT45",
+    "first_animation": 382,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_UT46",
+    "first_animation": 384,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_WE01",
+    "first_animation": 386,
+    "animation_count": 3
+  },
+  {
+    "name": "ARM_WE04",
+    "first_animation": 389,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_WE05",
+    "first_animation": 390,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_WE09",
+    "first_animation": 391,
+    "animation_count": 2
+  },
+  {
+    "name": "ARM_WE10",
+    "first_animation": 393,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_WE11",
+    "first_animation": 394,
+    "animation_count": 1
+  },
+  {
+    "name": "ARM_WE14",
+    "first_animation": 395,
+    "animation_count": 2
+  },
+  {
+    "name": "DF_GA08",
+    "first_animation": 397,
+    "animation_count": 1
+  },
+  {
+    "name": "DF_GA08",
+    "first_animation": 398,
+    "animation_count": 1
+  },
+  {
+    "name": "DF_GA11",
+    "first_animation": 399,
+    "animation_count": 1
+  },
+  {
+    "name": "DF_GA11",
+    "first_animation": 400,
+    "animation_count": 1
+  },
+  {
+    "name": "DF_GA14",
+    "first_animation": 401,
+    "animation_count": 1
+  },
+  {
+    "name": "DF_GA14",
+    "first_animation": 402,
+    "animation_count": 1
+  },
+  {
+    "name": "DF_GA20",
+    "first_animation": 403,
+    "animation_count": 1
+  },
+  {
+    "name": "DF_GA20",
+    "first_animation": 404,
+    "animation_count": 1
+  },
+  {
+    "name": "DF_GA24",
+    "first_animation": 405,
+    "animation_count": 1
+  },
+  {
+    "name": "DF_GA24",
+    "first_animation": 406,
+    "animation_count": 1
+  },
+  {
+    "name": "DF_NE35",
+    "first_animation": 407,
+    "animation_count": 1
+  },
+  {
+    "name": "DF_NE35",
+    "first_animation": 408,
+    "animation_count": 1
+  },
+  {
+    "name": "DF_NE35S",
+    "first_animation": 409,
+    "animation_count": 1
+  },
+  {
+    "name": "DF_NE35S",
+    "first_animation": 410,
+    "animation_count": 1
+  },
+  {
+    "name": "DF_SK00",
+    "first_animation": 411,
+    "animation_count": 1
+  },
+  {
+    "name": "DF_SK00",
+    "first_animation": 412,
+    "animation_count": 1
+  },
+  {
+    "name": "DF_SN01",
+    "first_animation": 413,
+    "animation_count": 1
+  },
+  {
+    "name": "DF_SN01",
+    "first_animation": 414,
+    "animation_count": 1
+  },
+  {
+    "name": "EFF",
+    "first_animation": 415,
+    "animation_count": 5
+  },
+  {
+    "name": "EF_GEN01",
+    "first_animation": 420,
+    "animation_count": 1
+  },
+  {
+    "name": "EF_GEN02",
+    "first_animation": 421,
+    "animation_count": 1
+  },
+  {
+    "name": "EF_GEN03",
+    "first_animation": 422,
+    "animation_count": 1
+  },
+  {
+    "name": "EF_GEN04",
+    "first_animation": 423,
+    "animation_count": 1
+  },
+  {
+    "name": "EF_GEN05",
+    "first_animation": 424,
+    "animation_count": 1
+  },
+  {
+    "name": "EF_GEN06",
+    "first_animation": 425,
+    "animation_count": 1
+  },
+  {
+    "name": "EF_GEN07",
+    "first_animation": 426,
+    "animation_count": 1
+  },
+  {
+    "name": "EF_GEN08",
+    "first_animation": 427,
+    "animation_count": 1
+  },
+  {
+    "name": "EF_GEN09",
+    "first_animation": 428,
+    "animation_count": 1
+  },
+  {
+    "name": "EF_GEN10",
+    "first_animation": 429,
+    "animation_count": 2
+  },
+  {
+    "name": "EF_GEN11",
+    "first_animation": 431,
+    "animation_count": 1
+  },
+  {
+    "name": "EF_GEN12",
+    "first_animation": 432,
+    "animation_count": 1
+  },
+  {
+    "name": "EF_GEN13",
+    "first_animation": 433,
+    "animation_count": 1
+  },
+  {
+    "name": "EF_TAK",
+    "first_animation": 434,
+    "animation_count": 1
+  },
+  {
+    "name": "SP_AR01",
+    "first_animation": 435,
+    "animation_count": 3
+  },
+  {
+    "name": "SP_BA04",
+    "first_animation": 438,
+    "animation_count": 1
+  },
+  {
+    "name": "SP_BA06",
+    "first_animation": 439,
+    "animation_count": 2
+  },
+  {
+    "name": "SP_DE02",
+    "first_animation": 441,
+    "animation_count": 3
+  },
+  {
+    "name": "SP_GA03",
+    "first_animation": 444,
+    "animation_count": 2
+  },
+  {
+    "name": "SP_GA60",
+    "first_animation": 446,
+    "animation_count": 3
+  },
+  {
+    "name": "SP_GA61",
+    "first_animation": 449,
+    "animation_count": 2
+  },
+  {
+    "name": "SP_JA08",
+    "first_animation": 451,
+    "animation_count": 7
+  },
+  {
+    "name": "SP_NE02",
+    "first_animation": 458,
+    "animation_count": 4
+  },
+  {
+    "name": "SP_NE35",
+    "first_animation": 462,
+    "animation_count": 2
+  },
+  {
+    "name": "SP_SN07",
+    "first_animation": 464,
+    "animation_count": 1
+  },
+  {
+    "name": "TAKARA",
+    "first_animation": 465,
+    "animation_count": 2
+  },
+  {
+    "name": "TEST_E02",
+    "first_animation": 467,
+    "animation_count": 1
+  }
+]

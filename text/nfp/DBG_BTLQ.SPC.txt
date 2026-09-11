@@ -1,0 +1,7 @@
+// DBG_BTLQ.SPC: ROM 59BE70
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000017 BTI_PSET.SPC  // LITERAL: BTI_PSET.SPC (usage not inferred)
+@000534 BTI_PSET.SPC  // LITERAL: BTI_PSET.SPC (usage not inferred)
+@000B08 BTI_PSET.SPC  // LITERAL: BTI_PSET.SPC (usage not inferred)

@@ -1,0 +1,8 @@
+// Legacy reference view of OBJ_S.SPC; edit text/nfp/OBJ_S.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000160 F04A01  // LITERAL: F04A01 (usage not inferred)
+@000221  C0D04 ［スノウ］  // EN: [Snow]
+@00023E  C0F04 氷をとかすね  // TODO: English translation
+@0004B9 氷が道をふさいでいる  // EN: Ice is blocking the path.

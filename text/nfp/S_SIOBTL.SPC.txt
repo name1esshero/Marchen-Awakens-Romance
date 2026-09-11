@@ -1,0 +1,4 @@
+// S_SIOBTL.SPC: ROM F195C0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+

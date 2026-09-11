@@ -1,0 +1,68 @@
+// CH_M11.SPC: ROM 56B6D0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@0000EC  C0D04 ［村の人］  // EN: [Villager]
+@000109  C0F04 ははは…どうだい？  // EN: Ha ha ha... Well?
+@00012E きもちのいいこわされっぷりだろ？  // EN: Quite a satisfying bit of destruction, isn't it?
+@000178  C0D04 ［村の人］  // EN: [Villager]
+@000195  C0F04 好きにしてくれ  // EN: Do whatever you want.
+@0001B6 家もはたけも、つぶされた  // EN: Our homes and fields have all been destroyed.
+@0001F8  C0D04 ［村の人］  // EN: [Villager]
+@000215  C0F04 ヴェストリはもうおわりだ  // EN: Vestri is finished.
+@000299 F01B06  // LITERAL: F01B06 (usage not inferred)
+@00035A  C0D04 ［ギンタ］  // EN: [Ginta]
+@000377  C0F04 そんなこというなよ！！  // EN: Don't say that!!
+@0003A0 元気出してくれ！！  // EN: Don't lose heart!!
+@0003DC  C0D04 ［ギンタ］  // EN: [Ginta]
+@0003F9  C0F04 こわされたって、また  // EN: Even if it's been destroyed...
+@000420 作ればいいじゃんか！！  // EN: ...you can build it again!!
+@000460  C0D04 ［村の人］  // EN: [Villager]
+@00047D  C0F04 ムダさ…作ってもまた  // EN: It's no use... Even if we rebuild...
+@0004A4 こわされるだけさ…  // EN: ...they'll just destroy it again...
+@0004EA F01B05  // LITERAL: F01B05 (usage not inferred)
+@000518  C0D04 ［ギンタ］  // EN: [Ginta]
+@000535  C0F04 …！！  // EN: ...!!
+@0006E5  C0D04 ［村の人］  // EN: [Villager]
+@000702  C0F04 …そこにだれかいるのかい？  // EN: ...Is someone there?
+@000759  C0D04 ［村の人］  // EN: [Villager]
+@000776  C0F04 チェスの兵隊か…  // EN: One of the Chess Pieces...
+@0007C3  C0D04 ［村の人］  // EN: [Villager]
+@0007E0  C0F04 ころすつもりなら  // EN: If you're going to kill me...
+@000803 一息にたのむよ  // EN: ...please make it quick.
+@00083B  C0D04 ［村の人］  // EN: [Villager]
+@000858  C0F04 せめて、それくらいのなさけは  // EN: You can at least show me...
+@000887 かけてくれる…よな…？  // EN: ...that much mercy... can't you...?
+@0009ED  C0D04 ［村の人］  // EN: [Villager]
+@000A0A  C0F04 もう…何もかもおわりよ…  // EN: It's... all over now...
+@000A5F  C0D04 ［村の人］  // EN: [Villager]
+@000A7C  C0F04 この子にたべさせるものさえ  // EN: There's not even anything left...
+@000AA9 のこっていない…  // EN: ...to feed this child...
+@000C38 F04A01  // LITERAL: F04A01 (usage not inferred)
+@000CF9  C0D04 ［スノウ］  // EN: [Snow]
+@000D16  C0F04 わたしたち…  // EN: We've...
+@000D35 助けにきました！！  // EN: ...come to help!!
+@000D71  C0D04 ［村の人］  // EN: [Villager]
+@000D8E  C0F04 助け…？  // EN: Help...?
+@000DD3  C0D04 ［村の人］  // EN: [Villager]
+@000DF0  C0F04 いまさらおそいよ…  // EN: It's too late now...
+@000E3F  C0D04 ［村の人］  // EN: [Villager]
+@000E5C  C0F04 われわれは、もう  // EN: We no longer...
+@000E7F 生きる気力すらないのだ…  // EN: ...even have the will to live...
+@000ECB F04A03  // LITERAL: F04A03 (usage not inferred)
+@000EF9  C0D04 ［スノウ］  // EN: [Snow]
+@000F16  C0F04 そ…そんな…  // EN: Th-that can't be...
+@000FAB  C0D04 ［村の人］  // EN: [Villager]
+@000FC8  C0F04 助け…？  // EN: Help...?
+@00100D  C0D04 ［村の人］  // EN: [Villager]
+@00102A  C0F04 いまさらおそいよ…  // EN: It's too late now...
+@001079  C0D04 ［村の人］  // EN: [Villager]
+@001096  C0F04 われわれは、もう  // EN: We no longer...
+@0010B9 生きる気力すらないのだ…  // EN: ...even have the will to live...
+@001221  C0D04 ［女の子］  // EN: [Girl]
+@00123E  C0F04 あーん　あーん  // EN: Waaah! Waaah!
+@00125F あーん　あーん  // EN: Waaah! Waaah!
+@0012F1 G_EV043.SPC  // LITERAL: G_EV043.SPC (usage not inferred)
+@001344 G_EV044.SPC  // LITERAL: G_EV044.SPC (usage not inferred)
+@001397 G_EV052.SPC  // LITERAL: G_EV052.SPC (usage not inferred)
+@0013EA G_EV063.SPC  // LITERAL: G_EV063.SPC (usage not inferred)

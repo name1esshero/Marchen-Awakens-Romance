@@ -1,0 +1,28 @@
+// CH_M24_A.SPC: ROM 56BFA0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@0000F6 F39A01  // LITERAL: F39A01 (usage not inferred)
+@0001B7  C0D04 ［彫金師ベリーニ］  // EN: [Bellini the metalworker]
+@0001DC  C0F04 彫金するのん？  // TODO: English translation
+@000362  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
+@00038E 彫金とは、いくつかの材料をまぜあわせて  // EN: Metalworking involves combining several materials...
+@000408  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
+@000464 レシピに記録されていますのん  // EN: It's recorded in the recipes.
+@0004AA  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
+@0004D6 だけど、まちがってそのレシピを  // EN: But by mistake, I sent those recipes...
+@000500 いせかいにとばしてしまい…  // EN: ...off to another world...
+@000544  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
+@000570 もし、いせかいに行くことがあったら  // EN: If you ever visit another world...
+@00059E レシピをさがしてきてほしいのん？  // EN: Could you find the recipes for me?
+@0005E8  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
+@000614 レシピは彫金師にしかわからない  // EN: The recipes are in a code that only metalworkers...
+@00063E 暗号になっていますのん  // EN: ...can understand.
+@00067E  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
+@0006AA 暗号をわたしに教えてくれたら  // EN: If you tell me the code...
+@0006D2 とくべつに彫金してあげますのん  // EN: I'll do some special metalworking for you.
+@00071A  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
+@000746 でも、材料はかならず  // EN: But make sure you...
+@000766 もってくるのん！  // EN: ...bring the materials!
+@0003C0 新しく<F0><56>ＲＭを作ることですのん  // TODO: English translation
+@000434 どの材料で、何の<F0><56>ＲＭができるのかは  // TODO: English translation

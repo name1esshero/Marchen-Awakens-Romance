@@ -1,0 +1,6 @@
+// Legacy reference view of SP_M10_1.SPC; edit text/nfp/SP_M10_1.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000058 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
+@000217  C0D04 １４２０Ｐ C0F04 が入っていた！  // TODO: English translation

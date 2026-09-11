@@ -1,0 +1,5 @@
+// Legacy reference view of GMAP27_A.SPC; edit text/nfp/GMAP27_A.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000006 MAP27_A  // LITERAL: MAP27_A (usage not inferred)

@@ -1,0 +1,19 @@
+// Legacy reference view of MAP11_1A.SPC; edit text/nfp/MAP11_1A.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@00004B MAP11_1A  // LITERAL: MAP11_1A (usage not inferred)
+@000091 MAP11_1O  // LITERAL: MAP11_1O (usage not inferred)
+@00010D MAP11_1O  // LITERAL: MAP11_1O (usage not inferred)
+@000189 MAP11_1O  // LITERAL: MAP11_1O (usage not inferred)
+@000205 MAP11_1O  // LITERAL: MAP11_1O (usage not inferred)
+@000281 MAP11_1O  // LITERAL: MAP11_1O (usage not inferred)
+@0002FD MAP11_1O  // LITERAL: MAP11_1O (usage not inferred)
+@000379 MAP11_1O  // LITERAL: MAP11_1O (usage not inferred)
+@0003F5 MAP11_1O  // LITERAL: MAP11_1O (usage not inferred)
+@000471 MAP11_1O  // LITERAL: MAP11_1O (usage not inferred)
+@0004ED MAP11_1O  // LITERAL: MAP11_1O (usage not inferred)
+@000569 MAP11_1O  // LITERAL: MAP11_1O (usage not inferred)
+@0005E5 MAP11_1O  // LITERAL: MAP11_1O (usage not inferred)
+@000661 MAP11_1O  // LITERAL: MAP11_1O (usage not inferred)
+@0006DD MAP11_1O  // LITERAL: MAP11_1O (usage not inferred)

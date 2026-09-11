@@ -1,0 +1,12 @@
+// G_EV010.SPC: ROM 7F8230
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@0000E8 MAP10_A.SPC  // LITERAL: MAP10_A.SPC (usage not inferred)
+@000229 A  // LITERAL: A (usage not inferred)
+@0004FE F06A01  // LITERAL: F06A01 (usage not inferred)
+@0005BF  C0D04 ［エド］  // EN: [Ed]
+@0005DA  C0F04 とりあえず、はらごしらえだ  // TODO: English translation
+@000631  C0D04 ［エド］  // EN: [Ed]
+@00064C  C0F04 街の北にめし屋がある  // TODO: English translation
+@000673 そこへ行こう  // TODO: English translation

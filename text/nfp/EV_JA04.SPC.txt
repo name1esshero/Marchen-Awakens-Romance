@@ -1,0 +1,56 @@
+// EV_JA04.SPC: ROM 7AF030
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@0000EF MAP03_A  // LITERAL: MAP03_A (usage not inferred)
+@000123 A  // LITERAL: A (usage not inferred)
+@00020B A  // LITERAL: A (usage not inferred)
+@000297 A  // LITERAL: A (usage not inferred)
+@000323 A  // LITERAL: A (usage not inferred)
+@00057C F03A07  // LITERAL: F03A07 (usage not inferred)
+@000655  C0D04 ［ジャック］  // EN: [Jack]
+@000674  C0F04 （オイラがあんなに苦労した  // EN: (He dodged Ruga and Garu's attacks so easily...
+@0006A1 　ルーガルーの攻撃を軽くかわした！！）  // EN: ...when I had so much trouble with them!!)
+@0006F1  C0D04 ［ジャック］  // EN: [Jack]
+@000710  C0F04 （つよい！  // EN: (He's strong!
+@00072D 　ギンタ…何者っスか！？）  // EN: Ginta... who are you?!)
+@0007B1 F01A02  // LITERAL: F01A02 (usage not inferred)
+@0007E9 F13A01  // LITERAL: F13A01 (usage not inferred)
+@000821 F14A02  // LITERAL: F14A02 (usage not inferred)
+@000A08  C0D04 ［ルーガ］  // EN: [Ruga]
+@000A25  C0F04 く、くそ！！！！  // EN: D-damn it!!!!
+@000A72  C0D04 ［ギンタ］  // EN: [Ginta]
+@000A8F  C0F04 ジャックはもういくじなしじゃねぇぞ！  // EN: Jack's no coward anymore!
+@000AC6 本当のいくじなしはおまえらだ！！  // EN: You're the real cowards!!
+@000B10  C0D04 ［ガルー］  // EN: [Garu]
+@000B2D  C0F04 こんなやつらにオレたちが負けるなんて…！  // EN: How could we lose to the likes of them...?!
+@000C92 A  // LITERAL: A (usage not inferred)
+@000EBE F24A01  // LITERAL: F24A01 (usage not inferred)
+@000FA0  C0D04 ［ペタ］  // EN: [Peta]
+@000FBB  C0F04 …  // EN: ...
+@000FFA  C0D04 ［ペタ］  // EN: [Peta]
+@001015  C0F04 ルーガルー…  // EN: Ruga, Garu...
+@001034 おまえ達に仕事を頼みにきてみれば…  // EN: I come to offer you two a job...
+@001080  C0D04 ［ペタ］  // EN: [Peta]
+@00109B  C0F04 なんだこのざまは  // EN: ...and find you in this sorry state.
+@001128 F02A02  // LITERAL: F02A02 (usage not inferred)
+@001211 F13A04  // LITERAL: F13A04 (usage not inferred)
+@001311  C0D04 ［バッボ］  // EN: [Babbo]
+@00132E  C0F04 おまえらおしおきじゃ！  // EN: Time for your punishment!
+@001357 もう悪さできんようにしてやる！  // EN: I'll make sure you can't cause any more trouble!
+@00139F  C0D04 ［ルーガ］  // EN: [Ruga]
+@0013BC  C0F04 ひえええぇぇぇぇぇ！！  // EN: Eeeeeeeek!!
+@001485 F24A02  // LITERAL: F24A02 (usage not inferred)
+@001567  C0D04 ［ペタ］  // EN: [Peta]
+@001582  C0F04 …！！  // EN: ...!!
+@0015C5  C0D04 ［ペタ］  // EN: [Peta]
+@0015E0  C0F04 （バッボ…）  // EN: (Babbo...)
+@001629  C0D04 ［ペタ］  // EN: [Peta]
+@001644  C0F04 （そうか、封印をといたのはおまえか…）  // EN: (I see. So you're the one who broke the seal...)
+@0016A7  C0D04 ［ペタ］  // EN: [Peta]
+@0016C2  C0F04 （ふふふふふふ…）  // EN: (Heh heh heh heh...)
+@0017F1 F13A04  // LITERAL: F13A04 (usage not inferred)
+@001901 F14A04  // LITERAL: F14A04 (usage not inferred)
+@001A6D  C0D04 ［ルーガ＆ガルー］  // EN: [Ruga & Garu]
+@001A92  C0F04 ぎゃ〜〜〜〜〜！！  // EN: Aaaaaaargh!!
+@001B94 EV_JA04B.SPC  // LITERAL: EV_JA04B.SPC (usage not inferred)

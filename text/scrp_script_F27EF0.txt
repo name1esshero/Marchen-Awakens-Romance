@@ -1,0 +1,20 @@
+// Legacy reference view of W_MAP.SPC; edit text/nfp/W_MAP.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000101 行き先をせんたくしますか？  // TODO: English translation
+@0002F2 MAP01_A.SPC  // LITERAL: MAP01_A.SPC (usage not inferred)
+@0003B3 MAP03_A.SPC  // LITERAL: MAP03_A.SPC (usage not inferred)
+@000474 MAP09_A.SPC  // LITERAL: MAP09_A.SPC (usage not inferred)
+@000535 MAP04_A.SPC  // LITERAL: MAP04_A.SPC (usage not inferred)
+@0005F6 MAP10_A.SPC  // LITERAL: MAP10_A.SPC (usage not inferred)
+@0006B7 MAP06_A.SPC  // LITERAL: MAP06_A.SPC (usage not inferred)
+@00078F MAP11_A.SPC  // LITERAL: MAP11_A.SPC (usage not inferred)
+@000829 MAP03_A  // LITERAL: MAP03_A (usage not inferred)
+@00090A MAP40_A.SPC  // LITERAL: MAP40_A.SPC (usage not inferred)
+@000943 MAP09_A  // LITERAL: MAP09_A (usage not inferred)
+@000A24 MAP41_A.SPC  // LITERAL: MAP41_A.SPC (usage not inferred)
+@000A5D MAP10_A  // LITERAL: MAP10_A (usage not inferred)
+@000B3E MAP42_A.SPC  // LITERAL: MAP42_A.SPC (usage not inferred)
+@000B77 MAP06_A  // LITERAL: MAP06_A (usage not inferred)
+@000C7F MAP11_A  // LITERAL: MAP11_A (usage not inferred)

@@ -1,0 +1,9 @@
+// Legacy reference view of HI_M09.SPC; edit text/nfp/HI_M09.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000080 EV_AL01.SPC  // LITERAL: EV_AL01.SPC (usage not inferred)
+@00018D F03A01  // LITERAL: F03A01 (usage not inferred)
+@00024E  C0D04 ［ジャック］  // EN: [Jack]
+@00026D  C0F04 街に来たんだし  // TODO: English translation
+@00028E いろいろ話をきいてみるっス  // TODO: English translation

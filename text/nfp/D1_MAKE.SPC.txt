@@ -1,0 +1,8 @@
+// D1_MAKE.SPC: ROM 579FF0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00027D D1_BOSS.SPC  // LITERAL: D1_BOSS.SPC (usage not inferred)
+@00044A D1_BOSS.SPC  // LITERAL: D1_BOSS.SPC (usage not inferred)
+@000617 D1_BOSS.SPC  // LITERAL: D1_BOSS.SPC (usage not inferred)
+@0007E4 D1_BOSS.SPC  // LITERAL: D1_BOSS.SPC (usage not inferred)

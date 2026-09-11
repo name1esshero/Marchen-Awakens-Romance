@@ -1,0 +1,6 @@
+// Legacy reference view of G_EV023B.SPC; edit text/nfp/G_EV023B.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@00016C EF_GEN12  // LITERAL: EF_GEN12 (usage not inferred)
+@000308 EF_GEN12  // LITERAL: EF_GEN12 (usage not inferred)

@@ -1,0 +1,115 @@
+// Legacy reference view of G_EV023.SPC; edit text/nfp/G_EV023.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000181 MAP05_A.SPC  // LITERAL: MAP05_A.SPC (usage not inferred)
+@00021D A  // LITERAL: A (usage not inferred)
+@0002A9 MAP05_O  // LITERAL: MAP05_O (usage not inferred)
+@000336 MAP05_O  // LITERAL: MAP05_O (usage not inferred)
+@000596 F06A01  // LITERAL: F06A01 (usage not inferred)
+@00066F  C0D04 ［エド］  // EN: [Ed]
+@00068A  C0F04 （今日で３日か…  // TODO: English translation
+@0006AD さすがにねむいぜ…！！）  // TODO: English translation
+@000862  C0D04 ［？？？］  // EN: [???]
+@00087F  C0F04 みーーつけた！！  // TODO: English translation
+@0008DC F06A03  // LITERAL: F06A03 (usage not inferred)
+@0009B5  C0D04 ［エド］  // EN: [Ed]
+@0009D0  C0F04 …！！！  // EN: ...!!!
+@000AD3 A  // LITERAL: A (usage not inferred)
+@000C33 F15A01  // LITERAL: F15A01 (usage not inferred)
+@000DE1  C0D04 ［イアン］  // EN: [Ian]
+@000DFE  C0F04 犬のおじさん♪  // TODO: English translation
+@001229 F06A03  // LITERAL: F06A03 (usage not inferred)
+@001302  C0D04 ［エド］  // EN: [Ed]
+@00131D  C0F04 （チェス…！！  // TODO: English translation
+@00133E 　こんなときに！！）  // TODO: English translation
+@0013C2 F15A01  // LITERAL: F15A01 (usage not inferred)
+@00149B  C0D04 ［イアン］  // EN: [Ian]
+@0014B8  C0F04 魔力（まりょく）をふうじこめるなんて  // TODO: English translation
+@0014EF さすがだよねぇ…  // TODO: English translation
+@001539 F15A02  // LITERAL: F15A02 (usage not inferred)
+@001567  C0D04 ［イアン］  // EN: [Ian]
+@001584  C0F04 さがすの、くろうしちゃった  // TODO: English translation
+@0015DB  C0D04 ［エド］  // EN: [Ed]
+@0015F6  C0F04 …  // TODO: English translation
+@001891 F15A01  // LITERAL: F15A01 (usage not inferred)
+@00196A  C0D04 ［イアン］  // EN: [Ian]
+@001987  C0F04 ギンタ…  // EN: Ginta...
+@0019A2 どこだい？？  // TODO: English translation
+@0019E8 F06A04  // LITERAL: F06A04 (usage not inferred)
+@001AC1  C0D04 ［エド］  // EN: [Ed]
+@001ADC  C0F04 …しらねぇなぁ…  // TODO: English translation
+@001C2B ARM_WE11  // LITERAL: ARM_WE11 (usage not inferred)
+@001E33 EF_GEN12  // LITERAL: EF_GEN12 (usage not inferred)
+@001FFC F06A03  // LITERAL: F06A03 (usage not inferred)
+@0020D5  C0D04 ［エド］  // EN: [Ed]
+@0020F0  C0F04 …ぐぁ！！！  // TODO: English translation
+@002149 F15A01  // LITERAL: F15A01 (usage not inferred)
+@002222  C0D04 ［イアン］  // EN: [Ian]
+@00223F  C0F04 とぼけないでよ  // TODO: English translation
+@00228A  C0D04 ［イアン］  // EN: [Ian]
+@0022A7  C0F04 うちらのつよさは  // TODO: English translation
+@0022CA かいきゅうになってるんだ  // TODO: English translation
+@00231C F15A02  // LITERAL: F15A02 (usage not inferred)
+@00234A  C0D04 ［イアン］  // EN: [Ian]
+@002367  C0F04 ポーン・ルーク・ビショップ・ナイトの順  // TODO: English translation
+@0023A0 ちなみにオレっちはルークだけど  // TODO: English translation
+@0023F8 F15A01  // LITERAL: F15A01 (usage not inferred)
+@002426  C0D04 ［イアン］  // EN: [Ian]
+@002443  C0F04 ポーンがいちばんよわくて  // TODO: English translation
+@00246E ナイトがいちばんつよい  // TODO: English translation
+@0024AE  C0D04 ［イアン］  // EN: [Ian]
+@0024CB  C0F04 ６年前のせんそうでたたかっていた  // TODO: English translation
+@0024FE あんたなら知ってるよね  // TODO: English translation
+@00253E  C0D04 ［エド］  // EN: [Ed]
+@002559  C0F04 …  // TODO: English translation
+@002598  C0D04 ［イアン］  // EN: [Ian]
+@0025B5  C0F04 あんたは本来なら  // TODO: English translation
+@0025D8 ナイトくらいのつよさなのにさ  // TODO: English translation
+@00262E F15A02  // LITERAL: F15A02 (usage not inferred)
+@00265C  C0D04 ［イアン］  // EN: [Ian]
+@002679  C0F04 どうしちゃったの？  // TODO: English translation
+@00269E ってくらい、今、よわいよねぇ  // TODO: English translation
+@0026E4  C0D04 ［イアン］  // EN: [Ian]
+@002701  C0F04 すっごいつかれてるみたいだし？  // TODO: English translation
+@00275C  C0D04 ［イアン］  // EN: [Ian]
+@002779  C0F04 この『修練の門』を  // EN: This Training Gate...
+@00279E はつどうしているからかなーーー？  // TODO: English translation
+@0027F8 F06A01  // LITERAL: F06A01 (usage not inferred)
+@002826  C0D04 ［エド］  // EN: [Ed]
+@002841  C0F04 だれでもしってるようなことを  // TODO: English translation
+@00289A  C0D04 ［エド］  // EN: [Ed]
+@0028B5  C0F04 ぺらぺらぺらぺらと  // TODO: English translation
+@0028DA うるせーよ！！  // TODO: English translation
+@002912  C0D04 ［エド］  // EN: [Ed]
+@00292D  C0F04 そんならこのオレさまを  // TODO: English translation
+@002956 たおしてみやがれよ  // TODO: English translation
+@002A0E F06A02  // LITERAL: F06A02 (usage not inferred)
+@002AA8  C0D04 ［エド］  // EN: [Ed]
+@002AC3  C0F04 ああぁあ！！？？  // TODO: English translation
+@002B8C F15A03  // LITERAL: F15A03 (usage not inferred)
+@002C26  C0D04 ［イアン］  // EN: [Ian]
+@002C43  C0F04 …！！！  // EN: ...!!!
+@002DCD G_EV023B.SPC  // LITERAL: G_EV023B.SPC (usage not inferred)
+@002EDC F06A03  // LITERAL: F06A03 (usage not inferred)
+@002FB5  C0D04 ［エド］  // EN: [Ed]
+@002FD0  C0F04 …う…はっ！！  // TODO: English translation
+@00301B  C0D04 ［エド］  // EN: [Ed]
+@003036  C0F04 （ギンタ…）  // EN: (Ginta...)
+@00307F  C0D04 ［エド］  // EN: [Ed]
+@00309A  C0F04 （なぁ…信じさせてくれよ…）  // TODO: English translation
+@003159 G_EV023B.SPC  // LITERAL: G_EV023B.SPC (usage not inferred)
+@003268 F06A01  // LITERAL: F06A01 (usage not inferred)
+@003368  C0D04 ［エド］  // EN: [Ed]
+@003383  C0F04 …ギ…  // TODO: English translation
+@0033C6  C0D04 ［エド］  // EN: [Ed]
+@0033E1  C0F04 ギ…ン…  // TODO: English translation
+@003436 F15A01  // LITERAL: F15A01 (usage not inferred)
+@00350F  C0D04 ［イアン］  // EN: [Ian]
+@00352C  C0F04 ふぅ〜〜う  // TODO: English translation
+@003573  C0D04 ［イアン］  // EN: [Ian]
+@003590  C0F04 こいつで…  // TODO: English translation
+@00361D F15A02  // LITERAL: F15A02 (usage not inferred)
+@003681  C0D04 ［イアン］  // EN: [Ian]
+@00369E  C0F04 フィニーーーーーーーーーーッシュ！！  // TODO: English translation
+@00390F G_EV023C.SPC  // LITERAL: G_EV023C.SPC (usage not inferred)

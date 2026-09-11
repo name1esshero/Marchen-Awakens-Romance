@@ -1,0 +1,72 @@
+// Legacy reference view of EV_JA04B.SPC; edit text/nfp/EV_JA04B.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000069 MAP08_A  // LITERAL: MAP08_A (usage not inferred)
+@0001A6 A  // LITERAL: A (usage not inferred)
+@000232 A  // LITERAL: A (usage not inferred)
+@000464 F29A02  // LITERAL: F29A02 (usage not inferred)
+@00049C F03A01  // LITERAL: F03A01 (usage not inferred)
+@0005F0  C0D04 ［ジャックの母］  // EN: [Jack's mother]
+@000613  C0F04 生きてたからいいものの！  // EN: You're lucky to be alive!
+@00063E 死んでたかもしれないんだよ！  // EN: You could have died!
+@00070F F29A03  // LITERAL: F29A03 (usage not inferred)
+@00079D  C0D04 ［ジャック］  // EN: [Jack]
+@0007BC  C0F04 ごめん、母ちゃん…  // EN: Sorry, Mom...
+@00087B F01A04  // LITERAL: F01A04 (usage not inferred)
+@000954  C0D04 ［ギンタ］  // EN: [Ginta]
+@000971  C0F04 （母ちゃん…か）  // EN: (Mom... huh.)
+@0009BE  C0D04 ［ギンタ］  // EN: [Ginta]
+@0009DB  C0F04 なぁジャック  // EN: Hey, Jack.
+@000A34 F03A01  // LITERAL: F03A01 (usage not inferred)
+@000B0D  C0D04 ［ジャック］  // EN: [Jack]
+@000B2C  C0F04 何スか？  // EN: What is it?
+@000B71  C0D04 ［ギンタ］  // EN: [Ginta]
+@000B8E  C0F04 こっち来てから、ワクワクしっぱなしで  // EN: I've been so excited ever since I got here...
+@000BC5 忘れてたけど  // EN: ...that I forgot...
+@000BFB  C0D04 ［ギンタ］  // EN: [Ginta]
+@000C18  C0F04 オレ、母ちゃんに何も言わないまま  // EN: ...I came to this world...
+@000C4B こっちのせかいに来ちまったんだ…  // EN: ...without saying anything to my mom...
+@000C95  C0D04 ［ギンタ］  // EN: [Ginta]
+@000CB2  C0F04 たぶん、しんぱいしてる  // EN: She's probably worried.
+@000D81 F29A01  // LITERAL: F29A01 (usage not inferred)
+@000E5A  C0D04 ［ジャックの母］  // EN: [Jack's mother]
+@000E7D  C0F04 …  // EN: ...
+@000EBC  C0D04 ［ギンタ］  // EN: [Ginta]
+@000ED9  C0F04 その他にも待たせてるヤツがいるんだ  // EN: There's someone else waiting for me, too.
+@000F38  C0D04 ［ギンタ］  // EN: [Ginta]
+@000F55  C0F04 だから、帰らなきゃな  // EN: So I've got to get home.
+@000F7C ずっとここにはいられない  // EN: I can't stay here forever.
+@001004 F01A03  // LITERAL: F01A03 (usage not inferred)
+@001068  C0D04 ［ギンタ］  // EN: [Ginta]
+@001085  C0F04 オレはこのせかいを歩き回るぞ！  // EN: I'm going to travel all over this world!
+@001104  C0D04 ［ジャックの母］  // EN: [Jack's mother]
+@001127  C0F04 それなら…  // EN: In that case...
+@0012C4 B  // LITERAL: B (usage not inferred)
+@0013E5 ARM_HO08  // LITERAL: ARM_HO08 (usage not inferred)
+@0016B1 F01B03  // LITERAL: F01B03 (usage not inferred)
+@00178A  C0D04 ［ギンタ］  // EN: [Ginta]
+@0017A7  C0F04 うぉぉおお！！  // EN: Whoooooa!!
+@0017C8 かっこいいよ、おばさん！  // EN: This looks awesome, ma'am!
+@00180A  C0D04 ［ギンタ］  // EN: [Ginta]
+@001827  C0F04 もらっていいの！？  // EN: Can I have it?!
+@001886 F29A01  // LITERAL: F29A01 (usage not inferred)
+@00195F  C0D04 ［ジャックの母］  // EN: [Jack's mother]
+@001982  C0F04 もちろんだよ  // EN: Of course.
+@0019A1 ジャックのお下がりでわるいけどね  // EN: Sorry it's a hand-me-down from Jack, though.
+@0019EB  C0D04 ［ジャックの母］  // EN: [Jack's mother]
+@001A0E  C0F04 それと…  // EN: And another thing...
+@001ACF F03A08  // LITERAL: F03A08 (usage not inferred)
+@001BA8  C0D04 ［ジャックの母］  // EN: [Jack's mother]
+@001BCB  C0F04 ジャックも持ってお行き！  // EN: Take Jack with you too!
+@001C30 F01B11  // LITERAL: F01B11 (usage not inferred)
+@001CDA F03A07  // LITERAL: F03A07 (usage not inferred)
+@001D74  C0D04 ［ジャック］  // EN: [Jack]
+@001D93  C0F04 何言ってんだ！  // EN: What are you talking about?!
+@001DB4 畑仕事はどうするんだよ！！  // EN: What about the farm work?!!
+@001DF8  C0D04 ［ジャックの母］  // EN: [Jack's mother]
+@001E1B  C0F04 いいんだよ！ギンタちゃんがわたしたちを  // EN: Don't worry about that! Just as Ginta...
+@001E54 助けてくれたように  // EN: ...helped us...
+@001E90  C0D04 ［ジャックの母］  // EN: [Jack's mother]
+@001EB3  C0F04 おまえもギンタちゃんを助けるんだ！！  // EN: ...you go and help him!!
+@001FFD EV_JA04C.SPC  // LITERAL: EV_JA04C.SPC (usage not inferred)

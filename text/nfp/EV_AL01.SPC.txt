@@ -1,0 +1,67 @@
+// EV_AL01.SPC: ROM 7952D0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000273 A  // LITERAL: A (usage not inferred)
+@000574 F01B04  // LITERAL: F01B04 (usage not inferred)
+@00064D  C0D04 ［ギンタ］  // EN: [Ginta]
+@00066A  C0F04 …なんだ？？  // EN: ...What's that??
+@000740 A  // LITERAL: A (usage not inferred)
+@00093C  C0D04 ［？？？］  // EN: [???]
+@000959  C0F04 …  // EN: ...
+@0009D8 A  // LITERAL: A (usage not inferred)
+@000BD4  C0D04 ［？？？］  // EN: [???]
+@000CA5 A  // LITERAL: A (usage not inferred)
+@000EA1  C0D04 ［？？？］  // EN: [???]
+@000EBE  C0F04 まちがいなく  // EN: It'll definitely...
+@000EDD 高くうれるねぇ  // EN: ...fetch a good price.
+@000F25 F01B04  // LITERAL: F01B04 (usage not inferred)
+@00100E F03A03  // LITERAL: F03A03 (usage not inferred)
+@0010E7  C0D04 ［ギンタ］  // EN: [Ginta]
+@001104  C0F04 だれだよ？  // EN: Who are you?
+@001121 何か用！？  // EN: What do you want?!
+@0011A7 F01B05  // LITERAL: F01B05 (usage not inferred)
+@001243 01B07  // LITERAL: 01B07 (usage not inferred)
+@0013A7 F03A04  // LITERAL: F03A04 (usage not inferred)
+@00142D 03A07  // LITERAL: 03A07 (usage not inferred)
+@001591 F02A12  // LITERAL: F02A12 (usage not inferred)
+@001691  C0D04 ［バッボ］  // EN: [Babbo]
+@0016AE  C0F04 ギンタぁ！！  // EN: Gintaaa!!
+@0016CD ジャックぅーーー！！  // EN: Jaaaack!!
+@001B69 F01B02  // LITERAL: F01B02 (usage not inferred)
+@001C42  C0D04 ［ギンタ］  // EN: [Ginta]
+@001C5F  C0F04 いててて…  // EN: Ow, ow, ow...
+@001C7C ジャック！だいじょうぶか！？  // EN: Jack! Are you all right?!
+@001EB0 F03A03  // LITERAL: F03A03 (usage not inferred)
+@001F89  C0D04 ［ジャック］  // EN: [Jack]
+@001FA8  C0F04 な、なんとか…  // EN: S-somehow...
+@002003 F01B04  // LITERAL: F01B04 (usage not inferred)
+@0020DC  C0D04 ［ギンタ］  // EN: [Ginta]
+@0020F9  C0F04 バッボはへいきだったか？  // EN: Is Babbo all right?
+@0021EB F01B11  // LITERAL: F01B11 (usage not inferred)
+@002280 F01B10  // LITERAL: F01B10 (usage not inferred)
+@0022AE  C0D04 ［ギンタ］  // EN: [Ginta]
+@0022CB  C0F04 …！！  // EN: ...!!
+@0022E4 やべぇ！あいつぬすまれた！  // EN: Oh no! They've stolen him!
+@002338 F03A04  // LITERAL: F03A04 (usage not inferred)
+@002366  C0D04 ［ジャック］  // EN: [Jack]
+@002385  C0F04 バッボがねらいだったのか！  // EN: So they were after Babbo!
+@0023DC  C0D04 ［ジャック］  // EN: [Jack]
+@0023FB  C0F04 こんなところに  // EN: Who'd have thought thieves...
+@00241C とうぞくがでるなんて！！  // EN: ...would turn up here?!!
+@00245E  C0D04 ［ギンタ］  // EN: [Ginta]
+@00247B  C0F04 やっぱりアイツ…  // EN: So he really is...
+@0025A1 A  // LITERAL: A (usage not inferred)
+@0027C4  C0D04 ［街の人］  // EN: [Townsperson]
+@0027E1  C0F04 あんたたち、さっきのとうぞく  // EN: Hey, you two! Those thieves...
+@002810 向こうのほうにいったよ！！  // EN: ...went that way!!
+@002864 F01B03  // LITERAL: F01B03 (usage not inferred)
+@00293D  C0D04 ［ギンタ］  // EN: [Ginta]
+@00295A  C0F04 よし、おいかけよう！！  // EN: All right, let's go after them!!
+@0029BD F03A01  // LITERAL: F03A01 (usage not inferred)
+@002A96  C0D04 ［ジャック］  // EN: [Jack]
+@002AB5  C0F04 いそぐっス！  // EN: Hurry!
+@002AD4 あいつら足がはやいっスよ！  // EN: Those guys are fast!
+@002D65 EV_AL02.SPC  // LITERAL: EV_AL02.SPC (usage not inferred)
+@000BF1  C0F04 生きてる<F0><56>ＲＭ…  // EN: A living ÄRM...
+@00249E とんでもない<F0><56>ＲＭ？？  // EN: ...some incredible ÄRM??

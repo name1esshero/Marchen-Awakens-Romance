@@ -1,0 +1,13 @@
+// CH_M08A.SPC: ROM 56A600
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00011B F29A03  // LITERAL: F29A03 (usage not inferred)
+@0001DC  C0D04 ［ジャックの母］  // EN: [Jack's mother]
+@0001FF  C0F04 ああ…ジャック…  // TODO: English translation
+@00025B F29A01  // LITERAL: F29A01 (usage not inferred)
+@00034B  C0D04 ［ジャックの母］  // EN: [Jack's mother]
+@00036E  C0F04 体に気をつけるんだよ  // TODO: English translation
+@0003F3 J_VS_M.SPC  // LITERAL: J_VS_M.SPC (usage not inferred)
+@000420  C0D04 ［ジャックの母］  // EN: [Jack's mother]
+@000443  C0F04 じまんの野菜をたべてみないかい  // TODO: English translation

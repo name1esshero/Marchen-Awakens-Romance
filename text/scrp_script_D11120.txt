@@ -1,0 +1,6 @@
+// Legacy reference view of MAP41_A.SPC; edit text/nfp/MAP41_A.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000006 MAP41_A  // LITERAL: MAP41_A (usage not inferred)
+@000090 TAKARA  // LITERAL: TAKARA (usage not inferred)

@@ -1,0 +1,29 @@
+// Legacy reference view of G_EV011B.SPC; edit text/nfp/G_EV011B.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@0000BB MAP10_A.SPC  // LITERAL: MAP10_A.SPC (usage not inferred)
+@000136 A  // LITERAL: A (usage not inferred)
+@0001C2 A  // LITERAL: A (usage not inferred)
+@00030A F04A01  // LITERAL: F04A01 (usage not inferred)
+@0004AE F02A06  // LITERAL: F02A06 (usage not inferred)
+@00074E F04A04  // LITERAL: F04A04 (usage not inferred)
+@000985 F02A06  // LITERAL: F02A06 (usage not inferred)
+@000DB7 F04A05  // LITERAL: F04A05 (usage not inferred)
+@001027  C0D04 ［エド］  // EN: [Ed]
+@001042  C0F04 強ェコだよな、まったく…  // TODO: English translation
+@001097  C0D04 ［エド］  // EN: [Ed]
+@0010B2  C0F04 今まで、ハコに入れられて大事にされて  // TODO: English translation
+@0010E9 くらしてきた『ひめさま』だってのに…  // TODO: English translation
+@001137  C0D04 ［エド］  // EN: [Ed]
+@001152  C0F04 ははおやが死んで、代わりのははおやには  // TODO: English translation
+@00118B 命をねらわれている始末だ  // TODO: English translation
+@0011CD  C0D04 ［エド］  // EN: [Ed]
+@0011E8  C0F04 それなのに…  // TODO: English translation
+@001252  C0D04 ［エド］  // EN: [Ed]
+@00126D  C0F04 へこたれずにわらってやがる…  // TODO: English translation
+@0012C6  C0D04 ［エド］  // EN: [Ed]
+@0012E1  C0F04 いつかまた、いいことあるよねって  // TODO: English translation
+@00133E  C0D04 ［エド］  // EN: [Ed]
+@001359  C0F04 わらってやがるんだ  // TODO: English translation
+@001431 G_EV011C.SPC  // LITERAL: G_EV011C.SPC (usage not inferred)

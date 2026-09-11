@@ -1,0 +1,66 @@
+// Legacy reference view of EV_ICE07.SPC; edit text/nfp/EV_ICE07.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000191 MAP04_4A.SPC  // LITERAL: MAP04_4A.SPC (usage not inferred)
+@0002C1 F01B01  // LITERAL: F01B01 (usage not inferred)
+@00039A  C0D04 ［ギンタ］  // EN: [Ginta]
+@0003B7  C0F04 なぁエド…  // EN: Hey, Ed...
+@0003D4 ひめさまってどんな人？？  // EN: What's the princess like??
+@000426 F05A01  // LITERAL: F05A01 (usage not inferred)
+@0004FF  C0D04 ［エド］  // EN: [Ed]
+@00051A  C0F04 やさしい…  // EN: She's kind...
+@000537 心のきよらかなお方です  // EN: ...and pure of heart.
+@000577  C0D04 ［エド］  // EN: [Ed]
+@000592  C0F04 この城（しろ）にたどりついて  // EN: When we reached this castle...
+@0005C1 おってが来るまえに  // EN: ...before our pursuers arrived...
+@0005FD  C0D04 ［エド］  // EN: [Ed]
+@000618  C0F04 助けをよびなさい、と…  // EN: ...she told me to call for help...
+@000641 ここからにげなさい、と…  // EN: ...to escape from this place...
+@000683  C0D04 ［エド］  // EN: [Ed]
+@00069E  C0F04 …  // EN: ...
+@0006ED F05A03  // LITERAL: F05A03 (usage not inferred)
+@00071B  C0D04 ［エド］  // EN: [Ed]
+@000736  C0F04 そういって、おそらくわたしだけでも  // EN: I believe she said that...
+@00076B 助けるおつもりだったのでしょう  // EN: ...so that at least I would be saved.
+@0007B3  C0D04 ［エド］  // EN: [Ed]
+@0007CE  C0F04 守らねばならぬ方に  // EN: The very person I should protect...
+@0007F3 守られてしまった…  // EN: ...ended up protecting me...
+@00082F  C0D04 ［エド］  // EN: [Ed]
+@00084A  C0F04 どちらが家臣（かしん）か、わかりません  // EN: You'd hardly know which of us is the servant.
+@000883 かなしくなってきます…  // EN: It saddens me...
+@0008D3 F01B03  // LITERAL: F01B03 (usage not inferred)
+@000901  C0D04 ［ギンタ］  // EN: [Ginta]
+@00091E  C0F04 そんなかお、すんなよ！  // EN: Don't look so down!
+@000971  C0D04 ［ギンタ］  // EN: [Ginta]
+@00098E  C0F04 そのひめさま、おまえを  // EN: That princess trusts you...
+@0009B7 心のそこからしんじてるんだよ  // EN: ...from the bottom of her heart.
+@0009FD  C0D04 ［ギンタ］  // EN: [Ginta]
+@000A1A  C0F04 ぜったい助けようぜ！！  // EN: We're going to save her, no matter what!!
+@000A7D F05A01  // LITERAL: F05A01 (usage not inferred)
+@000AAB  C0D04 ［エド］  // EN: [Ed]
+@000AC6  C0F04 は、はい！  // EN: Y-yes!
+@000B0D  C0D04 ［エド］  // EN: [Ed]
+@000B28  C0F04 （この少年といっしょにいると  // EN: (When I'm with this boy...
+@000B57 　すごく安心できる…）  // EN: ...I feel so reassured...)
+@000B97  C0D04 ［エド］  // EN: [Ed]
+@000BB2  C0F04 （じぶんのなかにいる  // EN: (And the other me...
+@000BD9 　もうひとりのじぶんも…）  // EN: ...inside me must feel the same...)
+@000C1D  C0D04 ［エド］  // EN: [Ed]
+@000C38  C0F04 （きっと…）  // EN: (I'm sure...)
+@000CFD F01B14  // LITERAL: F01B14 (usage not inferred)
+@000D97  C0D04 ［ギンタ］  // EN: [Ginta]
+@000DB4  C0F04 へぃっくし！！  // EN: Achoo!!
+@000DFF  C0D04 ［ギンタ］  // EN: [Ginta]
+@000E1C  C0F04 あ”〜〜〜〜〜〜…  // EN: Uggghhhhh...
+@000EB1 F03A06  // LITERAL: F03A06 (usage not inferred)
+@000F15  C0D04 ［ジャック］  // EN: [Jack]
+@000F34  C0F04 …ギンタ、はなみずが  // EN: ...Ginta, your runny nose...
+@000F5B 『クリスタルはなみず』になってるっス  // EN: ...has turned into 'crystal snot.'
+@000FEF F02A02  // LITERAL: F02A02 (usage not inferred)
+@001053  C0D04 ［バッボ］  // EN: [Babbo]
+@001070  C0F04 うむ！  // EN: Indeed!
+@00111D F05A03  // LITERAL: F05A03 (usage not inferred)
+@001181  C0D04 ［エド］  // EN: [Ed]
+@00119C  C0F04 …  // EN: ...
+@0011B1 （信じてよいのかっ！？）  // EN: (Can I really trust him?!)

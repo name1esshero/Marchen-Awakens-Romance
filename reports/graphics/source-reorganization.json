@@ -1,0 +1,730 @@
+[
+  {
+    "old_path": "graphics/tilesets/tileset_1C9E00",
+    "new_path": "graphics/tilesets/AD0_P_0A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "AD0_P_0A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_237570",
+    "new_path": "graphics/tilesets/AD1_P_0A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "AD1_P_0A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_2A3C80",
+    "new_path": "graphics/tilesets/AD3_P_0A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "AD3_P_0A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_310650",
+    "new_path": "graphics/tilesets/AD4_P_0A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "AD4_P_0A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_3759B0",
+    "new_path": "graphics/tilesets/AD_BG01.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "AD_BG01.KCG"
+  },
+  {
+    "old_path": "graphics/sprites/sprite_378010",
+    "new_path": "graphics/tilesets/AD_BG02.KCG",
+    "old_kind": "sprites",
+    "kind": "tilesets",
+    "archive_member": "AD_BG02.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_379240",
+    "new_path": "graphics/tilesets/AL_BG01.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "AL_BG01.KCG"
+  },
+  {
+    "old_path": "graphics/sprites/sprite_37BC10",
+    "new_path": "graphics/tilesets/AL_BG02.KCG",
+    "old_kind": "sprites",
+    "kind": "tilesets",
+    "archive_member": "AL_BG02.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_37CF80",
+    "new_path": "graphics/tilesets/AS_BG01.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "AS_BG01.KCG"
+  },
+  {
+    "old_path": "graphics/sprites/sprite_37FBA0",
+    "new_path": "graphics/tilesets/AS_BG02.KCG",
+    "old_kind": "sprites",
+    "kind": "tilesets",
+    "archive_member": "AS_BG02.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_3818A0",
+    "new_path": "graphics/tilesets/AT_BG01.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "AT_BG01.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_383EB0",
+    "new_path": "graphics/tilesets/BA06.TCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "BA06.TCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_387D60",
+    "new_path": "graphics/tilesets/BA06_BG.TCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "BA06_BG.TCG"
+  },
+  {
+    "old_path": "graphics/sprites/sprite_38C4C0",
+    "new_path": "graphics/tilesets/BA07.TCG",
+    "old_kind": "sprites",
+    "kind": "tilesets",
+    "archive_member": "BA07.TCG"
+  },
+  {
+    "old_path": "graphics/sprites/sprite_56DB30",
+    "new_path": "graphics/tilesets/CLPASS.KCG",
+    "old_kind": "sprites",
+    "kind": "tilesets",
+    "archive_member": "CLPASS.KCG"
+  },
+  {
+    "old_path": "graphics/sprites/sprite_56EE70",
+    "new_path": "graphics/tilesets/CM_BG01.KCG",
+    "old_kind": "sprites",
+    "kind": "tilesets",
+    "archive_member": "CM_BG01.KCG"
+  },
+  {
+    "old_path": "graphics/sprites/sprite_571050",
+    "new_path": "graphics/tilesets/CM_BG02.KCG",
+    "old_kind": "sprites",
+    "kind": "tilesets",
+    "archive_member": "CM_BG02.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_5A6FA0",
+    "new_path": "graphics/tilesets/DS_BG01.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "DS_BG01.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_5AAB70",
+    "new_path": "graphics/tilesets/DS_BG02.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "DS_BG02.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_7CA760",
+    "new_path": "graphics/tilesets/GA08.TCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "GA08.TCG"
+  },
+  {
+    "old_path": "graphics/tilemaps/tilemap_7D4E20",
+    "new_path": "graphics/tilesets/GA13.TCG",
+    "old_kind": "tilemaps",
+    "kind": "tilesets",
+    "archive_member": "GA13.TCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_7DA980",
+    "new_path": "graphics/tilesets/GA24.TCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "GA24.TCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_7E07E0",
+    "new_path": "graphics/tilesets/GA25.TCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "GA25.TCG"
+  },
+  {
+    "old_path": "graphics/sprites/sprite_7E6880",
+    "new_path": "graphics/tilesets/GA26.TCG",
+    "old_kind": "sprites",
+    "kind": "tilesets",
+    "archive_member": "GA26.TCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_7E9720",
+    "new_path": "graphics/tilesets/GA60.TCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "GA60.TCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_7F1F20",
+    "new_path": "graphics/tilesets/GA_BG01.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "GA_BG01.KCG"
+  },
+  {
+    "old_path": "graphics/sprites/sprite_814B30",
+    "new_path": "graphics/tilesets/IT_BG01.KCG",
+    "old_kind": "sprites",
+    "kind": "tilesets",
+    "archive_member": "IT_BG01.KCG"
+  },
+  {
+    "old_path": "graphics/sprites/sprite_816AD0",
+    "new_path": "graphics/tilesets/IT_BG02.KCG",
+    "old_kind": "sprites",
+    "kind": "tilesets",
+    "archive_member": "IT_BG02.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_818470",
+    "new_path": "graphics/tilesets/JA05.TCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "JA05.TCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_81F7C0",
+    "new_path": "graphics/tilesets/MAP00_A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP00_A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_85AF20",
+    "new_path": "graphics/tilesets/MAP01_1A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP01_1A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_866A30",
+    "new_path": "graphics/tilesets/MAP01_2A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP01_2A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_86F4C0",
+    "new_path": "graphics/tilesets/MAP01_3A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP01_3A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_892240",
+    "new_path": "graphics/tilesets/MAP01_A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP01_A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_89EDE0",
+    "new_path": "graphics/tilesets/MAP03_A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP03_A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_8D56F0",
+    "new_path": "graphics/tilesets/MAP04_6A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP04_6A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_8E2070",
+    "new_path": "graphics/tilesets/MAP04_7A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP04_7A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_8EC480",
+    "new_path": "graphics/tilesets/MAP04_A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP04_A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_93ABF0",
+    "new_path": "graphics/tilesets/MAP05_A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP05_A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_94BD50",
+    "new_path": "graphics/tilesets/MAP06_1A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP06_1A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_95BE20",
+    "new_path": "graphics/tilesets/MAP06_2A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP06_2A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_963D60",
+    "new_path": "graphics/tilesets/MAP06_A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP06_A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_980DC0",
+    "new_path": "graphics/tilesets/MAP07_2A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP07_2A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_988960",
+    "new_path": "graphics/tilesets/MAP07_3A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP07_3A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_992740",
+    "new_path": "graphics/tilesets/MAP07_A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP07_A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_A11790",
+    "new_path": "graphics/tilesets/MAP08_A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP08_A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_A1CE60",
+    "new_path": "graphics/tilesets/MAP09_A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP09_A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_A32DD0",
+    "new_path": "graphics/tilesets/MAP10_1A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP10_1A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_A3A480",
+    "new_path": "graphics/tilesets/MAP10_A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP10_A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_A473C0",
+    "new_path": "graphics/tilesets/MAP11_1A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP11_1A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_A53290",
+    "new_path": "graphics/tilesets/MAP11_2A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP11_2A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_A5D7C0",
+    "new_path": "graphics/tilesets/MAP11_A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP11_A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_A6F830",
+    "new_path": "graphics/tilesets/MAP24_1A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP24_1A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_AC3390",
+    "new_path": "graphics/tilesets/MAP24_4A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP24_4A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_AEA9D0",
+    "new_path": "graphics/tilesets/MAP24_A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP24_A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_AF3A60",
+    "new_path": "graphics/tilesets/MAP25_1A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP25_1A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_BC7780",
+    "new_path": "graphics/tilesets/MAP25_5A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP25_5A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_BD9410",
+    "new_path": "graphics/tilesets/MAP26_1A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP26_1A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_C06ED0",
+    "new_path": "graphics/tilesets/MAP26_2A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP26_2A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_CC8CC0",
+    "new_path": "graphics/tilesets/MAP27_A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "MAP27_A.KCG"
+  },
+  {
+    "old_path": "graphics/tilemaps/tilemap_D49D50",
+    "new_path": "graphics/tilesets/MAP99_A.KCG",
+    "old_kind": "tilemaps",
+    "kind": "tilesets",
+    "archive_member": "MAP99_A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_D4B650",
+    "new_path": "graphics/tilesets/ML_BG01.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "ML_BG01.KCG"
+  },
+  {
+    "old_path": "graphics/tilemaps/tilemap_D4E030",
+    "new_path": "graphics/tilesets/MWA.KCG",
+    "old_kind": "tilemaps",
+    "kind": "tilesets",
+    "archive_member": "MWA.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_D4F540",
+    "new_path": "graphics/tilesets/NE01.TCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "NE01.TCG"
+  },
+  {
+    "old_path": "graphics/tilemaps/tilemap_D51280",
+    "new_path": "graphics/tilesets/NE13.TCG",
+    "old_kind": "tilemaps",
+    "kind": "tilesets",
+    "archive_member": "NE13.TCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_D52EE0",
+    "new_path": "graphics/tilesets/NE21.TCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "NE21.TCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_D58E10",
+    "new_path": "graphics/tilesets/NE32.TCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "NE32.TCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_D5CBF0",
+    "new_path": "graphics/tilesets/NE33.TCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "NE33.TCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_D6EAB0",
+    "new_path": "graphics/tilesets/OP_01_A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "OP_01_A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_D736A0",
+    "new_path": "graphics/tilesets/OP_04_A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "OP_04_A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_D77DA0",
+    "new_path": "graphics/tilesets/OP_05_A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "OP_05_A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_D7CCB0",
+    "new_path": "graphics/tilesets/OP_06_A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "OP_06_A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_D81890",
+    "new_path": "graphics/tilesets/OP_07_A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "OP_07_A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_D856B0",
+    "new_path": "graphics/tilesets/OP_08_A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "OP_08_A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_D89960",
+    "new_path": "graphics/tilesets/OP_09_A.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "OP_09_A.KCG"
+  },
+  {
+    "old_path": "graphics/sprites/sprite_D8EA80",
+    "new_path": "graphics/tilesets/OP_0A_A.KCG",
+    "old_kind": "sprites",
+    "kind": "tilesets",
+    "archive_member": "OP_0A_A.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_D91C80",
+    "new_path": "graphics/tilesets/PS_BG01.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "PS_BG01.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_D95B80",
+    "new_path": "graphics/tilesets/PV_BG01.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "PV_BG01.KCG"
+  },
+  {
+    "old_path": "graphics/sprites/sprite_D98290",
+    "new_path": "graphics/tilesets/PV_BG11.KCG",
+    "old_kind": "sprites",
+    "kind": "tilesets",
+    "archive_member": "PV_BG11.KCG"
+  },
+  {
+    "old_path": "graphics/sprites/sprite_D98FB0",
+    "new_path": "graphics/tilesets/PW_BG01.KCG",
+    "old_kind": "sprites",
+    "kind": "tilesets",
+    "archive_member": "PW_BG01.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_D9AEB0",
+    "new_path": "graphics/tilesets/PW_BOX.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "PW_BOX.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_D9CB00",
+    "new_path": "graphics/tilesets/SBA06.TCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "SBA06.TCG"
+  },
+  {
+    "old_path": "graphics/sprites/sprite_DA2370",
+    "new_path": "graphics/tilesets/SK02.TCG",
+    "old_kind": "sprites",
+    "kind": "tilesets",
+    "archive_member": "SK02.TCG"
+  },
+  {
+    "old_path": "graphics/sprites/sprite_DA39E0",
+    "new_path": "graphics/tilesets/SK03.TCG",
+    "old_kind": "sprites",
+    "kind": "tilesets",
+    "archive_member": "SK03.TCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_DA5C50",
+    "new_path": "graphics/tilesets/SM_BG01.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "SM_BG01.KCG"
+  },
+  {
+    "old_path": "graphics/sprites/sprite_DA8990",
+    "new_path": "graphics/tilesets/SM_BG12.KCG",
+    "old_kind": "sprites",
+    "kind": "tilesets",
+    "archive_member": "SM_BG12.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_DAA4B0",
+    "new_path": "graphics/tilesets/SN06.TCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "SN06.TCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_DABC40",
+    "new_path": "graphics/tilesets/SN07.TCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "SN07.TCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_DB33A0",
+    "new_path": "graphics/tilesets/SP_BG01.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "SP_BG01.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_DB6060",
+    "new_path": "graphics/tilesets/SP_BG11.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "SP_BG11.KCG"
+  },
+  {
+    "old_path": "graphics/sprites/sprite_DB92B0",
+    "new_path": "graphics/tilesets/SP_BG12.KCG",
+    "old_kind": "sprites",
+    "kind": "tilesets",
+    "archive_member": "SP_BG12.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_DBA620",
+    "new_path": "graphics/tilesets/SP_BG21.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "SP_BG21.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_DBD240",
+    "new_path": "graphics/tilesets/SP_BG22.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "SP_BG22.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_DC8210",
+    "new_path": "graphics/tilesets/SSN07.TCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "SSN07.TCG"
+  },
+  {
+    "old_path": "graphics/sprites/sprite_DCF020",
+    "new_path": "graphics/tilesets/ST_BG01.KCG",
+    "old_kind": "sprites",
+    "kind": "tilesets",
+    "archive_member": "ST_BG01.KCG"
+  },
+  {
+    "old_path": "graphics/sprites/sprite_DD0C80",
+    "new_path": "graphics/tilesets/ST_BG02.KCG",
+    "old_kind": "sprites",
+    "kind": "tilesets",
+    "archive_member": "ST_BG02.KCG"
+  },
+  {
+    "old_path": "graphics/sprites/sprite_DD25F0",
+    "new_path": "graphics/tilesets/ST_BG03.KCG",
+    "old_kind": "sprites",
+    "kind": "tilesets",
+    "archive_member": "ST_BG03.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_DD3F10",
+    "new_path": "graphics/tilesets/ST_BG11.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "ST_BG11.KCG"
+  },
+  {
+    "old_path": "graphics/sprites/sprite_F19AA0",
+    "new_path": "graphics/tilesets/T_C01.KCG",
+    "old_kind": "sprites",
+    "kind": "tilesets",
+    "archive_member": "T_C01.KCG"
+  },
+  {
+    "old_path": "graphics/sprites/sprite_F1ABE0",
+    "new_path": "graphics/tilesets/T_C02.KCG",
+    "old_kind": "sprites",
+    "kind": "tilesets",
+    "archive_member": "T_C02.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_F1B910",
+    "new_path": "graphics/tilesets/T_ML_BG.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "T_ML_BG.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_F1EF50",
+    "new_path": "graphics/tilesets/T_TTL06.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "T_TTL06.KCG"
+  },
+  {
+    "old_path": "graphics/tilesets/tileset_F23E20",
+    "new_path": "graphics/tilesets/WM_BG01.KCG",
+    "old_kind": "tilesets",
+    "kind": "tilesets",
+    "archive_member": "WM_BG01.KCG"
+  },
+  {
+    "old_path": "graphics/sprites/sprite_F26550",
+    "new_path": "graphics/tilesets/WM_BG02.KCG",
+    "old_kind": "sprites",
+    "kind": "tilesets",
+    "archive_member": "WM_BG02.KCG"
+  }
+]

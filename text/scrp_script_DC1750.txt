@@ -1,0 +1,14 @@
+// Legacy reference view of SP_M04.SPC; edit text/nfp/SP_M04.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000058 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
+@000217  C0D04 ３４０Ｐ C0F04 が入っていた！  // TODO: English translation
+@00037B DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
+@0003FE DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
+@000481 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
+@000504 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
+@00054F OBJ_S.SPC  // LITERAL: OBJ_S.SPC (usage not inferred)
+@000597 OBJ_S.SPC  // LITERAL: OBJ_S.SPC (usage not inferred)
+@0005DF OBJ_S.SPC  // LITERAL: OBJ_S.SPC (usage not inferred)
+@0006BC EV_ICE05.SPC  // LITERAL: EV_ICE05.SPC (usage not inferred)

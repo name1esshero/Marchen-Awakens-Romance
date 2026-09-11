@@ -1,0 +1,6 @@
+// G_EV023B.SPC: ROM 800690
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00016C EF_GEN12  // LITERAL: EF_GEN12 (usage not inferred)
+@000308 EF_GEN12  // LITERAL: EF_GEN12 (usage not inferred)

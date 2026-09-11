@@ -1,0 +1,39 @@
+// EV_PA01.SPC: ROM 7B2370
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000133 A  // LITERAL: A (usage not inferred)
+@00036A F03A01  // LITERAL: F03A01 (usage not inferred)
+@000443  C0D04 ［ジャック］  // EN: [Jack]
+@000462  C0F04 ここが『パヅタウン』っス  // EN: This is Pazu Town.
+@0004B7  C0D04 ［ジャック］  // EN: [Jack]
+@0004D6  C0F04 この近くじゃ、いちばん  // EN: It's the biggest town...
+@0004FF おおきな街っス  // EN: ...in these parts.
+@000537  C0D04 ［ジャック］  // EN: [Jack]
+@000556  C0F04 オイラ、田舎ものなのでよくは  // EN: I'm just a country boy, so...
+@000585 知らないスけど  // EN: ...I don't know much about it, but...
+@0005BD  C0D04 ［ジャック］  // EN: [Jack]
+@00061F しゅるいがあるっス  // EN: ...called Dimension ÄRM.
+@00066B F01B01  // LITERAL: F01B01 (usage not inferred)
+@000744  C0D04 ［ギンタ］  // EN: [Ginta]
+@000761  C0F04 ディメンション…  // EN: Dimension...
+@0007AE  C0D04 ［ジャック］  // EN: [Jack]
+@0007CD  C0F04 ちがう所にワープできたりするらしいっス  // EN: Apparently they can warp you to other places.
+@000830  C0D04 ［ジャック］  // EN: [Jack]
+@00084F  C0F04 ギンタは、たぶんそのディメンションの  // EN: Ginta, you were probably warped here...
+@000886 強力なヤツでこのせかいにワープしたんスよ  // EN: ...by a really powerful Dimension ÄRM.
+@0008D8  C0D04 ［ジャック］  // EN: [Jack]
+@0008F7  C0F04 このパヅタウンでは  // EN: Here in Pazu Town...
+@00091C いちばがあって、たいていのものがあるし…  // EN: ...there's a market with just about everything...
+@00096E  C0D04 ［ジャック］  // EN: [Jack]
+@0009EA  C0D04 ［ジャック］  // EN: [Jack]
+@000A09  C0F04 ギンタがいたせかいへかえれる  // EN: Maybe we'll find information on an ÄRM...
+@000A90 F03A06  // LITERAL: F03A06 (usage not inferred)
+@000ABE  C0D04 ［ジャック］  // EN: [Jack]
+@000ADD  C0F04 さ、いろいろ話をきいて  // EN: Come on, let's...
+@000B06 みるっスよ！！  // EN: ...ask around!!
+@000B3E  C0D04 ［ギンタ］  // EN: [Ginta]
+@000B5B  C0F04 …うん！  // EN: ...Yeah!
+@0005DC  C0F04 <F0><56>ＲＭには C0904 『ディメンション』 C0F04 という  // EN: ...there's a type of ÄRM...
+@00098D  C0F04 <F0><56>ＲＭを売ってるヤツもいるっス！  // EN: ...and there are people selling ÄRM too!
+@000A38 <F0><56>ＲＭのじょうほうもあるかも…  // EN: ...that can take you back to your world...

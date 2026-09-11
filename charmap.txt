@@ -1,0 +1,66 @@
+# MAR character map -- ROM-backed glyph mapping
+#
+# Actual font: MAR.NFP / FONT.NFT at ROM 0x7BA990.
+# Header: 0x60 bytes before the bitmap; 7,984 fixed 8x8, 1bpp slots.
+# Bitmap: ROM 0x7BA9F0..0x7CA370 (63,872 bytes), MSB-first rows.
+# These are slots, including intentional blanks, not 7,984 unique characters.
+# graphics/fonts/font.png is a lossless editable sheet, 32 glyphs per row.
+# graphics/fonts/engine_charmap.tsv lists ALL 65,536 engine input codes.
+# graphics/fonts/glyphs.tsv adds Unicode labels for decodable Shift-JIS codes.
+# Labels describe input codes; they do not override the glyph actually drawn.
+#
+# ReadEngineCharacter (080025BC):
+#   first byte 80..9F or E0..FF: (first << 8) | second
+#   otherwise: first byte alone
+# This includes private/nonstandard codes beyond a standard Shift-JIS codec.
+# 00 normally terminates text before the glyph mapper is called.
+#
+# FontCharacterToGlyph (0807AE7C), in priority order:
+#   0000..00FF                         code + 01E0
+#   8140..81FF                         code - 8140
+#   839F..83D6                         code - 81C0
+#   8440..8491                         code - 8200
+#   8740..879C                         code - 82C0
+#   8240..829A or 829F..82F1            code - 8180
+#   8340..83FF                         code - 81C0
+#   remaining codes in 8240..84BF      0000
+#   8840..988F                         (high-88)*192 + low + 0500
+#   9890..9FFF                         (high-98)*192 + low + 1100
+#   E040..EAAF                         (high-E0)*192 + low + 1700
+#   all other inputs                  FFFF (unsupported)
+# All constants except the stride 192 are hexadecimal.
+# The ROM redundantly tests 81B0..81BA before 8140..81FF.
+# tests/test_font.py executes the original THUMB mapping routine and compares
+# all 65,536 results with tools/font.py. This mapping is fully verified.
+#
+# GetFontGlyph (0807AE10) first redirects F056 -> 81FA and F040 -> 81F9.
+# In this font, those slots visibly contain Ä and a heart, respectively.
+# Preserve them in editable text as <F0><56> and <F0><40>; neither target
+# 81FA nor 81F9 is a standard Python shift_jis character.
+# Unsupported results are replaced with 81A1 (slot 0061, filled square).
+# Glyph address = font + glyphOffset + index * (((width*bpp+7)>>3)*height).
+# For this font the stride is 8. The redirects are separate from the mapper.
+#
+# Examples:
+#   8140 -> slot 0000  ideographic space
+#   8260 -> slot 00E0  full-width A, drawn with an 8-pixel Latin glyph
+#   8281 -> slot 0101  full-width a
+#   82A0 -> slot 0120  hiragana a
+#   8341 -> slot 0181  katakana a
+# Standard ASCII A (0041) instead selects slot 0221. Do not silently map it
+# to slot 00E0: the ROM does not do that in these routines. Preview Latin
+# text using full-width Shift-JIS input, as graphics/fonts/preview.png does.
+#
+# Editable text representation:
+#   Normal Unicode text -> Python shift_jis codec, with exact byte round-trip.
+#   <XX> -> one literal byte; use escapes for private/undecodable byte values.
+#   <3C>, <3E> -> literal angle brackets, avoiding escape syntax ambiguity.
+#   text/nfp/*.txt: @offset refers to the 0x10 string opcode inside CODE.
+#   Two spaces followed by // introduce comments; EN: means reviewed English.
+#   Original spaces in text are significant. Preserve them before comments.
+#
+# Scope: glyph mapping is complete; text-format command semantics are NOT.
+# Strings contain sequences such as ' C0D04 ' and ' C0F04 '. They remain
+# verbatim until the higher-level parser is decoded. The previous control-code
+# frequency table mixed binary scan results with text and has been removed;
+# those frequencies were not evidence for command meanings.

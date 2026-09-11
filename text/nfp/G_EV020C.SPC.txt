@@ -1,0 +1,74 @@
+// G_EV020C.SPC: ROM 7FDB00
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00017D F06A01  // LITERAL: F06A01 (usage not inferred)
+@000256  C0D04 ［エド］  // EN: [Ed]
+@000271  C0F04 でてこいよ…  // TODO: English translation
+@000290 そこにいるやつ  // TODO: English translation
+@00033E A  // LITERAL: A (usage not inferred)
+@000597 F07A01  // LITERAL: F07A01 (usage not inferred)
+@000745  C0D04 ［アルヴィス］  // EN: [Alviss]
+@000766  C0F04 お久しぶりです  // TODO: English translation
+@000787 アランさん  // TODO: English translation
+@000B71 F06A01  // LITERAL: F06A01 (usage not inferred)
+@000C4A  C0D04 ［エド］  // EN: [Ed]
+@000C65  C0F04 …  // TODO: English translation
+@000D20 F06A05  // LITERAL: F06A05 (usage not inferred)
+@000DBA  C0D04 ［エド］  // EN: [Ed]
+@000DD5  C0F04 おめぇアルヴィスか！？  // TODO: English translation
+@000E28  C0D04 ［エド］  // EN: [Ed]
+@000E43  C0F04 ６年前クロスガードの  // TODO: English translation
+@000E6A なかまだったガキか！！  // TODO: English translation
+@000EBA F07A04  // LITERAL: F07A04 (usage not inferred)
+@000F93  C0D04 ［アルヴィス］  // EN: [Alviss]
+@000FB4  C0F04 アランさん…  // TODO: English translation
+@000FD3 ぼくにはじかんがあまりのこされていない  // TODO: English translation
+@001033 F07A06  // LITERAL: F07A06 (usage not inferred)
+@001061  C0D04 ［アルヴィス］  // EN: [Alviss]
+@001082  C0F04 こんどこそ、ファントムを  // TODO: English translation
+@0010AD たおさなければならないんです  // TODO: English translation
+@0010F3  C0D04 ［アルヴィス］  // EN: [Alviss]
+@001114  C0F04 そのために…  // TODO: English translation
+@001133 門ばんピエロを、はつどうしました  // TODO: English translation
+@00118D F06A05  // LITERAL: F06A05 (usage not inferred)
+@0011BB  C0D04 ［エド］  // EN: [Ed]
+@0011D6  C0F04 ギンタをよんだのは  // TODO: English translation
+@0011FB おまえだったのか  // TODO: English translation
+@001245 F07A01  // LITERAL: F07A01 (usage not inferred)
+@001273  C0D04 ［アルヴィス］  // EN: [Alviss]
+@001294  C0F04 ええ…  // TODO: English translation
+@0012AD でもあんなよわいヤツがきてしまった  // TODO: English translation
+@001309 F06A01  // LITERAL: F06A01 (usage not inferred)
+@001337  C0D04 ［エド］  // EN: [Ed]
+@001352  C0F04 へへ、きついな  // TODO: English translation
+@001373 でもまぁそういってやるなよ  // TODO: English translation
+@0013C7 F06A04  // LITERAL: F06A04 (usage not inferred)
+@0013F5  C0D04 ［エド］  // EN: [Ed]
+@001410  C0F04 たしかによわいし  // TODO: English translation
+@001433 たよりないかもしれねぇ  // TODO: English translation
+@001473  C0D04 ［エド］  // EN: [Ed]
+@00148E  C0F04 だがな…  // TODO: English translation
+@0014D3  C0D04 ［エド］  // EN: [Ed]
+@0014EE  C0F04 おめぇがよびだし  // TODO: English translation
+@001511 オレが封印したバッボを手に入れた  // TODO: English translation
+@00156B F06A01  // LITERAL: F06A01 (usage not inferred)
+@001599  C0D04 ［エド］  // EN: [Ed]
+@0015B4  C0F04 こいつはぐうぜんか？  // TODO: English translation
+@001615 F07A04  // LITERAL: F07A04 (usage not inferred)
+@001643  C0D04 ［アルヴィス］  // EN: [Alviss]
+@001664  C0F04 …  // TODO: English translation
+@0016A3  C0D04 ［エド］  // EN: [Ed]
+@0016BE  C0F04 オレはそう思わねぇ  // TODO: English translation
+@00170D  C0D04 ［エド］  // EN: [Ed]
+@001728  C0F04 もしかしたらあのバカ…  // TODO: English translation
+@00177B  C0D04 ［エド］  // EN: [Ed]
+@001796  C0F04 こんどこそ  // TODO: English translation
+@0017B3 メルヘヴンをすくう…  // TODO: English translation
+@0017F1  C0D04 ［エド］  // EN: [Ed]
+@00180C  C0F04 救世主になるかも  // TODO: English translation
+@00182F しれねえぜ  // TODO: English translation
+@001873 F07A03  // LITERAL: F07A03 (usage not inferred)
+@0018A1  C0D04 ［アルヴィス］  // EN: [Alviss]
+@0018C2  C0F04 …  // TODO: English translation
+@001A61 EV_MON01.SPC  // LITERAL: EV_MON01.SPC (usage not inferred)

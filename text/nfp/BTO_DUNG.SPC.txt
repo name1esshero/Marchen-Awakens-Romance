@@ -1,0 +1,5 @@
+// BTO_DUNG.SPC: ROM 39EAF0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@0002A9 ENE_SET.SPC  // LITERAL: ENE_SET.SPC (usage not inferred)

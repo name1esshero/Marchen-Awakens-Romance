@@ -1,0 +1,47 @@
+// Legacy reference view of G_EV043.SPC; edit text/nfp/G_EV043.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000233 F09A02  // LITERAL: F09A02 (usage not inferred)
+@00030C  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00032B  C0F04 ギンタン、あんまり  // TODO: English translation
+@000350 ふらふらしちゃダメよ  // TODO: English translation
+@0003C5 F09A01  // LITERAL: F09A01 (usage not inferred)
+@0003F3  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000412  C0F04 ちていこでチェスとたたかったときの  // TODO: English translation
+@000447 つかれ、ギンタンまだとれてないでしょ？  // TODO: English translation
+@0004A7 F01B11  // LITERAL: F01B11 (usage not inferred)
+@000580  C0D04 ［ギンタ］  // EN: [Ginta]
+@00059D  C0F04 う…うん…  // EN: Y-yeah...
+@000833 F04A01  // LITERAL: F04A01 (usage not inferred)
+@00090C  C0D04 ［スノウ］  // EN: [Snow]
+@000929  C0F04 村の人は、みんな  // TODO: English translation
+@00094C おやすみのじゅんび、はじめたよ  // TODO: English translation
+@0009A4 F05A01  // LITERAL: F05A01 (usage not inferred)
+@000A7D  C0D04 ［エド］  // EN: [Ed]
+@000A98  C0F04 もうすぐ日もおちますゆえ…  // TODO: English translation
+@000AFF F05A02  // LITERAL: F05A02 (usage not inferred)
+@000B2D  C0D04 ［エド］  // EN: [Ed]
+@000B48  C0F04 われわれも宿をさがさないと  // TODO: English translation
+@000B75 いけませんな！  // TODO: English translation
+@000DFC F08A06  // LITERAL: F08A06 (usage not inferred)
+@000ED5  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000EF2  C0F04 おーーギンタか  // EN: Oh, it's you, Ginta.
+@000F4D F08A01  // LITERAL: F08A01 (usage not inferred)
+@000F7B  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000F98  C0F04 …  // TODO: English translation
+@000FE7 F08A03  // LITERAL: F08A03 (usage not inferred)
+@001015  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001032  C0F04 アカン、くいすぎたわ…  // TODO: English translation
+@00105B く、くるしー…  // TODO: English translation
+@0010D9 F02A05  // LITERAL: F02A05 (usage not inferred)
+@0011B2  C0D04 ［バッボ］  // EN: [Babbo]
+@0011CF  C0F04 …バカものめ…  // TODO: English translation
+@00122A F02A02  // LITERAL: F02A02 (usage not inferred)
+@001258  C0D04 ［バッボ］  // EN: [Babbo]
+@001275  C0F04 おまえもすこしは  // TODO: English translation
+@001298 紳士（しんし）らしくなれ！  // TODO: English translation
+@0012EC F08A05  // LITERAL: F08A05 (usage not inferred)
+@00131A  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001337  C0F04 いちばん紳士じゃない  // TODO: English translation
+@00135E おまえさんに、いわれとーないわ  // TODO: English translation

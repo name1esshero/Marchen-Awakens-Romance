@@ -1,0 +1,5 @@
+// Legacy reference view of HI_M07_2.SPC; edit text/nfp/HI_M07_2.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000017 EV_GO09.SPC  // LITERAL: EV_GO09.SPC (usage not inferred)

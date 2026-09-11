@@ -1,0 +1,53 @@
+// G_EV006.SPC: ROM 7F6E20
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00014C A  // LITERAL: A (usage not inferred)
+@0001D8 A  // LITERAL: A (usage not inferred)
+@00023D A  // LITERAL: A (usage not inferred)
+@0002A2 A  // LITERAL: A (usage not inferred)
+@000307 A  // LITERAL: A (usage not inferred)
+@000E9A F01B10  // LITERAL: F01B10 (usage not inferred)
+@001048  C0D04 ［ギンタ］  // EN: [Ginta]
+@001065  C0F04 こ、これは…！！  // TODO: English translation
+@0010C2 F08A03  // LITERAL: F08A03 (usage not inferred)
+@00119B  C0D04 ［ナナシ］  // EN: [Nanashi]
+@0011B8  C0F04 ルベリアの同志たちの…  // TODO: English translation
+@0011E1 はかや  // TODO: English translation
+@001645 F04A03  // LITERAL: F04A03 (usage not inferred)
+@00171E  C0D04 ［スノウ］  // EN: [Snow]
+@00173B  C0F04 ひどい…  // TODO: English translation
+@001790 F09A04  // LITERAL: F09A04 (usage not inferred)
+@001869  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001888  C0F04 …  // TODO: English translation
+@001943 F08A03  // LITERAL: F08A03 (usage not inferred)
+@001A1C  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001A39  C0F04 ここだけやあらへん…  // TODO: English translation
+@001A9A F08A03  // LITERAL: F08A03 (usage not inferred)
+@001AC8  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001AE5  C0F04 ここメルヘヴン全土が今  // TODO: English translation
+@001B0E はかばになりつつあるんや！  // TODO: English translation
+@001BCE F08A04  // LITERAL: F08A04 (usage not inferred)
+@001C68  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001C85  C0F04 チェスの兵隊のヤツらの  // TODO: English translation
+@001CAE おかげでな！！！  // TODO: English translation
+@001D2E F05A02  // LITERAL: F05A02 (usage not inferred)
+@001E07  C0D04 ［エド］  // EN: [Ed]
+@001E22  C0F04 これは…チェスの兵隊が  // TODO: English translation
+@001E4B 本気で攻めてきたあかし！！  // TODO: English translation
+@001F2C F01B05  // LITERAL: F01B05 (usage not inferred)
+@002005  C0D04 ［ギンタ］  // EN: [Ginta]
+@002022  C0F04 こんなにたくさんの人を  // TODO: English translation
+@00204B ころして…！！！  // TODO: English translation
+@002095 F01B05  // LITERAL: F01B05 (usage not inferred)
+@0020C3  C0D04 ［ギンタ］  // EN: [Ginta]
+@0020E0  C0F04 （みんながチェスの兵隊を  // TODO: English translation
+@00210B 　たおそうとしている気持ちが）  // TODO: English translation
+@002163 F01B05  // LITERAL: F01B05 (usage not inferred)
+@002191  C0D04 ［ギンタ］  // EN: [Ginta]
+@0021AE  C0F04 （いたいくらいわかった！！）  // TODO: English translation
+@002217 F01B12  // LITERAL: F01B12 (usage not inferred)
+@002245  C0D04 ［ギンタ］  // EN: [Ginta]
+@002262  C0F04 （ぜんめつさせなきゃ…  // TODO: English translation
+@00228B 　いけないんだ！！！）  // TODO: English translation
+@002348 G_EV007.SPC  // LITERAL: G_EV007.SPC (usage not inferred)

@@ -1,0 +1,5 @@
+// Legacy reference view of HI_M42.SPC; edit text/nfp/HI_M42.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@00003D EV_EDO01.SPC  // LITERAL: EV_EDO01.SPC (usage not inferred)

@@ -1,0 +1,15 @@
+// OBJ_J.SPC: ROM D6CCE0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000160 F03A01  // LITERAL: F03A01 (usage not inferred)
+@000221  C0D04 ［ジャック］  // EN: [Jack]
+@000240  C0F04 この下に何かありそうっスね  // TODO: English translation
+@00026D 穴をほってみるっス  // TODO: English translation
+@000459 MAP00_O  // LITERAL: MAP00_O (usage not inferred)
+@000567 F03A01  // LITERAL: F03A01 (usage not inferred)
+@000628  C0D04 ［ジャック］  // EN: [Jack]
+@000647  C0F04 やっぱり、くうどうになってるっス  // TODO: English translation
+@00067A 入ってみるっス  // TODO: English translation
+@000729 J_HOLE.SPC  // LITERAL: J_HOLE.SPC (usage not inferred)
+@000863 穴が土でうまっている  // TODO: English translation

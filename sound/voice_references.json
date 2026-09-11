@@ -1,0 +1,9874 @@
+[
+  {
+    "bank_address": 134784724,
+    "index": 0,
+    "address": 134784724,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 3,
+    "adsr": [
+      0,
+      2,
+      9,
+      4
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 1,
+    "address": 134784736,
+    "type": 2,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      2,
+      9,
+      5
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 2,
+    "address": 134784748,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 0,
+    "adsr": [
+      0,
+      2,
+      10,
+      4
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 3,
+    "address": 134784760,
+    "type": 3,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134787156,
+    "adsr": [
+      0,
+      6,
+      12,
+      2
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 4,
+    "address": 134784772,
+    "type": 2,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 1,
+    "adsr": [
+      0,
+      2,
+      12,
+      4
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 5,
+    "address": 134784784,
+    "type": 4,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 0,
+    "adsr": [
+      0,
+      0,
+      12,
+      2
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 6,
+    "address": 134784796,
+    "type": 3,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134787236,
+    "adsr": [
+      0,
+      4,
+      6,
+      6
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 7,
+    "address": 134784808,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 8,
+    "address": 134784820,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 9,
+    "address": 134784832,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 10,
+    "address": 134784844,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 11,
+    "address": 134784856,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 12,
+    "address": 134784868,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 13,
+    "address": 134784880,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 14,
+    "address": 134784892,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 15,
+    "address": 134784904,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 16,
+    "address": 134784916,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 17,
+    "address": 134784928,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 18,
+    "address": 134784940,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 19,
+    "address": 134784952,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 20,
+    "address": 134784964,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 21,
+    "address": 134784976,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 22,
+    "address": 134784988,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 23,
+    "address": 134785000,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 24,
+    "address": 134785012,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 25,
+    "address": 134785024,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 26,
+    "address": 134785036,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 27,
+    "address": 134785048,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 28,
+    "address": 134785060,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 29,
+    "address": 134785072,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 30,
+    "address": 134785084,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 31,
+    "address": 134785096,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 32,
+    "address": 134785108,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 33,
+    "address": 134785120,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 34,
+    "address": 134785132,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 35,
+    "address": 134785144,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 36,
+    "address": 134785156,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 37,
+    "address": 134785168,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 38,
+    "address": 134785180,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 39,
+    "address": 134785192,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 40,
+    "address": 134785204,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 41,
+    "address": 134785216,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 42,
+    "address": 134785228,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 43,
+    "address": 134785240,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 44,
+    "address": 134785252,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 45,
+    "address": 134785264,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 46,
+    "address": 134785276,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 47,
+    "address": 134785288,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 48,
+    "address": 134785300,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 49,
+    "address": 134785312,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 50,
+    "address": 134785324,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 51,
+    "address": 134785336,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 52,
+    "address": 134785348,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 53,
+    "address": 134785360,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 54,
+    "address": 134785372,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 55,
+    "address": 134785384,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 56,
+    "address": 134785396,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 57,
+    "address": 134785408,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 58,
+    "address": 134785420,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 59,
+    "address": 134785432,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 60,
+    "address": 134785444,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 61,
+    "address": 134785456,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 62,
+    "address": 134785468,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 63,
+    "address": 134785480,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 64,
+    "address": 134785492,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 65,
+    "address": 134785504,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 66,
+    "address": 134785516,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 67,
+    "address": 134785528,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 68,
+    "address": 134785540,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 69,
+    "address": 134785552,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 70,
+    "address": 134785564,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 71,
+    "address": 134785576,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 72,
+    "address": 134785588,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 73,
+    "address": 134785600,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 74,
+    "address": 134785612,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 75,
+    "address": 134785624,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 76,
+    "address": 134785636,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 77,
+    "address": 134785648,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 78,
+    "address": 134785660,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 79,
+    "address": 134785672,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 80,
+    "address": 134785684,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 81,
+    "address": 134785696,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 82,
+    "address": 134785708,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 83,
+    "address": 134785720,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 84,
+    "address": 134785732,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 85,
+    "address": 134785744,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 86,
+    "address": 134785756,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 87,
+    "address": 134785768,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 88,
+    "address": 134785780,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 89,
+    "address": 134785792,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 90,
+    "address": 134785804,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 91,
+    "address": 134785816,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 92,
+    "address": 134785828,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 93,
+    "address": 134785840,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 94,
+    "address": 134785852,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 95,
+    "address": 134785864,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 96,
+    "address": 134785876,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 97,
+    "address": 134785888,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 98,
+    "address": 134785900,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 99,
+    "address": 134785912,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 100,
+    "address": 134785924,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 101,
+    "address": 134785936,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 102,
+    "address": 134785948,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 103,
+    "address": 134785960,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 104,
+    "address": 134785972,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 105,
+    "address": 134785984,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 106,
+    "address": 134785996,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 107,
+    "address": 134786008,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 108,
+    "address": 134786020,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 109,
+    "address": 134786032,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 110,
+    "address": 134786044,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 111,
+    "address": 134786056,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 112,
+    "address": 134786068,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 113,
+    "address": 134786080,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 114,
+    "address": 134786092,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 115,
+    "address": 134786104,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 116,
+    "address": 134786116,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 117,
+    "address": 134786128,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 118,
+    "address": 134786140,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 119,
+    "address": 134786152,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 120,
+    "address": 134786164,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 121,
+    "address": 134786176,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 122,
+    "address": 134786188,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 123,
+    "address": 134786200,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 124,
+    "address": 134786212,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 125,
+    "address": 134786224,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 126,
+    "address": 134786236,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134784724,
+    "index": 127,
+    "address": 134786248,
+    "type": 128,
+    "key": 0,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134785972,
+    "adsr": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 0,
+    "address": 134785972,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 1,
+    "address": 134785984,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 2,
+    "address": 134785996,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 3,
+    "address": 134786008,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 4,
+    "address": 134786020,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 5,
+    "address": 134786032,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 6,
+    "address": 134786044,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 7,
+    "address": 134786056,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 8,
+    "address": 134786068,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 9,
+    "address": 134786080,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 10,
+    "address": 134786092,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 11,
+    "address": 134786104,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 12,
+    "address": 134786116,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 13,
+    "address": 134786128,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 14,
+    "address": 134786140,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 15,
+    "address": 134786152,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 16,
+    "address": 134786164,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 17,
+    "address": 134786176,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 18,
+    "address": 134786188,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 19,
+    "address": 134786200,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 20,
+    "address": 134786212,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 21,
+    "address": 134786224,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 22,
+    "address": 134786236,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 23,
+    "address": 134786248,
+    "type": 128,
+    "key": 0,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134785972,
+    "adsr": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 24,
+    "address": 134786260,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 25,
+    "address": 134786272,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 26,
+    "address": 134786284,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 27,
+    "address": 134786296,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 28,
+    "address": 134786308,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 29,
+    "address": 134786320,
+    "type": 8,
+    "key": 30,
+    "length": 0,
+    "pan_sweep": 192,
+    "pointer": 135133028,
+    "adsr": [
+      255,
+      0,
+      255,
+      216
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 30,
+    "address": 134786332,
+    "type": 8,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135140460,
+    "adsr": [
+      255,
+      0,
+      255,
+      165
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 31,
+    "address": 134786344,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 32,
+    "address": 134786356,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 33,
+    "address": 134786368,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135140664,
+    "adsr": [
+      255,
+      127,
+      206,
+      165
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 34,
+    "address": 134786380,
+    "type": 8,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135151760,
+    "adsr": [
+      255,
+      0,
+      255,
+      204
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 35,
+    "address": 134786392,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 36,
+    "address": 134786404,
+    "type": 8,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135905960,
+    "adsr": [
+      255,
+      0,
+      255,
+      165
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 37,
+    "address": 134786416,
+    "type": 8,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135161376,
+    "adsr": [
+      255,
+      0,
+      255,
+      165
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 38,
+    "address": 134786428,
+    "type": 8,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135914340,
+    "adsr": [
+      255,
+      0,
+      255,
+      127
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 39,
+    "address": 134786440,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 40,
+    "address": 134786452,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 41,
+    "address": 134786464,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 42,
+    "address": 134786476,
+    "type": 8,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135167756,
+    "adsr": [
+      255,
+      165,
+      255,
+      38
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 43,
+    "address": 134786488,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 44,
+    "address": 134786500,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 45,
+    "address": 134786512,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 46,
+    "address": 134786524,
+    "type": 8,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135169032,
+    "adsr": [
+      255,
+      165,
+      255,
+      38
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 47,
+    "address": 134786536,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 48,
+    "address": 134786548,
+    "type": 8,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135174300,
+    "adsr": [
+      255,
+      0,
+      206,
+      188
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 49,
+    "address": 134786560,
+    "type": 8,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135917264,
+    "adsr": [
+      255,
+      188,
+      206,
+      226
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 50,
+    "address": 134786572,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 51,
+    "address": 134786584,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 52,
+    "address": 134786596,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 53,
+    "address": 134786608,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 54,
+    "address": 134786620,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 55,
+    "address": 134786632,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 56,
+    "address": 134786644,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 57,
+    "address": 134786656,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 58,
+    "address": 134786668,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 59,
+    "address": 134786680,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 60,
+    "address": 134786692,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 61,
+    "address": 134786704,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 62,
+    "address": 134786716,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 63,
+    "address": 134786728,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 64,
+    "address": 134786740,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 65,
+    "address": 134786752,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 66,
+    "address": 134786764,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 67,
+    "address": 134786776,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 68,
+    "address": 134786788,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 69,
+    "address": 134786800,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 70,
+    "address": 134786812,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 71,
+    "address": 134786824,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 72,
+    "address": 134786836,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 73,
+    "address": 134786848,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 74,
+    "address": 134786860,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 75,
+    "address": 134786872,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 76,
+    "address": 134786884,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 77,
+    "address": 134786896,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 78,
+    "address": 134786908,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 79,
+    "address": 134786920,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 80,
+    "address": 134786932,
+    "type": 8,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135198156,
+    "adsr": [
+      255,
+      127,
+      206,
+      165
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 81,
+    "address": 134786944,
+    "type": 8,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135199144,
+    "adsr": [
+      255,
+      127,
+      206,
+      242
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 82,
+    "address": 134786956,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 83,
+    "address": 134786968,
+    "type": 8,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135206512,
+    "adsr": [
+      255,
+      127,
+      206,
+      242
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 84,
+    "address": 134786980,
+    "type": 0,
+    "key": 0,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 0,
+    "adsr": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 85,
+    "address": 134786992,
+    "type": 0,
+    "key": 0,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 0,
+    "adsr": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 86,
+    "address": 134787004,
+    "type": 0,
+    "key": 0,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 0,
+    "adsr": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 87,
+    "address": 134787016,
+    "type": 1,
+    "key": 1,
+    "length": 1,
+    "pan_sweep": 1,
+    "pointer": 16843009,
+    "adsr": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 88,
+    "address": 134787028,
+    "type": 1,
+    "key": 1,
+    "length": 1,
+    "pan_sweep": 1,
+    "pointer": 16843009,
+    "adsr": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 89,
+    "address": 134787040,
+    "type": 1,
+    "key": 1,
+    "length": 1,
+    "pan_sweep": 1,
+    "pointer": 16843009,
+    "adsr": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 90,
+    "address": 134787052,
+    "type": 0,
+    "key": 0,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 0,
+    "adsr": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 91,
+    "address": 134787064,
+    "type": 0,
+    "key": 0,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 0,
+    "adsr": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 92,
+    "address": 134787076,
+    "type": 0,
+    "key": 0,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 0,
+    "adsr": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 93,
+    "address": 134787088,
+    "type": 1,
+    "key": 1,
+    "length": 1,
+    "pan_sweep": 1,
+    "pointer": 16843009,
+    "adsr": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 94,
+    "address": 134787100,
+    "type": 1,
+    "key": 1,
+    "length": 1,
+    "pan_sweep": 1,
+    "pointer": 16843009,
+    "adsr": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 95,
+    "address": 134787112,
+    "type": 1,
+    "key": 1,
+    "length": 1,
+    "pan_sweep": 1,
+    "pointer": 16843009,
+    "adsr": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 100,
+    "address": 134787172,
+    "type": 0,
+    "key": 254,
+    "length": 220,
+    "pan_sweep": 186,
+    "pointer": 2290649241,
+    "adsr": [
+      119,
+      119,
+      119,
+      102
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 102,
+    "address": 134787196,
+    "type": 0,
+    "key": 0,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 0,
+    "adsr": [
+      255,
+      255,
+      255,
+      255
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 103,
+    "address": 134787208,
+    "type": 0,
+    "key": 0,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 0,
+    "adsr": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 105,
+    "address": 134787232,
+    "type": 0,
+    "key": 0,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 4294967295,
+    "adsr": [
+      255,
+      255,
+      255,
+      255
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 106,
+    "address": 134787244,
+    "type": 0,
+    "key": 0,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 0,
+    "adsr": [
+      255,
+      238,
+      221,
+      204
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 108,
+    "address": 134787268,
+    "type": 0,
+    "key": 0,
+    "length": 17,
+    "pan_sweep": 51,
+    "pointer": 288576853,
+    "adsr": [
+      170,
+      170,
+      171,
+      188
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 112,
+    "address": 134787316,
+    "type": 0,
+    "key": 0,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2852126720,
+    "adsr": [
+      170,
+      170,
+      170,
+      170
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 116,
+    "address": 134787364,
+    "type": 1,
+    "key": 18,
+    "length": 35,
+    "pan_sweep": 52,
+    "pointer": 2020038213,
+    "adsr": [
+      135,
+      118,
+      101,
+      84
+    ]
+  },
+  {
+    "bank_address": 134785972,
+    "index": 125,
+    "address": 134787472,
+    "type": 8,
+    "key": 73,
+    "length": 0,
+    "pan_sweep": 3,
+    "pointer": 10,
+    "adsr": [
+      112,
+      95,
+      0,
+      3
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 0,
+    "address": 134783200,
+    "type": 4,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 1,
+    "adsr": [
+      0,
+      0,
+      12,
+      4
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 1,
+    "address": 134783212,
+    "type": 3,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134787124,
+    "adsr": [
+      0,
+      1,
+      12,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 2,
+    "address": 134783224,
+    "type": 3,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134787172,
+    "adsr": [
+      0,
+      0,
+      12,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 3,
+    "address": 134783236,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135213228,
+    "adsr": [
+      64,
+      127,
+      206,
+      165
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 4,
+    "address": 134783248,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135214544,
+    "adsr": [
+      255,
+      127,
+      206,
+      204
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 5,
+    "address": 134783260,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135216772,
+    "adsr": [
+      64,
+      38,
+      206,
+      216
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 6,
+    "address": 134783272,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135230168,
+    "adsr": [
+      255,
+      38,
+      206,
+      216
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 7,
+    "address": 134783284,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135247084,
+    "adsr": [
+      255,
+      127,
+      206,
+      204
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 8,
+    "address": 134783296,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135249172,
+    "adsr": [
+      255,
+      127,
+      206,
+      204
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 9,
+    "address": 134783308,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135263944,
+    "adsr": [
+      255,
+      127,
+      206,
+      204
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 10,
+    "address": 134783320,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135278812,
+    "adsr": [
+      255,
+      127,
+      206,
+      204
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 11,
+    "address": 134783332,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135289164,
+    "adsr": [
+      255,
+      127,
+      206,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 12,
+    "address": 134783344,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135291940,
+    "adsr": [
+      255,
+      127,
+      206,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 13,
+    "address": 134783356,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135296020,
+    "adsr": [
+      255,
+      127,
+      206,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 14,
+    "address": 134783368,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 15,
+    "address": 134783380,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135308644,
+    "adsr": [
+      255,
+      127,
+      206,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 16,
+    "address": 134783392,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135311916,
+    "adsr": [
+      255,
+      127,
+      206,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 17,
+    "address": 134783404,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135317160,
+    "adsr": [
+      255,
+      127,
+      206,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 18,
+    "address": 134783416,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135324348,
+    "adsr": [
+      255,
+      127,
+      206,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 19,
+    "address": 134783428,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135335612,
+    "adsr": [
+      255,
+      127,
+      206,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 20,
+    "address": 134783440,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135343056,
+    "adsr": [
+      255,
+      127,
+      206,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 21,
+    "address": 134783452,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135354916,
+    "adsr": [
+      255,
+      127,
+      206,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 22,
+    "address": 134783464,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135357908,
+    "adsr": [
+      255,
+      127,
+      206,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 23,
+    "address": 134783476,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135360412,
+    "adsr": [
+      255,
+      127,
+      206,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 24,
+    "address": 134783488,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135386148,
+    "adsr": [
+      255,
+      127,
+      206,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 25,
+    "address": 134783500,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135406328,
+    "adsr": [
+      255,
+      127,
+      206,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 26,
+    "address": 134783512,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135428492,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 27,
+    "address": 134783524,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 28,
+    "address": 134783536,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135430832,
+    "adsr": [
+      255,
+      127,
+      231,
+      204
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 29,
+    "address": 134783548,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135441252,
+    "adsr": [
+      255,
+      127,
+      231,
+      204
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 30,
+    "address": 134783560,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135458008,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 31,
+    "address": 134783572,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135462156,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 32,
+    "address": 134783584,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135471888,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 33,
+    "address": 134783596,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135492760,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 34,
+    "address": 134783608,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135496256,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 35,
+    "address": 134783620,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135497520,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 36,
+    "address": 134783632,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135512668,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 37,
+    "address": 134783644,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135516880,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 38,
+    "address": 134783656,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135520524,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 39,
+    "address": 134783668,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135525728,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 40,
+    "address": 134783680,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135534968,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 41,
+    "address": 134783692,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135557516,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 42,
+    "address": 134783704,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135561840,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 43,
+    "address": 134783716,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135585584,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 44,
+    "address": 134783728,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135602084,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 45,
+    "address": 134783740,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135610112,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 46,
+    "address": 134783752,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135630356,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 47,
+    "address": 134783764,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135639848,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 48,
+    "address": 134783776,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135647292,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 49,
+    "address": 134783788,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135664336,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 50,
+    "address": 134783800,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135673188,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 51,
+    "address": 134783812,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 52,
+    "address": 134783824,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 53,
+    "address": 134783836,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135715020,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 54,
+    "address": 134783848,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135725440,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 55,
+    "address": 134783860,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135736044,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 56,
+    "address": 134783872,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135779908,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 57,
+    "address": 134783884,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135803832,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 58,
+    "address": 134783896,
+    "type": 8,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135814796,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 59,
+    "address": 134783908,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135824904,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 60,
+    "address": 134783920,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135832572,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 61,
+    "address": 134783932,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135841536,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 62,
+    "address": 134783944,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135845220,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 63,
+    "address": 134783956,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 64,
+    "address": 134783968,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135846056,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 65,
+    "address": 134783980,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135850508,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 66,
+    "address": 134783992,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135868592,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 67,
+    "address": 134784004,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135875524,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 68,
+    "address": 134784016,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135881528,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 69,
+    "address": 134784028,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135892844,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 70,
+    "address": 134784040,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135901728,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 71,
+    "address": 134784052,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135902500,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 72,
+    "address": 134784064,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 73,
+    "address": 134784076,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 74,
+    "address": 134784088,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 75,
+    "address": 134784100,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 76,
+    "address": 134784112,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 77,
+    "address": 134784124,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 78,
+    "address": 134784136,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 79,
+    "address": 134784148,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 80,
+    "address": 134784160,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 81,
+    "address": 134784172,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 82,
+    "address": 134784184,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 83,
+    "address": 134784196,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 84,
+    "address": 134784208,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 85,
+    "address": 134784220,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 86,
+    "address": 134784232,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 87,
+    "address": 134784244,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 88,
+    "address": 134784256,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 89,
+    "address": 134784268,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 90,
+    "address": 134784280,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 91,
+    "address": 134784292,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 92,
+    "address": 134784304,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 93,
+    "address": 134784316,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 94,
+    "address": 134784328,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 95,
+    "address": 134784340,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 96,
+    "address": 134784352,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 97,
+    "address": 134784364,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 98,
+    "address": 134784376,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 99,
+    "address": 134784388,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 100,
+    "address": 134784400,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 101,
+    "address": 134784412,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 102,
+    "address": 134784424,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 103,
+    "address": 134784436,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 104,
+    "address": 134784448,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 105,
+    "address": 134784460,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 106,
+    "address": 134784472,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 107,
+    "address": 134784484,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 108,
+    "address": 134784496,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 109,
+    "address": 134784508,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 110,
+    "address": 134784520,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 111,
+    "address": 134784532,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 112,
+    "address": 134784544,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 113,
+    "address": 134784556,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 114,
+    "address": 134784568,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 115,
+    "address": 134784580,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 116,
+    "address": 134784592,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 117,
+    "address": 134784604,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 118,
+    "address": 134784616,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 119,
+    "address": 134784628,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 120,
+    "address": 134784640,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 121,
+    "address": 134784652,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 122,
+    "address": 134784664,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 123,
+    "address": 134784676,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 124,
+    "address": 134784688,
+    "type": 4,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 0,
+    "adsr": [
+      0,
+      0,
+      12,
+      1
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 125,
+    "address": 134784700,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 126,
+    "address": 134784712,
+    "type": 2,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 3,
+    "adsr": [
+      0,
+      1,
+      12,
+      0
+    ]
+  },
+  {
+    "bank_address": 134783200,
+    "index": 127,
+    "address": 134784724,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 3,
+    "adsr": [
+      0,
+      2,
+      9,
+      4
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 0,
+    "address": 134780944,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134789276,
+    "adsr": [
+      255,
+      127,
+      206,
+      216
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 1,
+    "address": 134780956,
+    "type": 3,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134787124,
+    "adsr": [
+      0,
+      0,
+      12,
+      3
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 2,
+    "address": 134780968,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      1,
+      8,
+      4
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 3,
+    "address": 134780980,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      6,
+      0,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 4,
+    "address": 134780992,
+    "type": 2,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      14,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 5,
+    "address": 134781004,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 0,
+    "adsr": [
+      0,
+      0,
+      6,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 6,
+    "address": 134781016,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134801808,
+    "adsr": [
+      255,
+      127,
+      206,
+      216
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 7,
+    "address": 134781028,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 8,
+    "address": 134781040,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134805932,
+    "adsr": [
+      255,
+      127,
+      206,
+      216
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 9,
+    "address": 134781052,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134815616,
+    "adsr": [
+      255,
+      127,
+      206,
+      216
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 10,
+    "address": 134781064,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 11,
+    "address": 134781076,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 12,
+    "address": 134781088,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 13,
+    "address": 134781100,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 14,
+    "address": 134781112,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 15,
+    "address": 134781124,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 16,
+    "address": 134781136,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134827044,
+    "adsr": [
+      255,
+      127,
+      206,
+      204
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 17,
+    "address": 134781148,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134841368,
+    "adsr": [
+      255,
+      127,
+      206,
+      204
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 18,
+    "address": 134781160,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134850740,
+    "adsr": [
+      255,
+      127,
+      206,
+      204
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 19,
+    "address": 134781172,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 20,
+    "address": 134781184,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 21,
+    "address": 134781196,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 22,
+    "address": 134781208,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 23,
+    "address": 134781220,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 24,
+    "address": 134781232,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 25,
+    "address": 134781244,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 26,
+    "address": 134781256,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 27,
+    "address": 134781268,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 28,
+    "address": 134781280,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 29,
+    "address": 134781292,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 30,
+    "address": 134781304,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 31,
+    "address": 134781316,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 32,
+    "address": 134781328,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 33,
+    "address": 134781340,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 34,
+    "address": 134781352,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 35,
+    "address": 134781364,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 36,
+    "address": 134781376,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 37,
+    "address": 134781388,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 38,
+    "address": 134781400,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 39,
+    "address": 134781412,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 40,
+    "address": 134781424,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134861752,
+    "adsr": [
+      255,
+      127,
+      206,
+      204
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 41,
+    "address": 134781436,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 42,
+    "address": 134781448,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 43,
+    "address": 134781460,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134872252,
+    "adsr": [
+      255,
+      127,
+      206,
+      204
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 44,
+    "address": 134781472,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 45,
+    "address": 134781484,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 46,
+    "address": 134781496,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 47,
+    "address": 134781508,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 48,
+    "address": 134781520,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134886076,
+    "adsr": [
+      255,
+      127,
+      206,
+      204
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 49,
+    "address": 134781532,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134895952,
+    "adsr": [
+      255,
+      127,
+      206,
+      204
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 50,
+    "address": 134781544,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134905164,
+    "adsr": [
+      255,
+      127,
+      206,
+      204
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 51,
+    "address": 134781556,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 52,
+    "address": 134781568,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134912296,
+    "adsr": [
+      255,
+      127,
+      206,
+      204
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 53,
+    "address": 134781580,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134917732,
+    "adsr": [
+      255,
+      127,
+      206,
+      204
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 54,
+    "address": 134781592,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134926440,
+    "adsr": [
+      255,
+      127,
+      206,
+      204
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 55,
+    "address": 134781604,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134930860,
+    "adsr": [
+      255,
+      127,
+      206,
+      204
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 56,
+    "address": 134781616,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134935776,
+    "adsr": [
+      255,
+      127,
+      206,
+      204
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 57,
+    "address": 134781628,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 58,
+    "address": 134781640,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134949820,
+    "adsr": [
+      37,
+      127,
+      206,
+      188
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 59,
+    "address": 134781652,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 60,
+    "address": 134781664,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 61,
+    "address": 134781676,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134954992,
+    "adsr": [
+      255,
+      127,
+      206,
+      188
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 62,
+    "address": 134781688,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 63,
+    "address": 134781700,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 64,
+    "address": 134781712,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 65,
+    "address": 134781724,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 66,
+    "address": 134781736,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 67,
+    "address": 134781748,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 68,
+    "address": 134781760,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134959428,
+    "adsr": [
+      255,
+      127,
+      206,
+      188
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 69,
+    "address": 134781772,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134960092,
+    "adsr": [
+      255,
+      127,
+      206,
+      188
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 70,
+    "address": 134781784,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134962268,
+    "adsr": [
+      255,
+      127,
+      206,
+      188
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 71,
+    "address": 134781796,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134967136,
+    "adsr": [
+      255,
+      127,
+      206,
+      204
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 72,
+    "address": 134781808,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 73,
+    "address": 134781820,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134972404,
+    "adsr": [
+      255,
+      127,
+      206,
+      188
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 74,
+    "address": 134781832,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 75,
+    "address": 134781844,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 76,
+    "address": 134781856,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 77,
+    "address": 134781868,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 78,
+    "address": 134781880,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 79,
+    "address": 134781892,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 80,
+    "address": 134781904,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134986508,
+    "adsr": [
+      255,
+      127,
+      206,
+      188
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 81,
+    "address": 134781916,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 82,
+    "address": 134781928,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 83,
+    "address": 134781940,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 84,
+    "address": 134781952,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 85,
+    "address": 134781964,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 86,
+    "address": 134781976,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 87,
+    "address": 134781988,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 88,
+    "address": 134782000,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 89,
+    "address": 134782012,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 90,
+    "address": 134782024,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 91,
+    "address": 134782036,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 92,
+    "address": 134782048,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 93,
+    "address": 134782060,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 94,
+    "address": 134782072,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 95,
+    "address": 134782084,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 96,
+    "address": 134782096,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134995344,
+    "adsr": [
+      255,
+      127,
+      206,
+      188
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 97,
+    "address": 134782108,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 98,
+    "address": 134782120,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135013028,
+    "adsr": [
+      255,
+      127,
+      206,
+      242
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 99,
+    "address": 134782132,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 100,
+    "address": 134782144,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135019628,
+    "adsr": [
+      255,
+      188,
+      255,
+      216
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 101,
+    "address": 134782156,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135038464,
+    "adsr": [
+      255,
+      188,
+      255,
+      216
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 102,
+    "address": 134782168,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 103,
+    "address": 134782180,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 104,
+    "address": 134782192,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 105,
+    "address": 134782204,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 106,
+    "address": 134782216,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 107,
+    "address": 134782228,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 108,
+    "address": 134782240,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 109,
+    "address": 134782252,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 110,
+    "address": 134782264,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 111,
+    "address": 134782276,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 112,
+    "address": 134782288,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135050324,
+    "adsr": [
+      255,
+      127,
+      206,
+      216
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 113,
+    "address": 134782300,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 114,
+    "address": 134782312,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 115,
+    "address": 134782324,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 116,
+    "address": 134782336,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135061004,
+    "adsr": [
+      255,
+      127,
+      206,
+      216
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 117,
+    "address": 134782348,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 118,
+    "address": 134782360,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 119,
+    "address": 134782372,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 120,
+    "address": 134782384,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 121,
+    "address": 134782396,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 122,
+    "address": 134782408,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 123,
+    "address": 134782420,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 124,
+    "address": 134782432,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135068776,
+    "adsr": [
+      255,
+      127,
+      206,
+      204
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 125,
+    "address": 134782444,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135096828,
+    "adsr": [
+      255,
+      127,
+      206,
+      188
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 126,
+    "address": 134782456,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135104976,
+    "adsr": [
+      255,
+      127,
+      206,
+      204
+    ]
+  },
+  {
+    "bank_address": 134780944,
+    "index": 127,
+    "address": 134782468,
+    "type": 128,
+    "key": 0,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134782192,
+    "adsr": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 0,
+    "address": 134782192,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 1,
+    "address": 134782204,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 2,
+    "address": 134782216,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 3,
+    "address": 134782228,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 4,
+    "address": 134782240,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 5,
+    "address": 134782252,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 6,
+    "address": 134782264,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 7,
+    "address": 134782276,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 8,
+    "address": 134782288,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135050324,
+    "adsr": [
+      255,
+      127,
+      206,
+      216
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 9,
+    "address": 134782300,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 10,
+    "address": 134782312,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 11,
+    "address": 134782324,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 12,
+    "address": 134782336,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135061004,
+    "adsr": [
+      255,
+      127,
+      206,
+      216
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 13,
+    "address": 134782348,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 14,
+    "address": 134782360,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 15,
+    "address": 134782372,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 16,
+    "address": 134782384,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 17,
+    "address": 134782396,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 18,
+    "address": 134782408,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 19,
+    "address": 134782420,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 20,
+    "address": 134782432,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135068776,
+    "adsr": [
+      255,
+      127,
+      206,
+      204
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 21,
+    "address": 134782444,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135096828,
+    "adsr": [
+      255,
+      127,
+      206,
+      188
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 22,
+    "address": 134782456,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135104976,
+    "adsr": [
+      255,
+      127,
+      206,
+      204
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 23,
+    "address": 134782468,
+    "type": 128,
+    "key": 0,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134782192,
+    "adsr": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 24,
+    "address": 134782480,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 25,
+    "address": 134782492,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 26,
+    "address": 134782504,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 27,
+    "address": 134782516,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 28,
+    "address": 134782528,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 29,
+    "address": 134782540,
+    "type": 8,
+    "key": 30,
+    "length": 0,
+    "pan_sweep": 192,
+    "pointer": 135133028,
+    "adsr": [
+      255,
+      0,
+      255,
+      216
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 30,
+    "address": 134782552,
+    "type": 8,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135140460,
+    "adsr": [
+      255,
+      0,
+      255,
+      165
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 31,
+    "address": 134782564,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 32,
+    "address": 134782576,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 33,
+    "address": 134782588,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135140664,
+    "adsr": [
+      255,
+      127,
+      206,
+      165
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 34,
+    "address": 134782600,
+    "type": 8,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135151760,
+    "adsr": [
+      255,
+      0,
+      255,
+      204
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 35,
+    "address": 134782612,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 36,
+    "address": 134782624,
+    "type": 8,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135155988,
+    "adsr": [
+      255,
+      0,
+      255,
+      165
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 37,
+    "address": 134782636,
+    "type": 8,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135161376,
+    "adsr": [
+      255,
+      0,
+      255,
+      165
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 38,
+    "address": 134782648,
+    "type": 8,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135164920,
+    "adsr": [
+      255,
+      0,
+      255,
+      127
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 39,
+    "address": 134782660,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 40,
+    "address": 134782672,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 41,
+    "address": 134782684,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 42,
+    "address": 134782696,
+    "type": 8,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135167756,
+    "adsr": [
+      255,
+      165,
+      255,
+      38
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 43,
+    "address": 134782708,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 44,
+    "address": 134782720,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 45,
+    "address": 134782732,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 46,
+    "address": 134782744,
+    "type": 8,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135169032,
+    "adsr": [
+      255,
+      165,
+      255,
+      38
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 47,
+    "address": 134782756,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 48,
+    "address": 134782768,
+    "type": 8,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135174300,
+    "adsr": [
+      255,
+      0,
+      206,
+      188
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 49,
+    "address": 134782780,
+    "type": 8,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135180600,
+    "adsr": [
+      255,
+      188,
+      206,
+      204
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 50,
+    "address": 134782792,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 51,
+    "address": 134782804,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 52,
+    "address": 134782816,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 53,
+    "address": 134782828,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 54,
+    "address": 134782840,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 55,
+    "address": 134782852,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 56,
+    "address": 134782864,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 57,
+    "address": 134782876,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 58,
+    "address": 134782888,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 59,
+    "address": 134782900,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 60,
+    "address": 134782912,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 61,
+    "address": 134782924,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 62,
+    "address": 134782936,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 63,
+    "address": 134782948,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 64,
+    "address": 134782960,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 65,
+    "address": 134782972,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 66,
+    "address": 134782984,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 67,
+    "address": 134782996,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 68,
+    "address": 134783008,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 69,
+    "address": 134783020,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 70,
+    "address": 134783032,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 71,
+    "address": 134783044,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 72,
+    "address": 134783056,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 73,
+    "address": 134783068,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 74,
+    "address": 134783080,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 75,
+    "address": 134783092,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 76,
+    "address": 134783104,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 77,
+    "address": 134783116,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 78,
+    "address": 134783128,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 79,
+    "address": 134783140,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 80,
+    "address": 134783152,
+    "type": 8,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135198156,
+    "adsr": [
+      255,
+      127,
+      206,
+      165
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 81,
+    "address": 134783164,
+    "type": 8,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135199144,
+    "adsr": [
+      255,
+      127,
+      206,
+      242
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 82,
+    "address": 134783176,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 83,
+    "address": 134783188,
+    "type": 8,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135206512,
+    "adsr": [
+      255,
+      127,
+      206,
+      242
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 84,
+    "address": 134783200,
+    "type": 4,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 1,
+    "adsr": [
+      0,
+      0,
+      12,
+      4
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 85,
+    "address": 134783212,
+    "type": 3,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134787124,
+    "adsr": [
+      0,
+      1,
+      12,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 86,
+    "address": 134783224,
+    "type": 3,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 134787172,
+    "adsr": [
+      0,
+      0,
+      12,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 87,
+    "address": 134783236,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135213228,
+    "adsr": [
+      64,
+      127,
+      206,
+      165
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 88,
+    "address": 134783248,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135214544,
+    "adsr": [
+      255,
+      127,
+      206,
+      204
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 89,
+    "address": 134783260,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135216772,
+    "adsr": [
+      64,
+      38,
+      206,
+      216
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 90,
+    "address": 134783272,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135230168,
+    "adsr": [
+      255,
+      38,
+      206,
+      216
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 91,
+    "address": 134783284,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135247084,
+    "adsr": [
+      255,
+      127,
+      206,
+      204
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 92,
+    "address": 134783296,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135249172,
+    "adsr": [
+      255,
+      127,
+      206,
+      204
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 93,
+    "address": 134783308,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135263944,
+    "adsr": [
+      255,
+      127,
+      206,
+      204
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 94,
+    "address": 134783320,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135278812,
+    "adsr": [
+      255,
+      127,
+      206,
+      204
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 95,
+    "address": 134783332,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135289164,
+    "adsr": [
+      255,
+      127,
+      206,
+      127
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 96,
+    "address": 134783344,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135291940,
+    "adsr": [
+      255,
+      127,
+      206,
+      127
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 97,
+    "address": 134783356,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135296020,
+    "adsr": [
+      255,
+      127,
+      206,
+      127
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 98,
+    "address": 134783368,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 99,
+    "address": 134783380,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135308644,
+    "adsr": [
+      255,
+      127,
+      206,
+      127
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 100,
+    "address": 134783392,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135311916,
+    "adsr": [
+      255,
+      127,
+      206,
+      127
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 101,
+    "address": 134783404,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135317160,
+    "adsr": [
+      255,
+      127,
+      206,
+      127
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 102,
+    "address": 134783416,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135324348,
+    "adsr": [
+      255,
+      127,
+      206,
+      127
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 103,
+    "address": 134783428,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135335612,
+    "adsr": [
+      255,
+      127,
+      206,
+      127
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 104,
+    "address": 134783440,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135343056,
+    "adsr": [
+      255,
+      127,
+      206,
+      127
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 105,
+    "address": 134783452,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135354916,
+    "adsr": [
+      255,
+      127,
+      206,
+      127
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 106,
+    "address": 134783464,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135357908,
+    "adsr": [
+      255,
+      127,
+      206,
+      127
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 107,
+    "address": 134783476,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135360412,
+    "adsr": [
+      255,
+      127,
+      206,
+      127
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 108,
+    "address": 134783488,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135386148,
+    "adsr": [
+      255,
+      127,
+      206,
+      127
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 109,
+    "address": 134783500,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135406328,
+    "adsr": [
+      255,
+      127,
+      206,
+      127
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 110,
+    "address": 134783512,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135428492,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 111,
+    "address": 134783524,
+    "type": 1,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 2,
+    "adsr": [
+      0,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 112,
+    "address": 134783536,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135430832,
+    "adsr": [
+      255,
+      127,
+      231,
+      204
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 113,
+    "address": 134783548,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135441252,
+    "adsr": [
+      255,
+      127,
+      231,
+      204
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 114,
+    "address": 134783560,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135458008,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 115,
+    "address": 134783572,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135462156,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 116,
+    "address": 134783584,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135471888,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 117,
+    "address": 134783596,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135492760,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 118,
+    "address": 134783608,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135496256,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 119,
+    "address": 134783620,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135497520,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 120,
+    "address": 134783632,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135512668,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 121,
+    "address": 134783644,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135516880,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 122,
+    "address": 134783656,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135520524,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 123,
+    "address": 134783668,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135525728,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 124,
+    "address": 134783680,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135534968,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 125,
+    "address": 134783692,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135557516,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 126,
+    "address": 134783704,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135561840,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  },
+  {
+    "bank_address": 134782192,
+    "index": 127,
+    "address": 134783716,
+    "type": 0,
+    "key": 60,
+    "length": 0,
+    "pan_sweep": 0,
+    "pointer": 135585584,
+    "adsr": [
+      255,
+      127,
+      231,
+      127
+    ]
+  }
+]

@@ -1,0 +1,29 @@
+// EV_GO06.SPC: ROM 7A01E0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@0000DE MAP07_A.SPC  // LITERAL: MAP07_A.SPC (usage not inferred)
+@000234 A  // LITERAL: A (usage not inferred)
+@0003D7 F01B02  // LITERAL: F01B02 (usage not inferred)
+@0004B0  C0D04 ［ギンタ］  // EN: [Ginta]
+@0004CD  C0F04 だれだ！！  // EN: Who's there?!!
+@000524 F22A01  // LITERAL: F22A01 (usage not inferred)
+@0005FD  C0D04 ［？？？］  // EN: [???]
+@00061A  C0F04 あ、あやしいものじゃない！  // EN: I-I'm not anyone suspicious!
+@000671  C0D04 ［トム］  // EN: [Tom]
+@00068C  C0F04 ボクはトム！  // EN: I'm Tom!
+@0006AB ヴェストリに住んでたんだ  // EN: I used to live in Vestri.
+@0006FD F01B01  // LITERAL: F01B01 (usage not inferred)
+@00072B  C0D04 ［ギンタ］  // EN: [Ginta]
+@000748  C0F04 なんだ、びっくりさせんなよ！  // EN: Oh, don't scare me like that!
+@0007A1  C0D04 ［トム］  // EN: [Tom]
+@0007BC  C0F04 ぼくたちを助けようとしてくれる  // EN: You're all trying to help us...
+@0007ED みなさんに…少しでも力になりたくて…  // EN: ...so I wanted to do whatever I could to help you...
+@00083B  C0D04 ［トム］  // EN: [Tom]
+@000856  C0F04 みちのあんないくらいならできると思う  // EN: I think I can at least show you the way.
+@0008B7  C0D04 ［トム］  // EN: [Tom]
+@0008D2  C0F04 …いっしょに行ってもいいかな？  // EN: ...Can I come with you?
+@000973 F01B09  // LITERAL: F01B09 (usage not inferred)
+@0009D7  C0D04 ［ギンタ］  // EN: [Ginta]
+@0009F4  C0F04 そいつはたすかる！  // EN: That'd be a big help!
+@000A19 よろしくなトム！  // EN: We're counting on you, Tom!

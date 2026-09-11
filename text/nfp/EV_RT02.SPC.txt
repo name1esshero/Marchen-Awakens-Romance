@@ -1,0 +1,49 @@
+// EV_RT02.SPC: ROM 7B2E20
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000300 F01A01  // LITERAL: F01A01 (usage not inferred)
+@0003D9  C0D04 ［ギンタ］  // EN: [Ginta]
+@0003F6  C0F04 ほら！くんできたぞ！  // EN: Here! I brought the water!
+@000457 F30A02  // LITERAL: F30A02 (usage not inferred)
+@000530  C0D04 ［親岩］  // EN: [Parent Rock]
+@00054B  C0F04 おおーーーーっ！  // EN: Ooooh!
+@00056E キモチイイ！！  // EN: That feels wonderful!!
+@0005A6  C0D04 ［親岩］  // EN: [Parent Rock]
+@0005C1  C0F04 生きかえりました  // EN: I feel alive again!
+@0005E4 ありがたいっ！  // EN: Thank you!
+@00062C F30A05  // LITERAL: F30A05 (usage not inferred)
+@000705  C0D04 ［子岩］  // EN: [Child Rock]
+@000720  C0F04 ありがたいーーーー！  // EN: Thaaank you!
+@000781 F30A01  // LITERAL: F30A01 (usage not inferred)
+@0007AF  C0D04 ［親岩］  // EN: [Parent Rock]
+@0007CA  C0F04 ところでボッチャンは  // EN: By the way, young master...
+@0007F1 どちらからおいでなさった？  // EN: ...where have you come from?
+@000845 F01A09  // LITERAL: F01A09 (usage not inferred)
+@000873  C0D04 ［ギンタ］  // EN: [Ginta]
+@000890  C0F04 日本！！東京ってトコだ！  // EN: Japan! A place called Tokyo!
+@0008E5  C0D04 ［親岩］  // EN: [Parent Rock]
+@000900  C0F04 トウキョウ？  // EN: Tokyo?
+@00091F きいたことないのォ…  // EN: Never heard of it...
+@00096D F30A04  // LITERAL: F30A04 (usage not inferred)
+@00099B  C0D04 ［子岩］  // EN: [Child Rock]
+@0009B6  C0F04 ないのーー  // EN: Never heard of it!
+@000B07 ARM_GA01  // LITERAL: ARM_GA01 (usage not inferred)
+@000D5E F01A11  // LITERAL: F01A11 (usage not inferred)
+@000E37  C0D04 ［ギンタ］  // EN: [Ginta]
+@000E54  C0F04 ！！！  // EN: !!!
+@001176 F37A01  // LITERAL: F37A01 (usage not inferred)
+@0012CB F37A01  // LITERAL: F37A01 (usage not inferred)
+@001375 F01A06  // LITERAL: F01A06 (usage not inferred)
+@001484  C0D04 ［ギンタ］  // EN: [Ginta]
+@0014A1  C0F04 いきなりなんだおまえは！！  // EN: What's your problem?!
+@0014F8  C0D04 ［ギンタ］  // EN: [Ginta]
+@001515  C0F04 こんのーっ！！！  // EN: Why, you...!!!
+@00173F F01A11  // LITERAL: F01A11 (usage not inferred)
+@00176D  C0D04 ［ギンタ］  // EN: [Ginta]
+@00178A  C0F04 アレ？  // EN: Huh?
+@0017A3 あいつ　みかけによらず　かるいな…  // EN: He's lighter than he looks...
+@001806  C0D04 ［？？？］  // EN: [???]
+@001844 ボウヤ！！  // EN: Little boy!!
+@0018F5 EV_RT03.SPC  // LITERAL: EV_RT03.SPC (usage not inferred)
+@001823  C0F04 やるじゃない<F0><40>  // EN: Not bad at all, ♥

@@ -1,0 +1,13 @@
+// MAP25_4A.SPC: ROM BC72E0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000006 MAP25_4A  // LITERAL: MAP25_4A (usage not inferred)
+@0000B6 MAP25_O  // LITERAL: MAP25_O (usage not inferred)
+@00021D MAP25_O  // LITERAL: MAP25_O (usage not inferred)
+@000341 MAP00_O  // LITERAL: MAP00_O (usage not inferred)
+@0004C8 MAP00_O  // LITERAL: MAP00_O (usage not inferred)
+@00064F MAP00_O  // LITERAL: MAP00_O (usage not inferred)
+@0007B1 TAKARA  // LITERAL: TAKARA (usage not inferred)
+@000979 TAKARA  // LITERAL: TAKARA (usage not inferred)
+@000B66 MAP00_O  // LITERAL: MAP00_O (usage not inferred)

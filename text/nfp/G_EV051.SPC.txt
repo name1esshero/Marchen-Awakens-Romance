@@ -1,0 +1,65 @@
+// G_EV051.SPC: ROM 8088C0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000210 A  // LITERAL: A (usage not inferred)
+@0002DE A  // LITERAL: A (usage not inferred)
+@00036A A  // LITERAL: A (usage not inferred)
+@0003F6 A  // LITERAL: A (usage not inferred)
+@0005A6 MAP11_A.SPC  // LITERAL: MAP11_A.SPC (usage not inferred)
+@000784 F09A04  // LITERAL: F09A04 (usage not inferred)
+@0008B5 F08A06  // LITERAL: F08A06 (usage not inferred)
+@00098E  C0D04 ［ナナシ］  // EN: [Nanashi]
+@0009AB  C0F04 ド、ドロシー…ちゃーん  // TODO: English translation
+@0009D4 ちょっと力をかしてほしいんだけど…  // TODO: English translation
+@000A7D  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000A9C  C0F04 …  // TODO: English translation
+@000B9E  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000BBB  C0F04 な、なあて…  // TODO: English translation
+@000C3A  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000C59  C0F04 …  // TODO: English translation
+@000CDE F01B07  // LITERAL: F01B07 (usage not inferred)
+@000DB7  C0D04 ［ギンタ］  // EN: [Ginta]
+@000DD4  C0F04 ド…ドロシーかわいい！  // TODO: English translation
+@000EFF  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000F1E  C0F04 （ぴく）  // TODO: English translation
+@000F73 F03A06  // LITERAL: F03A06 (usage not inferred)
+@00104C  C0D04 ［ジャック］  // EN: [Jack]
+@00106B  C0F04 ドロシーかっこいい！！  // TODO: English translation
+@0010F5 F09A01  // LITERAL: F09A01 (usage not inferred)
+@001159  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001178  C0F04 そ、そう？  // TODO: English translation
+@00123B F08A05  // LITERAL: F08A05 (usage not inferred)
+@00134A  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001367  C0F04 （ええで！もっとほめろ！！）  // TODO: English translation
+@001406 F04A04  // LITERAL: F04A04 (usage not inferred)
+@0014DF  C0D04 ［スノウ］  // EN: [Snow]
+@0014FC  C0F04 メルヘヴンいちばんの  // TODO: English translation
+@0015C9  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0015E8  C0F04 いや、いちばんなんて、そんな  // TODO: English translation
+@001617 オホホホホホ！  // TODO: English translation
+@001695 F09A03  // LITERAL: F09A03 (usage not inferred)
+@0016C3  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0016E2  C0F04 しかたないわねぇ  // TODO: English translation
+@001705 私がいないとなにもできないんだから！  // TODO: English translation
+@001A20 F01B01  // LITERAL: F01B01 (usage not inferred)
+@001AF9  C0D04 ［ギンタ］  // EN: [Ginta]
+@001B16  C0F04 サンキュー！ドロシー！！  // TODO: English translation
+@001B7B F02A07  // LITERAL: F02A07 (usage not inferred)
+@001C54  C0D04 ［バッボ］  // EN: [Babbo]
+@001C71  C0F04 よしワシもほめる！  // TODO: English translation
+@001CD0 F02A02  // LITERAL: F02A02 (usage not inferred)
+@001CFE  C0D04 ［バッボ］  // EN: [Babbo]
+@001D1B  C0F04 泣く子もだまる、  // TODO: English translation
+@001D3E おそろしい魔女（まじょ）！！  // TODO: English translation
+@001DCA F09A04  // LITERAL: F09A04 (usage not inferred)
+@001EF1  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001F10  C0F04 …  // TODO: English translation
+@001FB6 F08A04  // LITERAL: F08A04 (usage not inferred)
+@00208F  C0D04 ［ナナシ］  // EN: [Nanashi]
+@0020AC  C0F04 （アホか！！  // TODO: English translation
+@0020CB 　ぜっんぜん、ほめてへんやん！！）  // TODO: English translation
+@00214E F02A12  // LITERAL: F02A12 (usage not inferred)
+@00217C  C0D04 ［バッボ］  // EN: [Babbo]
+@002199  C0F04 なんで！？なんでぇ！？  // TODO: English translation
+@001523 <F0><56>ＲＭつかい！！  // TODO: English translation

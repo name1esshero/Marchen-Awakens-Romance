@@ -1,0 +1,6 @@
+// S_HITIRQ.SPC: ROM F13460
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00003B HI_NORM.SPC  // LITERAL: HI_NORM.SPC (usage not inferred)
+@000083 HI_DUNG.SPC  // LITERAL: HI_DUNG.SPC (usage not inferred)

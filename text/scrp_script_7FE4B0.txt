@@ -1,0 +1,91 @@
+// Legacy reference view of G_EV021.SPC; edit text/nfp/G_EV021.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@0000C6 MAP05_A.SPC  // LITERAL: MAP05_A.SPC (usage not inferred)
+@00018D A  // LITERAL: A (usage not inferred)
+@000219 A  // LITERAL: A (usage not inferred)
+@0002A5 MAP05_O  // LITERAL: MAP05_O (usage not inferred)
+@000332 MAP05_O  // LITERAL: MAP05_O (usage not inferred)
+@00062F  C0D04 ［−−−］  // EN: [---]
+@00064C  C0B04 う…うわ…うわぁあ！！！  // TODO: English translation
+@00088E F07A02  // LITERAL: F07A02 (usage not inferred)
+@000967  C0D04 ［アルヴィス］  // EN: [Alviss]
+@000988  C0F04 …！？  // TODO: English translation
+@0009A1 な、なんだ！？  // TODO: English translation
+@0009E9 F07A01  // LITERAL: F07A01 (usage not inferred)
+@000A17  C0D04 ［アルヴィス］  // EN: [Alviss]
+@000A61 つうしん…か！？  // TODO: English translation
+@000C31  C0D04 ［−−−］  // EN: [---]
+@000C4E  C0B04 おのれチェス！！  // TODO: English translation
+@000C71 ６年前にこわされた街を…  // TODO: English translation
+@000CB3  C0D04 ［−−−］  // EN: [---]
+@000CD0  C0B04 ここまでたてなおした  // TODO: English translation
+@000CF7 街を…こわされてたまるか！！  // TODO: English translation
+@000E73 F06A01  // LITERAL: F06A01 (usage not inferred)
+@000F4C  C0D04 ［エド］  // EN: [Ed]
+@000F67  C0F04 …  // TODO: English translation
+@00113C  C0D04 ［−−−］  // EN: [---]
+@001159  C0B04 メルヘヴン全土のクロスガード！  // TODO: English translation
+@00118A このつうしんがきこえるか！！  // TODO: English translation
+@0011D0  C0D04 ［−−−］  // EN: [---]
+@0011ED  C0B04 チェスの兵隊の…  // TODO: English translation
+@00123A  C0D04 ［−−−］  // EN: [---]
+@001257  C0B04 ふっかつ…だ！！！  // TODO: English translation
+@0013DC F06A03  // LITERAL: F06A03 (usage not inferred)
+@0014DC  C0D04 ［エド］  // EN: [Ed]
+@0014F7  C0F04 ……！  // TODO: English translation
+@0016D0  C0D04 ［−−−］  // EN: [---]
+@0016ED  C0B04 こっちも…火のうみだ！！  // TODO: English translation
+@001742  C0D04 ［−−−］  // EN: [---]
+@00175F  C0B04 だめだ！！！  // TODO: English translation
+@00177E …アランはどこだ！！  // TODO: English translation
+@0017BC  C0D04 ［−−−］  // EN: [---]
+@0017D9  C0B04 クロスガードＮｏ２だった男！！  // TODO: English translation
+@001970 F07A02  // LITERAL: F07A02 (usage not inferred)
+@001A49  C0D04 ［アルヴィス］  // EN: [Alviss]
+@001A6A  C0F04 くそ！！  // EN: Damn it!!
+@001A85 アランさん！！  // TODO: English translation
+@001ABD  C0D04 ［アルヴィス］  // EN: [Alviss]
+@001ADE  C0F04 これは…まちがいない！！  // TODO: English translation
+@001B43 F07A01  // LITERAL: F07A01 (usage not inferred)
+@001B71  C0D04 ［アルヴィス］  // EN: [Alviss]
+@001B92  C0F04 『ファントムのふっかつ』！！！  // TODO: English translation
+@001F08 F07A06  // LITERAL: F07A06 (usage not inferred)
+@001FE1  C0D04 ［アルヴィス］  // EN: [Alviss]
+@002002  C0F04 おそわれている街を  // TODO: English translation
+@002027 助けにいきましょう！！！  // TODO: English translation
+@002079 F06A04  // LITERAL: F06A04 (usage not inferred)
+@002152  C0D04 ［エド］  // EN: [Ed]
+@00216D  C0F04 アルヴィス  // EN: Alviss
+@00218A たのみがある  // TODO: English translation
+@0021C0  C0D04 ［エド］  // EN: [Ed]
+@0021DB  C0F04 人々を助けにいってくれ  // TODO: English translation
+@00223E F07A05  // LITERAL: F07A05 (usage not inferred)
+@00226C  C0D04 ［アルヴィス］  // EN: [Alviss]
+@00228D  C0F04 …な  // TODO: English translation
+@0022CE  C0D04 ［エド］  // EN: [Ed]
+@0022E9  C0F04 オレはここにのこる  // TODO: English translation
+@002348 F07A01  // LITERAL: F07A01 (usage not inferred)
+@002376  C0D04 ［アルヴィス］  // EN: [Alviss]
+@002397  C0F04 何をいってるんだ！  // TODO: English translation
+@0023BC 『ごうけつアラン』ともあろう方が！  // TODO: English translation
+@002408  C0D04 ［エド］  // EN: [Ed]
+@002423  C0F04 今は『エド』だ…  // TODO: English translation
+@002480 F06A01  // LITERAL: F06A01 (usage not inferred)
+@0024AE  C0D04 ［エド］  // EN: [Ed]
+@0024C9  C0F04 たのむぜ、アルヴィス…  // TODO: English translation
+@00252C F07A02  // LITERAL: F07A02 (usage not inferred)
+@00255A  C0D04 ［アルヴィス］  // EN: [Alviss]
+@00257B  C0F04 あなたに…  // TODO: English translation
+@002598 しつぼうしました！！  // TODO: English translation
+@002B27 F06A01  // LITERAL: F06A01 (usage not inferred)
+@002C00  C0D04 ［エド］  // EN: [Ed]
+@002C1B  C0F04 （つよくなる！  // TODO: English translation
+@002C3C 　たおす！！）  // TODO: English translation
+@002C74  C0D04 ［エド］  // EN: [Ed]
+@002C8F  C0F04 …ギンタ、おめぇそういったよな？  // TODO: English translation
+@002CEC  C0D04 ［エド］  // EN: [Ed]
+@002D07  C0F04 オレはダンナと同じこと  // TODO: English translation
+@002D30 いいやがったおまえをしんじるぜ！！  // TODO: English translation
+@002EBD EV_MON02.SPC  // LITERAL: EV_MON02.SPC (usage not inferred)

@@ -1,0 +1,18 @@
+// Legacy reference view of MAP09_A.SPC; edit text/nfp/MAP09_A.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@00004B MAP09_A  // LITERAL: MAP09_A (usage not inferred)
+@000090 TAKARA  // LITERAL: TAKARA (usage not inferred)
+@000258 TAKARA  // LITERAL: TAKARA (usage not inferred)
+@000470 A  // LITERAL: A (usage not inferred)
+@0004EA A  // LITERAL: A (usage not inferred)
+@000564 A  // LITERAL: A (usage not inferred)
+@0005DE A  // LITERAL: A (usage not inferred)
+@000658 A  // LITERAL: A (usage not inferred)
+@0006F3 A  // LITERAL: A (usage not inferred)
+@00076D A  // LITERAL: A (usage not inferred)
+@000808 A  // LITERAL: A (usage not inferred)
+@0008A3 A  // LITERAL: A (usage not inferred)
+@00093E A  // LITERAL: A (usage not inferred)
+@0009EA EV_PA01.SPC  // LITERAL: EV_PA01.SPC (usage not inferred)

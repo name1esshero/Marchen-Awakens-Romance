@@ -1,0 +1,17 @@
+// G_EV012.SPC: ROM 7FA990
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@0000EA MAP10_A.SPC  // LITERAL: MAP10_A.SPC (usage not inferred)
+@0001B1 A  // LITERAL: A (usage not inferred)
+@00023D A  // LITERAL: A (usage not inferred)
+@0002C9 A  // LITERAL: A (usage not inferred)
+@000355 A  // LITERAL: A (usage not inferred)
+@00079B F06A01  // LITERAL: F06A01 (usage not inferred)
+@000874  C0D04 ［エド］  // EN: [Ed]
+@00088F  C0F04 スノウ！  // EN: Snow!
+@0008AA 行くぞ！  // EN: Let's go!
+@00093A F04A04  // LITERAL: F04A04 (usage not inferred)
+@000A13  C0D04 ［スノウ］  // EN: [Snow]
+@000A30  C0F04 あ、はーーい！！  // TODO: English translation
+@00138C G_EV020.SPC  // LITERAL: G_EV020.SPC (usage not inferred)

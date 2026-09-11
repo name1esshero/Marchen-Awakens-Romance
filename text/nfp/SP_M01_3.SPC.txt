@@ -1,0 +1,19 @@
+// SP_M01_3.SPC: ROM DC0ED0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000017 EV_BA01.SPC  // LITERAL: EV_BA01.SPC (usage not inferred)
+@00006A EV_BA04.SPC  // LITERAL: EV_BA04.SPC (usage not inferred)
+@00019C F09A01  // LITERAL: F09A01 (usage not inferred)
+@00025D  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00036A EV_BA03.SPC  // LITERAL: EV_BA03.SPC (usage not inferred)
+@0003D9 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
+@000516 F06A01  // LITERAL: F06A01 (usage not inferred)
+@0005D7  C0D04 ［エド］  // EN: [Ed]
+@0005F2  C0F04 オレが封印した宝ばこだ  // TODO: English translation
+@00061B オレしかあけることはできねえんだ  // TODO: English translation
+@000730 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
+@000834 つよい魔力（まりょく）で封印されている  // TODO: English translation
+@000912 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
+@000AD1  C0D04 ６８０Ｐ C0F04 が入っていた！  // TODO: English translation
+@00027C  C0F04 がんばってね〜<F0><40>  // EN: Do your best! ♥

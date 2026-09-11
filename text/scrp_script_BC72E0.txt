@@ -1,0 +1,13 @@
+// Legacy reference view of MAP25_4A.SPC; edit text/nfp/MAP25_4A.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000006 MAP25_4A  // LITERAL: MAP25_4A (usage not inferred)
+@0000B6 MAP25_O  // LITERAL: MAP25_O (usage not inferred)
+@00021D MAP25_O  // LITERAL: MAP25_O (usage not inferred)
+@000341 MAP00_O  // LITERAL: MAP00_O (usage not inferred)
+@0004C8 MAP00_O  // LITERAL: MAP00_O (usage not inferred)
+@00064F MAP00_O  // LITERAL: MAP00_O (usage not inferred)
+@0007B1 TAKARA  // LITERAL: TAKARA (usage not inferred)
+@000979 TAKARA  // LITERAL: TAKARA (usage not inferred)
+@000B66 MAP00_O  // LITERAL: MAP00_O (usage not inferred)

@@ -1,0 +1,38 @@
+# Build directories and generated ROMs (including the original reference ROM).
+/build/
+*.gba
+*.sav
+*.ss[0-9]
+*.elf
+*.o
+*.a
+*.map
+*.d
+*.4bpp
+*.8bpp
+*.lz
+
+# Locally installed agbcc executables/libraries; headers are not build outputs.
+/tools/agbcc/bin/
+/tools/agbcc/lib/
+
+# Python caches and local environments.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Local recovery snapshots and verbose build logs.
+/backups/
+/reports/build/*.log
+
+# Editor/OS temporary files.
+*~
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Keep PNG/PAL/JSON sources, extracted .bin data, assembly, and audit metadata.
+# They remain inputs or useful reverse-engineering evidence, not build junk.
