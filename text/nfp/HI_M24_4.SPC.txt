@@ -62,13 +62,13 @@
 @002162  C0D04 ［ドロシー］  // EN: [Dorothy]
 @002181  C0F04 （げ！…デカイ氷！）  // EN: (Ugh! ...A huge block of ice!)
 @0021D2  C0D04 ［ドロシー］  // EN: [Dorothy]
-@0021F1  C0F04 ………  // EN: .........
+@0021F1  C0F04 ………  // EN: ...
 @0022F4  C0D04 ［ドロシー］  // EN: [Dorothy]
 @002313  C0F04 （ち！！）  // EN: (Tch!!)
 @0023B7  C0D04 ［ドロシー］  // EN: [Dorothy]
 @0023D6  C0F04 （それでスノウをまっていたってワケね！）  // EN: (So that's why they were waiting for Snow!)
 @00243B  C0D04 ［ドロシー］  // EN: [Dorothy]
-@00245A  C0F04 ………  // EN: .........
+@00245A  C0F04 ………  // EN: ...
 @0024AD F09A01  // LITERAL: F09A01 (usage not inferred)
 @0024DB  C0D04 ［ドロシー］  // EN: [Dorothy]
 @0024FA  C0F04 （…負けるもんか！）  // EN: (...I won't lose to her!)

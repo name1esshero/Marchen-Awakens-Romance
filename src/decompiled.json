@@ -544,5 +544,47 @@
   "size": 20,
   "name": "KmpResetClip",
   "file": "src/map_field.c"
+ },
+ {
+  "addr": "080122F8",
+  "size": 32,
+  "name": "ScriptNativeFieldSet",
+  "file": "src/map_native.c"
+ },
+ {
+  "addr": "080121C4",
+  "size": 32,
+  "name": "ScriptNativeHitInit",
+  "file": "src/map_native.c"
+ },
+ {
+  "addr": "08012244",
+  "size": 32,
+  "name": "ScriptNativeHitRect",
+  "file": "src/map_native.c"
+ },
+ {
+  "addr": "080121E4",
+  "size": 36,
+  "name": "ScriptNativeHitFree",
+  "file": "src/map_native.c"
+ },
+ {
+  "addr": "0807BC2C",
+  "size": 80,
+  "name": "NcdInitSprite",
+  "file": "src/ncd_sprite.c"
+ },
+ {
+  "addr": "08010C0C",
+  "size": 76,
+  "name": "ScriptSpriteSelect",
+  "file": "src/script_sprite.c"
+ },
+ {
+  "addr": "08011EF4",
+  "size": 32,
+  "name": "ScriptNativeSpriteChange",
+  "file": "src/script_sprite.c"
  }
 ]

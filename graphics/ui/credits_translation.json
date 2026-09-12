@@ -1,0 +1,933 @@
+{
+  "note": "Japanese transcribed from extracted ROM artwork. Provisional name readings are explicitly allowed by the user and are not independently verified. Source-backed readings are cross-references, not official localization claims.",
+  "entries": [
+    {
+      "frame": 1698,
+      "japanese": "メルヘヴン KNOCKIN'ON HEAVEN'S DOOR",
+      "english": "MAR Heaven",
+      "artwork_lines": [
+        "MAR Heaven"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1700,
+      "japanese": "原作",
+      "english": "Story",
+      "artwork_lines": [
+        "Story"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1701,
+      "japanese": "安西 信行",
+      "english": "Nobuyuki Anzai",
+      "artwork_lines": [
+        "Nobuyuki",
+        "Anzai"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ]
+    },
+    {
+      "frame": 1702,
+      "japanese": "プランニングユニット",
+      "english": "Planning team",
+      "artwork_lines": [
+        "Planning team"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1703,
+      "japanese": "メインプランニング",
+      "english": "Lead planning",
+      "artwork_lines": [
+        "Lead planning"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1704,
+      "japanese": "花田 洋",
+      "english": "Hiroshi Hanada",
+      "artwork_lines": [
+        "Hiroshi",
+        "Hanada"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ]
+    },
+    {
+      "frame": 1705,
+      "japanese": "シナリオスクリプト",
+      "english": "Scenario scripting",
+      "artwork_lines": [
+        "Scenario scripting"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1706,
+      "japanese": "佐藤 真人",
+      "english": "Masato Sato",
+      "artwork_lines": [
+        "Masato Sato"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ]
+    },
+    {
+      "frame": 1707,
+      "japanese": "落合 拓巳",
+      "english": "Takumi Ochiai",
+      "artwork_lines": [
+        "Takumi Ochiai"
+      ],
+      "reading_status": "provisional",
+      "sources": []
+    },
+    {
+      "frame": 1708,
+      "japanese": "プログラムユニット",
+      "english": "Programming team",
+      "artwork_lines": [
+        "Programming team"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1709,
+      "japanese": "メインプログラム",
+      "english": "Lead programming",
+      "artwork_lines": [
+        "Lead programming"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1710,
+      "japanese": "昇 耕一",
+      "english": "Koichi Nobori",
+      "artwork_lines": [
+        "Koichi Nobori"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ]
+    },
+    {
+      "frame": 1711,
+      "japanese": "システムメニュー",
+      "english": "System menus",
+      "artwork_lines": [
+        "System menus"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1712,
+      "japanese": "前橋 敏行",
+      "english": "Toshiyuki Maehashi",
+      "artwork_lines": [
+        "Toshiyuki",
+        "Maehashi"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ]
+    },
+    {
+      "frame": 1713,
+      "japanese": "ダンジョン生成・マップ",
+      "english": "Dungeon generation / Maps",
+      "artwork_lines": [
+        "Dungeon generation / Maps"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1714,
+      "japanese": "加藤 大輔",
+      "english": "Daisuke Kato",
+      "artwork_lines": [
+        "Daisuke Kato"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ]
+    },
+    {
+      "frame": 1715,
+      "japanese": "ARMエフェクト・敵AI",
+      "english": "ARM effects / Enemy AI",
+      "artwork_lines": [
+        "ARM effects / Enemy AI"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1716,
+      "japanese": "小林 健彦",
+      "english": "Takehiko Kobayashi",
+      "artwork_lines": [
+        "Takehiko",
+        "Kobayashi"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ]
+    },
+    {
+      "frame": 1717,
+      "japanese": "デザインユニット",
+      "english": "Design team",
+      "artwork_lines": [
+        "Design team"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1718,
+      "japanese": "メインデザイン",
+      "english": "Main design",
+      "artwork_lines": [
+        "Main design"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1719,
+      "japanese": "小林 匡",
+      "english": "Tadashi Kobayashi",
+      "artwork_lines": [
+        "Tadashi",
+        "Kobayashi"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ]
+    },
+    {
+      "frame": 1720,
+      "japanese": "リードデザイン",
+      "english": "Lead design",
+      "artwork_lines": [
+        "Lead design"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1721,
+      "japanese": "伊藤 文",
+      "english": "Aya Ito",
+      "artwork_lines": [
+        "Aya Ito"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ]
+    },
+    {
+      "frame": 1722,
+      "japanese": "キャラクターデザイン",
+      "english": "Character design",
+      "artwork_lines": [
+        "Character design"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1723,
+      "japanese": "柴崎 佳代子",
+      "english": "Kayoko Shibasaki",
+      "artwork_lines": [
+        "Kayoko Shibasaki"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ]
+    },
+    {
+      "frame": 1724,
+      "japanese": "坂本 和也",
+      "english": "Kazuya Sakamoto",
+      "artwork_lines": [
+        "Kazuya",
+        "Sakamoto"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ]
+    },
+    {
+      "frame": 1725,
+      "japanese": "小倉 正史",
+      "english": "Masashi Ogura",
+      "artwork_lines": [
+        "Masashi",
+        "Ogura"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ]
+    },
+    {
+      "frame": 1726,
+      "japanese": "樋野 清史",
+      "english": "Kiyofumi Hino",
+      "artwork_lines": [
+        "Kiyofumi Hino"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ]
+    },
+    {
+      "frame": 1727,
+      "japanese": "背景デザイン",
+      "english": "Backgrounds",
+      "artwork_lines": [
+        "Backgrounds"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1728,
+      "japanese": "小野 文博",
+      "english": "Fumihiro Ono",
+      "artwork_lines": [
+        "Fumihiro Ono"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ]
+    },
+    {
+      "frame": 1729,
+      "japanese": "藤田 敬",
+      "english": "Takashi Fujita",
+      "artwork_lines": [
+        "Takashi",
+        "Fujita"
+      ],
+      "reading_status": "provisional",
+      "sources": []
+    },
+    {
+      "frame": 1730,
+      "japanese": "エフェクト＆システムデザイン",
+      "english": "Effects / System design",
+      "artwork_lines": [
+        "Effects / System design"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1731,
+      "japanese": "内山 幹",
+      "english": "Kan Uchiyama",
+      "artwork_lines": [
+        "Kan Uchiyama"
+      ],
+      "reading_status": "provisional",
+      "sources": []
+    },
+    {
+      "frame": 1732,
+      "japanese": "餘語 慶一",
+      "english": "Keiichi Yogo",
+      "artwork_lines": [
+        "Keiichi Yogo"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ]
+    },
+    {
+      "frame": 1733,
+      "japanese": "ARMデザイン",
+      "english": "ARM design",
+      "artwork_lines": [
+        "ARM design"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1734,
+      "japanese": "大山 雄樹",
+      "english": "Yuki Oyama",
+      "artwork_lines": [
+        "Yuki Oyama"
+      ],
+      "reading_status": "provisional",
+      "sources": []
+    },
+    {
+      "frame": 1735,
+      "japanese": "サウンドユニット",
+      "english": "Sound team",
+      "artwork_lines": [
+        "Sound team"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1736,
+      "japanese": "BGM・SE",
+      "english": "Music / SFX",
+      "artwork_lines": [
+        "Music / SFX"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1737,
+      "japanese": "小野 加奈代",
+      "english": "Kanayo Ono",
+      "artwork_lines": [
+        "Kanayo Ono"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ]
+    },
+    {
+      "frame": 1738,
+      "japanese": "プロダクトデザイン",
+      "english": "Product design",
+      "artwork_lines": [
+        "Product design"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1739,
+      "japanese": "所 美智子",
+      "english": "Michiko Tokoro",
+      "artwork_lines": [
+        "Michiko Tokoro"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ]
+    },
+    {
+      "frame": 1740,
+      "japanese": "プロモーション",
+      "english": "Promotion",
+      "artwork_lines": [
+        "Promotion"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1741,
+      "japanese": "柳井 亮",
+      "english": "Ryo Yanai",
+      "artwork_lines": [
+        "Ryo Yanai"
+      ],
+      "reading_status": "provisional",
+      "sources": []
+    },
+    {
+      "frame": 1742,
+      "japanese": "佐藤 健次",
+      "english": "Kenji Sato",
+      "artwork_lines": [
+        "Kenji Sato"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://vgmdb.net/album/17335"
+      ]
+    },
+    {
+      "frame": 1743,
+      "japanese": "伊藤 真喜子",
+      "english": "Makiko Ito",
+      "artwork_lines": [
+        "Makiko Ito"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://www.mobygames.com/person/627568/makiko-ito/"
+      ]
+    },
+    {
+      "frame": 1744,
+      "japanese": "制作協力",
+      "english": "Support",
+      "artwork_lines": [
+        "Support"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1745,
+      "japanese": "小学館 週刊少年サンデー編集部",
+      "english": "Shogakukan / Weekly Shonen Sunday editors",
+      "artwork_lines": [
+        "Shogakukan / Weekly Shonen Sunday editors"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1746,
+      "japanese": "都築 伸一郎",
+      "english": "Shinichiro Tsuzuki",
+      "artwork_lines": [
+        "Shinichiro Tsuzuki"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://vgmdb.net/artist/68088"
+      ]
+    },
+    {
+      "frame": 1747,
+      "japanese": "林 正人",
+      "english": "Masato Hayashi",
+      "artwork_lines": [
+        "Masato",
+        "Hayashi"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://www.mobygames.com/game/197721/spriggan-lunar-verse/credits/playstation/"
+      ]
+    },
+    {
+      "frame": 1748,
+      "japanese": "野村 敦司",
+      "english": "Atsushi Nomura",
+      "artwork_lines": [
+        "Atsushi",
+        "Nomura"
+      ],
+      "reading_status": "provisional",
+      "sources": []
+    },
+    {
+      "frame": 1749,
+      "japanese": "宮坂 保志",
+      "english": "Yasushi Miyasaka",
+      "artwork_lines": [
+        "Yasushi",
+        "Miyasaka"
+      ],
+      "reading_status": "provisional",
+      "sources": []
+    },
+    {
+      "frame": 1750,
+      "japanese": "飯塚 洋介",
+      "english": "Yosuke Iizuka",
+      "artwork_lines": [
+        "Yosuke Iizuka"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://ci.nii.ac.jp/ncid/BC08023642"
+      ]
+    },
+    {
+      "frame": 1751,
+      "japanese": "佐藤 恵理",
+      "english": "Eri Sato",
+      "artwork_lines": [
+        "Eri Sato"
+      ],
+      "reading_status": "provisional",
+      "sources": []
+    },
+    {
+      "frame": 1752,
+      "japanese": "小学館 キャラクター事業センター",
+      "english": "Shogakukan / Character Business Center",
+      "artwork_lines": [
+        "Shogakukan / Character Business Center"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1753,
+      "japanese": "久保 雅一",
+      "english": "Masakazu Kubo",
+      "artwork_lines": [
+        "Masakazu",
+        "Kubo"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://pocketmonsters.net/staff/view/10143"
+      ]
+    },
+    {
+      "frame": 1754,
+      "japanese": "沢辺 伸政",
+      "english": "Nobumasa Sawabe",
+      "artwork_lines": [
+        "Nobumasa",
+        "Sawabe"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://www.mobygames.com/person/1588549/nobumasa-sawabe/credits/"
+      ]
+    },
+    {
+      "frame": 1755,
+      "japanese": "小学館 宣伝部",
+      "english": "Shogakukan publicity",
+      "artwork_lines": [
+        "Shogakukan publicity"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1756,
+      "japanese": "備前島 幹人",
+      "english": "Mikito Bizenjima",
+      "artwork_lines": [
+        "Mikito Bizenjima"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://bgm.tv/person/53429"
+      ]
+    },
+    {
+      "frame": 1757,
+      "japanese": "古市 直彦（小学館プロダクション）",
+      "english": "Naohiko Furuichi (Shogakukan Production)",
+      "artwork_lines": [
+        "Naohiko Furuichi (ShoPro)"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://mangaseek.net/person/30588.html"
+      ]
+    },
+    {
+      "frame": 1758,
+      "japanese": "伊藤 忠久（小学館プロダクション）",
+      "english": "Tadahisa Ito (Shogakukan Production)",
+      "artwork_lines": [
+        "Tadahisa Ito (ShoPro)"
+      ],
+      "reading_status": "provisional",
+      "sources": []
+    },
+    {
+      "frame": 1759,
+      "japanese": "小学館プロダクション",
+      "english": "Shogakukan Production",
+      "artwork_lines": [
+        "Shogakukan Production"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1760,
+      "japanese": "スペシャルサンクス",
+      "english": "Special thanks",
+      "artwork_lines": [
+        "Special thanks"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1761,
+      "japanese": "石塚 通引",
+      "english": "Michihiro Ishizuka",
+      "artwork_lines": [
+        "Michihiro",
+        "Ishizuka"
+      ],
+      "reading_status": "provisional",
+      "sources": []
+    },
+    {
+      "frame": 1762,
+      "japanese": "柚下 国昭",
+      "english": "Kuniaki Yushita",
+      "artwork_lines": [
+        "Kuniaki",
+        "Yushita"
+      ],
+      "reading_status": "provisional",
+      "sources": []
+    },
+    {
+      "frame": 1763,
+      "japanese": "堀上 敦",
+      "english": "Atsushi Horigami",
+      "artwork_lines": [
+        "Atsushi",
+        "Horigami"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://www.mobygames.com/person/195623/atsushi-horigami/"
+      ]
+    },
+    {
+      "frame": 1764,
+      "japanese": "中村 健吾",
+      "english": "Kengo Nakamura",
+      "artwork_lines": [
+        "Kengo",
+        "Nakamura"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://w.atwiki.jp/game_staff/pages/239.html"
+      ]
+    },
+    {
+      "frame": 1765,
+      "japanese": "汾陽 桂太",
+      "english": "Keita Kawaminami",
+      "artwork_lines": [
+        "Keita",
+        "Kawaminami"
+      ],
+      "reading_status": "provisional",
+      "sources": []
+    },
+    {
+      "frame": 1766,
+      "japanese": "鈴木 英之",
+      "english": "Hideyuki Suzuki",
+      "artwork_lines": [
+        "Hideyuki",
+        "Suzuki"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://vgmdb.net/org/366?field=date&order=&page=3&perpage=30&tab=albums"
+      ]
+    },
+    {
+      "frame": 1767,
+      "japanese": "柏崎 歩",
+      "english": "Ayumu Kashizaki",
+      "artwork_lines": [
+        "Ayumu",
+        "Kashizaki"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://vgmdb.net/org/366?field=date&order=&page=3&perpage=30&tab=albums"
+      ]
+    },
+    {
+      "frame": 1768,
+      "japanese": "内藤 聡子",
+      "english": "Satoko Naito",
+      "artwork_lines": [
+        "Satoko Naito"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://vgmdb.net/org/366?field=date&order=&page=3&perpage=30&tab=albums"
+      ]
+    },
+    {
+      "frame": 1769,
+      "japanese": "永井 満夫",
+      "english": "Mitsuo Nagai",
+      "artwork_lines": [
+        "Mitsuo Nagai"
+      ],
+      "reading_status": "provisional",
+      "sources": []
+    },
+    {
+      "frame": 1770,
+      "japanese": "岡本 茂",
+      "english": "Shigeru Okamoto",
+      "artwork_lines": [
+        "Shigeru",
+        "Okamoto"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://www.mobygames.com/person/505976/shigeru-okamoto/companies/"
+      ]
+    },
+    {
+      "frame": 1771,
+      "japanese": "ディレクター",
+      "english": "Director",
+      "artwork_lines": [
+        "Director"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1772,
+      "japanese": "五十嵐 要",
+      "english": "Kaname Igarashi",
+      "artwork_lines": [
+        "Kaname Igarashi"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ]
+    },
+    {
+      "frame": 1773,
+      "japanese": "チーフディレクター",
+      "english": "Chief director",
+      "artwork_lines": [
+        "Chief director"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1774,
+      "japanese": "村戸 信",
+      "english": "Shin Murato",
+      "artwork_lines": [
+        "Shin Murato"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ]
+    },
+    {
+      "frame": 1775,
+      "japanese": "プロデューサー",
+      "english": "Producer",
+      "artwork_lines": [
+        "Producer"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1776,
+      "japanese": "早川 英樹",
+      "english": "Hideki Hayakawa",
+      "artwork_lines": [
+        "Hideki",
+        "Hayakawa"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ]
+    },
+    {
+      "frame": 1777,
+      "japanese": "エグゼクティブプロデューサー",
+      "english": "Executive producer",
+      "artwork_lines": [
+        "Executive producer"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1778,
+      "japanese": "吉岡 基行",
+      "english": "Motoyuki Yoshioka",
+      "artwork_lines": [
+        "Motoyuki",
+        "Yoshioka"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ]
+    },
+    {
+      "frame": 1779,
+      "japanese": "制作・著作",
+      "english": "Production / Copyright",
+      "artwork_lines": [
+        "Production / (C)"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1780,
+      "japanese": "コナミ株式会社",
+      "english": "Konami Corporation",
+      "artwork_lines": [
+        "Konami Corporation"
+      ],
+      "reading_status": "translated",
+      "sources": []
+    },
+    {
+      "frame": 1781,
+      "japanese": "秋田 真典",
+      "english": "Masanori Akita",
+      "artwork_lines": [
+        "Masanori",
+        "Akita"
+      ],
+      "reading_status": "source-backed",
+      "sources": [
+        "https://inspion.co.jp/staff/masanori-akita/"
+      ]
+    }
+  ]
+}

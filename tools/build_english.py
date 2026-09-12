@@ -2,7 +2,7 @@
 """Compile reviewed exact-string mappings for the optional English dialogue path.
 
 Ambiguous wording across scripts is excluded until runtime script identity is
-recovered. Leading C/T controls survive; embedded controls need translated
+recovered. Leading and trailing C/T controls survive; internal controls need translated
 markup and are rejected. Output uses the actual font and 21-glyph row limit.
 """
 import argparse
@@ -16,6 +16,7 @@ import text_codec
 ROOT = Path(__file__).resolve().parents[1]
 CONTROL = re.compile(rb'[CTct][0-9A-Fa-f]{4}')
 PREFIX = re.compile(rb' *(?:[CTct][0-9A-Fa-f]{4} *)*')
+SUFFIX = re.compile(rb'(?: *[CTct][0-9A-Fa-f]{4})+ *$')
 
 
 def collect(root=ROOT):
@@ -30,6 +31,9 @@ def collect(root=ROOT):
             raw = text_codec.encode(japanese)
             candidates[raw].add(english)
             locations[raw].append(path.name+':'+offset)
+    # MswStr always receives row strings, including empty padding literals.
+    # One unmapped blank used to discard the translation of the entire message.
+    candidates[b''].add('')
     mapping = english_layout.load_mapping(root)
     accepted = [];rejected = []
     for raw, translations in sorted(candidates.items()):
@@ -37,12 +41,18 @@ def collect(root=ROOT):
             if len(translations) != 1:raise ValueError('Context-dependent translation; runtime script identity required')
             if b'\0' in raw or len(raw) > 160:raise ValueError('Source exceeds dialogue row buffer')
             prefix = PREFIX.match(raw).group()
-            if CONTROL.search(raw[len(prefix):]):raise ValueError('Embedded formatting requires English markup')
+            body = raw[len(prefix):]
+            suffix_match = SUFFIX.search(body)
+            suffix = suffix_match.group() if suffix_match else b''
+            visible = body[:-len(suffix)] if suffix else body
+            if CONTROL.search(visible) and not english_layout.CONTROL_TAG.search(next(iter(translations))):
+                raise ValueError('Embedded formatting requires English markup')
             rows = english_layout.wrap_lines(next(iter(translations)),mapping)
             while len(rows)>1 and rows[-1]==b'\0':rows.pop()
             if len(rows) > 255:raise ValueError('Translation exceeds 255-row mapping limit')
             # The pagination task carries style across page boundaries.
             rows[0] = prefix + rows[0]
+            if suffix: rows[-1] = rows[-1][:-1] + suffix + b'\0'
             if any(len(row)>127 for row in rows):raise ValueError('Controls exceed signed cursor capacity')
             accepted.append((raw, rows))
         except ValueError as exc:

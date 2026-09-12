@@ -107,3 +107,11 @@ original stream hashes and archive ownership. `tools/extract_rle.py baserom.gba`
 now writes only `reports/graphics/rle-candidates.json`. Decoding successfully
 does not establish an asset boundary, palette or runtime consumer. The BIOS
 RLE codec remains available in `tools/rle.py` for future verified uses.
+
+### Sprite cell coordinates
+
+NCD cell table X/Y values are centers. The compositor subtracts half the cell
+width/height, as the engine does, before placing pixels. Frame PNGs and viewer
+origins use those corrected bounds. The build uses the same bounds to map edits
+back to cell tile bytes; do not manually shift cell centers to compensate for
+an older preview. Unchanged corrected PNGs rebuild the original NCD bytes.

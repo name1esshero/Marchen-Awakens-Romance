@@ -129,7 +129,7 @@ sub_080601E8:
 	bl sub_0807BFD0
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	b _0806022C
 	.byte 0x00
 	.byte 0x00
@@ -152,7 +152,7 @@ _08060218:
 	adds r5, r1, r0
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	.global _0806022C
 _0806022C:
 	adds r0, r7, #1
@@ -177,7 +177,7 @@ sub_0806023E:
 	bl sub_0807BFD0
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	b _08060274
 	.byte 0x00
 	.byte 0x00
@@ -197,7 +197,7 @@ _08060260:
 	adds r5, r3, r0
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	.global _08060274
 _08060274:
 	adds r0, r4, #0
@@ -229,7 +229,7 @@ _08060286:
 	adds r5, r3, r0
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	.global _080602AE
 _080602AE:
 	adds r0, r4, #0
@@ -256,12 +256,12 @@ _080602AE:
 	add r5, r8
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	ldr r5, _08060398
 	add r5, r8
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	movs r5, #128
 	lsls r5, r5, #9
 	ldr r4, _0806039C
@@ -270,7 +270,7 @@ _080602AE:
 _080602F6:
 	adds r0, r4, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	adds r0, r5, #0
 	movs r1, #128
 	lsls r1, r1, #9
@@ -306,7 +306,7 @@ sub_08060316:
 _08060332:
 	adds r0, r4, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	adds r0, r5, #0
 	movs r1, #128
 	lsls r1, r1, #9
@@ -326,7 +326,7 @@ _0806034A:
 	add r5, r8
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	.global _08060360
 _08060360:
 	movs r5, #143
@@ -336,7 +336,7 @@ _08060360:
 	bl sub_0807BFD0
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	.global _08060374
 _08060374:
 	add sp, #20
@@ -1574,7 +1574,7 @@ _08060CAE:
 	adds r5, r4, r0
 	adds r0, r5, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	mov r0, r8
 	lsls r4, r0, #4
 	ldr r0, _08060FB0
@@ -1669,7 +1669,7 @@ _08060D56:
 	adds r5, r3, r0
 	adds r0, r5, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	movs r0, #0
 	ldr r1, _08060FC4
 	bl FindResourceByName
@@ -1736,7 +1736,7 @@ _08060DDE:
 	adds r5, r3, r0
 	adds r0, r5, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	movs r0, #0
 	ldr r1, _08060FCC
 	bl FindResourceByName
@@ -1792,7 +1792,7 @@ _08060E56:
 	adds r5, r1, r0
 	adds r0, r5, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	movs r0, #0
 	ldr r1, _08060FD0
 	bl FindResourceByName
@@ -1855,7 +1855,7 @@ _08060ED2:
 	adds r5, r3, r0
 	adds r0, r5, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	movs r0, #0
 	ldr r1, _08060FD8
 	bl FindResourceByName
@@ -1917,19 +1917,19 @@ _08060ED2:
 	add r5, r9
 	adds r0, r5, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	movs r5, #234
 	lsls r5, r5, #4
 	add r5, r9
 	adds r0, r5, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	movs r5, #247
 	lsls r5, r5, #4
 	add r5, r9
 	adds r0, r5, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	ldr r0, _08060FE8
 	add r0, r9
 	movs r1, #30
@@ -2490,7 +2490,7 @@ _080615D0:
 	bl sub_0807BFD0
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	b _0806160C
 	.global _08061600
 _08061600:
@@ -2499,7 +2499,7 @@ _08061600:
 _08061604:
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	.global _0806160C
 _0806160C:
 	adds r0, r4, #0
@@ -2526,7 +2526,7 @@ _08061626:
 	bl sub_0807BFD0
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	b _08061650
 	.global _08061640
 _08061640:
@@ -2537,7 +2537,7 @@ _08061644:
 	adds r5, r0, r4
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	.global _08061650
 _08061650:
 	mov r0, r8
@@ -2590,7 +2590,7 @@ _08061686:
 	movs r1, #0
 	str r2, [sp, #20]
 	str r3, [sp, #24]
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	ldr r3, [sp, #24]
 	ldr r2, [sp, #20]
 	.global _080616A0
@@ -2633,7 +2633,7 @@ _080616D6:
 	adds r5, r4, #0
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	.global _080616E8
 _080616E8:
 	adds r0, r6, #0
@@ -2648,13 +2648,13 @@ _080616E8:
 	add r5, r9
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	movs r5, #234
 	lsls r5, r5, #4
 	add r5, r9
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	ldr r0, _080617C0
 	add r0, r9
 	ldrb r0, [r0, #0]
@@ -2667,7 +2667,7 @@ _080616E8:
 	add r5, r9
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	.global _0806172E
 _0806172E:
 	movs r5, #128
@@ -2678,7 +2678,7 @@ _0806172E:
 _08061736:
 	adds r0, r4, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	adds r0, r5, #0
 	movs r3, #128
 	lsls r3, r3, #9
@@ -2694,7 +2694,7 @@ _08061736:
 _08061754:
 	adds r0, r4, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	adds r0, r5, #0
 	movs r1, #128
 	lsls r1, r1, #9
@@ -2710,7 +2710,7 @@ _08061754:
 _08061772:
 	adds r0, r4, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	adds r0, r5, #0
 	movs r2, #128
 	lsls r2, r2, #9
@@ -4075,14 +4075,14 @@ _08062294:
 _080622D8:
 	mov r0, r9
 	movs r1, #1
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	mov r7, r9
 	adds r7, #52
 	adds r0, r7, #0
 	bl sub_0807BFD0
 	adds r0, r7, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	add sp, #28
 	pop {r3, r4, r5}
 	mov r8, r3
@@ -4229,7 +4229,7 @@ _0806242C:
 	adds r5, #52
 	adds r0, r5, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	movs r0, #0
 	ldr r1, _080624A8
 	bl FindResourceByName
@@ -4298,7 +4298,7 @@ _080624B0:
 	adds r5, r1, r0
 	adds r0, r5, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	movs r0, #0
 	mov r1, r10
 	bl FindResourceByName
@@ -4386,7 +4386,7 @@ _0806255C:
 	adds r5, r1, r0
 	adds r0, r5, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	movs r0, #0
 	ldr r1, _08062850
 	bl FindResourceByName
@@ -4442,7 +4442,7 @@ _080625CA:
 	adds r5, r2, r0
 	adds r0, r5, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	movs r0, #0
 	ldr r1, _08062858
 	bl FindResourceByName
@@ -4495,7 +4495,7 @@ _08062636:
 	adds r5, r1, r0
 	adds r0, r5, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	movs r0, #0
 	ldr r1, _08062860
 	bl FindResourceByName
@@ -4566,7 +4566,7 @@ _080626AE:
 	adds r5, r1, r0
 	adds r0, r5, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	movs r0, #0
 	ldr r1, _08062868
 	bl FindResourceByName
@@ -4622,7 +4622,7 @@ _0806271C:
 	adds r5, r2, r0
 	adds r0, r5, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	movs r0, #0
 	ldr r1, _08062870
 	bl FindResourceByName
@@ -4668,18 +4668,18 @@ _0806271C:
 	add r5, r8
 	adds r0, r5, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	ldr r5, _0806287C
 	add r5, r8
 	adds r0, r5, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	movs r5, #147
 	lsls r5, r5, #6
 	add r5, r8
 	adds r0, r5, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	movs r6, #0
 	movs r4, #0
 	.global _080627B2
@@ -4692,7 +4692,7 @@ _080627B2:
 	adds r5, r2, r0
 	adds r0, r5, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	movs r0, #0
 	ldr r1, _08062884
 	bl FindResourceByName
@@ -6200,7 +6200,7 @@ _080634AA:
 	bl sub_0807BFD0
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	b _080634E0
 	.byte 0x00
 	.byte 0x00
@@ -6211,7 +6211,7 @@ _080634D4:
 _080634D8:
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	.global _080634E0
 _080634E0:
 	adds r0, r4, #0
@@ -6231,12 +6231,12 @@ _080634E0:
 	add r5, r8
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	ldr r5, _080635CC
 	add r5, r8
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	.global _08063512
 _08063512:
 	movs r7, #128
@@ -6252,7 +6252,7 @@ _0806351A:
 	adds r5, r4, #0
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	.global _0806352C
 _0806352C:
 	adds r0, r7, #0
@@ -6275,7 +6275,7 @@ _0806352C:
 	add r5, r8
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	movs r5, #128
 	lsls r5, r5, #9
 	ldr r4, _080635D8
@@ -6284,7 +6284,7 @@ _0806352C:
 _08063560:
 	adds r0, r4, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	adds r0, r5, #0
 	movs r2, #128
 	lsls r2, r2, #9
@@ -6303,7 +6303,7 @@ _08063560:
 	add r5, r8
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	.global _08063590
 _08063590:
 	movs r6, #0
@@ -6319,7 +6319,7 @@ _08063590:
 	add r5, r8
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	.global _080635AE
 _080635AE:
 	mov r0, r8
@@ -7361,7 +7361,7 @@ _08063C80:
 	adds r4, r2, #0
 	adds r0, r4, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	adds r0, r5, #0
 	movs r1, #128
 	lsls r1, r1, #9
@@ -7398,7 +7398,7 @@ _08063CBA:
 	adds r4, r2, #0
 	adds r0, r4, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	adds r0, r5, #0
 	movs r1, #128
 	lsls r1, r1, #9
@@ -7457,7 +7457,7 @@ _08063D0A:
 	adds r4, r6, r0
 	adds r0, r4, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	adds r0, r5, #0
 	movs r2, #128
 	lsls r2, r2, #9
@@ -7511,7 +7511,7 @@ _08063D62:
 	adds r4, r6, r0
 	adds r0, r4, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	adds r0, r5, #0
 	movs r3, #128
 	lsls r3, r3, #9
@@ -7565,7 +7565,7 @@ _08063DBE:
 	adds r4, r6, r0
 	adds r0, r4, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	adds r0, r5, #0
 	movs r3, #128
 	lsls r3, r3, #9
@@ -8774,7 +8774,7 @@ sub_080645FC:
 	adds r5, r4, r0
 	adds r0, r5, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	mov r0, r8
 	lsls r4, r0, #4
 	.global _08064648
@@ -9698,7 +9698,7 @@ _08064D14:
 	bl sub_0807BFD0
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	b _08064D50
 
 	.thumb_func
@@ -9713,7 +9713,7 @@ _08064D44:
 _08064D48:
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	.global _08064D50
 _08064D50:
 	adds r0, r4, #0
@@ -9754,7 +9754,7 @@ _08064D78:
 	movs r1, #0
 	str r2, [sp, #16]
 	str r3, [sp, #20]
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	ldr r3, [sp, #20]
 	ldr r2, [sp, #16]
 	.global _08064D92
@@ -9797,7 +9797,7 @@ _08064DC8:
 	adds r5, r4, #0
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	.global _08064DDA
 _08064DDA:
 	adds r0, r6, #0
@@ -9855,7 +9855,7 @@ _08064E22:
 	adds r5, r4, r0
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	adds r0, r7, #0
 	movs r2, #128
 	lsls r2, r2, #9
@@ -11301,7 +11301,7 @@ sub_08065B0C:
 	bl sub_0807BFD0
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	b _08065B3C
 	.global _08065B30
 _08065B30:
@@ -11310,7 +11310,7 @@ _08065B30:
 _08065B34:
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	.global _08065B3C
 _08065B3C:
 	adds r0, r4, #0
@@ -11331,7 +11331,7 @@ _08065B50:
 	beq _08065B60
 	adds r0, r4, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	.global _08065B60
 _08065B60:
 	adds r0, r5, #0
@@ -12524,7 +12524,7 @@ _080666BC:
 _080666C2:
 	adds r0, r4, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	adds r0, r5, #0
 	movs r1, #128
 	lsls r1, r1, #9
@@ -12548,7 +12548,7 @@ _080666E2:
 	bl sub_0807BFD0
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	b _0806670A
 	.global _080666FC
 _080666FC:
@@ -12558,7 +12558,7 @@ _08066700:
 	adds r5, r7, r4
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	.global _0806670A
 _0806670A:
 	adds r0, r6, #1
@@ -12578,7 +12578,7 @@ _0806670A:
 _08066724:
 	adds r0, r4, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	adds r0, r5, #0
 	movs r3, #128
 	lsls r3, r3, #9
@@ -12594,7 +12594,7 @@ _08066724:
 _08066742:
 	adds r0, r4, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	adds r0, r5, #0
 	movs r1, #128
 	lsls r1, r1, #9
@@ -12607,7 +12607,7 @@ _08066742:
 	adds r5, r7, r2
 	adds r0, r5, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	add sp, #20
 	pop {r3, r4, r5}
 	mov r8, r3
@@ -12960,7 +12960,7 @@ sub_08066B00:
 	adds r6, r1, r0
 	adds r0, r6, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	lsls r4, r7, #4
 	ldr r0, _08066EC0
 	adds r4, r4, r0
@@ -13040,7 +13040,7 @@ _08066B9C:
 	adds r6, r1, r0
 	adds r0, r6, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	movs r0, #0
 	ldr r1, _08066ED4
 	bl FindResourceByName
@@ -13108,7 +13108,7 @@ _08066C28:
 	adds r6, r3, r0
 	adds r0, r6, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	movs r0, #0
 	ldr r1, _08066EDC
 	bl FindResourceByName
@@ -13170,7 +13170,7 @@ _08066C96:
 	adds r6, r3, r0
 	adds r0, r6, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	movs r0, #0
 	ldr r1, _08066EE0
 	bl FindResourceByName
@@ -13223,7 +13223,7 @@ _08066D04:
 	adds r6, r1, r0
 	adds r0, r6, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	movs r0, #0
 	ldr r1, _08066EE8
 	bl FindResourceByName
@@ -13289,7 +13289,7 @@ _08066D7C:
 	adds r6, r3, r0
 	adds r0, r6, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	movs r0, #0
 	ldr r1, _08066EF0
 	bl FindResourceByName
@@ -13341,7 +13341,7 @@ _08066D7C:
 	add r6, r8
 	adds r0, r6, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	ldr r1, _08066EFC
 	movs r0, #0
 	bl FindResourceByName
@@ -13375,7 +13375,7 @@ _08066D7C:
 	add r6, r8
 	adds r0, r6, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	ldr r1, _08066F04
 	movs r0, #0
 	bl FindResourceByName
@@ -13389,17 +13389,17 @@ _08066D7C:
 	add r6, r8
 	adds r0, r6, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	ldr r6, _08066F0C
 	add r6, r8
 	adds r0, r6, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	ldr r6, _08066F10
 	add r6, r8
 	adds r0, r6, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	movs r0, #208
 	lsls r0, r0, #5
 	add r0, r8
@@ -14246,7 +14246,7 @@ _08067786:
 	bl sub_0807BFD0
 	adds r0, r6, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	b _080677BC
 	.global _080677B0
 _080677B0:
@@ -14255,7 +14255,7 @@ _080677B0:
 _080677B4:
 	adds r0, r6, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	.global _080677BC
 _080677BC:
 	adds r0, r4, #0
@@ -14280,7 +14280,7 @@ _080677D2:
 	bl sub_0807BFD0
 	adds r0, r6, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 
 	.thumb_func
 	.thumb
@@ -14296,7 +14296,7 @@ _080677F0:
 	adds r6, r0, r4
 	adds r0, r6, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	.global _080677FC
 _080677FC:
 	adds r0, r7, #1
@@ -14320,7 +14320,7 @@ _080677FC:
 _0806781E:
 	adds r0, r4, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	adds r0, r5, #0
 	movs r2, #128
 	lsls r2, r2, #9
@@ -14341,12 +14341,12 @@ _08067842:
 	add r6, r8
 	adds r0, r6, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	ldr r6, _08067904
 	add r6, r8
 	adds r0, r6, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	movs r5, #128
 	lsls r5, r5, #9
 	ldr r4, _08067908
@@ -14355,7 +14355,7 @@ _08067842:
 _08067862:
 	adds r0, r4, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	adds r0, r5, #0
 	movs r2, #128
 	lsls r2, r2, #9
@@ -14371,7 +14371,7 @@ _08067862:
 _08067880:
 	adds r0, r4, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	adds r0, r5, #0
 	movs r3, #128
 	lsls r3, r3, #9
@@ -14388,7 +14388,7 @@ _08067880:
 _080678A0:
 	adds r0, r4, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	adds r0, r5, #0
 	movs r1, #128
 	lsls r1, r1, #9
@@ -14407,7 +14407,7 @@ _080678A0:
 	add r6, r8
 	adds r0, r6, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	.global _080678D0
 _080678D0:
 	mov r0, r8

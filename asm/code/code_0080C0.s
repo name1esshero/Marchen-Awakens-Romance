@@ -1345,7 +1345,7 @@ sub_08008A70:
 	adds r0, r2, #0
 	adds r0, #8
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	pop {r0}
 	bx r0
 	.byte 0x00
@@ -1536,7 +1536,7 @@ _08008BBA:
 	.global _08008BC0
 _08008BC0:
 	adds r0, r3, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	.global _08008BC6
 _08008BC6:
 	ldr r4, [r4, #0]
@@ -1945,7 +1945,7 @@ sub_08008E18:
 	adds r6, r0, #0
 	add r0, sp, #4
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	mov r0, r10
 	str r0, [sp, #0]
 	add r0, sp, #4
@@ -1967,7 +1967,7 @@ sub_08008E18:
 	adds r6, r0, #0
 	add r0, sp, #4
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	mov r3, r10
 	str r3, [sp, #0]
 	add r0, sp, #4
@@ -1987,7 +1987,7 @@ sub_08008E18:
 	adds r6, r0, #0
 	add r0, sp, #4
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	mov r3, r10
 	str r3, [sp, #0]
 	add r0, sp, #4
@@ -2013,7 +2013,7 @@ sub_08008E18:
 	adds r6, r0, #0
 	add r0, sp, #4
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	mov r3, r10
 	str r3, [sp, #0]
 	add r0, sp, #4
@@ -2034,7 +2034,7 @@ sub_08008E18:
 	adds r6, r0, #0
 	add r0, sp, #4
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	mov r3, r10
 	str r3, [sp, #0]
 	add r0, sp, #4
@@ -2075,7 +2075,7 @@ sub_08008F7C:
 sub_08008F7E:
 	add r0, sp, #4
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	mov r3, r10
 	str r3, [sp, #0]
 	add r0, sp, #4
@@ -2106,7 +2106,7 @@ sub_08008F90:
 	adds r6, r0, #0
 	add r0, sp, #4
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	mov r3, r10
 	str r3, [sp, #0]
 	add r0, sp, #4
@@ -2379,7 +2379,7 @@ sub_08009140:
 	bl sub_0807B52C
 	mov r0, sp
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	ldr r1, _0800928C
 	movs r0, #0
 	bl FindResourceByName
@@ -9096,7 +9096,7 @@ _0800B9E0:
 	strh r0, [r4, #0]
 	adds r0, r6, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	movs r6, #120
 	mov r5, r10
 	strh r6, [r5, #44]
@@ -9114,7 +9114,7 @@ _0800B9E0:
 	strb r0, [r2, #0]
 	ldr r0, [sp, #32]
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	ldr r3, [sp, #44]
 	ldrb r0, [r3, #0]
 	ands r4, r0
@@ -12204,7 +12204,7 @@ sub_0800CF88:
 	mov r0, r10
 	adds r0, #72
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	.global _0800CFA0
 _0800CFA0:
 	mov r0, r10
@@ -12364,7 +12364,7 @@ _0800D0A0:
 	bl sub_0807BC7C
 	adds r0, r4, #0
 	movs r1, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	b _0800D0FA
 	.global _0800D0C8
 _0800D0C8:

@@ -20,6 +20,8 @@ class EnglishRuntimeTests(unittest.TestCase):
     def setUpClass(cls):
         cls.temp=tempfile.TemporaryDirectory();folder=Path(cls.temp.name)
         cls.entries,cls.rejected=build_english.collect()
+        cls.entries += [(b'test empty middle pages', [b'\x82\x60\0'] + [b'C0D04\0']*5 + [b'\x82\x61\0'])]
+        cls.entries.sort(key=lambda entry:entry[0])
         lines=build_english.render(cls.entries)
         lines += [r"""
 #include "dialogue.h"
@@ -54,7 +56,7 @@ void *CreateTask(void *manager,void *callback,unsigned priority,int *result,unsi
 void FinishTask(void *task) { if(task==parent) parent_finished=1; }
 void tick(void) { if(parent && !parent_finished) parent_callback(parent); }
 void vblank(void) { if(clear_task) { clear_callback(clear_task);clear_count++;free(clear_task);clear_task=0; } }
-void complete_draw(void) { if(child_result) { *child_result=-1;child_result=0;pending--; } }
+void complete_draw(void) { int i,visible=0;for(i=0;i<captured_count;i++)if(captured_rows[i][0])visible=1;if(!visible)return; if(child_result) { *child_result=-1;child_result=0;pending--; } }
 void reset_mock(void) {
     free(parent);free(clear_task);parent=clear_task=0;child_result=0;
     memset(vram,0xAA,sizeof(vram));
@@ -103,10 +105,113 @@ void *DialogueStartOriginal(int mode,int count,const char **rows,int *result) {
             self.assertEqual(output,[r[:-1] for r in rows],raw)
             self.assertEqual(n,len(rows))
             for row in rows:
-                visible=build_english.PREFIX.sub(b'',row[:-1],count=1)
+                visible=build_english.CONTROL.sub(b'',row[:-1]).replace(b' ',b'')
                 self.assertLessEqual(len(visible),42)
                 self.assertEqual(len(visible)%2,0)
                 self.assertLess(len(row),128)
+
+    def test_opening_narration_with_actual_empty_padding_rows(self):
+        import text_codec
+        line=next(line for line in (ROOT/'text/nfp/OPEN.SPC.txt').read_text().splitlines()
+                  if line.startswith('@000400 '))
+        raw=text_codec.encode(line.split('  // EN:',1)[0].split(' ',1)[1])
+        expected=dict(self.entries)[raw]
+        n,output=self.call(0,[b'',raw,b''])
+        self.assertEqual(n,3)
+        self.assertEqual(output,[b'',expected[0][:-1],b''])
+        self.assertNotEqual(output[1],raw)
+
+    def test_opening_speaker_reset_does_not_discard_translated_dialogue(self):
+        import text_codec
+        records={}
+        for line in (ROOT/'text/nfp/OPEN.SPC.txt').read_text().splitlines():
+            if line.startswith('@') and '  // EN:' in line:
+                body,_=line.split('  // EN:',1)
+                offset,text=body.split(' ',1);records[offset]=text_codec.encode(text)
+        rows=[records[key] for key in ['@000D83','@000DA7','@000DB9']]
+        entries=dict(self.entries)
+        for row in rows:self.assertIn(row,entries)
+        self.assertTrue(entries[rows[0]][0].endswith(b' C0F04 \0'))
+        source=(ctypes.c_char_p*3)(*rows);result=ctypes.c_int(-1)
+        self.lib.EnglishDialogueStart(0,3,source,ctypes.byref(result))
+        if not ctypes.c_int.in_dll(self.lib,'captured_count').value:self.lib.tick()
+        captured=(ctypes.c_char_p*3).in_dll(self.lib,'captured_rows')
+        self.assertEqual(captured[0],entries[rows[0]][0][:-1])
+        self.assertNotEqual(captured[0],rows[0])
+
+    def test_dweller_trailing_blank_does_not_create_empty_page(self):
+        import text_codec
+        line=next(line for line in (ROOT/'text/nfp/OPEN.SPC.txt').read_text().splitlines()
+                  if line.startswith('@0008E1 '))
+        raw=text_codec.encode(line.split('  // EN:',1)[0].split(' ',1)[1])
+        rows=dict(self.entries)[raw]
+        self.assertEqual(len(rows),2)
+        source=(ctypes.c_char_p*3)(b'',raw,b'');result=ctypes.c_int(99)
+        self.lib.EnglishDialogueStart(0,3,source,ctypes.byref(result))
+        self.lib.tick()
+        self.assertEqual(self.captured(),[b'']+[row[:-1] for row in rows])
+        self.lib.complete_draw();self.lib.tick()
+        self.assertEqual(self.value('parent_finished'),1)
+        self.assertEqual(self.value('pending'),0)
+        self.assertEqual(result.value,-1)
+        self.assertEqual(self.value('clear_count'),0)
+
+    def test_empty_translation_completes_without_original_printer(self):
+        source=(ctypes.c_char_p*1)(b'');result=ctypes.c_int(99)
+        self.lib.EnglishDialogueStart(0,1,source,ctypes.byref(result))
+        self.lib.tick();self.lib.tick()
+        self.assertEqual(self.value('captured_count'),0)
+        self.assertEqual(self.value('pending'),0)
+        self.assertEqual(result.value,-1)
+
+    def test_formatting_only_middle_page_is_skipped_with_style(self):
+        source=(ctypes.c_char_p*1)(b'test empty middle pages');result=ctypes.c_int(99)
+        self.lib.EnglishDialogueStart(0,1,source,ctypes.byref(result))
+        self.lib.tick();self.lib.complete_draw();self.lib.tick()
+        self.value('key',1);self.lib.tick();self.lib.vblank();self.lib.tick()
+        self.assertEqual(self.captured(),[b'\x82\x61'])
+        self.assertEqual(self.lib.child_ink(),13)
+        self.lib.complete_draw();self.lib.tick()
+        self.assertEqual(result.value,-1)
+        self.assertEqual(self.value('pending'),0)
+        self.assertEqual(self.value('clear_count'),1)
+
+    def test_all_mappings_with_padding_eventually_release_script(self):
+        for raw,_ in self.entries:
+            for mode,rows in [(0,[b'',raw,b'']),(1,[raw,b''])]:
+                self.lib.reset_mock()
+                source=(ctypes.c_char_p*len(rows))(*rows);result=ctypes.c_int(99)
+                task=self.lib.EnglishDialogueStart(mode,len(rows),source,ctypes.byref(result))
+                if task==0x1234:continue
+                for _ in range(2000):
+                    self.lib.tick()
+                    if self.value('parent_finished'):break
+                    self.lib.complete_draw()
+                    self.value('key',1)
+                    self.lib.vblank()
+                self.assertEqual(result.value,-1,(raw,mode))
+                self.assertEqual(self.value('pending'),0,(raw,mode))
+
+    def test_gate_scene_koyuki_silence_is_translated(self):
+        import text_codec
+        records={}
+        for line in (ROOT/'text/nfp/OPEN.SPC.txt').read_text().splitlines():
+            if line.startswith('@') and '  // EN:' in line:
+                body,_=line.split('  // EN:',1)
+                offset,text=body.split(' ',1);records[offset]=text_codec.encode(text)
+        entries=dict(self.entries)
+        for offset,raw in records.items():self.assertIn(raw,entries,offset)
+        for name,silence in [('@002EC4','@002EE6'),('@0030C7','@0030E9')]:
+            inputs=[records[name],records[silence],b'']
+            n,output=self.call(0,inputs)
+            self.assertEqual(n,3)
+            self.assertEqual(output,[entries[row][0][:-1] for row in inputs])
+            self.assertNotEqual(output[0],inputs[0])
+            self.assertEqual(output[1],english_layout.wrap_lines('...',english_layout.load_mapping())[0][:-1])
+
+    def test_reviewed_strings_have_no_conflicting_runtime_wording(self):
+        self.assertFalse([item for item in self.rejected
+                          if item['reason'].startswith('Context-dependent')])
 
     def test_capacity_modes_unknown_and_ambiguous_rows(self):
         one=next(raw for raw,rows in self.entries if len(rows)==1)
@@ -201,7 +306,7 @@ void *DialogueStartOriginal(int mode,int count,const char **rows,int *result) {
         self.assertEqual(self.value('pending'),0)
 
     def test_single_mapping_larger_than_one_page(self):
-        raw,rows=next((raw,rows) for raw,rows in self.entries if len(rows)>3)
+        raw,rows=next((raw,rows) for raw,rows in self.entries if len(rows)>3 and raw!=b'test empty middle pages')
         source=(ctypes.c_char_p*1)(raw);result=ctypes.c_int(0)
         self.lib.EnglishDialogueStart(0,1,source,ctypes.byref(result))
         observed=[]

@@ -10,6 +10,7 @@ Other printer paths and emulator validation remain unfinished.
 import argparse
 import collections
 import json
+import re
 from pathlib import Path
 
 import font
@@ -41,27 +42,47 @@ def load_mapping(root=ROOT):
     return result
 
 
+CONTROL_TAG = re.compile(r'\{(color|speed):([0-9A-Fa-f]{4})\}')
+
+
+def encode_word(word, mapping):
+    encoded = bytearray()
+    glyphs = 0
+    position = 0
+    while position < len(word):
+        tag = CONTROL_TAG.match(word, position)
+        if tag:
+            kind, argument = tag.groups()
+            value = int(argument, 16)
+            if kind == 'color' and (value >> 8 > 15 or value & 255 > 15):
+                raise ValueError('Color ink and shadow must each be palette indices 00–0F')
+            encoded.extend(('C' if kind == 'color' else 'T').encode() + argument.upper().encode())
+            position = tag.end()
+        else:
+            char = word[position]
+            if char not in mapping:
+                raise ValueError(f'Unmapped English character or invalid control: {char!r}')
+            encoded.extend(mapping[char]); glyphs += 1; position += 1
+    return bytes(encoded), glyphs
+
+
 def wrap_lines(text, mapping):
-    """Encode all word-wrapped lines, without imposing a page-count limit."""
-    for char in text:
-        if char != '\n' and char not in mapping:
-            raise ValueError(f'Unmapped English character: {char!r}')
+    """Wrap at word boundaries; {color:0F04}/{speed:0002} occupy no pixels."""
     lines = []
     for paragraph in text.split('\n'):
-        line = ''
+        line = b''
+        width = 0
         for word in paragraph.split(' '):
-            if not word:
-                continue
-            if len(word) > 21:
-                raise ValueError(f'Word exceeds 21 glyphs: {word!r}')
-            candidate = line + (' ' if line else '') + word
-            if len(candidate) > 21:
-                lines.append(line)
-                line = word
-            else:
-                line = candidate
-        lines.append(line)
-    return [b''.join(mapping[c] for c in line) + b'\0' for line in lines]
+            if not word: continue
+            encoded, glyphs = encode_word(word, mapping)
+            if glyphs > 21: raise ValueError(f'Word exceeds 21 glyphs: {word!r}')
+            space = 1 if width and glyphs else 0
+            if width + space + glyphs > 21:
+                lines.append(line + b'\0'); line = b''; width = 0; space = 0
+            if space: line += mapping[' ']
+            line += encoded; width += space + glyphs
+        lines.append(line + b'\0')
+    return lines
 
 
 def layout(text, mapping, rows=3):

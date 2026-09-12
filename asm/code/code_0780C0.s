@@ -8472,51 +8472,10 @@ _0807BC1E:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_0807BC2C
-sub_0807BC2C:
-	push {r4, r5, lr}
-	adds r4, r0, #0
-	adds r5, r1, #0
-	movs r1, #52
-	movs r2, #0
-	bl CpuFill
-	movs r0, #1
-	negs r0, r0
-	str r0, [r4, #16]
-	str r0, [r4, #20]
-	movs r0, #128
-	lsls r0, r0, #1
-	strh r0, [r4, #44]
-	strh r0, [r4, #46]
-	ldr r0, _0807BC78
-	strh r0, [r4, #8]
-	strh r5, [r4, #10]
-	adds r2, r4, #0
-	adds r2, #39
-	ldrb r0, [r2, #0]
-	movs r1, #8
-	orrs r0, r1
-	strb r0, [r2, #0]
-	subs r2, #3
-	ldrb r0, [r2, #0]
-	movs r1, #16
-	orrs r0, r1
-	strb r0, [r2, #0]
-	adds r4, #40
-	ldrb r0, [r4, #0]
-	movs r1, #1
-	orrs r0, r1
-	strb r0, [r4, #0]
-	pop {r4, r5}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _0807BC78
-_0807BC78:
-	.4byte 0x0000FFFF
+@ 07BC2C..07BC7C is decompiled as NcdInitSprite(); see src/decompiled.json
+
+	.section .rom.0007BC7C, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -8695,8 +8654,8 @@ _0807BDA8:
 
 	.thumb_func
 	.thumb
-	.global GetObjectPaletteSlot
-GetObjectPaletteSlot:
+	.global NcdQueueSprite
+NcdQueueSprite:
 	push {r4, r5, lr}
 	adds r4, r0, #0
 	ldr r5, _0807BDE8

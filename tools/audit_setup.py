@@ -54,7 +54,7 @@ def main():
             'SPC framing scans do not establish exhaustive string or opcode coverage.',
             'Raw KMP/NCD text hits are not verified text; raw SPC hits duplicate named sources.',
             'Song sequencing and PSG instruments are not reconstructed by PCM extraction.',
-            'Optional English build hooks DialogueStart; missing/ambiguous/oversized messages fall back to Japanese. Other printers and pagination remain unresolved.',
+            'Optional English build implements DialogueStart lookup and pagination; this audit does not verify runtime behavior, every printer path, or complete translation coverage.',
             'Preserved binary spans, assembly literals and compressed streams remain; see linked-providers.json.',
         ])
     out = ROOT / 'reports/audit'

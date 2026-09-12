@@ -492,7 +492,7 @@ _080283F0:
 	ldr r0, [r4, #0]
 	adds r0, #8
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	ldr r3, [r4, #4]
 	ldrh r1, [r3, #40]
 	adds r0, r6, #0
@@ -697,7 +697,7 @@ _0802854E:
 	movs r0, #54
 	ldrsh r1, [r4, r0]
 	adds r0, r5, #0
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	.global _08028558
 _08028558:
 	ldrh r2, [r4, #40]

@@ -152,7 +152,7 @@
 @004DA0 やくそくしちまったからさ  // EN: ...that I would...
 @004E28 F01B03  // LITERAL: F01B03 (usage not inferred)
 @004E8C  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@004EB0 つよくなる！  // EN: ...get stronger!
+@004EB0 つよくなる！  // EN: I'll get stronger!
 @004EC8 って…………！！！  // EN: I promised...!!!
 @004F04  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
 @004F28 だから…まだまだ  // EN: So... I've got to...

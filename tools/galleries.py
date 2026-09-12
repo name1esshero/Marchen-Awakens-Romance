@@ -6,6 +6,8 @@ from pathlib import Path
 import subprocess
 import sys
 import scenes
+import gfx
+import ncd
 import text_gallery
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -21,6 +23,19 @@ def main():
         page = scenes.TEMPLATE.replace('GRAPHICS_INDEX', '../'*len(category.split('/'))+'index.html')
         page = page.replace('DATA_JSON', json.dumps(data, separators=(',', ':')).replace('</', '<\\/'))
         (folder/'index.html').write_text(page)
+    # Keep the historical first-frame gallery synchronized with editable views.
+    preview_manifest = ROOT/'reports/sprites/previews.json'
+    if preview_manifest.exists():
+        manifests = {stem: json.loads((ROOT/'graphics'/category/'manifest.json').read_text())
+                     for stem, category in scenes.CATEGORIES.items()}
+        for entry in json.loads(preview_manifest.read_text()):
+            stem = entry['container'].removesuffix('.NCD')
+            frame = manifests[stem]['frames'][entry['frame']]
+            pixels, palette = gfx.read_png(str(ROOT/'graphics'/scenes.CATEGORIES[stem]/frame['path']))
+            rows = [[palette[value] if value else (40,44,52) for value in row] for row in pixels]
+            target = preview_manifest.parent/entry['path']
+            target.parent.mkdir(parents=True, exist_ok=True)
+            ncd.write_rgb(target, rows)
     portraits = json.loads((ROOT/'graphics/portraits/manifest.json').read_text())
     page = STYLE + f'<title>MAR portraits</title><h1>{len(portraits)} dialogue portraits</h1><a href="../index.html">Graphics</a><p>Original resource labels and palette banks. Edit local PNG and PAL sources to change the ROM.</p><input id="q" placeholder="Filter resource name"><main>'
     for entry in portraits:

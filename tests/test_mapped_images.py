@@ -34,7 +34,8 @@ class MappedImagesTests(unittest.TestCase):
         rom = (mi.ROOT/'baserom.gba').read_bytes()
         maps = {e['name']:e for e in json.loads((mi.ROOT/'maps/nfp/manifest.json').read_text())}
         entries = [e for e in json.loads((mi.ROOT/'assets.json').read_text()) if e['kind']=='mapped_image']
-        self.assertEqual(len(entries), 91)
+        self.assertGreaterEqual(len(entries), 93)
+        self.assertTrue({'BA06_BG.TCG','MWA.KCG'} <= {e['archive_name'] for e in entries})
         for e in entries:
             original, _ = lz77.decompress(rom, e['rom_offset'])
             self.assertEqual(mi.compile_image(e), original, e['archive_name'])

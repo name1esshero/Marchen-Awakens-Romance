@@ -23,9 +23,30 @@ struct NcdAnimation { u32 firstFrame, frameCount; };
 struct NcdFrame { u32 firstCell; u16 cellCount, duration; };
 struct NcdCell
 {
-    u16 attr0, attr1; /* OAM-shaped position/size fields; all cells are 4bpp */
+    u16 attr0, attr1; /* OAM-shaped size/flags, but X/Y encode centers; all cells are 4bpp */
     u32 paletteIndex;
     u32 tileIndex;    /* multiply by 32, then add tilesOffset */
     u32 unk_0C, unk_10;
 };
+/* Runtime instance, 52 bytes. Address fields remain explicit GBA u32s.
+ * Flag names encode offsets where their complete semantics are still unknown.
+ * x/y are screen pixels after the higher-level object subtracts the camera.
+ * scaleX/scaleY use 0x100 for identity; remaining is the frame countdown.
+ */
+struct NcdSprite {
+ u32 next, previous;
+ s16 container, allocationPool;
+ s32 group, animation, frame;
+ s16 x,y,offsetX,offsetY;
+ u16 remaining;
+ u8 frameCount,cellCount;
+ u8 reserved24:4, flag24:1, rest24:3;
+ u8 flags25,flags26;
+ u8 reserved27:3, flag27:1, rest27:4;
+ u8 flag28:1, rest28:7;
+ u8 reserved29;
+ s16 angle,scaleX,scaleY;
+ u32 cellHandles;
+};
+void NcdInitSprite(struct NcdSprite *sprite, s32 pool);
 #endif

@@ -201,3 +201,19 @@ def read_png(path):
         px.append(list(line))
         prev = line
     return px, palette
+
+
+def png_alpha(path):
+    """Read indexed PNG opacity, including implicit opaque palette entries."""
+    with open(path,'rb') as stream:data=stream.read()
+    if data[:8]!=b"\x89PNG\r\n\x1a\n":raise ValueError('Not a PNG: '+str(path))
+    pos=8
+    while pos+12<=len(data):
+        size=struct.unpack_from('>I',data,pos)[0]
+        if pos+12+size>len(data):raise ValueError('Truncated PNG: '+str(path))
+        if data[pos+4:pos+8]==b'tRNS':
+            alpha=data[pos+8:pos+8+size]
+            if len(alpha)>256:raise ValueError('Invalid indexed alpha table')
+            return alpha+bytes([255])*(256-len(alpha))
+        pos+=size+12
+    return bytes([255])*256

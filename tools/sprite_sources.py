@@ -108,7 +108,7 @@ def extract():
         write(path,records)
 
 
-def compile(stem,views=True):
+def compile(stem,views=True,english=False):
     base=folder(stem);source=base/'source';header=read(source/'container.json')
     groups=read(source/'groups.json');animations=read(source/'animations.json');frames=read(source/'frames.json');cells=read(source/'cells.json')
     counts=[len(groups),len(animations),len(frames),len(cells)]
@@ -152,7 +152,15 @@ def compile(stem,views=True):
     cursor=0;changed=set()
     for e in read(source/'images.json'):
         if e['tile']!=cursor:raise ValueError('Cell image coverage has a gap or overlap')
-        px,_=gfx.read_png(str(base/e['path']))
+        image_path=base/e['path']
+        if english:
+            variant=image_path.with_name(image_path.stem+'_en.png')
+            if variant.exists():image_path=variant
+        px,colors=gfx.read_png(str(image_path))
+        if image_path.stem.endswith('_en'):
+            _,expected_colors=gfx.read_png(str(base/e['path']))
+            if colors!=expected_colors:raise ValueError('English cell must preserve indexed palette: '+str(image_path))
+            if gfx.png_alpha(image_path)!=gfx.png_alpha(base/e['path']):raise ValueError('English PNG must preserve transparency indices: '+str(image_path))
         if len(px)!=e['height'] or any(len(row)!=e['width'] or any(v>15 for v in row) for row in px):raise ValueError('Invalid cell image: '+e['path'])
         data=gfx.pixels_to_tiles(px,4);start=offsets[5]+cursor*32
         if start+len(data)>len(blob):raise ValueError('Cell image exceeds tile pool')
@@ -165,15 +173,18 @@ def compile(stem,views=True):
         baseline=bytes(blob)
         if stem=='SYSTEM':
             for name in ('icons','portraits'):blob=icons.apply(blob,baseline,ROOT/'graphics'/name/'manifest.json',changed)
-        blob=scenes.merge(blob,baseline,stem,changed)
+        blob=scenes.merge(blob,baseline,stem,changed,english=english)
+        if english and stem=='SYSTEM':
+            import english_credits
+            blob=english_credits.apply(blob)
     return bytes(blob)
 
 
-def build(stem=None):
+def build(stem=None,english=False):
     for stem in ([stem] if stem else CATEGORIES):
-        blob=compile(stem);dest=ROOT/'build/graphics/ncd'/(stem+'.ncd');dest.parent.mkdir(parents=True,exist_ok=True)
+        blob=compile(stem,english=english);dest=ROOT/('build/english/graphics' if english else 'build/graphics/ncd')/(stem+'.ncd');dest.parent.mkdir(parents=True,exist_ok=True)
         dest.write_bytes(blob)
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('command',choices=['extract','build']);p.add_argument('--stem',choices=list(CATEGORIES));a=p.parse_args();extract() if a.command=='extract' else build(a.stem)
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('command',choices=['extract','build']);p.add_argument('--stem',choices=list(CATEGORIES));p.add_argument('--english',action='store_true');a=p.parse_args();extract() if a.command=='extract' else build(a.stem,english=a.english)

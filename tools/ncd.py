@@ -51,8 +51,12 @@ def cell(blob, info, index):
     start = info['offsets'][5] + tile * 32
     if start + w*h//2 > len(blob):
         raise ValueError('NCD cell exceeds tile pool')
-    return dict(index=index, x=((a1 & 511)+256)%512-256,
-                y=((a0 & 255)+128)%256-128, width=w, height=h,
+    # 0807D718 treats packed coordinates as centers, not OAM top-lefts.
+    # Its tables at 0807D834/0807D844 subtract half the shape dimensions.
+    x=((a1 & 511)+256)%512-256
+    y=((a0 & 255)+128)%256-128
+    return dict(index=index, x=x, y=y, left=x-w//2, top=y-h//2,
+                width=w, height=h,
                 palette=pal, tile=tile, start=start, end=start+w*h//2,
                 hflip=bool(a1 & 0x1000), vflip=bool(a1 & 0x2000))
 
@@ -71,9 +75,9 @@ def frame_preview(blob, info, frame):
     cells = [cell(blob,info,start+i) for i in range(count)]
     if not cells:
         return None
-    x0=min(c['x'] for c in cells);y0=min(c['y'] for c in cells)
-    w=max(c['x']+c['width'] for c in cells)-x0
-    h=max(c['y']+c['height'] for c in cells)-y0
+    x0=min(c['left'] for c in cells);y0=min(c['top'] for c in cells)
+    w=max(c['left']+c['width'] for c in cells)-x0
+    h=max(c['top']+c['height'] for c in cells)-y0
     if w>1024 or h>1024:
         raise ValueError('Unexpected frame extent')
     rows=[[(40,44,52)]*w for _ in range(h)]
@@ -84,7 +88,7 @@ def frame_preview(blob, info, frame):
             for x in range(c['width']):
                 v=px[c['height']-1-y if c['vflip'] else y][c['width']-1-x if c['hflip'] else x]
                 if v:
-                    rows[c['y']-y0+y][c['x']-x0+x]=pal[v]
+                    rows[c['top']-y0+y][c['left']-x0+x]=pal[v]
     return rows
 
 

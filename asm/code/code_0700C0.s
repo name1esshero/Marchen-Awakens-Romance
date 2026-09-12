@@ -17145,7 +17145,7 @@ sub_08077CC8:
 _08077D0C:
 	adds r0, r4, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	mov r0, r9
 	strh r0, [r5, #0]
 	mov r1, r10

@@ -12,6 +12,8 @@ Stop it with Ctrl+C. A different port is available with
 ## Editing and building
 
 Select a map and plane, choose a tile and palette bank, and paint on the map.
+Scroll the mouse wheel over the map viewport to zoom from 1× to 4× around
+the pointer. Scrollbars pan the map; wheel scrolling elsewhere behaves normally.
 Horizontal/vertical flips, layer visibility, zoom, a grid, right-click picking,
 and stroke-level undo/redo are available. Select **Raw attributes** to paint
 numeric u8/u16 attributes. Their collision/event meanings are not fully decoded.
@@ -174,3 +176,34 @@ The slot stride is 0xFC bytes, with slots 0 and 1 at 03003BC4 and 03003CC0.
 compile to the original bytes. `tests/test_map_field.py` checks the loader's
 call order, names, resource flags, slot stride, signed coordinate extremes,
 and clip reset behavior using the actual C with mocked hardware calls.
+
+The script adapters for `FldSet` (080122F8), `HitInit` (080121C4),
+`HitHitRect` (08012244), and `HitFree` (080121E4) are now matching C in
+`src/map_native.c`. They read the VM argument array without checking its
+count and leave the result pointer untouched. FldSet truncates its coordinate
+arguments to signed 16-bit pixels. HitFree selects the all-regions helper
+only for index -1. The field and free adapters return 0x7FFF; the init and
+rectangle adapters return 1. These values are preserved without yet assigning
+complete VM scheduling semantics to them. `tests/test_map_native.py` checks
+argument forwarding, truncation, dispatch, return values, and result retention.
+
+### Sprite coordinate evidence
+
+`SprSet(id, 0, value)` sets X and property 1 sets Y, in signed 16-bit pixels.
+Enable **Preview selected sprite X/Y guide** to draw that one assignment as a
+yellow vertical or horizontal guide; edits and undo update it immediately.
+The editor does not infer a second coordinate or execute branches. Other sprite
+properties remain numeric. See [runtime trace](../../docs/sprite-rendering.md)
+for the connection to NCD animation selection and camera-relative rendering.
+
+`SprChg` is now traced to matching C: it replaces an active sprite's named NCD
+resource, animation and frame while preserving its position. `SprInit` creates
+an object asynchronously and starts at frame zero. String-expression argument
+sequences remain read-only until the operand stack is decoded; the editor does
+not yet automatically display spawned sprites. See the runtime trace above.
+
+### Tilesets versus map layers
+
+The normal field loader (`KmpLoadField`, 080032B8) loads one KMP twice: plane 0 with flags 3 (copy palettes and tiles), then plane 1 with flags 0 (reuse that data). Both use VRAM 06000000 and zero tile/palette offsets. These are two map planes sharing one KCG/KCL pair, not a primary/secondary tileset pair.
+
+The lower-level loader at 08003178 accepts a VRAM destination, viewport slot, plane, palette-bank offset, tile-index offset, and copy flags. It stores the offsets at viewport +0C/+0E. The regular renderer at 08002700/0800274A adds their packed value to each u16 screen entry. Special-scene resource sharing remains to be traced; tile 1023 is not automatically a blank sentinel in this loop.

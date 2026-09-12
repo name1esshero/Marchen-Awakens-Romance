@@ -20,14 +20,21 @@ struct KmpHeader
     u32 reservedBC;
 };
 
-/* Partial viewport; the existing Entity accessors refer to this map state.
+/* The regular renderer adds ((paletteBankOffset << 12) | tileIndexOffset)
+ * to each source u16 screen entry; it does not special-case tile 1023.
+ * These offsets do not declare a second tileset: each KMP names one KCG/KCL.
+ *
+ * Partial viewport; the existing Entity accessors refer to this map state.
  * The complete allocated slot is 0xFC bytes. */
 struct KmpViewport
 {
     const struct KmpHeader *data;
     u16 *screenBuffer;
     u8 renderMode, background, plane;
-    u8 reserved0B[0x0D];
+    u8 reserved0B;
+    u16 paletteBankOffset;          /* 0C: added to KMP destination palette bank */
+    u16 tileIndexOffset;            /* 0E: added to each screen entry */
+    u8 reserved10[8];
     u32 widthFixed, heightFixed;     /* 18, 1C: 16.16 pixel dimensions */
     u32 clipX, clipY, clipWidth, clipHeight;
 };

@@ -32,10 +32,11 @@ static void EnglishRememberStyle(struct EnglishPages *pages, const char *row)
     const u8 *text = (const u8 *)row;
     u32 argument;
     u8 command;
-    /* Generated mappings contain only validated leading ASCII controls,
-     * followed by double-byte glyphs. Style persists across source rows. */
-    while (*text && *text < 0x80)
+    /* Generated mappings contain validated leading/trailing ASCII controls
+     * and double-byte glyphs. Style persists across source rows. */
+    while (*text)
     {
+        if (*text >= 0x80) { text += 2; continue; }
         command = *text++;
         if (command == 'C' || command == 'c')
         {
@@ -70,6 +71,50 @@ static void EnglishClearPage(void *task)
     FinishTask(task);
 }
 
+static s32 EnglishRowHasGlyph(const char *row)
+{
+    const u8 *text = (const u8 *)row;
+    /* This printer skips ASCII, including C/T controls. Generated printable
+     * letters use double-byte font codes with a high-bit first byte. */
+    while (*text) if (*text++ >= 0x80) return 1;
+    return 0;
+}
+
+static void EnglishSkipEmptyPages(struct EnglishPages *pages)
+{
+    s32 entry, row, used, visible;
+    while (pages->entry < pages->count)
+    {
+        entry = pages->entry; row = pages->row; used = visible = 0;
+        while (entry < pages->count && used < 3 - pages->mode)
+        {
+            if (EnglishRowHasGlyph(pages->entries[entry]->rows[row])) visible = 1;
+            used++; row++;
+            if (row == pages->entries[entry]->count) { entry++; row = 0; }
+        }
+        if (visible) return;
+        /* Consume controls in skipped pages before moving the cursor. */
+        while (pages->entry < entry || (pages->entry == entry && pages->row < row))
+        {
+            EnglishRememberStyle(pages, pages->entries[pages->entry]->rows[pages->row++]);
+            if (pages->row == pages->entries[pages->entry]->count)
+            { pages->entry++; pages->row = 0; }
+        }
+    }
+}
+
+/* Blank padding must not create a final page: the original printer's
+ * initial no-glyph branch enters state 0x100 without completing its task. */
+static s32 EnglishHasRemainingText(const struct EnglishPages *pages)
+{
+    s32 entry, row;
+    for (entry = pages->entry; entry < pages->count; entry++)
+        for (row = entry == pages->entry ? pages->row : 0;
+             row < pages->entries[entry]->count; row++)
+            if (EnglishRowHasGlyph(pages->entries[entry]->rows[row])) return 1;
+    return 0;
+}
+
 static void EnglishPageTask(void *task)
 {
     struct EnglishPages *pages = (struct EnglishPages *)((u8 *)task + 32);
@@ -80,7 +125,8 @@ static void EnglishPageTask(void *task)
     if (pages->phase == 1)
     {
         if (pages->childResult != -1) return;
-        if (pages->entry == pages->count)
+        EnglishSkipEmptyPages(pages);
+        if (!EnglishHasRemainingText(pages))
         {
             /* Final-page dismissal remains the script's original command. */
             if (pages->result) *pages->result = -1;
@@ -108,6 +154,7 @@ static void EnglishPageTask(void *task)
     }
     if (pages->phase == 4 && pages->childResult != -1) return;
     pages->phase = 0;
+    EnglishSkipEmptyPages(pages);
     entry = pages->entry;
     row = pages->row;
     used = 0;
@@ -115,6 +162,17 @@ static void EnglishPageTask(void *task)
     {
         rows[used++] = pages->entries[entry]->rows[row++];
         if (row == pages->entries[entry]->count) { entry++; row = 0; }
+    }
+    /* Explicit blank lines can also occupy a whole intermediate page.
+     * Advance without creating a child that cannot signal completion. */
+    for (i = 0; i < used && !EnglishRowHasGlyph(rows[i]); i++) {}
+    if (i == used)
+    {
+        pages->entry = entry;
+        pages->row = row;
+        pages->childResult = -1;
+        pages->phase = 1;
+        return;
     }
     pages->childResult = 0;
     child = DialogueStartOriginal(pages->mode, used, rows, &pages->childResult);
@@ -186,7 +244,13 @@ void *EnglishDialogueStart(s32 mode, s32 count, const char **rows, s32 *result)
     s32 i;
     s32 translatedCount = EnglishTranslateRows(mode, count, rows, translated);
     if (translatedCount)
-        return DialogueStartOriginal(mode, translatedCount, translated, result);
+    {
+        for (i = 0; i < translatedCount; i++)
+            if (EnglishRowHasGlyph(translated[i]))
+                return DialogueStartOriginal(mode, translatedCount, translated, result);
+        /* Even an entirely omitted translation must complete asynchronously
+         * through our parent task, not the original no-glyph dead end. */
+    }
     if ((mode == 0 || mode == 1) && count > 0 && count <= 3 - mode && rows)
     {
         for (i = 0; i < count; i++)

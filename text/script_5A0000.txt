@@ -112,7 +112,7 @@
 @5A68C3 手に入れた！  // EN: Obtained it!
 @5A6C1E 手に入れた！  // EN: Obtained it!
 @5ACAF2 ダンジョンクリア！！  // danjonkuria!!
-@5ACED7 ダンジョンモードに  // EN: Into Dungeon Mode...
+@5ACED7 ダンジョンモードに  // EN: In Dungeon Mode...
 @5AD0B5 ファントムを  // fuantomuwo
 @5AD0CD 使えるようになりました  // EN: You can now use it.
 @5AD15F ファントムをえらべます  // fuantomuwoerabemasu

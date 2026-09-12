@@ -1,7 +1,9 @@
 /* FldSet handler 080122F8 passes the field basename and signed pixel
  * coordinates here. 08006A1C stores that basename at engine state +0x12F4.
  * The first load enables palette+tile transfer (flags 3); the second reuses
- * those resources (flags 0). Viewport slots have a 0xFC-byte stride.
+ * those resources (flags 0). Both planes share one KCG/KCL resource pair;
+ * this is not a primary/secondary tileset load. Both viewport tile/palette
+ * offsets are zero here. Viewport slots have a 0xFC-byte stride.
  * The original 16-byte filename buffer and unchecked copies are preserved.
  */
 #include "kmp.h"

@@ -136,3 +136,31 @@ formatting markup is supported; annotation coverage is not runtime coverage.
 blank/color-only records across the named scripts use `FORMAT:` annotations;
 they count separately from translated dialogue, ASCII resource labels, and
 pending text. The audit rejects a `FORMAT:` annotation that conceals text.
+
+### English color and speed controls
+
+Use `{color:0D04}` for ink 0D / shadow 04, `{color:0F04}` to restore normal
+white text, and `{speed:0002}` for the printer interval. Both color components
+must be palette indices 00–0F. Attach tags to the affected word; controls do not
+consume glyph width and survive word wrapping and page changes. For example:
+`{color:0F04}What's an {color:0904}'ÄRM'{color:0F04}?!`.
+
+Original leading and trailing C/T controls are retained automatically. Interior
+color changes require explicit English tags because translated words move.
+Previously even a trailing speaker-name reset was rejected, and an unmapped
+speaker row caused the whole message to retain Japanese. The opening speaker
+reset now has an actual runtime regression test. Other unreviewed interior
+controls and context-dependent mappings still fall back; static build checks
+alone do not prove complete in-game English coverage.
+
+Empty padding rows are also mapped explicitly. OPEN's first narration calls
+MswStr with an empty first and third row; these previously forced fallback
+before the visible translated row could reach the printer.
+
+Pagination never submits a completely empty or formatting-only page to the
+original printer: its initial no-glyph state does not signal completion.
+Trailing padding is discarded, whole blank intermediate pages are skipped,
+and their C/T changes still carry forward. Entirely empty translations complete
+through the English task and release the script wait counter. Tests include
+OPEN's “Dweller of another world” message and every generated mapping with
+blank padding in both textbox modes.

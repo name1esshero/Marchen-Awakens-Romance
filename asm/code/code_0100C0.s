@@ -1499,46 +1499,10 @@ _08010C04:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_08010C0C
-sub_08010C0C:
-	push {r4, r5, r6, r7, lr}
-	sub sp, #16
-	adds r6, r1, #0
-	adds r5, r2, #0
-	adds r7, r3, #0
-	bl sub_080106C8
-	adds r4, r0, #0
-	ldrb r1, [r4, #0]
-	movs r0, #1
-	ands r0, r1
-	cmp r0, #0
-	beq _08010C50
-	mov r0, sp
-	adds r1, r5, #0
-	bl strcpy
-	mov r0, sp
-	bl strupr
-	strh r6, [r4, #2]
-	movs r1, #2
-	ldrsh r0, [r4, r1]
-	mov r1, sp
-	bl FindResourceByName
-	strh r0, [r4, #4]
-	strh r7, [r4, #6]
-	ldr r0, [sp, #36]
-	strh r0, [r4, #8]
-	ldrb r0, [r4, #0]
-	movs r1, #96
-	orrs r0, r1
-	strb r0, [r4, #0]
-	.global _08010C50
-_08010C50:
-	add sp, #16
-	pop {r4, r5, r6, r7}
-	pop {r0}
-	bx r0
+@ 010C0C..010C58 is decompiled as ScriptSpriteSelect(); see src/decompiled.json
+
+	.section .rom.00010C58, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -3253,7 +3217,7 @@ sub_08011A0A:
 	.thumb
 	.global sub_08011A26
 sub_08011A26:
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	ldr r1, _08011A5C
 	movs r0, #0
 	bl FindResourceByName
@@ -3366,7 +3330,7 @@ _08011AC2:
 	bl sub_0807BFD0
 	adds r0, r5, #0
 	movs r1, #1
-	bl GetObjectPaletteSlot
+	bl NcdQueueSprite
 	.global _08011AEE
 _08011AEE:
 	pop {r4, r5}
@@ -3729,25 +3693,10 @@ sub_08011ECC:
 	pop {r1}
 	bx r1
 
-	.thumb_func
-	.thumb
-	.global sub_08011EF4
-sub_08011EF4:
-	push {r4, lr}
-	sub sp, #4
-	ldr r0, [r1, #0]
-	ldr r4, [r1, #4]
-	ldr r2, [r1, #8]
-	ldr r3, [r1, #12]
-	ldr r1, [r1, #16]
-	str r1, [sp, #0]
-	adds r1, r4, #0
-	bl sub_08010C0C
-	movs r0, #1
-	add sp, #4
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 011EF4..011F14 is decompiled as ScriptNativeSpriteChange(); see src/decompiled.json
+
+	.section .rom.00011F14, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -4187,52 +4136,12 @@ sub_080121A4:
 	pop {r1}
 	bx r1
 
-	.thumb_func
-	.thumb
-	.global sub_080121C4
-sub_080121C4:
-	push {r4, lr}
-	sub sp, #4
-	ldr r0, [r1, #0]
-	ldr r4, [r1, #4]
-	ldr r2, [r1, #8]
-	ldr r3, [r1, #12]
-	ldr r1, [r1, #16]
-	str r1, [sp, #0]
-	adds r1, r4, #0
-	bl HitRegionInit
-	movs r0, #1
-	add sp, #4
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 0121C4..0121E4 is decompiled as ScriptNativeHitInit(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080121E4
-sub_080121E4:
-	push {lr}
-	ldr r1, [r1, #0]
-	movs r0, #1
-	negs r0, r0
-	cmp r1, r0
-	beq _080121F8
-	adds r0, r1, #0
-	bl HitRegionDisable
-	b _080121FC
-	.global _080121F8
-_080121F8:
-	bl HitRegionDisableAll
-	.global _080121FC
-_080121FC:
-	ldr r0, _08012204
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _08012204
-_08012204:
-	.4byte 0x00007FFF
+@ 0121E4..012208 is decompiled as ScriptNativeHitFree(); see src/decompiled.json
+
+	.section .rom.00012208, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -4274,25 +4183,10 @@ sub_08012230:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_08012244
-sub_08012244:
-	push {r4, lr}
-	sub sp, #4
-	ldr r0, [r1, #0]
-	ldr r4, [r1, #4]
-	ldr r2, [r1, #8]
-	ldr r3, [r1, #12]
-	ldr r1, [r1, #16]
-	str r1, [sp, #0]
-	adds r1, r4, #0
-	bl HitRegionSetRect
-	movs r0, #1
-	add sp, #4
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 012244..012264 is decompiled as ScriptNativeHitRect(); see src/decompiled.json
+
+	.section .rom.00012264, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -4381,27 +4275,10 @@ _080122F0:
 _080122F4:
 	.4byte 0x00007FFF
 
-	.thumb_func
-	.thumb
-	.global sub_080122F8
-sub_080122F8:
-	push {r4, lr}
-	ldr r0, [r1, #0]
-	movs r2, #4
-	ldrsh r3, [r1, r2]
-	movs r4, #8
-	ldrsh r2, [r1, r4]
-	adds r1, r3, #0
-	bl KmpLoadField
-	ldr r0, _08012314
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _08012314
-_08012314:
-	.4byte 0x00007FFF
+@ 0122F8..012318 is decompiled as ScriptNativeFieldSet(); see src/decompiled.json
+
+	.section .rom.00012318, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb

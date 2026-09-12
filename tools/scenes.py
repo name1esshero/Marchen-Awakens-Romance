@@ -25,8 +25,8 @@ def render(blob, info, frame):
     if not cells:raise ValueError('Empty frame')
     banks=sorted({c['palette'] for c in cells})
     if len(banks)*16>256:raise ValueError('Frame exceeds indexed PNG palette capacity')
-    x0=min(c['x'] for c in cells);y0=min(c['y'] for c in cells)
-    w=max(c['x']+c['width'] for c in cells)-x0;h=max(c['y']+c['height'] for c in cells)-y0
+    x0=min(c['left'] for c in cells);y0=min(c['top'] for c in cells)
+    w=max(c['left']+c['width'] for c in cells)-x0;h=max(c['top']+c['height'] for c in cells)-y0
     if w*h>1024*1024:raise ValueError('Unexpected frame extent')
     pixels=[[0]*w for _ in range(h)];owners=[[None]*w for _ in range(h)]
     colors=[]
@@ -38,7 +38,7 @@ def render(blob, info, frame):
             sy=c['height']-1-y if c['vflip'] else y
             for x in range(c['width']):
                 sx=c['width']-1-x if c['hflip'] else x
-                py=c['y']-y0+y;px=c['x']-x0+x;value=source[sy][sx]
+                py=c['top']-y0+y;px=c['left']-x0+x;value=source[sy][sx]
                 tile=(sy//8)*(c['width']//8)+(sx//8)
                 address=c['start']+tile*32+(sy%8)*4+(sx%8)//2
                 owner=(address,(sx&1)*4,bank)
@@ -157,16 +157,27 @@ def extract():
     print(json.dumps(totals))
 
 
-def merge(blob, original, stem, blocked_addresses=None):
+def merge(blob, original, stem, blocked_addresses=None, english=False):
     path=ROOT/'graphics'/CATEGORIES[stem]/'manifest.json'
     info=ncd.layout(original);data=json.loads(path.read_text());writes={};changed=[];seen={}
+    import english_credits
+    credit_frames=english_credits.frame_ids(ROOT) if english and stem=='SYSTEM' else set()
     for f in data['frames']:
+        if f['id'] in credit_frames:continue # Compiled separately with explicit English OAM layouts.
         key=cell_key(original,info,f['id'])
         if f['path'] in seen:
             if seen[f['path']]!=key:raise ValueError('PNG shared by independent sprite cells: '+f['path'])
             continue
         seen[f['path']]=key
-        current,_=gfx.read_png(str(path.parent/f['path']))
+        image_path=path.parent/f['path']
+        if english:
+            variant=image_path.with_name(image_path.stem+'_en.png')
+            if variant.exists():image_path=variant
+        current,colors=gfx.read_png(str(image_path))
+        if image_path.stem.endswith('_en'):
+            _,expected_colors=gfx.read_png(str(path.parent/f['path']))
+            if colors!=expected_colors:raise ValueError('English frame must preserve indexed palette: '+str(image_path))
+            if gfx.png_alpha(image_path)!=gfx.png_alpha(path.parent/f['path']):raise ValueError('English PNG must preserve transparency indices: '+str(image_path))
         if f.get('baseline_pixels'):
             if len(current)!=f['height'] or any(len(row)!=f['width'] for row in current):raise ValueError('Frame dimensions changed: '+f['path'])
             from sprite_sources import pixel_hash

@@ -38,6 +38,13 @@ class EnglishLayoutTests(unittest.TestCase):
             self.assertEqual(' '.join(decoded),text)
         self.assertEqual([len(page) for page in el.pages('A\nB\nC\nD',self.mapping)], [3,1])
 
+    def test_color_markup_has_no_width_and_survives_wrap(self):
+        rows=el.wrap_lines('{color:0D04}'+ 'A'*21 + ' {color:0F04}B',self.mapping)
+        self.assertEqual(rows[0],b'C0D04'+self.mapping['A']*21+b'\0')
+        self.assertEqual(rows[1],b'C0F04'+self.mapping['B']+b'\0')
+        self.assertEqual(el.wrap_lines('{speed:0002}Hi',self.mapping)[0][:5],b'T0002')
+        with self.assertRaises(ValueError):el.wrap_lines('{color:FF04}Hi',self.mapping)
+
     def test_unknown_glyph_and_embedded_control_rejected(self):
         for text in ['hello\0world', 'hello\tworld', 'hello😀']:
             with self.assertRaises(ValueError):

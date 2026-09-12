@@ -42,7 +42,7 @@
 @00123F それをこんなにしやがって…！！  // EN: And they did this to it...!!
 @0014A8 F38A01  // LITERAL: F38A01 (usage not inferred)
 @001581  C0D04 ［？？？］ C0F04   // EN: [???]
-@0015A5 ………  // EN: .........
+@0015A5 ………  // EN: ...
 @0016A8 F03A08  // LITERAL: F03A08 (usage not inferred)
 @00170C  C0D04 ［ジャック］ C0F04   // EN: [Jack]
 @001732 …はん？  // EN: ...Huh?
@@ -52,7 +52,7 @@
 @001B46 F02A01  // LITERAL: F02A01 (usage not inferred)
 @001BBA F01B01  // LITERAL: F01B01 (usage not inferred)
 @001C1E  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@001C42 ………  // EN: .........
+@001C42 ………  // EN: ...
 @001C8E F01B07  // LITERAL: F01B07 (usage not inferred)
 @001CBC  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
 @001CE0 いってみよう！！  // EN: Let's go see!!

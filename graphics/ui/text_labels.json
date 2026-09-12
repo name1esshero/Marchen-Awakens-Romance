@@ -1,0 +1,5076 @@
+[
+  {
+    "source": "frames/1820.png",
+    "frames": [
+      1820
+    ],
+    "english": "Ginta",
+    "kind": "name"
+  },
+  {
+    "source": "frames/1821.png",
+    "frames": [
+      1821
+    ],
+    "english": "Ginta",
+    "kind": "selected_name"
+  },
+  {
+    "source": "frames/1822.png",
+    "frames": [
+      1822
+    ],
+    "english": "Jack",
+    "kind": "name"
+  },
+  {
+    "source": "frames/1823.png",
+    "frames": [
+      1823
+    ],
+    "english": "Jack",
+    "kind": "selected_name"
+  },
+  {
+    "source": "frames/1824.png",
+    "frames": [
+      1824
+    ],
+    "english": "Snow",
+    "kind": "name"
+  },
+  {
+    "source": "frames/1825.png",
+    "frames": [
+      1825
+    ],
+    "english": "Snow",
+    "kind": "selected_name"
+  },
+  {
+    "source": "frames/1826.png",
+    "frames": [
+      1826,
+      1828
+    ],
+    "english": "Edward",
+    "kind": "name"
+  },
+  {
+    "source": "frames/1827.png",
+    "frames": [
+      1827,
+      1829
+    ],
+    "english": "Edward",
+    "kind": "selected_name"
+  },
+  {
+    "source": "frames/1830.png",
+    "frames": [
+      1830
+    ],
+    "english": "Alviss",
+    "kind": "name"
+  },
+  {
+    "source": "frames/1831.png",
+    "frames": [
+      1831
+    ],
+    "english": "Alviss",
+    "kind": "selected_name"
+  },
+  {
+    "source": "frames/1832.png",
+    "frames": [
+      1832
+    ],
+    "english": "Nanashi",
+    "kind": "name"
+  },
+  {
+    "source": "frames/1833.png",
+    "frames": [
+      1833
+    ],
+    "english": "Nanashi",
+    "kind": "selected_name"
+  },
+  {
+    "source": "frames/1834.png",
+    "frames": [
+      1834
+    ],
+    "english": "Dorothy",
+    "kind": "name"
+  },
+  {
+    "source": "frames/1835.png",
+    "frames": [
+      1835
+    ],
+    "english": "Dorothy",
+    "kind": "selected_name"
+  },
+  {
+    "source": "frames/1836.png",
+    "frames": [
+      1836
+    ],
+    "english": "Phantom",
+    "kind": "name"
+  },
+  {
+    "source": "frames/1837.png",
+    "frames": [
+      1837
+    ],
+    "english": "Phantom",
+    "kind": "selected_name"
+  },
+  {
+    "source": "frames/1838.png",
+    "frames": [
+      1838
+    ],
+    "english": "Buy",
+    "kind": "shop"
+  },
+  {
+    "source": "frames/1839.png",
+    "frames": [
+      1839
+    ],
+    "english": "Sell",
+    "kind": "shop"
+  },
+  {
+    "source": "frames/1801.png",
+    "frames": [
+      1801
+    ],
+    "english": "OK",
+    "kind": "button",
+    "batch": 3
+  },
+  {
+    "source": "frames/1804.png",
+    "frames": [
+      1804
+    ],
+    "english": "Info",
+    "kind": "button",
+    "batch": 3
+  },
+  {
+    "source": "frames/1805.png",
+    "frames": [
+      1805
+    ],
+    "english": "Trade",
+    "kind": "button",
+    "batch": 3
+  },
+  {
+    "source": "frames/1807.png",
+    "frames": [
+      1807
+    ],
+    "english": "Use",
+    "kind": "button",
+    "batch": 3
+  },
+  {
+    "source": "frames/1808.png",
+    "frames": [
+      1808
+    ],
+    "english": "Quit",
+    "kind": "button",
+    "batch": 3
+  },
+  {
+    "source": "frames/1809.png",
+    "frames": [
+      1809
+    ],
+    "english": "Done",
+    "kind": "button",
+    "batch": 3
+  },
+  {
+    "source": "frames/1810.png",
+    "frames": [
+      1810
+    ],
+    "english": "Back",
+    "kind": "button",
+    "batch": 3
+  },
+  {
+    "source": "frames/1686.png",
+    "frames": [
+      1686
+    ],
+    "english": "Enter ARM recipe.",
+    "kind": "prompt",
+    "batch": 3
+  },
+  {
+    "source": "frames/1687.png",
+    "frames": [
+      1687
+    ],
+    "english": "Enter password.",
+    "kind": "prompt",
+    "batch": 3
+  },
+  {
+    "source": "frames/1783.png",
+    "frames": [
+      1783
+    ],
+    "english": "Sort",
+    "kind": "banner",
+    "batch": 3,
+    "scale": 2
+  },
+  {
+    "source": "frames/1508.png",
+    "frames": [
+      1508
+    ],
+    "english": "Use",
+    "kind": "button",
+    "batch": 4,
+    "left": 0
+  },
+  {
+    "source": "frames/1509.png",
+    "frames": [
+      1509
+    ],
+    "english": "Drop",
+    "kind": "button",
+    "batch": 4,
+    "left": 0
+  },
+  {
+    "source": "frames/1802.png",
+    "frames": [
+      1802
+    ],
+    "english": "Deck: drop",
+    "kind": "button",
+    "batch": 4
+  },
+  {
+    "source": "frames/1803.png",
+    "frames": [
+      1803
+    ],
+    "english": "Deck: add",
+    "kind": "button",
+    "batch": 4
+  },
+  {
+    "source": "frames/1806.png",
+    "frames": [
+      1806
+    ],
+    "english": "See",
+    "kind": "button",
+    "batch": 4,
+    "tracking": 0
+  },
+  {
+    "source": "frames/1811.png",
+    "frames": [
+      1811
+    ],
+    "english": "Menu",
+    "kind": "button",
+    "batch": 4,
+    "left": 32
+  },
+  {
+    "source": "frames/1812.png",
+    "frames": [
+      1812
+    ],
+    "english": "Edit deck",
+    "kind": "button",
+    "batch": 4,
+    "left": 32
+  },
+  {
+    "source": "frames/1813.png",
+    "frames": [
+      1813
+    ],
+    "english": "Status",
+    "kind": "button",
+    "batch": 4,
+    "left": 32
+  },
+  {
+    "source": "frames/1814.png",
+    "frames": [
+      1814
+    ],
+    "english": "Info",
+    "kind": "button",
+    "batch": 4,
+    "left": 32
+  },
+  {
+    "source": "frames/1815.png",
+    "frames": [
+      1815
+    ],
+    "english": "Letter",
+    "kind": "button",
+    "batch": 4
+  },
+  {
+    "source": "frames/1840.png",
+    "frames": [
+      1840
+    ],
+    "english": "Dungeon",
+    "kind": "shop",
+    "batch": 4,
+    "right": 48
+  },
+  {
+    "source": "frames/1841.png",
+    "frames": [
+      1841
+    ],
+    "english": "Link",
+    "kind": "shop",
+    "batch": 4,
+    "ink": 15
+  },
+  {
+    "source": "frames/1816.png",
+    "frames": [
+      1816
+    ],
+    "english": "Waiting for link... / B: Cancel",
+    "kind": "message",
+    "batch": 4,
+    "lines": [
+      "Waiting for link...",
+      "B: Cancel"
+    ],
+    "text_rect": [
+      8,
+      8,
+      128,
+      24
+    ]
+  },
+  {
+    "source": "frames/1817.png",
+    "frames": [
+      1817
+    ],
+    "english": "Link failed. / Check the cable. / Press B.",
+    "kind": "message",
+    "batch": 4,
+    "lines": [
+      "Link failed.",
+      "Check the cable.",
+      "Press B."
+    ],
+    "text_rect": [
+      8,
+      8,
+      128,
+      32
+    ]
+  },
+  {
+    "source": "frames/1818.png",
+    "frames": [
+      1818
+    ],
+    "english": "Waiting for link... / Please wait.",
+    "kind": "message",
+    "batch": 4,
+    "lines": [
+      "Waiting for link...",
+      "Please wait."
+    ],
+    "text_rect": [
+      8,
+      8,
+      128,
+      24
+    ]
+  },
+  {
+    "source": "frames/1819.png",
+    "frames": [
+      1819
+    ],
+    "english": "A link error occurred.",
+    "kind": "message",
+    "batch": 4,
+    "lines": [
+      "A link error occurred."
+    ],
+    "text_rect": [
+      8,
+      4,
+      136,
+      12
+    ]
+  },
+  {
+    "source": "frames/1563.png",
+    "frames": [
+      1563
+    ],
+    "english": "Ice Castle",
+    "kind": "location",
+    "batch": 4,
+    "right": 56
+  },
+  {
+    "source": "frames/1510.png",
+    "frames": [
+      1510
+    ],
+    "english": "Use / Drop",
+    "kind": "message",
+    "batch": 5,
+    "text_rect": [
+      12,
+      8,
+      64,
+      40
+    ],
+    "text_left": 16,
+    "line_step": 24,
+    "lines": [
+      "Use",
+      "Drop"
+    ]
+  },
+  {
+    "source": "frames/1581.png",
+    "frames": [
+      1581
+    ],
+    "english": "Sell / Cancel",
+    "kind": "message",
+    "batch": 5,
+    "text_rect": [
+      12,
+      8,
+      64,
+      32
+    ],
+    "text_left": 16,
+    "line_step": 16,
+    "lines": [
+      "Sell",
+      "Cancel"
+    ]
+  },
+  {
+    "source": "frames/1582.png",
+    "frames": [
+      1582
+    ],
+    "english": "Buy / Cancel",
+    "kind": "message",
+    "batch": 5,
+    "text_rect": [
+      12,
+      8,
+      64,
+      32
+    ],
+    "text_left": 16,
+    "line_step": 16,
+    "lines": [
+      "Buy",
+      "Cancel"
+    ]
+  },
+  {
+    "source": "frames/1583.png",
+    "frames": [
+      1583
+    ],
+    "english": "Appraise / ARM recipe / Help / Cancel",
+    "kind": "message",
+    "batch": 5,
+    "text_rect": [
+      12,
+      8,
+      64,
+      64
+    ],
+    "text_left": 16,
+    "line_step": 16,
+    "lines": [
+      "Appraise",
+      "Recipe",
+      "Help",
+      "Cancel"
+    ]
+  },
+  {
+    "source": "frames/1584.png",
+    "frames": [
+      1584
+    ],
+    "english": "ARM / Items / Cancel",
+    "kind": "message",
+    "batch": 5,
+    "text_rect": [
+      12,
+      8,
+      64,
+      48
+    ],
+    "text_left": 16,
+    "line_step": 16,
+    "lines": [
+      "ARM",
+      "Items",
+      "Cancel"
+    ]
+  },
+  {
+    "source": "frames/1585.png",
+    "frames": [
+      1585
+    ],
+    "english": "Buy / Sell / Cancel",
+    "kind": "message",
+    "batch": 5,
+    "text_rect": [
+      12,
+      8,
+      64,
+      48
+    ],
+    "text_left": 16,
+    "line_step": 16,
+    "lines": [
+      "Buy",
+      "Sell",
+      "Cancel"
+    ]
+  },
+  {
+    "source": "frames/1586.png",
+    "frames": [
+      1586
+    ],
+    "english": "Yes / No",
+    "kind": "message",
+    "batch": 5,
+    "text_rect": [
+      12,
+      8,
+      64,
+      32
+    ],
+    "text_left": 16,
+    "line_step": 16,
+    "lines": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "source": "frames/1587.png",
+    "frames": [
+      1587
+    ],
+    "english": "Start / Cancel",
+    "kind": "message",
+    "batch": 5,
+    "text_rect": [
+      12,
+      8,
+      64,
+      32
+    ],
+    "text_left": 16,
+    "line_step": 16,
+    "lines": [
+      "Start",
+      "Cancel"
+    ]
+  },
+  {
+    "source": "frames/1588.png",
+    "frames": [
+      1588
+    ],
+    "english": "Confirm / Cancel",
+    "kind": "message",
+    "batch": 5,
+    "text_rect": [
+      12,
+      8,
+      64,
+      32
+    ],
+    "text_left": 16,
+    "line_step": 16,
+    "lines": [
+      "Confirm",
+      "Cancel"
+    ]
+  },
+  {
+    "source": "frames/1589.png",
+    "frames": [
+      1589
+    ],
+    "english": "Use / Drop",
+    "kind": "message",
+    "batch": 5,
+    "text_rect": [
+      12,
+      8,
+      64,
+      32
+    ],
+    "text_left": 16,
+    "line_step": 16,
+    "lines": [
+      "Use",
+      "Drop"
+    ]
+  },
+  {
+    "source": "frames/1590.png",
+    "frames": [
+      1590
+    ],
+    "english": "Don't save / Save",
+    "kind": "message",
+    "batch": 5,
+    "text_rect": [
+      12,
+      8,
+      64,
+      32
+    ],
+    "text_left": 16,
+    "line_step": 16,
+    "lines": [
+      "No save",
+      "Save"
+    ]
+  },
+  {
+    "source": "frames/0537.png",
+    "frames": [
+      537
+    ],
+    "english": "Atk",
+    "kind": "segments",
+    "batch": 5,
+    "segments": [
+      {
+        "text": "Atk",
+        "rect": [
+          0,
+          0,
+          16,
+          16
+        ],
+        "tracking": 0,
+        "ink": 15
+      }
+    ]
+  },
+  {
+    "source": "frames/0538.png",
+    "frames": [
+      538
+    ],
+    "english": "Def",
+    "kind": "segments",
+    "batch": 5,
+    "segments": [
+      {
+        "text": "Def",
+        "rect": [
+          0,
+          0,
+          16,
+          16
+        ],
+        "tracking": 0,
+        "ink": 15
+      }
+    ]
+  },
+  {
+    "source": "frames/0701.png",
+    "frames": [
+      701
+    ],
+    "english": "Deck edit",
+    "kind": "segments",
+    "batch": 5,
+    "segments": [
+      {
+        "text": "Deck edit",
+        "rect": [
+          0,
+          0,
+          88,
+          16
+        ],
+        "scale": [
+          1,
+          1
+        ],
+        "outline": 15,
+        "gradient": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "source": "frames/0702.png",
+    "frames": [
+      702
+    ],
+    "english": "Items",
+    "kind": "segments",
+    "batch": 5,
+    "segments": [
+      {
+        "text": "Items",
+        "rect": [
+          0,
+          0,
+          48,
+          16
+        ],
+        "scale": [
+          1,
+          1
+        ],
+        "outline": 15,
+        "gradient": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "source": "frames/0703.png",
+    "frames": [
+      703
+    ],
+    "english": "Status",
+    "kind": "segments",
+    "batch": 5,
+    "segments": [
+      {
+        "text": "Status",
+        "rect": [
+          0,
+          0,
+          56,
+          16
+        ],
+        "scale": [
+          1,
+          1
+        ],
+        "outline": 15,
+        "gradient": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "source": "frames/0704.png",
+    "frames": [
+      704
+    ],
+    "english": "ARM list",
+    "kind": "segments",
+    "batch": 5,
+    "segments": [
+      {
+        "text": "ARM list",
+        "rect": [
+          0,
+          0,
+          72,
+          16
+        ],
+        "scale": [
+          1,
+          1
+        ],
+        "outline": 15,
+        "gradient": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "source": "frames/0705.png",
+    "frames": [
+      705
+    ],
+    "english": "Change party",
+    "kind": "segments",
+    "batch": 5,
+    "segments": [
+      {
+        "text": "Change party",
+        "rect": [
+          0,
+          0,
+          104,
+          16
+        ],
+        "scale": [
+          1,
+          1
+        ],
+        "outline": 15,
+        "gradient": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "source": "frames/0706.png",
+    "frames": [
+      706
+    ],
+    "english": "Get ARM",
+    "kind": "segments",
+    "batch": 5,
+    "segments": [
+      {
+        "text": "Get ARM",
+        "rect": [
+          0,
+          0,
+          64,
+          16
+        ],
+        "scale": [
+          1,
+          1
+        ],
+        "outline": 15,
+        "gradient": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "source": "frames/0700.png",
+    "frames": [
+      700
+    ],
+    "english": "Owned",
+    "kind": "segments",
+    "batch": 5,
+    "segments": [
+      {
+        "text": "Owned",
+        "rect": [
+          8,
+          0,
+          48,
+          8
+        ],
+        "background": 8,
+        "ink": 15
+      }
+    ]
+  },
+  {
+    "source": "frames/1565.png",
+    "frames": [
+      1565
+    ],
+    "english": "Luberia Fort",
+    "kind": "segments",
+    "batch": 5,
+    "segments": [
+      {
+        "text": "Luberia Fort",
+        "rect": [
+          0,
+          0,
+          112,
+          32
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 15,
+        "gradient": [
+          6,
+          6,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "source": "frames/1573.png",
+    "frames": [
+      1573
+    ],
+    "english": "Last Alter",
+    "kind": "segments",
+    "batch": 5,
+    "segments": [
+      {
+        "text": "Last Alter",
+        "rect": [
+          0,
+          0,
+          128,
+          32
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 15,
+        "gradient": [
+          6,
+          6,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "source": "frames/1566.png",
+    "frames": [
+      1566
+    ],
+    "english": "Perika Town",
+    "kind": "segments",
+    "batch": 5,
+    "segments": [
+      {
+        "text": "Perika",
+        "rect": [
+          0,
+          0,
+          64,
+          32
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 15,
+        "gradient": [
+          6,
+          6,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ]
+      },
+      {
+        "text": "Town",
+        "rect": [
+          64,
+          0,
+          96,
+          32
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 15,
+        "gradient": [
+          6,
+          6,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "source": "frames/1567.png",
+    "frames": [
+      1567
+    ],
+    "english": "Perika Outskirts",
+    "kind": "segments",
+    "batch": 5,
+    "segments": [
+      {
+        "text": "Perika",
+        "rect": [
+          0,
+          0,
+          64,
+          32
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 15,
+        "gradient": [
+          6,
+          6,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ]
+      },
+      {
+        "text": "Outskirts",
+        "rect": [
+          64,
+          0,
+          136,
+          32
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 15,
+        "gradient": [
+          6,
+          6,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "source": "frames/1568.png",
+    "frames": [
+      1568
+    ],
+    "english": "Vestri Village",
+    "kind": "segments",
+    "batch": 5,
+    "segments": [
+      {
+        "text": "Vestri",
+        "rect": [
+          0,
+          0,
+          64,
+          32
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 15,
+        "gradient": [
+          6,
+          6,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ]
+      },
+      {
+        "text": "Village",
+        "rect": [
+          64,
+          0,
+          128,
+          32
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 15,
+        "gradient": [
+          6,
+          6,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "source": "frames/1569.png",
+    "frames": [
+      1569
+    ],
+    "english": "Vestri Lake",
+    "kind": "segments",
+    "batch": 5,
+    "segments": [
+      {
+        "text": "Vestri",
+        "rect": [
+          0,
+          0,
+          64,
+          32
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 15,
+        "gradient": [
+          6,
+          6,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ]
+      },
+      {
+        "text": "Lake",
+        "rect": [
+          64,
+          0,
+          168,
+          32
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 15,
+        "gradient": [
+          6,
+          6,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "source": "frames/1570.png",
+    "frames": [
+      1570
+    ],
+    "english": "Alter Peace",
+    "kind": "segments",
+    "batch": 5,
+    "segments": [
+      {
+        "text": "Alter",
+        "rect": [
+          0,
+          0,
+          64,
+          32
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 15,
+        "gradient": [
+          6,
+          6,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ]
+      },
+      {
+        "text": "Peace",
+        "rect": [
+          64,
+          0,
+          128,
+          32
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 15,
+        "gradient": [
+          6,
+          6,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "source": "frames/1571.png",
+    "frames": [
+      1571
+    ],
+    "english": "Alter Ice",
+    "kind": "segments",
+    "batch": 5,
+    "segments": [
+      {
+        "text": "Alter",
+        "rect": [
+          0,
+          0,
+          64,
+          32
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 15,
+        "gradient": [
+          6,
+          6,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ]
+      },
+      {
+        "text": "Ice",
+        "rect": [
+          64,
+          0,
+          128,
+          32
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 15,
+        "gradient": [
+          6,
+          6,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "source": "frames/1572.png",
+    "frames": [
+      1572
+    ],
+    "english": "Alter Lava",
+    "kind": "segments",
+    "batch": 5,
+    "segments": [
+      {
+        "text": "Alter",
+        "rect": [
+          0,
+          0,
+          64,
+          32
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 15,
+        "gradient": [
+          6,
+          6,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ]
+      },
+      {
+        "text": "Lava",
+        "rect": [
+          64,
+          0,
+          128,
+          32
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 15,
+        "gradient": [
+          6,
+          6,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "source": "frames/1574.png",
+    "frames": [
+      1574
+    ],
+    "english": "Training Gate",
+    "kind": "segments",
+    "batch": 5,
+    "segments": [
+      {
+        "text": "Training",
+        "rect": [
+          0,
+          0,
+          64,
+          32
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 15,
+        "gradient": [
+          6,
+          6,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ]
+      },
+      {
+        "text": " ",
+        "rect": [
+          64,
+          0,
+          72,
+          32
+        ]
+      }
+    ]
+  },
+  {
+    "source": "frames/1575.png",
+    "frames": [
+      1575
+    ],
+    "english": "Refining Gate",
+    "kind": "segments",
+    "batch": 5,
+    "segments": [
+      {
+        "text": "Refining",
+        "rect": [
+          0,
+          0,
+          64,
+          32
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 15,
+        "gradient": [
+          6,
+          6,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ]
+      },
+      {
+        "text": " ",
+        "rect": [
+          64,
+          0,
+          72,
+          32
+        ]
+      }
+    ]
+  },
+  {
+    "source": "frames/1576.png",
+    "frames": [
+      1576
+    ],
+    "english": "Forging Gate",
+    "kind": "segments",
+    "batch": 5,
+    "segments": [
+      {
+        "text": "Forging",
+        "rect": [
+          0,
+          0,
+          64,
+          32
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 15,
+        "gradient": [
+          6,
+          6,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ]
+      },
+      {
+        "text": " ",
+        "rect": [
+          64,
+          0,
+          72,
+          32
+        ]
+      }
+    ]
+  },
+  {
+    "source": "frames/1577.png",
+    "frames": [
+      1577
+    ],
+    "english": "Combat Gate",
+    "kind": "segments",
+    "batch": 5,
+    "segments": [
+      {
+        "text": "Combat",
+        "rect": [
+          0,
+          0,
+          64,
+          32
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 15,
+        "gradient": [
+          6,
+          6,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ]
+      },
+      {
+        "text": " ",
+        "rect": [
+          64,
+          0,
+          72,
+          32
+        ]
+      }
+    ]
+  },
+  {
+    "source": "frames/1578.png",
+    "frames": [
+      1578
+    ],
+    "english": "Final Gate",
+    "kind": "segments",
+    "batch": 5,
+    "segments": [
+      {
+        "text": "Final",
+        "rect": [
+          0,
+          0,
+          64,
+          32
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 15,
+        "gradient": [
+          6,
+          6,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ]
+      },
+      {
+        "text": " ",
+        "rect": [
+          64,
+          0,
+          72,
+          32
+        ]
+      }
+    ]
+  },
+  {
+    "source": "frames/0790.png",
+    "frames": [
+      790
+    ],
+    "english": "Training Gate",
+    "kind": "segments",
+    "batch": 5,
+    "segments": [
+      {
+        "text": "Training",
+        "rect": [
+          0,
+          0,
+          48,
+          24
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 1,
+        "gradient": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "tracking": 0
+      },
+      {
+        "text": "Gate",
+        "rect": [
+          48,
+          0,
+          96,
+          24
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 1,
+        "gradient": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "source": "frames/0791.png",
+    "frames": [
+      791
+    ],
+    "english": "Refine Gate",
+    "kind": "segments",
+    "batch": 5,
+    "segments": [
+      {
+        "text": "Refine",
+        "rect": [
+          0,
+          0,
+          48,
+          24
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 1,
+        "gradient": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "tracking": 0
+      },
+      {
+        "text": "Gate",
+        "rect": [
+          48,
+          0,
+          96,
+          24
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 1,
+        "gradient": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "source": "frames/0792.png",
+    "frames": [
+      792
+    ],
+    "english": "Forge Gate",
+    "kind": "segments",
+    "batch": 5,
+    "segments": [
+      {
+        "text": "Forge",
+        "rect": [
+          0,
+          0,
+          48,
+          24
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 1,
+        "gradient": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "tracking": 0
+      },
+      {
+        "text": "Gate",
+        "rect": [
+          48,
+          0,
+          96,
+          24
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 1,
+        "gradient": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "source": "frames/0793.png",
+    "frames": [
+      793
+    ],
+    "english": "Combat Gate",
+    "kind": "segments",
+    "batch": 5,
+    "segments": [
+      {
+        "text": "Combat",
+        "rect": [
+          0,
+          0,
+          48,
+          24
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 1,
+        "gradient": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "tracking": 0
+      },
+      {
+        "text": "Gate",
+        "rect": [
+          48,
+          0,
+          96,
+          24
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 1,
+        "gradient": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "source": "frames/0794.png",
+    "frames": [
+      794
+    ],
+    "english": "Final Gate",
+    "kind": "segments",
+    "batch": 5,
+    "segments": [
+      {
+        "text": "Final",
+        "rect": [
+          0,
+          0,
+          48,
+          24
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 1,
+        "gradient": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "tracking": 0
+      },
+      {
+        "text": "Gate",
+        "rect": [
+          48,
+          0,
+          96,
+          24
+        ],
+        "scale": [
+          1,
+          2
+        ],
+        "outline": 1,
+        "gradient": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "source": "frames/1782.png",
+    "frames": [
+      1782
+    ],
+    "english": "Change character",
+    "kind": "segments",
+    "batch": 5,
+    "segments": [
+      {
+        "text": "Change character",
+        "rect": [
+          0,
+          0,
+          144,
+          16
+        ],
+        "ink": 15,
+        "outline": 10
+      }
+    ]
+  },
+  {
+    "source": "frames/1698.png",
+    "frames": [
+      1698
+    ],
+    "english": "MAR Heaven",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "MAR Heaven",
+        "rect": [
+          0,
+          0,
+          64,
+          16
+        ],
+        "tracking": 1,
+        "ink": 9,
+        "outline": 7
+      }
+    ]
+  },
+  {
+    "source": "frames/1700.png",
+    "frames": [
+      1700
+    ],
+    "english": "Story",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Story",
+        "rect": [
+          0,
+          0,
+          32,
+          8
+        ],
+        "ink": 4,
+        "outline": 10,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      32,
+      8
+    ]
+  },
+  {
+    "source": "frames/1701.png",
+    "frames": [
+      1701
+    ],
+    "english": "Nobuyuki Anzai",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Nobuyuki",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      },
+      {
+        "text": "Anzai",
+        "rect": [
+          0,
+          8,
+          64,
+          16
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      16
+    ]
+  },
+  {
+    "source": "frames/1702.png",
+    "frames": [
+      1702
+    ],
+    "english": "Planning team",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Planning team",
+        "rect": [
+          0,
+          0,
+          128,
+          8
+        ],
+        "ink": 4,
+        "outline": 10,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      128,
+      8
+    ]
+  },
+  {
+    "source": "frames/1703.png",
+    "frames": [
+      1703
+    ],
+    "english": "Lead planning",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Lead planning",
+        "rect": [
+          0,
+          0,
+          128,
+          8
+        ],
+        "ink": 10,
+        "outline": 6,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      128,
+      8
+    ]
+  },
+  {
+    "source": "frames/1704.png",
+    "frames": [
+      1704
+    ],
+    "english": "Hiroshi Hanada",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Hiroshi",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      },
+      {
+        "text": "Hanada",
+        "rect": [
+          0,
+          8,
+          64,
+          16
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      16
+    ]
+  },
+  {
+    "source": "frames/1705.png",
+    "frames": [
+      1705
+    ],
+    "english": "Scenario scripting",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Scenario scripting",
+        "rect": [
+          0,
+          0,
+          128,
+          8
+        ],
+        "ink": 10,
+        "outline": 6,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      128,
+      8
+    ]
+  },
+  {
+    "source": "frames/1706.png",
+    "frames": [
+      1706
+    ],
+    "english": "Masato Sato",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Masato Sato",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 0
+      }
+    ],
+    "canvas": [
+      64,
+      8
+    ]
+  },
+  {
+    "source": "frames/1707.png",
+    "frames": [
+      1707
+    ],
+    "english": "Takumi Ochiai",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Takumi Ochiai",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 0
+      }
+    ],
+    "canvas": [
+      64,
+      8
+    ]
+  },
+  {
+    "source": "frames/1708.png",
+    "frames": [
+      1708
+    ],
+    "english": "Programming team",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Programming team",
+        "rect": [
+          0,
+          0,
+          128,
+          8
+        ],
+        "ink": 4,
+        "outline": 10,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      128,
+      8
+    ]
+  },
+  {
+    "source": "frames/1709.png",
+    "frames": [
+      1709
+    ],
+    "english": "Lead programming",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Lead programming",
+        "rect": [
+          0,
+          0,
+          128,
+          8
+        ],
+        "ink": 10,
+        "outline": 6,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      128,
+      8
+    ]
+  },
+  {
+    "source": "frames/1710.png",
+    "frames": [
+      1710
+    ],
+    "english": "Koichi Nobori",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Koichi Nobori",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 0
+      }
+    ],
+    "canvas": [
+      64,
+      8
+    ]
+  },
+  {
+    "source": "frames/1711.png",
+    "frames": [
+      1711
+    ],
+    "english": "System menus",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "System menus",
+        "rect": [
+          0,
+          0,
+          128,
+          8
+        ],
+        "ink": 10,
+        "outline": 6,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      128,
+      8
+    ]
+  },
+  {
+    "source": "frames/1712.png",
+    "frames": [
+      1712
+    ],
+    "english": "Toshiyuki Maehashi",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Toshiyuki",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      },
+      {
+        "text": "Maehashi",
+        "rect": [
+          0,
+          8,
+          64,
+          16
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      16
+    ]
+  },
+  {
+    "source": "frames/1713.png",
+    "frames": [
+      1713
+    ],
+    "english": "Dungeon generation / Maps",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Dungeon generation / Maps",
+        "rect": [
+          0,
+          0,
+          160,
+          8
+        ],
+        "ink": 10,
+        "outline": 6,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      160,
+      8
+    ]
+  },
+  {
+    "source": "frames/1714.png",
+    "frames": [
+      1714
+    ],
+    "english": "Daisuke Kato",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Daisuke Kato",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 0
+      }
+    ],
+    "canvas": [
+      64,
+      8
+    ]
+  },
+  {
+    "source": "frames/1715.png",
+    "frames": [
+      1715
+    ],
+    "english": "ARM effects / Enemy AI",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "ARM effects / Enemy AI",
+        "rect": [
+          0,
+          0,
+          160,
+          8
+        ],
+        "ink": 10,
+        "outline": 6,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      160,
+      8
+    ]
+  },
+  {
+    "source": "frames/1716.png",
+    "frames": [
+      1716
+    ],
+    "english": "Takehiko Kobayashi",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Takehiko",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      },
+      {
+        "text": "Kobayashi",
+        "rect": [
+          0,
+          8,
+          64,
+          16
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      16
+    ]
+  },
+  {
+    "source": "frames/1717.png",
+    "frames": [
+      1717
+    ],
+    "english": "Design team",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Design team",
+        "rect": [
+          0,
+          0,
+          128,
+          8
+        ],
+        "ink": 4,
+        "outline": 10,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      128,
+      8
+    ]
+  },
+  {
+    "source": "frames/1718.png",
+    "frames": [
+      1718
+    ],
+    "english": "Main design",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Main design",
+        "rect": [
+          0,
+          0,
+          96,
+          8
+        ],
+        "ink": 10,
+        "outline": 6,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      96,
+      8
+    ]
+  },
+  {
+    "source": "frames/1719.png",
+    "frames": [
+      1719
+    ],
+    "english": "Tadashi Kobayashi",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Tadashi",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      },
+      {
+        "text": "Kobayashi",
+        "rect": [
+          0,
+          8,
+          64,
+          16
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      16
+    ]
+  },
+  {
+    "source": "frames/1720.png",
+    "frames": [
+      1720
+    ],
+    "english": "Lead design",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Lead design",
+        "rect": [
+          0,
+          0,
+          96,
+          8
+        ],
+        "ink": 10,
+        "outline": 6,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      96,
+      8
+    ]
+  },
+  {
+    "source": "frames/1721.png",
+    "frames": [
+      1721
+    ],
+    "english": "Aya Ito",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Aya Ito",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      8
+    ]
+  },
+  {
+    "source": "frames/1722.png",
+    "frames": [
+      1722
+    ],
+    "english": "Character design",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Character design",
+        "rect": [
+          0,
+          0,
+          128,
+          8
+        ],
+        "ink": 10,
+        "outline": 6,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      128,
+      8
+    ]
+  },
+  {
+    "source": "frames/1723.png",
+    "frames": [
+      1723
+    ],
+    "english": "Kayoko Shibasaki",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Kayoko Shibasaki",
+        "rect": [
+          0,
+          0,
+          96,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      96,
+      8
+    ]
+  },
+  {
+    "source": "frames/1724.png",
+    "frames": [
+      1724
+    ],
+    "english": "Kazuya Sakamoto",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Kazuya",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      },
+      {
+        "text": "Sakamoto",
+        "rect": [
+          0,
+          8,
+          64,
+          16
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      16
+    ]
+  },
+  {
+    "source": "frames/1725.png",
+    "frames": [
+      1725
+    ],
+    "english": "Masashi Ogura",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Masashi",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      },
+      {
+        "text": "Ogura",
+        "rect": [
+          0,
+          8,
+          64,
+          16
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      16
+    ]
+  },
+  {
+    "source": "frames/1726.png",
+    "frames": [
+      1726
+    ],
+    "english": "Kiyofumi Hino",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Kiyofumi Hino",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 0
+      }
+    ],
+    "canvas": [
+      64,
+      8
+    ]
+  },
+  {
+    "source": "frames/1727.png",
+    "frames": [
+      1727
+    ],
+    "english": "Backgrounds",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Backgrounds",
+        "rect": [
+          0,
+          0,
+          128,
+          8
+        ],
+        "ink": 10,
+        "outline": 6,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      128,
+      8
+    ]
+  },
+  {
+    "source": "frames/1728.png",
+    "frames": [
+      1728
+    ],
+    "english": "Fumihiro Ono",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Fumihiro Ono",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 0
+      }
+    ],
+    "canvas": [
+      64,
+      8
+    ]
+  },
+  {
+    "source": "frames/1729.png",
+    "frames": [
+      1729
+    ],
+    "english": "Takashi Fujita",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Takashi",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      },
+      {
+        "text": "Fujita",
+        "rect": [
+          0,
+          8,
+          64,
+          16
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      16
+    ]
+  },
+  {
+    "source": "frames/1730.png",
+    "frames": [
+      1730
+    ],
+    "english": "Effects / System design",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Effects / System design",
+        "rect": [
+          0,
+          0,
+          224,
+          8
+        ],
+        "ink": 10,
+        "outline": 6,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      224,
+      8
+    ]
+  },
+  {
+    "source": "frames/1731.png",
+    "frames": [
+      1731
+    ],
+    "english": "Kan Uchiyama",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Kan Uchiyama",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 0
+      }
+    ],
+    "canvas": [
+      64,
+      8
+    ]
+  },
+  {
+    "source": "frames/1732.png",
+    "frames": [
+      1732
+    ],
+    "english": "Keiichi Yogo",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Keiichi Yogo",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 0
+      }
+    ],
+    "canvas": [
+      64,
+      8
+    ]
+  },
+  {
+    "source": "frames/1733.png",
+    "frames": [
+      1733
+    ],
+    "english": "ARM design",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "ARM design",
+        "rect": [
+          0,
+          0,
+          128,
+          8
+        ],
+        "ink": 10,
+        "outline": 6,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      128,
+      8
+    ]
+  },
+  {
+    "source": "frames/1734.png",
+    "frames": [
+      1734
+    ],
+    "english": "Yuki Oyama",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Yuki Oyama",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      8
+    ]
+  },
+  {
+    "source": "frames/1735.png",
+    "frames": [
+      1735
+    ],
+    "english": "Sound team",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Sound team",
+        "rect": [
+          0,
+          0,
+          128,
+          8
+        ],
+        "ink": 4,
+        "outline": 10,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      128,
+      8
+    ]
+  },
+  {
+    "source": "frames/1736.png",
+    "frames": [
+      1736
+    ],
+    "english": "Music / SFX",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Music / SFX",
+        "rect": [
+          0,
+          0,
+          96,
+          8
+        ],
+        "ink": 10,
+        "outline": 6,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      96,
+      8
+    ]
+  },
+  {
+    "source": "frames/1737.png",
+    "frames": [
+      1737
+    ],
+    "english": "Kanayo Ono",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Kanayo Ono",
+        "rect": [
+          0,
+          0,
+          96,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      96,
+      8
+    ]
+  },
+  {
+    "source": "frames/1738.png",
+    "frames": [
+      1738
+    ],
+    "english": "Product design",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Product design",
+        "rect": [
+          0,
+          0,
+          160,
+          8
+        ],
+        "ink": 4,
+        "outline": 10,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      160,
+      8
+    ]
+  },
+  {
+    "source": "frames/1739.png",
+    "frames": [
+      1739
+    ],
+    "english": "Michiko Tokoro",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Michiko Tokoro",
+        "rect": [
+          0,
+          0,
+          96,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      96,
+      8
+    ]
+  },
+  {
+    "source": "frames/1740.png",
+    "frames": [
+      1740
+    ],
+    "english": "Promotion",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Promotion",
+        "rect": [
+          0,
+          0,
+          128,
+          8
+        ],
+        "ink": 4,
+        "outline": 10,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      128,
+      8
+    ]
+  },
+  {
+    "source": "frames/1741.png",
+    "frames": [
+      1741
+    ],
+    "english": "Ryo Yanai",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Ryo Yanai",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      8
+    ]
+  },
+  {
+    "source": "frames/1742.png",
+    "frames": [
+      1742
+    ],
+    "english": "Kenji Sato",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Kenji Sato",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      8
+    ]
+  },
+  {
+    "source": "frames/1743.png",
+    "frames": [
+      1743
+    ],
+    "english": "Makiko Ito",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Makiko Ito",
+        "rect": [
+          0,
+          0,
+          96,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      96,
+      8
+    ]
+  },
+  {
+    "source": "frames/1744.png",
+    "frames": [
+      1744
+    ],
+    "english": "Support",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Support",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 4,
+        "outline": 10,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      8
+    ]
+  },
+  {
+    "source": "frames/1745.png",
+    "frames": [
+      1745
+    ],
+    "english": "Shogakukan / Weekly Shonen Sunday editors",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Shogakukan / Weekly Shonen Sunday editors",
+        "rect": [
+          0,
+          0,
+          240,
+          8
+        ],
+        "ink": 10,
+        "outline": 6,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      240,
+      8
+    ]
+  },
+  {
+    "source": "frames/1746.png",
+    "frames": [
+      1746
+    ],
+    "english": "Shinichiro Tsuzuki",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Shinichiro Tsuzuki",
+        "rect": [
+          0,
+          0,
+          96,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 0
+      }
+    ],
+    "canvas": [
+      96,
+      8
+    ]
+  },
+  {
+    "source": "frames/1747.png",
+    "frames": [
+      1747
+    ],
+    "english": "Masato Hayashi",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Masato",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      },
+      {
+        "text": "Hayashi",
+        "rect": [
+          0,
+          8,
+          64,
+          16
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      16
+    ]
+  },
+  {
+    "source": "frames/1748.png",
+    "frames": [
+      1748
+    ],
+    "english": "Atsushi Nomura",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Atsushi",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      },
+      {
+        "text": "Nomura",
+        "rect": [
+          0,
+          8,
+          64,
+          16
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      16
+    ]
+  },
+  {
+    "source": "frames/1749.png",
+    "frames": [
+      1749
+    ],
+    "english": "Yasushi Miyasaka",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Yasushi",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      },
+      {
+        "text": "Miyasaka",
+        "rect": [
+          0,
+          8,
+          64,
+          16
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      16
+    ]
+  },
+  {
+    "source": "frames/1750.png",
+    "frames": [
+      1750
+    ],
+    "english": "Yosuke Iizuka",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Yosuke Iizuka",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 0
+      }
+    ],
+    "canvas": [
+      64,
+      8
+    ]
+  },
+  {
+    "source": "frames/1751.png",
+    "frames": [
+      1751
+    ],
+    "english": "Eri Sato",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Eri Sato",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      8
+    ]
+  },
+  {
+    "source": "frames/1752.png",
+    "frames": [
+      1752
+    ],
+    "english": "Shogakukan / Character Business Center",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Shogakukan / Character Business Center",
+        "rect": [
+          0,
+          0,
+          240,
+          8
+        ],
+        "ink": 10,
+        "outline": 6,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      240,
+      8
+    ]
+  },
+  {
+    "source": "frames/1753.png",
+    "frames": [
+      1753
+    ],
+    "english": "Masakazu Kubo",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Masakazu",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      },
+      {
+        "text": "Kubo",
+        "rect": [
+          0,
+          8,
+          64,
+          16
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      16
+    ]
+  },
+  {
+    "source": "frames/1754.png",
+    "frames": [
+      1754
+    ],
+    "english": "Nobumasa Sawabe",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Nobumasa",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      },
+      {
+        "text": "Sawabe",
+        "rect": [
+          0,
+          8,
+          64,
+          16
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      16
+    ]
+  },
+  {
+    "source": "frames/1755.png",
+    "frames": [
+      1755
+    ],
+    "english": "Shogakukan publicity",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Shogakukan publicity",
+        "rect": [
+          0,
+          0,
+          128,
+          8
+        ],
+        "ink": 10,
+        "outline": 6,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      128,
+      8
+    ]
+  },
+  {
+    "source": "frames/1756.png",
+    "frames": [
+      1756
+    ],
+    "english": "Mikito Bizenjima",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Mikito Bizenjima",
+        "rect": [
+          0,
+          0,
+          96,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      96,
+      8
+    ]
+  },
+  {
+    "source": "frames/1757.png",
+    "frames": [
+      1757
+    ],
+    "english": "Naohiko Furuichi (Shogakukan Production)",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Naohiko Furuichi (ShoPro)",
+        "rect": [
+          0,
+          0,
+          224,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      224,
+      8
+    ]
+  },
+  {
+    "source": "frames/1758.png",
+    "frames": [
+      1758
+    ],
+    "english": "Tadahisa Ito (Shogakukan Production)",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Tadahisa Ito (ShoPro)",
+        "rect": [
+          0,
+          0,
+          224,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      224,
+      8
+    ]
+  },
+  {
+    "source": "frames/1759.png",
+    "frames": [
+      1759
+    ],
+    "english": "Shogakukan Production",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Shogakukan Production",
+        "rect": [
+          0,
+          0,
+          160,
+          8
+        ],
+        "ink": 10,
+        "outline": 6,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      160,
+      8
+    ]
+  },
+  {
+    "source": "frames/1760.png",
+    "frames": [
+      1760
+    ],
+    "english": "Special thanks",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Special thanks",
+        "rect": [
+          0,
+          0,
+          128,
+          8
+        ],
+        "ink": 4,
+        "outline": 10,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      128,
+      8
+    ]
+  },
+  {
+    "source": "frames/1761.png",
+    "frames": [
+      1761
+    ],
+    "english": "Michihiro Ishizuka",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Michihiro",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      },
+      {
+        "text": "Ishizuka",
+        "rect": [
+          0,
+          8,
+          64,
+          16
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      16
+    ]
+  },
+  {
+    "source": "frames/1762.png",
+    "frames": [
+      1762
+    ],
+    "english": "Kuniaki Yushita",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Kuniaki",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      },
+      {
+        "text": "Yushita",
+        "rect": [
+          0,
+          8,
+          64,
+          16
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      16
+    ]
+  },
+  {
+    "source": "frames/1763.png",
+    "frames": [
+      1763
+    ],
+    "english": "Atsushi Horigami",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Atsushi",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      },
+      {
+        "text": "Horigami",
+        "rect": [
+          0,
+          8,
+          64,
+          16
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      16
+    ]
+  },
+  {
+    "source": "frames/1764.png",
+    "frames": [
+      1764
+    ],
+    "english": "Kengo Nakamura",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Kengo",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      },
+      {
+        "text": "Nakamura",
+        "rect": [
+          0,
+          8,
+          64,
+          16
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      16
+    ]
+  },
+  {
+    "source": "frames/1765.png",
+    "frames": [
+      1765
+    ],
+    "english": "Keita Kawaminami",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Keita",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      },
+      {
+        "text": "Kawaminami",
+        "rect": [
+          0,
+          8,
+          64,
+          16
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      16
+    ]
+  },
+  {
+    "source": "frames/1766.png",
+    "frames": [
+      1766
+    ],
+    "english": "Hideyuki Suzuki",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Hideyuki",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      },
+      {
+        "text": "Suzuki",
+        "rect": [
+          0,
+          8,
+          64,
+          16
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      16
+    ]
+  },
+  {
+    "source": "frames/1767.png",
+    "frames": [
+      1767
+    ],
+    "english": "Ayumu Kashizaki",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Ayumu",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      },
+      {
+        "text": "Kashizaki",
+        "rect": [
+          0,
+          8,
+          64,
+          16
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      16
+    ]
+  },
+  {
+    "source": "frames/1768.png",
+    "frames": [
+      1768
+    ],
+    "english": "Satoko Naito",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Satoko Naito",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 0
+      }
+    ],
+    "canvas": [
+      64,
+      8
+    ]
+  },
+  {
+    "source": "frames/1769.png",
+    "frames": [
+      1769
+    ],
+    "english": "Mitsuo Nagai",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Mitsuo Nagai",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 0
+      }
+    ],
+    "canvas": [
+      64,
+      8
+    ]
+  },
+  {
+    "source": "frames/1770.png",
+    "frames": [
+      1770
+    ],
+    "english": "Shigeru Okamoto",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Shigeru",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      },
+      {
+        "text": "Okamoto",
+        "rect": [
+          0,
+          8,
+          64,
+          16
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      16
+    ]
+  },
+  {
+    "source": "frames/1771.png",
+    "frames": [
+      1771
+    ],
+    "english": "Director",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Director",
+        "rect": [
+          0,
+          0,
+          96,
+          8
+        ],
+        "ink": 4,
+        "outline": 10,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      96,
+      8
+    ]
+  },
+  {
+    "source": "frames/1772.png",
+    "frames": [
+      1772
+    ],
+    "english": "Kaname Igarashi",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Kaname Igarashi",
+        "rect": [
+          0,
+          0,
+          96,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      96,
+      8
+    ]
+  },
+  {
+    "source": "frames/1773.png",
+    "frames": [
+      1773
+    ],
+    "english": "Chief director",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Chief director",
+        "rect": [
+          0,
+          0,
+          160,
+          8
+        ],
+        "ink": 4,
+        "outline": 10,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      160,
+      8
+    ]
+  },
+  {
+    "source": "frames/1774.png",
+    "frames": [
+      1774
+    ],
+    "english": "Shin Murato",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Shin Murato",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      8
+    ]
+  },
+  {
+    "source": "frames/1775.png",
+    "frames": [
+      1775
+    ],
+    "english": "Producer",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Producer",
+        "rect": [
+          0,
+          0,
+          96,
+          8
+        ],
+        "ink": 4,
+        "outline": 10,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      96,
+      8
+    ]
+  },
+  {
+    "source": "frames/1776.png",
+    "frames": [
+      1776
+    ],
+    "english": "Hideki Hayakawa",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Hideki",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      },
+      {
+        "text": "Hayakawa",
+        "rect": [
+          0,
+          8,
+          64,
+          16
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      16
+    ]
+  },
+  {
+    "source": "frames/1777.png",
+    "frames": [
+      1777
+    ],
+    "english": "Executive producer",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Executive producer",
+        "rect": [
+          0,
+          0,
+          224,
+          8
+        ],
+        "ink": 4,
+        "outline": 10,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      224,
+      8
+    ]
+  },
+  {
+    "source": "frames/1778.png",
+    "frames": [
+      1778
+    ],
+    "english": "Motoyuki Yoshioka",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Motoyuki",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      },
+      {
+        "text": "Yoshioka",
+        "rect": [
+          0,
+          8,
+          64,
+          16
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      16
+    ]
+  },
+  {
+    "source": "frames/1779.png",
+    "frames": [
+      1779
+    ],
+    "english": "Production / Copyright",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Production / (C)",
+        "rect": [
+          0,
+          0,
+          96,
+          8
+        ],
+        "ink": 9,
+        "outline": 7,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      96,
+      8
+    ]
+  },
+  {
+    "source": "frames/1780.png",
+    "frames": [
+      1780
+    ],
+    "english": "Konami Corporation",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Konami Corporation",
+        "rect": [
+          0,
+          0,
+          128,
+          8
+        ],
+        "ink": 9,
+        "outline": 7,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      128,
+      8
+    ]
+  },
+  {
+    "source": "frames/1781.png",
+    "frames": [
+      1781
+    ],
+    "english": "Masanori Akita",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Masanori",
+        "rect": [
+          0,
+          0,
+          64,
+          8
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      },
+      {
+        "text": "Akita",
+        "rect": [
+          0,
+          8,
+          64,
+          16
+        ],
+        "ink": 10,
+        "outline": 2,
+        "clip_outline": true,
+        "tracking": 1
+      }
+    ],
+    "canvas": [
+      64,
+      16
+    ]
+  },
+  {
+    "source": "frames/0539.png",
+    "frames": [
+      539
+    ],
+    "english": "Attack / Defense",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "A/D",
+        "rect": [
+          0,
+          0,
+          32,
+          16
+        ],
+        "ink": 15,
+        "outline": 10
+      }
+    ]
+  },
+  {
+    "source": "frames/0540.png",
+    "frames": [
+      540
+    ],
+    "english": "Recovery",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Heal",
+        "rect": [
+          0,
+          0,
+          32,
+          16
+        ],
+        "ink": 15,
+        "outline": 10
+      }
+    ]
+  },
+  {
+    "source": "frames/0541.png",
+    "frames": [
+      541
+    ],
+    "english": "Special",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Spcl",
+        "rect": [
+          0,
+          0,
+          32,
+          16
+        ],
+        "ink": 15,
+        "outline": 10
+      }
+    ]
+  },
+  {
+    "source": "frames/1685.png",
+    "base": "source/english/1685_background.png",
+    "frames": [
+      1685
+    ],
+    "english": "Owned / Silver ARM / Gold ARM / Platinum ARM / Jewel ARM / Confirm / Cancel",
+    "kind": "segments",
+    "batch": 6,
+    "segments": [
+      {
+        "text": "Owned",
+        "rect": [
+          72,
+          4,
+          112,
+          12
+        ],
+        "ink": 15,
+        "background": null
+      },
+      {
+        "text": "Silver ARM",
+        "rect": [
+          8,
+          16,
+          64,
+          24
+        ],
+        "x": 8,
+        "ink": 15,
+        "background": null,
+        "tracking": 0
+      },
+      {
+        "text": "x",
+        "rect": [
+          64,
+          16,
+          70,
+          24
+        ],
+        "x": 65,
+        "ink": 15,
+        "background": null,
+        "tracking": 0
+      },
+      {
+        "text": "Gold ARM",
+        "rect": [
+          8,
+          32,
+          64,
+          40
+        ],
+        "x": 8,
+        "ink": 15,
+        "background": null,
+        "tracking": 0
+      },
+      {
+        "text": "x",
+        "rect": [
+          64,
+          32,
+          70,
+          40
+        ],
+        "x": 65,
+        "ink": 15,
+        "background": null,
+        "tracking": 0
+      },
+      {
+        "text": "Plat. ARM",
+        "rect": [
+          8,
+          48,
+          64,
+          56
+        ],
+        "x": 8,
+        "ink": 15,
+        "background": null,
+        "tracking": 0
+      },
+      {
+        "text": "x",
+        "rect": [
+          64,
+          48,
+          70,
+          56
+        ],
+        "x": 65,
+        "ink": 15,
+        "background": null,
+        "tracking": 0
+      },
+      {
+        "text": "Jewel ARM",
+        "rect": [
+          8,
+          64,
+          64,
+          72
+        ],
+        "x": 8,
+        "ink": 15,
+        "background": null,
+        "tracking": 0
+      },
+      {
+        "text": "x",
+        "rect": [
+          64,
+          64,
+          70,
+          72
+        ],
+        "x": 65,
+        "ink": 15,
+        "background": null,
+        "tracking": 0
+      },
+      {
+        "text": "Confirm",
+        "rect": [
+          8,
+          80,
+          70,
+          88
+        ],
+        "x": 8,
+        "ink": 15,
+        "background": null,
+        "tracking": 0
+      },
+      {
+        "text": "Cancel",
+        "rect": [
+          8,
+          96,
+          70,
+          104
+        ],
+        "x": 8,
+        "ink": 15,
+        "background": null,
+        "tracking": 0
+      }
+    ]
+  }
+]

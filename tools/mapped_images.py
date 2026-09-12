@@ -139,7 +139,7 @@ def extract():
                 raise ValueError('No same-name KMP; may use TSC or another map')
             blob = source.read_bytes()
             width, height = struct.unpack_from('<2I', blob, 0x14)
-            if not (0 < width <= 256 and 0 < height <= 256):
+            if not (width > 0 and height > 0 and width*height <= (len(blob)-0xC0)//2):
                 raise ValueError('Unsupported map geometry')
             if blob[0x1C:0x5C].split(b'\0')[0].decode('ascii') != name:
                 raise ValueError('KMP names another tile resource')

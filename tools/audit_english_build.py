@@ -18,8 +18,56 @@ def main():
     localized=(ROOT/'mar_english.gba').read_bytes()
     if len(localized)!=0x2000000:raise ValueError('English ROM must be 32 MB')
     differences=[i for i,(a,b) in enumerate(zip(base,localized)) if a!=b]
-    if not differences or any(not 0x11790<=i<0x11870 for i in differences):
-        raise ValueError('English build changed bytes outside the constructor bridge')
+    import sys
+    sys.path.insert(0,str(ROOT/'tools'))
+    import sprite_sources, ncd, english_credits
+    japanese=sprite_sources.compile('SYSTEM')
+    english=sprite_sources.compile('SYSTEM',english=True)
+    start=0xDD69E0;end=0xF12390
+    if japanese!=base[start:end]:raise ValueError('Japanese SYSTEM source does not match original')
+    if english!=localized[start:end]:raise ValueError('Linked English SYSTEM differs from compiled PNG sources')
+    import scenes
+    manifest=json.loads((ROOT/'graphics/ui/manifest.json').read_text())
+    info=ncd.layout(japanese);changed_frames=[]
+    for frame in manifest['frames']:
+        first,count,_=struct.unpack_from('<IHH',japanese,info['offsets'][2]+frame['id']*8)
+        cells=[ncd.cell(japanese,info,first+k) for k in range(count)]
+        metadata_start=info['offsets'][3]+first*20
+        metadata_end=metadata_start+count*20
+        if japanese[metadata_start:metadata_end]==english[metadata_start:metadata_end] and not any(japanese[c['start']:c['end']]!=english[c['start']:c['end']] for c in cells):continue
+        before=scenes.render(japanese,info,frame['id'])[0]
+        after=scenes.render(english,info,frame['id'])[0]
+        if before==after:continue
+        source=ROOT/'graphics/ui'/frame['path']
+        if not source.with_stem(source.stem+'_en').exists():
+            raise ValueError('English tiles unexpectedly alter unlocalized frame '+str(frame['id']))
+        changed_frames.append(frame['id'])
+    tile_start=ncd.layout(japanese)['offsets'][5]
+    credit_metadata=english_credits.metadata_offsets(info)
+    # Explicit credit OAM positions/shapes/tile pointers and the derived tile
+    # reference count may change; every palette and all other metadata must match.
+    if any(a!=b and i not in credit_metadata for i,(a,b) in enumerate(zip(japanese[:tile_start],english[:tile_start]))):
+        raise ValueError('English UI changed metadata outside credit layouts or changed palettes')
+    effect_jp=sprite_sources.compile('EFFECT')
+    effect_en=sprite_sources.compile('EFFECT',english=True)
+    effect_start=0x5AEAF0;effect_end=effect_start+len(effect_jp)
+    effect_tiles=ncd.layout(effect_jp)['offsets'][5]
+    if effect_jp!=base[effect_start:effect_end]:raise ValueError('Japanese EFFECT differs from original')
+    if effect_en!=localized[effect_start:effect_end]:raise ValueError('English EFFECT differs from PNG sources')
+    if effect_jp[:effect_tiles]!=effect_en[:effect_tiles]:raise ValueError('English effects changed metadata or palettes')
+    effect_info=ncd.layout(effect_jp);effect_changed=[]
+    for frame in json.loads((ROOT/'graphics/battle/effects/manifest.json').read_text())['frames']:
+        before=scenes.render(effect_jp,effect_info,frame['id'])[0]
+        after=scenes.render(effect_en,effect_info,frame['id'])[0]
+        if before==after:continue
+        source=ROOT/'graphics/battle/effects'/frame['path']
+        variant=source.with_stem(source.stem+'_en')
+        import gfx
+        if not variant.exists() or after!=gfx.read_png(str(variant))[0]:
+            raise ValueError('English effects alter an unlocalized or incorrectly rendered frame: '+str(frame['id']))
+        effect_changed.append(frame['id'])
+    if not differences or any(not (0x11790<=i<0x11870 or start+tile_start<=i<end or i-start in credit_metadata or effect_start+effect_tiles<=i<effect_end) for i in differences):
+        raise ValueError('English build changed bytes outside constructor bridge and verified UI tiles')
     output=subprocess.check_output(['arm-none-eabi-nm','-n','build/english/mar_english.elf'],cwd=ROOT,text=True)
     symbols={fields[2]:int(fields[0],16) for line in output.splitlines() if len(fields:=line.split())==3}
     names=('EnglishDialogueStart','DialogueStartOriginal','EnglishTranslateRows',
@@ -42,7 +90,13 @@ def main():
     mappings=json.loads((ROOT/'reports/text/english-runtime.json').read_text())
     report=dict(sha1=hashlib.sha1(localized).hexdigest(),size=len(localized),
                 original_area_differing_bytes=len(differences),
-                change_scope='011790..011870 constructor bridge only; C and strings in ROM expansion',
+                change_scope='Constructor bridge, independently rebuilt EFFECT and SYSTEM UI tiles and explicit English credit layouts; C and strings in ROM expansion',
+                english_effect_changed_frames=effect_changed,
+                english_effect_variants=[str(p.relative_to(ROOT)) for p in sorted((ROOT/'graphics/battle/effects/frames').glob('*_en.png'))],
+                english_credit_layout_frames=sorted(english_credits.frame_ids()),
+                english_ui_variants=[str(p.relative_to(ROOT)) for p in sorted((ROOT/'graphics/ui').rglob('*_en.png'))],
+                english_ui_differing_bytes=sum(a!=b for a,b in zip(japanese,english)),
+                english_ui_changed_frames=changed_frames,
                 entry_points={name:f'{symbols[name]:08X}' for name in names},
                 exact_row_mappings=mappings['exact_row_mappings'],
                 unallocated_mutable_sections=mutable_sections,

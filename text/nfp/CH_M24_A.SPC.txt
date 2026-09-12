@@ -24,5 +24,5 @@
 @00071A  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
 @000746 でも、材料はかならず  // EN: But make sure you...
 @000766 もってくるのん！  // EN: ...bring the materials!
-@0003C0 新しく<F0><56>ＲＭを作ることですのん  // EN: It means making new ÄRMs.
+@0003C0 新しく<F0><56>ＲＭを作ることですのん  // EN: It means making new ÄRMs, yep-yep.
 @000434 どの材料で、何の<F0><56>ＲＭができるのかは  // EN: Which materials make which ÄRMs...

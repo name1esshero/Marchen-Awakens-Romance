@@ -56,10 +56,14 @@ The server automatically opens the editor in your default browser;
 `--no-browser` disables this. The full URL is also printed in the terminal.
 The editor loads 47 maps with a visual tile selector, palette banks, flips,
 layer visibility, raw attribute painting, undo/redo, and JSON source saves.
+The wheel over the map zooms from 1× to 4× around the pointer; scrollbars pan.
 Existing native event calls expose supported constant integer arguments.
 HitInit, HitHitRect, HitSet, and HitFree have verified field labels; literal
 hit rectangles can be previewed on the map and follow edits and undo.
 This preview shows the selected call, not simulated active event state.
+SprSet X/Y arguments have pixel labels and an optional yellow coordinate guide.
+See the [sprite placement and rendering trace](docs/sprite-rendering.md) for
+verified structures, animation routing and remaining decoding work.
 Run `make` or `make english` to build saved changes. Unknown properties, dynamic
 calls, new warps, and full event control flow remain undecoded; unresolved
 MAP27 tiles are marked explicitly. See [editor usage and format evidence](tools/map_editor/README.md).
@@ -139,7 +143,9 @@ Its `NFP2.0` directory contains 830 members. Each directory record has a
 table access are recovered from `0x0807AAD0`, `0x0807AB08`, `0x0807AC28`, and
 `0x0807AC3C`; `tools/nfp.py` validates the directory and member boundaries.
 
-The three `NCD` containers contain 32,265 sprite cells. Their source-level build
+The three `NCD` containers contain 32,265 sprite cells. Frame viewers assemble
+cell centers into top-left bounds using the engine’s half-size offsets, fixing
+detached parts on mixed-size sprites; original cell records remain unchanged. Their source-level build
 is documented in [the graphics guide](graphics/README.md). The old
 `graphics/ncd` directory has been removed. Their group, animation,
 frame, cell, palette, and tile tables are resolved by `0x0807B96C`. The palette
@@ -247,8 +253,8 @@ included, where modern GCC differed on two counts in every function:
 | Leaf prologue | `push {lr}` | `push {r4, lr}`, saving a register it never uses |
 | `index * 24` | `((i * 2) + i) * 8` with shifts | load 24, then `muls` |
 
-The current manifest declares 91 linked ranges: 81 compiled-C ranges and ten
-BIOS inline-assembly wrapper ranges. Compiled C owns 3,528 bytes, including
+The current manifest declares 98 linked ranges: 88 compiled-C ranges and ten
+BIOS inline-assembly wrapper ranges. Compiled C owns 3,848 bytes, including
 literal pools and alignment. This is not a function-completion percentage.
 One range may contain multiple contiguous
 functions and alignment bytes. The [build provenance audit](https://github.com/name1esshero/Marchen-Awakens-Romance/wiki/Build-verification)
@@ -370,6 +376,30 @@ for reproducible archive ownership and audio source checks.
 ### Generated compression files and cleanup
 
 `make english` builds `mar_english.gba`; `make compare` verifies `mar.gba`.
+
+English UI artwork uses sibling `*_en.png` sources in `graphics/ui/frames`
+or `graphics/ui/cells`. Only `make english` selects them, compiling a separate
+SYSTEM container under `build/english/graphics`; Japanese PNGs and palettes
+remain the matching sources. All 206 user-reported UI frames now have English
+artwork, including the material panel and credits. Thirteen credit-name
+romanizations are provisional and explicitly flagged in the
+[credit mappings](graphics/ui/credits_translation.json); their Japanese originals
+are retained there for correction. This count covers the reported set, not every
+text-bearing graphic in the ROM.
+Preserve palette indices and dimensions when editing ordinary variants. Staff
+credits use explicit [English OAM layouts](graphics/ui/source/english/credits_layouts.json)
+so full Latin names fit without Japanese surname-tile sharing or gaps. These
+layouts reuse the original cell records and reserved tile pool; they affect only
+the English build and still need an in-game credits review.
+The New/Continue/run options preserve their shared foreground words and
+background layers.
+[UI translation inventory](graphics/ui/english.json) tracks all 206 user-reported frames and name-reading review work.
+[Artwork editing notes](graphics/ui/english.md) explain transparency and review.
+The English link audit independently rebuilds both containers and verifies the
+linked English tile bytes and credit layouts, while requiring Japanese sources
+to match the ROM. Credit metadata changes are limited to OAM positions/shapes,
+tile pointers, and the derived cell-tile reference count; palettes stay unchanged.
+
 `make clean` removes both ROM outputs and `build/`, including generated `.lz`,
 `.4bpp`, `.8bpp`, objects and localization tables.
 
@@ -382,3 +412,15 @@ policy. No ROM, original LZ file, or compression recipe supplies output bytes.
 Edited graphics must fit their original compressed allocation; shorter streams
 receive zero fill within that allocation. The default unedited sources match
 both the original streams and complete ROM byte for byte.
+
+BA06 background correction: `BA06.TCG` contains the two `BA06_00/01` planes. The three flame planes `BA06_BG0/1/2` use `BA06_BG.TCG` and its own palette; their editable images are now `graphics/backgrounds/BA06_BG.TCG.png`, `.layer1.png`, and `.layer2.png`. Both resources retain identical compressed bytes. Numeric-only TSC suffix matching prevents the former cross-resource pairing.
+
+English battle-effect artwork: frames 0386–0389 translate 封印中 as “Sealed”; frames 0402–0406 translate パラメータ as “Stats” while preserving the expanding banner. Editable `_en.png` overrides are linked only by `make english` through a separate EFFECT archive object. `python3 tools/effect_text.py` explicitly regenerates these labels from the extracted Latin font.
+
+ROM-tail audit: `python3 tools/audit_rom_tails.py` records section endings and scans the complete post-NFP region in `reports/rom/tails.json`. Valid LZ token streams are candidates, not proven assets; most current hits belong to SPC scripts. The final raw section contains repeated words, and the previously flagged ARM-code block remains unclassified. MWA now has two mapped textbox-border images using the KMP-declared palette bank 15; its compressed bytes are unchanged.
+
+ROM audit (2026-09-12): `python3 tools/audit_rom_coverage.py` checks linked coverage and Japanese ROM equality. The current map covers all 16 MiB with 1,239 nonoverlapping sections and no gaps. Fresh graphics checks reproduce all 104 compressed inputs and account for 19,394 PNGs, including English overrides and authoring backgrounds. These are provenance checks, not proof of complete semantic decoding; 11 named graphics layouts remain unresolved. See `reports/audit/README.md` for current results and historical limitations.
+
+MAP07_A now has two editable 2704×1960 cave-map layers. Its 338×245 tile dimensions exceed the old extractor-only limit, but all tile references and KMP plane bounds are valid. Raw tiles, map planes, and compressed output round-trip exactly. Ten named layouts remain unresolved; the renderer adds viewport tile/palette offsets before writing screen entries, so out-of-resource tile references must not simply be replaced with blank tiles.
+
+Normal field maps use one KCG/KCL tileset/palette pair shared by two KMP planes. `KmpLoadField` loads the graphics once and reuses them for the second plane; these are not separate primary and secondary tilesets. Lower-level scene loaders can choose VRAM destinations and tile/palette offsets. See `tools/map_editor/README.md` for the traced parameters and remaining special-scene questions.

@@ -6,6 +6,7 @@ maps need their BG size/orientation decoded first. Bank-zero transparent tiles
 are retained; nontransparent references outside the named palette are rejected.
 """
 import json
+import re
 from pathlib import Path
 import struct
 import gfx
@@ -43,7 +44,8 @@ def main():
     for entry in manifest:
         if entry['kind']=='mapped_image' or entry['bpp']!=4:continue
         name=entry['archive_name'];stem=name.partition('.')[0]
-        sources=[m for m in maps if m['name']==stem+'.TSC' or m['name'].startswith(stem+'_') and m['name'].endswith('.TSC')]
+        # Numeric screen suffixes only: BA06_BG belongs to BA06_BG, not BA06.
+        sources=[m for m in maps if re.fullmatch(re.escape(stem) + r'(?:_?\d+)?\.TSC', m['name'])]
         if not sources:continue
         if any(m['size']!=2048 for m in sources):
             skipped.append(dict(name=name,reason='Multiple screenblocks: BG orientation not decoded'));continue

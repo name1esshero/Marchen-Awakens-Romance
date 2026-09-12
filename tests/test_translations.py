@@ -56,8 +56,7 @@ class TranslationTest(unittest.TestCase):
             with patch.object(build_english.english_layout, 'load_mapping', return_value={}):
                 accepted, rejected = build_english.collect(root)
             self.assertEqual(rejected, [])
-            self.assertEqual(len(accepted), 1)
-            self.assertEqual(accepted[0][1], [b'\0'])
+            self.assertEqual(dict(accepted), {b'': [b'\0'], build_english.text_codec.encode('を'): [b'\0']})
             self.assertIn('""', '\n'.join(build_english.render(accepted)))
 
     def test_script_scope_and_source_spacing(self):

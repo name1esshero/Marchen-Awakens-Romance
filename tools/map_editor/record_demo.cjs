@@ -44,19 +44,19 @@ const {chromium} = require(process.env.MAR_PLAYWRIGHT_MODULE || 'playwright-core
         const box = await page.locator('#map-scroll').boundingBox();
         await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
         for (let i = 0; i < 12; i++) {
-            await page.mouse.wheel(0, 30);
+            await page.locator('#map-scroll').evaluate(el => el.scrollBy(0, 30));
             await page.waitForTimeout(100);
             await capture();
         }
         await capture(600);
         for (let i = 0; i < 10; i++) {
-            await page.mouse.wheel(30, 0);
+            await page.locator('#map-scroll').evaluate(el => el.scrollBy(30, 0));
             await page.waitForTimeout(100);
             await capture();
         }
         await capture(600);
         for (let i = 0; i < 12; i++) {
-            await page.mouse.wheel(-30, -30);
+            await page.locator('#map-scroll').evaluate(el => el.scrollBy(-30, -30));
             await page.waitForTimeout(100);
             await capture();
         }

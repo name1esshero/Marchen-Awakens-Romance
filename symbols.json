@@ -33,7 +33,7 @@
   "0807ADF4": "FontGlyphStride",
   "0807AE08": "FontPalette",
   "0807BB98": "FindResourceByName",
-  "0807BDAC": "GetObjectPaletteSlot",
+  "0807BDAC": "NcdQueueSprite",
   "0808264C": "memcmp",
   "08082694": "memcpy",
   "080826F4": "memset",
@@ -140,5 +140,12 @@
   "08002630": "KmpRenderViewport",
   "080032B8": "KmpLoadField",
   "08003280": "KmpSetClip",
-  "08003294": "KmpResetClip"
+  "08003294": "KmpResetClip",
+  "080122F8": "ScriptNativeFieldSet",
+  "080121C4": "ScriptNativeHitInit",
+  "08012244": "ScriptNativeHitRect",
+  "080121E4": "ScriptNativeHitFree",
+  "0807BC2C": "NcdInitSprite",
+  "08010C0C": "ScriptSpriteSelect",
+  "08011EF4": "ScriptNativeSpriteChange"
 }

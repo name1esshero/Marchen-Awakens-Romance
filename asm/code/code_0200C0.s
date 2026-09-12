@@ -7427,7 +7427,7 @@ _0802312A:
 	adds r0, r4, #0
 	adds r0, #8
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	movs r0, #1
 	strh r0, [r4, #60]
 	adds r1, r4, #0
@@ -8610,7 +8610,7 @@ _08023984:
 	mov r0, r8
 	movs r1, #0
 	str r3, [sp, #32]
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	ldrb r1, [r4, #0]
 	movs r2, #13
 	negs r2, r2
@@ -9026,7 +9026,7 @@ _08023C5C:
 	adds r4, #40
 	adds r0, r4, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	adds r0, r7, #0
 	adds r0, #204
 	ldr r2, [r0, #0]
@@ -9967,7 +9967,7 @@ _08024326:
 	adds r4, #8
 	adds r0, r4, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	adds r2, r7, #0
 	adds r2, #46
 	ldrb r1, [r2, #0]
@@ -10745,7 +10745,7 @@ _0802486E:
 	adds r5, #40
 	adds r0, r5, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	mov r2, r10
 	adds r2, #78
 	ldrb r1, [r2, #0]
@@ -10814,7 +10814,7 @@ _08024924:
 _08024940:
 	adds r0, r5, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	ldrb r1, [r4, #1]
 	movs r2, #13
 	negs r2, r2
@@ -10863,7 +10863,7 @@ _0802496E:
 _080249A0:
 	adds r0, r5, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	ldrb r1, [r4, #1]
 	movs r3, #13
 	negs r3, r3
@@ -12102,7 +12102,7 @@ _08025220:
 	adds r5, #8
 	adds r0, r5, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	ldr r1, _080252B4
 	adds r0, r7, r1
 	ldrh r0, [r0, #0]
@@ -12299,7 +12299,7 @@ _0802537E:
 	adds r4, #80
 	adds r0, r4, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	adds r2, r7, #0
 	adds r2, #118
 	ldrb r1, [r2, #0]
@@ -13281,7 +13281,7 @@ _08025A6A:
 _08025AA4:
 	adds r0, r5, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	ldr r1, [sp, #12]
 	ldrh r0, [r1, #0]
 	strh r0, [r4, #24]
@@ -13756,7 +13756,7 @@ _08025DC8:
 _08025DE8:
 	adds r0, r6, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	movs r1, #232
 	lsls r1, r1, #1
 	adds r0, r5, r1
@@ -14442,7 +14442,7 @@ _080261FE:
 	mov r10, r4
 	mov r0, r10
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	ldr r4, _08026354
 	ldr r1, _08026358
 	adds r0, r4, r1
@@ -14776,7 +14776,7 @@ _08026368:
 	adds r4, #112
 	adds r0, r4, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	adds r5, r7, #0
 	adds r5, #252
 	movs r0, #0
@@ -15012,7 +15012,7 @@ _08026496:
 	adds r4, #152
 	adds r0, r4, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	mov r0, r9
 	adds r0, #134
 	ldrh r0, [r0, #0]
@@ -15565,7 +15565,7 @@ _0802684C:
 	adds r5, #8
 	adds r0, r5, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	ldrb r1, [r4, #1]
 	movs r2, #13
 	negs r2, r2
@@ -16510,7 +16510,7 @@ _08026ECC:
 	adds r4, #8
 	adds r0, r4, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	ldrb r0, [r5, #0]
 	movs r1, #12
 	orrs r0, r1
@@ -17233,7 +17233,7 @@ _080273C8:
 	adds r4, #8
 	adds r0, r4, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	adds r2, r5, #0
 	adds r2, #46
 	ldrb r0, [r2, #0]
@@ -17272,7 +17272,7 @@ _08027408:
 	adds r4, #8
 	adds r0, r4, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	adds r2, r5, #0
 	adds r2, #46
 	ldrb r0, [r2, #0]
@@ -18077,7 +18077,7 @@ _08027926:
 	subs r4, #65
 	adds r0, r4, #0
 	movs r1, #0
-	bl sub_0807BC2C
+	bl NcdInitSprite
 	mov r2, r8
 	adds r2, #78
 	ldrb r1, [r2, #0]

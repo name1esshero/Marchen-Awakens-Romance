@@ -258,7 +258,7 @@ docs-fetch: build/published-docs/.git
 # The matching mar.gba is never patched or used as an English build input.
 ENGLISH_DIR := build/english
 ENGLISH_OBJS := $(ENGLISH_DIR)/dialogue_bridge.o $(ENGLISH_DIR)/dialogue_runtime.o \
-                $(ENGLISH_DIR)/dialogue_original.o $(ENGLISH_DIR)/mappings.o
+                $(ENGLISH_DIR)/dialogue_original.o $(ENGLISH_DIR)/mappings.o $(ENGLISH_DIR)/system_graphics.o $(ENGLISH_DIR)/effect_graphics.o
 .PHONY: english
 english: mar_english.gba
 
@@ -287,8 +287,30 @@ $(ENGLISH_DIR)/mappings.o: $(ENGLISH_DIR)/mappings.c include/english.h
 	$(CC1) $(CC1FLAGS) $(ENGLISH_DIR)/mappings.i -o $(ENGLISH_DIR)/mappings.s
 	$(AS) $(ASFLAGS) -o $@ $(ENGLISH_DIR)/mappings.s
 
+# English artwork is compiled into a separate archive object. The matching
+# Japanese object and source PNGs are never overwritten. Directory prerequisites
+# also detect removing the last override (which must restore Japanese pixels).
+$(ENGLISH_DIR)/graphics/SYSTEM.ncd: $(BUILD)/graphics/ncd/SYSTEM.ncd $(NCD_TOOLS) \
+        tools/english_credits.py graphics/ui/source/english/credits_layouts.json \
+        $(wildcard graphics/ui/frames/*_en.png graphics/ui/cells/*/*_en.png) \
+        graphics/ui/frames $(wildcard graphics/ui/cells/*)
+	$(PYTHON) tools/sprite_sources.py build --stem SYSTEM --english
+
+$(ENGLISH_DIR)/system_graphics.o: $(ENGLISH_DIR)/graphics/SYSTEM.ncd
+	@printf '%s\n' '.section .rom.00DD69E0, "a"' '.incbin "$(ENGLISH_DIR)/graphics/SYSTEM.ncd"' > $(ENGLISH_DIR)/system_graphics.s
+	$(AS) $(ASFLAGS) -o $@ $(ENGLISH_DIR)/system_graphics.s
+
+$(ENGLISH_DIR)/graphics/EFFECT.ncd: $(BUILD)/graphics/ncd/EFFECT.ncd $(NCD_TOOLS) \
+        $(wildcard graphics/battle/effects/frames/*_en.png graphics/battle/effects/cells/*/*_en.png) \
+        graphics/battle/effects/frames $(wildcard graphics/battle/effects/cells/*)
+	$(PYTHON) tools/sprite_sources.py build --stem EFFECT --english
+
+$(ENGLISH_DIR)/effect_graphics.o: $(ENGLISH_DIR)/graphics/EFFECT.ncd
+	@printf '%s\n' '.section .rom.005AEAF0, "a"' '.incbin "$(ENGLISH_DIR)/graphics/EFFECT.ncd"' > $(ENGLISH_DIR)/effect_graphics.s
+	$(AS) $(ASFLAGS) -o $@ $(ENGLISH_DIR)/effect_graphics.s
+
 $(ENGLISH_DIR)/mar_english.elf: $(OBJS) $(ENGLISH_OBJS) ld_script.ld ld_english.ld
-	@printf '%s\n' $(filter-out $(BUILD)/src/dialogue_start.o,$(OBJS)) $(ENGLISH_OBJS) > $(ENGLISH_DIR)/objects.rsp
+	@printf '%s\n' $(filter-out $(BUILD)/src/dialogue_start.o $(BUILD)/asm/data/data_DD69E0.o $(BUILD)/asm/data/data_5AEAF0.o,$(OBJS)) $(ENGLISH_OBJS) > $(ENGLISH_DIR)/objects.rsp
 	$(LD) -T ld_english.ld --no-warn-rwx-segments -o $@ @$(ENGLISH_DIR)/objects.rsp -Map $(ENGLISH_DIR)/mar_english.map
 
 mar_english.gba: $(ENGLISH_DIR)/mar_english.elf

@@ -52,6 +52,23 @@ def audit():
             add(folder / entry['path'], 'sprite_cell_source', stem + '.NCD')
         for entry in json.loads((folder / 'manifest.json').read_text())['frames']:
             add(folder / entry['path'], 'sprite_frame_editing_view', stem + '.NCD')
+    # Only companions of build-consumed cell/frame paths count as overrides.
+    # An arbitrary *_en.png elsewhere must still fail coverage.
+    for name, record in list(expected.items()):
+        if record['role'] not in ('sprite_cell_source','sprite_frame_editing_view'):
+            continue
+        source=ROOT/name
+        variant=source.with_stem(source.stem+'_en')
+        if variant.exists():
+            import gfx
+            if gfx.read_png(str(source))[1]!=gfx.read_png(str(variant))[1]:
+                raise ValueError('English variant changes palette: '+str(variant))
+            if gfx.png_alpha(source)!=gfx.png_alpha(variant):
+                raise ValueError('English variant changes transparent palette indices: '+str(variant))
+            add(variant,'english_sprite_override',record['owner'])
+    for recipe in json.loads((ROOT/'graphics/ui/text_labels.json').read_text()):
+        if 'base' in recipe:
+            add(ROOT/'graphics/ui'/recipe['base'],'english_label_authoring_background','SYSTEM.NCD')
     for category in ('icons', 'portraits'):
         for entry in json.loads((ROOT / 'graphics' / category / 'manifest.json').read_text()):
             add(ROOT / entry['path'], category + '_editing_view', 'SYSTEM.NCD')
