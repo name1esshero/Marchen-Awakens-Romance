@@ -8,7 +8,7 @@ extern void FinishTask(void *);
 extern void *CreateTask(void *,void *,u32,s32 *,u32);
 extern void sub_08011A08(u32);
 extern void sub_08006ADC(u32,u32);
-extern u8 *sub_0800F0CC(u32);
+#include "runtime_misc.h"
 #define AT(x) __attribute__((section(".rom." x)))
 AT("00011774")
 void DialogueFinishTask(void *task)
@@ -45,9 +45,9 @@ s32 DialogueCommandShow(s32 count, const char **rows)
  DialogueStart(0,count,rows,0);
  sub_08006ADC(2,1);
  sub_08006ADC(3,1);
- sub_0800F0CC(2)[1] |= 4;
- sub_0800F0CC(3)[1] |= 4;
- sub_0800F0CC(2)[0] |= 2;
- sub_0800F0CC(3)[0] |= 2;
+ GameStateGetRecord1190(2)[1] |= 4;
+ GameStateGetRecord1190(3)[1] |= 4;
+ GameStateGetRecord1190(2)[0] |= 2;
+ GameStateGetRecord1190(3)[0] |= 2;
  return 1;
 }

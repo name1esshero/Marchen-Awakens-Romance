@@ -34,7 +34,14 @@ class EnglishBackgroundTests(unittest.TestCase):
                     expected, palette = gfx.read_png(str(ROOT/overrides[layer['image']]))
                     original, original_palette = gfx.read_png(str(ROOT/layer['image']))
                     self.assertEqual(palette, original_palette)
-                    self.assertEqual(pixels, expected)
+                    # A 4bpp map stores one palette bank per tile.  Local
+                    # colour zero therefore renders as 0, 16, 32, ... in the
+                    # editable global-index view, even though every one is
+                    # the same transparent/background slot.  English art is
+                    # free to use any equivalent bank-zero index.
+                    canonical = lambda rows: [[0 if v % 16 == 0 else v for v in row]
+                                               for row in rows]
+                    self.assertEqual(canonical(pixels), canonical(expected))
                     self.assertNotEqual(pixels, original)
 
     def test_missing_overrides_restore_original_tiles_and_map(self):

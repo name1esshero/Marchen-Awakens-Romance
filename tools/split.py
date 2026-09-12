@@ -85,6 +85,12 @@ def load_decompiled():
 
 
 def write_code(rom, layout, force_literal=(), decompiled=()):
+    # Four words in the opaque table at 0800A03C resemble ADR/shift pairs.
+    # Their apparent targets can fall inside C-owned ranges, so preserve the
+    # words as data instead of asking the assembler to resolve false labels.
+    force_literal = set(force_literal) | {
+        0x0800A03C, 0x0800A040, 0x0800A044, 0x0800A048,
+    }
     shutil.rmtree("asm/code", ignore_errors=True)
     sample_manifest = Path("sound/samples/manifest.json")
     samples = json.loads(sample_manifest.read_text()) if sample_manifest.exists() else []

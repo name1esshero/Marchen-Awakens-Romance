@@ -471,7 +471,7 @@ _0807844A:
 	.global _08078466
 _08078466:
 	adds r0, r4, #0
-	bl sub_08078DC4
+	bl SoundCallCallback5DA8
 	.global _0807846C
 _0807846C:
 	ldr r4, [r4, #52]
@@ -484,7 +484,7 @@ _08078472:
 	tst r0, r3
 	beq _080784F0
 	adds r0, r5, #0
-	bl sub_08078DD8
+	bl SoundCallCallback5DAC
 	movs r0, #128
 	strb r0, [r5, #0]
 	movs r0, #2
@@ -668,7 +668,7 @@ _0807859E:
 	tst r0, r1
 	bne _080785AE
 	adds r0, r4, #0
-	bl sub_08078DC4
+	bl SoundCallCallback5DA8
 	b _0807860A
 	.global _080785AE
 _080785AE:
@@ -1066,7 +1066,7 @@ _080787EC:
 	.global _080787F8
 _080787F8:
 	adds r0, r4, #0
-	bl sub_08078DC4
+	bl SoundCallCallback5DA8
 	movs r1, #0
 	str r1, [r4, #48]
 	ldr r3, [r5, #32]
@@ -1864,37 +1864,12 @@ _08078DBC:
 	.4byte 0x05000040  @ PLTT+0x40
 	.4byte 0x4770DF2A
 
-	.thumb_func
-	.thumb
-	.global sub_08078DC4
-sub_08078DC4:
-	push {lr}
-	ldr r1, _08078DD4
-	ldr r1, [r1, #0]
-	bl sub_08080BC4
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _08078DD4
-_08078DD4:
-	.4byte 0x03005DA8  @ IWRAM+0x5DA8
+@ 078DC4..078DD8 is decompiled as SoundCallCallback5DA8(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08078DD8
-sub_08078DD8:
-	push {lr}
-	ldr r1, _08078DE8
-	ldr r1, [r1, #0]
-	bl sub_08080BC4
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _08078DE8
-_08078DE8:
-	.4byte 0x03005DAC  @ IWRAM+0x5DAC
+@ 078DD8..078DEC is decompiled as SoundCallCallback5DAC(); see src/decompiled.json
+
+	.section .rom.00078DEC, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -2370,7 +2345,7 @@ _080790F8:
 	adds r0, r1, #1
 	str r0, [r5, #0]
 	adds r0, r7, #0
-	bl sub_08078DD8
+	bl SoundCallCallback5DAC
 	str r6, [r7, #44]
 	strb r4, [r7, #8]
 	movs r0, #128
@@ -4572,8 +4547,41 @@ _0807A078:
 _0807A080:
 	.4byte 0x03006104  @ IWRAM+0x6104
 
+@ 07A084..07A09C is decompiled as KeyInputInit(); see src/decompiled.json
+
+@ 07A09C..07A0F0 is decompiled as KeyInputPoll(); see src/decompiled.json
+
+@ 07A0F0..07A134 is decompiled as KeyInputSet(); see src/decompiled.json
+
+@ 07A134..07A160 is decompiled as KeyInputConsumePressed(); see src/decompiled.json
+
+@ 07A160..07A184 is decompiled as KeyInputAnyHeld(); see src/decompiled.json
+
+@ 07A184..07A190 is decompiled as RandomInit(); see src/decompiled.json
+
+@ 07A190..07A1BC is decompiled as BitSet(); see src/decompiled.json
+
+@ 07A1BC..07A1D8 is decompiled as BitTest(); see src/decompiled.json
+
+@ 07A1D8..07A1E4 is decompiled as RandomSeed(); see src/decompiled.json
+
+@ 07A1E4..07A1F0 is decompiled as RandomGetSeed(); see src/decompiled.json
+
+@ 07A1F0..07A210 is decompiled as Random(); see src/decompiled.json
+
+@ 07A210..07A228 is decompiled as ByteStringLength(); see src/decompiled.json
+
+@ 07A228..07A248 is decompiled as BufferXor(); see src/decompiled.json
+
+@ 07A248..07A270 is decompiled as BufferXorSeeded(); see src/decompiled.json
+
+@ 07A270..07A2A8 is decompiled as HeapInitDefault(); see src/decompiled.json
+
+@ 07A2A8..07A2EC is decompiled as HeapCreate(); see src/decompiled.json
+
+@ 07A2EC..07A2F8 is decompiled as HeapAlloc(); see src/decompiled.json
+
 	.section .rom.0007A2F8, "ax"
-	.balign 4
 	.syntax unified
 
 	.thumb_func
@@ -5028,16 +5036,53 @@ _0807A5EE:
 	pop {r1}
 	bx r1
 
-	.section .rom.0007A8C0, "ax"
-	.balign 4
-	.syntax unified
+@ 07A5FC..07A644 is decompiled as TaskManagerInit(); see src/decompiled.json
 
-	.section .rom.0007A98C, "ax"
-	.balign 4
-	.syntax unified
+@ 07A644..07A688 is decompiled as TaskManagerDestroy(); see src/decompiled.json
+
+@ 07A688..07A700 is decompiled as TaskCreateInQueue(); see src/decompiled.json
+
+@ 07A700..07A77C is decompiled as TaskCreateBefore(); see src/decompiled.json
+
+@ 07A77C..07A7AC is decompiled as CreateTask(); see src/decompiled.json
+
+@ 07A7AC..07A7C4 is decompiled as FinishTask(); see src/decompiled.json
+
+@ 07A7C4..07A868 is decompiled as TaskManagerRun(); see src/decompiled.json
+
+@ 07A868..07A86C is decompiled as TaskManagerCount(); see src/decompiled.json
+
+@ 07A86C..07A878 is decompiled as ListInit(); see src/decompiled.json
+
+@ 07A878..07A8A0 is decompiled as ListAppend(); see src/decompiled.json
+
+@ 07A8A0..07A8C0 is decompiled as ListInsertBefore(); see src/decompiled.json
+
+@ 07A8C0..07A8E4 is decompiled as ListGet(); see src/decompiled.json
+
+@ 07A8E4..07A8E8 is decompiled as ListCount(); see src/decompiled.json
+
+@ 07A8E8..07A94C is decompiled as ListSwapAdjacentIndices(); see src/decompiled.json
+
+@ 07A94C..07A98C is decompiled as ListRemove(); see src/decompiled.json
+
+@ 07A98C..07A9B8 is decompiled as ListInsertBeforeLinked(); see src/decompiled.json
+
+@ 07A9B8..07A9BC is decompiled as ListHead(); see src/decompiled.json
+
+@ 07A9BC..07A9C0 is decompiled as ListTail(); see src/decompiled.json
+
+@ 07A9C0..07A9F0 is decompiled as NfpInit(); see src/decompiled.json
+
+@ 07A9F0..07AA18 is decompiled as NfpShutdown(); see src/decompiled.json
+
 @ 07AA18..07AA30 is decompiled as NfpMountIsActive(); see src/decompiled.json
 
 @ 07AA30..07AA48 is decompiled as NfpSetMountActive(); see src/decompiled.json
+
+@ 07AA48..07AA74 is decompiled as NfpGetMountName(); see src/decompiled.json
+
+@ 07AA74..07AAA0 is decompiled as NfpSetMountName(); see src/decompiled.json
 
 @ 07AAA0..07AAB8 is decompiled as NfpGetArchiveBase(); see src/decompiled.json
 
@@ -5047,11 +5092,17 @@ _0807A5EE:
 
 @ 07AAE0..07AAF0 is decompiled as NfpGetData(); see src/decompiled.json
 
+@ 07AAF0..07AB08 is decompiled as NfpGetEntryCountByName(); see src/decompiled.json
+
 @ 07AB08..07AB14 is decompiled as NfpGetEntryCount(); see src/decompiled.json
 
 @ 07AB14..07AB70 is decompiled as NfpMount(); see src/decompiled.json
 
+@ 07AB70..07AB7C is decompiled as NfpUnmount(); see src/decompiled.json
+
 @ 07AB7C..07ABBC is decompiled as NfpFindArchive(); see src/decompiled.json
+
+@ 07ABBC..07ABF0 is decompiled as NfpCountMounted(); see src/decompiled.json
 
 @ 07ABF0..07AC28 is decompiled as NfpFindFreeSlot(); see src/decompiled.json
 
@@ -5059,16 +5110,17 @@ _0807A5EE:
 
 @ 07AC3C..07AC78 is decompiled as NfpOpenByName(); see src/decompiled.json
 
+@ 07AC78..07ACA8 is decompiled as NfpOpenByIndex(); see src/decompiled.json
+
+@ 07ACA8..07ACC4 is decompiled as NfpFindEntryByArchiveName(); see src/decompiled.json
+
 	.section .rom.0007ACC4, "ax"
-	.balign 4
 	.syntax unified
 
 	.thumb_func
 	.thumb
 	.global sub_0807ACC4
 sub_0807ACC4:
-	.global NfpFindEntryIndex
-	.thumb_set NfpFindEntryIndex, sub_0807ACC4
 	push {r4, r5, r6, r7, lr}
 	mov r7, r8
 	push {r7}
@@ -5689,7 +5741,7 @@ _0807B0BE:
 	bl sub_0807D01C
 	movs r0, #120
 	movs r1, #80
-	bl sub_0807D21C
+	bl SpriteSetViewportOrigin
 	movs r0, #0
 	bl SpriteEngineSetAllFlags10
 	movs r0, #0
@@ -5704,7 +5756,7 @@ _0807B0BE:
 	bl SpriteEngineSetBuffer8
 	movs r0, #0
 	movs r1, #0
-	bl sub_080804EC
+	bl RuntimeGetBlock6120
 	adds r0, r0, r5
 	bl SpriteEngineSetBufferC
 	ldr r1, [r4, #0]
@@ -5829,8 +5881,23 @@ _0807B204:
 _0807B220:
 	.4byte 0x03006118  @ IWRAM+0x6118
 
+@ 07B224..07B238 is decompiled as SpriteEngineGetOamEntry(); see src/decompiled.json
+
+@ 07B238..07B254 is decompiled as SpriteEngineAllocateOamEntry(); see src/decompiled.json
+
+@ 07B254..07B298 is decompiled as SpriteEngineGetOamBoundary(); see src/decompiled.json
+
+@ 07B298..07B2D8 is decompiled as SpriteEngineSetOamBoundary(); see src/decompiled.json
+
+@ 07B2D8..07B2EC is decompiled as SpriteEngineSetValue610(); see src/decompiled.json
+
+@ 07B2EC..07B300 is decompiled as SpriteEngineSetValue612(); see src/decompiled.json
+
+@ 07B300..07B314 is decompiled as SpriteEngineGetValue610(); see src/decompiled.json
+
+@ 07B314..07B32C is decompiled as SpriteEngineGetValue612(); see src/decompiled.json
+
 	.section .rom.0007B32C, "ax"
-	.balign 4
 	.syntax unified
 
 	.thumb_func
@@ -6262,10 +6329,14 @@ _0807B60A:
 _0807B614:
 	.4byte 0x0000BFFF
 
-	.section .rom.0007B64C, "ax"
-	.balign 4
-	.syntax unified
+@ 07B618..07B630 is decompiled as SpriteResourceRelease(); see src/decompiled.json
 
+@ 07B630..07B644 is decompiled as SpriteResourceSetHandle(); see src/decompiled.json
+
+@ 07B644..07B64C is decompiled as SpriteResourceGetHandle(); see src/decompiled.json
+
+	.section .rom.0007B64C, "ax"
+	.syntax unified
 	.4byte 0x6804B5F0
 	.4byte 0x480D2500
 	.4byte 0x27C04684
@@ -6274,6 +6345,7 @@ _0807B614:
 	.byte 0x01
 	.global _0807B65E
 _0807B65E:
+	.thumb
 	ldrh r0, [r4, #2]
 	adds r2, r0, #0
 	adds r1, r2, #0
@@ -6320,8 +6392,11 @@ sub_0807B67A:
 	.4byte 0x00004708
 	.4byte 0x00001FFF
 
+@ 07B6C8..07B708 is decompiled as SpriteEngineSetFlag20C(); see src/decompiled.json
+
+@ 07B708..07B728 is decompiled as SpriteEngineTestFlag20C(); see src/decompiled.json
+
 	.section .rom.0007B728, "ax"
-	.balign 4
 	.syntax unified
 
 	.thumb_func
@@ -6351,8 +6426,19 @@ _0807B744:
 _0807B748:
 	.4byte 0x0000FFFF
 
+@ 07B74C..07B760 is decompiled as SpriteEngineGetFlags20C(); see src/decompiled.json
+
+@ 07B760..07B798 is decompiled as SpriteEngineReleaseBinding(); see src/decompiled.json
+
+@ 07B798..07B7B4 is decompiled as SpriteEngineGetCounter(); see src/decompiled.json
+
+@ 07B7B4..07B7D0 is decompiled as SpriteEngineSetCounter(); see src/decompiled.json
+
+@ 07B7D0..07B7F8 is decompiled as SpriteEngineIncrementCounter(); see src/decompiled.json
+
+@ 07B7F8..07B830 is decompiled as SpriteEngineDecrementCounter(); see src/decompiled.json
+
 	.section .rom.0007B830, "ax"
-	.balign 4
 	.syntax unified
 
 	.thumb_func
@@ -6551,8 +6637,9 @@ _0807B964:
 _0807B968:
 	.4byte 0x0000061C
 
+@ 07B96C..07B9CC is decompiled as NcdRegisterResource(); see src/decompiled.json
+
 	.section .rom.0007B9CC, "ax"
-	.balign 4
 	.syntax unified
 	.4byte 0x1C04B570
 	.4byte 0x68314E0C
@@ -6570,8 +6657,22 @@ _0807B968:
 	.4byte 0x00004700
 	.4byte 0x03006118
 	.4byte 0x0000061C
+
+@ 07BA0C..07BA2C is decompiled as SpriteResourceGetLevel0(); see src/decompiled.json
+
+@ 07BA2C..07BA48 is decompiled as SpriteResourceGetEntryCount(); see src/decompiled.json
+
+@ 07BA48..07BA78 is decompiled as SpriteResourceGetLevel1(); see src/decompiled.json
+
+@ 07BA78..07BAB0 is decompiled as SpriteResourceGetLevel2(); see src/decompiled.json
+
+@ 07BAB0..07BAF8 is decompiled as SpriteResourceGetLevel3(); see src/decompiled.json
+
+@ 07BAF8..07BB48 is decompiled as SpriteResourceGetTable24(); see src/decompiled.json
+
+@ 07BB48..07BB98 is decompiled as SpriteResourceGetTable28(); see src/decompiled.json
+
 	.section .rom.0007BB98, "ax"
-	.balign 4
 	.syntax unified
 
 	.thumb_func
@@ -7122,8 +7223,11 @@ _0807BF52:
 _0807BF5C:
 	.4byte 0x03006118  @ IWRAM+0x6118
 
+@ 07BF60..07BF80 is decompiled as NcdSpriteCopy(); see src/decompiled.json
+
+@ 07BF80..07BFD0 is decompiled as NcdSpriteDeepCopy(); see src/decompiled.json
+
 	.section .rom.0007BFD0, "ax"
-	.balign 4
 	.syntax unified
 
 	.thumb_func
@@ -8885,8 +8989,9 @@ _0807CBFC:
 _0807CC00:
 	.4byte 0x03006118  @ IWRAM+0x6118
 
+@ 07CC04..07CC18 is decompiled as SpriteEngineGetBuffer4Entry(); see src/decompiled.json
+
 	.section .rom.0007CC18, "ax"
-	.balign 4
 	.syntax unified
 
 	.thumb_func
@@ -9024,8 +9129,24 @@ _0807CCE0:
 	bx r1
 	.byte 0x00
 	.byte 0x00
+
+@ 07CCEC..07CD24 is decompiled as SpriteEngineSetFlag10(); see src/decompiled.json
+
+@ 07CD24..07CD3C is decompiled as SpriteEngineTestFlag10(); see src/decompiled.json
+
+@ 07CD3C..07CD5C is decompiled as SpriteEngineSetAllFlags10(); see src/decompiled.json
+
+@ 07CD5C..07CD68 is decompiled as SpriteEngineGetFlags10(); see src/decompiled.json
+
+@ 07CD68..07CD9C is decompiled as SpriteEngineSetFlag14(); see src/decompiled.json
+
+@ 07CD9C..07CDB4 is decompiled as SpriteEngineTestFlag14(); see src/decompiled.json
+
+@ 07CDB4..07CDD4 is decompiled as SpriteEngineSetAllFlags14(); see src/decompiled.json
+
+@ 07CDD4..07CDE0 is decompiled as SpriteEngineGetFlags14(); see src/decompiled.json
+
 	.section .rom.0007CDE0, "ax"
-	.balign 4
 	.syntax unified
 
 	.thumb_func
@@ -9494,27 +9615,10 @@ sub_0807D1A0:
 	.4byte 0x4700BC01
 	.4byte 0x03006118
 
-	.thumb_func
-	.thumb
-	.global sub_0807D21C
-sub_0807D21C:
-	push {r4, lr}
-	ldr r2, _0807D238
-	ldr r3, [r2, #0]
-	movs r4, #164
-	lsls r4, r4, #1
-	adds r2, r3, r4
-	strh r0, [r2, #0]
-	movs r2, #165
-	lsls r2, r2, #1
-	adds r0, r3, r2
-	strh r1, [r0, #0]
-	pop {r4}
-	pop {r0}
-	bx r0
-	.global _0807D238
-_0807D238:
-	.4byte 0x03006118  @ IWRAM+0x6118
+@ 07D21C..07D23C is decompiled as SpriteSetViewportOrigin(); see src/decompiled.json
+
+	.section .rom.0007D23C, "ax"
+	.syntax unified
 	.4byte 0x4A07B510
 	.4byte 0x24A46813
 	.4byte 0x191A0064
@@ -9614,18 +9718,35 @@ _0807D238:
 	.4byte 0x08F28860
 	.4byte 0x03006118
 
-	.section .rom.0007D444, "ax"
-	.balign 4
-	.syntax unified
-	.global _0807D3F6
-	.thumb_set _0807D3F6, SpriteEngineGetBuffer4 + 2
+@ 07D3C4..07D3D0 is decompiled as SpriteEngineGetBuffer8(); see src/decompiled.json
 
-	.section .rom.0007D4C0, "ax"
-	.balign 4
-	.syntax unified
+@ 07D3D0..07D3DC is decompiled as SpriteEngineSetBuffer8(); see src/decompiled.json
+
+@ 07D3DC..07D3E8 is decompiled as SpriteEngineGetBufferC(); see src/decompiled.json
+
+@ 07D3E8..07D3F4 is decompiled as SpriteEngineSetBufferC(); see src/decompiled.json
+
+@ 07D3F4..07D400 is decompiled as SpriteEngineGetBuffer4(); see src/decompiled.json
+
+@ 07D400..07D40C is decompiled as SpriteEngineSetBuffer4(); see src/decompiled.json
+
+@ 07D40C..07D430 is decompiled as SpriteEngineSetCopyCallback620(); see src/decompiled.json
+
+@ 07D430..07D444 is decompiled as SpriteEngineGetCopyCallback620(); see src/decompiled.json
+
+@ 07D444..07D47C is decompiled as SpriteEngineCopyToBuffer8(); see src/decompiled.json
+
+@ 07D47C..07D488 is decompiled as SpriteEngineDefaultCopy620(); see src/decompiled.json
+
+@ 07D488..07D4AC is decompiled as SpriteEngineSetCopyCallback624(); see src/decompiled.json
+
+@ 07D4AC..07D4C0 is decompiled as SpriteEngineGetCopyCallback624(); see src/decompiled.json
+
+@ 07D4C0..07D4EC is decompiled as SpriteEngineCopyToBufferC(); see src/decompiled.json
+
+@ 07D4EC..07D4F8 is decompiled as SpriteEngineDefaultCopy624(); see src/decompiled.json
 
 	.section .rom.0007D4F8, "ax"
-	.balign 4
 	.syntax unified
 
 	.thumb_func
@@ -9714,7 +9835,7 @@ _0807D53C:
 	lsls r4, r4, #19
 	movs r0, #0
 	movs r1, #0
-	bl sub_080804EC
+	bl RuntimeGetBlock6120
 	adds r1, r0, #0
 	movs r2, #128
 	lsls r2, r2, #3
@@ -9732,7 +9853,7 @@ _0807D5AC:
 	lsls r4, r4, #19
 	movs r0, #0
 	movs r1, #1
-	bl sub_080804EC
+	bl RuntimeGetBlock6120
 	adds r1, r0, #0
 	movs r2, #128
 	lsls r2, r2, #3
@@ -10004,8 +10125,9 @@ _0807D8EA:
 	.4byte 0xBC021400
 	.4byte 0x00004708
 
+@ 07D92C..07D944 is decompiled as SpriteMathDivide65536ByS16(); see src/decompiled.json
+
 	.section .rom.0007D944, "ax"
-	.balign 4
 	.syntax unified
 
 	.thumb_func
@@ -10263,8 +10385,9 @@ sub_0807DB12:
 	.4byte 0x08F28860
 	.4byte 0x00000FFF
 
+@ 07DB4C..07DB54 is decompiled as SpriteRecordSizeForCount(); see src/decompiled.json
+
 	.section .rom.0007DB54, "ax"
-	.balign 4
 	.syntax unified
 
 	.thumb_func
@@ -12216,7 +12339,7 @@ _0807E8BC:
 	str r5, [r1, #12]
 	bl sub_0807EC58
 	movs r0, #0
-	bl sub_0807E964
+	bl VmAddToField220
 	movs r0, #0
 	b _0807E952
 	.global _0807E8F0
@@ -12274,7 +12397,7 @@ _0807E93A:
 	.global _0807E948
 _0807E948:
 	movs r0, #0
-	bl sub_0807E964
+	bl VmAddToField220
 	movs r0, #1
 	negs r0, r0
 	.global _0807E952
@@ -12290,23 +12413,10 @@ _0807E952:
 _0807E960:
 	.4byte 0x0300611C  @ IWRAM+0x611C
 
-	.thumb_func
-	.thumb
-	.global sub_0807E964
-sub_0807E964:
-	ldr r1, _0807E978
-	ldr r1, [r1, #0]
-	ldr r2, [r1, #12]
-	movs r1, #136
-	lsls r1, r1, #2
-	adds r2, r2, r1
-	ldr r1, [r2, #0]
-	adds r1, r1, r0
-	str r1, [r2, #0]
-	bx lr
-	.global _0807E978
-_0807E978:
-	.4byte 0x0300611C  @ IWRAM+0x611C
+@ 07E964..07E97C is decompiled as VmAddToField220(); see src/decompiled.json
+
+	.section .rom.0007E97C, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -13271,7 +13381,7 @@ _0807F102:
 	bne _0807F102
 	.global _0807F11A
 _0807F11A:
-	bl sub_0807F274
+	bl VmGetField10
 	adds r5, r0, #0
 	movs r4, #0
 	cmp r4, r5
@@ -13285,7 +13395,7 @@ _0807F126:
 	blt _0807F126
 	.global _0807F132
 _0807F132:
-	bl sub_0807F284
+	bl VmGetField12
 	adds r5, r0, #0
 	movs r4, #0
 	cmp r4, r5
@@ -13424,35 +13534,12 @@ _0807F26C:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_0807F274
-sub_0807F274:
-	ldr r0, _0807F280
-	ldr r0, [r0, #0]
-	ldr r0, [r0, #12]
-	ldrh r0, [r0, #16]
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _0807F280
-_0807F280:
-	.4byte 0x0300611C  @ IWRAM+0x611C
+@ 07F274..07F284 is decompiled as VmGetField10(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0807F284
-sub_0807F284:
-	ldr r0, _0807F290
-	ldr r0, [r0, #0]
-	ldr r0, [r0, #12]
-	ldrh r0, [r0, #18]
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _0807F290
-_0807F290:
-	.4byte 0x0300611C  @ IWRAM+0x611C
+@ 07F284..07F294 is decompiled as VmGetField12(); see src/decompiled.json
+
+	.section .rom.0007F294, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -13766,14 +13853,29 @@ _0807F4D4:
 	.4byte 0xBC70FF65
 	.4byte 0x4708BC02
 
+@ 07F518..07F52C is decompiled as ScriptReadU8(); see src/decompiled.json
+
+@ 07F52C..07F548 is decompiled as ScriptReadU16(); see src/decompiled.json
+
+@ 07F548..07F570 is decompiled as ScriptReadU32(); see src/decompiled.json
+
+@ 07F570..07F598 is decompiled as ScriptReadNextU8(); see src/decompiled.json
+
+@ 07F598..07F5C0 is decompiled as ScriptReadNextU16(); see src/decompiled.json
+
+@ 07F5C0..07F5E8 is decompiled as ScriptReadNextU32(); see src/decompiled.json
+
+@ 07F5E8..07F608 is decompiled as ScriptPushU32(); see src/decompiled.json
+
+@ 07F608..07F624 is decompiled as ScriptPopU32(); see src/decompiled.json
+
 	.section .rom.0007F624, "ax"
-	.balign 4
 	.syntax unified
 
 	.thumb_func
 	.thumb
-	.global sub_0807F624
-sub_0807F624:
+	.global ScriptResolveOperand
+ScriptResolveOperand:
 	push {lr}
 	adds r2, r0, #0
 	movs r0, #128
@@ -13814,768 +13916,114 @@ _0807F65A:
 _0807F660:
 	.4byte 0x0300611C  @ IWRAM+0x611C
 
-	.thumb_func
-	.thumb
-	.global sub_0807F664
-sub_0807F664:
-	push {r4, r5, r6, lr}
-	adds r6, r1, #0
-	movs r4, #0
-	ldr r5, _0807F6C0
-	.global _0807F66C
-_0807F66C:
-	ldr r0, [r5, #0]
-	ldr r0, [r0, #12]
-	ldr r0, [r0, #12]
-	lsls r1, r4, #2
-	adds r0, #72
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	bl ScriptPushU32
-	adds r4, #1
-	cmp r4, #15
-	ble _0807F66C
-	ldr r4, _0807F6C0
-	ldr r0, [r4, #0]
-	ldr r0, [r0, #12]
-	ldr r0, [r0, #12]
-	adds r0, #168
-	ldrh r0, [r0, #0]
-	bl ScriptPushU32
-	ldr r0, [r4, #0]
-	ldr r0, [r0, #12]
-	ldr r0, [r0, #12]
-	ldr r0, [r0, #68]
-	bl ScriptPushU32
-	ldr r3, [r4, #0]
-	ldr r0, [r3, #12]
-	ldr r1, [r0, #12]
-	adds r1, #168
-	ldrh r2, [r1, #0]
-	movs r0, #1
-	orrs r0, r2
-	strh r0, [r1, #0]
-	ldr r0, [r3, #12]
-	ldr r0, [r0, #12]
-	str r6, [r0, #68]
-	movs r0, #1
-	pop {r4, r5, r6}
-	pop {r1}
-	bx r1
+@ 07F664..07F6C4 is decompiled as ScriptPushFrameAndJump(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0807F6BE
-sub_0807F6BE:
-	movs r0, r0
-	.global _0807F6C0
-_0807F6C0:
-	.4byte 0x0300611C  @ IWRAM+0x611C
+@ 07F6C4..07F6E4 is decompiled as ScriptCmdJumpRelative(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0807F6C4
-sub_0807F6C4:
-	push {lr}
-	bl ScriptReadNextU16
-	ldr r1, _0807F6E0
-	ldr r1, [r1, #0]
-	ldr r1, [r1, #12]
-	ldr r2, [r1, #12]
-	ldr r1, [r2, #68]
-	adds r1, r1, r0
-	str r1, [r2, #68]
-	movs r0, #1
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _0807F6E0
-_0807F6E0:
-	.4byte 0x0300611C  @ IWRAM+0x611C
+@ 07F6E4..07F700 is decompiled as ScriptCmdJump(); see src/decompiled.json
 
-	.section .rom.0007F96C, "ax"
-	.balign 4
+@ 07F700..07F730 is decompiled as ScriptCmdJumpIfZero(); see src/decompiled.json
+
+@ 07F730..07F75C is decompiled as ScriptCmdCall(); see src/decompiled.json
+
+@ 07F75C..07F778 is decompiled as ScriptCmdReturn(); see src/decompiled.json
+
+@ 07F778..07F7C0 is decompiled as ScriptCmdSwitch(); see src/decompiled.json
+
+@ 07F7C0..07F7E8 is decompiled as ScriptCmdCopy(); see src/decompiled.json
+
+@ 07F7E8..07F808 is decompiled as ScriptCmdSetImmediate(); see src/decompiled.json
+
+@ 07F808..07F838 is decompiled as ScriptCmdSetBytecodeAddress(); see src/decompiled.json
+
+@ 07F838..07F850 is decompiled as ScriptCmdPushOperand(); see src/decompiled.json
+
+@ 07F850..07F860 is decompiled as ScriptCmdPushImmediate(); see src/decompiled.json
+
+@ 07F860..07F87C is decompiled as ScriptCmdPopOperand(); see src/decompiled.json
+
+@ 07F87C..07F8A8 is decompiled as ScriptCmdAdd(); see src/decompiled.json
+
+@ 07F8A8..07F8CC is decompiled as ScriptCmdAddImmediate(); see src/decompiled.json
+
+@ 07F8CC..07F8F8 is decompiled as ScriptCmdSubtract(); see src/decompiled.json
+
+@ 07F8F8..07F91C is decompiled as ScriptCmdSubtractImmediate(); see src/decompiled.json
+
+@ 07F91C..07F948 is decompiled as ScriptCmdMultiply(); see src/decompiled.json
+
+@ 07F948..07F96C is decompiled as ScriptCmdMultiplyImmediate(); see src/decompiled.json
+
+@ 07F96C..07F9A4 is decompiled as ScriptCmdDivide(); see src/decompiled.json
+
+@ 07F9A4..07F9D8 is decompiled as ScriptCmdDivideImmediate(); see src/decompiled.json
+
+@ 07F9D8..07FA10 is decompiled as ScriptCmdModulo(); see src/decompiled.json
+
+@ 07FA10..07FA44 is decompiled as ScriptCmdModuloImmediate(); see src/decompiled.json
+
+@ 07FA44..07FA5C is decompiled as ScriptCmdIncrement(); see src/decompiled.json
+
+@ 07FA5C..07FA74 is decompiled as ScriptCmdDecrement(); see src/decompiled.json
+
+@ 07FA74..07FA8C is decompiled as ScriptCmdNegate(); see src/decompiled.json
+
+@ 07FA8C..07FAB8 is decompiled as ScriptCmdBitAnd(); see src/decompiled.json
+
+@ 07FAB8..07FADC is decompiled as ScriptCmdBitAndImmediate(); see src/decompiled.json
+
+@ 07FADC..07FB08 is decompiled as ScriptCmdBitOr(); see src/decompiled.json
+
+@ 07FB08..07FB2C is decompiled as ScriptCmdBitOrImmediate(); see src/decompiled.json
+
+@ 07FB2C..07FB58 is decompiled as ScriptCmdBitXor(); see src/decompiled.json
+
+@ 07FB58..07FB7C is decompiled as ScriptCmdBitXorImmediate(); see src/decompiled.json
+
+@ 07FB7C..07FB94 is decompiled as ScriptCmdBitNot(); see src/decompiled.json
+
+@ 07FB94..07FBCC is decompiled as ScriptCmdLogicalAnd(); see src/decompiled.json
+
+@ 07FBCC..07FBFC is decompiled as ScriptCmdLogicalAndImmediate(); see src/decompiled.json
+
+@ 07FBFC..07FC34 is decompiled as ScriptCmdLogicalOr(); see src/decompiled.json
+
+@ 07FC34..07FC64 is decompiled as ScriptCmdLogicalOrImmediate(); see src/decompiled.json
+
+@ 07FC64..07FC84 is decompiled as ScriptCmdLogicalNot(); see src/decompiled.json
+
+@ 07FC84..07FC9C is decompiled as ScriptCmdSignBit(); see src/decompiled.json
+
+@ 07FC9C..07FCBC is decompiled as ScriptCmdLessThanOrEqualZero(); see src/decompiled.json
+
+@ 07FCBC..07FCDC is decompiled as ScriptCmdGreaterThanZero(); see src/decompiled.json
+
+@ 07FCDC..07FCF4 is decompiled as ScriptCmdGreaterThanOrEqualZero(); see src/decompiled.json
+
+@ 07FCF4..07FD14 is decompiled as ScriptCmdEqualZero(); see src/decompiled.json
+
+@ 07FD14..07FD30 is decompiled as ScriptCmdNotEqualZero(); see src/decompiled.json
+
+@ 07FD30..07FD58 is decompiled as ScriptCmdSetCallback(); see src/decompiled.json
+
+@ 07FD58..07FD88 is decompiled as ScriptCmdRunCallback(); see src/decompiled.json
+
+@ 07FD88..07FDD4 is decompiled as ScriptRestoreFrame(); see src/decompiled.json
+
+@ 07FDD4..07FDF4 is decompiled as ScriptCmdClearFrameFlag(); see src/decompiled.json
+
+@ 07FDF4..07FE10 is decompiled as ScriptCmdSetFrameFlag(); see src/decompiled.json
+
+@ 07FE10..07FE44 is decompiled as ScriptCmdReadContextField14(); see src/decompiled.json
+
+@ 07FE44..07FE7C is decompiled as ScriptCmdReadContextField114(); see src/decompiled.json
+
+@ 07FE7C..07FEB0 is decompiled as ScriptCmdReadTable38Field(); see src/decompiled.json
+
+@ 07FEB0..07FEE4 is decompiled as ScriptCmdReadTable3CField(); see src/decompiled.json
+
+	.section .rom.0007FEE4, "ax"
 	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_0807F96C
-sub_0807F96C:
-	push {r4, r5, lr}
-	bl ScriptReadNextU8
-	adds r4, r0, #0
-	bl ScriptReadNextU8
-	bl sub_0807F624
-	ldr r5, [r0, #0]
-	cmp r5, #0
-	beq _0807F998
-	adds r0, r4, #0
-	bl sub_0807F624
-	adds r4, r0, #0
-	ldr r0, [r4, #0]
-	adds r1, r5, #0
-	bl sub_08080BFC
-	str r0, [r4, #0]
-	movs r0, #1
-	b _0807F99C
-	.global _0807F998
-_0807F998:
-	movs r0, #1
-	negs r0, r0
-	.global _0807F99C
-_0807F99C:
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807F9A4
-sub_0807F9A4:
-	push {r4, r5, lr}
-	bl ScriptReadNextU8
-	adds r4, r0, #0
-	bl ScriptReadNextU32
-	adds r5, r0, #0
-	cmp r5, #0
-	beq _0807F9CC
-	adds r0, r4, #0
-	bl sub_0807F624
-	adds r4, r0, #0
-	ldr r0, [r4, #0]
-	adds r1, r5, #0
-	bl sub_08080BFC
-	str r0, [r4, #0]
-	movs r0, #1
-	b _0807F9D0
-	.global _0807F9CC
-_0807F9CC:
-	movs r0, #1
-	negs r0, r0
-	.global _0807F9D0
-_0807F9D0:
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807F9D8
-sub_0807F9D8:
-	push {r4, r5, lr}
-	bl ScriptReadNextU8
-	adds r4, r0, #0
-	bl ScriptReadNextU8
-	bl sub_0807F624
-	ldr r5, [r0, #0]
-	cmp r5, #0
-	beq _0807FA04
-	adds r0, r4, #0
-
-	.thumb_func
-	.thumb
-	.global sub_0807F9F0
-sub_0807F9F0:
-	bl sub_0807F624
-	adds r4, r0, #0
-	ldr r0, [r4, #0]
-	adds r1, r5, #0
-	bl sub_08080C94
-	str r0, [r4, #0]
-	movs r0, #1
-	b _0807FA08
-	.global _0807FA04
-_0807FA04:
-	movs r0, #1
-	negs r0, r0
-	.global _0807FA08
-_0807FA08:
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807FA10
-sub_0807FA10:
-	push {r4, r5, lr}
-	bl ScriptReadNextU8
-	adds r4, r0, #0
-	bl ScriptReadNextU32
-	adds r5, r0, #0
-	cmp r5, #0
-	beq _0807FA38
-	adds r0, r4, #0
-	bl sub_0807F624
-	adds r4, r0, #0
-	ldr r0, [r4, #0]
-	adds r1, r5, #0
-	bl sub_08080C94
-	str r0, [r4, #0]
-	movs r0, #1
-	b _0807FA3C
-	.global _0807FA38
-_0807FA38:
-	movs r0, #1
-	negs r0, r0
-	.global _0807FA3C
-_0807FA3C:
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.section .rom.0007FB58, "ax"
-	.balign 4
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_0807FB58
-sub_0807FB58:
-	push {r4, r5, lr}
-	bl ScriptReadNextU8
-	adds r4, r0, #0
-	bl ScriptReadNextU32
-	adds r5, r0, #0
-	adds r0, r4, #0
-	bl sub_0807F624
-	ldr r1, [r0, #0]
-	eors r1, r5
-	str r1, [r0, #0]
-	movs r0, #1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807FB7C
-sub_0807FB7C:
-	push {lr}
-	bl ScriptReadNextU8
-	bl sub_0807F624
-	ldr r1, [r0, #0]
-	mvns r1, r1
-	str r1, [r0, #0]
-	movs r0, #1
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807FB94
-sub_0807FB94:
-	push {r4, r5, lr}
-	bl ScriptReadNextU8
-	adds r4, r0, #0
-	bl ScriptReadNextU8
-	adds r5, r0, #0
-	adds r0, r4, #0
-	bl sub_0807F624
-	adds r4, r0, #0
-	adds r0, r5, #0
-	bl sub_0807F624
-	adds r1, r0, #0
-	movs r2, #0
-	ldr r0, [r4, #0]
-	cmp r0, #0
-	beq _0807FBC2
-	ldr r1, [r1, #0]
-	negs r0, r1
-	orrs r0, r1
-	lsrs r2, r0, #31
-	.global _0807FBC2
-_0807FBC2:
-	str r2, [r4, #0]
-	movs r0, #1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_0807FBCC
-sub_0807FBCC:
-	push {r4, r5, lr}
-	bl ScriptReadNextU8
-	adds r4, r0, #0
-	bl ScriptReadNextU32
-	adds r5, r0, #0
-	adds r0, r4, #0
-	bl sub_0807F624
-	adds r1, r0, #0
-	movs r2, #0
-	ldr r0, [r1, #0]
-	cmp r0, #0
-	beq _0807FBF0
-	negs r0, r5
-
-	.thumb_func
-	.thumb
-	.global sub_0807FBEC
-sub_0807FBEC:
-	orrs r0, r5
-	lsrs r2, r0, #31
-	.global _0807FBF0
-_0807FBF0:
-	str r2, [r1, #0]
-	movs r0, #1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807FBFC
-sub_0807FBFC:
-	push {r4, r5, lr}
-	bl ScriptReadNextU8
-	adds r4, r0, #0
-	bl ScriptReadNextU8
-	adds r5, r0, #0
-	adds r0, r4, #0
-	bl sub_0807F624
-	adds r4, r0, #0
-	adds r0, r5, #0
-	bl sub_0807F624
-	adds r1, r0, #0
-	movs r2, #0
-	ldr r0, [r4, #0]
-	cmp r0, #0
-	bne _0807FC28
-	ldr r0, [r1, #0]
-	cmp r0, #0
-	beq _0807FC2A
-	.global _0807FC28
-_0807FC28:
-	movs r2, #1
-	.global _0807FC2A
-_0807FC2A:
-	str r2, [r4, #0]
-	movs r0, #1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_0807FC34
-sub_0807FC34:
-	push {r4, r5, lr}
-	bl ScriptReadNextU8
-	adds r4, r0, #0
-	bl ScriptReadNextU32
-	adds r5, r0, #0
-	adds r0, r4, #0
-	bl sub_0807F624
-	adds r1, r0, #0
-	movs r2, #0
-	ldr r0, [r1, #0]
-	cmp r0, #0
-	bne _0807FC56
-	cmp r5, #0
-	beq _0807FC58
-	.global _0807FC56
-_0807FC56:
-	movs r2, #1
-	.global _0807FC58
-_0807FC58:
-	str r2, [r1, #0]
-	movs r0, #1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807FC64
-sub_0807FC64:
-	push {lr}
-	bl ScriptReadNextU8
-	bl sub_0807F624
-	adds r1, r0, #0
-	movs r2, #0
-	ldr r0, [r1, #0]
-	cmp r0, #0
-	bne _0807FC7A
-	movs r2, #1
-	.global _0807FC7A
-_0807FC7A:
-	str r2, [r1, #0]
-	movs r0, #1
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807FC84
-sub_0807FC84:
-	push {lr}
-	bl ScriptReadNextU8
-	bl sub_0807F624
-	ldr r1, [r0, #0]
-	lsrs r1, r1, #31
-	str r1, [r0, #0]
-	movs r0, #1
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807FC9C
-sub_0807FC9C:
-	push {lr}
-	bl ScriptReadNextU8
-	bl sub_0807F624
-	adds r1, r0, #0
-	movs r2, #0
-	ldr r0, [r1, #0]
-	cmp r0, #0
-	bgt _0807FCB2
-	movs r2, #1
-	.global _0807FCB2
-_0807FCB2:
-	str r2, [r1, #0]
-	movs r0, #1
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807FCBC
-sub_0807FCBC:
-	push {lr}
-	bl ScriptReadNextU8
-	bl sub_0807F624
-	adds r1, r0, #0
-	movs r2, #0
-	ldr r0, [r1, #0]
-	cmp r0, #0
-	ble _0807FCD2
-	movs r2, #1
-	.global _0807FCD2
-_0807FCD2:
-	str r2, [r1, #0]
-	movs r0, #1
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807FCDC
-sub_0807FCDC:
-	push {lr}
-	bl ScriptReadNextU8
-	bl sub_0807F624
-	ldr r1, [r0, #0]
-	mvns r1, r1
-	lsrs r1, r1, #31
-	str r1, [r0, #0]
-	movs r0, #1
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_0807FCF4
-sub_0807FCF4:
-	push {lr}
-	bl ScriptReadNextU8
-	bl sub_0807F624
-	adds r1, r0, #0
-	movs r2, #0
-	ldr r0, [r1, #0]
-	cmp r0, #0
-	bne _0807FD0A
-	movs r2, #1
-	.global _0807FD0A
-_0807FD0A:
-	str r2, [r1, #0]
-	movs r0, #1
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807FD14
-sub_0807FD14:
-	push {lr}
-	bl ScriptReadNextU8
-	bl sub_0807F624
-	ldr r2, [r0, #0]
-	negs r1, r2
-	orrs r1, r2
-	lsrs r1, r1, #31
-	str r1, [r0, #0]
-	movs r0, #1
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807FD30
-sub_0807FD30:
-	push {r4, lr}
-	bl ScriptReadNextU8
-	adds r4, r0, #0
-	bl ScriptReadNextU32
-	ldr r1, _0807FD54
-	ldr r1, [r1, #0]
-	ldr r1, [r1, #12]
-	ldr r1, [r1, #12]
-	lsls r4, r4, #2
-	adds r1, #136
-	adds r1, r1, r4
-	str r0, [r1, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
-	.global _0807FD54
-_0807FD54:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-
-	.thumb_func
-	.thumb
-	.global sub_0807FD58
-sub_0807FD58:
-	push {lr}
-	bl ScriptReadNextU8
-	adds r2, r0, #0
-	ldr r0, _0807FD7C
-	ldr r0, [r0, #0]
-	ldr r0, [r0, #12]
-	ldr r0, [r0, #12]
-	lsls r1, r2, #2
-	adds r0, #136
-	adds r0, r0, r1
-	ldr r1, [r0, #0]
-	cmp r1, #0
-	beq _0807FD80
-	adds r0, r2, #0
-	bl sub_0807F664
-	b _0807FD82
-	.global _0807FD7C
-_0807FD7C:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-	.global _0807FD80
-_0807FD80:
-	movs r0, #1
-	.global _0807FD82
-_0807FD82:
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807FD88
-sub_0807FD88:
-	push {r4, r5, r6, lr}
-	bl ScriptPopU32
-	adds r6, r0, #0
-	bl ScriptPopU32
-	ldr r2, _0807FDD0
-	ldr r1, [r2, #0]
-	ldr r1, [r1, #12]
-	ldr r1, [r1, #12]
-	adds r1, #168
-	strh r0, [r1, #0]
-	movs r4, #15
-	adds r5, r2, #0
-	.global _0807FDA4
-_0807FDA4:
-	bl ScriptPopU32
-	ldr r1, [r5, #0]
-	ldr r1, [r1, #12]
-	ldr r1, [r1, #12]
-	lsls r2, r4, #2
-	adds r1, #72
-	adds r1, r1, r2
-	str r0, [r1, #0]
-	subs r4, #1
-	cmp r4, #0
-	bge _0807FDA4
-	ldr r0, _0807FDD0
-	ldr r0, [r0, #0]
-	ldr r0, [r0, #12]
-	ldr r0, [r0, #12]
-	str r6, [r0, #68]
-	movs r0, #1
-	pop {r4, r5, r6}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _0807FDD0
-_0807FDD0:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-	.4byte 0x68004805
-	.4byte 0x68C168C0
-	.4byte 0x880A31A8
-	.4byte 0x40104803
-	.4byte 0x20018008
-	.4byte 0x00004770
-	.4byte 0x0300611C
-	.4byte 0x0000FFFE
-	.4byte 0x68004805
-	.4byte 0x68C168C0
-	.4byte 0x880A31A8
-	.4byte 0x43102001
-	.4byte 0x20018008
-	.4byte 0x00004770
-	.4byte 0x0300611C
-
-	.thumb_func
-	.thumb
-	.global sub_0807FE10
-sub_0807FE10:
-	push {r4, r5, lr}
-	bl ScriptReadNextU16
-	adds r4, r0, #0
-	bl ScriptReadNextU8
-	bl sub_0807F624
-	adds r5, r0, #0
-	ldr r0, _0807FE40
-	ldr r0, [r0, #0]
-	lsls r4, r4, #3
-	adds r4, #20
-	ldr r0, [r0, #12]
-	adds r0, r0, r4
-	ldr r1, [r5, #0]
-	bl sub_0807F1F8
-	str r0, [r5, #0]
-	movs r0, #1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _0807FE40
-_0807FE40:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-
-	.thumb_func
-	.thumb
-	.global sub_0807FE44
-sub_0807FE44:
-	push {r4, r5, lr}
-	bl ScriptReadNextU16
-	adds r4, r0, #0
-	bl ScriptReadNextU8
-	bl sub_0807F624
-	adds r5, r0, #0
-	ldr r0, _0807FE78
-
-	.thumb_func
-	.thumb
-	.global sub_0807FE58
-sub_0807FE58:
-	ldr r0, [r0, #0]
-	lsls r4, r4, #3
-	movs r1, #138
-	lsls r1, r1, #1
-	adds r4, r4, r1
-	ldr r0, [r0, #12]
-	adds r0, r0, r4
-	ldr r1, [r5, #0]
-	bl sub_0807F1F8
-	str r0, [r5, #0]
-	movs r0, #1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _0807FE78
-_0807FE78:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-
-	.thumb_func
-	.thumb
-	.global sub_0807FE7C
-sub_0807FE7C:
-	push {r4, r5, lr}
-	bl ScriptReadNextU8
-	adds r4, r0, #0
-	bl ScriptReadNextU8
-	bl sub_0807F624
-	adds r5, r0, #0
-	ldr r0, _0807FEAC
-	ldr r0, [r0, #0]
-	ldr r0, [r0, #12]
-	ldr r0, [r0, #12]
-	lsls r4, r4, #3
-	ldr r0, [r0, #56]
-	adds r0, r0, r4
-	ldr r1, [r5, #0]
-	bl sub_0807F1F8
-	str r0, [r5, #0]
-	movs r0, #1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.global _0807FEAC
-_0807FEAC:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-
-	.thumb_func
-	.thumb
-	.global sub_0807FEB0
-sub_0807FEB0:
-	push {r4, r5, lr}
-	bl ScriptReadNextU8
-	adds r4, r0, #0
-	bl ScriptReadNextU8
-	bl sub_0807F624
-	adds r5, r0, #0
-	ldr r0, _0807FEE0
-	ldr r0, [r0, #0]
-	ldr r0, [r0, #12]
-	ldr r0, [r0, #12]
-	lsls r4, r4, #3
-	ldr r0, [r0, #60]
-	adds r0, r0, r4
-	ldr r1, [r5, #0]
-	bl sub_0807F1F8
-	str r0, [r5, #0]
-	movs r0, #1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.global _0807FEE0
-_0807FEE0:
-	.4byte 0x0300611C  @ IWRAM+0x611C
 
 	.thumb_func
 	.thumb
@@ -14591,10 +14039,10 @@ sub_0807FEE4:
 	bl ScriptReadNextU8
 	str r0, [sp, #0]
 	adds r0, r4, #0
-	bl sub_0807F624
+	bl ScriptResolveOperand
 	mov r9, r0
 	ldr r0, [sp, #0]
-	bl sub_0807F624
+	bl ScriptResolveOperand
 	mov r1, r9
 	ldr r5, [r1, #0]
 	ldr r7, [r0, #0]
@@ -14682,35 +14130,10 @@ _0807FF86:
 _0807FF9C:
 	.4byte 0x0300611C  @ IWRAM+0x611C
 
-	.thumb_func
-	.thumb
-	.global sub_0807FFA0
-sub_0807FFA0:
-	push {r4, lr}
-	bl ScriptReadNextU8
-	bl sub_0807F624
-	adds r4, r0, #0
-	ldr r1, [r4, #0]
-	cmp r1, #0
-	beq _0807FFC2
-	ldr r0, _0807FFCC
-	ldr r0, [r0, #0]
-	ldr r0, [r0, #12]
-	ldr r0, [r0, #0]
-	bl HeapFree
-	movs r0, #0
-	str r0, [r4, #0]
-	.global _0807FFC2
-_0807FFC2:
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _0807FFCC
-_0807FFCC:
-	.4byte 0x0300611C  @ IWRAM+0x611C
+@ 07FFA0..07FFD0 is decompiled as ScriptCmdFreeString(); see src/decompiled.json
+
+	.section .rom.0007FFD0, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -14785,24 +14208,10 @@ _0808003C:
 _08080048:
 	.4byte 0x0300611C  @ IWRAM+0x611C
 
-	.thumb_func
-	.thumb
-	.global sub_0808004C
-sub_0808004C:
-	push {lr}
-	bl ScriptPopFrame
-	ldr r0, _08080064
-	ldr r0, [r0, #0]
-	ldr r0, [r0, #12]
-	movs r1, #133
-	lsls r1, r1, #2
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	pop {r1}
-	bx r1
-	.global _08080064
-_08080064:
-	.4byte 0x0300611C  @ IWRAM+0x611C
+@ 08004C..080068 is decompiled as ScriptCmdRestoreFrameAndGetResult(); see src/decompiled.json
+
+	.section .rom.00080068, "ax"
+	.syntax unified
 	.4byte 0x42402001
 	.4byte 0x00004770
 
@@ -14849,5 +14258,5 @@ _0808008A:
 	cmp r1, #0
 	beq _080800C4
 	adds r0, r5, #0
-	bl sub_0807F664
+	bl ScriptPushFrameAndJump
 	b _080800F2

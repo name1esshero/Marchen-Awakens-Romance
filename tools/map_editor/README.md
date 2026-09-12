@@ -208,6 +208,31 @@ The normal field loader (`KmpLoadField`, 080032B8) loads one KMP twice: plane 0 
 
 The lower-level loader at 08003178 accepts a VRAM destination, viewport slot, plane, palette-bank offset, tile-index offset, and copy flags. It stores the offsets at viewport +0C/+0E. The regular renderer at 08002700/0800274A adds their packed value to each u16 screen entry. Special-scene resource sharing remains to be traced; tile 1023 is not automatically a blank sentinel in this loop.
 
+The two renderer bodies now establish what the viewport mode changes. Mode zero
+copies a clipped 32×32 window into a 2,048-byte regular-BG screen buffer. Each
+u16 entry retains tile bits 0–9, horizontal/vertical flip bits 10–11, and
+palette-bank bits 12–15 after the viewport offsets are added. Nonzero mode
+copies the low byte of each source entry into a 1,024-byte 32×32 affine-BG map;
+the high tile, flip, and palette bits are discarded by that path. Both paths
+select the source with `planeOffsets[viewport->plane]`. BG register assignment,
+priority, and blending are still controlled outside these copy loops.
+
+### Tile attributes and collision evidence
+
+KMP offset +`0xAC` points to one row-major attribute value per 8×8 map tile.
+Header field +`0xBA` selects u8 or u16 values. `KmpReadAttribute` converts pixel
+coordinates to tile coordinates, checks the map bounds, and reads this array;
+it returns -1 outside the map. The attribute plane is independent of the visual
+planes at +`0x9C`, so changing artwork does not itself change movement data.
+
+The procedural connection helper at 08072130 samples the four neighboring
+attributes. Values 400–499 and 5400–5499 are accepted for its connection mask.
+That proves those ranges have traversal/connectivity meaning in generated-map
+logic, but it does not yet prove a universal “walkable” rule for every field.
+The remaining work is to trace ordinary player movement, exits, and event
+dispatch and then label the full attribute dictionary. The editor therefore
+keeps attributes editable as exact numeric values rather than guessing names.
+
 ### PW scene loading context
 
 `maps/runtime_scenes.json` records the two loader calls at 08066870 and 0806688E. PW_BG01 plane 0 loads at 06000000 in viewport 0; PW_BOX plane 0 loads at 06004000 in viewport 1 with palette offset 1. Both copy tiles and palettes (flags 3) and use tile-index offset 0. The box viewport is rendered at (-60, -20) pixels. The editor catalog/load API now exposes this read-only context. It does not yet simulate BG control registers or prior VRAM contents, so unresolved tile references stay flagged.

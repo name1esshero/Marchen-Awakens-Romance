@@ -30,7 +30,7 @@ _080580D8:
 	cmp r0, #0
 	beq _0805815A
 	movs r0, #103
-	bl sub_08005E98
+	bl SoundSongStartU16
 	movs r1, #215
 	lsls r1, r1, #5
 	add r1, r8
@@ -2571,7 +2571,7 @@ sub_0805925C:
 	cmp r0, #0
 	ble _08059290
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldrh r0, [r4, #0]
 	subs r0, #1
 	strh r0, [r4, #0]
@@ -2608,7 +2608,7 @@ _08059290:
 	.global _0805929E
 _0805929E:
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldrh r0, [r4, #0]
 	subs r0, #1
 	b _0805934E
@@ -2666,7 +2666,7 @@ _080592DA:
 	cmp r1, r0
 	bge _0805932C
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldrh r0, [r4, #0]
 	adds r0, #1
 	strh r0, [r4, #0]
@@ -2731,7 +2731,7 @@ sub_08059342:
 	.global _08059344
 _08059344:
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldrh r0, [r4, #0]
 	adds r0, #1
 	.global _0805934E
@@ -2805,7 +2805,7 @@ _08059390:
 	subs r0, r1, #6
 	strh r0, [r4, #0]
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	movs r1, #0
 	ldrsh r0, [r4, r1]
 	cmp r0, #0
@@ -2879,7 +2879,7 @@ sub_08059400:
 	cmp r0, r1
 	bge _0805943E
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldrh r0, [r4, #0]
 	adds r0, #6
 
@@ -2956,7 +2956,7 @@ _0805946C:
 	cmp r0, #0
 	bne _080594A4
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r0, _080594A0
 	add r0, r8
 	ldr r1, [r0, #0]
@@ -2987,7 +2987,7 @@ _080594A4:
 	cmp r0, #0
 	bne _080594F8
 	movs r0, #104
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r3, _080594F0
 	add r3, r8
 	ldr r2, [r3, #0]
@@ -3100,7 +3100,7 @@ sub_0805956C:
 	movs r3, #0
 	bl sub_08003AE4
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r0, _080595B4
 	add r0, r8
 	strh r5, [r0, #0]
@@ -3171,7 +3171,7 @@ _080595B8:
 	movs r0, #32
 	strh r0, [r1, #0]
 	movs r0, #105
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r7, _080595F8
 	add r7, r8
 	movs r0, #96
@@ -3215,7 +3215,7 @@ _080595FC:
 	.global _08059600
 _08059600:
 	movs r0, #102
-	bl sub_08005E98
+	bl SoundSongStartU16
 	b sub_08059D28
 	.global _08059608
 _08059608:
@@ -3257,7 +3257,7 @@ _08059628:
 	cmp r6, #0
 	beq _08059668
 	movs r0, #103
-	bl sub_08005E98
+	bl SoundSongStartU16
 	strb r5, [r4, #0]
 	ldr r0, sub_08059660
 	movs r1, #129
@@ -3304,7 +3304,7 @@ sub_08059670:
 	cmp r0, #0
 	beq _080596BE
 	movs r0, #103
-	bl sub_08005E98
+	bl SoundSongStartU16
 
 	.thumb_func
 	.thumb
@@ -3366,7 +3366,7 @@ sub_080596C4:
 	cmp r5, #0
 	beq _080596EE
 	movs r0, #103
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r2, [r4, #0]
 	ldrb r1, [r2, #24]
 	movs r0, #3
@@ -3402,7 +3402,7 @@ sub_080596EC:
 	.global _080596EE
 _080596EE:
 	movs r0, #103
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r0, [r4, #0]
 	strh r5, [r0, #22]
 	.global _080596F8
@@ -3639,7 +3639,7 @@ sub_080597FC:
 	.global _08059810
 _08059810:
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldrh r0, [r4, #0]
 	adds r0, #1
 	b _08059848
@@ -3687,7 +3687,7 @@ sub_0805983C:
 	.global _0805983E
 _0805983E:
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldrh r0, [r4, #0]
 	subs r0, #1
 	.global _08059848
@@ -3729,7 +3729,7 @@ sub_08059862:
 	cmp r7, #0
 	beq sub_0805993C
 	movs r0, #105
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r0, _080598A8
 	add r0, r8
 	movs r4, #0
@@ -3974,7 +3974,7 @@ sub_08059958:
 	.global sub_08059960
 sub_08059960:
 	movs r0, #103
-	bl sub_08005E98
+	bl SoundSongStartU16
 
 	.thumb_func
 	.thumb
@@ -6287,7 +6287,7 @@ _0805A74C:
 sub_0805A754:
 	movs r2, #128
 	lsls r2, r2, #7
-	bl sub_08003784
+	bl CreateCopyTask
 	add sp, #32
 	pop {r3, r4, r5}
 	mov r8, r3
@@ -7896,7 +7896,7 @@ _0805B200:
 	ldr r3, _0805B254
 	adds r2, r7, r3
 	ldr r2, [r2, #0]
-	bl sub_08003784
+	bl CreateCopyTask
 	add sp, #104
 	pop {r3, r4, r5}
 	mov r8, r3
@@ -8484,7 +8484,7 @@ sub_0805B762:
 	cmp r1, r0
 	bge _0805B798
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldrh r0, [r4, #0]
 	adds r0, #1
 	strh r0, [r4, #0]
@@ -8539,7 +8539,7 @@ sub_0805B79C:
 	cmp r0, r1
 	bge _0805B7C4
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldrh r0, [r4, #0]
 	adds r0, #1
 	strh r0, [r4, #0]
@@ -8621,7 +8621,7 @@ _0805B826:
 	cmp r0, #0
 	ble _0805B8C0
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldrh r0, [r4, #0]
 	subs r0, #6
 	strh r0, [r4, #0]
@@ -8687,7 +8687,7 @@ sub_0805B88A:
 	cmp r0, r1
 	bge _0805B8C0
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldrh r0, [r4, #0]
 	adds r0, #6
 	strh r0, [r4, #0]
@@ -8789,7 +8789,7 @@ _0805B92C:
 	.global _0805B930
 _0805B930:
 	movs r0, #102
-	bl sub_08005E98
+	bl SoundSongStartU16
 	bl sub_0805C2FC
 	.global _0805B93A
 _0805B93A:
@@ -8799,7 +8799,7 @@ _0805B93A:
 	cmp r0, #0
 	beq _0805B960
 	movs r0, #103
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r1, _0805B95C
 	adds r0, r6, r1
 
@@ -8868,7 +8868,7 @@ _0805B9B4:
 	subs r0, r1, #1
 	strh r0, [r4, #0]
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r3, _0805B9CC
 	adds r7, r6, r3
 	movs r0, #0
@@ -9001,7 +9001,7 @@ _0805BA5E:
 	lsls r0, r0, #16
 	asrs r5, r0, #16
 	movs r0, #105
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r7, sub_0805BAD0
 	adds r4, r6, r7
 	movs r0, #0
@@ -9443,7 +9443,7 @@ sub_0805BBC2:
 	.global _0805BBCE
 _0805BBCE:
 	movs r0, #103
-	bl sub_08005E98
+	bl SoundSongStartU16
 
 	.thumb_func
 	.thumb
@@ -9517,7 +9517,7 @@ sub_0805BC22:
 	movs r3, #0
 	bl sub_08003AE4
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r1, _0805BC88
 	adds r0, r6, r1
 	strh r4, [r0, #0]
@@ -9649,7 +9649,7 @@ sub_0805BCEC:
 	cmp r0, #0
 	beq sub_0805BD28
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	movs r2, #0
 	ldr r4, _0805BD20
 	adds r1, r6, r4
@@ -9703,7 +9703,7 @@ sub_0805BD28:
 	cmp r0, #0
 	beq _0805BD74
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	movs r2, #0
 	ldr r7, _0805BD6C
 	adds r1, r6, r7
@@ -9792,7 +9792,7 @@ sub_0805BD98:
 	.global _0805BDA8
 _0805BDA8:
 	movs r0, #105
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r3, _0805BDD0
 	adds r0, r6, r3
 	ldr r0, [r0, #0]
@@ -10298,7 +10298,7 @@ _0805BF56:
 	cmp r0, #3
 	bne _0805BF90
 	movs r0, #102
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r4, _0805BF8C
 	adds r1, r6, r4
 	movs r0, #1
@@ -10346,7 +10346,7 @@ _0805BF90:
 	cmp r0, #17
 	bne _0805BFDC
 	movs r0, #102
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r2, _0805BFD8
 	adds r0, r6, r2
 	strh r4, [r0, #0]
@@ -10372,7 +10372,7 @@ _0805BFD8:
 	.global _0805BFDC
 _0805BFDC:
 	movs r0, #105
-	bl sub_08005E98
+	bl SoundSongStartU16
 	movs r7, #229
 	lsls r7, r7, #3
 	adds r0, r6, r7
@@ -10383,7 +10383,7 @@ _0805BFDC:
 	.global _0805BFF0
 _0805BFF0:
 	movs r0, #104
-	bl sub_08005E98
+	bl SoundSongStartU16
 	movs r2, #227
 	lsls r2, r2, #3
 	adds r1, r6, r2
@@ -10578,7 +10578,7 @@ _0805C12A:
 	.thumb
 	.global sub_0805C12C
 sub_0805C12C:
-	bl sub_08005E98
+	bl SoundSongStartU16
 	movs r0, #9
 	mov r2, r10
 	strh r0, [r2, #14]
@@ -11594,7 +11594,7 @@ sub_0805C896:
 	lsls r3, r3, #3
 	adds r2, r5, r3
 	ldr r2, [r2, #0]
-	bl sub_08003784
+	bl CreateCopyTask
 	ldr r4, _0805C8F8
 	adds r0, r5, r4
 	strb r6, [r0, #0]
@@ -12139,7 +12139,7 @@ _0805CBFA:
 	cmp r0, #0
 	beq _0805CC36
 	movs r0, #153
-	bl sub_08006784
+	bl GameStateTestFlagsAC
 	strb r0, [r4, #0]
 	bl sub_08055F00
 	ldr r2, _0805CC60
@@ -12893,7 +12893,7 @@ sub_0805D146:
 	.global _0805D14E
 _0805D14E:
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	movs r1, #0
 	ldrsh r0, [r4, r1]
 	lsls r0, r0, #2
@@ -12946,7 +12946,7 @@ _0805D190:
 	.global _0805D1AC
 _0805D1AC:
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	movs r2, #0
 	ldrsh r0, [r4, r2]
 	lsls r0, r0, #2
@@ -13218,7 +13218,7 @@ _0805D4D6:
 	.global _0805D4FA
 _0805D4FA:
 	movs r0, #106
-	bl sub_08005E98
+	bl SoundSongStartU16
 	b sub_0805D93C
 	.byte 0x00
 	.byte 0x00
@@ -13233,7 +13233,7 @@ _0805D50C:
 	cmp r2, r0
 	bne _0805D5F4
 	movs r0, #105
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r1, _0805D568
 	adds r0, r6, r1
 	movs r2, #0
@@ -13378,7 +13378,7 @@ _0805D5F0:
 	.global _0805D5F4
 _0805D5F4:
 	movs r0, #103
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r5, sub_0805D620
 	adds r1, r6, r5
 	ldr r2, [r1, #0]
@@ -13445,7 +13445,7 @@ _0805D64E:
 	.global _0805D660
 _0805D660:
 	movs r0, #104
-	bl sub_08005E98
+	bl SoundSongStartU16
 	movs r5, #0
 	ldr r3, _0805D6D0
 	adds r4, r6, r3
@@ -13563,7 +13563,7 @@ _0805D6FE:
 	cmp r1, r0
 	bge _0805D7A4
 	movs r0, #104
-	bl sub_08005E98
+	bl SoundSongStartU16
 	movs r5, #0
 	ldr r0, _0805D798
 	mov r8, r0
@@ -13635,7 +13635,7 @@ _0805D7A0:
 	.global _0805D7A4
 _0805D7A4:
 	movs r0, #102
-	bl sub_08005E98
+	bl SoundSongStartU16
 	b sub_0805D93C
 	.global _0805D7AC
 _0805D7AC:
@@ -13654,7 +13654,7 @@ _0805D7BA:
 	cmp r4, #0
 	beq _0805D7D8
 	movs r0, #103
-	bl sub_08005E98
+	bl SoundSongStartU16
 	adds r0, r6, #0
 	bl sub_0805E384
 	b sub_0805D93C
@@ -13664,7 +13664,7 @@ _0805D7D4:
 	.global _0805D7D8
 _0805D7D8:
 	movs r0, #103
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r5, _0805D7F8
 	adds r1, r6, r5
 	ldr r2, [r1, #0]
@@ -17034,7 +17034,7 @@ _0805F0C4:
 	ldr r3, _0805F1F4
 	adds r2, r7, r3
 	ldr r2, [r2, #0]
-	bl sub_08003784
+	bl CreateCopyTask
 	add sp, #12
 	pop {r3}
 	mov r8, r3
@@ -17745,7 +17745,7 @@ _0805F61A:
 	lsls r3, r3, #4
 	adds r2, r7, r3
 	ldr r2, [r2, #0]
-	bl sub_08003784
+	bl CreateCopyTask
 	add sp, #28
 	pop {r3, r4, r5}
 	mov r8, r3
@@ -18582,7 +18582,7 @@ _0805FD5A:
 	cmp r0, #0
 	ble _0805FD9C
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldrh r0, [r4, #0]
 	subs r0, #1
 	strh r0, [r4, #0]
@@ -18625,7 +18625,7 @@ _0805FD9C:
 	.global _0805FDAA
 _0805FDAA:
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldrh r0, [r4, #0]
 	subs r0, #1
 	b _0805FF06
@@ -18662,7 +18662,7 @@ _0805FDE2:
 	cmp r0, #6
 	bgt _0805FE24
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldrh r0, [r4, #0]
 	adds r0, #1
 	strh r0, [r4, #0]
@@ -18726,7 +18726,7 @@ _0805FE24:
 	.global _0805FE3C
 _0805FE3C:
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldrh r0, [r4, #0]
 
 	.thumb_func
@@ -18778,7 +18778,7 @@ _0805FE78:
 	.global _0805FE86
 _0805FE86:
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldrh r0, [r4, #0]
 	subs r0, #8
 
@@ -18853,7 +18853,7 @@ _0805FED0:
 	.global _0805FEE8
 _0805FEE8:
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldrh r0, [r4, #0]
 	adds r0, #8
 	strh r0, [r4, #0]
@@ -18907,7 +18907,7 @@ _0805FF28:
 	cmp r0, #5
 	bne _0805FF54
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r0, [r4, #0]
 	movs r1, #6
 	strh r1, [r0, #22]
@@ -18930,7 +18930,7 @@ _0805FF54:
 	cmp r0, #6
 	bne _0805FF84
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r0, [r4, #0]
 	movs r1, #5
 	strh r1, [r0, #22]
@@ -18955,7 +18955,7 @@ _0805FF84:
 sub_0805FF90:
 	beq _0805FFC8
 	movs r0, #104
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r3, _0805FFC0
 	add r3, r8
 	ldr r2, [r3, #0]
@@ -19019,7 +19019,7 @@ sub_0805FFCA:
 	.global _0805FFFE
 _0805FFFE:
 	movs r0, #106
-	bl sub_08005E98
+	bl SoundSongStartU16
 	mov r0, r8
 	bl sub_08060AC0
 	b sub_080601D8
@@ -19049,7 +19049,7 @@ _0806001C:
 	cmp r0, #0
 	bne _08060050
 	movs r0, #103
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r0, _0806004C
 	add r0, r8
 	ldr r0, [r0, #0]

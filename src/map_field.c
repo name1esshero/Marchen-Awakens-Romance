@@ -8,7 +8,7 @@
  */
 #include "kmp.h"
 #define AT(x) __attribute__((section(".rom." x)))
-extern void sub_08006A1C(const char *);
+#include "runtime_misc.h"
 extern char *strcpy(char *,const char *);
 extern char *strcat(char *,const char *);
 extern char *strupr(char *);
@@ -18,7 +18,7 @@ AT("000032B8") void KmpLoadField(const char *name,s16 x,s16 y)
  char resource[16]; /* basename + .KMP + terminator; original has no length check */
  struct KmpViewport *view;
  s32 px=x,py=y;
- sub_08006A1C(name);
+ GameStateSetString12F4(name);
  strcpy(resource,name);
  strcat(resource,(const char *)0x08086A5C);
  strupr(resource);

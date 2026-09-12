@@ -15,11 +15,11 @@ class SpriteInitTaskTests(unittest.TestCase):
 static union {long double align;u8 bytes[64];} storage;
 static u8 auxiliary[72];
 static int prepared,allocated,completed,finished;
-struct ScriptSprite *sub_080106C8(s32 id){assert(id==3);return (struct ScriptSprite *)storage.bytes;}
+void *GameStateGetRecord0B90(u32 id){assert(id==3);return storage.bytes;}
 void sub_0801097C(s32 id,s32 wait,s32 *ready){assert(id==3 && wait==1);*ready=0;prepared++;}
 void *HeapAlloc(void *heap,u32 size){assert(!heap && size==72);allocated++;return auxiliary;}
 void CpuFill(void *dest,u32 size,u32 value){assert(dest==auxiliary && size==72 && !value);memset(dest,0,size);}
-void sub_08008A70(void *block){unsigned i;assert(block==auxiliary);for(i=0;i<72;i++)assert(!auxiliary[i]);}
+void NcdSpriteContainerReset(void *block){unsigned i;assert(block==auxiliary);for(i=0;i<72;i++)assert(!auxiliary[i]);}
 s32 FindResourceByName(s32 container,const char *name){assert(container==2 && !strcmp(name,"TEST"));return 7;}
 void ScriptCompletePendingTasks(u32 count){assert(count==1);completed++;}
 void FinishTask(void *task){assert(task);finished++;}

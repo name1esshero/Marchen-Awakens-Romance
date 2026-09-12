@@ -19,6 +19,7 @@ struct HitRegion
     struct HitRect rect;
     s32 mode;
 };
+struct HitRegion *sub_08011464(s32 id);
 
 /* Actor bounds use corner offsets, unlike a region's width/height fields. */
 struct HitBounds
@@ -28,7 +29,6 @@ struct HitBounds
 s32 HitRegionTest(s16 x, s16 y, const struct HitBounds *bounds);
 
 /* The original lookup does not bounds-check id; valid table indices are 0..15. */
-struct HitRegion *sub_08011464(s32 id);
 void HitRegionDisable(s32 id);
 void HitRegionDisableAll(void);
 void HitRegionInit(s32 id, s32 x, s32 y, s32 width, s32 height);

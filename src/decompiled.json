@@ -1,1724 +1,3296 @@
 [
- {
-  "addr": "080025BC",
-  "size": 40,
-  "name": "ReadEngineCharacter",
-  "file": "src/font.c"
- },
- {
-  "addr": "080025E4",
-  "size": 32,
-  "name": "IsEngineDoubleByte",
-  "file": "src/font.c"
- },
- {
-  "addr": "08002604",
-  "size": 44,
-  "name": "KmpInitViewport",
-  "file": "src/kmp.c"
- },
- {
-  "addr": "08002630",
-  "size": 32,
-  "name": "KmpRenderViewport",
-  "file": "src/kmp.c"
- },
- {
-  "addr": "08003104",
-  "size": 92,
-  "name": "KmpReadAttribute",
-  "file": "src/kmp.c"
- },
- {
-  "addr": "08003160",
-  "size": 24,
-  "name": "KmpAttributeAddress",
-  "file": "src/kmp.c"
- },
- {
-  "addr": "08003280",
-  "size": 20,
-  "name": "KmpSetClip",
-  "file": "src/map_field.c"
- },
- {
-  "addr": "08003294",
-  "size": 20,
-  "name": "KmpResetClip",
-  "file": "src/map_field.c"
- },
- {
-  "addr": "080032A8",
-  "size": 4,
-  "name": "GetEntityField20",
-  "file": "src/entity.c"
- },
- {
-  "addr": "080032AC",
-  "size": 4,
-  "name": "GetEntityField24",
-  "file": "src/entity.c"
- },
- {
-  "addr": "080032B0",
-  "size": 4,
-  "name": "GetEntityField28",
-  "file": "src/entity.c"
- },
- {
-  "addr": "080032B4",
-  "size": 4,
-  "name": "GetEntityField2C",
-  "file": "src/entity.c"
- },
- {
-  "addr": "080032B8",
-  "size": 144,
-  "name": "KmpLoadField",
-  "file": "src/map_field.c"
- },
- {
-  "addr": "08003348",
-  "size": 16,
-  "name": "SetEntityRenderOverride",
-  "file": "src/entity.c"
- },
- {
-  "addr": "0800380C",
-  "size": 32,
-  "name": "VramFillTask",
-  "file": "src/script_tasks.c"
- },
- {
-  "addr": "080109C4",
-  "size": 104,
-  "name": "ScriptSpriteResetTask",
-  "file": "src/script_sprite_reset.c"
- },
- {
-  "addr": "08010A70",
-  "size": 124,
-  "name": "ScriptSpriteResetAllTask",
-  "file": "src/script_sprite_reset.c"
- },
- {
-  "addr": "08010B6C",
-  "size": 160,
-  "name": "ScriptSpriteInitTask",
-  "file": "src/script_sprite_init.c"
- },
- {
-  "addr": "08010C0C",
-  "size": 76,
-  "name": "ScriptSpriteSelect",
-  "file": "src/script_sprite.c"
- },
- {
-  "addr": "08011504",
-  "size": 16,
-  "name": "HitRegionDisable",
-  "file": "src/hit_region.c"
- },
- {
-  "addr": "08011514",
-  "size": 28,
-  "name": "HitRegionDisableAll",
-  "file": "src/hit_region.c"
- },
- {
-  "addr": "08011530",
-  "size": 36,
-  "name": "HitRegionInit",
-  "file": "src/hit_region.c"
- },
- {
-  "addr": "08011654",
-  "size": 32,
-  "name": "HitRegionSetRect",
-  "file": "src/hit_region.c"
- },
- {
-  "addr": "0801174C",
-  "size": 40,
-  "name": "DialogueCreateFinishTask",
-  "file": "src/dialogue_commands.c"
- },
- {
-  "addr": "08011774",
-  "size": 28,
-  "name": "DialogueFinishTask",
-  "file": "src/dialogue_commands.c"
- },
- {
-  "addr": "08011790",
-  "size": 224,
-  "name": "DialogueStart",
-  "file": "src/dialogue_start.c"
- },
- {
-  "addr": "08011AF4",
-  "size": 296,
-  "name": "DialogueNextGlyph",
-  "file": "src/dialogue.c"
- },
- {
-  "addr": "08011C1C",
-  "size": 76,
-  "name": "DialogueReadHex4",
-  "file": "src/dialogue.c"
- },
- {
-  "addr": "08011C68",
-  "size": 92,
-  "name": "DialogueCommandShow",
-  "file": "src/dialogue_commands.c"
- },
- {
-  "addr": "08011CC4",
-  "size": 16,
-  "name": "DialogueCommandPrompt",
-  "file": "src/dialogue_commands.c"
- },
- {
-  "addr": "08011CD4",
-  "size": 16,
-  "name": "DialogueCommandFinish",
-  "file": "src/dialogue_commands.c"
- },
- {
-  "addr": "08011ECC",
-  "size": 40,
-  "name": "ScriptNativeSpriteInit",
-  "file": "src/script_sprite.c"
- },
- {
-  "addr": "08011EF4",
-  "size": 32,
-  "name": "ScriptNativeSpriteChange",
-  "file": "src/script_sprite.c"
- },
- {
-  "addr": "08011F40",
-  "size": 40,
-  "name": "ScriptNativeSpriteSet",
-  "file": "src/script_sprite_native.c"
- },
- {
-  "addr": "08011F68",
-  "size": 20,
-  "name": "ScriptNativeSpriteGet",
-  "file": "src/script_sprite_native.c"
- },
- {
-  "addr": "080121C4",
-  "size": 32,
-  "name": "ScriptNativeHitInit",
-  "file": "src/map_native.c"
- },
- {
-  "addr": "080121E4",
-  "size": 36,
-  "name": "ScriptNativeHitFree",
-  "file": "src/map_native.c"
- },
- {
-  "addr": "08012244",
-  "size": 32,
-  "name": "ScriptNativeHitRect",
-  "file": "src/map_native.c"
- },
- {
-  "addr": "080122F8",
-  "size": 32,
-  "name": "ScriptNativeFieldSet",
-  "file": "src/map_native.c"
- },
- {
-  "addr": "08018C4C",
-  "size": 196,
-  "name": "HitRegionTest",
-  "file": "src/hit_region.c"
- },
- {
-  "addr": "080282F8",
-  "size": 44,
-  "name": "ObjectSetFlag4",
-  "file": "src/object.c"
- },
- {
-  "addr": "08028324",
-  "size": 48,
-  "name": "ObjectSetFlag400",
-  "file": "src/object.c"
- },
- {
-  "addr": "08028354",
-  "size": 44,
-  "name": "ObjectSetFlag2",
-  "file": "src/object.c"
- },
- {
-  "addr": "08028380",
-  "size": 8,
-  "name": "ObjectSetField26",
-  "file": "src/object.c"
- },
- {
-  "addr": "08028388",
-  "size": 8,
-  "name": "ObjectSetFields34And36",
-  "file": "src/object.c"
- },
- {
-  "addr": "08028390",
-  "size": 4,
-  "name": "ObjectSetField36",
-  "file": "src/object.c"
- },
- {
-  "addr": "08028394",
-  "size": 4,
-  "name": "ObjectSetField34",
-  "file": "src/object.c"
- },
- {
-  "addr": "08053960",
-  "size": 24,
-  "name": "StepCounterInit",
-  "file": "src/step_counter.c"
- },
- {
-  "addr": "08053978",
-  "size": 12,
-  "name": "StepCounterReset",
-  "file": "src/step_counter.c"
- },
- {
-  "addr": "08053984",
-  "size": 92,
-  "name": "StepCounterAdvance",
-  "file": "src/step_counter.c"
- },
- {
-  "addr": "08056464",
-  "size": 16,
-  "name": "ItemGetDefinition",
-  "file": "src/item.c"
- },
- {
-  "addr": "08056474",
-  "size": 16,
-  "name": "ItemGetName",
-  "file": "src/item.c"
- },
- {
-  "addr": "08056484",
-  "size": 16,
-  "name": "ItemGetDescription",
-  "file": "src/item.c"
- },
- {
-  "addr": "08056494",
-  "size": 24,
-  "name": "ItemGetField63",
-  "file": "src/item.c"
- },
- {
-  "addr": "080564AC",
-  "size": 24,
-  "name": "ItemGetField64",
-  "file": "src/item.c"
- },
- {
-  "addr": "080564C4",
-  "size": 24,
-  "name": "ItemGetField65",
-  "file": "src/item.c"
- },
- {
-  "addr": "080564DC",
-  "size": 20,
-  "name": "ItemGetField5C",
-  "file": "src/item.c"
- },
- {
-  "addr": "080564F0",
-  "size": 20,
-  "name": "ItemGetField5E",
-  "file": "src/item.c"
- },
- {
-  "addr": "08056504",
-  "size": 20,
-  "name": "ItemGetField60",
-  "file": "src/item.c"
- },
- {
-  "addr": "08056518",
-  "size": 24,
-  "name": "ItemGetField59",
-  "file": "src/item.c"
- },
- {
-  "addr": "08056530",
-  "size": 24,
-  "name": "ItemGetField5A",
-  "file": "src/item.c"
- },
- {
-  "addr": "08056548",
-  "size": 24,
-  "name": "ItemGetField62",
-  "file": "src/item.c"
- },
- {
-  "addr": "08056560",
-  "size": 24,
-  "name": "ItemGetField58",
-  "file": "src/item.c"
- },
- {
-  "addr": "08071DD4",
-  "size": 12,
-  "name": "MapGenerationSeedRandom",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08071DE0",
-  "size": 32,
-  "name": "MapGenerationRandom",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08071E00",
-  "size": 28,
-  "name": "MapGenerationGetState",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08071E1C",
-  "size": 24,
-  "name": "MapGenerationSetValues00And04",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08071E34",
-  "size": 12,
-  "name": "MapGenerationGetValue00",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08071E40",
-  "size": 12,
-  "name": "MapGenerationGetValue04",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08071E4C",
-  "size": 16,
-  "name": "MapGenerationSetPointer0C",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08071E5C",
-  "size": 16,
-  "name": "MapGenerationSetPointer14",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08071E6C",
-  "size": 16,
-  "name": "MapGenerationSetPointer10",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08071E7C",
-  "size": 16,
-  "name": "MapGenerationSetPointer18",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08071E8C",
-  "size": 12,
-  "name": "MapGenerationGetPointer0C",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08071E98",
-  "size": 12,
-  "name": "MapGenerationGetPointer14",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08071EA4",
-  "size": 12,
-  "name": "MapGenerationGetPointer10",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08071EB0",
-  "size": 12,
-  "name": "MapGenerationGetPointer18",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08071EBC",
-  "size": 12,
-  "name": "MapGenerationGetPointer1C",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08071EC8",
-  "size": 12,
-  "name": "MapGenerationGetPointer20",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08071ED4",
-  "size": 16,
-  "name": "MapGenerationSetPointer1C",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08071EE4",
-  "size": 16,
-  "name": "MapGenerationSetPointer20",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08071EF4",
-  "size": 24,
-  "name": "MapGenerationGetTable38",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08071F0C",
-  "size": 24,
-  "name": "MapGenerationGetTable48",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08071F24",
-  "size": 36,
-  "name": "MapGenerationSetTables",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08071F48",
-  "size": 24,
-  "name": "MapGenerationSetValue26",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08071F60",
-  "size": 24,
-  "name": "MapGenerationGetValue26",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08071F78",
-  "size": 24,
-  "name": "MapGenerationSetTable58",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08071F90",
-  "size": 24,
-  "name": "MapGenerationGetTable58",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08071FA8",
-  "size": 24,
-  "name": "MapGenerationSetValue68",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08071FC0",
-  "size": 24,
-  "name": "MapGenerationGetValue68",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08071FD8",
-  "size": 20,
-  "name": "MapGenerationGetValue24",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08071FEC",
-  "size": 24,
-  "name": "MapGenerationSetValue24",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08072004",
-  "size": 28,
-  "name": "MapGenerationSetValue2E",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08072020",
-  "size": 24,
-  "name": "MapGenerationGetValue2E",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08072038",
-  "size": 20,
-  "name": "MapGenerationGetValue25",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "0807204C",
-  "size": 24,
-  "name": "MapGenerationSetValue25",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08072064",
-  "size": 16,
-  "name": "MapGenerationGetValue08",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08072074",
-  "size": 20,
-  "name": "MapGenerationSetValue08",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08072088",
-  "size": 24,
-  "name": "MapGenerationGetVectorValue0",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "080720A0",
-  "size": 24,
-  "name": "MapGenerationGetVectorValue2",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "080720B8",
-  "size": 24,
-  "name": "MapGenerationGetVectorValue4",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "080720D0",
-  "size": 24,
-  "name": "MapGenerationGetVectorValue6",
-  "file": "src/map_generation.c"
- },
- {
-  "addr": "08078A64",
-  "size": 12,
-  "name": "SoundUpdate",
-  "file": "src/sound.c"
- },
- {
-  "addr": "08078C08",
-  "size": 16,
-  "name": "SoundFadeOut",
-  "file": "src/sound.c"
- },
- {
-  "addr": "08079240",
-  "size": 64,
-  "name": "SoundPlayerStop",
-  "file": "src/sound.c"
- },
- {
-  "addr": "08079E98",
-  "size": 4,
-  "name": "ArcTan2",
-  "file": "src/bios_calls.c"
- },
- {
-  "addr": "08079E9C",
-  "size": 4,
-  "name": "BgAffineSet",
-  "file": "src/bios_calls.c"
- },
- {
-  "addr": "08079EA0",
-  "size": 4,
-  "name": "CpuFastSet",
-  "file": "src/bios_calls.c"
- },
- {
-  "addr": "08079EA4",
-  "size": 4,
-  "name": "CpuSet",
-  "file": "src/bios_calls.c"
- },
- {
-  "addr": "08079EB0",
-  "size": 4,
-  "name": "LZ77UnCompVram",
-  "file": "src/bios_calls.c"
- },
- {
-  "addr": "08079EB4",
-  "size": 4,
-  "name": "LZ77UnCompWram",
-  "file": "src/bios_calls.c"
- },
- {
-  "addr": "08079EB8",
-  "size": 4,
-  "name": "RLUnCompWram",
-  "file": "src/bios_calls.c"
- },
- {
-  "addr": "08079EBC",
-  "size": 4,
-  "name": "RegisterRamReset",
-  "file": "src/bios_calls.c"
- },
- {
-  "addr": "08079EC0",
-  "size": 24,
-  "name": "SoftReset",
-  "file": "src/bios_calls.c"
- },
- {
-  "addr": "08079ED8",
-  "size": 4,
-  "name": "Sqrt",
-  "file": "src/bios_calls.c"
- },
- {
-  "addr": "0807A084",
-  "size": 24,
-  "name": "KeyInputInit",
-  "file": "src/input.c"
- },
- {
-  "addr": "0807A09C",
-  "size": 84,
-  "name": "KeyInputPoll",
-  "file": "src/input.c"
- },
- {
-  "addr": "0807A0F0",
-  "size": 68,
-  "name": "KeyInputSet",
-  "file": "src/input.c"
- },
- {
-  "addr": "0807A134",
-  "size": 44,
-  "name": "KeyInputConsumePressed",
-  "file": "src/input.c"
- },
- {
-  "addr": "0807A160",
-  "size": 36,
-  "name": "KeyInputAnyHeld",
-  "file": "src/input.c"
- },
- {
-  "addr": "0807A184",
-  "size": 12,
-  "name": "RandomInit",
-  "file": "src/random.c"
- },
- {
-  "addr": "0807A190",
-  "size": 44,
-  "name": "BitSet",
-  "file": "src/bitset.c"
- },
- {
-  "addr": "0807A1BC",
-  "size": 28,
-  "name": "BitTest",
-  "file": "src/bitset.c"
- },
- {
-  "addr": "0807A1D8",
-  "size": 12,
-  "name": "RandomSeed",
-  "file": "src/random.c"
- },
- {
-  "addr": "0807A1E4",
-  "size": 12,
-  "name": "RandomGetSeed",
-  "file": "src/random.c"
- },
- {
-  "addr": "0807A1F0",
-  "size": 32,
-  "name": "Random",
-  "file": "src/random.c"
- },
- {
-  "addr": "0807A210",
-  "size": 24,
-  "name": "ByteStringLength",
-  "file": "src/byte_utils.c"
- },
- {
-  "addr": "0807A228",
-  "size": 32,
-  "name": "BufferXor",
-  "file": "src/byte_utils.c"
- },
- {
-  "addr": "0807A248",
-  "size": 40,
-  "name": "BufferXorSeeded",
-  "file": "src/byte_utils.c"
- },
- {
-  "addr": "0807A270",
-  "size": 56,
-  "name": "HeapInitDefault",
-  "file": "src/heap.c"
- },
- {
-  "addr": "0807A2A8",
-  "size": 68,
-  "name": "HeapCreate",
-  "file": "src/heap.c"
- },
- {
-  "addr": "0807A2EC",
-  "size": 12,
-  "name": "HeapAlloc",
-  "file": "src/heap.c"
- },
- {
-  "addr": "0807A5FC",
-  "size": 72,
-  "name": "TaskManagerInit",
-  "file": "src/task_manager.c"
- },
- {
-  "addr": "0807A644",
-  "size": 68,
-  "name": "TaskManagerDestroy",
-  "file": "src/task_manager.c"
- },
- {
-  "addr": "0807A688",
-  "size": 120,
-  "name": "TaskCreateInQueue",
-  "file": "src/task_create.c"
- },
- {
-  "addr": "0807A700",
-  "size": 124,
-  "name": "TaskCreateBefore",
-  "file": "src/task_create.c"
- },
- {
-  "addr": "0807A77C",
-  "size": 48,
-  "name": "CreateTask",
-  "file": "src/task_scheduler.c"
- },
- {
-  "addr": "0807A7AC",
-  "size": 24,
-  "name": "FinishTask",
-  "file": "src/task_scheduler.c"
- },
- {
-  "addr": "0807A7C4",
-  "size": 164,
-  "name": "TaskManagerRun",
-  "file": "src/task_scheduler.c"
- },
- {
-  "addr": "0807A868",
-  "size": 4,
-  "name": "TaskManagerCount",
-  "file": "src/task_manager.c"
- },
- {
-  "addr": "0807A86C",
-  "size": 12,
-  "name": "ListInit",
-  "file": "src/list.c"
- },
- {
-  "addr": "0807A878",
-  "size": 40,
-  "name": "ListAppend",
-  "file": "src/list.c"
- },
- {
-  "addr": "0807A8A0",
-  "size": 32,
-  "name": "ListInsertBefore",
-  "file": "src/list.c"
- },
- {
-  "addr": "0807A8C0",
-  "size": 36,
-  "name": "ListGet",
-  "file": "src/list.c"
- },
- {
-  "addr": "0807A8E4",
-  "size": 4,
-  "name": "ListCount",
-  "file": "src/list.c"
- },
- {
-  "addr": "0807A8E8",
-  "size": 100,
-  "name": "ListSwapAdjacentIndices",
-  "file": "src/list.c"
- },
- {
-  "addr": "0807A94C",
-  "size": 64,
-  "name": "ListRemove",
-  "file": "src/list.c"
- },
- {
-  "addr": "0807A98C",
-  "size": 44,
-  "name": "ListInsertBeforeLinked",
-  "file": "src/list.c"
- },
- {
-  "addr": "0807A9B8",
-  "size": 4,
-  "name": "ListHead",
-  "file": "src/list.c"
- },
- {
-  "addr": "0807A9BC",
-  "size": 4,
-  "name": "ListTail",
-  "file": "src/list.c"
- },
- {
-  "addr": "0807A9C0",
-  "size": 48,
-  "name": "NfpInit",
-  "file": "src/nfp_lifecycle.c"
- },
- {
-  "addr": "0807A9F0",
-  "size": 40,
-  "name": "NfpShutdown",
-  "file": "src/nfp_lifecycle.c"
- },
- {
-  "addr": "0807AA18",
-  "size": 24,
-  "name": "NfpMountIsActive",
-  "file": "src/nfp.c"
- },
- {
-  "addr": "0807AA30",
-  "size": 24,
-  "name": "NfpSetMountActive",
-  "file": "src/nfp.c"
- },
- {
-  "addr": "0807AA48",
-  "size": 44,
-  "name": "NfpGetMountName",
-  "file": "src/nfp_mount_helpers.c"
- },
- {
-  "addr": "0807AA74",
-  "size": 44,
-  "name": "NfpSetMountName",
-  "file": "src/nfp_mount_helpers.c"
- },
- {
-  "addr": "0807AAA0",
-  "size": 24,
-  "name": "NfpGetArchiveBase",
-  "file": "src/nfp.c"
- },
- {
-  "addr": "0807AAB8",
-  "size": 24,
-  "name": "NfpSetArchiveBase",
-  "file": "src/nfp.c"
- },
- {
-  "addr": "0807AAD0",
-  "size": 16,
-  "name": "NfpGetDirectory",
-  "file": "src/nfp.c"
- },
- {
-  "addr": "0807AAE0",
-  "size": 16,
-  "name": "NfpGetData",
-  "file": "src/nfp.c"
- },
- {
-  "addr": "0807AAF0",
-  "size": 24,
-  "name": "NfpGetEntryCountByName",
-  "file": "src/nfp_convenience.c"
- },
- {
-  "addr": "0807AB08",
-  "size": 12,
-  "name": "NfpGetEntryCount",
-  "file": "src/nfp.c"
- },
- {
-  "addr": "0807AB14",
-  "size": 92,
-  "name": "NfpMount",
-  "file": "src/nfp.c"
- },
- {
-  "addr": "0807AB70",
-  "size": 12,
-  "name": "NfpUnmount",
-  "file": "src/nfp_mount_helpers.c"
- },
- {
-  "addr": "0807AB7C",
-  "size": 64,
-  "name": "NfpFindArchive",
-  "file": "src/nfp.c"
- },
- {
-  "addr": "0807ABBC",
-  "size": 52,
-  "name": "NfpCountMounted",
-  "file": "src/nfp_mount_helpers.c"
- },
- {
-  "addr": "0807ABF0",
-  "size": 56,
-  "name": "NfpFindFreeSlot",
-  "file": "src/nfp.c"
- },
- {
-  "addr": "0807AC28",
-  "size": 20,
-  "name": "NfpGetEntry",
-  "file": "src/nfp.c"
- },
- {
-  "addr": "0807AC3C",
-  "size": 60,
-  "name": "NfpOpenByName",
-  "file": "src/nfp.c"
- },
- {
-  "addr": "0807AC78",
-  "size": 48,
-  "name": "NfpOpenByIndex",
-  "file": "src/nfp_convenience.c"
- },
- {
-  "addr": "0807ACA8",
-  "size": 28,
-  "name": "NfpFindEntryByArchiveName",
-  "file": "src/nfp_convenience.c"
- },
- {
-  "addr": "0807ADC4",
-  "size": 28,
-  "name": "InitFont",
-  "file": "src/font.c"
- },
- {
-  "addr": "0807ADE0",
-  "size": 4,
-  "name": "SetFontData",
-  "file": "src/font.c"
- },
- {
-  "addr": "0807ADE4",
-  "size": 16,
-  "name": "ClearFont",
-  "file": "src/font.c"
- },
- {
-  "addr": "0807ADF4",
-  "size": 20,
-  "name": "FontGlyphStride",
-  "file": "src/font.c"
- },
- {
-  "addr": "0807AE08",
-  "size": 8,
-  "name": "FontPalette",
-  "file": "src/font.c"
- },
- {
-  "addr": "0807B224",
-  "size": 20,
-  "name": "SpriteEngineGetOamEntry",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807B238",
-  "size": 28,
-  "name": "SpriteEngineAllocateOamEntry",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807B254",
-  "size": 68,
-  "name": "SpriteEngineGetOamBoundary",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807B298",
-  "size": 64,
-  "name": "SpriteEngineSetOamBoundary",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807B2D8",
-  "size": 20,
-  "name": "SpriteEngineSetValue610",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807B2EC",
-  "size": 20,
-  "name": "SpriteEngineSetValue612",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807B300",
-  "size": 20,
-  "name": "SpriteEngineGetValue610",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807B314",
-  "size": 24,
-  "name": "SpriteEngineGetValue612",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807B618",
-  "size": 24,
-  "name": "SpriteResourceRelease",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807B630",
-  "size": 20,
-  "name": "SpriteResourceSetHandle",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807B644",
-  "size": 8,
-  "name": "SpriteResourceGetHandle",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807B6C8",
-  "size": 64,
-  "name": "SpriteEngineSetFlag20C",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807B708",
-  "size": 32,
-  "name": "SpriteEngineTestFlag20C",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807B74C",
-  "size": 20,
-  "name": "SpriteEngineGetFlags20C",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807B760",
-  "size": 56,
-  "name": "SpriteEngineReleaseBinding",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807B798",
-  "size": 28,
-  "name": "SpriteEngineGetCounter",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807B7B4",
-  "size": 28,
-  "name": "SpriteEngineSetCounter",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807B7D0",
-  "size": 40,
-  "name": "SpriteEngineIncrementCounter",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807B7F8",
-  "size": 56,
-  "name": "SpriteEngineDecrementCounter",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807B96C",
-  "size": 96,
-  "name": "NcdRegisterResource",
-  "file": "src/ncd_sprite.c"
- },
- {
-  "addr": "0807BA0C",
-  "size": 32,
-  "name": "SpriteResourceGetLevel0",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807BA2C",
-  "size": 28,
-  "name": "SpriteResourceGetEntryCount",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807BA48",
-  "size": 48,
-  "name": "SpriteResourceGetLevel1",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807BA78",
-  "size": 56,
-  "name": "SpriteResourceGetLevel2",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807BAB0",
-  "size": 72,
-  "name": "SpriteResourceGetLevel3",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807BAF8",
-  "size": 80,
-  "name": "SpriteResourceGetTable24",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807BB48",
-  "size": 80,
-  "name": "SpriteResourceGetTable28",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807BC2C",
-  "size": 80,
-  "name": "NcdInitSprite",
-  "file": "src/ncd_sprite.c"
- },
- {
-  "addr": "0807BF60",
-  "size": 32,
-  "name": "NcdSpriteCopy",
-  "file": "src/ncd_sprite.c"
- },
- {
-  "addr": "0807BF80",
-  "size": 80,
-  "name": "NcdSpriteDeepCopy",
-  "file": "src/ncd_sprite.c"
- },
- {
-  "addr": "0807CC04",
-  "size": 20,
-  "name": "SpriteEngineGetBuffer4Entry",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807CCEC",
-  "size": 56,
-  "name": "SpriteEngineSetFlag10",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807CD24",
-  "size": 24,
-  "name": "SpriteEngineTestFlag10",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807CD3C",
-  "size": 32,
-  "name": "SpriteEngineSetAllFlags10",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807CD5C",
-  "size": 12,
-  "name": "SpriteEngineGetFlags10",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807CD68",
-  "size": 52,
-  "name": "SpriteEngineSetFlag14",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807CD9C",
-  "size": 24,
-  "name": "SpriteEngineTestFlag14",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807CDB4",
-  "size": 32,
-  "name": "SpriteEngineSetAllFlags14",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807CDD4",
-  "size": 12,
-  "name": "SpriteEngineGetFlags14",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807D3C4",
-  "size": 12,
-  "name": "SpriteEngineGetBuffer8",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807D3D0",
-  "size": 12,
-  "name": "SpriteEngineSetBuffer8",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807D3DC",
-  "size": 12,
-  "name": "SpriteEngineGetBufferC",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807D3E8",
-  "size": 12,
-  "name": "SpriteEngineSetBufferC",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807D3F4",
-  "size": 12,
-  "name": "SpriteEngineGetBuffer4",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807D400",
-  "size": 12,
-  "name": "SpriteEngineSetBuffer4",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807D40C",
-  "size": 36,
-  "name": "SpriteEngineSetCopyCallback620",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807D430",
-  "size": 20,
-  "name": "SpriteEngineGetCopyCallback620",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807D444",
-  "size": 56,
-  "name": "SpriteEngineCopyToBuffer8",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807D47C",
-  "size": 12,
-  "name": "SpriteEngineDefaultCopy620",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807D488",
-  "size": 36,
-  "name": "SpriteEngineSetCopyCallback624",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807D4AC",
-  "size": 20,
-  "name": "SpriteEngineGetCopyCallback624",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807D4C0",
-  "size": 44,
-  "name": "SpriteEngineCopyToBufferC",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807D4EC",
-  "size": 12,
-  "name": "SpriteEngineDefaultCopy624",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807D92C",
-  "size": 24,
-  "name": "SpriteMathDivide65536ByS16",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807DB4C",
-  "size": 8,
-  "name": "SpriteRecordSizeForCount",
-  "file": "src/sprite_engine_state.c"
- },
- {
-  "addr": "0807E384",
-  "size": 16,
-  "name": "ScriptDeactivate",
-  "file": "src/script_tasks.c"
- },
- {
-  "addr": "0807E394",
-  "size": 12,
-  "name": "ScriptSetResult",
-  "file": "src/script_tasks.c"
- },
- {
-  "addr": "0807E3A0",
-  "size": 12,
-  "name": "ScriptGetResult",
-  "file": "src/script_tasks.c"
- },
- {
-  "addr": "0807E3AC",
-  "size": 40,
-  "name": "ScriptGetParentFrame",
-  "file": "src/script_tasks.c"
- },
- {
-  "addr": "0807E3D4",
-  "size": 36,
-  "name": "ScriptSetPendingTasks",
-  "file": "src/script_tasks.c"
- },
- {
-  "addr": "0807E3F8",
-  "size": 40,
-  "name": "ScriptGetPendingTasks",
-  "file": "src/script_tasks.c"
- },
- {
-  "addr": "0807E420",
-  "size": 40,
-  "name": "ScriptAddPendingTasks",
-  "file": "src/script_tasks.c"
- },
- {
-  "addr": "0807E448",
-  "size": 40,
-  "name": "ScriptCompletePendingTasks",
-  "file": "src/script_tasks.c"
- },
- {
-  "addr": "0807E470",
-  "size": 44,
-  "name": "ScriptSetStepBudget",
-  "file": "src/script_tasks.c"
- },
- {
-  "addr": "0807E49C",
-  "size": 40,
-  "name": "ScriptGetStepBudget",
-  "file": "src/script_tasks.c"
- },
- {
-  "addr": "0807ED70",
-  "size": 32,
-  "name": "ScriptDispatchCurrentFrame",
-  "file": "src/script_frames.c"
- },
- {
-  "addr": "0807ED90",
-  "size": 48,
-  "name": "ScriptRunWorkBatch",
-  "file": "src/script_frames.c"
- },
- {
-  "addr": "0807EDC0",
-  "size": 48,
-  "name": "ScriptSetFrameFlag",
-  "file": "src/script_frames.c"
- },
- {
-  "addr": "0807EDF0",
-  "size": 32,
-  "name": "ScriptSetStepBudgetUnchecked",
-  "file": "src/script_frames.c"
- },
- {
-  "addr": "0807EFB8",
-  "size": 140,
-  "name": "ScriptPopFrame",
-  "file": "src/script_frames.c"
- },
- {
-  "addr": "0807F15C",
-  "size": 92,
-  "name": "ScriptRunSlice",
-  "file": "src/script_tasks.c"
- },
- {
-  "addr": "0807F518",
-  "size": 20,
-  "name": "ScriptReadU8",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807F52C",
-  "size": 28,
-  "name": "ScriptReadU16",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807F548",
-  "size": 40,
-  "name": "ScriptReadU32",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807F570",
-  "size": 40,
-  "name": "ScriptReadNextU8",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807F598",
-  "size": 40,
-  "name": "ScriptReadNextU16",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807F5C0",
-  "size": 40,
-  "name": "ScriptReadNextU32",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807F5E8",
-  "size": 32,
-  "name": "ScriptPushU32",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807F608",
-  "size": 28,
-  "name": "ScriptPopU32",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807F6E4",
-  "size": 28,
-  "name": "ScriptCmdJump",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807F700",
-  "size": 48,
-  "name": "ScriptCmdJumpIfZero",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807F730",
-  "size": 44,
-  "name": "ScriptCmdCall",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807F75C",
-  "size": 28,
-  "name": "ScriptCmdReturn",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807F778",
-  "size": 72,
-  "name": "ScriptCmdSwitch",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807F7C0",
-  "size": 40,
-  "name": "ScriptCmdCopy",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807F7E8",
-  "size": 32,
-  "name": "ScriptCmdSetImmediate",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807F808",
-  "size": 48,
-  "name": "ScriptCmdSetBytecodeAddress",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807F838",
-  "size": 24,
-  "name": "ScriptCmdPushOperand",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807F850",
-  "size": 16,
-  "name": "ScriptCmdPushImmediate",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807F860",
-  "size": 28,
-  "name": "ScriptCmdPopOperand",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807F87C",
-  "size": 44,
-  "name": "ScriptCmdAdd",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807F8A8",
-  "size": 36,
-  "name": "ScriptCmdAddImmediate",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807F8CC",
-  "size": 44,
-  "name": "ScriptCmdSubtract",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807F8F8",
-  "size": 36,
-  "name": "ScriptCmdSubtractImmediate",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807F91C",
-  "size": 44,
-  "name": "ScriptCmdMultiply",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807F948",
-  "size": 36,
-  "name": "ScriptCmdMultiplyImmediate",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807FA44",
-  "size": 24,
-  "name": "ScriptCmdIncrement",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807FA5C",
-  "size": 24,
-  "name": "ScriptCmdDecrement",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807FA74",
-  "size": 24,
-  "name": "ScriptCmdNegate",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807FA8C",
-  "size": 44,
-  "name": "ScriptCmdBitAnd",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807FAB8",
-  "size": 36,
-  "name": "ScriptCmdBitAndImmediate",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807FADC",
-  "size": 44,
-  "name": "ScriptCmdBitOr",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807FB08",
-  "size": 36,
-  "name": "ScriptCmdBitOrImmediate",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "0807FB2C",
-  "size": 44,
-  "name": "ScriptCmdBitXor",
-  "file": "src/script_bytecode.c"
- },
- {
-  "addr": "080800FC",
-  "size": 20,
-  "name": "ScriptNativeAbs",
-  "file": "src/script_native.c"
- },
- {
-  "addr": "08080110",
-  "size": 48,
-  "name": "ScriptNativeCharacterCode",
-  "file": "src/script_native.c"
- },
- {
-  "addr": "08080140",
-  "size": 72,
-  "name": "ScriptNativeCharacterString",
-  "file": "src/script_native.c"
- },
- {
-  "addr": "08080188",
-  "size": 44,
-  "name": "ScriptNativeMax",
-  "file": "src/script_native.c"
- },
- {
-  "addr": "080801B4",
-  "size": 44,
-  "name": "ScriptNativeMin",
-  "file": "src/script_native.c"
- },
- {
-  "addr": "08080214",
-  "size": 60,
-  "name": "ScriptNativeIntegerString",
-  "file": "src/script_native.c"
- },
- {
-  "addr": "0808045C",
-  "size": 32,
-  "name": "ScriptCommandReturn",
-  "file": "src/script_tasks.c"
- }
+  {
+    "addr": "080025BC",
+    "size": 40,
+    "name": "ReadEngineCharacter",
+    "file": "src/font.c"
+  },
+  {
+    "addr": "080025E4",
+    "size": 32,
+    "name": "IsEngineDoubleByte",
+    "file": "src/font.c"
+  },
+  {
+    "addr": "08002604",
+    "size": 44,
+    "name": "KmpInitViewport",
+    "file": "src/kmp.c"
+  },
+  {
+    "addr": "08002630",
+    "size": 32,
+    "name": "KmpRenderViewport",
+    "file": "src/kmp.c"
+  },
+  {
+    "addr": "08003104",
+    "size": 92,
+    "name": "KmpReadAttribute",
+    "file": "src/kmp.c"
+  },
+  {
+    "addr": "08003160",
+    "size": 24,
+    "name": "KmpAttributeAddress",
+    "file": "src/kmp.c"
+  },
+  {
+    "addr": "08003280",
+    "size": 20,
+    "name": "KmpSetClip",
+    "file": "src/map_field.c"
+  },
+  {
+    "addr": "08003294",
+    "size": 20,
+    "name": "KmpResetClip",
+    "file": "src/map_field.c"
+  },
+  {
+    "addr": "080032A8",
+    "size": 4,
+    "name": "GetEntityField20",
+    "file": "src/entity.c"
+  },
+  {
+    "addr": "080032AC",
+    "size": 4,
+    "name": "GetEntityField24",
+    "file": "src/entity.c"
+  },
+  {
+    "addr": "080032B0",
+    "size": 4,
+    "name": "GetEntityField28",
+    "file": "src/entity.c"
+  },
+  {
+    "addr": "080032B4",
+    "size": 4,
+    "name": "GetEntityField2C",
+    "file": "src/entity.c"
+  },
+  {
+    "addr": "080032B8",
+    "size": 144,
+    "name": "KmpLoadField",
+    "file": "src/map_field.c"
+  },
+  {
+    "addr": "08003348",
+    "size": 16,
+    "name": "SetEntityRenderOverride",
+    "file": "src/entity.c"
+  },
+  {
+    "addr": "0800380C",
+    "size": 32,
+    "name": "VramFillTask",
+    "file": "src/script_tasks.c"
+  },
+  {
+    "addr": "08006C54",
+    "size": 28,
+    "name": "GameStateGetField4240",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08006C70",
+    "size": 28,
+    "name": "GameStateSetField4240",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08006C8C",
+    "size": 28,
+    "name": "GameStateGetField4256",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08006CA8",
+    "size": 28,
+    "name": "GameStateSetField4256",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08006CC4",
+    "size": 32,
+    "name": "GameStateGetField4246",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08006CE4",
+    "size": 28,
+    "name": "GameStateSetField4246",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08006D00",
+    "size": 32,
+    "name": "GameStateGetField4248",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08006D20",
+    "size": 28,
+    "name": "GameStateSetField4248",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08006D3C",
+    "size": 28,
+    "name": "GameStateSetField4254",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08006D58",
+    "size": 32,
+    "name": "GameStateGetField4254",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08006D78",
+    "size": 32,
+    "name": "GameStateGetField4244",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08006D98",
+    "size": 28,
+    "name": "GameStateSetField4244",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08006DB4",
+    "size": 32,
+    "name": "GameStateGetField4245",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08006DD4",
+    "size": 28,
+    "name": "GameStateSetField4245",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08006E20",
+    "size": 48,
+    "name": "GameStateGetField424C50",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08006E50",
+    "size": 28,
+    "name": "GameStateGetField424C",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08006E6C",
+    "size": 28,
+    "name": "GameStateGetField4250",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08006ECC",
+    "size": 32,
+    "name": "GameStateSetField4265",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08006EEC",
+    "size": 32,
+    "name": "GameStateGetField4265",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08006F34",
+    "size": 32,
+    "name": "GameStateGetField425A",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08006F54",
+    "size": 28,
+    "name": "GameStateSetField425B",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08006F70",
+    "size": 32,
+    "name": "GameStateGetField425B",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08006F90",
+    "size": 28,
+    "name": "GameStateSetField4258",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08006FAC",
+    "size": 32,
+    "name": "GameStateGetField4258",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08006FCC",
+    "size": 28,
+    "name": "GameStateSetField42BA",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08006FE8",
+    "size": 32,
+    "name": "GameStateGetField42BA",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08007008",
+    "size": 28,
+    "name": "GameStateSetField42BC",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08007024",
+    "size": 32,
+    "name": "GameStateGetField42BC",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08007044",
+    "size": 28,
+    "name": "GameStateSetField42C0",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08007060",
+    "size": 28,
+    "name": "GameStateGetField42C0",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "0800707C",
+    "size": 28,
+    "name": "GameStateSetField42C4",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08007098",
+    "size": 32,
+    "name": "GameStateGetField42C4",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "080070B8",
+    "size": 32,
+    "name": "GameStateGetField425C",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "080070D8",
+    "size": 32,
+    "name": "GameStateSetField425C",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "080070F8",
+    "size": 32,
+    "name": "GameStateGetField4269",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08007118",
+    "size": 28,
+    "name": "GameStateSetField4269",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "080075CC",
+    "size": 20,
+    "name": "RuntimeGetBufferEB8",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "080075E0",
+    "size": 16,
+    "name": "RuntimeGetBufferED0",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "080075F0",
+    "size": 20,
+    "name": "RuntimeGetBufferEEA",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08007620",
+    "size": 24,
+    "name": "RuntimeGetFieldEE8",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08007638",
+    "size": 20,
+    "name": "RuntimeSetFieldEE8",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "0800764C",
+    "size": 24,
+    "name": "RuntimeGetFieldEE9",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08007664",
+    "size": 20,
+    "name": "RuntimeSetFieldEE9",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009048",
+    "size": 20,
+    "name": "RuntimeGetFieldE9C",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "0800905C",
+    "size": 20,
+    "name": "RuntimeSetFieldEB2",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009070",
+    "size": 20,
+    "name": "RuntimeGetFieldEB2",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009084",
+    "size": 20,
+    "name": "RuntimeSetFieldEB3",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009098",
+    "size": 20,
+    "name": "RuntimeGetFieldEB3",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "080098F8",
+    "size": 20,
+    "name": "RuntimeSetFieldEAE",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "0800990C",
+    "size": 24,
+    "name": "RuntimeGetFieldEAE",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009924",
+    "size": 20,
+    "name": "RuntimeSetFieldEAF",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009938",
+    "size": 24,
+    "name": "RuntimeGetFieldEAF",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009950",
+    "size": 20,
+    "name": "RuntimeSetFieldEB0",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009964",
+    "size": 24,
+    "name": "RuntimeGetFieldEB0",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009CC4",
+    "size": 20,
+    "name": "RuntimeSetFieldEB1",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009CD8",
+    "size": 24,
+    "name": "RuntimeGetFieldEB1",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009CF0",
+    "size": 20,
+    "name": "RuntimeSetFieldEB4",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009D04",
+    "size": 24,
+    "name": "RuntimeGetFieldEB4",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009D1C",
+    "size": 20,
+    "name": "RuntimeSetFieldEB6",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009D30",
+    "size": 24,
+    "name": "RuntimeGetFieldEB6",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009D48",
+    "size": 20,
+    "name": "RuntimeSetFieldEB7",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009D5C",
+    "size": 24,
+    "name": "RuntimeGetFieldEB7",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009D9C",
+    "size": 28,
+    "name": "RuntimeRecordSetByte7A0",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009304",
+    "size": 24,
+    "name": "RuntimeGetPointerE30",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009630",
+    "size": 28,
+    "name": "RuntimeActorSetField33C",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "0800964C",
+    "size": 28,
+    "name": "RuntimeActorGetField33C",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009668",
+    "size": 28,
+    "name": "RuntimeActorSetField340",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009684",
+    "size": 28,
+    "name": "RuntimeActorGetField340",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "080096A0",
+    "size": 28,
+    "name": "RuntimeActorSetField224",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "080096BC",
+    "size": 28,
+    "name": "RuntimeActorGetField224",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "080096D8",
+    "size": 28,
+    "name": "RuntimeActorSetField228",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "080096F4",
+    "size": 28,
+    "name": "RuntimeActorGetField228",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009710",
+    "size": 24,
+    "name": "RuntimeTestFlagC0",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "0800A0E8",
+    "size": 20,
+    "name": "RuntimeGetPointerEA0",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A0FC",
+    "size": 20,
+    "name": "RuntimeSetPointerEA0",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A110",
+    "size": 48,
+    "name": "RuntimeSetFieldsE48ToE4A",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A140",
+    "size": 20,
+    "name": "RuntimeSetFieldE48",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A154",
+    "size": 24,
+    "name": "RuntimeGetFieldE48",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A16C",
+    "size": 20,
+    "name": "RuntimeSetFieldE49",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A180",
+    "size": 24,
+    "name": "RuntimeGetFieldE49",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A198",
+    "size": 20,
+    "name": "RuntimeSetFieldE4A",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A1AC",
+    "size": 24,
+    "name": "RuntimeGetFieldE4A",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A1C4",
+    "size": 36,
+    "name": "RuntimeGetActorRecord",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A1E8",
+    "size": 24,
+    "name": "RuntimeObjectGetField00",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A200",
+    "size": 24,
+    "name": "RuntimeObjectGetField01",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A218",
+    "size": 24,
+    "name": "RuntimeObjectGetField02",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A230",
+    "size": 24,
+    "name": "RuntimeObjectGetField03",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A248",
+    "size": 24,
+    "name": "RuntimeObjectGetField04",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A260",
+    "size": 24,
+    "name": "RuntimeObjectGetField05",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A278",
+    "size": 24,
+    "name": "RuntimeObjectGetField0A",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A290",
+    "size": 24,
+    "name": "RuntimeObjectGetField09",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A2A8",
+    "size": 28,
+    "name": "RuntimeObjectSetFlag00",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A2C4",
+    "size": 28,
+    "name": "RuntimeObjectSetFlag01",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A2E0",
+    "size": 28,
+    "name": "RuntimeObjectSetFlag02",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A2FC",
+    "size": 28,
+    "name": "RuntimeObjectSetFlag03",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A318",
+    "size": 28,
+    "name": "RuntimeObjectSetFlag04",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A334",
+    "size": 28,
+    "name": "RuntimeObjectSetFlag05",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A350",
+    "size": 28,
+    "name": "RuntimeObjectSetFlag0A",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A36C",
+    "size": 28,
+    "name": "RuntimeObjectSetFlag09",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A388",
+    "size": 24,
+    "name": "RuntimeObjectGetField48",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A3A0",
+    "size": 24,
+    "name": "RuntimeObjectSetField48",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A424",
+    "size": 24,
+    "name": "RuntimeObjectSetFixed18",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A43C",
+    "size": 24,
+    "name": "RuntimeObjectGetField1A",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A454",
+    "size": 24,
+    "name": "RuntimeObjectSetFixed1C",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A46C",
+    "size": 24,
+    "name": "RuntimeObjectGetField1E",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A4F0",
+    "size": 24,
+    "name": "RuntimeObjectSetFixed20",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A508",
+    "size": 24,
+    "name": "RuntimeObjectGetField22",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A520",
+    "size": 24,
+    "name": "RuntimeObjectSetFixed24",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A538",
+    "size": 24,
+    "name": "RuntimeObjectGetField26",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A5B4",
+    "size": 20,
+    "name": "RuntimeObjectSetWord18",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A5C8",
+    "size": 20,
+    "name": "RuntimeObjectGetWord18",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A5DC",
+    "size": 20,
+    "name": "RuntimeObjectSetWord1C",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A5F0",
+    "size": 20,
+    "name": "RuntimeObjectGetWord1C",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A668",
+    "size": 20,
+    "name": "RuntimeObjectSetWord20",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A67C",
+    "size": 20,
+    "name": "RuntimeObjectGetWord20",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A690",
+    "size": 20,
+    "name": "RuntimeObjectSetWord24",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A6A4",
+    "size": 20,
+    "name": "RuntimeObjectGetWord24",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A6B8",
+    "size": 24,
+    "name": "RuntimeObjectSetField36",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A6D0",
+    "size": 28,
+    "name": "RuntimeObjectGetField36",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A75C",
+    "size": 24,
+    "name": "RuntimeObjectGetField3A",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A774",
+    "size": 20,
+    "name": "RuntimeObjectSetField3A",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A788",
+    "size": 24,
+    "name": "RuntimeObjectGetField3C",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A7A0",
+    "size": 20,
+    "name": "RuntimeObjectSetField3C",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A7B4",
+    "size": 24,
+    "name": "RuntimeObjectGetField3E",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A7CC",
+    "size": 20,
+    "name": "RuntimeObjectSetField3E",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A7E0",
+    "size": 24,
+    "name": "RuntimeObjectGetField40",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A7F8",
+    "size": 24,
+    "name": "RuntimeObjectSetField40",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A810",
+    "size": 28,
+    "name": "RuntimeObjectGetField39",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A82C",
+    "size": 24,
+    "name": "RuntimeObjectSetField39",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "080109C4",
+    "size": 104,
+    "name": "ScriptSpriteResetTask",
+    "file": "src/script_sprite_reset.c"
+  },
+  {
+    "addr": "08010A70",
+    "size": 124,
+    "name": "ScriptSpriteResetAllTask",
+    "file": "src/script_sprite_reset.c"
+  },
+  {
+    "addr": "08010B6C",
+    "size": 160,
+    "name": "ScriptSpriteInitTask",
+    "file": "src/script_sprite_init.c"
+  },
+  {
+    "addr": "08010C0C",
+    "size": 76,
+    "name": "ScriptSpriteSelect",
+    "file": "src/script_sprite.c"
+  },
+  {
+    "addr": "08011504",
+    "size": 16,
+    "name": "HitRegionDisable",
+    "file": "src/hit_region.c"
+  },
+  {
+    "addr": "08011514",
+    "size": 28,
+    "name": "HitRegionDisableAll",
+    "file": "src/hit_region.c"
+  },
+  {
+    "addr": "08011530",
+    "size": 36,
+    "name": "HitRegionInit",
+    "file": "src/hit_region.c"
+  },
+  {
+    "addr": "08011654",
+    "size": 32,
+    "name": "HitRegionSetRect",
+    "file": "src/hit_region.c"
+  },
+  {
+    "addr": "0801174C",
+    "size": 40,
+    "name": "DialogueCreateFinishTask",
+    "file": "src/dialogue_commands.c"
+  },
+  {
+    "addr": "08011774",
+    "size": 28,
+    "name": "DialogueFinishTask",
+    "file": "src/dialogue_commands.c"
+  },
+  {
+    "addr": "08011790",
+    "size": 224,
+    "name": "DialogueStart",
+    "file": "src/dialogue_start.c"
+  },
+  {
+    "addr": "08011AF4",
+    "size": 296,
+    "name": "DialogueNextGlyph",
+    "file": "src/dialogue.c"
+  },
+  {
+    "addr": "08011C1C",
+    "size": 76,
+    "name": "DialogueReadHex4",
+    "file": "src/dialogue.c"
+  },
+  {
+    "addr": "08011C68",
+    "size": 92,
+    "name": "DialogueCommandShow",
+    "file": "src/dialogue_commands.c"
+  },
+  {
+    "addr": "08011CC4",
+    "size": 16,
+    "name": "DialogueCommandPrompt",
+    "file": "src/dialogue_commands.c"
+  },
+  {
+    "addr": "08011CD4",
+    "size": 16,
+    "name": "DialogueCommandFinish",
+    "file": "src/dialogue_commands.c"
+  },
+  {
+    "addr": "08011ECC",
+    "size": 40,
+    "name": "ScriptNativeSpriteInit",
+    "file": "src/script_sprite.c"
+  },
+  {
+    "addr": "08011EF4",
+    "size": 32,
+    "name": "ScriptNativeSpriteChange",
+    "file": "src/script_sprite.c"
+  },
+  {
+    "addr": "08011F40",
+    "size": 40,
+    "name": "ScriptNativeSpriteSet",
+    "file": "src/script_sprite_native.c"
+  },
+  {
+    "addr": "08011F68",
+    "size": 20,
+    "name": "ScriptNativeSpriteGet",
+    "file": "src/script_sprite_native.c"
+  },
+  {
+    "addr": "080121C4",
+    "size": 32,
+    "name": "ScriptNativeHitInit",
+    "file": "src/map_native.c"
+  },
+  {
+    "addr": "080121E4",
+    "size": 36,
+    "name": "ScriptNativeHitFree",
+    "file": "src/map_native.c"
+  },
+  {
+    "addr": "08012244",
+    "size": 32,
+    "name": "ScriptNativeHitRect",
+    "file": "src/map_native.c"
+  },
+  {
+    "addr": "080122F8",
+    "size": 32,
+    "name": "ScriptNativeFieldSet",
+    "file": "src/map_native.c"
+  },
+  {
+    "addr": "08018C4C",
+    "size": 196,
+    "name": "HitRegionTest",
+    "file": "src/hit_region.c"
+  },
+  {
+    "addr": "080282F8",
+    "size": 44,
+    "name": "ObjectSetFlag4",
+    "file": "src/object.c"
+  },
+  {
+    "addr": "08028324",
+    "size": 48,
+    "name": "ObjectSetFlag400",
+    "file": "src/object.c"
+  },
+  {
+    "addr": "08028354",
+    "size": 44,
+    "name": "ObjectSetFlag2",
+    "file": "src/object.c"
+  },
+  {
+    "addr": "08028380",
+    "size": 8,
+    "name": "ObjectSetField26",
+    "file": "src/object.c"
+  },
+  {
+    "addr": "08028388",
+    "size": 8,
+    "name": "ObjectSetFields34And36",
+    "file": "src/object.c"
+  },
+  {
+    "addr": "08028390",
+    "size": 4,
+    "name": "ObjectSetField36",
+    "file": "src/object.c"
+  },
+  {
+    "addr": "08028394",
+    "size": 4,
+    "name": "ObjectSetField34",
+    "file": "src/object.c"
+  },
+  {
+    "addr": "08053960",
+    "size": 24,
+    "name": "StepCounterInit",
+    "file": "src/step_counter.c"
+  },
+  {
+    "addr": "08053978",
+    "size": 12,
+    "name": "StepCounterReset",
+    "file": "src/step_counter.c"
+  },
+  {
+    "addr": "08053984",
+    "size": 92,
+    "name": "StepCounterAdvance",
+    "file": "src/step_counter.c"
+  },
+  {
+    "addr": "08056464",
+    "size": 16,
+    "name": "ItemGetDefinition",
+    "file": "src/item.c"
+  },
+  {
+    "addr": "08056474",
+    "size": 16,
+    "name": "ItemGetName",
+    "file": "src/item.c"
+  },
+  {
+    "addr": "08056484",
+    "size": 16,
+    "name": "ItemGetDescription",
+    "file": "src/item.c"
+  },
+  {
+    "addr": "08056494",
+    "size": 24,
+    "name": "ItemGetField63",
+    "file": "src/item.c"
+  },
+  {
+    "addr": "080564AC",
+    "size": 24,
+    "name": "ItemGetField64",
+    "file": "src/item.c"
+  },
+  {
+    "addr": "080564C4",
+    "size": 24,
+    "name": "ItemGetField65",
+    "file": "src/item.c"
+  },
+  {
+    "addr": "080564DC",
+    "size": 20,
+    "name": "ItemGetField5C",
+    "file": "src/item.c"
+  },
+  {
+    "addr": "080564F0",
+    "size": 20,
+    "name": "ItemGetField5E",
+    "file": "src/item.c"
+  },
+  {
+    "addr": "08056504",
+    "size": 20,
+    "name": "ItemGetField60",
+    "file": "src/item.c"
+  },
+  {
+    "addr": "08056518",
+    "size": 24,
+    "name": "ItemGetField59",
+    "file": "src/item.c"
+  },
+  {
+    "addr": "08056530",
+    "size": 24,
+    "name": "ItemGetField5A",
+    "file": "src/item.c"
+  },
+  {
+    "addr": "08056548",
+    "size": 24,
+    "name": "ItemGetField62",
+    "file": "src/item.c"
+  },
+  {
+    "addr": "08056560",
+    "size": 24,
+    "name": "ItemGetField58",
+    "file": "src/item.c"
+  },
+  {
+    "addr": "08071DD4",
+    "size": 12,
+    "name": "MapGenerationSeedRandom",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08071DE0",
+    "size": 32,
+    "name": "MapGenerationRandom",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08071E00",
+    "size": 28,
+    "name": "MapGenerationGetState",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08071E1C",
+    "size": 24,
+    "name": "MapGenerationSetValues00And04",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08071E34",
+    "size": 12,
+    "name": "MapGenerationGetValue00",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08071E40",
+    "size": 12,
+    "name": "MapGenerationGetValue04",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08071E4C",
+    "size": 16,
+    "name": "MapGenerationSetPointer0C",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08071E5C",
+    "size": 16,
+    "name": "MapGenerationSetPointer14",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08071E6C",
+    "size": 16,
+    "name": "MapGenerationSetPointer10",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08071E7C",
+    "size": 16,
+    "name": "MapGenerationSetPointer18",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08071E8C",
+    "size": 12,
+    "name": "MapGenerationGetPointer0C",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08071E98",
+    "size": 12,
+    "name": "MapGenerationGetPointer14",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08071EA4",
+    "size": 12,
+    "name": "MapGenerationGetPointer10",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08071EB0",
+    "size": 12,
+    "name": "MapGenerationGetPointer18",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08071EBC",
+    "size": 12,
+    "name": "MapGenerationGetPointer1C",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08071EC8",
+    "size": 12,
+    "name": "MapGenerationGetPointer20",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08071ED4",
+    "size": 16,
+    "name": "MapGenerationSetPointer1C",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08071EE4",
+    "size": 16,
+    "name": "MapGenerationSetPointer20",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08071EF4",
+    "size": 24,
+    "name": "MapGenerationGetTable38",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08071F0C",
+    "size": 24,
+    "name": "MapGenerationGetTable48",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08071F24",
+    "size": 36,
+    "name": "MapGenerationSetTables",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08071F48",
+    "size": 24,
+    "name": "MapGenerationSetValue26",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08071F60",
+    "size": 24,
+    "name": "MapGenerationGetValue26",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08071F78",
+    "size": 24,
+    "name": "MapGenerationSetTable58",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08071F90",
+    "size": 24,
+    "name": "MapGenerationGetTable58",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08071FA8",
+    "size": 24,
+    "name": "MapGenerationSetValue68",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08071FC0",
+    "size": 24,
+    "name": "MapGenerationGetValue68",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08071FD8",
+    "size": 20,
+    "name": "MapGenerationGetValue24",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08071FEC",
+    "size": 24,
+    "name": "MapGenerationSetValue24",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08072004",
+    "size": 28,
+    "name": "MapGenerationSetValue2E",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08072020",
+    "size": 24,
+    "name": "MapGenerationGetValue2E",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08072038",
+    "size": 20,
+    "name": "MapGenerationGetValue25",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "0807204C",
+    "size": 24,
+    "name": "MapGenerationSetValue25",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08072064",
+    "size": 16,
+    "name": "MapGenerationGetValue08",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08072074",
+    "size": 20,
+    "name": "MapGenerationSetValue08",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08072088",
+    "size": 24,
+    "name": "MapGenerationGetVectorValue0",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "080720A0",
+    "size": 24,
+    "name": "MapGenerationGetVectorValue2",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "080720B8",
+    "size": 24,
+    "name": "MapGenerationGetVectorValue4",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "080720D0",
+    "size": 24,
+    "name": "MapGenerationGetVectorValue6",
+    "file": "src/map_generation.c"
+  },
+  {
+    "addr": "08078A64",
+    "size": 12,
+    "name": "SoundUpdate",
+    "file": "src/sound.c"
+  },
+  {
+    "addr": "08078C08",
+    "size": 16,
+    "name": "SoundFadeOut",
+    "file": "src/sound.c"
+  },
+  {
+    "addr": "08079240",
+    "size": 64,
+    "name": "SoundPlayerStop",
+    "file": "src/sound.c"
+  },
+  {
+    "addr": "08079E98",
+    "size": 4,
+    "name": "ArcTan2",
+    "file": "src/bios_calls.c"
+  },
+  {
+    "addr": "08079E9C",
+    "size": 4,
+    "name": "BgAffineSet",
+    "file": "src/bios_calls.c"
+  },
+  {
+    "addr": "08079EA0",
+    "size": 4,
+    "name": "CpuFastSet",
+    "file": "src/bios_calls.c"
+  },
+  {
+    "addr": "08079EA4",
+    "size": 4,
+    "name": "CpuSet",
+    "file": "src/bios_calls.c"
+  },
+  {
+    "addr": "08079EB0",
+    "size": 4,
+    "name": "LZ77UnCompVram",
+    "file": "src/bios_calls.c"
+  },
+  {
+    "addr": "08079EB4",
+    "size": 4,
+    "name": "LZ77UnCompWram",
+    "file": "src/bios_calls.c"
+  },
+  {
+    "addr": "08079EB8",
+    "size": 4,
+    "name": "RLUnCompWram",
+    "file": "src/bios_calls.c"
+  },
+  {
+    "addr": "08079EBC",
+    "size": 4,
+    "name": "RegisterRamReset",
+    "file": "src/bios_calls.c"
+  },
+  {
+    "addr": "08079EC0",
+    "size": 24,
+    "name": "SoftReset",
+    "file": "src/bios_calls.c"
+  },
+  {
+    "addr": "08079ED8",
+    "size": 4,
+    "name": "Sqrt",
+    "file": "src/bios_calls.c"
+  },
+  {
+    "addr": "0807A084",
+    "size": 24,
+    "name": "KeyInputInit",
+    "file": "src/input.c"
+  },
+  {
+    "addr": "0807A09C",
+    "size": 84,
+    "name": "KeyInputPoll",
+    "file": "src/input.c"
+  },
+  {
+    "addr": "0807A0F0",
+    "size": 68,
+    "name": "KeyInputSet",
+    "file": "src/input.c"
+  },
+  {
+    "addr": "0807A134",
+    "size": 44,
+    "name": "KeyInputConsumePressed",
+    "file": "src/input.c"
+  },
+  {
+    "addr": "0807A160",
+    "size": 36,
+    "name": "KeyInputAnyHeld",
+    "file": "src/input.c"
+  },
+  {
+    "addr": "0807A184",
+    "size": 12,
+    "name": "RandomInit",
+    "file": "src/random.c"
+  },
+  {
+    "addr": "0807A190",
+    "size": 44,
+    "name": "BitSet",
+    "file": "src/bitset.c"
+  },
+  {
+    "addr": "0807A1BC",
+    "size": 28,
+    "name": "BitTest",
+    "file": "src/bitset.c"
+  },
+  {
+    "addr": "0807A1D8",
+    "size": 12,
+    "name": "RandomSeed",
+    "file": "src/random.c"
+  },
+  {
+    "addr": "0807A1E4",
+    "size": 12,
+    "name": "RandomGetSeed",
+    "file": "src/random.c"
+  },
+  {
+    "addr": "0807A1F0",
+    "size": 32,
+    "name": "Random",
+    "file": "src/random.c"
+  },
+  {
+    "addr": "0807A210",
+    "size": 24,
+    "name": "ByteStringLength",
+    "file": "src/byte_utils.c"
+  },
+  {
+    "addr": "0807A228",
+    "size": 32,
+    "name": "BufferXor",
+    "file": "src/byte_utils.c"
+  },
+  {
+    "addr": "0807A248",
+    "size": 40,
+    "name": "BufferXorSeeded",
+    "file": "src/byte_utils.c"
+  },
+  {
+    "addr": "0807A270",
+    "size": 56,
+    "name": "HeapInitDefault",
+    "file": "src/heap.c"
+  },
+  {
+    "addr": "0807A2A8",
+    "size": 68,
+    "name": "HeapCreate",
+    "file": "src/heap.c"
+  },
+  {
+    "addr": "0807A2EC",
+    "size": 12,
+    "name": "HeapAlloc",
+    "file": "src/heap.c"
+  },
+  {
+    "addr": "0807A5FC",
+    "size": 72,
+    "name": "TaskManagerInit",
+    "file": "src/task_manager.c"
+  },
+  {
+    "addr": "0807A644",
+    "size": 68,
+    "name": "TaskManagerDestroy",
+    "file": "src/task_manager.c"
+  },
+  {
+    "addr": "0807A688",
+    "size": 120,
+    "name": "TaskCreateInQueue",
+    "file": "src/task_create.c"
+  },
+  {
+    "addr": "0807A700",
+    "size": 124,
+    "name": "TaskCreateBefore",
+    "file": "src/task_create.c"
+  },
+  {
+    "addr": "0807A77C",
+    "size": 48,
+    "name": "CreateTask",
+    "file": "src/task_scheduler.c"
+  },
+  {
+    "addr": "0807A7AC",
+    "size": 24,
+    "name": "FinishTask",
+    "file": "src/task_scheduler.c"
+  },
+  {
+    "addr": "0807A7C4",
+    "size": 164,
+    "name": "TaskManagerRun",
+    "file": "src/task_scheduler.c"
+  },
+  {
+    "addr": "0807A868",
+    "size": 4,
+    "name": "TaskManagerCount",
+    "file": "src/task_manager.c"
+  },
+  {
+    "addr": "0807A86C",
+    "size": 12,
+    "name": "ListInit",
+    "file": "src/list.c"
+  },
+  {
+    "addr": "0807A878",
+    "size": 40,
+    "name": "ListAppend",
+    "file": "src/list.c"
+  },
+  {
+    "addr": "0807A8A0",
+    "size": 32,
+    "name": "ListInsertBefore",
+    "file": "src/list.c"
+  },
+  {
+    "addr": "0807A8C0",
+    "size": 36,
+    "name": "ListGet",
+    "file": "src/list.c"
+  },
+  {
+    "addr": "0807A8E4",
+    "size": 4,
+    "name": "ListCount",
+    "file": "src/list.c"
+  },
+  {
+    "addr": "0807A8E8",
+    "size": 100,
+    "name": "ListSwapAdjacentIndices",
+    "file": "src/list.c"
+  },
+  {
+    "addr": "0807A94C",
+    "size": 64,
+    "name": "ListRemove",
+    "file": "src/list.c"
+  },
+  {
+    "addr": "0807A98C",
+    "size": 44,
+    "name": "ListInsertBeforeLinked",
+    "file": "src/list.c"
+  },
+  {
+    "addr": "0807A9B8",
+    "size": 4,
+    "name": "ListHead",
+    "file": "src/list.c"
+  },
+  {
+    "addr": "0807A9BC",
+    "size": 4,
+    "name": "ListTail",
+    "file": "src/list.c"
+  },
+  {
+    "addr": "0807A9C0",
+    "size": 48,
+    "name": "NfpInit",
+    "file": "src/nfp_lifecycle.c"
+  },
+  {
+    "addr": "0807A9F0",
+    "size": 40,
+    "name": "NfpShutdown",
+    "file": "src/nfp_lifecycle.c"
+  },
+  {
+    "addr": "0807AA18",
+    "size": 24,
+    "name": "NfpMountIsActive",
+    "file": "src/nfp.c"
+  },
+  {
+    "addr": "0807AA30",
+    "size": 24,
+    "name": "NfpSetMountActive",
+    "file": "src/nfp.c"
+  },
+  {
+    "addr": "0807AA48",
+    "size": 44,
+    "name": "NfpGetMountName",
+    "file": "src/nfp_mount_helpers.c"
+  },
+  {
+    "addr": "0807AA74",
+    "size": 44,
+    "name": "NfpSetMountName",
+    "file": "src/nfp_mount_helpers.c"
+  },
+  {
+    "addr": "0807AAA0",
+    "size": 24,
+    "name": "NfpGetArchiveBase",
+    "file": "src/nfp.c"
+  },
+  {
+    "addr": "0807AAB8",
+    "size": 24,
+    "name": "NfpSetArchiveBase",
+    "file": "src/nfp.c"
+  },
+  {
+    "addr": "0807AAD0",
+    "size": 16,
+    "name": "NfpGetDirectory",
+    "file": "src/nfp.c"
+  },
+  {
+    "addr": "0807AAE0",
+    "size": 16,
+    "name": "NfpGetData",
+    "file": "src/nfp.c"
+  },
+  {
+    "addr": "0807AAF0",
+    "size": 24,
+    "name": "NfpGetEntryCountByName",
+    "file": "src/nfp_convenience.c"
+  },
+  {
+    "addr": "0807AB08",
+    "size": 12,
+    "name": "NfpGetEntryCount",
+    "file": "src/nfp.c"
+  },
+  {
+    "addr": "0807AB14",
+    "size": 92,
+    "name": "NfpMount",
+    "file": "src/nfp.c"
+  },
+  {
+    "addr": "0807AB70",
+    "size": 12,
+    "name": "NfpUnmount",
+    "file": "src/nfp_mount_helpers.c"
+  },
+  {
+    "addr": "0807AB7C",
+    "size": 64,
+    "name": "NfpFindArchive",
+    "file": "src/nfp.c"
+  },
+  {
+    "addr": "0807ABBC",
+    "size": 52,
+    "name": "NfpCountMounted",
+    "file": "src/nfp_mount_helpers.c"
+  },
+  {
+    "addr": "0807ABF0",
+    "size": 56,
+    "name": "NfpFindFreeSlot",
+    "file": "src/nfp.c"
+  },
+  {
+    "addr": "0807AC28",
+    "size": 20,
+    "name": "NfpGetEntry",
+    "file": "src/nfp.c"
+  },
+  {
+    "addr": "0807AC3C",
+    "size": 60,
+    "name": "NfpOpenByName",
+    "file": "src/nfp.c"
+  },
+  {
+    "addr": "0807AC78",
+    "size": 48,
+    "name": "NfpOpenByIndex",
+    "file": "src/nfp_convenience.c"
+  },
+  {
+    "addr": "0807ACA8",
+    "size": 28,
+    "name": "NfpFindEntryByArchiveName",
+    "file": "src/nfp_convenience.c"
+  },
+  {
+    "addr": "0807ADC4",
+    "size": 28,
+    "name": "InitFont",
+    "file": "src/font.c"
+  },
+  {
+    "addr": "0807ADE0",
+    "size": 4,
+    "name": "SetFontData",
+    "file": "src/font.c"
+  },
+  {
+    "addr": "0807ADE4",
+    "size": 16,
+    "name": "ClearFont",
+    "file": "src/font.c"
+  },
+  {
+    "addr": "0807ADF4",
+    "size": 20,
+    "name": "FontGlyphStride",
+    "file": "src/font.c"
+  },
+  {
+    "addr": "0807AE08",
+    "size": 8,
+    "name": "FontPalette",
+    "file": "src/font.c"
+  },
+  {
+    "addr": "0807B224",
+    "size": 20,
+    "name": "SpriteEngineGetOamEntry",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807B238",
+    "size": 28,
+    "name": "SpriteEngineAllocateOamEntry",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807B254",
+    "size": 68,
+    "name": "SpriteEngineGetOamBoundary",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807B298",
+    "size": 64,
+    "name": "SpriteEngineSetOamBoundary",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807B2D8",
+    "size": 20,
+    "name": "SpriteEngineSetValue610",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807B2EC",
+    "size": 20,
+    "name": "SpriteEngineSetValue612",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807B300",
+    "size": 20,
+    "name": "SpriteEngineGetValue610",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807B314",
+    "size": 24,
+    "name": "SpriteEngineGetValue612",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807B618",
+    "size": 24,
+    "name": "SpriteResourceRelease",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807B630",
+    "size": 20,
+    "name": "SpriteResourceSetHandle",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807B644",
+    "size": 8,
+    "name": "SpriteResourceGetHandle",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807B6C8",
+    "size": 64,
+    "name": "SpriteEngineSetFlag20C",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807B708",
+    "size": 32,
+    "name": "SpriteEngineTestFlag20C",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807B74C",
+    "size": 20,
+    "name": "SpriteEngineGetFlags20C",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807B760",
+    "size": 56,
+    "name": "SpriteEngineReleaseBinding",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807B798",
+    "size": 28,
+    "name": "SpriteEngineGetCounter",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807B7B4",
+    "size": 28,
+    "name": "SpriteEngineSetCounter",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807B7D0",
+    "size": 40,
+    "name": "SpriteEngineIncrementCounter",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807B7F8",
+    "size": 56,
+    "name": "SpriteEngineDecrementCounter",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807B96C",
+    "size": 96,
+    "name": "NcdRegisterResource",
+    "file": "src/ncd_sprite.c"
+  },
+  {
+    "addr": "0807BA0C",
+    "size": 32,
+    "name": "SpriteResourceGetLevel0",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807BA2C",
+    "size": 28,
+    "name": "SpriteResourceGetEntryCount",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807BA48",
+    "size": 48,
+    "name": "SpriteResourceGetLevel1",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807BA78",
+    "size": 56,
+    "name": "SpriteResourceGetLevel2",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807BAB0",
+    "size": 72,
+    "name": "SpriteResourceGetLevel3",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807BAF8",
+    "size": 80,
+    "name": "SpriteResourceGetTable24",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807BB48",
+    "size": 80,
+    "name": "SpriteResourceGetTable28",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807BC2C",
+    "size": 80,
+    "name": "NcdInitSprite",
+    "file": "src/ncd_sprite.c"
+  },
+  {
+    "addr": "0807BF60",
+    "size": 32,
+    "name": "NcdSpriteCopy",
+    "file": "src/ncd_sprite.c"
+  },
+  {
+    "addr": "0807BF80",
+    "size": 80,
+    "name": "NcdSpriteDeepCopy",
+    "file": "src/ncd_sprite.c"
+  },
+  {
+    "addr": "0807CC04",
+    "size": 20,
+    "name": "SpriteEngineGetBuffer4Entry",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807CCEC",
+    "size": 56,
+    "name": "SpriteEngineSetFlag10",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807CD24",
+    "size": 24,
+    "name": "SpriteEngineTestFlag10",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807CD3C",
+    "size": 32,
+    "name": "SpriteEngineSetAllFlags10",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807CD5C",
+    "size": 12,
+    "name": "SpriteEngineGetFlags10",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807CD68",
+    "size": 52,
+    "name": "SpriteEngineSetFlag14",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807CD9C",
+    "size": 24,
+    "name": "SpriteEngineTestFlag14",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807CDB4",
+    "size": 32,
+    "name": "SpriteEngineSetAllFlags14",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807CDD4",
+    "size": 12,
+    "name": "SpriteEngineGetFlags14",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807D3C4",
+    "size": 12,
+    "name": "SpriteEngineGetBuffer8",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807D3D0",
+    "size": 12,
+    "name": "SpriteEngineSetBuffer8",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807D3DC",
+    "size": 12,
+    "name": "SpriteEngineGetBufferC",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807D3E8",
+    "size": 12,
+    "name": "SpriteEngineSetBufferC",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807D3F4",
+    "size": 12,
+    "name": "SpriteEngineGetBuffer4",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807D400",
+    "size": 12,
+    "name": "SpriteEngineSetBuffer4",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807D40C",
+    "size": 36,
+    "name": "SpriteEngineSetCopyCallback620",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807D430",
+    "size": 20,
+    "name": "SpriteEngineGetCopyCallback620",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807D444",
+    "size": 56,
+    "name": "SpriteEngineCopyToBuffer8",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807D47C",
+    "size": 12,
+    "name": "SpriteEngineDefaultCopy620",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807D488",
+    "size": 36,
+    "name": "SpriteEngineSetCopyCallback624",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807D4AC",
+    "size": 20,
+    "name": "SpriteEngineGetCopyCallback624",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807D4C0",
+    "size": 44,
+    "name": "SpriteEngineCopyToBufferC",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807D4EC",
+    "size": 12,
+    "name": "SpriteEngineDefaultCopy624",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807D92C",
+    "size": 24,
+    "name": "SpriteMathDivide65536ByS16",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807DB4C",
+    "size": 8,
+    "name": "SpriteRecordSizeForCount",
+    "file": "src/sprite_engine_state.c"
+  },
+  {
+    "addr": "0807E384",
+    "size": 16,
+    "name": "ScriptDeactivate",
+    "file": "src/script_tasks.c"
+  },
+  {
+    "addr": "0807E394",
+    "size": 12,
+    "name": "ScriptSetResult",
+    "file": "src/script_tasks.c"
+  },
+  {
+    "addr": "0807E3A0",
+    "size": 12,
+    "name": "ScriptGetResult",
+    "file": "src/script_tasks.c"
+  },
+  {
+    "addr": "0807E3AC",
+    "size": 40,
+    "name": "ScriptGetParentFrame",
+    "file": "src/script_tasks.c"
+  },
+  {
+    "addr": "0807E3D4",
+    "size": 36,
+    "name": "ScriptSetPendingTasks",
+    "file": "src/script_tasks.c"
+  },
+  {
+    "addr": "0807E3F8",
+    "size": 40,
+    "name": "ScriptGetPendingTasks",
+    "file": "src/script_tasks.c"
+  },
+  {
+    "addr": "0807E420",
+    "size": 40,
+    "name": "ScriptAddPendingTasks",
+    "file": "src/script_tasks.c"
+  },
+  {
+    "addr": "0807E448",
+    "size": 40,
+    "name": "ScriptCompletePendingTasks",
+    "file": "src/script_tasks.c"
+  },
+  {
+    "addr": "0807E470",
+    "size": 44,
+    "name": "ScriptSetStepBudget",
+    "file": "src/script_tasks.c"
+  },
+  {
+    "addr": "0807E49C",
+    "size": 40,
+    "name": "ScriptGetStepBudget",
+    "file": "src/script_tasks.c"
+  },
+  {
+    "addr": "0807ED70",
+    "size": 32,
+    "name": "ScriptDispatchCurrentFrame",
+    "file": "src/script_frames.c"
+  },
+  {
+    "addr": "0807ED90",
+    "size": 48,
+    "name": "ScriptRunWorkBatch",
+    "file": "src/script_frames.c"
+  },
+  {
+    "addr": "0807EDC0",
+    "size": 48,
+    "name": "ScriptSetFrameFlag",
+    "file": "src/script_frames.c"
+  },
+  {
+    "addr": "0807EDF0",
+    "size": 32,
+    "name": "ScriptSetStepBudgetUnchecked",
+    "file": "src/script_frames.c"
+  },
+  {
+    "addr": "0807EFB8",
+    "size": 140,
+    "name": "ScriptPopFrame",
+    "file": "src/script_frames.c"
+  },
+  {
+    "addr": "0807F15C",
+    "size": 92,
+    "name": "ScriptRunSlice",
+    "file": "src/script_tasks.c"
+  },
+  {
+    "addr": "0807F518",
+    "size": 20,
+    "name": "ScriptReadU8",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F52C",
+    "size": 28,
+    "name": "ScriptReadU16",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F548",
+    "size": 40,
+    "name": "ScriptReadU32",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F570",
+    "size": 40,
+    "name": "ScriptReadNextU8",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F598",
+    "size": 40,
+    "name": "ScriptReadNextU16",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F5C0",
+    "size": 40,
+    "name": "ScriptReadNextU32",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F5E8",
+    "size": 32,
+    "name": "ScriptPushU32",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F608",
+    "size": 28,
+    "name": "ScriptPopU32",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F664",
+    "size": 96,
+    "name": "ScriptPushFrameAndJump",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F6C4",
+    "size": 32,
+    "name": "ScriptCmdJumpRelative",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F6E4",
+    "size": 28,
+    "name": "ScriptCmdJump",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F700",
+    "size": 48,
+    "name": "ScriptCmdJumpIfZero",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F730",
+    "size": 44,
+    "name": "ScriptCmdCall",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F75C",
+    "size": 28,
+    "name": "ScriptCmdReturn",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F778",
+    "size": 72,
+    "name": "ScriptCmdSwitch",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F7C0",
+    "size": 40,
+    "name": "ScriptCmdCopy",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F7E8",
+    "size": 32,
+    "name": "ScriptCmdSetImmediate",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F808",
+    "size": 48,
+    "name": "ScriptCmdSetBytecodeAddress",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F838",
+    "size": 24,
+    "name": "ScriptCmdPushOperand",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F850",
+    "size": 16,
+    "name": "ScriptCmdPushImmediate",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F860",
+    "size": 28,
+    "name": "ScriptCmdPopOperand",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F87C",
+    "size": 44,
+    "name": "ScriptCmdAdd",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F8A8",
+    "size": 36,
+    "name": "ScriptCmdAddImmediate",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F8CC",
+    "size": 44,
+    "name": "ScriptCmdSubtract",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F8F8",
+    "size": 36,
+    "name": "ScriptCmdSubtractImmediate",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F91C",
+    "size": 44,
+    "name": "ScriptCmdMultiply",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F948",
+    "size": 36,
+    "name": "ScriptCmdMultiplyImmediate",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F96C",
+    "size": 56,
+    "name": "ScriptCmdDivide",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F9A4",
+    "size": 52,
+    "name": "ScriptCmdDivideImmediate",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F9D8",
+    "size": 56,
+    "name": "ScriptCmdModulo",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FA10",
+    "size": 52,
+    "name": "ScriptCmdModuloImmediate",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FA44",
+    "size": 24,
+    "name": "ScriptCmdIncrement",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FA5C",
+    "size": 24,
+    "name": "ScriptCmdDecrement",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FA74",
+    "size": 24,
+    "name": "ScriptCmdNegate",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FA8C",
+    "size": 44,
+    "name": "ScriptCmdBitAnd",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FAB8",
+    "size": 36,
+    "name": "ScriptCmdBitAndImmediate",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FADC",
+    "size": 44,
+    "name": "ScriptCmdBitOr",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FB08",
+    "size": 36,
+    "name": "ScriptCmdBitOrImmediate",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FB2C",
+    "size": 44,
+    "name": "ScriptCmdBitXor",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FB58",
+    "size": 36,
+    "name": "ScriptCmdBitXorImmediate",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FB7C",
+    "size": 24,
+    "name": "ScriptCmdBitNot",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FB94",
+    "size": 56,
+    "name": "ScriptCmdLogicalAnd",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FBCC",
+    "size": 48,
+    "name": "ScriptCmdLogicalAndImmediate",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FBFC",
+    "size": 56,
+    "name": "ScriptCmdLogicalOr",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FC34",
+    "size": 48,
+    "name": "ScriptCmdLogicalOrImmediate",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FC64",
+    "size": 32,
+    "name": "ScriptCmdLogicalNot",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FC84",
+    "size": 24,
+    "name": "ScriptCmdSignBit",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FC9C",
+    "size": 32,
+    "name": "ScriptCmdLessThanOrEqualZero",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FCBC",
+    "size": 32,
+    "name": "ScriptCmdGreaterThanZero",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FCDC",
+    "size": 24,
+    "name": "ScriptCmdGreaterThanOrEqualZero",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FCF4",
+    "size": 32,
+    "name": "ScriptCmdEqualZero",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FD14",
+    "size": 28,
+    "name": "ScriptCmdNotEqualZero",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FD30",
+    "size": 40,
+    "name": "ScriptCmdSetCallback",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FD58",
+    "size": 48,
+    "name": "ScriptCmdRunCallback",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FD88",
+    "size": 76,
+    "name": "ScriptRestoreFrame",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FDD4",
+    "size": 32,
+    "name": "ScriptCmdClearFrameFlag",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FDF4",
+    "size": 28,
+    "name": "ScriptCmdSetFrameFlag",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FE10",
+    "size": 52,
+    "name": "ScriptCmdReadContextField14",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FE44",
+    "size": 56,
+    "name": "ScriptCmdReadContextField114",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FE7C",
+    "size": 52,
+    "name": "ScriptCmdReadTable38Field",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FEB0",
+    "size": 52,
+    "name": "ScriptCmdReadTable3CField",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807FFA0",
+    "size": 48,
+    "name": "ScriptCmdFreeString",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0808004C",
+    "size": 28,
+    "name": "ScriptCmdRestoreFrameAndGetResult",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "080800FC",
+    "size": 20,
+    "name": "ScriptNativeAbs",
+    "file": "src/script_native.c"
+  },
+  {
+    "addr": "08080110",
+    "size": 48,
+    "name": "ScriptNativeCharacterCode",
+    "file": "src/script_native.c"
+  },
+  {
+    "addr": "08080140",
+    "size": 72,
+    "name": "ScriptNativeCharacterString",
+    "file": "src/script_native.c"
+  },
+  {
+    "addr": "08080188",
+    "size": 44,
+    "name": "ScriptNativeMax",
+    "file": "src/script_native.c"
+  },
+  {
+    "addr": "080801B4",
+    "size": 44,
+    "name": "ScriptNativeMin",
+    "file": "src/script_native.c"
+  },
+  {
+    "addr": "080801E0",
+    "size": 36,
+    "name": "ScriptNativeRandomRange",
+    "file": "src/script_native.c"
+  },
+  {
+    "addr": "08080204",
+    "size": 16,
+    "name": "ScriptNativeSeedRandom",
+    "file": "src/script_native.c"
+  },
+  {
+    "addr": "08080214",
+    "size": 60,
+    "name": "ScriptNativeIntegerString",
+    "file": "src/script_native.c"
+  },
+  {
+    "addr": "08080250",
+    "size": 32,
+    "name": "ScriptNativeParseInteger",
+    "file": "src/script_native.c"
+  },
+  {
+    "addr": "08080270",
+    "size": 56,
+    "name": "ScriptNativeCompareStrings",
+    "file": "src/script_native.c"
+  },
+  {
+    "addr": "080802A8",
+    "size": 32,
+    "name": "ScriptNativeStringLength",
+    "file": "src/script_native.c"
+  },
+  {
+    "addr": "08080320",
+    "size": 96,
+    "name": "ScriptNativeRight",
+    "file": "src/script_native.c"
+  },
+  {
+    "addr": "08080380",
+    "size": 100,
+    "name": "ScriptNativeSubstring",
+    "file": "src/script_native.c"
+  },
+  {
+    "addr": "0808045C",
+    "size": 32,
+    "name": "ScriptCommandReturn",
+    "file": "src/script_tasks.c"
+  },
+  {
+    "addr": "080097D0",
+    "size": 24,
+    "name": "RuntimeObjectSetField4A",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "080097E8",
+    "size": 24,
+    "name": "RuntimeObjectGetField4A",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "08009800",
+    "size": 24,
+    "name": "RuntimeObjectSetField4C",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "08009818",
+    "size": 24,
+    "name": "RuntimeObjectGetField4C",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "08009EB4",
+    "size": 28,
+    "name": "RuntimeActorSetField354",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009ED0",
+    "size": 28,
+    "name": "RuntimeActorGetField354",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08004CC0",
+    "size": 16,
+    "name": "SioGetPlayerId",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08004CD0",
+    "size": 12,
+    "name": "RuntimeGetByte4014",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08004FB8",
+    "size": 8,
+    "name": "RuntimeAdvanceWord4",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "080067A4",
+    "size": 28,
+    "name": "GameStateSetPointer2C",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "080067C0",
+    "size": 28,
+    "name": "GameStateGetPointer2C",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08006898",
+    "size": 28,
+    "name": "GameStateSetField60E",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "080068B4",
+    "size": 28,
+    "name": "GameStateGetField60E",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "080068D0",
+    "size": 28,
+    "name": "GameStateSetField12EC",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "080068EC",
+    "size": 32,
+    "name": "GameStateGetField12EC",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08006AA0",
+    "size": 32,
+    "name": "GameStateGetField12EE",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08006AC0",
+    "size": 28,
+    "name": "GameStateSetField12EE",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08006BD8",
+    "size": 16,
+    "name": "IwramGetField0810",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08008658",
+    "size": 16,
+    "name": "RuntimeGetBufferE50",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "0800D628",
+    "size": 32,
+    "name": "GameStateGetRecord610",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08070090",
+    "size": 24,
+    "name": "GameStateGetBuffer38C0",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "0807E964",
+    "size": 24,
+    "name": "VmAddToField220",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "0807F274",
+    "size": 16,
+    "name": "VmGetField10",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "0807F284",
+    "size": 16,
+    "name": "VmGetField12",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "08080600",
+    "size": 20,
+    "name": "RuntimeGetPointer6120Field800",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "08085268",
+    "size": 8,
+    "name": "RuntimeGetTable1AC8C0",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "0802ADC8",
+    "size": 28,
+    "name": "InputRepeatInit",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "0806C7A0",
+    "size": 12,
+    "name": "MapObjectResetMotion",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "0800F0CC",
+    "size": 36,
+    "name": "GameStateGetRecord1190",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "0800503C",
+    "size": 4,
+    "name": "RuntimeReturnZero",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "08011674",
+    "size": 20,
+    "name": "RuntimeGetTable1AD634",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "080106C8",
+    "size": 32,
+    "name": "GameStateGetRecord0B90",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "080804EC",
+    "size": 24,
+    "name": "RuntimeGetBlock6120",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "080069F8",
+    "size": 36,
+    "name": "GameStateCopyString12F4",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "08002148",
+    "size": 16,
+    "name": "Lz77UnCompVramSwapped",
+    "file": "src/runtime_leaf.c"
+  },
+  {
+    "addr": "08008BD8",
+    "size": 12,
+    "name": "SpriteAuxiliaryReset",
+    "file": "src/runtime_leaf.c"
+  },
+  {
+    "addr": "08009B24",
+    "size": 40,
+    "name": "RuntimePartSetField656",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009B4C",
+    "size": 36,
+    "name": "RuntimePartGetField656",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009B70",
+    "size": 40,
+    "name": "RuntimePartSetField652",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009B98",
+    "size": 36,
+    "name": "RuntimePartGetField652",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009BBC",
+    "size": 40,
+    "name": "RuntimePartSetField651",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009BE4",
+    "size": 36,
+    "name": "RuntimePartGetField651",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009DB8",
+    "size": 28,
+    "name": "RuntimeActorGetField7A0",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009DD4",
+    "size": 28,
+    "name": "RuntimeActorSetField7A2",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009E5C",
+    "size": 28,
+    "name": "RuntimeActorSetField352",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009E78",
+    "size": 32,
+    "name": "RuntimeActorGetField352",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009E98",
+    "size": 28,
+    "name": "RuntimeActorGetField350",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "0806E52C",
+    "size": 12,
+    "name": "MapGeneratorStep",
+    "file": "src/runtime_leaf.c"
+  },
+  {
+    "addr": "08005084",
+    "size": 16,
+    "name": "RuntimeReadSignedByte",
+    "file": "src/runtime_leaf.c"
+  },
+  {
+    "addr": "08005E98",
+    "size": 16,
+    "name": "SoundSongStartU16",
+    "file": "src/runtime_leaf.c"
+  },
+  {
+    "addr": "08005EF0",
+    "size": 20,
+    "name": "RuntimeResetSelection",
+    "file": "src/runtime_leaf.c"
+  },
+  {
+    "addr": "08018E30",
+    "size": 20,
+    "name": "SoundStopPlayers4And5",
+    "file": "src/runtime_leaf.c"
+  },
+  {
+    "addr": "0807D21C",
+    "size": 32,
+    "name": "SpriteSetViewportOrigin",
+    "file": "src/runtime_leaf.c"
+  },
+  {
+    "addr": "08019C50",
+    "size": 20,
+    "name": "RuntimeActorSetByteA4",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08008684",
+    "size": 44,
+    "name": "RuntimeAddOffsets",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08006784",
+    "size": 32,
+    "name": "GameStateTestFlagsAC",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "08006834",
+    "size": 36,
+    "name": "GameStateTestFlags12C",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "08006A1C",
+    "size": 36,
+    "name": "GameStateSetString12F4",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "0800F96C",
+    "size": 40,
+    "name": "GameStateClearBlock413C",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "08057218",
+    "size": 48,
+    "name": "GameStateCopyMapBuffer",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "080078E4",
+    "size": 36,
+    "name": "CreateTask078E4",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "0806C8F0",
+    "size": 40,
+    "name": "CreateTask6C8F0",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "0806E748",
+    "size": 36,
+    "name": "CreateTask6E748",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "0806EEF0",
+    "size": 40,
+    "name": "CreateTask6EEF0",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "0800D664",
+    "size": 44,
+    "name": "CreateActorTaskD664",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "0800F0F0",
+    "size": 44,
+    "name": "CreateActorTaskF0F0",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "08010704",
+    "size": 44,
+    "name": "CreateActorTask10704",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "08011484",
+    "size": 44,
+    "name": "CreateActorTask11484",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "08078DC4",
+    "size": 20,
+    "name": "SoundCallCallback5DA8",
+    "file": "src/sound.c"
+  },
+  {
+    "addr": "08078DD8",
+    "size": 20,
+    "name": "SoundCallCallback5DAC",
+    "file": "src/sound.c"
+  },
+  {
+    "addr": "08006A40",
+    "size": 44,
+    "name": "GameStateSaveActorRecord0",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "08006A6C",
+    "size": 52,
+    "name": "GameStateLoadActorRecord0",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "08003784",
+    "size": 52,
+    "name": "CreateCopyTask",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "0800B1B8",
+    "size": 52,
+    "name": "CreateCoordinateTask",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "0800D98C",
+    "size": 52,
+    "name": "CreatePendingTaskD98C",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "0800FD3C",
+    "size": 52,
+    "name": "CreatePendingTaskFD3C",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "0800F9B4",
+    "size": 56,
+    "name": "CreateSpriteTaskF9B4",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "0800E610",
+    "size": 60,
+    "name": "CreateIndexedPendingTask",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "080010C8",
+    "size": 32,
+    "name": "DisableDma1AndUpdateSound",
+    "file": "src/sound.c"
+  },
+  {
+    "addr": "080037B8",
+    "size": 32,
+    "name": "CopyThenFinishTask",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "08019C34",
+    "size": 28,
+    "name": "RuntimePartInitHeader",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08008A70",
+    "size": 40,
+    "name": "NcdSpriteContainerReset",
+    "file": "src/ncd_sprite.c"
+  },
+  {
+    "addr": "08009D74",
+    "size": 40,
+    "name": "RuntimeActorSetActiveVector",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009DF0",
+    "size": 32,
+    "name": "RuntimeActorGetField7A2",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009E10",
+    "size": 36,
+    "name": "RuntimeActorSetFields7A4_7A6",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009E34",
+    "size": 40,
+    "name": "RuntimeActorGetFields7A4_7A6",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009EEC",
+    "size": 24,
+    "name": "RuntimeActorGetField354Address",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009C94",
+    "size": 48,
+    "name": "RuntimeCountReadyParts",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "080288DC",
+    "size": 28,
+    "name": "ObjectGetActiveRecordData",
+    "file": "src/object.c"
+  },
+  {
+    "addr": "0800AEF0",
+    "size": 32,
+    "name": "RuntimeActorClearField0E",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "0800F0A0",
+    "size": 44,
+    "name": "GameStateClearRecord1190IfZero",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "08011438",
+    "size": 44,
+    "name": "GameStateClearRecord1090IfZero",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "080805D0",
+    "size": 48,
+    "name": "SpriteRuntimeSetAllFlags800",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "08003770",
+    "size": 20,
+    "name": "HeapFreeDefault",
+    "file": "src/runtime_leaf.c"
+  },
+  {
+    "addr": "0806E538",
+    "size": 20,
+    "name": "Crc32Difference",
+    "file": "src/runtime_leaf.c"
+  },
+  {
+    "addr": "08009830",
+    "size": 56,
+    "name": "RuntimeActorHasReadyPart",
+    "file": "src/runtime_buffers.c"
+  }
 ]

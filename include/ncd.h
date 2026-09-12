@@ -52,4 +52,5 @@ void NcdInitSprite(struct NcdSprite *sprite, s32 pool);
 void NcdSpriteCopy(struct NcdSprite *destination, const struct NcdSprite *source);
 void NcdSpriteDeepCopy(struct NcdSprite *destination, const struct NcdSprite *source);
 void NcdRegisterResource(struct NcdHeader *header, u32 resource);
+void NcdSpriteContainerReset(void *container);
 #endif

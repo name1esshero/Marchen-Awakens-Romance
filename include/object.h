@@ -41,4 +41,6 @@ struct Object
     u8 filler_38[8]; 
 };
 
+void *ObjectGetActiveRecordData(struct Object *object);
+
 #endif /* OBJECT_H */

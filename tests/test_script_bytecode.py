@@ -19,24 +19,32 @@ class ScriptBytecodeTests(unittest.TestCase):
 static struct ScriptBytecodeVm vm;
 static struct ScriptBytecodeContext context;
 static struct ScriptBytecodeRoot root;
-static s32 variables[256];
 
 #undef gScriptBytecodeRoot
 #undef gScriptBytecodeVm
-#define gScriptBytecodeRoot (&root)
+#define gScriptBytecodeRoot root_ptr
 #define gScriptBytecodeVm (root.context->vm)
 #define AT(x)
+static struct ScriptBytecodeRoot *root_ptr = &root;
 #include "src/script_bytecode.c"
 
-s32 *sub_0807F624(u32 operand) { return &variables[operand]; }
+s32 *ScriptResolveOperand(u32 operand) {
+    if (operand & 0x80)
+        return (s32 *)(unsigned long)vm.frame.live.registers[operand & 0x7f];
+    return &vm.frame.live.registers[operand];
+}
+s32 sub_08080BFC(s32 dividend, s32 divisor) { return dividend / divisor; }
+s32 sub_08080C94(s32 dividend, s32 divisor) { return dividend % divisor; }
+s32 sub_0807F1F8(void *record, s32 selector) { (void)record; return selector; }
+void HeapFree(void *heap, void *block) { (void)heap; (void)block; }
+void ScriptPopFrame(void) {}
 
 static void reset(u8 *bytes) {
     memset(&vm, 0, sizeof(vm));
-    memset(variables, 0, sizeof(variables));
     context.vm = &vm;
     root.context = &context;
     vm.bytecode = bytes;
-    vm.stackPointer = 240;
+    vm.frame.live.stackPointer = 240;
 }
 
 int main(void) {
@@ -49,21 +57,21 @@ int main(void) {
     assert(ScriptReadNextU16() == 0x5634 && vm.programCounter == 3);
 
     ScriptPushU32(0x12345678);
-    assert(vm.stackPointer == 236);
-    assert(ScriptPopU32() == 0x12345678 && vm.stackPointer == 240);
+    assert(vm.frame.live.stackPointer == 236);
+    assert(ScriptPopU32() == 0x12345678 && vm.frame.live.stackPointer == 240);
 
     reset(bytes); bytes[0]=3; bytes[1]=4;
-    variables[3]=7; variables[4]=5;
-    assert(ScriptCmdAdd() == 1 && variables[3] == 12);
+    vm.frame.live.registers[3]=7; vm.frame.live.registers[4]=5;
+    assert(ScriptCmdAdd() == 1 && vm.frame.live.registers[3] == 12);
 
     reset(bytes); bytes[0]=3; bytes[1]=0x78; bytes[2]=0x56;
     bytes[3]=0x34; bytes[4]=0x12;
-    assert(ScriptCmdSetImmediate() == 1 && variables[3] == 0x12345678);
+    assert(ScriptCmdSetImmediate() == 1 && vm.frame.live.registers[3] == 0x12345678);
 
     reset(bytes); bytes[0]=2; bytes[1]=2;
     bytes[2]=1; bytes[6]=20;
     bytes[10]=7; bytes[14]=40;
-    variables[2]=7;
+    vm.frame.live.registers[2]=7;
     assert(ScriptCmdSwitch() == 1 && vm.programCounter == 40);
 
     reset(bytes); bytes[0]=0x20; bytes[1]=bytes[2]=bytes[3]=0;

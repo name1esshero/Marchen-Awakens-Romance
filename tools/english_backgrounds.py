@@ -42,10 +42,14 @@ def compile_entry(entry, root=ROOT):
             for y in range(0, height*8, 8):
                 for x in range(0, width*8, 8):
                     cell = [row[x:x+8] for row in pixels[y:y+8]]
-                    banks = {v//16 for row in cell for v in row}
-                    if len(banks) != 1 or max(banks) >= entry['palette_banks']:
-                        raise ValueError('English background tile crosses palette banks')
-                    bank = next(iter(banks))
+                    # Every 4bpp bank encodes its transparent color as local
+                    # index zero. Global-index previews may represent that as
+                    # 0, 16, 32, ...; none of those selects a visible bank.
+                    banks = {v//16 for row in cell for v in row if v % 16}
+                    if len(banks) > 1 or (banks and max(banks) >= entry['palette_banks']):
+                        raise ValueError(f'{entry["archive_name"]}: tile {x//8},{y//8} crosses visible palette banks {sorted(banks)}')
+                    cell_index = y//8 * width + x//8
+                    bank = next(iter(banks)) if banks else (layer['entries'][cell_index] >> 12) & 15
                     tile = gfx.pixels_to_tiles([[v%16 for v in row] for row in cell], 4)
                     if tile not in indices:
                         indices[tile] = len(tiles)

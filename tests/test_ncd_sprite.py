@@ -9,6 +9,10 @@ class NcdSpriteTests(unittest.TestCase):
     def test_initialization_layout_and_bounds(self):
         with tempfile.TemporaryDirectory() as temp:
             source = Path(temp) / 'test.c'
+            implementation = Path(temp) / 'ncd_sprite.c'
+            implementation.write_text((ROOT/'src/ncd_sprite.c').read_text().replace(
+                'AT("00008A70") const u8 NcdSpriteContainerResetTail[2]={0};',
+                'const u8 NcdSpriteContainerResetTail[2]={0};'))
             source.write_text(r'''
 #include "ncd.h"
 #include <assert.h>
@@ -57,6 +61,6 @@ int main(void) {
 }
 ''')
             exe = Path(temp) / 'test'
-            subprocess.run(['gcc','-O2','-I'+str(ROOT/'include'),str(source),str(ROOT/'src/ncd_sprite.c'),'-o',str(exe)],check=True)
+            subprocess.run(['gcc','-O2','-I'+str(ROOT/'include'),str(source),str(implementation),'-o',str(exe)],check=True)
             subprocess.run([str(exe)],check=True)
 if __name__ == '__main__': unittest.main()

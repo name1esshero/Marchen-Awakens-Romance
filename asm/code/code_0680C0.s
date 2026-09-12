@@ -628,7 +628,7 @@ sub_08068732:
 	.global _08068736
 _08068736:
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r1, _08068768
 	add r1, r10
 	ldrh r0, [r1, #0]
@@ -1848,7 +1848,7 @@ _0806948E:
 	cmp r0, #0
 	ble _080694C6
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r0, _080694D8
 	add r0, r8
 	ldrh r1, [r4, #0]
@@ -4378,7 +4378,7 @@ sub_0806AC8E:
 	.global _0806ACB8
 _0806ACB8:
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldrh r0, [r4, #0]
 	adds r0, #1
 	b _0806ACF2
@@ -4406,7 +4406,7 @@ _0806ACCC:
 	.global _0806ACE8
 _0806ACE8:
 	movs r0, #101
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldrh r0, [r4, #0]
 	subs r0, #1
 	.global _0806ACF2
@@ -4427,10 +4427,10 @@ _0806AD00:
 	cmp r4, #0
 	beq _0806ADAC
 	movs r0, #106
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r0, _0806AD7C
 	add r0, r9
-	bl sub_0806C7A0
+	bl MapObjectResetMotion
 	ldr r0, _0806AD80
 	add r0, r9
 	movs r2, #0
@@ -4536,7 +4536,7 @@ sub_0806ADB2:
 	.global _0806ADBA
 _0806ADBA:
 	movs r0, #103
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r0, _0806AE0C
 	add r0, r9
 	ldrh r0, [r0, #0]
@@ -6767,7 +6767,7 @@ _0806BF2C:
 	ldr r3, _0806BFA8
 	adds r2, r7, r3
 	ldr r2, [r2, #0]
-	bl sub_08003784
+	bl CreateCopyTask
 	add sp, #96
 	pop {r3, r4, r5}
 	mov r8, r3
@@ -7203,7 +7203,7 @@ sub_0806C230:
 	adds r7, r0, #0
 	adds r6, r7, #0
 	adds r6, #32
-	bl sub_08007620
+	bl RuntimeGetFieldEE8
 	cmp r0, #0
 	beq _0806C2AE
 	movs r0, #249
@@ -7297,7 +7297,7 @@ _0806C2AE:
 	cmp r4, #1
 	bne _0806C2FE
 	movs r0, #103
-	bl sub_08005E98
+	bl SoundSongStartU16
 	movs r3, #236
 	lsls r3, r3, #2
 	adds r2, r6, r3
@@ -7468,7 +7468,7 @@ _0806C36C:
 	.global sub_0806C3A2
 sub_0806C3A2:
 	ldr r0, [r4, #0]
-	bl sub_0806C7A0
+	bl MapObjectResetMotion
 	ldr r1, [r4, #0]
 	ldrh r0, [r1, #6]
 	strh r0, [r1, #18]
@@ -7887,7 +7887,7 @@ _0806C586:
 	b _0806C5B6
 	.global _0806C58E
 _0806C58E:
-	bl sub_08006F70
+	bl GameStateGetField425B
 	adds r4, r0, #0
 	lsls r4, r4, #16
 	asrs r4, r4, #16
@@ -8120,7 +8120,7 @@ sub_0806C6F8:
 	adds r5, r0, #0
 	bl sub_08004F94
 	adds r4, r0, #0
-	bl sub_0800503C
+	bl RuntimeReturnZero
 	lsls r0, r0, #24
 	cmp r0, #0
 	bne _0806C716
@@ -8147,13 +8147,13 @@ sub_0806C71E:
 	adds r5, r0, #0
 	lsls r1, r1, #16
 	asrs r4, r1, #16
-	bl sub_0800503C
+	bl RuntimeReturnZero
 	lsls r0, r0, #24
 	cmp r0, #0
 	bne _0806C752
 	cmp r4, #0
 	beq _0806C752
-	bl sub_08004CC0
+	bl SioGetPlayerId
 	movs r1, #0
 	lsls r0, r0, #24
 	cmp r0, #0
@@ -8197,16 +8197,10 @@ _0806C752:
 	.4byte 0xBCF02001
 	.4byte 0x4708BC02
 
-	.thumb_func
-	.thumb
-	.global sub_0806C7A0
-sub_0806C7A0:
-	movs r1, #0
-	strh r1, [r0, #4]
-	strh r1, [r0, #20]
-	strh r1, [r0, #18]
-	strh r1, [r0, #22]
-	bx lr
+@ 06C7A0..06C7AC is decompiled as MapObjectResetMotion(); see src/decompiled.json
+
+	.section .rom.0006C7AC, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -8358,33 +8352,10 @@ _0806C8E8:
 	pop {r0}
 	bx r0
 
-	.thumb_func
-	.thumb
-	.global sub_0806C8F0
-sub_0806C8F0:
-	push {lr}
-	sub sp, #4
-	adds r3, r0, #0
-	ldr r0, _0806C90C
-	ldr r1, _0806C910
-	ldr r2, _0806C914
-	str r2, [sp, #0]
-	movs r2, #0
-	bl CreateTask
-	add sp, #4
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _0806C90C
-_0806C90C:
-	.4byte 0x030032C4  @ IWRAM+0x32C4
-	.global _0806C910
-_0806C910:
-	.4byte 0x0806C919  @ ROM+0x6C919
-	.global _0806C914
-_0806C914:
-	.4byte 0x00004A14
+@ 06C8F0..06C918 is decompiled as CreateTask6C8F0(); see src/decompiled.json
+
+	.section .rom.0006C918, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -9230,7 +9201,7 @@ sub_0806D438:
 sub_0806D464:
 	beq _0806D52E
 	movs r0, #105
-	bl sub_08005E98
+	bl SoundSongStartU16
 	adds r0, r6, #0
 	adds r0, #160
 	ldr r1, [r0, #0]
@@ -9376,7 +9347,7 @@ _0806D588:
 	ldrsb r0, [r2, r0]
 	cmp r0, #0
 	beq _0806D5FC
-	bl sub_08006F70
+	bl GameStateGetField425B
 	cmp r0, #0
 	beq _0806D5FC
 	movs r3, #139
@@ -9395,7 +9366,7 @@ _0806D588:
 	movs r0, #136
 	lsls r0, r0, #1
 	adds r4, r6, r0
-	bl sub_08004CC0
+	bl SioGetPlayerId
 	movs r1, #0
 	lsls r0, r0, #24
 	cmp r0, #0
@@ -10848,7 +10819,7 @@ sub_0806E438:
 	adds r0, r4, #0
 	movs r1, #44
 	adds r2, r7, #0
-	bl sub_0806E538
+	bl Crc32Difference
 	cmp r0, #0
 	beq _0806E462
 	subs r6, #1
@@ -10885,7 +10856,7 @@ _0806E48A:
 	movs r1, #252
 	lsls r1, r1, #6
 	mov r2, r8
-	bl sub_0806E538
+	bl Crc32Difference
 	cmp r0, #0
 	beq _0806E4A0
 	movs r6, #2
@@ -10983,31 +10954,12 @@ _0806E524:
 	pop {r1}
 	bx r1
 
-	.thumb_func
-	.thumb
-	.global sub_0806E52C
-sub_0806E52C:
-	push {lr}
-	bl sub_0806E4E8
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 06E52C..06E538 is decompiled as MapGeneratorStep(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0806E538
-sub_0806E538:
-	push {r4, lr}
-	adds r4, r2, #0
-	bl sub_0806E4E8
-	subs r4, r4, r0
-	adds r0, r4, #0
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 06E538..06E54C is decompiled as Crc32Difference(); see src/decompiled.json
+
+	.section .rom.0006E54C, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -11033,13 +10985,13 @@ sub_0806E54C:
 	adds r0, #44
 	movs r1, #252
 	lsls r1, r1, #6
-	bl sub_0806E52C
+	bl MapGeneratorStep
 	str r0, [r4, #36]
 	str r5, [r4, #40]
 	str r5, [r4, #32]
 	adds r0, r4, #0
 	movs r1, #44
-	bl sub_0806E52C
+	bl MapGeneratorStep
 	str r0, [r4, #32]
 	movs r1, #224
 	lsls r1, r1, #20
@@ -11091,7 +11043,7 @@ sub_0806E5AC:
 	cmp r0, #0
 	ble _0806E5F4
 	movs r0, #1
-	bl sub_08007044
+	bl GameStateSetField42C0
 	adds r0, r4, #0
 	adds r0, #44
 	movs r1, #252
@@ -11111,7 +11063,7 @@ _0806E5F0:
 _0806E5F4:
 	movs r0, #1
 	negs r0, r0
-	bl sub_08007044
+	bl GameStateSetField42C0
 	adds r0, r4, #0
 	adds r1, r5, #0
 	movs r2, #0
@@ -11266,7 +11218,7 @@ _0806E6E4:
 	str r0, [r5, #16]
 	str r0, [r5, #20]
 	movs r0, #128
-	bl sub_08007008
+	bl GameStateSetField42BC
 	movs r0, #128
 	lsls r0, r0, #5
 	strh r0, [r6, #14]
@@ -11311,30 +11263,10 @@ _0806E71A:
 	.4byte 0x00004708
 	.4byte 0x03006100
 
-	.thumb_func
-	.thumb
-	.global sub_0806E748
-sub_0806E748:
-	push {lr}
-	sub sp, #4
-	adds r3, r0, #0
-	ldr r0, _0806E764
-	ldr r1, _0806E768
-	movs r2, #20
-	str r2, [sp, #0]
-	movs r2, #0
-	bl CreateTask
-	add sp, #4
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _0806E764
-_0806E764:
-	.4byte 0x030032C4  @ IWRAM+0x32C4
-	.global _0806E768
-_0806E768:
-	.4byte 0x0806E76D  @ ROM+0x6E76D
+@ 06E748..06E76C is decompiled as CreateTask6E748(); see src/decompiled.json
+
+	.section .rom.0006E76C, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -12117,38 +12049,10 @@ _0806EEE4:
 	pop {r0}
 	bx r0
 
-	.thumb_func
-	.thumb
-	.global sub_0806EEF0
-sub_0806EEF0:
-	push {lr}
+@ 06EEF0..06EF18 is decompiled as CreateTask6EEF0(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0806EEF2
-sub_0806EEF2:
-	sub sp, #4
-	adds r3, r0, #0
-	ldr r0, _0806EF0C
-	ldr r1, _0806EF10
-	ldr r2, _0806EF14
-	str r2, [sp, #0]
-	movs r2, #0
-	bl CreateTask
-	add sp, #4
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _0806EF0C
-_0806EF0C:
-	.4byte 0x030032C4  @ IWRAM+0x32C4
-	.global _0806EF10
-_0806EF10:
-	.4byte 0x0806EF19  @ ROM+0x6EF19
-	.global _0806EF14
-_0806EF14:
-	.4byte 0x00003F34
+	.section .rom.0006EF18, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -12224,7 +12128,7 @@ _0806EF58:
 	movs r0, #1
 	bl sub_0800690C
 	bl sub_080572B8
-	bl sub_08057218
+	bl GameStateCopyMapBuffer
 	ldr r0, [r4, #0]
 	bl sub_0806E54C
 	movs r0, #3
@@ -14709,24 +14613,10 @@ _08070080:
 	pop {r0}
 	bx r0
 
-	.thumb_func
-	.thumb
-	.global sub_08070090
-sub_08070090:
-	ldr r0, _080700A0
-	ldr r1, _080700A4
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	movs r1, #227
-	lsls r1, r1, #6
-	adds r0, r0, r1
-	bx lr
-	.global _080700A0
-_080700A0:
-	.4byte 0x03000000  @ IWRAM
-	.global _080700A4
-_080700A4:
-	.4byte 0x00003FDC
+@ 070090..0700A8 is decompiled as GameStateGetBuffer38C0(); see src/decompiled.json
+
+	.section .rom.000700A8, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb

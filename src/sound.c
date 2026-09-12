@@ -10,6 +10,30 @@ extern void sub_0807915C(struct SoundPlayer *, const void *);
 extern void sub_08078644(struct SoundPlayer *, struct SoundTrack *);
 extern void sub_080789CC(struct SoundPlayer *,u16);
 extern void sub_08079240(struct SoundPlayer *);
+
+/* Two driver-owned callbacks installed in IWRAM.  agbcc emits the shared
+ * _call_via_r1 trampoline for these indirect calls. */
+AT("00078DC4") void SoundCallCallback5DA8(u32 argument)
+{
+ void (*callback)(u32)=*(void (**)(u32))0x03005DA8;
+ callback(argument);
+}
+AT("00078DD8") void SoundCallCallback5DAC(u32 argument)
+{
+ void (*callback)(u32)=*(void (**)(u32))0x03005DAC;
+ callback(argument);
+}
+
+/* Stop DMA1 while servicing the software mixer, preserving IME state used by
+ * the original interrupt path. */
+AT("000010C8") void DisableDma1AndUpdateSound(void)
+{
+ volatile u16 *ime=(u16 *)0x04000208;
+ *ime=0;
+ *(volatile u16 *)0x0400010A=0;
+ *ime=1;
+ SoundUpdate();
+}
 AT("00078A64")
 void SoundUpdate(void)
 {

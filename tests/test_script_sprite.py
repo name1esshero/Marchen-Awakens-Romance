@@ -13,7 +13,7 @@ class ScriptSpriteTests(unittest.TestCase):
 #include <string.h>
 static struct ScriptSprite sprite;
 static int looked, expectedContainer, answer;
-struct ScriptSprite *sub_080106C8(s32 id) {assert(id==16);return &sprite;}
+void *GameStateGetRecord0B90(u32 id) {assert(id==16);return &sprite;}
 char *strupr(char *p) {char *s=p;while(*s){if(*s>='a'&&*s<='z')*s-=32;s++;}return p;}
 s32 FindResourceByName(s32 c,const char *s) {
  assert(c==expectedContainer);assert(!strcmp(s,"PS_WK02"));looked++;return answer;

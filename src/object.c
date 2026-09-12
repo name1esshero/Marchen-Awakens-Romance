@@ -62,3 +62,9 @@ void ObjectSetFlag2(struct Object *p,u16 enabled)
     }
 }
 
+AT("000288DC") void *ObjectGetActiveRecordData(struct Object *object)
+{
+ if (object->flags&OBJECT_ACTIVE)
+  return (u8 *)object->record+8;
+ return 0;
+}

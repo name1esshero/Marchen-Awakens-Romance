@@ -62,7 +62,7 @@ _080400F0:
 	bge _080400F0
 	add r0, sp, #36
 	mov r1, r8
-	bl sub_08006E20
+	bl GameStateGetField424C50
 	ldr r0, [sp, #36]
 	asrs r0, r0, #16
 	movs r1, #168
@@ -123,7 +123,7 @@ sub_08040160:
 	movs r3, #0
 	bl sub_08003AE4
 	movs r0, #0
-	bl sub_0800A140
+	bl RuntimeSetFieldE48
 	movs r0, #16
 	ldr r3, [sp, #44]
 	strh r0, [r3, #14]
@@ -249,7 +249,7 @@ _08040242:
 	ldr r4, [sp, #44]
 	strh r0, [r4, #14]
 	movs r0, #192
-	bl sub_08005E98
+	bl SoundSongStartU16
 	.global _0804027E
 _0804027E:
 	ldrh r1, [r7, #40]
@@ -529,7 +529,7 @@ _080403E4:
 	lsls r5, r5, #1
 	adds r4, r7, r5
 	ldr r0, [r4, #0]
-	bl sub_08009E78
+	bl RuntimeActorGetField352
 	adds r3, r0, #0
 	ldr r4, [r4, #0]
 	movs r1, #162
@@ -569,7 +569,7 @@ _08040422:
 	cmp r0, #0
 	beq _080404EE
 	movs r0, #201
-	bl sub_08005E98
+	bl SoundSongStartU16
 	movs r0, #1
 	str r0, [sp, #48]
 	movs r5, #0
@@ -601,14 +601,14 @@ _0804046C:
 	ldr r3, [sp, #52]
 	ldr r0, [r3, #0]
 	adds r1, r5, #0
-	bl GetObjectFieldS16_1A
+	bl RuntimeObjectGetField1A
 	movs r1, #0
 	mov r9, r1
 	strh r0, [r4, #0]
 	ldr r2, [sp, #52]
 	ldr r0, [r2, #0]
 	adds r1, r5, #0
-	bl GetObjectFieldS16_1E
+	bl RuntimeObjectGetField1E
 	subs r0, #24
 	strh r0, [r4, #2]
 	movs r3, #189
@@ -737,7 +737,7 @@ _08040556:
 	.global sub_08040570
 sub_08040570:
 	ldr r0, [r4, #0]
-	bl sub_08009E78
+	bl RuntimeActorGetField352
 	adds r3, r0, #0
 	ldr r4, [r4, #0]
 	movs r1, #162
@@ -777,7 +777,7 @@ _08040594:
 	cmp r0, #0
 	beq _08040660
 	movs r0, #201
-	bl sub_08005E98
+	bl SoundSongStartU16
 	movs r0, #1
 	str r0, [sp, #48]
 	movs r5, #0
@@ -809,14 +809,14 @@ _080405DE:
 	mov r3, r9
 	ldr r0, [r3, #0]
 	adds r1, r5, #0
-	bl GetObjectFieldS16_1A
+	bl RuntimeObjectGetField1A
 	movs r2, #0
 	strh r0, [r4, #0]
 	mov r1, r9
 	ldr r0, [r1, #0]
 	adds r1, r5, #0
 	str r2, [sp, #56]
-	bl GetObjectFieldS16_1E
+	bl RuntimeObjectGetField1E
 	subs r0, #24
 	strh r0, [r4, #2]
 	movs r3, #189
@@ -955,7 +955,7 @@ _080406E8:
 	.global _080406FE
 _080406FE:
 	movs r0, #1
-	bl sub_0800A140
+	bl RuntimeSetFieldE48
 	adds r0, r7, #0
 	bl sub_0802824C
 	adds r4, r7, #0
@@ -1389,7 +1389,7 @@ _08040986:
 	mov r10, r2
 	ldr r1, [r2, #0]
 	str r3, [sp, #52]
-	bl GetObjectFieldS16_1A
+	bl RuntimeObjectGetField1A
 	movs r4, #144
 	adds r4, r4, r7
 	mov r8, r4
@@ -1398,7 +1398,7 @@ _08040986:
 	ldr r0, [r6, #0]
 	mov r2, r10
 	ldr r1, [r2, #0]
-	bl GetObjectFieldS16_1E
+	bl RuntimeObjectGetField1E
 	adds r6, r7, #0
 	adds r6, #146
 	strh r0, [r6, #0]
@@ -1421,14 +1421,14 @@ sub_080409C2:
 	adds r5, #140
 	str r1, [r5, #0]
 	ldr r0, [r4, #0]
-	bl GetObjectFieldS16_1A
+	bl RuntimeObjectGetField1A
 	movs r1, #148
 	adds r1, r1, r7
 	mov r9, r1
 	strh r0, [r1, #0]
 	ldr r0, [r4, #0]
 	ldr r1, [r5, #0]
-	bl GetObjectFieldS16_1E
+	bl RuntimeObjectGetField1E
 	adds r4, #14
 	strh r0, [r4, #0]
 	adds r0, r7, #0
@@ -1506,7 +1506,7 @@ sub_08040A42:
 	ldr r0, [r1, #0]
 	ldr r2, [sp, #44]
 	ldr r1, [r2, #0]
-	bl sub_0800A6D0
+	bl RuntimeObjectGetField36
 	mov r9, r4
 	cmp r0, #7
 	bne _08040A9C
@@ -1545,7 +1545,7 @@ _08040AAA:
 	strh r0, [r7, #30]
 	add r1, sp, #32
 	add r0, sp, #28
-	bl sub_08006E20
+	bl GameStateGetField424C50
 	ldr r0, [sp, #28]
 	asrs r0, r0, #16
 	adds r3, r7, #0
@@ -1591,7 +1591,7 @@ _08040AAA:
 	movs r3, #0
 	bl sub_08003AE4
 	movs r0, #0
-	bl sub_0800A140
+	bl RuntimeSetFieldE48
 	movs r0, #16
 	ldr r6, [sp, #36]
 	strh r0, [r6, #14]
@@ -1900,7 +1900,7 @@ sub_08040D1A:
 	movs r1, #1
 	bl ObjectSetFlag400
 	movs r0, #150
-	bl sub_08005E98
+	bl SoundSongStartU16
 	movs r0, #1
 	strh r0, [r5, #0]
 	movs r0, #112
@@ -2038,7 +2038,7 @@ _08040DEA:
 	.global _08040E10
 _08040E10:
 	movs r0, #150
-	bl sub_08005E98
+	bl SoundSongStartU16
 	adds r1, r7, #0
 	adds r1, #174
 	movs r0, #1
@@ -2162,9 +2162,9 @@ _08040ED2:
 	movs r1, #1
 	bl ObjectSetFlag400
 	movs r0, #113
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r0, [r6, #0]
-	bl sub_08009E78
+	bl RuntimeActorGetField352
 	adds r3, r0, #0
 	ldr r0, [r6, #0]
 	adds r1, r7, #0
@@ -2334,7 +2334,7 @@ _08041018:
 	.global _0804101E
 _0804101E:
 	movs r0, #1
-	bl sub_0800A140
+	bl RuntimeSetFieldE48
 	adds r0, r7, #0
 	bl sub_0802824C
 	adds r4, r7, #0
@@ -2390,13 +2390,13 @@ _0804105A:
 	subs r0, #4
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08006CE4
+	bl GameStateSetField4246
 	bl Random
 	ands r0, r4
 	subs r0, #4
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08006D20
+	bl GameStateSetField4248
 	.global _0804109A
 _0804109A:
 	ldr r2, [sp, #40]
@@ -2595,11 +2595,11 @@ _080411A2:
 _080411A4:
 	ldr r0, [r7, #0]
 	ldr r1, [r7, #4]
-	bl GetObjectFieldS16_1A
+	bl RuntimeObjectGetField1A
 	strh r0, [r7, #12]
 	ldr r0, [r7, #0]
 	ldr r1, [r7, #4]
-	bl GetObjectFieldS16_1E
+	bl RuntimeObjectGetField1E
 	strh r0, [r7, #14]
 	ldr r3, _080412C4
 	mov r8, r3
@@ -2623,7 +2623,7 @@ _080411A4:
 	bl NfpOpenByName
 	adds r1, r0, #0
 	ldr r0, _080412E0
-	bl sub_08002148
+	bl Lz77UnCompVramSwapped
 	ldr r1, _080412E4
 	adds r0, r5, #0
 	bl NfpOpenByName
@@ -2632,7 +2632,7 @@ _080411A4:
 	bl sub_08001B4C
 	movs r0, #0
 	movs r1, #0
-	bl sub_080804EC
+	bl RuntimeGetBlock6120
 	movs r1, #192
 	lsls r1, r1, #1
 	adds r1, r0, r1
@@ -2730,7 +2730,7 @@ sub_0804124E:
 	movs r3, #0
 	bl sub_08003AE4
 	movs r0, #210
-	bl sub_08005E98
+	bl SoundSongStartU16
 	mov r4, r10
 	mov r3, r9
 	strh r4, [r3, #14]
@@ -2800,10 +2800,10 @@ _080412F8:
 	bgt _08041362
 	ldr r0, [r7, #0]
 	ldr r1, [r7, #4]
-	bl sub_0800A6D0
+	bl RuntimeObjectGetField36
 	str r0, [sp, #52]
 	ldr r0, [r7, #0]
-	bl sub_08009E78
+	bl RuntimeActorGetField352
 	adds r3, r0, #0
 	ldr r0, [r7, #0]
 	ldr r1, [r7, #4]
@@ -3356,14 +3356,14 @@ _0804168E:
 	lsls r1, r1, #2
 	adds r4, r6, r1
 	ldr r1, [r4, #0]
-	bl GetObjectFieldS16_1A
+	bl RuntimeObjectGetField1A
 	movs r2, #195
 	lsls r2, r2, #2
 	adds r1, r6, r2
 	strh r0, [r1, #0]
 	ldr r0, [r5, #0]
 	ldr r1, [r4, #0]
-	bl GetObjectFieldS16_1E
+	bl RuntimeObjectGetField1E
 	ldr r3, _0804170C
 	adds r1, r6, r3
 	strh r0, [r1, #0]
@@ -3492,7 +3492,7 @@ _08041788:
 	bge _08041788
 	add r0, sp, #4
 	mov r1, r10
-	bl sub_08006E20
+	bl GameStateGetField424C50
 	ldr r0, [sp, #4]
 	asrs r0, r0, #16
 	movs r4, #196
@@ -3512,7 +3512,7 @@ _08041788:
 	lsls r0, r0, #2
 	adds r4, r6, r0
 	ldr r0, [r4, #0]
-	bl sub_08009E78
+	bl RuntimeActorGetField352
 	adds r2, r0, #0
 	ldr r0, [r4, #0]
 	movs r3, #193
@@ -3528,7 +3528,7 @@ _08041788:
 	str r4, [sp, #0]
 	bl sub_0800AAA8
 	movs r0, #0
-	bl sub_0800A140
+	bl RuntimeSetFieldE48
 	movs r0, #16
 	b _0804191C
 	.byte 0x00
@@ -3599,7 +3599,7 @@ _0804183A:
 	cmp r0, #3
 	ble _0804187C
 	movs r0, #171
-	bl sub_08005E98
+	bl SoundSongStartU16
 	b _08041882
 	.byte 0x00
 	.byte 0x00
@@ -3617,7 +3617,7 @@ _0804187C:
 	.thumb
 	.global sub_0804187E
 sub_0804187E:
-	bl sub_08005E98
+	bl SoundSongStartU16
 	.global _08041882
 _08041882:
 	movs r3, #197
@@ -3725,7 +3725,7 @@ _0804191C:
 	.global _08041922
 _08041922:
 	movs r0, #1
-	bl sub_0800A140
+	bl RuntimeSetFieldE48
 	movs r2, #0
 	mov r8, r2
 	.global _0804192C
@@ -3784,13 +3784,13 @@ _08041960:
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08006CE4
+	bl GameStateSetField4246
 	bl Random
 	ands r0, r4
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08006D20
+	bl GameStateSetField4248
 
 	.thumb_func
 	.thumb
@@ -4113,13 +4113,13 @@ _08041B92:
 	ldr r2, _08041BF8
 	adds r4, r7, r2
 	ldr r1, [r4, #0]
-	bl GetObjectFieldS16_1A
+	bl RuntimeObjectGetField1A
 	ldr r3, _08041BFC
 	adds r6, r7, r3
 	strh r0, [r6, #0]
 	ldr r0, [r5, #0]
 	ldr r1, [r4, #0]
-	bl GetObjectFieldS16_1E
+	bl RuntimeObjectGetField1E
 	ldr r2, _08041C00
 	adds r1, r7, r2
 	strh r0, [r1, #0]
@@ -4130,7 +4130,7 @@ _08041B92:
 	.thumb
 	.global sub_08041BBC
 sub_08041BBC:
-	bl sub_0800A6D0
+	bl RuntimeObjectGetField36
 	cmp r0, #7
 	bne _08041C0C
 	ldr r3, _08041C04
@@ -4408,7 +4408,7 @@ _08041D72:
 	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
-	bl sub_08002148
+	bl Lz77UnCompVramSwapped
 	ldr r1, _08041E9C
 	adds r0, r5, #0
 	bl NfpOpenByName
@@ -4417,7 +4417,7 @@ _08041D72:
 	bl sub_08001B4C
 	movs r0, #0
 	movs r1, #0
-	bl sub_080804EC
+	bl RuntimeGetBlock6120
 	adds r4, r0, #0
 	movs r0, #192
 	lsls r0, r0, #1
@@ -4480,7 +4480,7 @@ _08041D72:
 	lsls r0, r0, #16
 	str r0, [r6, #0]
 	movs r0, #141
-	bl sub_08005E98
+	bl SoundSongStartU16
 	mov r0, r10
 	strh r5, [r0, #14]
 	.global _08041E48
@@ -4726,7 +4726,7 @@ _08041FA4:
 	lsls r0, r0, #3
 	adds r4, r7, r0
 	ldr r0, [r4, #0]
-	bl sub_08009E78
+	bl RuntimeActorGetField352
 	adds r3, r0, #0
 	ldr r4, [r4, #0]
 	mov r12, r4
@@ -4774,7 +4774,7 @@ _08041FCC:
 sub_08041FF4:
 	beq _08042066
 	movs r0, #112
-	bl sub_08005E98
+	bl SoundSongStartU16
 	adds r0, r5, #0
 	movs r1, #0
 	bl ObjectClearUnk2C
@@ -5378,21 +5378,21 @@ _080423A6:
 	lsls r1, r1, #1
 	adds r4, r6, r1
 	ldr r1, [r4, #0]
-	bl GetObjectFieldS16_1A
+	bl RuntimeObjectGetField1A
 	movs r2, #198
 	lsls r2, r2, #1
 	adds r7, r6, r2
 	strh r0, [r7, #0]
 	ldr r0, [r5, #0]
 	ldr r1, [r4, #0]
-	bl GetObjectFieldS16_1E
+	bl RuntimeObjectGetField1E
 	movs r3, #199
 	lsls r3, r3, #1
 	adds r1, r6, r3
 	strh r0, [r1, #0]
 	ldr r0, [r5, #0]
 	ldr r1, [r4, #0]
-	bl sub_0800A6D0
+	bl RuntimeObjectGetField36
 	cmp r0, #7
 	bne _080423F4
 	movs r4, #220
@@ -5776,7 +5776,7 @@ sub_0804260A:
 sub_08042614:
 	adds r4, r6, r0
 	ldr r0, [r4, #0]
-	bl sub_08009E78
+	bl RuntimeActorGetField352
 	adds r3, r0, #0
 	ldr r4, [r4, #0]
 	mov r12, r4
@@ -5853,7 +5853,7 @@ sub_0804265A:
 	movs r1, #0
 	bl ObjectSetFlag2
 	movs r0, #132
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r4, [sp, #32]
 	adds r4, #192
 	adds r4, r6, r4
@@ -6338,7 +6338,7 @@ _080428FA:
 	adds r3, r3, r7
 	mov r8, r3
 	ldr r1, [r3, #0]
-	bl GetObjectFieldS16_1A
+	bl RuntimeObjectGetField1A
 	adds r4, r7, #0
 	adds r4, #144
 	strh r0, [r4, #0]
@@ -6346,7 +6346,7 @@ _080428FA:
 	ldr r0, [r1, #0]
 	mov r2, r8
 	ldr r1, [r2, #0]
-	bl GetObjectFieldS16_1E
+	bl RuntimeObjectGetField1E
 	adds r1, r7, #0
 	adds r1, #146
 	strh r0, [r1, #0]
@@ -6368,14 +6368,14 @@ sub_08042926:
 	adds r5, #140
 	str r1, [r5, #0]
 	ldr r0, [r4, #0]
-	bl GetObjectFieldS16_1A
+	bl RuntimeObjectGetField1A
 	adds r1, r7, #0
 	adds r1, #148
 	str r1, [sp, #36]
 	strh r0, [r1, #0]
 	ldr r0, [r4, #0]
 	ldr r1, [r5, #0]
-	bl GetObjectFieldS16_1E
+	bl RuntimeObjectGetField1E
 
 	.thumb_func
 	.thumb
@@ -6426,7 +6426,7 @@ sub_08042952:
 	strh r0, [r1, #0]
 	add r1, sp, #32
 	add r0, sp, #28
-	bl sub_08006E20
+	bl GameStateGetField424C50
 	ldr r0, [sp, #28]
 	asrs r0, r0, #16
 	adds r3, r7, #0
@@ -6473,7 +6473,7 @@ sub_08042952:
 	movs r3, #0
 	bl sub_08003AE4
 	movs r0, #0
-	bl sub_0800A140
+	bl RuntimeSetFieldE48
 	movs r0, #16
 	mov r2, r10
 	strh r0, [r2, #14]
@@ -6494,7 +6494,7 @@ _08042A3A:
 	ldr r0, [r3, #0]
 	subs r4, #38
 	ldr r1, [r4, #0]
-	bl sub_0800A6D0
+	bl RuntimeObjectGetField36
 	adds r5, r4, #0
 	cmp r0, #7
 	bne _08042A90
@@ -6680,7 +6680,7 @@ _08042B70:
 	adds r4, r7, #0
 	adds r4, #128
 	ldr r0, [r4, #0]
-	bl sub_08009E78
+	bl RuntimeActorGetField352
 	mov r12, r0
 	ldr r0, [r4, #0]
 	str r0, [sp, #48]
@@ -6716,7 +6716,7 @@ _08042BB8:
 	mov r3, r12
 	bl sub_0800AA10
 	movs r0, #116
-	bl sub_08005E98
+	bl SoundSongStartU16
 	adds r1, r7, #0
 	adds r1, #170
 	strh r4, [r1, #0]
@@ -6884,7 +6884,7 @@ _08042CE2:
 	.global _08042CE8
 _08042CE8:
 	movs r0, #1
-	bl sub_0800A140
+	bl RuntimeSetFieldE48
 	adds r0, r7, #0
 	bl sub_0802824C
 	adds r4, r7, #0
@@ -6937,13 +6937,13 @@ _08042D2E:
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08006CE4
+	bl GameStateSetField4246
 	bl Random
 	ands r0, r4
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08006D20
+	bl GameStateSetField4248
 	.global _08042D6E
 _08042D6E:
 	mov r2, r9
@@ -7170,7 +7170,7 @@ _08042EBA:
 	lsls r2, r2, #2
 	adds r4, r7, r2
 	ldr r1, [r4, #0]
-	bl GetObjectFieldS16_1A
+	bl RuntimeObjectGetField1A
 	movs r3, #131
 	lsls r3, r3, #2
 	adds r1, r7, r3
@@ -7189,7 +7189,7 @@ sub_08042EDC:
 	strh r0, [r1, #0]
 	add r0, sp, #44
 	add r1, sp, #48
-	bl sub_08006E20
+	bl GameStateGetField424C50
 	ldr r0, [sp, #44]
 	asrs r0, r0, #16
 	movs r2, #132
@@ -7202,7 +7202,7 @@ sub_08042EDC:
 	adds r1, r7, r3
 	strh r0, [r1, #0]
 	movs r0, #0
-	bl sub_0800A140
+	bl RuntimeSetFieldE48
 	adds r4, #104
 	adds r1, r7, r4
 	movs r0, #1
@@ -7316,7 +7316,7 @@ sub_08042F9A:
 	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
-	bl sub_08002148
+	bl Lz77UnCompVramSwapped
 	ldr r1, _08043130
 	adds r0, r6, #0
 	bl NfpOpenByName
@@ -7340,7 +7340,7 @@ sub_08042F9A:
 	str r0, [r1, #0]
 	movs r0, #0
 	movs r1, #0
-	bl sub_080804EC
+	bl RuntimeGetBlock6120
 	adds r4, r0, #0
 	movs r0, #192
 	lsls r0, r0, #1
@@ -7466,7 +7466,7 @@ sub_08043098:
 	movs r0, #4
 	strh r0, [r1, #0]
 	movs r0, #143
-	bl sub_08005E98
+	bl SoundSongStartU16
 	movs r0, #16
 	b _08043422
 	.byte 0x00
@@ -7573,7 +7573,7 @@ _0804316E:
 	lsls r3, r3, #2
 	adds r4, r7, r3
 	ldr r0, [r4, #0]
-	bl sub_08009E78
+	bl RuntimeActorGetField352
 	adds r2, r0, #0
 	ldr r0, [r4, #0]
 	movs r4, #129
@@ -8033,7 +8033,7 @@ _0804345C:
 	.global _08043460
 _08043460:
 	movs r0, #1
-	bl sub_0800A140
+	bl RuntimeSetFieldE48
 	ldr r2, _08043624
 	movs r4, #129
 	lsls r4, r4, #4
@@ -8369,13 +8369,13 @@ _0804368A:
 	subs r0, #4
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08006CE4
+	bl GameStateSetField4246
 	bl Random
 	ands r0, r4
 	subs r0, #4
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08006D20
+	bl GameStateSetField4248
 	.global _080436D2
 _080436D2:
 	movs r2, #128
@@ -8680,13 +8680,13 @@ _08043874:
 	ldr r6, _080439E4
 	adds r4, r7, r6
 	ldr r1, [r4, #0]
-	bl GetObjectFieldS16_1A
+	bl RuntimeObjectGetField1A
 	ldr r2, _080439E8
 	adds r1, r7, r2
 	strh r0, [r1, #0]
 	ldr r0, [r5, #0]
 	ldr r1, [r4, #0]
-	bl GetObjectFieldS16_1E
+	bl RuntimeObjectGetField1E
 	ldr r3, _080439EC
 	adds r1, r7, r3
 	strh r0, [r1, #0]
@@ -9210,12 +9210,12 @@ sub_08043C0E:
 	adds r5, r0, #0
 	ldr r0, [r4, #0]
 	adds r1, r5, #0
-	bl GetObjectFieldS16_1A
+	bl RuntimeObjectGetField1A
 	lsls r0, r0, #16
 	asrs r6, r0, #16
 	ldr r0, [r4, #0]
 	adds r1, r5, #0
-	bl GetObjectFieldS16_1E
+	bl RuntimeObjectGetField1E
 	lsls r0, r0, #16
 	asrs r2, r0, #16
 	mov r1, r10
@@ -9394,7 +9394,7 @@ _08043D24:
 	adds r0, r7, r1
 	strh r5, [r0, #0]
 	movs r0, #132
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r2, _08043DA0
 	adds r1, r7, r2
 	movs r0, #1
@@ -9481,11 +9481,11 @@ _08043DCE:
 	ldr r2, _08043E98
 	adds r4, r7, r2
 	ldr r1, [r4, #0]
-	bl sub_0800A6D0
+	bl RuntimeObjectGetField36
 	str r0, [sp, #52]
 	ldr r3, [sp, #36]
 	ldr r0, [r3, #0]
-	bl sub_08009E78
+	bl RuntimeActorGetField352
 	adds r3, r0, #0
 	ldr r5, [sp, #36]
 	ldr r0, [r5, #0]
@@ -9644,13 +9644,13 @@ _08043F02:
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08006CE4
+	bl GameStateSetField4246
 	bl Random
 	ands r0, r4
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08006D20
+	bl GameStateSetField4248
 	.global _08043F30
 _08043F30:
 	movs r2, #0
@@ -9904,14 +9904,14 @@ _080440AC:
 sub_080440B8:
 	adds r4, r7, r1
 	ldr r1, [r4, #0]
-	bl GetObjectFieldS16_1A
+	bl RuntimeObjectGetField1A
 	movs r2, #140
 	lsls r2, r2, #2
 	adds r1, r7, r2
 	strh r0, [r1, #0]
 	ldr r0, [r5, #0]
 	ldr r1, [r4, #0]
-	bl GetObjectFieldS16_1E
+	bl RuntimeObjectGetField1E
 	ldr r3, _0804414C
 	adds r1, r7, r3
 	strh r0, [r1, #0]
@@ -9960,7 +9960,7 @@ _08044114:
 	lsls r2, r2, #2
 	adds r1, r7, r2
 	ldr r1, [r1, #0]
-	bl sub_0800A6D0
+	bl RuntimeObjectGetField36
 	cmp r0, #7
 	bne _08044154
 	movs r3, #175
@@ -10047,7 +10047,7 @@ _080441AA:
 	bge _080441AA
 	movs r0, #202
 	str r1, [sp, #24]
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r2, _08044248
 	adds r0, r7, r2
 	ldr r1, [sp, #24]
@@ -10185,7 +10185,7 @@ _0804428C:
 	lsls r0, r0, #2
 	adds r4, r7, r0
 	ldr r0, [r4, #0]
-	bl sub_08009E78
+	bl RuntimeActorGetField352
 	mov r12, r0
 	ldr r4, [r4, #0]
 	str r4, [sp, #28]
@@ -10329,13 +10329,13 @@ _080443BE:
 	subs r0, #4
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08006CE4
+	bl GameStateSetField4246
 	bl Random
 	ands r0, r4
 	subs r0, #4
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08006D20
+	bl GameStateSetField4248
 	.global _080443EC
 _080443EC:
 	movs r0, #137
@@ -10542,13 +10542,13 @@ _0804450C:
 _0804450E:
 	ldr r0, [r6, #64]
 	ldr r1, [r6, #68]
-	bl GetObjectFieldS16_1A
+	bl RuntimeObjectGetField1A
 	adds r5, r6, #0
 	adds r5, #76
 	strh r0, [r5, #0]
 	ldr r0, [r6, #64]
 	ldr r1, [r6, #68]
-	bl GetObjectFieldS16_1E
+	bl RuntimeObjectGetField1E
 	movs r1, #78
 	adds r1, r1, r6
 	mov r8, r1
@@ -10586,7 +10586,7 @@ _0804450E:
 	strh r0, [r6, #30]
 	add r1, sp, #32
 	add r0, sp, #28
-	bl sub_08006E20
+	bl GameStateGetField424C50
 	ldr r0, [sp, #28]
 	asrs r0, r0, #16
 	adds r3, r6, #0
@@ -10637,7 +10637,7 @@ sub_08044594:
 	movs r3, #0
 	bl sub_08003AE4
 	movs r0, #0
-	bl sub_0800A140
+	bl RuntimeSetFieldE48
 	movs r0, #16
 	b _0804468A
 	.byte 0x00
@@ -10665,7 +10665,7 @@ _080445E8:
 	movs r1, #1
 	bl ObjectSetFlag400
 	movs r0, #208
-	bl sub_08005E98
+	bl SoundSongStartU16
 	movs r0, #32
 	b _08044672
 	.global _08044614
@@ -10747,7 +10747,7 @@ _0804468A:
 	.global _08044690
 _08044690:
 	movs r0, #1
-	bl sub_0800A140
+	bl RuntimeSetFieldE48
 	adds r0, r6, #0
 	bl sub_0802824C
 	mov r0, r9
@@ -11111,14 +11111,14 @@ _0804489C:
 	lsls r1, r1, #2
 	adds r4, r6, r1
 	ldr r1, [r4, #0]
-	bl GetObjectFieldS16_1A
+	bl RuntimeObjectGetField1A
 	movs r2, #195
 	lsls r2, r2, #2
 	adds r7, r6, r2
 	strh r0, [r7, #0]
 	ldr r0, [r5, #0]
 	ldr r1, [r4, #0]
-	bl GetObjectFieldS16_1E
+	bl RuntimeObjectGetField1E
 	ldr r3, _080448E8
 
 	.thumb_func
@@ -11129,7 +11129,7 @@ sub_080448C2:
 	strh r0, [r1, #0]
 	ldr r0, [r5, #0]
 	ldr r1, [r4, #0]
-	bl sub_0800A6D0
+	bl RuntimeObjectGetField36
 	cmp r0, #7
 	bne _080448EC
 	movs r4, #213
@@ -11567,7 +11567,7 @@ _08044B38:
 	lsls r0, r0, #2
 	adds r4, r6, r0
 	ldr r0, [r4, #0]
-	bl sub_08009E78
+	bl RuntimeActorGetField352
 	adds r3, r0, #0
 	ldr r4, [r4, #0]
 	mov r12, r4
@@ -11987,15 +11987,15 @@ _08044E26:
 _08044E28:
 	ldr r0, [r5, #0]
 	ldr r1, [r5, #4]
-	bl GetObjectFieldS16_1A
+	bl RuntimeObjectGetField1A
 	strh r0, [r5, #12]
 	ldr r0, [r5, #0]
 	ldr r1, [r5, #4]
-	bl GetObjectFieldS16_1E
+	bl RuntimeObjectGetField1E
 	strh r0, [r5, #14]
 	add r0, sp, #40
 	add r1, sp, #44
-	bl sub_08006E20
+	bl GameStateGetField424C50
 	ldr r0, [sp, #40]
 	asrs r0, r0, #16
 	strh r0, [r5, #16]
@@ -12003,7 +12003,7 @@ _08044E28:
 	asrs r0, r0, #16
 	strh r0, [r5, #18]
 	movs r0, #0
-	bl sub_0800A140
+	bl RuntimeSetFieldE48
 	ldr r0, _08044EE0
 	ldr r1, _08044EE4
 	adds r0, r0, r1
@@ -12015,7 +12015,7 @@ _08044E28:
 	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
-	bl sub_08002148
+	bl Lz77UnCompVramSwapped
 	movs r4, #0
 	adds r6, r5, #0
 	adds r6, #32
@@ -12034,7 +12034,7 @@ _08044E78:
 	ble _08044E78
 	movs r0, #0
 	movs r1, #0
-	bl sub_080804EC
+	bl RuntimeGetBlock6120
 	adds r4, r0, #0
 	movs r2, #192
 	lsls r2, r2, #1
@@ -12060,7 +12060,7 @@ _08044E78:
 	movs r0, #1
 	strh r0, [r5, #28]
 	movs r0, #151
-	bl sub_08005E98
+	bl SoundSongStartU16
 	movs r0, #60
 	strh r0, [r5, #26]
 	movs r0, #16
@@ -12154,7 +12154,7 @@ _08044F3C:
 	cmp r0, #4
 	ble _08045002
 	ldr r0, [r5, #0]
-	bl sub_08009E78
+	bl RuntimeActorGetField352
 	adds r2, r0, #0
 	ldr r0, [r5, #0]
 	ldr r1, [r5, #4]
@@ -12166,7 +12166,7 @@ _08044F3C:
 	movs r4, #0
 	strh r4, [r5, #28]
 	movs r0, #161
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r0, _08044FB4
 	ldr r1, _08044FB8
 	adds r0, r0, r1
@@ -12230,7 +12230,7 @@ _08044FC4:
 	.global _08044FD2
 _08044FD2:
 	movs r0, #1
-	bl sub_0800A140
+	bl RuntimeSetFieldE48
 	ldr r1, _08045028
 	ldr r3, _0804502C
 	adds r2, r1, r3
@@ -12334,13 +12334,13 @@ _0804506C:
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08006CE4
+	bl GameStateSetField4246
 	bl Random
 	ands r0, r4
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08006D20
+	bl GameStateSetField4248
 	.global _080450A6
 _080450A6:
 	add sp, #48
@@ -12617,14 +12617,14 @@ _0804522C:
 	adds r5, #132
 	str r5, [sp, #40]
 	ldr r1, [r5, #0]
-	bl GetObjectFieldS16_1A
+	bl RuntimeObjectGetField1A
 	movs r1, #144
 	adds r1, r1, r7
 	mov r10, r1
 	strh r0, [r1, #0]
 	ldr r0, [r4, #0]
 	ldr r1, [r5, #0]
-	bl GetObjectFieldS16_1E
+	bl RuntimeObjectGetField1E
 	movs r2, #146
 	adds r2, r2, r7
 	mov r8, r2
@@ -12643,14 +12643,14 @@ _0804522C:
 	adds r5, #140
 	str r1, [r5, #0]
 	ldr r0, [r4, #0]
-	bl GetObjectFieldS16_1A
+	bl RuntimeObjectGetField1A
 	movs r1, #148
 	adds r1, r1, r7
 	mov r9, r1
 	strh r0, [r1, #0]
 	ldr r0, [r4, #0]
 	ldr r1, [r5, #0]
-	bl GetObjectFieldS16_1E
+	bl RuntimeObjectGetField1E
 	adds r4, #14
 	strh r0, [r4, #0]
 	adds r0, r7, #0
@@ -12673,7 +12673,7 @@ _0804522C:
 	ldr r0, [r2, #0]
 	ldr r3, [sp, #40]
 	ldr r1, [r3, #0]
-	bl sub_0800A6D0
+	bl RuntimeObjectGetField36
 	ldr r5, [sp, #40]
 	str r5, [sp, #48]
 	mov r2, r8
@@ -12814,7 +12814,7 @@ sub_0804538E:
 	bl ObjectSetFields34And36
 	add r1, sp, #32
 	add r0, sp, #28
-	bl sub_08006E20
+	bl GameStateGetField424C50
 	ldr r0, [sp, #28]
 	asrs r0, r0, #16
 	adds r3, r7, #0
@@ -12862,7 +12862,7 @@ sub_0804538E:
 	movs r3, #0
 	bl sub_08003AE4
 	movs r0, #0
-	bl sub_0800A140
+	bl RuntimeSetFieldE48
 	movs r0, #16
 	ldr r5, [sp, #36]
 	strh r0, [r5, #14]
@@ -13121,7 +13121,7 @@ _080455B4:
 	strh r0, [r1, #0]
 	ldr r1, [sp, #44]
 	ldr r0, [r1, #0]
-	bl sub_08009E78
+	bl RuntimeActorGetField352
 	adds r3, r0, #0
 	ldr r2, [sp, #44]
 	ldr r0, [r2, #0]
@@ -13240,7 +13240,7 @@ _080456B4:
 	.global _080456D2
 _080456D2:
 	movs r0, #1
-	bl sub_0800A140
+	bl RuntimeSetFieldE48
 	adds r0, r7, #0
 	bl sub_0802824C
 	mov r0, r9
@@ -13286,13 +13286,13 @@ _08045702:
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08006CE4
+	bl GameStateSetField4246
 	bl Random
 	ands r0, r4
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08006D20
+	bl GameStateSetField4248
 	.global _08045740
 _08045740:
 	ldr r0, [sp, #44]
@@ -13516,7 +13516,7 @@ _08045884:
 	lsls r1, r1, #2
 	adds r4, r7, r1
 	ldr r1, [r4, #0]
-	bl GetObjectFieldS16_1A
+	bl RuntimeObjectGetField1A
 
 	.thumb_func
 	.thumb
@@ -13528,7 +13528,7 @@ sub_08045898:
 	strh r0, [r1, #0]
 	ldr r0, [r5, #0]
 	ldr r1, [r4, #0]
-	bl GetObjectFieldS16_1E
+	bl RuntimeObjectGetField1E
 	ldr r3, _08045B68
 	adds r1, r7, r3
 	strh r0, [r1, #0]
@@ -13726,7 +13726,7 @@ sub_080459A6:
 	bl sub_08003AE4
 	add r0, sp, #28
 	ldr r1, [sp, #56]
-	bl sub_08006E20
+	bl GameStateGetField424C50
 	ldr r0, [sp, #28]
 	asrs r0, r0, #16
 	subs r5, #22
@@ -13738,14 +13738,14 @@ sub_080459A6:
 	adds r1, r7, r2
 	strh r0, [r1, #0]
 	movs r0, #133
-	bl sub_08005E98
+	bl SoundSongStartU16
 
 	.thumb_func
 	.thumb
 	.global sub_08045A4E
 sub_08045A4E:
 	movs r0, #0
-	bl sub_0800A140
+	bl RuntimeSetFieldE48
 	movs r0, #16
 	ldr r3, [sp, #36]
 	strh r0, [r3, #14]
@@ -13826,11 +13826,11 @@ _08045AD6:
 	ldr r0, [r1, #0]
 	ldr r2, [sp, #44]
 	ldr r1, [r2, #0]
-	bl sub_0800A6D0
+	bl RuntimeObjectGetField36
 	str r0, [sp, #64]
 	ldr r3, [sp, #40]
 	ldr r0, [r3, #0]
-	bl sub_08009E78
+	bl RuntimeActorGetField352
 	mov r12, r0
 	ldr r4, [sp, #40]
 	ldr r0, [r4, #0]
@@ -13892,7 +13892,7 @@ sub_08045B34:
 	ldrh r0, [r4, #2]
 	strh r0, [r1, #2]
 	movs r0, #132
-	bl sub_08005E98
+	bl SoundSongStartU16
 	movs r0, #16
 	strh r0, [r5, #0]
 	b _08045BF6
@@ -14095,7 +14095,7 @@ _08045C8C:
 	.global _08045CB2
 _08045CB2:
 	movs r0, #1
-	bl sub_0800A140
+	bl RuntimeSetFieldE48
 	movs r4, #128
 	lsls r4, r4, #1
 	adds r5, r7, r4
@@ -14153,13 +14153,13 @@ _08045CF4:
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08006CE4
+	bl GameStateSetField4246
 	bl Random
 	ands r0, r4
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08006D20
+	bl GameStateSetField4248
 	.global _08045D3C
 _08045D3C:
 	movs r0, #128
@@ -14480,7 +14480,7 @@ sub_08045EDE:
 	adds r1, r1, r7
 	mov r9, r1
 	ldr r1, [r1, #0]
-	bl GetObjectFieldS16_1A
+	bl RuntimeObjectGetField1A
 	movs r2, #136
 	lsls r2, r2, #1
 	adds r4, r7, r2
@@ -14488,7 +14488,7 @@ sub_08045EDE:
 	ldr r0, [r5, #0]
 	mov r3, r9
 	ldr r1, [r3, #0]
-	bl GetObjectFieldS16_1E
+	bl RuntimeObjectGetField1E
 	movs r5, #137
 	lsls r5, r5, #1
 	adds r1, r7, r5
@@ -14508,7 +14508,7 @@ sub_08045EDE:
 	mov r10, r0
 	str r1, [r0, #0]
 	ldr r0, [r4, #0]
-	bl GetObjectFieldS16_1A
+	bl RuntimeObjectGetField1A
 	movs r1, #138
 	lsls r1, r1, #1
 	adds r1, r7, r1
@@ -14517,7 +14517,7 @@ sub_08045EDE:
 	ldr r0, [r4, #0]
 	mov r2, r10
 	ldr r1, [r2, #0]
-	bl GetObjectFieldS16_1E
+	bl RuntimeObjectGetField1E
 	movs r3, #139
 	lsls r3, r3, #1
 	adds r3, r7, r3
@@ -14573,7 +14573,7 @@ sub_08045F6C:
 	bl sub_08028118
 	add r1, sp, #32
 	add r0, sp, #28
-	bl sub_08006E20
+	bl GameStateGetField424C50
 	ldr r0, [sp, #28]
 	asrs r0, r0, #16
 	movs r1, #140
@@ -14630,7 +14630,7 @@ sub_08045F6C:
 	movs r3, #0
 	bl sub_08003AE4
 	movs r0, #0
-	bl sub_0800A140
+	bl RuntimeSetFieldE48
 	movs r0, #16
 	ldr r1, [sp, #36]
 	strh r0, [r1, #14]
@@ -14813,7 +14813,7 @@ _08046172:
 	lsls r3, r3, #1
 	adds r4, r7, r3
 	ldr r0, [r4, #0]
-	bl sub_08009E78
+	bl RuntimeActorGetField352
 	adds r3, r0, #0
 	ldr r0, [r4, #0]
 	movs r4, #130
@@ -14833,7 +14833,7 @@ _08046172:
 	str r4, [sp, #4]
 	bl sub_0800AA10
 	movs r0, #131
-	bl sub_08005E98
+	bl SoundSongStartU16
 	movs r0, #32
 	b _08046310
 	.global _080461AE
@@ -14945,7 +14945,7 @@ _0804623A:
 	movs r0, #128
 	strh r0, [r1, #0]
 	movs r0, #130
-	bl sub_08005E98
+	bl SoundSongStartU16
 	movs r1, #147
 	lsls r1, r1, #1
 	adds r0, r7, r1
@@ -15073,7 +15073,7 @@ sub_0804633C:
 	.global _08046342
 _08046342:
 	movs r0, #1
-	bl sub_0800A140
+	bl RuntimeSetFieldE48
 	adds r0, r7, #0
 	bl sub_0802824C
 	adds r5, r7, #0
@@ -15133,13 +15133,13 @@ _08046388:
 	subs r0, #4
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08006CE4
+	bl GameStateSetField4246
 	bl Random
 	ands r0, r4
 	subs r0, #4
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08006D20
+	bl GameStateSetField4248
 	.global _080463D2
 _080463D2:
 	movs r0, #128
@@ -15391,7 +15391,7 @@ _08046526:
 _0804652E:
 	ldr r0, [r5, #64]
 	ldr r1, [r5, #68]
-	bl GetObjectFieldS16_1A
+	bl RuntimeObjectGetField1A
 	adds r1, r5, #0
 	adds r1, #80
 	strh r0, [r1, #0]
@@ -15402,7 +15402,7 @@ _0804652E:
 	.thumb
 	.global sub_08046540
 sub_08046540:
-	bl GetObjectFieldS16_1E
+	bl RuntimeObjectGetField1E
 	adds r1, r5, #0
 	adds r1, #82
 	strh r0, [r1, #0]
@@ -15442,7 +15442,7 @@ sub_08046540:
 	strh r0, [r5, #30]
 	add r1, sp, #12
 	add r0, sp, #8
-	bl sub_08006E20
+	bl GameStateGetField424C50
 	ldr r0, [sp, #8]
 	asrs r0, r0, #16
 	adds r4, r5, #0
@@ -15454,7 +15454,7 @@ sub_08046540:
 	adds r6, #86
 	strh r0, [r6, #0]
 	movs r0, #0
-	bl sub_0800A140
+	bl RuntimeSetFieldE48
 	movs r0, #4
 	movs r1, #134
 	bl sub_08005F54
@@ -15577,7 +15577,7 @@ sub_08046666:
 	.global _08046672
 _08046672:
 	ldr r0, [r5, #64]
-	bl sub_08009E78
+	bl RuntimeActorGetField352
 	adds r2, r0, #0
 	ldr r0, [r5, #64]
 	ldr r1, [r5, #68]
@@ -15618,7 +15618,7 @@ _080466AC:
 	.global _080466C2
 _080466C2:
 	movs r0, #1
-	bl sub_080805D0
+	bl SpriteRuntimeSetAllFlags800
 	ldr r3, _080466E4
 	movs r0, #1
 	str r0, [sp, #0]
@@ -15740,11 +15740,11 @@ _08046774:
 	.global _08046784
 _08046784:
 	movs r0, #1
-	bl sub_0800A140
+	bl RuntimeSetFieldE48
 	adds r0, r5, #0
 	bl sub_0802824C
 	movs r0, #1
-	bl sub_080805D0
+	bl SpriteRuntimeSetAllFlags800
 	movs r2, #128
 	lsls r2, r2, #1
 	adds r0, r2, #0
@@ -15797,13 +15797,13 @@ _080467C4:
 	subs r0, #4
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08006CE4
+	bl GameStateSetField4246
 	bl Random
 	ands r0, r4
 	subs r0, #4
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08006D20
+	bl GameStateSetField4248
 
 	.thumb_func
 	.thumb
@@ -16103,20 +16103,20 @@ _08046982:
 	ldr r1, _080469C4
 	adds r4, r7, r1
 	ldr r1, [r4, #0]
-	bl GetObjectFieldS16_1A
+	bl RuntimeObjectGetField1A
 	ldr r2, _080469C8
 	adds r6, r7, r2
 	strh r0, [r6, #0]
 	ldr r0, [r5, #0]
 	ldr r1, [r4, #0]
-	bl GetObjectFieldS16_1E
+	bl RuntimeObjectGetField1E
 	ldr r3, _080469CC
 	adds r3, r3, r7
 	mov r9, r3
 	strh r0, [r3, #0]
 	ldr r0, [r5, #0]
 	ldr r1, [r4, #0]
-	bl sub_0800A6D0
+	bl RuntimeObjectGetField36
 	cmp r0, #7
 	bne _080469D4
 	ldr r4, _080469D0
@@ -16482,13 +16482,13 @@ _08046BE8:
 	adds r6, r0, #0
 	ldr r0, [r5, #0]
 	adds r1, r6, #0
-	bl GetObjectFieldS16_1A
+	bl RuntimeObjectGetField1A
 	adds r4, r0, #0
 	lsls r4, r4, #16
 	asrs r4, r4, #16
 	ldr r0, [r5, #0]
 	adds r1, r6, #0
-	bl GetObjectFieldS16_1E
+	bl RuntimeObjectGetField1E
 	adds r3, r0, #0
 	subs r3, #24
 	lsls r3, r3, #16
@@ -16679,7 +16679,7 @@ _08046D36:
 	lsls r0, r0, #3
 	adds r4, r7, r0
 	ldr r0, [r4, #0]
-	bl sub_08009E78
+	bl RuntimeActorGetField352
 
 	.thumb_func
 	.thumb
@@ -16759,7 +16759,7 @@ _08046D68:
 	adds r0, r5, r3
 	strh r1, [r0, #0]
 	movs r0, #208
-	bl sub_08005E98
+	bl SoundSongStartU16
 	ldr r4, _08046E10
 	adds r1, r7, r4
 	movs r0, #1
@@ -17046,7 +17046,7 @@ _08046F72:
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08006CE4
+	bl GameStateSetField4246
 	.2byte 0xF033
 
 	.thumb_func
@@ -17058,7 +17058,7 @@ sub_08046F92:
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08006D20
+	bl GameStateSetField4248
 	.global _08046FA0
 _08046FA0:
 	movs r6, #0
@@ -17315,14 +17315,14 @@ _08047118:
 	lsls r4, r4, #1
 	adds r5, r7, r4
 	ldr r1, [r5, #0]
-	bl GetObjectFieldS16_1A
+	bl RuntimeObjectGetField1A
 	movs r1, #168
 	lsls r1, r1, #1
 	adds r4, r7, r1
 	strh r0, [r4, #0]
 	ldr r0, [r6, #0]
 	ldr r1, [r5, #0]
-	bl GetObjectFieldS16_1E
+	bl RuntimeObjectGetField1E
 	movs r2, #169
 	lsls r2, r2, #1
 	adds r1, r7, r2
@@ -17347,7 +17347,7 @@ sub_08047150:
 	str r0, [r1, #0]
 	ldr r0, [r6, #0]
 	ldr r1, [r5, #0]
-	bl sub_0800A6D0
+	bl RuntimeObjectGetField36
 	cmp r0, #7
 	bne _08047184
 	movs r5, #182
@@ -17437,7 +17437,7 @@ _080471C8:
 	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
-	bl sub_08002148
+	bl Lz77UnCompVramSwapped
 	ldr r1, _08047340
 	adds r0, r5, #0
 	bl NfpOpenByName
@@ -17446,7 +17446,7 @@ _080471C8:
 	bl sub_08001B4C
 	movs r0, #0
 	movs r1, #0
-	bl sub_080804EC
+	bl RuntimeGetBlock6120
 	adds r4, r0, #0
 	movs r1, #192
 	lsls r1, r1, #1
@@ -17512,7 +17512,7 @@ _080471C8:
 	lsls r0, r0, #16
 	str r0, [r6, #0]
 	movs r0, #143
-	bl sub_08005E98
+	bl SoundSongStartU16
 	mov r0, r9
 	strh r5, [r0, #14]
 	.global _080472C8
@@ -17546,7 +17546,7 @@ _080472EE:
 	adds r0, #140
 	adds r4, r7, r0
 	ldr r0, [r4, #0]
-	bl sub_08009E78
+	bl RuntimeActorGetField352
 	adds r2, r0, #0
 	ldr r0, [r4, #0]
 	movs r3, #162
@@ -17798,7 +17798,7 @@ _08047458:
 	movs r3, #0
 	bl sub_08003AE4
 	ldr r0, [r4, #0]
-	bl sub_08009E78
+	bl RuntimeActorGetField352
 	ldr r4, [r4, #0]
 	ldr r1, [r5, #0]
 	movs r3, #164
@@ -18237,13 +18237,13 @@ _08047746:
 	ldr r6, _08047800
 	adds r4, r7, r6
 	ldr r1, [r4, #0]
-	bl GetObjectFieldS16_1A
+	bl RuntimeObjectGetField1A
 	ldr r2, _08047804
 	adds r1, r7, r2
 	strh r0, [r1, #0]
 	ldr r0, [r5, #0]
 	ldr r1, [r4, #0]
-	bl GetObjectFieldS16_1E
+	bl RuntimeObjectGetField1E
 	ldr r3, _08047808
 	adds r1, r7, r3
 	strh r0, [r1, #0]
@@ -18411,7 +18411,7 @@ sub_0804784C:
 sub_08047874:
 	adds r1, r0, #0
 	adds r0, r4, #0
-	bl sub_08002148
+	bl Lz77UnCompVramSwapped
 	ldr r1, sub_080479B4
 	adds r0, r5, #0
 	bl NfpOpenByName
@@ -18433,7 +18433,7 @@ sub_08047874:
 	str r0, [r1, #0]
 	movs r0, #0
 	movs r1, #0
-	bl sub_080804EC
+	bl RuntimeGetBlock6120
 	adds r4, r0, #0
 	movs r0, #192
 	lsls r0, r0, #1
@@ -18543,7 +18543,7 @@ sub_080478DE:
 	movs r0, #4
 	strh r0, [r1, #0]
 	movs r0, #143
-	bl sub_08005E98
+	bl SoundSongStartU16
 	movs r0, #16
 	b _08047CB6
 	.byte 0x00
@@ -18834,11 +18834,11 @@ sub_08047B16:
 	ldr r5, _08047B94
 	adds r4, r7, r5
 	ldr r1, [r4, #0]
-	bl sub_0800A6D0
+	bl RuntimeObjectGetField36
 	adds r5, r0, #0
 	ldr r1, [sp, #48]
 	ldr r0, [r1, #0]
-	bl sub_08009E78
+	bl RuntimeActorGetField352
 	adds r3, r0, #0
 	ldr r2, [sp, #48]
 
@@ -18874,7 +18874,7 @@ sub_08047B62:
 	cmp r0, #0
 	beq _08047BB6
 	movs r0, #111
-	bl sub_08005E98
+	bl SoundSongStartU16
 	b _08047BB6
 	.global _08047B7C
 _08047B7C:
@@ -18960,10 +18960,10 @@ sub_08047BEA:
 	ldr r6, _08047C48
 	adds r5, r7, r6
 	ldr r1, [r5, #0]
-	bl sub_0800A6D0
+	bl RuntimeObjectGetField36
 	mov r8, r0
 	ldr r0, [r4, #0]
-	bl sub_08009E78
+	bl RuntimeActorGetField352
 	adds r3, r0, #0
 	ldr r0, [r4, #0]
 	ldr r1, [r5, #0]
@@ -19001,7 +19001,7 @@ sub_08047C38:
 	.global _08047C3A
 _08047C3A:
 	movs r0, #112
-	bl sub_08005E98
+	bl SoundSongStartU16
 	b _08047DA4
 	.byte 0x00
 	.byte 0x00
@@ -19589,13 +19589,13 @@ _08047F72:
 	.global sub_08047F8A
 sub_08047F8A:
 	asrs r0, r0, #16
-	bl sub_08006CE4
+	bl GameStateSetField4246
 	bl Random
 	ands r0, r4
 	subs r0, #4
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08006D20
+	bl GameStateSetField4248
 	.global _08047FA0
 _08047FA0:
 	movs r6, #0

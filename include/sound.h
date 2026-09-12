@@ -40,4 +40,7 @@ void SoundPlayerStop(struct SoundPlayer *player);
 void SoundSongStart(u16 song);
 void SoundSongStop(u16 song);
 void SoundUpdate(void);
+void SoundCallCallback5DA8(u32 argument);
+void SoundCallCallback5DAC(u32 argument);
+void DisableDma1AndUpdateSound(void);
 #endif

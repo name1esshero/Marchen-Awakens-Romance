@@ -21,14 +21,18 @@ class ScriptNativeTests(unittest.TestCase):
 #include <stdio.h>
 #include <stdarg.h>
 #include <string.h>
+#include <stdlib.h>
 const char hostEmpty[]="",hostFormat[]="%d";
 struct ScriptContext context,*hostVm=&context;
 struct ScriptExecutionState state;
 unsigned char buffer[16];
-int failAllocation,allocationSize,wrongHeap;
+int failAllocation,allocationSize,wrongHeap,randomCallCount;
+u32 randomValues[2],seedValue;
 void resetNative(void) {
  context.state=&state;state.heap=(void *)0x1234;
- failAllocation=allocationSize=wrongHeap=0;memset(buffer,0xCC,sizeof(buffer));
+ failAllocation=allocationSize=wrongHeap=randomCallCount=0;
+ randomValues[0]=0x1234;randomValues[1]=0x5678;
+ memset(buffer,0xCC,sizeof(buffer));
 }
 void *HeapAlloc(void *heap,u32 size) {
  allocationSize=size;wrongHeap=heap!=state.heap;
@@ -38,9 +42,13 @@ void *HeapAlloc(void *heap,u32 size) {
 s32 siprintf(char *text,const char *format,...) {
  int count;va_list args;va_start(args,format);count=vsprintf(text,format,args);va_end(args);return count;
 }
+u32 Random(void) { return randomValues[randomCallCount++]; }
+void RandomSeed(u32 seed) { seedValue=seed; }
+u32 sub_08080E4C(u32 dividend,u32 divisor) { return dividend%divisor; }
+s32 sub_08082640(const char *text) { return strtol(text,0,10); }
 ''')
         library=folder/'native.so'
-        subprocess.run(['gcc','-shared','-fPIC','-O2',
+        subprocess.run(['gcc','-shared','-fPIC','-O2','-fno-builtin',
                         '-I'+str(ROOT/'include'),str(folder/'native.c'),str(folder/'mock.c'),
                         '-o',str(library)],check=True)
         cls.lib=ctypes.CDLL(str(library))
@@ -49,6 +57,11 @@ s32 siprintf(char *text,const char *format,...) {
         cls.lib.ScriptNativeCharacterCode.argtypes=[ctypes.c_uint32,ctypes.POINTER(ctypes.c_char_p),ctypes.POINTER(ctypes.c_uint32)]
         cls.lib.ScriptNativeCharacterString.argtypes=[ctypes.c_uint32,ctypes.POINTER(ctypes.c_uint32),ctypes.POINTER(ctypes.c_void_p)]
         cls.lib.ScriptNativeIntegerString.argtypes=[ctypes.c_uint32,ctypes.POINTER(ctypes.c_int32),ctypes.POINTER(ctypes.c_void_p)]
+        cls.lib.ScriptNativeRandomRange.argtypes=[ctypes.c_uint32,ctypes.POINTER(ctypes.c_uint32),ctypes.POINTER(ctypes.c_uint32)]
+        cls.lib.ScriptNativeSeedRandom.argtypes=[ctypes.c_uint32,ctypes.POINTER(ctypes.c_uint32),ctypes.POINTER(ctypes.c_uint32)]
+        cls.lib.ScriptNativeParseInteger.argtypes=[ctypes.c_uint32,ctypes.POINTER(ctypes.c_char_p),ctypes.POINTER(ctypes.c_int32)]
+        cls.lib.ScriptNativeCompareStrings.argtypes=[ctypes.c_uint32,ctypes.POINTER(ctypes.c_char_p),ctypes.POINTER(ctypes.c_int32)]
+        cls.lib.ScriptNativeStringLength.argtypes=[ctypes.c_uint32,ctypes.POINTER(ctypes.c_char_p),ctypes.POINTER(ctypes.c_uint32)]
 
     @classmethod
     def tearDownClass(cls):cls.temp.cleanup()
@@ -98,6 +111,29 @@ s32 siprintf(char *text,const char *format,...) {
             arg=kind(42);out=ctypes.c_void_p(0x5678)
             self.assertEqual(getattr(self.lib,name)(1,ctypes.byref(arg),ctypes.byref(out)),-1)
             self.assertEqual(out.value,0x5678)
+
+    def test_random_and_integer_native_adapters(self):
+        bound=ctypes.c_uint32(97);out=ctypes.c_uint32()
+        combined=0x1234 | (0x5678 << 15)
+        self.assertEqual(self.lib.ScriptNativeRandomRange(1,ctypes.byref(bound),ctypes.byref(out)),1)
+        self.assertEqual(out.value,combined%97)
+        self.assertEqual(ctypes.c_int.in_dll(self.lib,'randomCallCount').value,2)
+        seed=ctypes.c_uint32(0x89ABCDEF)
+        self.assertEqual(self.lib.ScriptNativeSeedRandom(1,ctypes.byref(seed),ctypes.byref(out)),1)
+        self.assertEqual(ctypes.c_uint32.in_dll(self.lib,'seedValue').value,seed.value)
+        text=(ctypes.c_char_p*1)(b'-2048');parsed=ctypes.c_int32()
+        self.assertEqual(self.lib.ScriptNativeParseInteger(1,text,ctypes.byref(parsed)),1)
+        self.assertEqual(parsed.value,-2048)
+
+    def test_string_comparison_and_length(self):
+        out=ctypes.c_int32()
+        for left,right,expected in ((b'a',b'b',-1),(b'b',b'a',1),(b'a',b'a',0),(None,b'',0)):
+            args=(ctypes.c_char_p*2)(left,right)
+            self.assertEqual(self.lib.ScriptNativeCompareStrings(2,args,ctypes.byref(out)),1)
+            self.assertEqual(out.value,expected)
+        args=(ctypes.c_char_p*1)(b'Ginta');length=ctypes.c_uint32()
+        self.assertEqual(self.lib.ScriptNativeStringLength(1,args,ctypes.byref(length)),1)
+        self.assertEqual(length.value,5)
 
 
 if __name__=='__main__':unittest.main()

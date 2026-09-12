@@ -6,14 +6,26 @@
 struct ScriptBytecodeVm {
     u8 unknown00[0x30];
     u8 *bytecode;
-    u8 unknown34[0x10];
+    u8 unknown34[4];
+    void *table38;
+    void *table3C;
+    u8 unknown40[4];
     u32 programCounter;
-    u8 unknown48[0x3C];
-    u32 stackPointer;
+    union {
+        struct {
+            s32 registers[15];
+            u32 stackPointer;
+        } live;
+        s32 words[16];
+    } frame;
+    u32 callbacks[8];
+    u16 frameFlags;
+    u16 activeCallbackFlags;
 };
 
 struct ScriptBytecodeContext {
-    u8 unknown00[12];
+    void *heap;
+    u8 unknown04[8];
     struct ScriptBytecodeVm *vm;
 };
 
@@ -33,7 +45,9 @@ u32 ScriptReadNextU16(void);
 u32 ScriptReadNextU32(void);
 void ScriptPushU32(u32 value);
 u32 ScriptPopU32(void);
-s32 *sub_0807F624(u32 operand);
+s32 *ScriptResolveOperand(u32 operand);
+s32 ScriptPushFrameAndJump(u32 callbackIndex, u32 destination);
+s32 ScriptRestoreFrame(void);
 
 s32 ScriptCmdJump(void);
 s32 ScriptCmdJumpIfZero(void);
@@ -60,5 +74,34 @@ s32 ScriptCmdBitAndImmediate(void);
 s32 ScriptCmdBitOr(void);
 s32 ScriptCmdBitOrImmediate(void);
 s32 ScriptCmdBitXor(void);
+s32 ScriptCmdDivide(void);
+s32 ScriptCmdDivideImmediate(void);
+s32 ScriptCmdModulo(void);
+s32 ScriptCmdModuloImmediate(void);
+s32 ScriptCmdBitXorImmediate(void);
+s32 ScriptCmdBitNot(void);
+s32 ScriptCmdLogicalAnd(void);
+s32 ScriptCmdLogicalAndImmediate(void);
+s32 ScriptCmdLogicalOr(void);
+s32 ScriptCmdLogicalOrImmediate(void);
+s32 ScriptCmdLogicalNot(void);
+s32 ScriptCmdSignBit(void);
+s32 ScriptCmdLessThanOrEqualZero(void);
+s32 ScriptCmdGreaterThanZero(void);
+s32 ScriptCmdGreaterThanOrEqualZero(void);
+s32 ScriptCmdEqualZero(void);
+s32 ScriptCmdNotEqualZero(void);
+s32 ScriptCmdSetCallback(void);
+s32 ScriptCmdRunCallback(void);
+s32 ScriptCmdJumpRelative(void);
+s32 ScriptCmdClearFrameFlag(void);
+s32 ScriptCmdSetFrameFlag(void);
+s32 ScriptCmdReadContextField14(void);
+s32 ScriptCmdReadContextField114(void);
+s32 ScriptCmdReadTable38Field(void);
+s32 ScriptCmdReadTable3CField(void);
+s32 ScriptCmdFreeString(void);
+s32 ScriptCmdRestoreFrameAndGetResult(void);
+s32 ScriptCmdFail(void);
 
 #endif

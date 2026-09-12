@@ -3,14 +3,14 @@
  * Inactive sprites are untouched; resource lookup failure is stored as -1.
  */
 #include "script_sprite.h"
-extern struct ScriptSprite *sub_080106C8(s32);
+#include "runtime_misc.h"
 extern char *strcpy(char *,const char *);
 extern char *strupr(char *);
 extern s32 FindResourceByName(s32,const char *);
 __attribute__((section(".rom.00010C0C"))) void ScriptSpriteSelect(s32 id,s32 container,const char *name,s32 animation,s32 frame)
 {
  char resource[16];
- struct ScriptSprite *sprite=sub_080106C8(id);
+ struct ScriptSprite *sprite=GameStateGetRecord0B90(id);
  if(sprite->active) {
   strcpy(resource,name);strupr(resource);
   sprite->container=container;
