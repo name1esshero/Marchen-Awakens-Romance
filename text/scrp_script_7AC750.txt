@@ -1,0 +1,128 @@
+// Legacy reference view of EV_JA01.SPC; edit text/nfp/EV_JA01.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000456 F01A01  // LITERAL: F01A01 (usage not inferred)
+@00052F  C0D04 ［ギンタ］  // EN: [Ginta]
+@00054C  C0F04 家があるぞ！  // EN: There's a house!
+@0005A5 F02A01  // LITERAL: F02A01 (usage not inferred)
+@00067E  C0D04 ［バッボ］  // EN: [Babbo]
+@00069B  C0F04 ムム！なにやら、うまそうなにおい！  // EN: Hmm! Something smells delicious!
+@000943 F01A01  // LITERAL: F01A01 (usage not inferred)
+@000A1C  C0D04 ［ギンタ］  // EN: [Ginta]
+@000A39  C0F04 …畑だ…  // EN: ...A field...
+@000A54 なんか育ててるのかな  // EN: I wonder what they're growing.
+@000B60 MAP08_A  // LITERAL: MAP08_A (usage not inferred)
+@000BE1 A  // LITERAL: A (usage not inferred)
+@000C6D A  // LITERAL: A (usage not inferred)
+@000E1A F03A01  // LITERAL: F03A01 (usage not inferred)
+@000EF3  C0D04 ［ジャック］  // EN: [Jack]
+@000F12  C0F04 きたっス、母ちゃん！！  // EN: They're here, Mom!
+@000F3B ヤツらだ！！  // EN: It's them!
+@000F71  C0D04 ［ジャック］  // EN: [Jack]
+@000F90  C0F04 オイラ今日こそは！！  // EN: Today, I'm finally going to...!
+@000FF1 F29A02  // LITERAL: F29A02 (usage not inferred)
+@0010CA  C0D04 ［ジャックの母］  // EN: [Jack's mother]
+@0010ED  C0F04 およしジャック！  // EN: Don't, Jack!
+@00113A  C0D04 ［ジャックの母］  // EN: [Jack's mother]
+@00115D  C0F04 今度こそ  // EN: This time, for sure!
+@001178 ころされちまうよ！！  // EN: You'll get killed!!
+@0013F9 F03A01  // LITERAL: F03A01 (usage not inferred)
+@0014D2  C0D04 ［ジャック］  // EN: [Jack]
+@0014F1  C0F04 危ないから母ちゃんはかくれてるっス！！  // EN: It's dangerous! Stay hidden, Mom!
+@001564 F29A02  // LITERAL: F29A02 (usage not inferred)
+@00163D  C0D04 ［ジャックの母］  // EN: [Jack's mother]
+@001660  C0F04 ジャック！！  // EN: Jack!!
+@00181F MAP03_A  // LITERAL: MAP03_A (usage not inferred)
+@0019EB F03A03  // LITERAL: F03A03 (usage not inferred)
+@001AC4  C0D04 ［ジャック］  // EN: [Jack]
+@001AE3  C0F04 いいかげんにするっス！！  // EN: That's enough!
+@001E4D F03A03  // LITERAL: F03A03 (usage not inferred)
+@001F26  C0D04 ［ジャック］  // EN: [Jack]
+@001F45  C0F04 この怪物どもーーーーーーーー！！！  // EN: You monsters!
+@002262 F03A03  // LITERAL: F03A03 (usage not inferred)
+@00233B  C0D04 ［ジャック］  // EN: [Jack]
+@00235A  C0F04 オイラん家の畑をこれ以上ーーーーー…  // EN: You're not doing any more damage to our field...!
+@002401 F03A08  // LITERAL: F03A08 (usage not inferred)
+@002465  C0D04 ［ジャック］  // EN: [Jack]
+@002484  C0F04 あ、あんた…  // EN: Y-you...
+@0024A3 だれっスか？？？  // EN: Who are you?
+@0024ED F01A09  // LITERAL: F01A09 (usage not inferred)
+@0025A0 F02A06  // LITERAL: F02A06 (usage not inferred)
+@0026AF  C0D04 ［ギンタ］  // EN: [Ginta]
+@0026CC  C0F04 …  // EN: ...
+@00270B  C0D04 ［バッボ］  // EN: [Babbo]
+@002728  C0F04 …  // EN: ...
+@00287B MAP08_A  // LITERAL: MAP08_A (usage not inferred)
+@00296E A  // LITERAL: A (usage not inferred)
+@0029FA A  // LITERAL: A (usage not inferred)
+@002BA7 F01A01  // LITERAL: F01A01 (usage not inferred)
+@002C80  C0D04 ［ギンタ］  // EN: [Ginta]
+@002C9D  C0F04 この野菜すんごくウマイ！！  // EN: These vegetables are amazing!
+@002CCA ありがとう、おばさん！！  // EN: Thanks, ma'am!
+@002D1C F29A01  // LITERAL: F29A01 (usage not inferred)
+@002DF5  C0D04 ［ジャックの母］  // EN: [Jack's mother]
+@002E18  C0F04 そうかいそうかい！  // EN: Well, I'm glad you like them!
+@002E3D たんとお食べ！  // EN: Eat all you want!
+@002EF1 F03A07  // LITERAL: F03A07 (usage not inferred)
+@002FF1  C0D04 ［ジャック］  // EN: [Jack]
+@003010  C0F04 つーか、あんたダレっスか？  // EN: Anyway, who are you?
+@003077 F01A08  // LITERAL: F01A08 (usage not inferred)
+@0030A5  C0D04 ［ギンタ］  // EN: [Ginta]
+@0030C2  C0F04 ギンタ！！  // EN: Ginta!!
+@003109  C0D04 ［ギンタ］  // EN: [Ginta]
+@003126  C0F04 ちがうせかいから来たばっか！  // EN: I just got here from another world!
+@003155 ヨロシク！  // EN: Nice to meet you!
+@003199 F02A10  // LITERAL: F02A10 (usage not inferred)
+@003299  C0D04 ［バッボ］  // EN: [Babbo]
+@0032B6  C0F04 ギンタのやつ、畑に入るなり  // EN: The moment Ginta stepped into the field,
+@0032E3 野菜を食ってしまってな！  // EN: he started eating the vegetables!
+@003335 F03A08  // LITERAL: F03A08 (usage not inferred)
+@003363  C0D04 ［ジャック］  // EN: [Jack]
+@003445  C0D04 ［ジャック］  // EN: [Jack]
+@003464  C0F04 （なんで食ってるっスか！！）  // EN: (Why is it eating!?)
+@003529  C0D04 ［ジャック］  // EN: [Jack]
+@003548  C0F04 （なんで生きてるんスか！）  // EN: (Why is it alive!?)
+@003677  C0D04 ［ジャックの母］  // EN: [Jack's mother]
+@00369A  C0F04 ジャックは私の息子  // EN: Jack is my son.
+@0036E9  C0D04 ［ジャックの母］  // EN: [Jack's mother]
+@00370C  C0F04 二人で野菜をつくって、それを食べたり  // EN: We grow vegetables together, eating some
+@003743 売ったりして生活しているんだよ  // EN: and selling the rest to make a living.
+@00379B F01A12  // LITERAL: F01A12 (usage not inferred)
+@0037C9  C0D04 ［ギンタ］  // EN: [Ginta]
+@0037E6  C0F04 そ、そっか…  // EN: O-oh, I see...
+@003805 （母ちゃん…か）  // EN: (Mom, huh...)
+@00383F  C0D04 ［ギンタ］  // EN: [Ginta]
+@00385C  C0F04 （元気かな）  // EN: (I wonder how she's doing.)
+@00393F  C0D04 ［？？？］  // EN: [???]
+@00395C  C0F04 アオォオォオォォン  // EN: Awooooo!
+@0039D2 F03A03  // LITERAL: F03A03 (usage not inferred)
+@003AAB  C0D04 ［ジャック］  // EN: [Jack]
+@003ACA  C0F04 来たっスね！  // EN: Here they are!
+@003AE9 人狼のとうぞく C0904 『ルーガルーブラザーズ』 C0F04 ！  // EN: The werewolf thieves, the Lugar Brothers!
+@003B59 F01A07  // LITERAL: F01A07 (usage not inferred)
+@003C32  C0D04 ［ギンタ］  // EN: [Ginta]
+@003C4F  C0F04 人狼（じんろう）！？  // EN: Werewolves!?
+@003C76 かっこいいな！！  // EN: That's so cool!
+@003CC0 F03A04  // LITERAL: F03A04 (usage not inferred)
+@003CEE  C0D04 ［ジャック］  // EN: [Jack]
+@003D0D  C0F04 ドロボーにかっこいいも悪いもないっスよ！  // EN: There's nothing cool about thieves!
+@003D82 F03A01  // LITERAL: F03A01 (usage not inferred)
+@003DB0  C0D04 ［ジャック］  // EN: [Jack]
+@003DCF  C0F04 …今まで  // EN: ...Until now,
+@003E14  C0D04 ［ジャック］  // EN: [Jack]
+@003E33  C0F04 …今まであいつらの前では  // EN: whenever I faced them,
+@003E5E 足がふるえて何もできなかった…  // EN: my legs shook so much I couldn't do anything...
+@003EB6 F03A03  // LITERAL: F03A03 (usage not inferred)
+@003EE4  C0D04 ［ジャック］  // EN: [Jack]
+@003F03  C0F04 今度こそ…  // EN: This time...
+@003F4A  C0D04 ［ジャック］  // EN: [Jack]
+@003F69  C0F04 自分の力で道をひらくっス！  // EN: I'll make my own way forward!
+@003F96 いくじなしを捨てるっスよ！！  // EN: I'm done being a coward!
+@004224 F29A02  // LITERAL: F29A02 (usage not inferred)
+@0042FD  C0D04 ［ジャックの母］  // EN: [Jack's mother]
+@004320  C0F04 おまち！！ジャック！！  // EN: Wait, Jack!
+@004349 ころされちまうよ！！  // EN: You'll get killed!!
+@004397 F01A05  // LITERAL: F01A05 (usage not inferred)
+@004470  C0D04 ［ギンタ］  // EN: [Ginta]
+@00448D  C0F04 くそ！！  // EN: Damn it!!

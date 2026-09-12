@@ -1,0 +1,5 @@
+// BTL_ESCP.SPC: ROM 39C7A0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@0003B3 BGM_SET.SPC  // LITERAL: BGM_SET.SPC (usage not inferred)

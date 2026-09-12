@@ -1,0 +1,45 @@
+// L25_4_0.SPC: ROM 81F020
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000328 MAP25_O  // LITERAL: MAP25_O (usage not inferred)
+@00049E F09A07  // LITERAL: F09A07 (usage not inferred)
+@000577  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000596  C0F04 ……ん？  // TODO: English translation
+@0005EB F04A04  // LITERAL: F04A04 (usage not inferred)
+@0006FA  C0D04 ［スノウ］  // EN: [Snow]
+@000717  C0F04 はりつめていた魔力（まりょく）が  // EN: That intense magical power...
+@00074A ……きえたよ！  // EN: ...It's gone!
+@0007C8 F09A05  // LITERAL: F09A05 (usage not inferred)
+@00082C  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00084B  C0F04 なんか封印がとけたって  // TODO: English translation
+@000874 かんじね  // TODO: English translation
+@000922 F01B08  // LITERAL: F01B08 (usage not inferred)
+@000960 F08A06  // LITERAL: F08A06 (usage not inferred)
+@0009C4  C0D04 ［ナナシ］  // EN: [Nanashi]
+@0009E1  C0F04 なんか、でっかい魔物（まもの）が  // TODO: English translation
+@000B16  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000B33  C0F04 ばーーーーーーーーー！  // TODO: English translation
+@000B5C って出てくるんちゃうやろな♪  // TODO: English translation
+@000CB0  C0D04 ［ギンタ］  // EN: [Ginta]
+@000CCD  C0F04 そしたらばーーーーんって  // TODO: English translation
+@000CF8 やっつけてやるぜ！  // TODO: English translation
+@000E01 F04A04  // LITERAL: F04A04 (usage not inferred)
+@000EDA  C0D04 ［スノウ］  // EN: [Snow]
+@000EF7  C0F04 はりつめていた魔力（まりょく）が  // EN: That intense magical power...
+@000F2A ……きえたよ！  // EN: ...It's gone!
+@000F72 F09A01  // LITERAL: F09A01 (usage not inferred)
+@00104B  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00106A  C0F04 ……  // TODO: English translation
+@001081 うん、まちがいないね！  // TODO: English translation
+@0010C1  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0010E0  C0F04 たぶん、かいだんのまえにあった氷  // TODO: English translation
+@001113 なくなってるはずよ  // TODO: English translation
+@0011CB F01B08  // LITERAL: F01B08 (usage not inferred)
+@001209 F08A06  // LITERAL: F08A06 (usage not inferred)
+@00126D  C0D04 ［ナナシ］  // EN: [Nanashi]
+@00128A  C0F04 さすがやな〜〜  // TODO: English translation
+@0012AB キゲンなおしてもらってよかったわ！  // TODO: English translation
+@00132D  C0D04 ［ギンタ］  // EN: [Ginta]
+@00134A  C0F04 さっそくさっきのかいだんへ  // TODO: English translation
+@001377 もどってみよう！！  // TODO: English translation

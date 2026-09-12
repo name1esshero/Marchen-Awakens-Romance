@@ -1,0 +1,74 @@
+// Legacy reference view of SP_M25_5.SPC; edit text/nfp/SP_M25_5.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@00021D A  // LITERAL: A (usage not inferred)
+@0002E5 B  // LITERAL: B (usage not inferred)
+@0003AD A  // LITERAL: A (usage not inferred)
+@000B04 F09A07  // LITERAL: F09A07 (usage not inferred)
+@000BDD  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000BFC  C0F04 へぇ…  // TODO: English translation
+@000C15 どれどれ？？  // TODO: English translation
+@000C4B  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000C6A  C0F04 …  // TODO: English translation
+@000CB9 F09A02  // LITERAL: F09A02 (usage not inferred)
+@000CE7  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000D06  C0F04 （なんか…イヤなかんじがする  // TODO: English translation
+@000D35 　この宝ばこ…）  // TODO: English translation
+@000DB5 F08A01  // LITERAL: F08A01 (usage not inferred)
+@000EB5  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000ED2  C0F04 …  // TODO: English translation
+@000F11  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000F2E  C0F04 ドロシーちゃん、ちょっと  // TODO: English translation
+@000F59 ここはたのむわ…  // TODO: English translation
+@000FC9 F09A05  // LITERAL: F09A05 (usage not inferred)
+@000FF7  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001016  C0F04 へ？  // TODO: English translation
+@00128B MAP11_2A  // LITERAL: MAP11_2A (usage not inferred)
+@0016B7 F08A03  // LITERAL: F08A03 (usage not inferred)
+@001790  C0D04 ［ナナシ］  // EN: [Nanashi]
+@0017AD  C0F04 気になる…  // TODO: English translation
+@0017CA あのもんしょう、どこかで見たで…  // TODO: English translation
+@001814  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001831  C0F04 …たしか、きみょうな  // TODO: English translation
+@001858 古文書のようなヤツや  // TODO: English translation
+@001896  C0D04 ［ナナシ］  // EN: [Nanashi]
+@0018B3  C0F04 どっかの古いどうくつで  // TODO: English translation
+@0018DC 手に入れたんやなかったかな…  // TODO: English translation
+@001989 F08A01  // LITERAL: F08A01 (usage not inferred)
+@0019ED  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001A0A  C0F04 …たしかルベリアにあったな…  // TODO: English translation
+@001A63  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001AA7 『アンダータ』！！  // TODO: English translation
+@001C63 MAP25_5A  // LITERAL: MAP25_5A (usage not inferred)
+@001F4F F09A07  // LITERAL: F09A07 (usage not inferred)
+@00204F  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00206E  C0F04 なに？あいつ…  // TODO: English translation
+@0020FF F38A02  // LITERAL: F38A02 (usage not inferred)
+@0021D8  C0D04 ［マール］  // EN: [Marl]
+@0021F5  C0F04 ド、ドロシーさん！  // TODO: English translation
+@00221A ボクがあけます！！  // TODO: English translation
+@00228C F09A01  // LITERAL: F09A01 (usage not inferred)
+@0022BA  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0022D9  C0F04 あ、ああ、はい…  // TODO: English translation
+@002336 F09A07  // LITERAL: F09A07 (usage not inferred)
+@002364  C0D04 ［ドロシー］  // EN: [Dorothy]
+@002383  C0F04 …  // TODO: English translation
+@0028D2 EF_GEN03  // LITERAL: EF_GEN03 (usage not inferred)
+@0029BE LAST01  // LITERAL: LAST01 (usage not inferred)
+@002C3D ァァァアアアアアァァァ…  // TODO: English translation
+@002E7B F09A05  // LITERAL: F09A05 (usage not inferred)
+@002F7B  C0D04 ［ドロシー］  // EN: [Dorothy]
+@002F9A  C0F04 あ、あしぃ〜〜〜〜！？  // TODO: English translation
+@002FFD F01B01  // LITERAL: F01B01 (usage not inferred)
+@0030FD  C0D04 ［ギンタ］  // EN: [Ginta]
+@00311A  C0F04 やっぱりそうきたか！！  // TODO: English translation
+@00317D F09A01  // LITERAL: F09A01 (usage not inferred)
+@0031AB  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0031CA  C0F04 このドロシーさまをあいてに  // TODO: English translation
+@0031F7 『あし』だけではむかうとは  // TODO: English translation
+@0032B7 F09A02  // LITERAL: F09A02 (usage not inferred)
+@003351  C0D04 ［ドロシー］  // EN: [Dorothy]
+@003370  C0F04 いいドキョウだわ！！  // TODO: English translation
+@003AFB DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
+@003B46 OBJ_G.SPC  // LITERAL: OBJ_G.SPC (usage not inferred)

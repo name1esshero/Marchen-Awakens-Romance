@@ -1,0 +1,40 @@
+// Legacy reference view of EV_JA02.SPC; edit text/nfp/EV_JA02.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@00014D MAP03_A  // LITERAL: MAP03_A (usage not inferred)
+@00043C F01A02  // LITERAL: F01A02 (usage not inferred)
+@000515  C0D04 ［ギンタ］  // EN: [Ginta]
+@000532  C0F04 ジャック！  // EN: Jack!
+@000589 F02A04  // LITERAL: F02A04 (usage not inferred)
+@000662  C0D04 ［バッボ］  // EN: [Babbo]
+@00067F  C0F04 待てギンタ！  // EN: Wait, Ginta!
+@0006C8  C0D04 ［ギンタ］  // EN: [Ginta]
+@0006E5  C0F04 …！！  // EN: ...!!
+@000728  C0D04 ［バッボ］  // EN: [Babbo]
+@000745  C0F04 かれは今男になろうとしてる！  // EN: He's trying to become a man!
+@000774 おまえも男ならわかるであろう！！  // EN: If you're a man too, you should understand!
+@0007BE  C0D04 ［バッボ］  // EN: [Babbo]
+@0007DB  C0F04 気合を入れるところを  // EN: Let us watch
+@000802 見とどけようではないか！  // EN: as he summons his courage!
+@000854 F01A05  // LITERAL: F01A05 (usage not inferred)
+@000882  C0D04 ［ギンタ］  // EN: [Ginta]
+@00089F  C0F04 （ジャック…！！）  // EN: (Jack...!)
+@00096A F03A03  // LITERAL: F03A03 (usage not inferred)
+@000A43  C0D04 ［ジャック］  // EN: [Jack]
+@000A62  C0F04 …  // EN: ...
+@000AB1 F14A01  // LITERAL: F14A01 (usage not inferred)
+@000B8A  C0D04 ［ガルー］  // EN: [Garu]
+@000BA7  C0F04 ジャック〜  // EN: Jaaack...
+@000BC4 ま〜〜〜〜た出てきたんかぁ？？  // EN: Have you come out agaaain?
+@000C0C  C0D04 ［ジャック］  // EN: [Jack]
+@000C2B  C0F04 いいかげんにするっス！  // EN: That's enough!
+@000C54 これ以上家の畑をあらすと…！  // EN: If you wreck our field any more...!
+@000CAA F13A02  // LITERAL: F13A02 (usage not inferred)
+@000DEF  C0D04 ［ルーガ］  // EN: [Ruga]
+@000E0C  C0F04 またそのセリフかよ！！  // EN: That line again!?
+@000E5F  C0D04 ［ガルー］  // EN: [Garu]
+@000E7C  C0F04 これ以上あらすと…何かくれんのかよぉ！？  // EN: If we wreck it some more... what, you'll give us something!?
+@000F27 F03A02  // LITERAL: F03A02 (usage not inferred)
+@000F8B  C0D04 ［ジャック］  // EN: [Jack]
+@000FAA  C0F04 ぶっとばす！！  // EN: I'll knock you flat!

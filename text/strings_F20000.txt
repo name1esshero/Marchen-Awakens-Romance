@@ -1,0 +1,19 @@
+// MAR strings block F20000
+// One record per line: @<rom offset> <text>
+// <XX> is a raw control byte. Text is re-encoded to Shift-JIS at build time;
+// a line may not grow past its original byte length.
+// Anything after // is a comment and never reaches the ROM.
+
+@F2143C T_TTL06.KCG
+@F2147C T_TTL06.KCL
+@F2153F 0<0A>0<0B>
+@F21549  <0E>0<0F>0<10>
+@F21567 0<12> <13> <14> <15> <16>0<17> <18> <19>
+@F2157F  <1C> <1D> <1E>
+@F21587    ! " # $
+@F215A6 % & ' ( ) * + , - <02>
+@F25CAC WM_BG01.KCG
+@F25CEC WM_BG01.KCL
+@F28413 @<02><04><08> <02><04><08> 
+@F28426   <08><04><10><04><10><08> <10><04><08><04><10><08><10><10> 
+@F28444   @@<10><08> <08> <10>@ <08><10><08> <10>  @

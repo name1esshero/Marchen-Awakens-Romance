@@ -1,0 +1,13 @@
+// SHOPPA02.SPC: ROM DA0D30
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@0001AF  C0D04 ［マジックストーン屋］  // EN: [Magic stone merchant]
+@0001D8  C0F04 いらっしゃいまっせ〜〜  // TODO: English translation
+@00022B  C0D04 ［マジックストーン屋］  // EN: [Magic stone merchant]
+@000254  C0F04 ようこそ、わがマジックストーン店へ！！  // TODO: English translation
+@00028D ごゆるりとおえらびくっださいね〜  // TODO: English translation
+@0002FF  C0D04 ［マジックストーン屋］  // EN: [Magic stone merchant]
+@000328  C0F04 ごゆるりとおえらびくっださいね〜  // TODO: English translation
+@00048B  C0D04 ［マジックストーン屋］  // EN: [Magic stone merchant]
+@0004B4  C0F04 何を売るつもりかっしら〜？  // TODO: English translation

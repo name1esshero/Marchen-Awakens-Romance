@@ -1,0 +1,7 @@
+// Legacy reference view of L24_1_0.SPC; edit text/nfp/L24_1_0.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000050 B  // LITERAL: B (usage not inferred)
+@000074 A  // LITERAL: A (usage not inferred)
+@0001A5 MAP24_1A.SPC  // LITERAL: MAP24_1A.SPC (usage not inferred)

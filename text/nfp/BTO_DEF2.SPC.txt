@@ -1,0 +1,4 @@
+// BTO_DEF2.SPC: ROM 39E690
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+

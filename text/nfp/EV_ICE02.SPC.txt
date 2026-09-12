@@ -1,0 +1,83 @@
+// EV_ICE02.SPC: ROM 7A5270
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00015B F02A03  // LITERAL: F02A03 (usage not inferred)
+@000234  C0D04 ［バッボ］  // EN: [Babbo]
+@000251  C0F04 ！！  // EN: !!
+@000268 （つよい魔力！！）  // EN: (Such powerful magic!!)
+@0002EA F02A04  // LITERAL: F02A04 (usage not inferred)
+@00034E  C0D04 ［バッボ］  // EN: [Babbo]
+@00036B  C0F04 いかん！ギンタ！！  // EN: Look out, Ginta!!
+@00059A A  // LITERAL: A (usage not inferred)
+@000668 A  // LITERAL: A (usage not inferred)
+@000736 A  // LITERAL: A (usage not inferred)
+@0008C9  C0D04 ［？？？］  // EN: [???]
+@0008E6  C0F04 動くな  // EN: Don't move.
+@000929  C0D04 ［ギンタ］  // EN: [Ginta]
+@000946  C0F04 …い！  // EN: ...Ow!
+@000AD0  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000AEF  C0F04 …ん？  // EN: ...Huh?
+@000B42 F09A05  // LITERAL: F09A05 (usage not inferred)
+@000C2B F01B11  // LITERAL: F01B11 (usage not inferred)
+@000D04  C0D04 ［ギンタ＆ドロシー］  // EN: [Ginta & Dorothy]
+@000D2B  C0F04 あーーーーーーーーーーー！？  // EN: Aaaaaaaaaah?!
+@000DCA F01B09  // LITERAL: F01B09 (usage not inferred)
+@000E2E  C0D04 ［ギンタ］  // EN: [Ginta]
+@000E4B  C0F04 ドロシーだぁ！！  // EN: It's Dorothy!!
+@000EDE F09A03  // LITERAL: F09A03 (usage not inferred)
+@000F42  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000F61  C0F04 きゃーーーー！  // EN: Eeeeeek!
+@000F82 また会えた！！  // EN: We meet again!!
+@000FF0  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0010F3  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001200 F03A08  // LITERAL: F03A08 (usage not inferred)
+@0012E9 F02A14  // LITERAL: F02A14 (usage not inferred)
+@0013C2  C0D04 ［ジャック］  // EN: [Jack]
+@0013E1  C0F04 き、きれいな人っスね  // EN: Sh-she's beautiful.
+@001432  C0D04 ［バッボ］  // EN: [Babbo]
+@00144F  C0F04 また出おった！  // EN: She's turned up again!
+@001470 ぶれいなバカ女！！  // EN: That rude, foolish woman!!
+@001676  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001695  C0F04 ふ〜〜〜ん  // EN: Hmmmm...
+@0016B2 なるほどねぇ…  // EN: I see...
+@001841 F09A01  // LITERAL: F09A01 (usage not inferred)
+@00191A  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001939  C0F04 それでこんな氷づけに  // EN: So that's why it's all...
+@001960 なっちゃってるワケねぇ  // EN: ...frozen over like this.
+@0019A0  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0019BF  C0F04 …助けに行くなら  // EN: ...If you're going to rescue her...
+@0019E2 いそいだほうがいいわよ  // EN: ...you'd better hurry.
+@001A22  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001A41  C0F04 そのコもたぶん、完全に  // EN: She's probably completely...
+@001A6A 氷づけだと思う  // EN: ...encased in ice too.
+@001AA2  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001AF6 半日でしんぞう止まるはずだよ  // EN: ...would have their heart stop within half a day.
+@001B4C F02A01  // LITERAL: F02A01 (usage not inferred)
+@001C5B  C0D04 ［バッボ］  // EN: [Babbo]
+@001C78  C0F04 きさまっ！！  // EN: You!!
+@001C97 他人ごとのようにいいおって！  // EN: You talk as though it's none of your concern!
+@001D49  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001D68  C0F04 他人ごとだっつーの  // EN: It IS none of my concern...
+@001D8D このブサイク！  // EN: ...you ugly thing!
+@001DC5  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001DE4  C0F04 わたしはここへは  // EN: I only came here...
+@001E93 F01B01  // LITERAL: F01B01 (usage not inferred)
+@001EF7  C0D04 ［ギンタ］  // EN: [Ginta]
+@001F14  C0F04 いそぐぞ！！  // EN: Let's hurry!!
+@001F67 ST_CON  // LITERAL: ST_CON (usage not inferred)
+@002049  C0D04 ［ドロシー］  // EN: [Dorothy]
+@002068  C0F04 あ、あっちのほうに  // EN: Oh, there's a staircase...
+@00208D かいだんがあるわよ  // EN: ...over that way.
+@00253A F01B01  // LITERAL: F01B01 (usage not inferred)
+@002613  C0D04 ［ギンタ］  // EN: [Ginta]
+@002630  C0F04 よし！いくぜ！  // EN: All right! Let's go!
+@002651 …ドロシーは？  // EN: ...What about you, Dorothy?
+@002699 F09A01  // LITERAL: F09A01 (usage not inferred)
+@002772  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00100F  C0F04 ギンタン<F0><40>ギンタン<F0><40>  // EN: Gintan! ♥ Gintan! ♥
+@001112  C0F04 ギンタン<F0><40>ギンタン<F0><40>  // EN: Gintan! ♥ Gintan! ♥
+@001AC1  C0F04 氷の<F0><56>ＲＭつかいでウデのたつ人でも  // EN: Even a skilled ice ÄRM user...
+@001E07 <F0><56>ＲＭをさがしにきたんだモン  // EN: ...to look for ÄRM.
+@002791  C0F04 あたしはここで<F0><56>ＲＭをさがしてるから  // EN: I'll stay here and look for ÄRM.
+@0027C8 じゃあね、ギンタン<F0><40>  // EN: See you, Gintan! ♥

@@ -1,0 +1,12 @@
+// DITEMCOM.SPC: ROM 5A62B0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00013D からっぽだ！  // EN: It's empty!
+@0002EA これ以上アイテムを持てません  // EN: You can't carry any more items.
+@0005C5 C0D04  // FORMAT: Blank text / color controls only; no translatable characters.
+@0005E9 C0F04 を  // TODO: English translation
+@000600 手に入れた！  // EN: Obtained it!
+@000920 C0D04  // FORMAT: Blank text / color controls only; no translatable characters.
+@000944 C0F04 を  // TODO: English translation
+@00095B 手に入れた！  // EN: Obtained it!

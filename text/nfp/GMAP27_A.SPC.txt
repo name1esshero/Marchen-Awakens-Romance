@@ -1,0 +1,5 @@
+// GMAP27_A.SPC: ROM 7F4410
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000006 MAP27_A  // LITERAL: MAP27_A (usage not inferred)

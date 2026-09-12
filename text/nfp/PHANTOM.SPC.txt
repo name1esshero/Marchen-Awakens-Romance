@@ -1,0 +1,4 @@
+// PHANTOM.SPC: ROM D919A0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+

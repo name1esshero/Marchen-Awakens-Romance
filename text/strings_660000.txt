@@ -1,0 +1,15 @@
+// MAR strings block 660000
+// One record per line: @<rom offset> <text>
+// <XX> is a raw control byte. Text is re-encoded to Shift-JIS at build time;
+// a line may not grow past its original byte length.
+// Anything after // is a comment and never reaches the ROM.
+
+@666AED V1e`63vp63gP5cfP<13>ufwd
+@666BA0 03efP5UgP53V
+@666C14 3sg<06><13>eg<06>3sg<06>
+@666E94 3sg<06><13>cg<06>3Qg<06>
+@666F6D 61e`63vp53gP3cfP<13>ufwd
+@667020 03efP5UgP53V
+@667094 3sg<06><13>eg<06>3sg<06>
+@667260 6cg<05>6SW<05>53V<05>5Sg<06>6Su<06>53e<05>5#ue0<13>uf
+@6672A0 P3efP5UgP53V

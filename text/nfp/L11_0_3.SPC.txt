@@ -1,0 +1,14 @@
+// L11_0_3.SPC: ROM 81DB60
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000006 MAP11_2A  // LITERAL: MAP11_2A (usage not inferred)
+@000066 A  // LITERAL: A (usage not inferred)
+@0002D2 F09A06  // LITERAL: F09A06 (usage not inferred)
+@0004A4  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0004C3  C0F04 へ………………  // TODO: English translation
+@0005FE  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00061D  C0F04 へ〜〜〜〜〜  // TODO: English translation
+@000812  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000831  C0F04 　　　　　　ぷしっ！！  // TODO: English translation
+@000AC5 MAP24_4A.SPC  // LITERAL: MAP24_4A.SPC (usage not inferred)

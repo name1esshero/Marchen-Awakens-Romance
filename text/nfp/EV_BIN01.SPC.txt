@@ -1,0 +1,17 @@
+// EV_BIN01.SPC: ROM 79BB10
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@0000F6 A  // LITERAL: A (usage not inferred)
+@00042D F01A01  // LITERAL: F01A01 (usage not inferred)
+@000506  C0D04 ［ギンタ］  // EN: [Ginta]
+@000523  C0F04 うぉーーーーーーっ！  // TODO: English translation
+@00054A スゲェーーーーー！！  // TODO: English translation
+@000588  C0D04 ［ギンタ］  // EN: [Ginta]
+@0005A5  C0F04 この中に宝物があるのか！！  // TODO: English translation
+@00060C F09A01  // LITERAL: F09A01 (usage not inferred)
+@0006E5  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000763  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000704  C0F04 どんな<F0><56>ＲＭなのかは知らないけどね  // TODO: English translation
+@000782  C0F04 相当なレア<F0><56>ＲＭのはずよ  // TODO: English translation
+@0007AD あたしはその<F0><56>ＲＭ C0904 『バッボ』 C0F04 がねらいなの  // TODO: English translation

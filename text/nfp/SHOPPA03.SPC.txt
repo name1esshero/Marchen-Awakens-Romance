@@ -1,0 +1,13 @@
+// SHOPPA03.SPC: ROM DA10C0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000141  C0D04 ［道具屋］  // EN: [Item shopkeeper]
+@00015E  C0F04 らっしゃい！！  // TODO: English translation
+@0001A9  C0D04 ［道具屋］  // EN: [Item shopkeeper]
+@0001C6  C0F04 長たびのおともにべんりな  // TODO: English translation
+@0001F1 アイテムはいかがかな？  // TODO: English translation
+@000259  C0D04 ［道具屋］  // EN: [Item shopkeeper]
+@000276  C0F04 ほかにも見ていくのかな？  // TODO: English translation
+@0003D1  C0D04 ［道具屋］  // EN: [Item shopkeeper]
+@0003EE  C0F04 おや、何を買取ろうかな？  // TODO: English translation

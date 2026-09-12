@@ -1,0 +1,8 @@
+// D3_BOSS.SPC: ROM 583970
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000067 AD3_B_A  // LITERAL: AD3_B_A (usage not inferred)
+@000193 AD_ALL_O  // LITERAL: AD_ALL_O (usage not inferred)
+@0002DF AD_ALL_O  // LITERAL: AD_ALL_O (usage not inferred)
+@00042B TAKARA  // LITERAL: TAKARA (usage not inferred)

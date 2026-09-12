@@ -1,0 +1,91 @@
+// Legacy reference view of L24_0_0.SPC; edit text/nfp/L24_0_0.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000022 MAP24_A.SPC  // LITERAL: MAP24_A.SPC (usage not inferred)
+@0001D1 A  // LITERAL: A (usage not inferred)
+@0005A8 F03A01  // LITERAL: F03A01 (usage not inferred)
+@0005E6 F01B11  // LITERAL: F01B11 (usage not inferred)
+@000624 F39A01  // LITERAL: F39A01 (usage not inferred)
+@0008F2  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
+@000916 とびらだ！  // TODO: English translation
+@00098C  C0D04 ［ジャック］ C0F04   // EN: [Jack]
+@0009B2 ひとつ…あいてるっス…  // TODO: English translation
+@000B26  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
+@000B4A …こっちにもあるぞ！  // TODO: English translation
+@000B6A あいているのが、ひとつに…  // TODO: English translation
+@000DDF  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
+@000E03 ふたつ…みっつ…  // TODO: English translation
+@000F95  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
+@000FB9 よ…！！！  // TODO: English translation
+@001113 F01B13  // LITERAL: F01B13 (usage not inferred)
+@00137A  C0D04 ［？？？］ C0F04   // EN: [???]
+@00139E …  // TODO: English translation
+@001442  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
+@001466 …  // TODO: English translation
+@0014AE F03A08  // LITERAL: F03A08 (usage not inferred)
+@001548  C0D04 ［ジャック］ C0F04   // EN: [Jack]
+@00156E …  // TODO: English translation
+@00167E  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
+@0016A2 え、えーっと…  // TODO: English translation
+@0016BC だ、だれ？？  // TODO: English translation
+@0016F2  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
+@00171E 彫金師（ちょうきんし）  // TODO: English translation
+@00176A  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
+@00178E 彫金師って…  // TODO: English translation
+@001816 F01B07  // LITERAL: F01B07 (usage not inferred)
+@00187A  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
+@00189E あ！　ドロシーにきいたぞ！  // TODO: English translation
+@001912  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
+@00193E そうですのん  // TODO: English translation
+@0019EC  C0D04 ［ジャック］ C0F04   // EN: [Jack]
+@001A12 （の、のん？）  // TODO: English translation
+@001A8C  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
+@001AB8 そうだ、っていってるですのん  // TODO: English translation
+@001AE0 …おまえら、チェスですのん？  // TODO: English translation
+@001B36 F01B06  // LITERAL: F01B06 (usage not inferred)
+@001BD0  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
+@001BF4 ち、ちがう、そのチェスを  // TODO: English translation
+@001C18 たおそうとしているんだ！  // TODO: English translation
+@001C5A  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
+@001C86 なんだ  // TODO: English translation
+@001C98 それなら、お客ってことですのん  // TODO: English translation
+@001D4C  C0D04 ［ジャック］ C0F04   // EN: [Jack]
+@001D72 （で、ですのん…）  // TODO: English translation
+@001E26  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
+@001E52 なら、彫金について  // TODO: English translation
+@001E70 説明しますのん  // TODO: English translation
+@001EA8  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
+@001ED4 こっち来るですのん  // TODO: English translation
+@001F2C F01B14  // LITERAL: F01B14 (usage not inferred)
+@001F90  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
+@001FB4 （な、なんか変わったしゃべりかただな  // TODO: English translation
+@001FE4 　あたまがクラクラしてきた…）  // TODO: English translation
+@00231E F01B01  // LITERAL: F01B01 (usage not inferred)
+@0023B8  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
+@0023E4 そしたら、しっかりきくですのん  // TODO: English translation
+@00246E  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
+@00249A あたしは彫金師のベリーニ  // TODO: English translation
+@0024BE まだみならいですのん…  // TODO: English translation
+@0024FE  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
+@00252A 彫金とは、いくつかの材料をまぜあわせて  // EN: Metalworking involves combining several materials...
+@0025A4  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
+@002600 レシピに記録されていますのん  // EN: It's recorded in the recipes.
+@002646  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
+@002672 だけど、まちがってそのレシピを  // EN: But by mistake, I sent those recipes...
+@00269C いせかいにとばしてしまい…  // EN: ...off to another world...
+@0026E0  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
+@00270C もし、いせかいに行くことがあったら  // EN: If you ever visit another world...
+@00273A レシピをさがしてきてほしいのん？  // EN: Could you find the recipes for me?
+@002784  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
+@0027B0 レシピは彫金師にしかわからない  // EN: The recipes are in a code that only metalworkers...
+@0027DA 暗号になっていますのん  // EN: ...can understand.
+@00281A  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
+@002846 暗号をわたしに教えてくれたら  // EN: If you tell me the code...
+@00286E とくべつに彫金してあげますのん  // EN: I'll do some special metalworking for you.
+@0028B6  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
+@0028E2 でも、材料はかならず  // EN: But make sure you...
+@002902 もってくるのん！  // EN: ...bring the materials!
+@002982 F01B09  // LITERAL: F01B09 (usage not inferred)
+@0029E6  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
+@002A0A おう！  // EN: Yeah!

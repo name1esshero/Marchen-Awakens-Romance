@@ -1,0 +1,53 @@
+// G_EV005.SPC: ROM 7F60D0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@0000F0 A  // LITERAL: A (usage not inferred)
+@00012E A  // LITERAL: A (usage not inferred)
+@000193 A  // LITERAL: A (usage not inferred)
+@0001F8 A  // LITERAL: A (usage not inferred)
+@00025D A  // LITERAL: A (usage not inferred)
+@000F38 F08A02  // LITERAL: F08A02 (usage not inferred)
+@001011  C0D04 ［ナナシ］  // EN: [Nanashi]
+@00102E  C0F04 ここが、とうぞくギルド  // TODO: English translation
+@001057  C0904 『ルベリア』 C0F04 のアジトや！！  // TODO: English translation
+@0010A9  C0D04 ［ナナシ］  // EN: [Nanashi]
+@0010C6  C0F04 自分はここのボスやっとる  // TODO: English translation
+@0010F1  C0904 『ナナシ』 C0F04 ってモンや  // TODO: English translation
+@00114D F08A03  // LITERAL: F08A03 (usage not inferred)
+@00117B  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001198  C0F04 キミらのことまちがえて、わるかったのぉ  // TODO: English translation
+@0011FB  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001218  C0F04 …  // TODO: English translation
+@001267 F08A02  // LITERAL: F08A02 (usage not inferred)
+@001295  C0D04 ［ナナシ］  // EN: [Nanashi]
+@0012B2  C0F04 キミらがチェスに追われてる  // TODO: English translation
+@0012DF っちゅうのも、わかった  // TODO: English translation
+@00132F F01B01  // LITERAL: F01B01 (usage not inferred)
+@00143E  C0D04 ［ギンタ］  // EN: [Ginta]
+@00145B  C0F04 うん！  // EN: Yeah!
+@00149E  C0D04 ［ナナシ］  // EN: [Nanashi]
+@0014BB  C0F04 そんで、にげるんやなく  // TODO: English translation
+@0014E4 たたかうために結成された  // TODO: English translation
+@001547  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001564  C0F04 『メル』…か  // TODO: English translation
+@0015BD F01B02  // LITERAL: F01B02 (usage not inferred)
+@0015EB  C0D04 ［ギンタ］  // EN: [Ginta]
+@001608  C0F04 このせかいを助けるんだ！  // TODO: English translation
+@00166D F02A03  // LITERAL: F02A03 (usage not inferred)
+@0017B2  C0D04 ［バッボ］  // EN: [Babbo]
+@0017CF  C0F04 うむ！そのようなけしからんヤツらを  // TODO: English translation
+@001804 のばなしにはできん！  // TODO: English translation
+@001852 F08A03  // LITERAL: F08A03 (usage not inferred)
+@001880  C0D04 ［ナナシ］  // EN: [Nanashi]
+@00189D  C0F04 …  // TODO: English translation
+@0018FD  C0D04 ［ナナシ］  // EN: [Nanashi]
+@00191A  C0F04 少し…おそかったかもしれんのぉ  // TODO: English translation
+@0019F1 F03A01  // LITERAL: F03A01 (usage not inferred)
+@001B00  C0D04 ［ジャック］  // EN: [Jack]
+@001B1F  C0F04 ど、どういうことっスか？  // TODO: English translation
+@001B84 F08A02  // LITERAL: F08A02 (usage not inferred)
+@001BB2  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001BCF  C0F04 見せたいモンがある  // TODO: English translation
+@001C8A  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001CA7  C0F04 来てみぃ  // TODO: English translation

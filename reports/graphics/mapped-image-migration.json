@@ -1,0 +1,807 @@
+{
+  "converted": [
+    {
+      "name": "AD0_P_0A.KCG",
+      "old_path": "graphics/tilesets/AD0_P_0A.KCG",
+      "new_path": "graphics/backgrounds/AD0_P_0A.KCG",
+      "width": 512,
+      "height": 160,
+      "layers": 1,
+      "unused_tiles": 885
+    },
+    {
+      "name": "AD1_P_0A.KCG",
+      "old_path": "graphics/tilesets/AD1_P_0A.KCG",
+      "new_path": "graphics/backgrounds/AD1_P_0A.KCG",
+      "width": 512,
+      "height": 160,
+      "layers": 1,
+      "unused_tiles": 984
+    },
+    {
+      "name": "AD3_P_0A.KCG",
+      "old_path": "graphics/tilesets/AD3_P_0A.KCG",
+      "new_path": "graphics/backgrounds/AD3_P_0A.KCG",
+      "width": 512,
+      "height": 160,
+      "layers": 1,
+      "unused_tiles": 861
+    },
+    {
+      "name": "AD4_P_0A.KCG",
+      "old_path": "graphics/tilesets/AD4_P_0A.KCG",
+      "new_path": "graphics/backgrounds/AD4_P_0A.KCG",
+      "width": 512,
+      "height": 160,
+      "layers": 1,
+      "unused_tiles": 580
+    },
+    {
+      "name": "AD_BG01.KCG",
+      "old_path": "graphics/tilesets/AD_BG01.KCG",
+      "new_path": "graphics/backgrounds/AD_BG01.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 0
+    },
+    {
+      "name": "AD_BG02.KCG",
+      "old_path": "graphics/tilesets/AD_BG02.KCG",
+      "new_path": "graphics/backgrounds/AD_BG02.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 0
+    },
+    {
+      "name": "AL_BG01.KCG",
+      "old_path": "graphics/tilesets/AL_BG01.KCG",
+      "new_path": "graphics/backgrounds/AL_BG01.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 0
+    },
+    {
+      "name": "AL_BG02.KCG",
+      "old_path": "graphics/tilesets/AL_BG02.KCG",
+      "new_path": "graphics/backgrounds/AL_BG02.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 0
+    },
+    {
+      "name": "AS_BG01.KCG",
+      "old_path": "graphics/tilesets/AS_BG01.KCG",
+      "new_path": "graphics/backgrounds/AS_BG01.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 0
+    },
+    {
+      "name": "AS_BG02.KCG",
+      "old_path": "graphics/tilesets/AS_BG02.KCG",
+      "new_path": "graphics/backgrounds/AS_BG02.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 0
+    },
+    {
+      "name": "AT_BG01.KCG",
+      "old_path": "graphics/tilesets/AT_BG01.KCG",
+      "new_path": "graphics/backgrounds/AT_BG01.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 0
+    },
+    {
+      "name": "CLPASS.KCG",
+      "old_path": "graphics/tilesets/CLPASS.KCG",
+      "new_path": "graphics/backgrounds/CLPASS.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 1
+    },
+    {
+      "name": "CM_BG01.KCG",
+      "old_path": "graphics/tilesets/CM_BG01.KCG",
+      "new_path": "graphics/backgrounds/CM_BG01.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 0
+    },
+    {
+      "name": "CM_BG02.KCG",
+      "old_path": "graphics/tilesets/CM_BG02.KCG",
+      "new_path": "graphics/backgrounds/CM_BG02.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 0
+    },
+    {
+      "name": "DS_BG01.KCG",
+      "old_path": "graphics/tilesets/DS_BG01.KCG",
+      "new_path": "graphics/backgrounds/DS_BG01.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 0
+    },
+    {
+      "name": "DS_BG02.KCG",
+      "old_path": "graphics/tilesets/DS_BG02.KCG",
+      "new_path": "graphics/backgrounds/DS_BG02.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 223
+    },
+    {
+      "name": "GA_BG01.KCG",
+      "old_path": "graphics/tilesets/GA_BG01.KCG",
+      "new_path": "graphics/backgrounds/GA_BG01.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 0
+    },
+    {
+      "name": "IT_BG01.KCG",
+      "old_path": "graphics/tilesets/IT_BG01.KCG",
+      "new_path": "graphics/backgrounds/IT_BG01.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 0
+    },
+    {
+      "name": "IT_BG02.KCG",
+      "old_path": "graphics/tilesets/IT_BG02.KCG",
+      "new_path": "graphics/backgrounds/IT_BG02.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 0
+    },
+    {
+      "name": "MAP00_A.KCG",
+      "old_path": "graphics/tilesets/MAP00_A.KCG",
+      "new_path": "graphics/backgrounds/MAP00_A.KCG",
+      "width": 1536,
+      "height": 1536,
+      "layers": 2,
+      "unused_tiles": 65
+    },
+    {
+      "name": "MAP01_1A.KCG",
+      "old_path": "graphics/tilesets/MAP01_1A.KCG",
+      "new_path": "graphics/backgrounds/MAP01_1A.KCG",
+      "width": 480,
+      "height": 512,
+      "layers": 2,
+      "unused_tiles": 477
+    },
+    {
+      "name": "MAP01_2A.KCG",
+      "old_path": "graphics/tilesets/MAP01_2A.KCG",
+      "new_path": "graphics/backgrounds/MAP01_2A.KCG",
+      "width": 512,
+      "height": 256,
+      "layers": 2,
+      "unused_tiles": 607
+    },
+    {
+      "name": "MAP01_3A.KCG",
+      "old_path": "graphics/tilesets/MAP01_3A.KCG",
+      "new_path": "graphics/backgrounds/MAP01_3A.KCG",
+      "width": 896,
+      "height": 512,
+      "layers": 2,
+      "unused_tiles": 160
+    },
+    {
+      "name": "MAP01_A.KCG",
+      "old_path": "graphics/tilesets/MAP01_A.KCG",
+      "new_path": "graphics/backgrounds/MAP01_A.KCG",
+      "width": 512,
+      "height": 512,
+      "layers": 2,
+      "unused_tiles": 58
+    },
+    {
+      "name": "MAP03_A.KCG",
+      "old_path": "graphics/tilesets/MAP03_A.KCG",
+      "new_path": "graphics/backgrounds/MAP03_A.KCG",
+      "width": 512,
+      "height": 512,
+      "layers": 2,
+      "unused_tiles": 70
+    },
+    {
+      "name": "MAP04_6A.KCG",
+      "old_path": "graphics/tilesets/MAP04_6A.KCG",
+      "new_path": "graphics/backgrounds/MAP04_6A.KCG",
+      "width": 512,
+      "height": 512,
+      "layers": 2,
+      "unused_tiles": 15
+    },
+    {
+      "name": "MAP04_7A.KCG",
+      "old_path": "graphics/tilesets/MAP04_7A.KCG",
+      "new_path": "graphics/backgrounds/MAP04_7A.KCG",
+      "width": 512,
+      "height": 512,
+      "layers": 2,
+      "unused_tiles": 14
+    },
+    {
+      "name": "MAP04_A.KCG",
+      "old_path": "graphics/tilesets/MAP04_A.KCG",
+      "new_path": "graphics/backgrounds/MAP04_A.KCG",
+      "width": 1536,
+      "height": 2048,
+      "layers": 2,
+      "unused_tiles": 151
+    },
+    {
+      "name": "MAP05_A.KCG",
+      "old_path": "graphics/tilesets/MAP05_A.KCG",
+      "new_path": "graphics/backgrounds/MAP05_A.KCG",
+      "width": 512,
+      "height": 1024,
+      "layers": 2,
+      "unused_tiles": 72
+    },
+    {
+      "name": "MAP06_1A.KCG",
+      "old_path": "graphics/tilesets/MAP06_1A.KCG",
+      "new_path": "graphics/backgrounds/MAP06_1A.KCG",
+      "width": 832,
+      "height": 512,
+      "layers": 2,
+      "unused_tiles": 401
+    },
+    {
+      "name": "MAP06_2A.KCG",
+      "old_path": "graphics/tilesets/MAP06_2A.KCG",
+      "new_path": "graphics/backgrounds/MAP06_2A.KCG",
+      "width": 320,
+      "height": 256,
+      "layers": 2,
+      "unused_tiles": 161
+    },
+    {
+      "name": "MAP06_A.KCG",
+      "old_path": "graphics/tilesets/MAP06_A.KCG",
+      "new_path": "graphics/backgrounds/MAP06_A.KCG",
+      "width": 512,
+      "height": 256,
+      "layers": 2,
+      "unused_tiles": 478
+    },
+    {
+      "name": "MAP07_2A.KCG",
+      "old_path": "graphics/tilesets/MAP07_2A.KCG",
+      "new_path": "graphics/backgrounds/MAP07_2A.KCG",
+      "width": 240,
+      "height": 512,
+      "layers": 2,
+      "unused_tiles": 172
+    },
+    {
+      "name": "MAP07_3A.KCG",
+      "old_path": "graphics/tilesets/MAP07_3A.KCG",
+      "new_path": "graphics/backgrounds/MAP07_3A.KCG",
+      "width": 416,
+      "height": 392,
+      "layers": 2,
+      "unused_tiles": 1
+    },
+    {
+      "name": "MAP08_A.KCG",
+      "old_path": "graphics/tilesets/MAP08_A.KCG",
+      "new_path": "graphics/backgrounds/MAP08_A.KCG",
+      "width": 512,
+      "height": 512,
+      "layers": 2,
+      "unused_tiles": 6
+    },
+    {
+      "name": "MAP09_A.KCG",
+      "old_path": "graphics/tilesets/MAP09_A.KCG",
+      "new_path": "graphics/backgrounds/MAP09_A.KCG",
+      "width": 832,
+      "height": 832,
+      "layers": 2,
+      "unused_tiles": 130
+    },
+    {
+      "name": "MAP10_1A.KCG",
+      "old_path": "graphics/tilesets/MAP10_1A.KCG",
+      "new_path": "graphics/backgrounds/MAP10_1A.KCG",
+      "width": 448,
+      "height": 256,
+      "layers": 2,
+      "unused_tiles": 240
+    },
+    {
+      "name": "MAP10_A.KCG",
+      "old_path": "graphics/tilesets/MAP10_A.KCG",
+      "new_path": "graphics/backgrounds/MAP10_A.KCG",
+      "width": 576,
+      "height": 512,
+      "layers": 2,
+      "unused_tiles": 157
+    },
+    {
+      "name": "MAP11_1A.KCG",
+      "old_path": "graphics/tilesets/MAP11_1A.KCG",
+      "new_path": "graphics/backgrounds/MAP11_1A.KCG",
+      "width": 512,
+      "height": 512,
+      "layers": 2,
+      "unused_tiles": 418
+    },
+    {
+      "name": "MAP11_2A.KCG",
+      "old_path": "graphics/tilesets/MAP11_2A.KCG",
+      "new_path": "graphics/backgrounds/MAP11_2A.KCG",
+      "width": 512,
+      "height": 384,
+      "layers": 2,
+      "unused_tiles": 557
+    },
+    {
+      "name": "MAP11_A.KCG",
+      "old_path": "graphics/tilesets/MAP11_A.KCG",
+      "new_path": "graphics/backgrounds/MAP11_A.KCG",
+      "width": 1024,
+      "height": 512,
+      "layers": 2,
+      "unused_tiles": 290
+    },
+    {
+      "name": "MAP24_1A.KCG",
+      "old_path": "graphics/tilesets/MAP24_1A.KCG",
+      "new_path": "graphics/backgrounds/MAP24_1A.KCG",
+      "width": 992,
+      "height": 1536,
+      "layers": 2,
+      "unused_tiles": 532
+    },
+    {
+      "name": "MAP24_4A.KCG",
+      "old_path": "graphics/tilesets/MAP24_4A.KCG",
+      "new_path": "graphics/backgrounds/MAP24_4A.KCG",
+      "width": 1024,
+      "height": 1440,
+      "layers": 1,
+      "unused_tiles": 307
+    },
+    {
+      "name": "MAP24_A.KCG",
+      "old_path": "graphics/tilesets/MAP24_A.KCG",
+      "new_path": "graphics/backgrounds/MAP24_A.KCG",
+      "width": 512,
+      "height": 256,
+      "layers": 2,
+      "unused_tiles": 402
+    },
+    {
+      "name": "MAP25_1A.KCG",
+      "old_path": "graphics/tilesets/MAP25_1A.KCG",
+      "new_path": "graphics/backgrounds/MAP25_1A.KCG",
+      "width": 1024,
+      "height": 1568,
+      "layers": 1,
+      "unused_tiles": 59
+    },
+    {
+      "name": "MAP25_5A.KCG",
+      "old_path": "graphics/tilesets/MAP25_5A.KCG",
+      "new_path": "graphics/backgrounds/MAP25_5A.KCG",
+      "width": 512,
+      "height": 992,
+      "layers": 1,
+      "unused_tiles": 44
+    },
+    {
+      "name": "MAP26_1A.KCG",
+      "old_path": "graphics/tilesets/MAP26_1A.KCG",
+      "new_path": "graphics/backgrounds/MAP26_1A.KCG",
+      "width": 2032,
+      "height": 864,
+      "layers": 1,
+      "unused_tiles": 253
+    },
+    {
+      "name": "MAP26_2A.KCG",
+      "old_path": "graphics/tilesets/MAP26_2A.KCG",
+      "new_path": "graphics/backgrounds/MAP26_2A.KCG",
+      "width": 512,
+      "height": 960,
+      "layers": 1,
+      "unused_tiles": 247
+    },
+    {
+      "name": "MAP99_A.KCG",
+      "old_path": "graphics/tilesets/MAP99_A.KCG",
+      "new_path": "graphics/backgrounds/MAP99_A.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 2
+    },
+    {
+      "name": "ML_BG01.KCG",
+      "old_path": "graphics/tilesets/ML_BG01.KCG",
+      "new_path": "graphics/backgrounds/ML_BG01.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 0
+    },
+    {
+      "name": "OP_01_A.KCG",
+      "old_path": "graphics/tilesets/OP_01_A.KCG",
+      "new_path": "graphics/backgrounds/OP_01_A.KCG",
+      "width": 240,
+      "height": 160,
+      "layers": 1,
+      "unused_tiles": 2
+    },
+    {
+      "name": "OP_04_A.KCG",
+      "old_path": "graphics/tilesets/OP_04_A.KCG",
+      "new_path": "graphics/backgrounds/OP_04_A.KCG",
+      "width": 240,
+      "height": 160,
+      "layers": 1,
+      "unused_tiles": 2
+    },
+    {
+      "name": "OP_05_A.KCG",
+      "old_path": "graphics/tilesets/OP_05_A.KCG",
+      "new_path": "graphics/backgrounds/OP_05_A.KCG",
+      "width": 240,
+      "height": 160,
+      "layers": 1,
+      "unused_tiles": 2
+    },
+    {
+      "name": "OP_06_A.KCG",
+      "old_path": "graphics/tilesets/OP_06_A.KCG",
+      "new_path": "graphics/backgrounds/OP_06_A.KCG",
+      "width": 240,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 2
+    },
+    {
+      "name": "OP_08_A.KCG",
+      "old_path": "graphics/tilesets/OP_08_A.KCG",
+      "new_path": "graphics/backgrounds/OP_08_A.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 1
+    },
+    {
+      "name": "OP_09_A.KCG",
+      "old_path": "graphics/tilesets/OP_09_A.KCG",
+      "new_path": "graphics/backgrounds/OP_09_A.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 1
+    },
+    {
+      "name": "OP_0A_A.KCG",
+      "old_path": "graphics/tilesets/OP_0A_A.KCG",
+      "new_path": "graphics/backgrounds/OP_0A_A.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 1
+    },
+    {
+      "name": "PS_BG01.KCG",
+      "old_path": "graphics/tilesets/PS_BG01.KCG",
+      "new_path": "graphics/backgrounds/PS_BG01.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 0
+    },
+    {
+      "name": "PV_BG01.KCG",
+      "old_path": "graphics/tilesets/PV_BG01.KCG",
+      "new_path": "graphics/backgrounds/PV_BG01.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 0
+    },
+    {
+      "name": "PV_BG11.KCG",
+      "old_path": "graphics/tilesets/PV_BG11.KCG",
+      "new_path": "graphics/backgrounds/PV_BG11.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 0
+    },
+    {
+      "name": "SM_BG01.KCG",
+      "old_path": "graphics/tilesets/SM_BG01.KCG",
+      "new_path": "graphics/backgrounds/SM_BG01.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 0
+    },
+    {
+      "name": "SM_BG12.KCG",
+      "old_path": "graphics/tilesets/SM_BG12.KCG",
+      "new_path": "graphics/backgrounds/SM_BG12.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 0
+    },
+    {
+      "name": "SP_BG01.KCG",
+      "old_path": "graphics/tilesets/SP_BG01.KCG",
+      "new_path": "graphics/backgrounds/SP_BG01.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 0
+    },
+    {
+      "name": "SP_BG11.KCG",
+      "old_path": "graphics/tilesets/SP_BG11.KCG",
+      "new_path": "graphics/backgrounds/SP_BG11.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 0
+    },
+    {
+      "name": "SP_BG12.KCG",
+      "old_path": "graphics/tilesets/SP_BG12.KCG",
+      "new_path": "graphics/backgrounds/SP_BG12.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 0
+    },
+    {
+      "name": "SP_BG21.KCG",
+      "old_path": "graphics/tilesets/SP_BG21.KCG",
+      "new_path": "graphics/backgrounds/SP_BG21.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 0
+    },
+    {
+      "name": "SP_BG22.KCG",
+      "old_path": "graphics/tilesets/SP_BG22.KCG",
+      "new_path": "graphics/backgrounds/SP_BG22.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 0
+    },
+    {
+      "name": "ST_BG01.KCG",
+      "old_path": "graphics/tilesets/ST_BG01.KCG",
+      "new_path": "graphics/backgrounds/ST_BG01.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 0
+    },
+    {
+      "name": "ST_BG02.KCG",
+      "old_path": "graphics/tilesets/ST_BG02.KCG",
+      "new_path": "graphics/backgrounds/ST_BG02.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 0
+    },
+    {
+      "name": "ST_BG03.KCG",
+      "old_path": "graphics/tilesets/ST_BG03.KCG",
+      "new_path": "graphics/backgrounds/ST_BG03.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 0
+    },
+    {
+      "name": "ST_BG11.KCG",
+      "old_path": "graphics/tilesets/ST_BG11.KCG",
+      "new_path": "graphics/backgrounds/ST_BG11.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 0
+    },
+    {
+      "name": "T_C01.KCG",
+      "old_path": "graphics/tilesets/T_C01.KCG",
+      "new_path": "graphics/backgrounds/T_C01.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 1
+    },
+    {
+      "name": "T_C02.KCG",
+      "old_path": "graphics/tilesets/T_C02.KCG",
+      "new_path": "graphics/backgrounds/T_C02.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 1
+    },
+    {
+      "name": "T_ML_BG.KCG",
+      "old_path": "graphics/tilesets/T_ML_BG.KCG",
+      "new_path": "graphics/backgrounds/T_ML_BG.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 1
+    },
+    {
+      "name": "T_TTL06.KCG",
+      "old_path": "graphics/tilesets/T_TTL06.KCG",
+      "new_path": "graphics/backgrounds/T_TTL06.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 1
+    },
+    {
+      "name": "WM_BG01.KCG",
+      "old_path": "graphics/tilesets/WM_BG01.KCG",
+      "new_path": "graphics/backgrounds/WM_BG01.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 1
+    },
+    {
+      "name": "WM_BG02.KCG",
+      "old_path": "graphics/tilesets/WM_BG02.KCG",
+      "new_path": "graphics/backgrounds/WM_BG02.KCG",
+      "width": 256,
+      "height": 256,
+      "layers": 1,
+      "unused_tiles": 0
+    }
+  ],
+  "skipped": [
+    {
+      "name": "BA06.TCG",
+      "reason": "No same-name KMP; may use TSC or another map"
+    },
+    {
+      "name": "BA06_BG.TCG",
+      "reason": "No same-name KMP; may use TSC or another map"
+    },
+    {
+      "name": "BA07.TCG",
+      "reason": "No same-name KMP; may use TSC or another map"
+    },
+    {
+      "name": "GA08.TCG",
+      "reason": "No same-name KMP; may use TSC or another map"
+    },
+    {
+      "name": "GA13.TCG",
+      "reason": "No same-name KMP; may use TSC or another map"
+    },
+    {
+      "name": "GA24.TCG",
+      "reason": "No same-name KMP; may use TSC or another map"
+    },
+    {
+      "name": "GA25.TCG",
+      "reason": "No same-name KMP; may use TSC or another map"
+    },
+    {
+      "name": "GA26.TCG",
+      "reason": "No same-name KMP; may use TSC or another map"
+    },
+    {
+      "name": "GA60.TCG",
+      "reason": "No same-name KMP; may use TSC or another map"
+    },
+    {
+      "name": "JA05.TCG",
+      "reason": "No same-name KMP; may use TSC or another map"
+    },
+    {
+      "name": "MAP07_A.KCG",
+      "reason": "Unsupported map geometry"
+    },
+    {
+      "name": "MAP27_A.KCG",
+      "reason": "Map references tiles outside this resource"
+    },
+    {
+      "name": "MWA.KCG",
+      "reason": "Map references palette banks outside this source"
+    },
+    {
+      "name": "NE01.TCG",
+      "reason": "8bpp map/palette interpretation needs a separate profile"
+    },
+    {
+      "name": "NE13.TCG",
+      "reason": "8bpp map/palette interpretation needs a separate profile"
+    },
+    {
+      "name": "NE21.TCG",
+      "reason": "No same-name KMP; may use TSC or another map"
+    },
+    {
+      "name": "NE32.TCG",
+      "reason": "No same-name KMP; may use TSC or another map"
+    },
+    {
+      "name": "NE33.TCG",
+      "reason": "8bpp map/palette interpretation needs a separate profile"
+    },
+    {
+      "name": "OP_07_A.KCG",
+      "reason": "Map references tiles outside this resource"
+    },
+    {
+      "name": "PW_BG01.KCG",
+      "reason": "Map references tiles outside this resource"
+    },
+    {
+      "name": "PW_BOX.KCG",
+      "reason": "Map references tiles outside this resource"
+    },
+    {
+      "name": "SBA06.TCG",
+      "reason": "No same-name KMP; may use TSC or another map"
+    },
+    {
+      "name": "SK02.TCG",
+      "reason": "8bpp map/palette interpretation needs a separate profile"
+    },
+    {
+      "name": "SK03.TCG",
+      "reason": "8bpp map/palette interpretation needs a separate profile"
+    },
+    {
+      "name": "SN06.TCG",
+      "reason": "No same-name KMP; may use TSC or another map"
+    },
+    {
+      "name": "SN07.TCG",
+      "reason": "No same-name KMP; may use TSC or another map"
+    },
+    {
+      "name": "SSN07.TCG",
+      "reason": "No same-name KMP; may use TSC or another map"
+    }
+  ]
+}

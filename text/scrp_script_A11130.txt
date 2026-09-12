@@ -1,0 +1,15 @@
+// Legacy reference view of MAP07_A.SPC; edit text/nfp/MAP07_A.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000034 MAP07_A  // LITERAL: MAP07_A (usage not inferred)
+@000094 EV_GO01.SPC  // LITERAL: EV_GO01.SPC (usage not inferred)
+@0000C7 TAKARA  // LITERAL: TAKARA (usage not inferred)
+@00028F TAKARA  // LITERAL: TAKARA (usage not inferred)
+@000457 TAKARA  // LITERAL: TAKARA (usage not inferred)
+@00061F TAKARA  // LITERAL: TAKARA (usage not inferred)
+@00080C PS_WK02  // LITERAL: PS_WK02 (usage not inferred)
+@000993 PS_WK02  // LITERAL: PS_WK02 (usage not inferred)
+@000B1A PS_WK02  // LITERAL: PS_WK02 (usage not inferred)
+@000CA1 MAP00_O  // LITERAL: MAP00_O (usage not inferred)
+@000DE2 MAP00_O  // LITERAL: MAP00_O (usage not inferred)

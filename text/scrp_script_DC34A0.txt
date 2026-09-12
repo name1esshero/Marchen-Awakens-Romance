@@ -1,0 +1,7 @@
+// Legacy reference view of SP_M24_3.SPC; edit text/nfp/SP_M24_3.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@0000EC  C0D04 ［ギンタ］  // EN: [Ginta]
+@000109  C0F04 閉まってる…  // TODO: English translation
+@000128 ちょっと開きそうにないな  // TODO: English translation

@@ -1,0 +1,12 @@
+// Legacy reference view of EV_BIN02.SPC; edit text/nfp/EV_BIN02.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@0001F4 A  // LITERAL: A (usage not inferred)
+@0005EC F01A01  // LITERAL: F01A01 (usage not inferred)
+@0006C5  C0D04 ［ギンタ］  // EN: [Ginta]
+@000719 あるんだ  // TODO: English translation
+@00075B F09A01  // LITERAL: F09A01 (usage not inferred)
+@000834  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000853  C0F04 そうよ  // TODO: English translation
+@000896  C0D04 ［ドロシー］  // EN: [Dorothy]

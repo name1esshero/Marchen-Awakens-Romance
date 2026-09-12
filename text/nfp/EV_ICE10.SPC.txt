@@ -1,0 +1,78 @@
+// EV_ICE10.SPC: ROM 7A8C20
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00006E MAP04_6A  // LITERAL: MAP04_6A (usage not inferred)
+@000243 A  // LITERAL: A (usage not inferred)
+@0002CF A  // LITERAL: A (usage not inferred)
+@00035B A  // LITERAL: A (usage not inferred)
+@0004FE F15A02  // LITERAL: F15A02 (usage not inferred)
+@0005D7  C0D04 ［イアン］  // EN: [Ian]
+@0005F4  C0F04 いてててて…  // EN: Ow, ow, ow...
+@000613 …うひゃははははは！  // EN: ...Ah ha ha ha ha ha!
+@000651  C0D04 ［イアン］  // EN: [Ian]
+@00066E  C0F04 やるじゃん、ギンタ！！  // EN: Not bad, Ginta!!
+@000697 右うで、おれちゃった！！  // EN: You broke my right arm!!
+@0006E9 F01B08  // LITERAL: F01B08 (usage not inferred)
+@0007C2  C0D04 ［ギンタ］  // EN: [Ginta]
+@0007DF  C0F04 おまえ…  // EN: You...
+@0007FA スゲーな…  // EN: You're incredible...
+@0008AA F03A04  // LITERAL: F03A04 (usage not inferred)
+@000983  C0D04 ［ジャック］  // EN: [Jack]
+@0009A2  C0F04 す…すげーたたかいっス！！  // EN: Wh-what an incredible fight!!
+@000C8B F05A05  // LITERAL: F05A05 (usage not inferred)
+@000D64  C0D04 ［ジャック］  // EN: [Jack]
+@000D83  C0F04 …エド！？  // EN: ...Ed?!
+@000DA0 な、なんかようすがヘンだ！  // EN: S-something's wrong with him!
+@000F43 A  // LITERAL: A (usage not inferred)
+@001176 F01B11  // LITERAL: F01B11 (usage not inferred)
+@00124F  C0D04 ［ギンタ］  // EN: [Ginta]
+@00126C  C0F04 エ…エド？？  // EN: E... Ed??
+@0012C5 F15A03  // LITERAL: F15A03 (usage not inferred)
+@00139E  C0D04 ［イアン］  // EN: [Ian]
+@0013BB  C0F04 ち…！  // EN: Tch...!
+@0013D4 出たね！  // EN: There you are!
+@001482 F06A01  // LITERAL: F06A01 (usage not inferred)
+@001582  C0D04 ［エド］  // EN: [Ed]
+@00159D  C0F04 …おはよう、ってやつだ  // EN: ...Good morning, I guess.
+@001636 F01B11  // LITERAL: F01B11 (usage not inferred)
+@001755 F01B11  // LITERAL: F01B11 (usage not inferred)
+@0017FF F02A12  // LITERAL: F02A12 (usage not inferred)
+@00191E F02A12  // LITERAL: F02A12 (usage not inferred)
+@0019C8 F03A07  // LITERAL: F03A07 (usage not inferred)
+@001AE7 F03A07  // LITERAL: F03A07 (usage not inferred)
+@001C33 F06A01  // LITERAL: F06A01 (usage not inferred)
+@001D0C  C0D04 ［エド］  // EN: [Ed]
+@001D27  C0F04 ねばったじゃねぇか…  // EN: You held out pretty well...
+@001D4E ほめてやるぜ  // EN: I'll give you that.
+@001D94 F01B02  // LITERAL: F01B02 (usage not inferred)
+@001E6D  C0D04 ［ギンタ］  // EN: [Ginta]
+@001E8A  C0F04 おっさん…  // EN: Old man...
+@001EA7 エド、どこにかくした？  // EN: Where'd you hide Ed?
+@001EE7  C0D04 ［エド］  // EN: [Ed]
+@001F02  C0F04 オレだ  // EN: That's me.
+@001F55 F01B04  // LITERAL: F01B04 (usage not inferred)
+@001F83  C0D04 ［ギンタ］  // EN: [Ginta]
+@001FA0  C0F04 エドは犬じゃ…  // EN: But Ed's a dog...
+@002067 F06A03  // LITERAL: F06A03 (usage not inferred)
+@002101  C0D04 ［エド］  // EN: [Ed]
+@00211C  C0F04 オレだっつーの  // EN: I'm telling you, it's me.
+@002167  C0D04 ［ギンタ］  // EN: [Ginta]
+@002184  C0F04 …  // EN: ...
+@00223F F15A01  // LITERAL: F15A01 (usage not inferred)
+@00233F  C0D04 ［イアン］  // EN: [Ian]
+@00235C  C0F04 おーい、犬のおじさん！  // EN: Hey, dog-man!
+@0023BF F06A01  // LITERAL: F06A01 (usage not inferred)
+@0023ED  C0D04 ［エド］  // EN: [Ed]
+@002408  C0F04 …  // EN: ...
+@002457 F15A02  // LITERAL: F15A02 (usage not inferred)
+@002485  C0D04 ［イアン］  // EN: [Ian]
+@0024A2  C0F04 あんた、さいきん…  // EN: Lately, you haven't been very popular...
+@0024C7 うちのメンバーのひょうばん悪いよぉ？  // EN: ...with our members, you know?
+@002525 F06A02  // LITERAL: F06A02 (usage not inferred)
+@002553  C0D04 ［エド］  // EN: [Ed]
+@00256E  C0F04 けっ、ふいてんじゃねーよ  // EN: Hah! Don't talk so big...
+@002599 こんなガキにうでおられたヤツがよ！  // EN: ...when a kid like this broke your arm!
+@0025F5 F15A01  // LITERAL: F15A01 (usage not inferred)
+@002623  C0D04 ［イアン］  // EN: [Ian]
+@002640  C0F04 …っ！！  // EN: ...!!

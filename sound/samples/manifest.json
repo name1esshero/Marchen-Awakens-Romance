@@ -1,0 +1,1623 @@
+[
+  {
+    "rom_offset": 571548,
+    "size": 12532,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 12512,
+    "wav": "sound/samples/08B89C.wav",
+    "references": [
+      134780944
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 584080,
+    "size": 4124,
+    "type": 0,
+    "status": 0,
+    "frequency": 8192000,
+    "loop_start": 0,
+    "sample_count": 4105,
+    "wav": "sound/samples/08E990.wav",
+    "references": [
+      134781016
+    ],
+    "padding": 3
+  },
+  {
+    "rom_offset": 588204,
+    "size": 9684,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 9664,
+    "wav": "sound/samples/08F9AC.wav",
+    "references": [
+      134781040
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 597888,
+    "size": 11428,
+    "type": 0,
+    "status": 0,
+    "frequency": 16146432,
+    "loop_start": 0,
+    "sample_count": 11411,
+    "wav": "sound/samples/091F80.wav",
+    "references": [
+      134781052
+    ],
+    "padding": 1
+  },
+  {
+    "rom_offset": 609316,
+    "size": 14324,
+    "type": 0,
+    "status": 16384,
+    "frequency": 11289600,
+    "loop_start": 960,
+    "sample_count": 14304,
+    "wav": "sound/samples/094C24.wav",
+    "references": [
+      134781136
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 623640,
+    "size": 9372,
+    "type": 0,
+    "status": 16384,
+    "frequency": 11289600,
+    "loop_start": 3702,
+    "sample_count": 9353,
+    "wav": "sound/samples/098418.wav",
+    "references": [
+      134781148
+    ],
+    "padding": 3
+  },
+  {
+    "rom_offset": 633012,
+    "size": 11012,
+    "type": 0,
+    "status": 16384,
+    "frequency": 11289600,
+    "loop_start": 6528,
+    "sample_count": 10994,
+    "wav": "sound/samples/09A8B4.wav",
+    "references": [
+      134781160
+    ],
+    "padding": 2
+  },
+  {
+    "rom_offset": 644024,
+    "size": 10500,
+    "type": 0,
+    "status": 16384,
+    "frequency": 11289600,
+    "loop_start": 5776,
+    "sample_count": 10480,
+    "wav": "sound/samples/09D3B8.wav",
+    "references": [
+      134781424
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 654524,
+    "size": 13824,
+    "type": 0,
+    "status": 16384,
+    "frequency": 11289600,
+    "loop_start": 5692,
+    "sample_count": 13804,
+    "wav": "sound/samples/09FCBC.wav",
+    "references": [
+      134781460
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 668348,
+    "size": 9876,
+    "type": 0,
+    "status": 16384,
+    "frequency": 8192000,
+    "loop_start": 256,
+    "sample_count": 9856,
+    "wav": "sound/samples/0A32BC.wav",
+    "references": [
+      134781520
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 678224,
+    "size": 9212,
+    "type": 0,
+    "status": 16384,
+    "frequency": 11289600,
+    "loop_start": 4984,
+    "sample_count": 9192,
+    "wav": "sound/samples/0A5950.wav",
+    "references": [
+      134781532
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 687436,
+    "size": 7132,
+    "type": 0,
+    "status": 16384,
+    "frequency": 11289600,
+    "loop_start": 3192,
+    "sample_count": 7112,
+    "wav": "sound/samples/0A7D4C.wav",
+    "references": [
+      134781544
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 694568,
+    "size": 5436,
+    "type": 0,
+    "status": 16384,
+    "frequency": 11289600,
+    "loop_start": 2260,
+    "sample_count": 5416,
+    "wav": "sound/samples/0A9928.wav",
+    "references": [
+      134781568
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 700004,
+    "size": 8708,
+    "type": 0,
+    "status": 16384,
+    "frequency": 11289600,
+    "loop_start": 1408,
+    "sample_count": 8688,
+    "wav": "sound/samples/0AAE64.wav",
+    "references": [
+      134781580
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 708712,
+    "size": 4420,
+    "type": 0,
+    "status": 16384,
+    "frequency": 11289600,
+    "loop_start": 1936,
+    "sample_count": 4403,
+    "wav": "sound/samples/0AD068.wav",
+    "references": [
+      134781592
+    ],
+    "padding": 1
+  },
+  {
+    "rom_offset": 713132,
+    "size": 4916,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 4896,
+    "wav": "sound/samples/0AE1AC.wav",
+    "references": [
+      134781604
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 718048,
+    "size": 14044,
+    "type": 0,
+    "status": 16384,
+    "frequency": 11289600,
+    "loop_start": 4160,
+    "sample_count": 14024,
+    "wav": "sound/samples/0AF4E0.wav",
+    "references": [
+      134781616
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 732092,
+    "size": 5172,
+    "type": 0,
+    "status": 16384,
+    "frequency": 11289600,
+    "loop_start": 3632,
+    "sample_count": 5152,
+    "wav": "sound/samples/0B2BBC.wav",
+    "references": [
+      134781640
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 737264,
+    "size": 4436,
+    "type": 0,
+    "status": 16384,
+    "frequency": 11289600,
+    "loop_start": 2516,
+    "sample_count": 4417,
+    "wav": "sound/samples/0B3FF0.wav",
+    "references": [
+      134781676
+    ],
+    "padding": 3
+  },
+  {
+    "rom_offset": 741700,
+    "size": 664,
+    "type": 0,
+    "status": 16384,
+    "frequency": 11289600,
+    "loop_start": 520,
+    "sample_count": 647,
+    "wav": "sound/samples/0B5144.wav",
+    "references": [
+      134781760
+    ],
+    "padding": 1
+  },
+  {
+    "rom_offset": 742364,
+    "size": 2176,
+    "type": 0,
+    "status": 16384,
+    "frequency": 11289600,
+    "loop_start": 1925,
+    "sample_count": 2157,
+    "wav": "sound/samples/0B53DC.wav",
+    "references": [
+      134781772
+    ],
+    "padding": 3
+  },
+  {
+    "rom_offset": 744540,
+    "size": 4868,
+    "type": 0,
+    "status": 16384,
+    "frequency": 16146432,
+    "loop_start": 3524,
+    "sample_count": 4851,
+    "wav": "sound/samples/0B5C5C.wav",
+    "references": [
+      134781784
+    ],
+    "padding": 1
+  },
+  {
+    "rom_offset": 749408,
+    "size": 5268,
+    "type": 0,
+    "status": 16384,
+    "frequency": 11289600,
+    "loop_start": 3561,
+    "sample_count": 5249,
+    "wav": "sound/samples/0B6F60.wav",
+    "references": [
+      134781796
+    ],
+    "padding": 3
+  },
+  {
+    "rom_offset": 754676,
+    "size": 14104,
+    "type": 0,
+    "status": 16384,
+    "frequency": 11289600,
+    "loop_start": 9234,
+    "sample_count": 14087,
+    "wav": "sound/samples/0B83F4.wav",
+    "references": [
+      134781820
+    ],
+    "padding": 1
+  },
+  {
+    "rom_offset": 768780,
+    "size": 8836,
+    "type": 0,
+    "status": 16384,
+    "frequency": 11289600,
+    "loop_start": 6784,
+    "sample_count": 8816,
+    "wav": "sound/samples/0BBB0C.wav",
+    "references": [
+      134781904
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 777616,
+    "size": 17684,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 17664,
+    "wav": "sound/samples/0BDD90.wav",
+    "references": [
+      134782096
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 795300,
+    "size": 6600,
+    "type": 0,
+    "status": 0,
+    "frequency": 12288000,
+    "loop_start": 0,
+    "sample_count": 6582,
+    "wav": "sound/samples/0C22A4.wav",
+    "references": [
+      134782120
+    ],
+    "padding": 2
+  },
+  {
+    "rom_offset": 801900,
+    "size": 18836,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 18816,
+    "wav": "sound/samples/0C3C6C.wav",
+    "references": [
+      134782144
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 820736,
+    "size": 11860,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 11840,
+    "wav": "sound/samples/0C8600.wav",
+    "references": [
+      134782156
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 832596,
+    "size": 10680,
+    "type": 0,
+    "status": 0,
+    "frequency": 16146432,
+    "loop_start": 0,
+    "sample_count": 10663,
+    "wav": "sound/samples/0CB454.wav",
+    "references": [
+      134782288
+    ],
+    "padding": 1
+  },
+  {
+    "rom_offset": 843276,
+    "size": 7772,
+    "type": 0,
+    "status": 0,
+    "frequency": 8192000,
+    "loop_start": 0,
+    "sample_count": 7755,
+    "wav": "sound/samples/0CDE0C.wav",
+    "references": [
+      134782336
+    ],
+    "padding": 1
+  },
+  {
+    "rom_offset": 851048,
+    "size": 28052,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 28032,
+    "wav": "sound/samples/0CFC68.wav",
+    "references": [
+      134782432
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 879100,
+    "size": 8148,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 8128,
+    "wav": "sound/samples/0D69FC.wav",
+    "references": [
+      134782444
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 887248,
+    "size": 28052,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 28032,
+    "wav": "sound/samples/0D89D0.wav",
+    "references": [
+      134782456
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 915300,
+    "size": 7432,
+    "type": 0,
+    "status": 16384,
+    "frequency": 16146432,
+    "loop_start": 5582,
+    "sample_count": 7413,
+    "wav": "sound/samples/0DF764.wav",
+    "references": [
+      134786320,
+      134782540
+    ],
+    "padding": 3
+  },
+  {
+    "rom_offset": 922732,
+    "size": 204,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 186,
+    "wav": "sound/samples/0E146C.wav",
+    "references": [
+      134786332,
+      134782552
+    ],
+    "padding": 2
+  },
+  {
+    "rom_offset": 922936,
+    "size": 11096,
+    "type": 0,
+    "status": 16384,
+    "frequency": 11289600,
+    "loop_start": 4266,
+    "sample_count": 11076,
+    "wav": "sound/samples/0E1538.wav",
+    "references": [
+      134786368,
+      134782588
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 934032,
+    "size": 4228,
+    "type": 0,
+    "status": 0,
+    "frequency": 16146432,
+    "loop_start": 0,
+    "sample_count": 4210,
+    "wav": "sound/samples/0E4090.wav",
+    "references": [
+      134786380,
+      134782600
+    ],
+    "padding": 2
+  },
+  {
+    "rom_offset": 938260,
+    "size": 5388,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 5370,
+    "wav": "sound/samples/0E5114.wav",
+    "references": [
+      134782624
+    ],
+    "padding": 2
+  },
+  {
+    "rom_offset": 943648,
+    "size": 3544,
+    "type": 0,
+    "status": 0,
+    "frequency": 16146432,
+    "loop_start": 0,
+    "sample_count": 3524,
+    "wav": "sound/samples/0E6620.wav",
+    "references": [
+      134786416,
+      134782636
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 947192,
+    "size": 2836,
+    "type": 0,
+    "status": 0,
+    "frequency": 16146432,
+    "loop_start": 0,
+    "sample_count": 2816,
+    "wav": "sound/samples/0E73F8.wav",
+    "references": [
+      134782648
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 950028,
+    "size": 1276,
+    "type": 0,
+    "status": 0,
+    "frequency": 16146432,
+    "loop_start": 0,
+    "sample_count": 1256,
+    "wav": "sound/samples/0E7F0C.wav",
+    "references": [
+      134786476,
+      134782696
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 951304,
+    "size": 5268,
+    "type": 0,
+    "status": 0,
+    "frequency": 16146432,
+    "loop_start": 0,
+    "sample_count": 5248,
+    "wav": "sound/samples/0E8408.wav",
+    "references": [
+      134786524,
+      134782744
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 956572,
+    "size": 6300,
+    "type": 0,
+    "status": 0,
+    "frequency": 16146432,
+    "loop_start": 0,
+    "sample_count": 6281,
+    "wav": "sound/samples/0E989C.wav",
+    "references": [
+      134786548,
+      134782768
+    ],
+    "padding": 3
+  },
+  {
+    "rom_offset": 962872,
+    "size": 17556,
+    "type": 0,
+    "status": 0,
+    "frequency": 16146432,
+    "loop_start": 0,
+    "sample_count": 17536,
+    "wav": "sound/samples/0EB138.wav",
+    "references": [
+      134782780
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 980428,
+    "size": 988,
+    "type": 0,
+    "status": 0,
+    "frequency": 12288000,
+    "loop_start": 0,
+    "sample_count": 968,
+    "wav": "sound/samples/0EF5CC.wav",
+    "references": [
+      134786932,
+      134783152
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 981416,
+    "size": 7368,
+    "type": 0,
+    "status": 0,
+    "frequency": 12288000,
+    "loop_start": 0,
+    "sample_count": 7349,
+    "wav": "sound/samples/0EF9A8.wav",
+    "references": [
+      134786944,
+      134783164
+    ],
+    "padding": 3
+  },
+  {
+    "rom_offset": 988784,
+    "size": 6716,
+    "type": 0,
+    "status": 0,
+    "frequency": 16146432,
+    "loop_start": 0,
+    "sample_count": 6699,
+    "wav": "sound/samples/0F1670.wav",
+    "references": [
+      134786968,
+      134783188
+    ],
+    "padding": 1
+  },
+  {
+    "rom_offset": 995500,
+    "size": 1316,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 1299,
+    "wav": "sound/samples/0F30AC.wav",
+    "references": [
+      134783236
+    ],
+    "padding": 1
+  },
+  {
+    "rom_offset": 996816,
+    "size": 2228,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 2208,
+    "wav": "sound/samples/0F35D0.wav",
+    "references": [
+      134783248
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 999044,
+    "size": 13396,
+    "type": 0,
+    "status": 0,
+    "frequency": 16146432,
+    "loop_start": 0,
+    "sample_count": 13376,
+    "wav": "sound/samples/0F3E84.wav",
+    "references": [
+      134783260
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1012440,
+    "size": 16916,
+    "type": 0,
+    "status": 0,
+    "frequency": 16146432,
+    "loop_start": 0,
+    "sample_count": 16896,
+    "wav": "sound/samples/0F72D8.wav",
+    "references": [
+      134783272
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1029356,
+    "size": 2088,
+    "type": 0,
+    "status": 0,
+    "frequency": 16146432,
+    "loop_start": 0,
+    "sample_count": 2070,
+    "wav": "sound/samples/0FB4EC.wav",
+    "references": [
+      134783284
+    ],
+    "padding": 2
+  },
+  {
+    "rom_offset": 1031444,
+    "size": 14772,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 14752,
+    "wav": "sound/samples/0FBD14.wav",
+    "references": [
+      134783296
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1046216,
+    "size": 14868,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 14848,
+    "wav": "sound/samples/0FF6C8.wav",
+    "references": [
+      134783308
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1061084,
+    "size": 10352,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 10332,
+    "wav": "sound/samples/1030DC.wav",
+    "references": [
+      134783320
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1071436,
+    "size": 2776,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 2756,
+    "wav": "sound/samples/10594C.wav",
+    "references": [
+      134783332
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1074212,
+    "size": 4080,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 4061,
+    "wav": "sound/samples/106424.wav",
+    "references": [
+      134783344
+    ],
+    "padding": 3
+  },
+  {
+    "rom_offset": 1078292,
+    "size": 12624,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 12606,
+    "wav": "sound/samples/107414.wav",
+    "references": [
+      134783356
+    ],
+    "padding": 2
+  },
+  {
+    "rom_offset": 1090916,
+    "size": 3272,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 3254,
+    "wav": "sound/samples/10A564.wav",
+    "references": [
+      134783380
+    ],
+    "padding": 2
+  },
+  {
+    "rom_offset": 1094188,
+    "size": 5244,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 5227,
+    "wav": "sound/samples/10B22C.wav",
+    "references": [
+      134783392
+    ],
+    "padding": 1
+  },
+  {
+    "rom_offset": 1099432,
+    "size": 7188,
+    "type": 0,
+    "status": 0,
+    "frequency": 16146432,
+    "loop_start": 0,
+    "sample_count": 7168,
+    "wav": "sound/samples/10C6A8.wav",
+    "references": [
+      134783404
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1106620,
+    "size": 11264,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 11245,
+    "wav": "sound/samples/10E2BC.wav",
+    "references": [
+      134783416
+    ],
+    "padding": 3
+  },
+  {
+    "rom_offset": 1117884,
+    "size": 7444,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 7424,
+    "wav": "sound/samples/110EBC.wav",
+    "references": [
+      134783428
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1125328,
+    "size": 11860,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 11840,
+    "wav": "sound/samples/112BD0.wav",
+    "references": [
+      134783440
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1137188,
+    "size": 2992,
+    "type": 0,
+    "status": 0,
+    "frequency": 16146432,
+    "loop_start": 0,
+    "sample_count": 2974,
+    "wav": "sound/samples/115A24.wav",
+    "references": [
+      134783452
+    ],
+    "padding": 2
+  },
+  {
+    "rom_offset": 1140180,
+    "size": 2504,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 2485,
+    "wav": "sound/samples/1165D4.wav",
+    "references": [
+      134783464
+    ],
+    "padding": 3
+  },
+  {
+    "rom_offset": 1142684,
+    "size": 25736,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 25718,
+    "wav": "sound/samples/116F9C.wav",
+    "references": [
+      134783476
+    ],
+    "padding": 2
+  },
+  {
+    "rom_offset": 1168420,
+    "size": 20180,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 20160,
+    "wav": "sound/samples/11D424.wav",
+    "references": [
+      134783488
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1188600,
+    "size": 22164,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 22144,
+    "wav": "sound/samples/1222F8.wav",
+    "references": [
+      134783500
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1210764,
+    "size": 2340,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 2320,
+    "wav": "sound/samples/12798C.wav",
+    "references": [
+      134783512
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1213104,
+    "size": 10420,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 10400,
+    "wav": "sound/samples/1282B0.wav",
+    "references": [
+      134783536
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1223524,
+    "size": 16756,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 16736,
+    "wav": "sound/samples/12AB64.wav",
+    "references": [
+      134783548
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1240280,
+    "size": 4148,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 4131,
+    "wav": "sound/samples/12ECD8.wav",
+    "references": [
+      134783560
+    ],
+    "padding": 1
+  },
+  {
+    "rom_offset": 1244428,
+    "size": 9732,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 9712,
+    "wav": "sound/samples/12FD0C.wav",
+    "references": [
+      134783572
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1254160,
+    "size": 20872,
+    "type": 0,
+    "status": 0,
+    "frequency": 8192000,
+    "loop_start": 0,
+    "sample_count": 20852,
+    "wav": "sound/samples/132310.wav",
+    "references": [
+      134783584
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1275032,
+    "size": 3496,
+    "type": 0,
+    "status": 0,
+    "frequency": 16146432,
+    "loop_start": 0,
+    "sample_count": 3478,
+    "wav": "sound/samples/137498.wav",
+    "references": [
+      134783596
+    ],
+    "padding": 2
+  },
+  {
+    "rom_offset": 1278528,
+    "size": 1264,
+    "type": 0,
+    "status": 0,
+    "frequency": 12288000,
+    "loop_start": 0,
+    "sample_count": 1244,
+    "wav": "sound/samples/138240.wav",
+    "references": [
+      134783608
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1279792,
+    "size": 15148,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 15128,
+    "wav": "sound/samples/138730.wav",
+    "references": [
+      134783620
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1294940,
+    "size": 4212,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 4192,
+    "wav": "sound/samples/13C25C.wav",
+    "references": [
+      134783632
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1299152,
+    "size": 3644,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 3627,
+    "wav": "sound/samples/13D2D0.wav",
+    "references": [
+      134783644
+    ],
+    "padding": 1
+  },
+  {
+    "rom_offset": 1302796,
+    "size": 5204,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 5184,
+    "wav": "sound/samples/13E10C.wav",
+    "references": [
+      134783656
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1308000,
+    "size": 9240,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 9220,
+    "wav": "sound/samples/13F560.wav",
+    "references": [
+      134783668
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1317240,
+    "size": 22548,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 22528,
+    "wav": "sound/samples/141978.wav",
+    "references": [
+      134783680
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1339788,
+    "size": 4324,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 4304,
+    "wav": "sound/samples/14718C.wav",
+    "references": [
+      134783692
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1344112,
+    "size": 23744,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 23724,
+    "wav": "sound/samples/148270.wav",
+    "references": [
+      134783704
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1367856,
+    "size": 16500,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 16480,
+    "wav": "sound/samples/14DF30.wav",
+    "references": [
+      134783716
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1384356,
+    "size": 8028,
+    "type": 0,
+    "status": 0,
+    "frequency": 8192000,
+    "loop_start": 0,
+    "sample_count": 8010,
+    "wav": "sound/samples/151FA4.wav",
+    "references": [
+      134783728
+    ],
+    "padding": 2
+  },
+  {
+    "rom_offset": 1392384,
+    "size": 20244,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 20224,
+    "wav": "sound/samples/153F00.wav",
+    "references": [
+      134783740
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1412628,
+    "size": 9492,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 9472,
+    "wav": "sound/samples/158E14.wav",
+    "references": [
+      134783752
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1422120,
+    "size": 7444,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 7424,
+    "wav": "sound/samples/15B328.wav",
+    "references": [
+      134783764
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1429564,
+    "size": 17044,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 17024,
+    "wav": "sound/samples/15D03C.wav",
+    "references": [
+      134783776
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1446608,
+    "size": 8852,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 8832,
+    "wav": "sound/samples/1612D0.wav",
+    "references": [
+      134783788
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1455460,
+    "size": 41832,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 41815,
+    "wav": "sound/samples/163564.wav",
+    "references": [
+      134783800
+    ],
+    "padding": 1
+  },
+  {
+    "rom_offset": 1497292,
+    "size": 10420,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 10400,
+    "wav": "sound/samples/16D8CC.wav",
+    "references": [
+      134783836
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1507712,
+    "size": 10604,
+    "type": 0,
+    "status": 16384,
+    "frequency": 11289600,
+    "loop_start": 1688,
+    "sample_count": 10584,
+    "wav": "sound/samples/170180.wav",
+    "references": [
+      134783848
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1518316,
+    "size": 43864,
+    "type": 0,
+    "status": 0,
+    "frequency": 16146432,
+    "loop_start": 0,
+    "sample_count": 43844,
+    "wav": "sound/samples/172AEC.wav",
+    "references": [
+      134783860
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1562180,
+    "size": 23924,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 23906,
+    "wav": "sound/samples/17D644.wav",
+    "references": [
+      134783872
+    ],
+    "padding": 2
+  },
+  {
+    "rom_offset": 1586104,
+    "size": 10964,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 10944,
+    "wav": "sound/samples/1833B8.wav",
+    "references": [
+      134783884
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1597068,
+    "size": 10108,
+    "type": 0,
+    "status": 16384,
+    "frequency": 12288000,
+    "loop_start": 6,
+    "sample_count": 10089,
+    "wav": "sound/samples/185E8C.wav",
+    "references": [
+      134783896
+    ],
+    "padding": 3
+  },
+  {
+    "rom_offset": 1607176,
+    "size": 7668,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 7648,
+    "wav": "sound/samples/188608.wav",
+    "references": [
+      134783908
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1614844,
+    "size": 8964,
+    "type": 0,
+    "status": 0,
+    "frequency": 8192000,
+    "loop_start": 0,
+    "sample_count": 8944,
+    "wav": "sound/samples/18A3FC.wav",
+    "references": [
+      134783920
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1623808,
+    "size": 3684,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 3664,
+    "wav": "sound/samples/18C700.wav",
+    "references": [
+      134783932
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1627492,
+    "size": 836,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 818,
+    "wav": "sound/samples/18D564.wav",
+    "references": [
+      134783944
+    ],
+    "padding": 2
+  },
+  {
+    "rom_offset": 1628328,
+    "size": 4452,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 4432,
+    "wav": "sound/samples/18D8A8.wav",
+    "references": [
+      134783968
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1632780,
+    "size": 18084,
+    "type": 0,
+    "status": 0,
+    "frequency": 8192000,
+    "loop_start": 0,
+    "sample_count": 18065,
+    "wav": "sound/samples/18EA0C.wav",
+    "references": [
+      134783980
+    ],
+    "padding": 3
+  },
+  {
+    "rom_offset": 1650864,
+    "size": 6932,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 6912,
+    "wav": "sound/samples/1930B0.wav",
+    "references": [
+      134783992
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1657796,
+    "size": 6004,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 5984,
+    "wav": "sound/samples/194BC4.wav",
+    "references": [
+      134784004
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1663800,
+    "size": 11316,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 11296,
+    "wav": "sound/samples/196338.wav",
+    "references": [
+      134784016
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1675116,
+    "size": 8884,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 8864,
+    "wav": "sound/samples/198F6C.wav",
+    "references": [
+      134784028
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1684000,
+    "size": 772,
+    "type": 0,
+    "status": 0,
+    "frequency": 11289600,
+    "loop_start": 0,
+    "sample_count": 752,
+    "wav": "sound/samples/19B220.wav",
+    "references": [
+      134784040
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1684772,
+    "size": 3460,
+    "type": 0,
+    "status": 0,
+    "frequency": 16146432,
+    "loop_start": 0,
+    "sample_count": 3440,
+    "wav": "sound/samples/19B524.wav",
+    "references": [
+      134784052
+    ],
+    "padding": 4
+  },
+  {
+    "rom_offset": 1688232,
+    "size": 8380,
+    "type": 0,
+    "status": 0,
+    "frequency": 16146432,
+    "loop_start": 0,
+    "sample_count": 8363,
+    "wav": "sound/samples/19C2A8.wav",
+    "references": [
+      134786404
+    ],
+    "padding": 1
+  },
+  {
+    "rom_offset": 1696612,
+    "size": 2924,
+    "type": 0,
+    "status": 0,
+    "frequency": 16146432,
+    "loop_start": 0,
+    "sample_count": 2906,
+    "wav": "sound/samples/19E364.wav",
+    "references": [
+      134786428
+    ],
+    "padding": 2
+  },
+  {
+    "rom_offset": 1699536,
+    "size": 13972,
+    "type": 0,
+    "status": 0,
+    "frequency": 16146432,
+    "loop_start": 0,
+    "sample_count": 13952,
+    "wav": "sound/samples/19EED0.wav",
+    "references": [
+      134786560
+    ],
+    "padding": 4
+  }
+]

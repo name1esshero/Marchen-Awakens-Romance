@@ -1,0 +1,50 @@
+// HI_M07.SPC: ROM 80E970
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000017 EV_GO02.SPC  // LITERAL: EV_GO02.SPC (usage not inferred)
+@000124 F01B01  // LITERAL: F01B01 (usage not inferred)
+@00015C F02A01  // LITERAL: F02A01 (usage not inferred)
+@0002B0  C0D04 ［バッボ］  // EN: [Babbo]
+@0002CD  C0F04 …そっちはナナシたちが  // TODO: English translation
+@0002F6 すすんだみちだぞ！  // TODO: English translation
+@000332  C0D04 ［ギンタ］  // EN: [Ginta]
+@00034F  C0F04 あ…そっか…  // TODO: English translation
+@0005EE F02A01  // LITERAL: F02A01 (usage not inferred)
+@0006AF  C0D04 ［バッボ］  // EN: [Babbo]
+@0006CC  C0F04 ！！！  // TODO: English translation
+@000719 F01B01  // LITERAL: F01B01 (usage not inferred)
+@0007DA  C0D04 ［ギンタ］  // EN: [Ginta]
+@0007F7  C0F04 どうしたバッボ…？  // TODO: English translation
+@000846  C0D04 ［バッボ］  // EN: [Babbo]
+@000863  C0F04 なにかいる！  // TODO: English translation
+@0008E6 F02A03  // LITERAL: F02A03 (usage not inferred)
+@000944  C0D04 ［バッボ］  // EN: [Babbo]
+@000961  C0F04 …そこにだれかおるな！？  // TODO: English translation
+@0009B6  C0D04 ［バッボ］  // EN: [Babbo]
+@0009D3  C0F04 出て来い！！！！  // TODO: English translation
+@000AE9 A  // LITERAL: A (usage not inferred)
+@000D45 F22A01  // LITERAL: F22A01 (usage not inferred)
+@000E27  C0D04 ［？？？］  // EN: [???]
+@000E44  C0F04 ……  // TODO: English translation
+@000F34 EV_GO03.SPC  // LITERAL: EV_GO03.SPC (usage not inferred)
+@001041 F08A01  // LITERAL: F08A01 (usage not inferred)
+@001079 F09A01  // LITERAL: F09A01 (usage not inferred)
+@0011CD  C0D04 ［ナナシ］  // EN: [Nanashi]
+@0011EA  C0F04 そっちはギンタが  // TODO: English translation
+@00120D 行ったみちやな  // TODO: English translation
+@001245  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001264  C0F04 もどってきちゃった？  // TODO: English translation
+@00150B F08A01  // LITERAL: F08A01 (usage not inferred)
+@001543 F09A02  // LITERAL: F09A02 (usage not inferred)
+@001697  C0D04 ［ナナシ］  // EN: [Nanashi]
+@0016B4  C0F04 おっと…  // TODO: English translation
+@0016F9  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001718  C0F04 …！  // EN: ...!
+@001759  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001776  C0F04 気付いたか？  // TODO: English translation
+@001795 さすが、魔女（まじょ）、やな…  // TODO: English translation
+@0017DD  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0017FC  C0F04 魔力（まりょく）…  // TODO: English translation
+@00192A EV_GO07.SPC  // LITERAL: EV_GO07.SPC (usage not inferred)
+@001958 EV_GO08.SPC  // LITERAL: EV_GO08.SPC (usage not inferred)

@@ -1,0 +1,20 @@
+// EV_BIN03.SPC: ROM 79C3B0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000133 A  // LITERAL: A (usage not inferred)
+@000525 F01A01  // LITERAL: F01A01 (usage not inferred)
+@00055D F09A01  // LITERAL: F09A01 (usage not inferred)
+@0006B1  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0006D0  C0F04 わたしは、そのなかでも  // TODO: English translation
+@00073D  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00075C  C0F04 『バッボ』を手に入れたら  // EN: Once you get Babbo...
+@0007FF  C0D04 ［ギンタ］  // EN: [Ginta]
+@00081C  C0F04 その『バッボ』ほしいな！  // EN: I'd like to have that Babbo!
+@0008A1  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0008C0  C0F04 ダ・メ！  // EN: No way!
+@00090F F01A04  // LITERAL: F01A04 (usage not inferred)
+@00093D  C0D04 ［ギンタ］  // EN: [Ginta]
+@00095A  C0F04 なんだよ、ケチ！！  // EN: Aw, you cheapskate!!
+@0006F9 レアな<F0><56>ＲＭをあつめてるの  // TODO: English translation
+@000787 ボウヤにはダガー<F0><56>ＲＭあげる<F0><40>  // TODO: English translation

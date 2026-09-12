@@ -1,0 +1,6 @@
+// D3_ENEMY.SPC: ROM 5841D0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@003B22 BTI_PSET.SPC  // LITERAL: BTI_PSET.SPC (usage not inferred)
+@003B98 ENE_SET.SPC  // LITERAL: ENE_SET.SPC (usage not inferred)

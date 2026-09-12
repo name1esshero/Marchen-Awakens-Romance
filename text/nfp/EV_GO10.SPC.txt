@@ -1,0 +1,28 @@
+// EV_GO10.SPC: ROM 7A1BF0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@0001FD MAP07_3A  // LITERAL: MAP07_3A (usage not inferred)
+@000350  C0D04 ［−−−］  // EN: [---]
+@00036D  C0B04 助けて  // EN: Help me.
+@0003C0 F01B04  // LITERAL: F01B04 (usage not inferred)
+@000499  C0D04 ［ギンタ］  // EN: [Ginta]
+@0004B6  C0F04 な…！？  // EN: Wha...?!
+@0004FB  C0D04 ［ギンタ］  // EN: [Ginta]
+@000518  C0F04 今、おまえ「助けて」っていったか？  // EN: Did you just say 'help me'?
+@000587 F21A02  // LITERAL: F21A02 (usage not inferred)
+@000660  C0D04 ［ギロム］  // EN: [Girom]
+@00067D  C0F04 あーー！？  // EN: Huuuh?!
+@0006C4  C0D04 ［ギロム］  // EN: [Girom]
+@0006E1  C0F04 助けてほしいのはおまえだろ？  // EN: You're the one who needs help!
+@000710 バーーーカ！  // EN: Idiooot!
+@0007B2  C0D04 ［−−−］  // EN: [---]
+@0007CF  C0B04 助けて…ここにいるのは  // EN: Help me... I don't want...
+@0007F8 もういや…  // EN: ...to stay here anymore...
+@00083C F01B04  // LITERAL: F01B04 (usage not inferred)
+@00094C F21A02  // LITERAL: F21A02 (usage not inferred)
+@000A4C  C0D04 ［ギンタ］  // EN: [Ginta]
+@000A69  C0F04 （ゆ、ゆうれい！？  // EN: (A-a ghost?!
+@000A8E 　ここから出たいのか…！？）  // EN: Does it want to get out of here...?!)
+@000AD4  C0D04 ［ギロム］  // EN: [Girom]
+@000AF1  C0F04 いくぜ、しにくされ！！  // EN: Here I come! Drop dead!!

@@ -1,0 +1,730 @@
+[
+  {
+    "path": "graphics/backgrounds/AD0_P_0A.KCG.lz",
+    "archive_name": "AD0_P_0A.KCG",
+    "bytes": 22945,
+    "sha256": "437ddb291d75ff5d1604b2683ff581d3f3c9a314e08d622db6a8e9fb1a14c3f5",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/AD1_P_0A.KCG.lz",
+    "archive_name": "AD1_P_0A.KCG",
+    "bytes": 18850,
+    "sha256": "db75c0b076a6f5682435375a2ffe68c7f36ef835c08383988ffc44669673ab09",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/AD3_P_0A.KCG.lz",
+    "archive_name": "AD3_P_0A.KCG",
+    "bytes": 19592,
+    "sha256": "03636b37c347e9f071f84e3e82cdfd0c3bc1c38ea60ba305d08786291efe568b",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/AD4_P_0A.KCG.lz",
+    "archive_name": "AD4_P_0A.KCG",
+    "bytes": 14138,
+    "sha256": "682c85cee0f822f8884c99ab51b541daed1f93178b6087b162caad7bb55c1be7",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/AD_BG01.KCG.lz",
+    "archive_name": "AD_BG01.KCG",
+    "bytes": 7551,
+    "sha256": "055cfa9a7cc4441b12e7449cf8b01e74bb4d77f8102d38a4d1d23c17c6d93fa2",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/AD_BG02.KCG.lz",
+    "archive_name": "AD_BG02.KCG",
+    "bytes": 2369,
+    "sha256": "cfa2aaf4cf35c269ed1629538c5e0a9586e782a7b307e35e3e23bdab9ecbb670",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/AL_BG01.KCG.lz",
+    "archive_name": "AL_BG01.KCG",
+    "bytes": 8419,
+    "sha256": "32d5034bd53c405f320c134451f81e4136a869b93e64cdd05b475d0d34609d7e",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/AL_BG02.KCG.lz",
+    "archive_name": "AL_BG02.KCG",
+    "bytes": 2690,
+    "sha256": "64ed0d11b9e06c3e8d69d95a9ef85962c9dacdeb71b8965cf033f9be6f665304",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/AS_BG01.KCG.lz",
+    "archive_name": "AS_BG01.KCG",
+    "bytes": 9015,
+    "sha256": "150888ada3b84e1751d2048c00d91e495e5755c744ddf25f761fb4b4e14af11e",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/AS_BG02.KCG.lz",
+    "archive_name": "AS_BG02.KCG",
+    "bytes": 5144,
+    "sha256": "e63f982c8bdaf7c11f2c546097083180127ba2bb52ed43ab53d60af30384c05c",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/AT_BG01.KCG.lz",
+    "archive_name": "AT_BG01.KCG",
+    "bytes": 7461,
+    "sha256": "dc363e32f11bddc51df99984583827d356f1cb0fdc034db91ca238d3c75adc12",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/tilesets/BA06.TCG.lz",
+    "archive_name": "BA06.TCG",
+    "bytes": 11844,
+    "sha256": "7b230db7dae0e25fe2bd76a741d4825b059ea225e470b183e692bbc3be28344d",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/tilesets/BA06_BG.TCG.lz",
+    "archive_name": "BA06_BG.TCG",
+    "bytes": 12026,
+    "sha256": "307800e5ac5f4a157bfc9e6431833ff575325278ea3f72d4abb4e4d1e41a8bec",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/tilesets/BA07.TCG.lz",
+    "archive_name": "BA07.TCG",
+    "bytes": 2612,
+    "sha256": "be9d717be4a41ce7df9a2670a7f14b1f4b7e2dde8eb7e92b2a3812b0c620e053",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/CLPASS.KCG.lz",
+    "archive_name": "CLPASS.KCG",
+    "bytes": 2654,
+    "sha256": "dbc485424739867f1e2a4d1d4cbccf31a7564a13d7ab57396f481e11cffb1a8f",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/CM_BG01.KCG.lz",
+    "archive_name": "CM_BG01.KCG",
+    "bytes": 6387,
+    "sha256": "f8336272d63ee6ce2c9e36a401c92a398a92d0ec8618929893403ad4dc584839",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/CM_BG02.KCG.lz",
+    "archive_name": "CM_BG02.KCG",
+    "bytes": 4373,
+    "sha256": "487f84e0ca1ae3f95c264d4224a3429bddaa6acfdd9dbd1c462d184702abb0ee",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/DS_BG01.KCG.lz",
+    "archive_name": "DS_BG01.KCG",
+    "bytes": 13034,
+    "sha256": "b687414834662a5f7ddc637529b1f3c1a79be0ab7b26bae06131def428f1c2c7",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/DS_BG02.KCG.lz",
+    "archive_name": "DS_BG02.KCG",
+    "bytes": 3891,
+    "sha256": "6a5e090156121b993c52245777cd51f9a4c780dc3094f58b8a81ae72ba7a300e",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/tilesets/GA08.TCG.lz",
+    "archive_name": "GA08.TCG",
+    "bytes": 9818,
+    "sha256": "3ea4d905b2c858c142b3d1b94824c20e02b55092ba4ae192da963d1358738206",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/tilesets/GA13.TCG.lz",
+    "archive_name": "GA13.TCG",
+    "bytes": 4858,
+    "sha256": "eaa7d2b1761e615f95cbfad282225c5cb273b521e80c8446a4b5539575f1a58e",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/tilesets/GA24.TCG.lz",
+    "archive_name": "GA24.TCG",
+    "bytes": 7675,
+    "sha256": "7beab1c88f2209a8dcafd5c47ef21e86b82e73bdd08b297764ffe5c697052298",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/tilesets/GA25.TCG.lz",
+    "archive_name": "GA25.TCG",
+    "bytes": 8244,
+    "sha256": "31bfc0df41ed7b20271f899f7856f9294c346bd78fe645ad620b387006e25565",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/tilesets/GA26.TCG.lz",
+    "archive_name": "GA26.TCG",
+    "bytes": 3634,
+    "sha256": "d2e577160e780bc13af3c801a4f7979316e09be4ebbb2ceb4d87fe06fc78e95b",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/tilesets/GA60.TCG.lz",
+    "archive_name": "GA60.TCG",
+    "bytes": 6040,
+    "sha256": "b506c03f26792082ed05346515b2ab5533d2903bc1d1a3f6c98900f6fd575653",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/GA_BG01.KCG.lz",
+    "archive_name": "GA_BG01.KCG",
+    "bytes": 7175,
+    "sha256": "3a151638c7cd8e2c3b1ee8d3d2795c51b7f22f8e4385ffa31e8b9b1af7fb60d2",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/IT_BG01.KCG.lz",
+    "archive_name": "IT_BG01.KCG",
+    "bytes": 5823,
+    "sha256": "4bc6ad3b7f0b3db520e3f611c273cade1b74fae3ccd843f65f4f1fd0ee1fcbe7",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/IT_BG02.KCG.lz",
+    "archive_name": "IT_BG02.KCG",
+    "bytes": 4288,
+    "sha256": "c81aa036dd24d3be4d37180c13a9400dc48dad09e106afe09665eeccbd562112",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/tilesets/JA05.TCG.lz",
+    "archive_name": "JA05.TCG",
+    "bytes": 6064,
+    "sha256": "9bd9a79e80f0281fc48594577ae40ee1fe5d7b1d2e6f5d6b3e6d52670244b51c",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP00_A.KCG.lz",
+    "archive_name": "MAP00_A.KCG",
+    "bytes": 21086,
+    "sha256": "0861944e3aab4f49cee4775c3ea72a7030b59443e0895a455a7e80940217e7d7",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP01_1A.KCG.lz",
+    "archive_name": "MAP01_1A.KCG",
+    "bytes": 23744,
+    "sha256": "22a7662e6bdd436b9e13dd19b0d0eae0613e2b311d06f3e6c5e8038a3f010682",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP01_2A.KCG.lz",
+    "archive_name": "MAP01_2A.KCG",
+    "bytes": 22401,
+    "sha256": "aa0452c9e6bf9f4c90c9b4bb07993c62431b1436983302f1c470f230e9488fa7",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP01_3A.KCG.lz",
+    "archive_name": "MAP01_3A.KCG",
+    "bytes": 26121,
+    "sha256": "4c8fa1e57905ce49173eef0e0499c5184196c1a3f36217a0918a7bc4c981adcb",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP01_A.KCG.lz",
+    "archive_name": "MAP01_A.KCG",
+    "bytes": 26556,
+    "sha256": "baaa5b18ab977bdf6d4999c2544f213c65a8e328f102662340d1a38d56b0f464",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP03_A.KCG.lz",
+    "archive_name": "MAP03_A.KCG",
+    "bytes": 23789,
+    "sha256": "28d6634a7cf45632bf4c0cf1c60c671008d91e3e5bbc669fdce4a1c3e8ccc1f1",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP04_6A.KCG.lz",
+    "archive_name": "MAP04_6A.KCG",
+    "bytes": 26196,
+    "sha256": "f31af598a7c8901aea7ded169ca6d6b1048c9213fdeec3cc0719f8c6bcc002e0",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP04_7A.KCG.lz",
+    "archive_name": "MAP04_7A.KCG",
+    "bytes": 16901,
+    "sha256": "75796dca001e1f1a3f1c1b36d4bda32077d5860780205ef1dea247a2139db0fc",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP04_A.KCG.lz",
+    "archive_name": "MAP04_A.KCG",
+    "bytes": 24669,
+    "sha256": "2a7d0f85950d1ccf90590bd3b7c4e70a9cf1a69f649a033532a89988b4f0cd21",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP05_A.KCG.lz",
+    "archive_name": "MAP05_A.KCG",
+    "bytes": 19465,
+    "sha256": "cfe8f9da4aa7c8702d3e748332205b0ac608d64df05bb03d7a3bff7d95c4666b",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP06_1A.KCG.lz",
+    "archive_name": "MAP06_1A.KCG",
+    "bytes": 24634,
+    "sha256": "8bde4c4200177b807b1346b33c4c277bccd09bd895ae5662ec689926f7291151",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP06_2A.KCG.lz",
+    "archive_name": "MAP06_2A.KCG",
+    "bytes": 23939,
+    "sha256": "f5d037694a63ca2290e3a7cda3c6afa69f72d849595e2a881c2361e814ac7694",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP06_A.KCG.lz",
+    "archive_name": "MAP06_A.KCG",
+    "bytes": 24634,
+    "sha256": "8bde4c4200177b807b1346b33c4c277bccd09bd895ae5662ec689926f7291151",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP07_2A.KCG.lz",
+    "archive_name": "MAP07_2A.KCG",
+    "bytes": 19519,
+    "sha256": "c729e948127881e77be82f801a00b4e692bf43092356ea097c7c4dde059ace05",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP07_3A.KCG.lz",
+    "archive_name": "MAP07_3A.KCG",
+    "bytes": 24466,
+    "sha256": "00b097bb9a6a13326346a860b95e95f4826df6519cb77cd9bcce30552bb31fc8",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/tilesets/MAP07_A.KCG.lz",
+    "archive_name": "MAP07_A.KCG",
+    "bytes": 21450,
+    "sha256": "fb4d9532184abbf77ed9994e148d471d033e2467d1d5af960c7d8fe1e049bd33",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP08_A.KCG.lz",
+    "archive_name": "MAP08_A.KCG",
+    "bytes": 21301,
+    "sha256": "7983cd1fae3ca1855137441a3a43d7e32f348e36a0b17a26419034f21d0257f9",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP09_A.KCG.lz",
+    "archive_name": "MAP09_A.KCG",
+    "bytes": 23505,
+    "sha256": "a61f36e28d63539090b9e09266de6f7de04f3bcc97d0861425367bbe501f1db7",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP10_1A.KCG.lz",
+    "archive_name": "MAP10_1A.KCG",
+    "bytes": 18690,
+    "sha256": "d5698e041e54c2605849bd0aa419eeaa98618ef49c3b9ca288ba6a801bae12d6",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP10_A.KCG.lz",
+    "archive_name": "MAP10_A.KCG",
+    "bytes": 24223,
+    "sha256": "5f6c4000edacfcd24dca908a9fb45355c47b6d6c6f23015496e3c63e3440f772",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP11_1A.KCG.lz",
+    "archive_name": "MAP11_1A.KCG",
+    "bytes": 22764,
+    "sha256": "53fd9265138a2cc9c7900112fbd6f5197834fce10a9175a3bcb922822ffb8ac2",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP11_2A.KCG.lz",
+    "archive_name": "MAP11_2A.KCG",
+    "bytes": 23221,
+    "sha256": "92d30dde76e4b5c2c87e3c8b00078939996377822b9b0543af53c12c8edf94df",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP11_A.KCG.lz",
+    "archive_name": "MAP11_A.KCG",
+    "bytes": 23152,
+    "sha256": "f4a262edb9c79390794e3e44a8e28f76b70bb4191e441dee3f6a66a8cc2439a4",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP24_1A.KCG.lz",
+    "archive_name": "MAP24_1A.KCG",
+    "bytes": 19266,
+    "sha256": "fbc1f0f5d4d52bdb532495ef9b2848d49b23a84080e1e9948031dc093b7fc689",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP24_4A.KCG.lz",
+    "archive_name": "MAP24_4A.KCG",
+    "bytes": 21759,
+    "sha256": "928cb21a26c0ffffdb840a76ccdd72b9568b71be0f1d9b49e3602c1f5a2f3e0b",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP24_A.KCG.lz",
+    "archive_name": "MAP24_A.KCG",
+    "bytes": 23528,
+    "sha256": "9247f27800dbe7114f0ea7c05b3484a086b29b1d50d13fac87e05158eaa73379",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP25_1A.KCG.lz",
+    "archive_name": "MAP25_1A.KCG",
+    "bytes": 25100,
+    "sha256": "a89c45db4635924a60aa081e363c2a79065167300b6126ba7643c9152097aad6",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP25_5A.KCG.lz",
+    "archive_name": "MAP25_5A.KCG",
+    "bytes": 23961,
+    "sha256": "424181f65355b3bc79af020a607e4385666490f276dc6cefc404896e01cf2a24",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP26_1A.KCG.lz",
+    "archive_name": "MAP26_1A.KCG",
+    "bytes": 21255,
+    "sha256": "0b41b4deb8634b24559ef04990aed8804dd5261998f6ee60be028c88e2946ffa",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP26_2A.KCG.lz",
+    "archive_name": "MAP26_2A.KCG",
+    "bytes": 24287,
+    "sha256": "59a553bb1e81b3697d062ecca58db9362df1a3081f3111acec5da66622db56cc",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/tilesets/MAP27_A.KCG.lz",
+    "archive_name": "MAP27_A.KCG",
+    "bytes": 11122,
+    "sha256": "8e787628108992ae61b0ff55a24b9f8a37cb7a72a07b73d9782113f5c35b0ab0",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/MAP99_A.KCG.lz",
+    "archive_name": "MAP99_A.KCG",
+    "bytes": 22,
+    "sha256": "5ae0bf15efb2391622ade1b0d0f2d04ffa22cc21b634ddeaf0bb075565b3e86d",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/ML_BG01.KCG.lz",
+    "archive_name": "ML_BG01.KCG",
+    "bytes": 8444,
+    "sha256": "a9e2a6e91fa38248b74c751fb01e76cab2181915aad3b9eb59f739b0a01284f2",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/tilesets/MWA.KCG.lz",
+    "archive_name": "MWA.KCG",
+    "bytes": 1061,
+    "sha256": "1041544122587bb0193b0db890ab543e8b1fe66992b9a4670bc2e12e39be86ae",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/NE01.TCG.lz",
+    "archive_name": "NE01.TCG",
+    "bytes": 7029,
+    "sha256": "04a57106908f87688a214e66478f25ec13887bbd2ae3d0ba5e9080bfc6310a9e",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/NE13.TCG.lz",
+    "archive_name": "NE13.TCG",
+    "bytes": 6395,
+    "sha256": "91c40577510a6dc5fbbb5bddb4a18a588a268af94d184799498ac18da04bb460",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/tilesets/NE21.TCG.lz",
+    "archive_name": "NE21.TCG",
+    "bytes": 11975,
+    "sha256": "d29dacb126a9edbb12737909712cd04907be06b159e3f154c7e17355a64065a5",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/tilesets/NE32.TCG.lz",
+    "archive_name": "NE32.TCG",
+    "bytes": 7552,
+    "sha256": "ad5369976e2d7206f4dc13ac214907730097ef27108dcfb7612493c9d69e57ec",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/NE33.TCG.lz",
+    "archive_name": "NE33.TCG",
+    "bytes": 6315,
+    "sha256": "9afb5fffefc3b9bbbf75aa3563857722e81dced08fb6857450f6962113dab3c0",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/OP_01_A.KCG.lz",
+    "archive_name": "OP_01_A.KCG",
+    "bytes": 15545,
+    "sha256": "73decdb88212e6f3e03fe5f8d677a1669ca0f7d2fff8bb4d74ef3c6df1b66d4d",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/OP_04_A.KCG.lz",
+    "archive_name": "OP_04_A.KCG",
+    "bytes": 14275,
+    "sha256": "f71d4c3e83d9bde8c4b569962cc948dc0399fa29a93e028da74c532bd809166d",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/OP_05_A.KCG.lz",
+    "archive_name": "OP_05_A.KCG",
+    "bytes": 16339,
+    "sha256": "16b60288e60418746f5eb722baf2c3f90b9fe404b4d48b8d35e6613e1ea64959",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/OP_06_A.KCG.lz",
+    "archive_name": "OP_06_A.KCG",
+    "bytes": 13266,
+    "sha256": "40d7a465d106242a47c3a5b16e5b59a0af342edf660f71205eedbbbd8feb3fe7",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/tilesets/OP_07_A.KCG.lz",
+    "archive_name": "OP_07_A.KCG",
+    "bytes": 9234,
+    "sha256": "7b79d529e5f53cd12a7e1437c623d845e5043582da9b5cbe3f2cffd76ee01b02",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/OP_08_A.KCG.lz",
+    "archive_name": "OP_08_A.KCG",
+    "bytes": 10412,
+    "sha256": "ddbdb229f37bfddd95040f9c10beba07c8ec9d32956770d0f3fd85f08168f210",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/OP_09_A.KCG.lz",
+    "archive_name": "OP_09_A.KCG",
+    "bytes": 14106,
+    "sha256": "b79f56fcd00ef74df08ad2518b29a373c23c5e32c598823ef7e8fb14dcbd9c0c",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/OP_0A_A.KCG.lz",
+    "archive_name": "OP_0A_A.KCG",
+    "bytes": 5401,
+    "sha256": "fd5f611ee34d71a4e9ef547092b6f6dca54dca6ce75ca332e57f251c51deb5b1",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/PS_BG01.KCG.lz",
+    "archive_name": "PS_BG01.KCG",
+    "bytes": 13853,
+    "sha256": "880709fe12e3fb371098ea0d9b9c3235297546d1e9b1b2e05c00a80849b756f0",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/PV_BG01.KCG.lz",
+    "archive_name": "PV_BG01.KCG",
+    "bytes": 7728,
+    "sha256": "32c9e031bbddc8f3c288cbc94786c31a6777f0979616a4e7f9bbe7f75671a9c6",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/PV_BG11.KCG.lz",
+    "archive_name": "PV_BG11.KCG",
+    "bytes": 1082,
+    "sha256": "08566161929f5cc8dd81f343c5676b92170311bdd840d5fdb679e871a1badbec",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/tilesets/PW_BG01.KCG.lz",
+    "archive_name": "PW_BG01.KCG",
+    "bytes": 5652,
+    "sha256": "b09a7b0181ee2573ce9ca08e8ae27cae5a6d96019e9c41e8552b50220153baee",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/tilesets/PW_BOX.KCG.lz",
+    "archive_name": "PW_BOX.KCG",
+    "bytes": 4967,
+    "sha256": "def273d22f1eceeef0f79ece47dd70a5b113e0757d3a58c810cb07a0d289ac61",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/tilesets/SBA06.TCG.lz",
+    "archive_name": "SBA06.TCG",
+    "bytes": 11844,
+    "sha256": "7b230db7dae0e25fe2bd76a741d4825b059ea225e470b183e692bbc3be28344d",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/SK02.TCG.lz",
+    "archive_name": "SK02.TCG",
+    "bytes": 4615,
+    "sha256": "83a5b3446603440deb21626f8310990c4338d649856c68c6eb804a8680e5dc2f",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/SK03.TCG.lz",
+    "archive_name": "SK03.TCG",
+    "bytes": 4615,
+    "sha256": "83a5b3446603440deb21626f8310990c4338d649856c68c6eb804a8680e5dc2f",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/SM_BG01.KCG.lz",
+    "archive_name": "SM_BG01.KCG",
+    "bytes": 9308,
+    "sha256": "5939a52b67d72e63b0a6b720776a7dd67117951e4e41e89e4a267761212a3936",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/SM_BG12.KCG.lz",
+    "archive_name": "SM_BG12.KCG",
+    "bytes": 4660,
+    "sha256": "a9d96588b6b6cfa764061eb6fe09b33eb14cfbe6c89e02091ea33e8c8d37d561",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/tilesets/SN06.TCG.lz",
+    "archive_name": "SN06.TCG",
+    "bytes": 3876,
+    "sha256": "c13527a056e939c808fd3efd7daccf2e1803824055e6e57454f17596f07a3971",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/tilesets/SN07.TCG.lz",
+    "archive_name": "SN07.TCG",
+    "bytes": 11683,
+    "sha256": "b4cfbfea03aa626679dc12a39c52042da46e73d0137fe40868533d54e2e231fe",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/SP_BG01.KCG.lz",
+    "archive_name": "SP_BG01.KCG",
+    "bytes": 9176,
+    "sha256": "33b485d3a8856290e9250fc94af407dc096292d518f53b47cd90c78edbe6f933",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/SP_BG11.KCG.lz",
+    "archive_name": "SP_BG11.KCG",
+    "bytes": 10601,
+    "sha256": "ce566de6f2864b0dedc28faf8e1b6bad529e07d62b9b59b2d51a71b7a421f25e",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/SP_BG12.KCG.lz",
+    "archive_name": "SP_BG12.KCG",
+    "bytes": 2695,
+    "sha256": "c93e00cd328d1f52d213e7ad2b99b9fd806bd8e7c6542861b61d107babb623c1",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/SP_BG21.KCG.lz",
+    "archive_name": "SP_BG21.KCG",
+    "bytes": 9021,
+    "sha256": "b20a5767012937152a5a1a82877d518adb55eb0d613d13ca1581ca1b56d1a373",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/SP_BG22.KCG.lz",
+    "archive_name": "SP_BG22.KCG",
+    "bytes": 10177,
+    "sha256": "93770669627578be54862a6c1691e92727cc857b49abd26000c0bcfc62e42ffd",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/tilesets/SSN07.TCG.lz",
+    "archive_name": "SSN07.TCG",
+    "bytes": 11683,
+    "sha256": "4866b07deccdea8338c1defeee6322ca2154ecaac8ca5d6e5c5f88716dd29241",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/ST_BG01.KCG.lz",
+    "archive_name": "ST_BG01.KCG",
+    "bytes": 4980,
+    "sha256": "78fb27ebb4e8a27ce2397daad4e2f75f278a0d0c080365523e2b501c3a3c36ae",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/ST_BG02.KCG.lz",
+    "archive_name": "ST_BG02.KCG",
+    "bytes": 4240,
+    "sha256": "cb150c990528d0dfe55accc5242cbe340e0915a2b5ee5ad3d263248e86245748",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/ST_BG03.KCG.lz",
+    "archive_name": "ST_BG03.KCG",
+    "bytes": 4148,
+    "sha256": "56bc2d283a59fe9b8d824816482188a263410e1d4edb4e854a18cf198cdfa7c3",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/ST_BG11.KCG.lz",
+    "archive_name": "ST_BG11.KCG",
+    "bytes": 8678,
+    "sha256": "5b33b32f603840529d48fe9db25643fbb23fbe10d026f9f402e0fa119a60f3d4",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/T_C01.KCG.lz",
+    "archive_name": "T_C01.KCG",
+    "bytes": 2139,
+    "sha256": "9811b5d6bcb7a6b4c101597ef7baa68bb68e693f4879b04aade97e3b088e5e8f",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/T_C02.KCG.lz",
+    "archive_name": "T_C02.KCG",
+    "bytes": 1095,
+    "sha256": "dd03a4e004b076e3d44c047c88abdc0c4279411e16ff12c4d60942e7a8125ebf",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/T_ML_BG.KCG.lz",
+    "archive_name": "T_ML_BG.KCG",
+    "bytes": 11577,
+    "sha256": "411ed84de0ea759bcb656dccb28fe88b03ba3754eb967b3204cb0aa6d887f453",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/T_TTL06.KCG.lz",
+    "archive_name": "T_TTL06.KCG",
+    "bytes": 9285,
+    "sha256": "7c5b831664cca37b9a0dda85c663ae812323ad7d45e5ff236e0f4309e1ba0361",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/WM_BG01.KCG.lz",
+    "archive_name": "WM_BG01.KCG",
+    "bytes": 7760,
+    "sha256": "ff85bf6596f2f7cef20587e36c88d458d1a962c68fc912731fd34f3d2fa1e933",
+    "recompressed_from_png": true
+  },
+  {
+    "path": "graphics/backgrounds/WM_BG02.KCG.lz",
+    "archive_name": "WM_BG02.KCG",
+    "bytes": 4279,
+    "sha256": "e3318fbd51beb1fb818fcb0d5bbc4567fb55a09c7d34e8b7371ef797f51eb9da",
+    "recompressed_from_png": true
+  }
+]

@@ -1,0 +1,6 @@
+// S_SPRIRQ.SPC: ROM F19970
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000061 SPR_NORM.SPC  // LITERAL: SPR_NORM.SPC (usage not inferred)
+@0000AA SPR_DUNG.SPC  // LITERAL: SPR_DUNG.SPC (usage not inferred)

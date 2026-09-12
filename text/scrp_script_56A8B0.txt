@@ -1,0 +1,91 @@
+// Legacy reference view of CH_M09A.SPC; edit text/nfp/CH_M09A.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@0000EC  C0D04 ［街の人］  // EN: [Townsperson]
+@000109  C0F04 もうデッキはくんでいるかい？  // EN: Have you put together a deck yet?
+@000162  C0D04 ［街の人］  // EN: [Townsperson]
+@0001FC  C0D04 ［街の人］  // EN: [Townsperson]
+@0003B6  C0D04 ［街の人］  // EN: [Townsperson]
+@000406 きまっているの  // EN: ...is fixed.
+@00043E  C0D04 ［街の人］  // EN: [Townsperson]
+@00045B  C0F04 デッキをくむとき、じぶんの魔力をこえる  // EN: When building a deck, you can't include...
+@0004DE  C0D04 ［街の人］  // EN: [Townsperson]
+@0004FB  C0F04 ちゅういしてね  // EN: Keep that in mind.
+@000650  C0D04 ［街の人］  // EN: [Townsperson]
+@00066D  C0F04 この辺にたむろしている  // EN: The thieves hanging around here...
+@000696 とうぞくたちにおかしな動きがある  // EN: ...have been acting strangely.
+@0006E0  C0D04 ［街の人］  // EN: [Townsperson]
+@0006FD  C0F04 かねめのものをもっているなら  // EN: If you're carrying anything valuable...
+@00072C きをつけるんだな  // EN: ...you'd better be careful.
+@0007B1 F01B04  // LITERAL: F01B04 (usage not inferred)
+@000872  C0D04 ［ギンタ］  // EN: [Ginta]
+@00088F  C0F04 と、とうぞく？？  // EN: Th-thieves??
+@0008E6 F03A01  // LITERAL: F03A01 (usage not inferred)
+@0009A7  C0D04 ［ジャック］  // EN: [Jack]
+@0009C6  C0F04 この街でとうぞくがあばれた  // EN: I haven't heard much about thieves...
+@0009F3 なんて話は、あまりきかないっスけど…  // EN: ...causing trouble in this town, though...
+@000AED SHOPPA03.SPC  // LITERAL: SHOPPA03.SPC (usage not inferred)
+@000C32  C0D04 ［店主］  // EN: [Shopkeeper]
+@000C4D  C0F04 あら！ジャックちゃん！  // EN: Oh! Jack!
+@000C76 いらっしゃい！  // EN: Welcome!
+@000CB8 F03A06  // LITERAL: F03A06 (usage not inferred)
+@000D79  C0D04 ［ジャック］  // EN: [Jack]
+@000D98  C0F04 こんちわっス！  // EN: Hi there!
+@000DE3  C0D04 ［店主］  // EN: [Shopkeeper]
+@000DFE  C0F04 お母さんは元気？  // EN: How's your mother?
+@000E4B  C0D04 ［ジャック］  // EN: [Jack]
+@000E6A  C0F04 おかげで元気すぎる  // EN: Thanks to you, she's almost...
+@000E8F くらいっスよ！！  // EN: ...too full of energy!!
+@00101A  C0D04 ［店主］  // EN: [Shopkeeper]
+@001035  C0F04 ここはパヅタウンのいちばよ  // EN: This is Pazu Town's market.
+@001196  C0D04 ［店主］  // EN: [Shopkeeper]
+@0011DE 使う人によって、向き不向きがあるよ  // EN: ...suit some users better than others.
+@00122A  C0D04 ［店主］  // EN: [Shopkeeper]
+@001245  C0F04 買うときは、使えるかどうか  // EN: When buying one, make sure...
+@001272 ちゃんとかくにんしておくんだね  // EN: ...you check whether you can use it.
+@001424  C0F04 いらっしゃい♪  // EN: Welcome! ♪
+@001479 F01B01  // LITERAL: F01B01 (usage not inferred)
+@00153A  C0D04 ［ギンタ］  // EN: [Ginta]
+@0015EE ちょっとねだんがはるけれど  // EN: Though they're a little expensive.
+@001651  C0F04 どんなのがいいの？  // EN: What kind would you like?
+@0016A0  C0D04 ［ギンタ］  // EN: [Ginta]
+@0016BD  C0F04 オレが見たやつは…  // EN: The one I saw...
+@00170C  C0D04 ［ギンタ］  // EN: [Ginta]
+@001729  C0F04 目が十字で  // EN: ...had cross-shaped eyes...
+@001746 舌を出してる形してた！  // EN: ...and its tongue was sticking out!
+@0017A5  C0F04 それ…  // EN: That's...
+@001807  C0904 『門ばんピエロ』 C0F04 ！？  // EN: The Gatekeeper Clown!?
+@001869 F03A01  // LITERAL: F03A01 (usage not inferred)
+@00192A  C0D04 ［ジャック］  // EN: [Jack]
+@001949  C0F04 …！？？  // EN: ...!??
+@0019AD  C0F04 ディメンションの中では  // EN: Among Dimension ÄRM...
+@001A37  C0F04 だれも見たことないだろうし  // EN: Most people have probably never seen one...
+@001A64 どういう能力があるかもわからない  // EN: ...and don't even know what it can do.
+@001ACD  C0F04 どっかのえらい王さまとか、魔女（まじょ）  // EN: Only some powerful king or witch...
+@001B08 とかじゃないともってないわね  // EN: ...would own something like that.
+@001B88 F01B03  // LITERAL: F01B03 (usage not inferred)
+@001BE6  C0D04 ［ギンタ］  // EN: [Ginta]
+@001C03  C0F04 さがすの…  // EN: Finding it...
+@001C20 たいへんそうだな！  // EN: ...sounds tough!
+@001C5C  C0D04 ［ジャック］  // EN: [Jack]
+@001C7B  C0F04 なんか…  // EN: Somehow...
+@001C96 ちょっとうれしそうっスよ？？  // EN: ...you sound kind of happy about it??
+@001CDC  C0D04 ［ギンタ］  // EN: [Ginta]
+@001CF9  C0F04 だって…まだまだこのせかいを  // EN: Well... it means I can keep...
+@001D28 ぼうけんできるんだぜ！  // EN: ...exploring this world!
+@001DA2 F01B09  // LITERAL: F01B09 (usage not inferred)
+@001E00  C0D04 ［ギンタ］  // EN: [Ginta]
+@001E1D  C0F04 ジャックとも  // EN: And Jack...
+@001E3C いっしょにいられるしな  // EN: ...you'll still be with me too.
+@001EB6 F03A06  // LITERAL: F03A06 (usage not inferred)
+@001F14  C0D04 ［ジャック］  // EN: [Jack]
+@001F33  C0F04 …！  // EN: ...!
+@001FF3  C0F04 『門ばんピエロ』はさすがに  // EN: Of course I don't have the Gatekeeper Clown...
+@002020 ないけれど…  // EN: ...in stock, but...
+@00209C おいてあるわよ  // EN: ...in stock.
+@0020F3  C0F04 見ていかない？  // EN: Would you like to take a look?
+@00218A SHOPPA01.SPC  // LITERAL: SHOPPA01.SPC (usage not inferred)
+@0021B9 SHOPPA02.SPC  // LITERAL: SHOPPA02.SPC (usage not inferred)
+@0021E8 SHOPPA04.SPC  // LITERAL: SHOPPA04.SPC (usage not inferred)
+@002217 SHOPPA05.SPC  // LITERAL: SHOPPA05.SPC (usage not inferred)

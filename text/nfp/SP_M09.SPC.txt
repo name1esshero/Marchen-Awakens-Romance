@@ -1,0 +1,6 @@
+// SP_M09.SPC: ROM DC2C80
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00006B DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
+@0000EE DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)

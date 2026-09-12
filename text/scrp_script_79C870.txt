@@ -1,0 +1,86 @@
+// Legacy reference view of EV_EDO01.SPC; edit text/nfp/EV_EDO01.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@0001EB F02A01  // LITERAL: F02A01 (usage not inferred)
+@0002EB  C0D04 ［バッボ］  // EN: [Babbo]
+@000308  C0F04 …む！？  // EN: ...Hm?!
+@000696 A  // LITERAL: A (usage not inferred)
+@000785 A  // LITERAL: A (usage not inferred)
+@000C56 F05A05  // LITERAL: F05A05 (usage not inferred)
+@000D66 F01B03  // LITERAL: F01B03 (usage not inferred)
+@000E66  C0D04 ［ギンタ］  // EN: [Ginta]
+@000E83  C0F04 犬だーー！！  // EN: It's a dog!!
+@000F12 F03A01  // LITERAL: F03A01 (usage not inferred)
+@000FEB  C0D04 ［ジャック］  // EN: [Jack]
+@00100A  C0F04 息はしてるみたいっス…  // EN: Looks like he's breathing...
+@0010A3 F02A06  // LITERAL: F02A06 (usage not inferred)
+@001107  C0D04 ［バッボ］  // EN: [Babbo]
+@001124  C0F04 こいつブサイクじゃのう！  // EN: What an ugly fellow!
+@00114F わははははは！  // EN: Wahahahaha!
+@001197 F03A08  // LITERAL: F03A08 (usage not inferred)
+@0011C5  C0D04 ［ジャック］  // EN: [Jack]
+@0011E4  C0F04 （バッボもいえたかおじゃ  // EN: (Babbo's hardly one...
+@00120F 　ないっスけどねぇ…）  // EN: ...to talk about looks, though...)
+@00148C F05A04  // LITERAL: F05A04 (usage not inferred)
+@001565  C0D04 ［？？？］  // EN: [???]
+@001582  C0F04 …おう！？  // EN: ...Oh?!
+@0015D9 F02A03  // LITERAL: F02A03 (usage not inferred)
+@0016B2  C0D04 ［バッボ］  // EN: [Babbo]
+@0016CF  C0F04 おわ！　あやしい犬め！  // EN: Whoa! You suspicious dog!
+@0016F8 名をなのれ！！  // EN: State your name!!
+@001776 F05A02  // LITERAL: F05A02 (usage not inferred)
+@0017DA  C0D04 ［エド］  // EN: [Ed]
+@0017F5  C0F04 わたしですかな？  // EN: Do you mean me?
+@001818 名はエドワード！  // EN: My name is Edward!
+@001852  C0D04 ［エド］  // EN: [Ed]
+@00186D  C0F04 あなたたちこそ  // EN: And what are you all...
+@00188E こんなところで…ぅはっ！  // EN: ...doing out here... Hah!
+@0018D0  C0D04 ［エド］  // EN: [Ed]
+@0018EB  C0F04 今ので２回ねたことに…  // EN: That makes two naps now...
+@001914 あと１回ねなくては！！  // EN: I must sleep once more!!
+@00199A F01B11  // LITERAL: F01B11 (usage not inferred)
+@0019FE  C0D04 ［ギンタ］  // EN: [Ginta]
+@001A1B  C0F04 …？？  // EN: ...??
+@001A34 ねる？？？  // EN: Sleep???
+@001C48 F05A03  // LITERAL: F05A03 (usage not inferred)
+@001D48  C0D04 ［エド］  // EN: [Ed]
+@001D63  C0F04 …ぐーーーー！！  // EN: ...Zzzzz!!
+@001DC0 F03A08  // LITERAL: F03A08 (usage not inferred)
+@001EC0  C0D04 ［ジャック］  // EN: [Jack]
+@001EDF  C0F04 …  // EN: ...
+@001F2E F01B04  // LITERAL: F01B04 (usage not inferred)
+@00202E  C0D04 ［ギンタ］  // EN: [Ginta]
+@00204B  C0F04 …  // EN: ...
+@0022E8 F05A04  // LITERAL: F05A04 (usage not inferred)
+@0023C1  C0D04 ［エド］  // EN: [Ed]
+@0023DC  C0F04 ぅはっ！！  // EN: Hah!!
+@0023F9 ね、ねむれん！！  // EN: I-I can't sleep!!
+@002443 F05A03  // LITERAL: F05A03 (usage not inferred)
+@002471  C0D04 ［エド］  // EN: [Ed]
+@00248C  C0F04 こうしてるあいだにも…  // EN: Even as we speak...
+@0024DF  C0D04 ［エド］  // EN: [Ed]
+@0024FA  C0F04 わがひめぎみの命が  // EN: ...my princess's life...
+@00251F きけんにさらされているというのに！  // EN: ...is in danger!
+@00257B F03A01  // LITERAL: F03A01 (usage not inferred)
+@00262E F01B04  // LITERAL: F01B04 (usage not inferred)
+@00273D  C0D04 ［ジャック］  // EN: [Jack]
+@00275C  C0F04 ひめ？？  // EN: Princess??
+@0027B1 F05A01  // LITERAL: F05A01 (usage not inferred)
+@0027DF  C0D04 ［エド］  // EN: [Ed]
+@0027FA  C0F04 …  // EN: ...
+@00280F …むむ！？  // EN: ...Hmm?!
+@002843  C0D04 ［エド］  // EN: [Ed]
+@0028B9  C0D04 ［エド］  // EN: [Ed]
+@0028D4  C0F04 ならば、このメルヘヴンを  // EN: Then, for the sake...
+@0028FF すくうと思って  // EN: ...of saving MÄR Heaven...
+@002937  C0D04 ［エド］  // EN: [Ed]
+@002952  C0F04 このエドワード…  // EN: ...would you accompany Edward...
+@002975 エドにごどうこうねがえませぬか！？  // EN: ...or Ed, as you may call me?!
+@0029D1 F01B01  // LITERAL: F01B01 (usage not inferred)
+@0029FF  C0D04 ［ギンタ］  // EN: [Ginta]
+@002A1C  C0F04 なんだかわからないけど…  // EN: I don't really understand...
+@002A47 とにかくいってみるよ！  // EN: ...but I'll come along!
+@002A87  C0D04 ［エド］  // EN: [Ed]
+@002AA2  C0F04 かたじけない！！  // EN: You have my gratitude!!
+@002E51 EV_ICE01.SPC  // LITERAL: EV_ICE01.SPC (usage not inferred)

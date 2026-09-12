@@ -1,0 +1,5 @@
+// HI_M07_2.SPC: ROM 80F210
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000017 EV_GO09.SPC  // LITERAL: EV_GO09.SPC (usage not inferred)

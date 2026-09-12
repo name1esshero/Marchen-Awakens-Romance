@@ -1,0 +1,13 @@
+// MAP04_A.SPC: ROM 93A6E0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00004B MAP04_A  // LITERAL: MAP04_A (usage not inferred)
+@000130 TAKARA  // LITERAL: TAKARA (usage not inferred)
+@0002F8 TAKARA  // LITERAL: TAKARA (usage not inferred)
+@0004C0 TAKARA  // LITERAL: TAKARA (usage not inferred)
+@000688 TAKARA  // LITERAL: TAKARA (usage not inferred)
+@000850 TAKARA  // LITERAL: TAKARA (usage not inferred)
+@000A3D MAP00_O  // LITERAL: MAP00_O (usage not inferred)
+@000BA3 MAP00_O  // LITERAL: MAP00_O (usage not inferred)
+@000D09 MAP00_O  // LITERAL: MAP00_O (usage not inferred)

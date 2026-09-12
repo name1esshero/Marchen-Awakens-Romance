@@ -1,0 +1,5 @@
+// Legacy reference view of EV_MON03.SPC; edit text/nfp/EV_MON03.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@0000CA MAP05_A  // LITERAL: MAP05_A (usage not inferred)

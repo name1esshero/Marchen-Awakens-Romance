@@ -1,0 +1,56 @@
+// G_EV060.SPC: ROM 809980
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@0000E0 A  // LITERAL: A (usage not inferred)
+@00016C A  // LITERAL: A (usage not inferred)
+@0001F8 A  // LITERAL: A (usage not inferred)
+@000290 MAP06_2A.SPC  // LITERAL: MAP06_2A.SPC (usage not inferred)
+@00062B F08A05  // LITERAL: F08A05 (usage not inferred)
+@00072C F08A05  // LITERAL: F08A05 (usage not inferred)
+@00087A  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000897  C0F04 おまえら、もっとキビキビと  // TODO: English translation
+@0008C4 さがさんかい！  // TODO: English translation
+@00094A  C0D04 ［手下１］  // EN: [Henchman 1]
+@000967  C0F04 ボスのせつめいじゃ  // TODO: English translation
+@00098C ぜんぜんわかりませんよ〜〜  // TODO: English translation
+@000A16 F08A06  // LITERAL: F08A06 (usage not inferred)
+@000A7A  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000A97  C0F04 なにを！　あんなに  // TODO: English translation
+@000ABC くわしくせつめいしてやったのに！  // TODO: English translation
+@000B06  C0D04 ［手下１］  // EN: [Henchman 1]
+@000B23  C0F04 そんなこと言ったって…  // TODO: English translation
+@000B76  C0D04 ［手下２］  // EN: [Henchman 2]
+@000B93  C0F04 ぐたい的に、どんな形なんです？  // TODO: English translation
+@000BC4 絵にでもかいてもらえませんか  // EN: Could you draw a picture of it for me?
+@000C1A F08A02  // LITERAL: F08A02 (usage not inferred)
+@000C48  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000C65  C0F04 よっしゃ！  // EN: All right!
+@000C82 絵にでもかいてもらえませんか  // EN: Could you draw a picture of it for me?
+@000CD8 F08A01  // LITERAL: F08A01 (usage not inferred)
+@000D06  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000D23  C0F04 …  // TODO: English translation
+@000D99 F08A01  // LITERAL: F08A01 (usage not inferred)
+@000DC7  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000DE4  C0F04 こう、こうで…  // TODO: English translation
+@000EAB F08A05  // LITERAL: F08A05 (usage not inferred)
+@000F45  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000F62  C0F04 こうや！！  // TODO: English translation
+@0014B8 F08A01  // LITERAL: F08A01 (usage not inferred)
+@001591  C0D04 ［手下１］  // EN: [Henchman 1]
+@0015AE  C0F04 …  // TODO: English translation
+@00160E  C0D04 ［手下２］  // EN: [Henchman 2]
+@00162B  C0F04 …  // TODO: English translation
+@00169B F08A01  // LITERAL: F08A01 (usage not inferred)
+@0016C9  C0D04 ［ナナシ］  // EN: [Nanashi]
+@0016E6  C0F04 …  // TODO: English translation
+@001756 F08A06  // LITERAL: F08A06 (usage not inferred)
+@001784  C0D04 ［ナナシ］  // EN: [Nanashi]
+@0017A1  C0F04 …はよ、さがしてぇな  // TODO: English translation
+@001802 F08A06  // LITERAL: F08A06 (usage not inferred)
+@001830  C0D04 ［ナナシ］  // EN: [Nanashi]
+@00184D  C0F04 たのむから、な？な？  // TODO: English translation
+@00189E  C0D04 ［手下１］  // EN: [Henchman 1]
+@0018BB  C0F04 …  // TODO: English translation
+@0018FA  C0D04 ［手下２］  // EN: [Henchman 2]
+@001917  C0F04 …  // TODO: English translation

@@ -1,0 +1,11 @@
+{
+  "profile": "08011790 dialogue, 21 glyphs x 3 rows",
+  "limitation": "Not proof that every record uses this printer.",
+  "runtime_integrated": true,
+  "runtime_scope": "Optional DialogueStart bridge with A-button pagination; unmapped messages retain Japanese; emulator validation pending.",
+  "counts": {
+    "fits_profile": 3998,
+    "needs_pagination": 1
+  },
+  "failures": []
+}

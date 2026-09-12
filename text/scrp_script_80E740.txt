@@ -1,0 +1,9 @@
+// Legacy reference view of HI_M04.SPC; edit text/nfp/HI_M04.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000017 EV_ICE02.SPC  // LITERAL: EV_ICE02.SPC (usage not inferred)
+@000125 F05A04  // LITERAL: F05A04 (usage not inferred)
+@0001E6  C0D04 ［エド］  // EN: [Ed]
+@000201  C0F04 かいだんはこっちじゃありませんぞ！  // TODO: English translation
+@000236 いそがないと…  // EN: I'd better hurry...

@@ -1,0 +1,6 @@
+// S_BTLIRQ.SPC: ROM F12390
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00003B BTI_N.SPC  // LITERAL: BTI_N.SPC (usage not inferred)
+@000081 BTI_DUNG.SPC  // LITERAL: BTI_DUNG.SPC (usage not inferred)

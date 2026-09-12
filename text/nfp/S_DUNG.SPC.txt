@@ -1,0 +1,5 @@
+// S_DUNG.SPC: ROM F12C30
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00001D DUNG_DEF.SPC  // LITERAL: DUNG_DEF.SPC (usage not inferred)

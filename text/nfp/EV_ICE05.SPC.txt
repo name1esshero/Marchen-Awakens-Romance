@@ -1,0 +1,13 @@
+// EV_ICE05.SPC: ROM 7A6870
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000137 F09A01  // LITERAL: F09A01 (usage not inferred)
+@000237  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0002A3  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0002C2  C0F04 わたしが手助けするなんて  // EN: It's not often
+@0002ED めったにないんだよ、ギンタ  // EN: I lend someone a hand, Ginta.
+@000331  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00043A EV_ICE07.SPC  // LITERAL: EV_ICE07.SPC (usage not inferred)
+@000256  C0F04 こんなもんかな<F0><40>  // EN: That should do it. ♥
+@000350  C0F04 あとはがんばってね<F0><40>  // EN: You're on your own from here. Good luck! ♥

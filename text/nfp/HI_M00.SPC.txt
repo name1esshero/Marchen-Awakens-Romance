@@ -1,0 +1,30 @@
+// HI_M00.SPC: ROM 80DBB0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00024D F01A01  // LITERAL: F01A01 (usage not inferred)
+@00030E  C0D04 ［ギンタ］  // EN: [Ginta]
+@00032B  C0F04 こんなくだもの、見たことない…！！  // TODO: English translation
+@00038A  C0D04 ［ギンタ］  // EN: [Ginta]
+@0003A7  C0F04 …たべられるのかな…  // TODO: English translation
+@0003F8  C0D04 ［ギンタ］  // EN: [Ginta]
+@000415  C0F04 ……  // TODO: English translation
+@00042C いちおう、１コもらっとこ！  // TODO: English translation
+@0004DD  C0D04 サックリの実 C0F04 を  // TODO: English translation
+@000505 手に入れた！  // EN: Obtained it!
+@000908 F01A01  // LITERAL: F01A01 (usage not inferred)
+@0009C9  C0D04 ［ギンタ］  // EN: [Ginta]
+@0009E6  C0F04 赤い岩！！  // TODO: English translation
+@000A2D  C0D04 ［ギンタ］  // EN: [Ginta]
+@000A4A  C0F04 うわーー！  // TODO: English translation
+@000A67 カメラもってくればよかったあーー！  // TODO: English translation
+@000AB3  C0D04 ［ギンタ］  // EN: [Ginta]
+@000AD0  C0F04 ……  // TODO: English translation
+@000AE7 あ、あれ？  // TODO: English translation
+@000B1B  C0D04 ［ギンタ］  // EN: [Ginta]
+@000B38  C0F04 そういえばオレ  // TODO: English translation
+@000B59 メガネかけてないのによく見えるぞ？？  // TODO: English translation
+@000E20 F01A01  // LITERAL: F01A01 (usage not inferred)
+@000EE1  C0D04 ［ギンタ］  // EN: [Ginta]
+@000EFE  C0F04 ここだな…  // TODO: English translation
+@000F1B 水をくんで…と…  // TODO: English translation

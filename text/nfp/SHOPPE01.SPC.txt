@@ -1,0 +1,10 @@
+// SHOPPE01.SPC: ROM DA1CB0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000295  C0F04 もう用はないかい？  // TODO: English translation
+@000409  C0F04 何を売るんだい？  // TODO: English translation
+@0001DC  C0D04 ［<F0><56>ＲＭ屋］  // EN: [ÄRM merchant]
+@0001FB  C0F04 <F0><56>ＲＭをみていかんか？  // TODO: English translation
+@000276  C0D04 ［<F0><56>ＲＭ屋］  // EN: [ÄRM merchant]
+@0003EA  C0D04 ［<F0><56>ＲＭ屋］  // EN: [ÄRM merchant]

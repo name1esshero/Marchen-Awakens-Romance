@@ -1,0 +1,6 @@
+// SP_M24.SPC: ROM DC3060
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@0000EC  C0D04   // FORMAT: Blank text / color controls only; no translatable characters.
+@0000FF  C0F04 　　　　　　閉まっている  // TODO: English translation

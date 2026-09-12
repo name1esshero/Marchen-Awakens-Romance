@@ -1,0 +1,60 @@
+// MAR strings block 8C0000
+// One record per line: @<rom offset> <text>
+// <XX> is a raw control byte. Text is re-encoded to Shift-JIS at build time;
+// a line may not grow past its original byte length.
+// Anything after // is a comment and never reaches the ROM.
+
+@8C0370 {<01>|!}<01>~<01>
+@8C0472 Z [ \ ] ^
+@8C0582 d e f g h
+@8C0A6F  <14> <15>
+@8C0A83  <0F> <10>
+@8C0A8D  <14> <15>
+@8C0CB0 "<04>!<04>$
+@8C0DC0 "<04><1A><04>' 
+@8C0ED0 "<04>!<04>)
+@8C0FE0 "<04>&<04>-
+@8C1647  <0E> <0F> <10>
+@8C1653  <14> <16>
+@8C165B  <0F> <10>
+@8C1665  <14> <10>
+@8C166F  <0F> <10>
+@8C1679  <14> <10>
+@8C1683  <0F> <10>
+@8C168D  <14> <10>
+@8C1697  <0F> <10>
+@8C16A1  <14> <15>
+@8C63E6 X<02>Y<02>
+@8C64F6 Y<02>Y<02>
+@8C791C X<02>Y<02>
+@8C7A2C Y<02>Y<02>
+@8CD53C MAP04_A.KCG
+@8CD57C MAP04_A.KCL
+@8CD9A6 "<04>8<04>:<01>;<01><3C><01>=<01><3E><01>^
+@8CD9BA a 8<04>Y
+@8CD9C0 Z [ \ ] ^
+@8CD9CE a 8<04>Y
+@8CD9D4 Z [ \ ] ^
+@8CD9E2 a 8<04>?<01>"
+@8CDA0E "<04>@<01>A<01>B<01>C<01>D<01>E<01>h
+@8CDA28 d e f g h
+@8CDA3C d e f g h
+@8CDA76 "<04>F!G<01>H<01>I<01>J<01>K<01>L<01>u v w x o p q r s
+@8CDA98 t u v w x o p q r s
+@8CDAAC t u v w x <1A>
+@8CE4A5  <13> <13> <14> <14> <14> <15>
+@8CE4CF  <0F> <10>
+@8CE4D7  <14> <15>
+@8CE6B8 "<04>&<04>-
+@8CEF18 "<04>8<04>:<01>;<01><3C><01>=<01><3E><01>^
+@8CEF2C a 8<04>?<01>"
+@8CEF80 "<04>@<01>A<01>B<01>C<01>D<01>E<01>h
+@8CEFE8 "<04>F!G<01>H<01>I<01>J<01>K<01>L<01>u v w x <1A>
+@8CF682 Z [ \ ] ^
+@8CF6EA d e f g h
+@8CFE27  <0F> <10>
+@8CFE31  <14> <15>
+@8CFE3B  <0F> <10>
+@8CFE45  <14> <15>
+@8CFE53  <14> <10>
+@8CFE5D  <14> <15>

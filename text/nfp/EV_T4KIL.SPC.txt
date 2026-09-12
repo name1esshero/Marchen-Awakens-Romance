@@ -1,0 +1,83 @@
+// EV_T4KIL.SPC: ROM 7B7680
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@0004A3 MAP26_6A  // LITERAL: MAP26_6A (usage not inferred)
+@0005C2 B  // LITERAL: B (usage not inferred)
+@0006B1 A  // LITERAL: A (usage not inferred)
+@000785 A  // LITERAL: A (usage not inferred)
+@000859 A  // LITERAL: A (usage not inferred)
+@00092D A  // LITERAL: A (usage not inferred)
+@000A01 A  // LITERAL: A (usage not inferred)
+@000AD5 A  // LITERAL: A (usage not inferred)
+@000BA9 A  // LITERAL: A (usage not inferred)
+@000F04 F08A06  // LITERAL: F08A06 (usage not inferred)
+@001004  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001021  C0F04 やったで！！  // EN: We did it!!
+@00107A F04A04  // LITERAL: F04A04 (usage not inferred)
+@00117A  C0D04 ［スノウ］  // EN: [Snow]
+@001197  C0F04 ギンタ！！  // EN: Ginta!!
+@001224 F01B01  // LITERAL: F01B01 (usage not inferred)
+@001324  C0D04 ［ギンタ］  // EN: [Ginta]
+@001341  C0F04 ふう…！！  // EN: Phew...!!
+@001425 F38A05  // LITERAL: F38A05 (usage not inferred)
+@001525  C0D04 ［マール］  // EN: [Marl]
+@001542  C0F04 あわわ…ボクの…ボクのタロスが！！  // EN: Aah... My... My Talos!!
+@0015B1 F07A01  // LITERAL: F07A01 (usage not inferred)
+@0016B1  C0D04 ［アルヴィス］  // EN: [Alviss]
+@0016D2  C0F04 なにが『ボクの』だよ  // EN: What do you mean, 'my'?!
+@0016F9 いにしえの知恵を悪用しやがって…  // EN: You abused ancient wisdom...
+@001753 F02A04  // LITERAL: F02A04 (usage not inferred)
+@001889  C0D04 ［バッボ］  // EN: [Babbo]
+@0018A6  C0F04 ニ度とわるさできぬよう  // EN: I'll make sure...
+@0018CF こらしめてくれる！！  // EN: ...you never do evil again!!
+@001953 F38A05  // LITERAL: F38A05 (usage not inferred)
+@001B67  C0D04 ［マール］  // EN: [Marl]
+@001B84  C0F04 あわわわわ！  // EN: A-a-aah!
+@001C30 F06A01  // LITERAL: F06A01 (usage not inferred)
+@001D30  C0D04 ［エド］  // EN: [Ed]
+@001D4B  C0F04 まぁ…まてよ  // EN: Hold on... a moment.
+@001E00  C0D04 ［エド］  // EN: [Ed]
+@001E1B  C0F04 おい、そこのちびメガネ  // EN: Hey, little four-eyes.
+@001E7E F38A05  // LITERAL: F38A05 (usage not inferred)
+@001EAC  C0D04 ［マール］  // EN: [Marl]
+@001EC9  C0F04 ファントムに…ファントムに  // EN: I wanted to tell Phantom...
+@001EF6 『タロス』を手に入れたって  // EN: ...that I'd obtained Talos.
+@001F3A  C0D04 ［マール］  // EN: [Marl]
+@001F57  C0F04 いいたかったのに…  // EN: That's all I wanted...
+@002022 F38A02  // LITERAL: F38A02 (usage not inferred)
+@0020BC  C0D04 ［マール］  // EN: [Marl]
+@0020D9  C0F04 ギンタなんかじゃなくて  // EN: I wanted him to praise me...
+@002102 ボクをほめてほしかったのに！！  // EN: ...instead of Ginta!!
+@002190 F38A05  // LITERAL: F38A05 (usage not inferred)
+@0021F4  C0D04 ［マール］  // EN: [Marl]
+@002211  C0F04 うわぁぁぁ…  // EN: Waaaaah...
+@0022BD F09A05  // LITERAL: F09A05 (usage not inferred)
+@0023BD  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0023DC  C0F04 あららら…  // EN: Oh, dear...
+@0023F9 オコチャマなやつー…  // EN: What a little kid...
+@00247D F06A04  // LITERAL: F06A04 (usage not inferred)
+@0024E1  C0D04 ［エド］  // EN: [Ed]
+@0024FC  C0F04 いけよ  // EN: Go on. Get out of here.
+@002585 F38A05  // LITERAL: F38A05 (usage not inferred)
+@0025E9  C0D04 ［マール］  // EN: [Marl]
+@002606  C0F04 ひっく…ひっく…  // EN: Sniff... sniff...
+@0026CF F06A02  // LITERAL: F06A02 (usage not inferred)
+@0026FD  C0D04 ［エド］  // EN: [Ed]
+@002775  C0D04 ［エド］  // EN: [Ed]
+@002790  C0F04 てめぇみたいなガキには  // EN: That toy is too much...
+@0027B9 すぎたオモチャだ  // EN: ...for a brat like you.
+@0027F3  C0D04 ［マール］  // EN: [Marl]
+@002810  C0F04 …  // EN: ...
+@002DDE F06A01  // LITERAL: F06A01 (usage not inferred)
+@002EDE  C0D04 ［エド］  // EN: [Ed]
+@002EF9  C0F04 さて…と  // EN: Well then...
+@003027  C0D04 ［エド］  // EN: [Ed]
+@003042  C0F04 オレたちもかえるとするか！！  // EN: Let's head back too!!
+@0030AB F08A02  // LITERAL: F08A02 (usage not inferred)
+@0031AB  C0D04 ［ナナシ］  // EN: [Nanashi]
+@0031C8  C0F04 よっしゃ！  // EN: All right!
+@00320F  C0D04 ［ナナシ］  // EN: [Nanashi]
+@00322C  C0F04 ここの人間を…ヴェストリ地上へ！！  // EN: Let's take everyone here... up to Vestri's surface!!
+@003769 END2.SPC  // LITERAL: END2.SPC (usage not inferred)
+@002718  C0F04 おっと、その<F0><56>ＲＭはおいていけよ  // EN: Oh, leave that ÄRM here.

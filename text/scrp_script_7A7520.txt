@@ -1,0 +1,11 @@
+// Legacy reference view of EV_ICE08.SPC; edit text/nfp/EV_ICE08.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000172 F01B02  // LITERAL: F01B02 (usage not inferred)
+@00024B  C0D04 ［ギンタ］  // EN: [Ginta]
+@000268  C0F04 この階だな？  // EN: This is the floor, right?
+@0002C1 F03A03  // LITERAL: F03A03 (usage not inferred)
+@00039A  C0D04 ［ジャック］  // EN: [Jack]
+@0003B9  C0F04 もう追っ手が来てるかもしれないっス！  // EN: Our pursuers might already be here!
+@0003F0 き、気をつけて行くっス！  // EN: L-let's be careful!

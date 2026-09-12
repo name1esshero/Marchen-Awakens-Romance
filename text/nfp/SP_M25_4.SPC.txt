@@ -1,0 +1,35 @@
+// SP_M25_4.SPC: ROM DC4870
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000196 F04A02  // LITERAL: F04A02 (usage not inferred)
+@00026F  C0D04 ［スノウ］  // EN: [Snow]
+@00028C  C0F04 …つよい魔力（まりょく）をかんじる…  // TODO: English translation
+@0002FD F09A01  // LITERAL: F09A01 (usage not inferred)
+@0003D6  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0003F5  C0F04 あらま、ホントだわ  // TODO: English translation
+@000454 F01B11  // LITERAL: F01B11 (usage not inferred)
+@000599  C0D04 ［ギンタ］  // EN: [Ginta]
+@0005B6  C0F04 それって…  // TODO: English translation
+@0005D3 どういうこと…？  // TODO: English translation
+@000653 F04A06  // LITERAL: F04A06 (usage not inferred)
+@0006B7  C0D04 ［スノウ］  // EN: [Snow]
+@0006D4  C0F04 うん…私でもちょっと  // TODO: English translation
+@0006FB とおれない…かな  // TODO: English translation
+@00077B F09A02  // LITERAL: F09A02 (usage not inferred)
+@0007DF  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0007FE  C0F04 どこかにこの氷を  // TODO: English translation
+@000821 封印しているばしょがあると思う  // TODO: English translation
+@00091B F09A01  // LITERAL: F09A01 (usage not inferred)
+@0009B5  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0009D4  C0F04 それをさがしましょう  // TODO: English translation
+@0009FB きっとこのフロアにあるわ  // TODO: English translation
+@000ADB OBJ_D.SPC  // LITERAL: OBJ_D.SPC (usage not inferred)
+@000B6B L25_4_0.SPC  // LITERAL: L25_4_0.SPC (usage not inferred)
+@000BB5 OBJ_D.SPC  // LITERAL: OBJ_D.SPC (usage not inferred)
+@000C45 L25_4_0.SPC  // LITERAL: L25_4_0.SPC (usage not inferred)
+@000C8F OBJ_D.SPC  // LITERAL: OBJ_D.SPC (usage not inferred)
+@000D1F L25_4_0.SPC  // LITERAL: L25_4_0.SPC (usage not inferred)
+@000DA1 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
+@000E24 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
+@000E6F OBJ_S.SPC  // LITERAL: OBJ_S.SPC (usage not inferred)

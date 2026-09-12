@@ -1,0 +1,72 @@
+// EV_VE02.SPC: ROM 7B9C80
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000073 MAP11_1A.SPC  // LITERAL: MAP11_1A.SPC (usage not inferred)
+@0003AC  C0D04 ［村の人］  // EN: [Villager]
+@0003C9  C0F04 ああ、そこの外れにある  // EN: Yes, they went into...
+@0003F2  C0904 ちていこ C0F04 に入っていった  // EN: ...the lake outside town.
+@000440  C0D04 ［村の人］  // EN: [Villager]
+@000482 手に入れるといってな…  // EN: ...the hidden ÄRM there.
+@0005F3 A  // LITERAL: A (usage not inferred)
+@00067F A  // LITERAL: A (usage not inferred)
+@00070B A  // LITERAL: A (usage not inferred)
+@000797 A  // LITERAL: A (usage not inferred)
+@000823 A  // LITERAL: A (usage not inferred)
+@00089F MAP11_A.SPC  // LITERAL: MAP11_A.SPC (usage not inferred)
+@000A1B F08A01  // LITERAL: F08A01 (usage not inferred)
+@000AF4  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000B11  C0F04 …行くか、ギンタ！！  // EN: ...Shall we go, Ginta?!
+@000B72 F01B01  // LITERAL: F01B01 (usage not inferred)
+@000C4B  C0D04 ［ギンタ］  // EN: [Ginta]
+@000C68  C0F04 当然！！  // EN: Of course!!
+@000D29 F09A01  // LITERAL: F09A01 (usage not inferred)
+@000E02  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000E21  C0F04 ＯＫ！  // EN: OK!
+@000E3A わたしもつきあうよん♪  // EN: I'll come along too! ♪
+@000F1C  C0D04 ［村の人］  // EN: [Villager]
+@000F39  C0F04 あの二人とたたかうつもりか！？  // EN: You'll fight those two?!
+@000F6A やめておいたほうがいい！！  // EN: You'd better not!!
+@000FAE  C0D04 ［村の人］  // EN: [Villager]
+@000FCB  C0F04 それに、あの C0904 ちていこ C0F04 には  // EN: Besides, that lake...
+@00102E  C0D04 ［村の人］  // EN: [Villager]
+@00104B  C0F04 『ぼうれいがわざわいをまねく』  // EN: 'A ghost brings disaster.'
+@00107C という言い伝えもあるのだ！！  // EN: That's what the legend says!!
+@0010D2 F01B01  // LITERAL: F01B01 (usage not inferred)
+@0011D2  C0D04 ［ギンタ］  // EN: [Ginta]
+@0011EF  C0F04 どっちもこわくねぇ！  // EN: Neither scares me!
+@001240  C0D04 ［村の人］  // EN: [Villager]
+@00125D  C0F04 とめてもムダなようだな…  // EN: I can't stop you, can I...
+@0012B2  C0D04 ［村の人］  // EN: [Villager]
+@0012CF  C0F04 役に立つかどうかわからないが  // EN: I don't know if it'll help...
+@0012FE これをもらってくれないか  // EN: ...but please take this.
+@001394  C0D04 ガーゴイル　ＣＬ４ C0F04 を  // EN: Received Gargoyle CL4...
+@0013C2 もらった！  // EN: ...as a gift!
+@001444  C0D04 ［村の人］  // EN: [Villager]
+@001461  C0904 ちていこ C0F04 でひろったものなんだが  // EN: I found it in the lake.
+@0014EB  C0D04 ［村の人］  // EN: [Villager]
+@001508  C0F04 あなたたちなら、もしや…  // EN: Perhaps you could...
+@00155D  C0D04 ［ギンタ］  // EN: [Ginta]
+@00157A  C0F04 ああ！カタキをとってくるよ！  // EN: Yeah! We'll avenge you!
+@0019C2 F04A04  // LITERAL: F04A04 (usage not inferred)
+@001A9B  C0D04 ［スノウ］  // EN: [Snow]
+@001AB8  C0F04 わたしは、村の人をちりょうするよ！  // EN: I'll treat the villagers!
+@001AED エド！！  // EN: Ed!!
+@001B2F F05A01  // LITERAL: F05A01 (usage not inferred)
+@001C08  C0D04 ［エド］  // EN: [Ed]
+@001C23  C0F04 はい！！  // EN: Yes!!
+@001CE4 F03A01  // LITERAL: F03A01 (usage not inferred)
+@001DE4  C0D04 ［ジャック］  // EN: [Jack]
+@001E03  C0F04 よし、オイラは村をなおす！  // EN: I'll repair the village!
+@001E30 はたけも作るっスよ！！  // EN: I'll make some fields too!!
+@001F12  C0D04 ［村の人］  // EN: [Villager]
+@001F2F  C0F04 あんたたちは…一体？  // EN: Who... are you people?
+@001FB7 F03A06  // LITERAL: F03A06 (usage not inferred)
+@0020B7  C0D04 ［ジャック］  // EN: [Jack]
+@0020D6  C0F04 メル！！  // EN: MÄR!!
+@00211B  C0D04 ［ジャック］  // EN: [Jack]
+@00213A  C0F04 チェスをたおそうとしている…  // EN: We're out to beat the Chess...
+@002169 命しらずっス！！  // EN: ...a bunch of daredevils!!
+@0022EB MAP11_1A.SPC  // LITERAL: MAP11_1A.SPC (usage not inferred)
+@00045D  C0F04 かくされた<F0><56>ＲＭを  // EN: They said they'd find...
+@001499 何か、とくしゅな<F0><56>ＲＭがひつようらしい…  // EN: It seems you need a special ÄRM...

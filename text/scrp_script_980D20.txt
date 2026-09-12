@@ -1,0 +1,5 @@
+// Legacy reference view of MAP07_1A.SPC; edit text/nfp/MAP07_1A.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000006 MAP07_1A  // LITERAL: MAP07_1A (usage not inferred)

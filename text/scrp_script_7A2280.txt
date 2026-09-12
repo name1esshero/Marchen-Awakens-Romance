@@ -1,0 +1,106 @@
+// Legacy reference view of EV_GO11.SPC; edit text/nfp/EV_GO11.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@00017A A  // LITERAL: A (usage not inferred)
+@00021D MAP07_3A  // LITERAL: MAP07_3A (usage not inferred)
+@000374 F01B04  // LITERAL: F01B04 (usage not inferred)
+@00045D F21A03  // LITERAL: F21A03 (usage not inferred)
+@000536  C0D04 ［ギンタ］  // EN: [Ginta]
+@000553  C0F04 ぶっ飛んで  // EN: Go flying...
+@000570 はんせいしやがれっ！！  // EN: ...and think about what you've done!!
+@0005C0 F02A04  // LITERAL: F02A04 (usage not inferred)
+@000880  C0D04 ［ギロム］  // EN: [Girom]
+@00089D  C0F04 うわぁーーーーーーーーー！！！  // EN: Waaaaaaaaah!!!
+@0009C1 MAP07_2A  // LITERAL: MAP07_2A (usage not inferred)
+@000B7F F01B01  // LITERAL: F01B01 (usage not inferred)
+@000C58  C0D04 ［ギンタ］  // EN: [Ginta]
+@000C75  C0F04 はぁ…はぁ…  // EN: Huff... huff...
+@000CBE  C0D04 ［ゆうれい］  // EN: [Ghost]
+@000CDD  C0F04 助けて…  // EN: Help me...
+@000D22  C0D04 ［ギンタ］  // EN: [Ginta]
+@000D3F  C0F04 …  // EN: ...
+@000D7E  C0D04 ［ゆうれい］  // EN: [Ghost]
+@000D9D  C0F04 かべに穴をあけて…  // EN: Make a hole in the wall...
+@000DC2 ここから出して…  // EN: Let us out of here...
+@000DFC  C0D04 ［ギンタ］  // EN: [Ginta]
+@000E19  C0F04 わかったわかった…  // EN: All right, all right...
+@000E3E つかれてるけど、やるよ！！  // EN: I'm tired, but I'll do it!!
+@000E82  C0D04 ［ギンタ］  // EN: [Ginta]
+@000E9F  C0F04 バッボ、アレ、いくぜ！！  // EN: Babbo, let's use that move!!
+@000F04 F02A01  // LITERAL: F02A01 (usage not inferred)
+@000FDD  C0D04 ［バッボ］  // EN: [Babbo]
+@000FFA  C0F04 まて！  // EN: Wait!
+@001013 おまえ、ヘロヘロにつかれてるじゃろ！  // EN: You're completely exhausted!
+@001061  C0D04 ［ギンタ］  // EN: [Ginta]
+@00107E  C0F04 いいから…！  // EN: It's fine...!
+@0010C7  C0D04 ［ギンタ］  // EN: [Ginta]
+@0010E4  C0F04 出て来い！！ガーゴイル！！  // EN: Come forth!! Gargoyle!!
+@0011F8 ARM_NE08  // LITERAL: ARM_NE08 (usage not inferred)
+@001232 ARM_BA05  // LITERAL: ARM_BA05 (usage not inferred)
+@0015DD F01B01  // LITERAL: F01B01 (usage not inferred)
+@0016B6  C0D04 ［ギンタ］  // EN: [Ginta]
+@0016D3  C0F04 へへ…やったぜ！  // EN: Heh heh... I did it!
+@001730 F02A01  // LITERAL: F02A01 (usage not inferred)
+@001809  C0D04 ［バッボ］  // EN: [Babbo]
+@001826  C0F04 ギンタぁーーー！！  // EN: Gintaaaa!!
+@00184B しっかりせい！！  // EN: Hang in there!!
+@001895 F40A01  // LITERAL: F40A01 (usage not inferred)
+@0019DA  C0D04 ［ゆうれい］  // EN: [Ghost]
+@0019F9  C0F04 …ありがとう…  // EN: ...Thank you...
+@001A44  C0D04 ［ゆうれい］  // EN: [Ghost]
+@001A63  C0F04 ここにとじこめられていた私たち…  // EN: We've been trapped here...
+@001AC0  C0D04 ［ゆうれい］  // EN: [Ghost]
+@001ADF  C0F04 これで天にのぼることができます  // EN: Now we can ascend to heaven.
+@001B4A F01B09  // LITERAL: F01B09 (usage not inferred)
+@001B78  C0D04 ［ギンタ］  // EN: [Ginta]
+@001B95  C0F04 わはは！  // EN: Ha ha ha!
+@001BB0 よかったよかった…！  // EN: That's great...!
+@001C45 01B07  // LITERAL: 01B07 (usage not inferred)
+@001D26 F02A05  // LITERAL: F02A05 (usage not inferred)
+@001D54  C0D04 ［バッボ］  // EN: [Babbo]
+@001D71  C0F04 ギンターーー！！  // EN: Gintaaaa!!
+@001DBE  C0D04 ［ゆうれい］  // EN: [Ghost]
+@001DDD  C0F04 …せめてものお礼に…  // EN: ...As a small token of thanks...
+@001E2E  C0D04 ［ゆうれい］  // EN: [Ghost]
+@001EA6  C0D04 ［ゆうれい］  // EN: [Ghost]
+@001EC5  C0F04 …あなたの力に…  // EN: ...May they...
+@001F12  C0D04 ［ゆうれい］  // EN: [Ghost]
+@001F31  C0F04 …なりますように…  // EN: ...lend you strength...
+@002012  C0D04 ガーゴイル　ＣＬ５ C0F04 と  // EN: Gargoyle CL5 and...
+@002040  C0D04 アリス C0F04 を  // EN: ...Alice:
+@002062 手に入れた！  // EN: Obtained it!
+@002272 A  // LITERAL: A (usage not inferred)
+@0022FE A  // LITERAL: A (usage not inferred)
+@00237A MAP07_A  // LITERAL: MAP07_A (usage not inferred)
+@002523 F01B01  // LITERAL: F01B01 (usage not inferred)
+@002633 F09A01  // LITERAL: F09A01 (usage not inferred)
+@0026E6 F08A01  // LITERAL: F08A01 (usage not inferred)
+@0027BF  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0027F5 おきたみたい！  // EN: Looks like he's awake!
+@002863  C0D04 ［ナナシ］  // EN: [Nanashi]
+@002880  C0F04 よっしゃ！  // EN: All right!
+@0028C7  C0D04 ［ナナシ］  // EN: [Nanashi]
+@0028E4  C0F04 キミも一人、チェスの兵隊  // EN: Looks like you beat...
+@00290F たおしたみたいやの！！  // EN: ...one of the Chess Pieces too!!
+@00295F F09A03  // LITERAL: F09A03 (usage not inferred)
+@0029C3  C0D04 ［ドロシー］  // EN: [Dorothy]
+@002A07 おめざめのチューは！？  // EN: How about a wake-up kiss?!
+@002A47  C0D04 ［ギンタ］  // EN: [Ginta]
+@002A64  C0F04 い、いらない…  // EN: N-no thanks...
+@002B2B F09A07  // LITERAL: F09A07 (usage not inferred)
+@002B8F  C0D04 ［ドロシー］  // EN: [Dorothy]
+@002BAE  C0F04 （ち！）  // EN: (Tch!)
+@002BF3  C0D04 ［ギンタ］  // EN: [Ginta]
+@002C10  C0F04 ここ…どこだ？  // EN: Where... am I?
+@002CA1 F08A05  // LITERAL: F08A05 (usage not inferred)
+@002D05  C0D04 ［ナナシ］  // EN: [Nanashi]
+@002D22  C0F04 入り口のまんまえや！  // EN: Right outside the entrance!
+@002D49 じぶんが、おぶってきたんや！  // EN: I carried you out on my back!
+@002D8F  C0D04 ［ギンタ］  // EN: [Ginta]
+@002DAC  C0F04 そっか…  // EN: I see...
+@002E37 F09A01  // LITERAL: F09A01 (usage not inferred)
+@002E9B  C0D04 ［ドロシー］  // EN: [Dorothy]
+@002EBA  C0F04 さ、かえろ！  // EN: Come on, let's head back!
+@002ED9 きっとみんなまってるよ！  // EN: Everyone's probably waiting for us!
+@003004 EV_GO12.SPC  // LITERAL: EV_GO12.SPC (usage not inferred)

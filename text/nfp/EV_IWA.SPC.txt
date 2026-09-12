@@ -1,0 +1,17 @@
+// EV_IWA.SPC: ROM 7AC390
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000152 F01A01  // LITERAL: F01A01 (usage not inferred)
+@000213  C0D04 ［ギンタ］  // EN: [Ginta]
+@000230  C0F04 なぁ、バッボ  // TODO: English translation
+@000283 F02A01  // LITERAL: F02A01 (usage not inferred)
+@000344  C0D04 ［バッボ］  // EN: [Babbo]
+@000361  C0F04 なんじゃい  // TODO: English translation
+@000577  C0D04 ［ギンタ］  // EN: [Ginta]
+@000594  C0F04 あそこにある大岩で、ちょっと力だめし  // TODO: English translation
+@0005CB してみないか？  // TODO: English translation
+@000603  C0D04 ［バッボ］  // EN: [Babbo]
+@000620  C0F04 いったい何をする気じゃ？  // TODO: English translation
+@000675  C0D04 ［ギンタ］  // EN: [Ginta]
+@000692  C0F04 いいからいいから  // TODO: English translation

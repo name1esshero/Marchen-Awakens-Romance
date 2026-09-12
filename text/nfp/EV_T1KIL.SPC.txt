@@ -1,0 +1,49 @@
+// EV_T1KIL.SPC: ROM 7B4A40
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000097 MAP24_4A  // LITERAL: MAP24_4A (usage not inferred)
+@000232 A  // LITERAL: A (usage not inferred)
+@000306 A  // LITERAL: A (usage not inferred)
+@0003DA A  // LITERAL: A (usage not inferred)
+@0005BF F04A04  // LITERAL: F04A04 (usage not inferred)
+@0006BF  C0D04 ［スノウ］  // EN: [Snow]
+@0006DC  C0F04 やったぁギンタ！  // EN: You did it, Ginta!
+@000739 F03A06  // LITERAL: F03A06 (usage not inferred)
+@000839  C0D04 ［ジャック］  // EN: [Jack]
+@000858  C0F04 おーーー！  // EN: Whoaaa!
+@000875 みごとっス！！  // EN: That was brilliant!!
+@000929 F01B01  // LITERAL: F01B01 (usage not inferred)
+@000A29  C0D04 ［ギンタ］  // EN: [Ginta]
+@000A46  C0F04 ほらよ！マール！！  // EN: Here you go, Marl!!
+@000AA5 F38A04  // LITERAL: F38A04 (usage not inferred)
+@000BA5  C0D04 ［マール］  // EN: [Marl]
+@000BC2  C0F04 あ…ありがとうございます！  // EN: Ah... Thank you!
+@000C4F  C0D04 ［マール］  // EN: [Marl]
+@000C6C  C0F04 …  // EN: ...
+@000CF1 F38A03  // LITERAL: F38A03 (usage not inferred)
+@000D55  C0D04 ［マール］  // EN: [Marl]
+@000D72  C0F04 （へへ）  // EN: (Heh heh.)
+@000DC7 F04A06  // LITERAL: F04A06 (usage not inferred)
+@000EC7  C0D04 ［スノウ］  // EN: [Snow]
+@000EE4  C0F04 …  // EN: ...
+@000F69 F38A01  // LITERAL: F38A01 (usage not inferred)
+@000FCD  C0D04 ［スノウ］  // EN: [Snow]
+@000FEA  C0F04 （あれ…なんだろう、このイヤなかんじ…）  // EN: (Huh... What's this uneasy feeling...?)
+@001095 F38A01  // LITERAL: F38A01 (usage not inferred)
+@0010C3  C0D04 ［マール］  // EN: [Marl]
+@0010E0  C0F04 これは『うで』のパーツだ…  // EN: This is the arm part...
+@00110D うでの封印をといた、ということは…  // EN: If the arm's seal is broken...
+@001169 F38A02  // LITERAL: F38A02 (usage not inferred)
+@001197  C0D04 ［マール］  // EN: [Marl]
+@0011B4  C0F04 おそらく、２ばん目のとびらが  // EN: ...then the second door...
+@0011E3 あいているはず…！  // EN: ...should be open now!
+@00122F F03A01  // LITERAL: F03A01 (usage not inferred)
+@00132F  C0D04 ［ジャック］  // EN: [Jack]
+@00134E  C0F04 そういえば、入り口は  // EN: Come to think of it...
+@001375 ３つあったっスね！  // EN: ...there were three entrances!
+@00142D F02A07  // LITERAL: F02A07 (usage not inferred)
+@00152D  C0D04 ［バッボ］  // EN: [Babbo]
+@00154A  C0F04 それではいったん地上へ  // EN: Then let's return...
+@001573 もどるとするか！  // EN: ...to the surface for now!
+@0016F3 G_EV050.SPC  // LITERAL: G_EV050.SPC (usage not inferred)

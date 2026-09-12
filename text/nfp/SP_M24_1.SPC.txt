@@ -1,0 +1,9 @@
+// SP_M24_1.SPC: ROM DC3180
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000110 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
+@000193 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
+@000216 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
+@000261 OBJ_G.SPC  // LITERAL: OBJ_G.SPC (usage not inferred)
+@0002A9 OBJ_V.SPC  // LITERAL: OBJ_V.SPC (usage not inferred)

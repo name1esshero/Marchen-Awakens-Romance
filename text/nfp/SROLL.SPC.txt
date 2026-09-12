@@ -1,0 +1,7 @@
+// SROLL.SPC: ROM DC8080
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@0000BA MAP99_A  // LITERAL: MAP99_A (usage not inferred)
+@0000F8 OP_05_A  // LITERAL: OP_05_A (usage not inferred)
+@000227 スタッフロールはじまるよ  // TODO: English translation

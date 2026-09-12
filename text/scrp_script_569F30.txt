@@ -1,0 +1,12 @@
+// Legacy reference view of CH_M01_3.SPC; edit text/nfp/CH_M01_3.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000017 EV_BA01.SPC  // LITERAL: EV_BA01.SPC (usage not inferred)
+@00006A EV_BA04.SPC  // LITERAL: EV_BA04.SPC (usage not inferred)
+@00019C F09A01  // LITERAL: F09A01 (usage not inferred)
+@00025D  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00036A EV_BA03.SPC  // LITERAL: EV_BA03.SPC (usage not inferred)
+@000477 F09A05  // LITERAL: F09A05 (usage not inferred)
+@000538  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00058C なんとかして！  // EN: Do something about it!

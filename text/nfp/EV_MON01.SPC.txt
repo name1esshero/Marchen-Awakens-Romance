@@ -1,0 +1,38 @@
+// EV_MON01.SPC: ROM 7B0990
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00038A F03A07  // LITERAL: F03A07 (usage not inferred)
+@00046C  C0D04 ［ジャック］  // EN: [Jack]
+@00048B  C0F04 うぎゃあーーーっ！！  // EN: Aaaaaaargh!!
+@0004B2 ここはドコーーーっ！？  // EN: Where are weeeee?!
+@00052C F09A01  // LITERAL: F09A01 (usage not inferred)
+@00060E  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00068A  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0006A9  C0F04 こんなものを発動させるとは  // EN: To activate something like this...
+@0006D6 あのオヤジただものじゃないね  // EN: That old guy is no ordinary man.
+@000786 F03A01  // LITERAL: F03A01 (usage not inferred)
+@0007BE F27A01  // LITERAL: F27A01 (usage not inferred)
+@0008A0  C0D04 ［ブモル］  // EN: [Bumol]
+@0008BD  C0F04 今からここでのしれんを説明するから  // EN: I'll now explain your trial here...
+@0008F2 よーくきくんぢゃ  // EN: ...so listen carefully.
+@00092C  C0D04 ［ブモル］  // EN: [Bumol]
+@000949  C0F04 ここは、はてしなくつづく  // EN: This is a dungeon...
+@000974 ダンジョンになっておる  // EN: ...that goes on endlessly.
+@0009B4  C0D04 ［ブモル］  // EN: [Bumol]
+@0009D1  C0F04 ただひたすらゴールをめざす  // EN: Simply keep heading for the goal.
+@0009FE やることはそれだけぢゃ  // EN: That's all you have to do.
+@000A3E  C0D04 ［ブモル］  // EN: [Bumol]
+@000A5B  C0F04 わかったならさっさと行け！  // EN: If you understand, get going!
+@000ABC F03A06  // LITERAL: F03A06 (usage not inferred)
+@000AEA  C0D04 ［ジャック］  // EN: [Jack]
+@000B09  C0F04 それだけ？  // EN: That's all?
+@000B26 なんだか、らくしょうっスね  // EN: Sounds like a piece of cake.
+@000B6A  C0D04 ［ブモル］  // EN: [Bumol]
+@000B87  C0F04 とちゅうでセーブしてやすむことは  // EN: You can't save and take a break...
+@000BBA できんからな  // EN: ...partway through, mind you.
+@000C2A F03A07  // LITERAL: F03A07 (usage not inferred)
+@000C88  C0D04 ［ジャック］  // EN: [Jack]
+@000CA7  C0F04 な、なんだか  // EN: S-somehow...
+@000CC6 らくしょうじゃなさそうっスね  // EN: ...it doesn't sound so easy anymore.
+@00062D  C0F04 こりゃディメンション<F0><56>ＲＭの中…  // EN: We're inside a Dimension ÄRM...

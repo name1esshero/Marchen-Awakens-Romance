@@ -1,0 +1,12 @@
+// EV_MON05.SPC: ROM 7B1E60
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000122 F27A01  // LITERAL: F27A01 (usage not inferred)
+@000204  C0D04 ［ブモル］  // EN: [Bumol]
+@000221  C0F04 ようやくゴールにたどりついたようぢゃな  // TODO: English translation
+@00025A まちくたびれちまったよ  // TODO: English translation
+@00029A  C0D04 ［ブモル］  // EN: [Bumol]
+@0002B7  C0F04 さて、あと２人のほうは  // TODO: English translation
+@0002E0 どうなったかね…  // TODO: English translation
+@0003ED G_EV021.SPC  // LITERAL: G_EV021.SPC (usage not inferred)

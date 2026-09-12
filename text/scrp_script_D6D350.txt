@@ -1,0 +1,10 @@
+// Legacy reference view of OBJ_V.SPC; edit text/nfp/OBJ_V.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000144 F07A01  // LITERAL: F07A01 (usage not inferred)
+@000205  C0D04 ［アルヴィス］  // EN: [Alviss]
+@000226  C0F04 こんな穴、オレがふさいでやろう  // TODO: English translation
+@0003F4 ARM_HO08  // LITERAL: ARM_HO08 (usage not inferred)
+@0004E7 MAP00_O  // LITERAL: MAP00_O (usage not inferred)
+@0006C0 ふかい穴があいている  // EN: There is a deep hole.

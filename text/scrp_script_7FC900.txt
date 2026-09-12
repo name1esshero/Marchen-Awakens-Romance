@@ -1,0 +1,99 @@
+// Legacy reference view of G_EV020B.SPC; edit text/nfp/G_EV020B.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@0005B4 F06A05  // LITERAL: F06A05 (usage not inferred)
+@0006C4 F09A06  // LITERAL: F09A06 (usage not inferred)
+@000840 F04A02  // LITERAL: F04A02 (usage not inferred)
+@000919  C0D04 ［スノウ］  // EN: [Snow]
+@000936  C0F04 けんかは…  // TODO: English translation
+@000953 やめよ！！  // TODO: English translation
+@0009F4 F04A04  // LITERAL: F04A04 (usage not inferred)
+@000A58  C0D04 ［スノウ］  // EN: [Snow]
+@000A75  C0F04 ギンタのともだちなら  // TODO: English translation
+@000A9C わるい人じゃないよね？  // TODO: English translation
+@000AEC F09A07  // LITERAL: F09A07 (usage not inferred)
+@000B50  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000B6F  C0F04 （このコね…ギンタンが助けたコ…）  // TODO: English translation
+@000BDE F09A02  // LITERAL: F09A02 (usage not inferred)
+@000C0C  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000C2B  C0F04 （むむ！女のかん！！）  // TODO: English translation
+@000C7E  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000C9D  C0F04 （このコのそんざい、あたしにとって  // TODO: English translation
+@000CD2 　すっごくじゃまになる！！）  // TODO: English translation
+@000EAD F01B08  // LITERAL: F01B08 (usage not inferred)
+@00105B  C0D04 ［ギンタ］  // EN: [Ginta]
+@001078  C0F04 それでさ  // TODO: English translation
+@001093 魔力ってなんなんだよ！  // TODO: English translation
+@00118E F06A01  // LITERAL: F06A01 (usage not inferred)
+@001267  C0D04 ［エド］  // EN: [Ed]
+@0012AD もっている C0D04 『気』 C0F04 みたいなもんだ  // TODO: English translation
+@001303  C0D04 ［エド］  // EN: [Ed]
+@001373  C0D04 ［エド］  // EN: [Ed]
+@0013B9 つめばあがっていくぜ！  // TODO: English translation
+@001475 F03A03  // LITERAL: F03A03 (usage not inferred)
+@00154E  C0D04 ［ジャック］  // EN: [Jack]
+@00156D  C0F04 オ、オイラたちのまりょくは  // TODO: English translation
+@00159A どれくらいっスかね！？  // TODO: English translation
+@0015EA F01B08  // LITERAL: F01B08 (usage not inferred)
+@001618  C0D04 ［ギンタ］  // EN: [Ginta]
+@001635  C0F04 そうだな、どれくらいだ？  // TODO: English translation
+@001660 オッサン！！  // TODO: English translation
+@0016A6 F06A01  // LITERAL: F06A01 (usage not inferred)
+@0016D4  C0D04 ［エド］  // EN: [Ed]
+@0016EF  C0F04 そうだな…  // TODO: English translation
+@0017D3 F06A04  // LITERAL: F06A04 (usage not inferred)
+@00189E F01B11  // LITERAL: F01B11 (usage not inferred)
+@0018CC  C0D04 ［ギンタ］  // EN: [Ginta]
+@0018E9  C0F04 …  // TODO: English translation
+@001A3D F03A03  // LITERAL: F03A03 (usage not inferred)
+@001A6B  C0D04 ［ジャック］  // EN: [Jack]
+@001A8A  C0F04 …  // TODO: English translation
+@001AFA F06A06  // LITERAL: F06A06 (usage not inferred)
+@001B28  C0D04 ［エド］  // EN: [Ed]
+@001B43  C0F04 ゼロだ！  // TODO: English translation
+@001B5E ものすげぇよわい！！  // TODO: English translation
+@001BC3 F03A08  // LITERAL: F03A08 (usage not inferred)
+@001C01 F01B10  // LITERAL: F01B10 (usage not inferred)
+@001C60 F01B02  // LITERAL: F01B02 (usage not inferred)
+@001C8E  C0D04 ［ギンタ］  // EN: [Ginta]
+@001CAB  C0F04 ちょっとはつよくなったと  // TODO: English translation
+@001CD6 思ってたんだけどな…  // TODO: English translation
+@001D24 F06A01  // LITERAL: F06A01 (usage not inferred)
+@001D52  C0D04 ［エド］  // EN: [Ed]
+@001D9E つかいこなしてねぇんだ  // TODO: English translation
+@001E4A  C0D04 ［エド］  // EN: [Ed]
+@001E65  C0F04 今からてめぇらを  // TODO: English translation
+@001E88  C0904 修練（しゅうれん）の門 C0F04 へ送る  // TODO: English translation
+@001EDC  C0D04 ［エド］  // EN: [Ed]
+@001EF7  C0F04 そこならだれにもじゃまされずに  // TODO: English translation
+@001F28 修行ができるはずだ  // TODO: English translation
+@001F64  C0D04 ［エド］  // EN: [Ed]
+@001F7F  C0F04 何をするかは、そこにいるガーディアンが  // TODO: English translation
+@001FB8 おしえてくれる  // TODO: English translation
+@001FF0  C0D04 ［エド］  // EN: [Ed]
+@00200B  C0F04 わかったな？？  // TODO: English translation
+@002056  C0D04 ［エド］  // EN: [Ed]
+@002071  C0F04 じゃあみんな  // TODO: English translation
+@002090 そのとびらの上に立て  // TODO: English translation
+@002736 F06A03  // LITERAL: F06A03 (usage not inferred)
+@0028CC  C0D04 ［エド］  // EN: [Ed]
+@0028E7  C0F04 おら！てめーもだ  // TODO: English translation
+@00290A このクソ魔女（まじょ）！！  // TODO: English translation
+@002958 F09A05  // LITERAL: F09A05 (usage not inferred)
+@002A19  C0D04 ［ドロシー］  // EN: [Dorothy]
+@002A38  C0F04 え〜〜〜！？  // TODO: English translation
+@002A57 なんでよ！このクソおやじ！  // TODO: English translation
+@002DCB F06A01  // LITERAL: F06A01 (usage not inferred)
+@002E8C  C0D04 ［エド］  // EN: [Ed]
+@002EA7  C0F04 じゃあいくぜ！  // TODO: English translation
+@002F0A  C0D04 ［エド］  // EN: [Ed]
+@002F25  C0F04 『修練の門』！！  // TODO: English translation
+@0031F4  C0D04 ［ギンタ］  // EN: [Ginta]
+@003211  C0F04 うわぁぁぁああ！！！  // TODO: English translation
+@00354B F06A01  // LITERAL: F06A01 (usage not inferred)
+@00360C  C0D04 ［エド］  // EN: [Ed]
+@003627  C0F04 これでダンナもつよくなっていった…  // TODO: English translation
+@003686  C0D04 ［エド］  // EN: [Ed]
+@0036A1  C0F04 どうなるかはてめぇらしだいよ！  // TODO: English translation
+@00375C G_EV020C.SPC  // LITERAL: G_EV020C.SPC (usage not inferred)

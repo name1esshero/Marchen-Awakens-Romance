@@ -1,0 +1,11 @@
+// S_MAP11.SPC: ROM F135F0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000147 F08A01  // LITERAL: F08A01 (usage not inferred)
+@000220  C0D04 ［ナナシ］  // EN: [Nanashi]
+@00023D  C0F04 どこへ行くんや  // EN: Where are you off to?
+@00025E チェスをたおしにきたんやろ  // TODO: English translation
+@0003EF W_MAP.SPC  // LITERAL: W_MAP.SPC (usage not inferred)
+@0004DE MAP11_1A.SPC  // LITERAL: MAP11_1A.SPC (usage not inferred)
+@0005E7 MAP11_2.SPC  // LITERAL: MAP11_2.SPC (usage not inferred)

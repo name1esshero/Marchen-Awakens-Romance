@@ -1,0 +1,41 @@
+// Legacy reference view of EV_JA03.SPC; edit text/nfp/EV_JA03.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000197 A  // LITERAL: A (usage not inferred)
+@000223 A  // LITERAL: A (usage not inferred)
+@000500 F13A01  // LITERAL: F13A01 (usage not inferred)
+@0005D9  C0D04 ［ルーガ］  // EN: [Ruga]
+@0005F6  C0F04 け、やるじゃねーかよ、ジャック！！  // EN: Heh, not bad, Jack!
+@000665 F03A04  // LITERAL: F03A04 (usage not inferred)
+@00073E  C0D04 ［ジャック］  // EN: [Jack]
+@00075D  C0F04 はぁはぁ…  // EN: Huff... puff...
+@000820 F14A04  // LITERAL: F14A04 (usage not inferred)
+@0009AD  C0D04 ［ガルー］  // EN: [Garu]
+@0009CA  C0F04 いてててて…  // EN: Ow, ow, ow...
+@0009E9 ゆだんしたぜ！  // EN: You caught me off guard!
+@000A31 F13A02  // LITERAL: F13A02 (usage not inferred)
+@000A5F  C0D04 ［ルーガ］  // EN: [Ruga]
+@000A7C  C0F04 今日はむかつく日だな  // EN: Today's really getting on my nerves.
+@000B13 F14A03  // LITERAL: F14A03 (usage not inferred)
+@000B77  C0D04 ［ガルー］  // EN: [Garu]
+@000B94  C0F04 そうだな、ころしモードぜんかいで行くか！！  // EN: Yeah. Let's go all out and kill them!
+@000D0B A  // LITERAL: A (usage not inferred)
+@000D97 A  // LITERAL: A (usage not inferred)
+@001053 F14A01  // LITERAL: F14A01 (usage not inferred)
+@00112C  C0D04 ［ガルー］  // EN: [Garu]
+@001149  C0F04 うわっとっと！！  // EN: Whoa-whoa!
+@0011A6 F02A07  // LITERAL: F02A07 (usage not inferred)
+@00127F  C0D04 ［バッボ］  // EN: [Babbo]
+@00129C  C0F04 男になったのぉ！  // EN: You've become a man!
+@0012BF ジャック！！  // EN: Jack!!
+@00140D F01A01  // LITERAL: F01A01 (usage not inferred)
+@0014E6  C0D04 ［ギンタ］  // EN: [Ginta]
+@001503  C0F04 オオカミも二人！  // EN: There are two wolves,
+@001526 こっちも二人！！  // EN: and two of us!
+@001560  C0D04 ［ギンタ］  // EN: [Ginta]
+@00157D  C0F04 もんだいねぇよな、ジャック！！  // EN: No problem, right, Jack!?
+@00161E F13A03  // LITERAL: F13A03 (usage not inferred)
+@0016F7  C0D04 ［ルーガ］  // EN: [Ruga]
+@001714  C0F04 なんだよ、やろうってのかぁ！！！  // EN: What, you want a fight!?
+@001747 …なめんなぁ！！！  // EN: ...Don't underestimate us!

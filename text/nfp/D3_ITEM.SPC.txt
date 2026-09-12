@@ -1,0 +1,5 @@
+// D3_ITEM.SPC: ROM 588620
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00501D DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)

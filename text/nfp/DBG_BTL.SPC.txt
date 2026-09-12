@@ -1,0 +1,7 @@
+// DBG_BTL.SPC: ROM 59BAF0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@0000E4 B  // LITERAL: B (usage not inferred)
+@000108 A  // LITERAL: A (usage not inferred)
+@00017D MAP03_A  // LITERAL: MAP03_A (usage not inferred)

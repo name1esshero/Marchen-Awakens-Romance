@@ -1,0 +1,6 @@
+// SP_M10_1.SPC: ROM DC2E50
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000058 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
+@000217  C0D04 １４２０Ｐ C0F04 が入っていた！  // TODO: English translation

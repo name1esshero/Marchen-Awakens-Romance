@@ -1,0 +1,16 @@
+// MAR strings block AF0000
+// One record per line: @<rom offset> <text>
+// <XX> is a raw control byte. Text is re-encoded to Shift-JIS at build time;
+// a line may not grow past its original byte length.
+// Anything after // is a comment and never reaches the ROM.
+
+@AF071C MAP24_A.KCG
+@AF075C MAP24_A.KCL
+@AF9DCC MAP25_1A.KCG
+@AF9E0C MAP25_1A.KCL
+@AFA2B1 @<17> <18><10><11>
+@AFA2C1 @<17> <19>0<1A><10><1B>
+@AFA311 @<17> <18><10><19>0<1A><10><1B>
+@AFA885 @<17> <18><10><19>0<1A><10><1B>
+@AFFC99 0<1A><10><1B>
+@AFFFEF @<17> <18><10><19>0<1A><10><1B>

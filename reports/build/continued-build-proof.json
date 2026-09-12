@@ -1,0 +1,6 @@
+{
+  "byte_matching": true,
+  "sha1": "5ed178bfbdf459867d64e5b91a9d9c72654e4051",
+  "python_original_rom_reads": "blocked",
+  "build": "Incremental rebuild after C, regular TSC source, and translation changes; previous clean build proof is separate."
+}

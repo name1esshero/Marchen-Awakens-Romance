@@ -1,0 +1,72 @@
+// Legacy reference view of EV_GO09.SPC; edit text/nfp/EV_GO09.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@0000E0 A  // LITERAL: A (usage not inferred)
+@000241 F01B10  // LITERAL: F01B10 (usage not inferred)
+@00031A  C0D04 ［ギンタ］  // EN: [Ginta]
+@000337  C0F04 あ、なんだこりゃ！！  // EN: Hey, what's this?!!
+@0005EB F22A01  // LITERAL: F22A01 (usage not inferred)
+@0006C4  C0D04 ［トム］  // EN: [Tom]
+@0006DF  C0F04 ふね？？  // EN: A ship??
+@000734 F01B11  // LITERAL: F01B11 (usage not inferred)
+@00080D  C0D04 ［ギンタ］  // EN: [Ginta]
+@00082A  C0F04 ボロボロだな…  // EN: It's falling apart...
+@0008BB F01B05  // LITERAL: F01B05 (usage not inferred)
+@000936  C0D04 ［ギンタ］  // EN: [Ginta]
+@000953  C0F04 ・・・！！  // EN: ...!!
+@000970 魔力（まりょく）！！  // EN: Magic!!
+@000BF1 F21A01  // LITERAL: F21A01 (usage not inferred)
+@000CCA  C0D04 ［ギロム］  // EN: [Girom]
+@000CE7  C0F04 オレはチェスの兵隊  // EN: I'm with the Chess Pieces.
+@000D0C ギロムってんだ！  // EN: The name's Girom!
+@000D46  C0D04 ［ギロム］  // EN: [Girom]
+@000D63  C0F04 のこのこでてきやがって…  // EN: You just strolled right in...
+@000D8E ぶっころされるかくごできてんのかぁ！？  // EN: Are you ready to die?!!
+@000DEE F01B02  // LITERAL: F01B02 (usage not inferred)
+@000EFD  C0D04 ［ギロム］  // EN: [Girom]
+@000F1A  C0F04 なんでぇ…ガキ一人か？？  // EN: What... just one brat??
+@000F7F F02A01  // LITERAL: F02A01 (usage not inferred)
+@0010C4  C0D04 ［バッボ］  // EN: [Babbo]
+@0010E1  C0F04 一人ではないわ！  // EN: He's not alone!
+@001104 ぶれいもの！！  // EN: You insolent fool!!
+@001182 F21A03  // LITERAL: F21A03 (usage not inferred)
+@0011E6  C0D04 ［ギロム］  // EN: [Girom]
+@001203  C0F04 …  // EN: ...
+@001242  C0D04 ［ギロム］  // EN: [Girom]
+@00125F  C0F04 バッボ？？  // EN: Babbo??
+@0012EC F21A01  // LITERAL: F21A01 (usage not inferred)
+@001350  C0D04 ［ギロム］  // EN: [Girom]
+@00136D  C0F04 そうか、てめぇが話にきく  // EN: I see. You're the one I've heard about...
+@001464 F01B06  // LITERAL: F01B06 (usage not inferred)
+@0014FE  C0D04 ［ギンタ］  // EN: [Ginta]
+@00151B  C0F04 おまえがヴェストリを  // EN: Were you the one...
+@001542 こわしたのか？？  // EN: ...who destroyed Vestri??
+@00158C F21A01  // LITERAL: F21A01 (usage not inferred)
+@0015BA  C0D04 ［ギロム］  // EN: [Girom]
+@0015D7  C0F04 こわしたのは、オルコってやつだ  // EN: A guy named Orco did the destroying.
+@001608 オレはころしせんもんだ  // EN: I specialize in killing.
+@001658 F01B05  // LITERAL: F01B05 (usage not inferred)
+@001686  C0D04 ［ギンタ］  // EN: [Ginta]
+@0016A3  C0F04 …！！  // EN: ...!!
+@0016E6  C0D04 ［ギロム］  // EN: [Girom]
+@001703  C0F04 … C0904 ちていこ C0F04 にあるってうわさの  // EN: ...I came looking for an ÄRM...
+@001786  C0D04 ［ギロム］  // EN: [Girom]
+@0017A3  C0F04 このふねの中にはありゃしねぇ  // EN: But it's not in this ship.
+@0017FC  C0D04 ［ギロム］  // EN: [Girom]
+@001880 F21A01  // LITERAL: F21A01 (usage not inferred)
+@0018AE  C0D04 ［ギロム］  // EN: [Girom]
+@0018CB  C0F04 おとなしくだせば  // EN: Hand it over quietly...
+@0018EE はんごろしでゆるしてやるぜぇ  // EN: ...and I'll let you off with a beating half to death.
+@0019B0 F01B06  // LITERAL: F01B06 (usage not inferred)
+@001A4A  C0D04 ［ギンタ］  // EN: [Ginta]
+@001A67  C0F04 バッボ！  // EN: Babbo!
+@001A82 あいつぶったおすぞ！  // EN: Let's take him down!
+@001AD0 F21A02  // LITERAL: F21A02 (usage not inferred)
+@001AFE  C0D04 ［ギロム］  // EN: [Girom]
+@001B1B  C0F04 なんだーーー？？  // EN: Whaaaat??
+@001B3E きにいらねぇ！  // EN: I don't like your attitude!
+@001BBC F21A01  // LITERAL: F21A01 (usage not inferred)
+@001C20  C0D04 ［ギロム］  // EN: [Girom]
+@001C3D  C0F04 こっちこいやぁ！！！  // EN: Get over here!!!
+@001DA2 EV_GO10.SPC  // LITERAL: EV_GO10.SPC (usage not inferred)

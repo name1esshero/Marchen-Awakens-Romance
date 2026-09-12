@@ -1,0 +1,43 @@
+// Legacy reference view of EV_GO02.SPC; edit text/nfp/EV_GO02.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000101 A  // LITERAL: A (usage not inferred)
+@0001C9 A  // LITERAL: A (usage not inferred)
+@000891 F08A01  // LITERAL: F08A01 (usage not inferred)
+@00096A  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000987  C0F04 …みちがふた手や！  // EN: ...The path splits in two!
+@0009D6  C0D04 ［ナナシ］  // EN: [Nanashi]
+@0009F3  C0F04 別れなあかんな！！  // EN: We'll have to split up!!
+@000A88 F09A01  // LITERAL: F09A01 (usage not inferred)
+@000B61  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000B80  C0F04 二人と一人ね！  // EN: Two one way, one the other!
+@000BCB  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000BEA  C0F04 じゃあわたしは  // EN: Then I'll go...
+@000C0B ギンタンと〜…  // EN: ...with Gintan...
+@000C53 F02A01  // LITERAL: F02A01 (usage not inferred)
+@000D2C  C0D04 ［バッボ］  // EN: [Babbo]
+@000D49  C0F04 ギンタと『ワシ』は  // EN: Ginta and I...
+@000D6E こっちにすすむぞ！！  // EN: ...will go this way!!
+@000DAC  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000DCB  C0F04 …  // EN: ...
+@000E1A F09A05  // LITERAL: F09A05 (usage not inferred)
+@000E48  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000E67  C0F04 なんでよ！！  // EN: Why?!!
+@000EB0  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000ECF  C0F04 あんたは『一人』じゃなくて  // EN: You don't count as a person!
+@000EFC イッコでしょ『イッコ』！！  // EN: You're an object! An object!!
+@000F86 F02A04  // LITERAL: F02A04 (usage not inferred)
+@000FEA  C0D04 ［バッボ］  // EN: [Babbo]
+@001007  C0F04 ワシはモノなんかじゃないわい！！  // EN: I am not some object!!
+@0010E0 F08A05  // LITERAL: F08A05 (usage not inferred)
+@0011B9  C0D04 ［ナナシ］  // EN: [Nanashi]
+@0011D6  C0F04 ワイとドロシーちゃんは  // EN: Dorothy and I...
+@0011FF こっち行くで  // EN: ...will go this way.
+@001235  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001254  C0F04 ぅ〜〜〜〜〜〜〜〜〜  // EN: Uggghhhhh...
+@0012A5  C0D04 ［ナナシ］  // EN: [Nanashi]
+@0012C2  C0F04 気ぃつけてな、ギンタ！  // EN: Take care, Ginta!
+@00135B F01B01  // LITERAL: F01B01 (usage not inferred)
+@0013BF  C0D04 ［ギンタ］  // EN: [Ginta]
+@0013DC  C0F04 そっちこそ！！  // EN: You too!!

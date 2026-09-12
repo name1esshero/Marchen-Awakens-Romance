@@ -1,0 +1,7 @@
+// Legacy reference view of SROLL.SPC; edit text/nfp/SROLL.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@0000BA MAP99_A  // LITERAL: MAP99_A (usage not inferred)
+@0000F8 OP_05_A  // LITERAL: OP_05_A (usage not inferred)
+@000227 スタッフロールはじまるよ  // TODO: English translation

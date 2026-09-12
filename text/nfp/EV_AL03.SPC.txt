@@ -1,0 +1,100 @@
+// EV_AL03.SPC: ROM 7983F0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000085 MAP42_A  // LITERAL: MAP42_A (usage not inferred)
+@000235 A  // LITERAL: A (usage not inferred)
+@0002C1 A  // LITERAL: A (usage not inferred)
+@000374 A  // LITERAL: A (usage not inferred)
+@000538 F01B05  // LITERAL: F01B05 (usage not inferred)
+@000611  C0D04 ［ギンタ］  // EN: [Ginta]
+@00062E  C0F04 はぁ…はぁ…  // EN: Huff... huff...
+@0006BD F02A04  // LITERAL: F02A04 (usage not inferred)
+@000796  C0D04 ［バッボ］  // EN: [Babbo]
+@0007B3  C0F04 ギンタ！  // EN: Ginta!
+@0007CE しっかりせい！  // EN: Pull yourself together!
+@000816 F07A06  // LITERAL: F07A06 (usage not inferred)
+@00095B  C0D04 ［アルヴィス］  // EN: [Alviss]
+@00097C  C0F04 …つ！  // EN: ...Tch!
+@000995 力まかせになぐりやがって…  // EN: Punching me with sheer brute force...
+@0009D9  C0D04 ［アルヴィス］  // EN: [Alviss]
+@0009FA  C0F04 …それにしても  // EN: ...Still,
+@000A45  C0D04 ［アルヴィス］  // EN: [Alviss]
+@000A66  C0F04 （どうもこのバッボ…  // EN: (This Babbo seems...
+@000A8D 　別人格のようだな）  // EN: to have a different personality.)
+@000B01  C0D04 ［ギンタ］  // EN: [Ginta]
+@000B1E  C0F04 こ、こわさないでくれよ  // EN: D-don't break him, please.
+@000B71  C0D04 ［ギンタ］  // EN: [Ginta]
+@000B8E  C0F04 こんなヤツでも  // EN: Even if he's like this,
+@000BAF オ、オレの…ダチ…  // EN: h-he's... my friend...
+@000C6E 01B07  // LITERAL: 01B07 (usage not inferred)
+@000E39  C0D04 ［バッボ］  // EN: [Babbo]
+@000E56  C0F04 おいおまえ！  // EN: Hey, you!
+@000E9F  C0D04 ［アルヴィス］  // EN: [Alviss]
+@000EC0  C0F04 …  // EN: ...
+@000F7B F02A05  // LITERAL: F02A05 (usage not inferred)
+@001015  C0D04 ［バッボ］  // EN: [Babbo]
+@001032  C0F04 ていこうせんから  // EN: I won't resist.
+@001055 ひと思いにこわせ！！  // EN: Destroy me in one blow!
+@001093  C0D04 ［バッボ］  // EN: [Babbo]
+@0010B0  C0F04 そのかわり、  // EN: In return,
+@0010CF ギンタにゆび一本ふれるな！！  // EN: don't lay a finger on Ginta!
+@001115  C0D04 ［バッボ］  // EN: [Babbo]
+@001132  C0F04 ギンタはワシの家来！  // EN: Ginta is my servant!
+@001159 死なせるワケにはいかんからな  // EN: I cannot allow him to die.
+@00119F  C0D04 ［アルヴィス］  // EN: [Alviss]
+@0011C0  C0F04 …  // EN: ...
+@00145D F02A14  // LITERAL: F02A14 (usage not inferred)
+@001536  C0D04 ［バッボ］  // EN: [Babbo]
+@001553  C0F04 あ！こらまて！！  // EN: Hey! Wait!
+@00195C F01B11  // LITERAL: F01B11 (usage not inferred)
+@001A5C  C0D04 ［ギンタ］  // EN: [Ginta]
+@001A79  C0F04 …  // EN: ...
+@001AB8  C0D04 ［ギンタ］  // EN: [Ginta]
+@001AD5  C0F04 あれ？  // EN: Huh?
+@001AEE ここは…  // EN: Where am I...?
+@001B30 F03A01  // LITERAL: F03A01 (usage not inferred)
+@001C09  C0D04 ［ジャック］  // EN: [Jack]
+@001C28  C0F04 きがついたっスね！  // EN: You're awake!
+@001C4D ここはパヅタウンのはずれっスよ  // EN: We're on the outskirts of Paz Town.
+@001CA5 F02A01  // LITERAL: F02A01 (usage not inferred)
+@001D7E  C0D04 ［バッボ］  // EN: [Babbo]
+@001D9B  C0F04 なっさけないのぉ  // EN: How pathetic!
+@001DBE あんなヒヨッコにたおされて！  // EN: Getting beaten by a mere fledgling!
+@001E04  C0D04 ［バッボ］  // EN: [Babbo]
+@001E21  C0F04 ワシがいなければ  // EN: If I hadn't been there,
+@001E44 いまごろおまえはどーなって  // EN: who knows what would have become of you...
+@001E98 F01B02  // LITERAL: F01B02 (usage not inferred)
+@001F49  C0D04 ［バッボ］  // EN: [Babbo]
+@001F66  C0F04 おわーーーーーー！！  // EN: Whoooooa!
+@001FB7  C0D04 ［ギンタ］  // EN: [Ginta]
+@001FD4  C0F04 …  // EN: ...
+@002013  C0D04 ［ジャック］  // EN: [Jack]
+@002032  C0F04 オイラかごの中で見てたっスよ  // EN: I saw it all from inside the cage.
+@002061 すなおじゃないっスね、バッボ…  // EN: You can't just admit how you feel, can you, Babbo...?
+@0020B9 F01B04  // LITERAL: F01B04 (usage not inferred)
+@00211D  C0D04 ［ギンタ］  // EN: [Ginta]
+@00213A  C0F04 あいつは？  // EN: Where's that guy?
+@0021C7 F03A05  // LITERAL: F03A05 (usage not inferred)
+@00222B  C0D04 ［ジャック］  // EN: [Jack]
+@00224A  C0F04 『ねらわれるたちばを  // EN: "If you've chosen
+@002271 　みずからえらんだなら』  // EN: to make yourself a target,"
+@0022B3  C0D04 ［ジャック］  // EN: [Jack]
+@0022D2  C0F04 『強くなれ』  // EN: "get stronger."
+@002361 F03A01  // LITERAL: F03A01 (usage not inferred)
+@0023C5  C0D04 ［ジャック］  // EN: [Jack]
+@0023E4  C0F04 そういってたっスよ  // EN: That's what he said.
+@002433  C0D04 ［ギンタ］  // EN: [Ginta]
+@002450  C0F04 …そっか…  // EN: ...I see...
+@002497  C0D04 ［ギンタ］  // EN: [Ginta]
+@0024B4  C0F04 （あいつ…バッボをこわさなかった）  // EN: (He... didn't destroy Babbo.)
+@002513  C0D04 ［ギンタ］  // EN: [Ginta]
+@002530  C0F04 （信じたんじゃなくて  // EN: (It's not that he believed us.
+@002557 　ためしているんだな…）  // EN: He's testing us...)
+@002599  C0D04 ［ギンタ］  // EN: [Ginta]
+@0025B6  C0F04 …ジャック  // EN: ...Jack.
+@002679 F01B03  // LITERAL: F01B03 (usage not inferred)
+@002713  C0D04 ［ギンタ］  // EN: [Ginta]
+@002730  C0F04 オレ…  // EN: I...
+@002749 つよくなる！  // EN: I'll get stronger!
+@002933 A  // LITERAL: A (usage not inferred)

@@ -1,0 +1,7 @@
+// BTOM24_4.SPC: ROM 39D760
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000047 BTO_DEF2.SPC  // LITERAL: BTO_DEF2.SPC (usage not inferred)
+@000071 EV_T1KIL.SPC  // LITERAL: EV_T1KIL.SPC (usage not inferred)
+@0000A0 BTO_DEF.SPC  // LITERAL: BTO_DEF.SPC (usage not inferred)

@@ -1,0 +1,14 @@
+// MAR strings block FE0000
+// One record per line: @<rom offset> <text>
+// <XX> is a raw control byte. Text is re-encoded to Shift-JIS at build time;
+// a line may not grow past its original byte length.
+// Anything after // is a comment and never reaches the ROM.
+
+@FE17D1 I@<18><05>h<0F>*
+@FE18DB I@<18><01>h
+@FE18E1 #<01>"0<1C><10>@
+@FE1AA3 I@<18><05>h<0F> <06>@<0F>.
+@FE1ADE 0@<04>#[B
+@FE1B3F #<01>"0<1C><10>@
+@FE1DBB h !<08>@
+@FE1DE1 %<02>$dB<14>@<07>H<04>`

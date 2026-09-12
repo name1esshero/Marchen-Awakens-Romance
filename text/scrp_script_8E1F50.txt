@@ -1,0 +1,7 @@
+// Legacy reference view of MAP04_6A.SPC; edit text/nfp/MAP04_6A.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@00002B EV_ICE09.SPC  // LITERAL: EV_ICE09.SPC (usage not inferred)
+@00007A MAP04_7A  // LITERAL: MAP04_7A (usage not inferred)
+@0000AF MAP04_6A  // LITERAL: MAP04_6A (usage not inferred)

@@ -1,0 +1,118 @@
+// EV_ICE09.SPC: ROM 7A77B0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00006E MAP04_6A  // LITERAL: MAP04_6A (usage not inferred)
+@000348 F05A04  // LITERAL: F05A04 (usage not inferred)
+@000421  C0D04 ［エド］  // EN: [Ed]
+@00043C  C0F04 この先です！  // EN: Just up ahead!
+@000495 F01B03  // LITERAL: F01B03 (usage not inferred)
+@00056E  C0D04 ［ギンタ］  // EN: [Ginta]
+@00058B  C0F04 行くぞ！  // EN: Let's go!
+@00073A A  // LITERAL: A (usage not inferred)
+@0007C6 A  // LITERAL: A (usage not inferred)
+@000B2C F01B11  // LITERAL: F01B11 (usage not inferred)
+@000C2C  C0D04 ［ギンタ］  // EN: [Ginta]
+@000C49  C0F04 え…  // EN: Huh...
+@000F04 F01B10  // LITERAL: F01B10 (usage not inferred)
+@001004  C0D04 ［ギンタ］  // EN: [Ginta]
+@001021  C0F04 こっ…！  // EN: Ko...!
+@001066  C0D04 ［ギンタ］  // EN: [Ginta]
+@001083  C0F04 小雪ぃーーーーーーーーーー！？  // EN: Koyukiiiiiiii!?
+@00119B A  // LITERAL: A (usage not inferred)
+@0012F8 A  // LITERAL: A (usage not inferred)
+@001541 F15A01  // LITERAL: F15A01 (usage not inferred)
+@00161A  C0D04 ［イアン］  // EN: [Ian]
+@001637  C0F04 おいおい…  // EN: Hey, come on...
+@001654 子供だぜ？  // EN: He's just a kid.
+@001698 F25A01  // LITERAL: F25A01 (usage not inferred)
+@001771  C0D04 ［ロコ］  // EN: [Loco]
+@00178C  C0F04 でも見て  // EN: But look.
+@0017A7 おもしろいのがいっしょにいます  // EN: He's brought something interesting with him.
+@0017EF  C0D04 ［ロコ］  // EN: [Loco]
+@00180A  C0F04 この島にある、ときいていたので  // EN: I'd heard it was on this island,
+@00183B ついでにさがそうと思っていたのですが  // EN: so I was planning to look for it while we were here.
+@001889  C0D04 ［ロコ］  // EN: [Loco]
+@0018A4  C0F04 向こうからきてくれちゃいましたね  // EN: But it's come right to us.
+@00197D F01B06  // LITERAL: F01B06 (usage not inferred)
+@001A56  C0D04 ［ギンタ］  // EN: [Ginta]
+@001A73  C0F04 小雪！小雪ーー！  // EN: Koyuki! Koyukiii!
+@001B62  C0D04 ［イアン］  // EN: [Ian]
+@001B7F  C0F04 立ち入り…きんし  // EN: No...
+@001BA2 だよーーーん  // EN: trespassing!
+@001C8A F05A02  // LITERAL: F05A02 (usage not inferred)
+@001D63  C0D04 ［エド］  // EN: [Ed]
+@001D7E  C0F04 ギンタどの！  // EN: Master Ginta!
+@001D9D おちついてくだされ！  // EN: Please calm yourself!
+@001DDB  C0D04 ［エド］  // EN: [Ed]
+@001DF6  C0F04 あの方は「コユキ」という方では  // EN: That lady is not
+@001E27 ありませぬぞ！  // EN: the person you call Koyuki!
+@001E5F  C0D04 ［エド］  // EN: [Ed]
+@001E7A  C0F04 メルヘヴンの  // EN: Our nation, the symbol
+@001E99 象徴（しょうちょう）であるわが国…  // EN: of MÄR Heaven...
+@001EE5  C0D04 ［エド］  // EN: [Ed]
+@001F00  C0F04 『レスターヴァ』の  // EN: Lestava's
+@001F25 正統後継者（せいとうこうけいしゃ）  // EN: rightful heir,
+@001F71  C0D04 ［エド］  // EN: [Ed]
+@001F8C  C0F04 スノウひめでございます！！  // EN: Princess Snow herself!
+@001FF3 F03A07  // LITERAL: F03A07 (usage not inferred)
+@0020CC  C0D04 ［ジャック］  // EN: [Jack]
+@0020EB  C0F04 れれれ…レスターヴァ！？  // EN: L-L-Lestava!?
+@002140  C0D04 ［ジャック］  // EN: [Jack]
+@00215F  C0F04 おひめさま中のおひめさま！  // EN: A princess among princesses!
+@0021B6  C0D04 ［ジャック］  // EN: [Jack]
+@0021D5  C0F04 それがこんな田舎の島で  // EN: And she's hiding on this remote island,
+@0021FE 氷づけになって逃げている…  // EN: frozen in a block of ice...
+@002242  C0D04 ［ジャック］  // EN: [Jack]
+@002261  C0F04 いったいこのせかいに  // EN: What on earth
+@002288 なにがおこってるんだ！？  // EN: is happening to this world!?
+@002346 F01B02  // LITERAL: F01B02 (usage not inferred)
+@002446  C0D04 ［ギンタ］  // EN: [Ginta]
+@002463  C0F04 …エド！  // EN: ...Ed!
+@00247E あの氷はとかせるんだな！？  // EN: You can melt that ice, right!?
+@0024D2 F05A01  // LITERAL: F05A01 (usage not inferred)
+@002500  C0D04 ［エド］  // EN: [Ed]
+@00251B  C0F04 はい！  // EN: Yes!
+@0025C4 F02A03  // LITERAL: F02A03 (usage not inferred)
+@002628  C0D04 ［バッボ］  // EN: [Babbo]
+@002645  C0F04 かよわき少女をいたぶる  // EN: You savage!
+@00266E やばん人め！！  // EN: Tormenting a defenseless girl!
+@002758 F25A02  // LITERAL: F25A02 (usage not inferred)
+@002831  C0D04 ［ロコ］  // EN: [Loco]
+@00284C  C0F04 バッボ…  // EN: Babbo...
+@002867 別人格になってます  // EN: He has a different personality now.
+@0028B3 F15A01  // LITERAL: F15A01 (usage not inferred)
+@00298C  C0D04 ［イアン］  // EN: [Ian]
+@0029A9  C0F04 そなの？  // EN: Really?
+@0029EE  C0D04 ［イアン］  // EN: [Ian]
+@002A0B  C0F04 オレっち、６年前の戦争には  // EN: I wasn't in the war six years ago,
+@002A38 さんかしてないから知らないけど…  // EN: so I wouldn't know...
+@002A82  C0D04 ［イアン］  // EN: [Ian]
+@002A9F  C0F04 ね、ロコちゃん  // EN: Hey, little Loco,
+@002AC0 ちょっとこいつとあそんでいいかな？  // EN: mind if I play with this guy for a bit?
+@002B1C F25A01  // LITERAL: F25A01 (usage not inferred)
+@002B4A  C0D04 ［ロコ］  // EN: [Loco]
+@002B65  C0F04 別にかまいませんが…  // EN: I don't particularly mind, but...
+@002BB6  C0D04 ［ロコ］  // EN: [Loco]
+@002BD1  C0F04 とりあえず私のほうがとしうえなので  // EN: For the record, I'm older than you,
+@002C06 『ちゃん』づけはやめてください  // EN: so stop calling me "little."
+@002F57 F15A01  // LITERAL: F15A01 (usage not inferred)
+@003030  C0D04 ［イアン］  // EN: [Ian]
+@00304D  C0F04 ということで…  // EN: So, then...
+@00306E １ＶＳ１の対決といこうじゃない？  // EN: How about a one-on-one showdown?
+@0030C8 F01B05  // LITERAL: F01B05 (usage not inferred)
+@0031A1  C0D04 ［ギンタ］  // EN: [Ginta]
+@0031BE  C0F04 いいぜ！  // EN: Fine by me!
+@0031D9 のった！！  // EN: You're on!
+@003253 F15A02  // LITERAL: F15A02 (usage not inferred)
+@0032B7  C0D04 ［イアン］  // EN: [Ian]
+@0032D4  C0F04 気に入った…！  // EN: I like you...!
+@003365 F01B01  // LITERAL: F01B01 (usage not inferred)
+@0033C9  C0D04 ［ギンタ］  // EN: [Ginta]
+@0033E6  C0F04 オレはギンタ！  // EN: I'm Ginta!
+@003407 東京の中学生だ！！  // EN: A middle school student from Tokyo!
+@003489 F15A01  // LITERAL: F15A01 (usage not inferred)
+@0034ED  C0D04 ［イアン］  // EN: [Ian]
+@00350A  C0F04 オレはイアン…！  // EN: I'm Ian...!
+@00352D チェスの兵隊だよ〜〜〜ん♪  // EN: One of the Chess Pieces! ♪
+@002534 火の<F0><56>ＲＭをあずかっております！  // EN: I have been entrusted with a fire ÄRM!

@@ -1,0 +1,63 @@
+// Legacy reference view of L11_0_0.SPC; edit text/nfp/L11_0_0.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000022 MAP11_2.SPC  // LITERAL: MAP11_2.SPC (usage not inferred)
+@0000EF B  // LITERAL: B (usage not inferred)
+@000113 A  // LITERAL: A (usage not inferred)
+@0004DC A  // LITERAL: A (usage not inferred)
+@000568 A  // LITERAL: A (usage not inferred)
+@00090E F03A06  // LITERAL: F03A06 (usage not inferred)
+@00094C F01B09  // LITERAL: F01B09 (usage not inferred)
+@00098A F02A06  // LITERAL: F02A06 (usage not inferred)
+@000B26  C0D04 ［ジャック］ C0F04   // EN: [Jack]
+@000B4C みんなよろこんで  // TODO: English translation
+@000B68 くれてるみたいっスね！  // TODO: English translation
+@000BDE  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
+@000C02 うん、そうだな！  // TODO: English translation
+@000C1E 元気になってもらってよかった  // TODO: English translation
+@000C64  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
+@000C88 こっちのつかれもぶっとぶよ！  // TODO: English translation
+@000CDA  C0D04 ［ジャック］ C0F04   // EN: [Jack]
+@000D00 オイラのさくもつも  // TODO: English translation
+@000D1E よくそだってくれたっス  // TODO: English translation
+@000E27  C0D04 ［バッボ］ C0F04   // EN: [Babbo]
+@000E4B うむ！サルはサルなりに  // TODO: English translation
+@000E6D よくやったぞ！  // TODO: English translation
+@000EB5 F03A04  // LITERAL: F03A04 (usage not inferred)
+@000EE3  C0D04 ［ジャック］ C0F04   // EN: [Jack]
+@000F09 サルいうなよ！  // TODO: English translation
+@000FFF F03A01  // LITERAL: F03A01 (usage not inferred)
+@00103D F01B05  // LITERAL: F01B05 (usage not inferred)
+@00106B  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
+@00108F それにしてもチェスの兵隊…  // TODO: English translation
+@0010B5 ゆるせねぇ！  // TODO: English translation
+@0010EB  C0D04 ［ジャック］ C0F04   // EN: [Jack]
+@001111 まったくっスね  // TODO: English translation
+@001155  C0D04 ［ジャック］ C0F04   // EN: [Jack]
+@00117B このヴェストリも  // TODO: English translation
+@001197 うつくしい村だったみたいっス  // TODO: English translation
+@0011ED F01B02  // LITERAL: F01B02 (usage not inferred)
+@00121B  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
+@00123F それをこんなにしやがって…！！  // TODO: English translation
+@0014A8 F38A01  // LITERAL: F38A01 (usage not inferred)
+@001581  C0D04 ［？？？］ C0F04   // EN: [???]
+@0015A5 ………  // TODO: English translation
+@0016A8 F03A08  // LITERAL: F03A08 (usage not inferred)
+@00170C  C0D04 ［ジャック］ C0F04   // EN: [Jack]
+@001732 …はん？  // TODO: English translation
+@001A34 F02A14  // LITERAL: F02A14 (usage not inferred)
+@001AC8  C0D04 ［バッボ］ C0F04   // EN: [Babbo]
+@001AEC なんじゃいアイツは…  // TODO: English translation
+@001B46 F02A01  // LITERAL: F02A01 (usage not inferred)
+@001BBA F01B01  // LITERAL: F01B01 (usage not inferred)
+@001C1E  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
+@001C42 ………  // TODO: English translation
+@001C8E F01B07  // LITERAL: F01B07 (usage not inferred)
+@001CBC  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
+@001CE0 いってみよう！！  // TODO: English translation
+@001E47 F03A07  // LITERAL: F03A07 (usage not inferred)
+@001EAB  C0D04 ［ジャック］ C0F04   // EN: [Jack]
+@001ED1 あ！ギンタ！！  // TODO: English translation
+@001EEB まつっスよ！！  // TODO: English translation
+@002055 L24_0_0.SPC  // LITERAL: L24_0_0.SPC (usage not inferred)

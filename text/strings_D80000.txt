@@ -1,0 +1,22 @@
+// MAR strings block D80000
+// One record per line: @<rom offset> <text>
+// <XX> is a raw control byte. Text is re-encoded to Shift-JIS at build time;
+// a line may not grow past its original byte length.
+// Anything after // is a comment and never reaches the ROM.
+
+@D8016C OP_06_A.KCG
+@D801AC OP_06_A.KCL
+@D80215 P<03>P<04> <05> <06> <07> <08> <09> <0A> <0B><10><0C><10><0D><10><0E><10><0F><10><10><10><11><10><12><10><13><10><14> <15> <16> <17> <05> <18> <19> <1A>P<1B><10><1B><10><1B><10><1C>P<1D>P<1E> <05> <05> <1F>   ! "<10>#<10>$<10>%@&@'@(@)@*@+<10>,<10>-<10>. / 0 1 <05> 2 <1B><10>3P<1B><10><1B><10>4P<1B><10><18>$<05> 5 6 7 8 9<10>:@;@<3C>@=@<3E>@?@@@A@B@C@D<10>E<10>F G H <05> <05> I JPKPLPMPN <05> <05> O P Q R<10>S<10>T@U@V@W
+@D802E6 [@\@]@^@_<10>` a b c <05> d ePfPgPh<10>i j <06> k l m n<10>o@p@q@r
+@D83E0C OP_07_A.KCG
+@D83E4C OP_07_A.KCL
+@D83EB7 P<03>P<04>
+@D880BC OP_08_A.KCG
+@D880FC OP_08_A.KCL
+@D8D1DC OP_09_A.KCG
+@D8D21C OP_09_A.KCL
+@D8D2E2 '<10>(<10>)<10><08><10><07> <07> * + <15> <15> <15> <15> <15> 
+@D8D300 , - . / 0<10>1<10><08>02030405060708
+@D8D322 <3C>0=<10><3E><10>?<10>@<10><08><10><07> A B <15> <15> <15> <15> 
+@D8D340 C D E F G<10>H0I0J0K0L0M0N0OpP`Q
+@D8D364 UpV<10>W<10>X<10>Y<10>Z<10><07> [ \ <15> <15> <15> 

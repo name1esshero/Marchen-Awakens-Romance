@@ -1,0 +1,4 @@
+// CH_M03A.SPC: ROM 56A220
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+

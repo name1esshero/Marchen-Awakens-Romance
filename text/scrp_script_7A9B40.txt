@@ -1,0 +1,63 @@
+// Legacy reference view of EV_ICE11.SPC; edit text/nfp/EV_ICE11.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@0000A1 MAP04_6A  // LITERAL: MAP04_6A (usage not inferred)
+@00029A A  // LITERAL: A (usage not inferred)
+@00034D A  // LITERAL: A (usage not inferred)
+@0003D9 A  // LITERAL: A (usage not inferred)
+@000465 A  // LITERAL: A (usage not inferred)
+@00069D F15A03  // LITERAL: F15A03 (usage not inferred)
+@000776  C0D04 ［イアン］  // EN: [Ian]
+@000793  C0F04 うぐぁ…はっ！！  // EN: Urgh... hah!!
+@0007F0 F25A01  // LITERAL: F25A01 (usage not inferred)
+@0008C9  C0D04 ［ロコ］  // EN: [Loco]
+@0008E4  C0F04 ひきましょう、イアン  // EN: Let's retreat, Ian.
+@000935  C0D04 ［ロコ］  // EN: [Loco]
+@000950  C0F04 犬の中からでてきてしまった以上  // EN: Now that he's emerged from the dog...
+@000981 分がわるいです  // EN: ...the odds are against us.
+@000BA8 F06A04  // LITERAL: F06A04 (usage not inferred)
+@000C81  C0D04 ［エド］  // EN: [Ed]
+@000C9C  C0F04 『ギンタ』っていったな？  // EN: You said your name was Ginta, right?
+@000CC7 こっちにこい  // EN: Come here.
+@000E6C F01B04  // LITERAL: F01B04 (usage not inferred)
+@000F45  C0D04 ［ギンタ］  // EN: [Ginta]
+@000F62  C0F04 …  // EN: ...
+@000FA1  C0D04 ［エド］  // EN: [Ed]
+@000FBC  C0F04 ちょっとしたじじょうがあってな  // EN: Due to certain circumstances...
+@000FED 犬とオレは合体しているんだ  // EN: ...the dog and I are fused together.
+@001031  C0D04 ［エド］  // EN: [Ed]
+@00104C  C0F04 犬が３回ねるとオレが出てきて  // EN: When the dog sleeps three times, I come out.
+@00107B オレが１回ねると犬がでてくる  // EN: When I sleep once, the dog comes out.
+@0010C1  C0D04 ［ギンタ］  // EN: [Ginta]
+@0010DE  C0F04 それでエドは  // EN: So that's why Ed...
+@0010FD ねたいねたいっていってたのか…  // EN: ...kept saying he wanted to sleep...
+@001145  C0D04 ［エド］  // EN: [Ed]
+@001160  C0F04 これくれてやる  // EN: Here, take this.
+@0011E3 ARM043  // LITERAL: ARM043 (usage not inferred)
+@001313  C0D04 ［エド］  // EN: [Ed]
+@00134D これでスノウの封印をといてやれ  // EN: Use it to break Snow's seal.
+@0013FB  C0D04 ［ギンタ］  // EN: [Ginta]
+@001418  C0F04 …おう！！  // EN: ...Yeah!!
+@00149C  C0D04 メルトアイス C0F04 と  // EN: Melt Ice and...
+@0014C4  C0D04 メルトアイスストーン C0F04 を  // EN: ...Melt Ice Stone:
+@0014F4 もらった！  // EN: Received it!
+@001877 F01B01  // LITERAL: F01B01 (usage not inferred)
+@001950  C0D04 ［ギンタ］  // EN: [Ginta]
+@00196D  C0F04 よくがんばったな…  // EN: You've held on so well...
+@0019BC  C0D04 ［ギンタ］  // EN: [Ginta]
+@0019D9  C0F04 いま、そこから  // EN: I'll get you...
+@0019FA 出してやるぞ！！  // EN: ...out of there now!!
+@001CBB MAP04_7A  // LITERAL: MAP04_7A (usage not inferred)
+@001CFB A  // LITERAL: A (usage not inferred)
+@001DCF ARM_NE05  // LITERAL: ARM_NE05 (usage not inferred)
+@001E6C ARM_NE05  // LITERAL: ARM_NE05 (usage not inferred)
+@001F09 ARM_NE05  // LITERAL: ARM_NE05 (usage not inferred)
+@001FA6 ARM_NE05  // LITERAL: ARM_NE05 (usage not inferred)
+@002043 ARM_NE05  // LITERAL: ARM_NE05 (usage not inferred)
+@0020E0 ARM_NE05  // LITERAL: ARM_NE05 (usage not inferred)
+@00217D ARM_NE05  // LITERAL: ARM_NE05 (usage not inferred)
+@00221A ARM_NE05  // LITERAL: ARM_NE05 (usage not inferred)
+@002824 F04A08  // LITERAL: F04A08 (usage not inferred)
+@0028D7 F01B15  // LITERAL: F01B15 (usage not inferred)
+@002A97 EV_ICE12.SPC  // LITERAL: EV_ICE12.SPC (usage not inferred)

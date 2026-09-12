@@ -1,0 +1,36 @@
+// HI_M25_2.SPC: ROM 813E60
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@0000F6 F08A01  // LITERAL: F08A01 (usage not inferred)
+@0001B7  C0D04 ［ナナシ］  // EN: [Nanashi]
+@0001D4  C0F04 あーコラあかん！  // TODO: English translation
+@0001F7 ドロシーちゃんしか通れへんわ…  // TODO: English translation
+@000249 F01B04  // LITERAL: F01B04 (usage not inferred)
+@00030A  C0D04 ［ギンタ］  // EN: [Ginta]
+@000327  C0F04 ドロシーにたのむしかないけど  // TODO: English translation
+@00038A F03A08  // LITERAL: F03A08 (usage not inferred)
+@0004AB  C0D04 ［ジャック］  // EN: [Jack]
+@0004CA  C0F04 …しょうじき、たのみにくいっス…  // TODO: English translation
+@0005C1 F04A06  // LITERAL: F04A06 (usage not inferred)
+@000691  C0D04 ［スノウ］  // EN: [Snow]
+@0006AE  C0F04 ………  // TODO: English translation
+@0006FB F05A04  // LITERAL: F05A04 (usage not inferred)
+@0007CB  C0D04 ［エド］  // EN: [Ed]
+@0007E6  C0F04 （ひめが気にやむことは  // TODO: English translation
+@00080F 　ありませんぞ！）  // TODO: English translation
+@0008AB  C0D04 ［スノウ］  // EN: [Snow]
+@0008C8  C0F04 でも…  // TODO: English translation
+@0009A5 F08A05  // LITERAL: F08A05 (usage not inferred)
+@000A45  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000A62  C0F04 だいじょうぶや！  // TODO: English translation
+@000AE9 F08A06  // LITERAL: F08A06 (usage not inferred)
+@000B47  C0D04 ［ナナシ］  // EN: [Nanashi]
+@000B64  C0F04 ワイのスーパー口説きテクニックで  // TODO: English translation
+@000B97 ドロシーちゃんをせっとくしたろ！  // TODO: English translation
+@000C1B F03A08  // LITERAL: F03A08 (usage not inferred)
+@000C79  C0D04 ［ジャック］  // EN: [Jack]
+@000C98  C0F04 ………  // TODO: English translation
+@000CDB  C0D04 ［ジャック］  // EN: [Jack]
+@000CFA  C0F04 …よけい…しんぱいっス…  // TODO: English translation
+@000E45 G_EV051.SPC  // LITERAL: G_EV051.SPC (usage not inferred)

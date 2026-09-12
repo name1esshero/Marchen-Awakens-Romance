@@ -1,0 +1,14 @@
+// Legacy reference view of HI_M26_2.SPC; edit text/nfp/HI_M26_2.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@0000F6 F02A03  // LITERAL: F02A03 (usage not inferred)
+@000191 F01B02  // LITERAL: F01B02 (usage not inferred)
+@000252  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
+@000276 この先に…あるのか？？  // TODO: English translation
+@0002F2  C0D04 ［バッボ］ C0F04   // EN: [Babbo]
+@000316 …むぅ…かんじる！かんじるぞ！！  // TODO: English translation
+@000342 つよい魔力（まりょく）をかんじる！  // TODO: English translation
+@0003F8 F38A03  // LITERAL: F38A03 (usage not inferred)
+@000498  C0D04 ［マール］ C0F04   // EN: [Marl]
+@0004BC （へへへ）  // TODO: English translation

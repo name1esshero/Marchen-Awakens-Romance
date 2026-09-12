@@ -1,0 +1,25 @@
+// EV_ICE03.SPC: ROM 7A6020
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@0000BD MAP04_6A  // LITERAL: MAP04_6A (usage not inferred)
+@0001B9 A  // LITERAL: A (usage not inferred)
+@000245 B  // LITERAL: B (usage not inferred)
+@000442  C0D04 ［？？？］  // EN: [???]
+@00045F  C0F04 だれか…  // EN: Someone...
+@00047A 城（しろ）に入りましたね  // EN: has entered the castle.
+@0004BC  C0D04 ［？？？］  // EN: [???]
+@0004D9  C0F04 ああ…犬かな？  // EN: Yeah... The dog, maybe?
+@0004FA ずいぶんはやく戻ってきたな  // EN: He came back awfully quickly.
+@0006AC F25A01  // LITERAL: F25A01 (usage not inferred)
+@000785  C0D04 ［ロコ］  // EN: [Loco]
+@0007A0  C0F04 つよい魔力（まりょく）と…  // EN: A powerful magical presence... and
+@0007CD たいしたことないやつがすこし  // EN: a few others who aren't much of a threat.
+@000823 F15A04  // LITERAL: F15A04 (usage not inferred)
+@0008FC  C0D04 ［イアン］  // EN: [Ian]
+@000919  C0F04 ハロウィンがこの封印をとく  // EN: While Halloween brings the ÄRM
+@000988  C0D04 ［イアン］  // EN: [Ian]
+@0009A5  C0F04 たいくつしないで  // EN: it looks like
+@0009C8 すみそうだな  // EN: we won't be bored.
+@000B30 EV_ICE04.SPC  // LITERAL: EV_ICE04.SPC (usage not inferred)
+@000946 <F0><56>ＲＭをもってくるあいだ  // EN: that can break this seal,

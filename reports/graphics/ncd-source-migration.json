@@ -1,0 +1,53 @@
+[
+  {
+    "container": "CHR.NCD",
+    "source": "graphics/battle/characters/source",
+    "rom_offset": 3801040,
+    "size": 1868784,
+    "counts": {
+      "groups": 345,
+      "animations": 681,
+      "frames": 2498,
+      "cells": 11329,
+      "images": 5694
+    },
+    "tile_count": 50279,
+    "tile_coverage": "exact, once per tile",
+    "original_ncd_required": false,
+    "whole_tile_sheet_required": false
+  },
+  {
+    "container": "EFFECT.NCD",
+    "source": "graphics/battle/effects/source",
+    "rom_offset": 5958384,
+    "size": 1975664,
+    "counts": {
+      "groups": 202,
+      "animations": 468,
+      "frames": 4817,
+      "cells": 14622,
+      "images": 2842
+    },
+    "tile_count": 51017,
+    "tile_coverage": "exact, once per tile",
+    "original_ncd_required": false,
+    "whole_tile_sheet_required": false
+  },
+  {
+    "container": "SYSTEM.NCD",
+    "source": "graphics/ui/source",
+    "rom_offset": 14510560,
+    "size": 1292720,
+    "counts": {
+      "groups": 1187,
+      "animations": 1479,
+      "frames": 1937,
+      "cells": 6314,
+      "images": 3526
+    },
+    "tile_count": 34462,
+    "tile_coverage": "exact, once per tile",
+    "original_ncd_required": false,
+    "whole_tile_sheet_required": false
+  }
+]

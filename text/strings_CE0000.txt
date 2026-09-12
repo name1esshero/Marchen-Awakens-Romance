@@ -1,0 +1,16 @@
+// MAR strings block CE0000
+// One record per line: @<rom offset> <text>
+// <XX> is a raw control byte. Text is re-encoded to Shift-JIS at build time;
+// a line may not grow past its original byte length.
+// Anything after // is a comment and never reaches the ROM.
+
+@CEF066 VUUUMQNQRURQSQTQUQVQ
+@CEF18E d2e2f2g2h2
+@CEF1AB "<0B>"<0C>2<0D>"<0E>"
+@CEF268 VUUUmUTQSURUQUPUSQgQTQTUSURUQUPUSQgQTQTUSURUQUPUSQgQTQTUTQUQMQNQMQNQnQmQTQUQMQNQMQNQTQTUSURUQUPUSQgQTQTUSURUQUPUnQmQmQnQUQnUVQ
+@CEF4BA mUnUkUkQnQmQnQUQVQ
+@CEF512 mUnUkUkQnQmQnQVQ
+@CEF618 VUUUMQNQRURQSQTQnQVQ
+@CEF870 =2<3E>"?2@2
+@CEF9D0 V2W2X2Y"
+@CEFB30 q2r2s"t2

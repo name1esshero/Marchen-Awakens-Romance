@@ -1,0 +1,48 @@
+// EV_BA02.SPC: ROM 79A490
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@0001AD A  // LITERAL: A (usage not inferred)
+@000434 F01A01  // LITERAL: F01A01 (usage not inferred)
+@00050D  C0D04 ［ギンタ］  // EN: [Ginta]
+@00052A  C0F04 よっし！！  // EN: All right!!
+@00078D F09A01  // LITERAL: F09A01 (usage not inferred)
+@000866  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000885  C0F04 よくやったわねーー！  // EN: You did great!
+@0008E2  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000901  C0F04 じゃ、あんたはわたしの物に…  // EN: Well then, you're mine now...
+@00096A F02A01  // LITERAL: F02A01 (usage not inferred)
+@000A43  C0D04 ［バッボ］  // EN: [Babbo]
+@000A60  C0F04 いやじゃ  // EN: No way.
+@000AB5 F09A05  // LITERAL: F09A05 (usage not inferred)
+@000AE3  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000B02  C0F04 な…！！  // EN: Wha...!!
+@000BC3 F02A05  // LITERAL: F02A05 (usage not inferred)
+@000C5D  C0D04 ［バッボ］  // EN: [Babbo]
+@000CDD  C0D04 ［バッボ］  // EN: [Babbo]
+@000CFA  C0F04 おまえからは邪悪（じゃあく）な  // EN: You absolutely reek...
+@000D2B 魔力（まりょく）の匂いがプンプンするわ！  // EN: ...of evil magic!
+@000D7D  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000D9C  C0F04 邪悪とは何よ！！  // EN: What do you mean, evil?!!
+@000DE9  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000E08  C0F04 わたしこそ、あんたなんておことわりよ！！  // EN: I'm the one who doesn't want you!!
+@000EE9 F01A07  // LITERAL: F01A07 (usage not inferred)
+@000FC2  C0D04 ［ギンタ］  // EN: [Ginta]
+@000FDF  C0F04 え、じゃあ…！！  // EN: Huh, then...!!
+@00103C F09A01  // LITERAL: F09A01 (usage not inferred)
+@00106A  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001089  C0F04 しかたないわね  // EN: Oh, all right.
+@0010AA キミ、名前は？？  // EN: What's your name??
+@0010F4 F01A08  // LITERAL: F01A08 (usage not inferred)
+@001122  C0D04 ［ギンタ］  // EN: [Ginta]
+@00113F  C0F04 ギンタ！！  // EN: Ginta!!
+@001186  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0011A5  C0F04 ギンタ…このナマイキブサイクは  // EN: Ginta... this ugly little loudmouth...
+@001256 F09A07  // LITERAL: F09A07 (usage not inferred)
+@0012BA  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001310 …ちょうどいい、こっち来て！  // EN: ...Perfect timing. Come over here!
+@00150F 09A00  // LITERAL: 09A00 (usage not inferred)
+@0008AC おみごとよ<F0><40>  // EN: Nicely done! ♥
+@000C7A  C0F04 おまえの<F0><56>ＲＭになるなんていやじゃ！！  // EN: I refuse to become your ÄRM!!
+@0011D6 キミにあげよう<F0><40>  // EN: ...is yours. ♥
+@0012D9  C0F04 …そうそう、<F0><56>ＲＭの使い方だったよね  // EN: ...Oh, right. You wanted to learn how to use ÄRM.

@@ -1,0 +1,15 @@
+// EV_ICE04.SPC: ROM 7A6550
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00017E MAP04_A.SPC  // LITERAL: MAP04_A.SPC (usage not inferred)
+@00028C F09A02  // LITERAL: F09A02 (usage not inferred)
+@00038C  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0003AB  C0F04 さて…と  // EN: Well then...
+@0003F0  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00040F  C0F04 ここにかんじられる魔力（まりょく）は…  // EN: The magical power I can sense here...
+@000472  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000491  C0F04 いちばん上のフロアに  // EN: On the top floor,
+@0004B8 つよそうな二人…  // EN: two people who seem strong...
+@0004F2  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000511  C0F04 このフロアにたっぷり…と  // EN: And plenty on this floor, too...

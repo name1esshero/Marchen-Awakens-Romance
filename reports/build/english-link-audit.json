@@ -1,0 +1,19 @@
+{
+  "sha1": "1c440f52854422481ba39eee21152523bfdbc59c",
+  "size": 33554432,
+  "original_area_differing_bytes": 202,
+  "change_scope": "011790..011870 constructor bridge only; C and strings in ROM expansion",
+  "entry_points": {
+    "EnglishDialogueStart": "09000000",
+    "DialogueStartOriginal": "090000F4",
+    "EnglishTranslateRows": "0900049C",
+    "EnglishPageTask": "09000294",
+    "EnglishClearPage": "09000230",
+    "gEnglishRows": "09017390",
+    "gEnglishRowCount": "09026F9C"
+  },
+  "exact_row_mappings": 1663,
+  "unallocated_mutable_sections": [],
+  "emulator_playthrough_verified": false,
+  "limitation": "Static link validation plus separate host C tests; does not establish complete scene or printer coverage."
+}

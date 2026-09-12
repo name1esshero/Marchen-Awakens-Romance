@@ -1,0 +1,24 @@
+// Legacy reference view of G_EV063.SPC; edit text/nfp/G_EV063.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000221 F09A04  // LITERAL: F09A04 (usage not inferred)
+@000321  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000340  C0F04 …  // TODO: English translation
+@00038F F01B04  // LITERAL: F01B04 (usage not inferred)
+@00048F  C0D04 ［ギンタ］  // EN: [Ginta]
+@0004AC  C0F04 …  // TODO: English translation
+@0004FB F01B04  // LITERAL: F01B04 (usage not inferred)
+@000529  C0D04 ［ギンタ］  // EN: [Ginta]
+@000546  C0F04 （いまさらゴメンなんて  // TODO: English translation
+@00056F 　いえるかよ！）  // TODO: English translation
+@00080A F04A06  // LITERAL: F04A06 (usage not inferred)
+@0008E3  C0D04 ［スノウ］  // EN: [Snow]
+@000900  C0F04 ギンタ…  // EN: Ginta...
+@000955 F01B04  // LITERAL: F01B04 (usage not inferred)
+@000A2E  C0D04 ［ギンタ］  // EN: [Ginta]
+@000A4B  C0F04 一人でだいじょうぶだから！  // TODO: English translation
+@000A78 ほうっておいてくれ！  // TODO: English translation
+@000AFC F03A03  // LITERAL: F03A03 (usage not inferred)
+@000BD5  C0D04 ［ジャック］  // EN: [Jack]
+@000BF4  C0F04 ガンコものっス…  // TODO: English translation

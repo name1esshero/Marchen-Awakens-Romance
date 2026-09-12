@@ -1,0 +1,8 @@
+// FULL_ITM.SPC: ROM 7CA370
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000086 アイテム入れ中  // EN: Adding items.
+@0009B4 マジックストーン１０コずつ入れ中  // EN: Adding ten of each Magic Stone.
+@000B78 マジックストーン１０コずつ入れ中　おわり  // EN: Adding ten of each Magic Stone: done.
+@0007EE <F0><56>ＲＭ１０コずつ入れ中  // EN: Adding ten of each ÄRM.

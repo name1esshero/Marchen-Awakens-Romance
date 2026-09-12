@@ -1,0 +1,8 @@
+// OBJ_S.SPC: ROM D6D0C0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000160 F04A01  // LITERAL: F04A01 (usage not inferred)
+@000221  C0D04 ［スノウ］  // EN: [Snow]
+@00023E  C0F04 氷をとかすね  // TODO: English translation
+@0004B9 氷が道をふさいでいる  // EN: Ice is blocking the path.

@@ -1,0 +1,45 @@
+// EV_BA03.SPC: ROM 79ACF0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000134 F01A01  // LITERAL: F01A01 (usage not inferred)
+@00016C F09A01  // LITERAL: F09A01 (usage not inferred)
+@0002C0  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0002DF  C0F04 いい？よく聞いてね  // EN: All right? Listen carefully.
+@00032E  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00034D  C0F04 まず、この C0904 マジックストーン C0F04 を  // EN: First, these Magic Stones...
+@00038A あげるわ  // EN: are for you.
+@0003F9 マジックストーンを  // EN: You received
+@000417 ２０コもらった！  // EN: 20 Magic Stones!
+@00049F  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0004F3 使えないの  // EN: ...you can't use them.
+@000527  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000546  C0F04 マジックストーンは、魔力のひくいキミでも  // EN: Magic Stones can be used even by someone with little magical power like you.
+@0005C9  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0005E8  C0F04 バトル中に C0904 Ａボタン C0F04 をおすと  // EN: If you press the A Button during battle...
+@000669  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0006BC わかった？  // EN: Got it?
+@0006F0  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000796  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000816  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000868  C0904 シンクロ C0F04 するまで時間が必要なの  // EN: you'll need some time to synchronize with it.
+@0008BE  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0008DD  C0904 シンクロゲージ C0F04 が光ったら  // EN: When the Synchronization Gauge lights up...
+@00094D  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0009D3  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000A49  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000A68  C0F04 このさきに魔物の気配がしてるわ  // EN: I sense a monster up ahead.
+@000C07 09A01  // LITERAL: 09A01 (usage not inferred)
+@000C8D 09A00  // LITERAL: 09A00 (usage not inferred)
+@0004BE  C0F04 ふつうの<F0><56>ＲＭは、高い魔力がないと  // EN: With ordinary ÄRM, unless you have strong magic...
+@000581 使えるべんりな<F0><56>ＲＭってとこね  // EN: They're a handy kind of ÄRM.
+@000623 <F0><56>ＲＭをえらぶことができるわ  // EN: ...you can select an ÄRM.
+@000688  C0904 <F0><56>ＲＭ C0F04 の C0904 Ａ C0F04 ね  // EN: A for ÄRM.
+@00070F  C0F04 ボタンをおせば、持っている<F0><56>ＲＭから  // EN: Press the button to draw...
+@000746  C0904 ５コ C0F04 の<F0><56>ＲＭを取り出すわ  // EN: ...five of the ÄRM you're carrying.
+@0007B5  C0F04 そこから、使いたい<F0><56>ＲＭをえらぶのよ  // EN: Then choose the ÄRM you want to use.
+@000835  C0F04 <F0><56>ＲＭをえらんだら、その<F0><56>ＲＭと  // EN: Once you've selected an ÄRM,
+@00090F <F0><56>ＲＭを使える合図よ  // EN: ...that means your ÄRM is ready to use.
+@00096C  C0F04 <F0><56>ＲＭを使うときも C0904 Ａボタン C0F04 ね  // EN: Use the A Button to activate your ÄRM, too.
+@0009F2  C0F04 とりあえずやってみましょ<F0><40>  // EN: Let's give it a try. ♥
+@000A99 がんばってやっつけてね<F0><40>  // EN: Do your best to beat it! ♥

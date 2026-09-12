@@ -1,0 +1,157 @@
+// EV_AL02B.SPC: ROM 796E90
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000182 ARM_HO08  // LITERAL: ARM_HO08 (usage not inferred)
+@000477 F03B01  // LITERAL: F03B01 (usage not inferred)
+@000596 F03B01  // LITERAL: F03B01 (usage not inferred)
+@000630  C0D04 ［ジャック］  // EN: [Jack]
+@00064F  C0F04 ピー！ピー！  // EN: Peep! Peep!
+@0006DE F01B10  // LITERAL: F01B10 (usage not inferred)
+@0007B7  C0D04 ［ギンタ］  // EN: [Ginta]
+@0007D4  C0F04 ！！！  // EN: !!!
+@0007ED いーーー！？  // EN: Eeeeh!?
+@000938 F07A01  // LITERAL: F07A01 (usage not inferred)
+@000A11  C0D04 ［アルヴィス］  // EN: [Alviss]
+@000A32  C0F04 そのとおり、キミをこの  // EN: That's right. I'm the one
+@000A5B  C0904 『メルヘヴン』 C0F04 によんだのはオレだ  // EN: who summoned you to MÄR Heaven.
+@000AE9 F01B04  // LITERAL: F01B04 (usage not inferred)
+@000B17  C0D04 ［ギンタ］  // EN: [Ginta]
+@000B34  C0F04 やっぱりそうか！  // EN: I knew it!
+@000B57 礼をいわなきゃな！！  // EN: I owe you a thank-you!
+@000B95  C0D04 ［ギンタ］  // EN: [Ginta]
+@000BB2  C0F04 …でも…  // EN: ...But...
+@000C73 F01B06  // LITERAL: F01B06 (usage not inferred)
+@000D0D  C0D04 ［ギンタ］  // EN: [Ginta]
+@000D2A  C0F04 なんでジャックに  // EN: Why did you
+@000D4D こんなマネするんだよ？  // EN: do this to Jack?
+@000FF9 EF_GEN12  // LITERAL: EF_GEN12 (usage not inferred)
+@001226 F01B06  // LITERAL: F01B06 (usage not inferred)
+@0012FF  C0D04 ［ギンタ］  // EN: [Ginta]
+@00131C  C0F04 うわっーーー！  // EN: Whoooa!
+@001377 F02A04  // LITERAL: F02A04 (usage not inferred)
+@001450  C0D04 ［バッボ］  // EN: [Babbo]
+@00146D  C0F04 こやつ、かなりぶれいだ！  // EN: This fellow is most insolent!
+@001498 やるか！？ギンタ！？  // EN: Shall we fight him, Ginta!?
+@001552 F07A01  // LITERAL: F07A01 (usage not inferred)
+@00162B  C0D04 ［アルヴィス］  // EN: [Alviss]
+@00164C  C0904 『門ばんピエロ』 C0F04 をつかって  // EN: I used the Gate Keeper Clown
+@001680 いせかいの住人をよびだした  // EN: to summon someone from another world.
+@0016C4  C0D04 ［アルヴィス］  // EN: [Alviss]
+@0016E5  C0F04 だれかつよいやつが  // EN: I was hoping
+@00170A きてくれれば、と思ってな  // EN: someone strong would come.
+@00175C F07A04  // LITERAL: F07A04 (usage not inferred)
+@00178A  C0D04 ［アルヴィス］  // EN: [Alviss]
+@0017AB  C0F04 でも、キミみたいな  // EN: But to think someone
+@0017D0 よわいヤツがきてしまうとは…  // EN: as weak as you would turn up...
+@001816  C0D04 ［アルヴィス］  // EN: [Alviss]
+@001837 「かけ」 C0F04 はしっぱいだったな…  // EN: My gamble didn't pay off...
+@0018A0 F01B06  // LITERAL: F01B06 (usage not inferred)
+@001979  C0D04 ［ギンタ］  // EN: [Ginta]
+@001996  C0F04 よわいだと！！  // EN: Weak, you say!?
+@0019F1 F07A01  // LITERAL: F07A01 (usage not inferred)
+@001A1F  C0D04 ［アルヴィス］  // EN: [Alviss]
+@001A40  C0F04 そうさ、よわい  // EN: That's right. Weak.
+@001A8B  C0D04 ［アルヴィス］  // EN: [Alviss]
+@001AAC  C0F04 今だって、オレが手を  // EN: Just now, if I hadn't
+@001AD3 かしてやらなかったら  // EN: lent you a hand,
+@001B11  C0D04 ［アルヴィス］  // EN: [Alviss]
+@001B32  C0F04 ぶざまにバッボを  // EN: you'd have lost Babbo
+@001B55 うばわれていたろう  // EN: in a sorry display.
+@001BA1 F02A14  // LITERAL: F02A14 (usage not inferred)
+@001CE6  C0D04 ［バッボ］  // EN: [Babbo]
+@001D03  C0F04 …！  // EN: ...!
+@001D44  C0D04 ［アルヴィス］  // EN: [Alviss]
+@001D65  C0F04 こんなとうぞくごときに  // EN: If thieves like these
+@001D8E 手をやいているようなら  // EN: give you this much trouble,
+@001DCE  C0D04 ［アルヴィス］  // EN: [Alviss]
+@001DEF  C0904 『チェスの兵隊』 C0F04 には  // EN: the Chess Pieces
+@001E1D ころされるだろうね  // EN: will kill you.
+@001EB6 F01B04  // LITERAL: F01B04 (usage not inferred)
+@001F1A  C0D04 ［ギンタ］  // EN: [Ginta]
+@001F37  C0904 チェス C0F04 … C0904 の C0F04 　… C0904 コマ C0F04 ？？  // EN: Chess... Pieces...??
+@00200A F07A02  // LITERAL: F07A02 (usage not inferred)
+@00206E  C0D04 ［アルヴィス］  // EN: [Alviss]
+@0020C0 あやつり  // EN: they set out...
+@0020F2  C0D04 ［アルヴィス］  // EN: [Alviss]
+@002113  C0F04 このメルヘヴンを手に入れようとした  // EN: to seize MÄR Heaven:
+@002148 悪のせんとうしゅうだん  // EN: an evil fighting force.
+@0021CE F02A13  // LITERAL: F02A13 (usage not inferred)
+@002232  C0D04 ［バッボ］  // EN: [Babbo]
+@00224F  C0F04 …  // EN: ...
+@00228E  C0D04 ［アルヴィス］  // EN: [Alviss]
+@0022AF  C0F04 何人ものただしき心をもつ  // EN: Many righteous ÄRM users
+@00232A  C0D04 ［アルヴィス］  // EN: [Alviss]
+@00234B  C0F04 チェスの兵隊の中心的じんぶつをたおし  // EN: to defeat the central figure of the Chess Pieces
+@002382 せんそうをおわらせたんだ  // EN: and bring the war to an end.
+@0023C4  C0D04 ［アルヴィス］  // EN: [Alviss]
+@0023E5  C0F04 チェスの兵隊とたたかった  // EN: The leader of the army
+@002410 ぐん団のリーダーが…  // EN: that fought the Chess Pieces...
+@00244E  C0D04 ［アルヴィス］  // EN: [Alviss]
+@00246F  C0F04 キミと同じ C0904 『いせかい』 C0F04 からきた  // EN: was a human from another world,
+@0024AE 人間だったんだ  // EN: just like you.
+@00252C F01B11  // LITERAL: F01B11 (usage not inferred)
+@002590  C0D04 ［ギンタ］  // EN: [Ginta]
+@0025AD  C0F04 …！！  // EN: ...!!
+@0025C6 （オレよりまえに、ここにきたヤツが！？）  // EN: (Someone came here before me!?)
+@00265E F07A01  // LITERAL: F07A01 (usage not inferred)
+@0026C2  C0D04 ［アルヴィス］  // EN: [Alviss]
+@0026E3  C0F04 キミなんかよりずっと  // EN: He was much stronger
+@00270A つよかったさ  // EN: than you.
+@002740  C0D04 ［アルヴィス］  // EN: [Alviss]
+@002761  C0F04 チェスの兵隊のアイツと相打ち…  // EN: He and that Chess Piece took each other down...
+@002792 今は…もういない  // EN: Now... he's gone.
+@0027CC  C0D04 ［アルヴィス］  // EN: [Alviss]
+@0027ED  C0F04 つよいヤツがきてくれれば…  // EN: I'd hoped that someone strong
+@00281A と思っていたが…  // EN: would come here...
+@002854  C0D04 ［アルヴィス］  // EN: [Alviss]
+@002875  C0F04 こんな小さな子供がきてしまった  // EN: But instead, I got a little kid like you.
+@002916 F01B05  // LITERAL: F01B05 (usage not inferred)
+@00297A  C0D04 ［ギンタ］  // EN: [Ginta]
+@002997  C0F04 こ…！？こども！？  // EN: A... a kid!?
+@0029E6  C0D04 ［ギンタ］  // EN: [Ginta]
+@002A03  C0F04 （ジャックをいきなりトリにしたり！  // EN: (First he turns Jack into a bird out of nowhere!
+@002A38 　人をこどもよばわりしたり！）  // EN: Then he calls me a kid!)
+@002A80  C0D04 ［ギンタ］  // EN: [Ginta]
+@002A9D  C0F04 （マジむかつく！！）  // EN: (He's really ticking me off!)
+@002AEE  C0D04 ［アルヴィス］  // EN: [Alviss]
+@002B0F  C0F04 そんな小さいヤツでも  // EN: Still, even if you're small,
+@002B36 いせかいからよんだ以上…  // EN: since I summoned you from another world...
+@002B78  C0D04 ［アルヴィス］  // EN: [Alviss]
+@002B99  C0F04 きたえて、すこしでも  // EN: I'll have to train you
+@002BC0 マトモにたたかえるようにしないとな  // EN: until you can at least put up a decent fight.
+@002C0C  C0D04 ［ギンタ］  // EN: [Ginta]
+@002C29  C0F04 くっそーーー！  // EN: Daaamn it!
+@002C74  C0D04 ［アルヴィス］  // EN: [Alviss]
+@002C95  C0F04 それにな  // EN: And another thing.
+@002CDA  C0D04 ［アルヴィス］  // EN: [Alviss]
+@002D5A  C0D04 ［アルヴィス］  // EN: [Alviss]
+@002D7B  C0F04 チェスの兵隊のかなめ  // EN: belongs to the heart of the Chess Pieces:
+@002E71 F02A05  // LITERAL: F02A05 (usage not inferred)
+@002F0B  C0D04 ［バッボ］  // EN: [Babbo]
+@002F28  C0F04 …！！！！！！！  // EN: ...!!!!!!!
+@002FBB F07A04  // LITERAL: F07A04 (usage not inferred)
+@00301F  C0D04 ［アルヴィス］  // EN: [Alviss]
+@003040  C0F04 ファントムは  // EN: Phantom used
+@00305F そのバッボをぶきにして  // EN: that Babbo as his weapon
+@00309F  C0D04 ［アルヴィス］  // EN: [Alviss]
+@0030C0  C0F04 オレたちのなかまを  // EN: to strike down
+@0030E5 何十人もたおしていったんだ！  // EN: dozens of our comrades!
+@003171 F02A03  // LITERAL: F02A03 (usage not inferred)
+@0031D5  C0D04 ［バッボ］  // EN: [Babbo]
+@0031F2  C0F04 ちがう…！  // EN: That can't be...!
+@00320F 紳士（しんし）のワシがそんな…！  // EN: A gentleman like me would never...!
+@00329F F07A01  // LITERAL: F07A01 (usage not inferred)
+@003303  C0D04 ［アルヴィス］  // EN: [Alviss]
+@003324  C0F04 バッボをはかいする  // EN: I'll destroy Babbo.
+@003349 …よこせ  // EN: ...Hand him over.
+@0033F7 F01B06  // LITERAL: F01B06 (usage not inferred)
+@003491  C0D04 ［ギンタ］  // EN: [Ginta]
+@0034AE  C0F04 うるせーーーー！！  // EN: Shut uuuup!
+@0034FD  C0D04 ［ギンタ］  // EN: [Ginta]
+@00351A  C0F04 バッボはオレのダチだ！！  // EN: Babbo's my friend!
+@003545 バカヤローーーーー！！  // EN: You jerk!
+@00208F  C0F04 ６年まえ、きょうあくな<F0><56>ＲＭを  // EN: Six years ago, wielding vicious ÄRM,
+@0022DA <F0><56>ＲＭつかいが、大きなぎせいをはらって  // EN: made enormous sacrifices
+@002CFB  C0F04 おまえが封印をといた<F0><56>ＲＭバッボは  // EN: Babbo, the ÄRM whose seal you broke,
+@002DA2  C0904 『ファントム』  C0F04 の<F0><56>ＲＭ！！  // EN: Phantom!

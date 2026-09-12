@@ -1,0 +1,25 @@
+base  : 5ed178bfbdf459867d64e5b91a9d9c72654e4051  (16777216 bytes)
+built : 2031bdb884642f8c7ac140fa60d4ff089dbba069  (16777216 bytes)
+
+7 differing region(s), 7 bytes (0.0000% of the image)
+  0032A8..0032A9  (1 bytes)
+    base  00
+    built 40
+  094FF4..094FF5  (1 bytes)
+    base  d3
+    built d2
+  098414..098415  (1 bytes)
+    base  d3
+    built d2
+  3A2B36..3A2B37  (1 bytes)
+    base  04
+    built 05
+  3DF70B..3DF70C  (1 bytes)
+    base  30
+    built 40
+  568340..568341  (1 bytes)
+    base  00
+    built 01
+  7BA9F0..7BA9F1  (1 bytes)
+    base  00
+    built 80

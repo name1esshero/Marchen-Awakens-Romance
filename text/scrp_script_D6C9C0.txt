@@ -1,0 +1,12 @@
+// Legacy reference view of OBJ_G.SPC; edit text/nfp/OBJ_G.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000144 F01B01  // LITERAL: F01B01 (usage not inferred)
+@000205  C0D04 ［ギンタ］  // EN: [Ginta]
+@000222  C0F04 いくぞ！　バッボ！！  // EN: Let's go, Babbo!!
+@00027D F02A12  // LITERAL: F02A12 (usage not inferred)
+@00033E  C0D04 ［バッボ］  // EN: [Babbo]
+@00035B  C0F04 またワシ！？  // TODO: English translation
+@00048E TEST_E02  // LITERAL: TEST_E02 (usage not inferred)
+@0005F0 でっかい岩が道をふさいでいる  // TODO: English translation

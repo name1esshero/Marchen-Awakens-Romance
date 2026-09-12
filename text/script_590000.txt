@@ -1,0 +1,43 @@
+// MAR script block 590000
+// One record per line: @<rom offset> <text>
+// <XX> is a raw control byte. Text is re-encoded to Shift-JIS at build time;
+// a line may not grow past its original byte length.
+// Anything after // is a comment and never reaches the ROM.
+
+@59E3D2 ギンタ制服１  // EN: Ginta (school uniform) 1
+@59E3EA ギンタ制服２  // EN: Ginta (school uniform) 2
+@59E402 ギンタ制服３  // EN: Ginta (school uniform) 3
+@59E600 ギンタ制服４  // EN: Ginta (school uniform) 4
+@59E618 ギンタ制服５  // EN: Ginta (school uniform) 5
+@59E630 ギンタ制服６  // EN: Ginta (school uniform) 6
+@59E82E ギンタ制服７  // EN: Ginta (school uniform) 7
+@59E846 ギンタ制服８  // EN: Ginta (school uniform) 8
+@59E85E ギンタ制服９  // EN: Ginta (school uniform) 9
+@59EA5C ギンタ制服１０  // EN: Ginta (school uniform) 10
+@59EA76 ギンタ制服１１  // EN: Ginta (school uniform) 11
+@59EA90 ギンタ制服１２  // EN: Ginta (school uniform) 12
+@59EC90 ギンタ制服１３  // EN: Ginta (school uniform) 13
+@59ECAA ギンタ制服１４  // EN: Ginta (school uniform) 14
+@59ECC4 ギンタ制服１６  // EN: Ginta (school uniform) 16
+@59EEC4 ギンタ　メル服１  // EN: Ginta (MÄR outfit) 1
+@59EEE0 ギンタ　メル服２  // EN: Ginta (MÄR outfit) 2
+@59EEFC ギンタ　メル服３  // EN: Ginta (MÄR outfit) 3
+@59F0FE ギンタ　メル服４  // EN: Ginta (MÄR outfit) 4
+@59F11A ギンタ　メル服５  // EN: Ginta (MÄR outfit) 5
+@59F136 ギンタ　メル服６  // EN: Ginta (MÄR outfit) 6
+@59F338 ギンタ　メル服７  // EN: Ginta (MÄR outfit) 7
+@59F354 ギンタ　メル服８  // EN: Ginta (MÄR outfit) 8
+@59F370 ギンタ　メル服９  // EN: Ginta (MÄR outfit) 9
+@59F572 ギンタ　メル服１０  // EN: Ginta (MÄR outfit) 10
+@59F590 ギンタ　メル服１１  // EN: Ginta (MÄR outfit) 11
+@59F5AE ギンタ　メル服１２  // EN: Ginta (MÄR outfit) 12
+@59F7B2 ギンタ　メル服１３  // EN: Ginta (MÄR outfit) 13
+@59F7D0 ギンタ　メル服１４  // EN: Ginta (MÄR outfit) 14
+@59F7EE ギンタ　メル服１５  // EN: Ginta (MÄR outfit) 15
+@59F922 ギンタ　メル服１６  // EN: Ginta (MÄR outfit) 16
+@59FBE6 バッボ１  // babbo?
+@59FBFA バッボ２  // babbo?
+@59FC0E バッボ３  // babbo?
+@59FE08 バッボ４  // babbo?
+@59FE1C バッボ５  // babbo?
+@59FE30 バッボ６  // babbo?

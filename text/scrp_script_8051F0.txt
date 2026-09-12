@@ -1,0 +1,28 @@
+// Legacy reference view of G_EV040.SPC; edit text/nfp/G_EV040.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@0000DD A  // LITERAL: A (usage not inferred)
+@000169 A  // LITERAL: A (usage not inferred)
+@0002B8 MAP11_A.SPC  // LITERAL: MAP11_A.SPC (usage not inferred)
+@00064E F09A07  // LITERAL: F09A07 (usage not inferred)
+@000997  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0009B6  C0F04 …？  // TODO: English translation
+@000A1E  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000A3D  C0F04 ね、ギンタン知らない？  // TODO: English translation
+@000AD6 F04A06  // LITERAL: F04A06 (usage not inferred)
+@000BAF  C0D04 ［スノウ］  // EN: [Snow]
+@000BCC  C0F04 えーと…あれ？  // TODO: English translation
+@000BED さっきまでいたのに…  // TODO: English translation
+@000C88  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000CA7  C0F04 （きになるな…）  // TODO: English translation
+@000D04 F09A03  // LITERAL: F09A03 (usage not inferred)
+@000D9E  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000DBD  C0F04 ちょっとさがしてくる！  // TODO: English translation
+@0012AD F04A03  // LITERAL: F04A03 (usage not inferred)
+@0013AD  C0D04 ［スノウ］  // EN: [Snow]
+@0013CA  C0F04 あ！ドロシー！！  // TODO: English translation
+@001427 F04A02  // LITERAL: F04A02 (usage not inferred)
+@001455  C0D04 ［スノウ］  // EN: [Snow]
+@001472  C0F04 …  // TODO: English translation
+@0015C9 L11_0_2.SPC  // LITERAL: L11_0_2.SPC (usage not inferred)

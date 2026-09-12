@@ -1,0 +1,82 @@
+// G_EV003.SPC: ROM 7F4E00
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@0001AD MAP06_A.SPC  // LITERAL: MAP06_A.SPC (usage not inferred)
+@000285 01B07  // LITERAL: 01B07 (usage not inferred)
+@000346 A  // LITERAL: A (usage not inferred)
+@0003F9 A  // LITERAL: A (usage not inferred)
+@0004AC A  // LITERAL: A (usage not inferred)
+@000538 A  // LITERAL: A (usage not inferred)
+@0007D2 F03A04  // LITERAL: F03A04 (usage not inferred)
+@0008AB  C0D04 ［ジャック］  // EN: [Jack]
+@0008CA  C0F04 いたたたた…  // TODO: English translation
+@0009AA A  // LITERAL: A (usage not inferred)
+@000C3C F01B10  // LITERAL: F01B10 (usage not inferred)
+@000D15  C0D04 ［ギンタ］  // EN: [Ginta]
+@000D32  C0F04 みんな平気か！？  // TODO: English translation
+@000DC5 A  // LITERAL: A (usage not inferred)
+@000E03 F04A07  // LITERAL: F04A07 (usage not inferred)
+@000EDC  C0D04 ［スノウ］  // EN: [Snow]
+@000EF9  C0F04 な、なんとか…  // EN: S-somehow...
+@000FA2 F01B02  // LITERAL: F01B02 (usage not inferred)
+@000FD0  C0D04 ［ギンタ］  // EN: [Ginta]
+@000FED  C0F04 何だ！？いったい…！！  // TODO: English translation
+@001384 F08A03  // LITERAL: F08A03 (usage not inferred)
+@00145D  C0D04 ［ナナシ］  // EN: [Nanashi]
+@00147A  C0F04 キミら…チェスの兵隊やろ？  // TODO: English translation
+@001502 F08A04  // LITERAL: F08A04 (usage not inferred)
+@001530  C0D04 ［ナナシ］  // EN: [Nanashi]
+@00154D  C0F04 死刑…や！！  // TODO: English translation
+@0015DC F01B10  // LITERAL: F01B10 (usage not inferred)
+@0016DC  C0D04 ［ギンタ］  // EN: [Ginta]
+@0016F9  C0F04 な…！！  // EN: Wha...!!
+@0017BA F01B06  // LITERAL: F01B06 (usage not inferred)
+@001854  C0D04 ［ギンタ］  // EN: [Ginta]
+@001871  C0F04 オレたちは C0904 『メル』 C0F04 だ！！  // TODO: English translation
+@0018AA  C0904 チェス C0F04 はおまえらだろうが！！  // TODO: English translation
+@00190E F08A02  // LITERAL: F08A02 (usage not inferred)
+@00193C  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001959  C0F04 あーーん？？  // TODO: English translation
+@0019B2 F01B03  // LITERAL: F01B03 (usage not inferred)
+@0019E0  C0D04 ［ギンタ］  // EN: [Ginta]
+@0019FD  C0F04 いきなりケンカ売ってきやがって！！  // TODO: English translation
+@001A6C F08A01  // LITERAL: F08A01 (usage not inferred)
+@001A9A  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001AB7  C0F04 ……  // TODO: English translation
+@001AF8  C0D04 ［ギンタ］  // EN: [Ginta]
+@001B15  C0F04 オレたちゃチェスたおそうと  // TODO: English translation
+@001B42 してるんだ！！  // TODO: English translation
+@001BA1 F08A05  // LITERAL: F08A05 (usage not inferred)
+@001BCF  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001BEC  C0F04 あれ…自分なんかかんちがいしとった  // TODO: English translation
+@001C21 みたいやなぁ…  // TODO: English translation
+@001C59  C0D04 ［ナナシ］  // EN: [Nanashi]
+@001C76  C0F04 そか、きみらもチェスの兵隊はてきか…  // TODO: English translation
+@001CAD ついといで！！  // TODO: English translation
+@001F7B F05A02  // LITERAL: F05A02 (usage not inferred)
+@00203C  C0D04 ［エド］  // EN: [Ed]
+@002057  C0F04 （ひめさま…！）  // TODO: English translation
+@0020D5 F04A02  // LITERAL: F04A02 (usage not inferred)
+@002196  C0D04 ［スノウ］  // EN: [Snow]
+@0021B3  C0F04 （うん…ルベリアのとうぞくしゅうだん…）  // TODO: English translation
+@002222 F04A05  // LITERAL: F04A05 (usage not inferred)
+@002250  C0D04 ［スノウ］  // EN: [Snow]
+@00226D  C0F04 （わるい人じゃ…なさそうね！！）  // TODO: English translation
+@00245C A  // LITERAL: A (usage not inferred)
+@0026D6 F09A01  // LITERAL: F09A01 (usage not inferred)
+@002797  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0027B6  C0F04 どうしたのよ？？  // TODO: English translation
+@00280D F04A01  // LITERAL: F04A01 (usage not inferred)
+@0028CE  C0D04 ［スノウ］  // EN: [Snow]
+@0028EB  C0F04 う、うん…！！  // TODO: English translation
+@0029A0 F08A06  // LITERAL: F08A06 (usage not inferred)
+@002AEC F08A06  // LITERAL: F08A06 (usage not inferred)
+@002B7A  C0D04 ［ナナシ］  // EN: [Nanashi]
+@002B97  C0F04 …おお！  // TODO: English translation
+@002BB2 よくみりゃカワイコチャン２人！  // TODO: English translation
+@002C64 F08A01  // LITERAL: F08A01 (usage not inferred)
+@002C92  C0D04 ［ナナシ］  // EN: [Nanashi]
+@002CAF  C0F04 …あ…とと、イカンイカン  // TODO: English translation
+@002CDA 行くで！！  // TODO: English translation
+@003566 MAP06_1A.SPC  // LITERAL: MAP06_1A.SPC (usage not inferred)

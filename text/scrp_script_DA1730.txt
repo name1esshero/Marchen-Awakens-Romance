@@ -1,0 +1,15 @@
+// Legacy reference view of SHOPPA05.SPC; edit text/nfp/SHOPPA05.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000463  C0D04 ［露天］  // EN: [Outdoor stall]
+@0004A9 じっくりみていきな  // TODO: English translation
+@00050D  C0D04 ［露天］  // EN: [Outdoor stall]
+@000528  C0F04 もっと買ってくかい？  // TODO: English translation
+@00067F  C0D04 ［露天］  // EN: [Outdoor stall]
+@00069A  C0F04 何を売るんだね？  // TODO: English translation
+@00093C  C0D04 ［露天］  // EN: [Outdoor stall]
+@000957  C0F04 うちは仕入れによって  // TODO: English translation
+@00097E 品ぞろえがかわるからな  // TODO: English translation
+@0009BE  C0D04 ［露天］  // EN: [Outdoor stall]
+@0009D9  C0F04 ときどき見にこないと、買いのがすぜ  // TODO: English translation

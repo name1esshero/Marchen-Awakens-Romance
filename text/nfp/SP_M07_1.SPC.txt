@@ -1,0 +1,21 @@
+// SP_M07_1.SPC: ROM DC22F0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00006B DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
+@000152 MAP01_A.SPC  // LITERAL: MAP01_A.SPC (usage not inferred)
+@0001D4 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
+@0002BB MAP01_A.SPC  // LITERAL: MAP01_A.SPC (usage not inferred)
+@00033D DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
+@000424 MAP07_A.SPC  // LITERAL: MAP07_A.SPC (usage not inferred)
+@0004A6 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
+@0005D4 MAP07_A.SPC  // LITERAL: MAP07_A.SPC (usage not inferred)
+@000643 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
+@000802  C0D04 ４７００Ｐ C0F04 が入っていた！  // TODO: English translation
+@000A13 MAP07_A.SPC  // LITERAL: MAP07_A.SPC (usage not inferred)
+@000A95 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
+@000BE5 MAP07_A.SPC  // LITERAL: MAP07_A.SPC (usage not inferred)
+@000C67 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
+@000DB7 MAP07_A.SPC  // LITERAL: MAP07_A.SPC (usage not inferred)
+@000E39 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
+@000F89 MAP07_A.SPC  // LITERAL: MAP07_A.SPC (usage not inferred)

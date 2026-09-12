@@ -1,0 +1,5 @@
+// Legacy reference view of MAP11_2.SPC; edit text/nfp/MAP11_2.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000006 MAP11_2A  // LITERAL: MAP11_2A (usage not inferred)

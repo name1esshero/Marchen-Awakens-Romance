@@ -1,0 +1,947 @@
+[
+  {
+    "name": "AD0_P_0A.KCL",
+    "rom_offset": 1898416,
+    "directory_offset": 1837440,
+    "end": 1898736,
+    "size_with_padding": 320,
+    "path": "graphics/palettes/AD0_P_0A.KCL.pal",
+    "color_count": 160
+  },
+  {
+    "name": "AD1_P_0A.KCL",
+    "rom_offset": 2342688,
+    "directory_offset": 1837824,
+    "end": 2342912,
+    "size_with_padding": 224,
+    "path": "graphics/palettes/AD1_P_0A.KCL.pal",
+    "color_count": 112
+  },
+  {
+    "name": "AD3_P_0A.KCL",
+    "rom_offset": 2787600,
+    "directory_offset": 1838208,
+    "end": 2787792,
+    "size_with_padding": 192,
+    "path": "graphics/palettes/AD3_P_0A.KCL.pal",
+    "color_count": 96
+  },
+  {
+    "name": "AD4_P_0A.KCL",
+    "rom_offset": 3227024,
+    "directory_offset": 1838592,
+    "end": 3227120,
+    "size_with_padding": 96,
+    "path": "graphics/palettes/AD4_P_0A.KCL.pal",
+    "color_count": 48
+  },
+  {
+    "name": "AD_BG01.KCL",
+    "rom_offset": 3634992,
+    "directory_offset": 1838960,
+    "end": 3635024,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/AD_BG01.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "AD_BG02.KCL",
+    "rom_offset": 3639648,
+    "directory_offset": 1839008,
+    "end": 3639680,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/AD_BG02.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "AL_BG01.KCL",
+    "rom_offset": 3650352,
+    "directory_offset": 1839056,
+    "end": 3650384,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/AL_BG01.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "AL_BG02.KCL",
+    "rom_offset": 3655328,
+    "directory_offset": 1839104,
+    "end": 3655360,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/AL_BG02.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "AS_BG01.KCL",
+    "rom_offset": 3666624,
+    "directory_offset": 1839152,
+    "end": 3666656,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/AS_BG01.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "AS_BG02.KCL",
+    "rom_offset": 3674048,
+    "directory_offset": 1839200,
+    "end": 3674080,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/AS_BG02.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "AT_BG01.KCL",
+    "rom_offset": 3683792,
+    "directory_offset": 1839248,
+    "end": 3683824,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/AT_BG01.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "BA06.TCL",
+    "rom_offset": 3697920,
+    "directory_offset": 1839296,
+    "end": 3698016,
+    "size_with_padding": 96,
+    "path": "graphics/palettes/BA06.TCL.pal",
+    "color_count": 48
+  },
+  {
+    "name": "BA06_BG.TCL",
+    "rom_offset": 3714144,
+    "directory_offset": 1839360,
+    "end": 3714240,
+    "size_with_padding": 96,
+    "path": "graphics/palettes/BA06_BG.TCL.pal",
+    "color_count": 48
+  },
+  {
+    "name": "BA07.TCL",
+    "rom_offset": 3723008,
+    "directory_offset": 1839440,
+    "end": 3723104,
+    "size_with_padding": 96,
+    "path": "graphics/palettes/BA07.TCL.pal",
+    "color_count": 48
+  },
+  {
+    "name": "CLPASS.KCL",
+    "rom_offset": 5694864,
+    "directory_offset": 1840528,
+    "end": 5694896,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/CLPASS.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "CM_BG01.KCL",
+    "rom_offset": 5703536,
+    "directory_offset": 1840576,
+    "end": 5703568,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/CM_BG01.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "CM_BG02.KCL",
+    "rom_offset": 5710192,
+    "directory_offset": 1840624,
+    "end": 5710224,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/CM_BG02.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "DS_BG01.KCL",
+    "rom_offset": 5939856,
+    "directory_offset": 1841088,
+    "end": 5939888,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/DS_BG01.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "DS_BG02.KCL",
+    "rom_offset": 5946032,
+    "directory_offset": 1841136,
+    "end": 5946064,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/DS_BG02.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "GA08.TCL",
+    "rom_offset": 8179136,
+    "directory_offset": 1842352,
+    "end": 8179232,
+    "size_with_padding": 96,
+    "path": "graphics/palettes/GA08.TCL.pal",
+    "color_count": 48
+  },
+  {
+    "name": "GA13.TCL",
+    "rom_offset": 8216864,
+    "directory_offset": 1842512,
+    "end": 8216960,
+    "size_with_padding": 96,
+    "path": "graphics/palettes/GA13.TCL.pal",
+    "color_count": 48
+  },
+  {
+    "name": "GA24.TCL",
+    "rom_offset": 8243072,
+    "directory_offset": 1842688,
+    "end": 8243168,
+    "size_with_padding": 96,
+    "path": "graphics/palettes/GA24.TCL.pal",
+    "color_count": 48
+  },
+  {
+    "name": "GA25.TCL",
+    "rom_offset": 8267808,
+    "directory_offset": 1842848,
+    "end": 8267904,
+    "size_with_padding": 96,
+    "path": "graphics/palettes/GA25.TCL.pal",
+    "color_count": 48
+  },
+  {
+    "name": "GA26.TCL",
+    "rom_offset": 8287936,
+    "directory_offset": 1843008,
+    "end": 8288032,
+    "size_with_padding": 96,
+    "path": "graphics/palettes/GA26.TCL.pal",
+    "color_count": 48
+  },
+  {
+    "name": "GA60.TCL",
+    "rom_offset": 8302272,
+    "directory_offset": 1843104,
+    "end": 8302368,
+    "size_with_padding": 96,
+    "path": "graphics/palettes/GA60.TCL.pal",
+    "color_count": 48
+  },
+  {
+    "name": "GA_BG01.KCL",
+    "rom_offset": 8338224,
+    "directory_offset": 1843360,
+    "end": 8338256,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/GA_BG01.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "IT_BG01.KCL",
+    "rom_offset": 8479216,
+    "directory_offset": 1844352,
+    "end": 8479248,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/IT_BG01.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "IT_BG02.KCL",
+    "rom_offset": 8485776,
+    "directory_offset": 1844400,
+    "end": 8485808,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/IT_BG02.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "JA05.TCL",
+    "rom_offset": 8494112,
+    "directory_offset": 1844448,
+    "end": 8494208,
+    "size_with_padding": 96,
+    "path": "graphics/palettes/JA05.TCL.pal",
+    "color_count": 48
+  },
+  {
+    "name": "MAP00_A.KCL",
+    "rom_offset": 8538656,
+    "directory_offset": 1844672,
+    "end": 8538912,
+    "size_with_padding": 256,
+    "path": "graphics/palettes/MAP00_A.KCL.pal",
+    "color_count": 128
+  },
+  {
+    "name": "MAP01_1A.KCL",
+    "rom_offset": 8784864,
+    "directory_offset": 1844736,
+    "end": 8785184,
+    "size_with_padding": 320,
+    "path": "graphics/palettes/MAP01_1A.KCL.pal",
+    "color_count": 160
+  },
+  {
+    "name": "MAP01_2A.KCL",
+    "rom_offset": 8831424,
+    "directory_offset": 1844800,
+    "end": 8831744,
+    "size_with_padding": 320,
+    "path": "graphics/palettes/MAP01_2A.KCL.pal",
+    "color_count": 160
+  },
+  {
+    "name": "MAP01_3A.KCL",
+    "rom_offset": 8870608,
+    "directory_offset": 1844864,
+    "end": 8870928,
+    "size_with_padding": 320,
+    "path": "graphics/palettes/MAP01_3A.KCL.pal",
+    "color_count": 160
+  },
+  {
+    "name": "MAP01_A.KCL",
+    "rom_offset": 9013760,
+    "directory_offset": 1845008,
+    "end": 9014048,
+    "size_with_padding": 288,
+    "path": "graphics/palettes/MAP01_A.KCL.pal",
+    "color_count": 144
+  },
+  {
+    "name": "MAP03_A.KCL",
+    "rom_offset": 9063120,
+    "directory_offset": 1845072,
+    "end": 9063440,
+    "size_with_padding": 320,
+    "path": "graphics/palettes/MAP03_A.KCL.pal",
+    "color_count": 160
+  },
+  {
+    "name": "MAP04_6A.KCL",
+    "rom_offset": 9289040,
+    "directory_offset": 1845200,
+    "end": 9289360,
+    "size_with_padding": 320,
+    "path": "graphics/palettes/MAP04_6A.KCL.pal",
+    "color_count": 160
+  },
+  {
+    "name": "MAP04_7A.KCL",
+    "rom_offset": 9331328,
+    "directory_offset": 1845264,
+    "end": 9331648,
+    "size_with_padding": 320,
+    "path": "graphics/palettes/MAP04_7A.KCL.pal",
+    "color_count": 160
+  },
+  {
+    "name": "MAP04_A.KCL",
+    "rom_offset": 9381088,
+    "directory_offset": 1845312,
+    "end": 9381408,
+    "size_with_padding": 320,
+    "path": "graphics/palettes/MAP04_A.KCL.pal",
+    "color_count": 160
+  },
+  {
+    "name": "MAP05_A.KCL",
+    "rom_offset": 9697280,
+    "directory_offset": 1845376,
+    "end": 9697568,
+    "size_with_padding": 288,
+    "path": "graphics/palettes/MAP05_A.KCL.pal",
+    "color_count": 144
+  },
+  {
+    "name": "MAP06_1A.KCL",
+    "rom_offset": 9772432,
+    "directory_offset": 1845440,
+    "end": 9772656,
+    "size_with_padding": 224,
+    "path": "graphics/palettes/MAP06_1A.KCL.pal",
+    "color_count": 112
+  },
+  {
+    "name": "MAP06_2A.KCL",
+    "rom_offset": 9837488,
+    "directory_offset": 1845504,
+    "end": 9837776,
+    "size_with_padding": 288,
+    "path": "graphics/palettes/MAP06_2A.KCL.pal",
+    "color_count": 144
+  },
+  {
+    "name": "MAP06_A.KCL",
+    "rom_offset": 9870752,
+    "directory_offset": 1845568,
+    "end": 9870976,
+    "size_with_padding": 224,
+    "path": "graphics/palettes/MAP06_A.KCL.pal",
+    "color_count": 112
+  },
+  {
+    "name": "MAP07_2A.KCL",
+    "rom_offset": 9984512,
+    "directory_offset": 1845664,
+    "end": 9984704,
+    "size_with_padding": 192,
+    "path": "graphics/palettes/MAP07_2A.KCL.pal",
+    "color_count": 96
+  },
+  {
+    "name": "MAP07_3A.KCL",
+    "rom_offset": 10021120,
+    "directory_offset": 1845728,
+    "end": 10021408,
+    "size_with_padding": 288,
+    "path": "graphics/palettes/MAP07_3A.KCL.pal",
+    "color_count": 144
+  },
+  {
+    "name": "MAP07_A.KCL",
+    "rom_offset": 10058512,
+    "directory_offset": 1845792,
+    "end": 10058640,
+    "size_with_padding": 128,
+    "path": "graphics/palettes/MAP07_A.KCL.pal",
+    "color_count": 64
+  },
+  {
+    "name": "MAP08_A.KCL",
+    "rom_offset": 10578640,
+    "directory_offset": 1845856,
+    "end": 10578896,
+    "size_with_padding": 256,
+    "path": "graphics/palettes/MAP08_A.KCL.pal",
+    "color_count": 128
+  },
+  {
+    "name": "MAP09_A.KCL",
+    "rom_offset": 10627648,
+    "directory_offset": 1845920,
+    "end": 10627968,
+    "size_with_padding": 320,
+    "path": "graphics/palettes/MAP09_A.KCL.pal",
+    "color_count": 160
+  },
+  {
+    "name": "MAP10_1A.KCL",
+    "rom_offset": 10712800,
+    "directory_offset": 1845984,
+    "end": 10713056,
+    "size_with_padding": 256,
+    "path": "graphics/palettes/MAP10_1A.KCL.pal",
+    "color_count": 128
+  },
+  {
+    "name": "MAP10_A.KCL",
+    "rom_offset": 10748704,
+    "directory_offset": 1846048,
+    "end": 10749024,
+    "size_with_padding": 320,
+    "path": "graphics/palettes/MAP10_A.KCL.pal",
+    "color_count": 160
+  },
+  {
+    "name": "MAP11_1A.KCL",
+    "rom_offset": 10800304,
+    "directory_offset": 1846112,
+    "end": 10800592,
+    "size_with_padding": 288,
+    "path": "graphics/palettes/MAP11_1A.KCL.pal",
+    "color_count": 144
+  },
+  {
+    "name": "MAP11_2A.KCL",
+    "rom_offset": 10849616,
+    "directory_offset": 1846192,
+    "end": 10849808,
+    "size_with_padding": 192,
+    "path": "graphics/palettes/MAP11_2A.KCL.pal",
+    "color_count": 96
+  },
+  {
+    "name": "MAP11_A.KCL",
+    "rom_offset": 10891824,
+    "directory_offset": 1846256,
+    "end": 10892144,
+    "size_with_padding": 320,
+    "path": "graphics/palettes/MAP11_A.KCL.pal",
+    "color_count": 160
+  },
+  {
+    "name": "MAP24_1A.KCL",
+    "rom_offset": 10961792,
+    "directory_offset": 1846320,
+    "end": 10962016,
+    "size_with_padding": 224,
+    "path": "graphics/palettes/MAP24_1A.KCL.pal",
+    "color_count": 112
+  },
+  {
+    "name": "MAP24_4A.KCL",
+    "rom_offset": 11307152,
+    "directory_offset": 1846416,
+    "end": 11307472,
+    "size_with_padding": 320,
+    "path": "graphics/palettes/MAP24_4A.KCL.pal",
+    "color_count": 160
+  },
+  {
+    "name": "MAP24_A.KCL",
+    "rom_offset": 11470272,
+    "directory_offset": 1846480,
+    "end": 11470592,
+    "size_with_padding": 320,
+    "path": "graphics/palettes/MAP24_A.KCL.pal",
+    "color_count": 160
+  },
+  {
+    "name": "MAP25_1A.KCL",
+    "rom_offset": 11508848,
+    "directory_offset": 1846544,
+    "end": 11509168,
+    "size_with_padding": 320,
+    "path": "graphics/palettes/MAP25_1A.KCL.pal",
+    "color_count": 160
+  },
+  {
+    "name": "MAP25_5A.KCL",
+    "rom_offset": 12375328,
+    "directory_offset": 1846672,
+    "end": 12375648,
+    "size_with_padding": 320,
+    "path": "graphics/palettes/MAP25_5A.KCL.pal",
+    "color_count": 160
+  },
+  {
+    "name": "MAP26_1A.KCL",
+    "rom_offset": 12445472,
+    "directory_offset": 1846736,
+    "end": 12445664,
+    "size_with_padding": 192,
+    "path": "graphics/palettes/MAP26_1A.KCL.pal",
+    "color_count": 96
+  },
+  {
+    "name": "MAP26_2A.KCL",
+    "rom_offset": 12635568,
+    "directory_offset": 1846800,
+    "end": 12635888,
+    "size_with_padding": 320,
+    "path": "graphics/palettes/MAP26_2A.KCL.pal",
+    "color_count": 160
+  },
+  {
+    "name": "MAP27_A.KCL",
+    "rom_offset": 13416512,
+    "directory_offset": 1846960,
+    "end": 13416608,
+    "size_with_padding": 96,
+    "path": "graphics/palettes/MAP27_A.KCL.pal",
+    "color_count": 48
+  },
+  {
+    "name": "MAP99_A.KCL",
+    "rom_offset": 13933936,
+    "directory_offset": 1847104,
+    "end": 13933968,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/MAP99_A.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "ML_BG01.KCL",
+    "rom_offset": 13948752,
+    "directory_offset": 1847152,
+    "end": 13948784,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/ML_BG01.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "MWA.KCL",
+    "rom_offset": 13952096,
+    "directory_offset": 1847200,
+    "end": 13952128,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/MWA.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "NE01.TCL",
+    "rom_offset": 13963456,
+    "directory_offset": 1847248,
+    "end": 13963552,
+    "size_with_padding": 96,
+    "path": "graphics/palettes/NE01.TCL.pal",
+    "color_count": 48
+  },
+  {
+    "name": "NE05.TCL",
+    "rom_offset": 13963808,
+    "directory_offset": 1847280,
+    "end": 13963904,
+    "size_with_padding": 96,
+    "path": "graphics/palettes/NE05.TCL.pal",
+    "color_count": 48
+  },
+  {
+    "name": "NE13.TCL",
+    "rom_offset": 13970304,
+    "directory_offset": 1847312,
+    "end": 13970400,
+    "size_with_padding": 96,
+    "path": "graphics/palettes/NE13.TCL.pal",
+    "color_count": 48
+  },
+  {
+    "name": "NE21.TCL",
+    "rom_offset": 13983152,
+    "directory_offset": 1847392,
+    "end": 13983248,
+    "size_with_padding": 96,
+    "path": "graphics/palettes/NE21.TCL.pal",
+    "color_count": 48
+  },
+  {
+    "name": "NE32.TCL",
+    "rom_offset": 14003088,
+    "directory_offset": 1847520,
+    "end": 14003184,
+    "size_with_padding": 96,
+    "path": "graphics/palettes/NE32.TCL.pal",
+    "color_count": 48
+  },
+  {
+    "name": "NE33.TCL",
+    "rom_offset": 14017696,
+    "directory_offset": 1847568,
+    "end": 14017792,
+    "size_with_padding": 96,
+    "path": "graphics/palettes/NE33.TCL.pal",
+    "color_count": 48
+  },
+  {
+    "name": "OP_01_A.KCL",
+    "rom_offset": 14100336,
+    "directory_offset": 1847888,
+    "end": 14100432,
+    "size_with_padding": 96,
+    "path": "graphics/palettes/OP_01_A.KCL.pal",
+    "color_count": 48
+  },
+  {
+    "name": "OP_04_A.KCL",
+    "rom_offset": 14118512,
+    "directory_offset": 1847936,
+    "end": 14118608,
+    "size_with_padding": 96,
+    "path": "graphics/palettes/OP_04_A.KCL.pal",
+    "color_count": 48
+  },
+  {
+    "name": "OP_05_A.KCL",
+    "rom_offset": 14138752,
+    "directory_offset": 1847984,
+    "end": 14138848,
+    "size_with_padding": 96,
+    "path": "graphics/palettes/OP_05_A.KCL.pal",
+    "color_count": 48
+  },
+  {
+    "name": "OP_06_A.KCL",
+    "rom_offset": 14155920,
+    "directory_offset": 1848032,
+    "end": 14156112,
+    "size_with_padding": 192,
+    "path": "graphics/palettes/OP_06_A.KCL.pal",
+    "color_count": 96
+  },
+  {
+    "name": "OP_07_A.KCL",
+    "rom_offset": 14171312,
+    "directory_offset": 1848080,
+    "end": 14171632,
+    "size_with_padding": 320,
+    "path": "graphics/palettes/OP_07_A.KCL.pal",
+    "color_count": 160
+  },
+  {
+    "name": "OP_08_A.KCL",
+    "rom_offset": 14188384,
+    "directory_offset": 1848128,
+    "end": 14188704,
+    "size_with_padding": 320,
+    "path": "graphics/palettes/OP_08_A.KCL.pal",
+    "color_count": 160
+  },
+  {
+    "name": "OP_09_A.KCL",
+    "rom_offset": 14209152,
+    "directory_offset": 1848176,
+    "end": 14209472,
+    "size_with_padding": 320,
+    "path": "graphics/palettes/OP_09_A.KCL.pal",
+    "color_count": 160
+  },
+  {
+    "name": "OP_0A_A.KCL",
+    "rom_offset": 14221216,
+    "directory_offset": 1848224,
+    "end": 14221536,
+    "size_with_padding": 320,
+    "path": "graphics/palettes/OP_0A_A.KCL.pal",
+    "color_count": 160
+  },
+  {
+    "name": "PS_BG01.KCL",
+    "rom_offset": 14242464,
+    "directory_offset": 1848288,
+    "end": 14242496,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/PS_BG01.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "PV_BG01.KCL",
+    "rom_offset": 14252464,
+    "directory_offset": 1848336,
+    "end": 14252496,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/PV_BG01.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "PV_BG11.KCL",
+    "rom_offset": 14255824,
+    "directory_offset": 1848384,
+    "end": 14255856,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/PV_BG11.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "PW_BG01.KCL",
+    "rom_offset": 14263760,
+    "directory_offset": 1848432,
+    "end": 14263792,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/PW_BG01.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "PW_BOX.KCL",
+    "rom_offset": 14271008,
+    "directory_offset": 1848480,
+    "end": 14271040,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/PW_BOX.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "SBA06.TCL",
+    "rom_offset": 14285136,
+    "directory_offset": 1848528,
+    "end": 14285232,
+    "size_with_padding": 96,
+    "path": "graphics/palettes/SBA06.TCL.pal",
+    "color_count": 48
+  },
+  {
+    "name": "SK02.TCL",
+    "rom_offset": 14300544,
+    "directory_offset": 1848704,
+    "end": 14300640,
+    "size_with_padding": 96,
+    "path": "graphics/palettes/SK02.TCL.pal",
+    "color_count": 48
+  },
+  {
+    "name": "SK03.TCL",
+    "rom_offset": 14306288,
+    "directory_offset": 1848800,
+    "end": 14306384,
+    "size_with_padding": 96,
+    "path": "graphics/palettes/SK03.TCL.pal",
+    "color_count": 48
+  },
+  {
+    "name": "SM_BG01.KCL",
+    "rom_offset": 14319792,
+    "directory_offset": 1848896,
+    "end": 14319824,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/SM_BG01.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "SM_BG12.KCL",
+    "rom_offset": 14326736,
+    "directory_offset": 1848944,
+    "end": 14326768,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/SM_BG12.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "SN06.TCL",
+    "rom_offset": 14332896,
+    "directory_offset": 1848992,
+    "end": 14332992,
+    "size_with_padding": 96,
+    "path": "graphics/palettes/SN06.TCL.pal",
+    "color_count": 48
+  },
+  {
+    "name": "SN07.TCL",
+    "rom_offset": 14346736,
+    "directory_offset": 1849040,
+    "end": 14346832,
+    "size_with_padding": 96,
+    "path": "graphics/palettes/SN07.TCL.pal",
+    "color_count": 48
+  },
+  {
+    "name": "SP_BG01.KCL",
+    "rom_offset": 14374784,
+    "directory_offset": 1849136,
+    "end": 14374816,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/SP_BG01.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "SP_BG11.KCL",
+    "rom_offset": 14387664,
+    "directory_offset": 1849184,
+    "end": 14387696,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/SP_BG11.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "SP_BG12.KCL",
+    "rom_offset": 14392640,
+    "directory_offset": 1849232,
+    "end": 14392672,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/SP_BG12.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "SP_BG21.KCL",
+    "rom_offset": 14403936,
+    "directory_offset": 1849280,
+    "end": 14403968,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/SP_BG21.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "SP_BG22.KCL",
+    "rom_offset": 14416400,
+    "directory_offset": 1849328,
+    "end": 14416432,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/SP_BG22.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "SSN07.TCL",
+    "rom_offset": 14462912,
+    "directory_offset": 1849952,
+    "end": 14463008,
+    "size_with_padding": 96,
+    "path": "graphics/palettes/SSN07.TCL.pal",
+    "color_count": 48
+  },
+  {
+    "name": "ST_BG01.KCL",
+    "rom_offset": 14484384,
+    "directory_offset": 1850016,
+    "end": 14484416,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/ST_BG01.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "ST_BG02.KCL",
+    "rom_offset": 14490896,
+    "directory_offset": 1850064,
+    "end": 14490928,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/ST_BG02.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "ST_BG03.KCL",
+    "rom_offset": 14497328,
+    "directory_offset": 1850112,
+    "end": 14497360,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/ST_BG03.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "ST_BG11.KCL",
+    "rom_offset": 14508288,
+    "directory_offset": 1850160,
+    "end": 14508320,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/ST_BG11.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "T_C01.KCL",
+    "rom_offset": 15835904,
+    "directory_offset": 1850384,
+    "end": 15835936,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/T_C01.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "T_C02.KCL",
+    "rom_offset": 15839280,
+    "directory_offset": 1850432,
+    "end": 15839312,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/T_C02.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "T_ML_BG.KCL",
+    "rom_offset": 15853136,
+    "directory_offset": 1850480,
+    "end": 15853200,
+    "size_with_padding": 64,
+    "path": "graphics/palettes/T_ML_BG.KCL.pal",
+    "color_count": 32
+  },
+  {
+    "name": "T_TTL06.KCL",
+    "rom_offset": 15864736,
+    "directory_offset": 1850528,
+    "end": 15864864,
+    "size_with_padding": 128,
+    "path": "graphics/palettes/T_TTL06.KCL.pal",
+    "color_count": 64
+  },
+  {
+    "name": "WM_BG01.KCL",
+    "rom_offset": 15883376,
+    "directory_offset": 1850592,
+    "end": 15883408,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/WM_BG01.KCL.pal",
+    "color_count": 16
+  },
+  {
+    "name": "WM_BG02.KCL",
+    "rom_offset": 15889936,
+    "directory_offset": 1850640,
+    "end": 15889968,
+    "size_with_padding": 32,
+    "path": "graphics/palettes/WM_BG02.KCL.pal",
+    "color_count": 16
+  }
+]

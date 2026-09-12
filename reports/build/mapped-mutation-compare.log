@@ -1,0 +1,31 @@
+base  : 5ed178bfbdf459867d64e5b91a9d9c72654e4051  (16777216 bytes)
+built : 9b4107d31ab5b743acaf25efefcad6082e05ed07  (16777216 bytes)
+
+9 differing region(s), 49 bytes (0.0003% of the image)
+  D77DAF..D77DB0  (1 bytes)
+    base  33
+    built 32
+  D77DB1..D77DBD  (12 bytes)
+    base  d2 f0 01 10 01 22 10 03 22 32 10 0a
+    built 6a 33 f0 01 00 01 22 10 03 22 20 1d
+  D77DD1..D77DD4  (3 bytes)
+    base  77 d9 ce
+    built dd ec 9d
+  D77DD5..D77DDD  (8 bytes)
+    base  dd 87 fc 9e de 97 fc ca
+    built 77 ed e9 cf 78 e9 ac cf
+  D77DDE..D77DE6  (8 bytes)
+    base  9e 98 fd ec 93 a8 fe ce
+    built 79 39 ce df 89 28 ec ef
+  D77DE7..D77DEF  (8 bytes)
+    base  82 ca fe 5a cf da cf 92
+    built 8a fc a5 ef ac dc 29 fc
+  D77DF0..D77DF5  (5 bytes)
+    base  cd ed 5f ee c7
+    built ad 7c ee f5 de
+  D789F2..D789F5  (3 bytes)
+    base  2e 04 16
+    built 3e 22 06
+  D7BEA5..D7BEA6  (1 bytes)
+    base  20
+    built 24

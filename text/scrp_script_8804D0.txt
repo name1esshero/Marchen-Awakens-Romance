@@ -1,0 +1,9 @@
+// Legacy reference view of MAP01_3A.SPC; edit text/nfp/MAP01_3A.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000034 MAP01_3A  // LITERAL: MAP01_3A (usage not inferred)
+@00007A TAKARA  // LITERAL: TAKARA (usage not inferred)
+@000284 EF_TAK2  // LITERAL: EF_TAK2 (usage not inferred)
+@00044D TAKARA  // LITERAL: TAKARA (usage not inferred)
+@000676 EV_BIN03.SPC  // LITERAL: EV_BIN03.SPC (usage not inferred)

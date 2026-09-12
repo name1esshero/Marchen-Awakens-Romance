@@ -1,0 +1,21 @@
+// DBG_ESC.SPC: ROM 59D2D0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000006 AD0_R_3A  // LITERAL: AD0_R_3A (usage not inferred)
+@0001CA B  // LITERAL: B (usage not inferred)
+@0001EE A  // LITERAL: A (usage not inferred)
+@000435 A  // LITERAL: A (usage not inferred)
+@0004AF A  // LITERAL: A (usage not inferred)
+@000529 A  // LITERAL: A (usage not inferred)
+@0005A3 A  // LITERAL: A (usage not inferred)
+@00061D A  // LITERAL: A (usage not inferred)
+@000697 A  // LITERAL: A (usage not inferred)
+@000711 A  // LITERAL: A (usage not inferred)
+@00078B A  // LITERAL: A (usage not inferred)
+@000805 A  // LITERAL: A (usage not inferred)
+@00087F A  // LITERAL: A (usage not inferred)
+@0008F9 A  // LITERAL: A (usage not inferred)
+@000973 A  // LITERAL: A (usage not inferred)
+@0009ED A  // LITERAL: A (usage not inferred)
+@000A67 A  // LITERAL: A (usage not inferred)

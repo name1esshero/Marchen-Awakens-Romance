@@ -1,0 +1,7 @@
+// Legacy reference view of MAP08_A.SPC; edit text/nfp/MAP08_A.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@00004B MAP08_A  // LITERAL: MAP08_A (usage not inferred)
+@0000A8 A  // LITERAL: A (usage not inferred)
+@000153 TAKARA  // LITERAL: TAKARA (usage not inferred)

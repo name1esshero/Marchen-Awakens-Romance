@@ -1,0 +1,109 @@
+// CH_ESC.SPC: ROM 5683C0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@000191 はじめからやる？  // EN: Start from the beginning?
+@00026A OPEN.SPC  // LITERAL: OPEN.SPC (usage not inferred)
+@0002AF オープニングとばしてやる？  // EN: Skip the opening?
+@00036C A  // LITERAL: A (usage not inferred)
+@0003C3 EV_START.SPC  // LITERAL: EV_START.SPC (usage not inferred)
+@00040C あたしとバッボをとりに行って  // EN: From when you went with me to get Babbo...
+@000434 祭壇の前についたところから？  // EN: ...and reached the altar?
+@0004E7 A  // LITERAL: A (usage not inferred)
+@00055A MAP01_2A  // LITERAL: MAP01_2A (usage not inferred)
+@00060C バッボをゲットした後に行く？  // EN: Skip to after you got Babbo?
+@0006CB A  // LITERAL: A (usage not inferred)
+@000743 MAP00_A  // LITERAL: MAP00_A (usage not inferred)
+@0008FE オイラの畑の手前に行くっスか？  // EN: Go to just before my field?
+@0009BF A  // LITERAL: A (usage not inferred)
+@0009FF MAP40_A  // LITERAL: MAP40_A (usage not inferred)
+@000AB0 ルーガルー戦の直前から  // EN: From just before the Ruga and Garu battle...
+@000AD2 やるっスか？  // EN: ...want to start there?
+@000B75 A  // LITERAL: A (usage not inferred)
+@000BB5 EV_JA02.SPC  // LITERAL: EV_JA02.SPC (usage not inferred)
+@000BFD ルーガルーを倒したところに  // EN: To the point where you defeated Ruga and Garu...
+@000C23 行くっスか？  // EN: ...want to go there?
+@000CC1 EV_JA04.SPC  // LITERAL: EV_JA04.SPC (usage not inferred)
+@000E13 パヅタウンの手前に  // EN: To just outside Pazu Town...
+@000E31 直行するか？  // EN: ...go straight there?
+@000F07 MAP41_A  // LITERAL: MAP41_A (usage not inferred)
+@000FB8 盗賊に奪われたバッボを  // EN: To when I get Babbo back...
+@000FDA オレが取り返してやるところか？  // EN: ...after the thieves stole him?
+@00108A EV_AL02.SPC  // LITERAL: EV_AL02.SPC (usage not inferred)
+@0011DC あたしを助けにきてくれるの？  // EN: Are you coming to rescue me?
+@001296 EV_ICE01.SPC  // LITERAL: EV_ICE01.SPC (usage not inferred)
+@0012DF じつはもう、あたしの所まで  // EN: Actually, you've already...
+@001305 来てるんでしょ？  // EN: ...made it to where I am, haven't you?
+@0013A7 EV_ICE09.SPC  // LITERAL: EV_ICE09.SPC (usage not inferred)
+@0013F0 なんだ、イアンも倒してしまったんだね？  // EN: Oh, you've already beaten Ian too?
+@0014B4 EV_ICE11.SPC  // LITERAL: EV_ICE11.SPC (usage not inferred)
+@001607 ペリカに入ったところからだな  // EN: From when you entered Perika, then.
+@0016C1 G_EV010.SPC  // LITERAL: G_EV010.SPC (usage not inferred)
+@001709 修練の門の前に行くところからだな  // EN: From when you went to the Training Gate, then.
+@0017C7 G_EV020.SPC  // LITERAL: G_EV020.SPC (usage not inferred)
+@00180F ジャックとドロシーが  // EN: Jack and Dorothy...
+@00182F 修練の門に入ったところからだな  // EN: From when we entered the Training Gate, then.
+@0018DF EV_MON01.SPC  // LITERAL: EV_MON01.SPC (usage not inferred)
+@001928 ギンタとスノウが  // EN: Ginta and Snow...
+@001944 修練の門に入ったところからだな  // EN: From when we entered the Training Gate, then.
+@0019F4 G_EV021.SPC  // LITERAL: G_EV021.SPC (usage not inferred)
+@001A3C ギンタが修練の門を終えた  // EN: From when Ginta finished the Training Gate...
+@001A60 ところからだな  // EN: ...from that point, then.
+@001B00 G_EV023.SPC  // LITERAL: G_EV023.SPC (usage not inferred)
+@001B48 ギンタがイアンと再び  // EN: From when Ginta and Ian...
+@001B68 相見えるところからだな  // EN: ...face each other again, then.
+@001C10 EV_MON03.SPC  // LITERAL: EV_MON03.SPC (usage not inferred)
+@001C59 ジャックとギドが戦うところからだな  // EN: From when Jack fights Gido, then.
+@001D19 EV_MON04.SPC  // LITERAL: EV_MON04.SPC (usage not inferred)
+@001E6C ルベリアの砦にとんでくるんやな  // EN: You're jumping to Luberia's fortress, then.
+@001F28 G_EV002.SPC  // LITERAL: G_EV002.SPC (usage not inferred)
+@001F70 オレがメルの現状を話すとこやな  // EN: To when I explain what's happening in MAR, then.
+@00202C MAP06_2A.SPC  // LITERAL: MAP06_2A.SPC (usage not inferred)
+@002056 G_EV005.SPC  // LITERAL: G_EV005.SPC (usage not inferred)
+@0021A8 マジックカーペットに乗る？  // EN: Ride the magic carpet?
+@002260 G_EV030.SPC  // LITERAL: G_EV030.SPC (usage not inferred)
+@0023B2 ヴェストリに入るところから  // EN: From when you enter Vestri...
+@0023D8 はじめるっスか？  // EN: Ready to start?
+@00247A EV_VE01.SPC  // LITERAL: EV_VE01.SPC (usage not inferred)
+@0024C2 ヴェストリから地底湖へ  // EN: From Vestri to the underground lake...
+@0024E4 行くところからはじめるっスか？  // EN: ...want to start when we head there?
+@002594 EV_GO01.SPC  // LITERAL: EV_GO01.SPC (usage not inferred)
+@0025DC トムと行動するところから  // EN: From when you team up with Tom...
+@002600 はじめるっスか？  // EN: Ready to start?
+@0026A2 EV_GO06.SPC  // LITERAL: EV_GO06.SPC (usage not inferred)
+@0026EA 解放したヴェストリに入るところから  // EN: From when you enter the liberated Vestri...
+@002718 はじめるっスか？  // EN: Ready to start?
+@0027BA EV_GO12.SPC  // LITERAL: EV_GO12.SPC (usage not inferred)
+@00290C ３つのダンジョンの入り口に行く？  // EN: Go to the entrances of the three dungeons?
+@0029E6 MAP24_A  // LITERAL: MAP24_A (usage not inferred)
+@002AA3 タロスの手とたたかっちゃう？  // EN: Fight Talos's hand?
+@002BC5 MAP24_4A.SPC  // LITERAL: MAP24_4A.SPC (usage not inferred)
+@002C25 タロスの足とたたかっちゃう？  // EN: Fight Talos's foot?
+@002D47 MAP25_5A.SPC  // LITERAL: MAP25_5A.SPC (usage not inferred)
+@002DA7 タロスの頭とたたかっちゃう？  // EN: Fight Talos's head?
+@002EC9 MAP26_2A.SPC  // LITERAL: MAP26_2A.SPC (usage not inferred)
+@002F29 タロスとたたかっちゃう？  // EN: Fight Talos?
+@002FDF MAP26_5A  // LITERAL: MAP26_5A (usage not inferred)
+@0031A7 もしかしてエンディングを見てしまう気ですか  // EN: Are you planning to jump straight to the ending?
+@00326F END2.SPC  // LITERAL: END2.SPC (usage not inferred)
+@0032B4 もしかしてスタッフロールだけが見たいとか  // EN: Perhaps you only want to watch the credits?
+@00337A SROLL.SPC  // LITERAL: SROLL.SPC (usage not inferred)
+@0033C0 イベント無しでペリカに入るのですか？  // EN: Enter Perika without events?
+@003482 MAP42_A  // LITERAL: MAP42_A (usage not inferred)
+@00351C イベント無しでルベリアに入るのですか？  // EN: Enter Luberia without events?
+@0035E0 MAP06_A  // LITERAL: MAP06_A (usage not inferred)
+@003784 全員使えるようにして、  // EN: Make everyone playable...
+@0037A6 パーティへんこう可能にするか？  // EN: ...and enable party changes?
+@003C2D バトルするか？  // EN: Start a battle?
+@003CC2 BTLTEST.SPC  // LITERAL: BTLTEST.SPC (usage not inferred)
+@003E44 ちょっと時間かかるぞ  // EN: This will take a little time.
+@003EA3 FULL_ITM.SPC  // LITERAL: FULL_ITM.SPC (usage not inferred)
+@003FF6 フェイスチェックはじめるで  // EN: Starting the portrait check.
+@004097 DBG_FACE.SPC  // LITERAL: DBG_FACE.SPC (usage not inferred)
+@0041F4 F39A01  // LITERAL: F39A01 (usage not inferred)
+@0042B5  C0D04 ［彫金師ベリーニ］  // EN: [Bellini the metalworker]
+@0042DA  C0F04 彫金するの？  // EN: Do some metalworking?
+@004370  C0D04 ［彫金師ベリーニ］  // EN: [Bellini the metalworker]
+@0043D0 ふえるの  // EN: ...will increase.
+@003E14 アイテムと<F0><56>ＲＭを満タンにするのか？  // EN: Max out items and ÄRM?
+@004395  C0F04 レシピを教えてくれたら、つくれる<F0><56>ＲＭも  // EN: If you tell me recipes, the number of ÄRM I can make...

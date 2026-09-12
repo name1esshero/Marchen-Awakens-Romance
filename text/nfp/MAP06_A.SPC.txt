@@ -1,0 +1,5 @@
+// MAP06_A.SPC: ROM 96CF40
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00004B MAP06_A  // LITERAL: MAP06_A (usage not inferred)

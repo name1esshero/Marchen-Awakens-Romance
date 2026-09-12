@@ -1,0 +1,83 @@
+// EV_RT03.SPC: ROM 7B36D0
+// @offset is the string opcode offset within CODE, not a ROM address.
+// Edit text here; // EN: comments never reach the ROM.
+
+@00005E A  // LITERAL: A (usage not inferred)
+@0003D9 F09A01  // LITERAL: F09A01 (usage not inferred)
+@0004B2  C0D04 ［？？？］  // EN: [???]
+@0004CF  C0F04 よっ…と  // EN: There we go.
+@000524 F01A11  // LITERAL: F01A11 (usage not inferred)
+@0005FD  C0D04 ［ギンタ］  // EN: [Ginta]
+@00061A  C0F04 あ…あんた、だれ？  // EN: W-who are you?
+@000679 F09A01  // LITERAL: F09A01 (usage not inferred)
+@0006A7  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00072D F30A03  // LITERAL: F30A03 (usage not inferred)
+@000806  C0D04 ［親岩］  // EN: [Parent Rock]
+@000821  C0F04 （ド！！ドロシィー！？）  // EN: (D-Dorothy?!)
+@0008AC  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0008CB  C0F04 今のリングアーマー…  // EN: That Ring Armor just now...
+@00091C  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00093B  C0F04 私がもってる中では  // EN: ...is one of my weakest...
+@000960 最弱クラスとはいえおみごとよ  // EN: ...but that was impressive.
+@0009A6  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000AE9 F01A02  // LITERAL: F01A02 (usage not inferred)
+@000B7E F09A07  // LITERAL: F09A07 (usage not inferred)
+@000BAC  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000BCB  C0F04 んん？…ヘンねぇ…  // EN: Hmm? ...That's strange...
+@000C38 F01A01  // LITERAL: F01A01 (usage not inferred)
+@000C66  C0D04 ［ギンタ］  // EN: [Ginta]
+@000C83  C0904 『あーむ』 C0F04 って…何だ！？  // EN: What's an 'ÄRM'?!
+@000CB5 今の魔法みたいなやつのこと！？  // EN: That magic-looking thing just now?!
+@000D0D F09A05  // LITERAL: F09A05 (usage not inferred)
+@000D3B  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000D83 キミどこのイナカ者よ？  // EN: What backwater are you from?
+@000DD3 F09A01  // LITERAL: F09A01 (usage not inferred)
+@000E01  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000E7F  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000E9E  C0F04 魔力（まりょく）によって  // EN: They're made using magical power...
+@000EC9  C0904 彫金（ちょうきん） C0F04 された…  // EN: ...through a process called engraving...
+@000F1B  C0D04 ［ドロシー］  // EN: [Dorothy]
+@000F3A  C0F04 特殊能力を持つ C0904 アクセサリー C0F04 のことよ  // EN: ...accessories with special abilities.
+@000FED F01A07  // LITERAL: F01A07 (usage not inferred)
+@001051  C0D04 ［ギンタ］  // EN: [Ginta]
+@00106E  C0F04 アクセサリー！？  // EN: Accessories?!
+@001091 他にもある？？見せて見せて！！  // EN: Are there others? Show me, show me!!
+@00110F  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00112E  C0F04 （ってことは…この子…素手で  // EN: (Then... this boy threw Ring Armor...
+@00115D リングアーマーを投げ飛ばしたってこと？）  // EN: ...with his bare hands?)
+@0011AF  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0011CE  C0F04 （こんなとこにいるから  // EN: (Since he was here, I assumed...
+@001285 F09A07  // LITERAL: F09A07 (usage not inferred)
+@0012E9  C0D04 ［ドロシー］  // EN: [Dorothy]
+@001308  C0F04 ………………  // EN: ......
+@001327 ………………！  // EN: ......!
+@00136F F09A01  // LITERAL: F09A01 (usage not inferred)
+@0013D3  C0D04 ［ドロシー］  // EN: [Dorothy]
+@0014A3 F01A01  // LITERAL: F01A01 (usage not inferred)
+@001507  C0D04 ［ギンタ］  // EN: [Ginta]
+@001524  C0F04 ホント！？…わかった！！  // EN: Really?! ...All right!!
+@00154F じゃあな、岩の親子元気でな！！  // EN: Bye, rock family! Take care!!
+@001912 F30A03  // LITERAL: F30A03 (usage not inferred)
+@0019D3  C0D04 ［親岩］  // EN: [Parent Rock]
+@0019EE  C0F04 だ、だめです！ボッチャン！  // EN: N-no, young master!
+@001A4F F30A04  // LITERAL: F30A04 (usage not inferred)
+@001B10  C0D04 ［子岩］  // EN: [Child Rock]
+@001B2B  C0F04 どうしたのお父さん？？  // EN: What's wrong, Dad??
+@001B7E  C0D04 ［親岩］  // EN: [Parent Rock]
+@001B99  C0F04 あれはドロシー…  // EN: That's Dorothy...
+@001BBC あく名高い魔女（まじょ）だ…！！  // EN: ...the notorious witch...!!
+@001FB0 F01A01  // LITERAL: F01A01 (usage not inferred)
+@001FE8 F09A01  // LITERAL: F09A01 (usage not inferred)
+@00213C  C0D04 ［ドロシー］  // EN: [Dorothy]
+@00215B  C0F04 ここを道なりに進めば目的の場所につくよ  // EN: Follow this road and you'll get there.
+@0021C8 F01A03  // LITERAL: F01A03 (usage not inferred)
+@0021F6  C0D04 ［ギンタ］  // EN: [Ginta]
+@002213  C0F04 よし！！  // EN: All right!!
+@0006C6  C0F04 ドロシーよ、はじめまして<F0><40>  // EN: I'm Dorothy. Nice to meet you. ♥
+@0009C5  C0F04 何の<F0><56>ＲＭ使ったの？  // EN: What ÄRM did you use?
+@000BF0 <F0><56>ＲＭがないわ  // EN: You don't have an ÄRM.
+@000D5A  C0F04 <F0><56>ＲＭも知らないって…  // EN: You don't even know what an ÄRM is...
+@000E20  C0F04 <F0><56>ＲＭはね…魔法…といえばそうかな  // EN: ÄRMs are... magic, you could say.
+@0011F7 <F0><56>ＲＭもってると思ったのに…）  // EN: ...he would have an ÄRM...)
+@0013F2  C0F04 <F0><56>ＲＭ…欲しい？  // EN: Want an ÄRM?
+@001415 あたしについてきたら、アゲル<F0><40>  // EN: Come with me, and I'll give you one. ♥

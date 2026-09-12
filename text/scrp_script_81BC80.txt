@@ -1,0 +1,22 @@
+// Legacy reference view of J_HOLE.SPC; edit text/nfp/J_HOLE.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@0000AE MAP01_6A  // LITERAL: MAP01_6A (usage not inferred)
+@000134 TAKARA  // LITERAL: TAKARA (usage not inferred)
+@0002B1 MAP01_6A  // LITERAL: MAP01_6A (usage not inferred)
+@000337 TAKARA  // LITERAL: TAKARA (usage not inferred)
+@0004B4 MAP07_1A  // LITERAL: MAP07_1A (usage not inferred)
+@00053A TAKARA  // LITERAL: TAKARA (usage not inferred)
+@0006B7 MAP07_1A  // LITERAL: MAP07_1A (usage not inferred)
+@00073D TAKARA  // LITERAL: TAKARA (usage not inferred)
+@0008BA MAP07_1A  // LITERAL: MAP07_1A (usage not inferred)
+@000940 TAKARA  // LITERAL: TAKARA (usage not inferred)
+@000ABD MAP07_1A  // LITERAL: MAP07_1A (usage not inferred)
+@000B43 TAKARA  // LITERAL: TAKARA (usage not inferred)
+@000CC5 TAKARA  // LITERAL: TAKARA (usage not inferred)
+@000E42 MAP07_1A  // LITERAL: MAP07_1A (usage not inferred)
+@000EC8 TAKARA  // LITERAL: TAKARA (usage not inferred)
+@00104A TAKARA  // LITERAL: TAKARA (usage not inferred)
+@0011CC TAKARA  // LITERAL: TAKARA (usage not inferred)
+@001402 BGM_SET.SPC  // LITERAL: BGM_SET.SPC (usage not inferred)

@@ -1,0 +1,17 @@
+// Legacy reference view of G_EV001.SPC; edit text/nfp/G_EV001.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000090 MAP41_A.SPC  // LITERAL: MAP41_A.SPC (usage not inferred)
+@000178 A  // LITERAL: A (usage not inferred)
+@000672 F03A01  // LITERAL: F03A01 (usage not inferred)
+@00074B  C0D04 ［ジャック］  // EN: [Jack]
+@00076A  C0F04 さて…  // EN: Now then...
+@000783 まずは C0904 『パヅタウン』 C0F04 に行くっスよ  // TODO: English translation
+@000811 F01B11  // LITERAL: F01B11 (usage not inferred)
+@0008EA  C0D04 ［ギンタ］  // EN: [Ginta]
+@000907  C0F04 『パヅタウン』？？  // TODO: English translation
+@000966 F03A06  // LITERAL: F03A06 (usage not inferred)
+@000994  C0D04 ［ジャック］  // EN: [Jack]
+@0009B3  C0F04 そっス！  // TODO: English translation
+@0009CE この辺りでは、いちばん大きな街っス  // TODO: English translation

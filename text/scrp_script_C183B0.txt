@@ -1,0 +1,6 @@
+// Legacy reference view of MAP26_2A.SPC; edit text/nfp/MAP26_2A.SPC.txt instead.
+// CODE offsets and Japanese are checked against the named source.
+// Regenerate comments with tools/translate_comments.py; this copy is not built.
+
+@000006 MAP26_2A  // LITERAL: MAP26_2A (usage not inferred)
+@0000FD TAKARA  // LITERAL: TAKARA (usage not inferred)

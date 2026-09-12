@@ -1,0 +1,102 @@
+{
+  "converted": [
+    {
+      "name": "BA06.TCG",
+      "old_path": "graphics/tilesets/BA06.TCG",
+      "new_path": "graphics/backgrounds/BA06.TCG",
+      "frames": 5,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "name": "BA07.TCG",
+      "old_path": "graphics/tilesets/BA07.TCG",
+      "new_path": "graphics/backgrounds/BA07.TCG",
+      "frames": 1,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "name": "GA13.TCG",
+      "old_path": "graphics/tilesets/GA13.TCG",
+      "new_path": "graphics/backgrounds/GA13.TCG",
+      "frames": 9,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "name": "GA24.TCG",
+      "old_path": "graphics/tilesets/GA24.TCG",
+      "new_path": "graphics/backgrounds/GA24.TCG",
+      "frames": 8,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "name": "GA25.TCG",
+      "old_path": "graphics/tilesets/GA25.TCG",
+      "new_path": "graphics/backgrounds/GA25.TCG",
+      "frames": 8,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "name": "GA26.TCG",
+      "old_path": "graphics/tilesets/GA26.TCG",
+      "new_path": "graphics/backgrounds/GA26.TCG",
+      "frames": 4,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "name": "JA05.TCG",
+      "old_path": "graphics/tilesets/JA05.TCG",
+      "new_path": "graphics/backgrounds/JA05.TCG",
+      "frames": 4,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "name": "SBA06.TCG",
+      "old_path": "graphics/tilesets/SBA06.TCG",
+      "new_path": "graphics/backgrounds/SBA06.TCG",
+      "frames": 2,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "name": "SN06.TCG",
+      "old_path": "graphics/tilesets/SN06.TCG",
+      "new_path": "graphics/backgrounds/SN06.TCG",
+      "frames": 1,
+      "width": 256,
+      "height": 256
+    }
+  ],
+  "skipped": [
+    {
+      "name": "GA08.TCG",
+      "reason": "Multiple screenblocks: BG orientation not decoded"
+    },
+    {
+      "name": "GA60.TCG",
+      "reason": "GA60_03.TSC references tile 1023, but the source has 352 tiles"
+    },
+    {
+      "name": "NE21.TCG",
+      "reason": "NE21_01.TSC references tile 1023, but the source has 512 tiles"
+    },
+    {
+      "name": "NE32.TCG",
+      "reason": "Multiple screenblocks: BG orientation not decoded"
+    },
+    {
+      "name": "SN07.TCG",
+      "reason": "Multiple screenblocks: BG orientation not decoded"
+    },
+    {
+      "name": "SSN07.TCG",
+      "reason": "Multiple screenblocks: BG orientation not decoded"
+    }
+  ]
+}
