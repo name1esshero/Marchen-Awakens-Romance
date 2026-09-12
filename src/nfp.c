@@ -149,10 +149,6 @@ s32 NfpMount(const char *name, void *base, void *end)
 __attribute__((section(".rom.0007AB14")))
 const u8 NfpMountTail[2] = {0, 0};
 
-/* Still assembly: see src/nonmatching/nfp_mount.c for why. */
-extern const char *NfpGetMountName(s32) __attribute__((alias("sub_0807AA48")));
-extern void NfpSetMountName(s32, const char *) __attribute__((alias("sub_0807AA74")));
-
 void sub_0807AAB8(s32, struct NfpHeader *) __attribute__((alias("NfpSetArchiveBase")));
 s32 sub_0807ABF0(void) __attribute__((alias("NfpFindFreeSlot")));
 s32 sub_0807AB14(const char *, void *, void *) __attribute__((alias("NfpMount")));

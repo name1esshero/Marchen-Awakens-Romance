@@ -119,5 +119,29 @@ void ListInsertBeforeLinked(List *list, ListNode *at, ListNode *node)
     }
     list->count++;
 }
+
 __attribute__((section(".rom.0007A98C")))
 const unsigned char ListInsertBeforeLinkedTail[2] = {0, 0};
+
+/* Used by adjacent-item reordering. Both indices must exist and second must
+ * immediately follow first; the original helper performs no validation. */
+__attribute__((section(".rom.0007A8E8")))
+void ListSwapAdjacentIndices(List *list, unsigned first, unsigned second)
+{
+    ListNode *firstNode;
+    ListNode *secondNode;
+
+    if (first == second)
+        return;
+    firstNode = ListGet(list, first);
+    secondNode = ListGet(list, second);
+    ListRemove(list, firstNode);
+    ListInsertBeforeLinked(list, secondNode->next, firstNode);
+    secondNode = ListGet(list, second);
+    firstNode = ListGet(list, first);
+    ListRemove(list, secondNode);
+    ListInsertBeforeLinked(list, firstNode->next, secondNode);
+}
+
+__attribute__((section(".rom.0007A8E8")))
+const unsigned char ListSwapAdjacentIndicesTail[2] = {0, 0};

@@ -40,6 +40,18 @@ int main(void) {
     ListRemove(&list, &a); /* Last node. */
     assert(!ListHead(&list) && !ListTail(&list) && !ListCount(&list));
     assert(!ListGet(&list, 0) && !a.next && !a.prev);
+    ListAppend(&list, &a);
+    ListAppend(&list, &b);
+    ListAppend(&list, &c);
+    ListAppend(&list, &d);
+    ListSwapAdjacentIndices(&list, 1, 2);
+    assert(ListGet(&list, 0) == &a && ListGet(&list, 1) == &c);
+    assert(ListGet(&list, 2) == &b && ListGet(&list, 3) == &d);
+    assert(a.next == &c && c.prev == &a && c.next == &b);
+    assert(b.prev == &c && b.next == &d && d.prev == &b);
+    assert(list.head == &a && list.tail == &d && list.count == 4);
+    ListSwapAdjacentIndices(&list, 2, 2);
+    assert(ListGet(&list, 2) == &b && list.count == 4);
     return 0;
 }
 ''')

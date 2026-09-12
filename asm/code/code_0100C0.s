@@ -4186,7 +4186,7 @@ sub_080123F8:
 	beq _0801240A
 	movs r0, #14
 	movs r1, #0
-	bl sub_0807B6C8
+	bl SpriteEngineSetFlag20C
 	.global _0801240A
 _0801240A:
 	movs r0, #0
@@ -4196,7 +4196,7 @@ _0801240A:
 	beq _08012420
 	movs r0, #15
 	movs r1, #0
-	bl sub_0807B6C8
+	bl SpriteEngineSetFlag20C
 	.global _08012420
 _08012420:
 	movs r0, #0

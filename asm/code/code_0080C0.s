@@ -1227,7 +1227,7 @@ sub_08008968:
 	bl sub_0800905C
 	movs r0, #14
 	movs r1, #1
-	bl sub_0807B6C8
+	bl SpriteEngineSetFlag20C
 	movs r0, #30
 	movs r1, #0
 	bl sub_080804EC
@@ -1238,7 +1238,7 @@ sub_08008968:
 	bl sub_08009084
 	movs r0, #15
 	movs r1, #1
-	bl sub_0807B6C8
+	bl SpriteEngineSetFlag20C
 	movs r0, #31
 	movs r1, #0
 	bl sub_080804EC
@@ -1705,7 +1705,7 @@ _08008C9A:
 	bl CpuCopy
 	movs r0, #14
 	movs r1, #1
-	bl sub_0807B6C8
+	bl SpriteEngineSetFlag20C
 	.global _08008CC8
 _08008CC8:
 	bl sub_08009098
@@ -1725,7 +1725,7 @@ sub_08008CDE:
 	.2byte 0xF8EA
 	movs r0, #15
 	movs r1, #1
-	bl sub_0807B6C8
+	bl SpriteEngineSetFlag20C
 	.global _08008CE8
 _08008CE8:
 	ldr r0, _08009000
@@ -12235,7 +12235,7 @@ _0800CFC2:
 	lsls r1, r4, #5
 	ldr r0, [r5, #0]
 	adds r0, r0, r1
-	bl sub_0807A7C4
+	bl TaskManagerRun
 	.global _0800CFDC
 _0800CFDC:
 	adds r4, #1

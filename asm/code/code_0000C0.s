@@ -1798,7 +1798,7 @@ _08001282:
 	strh r0, [r1, #0]
 	ldr r3, _08001384
 	adds r0, r4, r3
-	bl sub_0807A7C4
+	bl TaskManagerRun
 	movs r0, #4
 	ldrsb r0, [r4, r0]
 	cmp r0, #0
@@ -2530,7 +2530,7 @@ sub_0800163C:
 	adds r0, r0, r4
 	ldr r0, [r0, #0]
 	movs r1, #1
-	bl sub_0807B630
+	bl SpriteResourceSetHandle
 	ldr r4, _080019E4
 	adds r0, r4, #0
 	bl sub_0807D488
@@ -17180,7 +17180,7 @@ sub_08007A16:
 	lsls r1, r4, #5
 	ldr r0, [r5, #0]
 	adds r0, r0, r1
-	bl sub_0807A7C4
+	bl TaskManagerRun
 	.global _08007A2E
 _08007A2E:
 	adds r4, #1
@@ -17712,12 +17712,12 @@ _08007DA4:
 	bl sub_08008A44
 	ldr r4, _08007E5C
 	ldr r0, [r4, #0]
-	bl sub_0807A7C4
+	bl TaskManagerRun
 	movs r0, #2
 	bl sub_08008A44
 	ldr r0, [r4, #0]
 	adds r0, #64
-	bl sub_0807A7C4
+	bl TaskManagerRun
 	movs r3, #128
 	lsls r3, r3, #1
 	str r5, [sp, #0]
@@ -17788,7 +17788,7 @@ _08007E68:
 	lsls r1, r4, #5
 	ldr r0, [r5, #0]
 	adds r0, r0, r1
-	bl sub_0807A7C4
+	bl TaskManagerRun
 	adds r0, r4, #0
 	bl sub_08008AFC
 	.global _08007E88
@@ -18008,12 +18008,12 @@ _08007FF0:
 	bl sub_08008A44
 	ldr r4, _08008074
 	ldr r0, [r4, #0]
-	bl sub_0807A7C4
+	bl TaskManagerRun
 	movs r0, #2
 	bl sub_08008A44
 	ldr r0, [r4, #0]
 	adds r0, #64
-	bl sub_0807A7C4
+	bl TaskManagerRun
 	bl sub_08009D04
 	cmp r0, #8
 	beq _08008078

@@ -64,6 +64,49 @@ flags at 27. The transformed path rejects scales <= 4. These drawing
 routines still require full C recovery and verification of OAM allocation,
 affine transforms, clipping, ordering and transfer timing.
 
+### Sprite-engine OAM work state
+
+Eight accessors from `0807B224..0807B32C` now compile from readable C in
+`src/sprite_engine_state.c`. The global pointer at `03006118` leads to the
+renderer state. Its field at +4 points to 8-byte work entries; direct lookup
+computes `base + index * 8`, while allocation increments byte +0 and returns
+the entry selected by the previous value. This identifies byte +0 as the
+current allocation boundary/count.
+
+The indexed boundary API accepts indices 0, 1 and 2. Initialization sets them
+to 0, 128 and 128. Invalid reads return zero and invalid writes do nothing;
+writes truncate to eight bits. Other renderer code temporarily moves the first
+boundary into the second and uses byte +2 to size an 8-byte-per-entry transfer,
+but those observations do not yet establish durable names for boundaries 1
+and 2. The source therefore keeps all three in `oamBoundaries[]` rather than
+inventing separate roles.
+
+The signed halfwords at state offsets `0x610` and `0x612` also have matching
+getters and setters. Their consumers still need tracing, so they intentionally
+remain `value610` and `value612`. A 32-bit host test verifies state layout,
+entry stride, allocation, indexed boundary behavior, byte truncation and signed
+round trips. The exact ROM comparison verifies the agbcc code and literal pools.
+
+Eight more accessors from `0807B618..0807B7D0` now compile from C. A partial
+16-byte resource record contains a data pointer at +0 and a signed handle at
++14. Releasing the record calls `sub_080869B8` only when the handle is nonzero;
+assigning a handle first applies that release rule and then stores the low 16
+bits. Reading it sign-extends the stored halfword. Bytes +4 through +13 still
+have unknown roles.
+
+The renderer state contains a 16-bit flag field at +`0x20C`. Its recovered API
+sets or clears one indexed bit, tests a bit, or returns the full field. The test
+operation returns the bit mask itself, such as 8 for bit 3, rather than reducing
+it to a Boolean. The routine at `0807B728` that changes the whole field remains
+in assembly because the equivalent C has not yet reproduced agbcc's exact
+register and literal-load selection.
+
+State offset +`0x1CC` is addressed as 16 groups of four byte counters. The
+recovered getter and setter truncate the group and stored value to eight bits;
+the index remains a 32-bit argument. Their gameplay meaning still needs tracing,
+so the source uses the neutral `counters` name. The host test now also verifies
+resource lifetime, signed handles, flags, and counter addressing.
+
 ## Recovered C and remaining work
 
 `src/ncd_sprite.c` recovers the complete 80-byte initializer at 0807BC2C.

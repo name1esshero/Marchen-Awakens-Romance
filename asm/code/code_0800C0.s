@@ -1280,6 +1280,8 @@ sub_08080BC0:
 	.thumb
 	.global sub_08080BC4
 sub_08080BC4:
+	.global _call_via_r1
+	.thumb_set _call_via_r1, sub_08080BC4
 	bx r1
 	.byte 0xC0
 	.byte 0x46

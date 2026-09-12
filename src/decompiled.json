@@ -886,5 +886,179 @@
   "size": 40,
   "name": "NfpShutdown",
   "file": "src/nfp_lifecycle.c"
+ },
+ {
+  "addr": "0807A688",
+  "size": 120,
+  "name": "TaskCreateInQueue",
+  "file": "src/task_create.c"
+ },
+ {
+  "addr": "0807A700",
+  "size": 124,
+  "name": "TaskCreateBefore",
+  "file": "src/task_create.c"
+ },
+ {
+  "addr": "0807A77C",
+  "size": 48,
+  "name": "CreateTask",
+  "file": "src/task_scheduler.c"
+ },
+ {
+  "addr": "0807A7C4",
+  "size": 164,
+  "name": "TaskManagerRun",
+  "file": "src/task_scheduler.c"
+ },
+ {
+  "addr": "0807AA48",
+  "size": 44,
+  "name": "NfpGetMountName",
+  "file": "src/nfp_mount_helpers.c"
+ },
+ {
+  "addr": "0807AA74",
+  "size": 44,
+  "name": "NfpSetMountName",
+  "file": "src/nfp_mount_helpers.c"
+ },
+ {
+  "addr": "0807AB70",
+  "size": 12,
+  "name": "NfpUnmount",
+  "file": "src/nfp_mount_helpers.c"
+ },
+ {
+  "addr": "0807ABBC",
+  "size": 52,
+  "name": "NfpCountMounted",
+  "file": "src/nfp_mount_helpers.c"
+ },
+ {
+  "addr": "0807A7AC",
+  "size": 24,
+  "name": "FinishTask",
+  "file": "src/task_scheduler.c"
+ },
+ {
+  "addr": "0807AAF0",
+  "size": 24,
+  "name": "NfpGetEntryCountByName",
+  "file": "src/nfp_convenience.c"
+ },
+ {
+  "addr": "0807AC78",
+  "size": 48,
+  "name": "NfpOpenByIndex",
+  "file": "src/nfp_convenience.c"
+ },
+ {
+  "addr": "0807ACA8",
+  "size": 28,
+  "name": "NfpFindEntryByArchiveName",
+  "file": "src/nfp_convenience.c"
+ },
+ {
+  "addr": "0807A8E8",
+  "size": 100,
+  "name": "ListSwapAdjacentIndices",
+  "file": "src/list.c"
+ },
+ {
+  "addr": "0807B224",
+  "size": 20,
+  "name": "SpriteEngineGetOamEntry",
+  "file": "src/sprite_engine_state.c"
+ },
+ {
+  "addr": "0807B238",
+  "size": 28,
+  "name": "SpriteEngineAllocateOamEntry",
+  "file": "src/sprite_engine_state.c"
+ },
+ {
+  "addr": "0807B254",
+  "size": 68,
+  "name": "SpriteEngineGetOamBoundary",
+  "file": "src/sprite_engine_state.c"
+ },
+ {
+  "addr": "0807B298",
+  "size": 64,
+  "name": "SpriteEngineSetOamBoundary",
+  "file": "src/sprite_engine_state.c"
+ },
+ {
+  "addr": "0807B2D8",
+  "size": 20,
+  "name": "SpriteEngineSetValue610",
+  "file": "src/sprite_engine_state.c"
+ },
+ {
+  "addr": "0807B2EC",
+  "size": 20,
+  "name": "SpriteEngineSetValue612",
+  "file": "src/sprite_engine_state.c"
+ },
+ {
+  "addr": "0807B300",
+  "size": 20,
+  "name": "SpriteEngineGetValue610",
+  "file": "src/sprite_engine_state.c"
+ },
+ {
+  "addr": "0807B314",
+  "size": 24,
+  "name": "SpriteEngineGetValue612",
+  "file": "src/sprite_engine_state.c"
+ },
+ {
+  "addr": "0807B618",
+  "size": 24,
+  "name": "SpriteResourceRelease",
+  "file": "src/sprite_engine_state.c"
+ },
+ {
+  "addr": "0807B630",
+  "size": 20,
+  "name": "SpriteResourceSetHandle",
+  "file": "src/sprite_engine_state.c"
+ },
+ {
+  "addr": "0807B644",
+  "size": 8,
+  "name": "SpriteResourceGetHandle",
+  "file": "src/sprite_engine_state.c"
+ },
+ {
+  "addr": "0807B6C8",
+  "size": 64,
+  "name": "SpriteEngineSetFlag20C",
+  "file": "src/sprite_engine_state.c"
+ },
+ {
+  "addr": "0807B708",
+  "size": 32,
+  "name": "SpriteEngineTestFlag20C",
+  "file": "src/sprite_engine_state.c"
+ },
+ {
+  "addr": "0807B74C",
+  "size": 20,
+  "name": "SpriteEngineGetFlags20C",
+  "file": "src/sprite_engine_state.c"
+ },
+ {
+  "addr": "0807B798",
+  "size": 28,
+  "name": "SpriteEngineGetCounter",
+  "file": "src/sprite_engine_state.c"
+ },
+ {
+  "addr": "0807B7B4",
+  "size": 28,
+  "name": "SpriteEngineSetCounter",
+  "file": "src/sprite_engine_state.c"
  }
 ]

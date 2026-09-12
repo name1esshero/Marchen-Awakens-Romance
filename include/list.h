@@ -19,5 +19,7 @@ ListNode *ListTail(List *list);
 
 /* Alternate insertion routine used by the original index-reordering code. */
 void ListInsertBeforeLinked(List *list, ListNode *at, ListNode *node);
+/* Both indices must exist; second must immediately follow first. */
+void ListSwapAdjacentIndices(List *list, unsigned first, unsigned second);
 
 #endif

@@ -3540,16 +3540,16 @@ sub_080296C4:
 	adds r7, r0, #0
 	movs r0, #11
 	movs r1, #1
-	bl sub_0807B6C8
+	bl SpriteEngineSetFlag20C
 	movs r0, #12
 	movs r1, #1
-	bl sub_0807B6C8
+	bl SpriteEngineSetFlag20C
 	movs r0, #13
 	movs r1, #1
-	bl sub_0807B6C8
+	bl SpriteEngineSetFlag20C
 	movs r0, #14
 	movs r1, #1
-	bl sub_0807B6C8
+	bl SpriteEngineSetFlag20C
 	movs r0, #15
 
 	.thumb_func
@@ -3557,7 +3557,7 @@ sub_080296C4:
 	.global sub_080296F0
 sub_080296F0:
 	movs r1, #1
-	bl sub_0807B6C8
+	bl SpriteEngineSetFlag20C
 	ldr r1, _0802970C
 	adds r0, r7, r1
 	movs r2, #0

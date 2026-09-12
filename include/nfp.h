@@ -59,6 +59,8 @@ struct NfpState
 
 void NfpInit(struct NfpState *state, struct Heap *heap, s32 count);
 void NfpShutdown(void);
+void NfpUnmount(s32 handle);
+s32 NfpCountMounted(void);
 
 /* Directory entries are sorted by name, which is why lookup binary searches
  * them rather than scanning. Verified against the shipped directory. */
@@ -85,7 +87,10 @@ extern void CpuCopy(void *dest, const void *src, u32 size);
  * the copy itself. */
 #define NFP_NAME_SIZE 12
 u32 NfpGetEntryCount(s32 handle);
+u32 NfpGetEntryCountByName(const char *archive);
 struct NfpEntry *NfpGetDirectory(s32 handle);
 void *NfpGetData(s32 handle);
+void *NfpOpenByIndex(const char *archive, s32 index);
+s32 NfpFindEntryByArchiveName(const char *archive, const char *member);
 
 #endif /* NFP_H */

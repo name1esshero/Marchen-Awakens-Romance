@@ -246,7 +246,7 @@ lookup, removal, head, tail, and count) now use readable C in `src/list.c`
 (196 bytes), alongside the `SprSet` and
 `SprGet` native adapters (60 bytes), and 13 item-table accessors in `src/item.c`
 (276 bytes). Item names and descriptions are identified; other field names
-retain offsets until their gameplay meaning is verified. The provenance audit verifies **138 ordinary
+retain offsets until their gameplay meaning is verified. The provenance audit verifies **167 ordinary
 C functions and 10 BIOS assembly wrappers**; each declared range is linked from
 its expected C object and matches the Japanese ROM. This is a function count,
 not a percentage of total code decoded. List tests cover empty/nonempty append
@@ -270,6 +270,40 @@ bytes). The 32-bit lifecycle test checks node ownership, traversal while freeing
 list links, mount-table allocation and state clearing. See
 [task and archive lifetime](docs/task-and-archive-lifetime.md).
 
+Two task-creation helpers add another 244 bytes of matching C in
+`src/task_create.c`: append to a priority queue or insert before an existing
+task. Tests cover header and payload initialization, optional completion words,
+queue links and allocation failure.
+
+The public task-creation wrapper and scheduler now add 212 bytes of matching C
+in `src/task_scheduler.c`. The wrapper accepts either a queue index or an existing
+task pointer. Scheduler tests cover removal before/after callbacks and tasks
+appended during the current pass.
+
+Four archive mount helpers add 152 bytes of matching C in
+`src/nfp_mount_helpers.c`: active-name lookup, uppercase-name assignment,
+unmounting and active-slot counting. Unmount preserves the archive pointer,
+size and name; it only clears the active flag.
+
+Task completion, three archive convenience entry points, and adjacent list
+reordering add another five matching functions (224 bytes). The archive APIs
+provide name-based member counts, index-based opening, and archive/member-name
+index lookup. Tests cover their distinct missing-archive and missing-member
+results as well as task-state transitions and adjacent link reordering.
+
+Eight sprite-engine state helpers add 264 bytes of matching C. They allocate
+and address 8-byte OAM work entries, read and write three indexed boundaries,
+and expose the signed state fields at offsets `0x610` and `0x612`. Unknown
+field meanings retain offset-based names. See
+[sprite rendering evidence](docs/sprite-rendering.md).
+
+Eight more sprite-engine helpers add 224 bytes of matching C. They manage a
+16-byte resource record and its signed handle, expose the renderer's 16-bit
+flag field at `0x20C`, and read or write its 16-by-4 byte counter table at
+`0x1CC`. Behavior tests cover conditional resource release, handle truncation
+and sign extension, individual flag changes, mask-valued flag tests, and
+counter indexing.
+
 **The build compiles C with agbcc**, the period compiler the pret projects
 preserve. This is what lets ordinary C reproduce the original instruction
 bytes: modern GCC allocates registers differently for identical source and
@@ -282,8 +316,8 @@ included, where modern GCC differed on two counts in every function:
 | Leaf prologue | `push {lr}` | `push {r4, lr}`, saving a register it never uses |
 | `index * 24` | `((i * 2) + i) * 8` with shifts | load 24, then `muls` |
 
-The current manifest declares 148 linked ranges: 138 compiled-C ranges and ten
-BIOS inline-assembly wrapper ranges. Compiled C owns 5,712 bytes, including
+The current manifest declares 177 linked ranges: 167 compiled-C ranges and ten
+BIOS inline-assembly wrapper ranges. Compiled C owns 7,032 bytes, including
 literal pools and alignment. This is not a function-completion percentage.
 One range may contain multiple contiguous
 functions and alignment bytes. The [build provenance audit](https://github.com/name1esshero/Marchen-Awakens-Romance/wiki/Build-verification)
