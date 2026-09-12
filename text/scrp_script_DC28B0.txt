@@ -4,11 +4,11 @@
 
 @000111 からっぽだ！  // EN: It's empty!
 @000269 カギがかかっている  // EN: It's locked.
-@000287 暗証番号を入れれば開きそうだ  // TODO: English translation
-@0002D9 カギをあける？  // TODO: English translation
-@000589 がくせいふくのギンタを  // TODO: English translation
+@000287 暗証番号を入れれば開きそうだ  // EN: It looks like a passcode will open it.
+@0002D9 カギをあける？  // EN: Unlock it?
+@000589 がくせいふくのギンタを  // EN: Ginta in his school uniform...
 @0005AB 使えるようになりました  // EN: You can now use it.
-@000639  C0904 対戦モード C0F04 と C0904 ダンジョンモード C0F04 で  // TODO: English translation
-@00067F がくせいふくのギンタをえらべます  // TODO: English translation
-@0006D5 ギンタにカーソルを合わせているときに  // TODO: English translation
-@000705  C0904 Ｌボタン C0F04 か C0904 Ｒボタン C0F04 できりかわります  // TODO: English translation
+@000639  C0904 対戦モード C0F04 と C0904 ダンジョンモード C0F04 で  // EN: In Versus Mode and Dungeon Mode...
+@00067F がくせいふくのギンタをえらべます  // EN: ...you can select Ginta in his school uniform.
+@0006D5 ギンタにカーソルを合わせているときに  // EN: While the cursor is on Ginta...
+@000705  C0904 Ｌボタン C0F04 か C0904 Ｒボタン C0F04 できりかわります  // EN: ...press L or R to switch.

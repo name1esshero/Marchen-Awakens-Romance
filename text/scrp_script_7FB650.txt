@@ -11,94 +11,94 @@
 @0004F6 MAP05_O  // LITERAL: MAP05_O (usage not inferred)
 @000F47 F01B01  // LITERAL: F01B01 (usage not inferred)
 @001020  C0D04 ［ギンタ］  // EN: [Ginta]
-@00103D  C0F04 どうすんだ！？  // TODO: English translation
-@00105E どうしたらつよくなれるんだ！？  // TODO: English translation
+@00103D  C0F04 どうすんだ！？  // EN: What do we do?!
+@00105E どうしたらつよくなれるんだ！？  // EN: How do we get stronger?!
 @0010EC F06A01  // LITERAL: F06A01 (usage not inferred)
 @0011C5  C0D04 ［エド］  // EN: [Ed]
-@0011E0  C0F04 まぁ、あせんな  // TODO: English translation
+@0011E0  C0F04 まぁ、あせんな  // EN: Easy. Don't rush.
 @001309 F06A01  // LITERAL: F06A01 (usage not inferred)
 @00137D F02A01  // LITERAL: F02A01 (usage not inferred)
 @00147D  C0D04 ［エド］  // EN: [Ed]
 @0014F3  C0D04 ［エド］  // EN: [Ed]
-@00150E  C0F04 なつかしいな…  // TODO: English translation
-@00152F こいつはオレが封印したんだ  // TODO: English translation
+@00150E  C0F04 なつかしいな…  // EN: Brings back memories...
+@00152F こいつはオレが封印したんだ  // EN: I'm the one who sealed him away.
 @0015B9 F01B11  // LITERAL: F01B11 (usage not inferred)
 @00161D  C0D04 ［ギンタ］  // EN: [Ginta]
-@00163A  C0F04 え！？  // TODO: English translation
-@001653 ほんとか！？  // TODO: English translation
+@00163A  C0F04 え！？  // EN: What?!
+@001653 ほんとか！？  // EN: Really?!
 @00183D F06A04  // LITERAL: F06A04 (usage not inferred)
 @00186B  C0D04 ［エド］  // EN: [Ed]
-@001886  C0F04 おうよ  // TODO: English translation
+@001886  C0F04 おうよ  // EN: You bet.
 @0018C9  C0D04 ［エド］  // EN: [Ed]
-@0018E4  C0F04 魔力（まりょく）がゼロのものにしか  // TODO: English translation
-@001919 ぜったいあけられない宝ばこ…  // TODO: English translation
+@0018E4  C0F04 魔力（まりょく）がゼロのものにしか  // EN: A treasure chest that only someone...
+@001919 ぜったいあけられない宝ばこ…  // EN: ...with no magic power could open...
 @00195F  C0D04 ［エド］  // EN: [Ed]
-@00197A  C0F04 魔力がゼロのものには  // TODO: English translation
+@00197A  C0F04 魔力がゼロのものには  // EN: And someone with no magic power...
 @0019F7 F06A01  // LITERAL: F06A01 (usage not inferred)
 @001A25  C0D04 ［エド］  // EN: [Ed]
-@001A40  C0F04 そういうトラップだったんだがな  // TODO: English translation
-@001A71 …おまえ、どうやってバッボとった？  // TODO: English translation
+@001A40  C0F04 そういうトラップだったんだがな  // EN: That was how the trap worked.
+@001A71 …おまえ、どうやってバッボとった？  // EN: ...How did you get Babbo out?
 @001B5F  C0D04 ［ギンタ］  // EN: [Ginta]
-@001B7C  C0F04 …まりょく、って何だ！？  // TODO: English translation
+@001B7C  C0F04 …まりょく、って何だ！？  // EN: ...What IS magic power?!
 @001BE1 F06A04  // LITERAL: F06A04 (usage not inferred)
 @001C0F  C0D04 ［エド］  // EN: [Ed]
-@001C2A  C0F04 魔力…か  // TODO: English translation
+@001C2A  C0F04 魔力…か  // EN: Magic power, huh...
 @001C6F  C0D04 ［エド］  // EN: [Ed]
-@001C8A  C0F04 魔力、といえば…  // TODO: English translation
+@001C8A  C0F04 魔力、といえば…  // EN: Speaking of magic power...
 @001E19 SP_DE02  // LITERAL: SP_DE02 (usage not inferred)
 @002091 ARM_NE16  // LITERAL: ARM_NE16 (usage not inferred)
 @0021FF ARM_NE16  // LITERAL: ARM_NE16 (usage not inferred)
 @00245F F09A06  // LITERAL: F09A06 (usage not inferred)
 @002538  C0D04 ［ドロシー］  // EN: [Dorothy]
-@002557  C0F04 ケホッケホッケホッケホッ！！  // TODO: English translation
+@002557  C0F04 ケホッケホッケホッケホッ！！  // EN: Cough! Cough! Cough! Cough!!
 @0025C0 F06A03  // LITERAL: F06A03 (usage not inferred)
 @002699  C0D04 ［エド］  // EN: [Ed]
-@0026B4  C0F04 出てこいや！！  // TODO: English translation
+@0026B4  C0F04 出てこいや！！  // EN: Get out here!!
 @0028BD F09A02  // LITERAL: F09A02 (usage not inferred)
 @0028EB  C0D04 ［ドロシー］  // EN: [Dorothy]
-@00290A  C0F04 何すんのさぁ〜〜〜〜！  // TODO: English translation
+@00290A  C0F04 何すんのさぁ〜〜〜〜！  // EN: What are you doooing?!
 @00296D F01B07  // LITERAL: F01B07 (usage not inferred)
 @002A46  C0D04 ［ギンタ］  // EN: [Ginta]
-@002A63  C0F04 ドロシー！！！  // TODO: English translation
+@002A63  C0F04 ドロシー！！！  // EN: Dorothy!!!
 @002B2A F06A01  // LITERAL: F06A01 (usage not inferred)
 @002C03  C0D04 ［エド］  // EN: [Ed]
-@002C1E  C0F04 犬のなかから見てたが…  // TODO: English translation
-@002C47 氷の城（しろ）にいた女だな  // TODO: English translation
+@002C1E  C0F04 犬のなかから見てたが…  // EN: I saw you from inside the dog...
+@002C47 氷の城（しろ）にいた女だな  // EN: You're the woman from the ice castle.
 @002C9B F06A03  // LITERAL: F06A03 (usage not inferred)
 @002CC9  C0D04 ［エド］  // EN: [Ed]
 @002CE4  C0F04 おまえ…  // EN: You...
-@002CFF チェスか？？  // TODO: English translation
+@002CFF チェスか？？  // EN: Are you a Chess Piece??
 @002D45 F01B01  // LITERAL: F01B01 (usage not inferred)
 @002D73  C0D04 ［ギンタ］  // EN: [Ginta]
-@002D90  C0F04 オレがこっちにきて  // TODO: English translation
-@002DB5 はじめてあったんだ！  // TODO: English translation
+@002D90  C0F04 オレがこっちにきて  // EN: She was the first person I met...
+@002DB5 はじめてあったんだ！  // EN: ...when I came to this world!
 @002E03 F01B08  // LITERAL: F01B08 (usage not inferred)
 @002E31  C0D04 ［ギンタ］  // EN: [Ginta]
-@002E4E  C0F04 いっしょにバッボを  // TODO: English translation
-@002E73 とったんだぜ！  // TODO: English translation
+@002E4E  C0F04 いっしょにバッボを  // EN: We got Babbo...
+@002E73 とったんだぜ！  // EN: ...together!
 @002EBB F06A04  // LITERAL: F06A04 (usage not inferred)
 @002EE9  C0D04 ［エド］  // EN: [Ed]
 @002F04  C0F04 なるほど…  // EN: I see...
 @002F4B  C0D04 ［エド］  // EN: [Ed]
-@002F66  C0F04 てめぇがガーディアンを  // TODO: English translation
-@002F8F 相手しているあいだに  // TODO: English translation
+@002F66  C0F04 てめぇがガーディアンを  // EN: While you were...
+@002F8F 相手しているあいだに  // EN: ...dealing with the Guardian...
 @002FCD  C0D04 ［エド］  // EN: [Ed]
-@002FE8  C0F04 ギンタが宝ばこを  // TODO: English translation
-@00300B あけたってワケか…  // TODO: English translation
+@002FE8  C0F04 ギンタが宝ばこを  // EN: Ginta opened...
+@00300B あけたってワケか…  // EN: ...the treasure chest, huh...
 @003310 F09A02  // LITERAL: F09A02 (usage not inferred)
 @0033E9  C0D04 ［ドロシー］  // EN: [Dorothy]
-@003408  C0F04 ちょいと！  // TODO: English translation
-@003425 ギンタンに何するつもり！？  // TODO: English translation
+@003408  C0F04 ちょいと！  // EN: Hey!
+@003425 ギンタンに何するつもり！？  // EN: What are you planning to do to Ginta?!
 @00350C F09A02  // LITERAL: F09A02 (usage not inferred)
 @0035A6  C0D04 ［ドロシー］  // EN: [Dorothy]
-@0035C5  C0F04 ヘンなことしようとしてるなら  // TODO: English translation
-@0035F4 わたしが相手するよ！  // TODO: English translation
+@0035C5  C0F04 ヘンなことしようとしてるなら  // EN: If you're up to anything funny...
+@0035F4 わたしが相手するよ！  // EN: ...you'll have to deal with me!
 @003642 F06A05  // LITERAL: F06A05 (usage not inferred)
 @00371B  C0D04 ［エド］  // EN: [Ed]
-@003736  C0F04 こそこそぬすみ見てやがったくせに  // TODO: English translation
-@003769 たいどがでけーな  // TODO: English translation
+@003736  C0F04 こそこそぬすみ見てやがったくせに  // EN: Pretty cheeky for someone...
+@003769 たいどがでけーな  // EN: ...who was sneaking around spying on us.
 @003846 F06A03  // LITERAL: F06A03 (usage not inferred)
 @0038E0  C0D04 ［エド］  // EN: [Ed]
-@0038FB  C0F04 やんのか？  // TODO: English translation
-@003918 ああ！？  // TODO: English translation
+@0038FB  C0F04 やんのか？  // EN: You want a fight?
+@003918 ああ！？  // EN: Huh?!
 @0039FD G_EV020B.SPC  // LITERAL: G_EV020B.SPC (usage not inferred)

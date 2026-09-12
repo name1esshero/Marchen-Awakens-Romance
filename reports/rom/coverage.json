@@ -1,0 +1,637 @@
+{
+  "sha1": "5ed178bfbdf459867d64e5b91a9d9c72654e4051",
+  "rom_size": 16777216,
+  "byte_matching": true,
+  "linked_sections": 1239,
+  "gaps": [],
+  "overlaps": [],
+  "archive_member_count": 830,
+  "archive_aliases": {},
+  "raw_linked_sections": [
+    {
+      "start": 1769472,
+      "end": 1771296,
+      "size": 1824,
+      "provider": "build/asm/data/data_1B0000.o"
+    },
+    {
+      "start": 1771296,
+      "end": 1780662,
+      "size": 9366,
+      "provider": "build/asm/data/data_1B0720.o"
+    },
+    {
+      "start": 1780662,
+      "end": 1850688,
+      "size": 70026,
+      "provider": "build/asm/data/data_1B2BB6.o"
+    },
+    {
+      "start": 1898401,
+      "end": 1898416,
+      "size": 15,
+      "provider": "build/asm/data/data_1CF7A1.o"
+    },
+    {
+      "start": 2342674,
+      "end": 2342688,
+      "size": 14,
+      "provider": "build/asm/data/data_23BF12.o"
+    },
+    {
+      "start": 2787592,
+      "end": 2787600,
+      "size": 8,
+      "provider": "build/asm/data/data_2A8908.o"
+    },
+    {
+      "start": 3227018,
+      "end": 3227024,
+      "size": 6,
+      "provider": "build/asm/data/data_313D8A.o"
+    },
+    {
+      "start": 3634991,
+      "end": 3634992,
+      "size": 1,
+      "provider": "build/asm/data/data_37772F.o"
+    },
+    {
+      "start": 3639633,
+      "end": 3639648,
+      "size": 15,
+      "provider": "build/asm/data/data_378951.o"
+    },
+    {
+      "start": 3650339,
+      "end": 3650352,
+      "size": 13,
+      "provider": "build/asm/data/data_37B323.o"
+    },
+    {
+      "start": 3655314,
+      "end": 3655328,
+      "size": 14,
+      "provider": "build/asm/data/data_37C692.o"
+    },
+    {
+      "start": 3666615,
+      "end": 3666624,
+      "size": 9,
+      "provider": "build/asm/data/data_37F2B7.o"
+    },
+    {
+      "start": 3674040,
+      "end": 3674048,
+      "size": 8,
+      "provider": "build/asm/data/data_380FB8.o"
+    },
+    {
+      "start": 3683781,
+      "end": 3683792,
+      "size": 11,
+      "provider": "build/asm/data/data_3835C5.o"
+    },
+    {
+      "start": 3697908,
+      "end": 3697920,
+      "size": 12,
+      "provider": "build/asm/data/data_386CF4.o"
+    },
+    {
+      "start": 3714138,
+      "end": 3714144,
+      "size": 6,
+      "provider": "build/asm/data/data_38AC5A.o"
+    },
+    {
+      "start": 3722996,
+      "end": 3723008,
+      "size": 12,
+      "provider": "build/asm/data/data_38CEF4.o"
+    },
+    {
+      "start": 5694862,
+      "end": 5694864,
+      "size": 2,
+      "provider": "build/asm/data/data_56E58E.o"
+    },
+    {
+      "start": 5703523,
+      "end": 5703536,
+      "size": 13,
+      "provider": "build/asm/data/data_570763.o"
+    },
+    {
+      "start": 5710181,
+      "end": 5710192,
+      "size": 11,
+      "provider": "build/asm/data/data_572165.o"
+    },
+    {
+      "start": 5939850,
+      "end": 5939856,
+      "size": 6,
+      "provider": "build/asm/data/data_5AA28A.o"
+    },
+    {
+      "start": 5946019,
+      "end": 5946032,
+      "size": 13,
+      "provider": "build/asm/data/data_5ABAA3.o"
+    },
+    {
+      "start": 8179130,
+      "end": 8179136,
+      "size": 6,
+      "provider": "build/asm/data/data_7CCDBA.o"
+    },
+    {
+      "start": 8216858,
+      "end": 8216864,
+      "size": 6,
+      "provider": "build/asm/data/data_7D611A.o"
+    },
+    {
+      "start": 8243067,
+      "end": 8243072,
+      "size": 5,
+      "provider": "build/asm/data/data_7DC77B.o"
+    },
+    {
+      "start": 8267796,
+      "end": 8267808,
+      "size": 12,
+      "provider": "build/asm/data/data_7E2814.o"
+    },
+    {
+      "start": 8287922,
+      "end": 8287936,
+      "size": 14,
+      "provider": "build/asm/data/data_7E76B2.o"
+    },
+    {
+      "start": 8302264,
+      "end": 8302272,
+      "size": 8,
+      "provider": "build/asm/data/data_7EAEB8.o"
+    },
+    {
+      "start": 8338215,
+      "end": 8338224,
+      "size": 9,
+      "provider": "build/asm/data/data_7F3B27.o"
+    },
+    {
+      "start": 8479215,
+      "end": 8479216,
+      "size": 1,
+      "provider": "build/asm/data/data_8161EF.o"
+    },
+    {
+      "start": 8538654,
+      "end": 8538656,
+      "size": 2,
+      "provider": "build/asm/data/data_824A1E.o"
+    },
+    {
+      "start": 8831409,
+      "end": 8831424,
+      "size": 15,
+      "provider": "build/asm/data/data_86C1B1.o"
+    },
+    {
+      "start": 8870601,
+      "end": 8870608,
+      "size": 7,
+      "provider": "build/asm/data/data_875AC9.o"
+    },
+    {
+      "start": 9013756,
+      "end": 9013760,
+      "size": 4,
+      "provider": "build/asm/data/data_8989FC.o"
+    },
+    {
+      "start": 9063117,
+      "end": 9063120,
+      "size": 3,
+      "provider": "build/asm/data/data_8A4ACD.o"
+    },
+    {
+      "start": 9289028,
+      "end": 9289040,
+      "size": 12,
+      "provider": "build/asm/data/data_8DBD44.o"
+    },
+    {
+      "start": 9331317,
+      "end": 9331328,
+      "size": 11,
+      "provider": "build/asm/data/data_8E6275.o"
+    },
+    {
+      "start": 9381085,
+      "end": 9381088,
+      "size": 3,
+      "provider": "build/asm/data/data_8F24DD.o"
+    },
+    {
+      "start": 9697273,
+      "end": 9697280,
+      "size": 7,
+      "provider": "build/asm/data/data_93F7F9.o"
+    },
+    {
+      "start": 9772426,
+      "end": 9772432,
+      "size": 6,
+      "provider": "build/asm/data/data_951D8A.o"
+    },
+    {
+      "start": 9837475,
+      "end": 9837488,
+      "size": 13,
+      "provider": "build/asm/data/data_961BA3.o"
+    },
+    {
+      "start": 9870746,
+      "end": 9870752,
+      "size": 6,
+      "provider": "build/asm/data/data_969D9A.o"
+    },
+    {
+      "start": 9984511,
+      "end": 9984512,
+      "size": 1,
+      "provider": "build/asm/data/data_9859FF.o"
+    },
+    {
+      "start": 10021106,
+      "end": 10021120,
+      "size": 14,
+      "provider": "build/asm/data/data_98E8F2.o"
+    },
+    {
+      "start": 10058506,
+      "end": 10058512,
+      "size": 6,
+      "provider": "build/asm/data/data_997B0A.o"
+    },
+    {
+      "start": 10578629,
+      "end": 10578640,
+      "size": 11,
+      "provider": "build/asm/data/data_A16AC5.o"
+    },
+    {
+      "start": 10627633,
+      "end": 10627648,
+      "size": 15,
+      "provider": "build/asm/data/data_A22A31.o"
+    },
+    {
+      "start": 10712786,
+      "end": 10712800,
+      "size": 14,
+      "provider": "build/asm/data/data_A376D2.o"
+    },
+    {
+      "start": 10748703,
+      "end": 10748704,
+      "size": 1,
+      "provider": "build/asm/data/data_A4031F.o"
+    },
+    {
+      "start": 10800300,
+      "end": 10800304,
+      "size": 4,
+      "provider": "build/asm/data/data_A4CCAC.o"
+    },
+    {
+      "start": 10849605,
+      "end": 10849616,
+      "size": 11,
+      "provider": "build/asm/data/data_A58D45.o"
+    },
+    {
+      "start": 10961778,
+      "end": 10961792,
+      "size": 14,
+      "provider": "build/asm/data/data_A74372.o"
+    },
+    {
+      "start": 11307151,
+      "end": 11307152,
+      "size": 1,
+      "provider": "build/asm/data/data_AC888F.o"
+    },
+    {
+      "start": 11470264,
+      "end": 11470272,
+      "size": 8,
+      "provider": "build/asm/data/data_AF05B8.o"
+    },
+    {
+      "start": 11508844,
+      "end": 11508848,
+      "size": 4,
+      "provider": "build/asm/data/data_AF9C6C.o"
+    },
+    {
+      "start": 12375321,
+      "end": 12375328,
+      "size": 7,
+      "provider": "build/asm/data/data_BCD519.o"
+    },
+    {
+      "start": 12445463,
+      "end": 12445472,
+      "size": 9,
+      "provider": "build/asm/data/data_BDE717.o"
+    },
+    {
+      "start": 12635567,
+      "end": 12635568,
+      "size": 1,
+      "provider": "build/asm/data/data_C0CDAF.o"
+    },
+    {
+      "start": 13416498,
+      "end": 13416512,
+      "size": 14,
+      "provider": "build/asm/data/data_CCB832.o"
+    },
+    {
+      "start": 13933926,
+      "end": 13933936,
+      "size": 10,
+      "provider": "build/asm/data/data_D49D66.o"
+    },
+    {
+      "start": 13948748,
+      "end": 13948752,
+      "size": 4,
+      "provider": "build/asm/data/data_D4D74C.o"
+    },
+    {
+      "start": 13952085,
+      "end": 13952096,
+      "size": 11,
+      "provider": "build/asm/data/data_D4E455.o"
+    },
+    {
+      "start": 13963445,
+      "end": 13963456,
+      "size": 11,
+      "provider": "build/asm/data/data_D510B5.o"
+    },
+    {
+      "start": 13970299,
+      "end": 13970304,
+      "size": 5,
+      "provider": "build/asm/data/data_D52B7B.o"
+    },
+    {
+      "start": 13983143,
+      "end": 13983152,
+      "size": 9,
+      "provider": "build/asm/data/data_D55DA7.o"
+    },
+    {
+      "start": 14017691,
+      "end": 14017696,
+      "size": 5,
+      "provider": "build/asm/data/data_D5E49B.o"
+    },
+    {
+      "start": 14100329,
+      "end": 14100336,
+      "size": 7,
+      "provider": "build/asm/data/data_D72769.o"
+    },
+    {
+      "start": 14118499,
+      "end": 14118512,
+      "size": 13,
+      "provider": "build/asm/data/data_D76E63.o"
+    },
+    {
+      "start": 14138739,
+      "end": 14138752,
+      "size": 13,
+      "provider": "build/asm/data/data_D7BD73.o"
+    },
+    {
+      "start": 14155906,
+      "end": 14155920,
+      "size": 14,
+      "provider": "build/asm/data/data_D80082.o"
+    },
+    {
+      "start": 14171298,
+      "end": 14171312,
+      "size": 14,
+      "provider": "build/asm/data/data_D83CA2.o"
+    },
+    {
+      "start": 14188380,
+      "end": 14188384,
+      "size": 4,
+      "provider": "build/asm/data/data_D87F5C.o"
+    },
+    {
+      "start": 14209146,
+      "end": 14209152,
+      "size": 6,
+      "provider": "build/asm/data/data_D8D07A.o"
+    },
+    {
+      "start": 14221209,
+      "end": 14221216,
+      "size": 7,
+      "provider": "build/asm/data/data_D8FF99.o"
+    },
+    {
+      "start": 14242461,
+      "end": 14242464,
+      "size": 3,
+      "provider": "build/asm/data/data_D9529D.o"
+    },
+    {
+      "start": 14255818,
+      "end": 14255824,
+      "size": 6,
+      "provider": "build/asm/data/data_D986CA.o"
+    },
+    {
+      "start": 14263748,
+      "end": 14263760,
+      "size": 12,
+      "provider": "build/asm/data/data_D9A5C4.o"
+    },
+    {
+      "start": 14270999,
+      "end": 14271008,
+      "size": 9,
+      "provider": "build/asm/data/data_D9C217.o"
+    },
+    {
+      "start": 14285124,
+      "end": 14285136,
+      "size": 12,
+      "provider": "build/asm/data/data_D9F944.o"
+    },
+    {
+      "start": 14300535,
+      "end": 14300544,
+      "size": 9,
+      "provider": "build/asm/data/data_DA3577.o"
+    },
+    {
+      "start": 14306279,
+      "end": 14306288,
+      "size": 9,
+      "provider": "build/asm/data/data_DA4BE7.o"
+    },
+    {
+      "start": 14319788,
+      "end": 14319792,
+      "size": 4,
+      "provider": "build/asm/data/data_DA80AC.o"
+    },
+    {
+      "start": 14326724,
+      "end": 14326736,
+      "size": 12,
+      "provider": "build/asm/data/data_DA9BC4.o"
+    },
+    {
+      "start": 14332884,
+      "end": 14332896,
+      "size": 12,
+      "provider": "build/asm/data/data_DAB3D4.o"
+    },
+    {
+      "start": 14346723,
+      "end": 14346736,
+      "size": 13,
+      "provider": "build/asm/data/data_DAE9E3.o"
+    },
+    {
+      "start": 14374776,
+      "end": 14374784,
+      "size": 8,
+      "provider": "build/asm/data/data_DB5778.o"
+    },
+    {
+      "start": 14387657,
+      "end": 14387664,
+      "size": 7,
+      "provider": "build/asm/data/data_DB89C9.o"
+    },
+    {
+      "start": 14392631,
+      "end": 14392640,
+      "size": 9,
+      "provider": "build/asm/data/data_DB9D37.o"
+    },
+    {
+      "start": 14403933,
+      "end": 14403936,
+      "size": 3,
+      "provider": "build/asm/data/data_DBC95D.o"
+    },
+    {
+      "start": 14416385,
+      "end": 14416400,
+      "size": 15,
+      "provider": "build/asm/data/data_DBFA01.o"
+    },
+    {
+      "start": 14462899,
+      "end": 14462912,
+      "size": 13,
+      "provider": "build/asm/data/data_DCAFB3.o"
+    },
+    {
+      "start": 14484372,
+      "end": 14484384,
+      "size": 12,
+      "provider": "build/asm/data/data_DD0394.o"
+    },
+    {
+      "start": 14497316,
+      "end": 14497328,
+      "size": 12,
+      "provider": "build/asm/data/data_DD3624.o"
+    },
+    {
+      "start": 14508278,
+      "end": 14508288,
+      "size": 10,
+      "provider": "build/asm/data/data_DD60F6.o"
+    },
+    {
+      "start": 15835899,
+      "end": 15835904,
+      "size": 5,
+      "provider": "build/asm/data/data_F1A2FB.o"
+    },
+    {
+      "start": 15839271,
+      "end": 15839280,
+      "size": 9,
+      "provider": "build/asm/data/data_F1B027.o"
+    },
+    {
+      "start": 15853129,
+      "end": 15853136,
+      "size": 7,
+      "provider": "build/asm/data/data_F1E649.o"
+    },
+    {
+      "start": 15864725,
+      "end": 15864736,
+      "size": 11,
+      "provider": "build/asm/data/data_F21395.o"
+    },
+    {
+      "start": 15889927,
+      "end": 15889936,
+      "size": 9,
+      "provider": "build/asm/data/data_F27607.o"
+    },
+    {
+      "start": 15893520,
+      "end": 16155664,
+      "size": 262144,
+      "provider": "build/asm/data/data_F28410.o"
+    },
+    {
+      "start": 16155664,
+      "end": 16417808,
+      "size": 262144,
+      "provider": "build/asm/data/data_F68410.o"
+    },
+    {
+      "start": 16417808,
+      "end": 16657440,
+      "size": 239632,
+      "provider": "build/asm/data/data_FA8410.o"
+    },
+    {
+      "start": 16657440,
+      "end": 16659488,
+      "size": 2048,
+      "provider": "build/asm/data/data_FE2C20.o"
+    },
+    {
+      "start": 16659488,
+      "end": 16776960,
+      "size": 117472,
+      "provider": "build/asm/data/data_FE3420.o"
+    }
+  ],
+  "limitation": "Link coverage and equality do not establish semantic decoding. Raw providers remain raw even when byte matching."
+}

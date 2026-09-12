@@ -3,13 +3,13 @@
 // Regenerate comments with tools/translate_comments.py; this copy is not built.
 
 @000463  C0D04 ［露天］  // EN: [Outdoor stall]
-@0004A9 じっくりみていきな  // TODO: English translation
+@0004A9 じっくりみていきな  // EN: Take a good look around.
 @00050D  C0D04 ［露天］  // EN: [Outdoor stall]
-@000528  C0F04 もっと買ってくかい？  // TODO: English translation
+@000528  C0F04 もっと買ってくかい？  // EN: Want to buy anything else?
 @00067F  C0D04 ［露天］  // EN: [Outdoor stall]
-@00069A  C0F04 何を売るんだね？  // TODO: English translation
+@00069A  C0F04 何を売るんだね？  // EN: What are you selling?
 @00093C  C0D04 ［露天］  // EN: [Outdoor stall]
-@000957  C0F04 うちは仕入れによって  // TODO: English translation
-@00097E 品ぞろえがかわるからな  // TODO: English translation
+@000957  C0F04 うちは仕入れによって  // EN: Our selection changes...
+@00097E 品ぞろえがかわるからな  // EN: ...with the stock we get.
 @0009BE  C0D04 ［露天］  // EN: [Outdoor stall]
-@0009D9  C0F04 ときどき見にこないと、買いのがすぜ  // TODO: English translation
+@0009D9  C0F04 ときどき見にこないと、買いのがすぜ  // EN: Drop by sometimes, or you'll miss out.

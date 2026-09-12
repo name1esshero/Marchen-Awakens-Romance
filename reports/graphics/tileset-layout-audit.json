@@ -1,0 +1,86 @@
+{
+  "note": "Byte round trips do not establish visual correctness. These remaining sources require runtime tilemap, tile-base and palette verification.",
+  "pending": [
+    {
+      "asset": "GA08.TCG",
+      "image": "graphics/tilesets/GA08.TCG.png",
+      "status": "runtime_layout_unverified",
+      "previous_decoder_limitation": "No same-name KMP; may use TSC or another map"
+    },
+    {
+      "asset": "GA60.TCG",
+      "image": "graphics/tilesets/GA60.TCG.png",
+      "status": "runtime_layout_unverified",
+      "previous_decoder_limitation": "No same-name KMP; may use TSC or another map"
+    },
+    {
+      "asset": "MAP27_A.KCG",
+      "image": "graphics/tilesets/MAP27_A.KCG.png",
+      "status": "runtime_layout_unverified",
+      "previous_decoder_limitation": "Map references tiles outside this resource"
+    },
+    {
+      "asset": "NE21.TCG",
+      "image": "graphics/tilesets/NE21.TCG.png",
+      "status": "runtime_layout_unverified",
+      "previous_decoder_limitation": "No same-name KMP; may use TSC or another map"
+    },
+    {
+      "asset": "NE32.TCG",
+      "image": "graphics/tilesets/NE32.TCG.png",
+      "status": "runtime_layout_unverified",
+      "previous_decoder_limitation": "No same-name KMP; may use TSC or another map"
+    },
+    {
+      "asset": "OP_07_A.KCG",
+      "image": "graphics/tilesets/OP_07_A.KCG.png",
+      "status": "runtime_layout_unverified",
+      "previous_decoder_limitation": "Map references tiles outside this resource"
+    },
+    {
+      "asset": "PW_BG01.KCG",
+      "image": "graphics/tilesets/PW_BG01.KCG.png",
+      "status": "runtime_layout_unverified",
+      "previous_decoder_limitation": "Map references tiles outside this resource"
+    },
+    {
+      "asset": "PW_BOX.KCG",
+      "image": "graphics/tilesets/PW_BOX.KCG.png",
+      "status": "runtime_layout_unverified",
+      "previous_decoder_limitation": "Map references tiles outside this resource"
+    },
+    {
+      "asset": "SN07.TCG",
+      "image": "graphics/tilesets/SN07.TCG.png",
+      "status": "runtime_layout_unverified",
+      "previous_decoder_limitation": "No same-name KMP; may use TSC or another map"
+    },
+    {
+      "asset": "SSN07.TCG",
+      "image": "graphics/tilesets/SSN07.TCG.png",
+      "status": "runtime_layout_unverified",
+      "previous_decoder_limitation": "No same-name KMP; may use TSC or another map"
+    }
+  ],
+  "resolved": [
+    {
+      "asset": "MWA.KCG",
+      "reason": "KMP palette base 15, two valid 32x32 tile planes",
+      "images": [
+        "graphics/backgrounds/MWA.KCG.png",
+        "graphics/backgrounds/MWA.KCG.layer1.png"
+      ],
+      "compressed_byte_identity_verified": true
+    },
+    {
+      "asset": "MAP07_A.KCG",
+      "reason": "Valid 338x245 tile map rejected by arbitrary 256-tile extraction limit",
+      "images": [
+        "graphics/backgrounds/MAP07_A.KCG.png",
+        "graphics/backgrounds/MAP07_A.KCG.layer1.png"
+      ],
+      "compressed_byte_identity_verified": true
+    }
+  ],
+  "runtime_reference_note": "08002700 forms ((viewport u16 at +0x0C << 12) | viewport u16 at +0x0E), narrowed to u16. 0800274A adds this to each map word before STRH. No tile-1023 blank special case in this loop. Decode loading/offset state before interpreting out-of-resource references."
+}

@@ -13,5 +13,5 @@
 @0008AA 行くぞ！  // EN: Let's go!
 @00093A F04A04  // LITERAL: F04A04 (usage not inferred)
 @000A13  C0D04 ［スノウ］  // EN: [Snow]
-@000A30  C0F04 あ、はーーい！！  // TODO: English translation
+@000A30  C0F04 あ、はーーい！！  // EN: Oh, coming!!
 @00138C G_EV020.SPC  // LITERAL: G_EV020.SPC (usage not inferred)

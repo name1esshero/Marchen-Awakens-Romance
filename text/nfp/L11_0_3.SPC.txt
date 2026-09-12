@@ -6,9 +6,9 @@
 @000066 A  // LITERAL: A (usage not inferred)
 @0002D2 F09A06  // LITERAL: F09A06 (usage not inferred)
 @0004A4  C0D04 ［ドロシー］  // EN: [Dorothy]
-@0004C3  C0F04 へ………………  // TODO: English translation
+@0004C3  C0F04 へ………………  // EN: Ah..............
 @0005FE  C0D04 ［ドロシー］  // EN: [Dorothy]
-@00061D  C0F04 へ〜〜〜〜〜  // TODO: English translation
+@00061D  C0F04 へ〜〜〜〜〜  // EN: Ahhhhh...
 @000812  C0D04 ［ドロシー］  // EN: [Dorothy]
-@000831  C0F04 　　　　　　ぷしっ！！  // TODO: English translation
+@000831  C0F04 　　　　　　ぷしっ！！  // EN: Choo!!
 @000AC5 MAP24_4A.SPC  // LITERAL: MAP24_4A.SPC (usage not inferred)

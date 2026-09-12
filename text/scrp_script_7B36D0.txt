@@ -26,7 +26,7 @@
 @000BCB  C0F04 んん？…ヘンねぇ…  // EN: Hmm? ...That's strange...
 @000C38 F01A01  // LITERAL: F01A01 (usage not inferred)
 @000C66  C0D04 ［ギンタ］  // EN: [Ginta]
-@000C83  C0904 『あーむ』 C0F04 って…何だ！？  // EN: What's an 'ÄRM'?!
+@000C83  C0904 『あーむ』 C0F04 って…何だ！？  // EN: {color:0F04}What's an {color:0904}'ÄRM'{color:0F04}?!
 @000CB5 今の魔法みたいなやつのこと！？  // EN: That magic-looking thing just now?!
 @000D0D F09A05  // LITERAL: F09A05 (usage not inferred)
 @000D3B  C0D04 ［ドロシー］  // EN: [Dorothy]

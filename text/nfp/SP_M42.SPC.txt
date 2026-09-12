@@ -6,10 +6,10 @@
 @0000C6 OBJ_S.SPC  // LITERAL: OBJ_S.SPC (usage not inferred)
 @0001F1 F06A01  // LITERAL: F06A01 (usage not inferred)
 @0002B2  C0D04 ［エド］  // EN: [Ed]
-@0002CD  C0F04 氷のことはスノウにまかせるんだ  // TODO: English translation
-@0002FE スノウをパーティーの先頭にしてやれ  // TODO: English translation
+@0002CD  C0F04 氷のことはスノウにまかせるんだ  // EN: Leave the ice to Snow.
+@0002FE スノウをパーティーの先頭にしてやれ  // EN: Put Snow at the front of the party.
 @00034A  C0D04 ［エド］  // EN: [Ed]
-@000365  C0904 Ｌボタン C0F04 か C0904 Ｒボタン C0F04 で、パーティーの先頭に  // TODO: English translation
-@0003B5 立つやつをきめられるぜ  // TODO: English translation
+@000365  C0904 Ｌボタン C0F04 か C0904 Ｒボタン C0F04 で、パーティーの先頭に  // EN: Use L or R to choose...
+@0003B5 立つやつをきめられるぜ  // EN: ...who leads the party.
 @0004C5 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
 @000548 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)

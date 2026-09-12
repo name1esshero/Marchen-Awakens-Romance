@@ -1,0 +1,2928 @@
+{
+  "scope": "User-reported Japanese UI ranges; title menu visually reviewed. Other ranges pending individual label review.",
+  "entries": [
+    {
+      "frames": [
+        1878,
+        1879
+      ],
+      "japanese": "ストーリーモード",
+      "english": "Story Mode",
+      "status": "artwork",
+      "variants": [
+        "frames/1878_en.png",
+        "frames/1879_en.png"
+      ]
+    },
+    {
+      "frames": [
+        1880,
+        1881,
+        1882
+      ],
+      "japanese": "ARM交換モード",
+      "english": "ARM Trade",
+      "status": "artwork",
+      "variants": [
+        "frames/1880_en.png",
+        "frames/1881_en.png",
+        "frames/1882_en.png"
+      ]
+    },
+    {
+      "frames": [
+        1883,
+        1884,
+        1885
+      ],
+      "japanese": "対戦モード",
+      "english": "Battle Mode",
+      "status": "artwork",
+      "variants": [
+        "frames/1883_en.png",
+        "frames/1884_en.png",
+        "frames/1885_en.png"
+      ]
+    },
+    {
+      "frames": [
+        1886,
+        1887,
+        1888
+      ],
+      "japanese": "ダンジョンモード",
+      "english": "Dungeon Mode",
+      "status": "artwork",
+      "variants": [
+        "frames/1886_en.png",
+        "frames/1887_en.png",
+        "frames/1888_en.png"
+      ]
+    },
+    {
+      "frames": [
+        1889,
+        1890,
+        1891,
+        1892
+      ],
+      "japanese": "ストーリーモード",
+      "english": "Story Mode",
+      "status": "artwork",
+      "variants": [
+        "frames/1889_en.png",
+        "frames/1890_en.png",
+        "frames/1891_en.png",
+        "frames/1892_en.png"
+      ]
+    },
+    {
+      "frames": [
+        1893,
+        1894
+      ],
+      "japanese": "はじめから",
+      "english": "New Game",
+      "status": "artwork",
+      "variants": [
+        "frames/1893_en.png",
+        "frames/1894_en.png"
+      ],
+      "artwork_text": "New"
+    },
+    {
+      "frames": [
+        1895,
+        1896,
+        1897
+      ],
+      "japanese": "つづきから",
+      "english": "Continue",
+      "status": "artwork",
+      "variants": [
+        "frames/1895_en.png",
+        "frames/1896_en.png",
+        "frames/1897_en.png"
+      ],
+      "artwork_text": "Continue"
+    },
+    {
+      "frames": [
+        1898,
+        1899,
+        1900,
+        1901
+      ],
+      "japanese": "ダンジョンモード",
+      "english": "Dungeon Mode",
+      "status": "artwork",
+      "variants": [
+        "frames/1898_en.png",
+        "frames/1899_en.png",
+        "frames/1900_en.png",
+        "frames/1901_en.png"
+      ]
+    },
+    {
+      "frames": [
+        1902,
+        1903
+      ],
+      "japanese": "はじめから たんけん",
+      "english": "New Expedition",
+      "status": "artwork",
+      "variants": [
+        "frames/1902_en.png",
+        "frames/1903_en.png"
+      ],
+      "artwork_text": "New run"
+    },
+    {
+      "frames": [
+        1904,
+        1905,
+        1906
+      ],
+      "japanese": "つづきから たんけん",
+      "english": "Continue Expedition",
+      "status": "artwork",
+      "variants": [
+        "frames/1904_en.png",
+        "frames/1905_en.png",
+        "frames/1906_en.png"
+      ],
+      "artwork_text": "Continue run"
+    }
+  ],
+  "reported_ranges": [
+    [
+      1685,
+      1687
+    ],
+    [
+      1700,
+      1783
+    ],
+    [
+      1801,
+      1841
+    ],
+    [
+      1878,
+      1906
+    ],
+    [
+      1581,
+      1590
+    ],
+    [
+      1561,
+      1578
+    ],
+    [
+      1508,
+      1510
+    ],
+    [
+      790,
+      794
+    ],
+    [
+      700,
+      706
+    ],
+    [
+      537,
+      541
+    ],
+    [
+      1698,
+      1698
+    ]
+  ],
+  "frames": [
+    {
+      "id": 537,
+      "group": "AS_JTY",
+      "path": "frames/0537.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/0537_en.png",
+      "japanese": "攻",
+      "english": "Attack",
+      "artwork_text": "Atk"
+    },
+    {
+      "id": 538,
+      "group": "AS_JTY",
+      "path": "frames/0538.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/0538_en.png",
+      "japanese": "防",
+      "english": "Defense",
+      "artwork_text": "Def"
+    },
+    {
+      "id": 539,
+      "group": "AS_JTY",
+      "path": "frames/0539.png",
+      "status": "artwork",
+      "batch": 6,
+      "variant": "frames/0539_en.png",
+      "japanese": "攻防",
+      "english": "Attack / Defense",
+      "artwork_text": "A/D"
+    },
+    {
+      "id": 540,
+      "group": "AS_JTY",
+      "path": "frames/0540.png",
+      "status": "artwork",
+      "batch": 6,
+      "variant": "frames/0540_en.png",
+      "japanese": "回復",
+      "english": "Recovery",
+      "artwork_text": "Heal"
+    },
+    {
+      "id": 541,
+      "group": "AS_JTY",
+      "path": "frames/0541.png",
+      "status": "artwork",
+      "batch": 6,
+      "variant": "frames/0541_en.png",
+      "japanese": "特殊",
+      "english": "Special",
+      "artwork_text": "Spcl"
+    },
+    {
+      "id": 700,
+      "group": "CM_A",
+      "path": "frames/0700.png",
+      "status": "artwork",
+      "japanese": "しょじすう",
+      "english": "Quantity owned",
+      "artwork_text": "Owned",
+      "note": "CM_A quantity label; exact runtime screen use not yet traced.",
+      "batch": 5,
+      "variant": "frames/0700_en.png"
+    },
+    {
+      "id": 701,
+      "group": "CM_MENU",
+      "path": "frames/0701.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/0701_en.png",
+      "japanese": "デッキエディット",
+      "english": "Deck edit",
+      "artwork_text": "Deck edit"
+    },
+    {
+      "id": 702,
+      "group": "CM_MENU",
+      "path": "frames/0702.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/0702_en.png",
+      "japanese": "アイテム",
+      "english": "Items",
+      "artwork_text": "Items"
+    },
+    {
+      "id": 703,
+      "group": "CM_MENU",
+      "path": "frames/0703.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/0703_en.png",
+      "japanese": "ステータス",
+      "english": "Status",
+      "artwork_text": "Status"
+    },
+    {
+      "id": 704,
+      "group": "CM_MENU",
+      "path": "frames/0704.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/0704_en.png",
+      "japanese": "ARMリスト",
+      "english": "ARM list",
+      "artwork_text": "ARM list"
+    },
+    {
+      "id": 705,
+      "group": "CM_MENU",
+      "path": "frames/0705.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/0705_en.png",
+      "japanese": "パーティーへんこう",
+      "english": "Change party",
+      "artwork_text": "Change party"
+    },
+    {
+      "id": 706,
+      "group": "CM_MENU",
+      "path": "frames/0706.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/0706_en.png",
+      "japanese": "ゲットARM",
+      "english": "Get ARM",
+      "artwork_text": "Get ARM"
+    },
+    {
+      "id": 790,
+      "group": "DS_GN01",
+      "path": "frames/0790.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/0790_en.png",
+      "japanese": "修練の門",
+      "english": "Training Gate",
+      "artwork_text": "Training Gate"
+    },
+    {
+      "id": 791,
+      "group": "DS_GN01",
+      "path": "frames/0791.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/0791_en.png",
+      "japanese": "練磨の門",
+      "english": "Refine Gate",
+      "artwork_text": "Refine Gate"
+    },
+    {
+      "id": 792,
+      "group": "DS_GN01",
+      "path": "frames/0792.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/0792_en.png",
+      "japanese": "鍛錬の門",
+      "english": "Forge Gate",
+      "artwork_text": "Forge Gate"
+    },
+    {
+      "id": 793,
+      "group": "DS_GN01",
+      "path": "frames/0793.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/0793_en.png",
+      "japanese": "練武の門",
+      "english": "Combat Gate",
+      "artwork_text": "Combat Gate"
+    },
+    {
+      "id": 794,
+      "group": "DS_GN01",
+      "path": "frames/0794.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/0794_en.png",
+      "japanese": "最後の門",
+      "english": "Final Gate",
+      "artwork_text": "Final Gate"
+    },
+    {
+      "id": 1508,
+      "group": "IT_MSG01",
+      "path": "frames/1508.png",
+      "status": "artwork",
+      "batch": 4,
+      "variant": "frames/1508_en.png",
+      "japanese": "つかう",
+      "english": "Use",
+      "artwork_text": "Use"
+    },
+    {
+      "id": 1509,
+      "group": "IT_MSG01",
+      "path": "frames/1509.png",
+      "status": "artwork",
+      "batch": 4,
+      "variant": "frames/1509_en.png",
+      "japanese": "すてる",
+      "english": "Discard",
+      "artwork_text": "Drop"
+    },
+    {
+      "id": 1510,
+      "group": "IT_WINM",
+      "path": "frames/1510.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/1510_en.png",
+      "japanese": "つかう / すてる",
+      "english": "Use / Drop",
+      "artwork_text": "Use / Drop"
+    },
+    {
+      "id": 1561,
+      "group": "MP_NAME",
+      "path": "frames/1561.png",
+      "status": "artwork",
+      "batch": 4,
+      "variant": "frames/1561_en.png",
+      "japanese": "遺跡",
+      "english": "Ruins"
+    },
+    {
+      "id": 1562,
+      "group": "MP_NAME",
+      "path": "frames/1562.png",
+      "status": "artwork",
+      "batch": 4,
+      "variant": "frames/1562_en.png",
+      "japanese": "ジャックの家",
+      "english": "Jack's House"
+    },
+    {
+      "id": 1563,
+      "group": "MP_NAME",
+      "path": "frames/1563.png",
+      "status": "artwork",
+      "batch": 4,
+      "variant": "frames/1563_en.png",
+      "japanese": "氷の城",
+      "english": "Ice Castle",
+      "artwork_text": "Ice Castle",
+      "note": "Original F marker and columns 56 onward preserved."
+    },
+    {
+      "id": 1564,
+      "group": "MP_NAME",
+      "path": "frames/1564.png",
+      "status": "artwork",
+      "batch": 4,
+      "variant": "frames/1564_en.png",
+      "japanese": "パヅタウン",
+      "english": "Pazu Town"
+    },
+    {
+      "id": 1565,
+      "group": "MP_NAME",
+      "path": "frames/1565.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/1565_en.png",
+      "japanese": "ルベリアの砦",
+      "english": "Luberia Fort",
+      "artwork_text": "Luberia Fort"
+    },
+    {
+      "id": 1566,
+      "group": "MP_NAME",
+      "path": "frames/1566.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/1566_en.png",
+      "japanese": "ペリカの街",
+      "english": "Perika Town",
+      "artwork_text": "Perika Town"
+    },
+    {
+      "id": 1567,
+      "group": "MP_NAME",
+      "path": "frames/1567.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/1567_en.png",
+      "japanese": "ペリカの街郊外",
+      "english": "Perika Outskirts",
+      "artwork_text": "Perika Outskirts"
+    },
+    {
+      "id": 1568,
+      "group": "MP_NAME",
+      "path": "frames/1568.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/1568_en.png",
+      "japanese": "ヴェストリの村",
+      "english": "Vestri Village",
+      "artwork_text": "Vestri Village"
+    },
+    {
+      "id": 1569,
+      "group": "MP_NAME",
+      "path": "frames/1569.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/1569_en.png",
+      "japanese": "ヴェストリの地底湖",
+      "english": "Vestri Underground Lake",
+      "artwork_text": "Vestri Lake"
+    },
+    {
+      "id": 1570,
+      "group": "MP_NAME",
+      "path": "frames/1570.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/1570_en.png",
+      "japanese": "オルターピース BF",
+      "english": "Alter Peace",
+      "artwork_text": "Alter Peace"
+    },
+    {
+      "id": 1571,
+      "group": "MP_NAME",
+      "path": "frames/1571.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/1571_en.png",
+      "japanese": "オルターアイス BF",
+      "english": "Alter Ice",
+      "artwork_text": "Alter Ice"
+    },
+    {
+      "id": 1572,
+      "group": "MP_NAME",
+      "path": "frames/1572.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/1572_en.png",
+      "japanese": "オルターラヴァ BF",
+      "english": "Alter Lava",
+      "artwork_text": "Alter Lava"
+    },
+    {
+      "id": 1573,
+      "group": "MP_NAME",
+      "path": "frames/1573.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/1573_en.png",
+      "japanese": "ラストオルター",
+      "english": "Last Alter",
+      "artwork_text": "Last Alter"
+    },
+    {
+      "id": 1574,
+      "group": "MP_NAME",
+      "path": "frames/1574.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/1574_en.png",
+      "japanese": "修練の門 BF",
+      "english": "Training Gate",
+      "artwork_text": "Training Gate"
+    },
+    {
+      "id": 1575,
+      "group": "MP_NAME",
+      "path": "frames/1575.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/1575_en.png",
+      "japanese": "練磨の門 BF",
+      "english": "Refining Gate",
+      "artwork_text": "Refining Gate"
+    },
+    {
+      "id": 1576,
+      "group": "MP_NAME",
+      "path": "frames/1576.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/1576_en.png",
+      "japanese": "鍛錬の門 BF",
+      "english": "Forging Gate",
+      "artwork_text": "Forging Gate"
+    },
+    {
+      "id": 1577,
+      "group": "MP_NAME",
+      "path": "frames/1577.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/1577_en.png",
+      "japanese": "練武の門 BF",
+      "english": "Combat Gate",
+      "artwork_text": "Combat Gate"
+    },
+    {
+      "id": 1578,
+      "group": "MP_NAME",
+      "path": "frames/1578.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/1578_en.png",
+      "japanese": "最後の門 BF",
+      "english": "Final Gate",
+      "artwork_text": "Final Gate"
+    },
+    {
+      "id": 1581,
+      "group": "POP",
+      "path": "frames/1581.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/1581_en.png",
+      "japanese": "うる / やめる",
+      "english": "Sell / Cancel",
+      "artwork_text": "Sell / Cancel"
+    },
+    {
+      "id": 1582,
+      "group": "POP",
+      "path": "frames/1582.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/1582_en.png",
+      "japanese": "かう / やめる",
+      "english": "Buy / Cancel",
+      "artwork_text": "Buy / Cancel"
+    },
+    {
+      "id": 1583,
+      "group": "POP",
+      "path": "frames/1583.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/1583_en.png",
+      "japanese": "鑑定する / ARMレシピ / おしえて / やめる",
+      "english": "Appraise / ARM recipe / Help / Cancel",
+      "artwork_text": "Appraise / Recipe / Help / Cancel"
+    },
+    {
+      "id": 1584,
+      "group": "POP",
+      "path": "frames/1584.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/1584_en.png",
+      "japanese": "ARM / アイテム / やめる",
+      "english": "ARM / Items / Cancel",
+      "artwork_text": "ARM / Items / Cancel"
+    },
+    {
+      "id": 1585,
+      "group": "POP",
+      "path": "frames/1585.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/1585_en.png",
+      "japanese": "かう / うる / やめる",
+      "english": "Buy / Sell / Cancel",
+      "artwork_text": "Buy / Sell / Cancel"
+    },
+    {
+      "id": 1586,
+      "group": "POP",
+      "path": "frames/1586.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/1586_en.png",
+      "japanese": "はい / いいえ",
+      "english": "Yes / No",
+      "artwork_text": "Yes / No"
+    },
+    {
+      "id": 1587,
+      "group": "POP",
+      "path": "frames/1587.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/1587_en.png",
+      "japanese": "はじめる / やめる",
+      "english": "Start / Cancel",
+      "artwork_text": "Start / Cancel"
+    },
+    {
+      "id": 1588,
+      "group": "POP",
+      "path": "frames/1588.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/1588_en.png",
+      "japanese": "する / やめる",
+      "english": "Confirm / Cancel",
+      "artwork_text": "Confirm / Cancel"
+    },
+    {
+      "id": 1589,
+      "group": "POP",
+      "path": "frames/1589.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/1589_en.png",
+      "japanese": "つかう / すてる",
+      "english": "Use / Drop",
+      "artwork_text": "Use / Drop"
+    },
+    {
+      "id": 1590,
+      "group": "POP",
+      "path": "frames/1590.png",
+      "status": "artwork",
+      "batch": 5,
+      "variant": "frames/1590_en.png",
+      "japanese": "セーブしない / セーブする",
+      "english": "Don't save / Save",
+      "artwork_text": "No save / Save"
+    },
+    {
+      "id": 1685,
+      "group": "SM_BG12",
+      "path": "frames/1685.png",
+      "status": "artwork",
+      "batch": 6,
+      "variant": "frames/1685_en.png",
+      "japanese": "しょじすう / アームシルバー / アームゴールド / アームプラチナ / アームジュエル / する / やめる",
+      "english": "Quantity owned / Silver ARM / Gold ARM / Platinum ARM / Jewel ARM / Confirm / Cancel",
+      "artwork_text": "Owned / Silver ARM / Gold ARM / Plat. ARM / Jewel ARM / Confirm / Cancel"
+    },
+    {
+      "id": 1686,
+      "group": "SM_MWIN",
+      "path": "frames/1686.png",
+      "status": "artwork",
+      "japanese": "ARMレシピをいれてください",
+      "english": "Enter an ARM recipe.",
+      "batch": 3,
+      "variant": "frames/1686_en.png",
+      "artwork_text": "Enter ARM recipe."
+    },
+    {
+      "id": 1687,
+      "group": "SM_MWIN",
+      "path": "frames/1687.png",
+      "status": "artwork",
+      "japanese": "パスワードをいれてください",
+      "english": "Enter the password.",
+      "batch": 3,
+      "variant": "frames/1687_en.png"
+    },
+    {
+      "id": 1698,
+      "group": "STAFF00",
+      "path": "frames/1698.png",
+      "status": "artwork",
+      "batch": 6,
+      "variant": "frames/1698_en.png",
+      "japanese": "メルヘヴン KNOCKIN'ON HEAVEN'S DOOR",
+      "english": "MAR Heaven",
+      "artwork_text": "MAR Heaven"
+    },
+    {
+      "id": 1700,
+      "group": "STAFF00",
+      "path": "frames/1700.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1700_en.png",
+      "japanese": "原作",
+      "english": "Story",
+      "artwork_text": "Story",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1701,
+      "group": "STAFF00",
+      "path": "frames/1701.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1701_en.png",
+      "japanese": "安西 信行",
+      "english": "Nobuyuki Anzai",
+      "artwork_text": "Nobuyuki / Anzai",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1702,
+      "group": "STAFF00",
+      "path": "frames/1702.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1702_en.png",
+      "japanese": "プランニングユニット",
+      "english": "Planning team",
+      "artwork_text": "Planning team",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1703,
+      "group": "STAFF00",
+      "path": "frames/1703.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1703_en.png",
+      "japanese": "メインプランニング",
+      "english": "Lead planning",
+      "artwork_text": "Lead planning",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1704,
+      "group": "STAFF00",
+      "path": "frames/1704.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1704_en.png",
+      "japanese": "花田 洋",
+      "english": "Hiroshi Hanada",
+      "artwork_text": "Hiroshi / Hanada",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1705,
+      "group": "STAFF00",
+      "path": "frames/1705.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1705_en.png",
+      "japanese": "シナリオスクリプト",
+      "english": "Scenario scripting",
+      "artwork_text": "Scenario scripting",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1706,
+      "group": "STAFF00",
+      "path": "frames/1706.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1706_en.png",
+      "japanese": "佐藤 真人",
+      "english": "Masato Sato",
+      "artwork_text": "Masato Sato",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1707,
+      "group": "STAFF00",
+      "path": "frames/1707.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1707_en.png",
+      "japanese": "落合 拓巳",
+      "english": "Takumi Ochiai",
+      "artwork_text": "Takumi Ochiai",
+      "reading_status": "provisional",
+      "note": "Provisional romanization explicitly permitted by user; the original Japanese credit is retained here for correction.",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1708,
+      "group": "STAFF00",
+      "path": "frames/1708.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1708_en.png",
+      "japanese": "プログラムユニット",
+      "english": "Programming team",
+      "artwork_text": "Programming team",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1709,
+      "group": "STAFF00",
+      "path": "frames/1709.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1709_en.png",
+      "japanese": "メインプログラム",
+      "english": "Lead programming",
+      "artwork_text": "Lead programming",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1710,
+      "group": "STAFF00",
+      "path": "frames/1710.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1710_en.png",
+      "japanese": "昇 耕一",
+      "english": "Koichi Nobori",
+      "artwork_text": "Koichi Nobori",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1711,
+      "group": "STAFF00",
+      "path": "frames/1711.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1711_en.png",
+      "japanese": "システムメニュー",
+      "english": "System menus",
+      "artwork_text": "System menus",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1712,
+      "group": "STAFF00",
+      "path": "frames/1712.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1712_en.png",
+      "japanese": "前橋 敏行",
+      "english": "Toshiyuki Maehashi",
+      "artwork_text": "Toshiyuki / Maehashi",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1713,
+      "group": "STAFF00",
+      "path": "frames/1713.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1713_en.png",
+      "japanese": "ダンジョン生成・マップ",
+      "english": "Dungeon generation / Maps",
+      "artwork_text": "Dungeon generation / Maps",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1714,
+      "group": "STAFF00",
+      "path": "frames/1714.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1714_en.png",
+      "japanese": "加藤 大輔",
+      "english": "Daisuke Kato",
+      "artwork_text": "Daisuke Kato",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1715,
+      "group": "STAFF00",
+      "path": "frames/1715.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1715_en.png",
+      "japanese": "ARMエフェクト・敵AI",
+      "english": "ARM effects / Enemy AI",
+      "artwork_text": "ARM effects / Enemy AI",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1716,
+      "group": "STAFF00",
+      "path": "frames/1716.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1716_en.png",
+      "japanese": "小林 健彦",
+      "english": "Takehiko Kobayashi",
+      "artwork_text": "Takehiko / Kobayashi",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1717,
+      "group": "STAFF00",
+      "path": "frames/1717.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1717_en.png",
+      "japanese": "デザインユニット",
+      "english": "Design team",
+      "artwork_text": "Design team",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1718,
+      "group": "STAFF01",
+      "path": "frames/1718.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1718_en.png",
+      "japanese": "メインデザイン",
+      "english": "Main design",
+      "artwork_text": "Main design",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1719,
+      "group": "STAFF01",
+      "path": "frames/1719.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1719_en.png",
+      "japanese": "小林 匡",
+      "english": "Tadashi Kobayashi",
+      "artwork_text": "Tadashi / Kobayashi",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1720,
+      "group": "STAFF01",
+      "path": "frames/1720.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1720_en.png",
+      "japanese": "リードデザイン",
+      "english": "Lead design",
+      "artwork_text": "Lead design",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1721,
+      "group": "STAFF01",
+      "path": "frames/1721.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1721_en.png",
+      "japanese": "伊藤 文",
+      "english": "Aya Ito",
+      "artwork_text": "Aya Ito",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1722,
+      "group": "STAFF01",
+      "path": "frames/1722.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1722_en.png",
+      "japanese": "キャラクターデザイン",
+      "english": "Character design",
+      "artwork_text": "Character design",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1723,
+      "group": "STAFF01",
+      "path": "frames/1723.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1723_en.png",
+      "japanese": "柴崎 佳代子",
+      "english": "Kayoko Shibasaki",
+      "artwork_text": "Kayoko Shibasaki",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1724,
+      "group": "STAFF01",
+      "path": "frames/1724.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1724_en.png",
+      "japanese": "坂本 和也",
+      "english": "Kazuya Sakamoto",
+      "artwork_text": "Kazuya / Sakamoto",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1725,
+      "group": "STAFF01",
+      "path": "frames/1725.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1725_en.png",
+      "japanese": "小倉 正史",
+      "english": "Masashi Ogura",
+      "artwork_text": "Masashi / Ogura",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1726,
+      "group": "STAFF01",
+      "path": "frames/1726.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1726_en.png",
+      "japanese": "樋野 清史",
+      "english": "Kiyofumi Hino",
+      "artwork_text": "Kiyofumi Hino",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1727,
+      "group": "STAFF01",
+      "path": "frames/1727.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1727_en.png",
+      "japanese": "背景デザイン",
+      "english": "Backgrounds",
+      "artwork_text": "Backgrounds",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1728,
+      "group": "STAFF01",
+      "path": "frames/1728.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1728_en.png",
+      "japanese": "小野 文博",
+      "english": "Fumihiro Ono",
+      "artwork_text": "Fumihiro Ono",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1729,
+      "group": "STAFF01",
+      "path": "frames/1729.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1729_en.png",
+      "japanese": "藤田 敬",
+      "english": "Takashi Fujita",
+      "artwork_text": "Takashi / Fujita",
+      "reading_status": "provisional",
+      "note": "Provisional romanization explicitly permitted by user; the original Japanese credit is retained here for correction.",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1730,
+      "group": "STAFF01",
+      "path": "frames/1730.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1730_en.png",
+      "japanese": "エフェクト＆システムデザイン",
+      "english": "Effects / System design",
+      "artwork_text": "Effects / System design",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1731,
+      "group": "STAFF01",
+      "path": "frames/1731.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1731_en.png",
+      "japanese": "内山 幹",
+      "english": "Kan Uchiyama",
+      "artwork_text": "Kan Uchiyama",
+      "reading_status": "provisional",
+      "note": "Provisional romanization explicitly permitted by user; the original Japanese credit is retained here for correction.",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1732,
+      "group": "STAFF01",
+      "path": "frames/1732.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1732_en.png",
+      "japanese": "餘語 慶一",
+      "english": "Keiichi Yogo",
+      "artwork_text": "Keiichi Yogo",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1733,
+      "group": "STAFF01",
+      "path": "frames/1733.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1733_en.png",
+      "japanese": "ARMデザイン",
+      "english": "ARM design",
+      "artwork_text": "ARM design",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1734,
+      "group": "STAFF01",
+      "path": "frames/1734.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1734_en.png",
+      "japanese": "大山 雄樹",
+      "english": "Yuki Oyama",
+      "artwork_text": "Yuki Oyama",
+      "reading_status": "provisional",
+      "note": "Provisional romanization explicitly permitted by user; the original Japanese credit is retained here for correction.",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1735,
+      "group": "STAFF01",
+      "path": "frames/1735.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1735_en.png",
+      "japanese": "サウンドユニット",
+      "english": "Sound team",
+      "artwork_text": "Sound team",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1736,
+      "group": "STAFF01",
+      "path": "frames/1736.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1736_en.png",
+      "japanese": "BGM・SE",
+      "english": "Music / SFX",
+      "artwork_text": "Music / SFX",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1737,
+      "group": "STAFF01",
+      "path": "frames/1737.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1737_en.png",
+      "japanese": "小野 加奈代",
+      "english": "Kanayo Ono",
+      "artwork_text": "Kanayo Ono",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1738,
+      "group": "STAFF02",
+      "path": "frames/1738.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1738_en.png",
+      "japanese": "プロダクトデザイン",
+      "english": "Product design",
+      "artwork_text": "Product design",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1739,
+      "group": "STAFF02",
+      "path": "frames/1739.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1739_en.png",
+      "japanese": "所 美智子",
+      "english": "Michiko Tokoro",
+      "artwork_text": "Michiko Tokoro",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1740,
+      "group": "STAFF02",
+      "path": "frames/1740.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1740_en.png",
+      "japanese": "プロモーション",
+      "english": "Promotion",
+      "artwork_text": "Promotion",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1741,
+      "group": "STAFF02",
+      "path": "frames/1741.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1741_en.png",
+      "japanese": "柳井 亮",
+      "english": "Ryo Yanai",
+      "artwork_text": "Ryo Yanai",
+      "reading_status": "provisional",
+      "note": "Provisional romanization explicitly permitted by user; the original Japanese credit is retained here for correction.",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1742,
+      "group": "STAFF02",
+      "path": "frames/1742.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1742_en.png",
+      "japanese": "佐藤 健次",
+      "english": "Kenji Sato",
+      "artwork_text": "Kenji Sato",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://vgmdb.net/album/17335"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1743,
+      "group": "STAFF02",
+      "path": "frames/1743.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1743_en.png",
+      "japanese": "伊藤 真喜子",
+      "english": "Makiko Ito",
+      "artwork_text": "Makiko Ito",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://www.mobygames.com/person/627568/makiko-ito/"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1744,
+      "group": "STAFF02",
+      "path": "frames/1744.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1744_en.png",
+      "japanese": "制作協力",
+      "english": "Support",
+      "artwork_text": "Support",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1745,
+      "group": "STAFF02",
+      "path": "frames/1745.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1745_en.png",
+      "japanese": "小学館 週刊少年サンデー編集部",
+      "english": "Shogakukan / Weekly Shonen Sunday editors",
+      "artwork_text": "Shogakukan / Weekly Shonen Sunday editors",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1746,
+      "group": "STAFF02",
+      "path": "frames/1746.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1746_en.png",
+      "japanese": "都築 伸一郎",
+      "english": "Shinichiro Tsuzuki",
+      "artwork_text": "Shinichiro Tsuzuki",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://vgmdb.net/artist/68088"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1747,
+      "group": "STAFF02",
+      "path": "frames/1747.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1747_en.png",
+      "japanese": "林 正人",
+      "english": "Masato Hayashi",
+      "artwork_text": "Masato / Hayashi",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://www.mobygames.com/game/197721/spriggan-lunar-verse/credits/playstation/"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1748,
+      "group": "STAFF02",
+      "path": "frames/1748.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1748_en.png",
+      "japanese": "野村 敦司",
+      "english": "Atsushi Nomura",
+      "artwork_text": "Atsushi / Nomura",
+      "reading_status": "provisional",
+      "note": "Provisional romanization explicitly permitted by user; the original Japanese credit is retained here for correction.",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1749,
+      "group": "STAFF02",
+      "path": "frames/1749.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1749_en.png",
+      "japanese": "宮坂 保志",
+      "english": "Yasushi Miyasaka",
+      "artwork_text": "Yasushi / Miyasaka",
+      "reading_status": "provisional",
+      "note": "Provisional romanization explicitly permitted by user; the original Japanese credit is retained here for correction.",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1750,
+      "group": "STAFF02",
+      "path": "frames/1750.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1750_en.png",
+      "japanese": "飯塚 洋介",
+      "english": "Yosuke Iizuka",
+      "artwork_text": "Yosuke Iizuka",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://ci.nii.ac.jp/ncid/BC08023642"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1751,
+      "group": "STAFF02",
+      "path": "frames/1751.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1751_en.png",
+      "japanese": "佐藤 恵理",
+      "english": "Eri Sato",
+      "artwork_text": "Eri Sato",
+      "reading_status": "provisional",
+      "note": "Provisional romanization explicitly permitted by user; the original Japanese credit is retained here for correction.",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1752,
+      "group": "STAFF02",
+      "path": "frames/1752.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1752_en.png",
+      "japanese": "小学館 キャラクター事業センター",
+      "english": "Shogakukan / Character Business Center",
+      "artwork_text": "Shogakukan / Character Business Center",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1753,
+      "group": "STAFF02",
+      "path": "frames/1753.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1753_en.png",
+      "japanese": "久保 雅一",
+      "english": "Masakazu Kubo",
+      "artwork_text": "Masakazu / Kubo",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://pocketmonsters.net/staff/view/10143"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1754,
+      "group": "STAFF02",
+      "path": "frames/1754.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1754_en.png",
+      "japanese": "沢辺 伸政",
+      "english": "Nobumasa Sawabe",
+      "artwork_text": "Nobumasa / Sawabe",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://www.mobygames.com/person/1588549/nobumasa-sawabe/credits/"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1755,
+      "group": "STAFF02",
+      "path": "frames/1755.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1755_en.png",
+      "japanese": "小学館 宣伝部",
+      "english": "Shogakukan publicity",
+      "artwork_text": "Shogakukan publicity",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1756,
+      "group": "STAFF02",
+      "path": "frames/1756.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1756_en.png",
+      "japanese": "備前島 幹人",
+      "english": "Mikito Bizenjima",
+      "artwork_text": "Mikito Bizenjima",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://bgm.tv/person/53429"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1757,
+      "group": "STAFF02",
+      "path": "frames/1757.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1757_en.png",
+      "japanese": "古市 直彦（小学館プロダクション）",
+      "english": "Naohiko Furuichi (Shogakukan Production)",
+      "artwork_text": "Naohiko Furuichi (ShoPro)",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://mangaseek.net/person/30588.html"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1758,
+      "group": "STAFF02",
+      "path": "frames/1758.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1758_en.png",
+      "japanese": "伊藤 忠久（小学館プロダクション）",
+      "english": "Tadahisa Ito (Shogakukan Production)",
+      "artwork_text": "Tadahisa Ito (ShoPro)",
+      "reading_status": "provisional",
+      "note": "Provisional romanization explicitly permitted by user; the original Japanese credit is retained here for correction.",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1759,
+      "group": "STAFF03",
+      "path": "frames/1759.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1759_en.png",
+      "japanese": "小学館プロダクション",
+      "english": "Shogakukan Production",
+      "artwork_text": "Shogakukan Production",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1760,
+      "group": "STAFF03",
+      "path": "frames/1760.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1760_en.png",
+      "japanese": "スペシャルサンクス",
+      "english": "Special thanks",
+      "artwork_text": "Special thanks",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1761,
+      "group": "STAFF03",
+      "path": "frames/1761.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1761_en.png",
+      "japanese": "石塚 通引",
+      "english": "Michihiro Ishizuka",
+      "artwork_text": "Michihiro / Ishizuka",
+      "reading_status": "provisional",
+      "note": "Provisional romanization explicitly permitted by user; the original Japanese credit is retained here for correction.",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1762,
+      "group": "STAFF03",
+      "path": "frames/1762.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1762_en.png",
+      "japanese": "柚下 国昭",
+      "english": "Kuniaki Yushita",
+      "artwork_text": "Kuniaki / Yushita",
+      "reading_status": "provisional",
+      "note": "Provisional romanization explicitly permitted by user; the original Japanese credit is retained here for correction.",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1763,
+      "group": "STAFF03",
+      "path": "frames/1763.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1763_en.png",
+      "japanese": "堀上 敦",
+      "english": "Atsushi Horigami",
+      "artwork_text": "Atsushi / Horigami",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://www.mobygames.com/person/195623/atsushi-horigami/"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1764,
+      "group": "STAFF03",
+      "path": "frames/1764.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1764_en.png",
+      "japanese": "中村 健吾",
+      "english": "Kengo Nakamura",
+      "artwork_text": "Kengo / Nakamura",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://w.atwiki.jp/game_staff/pages/239.html"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1765,
+      "group": "STAFF03",
+      "path": "frames/1765.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1765_en.png",
+      "japanese": "汾陽 桂太",
+      "english": "Keita Kawaminami",
+      "artwork_text": "Keita / Kawaminami",
+      "reading_status": "provisional",
+      "note": "Provisional romanization explicitly permitted by user; the original Japanese credit is retained here for correction.",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1766,
+      "group": "STAFF03",
+      "path": "frames/1766.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1766_en.png",
+      "japanese": "鈴木 英之",
+      "english": "Hideyuki Suzuki",
+      "artwork_text": "Hideyuki / Suzuki",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://vgmdb.net/org/366?field=date&order=&page=3&perpage=30&tab=albums"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1767,
+      "group": "STAFF03",
+      "path": "frames/1767.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1767_en.png",
+      "japanese": "柏崎 歩",
+      "english": "Ayumu Kashizaki",
+      "artwork_text": "Ayumu / Kashizaki",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://vgmdb.net/org/366?field=date&order=&page=3&perpage=30&tab=albums"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1768,
+      "group": "STAFF03",
+      "path": "frames/1768.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1768_en.png",
+      "japanese": "内藤 聡子",
+      "english": "Satoko Naito",
+      "artwork_text": "Satoko Naito",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://vgmdb.net/org/366?field=date&order=&page=3&perpage=30&tab=albums"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1769,
+      "group": "STAFF03",
+      "path": "frames/1769.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1769_en.png",
+      "japanese": "永井 満夫",
+      "english": "Mitsuo Nagai",
+      "artwork_text": "Mitsuo Nagai",
+      "reading_status": "provisional",
+      "note": "Provisional romanization explicitly permitted by user; the original Japanese credit is retained here for correction.",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1770,
+      "group": "STAFF03",
+      "path": "frames/1770.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1770_en.png",
+      "japanese": "岡本 茂",
+      "english": "Shigeru Okamoto",
+      "artwork_text": "Shigeru / Okamoto",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://www.mobygames.com/person/505976/shigeru-okamoto/companies/"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1771,
+      "group": "STAFF03",
+      "path": "frames/1771.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1771_en.png",
+      "japanese": "ディレクター",
+      "english": "Director",
+      "artwork_text": "Director",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1772,
+      "group": "STAFF03",
+      "path": "frames/1772.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1772_en.png",
+      "japanese": "五十嵐 要",
+      "english": "Kaname Igarashi",
+      "artwork_text": "Kaname Igarashi",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1773,
+      "group": "STAFF03",
+      "path": "frames/1773.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1773_en.png",
+      "japanese": "チーフディレクター",
+      "english": "Chief director",
+      "artwork_text": "Chief director",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1774,
+      "group": "STAFF03",
+      "path": "frames/1774.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1774_en.png",
+      "japanese": "村戸 信",
+      "english": "Shin Murato",
+      "artwork_text": "Shin Murato",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1775,
+      "group": "STAFF03",
+      "path": "frames/1775.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1775_en.png",
+      "japanese": "プロデューサー",
+      "english": "Producer",
+      "artwork_text": "Producer",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1776,
+      "group": "STAFF03",
+      "path": "frames/1776.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1776_en.png",
+      "japanese": "早川 英樹",
+      "english": "Hideki Hayakawa",
+      "artwork_text": "Hideki / Hayakawa",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1777,
+      "group": "STAFF03",
+      "path": "frames/1777.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1777_en.png",
+      "japanese": "エグゼクティブプロデューサー",
+      "english": "Executive producer",
+      "artwork_text": "Executive producer",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1778,
+      "group": "STAFF03",
+      "path": "frames/1778.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1778_en.png",
+      "japanese": "吉岡 基行",
+      "english": "Motoyuki Yoshioka",
+      "artwork_text": "Motoyuki / Yoshioka",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://gamefaqs.gamespot.com/gba/927256-mar-heaven-knockin-on-heavens-door/credit"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1779,
+      "group": "STAFF03",
+      "path": "frames/1779.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1779_en.png",
+      "japanese": "制作・著作",
+      "english": "Production / Copyright",
+      "artwork_text": "Production / (C)",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1780,
+      "group": "STAFF03",
+      "path": "frames/1780.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1780_en.png",
+      "japanese": "コナミ株式会社",
+      "english": "Konami Corporation",
+      "artwork_text": "Konami Corporation",
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1781,
+      "group": "STAFF03",
+      "path": "frames/1781.png",
+      "status": "artwork",
+      "category": "credits",
+      "batch": 6,
+      "variant": "frames/1781_en.png",
+      "japanese": "秋田 真典",
+      "english": "Masanori Akita",
+      "artwork_text": "Masanori / Akita",
+      "reading_status": "source-backed",
+      "reading_sources": [
+        "https://inspion.co.jp/staff/masanori-akita/"
+      ],
+      "layout": "source/english/credits_layouts.json"
+    },
+    {
+      "id": 1782,
+      "group": "ST_CON",
+      "path": "frames/1782.png",
+      "status": "artwork",
+      "japanese": "キャラクターへんこう",
+      "english": "Change character",
+      "batch": 5,
+      "variant": "frames/1782_en.png",
+      "artwork_text": "Change character"
+    },
+    {
+      "id": 1783,
+      "group": "ST_CON",
+      "path": "frames/1783.png",
+      "status": "artwork",
+      "japanese": "ならびかえ",
+      "english": "Sort",
+      "batch": 3,
+      "variant": "frames/1783_en.png"
+    },
+    {
+      "id": 1801,
+      "group": "SYS_BTN",
+      "path": "frames/1801.png",
+      "status": "artwork",
+      "japanese": "けってい",
+      "english": "OK",
+      "batch": 3,
+      "variant": "frames/1801_en.png"
+    },
+    {
+      "id": 1802,
+      "group": "SYS_BTN",
+      "path": "frames/1802.png",
+      "status": "artwork",
+      "japanese": "デッキからはずす",
+      "english": "Remove from deck",
+      "batch": 4,
+      "variant": "frames/1802_en.png",
+      "artwork_text": "Deck: drop"
+    },
+    {
+      "id": 1803,
+      "group": "SYS_BTN",
+      "path": "frames/1803.png",
+      "status": "artwork",
+      "japanese": "デッキにいれる",
+      "english": "Add to deck",
+      "batch": 4,
+      "variant": "frames/1803_en.png",
+      "artwork_text": "Deck: add"
+    },
+    {
+      "id": 1804,
+      "group": "SYS_BTN",
+      "path": "frames/1804.png",
+      "status": "artwork",
+      "japanese": "せつめい",
+      "english": "Info",
+      "batch": 3,
+      "variant": "frames/1804_en.png"
+    },
+    {
+      "id": 1805,
+      "group": "SYS_BTN",
+      "path": "frames/1805.png",
+      "status": "artwork",
+      "japanese": "こうかん",
+      "english": "Trade",
+      "batch": 3,
+      "variant": "frames/1805_en.png"
+    },
+    {
+      "id": 1806,
+      "group": "SYS_BTN",
+      "path": "frames/1806.png",
+      "status": "artwork",
+      "japanese": "みる",
+      "english": "View",
+      "batch": 4,
+      "variant": "frames/1806_en.png",
+      "artwork_text": "See"
+    },
+    {
+      "id": 1807,
+      "group": "SYS_BTN",
+      "path": "frames/1807.png",
+      "status": "artwork",
+      "japanese": "はつどう",
+      "english": "Activate",
+      "batch": 3,
+      "variant": "frames/1807_en.png",
+      "artwork_text": "Use"
+    },
+    {
+      "id": 1808,
+      "group": "SYS_BTN",
+      "path": "frames/1808.png",
+      "status": "artwork",
+      "japanese": "やめる",
+      "english": "Cancel",
+      "batch": 3,
+      "variant": "frames/1808_en.png"
+    },
+    {
+      "id": 1809,
+      "group": "SYS_BTN",
+      "path": "frames/1809.png",
+      "status": "artwork",
+      "japanese": "おわる",
+      "english": "Done",
+      "batch": 3,
+      "variant": "frames/1809_en.png"
+    },
+    {
+      "id": 1810,
+      "group": "SYS_BTN",
+      "path": "frames/1810.png",
+      "status": "artwork",
+      "japanese": "もどる",
+      "english": "Back",
+      "batch": 3,
+      "variant": "frames/1810_en.png"
+    },
+    {
+      "id": 1811,
+      "group": "SYS_BTN",
+      "path": "frames/1811.png",
+      "status": "artwork",
+      "japanese": "メニュー",
+      "english": "Menu",
+      "batch": 4,
+      "variant": "frames/1811_en.png",
+      "artwork_text": "Menu"
+    },
+    {
+      "id": 1812,
+      "group": "SYS_BTN",
+      "path": "frames/1812.png",
+      "status": "artwork",
+      "japanese": "デッキへんしゅう",
+      "english": "Edit deck",
+      "batch": 4,
+      "variant": "frames/1812_en.png",
+      "artwork_text": "Edit deck"
+    },
+    {
+      "id": 1813,
+      "group": "SYS_BTN",
+      "path": "frames/1813.png",
+      "status": "artwork",
+      "japanese": "ステータス",
+      "english": "Status",
+      "batch": 4,
+      "variant": "frames/1813_en.png",
+      "artwork_text": "Status"
+    },
+    {
+      "id": 1814,
+      "group": "SYS_BTN",
+      "path": "frames/1814.png",
+      "status": "artwork",
+      "japanese": "せつめい",
+      "english": "Info",
+      "batch": 4,
+      "variant": "frames/1814_en.png",
+      "artwork_text": "Info"
+    },
+    {
+      "id": 1815,
+      "group": "SYS_BTN",
+      "path": "frames/1815.png",
+      "status": "artwork",
+      "japanese": "文字せんたく",
+      "english": "Select letter",
+      "batch": 4,
+      "variant": "frames/1815_en.png",
+      "artwork_text": "Letter"
+    },
+    {
+      "id": 1816,
+      "group": "SYS_MASG",
+      "path": "frames/1816.png",
+      "status": "artwork",
+      "batch": 4,
+      "variant": "frames/1816_en.png",
+      "japanese": "つうしんをまっています / Bボタンでキャンセルします",
+      "english": "Waiting for link... / B: Cancel",
+      "artwork_text": "Waiting for link... / B: Cancel"
+    },
+    {
+      "id": 1817,
+      "group": "SYS_MASG",
+      "path": "frames/1817.png",
+      "status": "artwork",
+      "batch": 4,
+      "variant": "frames/1817_en.png",
+      "japanese": "つうしんにしっぱいしました / ケーブルをかくにんして、 / Bボタンをおしてください",
+      "english": "Link failed. / Check the cable. / Press B.",
+      "artwork_text": "Link failed. / Check the cable. / Press B."
+    },
+    {
+      "id": 1818,
+      "group": "SYS_MASG",
+      "path": "frames/1818.png",
+      "status": "artwork",
+      "batch": 4,
+      "variant": "frames/1818_en.png",
+      "japanese": "つうしんをまっています / しばらくおまち下さい",
+      "english": "Waiting for link... / Please wait.",
+      "artwork_text": "Waiting for link... / Please wait."
+    },
+    {
+      "id": 1819,
+      "group": "SYS_MASG",
+      "path": "frames/1819.png",
+      "status": "artwork",
+      "batch": 4,
+      "variant": "frames/1819_en.png",
+      "japanese": "つうしんエラーが発生しました",
+      "english": "A link error occurred.",
+      "artwork_text": "A link error occurred."
+    },
+    {
+      "id": 1820,
+      "group": "TN_01",
+      "path": "frames/1820.png",
+      "status": "artwork",
+      "japanese": "ギンタ",
+      "english": "Ginta",
+      "variant": "frames/1820_en.png",
+      "batch": 2
+    },
+    {
+      "id": 1821,
+      "group": "TN_01",
+      "path": "frames/1821.png",
+      "status": "artwork",
+      "japanese": "ギンタ",
+      "english": "Ginta",
+      "variant": "frames/1821_en.png",
+      "batch": 2
+    },
+    {
+      "id": 1822,
+      "group": "TN_03",
+      "path": "frames/1822.png",
+      "status": "artwork",
+      "japanese": "ジャック",
+      "english": "Jack",
+      "variant": "frames/1822_en.png",
+      "batch": 2
+    },
+    {
+      "id": 1823,
+      "group": "TN_03",
+      "path": "frames/1823.png",
+      "status": "artwork",
+      "japanese": "ジャック",
+      "english": "Jack",
+      "variant": "frames/1823_en.png",
+      "batch": 2
+    },
+    {
+      "id": 1824,
+      "group": "TN_04",
+      "path": "frames/1824.png",
+      "status": "artwork",
+      "japanese": "スノウ",
+      "english": "Snow",
+      "variant": "frames/1824_en.png",
+      "batch": 2
+    },
+    {
+      "id": 1825,
+      "group": "TN_04",
+      "path": "frames/1825.png",
+      "status": "artwork",
+      "japanese": "スノウ",
+      "english": "Snow",
+      "variant": "frames/1825_en.png",
+      "batch": 2
+    },
+    {
+      "id": 1826,
+      "group": "TN_05",
+      "path": "frames/1826.png",
+      "status": "artwork",
+      "japanese": "エドワード",
+      "english": "Edward",
+      "variant": "frames/1826_en.png",
+      "batch": 2
+    },
+    {
+      "id": 1827,
+      "group": "TN_05",
+      "path": "frames/1827.png",
+      "status": "artwork",
+      "japanese": "エドワード",
+      "english": "Edward",
+      "variant": "frames/1827_en.png",
+      "batch": 2
+    },
+    {
+      "id": 1828,
+      "group": "TN_06",
+      "path": "frames/1826.png",
+      "status": "artwork",
+      "japanese": "エドワード",
+      "english": "Edward",
+      "variant": "frames/1826_en.png",
+      "batch": 2
+    },
+    {
+      "id": 1829,
+      "group": "TN_06",
+      "path": "frames/1827.png",
+      "status": "artwork",
+      "japanese": "エドワード",
+      "english": "Edward",
+      "variant": "frames/1827_en.png",
+      "batch": 2
+    },
+    {
+      "id": 1830,
+      "group": "TN_07",
+      "path": "frames/1830.png",
+      "status": "artwork",
+      "japanese": "アルヴィス",
+      "english": "Alviss",
+      "variant": "frames/1830_en.png",
+      "batch": 2
+    },
+    {
+      "id": 1831,
+      "group": "TN_07",
+      "path": "frames/1831.png",
+      "status": "artwork",
+      "japanese": "アルヴィス",
+      "english": "Alviss",
+      "variant": "frames/1831_en.png",
+      "batch": 2
+    },
+    {
+      "id": 1832,
+      "group": "TN_08",
+      "path": "frames/1832.png",
+      "status": "artwork",
+      "japanese": "ナナシ",
+      "english": "Nanashi",
+      "variant": "frames/1832_en.png",
+      "batch": 2
+    },
+    {
+      "id": 1833,
+      "group": "TN_08",
+      "path": "frames/1833.png",
+      "status": "artwork",
+      "japanese": "ナナシ",
+      "english": "Nanashi",
+      "variant": "frames/1833_en.png",
+      "batch": 2
+    },
+    {
+      "id": 1834,
+      "group": "TN_09",
+      "path": "frames/1834.png",
+      "status": "artwork",
+      "japanese": "ドロシー",
+      "english": "Dorothy",
+      "variant": "frames/1834_en.png",
+      "batch": 2
+    },
+    {
+      "id": 1835,
+      "group": "TN_09",
+      "path": "frames/1835.png",
+      "status": "artwork",
+      "japanese": "ドロシー",
+      "english": "Dorothy",
+      "variant": "frames/1835_en.png",
+      "batch": 2
+    },
+    {
+      "id": 1836,
+      "group": "TN_22",
+      "path": "frames/1836.png",
+      "status": "artwork",
+      "japanese": "ファントム",
+      "english": "Phantom",
+      "variant": "frames/1836_en.png",
+      "batch": 2
+    },
+    {
+      "id": 1837,
+      "group": "TN_22",
+      "path": "frames/1837.png",
+      "status": "artwork",
+      "japanese": "ファントム",
+      "english": "Phantom",
+      "variant": "frames/1837_en.png",
+      "batch": 2
+    },
+    {
+      "id": 1838,
+      "group": "TN_31",
+      "path": "frames/1838.png",
+      "status": "artwork",
+      "japanese": "かう",
+      "english": "Buy",
+      "variant": "frames/1838_en.png",
+      "batch": 2
+    },
+    {
+      "id": 1839,
+      "group": "TN_32",
+      "path": "frames/1839.png",
+      "status": "artwork",
+      "japanese": "うる",
+      "english": "Sell",
+      "variant": "frames/1839_en.png",
+      "batch": 2
+    },
+    {
+      "id": 1840,
+      "group": "TN_33",
+      "path": "frames/1840.png",
+      "status": "artwork",
+      "japanese": "ダンジョン",
+      "english": "Dungeon",
+      "batch": 4,
+      "variant": "frames/1840_en.png",
+      "artwork_text": "Dungeon"
+    },
+    {
+      "id": 1841,
+      "group": "TN_34",
+      "path": "frames/1841.png",
+      "status": "artwork",
+      "japanese": "通信対戦",
+      "english": "Link Battle",
+      "batch": 4,
+      "variant": "frames/1841_en.png",
+      "artwork_text": "Link"
+    },
+    {
+      "id": 1878,
+      "group": "T_TTL05",
+      "path": "frames/1878.png",
+      "status": "artwork",
+      "variant": "frames/1878_en.png"
+    },
+    {
+      "id": 1879,
+      "group": "T_TTL05",
+      "path": "frames/1879.png",
+      "status": "artwork",
+      "variant": "frames/1879_en.png"
+    },
+    {
+      "id": 1880,
+      "group": "T_TTL05",
+      "path": "frames/1880.png",
+      "status": "artwork",
+      "variant": "frames/1880_en.png"
+    },
+    {
+      "id": 1881,
+      "group": "T_TTL05",
+      "path": "frames/1881.png",
+      "status": "artwork",
+      "variant": "frames/1881_en.png"
+    },
+    {
+      "id": 1882,
+      "group": "T_TTL05",
+      "path": "frames/1882.png",
+      "status": "artwork",
+      "variant": "frames/1882_en.png"
+    },
+    {
+      "id": 1883,
+      "group": "T_TTL05",
+      "path": "frames/1883.png",
+      "status": "artwork",
+      "variant": "frames/1883_en.png"
+    },
+    {
+      "id": 1884,
+      "group": "T_TTL05",
+      "path": "frames/1884.png",
+      "status": "artwork",
+      "variant": "frames/1884_en.png"
+    },
+    {
+      "id": 1885,
+      "group": "T_TTL05",
+      "path": "frames/1885.png",
+      "status": "artwork",
+      "variant": "frames/1885_en.png"
+    },
+    {
+      "id": 1886,
+      "group": "T_TTL05",
+      "path": "frames/1886.png",
+      "status": "artwork",
+      "variant": "frames/1886_en.png"
+    },
+    {
+      "id": 1887,
+      "group": "T_TTL05",
+      "path": "frames/1887.png",
+      "status": "artwork",
+      "variant": "frames/1887_en.png"
+    },
+    {
+      "id": 1888,
+      "group": "T_TTL05",
+      "path": "frames/1888.png",
+      "status": "artwork",
+      "variant": "frames/1888_en.png"
+    },
+    {
+      "id": 1889,
+      "group": "T_TTL05",
+      "path": "frames/1889.png",
+      "status": "artwork",
+      "variant": "frames/1889_en.png"
+    },
+    {
+      "id": 1890,
+      "group": "T_TTL05",
+      "path": "frames/1890.png",
+      "status": "artwork",
+      "variant": "frames/1890_en.png"
+    },
+    {
+      "id": 1891,
+      "group": "T_TTL05",
+      "path": "frames/1891.png",
+      "status": "artwork",
+      "variant": "frames/1891_en.png"
+    },
+    {
+      "id": 1892,
+      "group": "T_TTL05",
+      "path": "frames/1892.png",
+      "status": "artwork",
+      "variant": "frames/1892_en.png"
+    },
+    {
+      "id": 1893,
+      "group": "T_TTL05",
+      "path": "frames/1893.png",
+      "status": "artwork",
+      "batch": 3,
+      "variant": "frames/1893_en.png",
+      "source_layers": "layered_labels.json"
+    },
+    {
+      "id": 1894,
+      "group": "T_TTL05",
+      "path": "frames/1894.png",
+      "status": "artwork",
+      "batch": 3,
+      "variant": "frames/1894_en.png",
+      "source_layers": "layered_labels.json"
+    },
+    {
+      "id": 1895,
+      "group": "T_TTL05",
+      "path": "frames/1895.png",
+      "status": "artwork",
+      "batch": 3,
+      "variant": "frames/1895_en.png",
+      "source_layers": "layered_labels.json"
+    },
+    {
+      "id": 1896,
+      "group": "T_TTL05",
+      "path": "frames/1896.png",
+      "status": "artwork",
+      "batch": 3,
+      "variant": "frames/1896_en.png",
+      "source_layers": "layered_labels.json"
+    },
+    {
+      "id": 1897,
+      "group": "T_TTL05",
+      "path": "frames/1897.png",
+      "status": "artwork",
+      "batch": 3,
+      "variant": "frames/1897_en.png",
+      "source_layers": "layered_labels.json"
+    },
+    {
+      "id": 1898,
+      "group": "T_TTL05",
+      "path": "frames/1898.png",
+      "status": "artwork",
+      "variant": "frames/1898_en.png"
+    },
+    {
+      "id": 1899,
+      "group": "T_TTL05",
+      "path": "frames/1899.png",
+      "status": "artwork",
+      "variant": "frames/1899_en.png"
+    },
+    {
+      "id": 1900,
+      "group": "T_TTL05",
+      "path": "frames/1900.png",
+      "status": "artwork",
+      "variant": "frames/1900_en.png"
+    },
+    {
+      "id": 1901,
+      "group": "T_TTL05",
+      "path": "frames/1901.png",
+      "status": "artwork",
+      "variant": "frames/1901_en.png"
+    },
+    {
+      "id": 1902,
+      "group": "T_TTL05",
+      "path": "frames/1902.png",
+      "status": "artwork",
+      "batch": 3,
+      "variant": "frames/1902_en.png",
+      "source_layers": "layered_labels.json"
+    },
+    {
+      "id": 1903,
+      "group": "T_TTL05",
+      "path": "frames/1903.png",
+      "status": "artwork",
+      "batch": 3,
+      "variant": "frames/1903_en.png",
+      "source_layers": "layered_labels.json"
+    },
+    {
+      "id": 1904,
+      "group": "T_TTL05",
+      "path": "frames/1904.png",
+      "status": "artwork",
+      "batch": 3,
+      "variant": "frames/1904_en.png",
+      "source_layers": "layered_labels.json"
+    },
+    {
+      "id": 1905,
+      "group": "T_TTL05",
+      "path": "frames/1905.png",
+      "status": "artwork",
+      "batch": 3,
+      "variant": "frames/1905_en.png",
+      "source_layers": "layered_labels.json"
+    },
+    {
+      "id": 1906,
+      "group": "T_TTL05",
+      "path": "frames/1906.png",
+      "status": "artwork",
+      "batch": 3,
+      "variant": "frames/1906_en.png",
+      "source_layers": "layered_labels.json"
+    }
+  ],
+  "batches": [
+    {
+      "id": 1,
+      "frames": [
+        1878,
+        1879,
+        1880,
+        1881,
+        1882,
+        1883,
+        1884,
+        1885,
+        1886,
+        1887,
+        1888,
+        1889,
+        1890,
+        1891,
+        1892,
+        1898,
+        1899,
+        1900,
+        1901
+      ],
+      "description": "Mode labels and rotating-ring banners"
+    },
+    {
+      "id": 2,
+      "frames": [
+        1820,
+        1821,
+        1822,
+        1823,
+        1824,
+        1825,
+        1826,
+        1827,
+        1828,
+        1829,
+        1830,
+        1831,
+        1832,
+        1833,
+        1834,
+        1835,
+        1836,
+        1837,
+        1838,
+        1839
+      ],
+      "description": "Character-name tabs and Buy/Sell; 20 frames backed by 18 distinct PNGs"
+    },
+    {
+      "id": 3,
+      "frames": [
+        1686,
+        1687,
+        1783,
+        1801,
+        1804,
+        1805,
+        1807,
+        1808,
+        1809,
+        1810,
+        1893,
+        1894,
+        1895,
+        1896,
+        1897,
+        1902,
+        1903,
+        1904,
+        1905,
+        1906
+      ],
+      "description": "Layered New/Continue/run options, recipe/password prompts, Sort and seven button hints"
+    },
+    {
+      "id": 4,
+      "frames": [
+        1508,
+        1509,
+        1561,
+        1562,
+        1563,
+        1564,
+        1802,
+        1803,
+        1806,
+        1811,
+        1812,
+        1813,
+        1814,
+        1815,
+        1816,
+        1817,
+        1818,
+        1819,
+        1840,
+        1841
+      ],
+      "description": "Remaining button prompts, link messages, Use/Drop, Dungeon/Link and four location names"
+    },
+    {
+      "id": 5,
+      "frames": [
+        537,
+        538,
+        700,
+        701,
+        702,
+        703,
+        704,
+        705,
+        706,
+        790,
+        791,
+        792,
+        793,
+        794,
+        1510,
+        1565,
+        1566,
+        1567,
+        1568,
+        1569,
+        1570,
+        1571,
+        1572,
+        1573,
+        1574,
+        1575,
+        1576,
+        1577,
+        1578,
+        1581,
+        1582,
+        1583,
+        1584,
+        1585,
+        1586,
+        1587,
+        1588,
+        1589,
+        1590,
+        1782
+      ],
+      "description": "Forty native-font labels: shop popups, pause menu, quantity header, Attack/Defense, fourteen locations, five gate titles and character-change hint"
+    },
+    {
+      "id": 6,
+      "frames": [
+        539,
+        540,
+        541,
+        1685,
+        1698,
+        1700,
+        1701,
+        1702,
+        1703,
+        1704,
+        1705,
+        1706,
+        1707,
+        1708,
+        1709,
+        1710,
+        1711,
+        1712,
+        1713,
+        1714,
+        1715,
+        1716,
+        1717,
+        1718,
+        1719,
+        1720,
+        1721,
+        1722,
+        1723,
+        1724,
+        1725,
+        1726,
+        1727,
+        1728,
+        1729,
+        1730,
+        1731,
+        1732,
+        1733,
+        1734,
+        1735,
+        1736,
+        1737,
+        1738,
+        1739,
+        1740,
+        1741,
+        1742,
+        1743,
+        1744,
+        1745,
+        1746,
+        1747,
+        1748,
+        1749,
+        1750,
+        1751,
+        1752,
+        1753,
+        1754,
+        1755,
+        1756,
+        1757,
+        1758,
+        1759,
+        1760,
+        1761,
+        1762,
+        1763,
+        1764,
+        1765,
+        1766,
+        1767,
+        1768,
+        1769,
+        1770,
+        1771,
+        1772,
+        1773,
+        1774,
+        1775,
+        1776,
+        1777,
+        1778,
+        1779,
+        1780,
+        1781
+      ],
+      "description": "Remaining 87 reported frames: category tags, material panel, credit title and staff credits. Thirteen name readings are provisional."
+    }
+  ]
+}

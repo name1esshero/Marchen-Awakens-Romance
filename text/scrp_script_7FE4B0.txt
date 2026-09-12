@@ -8,84 +8,84 @@
 @0002A5 MAP05_O  // LITERAL: MAP05_O (usage not inferred)
 @000332 MAP05_O  // LITERAL: MAP05_O (usage not inferred)
 @00062F  C0D04 ［−−−］  // EN: [---]
-@00064C  C0B04 う…うわ…うわぁあ！！！  // TODO: English translation
+@00064C  C0B04 う…うわ…うわぁあ！！！  // EN: U...uwa...uwaaah!!!
 @00088E F07A02  // LITERAL: F07A02 (usage not inferred)
 @000967  C0D04 ［アルヴィス］  // EN: [Alviss]
-@000988  C0F04 …！？  // TODO: English translation
-@0009A1 な、なんだ！？  // TODO: English translation
+@000988  C0F04 …！？  // EN: ...?!
+@0009A1 な、なんだ！？  // EN: Wh-what is that?!
 @0009E9 F07A01  // LITERAL: F07A01 (usage not inferred)
 @000A17  C0D04 ［アルヴィス］  // EN: [Alviss]
-@000A61 つうしん…か！？  // TODO: English translation
+@000A61 つうしん…か！？  // EN: ...a transmission?!
 @000C31  C0D04 ［−−−］  // EN: [---]
-@000C4E  C0B04 おのれチェス！！  // TODO: English translation
-@000C71 ６年前にこわされた街を…  // TODO: English translation
+@000C4E  C0B04 おのれチェス！！  // EN: Damn you, Chess Pieces!!
+@000C71 ６年前にこわされた街を…  // EN: The town you destroyed six years ago...
 @000CB3  C0D04 ［−−−］  // EN: [---]
-@000CD0  C0B04 ここまでたてなおした  // TODO: English translation
-@000CF7 街を…こわされてたまるか！！  // TODO: English translation
+@000CD0  C0B04 ここまでたてなおした  // EN: We've rebuilt it this far...
+@000CF7 街を…こわされてたまるか！！  // EN: We won't let you destroy it again!!
 @000E73 F06A01  // LITERAL: F06A01 (usage not inferred)
 @000F4C  C0D04 ［エド］  // EN: [Ed]
-@000F67  C0F04 …  // TODO: English translation
+@000F67  C0F04 …  // EN: ...
 @00113C  C0D04 ［−−−］  // EN: [---]
-@001159  C0B04 メルヘヴン全土のクロスガード！  // TODO: English translation
-@00118A このつうしんがきこえるか！！  // TODO: English translation
+@001159  C0B04 メルヘヴン全土のクロスガード！  // EN: Cross Guard across MÄR Heaven!
+@00118A このつうしんがきこえるか！！  // EN: Can you hear this transmission?!
 @0011D0  C0D04 ［−−−］  // EN: [---]
-@0011ED  C0B04 チェスの兵隊の…  // TODO: English translation
+@0011ED  C0B04 チェスの兵隊の…  // EN: The Chess Pieces...
 @00123A  C0D04 ［−−−］  // EN: [---]
-@001257  C0B04 ふっかつ…だ！！！  // TODO: English translation
+@001257  C0B04 ふっかつ…だ！！！  // EN: ...are back!!!
 @0013DC F06A03  // LITERAL: F06A03 (usage not inferred)
 @0014DC  C0D04 ［エド］  // EN: [Ed]
-@0014F7  C0F04 ……！  // TODO: English translation
+@0014F7  C0F04 ……！  // EN: ......!
 @0016D0  C0D04 ［−−−］  // EN: [---]
-@0016ED  C0B04 こっちも…火のうみだ！！  // TODO: English translation
+@0016ED  C0B04 こっちも…火のうみだ！！  // EN: It's...a sea of fire here too!!
 @001742  C0D04 ［−−−］  // EN: [---]
-@00175F  C0B04 だめだ！！！  // TODO: English translation
-@00177E …アランはどこだ！！  // TODO: English translation
+@00175F  C0B04 だめだ！！！  // EN: It's no use!!!
+@00177E …アランはどこだ！！  // EN: ...Where is Alan?!
 @0017BC  C0D04 ［−−−］  // EN: [---]
-@0017D9  C0B04 クロスガードＮｏ２だった男！！  // TODO: English translation
+@0017D9  C0B04 クロスガードＮｏ２だった男！！  // EN: The Cross Guard's former number two!!
 @001970 F07A02  // LITERAL: F07A02 (usage not inferred)
 @001A49  C0D04 ［アルヴィス］  // EN: [Alviss]
 @001A6A  C0F04 くそ！！  // EN: Damn it!!
-@001A85 アランさん！！  // TODO: English translation
+@001A85 アランさん！！  // EN: Alan!!
 @001ABD  C0D04 ［アルヴィス］  // EN: [Alviss]
-@001ADE  C0F04 これは…まちがいない！！  // TODO: English translation
+@001ADE  C0F04 これは…まちがいない！！  // EN: There's...no doubt about it!!
 @001B43 F07A01  // LITERAL: F07A01 (usage not inferred)
 @001B71  C0D04 ［アルヴィス］  // EN: [Alviss]
-@001B92  C0F04 『ファントムのふっかつ』！！！  // TODO: English translation
+@001B92  C0F04 『ファントムのふっかつ』！！！  // EN: Phantom has returned!!!
 @001F08 F07A06  // LITERAL: F07A06 (usage not inferred)
 @001FE1  C0D04 ［アルヴィス］  // EN: [Alviss]
-@002002  C0F04 おそわれている街を  // TODO: English translation
-@002027 助けにいきましょう！！！  // TODO: English translation
+@002002  C0F04 おそわれている街を  // EN: Let's go help...
+@002027 助けにいきましょう！！！  // EN: ...the towns under attack!!!
 @002079 F06A04  // LITERAL: F06A04 (usage not inferred)
 @002152  C0D04 ［エド］  // EN: [Ed]
 @00216D  C0F04 アルヴィス  // EN: Alviss
-@00218A たのみがある  // TODO: English translation
+@00218A たのみがある  // EN: I have a favor to ask.
 @0021C0  C0D04 ［エド］  // EN: [Ed]
-@0021DB  C0F04 人々を助けにいってくれ  // TODO: English translation
+@0021DB  C0F04 人々を助けにいってくれ  // EN: Go help those people.
 @00223E F07A05  // LITERAL: F07A05 (usage not inferred)
 @00226C  C0D04 ［アルヴィス］  // EN: [Alviss]
-@00228D  C0F04 …な  // TODO: English translation
+@00228D  C0F04 …な  // EN: ...Wh-
 @0022CE  C0D04 ［エド］  // EN: [Ed]
-@0022E9  C0F04 オレはここにのこる  // TODO: English translation
+@0022E9  C0F04 オレはここにのこる  // EN: I'm staying here.
 @002348 F07A01  // LITERAL: F07A01 (usage not inferred)
 @002376  C0D04 ［アルヴィス］  // EN: [Alviss]
-@002397  C0F04 何をいってるんだ！  // TODO: English translation
-@0023BC 『ごうけつアラン』ともあろう方が！  // TODO: English translation
+@002397  C0F04 何をいってるんだ！  // EN: What are you saying?!
+@0023BC 『ごうけつアラン』ともあろう方が！  // EN: You're supposed to be the mighty Alan!
 @002408  C0D04 ［エド］  // EN: [Ed]
-@002423  C0F04 今は『エド』だ…  // TODO: English translation
+@002423  C0F04 今は『エド』だ…  // EN: I'm Ed now...
 @002480 F06A01  // LITERAL: F06A01 (usage not inferred)
 @0024AE  C0D04 ［エド］  // EN: [Ed]
-@0024C9  C0F04 たのむぜ、アルヴィス…  // TODO: English translation
+@0024C9  C0F04 たのむぜ、アルヴィス…  // EN: I'm counting on you, Alviss...
 @00252C F07A02  // LITERAL: F07A02 (usage not inferred)
 @00255A  C0D04 ［アルヴィス］  // EN: [Alviss]
-@00257B  C0F04 あなたに…  // TODO: English translation
-@002598 しつぼうしました！！  // TODO: English translation
+@00257B  C0F04 あなたに…  // EN: You've...
+@002598 しつぼうしました！！  // EN: ...disappointed me!!
 @002B27 F06A01  // LITERAL: F06A01 (usage not inferred)
 @002C00  C0D04 ［エド］  // EN: [Ed]
-@002C1B  C0F04 （つよくなる！  // TODO: English translation
-@002C3C 　たおす！！）  // TODO: English translation
+@002C1B  C0F04 （つよくなる！  // EN: (I'll get stronger!
+@002C3C 　たおす！！）  // EN: I'll beat them!!)
 @002C74  C0D04 ［エド］  // EN: [Ed]
-@002C8F  C0F04 …ギンタ、おめぇそういったよな？  // TODO: English translation
+@002C8F  C0F04 …ギンタ、おめぇそういったよな？  // EN: ...Ginta, that's what you said, right?
 @002CEC  C0D04 ［エド］  // EN: [Ed]
-@002D07  C0F04 オレはダンナと同じこと  // TODO: English translation
-@002D30 いいやがったおまえをしんじるぜ！！  // TODO: English translation
+@002D07  C0F04 オレはダンナと同じこと  // EN: You said the same thing as Danna...
+@002D30 いいやがったおまえをしんじるぜ！！  // EN: ...and I'm putting my trust in you!!
 @002EBD EV_MON02.SPC  // LITERAL: EV_MON02.SPC (usage not inferred)

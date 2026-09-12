@@ -5,5 +5,5 @@
 @000080 EV_AL01.SPC  // LITERAL: EV_AL01.SPC (usage not inferred)
 @00018D F03A01  // LITERAL: F03A01 (usage not inferred)
 @00024E  C0D04 ［ジャック］  // EN: [Jack]
-@00026D  C0F04 街に来たんだし  // TODO: English translation
-@00028E いろいろ話をきいてみるっス  // TODO: English translation
+@00026D  C0F04 街に来たんだし  // EN: Since we're in town...
+@00028E いろいろ話をきいてみるっス  // EN: ...let's ask around.

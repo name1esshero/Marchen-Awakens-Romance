@@ -3,11 +3,11 @@
 // Regenerate comments with tools/translate_comments.py; this copy is not built.
 
 @000141  C0D04 ［道具屋］  // EN: [Item shopkeeper]
-@00015E  C0F04 らっしゃい！！  // TODO: English translation
+@00015E  C0F04 らっしゃい！！  // EN: Welcome!!
 @0001A9  C0D04 ［道具屋］  // EN: [Item shopkeeper]
-@0001C6  C0F04 長たびのおともにべんりな  // TODO: English translation
-@0001F1 アイテムはいかがかな？  // TODO: English translation
+@0001C6  C0F04 長たびのおともにべんりな  // EN: How about some useful items...
+@0001F1 アイテムはいかがかな？  // EN: ...for a long journey?
 @000259  C0D04 ［道具屋］  // EN: [Item shopkeeper]
-@000276  C0F04 ほかにも見ていくのかな？  // TODO: English translation
+@000276  C0F04 ほかにも見ていくのかな？  // EN: Would you like to browse some more?
 @0003D1  C0D04 ［道具屋］  // EN: [Item shopkeeper]
-@0003EE  C0F04 おや、何を買取ろうかな？  // TODO: English translation
+@0003EE  C0F04 おや、何を買取ろうかな？  // EN: Oh, what would you like to sell?

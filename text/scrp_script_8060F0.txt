@@ -9,17 +9,17 @@
 @000E05 F01B01  // LITERAL: F01B01 (usage not inferred)
 @000EDE  C0D04 ［ギンタ］  // EN: [Ginta]
 @000EFB  C0F04 スノウ！  // EN: Snow!
-@000F16 ちょっと力をかしてほしいんだ！  // TODO: English translation
+@000F16 ちょっと力をかしてほしいんだ！  // EN: I need your help!
 @000FA4 F38A02  // LITERAL: F38A02 (usage not inferred)
 @00107D  C0D04 ［マール］  // EN: [Marl]
-@00109A  C0F04 おねがいします！！  // TODO: English translation
+@00109A  C0F04 おねがいします！！  // EN: Please!!
 @0010F9 F04A06  // LITERAL: F04A06 (usage not inferred)
 @0011D2  C0D04 ［スノウ］  // EN: [Snow]
-@0011EF  C0F04 …え…とー…  // TODO: English translation
+@0011EF  C0F04 …え…とー…  // EN: ...Uh...well...
 @001248 F01B01  // LITERAL: F01B01 (usage not inferred)
 @00138D  C0D04 ［ギンタ］  // EN: [Ginta]
-@0013AA  C0F04 こいつはマール！  // TODO: English translation
+@0013AA  C0F04 こいつはマール！  // EN: This is Marl!
 @001407 F01B08  // LITERAL: F01B08 (usage not inferred)
 @001435  C0D04 ［ギンタ］  // EN: [Ginta]
-@001452  C0F04 くわしいことは  // TODO: English translation
-@001473 行きながら話すからさ！  // TODO: English translation
+@001452  C0F04 くわしいことは  // EN: I'll explain everything...
+@001473 行きながら話すからさ！  // EN: ...on the way!

@@ -8,9 +8,9 @@
 @00035E A  // LITERAL: A (usage not inferred)
 @000DEC F03A03  // LITERAL: F03A03 (usage not inferred)
 @000EC5  C0D04 ［ジャック］  // EN: [Jack]
-@000EE4  C0F04 だ、だいじょうぶっスか？  // TODO: English translation
+@000EE4  C0F04 だ、だいじょうぶっスか？  // EN: A-are you all right?
 @000F49 F09A04  // LITERAL: F09A04 (usage not inferred)
 @001049  C0D04 ［ドロシー］  // EN: [Dorothy]
-@001068  C0F04 だいじょぶよ  // TODO: English translation
-@001087 とほほ…  // TODO: English translation
+@001068  C0F04 だいじょぶよ  // EN: I'm fine.
+@001087 とほほ…  // EN: Oh, dear...
 @0017A9 G_EV042.SPC  // LITERAL: G_EV042.SPC (usage not inferred)

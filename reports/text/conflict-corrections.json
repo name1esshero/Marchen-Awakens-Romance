@@ -1,0 +1,44 @@
+[
+  [
+    "shared",
+    "ダンジョンモードに",
+    "Into Dungeon Mode...",
+    "In Dungeon Mode..."
+  ],
+  [
+    "shared",
+    "いそがないと…",
+    "I'd better hurry...",
+    "Better hurry..."
+  ],
+  [
+    "EV_ICE01.SPC",
+    "いそがないと…",
+    "...we must hurry...",
+    "Better hurry..."
+  ],
+  [
+    "EV_VE02.SPC",
+    "ガーゴイル　ＣＬ４を",
+    "Received Gargoyle CL4...",
+    "{color:0D04}Gargoyle CL4{color:0F04}:"
+  ],
+  [
+    "EV_VE02.SPC",
+    "もらった！",
+    "...as a gift!",
+    "Received it!"
+  ],
+  [
+    "END2.SPC",
+    "つよくなる！",
+    "...get stronger!",
+    "I'll get stronger!"
+  ],
+  [
+    "CH_M24_A.SPC",
+    "新しく<F0><56>ＲＭを作ることですのん",
+    "It means making new ÄRMs.",
+    "It means making new ÄRMs, yep-yep."
+  ]
+]

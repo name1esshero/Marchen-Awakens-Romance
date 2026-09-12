@@ -4,14 +4,14 @@
 
 @000152 F01A01  // LITERAL: F01A01 (usage not inferred)
 @000213  C0D04 ［ギンタ］  // EN: [Ginta]
-@000230  C0F04 なぁ、バッボ  // TODO: English translation
+@000230  C0F04 なぁ、バッボ  // EN: Hey, Babbo.
 @000283 F02A01  // LITERAL: F02A01 (usage not inferred)
 @000344  C0D04 ［バッボ］  // EN: [Babbo]
-@000361  C0F04 なんじゃい  // TODO: English translation
+@000361  C0F04 なんじゃい  // EN: What is it?
 @000577  C0D04 ［ギンタ］  // EN: [Ginta]
-@000594  C0F04 あそこにある大岩で、ちょっと力だめし  // TODO: English translation
-@0005CB してみないか？  // TODO: English translation
+@000594  C0F04 あそこにある大岩で、ちょっと力だめし  // EN: How about testing our strength...
+@0005CB してみないか？  // EN: ...on that big rock over there?
 @000603  C0D04 ［バッボ］  // EN: [Babbo]
-@000620  C0F04 いったい何をする気じゃ？  // TODO: English translation
+@000620  C0F04 いったい何をする気じゃ？  // EN: What on earth are you planning?
 @000675  C0D04 ［ギンタ］  // EN: [Ginta]
-@000692  C0F04 いいからいいから  // TODO: English translation
+@000692  C0F04 いいからいいから  // EN: Just trust me.

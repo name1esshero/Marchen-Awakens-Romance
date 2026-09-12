@@ -1,11 +1,13 @@
 {
-  "active_pngs": 19163,
+  "active_pngs": 19394,
   "roles": {
-    "mapped_background_source": 158,
-    "unmapped_background_tiles": 62,
-    "named_tile_source": 13,
+    "mapped_background_source": 160,
+    "unmapped_background_tiles": 63,
+    "named_tile_source": 11,
     "sprite_cell_source": 12062,
     "sprite_frame_editing_view": 6627,
+    "english_sprite_override": 229,
+    "english_label_authoring_background": 1,
     "icons_editing_view": 84,
     "portraits_editing_view": 152,
     "sprite_contact_preview": 3,
@@ -84,24 +86,24 @@
       "role": "mapped_background_source",
       "owner": "BA06.TCG"
     },
-    "graphics/backgrounds/BA06.TCG.layer2.png": {
-      "role": "mapped_background_source",
-      "owner": "BA06.TCG"
-    },
-    "graphics/backgrounds/BA06.TCG.layer3.png": {
-      "role": "mapped_background_source",
-      "owner": "BA06.TCG"
-    },
-    "graphics/backgrounds/BA06.TCG.layer4.png": {
-      "role": "mapped_background_source",
-      "owner": "BA06.TCG"
-    },
     "graphics/backgrounds/unused/BA06.TCG.png": {
       "role": "unmapped_background_tiles",
       "owner": "BA06.TCG"
     },
-    "graphics/tilesets/BA06_BG.TCG.png": {
-      "role": "named_tile_source",
+    "graphics/backgrounds/BA06_BG.TCG.png": {
+      "role": "mapped_background_source",
+      "owner": "BA06_BG.TCG"
+    },
+    "graphics/backgrounds/BA06_BG.TCG.layer1.png": {
+      "role": "mapped_background_source",
+      "owner": "BA06_BG.TCG"
+    },
+    "graphics/backgrounds/BA06_BG.TCG.layer2.png": {
+      "role": "mapped_background_source",
+      "owner": "BA06_BG.TCG"
+    },
+    "graphics/backgrounds/unused/BA06_BG.TCG.png": {
+      "role": "unmapped_background_tiles",
       "owner": "BA06_BG.TCG"
     },
     "graphics/backgrounds/BA07.TCG.png": {
@@ -660,8 +662,12 @@
       "role": "mapped_background_source",
       "owner": "ML_BG01.KCG"
     },
-    "graphics/tilesets/MWA.KCG.png": {
-      "role": "named_tile_source",
+    "graphics/backgrounds/MWA.KCG.png": {
+      "role": "mapped_background_source",
+      "owner": "MWA.KCG"
+    },
+    "graphics/backgrounds/MWA.KCG.layer1.png": {
+      "role": "mapped_background_source",
       "owner": "MWA.KCG"
     },
     "graphics/backgrounds/NE01.TCG.png": {
@@ -75702,6 +75708,926 @@
     },
     "graphics/ui/frames/1936.png": {
       "role": "sprite_frame_editing_view",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/battle/effects/frames/0386_en.png": {
+      "role": "english_sprite_override",
+      "owner": "EFFECT.NCD"
+    },
+    "graphics/battle/effects/frames/0387_en.png": {
+      "role": "english_sprite_override",
+      "owner": "EFFECT.NCD"
+    },
+    "graphics/battle/effects/frames/0388_en.png": {
+      "role": "english_sprite_override",
+      "owner": "EFFECT.NCD"
+    },
+    "graphics/battle/effects/frames/0389_en.png": {
+      "role": "english_sprite_override",
+      "owner": "EFFECT.NCD"
+    },
+    "graphics/battle/effects/frames/0402_en.png": {
+      "role": "english_sprite_override",
+      "owner": "EFFECT.NCD"
+    },
+    "graphics/battle/effects/frames/0403_en.png": {
+      "role": "english_sprite_override",
+      "owner": "EFFECT.NCD"
+    },
+    "graphics/battle/effects/frames/0404_en.png": {
+      "role": "english_sprite_override",
+      "owner": "EFFECT.NCD"
+    },
+    "graphics/battle/effects/frames/0405_en.png": {
+      "role": "english_sprite_override",
+      "owner": "EFFECT.NCD"
+    },
+    "graphics/battle/effects/frames/0406_en.png": {
+      "role": "english_sprite_override",
+      "owner": "EFFECT.NCD"
+    },
+    "graphics/ui/cells/T_TTL05/tile_33779_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/cells/T_TTL05/tile_33787_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/cells/T_TTL05/tile_33815_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/cells/T_TTL05/tile_33823_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/cells/T_TTL05/tile_33827_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/cells/T_TTL05/tile_33835_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/cells/T_TTL05/tile_33839_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/cells/T_TTL05/tile_33847_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/cells/T_TTL05/tile_33851_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/cells/T_TTL05/tile_33859_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/cells/T_TTL05/tile_33929_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/cells/T_TTL05/tile_33937_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/cells/T_TTL05/tile_33939_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/cells/T_TTL05/tile_33947_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/cells/T_TTL05/tile_33949_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/cells/T_TTL05/tile_33957_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/0537_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/0538_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/0539_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/0540_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/0541_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/0700_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/0701_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/0702_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/0703_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/0704_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/0705_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/0706_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/0790_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/0791_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/0792_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/0793_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/0794_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1508_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1509_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1510_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1561_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1562_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1563_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1564_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1565_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1566_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1567_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1568_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1569_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1570_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1571_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1572_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1573_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1574_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1575_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1576_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1577_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1578_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1581_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1582_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1583_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1584_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1585_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1586_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1587_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1588_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1589_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1590_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1685_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1686_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1687_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1698_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1700_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1701_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1702_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1703_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1704_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1705_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1706_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1707_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1708_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1709_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1710_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1711_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1712_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1713_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1714_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1715_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1716_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1717_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1718_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1719_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1720_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1721_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1722_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1723_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1724_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1725_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1726_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1727_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1728_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1729_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1730_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1731_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1732_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1733_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1734_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1735_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1736_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1737_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1738_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1739_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1740_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1741_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1742_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1743_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1744_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1745_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1746_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1747_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1748_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1749_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1750_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1751_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1752_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1753_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1754_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1755_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1756_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1757_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1758_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1759_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1760_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1761_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1762_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1763_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1764_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1765_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1766_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1767_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1768_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1769_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1770_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1771_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1772_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1773_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1774_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1775_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1776_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1777_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1778_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1779_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1780_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1781_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1782_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1783_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1801_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1802_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1803_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1804_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1805_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1806_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1807_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1808_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1809_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1810_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1811_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1812_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1813_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1814_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1815_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1816_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1817_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1818_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1819_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1820_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1821_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1822_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1823_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1824_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1825_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1826_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1827_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1830_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1831_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1832_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1833_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1834_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1835_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1836_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1837_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1838_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1839_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1840_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1841_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1878_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1879_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1880_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1881_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1882_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1883_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1884_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1885_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1886_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1887_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1888_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1889_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1890_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1891_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1892_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1893_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1894_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1895_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1896_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1897_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1898_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1899_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1900_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1901_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1902_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1903_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1904_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1905_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/frames/1906_en.png": {
+      "role": "english_sprite_override",
+      "owner": "SYSTEM.NCD"
+    },
+    "graphics/ui/source/english/1685_background.png": {
+      "role": "english_label_authoring_background",
       "owner": "SYSTEM.NCD"
     },
     "graphics/icons/ICON_0_0.png": {

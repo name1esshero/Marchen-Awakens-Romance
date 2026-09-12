@@ -4,29 +4,29 @@
 
 @000051 F30A03  // LITERAL: F30A03 (usage not inferred)
 @000112  C0D04 ［親岩］  // EN: [Parent Rock]
-@00012D  C0F04 ドっ…！！  // TODO: English translation
+@00012D  C0F04 ドっ…！！  // EN: Doh...!!
 @0001AE F30A01  // LITERAL: F30A01 (usage not inferred)
 @00020C  C0D04 ［親岩］  // EN: [Parent Rock]
 @000227  C0F04 ドッチをむいてもいいお天気ですな  // EN: Lovely weather whichever way you look, eh?
 @000284  C0D04 ［親岩］  // EN: [Parent Rock]
 @00029F  C0F04 ことりがおとしていったものですが  // EN: A little bird dropped this...
 @0002D2 よろしければお使いください  // EN: Please use it if you'd like.
-@00039A  C0D04 ジッパー C0F04 を  // TODO: English translation
+@00039A  C0D04 ジッパー C0F04 を  // EN: Zipper...
 @0003BE もらった！  // EN: Received it!
 @000490 F30A03  // LITERAL: F30A03 (usage not inferred)
 @000551  C0D04 ［親岩］  // EN: [Parent Rock]
-@00056C  C0F04 ドっ…！！  // TODO: English translation
+@00056C  C0F04 ドっ…！！  // EN: Doh...!!
 @0005ED F30A01  // LITERAL: F30A01 (usage not inferred)
 @00064B  C0D04 ［親岩］  // EN: [Parent Rock]
 @000666  C0F04 ドウキがするほどいいお天気ですな  // EN: Such lovely weather, it makes my heart flutter.
 @0006C3  C0D04 ［親岩］  // EN: [Parent Rock]
 @0006DE  C0F04 ことりがおとしていったものですが  // EN: A little bird dropped this...
 @000711 よろしければお使いください  // EN: Please use it if you'd like.
-@0007D9  C0D04 レインドッグ C0F04 を  // TODO: English translation
+@0007D9  C0D04 レインドッグ C0F04 を  // EN: Rain Dog...
 @000801 もらった！  // EN: Received it!
 @000892 F30A03  // LITERAL: F30A03 (usage not inferred)
 @000953  C0D04 ［親岩］  // EN: [Parent Rock]
-@00096E  C0F04 ドっ…！！  // TODO: English translation
+@00096E  C0F04 ドっ…！！  // EN: Doh...!!
 @0009EF F30A01  // LITERAL: F30A01 (usage not inferred)
 @000A4D  C0D04 ［親岩］  // EN: [Parent Rock]
 @000A68  C0F04 ドコまでもいいお天気ですな  // EN: Lovely weather as far as the eye can see, eh?

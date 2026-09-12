@@ -40,8 +40,8 @@
 @0012B2  C0D04 ［村の人］  // EN: [Villager]
 @0012CF  C0F04 役に立つかどうかわからないが  // EN: I don't know if it'll help...
 @0012FE これをもらってくれないか  // EN: ...but please take this.
-@001394  C0D04 ガーゴイル　ＣＬ４ C0F04 を  // EN: Received Gargoyle CL4...
-@0013C2 もらった！  // EN: ...as a gift!
+@001394  C0D04 ガーゴイル　ＣＬ４ C0F04 を  // EN: {color:0D04}Gargoyle CL4{color:0F04}:
+@0013C2 もらった！  // EN: Received it!
 @001444  C0D04 ［村の人］  // EN: [Villager]
 @001461  C0904 ちていこ C0F04 でひろったものなんだが  // EN: I found it in the lake.
 @0014EB  C0D04 ［村の人］  // EN: [Villager]

@@ -7,79 +7,79 @@
 @0001AA A  // LITERAL: A (usage not inferred)
 @00045F F06A03  // LITERAL: F06A03 (usage not inferred)
 @000538  C0D04 ［エド］  // EN: [Ed]
-@000553  C0F04 子供にまでそんな  // TODO: English translation
-@000576 つらい思いをさせちまう…！  // TODO: English translation
+@000553  C0F04 子供にまでそんな  // EN: Making even a child...
+@000576 つらい思いをさせちまう…！  // EN: ...suffer like that...!
 @0005BA  C0D04 ［エド］  // EN: [Ed]
-@0005D5  C0F04 それが…  // TODO: English translation
+@0005D5  C0F04 それが…  // EN: That's...
 @00062A F01B05  // LITERAL: F01B05 (usage not inferred)
 @00072A  C0D04 ［ギンタ］  // EN: [Ginta]
-@000747  C0F04 チェスの兵隊…！！！  // TODO: English translation
+@000747  C0F04 チェスの兵隊…！！！  // EN: The Chess Pieces...!!!
 @0007A8 F01B03  // LITERAL: F01B03 (usage not inferred)
 @0007D6  C0D04 ［ギンタ］  // EN: [Ginta]
-@0007F3  C0F04 オッサン！  // TODO: English translation
+@0007F3  C0F04 オッサン！  // EN: Hey, old man!
 @00083A  C0D04 ［ギンタ］  // EN: [Ginta]
-@000857  C0F04 チェスのおやぶん  // TODO: English translation
-@00087A ぶったおしにいこう！！  // TODO: English translation
+@000857  C0F04 チェスのおやぶん  // EN: Let's go beat up...
+@00087A ぶったおしにいこう！！  // EN: ...the leader of the Chess Pieces!!
 @0008BA  C0D04 ［ギンタ］  // EN: [Ginta]
-@0008D7  C0F04 どうせねらわれるなら  // TODO: English translation
-@0008FE こっちから行くさ！！  // TODO: English translation
+@0008D7  C0F04 どうせねらわれるなら  // EN: If they're going to come after us anyway...
+@0008FE こっちから行くさ！！  // EN: ...we'll go to them first!!
 @00094C F06A05  // LITERAL: F06A05 (usage not inferred)
 @00097A  C0D04 ［エド］  // EN: [Ed]
-@000995  C0F04 っつっても…  // TODO: English translation
+@000995  C0F04 っつっても…  // EN: But still...
 @0009DE  C0D04 ［エド］  // EN: [Ed]
-@0009F9  C0F04 とおいぞ…？  // TODO: English translation
+@0009F9  C0F04 とおいぞ…？  // EN: It's a long way, you know...?
 @000A52 F06A01  // LITERAL: F06A01 (usage not inferred)
 @000A80  C0D04 ［エド］  // EN: [Ed]
-@000A9B  C0F04 もとのせかいに  // TODO: English translation
-@000ABC かえりたくねぇのか…？  // TODO: English translation
+@000A9B  C0F04 もとのせかいに  // EN: Don't you want to go back...
+@000ABC かえりたくねぇのか…？  // EN: ...to your own world...?
 @000B0C F01B02  // LITERAL: F01B02 (usage not inferred)
 @000B3A  C0D04 ［ギンタ］  // EN: [Ginta]
-@000B57  C0F04 あとまわしだ！  // TODO: English translation
+@000B57  C0F04 あとまわしだ！  // EN: That can wait!
 @000BB2 F01B03  // LITERAL: F01B03 (usage not inferred)
 @000BE0  C0D04 ［ギンタ］  // EN: [Ginta]
-@000BFD  C0F04 オレもこのせかい、まもりてぇ！！  // TODO: English translation
+@000BFD  C0F04 オレもこのせかい、まもりてぇ！！  // EN: I want to protect this world too!!
 @000C6A F06A01  // LITERAL: F06A01 (usage not inferred)
 @000C98  C0D04 ［エド］  // EN: [Ed]
-@000CB3  C0F04 …  // TODO: English translation
+@000CB3  C0F04 …  // EN: ...
 @000CF2  C0D04 ［エド］  // EN: [Ed]
-@000D0D  C0F04 チェスのしたっぱに負けたやつが  // TODO: English translation
-@000D3E ナマイキいうじゃねぇか！  // TODO: English translation
+@000D0D  C0F04 チェスのしたっぱに負けたやつが  // EN: Big talk for someone who lost...
+@000D3E ナマイキいうじゃねぇか！  // EN: ...to a Chess Piece lackey!
 @000D80  C0D04 ［エド］  // EN: [Ed]
-@000D9B  C0F04 ダンナみてーにつよくなれるのか？  // TODO: English translation
+@000D9B  C0F04 ダンナみてーにつよくなれるのか？  // EN: Can you get as strong as Danna?
 @000DF8  C0D04 ［エド］  // EN: [Ed]
-@000E13  C0F04 チェスたおせるのかよ！？  // TODO: English translation
+@000E13  C0F04 チェスたおせるのかよ！？  // EN: Can you beat the Chess Pieces?!
 @000EE4 F01B05  // LITERAL: F01B05 (usage not inferred)
 @000F7E  C0D04 ［ギンタ］  // EN: [Ginta]
-@000F9B  C0F04 強くなる！！  // TODO: English translation
+@000F9B  C0F04 強くなる！！  // EN: I'll get stronger!!
 @000FF4 F01B03  // LITERAL: F01B03 (usage not inferred)
 @001022  C0D04 ［ギンタ］  // EN: [Ginta]
-@00103F  C0F04 たおす！！  // TODO: English translation
+@00103F  C0F04 たおす！！  // EN: I'll beat them!!
 @001102 F03A06  // LITERAL: F03A06 (usage not inferred)
 @0011DB  C0D04 ［ジャック］  // EN: [Jack]
 @0011FA  C0F04 ギンタ！  // EN: Ginta!
-@001215 かっこいいっス！  // TODO: English translation
+@001215 かっこいいっス！  // EN: You're so cool!
 @00124F  C0D04 ［ジャック］  // EN: [Jack]
-@00126E  C0F04 オイラもいっしょに  // TODO: English translation
-@001293 メルヘヴン、まもるっスよ！！  // TODO: English translation
+@00126E  C0F04 オイラもいっしょに  // EN: I'll help you...
+@001293 メルヘヴン、まもるっスよ！！  // EN: ...protect MÄR Heaven!!
 @0012E9 F01B01  // LITERAL: F01B01 (usage not inferred)
 @001317  C0D04 ［ギンタ］  // EN: [Ginta]
 @001334  C0F04 おう！！  // EN: Yeah!!
 @0014EA F06A01  // LITERAL: F06A01 (usage not inferred)
 @0015C3  C0D04 ［エド］  // EN: [Ed]
-@0015DE  C0F04 …  // TODO: English translation
+@0015DE  C0F04 …  // EN: ...
 @00161D  C0D04 ［エド］  // EN: [Ed]
-@001638  C0F04 （ダンナ…）  // TODO: English translation
+@001638  C0F04 （ダンナ…）  // EN: (Danna...)
 @001681  C0D04 ［エド］  // EN: [Ed]
-@00169C  C0F04 （こいつ、あんたと同じこといってるよ）  // TODO: English translation
+@00169C  C0F04 （こいつ、あんたと同じこといってるよ）  // EN: (He's saying the same thing you did.)
 @00199C F06A01  // LITERAL: F06A01 (usage not inferred)
 @001A75  C0D04 ［エド］  // EN: [Ed]
-@001A90  C0F04 よし…  // TODO: English translation
+@001A90  C0F04 よし…  // EN: All right...
 @001AD3  C0D04 ［エド］  // EN: [Ed]
-@001AEE  C0F04 久々にあれでも、やるか！  // TODO: English translation
+@001AEE  C0F04 久々にあれでも、やるか！  // EN: Been a while...let's give that a try!
 @001B53 F06A04  // LITERAL: F06A04 (usage not inferred)
 @001B81  C0D04 ［エド］  // EN: [Ed]
 @001B9C  C0F04 行くぞ！  // EN: Let's go!
 @001C27 F01B01  // LITERAL: F01B01 (usage not inferred)
 @001D00  C0D04 ［ギンタ］  // EN: [Ginta]
-@001D1D  C0F04 あ…うん！！  // TODO: English translation
+@001D1D  C0F04 あ…うん！！  // EN: Oh...yeah!!
 @001E8E G_EV012.SPC  // LITERAL: G_EV012.SPC (usage not inferred)

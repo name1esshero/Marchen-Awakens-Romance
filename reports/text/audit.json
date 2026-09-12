@@ -2,12 +2,13 @@
   "totals": {
     "scripts": 334,
     "records": 8640,
-    "english_comments": 3999,
-    "untranslated": 4641,
+    "english_comments": 5562,
+    "untranslated": 3078,
     "byte_matching": 334,
+    "empty_english_comments": 2,
     "ascii_literal_comments": 3073,
     "formatting_records": 5,
-    "pending_translation": 1563
+    "pending_translation": 0
   },
   "scripts": [
     {
@@ -16,6 +17,7 @@
       "english_comments": 0,
       "untranslated": 47,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 47,
       "formatting_records": 0,
       "pending_translation": 0
@@ -26,6 +28,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -36,6 +39,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -46,6 +50,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -56,6 +61,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -66,6 +72,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -76,6 +83,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -86,6 +94,7 @@
       "english_comments": 0,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -96,6 +105,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -106,6 +116,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -116,6 +127,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -126,6 +138,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -136,6 +149,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -146,6 +160,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -156,6 +171,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -166,6 +182,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -176,6 +193,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -186,6 +204,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -196,6 +215,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -206,6 +226,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -216,6 +237,7 @@
       "english_comments": 0,
       "untranslated": 5,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 5,
       "formatting_records": 0,
       "pending_translation": 0
@@ -226,6 +248,7 @@
       "english_comments": 0,
       "untranslated": 52,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 52,
       "formatting_records": 0,
       "pending_translation": 0
@@ -236,6 +259,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -246,6 +270,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -256,6 +281,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -266,6 +292,7 @@
       "english_comments": 0,
       "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
       "pending_translation": 0
@@ -276,6 +303,7 @@
       "english_comments": 0,
       "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
       "pending_translation": 0
@@ -286,6 +314,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -296,6 +325,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -306,6 +336,7 @@
       "english_comments": 0,
       "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
       "pending_translation": 0
@@ -316,6 +347,7 @@
       "english_comments": 0,
       "untranslated": 5,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 5,
       "formatting_records": 0,
       "pending_translation": 0
@@ -326,6 +358,7 @@
       "english_comments": 0,
       "untranslated": 6,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 6,
       "formatting_records": 0,
       "pending_translation": 0
@@ -336,6 +369,7 @@
       "english_comments": 0,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -346,6 +380,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -356,6 +391,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -366,6 +402,7 @@
       "english_comments": 0,
       "untranslated": 3,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 3,
       "formatting_records": 0,
       "pending_translation": 0
@@ -376,6 +413,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -386,6 +424,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -396,6 +435,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -406,6 +446,7 @@
       "english_comments": 0,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -416,6 +457,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -426,6 +468,7 @@
       "english_comments": 0,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -436,6 +479,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -446,6 +490,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -456,6 +501,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -466,6 +512,7 @@
       "english_comments": 0,
       "untranslated": 3,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 3,
       "formatting_records": 0,
       "pending_translation": 0
@@ -476,6 +523,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -486,6 +534,7 @@
       "english_comments": 0,
       "untranslated": 3,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 3,
       "formatting_records": 0,
       "pending_translation": 0
@@ -496,6 +545,7 @@
       "english_comments": 0,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -506,6 +556,7 @@
       "english_comments": 0,
       "untranslated": 0,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 0,
       "formatting_records": 0,
       "pending_translation": 0
@@ -516,6 +567,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -526,6 +578,7 @@
       "english_comments": 0,
       "untranslated": 54,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 54,
       "formatting_records": 0,
       "pending_translation": 0
@@ -536,6 +589,7 @@
       "english_comments": 60,
       "untranslated": 45,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 45,
       "formatting_records": 0,
       "pending_translation": 0
@@ -543,12 +597,13 @@
     {
       "name": "CH_M00A.SPC",
       "records": 11,
-      "english_comments": 2,
-      "untranslated": 9,
+      "english_comments": 5,
+      "untranslated": 6,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 6,
       "formatting_records": 0,
-      "pending_translation": 3
+      "pending_translation": 0
     },
     {
       "name": "CH_M01_3.SPC",
@@ -556,6 +611,7 @@
       "english_comments": 5,
       "untranslated": 5,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 5,
       "formatting_records": 0,
       "pending_translation": 0
@@ -566,6 +622,7 @@
       "english_comments": 0,
       "untranslated": 0,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 0,
       "formatting_records": 0,
       "pending_translation": 0
@@ -573,22 +630,24 @@
     {
       "name": "CH_M05A.SPC",
       "records": 13,
-      "english_comments": 3,
-      "untranslated": 10,
+      "english_comments": 9,
+      "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
-      "pending_translation": 6
+      "pending_translation": 0
     },
     {
       "name": "CH_M08A.SPC",
       "records": 9,
-      "english_comments": 3,
-      "untranslated": 6,
+      "english_comments": 6,
+      "untranslated": 3,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 3,
       "formatting_records": 0,
-      "pending_translation": 3
+      "pending_translation": 0
     },
     {
       "name": "CH_M09A.SPC",
@@ -596,6 +655,7 @@
       "english_comments": 96,
       "untranslated": 13,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 13,
       "formatting_records": 0,
       "pending_translation": 0
@@ -606,6 +666,7 @@
       "english_comments": 0,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -616,6 +677,7 @@
       "english_comments": 56,
       "untranslated": 8,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 8,
       "formatting_records": 0,
       "pending_translation": 0
@@ -626,6 +688,7 @@
       "english_comments": 0,
       "untranslated": 0,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 0,
       "formatting_records": 0,
       "pending_translation": 0
@@ -633,22 +696,24 @@
     {
       "name": "CH_M24_A.SPC",
       "records": 24,
-      "english_comments": 20,
-      "untranslated": 4,
+      "english_comments": 23,
+      "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
-      "pending_translation": 3
+      "pending_translation": 0
     },
     {
       "name": "CH_M26_6.SPC",
       "records": 112,
-      "english_comments": 28,
-      "untranslated": 84,
+      "english_comments": 69,
+      "untranslated": 43,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 43,
       "formatting_records": 0,
-      "pending_translation": 41
+      "pending_translation": 0
     },
     {
       "name": "D0_BOSS.SPC",
@@ -656,6 +721,7 @@
       "english_comments": 0,
       "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
       "pending_translation": 0
@@ -666,6 +732,7 @@
       "english_comments": 0,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -676,6 +743,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -686,6 +754,7 @@
       "english_comments": 0,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -696,6 +765,7 @@
       "english_comments": 0,
       "untranslated": 0,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 0,
       "formatting_records": 0,
       "pending_translation": 0
@@ -706,6 +776,7 @@
       "english_comments": 0,
       "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
       "pending_translation": 0
@@ -716,6 +787,7 @@
       "english_comments": 0,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -726,6 +798,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -736,6 +809,7 @@
       "english_comments": 0,
       "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
       "pending_translation": 0
@@ -746,6 +820,7 @@
       "english_comments": 0,
       "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
       "pending_translation": 0
@@ -756,6 +831,7 @@
       "english_comments": 0,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -766,6 +842,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -776,6 +853,7 @@
       "english_comments": 0,
       "untranslated": 6,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 6,
       "formatting_records": 0,
       "pending_translation": 0
@@ -786,6 +864,7 @@
       "english_comments": 0,
       "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
       "pending_translation": 0
@@ -796,6 +875,7 @@
       "english_comments": 0,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -806,6 +886,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -816,6 +897,7 @@
       "english_comments": 0,
       "untranslated": 8,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 8,
       "formatting_records": 0,
       "pending_translation": 0
@@ -826,6 +908,7 @@
       "english_comments": 0,
       "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
       "pending_translation": 0
@@ -836,6 +919,7 @@
       "english_comments": 0,
       "untranslated": 3,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 3,
       "formatting_records": 0,
       "pending_translation": 0
@@ -846,6 +930,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -856,6 +941,7 @@
       "english_comments": 0,
       "untranslated": 10,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 10,
       "formatting_records": 0,
       "pending_translation": 0
@@ -866,6 +952,7 @@
       "english_comments": 0,
       "untranslated": 3,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 3,
       "formatting_records": 0,
       "pending_translation": 0
@@ -876,6 +963,7 @@
       "english_comments": 0,
       "untranslated": 3,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 3,
       "formatting_records": 0,
       "pending_translation": 0
@@ -886,6 +974,7 @@
       "english_comments": 0,
       "untranslated": 17,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 17,
       "formatting_records": 0,
       "pending_translation": 0
@@ -893,22 +982,24 @@
     {
       "name": "DBG_FACE.SPC",
       "records": 297,
-      "english_comments": 35,
-      "untranslated": 262,
+      "english_comments": 149,
+      "untranslated": 148,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 148,
       "formatting_records": 0,
-      "pending_translation": 114
+      "pending_translation": 0
     },
     {
       "name": "DITEMCOM.SPC",
       "records": 8,
-      "english_comments": 4,
-      "untranslated": 4,
+      "english_comments": 6,
+      "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 2,
       "ascii_literal_comments": 0,
       "formatting_records": 2,
-      "pending_translation": 2
+      "pending_translation": 0
     },
     {
       "name": "DUNG_DEF.SPC",
@@ -916,6 +1007,7 @@
       "english_comments": 0,
       "untranslated": 0,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 0,
       "formatting_records": 0,
       "pending_translation": 0
@@ -923,22 +1015,24 @@
     {
       "name": "DUNG_END.SPC",
       "records": 9,
-      "english_comments": 2,
-      "untranslated": 7,
+      "english_comments": 7,
+      "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
-      "pending_translation": 5
+      "pending_translation": 0
     },
     {
       "name": "D_VS_R.SPC",
       "records": 28,
-      "english_comments": 17,
-      "untranslated": 11,
+      "english_comments": 22,
+      "untranslated": 6,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 6,
       "formatting_records": 0,
-      "pending_translation": 5
+      "pending_translation": 0
     },
     {
       "name": "END2.SPC",
@@ -946,6 +1040,7 @@
       "english_comments": 166,
       "untranslated": 54,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 52,
       "formatting_records": 2,
       "pending_translation": 0
@@ -956,6 +1051,7 @@
       "english_comments": 0,
       "untranslated": 0,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 0,
       "formatting_records": 0,
       "pending_translation": 0
@@ -966,6 +1062,7 @@
       "english_comments": 41,
       "untranslated": 22,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 22,
       "formatting_records": 0,
       "pending_translation": 0
@@ -976,6 +1073,7 @@
       "english_comments": 34,
       "untranslated": 16,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 16,
       "formatting_records": 0,
       "pending_translation": 0
@@ -986,6 +1084,7 @@
       "english_comments": 127,
       "untranslated": 26,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 26,
       "formatting_records": 0,
       "pending_translation": 0
@@ -996,6 +1095,7 @@
       "english_comments": 77,
       "untranslated": 19,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 19,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1003,12 +1103,13 @@
     {
       "name": "EV_AL04.SPC",
       "records": 11,
-      "english_comments": 4,
-      "untranslated": 7,
+      "english_comments": 9,
+      "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
-      "pending_translation": 5
+      "pending_translation": 0
     },
     {
       "name": "EV_BA01.SPC",
@@ -1016,6 +1117,7 @@
       "english_comments": 50,
       "untranslated": 20,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 20,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1026,6 +1128,7 @@
       "english_comments": 33,
       "untranslated": 11,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 11,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1036,6 +1139,7 @@
       "english_comments": 37,
       "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1046,6 +1150,7 @@
       "english_comments": 44,
       "untranslated": 5,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 5,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1053,32 +1158,35 @@
     {
       "name": "EV_BIN01.SPC",
       "records": 13,
-      "english_comments": 4,
-      "untranslated": 9,
+      "english_comments": 10,
+      "untranslated": 3,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 3,
       "formatting_records": 0,
-      "pending_translation": 6
+      "pending_translation": 0
     },
     {
       "name": "EV_BIN02.SPC",
       "records": 11,
-      "english_comments": 3,
-      "untranslated": 8,
+      "english_comments": 8,
+      "untranslated": 3,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 3,
       "formatting_records": 0,
-      "pending_translation": 5
+      "pending_translation": 0
     },
     {
       "name": "EV_BIN03.SPC",
       "records": 16,
-      "english_comments": 9,
-      "untranslated": 7,
+      "english_comments": 12,
+      "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
-      "pending_translation": 3
+      "pending_translation": 0
     },
     {
       "name": "EV_EDO01.SPC",
@@ -1086,6 +1194,7 @@
       "english_comments": 61,
       "untranslated": 22,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 22,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1096,6 +1205,7 @@
       "english_comments": 53,
       "untranslated": 14,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 14,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1106,6 +1216,7 @@
       "english_comments": 30,
       "untranslated": 9,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 9,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1116,6 +1227,7 @@
       "english_comments": 11,
       "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1126,6 +1238,7 @@
       "english_comments": 41,
       "untranslated": 11,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 11,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1136,6 +1249,7 @@
       "english_comments": 29,
       "untranslated": 10,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 10,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1146,6 +1260,7 @@
       "english_comments": 19,
       "untranslated": 6,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 6,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1156,6 +1271,7 @@
       "english_comments": 32,
       "untranslated": 8,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 8,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1166,6 +1282,7 @@
       "english_comments": 8,
       "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1176,6 +1293,7 @@
       "english_comments": 53,
       "untranslated": 18,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 18,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1186,6 +1304,7 @@
       "english_comments": 19,
       "untranslated": 5,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 5,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1196,6 +1315,7 @@
       "english_comments": 78,
       "untranslated": 27,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 27,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1206,6 +1326,7 @@
       "english_comments": 23,
       "untranslated": 14,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 14,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1216,6 +1337,7 @@
       "english_comments": 27,
       "untranslated": 9,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 9,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1226,6 +1348,7 @@
       "english_comments": 22,
       "untranslated": 6,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 6,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1236,6 +1359,7 @@
       "english_comments": 49,
       "untranslated": 11,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 11,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1246,6 +1370,7 @@
       "english_comments": 62,
       "untranslated": 17,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 17,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1256,6 +1381,7 @@
       "english_comments": 15,
       "untranslated": 6,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 6,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1266,6 +1392,7 @@
       "english_comments": 9,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1276,6 +1403,7 @@
       "english_comments": 7,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1286,6 +1414,7 @@
       "english_comments": 5,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1296,6 +1425,7 @@
       "english_comments": 53,
       "untranslated": 10,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 10,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1306,6 +1436,7 @@
       "english_comments": 5,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1316,6 +1447,7 @@
       "english_comments": 89,
       "untranslated": 25,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 25,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1326,6 +1458,7 @@
       "english_comments": 47,
       "untranslated": 27,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 27,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1336,6 +1469,7 @@
       "english_comments": 36,
       "untranslated": 24,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 24,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1346,6 +1480,7 @@
       "english_comments": 141,
       "untranslated": 34,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 34,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1353,12 +1488,13 @@
     {
       "name": "EV_IWA.SPC",
       "records": 13,
-      "english_comments": 5,
-      "untranslated": 8,
+      "english_comments": 11,
+      "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
-      "pending_translation": 6
+      "pending_translation": 0
     },
     {
       "name": "EV_JA01.SPC",
@@ -1366,6 +1502,7 @@
       "english_comments": 91,
       "untranslated": 34,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 34,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1376,6 +1513,7 @@
       "english_comments": 28,
       "untranslated": 8,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 8,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1386,6 +1524,7 @@
       "english_comments": 24,
       "untranslated": 13,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 13,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1396,6 +1535,7 @@
       "english_comments": 35,
       "untranslated": 17,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 17,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1406,6 +1546,7 @@
       "english_comments": 51,
       "untranslated": 18,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 18,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1413,12 +1554,13 @@
     {
       "name": "EV_JA04C.SPC",
       "records": 8,
-      "english_comments": 2,
-      "untranslated": 6,
+      "english_comments": 5,
+      "untranslated": 3,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 3,
       "formatting_records": 0,
-      "pending_translation": 3
+      "pending_translation": 0
     },
     {
       "name": "EV_MON01.SPC",
@@ -1426,6 +1568,7 @@
       "english_comments": 28,
       "untranslated": 6,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 6,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1436,6 +1579,7 @@
       "english_comments": 28,
       "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1446,6 +1590,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1453,32 +1598,35 @@
     {
       "name": "EV_MON04.SPC",
       "records": 8,
-      "english_comments": 2,
-      "untranslated": 6,
+      "english_comments": 6,
+      "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
-      "pending_translation": 4
+      "pending_translation": 0
     },
     {
       "name": "EV_MON05.SPC",
       "records": 8,
-      "english_comments": 2,
-      "untranslated": 6,
+      "english_comments": 6,
+      "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
-      "pending_translation": 4
+      "pending_translation": 0
     },
     {
       "name": "EV_MON06.SPC",
       "records": 11,
-      "english_comments": 3,
-      "untranslated": 8,
+      "english_comments": 9,
+      "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
-      "pending_translation": 6
+      "pending_translation": 0
     },
     {
       "name": "EV_PA01.SPC",
@@ -1486,6 +1634,7 @@
       "english_comments": 31,
       "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1496,6 +1645,7 @@
       "english_comments": 21,
       "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1506,6 +1656,7 @@
       "english_comments": 32,
       "untranslated": 13,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 13,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1516,6 +1667,7 @@
       "english_comments": 60,
       "untranslated": 19,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 19,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1523,12 +1675,13 @@
     {
       "name": "EV_START.SPC",
       "records": 14,
-      "english_comments": 4,
-      "untranslated": 10,
+      "english_comments": 8,
+      "untranslated": 6,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 6,
       "formatting_records": 0,
-      "pending_translation": 4
+      "pending_translation": 0
     },
     {
       "name": "EV_T1KIL.SPC",
@@ -1536,6 +1689,7 @@
       "english_comments": 29,
       "untranslated": 16,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 16,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1546,6 +1700,7 @@
       "english_comments": 31,
       "untranslated": 17,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 17,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1556,6 +1711,7 @@
       "english_comments": 100,
       "untranslated": 43,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 43,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1566,6 +1722,7 @@
       "english_comments": 52,
       "untranslated": 27,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 27,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1573,12 +1730,13 @@
     {
       "name": "EV_UTA01.SPC",
       "records": 101,
-      "english_comments": 28,
-      "untranslated": 73,
+      "english_comments": 73,
+      "untranslated": 28,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 28,
       "formatting_records": 0,
-      "pending_translation": 45
+      "pending_translation": 0
     },
     {
       "name": "EV_VE01.SPC",
@@ -1586,6 +1744,7 @@
       "english_comments": 9,
       "untranslated": 6,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 6,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1596,6 +1755,7 @@
       "english_comments": 52,
       "untranslated": 16,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 16,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1606,6 +1766,7 @@
       "english_comments": 4,
       "untranslated": 0,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 0,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1616,6 +1777,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1623,172 +1785,189 @@
     {
       "name": "G_EV001.SPC",
       "records": 13,
-      "english_comments": 4,
-      "untranslated": 9,
+      "english_comments": 8,
+      "untranslated": 5,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 5,
       "formatting_records": 0,
-      "pending_translation": 4
+      "pending_translation": 0
     },
     {
       "name": "G_EV002.SPC",
       "records": 13,
-      "english_comments": 3,
-      "untranslated": 10,
+      "english_comments": 6,
+      "untranslated": 7,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 7,
       "formatting_records": 0,
-      "pending_translation": 3
+      "pending_translation": 0
     },
     {
       "name": "G_EV003.SPC",
       "records": 78,
-      "english_comments": 23,
-      "untranslated": 55,
+      "english_comments": 48,
+      "untranslated": 30,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 30,
       "formatting_records": 0,
-      "pending_translation": 25
+      "pending_translation": 0
     },
     {
       "name": "G_EV004.SPC",
       "records": 2,
-      "english_comments": 1,
-      "untranslated": 1,
+      "english_comments": 2,
+      "untranslated": 0,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 0,
       "formatting_records": 0,
-      "pending_translation": 1
+      "pending_translation": 0
     },
     {
       "name": "G_EV005.SPC",
       "records": 49,
-      "english_comments": 16,
-      "untranslated": 33,
+      "english_comments": 35,
+      "untranslated": 14,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 14,
       "formatting_records": 0,
-      "pending_translation": 19
+      "pending_translation": 0
     },
     {
       "name": "G_EV006.SPC",
       "records": 49,
-      "english_comments": 12,
-      "untranslated": 37,
+      "english_comments": 31,
+      "untranslated": 18,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 18,
       "formatting_records": 0,
-      "pending_translation": 19
+      "pending_translation": 0
     },
     {
       "name": "G_EV007.SPC",
       "records": 53,
-      "english_comments": 19,
-      "untranslated": 34,
+      "english_comments": 39,
+      "untranslated": 14,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 14,
       "formatting_records": 0,
-      "pending_translation": 20
+      "pending_translation": 0
     },
     {
       "name": "G_EV010.SPC",
       "records": 8,
-      "english_comments": 2,
-      "untranslated": 6,
+      "english_comments": 5,
+      "untranslated": 3,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 3,
       "formatting_records": 0,
-      "pending_translation": 3
+      "pending_translation": 0
     },
     {
       "name": "G_EV011.SPC",
       "records": 111,
-      "english_comments": 34,
-      "untranslated": 77,
+      "english_comments": 80,
+      "untranslated": 31,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 31,
       "formatting_records": 0,
-      "pending_translation": 46
+      "pending_translation": 0
     },
     {
       "name": "G_EV011B.SPC",
       "records": 25,
-      "english_comments": 7,
-      "untranslated": 18,
+      "english_comments": 16,
+      "untranslated": 9,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 9,
       "formatting_records": 0,
-      "pending_translation": 9
+      "pending_translation": 0
     },
     {
       "name": "G_EV011C.SPC",
       "records": 81,
-      "english_comments": 30,
-      "untranslated": 51,
+      "english_comments": 61,
+      "untranslated": 20,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 20,
       "formatting_records": 0,
-      "pending_translation": 31
+      "pending_translation": 0
     },
     {
       "name": "G_EV012.SPC",
       "records": 13,
-      "english_comments": 4,
-      "untranslated": 9,
+      "english_comments": 5,
+      "untranslated": 8,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 8,
       "formatting_records": 0,
-      "pending_translation": 1
+      "pending_translation": 0
     },
     {
       "name": "G_EV013.SPC",
       "records": 27,
-      "english_comments": 8,
-      "untranslated": 19,
+      "english_comments": 17,
+      "untranslated": 10,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 10,
       "formatting_records": 0,
-      "pending_translation": 9
+      "pending_translation": 0
     },
     {
       "name": "G_EV020.SPC",
       "records": 102,
-      "english_comments": 29,
-      "untranslated": 73,
+      "english_comments": 70,
+      "untranslated": 32,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 32,
       "formatting_records": 0,
-      "pending_translation": 41
+      "pending_translation": 0
     },
     {
       "name": "G_EV020B.SPC",
       "records": 100,
-      "english_comments": 29,
-      "untranslated": 71,
+      "english_comments": 76,
+      "untranslated": 24,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 24,
       "formatting_records": 0,
-      "pending_translation": 47
+      "pending_translation": 0
     },
     {
       "name": "G_EV020C.SPC",
       "records": 70,
-      "english_comments": 21,
-      "untranslated": 49,
+      "english_comments": 55,
+      "untranslated": 15,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 15,
       "formatting_records": 0,
-      "pending_translation": 34
+      "pending_translation": 0
     },
     {
       "name": "G_EV021.SPC",
       "records": 88,
-      "english_comments": 30,
-      "untranslated": 58,
+      "english_comments": 69,
+      "untranslated": 19,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 19,
       "formatting_records": 0,
-      "pending_translation": 39
+      "pending_translation": 0
     },
     {
       "name": "G_EV022.SPC",
@@ -1796,6 +1975,7 @@
       "english_comments": 0,
       "untranslated": 0,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 0,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1803,12 +1983,13 @@
     {
       "name": "G_EV023.SPC",
       "records": 111,
-      "english_comments": 39,
-      "untranslated": 72,
+      "english_comments": 81,
+      "untranslated": 30,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 30,
       "formatting_records": 0,
-      "pending_translation": 42
+      "pending_translation": 0
     },
     {
       "name": "G_EV023B.SPC",
@@ -1816,6 +1997,7 @@
       "english_comments": 0,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1823,62 +2005,68 @@
     {
       "name": "G_EV023C.SPC",
       "records": 53,
-      "english_comments": 20,
-      "untranslated": 33,
+      "english_comments": 39,
+      "untranslated": 14,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 14,
       "formatting_records": 0,
-      "pending_translation": 19
+      "pending_translation": 0
     },
     {
       "name": "G_EV024.SPC",
       "records": 78,
-      "english_comments": 23,
-      "untranslated": 55,
+      "english_comments": 51,
+      "untranslated": 27,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 27,
       "formatting_records": 0,
-      "pending_translation": 28
+      "pending_translation": 0
     },
     {
       "name": "G_EV025.SPC",
       "records": 50,
-      "english_comments": 14,
-      "untranslated": 36,
+      "english_comments": 30,
+      "untranslated": 20,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 20,
       "formatting_records": 0,
-      "pending_translation": 16
+      "pending_translation": 0
     },
     {
       "name": "G_EV025B.SPC",
       "records": 125,
-      "english_comments": 35,
-      "untranslated": 90,
+      "english_comments": 93,
+      "untranslated": 32,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 32,
       "formatting_records": 0,
-      "pending_translation": 58
+      "pending_translation": 0
     },
     {
       "name": "G_EV030.SPC",
       "records": 92,
-      "english_comments": 28,
-      "untranslated": 64,
+      "english_comments": 65,
+      "untranslated": 27,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 27,
       "formatting_records": 0,
-      "pending_translation": 37
+      "pending_translation": 0
     },
     {
       "name": "G_EV031.SPC",
       "records": 21,
-      "english_comments": 5,
-      "untranslated": 16,
+      "english_comments": 11,
+      "untranslated": 10,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 10,
       "formatting_records": 0,
-      "pending_translation": 6
+      "pending_translation": 0
     },
     {
       "name": "G_EV032.SPC",
@@ -1886,6 +2074,7 @@
       "english_comments": 0,
       "untranslated": 0,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 0,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1893,52 +2082,57 @@
     {
       "name": "G_EV040.SPC",
       "records": 24,
-      "english_comments": 7,
-      "untranslated": 17,
+      "english_comments": 15,
+      "untranslated": 9,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 9,
       "formatting_records": 0,
-      "pending_translation": 8
+      "pending_translation": 0
     },
     {
       "name": "G_EV041.SPC",
       "records": 12,
-      "english_comments": 2,
-      "untranslated": 10,
+      "english_comments": 5,
+      "untranslated": 7,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 7,
       "formatting_records": 0,
-      "pending_translation": 3
+      "pending_translation": 0
     },
     {
       "name": "G_EV042.SPC",
       "records": 21,
-      "english_comments": 6,
-      "untranslated": 15,
+      "english_comments": 12,
+      "untranslated": 9,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 9,
       "formatting_records": 0,
-      "pending_translation": 6
+      "pending_translation": 0
     },
     {
       "name": "G_EV043.SPC",
       "records": 43,
-      "english_comments": 14,
-      "untranslated": 29,
+      "english_comments": 31,
+      "untranslated": 12,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 12,
       "formatting_records": 0,
-      "pending_translation": 17
+      "pending_translation": 0
     },
     {
       "name": "G_EV044.SPC",
       "records": 30,
-      "english_comments": 10,
-      "untranslated": 20,
+      "english_comments": 20,
+      "untranslated": 10,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 10,
       "formatting_records": 0,
-      "pending_translation": 10
+      "pending_translation": 0
     },
     {
       "name": "G_EV050.SPC",
@@ -1946,6 +2140,7 @@
       "english_comments": 55,
       "untranslated": 28,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 28,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1953,32 +2148,35 @@
     {
       "name": "G_EV051.SPC",
       "records": 61,
-      "english_comments": 18,
-      "untranslated": 43,
+      "english_comments": 42,
+      "untranslated": 19,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 19,
       "formatting_records": 0,
-      "pending_translation": 24
+      "pending_translation": 0
     },
     {
       "name": "G_EV052.SPC",
       "records": 11,
-      "english_comments": 3,
-      "untranslated": 8,
+      "english_comments": 6,
+      "untranslated": 5,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 5,
       "formatting_records": 0,
-      "pending_translation": 3
+      "pending_translation": 0
     },
     {
       "name": "G_EV060.SPC",
       "records": 52,
-      "english_comments": 19,
-      "untranslated": 33,
+      "english_comments": 37,
+      "untranslated": 15,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 15,
       "formatting_records": 0,
-      "pending_translation": 18
+      "pending_translation": 0
     },
     {
       "name": "G_EV061.SPC",
@@ -1986,6 +2184,7 @@
       "english_comments": 52,
       "untranslated": 28,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 28,
       "formatting_records": 0,
       "pending_translation": 0
@@ -1996,6 +2195,7 @@
       "english_comments": 111,
       "untranslated": 50,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 50,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2003,82 +2203,90 @@
     {
       "name": "G_EV063.SPC",
       "records": 20,
-      "english_comments": 7,
-      "untranslated": 13,
+      "english_comments": 14,
+      "untranslated": 6,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 6,
       "formatting_records": 0,
-      "pending_translation": 7
+      "pending_translation": 0
     },
     {
       "name": "G_VS_R.SPC",
       "records": 11,
-      "english_comments": 4,
-      "untranslated": 7,
+      "english_comments": 9,
+      "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
-      "pending_translation": 5
+      "pending_translation": 0
     },
     {
       "name": "HI_DUNG.SPC",
       "records": 8,
-      "english_comments": 0,
-      "untranslated": 8,
+      "english_comments": 2,
+      "untranslated": 6,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 6,
       "formatting_records": 0,
-      "pending_translation": 2
+      "pending_translation": 0
     },
     {
       "name": "HI_M00.SPC",
       "records": 26,
-      "english_comments": 9,
-      "untranslated": 17,
+      "english_comments": 23,
+      "untranslated": 3,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 3,
       "formatting_records": 0,
-      "pending_translation": 14
+      "pending_translation": 0
     },
     {
       "name": "HI_M01_1.SPC",
       "records": 7,
-      "english_comments": 3,
-      "untranslated": 4,
+      "english_comments": 5,
+      "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
-      "pending_translation": 2
+      "pending_translation": 0
     },
     {
       "name": "HI_M01_2.SPC",
       "records": 14,
-      "english_comments": 9,
-      "untranslated": 5,
+      "english_comments": 12,
+      "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
-      "pending_translation": 3
+      "pending_translation": 0
     },
     {
       "name": "HI_M04.SPC",
       "records": 5,
-      "english_comments": 2,
-      "untranslated": 3,
+      "english_comments": 3,
+      "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
-      "pending_translation": 1
+      "pending_translation": 0
     },
     {
       "name": "HI_M07.SPC",
       "records": 46,
-      "english_comments": 15,
-      "untranslated": 31,
+      "english_comments": 31,
+      "untranslated": 15,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 15,
       "formatting_records": 0,
-      "pending_translation": 16
+      "pending_translation": 0
     },
     {
       "name": "HI_M07_2.SPC",
@@ -2086,6 +2294,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2093,92 +2302,101 @@
     {
       "name": "HI_M09.SPC",
       "records": 5,
-      "english_comments": 1,
-      "untranslated": 4,
+      "english_comments": 3,
+      "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
-      "pending_translation": 2
+      "pending_translation": 0
     },
     {
       "name": "HI_M11.SPC",
       "records": 31,
-      "english_comments": 15,
-      "untranslated": 16,
+      "english_comments": 29,
+      "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
-      "pending_translation": 14
+      "pending_translation": 0
     },
     {
       "name": "HI_M24.SPC",
       "records": 135,
-      "english_comments": 45,
-      "untranslated": 90,
+      "english_comments": 105,
+      "untranslated": 30,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 30,
       "formatting_records": 0,
-      "pending_translation": 60
+      "pending_translation": 0
     },
     {
       "name": "HI_M24_1.SPC",
       "records": 64,
-      "english_comments": 18,
-      "untranslated": 46,
+      "english_comments": 48,
+      "untranslated": 16,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 16,
       "formatting_records": 0,
-      "pending_translation": 30
+      "pending_translation": 0
     },
     {
       "name": "HI_M24_2.SPC",
       "records": 134,
-      "english_comments": 47,
-      "untranslated": 87,
+      "english_comments": 105,
+      "untranslated": 29,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 29,
       "formatting_records": 0,
-      "pending_translation": 58
+      "pending_translation": 0
     },
     {
       "name": "HI_M24_4.SPC",
       "records": 111,
-      "english_comments": 38,
-      "untranslated": 73,
+      "english_comments": 85,
+      "untranslated": 26,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 26,
       "formatting_records": 0,
-      "pending_translation": 47
+      "pending_translation": 0
     },
     {
       "name": "HI_M25_1.SPC",
       "records": 20,
-      "english_comments": 7,
-      "untranslated": 13,
+      "english_comments": 14,
+      "untranslated": 6,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 6,
       "formatting_records": 0,
-      "pending_translation": 7
+      "pending_translation": 0
     },
     {
       "name": "HI_M25_2.SPC",
       "records": 32,
-      "english_comments": 10,
-      "untranslated": 22,
+      "english_comments": 23,
+      "untranslated": 9,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 9,
       "formatting_records": 0,
-      "pending_translation": 13
+      "pending_translation": 0
     },
     {
       "name": "HI_M26_2.SPC",
       "records": 10,
-      "english_comments": 3,
-      "untranslated": 7,
+      "english_comments": 7,
+      "untranslated": 3,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 3,
       "formatting_records": 0,
-      "pending_translation": 4
+      "pending_translation": 0
     },
     {
       "name": "HI_M42.SPC",
@@ -2186,6 +2404,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2196,6 +2415,7 @@
       "english_comments": 0,
       "untranslated": 44,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 44,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2206,6 +2426,7 @@
       "english_comments": 0,
       "untranslated": 18,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 18,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2213,52 +2434,57 @@
     {
       "name": "J_VS_M.SPC",
       "records": 17,
-      "english_comments": 11,
-      "untranslated": 6,
+      "english_comments": 17,
+      "untranslated": 0,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 0,
       "formatting_records": 0,
-      "pending_translation": 6
+      "pending_translation": 0
     },
     {
       "name": "L11_0_0.SPC",
       "records": 59,
-      "english_comments": 16,
-      "untranslated": 43,
+      "english_comments": 39,
+      "untranslated": 20,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 20,
       "formatting_records": 0,
-      "pending_translation": 23
+      "pending_translation": 0
     },
     {
       "name": "L11_0_2.SPC",
       "records": 61,
-      "english_comments": 20,
-      "untranslated": 41,
+      "english_comments": 43,
+      "untranslated": 18,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 18,
       "formatting_records": 0,
-      "pending_translation": 23
+      "pending_translation": 0
     },
     {
       "name": "L11_0_3.SPC",
       "records": 10,
-      "english_comments": 3,
-      "untranslated": 7,
+      "english_comments": 6,
+      "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
-      "pending_translation": 3
+      "pending_translation": 0
     },
     {
       "name": "L24_0_0.SPC",
       "records": 90,
-      "english_comments": 44,
-      "untranslated": 46,
+      "english_comments": 78,
+      "untranslated": 12,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 12,
       "formatting_records": 0,
-      "pending_translation": 34
+      "pending_translation": 0
     },
     {
       "name": "L24_1_0.SPC",
@@ -2266,6 +2492,7 @@
       "english_comments": 0,
       "untranslated": 3,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 3,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2273,12 +2500,13 @@
     {
       "name": "L25_4_0.SPC",
       "records": 41,
-      "english_comments": 15,
-      "untranslated": 26,
+      "english_comments": 31,
+      "untranslated": 10,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 10,
       "formatting_records": 0,
-      "pending_translation": 16
+      "pending_translation": 0
     },
     {
       "name": "MAP00_A.SPC",
@@ -2286,6 +2514,7 @@
       "english_comments": 0,
       "untranslated": 6,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 6,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2296,6 +2525,7 @@
       "english_comments": 0,
       "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2306,6 +2536,7 @@
       "english_comments": 0,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2316,6 +2547,7 @@
       "english_comments": 0,
       "untranslated": 5,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 5,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2326,6 +2558,7 @@
       "english_comments": 0,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2336,6 +2569,7 @@
       "english_comments": 0,
       "untranslated": 3,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 3,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2346,6 +2580,7 @@
       "english_comments": 0,
       "untranslated": 3,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 3,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2356,6 +2591,7 @@
       "english_comments": 0,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2366,6 +2602,7 @@
       "english_comments": 0,
       "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2376,6 +2613,7 @@
       "english_comments": 0,
       "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2386,6 +2624,7 @@
       "english_comments": 0,
       "untranslated": 3,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 3,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2396,6 +2635,7 @@
       "english_comments": 0,
       "untranslated": 9,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 9,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2406,6 +2646,7 @@
       "english_comments": 0,
       "untranslated": 7,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 7,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2416,6 +2657,7 @@
       "english_comments": 0,
       "untranslated": 5,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 5,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2426,6 +2668,7 @@
       "english_comments": 0,
       "untranslated": 3,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 3,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2436,6 +2679,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2446,6 +2690,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2456,6 +2701,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2466,6 +2712,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2476,6 +2723,7 @@
       "english_comments": 0,
       "untranslated": 11,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 11,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2486,6 +2734,7 @@
       "english_comments": 0,
       "untranslated": 3,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 3,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2496,6 +2745,7 @@
       "english_comments": 0,
       "untranslated": 14,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 14,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2506,6 +2756,7 @@
       "english_comments": 0,
       "untranslated": 3,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 3,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2516,6 +2767,7 @@
       "english_comments": 0,
       "untranslated": 5,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 5,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2526,6 +2778,7 @@
       "english_comments": 0,
       "untranslated": 15,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 15,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2536,6 +2789,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2546,6 +2800,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2556,6 +2811,7 @@
       "english_comments": 0,
       "untranslated": 16,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 16,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2566,6 +2822,7 @@
       "english_comments": 0,
       "untranslated": 6,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 6,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2576,6 +2833,7 @@
       "english_comments": 0,
       "untranslated": 6,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 6,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2586,6 +2844,7 @@
       "english_comments": 0,
       "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2596,6 +2855,7 @@
       "english_comments": 0,
       "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2606,6 +2866,7 @@
       "english_comments": 0,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2616,6 +2877,7 @@
       "english_comments": 0,
       "untranslated": 9,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 9,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2626,6 +2888,7 @@
       "english_comments": 0,
       "untranslated": 9,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 9,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2636,6 +2899,7 @@
       "english_comments": 0,
       "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2646,6 +2910,7 @@
       "english_comments": 0,
       "untranslated": 5,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 5,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2656,6 +2921,7 @@
       "english_comments": 0,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2666,6 +2932,7 @@
       "english_comments": 0,
       "untranslated": 6,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 6,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2676,6 +2943,7 @@
       "english_comments": 0,
       "untranslated": 12,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 12,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2686,6 +2954,7 @@
       "english_comments": 0,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2696,6 +2965,7 @@
       "english_comments": 0,
       "untranslated": 6,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 6,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2706,6 +2976,7 @@
       "english_comments": 0,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2716,6 +2987,7 @@
       "english_comments": 0,
       "untranslated": 5,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 5,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2723,62 +2995,68 @@
     {
       "name": "OBJ_D.SPC",
       "records": 6,
-      "english_comments": 3,
-      "untranslated": 3,
+      "english_comments": 5,
+      "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
-      "pending_translation": 2
+      "pending_translation": 0
     },
     {
       "name": "OBJ_G.SPC",
       "records": 8,
-      "english_comments": 3,
-      "untranslated": 5,
+      "english_comments": 5,
+      "untranslated": 3,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 3,
       "formatting_records": 0,
-      "pending_translation": 2
+      "pending_translation": 0
     },
     {
       "name": "OBJ_J.SPC",
       "records": 11,
-      "english_comments": 2,
-      "untranslated": 9,
+      "english_comments": 7,
+      "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
-      "pending_translation": 5
+      "pending_translation": 0
     },
     {
       "name": "OBJ_S.SPC",
       "records": 4,
-      "english_comments": 2,
-      "untranslated": 2,
+      "english_comments": 3,
+      "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
-      "pending_translation": 1
+      "pending_translation": 0
     },
     {
       "name": "OBJ_V.SPC",
       "records": 6,
-      "english_comments": 2,
-      "untranslated": 4,
+      "english_comments": 3,
+      "untranslated": 3,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 3,
       "formatting_records": 0,
-      "pending_translation": 1
+      "pending_translation": 0
     },
     {
       "name": "OPEN.SPC",
       "records": 170,
-      "english_comments": 56,
-      "untranslated": 114,
+      "english_comments": 144,
+      "untranslated": 26,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 26,
       "formatting_records": 0,
-      "pending_translation": 88
+      "pending_translation": 0
     },
     {
       "name": "PHANTOM.SPC",
@@ -2786,6 +3064,7 @@
       "english_comments": 0,
       "untranslated": 0,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 0,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2793,72 +3072,79 @@
     {
       "name": "SHOPPA01.SPC",
       "records": 9,
-      "english_comments": 4,
-      "untranslated": 5,
+      "english_comments": 9,
+      "untranslated": 0,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 0,
       "formatting_records": 0,
-      "pending_translation": 5
+      "pending_translation": 0
     },
     {
       "name": "SHOPPA02.SPC",
       "records": 9,
-      "english_comments": 4,
-      "untranslated": 5,
+      "english_comments": 9,
+      "untranslated": 0,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 0,
       "formatting_records": 0,
-      "pending_translation": 5
+      "pending_translation": 0
     },
     {
       "name": "SHOPPA03.SPC",
       "records": 9,
-      "english_comments": 4,
-      "untranslated": 5,
+      "english_comments": 9,
+      "untranslated": 0,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 0,
       "formatting_records": 0,
-      "pending_translation": 5
+      "pending_translation": 0
     },
     {
       "name": "SHOPPA04.SPC",
       "records": 11,
-      "english_comments": 4,
-      "untranslated": 7,
+      "english_comments": 11,
+      "untranslated": 0,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 0,
       "formatting_records": 0,
-      "pending_translation": 7
+      "pending_translation": 0
     },
     {
       "name": "SHOPPA05.SPC",
       "records": 12,
-      "english_comments": 5,
-      "untranslated": 7,
+      "english_comments": 12,
+      "untranslated": 0,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 0,
       "formatting_records": 0,
-      "pending_translation": 7
+      "pending_translation": 0
     },
     {
       "name": "SHOPPE01.SPC",
       "records": 6,
-      "english_comments": 3,
-      "untranslated": 3,
+      "english_comments": 6,
+      "untranslated": 0,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 0,
       "formatting_records": 0,
-      "pending_translation": 3
+      "pending_translation": 0
     },
     {
       "name": "SHOPPE02.SPC",
       "records": 9,
-      "english_comments": 5,
-      "untranslated": 4,
+      "english_comments": 9,
+      "untranslated": 0,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 0,
       "formatting_records": 0,
-      "pending_translation": 4
+      "pending_translation": 0
     },
     {
       "name": "SPR_DUNG.SPC",
@@ -2866,6 +3152,7 @@
       "english_comments": 5,
       "untranslated": 10,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 10,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2876,6 +3163,7 @@
       "english_comments": 0,
       "untranslated": 80,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 80,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2883,22 +3171,24 @@
     {
       "name": "SP_M00.SPC",
       "records": 13,
-      "english_comments": 4,
-      "untranslated": 9,
+      "english_comments": 7,
+      "untranslated": 6,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 6,
       "formatting_records": 0,
-      "pending_translation": 3
+      "pending_translation": 0
     },
     {
       "name": "SP_M01.SPC",
       "records": 17,
-      "english_comments": 4,
-      "untranslated": 13,
+      "english_comments": 10,
+      "untranslated": 7,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 7,
       "formatting_records": 0,
-      "pending_translation": 6
+      "pending_translation": 0
     },
     {
       "name": "SP_M01_1.SPC",
@@ -2906,6 +3196,7 @@
       "english_comments": 0,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2913,12 +3204,13 @@
     {
       "name": "SP_M01_3.SPC",
       "records": 15,
-      "english_comments": 3,
-      "untranslated": 12,
+      "english_comments": 7,
+      "untranslated": 8,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 8,
       "formatting_records": 0,
-      "pending_translation": 4
+      "pending_translation": 0
     },
     {
       "name": "SP_M01_4.SPC",
@@ -2926,6 +3218,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2936,6 +3229,7 @@
       "english_comments": 0,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2946,6 +3240,7 @@
       "english_comments": 0,
       "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2953,12 +3248,13 @@
     {
       "name": "SP_M04.SPC",
       "records": 10,
-      "english_comments": 0,
-      "untranslated": 10,
+      "english_comments": 1,
+      "untranslated": 9,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 9,
       "formatting_records": 0,
-      "pending_translation": 1
+      "pending_translation": 0
     },
     {
       "name": "SP_M04_4.SPC",
@@ -2966,6 +3262,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2976,6 +3273,7 @@
       "english_comments": 0,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2986,6 +3284,7 @@
       "english_comments": 0,
       "untranslated": 3,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 3,
       "formatting_records": 0,
       "pending_translation": 0
@@ -2993,12 +3292,13 @@
     {
       "name": "SP_M06_1.SPC",
       "records": 7,
-      "english_comments": 2,
-      "untranslated": 5,
+      "english_comments": 3,
+      "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
-      "pending_translation": 1
+      "pending_translation": 0
     },
     {
       "name": "SP_M06_2.SPC",
@@ -3006,6 +3306,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -3016,6 +3317,7 @@
       "english_comments": 0,
       "untranslated": 9,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 9,
       "formatting_records": 0,
       "pending_translation": 0
@@ -3023,22 +3325,24 @@
     {
       "name": "SP_M07_1.SPC",
       "records": 17,
-      "english_comments": 0,
-      "untranslated": 17,
+      "english_comments": 1,
+      "untranslated": 16,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 16,
       "formatting_records": 0,
-      "pending_translation": 1
+      "pending_translation": 0
     },
     {
       "name": "SP_M08.SPC",
       "records": 10,
-      "english_comments": 3,
-      "untranslated": 7,
+      "english_comments": 10,
+      "untranslated": 0,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 0,
       "formatting_records": 0,
-      "pending_translation": 7
+      "pending_translation": 0
     },
     {
       "name": "SP_M09.SPC",
@@ -3046,6 +3350,7 @@
       "english_comments": 0,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -3056,6 +3361,7 @@
       "english_comments": 0,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -3063,22 +3369,24 @@
     {
       "name": "SP_M10_1.SPC",
       "records": 2,
-      "english_comments": 0,
-      "untranslated": 2,
+      "english_comments": 1,
+      "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
-      "pending_translation": 1
+      "pending_translation": 0
     },
     {
       "name": "SP_M24.SPC",
       "records": 2,
-      "english_comments": 0,
-      "untranslated": 2,
+      "english_comments": 1,
+      "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 0,
       "formatting_records": 1,
-      "pending_translation": 1
+      "pending_translation": 0
     },
     {
       "name": "SP_M24_1.SPC",
@@ -3086,6 +3394,7 @@
       "english_comments": 0,
       "untranslated": 5,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 5,
       "formatting_records": 0,
       "pending_translation": 0
@@ -3096,6 +3405,7 @@
       "english_comments": 0,
       "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
       "pending_translation": 0
@@ -3103,22 +3413,24 @@
     {
       "name": "SP_M24_3.SPC",
       "records": 3,
-      "english_comments": 1,
-      "untranslated": 2,
+      "english_comments": 3,
+      "untranslated": 0,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 0,
       "formatting_records": 0,
-      "pending_translation": 2
+      "pending_translation": 0
     },
     {
       "name": "SP_M24_4.SPC",
       "records": 55,
-      "english_comments": 15,
-      "untranslated": 40,
+      "english_comments": 34,
+      "untranslated": 21,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 21,
       "formatting_records": 0,
-      "pending_translation": 19
+      "pending_translation": 0
     },
     {
       "name": "SP_M25_1.SPC",
@@ -3126,6 +3438,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -3136,6 +3449,7 @@
       "english_comments": 0,
       "untranslated": 8,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 8,
       "formatting_records": 0,
       "pending_translation": 0
@@ -3143,22 +3457,24 @@
     {
       "name": "SP_M25_4.SPC",
       "records": 31,
-      "english_comments": 6,
-      "untranslated": 25,
+      "english_comments": 16,
+      "untranslated": 15,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 15,
       "formatting_records": 0,
-      "pending_translation": 10
+      "pending_translation": 0
     },
     {
       "name": "SP_M25_5.SPC",
       "records": 71,
-      "english_comments": 19,
-      "untranslated": 52,
+      "english_comments": 48,
+      "untranslated": 23,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 23,
       "formatting_records": 0,
-      "pending_translation": 29
+      "pending_translation": 0
     },
     {
       "name": "SP_M26_1.SPC",
@@ -3166,6 +3482,7 @@
       "english_comments": 0,
       "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
       "pending_translation": 0
@@ -3173,12 +3490,13 @@
     {
       "name": "SP_M26_2.SPC",
       "records": 26,
-      "english_comments": 7,
-      "untranslated": 19,
+      "english_comments": 16,
+      "untranslated": 10,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 10,
       "formatting_records": 0,
-      "pending_translation": 9
+      "pending_translation": 0
     },
     {
       "name": "SP_M26_3.SPC",
@@ -3186,6 +3504,7 @@
       "english_comments": 0,
       "untranslated": 5,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 5,
       "formatting_records": 0,
       "pending_translation": 0
@@ -3193,22 +3512,24 @@
     {
       "name": "SP_M26_5.SPC",
       "records": 52,
-      "english_comments": 18,
-      "untranslated": 34,
+      "english_comments": 35,
+      "untranslated": 17,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 17,
       "formatting_records": 0,
-      "pending_translation": 17
+      "pending_translation": 0
     },
     {
       "name": "SP_M40.SPC",
       "records": 5,
-      "english_comments": 0,
-      "untranslated": 5,
+      "english_comments": 1,
+      "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
-      "pending_translation": 1
+      "pending_translation": 0
     },
     {
       "name": "SP_M41.SPC",
@@ -3216,6 +3537,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -3223,22 +3545,24 @@
     {
       "name": "SP_M42.SPC",
       "records": 11,
-      "english_comments": 2,
-      "untranslated": 9,
+      "english_comments": 6,
+      "untranslated": 5,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 5,
       "formatting_records": 0,
-      "pending_translation": 4
+      "pending_translation": 0
     },
     {
       "name": "SROLL.SPC",
       "records": 3,
-      "english_comments": 0,
-      "untranslated": 3,
+      "english_comments": 1,
+      "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
-      "pending_translation": 1
+      "pending_translation": 0
     },
     {
       "name": "S_BTLIRQ.SPC",
@@ -3246,6 +3570,7 @@
       "english_comments": 0,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -3256,6 +3581,7 @@
       "english_comments": 0,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -3266,6 +3592,7 @@
       "english_comments": 0,
       "untranslated": 28,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 28,
       "formatting_records": 0,
       "pending_translation": 0
@@ -3276,6 +3603,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -3286,6 +3614,7 @@
       "english_comments": 0,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -3296,6 +3625,7 @@
       "english_comments": 0,
       "untranslated": 1,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 1,
       "formatting_records": 0,
       "pending_translation": 0
@@ -3303,12 +3633,13 @@
     {
       "name": "S_MAP11.SPC",
       "records": 7,
-      "english_comments": 2,
-      "untranslated": 5,
+      "english_comments": 3,
+      "untranslated": 4,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 4,
       "formatting_records": 0,
-      "pending_translation": 1
+      "pending_translation": 0
     },
     {
       "name": "S_MAPIRQ.SPC",
@@ -3316,6 +3647,7 @@
       "english_comments": 0,
       "untranslated": 123,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 123,
       "formatting_records": 0,
       "pending_translation": 0
@@ -3326,6 +3658,7 @@
       "english_comments": 0,
       "untranslated": 0,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 0,
       "formatting_records": 0,
       "pending_translation": 0
@@ -3336,6 +3669,7 @@
       "english_comments": 0,
       "untranslated": 2,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 2,
       "formatting_records": 0,
       "pending_translation": 0
@@ -3343,12 +3677,13 @@
     {
       "name": "W_MAP.SPC",
       "records": 16,
-      "english_comments": 0,
-      "untranslated": 16,
+      "english_comments": 1,
+      "untranslated": 15,
       "byte_matching": true,
+      "empty_english_comments": 0,
       "ascii_literal_comments": 15,
       "formatting_records": 0,
-      "pending_translation": 1
+      "pending_translation": 0
     }
   ]
 }

@@ -4,12 +4,12 @@
 
 @000122 F26A01  // LITERAL: F26A01 (usage not inferred)
 @000204  C0D04 ［メリロ］  // EN: [Merilo]
-@000242 これでかだいは終了です  // TODO: English translation
+@000242 これでかだいは終了です  // EN: That completes your assignment.
 @000282  C0D04 ［メリロ］  // EN: [Merilo]
-@00029F  C0F04 ゲームモードに C0904 『ダンジョンモード』 C0F04 が  // TODO: English translation
-@0002E4 ついかされました  // TODO: English translation
+@00029F  C0F04 ゲームモードに C0904 『ダンジョンモード』 C0F04 が  // EN: Dungeon Mode...
+@0002E4 ついかされました  // EN: ...has been added to the game modes.
 @00031E  C0D04 ［メリロ］  // EN: [Merilo]
-@00033B  C0F04 タイトルから、いつでも修練の門に  // TODO: English translation
-@00036E 入ることができます  // TODO: English translation
+@00033B  C0F04 タイトルから、いつでも修練の門に  // EN: You can enter the Training Gate...
+@00036E 入ることができます  // EN: ...at any time from the title screen.
 @00047D G_EV013.SPC  // LITERAL: G_EV013.SPC (usage not inferred)
-@000221  C0F04 おつかれさま<F0><40>  // TODO: English translation
+@000221  C0F04 おつかれさま<F0><40>  // EN: Well done!

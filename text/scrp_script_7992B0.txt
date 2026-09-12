@@ -4,12 +4,12 @@
 
 @000151 F03A01  // LITERAL: F03A01 (usage not inferred)
 @00022A  C0D04 ［ジャック］  // EN: [Jack]
-@000249  C0F04 つよくなるには…  // TODO: English translation
+@000249  C0F04 つよくなるには…  // EN: To get stronger...
 @0002A6 F01B01  // LITERAL: F01B01 (usage not inferred)
 @00037F  C0D04 ［ギンタ］  // EN: [Ginta]
-@00039C  C0F04 魔物とたたかうのが  // TODO: English translation
-@0003C1 いちばんだ！！  // TODO: English translation
+@00039C  C0F04 魔物とたたかうのが  // EN: ...fighting monsters...
+@0003C1 いちばんだ！！  // EN: ...is the best way!!
 @0003F9  C0D04 ［ギンタ］  // EN: [Ginta]
-@000416  C0F04 ガンガンいくぜ！  // TODO: English translation
+@000416  C0F04 ガンガンいくぜ！  // EN: Let's go all out!
 @000463  C0D04 ［ジャック］  // EN: [Jack]
-@000482  C0F04 いくっス！！  // TODO: English translation
+@000482  C0F04 いくっス！！  // EN: Let's do it!!

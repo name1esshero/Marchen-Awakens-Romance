@@ -4,8 +4,8 @@
   "runtime_integrated": true,
   "runtime_scope": "Optional DialogueStart bridge with A-button pagination; unmapped messages retain Japanese; emulator validation pending.",
   "counts": {
-    "fits_profile": 3998,
-    "needs_pagination": 1
+    "fits_profile": 5558,
+    "needs_pagination": 4
   },
   "failures": []
 }

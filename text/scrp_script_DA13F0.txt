@@ -3,13 +3,13 @@
 // Regenerate comments with tools/translate_comments.py; this copy is not built.
 
 @0000F6  C0D04 ［宿屋］  // EN: [Innkeeper]
-@000111  C0F04 おつかれでしたら、ぜひ私どもの宿に！  // TODO: English translation
+@000111  C0F04 おつかれでしたら、ぜひ私どもの宿に！  // EN: If you're tired, do stay at our inn!
 @000172  C0D04 ［宿屋］  // EN: [Innkeeper]
-@00018D  C0F04 １００Ｐで何名さまでもかまいません  // TODO: English translation
-@0001C2 おとまりになりますか？  // TODO: English translation
+@00018D  C0F04 １００Ｐで何名さまでもかまいません  // EN: It's 100P, no matter how many guests.
+@0001C2 おとまりになりますか？  // EN: Would you like to stay?
 @000231  C0D04 ［宿屋］  // EN: [Innkeeper]
-@00024C  C0F04 ピューターがたりないようです  // TODO: English translation
-@00027B またおこしください  // TODO: English translation
-@000426 すっかり元気になった！  // TODO: English translation
+@00024C  C0F04 ピューターがたりないようです  // EN: You don't seem to have enough pewter.
+@00027B またおこしください  // EN: Please come again.
+@000426 すっかり元気になった！  // EN: Everyone feels completely refreshed!
 @0005C5  C0D04 ［宿屋］  // EN: [Innkeeper]
-@0005E0  C0F04 またおこしください  // TODO: English translation
+@0005E0  C0F04 またおこしください  // EN: Please come again.

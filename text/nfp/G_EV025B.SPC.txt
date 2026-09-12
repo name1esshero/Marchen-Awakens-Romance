@@ -4,126 +4,126 @@
 
 @0002B4 F06A01  // LITERAL: F06A01 (usage not inferred)
 @00038D  C0D04 ［エド］  // EN: [Ed]
-@0003A8  C0F04 ちっとは役にたつように  // TODO: English translation
-@0003D1 なったみてーだな  // TODO: English translation
+@0003A8  C0F04 ちっとは役にたつように  // EN: Looks like you've become...
+@0003D1 なったみてーだな  // EN: ...a little more useful.
 @00040B  C0D04 ［エド］  // EN: [Ed]
-@000426  C0F04 これから南下して、ヒルドたいりくにいくぞ  // TODO: English translation
+@000426  C0F04 これから南下して、ヒルドたいりくにいくぞ  // EN: We're heading south to the Hild continent.
 @00056C F01B11  // LITERAL: F01B11 (usage not inferred)
 @000645  C0D04 ［ギンタ］  // EN: [Ginta]
-@000662  C0F04 ヒルドたいりく？？  // TODO: English translation
+@000662  C0F04 ヒルドたいりく？？  // EN: The Hild continent??
 @0006C1 F06A01  // LITERAL: F06A01 (usage not inferred)
 @0006EF  C0D04 ［エド］  // EN: [Ed]
-@00070A  C0F04 そうだ！  // TODO: English translation
-@000725 チェスの兵隊たいじに…  // TODO: English translation
+@00070A  C0F04 そうだ！  // EN: That's right!
+@000725 チェスの兵隊たいじに…  // EN: To take down the Chess Pieces...
 @0007AB F06A05  // LITERAL: F06A05 (usage not inferred)
 @0007D9  C0D04 ［エド］  // EN: [Ed]
-@0007F4  C0F04 たい…  // TODO: English translation
+@0007F4  C0F04 たい…  // EN: Take...
 @00087D F06A05  // LITERAL: F06A05 (usage not inferred)
 @0008AB  C0D04 ［エド］  // EN: [Ed]
-@0008C6  C0F04 …  // TODO: English translation
+@0008C6  C0F04 …  // EN: ...
 @0009D4 A  // LITERAL: A (usage not inferred)
 @000C51 F04A01  // LITERAL: F04A01 (usage not inferred)
 @000D2A  C0D04 ［スノウ］  // EN: [Snow]
-@000D47  C0F04 おはよ！エド！  // TODO: English translation
+@000D47  C0F04 おはよ！エド！  // EN: Morning, Ed!
 @000DC9 F05A01  // LITERAL: F05A01 (usage not inferred)
 @000EA2  C0D04 ［エド］  // EN: [Ed]
-@000EBD  C0F04 おお、ひめさま！  // TODO: English translation
-@000EE0 おひさしゅうございます！！  // TODO: English translation
+@000EBD  C0F04 おお、ひめさま！  // EN: Oh, Princess!
+@000EE0 おひさしゅうございます！！  // EN: It has been so long!!
 @000F34 F05A02  // LITERAL: F05A02 (usage not inferred)
 @000F62  C0D04 ［エド］  // EN: [Ed]
-@000F7D  C0F04 そしてギンタどの！  // TODO: English translation
-@000FA2 アランの中から見ていました！  // TODO: English translation
+@000F7D  C0F04 そしてギンタどの！  // EN: And Master Ginta!
+@000FA2 アランの中から見ていました！  // EN: I was watching from inside Alan!
 @00102E F01B02  // LITERAL: F01B02 (usage not inferred)
 @001107  C0D04 ［エド］  // EN: [Ed]
-@001122  C0F04 ずいぶんと  // TODO: English translation
-@00113F 成長なさいましたな！  // TODO: English translation
+@001122  C0F04 ずいぶんと  // EN: You have grown...
+@00113F 成長なさいましたな！  // EN: ...a great deal!
 @00118D F01B02  // LITERAL: F01B02 (usage not inferred)
 @0011BB  C0D04 ［ギンタ］  // EN: [Ginta]
-@0011D8  C0F04 へへ…  // TODO: English translation
+@0011D8  C0F04 へへ…  // EN: Heh heh...
 @001251  C0D04 ［エド］  // EN: [Ed]
-@00126C  C0F04 ところで…ひめさま…！  // TODO: English translation
-@001295 お気付きですか？  // TODO: English translation
+@00126C  C0F04 ところで…ひめさま…！  // EN: By the way...Princess...!
+@001295 お気付きですか？  // EN: Have you noticed?
 @0012DF F04A01  // LITERAL: F04A01 (usage not inferred)
 @0013B8  C0D04 ［スノウ］  // EN: [Snow]
 @0013D5  C0F04 …うん！  // EN: ...Yeah!
 @001496 F03A01  // LITERAL: F03A01 (usage not inferred)
 @00156F  C0D04 ［ジャック］  // EN: [Jack]
-@00158E  C0F04 な、なんスか？  // TODO: English translation
+@00158E  C0F04 な、なんスか？  // EN: N-noticed what?
 @001755 F04A02  // LITERAL: F04A02 (usage not inferred)
 @00182E  C0D04 ［スノウ］  // EN: [Snow]
-@00184B  C0F04 わたし、レスターヴァから  // TODO: English translation
-@001876 逃げだすまえの日に…  // TODO: English translation
+@00184B  C0F04 わたし、レスターヴァから  // EN: The day before...
+@001876 逃げだすまえの日に…  // EN: ...I fled Lestava...
 @0018B4  C0D04 ［スノウ］  // EN: [Snow]
-@0018D1  C0F04 城の占い師から  // TODO: English translation
-@0018F2 こう、お告げがあったの  // TODO: English translation
+@0018D1  C0F04 城の占い師から  // EN: ...the castle's fortune-teller...
+@0018F2 こう、お告げがあったの  // EN: ...gave me this prophecy.
 @0019AA  C0D04 ［占い師］  // EN: [Fortune-teller]
-@0019C7  C0F04 『城からにげなさい、ひめ！』  // TODO: English translation
+@0019C7  C0F04 『城からにげなさい、ひめ！』  // EN: 'Flee the castle, Princess!'
 @001A20  C0D04 ［占い師］  // EN: [Fortune-teller]
-@001A3D  C0F04 『あらたなる軍をおつくりになるのです』  // TODO: English translation
+@001A3D  C0F04 『あらたなる軍をおつくりになるのです』  // EN: 'You must form a new army.'
 @001AA0  C0D04 ［占い師］  // EN: [Fortune-teller]
-@001ABD  C0F04 『七人のゆうしゃをさがすのです』  // TODO: English translation
+@001ABD  C0F04 『七人のゆうしゃをさがすのです』  // EN: 'Seek out seven heroes.'
 @001B1A  C0D04 ［占い師］  // EN: [Fortune-teller]
-@001B37  C0F04 『そしてその七人は  // TODO: English translation
-@001B5C 　かならずやひめさまを…』  // TODO: English translation
+@001B37  C0F04 『そしてその七人は  // EN: 'And those seven will surely...
+@001B5C 　かならずやひめさまを…』  // EN: ...protect you, Princess...'
 @001BA0  C0D04 ［占い師］  // EN: [Fortune-teller]
-@001BBD  C0F04 『メルヘヴンを守るものたちと  // TODO: English translation
-@001BEC 　なりましょう…！』  // TODO: English translation
+@001BBD  C0F04 『メルヘヴンを守るものたちと  // EN: 'They will become...
+@001BEC 　なりましょう…！』  // EN: ...the protectors of MÄR Heaven...!'
 @001D12 F01B02  // LITERAL: F01B02 (usage not inferred)
 @001DD3  C0D04 ［ギンタ］  // EN: [Ginta]
-@001DF0  C0F04 七人…か  // TODO: English translation
-@001E71 　　　　　　　　（１）  // TODO: English translation
+@001DF0  C0F04 七人…か  // EN: Seven, huh...
+@001E71 　　　　　　　　（１）  // EN: (1)
 @001FBC F05A01  // LITERAL: F05A01 (usage not inferred)
 @0020A8 F06A01  // LITERAL: F06A01 (usage not inferred)
-@002196 　　　　　　　　（２）  // TODO: English translation
+@002196 　　　　　　　　（２）  // EN: (2)
 @0022EA F03A01  // LITERAL: F03A01 (usage not inferred)
-@0023D8 　　　　　　　　（３）  // TODO: English translation
+@0023D8 　　　　　　　　（３）  // EN: (3)
 @0024FC F09A01  // LITERAL: F09A01 (usage not inferred)
-@0025EA 　　　　　　　　（４）  // TODO: English translation
+@0025EA 　　　　　　　　（４）  // EN: (4)
 @002640 F09A05  // LITERAL: F09A05 (usage not inferred)
 @00266E  C0D04 ［ドロシー］  // EN: [Dorothy]
-@00268D  C0F04 えぇ！？  // TODO: English translation
-@0026A8 わたしもぉ！？  // TODO: English translation
+@00268D  C0F04 えぇ！？  // EN: Whaaat?!
+@0026A8 わたしもぉ！？  // EN: Me too?!
 @0027B6 F02A01  // LITERAL: F02A01 (usage not inferred)
-@0028A4 　　　　　　　　（５）  // TODO: English translation
+@0028A4 　　　　　　　　（５）  // EN: (5)
 @0028FA F02A14  // LITERAL: F02A14 (usage not inferred)
 @002928  C0D04 ［バッボ］  // EN: [Babbo]
-@002945  C0F04 ワ！ワシもか！  // TODO: English translation
-@002966 ワシもなのかぁ！？  // TODO: English translation
+@002945  C0F04 ワ！ワシもか！  // EN: Wh-what! Me too?!
+@002966 ワシもなのかぁ！？  // EN: Even me?!
 @002A86 F04A02  // LITERAL: F04A02 (usage not inferred)
 @002B5F  C0D04 ［スノウ］  // EN: [Snow]
-@002B7C  C0F04 ６年前、チェスの兵隊とたたかった  // TODO: English translation
-@002BAF クロスガードぐんが、すごくよわっている…  // TODO: English translation
+@002B7C  C0F04 ６年前、チェスの兵隊とたたかった  // EN: The Cross Guard that fought the Chess Pieces six years ago...
+@002BAF クロスガードぐんが、すごくよわっている…  // EN: ...has been severely weakened...
 @002C11 F04A03  // LITERAL: F04A03 (usage not inferred)
 @002C3F  C0D04 ［スノウ］  // EN: [Snow]
-@002C5C  C0F04 だから、わたしたちで、  // TODO: English translation
-@002C85 チェスとたたかうチームをつくる！  // TODO: English translation
+@002C5C  C0F04 だから、わたしたちで、  // EN: So we will...
+@002C85 チェスとたたかうチームをつくる！  // EN: ...form a team to fight the Chess Pieces!
 @002D15 F01B08  // LITERAL: F01B08 (usage not inferred)
 @002DEE  C0D04 ［ギンタ］  // EN: [Ginta]
-@002E0B  C0F04 スノウを入れて  // TODO: English translation
-@002E2C 八人だけのぐんだんか！  // TODO: English translation
+@002E0B  C0F04 スノウを入れて  // EN: Including Snow...
+@002E2C 八人だけのぐんだんか！  // EN: ...an army of just eight!
 @002E7C F01B08  // LITERAL: F01B08 (usage not inferred)
 @002EAA  C0D04 ［ギンタ］  // EN: [Ginta]
-@002EC7  C0F04 チームのなまえ…  // TODO: English translation
-@002EEA メルヘヴンをすくう八戦士で！  // TODO: English translation
+@002EC7  C0F04 チームのなまえ…  // EN: Our team's name...
+@002EEA メルヘヴンをすくう八戦士で！  // EN: Eight warriors to save MÄR Heaven!
 @002F40 F01B03  // LITERAL: F01B03 (usage not inferred)
 @002F6E  C0D04 ［ギンタ］  // EN: [Ginta]
-@002F8B  C0904 『メル』  // TODO: English translation
-@002FA6  C0F04 にしようぜ！！  // TODO: English translation
+@002F8B  C0904 『メル』  // EN: MÄR...
+@002FA6  C0F04 にしようぜ！！  // EN: ...let's call ourselves that!!
 @003061 F03A06  // LITERAL: F03A06 (usage not inferred)
 @00313A  C0D04 ［ジャック］  // EN: [Jack]
-@003159  C0F04 いいっスね！！  // TODO: English translation
+@003159  C0F04 いいっスね！！  // EN: Sounds great!!
 @003256 F05A01  // LITERAL: F05A01 (usage not inferred)
 @00332F  C0D04 ［エド］  // EN: [Ed]
-@00334A  C0F04 ならば『メル』  // TODO: English translation
-@00336B しゅつげきですかな！  // TODO: English translation
+@00334A  C0F04 ならば『メル』  // EN: Then MÄR...
+@00336B しゅつげきですかな！  // EN: ...shall set out!
 @003415 F01B11  // LITERAL: F01B11 (usage not inferred)
 @0034EE  C0D04 ［ギンタ］  // EN: [Ginta]
-@00350B  C0F04 ヒルドたいりくへ…  // TODO: English translation
-@003530 どうやっていくんだ？？  // TODO: English translation
+@00350B  C0F04 ヒルドたいりくへ…  // EN: To the Hild continent...
+@003530 どうやっていくんだ？？  // EN: How do we get there??
 @003580 F05A02  // LITERAL: F05A02 (usage not inferred)
 @0035AE  C0D04 ［エド］  // EN: [Ed]
-@0035FE まずは…とくとごらんあれ！！  // TODO: English translation
+@0035FE まずは…とくとごらんあれ！！  // EN: First...watch closely!!
 @0036D7  C0D04 ［エド］  // EN: [Ed]
-@0036F2  C0F04 …それっ！！  // TODO: English translation
+@0036F2  C0F04 …それっ！！  // EN: ...Here goes!!
 @003865 G_EV030.SPC  // LITERAL: G_EV030.SPC (usage not inferred)
-@0035C9  C0F04 ディメンション<F0><56>ＲＭをつかいます！  // TODO: English translation
+@0035C9  C0F04 ディメンション<F0><56>ＲＭをつかいます！  // EN: We shall use a Dimension ÄRM!

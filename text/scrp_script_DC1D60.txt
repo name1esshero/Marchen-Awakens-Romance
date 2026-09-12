@@ -5,7 +5,7 @@
 @000058 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
 @000195 F08A01  // LITERAL: F08A01 (usage not inferred)
 @000256  C0D04 ［ナナシ］  // EN: [Nanashi]
-@000273  C0F04 カギあけならワイにまかしとき  // TODO: English translation
+@000273  C0F04 カギあけならワイにまかしとき  // EN: Leave picking locks to me.
 @000397 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
 @00049B カギがかかっている  // EN: It's locked.
 @000540 OBJ_D.SPC  // LITERAL: OBJ_D.SPC (usage not inferred)

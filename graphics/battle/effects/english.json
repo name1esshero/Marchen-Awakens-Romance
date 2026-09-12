@@ -1,0 +1,65 @@
+[
+  {
+    "frame": 386,
+    "japanese": "封印中",
+    "english": "Sealed",
+    "source": "0386.png",
+    "variant": "0386_en.png"
+  },
+  {
+    "frame": 387,
+    "japanese": "封印中",
+    "english": "Sealed",
+    "source": "0387.png",
+    "variant": "0387_en.png"
+  },
+  {
+    "frame": 388,
+    "japanese": "封印中",
+    "english": "Sealed",
+    "source": "0388.png",
+    "variant": "0388_en.png"
+  },
+  {
+    "frame": 389,
+    "japanese": "封印中",
+    "english": "Sealed",
+    "source": "0389.png",
+    "variant": "0389_en.png"
+  },
+  {
+    "frame": 402,
+    "japanese": "パラメータ",
+    "english": "Stats",
+    "source": "0402.png",
+    "variant": "0402_en.png"
+  },
+  {
+    "frame": 403,
+    "japanese": "パラメータ",
+    "english": "Stats",
+    "source": "0403.png",
+    "variant": "0403_en.png"
+  },
+  {
+    "frame": 404,
+    "japanese": "パラメータ",
+    "english": "Stats",
+    "source": "0404.png",
+    "variant": "0404_en.png"
+  },
+  {
+    "frame": 405,
+    "japanese": "パラメータ",
+    "english": "Stats",
+    "source": "0405.png",
+    "variant": "0405_en.png"
+  },
+  {
+    "frame": 406,
+    "japanese": "パラメータ",
+    "english": "Stats",
+    "source": "0406.png",
+    "variant": "0406_en.png"
+  }
+]

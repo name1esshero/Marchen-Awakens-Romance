@@ -5,7 +5,7 @@
 @000133 F01A01  // LITERAL: F01A01 (usage not inferred)
 @00016B F09A01  // LITERAL: F09A01 (usage not inferred)
 @0002BF  C0D04 ［ドロシー］  // EN: [Dorothy]
-@0002DE  C0F04 あたしは、そのなかでも  // TODO: English translation
+@0002DE  C0F04 あたしは、そのなかでも  // EN: And among those...
 @000349  C0D04 ［ドロシー］  // EN: [Dorothy]
 @000368  C0F04 『バッボ』を手に入れたら  // EN: Once you get Babbo...
 @0003DB  C0D04 ［ギンタ］  // EN: [Ginta]

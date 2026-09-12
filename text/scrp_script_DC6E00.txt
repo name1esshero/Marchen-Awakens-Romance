@@ -4,44 +4,44 @@
 
 @000158 F07A01  // LITERAL: F07A01 (usage not inferred)
 @000219  C0D04 ［アルヴィス］  // EN: [Alviss]
-@00023A  C0F04 ふん…  // TODO: English translation
+@00023A  C0F04 ふん…  // EN: Hmph...
 @00027D  C0D04 ［アルヴィス］  // EN: [Alviss]
-@00029E  C0F04 こう足場がわるくちゃ  // TODO: English translation
-@0002C5 ギンタ、おまえじゃどうしようもないだろ  // TODO: English translation
+@00029E  C0F04 こう足場がわるくちゃ  // EN: With footing this bad...
+@0002C5 ギンタ、おまえじゃどうしようもないだろ  // EN: ...there's nothing you can do, Ginta.
 @000471 ARM_HO08  // LITERAL: ARM_HO08 (usage not inferred)
 @000564 MAP00_O  // LITERAL: MAP00_O (usage not inferred)
 @00068E F01B12  // LITERAL: F01B12 (usage not inferred)
 @00077F  C0D04 ［ギンタ］  // EN: [Ginta]
-@00079C  C0F04 う、うん……  // TODO: English translation
+@00079C  C0F04 う、うん……  // EN: Y-yeah...
 @000906 ふかい穴があいている  // EN: There is a deep hole.
 @000ABB F09A01  // LITERAL: F09A01 (usage not inferred)
 @000B7C  C0D04 ［ドロシー］  // EN: [Dorothy]
-@000B9B  C0F04 よっと…！  // TODO: English translation
+@000B9B  C0F04 よっと…！  // EN: Heave-ho...!
 @000BE2  C0D04 ［ドロシー］  // EN: [Dorothy]
-@000C01  C0F04 ほら！ギンタン！！  // TODO: English translation
-@000C26 こっちこっち！  // TODO: English translation
+@000C01  C0F04 ほら！ギンタン！！  // EN: Here, Ginta!!
+@000C26 こっちこっち！  // EN: Over here!
 @000C68 F01B09  // LITERAL: F01B09 (usage not inferred)
 @000D29  C0D04 ［ギンタ］  // EN: [Ginta]
-@000D46  C0F04 ドロシー…………  // TODO: English translation
+@000D46  C0F04 ドロシー…………  // EN: Dorothy...
 @00105E 見えないまほうのかべで  // EN: An invisible magical wall...
 @001080 さえぎられている  // EN: ...blocks the way.
 @001225 F04A01  // LITERAL: F04A01 (usage not inferred)
 @0012E6  C0D04 ［スノウ］  // EN: [Snow]
-@001303  C0F04 ここはわたしのでばんだよ！  // TODO: English translation
+@001303  C0F04 ここはわたしのでばんだよ！  // EN: This is where I come in!
 @001464 F01B09  // LITERAL: F01B09 (usage not inferred)
 @001555  C0D04 ［ギンタ］  // EN: [Ginta]
-@001572  C0F04 ありがとう…みんな…  // TODO: English translation
+@001572  C0F04 ありがとう…みんな…  // EN: Thanks...everyone...
 @0015C3  C0D04 ［ギンタ］  // EN: [Ginta]
-@0015E0  C0F04 オレみたいなヤツに  // TODO: English translation
-@001605 こんなにしてもらって…  // TODO: English translation
+@0015E0  C0F04 オレみたいなヤツに  // EN: Doing all this...
+@001605 こんなにしてもらって…  // EN: ...for someone like me...
 @00164F F03A01  // LITERAL: F03A01 (usage not inferred)
 @0016AD  C0D04 ［ジャック］  // EN: [Jack]
-@0016CC  C0F04 おちこむことないっスよ、ギンタ！  // TODO: English translation
+@0016CC  C0F04 おちこむことないっスよ、ギンタ！  // EN: Don't be so down, Ginta!
 @001729  C0D04 ［ジャック］  // EN: [Jack]
-@001748  C0F04 オイラだって、ギンタがいなければ  // TODO: English translation
-@00177B ヨワムシのままだったっスよ！  // TODO: English translation
+@001748  C0F04 オイラだって、ギンタがいなければ  // EN: If it weren't for you...
+@00177B ヨワムシのままだったっスよ！  // EN: ...I'd still be a coward!
 @0017C1  C0D04 ［ギンタ］  // EN: [Ginta]
-@0017DE  C0F04 ジャック…！  // TODO: English translation
+@0017DE  C0F04 ジャック…！  // EN: Jack...!
 @001861 F03A06  // LITERAL: F03A06 (usage not inferred)
 @0018BF  C0D04 ［ジャック］  // EN: [Jack]
 @0018DE  C0F04 …！  // EN: ...!
@@ -51,6 +51,6 @@
 @001CBD DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
 @001D40 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
 @001DB0 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
-@001F6F  C0D04 ６５７０Ｐ C0F04 が入っていた！  // TODO: English translation
+@001F6F  C0D04 ６５７０Ｐ C0F04 が入っていた！  // EN: There was 6570P inside!
 @00209D OBJ_D.SPC  // LITERAL: OBJ_D.SPC (usage not inferred)
 @0020E5 OBJ_G.SPC  // LITERAL: OBJ_G.SPC (usage not inferred)

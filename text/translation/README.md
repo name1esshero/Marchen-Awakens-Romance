@@ -6,6 +6,29 @@
 views. Comments do not change Japanese ROM text. Old `{kanji}` romanization
 is not a translation and is not accepted as reviewed English.
 
+## Annotation completion
+
+The remaining 1,055 named-script records have been translated. The current
+334-script extraction now has 5,562 reviewed translation records, 3,073 ASCII
+literals, five formatting-only records, and zero pending translations. This
+batch includes 114 numbered portrait-debug labels as well as dialogue,
+exploration, shop, unlock, and opening messages. Names remain transliterations
+unless their spelling was already established in the project glossary.
+
+An explicit empty string in `scripts.json` produces a bare `// EN:` comment.
+This is used for the two standalone Japanese object-particle `を` records in
+DITEMCOM, which contribute no English text. It is distinct from a missing
+mapping and compiles to an empty, NUL-terminated English row. It does not insert
+an explanatory placeholder into the game. The audit reports these two entries
+as `empty_english_comments` within its reviewed translation count.
+
+The English runtime table currently accepts 3,089 exact source-row mappings.
+109 ambiguous or unsupported keys remain excluded, with Japanese fallback;
+annotations being complete does not remove the hook's context and printer
+limitations. All 5,562 annotations pass font and word-width validation; four
+need multiple pages. Exhaustive ROM text discovery and emulator verification
+remain outstanding.
+
 ## Actual printer findings
 
 The three-row dialogue task is created at 08011790. Its reader at 08011AF4
@@ -113,3 +136,31 @@ formatting markup is supported; annotation coverage is not runtime coverage.
 blank/color-only records across the named scripts use `FORMAT:` annotations;
 they count separately from translated dialogue, ASCII resource labels, and
 pending text. The audit rejects a `FORMAT:` annotation that conceals text.
+
+### English color and speed controls
+
+Use `{color:0D04}` for ink 0D / shadow 04, `{color:0F04}` to restore normal
+white text, and `{speed:0002}` for the printer interval. Both color components
+must be palette indices 00–0F. Attach tags to the affected word; controls do not
+consume glyph width and survive word wrapping and page changes. For example:
+`{color:0F04}What's an {color:0904}'ÄRM'{color:0F04}?!`.
+
+Original leading and trailing C/T controls are retained automatically. Interior
+color changes require explicit English tags because translated words move.
+Previously even a trailing speaker-name reset was rejected, and an unmapped
+speaker row caused the whole message to retain Japanese. The opening speaker
+reset now has an actual runtime regression test. Other unreviewed interior
+controls and context-dependent mappings still fall back; static build checks
+alone do not prove complete in-game English coverage.
+
+Empty padding rows are also mapped explicitly. OPEN's first narration calls
+MswStr with an empty first and third row; these previously forced fallback
+before the visible translated row could reach the printer.
+
+Pagination never submits a completely empty or formatting-only page to the
+original printer: its initial no-glyph state does not signal completion.
+Trailing padding is discarded, whole blank intermediate pages are skipped,
+and their C/T changes still carry forward. Entirely empty translations complete
+through the English task and release the script wait counter. Tests include
+OPEN's “Dweller of another world” message and every generated mapping with
+blank padding in both textbox modes.

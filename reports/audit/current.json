@@ -1,0 +1,25 @@
+{
+  "date": "2026-09-12",
+  "japanese_rom_byte_matching": true,
+  "linked_coverage": {
+    "sections": 1239,
+    "gaps": 0,
+    "overlaps": 0
+  },
+  "named_graphics_roundtrips": 104,
+  "accounted_pngs": 19394,
+  "pcm_samples": 115,
+  "regression_tests": {
+    "initial_run": 98,
+    "initial_passes": 96,
+    "stale_mapped_count_assertion": "fixed; all six mapped-image tests pass",
+    "localhost_test": "sandbox restriction; all ten map-editor tests pass with localhost access"
+  },
+  "remaining_limits": [
+    "10 named graphics layouts remain unresolved",
+    "No complete emulator playthrough performed",
+    "Raw data and preserved assembly remain",
+    "Candidate signature scans do not prove exhaustive discovery"
+  ],
+  "accounted_pngs_note": "Count predates MAP07_A migration; rerun graphics source coverage for a fresh count."
+}

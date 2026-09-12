@@ -10,44 +10,44 @@
 @000490 A  // LITERAL: A (usage not inferred)
 @000733 F15A03  // LITERAL: F15A03 (usage not inferred)
 @00080C  C0D04 ［イアン］  // EN: [Ian]
-@000829  C0F04 …ギンタ  // TODO: English translation
-@000844 とりひきさせてくれ  // TODO: English translation
+@000829  C0F04 …ギンタ  // EN: ...Ginta.
+@000844 とりひきさせてくれ  // EN: Let me make a deal.
 @0008C6 F16A02  // LITERAL: F16A02 (usage not inferred)
 @00099F  C0D04 ［イアン］  // EN: [Ian]
-@0009BC  C0F04 …オレたちはもうたたかえない  // TODO: English translation
-@0009EB みのがしてくれるなら…  // TODO: English translation
+@0009BC  C0F04 …オレたちはもうたたかえない  // EN: ...We can't fight anymore.
+@0009EB みのがしてくれるなら…  // EN: If you let us go...
 @000A4C ARM050  // LITERAL: ARM050 (usage not inferred)
 @000BC3  C0D04 ［イアン］  // EN: [Ian]
 @000CB6 F01B01  // LITERAL: F01B01 (usage not inferred)
 @000DFB  C0D04 ［ギンタ］  // EN: [Ginta]
 @000E18  C0F04 ＯＫ！！  // EN: OK!!
 @000E5D  C0D04 ［ギンタ］  // EN: [Ginta]
-@000E7A  C0F04 おっさんのケガもなおせるしな！  // TODO: English translation
+@000E7A  C0F04 おっさんのケガもなおせるしな！  // EN: We can heal the old man's wounds too!
 @000FA2 ARM_HO08  // LITERAL: ARM_HO08 (usage not inferred)
 @001156 GARM052  // LITERAL: GARM052 (usage not inferred)
-@0013F7  C0D04 癒しの天使　ＣＬ３ C0F04 を  // TODO: English translation
+@0013F7  C0D04 癒しの天使　ＣＬ３ C0F04 を  // EN: Healing Angel CL3...
 @001425 もらった！  // EN: Received it!
 @0014B7 F01B02  // LITERAL: F01B02 (usage not inferred)
 @0014F5 F01B04  // LITERAL: F01B04 (usage not inferred)
 @0015DE F15A03  // LITERAL: F15A03 (usage not inferred)
 @0016B7  C0D04 ［イアン］  // EN: [Ian]
-@0016D4  C0F04 今回はオレの負けだよ  // TODO: English translation
+@0016D4  C0F04 今回はオレの負けだよ  // EN: You win this time.
 @001735 F15A02  // LITERAL: F15A02 (usage not inferred)
 @001763  C0D04 ［イアン］  // EN: [Ian]
-@001780  C0F04 でもね…  // TODO: English translation
-@00179B 次はそっちのばんだ  // TODO: English translation
+@001780  C0F04 でもね…  // EN: But...
+@00179B 次はそっちのばんだ  // EN: ...next time, it'll be your turn to lose.
 @0017D7  C0D04 ［ギンタ］  // EN: [Ginta]
-@0017F4  C0F04 …  // TODO: English translation
+@0017F4  C0F04 …  // EN: ...
 @001833  C0D04 ［イアン］  // EN: [Ian]
-@001850  C0F04 おめーがつよくなったって  // TODO: English translation
-@00187B いうのなら  // TODO: English translation
+@001850  C0F04 おめーがつよくなったって  // EN: If you're saying...
+@00187B いうのなら  // EN: ...you've gotten stronger...
 @0018BF F15A03  // LITERAL: F15A03 (usage not inferred)
 @0018ED  C0D04 ［イアン］  // EN: [Ian]
-@00190A  C0F04 オレっちはもっと上にいくぜ！  // TODO: English translation
+@00190A  C0F04 オレっちはもっと上にいくぜ！  // EN: ...I'll go even higher!
 @001B38 F15A01  // LITERAL: F15A01 (usage not inferred)
 @001D0D  C0D04 ［イアン］  // EN: [Ian]
-@001D2A  C0F04 （わすれるな！）  // TODO: English translation
+@001D2A  C0F04 （わすれるな！）  // EN: (Don't forget!)
 @001D87 F15A01  // LITERAL: F15A01 (usage not inferred)
 @001DB5  C0D04 ［イアン］  // EN: [Ian]
-@001DD2  C0F04 （ギンタ）  // TODO: English translation
+@001DD2  C0F04 （ギンタ）  // EN: (Ginta.)
 @001E7F G_EV025B.SPC  // LITERAL: G_EV025B.SPC (usage not inferred)

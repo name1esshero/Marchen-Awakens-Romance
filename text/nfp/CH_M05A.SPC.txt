@@ -4,14 +4,14 @@
 
 @0000F6 F04A01  // LITERAL: F04A01 (usage not inferred)
 @0001B7  C0D04 ［スノウ］  // EN: [Snow]
-@0001D4  C0F04 エドにとっくんの成果を  // TODO: English translation
-@0001FD 見せてあげて  // TODO: English translation
+@0001D4  C0F04 エドにとっくんの成果を  // EN: Show Ed...
+@0001FD 見せてあげて  // EN: ...the results of your training.
 @00038E F06A01  // LITERAL: F06A01 (usage not inferred)
 @00044F  C0D04 ［エド］  // EN: [Ed]
-@00046A  C0F04 ギン…タ…  // TODO: English translation
-@000487 まってたぜ…  // TODO: English translation
+@00046A  C0F04 ギン…タ…  // EN: Gin...ta...
+@000487 まってたぜ…  // EN: I was waiting for you...
 @000618 F15A02  // LITERAL: F15A02 (usage not inferred)
 @0006FA  C0D04 ［イアン］  // EN: [Ian]
-@000717  C0F04 かくごはいいかい？  // TODO: English translation
-@00073C いくぜ！！  // TODO: English translation
+@000717  C0F04 かくごはいいかい？  // EN: Are you ready?
+@00073C いくぜ！！  // EN: Here we go!!
 @000812 EV_MON03.SPC  // LITERAL: EV_MON03.SPC (usage not inferred)

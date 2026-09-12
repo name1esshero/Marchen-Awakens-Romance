@@ -56,7 +56,7 @@
 @001B30 F03A01  // LITERAL: F03A01 (usage not inferred)
 @001C09  C0D04 ［ジャック］  // EN: [Jack]
 @001C28  C0F04 きがついたっスね！  // EN: You're awake!
-@001C4D ここはパヅタウンのはずれっスよ  // EN: We're on the outskirts of Paz Town.
+@001C4D ここはパヅタウンのはずれっスよ  // EN: We're on the outskirts of Pazu Town.
 @001CA5 F02A01  // LITERAL: F02A01 (usage not inferred)
 @001D7E  C0D04 ［バッボ］  // EN: [Babbo]
 @001D9B  C0F04 なっさけないのぉ  // EN: How pathetic!

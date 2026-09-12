@@ -1,0 +1,20 @@
+{
+  "frame": 61,
+  "bounds": {
+    "x": -16,
+    "y": -52,
+    "width": 32,
+    "height": 56,
+    "duration": 5,
+    "banks": [
+      0
+    ]
+  },
+  "edited_pixel": [
+    14,
+    2
+  ],
+  "changed_container_byte": 295611,
+  "changed_byte_count": 1,
+  "original_tables_unchanged": true
+}

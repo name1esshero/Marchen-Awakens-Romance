@@ -1,0 +1,19 @@
+{
+  "sprite_coordinate_guide": true,
+  "sprite_guide_edit_undo": true,
+  "sprite_coordinate_labels": true,
+  "wheel_zoom": true,
+  "cursor_anchor": true,
+  "zoom_limits": true,
+  "wheel_outside_viewport": true,
+  "tile_paint": true,
+  "undo_redo": true,
+  "save_reload": true,
+  "attribute_save": true,
+  "event_save": true,
+  "hit_rectangle_preview": true,
+  "hit_labels": true,
+  "hit_preview_undo": true,
+  "unresolved_cells": 1,
+  "page_errors": []
+}

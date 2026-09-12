@@ -5,11 +5,11 @@
 @0001F4 A  // LITERAL: A (usage not inferred)
 @0005EC F01A01  // LITERAL: F01A01 (usage not inferred)
 @0006C5  C0D04 ［ギンタ］  // EN: [Ginta]
-@000719 あるんだ  // TODO: English translation
+@000719 あるんだ  // EN: ...of ÄRMs, then.
 @00075B F09A01  // LITERAL: F09A01 (usage not inferred)
 @000834  C0D04 ［ドロシー］  // EN: [Dorothy]
-@000853  C0F04 そうよ  // TODO: English translation
+@000853  C0F04 そうよ  // EN: That's right.
 @000896  C0D04 ［ドロシー］  // EN: [Dorothy]
-@0006E2  C0F04 …じゃあ<F0><56>ＲＭってたくさんしゅるいが  // TODO: English translation
-@0008B5  C0F04 武器となるウェポン<F0><56>ＲＭ  // TODO: English translation
-@0008E0 守護者を呼ぶガーディアン<F0><56>ＲＭ…とかね  // TODO: English translation
+@0006E2  C0F04 …じゃあ<F0><56>ＲＭってたくさんしゅるいが  // EN: ...So there are lots of different types...
+@0008B5  C0F04 武器となるウェポン<F0><56>ＲＭ  // EN: Weapon ÄRMs that become weapons...
+@0008E0 守護者を呼ぶガーディアン<F0><56>ＲＭ…とかね  // EN: ...and Guardian ÄRMs that summon protectors, for example.

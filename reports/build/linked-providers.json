@@ -2,12 +2,12 @@
   "sha1": "5ed178bfbdf459867d64e5b91a9d9c72654e4051",
   "byte_matching": true,
   "progress": {
-    "compiled_c_functions": 72,
-    "compiled_c_owned_bytes": 3004,
+    "compiled_c_functions": 89,
+    "compiled_c_owned_bytes": 3888,
     "bios_wrapper_functions": 10,
     "bios_wrapper_bytes": 60,
     "code_and_data_region_without_known_pcm_bytes": 627320,
-    "compiled_c_percent_of_that_region": 0.4789,
+    "compiled_c_percent_of_that_region": 0.6198,
     "scope": "ROM 0000C0..1B0000 minus known PCM header/payload spans. Includes literals, tables and undecoded data; NOT a pure instruction-byte denominator.",
     "total_function_count": null,
     "limitation": "Historical function starts include false positives and internal labels. Do not report a completion percentage from that count. C-owned sizes include alignment and literal pools."
@@ -750,9 +750,162 @@
       "provider": "build/src/script_native.o",
       "implementation": "compiled_c",
       "byte_matching": true
+    },
+    {
+      "addr": "08011504",
+      "size": 16,
+      "name": "HitRegionDisable",
+      "file": "src/hit_region.c",
+      "provider": "build/src/hit_region.o",
+      "implementation": "compiled_c",
+      "byte_matching": true
+    },
+    {
+      "addr": "08011514",
+      "size": 28,
+      "name": "HitRegionDisableAll",
+      "file": "src/hit_region.c",
+      "provider": "build/src/hit_region.o",
+      "implementation": "compiled_c",
+      "byte_matching": true
+    },
+    {
+      "addr": "08011530",
+      "size": 36,
+      "name": "HitRegionInit",
+      "file": "src/hit_region.c",
+      "provider": "build/src/hit_region.o",
+      "implementation": "compiled_c",
+      "byte_matching": true
+    },
+    {
+      "addr": "08011654",
+      "size": 32,
+      "name": "HitRegionSetRect",
+      "file": "src/hit_region.c",
+      "provider": "build/src/hit_region.o",
+      "implementation": "compiled_c",
+      "byte_matching": true
+    },
+    {
+      "addr": "08018C4C",
+      "size": 196,
+      "name": "HitRegionTest",
+      "file": "src/hit_region.c",
+      "provider": "build/src/hit_region.o",
+      "implementation": "compiled_c",
+      "byte_matching": true
+    },
+    {
+      "addr": "08002630",
+      "size": 32,
+      "name": "KmpRenderViewport",
+      "file": "src/kmp.c",
+      "provider": "build/src/kmp.o",
+      "implementation": "compiled_c",
+      "byte_matching": true
+    },
+    {
+      "addr": "080032B8",
+      "size": 144,
+      "name": "KmpLoadField",
+      "file": "src/map_field.c",
+      "provider": "build/src/map_field.o",
+      "implementation": "compiled_c",
+      "byte_matching": true
+    },
+    {
+      "addr": "08003280",
+      "size": 20,
+      "name": "KmpSetClip",
+      "file": "src/map_field.c",
+      "provider": "build/src/map_field.o",
+      "implementation": "compiled_c",
+      "byte_matching": true
+    },
+    {
+      "addr": "08003294",
+      "size": 20,
+      "name": "KmpResetClip",
+      "file": "src/map_field.c",
+      "provider": "build/src/map_field.o",
+      "implementation": "compiled_c",
+      "byte_matching": true
+    },
+    {
+      "addr": "080122F8",
+      "size": 32,
+      "name": "ScriptNativeFieldSet",
+      "file": "src/map_native.c",
+      "provider": "build/src/map_native.o",
+      "implementation": "compiled_c",
+      "byte_matching": true
+    },
+    {
+      "addr": "080121C4",
+      "size": 32,
+      "name": "ScriptNativeHitInit",
+      "file": "src/map_native.c",
+      "provider": "build/src/map_native.o",
+      "implementation": "compiled_c",
+      "byte_matching": true
+    },
+    {
+      "addr": "08012244",
+      "size": 32,
+      "name": "ScriptNativeHitRect",
+      "file": "src/map_native.c",
+      "provider": "build/src/map_native.o",
+      "implementation": "compiled_c",
+      "byte_matching": true
+    },
+    {
+      "addr": "080121E4",
+      "size": 36,
+      "name": "ScriptNativeHitFree",
+      "file": "src/map_native.c",
+      "provider": "build/src/map_native.o",
+      "implementation": "compiled_c",
+      "byte_matching": true
+    },
+    {
+      "addr": "0807BC2C",
+      "size": 80,
+      "name": "NcdInitSprite",
+      "file": "src/ncd_sprite.c",
+      "provider": "build/src/ncd_sprite.o",
+      "implementation": "compiled_c",
+      "byte_matching": true
+    },
+    {
+      "addr": "08010C0C",
+      "size": 76,
+      "name": "ScriptSpriteSelect",
+      "file": "src/script_sprite.c",
+      "provider": "build/src/script_sprite.o",
+      "implementation": "compiled_c",
+      "byte_matching": true
+    },
+    {
+      "addr": "08011EF4",
+      "size": 32,
+      "name": "ScriptNativeSpriteChange",
+      "file": "src/script_sprite.c",
+      "provider": "build/src/script_sprite.o",
+      "implementation": "compiled_c",
+      "byte_matching": true
+    },
+    {
+      "addr": "08011ECC",
+      "size": 40,
+      "name": "ScriptNativeSpriteInit",
+      "file": "src/script_sprite.c",
+      "provider": "build/src/script_sprite.o",
+      "implementation": "compiled_c",
+      "byte_matching": true
     }
   ],
-  "compiled_c_ranges": 72,
+  "compiled_c_ranges": 89,
   "inline_assembly_ranges": 10,
   "preserved_thumb_literal_directives": 832,
   "compression_policy": "All 104 graphics streams are encoded from PNG/layout sources with matching VRAM-safe LZ77; no graphics LZ templates. Named scripts still preserve compressed originals when unchanged.",

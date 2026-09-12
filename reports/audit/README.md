@@ -1,3 +1,15 @@
+# Current audit status (2026-09-12)
+
+The sections below describe historical batches; their counts and runtime limitations are not current totals.
+
+Fresh checks confirm complete linked coverage of all 16 MiB (1,239 sections, no gaps or overlaps), original-ROM equality, 830 distinct archive payload offsets, 104 named graphics compressed round trips, and 115 PCM samples reproducing 1,139,745 sample bytes. These checks do not establish visual correctness, complete discovery, or complete sound sequencing.
+
+Current linked C provenance is 89 ordinary C functions (3,888 owned bytes) and 10 BIOS wrappers. Ten named tile resources still lack verified assembled layouts. See `../rom/coverage.json`, `../graphics/tileset-layout-audit.json`, and `../build/decompilation-progress.json` for current evidence.
+
+English overrides are now explicitly accounted for by the graphics coverage checker; variants must belong to a build-consumed cell/frame source and retain its palette and alpha table. Runtime pagination exists, but static audits cannot establish complete playthrough coverage.
+
+---
+
 # Setup corrections and remaining limits
 
 Regenerate [setup.json](setup.json) with `python3 tools/audit_setup.py`.

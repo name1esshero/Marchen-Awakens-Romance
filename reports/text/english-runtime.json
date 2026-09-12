@@ -1,13 +1,7 @@
 {
-  "exact_row_mappings": 1663,
-  "rejected_keys": 77,
+  "exact_row_mappings": 3112,
+  "rejected_keys": 87,
   "rejected": [
-    {
-      "locations": [
-        "EV_RT03.SPC.txt:@000C83"
-      ],
-      "reason": "Embedded formatting requires English markup"
-    },
     {
       "locations": [
         "EV_AL02B.SPC.txt:@001DEF"
@@ -28,13 +22,31 @@
     },
     {
       "locations": [
+        "G_EV005.SPC.txt:@0010F1"
+      ],
+      "reason": "Embedded formatting requires English markup"
+    },
+    {
+      "locations": [
         "EV_AL02B.SPC.txt:@002DA2"
       ],
       "reason": "Embedded formatting requires English markup"
     },
     {
       "locations": [
+        "G_EV011.SPC.txt:@002737"
+      ],
+      "reason": "Embedded formatting requires English markup"
+    },
+    {
+      "locations": [
         "EV_AL02B.SPC.txt:@000A5B"
+      ],
+      "reason": "Embedded formatting requires English markup"
+    },
+    {
+      "locations": [
+        "G_EV005.SPC.txt:@001057"
       ],
       "reason": "Embedded formatting requires English markup"
     },
@@ -71,6 +83,18 @@
     {
       "locations": [
         "EV_BA01.SPC.txt:@0024F7"
+      ],
+      "reason": "Embedded formatting requires English markup"
+    },
+    {
+      "locations": [
+        "SP_M42.SPC.txt:@000365"
+      ],
+      "reason": "Embedded formatting requires English markup"
+    },
+    {
+      "locations": [
+        "SP_M08.SPC.txt:@000705"
       ],
       "reason": "Embedded formatting requires English markup"
     },
@@ -130,7 +154,32 @@
     },
     {
       "locations": [
+        "G_EV003.SPC.txt:@0018AA"
+      ],
+      "reason": "Embedded formatting requires English markup"
+    },
+    {
+      "locations": [
         "EV_BA01.SPC.txt:@00256C"
+      ],
+      "reason": "Embedded formatting requires English markup"
+    },
+    {
+      "locations": [
+        "DUNG_END.SPC.txt:@000542"
+      ],
+      "reason": "Embedded formatting requires English markup"
+    },
+    {
+      "locations": [
+        "G_EV020B.SPC.txt:@001E88"
+      ],
+      "reason": "Embedded formatting requires English markup"
+    },
+    {
+      "locations": [
+        "DUNG_END.SPC.txt:@000766",
+        "SP_M08.SPC.txt:@000639"
       ],
       "reason": "Embedded formatting requires English markup"
     },
@@ -172,249 +221,43 @@
     },
     {
       "locations": [
-        "L11_0_0.SPC.txt:@001581",
-        "L24_0_0.SPC.txt:@00137A"
+        "SP_M40.SPC.txt:@00029A"
       ],
       "reason": "Embedded formatting requires English markup"
     },
     {
       "locations": [
-        "END2.SPC.txt:@000A35",
-        "END2.SPC.txt:@000C3C",
-        "END2.SPC.txt:@000CAA",
-        "END2.SPC.txt:@000F93",
-        "END2.SPC.txt:@001009"
+        "SP_M10_1.SPC.txt:@000217"
       ],
       "reason": "Embedded formatting requires English markup"
     },
     {
       "locations": [
-        "END2.SPC.txt:@000E1B",
-        "END2.SPC.txt:@001DDA",
-        "END2.SPC.txt:@00219A",
-        "END2.SPC.txt:@002509",
-        "END2.SPC.txt:@002680",
-        "END2.SPC.txt:@002888",
-        "END2.SPC.txt:@002A50",
-        "END2.SPC.txt:@002AE6",
-        "END2.SPC.txt:@002D1C",
-        "END2.SPC.txt:@002E50",
-        "END2.SPC.txt:@00306E",
-        "END2.SPC.txt:@00365F",
-        "END2.SPC.txt:@0039A0",
-        "END2.SPC.txt:@003EA3",
-        "END2.SPC.txt:@004139",
-        "END2.SPC.txt:@004870",
-        "END2.SPC.txt:@004900",
-        "END2.SPC.txt:@00498A",
-        "END2.SPC.txt:@004A10",
-        "END2.SPC.txt:@004A80",
-        "END2.SPC.txt:@004CC4",
-        "END2.SPC.txt:@004D56",
-        "END2.SPC.txt:@004E8C",
-        "END2.SPC.txt:@004F04",
-        "END2.SPC.txt:@005158",
-        "END2.SPC.txt:@0052EB",
-        "END2.SPC.txt:@0057EE",
-        "END2.SPC.txt:@006496",
-        "END2.SPC.txt:@006821",
-        "END2.SPC.txt:@0069E7",
-        "END2.SPC.txt:@006BBC",
-        "END2.SPC.txt:@006C2A",
-        "END2.SPC.txt:@006CAA",
-        "HI_M26_2.SPC.txt:@000252",
-        "L11_0_0.SPC.txt:@000BDE",
-        "L11_0_0.SPC.txt:@000C64",
-        "L11_0_0.SPC.txt:@00106B",
-        "L11_0_0.SPC.txt:@00121B",
-        "L11_0_0.SPC.txt:@001C1E",
-        "L11_0_0.SPC.txt:@001CBC",
-        "L24_0_0.SPC.txt:@0008F2",
-        "L24_0_0.SPC.txt:@000B26",
-        "L24_0_0.SPC.txt:@000DDF",
-        "L24_0_0.SPC.txt:@000F95",
-        "L24_0_0.SPC.txt:@001442",
-        "L24_0_0.SPC.txt:@00167E",
-        "L24_0_0.SPC.txt:@00176A",
-        "L24_0_0.SPC.txt:@00187A",
-        "L24_0_0.SPC.txt:@001BD0",
-        "L24_0_0.SPC.txt:@001F90",
-        "L24_0_0.SPC.txt:@0029E6",
-        "OPEN.SPC.txt:@000D83",
-        "OPEN.SPC.txt:@000DFD",
-        "OPEN.SPC.txt:@000E81",
-        "OPEN.SPC.txt:@001593",
-        "OPEN.SPC.txt:@0016C0",
-        "OPEN.SPC.txt:@00194E",
-        "OPEN.SPC.txt:@001A70",
-        "OPEN.SPC.txt:@001B40",
-        "OPEN.SPC.txt:@001C9C",
-        "OPEN.SPC.txt:@001D20",
-        "OPEN.SPC.txt:@001DA6",
-        "OPEN.SPC.txt:@001EB2",
-        "OPEN.SPC.txt:@002084",
-        "OPEN.SPC.txt:@0020E6",
-        "OPEN.SPC.txt:@002172",
-        "OPEN.SPC.txt:@0021E4",
-        "OPEN.SPC.txt:@00225E",
-        "OPEN.SPC.txt:@0023C6",
-        "OPEN.SPC.txt:@002B8E",
-        "OPEN.SPC.txt:@002BF6",
-        "OPEN.SPC.txt:@002C68",
-        "OPEN.SPC.txt:@002FCD",
-        "OPEN.SPC.txt:@003221",
-        "OPEN.SPC.txt:@003285",
-        "OPEN.SPC.txt:@00330F",
-        "OPEN.SPC.txt:@00339A"
+        "SP_M04.SPC.txt:@000217"
       ],
       "reason": "Embedded formatting requires English markup"
     },
     {
       "locations": [
-        "OPEN.SPC.txt:@001856",
-        "OPEN.SPC.txt:@002986",
-        "OPEN.SPC.txt:@002A12",
-        "OPEN.SPC.txt:@003037"
+        "SP_M07_1.SPC.txt:@000802"
       ],
       "reason": "Embedded formatting requires English markup"
     },
     {
       "locations": [
-        "L11_0_0.SPC.txt:@000B26",
-        "L11_0_0.SPC.txt:@000CDA",
-        "L11_0_0.SPC.txt:@000EE3",
-        "L11_0_0.SPC.txt:@0010EB",
-        "L11_0_0.SPC.txt:@001155",
-        "L11_0_0.SPC.txt:@00170C",
-        "L11_0_0.SPC.txt:@001EAB",
-        "L24_0_0.SPC.txt:@00098C",
-        "L24_0_0.SPC.txt:@001548",
-        "L24_0_0.SPC.txt:@0019EC",
-        "L24_0_0.SPC.txt:@001D4C"
+        "SP_M00.SPC.txt:@000A65"
       ],
       "reason": "Embedded formatting requires English markup"
     },
     {
       "locations": [
-        "END2.SPC.txt:@00123D",
-        "END2.SPC.txt:@0023DE",
-        "END2.SPC.txt:@00274E",
-        "END2.SPC.txt:@0029D4",
-        "END2.SPC.txt:@002C06",
-        "END2.SPC.txt:@002F64",
-        "END2.SPC.txt:@0030CA",
-        "END2.SPC.txt:@0032E3",
-        "END2.SPC.txt:@00334F",
-        "END2.SPC.txt:@003487",
-        "END2.SPC.txt:@003765",
-        "END2.SPC.txt:@0037D9",
-        "END2.SPC.txt:@003AAE",
-        "END2.SPC.txt:@003D07",
-        "END2.SPC.txt:@003D73",
-        "END2.SPC.txt:@003F03",
-        "END2.SPC.txt:@00400F",
-        "END2.SPC.txt:@0044A9",
-        "END2.SPC.txt:@00451B",
-        "END2.SPC.txt:@004641",
-        "END2.SPC.txt:@004B94",
-        "END2.SPC.txt:@005030",
-        "END2.SPC.txt:@00577A",
-        "END2.SPC.txt:@0065F1"
+        "SP_M26_5.SPC.txt:@001F6F"
       ],
       "reason": "Embedded formatting requires English markup"
     },
     {
       "locations": [
-        "END2.SPC.txt:@00199F"
-      ],
-      "reason": "Embedded formatting requires English markup"
-    },
-    {
-      "locations": [
-        "HI_M26_2.SPC.txt:@0002F2",
-        "L11_0_0.SPC.txt:@000E27",
-        "L11_0_0.SPC.txt:@001AC8"
-      ],
-      "reason": "Embedded formatting requires English markup"
-    },
-    {
-      "locations": [
-        "END2.SPC.txt:@005A9F",
-        "END2.SPC.txt:@005B1D",
-        "END2.SPC.txt:@005BA9",
-        "END2.SPC.txt:@005DAA",
-        "END2.SPC.txt:@005E0E",
-        "END2.SPC.txt:@005E72"
-      ],
-      "reason": "Embedded formatting requires English markup"
-    },
-    {
-      "locations": [
-        "HI_M26_2.SPC.txt:@000498"
-      ],
-      "reason": "Embedded formatting requires English markup"
-    },
-    {
-      "locations": [
-        "OPEN.SPC.txt:@001AD8",
-        "OPEN.SPC.txt:@001BA8",
-        "OPEN.SPC.txt:@001C22",
-        "OPEN.SPC.txt:@001E2A",
-        "OPEN.SPC.txt:@001F34",
-        "OPEN.SPC.txt:@001FA6",
-        "OPEN.SPC.txt:@002008",
-        "OPEN.SPC.txt:@0022FA",
-        "OPEN.SPC.txt:@002354",
-        "OPEN.SPC.txt:@002456",
-        "OPEN.SPC.txt:@0024D8",
-        "OPEN.SPC.txt:@002D52",
-        "OPEN.SPC.txt:@002DC0",
-        "OPEN.SPC.txt:@002EC4",
-        "OPEN.SPC.txt:@0030C7",
-        "OPEN.SPC.txt:@003125",
-        "OPEN.SPC.txt:@0031A3"
-      ],
-      "reason": "Embedded formatting requires English markup"
-    },
-    {
-      "locations": [
-        "OPEN.SPC.txt:@001756",
-        "OPEN.SPC.txt:@0017CE"
-      ],
-      "reason": "Embedded formatting requires English markup"
-    },
-    {
-      "locations": [
-        "CH_M24_A.SPC.txt:@000362",
-        "CH_M24_A.SPC.txt:@000408",
-        "CH_M24_A.SPC.txt:@0004AA",
-        "CH_M24_A.SPC.txt:@000544",
-        "CH_M24_A.SPC.txt:@0005E8",
-        "CH_M24_A.SPC.txt:@00067E",
-        "CH_M24_A.SPC.txt:@00071A",
-        "L24_0_0.SPC.txt:@0016F2",
-        "L24_0_0.SPC.txt:@001912",
-        "L24_0_0.SPC.txt:@001A8C",
-        "L24_0_0.SPC.txt:@001C5A",
-        "L24_0_0.SPC.txt:@001E26",
-        "L24_0_0.SPC.txt:@001EA8",
-        "L24_0_0.SPC.txt:@0023B8",
-        "L24_0_0.SPC.txt:@00246E",
-        "L24_0_0.SPC.txt:@0024FE",
-        "L24_0_0.SPC.txt:@0025A4",
-        "L24_0_0.SPC.txt:@002646",
-        "L24_0_0.SPC.txt:@0026E0",
-        "L24_0_0.SPC.txt:@002784",
-        "L24_0_0.SPC.txt:@00281A",
-        "L24_0_0.SPC.txt:@0028B6"
-      ],
-      "reason": "Embedded formatting requires English markup"
-    },
-    {
-      "locations": [
-        "OPEN.SPC.txt:@002885",
-        "OPEN.SPC.txt:@002CDA",
-        "OPEN.SPC.txt:@002E42"
+        "SP_M01_3.SPC.txt:@000AD1"
       ],
       "reason": "Embedded formatting requires English markup"
     },
@@ -426,13 +269,31 @@
     },
     {
       "locations": [
-        "EV_VE02.SPC.txt:@001394"
+        "EV_GO11.SPC.txt:@002012"
       ],
       "reason": "Embedded formatting requires English markup"
     },
     {
       "locations": [
-        "EV_GO11.SPC.txt:@002012"
+        "G_VS_R.SPC.txt:@0001EC"
+      ],
+      "reason": "Embedded formatting requires English markup"
+    },
+    {
+      "locations": [
+        "HI_M00.SPC.txt:@0004DD"
+      ],
+      "reason": "Embedded formatting requires English markup"
+    },
+    {
+      "locations": [
+        "D_VS_R.SPC.txt:@00039A"
+      ],
+      "reason": "Embedded formatting requires English markup"
+    },
+    {
+      "locations": [
+        "J_VS_M.SPC.txt:@000401"
       ],
       "reason": "Embedded formatting requires English markup"
     },
@@ -457,6 +318,24 @@
     {
       "locations": [
         "EV_ICE11.SPC.txt:@0014C4"
+      ],
+      "reason": "Embedded formatting requires English markup"
+    },
+    {
+      "locations": [
+        "J_VS_M.SPC.txt:@0001AD"
+      ],
+      "reason": "Embedded formatting requires English markup"
+    },
+    {
+      "locations": [
+        "D_VS_R.SPC.txt:@0007D9"
+      ],
+      "reason": "Embedded formatting requires English markup"
+    },
+    {
+      "locations": [
+        "G_EV025.SPC.txt:@0013F7"
       ],
       "reason": "Embedded formatting requires English markup"
     },
@@ -516,6 +395,18 @@
     },
     {
       "locations": [
+        "G_EV011.SPC.txt:@0025A8"
+      ],
+      "reason": "Embedded formatting requires English markup"
+    },
+    {
+      "locations": [
+        "G_EV003.SPC.txt:@001871"
+      ],
+      "reason": "Embedded formatting requires English markup"
+    },
+    {
+      "locations": [
         "EV_T3KIL.SPC.txt:@001880"
       ],
       "reason": "Embedded formatting requires English markup"
@@ -523,6 +414,12 @@
     {
       "locations": [
         "EV_AL02B.SPC.txt:@00246F"
+      ],
+      "reason": "Embedded formatting requires English markup"
+    },
+    {
+      "locations": [
+        "EV_MON06.SPC.txt:@00029F"
       ],
       "reason": "Embedded formatting requires English markup"
     },
@@ -576,10 +473,9 @@
     },
     {
       "locations": [
-        "EV_ICE01.SPC.txt:@001411",
-        "HI_M04.SPC.txt:@000236"
+        "EV_BIN01.SPC.txt:@0007AD"
       ],
-      "reason": "Context-dependent translation; runtime script identity required"
+      "reason": "Embedded formatting requires English markup"
     },
     {
       "locations": [
@@ -595,10 +491,9 @@
     },
     {
       "locations": [
-        "END2.SPC.txt:@004EB0",
-        "EV_AL03.SPC.txt:@002749"
+        "G_EV011.SPC.txt:@0024CE"
       ],
-      "reason": "Context-dependent translation; runtime script identity required"
+      "reason": "Embedded formatting requires English markup"
     },
     {
       "locations": [
@@ -614,26 +509,15 @@
     },
     {
       "locations": [
-        "D_VS_R.SPC.txt:@0003BE",
-        "D_VS_R.SPC.txt:@000801",
-        "EV_ICE11.SPC.txt:@0014F4",
-        "EV_MON02.SPC.txt:@000B89",
-        "EV_VE02.SPC.txt:@0013C2",
-        "G_EV025.SPC.txt:@001425",
-        "G_VS_R.SPC.txt:@000218",
-        "J_VS_M.SPC.txt:@0001D3",
-        "J_VS_M.SPC.txt:@000429"
+        "G_EV001.SPC.txt:@000783"
       ],
-      "reason": "Context-dependent translation; runtime script identity required"
+      "reason": "Embedded formatting requires English markup"
     },
     {
       "locations": [
-        "DUNG_END.SPC.txt:@000524",
-        "G_EV050.SPC.txt:@003599",
-        "G_EV061.SPC.txt:@0030C2",
-        "G_EV062.SPC.txt:@0061F9"
+        "G_EV020B.SPC.txt:@0012AD"
       ],
-      "reason": "Context-dependent translation; runtime script identity required"
+      "reason": "Embedded formatting requires English markup"
     },
     {
       "locations": [

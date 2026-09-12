@@ -4,7 +4,7 @@
 
 @0000F6 F39A01  // LITERAL: F39A01 (usage not inferred)
 @0001B7  C0D04 ［彫金師ベリーニ］  // EN: [Bellini the metalworker]
-@0001DC  C0F04 彫金するのん？  // TODO: English translation
+@0001DC  C0F04 彫金するのん？  // EN: Want to do some metalworking?
 @000362  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
 @00038E 彫金とは、いくつかの材料をまぜあわせて  // EN: Metalworking involves combining several materials...
 @000408  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]

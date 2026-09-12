@@ -6,8 +6,8 @@
     "count": 830
   },
   "totals": {
-    "mapped_background_image": 91,
-    "named_tile_graphics": 13
+    "mapped_background_image": 94,
+    "named_tile_graphics": 10
   },
   "png_roundtrips": 104,
   "compressed_roundtrips": 104,
@@ -253,26 +253,24 @@
       "layout": "graphics/backgrounds/BA06.TCG.json"
     },
     {
-      "path": "graphics/tilesets/BA06_BG.TCG",
+      "path": "graphics/backgrounds/BA06_BG.TCG",
       "manifest": "assets.json",
       "rom_offset": 3702112,
       "raw_size": 17408,
-      "kind": "tilesets",
+      "kind": "mapped_image",
       "owners": [
         "BA06_BG.TCG"
       ],
-      "status": "named_tile_graphics",
+      "status": "mapped_background_image",
       "evidence": [
-        "Whole named character-graphics member; valid LZ77 stream and complete tiles"
+        "Whole named character-graphics member; valid LZ77 stream and complete tiles",
+        "Editable image compiled through KMP/TSC tile indices, flips and palette banks"
       ],
       "roundtrip": true,
       "compressed_roundtrip": true,
       "sha256": "ebf0bae46678b5b4d77b3a120f7c57c3019662407b13709a53168b471dc1683b",
       "member_offset": 0,
-      "palette_member": "BA06_BG.TCL",
-      "palette_banks": 3,
-      "preview": "previews/387D60_bank00.png",
-      "preview_bank_count": 3
+      "layout": "graphics/backgrounds/BA06_BG.TCG.json"
     },
     {
       "path": "graphics/backgrounds/BA07.TCG",
@@ -899,26 +897,24 @@
       "layout": "graphics/backgrounds/MAP07_3A.KCG.json"
     },
     {
-      "path": "graphics/tilesets/MAP07_A.KCG",
+      "path": "graphics/backgrounds/MAP07_A.KCG",
       "manifest": "assets.json",
       "rom_offset": 10037056,
       "raw_size": 32768,
-      "kind": "tilesets",
+      "kind": "mapped_image",
       "owners": [
         "MAP07_A.KCG"
       ],
-      "status": "named_tile_graphics",
+      "status": "mapped_background_image",
       "evidence": [
-        "Whole named character-graphics member; valid LZ77 stream and complete tiles"
+        "Whole named character-graphics member; valid LZ77 stream and complete tiles",
+        "Editable image compiled through KMP/TSC tile indices, flips and palette banks"
       ],
       "roundtrip": true,
       "compressed_roundtrip": true,
       "sha256": "efc3df7f4e82764ecf2c595b2039afbd3c72733dbc77b221f87b2d2e8f43a743",
       "member_offset": 0,
-      "palette_member": "MAP07_A.KCL",
-      "palette_banks": 4,
-      "preview": "previews/992740_bank00.png",
-      "preview_bank_count": 4
+      "layout": "graphics/backgrounds/MAP07_A.KCG.json"
     },
     {
       "path": "graphics/backgrounds/MAP08_A.KCG",
@@ -1263,26 +1259,24 @@
       "layout": "graphics/backgrounds/ML_BG01.KCG.json"
     },
     {
-      "path": "graphics/tilesets/MWA.KCG",
+      "path": "graphics/backgrounds/MWA.KCG",
       "manifest": "assets.json",
       "rom_offset": 13951024,
       "raw_size": 4000,
-      "kind": "tilesets",
+      "kind": "mapped_image",
       "owners": [
         "MWA.KCG"
       ],
-      "status": "named_tile_graphics",
+      "status": "mapped_background_image",
       "evidence": [
-        "Whole named character-graphics member; valid LZ77 stream and complete tiles"
+        "Whole named character-graphics member; valid LZ77 stream and complete tiles",
+        "Editable image compiled through KMP/TSC tile indices, flips and palette banks"
       ],
       "roundtrip": true,
       "compressed_roundtrip": true,
       "sha256": "6c37b139b291d0419e3decebc9bde94981d53573052fc7b662b8490b339c7449",
       "member_offset": 0,
-      "palette_member": "MWA.KCL",
-      "palette_banks": 1,
-      "preview": "previews/D4E030_bank00.png",
-      "preview_bank_count": 1
+      "layout": "graphics/backgrounds/MWA.KCG.json"
     },
     {
       "path": "graphics/backgrounds/NE01.TCG",

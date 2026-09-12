@@ -6,7 +6,7 @@
 @000229 A  // LITERAL: A (usage not inferred)
 @0004FE F06A01  // LITERAL: F06A01 (usage not inferred)
 @0005BF  C0D04 ［エド］  // EN: [Ed]
-@0005DA  C0F04 とりあえず、はらごしらえだ  // TODO: English translation
+@0005DA  C0F04 とりあえず、はらごしらえだ  // EN: First, let's get something to eat.
 @000631  C0D04 ［エド］  // EN: [Ed]
-@00064C  C0F04 街の北にめし屋がある  // TODO: English translation
-@000673 そこへ行こう  // TODO: English translation
+@00064C  C0F04 街の北にめし屋がある  // EN: There's a restaurant north of town.
+@000673 そこへ行こう  // EN: Let's go there.

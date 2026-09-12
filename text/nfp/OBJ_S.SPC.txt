@@ -4,5 +4,5 @@
 
 @000160 F04A01  // LITERAL: F04A01 (usage not inferred)
 @000221  C0D04 ［スノウ］  // EN: [Snow]
-@00023E  C0F04 氷をとかすね  // TODO: English translation
+@00023E  C0F04 氷をとかすね  // EN: I'll melt the ice.
 @0004B9 氷が道をふさいでいる  // EN: Ice is blocking the path.

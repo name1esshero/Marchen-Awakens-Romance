@@ -5,111 +5,111 @@
 @000170 F01B11  // LITERAL: F01B11 (usage not inferred)
 @000223 F04A06  // LITERAL: F04A06 (usage not inferred)
 @00032C  C0D04 ［スノウ］  // EN: [Snow]
-@000349  C0F04 それにしても深いね…  // TODO: English translation
-@000370 落ちたら…どうなるんだろう…  // TODO: English translation
+@000349  C0F04 それにしても深いね…  // EN: It sure is deep...
+@000370 落ちたら…どうなるんだろう…  // EN: What would happen if we fell...?
 @0003EC  C0D04 ［ギンタ］  // EN: [Ginta]
-@000409  C0F04 ……………  // TODO: English translation
+@000409  C0F04 ……………  // EN: .............
 @000487 F01B13  // LITERAL: F01B13 (usage not inferred)
 @0004B5  C0D04 ［ギンタ］  // EN: [Ginta]
-@0004D2  C0F04 こ、こわいこというなよ！  // TODO: English translation
+@0004D2  C0F04 こ、こわいこというなよ！  // EN: D-don't say scary things!
 @00069E A  // LITERAL: A (usage not inferred)
 @000766 A  // LITERAL: A (usage not inferred)
 @000AAE F01B13  // LITERAL: F01B13 (usage not inferred)
 @000BAE  C0D04 ［ギンタ］  // EN: [Ginta]
-@000BCB  C0F04 あちゃーー…  // TODO: English translation
+@000BCB  C0F04 あちゃーー…  // EN: Oh, maaan...
 @000C24 F03A04  // LITERAL: F03A04 (usage not inferred)
 @000CFD  C0D04 ［ジャック］  // EN: [Jack]
-@000D1C  C0F04 先にすすむのは…  // TODO: English translation
-@000D3F ちょっとムリ…っスねぇ…  // TODO: English translation
+@000D1C  C0F04 先にすすむのは…  // EN: Going any farther...
+@000D3F ちょっとムリ…っスねぇ…  // EN: ...looks a little impossible...
 @000DB8 F01B04  // LITERAL: F01B04 (usage not inferred)
 @000DE6  C0D04 ［ギンタ］  // EN: [Ginta]
-@000E03  C0F04 スノウがいてくれればなぁ…  // TODO: English translation
+@000E03  C0F04 スノウがいてくれればなぁ…  // EN: If only Snow were here...
 @000EA0 F38A05  // LITERAL: F38A05 (usage not inferred)
 @000F04  C0D04 ［マール］  // EN: [Marl]
-@000F21  C0F04 ……  // TODO: English translation
+@000F21  C0F04 ……  // EN: ......
 @00104F  C0D04 ［？？？］  // EN: [???]
 @00106C  C0F04 ギンタ！  // EN: Ginta!
-@001087 ギンターー！  // TODO: English translation
+@001087 ギンターー！  // EN: Gintaaa!
 @0010CD F03A07  // LITERAL: F03A07 (usage not inferred)
 @00117F  C0D04 ［ジャック］  // EN: [Jack]
-@00119E  C0F04 お！？  // TODO: English translation
+@00119E  C0F04 お！？  // EN: Oh?!
 @0011F1 F01B07  // LITERAL: F01B07 (usage not inferred)
 @00127B  C0D04 ［ギンタ］  // EN: [Ginta]
-@001298  C0F04 ま、まさか…  // TODO: English translation
-@0012B7 スノウ！？  // TODO: English translation
+@001298  C0F04 ま、まさか…  // EN: C-could it be...
+@0012B7 スノウ！？  // EN: Snow?!
 @0013D9 F09A03  // LITERAL: F09A03 (usage not inferred)
 @0014C2 A  // LITERAL: A (usage not inferred)
 @001608  C0D04 ［ドロシー］  // EN: [Dorothy]
 @001749 F01B11  // LITERAL: F01B11 (usage not inferred)
 @0017DD  C0D04 ［ギンタ］  // EN: [Ginta]
-@0017FA  C0F04 ……  // TODO: English translation
+@0017FA  C0F04 ……  // EN: ......
 @00184B F03A08  // LITERAL: F03A08 (usage not inferred)
 @0018AF  C0D04 ［ジャック］  // EN: [Jack]
-@0018CE  C0F04 ……  // TODO: English translation
+@0018CE  C0F04 ……  // EN: ......
 @001B87  C0D04 ［ドロシー］  // EN: [Dorothy]
-@001BC9 って…あらぁ？  // TODO: English translation
+@001BC9 って…あらぁ？  // EN: Wait...huh?
 @001C01  C0D04 ［ドロシー］  // EN: [Dorothy]
-@001C20  C0F04 …  // TODO: English translation
+@001C20  C0F04 …  // EN: ...
 @001CCC F09A07  // LITERAL: F09A07 (usage not inferred)
 @001D30  C0D04 ［ドロシー］  // EN: [Dorothy]
-@001D4F  C0F04 なにこの  // TODO: English translation
+@001D4F  C0F04 なにこの  // EN: What's with this...
 @001D94  C0D04 ［ドロシー］  // EN: [Dorothy]
-@001DB3  C0F04 『なんだおまえかよ！』  // TODO: English translation
-@001DDC みたいな空気は！！  // TODO: English translation
+@001DB3  C0F04 『なんだおまえかよ！』  // EN: 'Oh, it's just you!'
+@001DDC みたいな空気は！！  // EN: ...atmosphere?!
 @001E5E F01B04  // LITERAL: F01B04 (usage not inferred)
 @001EC2  C0D04 ［ギンタ］  // EN: [Ginta]
-@001EDF  C0F04 だってほら…  // TODO: English translation
+@001EDF  C0F04 だってほら…  // EN: Well, look...
 @002162  C0D04 ［ドロシー］  // EN: [Dorothy]
-@002181  C0F04 （げ！…デカイ氷！）  // TODO: English translation
+@002181  C0F04 （げ！…デカイ氷！）  // EN: (Ugh! ...A huge block of ice!)
 @0021D2  C0D04 ［ドロシー］  // EN: [Dorothy]
-@0021F1  C0F04 ………  // TODO: English translation
+@0021F1  C0F04 ………  // EN: ...
 @0022F4  C0D04 ［ドロシー］  // EN: [Dorothy]
-@002313  C0F04 （ち！！）  // TODO: English translation
+@002313  C0F04 （ち！！）  // EN: (Tch!!)
 @0023B7  C0D04 ［ドロシー］  // EN: [Dorothy]
-@0023D6  C0F04 （それでスノウをまっていたってワケね！）  // TODO: English translation
+@0023D6  C0F04 （それでスノウをまっていたってワケね！）  // EN: (So that's why they were waiting for Snow!)
 @00243B  C0D04 ［ドロシー］  // EN: [Dorothy]
-@00245A  C0F04 ………  // TODO: English translation
+@00245A  C0F04 ………  // EN: ...
 @0024AD F09A01  // LITERAL: F09A01 (usage not inferred)
 @0024DB  C0D04 ［ドロシー］  // EN: [Dorothy]
-@0024FA  C0F04 （…負けるもんか！）  // TODO: English translation
+@0024FA  C0F04 （…負けるもんか！）  // EN: (...I won't lose to her!)
 @002591 F09A05  // LITERAL: F09A05 (usage not inferred)
 @0025F5  C0D04 ［ドロシー］  // EN: [Dorothy]
-@002614  C0F04 ほ、ほほほほ！  // TODO: English translation
-@002635 なによそれくらいの氷！  // TODO: English translation
+@002614  C0F04 ほ、ほほほほ！  // EN: O-ohohoho!
+@002635 なによそれくらいの氷！  // EN: What's a little ice like that?!
 @002675  C0D04 ［ドロシー］  // EN: [Dorothy]
-@002694  C0F04 このドロシー姉さんなら  // TODO: English translation
-@0026BD ヨユウよ、ヨ・ユ・ウ♪  // TODO: English translation
+@002694  C0F04 このドロシー姉さんなら  // EN: For your big sister Dorothy...
+@0026BD ヨユウよ、ヨ・ユ・ウ♪  // EN: ...it's easy! E-a-s-y!
 @002847 F01B10  // LITERAL: F01B10 (usage not inferred)
 @0028AB  C0D04 ［ギンタ］  // EN: [Ginta]
 @0028C8  C0F04 ドロシー  // EN: Dorothy
-@0028E3 ムリしないほうがいいよ…  // TODO: English translation
+@0028E3 ムリしないほうがいいよ…  // EN: You shouldn't push yourself...
 @002935 F09A01  // LITERAL: F09A01 (usage not inferred)
 @0029C0  C0D04 ［ドロシー］  // EN: [Dorothy]
-@0029DF  C0F04 しんぱいしてくれるの？  // TODO: English translation
-@002A08 うれし〜な〜〜…っと  // TODO: English translation
+@0029DF  C0F04 しんぱいしてくれるの？  // EN: Are you worried about me?
+@002A08 うれし〜な〜〜…っと  // EN: That makes me so happy...now...
 @002B92 F09A05  // LITERAL: F09A05 (usage not inferred)
 @002CC5  C0D04 ［ドロシー］  // EN: [Dorothy]
-@002CE4  C0F04 いーーーーーーーー！  // TODO: English translation
+@002CE4  C0F04 いーーーーーーーー！  // EN: Eeeeeeee!
 @002D7B F09A06  // LITERAL: F09A06 (usage not inferred)
 @002E97  C0D04 ［ドロシー］  // EN: [Dorothy]
-@002EB6  C0F04 だだだだだだだいじょうぶよ  // TODO: English translation
+@002EB6  C0F04 だだだだだだだいじょうぶよ  // EN: I-I-I-I'm perfectly fine.
 @002F0D  C0D04 ［ドロシー］  // EN: [Dorothy]
-@002F2C  C0F04 ほほほほほほほらほら！  // TODO: English translation
+@002F2C  C0F04 ほほほほほほほらほら！  // EN: S-s-s-see? Look!
 @002FC5 F03A08  // LITERAL: F03A08 (usage not inferred)
 @003029  C0D04 ［ジャック］  // EN: [Jack]
-@003048  C0F04 ドロシー、スカートが  // TODO: English translation
-@00306F カチンコチンにこおってるっス  // TODO: English translation
+@003048  C0F04 ドロシー、スカートが  // EN: Dorothy, your skirt...
+@00306F カチンコチンにこおってるっス  // EN: ...is frozen solid.
 @003121  C0D04 ［ドロシー］  // EN: [Dorothy]
-@003140  C0F04 （ス、スカートの中身も  // TODO: English translation
-@003169 　かちんこちんなんですけど…）  // TODO: English translation
+@003140  C0F04 （ス、スカートの中身も  // EN: (Wh-what's under my skirt...
+@003169 　かちんこちんなんですけど…）  // EN: ...is frozen solid too...)
 @00322D F01B09  // LITERAL: F01B09 (usage not inferred)
 @003291  C0D04 ［ギンタ］  // EN: [Ginta]
-@0032AE  C0F04 や、やっぱりさ！  // TODO: English translation
-@0032D1 いったん地上に戻ってスノウよんでこよう！  // TODO: English translation
+@0032AE  C0F04 や、やっぱりさ！  // EN: W-well, you know!
+@0032D1 いったん地上に戻ってスノウよんでこよう！  // EN: Let's go back to the surface and get Snow!
 @003359  C0D04 ［ジャック］  // EN: [Jack]
-@003378  C0F04 そ…そっスね…  // TODO: English translation
+@003378  C0F04 そ…そっスね…  // EN: Y-yeah...
 @003553  C0D04 ［ドロシー］  // EN: [Dorothy]
-@003572  C0F04 〜〜〜〜〜〜〜〜  // TODO: English translation
+@003572  C0F04 〜〜〜〜〜〜〜〜  // EN: Brrrrrrrr...
 @00370F G_EV041.SPC  // LITERAL: G_EV041.SPC (usage not inferred)
-@001627  C0F04 ギンターーーン<F0><40>  // TODO: English translation
-@001BA6  C0F04 ギンターーーン<F0><40>  // TODO: English translation
+@001627  C0F04 ギンターーーン<F0><40>  // EN: Gintaaaa!
+@001BA6  C0F04 ギンターーーン<F0><40>  // EN: Gintaaaa!

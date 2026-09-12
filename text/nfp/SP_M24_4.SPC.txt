@@ -7,53 +7,53 @@
 @000306 A  // LITERAL: A (usage not inferred)
 @000B06 F01B01  // LITERAL: F01B01 (usage not inferred)
 @000C06  C0D04 ［ギンタ］  // EN: [Ginta]
-@000C23  C0F04 これか！？  // TODO: English translation
+@000C23  C0F04 これか！？  // EN: Is this it?!
 @000C7A F03A03  // LITERAL: F03A03 (usage not inferred)
 @000D7A  C0D04 ［ジャック］  // EN: [Jack]
-@000D99  C0F04 だ、だいじょうぶっスかね…  // TODO: English translation
+@000D99  C0F04 だ、だいじょうぶっスかね…  // EN: I-is it safe...?
 @000E00 F38A01  // LITERAL: F38A01 (usage not inferred)
 @000F00  C0D04 ［マール］  // EN: [Marl]
-@000F1D  C0F04 宝ばこはあけても  // TODO: English translation
-@000F40 だいじょうぶなはずです  // TODO: English translation
+@000F1D  C0F04 宝ばこはあけても  // EN: It should be safe...
+@000F40 だいじょうぶなはずです  // EN: ...to open the treasure chest.
 @000F80  C0D04 ［マール］  // EN: [Marl]
-@000F9D  C0F04 あけたあとに、もち主としてふさわしいか  // TODO: English translation
-@000FD6 試練（しれん）がまち受ける、といいます  // TODO: English translation
+@000F9D  C0F04 あけたあとに、もち主としてふさわしいか  // EN: They say that once it's opened, a trial awaits...
+@000FD6 試練（しれん）がまち受ける、といいます  // EN: ...to test whether you're worthy to own it.
 @00106C F04A01  // LITERAL: F04A01 (usage not inferred)
 @00116C  C0D04 ［スノウ］  // EN: [Snow]
-@001189  C0F04 …  // TODO: English translation
+@001189  C0F04 …  // EN: ...
 @0011D8 F01B08  // LITERAL: F01B08 (usage not inferred)
 @001206  C0D04 ［ギンタ］  // EN: [Ginta]
-@001223  C0F04 いいぜ、あけてみよう！  // TODO: English translation
+@001223  C0F04 いいぜ、あけてみよう！  // EN: All right, let's open it!
 @001286 F38A02  // LITERAL: F38A02 (usage not inferred)
 @0012B4  C0D04 ［マール］  // EN: [Marl]
-@0012D1  C0F04 では…ボクがあけます！  // TODO: English translation
+@0012D1  C0F04 では…ボクがあけます！  // EN: Then...I'll open it!
 @00136A F02A01  // LITERAL: F02A01 (usage not inferred)
 @00146A  C0D04 ［バッボ］  // EN: [Babbo]
 @001487  C0F04 うむ！  // EN: Indeed!
 @001816 EF_GEN03  // LITERAL: EF_GEN03 (usage not inferred)
 @001912 LAST00  // LITERAL: LAST00 (usage not inferred)
-@001C2B ァァァアアアアアァァァ…  // TODO: English translation
+@001C2B ァァァアアアアアァァァ…  // EN: Aaaaaaaaah...
 @001E1B F04A02  // LITERAL: F04A02 (usage not inferred)
 @001F1B  C0D04 ［スノウ］  // EN: [Snow]
-@001F38  C0F04 うわぁ…！  // TODO: English translation
+@001F38  C0F04 うわぁ…！  // EN: Whoa...!
 @001FC5 F38A02  // LITERAL: F38A02 (usage not inferred)
 @0020C5  C0D04 ［マール］  // EN: [Marl]
-@0020E2  C0F04 ギンタさん！きっとこれは…  // TODO: English translation
-@00210F 『たおしてみろ』と言っています！  // TODO: English translation
+@0020E2  C0F04 ギンタさん！きっとこれは…  // EN: Ginta! I'm sure it's...
+@00210F 『たおしてみろ』と言っています！  // EN: ...telling us to defeat it!
 @002169 F01B01  // LITERAL: F01B01 (usage not inferred)
 @002269  C0D04 ［ギンタ］  // EN: [Ginta]
-@002286  C0F04 よーーし！  // TODO: English translation
-@0022A3 行くぜ、バッボ！！  // TODO: English translation
+@002286  C0F04 よーーし！  // EN: All riiight!
+@0022A3 行くぜ、バッボ！！  // EN: Let's go, Babbo!!
 @002A27 OBJ_S.SPC  // LITERAL: OBJ_S.SPC (usage not inferred)
 @002B5C F03A06  // LITERAL: F03A06 (usage not inferred)
 @002C1D  C0D04 ［ジャック］  // EN: [Jack]
-@002C3C  C0F04 さすが！  // TODO: English translation
+@002C3C  C0F04 さすが！  // EN: Just as expected!
 @002C8B F01B09  // LITERAL: F01B09 (usage not inferred)
 @002D4C  C0D04 ［ギンタ］  // EN: [Ginta]
-@002D69  C0F04 やっぱりこんなデッカイ氷  // TODO: English translation
-@002D94 またいでわたろうとしちゃダメだよな  // TODO: English translation
+@002D69  C0F04 やっぱりこんなデッカイ氷  // EN: You really shouldn't try...
+@002D94 またいでわたろうとしちゃダメだよな  // EN: ...to step over such a huge block of ice.
 @002E1A F03A08  // LITERAL: F03A08 (usage not inferred)
 @002E78  C0D04 ［ジャック］  // EN: [Jack]
-@002E97  C0F04 まったくっスね  // TODO: English translation
+@002E97  C0F04 まったくっスね  // EN: You said it.
 @002FCB L11_0_3.SPC  // LITERAL: L11_0_3.SPC (usage not inferred)
 @00304D DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)

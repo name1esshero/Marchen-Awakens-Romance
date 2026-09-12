@@ -5,17 +5,17 @@
 @0000BA A  // LITERAL: A (usage not inferred)
 @000484 F01A01  // LITERAL: F01A01 (usage not inferred)
 @00055D  C0D04 ［ギンタ］  // EN: [Ginta]
-@00057A  C0F04 いよいしょおーーーーーー！！  // TODO: English translation
+@00057A  C0F04 いよいしょおーーーーーー！！  // EN: Heave-hooooo!!
 @000725 TEST_E02  // LITERAL: TEST_E02 (usage not inferred)
 @0008E2 F09A05  // LITERAL: F09A05 (usage not inferred)
 @0009BB  C0D04 ［ドロシー］  // EN: [Dorothy]
-@0009DA  C0F04 （すご…！  // TODO: English translation
-@0009F7 　バカぢからねぇーー）  // TODO: English translation
+@0009DA  C0F04 （すご…！  // EN: (Wow...!
+@0009F7 　バカぢからねぇーー）  // EN: What incredible brute strength.)
 @000A47 F01A01  // LITERAL: F01A01 (usage not inferred)
 @000B20  C0D04 ［ギンタ］  // EN: [Ginta]
-@000B3D  C0F04 やっぱり…  // TODO: English translation
-@000B5A オレはこのせかいにきてかわった！！  // TODO: English translation
+@000B3D  C0F04 やっぱり…  // EN: Just as I thought...
+@000B5A オレはこのせかいにきてかわった！！  // EN: Coming to this world changed me!!
 @000E09 F01A04  // LITERAL: F01A04 (usage not inferred)
 @000F09  C0D04 ［ギンタ］  // EN: [Ginta]
-@000F26  C0F04 中に入れそうもないな…  // TODO: English translation
+@000F26  C0F04 中に入れそうもないな…  // EN: Doesn't look like I can get inside...
 @001033 OBJ_J.SPC  // LITERAL: OBJ_J.SPC (usage not inferred)

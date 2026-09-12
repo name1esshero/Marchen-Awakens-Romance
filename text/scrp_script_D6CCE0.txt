@@ -4,12 +4,12 @@
 
 @000160 F03A01  // LITERAL: F03A01 (usage not inferred)
 @000221  C0D04 ［ジャック］  // EN: [Jack]
-@000240  C0F04 この下に何かありそうっスね  // TODO: English translation
-@00026D 穴をほってみるっス  // TODO: English translation
+@000240  C0F04 この下に何かありそうっスね  // EN: Looks like there's something down here.
+@00026D 穴をほってみるっス  // EN: I'll try digging.
 @000459 MAP00_O  // LITERAL: MAP00_O (usage not inferred)
 @000567 F03A01  // LITERAL: F03A01 (usage not inferred)
 @000628  C0D04 ［ジャック］  // EN: [Jack]
-@000647  C0F04 やっぱり、くうどうになってるっス  // TODO: English translation
-@00067A 入ってみるっス  // TODO: English translation
+@000647  C0F04 やっぱり、くうどうになってるっス  // EN: Yep, there's a hollow space.
+@00067A 入ってみるっス  // EN: Let's go inside.
 @000729 J_HOLE.SPC  // LITERAL: J_HOLE.SPC (usage not inferred)
-@000863 穴が土でうまっている  // TODO: English translation
+@000863 穴が土でうまっている  // EN: The hole is filled with dirt.

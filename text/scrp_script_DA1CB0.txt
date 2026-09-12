@@ -2,5 +2,5 @@
 // CODE offsets and Japanese are checked against the named source.
 // Regenerate comments with tools/translate_comments.py; this copy is not built.
 
-@000295  C0F04 もう用はないかい？  // TODO: English translation
-@000409  C0F04 何を売るんだい？  // TODO: English translation
+@000295  C0F04 もう用はないかい？  // EN: Anything else you need?
+@000409  C0F04 何を売るんだい？  // EN: What are you selling?
