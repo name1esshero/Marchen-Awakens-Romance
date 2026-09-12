@@ -12938,7 +12938,7 @@ _08015E9A:
 	movs r0, #0
 	movs r2, #0
 	movs r3, #0
-	bl sub_0807BA78
+	bl SpriteResourceGetLevel2
 	ldr r1, [sp, #16]
 	ldrh r0, [r0, #4]
 	adds r1, #35
@@ -13723,7 +13723,7 @@ _080163A2:
 	movs r0, #0
 	movs r2, #0
 	movs r3, #0
-	bl sub_0807BA78
+	bl SpriteResourceGetLevel2
 	ldr r1, [sp, #16]
 	ldrh r0, [r0, #4]
 	adds r1, #35

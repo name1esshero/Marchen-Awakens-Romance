@@ -223,5 +223,15 @@
   "0807B708": "SpriteEngineTestFlag20C",
   "0807B74C": "SpriteEngineGetFlags20C",
   "0807B798": "SpriteEngineGetCounter",
-  "0807B7B4": "SpriteEngineSetCounter"
+  "0807B7B4": "SpriteEngineSetCounter",
+  "0807B760": "SpriteEngineReleaseBinding",
+  "0807B7D0": "SpriteEngineIncrementCounter",
+  "0807B7F8": "SpriteEngineDecrementCounter",
+  "0807BA0C": "SpriteResourceGetLevel0",
+  "0807BA2C": "SpriteResourceGetEntryCount",
+  "0807BA48": "SpriteResourceGetLevel1",
+  "0807BA78": "SpriteResourceGetLevel2",
+  "0807BAB0": "SpriteResourceGetLevel3",
+  "0807BAF8": "SpriteResourceGetTable24",
+  "0807BB48": "SpriteResourceGetTable28"
 }

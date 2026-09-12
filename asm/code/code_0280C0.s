@@ -150,7 +150,7 @@ _08028182:
 	ldr r0, [r4, #8]
 	ldr r1, [r4, #12]
 	ldr r2, [r4, #16]
-	bl sub_0807BA48
+	bl SpriteResourceGetLevel1
 	ldr r0, [r0, #4]
 	str r0, [r4, #24]
 	.global _08028198
@@ -2266,7 +2266,7 @@ sub_08028EEC:
 	str r2, [sp, #0]
 	movs r2, #0
 	movs r3, #0
-	bl sub_0807BAF8
+	bl SpriteResourceGetTable24
 	adds r1, r0, #0
 	adds r0, r4, #0
 	movs r2, #32
@@ -3117,7 +3117,7 @@ sub_08029456:
 	movs r2, #0
 	str r2, [sp, #0]
 	movs r3, #0
-	bl sub_0807BAF8
+	bl SpriteResourceGetTable24
 	adds r1, r0, #0
 	adds r0, r4, #0
 	movs r2, #32
@@ -3959,7 +3959,7 @@ sub_08029920:
 	.global sub_08029972
 sub_08029972:
 	movs r3, #0
-	bl sub_0807BAF8
+	bl SpriteResourceGetTable24
 	adds r4, r0, #0
 	movs r0, #30
 	movs r1, #0
@@ -4002,7 +4002,7 @@ sub_080299B8:
 	movs r0, #0
 	movs r2, #0
 	movs r3, #0
-	bl sub_0807BAF8
+	bl SpriteResourceGetTable24
 
 	.thumb_func
 	.thumb
@@ -4155,7 +4155,7 @@ _08029A84:
 	str r2, [sp, #0]
 	movs r2, #0
 	movs r3, #0
-	bl sub_0807BAF8
+	bl SpriteResourceGetTable24
 	adds r1, r0, #0
 	adds r0, r4, #0
 	movs r2, #32
@@ -4170,7 +4170,7 @@ _08029A84:
 	str r2, [sp, #0]
 	movs r2, #0
 	movs r3, #0
-	bl sub_0807BAF8
+	bl SpriteResourceGetTable24
 	adds r1, r0, #0
 	adds r0, r4, #0
 	movs r2, #32

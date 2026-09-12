@@ -4375,7 +4375,7 @@ _080024B8:
 	mov r1, r10
 	movs r2, #0
 	movs r3, #0
-	bl sub_0807BB48
+	bl SpriteResourceGetTable28
 	adds r2, r0, #0
 	movs r7, #31
 	str r7, [sp, #0]
@@ -4412,7 +4412,7 @@ _080024F0:
 	mov r1, r10
 	movs r2, #0
 	movs r3, #0
-	bl sub_0807BB48
+	bl SpriteResourceGetTable28
 	adds r2, r0, #0
 	ldr r1, [sp, #4]
 	adds r1, #128

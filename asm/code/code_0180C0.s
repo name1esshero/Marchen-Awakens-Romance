@@ -6491,7 +6491,7 @@ _0801AEB4:
 	movs r0, #2
 	adds r1, r7, #0
 	movs r2, #0
-	bl sub_0807BA48
+	bl SpriteResourceGetLevel1
 	ldr r0, [r0, #4]
 	subs r4, r0, #1
 	str r4, [sp, #0]
@@ -11203,7 +11203,7 @@ sub_0801CEE2:
 	movs r0, #2
 	mov r1, r9
 	movs r2, #0
-	bl sub_0807BA48
+	bl SpriteResourceGetLevel1
 	ldr r0, [r0, #4]
 	subs r6, r0, #1
 	str r6, [sp, #0]

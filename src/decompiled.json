@@ -1060,5 +1060,65 @@
   "size": 28,
   "name": "SpriteEngineSetCounter",
   "file": "src/sprite_engine_state.c"
+ },
+ {
+  "addr": "0807B760",
+  "size": 56,
+  "name": "SpriteEngineReleaseBinding",
+  "file": "src/sprite_engine_state.c"
+ },
+ {
+  "addr": "0807B7D0",
+  "size": 40,
+  "name": "SpriteEngineIncrementCounter",
+  "file": "src/sprite_engine_state.c"
+ },
+ {
+  "addr": "0807B7F8",
+  "size": 56,
+  "name": "SpriteEngineDecrementCounter",
+  "file": "src/sprite_engine_state.c"
+ },
+ {
+  "addr": "0807BA0C",
+  "size": 32,
+  "name": "SpriteResourceGetLevel0",
+  "file": "src/sprite_engine_state.c"
+ },
+ {
+  "addr": "0807BA2C",
+  "size": 28,
+  "name": "SpriteResourceGetEntryCount",
+  "file": "src/sprite_engine_state.c"
+ },
+ {
+  "addr": "0807BA48",
+  "size": 48,
+  "name": "SpriteResourceGetLevel1",
+  "file": "src/sprite_engine_state.c"
+ },
+ {
+  "addr": "0807BA78",
+  "size": 56,
+  "name": "SpriteResourceGetLevel2",
+  "file": "src/sprite_engine_state.c"
+ },
+ {
+  "addr": "0807BAB0",
+  "size": 72,
+  "name": "SpriteResourceGetLevel3",
+  "file": "src/sprite_engine_state.c"
+ },
+ {
+  "addr": "0807BAF8",
+  "size": 80,
+  "name": "SpriteResourceGetTable24",
+  "file": "src/sprite_engine_state.c"
+ },
+ {
+  "addr": "0807BB48",
+  "size": 80,
+  "name": "SpriteResourceGetTable28",
+  "file": "src/sprite_engine_state.c"
  }
 ]

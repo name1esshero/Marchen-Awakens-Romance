@@ -246,7 +246,7 @@ lookup, removal, head, tail, and count) now use readable C in `src/list.c`
 (196 bytes), alongside the `SprSet` and
 `SprGet` native adapters (60 bytes), and 13 item-table accessors in `src/item.c`
 (276 bytes). Item names and descriptions are identified; other field names
-retain offsets until their gameplay meaning is verified. The provenance audit verifies **167 ordinary
+retain offsets until their gameplay meaning is verified. The provenance audit verifies **177 ordinary
 C functions and 10 BIOS assembly wrappers**; each declared range is linked from
 its expected C object and matches the Japanese ROM. This is a function count,
 not a percentage of total code decoded. List tests cover empty/nonempty append
@@ -304,6 +304,18 @@ flag field at `0x20C`, and read or write its 16-by-4 byte counter table at
 and sign extension, individual flag changes, mask-valued flag tests, and
 counter indexing.
 
+Three resource-group lifetime helpers add another 152 bytes. A 16-entry binding
+table at `0x14C` keeps signed-byte back-references into resource-owner records.
+Its recovered routines release those references and maintain four saturating
+reference counters per group, automatically releasing a binding when a counter
+falls to zero.
+
+Seven typed resource-table accessors add 396 bytes of matching C. They expose
+the renderer's 32-byte resource descriptors and traverse indexed 16-, 8-, 8-,
+20-, and 32-byte records without opaque pointer arithmetic at their call sites.
+The neutral level names remain until the NCD fields using each table establish
+their final animation or graphics roles.
+
 **The build compiles C with agbcc**, the period compiler the pret projects
 preserve. This is what lets ordinary C reproduce the original instruction
 bytes: modern GCC allocates registers differently for identical source and
@@ -316,8 +328,8 @@ included, where modern GCC differed on two counts in every function:
 | Leaf prologue | `push {lr}` | `push {r4, lr}`, saving a register it never uses |
 | `index * 24` | `((i * 2) + i) * 8` with shifts | load 24, then `muls` |
 
-The current manifest declares 177 linked ranges: 167 compiled-C ranges and ten
-BIOS inline-assembly wrapper ranges. Compiled C owns 7,032 bytes, including
+The current manifest declares 187 linked ranges: 177 compiled-C ranges and ten
+BIOS inline-assembly wrapper ranges. Compiled C owns 7,580 bytes, including
 literal pools and alignment. This is not a function-completion percentage.
 One range may contain multiple contiguous
 functions and alignment bytes. The [build provenance audit](https://github.com/name1esshero/Marchen-Awakens-Romance/wiki/Build-verification)

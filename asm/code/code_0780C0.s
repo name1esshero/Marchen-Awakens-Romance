@@ -6351,116 +6351,9 @@ _0807B744:
 _0807B748:
 	.4byte 0x0000FFFF
 
-	.section .rom.0007B760, "ax"
+	.section .rom.0007B830, "ax"
 	.balign 4
 	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_0807B760
-sub_0807B760:
-	push {lr}
-	lsls r0, r0, #24
-	ldr r1, _0807B794
-	lsrs r0, r0, #21
-	movs r2, #166
-	lsls r2, r2, #1
-	adds r0, r0, r2
-	ldr r1, [r1, #0]
-	adds r1, r1, r0
-	ldr r0, [r1, #0]
-	cmp r0, #0
-	beq _0807B78E
-	ldr r3, [r1, #4]
-	movs r2, #1
-	negs r2, r2
-	cmp r3, r2
-	beq _0807B78A
-	ldr r0, [r0, #4]
-	adds r0, r0, r3
-	strb r2, [r0, #0]
-	str r2, [r1, #4]
-	.global _0807B78A
-_0807B78A:
-	movs r0, #0
-	str r0, [r1, #0]
-	.global _0807B78E
-_0807B78E:
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _0807B794
-_0807B794:
-	.4byte 0x03006118  @ IWRAM+0x6118
-
-	.section .rom.0007B7D0, "ax"
-	.balign 4
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_0807B7D0
-sub_0807B7D0:
-	push {lr}
-	lsls r0, r0, #24
-	ldr r2, _0807B7F4
-	lsrs r0, r0, #22
-	movs r3, #230
-	lsls r3, r3, #1
-	adds r0, r0, r3
-	ldr r2, [r2, #0]
-	adds r2, r2, r0
-	adds r2, r2, r1
-	ldrb r1, [r2, #0]
-	adds r0, r1, #0
-	cmp r0, #255
-	beq _0807B7F0
-	adds r0, r1, #1
-	strb r0, [r2, #0]
-	.global _0807B7F0
-_0807B7F0:
-	pop {r0}
-	bx r0
-	.global _0807B7F4
-_0807B7F4:
-	.4byte 0x03006118  @ IWRAM+0x6118
-
-	.thumb_func
-	.thumb
-	.global sub_0807B7F8
-sub_0807B7F8:
-	push {r4, lr}
-	lsls r0, r0, #24
-	lsrs r3, r0, #24
-	ldr r0, _0807B82C
-	lsls r2, r3, #2
-	movs r4, #230
-	lsls r4, r4, #1
-	adds r2, r2, r4
-	ldr r0, [r0, #0]
-	adds r0, r0, r2
-	adds r1, r0, r1
-	ldrb r0, [r1, #0]
-	cmp r0, #0
-	beq _0807B824
-	subs r0, #1
-	strb r0, [r1, #0]
-	lsls r0, r0, #24
-	cmp r0, #0
-	bne _0807B824
-	adds r0, r3, #0
-	bl sub_0807B760
-	.global _0807B824
-_0807B824:
-	pop {r4}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _0807B82C
-_0807B82C:
-	.4byte 0x03006118  @ IWRAM+0x6118
 
 	.thumb_func
 	.thumb
@@ -6582,7 +6475,7 @@ _0807B8E0:
 _0807B8E4:
 	lsls r0, r5, #24
 	lsrs r0, r0, #24
-	bl sub_0807B760
+	bl SpriteEngineReleaseBinding
 	adds r0, r5, #0
 	.global _0807B8EE
 _0807B8EE:
@@ -6727,243 +6620,9 @@ _0807B9C8:
 	.4byte 0x03006118
 	.4byte 0x0000061C
 
-	.thumb_func
-	.thumb
-	.global sub_0807BA0C
-sub_0807BA0C:
-	ldr r2, sub_0807BA24
-	ldr r2, [r2, #0]
-	ldr r3, _0807BA28
-	adds r2, r2, r3
-	lsls r0, r0, #5
-	ldr r2, [r2, #0]
-	adds r2, r2, r0
-	lsls r1, r1, #4
-	ldr r0, [r2, #8]
-	adds r0, r0, r1
-	bx lr
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807BA24
-sub_0807BA24:
-	.4byte 0x03006118  @ IWRAM+0x6118
-	.global _0807BA28
-_0807BA28:
-	.4byte 0x0000061C
-	.4byte 0x68094904
-	.4byte 0x18894A04
-	.4byte 0x68090140
-	.4byte 0x68081809
-	.4byte 0x47706C00
-	.4byte 0x03006118
-	.4byte 0x0000061C
-
-	.thumb_func
-	.thumb
-	.global sub_0807BA48
-sub_0807BA48:
-	push {r4, lr}
-	ldr r3, _0807BA70
-	ldr r3, [r3, #0]
-	ldr r4, _0807BA74
-	adds r3, r3, r4
-	lsls r0, r0, #5
-	ldr r3, [r3, #0]
-	adds r3, r3, r0
-	lsls r1, r1, #4
-	ldr r0, [r3, #8]
-	adds r0, r0, r1
-	ldr r1, [r0, #8]
-	adds r1, r1, r2
-	lsls r1, r1, #3
-	ldr r0, [r3, #12]
-	adds r0, r0, r1
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _0807BA70
-_0807BA70:
-	.4byte 0x03006118  @ IWRAM+0x6118
-	.global _0807BA74
-_0807BA74:
-	.4byte 0x0000061C
-
-	.thumb_func
-	.thumb
-	.global sub_0807BA78
-sub_0807BA78:
-	push {r4, r5, lr}
-	ldr r4, _0807BAA8
-	ldr r4, [r4, #0]
-	ldr r5, _0807BAAC
-	adds r4, r4, r5
-	lsls r0, r0, #5
-	ldr r4, [r4, #0]
-	adds r4, r4, r0
-	lsls r1, r1, #4
-	ldr r0, [r4, #8]
-	adds r0, r0, r1
-	ldr r1, [r0, #8]
-	adds r1, r1, r2
-	lsls r1, r1, #3
-	ldr r0, [r4, #12]
-	adds r0, r0, r1
-	ldr r1, [r0, #0]
-	adds r1, r1, r3
-	lsls r1, r1, #3
-	ldr r0, [r4, #16]
-	adds r0, r0, r1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.global _0807BAA8
-_0807BAA8:
-	.4byte 0x03006118  @ IWRAM+0x6118
-	.global _0807BAAC
-_0807BAAC:
-	.4byte 0x0000061C
-
-	.thumb_func
-	.thumb
-	.global sub_0807BAB0
-sub_0807BAB0:
-	push {r4, r5, r6, lr}
-	ldr r5, [sp, #16]
-	ldr r4, _0807BAF0
-	ldr r4, [r4, #0]
-	ldr r6, _0807BAF4
-	adds r4, r4, r6
-	lsls r0, r0, #5
-	ldr r4, [r4, #0]
-	adds r4, r4, r0
-	lsls r1, r1, #4
-	ldr r0, [r4, #8]
-	adds r0, r0, r1
-	ldr r1, [r0, #8]
-	adds r1, r1, r2
-	lsls r1, r1, #3
-	ldr r0, [r4, #12]
-	adds r0, r0, r1
-	ldr r1, [r0, #0]
-	adds r1, r1, r3
-	lsls r1, r1, #3
-	ldr r0, [r4, #16]
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	adds r0, r0, r5
-	lsls r1, r0, #2
-	adds r1, r1, r0
-	lsls r1, r1, #2
-	ldr r0, [r4, #20]
-	adds r0, r0, r1
-	pop {r4, r5, r6}
-	pop {r1}
-	bx r1
-	.global _0807BAF0
-_0807BAF0:
-	.4byte 0x03006118  @ IWRAM+0x6118
-	.global _0807BAF4
-_0807BAF4:
-	.4byte 0x0000061C
-
-	.thumb_func
-	.thumb
-	.global sub_0807BAF8
-sub_0807BAF8:
-	push {r4, r5, r6, lr}
-	ldr r5, [sp, #16]
-	ldr r4, _0807BB40
-	ldr r4, [r4, #0]
-	ldr r6, _0807BB44
-	adds r4, r4, r6
-	lsls r0, r0, #5
-	ldr r4, [r4, #0]
-	adds r4, r4, r0
-	lsls r1, r1, #4
-	ldr r0, [r4, #8]
-	adds r0, r0, r1
-	ldr r1, [r0, #8]
-	adds r1, r1, r2
-	lsls r1, r1, #3
-	ldr r0, [r4, #12]
-	adds r0, r0, r1
-	ldr r1, [r0, #0]
-	adds r1, r1, r3
-	lsls r1, r1, #3
-	ldr r0, [r4, #16]
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	adds r0, r0, r5
-	lsls r1, r0, #2
-	adds r1, r1, r0
-	lsls r1, r1, #2
-	ldr r0, [r4, #20]
-	adds r0, r0, r1
-	ldr r1, [r0, #4]
-	lsls r1, r1, #5
-	ldr r0, [r4, #24]
-	adds r0, r0, r1
-	pop {r4, r5, r6}
-	pop {r1}
-	bx r1
-	.global _0807BB40
-_0807BB40:
-	.4byte 0x03006118  @ IWRAM+0x6118
-	.global _0807BB44
-_0807BB44:
-	.4byte 0x0000061C
-
-	.thumb_func
-	.thumb
-	.global sub_0807BB48
-sub_0807BB48:
-	push {r4, r5, r6, lr}
-	ldr r5, [sp, #16]
-	ldr r4, _0807BB90
-	ldr r4, [r4, #0]
-	ldr r6, _0807BB94
-	adds r4, r4, r6
-	lsls r0, r0, #5
-	ldr r4, [r4, #0]
-	adds r4, r4, r0
-	lsls r1, r1, #4
-	ldr r0, [r4, #8]
-	adds r0, r0, r1
-	ldr r1, [r0, #8]
-	adds r1, r1, r2
-	lsls r1, r1, #3
-	ldr r0, [r4, #12]
-	adds r0, r0, r1
-	ldr r1, [r0, #0]
-	adds r1, r1, r3
-	lsls r1, r1, #3
-	ldr r0, [r4, #16]
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	adds r0, r0, r5
-	lsls r1, r0, #2
-	adds r1, r1, r0
-	lsls r1, r1, #2
-	ldr r0, [r4, #20]
-	adds r0, r0, r1
-	ldr r1, [r0, #8]
-	lsls r1, r1, #5
-	ldr r0, [r4, #28]
-	adds r0, r0, r1
-	pop {r4, r5, r6}
-	pop {r1}
-	bx r1
-	.global _0807BB90
-_0807BB90:
-	.4byte 0x03006118  @ IWRAM+0x6118
-	.global _0807BB94
-_0807BB94:
-	.4byte 0x0000061C
+	.section .rom.0007BB98, "ax"
+	.balign 4
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -7883,7 +7542,7 @@ _0807C1A0:
 	ldr r3, [r7, #20]
 	movs r4, #0
 	str r4, [sp, #0]
-	bl sub_0807BAB0
+	bl SpriteResourceGetLevel3
 	adds r6, r0, #0
 	mov r0, r9
 	ldr r2, [r0, #0]
@@ -8119,7 +7778,7 @@ _0807C344:
 	ldr r3, [r4, #20]
 	movs r4, #0
 	str r4, [sp, #0]
-	bl sub_0807BAB0
+	bl SpriteResourceGetLevel3
 	str r0, [sp, #8]
 	ldr r0, _0807C53C
 	ldr r1, [r0, #0]
@@ -8486,7 +8145,7 @@ _0807C600:
 	ldr r4, [sp, #12]
 	ldrb r0, [r4, #2]
 	movs r1, #0
-	bl sub_0807B7D0
+	bl SpriteEngineIncrementCounter
 	mov r0, r9
 	ldrh r2, [r0, #2]
 	movs r1, #192
@@ -8542,7 +8201,7 @@ _0807C600:
 	lsls r0, r0, #24
 	lsrs r0, r0, #24
 	movs r1, #0
-	bl sub_0807B7F8
+	bl SpriteEngineDecrementCounter
 	b _0807C70E
 	.byte 0x00
 	.byte 0x00
@@ -8746,7 +8405,7 @@ _0807C7C0:
 	ldr r3, [r3, #20]
 	movs r4, #0
 	str r4, [sp, #0]
-	bl sub_0807BAB0
+	bl SpriteResourceGetLevel3
 	str r0, [sp, #8]
 	ldr r0, _0807C9D4
 	ldr r1, [r0, #0]
@@ -9158,7 +8817,7 @@ _0807CABC:
 	ldr r4, [sp, #12]
 	ldrb r0, [r4, #2]
 	movs r1, #0
-	bl sub_0807B7D0
+	bl SpriteEngineIncrementCounter
 
 	.thumb_func
 	.thumb
@@ -9216,7 +8875,7 @@ sub_0807CAC6:
 	lsls r0, r0, #24
 	lsrs r0, r0, #24
 	movs r1, #0
-	bl sub_0807B7F8
+	bl SpriteEngineDecrementCounter
 	b _0807CBBE
 	.global _0807CB38
 _0807CB38:

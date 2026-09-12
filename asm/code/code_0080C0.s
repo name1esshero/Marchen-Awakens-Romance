@@ -1690,7 +1690,7 @@ sub_08008C8C:
 _08008C9A:
 	lsls r0, r4, #24
 	lsrs r0, r0, #24
-	bl sub_0807B760
+	bl SpriteEngineReleaseBinding
 	adds r4, #1
 	cmp r4, #15
 	ble _08008C9A
@@ -1746,7 +1746,7 @@ _08008D00:
 	adds r1, r6, #0
 	movs r2, #0
 	adds r3, r4, #0
-	bl sub_0807BAB0
+	bl SpriteResourceGetLevel3
 	adds r7, r0, #0
 	ldr r0, _08009000
 	ldr r0, [r0, #0]
@@ -1782,7 +1782,7 @@ _08008D46:
 	adds r1, r6, #0
 	movs r2, #1
 	adds r3, r4, #0
-	bl sub_0807BAB0
+	bl SpriteResourceGetLevel3
 	adds r7, r0, #0
 	ldr r0, _08009000
 	mov r8, r0
@@ -1831,7 +1831,7 @@ sub_08008D6A:
 	adds r1, r6, #0
 	movs r2, #0
 	movs r3, #0
-	bl sub_0807BAB0
+	bl SpriteResourceGetLevel3
 	adds r7, r0, #0
 	mov r3, r8
 	ldr r0, [r3, #0]
@@ -1918,7 +1918,7 @@ sub_08008E18:
 	movs r0, #0
 	movs r2, #0
 	movs r3, #0
-	bl sub_0807BAB0
+	bl SpriteResourceGetLevel3
 	adds r7, r0, #0
 	mov r1, r8
 	ldr r0, [r1, #0]
@@ -2393,7 +2393,7 @@ sub_08009140:
 	movs r0, #0
 	movs r2, #0
 	movs r3, #0
-	bl sub_0807BA78
+	bl SpriteResourceGetLevel2
 	ldrh r0, [r0, #4]
 	strb r0, [r7, #0]
 	mov r0, sp
@@ -2412,7 +2412,7 @@ sub_08009140:
 	movs r0, #0
 	movs r2, #0
 	movs r3, #0
-	bl sub_0807BA78
+	bl SpriteResourceGetLevel2
 	ldrh r0, [r0, #4]
 	strb r0, [r7, #0]
 	mov r0, sp
@@ -2431,7 +2431,7 @@ sub_08009140:
 sub_080091B2:
 	movs r2, #0
 	movs r3, #0
-	bl sub_0807BA78
+	bl SpriteResourceGetLevel2
 	ldrh r0, [r0, #4]
 	strb r0, [r7, #0]
 	mov r0, sp
@@ -2450,7 +2450,7 @@ sub_080091B2:
 	movs r0, #0
 	movs r2, #0
 	movs r3, #0
-	bl sub_0807BA78
+	bl SpriteResourceGetLevel2
 	ldrh r0, [r0, #4]
 	strb r0, [r7, #0]
 	mov r0, sp
@@ -2474,7 +2474,7 @@ sub_080091F6:
 	movs r0, #0
 	movs r2, #0
 	movs r3, #0
-	bl sub_0807BA78
+	bl SpriteResourceGetLevel2
 	ldrh r0, [r0, #4]
 	strb r0, [r7, #0]
 	mov r0, sp
@@ -2493,7 +2493,7 @@ sub_0800921A:
 	movs r0, #0
 	movs r2, #0
 	movs r3, #0
-	bl sub_0807BA78
+	bl SpriteResourceGetLevel2
 	ldrh r0, [r0, #4]
 	strb r0, [r7, #0]
 	mov r0, sp
@@ -2517,7 +2517,7 @@ sub_08009240:
 	movs r0, #0
 	movs r2, #0
 	movs r3, #0
-	bl sub_0807BA78
+	bl SpriteResourceGetLevel2
 	ldrh r0, [r0, #4]
 	strb r0, [r7, #0]
 	mov r0, sp
@@ -2529,7 +2529,7 @@ sub_08009240:
 _0800926C:
 	lsls r0, r4, #24
 	lsrs r0, r0, #24
-	bl sub_0807B760
+	bl SpriteEngineReleaseBinding
 	adds r4, #1
 	cmp r4, #15
 	ble _0800926C
@@ -2736,7 +2736,7 @@ _080093B2:
 	mov r1, r10
 	movs r2, #0
 	movs r3, #0
-	bl sub_0807BB48
+	bl SpriteResourceGetTable28
 	adds r2, r0, #0
 	movs r0, #31
 	mov r8, r0
@@ -2764,7 +2764,7 @@ _080093EA:
 	mov r1, r10
 	movs r2, #0
 	movs r3, #0
-	bl sub_0807BB48
+	bl SpriteResourceGetTable28
 	adds r2, r0, #0
 	adds r1, r5, #0
 	adds r1, #128
@@ -3048,7 +3048,7 @@ _080095BA:
 	mov r1, r10
 	movs r2, #0
 	movs r3, #0
-	bl sub_0807BB48
+	bl SpriteResourceGetTable28
 	adds r2, r0, #0
 	movs r7, #31
 	str r7, [sp, #0]
@@ -3075,7 +3075,7 @@ _080095F0:
 	mov r1, r10
 	movs r2, #0
 	movs r3, #0
-	bl sub_0807BB48
+	bl SpriteResourceGetTable28
 	adds r2, r0, #0
 	mov r1, r8
 	adds r1, #128
@@ -13199,7 +13199,7 @@ sub_0800D5C8:
 	movs r0, #0
 	movs r2, #0
 	movs r3, #0
-	bl sub_0807BA78
+	bl SpriteResourceGetLevel2
 	ldrh r0, [r0, #4]
 	adds r1, r5, #0
 	adds r1, #115
@@ -14036,7 +14036,7 @@ _0800DB3E:
 	movs r0, #0
 	movs r2, #0
 	movs r3, #0
-	bl sub_0807BA78
+	bl SpriteResourceGetLevel2
 	ldrh r0, [r0, #4]
 	adds r1, r7, #0
 	adds r1, #115
@@ -18413,7 +18413,7 @@ _0800FEA6:
 	movs r0, #0
 	movs r2, #0
 	movs r3, #0
-	bl sub_0807BA78
+	bl SpriteResourceGetLevel2
 	ldrh r0, [r0, #4]
 	adds r1, r7, #0
 	adds r1, #115

@@ -107,6 +107,36 @@ the index remains a 32-bit argument. Their gameplay meaning still needs tracing,
 so the source uses the neutral `counters` name. The host test now also verifies
 resource lifetime, signed handles, flags, and counter addressing.
 
+The 16 records immediately before those counters, at +`0x14C`, are group
+bindings. Each contains an owner pointer and a signed 32-bit index. The owner
+record has a signed-byte assignment array at +4. Releasing a binding writes
+`-1` into that array at the saved index, resets the binding index to `-1`, and
+clears its owner pointer. A binding whose index is already `-1` only clears the
+owner pointer.
+
+The four byte counters per group are saturating reference counts: incrementing
+255 leaves it unchanged, and decrementing zero leaves it unchanged. A decrement
+from one to zero releases the associated group binding. These three lifecycle
+routines at `0807B760`, `0807B7D0`, and `0807B7F8` account for another 152
+bytes of exact C. Later callers show that owners are selected from 32-byte
+renderer resource records, but the resource kind has not yet been established.
+
+The resource-descriptor array pointer is at renderer-state offset +`0x61C`.
+Each descriptor is 32 bytes: a source/header pointer, a signed-byte binding
+array, and six pointers to related record tables. Seven recovered accessors at
+`0807BA0C..0807BB98` now express their traversal as typed C. The first table
+uses 16-byte records whose +8 word is a base index into an 8-byte second table.
+The second table's +0 word selects an 8-byte third table, whose +0 word selects
+a 20-byte fourth table. Words +4 and +8 in that fourth record independently
+select 32-byte records from the final two tables.
+
+Indices passed at each level are added to the preceding record's base index.
+The resource header's word at +64 is also exposed as an entry count; the nearby
+name lookup uses it as the upper bound of a binary search. Names such as
+`level0` through `level3` intentionally describe only the verified hierarchy.
+The expanded 32-bit host fixture checks every stride, accumulated child index,
+final-table selection, descriptor size, and the state pointer at +`0x61C`.
+
 ## Recovered C and remaining work
 
 `src/ncd_sprite.c` recovers the complete 80-byte initializer at 0807BC2C.

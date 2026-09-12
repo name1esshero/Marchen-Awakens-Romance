@@ -6689,7 +6689,7 @@ _08072C48:
 	str r1, [r0, #0]
 	movs r0, #1
 	movs r2, #0
-	bl sub_0807BA48
+	bl SpriteResourceGetLevel1
 	ldr r2, _08072CC8
 	adds r1, r6, r2
 	ldr r0, [r0, #4]
@@ -11037,7 +11037,7 @@ _08074C04:
 	str r1, [r0, #0]
 	movs r0, #1
 	movs r2, #0
-	bl sub_0807BA48
+	bl SpriteResourceGetLevel1
 	movs r2, #251
 	lsls r2, r2, #2
 	adds r1, r6, r2
@@ -17160,7 +17160,7 @@ _08077D0C:
 	movs r0, #0
 	movs r2, #0
 	movs r3, #0
-	bl sub_0807BA78
+	bl SpriteResourceGetLevel2
 	ldrh r0, [r0, #4]
 	strb r0, [r5, #27]
 	mov r1, r10

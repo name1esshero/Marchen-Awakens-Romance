@@ -6172,7 +6172,7 @@ sub_0802284A:
 	movs r0, #0
 	movs r2, #0
 	movs r3, #0
-	bl sub_0807BA78
+	bl SpriteResourceGetLevel2
 	ldrh r0, [r0, #4]
 	ldr r2, [sp, #20]
 	strb r0, [r2, #0]
@@ -6220,7 +6220,7 @@ sub_08022896:
 	movs r0, #0
 	movs r2, #0
 	movs r3, #0
-	bl sub_0807BA78
+	bl SpriteResourceGetLevel2
 	ldrh r0, [r0, #4]
 	ldr r2, [sp, #8]
 	strb r0, [r2, #0]
@@ -7451,7 +7451,7 @@ _0802312A:
 	movs r0, #0
 	movs r2, #0
 	movs r3, #0
-	bl sub_0807BA78
+	bl SpriteResourceGetLevel2
 	ldrh r0, [r0, #4]
 	ldr r2, [sp, #12]
 	strb r0, [r2, #0]
@@ -7494,7 +7494,7 @@ _0802312A:
 	movs r0, #0
 	movs r2, #0
 	movs r3, #0
-	bl sub_0807BA78
+	bl SpriteResourceGetLevel2
 	ldrh r0, [r0, #4]
 	ldr r2, [sp, #24]
 
@@ -15330,7 +15330,7 @@ sub_080266D8:
 	ldrsh r1, [r1, r0]
 	movs r0, #1
 	movs r2, #0
-	bl sub_0807BA48
+	bl SpriteResourceGetLevel1
 	ldr r1, [r0, #4]
 	ldr r2, _0802673C
 	adds r0, r6, r2
@@ -16383,7 +16383,7 @@ sub_08026DDE:
 	ldrsh r1, [r1, r0]
 	movs r0, #1
 	movs r2, #0
-	bl sub_0807BA48
+	bl SpriteResourceGetLevel1
 	ldr r1, [r0, #4]
 	ldr r2, _08026E68
 	adds r0, r6, r2
@@ -17141,14 +17141,14 @@ sub_080272FC:
 	ldrsh r1, [r4, r0]
 	movs r0, #1
 	movs r2, #0
-	bl sub_0807BA48
+	bl SpriteResourceGetLevel1
 	ldr r0, [r0, #4]
 	strh r0, [r4, #10]
 	movs r0, #16
 	ldrsh r1, [r4, r0]
 	movs r0, #1
 	movs r2, #1
-	bl sub_0807BA48
+	bl SpriteResourceGetLevel1
 	ldr r0, [r0, #4]
 	strh r0, [r4, #12]
 	movs r1, #10
@@ -18935,7 +18935,7 @@ sub_0802805C:
 	mov r0, r10
 	adds r1, r2, #0
 	adds r2, r3, #0
-	bl sub_0807BA48
+	bl SpriteResourceGetLevel1
 	ldr r0, [r0, #4]
 	mov r9, r0
 	.inst.n 0x4824  @ ldr r0, _08028110

@@ -4719,7 +4719,7 @@ _08051D5C:
 	str r0, [r4, #80]
 	ldr r0, [r4, #76]
 	ldr r1, [r4, #80]
-	bl sub_0807BA0C
+	bl SpriteResourceGetLevel0
 	ldr r0, [r0, #12]
 	.global _08051D6A
 _08051D6A:
@@ -4740,7 +4740,7 @@ _08051D7C:
 	beq _08051DC2
 	ldr r0, [r4, #76]
 	ldr r1, [r4, #80]
-	bl sub_0807BA0C
+	bl SpriteResourceGetLevel0
 	ldr r0, [r0, #12]
 	subs r0, #1
 	ldr r1, [r4, #84]
@@ -9584,7 +9584,7 @@ _08053F18:
 	mov r1, r8
 	mov r2, r9
 	movs r3, #0
-	bl sub_0807BB48
+	bl SpriteResourceGetTable28
 	adds r2, r0, #0
 	movs r0, #31
 	str r0, [sp, #0]
