@@ -9843,7 +9843,7 @@ sub_0804C258:
 	adds r7, r2, #0
 	adds r4, r3, #0
 	movs r0, #8
-	bl sub_0807DB4C
+	bl SpriteRecordSizeForCount
 	adds r2, r0, #0
 	lsls r2, r2, #2
 	movs r0, #157
@@ -10358,7 +10358,7 @@ _0804C5A6:
 	.global _0804C5BA
 _0804C5BA:
 	movs r0, #8
-	bl sub_0807DB4C
+	bl SpriteRecordSizeForCount
 	adds r1, r0, #0
 	muls r1, r6
 	movs r2, #157

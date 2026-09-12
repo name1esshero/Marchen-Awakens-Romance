@@ -3271,7 +3271,7 @@ _0802155C:
 	movs r2, #1
 	bl sub_08015230
 	movs r0, #8
-	bl sub_0807DB4C
+	bl SpriteRecordSizeForCount
 	adds r1, r0, #0
 	movs r0, #0
 	bl HeapAlloc
@@ -10019,7 +10019,7 @@ sub_08024384:
 _08024388:
 	adds r0, r5, #0
 	adds r1, r4, #0
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	adds r5, #72
 	subs r6, #1
 	cmp r6, #0
@@ -11272,7 +11272,7 @@ _08024C5C:
 	movs r3, #220
 	lsls r3, r3, #1
 	adds r1, r6, r3
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	ldr r4, _08024CD8
 	adds r1, r6, r4
 	ldrb r0, [r1, #0]
@@ -11426,7 +11426,7 @@ _08024D68:
 	adds r0, r0, r3
 	adds r1, r6, #0
 	adds r1, #80
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	movs r1, #187
 	lsls r1, r1, #2
 	adds r0, r6, r1
@@ -12624,7 +12624,7 @@ _08025598:
 	adds r0, #152
 	adds r1, r7, #0
 	adds r1, #80
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	ldrb r0, [r4, #0]
 	adds r0, #1
 	strb r0, [r4, #0]
@@ -14112,7 +14112,7 @@ sub_0802601C:
 	beq _080260EE
 	ldr r0, [sp, #40]
 	mov r1, r10
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	movs r6, #232
 	lsls r6, r6, #1
 	adds r6, r5, r6
@@ -15347,7 +15347,7 @@ sub_080266D8:
 	.global _08026702
 _08026702:
 	movs r0, #3
-	bl sub_0807DB4C
+	bl SpriteRecordSizeForCount
 	adds r1, r0, #0
 	movs r0, #0
 	bl HeapAlloc
@@ -15759,7 +15759,7 @@ _08026974:
 	add r1, r8
 	adds r1, #8
 	adds r0, r4, #0
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	movs r3, #36
 	add r9, r3
 	adds r7, #1
@@ -16400,7 +16400,7 @@ sub_08026DDE:
 	.global _08026E28
 _08026E28:
 	movs r0, #5
-	bl sub_0807DB4C
+	bl SpriteRecordSizeForCount
 	adds r1, r0, #0
 	movs r0, #0
 	bl HeapAlloc
@@ -16628,7 +16628,7 @@ sub_08026F86:
 	add r1, r10
 	adds r1, #8
 	ldr r0, [sp, #64]
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	ldr r5, [sp, #72]
 	adds r5, #36
 	str r5, [sp, #72]
@@ -17643,7 +17643,7 @@ _0802765C:
 	subs r0, #56
 	ldr r1, [r6, #72]
 	adds r1, #8
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	adds r0, r7, #0
 	adds r0, #122
 	mov r2, r8
@@ -17724,7 +17724,7 @@ _08027708:
 	adds r0, #8
 	ldr r1, [r6, #76]
 	adds r1, #8
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	movs r0, #32
 	strh r0, [r7, #14]
 	.global _08027740
@@ -17739,7 +17739,7 @@ _08027740:
 	adds r0, #8
 	ldr r1, [r6, #72]
 	adds r1, #8
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	adds r2, r6, #0
 	adds r2, #47
 	ldrb r0, [r2, #0]

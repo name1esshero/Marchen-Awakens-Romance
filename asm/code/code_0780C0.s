@@ -5691,28 +5691,28 @@ _0807B0BE:
 	movs r1, #80
 	bl sub_0807D21C
 	movs r0, #0
-	bl sub_0807CD3C
+	bl SpriteEngineSetAllFlags10
 	movs r0, #0
-	bl sub_0807CDB4
+	bl SpriteEngineSetAllFlags14
 	ldr r4, _0807B160
 	ldr r0, [r4, #0]
 	movs r1, #132
 	lsls r1, r1, #2
 	adds r0, r0, r1
-	bl sub_0807D400
+	bl SpriteEngineSetBuffer4
 	ldr r0, _0807B16C
-	bl sub_0807D3D0
+	bl SpriteEngineSetBuffer8
 	movs r0, #0
 	movs r1, #0
 	bl sub_080804EC
 	adds r0, r0, r5
-	bl sub_0807D3E8
+	bl SpriteEngineSetBufferC
 	ldr r1, [r4, #0]
 	movs r0, #0
 	str r0, [r1, #24]
-	bl sub_0807D40C
+	bl SpriteEngineSetCopyCallback620
 	movs r0, #0
-	bl sub_0807D488
+	bl SpriteEngineSetCopyCallback624
 	ldr r1, [r4, #0]
 	movs r3, #197
 	lsls r3, r3, #3
@@ -6551,58 +6551,9 @@ _0807B964:
 _0807B968:
 	.4byte 0x0000061C
 
-	.thumb_func
-	.thumb
-	.global sub_0807B96C
-sub_0807B96C:
-	push {r4, r5, lr}
-	adds r4, r0, #0
-	ldr r0, _0807B9C4
-	ldr r0, [r0, #0]
-	ldr r3, _0807B9C8
-	adds r2, r0, r3
-	lsls r1, r1, #5
-	ldr r5, [r2, #0]
-	adds r5, r5, r1
-	str r4, [r5, #0]
-	movs r1, #142
-	lsls r1, r1, #1
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	ldr r1, [r4, #84]
-	bl HeapAlloc
-	str r0, [r5, #4]
-	ldr r1, [r4, #84]
-	movs r2, #1
-	negs r2, r2
-	bl CpuFill
-	ldr r0, [r4, #32]
-	adds r0, r4, r0
-	str r0, [r5, #8]
-	ldr r0, [r4, #36]
-	adds r0, r4, r0
-	str r0, [r5, #12]
-	ldr r0, [r4, #40]
-	adds r0, r4, r0
-	str r0, [r5, #16]
-	ldr r0, [r4, #44]
-	adds r0, r4, r0
-	str r0, [r5, #20]
-	ldr r0, [r4, #48]
-	adds r0, r4, r0
-	str r0, [r5, #24]
-	ldr r0, [r4, #52]
-	adds r4, r4, r0
-	str r4, [r5, #28]
-	pop {r4, r5}
-	pop {r0}
-	bx r0
-	.global _0807B9C4
-_0807B9C4:
-	.4byte 0x03006118  @ IWRAM+0x6118
-	.global _0807B9C8
-_0807B9C8:
-	.4byte 0x0000061C
+	.section .rom.0007B9CC, "ax"
+	.balign 4
+	.syntax unified
 	.4byte 0x1C04B570
 	.4byte 0x68314E0C
 	.4byte 0x0052228E
@@ -6619,7 +6570,6 @@ _0807B9C8:
 	.4byte 0x00004700
 	.4byte 0x03006118
 	.4byte 0x0000061C
-
 	.section .rom.0007BB98, "ax"
 	.balign 4
 	.syntax unified
@@ -6871,7 +6821,7 @@ _0807BD50:
 	lsls r1, r1, #5
 	add r1, r9
 	ldrb r2, [r7, #19]
-	bl sub_0807D444
+	bl SpriteEngineCopyToBuffer8
 	adds r0, r4, #1
 	lsls r0, r0, #16
 	lsrs r4, r0, #16
@@ -7172,75 +7122,9 @@ _0807BF52:
 _0807BF5C:
 	.4byte 0x03006118  @ IWRAM+0x6118
 
-	.thumb_func
-	.thumb
-	.global sub_0807BF60
-sub_0807BF60:
-	push {r4, lr}
-	adds r4, r0, #0
-	movs r2, #52
-	bl CpuCopy
-	adds r4, #39
-	ldrb r1, [r4, #0]
-	movs r0, #4
-	negs r0, r0
-	ands r0, r1
-	movs r1, #1
-	orrs r0, r1
-	strb r0, [r4, #0]
-	pop {r4}
-	pop {r0}
-	bx r0
-
-	.thumb_func
-	.thumb
-	.global sub_0807BF80
-sub_0807BF80:
-	push {r4, r5, r6, lr}
-	adds r4, r0, #0
-
-	.thumb_func
-	.thumb
-	.global sub_0807BF84
-sub_0807BF84:
-	adds r6, r1, #0
-	movs r2, #52
-	bl CpuCopy
-	ldr r0, _0807BFCC
-	ldr r0, [r0, #0]
-	movs r1, #142
-	lsls r1, r1, #1
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	adds r5, r4, #0
-	adds r5, #35
-	ldrb r1, [r5, #0]
-	lsls r1, r1, #2
-	bl HeapAlloc
-	str r0, [r4, #48]
-	cmp r0, #0
-	beq _0807BFC6
-	ldr r1, [r6, #48]
-	ldrb r2, [r5, #0]
-	lsls r2, r2, #2
-	bl CpuCopy
-	adds r2, r4, #0
-	adds r2, #39
-	ldrb r1, [r2, #0]
-	movs r0, #4
-	negs r0, r0
-	ands r0, r1
-	movs r1, #2
-	orrs r0, r1
-	strb r0, [r2, #0]
-	.global _0807BFC6
-_0807BFC6:
-	pop {r4, r5, r6}
-	pop {r0}
-	bx r0
-	.global _0807BFCC
-_0807BFCC:
-	.4byte 0x03006118  @ IWRAM+0x6118
+	.section .rom.0007BFD0, "ax"
+	.balign 4
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -7662,7 +7546,7 @@ _0807C294:
 	ldr r3, [sp, #4]
 	ldr r1, [r3, #24]
 	adds r1, r1, r2
-	bl sub_0807D4C0
+	bl SpriteEngineCopyToBufferC
 	.global _0807C2A6
 _0807C2A6:
 	mov r4, r9
@@ -8139,7 +8023,7 @@ _0807C5EC:
 	ldr r3, [sp, #16]
 	ldr r1, [r3, #24]
 	adds r1, r1, r2
-	bl sub_0807D4C0
+	bl SpriteEngineCopyToBufferC
 	.global _0807C600
 _0807C600:
 	ldr r4, [sp, #12]
@@ -8811,7 +8695,7 @@ _0807CAA8:
 	ldr r3, [sp, #16]
 	ldr r1, [r3, #24]
 	adds r1, r1, r2
-	bl sub_0807D4C0
+	bl SpriteEngineCopyToBufferC
 	.global _0807CABC
 _0807CABC:
 	ldr r4, [sp, #12]
@@ -9001,20 +8885,9 @@ _0807CBFC:
 _0807CC00:
 	.4byte 0x03006118  @ IWRAM+0x6118
 
-	.thumb_func
-	.thumb
-	.global sub_0807CC04
-sub_0807CC04:
-	push {r4, lr}
-	adds r4, r0, #0
-	bl sub_0807D3F4
-	lsls r4, r4, #5
-	adds r0, r0, r4
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+	.section .rom.0007CC18, "ax"
+	.balign 4
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -9151,105 +9024,9 @@ _0807CCE0:
 	bx r1
 	.byte 0x00
 	.byte 0x00
-	.4byte 0x0600B500
-	.4byte 0x06090E03
-	.4byte 0xD0092900
-	.4byte 0x68024803
-	.4byte 0x40992101
-	.4byte 0x43086910
-	.4byte 0x0000E008
-	.4byte 0x03006118
-	.4byte 0x68024804
-	.4byte 0x40992101
-	.4byte 0x43886910
-	.4byte 0xBC016110
-	.4byte 0x00004700
-	.4byte 0x03006118
-	.4byte 0x0E000600
-	.4byte 0x680A4903
-	.4byte 0x40812101
-	.4byte 0x40086910
-	.4byte 0x00004770
-	.4byte 0x03006118
-
-	.thumb_func
-	.thumb
-	.global sub_0807CD3C
-sub_0807CD3C:
-	push {lr}
-	adds r1, r0, #0
-	ldr r0, _0807CD50
-	ldr r2, [r0, #0]
-	cmp r1, #0
-	beq _0807CD54
-	movs r0, #1
-	negs r0, r0
-	str r0, [r2, #16]
-	b _0807CD56
-	.global _0807CD50
-_0807CD50:
-	.4byte 0x03006118  @ IWRAM+0x6118
-	.global _0807CD54
-_0807CD54:
-	str r1, [r2, #16]
-	.global _0807CD56
-_0807CD56:
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.4byte 0x68004801
-	.4byte 0x47706900
-	.4byte 0x03006118
-	.4byte 0x0600B500
-	.4byte 0x29000E03
-	.4byte 0x4803D008
-	.4byte 0x21016802
-	.4byte 0x69504099
-	.4byte 0xE0074308
-	.4byte 0x03006118
-	.4byte 0x68024804
-	.4byte 0x40992101
-	.4byte 0x43886950
-	.4byte 0xBC016150
-	.4byte 0x00004700
-	.4byte 0x03006118
-	.4byte 0x0E000600
-	.4byte 0x680A4903
-	.4byte 0x40812101
-	.4byte 0x40086950
-	.4byte 0x00004770
-	.4byte 0x03006118
-
-	.thumb_func
-	.thumb
-	.global sub_0807CDB4
-sub_0807CDB4:
-	push {lr}
-	adds r1, r0, #0
-	ldr r0, _0807CDC8
-	ldr r2, [r0, #0]
-	cmp r1, #0
-	beq _0807CDCC
-	movs r0, #1
-	negs r0, r0
-	str r0, [r2, #20]
-	b _0807CDCE
-	.global _0807CDC8
-_0807CDC8:
-	.4byte 0x03006118  @ IWRAM+0x6118
-	.global _0807CDCC
-_0807CDCC:
-	str r1, [r2, #20]
-	.global _0807CDCE
-_0807CDCE:
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.4byte 0x68004801
-	.4byte 0x47706940
-	.4byte 0x03006118
+	.section .rom.0007CDE0, "ax"
+	.balign 4
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -9339,7 +9116,7 @@ sub_0807CE50:
 	asrs r5, r5, #16
 	lsls r6, r6, #16
 	asrs r6, r6, #16
-	bl sub_0807CC04
+	bl SpriteEngineGetBuffer4Entry
 	mov r8, r0
 	ldr r2, _0807CEE0
 	ldr r1, _0807CEE4
@@ -9360,12 +9137,12 @@ sub_0807CE50:
 	ldrsh r1, [r4, r2]
 	mov r9, r1
 	adds r0, r5, #0
-	bl sub_0807D92C
+	bl SpriteMathDivide65536ByS16
 	adds r4, r0, #0
 	lsls r4, r4, #16
 	asrs r4, r4, #16
 	adds r0, r6, #0
-	bl sub_0807D92C
+	bl SpriteMathDivide65536ByS16
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	mov r1, r9
@@ -9419,7 +9196,7 @@ sub_0807CEE8:
 	asrs r5, r5, #16
 	lsls r6, r6, #16
 	asrs r6, r6, #16
-	bl sub_0807CC04
+	bl SpriteEngineGetBuffer4Entry
 	mov r8, r0
 	ldr r2, _0807CF7C
 	ldr r1, _0807CF80
@@ -9440,12 +9217,12 @@ sub_0807CEE8:
 	ldrsh r1, [r4, r2]
 	mov r9, r1
 	adds r0, r5, #0
-	bl sub_0807D92C
+	bl SpriteMathDivide65536ByS16
 	adds r4, r0, #0
 	lsls r4, r4, #16
 	asrs r4, r4, #16
 	adds r0, r6, #0
-	bl sub_0807D92C
+	bl SpriteMathDivide65536ByS16
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	mov r1, r9
@@ -9501,7 +9278,7 @@ sub_0807CF84:
 	asrs r5, r5, #16
 	lsls r6, r6, #16
 	asrs r6, r6, #16
-	bl sub_0807CC04
+	bl SpriteEngineGetBuffer4Entry
 	mov r8, r0
 	ldr r2, _0807D014
 	ldr r1, _0807D018
@@ -9522,12 +9299,12 @@ sub_0807CF84:
 	ldrsh r1, [r4, r2]
 	mov r9, r1
 	adds r0, r5, #0
-	bl sub_0807D92C
+	bl SpriteMathDivide65536ByS16
 	adds r4, r0, #0
 	lsls r4, r4, #16
 	asrs r4, r4, #16
 	adds r0, r6, #0
-	bl sub_0807D92C
+	bl SpriteMathDivide65536ByS16
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	mov r1, r9
@@ -9837,247 +9614,19 @@ _0807D238:
 	.4byte 0x08F28860
 	.4byte 0x03006118
 
-	.thumb_func
-	.thumb
-	.global sub_0807D3C4
-sub_0807D3C4:
-	ldr r0, _0807D3CC
-	ldr r0, [r0, #0]
-	ldr r0, [r0, #8]
-	bx lr
-	.global _0807D3CC
-_0807D3CC:
-	.4byte 0x03006118  @ IWRAM+0x6118
-
-	.thumb_func
-	.thumb
-	.global sub_0807D3D0
-sub_0807D3D0:
-	ldr r1, _0807D3D8
-	ldr r1, [r1, #0]
-	str r0, [r1, #8]
-	bx lr
-	.global _0807D3D8
-_0807D3D8:
-	.4byte 0x03006118  @ IWRAM+0x6118
-
-	.thumb_func
-	.thumb
-	.global sub_0807D3DC
-sub_0807D3DC:
-	ldr r0, _0807D3E4
-	ldr r0, [r0, #0]
-	ldr r0, [r0, #12]
-	bx lr
-	.global _0807D3E4
-_0807D3E4:
-	.4byte 0x03006118  @ IWRAM+0x6118
-
-	.thumb_func
-	.thumb
-	.global sub_0807D3E8
-sub_0807D3E8:
-	ldr r1, _0807D3F0
-	ldr r1, [r1, #0]
-	str r0, [r1, #12]
-	bx lr
-	.global _0807D3F0
-_0807D3F0:
-	.4byte 0x03006118  @ IWRAM+0x6118
-
-	.thumb_func
-	.thumb
-	.global sub_0807D3F4
-sub_0807D3F4:
-	ldr r0, _0807D3FC
+	.section .rom.0007D444, "ax"
+	.balign 4
+	.syntax unified
 	.global _0807D3F6
-_0807D3F6:
-	ldr r0, [r0, #0]
-	ldr r0, [r0, #4]
-	bx lr
-	.global _0807D3FC
-_0807D3FC:
-	.4byte 0x03006118  @ IWRAM+0x6118
+	.thumb_set _0807D3F6, SpriteEngineGetBuffer4 + 2
 
-	.thumb_func
-	.thumb
-	.global sub_0807D400
-sub_0807D400:
-	ldr r1, _0807D408
-	ldr r1, [r1, #0]
-	str r0, [r1, #4]
-	bx lr
-	.global _0807D408
-_0807D408:
-	.4byte 0x03006118  @ IWRAM+0x6118
+	.section .rom.0007D4C0, "ax"
+	.balign 4
+	.syntax unified
 
-	.thumb_func
-	.thumb
-	.global sub_0807D40C
-sub_0807D40C:
-	push {lr}
-	ldr r1, _0807D428
-	ldr r1, [r1, #0]
-	movs r2, #196
-	lsls r2, r2, #3
-	adds r1, r1, r2
-	str r0, [r1, #0]
-	cmp r0, #0
-	bne _0807D422
-	ldr r0, _0807D42C
-	str r0, [r1, #0]
-	.global _0807D422
-_0807D422:
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _0807D428
-_0807D428:
-	.4byte 0x03006118  @ IWRAM+0x6118
-	.global _0807D42C
-_0807D42C:
-	.4byte 0x0807D47D  @ ROM+0x7D47D
-
-	.thumb_func
-	.thumb
-	.global sub_0807D430
-sub_0807D430:
-	ldr r0, _0807D440
-	ldr r0, [r0, #0]
-	movs r1, #196
-	lsls r1, r1, #3
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _0807D440
-_0807D440:
-	.4byte 0x03006118  @ IWRAM+0x6118
-
-	.thumb_func
-	.thumb
-	.global sub_0807D444
-sub_0807D444:
-	push {r4, r5, r6, lr}
-	mov r6, r8
-	push {r6}
-	adds r4, r0, #0
-	mov r8, r1
-	adds r6, r2, #0
-	lsls r4, r4, #16
-	lsrs r4, r4, #16
-	bl sub_0807D3C4
-	adds r5, r0, #0
-	lsls r4, r4, #5
-	adds r5, r5, r4
-	bl sub_0807D430
-	adds r3, r0, #0
-	lsls r6, r6, #5
-	adds r0, r5, #0
-	mov r1, r8
-	adds r2, r6, #0
-	bl sub_08080BCC
-	pop {r3}
-	mov r8, r3
-	pop {r4, r5, r6}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807D47C
-sub_0807D47C:
-	push {lr}
-	bl CpuCopy
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807D488
-sub_0807D488:
-	push {lr}
-	ldr r1, _0807D4A0
-	ldr r1, [r1, #0]
-	ldr r2, _0807D4A4
-	adds r1, r1, r2
-	str r0, [r1, #0]
-	cmp r0, #0
-	bne _0807D49C
-	ldr r0, _0807D4A8
-	str r0, [r1, #0]
-	.global _0807D49C
-_0807D49C:
-	pop {r0}
-	bx r0
-	.global _0807D4A0
-_0807D4A0:
-	.4byte 0x03006118  @ IWRAM+0x6118
-	.global _0807D4A4
-_0807D4A4:
-	.4byte 0x00000624
-	.global _0807D4A8
-_0807D4A8:
-	.4byte 0x0807D4ED  @ ROM+0x7D4ED
-
-	.thumb_func
-	.thumb
-	.global sub_0807D4AC
-sub_0807D4AC:
-	ldr r0, _0807D4B8
-	ldr r0, [r0, #0]
-	ldr r1, _0807D4BC
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	bx lr
-	.global _0807D4B8
-_0807D4B8:
-	.4byte 0x03006118  @ IWRAM+0x6118
-	.global _0807D4BC
-_0807D4BC:
-	.4byte 0x00000624
-
-	.thumb_func
-	.thumb
-	.global sub_0807D4C0
-sub_0807D4C0:
-	push {r4, r5, r6, lr}
-	adds r4, r0, #0
-	adds r6, r1, #0
-	lsls r4, r4, #24
-	lsrs r4, r4, #24
-	bl sub_0807D3DC
-	adds r5, r0, #0
-	lsls r4, r4, #5
-	adds r5, r5, r4
-	bl sub_0807D4AC
-	adds r3, r0, #0
-	adds r0, r5, #0
-	adds r1, r6, #0
-	movs r2, #32
-	bl sub_08080BCC
-	pop {r4, r5, r6}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807D4EC
-sub_0807D4EC:
-	push {lr}
-	bl CpuCopy
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
+	.section .rom.0007D4F8, "ax"
+	.balign 4
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -10206,7 +9755,7 @@ _0807D5D0:
 	cmp r4, #15
 	bls _0807D5D0
 	movs r0, #0
-	bl sub_0807CD3C
+	bl SpriteEngineSetAllFlags10
 	ldr r0, _0807D5F4
 	ldr r1, [r0, #0]
 	movs r0, #0
@@ -10455,21 +10004,9 @@ _0807D8EA:
 	.4byte 0xBC021400
 	.4byte 0x00004708
 
-	.thumb_func
-	.thumb
-	.global sub_0807D92C
-sub_0807D92C:
-	push {lr}
-	adds r1, r0, #0
-	lsls r1, r1, #16
-	asrs r1, r1, #16
-	movs r0, #128
-	lsls r0, r0, #9
-	bl sub_08080BFC
-	lsls r0, r0, #16
-	asrs r0, r0, #16
-	pop {r1}
-	bx r1
+	.section .rom.0007D944, "ax"
+	.balign 4
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -10699,7 +10236,7 @@ _0807DB10:
 	.thumb
 	.global sub_0807DB12
 sub_0807DB12:
-	bl sub_0807D92C
+	bl SpriteMathDivide65536ByS16
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	adds r1, r6, #0
@@ -10726,15 +10263,9 @@ sub_0807DB12:
 	.4byte 0x08F28860
 	.4byte 0x00000FFF
 
-	.thumb_func
-	.thumb
-	.global sub_0807DB4C
-sub_0807DB4C:
-	adds r0, #1
-	lsls r0, r0, #5
-	bx lr
-	.byte 0x00
-	.byte 0x00
+	.section .rom.0007DB54, "ax"
+	.balign 4
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -14235,195 +13766,9 @@ _0807F4D4:
 	.4byte 0xBC70FF65
 	.4byte 0x4708BC02
 
-	.thumb_func
-	.thumb
-	.global sub_0807F518
-sub_0807F518:
-	ldr r1, _0807F528
-	ldr r1, [r1, #0]
-	ldr r1, [r1, #12]
-	ldr r1, [r1, #12]
-	ldr r1, [r1, #48]
-	adds r1, r1, r0
-	ldrb r0, [r1, #0]
-	bx lr
-	.global _0807F528
-_0807F528:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-
-	.thumb_func
-	.thumb
-	.global sub_0807F52C
-sub_0807F52C:
-	ldr r1, _0807F544
-	ldr r1, [r1, #0]
-	ldr r1, [r1, #12]
-	ldr r1, [r1, #12]
-	ldr r1, [r1, #48]
-	adds r1, r1, r0
-	ldrb r0, [r1, #0]
-	ldrb r1, [r1, #1]
-	lsls r1, r1, #8
-	adds r0, r0, r1
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _0807F544
-_0807F544:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-
-	.thumb_func
-	.thumb
-	.global sub_0807F548
-sub_0807F548:
-	ldr r1, _0807F56C
-	ldr r1, [r1, #0]
-	ldr r1, [r1, #12]
-	ldr r1, [r1, #12]
-	ldr r2, [r1, #48]
-	adds r2, r2, r0
-	ldrb r0, [r2, #0]
-	ldrb r1, [r2, #1]
-	lsls r1, r1, #8
-	adds r0, r0, r1
-	ldrb r1, [r2, #2]
-	lsls r1, r1, #16
-	adds r0, r0, r1
-	ldrb r1, [r2, #3]
-	lsls r1, r1, #24
-	adds r0, r0, r1
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _0807F56C
-_0807F56C:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-
-	.thumb_func
-	.thumb
-	.global sub_0807F570
-sub_0807F570:
-	push {r4, lr}
-	ldr r4, _0807F594
-	ldr r0, [r4, #0]
-	ldr r0, [r0, #12]
-	ldr r0, [r0, #12]
-	ldr r0, [r0, #68]
-	bl sub_0807F518
-	ldr r1, [r4, #0]
-	ldr r1, [r1, #12]
-	ldr r2, [r1, #12]
-	ldr r1, [r2, #68]
-	adds r1, #1
-	str r1, [r2, #68]
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _0807F594
-_0807F594:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-
-	.thumb_func
-	.thumb
-	.global sub_0807F598
-sub_0807F598:
-	push {r4, lr}
-	ldr r4, _0807F5BC
-
-	.thumb_func
-	.thumb
-	.global sub_0807F59C
-sub_0807F59C:
-	ldr r0, [r4, #0]
-	ldr r0, [r0, #12]
-	ldr r0, [r0, #12]
-	ldr r0, [r0, #68]
-	bl sub_0807F52C
-	ldr r1, [r4, #0]
-	ldr r1, [r1, #12]
-	ldr r2, [r1, #12]
-	ldr r1, [r2, #68]
-	adds r1, #2
-	str r1, [r2, #68]
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _0807F5BC
-_0807F5BC:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-
-	.thumb_func
-	.thumb
-	.global sub_0807F5C0
-sub_0807F5C0:
-	push {r4, lr}
-	ldr r4, _0807F5E4
-	ldr r0, [r4, #0]
-	ldr r0, [r0, #12]
-	ldr r0, [r0, #12]
-	ldr r0, [r0, #68]
-	bl sub_0807F548
-	ldr r1, [r4, #0]
-	ldr r1, [r1, #12]
-	ldr r2, [r1, #12]
-	ldr r1, [r2, #68]
-	adds r1, #4
-	str r1, [r2, #68]
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _0807F5E4
-_0807F5E4:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-
-	.thumb_func
-	.thumb
-	.global sub_0807F5E8
-sub_0807F5E8:
-	ldr r1, _0807F604
-	ldr r1, [r1, #0]
-	ldr r1, [r1, #12]
-	ldr r3, [r1, #12]
-	adds r1, r3, #0
-	adds r1, #132
-	ldr r2, [r1, #0]
-	subs r2, #4
-	str r2, [r1, #0]
-	ldr r1, [r3, #48]
-	adds r1, r1, r2
-	str r0, [r1, #0]
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _0807F604
-_0807F604:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-
-	.thumb_func
-	.thumb
-	.global sub_0807F608
-sub_0807F608:
-	ldr r0, _0807F620
-	ldr r0, [r0, #0]
-	ldr r0, [r0, #12]
-	ldr r2, [r0, #12]
-	ldr r0, [r2, #48]
-	adds r2, #132
-	ldr r1, [r2, #0]
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	adds r1, #4
-	str r1, [r2, #0]
-	bx lr
-	.global _0807F620
-_0807F620:
-	.4byte 0x0300611C  @ IWRAM+0x611C
+	.section .rom.0007F624, "ax"
+	.balign 4
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -14486,7 +13831,7 @@ _0807F66C:
 	adds r0, #72
 	adds r0, r0, r1
 	ldr r0, [r0, #0]
-	bl sub_0807F5E8
+	bl ScriptPushU32
 	adds r4, #1
 	cmp r4, #15
 	ble _0807F66C
@@ -14496,12 +13841,12 @@ _0807F66C:
 	ldr r0, [r0, #12]
 	adds r0, #168
 	ldrh r0, [r0, #0]
-	bl sub_0807F5E8
+	bl ScriptPushU32
 	ldr r0, [r4, #0]
 	ldr r0, [r0, #12]
 	ldr r0, [r0, #12]
 	ldr r0, [r0, #68]
-	bl sub_0807F5E8
+	bl ScriptPushU32
 	ldr r3, [r4, #0]
 	ldr r0, [r3, #12]
 	ldr r1, [r0, #12]
@@ -14532,7 +13877,7 @@ _0807F6C0:
 	.global sub_0807F6C4
 sub_0807F6C4:
 	push {lr}
-	bl sub_0807F598
+	bl ScriptReadNextU16
 	ldr r1, _0807F6E0
 	ldr r1, [r1, #0]
 	ldr r1, [r1, #12]
@@ -14549,402 +13894,18 @@ sub_0807F6C4:
 _0807F6E0:
 	.4byte 0x0300611C  @ IWRAM+0x611C
 
-	.thumb_func
-	.thumb
-	.global sub_0807F6E4
-sub_0807F6E4:
-	push {lr}
-	bl sub_0807F5C0
-	ldr r1, _0807F6FC
-	ldr r1, [r1, #0]
-	ldr r1, [r1, #12]
-	ldr r1, [r1, #12]
-	str r0, [r1, #68]
-	movs r0, #1
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _0807F6FC
-_0807F6FC:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-
-	.thumb_func
-	.thumb
-	.global sub_0807F700
-sub_0807F700:
-	push {r4, r5, lr}
-	bl sub_0807F570
-	adds r4, r0, #0
-	bl sub_0807F5C0
-	adds r5, r0, #0
-	adds r0, r4, #0
-	bl sub_0807F624
-	ldr r0, [r0, #0]
-	cmp r0, #0
-	bne _0807F724
-	ldr r0, _0807F72C
-	ldr r0, [r0, #0]
-	ldr r0, [r0, #12]
-	ldr r0, [r0, #12]
-	str r5, [r0, #68]
-	.global _0807F724
-_0807F724:
-	movs r0, #1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.global _0807F72C
-_0807F72C:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-
-	.thumb_func
-	.thumb
-	.global sub_0807F730
-sub_0807F730:
-	push {r4, r5, lr}
-	bl sub_0807F5C0
-	adds r5, r0, #0
-	ldr r4, _0807F758
-	ldr r0, [r4, #0]
-	ldr r0, [r0, #12]
-	ldr r0, [r0, #12]
-	ldr r0, [r0, #68]
-	bl sub_0807F5E8
-	ldr r0, [r4, #0]
-	ldr r0, [r0, #12]
-	ldr r0, [r0, #12]
-	str r5, [r0, #68]
-	movs r0, #1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _0807F758
-_0807F758:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-
-	.thumb_func
-	.thumb
-	.global sub_0807F75C
-sub_0807F75C:
-	push {lr}
-	bl sub_0807F608
-	ldr r1, _0807F774
-	ldr r1, [r1, #0]
-	ldr r1, [r1, #12]
-	ldr r1, [r1, #12]
-	str r0, [r1, #68]
-	movs r0, #1
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _0807F774
-_0807F774:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-
-	.thumb_func
-	.thumb
-	.global sub_0807F778
-sub_0807F778:
-	push {r4, r5, r6, r7, lr}
-	bl sub_0807F570
-	adds r4, r0, #0
-	bl sub_0807F570
-	adds r7, r0, #0
-	adds r0, r4, #0
-	bl sub_0807F624
-	ldr r6, [r0, #0]
-	movs r5, #0
-	b _0807F794
-	.global _0807F792
-_0807F792:
-	adds r5, #1
-	.global _0807F794
-_0807F794:
-	cmp r5, r7
-	bge _0807F7B2
-	bl sub_0807F5C0
-	adds r4, r0, #0
-	bl sub_0807F5C0
-	adds r1, r0, #0
-	cmp r4, r6
-	bne _0807F792
-	ldr r0, _0807F7BC
-	ldr r0, [r0, #0]
-	ldr r0, [r0, #12]
-	ldr r0, [r0, #12]
-	str r1, [r0, #68]
-	.global _0807F7B2
-_0807F7B2:
-	movs r0, #1
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _0807F7BC
-_0807F7BC:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-
-	.thumb_func
-	.thumb
-	.global sub_0807F7C0
-sub_0807F7C0:
-	push {r4, r5, lr}
-	bl sub_0807F570
-	adds r4, r0, #0
-	bl sub_0807F570
-	adds r5, r0, #0
-	adds r0, r4, #0
-	bl sub_0807F624
-	adds r4, r0, #0
-	adds r0, r5, #0
-	bl sub_0807F624
-	ldr r0, [r0, #0]
-	str r0, [r4, #0]
-	movs r0, #1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_0807F7E8
-sub_0807F7E8:
-	push {r4, r5, lr}
-	bl sub_0807F570
-	adds r4, r0, #0
-	bl sub_0807F5C0
-	adds r5, r0, #0
-	adds r0, r4, #0
-	bl sub_0807F624
-	str r5, [r0, #0]
-	movs r0, #1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807F808
-sub_0807F808:
-	push {r4, r5, lr}
-	bl sub_0807F570
-	adds r4, r0, #0
-	bl sub_0807F5C0
-	adds r5, r0, #0
-	adds r0, r4, #0
-	bl sub_0807F624
-	ldr r1, _0807F834
-	ldr r1, [r1, #0]
-	ldr r1, [r1, #12]
-	ldr r1, [r1, #12]
-	ldr r1, [r1, #48]
-	adds r1, r1, r5
-	str r1, [r0, #0]
-	movs r0, #1
-
-	.thumb_func
-	.thumb
-	.global sub_0807F82C
-sub_0807F82C:
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _0807F834
-_0807F834:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-
-	.thumb_func
-	.thumb
-	.global sub_0807F838
-sub_0807F838:
-	push {lr}
-	bl sub_0807F570
-	bl sub_0807F624
-	ldr r0, [r0, #0]
-	bl sub_0807F5E8
-	movs r0, #1
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807F850
-sub_0807F850:
-	push {lr}
-	bl sub_0807F5C0
-	bl sub_0807F5E8
-	movs r0, #1
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_0807F860
-sub_0807F860:
-	push {r4, lr}
-	bl sub_0807F570
-	bl sub_0807F624
-	adds r4, r0, #0
-	bl sub_0807F608
-	str r0, [r4, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807F87C
-sub_0807F87C:
-	push {r4, r5, lr}
-	bl sub_0807F570
-	adds r4, r0, #0
-	bl sub_0807F570
-	adds r5, r0, #0
-	adds r0, r4, #0
-	bl sub_0807F624
-	adds r4, r0, #0
-	adds r0, r5, #0
-	bl sub_0807F624
-	ldr r1, [r4, #0]
-	ldr r0, [r0, #0]
-	adds r1, r1, r0
-	str r1, [r4, #0]
-	movs r0, #1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_0807F8A8
-sub_0807F8A8:
-	push {r4, r5, lr}
-	bl sub_0807F570
-	adds r4, r0, #0
-	bl sub_0807F5C0
-	adds r5, r0, #0
-	adds r0, r4, #0
-	bl sub_0807F624
-	ldr r1, [r0, #0]
-	adds r1, r1, r5
-	str r1, [r0, #0]
-	movs r0, #1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807F8CC
-sub_0807F8CC:
-	push {r4, r5, lr}
-	bl sub_0807F570
-	adds r4, r0, #0
-	bl sub_0807F570
-	adds r5, r0, #0
-	adds r0, r4, #0
-	bl sub_0807F624
-	adds r4, r0, #0
-	adds r0, r5, #0
-	bl sub_0807F624
-	ldr r1, [r4, #0]
-	ldr r0, [r0, #0]
-	subs r1, r1, r0
-	str r1, [r4, #0]
-	movs r0, #1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_0807F8F8
-sub_0807F8F8:
-	push {r4, r5, lr}
-	bl sub_0807F570
-	adds r4, r0, #0
-	bl sub_0807F5C0
-	adds r5, r0, #0
-	adds r0, r4, #0
-	bl sub_0807F624
-	ldr r1, [r0, #0]
-	subs r1, r1, r5
-	str r1, [r0, #0]
-	movs r0, #1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807F91C
-sub_0807F91C:
-	push {r4, r5, lr}
-	bl sub_0807F570
-	adds r4, r0, #0
-	bl sub_0807F570
-	adds r5, r0, #0
-	adds r0, r4, #0
-	bl sub_0807F624
-	adds r4, r0, #0
-	adds r0, r5, #0
-	bl sub_0807F624
-	ldr r1, [r4, #0]
-	ldr r0, [r0, #0]
-	muls r0, r1
-	str r0, [r4, #0]
-	movs r0, #1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_0807F948
-sub_0807F948:
-	push {r4, r5, lr}
-	bl sub_0807F570
-	adds r4, r0, #0
-	bl sub_0807F5C0
-	adds r5, r0, #0
-	adds r0, r4, #0
-	bl sub_0807F624
-	ldr r1, [r0, #0]
-	muls r1, r5
-	str r1, [r0, #0]
-	movs r0, #1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+	.section .rom.0007F96C, "ax"
+	.balign 4
+	.syntax unified
 
 	.thumb_func
 	.thumb
 	.global sub_0807F96C
 sub_0807F96C:
 	push {r4, r5, lr}
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	adds r4, r0, #0
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	bl sub_0807F624
 	ldr r5, [r0, #0]
 	cmp r5, #0
@@ -14975,9 +13936,9 @@ _0807F99C:
 	.global sub_0807F9A4
 sub_0807F9A4:
 	push {r4, r5, lr}
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	adds r4, r0, #0
-	bl sub_0807F5C0
+	bl ScriptReadNextU32
 	adds r5, r0, #0
 	cmp r5, #0
 	beq _0807F9CC
@@ -15007,9 +13968,9 @@ _0807F9D0:
 	.global sub_0807F9D8
 sub_0807F9D8:
 	push {r4, r5, lr}
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	adds r4, r0, #0
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	bl sub_0807F624
 	ldr r5, [r0, #0]
 	cmp r5, #0
@@ -15045,9 +14006,9 @@ _0807FA08:
 	.global sub_0807FA10
 sub_0807FA10:
 	push {r4, r5, lr}
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	adds r4, r0, #0
-	bl sub_0807F5C0
+	bl ScriptReadNextU32
 	adds r5, r0, #0
 	cmp r5, #0
 	beq _0807FA38
@@ -15072,173 +14033,18 @@ _0807FA3C:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_0807FA44
-sub_0807FA44:
-	push {lr}
-	bl sub_0807F570
-	bl sub_0807F624
-	ldr r1, [r0, #0]
-	adds r1, #1
-	str r1, [r0, #0]
-	movs r0, #1
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807FA5C
-sub_0807FA5C:
-	push {lr}
-	bl sub_0807F570
-	bl sub_0807F624
-	ldr r1, [r0, #0]
-	subs r1, #1
-	str r1, [r0, #0]
-	movs r0, #1
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807FA74
-sub_0807FA74:
-	push {lr}
-	bl sub_0807F570
-	bl sub_0807F624
-	ldr r1, [r0, #0]
-	negs r1, r1
-	str r1, [r0, #0]
-	movs r0, #1
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807FA8C
-sub_0807FA8C:
-	push {r4, r5, lr}
-	bl sub_0807F570
-	adds r4, r0, #0
-	bl sub_0807F570
-	adds r5, r0, #0
-	adds r0, r4, #0
-	bl sub_0807F624
-	adds r4, r0, #0
-	adds r0, r5, #0
-	bl sub_0807F624
-	ldr r1, [r4, #0]
-	ldr r0, [r0, #0]
-	ands r1, r0
-	str r1, [r4, #0]
-	movs r0, #1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_0807FAB8
-sub_0807FAB8:
-	push {r4, r5, lr}
-	bl sub_0807F570
-	adds r4, r0, #0
-	bl sub_0807F5C0
-	adds r5, r0, #0
-	adds r0, r4, #0
-	bl sub_0807F624
-	ldr r1, [r0, #0]
-	ands r1, r5
-	str r1, [r0, #0]
-	movs r0, #1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807FADC
-sub_0807FADC:
-	push {r4, r5, lr}
-	bl sub_0807F570
-	adds r4, r0, #0
-	bl sub_0807F570
-	adds r5, r0, #0
-	adds r0, r4, #0
-	bl sub_0807F624
-	adds r4, r0, #0
-	adds r0, r5, #0
-	bl sub_0807F624
-	ldr r1, [r4, #0]
-	ldr r0, [r0, #0]
-	orrs r1, r0
-	str r1, [r4, #0]
-	movs r0, #1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_0807FB08
-sub_0807FB08:
-	push {r4, r5, lr}
-	bl sub_0807F570
-	adds r4, r0, #0
-	bl sub_0807F5C0
-	adds r5, r0, #0
-	adds r0, r4, #0
-	bl sub_0807F624
-	ldr r1, [r0, #0]
-	orrs r1, r5
-	str r1, [r0, #0]
-	movs r0, #1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807FB2C
-sub_0807FB2C:
-	push {r4, r5, lr}
-	bl sub_0807F570
-	adds r4, r0, #0
-	bl sub_0807F570
-	adds r5, r0, #0
-	adds r0, r4, #0
-	bl sub_0807F624
-	adds r4, r0, #0
-	adds r0, r5, #0
-	bl sub_0807F624
-	ldr r1, [r4, #0]
-	ldr r0, [r0, #0]
-	eors r1, r0
-	str r1, [r4, #0]
-	movs r0, #1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
+	.section .rom.0007FB58, "ax"
+	.balign 4
+	.syntax unified
 
 	.thumb_func
 	.thumb
 	.global sub_0807FB58
 sub_0807FB58:
 	push {r4, r5, lr}
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	adds r4, r0, #0
-	bl sub_0807F5C0
+	bl ScriptReadNextU32
 	adds r5, r0, #0
 	adds r0, r4, #0
 	bl sub_0807F624
@@ -15257,7 +14063,7 @@ sub_0807FB58:
 	.global sub_0807FB7C
 sub_0807FB7C:
 	push {lr}
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	bl sub_0807F624
 	ldr r1, [r0, #0]
 	mvns r1, r1
@@ -15273,9 +14079,9 @@ sub_0807FB7C:
 	.global sub_0807FB94
 sub_0807FB94:
 	push {r4, r5, lr}
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	adds r4, r0, #0
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	adds r5, r0, #0
 	adds r0, r4, #0
 	bl sub_0807F624
@@ -15304,9 +14110,9 @@ _0807FBC2:
 	.global sub_0807FBCC
 sub_0807FBCC:
 	push {r4, r5, lr}
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	adds r4, r0, #0
-	bl sub_0807F5C0
+	bl ScriptReadNextU32
 	adds r5, r0, #0
 	adds r0, r4, #0
 	bl sub_0807F624
@@ -15338,9 +14144,9 @@ _0807FBF0:
 	.global sub_0807FBFC
 sub_0807FBFC:
 	push {r4, r5, lr}
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	adds r4, r0, #0
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	adds r5, r0, #0
 	adds r0, r4, #0
 	bl sub_0807F624
@@ -15371,9 +14177,9 @@ _0807FC2A:
 	.global sub_0807FC34
 sub_0807FC34:
 	push {r4, r5, lr}
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	adds r4, r0, #0
-	bl sub_0807F5C0
+	bl ScriptReadNextU32
 	adds r5, r0, #0
 	adds r0, r4, #0
 	bl sub_0807F624
@@ -15402,7 +14208,7 @@ _0807FC58:
 	.global sub_0807FC64
 sub_0807FC64:
 	push {lr}
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	bl sub_0807F624
 	adds r1, r0, #0
 	movs r2, #0
@@ -15424,7 +14230,7 @@ _0807FC7A:
 	.global sub_0807FC84
 sub_0807FC84:
 	push {lr}
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	bl sub_0807F624
 	ldr r1, [r0, #0]
 	lsrs r1, r1, #31
@@ -15440,7 +14246,7 @@ sub_0807FC84:
 	.global sub_0807FC9C
 sub_0807FC9C:
 	push {lr}
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	bl sub_0807F624
 	adds r1, r0, #0
 	movs r2, #0
@@ -15462,7 +14268,7 @@ _0807FCB2:
 	.global sub_0807FCBC
 sub_0807FCBC:
 	push {lr}
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	bl sub_0807F624
 	adds r1, r0, #0
 	movs r2, #0
@@ -15484,7 +14290,7 @@ _0807FCD2:
 	.global sub_0807FCDC
 sub_0807FCDC:
 	push {lr}
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	bl sub_0807F624
 	ldr r1, [r0, #0]
 	mvns r1, r1
@@ -15499,7 +14305,7 @@ sub_0807FCDC:
 	.global sub_0807FCF4
 sub_0807FCF4:
 	push {lr}
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	bl sub_0807F624
 	adds r1, r0, #0
 	movs r2, #0
@@ -15521,7 +14327,7 @@ _0807FD0A:
 	.global sub_0807FD14
 sub_0807FD14:
 	push {lr}
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	bl sub_0807F624
 	ldr r2, [r0, #0]
 	negs r1, r2
@@ -15539,9 +14345,9 @@ sub_0807FD14:
 	.global sub_0807FD30
 sub_0807FD30:
 	push {r4, lr}
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	adds r4, r0, #0
-	bl sub_0807F5C0
+	bl ScriptReadNextU32
 	ldr r1, _0807FD54
 	ldr r1, [r1, #0]
 	ldr r1, [r1, #12]
@@ -15563,7 +14369,7 @@ _0807FD54:
 	.global sub_0807FD58
 sub_0807FD58:
 	push {lr}
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	adds r2, r0, #0
 	ldr r0, _0807FD7C
 	ldr r0, [r0, #0]
@@ -15596,9 +14402,9 @@ _0807FD82:
 	.global sub_0807FD88
 sub_0807FD88:
 	push {r4, r5, r6, lr}
-	bl sub_0807F608
+	bl ScriptPopU32
 	adds r6, r0, #0
-	bl sub_0807F608
+	bl ScriptPopU32
 	ldr r2, _0807FDD0
 	ldr r1, [r2, #0]
 	ldr r1, [r1, #12]
@@ -15609,7 +14415,7 @@ sub_0807FD88:
 	adds r5, r2, #0
 	.global _0807FDA4
 _0807FDA4:
-	bl sub_0807F608
+	bl ScriptPopU32
 	ldr r1, [r5, #0]
 	ldr r1, [r1, #12]
 	ldr r1, [r1, #12]
@@ -15655,9 +14461,9 @@ _0807FDD0:
 	.global sub_0807FE10
 sub_0807FE10:
 	push {r4, r5, lr}
-	bl sub_0807F598
+	bl ScriptReadNextU16
 	adds r4, r0, #0
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	bl sub_0807F624
 	adds r5, r0, #0
 	ldr r0, _0807FE40
@@ -15684,9 +14490,9 @@ _0807FE40:
 	.global sub_0807FE44
 sub_0807FE44:
 	push {r4, r5, lr}
-	bl sub_0807F598
+	bl ScriptReadNextU16
 	adds r4, r0, #0
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	bl sub_0807F624
 	adds r5, r0, #0
 	ldr r0, _0807FE78
@@ -15720,9 +14526,9 @@ _0807FE78:
 	.global sub_0807FE7C
 sub_0807FE7C:
 	push {r4, r5, lr}
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	adds r4, r0, #0
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	bl sub_0807F624
 	adds r5, r0, #0
 	ldr r0, _0807FEAC
@@ -15748,9 +14554,9 @@ _0807FEAC:
 	.global sub_0807FEB0
 sub_0807FEB0:
 	push {r4, r5, lr}
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	adds r4, r0, #0
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	bl sub_0807F624
 	adds r5, r0, #0
 	ldr r0, _0807FEE0
@@ -15780,9 +14586,9 @@ sub_0807FEE4:
 	mov r6, r8
 	push {r6, r7}
 	sub sp, #4
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	adds r4, r0, #0
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	str r0, [sp, #0]
 	adds r0, r4, #0
 	bl sub_0807F624
@@ -15881,7 +14687,7 @@ _0807FF9C:
 	.global sub_0807FFA0
 sub_0807FFA0:
 	push {r4, lr}
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	bl sub_0807F624
 	adds r4, r0, #0
 	ldr r1, [r4, #0]
@@ -15913,7 +14719,7 @@ sub_0807FFD0:
 	push {r4, r5, r6, r7, lr}
 	mov r7, r8
 	push {r7}
-	bl sub_0807F5C0
+	bl ScriptReadNextU32
 	mov r8, r0
 	ldr r0, _08080018
 	ldr r0, [r0, #0]

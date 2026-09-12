@@ -241,17 +241,16 @@ script changes. Loose ROM text outside named sources still uses `text/script_*`.
 
 ## Decompilation status
 
-Latest small-function batch: eight list helpers (initialization, append, insert,
-lookup, removal, head, tail, and count) now use readable C in `src/list.c`
-(196 bytes), alongside the `SprSet` and
-`SprGet` native adapters (60 bytes), and 13 item-table accessors in `src/item.c`
-(276 bytes). Item names and descriptions are identified; other field names
-retain offsets until their gameplay meaning is verified. The provenance audit verifies **177 ordinary
-C functions and 10 BIOS assembly wrappers**; each declared range is linked from
-its expected C object and matches the Japanese ROM. This is a function count,
-not a percentage of total code decoded. List tests cover empty/nonempty append
-and insertion/removal at the head, middle, and tail. Item tests cover the
-128-byte record layout, signed fields, and 16-bit ID narrowing.
+The provenance audit verifies **277 ordinary C functions and 10 BIOS assembly
+wrappers**; each declared range is linked from its expected object and matches
+the Japanese ROM. The latest 100-function batch covers sprite renderer state,
+NCD loading and cloning, procedural map-generation state, and the core script
+bytecode operations. This is a verified function count, not a percentage of all
+game code. Earlier batches include eight list helpers, the `SprSet` and `SprGet`
+native adapters, and 13 item-table accessors. Item names and descriptions are
+identified; other fields retain offsets until their gameplay meaning is
+verified. List tests cover insertion and removal at every list position, and
+item tests cover the 128-byte record layout, signed fields, and ID narrowing.
 
 The next batch adds five input helpers (256 bytes), two packed-bit helpers
 (72 bytes), and four RNG routines (68 bytes), all compiled from C. Input tests
@@ -316,6 +315,46 @@ the renderer's 32-byte resource descriptors and traverse indexed 16-, 8-, 8-,
 The neutral level names remain until the NCD fields using each table establish
 their final animation or graphics roles.
 
+Twelve renderer buffer and copy-callback helpers add 208 bytes of matching C.
+Six get or set the three buffer pointers at state offsets +4, +8 and +12. Two
+callback pairs at +`0x620` and +`0x624` accept custom transfer functions and
+restore their own `CpuCopy` wrappers when passed null. This is the first 12 of
+the current 100-function decompilation batch. Two higher-level transfer helpers
+bring the batch to 14 functions: one copies an arbitrary count of 32-byte
+records into buffer +8, while the other copies one 32-byte record into buffer
++12 through their independently configurable callbacks.
+
+Eight more renderer-mask helpers bring the active batch to 22 functions. They
+set, clear and test individual bits or replace the complete 32-bit masks at
+state offsets +`0x10` and +`0x14`. Whole-mask setters preserve the original
+binary behavior: zero clears the mask and any nonzero value fills it with ones.
+
+Three leaf helpers and the NCD shallow-clone routine brought the active batch to
+26 functions. The leaf helpers address 32-byte OAM work records, calculate
+storage for `count + 1` records, and divide 65,536 by a sign-extended 16-bit
+value. The clone copies all 52 bytes of an NCD runtime sprite and then sets its
+two-bit copy mode to one; recovering it also corrected the byte-`0x27` layout.
+
+The completed 100-function batch also contains NCD resource registration and
+deep cloning. Registration resolves the container's six relative table offsets
+and allocates one signed binding slot per palette. Deep clones allocate and copy
+their own per-cell handle arrays, distinguishing them from shallow mode-one
+clones.
+
+Thirty-nine procedural-map routines now live in `src/map_generation.c`. They
+identify the generator's private RNG and its state block at engine offset
+`0x1304`, including six working pointers, three indexed tables, two signed
+coordinate arrays, per-direction values, and four signed four-component
+vectors. Names retain offsets where caller analysis has not established the
+game-level meaning. See [map generation and script bytecode](docs/map-and-script-runtime.md).
+
+Thirty-three bytecode routines now live in `src/script_bytecode.c`. They decode
+little-endian operands, advance the instruction cursor, operate the VM's stack,
+resolve variables through the remaining operand resolver, and implement jump,
+call, return, switch, assignment, arithmetic, and bitwise commands. This turns
+the central script operations into editable C while preserving every original
+instruction byte.
+
 **The build compiles C with agbcc**, the period compiler the pret projects
 preserve. This is what lets ordinary C reproduce the original instruction
 bytes: modern GCC allocates registers differently for identical source and
@@ -328,8 +367,8 @@ included, where modern GCC differed on two counts in every function:
 | Leaf prologue | `push {lr}` | `push {r4, lr}`, saving a register it never uses |
 | `index * 24` | `((i * 2) + i) * 8` with shifts | load 24, then `muls` |
 
-The current manifest declares 187 linked ranges: 177 compiled-C ranges and ten
-BIOS inline-assembly wrapper ranges. Compiled C owns 7,580 bytes, including
+The current manifest declares 287 linked ranges: 277 compiled-C ranges and ten
+BIOS inline-assembly wrapper ranges. Compiled C owns 10,372 bytes, including
 literal pools and alignment. This is not a function-completion percentage.
 One range may contain multiple contiguous
 functions and alignment bytes. The [build provenance audit](https://github.com/name1esshero/Marchen-Awakens-Romance/wiki/Build-verification)

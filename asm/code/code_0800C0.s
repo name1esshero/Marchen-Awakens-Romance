@@ -7,6 +7,10 @@
 
 	.section .rom.000800C0, "ax"
 	.syntax unified
+	.global gIwramBase
+	.set gIwramBase, 0x03000000
+	.global gMapGenerationRootOffset
+	.set gMapGenerationRootOffset, 0x00003FDC
 	.global _080800C0
 _080800C0:
 	.4byte 0x0300611C  @ IWRAM+0x611C
@@ -30,7 +34,7 @@ _080800CA:
 	adds r2, r2, r0
 	ldr r0, [r1, #68]
 	str r0, [r2, #0]
-	bl sub_0807F570
+	bl ScriptReadNextU8
 	ldr r1, _080800F8
 	lsls r0, r0, #2
 	adds r0, r0, r1
@@ -435,9 +439,9 @@ sub_08080430:
 	beq _0808044E
 	ldr r4, [r4, #0]
 	bl ScriptPopFrame
-	bl sub_0807F608
+	bl ScriptPopU32
 	adds r0, r4, #0
-	bl sub_0807F5E8
+	bl ScriptPushU32
 	b _08080452
 	.global _0808044E
 _0808044E:
@@ -1298,6 +1302,8 @@ sub_08080BC8:
 	.thumb
 	.global sub_08080BCC
 sub_08080BCC:
+	.global _call_via_r3
+	.thumb_set _call_via_r3, sub_08080BCC
 	bx r3
 	.byte 0xC0
 	.byte 0x46

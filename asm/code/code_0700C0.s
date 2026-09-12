@@ -248,7 +248,7 @@ sub_08070238:
 	.thumb
 	.global sub_0807027C
 sub_0807027C:
-	bl sub_08071DD4
+	bl MapGenerationSeedRandom
 	movs r5, #201
 	lsls r5, r5, #3
 	adds r0, r6, r5
@@ -409,7 +409,7 @@ _0807039C:
 	adds r7, #1
 	.global _080703A0
 _080703A0:
-	bl sub_08071DE0
+	bl MapGenerationRandom
 	adds r5, r0, #0
 	movs r0, #3
 	ands r5, r0
@@ -618,7 +618,7 @@ _080704F2:
 	mov r8, r7
 	.global _080704FA
 _080704FA:
-	bl sub_08071DE0
+	bl MapGenerationRandom
 	movs r5, #203
 	lsls r5, r5, #3
 	adds r1, r6, r5
@@ -2167,7 +2167,7 @@ _08070F50:
 _08070F5C:
 	cmp r5, #0
 	beq _08070F72
-	bl sub_08071DE0
+	bl MapGenerationRandom
 	adds r1, r5, #0
 	bl sub_08080E4C
 	lsls r0, r0, #2
@@ -2223,7 +2223,7 @@ sub_08070F8C:
 	mov r9, r1
 	.global _08070FA0
 _08070FA0:
-	bl sub_08071DE0
+	bl MapGenerationRandom
 	ldrh r2, [r7, #0]
 	ldrh r1, [r7, #2]
 	muls r1, r2
@@ -4142,7 +4142,7 @@ sub_08071B34:
 	ldr r2, [r0, #0]
 	cmp r2, #0
 	bne _08071BAC
-	bl sub_08071DE0
+	bl MapGenerationRandom
 	adds r5, r0, #0
 	ands r5, r4
 	mov r2, r8
@@ -4243,7 +4243,7 @@ _08071BEA:
 	ldr r1, [r2, #0]
 	cmp r1, #0
 	bne _08071C62
-	bl sub_08071DE0
+	bl MapGenerationRandom
 	adds r5, r0, #0
 	movs r0, #3
 	ands r5, r0
@@ -4384,7 +4384,7 @@ _08071CEC:
 	ldr r4, [r0, #0]
 	ldr r0, _08071D38
 	ands r4, r0
-	bl sub_08071DE0
+	bl MapGenerationRandom
 	movs r1, #13
 	bl sub_08080E4C
 	adds r5, r0, #0
@@ -4430,7 +4430,7 @@ _08071D38:
 	.4byte 0x46910E12
 	.global _08071D50
 _08071D50:
-	bl sub_08071DE0
+	bl MapGenerationRandom
 	mov r1, r10
 	ldrh r4, [r1, #0]
 	ldrh r7, [r1, #2]
@@ -4503,558 +4503,9 @@ _08071DB0:
 	pop {r0}
 	bx r0
 
-	.thumb_func
-	.thumb
-	.global sub_08071DD4
-sub_08071DD4:
-	ldr r1, _08071DDC
-	str r0, [r1, #0]
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _08071DDC
-_08071DDC:
-	.4byte 0x03004044  @ IWRAM+0x4044
-
-	.thumb_func
-	.thumb
-	.global sub_08071DE0
-sub_08071DE0:
-	ldr r2, _08071DF4
-	ldr r1, [r2, #0]
-	ldr r0, _08071DF8
-	muls r0, r1
-	ldr r1, _08071DFC
-	adds r0, r0, r1
-	str r0, [r2, #0]
-	lsls r0, r0, #1
-	lsrs r0, r0, #17
-	bx lr
-	.global _08071DF4
-_08071DF4:
-	.4byte 0x03004044  @ IWRAM+0x4044
-	.global _08071DF8
-_08071DF8:
-	.4byte 0x41C64E6D
-	.global _08071DFC
-_08071DFC:
-	.4byte 0x00003039
-
-	.thumb_func
-	.thumb
-	.global sub_08071E00
-sub_08071E00:
-	ldr r0, _08071E10
-	ldr r1, _08071E14
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	ldr r1, _08071E18
-	adds r0, r0, r1
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _08071E10
-_08071E10:
-	.4byte 0x03000000  @ IWRAM
-	.global _08071E14
-_08071E14:
-	.4byte 0x00003FDC
-	.global _08071E18
-_08071E18:
-	.4byte 0x00001304
-
-	.thumb_func
-	.thumb
-	.global sub_08071E1C
-sub_08071E1C:
-	push {r4, r5, lr}
-	adds r4, r0, #0
-	adds r5, r1, #0
-	bl sub_08071E00
-	str r4, [r0, #0]
-	bl sub_08071E00
-	str r5, [r0, #4]
-	pop {r4, r5}
-	pop {r0}
-	bx r0
-
-	.thumb_func
-	.thumb
-	.global sub_08071E34
-sub_08071E34:
-	push {lr}
-	bl sub_08071E00
-	ldr r0, [r0, #0]
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_08071E40
-sub_08071E40:
-	push {lr}
-	bl sub_08071E00
-	ldr r0, [r0, #4]
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_08071E4C
-sub_08071E4C:
-	push {r4, lr}
-	adds r4, r0, #0
-	bl sub_08071E00
-	str r4, [r0, #12]
-	pop {r4}
-	pop {r0}
-	bx r0
-
-	.thumb_func
-	.thumb
-	.global sub_08071E5C
-sub_08071E5C:
-	push {r4, lr}
-	adds r4, r0, #0
-	bl sub_08071E00
-	str r4, [r0, #20]
-	pop {r4}
-	pop {r0}
-	bx r0
-
-	.thumb_func
-	.thumb
-	.global sub_08071E6C
-sub_08071E6C:
-	push {r4, lr}
-	adds r4, r0, #0
-	bl sub_08071E00
-	str r4, [r0, #16]
-	pop {r4}
-	pop {r0}
-	bx r0
-
-	.thumb_func
-	.thumb
-	.global sub_08071E7C
-sub_08071E7C:
-	push {r4, lr}
-	adds r4, r0, #0
-	bl sub_08071E00
-	str r4, [r0, #24]
-	pop {r4}
-	pop {r0}
-	bx r0
-
-	.thumb_func
-	.thumb
-	.global sub_08071E8C
-sub_08071E8C:
-	push {lr}
-	bl sub_08071E00
-	ldr r0, [r0, #12]
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_08071E98
-sub_08071E98:
-	push {lr}
-	bl sub_08071E00
-	ldr r0, [r0, #20]
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_08071EA4
-sub_08071EA4:
-	push {lr}
-	bl sub_08071E00
-	ldr r0, [r0, #16]
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_08071EB0
-sub_08071EB0:
-	push {lr}
-	bl sub_08071E00
-	ldr r0, [r0, #24]
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_08071EBC
-sub_08071EBC:
-	push {lr}
-	bl sub_08071E00
-	ldr r0, [r0, #28]
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_08071EC8
-sub_08071EC8:
-	push {lr}
-	bl sub_08071E00
-	ldr r0, [r0, #32]
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_08071ED4
-sub_08071ED4:
-	push {r4, lr}
-	adds r4, r0, #0
-	bl sub_08071E00
-	str r4, [r0, #28]
-	pop {r4}
-	pop {r0}
-	bx r0
-
-	.thumb_func
-	.thumb
-	.global sub_08071EE4
-sub_08071EE4:
-	push {r4, lr}
-	adds r4, r0, #0
-	bl sub_08071E00
-	str r4, [r0, #32]
-	pop {r4}
-	pop {r0}
-	bx r0
-
-	.thumb_func
-	.thumb
-	.global sub_08071EF4
-sub_08071EF4:
-	push {r4, lr}
-	adds r4, r0, #0
-	bl sub_08071E00
-	lsls r4, r4, #2
-	adds r0, #56
-	adds r0, r0, r4
-	ldr r0, [r0, #0]
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_08071F0C
-sub_08071F0C:
-	push {r4, lr}
-	adds r4, r0, #0
-	bl sub_08071E00
-	lsls r4, r4, #2
-	adds r0, #72
-	adds r0, r0, r4
-	ldr r0, [r0, #0]
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_08071F24
-sub_08071F24:
-	push {r4, r5, r6, lr}
-	adds r4, r0, #0
-	adds r5, r1, #0
-	adds r6, r2, #0
-	bl sub_08071E00
-	lsls r4, r4, #2
-	adds r0, #56
-	adds r0, r0, r4
-	str r5, [r0, #0]
-	bl sub_08071E00
-	adds r0, #72
-	adds r0, r0, r4
-	str r6, [r0, #0]
-	pop {r4, r5, r6}
-	pop {r0}
-	bx r0
-
-	.thumb_func
-	.thumb
-	.global sub_08071F48
-sub_08071F48:
-	push {r4, r5, lr}
-	adds r4, r0, #0
-	adds r5, r1, #0
-	bl sub_08071E00
-	lsls r4, r4, #1
-	adds r0, #38
-	adds r0, r0, r4
-	strh r5, [r0, #0]
-	pop {r4, r5}
-	pop {r0}
-	bx r0
-
-	.thumb_func
-	.thumb
-	.global sub_08071F60
-sub_08071F60:
-	push {r4, lr}
-	adds r4, r0, #0
-	bl sub_08071E00
-	lsls r4, r4, #1
-	adds r0, #38
-
-	.thumb_func
-	.thumb
-	.global sub_08071F6C
-sub_08071F6C:
-	adds r0, r0, r4
-	movs r1, #0
-	ldrsh r0, [r0, r1]
-	pop {r4}
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_08071F78
-sub_08071F78:
-	push {r4, r5, lr}
-	adds r4, r0, #0
-	adds r5, r1, #0
-	bl sub_08071E00
-	lsls r4, r4, #2
-	adds r0, #88
-	adds r0, r0, r4
-	str r5, [r0, #0]
-	pop {r4, r5}
-	pop {r0}
-	bx r0
-
-	.thumb_func
-	.thumb
-	.global sub_08071F90
-sub_08071F90:
-	push {r4, lr}
-	adds r4, r0, #0
-	bl sub_08071E00
-	lsls r4, r4, #2
-	adds r0, #88
-	adds r0, r0, r4
-	ldr r0, [r0, #0]
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_08071FA8
-sub_08071FA8:
-	push {r4, r5, lr}
-	adds r4, r0, #0
-	adds r5, r1, #0
-	bl sub_08071E00
-	adds r0, #104
-	adds r0, r0, r4
-	strb r5, [r0, #0]
-	pop {r4, r5}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_08071FC0
-sub_08071FC0:
-	push {r4, lr}
-	adds r4, r0, #0
-	bl sub_08071E00
-	adds r0, #104
-	adds r0, r0, r4
-	ldrb r0, [r0, #0]
-	lsls r0, r0, #24
-	asrs r0, r0, #24
-	pop {r4}
-	pop {r1}
-	bx r1
-	.4byte 0xF7FFB500
-	.4byte 0x3024FF11
-	.4byte 0x06007800
-	.4byte 0xBC021600
-	.4byte 0x00004708
-	.4byte 0x1C04B510
-	.4byte 0x16240624
-	.4byte 0xFF04F7FF
-	.4byte 0x70043024
-	.4byte 0xBC01BC10
-	.4byte 0x00004700
-
-	.thumb_func
-	.thumb
-	.global sub_08072004
-sub_08072004:
-	push {r4, r5, lr}
-	adds r4, r0, #0
-	lsls r5, r1, #16
-	asrs r5, r5, #16
-	bl sub_08071E00
-	lsls r4, r4, #1
-	adds r0, #46
-	adds r0, r0, r4
-	strh r5, [r0, #0]
-	pop {r4, r5}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_08072020
-sub_08072020:
-	push {r4, lr}
-	adds r4, r0, #0
-	bl sub_08071E00
-	lsls r4, r4, #1
-	adds r0, #46
-	adds r0, r0, r4
-	movs r1, #0
-	ldrsh r0, [r0, r1]
-	pop {r4}
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_08072038
-sub_08072038:
-	push {lr}
-	bl sub_08071E00
-	adds r0, #37
-	ldrb r0, [r0, #0]
-	lsls r0, r0, #24
-	asrs r0, r0, #24
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807204C
-sub_0807204C:
-	push {r4, lr}
-	adds r4, r0, #0
-	lsls r4, r4, #24
-	asrs r4, r4, #24
-	bl sub_08071E00
-	adds r0, #37
-	strb r4, [r0, #0]
-	pop {r4}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_08072064
-sub_08072064:
-	push {lr}
-	bl sub_08071E00
-	ldrb r0, [r0, #8]
-	lsls r0, r0, #24
-	asrs r0, r0, #24
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_08072074
-sub_08072074:
-	push {r4, lr}
-	adds r4, r0, #0
-	lsls r4, r4, #24
-	asrs r4, r4, #24
-	bl sub_08071E00
-	strb r4, [r0, #8]
-	pop {r4}
-	pop {r0}
-	bx r0
-
-	.thumb_func
-	.thumb
-	.global sub_08072088
-sub_08072088:
-	push {r4, lr}
-	adds r4, r0, #0
-	bl sub_08071E00
-	lsls r4, r4, #3
-	adds r0, r0, r4
-	adds r0, #108
-	movs r1, #0
-	ldrsh r0, [r0, r1]
-	pop {r4}
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_080720A0
-sub_080720A0:
-	push {r4, lr}
-	adds r4, r0, #0
-	bl sub_08071E00
-	lsls r4, r4, #3
-	adds r0, r0, r4
-	adds r0, #110
-	movs r1, #0
-	ldrsh r0, [r0, r1]
-	pop {r4}
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_080720B8
-sub_080720B8:
-	push {r4, lr}
-	adds r4, r0, #0
-	bl sub_08071E00
-	lsls r4, r4, #3
-	adds r0, r0, r4
-	adds r0, #112
-	movs r1, #0
-	ldrsh r0, [r0, r1]
-	pop {r4}
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_080720D0
-sub_080720D0:
-	push {r4, lr}
-	adds r4, r0, #0
-	bl sub_08071E00
-	lsls r4, r4, #3
-	adds r0, r0, r4
-	adds r0, #114
-	movs r1, #0
-	ldrsh r0, [r0, r1]
-	pop {r4}
-	pop {r1}
-	bx r1
+	.section .rom.000720E8, "ax"
+	.balign 4
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -5068,21 +4519,21 @@ sub_080720E8:
 	adds r6, r2, #0
 	mov r8, r3
 	ldr r7, [sp, #24]
-	bl sub_08071E00
+	bl MapGenerationGetState
 	lsls r4, r4, #3
 	adds r0, r0, r4
 	adds r0, #108
 	strh r5, [r0, #0]
-	bl sub_08071E00
+	bl MapGenerationGetState
 	adds r0, r0, r4
 	adds r0, #112
 	strh r6, [r0, #0]
-	bl sub_08071E00
+	bl MapGenerationGetState
 	adds r0, r0, r4
 	adds r0, #110
 	mov r1, r8
 	strh r1, [r0, #0]
-	bl sub_08071E00
+	bl MapGenerationGetState
 	adds r0, r0, r4
 	adds r0, #114
 	strh r7, [r0, #0]
@@ -5205,20 +4656,20 @@ sub_080721D4:
 	mov r6, r8
 	push {r6, r7}
 	sub sp, #36
-	bl sub_08071E34
+	bl MapGenerationGetValue00
 	asrs r6, r0, #3
-	bl sub_08071E40
+	bl MapGenerationGetValue04
 	asrs r5, r0, #3
 	movs r4, #1
 	negs r4, r4
 	adds r0, r4, #0
-	bl sub_08071E4C
+	bl MapGenerationSetPointer0C
 	adds r0, r4, #0
-	bl sub_08071E5C
+	bl MapGenerationSetPointer14
 	adds r0, r4, #0
-	bl sub_08071E6C
+	bl MapGenerationSetPointer10
 	adds r0, r4, #0
-	bl sub_08071E7C
+	bl MapGenerationSetPointer18
 	movs r7, #0
 	movs r0, #0
 	mov r8, r0
@@ -5286,18 +4737,18 @@ _0807222C:
 _080722CC:
 	add r6, r8
 	adds r5, r5, r7
-	bl sub_08071E8C
+	bl MapGenerationGetPointer0C
 	movs r4, #1
 	negs r4, r4
 	cmp r0, r4
 	beq _080722F4
-	bl sub_08071E98
+	bl MapGenerationGetPointer14
 	cmp r0, r4
 	beq _080722F4
-	bl sub_08071EA4
+	bl MapGenerationGetPointer10
 	cmp r0, r4
 	beq _080722F4
-	bl sub_08071EB0
+	bl MapGenerationGetPointer18
 	cmp r0, r4
 	bne _080722FC
 	.global _080722F4
@@ -5319,14 +4770,14 @@ _08072302:
 	stmia r5!, {r0}
 	adds r0, r4, #0
 	movs r1, #0
-	bl sub_08071F48
+	bl MapGenerationSetValue26
 	adds r0, r4, #0
 	movs r1, #0
-	bl sub_08072004
+	bl MapGenerationSetValue2E
 	adds r0, r4, #0
 	movs r1, #0
 	movs r2, #0
-	bl sub_08071F24
+	bl MapGenerationSetTables
 	movs r0, #0
 	str r0, [sp, #0]
 	adds r0, r4, #0
@@ -5336,7 +4787,7 @@ _08072302:
 	bl sub_080720E8
 	adds r0, r4, #0
 	movs r1, #0
-	bl sub_08071F78
+	bl MapGenerationSetTable58
 	adds r4, #1
 	cmp r4, #3
 	ble _08072302
@@ -5374,15 +4825,15 @@ _08072358:
 	bne _0807239E
 	adds r0, r4, #0
 	movs r1, #1
-	bl sub_08071F48
+	bl MapGenerationSetValue26
 	adds r0, r4, #0
 	adds r1, r5, #0
-	bl sub_08072004
+	bl MapGenerationSetValue2E
 	ldr r1, [r7, #0]
 	mov r3, r8
 	ldr r2, [r3, #0]
 	adds r0, r4, #0
-	bl sub_08071F24
+	bl MapGenerationSetTables
 	.global _0807239E
 _0807239E:
 	ldr r1, [r7, #0]
@@ -5399,14 +4850,14 @@ _0807239E:
 	bne _080723D2
 	adds r0, r4, #0
 	movs r1, #1
-	bl sub_08071F48
+	bl MapGenerationSetValue26
 	adds r0, r4, #0
 	adds r1, r5, #0
-	bl sub_08072004
+	bl MapGenerationSetValue2E
 	ldr r1, [r7, #0]
 	ldr r2, [r6, #0]
 	adds r0, r4, #0
-	bl sub_08071F24
+	bl MapGenerationSetTables
 	.global _080723D2
 _080723D2:
 	ldr r1, [r7, #0]
@@ -5425,14 +4876,14 @@ _080723D2:
 	str r0, [r6, #0]
 	adds r0, r4, #0
 	movs r1, #1
-	bl sub_08071F48
+	bl MapGenerationSetValue26
 	adds r0, r4, #0
 	adds r1, r5, #0
-	bl sub_08072004
+	bl MapGenerationSetValue2E
 	ldr r1, [r7, #0]
 	ldr r2, [r6, #0]
 	adds r0, r4, #0
-	bl sub_08071F24
+	bl MapGenerationSetTables
 	.global _0807240A
 _0807240A:
 	ldr r1, [r7, #0]
@@ -5448,14 +4899,14 @@ _0807240A:
 	bne _0807243C
 	adds r0, r4, #0
 	movs r1, #1
-	bl sub_08071F48
+	bl MapGenerationSetValue26
 	adds r0, r4, #0
 	adds r1, r5, #0
-	bl sub_08072004
+	bl MapGenerationSetValue2E
 	ldr r1, [r7, #0]
 	ldr r2, [r6, #0]
 	adds r0, r4, #0
-	bl sub_08071F24
+	bl MapGenerationSetTables
 	.global _0807243C
 _0807243C:
 	ldr r1, [r7, #0]
@@ -5471,7 +4922,7 @@ _0807243C:
 	bl sub_080720E8
 	adds r0, r4, #0
 	movs r1, #3
-	bl sub_08071F78
+	bl MapGenerationSetTable58
 	.global _0807245C
 _0807245C:
 	adds r7, #4
@@ -5555,13 +5006,13 @@ _080724D0:
 	ldr r0, [r5, #24]
 	cmp r0, #0
 	beq _0807252A
-	bl sub_08071EA4
+	bl MapGenerationGetPointer10
 	adds r6, r0, #0
-	bl sub_08071E8C
+	bl MapGenerationGetPointer0C
 	adds r5, r0, #0
-	bl sub_08071EB0
+	bl MapGenerationGetPointer18
 	adds r4, r0, #0
-	bl sub_08071E98
+	bl MapGenerationGetPointer14
 	ldr r1, _08072538
 	str r0, [sp, #0]
 	adds r0, r1, #0
@@ -5632,7 +5083,7 @@ _08072568:
 	movs r1, #1
 	negs r1, r1
 	adds r0, r1, #0
-	bl sub_08071E1C
+	bl MapGenerationSetValues00And04
 	movs r1, #145
 	lsls r1, r1, #4
 	adds r0, r4, r1
@@ -5641,7 +5092,7 @@ _08072568:
 	adds r0, r4, r2
 	ldr r0, [r0, #0]
 	mov r8, r0
-	bl sub_08071EA4
+	bl MapGenerationGetPointer10
 	lsls r0, r0, #19
 	cmp r6, r0
 	bge _080725B0
@@ -5649,7 +5100,7 @@ _08072568:
 	movs r1, #0
 	bl GetObjectFieldS16_1A
 	strh r0, [r7, #32]
-	bl sub_08071EA4
+	bl MapGenerationGetPointer10
 	lsls r0, r0, #3
 
 	.thumb_func
@@ -5671,7 +5122,7 @@ _080725B0:
 	movs r2, #240
 	lsls r2, r2, #16
 	adds r4, r6, r2
-	bl sub_08071EB0
+	bl MapGenerationGetPointer18
 	lsls r0, r0, #19
 	cmp r4, r0
 	ble _080725DC
@@ -5679,7 +5130,7 @@ _080725B0:
 	movs r1, #0
 	bl GetObjectFieldS16_1A
 	strh r0, [r7, #32]
-	bl sub_08071EB0
+	bl MapGenerationGetPointer18
 	asrs r1, r6, #16
 	lsls r0, r0, #3
 	subs r0, #240
@@ -5699,7 +5150,7 @@ _080725DC:
 	.global _080725EE
 _080725EE:
 	strh r0, [r5, #16]
-	bl sub_08071E8C
+	bl MapGenerationGetPointer0C
 	lsls r0, r0, #19
 	cmp r8, r0
 	bge _08072616
@@ -5707,7 +5158,7 @@ _080725EE:
 	movs r1, #0
 	bl GetObjectFieldS16_1E
 	strh r0, [r5, #2]
-	bl sub_08071E8C
+	bl MapGenerationGetPointer0C
 	lsls r0, r0, #3
 	ldrh r1, [r5, #2]
 	adds r0, r0, r1
@@ -5720,7 +5171,7 @@ _08072616:
 	movs r4, #160
 	lsls r4, r4, #16
 	add r4, r8
-	bl sub_08071E98
+	bl MapGenerationGetPointer14
 	lsls r0, r0, #19
 	cmp r4, r0
 	ble _08072644
@@ -5728,7 +5179,7 @@ _08072616:
 	movs r1, #0
 	bl GetObjectFieldS16_1E
 	strh r0, [r5, #2]
-	bl sub_08071E98
+	bl MapGenerationGetPointer14
 	mov r2, r8
 	asrs r1, r2, #16
 	lsls r0, r0, #3
@@ -6055,15 +5506,15 @@ sub_08072840:
 	movs r4, #1
 	negs r4, r4
 	adds r0, r4, #0
-	bl sub_08071ED4
+	bl MapGenerationSetPointer1C
 	adds r0, r4, #0
-	bl sub_08071EE4
-	bl sub_08071E8C
+	bl MapGenerationSetPointer20
+	bl MapGenerationGetPointer0C
 	adds r5, r0, #0
 	b _08072890
 	.global _0807285C
 _0807285C:
-	bl sub_08071EA4
+	bl MapGenerationGetPointer10
 	adds r4, r0, #0
 	b _08072886
 	.global _08072864
@@ -6077,22 +5528,22 @@ _08072864:
 	cmp r0, r1
 	bne _08072884
 	adds r0, r4, #0
-	bl sub_08071ED4
+	bl MapGenerationSetPointer1C
 	adds r0, r5, #0
-	bl sub_08071EE4
+	bl MapGenerationSetPointer20
 	b _08072898
 	.global _08072884
 _08072884:
 	adds r4, #1
 	.global _08072886
 _08072886:
-	bl sub_08071EB0
+	bl MapGenerationGetPointer18
 	cmp r4, r0
 	blt _08072864
 	adds r5, #1
 	.global _08072890
 _08072890:
-	bl sub_08071E98
+	bl MapGenerationGetPointer14
 	cmp r5, r0
 	blt _0807285C
 	.global _08072898
@@ -6119,7 +5570,7 @@ sub_080728A0:
 	movs r1, #1
 	negs r1, r1
 	adds r0, r1, #0
-	bl sub_08071E1C
+	bl MapGenerationSetValues00And04
 	movs r6, #0
 	b _080728C6
 	.global _080728C2
@@ -6148,15 +5599,15 @@ _080728C6:
 	adds r1, r0, #0
 	lsls r1, r1, #3
 	adds r0, r4, #0
-	bl sub_08071E1C
+	bl MapGenerationSetValues00And04
 	.global _080728F6
 _080728F6:
-	bl sub_08071E34
+	bl MapGenerationGetValue00
 	movs r4, #1
 	negs r4, r4
 	cmp r0, r4
 	beq _08072914
-	bl sub_08071E40
+	bl MapGenerationGetValue04
 	cmp r0, r4
 	beq _08072914
 	bl sub_080721D4
@@ -6267,13 +5718,13 @@ sub_08072998:
 	mov r10, r1
 	adds r7, r2, #0
 	adds r6, r3, #0
-	bl sub_08071EA4
+	bl MapGenerationGetPointer10
 	mov r8, r0
-	bl sub_08071E8C
+	bl MapGenerationGetPointer0C
 	adds r5, r0, #0
-	bl sub_08071EB0
+	bl MapGenerationGetPointer18
 	adds r4, r0, #0
-	bl sub_08071E98
+	bl MapGenerationGetPointer14
 	str r5, [sp, #0]
 	str r4, [sp, #4]
 	str r0, [sp, #8]
@@ -6315,7 +5766,7 @@ sub_080729F4:
 	push {r4, r5, lr}
 	bl sub_08006C8C
 	adds r5, r0, #0
-	bl sub_08072064
+	bl MapGenerationGetValue08
 	lsls r0, r0, #24
 	cmp r0, #0
 	beq _08072A30
@@ -6323,19 +5774,19 @@ sub_080729F4:
 	.global _08072A08
 _08072A08:
 	adds r0, r4, #0
-	bl sub_08072020
+	bl MapGenerationGetValue2E
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	cmp r0, r5
 	bne _08072A2A
 	adds r0, r4, #0
-	bl sub_08071F60
+	bl MapGenerationGetValue26
 	lsls r0, r0, #16
 	cmp r0, #0
 	beq _08072A2A
 	adds r0, r4, #0
 	movs r1, #0
-	bl sub_08071F48
+	bl MapGenerationSetValue26
 	.global _08072A2A
 _08072A2A:
 	adds r4, #1
@@ -6358,7 +5809,7 @@ sub_08072A38:
 	adds r7, r1, #0
 	bl sub_08006C8C
 	adds r5, r0, #0
-	bl sub_08072064
+	bl MapGenerationGetValue08
 	lsls r0, r0, #24
 	cmp r0, #0
 	bne _08072A6C
@@ -6366,12 +5817,12 @@ sub_08072A38:
 	.global _08072A50
 _08072A50:
 	adds r0, r4, #0
-	bl sub_08071EF4
+	bl MapGenerationGetTable38
 	adds r0, #1
 	lsls r0, r0, #3
 	str r0, [r6, #0]
 	adds r0, r4, #0
-	bl sub_08071F0C
+	bl MapGenerationGetTable48
 	adds r0, #1
 	lsls r0, r0, #3
 	str r0, [r7, #0]
@@ -6383,13 +5834,13 @@ _08072A6C:
 	.global _08072A6E
 _08072A6E:
 	adds r0, r4, #0
-	bl sub_08072020
+	bl MapGenerationGetValue2E
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	cmp r0, r5
 	bne _08072A88
 	adds r0, r4, #0
-	bl sub_08071F60
+	bl MapGenerationGetValue26
 	lsls r0, r0, #16
 	cmp r0, #0
 	bne _08072A50
@@ -6419,7 +5870,7 @@ sub_08072A98:
 	adds r5, r0, #0
 	cmp r4, r5
 	bne _08072B00
-	bl sub_08072064
+	bl MapGenerationGetValue08
 	lsls r0, r0, #24
 	cmp r0, #0
 	beq _08072B00
@@ -6427,36 +5878,36 @@ sub_08072A98:
 	.global _08072AB2
 _08072AB2:
 	adds r0, r4, #0
-	bl sub_08071F60
+	bl MapGenerationGetValue26
 	lsls r0, r0, #16
 	cmp r0, #0
 	beq _08072AFA
 	adds r0, r4, #0
-	bl sub_08072020
+	bl MapGenerationGetValue2E
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	cmp r0, r5
 	bne _08072AFA
 	adds r0, r4, #0
-	bl sub_08071F90
+	bl MapGenerationGetTable58
 	adds r1, r0, #0
 	subs r1, #1
 	cmp r1, #0
 	bne _08072AEC
 	adds r0, r4, #0
 	movs r1, #0
-	bl sub_08071F48
+	bl MapGenerationSetValue26
 	adds r0, r4, #0
 	movs r1, #0
-	bl sub_08071F78
+	bl MapGenerationSetTable58
 	b _08072AFA
 	.global _08072AEC
 _08072AEC:
 	adds r0, r4, #0
-	bl sub_08071F78
+	bl MapGenerationSetTable58
 	adds r0, r4, #0
 	movs r1, #1
-	bl sub_08071FA8
+	bl MapGenerationSetValue68
 	.global _08072AFA
 _08072AFA:
 	adds r4, #1
@@ -6476,7 +5927,7 @@ _08072B00:
 sub_08072B08:
 	push {r4, r5, lr}
 	adds r5, r0, #0
-	bl sub_08072064
+	bl MapGenerationGetValue08
 	lsls r0, r0, #24
 	cmp r0, #0
 	bne _08072B1C
@@ -6491,13 +5942,13 @@ _08072B1C:
 	.global _08072B1E
 _08072B1E:
 	adds r0, r4, #0
-	bl sub_08072020
+	bl MapGenerationGetValue2E
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	cmp r0, r5
 	bne _08072B38
 	adds r0, r4, #0
-	bl sub_08071F60
+	bl MapGenerationGetValue26
 	lsls r0, r0, #16
 	cmp r0, #0
 	beq _08072B18
@@ -6541,7 +5992,7 @@ sub_08072B48:
 	.global _08072B6A
 _08072B6A:
 	adds r0, r6, #0
-	bl sub_08072020
+	bl MapGenerationGetValue2E
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	b _08072BF4
@@ -6569,12 +6020,12 @@ _08072B84:
 	.global _08072B98
 _08072B98:
 	adds r0, r6, #0
-	bl sub_08071F60
+	bl MapGenerationGetValue26
 	lsls r0, r0, #16
 	cmp r0, #0
 	beq _08072BEC
 	adds r0, r6, #0
-	bl sub_08072020
+	bl MapGenerationGetValue2E
 	adds r4, r0, #0
 	lsls r4, r4, #16
 	asrs r4, r4, #16
@@ -6582,17 +6033,17 @@ _08072B98:
 	cmp r4, r0
 	bne _08072BEC
 	adds r0, r6, #0
-	bl sub_08072088
+	bl MapGenerationGetVectorValue0
 	adds r7, r0, #0
 	adds r0, r6, #0
-	bl sub_080720B8
+	bl MapGenerationGetVectorValue4
 	adds r4, r0, #0
 	adds r4, r7, r4
 	adds r0, r6, #0
-	bl sub_080720A0
+	bl MapGenerationGetVectorValue2
 	adds r5, r0, #0
 	adds r0, r6, #0
-	bl sub_080720D0
+	bl MapGenerationGetVectorValue6
 	adds r0, r5, r0
 	cmp r9, r4
 	bgt _08072BEC
@@ -7471,7 +6922,7 @@ _080731F8:
 	movs r1, #80
 	adds r1, r1, r7
 	mov r8, r1
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	ldr r1, [r5, #0]
 	movs r2, #162
 	lsls r2, r2, #3
@@ -7487,7 +6938,7 @@ _080731F8:
 	adds r0, r0, r7
 	adds r0, #152
 	mov r1, r8
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	ldr r0, [r5, #0]
 	adds r4, r4, r0
 	strb r6, [r4, #0]
@@ -7782,7 +7233,7 @@ sub_08073454:
 	ldr r1, [r0, #0]
 	adds r1, #8
 	ldr r0, [sp, #92]
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	ldr r1, [sp, #60]
 	ldrh r0, [r1, #0]
 	strh r0, [r6, #34]
@@ -8647,7 +8098,7 @@ _08073AAC:
 	str r0, [r1, #0]
 	.global _08073AAE
 _08073AAE:
-	bl sub_08072064
+	bl MapGenerationGetValue08
 	lsls r0, r0, #24
 	asrs r0, r0, #24
 	cmp r0, #0
@@ -8666,7 +8117,7 @@ _08073ABC:
 	.global _08073ACE
 _08073ACE:
 	movs r0, #3
-	bl sub_0807DB4C
+	bl SpriteRecordSizeForCount
 	adds r1, r0, #0
 	movs r0, #0
 	bl HeapAlloc
@@ -9776,7 +9227,7 @@ _080742B0:
 	adds r1, #172
 	adds r0, r4, #0
 	str r2, [sp, #28]
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	ldrh r0, [r6, #0]
 	strh r0, [r4, #54]
 	ldrh r0, [r6, #2]
@@ -11295,7 +10746,7 @@ sub_08074DE2:
 	adds r1, r1, r2
 	ldr r1, [r1, #0]
 	adds r1, #8
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	ldrh r0, [r5, #18]
 	mov r3, r8
 	strh r0, [r3, #0]
@@ -11359,7 +10810,7 @@ _08074E70:
 	adds r1, r1, r6
 	ldr r1, [r1, #0]
 	adds r1, #8
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	ldrh r0, [r5, #18]
 	adds r1, r5, #0
 	adds r1, #110
@@ -14148,7 +13599,7 @@ sub_08076566:
 	str r2, [r5, #0]
 	.global _0807656E
 _0807656E:
-	bl sub_08071E8C
+	bl MapGenerationGetPointer0C
 	adds r0, #5
 	lsls r0, r0, #19
 	ldr r1, [r5, #0]
@@ -16518,7 +15969,7 @@ _08077830:
 	movs r3, #140
 	lsls r3, r3, #1
 	adds r1, r7, r3
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	ldr r0, [r7, #108]
 	strh r0, [r4, #56]
 	adds r4, #72
@@ -17000,7 +16451,7 @@ _08077C00:
 	b _08077CBA
 	.global _08077C08
 _08077C08:
-	bl sub_08072038
+	bl MapGenerationGetValue25
 	lsls r0, r0, #24
 	cmp r0, #0
 	beq _08077CBA
@@ -17013,22 +16464,22 @@ _08077C08:
 	.global _08077C1E
 _08077C1E:
 	adds r0, r5, #0
-	bl sub_08071F60
+	bl MapGenerationGetValue26
 	lsls r0, r0, #16
 	cmp r0, #0
 	beq _08077CA4
 	adds r0, r5, #0
-	bl sub_08071EF4
+	bl MapGenerationGetTable38
 	adds r0, #1
 	lsls r0, r0, #3
 	strh r0, [r4, #62]
 	adds r0, r5, #0
-	bl sub_08071F0C
+	bl MapGenerationGetTable48
 	adds r0, #1
 	lsls r0, r0, #3
 	strh r0, [r6, #0]
 	adds r0, r5, #0
-	bl sub_08071FC0
+	bl MapGenerationGetValue68
 	lsls r0, r0, #24
 	cmp r0, #0
 	beq _08077C6E
@@ -17045,7 +16496,7 @@ _08077C1E:
 	str r1, [r0, #0]
 	adds r0, r5, #0
 	movs r1, #0
-	bl sub_08071FA8
+	bl MapGenerationSetValue68
 	b _08077C90
 	.global _08077C6E
 _08077C6E:

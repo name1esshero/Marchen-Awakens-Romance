@@ -2464,7 +2464,7 @@ _080699D4:
 	muls r0, r2
 	adds r1, r1, r0
 	adds r0, r3, #0
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	mov r3, r8
 	adds r2, r3, r4
 	movs r0, #246
@@ -2537,7 +2537,7 @@ _08069A90:
 	adds r1, r5, r1
 	str r2, [sp, #20]
 	str r3, [sp, #24]
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	mov r0, r9
 	strh r0, [r6, #0]
 	mov r1, r10
@@ -5324,7 +5324,7 @@ _0806B42E:
 	movs r3, #52
 	muls r2, r3
 	adds r1, r1, r2
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	adds r2, r6, r4
 	ldr r6, _0806B6B8
 	adds r1, r2, r6
@@ -5389,7 +5389,7 @@ _0806B4EA:
 	add r1, r9
 	str r2, [sp, #32]
 	str r3, [sp, #36]
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	ldr r3, [sp, #36]
 	strh r3, [r4, #0]
 	mov r0, sp
@@ -5433,7 +5433,7 @@ _0806B4EA:
 	ldr r7, _0806B6CC
 	adds r1, r1, r7
 	add r1, r9
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	mov r0, r9
 	adds r2, r0, r4
 	ldr r3, _0806B6D0
@@ -5488,7 +5488,7 @@ _0806B5BA:
 	adds r1, r5, r1
 	str r2, [sp, #32]
 	str r3, [sp, #36]
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	mov r7, r8
 	strh r7, [r6, #0]
 	mov r0, r10
@@ -6364,7 +6364,7 @@ _0806BC64:
 	adds r0, r4, #0
 	str r2, [sp, #88]
 	str r3, [sp, #92]
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	ldr r0, _0806BCFC
 	adds r0, r0, r7
 	mov r9, r0
@@ -6724,7 +6724,7 @@ _0806BED6:
 	adds r0, r4, #0
 	str r2, [sp, #88]
 	str r3, [sp, #92]
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	ldr r0, sub_0806BF5C
 	adds r0, r0, r7
 	mov r9, r0

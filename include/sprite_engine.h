@@ -3,6 +3,8 @@
 
 #include "gba/types.h"
 
+typedef void (*SpriteCopyCallback)(void *destination, const void *source, u32 size);
+
 struct SpriteResourceHeader {
     u8 unknown00[64];
     u32 entryCount;
@@ -49,7 +51,13 @@ struct SpriteEngineState {
     u8 oamBoundaries[3];             /* 0x000; boundary 0 is allocated count */
     u8 pad03;
     u8 *oamEntries;                  /* 0x004; 8 bytes per entry */
-    u8 unknown008[0x144];
+    void *buffer8;
+    void *bufferC;
+    u32 flags10;
+    u32 flags14;
+    u8 unknown018[0x104];
+    void *heap11C;                    /* 0x11C: sprite/NCD allocation heap */
+    u8 unknown120[0x2C];
     struct SpriteResourceBinding {
         struct SpriteBindingOwner *owner;
         s32 index;
@@ -61,6 +69,8 @@ struct SpriteEngineState {
     s16 value612;                    /* 0x612: meaning not yet established */
     u8 unknown614[8];
     struct SpriteResourceDescriptor *resources; /* 0x61C; 32-byte records */
+    SpriteCopyCallback copyCallback620;
+    SpriteCopyCallback copyCallback624;
 };
 
 /* Partial 16-byte resource record. The handle at +14 controls whether the
@@ -108,5 +118,30 @@ struct SpriteResourceLevel2 *SpriteResourceGetLevel2(u32 resource, u32 index0, u
 struct SpriteResourceLevel3 *SpriteResourceGetLevel3(u32 resource, u32 index0, u32 offset1, u32 offset2, u32 offset3);
 void *SpriteResourceGetTable24(u32 resource, u32 index0, u32 offset1, u32 offset2, u32 offset3);
 void *SpriteResourceGetTable28(u32 resource, u32 index0, u32 offset1, u32 offset2, u32 offset3);
+void *SpriteEngineGetBuffer8(void);
+void SpriteEngineSetBuffer8(void *buffer);
+void *SpriteEngineGetBufferC(void);
+void SpriteEngineSetBufferC(void *buffer);
+void *SpriteEngineGetBuffer4(void);
+void SpriteEngineSetBuffer4(void *buffer);
+void SpriteEngineSetCopyCallback620(SpriteCopyCallback callback);
+SpriteCopyCallback SpriteEngineGetCopyCallback620(void);
+void SpriteEngineDefaultCopy620(void *destination, const void *source, u32 size);
+void SpriteEngineSetCopyCallback624(SpriteCopyCallback callback);
+SpriteCopyCallback SpriteEngineGetCopyCallback624(void);
+void SpriteEngineDefaultCopy624(void *destination, const void *source, u32 size);
+void SpriteEngineCopyToBuffer8(u16 index, const void *source, u32 count);
+void SpriteEngineCopyToBufferC(u8 index, const void *source);
+void SpriteEngineSetFlag10(u8 index, u8 set);
+u32 SpriteEngineTestFlag10(u8 index);
+void SpriteEngineSetAllFlags10(s32 set);
+u32 SpriteEngineGetFlags10(void);
+void SpriteEngineSetFlag14(u8 index, s32 set);
+u32 SpriteEngineTestFlag14(u8 index);
+void SpriteEngineSetAllFlags14(s32 set);
+u32 SpriteEngineGetFlags14(void);
+void *SpriteEngineGetBuffer4Entry(u32 index);
+s32 SpriteMathDivide65536ByS16(s32 value);
+u32 SpriteRecordSizeForCount(u32 count);
 
 #endif

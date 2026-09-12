@@ -1768,7 +1768,7 @@ _08008D00:
 	lsls r1, r1, #5
 	adds r1, r5, r1
 	movs r2, #1
-	bl sub_0807D444
+	bl SpriteEngineCopyToBuffer8
 	adds r4, #1
 	cmp r4, #9
 	ble _08008D00
@@ -1811,7 +1811,7 @@ sub_08008D6A:
 	lsls r1, r1, #5
 	adds r1, r5, r1
 	movs r2, #1
-	bl sub_0807D444
+	bl SpriteEngineCopyToBuffer8
 	adds r4, #1
 	cmp r4, #9
 	ble _08008D46
@@ -1863,7 +1863,7 @@ sub_08008DDA:
 	lsls r1, r1, #5
 	adds r1, r5, r1
 	movs r2, #1
-	bl sub_0807D444
+	bl SpriteEngineCopyToBuffer8
 	mov r1, r8
 	ldr r0, [r1, #0]
 	adds r0, r0, r4
@@ -1897,7 +1897,7 @@ sub_08008E08:
 	.thumb
 	.global sub_08008E18
 sub_08008E18:
-	bl sub_0807D444
+	bl SpriteEngineCopyToBuffer8
 	mov r1, r8
 	ldr r0, [r1, #0]
 	ldr r2, _08009004
@@ -1938,7 +1938,7 @@ sub_08008E18:
 	lsls r1, r1, #5
 	adds r1, r5, r1
 	ldrb r2, [r7, #19]
-	bl sub_0807D444
+	bl SpriteEngineCopyToBuffer8
 	ldr r1, sub_0800901C
 	movs r0, #0
 	bl FindResourceByName
@@ -2711,7 +2711,7 @@ _08009358:
 	adds r0, r0, r1
 	ldr r0, [r0, #0]
 	mov r9, r0
-	bl sub_0807D3C4
+	bl SpriteEngineGetBuffer8
 	mov r2, r9
 	movs r3, #0
 	ldrsh r1, [r2, r3]
@@ -2745,7 +2745,7 @@ _080093B2:
 	adds r1, r5, #0
 	adds r3, r4, #0
 	bl sub_0800234C
-	bl sub_0807D3C4
+	bl SpriteEngineGetBuffer8
 	mov r2, r9
 	movs r3, #4
 	ldrsh r1, [r2, r3]
@@ -3018,7 +3018,7 @@ sub_0800956C:
 	adds r0, r0, r1
 	ldr r0, [r0, #0]
 	mov r9, r0
-	bl sub_0807D3C4
+	bl SpriteEngineGetBuffer8
 	mov r2, r9
 	movs r3, #0
 	ldrsh r1, [r2, r3]
@@ -3056,7 +3056,7 @@ _080095BA:
 	mov r1, r8
 	adds r3, r4, #0
 	bl sub_0800234C
-	bl sub_0807D3C4
+	bl SpriteEngineGetBuffer8
 	mov r2, r9
 	movs r3, #4
 	ldrsh r1, [r2, r3]

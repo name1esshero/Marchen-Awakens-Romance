@@ -13,10 +13,19 @@ class NcdSpriteTests(unittest.TestCase):
 #include "ncd.h"
 #include <assert.h>
 #include <stddef.h>
+#include <stdlib.h>
 #include <string.h>
+void *HeapAlloc(void *heap, u32 size) {
+    (void)heap;
+    return malloc(size);
+}
 void CpuFill(void *dest, u32 size, u32 value) {
     assert(size == 52 && value == 0);
     memset(dest, 0, size);
+}
+void CpuCopy(void *dest, const void *src, u32 size) {
+    assert(size == 52);
+    memcpy(dest, src, size);
 }
 int main(void) {
     struct {u32 before; struct NcdSprite sprite; u32 after;} data;
@@ -35,6 +44,15 @@ int main(void) {
     assert(data.before == 0xA5A5A5A5 && data.after == 0xA5A5A5A5);
     NcdInitSprite(&data.sprite, -1);
     assert(data.sprite.allocationPool == -1);
+    {
+        struct NcdSprite copy;
+        data.sprite.copyMode27=3;
+        data.sprite.flag27=1;
+        NcdSpriteCopy(&copy,&data.sprite);
+        assert(!memcmp(&copy,&data.sprite,39));
+        assert(copy.copyMode27==1 && copy.flag27==1);
+        assert(!memcmp((unsigned char *)&copy+40,(unsigned char *)&data.sprite+40,12));
+    }
     return 0;
 }
 ''')

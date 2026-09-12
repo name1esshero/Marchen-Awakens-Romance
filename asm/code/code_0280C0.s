@@ -513,7 +513,7 @@ _08028430:
 _08028432:
 	adds r1, #8
 	adds r0, r5, #0
-	bl sub_0807BF80
+	bl NcdSpriteDeepCopy
 	b _0802844C
 	.global _0802843C
 _0802843C:
@@ -892,7 +892,7 @@ _0802867C:
 _0802867E:
 	adds r1, #8
 	adds r0, r6, #0
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	b _08028698
 	.global _08028688
 _08028688:
@@ -1349,7 +1349,7 @@ sub_08028938:
 	cmp r1, #0
 	blt _0802898A
 	ldr r0, [sp, #96]
-	bl sub_0807DB4C
+	bl SpriteRecordSizeForCount
 	adds r0, #68
 	ldr r1, _08028998
 	str r0, [sp, #0]
@@ -10213,7 +10213,7 @@ sub_0802C584:
 	adds r7, r2, #0
 	adds r4, r3, #0
 	movs r0, #8
-	bl sub_0807DB4C
+	bl SpriteRecordSizeForCount
 	adds r2, r0, #0
 	lsls r2, r2, #3
 	ldr r0, _0802C5CC
@@ -10895,7 +10895,7 @@ _0802C9E6:
 	.global _0802C9EC
 _0802C9EC:
 	movs r0, #8
-	bl sub_0807DB4C
+	bl SpriteRecordSizeForCount
 	ldr r3, [sp, #28]
 	adds r1, r0, #0
 	muls r1, r3

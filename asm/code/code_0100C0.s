@@ -4281,7 +4281,7 @@ sub_080124B0:
 	push {lr}
 	movs r0, #0
 	ldrsb r0, [r1, r0]
-	bl sub_08072074
+	bl MapGenerationSetValue08
 	movs r0, #1
 	pop {r1}
 	bx r1
@@ -4293,7 +4293,7 @@ sub_080124C0:
 	push {lr}
 	movs r0, #0
 	ldrsb r0, [r1, r0]
-	bl sub_0807204C
+	bl MapGenerationSetValue25
 	movs r0, #1
 	pop {r1}
 	bx r1
@@ -4334,7 +4334,7 @@ sub_080124E0:
 sub_08012500:
 	push {r4, lr}
 	adds r4, r2, #0
-	bl sub_08071EBC
+	bl MapGenerationGetPointer1C
 	lsls r0, r0, #3
 	str r0, [r4, #0]
 	movs r0, #1
@@ -4348,7 +4348,7 @@ sub_08012500:
 sub_08012514:
 	push {r4, lr}
 	adds r4, r2, #0
-	bl sub_08071EC8
+	bl MapGenerationGetPointer20
 	lsls r0, r0, #3
 	str r0, [r4, #0]
 	movs r0, #1
@@ -7635,7 +7635,7 @@ _08013AC2:
 	mov r3, r10
 	movs r4, #2
 	ldrsh r1, [r3, r4]
-	bl sub_08071E1C
+	bl MapGenerationSetValues00And04
 	.global _08013AD8
 _08013AD8:
 	movs r5, #155

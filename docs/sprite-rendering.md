@@ -137,6 +137,46 @@ name lookup uses it as the upper bound of a binary search. Names such as
 The expanded 32-bit host fixture checks every stride, accumulated child index,
 final-table selection, descriptor size, and the state pointer at +`0x61C`.
 
+Renderer-state pointers at +4, +8 and +12 now have matching C getters and
+setters. The +4 pointer is the same 8-byte-entry OAM work buffer used by the
+allocator; the exact roles of the other two buffers remain open. Transfer
+callbacks at +`0x620` and +`0x624` can be replaced independently. Passing null
+restores a dedicated wrapper around `CpuCopy`, so callers never observe a null
+callback after either setter returns. Twelve recovered functions cover the six
+buffer accessors, two callback setters, two callback getters and two defaults.
+
+One existing renderer path branches to `0807D3F6`, two bytes into the +4 buffer
+getter, after it has already loaded the state-pointer address into `r0`. The
+assembly keeps this entry as an alias to `SpriteEngineGetBuffer4 + 2`; the
+getter body itself remains compiled C and the final ROM comparison covers this
+unusual shared tail.
+
+`SpriteEngineCopyToBuffer8` selects `buffer8 + index * 32` and transfers
+`count * 32` bytes through callback +`0x620`. `SpriteEngineCopyToBufferC`
+selects `bufferC + index * 32` and transfers one 32-byte record through callback
++`0x624`. Their host tests install custom callbacks and verify the calculated
+destination, source, and byte count rather than assuming that a callback always
+uses the default copy implementation.
+
+Two independent 32-bit masks at state offsets +`0x10` and +`0x14` now have
+matching per-bit setters, bit tests, whole-mask setters and whole-mask getters.
+Bit tests return the selected mask value rather than a normalized Boolean.
+Passing zero to a whole-mask setter clears every bit; every nonzero argument
+sets all 32 bits. The exact roles of these masks remain under investigation,
+so their names retain the verified state offsets.
+
+Three additional leaf helpers now provide a typed address for a 32-byte entry
+in the +4 OAM work buffer, compute `(count + 1) * 32` bytes for related record
+storage, and calculate a signed `65536 / (s16)value` fixed-point reciprocal.
+The reciprocal truncates its argument before division and sign-extends the
+16-bit result, matching both the caller ABI and original instructions.
+
+`NcdSpriteCopy` is the recovered 52-byte shallow clone. After copying the full
+runtime record it sets the low two bits of byte `0x27` to one and preserves the
+other six bits. Those low bits are now documented as `copyMode27`; the existing
+renderer flag occupies bit 3. The neighboring routine performs a deeper clone
+of the cell-handle allocation and remains assembly.
+
 ## Recovered C and remaining work
 
 `src/ncd_sprite.c` recovers the complete 80-byte initializer at 0807BC2C.

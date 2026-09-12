@@ -42,11 +42,14 @@ struct NcdSprite {
  u8 frameCount,cellCount;
  u8 reserved24:4, flag24:1, rest24:3;
  u8 flags25,flags26;
- u8 reserved27:3, flag27:1, rest27:4;
+ u8 copyMode27:2, reserved27:1, flag27:1, rest27:4;
  u8 flag28:1, rest28:7;
  u8 reserved29;
  s16 angle,scaleX,scaleY;
  u32 cellHandles;
 };
 void NcdInitSprite(struct NcdSprite *sprite, s32 pool);
+void NcdSpriteCopy(struct NcdSprite *destination, const struct NcdSprite *source);
+void NcdSpriteDeepCopy(struct NcdSprite *destination, const struct NcdSprite *source);
+void NcdRegisterResource(struct NcdHeader *header, u32 resource);
 #endif

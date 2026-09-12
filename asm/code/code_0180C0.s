@@ -1777,7 +1777,7 @@ _08018E12:
 	.global _08018E24
 _08018E24:
 	adds r0, r4, #0
-	bl sub_08071E1C
+	bl MapGenerationSetValues00And04
 	.global _08018E2A
 _08018E2A:
 	pop {r4}
@@ -6535,7 +6535,7 @@ _0801AF0A:
 	adds r0, r6, #0
 	ldr r1, _0801B05C
 	add r1, r10
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	strb r4, [r5, #16]
 	movs r0, #186
 	lsls r0, r0, #3
@@ -9069,7 +9069,7 @@ sub_0801BFE0:
 	movs r3, #172
 	lsls r3, r3, #3
 	adds r1, r2, r3
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	movs r0, #1
 	strb r0, [r6, #16]
 	.global _0801C05E
@@ -11253,7 +11253,7 @@ _0801CF14:
 	movs r3, #160
 	lsls r3, r3, #4
 	adds r1, r2, r3
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	subs r4, #8
 	adds r0, r5, r4
 	strb r6, [r0, #0]
@@ -11265,7 +11265,7 @@ _0801CF14:
 	movs r3, #199
 	lsls r3, r3, #4
 	adds r1, r2, r3
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	adds r4, #1
 	adds r0, r5, r4
 	movs r6, #1
@@ -11517,7 +11517,7 @@ _0801D0DA:
 	ldr r2, [sp, #32]
 	ldr r3, _0801D174
 	adds r1, r2, r3
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	ldr r1, _0801D178
 	adds r0, r5, r1
 	strb r7, [r0, #0]
@@ -13480,7 +13480,7 @@ _0801DDA2:
 	adds r1, r1, r0
 	add r1, r8
 	adds r0, r5, #0
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	adds r4, #1
 	adds r5, #52
 	cmp r4, r7
@@ -15476,7 +15476,7 @@ _0801EAC6:
 	movs r2, #12
 	bl sub_0801E228
 	movs r0, #4
-	bl sub_0807DB4C
+	bl SpriteRecordSizeForCount
 	adds r1, r0, #0
 	movs r0, #0
 	bl HeapAlloc
@@ -18600,7 +18600,7 @@ _0802005A:
 	adds r2, r7, r6
 	strh r0, [r2, #0]
 	movs r0, #4
-	bl sub_0807DB4C
+	bl SpriteRecordSizeForCount
 	adds r1, r0, #0
 	movs r0, #0
 	bl HeapAlloc

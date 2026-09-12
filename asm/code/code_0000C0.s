@@ -2503,17 +2503,17 @@ sub_0800163C:
 	adds r0, r7, #0
 	bl NfpOpenByName
 	movs r1, #0
-	bl sub_0807B96C
+	bl NcdRegisterResource
 	ldr r1, _080019D8
 	adds r0, r7, #0
 	bl NfpOpenByName
 	movs r1, #1
-	bl sub_0807B96C
+	bl NcdRegisterResource
 	ldr r1, _080019DC
 	adds r0, r7, #0
 	bl NfpOpenByName
 	movs r1, #2
-	bl sub_0807B96C
+	bl NcdRegisterResource
 	ldr r1, _08001990
 	ldr r0, [r1, #0]
 	ldr r7, _080019E0
@@ -2533,9 +2533,9 @@ sub_0800163C:
 	bl SpriteResourceSetHandle
 	ldr r4, _080019E4
 	adds r0, r4, #0
-	bl sub_0807D488
+	bl SpriteEngineSetCopyCallback624
 	adds r0, r4, #0
-	bl sub_0807D40C
+	bl SpriteEngineSetCopyCallback620
 	mov r2, r10
 	ldr r0, [r2, #0]
 	ldr r1, _080019E8
@@ -4348,7 +4348,7 @@ sub_08002470:
 	mov r9, r1
 	ldr r5, [r5, #48]
 	mov r8, r5
-	bl sub_0807D3C4
+	bl SpriteEngineGetBuffer8
 	movs r3, #0
 	ldrsh r1, [r5, r3]
 	lsls r1, r1, #5
@@ -4388,7 +4388,7 @@ _080024B8:
 sub_080024D2:
 	adds r3, r4, #0
 	bl sub_0800234C
-	bl sub_0807D3C4
+	bl SpriteEngineGetBuffer8
 	mov r2, r8
 	movs r3, #4
 	ldrsh r1, [r2, r3]

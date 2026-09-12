@@ -9723,7 +9723,7 @@ sub_08043F9C:
 	adds r7, r2, #0
 	adds r4, r3, #0
 	movs r0, #13
-	bl sub_0807DB4C
+	bl SpriteRecordSizeForCount
 	adds r2, r0, #0
 	movs r0, #180
 	lsls r0, r0, #2

@@ -36,7 +36,13 @@ static u8 table24[10 * 32];
 static u8 table28[10 * 32];
 static void *releasedData;
 static u32 releaseCount;
+static void *copiedDestination;
+static const void *copiedSource;
+static u32 copiedSize;
 void sub_080869B8(void *data) { releasedData=data; releaseCount++; }
+void CpuCopy(void *destination,const void *source,u32 size) { copiedDestination=destination; copiedSource=source; copiedSize=size; }
+int sub_08080BFC(int dividend,int divisor) { return dividend/divisor; }
+static void customCopy(void *destination,const void *source,u32 size) { copiedDestination=destination; copiedSource=source; copiedSize=size+1; }
 static int run(void) {
     struct SpriteResource resource;
     testSpriteEngineState=&state;
@@ -44,7 +50,7 @@ static int run(void) {
     state.oamBoundaries[0]=0;
     state.oamBoundaries[1]=128;
     state.oamBoundaries[2]=128;
-    CHECK(sizeof(void *)==4 && sizeof(struct SpriteEngineState)==0x620);
+    CHECK(sizeof(void *)==4 && sizeof(struct SpriteEngineState)==0x628);
     CHECK((u8 *)&state.resources-(u8 *)&state==0x61C);
     CHECK(SpriteEngineGetOamEntry(0)==entries);
     CHECK(SpriteEngineGetOamEntry(7)==entries+56);
@@ -130,6 +136,49 @@ static int run(void) {
     CHECK(SpriteResourceGetLevel3(1,2,1,2,3)==&level3[4]);
     CHECK(SpriteResourceGetTable24(1,2,1,2,3)==table24+64);
     CHECK(SpriteResourceGetTable28(1,2,1,2,3)==table28+96);
+    SpriteEngineSetBuffer4(entries+4);
+    SpriteEngineSetBuffer8(entries+8);
+    SpriteEngineSetBufferC(entries+12);
+    CHECK(SpriteEngineGetBuffer4()==entries+4);
+    CHECK(SpriteEngineGetBuffer8()==entries+8);
+    CHECK(SpriteEngineGetBufferC()==entries+12);
+    SpriteEngineSetCopyCallback620(0);
+    SpriteEngineSetCopyCallback624(0);
+    CHECK(SpriteEngineGetCopyCallback620()==SpriteEngineDefaultCopy620);
+    CHECK(SpriteEngineGetCopyCallback624()==SpriteEngineDefaultCopy624);
+    SpriteEngineGetCopyCallback620()(entries+16,entries+32,24);
+    CHECK(copiedDestination==entries+16 && copiedSource==entries+32 && copiedSize==24);
+    SpriteEngineSetCopyCallback624(customCopy);
+    CHECK(SpriteEngineGetCopyCallback624()==customCopy);
+    SpriteEngineGetCopyCallback624()(entries+40,entries+48,8);
+    CHECK(copiedDestination==entries+40 && copiedSource==entries+48 && copiedSize==9);
+    SpriteEngineSetCopyCallback620(customCopy);
+    SpriteEngineCopyToBuffer8(2,entries+200,3);
+    CHECK(copiedDestination==entries+72 && copiedSource==entries+200 && copiedSize==97);
+    SpriteEngineCopyToBufferC(1,entries+220);
+    CHECK(copiedDestination==entries+44 && copiedSource==entries+220 && copiedSize==33);
+    SpriteEngineSetAllFlags10(0);
+    SpriteEngineSetFlag10(3,1);
+    SpriteEngineSetFlag10(31,2);
+    CHECK(SpriteEngineGetFlags10()==0x80000008 && SpriteEngineTestFlag10(3)==8);
+    SpriteEngineSetFlag10(3,0);
+    CHECK(SpriteEngineGetFlags10()==0x80000000);
+    SpriteEngineSetAllFlags10(7);
+    CHECK(SpriteEngineGetFlags10()==0xFFFFFFFF);
+    SpriteEngineSetAllFlags14(0);
+    SpriteEngineSetFlag14(5,-1);
+    CHECK(SpriteEngineGetFlags14()==32 && SpriteEngineTestFlag14(5)==32);
+    SpriteEngineSetFlag14(5,0);
+    CHECK(SpriteEngineGetFlags14()==0);
+    SpriteEngineSetAllFlags14(1);
+    CHECK(SpriteEngineGetFlags14()==0xFFFFFFFF);
+    SpriteEngineSetBuffer4(entries+4);
+    CHECK(SpriteEngineGetBuffer4Entry(3)==entries+100);
+    CHECK(SpriteMathDivide65536ByS16(256)==256);
+    CHECK(SpriteMathDivide65536ByS16(-256)==-256);
+    CHECK(SpriteMathDivide65536ByS16(0x10100)==256);
+    CHECK(SpriteRecordSizeForCount(0)==32);
+    CHECK(SpriteRecordSizeForCount(7)==256);
     return 0;
 }
 void _start(void) {

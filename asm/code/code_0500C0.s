@@ -9562,7 +9562,7 @@ sub_08053ECC:
 	movs r2, #8
 	ldrsh r7, [r5, r2]
 	ldr r5, [r5, #48]
-	bl sub_0807D3C4
+	bl SpriteEngineGetBuffer8
 	movs r2, #0
 	ldrsh r1, [r5, r2]
 	lsls r1, r1, #5
@@ -10278,7 +10278,7 @@ _080543C4:
 	adds r1, r0, r1
 	ldr r0, [sp, #24]
 	str r3, [sp, #20]
-	bl sub_0807BF60
+	bl NcdSpriteCopy
 	ldr r3, [sp, #20]
 	strh r3, [r4, #0]
 	mov r1, r10
