@@ -17,4 +17,7 @@ unsigned ListCount(List *list);
 ListNode *ListHead(List *list);
 ListNode *ListTail(List *list);
 
+/* Alternate insertion routine used by the original index-reordering code. */
+void ListInsertBeforeLinked(List *list, ListNode *at, ListNode *node);
+
 #endif

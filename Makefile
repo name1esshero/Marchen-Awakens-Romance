@@ -276,7 +276,7 @@ $(ENGLISH_DIR)/dialogue_original.o: src/dialogue_start.c include/dialogue.h
 	$(CC1) $(CC1FLAGS) $(ENGLISH_DIR)/dialogue_original.i -o $(ENGLISH_DIR)/dialogue_original.s
 	$(AS) $(ASFLAGS) -o $@ $(ENGLISH_DIR)/dialogue_original.s
 
-$(ENGLISH_DIR)/dialogue_runtime.o: src/english/dialogue_runtime.c include/dialogue.h include/english.h
+$(ENGLISH_DIR)/dialogue_runtime.o: src/english/dialogue_runtime.c include/dialogue.h include/english.h include/input.h
 	@mkdir -p $(ENGLISH_DIR)
 	$(CPP) $(CPPFLAGS) -DENGLISH=1 $< -o $(ENGLISH_DIR)/dialogue_runtime.i
 	$(CC1) $(CC1FLAGS) $(ENGLISH_DIR)/dialogue_runtime.i -o $(ENGLISH_DIR)/dialogue_runtime.s

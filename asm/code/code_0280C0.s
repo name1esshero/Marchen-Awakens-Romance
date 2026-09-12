@@ -2567,7 +2567,7 @@ _0802912C:
 	bl sub_0802AE74
 	movs r0, #1
 	movs r1, #0
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	cmp r0, #0
 	bne _0802914E
 	ldr r1, _08029228
@@ -4967,7 +4967,7 @@ sub_0802A132:
 _0802A156:
 	ldrh r1, [r7, #12]
 	movs r0, #0
-	bl sub_0807A0F0
+	bl KeyInputSet
 	movs r1, #0
 	movs r0, #30
 	strh r0, [r7, #16]
@@ -5802,7 +5802,7 @@ _0802A7F8:
 _0802A7FA:
 	ldrh r1, [r7, #12]
 	ldr r0, [sp, #28]
-	bl sub_0807A0F0
+	bl KeyInputSet
 	.global _0802A802
 _0802A802:
 	add sp, #40
@@ -6616,7 +6616,7 @@ _0802ADFA:
 sub_0802AE04:
 	ldrsb r1, [r4, r1]
 	adds r0, r5, #0
-	bl sub_0807A160
+	bl KeyInputAnyHeld
 	cmp r0, #0
 	beq _0802AE68
 	movs r0, #1
@@ -6656,7 +6656,7 @@ _0802AE48:
 	movs r1, #4
 	ldrsb r1, [r4, r1]
 	adds r0, r2, #0
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	cmp r0, #0
 	beq _0802AE68
 	ldr r0, _0802AE70

@@ -9345,7 +9345,7 @@ sub_0800BC3C:
 	adds r0, r0, r5
 	ldrh r0, [r0, #0]
 	movs r1, #4
-	bl sub_0807A0F0
+	bl KeyInputSet
 	.global _0800BC48
 _0800BC48:
 	bl sub_0800A154
@@ -11963,7 +11963,7 @@ _0800CDE8:
 	strh r0, [r1, #0]
 	ldr r0, _0800CE18
 	movs r1, #0
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	cmp r0, #0
 	bne _0800CDFA
 	b sub_0800CF88

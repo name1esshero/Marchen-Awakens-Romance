@@ -6683,7 +6683,7 @@ _0801B022:
 _0801B038:
 	movs r0, #32
 	movs r1, #0
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	cmp r0, #0
 	beq _0801B084
 	movs r1, #214
@@ -6732,7 +6732,7 @@ _0801B080:
 _0801B084:
 	movs r0, #16
 	movs r1, #0
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	adds r5, r0, #0
 	cmp r5, #0
 	beq _0801B0C4
@@ -6768,7 +6768,7 @@ _0801B0BC:
 _0801B0C4:
 	movs r0, #1
 	movs r1, #0
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	adds r4, r0, #0
 	cmp r4, #0
 	bne _0801B0D4
@@ -6946,7 +6946,7 @@ _0801B208:
 _0801B20C:
 	movs r0, #2
 	movs r1, #0
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	cmp r0, #0
 	bne _0801B21A
 	b sub_0801B4E8
@@ -9172,7 +9172,7 @@ _0801C0E6:
 _0801C0E8:
 	movs r0, #2
 	movs r1, #0
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	cmp r0, #0
 	bne _0801C0F6
 	b sub_0801C43C
@@ -9341,7 +9341,7 @@ _0801C200:
 	strh r0, [r1, #0]
 	movs r0, #2
 	movs r1, #0
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	cmp r0, #0
 	bne _0801C212
 	b sub_0801C43C
@@ -11667,7 +11667,7 @@ _0801D1CA:
 	adds r7, r5, r0
 	movs r0, #3
 	movs r1, #0
-	bl sub_0807A160
+	bl KeyInputAnyHeld
 	cmp r0, #0
 	beq _0801D208
 	ldr r1, _0801D240
@@ -11801,7 +11801,7 @@ sub_0801D2AC:
 	strb r0, [r4, #0]
 	movs r0, #3
 	movs r1, #0
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	cmp r0, #0
 	bne _0801D2C4
 	b sub_0801D710

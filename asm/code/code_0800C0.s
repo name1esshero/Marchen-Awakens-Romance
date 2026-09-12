@@ -84,7 +84,7 @@ sub_080801E0:
 sub_08080204:
 	push {lr}
 	ldr r0, [r1, #0]
-	bl sub_0807A1D8
+	bl RandomSeed
 	movs r0, #1
 	pop {r1}
 	bx r1

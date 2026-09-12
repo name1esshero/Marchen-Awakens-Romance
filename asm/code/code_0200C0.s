@@ -644,7 +644,7 @@ _080204C2:
 	movs r1, #0
 	ldrsb r1, [r0, r1]
 	movs r0, #2
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	cmp r0, #0
 	beq _080204E0
 	ldr r2, _08020500
@@ -2924,7 +2924,7 @@ _080212EA:
 	movs r1, #0
 	ldrsb r1, [r0, r1]
 	movs r0, #2
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	cmp r0, #0
 	beq _08021308
 	ldr r2, _08021328
@@ -5738,7 +5738,7 @@ _0802259A:
 	movs r1, #0
 	ldrsb r1, [r0, r1]
 	movs r0, #2
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	cmp r0, #0
 	beq _080225B8
 	ldr r0, _080225D8
@@ -12345,7 +12345,7 @@ _080253DA:
 	movs r1, #0
 	ldrsb r1, [r4, r1]
 	movs r0, #64
-	bl sub_0807A160
+	bl KeyInputAnyHeld
 	cmp r0, #0
 	beq _08025424
 	ldr r1, _0802541C
@@ -12388,7 +12388,7 @@ _08025424:
 	movs r1, #0
 	ldrsb r1, [r4, r1]
 	movs r0, #128
-	bl sub_0807A160
+	bl KeyInputAnyHeld
 
 	.thumb_func
 	.thumb

@@ -2342,7 +2342,7 @@ sub_0800163C:
 	lsls r7, r7, #9
 	mov r0, r8
 	adds r1, r7, #0
-	bl sub_0807A270
+	bl HeapInitDefault
 	ldr r2, _08001984
 	adds r1, r5, r2
 	str r0, [r1, #0]
@@ -2352,7 +2352,7 @@ sub_0800163C:
 	lsls r7, r7, #8
 	adds r0, r6, #0
 	adds r1, r7, #0
-	bl sub_0807A2A8
+	bl HeapCreate
 	ldr r1, _08001988
 	adds r1, r1, r5
 	mov r8, r1
@@ -2362,7 +2362,7 @@ sub_0800163C:
 	lsls r7, r7, #6
 	adds r0, r6, #0
 	adds r1, r7, #0
-	bl sub_0807A2A8
+	bl HeapCreate
 	ldr r2, _0800198C
 	adds r4, r5, r2
 	str r0, [r4, #0]
@@ -2371,7 +2371,7 @@ sub_0800163C:
 	lsls r7, r7, #8
 	adds r0, r6, #0
 	adds r1, r7, #0
-	bl sub_0807A2A8
+	bl HeapCreate
 	ldr r1, _08001990
 	str r0, [r1, #0]
 	adds r6, r6, r7
@@ -2379,7 +2379,7 @@ sub_0800163C:
 	lsls r7, r7, #8
 	adds r0, r6, #0
 	adds r1, r7, #0
-	bl sub_0807A2A8
+	bl HeapCreate
 	ldr r2, _08001994
 	adds r1, r5, r2
 	str r0, [r1, #0]
@@ -2388,7 +2388,7 @@ sub_0800163C:
 	lsls r7, r7, #8
 	adds r0, r6, #0
 	adds r1, r7, #0
-	bl sub_0807A2A8
+	bl HeapCreate
 	ldr r1, _08001998
 	adds r1, r1, r5
 	mov r10, r1
@@ -2398,7 +2398,7 @@ sub_0800163C:
 	lsls r7, r7, #7
 	adds r0, r6, #0
 	adds r1, r7, #0
-	bl sub_0807A2A8
+	bl HeapCreate
 	ldr r2, _0800199C
 	adds r1, r5, r2
 	str r0, [r1, #0]
@@ -2407,31 +2407,31 @@ sub_0800163C:
 	lsls r7, r7, #5
 	adds r0, r6, #0
 	adds r1, r7, #0
-	bl sub_0807A2A8
+	bl HeapCreate
 	ldr r1, _080019A4
 	str r0, [r1, #0]
 	movs r0, #0
-	bl sub_0807A184
+	bl RandomInit
 	ldr r2, _080019A8
 	adds r0, r5, r2
-	bl sub_0807A084
+	bl KeyInputInit
 	ldr r1, _080019AC
 	adds r0, r5, r1
 	mov r2, r10
 	ldr r1, [r2, #0]
 	movs r2, #1
-	bl sub_0807A9C0
+	bl NfpInit
 	ldr r1, _080019B0
 	adds r0, r5, r1
 	mov r2, r8
 	ldr r1, [r2, #0]
 	movs r2, #4
-	bl sub_0807A5FC
+	bl TaskManagerInit
 	ldr r1, _080019B4
 	adds r0, r5, r1
 	ldr r1, [r4, #0]
 	movs r2, #2
-	bl sub_0807A5FC
+	bl TaskManagerInit
 	movs r2, #129
 	lsls r2, r2, #4
 	adds r0, r5, r2
@@ -11090,7 +11090,7 @@ sub_080053B4:
 	ldrh r0, [r4, #34]
 	movs r2, #32
 	ldrsh r1, [r4, r2]
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	cmp r0, #0
 	beq _080053DE
 	movs r0, #1
@@ -11207,7 +11207,7 @@ sub_08005458:
 	ldrh r0, [r1, #6]
 	movs r2, #4
 	ldrsh r1, [r1, r2]
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	cmp r0, #0
 	beq _08005490
 	.global _08005478
@@ -11247,7 +11247,7 @@ sub_08005498:
 	str r0, [r4, #0]
 	adds r0, r6, #0
 	adds r1, r7, #0
-	bl sub_0807A1BC
+	bl BitTest
 
 	.thumb_func
 	.thumb
@@ -11263,7 +11263,7 @@ _080054BA:
 	bne _080054CA
 	adds r0, r6, #0
 	adds r1, r7, #0
-	bl sub_0807A1BC
+	bl BitTest
 	str r0, [r4, #0]
 	b _080054EE
 	.global _080054CA
@@ -11306,7 +11306,7 @@ sub_08005500:
 	adds r4, r0, #0
 	ldr r0, [r4, #36]
 	ldr r1, [r4, #32]
-	bl sub_0807A1BC
+	bl BitTest
 	cmp r0, #0
 	bne _08005528
 	movs r0, #1
@@ -11427,7 +11427,7 @@ _080055CC:
 _080055D6:
 	bl sub_08005360
 	movs r1, #0
-	bl sub_0807A1BC
+	bl BitTest
 	adds r7, r0, #0
 	cmp r7, #0
 	bne _0800569E
@@ -11436,7 +11436,7 @@ _080055D6:
 	bl sub_08005360
 	movs r1, #0
 	movs r2, #1
-	bl sub_0807A190
+	bl BitSet
 	adds r4, r6, #0
 	adds r4, #40
 	adds r1, r6, #0
@@ -11508,7 +11508,7 @@ _08005674:
 	bl sub_08005360
 	movs r1, #0
 	movs r2, #0
-	bl sub_0807A190
+	bl BitSet
 	ldr r0, [r5, #28]
 	cmp r0, #1
 	bne _0800568C
@@ -14107,7 +14107,7 @@ sub_08006760:
 	ldr r0, [r0, #0]
 	adds r0, #172
 	adds r1, r3, #0
-	bl sub_0807A190
+	bl BitSet
 	pop {r0}
 	bx r0
 	.byte 0x00
@@ -14130,7 +14130,7 @@ sub_08006784:
 	adds r0, r0, r2
 	ldr r0, [r0, #0]
 	adds r0, #172
-	bl sub_0807A1BC
+	bl BitTest
 	pop {r1}
 	bx r1
 	.byte 0x00
@@ -14231,7 +14231,7 @@ sub_0800680C:
 	lsls r1, r1, #1
 	adds r0, r0, r1
 	adds r1, r3, #0
-	bl sub_0807A190
+	bl BitSet
 	pop {r0}
 	bx r0
 	.byte 0x00
@@ -14256,7 +14256,7 @@ sub_08006834:
 	movs r2, #150
 	lsls r2, r2, #1
 	adds r0, r0, r2
-	bl sub_0807A1BC
+	bl BitTest
 	pop {r1}
 	bx r1
 	.byte 0x00
@@ -14296,7 +14296,7 @@ _0800687A:
 	adds r0, r6, #0
 	adds r1, r4, #0
 	adds r2, r7, #0
-	bl sub_0807A190
+	bl BitSet
 	adds r4, #1
 	cmp r4, r5
 	ble _0800687A
@@ -16753,7 +16753,7 @@ _080076DE:
 	adds r0, r0, r1
 	ldr r1, [r7, #0]
 	movs r2, #2
-	bl sub_0807A5FC
+	bl TaskManagerInit
 	adds r0, r5, #0
 	bl sub_08008A44
 	adds r5, #1

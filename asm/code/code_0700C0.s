@@ -13020,7 +13020,7 @@ sub_080759FC:
 	beq _08075A2A
 	movs r0, #3
 	movs r1, #0
-	bl sub_0807A160
+	bl KeyInputAnyHeld
 	cmp r0, #0
 	beq _08075A2A
 	movs r0, #1

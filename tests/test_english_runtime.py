@@ -38,7 +38,7 @@ int child_ink(void) { return ((struct DialogueState *)(draw_task+32))->ink; }
 int parent_finished;
 void ScriptAddPendingTasks(unsigned n) { pending += n; }
 void ScriptCompletePendingTasks(unsigned n) { pending -= n; }
-unsigned sub_0807A134(unsigned mask,unsigned index) { int v=key;key=0;return v & mask; }
+unsigned KeyInputConsumePressed(unsigned short mask,unsigned index) { int v=key;key=0;return v & mask; }
 void CpuFill(void *dest,unsigned size,unsigned pattern) {
     unsigned long offset=(unsigned long)dest-0x0600C020;
     if(offset+size>sizeof(vram) || size%4 || offset%4 || pattern!=0x11111111) abort();

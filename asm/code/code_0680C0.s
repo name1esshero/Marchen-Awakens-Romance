@@ -4360,7 +4360,7 @@ sub_0806AC8E:
 	movs r0, r0
 	movs r0, #16
 	movs r1, #0
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	cmp r0, #0
 	beq _0806ACCC
 	ldr r4, _0806ACC4
@@ -4392,7 +4392,7 @@ _0806ACC8:
 _0806ACCC:
 	movs r0, #32
 	movs r1, #0
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	adds r5, r0, #0
 	cmp r5, #0
 	beq _0806AD00
@@ -4422,7 +4422,7 @@ _0806ACFC:
 _0806AD00:
 	movs r0, #1
 	movs r1, #0
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	adds r4, r0, #0
 	cmp r4, #0
 	beq _0806ADAC
@@ -7287,7 +7287,7 @@ _0806C298:
 _0806C2AE:
 	movs r0, #2
 	movs r1, #0
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	cmp r0, #0
 	beq _0806C2FE
 	ldr r1, _0806C31C
@@ -11209,7 +11209,7 @@ _0806E67E:
 	adds r0, #44
 	movs r1, #252
 	lsls r1, r1, #6
-	bl sub_0807A228
+	bl BufferXor
 	ldr r1, [r5, #4]
 	lsls r0, r0, #24
 	lsrs r0, r0, #24
@@ -11218,7 +11218,7 @@ _0806E67E:
 	str r4, [r1, #32]
 	adds r0, r1, #0
 	movs r1, #44
-	bl sub_0807A228
+	bl BufferXor
 	ldr r3, [r5, #4]
 	lsls r0, r0, #24
 	lsrs r0, r0, #24
@@ -11971,7 +11971,7 @@ _0806ED28:
 	lsls r1, r4, #5
 	ldr r0, [r7, #0]
 	adds r0, r0, r1
-	bl sub_0807A644
+	bl TaskManagerDestroy
 	adds r0, r4, #0
 	movs r1, #0
 	bl sub_08009728
@@ -12554,7 +12554,7 @@ sub_0806F188:
 	mov r10, r0
 	movs r0, #1
 	movs r1, #0
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	cmp r0, #0
 	beq _0806F1C0
 	ldr r2, [sp, #12]
@@ -13722,7 +13722,7 @@ _0806FA1C:
 	beq _0806FA7C
 	movs r0, #1
 	movs r1, #0
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	cmp r0, #0
 	beq _0806FA7C
 	ldr r3, _0806FA4C

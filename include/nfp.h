@@ -2,6 +2,7 @@
 #define NFP_H
 
 #include "gba/types.h"
+struct Heap;
 
 /* The named ROM filesystem.
  *
@@ -32,8 +33,8 @@ struct NfpEntry
 };
 
 /* Archives are mounted into a table of 24-byte records, indexed by handle,
- * so more than one can be open at a time. Only the base pointer is
- * identified; the rest of the record is not yet known. */
+ * so more than one can be open at a time. Each slot records its active flag,
+ * mount name, archive base and mounted size. */
 struct NfpMount
 {
     u8 active;                  /* 0x00: slot in use */
@@ -48,11 +49,16 @@ struct NfpMount
 struct NfpState
 {
     struct NfpMount *mounts;    /* 0x00 */
-    u8 filler_04[4];
+    struct Heap *heap;         /* 0x04: owns the mount-table allocation */
     s32 mount_count;            /* 0x08: slots to search when resolving a name */
 };
 
+#ifndef gNfpState
 #define gNfpState (*(struct NfpState **)0x03006114)
+#endif
+
+void NfpInit(struct NfpState *state, struct Heap *heap, s32 count);
+void NfpShutdown(void);
 
 /* Directory entries are sorted by name, which is why lookup binary searches
  * them rather than scanning. Verified against the shipped directory. */

@@ -100,3 +100,24 @@ ListNode *ListTail(List *list)
 {
     return list->tail;
 }
+
+/* Same insertion contract as ListInsertBefore. Preserve this routine's link
+ * update order because the original ROM contains both implementations. */
+__attribute__((section(".rom.0007A98C")))
+void ListInsertBeforeLinked(List *list, ListNode *at, ListNode *node)
+{
+    if (at->prev) {
+        node->next = at;
+        node->prev = at->prev;
+        at->prev = node;
+        node->prev->next = node;
+    } else {
+        list->head = node;
+        node->next = at;
+        node->prev = 0;
+        at->prev = node;
+    }
+    list->count++;
+}
+__attribute__((section(".rom.0007A98C")))
+const unsigned char ListInsertBeforeLinkedTail[2] = {0, 0};

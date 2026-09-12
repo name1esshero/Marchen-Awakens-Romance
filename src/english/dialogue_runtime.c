@@ -6,13 +6,13 @@
  * No VM offsets, resource names, or script command arguments are rewritten. */
 #include "dialogue.h"
 #include "english.h"
+#include "input.h"
 
 extern void *DialogueStartOriginal(s32, s32, const char **, s32 *);
 extern void *CreateTask(void *, void *, u32, s32 *, u32);
 extern void FinishTask(void *);
 extern void ScriptAddPendingTasks(u32); /* Increment current script's pending count. */
 extern void ScriptCompletePendingTasks(u32); /* Decrement current script's pending count. */
-extern u32 sub_0807A134(u32, u32); /* Consume newly pressed key bits. */
 extern void CpuFill(void *, u32, u32);
 
 /* All mutable storage belongs to engine tasks, not unmapped ROM-extension
@@ -139,7 +139,7 @@ static void EnglishPageTask(void *task)
     }
     if (pages->phase == 2)
     {
-        if (!sub_0807A134(1, 0)) return;
+        if (!KeyInputConsumePressed(1, 0)) return;
         pages->phase = 3;
     }
     if (pages->phase == 3)

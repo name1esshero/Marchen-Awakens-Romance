@@ -4668,7 +4668,7 @@ sub_08051D00:
 	bl sub_0802AE74
 	movs r0, #2
 	movs r1, #0
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	cmp r0, #0
 	beq _08051D1A
 	movs r0, #128
@@ -4680,7 +4680,7 @@ sub_08051D00:
 _08051D1A:
 	movs r0, #1
 	movs r1, #0
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	cmp r0, #0
 	beq _08051D40
 	movs r1, #0
@@ -4854,7 +4854,7 @@ _08051E30:
 _08051E38:
 	movs r0, #8
 	movs r1, #0
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	cmp r0, #0
 	beq _08051E70
 	str r7, [r4, #96]
@@ -11307,7 +11307,7 @@ _08054CA0:
 	.global sub_08054CBA
 sub_08054CBA:
 	movs r1, #0
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	cmp r0, #0
 	beq sub_08054D38
 	movs r2, #150
@@ -11386,7 +11386,7 @@ _08054D34:
 sub_08054D38:
 	movs r0, #128
 	movs r1, #0
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	cmp r0, #0
 	beq _08054DFC
 	movs r3, #150
@@ -11525,7 +11525,7 @@ _08054DF8:
 _08054DFC:
 	movs r0, #1
 	movs r1, #0
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	adds r4, r0, #0
 	cmp r4, #0
 	bne _08054E0C
@@ -11695,7 +11695,7 @@ _08054F60:
 _08054F64:
 	movs r0, #2
 	movs r1, #0
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	cmp r0, #0
 	bne _08054F72
 	b _0805510C
@@ -13920,7 +13920,7 @@ _080561C8:
 	ldr r5, _08056218
 	adds r0, r0, r5
 	adds r1, r4, #0
-	bl sub_0807A1BC
+	bl BitTest
 	cmp r0, #0
 	bne _0805620C
 	cmp r4, r7
@@ -13934,7 +13934,7 @@ _080561C8:
 	.global sub_08056206
 sub_08056206:
 	movs r2, #1
-	bl sub_0807A190
+	bl BitSet
 	.global _0805620C
 _0805620C:
 	movs r0, #1
@@ -13993,7 +13993,7 @@ sub_0805625A:
 	ldr r5, _08056278
 	adds r0, r0, r5
 	movs r2, #1
-	bl sub_0807A190
+	bl BitSet
 	.global _0805626A
 _0805626A:
 	movs r0, #0
@@ -14921,7 +14921,7 @@ sub_08056A34:
 	ldr r2, _08056A5C
 	adds r0, r0, r2
 	movs r2, #1
-	bl sub_0807A190
+	bl BitSet
 	pop {r0}
 	bx r0
 	.byte 0x00
@@ -14950,7 +14950,7 @@ sub_08056A60:
 	ldr r0, [r0, #0]
 	ldr r2, _08056A88
 	adds r0, r0, r2
-	bl sub_0807A1BC
+	bl BitTest
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	pop {r1}
@@ -14988,7 +14988,7 @@ sub_08056A8C:
 	adds r0, r0, r1
 	adds r1, r4, #0
 	movs r2, #1
-	bl sub_0807A190
+	bl BitSet
 	b _08056AEA
 	.byte 0x00
 	.byte 0x00
@@ -15019,7 +15019,7 @@ _08056AD6:
 	adds r0, r0, r1
 	adds r1, r2, #0
 	movs r2, #1
-	bl sub_0807A190
+	bl BitSet
 	.global _08056AEA
 _08056AEA:
 	pop {r4}
@@ -15064,7 +15064,7 @@ sub_08056B2C:
 	ldr r0, [r0, #0]
 	ldr r2, _08056B54
 	adds r0, r0, r2
-	bl sub_0807A1BC
+	bl BitTest
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	pop {r1}
@@ -17982,7 +17982,7 @@ sub_08057F2A:
 	.thumb
 	.global sub_08057F3A
 sub_08057F3A:
-	bl sub_0807A160
+	bl KeyInputAnyHeld
 	adds r4, r0, #0
 	cmp r4, #0
 	beq _08057FA0
@@ -18046,7 +18046,7 @@ _08057FA0:
 	movs r0, #128
 	lsls r0, r0, #1
 	movs r1, #0
-	bl sub_0807A160
+	bl KeyInputAnyHeld
 	cmp r0, #0
 	beq _08058010
 	ldr r0, _08058004
@@ -18121,7 +18121,7 @@ _08058010:
 	.global sub_08058012
 sub_08058012:
 	movs r1, #0
-	bl sub_0807A160
+	bl KeyInputAnyHeld
 	cmp r0, #0
 	beq _08058032
 	movs r0, #101
@@ -18138,7 +18138,7 @@ sub_08058012:
 _08058032:
 	movs r0, #1
 	movs r1, #0
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	cmp r0, #0
 	beq _08058098
 	ldr r0, _0805808C
@@ -18196,7 +18196,7 @@ _08058094:
 _08058098:
 	movs r0, #8
 	movs r1, #0
-	bl sub_0807A134
+	bl KeyInputConsumePressed
 	adds r5, r0, #0
 	cmp r5, #0
 	beq _080580D8

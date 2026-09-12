@@ -246,12 +246,29 @@ lookup, removal, head, tail, and count) now use readable C in `src/list.c`
 (196 bytes), alongside the `SprSet` and
 `SprGet` native adapters (60 bytes), and 13 item-table accessors in `src/item.c`
 (276 bytes). Item names and descriptions are identified; other field names
-retain offsets until their gameplay meaning is verified. The provenance audit verifies **115 ordinary
+retain offsets until their gameplay meaning is verified. The provenance audit verifies **138 ordinary
 C functions and 10 BIOS assembly wrappers**; each declared range is linked from
 its expected C object and matches the Japanese ROM. This is a function count,
 not a percentage of total code decoded. List tests cover empty/nonempty append
 and insertion/removal at the head, middle, and tail. Item tests cover the
 128-byte record layout, signed fields, and 16-bit ID narrowing.
+
+The next batch adds five input helpers (256 bytes), two packed-bit helpers
+(72 bytes), and four RNG routines (68 bytes), all compiled from C. Input tests
+cover all 1,024 hardware key combinations and pressed-bit consumption; RNG
+and bitset tests check fixed sequences and byte boundaries. English dialogue
+pagination now calls the named input API. See [input and random behavior](docs/input-and-random.md).
+
+Heap construction and three byte utilities now add six more matching functions
+(232 bytes). The allocation search itself remains assembly. The 32-bit heap
+test covers rounding, block metadata, default-heap publication, allocation
+failure, and unsigned size overflow. See [heap and byte utilities](docs/heap-and-byte-utils.md).
+
+Task-manager initialization, destruction and counting, an alternate list insertion
+helper, and archive initialization/shutdown add six matching C functions (276
+bytes). The 32-bit lifecycle test checks node ownership, traversal while freeing,
+list links, mount-table allocation and state clearing. See
+[task and archive lifetime](docs/task-and-archive-lifetime.md).
 
 **The build compiles C with agbcc**, the period compiler the pret projects
 preserve. This is what lets ordinary C reproduce the original instruction
@@ -265,8 +282,8 @@ included, where modern GCC differed on two counts in every function:
 | Leaf prologue | `push {lr}` | `push {r4, lr}`, saving a register it never uses |
 | `index * 24` | `((i * 2) + i) * 8` with shifts | load 24, then `muls` |
 
-The current manifest declares 98 linked ranges: 88 compiled-C ranges and ten
-BIOS inline-assembly wrapper ranges. Compiled C owns 3,848 bytes, including
+The current manifest declares 148 linked ranges: 138 compiled-C ranges and ten
+BIOS inline-assembly wrapper ranges. Compiled C owns 5,712 bytes, including
 literal pools and alignment. This is not a function-completion percentage.
 One range may contain multiple contiguous
 functions and alignment bytes. The [build provenance audit](https://github.com/name1esshero/Marchen-Awakens-Romance/wiki/Build-verification)

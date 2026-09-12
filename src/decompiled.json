@@ -748,5 +748,143 @@
   "size": 24,
   "name": "ItemGetField58",
   "file": "src/item.c"
+ },
+ {
+  "addr": "0807A084",
+  "size": 24,
+  "name": "KeyInputInit",
+  "file": "src/input.c"
+ },
+ {
+  "addr": "0807A09C",
+  "size": 84,
+  "name": "KeyInputPoll",
+  "file": "src/input.c"
+ },
+ {
+  "addr": "0807A0F0",
+  "size": 68,
+  "name": "KeyInputSet",
+  "file": "src/input.c"
+ },
+ {
+  "addr": "0807A134",
+  "size": 44,
+  "name": "KeyInputConsumePressed",
+  "file": "src/input.c"
+ },
+ {
+  "addr": "0807A160",
+  "size": 36,
+  "name": "KeyInputAnyHeld",
+  "file": "src/input.c"
+ },
+ {
+  "addr": "0807A184",
+  "size": 12,
+  "name": "RandomInit",
+  "file": "src/random.c"
+ },
+ {
+  "addr": "0807A190",
+  "size": 44,
+  "name": "BitSet",
+  "file": "src/bitset.c"
+ },
+ {
+  "addr": "0807A1BC",
+  "size": 28,
+  "name": "BitTest",
+  "file": "src/bitset.c"
+ },
+ {
+  "addr": "0807A1D8",
+  "size": 12,
+  "name": "RandomSeed",
+  "file": "src/random.c"
+ },
+ {
+  "addr": "0807A1E4",
+  "size": 12,
+  "name": "RandomGetSeed",
+  "file": "src/random.c"
+ },
+ {
+  "addr": "0807A1F0",
+  "size": 32,
+  "name": "Random",
+  "file": "src/random.c"
+ },
+ {
+  "addr": "0807A210",
+  "size": 24,
+  "name": "ByteStringLength",
+  "file": "src/byte_utils.c"
+ },
+ {
+  "addr": "0807A228",
+  "size": 32,
+  "name": "BufferXor",
+  "file": "src/byte_utils.c"
+ },
+ {
+  "addr": "0807A248",
+  "size": 40,
+  "name": "BufferXorSeeded",
+  "file": "src/byte_utils.c"
+ },
+ {
+  "addr": "0807A270",
+  "size": 56,
+  "name": "HeapInitDefault",
+  "file": "src/heap.c"
+ },
+ {
+  "addr": "0807A2A8",
+  "size": 68,
+  "name": "HeapCreate",
+  "file": "src/heap.c"
+ },
+ {
+  "addr": "0807A2EC",
+  "size": 12,
+  "name": "HeapAlloc",
+  "file": "src/heap.c"
+ },
+ {
+  "addr": "0807A5FC",
+  "size": 72,
+  "name": "TaskManagerInit",
+  "file": "src/task_manager.c"
+ },
+ {
+  "addr": "0807A644",
+  "size": 68,
+  "name": "TaskManagerDestroy",
+  "file": "src/task_manager.c"
+ },
+ {
+  "addr": "0807A868",
+  "size": 4,
+  "name": "TaskManagerCount",
+  "file": "src/task_manager.c"
+ },
+ {
+  "addr": "0807A98C",
+  "size": 44,
+  "name": "ListInsertBeforeLinked",
+  "file": "src/list.c"
+ },
+ {
+  "addr": "0807A9C0",
+  "size": 48,
+  "name": "NfpInit",
+  "file": "src/nfp_lifecycle.c"
+ },
+ {
+  "addr": "0807A9F0",
+  "size": 40,
+  "name": "NfpShutdown",
+  "file": "src/nfp_lifecycle.c"
  }
 ]
