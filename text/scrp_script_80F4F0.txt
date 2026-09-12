@@ -3,20 +3,20 @@
 // Regenerate comments with tools/translate_comments.py; this copy is not built.
 
 @00015F  C0D04 ［村の人］  // EN: [Villager]
-@00017C  C0F04 ヴェストリがどんなことになってるか  // TODO: English translation
-@0001B1 わかったろう？  // TODO: English translation
+@00017C  C0F04 ヴェストリがどんなことになってるか  // EN: You've seen what's happened to Vestri...
+@0001B1 わかったろう？  // EN: ...haven't you?
 @0001E9  C0D04 ［村の人］  // EN: [Villager]
-@000206  C0F04 私はね、クロスガードのメンバーだったんだ  // TODO: English translation
+@000206  C0F04 私はね、クロスガードのメンバーだったんだ  // EN: I was a member of the Cross Guard.
 @00026B  C0D04 ［村の人］  // EN: [Villager]
-@000288  C0F04 しかし…………  // TODO: English translation
+@000288  C0F04 しかし…………  // EN: But...
 @0002D3  C0D04 ［村の人］  // EN: [Villager]
-@0002F0  C0F04 何のていこうもできなかった…  // TODO: English translation
+@0002F0  C0F04 何のていこうもできなかった…  // EN: I couldn't put up any resistance...
 @000349  C0D04 ［村の人］  // EN: [Villager]
-@000366  C0F04 たった二人のチェスの兵隊に  // TODO: English translation
-@000393 むりょくだったんだ…！！  // TODO: English translation
+@000366  C0F04 たった二人のチェスの兵隊に  // EN: Against just two Chess Pieces...
+@000393 むりょくだったんだ…！！  // EN: ...I was powerless...!!
 @0003DF F08A03  // LITERAL: F08A03 (usage not inferred)
 @0004A0  C0D04 ［ナナシ］  // EN: [Nanashi]
-@0004BD  C0F04 その二人はどこ行った？  // TODO: English translation
+@0004BD  C0F04 その二人はどこ行った？  // EN: Where did those two go?
 @00059E EV_VE02.SPC  // LITERAL: EV_VE02.SPC (usage not inferred)
 @0006A1  C0D04 ［村の人］  // EN: [Villager]
 @0006BE  C0F04 とにかく…見てくれ  // EN: Anyway... take a look.
@@ -25,11 +25,11 @@
 @000883  C0F04 とにかく…見てくれ  // EN: Anyway... take a look.
 @0008A8 このありさまを…さ  // EN: At the state of this place...
 @000A0A  C0D04 ［村の人］  // EN: [Villager]
-@000A27  C0F04 あんたたち  // TODO: English translation
-@000A44 …何しに来なさった…  // TODO: English translation
+@000A27  C0F04 あんたたち  // EN: You people...
+@000A44 …何しに来なさった…  // EN: ...What did you come here for...?
 @000A82  C0D04 ［村の人］  // EN: [Villager]
-@000A9F  C0F04 チェスの兵隊か？？  // TODO: English translation
-@000AC4 助けにきたのか？？  // TODO: English translation
+@000A9F  C0F04 チェスの兵隊か？？  // EN: Are you Chess Pieces??
+@000AC4 助けにきたのか？？  // EN: Did you come to help??
 @000B00  C0D04 ［村の人］  // EN: [Villager]
-@000B1D  C0F04 どちらでもいいがね…  // TODO: English translation
-@000B44 とにかくこのヴェストリを見てくれよ  // TODO: English translation
+@000B1D  C0F04 どちらでもいいがね…  // EN: It doesn't matter either way...
+@000B44 とにかくこのヴェストリを見てくれよ  // EN: Just look at what Vestri has become.

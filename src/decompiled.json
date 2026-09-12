@@ -490,5 +490,59 @@
   "size": 60,
   "name": "ScriptNativeIntegerString",
   "file": "src/script_native.c"
+ },
+ {
+  "addr": "08011504",
+  "size": 16,
+  "name": "HitRegionDisable",
+  "file": "src/hit_region.c"
+ },
+ {
+  "addr": "08011514",
+  "size": 28,
+  "name": "HitRegionDisableAll",
+  "file": "src/hit_region.c"
+ },
+ {
+  "addr": "08011530",
+  "size": 36,
+  "name": "HitRegionInit",
+  "file": "src/hit_region.c"
+ },
+ {
+  "addr": "08011654",
+  "size": 32,
+  "name": "HitRegionSetRect",
+  "file": "src/hit_region.c"
+ },
+ {
+  "addr": "08018C4C",
+  "size": 196,
+  "name": "HitRegionTest",
+  "file": "src/hit_region.c"
+ },
+ {
+  "addr": "08002630",
+  "size": 32,
+  "name": "KmpRenderViewport",
+  "file": "src/kmp.c"
+ },
+ {
+  "addr": "080032B8",
+  "size": 144,
+  "name": "KmpLoadField",
+  "file": "src/map_field.c"
+ },
+ {
+  "addr": "08003280",
+  "size": 20,
+  "name": "KmpSetClip",
+  "file": "src/map_field.c"
+ },
+ {
+  "addr": "08003294",
+  "size": 20,
+  "name": "KmpResetClip",
+  "file": "src/map_field.c"
  }
 ]

@@ -23,6 +23,7 @@ import nfp
 import mapped_images
 import affine_images
 import regular_images
+from map_editor.model import apply_override
 
 ROOT = Path(__file__).resolve().parent.parent
 MANIFEST = ROOT / 'maps/nfp/manifest.json'
@@ -105,6 +106,8 @@ def build():
                        else affine_images.build_plane(layout,layer))
             else:
                 raw = mapped_images.build_map(raw, layout)
+        if m['name'].endswith('.KMP'):
+            raw = apply_override(raw, m['name'], ROOT)
         dest = ROOT / 'build' / m['path']
         dest.parent.mkdir(parents=True, exist_ok=True)
         if not dest.exists() or dest.read_bytes() != raw:

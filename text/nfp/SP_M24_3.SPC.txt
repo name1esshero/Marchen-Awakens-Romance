@@ -3,5 +3,5 @@
 // Edit text here; // EN: comments never reach the ROM.
 
 @0000EC  C0D04 ［ギンタ］  // EN: [Ginta]
-@000109  C0F04 閉まってる…  // TODO: English translation
-@000128 ちょっと開きそうにないな  // TODO: English translation
+@000109  C0F04 閉まってる…  // EN: It's closed...
+@000128 ちょっと開きそうにないな  // EN: Doesn't look like it'll open.

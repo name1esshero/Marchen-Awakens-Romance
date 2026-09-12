@@ -4,9 +4,9 @@
 
 @000055 MAP03_A  // LITERAL: MAP03_A (usage not inferred)
 @0004A3  C0D04 ［ジャックの母］  // EN: [Jack's mother]
-@0004C6  C0F04 （ただし……）  // TODO: English translation
+@0004C6  C0F04 （ただし……）  // EN: (But...)
 @000511  C0D04 ［ジャックの母］  // EN: [Jack's mother]
-@000534  C0F04 （必ず元気でかえってくるんだよ…  // TODO: English translation
-@000567 　ジャック…！）  // TODO: English translation
+@000534  C0F04 （必ず元気でかえってくるんだよ…  // EN: (Make sure you come home safe...
+@000567 　ジャック…！）  // EN: ...Jack...!)
 @00069E MAP41_A  // LITERAL: MAP41_A (usage not inferred)
 @000726 G_EV001.SPC  // LITERAL: G_EV001.SPC (usage not inferred)

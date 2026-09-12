@@ -6,133 +6,133 @@
 @000175 F03A03  // LITERAL: F03A03 (usage not inferred)
 @0001AD F38A01  // LITERAL: F38A01 (usage not inferred)
 @000364  C0D04 ［ギンタ］  // EN: [Ginta]
-@000381  C0F04 ……！！！  // TODO: English translation
+@000381  C0F04 ……！！！  // EN: ......!!!
 @0003C8  C0D04 ［ギンタ］  // EN: [Ginta]
-@0003E5  C0F04 だれかいるぞ！！  // TODO: English translation
+@0003E5  C0F04 だれかいるぞ！！  // EN: Someone's here!!
 @000432  C0D04 ［ジャック］  // EN: [Jack]
 @000451  C0F04 ギンタ！！  // EN: Ginta!!
-@00046E 気をつけるっス！！  // TODO: English translation
+@00046E 気をつけるっス！！  // EN: Be careful!!
 @0004E4 F01B16  // LITERAL: F01B16 (usage not inferred)
 @000542  C0D04 ［ギンタ］  // EN: [Ginta]
-@00055F  C0F04 （さっき一人でここに  // TODO: English translation
-@000586 　入っていったやつか？）  // TODO: English translation
+@00055F  C0F04 （さっき一人でここに  // EN: (Is that the person who...
+@000586 　入っていったやつか？）  // EN: ...went in here alone earlier?)
 @000753 A  // LITERAL: A (usage not inferred)
 @000911  C0D04 ［？？？］  // EN: [???]
-@00092E  C0F04 キミは…？  // TODO: English translation
+@00092E  C0F04 キミは…？  // EN: Who are you...?
 @00097F F01B02  // LITERAL: F01B02 (usage not inferred)
 @000A0D  C0D04 ［ギンタ］  // EN: [Ginta]
-@000A2A  C0F04 オレはギンタ…『メル』っていう  // TODO: English translation
-@000A5B チェスの兵隊と戦うチームのもんだ！  // TODO: English translation
+@000A2A  C0F04 オレはギンタ…『メル』っていう  // EN: I'm Ginta, from a team called MÄR...
+@000A5B チェスの兵隊と戦うチームのもんだ！  // EN: ...that fights the Chess Pieces!
 @000AA7  C0D04 ［ギンタ］  // EN: [Ginta]
-@000AC4  C0F04 そこで何してるんだ？  // TODO: English translation
-@000AEB なまえは？  // TODO: English translation
+@000AC4  C0F04 そこで何してるんだ？  // EN: What are you doing there?
+@000AEB なまえは？  // EN: What's your name?
 @000B1F  C0D04 ［マール］  // EN: [Marl]
-@000B3C  C0F04 ボ…ボクはマール…  // TODO: English translation
+@000B3C  C0F04 ボ…ボクはマール…  // EN: I-I'm Marl...
 @000BC5 F01B06  // LITERAL: F01B06 (usage not inferred)
 @000CB3  C0D04 ［ギンタ］  // EN: [Ginta]
 @000CD0  C0F04 マール…  // EN: Marl...
-@000CEB …まさかチェスの兵隊か？  // TODO: English translation
+@000CEB …まさかチェスの兵隊か？  // EN: ...You're not a Chess Piece, are you?
 @000D97 F38A02  // LITERAL: F38A02 (usage not inferred)
 @000EE5  C0D04 ［マール］  // EN: [Marl]
-@000F02  C0F04 ち、ちちちちちがいますよぅ！  // TODO: English translation
+@000F02  C0F04 ち、ちちちちちがいますよぅ！  // EN: N-n-n-no, I'm not!
 @000F95 F38A01  // LITERAL: F38A01 (usage not inferred)
 @000FFD F01B02  // LITERAL: F01B02 (usage not inferred)
 @00102B  C0D04 ［マール］  // EN: [Marl]
-@001048  C0F04 ヴェストリのちかくにすんでいて…  // TODO: English translation
+@001048  C0F04 ヴェストリのちかくにすんでいて…  // EN: I live near Vestri...
 @0010A5  C0D04 ［マール］  // EN: [Marl]
-@0010C2  C0F04 古い遺跡（いせき）とかを  // TODO: English translation
-@0010ED しらべているものです  // TODO: English translation
+@0010C2  C0F04 古い遺跡（いせき）とかを  // EN: ...and I investigate...
+@0010ED しらべているものです  // EN: ...ancient ruins and such.
 @001165 F03A04  // LITERAL: F03A04 (usage not inferred)
 @0011C3  C0D04 ［ジャック］  // EN: [Jack]
-@0011E2  C0F04 遺跡？？  // TODO: English translation
-@0011FD ここ、なんかの遺跡なのか？  // TODO: English translation
+@0011E2  C0F04 遺跡？？  // EN: Ruins??
+@0011FD ここ、なんかの遺跡なのか？  // EN: Is this some kind of ruin?
 @001241  C0D04 ［マール］  // EN: [Marl]
 @0012F7 F01B11  // LITERAL: F01B11 (usage not inferred)
 @001355  C0D04 ［ギンタ］  // EN: [Ginta]
 @0013BB  C0D04 ［マール］  // EN: [Marl]
-@0013D8  C0F04 先ほど…ちていこで大きい  // TODO: English translation
-@001403 しょうげきがあって…それで…  // TODO: English translation
+@0013D8  C0F04 先ほど…ちていこで大きい  // EN: Earlier, there was a huge shock...
+@001403 しょうげきがあって…それで…  // EN: ...at the underground lake, and...
 @001449  C0D04 ［マール］  // EN: [Marl]
-@001466  C0F04 それで、ここにつうじる  // TODO: English translation
-@00148F とびらの封印がとけたようなのです  // TODO: English translation
+@001466  C0F04 それで、ここにつうじる  // EN: ...it seems to have broken the seal...
+@00148F とびらの封印がとけたようなのです  // EN: ...on the door leading here.
 @001513 F01B10  // LITERAL: F01B10 (usage not inferred)
 @001571  C0D04 ［ギンタ］  // EN: [Ginta]
-@00158E  C0F04 しょうげき？？  // TODO: English translation
-@0015AF あ…そういえば…！  // TODO: English translation
+@00158E  C0F04 しょうげき？？  // EN: A shock??
+@0015AF あ…そういえば…！  // EN: Oh...come to think of it...!
 @0015EB  C0D04 ［ギンタ］  // EN: [Ginta]
-@001608  C0F04 （オレ…ガーゴイルで…）  // TODO: English translation
+@001608  C0F04 （オレ…ガーゴイルで…）  // EN: (I...with Gargoyle...)
 @00168D  C0D04 ［マール］  // EN: [Marl]
-@0016D5 魔力（まりょく）の少ない人でも  // TODO: English translation
+@0016D5 魔力（まりょく）の少ない人でも  // EN: ...with little magic power...
 @00171D  C0D04 ［マール］  // EN: [Marl]
-@00173A  C0F04 つかいこなすことが  // TODO: English translation
-@00175F できるといわれています  // TODO: English translation
+@00173A  C0F04 つかいこなすことが  // EN: ...are said to be able...
+@00175F できるといわれています  // EN: ...to master it.
 @0017D9 F01B04  // LITERAL: F01B04 (usage not inferred)
 @001837  C0D04 ［ギンタ］  // EN: [Ginta]
-@001854  C0F04 ……  // TODO: English translation
+@001854  C0F04 ……  // EN: ......
 @001895  C0D04 ［ギンタ］  // EN: [Ginta]
-@0018E1 どうするつもりなんだ？  // TODO: English translation
+@0018E1 どうするつもりなんだ？  // EN: ...what will you do with it?
 @00195B F38A02  // LITERAL: F38A02 (usage not inferred)
 @0019B9  C0D04 ［マール］  // EN: [Marl]
-@0019D6  C0F04 もちろん、チェスとたたかいます！！  // TODO: English translation
+@0019D6  C0F04 もちろん、チェスとたたかいます！！  // EN: Fight the Chess Pieces, of course!!
 @001A6F F38A05  // LITERAL: F38A05 (usage not inferred)
 @001ACD  C0D04 ［マール］  // EN: [Marl]
-@001AEA  C0F04 ボクの国も…ヤツらに  // TODO: English translation
-@001B11 はかいされてしまいました…  // TODO: English translation
+@001AEA  C0F04 ボクの国も…ヤツらに  // EN: They destroyed...
+@001B11 はかいされてしまいました…  // EN: ...my country too...
 @001B55  C0D04 ［マール］  // EN: [Marl]
-@001B72  C0F04 あなた方みたいに、ゆうかんに  // TODO: English translation
-@001BA1 チェスにたちむかう人たちがいる…  // TODO: English translation
+@001B72  C0F04 あなた方みたいに、ゆうかんに  // EN: There are people like you...
+@001BA1 チェスにたちむかう人たちがいる…  // EN: ...bravely standing up to the Chess Pieces...
 @001C25 F38A02  // LITERAL: F38A02 (usage not inferred)
 @001C83  C0D04 ［マール］  // EN: [Marl]
-@001CA0  C0F04 ボクもまけていられません！  // TODO: English translation
+@001CA0  C0F04 ボクもまけていられません！  // EN: I can't just sit back!
 @001CF7  C0D04 ［ギンタ］  // EN: [Ginta]
 @001D14  C0F04 …そっか…  // EN: ...I see...
 @001D95 F01B03  // LITERAL: F01B03 (usage not inferred)
 @001DF3  C0D04 ［ギンタ］  // EN: [Ginta]
-@001E39 オレもてつだってやるよ！！  // TODO: English translation
+@001E39 オレもてつだってやるよ！！  // EN: ...I'll help you!!
 @001EB7 F38A04  // LITERAL: F38A04 (usage not inferred)
 @001F15  C0D04 ［マール］  // EN: [Marl]
-@001F32  C0F04 ほ、ほんとうですか！！  // TODO: English translation
+@001F32  C0F04 ほ、ほんとうですか！！  // EN: R-really?!
 @001F8F F38A04  // LITERAL: F38A04 (usage not inferred)
 @001FF7 F03A06  // LITERAL: F03A06 (usage not inferred)
 @0020B5  C0D04 ［ジャック］  // EN: [Jack]
-@0020D4  C0F04 そっスね！  // TODO: English translation
+@0020D4  C0F04 そっスね！  // EN: That's right!
 @00211B  C0D04 ［ジャック］  // EN: [Jack]
-@00213A  C0F04 いっしょにたたかってくれる人は  // TODO: English translation
-@00216B 多いほうがいいっス！！  // TODO: English translation
+@00213A  C0F04 いっしょにたたかってくれる人は  // EN: The more people...
+@00216B 多いほうがいいっス！！  // EN: ...fighting alongside us, the better!!
 @0021E5 F02A07  // LITERAL: F02A07 (usage not inferred)
 @002243  C0D04 ［バッボ］  // EN: [Babbo]
-@002260  C0F04 うむ！たしかに！！  // TODO: English translation
+@002260  C0F04 うむ！たしかに！！  // EN: Indeed! Quite right!!
 @0022AF  C0D04 ［バッボ］  // EN: [Babbo]
-@0022CC  C0F04 その若さで、その心がけ…  // TODO: English translation
-@0022F7 気に入った！！  // TODO: English translation
+@0022CC  C0F04 その若さで、その心がけ…  // EN: Such determination at your age...
+@0022F7 気に入った！！  // EN: I like you!!
 @0023F9 F01B08  // LITERAL: F01B08 (usage not inferred)
 @002457  C0D04 ［ギンタ］  // EN: [Ginta]
 @002474  C0F04 というわけでよろしくな！  // EN: So, I'm counting on you!
-@00249F オレはギンタ！  // TODO: English translation
+@00249F オレはギンタ！  // EN: I'm Ginta!
 @002511 F03A06  // LITERAL: F03A06 (usage not inferred)
 @00256F  C0D04 ［ギンタ］  // EN: [Ginta]
-@00258C  C0F04 こっちがジャック！  // TODO: English translation
+@00258C  C0F04 こっちがジャック！  // EN: This is Jack!
 @002615 F02A04  // LITERAL: F02A04 (usage not inferred)
 @002673  C0D04 ［ギンタ］  // EN: [Ginta]
 @0026BD バッボ！！  // EN: Babbo!!
 @00272B F38A02  // LITERAL: F38A02 (usage not inferred)
 @002789  C0D04 ［マール］  // EN: [Marl]
-@0027A6  C0F04 …  // TODO: English translation
-@0027BB （バッボ…）  // TODO: English translation
+@0027A6  C0F04 …  // EN: ...
+@0027BB （バッボ…）  // EN: (Babbo...)
 @00282B F01B11  // LITERAL: F01B11 (usage not inferred)
 @002889  C0D04 ［ギンタ］  // EN: [Ginta]
-@0028A6  C0F04 …マール？？  // TODO: English translation
+@0028A6  C0F04 …マール？？  // EN: ...Marl??
 @002929 F38A04  // LITERAL: F38A04 (usage not inferred)
 @002987  C0D04 ［マール］  // EN: [Marl]
-@0029A4  C0F04 あ！はい！  // TODO: English translation
-@0029C1 よろしくおねがいします！！  // TODO: English translation
+@0029A4  C0F04 あ！はい！  // EN: Oh! Yes!
+@0029C1 よろしくおねがいします！！  // EN: It's a pleasure to meet you!!
 @002A3F F01B08  // LITERAL: F01B08 (usage not inferred)
 @002A9D  C0D04 ［ギンタ］  // EN: [Ginta]
 @002ABA  C0F04 おう！  // EN: Yeah!
-@002AD3 まかせろ！！  // TODO: English translation
-@00125E  C0F04 古い…<F0><56>ＲＭが封印されているのです  // TODO: English translation
-@001372  C0F04 <F0><56>ＲＭが？？  // TODO: English translation
-@0016AA  C0F04 この<F0><56>ＲＭはボクのような  // TODO: English translation
-@0018B2  C0F04 おまえ、その<F0><56>ＲＭ手に入れて  // TODO: English translation
-@001E10  C0F04 じゃあその<F0><56>ＲＭさがし  // TODO: English translation
-@002690  C0F04 そしてこいつがオレの<F0><56>ＲＭ  // TODO: English translation
+@002AD3 まかせろ！！  // EN: Leave it to us!!
+@00125E  C0F04 古い…<F0><56>ＲＭが封印されているのです  // EN: An ancient...ÄRM is sealed here.
+@001372  C0F04 <F0><56>ＲＭが？？  // EN: An ÄRM??
+@0016AA  C0F04 この<F0><56>ＲＭはボクのような  // EN: This ÄRM...even people like me...
+@0018B2  C0F04 おまえ、その<F0><56>ＲＭ手に入れて  // EN: Once you get that ÄRM...
+@001E10  C0F04 じゃあその<F0><56>ＲＭさがし  // EN: Then, in your search for that ÄRM...
+@002690  C0F04 そしてこいつがオレの<F0><56>ＲＭ  // EN: And this is my ÄRM...

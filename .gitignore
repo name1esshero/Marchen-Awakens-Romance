@@ -30,6 +30,8 @@ venv/
 /sound/index.html
 
 # Editor/OS temporary files.
+/maps/editable/.editor-*
+/maps/events/.editor-*
 *~
 *.swp
 *.swo

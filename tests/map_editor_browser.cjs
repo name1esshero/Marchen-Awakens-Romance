@@ -1,0 +1,61 @@
+// Requires Node.js and playwright-core with an installed Chromium browser.
+const {chromium}=require(process.env.MAR_PLAYWRIGHT_MODULE||'playwright-core');
+const fs=require('fs');const assert=require('assert');
+(async()=>{
+ if(!process.argv[2])throw Error('Pass the session JSON written by map_editor_browser_server.py');
+ const session=JSON.parse(fs.readFileSync(process.argv[2]));
+ assert.equal(session.isolated_fixture,true,'Only run mutations against the isolated browser fixture');
+ const output=require('path').resolve(__dirname,'../reports/maps');
+ const browser=await chromium.launch({headless:true});
+ try{
+  const page=await browser.newPage({viewport:{width:1500,height:1000}});
+  const errors=[];page.on('pageerror',e=>errors.push(e.message));
+  await page.goto(session.url);await page.waitForFunction(()=>document.querySelector('#script-info').textContent.includes('literal calls editable'));
+  const initial=await page.evaluate(()=>map.document.planes[0].entries[0]);
+  const tile=(initial&1023)===1?2:1;
+  await page.locator('#tiles').click({position:{x:tile*16+8,y:8}});
+  await page.locator('#map').click({position:{x:8,y:8}});
+  assert.notEqual(await page.evaluate(()=>map.document.planes[0].entries[0]),initial);
+  await page.locator('#undo').click();assert.equal(await page.evaluate(()=>map.document.planes[0].entries[0]),initial);
+  await page.locator('#redo').click();assert.equal((await page.evaluate(()=>map.document.planes[0].entries[0]))&1023,tile);
+  await page.locator('#save').click();await page.waitForFunction(()=>document.querySelector('#status').textContent.startsWith('Saved editable'));
+  let saved=JSON.parse(fs.readFileSync(session.root+'/maps/editable/MAP01_A.KMP.json'));assert.equal(saved.planes[0].entries[0]&1023,tile);
+  await page.locator('#reload').click();await page.waitForFunction(()=>document.querySelector('#script-info').textContent.includes('literal calls editable')&&!busy);
+  assert.equal((await page.evaluate(()=>map.document.planes[0].entries[0]))&1023,tile);
+  await page.locator('#layer').selectOption('attributes');await page.locator('#attribute').fill('7');await page.locator('#map').click({position:{x:8,y:8}});
+  await page.locator('#save').click();await page.waitForFunction(()=>document.querySelector('#status').textContent.startsWith('Saved editable'));
+  saved=JSON.parse(fs.readFileSync(session.root+'/maps/editable/MAP01_A.KMP.json'));assert.equal(saved.attributes.entries[0],7);
+  const index=await page.evaluate(()=>script.calls.findIndex(c=>c.function==='SprSet'&&c.editable&&c.arguments.map(a=>a.value).join(',')==='1,0,256'));
+  assert(index>=0);await page.locator('#calls').selectOption(String(index));await page.locator('#arguments input').nth(2).fill('0');await page.locator('#arguments input').nth(2).press('Tab');
+  await page.locator('#save').click();await page.waitForFunction(()=>document.querySelector('#status').textContent.startsWith('Saved editable'));
+  const event=JSON.parse(fs.readFileSync(session.root+'/maps/events/MAP01_A.SPC.json'));assert.equal(Object.values(event.arguments)[0],0);
+  await page.locator('#layer').selectOption('0');
+  fs.mkdirSync(output,{recursive:true});
+  await page.screenshot({path:output+'/editor.png',fullPage:true});
+  await page.locator('#scripts').selectOption('D0_BOSS.SPC');
+  await page.waitForFunction(()=>script?.name==='D0_BOSS.SPC'&&!busy);
+  const hitIndex=await page.evaluate(()=>script.calls.findIndex(c=>c.function==='HitInit'&&c.editable&&c.arguments.map(a=>a.value).join(',')==='1,270,60,60,24'));
+  assert(hitIndex>=0);await page.locator('#calls').selectOption(String(hitIndex));
+  assert((await page.locator('#arguments').textContent()).includes('Width (pixels, signed 16-bit)'));
+  await page.locator('#hit-preview').check();
+  const hitPixel=await page.evaluate(()=>Array.from(document.querySelector('#map').getContext('2d').getImageData(270*2,80*2,1,1).data));
+  assert.deepEqual(hitPixel,[0,255,255,255]);
+  await page.locator('#arguments input').nth(1).fill('260');await page.locator('#arguments input').nth(1).press('Tab');
+  const changedPixel=await page.evaluate(()=>Array.from(document.querySelector('#map').getContext('2d').getImageData(260*2,80*2,1,1).data));
+  assert.deepEqual(changedPixel,[0,255,255,255]);
+  await page.locator('#undo').click();
+  assert.equal(await page.locator('#arguments input').nth(1).inputValue(),'270');
+  await page.locator('#hit-preview').uncheck();
+  // Undo restores data but keeps the conservative unsaved flag.
+  page.once('dialog',dialog=>dialog.accept());
+  await page.locator('#maps').selectOption('MAP27_A.KMP');await page.waitForFunction(()=>map?.name==='MAP27_A.KMP'&&!busy);
+  const unresolved=await page.evaluate(()=>map.unresolved.length);assert(unresolved>0);
+  assert((await page.locator('#status').textContent()).includes('unresolved'));
+  const marked=await page.evaluate(()=>{const c=map.unresolved[0].cell,x=(c%map.document.width*8+2)*Number(document.querySelector('#zoom').value),y=(Math.floor(c/map.document.width)*8+5)*Number(document.querySelector('#zoom').value);return Array.from(document.querySelector('#map').getContext('2d').getImageData(x,y,1,1).data);});
+  assert.deepEqual(marked,[189,50,110,255]);
+  assert.deepEqual(errors,[]);
+  const proof={tile_paint:true,undo_redo:true,save_reload:true,attribute_save:true,event_save:true,hit_rectangle_preview:true,hit_labels:true,hit_preview_undo:true,unresolved_cells:unresolved,page_errors:errors};
+  fs.writeFileSync(output+'/browser-proof.json',JSON.stringify(proof,null,2)+'\n');
+  console.log(JSON.stringify(proof));
+ }finally{await browser.close();}
+})().catch(e=>{console.error(e);process.exit(1)});

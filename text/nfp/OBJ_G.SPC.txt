@@ -7,6 +7,6 @@
 @000222  C0F04 いくぞ！　バッボ！！  // EN: Let's go, Babbo!!
 @00027D F02A12  // LITERAL: F02A12 (usage not inferred)
 @00033E  C0D04 ［バッボ］  // EN: [Babbo]
-@00035B  C0F04 またワシ！？  // TODO: English translation
+@00035B  C0F04 またワシ！？  // EN: Me again?!
 @00048E TEST_E02  // LITERAL: TEST_E02 (usage not inferred)
-@0005F0 でっかい岩が道をふさいでいる  // TODO: English translation
+@0005F0 でっかい岩が道をふさいでいる  // EN: A huge rock blocks the path.

@@ -5,13 +5,13 @@
 @000064 A  // LITERAL: A (usage not inferred)
 @00023E MAP99_A  // LITERAL: MAP99_A (usage not inferred)
 @0002FD OP_04_A  // LITERAL: OP_04_A (usage not inferred)
-@000400 　　これは…　　　　　　かけだ  // TODO: English translation
+@000400 　　これは…　　　　　　かけだ  // EN: This...is a gamble.
 @00050A OP_0A_A  // LITERAL: OP_0A_A (usage not inferred)
 @000564 ARM_NE41  // LITERAL: ARM_NE41 (usage not inferred)
 @0007D7 MAP99_A  // LITERAL: MAP99_A (usage not inferred)
 @000815 T_ML_BG  // LITERAL: T_ML_BG (usage not inferred)
-@00087B 　　　　　そして　　　　　応えよ！！  // TODO: English translation
-@0008E1 　　　　　　異界の住人！！！  // TODO: English translation
+@00087B 　　　　　そして　　　　　応えよ！！  // EN: And answer my call!!
+@0008E1 　　　　　　異界の住人！！！  // EN: Dweller of another world!!!
 @0009BC MAP99_A  // LITERAL: MAP99_A (usage not inferred)
 @000A20 F01C03  // LITERAL: F01C03 (usage not inferred)
 @000A9A F31A06  // LITERAL: F31A06 (usage not inferred)
@@ -20,12 +20,12 @@
 @000CB2 MAP00_A  // LITERAL: MAP00_A (usage not inferred)
 @000D83  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
 @000DA7 …！！  // EN: ...!!
-@000DB9 出たな！魔物（まもの）め！  // TODO: English translation
+@000DB9 出たな！魔物（まもの）め！  // EN: There you are, monster!
 @000DFD  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@000E21 よーし、今こそこの  // TODO: English translation
-@000E3F 伝説の聖剣を試すとき！！  // TODO: English translation
+@000E21 よーし、今こそこの  // EN: All right, now it's time...
+@000E3F 伝説の聖剣を試すとき！！  // EN: ...to try this legendary holy sword!!
 @000E81  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@000EA5 おりゃぁああ！！  // TODO: English translation
+@000EA5 おりゃぁああ！！  // EN: Hyaaaaah!!
 @000EC1 聖剣『ホーリーサンダーフォース』！！  // EN: The holy sword, Holy Thunder Force!!
 @00101E 01A09  // LITERAL: 01A09 (usage not inferred)
 @001131 ARM_UT20  // LITERAL: ARM_UT20 (usage not inferred)
@@ -35,140 +35,140 @@
 @0015B7 聖剣『ホーリーサンダーフォース』！！  // EN: The holy sword, Holy Thunder Force!!
 @001662 F01C01  // LITERAL: F01C01 (usage not inferred)
 @0016C0  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@0016E4 ……  // TODO: English translation
-@0016F4 はれ？？  // TODO: English translation
+@0016E4 ……  // EN: ......
+@0016F4 はれ？？  // EN: Huh??
 @001756  C0D04 ［先生］ C0F04   // EN: [Teacher]
-@001778 ……ギンタァ  // TODO: English translation
-@001790 まぁたてめぇか！！！  // TODO: English translation
+@001778 ……ギンタァ  // EN: ...Ginta...
+@001790 まぁたてめぇか！！！  // EN: You again?!!
 @0017CE  C0D04 ［先生］ C0F04   // EN: [Teacher]
-@0017F0 グラウンド１００周してこいや！  // TODO: English translation
-@00181A このアホンダラ！！  // TODO: English translation
+@0017F0 グラウンド１００周してこいや！  // EN: Go run a hundred laps around the field!
+@00181A このアホンダラ！！  // EN: You idiot!!
 @001856  C0D04 ［クラスメート］ C0F04   // EN: [Classmate]
-@001880 わはははははははははは  // TODO: English translation
-@0018A2 はははははははははは！！！  // TODO: English translation
+@001880 わはははははははははは  // EN: Ha ha ha ha ha ha ha!
+@0018A2 はははははははははは！！！  // EN: Ha ha ha ha ha ha ha!!!
 @0018F0 F01C02  // LITERAL: F01C02 (usage not inferred)
 @00194E  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@001972 ……  // TODO: English translation
+@001972 ……  // EN: ......
 @001A16 OP_08_A  // LITERAL: OP_08_A (usage not inferred)
 @001A70  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@001A94 ふぅ〜〜〜〜〜  // TODO: English translation
+@001A94 ふぅ〜〜〜〜〜  // EN: Phewwwww...
 @001AD8  C0D04 ［小雪］ C0F04   // EN: [Koyuki]
-@001AFA １００周走れた？  // TODO: English translation
+@001AFA １００周走れた？  // EN: Did you manage a hundred laps?
 @001B40  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@001B64 ８周でたおれた  // TODO: English translation
+@001B64 ８周でたおれた  // EN: I collapsed after eight.
 @001BA8  C0D04 ［小雪］ C0F04   // EN: [Koyuki]
-@001BCA あははは  // TODO: English translation
-@001BDE あいかわらず体力ないなぁ！  // TODO: English translation
+@001BCA あははは  // EN: Ah ha ha!
+@001BDE あいかわらず体力ないなぁ！  // EN: Still no stamina, huh!
 @001C22  C0D04 ［小雪］ C0F04   // EN: [Koyuki]
-@001C44 それで…今日は  // TODO: English translation
-@001C5E どんなユメ見てたの？  // TODO: English translation
+@001C44 それで…今日は  // EN: So...today...
+@001C5E どんなユメ見てたの？  // EN: ...what were you dreaming about?
 @001C9C  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@001CC0 いつもと一緒さ  // TODO: English translation
-@001CDA おとぎの国！メルヘンの国！！  // TODO: English translation
+@001CC0 いつもと一緒さ  // EN: The same thing as always.
+@001CDA おとぎの国！メルヘンの国！！  // EN: A land of fairy tales! A storybook world!!
 @001D20  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@001D44 平和なせかいにまおうが現れて  // TODO: English translation
-@001D6C ひめをさらう！！  // TODO: English translation
+@001D44 平和なせかいにまおうが現れて  // EN: A demon king appears in a peaceful world...
+@001D6C ひめをさらう！！  // EN: ...and kidnaps the princess!!
 @001DA6  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@001DCA オレはまおうとたたかう！  // TODO: English translation
-@001DEE ひめを助ける！！！  // TODO: English translation
+@001DCA オレはまおうとたたかう！  // EN: I fight the demon king!
+@001DEE ひめを助ける！！！  // EN: And save the princess!!!
 @001E2A  C0D04 ［小雪］ C0F04   // EN: [Koyuki]
-@001E4C それで？  // TODO: English translation
-@001E60 そのおひめさまは…わたしよりかわいいの？  // TODO: English translation
+@001E4C それで？  // EN: And?
+@001E60 そのおひめさまは…わたしよりかわいいの？  // EN: Is that princess...prettier than me?
 @001EB2  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@001ED6 どうかな…  // TODO: English translation
-@001EEC １００倍くらいはかわいいかもな  // TODO: English translation
+@001ED6 どうかな…  // EN: Let's see...
+@001EEC １００倍くらいはかわいいかもな  // EN: Maybe about a hundred times prettier.
 @001F34  C0D04 ［小雪］ C0F04   // EN: [Koyuki]
-@001F56 あぁ〜〜〜！  // TODO: English translation
-@001F6E ひっどーーーい  // TODO: English translation
+@001F56 あぁ〜〜〜！  // EN: Heeeey!
+@001F6E ひっどーーーい  // EN: That's so mean!
 @001FA6  C0D04 ［小雪］ C0F04   // EN: [Koyuki]
-@001FC8 …  // TODO: English translation
-@001FD6 でもさぁ  // TODO: English translation
+@001FC8 …  // EN: ...
+@001FD6 でもさぁ  // EN: But, you know...
 @002008  C0D04 ［小雪］ C0F04   // EN: [Koyuki]
-@00202A 同じユメを  // TODO: English translation
-@002040 １０２回も見てるんでしょ？  // TODO: English translation
+@00202A 同じユメを  // EN: You've had the same dream...
+@002040 １０２回も見てるんでしょ？  // EN: ...a hundred and two times, right?
 @002084  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@0020A8 そう！！  // TODO: English translation
+@0020A8 そう！！  // EN: That's right!!
 @0020E6  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@00210A おかしの家、しゃべる木  // TODO: English translation
-@00212C ３本のクビがある鳥だっている  // TODO: English translation
+@00210A おかしの家、しゃべる木  // EN: Houses made of sweets, talking trees...
+@00212C ３本のクビがある鳥だっている  // EN: Even birds with three necks.
 @002172  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@002196 妖精だってたくさんいる！  // TODO: English translation
+@002196 妖精だってたくさんいる！  // EN: And lots of fairies!
 @0021E4  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@002208 そんなユメを  // TODO: English translation
-@002220 １０２回も見てるんだ  // TODO: English translation
+@002208 そんなユメを  // EN: I've had that dream...
+@002220 １０２回も見てるんだ  // EN: ...a hundred and two times.
 @00225E  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@002282 そんなユメみたいなせかいがあったら  // TODO: English translation
-@0022B0 いちどでいいから行ってみたいよ！  // TODO: English translation
+@002282 そんなユメみたいなせかいがあったら  // EN: If a dreamlike world like that exists...
+@0022B0 いちどでいいから行ってみたいよ！  // EN: ...I'd love to go there, even just once!
 @0022FA  C0D04 ［小雪］ C0F04   // EN: [Koyuki]
-@00231C …  // TODO: English translation
+@00231C …  // EN: ...
 @002354  C0D04 ［小雪］ C0F04   // EN: [Koyuki]
-@002376 そだね！  // TODO: English translation
-@00238A きっと行けるよ！！  // TODO: English translation
+@002376 そだね！  // EN: Yeah!
+@00238A きっと行けるよ！！  // EN: I'm sure you can go!!
 @0023C6  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@0023EA ホントにそう思うか？  // TODO: English translation
-@00240A 小雪だけだぞ、この話して笑わないの  // TODO: English translation
+@0023EA ホントにそう思うか？  // EN: Do you really think so?
+@00240A 小雪だけだぞ、この話して笑わないの  // EN: You're the only one who doesn't laugh, Koyuki.
 @002456  C0D04 ［小雪］ C0F04   // EN: [Koyuki]
-@002478 だって、今日見たユメで  // TODO: English translation
-@00249A １０３回目でしょう？  // TODO: English translation
+@002478 だって、今日見たユメで  // EN: Well, with today's dream...
+@00249A １０３回目でしょう？  // EN: ...that makes a hundred and three, right?
 @0024D8  C0D04 ［小雪］ C0F04   // EN: [Koyuki]
-@0024FA うん…  // TODO: English translation
-@00250C 行けるよ、きっと！！  // TODO: English translation
+@0024FA うん…  // EN: Yeah...
+@00250C 行けるよ、きっと！！  // EN: You'll get there, I'm sure!!
 @0025B2 OP_09_A  // LITERAL: OP_09_A (usage not inferred)
-@00268F 　　　つ　な　が　っ　た　！  // TODO: English translation
+@00268F 　　　つ　な　が　っ　た　！  // EN: C-o-n-n-e-c-t-e-d!
 @00273C MAP99_A  // LITERAL: MAP99_A (usage not inferred)
 @00282B T_ML_BG  // LITERAL: T_ML_BG (usage not inferred)
 @002885  C0D04 ［門ばんピエロ］ C0F04   // EN: [Clown gatekeeper]
-@0028AF トンネル…  // TODO: English translation
-@0028C5 カイツウでーーーース♪  // TODO: English translation
+@0028AF トンネル…  // EN: The tunnel...
+@0028C5 カイツウでーーーース♪  // EN: ...is now oooopen!
 @002986  C0D04 ［クラスメート］ C0F04   // EN: [Classmate]
-@0029B0 うわ！なんだこれ！！  // TODO: English translation
-@0029D0 なにがおきてるんだ！！！  // TODO: English translation
+@0029B0 うわ！なんだこれ！！  // EN: Whoa! What is this?!
+@0029D0 なにがおきてるんだ！！！  // EN: What's happening?!!
 @002A12  C0D04 ［クラスメート］ C0F04   // EN: [Classmate]
-@002A3C なんだありゃーー！！  // TODO: English translation
-@002A5C 化けものだぁ！！  // TODO: English translation
+@002A3C なんだありゃーー！！  // EN: What's that thing?!
+@002A5C 化けものだぁ！！  // EN: It's a monster!!
 @002AA0 F01C03  // LITERAL: F01C03 (usage not inferred)
 @002B8E  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@002BB2 見ろよ小雪！！  // TODO: English translation
+@002BB2 見ろよ小雪！！  // EN: Look, Koyuki!!
 @002BF6  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@002C1A ユメじゃなかったぞ！！！  // TODO: English translation
+@002C1A ユメじゃなかったぞ！！！  // EN: It wasn't just a dream!!!
 @002C68  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@002C8C ユメじゃ…  // TODO: English translation
-@002CA2 ない……！！！  // TODO: English translation
+@002C8C ユメじゃ…  // EN: It wasn't...
+@002CA2 ない……！！！  // EN: ...a dream...!!!
 @002CDA  C0D04 ［門ばんピエロ］ C0F04   // EN: [Clown gatekeeper]
-@002D04 見えテル  // TODO: English translation
-@002D18 みたいですネ？？  // TODO: English translation
+@002D04 見えテル  // EN: You seem...
+@002D18 みたいですネ？？  // EN: ...to be able to see it??
 @002D52  C0D04 ［小雪］ C0F04   // EN: [Koyuki]
-@002D74 わたし…何も見えない…  // TODO: English translation
+@002D74 わたし…何も見えない…  // EN: I...can't see anything...
 @002DC0  C0D04 ［小雪］ C0F04   // EN: [Koyuki]
-@002DE2 見えるの？  // TODO: English translation
-@002DF8 ギンタにはそのせかいが見えるの？  // TODO: English translation
+@002DE2 見えるの？  // EN: Can you see it?
+@002DF8 ギンタにはそのせかいが見えるの？  // EN: Can you see that world, Ginta?
 @002E42  C0D04 ［門ばんピエロ］ C0F04   // EN: [Clown gatekeeper]
-@002E6C 見えている人ダケ  // TODO: English translation
-@002E88 お入りくだサイ！！  // TODO: English translation
+@002E6C 見えている人ダケ  // EN: Only those who can see it...
+@002E88 お入りくだサイ！！  // EN: ...may enter!!
 @002EC4  C0D04 ［小雪］ C0F04   // EN: [Koyuki]
-@002EE6 ………  // TODO: English translation
+@002EE6 ………  // EN: .........
 @002F73 OP_01_A  // LITERAL: OP_01_A (usage not inferred)
 @002FCD  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@002FF1 オレ…いくよ！！  // TODO: English translation
+@002FF1 オレ…いくよ！！  // EN: I'm...going!!
 @003037  C0D04 ［クラスメート］ C0F04   // EN: [Classmate]
-@003061 バカ何いってるんだギンタ！！  // TODO: English translation
-@003089 早くもどってこい！！  // TODO: English translation
+@003061 バカ何いってるんだギンタ！！  // EN: Don't be stupid, Ginta!!
+@003089 早くもどってこい！！  // EN: Get back here now!!
 @0030C7  C0D04 ［小雪］ C0F04   // EN: [Koyuki]
-@0030E9 ………  // TODO: English translation
+@0030E9 ………  // EN: .........
 @003125  C0D04 ［小雪］ C0F04   // EN: [Koyuki]
-@003147 あ〜〜あ、ずるいなぁ  // TODO: English translation
-@003167 ギンタだけ…かぁ…  // TODO: English translation
+@003147 あ〜〜あ、ずるいなぁ  // EN: Aww, that's not fair.
+@003167 ギンタだけ…かぁ…  // EN: Only Ginta...huh...
 @0031A3  C0D04 ［小雪］ C0F04   // EN: [Koyuki]
-@0031C5 じゃあ約束！  // TODO: English translation
-@0031DD 後でたくさんきかせてね！！  // TODO: English translation
+@0031C5 じゃあ約束！  // EN: Then promise me!
+@0031DD 後でたくさんきかせてね！！  // EN: Tell me all about it later!!
 @003221  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
 @003245 …おう！！  // EN: ...Yeah!!
 @003285  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@0032A9 （ずっとあこがれてた  // TODO: English translation
-@0032C9 　外国よりも外のせかい！！）  // TODO: English translation
+@0032A9 （ずっとあこがれてた  // EN: (The world I've always longed for...
+@0032C9 　外国よりも外のせかい！！）  // EN: ...farther away than any foreign land!!)
 @00330F  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@003333 （ワクワクが…）  // TODO: English translation
+@003333 （ワクワクが…）  // EN: (I can't contain...)
 @00339A  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@0033BE （止まらねぇ！！！）  // TODO: English translation
+@0033BE （止まらねぇ！！！）  // EN: (...my excitement!!!)
 @003484 EV_START.SPC  // LITERAL: EV_START.SPC (usage not inferred)
-@000731 　　　　<F0><56>ＲＭよ　　　　いざなえ！！  // TODO: English translation
+@000731 　　　　<F0><56>ＲＭよ　　　　いざなえ！！  // EN: ÄRM...summon them!!

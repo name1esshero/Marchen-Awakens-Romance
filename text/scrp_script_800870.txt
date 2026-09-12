@@ -5,52 +5,52 @@
 @0001E9 A  // LITERAL: A (usage not inferred)
 @00038C F15A03  // LITERAL: F15A03 (usage not inferred)
 @000465  C0D04 ［イアン］  // EN: [Ian]
-@000482  C0F04 ！！！  // TODO: English translation
+@000482  C0F04 ！！！  // EN: !!!
 @00058E F01B01  // LITERAL: F01B01 (usage not inferred)
 @00069E F04A01  // LITERAL: F04A01 (usage not inferred)
 @00079E  C0D04 ［スノウ］  // EN: [Snow]
-@0007BB  C0F04 …修練の門  // TODO: English translation
-@0007D8 しゅうりょうです！！  // TODO: English translation
+@0007BB  C0F04 …修練の門  // EN: ...Training at the Gate...
+@0007D8 しゅうりょうです！！  // EN: ...is complete!!
 @000892 F15A03  // LITERAL: F15A03 (usage not inferred)
 @00096B  C0D04 ［イアン］  // EN: [Ian]
-@000988  C0F04 （こいつ…ちがう！  // TODO: English translation
-@0009AD 　氷の城であったときとは…ちがう！！）  // TODO: English translation
+@000988  C0F04 （こいつ…ちがう！  // EN: (He's...different!
+@0009AD 　氷の城であったときとは…ちがう！！）  // EN: He's different from when we met at the ice castle!!)
 @000A43 F01B04  // LITERAL: F01B04 (usage not inferred)
 @000B1C  C0D04 ［ギンタ］  // EN: [Ginta]
-@000B39  C0F04 …  // TODO: English translation
+@000B39  C0F04 …  // EN: ...
 @000B78  C0D04 ［ギンタ］  // EN: [Ginta]
 @000B95  C0F04 おっさん…  // EN: Old man...
 @000BEC F06A01  // LITERAL: F06A01 (usage not inferred)
 @000CEC  C0D04 ［ギンタ］  // EN: [Ginta]
 @000D09  C0F04 この『修練の門』を  // EN: This Training Gate...
-@000D2E はつどうしている３日かん…  // TODO: English translation
+@000D2E はつどうしている３日かん…  // EN: ...you kept it active for three days...
 @000D72  C0D04 ［ギンタ］  // EN: [Ginta]
-@000D8F  C0F04 ずっとオレたちを守って  // TODO: English translation
-@000DB8 くれてたんだってな…  // TODO: English translation
+@000D8F  C0F04 ずっとオレたちを守って  // EN: And you were protecting us...
+@000DB8 くれてたんだってな…  // EN: ...the whole time...
 @000DF6  C0D04 ［ギンタ］  // EN: [Ginta]
-@000E13  C0F04 スノウにきいたよ  // TODO: English translation
+@000E13  C0F04 スノウにきいたよ  // EN: Snow told me.
 @000EDC F04A01  // LITERAL: F04A01 (usage not inferred)
 @000FB5  C0D04 ［スノウ］  // EN: [Snow]
-@000FD2  C0F04 …  // TODO: English translation
+@000FD2  C0F04 …  // EN: ...
 @0010C3 F06A04  // LITERAL: F06A04 (usage not inferred)
 @0010F1  C0D04 ［エド］  // EN: [Ed]
-@00110C  C0F04 まってたぜ  // TODO: English translation
+@00110C  C0F04 まってたぜ  // EN: I've been waiting for you...
 @001129 ギンタ  // EN: Ginta
 @001169 F01B01  // LITERAL: F01B01 (usage not inferred)
 @001197  C0D04 ［ギンタ］  // EN: [Ginta]
-@0011B4  C0F04 ありがとう、おっさん  // TODO: English translation
-@0011DB あとは、まかせてくれ  // TODO: English translation
+@0011B4  C0F04 ありがとう、おっさん  // EN: Thanks, old man.
+@0011DB あとは、まかせてくれ  // EN: Leave the rest to me.
 @001229 F01B06  // LITERAL: F01B06 (usage not inferred)
 @001257  C0D04 ［ギンタ］  // EN: [Ginta]
-@001274  C0F04 こいつらは  // TODO: English translation
-@001291 オレがたおす！  // TODO: English translation
+@001274  C0F04 こいつらは  // EN: These guys...
+@001291 オレがたおす！  // EN: ...I'll beat them!
 @001345 F15A02  // LITERAL: F15A02 (usage not inferred)
 @00141E  C0D04 ［イアン］  // EN: [Ian]
-@00143B  C0F04 ならこっちにこい！！  // TODO: English translation
-@001462 オレっちのえもの！！  // TODO: English translation
+@00143B  C0F04 ならこっちにこい！！  // EN: Then come over here!!
+@001462 オレっちのえもの！！  // EN: You're my prey!!
 @00180C F01B02  // LITERAL: F01B02 (usage not inferred)
 @0018E5  C0D04 ［ギンタ］  // EN: [Ginta]
-@001902  C0F04 いくぞ！  // TODO: English translation
+@001902  C0F04 いくぞ！  // EN: Let's go!
 @00191D バッボ！！  // EN: Babbo!!
 @001961 F02A01  // LITERAL: F02A01 (usage not inferred)
 @001A3A  C0D04 ［バッボ］  // EN: [Babbo]

@@ -33,6 +33,33 @@ class TranslationTest(unittest.TestCase):
             self.assertEqual([l.partition('  //')[0] for l in first.splitlines()],
                              [l.partition('  //')[0] for l in original.splitlines()])
 
+    def test_explicit_empty_particle_reaches_runtime_without_placeholder(self):
+        import build_english
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root/'text/nfp').mkdir(parents=True)
+            (root/'text/translation').mkdir()
+            (root/'text/translation/english.json').write_text('{}')
+            (root/'text/translation/scripts.json').write_text(json.dumps({'ITEM.SPC': {'を': ''}}))
+            path = root/'text/nfp/ITEM.SPC.txt'
+            original = '@000001 を  // TODO: English translation\n@000020 未翻訳  // TODO: English translation\n'
+            path.write_text(original)
+            with patch.object(translate_comments, 'ROOT', root), contextlib.redirect_stdout(io.StringIO()):
+                translate_comments.main()
+                annotated = path.read_text()
+                translate_comments.main()
+            self.assertEqual(annotated, path.read_text())
+            self.assertEqual(annotated.splitlines()[0], '@000001 を  // EN:')
+            self.assertIn('// TODO:', annotated.splitlines()[1])
+            self.assertEqual([l.partition('  //')[0] for l in original.splitlines()],
+                             [l.partition('  //')[0] for l in annotated.splitlines()])
+            with patch.object(build_english.english_layout, 'load_mapping', return_value={}):
+                accepted, rejected = build_english.collect(root)
+            self.assertEqual(rejected, [])
+            self.assertEqual(len(accepted), 1)
+            self.assertEqual(accepted[0][1], [b'\0'])
+            self.assertIn('""', '\n'.join(build_english.render(accepted)))
+
     def test_script_scope_and_source_spacing(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp)

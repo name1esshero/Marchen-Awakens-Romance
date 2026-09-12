@@ -9,45 +9,45 @@
 @000307 A  // LITERAL: A (usage not inferred)
 @000E9A F01B10  // LITERAL: F01B10 (usage not inferred)
 @001048  C0D04 ［ギンタ］  // EN: [Ginta]
-@001065  C0F04 こ、これは…！！  // TODO: English translation
+@001065  C0F04 こ、これは…！！  // EN: Wh-what is this...?!!
 @0010C2 F08A03  // LITERAL: F08A03 (usage not inferred)
 @00119B  C0D04 ［ナナシ］  // EN: [Nanashi]
-@0011B8  C0F04 ルベリアの同志たちの…  // TODO: English translation
-@0011E1 はかや  // TODO: English translation
+@0011B8  C0F04 ルベリアの同志たちの…  // EN: These are the graves...
+@0011E1 はかや  // EN: ...of our comrades in Luberia.
 @001645 F04A03  // LITERAL: F04A03 (usage not inferred)
 @00171E  C0D04 ［スノウ］  // EN: [Snow]
-@00173B  C0F04 ひどい…  // TODO: English translation
+@00173B  C0F04 ひどい…  // EN: How awful...
 @001790 F09A04  // LITERAL: F09A04 (usage not inferred)
 @001869  C0D04 ［ドロシー］  // EN: [Dorothy]
-@001888  C0F04 …  // TODO: English translation
+@001888  C0F04 …  // EN: ...
 @001943 F08A03  // LITERAL: F08A03 (usage not inferred)
 @001A1C  C0D04 ［ナナシ］  // EN: [Nanashi]
-@001A39  C0F04 ここだけやあらへん…  // TODO: English translation
+@001A39  C0F04 ここだけやあらへん…  // EN: It isn't just here...
 @001A9A F08A03  // LITERAL: F08A03 (usage not inferred)
 @001AC8  C0D04 ［ナナシ］  // EN: [Nanashi]
-@001AE5  C0F04 ここメルヘヴン全土が今  // TODO: English translation
-@001B0E はかばになりつつあるんや！  // TODO: English translation
+@001AE5  C0F04 ここメルヘヴン全土が今  // EN: All of MÄR Heaven is turning...
+@001B0E はかばになりつつあるんや！  // EN: ...into a graveyard!
 @001BCE F08A04  // LITERAL: F08A04 (usage not inferred)
 @001C68  C0D04 ［ナナシ］  // EN: [Nanashi]
-@001C85  C0F04 チェスの兵隊のヤツらの  // TODO: English translation
-@001CAE おかげでな！！！  // TODO: English translation
+@001C85  C0F04 チェスの兵隊のヤツらの  // EN: And it's all thanks...
+@001CAE おかげでな！！！  // EN: ...to those Chess Pieces!!!
 @001D2E F05A02  // LITERAL: F05A02 (usage not inferred)
 @001E07  C0D04 ［エド］  // EN: [Ed]
-@001E22  C0F04 これは…チェスの兵隊が  // TODO: English translation
-@001E4B 本気で攻めてきたあかし！！  // TODO: English translation
+@001E22  C0F04 これは…チェスの兵隊が  // EN: This proves...the Chess Pieces...
+@001E4B 本気で攻めてきたあかし！！  // EN: ...are serious about their invasion!!
 @001F2C F01B05  // LITERAL: F01B05 (usage not inferred)
 @002005  C0D04 ［ギンタ］  // EN: [Ginta]
-@002022  C0F04 こんなにたくさんの人を  // TODO: English translation
-@00204B ころして…！！！  // TODO: English translation
+@002022  C0F04 こんなにたくさんの人を  // EN: They've killed...
+@00204B ころして…！！！  // EN: ...so many people!!!
 @002095 F01B05  // LITERAL: F01B05 (usage not inferred)
 @0020C3  C0D04 ［ギンタ］  // EN: [Ginta]
-@0020E0  C0F04 （みんながチェスの兵隊を  // TODO: English translation
-@00210B 　たおそうとしている気持ちが）  // TODO: English translation
+@0020E0  C0F04 （みんながチェスの兵隊を  // EN: (Now I understand why everyone...
+@00210B 　たおそうとしている気持ちが）  // EN: ...wants to defeat the Chess Pieces.)
 @002163 F01B05  // LITERAL: F01B05 (usage not inferred)
 @002191  C0D04 ［ギンタ］  // EN: [Ginta]
-@0021AE  C0F04 （いたいくらいわかった！！）  // TODO: English translation
+@0021AE  C0F04 （いたいくらいわかった！！）  // EN: (I understand all too painfully!!)
 @002217 F01B12  // LITERAL: F01B12 (usage not inferred)
 @002245  C0D04 ［ギンタ］  // EN: [Ginta]
-@002262  C0F04 （ぜんめつさせなきゃ…  // TODO: English translation
-@00228B 　いけないんだ！！！）  // TODO: English translation
+@002262  C0F04 （ぜんめつさせなきゃ…  // EN: (We have to...
+@00228B 　いけないんだ！！！）  // EN: ...wipe them out!!!)
 @002348 G_EV007.SPC  // LITERAL: G_EV007.SPC (usage not inferred)

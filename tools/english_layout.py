@@ -95,9 +95,9 @@ def main():
         failures = []
         for path in sorted((ROOT / 'text/nfp').glob('*.txt')):
             for line in path.read_text().splitlines():
-                if not line.startswith('@') or '  // EN: ' not in line:
+                if not line.startswith('@') or '  // EN:' not in line:
                     continue
-                english = line.partition('  // EN: ')[2]
+                english = line.partition('  // EN:')[2].removeprefix(' ')
                 try:
                     wrapped = pages(english, mapping, args.rows)
                     counts['needs_pagination' if len(wrapped)>1 else 'fits_profile'] += 1

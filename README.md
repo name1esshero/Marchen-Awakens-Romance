@@ -44,6 +44,26 @@ galleries from the current editable manifests without extracting assets.
 `build/wiki`, checking HTML links and animation frame references. It does not
 publish. See [publishing instructions](tools/site/README.md).
 
+## Map editor
+
+![The map editor loading MAP01_A and scrolling vertically and horizontally](docs/media/map-editor.gif)
+
+Actual screenshots of the running editor in Chromium. Initial network delivery
+was briefly throttled to make the loading state visible.
+
+Run `make map-editor`, or `py tools/map_editor/server.py` on Windows.
+The server automatically opens the editor in your default browser;
+`--no-browser` disables this. The full URL is also printed in the terminal.
+The editor loads 47 maps with a visual tile selector, palette banks, flips,
+layer visibility, raw attribute painting, undo/redo, and JSON source saves.
+Existing native event calls expose supported constant integer arguments.
+HitInit, HitHitRect, HitSet, and HitFree have verified field labels; literal
+hit rectangles can be previewed on the map and follow edits and undo.
+This preview shows the selected call, not simulated active event state.
+Run `make` or `make english` to build saved changes. Unknown properties, dynamic
+calls, new warps, and full event control flow remain undecoded; unresolved
+MAP27 tiles are marked explicitly. See [editor usage and format evidence](tools/map_editor/README.md).
+
 ## Browse the recovered assets
 
 [Graphics folder guide](graphics/README.md) · [Named background art](https://name1esshero.github.io/Marchen-Awakens-Romance/graphics/backgrounds/index.html).
@@ -197,8 +217,13 @@ significant. English annotations use `// EN:`; unresolved translations retain
 as translated dialogue. Names are transliterations, not asserted official
 localization spellings.
 
-There are currently 3,734 named-script records with English comments. Full
-translation is **not complete**. The exact remaining counts are generated in
+All **5,562 translatable records in the current named-script extraction** now
+have reviewed English mappings; **zero remain pending**. Two mappings explicitly
+omit the Japanese object particle, which has no English equivalent. Another
+3,073 records are ASCII literals and five contain formatting only, accounting
+for all 8,640 extracted records across 334 scripts. This completes annotations
+for this extraction, not proof that every ROM string has been found or that the
+English runtime covers every screen. The detailed counts are generated in
 [reports/text/audit.json](https://name1esshero.github.io/Marchen-Awakens-Romance/reports/text/audit.json). Reviewed exact-string
 translations shared across scripts are maintained in `text/translation/english.json`.
 Scene-specific wording is maintained in `text/translation/scripts.json`, keyed by
@@ -222,8 +247,10 @@ included, where modern GCC differed on two counts in every function:
 | Leaf prologue | `push {lr}` | `push {r4, lr}`, saving a register it never uses |
 | `index * 24` | `((i * 2) + i) * 8` with shifts | load 24, then `muls` |
 
-The current manifest declares 82 linked ranges: 72 compiled-C ranges and ten
-BIOS inline-assembly wrapper ranges. One range may contain multiple contiguous
+The current manifest declares 91 linked ranges: 81 compiled-C ranges and ten
+BIOS inline-assembly wrapper ranges. Compiled C owns 3,528 bytes, including
+literal pools and alignment. This is not a function-completion percentage.
+One range may contain multiple contiguous
 functions and alignment bytes. The [build provenance audit](https://github.com/name1esshero/Marchen-Awakens-Romance/wiki/Build-verification)
 checks their linked object providers and distinguishes them from preserved
 assembly literals and original compressed data. A forced rebuild and deliberate

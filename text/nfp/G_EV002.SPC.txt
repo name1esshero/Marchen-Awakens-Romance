@@ -8,10 +8,10 @@
 @000223 A  // LITERAL: A (usage not inferred)
 @000499 F08A03  // LITERAL: F08A03 (usage not inferred)
 @000599  C0D04 ［ナナシ］  // EN: [Nanashi]
-@0005B6  C0F04 来たで…  // TODO: English translation
+@0005B6  C0F04 来たで…  // EN: Here they come...
 @00062C F08A04  // LITERAL: F08A04 (usage not inferred)
 @00065A  C0D04 ［ナナシ］  // EN: [Nanashi]
-@000677  C0F04 やれっ！  // TODO: English translation
+@000677  C0F04 やれっ！  // EN: Get them!
 @0006BC  C0D04 ［手下］  // EN: [Henchman]
-@0006D7  C0F04 はっ！！  // TODO: English translation
+@0006D7  C0F04 はっ！！  // EN: Yes, sir!!
 @00085D G_EV031.SPC  // LITERAL: G_EV031.SPC (usage not inferred)

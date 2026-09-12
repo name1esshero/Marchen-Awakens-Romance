@@ -495,7 +495,7 @@ sub_080604E4:
 	ldr r5, _08060528
 	adds r0, r4, #0
 	adds r2, r5, #0
-	bl sub_08002630
+	bl KmpRenderViewport
 	ldr r0, _0806052C
 	ldr r1, _08060530
 	movs r2, #1
@@ -511,7 +511,7 @@ sub_080604E4:
 	ldr r1, _08060534
 	adds r0, r4, #0
 	adds r2, r5, #0
-	bl sub_08002630
+	bl KmpRenderViewport
 	add sp, #12
 	pop {r4, r5, r6, r7}
 	pop {r0}
@@ -1436,7 +1436,7 @@ sub_08060AC0:
 	ldr r0, _08060BA4
 	ldr r2, _08060BA8
 	movs r1, #0
-	bl sub_08002630
+	bl KmpRenderViewport
 	ldr r3, _08060BAC
 	adds r6, r6, r3
 	movs r0, #1
@@ -2899,7 +2899,7 @@ sub_08061868:
 	mov r8, r0
 	adds r0, r4, #0
 	mov r2, r8
-	bl sub_08002630
+	bl KmpRenderViewport
 	ldr r0, _08061928
 	ldr r1, sub_0806192C
 	movs r2, #1
@@ -2911,7 +2911,7 @@ sub_08061868:
 	ldr r1, _08061930
 	mov r0, r9
 	mov r2, r8
-	bl sub_08002630
+	bl KmpRenderViewport
 	add sp, #12
 	pop {r3, r4}
 	mov r8, r3
@@ -6466,7 +6466,7 @@ sub_080635EC:
 	ldr r1, _080636F4
 	ldr r2, _080636F8
 	adds r0, r4, #0
-	bl sub_08002630
+	bl KmpRenderViewport
 	add sp, #12
 	pop {r4, r5, r6}
 	pop {r0}
@@ -10000,7 +10000,7 @@ sub_08064E98:
 	ldr r1, _08064F70
 	ldr r2, _08064F74
 	adds r0, r4, #0
-	bl sub_08002630
+	bl KmpRenderViewport
 	add sp, #12
 	pop {r4, r5, r6}
 	pop {r0}
@@ -10521,7 +10521,7 @@ sub_08065280:
 	ldr r0, _080652D0
 	ldr r2, _080652D4
 	movs r1, #0
-	bl sub_08002630
+	bl KmpRenderViewport
 	add sp, #52
 	pop {r4, r5}
 	pop {r0}
@@ -11449,7 +11449,7 @@ sub_08065BA4:
 	ldr r1, _08065C8C
 	ldr r2, _08065C90
 	adds r0, r4, #0
-	bl sub_08002630
+	bl KmpRenderViewport
 	add sp, #12
 	pop {r4, r5, r6}
 	pop {r0}
@@ -11740,7 +11740,7 @@ _08065E22:
 	ldr r0, _08065E48
 	ldr r2, _08065E4C
 	movs r1, #0
-	bl sub_08002630
+	bl KmpRenderViewport
 	add sp, #52
 	pop {r4}
 	pop {r0}

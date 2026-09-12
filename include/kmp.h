@@ -32,6 +32,10 @@ struct KmpViewport
     u32 clipX, clipY, clipWidth, clipHeight;
 };
 void KmpInitViewport(struct KmpViewport *, const struct KmpHeader *, u16 *, u32, u32, u32);
+void KmpRenderViewport(struct KmpViewport *, s32 xFixed, s32 yFixed);
+void KmpLoadField(const char *name, s16 x, s16 y);
+void KmpSetClip(struct KmpViewport *, u32 x, u32 y, u32 width, u32 height);
+void KmpResetClip(struct KmpViewport *);
 u16 *KmpAttributeAddress(struct KmpViewport *, u32, u32);
 s32 KmpReadAttribute(struct KmpViewport *, s32 pixelX, s32 pixelY);
 #endif

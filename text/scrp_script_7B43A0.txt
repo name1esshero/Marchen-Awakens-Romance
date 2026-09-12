@@ -6,13 +6,13 @@
 @0001EF A  // LITERAL: A (usage not inferred)
 @000213 A  // LITERAL: A (usage not inferred)
 @000617  C0D04 ［ギンタ］  // EN: [Ginta]
-@000634  C0F04 …………  // TODO: English translation
+@000634  C0F04 …………  // EN: ............
 @000874 F01A11  // LITERAL: F01A11 (usage not inferred)
 @000935  C0D04 ［ギンタ］  // EN: [Ginta]
-@000952  C0F04 …どこだぁココ…？？  // TODO: English translation
+@000952  C0F04 …どこだぁココ…？？  // EN: ...Where am I...??
 @000BCE F01A11  // LITERAL: F01A11 (usage not inferred)
 @000C8F  C0D04 ［ギンタ］  // EN: [Ginta]
-@000CAC  C0F04 ウソだろ…？…イヤ！！  // TODO: English translation
+@000CAC  C0F04 ウソだろ…？…イヤ！！  // EN: No way...? No!!
 @000FCF F01A07  // LITERAL: F01A07 (usage not inferred)
 @001090  C0D04 ［ギンタ］  // EN: [Ginta]
-@0010AD  C0F04 夢じゃねぇーーーーーーーーー！！  // TODO: English translation
+@0010AD  C0F04 夢じゃねぇーーーーーーーーー！！  // EN: This isn't a dreeeeeam!!

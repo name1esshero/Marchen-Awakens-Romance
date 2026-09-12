@@ -8,108 +8,108 @@
 @000350 A  // LITERAL: A (usage not inferred)
 @000664 F06A01  // LITERAL: F06A01 (usage not inferred)
 @00073D  C0D04 ［エド］  // EN: [Ed]
-@000758  C0F04 スノウ助けてごくろうだった  // TODO: English translation
-@000785 ガキども  // TODO: English translation
+@000758  C0F04 スノウ助けてごくろうだった  // EN: Good work rescuing Snow...
+@000785 ガキども  // EN: ...you brats.
 @0007B7  C0D04 ［エド］  // EN: [Ed]
-@0007D2  C0F04 たらふく、くっていいぞ！  // TODO: English translation
+@0007D2  C0F04 たらふく、くっていいぞ！  // EN: Go ahead and eat your fill!
 @000C8A F01B04  // LITERAL: F01B04 (usage not inferred)
 @000D63  C0D04 ［ギンタ］  // EN: [Ginta]
-@000D80  C0F04 たらふく…って…  // TODO: English translation
+@000D80  C0F04 たらふく…って…  // EN: Our fill...?
 @000DDD F03A03  // LITERAL: F03A03 (usage not inferred)
 @000EB6  C0D04 ［ジャック］  // EN: [Jack]
-@000ED5  C0F04 チーズと豆がちょっとだけっスよ…！  // TODO: English translation
+@000ED5  C0F04 チーズと豆がちょっとだけっスよ…！  // EN: There's only a little cheese and some beans...!
 @000FB0 F01B10  // LITERAL: F01B10 (usage not inferred)
 @001015 F03A07  // LITERAL: F03A07 (usage not inferred)
 @001053 F06A03  // LITERAL: F06A03 (usage not inferred)
 @00112C  C0D04 ［エド］  // EN: [Ed]
-@001147  C0F04 あん！？  // TODO: English translation
+@001147  C0F04 あん！？  // EN: Huh?!
 @0014D2 F04A04  // LITERAL: F04A04 (usage not inferred)
 @0015AB  C0D04 ［スノウ］  // EN: [Snow]
-@0015C8  C0F04 本当にありがとう！  // TODO: English translation
-@0015ED スノウってよんでね！  // TODO: English translation
+@0015C8  C0F04 本当にありがとう！  // EN: Thank you so much!
+@0015ED スノウってよんでね！  // EN: Please, call me Snow!
 @001671 F06A01  // LITERAL: F06A01 (usage not inferred)
 @00174A  C0D04 ［エド］  // EN: [Ed]
-@001765  C0F04 …ところでギンタ…  // TODO: English translation
+@001765  C0F04 …ところでギンタ…  // EN: ...By the way, Ginta...
 @0017B4  C0D04 ［エド］  // EN: [Ed]
-@0017CF  C0F04 おまえ、このせかいにきて  // TODO: English translation
-@0017FA １０日くらいだったな  // TODO: English translation
+@0017CF  C0F04 おまえ、このせかいにきて  // EN: You've been in this world...
+@0017FA １０日くらいだったな  // EN: ...about ten days now, right?
 @001848 F01B08  // LITERAL: F01B08 (usage not inferred)
 @001921  C0D04 ［ギンタ］  // EN: [Ginta]
-@00193E  C0F04 うん  // TODO: English translation
+@00193E  C0F04 うん  // EN: Yeah.
 @00197F  C0D04 ［エド］  // EN: [Ed]
-@00199A  C0F04 なら、まだなにもわからねぇだろ  // TODO: English translation
-@0019CB せつめいしてやるからよくきけよ  // TODO: English translation
+@00199A  C0F04 なら、まだなにもわからねぇだろ  // EN: Then you still don't know much.
+@0019CB せつめいしてやるからよくきけよ  // EN: Listen up. I'll explain it.
 @001A23 F01B02  // LITERAL: F01B02 (usage not inferred)
 @001A51  C0D04 ［ギンタ］  // EN: [Ginta]
-@001A6E  C0F04 …  // TODO: English translation
+@001A6E  C0F04 …  // EN: ...
 @001ABD F06A04  // LITERAL: F06A04 (usage not inferred)
 @001AEB  C0D04 ［エド］  // EN: [Ed]
-@001B06  C0F04 今、オレたちがいるのは  // TODO: English translation
-@001B2F パヅリカっていう小さい島だ  // TODO: English translation
+@001B06  C0F04 今、オレたちがいるのは  // EN: Right now, we're on a small island...
+@001B2F パヅリカっていう小さい島だ  // EN: ...called Pazurika.
 @001B73  C0D04 ［エド］  // EN: [Ed]
-@001B8E  C0F04 南の大きいたいりくにある、  // TODO: English translation
-@001BBB レスターヴァってところが  // TODO: English translation
+@001B8E  C0F04 南の大きいたいりくにある、  // EN: On the large continent to the south...
+@001BBB レスターヴァってところが  // EN: ...there's a place called Lestava.
 @001CCC F04A01  // LITERAL: F04A01 (usage not inferred)
 @001E21 F06A01  // LITERAL: F06A01 (usage not inferred)
 @001E4F  C0D04 ［エド］  // EN: [Ed]
-@001E6A  C0F04 このスノウが生まれたところだ  // TODO: English translation
+@001E6A  C0F04 このスノウが生まれたところだ  // EN: That's where Snow was born.
 @001EC3  C0D04 ［エド］  // EN: [Ed]
-@001EDE  C0F04 レスターヴァってのは、まわりの  // TODO: English translation
-@001F0F 小さい国々を統治してきた  // TODO: English translation
+@001EDE  C0F04 レスターヴァってのは、まわりの  // EN: Lestava has ruled over...
+@001F0F 小さい国々を統治してきた  // EN: ...the small countries around it.
 @001F61 F01B11  // LITERAL: F01B11 (usage not inferred)
 @001F8F  C0D04 ［ギンタ］  // EN: [Ginta]
-@001FAC  C0F04 スノウはそこのおひめさまなのか…  // TODO: English translation
+@001FAC  C0F04 スノウはそこのおひめさまなのか…  // EN: So Snow is its princess...
 @002009  C0D04 ［エド］  // EN: [Ed]
-@002024  C0F04 ま、今じゃチェスのアジトに  // TODO: English translation
-@002051 なっちまってるが…  // TODO: English translation
+@002024  C0F04 ま、今じゃチェスのアジトに  // EN: Though now it's become...
+@002051 なっちまってるが…  // EN: ...a base for the Chess Pieces...
 @00209D F01B02  // LITERAL: F01B02 (usage not inferred)
 @0020DB F04A09  // LITERAL: F04A09 (usage not inferred)
 @002109  C0D04 ［スノウ］  // EN: [Snow]
-@002126  C0F04 …  // TODO: English translation
+@002126  C0F04 …  // EN: ...
 @002310 F06A01  // LITERAL: F06A01 (usage not inferred)
 @00233E  C0D04 ［エド］  // EN: [Ed]
-@002359  C0F04 このせつめいをするのも  // TODO: English translation
-@002382 ２回目だからラクだな  // TODO: English translation
+@002359  C0F04 このせつめいをするのも  // EN: This is easier the second time...
+@002382 ２回目だからラクだな  // EN: ...I've had to explain it.
 @0023C0  C0D04 ［エド］  // EN: [Ed]
-@0023DB  C0F04 ６年まえ、おまえと同じせかいから  // TODO: English translation
-@00240E 来たやつだ  // TODO: English translation
+@0023DB  C0F04 ６年まえ、おまえと同じせかいから  // EN: Six years ago, someone came here...
+@00240E 来たやつだ  // EN: ...from the same world as you.
 @002452 F06A04  // LITERAL: F06A04 (usage not inferred)
 @002480  C0D04 ［エド］  // EN: [Ed]
-@00249B  C0F04 チェスの兵隊にたいこうするために  // TODO: English translation
-@0024CE けっせいされた C0904 『クロスガード軍』  // TODO: English translation
+@00249B  C0F04 チェスの兵隊にたいこうするために  // EN: The Cross Guard was formed...
+@0024CE けっせいされた C0904 『クロスガード軍』  // EN: ...to fight the Chess Pieces.
 @00251F  C0D04 ［エド］  // EN: [Ed]
-@00253A  C0F04 そのリーダーだった男だ  // TODO: English translation
+@00253A  C0F04 そのリーダーだった男だ  // EN: He was their leader.
 @00258D  C0D04 ［エド］  // EN: [Ed]
-@0025A8  C0F04 オレたちは C0904 『ダンナ』 C0F04 って呼んでた  // TODO: English translation
+@0025A8  C0F04 オレたちは C0904 『ダンナ』 C0F04 って呼んでた  // EN: We called him Danna.
 @002623 F01B11  // LITERAL: F01B11 (usage not inferred)
 @002651  C0D04 ［ギンタ］  // EN: [Ginta]
-@00266E  C0F04 あ…  // TODO: English translation
+@00266E  C0F04 あ…  // EN: Oh...
 @0026BF F06A03  // LITERAL: F06A03 (usage not inferred)
 @0026ED  C0D04 ［エド］  // EN: [Ed]
-@002708  C0F04 そう、チェスの兵隊しれいとう  // TODO: English translation
-@002737  C0904 『ファントム』 C0F04 とあいうちで  // TODO: English translation
+@002708  C0F04 そう、チェスの兵隊しれいとう  // EN: He and the Chess Pieces commander...
+@002737  C0904 『ファントム』 C0F04 とあいうちで  // EN: ...Phantom struck each other down.
 @002789  C0D04 ［エド］  // EN: [Ed]
-@0027A4  C0F04 …  // TODO: English translation
-@0027B9 死んじまったがな…  // TODO: English translation
+@0027A4  C0F04 …  // EN: ...
+@0027B9 死んじまったがな…  // EN: He died...
 @00283B F04A04  // LITERAL: F04A04 (usage not inferred)
 @002914  C0D04 ［スノウ］  // EN: [Snow]
 @002931  C0F04 …エド！  // EN: ...Ed!
 @002986 F06A01  // LITERAL: F06A01 (usage not inferred)
 @0029B4  C0D04 ［エド］  // EN: [Ed]
-@0029CF  C0F04 ん？？  // TODO: English translation
+@0029CF  C0F04 ん？？  // EN: Hmm??
 @002A8E F02A01  // LITERAL: F02A01 (usage not inferred)
 @002B77 F04A04  // LITERAL: F04A04 (usage not inferred)
 @002BA5  C0D04 ［スノウ］  // EN: [Snow]
-@002BC2  C0F04 バッボさんとお外で  // TODO: English translation
-@002BE7 あそんでくるね！  // TODO: English translation
+@002BC2  C0F04 バッボさんとお外で  // EN: I'm going outside...
+@002BE7 あそんでくるね！  // EN: ...to play with Babbo!
 @002C21  C0D04 ［エド］  // EN: [Ed]
-@002C3C  C0F04 近くにみょうな魔力（まりょく）はないが…  // TODO: English translation
-@002C77 あんまりとおくまで行くなよ！  // TODO: English translation
+@002C3C  C0F04 近くにみょうな魔力（まりょく）はないが…  // EN: I don't sense any strange magic nearby, but...
+@002C77 あんまりとおくまで行くなよ！  // EN: ...don't go too far!
 @002CCD F04A05  // LITERAL: F04A05 (usage not inferred)
 @002CFB  C0D04 ［スノウ］  // EN: [Snow]
 @002D18  C0F04 うん！  // EN: Yeah!
-@002D31 行こう！バッボさん！！  // TODO: English translation
+@002D31 行こう！バッボさん！！  // EN: Let's go, Babbo!!
 @002D81 F02A07  // LITERAL: F02A07 (usage not inferred)
 @002DAF  C0D04 ［バッボ］  // EN: [Babbo]
-@002DCC  C0F04 う、うむ…  // TODO: English translation
+@002DCC  C0F04 う、うむ…  // EN: Y-yes...
 @003477 G_EV011B.SPC  // LITERAL: G_EV011B.SPC (usage not inferred)

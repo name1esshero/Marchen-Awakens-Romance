@@ -2,7 +2,7 @@
 // @offset is the string opcode offset within CODE, not a ROM address.
 // Edit text here; // EN: comments never reach the ROM.
 
-@000101 行き先をせんたくしますか？  // TODO: English translation
+@000101 行き先をせんたくしますか？  // EN: Select a destination?
 @0002F2 MAP01_A.SPC  // LITERAL: MAP01_A.SPC (usage not inferred)
 @0003B3 MAP03_A.SPC  // LITERAL: MAP03_A.SPC (usage not inferred)
 @000474 MAP09_A.SPC  // LITERAL: MAP09_A.SPC (usage not inferred)

@@ -15,6 +15,7 @@ import gfx
 import lz77
 import nfp
 import text_codec as tc
+import script_events
 from extract_scrp_text import strings_in
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -113,7 +114,8 @@ def build():
     for e in json.loads(MANIFEST.read_text()):
         dest = ROOT / 'build/scripts/nfp' / (e['name'] + '.bin')
         dest.parent.mkdir(parents=True, exist_ok=True)
-        out = rebuild((ROOT / e['path']).read_bytes(), edits(ROOT / e['text']))
+        original = (ROOT / e['path']).read_bytes()
+        out = script_events.build(rebuild(original, edits(ROOT / e['text'])), original, e['name'], ROOT)
         if not dest.exists() or dest.read_bytes() != out:
             dest.write_bytes(out)
 
@@ -125,9 +127,10 @@ def audit():
     for e in manifest:
         original = (ROOT / e['path']).read_bytes()
         values = edits(ROOT / e['text'])
-        output = rebuild(original, values)
+        output = script_events.build(rebuild(original, values), original, e['name'], ROOT)
         notes = (ROOT / e['text']).read_text(encoding='utf-8')
-        english = sum(bool(re.match(r'^@.*// EN: \S', line)) for line in notes.splitlines())
+        english = sum(bool(re.match(r'^@.*  // EN:(?: |$)', line)) for line in notes.splitlines())
+        empty_english = sum(bool(re.match(r'^@.*  // EN:$', line)) for line in notes.splitlines())
         literals = sum(bool(re.match(r'^@.*// LITERAL: ', line)) for line in notes.splitlines())
         formatting = sum(bool(re.match(r'^@.*// FORMAT: ', line)) for line in notes.splitlines())
         for line in notes.splitlines():
@@ -137,12 +140,12 @@ def audit():
                     raise ValueError(e['name'] + ': formatting annotation hides text')
         row = dict(name=e['name'], records=len(values), english_comments=english,
                    untranslated=len(values)-english, byte_matching=output == original)
-        row.update(ascii_literal_comments=literals, formatting_records=formatting,
+        row.update(empty_english_comments=empty_english, ascii_literal_comments=literals, formatting_records=formatting,
                    pending_translation=len(values)-english-literals-formatting)
         rows.append(row)
         totals.update(scripts=1, records=len(values), english_comments=english,
                       untranslated=len(values)-english, byte_matching=output==original)
-        totals.update(ascii_literal_comments=literals, formatting_records=formatting,
+        totals.update(empty_english_comments=empty_english, ascii_literal_comments=literals, formatting_records=formatting,
                       pending_translation=len(values)-english-literals-formatting)
     dest = ROOT / 'reports/text'
     dest.mkdir(parents=True, exist_ok=True)

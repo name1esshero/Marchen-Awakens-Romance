@@ -2,11 +2,11 @@
 // @offset is the string opcode offset within CODE, not a ROM address.
 // Edit text here; // EN: comments never reach the ROM.
 
-@000163 次のフロアに行きますか？  // TODO: English translation
+@000163 次のフロアに行きますか？  // EN: Go to the next floor?
 @00022A D0_MAKE.SPC  // LITERAL: D0_MAKE.SPC (usage not inferred)
 @000258 D1_MAKE.SPC  // LITERAL: D1_MAKE.SPC (usage not inferred)
 @000286 D2_MAKE.SPC  // LITERAL: D2_MAKE.SPC (usage not inferred)
 @0002B4 D3_MAKE.SPC  // LITERAL: D3_MAKE.SPC (usage not inferred)
 @0002E2 D4_MAKE.SPC  // LITERAL: D4_MAKE.SPC (usage not inferred)
-@000469 外へ出ますか？  // TODO: English translation
+@000469 外へ出ますか？  // EN: Go outside?
 @0004FE DUNG_END.SPC  // LITERAL: DUNG_END.SPC (usage not inferred)

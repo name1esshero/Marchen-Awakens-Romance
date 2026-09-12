@@ -10,9 +10,9 @@
 @0003D9 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
 @000516 F06A01  // LITERAL: F06A01 (usage not inferred)
 @0005D7  C0D04 ［エド］  // EN: [Ed]
-@0005F2  C0F04 オレが封印した宝ばこだ  // TODO: English translation
-@00061B オレしかあけることはできねえんだ  // TODO: English translation
+@0005F2  C0F04 オレが封印した宝ばこだ  // EN: I sealed this treasure chest.
+@00061B オレしかあけることはできねえんだ  // EN: Only I can open it.
 @000730 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
-@000834 つよい魔力（まりょく）で封印されている  // TODO: English translation
+@000834 つよい魔力（まりょく）で封印されている  // EN: It's sealed with powerful magic.
 @000912 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
-@000AD1  C0D04 ６８０Ｐ C0F04 が入っていた！  // TODO: English translation
+@000AD1  C0D04 ６８０Ｐ C0F04 が入っていた！  // EN: There was 680P inside!

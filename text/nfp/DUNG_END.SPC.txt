@@ -2,12 +2,12 @@
 // @offset is the string opcode offset within CODE, not a ROM address.
 // Edit text here; // EN: comments never reach the ROM.
 
-@00013F ダンジョンクリア！！  // TODO: English translation
+@00013F ダンジョンクリア！！  // EN: Dungeon cleared!!
 @0002B7 EV_MON05.SPC  // LITERAL: EV_MON05.SPC (usage not inferred)
 @0003D8 EV_MON06.SPC  // LITERAL: EV_MON06.SPC (usage not inferred)
 @000524 ダンジョンモードに  // EN: Into Dungeon Mode...
-@000542  C0904 最後の門 C0F04 が追加されました  // TODO: English translation
-@000702 ファントムを  // TODO: English translation
+@000542  C0904 最後の門 C0F04 が追加されました  // EN: ...the Final Gate has been added.
+@000702 ファントムを  // EN: Phantom...
 @00071A 使えるようになりました  // EN: You can now use it.
-@000766  C0904 対戦モード C0F04 と C0904 ダンジョンモード C0F04 で  // TODO: English translation
-@0007AC ファントムをえらべます  // TODO: English translation
+@000766  C0904 対戦モード C0F04 と C0904 ダンジョンモード C0F04 で  // EN: In Versus Mode and Dungeon Mode...
+@0007AC ファントムをえらべます  // EN: ...you can select Phantom.

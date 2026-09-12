@@ -1641,116 +1641,10 @@ _08018C3C:
 	pop {r1}
 	bx r1
 
-	.thumb_func
-	.thumb
-	.global sub_08018C4C
-sub_08018C4C:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r10
-	mov r6, r9
-	mov r5, r8
-	push {r5, r6, r7}
-	lsls r0, r0, #16
-	asrs r0, r0, #16
-	lsls r1, r1, #16
-	asrs r1, r1, #16
-	movs r4, #0
-	ldrsh r3, [r2, r4]
-	adds r3, r3, r0
-	mov r9, r3
-	movs r7, #4
-	ldrsh r3, [r2, r7]
-	adds r3, r3, r0
-	mov r8, r3
-	movs r3, #2
-	ldrsh r0, [r2, r3]
-	adds r0, r0, r1
-	mov r10, r0
-	movs r4, #6
-	ldrsh r0, [r2, r4]
-	adds r6, r0, r1
-	movs r0, #0
-	bl sub_08011464
-	adds r4, r0, #0
-	movs r7, #0
-	mov r12, r7
-	adds r2, r4, #0
-	movs r5, #1
-	.global _08018C8C
-_08018C8C:
-	ldr r0, [r2, #0]
-	cmp r0, #0
-	beq _08018CEE
-	adds r3, r4, #4
-	ldr r0, [r2, #12]
-	cmp r0, #0
-	bne _08018CC2
-	movs r1, #8
-	ldrsh r0, [r2, r1]
-	movs r3, #4
-	ldrsh r1, [r2, r3]
-	adds r0, r0, r1
-	cmp r9, r0
-	bge _08018CEE
-	cmp r1, r8
-	bge _08018CEE
-	movs r7, #10
-	ldrsh r0, [r2, r7]
-	movs r3, #6
-	ldrsh r1, [r2, r3]
-	adds r0, r0, r1
-	cmp r10, r0
-	bge _08018CEE
-	cmp r1, r6
-	bge _08018CEE
-	adds r0, r5, #0
-	b _08018D00
-	.global _08018CC2
-_08018CC2:
-	cmp r0, #1
-	bne _08018CEE
-	movs r7, #4
-	ldrsh r1, [r2, r7]
-	cmp r9, r1
-	ble _08018CEE
-	movs r7, #4
-	ldrsh r0, [r3, r7]
-	adds r0, r0, r1
-	cmp r8, r0
-	bge _08018CEE
-	movs r0, #2
-	ldrsh r1, [r3, r0]
-	cmp r10, r1
-	ble _08018CEE
-	movs r7, #6
-	ldrsh r0, [r3, r7]
-	adds r0, r0, r1
-	cmp r6, r0
-	bge _08018CEE
-	adds r0, r5, #0
-	b _08018D00
-	.global _08018CEE
-_08018CEE:
-	adds r5, #1
-	movs r0, #1
-	add r12, r0
-	adds r2, #16
-	adds r4, #16
-	mov r1, r12
-	cmp r1, #15
-	ble _08018C8C
-	movs r0, #0
-	.global _08018D00
-_08018D00:
-	pop {r3, r4, r5}
-	mov r8, r3
-	mov r9, r4
-	mov r10, r5
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 018C4C..018D10 is decompiled as HitRegionTest(); see src/decompiled.json
+
+	.section .rom.00018D10, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -8590,7 +8484,7 @@ _0801BC10:
 	adds r0, r4, r1
 	ldr r2, _0801BD3C
 	movs r1, #0
-	bl sub_08002630
+	bl KmpRenderViewport
 	movs r0, #0
 	movs r1, #1
 	bl sub_08006ADC

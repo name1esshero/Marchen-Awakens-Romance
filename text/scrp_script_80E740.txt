@@ -5,5 +5,5 @@
 @000017 EV_ICE02.SPC  // LITERAL: EV_ICE02.SPC (usage not inferred)
 @000125 F05A04  // LITERAL: F05A04 (usage not inferred)
 @0001E6  C0D04 ［エド］  // EN: [Ed]
-@000201  C0F04 かいだんはこっちじゃありませんぞ！  // TODO: English translation
+@000201  C0F04 かいだんはこっちじゃありませんぞ！  // EN: The stairs aren't this way!
 @000236 いそがないと…  // EN: I'd better hurry...

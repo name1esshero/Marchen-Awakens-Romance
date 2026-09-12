@@ -8893,7 +8893,7 @@ _0800B864:
 	bl sub_080075F0
 	movs r1, #0
 	movs r2, #0
-	bl sub_080032B8
+	bl KmpLoadField
 	adds r0, r7, #0
 	adds r0, #217
 	movs r1, #1

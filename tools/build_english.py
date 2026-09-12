@@ -23,8 +23,9 @@ def collect(root=ROOT):
     locations = collections.defaultdict(list)
     for path in sorted((root/'text/nfp').glob('*.txt')):
         for line in path.read_text().splitlines():
-            if not line.startswith('@') or '  // EN: ' not in line:continue
-            body, english = line.split('  // EN: ',1)
+            if not line.startswith('@') or '  // EN:' not in line:continue
+            body, english = line.split('  // EN:',1)
+            english = english.removeprefix(' ')
             offset, japanese = body.split(' ',1)
             raw = text_codec.encode(japanese)
             candidates[raw].add(english)

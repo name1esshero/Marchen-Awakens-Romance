@@ -6,6 +6,29 @@
 views. Comments do not change Japanese ROM text. Old `{kanji}` romanization
 is not a translation and is not accepted as reviewed English.
 
+## Annotation completion
+
+The remaining 1,055 named-script records have been translated. The current
+334-script extraction now has 5,562 reviewed translation records, 3,073 ASCII
+literals, five formatting-only records, and zero pending translations. This
+batch includes 114 numbered portrait-debug labels as well as dialogue,
+exploration, shop, unlock, and opening messages. Names remain transliterations
+unless their spelling was already established in the project glossary.
+
+An explicit empty string in `scripts.json` produces a bare `// EN:` comment.
+This is used for the two standalone Japanese object-particle `を` records in
+DITEMCOM, which contribute no English text. It is distinct from a missing
+mapping and compiles to an empty, NUL-terminated English row. It does not insert
+an explanatory placeholder into the game. The audit reports these two entries
+as `empty_english_comments` within its reviewed translation count.
+
+The English runtime table currently accepts 3,089 exact source-row mappings.
+109 ambiguous or unsupported keys remain excluded, with Japanese fallback;
+annotations being complete does not remove the hook's context and printer
+limitations. All 5,562 annotations pass font and word-width validation; four
+need multiple pages. Exhaustive ROM text discovery and emulator verification
+remain outstanding.
+
 ## Actual printer findings
 
 The three-row dialogue task is created at 08011790. Its reader at 08011AF4

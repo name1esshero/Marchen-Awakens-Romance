@@ -11,7 +11,7 @@
 @0004A6 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
 @0005D4 MAP07_A.SPC  // LITERAL: MAP07_A.SPC (usage not inferred)
 @000643 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
-@000802  C0D04 ４７００Ｐ C0F04 が入っていた！  // TODO: English translation
+@000802  C0D04 ４７００Ｐ C0F04 が入っていた！  // EN: There was 4700P inside!
 @000A13 MAP07_A.SPC  // LITERAL: MAP07_A.SPC (usage not inferred)
 @000A95 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
 @000BE5 MAP07_A.SPC  // LITERAL: MAP07_A.SPC (usage not inferred)

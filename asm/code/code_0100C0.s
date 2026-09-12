@@ -2621,7 +2621,7 @@ sub_080114B0:
 	ldr r0, [r0, #0]
 	cmp r0, #0
 	beq _080114D4
-	bl sub_08011514
+	bl HitRegionDisableAll
 	movs r0, #1
 	str r0, [r5, #4]
 	movs r0, #128
@@ -2657,66 +2657,14 @@ _080114FE:
 	pop {r0}
 	bx r0
 
-	.thumb_func
-	.thumb
-	.global sub_08011504
-sub_08011504:
-	push {lr}
-	bl sub_08011464
-	movs r1, #0
-	str r1, [r0, #0]
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
+@ 011504..011514 is decompiled as HitRegionDisable(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08011514
-sub_08011514:
-	push {lr}
-	movs r0, #0
-	bl sub_08011464
-	movs r2, #0
-	movs r1, #15
-	.global _08011520
-_08011520:
-	str r2, [r0, #0]
-	subs r1, #1
-	adds r0, #16
-	cmp r1, #0
-	bge _08011520
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
+@ 011514..011530 is decompiled as HitRegionDisableAll(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08011530
-sub_08011530:
-	push {r4, r5, r6, r7, lr}
+@ 011530..011554 is decompiled as HitRegionInit(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08011532
-sub_08011532:
-	adds r4, r1, #0
-	adds r5, r2, #0
-	adds r6, r3, #0
-	ldr r7, [sp, #20]
-	bl sub_08011464
-	movs r1, #1
-	str r1, [r0, #0]
-	movs r1, #0
-	strh r4, [r0, #4]
-	strh r5, [r0, #6]
-	strh r6, [r0, #8]
-	strh r7, [r0, #10]
-	str r1, [r0, #12]
-	pop {r4, r5, r6, r7}
-	pop {r0}
-	bx r0
+	.section .rom.00011554, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -2841,25 +2789,10 @@ _08011648:
 	bx r1
 	.4byte 0x00007FFF
 
-	.thumb_func
-	.thumb
-	.global sub_08011654
-sub_08011654:
-	push {r4, r5, r6, r7, lr}
-	adds r4, r1, #0
-	adds r5, r2, #0
-	adds r6, r3, #0
-	ldr r7, [sp, #20]
-	bl sub_08011464
-	movs r1, #1
-	str r1, [r0, #0]
-	strh r4, [r0, #4]
-	strh r5, [r0, #6]
-	strh r6, [r0, #8]
-	strh r7, [r0, #10]
-	pop {r4, r5, r6, r7}
-	pop {r0}
-	bx r0
+@ 011654..011674 is decompiled as HitRegionSetRect(); see src/decompiled.json
+
+	.section .rom.00011674, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -4267,7 +4200,7 @@ sub_080121C4:
 	ldr r1, [r1, #16]
 	str r1, [sp, #0]
 	adds r1, r4, #0
-	bl sub_08011530
+	bl HitRegionInit
 	movs r0, #1
 	add sp, #4
 	pop {r4}
@@ -4285,11 +4218,11 @@ sub_080121E4:
 	cmp r1, r0
 	beq _080121F8
 	adds r0, r1, #0
-	bl sub_08011504
+	bl HitRegionDisable
 	b _080121FC
 	.global _080121F8
 _080121F8:
-	bl sub_08011514
+	bl HitRegionDisableAll
 	.global _080121FC
 _080121FC:
 	ldr r0, _08012204
@@ -4354,7 +4287,7 @@ sub_08012244:
 	ldr r1, [r1, #16]
 	str r1, [sp, #0]
 	adds r1, r4, #0
-	bl sub_08011654
+	bl HitRegionSetRect
 	movs r0, #1
 	add sp, #4
 	pop {r4}
@@ -4430,7 +4363,7 @@ _080122A0:
 	lsls r1, r1, #16
 	ldr r2, [r4, #20]
 	lsls r2, r2, #16
-	bl sub_08002630
+	bl KmpRenderViewport
 	ldr r0, _080122F4
 	add sp, #28
 	pop {r4, r5}
@@ -4459,7 +4392,7 @@ sub_080122F8:
 	movs r4, #8
 	ldrsh r2, [r1, r4]
 	adds r1, r3, #0
-	bl sub_080032B8
+	bl KmpLoadField
 	ldr r0, _08012314
 	pop {r4}
 	pop {r1}
@@ -8198,7 +8131,7 @@ sub_08013B66:
 	ldrsh r1, [r1, r2]
 	ldr r2, [sp, #56]
 	adds r2, #56
-	bl sub_08018C4C
+	bl HitRegionTest
 	str r0, [sp, #44]
 	cmp r0, #0
 	bne _08013B7E
@@ -8369,7 +8302,7 @@ _08013C94:
 	ldrsh r1, [r2, r3]
 	ldr r2, [sp, #56]
 	adds r2, #56
-	bl sub_08018C4C
+	bl HitRegionTest
 	str r0, [sp, #44]
 	cmp r0, #0
 	bne _08013CB2

@@ -5,10 +5,10 @@
 @0000F6 F02A03  // LITERAL: F02A03 (usage not inferred)
 @000191 F01B02  // LITERAL: F01B02 (usage not inferred)
 @000252  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@000276 この先に…あるのか？？  // TODO: English translation
+@000276 この先に…あるのか？？  // EN: Is it...up ahead??
 @0002F2  C0D04 ［バッボ］ C0F04   // EN: [Babbo]
-@000316 …むぅ…かんじる！かんじるぞ！！  // TODO: English translation
-@000342 つよい魔力（まりょく）をかんじる！  // TODO: English translation
+@000316 …むぅ…かんじる！かんじるぞ！！  // EN: ...Hmm...I feel it! I feel it!!
+@000342 つよい魔力（まりょく）をかんじる！  // EN: I sense strong magic power!
 @0003F8 F38A03  // LITERAL: F38A03 (usage not inferred)
 @000498  C0D04 ［マール］ C0F04   // EN: [Marl]
-@0004BC （へへへ）  // TODO: English translation
+@0004BC （へへへ）  // EN: (Heh heh heh.)

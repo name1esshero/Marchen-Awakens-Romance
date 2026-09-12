@@ -5,135 +5,135 @@
 @00013E F01B01  // LITERAL: F01B01 (usage not inferred)
 @000176 F03A01  // LITERAL: F03A01 (usage not inferred)
 @0002CA  C0D04 ［ギンタ］  // EN: [Ginta]
-@0002E7  C0F04 まずは中に入ってみよう  // TODO: English translation
+@0002E7  C0F04 まずは中に入ってみよう  // EN: First, let's go inside.
 @00033A  C0D04 ［ジャック］  // EN: [Jack]
-@000359  C0F04 そっスね  // TODO: English translation
+@000359  C0F04 そっスね  // EN: Right.
 @000648 F08A02  // LITERAL: F08A02 (usage not inferred)
 @000751  C0D04 ［ナナシ］  // EN: [Nanashi]
-@00076E  C0F04 は〜〜ん…ここやね  // TODO: English translation
+@00076E  C0F04 は〜〜ん…ここやね  // EN: Hmm...so this is the place.
 @000829 F08A01  // LITERAL: F08A01 (usage not inferred)
 @00088D  C0D04 ［ナナシ］  // EN: [Nanashi]
-@0008AA  C0F04 …ヴェストリにこんなばしょが  // TODO: English translation
-@0008D9 あったなんて、きいたことないで？  // TODO: English translation
+@0008AA  C0F04 …ヴェストリにこんなばしょが  // EN: ...I've never heard of a place like this...
+@0008D9 あったなんて、きいたことないで？  // EN: ...in Vestri before.
 @000A4E  C0D04 ［ナナシ］  // EN: [Nanashi]
-@000A6B  C0F04 入り口がひとつ、ふたつ  // TODO: English translation
+@000A6B  C0F04 入り口がひとつ、ふたつ  // EN: One entrance, two...
 @000C20 F08A01  // LITERAL: F08A01 (usage not inferred)
 @000CB4  C0D04 ［ナナシ］  // EN: [Nanashi]
-@000CD1  C0F04 みっ…  // TODO: English translation
+@000CD1  C0F04 みっ…  // EN: Th...
 @000DDB F08A06  // LITERAL: F08A06 (usage not inferred)
 @000EF1 F39A01  // LITERAL: F39A01 (usage not inferred)
 @000FFA  C0D04 ［彫金師ベリーニ］  // EN: [Bellini the metalworker]
-@00101F  C0F04 …  // TODO: English translation
+@00101F  C0F04 …  // EN: ...
 @0010A4 F08A04  // LITERAL: F08A04 (usage not inferred)
 @00111F  C0D04 ［ナナシ］  // EN: [Nanashi]
-@00113C  C0F04 （…なんや、この  // TODO: English translation
-@00115F 　『いくうかん』は！）  // TODO: English translation
+@00113C  C0F04 （…なんや、この  // EN: (...What is this...
+@00115F 　『いくうかん』は！）  // EN: ...strange space?!)
 @0011E5 F01B08  // LITERAL: F01B08 (usage not inferred)
 @001249  C0D04 ［ギンタ］  // EN: [Ginta]
-@001266  C0F04 彫金師（ちょうきんし）！  // TODO: English translation
+@001266  C0F04 彫金師（ちょうきんし）！  // EN: Metalsmith!
 @00131B F08A06  // LITERAL: F08A06 (usage not inferred)
 @00137F  C0D04 ［ナナシ］  // EN: [Nanashi]
-@00139C  C0F04 ちょ…  // TODO: English translation
-@0013B5 『ちょう・きんし』さん？  // TODO: English translation
+@00139C  C0F04 ちょ…  // EN: Metal...
+@0013B5 『ちょう・きんし』さん？  // EN: ...Smith? Is that your name?
 @0014CF  C0D04 ［彫金師ベリーニ］  // EN: [Bellini the metalworker]
-@0014F4  C0F04 なまえのわける場所が  // TODO: English translation
-@00151B ちがうですのん  // TODO: English translation
+@0014F4  C0F04 なまえのわける場所が  // EN: You're splitting the word...
+@00151B ちがうですのん  // EN: ...in the wrong place, yep-yep.
 @001553  C0D04 ［ナナシ］  // EN: [Nanashi]
-@001570  C0F04 （の、のん？？）  // TODO: English translation
-@001593 あ、こ、こらすんまへん  // TODO: English translation
+@001570  C0F04 （の、のん？？）  // EN: (Y-yep-yep??)
+@001593 あ、こ、こらすんまへん  // EN: Oh, s-sorry about that.
 @0016AB  C0D04 ［彫金師ベリーニ］  // EN: [Bellini the metalworker]
-@0016D0  C0F04 へんてこりんな言葉づかいして  // TODO: English translation
-@0016FF おまえ、むかつくですのん  // TODO: English translation
+@0016D0  C0F04 へんてこりんな言葉づかいして  // EN: You talk funny...
+@0016FF おまえ、むかつくですのん  // EN: ...and you're annoying, yep-yep.
 @001787 F08A01  // LITERAL: F08A01 (usage not inferred)
 @0017EB  C0D04 ［ナナシ］  // EN: [Nanashi]
-@001808  C0F04 ……  // TODO: English translation
+@001808  C0F04 ……  // EN: ......
 @00188F F01B09  // LITERAL: F01B09 (usage not inferred)
 @0018F3  C0D04 ［ギンタ］  // EN: [Ginta]
-@001910  C0F04 い、いこうよ、ナナシ  // TODO: English translation
+@001910  C0F04 い、いこうよ、ナナシ  // EN: L-let's go, Nanashi.
 @0019A7 F08A05  // LITERAL: F08A05 (usage not inferred)
 @001A0B  C0D04 ［ナナシ］  // EN: [Nanashi]
-@001A28  C0F04 お、おう…  // TODO: English translation
+@001A28  C0F04 お、おう…  // EN: Y-yeah...
 @001BB7  C0D04 ［ナナシ］  // EN: [Nanashi]
-@001BD4  C0F04 ………  // TODO: English translation
+@001BD4  C0F04 ………  // EN: .........
 @001C4D  C0D04 ［彫金師ベリーニ］  // EN: [Bellini the metalworker]
-@001C72  C0F04 ………  // TODO: English translation
+@001C72  C0F04 ………  // EN: .........
 @001D1C F08A04  // LITERAL: F08A04 (usage not inferred)
 @001D80  C0D04 ［ナナシ］  // EN: [Nanashi]
-@001D9D  C0F04 （おいギンタ！  // TODO: English translation
-@001DBE 　あいつ、ゴッツこっち見とるで！！）  // TODO: English translation
+@001D9D  C0F04 （おいギンタ！  // EN: (Hey, Ginta!
+@001DBE 　あいつ、ゴッツこっち見とるで！！）  // EN: That kid's staring right at us!!)
 @001E52 F01B08  // LITERAL: F01B08 (usage not inferred)
 @001EB6  C0D04 ［ギンタ］  // EN: [Ginta]
-@001ED3  C0F04 （き、きにしない、きにしない！）  // TODO: English translation
+@001ED3  C0F04 （き、きにしない、きにしない！）  // EN: (D-don't worry about it!)
 @0020B3 F01B02  // LITERAL: F01B02 (usage not inferred)
 @0020EB F38A01  // LITERAL: F38A01 (usage not inferred)
 @00220F  C0D04 ［ギンタ］  // EN: [Ginta]
-@00222C  C0F04 くそっ…  // TODO: English translation
-@002247 みんな冷たいや  // TODO: English translation
+@00222C  C0F04 くそっ…  // EN: Damn...
+@002247 みんな冷たいや  // EN: Everyone's so cold.
 @0022AF  C0D04 ［マール］  // EN: [Marl]
-@0022CC  C0F04 ギンタさん…  // TODO: English translation
+@0022CC  C0F04 ギンタさん…  // EN: Ginta...
 @00231F F01B08  // LITERAL: F01B08 (usage not inferred)
 @00234D  C0D04 ［ギンタ］  // EN: [Ginta]
-@00236A  C0F04 気にすんなって！  // TODO: English translation
+@00236A  C0F04 気にすんなって！  // EN: Don't worry!
 @0023F1 F01B03  // LITERAL: F01B03 (usage not inferred)
 @00244F  C0D04 ［ギンタ］  // EN: [Ginta]
-@00246C  C0F04 オレひとりでも、さいごのパーツ  // TODO: English translation
-@00249D 手にいれてみせるからさ！！  // TODO: English translation
+@00246C  C0F04 オレひとりでも、さいごのパーツ  // EN: Even if I have to do it alone...
+@00249D 手にいれてみせるからさ！！  // EN: ...I'll get that last part!!
 @00251B F38A04  // LITERAL: F38A04 (usage not inferred)
 @002579  C0D04 ［マール］  // EN: [Marl]
 @002596  C0F04 は、はい！  // EN: Y-yes!
-@0025B3 ありがとうございます！！  // TODO: English translation
+@0025B3 ありがとうございます！！  // EN: Thank you so much!!
 @002680 F38A03  // LITERAL: F38A03 (usage not inferred)
 @0026DE  C0D04 ［マール］  // EN: [Marl]
-@0026FB  C0F04 （くくくくくく…）  // TODO: English translation
+@0026FB  C0F04 （くくくくくく…）  // EN: (Heh heh heh heh...)
 @002952 F07A01  // LITERAL: F07A01 (usage not inferred)
 @002A5B  C0D04 ［アルヴィス］  // EN: [Alviss]
 @002A7C  C0F04 なるほど…  // EN: I see...
 @002BEE  C0D04 ［アルヴィス］  // EN: [Alviss]
-@002C0F  C0F04 ヴェストリの近くに  // TODO: English translation
-@002C34 こんなところが…  // TODO: English translation
+@002C0F  C0F04 ヴェストリの近くに  // EN: A place like this...
+@002C34 こんなところが…  // EN: ...near Vestri...
 @002DFB F07A05  // LITERAL: F07A05 (usage not inferred)
 @002F11 F39A01  // LITERAL: F39A01 (usage not inferred)
 @00301A  C0D04 ［彫金師ベリーニ］  // EN: [Bellini the metalworker]
-@00303F  C0F04 …………  // TODO: English translation
+@00303F  C0F04 …………  // EN: ............
 @0030CA F07A06  // LITERAL: F07A06 (usage not inferred)
 @003145  C0D04 ［アルヴィス］  // EN: [Alviss]
-@003166  C0F04 な、なんだ！なんだ！このコは！  // TODO: English translation
-@003197 ばちがいにもホドがあるぞ！！  // TODO: English translation
+@003166  C0F04 な、なんだ！なんだ！このコは！  // EN: Wh-what! What is this child doing here?!
+@003197 ばちがいにもホドがあるぞ！！  // EN: Talk about being out of place!!
 @003223 F06A04  // LITERAL: F06A04 (usage not inferred)
 @003287  C0D04 ［エド］  // EN: [Ed]
-@0032A2  C0F04 彫金師ちゃんだそうだ  // TODO: English translation
+@0032A2  C0F04 彫金師ちゃんだそうだ  // EN: Apparently, that's a metalsmith.
 @0032F3  C0D04 ［彫金師ベリーニ］  // EN: [Bellini the metalworker]
-@003318  C0F04 …………  // TODO: English translation
+@003318  C0F04 …………  // EN: ............
 @0033A3 F07A06  // LITERAL: F07A06 (usage not inferred)
 @003407  C0D04 ［アルヴィス］  // EN: [Alviss]
-@003428  C0F04 ちょ…！  // TODO: English translation
-@003443 …近ごろの彫金師は  // TODO: English translation
+@003428  C0F04 ちょ…！  // EN: A metal...!
+@003443 …近ごろの彫金師は  // EN: ...Metalsmiths these days...
 @00347F  C0D04 ［アルヴィス］  // EN: [Alviss]
-@0034A0  C0F04 す、すすんでるというか……  // TODO: English translation
-@0034CD なんというか…  // TODO: English translation
+@0034A0  C0F04 す、すすんでるというか……  // EN: ...are rather advanced...
+@0034CD なんというか…  // EN: ...or something...
 @0035F4  C0D04 ［彫金師ベリーニ］  // EN: [Bellini the metalworker]
-@003619  C0F04 おい！！  // TODO: English translation
+@003619  C0F04 おい！！  // EN: Hey!!
 @0036A4 F07A05  // LITERAL: F07A05 (usage not inferred)
 @003708  C0D04 ［アルヴィス］  // EN: [Alviss]
-@003729  C0F04 うわ！  // TODO: English translation
+@003729  C0F04 うわ！  // EN: Whoa!
 @00394A  C0D04 ［彫金師ベリーニ］  // EN: [Bellini the metalworker]
-@00396F  C0F04 そこはかとなく  // TODO: English translation
-@003990 ムカつくヤツですのん  // TODO: English translation
+@00396F  C0F04 そこはかとなく  // EN: Something about you...
+@003990 ムカつくヤツですのん  // EN: ...gets on my nerves, yep-yep.
 @003ABD  C0D04 ［彫金師ベリーニ］  // EN: [Bellini the metalworker]
-@003AE2  C0F04 こっち来い！  // TODO: English translation
-@003B01 ぶんなぐるですのん！！  // TODO: English translation
+@003AE2  C0F04 こっち来い！  // EN: Get over here!
+@003B01 ぶんなぐるですのん！！  // EN: I'll punch you, yep-yep!!
 @003BE3  C0D04 ［アルヴィス］  // EN: [Alviss]
-@003C04  C0F04 あ…あの  // TODO: English translation
-@003C1F その…えー  // TODO: English translation
+@003C04  C0F04 あ…あの  // EN: Ah...um...
+@003C1F その…えー  // EN: Well...uh...
 @003CCF F04A04  // LITERAL: F04A04 (usage not inferred)
 @003D33  C0D04 ［スノウ］  // EN: [Snow]
-@003D50  C0F04 さ、さ！  // TODO: English translation
-@003D6B 気にしないでいそごうよ！！  // TODO: English translation
+@003D50  C0F04 さ、さ！  // EN: C-come on!
+@003D6B 気にしないでいそごうよ！！  // EN: Let's just hurry along!!
 @003DF5 F07A06  // LITERAL: F07A06 (usage not inferred)
 @003E59  C0D04 ［アルヴィス］  // EN: [Alviss]
-@003E7A  C0F04 あ、ああ…  // TODO: English translation
+@003E7A  C0F04 あ、ああ…  // EN: Y-yeah...
 @003EC1  C0D04 ［アルヴィス］  // EN: [Alviss]
-@003EE2  C0F04 （気にしないでって…いわれても）  // TODO: English translation
+@003EE2  C0F04 （気にしないでって…いわれても）  // EN: (Easy for you to say...)
 @003F60  C0D04 ［彫金師ベリーニ］  // EN: [Bellini the metalworker]
-@003F85  C0F04 …………  // TODO: English translation
-@001291 <F0><56>ＲＭをつくってくれるんだ  // TODO: English translation
+@003F85  C0F04 …………  // EN: ............
+@001291 <F0><56>ＲＭをつくってくれるんだ  // EN: They make ÄRMs for us.

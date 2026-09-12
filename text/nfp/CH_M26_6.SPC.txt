@@ -10,14 +10,14 @@
 @0007A0 A  // LITERAL: A (usage not inferred)
 @0009AC F01B05  // LITERAL: F01B05 (usage not inferred)
 @000AAC  C0D04 ［ギンタ］  // EN: [Ginta]
-@000AC9  C0F04 …  // TODO: English translation
+@000AC9  C0F04 …  // EN: ...
 @000B18 F38A01  // LITERAL: F38A01 (usage not inferred)
 @000C18  C0D04 ［マール］  // EN: [Marl]
-@000C35  C0F04 まってたよ…  // TODO: English translation
+@000C35  C0F04 まってたよ…  // EN: I've been waiting...
 @000CC4 F38A03  // LITERAL: F38A03 (usage not inferred)
 @000D28  C0D04 ［マール］  // EN: [Marl]
-@000D45  C0F04 かえしてくれる気になったかい？  // TODO: English translation
-@000D76 バッボを…さ  // TODO: English translation
+@000D45  C0F04 かえしてくれる気になったかい？  // EN: Have you decided to return him?
+@000D76 バッボを…さ  // EN: Babbo, I mean.
 @000F75 EF_GEN03  // LITERAL: EF_GEN03 (usage not inferred)
 @00104D LAST00  // LITERAL: LAST00 (usage not inferred)
 @00118F 75A01  // LITERAL: 75A01 (usage not inferred)
@@ -30,87 +30,87 @@
 @001A94 76A03  // LITERAL: 76A03 (usage not inferred)
 @001CB6 LAST03  // LITERAL: LAST03 (usage not inferred)
 @002178 78A01  // LITERAL: 78A01 (usage not inferred)
-@00234E ォォォオオオオオオオォォォォ…  // TODO: English translation
+@00234E ォォォオオオオオオオォォォォ…  // EN: Oooooooooh...
 @0025A1 F01B04  // LITERAL: F01B04 (usage not inferred)
 @0026A1  C0D04 ［ギンタ］  // EN: [Ginta]
-@0026BE  C0F04 おまえ…かわいそうなヤツだな  // TODO: English translation
+@0026BE  C0F04 おまえ…かわいそうなヤツだな  // EN: You're...a pitiful guy.
 @002727 F38A04  // LITERAL: F38A04 (usage not inferred)
 @002827  C0D04 ［マール］  // EN: [Marl]
-@002844  C0F04 はは！  // TODO: English translation
-@00285D キミにいわれたくないね  // TODO: English translation
+@002844  C0F04 はは！  // EN: Ha ha!
+@00285D キミにいわれたくないね  // EN: Not something I want to hear from you.
 @0028AD F38A01  // LITERAL: F38A01 (usage not inferred)
 @0028DB  C0D04 ［マール］  // EN: [Marl]
-@0028F8  C0F04 仲間にめいわくかけて一人でぼうそうして…  // TODO: English translation
-@002933 そして一人でおちこんでいれば  // TODO: English translation
+@0028F8  C0F04 仲間にめいわくかけて一人でぼうそうして…  // EN: Running wild alone and causing trouble for your friends...
+@002933 そして一人でおちこんでいれば  // EN: ...then moping all by yourself...
 @0029BF F38A04  // LITERAL: F38A04 (usage not inferred)
 @002A23  C0D04 ［マール］  // EN: [Marl]
-@002A40  C0F04 世話はないな  // TODO: English translation
-@002A5F ははははは！！  // TODO: English translation
+@002A40  C0F04 世話はないな  // EN: ...what a mess you are.
+@002A5F ははははは！！  // EN: Ha ha ha ha ha!!
 @002ADD F38A01  // LITERAL: F38A01 (usage not inferred)
 @002B51 F02A05  // LITERAL: F02A05 (usage not inferred)
 @002C51  C0D04 ［バッボ］  // EN: [Babbo]
-@002C6E  C0F04 ぬぅ〜〜〜！  // TODO: English translation
-@002C8D どこまでにくにくしいヤツ！！  // TODO: English translation
+@002C6E  C0F04 ぬぅ〜〜〜！  // EN: Grrrr!
+@002C8D どこまでにくにくしいヤツ！！  // EN: How infuriating can you be?!
 @002D19 F38A03  // LITERAL: F38A03 (usage not inferred)
 @002D7D  C0D04 ［マール］  // EN: [Marl]
-@002D9A  C0F04 いっておくけど…  // TODO: English translation
+@002D9A  C0F04 いっておくけど…  // EN: Just so you know...
 @002DE7  C0D04 ［マール］  // EN: [Marl]
-@002E04  C0F04 この『タロス』をたおそうなんて  // TODO: English translation
-@002E35 かんがえないほうがいいと思うよ  // TODO: English translation
+@002E04  C0F04 この『タロス』をたおそうなんて  // EN: ...I wouldn't even think about...
+@002E35 かんがえないほうがいいと思うよ  // EN: ...trying to defeat Talos.
 @002EC3 F01B05  // LITERAL: F01B05 (usage not inferred)
 @002F37 F01B05  // LITERAL: F01B05 (usage not inferred)
 @002FD2 F02A04  // LITERAL: F02A04 (usage not inferred)
 @003036  C0D04 ［ギンタ］  // EN: [Ginta]
-@003053  C0F04 なに？  // TODO: English translation
+@003053  C0F04 なに？  // EN: What?
 @0030DC F38A01  // LITERAL: F38A01 (usage not inferred)
 @003140  C0D04 ［マール］  // EN: [Marl]
-@00315D  C0F04 こいつは、みっつのパーツのときに  // TODO: English translation
-@003190 こうげきされた力を吸収する  // TODO: English translation
+@00315D  C0F04 こいつは、みっつのパーツのときに  // EN: While it was in three parts...
+@003190 こうげきされた力を吸収する  // EN: ...it absorbed the power of attacks against it.
 @003237 F09A07  // LITERAL: F09A07 (usage not inferred)
 @00335E  C0D04 ［ドロシー］  // EN: [Dorothy]
-@00337D  C0F04 ？？  // TODO: English translation
+@00337D  C0F04 ？？  // EN: ??
 @0033BE  C0D04 ［マール］  // EN: [Marl]
-@0033DB  C0F04 うでとあたまはバッボの力  // TODO: English translation
+@0033DB  C0F04 うでとあたまはバッボの力  // EN: Its arms and head absorbed Babbo's power.
 @003476 F02A03  // LITERAL: F02A03 (usage not inferred)
 @0034DA  C0D04 ［バッボ］  // EN: [Babbo]
-@0034F7  C0F04 …  // TODO: English translation
+@0034F7  C0F04 …  // EN: ...
 @003536  C0D04 ［マール］  // EN: [Marl]
-@003553  C0F04 あしはそこにいるマヌケな  // TODO: English translation
-@00357E 魔女（まじょ）の力  // TODO: English translation
+@003553  C0F04 あしはそこにいるマヌケな  // EN: Its legs absorbed the power...
+@00357E 魔女（まじょ）の力  // EN: ...of that foolish witch over there.
 @003636 F09A02  // LITERAL: F09A02 (usage not inferred)
 @0036D0  C0D04 ［ドロシー］  // EN: [Dorothy]
-@0036EF  C0F04 マヌケでわるかったわね！  // TODO: English translation
+@0036EF  C0F04 マヌケでわるかったわね！  // EN: Well, excuse me for being foolish!
 @00378A F38A03  // LITERAL: F38A03 (usage not inferred)
 @0037EE  C0D04 ［マール］  // EN: [Marl]
-@00380B  C0F04 タロスはもともとつよいボディを  // TODO: English translation
-@00383C もっているうえに、  // TODO: English translation
+@00380B  C0F04 タロスはもともとつよいボディを  // EN: Talos already has...
+@00383C もっているうえに、  // EN: ...a powerful body...
 @003878  C0D04 ［マール］  // EN: [Marl]
-@003895  C0F04 きみたちの力を  // TODO: English translation
-@0038B6 それぞれ吸収している…  // TODO: English translation
+@003895  C0F04 きみたちの力を  // EN: ...and now it has absorbed...
+@0038B6 それぞれ吸収している…  // EN: ...each of your powers...
 @0038F6  C0D04 ［マール］  // EN: [Marl]
-@003944 コイツにかなうヤツなんていないのさ！  // TODO: English translation
+@003944 コイツにかなうヤツなんていないのさ！  // EN: No one can beat this thing!
 @0039F5 F06A01  // LITERAL: F06A01 (usage not inferred)
 @003AF5  C0D04 ［エド］  // EN: [Ed]
-@003B10  C0F04 ながいせつめいだぜ…  // TODO: English translation
+@003B10  C0F04 ながいせつめいだぜ…  // EN: That's enough explaining...
 @003BA7 F06A04  // LITERAL: F06A04 (usage not inferred)
 @003C0B  C0D04 ［エド］  // EN: [Ed]
-@003C26  C0F04 おいギンタ！  // TODO: English translation
+@003C26  C0F04 おいギンタ！  // EN: Hey, Ginta!
 @003CD2 F01B11  // LITERAL: F01B11 (usage not inferred)
 @003DD2  C0D04 ［ギンタ］  // EN: [Ginta]
-@003DEF  C0F04 …  // TODO: English translation
+@003DEF  C0F04 …  // EN: ...
 @003E2E  C0D04 ［エド］  // EN: [Ed]
-@003E49  C0F04 てめぇでまいたタネだ  // TODO: English translation
+@003E49  C0F04 てめぇでまいたタネだ  // EN: You sowed these seeds.
 @003EE0 F06A02  // LITERAL: F06A02 (usage not inferred)
 @003F44  C0D04 ［エド］  // EN: [Ed]
-@003F5F  C0F04 てめぇでかりとれ！！  // TODO: English translation
+@003F5F  C0F04 てめぇでかりとれ！！  // EN: You reap what you sow!!
 @003FF6 F38A05  // LITERAL: F38A05 (usage not inferred)
 @00405A  C0D04 ［マール］  // EN: [Marl]
-@004077  C0F04 は！  // TODO: English translation
+@004077  C0F04 は！  // EN: Ha!
 @0040B8  C0D04 ［マール］  // EN: [Marl]
-@0040D5  C0F04 ここまで言ってやっても  // TODO: English translation
-@0040FE まだこの『タロス』にはむかうわけか！！  // TODO: English translation
+@0040D5  C0F04 ここまで言ってやっても  // EN: Even after all that...
+@0040FE まだこの『タロス』にはむかうわけか！！  // EN: ...you still intend to defy Talos?!
 @004194 F38A03  // LITERAL: F38A03 (usage not inferred)
 @0041F8  C0D04 ［マール］  // EN: [Marl]
-@004215  C0F04 なら…こいよ！！！  // TODO: English translation
+@004215  C0F04 なら…こいよ！！！  // EN: Then...come on!!!
 @004367 F01B16  // LITERAL: F01B16 (usage not inferred)
-@003913  C0F04 だれが何の<F0><56>ＲＭをつかったって  // TODO: English translation
+@003913  C0F04 だれが何の<F0><56>ＲＭをつかったって  // EN: No matter who uses which ÄRM...

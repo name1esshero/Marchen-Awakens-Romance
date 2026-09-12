@@ -1,0 +1,36 @@
+#ifndef HIT_REGION_H
+#define HIT_REGION_H
+#include "gba/types.h"
+
+/* Sixteen 16-byte regions at engine state +0x1090 (lookup 08011464).
+ * 08018C4C compares the actor's translated bounding box against these fields.
+ * Mode 0: strict overlap. Mode 1: strict containment (touching edges fails).
+ * Other modes do not hit. Inactive records retain their rectangle and mode.
+ * A hit returns the first matching region index + 1; no hit returns zero.
+ */
+struct HitRect
+{
+    s16 x, y, width, height;
+};
+
+struct HitRegion
+{
+    s32 active;
+    struct HitRect rect;
+    s32 mode;
+};
+
+/* Actor bounds use corner offsets, unlike a region's width/height fields. */
+struct HitBounds
+{
+    s16 left, top, right, bottom;
+};
+s32 HitRegionTest(s16 x, s16 y, const struct HitBounds *bounds);
+
+/* The original lookup does not bounds-check id; valid table indices are 0..15. */
+struct HitRegion *sub_08011464(s32 id);
+void HitRegionDisable(s32 id);
+void HitRegionDisableAll(void);
+void HitRegionInit(s32 id, s32 x, s32 y, s32 width, s32 height);
+void HitRegionSetRect(s32 id, s32 x, s32 y, s32 width, s32 height);
+#endif

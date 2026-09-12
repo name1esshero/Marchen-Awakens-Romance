@@ -2,6 +2,6 @@
 // CODE offsets and Japanese are checked against the named source.
 // Regenerate comments with tools/translate_comments.py; this copy is not built.
 
-@000273 ゆっくり見ていってね  // TODO: English translation
-@0002F8  C0F04 もっと買ってかない？  // TODO: English translation
-@00046E  C0F04 何を売ってくれるの？  // TODO: English translation
+@000273 ゆっくり見ていってね  // EN: Take your time looking around.
+@0002F8  C0F04 もっと買ってかない？  // EN: Would you like to buy more?
+@00046E  C0F04 何を売ってくれるの？  // EN: What would you like to sell?

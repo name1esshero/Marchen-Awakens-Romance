@@ -4525,32 +4525,10 @@ _0800259C:
 
 @ 002604..002630 is decompiled as KmpInitViewport(); see src/decompiled.json
 
-	.section .rom.00002630, "ax"
-	.syntax unified
+@ 002630..002650 is decompiled as KmpRenderViewport(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08002630
-sub_08002630:
-	push {lr}
-	adds r3, r0, #0
-	movs r0, #8
-	ldrsb r0, [r3, r0]
-	cmp r0, #0
-	bne _08002644
-	adds r0, r3, #0
-	bl sub_08002650
-	b _0800264A
-	.global _08002644
-_08002644:
-	adds r0, r3, #0
-	bl sub_08002798
-	.global _0800264A
-_0800264A:
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
+	.section .rom.00002650, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -6321,37 +6299,9 @@ _08003278:
 _0800327C:
 	.4byte 0x00003BD2
 
-	.thumb_func
-	.thumb
-	.global sub_08003280
-sub_08003280:
-	push {r4, lr}
-	ldr r4, [sp, #8]
-	str r1, [r0, #32]
-	str r2, [r0, #36]
-	str r3, [r0, #40]
-	str r4, [r0, #44]
-	pop {r4}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
+@ 003280..003294 is decompiled as KmpSetClip(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08003294
-sub_08003294:
-	movs r1, #0
-	str r1, [r0, #32]
-	str r1, [r0, #36]
-	ldr r2, [r0, #0]
-	ldr r1, [r2, #20]
-	str r1, [r0, #40]
-	ldr r1, [r2, #24]
-	str r1, [r0, #44]
-	bx lr
-	.byte 0x00
-	.byte 0x00
+@ 003294..0032A8 is decompiled as KmpResetClip(); see src/decompiled.json
 
 @ 0032A8..0032AC is decompiled as GetEntityField20(); see src/decompiled.json
 
@@ -6361,100 +6311,7 @@ sub_08003294:
 
 @ 0032B4..0032B8 is decompiled as GetEntityField2C(); see src/decompiled.json
 
-	.section .rom.000032B8, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_080032B8
-sub_080032B8:
-	push {r4, r5, r6, lr}
-	mov r6, r8
-	push {r6}
-	sub sp, #28
-	adds r4, r0, #0
-	adds r5, r1, #0
-
-	.thumb_func
-	.thumb
-	.global sub_080032C4
-sub_080032C4:
-	adds r6, r2, #0
-	lsls r5, r5, #16
-	asrs r5, r5, #16
-	lsls r6, r6, #16
-
-	.thumb_func
-	.thumb
-	.global sub_080032CC
-sub_080032CC:
-	asrs r6, r6, #16
-	bl sub_08006A1C
-	add r0, sp, #12
-	adds r1, r4, #0
-	bl strcpy
-	ldr r1, _08003340
-
-	.thumb_func
-	.thumb
-	.global sub_080032DC
-sub_080032DC:
-	add r0, sp, #12
-	bl strcat
-	add r0, sp, #12
-	bl strupr
-	movs r0, #192
-	lsls r0, r0, #19
-	mov r8, r0
-	movs r4, #0
-	str r4, [sp, #0]
-
-	.thumb_func
-	.thumb
-	.global sub_080032F2
-sub_080032F2:
-	str r4, [sp, #4]
-	movs r0, #3
-	str r0, [sp, #8]
-	add r0, sp, #12
-	mov r1, r8
-	movs r2, #0
-	movs r3, #0
-	bl sub_08003178
-	str r4, [sp, #0]
-	str r4, [sp, #4]
-	str r4, [sp, #8]
-	add r0, sp, #12
-	mov r1, r8
-	movs r2, #1
-	movs r3, #1
-	bl sub_08003178
-	ldr r4, _08003344
-	lsls r5, r5, #16
-	lsls r6, r6, #16
-	adds r0, r4, #0
-	adds r1, r5, #0
-	adds r2, r6, #0
-	bl sub_08002630
-	adds r4, #252
-	adds r0, r4, #0
-	adds r1, r5, #0
-	adds r2, r6, #0
-	bl sub_08002630
-	add sp, #28
-	pop {r3}
-	mov r8, r3
-	pop {r4, r5, r6}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _08003340
-_08003340:
-	.4byte 0x08086A5C  @ ROM+0x86A5C
-	.global _08003344
-_08003344:
-	.4byte 0x03003BC4  @ IWRAM+0x3BC4
+@ 0032B8..003348 is decompiled as KmpLoadField(); see src/decompiled.json
 
 @ 003348..003358 is decompiled as SetEntityRenderOverride(); see src/decompiled.json
 
@@ -13838,7 +13695,7 @@ _0800645A:
 	mov r0, r8
 	movs r1, #0
 	movs r2, #0
-	bl sub_080032B8
+	bl KmpLoadField
 	bl sub_08006A40
 	ldr r0, _08006484
 	b _080066A8
@@ -14041,7 +13898,7 @@ _080065F4:
 	mov r0, r8
 	movs r1, #0
 	movs r2, #0
-	bl sub_080032B8
+	bl KmpLoadField
 	movs r0, #0
 	movs r1, #0
 	bl sub_0800A1C4
@@ -17805,7 +17662,7 @@ _08007D6A:
 	movs r0, #26
 	ldrsh r2, [r7, r0]
 	adds r0, r4, #0
-	bl sub_080032B8
+	bl KmpLoadField
 	bl sub_08008C8C
 	movs r4, #0
 	.global _08007D8C
@@ -18099,7 +17956,7 @@ _08007FB0:
 sub_08007FCA:
 	ldrsh r2, [r7, r0]
 	adds r0, r4, #0
-	bl sub_080032B8
+	bl KmpLoadField
 	bl sub_08008C8C
 	movs r4, #0
 	.global _08007FD8

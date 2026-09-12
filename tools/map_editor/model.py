@@ -1,5 +1,4 @@
 """Source-level map/event editor model. All writes are validated before commit."""
-import copy
 import hashlib
 import json
 from pathlib import Path
@@ -43,6 +42,7 @@ def map_document(blob):
 
 
 def compile_map(blob,doc):
+    if not isinstance(doc,dict):raise ValueError('Invalid map document')
     base=map_document(blob)
     for field in ('version','source_sha256','width','height'):
         if doc.get(field)!=base[field]:raise ValueError('KMP source/header revision differs')
@@ -116,7 +116,7 @@ class Project:
         doc=read(path) if path.exists() else dict(version=1,source_sha256=sha(original),arguments={})
         result=script_events.apply(blob,original,doc)
         return dict(name=name,revision=sha(original+(self.root/e['text']).read_bytes()+json.dumps(doc,sort_keys=True).encode()),
-                    document=doc,calls=script_events.calls(result),references=list(named_scripts.records(original).values()) if False else [],
+                    document=doc,calls=script_events.calls(result),
                     text_path=e['text'])
 
     def load(self,name):
@@ -137,24 +137,28 @@ class Project:
         colors=gfx.read_jasc(str(self.root/entry['palette_path']))
         palette_base=entry.get('palette_bank_base',0)
         colors=[(0,0,0)]*(palette_base*16)+colors
+        unresolved=[]
         for plane in document['planes']:
-            for word in plane['entries']:
-                if word&1023>=count or word>>12>=palette_base+entry['palette_banks']:raise ValueError('Tile/palette reference outside decoded art')
+            for cell,word in enumerate(plane['entries']):
+                if word&1023>=count or not palette_base<=word>>12<palette_base+entry['palette_banks']:
+                    unresolved.append(dict(plane=plane['index'],cell=cell,word=word))
         dependencies=[original,tile_raw,json.dumps(colors).encode(),json.dumps(document,sort_keys=True).encode()]
         associated=[s for s in self.scripts if s==name[:-4]+'.SPC']
         return dict(name=name,revision=sha(b''.join(dependencies)),document=document,
                     tiles=[[v for row in t for v in row] for t in mapped_images.tiles_from_bytes(tile_raw)],palette=colors,
                     palette_base=palette_base,palette_banks=entry['palette_banks'],scripts=associated,
-                    source=member['path'],_base=original)
+                    source=member['path'],unresolved=unresolved,_base=original)
 
     def save(self,name,payload):
+        if not isinstance(payload,dict):raise ValueError('Invalid save request')
         current=self.load(name)
         if payload.get('revision')!=current['revision']:raise ValueError('Map changed on disk; reload before saving')
         doc=payload['document'];compile_map(current['_base'],doc)
-        for plane in doc['planes']:
-            for word in plane['entries']:
+        for previous,plane in zip(current['document']['planes'],doc['planes']):
+            for cell,word in enumerate(plane['entries']):
                 if word&1023>=len(current['tiles']) or not current['palette_base']<=word>>12<current['palette_base']+current['palette_banks']:
-                    raise ValueError('Tile/palette outside available art')
+                    if word!=previous['entries'][cell]:
+                        raise ValueError('Cannot introduce an unresolved tile/palette reference')
         writes={self.root/override_path(name):(json.dumps(doc,indent=2)+'\n').encode()}
         script=payload.get('script')
         if script:

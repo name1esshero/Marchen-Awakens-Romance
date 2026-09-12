@@ -163,12 +163,14 @@ $(BUILD)/.palettes.stamp: $(wildcard graphics/palettes/*.pal) \
 	@touch $@
 
 $(BUILD)/.named-scripts.stamp: $(wildcard scripts/nfp/*.bin) $(wildcard text/nfp/*.txt) \
+                              maps/events $(wildcard maps/events/*.json) tools/script_events.py \
                               scripts/nfp/manifest.json tools/named_scripts.py \
                               tools/extract_scrp_text.py tools/text_codec.py tools/lz77.py
 	$(PYTHON) tools/named_scripts.py build
 	@touch $@
 
 $(BUILD)/.named-maps.stamp: $(wildcard maps/nfp/*.bin) \
+                           maps/editable $(wildcard maps/editable/*.json) tools/map_editor/model.py \
                            $(wildcard graphics/tilemaps/nfp/*.bin) \
                            maps/nfp/manifest.json assets.json $(MAPPED_LAYOUTS) tools/mapped_images.py tools/affine_images.py tools/regular_images.py tools/named_maps.py tools/nfp.py
 	$(PYTHON) tools/named_maps.py build
@@ -234,6 +236,10 @@ tidy:
 
 # Documentation is published separately from the decomp source branch.
 .PHONY: galleries site docs-fetch
+.PHONY: map-editor
+map-editor:
+	$(PYTHON) tools/map_editor/server.py
+
 galleries:
 	$(PYTHON) tools/galleries.py
 

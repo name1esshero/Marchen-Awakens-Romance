@@ -9,48 +9,48 @@
 @00062B F08A05  // LITERAL: F08A05 (usage not inferred)
 @00072C F08A05  // LITERAL: F08A05 (usage not inferred)
 @00087A  C0D04 ［ナナシ］  // EN: [Nanashi]
-@000897  C0F04 おまえら、もっとキビキビと  // TODO: English translation
-@0008C4 さがさんかい！  // TODO: English translation
+@000897  C0F04 おまえら、もっとキビキビと  // EN: You lot, get a move on...
+@0008C4 さがさんかい！  // EN: ...and search properly!
 @00094A  C0D04 ［手下１］  // EN: [Henchman 1]
-@000967  C0F04 ボスのせつめいじゃ  // TODO: English translation
-@00098C ぜんぜんわかりませんよ〜〜  // TODO: English translation
+@000967  C0F04 ボスのせつめいじゃ  // EN: With your explanation, boss...
+@00098C ぜんぜんわかりませんよ〜〜  // EN: ...we haven't got a clue!
 @000A16 F08A06  // LITERAL: F08A06 (usage not inferred)
 @000A7A  C0D04 ［ナナシ］  // EN: [Nanashi]
-@000A97  C0F04 なにを！　あんなに  // TODO: English translation
-@000ABC くわしくせつめいしてやったのに！  // TODO: English translation
+@000A97  C0F04 なにを！　あんなに  // EN: What?! I went to all that trouble...
+@000ABC くわしくせつめいしてやったのに！  // EN: ...explaining it in detail!
 @000B06  C0D04 ［手下１］  // EN: [Henchman 1]
-@000B23  C0F04 そんなこと言ったって…  // TODO: English translation
+@000B23  C0F04 そんなこと言ったって…  // EN: Even so...
 @000B76  C0D04 ［手下２］  // EN: [Henchman 2]
-@000B93  C0F04 ぐたい的に、どんな形なんです？  // TODO: English translation
-@000BC4 絵にでもかいてもらえませんか  // EN: Could you draw a picture of it for me?
+@000B93  C0F04 ぐたい的に、どんな形なんです？  // EN: What shape is it, exactly?
+@000BC4 絵にでもかいてもらえませんか  // EN: Could you draw it for us?
 @000C1A F08A02  // LITERAL: F08A02 (usage not inferred)
 @000C48  C0D04 ［ナナシ］  // EN: [Nanashi]
 @000C65  C0F04 よっしゃ！  // EN: All right!
-@000C82 絵にでもかいてもらえませんか  // EN: Could you draw a picture of it for me?
+@000C82 絵にでもかいてもらえませんか  // EN: Could you draw it for us?
 @000CD8 F08A01  // LITERAL: F08A01 (usage not inferred)
 @000D06  C0D04 ［ナナシ］  // EN: [Nanashi]
-@000D23  C0F04 …  // TODO: English translation
+@000D23  C0F04 …  // EN: ...
 @000D99 F08A01  // LITERAL: F08A01 (usage not inferred)
 @000DC7  C0D04 ［ナナシ］  // EN: [Nanashi]
-@000DE4  C0F04 こう、こうで…  // TODO: English translation
+@000DE4  C0F04 こう、こうで…  // EN: It goes like this, and this...
 @000EAB F08A05  // LITERAL: F08A05 (usage not inferred)
 @000F45  C0D04 ［ナナシ］  // EN: [Nanashi]
-@000F62  C0F04 こうや！！  // TODO: English translation
+@000F62  C0F04 こうや！！  // EN: ...and like this!!
 @0014B8 F08A01  // LITERAL: F08A01 (usage not inferred)
 @001591  C0D04 ［手下１］  // EN: [Henchman 1]
-@0015AE  C0F04 …  // TODO: English translation
+@0015AE  C0F04 …  // EN: ...
 @00160E  C0D04 ［手下２］  // EN: [Henchman 2]
-@00162B  C0F04 …  // TODO: English translation
+@00162B  C0F04 …  // EN: ...
 @00169B F08A01  // LITERAL: F08A01 (usage not inferred)
 @0016C9  C0D04 ［ナナシ］  // EN: [Nanashi]
-@0016E6  C0F04 …  // TODO: English translation
+@0016E6  C0F04 …  // EN: ...
 @001756 F08A06  // LITERAL: F08A06 (usage not inferred)
 @001784  C0D04 ［ナナシ］  // EN: [Nanashi]
-@0017A1  C0F04 …はよ、さがしてぇな  // TODO: English translation
+@0017A1  C0F04 …はよ、さがしてぇな  // EN: ...Just hurry up and find it.
 @001802 F08A06  // LITERAL: F08A06 (usage not inferred)
 @001830  C0D04 ［ナナシ］  // EN: [Nanashi]
-@00184D  C0F04 たのむから、な？な？  // TODO: English translation
+@00184D  C0F04 たのむから、な？な？  // EN: I'm begging you, all right? Please?
 @00189E  C0D04 ［手下１］  // EN: [Henchman 1]
-@0018BB  C0F04 …  // TODO: English translation
+@0018BB  C0F04 …  // EN: ...
 @0018FA  C0D04 ［手下２］  // EN: [Henchman 2]
-@001917  C0F04 …  // TODO: English translation
+@001917  C0F04 …  // EN: ...

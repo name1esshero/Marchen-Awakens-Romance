@@ -5,7 +5,7 @@
 @00014F F01A01  // LITERAL: F01A01 (usage not inferred)
 @000187 F09A01  // LITERAL: F09A01 (usage not inferred)
 @0002DB  C0D04 ［ドロシー］  // EN: [Dorothy]
-@0002FA  C0F04 そこ穴あいてるわよ！  // TODO: English translation
-@000321 気をつけてね！  // TODO: English translation
+@0002FA  C0F04 そこ穴あいてるわよ！  // EN: There's a hole there!
+@000321 気をつけてね！  // EN: Watch out!
 @000359  C0D04 ［ギンタ］  // EN: [Ginta]
 @000376  C0F04 う…うん…  // EN: Y-yeah...

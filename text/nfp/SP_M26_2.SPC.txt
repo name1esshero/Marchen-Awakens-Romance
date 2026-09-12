@@ -5,26 +5,26 @@
 @000164 A  // LITERAL: A (usage not inferred)
 @000603 F01B01  // LITERAL: F01B01 (usage not inferred)
 @000703  C0D04 ［ギンタ］  // EN: [Ginta]
-@000720  C0F04 これか…！  // TODO: English translation
+@000720  C0F04 これか…！  // EN: This is it...!
 @0007AD F38A02  // LITERAL: F38A02 (usage not inferred)
 @0008AD  C0D04 ［マール］  // EN: [Marl]
-@0008CA  C0F04 では…あけますよ！  // TODO: English translation
+@0008CA  C0F04 では…あけますよ！  // EN: All right...I'll open it!
 @00095F F02A01  // LITERAL: F02A01 (usage not inferred)
 @000A5F  C0D04 ［バッボ］  // EN: [Babbo]
-@000A7C  C0F04 （ごくっ！）  // TODO: English translation
+@000A7C  C0F04 （ごくっ！）  // EN: (Gulp!)
 @000DAE EF_GEN03  // LITERAL: EF_GEN03 (usage not inferred)
 @000E9A LAST02  // LITERAL: LAST02 (usage not inferred)
-@001119 グゥゥゥゥウウウウウウウゥゥゥゥゥ…  // TODO: English translation
+@001119 グゥゥゥゥウウウウウウウゥゥゥゥゥ…  // EN: Grrrrrrrrrrrrrr...
 @001315 F01B01  // LITERAL: F01B01 (usage not inferred)
 @001415  C0D04 ［ギンタ］  // EN: [Ginta]
-@001432  C0F04 出たな！！  // TODO: English translation
+@001432  C0F04 出たな！！  // EN: There you are!!
 @001489 F01B03  // LITERAL: F01B03 (usage not inferred)
 @0014B7  C0D04 ［ギンタ］  // EN: [Ginta]
-@0014D4  C0F04 いしアタマたいけつだ、バッボ！  // TODO: English translation
+@0014D4  C0F04 いしアタマたいけつだ、バッボ！  // EN: It's a battle of hard heads, Babbo!
 @00153F F02A02  // LITERAL: F02A02 (usage not inferred)
 @00163F  C0D04 ［バッボ］  // EN: [Babbo]
-@00165C  C0F04 なら、このワシがまけるわけには  // TODO: English translation
-@00168D いかんな！！  // TODO: English translation
+@00165C  C0F04 なら、このワシがまけるわけには  // EN: Then I certainly...
+@00168D いかんな！！  // EN: ...cannot lose!!
 @0016D3 F01B02  // LITERAL: F01B02 (usage not inferred)
 @001701  C0D04 ［ギンタ］  // EN: [Ginta]
-@00171E  C0F04 いっくぜーーーーーーーー！！  // TODO: English translation
+@00171E  C0F04 いっくぜーーーーーーーー！！  // EN: Here we gooooo!!

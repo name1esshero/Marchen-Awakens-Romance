@@ -8,21 +8,21 @@
 @000297 71A00  // LITERAL: 71A00 (usage not inferred)
 @0006D7 F15A03  // LITERAL: F15A03 (usage not inferred)
 @0007B0  C0D04 ［イアン］  // EN: [Ian]
-@0007CD  C0F04 で？  // TODO: English translation
-@0007E4 どうなのよ？  // TODO: English translation
+@0007CD  C0F04 で？  // EN: So?
+@0007E4 どうなのよ？  // EN: What do you know?
 @00081A  C0D04 ［街の人］  // EN: [Townsperson]
-@000837  C0F04 た、たたたしかに見たよ！！  // TODO: English translation
+@000837  C0F04 た、たたたしかに見たよ！！  // EN: I-I d-definitely saw them!!
 @00088E  C0D04 ［街の人］  // EN: [Townsperson]
-@0008D8 もったしゅうだんだろ！？  // TODO: English translation
+@0008D8 もったしゅうだんだろ！？  // EN: ...with them, right?!
 @000960 F16A01  // LITERAL: F16A01 (usage not inferred)
 @000A39  C0D04 ［ギド］  // EN: [Gido]
-@000A54  C0F04 …  // TODO: English translation
+@000A54  C0F04 …  // EN: ...
 @000AD9 F15A02  // LITERAL: F15A02 (usage not inferred)
 @000BB2  C0D04 ［イアン］  // EN: [Ian]
-@000BCF  C0F04 そう…  // TODO: English translation
+@000BCF  C0F04 そう…  // EN: I see...
 @000C34 F15A01  // LITERAL: F15A01 (usage not inferred)
 @000C62  C0D04 ［イアン］  // EN: [Ian]
-@000C7F  C0F04 （まだこの辺りにいるかな？）  // TODO: English translation
+@000C7F  C0F04 （まだこの辺りにいるかな？）  // EN: (Wonder if they are still around here?)
 @000CE8 F15A02  // LITERAL: F15A02 (usage not inferred)
 @000D16  C0D04 ［イアン］  // EN: [Ian]
 @000D33  C0F04 （ギンタ…）  // EN: (Ginta...)

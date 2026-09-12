@@ -4,7 +4,7 @@
 
 @0000F6 F39A01  // LITERAL: F39A01 (usage not inferred)
 @0001B7  C0D04 ［彫金師ベリーニ］  // EN: [Bellini the metalworker]
-@0001DC  C0F04 彫金するのん？  // TODO: English translation
+@0001DC  C0F04 彫金するのん？  // EN: Want to do some metalworking?
 @000362  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
 @00038E 彫金とは、いくつかの材料をまぜあわせて  // EN: Metalworking involves combining several materials...
 @000408  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
@@ -24,5 +24,5 @@
 @00071A  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
 @000746 でも、材料はかならず  // EN: But make sure you...
 @000766 もってくるのん！  // EN: ...bring the materials!
-@0003C0 新しく<F0><56>ＲＭを作ることですのん  // TODO: English translation
-@000434 どの材料で、何の<F0><56>ＲＭができるのかは  // TODO: English translation
+@0003C0 新しく<F0><56>ＲＭを作ることですのん  // EN: It means making new ÄRMs.
+@000434 どの材料で、何の<F0><56>ＲＭができるのかは  // EN: Which materials make which ÄRMs...

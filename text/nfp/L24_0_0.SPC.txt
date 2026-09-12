@@ -8,65 +8,65 @@
 @0005E6 F01B11  // LITERAL: F01B11 (usage not inferred)
 @000624 F39A01  // LITERAL: F39A01 (usage not inferred)
 @0008F2  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@000916 とびらだ！  // TODO: English translation
+@000916 とびらだ！  // EN: A door!
 @00098C  C0D04 ［ジャック］ C0F04   // EN: [Jack]
-@0009B2 ひとつ…あいてるっス…  // TODO: English translation
+@0009B2 ひとつ…あいてるっス…  // EN: One...is open...
 @000B26  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@000B4A …こっちにもあるぞ！  // TODO: English translation
-@000B6A あいているのが、ひとつに…  // TODO: English translation
+@000B4A …こっちにもあるぞ！  // EN: ...There's one over here too!
+@000B6A あいているのが、ひとつに…  // EN: One open door...
 @000DDF  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@000E03 ふたつ…みっつ…  // TODO: English translation
+@000E03 ふたつ…みっつ…  // EN: Two...three...
 @000F95  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@000FB9 よ…！！！  // TODO: English translation
+@000FB9 よ…！！！  // EN: Fou...!!!
 @001113 F01B13  // LITERAL: F01B13 (usage not inferred)
 @00137A  C0D04 ［？？？］ C0F04   // EN: [???]
-@00139E …  // TODO: English translation
+@00139E …  // EN: ...
 @001442  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@001466 …  // TODO: English translation
+@001466 …  // EN: ...
 @0014AE F03A08  // LITERAL: F03A08 (usage not inferred)
 @001548  C0D04 ［ジャック］ C0F04   // EN: [Jack]
-@00156E …  // TODO: English translation
+@00156E …  // EN: ...
 @00167E  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@0016A2 え、えーっと…  // TODO: English translation
-@0016BC だ、だれ？？  // TODO: English translation
+@0016A2 え、えーっと…  // EN: U-um...
+@0016BC だ、だれ？？  // EN: Wh-who are you??
 @0016F2  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
-@00171E 彫金師（ちょうきんし）  // TODO: English translation
+@00171E 彫金師（ちょうきんし）  // EN: A metalsmith.
 @00176A  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@00178E 彫金師って…  // TODO: English translation
+@00178E 彫金師って…  // EN: A metalsmith...
 @001816 F01B07  // LITERAL: F01B07 (usage not inferred)
 @00187A  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@00189E あ！　ドロシーにきいたぞ！  // TODO: English translation
+@00189E あ！　ドロシーにきいたぞ！  // EN: Oh! Dorothy told me about those!
 @001912  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
-@00193E そうですのん  // TODO: English translation
+@00193E そうですのん  // EN: That's right, yep-yep.
 @0019EC  C0D04 ［ジャック］ C0F04   // EN: [Jack]
-@001A12 （の、のん？）  // TODO: English translation
+@001A12 （の、のん？）  // EN: (Y-yep-yep?)
 @001A8C  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
-@001AB8 そうだ、っていってるですのん  // TODO: English translation
-@001AE0 …おまえら、チェスですのん？  // TODO: English translation
+@001AB8 そうだ、っていってるですのん  // EN: I said that's right, yep-yep.
+@001AE0 …おまえら、チェスですのん？  // EN: ...Are you Chess Pieces, yep-yep?
 @001B36 F01B06  // LITERAL: F01B06 (usage not inferred)
 @001BD0  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@001BF4 ち、ちがう、そのチェスを  // TODO: English translation
-@001C18 たおそうとしているんだ！  // TODO: English translation
+@001BF4 ち、ちがう、そのチェスを  // EN: N-no! We're trying...
+@001C18 たおそうとしているんだ！  // EN: ...to defeat the Chess Pieces!
 @001C5A  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
-@001C86 なんだ  // TODO: English translation
-@001C98 それなら、お客ってことですのん  // TODO: English translation
+@001C86 なんだ  // EN: Oh.
+@001C98 それなら、お客ってことですのん  // EN: Then you're customers, yep-yep.
 @001D4C  C0D04 ［ジャック］ C0F04   // EN: [Jack]
-@001D72 （で、ですのん…）  // TODO: English translation
+@001D72 （で、ですのん…）  // EN: (Y-yep-yep...)
 @001E26  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
-@001E52 なら、彫金について  // TODO: English translation
-@001E70 説明しますのん  // TODO: English translation
+@001E52 なら、彫金について  // EN: Then I'll explain...
+@001E70 説明しますのん  // EN: ...metalworking, yep-yep.
 @001EA8  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
-@001ED4 こっち来るですのん  // TODO: English translation
+@001ED4 こっち来るですのん  // EN: Come over here, yep-yep.
 @001F2C F01B14  // LITERAL: F01B14 (usage not inferred)
 @001F90  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@001FB4 （な、なんか変わったしゃべりかただな  // TODO: English translation
-@001FE4 　あたまがクラクラしてきた…）  // TODO: English translation
+@001FB4 （な、なんか変わったしゃべりかただな  // EN: (Wh-what a strange way of talking.
+@001FE4 　あたまがクラクラしてきた…）  // EN: My head's starting to spin...)
 @00231E F01B01  // LITERAL: F01B01 (usage not inferred)
 @0023B8  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
-@0023E4 そしたら、しっかりきくですのん  // TODO: English translation
+@0023E4 そしたら、しっかりきくですのん  // EN: Now listen carefully, yep-yep.
 @00246E  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
-@00249A あたしは彫金師のベリーニ  // TODO: English translation
-@0024BE まだみならいですのん…  // TODO: English translation
+@00249A あたしは彫金師のベリーニ  // EN: I'm Bellini, the metalsmith.
+@0024BE まだみならいですのん…  // EN: Still an apprentice, yep-yep...
 @0024FE  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
 @00252A 彫金とは、いくつかの材料をまぜあわせて  // EN: Metalworking involves combining several materials...
 @0025A4  C0D04 ［彫金師ベリーニ］ C0F04   // EN: [Bellini the metalworker]
@@ -89,6 +89,6 @@
 @002982 F01B09  // LITERAL: F01B09 (usage not inferred)
 @0029E6  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
 @002A0A おう！  // EN: Yeah!
-@0018C4 たしか、<F0><56>ＲＭをつくったりできる…！  // TODO: English translation
-@00255C 新しく<F0><56>ＲＭを作ることですのん  // TODO: English translation
-@0025D0 どの材料で、何の<F0><56>ＲＭができるのかは  // TODO: English translation
+@0018C4 たしか、<F0><56>ＲＭをつくったりできる…！  // EN: You can make ÄRMs and things...!
+@00255C 新しく<F0><56>ＲＭを作ることですのん  // EN: It means making new ÄRMs, yep-yep.
+@0025D0 どの材料で、何の<F0><56>ＲＭができるのかは  // EN: Which materials make which ÄRMs...

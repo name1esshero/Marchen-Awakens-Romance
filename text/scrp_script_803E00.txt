@@ -6,88 +6,88 @@
 @0001DE 57A00  // LITERAL: 57A00 (usage not inferred)
 @0003EC F01B01  // LITERAL: F01B01 (usage not inferred)
 @0004C5  C0D04 ［ギンタ］  // EN: [Ginta]
-@0004E2  C0F04 うわーーーーーーーー！！  // TODO: English translation
+@0004E2  C0F04 うわーーーーーーーー！！  // EN: Whoooooa!!
 @000547 F01B07  // LITERAL: F01B07 (usage not inferred)
 @000575  C0D04 ［ギンタ］  // EN: [Ginta]
-@000592  C0F04 なんだコレ！！  // TODO: English translation
+@000592  C0F04 なんだコレ！！  // EN: What is this?!
 @0005ED F05A02  // LITERAL: F05A02 (usage not inferred)
 @0006C6  C0D04 ［エド］  // EN: [Ed]
-@0006E1  C0F04 『マジックカーペット』！！  // TODO: English translation
+@0006E1  C0F04 『マジックカーペット』！！  // EN: Magic Carpet!!
 @000748 F05A02  // LITERAL: F05A02 (usage not inferred)
 @000776  C0D04 ［エド］  // EN: [Ed]
-@000791  C0F04 ちかいきょりなら  // TODO: English translation
-@0007B4 こいつでじゅうぶんです！  // TODO: English translation
+@000791  C0F04 ちかいきょりなら  // EN: For short distances...
+@0007B4 こいつでじゅうぶんです！  // EN: ...this will do nicely!
 @0008A2 A  // LITERAL: A (usage not inferred)
 @000B28 F09A01  // LITERAL: F09A01 (usage not inferred)
 @000C01  C0D04 ［ドロシー］  // EN: [Dorothy]
-@000C20  C0F04 へぇ〜〜！！  // TODO: English translation
+@000C20  C0F04 へぇ〜〜！！  // EN: Woooow!!
 @000C69  C0D04 ［ドロシー］  // EN: [Dorothy]
-@000C88  C0F04 ずいぶんゆうがな  // TODO: English translation
+@000C88  C0F04 ずいぶんゆうがな  // EN: What an elegant...
 @000CF9 F05A02  // LITERAL: F05A02 (usage not inferred)
 @000DD2  C0D04 ［エド］  // EN: [Ed]
-@000DED  C0F04 ハハハハ…  // TODO: English translation
+@000DED  C0F04 ハハハハ…  // EN: Ha ha ha...
 @000ED5 F05A03  // LITERAL: F05A03 (usage not inferred)
 @000F03  C0D04 ［エド］  // EN: [Ed]
-@000F1E  C0F04 …  // TODO: English translation
+@000F1E  C0F04 …  // EN: ...
 @000F6D F01B11  // LITERAL: F01B11 (usage not inferred)
 @001046  C0D04 ［ギンタ］  // EN: [Ginta]
-@001063  C0F04 ？？  // TODO: English translation
+@001063  C0F04 ？？  // EN: ??
 @0010B4 F05A02  // LITERAL: F05A02 (usage not inferred)
 @0010E2  C0D04 ［エド］  // EN: [Ed]
-@0010FD  C0F04 あの方は魔女（まじょ）ですね？  // TODO: English translation
+@0010FD  C0F04 あの方は魔女（まじょ）ですね？  // EN: She is a witch, isn't she?
 @001168 F05A01  // LITERAL: F05A01 (usage not inferred)
 @001196  C0D04 ［エド］  // EN: [Ed]
-@0011B1  C0F04 魔女たちは、レスターヴァの北東にある  // TODO: English translation
-@0011E8 カルデアの島々に住んでいて…  // TODO: English translation
+@0011B1  C0F04 魔女たちは、レスターヴァの北東にある  // EN: Witches live on the islands of Caldia...
+@0011E8 カルデアの島々に住んでいて…  // EN: ...northeast of Lestava...
 @00123E F01B04  // LITERAL: F01B04 (usage not inferred)
 @00126C  C0D04 ［ギンタ］  // EN: [Ginta]
-@001289  C0F04 …  // TODO: English translation
+@001289  C0F04 …  // EN: ...
 @0012D8 F05A02  // LITERAL: F05A02 (usage not inferred)
 @001306  C0D04 ［エド］  // EN: [Ed]
-@001321  C0F04 どこの国とも交流をもたず  // TODO: English translation
-@00134C 完全にこりつして生活しています  // TODO: English translation
+@001321  C0F04 どこの国とも交流をもたず  // EN: They have no contact with other countries...
+@00134C 完全にこりつして生活しています  // EN: ...and live in complete isolation.
 @001394  C0D04 ［エド］  // EN: [Ed]
-@0013AF  C0F04 魔女はカルデアから外に出るだけでも  // TODO: English translation
-@0013E4 めずらしいのです、しかも…  // TODO: English translation
+@0013AF  C0F04 魔女はカルデアから外に出るだけでも  // EN: A witch even leaving Caldia...
+@0013E4 めずらしいのです、しかも…  // EN: ...is rare. And what's more...
 @001438 F05A03  // LITERAL: F05A03 (usage not inferred)
 @001466  C0D04 ［エド］  // EN: [Ed]
-@001481  C0F04 あの方はあく名たかいドロシー！！  // TODO: English translation
+@001481  C0F04 あの方はあく名たかいドロシー！！  // EN: ...she is the infamous Dorothy!!
 @0014EE F01B11  // LITERAL: F01B11 (usage not inferred)
 @00151C  C0D04 ［ギンタ］  // EN: [Ginta]
-@001539  C0F04 あく名？？？  // TODO: English translation
+@001539  C0F04 あく名？？？  // EN: Infamous???
 @001592 F05A03  // LITERAL: F05A03 (usage not inferred)
 @0015C0  C0D04 ［エド］  // EN: [Ed]
-@00160A ぬすんで、うばって、てにいれるそうです！  // TODO: English translation
+@00160A ぬすんで、うばって、てにいれるそうです！  // EN: They say she steals and snatches them!
 @00166C F09A07  // LITERAL: F09A07 (usage not inferred)
 @00177B  C0D04 ［ドロシー］  // EN: [Dorothy]
-@00179A  C0F04 …？？  // TODO: English translation
+@00179A  C0F04 …？？  // EN: ...??
 @0017ED F05A01  // LITERAL: F05A01 (usage not inferred)
 @00181B  C0D04 ［エド］  // EN: [Ed]
-@001836  C0F04 いってみりゃドロボーですな！  // TODO: English translation
+@001836  C0F04 いってみりゃドロボーですな！  // EN: In other words, she's a thief!
 @00189F F09A02  // LITERAL: F09A02 (usage not inferred)
 @0018CD  C0D04 ［ドロシー］  // EN: [Dorothy]
-@0018EC  C0F04 …  // TODO: English translation
+@0018EC  C0F04 …  // EN: ...
 @00193B F09A05  // LITERAL: F09A05 (usage not inferred)
 @0019D5  C0D04 ［ドロシー］  // EN: [Dorothy]
-@0019F4  C0F04 なんかいってるかーー！？  // TODO: English translation
-@001A1F 犬ーーーーーーーーーー！！  // TODO: English translation
+@0019F4  C0F04 なんかいってるかーー！？  // EN: What are you sayiiiing?!
+@001A1F 犬ーーーーーーーーーー！！  // EN: Doooooog!!
 @001ADF F05A04  // LITERAL: F05A04 (usage not inferred)
 @001B0D  C0D04 ［エド］  // EN: [Ed]
-@001B28  C0F04 あ！あふぁ！！  // TODO: English translation
+@001B28  C0F04 あ！あふぁ！！  // EN: Ah! Aah!!
 @001B73  C0D04 ［エド］  // EN: [Ed]
-@001B8E  C0F04 う、うつくしい方だと！！  // TODO: English translation
+@001B8E  C0F04 う、うつくしい方だと！！  // EN: Th-that you're beautiful!!
 @001BF3 F09A01  // LITERAL: F09A01 (usage not inferred)
 @001C21  C0D04 ［ドロシー］  // EN: [Dorothy]
-@001C40  C0F04 そう！？  // TODO: English translation
-@001C5B ならいいわーーー！！  // TODO: English translation
+@001C40  C0F04 そう！？  // EN: Really?!
+@001C5B ならいいわーーー！！  // EN: Then that's fiiine!!
 @001C99  C0D04 ［ドロシー］  // EN: [Dorothy]
 @001D45  C0D04 ［ギンタ］  // EN: [Ginta]
-@001D62  C0F04 …  // TODO: English translation
+@001D62  C0F04 …  // EN: ...
 @001E1D F04A04  // LITERAL: F04A04 (usage not inferred)
 @001EF6  C0D04 ［スノウ］  // EN: [Snow]
-@001F13  C0F04 あ！！  // TODO: English translation
+@001F13  C0F04 あ！！  // EN: Oh!!
 @001F9C F01B01  // LITERAL: F01B01 (usage not inferred)
 @002075  C0D04 ［スノウ］  // EN: [Snow]
-@002092  C0F04 見てギンタ！！  // TODO: English translation
-@0020B3 ヒルドたいりくに入るよ！！  // TODO: English translation
+@002092  C0F04 見てギンタ！！  // EN: Look, Ginta!!
+@0020B3 ヒルドたいりくに入るよ！！  // EN: We're reaching the Hild continent!!
 @002257 G_EV002.SPC  // LITERAL: G_EV002.SPC (usage not inferred)

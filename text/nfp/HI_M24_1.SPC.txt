@@ -5,64 +5,64 @@
 @0000F6 F01B10  // LITERAL: F01B10 (usage not inferred)
 @00012E F03A07  // LITERAL: F03A07 (usage not inferred)
 @000282  C0D04 ［ギンタ］  // EN: [Ginta]
-@00029F  C0F04 う！うわ！！  // TODO: English translation
+@00029F  C0F04 う！うわ！！  // EN: W-whoa!!
 @0002E8  C0D04 ［ジャック］  // EN: [Jack]
-@000307  C0F04 なんだぁ？…コレ！！  // TODO: English translation
+@000307  C0F04 なんだぁ？…コレ！！  // EN: What...is this?!
 @000392 F02A12  // LITERAL: F02A12 (usage not inferred)
 @0003F0  C0D04 ［バッボ］  // EN: [Babbo]
-@00040D  C0F04 な、なぜこのような場所が  // TODO: English translation
-@000438 地下に…！？  // TODO: English translation
+@00040D  C0F04 な、なぜこのような場所が  // EN: H-how can a place like this...
+@000438 地下に…！？  // EN: ...be underground...?!
 @0005C9 F01B04  // LITERAL: F01B04 (usage not inferred)
 @000601 F03A01  // LITERAL: F03A01 (usage not inferred)
 @000755  C0D04 ［ジャック］  // EN: [Jack]
-@000774  C0F04 さっきから気になっているんスけど…  // TODO: English translation
-@0007A9 足元のコレ…何っスかね？  // TODO: English translation
+@000774  C0F04 さっきから気になっているんスけど…  // EN: I've been wondering...
+@0007A9 足元のコレ…何っスかね？  // EN: What's this under our feet?
 @0007EB  C0D04 ［ギンタ］  // EN: [Ginta]
-@000808  C0F04 何か…大きなもので  // TODO: English translation
-@00082D ほったみたいだな  // TODO: English translation
+@000808  C0F04 何か…大きなもので  // EN: Looks like something...
+@00082D ほったみたいだな  // EN: ...huge dug it.
 @000867  C0D04 ［ギンタ］  // EN: [Ginta]
-@000884  C0F04 だとしたら…コレ…  // TODO: English translation
-@0008A9 そうとうでっかいぞ…！！  // TODO: English translation
+@000884  C0F04 だとしたら…コレ…  // EN: If that's true...
+@0008A9 そうとうでっかいぞ…！！  // EN: ...it must be enormous...!!
 @000A16 G_EV040.SPC  // LITERAL: G_EV040.SPC (usage not inferred)
 @000A4E F04A06  // LITERAL: F04A06 (usage not inferred)
 @000AE9 F05A02  // LITERAL: F05A02 (usage not inferred)
 @000B84 F38A01  // LITERAL: F38A01 (usage not inferred)
 @000CA5  C0D04 ［スノウ］  // EN: [Snow]
-@000CC2  C0F04 そっかぁ…  // TODO: English translation
+@000CC2  C0F04 そっかぁ…  // EN: I see...
 @000D43 F04A04  // LITERAL: F04A04 (usage not inferred)
 @000DA1  C0D04 ［スノウ］  // EN: [Snow]
-@000DBE  C0F04 よし！それなら  // TODO: English translation
-@000DDF わたしもてつだうよ！  // TODO: English translation
+@000DBE  C0F04 よし！それなら  // EN: All right, then...
+@000DDF わたしもてつだうよ！  // EN: ...I'll help too!
 @000E27 F38A04  // LITERAL: F38A04 (usage not inferred)
 @000E5F F04A05  // LITERAL: F04A05 (usage not inferred)
 @000F1D  C0D04 ［エド］  // EN: [Ed]
-@000F38  C0F04 ところでマールどの…  // TODO: English translation
+@000F38  C0F04 ところでマールどの…  // EN: By the way, Master Marl...
 @000F89  C0D04 ［エド］  // EN: [Ed]
 @001021 F04A01  // LITERAL: F04A01 (usage not inferred)
 @001089 F38A01  // LITERAL: F38A01 (usage not inferred)
 @0010E7  C0D04 ［マール］  // EN: [Marl]
-@001104  C0F04 はい……  // TODO: English translation
+@001104  C0F04 はい……  // EN: Yes...
 @00116B  C0D04 ［マール］  // EN: [Marl]
-@001188  C0F04 ３つのパーツから  // TODO: English translation
-@0011AB なりたっているそうです  // TODO: English translation
+@001188  C0F04 ３つのパーツから  // EN: It's made up...
+@0011AB なりたっているそうです  // EN: ...of three parts.
 @0011EB  C0D04 ［マール］  // EN: [Marl]
-@001208  C0F04 ３つ全てあつめたとき  // TODO: English translation
-@00122F 『巨人の力』が手に入ると…  // TODO: English translation
+@001208  C0F04 ３つ全てあつめたとき  // EN: When all three are gathered...
+@00122F 『巨人の力』が手に入ると…  // EN: ...you gain the power of a giant...
 @0012DD F01B07  // LITERAL: F01B07 (usage not inferred)
 @00139B  C0D04 ［ギンタ］  // EN: [Ginta]
-@0013B8  C0F04 ！！  // TODO: English translation
+@0013B8  C0F04 ！！  // EN: !!
 @0013F9  C0D04 ［マール］  // EN: [Marl]
-@001416  C0F04 このフシギなどうくつには  // TODO: English translation
-@001441 『うで』が封印されているみたいですね  // TODO: English translation
+@001416  C0F04 このフシギなどうくつには  // EN: It seems the arms...
+@001441 『うで』が封印されているみたいですね  // EN: ...are sealed in this strange cavern.
 @00160F  C0D04 ［ギンタ］  // EN: [Ginta]
-@00162C  C0F04 …すげぇ！すげぇぞ！  // TODO: English translation
-@001653 なんか合体ロボットみたいだ！！  // TODO: English translation
+@00162C  C0F04 …すげぇ！すげぇぞ！  // EN: ...Awesome! That's awesome!
+@001653 なんか合体ロボットみたいだ！！  // EN: It's like a combining robot!!
 @001705 F03A08  // LITERAL: F03A08 (usage not inferred)
 @001763  C0D04 ［ジャック］  // EN: [Jack]
-@001782  C0F04 …………  // TODO: English translation
+@001782  C0F04 …………  // EN: ............
 @0017C7  C0D04 ［ジャック］  // EN: [Jack]
-@0017E6  C0F04 がったい…  // TODO: English translation
-@001803 ろぼっと…？？？？  // TODO: English translation
-@000FA4  C0F04 その封印された<F0><56>ＲＭとは  // TODO: English translation
-@000FCF いかような<F0><56>ＲＭなのですかな？  // TODO: English translation
-@00111F それは巨人のガーディアン<F0><56>ＲＭで…  // TODO: English translation
+@0017E6  C0F04 がったい…  // EN: Combining...
+@001803 ろぼっと…？？？？  // EN: ...robot...????
+@000FA4  C0F04 その封印された<F0><56>ＲＭとは  // EN: This sealed ÄRM...
+@000FCF いかような<F0><56>ＲＭなのですかな？  // EN: ...what kind of ÄRM is it?
+@00111F それは巨人のガーディアン<F0><56>ＲＭで…  // EN: It's a giant Guardian ÄRM...

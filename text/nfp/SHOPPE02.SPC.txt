@@ -5,9 +5,9 @@
 @0001B9  C0D04 ［マジックストーン屋］  // EN: [Magic stone merchant]
 @0001E2  C0F04 いらっしゃい！！  // EN: Welcome!!
 @00022F  C0D04 ［マジックストーン屋］  // EN: [Magic stone merchant]
-@000258  C0F04 そなえあればうれいなし  // TODO: English translation
-@000281 マジックストーンはいかがですか？  // TODO: English translation
+@000258  C0F04 そなえあればうれいなし  // EN: Better safe than sorry.
+@000281 マジックストーンはいかがですか？  // EN: How about some Magic Stones?
 @0002F3  C0D04 ［マジックストーン屋］  // EN: [Magic stone merchant]
-@00031C  C0F04 ほかに何かありますか？  // TODO: English translation
+@00031C  C0F04 ほかに何かありますか？  // EN: Anything else?
 @000475  C0D04 ［マジックストーン屋］  // EN: [Magic stone merchant]
-@00049E  C0F04 何を買取りましょうか？  // TODO: English translation
+@00049E  C0F04 何を買取りましょうか？  // EN: What would you like to sell?

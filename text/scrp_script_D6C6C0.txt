@@ -4,7 +4,7 @@
 
 @000144 F09A01  // LITERAL: F09A01 (usage not inferred)
 @000205  C0D04 ［ドロシー］  // EN: [Dorothy]
-@000224  C0F04 こんな低レベルのまほうじん、  // TODO: English translation
-@000253 じゃまだから消してあげるわ  // TODO: English translation
+@000224  C0F04 こんな低レベルのまほうじん、  // EN: A low-level magic circle like this...
+@000253 じゃまだから消してあげるわ  // EN: ...is just in the way. I'll erase it.
 @00054A 見えないまほうのかべで  // EN: An invisible magical wall...
 @00056C さえぎられている  // EN: ...blocks the way.

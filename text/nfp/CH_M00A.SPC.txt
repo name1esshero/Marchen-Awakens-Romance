@@ -6,10 +6,10 @@
 @00019C D_VS_R.SPC  // LITERAL: D_VS_R.SPC (usage not inferred)
 @0001D3 F30A01  // LITERAL: F30A01 (usage not inferred)
 @000294  C0D04 ［親岩］  // EN: [Parent Rock]
-@0002AF  C0F04 何かごようがおありですかな  // TODO: English translation
+@0002AF  C0F04 何かごようがおありですかな  // EN: Is there something you need?
 @0003A7 EV_RT02.SPC  // LITERAL: EV_RT02.SPC (usage not inferred)
 @0004D9 F30A01  // LITERAL: F30A01 (usage not inferred)
 @00059A  C0D04 ［親岩］  // EN: [Parent Rock]
-@0005B5  C0F04 この先、北のほうに小川があるので  // TODO: English translation
-@0005E8 水をくんできてくれませんか？  // TODO: English translation
+@0005B5  C0F04 この先、北のほうに小川があるので  // EN: There is a stream to the north.
+@0005E8 水をくんできてくれませんか？  // EN: Could you fetch some water?
 @0006AA EV_RT01.SPC  // LITERAL: EV_RT01.SPC (usage not inferred)

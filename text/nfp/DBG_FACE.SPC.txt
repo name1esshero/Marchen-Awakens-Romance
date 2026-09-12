@@ -67,198 +67,198 @@
 @00197D F02A01  // LITERAL: F02A01 (usage not inferred)
 @0019E5 F02A02  // LITERAL: F02A02 (usage not inferred)
 @001AD1 F02A03  // LITERAL: F02A03 (usage not inferred)
-@001BB3 バッボ１  // TODO: English translation
-@001BC7 バッボ２  // TODO: English translation
-@001BDB バッボ３  // TODO: English translation
+@001BB3 バッボ１  // EN: Babbo 1
+@001BC7 バッボ２  // EN: Babbo 2
+@001BDB バッボ３  // EN: Babbo 3
 @001C47 F02A04  // LITERAL: F02A04 (usage not inferred)
 @001CDF F02A05  // LITERAL: F02A05 (usage not inferred)
 @001D77 F02A06  // LITERAL: F02A06 (usage not inferred)
-@001DD5 バッボ４  // TODO: English translation
-@001DE9 バッボ５  // TODO: English translation
-@001DFD バッボ６  // TODO: English translation
+@001DD5 バッボ４  // EN: Babbo 4
+@001DE9 バッボ５  // EN: Babbo 5
+@001DFD バッボ６  // EN: Babbo 6
 @001E69 F02A07  // LITERAL: F02A07 (usage not inferred)
 @001F01 F02A08  // LITERAL: F02A08 (usage not inferred)
 @001F99 F02A09  // LITERAL: F02A09 (usage not inferred)
-@001FF7 バッボ７  // TODO: English translation
-@00200B バッボ８  // TODO: English translation
-@00201F バッボ９  // TODO: English translation
+@001FF7 バッボ７  // EN: Babbo 7
+@00200B バッボ８  // EN: Babbo 8
+@00201F バッボ９  // EN: Babbo 9
 @00208B F02A10  // LITERAL: F02A10 (usage not inferred)
 @002123 F02A11  // LITERAL: F02A11 (usage not inferred)
 @0021BB F02A12  // LITERAL: F02A12 (usage not inferred)
-@002219 バッボ１０  // TODO: English translation
-@00222F バッボ１１  // TODO: English translation
-@002245 バッボ１２  // TODO: English translation
+@002219 バッボ１０  // EN: Babbo 10
+@00222F バッボ１１  // EN: Babbo 11
+@002245 バッボ１２  // EN: Babbo 12
 @0022B3 F02A13  // LITERAL: F02A13 (usage not inferred)
 @00234B F02A14  // LITERAL: F02A14 (usage not inferred)
-@0023D9 バッボ１３  // TODO: English translation
-@0023EF バッボ１４  // TODO: English translation
+@0023D9 バッボ１３  // EN: Babbo 13
+@0023EF バッボ１４  // EN: Babbo 14
 @002469 F03A01  // LITERAL: F03A01 (usage not inferred)
 @002501 F03A02  // LITERAL: F03A02 (usage not inferred)
 @002569 F03A03  // LITERAL: F03A03 (usage not inferred)
-@00264B ジャック１  // TODO: English translation
-@002661 ジャック２  // TODO: English translation
-@002677 ジャック３  // TODO: English translation
+@00264B ジャック１  // EN: Jack 1
+@002661 ジャック２  // EN: Jack 2
+@002677 ジャック３  // EN: Jack 3
 @0026E5 F03A04  // LITERAL: F03A04 (usage not inferred)
 @00277D F03A05  // LITERAL: F03A05 (usage not inferred)
 @002815 F03A06  // LITERAL: F03A06 (usage not inferred)
-@002873 ジャック４  // TODO: English translation
-@002889 ジャック５  // TODO: English translation
-@00289F ジャック６  // TODO: English translation
+@002873 ジャック４  // EN: Jack 4
+@002889 ジャック５  // EN: Jack 5
+@00289F ジャック６  // EN: Jack 6
 @00290D F03A07  // LITERAL: F03A07 (usage not inferred)
 @0029A5 F03A08  // LITERAL: F03A08 (usage not inferred)
-@002A33 ジャック７  // TODO: English translation
-@002A49 ジャック８  // TODO: English translation
+@002A33 ジャック７  // EN: Jack 7
+@002A49 ジャック８  // EN: Jack 8
 @002AC3 F03B01  // LITERAL: F03B01 (usage not inferred)
 @002B51 ジャック鳥１  // EN: Jack (bird) 1
 @002BD9 F04A01  // LITERAL: F04A01 (usage not inferred)
 @002C41 F04A02  // LITERAL: F04A02 (usage not inferred)
 @002D2D F04A03  // LITERAL: F04A03 (usage not inferred)
-@002E0F スノウ１  // TODO: English translation
-@002E23 スノウ２  // TODO: English translation
-@002E37 スノウ３  // TODO: English translation
+@002E0F スノウ１  // EN: Snow 1
+@002E23 スノウ２  // EN: Snow 2
+@002E37 スノウ３  // EN: Snow 3
 @002EA3 F04A04  // LITERAL: F04A04 (usage not inferred)
 @002F3B F04A05  // LITERAL: F04A05 (usage not inferred)
 @002FD3 F04A06  // LITERAL: F04A06 (usage not inferred)
-@003031 スノウ４  // TODO: English translation
-@003045 スノウ５  // TODO: English translation
-@003059 スノウ６  // TODO: English translation
+@003031 スノウ４  // EN: Snow 4
+@003045 スノウ５  // EN: Snow 5
+@003059 スノウ６  // EN: Snow 6
 @0030C5 F04A07  // LITERAL: F04A07 (usage not inferred)
 @00315D F04A08  // LITERAL: F04A08 (usage not inferred)
 @0031F5 F04A09  // LITERAL: F04A09 (usage not inferred)
-@003253 スノウ７  // TODO: English translation
-@003267 スノウ８  // TODO: English translation
-@00327B スノウ９  // TODO: English translation
+@003253 スノウ７  // EN: Snow 7
+@003267 スノウ８  // EN: Snow 8
+@00327B スノウ９  // EN: Snow 9
 @0032E7 F05A01  // LITERAL: F05A01 (usage not inferred)
 @00337F F05A02  // LITERAL: F05A02 (usage not inferred)
 @003417 F05A03  // LITERAL: F05A03 (usage not inferred)
-@003475 エド１  // TODO: English translation
-@003487 エド２  // TODO: English translation
-@003499 エド３  // TODO: English translation
+@003475 エド１  // EN: Ed 1
+@003487 エド２  // EN: Ed 2
+@003499 エド３  // EN: Ed 3
 @003503 F05A04  // LITERAL: F05A04 (usage not inferred)
 @00359B F05A05  // LITERAL: F05A05 (usage not inferred)
-@003629 エド４  // TODO: English translation
-@00363B エド５  // TODO: English translation
+@003629 エド４  // EN: Ed 4
+@00363B エド５  // EN: Ed 5
 @0036B1 F06A01  // LITERAL: F06A01 (usage not inferred)
 @003749 F06A02  // LITERAL: F06A02 (usage not inferred)
 @0037B1 F06A03  // LITERAL: F06A03 (usage not inferred)
-@003893 アラン１  // TODO: English translation
-@0038A7 アラン２  // TODO: English translation
-@0038BB アラン３  // TODO: English translation
+@003893 アラン１  // EN: Alan 1
+@0038A7 アラン２  // EN: Alan 2
+@0038BB アラン３  // EN: Alan 3
 @003927 F06A04  // LITERAL: F06A04 (usage not inferred)
 @0039BF F06A05  // LITERAL: F06A05 (usage not inferred)
 @003A57 F06A06  // LITERAL: F06A06 (usage not inferred)
-@003AB5 アラン４  // TODO: English translation
-@003AC9 アラン５  // TODO: English translation
-@003ADD アラン６  // TODO: English translation
+@003AB5 アラン４  // EN: Alan 4
+@003AC9 アラン５  // EN: Alan 5
+@003ADD アラン６  // EN: Alan 6
 @003B49 F07A01  // LITERAL: F07A01 (usage not inferred)
 @003BE1 F07A02  // LITERAL: F07A02 (usage not inferred)
 @003C79 F07A03  // LITERAL: F07A03 (usage not inferred)
-@003CD7 アルヴィス１  // TODO: English translation
-@003CEF アルヴィス２  // TODO: English translation
-@003D07 アルヴィス３  // TODO: English translation
+@003CD7 アルヴィス１  // EN: Alviss 1
+@003CEF アルヴィス２  // EN: Alviss 2
+@003D07 アルヴィス３  // EN: Alviss 3
 @003D77 F07A04  // LITERAL: F07A04 (usage not inferred)
 @003E0F F07A05  // LITERAL: F07A05 (usage not inferred)
 @003EA7 F07A06  // LITERAL: F07A06 (usage not inferred)
-@003F05 アルヴィス４  // TODO: English translation
-@003F1D アルヴィス５  // TODO: English translation
-@003F35 アルヴィス６  // TODO: English translation
+@003F05 アルヴィス４  // EN: Alviss 4
+@003F1D アルヴィス５  // EN: Alviss 5
+@003F35 アルヴィス６  // EN: Alviss 6
 @003FA5 F08A01  // LITERAL: F08A01 (usage not inferred)
 @00403D F08A02  // LITERAL: F08A02 (usage not inferred)
 @0040D5 F08A03  // LITERAL: F08A03 (usage not inferred)
-@004133 ナナシ１  // TODO: English translation
-@004147 ナナシ２  // TODO: English translation
-@00415B ナナシ３  // TODO: English translation
+@004133 ナナシ１  // EN: Nanashi 1
+@004147 ナナシ２  // EN: Nanashi 2
+@00415B ナナシ３  // EN: Nanashi 3
 @0041C7 F08A04  // LITERAL: F08A04 (usage not inferred)
 @00425F F08A05  // LITERAL: F08A05 (usage not inferred)
 @0042F7 F08A06  // LITERAL: F08A06 (usage not inferred)
-@004355 ナナシ４  // TODO: English translation
-@004369 ナナシ５  // TODO: English translation
-@00437D ナナシ６  // TODO: English translation
+@004355 ナナシ４  // EN: Nanashi 4
+@004369 ナナシ５  // EN: Nanashi 5
+@00437D ナナシ６  // EN: Nanashi 6
 @0043E9 F09A01  // LITERAL: F09A01 (usage not inferred)
 @004481 F09A02  // LITERAL: F09A02 (usage not inferred)
 @004519 F09A03  // LITERAL: F09A03 (usage not inferred)
-@004577 ドロシー１  // TODO: English translation
-@00458D ドロシー２  // TODO: English translation
-@0045A3 ドロシー３  // TODO: English translation
+@004577 ドロシー１  // EN: Dorothy 1
+@00458D ドロシー２  // EN: Dorothy 2
+@0045A3 ドロシー３  // EN: Dorothy 3
 @004611 F09A04  // LITERAL: F09A04 (usage not inferred)
 @0046A9 F09A05  // LITERAL: F09A05 (usage not inferred)
 @004741 F09A06  // LITERAL: F09A06 (usage not inferred)
-@00479F ドロシー４  // TODO: English translation
-@0047B5 ドロシー５  // TODO: English translation
-@0047CB ドロシー６  // TODO: English translation
+@00479F ドロシー４  // EN: Dorothy 4
+@0047B5 ドロシー５  // EN: Dorothy 5
+@0047CB ドロシー６  // EN: Dorothy 6
 @004839 F09A07  // LITERAL: F09A07 (usage not inferred)
-@0048F7 ドロシー７  // TODO: English translation
+@0048F7 ドロシー７  // EN: Dorothy 7
 @00497D F13A01  // LITERAL: F13A01 (usage not inferred)
 @0049E5 F13A02  // LITERAL: F13A02 (usage not inferred)
 @004AD1 F13A03  // LITERAL: F13A03 (usage not inferred)
-@004BB3 ルーガ１  // TODO: English translation
-@004BC7 ルーガ２  // TODO: English translation
-@004BDB ルーガ３  // TODO: English translation
+@004BB3 ルーガ１  // EN: Ruga 1
+@004BC7 ルーガ２  // EN: Ruga 2
+@004BDB ルーガ３  // EN: Ruga 3
 @004C47 F13A04  // LITERAL: F13A04 (usage not inferred)
-@004D05 ルーガ４  // TODO: English translation
+@004D05 ルーガ４  // EN: Ruga 4
 @004D89 F14A01  // LITERAL: F14A01 (usage not inferred)
 @004DF1 F14A02  // LITERAL: F14A02 (usage not inferred)
 @004EDD F14A03  // LITERAL: F14A03 (usage not inferred)
-@004FBF ガルー１  // TODO: English translation
-@004FD3 ガルー２  // TODO: English translation
-@004FE7 ガルー３  // TODO: English translation
+@004FBF ガルー１  // EN: Garu 1
+@004FD3 ガルー２  // EN: Garu 2
+@004FE7 ガルー３  // EN: Garu 3
 @005053 F14A04  // LITERAL: F14A04 (usage not inferred)
-@005111 ガルー４  // TODO: English translation
+@005111 ガルー４  // EN: Garu 4
 @005195 F15A01  // LITERAL: F15A01 (usage not inferred)
 @0051FD F15A02  // LITERAL: F15A02 (usage not inferred)
 @0052E9 F15A03  // LITERAL: F15A03 (usage not inferred)
-@0053CB イアン１  // TODO: English translation
-@0053DF イアン２  // TODO: English translation
-@0053F3 イアン３  // TODO: English translation
+@0053CB イアン１  // EN: Ian 1
+@0053DF イアン２  // EN: Ian 2
+@0053F3 イアン３  // EN: Ian 3
 @00545F F15A04  // LITERAL: F15A04 (usage not inferred)
-@00551D イアン４  // TODO: English translation
+@00551D イアン４  // EN: Ian 4
 @0055A1 F16A01  // LITERAL: F16A01 (usage not inferred)
 @005609 F16A02  // LITERAL: F16A02 (usage not inferred)
-@0056EB ギド１  // TODO: English translation
-@0056FD ギド２  // TODO: English translation
-@00570F ギド３  // TODO: English translation
+@0056EB ギド１  // EN: Gido 1
+@0056FD ギド２  // EN: Gido 2
+@00570F ギド３  // EN: Gido 3
 @005779 F20A01  // LITERAL: F20A01 (usage not inferred)
 @005811 F20A02  // LITERAL: F20A02 (usage not inferred)
 @005879 F20A03  // LITERAL: F20A03 (usage not inferred)
-@00595B オルコ１  // TODO: English translation
-@00596F オルコ２  // TODO: English translation
-@005983 オルコ３  // TODO: English translation
+@00595B オルコ１  // EN: Orco 1
+@00596F オルコ２  // EN: Orco 2
+@005983 オルコ３  // EN: Orco 3
 @0059EF F21A01  // LITERAL: F21A01 (usage not inferred)
 @005A87 F21A02  // LITERAL: F21A02 (usage not inferred)
 @005B1F F21A03  // LITERAL: F21A03 (usage not inferred)
-@005B7D ギロム１  // TODO: English translation
-@005B91 ギロム２  // TODO: English translation
-@005BA5 ギロム３  // TODO: English translation
+@005B7D ギロム１  // EN: Girom 1
+@005B91 ギロム２  // EN: Girom 2
+@005BA5 ギロム３  // EN: Girom 3
 @005C11 F22A01  // LITERAL: F22A01 (usage not inferred)
 @005CA9 F22A02  // LITERAL: F22A02 (usage not inferred)
 @005D41 F22A03  // LITERAL: F22A03 (usage not inferred)
-@005D9F ファントム１  // TODO: English translation
-@005DB7 ファントム２  // TODO: English translation
-@005DCF ファントム３  // TODO: English translation
+@005D9F ファントム１  // EN: Phantom 1
+@005DB7 ファントム２  // EN: Phantom 2
+@005DCF ファントム３  // EN: Phantom 3
 @005E3F F22A04  // LITERAL: F22A04 (usage not inferred)
 @005ED7 F22A05  // LITERAL: F22A05 (usage not inferred)
-@005F65 ファントム４  // TODO: English translation
-@005F7D ファントム５  // TODO: English translation
+@005F65 ファントム４  // EN: Phantom 4
+@005F7D ファントム５  // EN: Phantom 5
 @005FF9 F23A01  // LITERAL: F23A01 (usage not inferred)
 @006091 F23A02  // LITERAL: F23A02 (usage not inferred)
-@0060EF ハロウィン１  // TODO: English translation
-@006107 ハロウィン２  // TODO: English translation
+@0060EF ハロウィン１  // EN: Halloween 1
+@006107 ハロウィン２  // EN: Halloween 2
 @006183 F24A01  // LITERAL: F24A01 (usage not inferred)
 @00621B F24A02  // LITERAL: F24A02 (usage not inferred)
-@006279 ペタ１  // TODO: English translation
-@00628B ペタ２  // TODO: English translation
+@006279 ペタ１  // EN: Peta 1
+@00628B ペタ２  // EN: Peta 2
 @006301 F25A01  // LITERAL: F25A01 (usage not inferred)
 @006399 F25A02  // LITERAL: F25A02 (usage not inferred)
-@0063F7 ロコ１  // TODO: English translation
-@006409 ロコ２  // TODO: English translation
+@0063F7 ロコ１  // EN: Loco 1
+@006409 ロコ２  // EN: Loco 2
 @00647F F26A01  // LITERAL: F26A01 (usage not inferred)
 @006517 F27A01  // LITERAL: F27A01 (usage not inferred)
-@006575 メリロ１  // TODO: English translation
-@006589 ブモル１  // TODO: English translation
+@006575 メリロ１  // EN: Merilo 1
+@006589 ブモル１  // EN: Bumol 1
 @006601 F28A01  // LITERAL: F28A01 (usage not inferred)
 @006699 F28A02  // LITERAL: F28A02 (usage not inferred)
-@0066F7 ベル１  // TODO: English translation
-@006709 ベル２  // TODO: English translation
+@0066F7 ベル１  // EN: Belle 1
+@006709 ベル２  // EN: Belle 2
 @00677F F29A01  // LITERAL: F29A01 (usage not inferred)
 @006817 F29A02  // LITERAL: F29A02 (usage not inferred)
 @00687F F29A03  // LITERAL: F29A03 (usage not inferred)
@@ -268,34 +268,34 @@
 @006A07 F30A01  // LITERAL: F30A01 (usage not inferred)
 @006A9F F30A02  // LITERAL: F30A02 (usage not inferred)
 @006B37 F30A03  // LITERAL: F30A03 (usage not inferred)
-@006B95 親岩１  // TODO: English translation
-@006BA7 親岩２  // TODO: English translation
-@006BB9 親岩３  // TODO: English translation
+@006B95 親岩１  // EN: Parent Rock 1
+@006BA7 親岩２  // EN: Parent Rock 2
+@006BB9 親岩３  // EN: Parent Rock 3
 @006C23 F30A04  // LITERAL: F30A04 (usage not inferred)
 @006CBB F30A05  // LITERAL: F30A05 (usage not inferred)
-@006D49 子岩１  // TODO: English translation
-@006D5B 子岩２  // TODO: English translation
+@006D49 子岩１  // EN: Child Rock 1
+@006D5B 子岩２  // EN: Child Rock 2
 @006DD1 F31A01  // LITERAL: F31A01 (usage not inferred)
 @006E69 F31A04  // LITERAL: F31A04 (usage not inferred)
 @006ED1 F31A06  // LITERAL: F31A06 (usage not inferred)
-@006FB3 小雪１  // TODO: English translation
-@006FC5 小雪４  // TODO: English translation
-@006FD7 小雪６  // TODO: English translation
+@006FB3 小雪１  // EN: Koyuki 1
+@006FC5 小雪４  // EN: Koyuki 4
+@006FD7 小雪６  // EN: Koyuki 6
 @007041 F36A01  // LITERAL: F36A01 (usage not inferred)
 @0070D9 F37A01  // LITERAL: F37A01 (usage not inferred)
-@007167 ブリキン１  // TODO: English translation
-@00717D リングアーマー１  // TODO: English translation
+@007167 ブリキン１  // EN: Burikin 1
+@00717D リングアーマー１  // EN: Ring Armor 1
 @0071FD F38A01  // LITERAL: F38A01 (usage not inferred)
 @007295 F38A02  // LITERAL: F38A02 (usage not inferred)
 @0072FD F38A03  // LITERAL: F38A03 (usage not inferred)
-@0073DF マール１  // TODO: English translation
-@0073F3 マール２  // TODO: English translation
-@007407 マール３  // TODO: English translation
+@0073DF マール１  // EN: Marl 1
+@0073F3 マール２  // EN: Marl 2
+@007407 マール３  // EN: Marl 3
 @007473 F38A04  // LITERAL: F38A04 (usage not inferred)
 @00750B F38A05  // LITERAL: F38A05 (usage not inferred)
 @0075A3 F39A01  // LITERAL: F39A01 (usage not inferred)
-@007601 マール４  // TODO: English translation
-@007615 マール５  // TODO: English translation
-@007629 ベリーニ１  // TODO: English translation
+@007601 マール４  // EN: Marl 4
+@007615 マール５  // EN: Marl 5
+@007629 ベリーニ１  // EN: Bellini 1
 @007697 F40A01  // LITERAL: F40A01 (usage not inferred)
-@007755 幽霊１  // TODO: English translation
+@007755 幽霊１  // EN: Ghost 1

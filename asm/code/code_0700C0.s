@@ -89,7 +89,7 @@ sub_08070140:
 	ldr r1, [r4, #0]
 	movs r0, #0
 	bl HeapFree
-	bl sub_08011514
+	bl HitRegionDisableAll
 	movs r0, #0
 	movs r1, #0
 	bl sub_08010A2C
@@ -138,7 +138,7 @@ sub_080701A2:
 	ldr r1, [r0, #0]
 	movs r0, #0
 	bl HeapFree
-	bl sub_08011514
+	bl HitRegionDisableAll
 	movs r0, #0
 	movs r1, #0
 	bl sub_08010A2C
@@ -359,7 +359,7 @@ _08070326:
 	adds r7, #1
 	cmp r7, #63
 	bls _08070326
-	bl sub_08011514
+	bl HitRegionDisableAll
 	adds r0, r6, #0
 	ldr r1, [sp, #284]
 	bl sub_080717EC
@@ -1122,7 +1122,7 @@ sub_080708A8:
 	ldr r0, [r5, #44]
 	str r0, [sp, #0]
 	adds r0, r4, #0
-	bl sub_08003280
+	bl KmpSetClip
 	adds r4, #252
 	ldr r1, [r5, #32]
 	ldr r2, [r5, #36]
@@ -1130,7 +1130,7 @@ sub_080708A8:
 	ldr r0, [r5, #44]
 	str r0, [sp, #0]
 	adds r0, r4, #0
-	bl sub_08003280
+	bl KmpSetClip
 	movs r0, #0
 	bl sub_0800A140
 	movs r0, #32
@@ -1874,7 +1874,7 @@ sub_08070DA8:
 	adds r0, #2
 	movs r1, #0
 	movs r2, #0
-	bl sub_080032B8
+	bl KmpLoadField
 	ldr r0, _08070DFC
 	adds r4, r5, r0
 	ldr r2, [r4, #0]
@@ -1964,7 +1964,7 @@ sub_08070E28:
 	adds r0, r2, #0
 	movs r1, #0
 	movs r2, #0
-	bl sub_080032B8
+	bl KmpLoadField
 	.2byte 0xF795
 
 	.thumb_func
@@ -2998,7 +2998,7 @@ _08071406:
 	str r0, [sp, #0]
 	movs r0, #1
 	movs r3, #44
-	bl sub_08011530
+	bl HitRegionInit
 	movs r0, #1
 	bl sub_08011464
 	movs r1, #1
@@ -5568,7 +5568,7 @@ _080724D0:
 	adds r1, r6, #0
 	adds r2, r5, #0
 	adds r3, r4, #0
-	bl sub_08003280
+	bl KmpSetClip
 	movs r0, #1
 	bl ScriptCompletePendingTasks
 	movs r0, #1
@@ -5787,7 +5787,7 @@ _08072682:
 	bl sub_0800A140
 	ldr r4, _08072708
 	adds r0, r4, #0
-	bl sub_08003294
+	bl KmpResetClip
 	ldr r0, _0807270C
 	adds r4, r4, r0
 	movs r0, #2

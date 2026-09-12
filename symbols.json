@@ -131,5 +131,14 @@
   "08080140": "ScriptNativeCharacterString",
   "08080188": "ScriptNativeMax",
   "080801B4": "ScriptNativeMin",
-  "08080214": "ScriptNativeIntegerString"
+  "08080214": "ScriptNativeIntegerString",
+  "08011504": "HitRegionDisable",
+  "08011514": "HitRegionDisableAll",
+  "08011530": "HitRegionInit",
+  "08011654": "HitRegionSetRect",
+  "08018C4C": "HitRegionTest",
+  "08002630": "KmpRenderViewport",
+  "080032B8": "KmpLoadField",
+  "08003280": "KmpSetClip",
+  "08003294": "KmpResetClip"
 }

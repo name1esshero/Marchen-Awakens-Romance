@@ -48,3 +48,19 @@ s32 KmpReadAttribute(struct KmpViewport *view, s32 x, s32 y)
  return result;
 }
 __attribute__((section(".rom.00003104"))) const u8 KmpReadAttributeTail[2]={0,0};
+
+/* Dispatch using the signed mode byte, preserving 16.16 viewport coordinates.
+ * Both render paths remain in assembly; this wrapper does not change position
+ * units or infer layer blending from the mode number.
+ */
+extern void sub_08002650(struct KmpViewport *, s32, s32);
+extern void sub_08002798(struct KmpViewport *, s32, s32);
+AT("00002630")
+void KmpRenderViewport(struct KmpViewport *view, s32 x, s32 y)
+{
+    if ((s8)view->renderMode == 0)
+        sub_08002650(view, x, y);
+    else
+        sub_08002798(view, x, y);
+}
+AT("00002630") const u8 KmpRenderViewportTail[2] = {0, 0};

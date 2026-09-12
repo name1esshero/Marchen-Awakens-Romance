@@ -38,15 +38,16 @@ def main():
                 continue
             name = re.fullmatch(r'［([^］]+)］', clean)
             translated = lookup.get(name[1] if name else clean)
-            if translated and name:
+            if translated is not None and name:
                 translated = '[' + translated + ']'
-            if not translated:
+            if translated is None:
                 for punctuation in ('！！', '！', '…'):
                     if clean.endswith(punctuation) and clean[:-len(punctuation)] in lookup:
                         translated = lookup[clean[:-len(punctuation)]] + {'！！':'!!','！':'!','…':'...'}[punctuation]
                         break
-            if translated:
-                lines[i] = body + '  // EN: ' + translated + '\n'
+            if translated is not None:
+                # An explicit empty mapping omits grammar with no English equivalent.
+                lines[i] = body + '  // EN:' + (' ' + translated if translated else '') + '\n'
                 counts['english_comments'] += 1
             elif path.parent.name == 'nfp' and clean and clean.isascii():
                 lines[i] = body + '  // LITERAL: ' + clean + ' (usage not inferred)\n'

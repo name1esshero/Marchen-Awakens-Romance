@@ -3,4 +3,4 @@
 // Regenerate comments with tools/translate_comments.py; this copy is not built.
 
 @0000EC  C0D04   // FORMAT: Blank text / color controls only; no translatable characters.
-@0000FF  C0F04 　　　　　　閉まっている  // TODO: English translation
+@0000FF  C0F04 　　　　　　閉まっている  // EN: It's closed.

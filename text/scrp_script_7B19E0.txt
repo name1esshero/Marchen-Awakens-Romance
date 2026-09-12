@@ -5,8 +5,8 @@
 @000097 MAP05_A  // LITERAL: MAP05_A (usage not inferred)
 @000466 F03A03  // LITERAL: F03A03 (usage not inferred)
 @000548  C0D04 ［ジャック］  // EN: [Jack]
-@000567  C0F04 父ちゃんがのこしてくれた  // TODO: English translation
-@000592 このスコップ…  // TODO: English translation
+@000567  C0F04 父ちゃんがのこしてくれた  // EN: This shovel...
+@000592 このスコップ…  // EN: ...that Dad left me...
 @0005CA  C0D04 ［ジャック］  // EN: [Jack]
-@0005E9  C0F04 オイラもこれで  // TODO: English translation
-@00060A たたかうっスよ！！  // TODO: English translation
+@0005E9  C0F04 オイラもこれで  // EN: ...I'll use it...
+@00060A たたかうっスよ！！  // EN: ...to fight too!!

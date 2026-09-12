@@ -3,4 +3,4 @@
 // Regenerate comments with tools/translate_comments.py; this copy is not built.
 
 @000058 DITEMCOM.SPC  // LITERAL: DITEMCOM.SPC (usage not inferred)
-@000217  C0D04 １４２０Ｐ C0F04 が入っていた！  // TODO: English translation
+@000217  C0D04 １４２０Ｐ C0F04 が入っていた！  // EN: There was 1420P inside!

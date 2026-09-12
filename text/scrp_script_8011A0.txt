@@ -7,74 +7,74 @@
 @0002FF A  // LITERAL: A (usage not inferred)
 @0008A9 F15A03  // LITERAL: F15A03 (usage not inferred)
 @00096A  C0D04 ［イアン］  // EN: [Ian]
-@000987  C0F04 ごほぁ！！  // TODO: English translation
+@000987  C0F04 ごほぁ！！  // EN: Gah!!
 @0009D8 F15A03  // LITERAL: F15A03 (usage not inferred)
 @000A06  C0D04 ［イアン］  // EN: [Ian]
-@000A23  C0F04 （うそだろ…  // TODO: English translation
-@000A42 　氷の城をでてからまだ、すう日だぞ！）  // TODO: English translation
+@000A23  C0F04 （うそだろ…  // EN: (No way...
+@000A42 　氷の城をでてからまだ、すう日だぞ！）  // EN: It's only been a few days since the ice castle!)
 @000A9C F01B01  // LITERAL: F01B01 (usage not inferred)
 @000B88 F15A03  // LITERAL: F15A03 (usage not inferred)
 @000BB6  C0D04 ［イアン］  // EN: [Ian]
-@000BD3  C0F04 （それなのに…  // TODO: English translation
-@000BF4 　こいつ、ビショップくらいつよい！）  // TODO: English translation
+@000BD3  C0F04 （それなのに…  // EN: (And yet...
+@000BF4 　こいつ、ビショップくらいつよい！）  // EN: He's as strong as a Bishop!)
 @000CA2  C0D04 ［？？？］  // EN: [???]
 @000D40 F01B10  // LITERAL: F01B10 (usage not inferred)
 @000E01  C0D04 ［ギンタ］  // EN: [Ginta]
-@000E1E  C0F04 そ、その声は！！  // TODO: English translation
+@000E1E  C0F04 そ、その声は！！  // EN: Th-that voice!!
 @000EDB A  // LITERAL: A (usage not inferred)
 @0012CE F01B11  // LITERAL: F01B11 (usage not inferred)
 @0013BA F09A03  // LITERAL: F09A03 (usage not inferred)
 @00147B  C0D04 ［ドロシー］  // EN: [Dorothy]
 @0014F7 F01B11  // LITERAL: F01B11 (usage not inferred)
 @001525  C0D04 ［ギンタ］  // EN: [Ginta]
-@001542  C0F04 わ・わ・わ・わ！  // TODO: English translation
+@001542  C0F04 わ・わ・わ・わ！  // EN: W-w-w-wha!
 @0016C9 F04A02  // LITERAL: F04A02 (usage not inferred)
 @00178A  C0D04 ［スノウ］  // EN: [Snow]
-@0017A7  C0F04 …  // TODO: English translation
+@0017A7  C0F04 …  // EN: ...
 @0017F0 F09A02  // LITERAL: F09A02 (usage not inferred)
 @00181E  C0D04 ［ドロシー］  // EN: [Dorothy]
-@00183D  C0F04 …ちょ  // TODO: English translation
+@00183D  C0F04 …ちょ  // EN: ...Hey...
 @0018EA F04A02  // LITERAL: F04A02 (usage not inferred)
 @001978  C0D04 ［スノウ］  // EN: [Snow]
 @001995  C0F04 …！！！  // EN: ...!!!
 @001A14 F09A05  // LITERAL: F09A05 (usage not inferred)
 @001A72  C0D04 ［ドロシー］  // EN: [Dorothy]
-@001A91  C0F04 な…！  // TODO: English translation
-@001AAA このっ！  // TODO: English translation
+@001A91  C0F04 な…！  // EN: Wha...!
+@001AAA このっ！  // EN: Why, you...!
 @001B76 F06A05  // LITERAL: F06A05 (usage not inferred)
 @001C58  C0D04 ［エド］  // EN: [Ed]
-@001C73  C0F04 …  // TODO: English translation
+@001C73  C0F04 …  // EN: ...
 @001CEC F01B11  // LITERAL: F01B11 (usage not inferred)
 @001DAD  C0D04 ［ギンタ］  // EN: [Ginta]
-@001DCA  C0F04 ま、まてよ！？  // TODO: English translation
-@001DEB ドロシーがいるってことは…！  // TODO: English translation
+@001DCA  C0F04 ま、まてよ！？  // EN: W-wait a second?!
+@001DEB ドロシーがいるってことは…！  // EN: If Dorothy is here...!
 @001EA1 A  // LITERAL: A (usage not inferred)
 @0020EE F03A06  // LITERAL: F03A06 (usage not inferred)
 @0021AF  C0D04 ［ジャック］  // EN: [Jack]
-@0021CE  C0F04 ひさしぶりっス！  // TODO: English translation
+@0021CE  C0F04 ひさしぶりっス！  // EN: Long time no see!
 @0021F1 ギンタ！！  // EN: Ginta!!
 @002295 A  // LITERAL: A (usage not inferred)
 @0025D0 F16A01  // LITERAL: F16A01 (usage not inferred)
 @002691  C0D04 ［ギド］  // EN: [Gido]
-@0026AC  C0F04 …イアン  // TODO: English translation
-@0026C7 ここはわたしにまかせてください  // TODO: English translation
+@0026AC  C0F04 …イアン  // EN: ...Ian.
+@0026C7 ここはわたしにまかせてください  // EN: Please leave this to me.
 @002719 F15A03  // LITERAL: F15A03 (usage not inferred)
 @0027DA  C0D04 ［イアン］  // EN: [Ian]
-@0027F7  C0F04 ま、まて！  // TODO: English translation
-@002814 おまえの力じゃ…  // TODO: English translation
+@0027F7  C0F04 ま、まて！  // EN: W-wait!
+@002814 おまえの力じゃ…  // EN: You're not strong enough...
 @00284E  C0D04 ［ギド］  // EN: [Gido]
-@002869  C0F04 わかっています  // TODO: English translation
-@00288A でも…  // TODO: English translation
+@002869  C0F04 わかっています  // EN: I know.
+@00288A でも…  // EN: But...
 @00295E  C0D04 ［ギド］  // EN: [Gido]
-@002979  C0F04 あの魔力（まりょく）のいちばん  // TODO: English translation
-@0029AA 低そうなやつならば！！  // TODO: English translation
+@002979  C0F04 あの魔力（まりょく）のいちばん  // EN: If I take the one who seems...
+@0029AA 低そうなやつならば！！  // EN: ...to have the least magic power!!
 @002A5A F09A01  // LITERAL: F09A01 (usage not inferred)
 @002B33  C0D04 ［ドロシー］  // EN: [Dorothy]
-@002B52  C0F04 あら…  // TODO: English translation
-@002B6B なめられちゃったものねぇ  // TODO: English translation
+@002B52  C0F04 あら…  // EN: Oh my...
+@002B6B なめられちゃったものねぇ  // EN: They're underestimating you.
 @002BBD F03A01  // LITERAL: F03A01 (usage not inferred)
 @002CCD F09A02  // LITERAL: F09A02 (usage not inferred)
 @002CFB  C0D04 ［ドロシー］  // EN: [Dorothy]
-@002D1A  C0F04 キミの力、見せておやり！  // TODO: English translation
+@002D1A  C0F04 キミの力、見せておやり！  // EN: Show them what you can do!
 @002D45 ジャック！  // EN: Jack!
 @002E57 EV_MON04.SPC  // LITERAL: EV_MON04.SPC (usage not inferred)

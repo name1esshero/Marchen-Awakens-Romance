@@ -2169,7 +2169,7 @@ _08028E2E:
 	adds r0, r4, r1
 	ldr r2, _08028FB0
 	movs r1, #0
-	bl sub_08002630
+	bl KmpRenderViewport
 	str r5, [sp, #0]
 	ldr r0, _08028FB4
 	str r0, [sp, #4]
