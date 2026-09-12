@@ -8424,7 +8424,7 @@ sub_0805365A:
 	adds r0, r0, r4
 	movs r1, #0
 	ldrsh r0, [r0, r1]
-	bl sub_08056474
+	bl ItemGetName
 	adds r1, r0, #0
 	adds r0, r5, #0
 	bl strcpy
@@ -8474,7 +8474,7 @@ _080536A2:
 	adds r0, r0, r4
 	movs r1, #0
 	ldrsh r0, [r0, r1]
-	bl sub_08056474
+	bl ItemGetName
 	adds r1, r0, #0
 	adds r0, r5, #0
 	bl strcpy
@@ -8532,7 +8532,7 @@ _080536FE:
 	mov r1, r8
 	cmp r1, #0
 	bne _08053716
-	bl sub_08056474
+	bl ItemGetName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	bl strcpy
@@ -8552,7 +8552,7 @@ _08053724:
 	.4byte 0x080887D4  @ ROM+0x887D4
 	.global _08053728
 _08053728:
-	bl sub_08056474
+	bl ItemGetName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	bl strcpy
@@ -8701,7 +8701,7 @@ sub_080537D8:
 	cmp r6, #0
 	beq _080538E4
 	adds r0, r6, #0
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r5, r0, #0
 	add r0, sp, #12
 	movs r1, #34
@@ -8793,7 +8793,7 @@ _080538E0:
 	.global _080538E4
 _080538E4:
 	movs r0, #0
-	bl sub_08056464
+	bl ItemGetDefinition
 	add r0, sp, #12
 	movs r1, #34
 	movs r2, #0
@@ -9781,7 +9781,7 @@ sub_08054048:
 	.global _0805408A
 _0805408A:
 	adds r0, r7, #0
-	bl sub_08056464
+	bl ItemGetDefinition
 	ldr r4, [r0, #108]
 	b _0805409C
 	.global _08054094
@@ -9864,7 +9864,7 @@ _08054100:
 	bne _0805412C
 	ldr r4, _08054124
 	adds r0, r7, #0
-	bl sub_08056474
+	bl ItemGetName
 	adds r2, r0, #0
 	ldr r0, _08054128
 	ldr r3, [r0, #44]
@@ -9916,7 +9916,7 @@ _08054158:
 	bne _08054184
 	ldr r4, _0805417C
 	adds r0, r7, #0
-	bl sub_08056474
+	bl ItemGetName
 	adds r2, r0, #0
 	ldr r0, _08054180
 	ldr r3, [r0, #44]
@@ -9996,7 +9996,7 @@ _080541D0:
 	bne _08054200
 	ldr r5, _080541F4
 	adds r0, r7, #0
-	bl sub_08056474
+	bl ItemGetName
 	adds r2, r0, #0
 	ldr r4, _080541F8
 	ldr r3, [r4, #36]
@@ -10165,7 +10165,7 @@ sub_080542FC:
 	cmp r2, #0
 	bne _08054338
 	adds r0, r4, #0
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r7, r0, #0
 	cmp r5, #255
 	bne _08054326
@@ -10474,7 +10474,7 @@ sub_08054594:
 	lsls r0, r0, #16
 	asrs r6, r0, #16
 	adds r0, r6, #0
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r0, r6, #0
 	bl sub_08057600
 	lsls r0, r0, #16
@@ -10709,7 +10709,7 @@ _08054770:
 	movs r1, #0
 	ldrsh r0, [r6, r1]
 	str r2, [sp, #0]
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r1, r0, #0
 	str r5, [r4, #0]
 	movs r3, #2
@@ -14290,7 +14290,7 @@ _08056418:
 	ldrsh r0, [r1, r2]
 	cmp r0, #0
 	beq _08056436
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r0, #86
 	ldrh r0, [r0, #0]
 	adds r0, r4, r0
@@ -14326,207 +14326,9 @@ _0805645C:
 _08056460:
 	.4byte 0x000003E7
 
-	.thumb_func
-	.thumb
-	.global sub_08056464
-sub_08056464:
-	lsls r0, r0, #16
-	asrs r0, r0, #9
-	ldr r1, _08056470
-	adds r0, r0, r1
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _08056470
-_08056470:
-	.4byte 0x081B096C  @ ROM+0x1B096C
-
-	.thumb_func
-	.thumb
-	.global sub_08056474
-sub_08056474:
-	lsls r0, r0, #16
-	asrs r0, r0, #9
-	ldr r1, _08056480
-	adds r0, r0, r1
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _08056480
-_08056480:
-	.4byte 0x081B097C  @ ROM+0x1B097C
-
-	.thumb_func
-	.thumb
-	.global sub_08056484
-sub_08056484:
-	lsls r0, r0, #16
-	asrs r0, r0, #9
-	ldr r1, _08056490
-	adds r0, r0, r1
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _08056490
-_08056490:
-	.4byte 0x081B099E  @ ROM+0x1B099E
-
-	.thumb_func
-	.thumb
-	.global sub_08056494
-sub_08056494:
-	lsls r0, r0, #16
-	ldr r1, _080564A8
-	asrs r0, r0, #9
-	adds r0, r0, r1
-	adds r0, #99
-	ldrb r0, [r0, #0]
-	lsls r0, r0, #24
-	asrs r0, r0, #24
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _080564A8
-_080564A8:
-	.4byte 0x081B096C  @ ROM+0x1B096C
-
-	.thumb_func
-	.thumb
-	.global sub_080564AC
-sub_080564AC:
-	lsls r0, r0, #16
-	ldr r1, _080564C0
-	asrs r0, r0, #9
-	adds r0, r0, r1
-	adds r0, #100
-	ldrb r0, [r0, #0]
-	lsls r0, r0, #24
-	asrs r0, r0, #24
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _080564C0
-_080564C0:
-	.4byte 0x081B096C  @ ROM+0x1B096C
-
-	.thumb_func
-	.thumb
-	.global sub_080564C4
-sub_080564C4:
-	lsls r0, r0, #16
-	ldr r1, _080564D8
-	asrs r0, r0, #9
-	adds r0, r0, r1
-	adds r0, #101
-	ldrb r0, [r0, #0]
-	lsls r0, r0, #24
-	asrs r0, r0, #24
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _080564D8
-_080564D8:
-	.4byte 0x081B096C  @ ROM+0x1B096C
-
-	.thumb_func
-	.thumb
-	.global sub_080564DC
-sub_080564DC:
-	lsls r0, r0, #16
-	ldr r1, _080564EC
-	asrs r0, r0, #9
-	adds r0, r0, r1
-	adds r0, #92
-	movs r1, #0
-	ldrsh r0, [r0, r1]
-	bx lr
-	.global _080564EC
-_080564EC:
-	.4byte 0x081B096C  @ ROM+0x1B096C
-	.4byte 0x49030400
-	.4byte 0x18401240
-	.4byte 0x2100305E
-	.4byte 0x47705E40
-	.4byte 0x081B096C
-
-	.thumb_func
-	.thumb
-	.global sub_08056504
-sub_08056504:
-	lsls r0, r0, #16
-	ldr r1, _08056514
-	asrs r0, r0, #9
-	adds r0, r0, r1
-	adds r0, #96
-	movs r1, #0
-	ldrsh r0, [r0, r1]
-	bx lr
-	.global _08056514
-_08056514:
-	.4byte 0x081B096C  @ ROM+0x1B096C
-
-	.thumb_func
-	.thumb
-	.global sub_08056518
-sub_08056518:
-	lsls r0, r0, #16
-	ldr r1, _0805652C
-	asrs r0, r0, #9
-	adds r0, r0, r1
-	adds r0, #89
-	ldrb r0, [r0, #0]
-	lsls r0, r0, #24
-	asrs r0, r0, #24
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _0805652C
-_0805652C:
-	.4byte 0x081B096C  @ ROM+0x1B096C
-
-	.thumb_func
-	.thumb
-	.global sub_08056530
-sub_08056530:
-	lsls r0, r0, #16
-	ldr r1, _08056544
-	asrs r0, r0, #9
-	adds r0, r0, r1
-	adds r0, #90
-	ldrb r0, [r0, #0]
-	lsls r0, r0, #24
-	asrs r0, r0, #24
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _08056544
-_08056544:
-	.4byte 0x081B096C  @ ROM+0x1B096C
-	.4byte 0x49040400
-	.4byte 0x18401240
-	.4byte 0x78003062
-	.4byte 0x16000600
-	.4byte 0x00004770
-	.4byte 0x081B096C
-
-	.thumb_func
-	.thumb
-	.global sub_08056560
-sub_08056560:
-	lsls r0, r0, #16
-	ldr r1, _08056574
-	asrs r0, r0, #9
-	adds r0, r0, r1
-	adds r0, #88
-	ldrb r0, [r0, #0]
-	lsls r0, r0, #24
-	asrs r0, r0, #24
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _08056574
-_08056574:
-	.4byte 0x081B096C  @ ROM+0x1B096C
+	.section .rom.00056578, "ax"
+	.balign 4
+	.syntax unified
 	.4byte 0x4C1BB5F0
 	.4byte 0x21DE44A5
 	.4byte 0x46680089
@@ -14617,7 +14419,7 @@ _08056652:
 	cmp r0, #0
 	beq _0805671C
 	adds r0, r5, #0
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r0, #103
 	ldrb r0, [r0, #0]
 	lsls r0, r0, #28
@@ -14655,7 +14457,7 @@ _08056684:
 	.global _080566A2
 _080566A2:
 	adds r0, r5, #0
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r1, r0, #0
 	adds r1, #103
 	ldrb r1, [r1, #0]
@@ -14687,7 +14489,7 @@ _080566C2:
 	.global _080566E0
 _080566E0:
 	adds r0, r5, #0
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r0, #103
 	ldrb r0, [r0, #0]
 	lsls r0, r0, #28
@@ -14782,7 +14584,7 @@ sub_08056774:
 	lsls r4, r4, #16
 	asrs r4, r4, #16
 	movs r5, #0
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r2, r0, #0
 	subs r4, #1
 	lsls r4, r4, #16
@@ -15369,7 +15171,7 @@ sub_08056BC4:
 	movs r1, #1
 	bl sub_08056B58
 	adds r0, r4, #0
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r0, #86
 	movs r2, #0
 	ldrsh r1, [r0, r2]
@@ -15420,7 +15222,7 @@ _08056C28:
 	.global _08056C46
 _08056C46:
 	adds r0, r4, #0
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r0, #86
 	movs r2, #0
 	ldrsh r1, [r0, r2]
@@ -15472,7 +15274,7 @@ _08056C84:
 	.global _08056CA0
 _08056CA0:
 	adds r0, r4, #0
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r5, r0, #0
 	movs r0, #1
 	negs r0, r0
@@ -16868,7 +16670,7 @@ sub_080575B8:
 	lsls r1, r1, #16
 	asrs r4, r1, #16
 	adds r5, r4, #0
-	bl sub_08056464
+	bl ItemGetDefinition
 	cmp r4, #11
 	beq _080575E6
 	cmp r4, #11
@@ -17150,7 +16952,7 @@ _0805775A:
 	cmp r7, #0
 	bne _08057778
 	mov r0, r8
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r0, #6
 	b _0805777C
 	.global _08057778

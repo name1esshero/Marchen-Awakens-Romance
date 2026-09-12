@@ -811,7 +811,7 @@ _080585F2:
 	adds r1, r1, r0
 	movs r2, #0
 	ldrsh r0, [r1, r2]
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r2, r0, #0
 	adds r0, #100
 	movs r1, #0
@@ -868,7 +868,7 @@ _0805865A:
 	adds r1, r1, r0
 	movs r2, #0
 	ldrsh r0, [r1, r2]
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r2, r0, #0
 	adds r0, #99
 	movs r1, #0
@@ -908,7 +908,7 @@ _080586AA:
 	adds r1, r1, r0
 	movs r4, #0
 	ldrsh r0, [r1, r4]
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r2, r0, #0
 	adds r0, #86
 	movs r7, #0
@@ -5688,7 +5688,7 @@ _0805A32A:
 	movs r0, #0
 	ldrsh r2, [r1, r0]
 	adds r0, r2, #0
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r2, r0, #0
 	adds r0, #100
 
@@ -5794,7 +5794,7 @@ sub_0805A3DA:
 	movs r3, #0
 	ldrsh r2, [r1, r3]
 	adds r0, r2, #0
-	bl sub_08056464
+	bl ItemGetDefinition
 
 	.thumb_func
 	.thumb
@@ -5865,7 +5865,7 @@ _0805A444:
 	movs r0, #0
 	ldrsh r2, [r1, r0]
 	adds r0, r2, #0
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r2, r0, #0
 	adds r0, #86
 	movs r2, #0
@@ -7092,7 +7092,7 @@ _0805AC68:
 	.thumb
 	.global sub_0805AC82
 sub_0805AC82:
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r5, r0, #0
 	ldr r2, _0805ACC8
 	adds r0, r4, r2
@@ -7158,7 +7158,7 @@ _0805ACE4:
 	.thumb
 	.global sub_0805ACEC
 sub_0805ACEC:
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r5, r0, #0
 	ldr r3, _0805AD10
 	adds r0, r4, r3
@@ -16929,7 +16929,7 @@ sub_0805F080:
 	ldrsh r0, [r1, r2]
 	cmp r0, #0
 	beq _0805F0A0
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r0, #86
 	ldrh r0, [r0, #0]
 	adds r0, r4, r0
@@ -17875,7 +17875,7 @@ sub_0805F6B8:
 	ldr r1, _0805F834
 	adds r5, r4, r1
 	mov r0, r9
-	bl sub_08056474
+	bl ItemGetName
 	adds r1, r0, #0
 	adds r0, r5, #0
 	bl strcpy

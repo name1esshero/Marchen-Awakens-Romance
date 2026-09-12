@@ -36,9 +36,13 @@ def fixture(root):
 
 
 class MapCodecTests(unittest.TestCase):
-    def test_all_47_maps_round_trip(self):
+    def test_all_maps_and_traced_scenes_round_trip(self):
         project=Project(ROOT);catalog=project.catalog()
-        self.assertEqual(len(catalog['maps']),47);self.assertFalse(catalog['unsupported'])
+        self.assertGreaterEqual(len(catalog['maps']),49);self.assertFalse(catalog['unsupported'])
+        for name in ('PW_BG01.KMP','PW_BOX.KMP'):
+            data=project.load(name)
+            self.assertEqual(len(data['runtime_contexts']),1)
+            self.assertTrue(data['unresolved'])
         for item in catalog['maps']:
             with self.subTest(map=item['name']):
                 data=project.load(item['name'])

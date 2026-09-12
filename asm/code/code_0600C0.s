@@ -816,7 +816,7 @@ _080606FC:
 	asrs r0, r0, #16
 	mov r9, r0
 	adds r0, r4, #0
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r1, r0, #0
 	adds r1, #100
 	movs r2, #0
@@ -851,7 +851,7 @@ _080606FC:
 	cmp r3, #0
 	beq _08060774
 	adds r0, r4, #0
-	bl sub_08056474
+	bl ItemGetName
 	adds r1, r0, #0
 	adds r0, r6, #0
 	bl strcat
@@ -1067,7 +1067,7 @@ sub_0806089A:
 	ldr r2, [sp, #32]
 	movs r3, #0
 	ldrsh r0, [r2, r3]
-	bl sub_08056464
+	bl ItemGetDefinition
 	str r0, [sp, #28]
 	ldr r0, _08060A28
 	adds r7, r6, r0
@@ -1367,7 +1367,7 @@ sub_08060AC0:
 	mov r8, r1
 	movs r2, #0
 	ldrsh r0, [r1, r2]
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r4, r0, #0
 	ldr r3, _08060B90
 	adds r5, r6, r3
@@ -1424,7 +1424,7 @@ sub_08060AC0:
 	mov r1, r8
 	movs r2, #0
 	ldrsh r0, [r1, r2]
-	bl sub_08056484
+	bl ItemGetDescription
 	adds r1, r0, #0
 	adds r0, r4, #0
 	bl strcpy
@@ -3116,7 +3116,7 @@ _08061A1C:
 	adds r0, r0, r1
 	movs r1, #0
 	ldrsh r0, [r0, r1]
-	bl sub_08056464
+	bl ItemGetDefinition
 	ldr r2, [r0, #108]
 	movs r0, #152
 	str r0, [sp, #0]
@@ -3314,7 +3314,7 @@ _08061B26:
 	strb r0, [r2, #0]
 	movs r1, #0
 	ldrsh r0, [r6, r1]
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r6, r0, #0
 	movs r7, #234
 	lsls r7, r7, #4
@@ -6659,7 +6659,7 @@ _080637E6:
 	adds r1, r1, r0
 	movs r2, #0
 	ldrsh r0, [r1, r2]
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r2, r0, #0
 	adds r0, #100
 	movs r1, #0
@@ -6754,7 +6754,7 @@ _08063880:
 	adds r1, r1, r0
 	movs r2, #0
 	ldrsh r0, [r1, r2]
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r2, r0, #0
 	adds r0, #99
 	movs r1, #0
@@ -6820,7 +6820,7 @@ _080638FC:
 	adds r1, r1, r0
 	movs r7, #0
 	ldrsh r0, [r1, r7]
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r2, r0, #0
 	adds r0, #86
 	movs r2, #0
@@ -14686,7 +14686,7 @@ _08067B60:
 	adds r0, r0, r1
 	movs r1, #0
 	ldrsh r0, [r0, r1]
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r1, r0, #0
 	adds r1, #100
 	movs r2, #0
@@ -14917,7 +14917,7 @@ _08067CAA:
 	strb r0, [r2, #0]
 	movs r7, #0
 	ldrsh r0, [r6, r7]
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r6, r0, #0
 	ldr r7, _08067EE0
 	add r7, r10

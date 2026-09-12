@@ -5,6 +5,7 @@ Only complete, single-screenblock resources are migrated. Multi-screenblock
 maps need their BG size/orientation decoded first. Bank-zero transparent tiles
 are retained; nontransparent references outside the named palette are rejected.
 """
+import asset_safety
 import json
 import re
 from pathlib import Path
@@ -42,6 +43,8 @@ def main():
     converted=mi.read(previous)['converted'] if previous.exists() else []
     skipped=[]
     for entry in manifest:
+        if asset_safety.has_english_art(ROOT/(entry['path']+'.png')):
+            continue  # Do not migrate paths with authored English companions.
         if entry['kind']=='mapped_image' or entry['bpp']!=4:continue
         name=entry['archive_name'];stem=name.partition('.')[0]
         # Numeric screen suffixes only: BA06_BG belongs to BA06_BG, not BA06.
@@ -87,7 +90,7 @@ def main():
             if build_plane(layout,layer)!=(ROOT/layer['map_path']).read_bytes():raise ValueError('TSC round-trip failed')
         converted.append(dict(name=name,old_path=old,new_path=base,frames=len(layers),width=256,height=256))
         save_progress(manifest,converted,skipped)
-        (ROOT/(old+'.png')).unlink()
+        asset_safety.unlink_generated(ROOT/(old+'.png'))
     save_progress(manifest,converted,skipped)
     print(len(converted),'resources,',sum(e['frames'] for e in converted),'regular image frames;',len(skipped),'unsupported map cases deferred')
 

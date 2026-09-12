@@ -20,6 +20,16 @@ def main():
     for category in scenes.CATEGORIES.values():
         folder = ROOT/'graphics'/category
         data = json.loads((folder/'manifest.json').read_text())
+        credits_path=ROOT/'graphics/ui/source/english/credits_layouts.json'
+        credits={f['frame']:f for f in json.loads(credits_path.read_text())['frames']} if category=='ui' and credits_path.exists() else {}
+        for frame in data['frames']:
+            source=folder/frame['path'];variant=source.with_stem(source.stem+'_en')
+            if variant.exists():
+                pixels,_=gfx.read_png(str(variant))
+                record=dict(path=str(variant.relative_to(folder)),width=len(pixels[0]),height=len(pixels),x=frame['x'],y=frame['y'])
+                if frame['id'] in credits:
+                    record.update({k:credits[frame['id']][k] for k in ('x','y','width','height')})
+                frame['english']=record
         page = scenes.TEMPLATE.replace('GRAPHICS_INDEX', '../'*len(category.split('/'))+'index.html')
         page = page.replace('DATA_JSON', json.dumps(data, separators=(',', ':')).replace('</', '<\\/'))
         (folder/'index.html').write_text(page)

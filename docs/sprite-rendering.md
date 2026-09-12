@@ -119,3 +119,17 @@ operations among integer pushes, so the existing integer-only editor correctly
 leaves these calls read-only. Recognizing an embedded name is not yet proof of
 the complete operand stack or executed control flow; automatic scene placement
 must wait for that decoder rather than pairing arbitrary nearby calls.
+
+### Sprite creation worker (08010B6C)
+
+The 160-byte worker now compiles from C to the original bytes. State 0 calls the preparation task at 0801097C with the sprite ID, payload +40, and a completion-word pointer, then transitions to state 16. State 16 waits until payload +44 is nonzero. It then allocates and clears a 72-byte auxiliary block, runs 08008A70 on it, activates the sprite, resolves the named NCD group, copies animation/frame, and updates the original flag bits. Finally it decrements the pending-script-task count, writes -1 through the task result pointer if present, and finishes the task.
+
+The worker itself does not assign X/Y. The preparation task still needs tracing before concluding what an entire SprInit operation does to old position/state. Auxiliary-block and unnamed flag semantics also remain unresolved. Host tests cover waiting, completion, unsupported states, and preservation of coordinates in this worker; these are not an emulator playthrough.
+
+### Deferred sprite reset (080109C4 / 08010A70)
+
+The single-slot (104 bytes) and all-slot (124 bytes) workers are now matching C. An active slot waits while its u16 at +0x1A is nonzero; once ready, its auxiliary block at +0x24 is torn down through 08008BD8 and freed. Reset clears all 40 bytes, then sets the two signed fields at +0x14/+0x16 to 256 and draw-order bits to 3. Completion decrements the pending-operation counter, writes -1 to an optional task result pointer, and finishes the task.
+
+Single reset clears inactive records too. Reset-all scans exactly 32 slots, skips inactive records, and stays pending while any active slot is still busy. Host tests cover these differences, teardown order, waiting, default fields, and optional result pointers.
+
+Consequently the SprInit preparation phase clears X/Y before creation proceeds. A future sprite-placement compiler must account for this asynchronous reset rather than assigning coordinates before it. Trigger dispatch, statement insertion/relocation, and new-map archive registration remain unfinished.

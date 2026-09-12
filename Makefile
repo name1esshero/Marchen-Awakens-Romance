@@ -258,7 +258,7 @@ docs-fetch: build/published-docs/.git
 # The matching mar.gba is never patched or used as an English build input.
 ENGLISH_DIR := build/english
 ENGLISH_OBJS := $(ENGLISH_DIR)/dialogue_bridge.o $(ENGLISH_DIR)/dialogue_runtime.o \
-                $(ENGLISH_DIR)/dialogue_original.o $(ENGLISH_DIR)/mappings.o $(ENGLISH_DIR)/system_graphics.o $(ENGLISH_DIR)/effect_graphics.o
+                $(ENGLISH_DIR)/dialogue_original.o $(ENGLISH_DIR)/mappings.o $(ENGLISH_DIR)/system_graphics.o $(ENGLISH_DIR)/effect_graphics.o $(ENGLISH_DIR)/background_graphics.o
 .PHONY: english
 english: mar_english.gba
 
@@ -309,8 +309,15 @@ $(ENGLISH_DIR)/effect_graphics.o: $(ENGLISH_DIR)/graphics/EFFECT.ncd
 	@printf '%s\n' '.section .rom.005AEAF0, "a"' '.incbin "$(ENGLISH_DIR)/graphics/EFFECT.ncd"' > $(ENGLISH_DIR)/effect_graphics.s
 	$(AS) $(ASFLAGS) -o $@ $(ENGLISH_DIR)/effect_graphics.s
 
+# Startup/title KCG backgrounds have their own English-only mapped-image path.
+$(ENGLISH_DIR)/background_graphics.s: tools/english_backgrounds.py tools/build_assets.py tools/mapped_images.py tools/gfx.py tools/lz77.py assets.json maps/nfp/manifest.json $(wildcard maps/nfp/T_C01.KMP.bin maps/nfp/T_TTL06.KMP.bin maps/nfp/SM_BG12.KMP.bin) $(MAPPED_PNGS) $(MAPPED_LAYOUTS) $(MAPPED_UNUSED) $(wildcard graphics/backgrounds/*_en.png) graphics/backgrounds
+	$(PYTHON) tools/english_backgrounds.py
+
+$(ENGLISH_DIR)/background_graphics.o: $(ENGLISH_DIR)/background_graphics.s
+	$(AS) $(ASFLAGS) -o $@ $<
+
 $(ENGLISH_DIR)/mar_english.elf: $(OBJS) $(ENGLISH_OBJS) ld_script.ld ld_english.ld
-	@printf '%s\n' $(filter-out $(BUILD)/src/dialogue_start.o $(BUILD)/asm/data/data_DD69E0.o $(BUILD)/asm/data/data_5AEAF0.o,$(OBJS)) $(ENGLISH_OBJS) > $(ENGLISH_DIR)/objects.rsp
+	@printf '%s\n' $(filter-out $(BUILD)/src/dialogue_start.o $(BUILD)/asm/data/data_DD69E0.o $(BUILD)/asm/data/data_5AEAF0.o $(BUILD)/asm/data/data_F19AA0.o $(BUILD)/asm/data/data_F1A320.o $(BUILD)/asm/data/data_F1EF50.o $(BUILD)/asm/data/data_F21420.o $(BUILD)/asm/data/data_DA8990.o $(BUILD)/asm/data/data_DA9BF0.o,$(OBJS)) $(ENGLISH_OBJS) > $(ENGLISH_DIR)/objects.rsp
 	$(LD) -T ld_english.ld --no-warn-rwx-segments -o $@ @$(ENGLISH_DIR)/objects.rsp -Map $(ENGLISH_DIR)/mar_english.map
 
 mar_english.gba: $(ENGLISH_DIR)/mar_english.elf

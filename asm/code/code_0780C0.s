@@ -5463,7 +5463,7 @@ sub_0807A5FC:
 _0807A620:
 	ldr r0, [r7, #4]
 	adds r0, r0, r5
-	bl sub_0807A86C
+	bl ListInit
 	adds r5, #12
 	adds r4, #1
 	cmp r4, r6
@@ -5570,7 +5570,7 @@ _0807A6B8:
 	ldr r0, [r7, #4]
 	adds r0, r0, r1
 	adds r1, r4, #0
-	bl sub_0807A878
+	bl ListAppend
 	mov r0, r9
 	str r0, [r4, #20]
 	str r6, [r4, #28]
@@ -5640,7 +5640,7 @@ _0807A730:
 	adds r0, r0, r1
 	adds r1, r6, #0
 	adds r2, r4, #0
-	bl sub_0807A8A0
+	bl ListInsertBefore
 	mov r0, r9
 	str r0, [r4, #20]
 	ldr r0, [r6, #28]
@@ -5765,7 +5765,7 @@ _0807A7E8:
 	ldr r0, [r2, #4]
 	adds r0, r0, r1
 	adds r1, r4, #0
-	bl sub_0807A94C
+	bl ListRemove
 	ldr r0, [r4, #8]
 	ldr r0, [r0, #0]
 	adds r1, r4, #0
@@ -5792,7 +5792,7 @@ _0807A81C:
 	ldr r0, [r2, #4]
 	adds r0, r0, r1
 	adds r1, r4, #0
-	bl sub_0807A94C
+	bl ListRemove
 	ldr r0, [r4, #8]
 	ldr r0, [r0, #0]
 	adds r1, r4, #0
@@ -5816,103 +5816,13 @@ _0807A858:
 	bx r0
 	.4byte 0x477068C0
 
-	.thumb_func
-	.thumb
-	.global sub_0807A86C
-sub_0807A86C:
-	movs r1, #0
-	str r1, [r0, #0]
-	str r1, [r0, #4]
-	str r1, [r0, #8]
-	bx lr
-	.byte 0x00
-	.byte 0x00
+	.section .rom.0007A8C0, "ax"
+	.balign 4
+	.syntax unified
 
-	.thumb_func
-	.thumb
-	.global sub_0807A878
-sub_0807A878:
-	push {lr}
-	adds r2, r0, #0
-	ldr r0, [r2, #0]
-	cmp r0, #0
-	bne _0807A88A
-	str r1, [r2, #0]
-	str r1, [r2, #4]
-	str r0, [r1, #4]
-	b _0807A892
-	.global _0807A88A
-_0807A88A:
-	ldr r0, [r2, #4]
-	str r1, [r0, #0]
-	str r0, [r1, #4]
-	movs r0, #0
-	.global _0807A892
-_0807A892:
-	str r0, [r1, #0]
-	str r1, [r2, #4]
-	ldr r0, [r2, #8]
-	adds r0, #1
-	str r0, [r2, #8]
-	pop {r0}
-	bx r0
-
-	.thumb_func
-	.thumb
-	.global sub_0807A8A0
-sub_0807A8A0:
-	push {lr}
-	adds r3, r0, #0
-	ldr r0, [r1, #4]
-	cmp r0, #0
-	beq _0807A8AE
-	str r2, [r0, #0]
-	b _0807A8B0
-	.global _0807A8AE
-_0807A8AE:
-	str r2, [r3, #0]
-	.global _0807A8B0
-_0807A8B0:
-	str r0, [r2, #4]
-	str r1, [r2, #0]
-	str r2, [r1, #4]
-	ldr r0, [r3, #8]
-	adds r0, #1
-	str r0, [r3, #8]
-	pop {r0}
-	bx r0
-
-	.thumb_func
-	.thumb
-	.global sub_0807A8C0
-sub_0807A8C0:
-	push {lr}
-	ldr r2, [r0, #8]
-	cmp r2, #0
-	beq _0807A8CC
-	cmp r2, r1
-	bhi _0807A8D0
-	.global _0807A8CC
-_0807A8CC:
-	movs r0, #0
-	b _0807A8E0
-	.global _0807A8D0
-_0807A8D0:
-	ldr r0, [r0, #0]
-	movs r2, #0
-	cmp r2, r1
-	bcs _0807A8E0
-	.global _0807A8D8
-_0807A8D8:
-	ldr r0, [r0, #0]
-	adds r2, #1
-	cmp r2, r1
-	bcc _0807A8D8
-	.global _0807A8E0
-_0807A8E0:
-	pop {r1}
-	bx r1
-	.4byte 0x47706880
+	.section .rom.0007A8E8, "ax"
+	.balign 4
+	.syntax unified
 	.4byte 0x4647B5F0
 	.4byte 0x1C04B480
 	.4byte 0x1C174688
@@ -5922,30 +5832,30 @@ _0807A8E0:
 	.thumb
 	.global sub_0807A8F8
 sub_0807A8F8:
-	bl sub_0807A8C0
+	bl ListGet
 	adds r5, r0, #0
 	adds r0, r4, #0
 	adds r1, r7, #0
-	bl sub_0807A8C0
+	bl ListGet
 	adds r6, r0, #0
 	adds r0, r4, #0
 	adds r1, r5, #0
-	bl sub_0807A94C
+	bl ListRemove
 	ldr r1, [r6, #0]
 	adds r0, r4, #0
 	adds r2, r5, #0
 	bl sub_0807A98C
 	adds r0, r4, #0
 	adds r1, r7, #0
-	bl sub_0807A8C0
+	bl ListGet
 	adds r6, r0, #0
 	adds r0, r4, #0
 	mov r1, r8
-	bl sub_0807A8C0
+	bl ListGet
 	adds r5, r0, #0
 	adds r0, r4, #0
 	adds r1, r6, #0
-	bl sub_0807A94C
+	bl ListRemove
 	ldr r1, [r5, #0]
 	adds r0, r4, #0
 	adds r2, r6, #0
@@ -5958,63 +5868,9 @@ sub_0807A8F8:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_0807A94C
-sub_0807A94C:
-	push {lr}
-	adds r3, r0, #0
-	ldr r2, [r1, #0]
-	cmp r2, #0
-	beq _0807A96C
-	ldr r0, [r1, #4]
-	str r0, [r2, #4]
-	ldr r2, [r1, #4]
-	cmp r2, #0
-	beq _0807A966
-	ldr r0, [r1, #0]
-	str r0, [r2, #0]
-	b _0807A97C
-	.global _0807A966
-_0807A966:
-	ldr r0, [r1, #0]
-	str r0, [r3, #0]
-
-	.thumb_func
-	.thumb
-	.global sub_0807A96A
-sub_0807A96A:
-	b _0807A97C
-	.global _0807A96C
-_0807A96C:
-	ldr r0, [r1, #4]
-	cmp r0, #0
-	beq _0807A978
-	str r2, [r0, #0]
-	ldr r0, [r1, #4]
-	b _0807A97A
-	.global _0807A978
-_0807A978:
-	str r0, [r3, #0]
-	.global _0807A97A
-_0807A97A:
-	str r0, [r3, #4]
-	.global _0807A97C
-_0807A97C:
-	movs r0, #0
-	str r0, [r1, #0]
-	str r0, [r1, #4]
-	ldr r0, [r3, #8]
-	subs r0, #1
-
-	.thumb_func
-	.thumb
-	.global sub_0807A986
-sub_0807A986:
-	str r0, [r3, #8]
-	pop {r0}
-	bx r0
-
+	.section .rom.0007A98C, "ax"
+	.balign 4
+	.syntax unified
 	.thumb_func
 	.thumb
 	.global sub_0807A98C
@@ -6046,8 +5902,9 @@ _0807A9AC:
 	bx r0
 	.byte 0x00
 	.byte 0x00
-	.4byte 0x47706800
-	.4byte 0x47706840
+	.section .rom.0007A9C0, "ax"
+	.balign 4
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -6963,7 +6820,7 @@ _0807B1D4:
 	.global _0807B1F6
 _0807B1F6:
 	adds r0, r5, #0
-	bl sub_0807A86C
+	bl ListInit
 	subs r4, #1
 	adds r5, #12
 	cmp r4, #0
@@ -8674,7 +8531,7 @@ NcdQueueSprite:
 	ldr r0, [r3, #0]
 	adds r0, r0, r2
 	adds r1, r4, #0
-	bl sub_0807A878
+	bl ListAppend
 	ldr r1, [r5, #0]
 	movs r0, #160
 	lsls r0, r0, #1

@@ -207,3 +207,27 @@ not yet automatically display spawned sprites. See the runtime trace above.
 The normal field loader (`KmpLoadField`, 080032B8) loads one KMP twice: plane 0 with flags 3 (copy palettes and tiles), then plane 1 with flags 0 (reuse that data). Both use VRAM 06000000 and zero tile/palette offsets. These are two map planes sharing one KCG/KCL pair, not a primary/secondary tileset pair.
 
 The lower-level loader at 08003178 accepts a VRAM destination, viewport slot, plane, palette-bank offset, tile-index offset, and copy flags. It stores the offsets at viewport +0C/+0E. The regular renderer at 08002700/0800274A adds their packed value to each u16 screen entry. Special-scene resource sharing remains to be traced; tile 1023 is not automatically a blank sentinel in this loop.
+
+### PW scene loading context
+
+`maps/runtime_scenes.json` records the two loader calls at 08066870 and 0806688E. PW_BG01 plane 0 loads at 06000000 in viewport 0; PW_BOX plane 0 loads at 06004000 in viewport 1 with palette offset 1. Both copy tiles and palettes (flags 3) and use tile-index offset 0. The box viewport is rendered at (-60, -20) pixels. The editor catalog/load API now exposes this read-only context. It does not yet simulate BG control registers or prior VRAM contents, so unresolved tile references stay flagged.
+
+### Toward sprite and event authoring
+
+SprInit's native adapter (08011ECC) is now readable, byte-matching agbcc C. It forwards five script arguments to the creation task at 08010AEC with fixed arguments 1 and 0, returns 1, and leaves the result slot untouched. This does not yet make insertion of new script statements safe.
+
+Remaining prerequisites are creation-task initialization and lifetime, script branch/relocation rewriting, trigger dispatch rather than guessed tile attributes, and archive/scene registration for new KMP/KCG/KCL/SPC resources. The editor currently edits existing verified literal arguments; it cannot yet create/register a new map or attach an arbitrary script to a tile or sprite.
+
+### Sprite creation worker (08010B6C)
+
+The 160-byte worker now compiles from C to the original bytes. State 0 calls the preparation task at 0801097C with the sprite ID, payload +40, and a completion-word pointer, then transitions to state 16. State 16 waits until payload +44 is nonzero. It then allocates and clears a 72-byte auxiliary block, runs 08008A70 on it, activates the sprite, resolves the named NCD group, copies animation/frame, and updates the original flag bits. Finally it decrements the pending-script-task count, writes -1 through the task result pointer if present, and finishes the task.
+
+The worker itself does not assign X/Y. The preparation task still needs tracing before concluding what an entire SprInit operation does to old position/state. Auxiliary-block and unnamed flag semantics also remain unresolved. Host tests cover waiting, completion, unsupported states, and preservation of coordinates in this worker; these are not an emulator playthrough.
+
+### Deferred sprite reset (080109C4 / 08010A70)
+
+The single-slot (104 bytes) and all-slot (124 bytes) workers are now matching C. An active slot waits while its u16 at +0x1A is nonzero; once ready, its auxiliary block at +0x24 is torn down through 08008BD8 and freed. Reset clears all 40 bytes, then sets the two signed fields at +0x14/+0x16 to 256 and draw-order bits to 3. Completion decrements the pending-operation counter, writes -1 to an optional task result pointer, and finishes the task.
+
+Single reset clears inactive records too. Reset-all scans exactly 32 slots, skips inactive records, and stays pending while any active slot is still busy. Host tests cover these differences, teardown order, waiting, default fields, and optional result pointers.
+
+Consequently the SprInit preparation phase clears X/Y before creation proceeds. A future sprite-placement compiler must account for this asynchronous reset rather than assigning coordinates before it. Trigger dispatch, statement insertion/relocation, and new-map archive registration remain unfinished.

@@ -14589,7 +14589,7 @@ _08036156:
 	bl sub_08009E78
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08056504
+	bl ItemGetField60
 	adds r2, r0, #0
 	lsls r2, r2, #16
 	asrs r2, r2, #16
@@ -15489,7 +15489,7 @@ _080367B8:
 	bl sub_08009E78
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08056504
+	bl ItemGetField60
 	adds r2, r0, #0
 	lsls r2, r2, #16
 	asrs r2, r2, #16
@@ -16855,7 +16855,7 @@ _08037172:
 	bl sub_08009E78
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08056504
+	bl ItemGetField60
 	adds r2, r0, #0
 	lsls r2, r2, #16
 	asrs r2, r2, #16
@@ -18522,7 +18522,7 @@ _08037D3A:
 	bl sub_08009E78
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08056504
+	bl ItemGetField60
 	adds r2, r0, #0
 	lsls r2, r2, #16
 	asrs r2, r2, #16

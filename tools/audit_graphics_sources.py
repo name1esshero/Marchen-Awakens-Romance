@@ -46,6 +46,14 @@ def audit():
             if entry['path'] != 'graphics/tilesets/' + member['name'] or entry['kind'] != 'tilesets':
                 raise ValueError('Tile source is misfiled: ' + entry['path'])
             add(ROOT / (entry['path'] + '.png'), 'named_tile_source', member['name'])
+    import english_backgrounds
+    for name in english_backgrounds.NAMES:
+        path = ROOT/'graphics/backgrounds'/ (name + '_en.png')
+        if path.exists():
+            add(path, 'english_background_override', name)
+        source = ROOT/'graphics/backgrounds/source/english'/(name.removesuffix('.KCG')+'.generated.png')
+        if source.exists():
+            add(source, 'english_background_generated_reference', name)
     for stem, category in sprite_sources.CATEGORIES.items():
         folder = ROOT / 'graphics' / category
         for entry in json.loads((folder / 'source/images.json').read_text()):

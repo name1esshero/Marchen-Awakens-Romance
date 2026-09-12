@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "limitation": "Traced loader calls, not a complete scene or VRAM-state decoder. Out-of-resource tiles remain unresolved.",
+  "scenes": [
+    {
+      "id": "pw_screen",
+      "evidence": "ROM 0806685C..080668BC; calls to 08003178 at 08066870 and 0806688E",
+      "layers": [
+        {"map": "PW_BG01.KMP", "viewport": 0, "plane": 0, "vram_destination": "06000000", "palette_bank_offset": 0, "tile_index_offset": 0, "load_flags": 3, "scroll_pixels": [0, 0]},
+        {"map": "PW_BOX.KMP", "viewport": 1, "plane": 0, "vram_destination": "06004000", "palette_bank_offset": 1, "tile_index_offset": 0, "load_flags": 3, "scroll_pixels": [-60, -20]}
+      ]
+    }
+  ]
+}

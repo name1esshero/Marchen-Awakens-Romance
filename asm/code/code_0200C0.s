@@ -7886,7 +7886,7 @@ _08023460:
 	.global _0802346C
 _0802346C:
 	adds r0, r5, #0
-	bl sub_08056560
+	bl ItemGetField58
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	cmp r0, #3
@@ -8145,7 +8145,7 @@ _08023628:
 	movs r4, #0
 	strh r0, [r5, #0]
 	mov r0, r9
-	bl sub_08056494
+	bl ItemGetField63
 	adds r3, r0, #0
 	lsls r3, r3, #16
 	asrs r3, r3, #16
@@ -8316,7 +8316,7 @@ _0802376C:
 	.global _08023778
 _08023778:
 	adds r0, r5, #0
-	bl sub_08056560
+	bl ItemGetField58
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	cmp r0, #3

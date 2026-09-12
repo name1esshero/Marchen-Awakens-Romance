@@ -1312,7 +1312,7 @@ sub_08008A44:
 	adds r1, #128
 	ldr r0, [r5, #0]
 	adds r0, r0, r1
-	bl sub_0807A86C
+	bl ListInit
 	ldr r0, [r5, #0]
 	lsls r4, r4, #2
 	adds r0, #176
@@ -1370,7 +1370,7 @@ sub_08008A98:
 	ldr r0, [r7, #0]
 	adds r0, r0, r1
 	adds r1, r5, #0
-	bl sub_0807A878
+	bl ListAppend
 	ldr r0, [r5, #56]
 	cmp r0, #0
 	bne _08008AD4
@@ -4795,12 +4795,12 @@ _08009FAC:
 	movs r2, #0
 	ldrsh r4, [r0, r2]
 	adds r0, r4, #0
-	bl sub_080564C4
+	bl ItemGetField65
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	mov r9, r0
 	adds r0, r4, #0
-	bl sub_08056494
+	bl ItemGetField63
 	lsls r0, r0, #16
 	asrs r7, r0, #16
 	mov r1, r8
@@ -4813,11 +4813,11 @@ _08009FAC:
 	movs r1, #0
 	ldrsh r4, [r0, r1]
 	adds r0, r4, #0
-	bl sub_080564C4
+	bl ItemGetField65
 	lsls r0, r0, #16
 	asrs r5, r0, #16
 	adds r0, r4, #0
-	bl sub_08056494
+	bl ItemGetField63
 	lsls r0, r0, #16
 	asrs r4, r0, #16
 	adds r0, r6, #0
@@ -6486,7 +6486,7 @@ sub_0800AB38:
 	ble _0800AB54
 	lsls r0, r2, #16
 	asrs r0, r0, #16
-	bl sub_080564C4
+	bl ItemGetField65
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	b _0800AB62
@@ -6795,13 +6795,13 @@ _0800AD10:
 	lsls r0, r2, #16
 	asrs r4, r0, #16
 	adds r0, r4, #0
-	bl sub_08056530
+	bl ItemGetField5A
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	cmp r0, #1
 	bne _0800AD54
 	adds r0, r4, #0
-	bl sub_080564DC
+	bl ItemGetField5C
 	adds r4, r0, #0
 	adds r0, r7, #0
 	adds r0, #82
@@ -6825,7 +6825,7 @@ _0800AD10:
 	.global _0800AD54
 _0800AD54:
 	adds r0, r4, #0
-	bl sub_080564DC
+	bl ItemGetField5C
 	lsls r0, r0, #16
 	asrs r4, r0, #16
 	.global _0800AD5E
@@ -10223,7 +10223,7 @@ _0800C2AC:
 	bl sub_08009E78
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08056494
+	bl ItemGetField63
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	movs r1, #90
@@ -10413,7 +10413,7 @@ _0800C3D6:
 	bl sub_08009E78
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08056494
+	bl ItemGetField63
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	movs r1, #90

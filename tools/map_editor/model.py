@@ -84,7 +84,9 @@ def apply_override(blob,name,root):
 class Project:
     def __init__(self,root=ROOT):
         self.root=Path(root)
-        self.members={e['name']:e for e in read(self.root/'maps/nfp/manifest.json') if e['name'].startswith('MAP') and e['name'].endswith('.KMP')}
+        context_path=self.root/'maps/runtime_scenes.json'
+        scene_maps={layer['map'] for scene in read(context_path)['scenes'] for layer in scene['layers']} if context_path.exists() else set()
+        self.members={e['name']:e for e in read(self.root/'maps/nfp/manifest.json') if (e['name'].startswith('MAP') or e['name'] in scene_maps) and e['name'].endswith('.KMP')}
         self.assets={e['archive_name']:e for e in read(self.root/'assets.json') if e.get('archive_name')}
         self.scripts={e['name']:e for e in read(self.root/'scripts/nfp/manifest.json')}
         self.unsupported={}
@@ -99,12 +101,20 @@ class Project:
         if not doc['planes']:raise ValueError('Map has no decoded planes')
         return member,blob,entry,doc
 
+    def runtime_contexts(self,name):
+        """Read-only traced loading context; never fills unknown VRAM tiles."""
+        path=self.root/'maps/runtime_scenes.json'
+        if not path.exists():return []
+        return [dict(scene=scene['id'],evidence=scene['evidence'],layer=layer)
+                for scene in read(path)['scenes'] for layer in scene['layers']
+                if layer['map']==name]
+
     def catalog(self):
         result=[]
         for name in sorted(self.members):
             try:
                 _,_,entry,doc=self.entry(name)
-                result.append(dict(name=name,width=doc['width'],height=doc['height'],tiles=entry['archive_name']))
+                result.append(dict(name=name,width=doc['width'],height=doc['height'],tiles=entry['archive_name'],runtime_contexts=self.runtime_contexts(name)))
             except (ValueError,KeyError,UnicodeError) as ex:self.unsupported[name]=str(ex)
         return dict(maps=result,unsupported=self.unsupported,scripts=sorted(self.scripts))
 
@@ -147,7 +157,7 @@ class Project:
         return dict(name=name,revision=sha(b''.join(dependencies)),document=document,
                     tiles=[[v for row in t for v in row] for t in mapped_images.tiles_from_bytes(tile_raw)],palette=colors,
                     palette_base=palette_base,palette_banks=entry['palette_banks'],scripts=associated,
-                    source=member['path'],unresolved=unresolved,_base=original)
+                    source=member['path'],unresolved=unresolved,runtime_contexts=self.runtime_contexts(name),_base=original)
 
     def save(self,name,payload):
         if not isinstance(payload,dict):raise ValueError('Invalid save request')

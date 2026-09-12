@@ -115,3 +115,5 @@ width/height, as the engine does, before placing pixels. Frame PNGs and viewer
 origins use those corrected bounds. The build uses the same bounds to map edits
 back to cell tile bytes; do not manually shift cell centers to compensate for
 an older preview. Unchanged corrected PNGs rebuild the original NCD bytes.
+
+The sprite animation viewers now offer **Japanese / English overrides** artwork selection. English mode shows the 206 translated UI frames and nine battle-effect frames where overrides exist, retaining original artwork elsewhere. Credit frames use their English-specific layout dimensions and origins. This viewer does not simulate runtime affine effects or blending.

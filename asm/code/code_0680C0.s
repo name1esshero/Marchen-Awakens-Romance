@@ -2435,7 +2435,7 @@ _080699D4:
 	movs r4, #0
 	ldrsh r6, [r0, r4]
 	adds r0, r6, #0
-	bl sub_08056464
+	bl ItemGetDefinition
 	lsls r5, r7, #4
 	subs r4, r5, r7
 	lsls r4, r4, #2
@@ -5294,7 +5294,7 @@ _0806B42E:
 	ldrsh r4, [r0, r5]
 	mov r8, r4
 	mov r0, r8
-	bl sub_08056464
+	bl ItemGetDefinition
 	mov r10, r0
 	lsls r5, r7, #4
 	subs r4, r5, r7
@@ -6959,7 +6959,7 @@ _0806C03C:
 	.thumb
 	.global sub_0806C062
 sub_0806C062:
-	bl sub_08056474
+	bl ItemGetName
 	adds r2, r0, #0
 	ldr r4, _0806C098
 	ldr r3, [r4, #0]

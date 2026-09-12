@@ -241,6 +241,18 @@ script changes. Loose ROM text outside named sources still uses `text/script_*`.
 
 ## Decompilation status
 
+Latest small-function batch: eight list helpers (initialization, append, insert,
+lookup, removal, head, tail, and count) now use readable C in `src/list.c`
+(196 bytes), alongside the `SprSet` and
+`SprGet` native adapters (60 bytes), and 13 item-table accessors in `src/item.c`
+(276 bytes). Item names and descriptions are identified; other field names
+retain offsets until their gameplay meaning is verified. The provenance audit verifies **115 ordinary
+C functions and 10 BIOS assembly wrappers**; each declared range is linked from
+its expected C object and matches the Japanese ROM. This is a function count,
+not a percentage of total code decoded. List tests cover empty/nonempty append
+and insertion/removal at the head, middle, and tail. Item tests cover the
+128-byte record layout, signed fields, and 16-bit ID narrowing.
+
 **The build compiles C with agbcc**, the period compiler the pret projects
 preserve. This is what lets ordinary C reproduce the original instruction
 bytes: modern GCC allocates registers differently for identical source and
@@ -424,3 +436,28 @@ ROM audit (2026-09-12): `python3 tools/audit_rom_coverage.py` checks linked cove
 MAP07_A now has two editable 2704×1960 cave-map layers. Its 338×245 tile dimensions exceed the old extractor-only limit, but all tile references and KMP plane bounds are valid. Raw tiles, map planes, and compressed output round-trip exactly. Ten named layouts remain unresolved; the renderer adds viewport tile/palette offsets before writing screen entries, so out-of-resource tile references must not simply be replaced with blank tiles.
 
 Normal field maps use one KCG/KCL tileset/palette pair shared by two KMP planes. `KmpLoadField` loads the graphics once and reuses them for the second plane; these are not separate primary and secondary tilesets. Lower-level scene loaders can choose VRAM destinations and tile/palette offsets. See `tools/map_editor/README.md` for the traced parameters and remaining special-scene questions.
+
+Special-scene map tracing: the PW screen loads PW_BG01 at VRAM 06000000 and PW_BOX at 06004000, using separate viewports. The box uses palette offset 1 and scroll (-60, -20). Verified call parameters are recorded in `maps/runtime_scenes.json` and exposed by the map editor API. Out-of-resource tile references remain flagged until their full VRAM context is decoded.
+
+Sprite-authoring foundation: SprInit at 08011ECC is now readable C with an exact 40-byte agbcc match. Its native argument forwarding is host-tested, and the full Japanese ROM still matches. Sprite/event insertion and new-map registration remain unfinished; current editing is limited to verified existing data and literal arguments.
+
+The SprInit creation worker (08010B6C, 160 bytes) is now matching C as well. Its asynchronous preparation/wait/completion behavior is host-tested. The preceding preparation task and full event/control-flow authoring remain undecoded; new sprite insertion is not yet enabled.
+
+Both deferred sprite-reset workers are now matching C (228 bytes combined). Tests verify busy-slot waits, auxiliary teardown, record clearing and the single/all-slot inactive-record difference. SprInit preparation clears coordinates, so new placement must happen after that reset; sprite/event insertion and map registration are still unfinished.
+
+English startup/shop backgrounds: `make english` consumes
+`graphics/backgrounds/{T_C01,T_TTL06,SM_BG12}.KCG_en.png`. The English-only
+object rebuilds both compressed tiles and their KMP map entries, so translated
+letters can use independent tiles. Japanese PNGs, palettes, and map sources
+remain the inputs to the matching build. Generated artwork references live in
+`graphics/backgrounds/source/english/`; edit the indexed `_en.png` files.
+The builder rejects palette-bank crossings, images larger than one 16 KiB
+character block, and compressed streams exceeding the existing ROM allocation.
+Removing an override restores that background's Japanese tiles and map.
+
+English PNGs are authored sources. `make clean`, `make tidy`, and
+`graphics-clean` remove build outputs, not these files. Graphics cleanup refuses
+to delete `_en.png` files or Japanese PNGs with English companions; frame
+consolidation retains their paths so overrides remain connected. The explicit
+UI authoring commands `ui_text.py --write --replace` and
+`ui_layered_text.py --refresh-frames` can intentionally regenerate English art.

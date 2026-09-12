@@ -5,6 +5,7 @@ Only a sidecar identical to the authoritative named palette (including the
 known 8bpp display offset) can be removed. Custom/different sidecars survive.
 These sidecars are not build inputs; palette_path identifies the ROM source.
 """
+import asset_safety
 import argparse
 import hashlib
 import html
@@ -50,7 +51,7 @@ def main():
         for e in removed:
             path=ROOT/e['path']
             if hashlib.sha256(path.read_bytes()).hexdigest()!=e['sha256']:raise ValueError('Sidecar changed during cleanup')
-            path.unlink()
+            asset_safety.unlink_generated(path)
     print(f'{len(rows)} named background sources; {len(removed)} redundant palette sidecars removed')
 
 

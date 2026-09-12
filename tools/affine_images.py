@@ -7,6 +7,7 @@ byte per tile, with no flip/palette bits. Other listed resources have the
 same byte-index format, with 256/1024-byte square planes (128/256 pixels).
 Their dimensions are inferred from complete plane sizes and tile references.
 """
+import asset_safety
 import json
 from pathlib import Path
 import gfx
@@ -32,6 +33,8 @@ def main():
     rom = (ROOT/'baserom.gba').read_bytes()  # Extraction only.
     converted = []
     for entry in manifest:
+        if asset_safety.has_english_art(ROOT/(entry['path']+'.png')):
+            continue  # Do not migrate paths with authored English companions.
         name = entry.get('archive_name', '')
         stem = name.partition('.')[0]
         if stem not in PROFILES or entry['kind'] == 'mapped_image':
@@ -71,7 +74,7 @@ def main():
         if mi.compile_image(entry) != raw:raise ValueError('Affine pixels failed round-trip')
         for layer in layers:
             if build_plane(layout,layer) != (ROOT/layer['map_path']).read_bytes():raise ValueError('Affine map failed round-trip')
-        (ROOT/(old+'.png')).unlink()
+        asset_safety.unlink_generated(ROOT/(old+'.png'))
         converted.append(dict(name=name, old_path=old, new_path=base, frames=len(layers), width=width*8, height=width*8))
     (ROOT/'assets.json').write_text(json.dumps(manifest,indent=2)+'\n')
     for p in (ROOT/'asm/data').glob('*.s'):

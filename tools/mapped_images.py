@@ -5,6 +5,7 @@
 +0x14/+0x18. 08003178 loads tile/palette names at +0x1C/+0x5C and palette
 base/count at +0xB0/+0xB4. Unknown KMP fields remain in the map source blob.
 """
+import asset_safety
 import argparse
 import hashlib
 import json
@@ -125,6 +126,8 @@ def extract():
     rom = (ROOT / 'baserom.gba').read_bytes()  # Extraction only; never a build input.
     converted, skipped = [], []
     for entry in manifest:
+        if asset_safety.has_english_art(ROOT/(entry['path']+'.png')):
+            continue  # Do not migrate paths with authored English companions.
         if entry.get('kind') == 'mapped_image':
             continue
         name = entry.get('archive_name', '')
@@ -193,7 +196,7 @@ def extract():
         (ROOT / entry['image_layout']).write_text(json.dumps(layout, indent=2)+'\n')
         if compile_image(entry) != raw or build_map(blob, layout) != blob:
             raise ValueError('Mapped source migration did not round-trip: '+name)
-        (ROOT / (old+'.png')).unlink()
+        asset_safety.unlink_generated(ROOT / (old+'.png'))
         converted.append(dict(name=name, old_path=old, new_path=base, width=width*8,
                               height=height*8, layers=len(layers), unused_tiles=len(unused)))
         print(name, width*8, height*8, len(layers), 'layers', flush=True)

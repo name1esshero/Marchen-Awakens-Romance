@@ -25,3 +25,13 @@ __attribute__((section(".rom.00011EF4"))) s32 ScriptNativeSpriteChange(u32 count
  ScriptSpriteSelect(args[0].integer,args[1].integer,args[2].string,args[3].integer,args[4].integer);
  return 1;
 }
+
+/* SprInit (08011ECC): schedule sprite creation through 08010AEC.
+ * The fifth script value is forwarded unchanged; it is not a start-frame
+ * selector. The creation task initializes the animation at frame zero. */
+extern void sub_08010AEC(s32,s32,const char *,s32,s32,s32,s32);
+__attribute__((section(".rom.00011ECC"))) s32 ScriptNativeSpriteInit(u32 count,const union SpriteArgument *args,s32 *result)
+{
+ sub_08010AEC(args[0].integer,args[1].integer,args[2].string,args[3].integer,args[4].integer,1,0);
+ return 1;
+}

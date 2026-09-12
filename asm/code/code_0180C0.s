@@ -2434,14 +2434,14 @@ _0801927E:
 	lsls r4, r1, #16
 	asrs r5, r4, #16
 	adds r0, r5, #0
-	bl sub_08056560
+	bl ItemGetField58
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	mov r8, r4
 	cmp r0, #3
 	bne _080192BE
 	adds r0, r5, #0
-	bl sub_08056494
+	bl ItemGetField63
 	adds r4, r0, #0
 	lsls r4, r4, #16
 	asrs r4, r4, #16
@@ -2507,7 +2507,7 @@ _080192DA:
 	bl sub_08080504
 	mov r2, r8
 	asrs r0, r2, #16
-	bl sub_08056494
+	bl ItemGetField63
 	adds r4, r0, #0
 	lsls r4, r4, #16
 	asrs r4, r4, #16
@@ -2645,7 +2645,7 @@ sub_08019414:
 	lsls r0, r3, #16
 	asrs r0, r0, #16
 	mov r9, r0
-	bl sub_08056494
+	bl ItemGetField63
 	adds r4, r0, #0
 	lsls r4, r4, #16
 	asrs r4, r4, #16
@@ -2692,7 +2692,7 @@ _0801945A:
 	ldrsb r4, [r6, r4]
 	movs r3, #0
 	ldrsh r0, [r5, r3]
-	bl sub_08056494
+	bl ItemGetField63
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	movs r1, #90
@@ -2744,7 +2744,7 @@ _0801949C:
 	asrs r4, r4, #24
 	movs r3, #0
 	ldrsh r0, [r5, r3]
-	bl sub_08056494
+	bl ItemGetField63
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	movs r1, #90
@@ -3178,7 +3178,7 @@ sub_080197AC:
 	adds r6, r3, #0
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r0, #116
 	ldrb r0, [r0, #0]
 	lsls r0, r0, #27
@@ -3352,10 +3352,10 @@ _08019902:
 	ble _08019902
 	asrs r4, r4, #16
 	adds r0, r4, #0
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r5, r0, #0
 	adds r0, r4, #0
-	bl sub_08056494
+	bl ItemGetField63
 	lsls r0, r0, #16
 	asrs r2, r0, #16
 	mov r0, r8
@@ -3627,7 +3627,7 @@ sub_08019AF2:
 	lsls r4, r4, #16
 	asrs r4, r4, #16
 	adds r0, r4, #0
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r5, r0, #0
 	adds r0, r4, #0
 	bl sub_08056F68
@@ -3844,7 +3844,7 @@ sub_08019C78:
 	movs r0, #1
 	strb r0, [r4, #2]
 	movs r0, #85
-	bl sub_08056464
+	bl ItemGetDefinition
 	adds r0, #98
 	movs r1, #0
 	ldrsb r1, [r0, r1]

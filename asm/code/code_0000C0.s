@@ -17484,7 +17484,7 @@ _08007C4A:
 	bl sub_08009E78
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08056494
+	bl ItemGetField63
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	movs r1, #90

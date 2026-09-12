@@ -66,7 +66,21 @@ def main():
         if not variant.exists() or after!=gfx.read_png(str(variant))[0]:
             raise ValueError('English effects alter an unlocalized or incorrectly rendered frame: '+str(frame['id']))
         effect_changed.append(frame['id'])
-    if not differences or any(not (0x11790<=i<0x11870 or start+tile_start<=i<end or i-start in credit_metadata or effect_start+effect_tiles<=i<effect_end) for i in differences):
+    import english_backgrounds
+    assets = {e.get('archive_name'): e for e in json.loads((ROOT/'assets.json').read_text())}
+    maps = {e['name']: e for e in json.loads((ROOT/'maps/nfp/manifest.json').read_text())}
+    background_spans = []
+    background_sources = []
+    for name in english_backgrounds.NAMES:
+        entry = assets[name]
+        pixels, map_data, overrides = english_backgrounds.compile_entry(entry)
+        map_entry = maps[name.replace('.KCG', '.KMP')]
+        for offset, data in ((entry['rom_offset'], pixels), (map_entry['rom_offset'], map_data)):
+            if localized[offset:offset+len(data)] != data:
+                raise ValueError('Linked English background differs from PNG/map source: ' + name)
+            background_spans.append((offset, offset+len(data)))
+        background_sources.append(dict(name=name, overrides=overrides))
+    if not differences or any(not (any(a<=i<b for a,b in background_spans) or 0x11790<=i<0x11870 or start+tile_start<=i<end or i-start in credit_metadata or effect_start+effect_tiles<=i<effect_end) for i in differences):
         raise ValueError('English build changed bytes outside constructor bridge and verified UI tiles')
     output=subprocess.check_output(['arm-none-eabi-nm','-n','build/english/mar_english.elf'],cwd=ROOT,text=True)
     symbols={fields[2]:int(fields[0],16) for line in output.splitlines() if len(fields:=line.split())==3}
@@ -90,7 +104,8 @@ def main():
     mappings=json.loads((ROOT/'reports/text/english-runtime.json').read_text())
     report=dict(sha1=hashlib.sha1(localized).hexdigest(),size=len(localized),
                 original_area_differing_bytes=len(differences),
-                change_scope='Constructor bridge, independently rebuilt EFFECT and SYSTEM UI tiles and explicit English credit layouts; C and strings in ROM expansion',
+                change_scope='Constructor bridge, independently rebuilt EFFECT and SYSTEM UI tiles and explicit English credit layouts, rebuilt startup/shop background tiles and maps; C and strings in ROM expansion',
+                english_backgrounds=background_sources,
                 english_effect_changed_frames=effect_changed,
                 english_effect_variants=[str(p.relative_to(ROOT)) for p in sorted((ROOT/'graphics/battle/effects/frames').glob('*_en.png'))],
                 english_credit_layout_frames=sorted(english_credits.frame_ids()),

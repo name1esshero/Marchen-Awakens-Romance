@@ -16,4 +16,7 @@ struct ScriptSprite
 void ScriptSpriteSelect(s32 id, s32 container, const char *name, s32 animation, s32 frame);
 union SpriteArgument {s32 integer; const char *string;};
 s32 ScriptNativeSpriteChange(u32 count, const union SpriteArgument *args, s32 *result);
+s32 ScriptNativeSpriteInit(u32 count, const union SpriteArgument *args, s32 *result);
+s32 ScriptNativeSpriteSet(u32 count, const s32 *args, s32 *result);
+s32 ScriptNativeSpriteGet(u32 count, const s32 *args, s32 *result);
 #endif

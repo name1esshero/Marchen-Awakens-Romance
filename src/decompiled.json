@@ -586,5 +586,167 @@
   "size": 32,
   "name": "ScriptNativeSpriteChange",
   "file": "src/script_sprite.c"
+ },
+ {
+  "addr": "08011ECC",
+  "size": 40,
+  "name": "ScriptNativeSpriteInit",
+  "file": "src/script_sprite.c"
+ },
+ {
+  "addr": "08010B6C",
+  "size": 160,
+  "name": "ScriptSpriteInitTask",
+  "file": "src/script_sprite_init.c"
+ },
+ {
+  "addr": "080109C4",
+  "size": 104,
+  "name": "ScriptSpriteResetTask",
+  "file": "src/script_sprite_reset.c"
+ },
+ {
+  "addr": "08010A70",
+  "size": 124,
+  "name": "ScriptSpriteResetAllTask",
+  "file": "src/script_sprite_reset.c"
+ },
+ {
+  "addr": "08011F40",
+  "size": 40,
+  "name": "ScriptNativeSpriteSet",
+  "file": "src/script_sprite_native.c"
+ },
+ {
+  "addr": "08011F68",
+  "size": 20,
+  "name": "ScriptNativeSpriteGet",
+  "file": "src/script_sprite_native.c"
+ },
+ {
+  "addr": "0807A86C",
+  "size": 12,
+  "name": "ListInit",
+  "file": "src/list.c"
+ },
+ {
+  "addr": "0807A878",
+  "size": 40,
+  "name": "ListAppend",
+  "file": "src/list.c"
+ },
+ {
+  "addr": "0807A8A0",
+  "size": 32,
+  "name": "ListInsertBefore",
+  "file": "src/list.c"
+ },
+ {
+  "addr": "0807A8C0",
+  "size": 36,
+  "name": "ListGet",
+  "file": "src/list.c"
+ },
+ {
+  "addr": "0807A8E4",
+  "size": 4,
+  "name": "ListCount",
+  "file": "src/list.c"
+ },
+ {
+  "addr": "0807A94C",
+  "size": 64,
+  "name": "ListRemove",
+  "file": "src/list.c"
+ },
+ {
+  "addr": "0807A9B8",
+  "size": 4,
+  "name": "ListHead",
+  "file": "src/list.c"
+ },
+ {
+  "addr": "0807A9BC",
+  "size": 4,
+  "name": "ListTail",
+  "file": "src/list.c"
+ },
+ {
+  "addr": "08056464",
+  "size": 16,
+  "name": "ItemGetDefinition",
+  "file": "src/item.c"
+ },
+ {
+  "addr": "08056474",
+  "size": 16,
+  "name": "ItemGetName",
+  "file": "src/item.c"
+ },
+ {
+  "addr": "08056484",
+  "size": 16,
+  "name": "ItemGetDescription",
+  "file": "src/item.c"
+ },
+ {
+  "addr": "08056494",
+  "size": 24,
+  "name": "ItemGetField63",
+  "file": "src/item.c"
+ },
+ {
+  "addr": "080564AC",
+  "size": 24,
+  "name": "ItemGetField64",
+  "file": "src/item.c"
+ },
+ {
+  "addr": "080564C4",
+  "size": 24,
+  "name": "ItemGetField65",
+  "file": "src/item.c"
+ },
+ {
+  "addr": "080564DC",
+  "size": 20,
+  "name": "ItemGetField5C",
+  "file": "src/item.c"
+ },
+ {
+  "addr": "080564F0",
+  "size": 20,
+  "name": "ItemGetField5E",
+  "file": "src/item.c"
+ },
+ {
+  "addr": "08056504",
+  "size": 20,
+  "name": "ItemGetField60",
+  "file": "src/item.c"
+ },
+ {
+  "addr": "08056518",
+  "size": 24,
+  "name": "ItemGetField59",
+  "file": "src/item.c"
+ },
+ {
+  "addr": "08056530",
+  "size": 24,
+  "name": "ItemGetField5A",
+  "file": "src/item.c"
+ },
+ {
+  "addr": "08056548",
+  "size": 24,
+  "name": "ItemGetField62",
+  "file": "src/item.c"
+ },
+ {
+  "addr": "08056560",
+  "size": 24,
+  "name": "ItemGetField58",
+  "file": "src/item.c"
  }
 ]

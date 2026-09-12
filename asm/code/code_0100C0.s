@@ -1160,65 +1160,13 @@ _080109BC:
 	.4byte 0x03004020  @ IWRAM+0x4020
 	.global _080109C0
 _080109C0:
-	.4byte 0x080109C5  @ ROM+0x109C5
+	.4byte ScriptSpriteResetTask
 
-	.thumb_func
-	.thumb
-	.global sub_080109C4
-sub_080109C4:
-	push {r4, r5, lr}
-	adds r5, r0, #0
-	ldr r0, [r5, #32]
-	bl sub_080106C8
-	adds r4, r0, #0
-	ldrb r1, [r4, #0]
-	movs r0, #1
-	ands r0, r1
-	cmp r0, #0
-	beq _080109F2
-	ldrh r0, [r4, #26]
-	cmp r0, #0
-	bne _08010A24
-	ldr r0, [r4, #36]
-	cmp r0, #0
-	beq _080109F2
-	bl sub_08008BD8
-	ldr r1, [r4, #36]
-	movs r0, #0
-	bl HeapFree
-	.global _080109F2
-_080109F2:
-	adds r0, r4, #0
-	movs r1, #40
-	movs r2, #0
-	bl CpuFill
-	movs r0, #128
-	lsls r0, r0, #1
-	strh r0, [r4, #20]
-	strh r0, [r4, #22]
-	ldrb r0, [r4, #0]
-	movs r1, #96
-	orrs r0, r1
-	strb r0, [r4, #0]
-	movs r0, #1
-	bl ScriptCompletePendingTasks
-	ldr r1, [r5, #24]
-	cmp r1, #0
-	beq _08010A1E
-	movs r0, #1
-	negs r0, r0
-	str r0, [r1, #0]
-	.global _08010A1E
-_08010A1E:
-	adds r0, r5, #0
-	bl FinishTask
-	.global _08010A24
-_08010A24:
-	pop {r4, r5}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
+@ 080109C4..08010A2C is decompiled as ScriptSpriteResetTask(); see src/decompiled.json
+
+	.section .rom.00010A2C, "ax"
+	.balign 4
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -1259,81 +1207,13 @@ _08010A68:
 	.4byte 0x03004020  @ IWRAM+0x4020
 	.global _08010A6C
 _08010A6C:
-	.4byte 0x08010A71  @ ROM+0x10A71
+	.4byte ScriptSpriteResetAllTask
 
-	.thumb_func
-	.thumb
-	.global sub_08010A70
-sub_08010A70:
-	push {r4, r5, r6, r7, lr}
-	adds r7, r0, #0
-	movs r0, #0
-	bl sub_080106C8
-	adds r4, r0, #0
-	movs r6, #0
-	movs r5, #31
-	.global _08010A80
-_08010A80:
-	ldrb r1, [r4, #0]
-	movs r0, #1
-	ands r0, r1
-	cmp r0, #0
-	beq _08010AC0
-	ldrh r0, [r4, #26]
-	cmp r0, #0
-	beq _08010A94
-	adds r6, #1
-	b _08010AC0
-	.global _08010A94
-_08010A94:
-	ldr r0, [r4, #36]
-	cmp r0, #0
-	beq _08010AA6
-	bl sub_08008BD8
-	ldr r1, [r4, #36]
-	movs r0, #0
-	bl HeapFree
-	.global _08010AA6
-_08010AA6:
-	adds r0, r4, #0
-	movs r1, #40
-	movs r2, #0
-	bl CpuFill
-	movs r0, #128
-	lsls r0, r0, #1
-	strh r0, [r4, #20]
-	strh r0, [r4, #22]
-	ldrb r0, [r4, #0]
-	movs r1, #96
-	orrs r0, r1
-	strb r0, [r4, #0]
-	.global _08010AC0
-_08010AC0:
-	subs r5, #1
-	adds r4, #40
-	cmp r5, #0
-	bge _08010A80
-	cmp r6, #0
-	bne _08010AE4
-	movs r0, #1
-	bl ScriptCompletePendingTasks
-	ldr r1, [r7, #24]
-	cmp r1, #0
-	beq _08010ADE
-	movs r0, #1
-	negs r0, r0
-	str r0, [r1, #0]
-	.global _08010ADE
-_08010ADE:
-	adds r0, r7, #0
-	bl FinishTask
-	.global _08010AE4
-_08010AE4:
-	pop {r4, r5, r6, r7}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
+@ 08010A70..08010AEC is decompiled as ScriptSpriteResetAllTask(); see src/decompiled.json
+
+	.section .rom.00010AEC, "ax"
+	.balign 4
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -1401,103 +1281,9 @@ _08010B64:
 	.4byte 0x03004020  @ IWRAM+0x4020
 	.global _08010B68
 _08010B68:
-	.4byte 0x08010B6D  @ ROM+0x10B6D
+	.4byte ScriptSpriteInitTask  @ recovered SprInit task callback
 
-	.thumb_func
-	.thumb
-	.global sub_08010B6C
-sub_08010B6C:
-	push {r4, r5, r6, r7, lr}
-	adds r6, r0, #0
-	adds r7, r6, #0
-	adds r7, #32
-	ldr r0, [r6, #32]
-	bl sub_080106C8
-	adds r5, r0, #0
-	ldrh r0, [r6, #14]
-	cmp r0, #0
-	beq _08010B88
-	cmp r0, #16
-	beq _08010B98
-	b _08010C04
-	.global _08010B88
-_08010B88:
-	ldr r0, [r6, #32]
-	ldr r1, [r7, #40]
-	adds r2, r6, #0
-	adds r2, #76
-	bl sub_0801097C
-	movs r0, #16
-	strh r0, [r6, #14]
-	.global _08010B98
-_08010B98:
-	ldr r0, [r7, #44]
-	cmp r0, #0
-	beq _08010C04
-	movs r0, #0
-	movs r1, #72
-	bl HeapAlloc
-	str r0, [r5, #36]
-	movs r1, #72
-	movs r2, #0
-	bl CpuFill
-
-	.thumb_func
-	.thumb
-	.global sub_08010BB0
-sub_08010BB0:
-	ldr r0, [r5, #36]
-	bl sub_08008A70
-	ldrb r0, [r5, #0]
-	movs r4, #1
-	orrs r0, r4
-	strb r0, [r5, #0]
-	ldr r0, [r7, #24]
-	strh r0, [r5, #2]
-	movs r1, #2
-	ldrsh r0, [r5, r1]
-	adds r1, r7, #4
-	bl FindResourceByName
-	strh r0, [r5, #4]
-	ldr r0, [r7, #32]
-	strh r0, [r5, #6]
-	ldr r0, [r7, #36]
-	strh r0, [r5, #8]
-	ldrb r1, [r5, #0]
-	movs r0, #96
-	orrs r1, r0
-	movs r0, #127
-	ands r1, r0
-	ldrb r0, [r5, #1]
-	orrs r0, r4
-	strb r0, [r5, #1]
-
-	.thumb_func
-	.thumb
-	.global sub_08010BE6
-sub_08010BE6:
-	movs r0, #2
-	orrs r1, r0
-	strb r1, [r5, #0]
-	movs r0, #1
-	bl ScriptCompletePendingTasks
-	ldr r1, [r6, #24]
-	cmp r1, #0
-	beq _08010BFE
-	movs r0, #1
-	negs r0, r0
-	str r0, [r1, #0]
-	.global _08010BFE
-_08010BFE:
-	adds r0, r6, #0
-	bl FinishTask
-	.global _08010C04
-_08010C04:
-	pop {r4, r5, r6, r7}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
+@ 010B6C..010C0C is decompiled as ScriptSpriteInitTask(); see src/decompiled.json
 
 @ 010C0C..010C58 is decompiled as ScriptSpriteSelect(); see src/decompiled.json
 
@@ -3669,29 +3455,7 @@ sub_08011EAC:
 	pop {r1}
 	bx r1
 
-	.thumb_func
-	.thumb
-	.global sub_08011ECC
-sub_08011ECC:
-	push {r4, lr}
-	sub sp, #12
-	ldr r0, [r1, #0]
-	ldr r4, [r1, #4]
-	ldr r2, [r1, #8]
-	ldr r3, [r1, #12]
-	ldr r1, [r1, #16]
-	str r1, [sp, #0]
-	movs r1, #1
-	str r1, [sp, #4]
-	movs r1, #0
-	str r1, [sp, #8]
-	adds r1, r4, #0
-	bl sub_08010AEC
-	movs r0, #1
-	add sp, #12
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 011ECC..011EF4 is decompiled as ScriptNativeSpriteInit(); see src/decompiled.json
 
 @ 011EF4..011F14 is decompiled as ScriptNativeSpriteChange(); see src/decompiled.json
 
@@ -3729,45 +3493,11 @@ _08011F34:
 _08011F3C:
 	.4byte 0x00007FFF
 
-	.thumb_func
-	.thumb
-	.global sub_08011F40
-sub_08011F40:
-	push {lr}
-	sub sp, #12
-	ldr r0, [r1, #0]
-	ldr r2, [r1, #4]
-	ldr r1, [r1, #8]
-	str r1, [sp, #0]
-	movs r1, #1
-	str r1, [sp, #4]
-	movs r1, #0
-	str r1, [sp, #8]
-	adds r1, r2, #0
-	movs r2, #0
-	movs r3, #0
-	bl sub_08010E44
-	movs r0, #1
-	add sp, #12
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 011F40..011F7C: matching SpriteSet/Get native adapters in src/script_sprite_native.c
 
-	.thumb_func
-	.thumb
-	.global sub_08011F68
-sub_08011F68:
-	push {lr}
-	ldr r0, [r1, #0]
-	ldr r1, [r1, #4]
-	movs r3, #0
-	bl sub_08011174
-	movs r0, #1
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+	.section .rom.00011F7C, "ax"
+	.balign 4
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -6104,7 +5834,7 @@ sub_08012EA8:
 	bne _08012EE8
 	movs r1, #0
 	ldrsh r0, [r4, r1]
-	bl sub_08056474
+	bl ItemGetName
 	adds r1, r0, #0
 	adds r0, r5, #0
 	bl strcpy
@@ -7333,7 +7063,7 @@ _0801369E:
 	add r0, sp, #44
 	movs r2, #0
 	ldrsh r0, [r0, r2]
-	bl sub_08056560
+	bl ItemGetField58
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	cmp r0, #3

@@ -4297,22 +4297,22 @@ _08029BAA:
 	lsls r5, r5, #16
 	asrs r4, r5, #16
 	adds r0, r4, #0
-	bl sub_08056494
+	bl ItemGetField63
 	strh r0, [r6, #8]
 	adds r0, r4, #0
-	bl sub_080564AC
+	bl ItemGetField64
 	strh r0, [r6, #2]
 	adds r0, r4, #0
-	bl sub_080564C4
+	bl ItemGetField65
 	strh r0, [r6, #6]
 	adds r0, r4, #0
-	bl sub_08056474
+	bl ItemGetName
 	str r0, [r6, #20]
 	adds r0, r4, #0
-	bl sub_08056484
+	bl ItemGetDescription
 	str r0, [r6, #24]
 	adds r0, r4, #0
-	bl sub_08056518
+	bl ItemGetField59
 	strh r0, [r6, #4]
 	adds r4, r6, #0
 	adds r4, #28
@@ -4490,10 +4490,10 @@ sub_08029DA4:
 	.global sub_08029DBC
 sub_08029DBC:
 	movs r0, #0
-	bl sub_08056474
+	bl ItemGetName
 	str r0, [r6, #20]
 	movs r0, #0
-	bl sub_08056484
+	bl ItemGetDescription
 	str r0, [r6, #24]
 	adds r4, r6, #0
 	adds r4, #92
@@ -5513,14 +5513,14 @@ sub_0802A614:
 sub_0802A622:
 	movs r3, #0
 	ldrsh r0, [r4, r3]
-	bl sub_080564DC
+	bl ItemGetField5C
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	cmp r10, r0
 	bge _0802A646
 	movs r1, #0
 	ldrsh r0, [r4, r1]
-	bl sub_080564DC
+	bl ItemGetField5C
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	mov r10, r0
@@ -5593,7 +5593,7 @@ _0802A698:
 	bl sub_08009E5C
 	ldr r4, [r7, #0]
 	adds r0, r5, #0
-	bl sub_08056494
+	bl ItemGetField63
 	lsls r0, r0, #16
 
 	.thumb_func
@@ -9434,7 +9434,7 @@ _0802C032:
 	bl sub_08009E78
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08056504
+	bl ItemGetField60
 	adds r2, r0, #0
 	lsls r2, r2, #16
 	asrs r2, r2, #16

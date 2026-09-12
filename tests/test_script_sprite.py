@@ -18,6 +18,11 @@ char *strupr(char *p) {char *s=p;while(*s){if(*s>='a'&&*s<='z')*s-=32;s++;}retur
 s32 FindResourceByName(s32 c,const char *s) {
  assert(c==expectedContainer);assert(!strcmp(s,"PS_WK02"));looked++;return answer;
 }
+static int created;
+void sub_08010AEC(s32 id,s32 container,const char *name,s32 animation,s32 extra,s32 mode,s32 flags) {
+ assert(id==16 && container==0 && !strcmp(name,"ps_wk02"));
+ assert(animation==7 && extra==9 && mode==1 && flags==0);created++;
+}
 int main(void) {
  struct ScriptSprite before;
  union SpriteArgument args[5];s32 result=9876;
@@ -40,6 +45,7 @@ int main(void) {
  args[3].integer=7;args[4].integer=9;answer=44;
  assert(ScriptNativeSpriteChange(5,args,&result)==1 && result==9876);
  assert(sprite.group==44 && sprite.animation==7 && sprite.frame==9 && looked==3);
+ assert(ScriptNativeSpriteInit(5,args,&result)==1 && result==9876 && created==1);
  return 0;
 }
 ''')

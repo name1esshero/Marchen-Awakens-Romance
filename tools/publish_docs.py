@@ -23,6 +23,8 @@ DOCS = {
     'Build-verification': 'reports/build/README.md',
     'Setup-audit-history': 'reports/audit/README.md',
     'Graphics': 'graphics/README.md',
+    'Map-editor': 'tools/map_editor/README.md',
+    'Sprite-rendering': 'docs/sprite-rendering.md',
     'Background-images': 'graphics/backgrounds/README.md',
     'Sound': 'sound/README.md',
     'Translation': 'text/translation/README.md',
@@ -52,6 +54,14 @@ class Links(HTMLParser):
 
 def check_links(site):
     missing = []
+    checked={}
+    site_root=site.resolve()
+    def present(path,file_only=False):
+        key=(str(path),file_only)
+        if key not in checked:
+            resolved=path.resolve()
+            checked[key]=resolved.is_relative_to(site_root) and (resolved.is_file() if file_only else resolved.exists())
+        return checked[key]
     pages = list(site.rglob('*.html'))
     for page in pages:
         parser = Links()
@@ -60,8 +70,8 @@ def check_links(site):
             parts = urlsplit(link)
             if parts.scheme or parts.netloc or not parts.path:
                 continue
-            path = (page.parent / unquote(parts.path)).resolve()
-            if not path.is_relative_to(site.resolve()) or not path.exists():
+            path = page.parent / unquote(parts.path)
+            if not present(path):
                 missing.append({'page': str(page.relative_to(site)), 'link': link})
     # Animation image URLs are assembled in JavaScript, not HTML attributes.
     frames = 0
@@ -70,12 +80,17 @@ def check_links(site):
         manifest = folder / 'manifest.json'
         if not manifest.exists():
             continue
-        for frame in json.loads(manifest.read_text())['frames']:
+        frame_data=json.loads(manifest.read_text())
+        viewer=folder/'index.html'
+        if viewer.exists() and 'const data=' in viewer.read_text():
+            frame_data=json.JSONDecoder().raw_decode(viewer.read_text().split('const data=',1)[1])[0]
+        for frame in frame_data['frames']:
             paths = [frame['path'], *frame.get('cell_images', [])]
+            if 'english' in frame:paths.append(frame['english']['path'])
             paths += [f'palettes/{bank:03}.pal' for bank in frame['banks']]
             for link in paths:
-                path = (folder / link).resolve()
-                if not path.is_relative_to(site.resolve()) or not path.is_file():
+                path = folder / link
+                if not present(path,True):
                     missing.append({'page': str(manifest.relative_to(site)), 'link': link})
             frames += 1
     return {'html_pages': len(pages), 'animation_frames': frames, 'missing': missing}
@@ -89,6 +104,22 @@ def markdown_links(text, source):
         path = posixpath.normpath(posixpath.join(posixpath.dirname(source), target))
         return '](' + SITE + quote(path, safe='/#') + ')'
     return re.sub(r'\]\(([^\s)]+)\)', replace, text)
+
+
+def stage_wiki(wiki,reports):
+    wiki.mkdir(parents=True, exist_ok=True)
+    for title, source in DOCS.items():
+        text = (ROOT / source).read_text()
+        prefix = ('> Historical audit narrative; its counts describe earlier work. Consult the published reports for later snapshots.\n\n' if title == 'Setup-audit-history' else '')
+        (wiki / (title + '.md')).write_text(prefix + markdown_links(text, source))
+    (wiki / 'Reports.md').write_text('# Audit and build reports\n\nThese are preserved snapshots, not a claim that every audit describes the latest state.\n\n' + '\n'.join('- [' + p[8:] + '](' + SITE + quote(p) + ')' for p in reports) + '\n')
+    home = wiki / 'Home.md'
+    old = home.read_text() if home.exists() else '# MAR decompilation\n'
+    old = old.split('<!-- MAR documentation navigation -->')[0].rstrip()
+    navigation = '\n\n<!-- MAR documentation navigation -->\n\n[Interactive graphics, sound, and script galleries](' + SITE + ')\n\n'
+    navigation += '\n'.join('- [' + title.replace('-', ' ') + '](' + title + ')' for title in (*DOCS, 'Reports')) + '\n'
+    home.write_text(old + navigation)
+    (wiki / '_Sidebar.md').write_text('[Home](Home)\n\n' + navigation.split('<!-- MAR documentation navigation -->\n\n')[-1])
 
 
 def stage(site, wiki):
@@ -113,6 +144,12 @@ def stage(site, wiki):
             copied[str(rel)] = {'bytes': len(raw), 'sha256': hashlib.sha256(raw).hexdigest()}
             count += 1
         print(f'Staged {count} {name} files', flush=True)
+    # Wiki references must also resolve on Pages, including map-editor notes.
+    for relative in DOCS.values():
+        source=ROOT/relative;target=site/relative
+        target.parent.mkdir(parents=True,exist_ok=True)
+        raw=source.read_bytes();target.write_bytes(raw)
+        copied[relative]={'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()}
     reports = [p for p in copied if p.startswith('reports/') and Path(p).suffix in ('.json', '.md', '.log')]
     report_links = '\n'.join('<li><a href="' + html.escape(p[8:]) + '">' + html.escape(p[8:]) + '</a></li>' for p in reports)
     (site / 'reports/index.html').write_text('<!doctype html><meta charset="utf-8"><title>MAR reports</title><h1>MAR report snapshots</h1><p>Historical reports describe the state when each audit ran. They are not all current progress claims.</p><a href="../index.html">Documentation home</a><ul>' + report_links + '</ul>')
@@ -121,19 +158,7 @@ def stage(site, wiki):
     audit = check_links(site)
     manifest = {'version': 1, 'files': copied, 'validation': audit}
     (site / 'publication.json').write_text(json.dumps(manifest, indent=2) + '\n')
-    wiki.mkdir(parents=True, exist_ok=True)
-    for title, source in DOCS.items():
-        text = (ROOT / source).read_text()
-        prefix = ('> Historical audit narrative; its counts describe earlier work. Consult the published reports for later snapshots.\n\n' if title == 'Setup-audit-history' else '')
-        (wiki / (title + '.md')).write_text(prefix + markdown_links(text, source))
-    (wiki / 'Reports.md').write_text('# Audit and build reports\n\nThese are preserved snapshots, not a claim that every audit describes the latest state.\n\n' + '\n'.join('- [' + p[8:] + '](' + SITE + quote(p) + ')' for p in reports) + '\n')
-    home = wiki / 'Home.md'
-    old = home.read_text() if home.exists() else '# MAR decompilation\n'
-    old = old.split('<!-- MAR documentation navigation -->')[0].rstrip()
-    navigation = '\n\n<!-- MAR documentation navigation -->\n\n[Interactive graphics, sound, and script galleries](' + SITE + ')\n\n'
-    navigation += '\n'.join('- [' + title.replace('-', ' ') + '](' + title + ')' for title in (*DOCS, 'Reports')) + '\n'
-    home.write_text(old + navigation)
-    (wiki / '_Sidebar.md').write_text('[Home](Home)\n\n' + navigation.split('<!-- MAR documentation navigation -->\n\n')[-1])
+    stage_wiki(wiki,reports)
     print(json.dumps(audit, indent=2), flush=True)
     if audit['missing']:
         raise SystemExit('Broken local links: publication is not ready')
