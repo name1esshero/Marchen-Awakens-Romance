@@ -316,5 +316,179 @@
   "size": 224,
   "name": "DialogueStart",
   "file": "src/dialogue_start.c"
+ },
+ {
+  "addr": "08011774",
+  "size": 28,
+  "name": "DialogueFinishTask",
+  "file": "src/dialogue_commands.c"
+ },
+ {
+  "addr": "0801174C",
+  "size": 40,
+  "name": "DialogueCreateFinishTask",
+  "file": "src/dialogue_commands.c"
+ },
+ {
+  "addr": "08011CC4",
+  "size": 16,
+  "name": "DialogueCommandPrompt",
+  "file": "src/dialogue_commands.c"
+ },
+ {
+  "addr": "08011CD4",
+  "size": 16,
+  "name": "DialogueCommandFinish",
+  "file": "src/dialogue_commands.c"
+ },
+ {
+  "addr": "08011C68",
+  "size": 92,
+  "name": "DialogueCommandShow",
+  "file": "src/dialogue_commands.c"
+ },
+ {
+  "addr": "0800380C",
+  "size": 32,
+  "name": "VramFillTask",
+  "file": "src/script_tasks.c"
+ },
+ {
+  "addr": "0807E420",
+  "size": 40,
+  "name": "ScriptAddPendingTasks",
+  "file": "src/script_tasks.c"
+ },
+ {
+  "addr": "0807E448",
+  "size": 40,
+  "name": "ScriptCompletePendingTasks",
+  "file": "src/script_tasks.c"
+ },
+ {
+  "addr": "0807E384",
+  "size": 16,
+  "name": "ScriptDeactivate",
+  "file": "src/script_tasks.c"
+ },
+ {
+  "addr": "0807E394",
+  "size": 12,
+  "name": "ScriptSetResult",
+  "file": "src/script_tasks.c"
+ },
+ {
+  "addr": "0807E3A0",
+  "size": 12,
+  "name": "ScriptGetResult",
+  "file": "src/script_tasks.c"
+ },
+ {
+  "addr": "0807E3AC",
+  "size": 40,
+  "name": "ScriptGetParentFrame",
+  "file": "src/script_tasks.c"
+ },
+ {
+  "addr": "0807E3D4",
+  "size": 36,
+  "name": "ScriptSetPendingTasks",
+  "file": "src/script_tasks.c"
+ },
+ {
+  "addr": "0807E3F8",
+  "size": 40,
+  "name": "ScriptGetPendingTasks",
+  "file": "src/script_tasks.c"
+ },
+ {
+  "addr": "0807E470",
+  "size": 44,
+  "name": "ScriptSetStepBudget",
+  "file": "src/script_tasks.c"
+ },
+ {
+  "addr": "0807E49C",
+  "size": 40,
+  "name": "ScriptGetStepBudget",
+  "file": "src/script_tasks.c"
+ },
+ {
+  "addr": "0807F15C",
+  "size": 92,
+  "name": "ScriptRunSlice",
+  "file": "src/script_tasks.c"
+ },
+ {
+  "addr": "0808045C",
+  "size": 32,
+  "name": "ScriptCommandReturn",
+  "file": "src/script_tasks.c"
+ },
+ {
+  "addr": "0807ED70",
+  "size": 32,
+  "name": "ScriptDispatchCurrentFrame",
+  "file": "src/script_frames.c"
+ },
+ {
+  "addr": "0807ED90",
+  "size": 48,
+  "name": "ScriptRunWorkBatch",
+  "file": "src/script_frames.c"
+ },
+ {
+  "addr": "0807EDC0",
+  "size": 48,
+  "name": "ScriptSetFrameFlag",
+  "file": "src/script_frames.c"
+ },
+ {
+  "addr": "0807EDF0",
+  "size": 32,
+  "name": "ScriptSetStepBudgetUnchecked",
+  "file": "src/script_frames.c"
+ },
+ {
+  "addr": "0807EFB8",
+  "size": 140,
+  "name": "ScriptPopFrame",
+  "file": "src/script_frames.c"
+ },
+ {
+  "addr": "080800FC",
+  "size": 20,
+  "name": "ScriptNativeAbs",
+  "file": "src/script_native.c"
+ },
+ {
+  "addr": "08080110",
+  "size": 48,
+  "name": "ScriptNativeCharacterCode",
+  "file": "src/script_native.c"
+ },
+ {
+  "addr": "08080140",
+  "size": 72,
+  "name": "ScriptNativeCharacterString",
+  "file": "src/script_native.c"
+ },
+ {
+  "addr": "08080188",
+  "size": 44,
+  "name": "ScriptNativeMax",
+  "file": "src/script_native.c"
+ },
+ {
+  "addr": "080801B4",
+  "size": 44,
+  "name": "ScriptNativeMin",
+  "file": "src/script_native.c"
+ },
+ {
+  "addr": "08080214",
+  "size": 60,
+  "name": "ScriptNativeIntegerString",
+  "file": "src/script_native.c"
  }
 ]

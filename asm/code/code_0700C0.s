@@ -689,7 +689,7 @@ _08070540:
 	bl strcat
 	ldr r0, _080705EC
 	mov r1, sp
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	str r0, [sp, #32]
 	movs r1, #180
 	lsls r1, r1, #1
@@ -1164,11 +1164,11 @@ _080708E4:
 sub_0807091C:
 	adds r0, r4, #0
 	movs r1, #0
-	bl sub_08003348
+	bl SetEntityRenderOverride
 	adds r4, #252
 	adds r0, r4, #0
 	movs r1, #0
-	bl sub_08003348
+	bl SetEntityRenderOverride
 	movs r0, #48
 	strh r0, [r6, #14]
 	b _08070980
@@ -1301,14 +1301,14 @@ _080709E0:
 	ldr r4, _08070A6C
 	adds r0, r4, #0
 	add r1, sp, #4
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	ldr r1, _08070A70
 	adds r1, r1, r6
 	mov r9, r1
 	str r0, [r1, #0]
 	adds r0, r4, #0
 	add r1, sp, #4
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	movs r2, #175
 	lsls r2, r2, #4
 	adds r1, r6, r2
@@ -1367,7 +1367,7 @@ _08070A86:
 	lsls r0, r0, #1
 	str r0, [r1, #0]
 	adds r0, r7, #0
-	bl sub_080032A8
+	bl GetEntityField20
 	str r0, [r5, #32]
 	mov r1, r9
 	ldr r0, [r1, #0]
@@ -1375,10 +1375,10 @@ _08070A86:
 	negs r0, r0
 	str r0, [r5, #36]
 	adds r0, r7, #0
-	bl sub_080032B0
+	bl GetEntityField28
 	str r0, [r5, #40]
 	adds r0, r7, #0
-	bl sub_080032B4
+	bl GetEntityField2C
 	str r0, [r5, #44]
 	movs r2, #145
 	lsls r2, r2, #4
@@ -1403,10 +1403,10 @@ _08070A86:
 	strh r0, [r5, #18]
 	adds r0, r7, #0
 	movs r1, #1
-	bl sub_08003348
+	bl SetEntityRenderOverride
 	ldr r0, _08070B2C
 	movs r1, #1
-	bl sub_08003348
+	bl SetEntityRenderOverride
 	str r4, [r5, #56]
 	mov r1, r9
 	ldr r0, [r1, #0]
@@ -1464,7 +1464,7 @@ sub_08070B3E:
 	lsls r0, r0, #1
 	str r0, [r1, #0]
 	adds r0, r7, #0
-	bl sub_080032A8
+	bl GetEntityField20
 	str r0, [r5, #32]
 
 	.thumb_func
@@ -1472,13 +1472,13 @@ sub_08070B3E:
 	.global sub_08070B4C
 sub_08070B4C:
 	adds r0, r7, #0
-	bl sub_080032AC
+	bl GetEntityField24
 	str r0, [r5, #36]
 	adds r0, r7, #0
-	bl sub_080032B0
+	bl GetEntityField28
 	str r0, [r5, #40]
 	adds r0, r7, #0
-	bl sub_080032B4
+	bl GetEntityField2C
 	lsls r0, r0, #1
 	str r0, [r5, #44]
 	movs r1, #145
@@ -1510,10 +1510,10 @@ sub_08070B72:
 	strh r0, [r5, #18]
 	adds r0, r7, #0
 	movs r1, #1
-	bl sub_08003348
+	bl SetEntityRenderOverride
 	ldr r0, _08070BD4
 	movs r1, #1
-	bl sub_08003348
+	bl SetEntityRenderOverride
 	str r4, [r5, #56]
 	ldr r0, [r7, #0]
 	ldr r0, [r0, #24]
@@ -1610,24 +1610,24 @@ sub_08070C16:
 	strh r0, [r5, #2]
 	strh r0, [r5, #18]
 	adds r0, r7, #0
-	bl sub_080032A8
+	bl GetEntityField20
 	str r0, [r5, #32]
 	adds r0, r7, #0
-	bl sub_080032AC
+	bl GetEntityField24
 	str r0, [r5, #36]
 	adds r0, r7, #0
-	bl sub_080032B0
+	bl GetEntityField28
 	lsls r0, r0, #1
 	str r0, [r5, #40]
 	adds r0, r7, #0
-	bl sub_080032B4
+	bl GetEntityField2C
 	str r0, [r5, #44]
 	adds r0, r7, #0
 	movs r1, #2
-	bl sub_08003348
+	bl SetEntityRenderOverride
 	ldr r0, _08070C6C
 	movs r1, #2
-	bl sub_08003348
+	bl SetEntityRenderOverride
 	ldr r0, [r7, #0]
 	ldr r0, [r0, #20]
 	str r0, [r5, #56]
@@ -1703,20 +1703,20 @@ sub_08070C76:
 	negs r0, r0
 	str r0, [r5, #32]
 	adds r0, r7, #0
-	bl sub_080032AC
+	bl GetEntityField24
 	str r0, [r5, #36]
 	adds r0, r7, #0
-	bl sub_080032B0
+	bl GetEntityField28
 	str r0, [r5, #40]
 	adds r0, r7, #0
-	bl sub_080032B4
+	bl GetEntityField2C
 	str r0, [r5, #44]
 	adds r0, r7, #0
 	movs r1, #2
-	bl sub_08003348
+	bl SetEntityRenderOverride
 	ldr r0, _08070D38
 	movs r1, #2
-	bl sub_08003348
+	bl SetEntityRenderOverride
 	mov r1, r9
 	ldr r0, [r1, #0]
 
@@ -2307,7 +2307,7 @@ sub_08070FEC:
 	.global sub_08071016
 sub_08071016:
 	mov r1, r9
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	str r0, [sp, #0]
 	mov r0, sp
 	movs r1, #180
@@ -5570,7 +5570,7 @@ _080724D0:
 	adds r3, r4, #0
 	bl sub_08003280
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	movs r0, #1
 	bl sub_0800A140
 	ldr r1, [r7, #24]
@@ -5755,7 +5755,7 @@ sub_08072646:
 _08072656:
 	strh r0, [r5, #18]
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r7, #0
 	.global _08072660
 _08072660:
@@ -5830,7 +5830,7 @@ _080726C0:
 	movs r0, #0
 	bl sub_08006D20
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r1, [r5, #24]
 	cmp r1, #0
 	beq _080726FA
@@ -5899,7 +5899,7 @@ sub_08072710:
 	bl GetObjectFieldS16_1E
 	strh r0, [r4, #18]
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r5, #0
 	b _0807277E
 	.global _08072770
@@ -12885,7 +12885,7 @@ _08075920:
 	adds r0, #8
 	bl sub_08008BD8
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	bl sub_08075EBC
 	ldr r1, [r5, #24]
 	cmp r1, #0
@@ -12972,7 +12972,7 @@ sub_08075984:
 	adds r0, #80
 	str r0, [r4, #116]
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	bl Random
 	adds r2, r5, #0
 	adds r2, #164
@@ -13354,7 +13354,7 @@ _08075C6A:
 	adds r0, #8
 	bl sub_08008BD8
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r0, _08075CA0
 	ldr r1, _08075CA4
 	adds r0, r0, r1
@@ -13469,7 +13469,7 @@ sub_08075D34:
 	movs r0, #0
 	str r0, [r1, #0]
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r5, #0
 	add sp, #4
 	pop {r4, r5}

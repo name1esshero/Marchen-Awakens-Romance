@@ -9,6 +9,7 @@ import gfx
 import lz77
 import mapped_images as mi
 import affine_images
+import regular_images
 
 
 class MappedImagesTests(unittest.TestCase):
@@ -33,15 +34,16 @@ class MappedImagesTests(unittest.TestCase):
         rom = (mi.ROOT/'baserom.gba').read_bytes()
         maps = {e['name']:e for e in json.loads((mi.ROOT/'maps/nfp/manifest.json').read_text())}
         entries = [e for e in json.loads((mi.ROOT/'assets.json').read_text()) if e['kind']=='mapped_image']
-        self.assertEqual(len(entries), 82)
+        self.assertEqual(len(entries), 91)
         for e in entries:
             original, _ = lz77.decompress(rom, e['rom_offset'])
             self.assertEqual(mi.compile_image(e), original, e['archive_name'])
             layout = mi.read(mi.ROOT/e['image_layout'])
-            if layout.get('format') == 'affine_tsc_u8':
+            if layout.get('format') in ('affine_tsc_u8','regular_tsc_u16'):
                 for layer in layout['layers']:
                     source = next(m for m in maps.values() if m['path']==layer['map_path'])
-                    self.assertEqual(affine_images.build_plane(layout,layer), rom[source['rom_offset']:source['rom_offset']+source['size']])
+                    builder=regular_images.build_plane if layout['format']=='regular_tsc_u16' else affine_images.build_plane
+                    self.assertEqual(builder(layout,layer), rom[source['rom_offset']:source['rom_offset']+source['size']])
             else:
                 source = maps[e['archive_name'][:-3]+'KMP']
                 raw = (mi.ROOT/source['path']).read_bytes()
@@ -94,6 +96,28 @@ class MappedImagesTests(unittest.TestCase):
             self.assertEqual(affine_images.build_plane(layout,layer),b'\x01\x00')
             layer['entries'][0]=0x400
             with self.assertRaises(ValueError):affine_images.build_plane(layout,layer)
+
+    def test_regular_screenblock_global_palette_banks(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp)
+            tile=[[x for x in range(8)] for _ in range(8)]
+            words=[0xC000]*1024
+            pixels=mi.render([tile],words,32,32)
+            colors=[(i,i,i) for i in range(256)]
+            gfx.write_png(str(root/'frame.png'),pixels,colors)
+            layout=dict(format='regular_tsc_u16',width_tiles=32,height_tiles=32,tile_count=1,
+                        layers=[dict(index=0,entries=words,image='frame.png')],unused_tiles=[],baseline_tiles=[mi.digest(tile)])
+            (root/'layout.json').write_text(json.dumps(layout))
+            entry=dict(path='frame',bpp=4,raw_size=32,palette_banks=3,palette_bank_base=12,image_layout='layout.json')
+            self.assertEqual(mi.compile_image(entry,root),gfx.pixels_to_tiles(tile,4))
+            self.assertEqual(regular_images.build_plane(layout,layout['layers'][0]),b'\x00\xc0'*1024)
+            pixels[0][0]=193
+            gfx.write_png(str(root/'frame.png'),pixels,colors)
+            expected=bytearray(gfx.pixels_to_tiles(tile,4));expected[0]^=1
+            self.assertEqual(mi.compile_image(entry,root),expected)
+            layout['layers'][0]['entries'][0]=0x8000
+            (root/'layout.json').write_text(json.dumps(layout))
+            with self.assertRaises(ValueError):mi.compile_image(entry,root)
 
     def test_readable_map_entry_edit_reaches_map_bytes(self):
         with tempfile.TemporaryDirectory() as temp:

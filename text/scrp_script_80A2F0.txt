@@ -10,73 +10,73 @@
 @0004A2 A  // LITERAL: A (usage not inferred)
 @000774 F01B11  // LITERAL: F01B11 (usage not inferred)
 @000874  C0D04 ［ギンタ］  // EN: [Ginta]
-@000891  C0F04 え？やばい、って何が？  // TODO: English translation
+@000891  C0F04 え？やばい、って何が？  // EN: Huh? What's dangerous?
 @0008F4 F09A01  // LITERAL: F09A01 (usage not inferred)
 @0009CD  C0D04 ［ドロシー］  // EN: [Dorothy]
-@0009EC  C0F04 だから…  // TODO: English translation
+@0009EC  C0F04 だから…  // EN: I'm talking about...
 @000A41 F09A02  // LITERAL: F09A02 (usage not inferred)
 @000AEB F38A01  // LITERAL: F38A01 (usage not inferred)
 @000BC4  C0D04 ［ドロシー］  // EN: [Dorothy]
-@000BE3  C0F04 こいつよ、こいつ  // TODO: English translation
+@000BE3  C0F04 こいつよ、こいつ  // EN: ...him! This guy!
 @000C66  C0D04 ［マール］  // EN: [Marl]
-@000C83  C0F04 …ボクは…そんな  // TODO: English translation
+@000C83  C0F04 …ボクは…そんな  // EN: ...I... I wouldn't...
 @000D72  C0D04 ［ドロシー］  // EN: [Dorothy]
-@000DC0 何をたくらんでいるわけ？  // TODO: English translation
+@000DC0 何をたくらんでいるわけ？  // EN: ...to do with this ÄRM?
 @001018 F09A02  // LITERAL: F09A02 (usage not inferred)
 @0010B2  C0D04 ［ドロシー］  // EN: [Dorothy]
-@0010D1  C0F04 言いな！！  // TODO: English translation
+@0010D1  C0F04 言いな！！  // EN: Tell me!!
 @001128 F38A05  // LITERAL: F38A05 (usage not inferred)
 @001156  C0D04 ［マール］  // EN: [Marl]
-@001173  C0F04 …  // TODO: English translation
+@001173  C0F04 …  // EN: ...
 @0011C2 F01B06  // LITERAL: F01B06 (usage not inferred)
 @001307  C0D04 ［ギンタ］  // EN: [Ginta]
-@001324  C0F04 なんでそんなこと言うんだよ！  // TODO: English translation
+@001324  C0F04 なんでそんなこと言うんだよ！  // EN: Why would you say that?!
 @0013F9 F01B03  // LITERAL: F01B03 (usage not inferred)
 @001493  C0D04 ［ギンタ］  // EN: [Ginta]
-@0014B0  C0F04 マールはいっしょにたたかってくれる  // TODO: English translation
-@0014E5 なかまじゃないか！！  // TODO: English translation
+@0014B0  C0F04 マールはいっしょにたたかってくれる  // EN: Marl fights alongside us!
+@0014E5 なかまじゃないか！！  // EN: He's our friend!!
 @00155A F09A04  // LITERAL: F09A04 (usage not inferred)
 @001588  C0D04 ［ドロシー］  // EN: [Dorothy]
-@0015A7  C0F04 ギ、ギンタン…  // TODO: English translation
+@0015A7  C0F04 ギ、ギンタン…  // EN: G-Gintan...
 @001629 F01B02  // LITERAL: F01B02 (usage not inferred)
 @001657  C0D04 ［ギンタ］  // EN: [Ginta]
-@001697 ドロシーのほうがよっぽどあやしいぞ！  // TODO: English translation
+@001697 ドロシーのほうがよっぽどあやしいぞ！  // EN: You're a lot more suspicious than he is!
 @001752 F09A02  // LITERAL: F09A02 (usage not inferred)
 @0017B6  C0D04 ［ドロシー］  // EN: [Dorothy]
 @0017D5  C0F04 え…  // EN: Huh...
 @00185C F04A03  // LITERAL: F04A03 (usage not inferred)
 @0019A1  C0D04 ［スノウ］  // EN: [Snow]
-@0019BE  C0F04 なんてこと言うのギンタ！  // TODO: English translation
+@0019BE  C0F04 なんてこと言うのギンタ！  // EN: How can you say that, Ginta?!
 @001A23 F04A02  // LITERAL: F04A02 (usage not inferred)
 @001A51  C0D04 ［スノウ］  // EN: [Snow]
-@001A6E  C0F04 ドロシー、しんぱいして  // TODO: English translation
-@001A97 言ってくれてるんじゃない！  // TODO: English translation
+@001A6E  C0F04 ドロシー、しんぱいして  // EN: Dorothy's only saying that...
+@001A97 言ってくれてるんじゃない！  // EN: ...because she's worried about us!
 @001AEB F04A02  // LITERAL: F04A02 (usage not inferred)
 @001B19  C0D04 ［スノウ］  // EN: [Snow]
-@001B36  C0F04 だいじな仲間に  // TODO: English translation
-@001B57 そんなこと言うギンタ…  // TODO: English translation
+@001B36  C0F04 だいじな仲間に  // EN: Talking to a dear friend...
+@001B57 そんなこと言うギンタ…  // EN: ...like that, Ginta...
 @001C13 F04A03  // LITERAL: F04A03 (usage not inferred)
 @001CAD  C0D04 ［スノウ］  // EN: [Snow]
-@001CCA  C0F04 きらいだよっ！  // TODO: English translation
+@001CCA  C0F04 きらいだよっ！  // EN: ...I hate you for it!
 @001D91 F01B06  // LITERAL: F01B06 (usage not inferred)
 @001E2B  C0D04 ［ギンタ］  // EN: [Ginta]
-@001E48  C0F04 う…うるさい！  // TODO: English translation
+@001E48  C0F04 う…うるさい！  // EN: S-shut up!
 @001EA3 F01B02  // LITERAL: F01B02 (usage not inferred)
 @001F73  C0D04 ［ギンタ］  // EN: [Ginta]
-@001F90  C0F04 行くぞ！マール！！  // TODO: English translation
+@001F90  C0F04 行くぞ！マール！！  // EN: Let's go, Marl!!
 @001FEF F38A02  // LITERAL: F38A02 (usage not inferred)
 @00201D  C0D04 ［マール］  // EN: [Marl]
-@00203A  C0F04 は、はい…  // TODO: English translation
+@00203A  C0F04 は、はい…  // EN: Y-yes...
 @002775 F03A07  // LITERAL: F03A07 (usage not inferred)
 @00284E  C0D04 ［ジャック］  // EN: [Jack]
-@00286D  C0F04 あ！待つっスよ！！  // TODO: English translation
+@00286D  C0F04 あ！待つっスよ！！  // EN: Hey! Wait up!!
 @002892 ギンタ！！  // EN: Ginta!!
 @002B0B F04A06  // LITERAL: F04A06 (usage not inferred)
 @002C0B  C0D04 ［スノウ］  // EN: [Snow]
 @002C28  C0F04 ギンタ…  // EN: Ginta...
 @002C7D F09A04  // LITERAL: F09A04 (usage not inferred)
 @002D7D  C0D04 ［ドロシー］  // EN: [Dorothy]
-@002D9C  C0F04 …  // TODO: English translation
+@002D9C  C0F04 …  // EN: ...
 @002FAD MAP24_A.SPC  // LITERAL: MAP24_A.SPC (usage not inferred)
-@0030C2 ダンジョンモードに  // EN: Into Dungeon Mode...
-@0030E0  C0904 鍛錬（たんれん）の門 C0F04 が追加されました  // TODO: English translation
+@0030C2 ダンジョンモードに  // EN: In Dungeon Mode...
+@0030E0  C0904 鍛錬（たんれん）の門 C0F04 が追加されました  // EN: ...the Training Gate is now available.

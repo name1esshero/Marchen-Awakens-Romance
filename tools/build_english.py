@@ -37,8 +37,10 @@ def collect(root=ROOT):
             if b'\0' in raw or len(raw) > 160:raise ValueError('Source exceeds dialogue row buffer')
             prefix = PREFIX.match(raw).group()
             if CONTROL.search(raw[len(prefix):]):raise ValueError('Embedded formatting requires English markup')
-            rows = english_layout.layout(next(iter(translations)),mapping)
+            rows = english_layout.wrap_lines(next(iter(translations)),mapping)
             while len(rows)>1 and rows[-1]==b'\0':rows.pop()
+            if len(rows) > 255:raise ValueError('Translation exceeds 255-row mapping limit')
+            # The pagination task carries style across page boundaries.
             rows[0] = prefix + rows[0]
             if any(len(row)>127 for row in rows):raise ValueError('Controls exceed signed cursor capacity')
             accepted.append((raw, rows))
@@ -51,22 +53,29 @@ def literal(raw):
     return '"'+''.join('\\%03o'%b for b in raw)+'"'
 
 
+def render(accepted):
+    lines=['/* Generated from reviewed text/nfp comments; do not edit. */', '#include "english.h"']
+    for i, (_, rows) in enumerate(accepted):
+        lines.append('static const char *const rows_%d[] = {%s};' %
+                     (i, ', '.join(literal(row[:-1]) for row in rows)))
+    lines.append('const struct EnglishRowMapping gEnglishRows[] = {')
+    for i, (raw, rows) in enumerate(accepted):
+        lines.append('    {%s, rows_%d, %d},' % (literal(raw), i, len(rows)))
+    lines += ['};', 'const u32 gEnglishRowCount = %d;' % len(accepted), '']
+    return lines
+
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', default='build/english/mappings.c')
     args=parser.parse_args()
     accepted,rejected=collect()
-    lines=['/* Generated from reviewed text/nfp comments; do not edit. */', '#include "english.h"',
-           'const struct EnglishRowMapping gEnglishRows[] = {']
-    for raw, rows in accepted:
-        pointers=[literal(row[:-1]) for row in rows]+['0']*(3-len(rows))
-        lines.append('    {'+literal(raw)+', {'+', '.join(pointers)+'}, '+str(len(rows))+'},')
-    lines+=['};','const u32 gEnglishRowCount = '+str(len(accepted))+';','']
+    lines=render(accepted)
     out=ROOT/args.output;out.parent.mkdir(parents=True,exist_ok=True);out.write_text('\n'.join(lines))
     report=dict(exact_row_mappings=len(accepted), rejected_keys=len(rejected), rejected=rejected,
                 profile='DialogueStart: 21 glyphs per row, 3 rows in mode 0 or 2 in mode 1',
-                fallback='Whole message remains Japanese if any row is unmapped or the translated rows do not fit.',
-                limitations=['No pagination yet.', 'Only the recovered DialogueStart path is hooked.',
+                fallback='Whole message remains Japanese if any row is unmapped or its mode is unsupported.',
+                limitations=['Pagination uses A between pages; emulator validation is still required.', 'Only the recovered DialogueStart path is hooked.',
                              'Static mapping coverage does not establish runtime message coverage.'])
     (ROOT/'reports/text/english-runtime.json').write_text(json.dumps(report,indent=2)+'\n')
     print(len(accepted),'exact row mappings;',len(rejected),'ambiguous or unsupported keys excluded')

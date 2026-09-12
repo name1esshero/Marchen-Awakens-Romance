@@ -3443,7 +3443,7 @@ sub_08039910:
 	ldr r4, _08039AB8
 	ldr r0, _08039ABC
 	ldr r1, _08039AC0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	.2byte 0xF7C8
@@ -3515,7 +3515,7 @@ sub_080399C4:
 	bl sub_0802A814
 	ldr r0, _08039ABC
 	add r1, sp, #28
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	stmia r5!, {r0}
 	adds r4, #1
 	cmp r4, #3
@@ -3529,7 +3529,7 @@ sub_080399C4:
 	adds r4, r4, r5
 	ldr r0, _08039ABC
 	ldr r1, _08039AC8
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	movs r2, #96
@@ -4764,7 +4764,7 @@ _0803A1D8:
 	ldr r4, _0803A2BC
 	ldr r0, _0803A2C0
 	ldr r1, _0803A2C4
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	bl sub_08002148
@@ -4782,7 +4782,7 @@ _0803A25C:
 	bl sub_0802A814
 	ldr r0, _0803A2C0
 	add r1, sp, #28
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	lsls r2, r5, #2
 	movs r3, #188
 	lsls r3, r3, #1
@@ -4801,7 +4801,7 @@ _0803A25C:
 	adds r4, r4, r5
 	ldr r0, _0803A2C0
 	ldr r1, _0803A2CC
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	movs r2, #96
@@ -4843,7 +4843,7 @@ _0803A2D0:
 	.global sub_0803A2D4
 sub_0803A2D4:
 	ldr r1, _0803A3D0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	bl sub_08002148
@@ -4861,7 +4861,7 @@ _0803A2E4:
 	bl sub_0802A814
 	ldr r0, _0803A3CC
 	add r1, sp, #28
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	lsls r2, r5, #2
 	movs r3, #188
 	lsls r3, r3, #1
@@ -4880,7 +4880,7 @@ _0803A2E4:
 	adds r4, r4, r5
 	ldr r0, _0803A3CC
 	ldr r1, _0803A3D8
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	movs r2, #96
@@ -6382,7 +6382,7 @@ _0803AD4A:
 	ldr r4, _0803AEA4
 	ldr r0, _0803AEA8
 	ldr r1, _0803AEAC
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	bl sub_08002148
@@ -6399,7 +6399,7 @@ _0803ADDC:
 	bl sub_0802A814
 	ldr r0, _0803AEA8
 	add r1, sp, #28
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	lsls r2, r6, #2
 	movs r3, #207
 	lsls r3, r3, #2
@@ -6421,7 +6421,7 @@ _0803ADDC:
 	str r0, [r4, #0]
 	ldr r0, _0803AEA8
 	ldr r1, _0803AEB8
-	bl sub_0807AC3C
+	bl NfpOpenByName
 
 	.thumb_func
 	.thumb
@@ -8373,7 +8373,7 @@ _0803BB3C:
 	ldr r4, _0803BBE0
 	ldr r0, _0803BBE4
 	ldr r1, _0803BBE8
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	bl sub_08002148
@@ -8392,7 +8392,7 @@ _0803BB6A:
 	bl sub_0802A814
 	ldr r0, _0803BBE4
 	add r1, sp, #28
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	lsls r2, r4, #2
 	ldr r3, _0803BBF4
 	adds r1, r7, r3
@@ -8413,7 +8413,7 @@ _0803BB6A:
 	adds r4, r4, r0
 	ldr r0, _0803BBE4
 	ldr r1, _0803BBF8
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	movs r2, #96
@@ -16508,7 +16508,7 @@ sub_0803F0CC:
 	ldr r4, _0803F1B4
 	ldr r0, _0803F1B8
 	ldr r1, _0803F1BC
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	bl sub_08002148
@@ -16529,7 +16529,7 @@ _0803F108:
 	bl sub_0802A814
 	ldr r0, _0803F1B8
 	add r1, sp, #8
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	stmia r5!, {r0}
 	adds r4, #1
 	cmp r4, #3
@@ -16543,7 +16543,7 @@ _0803F108:
 	adds r4, r4, r1
 	ldr r0, _0803F1B8
 	ldr r1, _0803F1C4
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	movs r2, #96

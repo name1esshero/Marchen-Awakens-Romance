@@ -25,6 +25,19 @@ class EnglishLayoutTests(unittest.TestCase):
         result = el.layout('A' * 20 + ' B', self.mapping)
         self.assertEqual(result[1], self.mapping['B'] + b'\0')
 
+    def test_multiple_pages_keep_words_and_explicit_lines(self):
+        text='One two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen.'
+        for capacity in (2,3):
+            pages=el.pages(text,self.mapping,capacity)
+            self.assertGreater(len(pages),1)
+            self.assertTrue(all(1<=len(page)<=capacity for page in pages))
+            reverse={value:key for key,value in self.mapping.items()}
+            decoded=[''.join(reverse[row[i:i+2]] for i in range(0,len(row)-1,2))
+                     for page in pages for row in page]
+            self.assertTrue(all(len(row)<=21 for row in decoded))
+            self.assertEqual(' '.join(decoded),text)
+        self.assertEqual([len(page) for page in el.pages('A\nB\nC\nD',self.mapping)], [3,1])
+
     def test_unknown_glyph_and_embedded_control_rejected(self):
         for text in ['hello\0world', 'hello\tworld', 'hello😀']:
             with self.assertRaises(ValueError):

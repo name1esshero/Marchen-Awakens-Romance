@@ -13,6 +13,26 @@ import translate_comments
 
 
 class TranslationTest(unittest.TestCase):
+    def test_blank_color_records_are_not_counted_as_translations(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp)
+            (root/'text/nfp').mkdir(parents=True)
+            (root/'text/translation').mkdir()
+            (root/'text/translation/english.json').write_text('{}')
+            path=root/'text/nfp/BLANK.SPC.txt'
+            original='@000001  C0D04 　C0F04   // TODO: English translation\n@000020  C0F04 未翻訳  // TODO: English translation\n'
+            path.write_text(original)
+            with patch.object(translate_comments,'ROOT',root),contextlib.redirect_stdout(io.StringIO()):
+                translate_comments.main()
+                first=path.read_text()
+                translate_comments.main()
+            self.assertEqual(first,path.read_text())
+            self.assertIn('// FORMAT:',first.splitlines()[0])
+            self.assertIn('// TODO:',first.splitlines()[1])
+            self.assertNotIn('// EN:',first)
+            self.assertEqual([l.partition('  //')[0] for l in first.splitlines()],
+                             [l.partition('  //')[0] for l in original.splitlines()])
+
     def test_script_scope_and_source_spacing(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp)

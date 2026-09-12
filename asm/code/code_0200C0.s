@@ -18730,7 +18730,7 @@ _08027F0E:
 	ldr r1, [r2, #12]
 	adds r0, r0, r1
 	adds r1, r3, #0
-	bl sub_08079EB8
+	bl RLUnCompWram
 	b _08027F28
 	.global _08027F1C
 _08027F1C:
@@ -18738,7 +18738,7 @@ _08027F1C:
 	ldr r1, [r2, #12]
 	adds r0, r0, r1
 	adds r1, r3, #0
-	bl sub_08079EB4
+	bl LZ77UnCompWram
 	.global _08027F28
 _08027F28:
 	ldrh r0, [r6, #14]

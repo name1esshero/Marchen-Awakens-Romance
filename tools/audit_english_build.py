@@ -22,9 +22,20 @@ def main():
         raise ValueError('English build changed bytes outside the constructor bridge')
     output=subprocess.check_output(['arm-none-eabi-nm','-n','build/english/mar_english.elf'],cwd=ROOT,text=True)
     symbols={fields[2]:int(fields[0],16) for line in output.splitlines() if len(fields:=line.split())==3}
-    names=('EnglishDialogueStart','DialogueStartOriginal','EnglishTranslateRows','gEnglishRows','gEnglishRowCount')
+    names=('EnglishDialogueStart','DialogueStartOriginal','EnglishTranslateRows',
+           'EnglishPageTask','EnglishClearPage','gEnglishRows','gEnglishRowCount')
     for name in names:
         if not 0x09000000<=symbols[name]<0x0A000000:raise ValueError(name+' not in English extension')
+    # The extension linker script supplies ROM only. Mutable pagination state
+    # must stay in engine task allocations, not silently become orphan RAM data.
+    mutable_sections=[]
+    for obj in sorted((ROOT/'build/english').glob('*.o')):
+        sections=subprocess.check_output(['arm-none-eabi-size','-A',str(obj)],text=True)
+        for line in sections.splitlines():
+            fields=line.split()
+            if len(fields)==3 and fields[0].startswith(('.data','.bss','.sdata','.sbss')) and int(fields[1]):
+                mutable_sections.append(dict(object=obj.name,section=fields[0],size=int(fields[1])))
+    if mutable_sections:raise ValueError('Unallocated mutable English sections: '+str(mutable_sections))
     bridge=localized[0x11790:0x11870]
     target=symbols['EnglishDialogueStart']|1
     if struct.pack('<I',target) not in bridge:raise ValueError('Bridge lacks Thumb entry pointer')
@@ -34,6 +45,7 @@ def main():
                 change_scope='011790..011870 constructor bridge only; C and strings in ROM expansion',
                 entry_points={name:f'{symbols[name]:08X}' for name in names},
                 exact_row_mappings=mappings['exact_row_mappings'],
+                unallocated_mutable_sections=mutable_sections,
                 emulator_playthrough_verified=False,
                 limitation='Static link validation plus separate host C tests; does not establish complete scene or printer coverage.')
     (ROOT/'reports/build/english-link-audit.json').write_text(json.dumps(report,indent=2)+'\n')

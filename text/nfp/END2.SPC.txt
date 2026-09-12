@@ -11,214 +11,214 @@
 @00081B MAP11_O  // LITERAL: MAP11_O (usage not inferred)
 @0009D6 MAP11_A  // LITERAL: MAP11_A (usage not inferred)
 @000A35  C0D04 ［エド］ C0F04   // EN: [Ed]
-@000A57 つかれたぁ  // TODO: English translation
-@000A6D つかれたっと…！  // TODO: English translation
+@000A57 つかれたぁ  // EN: I'm beat...
+@000A6D つかれたっと…！  // EN: Absolutely beat...!
 @000B63 F06A06  // LITERAL: F06A06 (usage not inferred)
 @000C3C  C0D04 ［エド］ C0F04   // EN: [Ed]
-@000C5E あ〜〜あ  // TODO: English translation
-@000C72 ダレかのせいで  // TODO: English translation
+@000C5E あ〜〜あ  // EN: Oh, man...
+@000C72 ダレかのせいで  // EN: Thanks to a certain someone...
 @000CAA  C0D04 ［エド］ C0F04   // EN: [Ed]
-@000CCC よけいなチカラつかって  // TODO: English translation
-@000CEE つかれちまったよなぁ…！！  // TODO: English translation
+@000CCC よけいなチカラつかって  // EN: ...we had to work extra hard...
+@000CEE つかれちまったよなぁ…！！  // EN: ...and now we're worn out...!!
 @000D42 F01B12  // LITERAL: F01B12 (usage not inferred)
 @000E1B  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@000E3F …………  // TODO: English translation
+@000E3F …………  // EN: ......
 @000EF9 F06A01  // LITERAL: F06A01 (usage not inferred)
 @000F93  C0D04 ［エド］ C0F04   // EN: [Ed]
-@000FB5 さ、とりあえず、ねるとすっか…  // TODO: English translation
+@000FB5 さ、とりあえず、ねるとすっか…  // EN: Well, let's get some sleep for now...
 @001009  C0D04 ［エド］ C0F04   // EN: [Ed]
-@00102B いくぞ！！  // TODO: English translation
+@00102B いくぞ！！  // EN: Let's go!!
 @0010FE F04A01  // LITERAL: F04A01 (usage not inferred)
 @00123D  C0D04 ［スノウ］ C0F04   // EN: [Snow]
-@001261 う、うん……  // TODO: English translation
+@001261 う、うん……  // EN: Y-yeah...
 @001896 F09A01  // LITERAL: F09A01 (usage not inferred)
 @00199F  C0D04 ［ドロシー］ C0F04   // EN: [Dorothy]
-@0019C5 元気だすんだよ……  // TODO: English translation
-@0019E3 ギンタン…！  // TODO: English translation
-@001C48  C0D04 　C0F04   // TODO: English translation
-@001C63 　　　　　　……………………　　　  // TODO: English translation
+@0019C5 元気だすんだよ……  // EN: Cheer up...
+@0019E3 ギンタン…！  // EN: ...Gintan!
+@001C48  C0D04 　C0F04   // FORMAT: Blank text / color controls only; no translatable characters.
+@001C63 　　　　　　……………………　　　  // EN: ............
 @001DDA  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@001DFE …………  // TODO: English translation
+@001DFE …………  // EN: ......
 @00219A  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@0021BE …………  // TODO: English translation
+@0021BE …………  // EN: ......
 @0023DE  C0D04 ［スノウ］ C0F04   // EN: [Snow]
-@002402 …………  // TODO: English translation
+@002402 …………  // EN: ......
 @002509  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@00252D …………  // TODO: English translation
+@00252D …………  // EN: ......
 @002680  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@0026A4 …………  // TODO: English translation
+@0026A4 …………  // EN: ......
 @00274E  C0D04 ［スノウ］ C0F04   // EN: [Snow]
-@002772 少しおちついた？  // TODO: English translation
+@002772 少しおちついた？  // EN: Feeling a little calmer?
 @002824 F01B09  // LITERAL: F01B09 (usage not inferred)
 @002888  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@0028AC …………  // TODO: English translation
-@0028C0 う、うん…  // TODO: English translation
+@0028AC …………  // EN: ......
+@0028C0 う、うん…  // EN: Y-yeah...
 @002970 F04A04  // LITERAL: F04A04 (usage not inferred)
 @0029D4  C0D04 ［スノウ］ C0F04   // EN: [Snow]
-@0029F8 ギンタでも、おちこむことあるんだね  // TODO: English translation
+@0029F8 ギンタでも、おちこむことあるんだね  // EN: So even you get down sometimes, Ginta.
 @002A50  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@002A74 ………  // TODO: English translation
+@002A74 ………  // EN: ...
 @002AE6  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@002B0A …おちこんでるように見えた？  // TODO: English translation
+@002B0A …おちこんでるように見えた？  // EN: ...Did I look that down?
 @002BA2 F04A01  // LITERAL: F04A01 (usage not inferred)
 @002C06  C0D04 ［スノウ］ C0F04   // EN: [Snow]
-@002C2A ちょっとだけ……ね  // TODO: English translation
+@002C2A ちょっとだけ……ね  // EN: Just a little... yeah.
 @002CB8 F01B01  // LITERAL: F01B01 (usage not inferred)
 @002D1C  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@002D40 そっか……  // TODO: English translation
+@002D40 そっか……  // EN: I see...
 @002DEC F01B09  // LITERAL: F01B09 (usage not inferred)
 @002E50  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@002E74 でも、もう平気だ  // TODO: English translation
+@002E74 でも、もう平気だ  // EN: But I'm all right now.
 @002F00 F04A05  // LITERAL: F04A05 (usage not inferred)
 @002F64  C0D04 ［スノウ］ C0F04   // EN: [Snow]
 @00300A F01B01  // LITERAL: F01B01 (usage not inferred)
 @00306E  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@003092 …  // TODO: English translation
+@003092 …  // EN: ...
 @0030CA  C0D04 ［スノウ］ C0F04   // EN: [Snow]
-@0030EE …  // TODO: English translation
+@0030EE …  // EN: ...
 @0032E3  C0D04 ［スノウ］ C0F04   // EN: [Snow]
-@003307 …ね、おぼえてる？  // TODO: English translation
+@003307 …ね、おぼえてる？  // EN: ...Hey, do you remember?
 @00334F  C0D04 ［スノウ］ C0F04   // EN: [Snow]
-@003373 いつか、ギンタがわたしに  // TODO: English translation
-@003397 いってくれたことがあったよね  // TODO: English translation
+@003373 いつか、ギンタがわたしに  // EN: Something you once...
+@003397 いってくれたことがあったよね  // EN: ...said to me, Ginta.
 @003423 F04A07  // LITERAL: F04A07 (usage not inferred)
 @003487  C0D04 ［スノウ］ C0F04   // EN: [Snow]
-@0034AB 『オレはがんばってスノウたすける！』  // TODO: English translation
-@0034DB …って…  // TODO: English translation
+@0034AB 『オレはがんばってスノウたすける！』  // EN: 'I'll do my best to save you, Snow!'
+@0034DB …って…  // EN: ...You said that...
 @0035FB F01B11  // LITERAL: F01B11 (usage not inferred)
 @00365F  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@003683 …  // TODO: English translation
+@003683 …  // EN: ...
 @003701 F04A05  // LITERAL: F04A05 (usage not inferred)
 @003765  C0D04 ［スノウ］ C0F04   // EN: [Snow]
-@003789 すごくやさしいコトバだった  // TODO: English translation
+@003789 すごくやさしいコトバだった  // EN: Those were such kind words.
 @0037D9  C0D04 ［スノウ］ C0F04   // EN: [Snow]
 @003889 F01B15  // LITERAL: F01B15 (usage not inferred)
 @0039A0  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@0039C4 …　…　…  // TODO: English translation
+@0039C4 …　…　…  // EN: ... ... ...
 @003A4A F04A01  // LITERAL: F04A01 (usage not inferred)
 @003AAE  C0D04 ［スノウ］ C0F04   // EN: [Snow]
-@003AD2 わたしだって…  // TODO: English translation
-@003AEC ホントはスゴく弱い人間だよ  // TODO: English translation
+@003AD2 わたしだって…  // EN: The truth is...
+@003AEC ホントはスゴく弱い人間だよ  // EN: ...I'm really weak too.
 @003BF9 F01B04  // LITERAL: F01B04 (usage not inferred)
 @003CA3 F04A07  // LITERAL: F04A07 (usage not inferred)
 @003D07  C0D04 ［スノウ］ C0F04   // EN: [Snow]
-@003D2B チェスだってこわい  // TODO: English translation
+@003D2B チェスだってこわい  // EN: I'm scared of the Chess Pieces.
 @003D73  C0D04 ［スノウ］ C0F04   // EN: [Snow]
-@003D97 エドをもどしてあげられるかも…  // TODO: English translation
-@003DC1 不安でこわい…  // TODO: English translation
+@003D97 エドをもどしてあげられるかも…  // EN: And whether we can change Ed back...
+@003DC1 不安でこわい…  // EN: ...worries and scares me...
 @003E3F F01B12  // LITERAL: F01B12 (usage not inferred)
 @003EA3  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@003EC7 ………  // TODO: English translation
+@003EC7 ………  // EN: ...
 @003F03  C0D04 ［スノウ］ C0F04   // EN: [Snow]
-@003F27 でもね…  // TODO: English translation
+@003F27 でもね…  // EN: But, you know...
 @003FAB F04A04  // LITERAL: F04A04 (usage not inferred)
 @00400F  C0D04 ［スノウ］ C0F04   // EN: [Snow]
-@004033 ギンタのきもちに…  // TODO: English translation
-@004051 心がすくわれたんだ！  // TODO: English translation
+@004033 ギンタのきもちに…  // EN: Knowing how you felt...
+@004051 心がすくわれたんだ！  // EN: ...gave me hope, Ginta!
 @0040D5 F01B11  // LITERAL: F01B11 (usage not inferred)
 @004139  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@00415D ………  // TODO: English translation
+@00415D ………  // EN: ...
 @004445 F04A04  // LITERAL: F04A04 (usage not inferred)
 @0044A9  C0D04 ［スノウ］ C0F04   // EN: [Snow]
-@0044CD やっぱりがんばろうって！  // TODO: English translation
+@0044CD やっぱりがんばろうって！  // EN: It made me want to keep trying!
 @00451B  C0D04 ［スノウ］ C0F04   // EN: [Snow]
-@00453F 『がんばって、ギンタをたすける！』  // TODO: English translation
+@00453F 『がんばって、ギンタをたすける！』  // EN: 'I'll do my best to help Ginta!'
 @0045DD F04A05  // LITERAL: F04A05 (usage not inferred)
 @004641  C0D04 ［スノウ］ C0F04   // EN: [Snow]
-@004665 …って  // TODO: English translation
-@004677 そう………思うよ！  // TODO: English translation
+@004665 …って  // EN: ...That's...
+@004677 そう………思うよ！  // EN: ...how I feel!
 @0047DC F01B12  // LITERAL: F01B12 (usage not inferred)
 @004870  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@004894 ………  // TODO: English translation
+@004894 ………  // EN: ...
 @004900  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@004924 いずれは…元のせかいに  // TODO: English translation
-@004946 戻らなくちゃならないけど…  // TODO: English translation
+@004924 いずれは…元のせかいに  // EN: Someday... I'll have to go back...
+@004946 戻らなくちゃならないけど…  // EN: ...to my own world, but...
 @00498A  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@0049AE ………  // TODO: English translation
+@0049AE ………  // EN: ...
 @004A10  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@004A34 オレ、まだまだ、だな！  // TODO: English translation
+@004A34 オレ、まだまだ、だな！  // EN: I've still got a long way to go!
 @004A80  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@004AA4 まだ…  // TODO: English translation
-@004AB6 よわいよ…  // TODO: English translation
+@004AA4 まだ…  // EN: I'm still...
+@004AB6 よわいよ…  // EN: ...weak...
 @004B30 F04A01  // LITERAL: F04A01 (usage not inferred)
 @004B94  C0D04 ［スノウ］ C0F04   // EN: [Snow]
-@004BB8 ………  // TODO: English translation
+@004BB8 ………  // EN: ...
 @004C3A F01B09  // LITERAL: F01B09 (usage not inferred)
 @004CC4  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@004CE8 こんなよわいまま、戻ったら  // TODO: English translation
-@004D0E まってるヤツらにわらわれちまう  // TODO: English translation
+@004CE8 こんなよわいまま、戻ったら  // EN: If I go back this weak...
+@004D0E まってるヤツらにわらわれちまう  // EN: ...everyone waiting there will laugh at me.
 @004D56  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@004D7A それに、エドのオッサンにも  // TODO: English translation
-@004DA0 やくそくしちまったからさ  // TODO: English translation
+@004D7A それに、エドのオッサンにも  // EN: Besides, I promised old man Ed...
+@004DA0 やくそくしちまったからさ  // EN: ...that I would...
 @004E28 F01B03  // LITERAL: F01B03 (usage not inferred)
 @004E8C  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@004EB0 つよくなる！  // EN: I'll get stronger!
-@004EC8 って…………！！！  // TODO: English translation
+@004EB0 つよくなる！  // EN: ...get stronger!
+@004EC8 って…………！！！  // EN: I promised...!!!
 @004F04  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@004F28 だから…まだまだ  // TODO: English translation
-@004F44 がんばらないとな………！  // TODO: English translation
+@004F28 だから…まだまだ  // EN: So... I've got to...
+@004F44 がんばらないとな………！  // EN: ...keep working at it...!
 @004FCC F04A04  // LITERAL: F04A04 (usage not inferred)
 @005030  C0D04 ［スノウ］ C0F04   // EN: [Snow]
-@005054 ……うん！  // TODO: English translation
-@00506A やっとギンタらしくなった！  // TODO: English translation
+@005054 ……うん！  // EN: ...Yeah!
+@00506A やっとギンタらしくなった！  // EN: Now you sound like yourself again!
 @0050F4 F01B08  // LITERAL: F01B08 (usage not inferred)
 @005158  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
 @00517C …おう！！  // EN: ...Yeah!!
 @0052EB  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@00530F …うん？  // TODO: English translation
+@00530F …うん？  // EN: ...Huh?
 @0053F5 MAP99_A  // LITERAL: MAP99_A (usage not inferred)
 @005433 OP_06_A  // LITERAL: OP_06_A (usage not inferred)
 @005501 OP_06A  // LITERAL: OP_06A (usage not inferred)
 @0055A2 F01B10  // LITERAL: F01B10 (usage not inferred)
 @0055E0 F04A03  // LITERAL: F04A03 (usage not inferred)
 @00577A  C0D04 ［スノウ］ C0F04   // EN: [Snow]
-@00579E ギンタ！ギンタ！  // TODO: English translation
-@0057BA 月を見て！  // TODO: English translation
+@00579E ギンタ！ギンタ！  // EN: Ginta! Ginta!
+@0057BA 月を見て！  // EN: Look at the moon!
 @0057EE  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@005812 ………！！  // TODO: English translation
+@005812 ………！！  // EN: ...!!
 @005A9F  C0D04 ［ペタ］ C0F04   // EN: [Peta]
-@005AC1 これからチェスの兵隊の  // TODO: English translation
-@005AE3 進撃が始まる！！  // TODO: English translation
+@005AC1 これからチェスの兵隊の  // EN: The Chess Pieces' advance...
+@005AE3 進撃が始まる！！  // EN: ...begins now!!
 @005B1D  C0D04 ［ペタ］ C0F04   // EN: [Peta]
-@005B3F せかいはチェスの兵隊を恐れ  // TODO: English translation
-@005B65 チェスの兵隊によって絶望し  // TODO: English translation
+@005B3F せかいはチェスの兵隊を恐れ  // EN: The world shall fear the Chess Pieces...
+@005B65 チェスの兵隊によって絶望し  // EN: ...and despair at our hands!
 @005BA9  C0D04 ［ペタ］ C0F04   // EN: [Peta]
-@005BCB チェスの兵隊に服従することで  // TODO: English translation
-@005BF3 のみ生き長らえられるのだ！！！  // TODO: English translation
+@005BCB チェスの兵隊に服従することで  // EN: Only by submitting to us...
+@005BF3 のみ生き長らえられるのだ！！！  // EN: ...will you be allowed to live!!!
 @005CD5 OP_06B  // LITERAL: OP_06B (usage not inferred)
 @005DAA  C0D04 ［ペタ］ C0F04   // EN: [Peta]
-@005DCC ひれ伏せ！！  // TODO: English translation
+@005DCC ひれ伏せ！！  // EN: Bow down!!
 @005E0E  C0D04 ［ペタ］ C0F04   // EN: [Peta]
-@005E30 恐怖せよ！！  // TODO: English translation
+@005E30 恐怖せよ！！  // EN: Tremble in fear!!
 @005E72  C0D04 ［ペタ］ C0F04   // EN: [Peta]
-@005E94 チェスをあがめよ！！  // TODO: English translation
+@005E94 チェスをあがめよ！！  // EN: Worship the Chess Pieces!!
 @00602F MAP11_A  // LITERAL: MAP11_A (usage not inferred)
 @00606E MAP11_O  // LITERAL: MAP11_O (usage not inferred)
-@006341  C0D04  C0F04   // TODO: English translation
-@00635B 　　　　　…　…　…　…　…　  // TODO: English translation
+@006341  C0D04  C0F04   // FORMAT: Blank text / color controls only; no translatable characters.
+@00635B 　　　　　…　…　…　…　…　  // EN: ... ... ... ... ...
 @0063F5 F01B05  // LITERAL: F01B05 (usage not inferred)
 @006496  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@0064BA チェスの兵隊…！！！！  // TODO: English translation
-@0064DC …いい気になりやがって！！  // TODO: English translation
+@0064BA チェスの兵隊…！！！！  // EN: The Chess Pieces...!!!!
+@0064DC …いい気になりやがって！！  // EN: ...Don't get full of yourselves!!
 @006566 F04A02  // LITERAL: F04A02 (usage not inferred)
 @0065F1  C0D04 ［スノウ］ C0F04   // EN: [Snow]
 @006615 うん！  // EN: Yeah!
-@006627 ファイトだよ、ギンタ！！  // TODO: English translation
+@006627 ファイトだよ、ギンタ！！  // EN: Go get them, Ginta!!
 @00671B F01B06  // LITERAL: F01B06 (usage not inferred)
 @006821  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@006845 メルヘヴンがどんなに広くても！！  // TODO: English translation
+@006845 メルヘヴンがどんなに広くても！！  // EN: No matter how vast MÄR Heaven is!!
 @0068E1 F01B03  // LITERAL: F01B03 (usage not inferred)
 @0069E7  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@006A0B おまえらがどこに現れようとも！！  // TODO: English translation
+@006A0B おまえらがどこに現れようとも！！  // EN: No matter where you show up!!
 @006AD3 MAP99_A  // LITERAL: MAP99_A (usage not inferred)
 @006B11 OP_05_A  // LITERAL: OP_05_A (usage not inferred)
 @006BBC  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@006BE0 おまえら…一人一人…  // TODO: English translation
+@006BE0 おまえら…一人一人…  // EN: Every... last one of you...
 @006C2A  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@006C4E ぜったい  // TODO: English translation
-@006C62 ぶっつぶしてやるからなぁ！！！  // TODO: English translation
+@006C4E ぜったい  // EN: I swear...
+@006C62 ぶっつぶしてやるからなぁ！！！  // EN: ...I'll take you all down!!!
 @006CAA  C0D04 ［ギンタ］ C0F04   // EN: [Ginta]
-@006CCE オレの大好きな、このメルヘヴンを  // TODO: English translation
-@006CFA まもるんだ！！  // TODO: English translation
-@002F88 うん<F0><40>  // TODO: English translation
-@0037FD うれしかったよ<F0><40>  // TODO: English translation
+@006CCE オレの大好きな、このメルヘヴンを  // EN: This MÄR Heaven that I love...
+@006CFA まもるんだ！！  // EN: ...I'm going to protect it!!
+@002F88 うん<F0><40>  // EN: Good. ♥
+@0037FD うれしかったよ<F0><40>  // EN: They made me happy. ♥

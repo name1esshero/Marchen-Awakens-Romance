@@ -2,5 +2,5 @@
 // CODE offsets and Japanese are checked against the named source.
 // Regenerate comments with tools/translate_comments.py; this copy is not built.
 
-@0000EC  C0D04   // TODO: English translation
+@0000EC  C0D04   // FORMAT: Blank text / color controls only; no translatable characters.
 @0000FF  C0F04 　　　　　　閉まっている  // TODO: English translation

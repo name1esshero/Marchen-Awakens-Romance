@@ -4,7 +4,7 @@
 struct EnglishRowMapping
 {
     const char *japanese;
-    const char *rows[3];
+    const char *const *rows;
     u8 count;
 };
 extern const struct EnglishRowMapping gEnglishRows[];

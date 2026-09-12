@@ -2620,13 +2620,13 @@ _080411A4:
 	ldr r5, _080412D8
 	ldr r1, _080412DC
 	adds r0, r5, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	ldr r0, _080412E0
 	bl sub_08002148
 	ldr r1, _080412E4
 	adds r0, r5, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	movs r0, #2
 	bl sub_08001B4C
@@ -2639,7 +2639,7 @@ _080411A4:
 	str r1, [sp, #48]
 	ldr r1, _080412E8
 	adds r0, r5, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	ldr r0, [sp, #48]
 	movs r2, #96
@@ -2904,7 +2904,7 @@ _080413B0:
 	adds r0, #40
 	add r1, sp, #28
 	movs r2, #1
-	bl sub_08079E9C
+	bl BgAffineSet
 	ldr r2, [sp, #36]
 	ldr r5, _0804147C
 	movs r1, #132
@@ -4405,13 +4405,13 @@ _08041D72:
 	ldr r5, _08041E94
 	ldr r1, sub_08041E98
 	adds r0, r5, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	bl sub_08002148
 	ldr r1, _08041E9C
 	adds r0, r5, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	movs r0, #2
 	bl sub_08001B4C
@@ -4424,7 +4424,7 @@ _08041D72:
 	adds r4, r4, r0
 	ldr r1, _08041EA0
 	adds r0, r5, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	movs r2, #96
@@ -7313,27 +7313,27 @@ sub_08042F9A:
 	ldr r6, sub_08043128
 	ldr r1, _0804312C
 	adds r0, r6, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	bl sub_08002148
 	ldr r1, _08043130
 	adds r0, r6, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	movs r2, #164
 	lsls r2, r2, #2
 	adds r1, r7, r2
 	str r0, [r1, #0]
 	ldr r1, _08043134
 	adds r0, r6, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	movs r3, #165
 	lsls r3, r3, #2
 	adds r1, r7, r3
 	str r0, [r1, #0]
 	ldr r1, _08043138
 	adds r0, r6, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	movs r4, #166
 	lsls r4, r4, #2
 	adds r1, r7, r4
@@ -7347,7 +7347,7 @@ sub_08042F9A:
 	adds r4, r4, r0
 	ldr r1, _0804313C
 	adds r0, r6, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	movs r2, #96
@@ -8169,7 +8169,7 @@ _08043500:
 	adds r0, r7, r1
 	add r1, sp, #28
 	movs r2, #1
-	bl sub_08079E9C
+	bl BgAffineSet
 	ldr r2, [sp, #36]
 	movs r3, #132
 	lsls r3, r3, #4
@@ -12012,7 +12012,7 @@ _08044E28:
 	ldr r4, _08044EEC
 	ldr r0, _08044EF0
 	ldr r1, _08044EF4
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	bl sub_08002148
@@ -12027,7 +12027,7 @@ _08044E78:
 	bl sub_0802A814
 	ldr r0, _08044EF0
 	add r1, sp, #28
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	stmia r6!, {r0}
 	adds r4, #1
 	cmp r4, #5
@@ -12041,7 +12041,7 @@ _08044E78:
 	adds r4, r4, r2
 	ldr r0, _08044EF0
 	ldr r1, _08044EFC
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	movs r2, #96
@@ -17434,13 +17434,13 @@ _080471C8:
 	ldr r5, sub_08047338
 	ldr r1, _0804733C
 	adds r0, r5, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	bl sub_08002148
 	ldr r1, _08047340
 	adds r0, r5, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	movs r0, #2
 	bl sub_08001B4C
@@ -17453,7 +17453,7 @@ _080471C8:
 	adds r4, r4, r1
 	ldr r1, _08047344
 	adds r0, r5, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	movs r2, #96
@@ -18403,7 +18403,7 @@ sub_0804784C:
 	ldr r5, _080479AC
 	ldr r1, _080479B0
 	adds r0, r5, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 
 	.thumb_func
 	.thumb
@@ -18414,20 +18414,20 @@ sub_08047874:
 	bl sub_08002148
 	ldr r1, sub_080479B4
 	adds r0, r5, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	ldr r2, _080479B8
 	adds r1, r7, r2
 	str r0, [r1, #0]
 	ldr r1, _080479BC
 	adds r0, r5, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	movs r3, #158
 	lsls r3, r3, #3
 	adds r1, r7, r3
 	str r0, [r1, #0]
 	ldr r1, _080479C0
 	adds r0, r5, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	ldr r4, _080479C4
 	adds r1, r7, r4
 	str r0, [r1, #0]
@@ -18440,7 +18440,7 @@ sub_08047874:
 	adds r4, r4, r0
 	ldr r1, _080479C8
 	adds r0, r5, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	movs r2, #96
@@ -19347,7 +19347,7 @@ sub_08047E18:
 	adds r0, r7, r5
 	add r1, sp, #28
 	movs r2, #1
-	bl sub_08079E9C
+	bl BgAffineSet
 	ldr r2, [sp, #36]
 	movs r6, #132
 	lsls r6, r6, #4

@@ -7062,7 +7062,7 @@ sub_0802B0A4:
 	adds r0, r0, r1
 	ldr r1, [r0, #0]
 	adds r0, r5, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	mov r0, r8
 	bl sub_08002148
@@ -7081,7 +7081,7 @@ sub_0802B0C6:
 	adds r0, r0, r1
 	ldr r1, [r0, #0]
 	adds r0, r5, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	movs r0, #2
 	bl sub_08001B4C
@@ -7091,7 +7091,7 @@ sub_0802B0C6:
 	add r0, r8
 	ldr r1, [r0, #0]
 	adds r0, r5, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	movs r0, #3
 	bl sub_08001B4C
@@ -7102,7 +7102,7 @@ sub_0802B0C6:
 	adds r0, r0, r1
 	ldr r1, [r0, #0]
 	adds r0, r5, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	movs r1, #195
 	lsls r1, r1, #2
 	add r1, r9
@@ -8000,7 +8000,7 @@ _0802B6C2:
 	ldr r4, _0802B7C8
 	ldr r0, _0802B7CC
 	ldr r1, _0802B7D0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 
 	.thumb_func
 	.thumb
@@ -8018,7 +8018,7 @@ _0802B6EC:
 	bl sub_0802A814
 	ldr r0, _0802B7CC
 	add r1, sp, #28
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	lsls r2, r6, #2
 	movs r1, #192
 	lsls r1, r1, #2
@@ -8042,7 +8042,7 @@ sub_0802B706:
 	adds r4, r4, r3
 	ldr r0, _0802B7CC
 	ldr r1, _0802B7D8
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	movs r2, #96
@@ -8917,13 +8917,13 @@ _0802BC44:
 	ldr r5, _0802BDA0
 	ldr r1, _0802BDA4
 	adds r0, r5, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	bl sub_08002148
 	ldr r1, _0802BDA8
 	adds r0, r5, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	movs r0, #2
 	bl sub_08001B4C
@@ -8936,7 +8936,7 @@ _0802BC44:
 	adds r4, r4, r1
 	ldr r1, _0802BDAC
 	adds r0, r5, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	movs r2, #96

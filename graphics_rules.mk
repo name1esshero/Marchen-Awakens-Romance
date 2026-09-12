@@ -71,9 +71,9 @@ $(BUILD)/graphics/backgrounds/AT_BG01.KCG.4bpp: graphics/backgrounds/AT_BG01.KCG
 	$(PYTHON) tools/mapped_images.py raw --asset AT_BG01.KCG --output $@
 
 # BA06.TCG: 576 tiles, 4 bpp, 32 tiles wide
-$(BUILD)/graphics/tilesets/BA06.TCG.4bpp: graphics/tilesets/BA06.TCG.png
+$(BUILD)/graphics/backgrounds/BA06.TCG.4bpp: graphics/backgrounds/BA06.TCG.png $(MAPPED_PNGS) $(MAPPED_LAYOUTS) $(MAPPED_UNUSED) tools/mapped_images.py
 	@mkdir -p $(dir $@)
-	$(GBAGFX) png2tiles $< $@ --bpp 4 --size 18432
+	$(PYTHON) tools/mapped_images.py raw --asset BA06.TCG --output $@
 
 # BA06_BG.TCG: 544 tiles, 4 bpp, 32 tiles wide
 $(BUILD)/graphics/tilesets/BA06_BG.TCG.4bpp: graphics/tilesets/BA06_BG.TCG.png
@@ -81,9 +81,9 @@ $(BUILD)/graphics/tilesets/BA06_BG.TCG.4bpp: graphics/tilesets/BA06_BG.TCG.png
 	$(GBAGFX) png2tiles $< $@ --bpp 4 --size 17408
 
 # BA07.TCG: 160 tiles, 4 bpp, 16 tiles wide
-$(BUILD)/graphics/tilesets/BA07.TCG.4bpp: graphics/tilesets/BA07.TCG.png
+$(BUILD)/graphics/backgrounds/BA07.TCG.4bpp: graphics/backgrounds/BA07.TCG.png $(MAPPED_PNGS) $(MAPPED_LAYOUTS) $(MAPPED_UNUSED) tools/mapped_images.py
 	@mkdir -p $(dir $@)
-	$(GBAGFX) png2tiles $< $@ --bpp 4 --size 5120
+	$(PYTHON) tools/mapped_images.py raw --asset BA07.TCG --output $@
 
 # CLPASS.KCG: 163 tiles, 4 bpp, 32 tiles wide
 $(BUILD)/graphics/backgrounds/CLPASS.KCG.4bpp: graphics/backgrounds/CLPASS.KCG.png $(MAPPED_PNGS) $(MAPPED_LAYOUTS) $(MAPPED_UNUSED) tools/mapped_images.py
@@ -116,24 +116,24 @@ $(BUILD)/graphics/tilesets/GA08.TCG.4bpp: graphics/tilesets/GA08.TCG.png
 	$(GBAGFX) png2tiles $< $@ --bpp 4 --size 14336
 
 # GA13.TCG: 480 tiles, 4 bpp, 32 tiles wide
-$(BUILD)/graphics/tilesets/GA13.TCG.4bpp: graphics/tilesets/GA13.TCG.png
+$(BUILD)/graphics/backgrounds/GA13.TCG.4bpp: graphics/backgrounds/GA13.TCG.png $(MAPPED_PNGS) $(MAPPED_LAYOUTS) $(MAPPED_UNUSED) tools/mapped_images.py
 	@mkdir -p $(dir $@)
-	$(GBAGFX) png2tiles $< $@ --bpp 4 --size 15360
+	$(PYTHON) tools/mapped_images.py raw --asset GA13.TCG --output $@
 
 # GA24.TCG: 320 tiles, 4 bpp, 32 tiles wide
-$(BUILD)/graphics/tilesets/GA24.TCG.4bpp: graphics/tilesets/GA24.TCG.png
+$(BUILD)/graphics/backgrounds/GA24.TCG.4bpp: graphics/backgrounds/GA24.TCG.png $(MAPPED_PNGS) $(MAPPED_LAYOUTS) $(MAPPED_UNUSED) tools/mapped_images.py
 	@mkdir -p $(dir $@)
-	$(GBAGFX) png2tiles $< $@ --bpp 4 --size 10240
+	$(PYTHON) tools/mapped_images.py raw --asset GA24.TCG --output $@
 
 # GA25.TCG: 352 tiles, 4 bpp, 32 tiles wide
-$(BUILD)/graphics/tilesets/GA25.TCG.4bpp: graphics/tilesets/GA25.TCG.png
+$(BUILD)/graphics/backgrounds/GA25.TCG.4bpp: graphics/backgrounds/GA25.TCG.png $(MAPPED_PNGS) $(MAPPED_LAYOUTS) $(MAPPED_UNUSED) tools/mapped_images.py
 	@mkdir -p $(dir $@)
-	$(GBAGFX) png2tiles $< $@ --bpp 4 --size 11264
+	$(PYTHON) tools/mapped_images.py raw --asset GA25.TCG --output $@
 
 # GA26.TCG: 192 tiles, 4 bpp, 16 tiles wide
-$(BUILD)/graphics/tilesets/GA26.TCG.4bpp: graphics/tilesets/GA26.TCG.png
+$(BUILD)/graphics/backgrounds/GA26.TCG.4bpp: graphics/backgrounds/GA26.TCG.png $(MAPPED_PNGS) $(MAPPED_LAYOUTS) $(MAPPED_UNUSED) tools/mapped_images.py
 	@mkdir -p $(dir $@)
-	$(GBAGFX) png2tiles $< $@ --bpp 4 --size 6144
+	$(PYTHON) tools/mapped_images.py raw --asset GA26.TCG --output $@
 
 # GA60.TCG: 352 tiles, 4 bpp, 32 tiles wide
 $(BUILD)/graphics/tilesets/GA60.TCG.4bpp: graphics/tilesets/GA60.TCG.png
@@ -156,9 +156,9 @@ $(BUILD)/graphics/backgrounds/IT_BG02.KCG.4bpp: graphics/backgrounds/IT_BG02.KCG
 	$(PYTHON) tools/mapped_images.py raw --asset IT_BG02.KCG --output $@
 
 # JA05.TCG: 352 tiles, 4 bpp, 32 tiles wide
-$(BUILD)/graphics/tilesets/JA05.TCG.4bpp: graphics/tilesets/JA05.TCG.png
+$(BUILD)/graphics/backgrounds/JA05.TCG.4bpp: graphics/backgrounds/JA05.TCG.png $(MAPPED_PNGS) $(MAPPED_LAYOUTS) $(MAPPED_UNUSED) tools/mapped_images.py
 	@mkdir -p $(dir $@)
-	$(GBAGFX) png2tiles $< $@ --bpp 4 --size 11264
+	$(PYTHON) tools/mapped_images.py raw --asset JA05.TCG --output $@
 
 # MAP00_A.KCG: 719 tiles, 4 bpp, 192 tiles wide
 $(BUILD)/graphics/backgrounds/MAP00_A.KCG.4bpp: graphics/backgrounds/MAP00_A.KCG.png $(MAPPED_PNGS) $(MAPPED_LAYOUTS) $(MAPPED_UNUSED) tools/mapped_images.py
@@ -421,9 +421,9 @@ $(BUILD)/graphics/tilesets/PW_BOX.KCG.4bpp: graphics/tilesets/PW_BOX.KCG.png
 	$(GBAGFX) png2tiles $< $@ --bpp 4 --size 13632
 
 # SBA06.TCG: 576 tiles, 4 bpp, 32 tiles wide
-$(BUILD)/graphics/tilesets/SBA06.TCG.4bpp: graphics/tilesets/SBA06.TCG.png
+$(BUILD)/graphics/backgrounds/SBA06.TCG.4bpp: graphics/backgrounds/SBA06.TCG.png $(MAPPED_PNGS) $(MAPPED_LAYOUTS) $(MAPPED_UNUSED) tools/mapped_images.py
 	@mkdir -p $(dir $@)
-	$(GBAGFX) png2tiles $< $@ --bpp 4 --size 18432
+	$(PYTHON) tools/mapped_images.py raw --asset SBA06.TCG --output $@
 
 # SK02.TCG: 224 tiles, 8 bpp, 16 tiles wide
 $(BUILD)/graphics/backgrounds/SK02.TCG.8bpp: graphics/backgrounds/SK02.TCG.png $(MAPPED_PNGS) $(MAPPED_LAYOUTS) $(MAPPED_UNUSED) tools/mapped_images.py
@@ -446,9 +446,9 @@ $(BUILD)/graphics/backgrounds/SM_BG12.KCG.4bpp: graphics/backgrounds/SM_BG12.KCG
 	$(PYTHON) tools/mapped_images.py raw --asset SM_BG12.KCG --output $@
 
 # SN06.TCG: 544 tiles, 4 bpp, 32 tiles wide
-$(BUILD)/graphics/tilesets/SN06.TCG.4bpp: graphics/tilesets/SN06.TCG.png
+$(BUILD)/graphics/backgrounds/SN06.TCG.4bpp: graphics/backgrounds/SN06.TCG.png $(MAPPED_PNGS) $(MAPPED_LAYOUTS) $(MAPPED_UNUSED) tools/mapped_images.py
 	@mkdir -p $(dir $@)
-	$(GBAGFX) png2tiles $< $@ --bpp 4 --size 17408
+	$(PYTHON) tools/mapped_images.py raw --asset SN06.TCG --output $@
 
 # SN07.TCG: 544 tiles, 4 bpp, 32 tiles wide
 $(BUILD)/graphics/tilesets/SN07.TCG.4bpp: graphics/tilesets/SN07.TCG.png
@@ -553,24 +553,24 @@ graphics-convert: \
 	$(BUILD)/graphics/backgrounds/AS_BG01.KCG.4bpp \
 	$(BUILD)/graphics/backgrounds/AS_BG02.KCG.4bpp \
 	$(BUILD)/graphics/backgrounds/AT_BG01.KCG.4bpp \
-	$(BUILD)/graphics/tilesets/BA06.TCG.4bpp \
+	$(BUILD)/graphics/backgrounds/BA06.TCG.4bpp \
 	$(BUILD)/graphics/tilesets/BA06_BG.TCG.4bpp \
-	$(BUILD)/graphics/tilesets/BA07.TCG.4bpp \
+	$(BUILD)/graphics/backgrounds/BA07.TCG.4bpp \
 	$(BUILD)/graphics/backgrounds/CLPASS.KCG.4bpp \
 	$(BUILD)/graphics/backgrounds/CM_BG01.KCG.4bpp \
 	$(BUILD)/graphics/backgrounds/CM_BG02.KCG.4bpp \
 	$(BUILD)/graphics/backgrounds/DS_BG01.KCG.4bpp \
 	$(BUILD)/graphics/backgrounds/DS_BG02.KCG.4bpp \
 	$(BUILD)/graphics/tilesets/GA08.TCG.4bpp \
-	$(BUILD)/graphics/tilesets/GA13.TCG.4bpp \
-	$(BUILD)/graphics/tilesets/GA24.TCG.4bpp \
-	$(BUILD)/graphics/tilesets/GA25.TCG.4bpp \
-	$(BUILD)/graphics/tilesets/GA26.TCG.4bpp \
+	$(BUILD)/graphics/backgrounds/GA13.TCG.4bpp \
+	$(BUILD)/graphics/backgrounds/GA24.TCG.4bpp \
+	$(BUILD)/graphics/backgrounds/GA25.TCG.4bpp \
+	$(BUILD)/graphics/backgrounds/GA26.TCG.4bpp \
 	$(BUILD)/graphics/tilesets/GA60.TCG.4bpp \
 	$(BUILD)/graphics/backgrounds/GA_BG01.KCG.4bpp \
 	$(BUILD)/graphics/backgrounds/IT_BG01.KCG.4bpp \
 	$(BUILD)/graphics/backgrounds/IT_BG02.KCG.4bpp \
-	$(BUILD)/graphics/tilesets/JA05.TCG.4bpp \
+	$(BUILD)/graphics/backgrounds/JA05.TCG.4bpp \
 	$(BUILD)/graphics/backgrounds/MAP00_A.KCG.4bpp \
 	$(BUILD)/graphics/backgrounds/MAP01_1A.KCG.4bpp \
 	$(BUILD)/graphics/backgrounds/MAP01_2A.KCG.4bpp \
@@ -623,12 +623,12 @@ graphics-convert: \
 	$(BUILD)/graphics/backgrounds/PV_BG11.KCG.4bpp \
 	$(BUILD)/graphics/tilesets/PW_BG01.KCG.4bpp \
 	$(BUILD)/graphics/tilesets/PW_BOX.KCG.4bpp \
-	$(BUILD)/graphics/tilesets/SBA06.TCG.4bpp \
+	$(BUILD)/graphics/backgrounds/SBA06.TCG.4bpp \
 	$(BUILD)/graphics/backgrounds/SK02.TCG.8bpp \
 	$(BUILD)/graphics/backgrounds/SK03.TCG.8bpp \
 	$(BUILD)/graphics/backgrounds/SM_BG01.KCG.4bpp \
 	$(BUILD)/graphics/backgrounds/SM_BG12.KCG.4bpp \
-	$(BUILD)/graphics/tilesets/SN06.TCG.4bpp \
+	$(BUILD)/graphics/backgrounds/SN06.TCG.4bpp \
 	$(BUILD)/graphics/tilesets/SN07.TCG.4bpp \
 	$(BUILD)/graphics/backgrounds/SP_BG01.KCG.4bpp \
 	$(BUILD)/graphics/backgrounds/SP_BG11.KCG.4bpp \

@@ -8623,12 +8623,12 @@ sub_08053790:
 	ldr r4, _080537D0
 	ldr r1, _080537D4
 	adds r0, r4, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r5, r0, #0
 	adds r1, r5, #0
 	adds r1, #92
 	adds r0, r4, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r4, r0, #0
 	movs r0, #0
 	movs r1, #0

@@ -113,7 +113,7 @@ def _chunk(tag, payload):
             struct.pack(">I", zlib.crc32(tag + payload) & 0xFFFFFFFF))
 
 
-def write_png(path, px, palette, transparent_index=None):
+def write_png(path, px, palette, transparent_index=None, transparent_indices=None):
     """Write an 8-bit indexed PNG (widely editable, keeps indices intact)."""
     h = len(px)
     w = len(px[0]) if h else 0
@@ -129,8 +129,15 @@ def write_png(path, px, palette, transparent_index=None):
     out = b"\x89PNG\r\n\x1a\n"
     out += _chunk(b"IHDR", struct.pack(">IIBBBBB", w, h, 8, 3, 0, 0, 0))
     out += _chunk(b"PLTE", bytes(pal))
-    if transparent_index is not None:
-        out += _chunk(b"tRNS", bytes([255] * transparent_index + [0]))
+    if transparent_index is not None and transparent_indices is not None:
+        raise ValueError('Specify one transparency option')
+    indices = list(transparent_indices) if transparent_indices is not None else ([] if transparent_index is None else [transparent_index])
+    if indices:
+        if any(not isinstance(i,int) or not 0 <= i < 256 for i in indices):
+            raise ValueError('Transparent palette index outside 0..255')
+        alpha = bytearray([255] * (max(indices)+1))
+        for index in indices:alpha[index]=0
+        out += _chunk(b"tRNS", bytes(alpha))
     out += _chunk(b"IDAT", zlib.compress(bytes(raw), 9))
     out += _chunk(b"IEND", b"")
     with open(path, "wb") as f:

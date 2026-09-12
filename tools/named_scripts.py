@@ -129,13 +129,21 @@ def audit():
         notes = (ROOT / e['text']).read_text(encoding='utf-8')
         english = sum(bool(re.match(r'^@.*// EN: \S', line)) for line in notes.splitlines())
         literals = sum(bool(re.match(r'^@.*// LITERAL: ', line)) for line in notes.splitlines())
+        formatting = sum(bool(re.match(r'^@.*// FORMAT: ', line)) for line in notes.splitlines())
+        for line in notes.splitlines():
+            if line.startswith('@') and '  // FORMAT: ' in line:
+                original_text = line.partition('  //')[0].split(' ', 1)[1]
+                if re.sub(r' ?C[0-9A-F]{4} ?', '', original_text).strip():
+                    raise ValueError(e['name'] + ': formatting annotation hides text')
         row = dict(name=e['name'], records=len(values), english_comments=english,
                    untranslated=len(values)-english, byte_matching=output == original)
-        row.update(ascii_literal_comments=literals, pending_translation=len(values)-english-literals)
+        row.update(ascii_literal_comments=literals, formatting_records=formatting,
+                   pending_translation=len(values)-english-literals-formatting)
         rows.append(row)
         totals.update(scripts=1, records=len(values), english_comments=english,
                       untranslated=len(values)-english, byte_matching=output==original)
-        totals.update(ascii_literal_comments=literals, pending_translation=len(values)-english-literals)
+        totals.update(ascii_literal_comments=literals, formatting_records=formatting,
+                      pending_translation=len(values)-english-literals-formatting)
     dest = ROOT / 'reports/text'
     dest.mkdir(parents=True, exist_ok=True)
     (dest / 'audit.json').write_text(json.dumps(dict(totals=dict(totals), scripts=rows), indent=2) + '\n')

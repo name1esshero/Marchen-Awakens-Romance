@@ -104,7 +104,7 @@ def audit():
                         row['status'] = 'unverified'
                     if entry['kind'] == 'mapped_image':
                         row['status'] = 'mapped_background_image'
-                        row['evidence'].append('Editable image compiled through affine byte indices' if bpp==8 else 'Editable image compiled through KMP tile indices, flips and palette banks')
+                        row['evidence'].append('Editable image compiled through affine byte indices' if bpp==8 else 'Editable image compiled through KMP/TSC tile indices, flips and palette banks')
                         row['layout'] = entry['image_layout']
                         rows.append(row)
                         continue

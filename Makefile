@@ -170,7 +170,7 @@ $(BUILD)/.named-scripts.stamp: $(wildcard scripts/nfp/*.bin) $(wildcard text/nfp
 
 $(BUILD)/.named-maps.stamp: $(wildcard maps/nfp/*.bin) \
                            $(wildcard graphics/tilemaps/nfp/*.bin) \
-                           maps/nfp/manifest.json assets.json $(MAPPED_LAYOUTS) tools/mapped_images.py tools/affine_images.py tools/named_maps.py tools/nfp.py
+                           maps/nfp/manifest.json assets.json $(MAPPED_LAYOUTS) tools/mapped_images.py tools/affine_images.py tools/regular_images.py tools/named_maps.py tools/nfp.py
 	$(PYTHON) tools/named_maps.py build
 	@touch $@
 
@@ -231,6 +231,21 @@ clean:
 
 tidy:
 	rm -rf $(BUILD)/asm $(BUILD)/src $(ELF) $(TARGET)
+
+# Documentation is published separately from the decomp source branch.
+.PHONY: galleries site docs-fetch
+galleries:
+	$(PYTHON) tools/galleries.py
+
+site: galleries
+	$(PYTHON) tools/publish_docs.py
+
+build/published-docs/.git:
+	git clone --depth 1 --branch gh-pages https://github.com/name1esshero/Marchen-Awakens-Romance.git build/published-docs
+
+docs-fetch: build/published-docs/.git
+	git -C build/published-docs pull --ff-only
+	$(PYTHON) tools/publish_docs.py --restore build/published-docs
 
 # Optional English dialogue build. Reuse the verified Japanese objects except
 # the constructor, replaced by a fixed-size bridge to readable localization C.

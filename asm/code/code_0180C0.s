@@ -5735,7 +5735,7 @@ sub_0801A8BC:
 _0801A8F6:
 	bl sub_0800AEB4
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r7, #0
 	add sp, #4
 	pop {r4, r5, r6, r7}
@@ -7419,7 +7419,7 @@ _0801B428:
 	adds r0, r7, r2
 	strh r5, [r0, #0]
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	movs r0, #2
 	movs r1, #0
 	bl sub_08006ECC
@@ -10330,7 +10330,7 @@ _0801C84A:
 	.global sub_0801C850
 sub_0801C850:
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r4, #0
 	add sp, #4
 	pop {r4}
@@ -12526,7 +12526,7 @@ _0801D5E8:
 	movs r0, #0
 	bl sub_08009D48
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	bl sub_08008668
 	movs r0, #2
 	movs r1, #0

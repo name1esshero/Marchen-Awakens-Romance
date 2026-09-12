@@ -1272,7 +1272,7 @@ sub_08000F72:
 	ldr r0, _08000F9C
 	strb r4, [r0, #0]
 	movs r0, #0
-	bl sub_08079EC0
+	bl SoftReset
 	b _08000F3A
 	.global _08000F8C
 _08000F8C:
@@ -1292,7 +1292,7 @@ _08000F9C:
 	.global _08000FA0
 _08000FA0:
 	movs r0, #253
-	bl sub_08079EBC
+	bl RegisterRamReset
 	ldr r1, _08001034
 	adds r0, r1, #0
 	strh r0, [r4, #0]
@@ -2469,7 +2469,7 @@ sub_0800163C:
 	ldr r1, _080019C0
 	ldr r2, _080019C4
 	adds r0, r7, #0
-	bl sub_0807AB14
+	bl NfpMount
 	add r0, sp, #4
 	movs r2, #0
 	mov r9, r2
@@ -2486,7 +2486,7 @@ sub_0800163C:
 	adds r4, r5, r0
 	ldr r1, _080019CC
 	adds r0, r7, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	bl InitFont
@@ -2501,17 +2501,17 @@ sub_0800163C:
 	bl sub_0807AFF8
 	ldr r1, _080019D4
 	adds r0, r7, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	movs r1, #0
 	bl sub_0807B96C
 	ldr r1, _080019D8
 	adds r0, r7, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	movs r1, #1
 	bl sub_0807B96C
 	ldr r1, _080019DC
 	adds r0, r7, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	movs r1, #2
 	bl sub_0807B96C
 	ldr r1, _08001990
@@ -3178,7 +3178,7 @@ _08001CC8:
 	orrs r2, r0
 	mov r0, sp
 	adds r1, r5, #0
-	bl sub_08079EA4
+	bl CpuSet
 	adds r5, r5, r4
 	.global _08001CE8
 _08001CE8:
@@ -3390,7 +3390,7 @@ _08001E0C:
 	orrs r2, r0
 	adds r0, r6, #0
 	adds r1, r5, #0
-	bl sub_08079EA4
+	bl CpuSet
 	adds r6, r6, r4
 	adds r5, r5, r4
 	.global _08001E2C
@@ -3729,7 +3729,7 @@ sub_08002004:
 	lsrs r2, r2, #11
 	adds r0, r5, #0
 	adds r1, r6, #0
-	bl sub_08079EA0
+	bl CpuFastSet
 	b _0800203A
 	.global _08002016
 _08002016:
@@ -3892,7 +3892,7 @@ sub_080020EC:
 	adds r1, r3, #0
 	muls r1, r3
 	adds r0, r0, r1
-	bl sub_08079ED8
+	bl Sqrt
 	lsls r0, r0, #16
 	lsrs r0, r0, #16
 	pop {r1}
@@ -3919,7 +3919,7 @@ sub_08002118:
 	asrs r3, r3, #16
 	adds r0, r2, #0
 	adds r1, r3, #0
-	bl sub_08079E98
+	bl ArcTan2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	pop {r1}
@@ -3935,7 +3935,7 @@ sub_08002148:
 	adds r2, r0, #0
 	adds r0, r1, #0
 	adds r1, r2, #0
-	bl sub_08079EB0
+	bl LZ77UnCompVram
 	pop {r0}
 	bx r0
 	.4byte 0x1C04B510
@@ -6194,7 +6194,7 @@ sub_08003178:
 	ldr r0, _08003208
 	mov r9, r0
 	adds r1, r4, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r7, r0, #0
 	movs r0, #1
 	ands r0, r6
@@ -6203,7 +6203,7 @@ sub_08003178:
 	adds r1, r7, #0
 	adds r1, #92
 	mov r0, r9
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r5, r0, #0
 	movs r0, #0
 	movs r1, #0
@@ -6231,7 +6231,7 @@ _080031D2:
 	adds r4, #28
 	mov r0, r9
 	adds r1, r4, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r5, r0, #0
 	mov r0, r9
 	adds r1, r4, #0
@@ -6567,11 +6567,11 @@ sub_08003410:
 	adds r1, r0, #0
 	ldr r4, _08003434
 	adds r0, r4, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r1, #28
 	adds r0, r4, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	ldr r0, [r0, #0]
 	lsrs r0, r0, #8
 	adds r0, #16
@@ -7146,25 +7146,10 @@ _08003804:
 _08003808:
 	.4byte 0x0800380D  @ ROM+0x380D
 
-	.thumb_func
-	.thumb
-	.global sub_0800380C
-sub_0800380C:
-	push {r4, lr}
-	adds r4, r0, #0
-	adds r2, r4, #0
-	adds r2, #32
-	ldr r0, [r4, #32]
-	ldr r1, [r2, #4]
-	ldr r2, [r2, #8]
-	bl CpuFill
-	adds r0, r4, #0
-	bl FinishTask
-	pop {r4}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
+@ 00380C..00382C is decompiled as VramFillTask(); see src/decompiled.json
+
+	.section .rom.0000382C, "ax"
+	.syntax unified
 	.4byte 0x464FB5F0
 	.4byte 0xB4C04646
 	.4byte 0x4688B081
@@ -9232,7 +9217,7 @@ sub_080046B0:
 	str r6, [sp, #0]
 	ldr r2, _08004754
 	mov r0, sp
-	bl sub_08079EA4
+	bl CpuSet
 	mov r0, r8
 	ldr r1, [r0, #0]
 	movs r0, #15
@@ -9739,7 +9724,7 @@ sub_080049F4:
 	ldr r1, [r2, #28]
 	adds r1, #4
 	ldr r2, _08004A48
-	bl sub_08079EA4
+	bl CpuSet
 	movs r3, #0
 	ldr r0, [r4, #0]
 	ldr r1, [r0, #28]
@@ -9829,7 +9814,7 @@ _08004A94:
 	add r1, r8
 	adds r0, r4, #0
 	ldr r2, _08004B00
-	bl sub_08079EA4
+	bl CpuSet
 	ldr r2, [r7, #0]
 	movs r0, #1
 	lsls r0, r5
@@ -9843,7 +9828,7 @@ _08004AC6:
 	mov r0, sp
 	adds r1, r4, #0
 	ldr r2, _08004B04
-	bl sub_08079EA4
+	bl CpuSet
 	adds r5, r6, #0
 	cmp r5, #1
 	ble _08004A84
@@ -10804,7 +10789,7 @@ sub_080050A4:
 sub_080050A8:
 	push {r4, r5, r6, lr}
 	adds r6, r2, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r5, r0, #0
 	ldrb r0, [r5, #0]
 	cmp r0, #83
@@ -10824,7 +10809,7 @@ sub_080050C8:
 	adds r4, r0, #0
 	adds r0, r5, #0
 	adds r1, r4, #0
-	bl sub_08079EB4
+	bl LZ77UnCompWram
 	movs r0, #1
 	str r0, [r6, #0]
 	adds r0, r4, #0
@@ -11086,7 +11071,7 @@ sub_08005238:
 	strh r0, [r7, #14]
 	movs r0, #33
 	strh r0, [r7, #14]
-	bl sub_0807F15C
+	bl ScriptRunSlice
 	cmp r0, #0
 	bne _08005326
 	movs r0, #48
@@ -11095,7 +11080,7 @@ sub_08005238:
 	ldr r0, [r5, #16]
 	cmp r0, #0
 	beq _080052DC
-	bl sub_0807E3A0
+	bl ScriptGetResult
 	ldr r1, [r5, #16]
 	str r0, [r1, #0]
 	.global _080052DC
@@ -11124,7 +11109,7 @@ _080052DC:
 	ldr r0, [r4, #0]
 	adds r0, r0, r5
 	str r1, [r0, #0]
-	bl sub_0807E384
+	bl ScriptDeactivate
 	ldr r1, [r7, #24]
 	cmp r1, #0
 	beq _08005320
@@ -11218,7 +11203,7 @@ sub_08005378:
 	strh r4, [r0, #32]
 	strh r5, [r0, #34]
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	.global _0800539E
 _0800539E:
 	ldr r0, sub_080053B0
@@ -11252,7 +11237,7 @@ sub_080053B4:
 	cmp r0, #0
 	beq _080053DE
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r1, [r4, #24]
 	cmp r1, #0
 	beq _080053D8
@@ -11316,7 +11301,7 @@ sub_08005424:
 	mov r0, r8
 	strh r0, [r4, #6]
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	.global _08005436
 _08005436:
 	movs r0, #1
@@ -11371,7 +11356,7 @@ sub_08005458:
 	.global _08005478
 _08005478:
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r1, [r4, #24]
 	cmp r1, #0
 	beq _0800548A
@@ -11438,7 +11423,7 @@ _080054CA:
 	str r6, [r4, #36]
 	str r7, [r4, #32]
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r4, #0
 	bl sub_08080BD4
 	.global _080054EE
@@ -11468,7 +11453,7 @@ sub_08005500:
 	cmp r0, #0
 	bne _08005528
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r1, [r4, #24]
 	cmp r1, #0
 	beq _08005522
@@ -11522,7 +11507,7 @@ sub_08005530:
 	cmp r0, #1
 	bne _08005574
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	.global _08005574
 _08005574:
 	mov r1, r9
@@ -11534,7 +11519,7 @@ _08005574:
 	ldr r1, [sp, #36]
 	str r1, [r4, #28]
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r5, #0
 	bl sub_08080BE8
 	add sp, #4
@@ -11590,7 +11575,7 @@ _080055D6:
 	cmp r7, #0
 	bne _0800569E
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	bl sub_08005360
 	movs r1, #0
 	movs r2, #1
@@ -11671,7 +11656,7 @@ _08005674:
 	cmp r0, #1
 	bne _0800568C
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	.global _0800568C
 _0800568C:
 	ldr r1, [r6, #24]
@@ -11738,11 +11723,11 @@ _080056E8:
 	cmp r6, #0
 	beq _080056F6
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	.global _080056F6
 _080056F6:
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	str r7, [r4, #32]
 	mov r0, r8
 	str r0, [r5, #4]
@@ -11789,7 +11774,7 @@ _08005738:
 	movs r1, #1
 	bl sub_080070D8
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r2, _080057BC
 	ldr r1, [r4, #4]
 	lsls r0, r1, #1
@@ -11820,7 +11805,7 @@ _0800576E:
 	cmp r0, #0
 	beq _08005784
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	.global _08005784
 _08005784:
 	ldr r0, [r4, #12]
@@ -11884,7 +11869,7 @@ sub_080057C0:
 	adds r4, r0, #0
 	str r6, [r4, #36]
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r4, #0
 	bl sub_08080BD4
 	adds r0, r4, #0
@@ -11925,7 +11910,7 @@ sub_0800581C:
 	cmp r0, #0
 	bne _08005842
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r1, [r4, #24]
 	cmp r1, #0
 	beq _0800583C
@@ -12015,7 +12000,7 @@ _080058DC:
 	adds r4, r0, #0
 	str r6, [r4, #36]
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r4, #0
 	bl sub_08080BD4
 	adds r0, r4, #0
@@ -12091,7 +12076,7 @@ _0800599C:
 	cmp r0, #0
 	bge _080059BC
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r1, [r4, #24]
 	cmp r1, #0
 	beq _080059B6
@@ -12183,7 +12168,7 @@ _08005A48:
 	adds r4, r5, #0
 	adds r4, #32
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	str r6, [r4, #4]
 	str r7, [r4, #8]
 	adds r0, r5, #0
@@ -12282,7 +12267,7 @@ _08005B08:
 	.global _08005B0C
 _08005B0C:
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r1, [r4, #24]
 	cmp r1, #0
 	beq _08005B1E
@@ -13353,10 +13338,10 @@ sub_08006136:
 	bne _08006180
 	ldr r4, _08006164
 	adds r0, r4, #0
-	bl sub_080032B0
+	bl GetEntityField28
 	lsls r5, r0, #19
 	adds r0, r4, #0
-	bl sub_080032A8
+	bl GetEntityField20
 	lsls r0, r0, #19
 	ldr r2, _08006168
 	adds r1, r6, r2
@@ -13398,10 +13383,10 @@ _08006180:
 	bne _080061D8
 	ldr r4, _080061BC
 	adds r0, r4, #0
-	bl sub_080032B4
+	bl GetEntityField2C
 	lsls r5, r0, #19
 	adds r0, r4, #0
-	bl sub_080032AC
+	bl GetEntityField24
 	lsls r0, r0, #19
 	ldr r2, _080061C0
 	adds r1, r7, r2

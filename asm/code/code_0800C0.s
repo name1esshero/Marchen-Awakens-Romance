@@ -45,180 +45,18 @@ _080800F2:
 _080800F8:
 	.4byte 0x08F2A860  @ ROM+0xF2A860
 
-	.thumb_func
-	.thumb
-	.global sub_080800FC
-sub_080800FC:
-	push {lr}
-	ldr r1, [r1, #0]
-	cmp r1, #0
-	bge _08080106
-	negs r1, r1
-	.global _08080106
-_08080106:
-	str r1, [r2, #0]
-	movs r0, #1
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 0800FC..080110 is decompiled as ScriptNativeAbs(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08080110
-sub_08080110:
-	push {lr}
-	ldr r3, [r1, #0]
-	cmp r3, #0
-	bne _0808011A
-	ldr r3, _08080134
-	.global _0808011A
-_0808011A:
-	ldrb r1, [r3, #0]
-	adds r0, r1, #0
-	subs r0, #128
-	cmp r0, #31
-	bls _08080128
-	cmp r1, #223
-	bls _08080138
-	.global _08080128
-_08080128:
-	ldrb r0, [r3, #1]
-	lsls r1, r1, #8
-	adds r0, r0, r1
-	str r0, [r2, #0]
-	b _0808013A
-	.byte 0x00
-	.byte 0x00
-	.global _08080134
-_08080134:
-	.4byte 0x081AC6A0  @ ROM+0x1AC6A0
-	.global _08080138
-_08080138:
-	str r1, [r2, #0]
-	.global _0808013A
-_0808013A:
-	movs r0, #1
-	pop {r1}
-	bx r1
+@ 080110..080140 is decompiled as ScriptNativeCharacterCode(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08080140
-sub_08080140:
-	push {r4, r5, lr}
-	adds r4, r1, #0
-	adds r5, r2, #0
-	ldr r0, _08080160
-	ldr r0, [r0, #0]
-	ldr r0, [r0, #12]
-	ldr r0, [r0, #0]
-	movs r1, #4
-	bl HeapAlloc
-	adds r2, r0, #0
-	cmp r2, #0
-	bne _08080164
-	movs r0, #1
-	negs r0, r0
-	b _08080180
-	.global _08080160
-_08080160:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-	.global _08080164
-_08080164:
-	ldr r1, [r4, #0]
-	cmp r1, #255
-	bls _08080176
-	lsrs r0, r1, #8
-	strb r0, [r2, #0]
-	strb r1, [r2, #1]
-	movs r0, #0
-	strb r0, [r2, #2]
-	b _0808017C
-	.global _08080176
-_08080176:
-	strb r1, [r2, #0]
-	movs r0, #0
-	strb r0, [r2, #1]
-	.global _0808017C
-_0808017C:
-	str r2, [r5, #0]
-	movs r0, #1
-	.global _08080180
-_08080180:
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 080140..080188 is decompiled as ScriptNativeCharacterString(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08080188
-sub_08080188:
-	push {r4, r5, lr}
-	adds r4, r0, #0
-	adds r5, r2, #0
-	ldr r2, [r1, #0]
-	movs r0, #1
-	cmp r0, r4
-	bcs _080801A8
-	adds r1, #4
-	.global _08080198
-_08080198:
-	ldr r3, [r1, #0]
-	cmp r3, r2
-	ble _080801A0
-	adds r2, r3, #0
-	.global _080801A0
-_080801A0:
-	adds r1, #4
-	adds r0, #1
-	cmp r0, r4
-	bcc _08080198
-	.global _080801A8
-_080801A8:
-	str r2, [r5, #0]
-	movs r0, #1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 080188..0801B4 is decompiled as ScriptNativeMax(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080801B4
-sub_080801B4:
-	push {r4, r5, lr}
-	adds r4, r0, #0
-	adds r5, r2, #0
-	ldr r2, [r1, #0]
-	movs r0, #1
-	cmp r0, r4
-	bcs _080801D4
-	adds r1, #4
-	.global _080801C4
-_080801C4:
-	ldr r3, [r1, #0]
-	cmp r3, r2
-	bge _080801CC
-	adds r2, r3, #0
-	.global _080801CC
-_080801CC:
-	adds r1, #4
-	adds r0, #1
-	cmp r0, r4
-	bcc _080801C4
-	.global _080801D4
-_080801D4:
-	str r2, [r5, #0]
-	movs r0, #1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 0801B4..0801E0 is decompiled as ScriptNativeMin(); see src/decompiled.json
+
+	.section .rom.000801E0, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -253,45 +91,10 @@ sub_08080204:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_08080214
-sub_08080214:
-	push {r4, r5, r6, lr}
-	adds r5, r1, #0
-	adds r6, r2, #0
-	ldr r0, _0808023C
-	ldr r0, [r0, #0]
-	ldr r0, [r0, #12]
-	ldr r0, [r0, #0]
-	movs r1, #16
-	bl HeapAlloc
-	adds r4, r0, #0
-	cmp r4, #0
-	beq _08080244
-	ldr r2, [r5, #0]
-	ldr r1, _08080240
-	bl siprintf
-	str r4, [r6, #0]
-	movs r0, #1
-	b _08080248
-	.global _0808023C
-_0808023C:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-	.global _08080240
-_08080240:
-	.4byte 0x081AC6A4  @ ROM+0x1AC6A4
-	.global _08080244
-_08080244:
-	movs r0, #1
-	negs r0, r0
-	.global _08080248
-_08080248:
-	pop {r4, r5, r6}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 080214..080250 is decompiled as ScriptNativeIntegerString(); see src/decompiled.json
+
+	.section .rom.00080250, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -584,7 +387,7 @@ sub_080803E4:
 	adds r1, #16
 	mov r0, sp
 	bl strcpy
-	bl sub_0807EFB8
+	bl ScriptPopFrame
 	ldr r1, [r4, #0]
 	mov r0, sp
 	bl sub_0807EF94
@@ -627,18 +430,18 @@ sub_08080420:
 sub_08080430:
 	push {r4, lr}
 	adds r4, r1, #0
-	bl sub_0807E3AC
+	bl ScriptGetParentFrame
 	cmp r0, #0
 	beq _0808044E
 	ldr r4, [r4, #0]
-	bl sub_0807EFB8
+	bl ScriptPopFrame
 	bl sub_0807F608
 	adds r0, r4, #0
 	bl sub_0807F5E8
 	b _08080452
 	.global _0808044E
 _0808044E:
-	bl sub_0807EFB8
+	bl ScriptPopFrame
 	.global _08080452
 _08080452:
 	movs r0, #1
@@ -648,26 +451,10 @@ _08080452:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_0808045C
-sub_0808045C:
-	push {lr}
-	ldr r0, [r1, #0]
-	bl sub_0807E394
-	b _0808046A
-	.global _08080466
-_08080466:
-	bl sub_0807EFB8
-	.global _0808046A
-_0808046A:
-	bl sub_0807E3AC
-	cmp r0, #0
-	bne _08080466
-	bl sub_0807EFB8
-	movs r0, #1
-	pop {r1}
-	bx r1
+@ 08045C..08047C is decompiled as ScriptCommandReturn(); see src/decompiled.json
+
+	.section .rom.0008047C, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb

@@ -4,7 +4,7 @@
 #include "dialogue.h"
 extern void *CreateTask(void *,void *,u32,s32 *,u32);
 extern void sub_08011870(void *);
-extern void sub_0807E420(u32);
+extern void ScriptAddPendingTasks(u32);
 extern char *strcpy(char *,const char *);
 extern u32 strlen(const char *);
 #ifdef ENGLISH
@@ -36,6 +36,6 @@ void *DialogueStart(s32 mode, s32 count, const char **rows, s32 *result)
  }
  for (i = 0; i < count; i++)
   state->lengths[i] = strlen((char *)state->rows[i]);
- sub_0807E420(1);
+ ScriptAddPendingTasks(1);
  return task;
 }

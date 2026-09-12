@@ -91,7 +91,7 @@ _08010158:
 	cmp r0, #0
 	beq _08010178
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	.global _08010178
 _08010178:
 	ldr r1, [r6, #24]
@@ -267,7 +267,7 @@ sub_08010338:
 	mov r1, r9
 	str r1, [r0, #8]
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r4, #0
 	bl sub_08080BD4
 	adds r0, r4, #0
@@ -305,7 +305,7 @@ sub_08010364:
 	cmp r0, #0
 	bne _0801040A
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r0, [r4, #4]
 	cmp r0, #6
 	bhi _080103F8
@@ -560,7 +560,7 @@ _080105DE:
 	adds r0, r4, #0
 	bl sub_080105FC
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r4, #0
 	.global _080105EE
 _080105EE:
@@ -608,7 +608,7 @@ _0801061E:
 	.global _0801062E
 _0801062E:
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r1, [r4, #8]
 	cmp r1, #0
 	beq _0801063E
@@ -1141,7 +1141,7 @@ sub_0801097C:
 	str r5, [r6, #32]
 	str r4, [r6, #36]
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	cmp r4, #0
 	bne _080109B0
 	adds r0, r6, #0
@@ -1201,7 +1201,7 @@ _080109F2:
 	orrs r0, r1
 	strb r0, [r4, #0]
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r1, [r5, #24]
 	cmp r1, #0
 	beq _08010A1E
@@ -1240,7 +1240,7 @@ sub_08010A2C:
 	adds r5, r0, #0
 	str r4, [r5, #36]
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	cmp r4, #0
 	bne _08010A5C
 	adds r0, r5, #0
@@ -1316,7 +1316,7 @@ _08010AC0:
 	cmp r6, #0
 	bne _08010AE4
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r1, [r7, #24]
 	cmp r1, #0
 	beq _08010ADE
@@ -1379,7 +1379,7 @@ sub_08010AEC:
 	movs r0, #0
 	str r0, [r4, #36]
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	ldr r0, [sp, #40]
 	cmp r0, #0
 	bne _08010B52
@@ -1480,7 +1480,7 @@ sub_08010BE6:
 	orrs r1, r0
 	strb r1, [r5, #0]
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r1, [r6, #24]
 	cmp r1, #0
 	beq _08010BFE
@@ -1580,11 +1580,11 @@ sub_08010C58:
 	cmp r4, #0
 	beq _08010CA6
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	.global _08010CA6
 _08010CA6:
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r7, #0
 	bl sub_08080BD8
 	adds r0, r7, #0
@@ -1639,7 +1639,7 @@ _08010CFC:
 	orrs r1, r0
 	strh r1, [r5, #26]
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r0, [r4, #12]
 	cmp r0, #6
 	bhi _08010D58
@@ -1779,7 +1779,7 @@ _08010E08:
 	cmp r0, #0
 	beq _08010E28
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	.global _08010E28
 _08010E28:
 	ldr r1, [r6, #24]
@@ -2092,7 +2092,7 @@ sub_08011070:
 	mov r1, r9
 	str r1, [r0, #8]
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r4, #0
 	bl sub_08080BD4
 	adds r0, r4, #0
@@ -2134,7 +2134,7 @@ sub_080110C8:
 	cmp r0, #0
 	bne _0801116E
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r0, [r4, #4]
 	cmp r0, #6
 	bhi _0801115C
@@ -2429,7 +2429,7 @@ _0801139E:
 	adds r0, r4, #0
 	bl sub_080113B8
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r4, #0
 	.global _080113AE
 _080113AE:
@@ -2475,7 +2475,7 @@ _080113DA:
 	.global _080113EA
 _080113EA:
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r1, [r4, #8]
 	cmp r1, #0
 	beq _080113FA
@@ -2994,54 +2994,9 @@ _08011736:
 _08011748:
 	.4byte 0x0600C000  @ VRAM+0xC000
 
-	.thumb_func
-	.thumb
-	.global sub_0801174C
-sub_0801174C:
-	push {lr}
-	sub sp, #4
-	adds r3, r0, #0
-	ldr r0, _0801176C
-	ldr r1, _08011770
-	movs r2, #4
-	str r2, [sp, #0]
-	movs r2, #0
-	bl CreateTask
-	cmp r0, #0
-	bne _08011766
-	movs r0, #0
-	.global _08011766
-_08011766:
-	add sp, #4
-	pop {r1}
-	bx r1
-	.global _0801176C
-_0801176C:
-	.4byte 0x030032C4  @ IWRAM+0x32C4
-	.global _08011770
-_08011770:
-	.4byte 0x08011775  @ ROM+0x11775
+@ 01174C..011774 is decompiled as DialogueCreateFinishTask(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08011774
-sub_08011774:
-	push {lr}
-	adds r2, r0, #0
-	ldr r1, [r2, #24]
-	cmp r1, #0
-	beq _08011784
-	movs r0, #1
-	negs r0, r0
-	str r0, [r1, #0]
-	.global _08011784
-_08011784:
-	adds r0, r2, #0
-	bl FinishTask
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
+@ 011774..011790 is decompiled as DialogueFinishTask(); see src/decompiled.json
 
 @ 011790..011870 is decompiled as DialogueStart(); see src/decompiled.json
 
@@ -3299,7 +3254,7 @@ sub_08011984:
 	.global _080119CA
 _080119CA:
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	mov r2, r10
 	ldr r1, [r2, #24]
 	cmp r1, #0
@@ -3377,7 +3332,7 @@ sub_08011A26:
 	movs r3, #0
 	bl sub_0807BC7C
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r5, #0
 	add sp, #4
 	pop {r4, r5}
@@ -3446,7 +3401,7 @@ sub_08011AA4:
 	.global _08011AA8
 _08011AA8:
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r1, [r4, #24]
 	cmp r1, #0
 	beq _08011ABA
@@ -3489,83 +3444,14 @@ _08011AEE:
 
 @ 011C1C..011C68 is decompiled as DialogueReadHex4(); see src/decompiled.json
 
-	.section .rom.00011C68, "ax"
+@ 011C68..011CC4 is decompiled as DialogueCommandShow(); see src/decompiled.json
+
+@ 011CC4..011CD4 is decompiled as DialogueCommandPrompt(); see src/decompiled.json
+
+@ 011CD4..011CE4 is decompiled as DialogueCommandFinish(); see src/decompiled.json
+
+	.section .rom.00011CE4, "ax"
 	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_08011C68
-sub_08011C68:
-	push {r4, lr}
-	adds r3, r0, #0
-	adds r2, r1, #0
-	movs r0, #0
-	adds r1, r3, #0
-	movs r3, #0
-	bl DialogueStart
-	movs r0, #2
-	movs r1, #1
-	bl sub_08006ADC
-	movs r0, #3
-	movs r1, #1
-	bl sub_08006ADC
-	movs r0, #2
-	bl sub_0800F0CC
-	ldrb r1, [r0, #1]
-	movs r4, #4
-	orrs r1, r4
-	strb r1, [r0, #1]
-	movs r0, #3
-	bl sub_0800F0CC
-	ldrb r1, [r0, #1]
-	orrs r1, r4
-	strb r1, [r0, #1]
-	movs r0, #2
-	bl sub_0800F0CC
-	ldrb r1, [r0, #0]
-	movs r4, #2
-	orrs r1, r4
-	strb r1, [r0, #0]
-	movs r0, #3
-	bl sub_0800F0CC
-	ldrb r1, [r0, #0]
-	orrs r1, r4
-	strb r1, [r0, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_08011CC4
-sub_08011CC4:
-	push {lr}
-	movs r0, #0
-	bl sub_08011A08
-	movs r0, #1
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_08011CD4
-sub_08011CD4:
-	push {lr}
-	movs r0, #0
-
-	.thumb_func
-	.thumb
-	.global sub_08011CD8
-sub_08011CD8:
-	bl sub_0801174C
-	movs r0, #1
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
 
 	.thumb_func
 	.thumb
@@ -6084,7 +5970,7 @@ sub_08012CE8:
 	push {r4, lr}
 	adds r4, r1, #0
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	ldr r0, [r4, #0]
 	bl sub_08009CF0
 	ldr r0, _08012D00

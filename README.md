@@ -22,26 +22,44 @@ git clone https://github.com/pret/agbcc && cd agbcc
 ./build.sh && ./install.sh /path/to/this/project
 ```
 
-That places the compiler under `tools/agbcc`. Sources are preprocessed with
+That places the compiler and its headers/libraries under `tools/agbcc`, which
+is a local installation excluded from Git. Project headers in `include/`
+remain source files and should be committed. Sources are preprocessed with
 `arm-none-eabi-cpp`, compiled by agbcc, then assembled, because agbcc is a cc1
 only. Python tools use the standard library.
 
+## Published documentation
+
+[Wiki](https://github.com/name1esshero/Marchen-Awakens-Romance/wiki) ·
+[Interactive galleries and reports](https://name1esshero.github.io/Marchen-Awakens-Romance/).
+The wiki holds documentation; the separate `gh-pages` branch holds viewing
+copies and historical audit snapshots. Local `reports/` and gallery HTML
+are ignored outputs. Editable graphics, sound, translations, manifests, and
+their generators remain tracked here.
+
+On a fresh checkout, `make docs-fetch` restores missing published report and
+gallery outputs without replacing existing files. `make galleries` regenerates
+galleries from the current editable manifests without extracting assets.
+`make site` stages a complete site in `build/site` and wiki pages in
+`build/wiki`, checking HTML links and animation frame references. It does not
+publish. See [publishing instructions](tools/site/README.md).
+
 ## Browse the recovered assets
 
-[Graphics folder guide](graphics/README.md) · [Named background art](graphics/backgrounds/index.html).
+[Graphics folder guide](graphics/README.md) · [Named background art](https://name1esshero.github.io/Marchen-Awakens-Romance/graphics/backgrounds/index.html).
 The frame manifests retain 9,252 records while sharing 6,627 distinct PNG
 sources. Consolidation removed 2,625 identical copies and 104 redundant
 palette sidecars; named palettes remain authoritative.
 
-- [Character animations](graphics/battle/characters/index.html): 2,498 editable frames.
-- [Battle effects](graphics/battle/effects/index.html): 4,817 editable frames.
-- [UI, item art, and panels](graphics/ui/index.html): 1,937 editable frames.
-- [152 dialogue portraits](graphics/portraits/index.html): original resource names,
+- [Character animations](https://name1esshero.github.io/Marchen-Awakens-Romance/graphics/battle/characters/index.html): 2,498 editable frames.
+- [Battle effects](https://name1esshero.github.io/Marchen-Awakens-Romance/graphics/battle/effects/index.html): 4,817 editable frames.
+- [UI, item art, and panels](https://name1esshero.github.io/Marchen-Awakens-Romance/graphics/ui/index.html): 1,937 editable frames.
+- [152 dialogue portraits](https://name1esshero.github.io/Marchen-Awakens-Romance/graphics/portraits/index.html): original resource names,
   all expressions, and links to their palette banks.
-- [84 icon frames](graphics/icons/index.html): `ICON` and `ICONMINI`, 42 each.
-- [1,734 named sprite previews](reports/sprites/index.html): first frame of each
+- [84 icon frames](https://name1esshero.github.io/Marchen-Awakens-Romance/graphics/icons/index.html): `ICON` and `ICONMINI`, 42 each.
+- [1,734 named sprite previews](https://name1esshero.github.io/Marchen-Awakens-Romance/reports/sprites/index.html): first frame of each
   named group's first animation, assembled using its actual cells and palettes.
-- [Graphics audit and colored tile previews](reports/graphics/index.html).
+- [Graphics audit and colored tile previews](https://name1esshero.github.io/Marchen-Awakens-Romance/reports/graphics/index.html).
 - [Font preview](graphics/fonts/preview.png), [editable font sheet](graphics/fonts/font.png),
   [Unicode-labelled glyph index](graphics/fonts/glyphs.tsv).
 
@@ -127,9 +145,9 @@ Their hashes, classifications and manifest records remain in
 `reports/graphics/retired-scan.json`; they are not build inputs. Future heuristic
 extractions report JSON candidates without creating image/source files.
 
-The 104 named KCG/TCG resources use archive filenames. Of these, 82 now build
-from 116 assembled image layers under `graphics/backgrounds`, using decoded
-KMP dimensions, tile indices, flips and palette banks, or affine TSC byte indices. The remaining 22 retain
+The 104 named KCG/TCG resources use archive filenames. Of these, 91 now build
+from 158 assembled image layers under `graphics/backgrounds`, using decoded
+KMP dimensions, tile indices, flips and palette banks, or affine TSC byte indices. The remaining 13 retain
 tile-sheet sources under `graphics/tilesets` pending other map profiles. See
 [the mapped-image guide](graphics/backgrounds/README.md). The previous
 sprite/tilemap labels were shape guesses.
@@ -160,7 +178,7 @@ Txxxx as delay. Ordinary ASCII is skipped on that path. See the
 
 ## Text and translations
 
-[Browse scripts with English comments and portrait references](reports/text/index.html).
+[Browse scripts with English comments and portrait references](https://name1esshero.github.io/Marchen-Awakens-Romance/reports/text/index.html).
 The browser sorts records by CODE offset and links exact portrait resource IDs;
 it does not reconstruct branches or infer which portrait is currently displayed.
 Regenerate it after annotation changes with `python3 tools/text_gallery.py`.
@@ -179,9 +197,9 @@ significant. English annotations use `// EN:`; unresolved translations retain
 as translated dialogue. Names are transliterations, not asserted official
 localization spellings.
 
-There are currently 3,701 named-script records with English comments. Full
+There are currently 3,734 named-script records with English comments. Full
 translation is **not complete**. The exact remaining counts are generated in
-[reports/text/audit.json](reports/text/audit.json). Reviewed exact-string
+[reports/text/audit.json](https://name1esshero.github.io/Marchen-Awakens-Romance/reports/text/audit.json). Reviewed exact-string
 translations shared across scripts are maintained in `text/translation/english.json`.
 Scene-specific wording is maintained in `text/translation/scripts.json`, keyed by
 the original SPC filename; these entries override shared wording only in that
@@ -204,9 +222,9 @@ included, where modern GCC differed on two counts in every function:
 | Leaf prologue | `push {lr}` | `push {r4, lr}`, saving a register it never uses |
 | `index * 24` | `((i * 2) + i) * 8` with shifts | load 24, then `muls` |
 
-The current manifest declares 53 linked ranges: 43 compiled-C ranges and ten
+The current manifest declares 82 linked ranges: 72 compiled-C ranges and ten
 BIOS inline-assembly wrapper ranges. One range may contain multiple contiguous
-functions and alignment bytes. The [build provenance audit](reports/build/README.md)
+functions and alignment bytes. The [build provenance audit](https://github.com/name1esshero/Marchen-Awakens-Romance/wiki/Build-verification)
 checks their linked object providers and distinguishes them from preserved
 assembly literals and original compressed data. A forced rebuild and deliberate
 C/sprite/font source mutations verified that source changes reach the final ROM.
@@ -318,7 +336,8 @@ sequencing and PSG reconstruction remain unfinished.
 [Translation and English layout notes](text/translation/README.md) explain the
 actual dialogue printer, its double-byte English font mapping, and strict row
 limits. The optional `make english` build hooks the recovered dialogue constructor;
-pagination and complete script/text discovery are still unfinished. Run `python3 tools/audit_setup.py`
+longer translations wrap into A-button pages. Emulator validation and complete
+script/text discovery are still unfinished. Run `python3 tools/audit_setup.py`
 for reproducible archive ownership and audio source checks.
 
 ### Generated compression files and cleanup

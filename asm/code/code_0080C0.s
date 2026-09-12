@@ -13677,7 +13677,7 @@ sub_0800D8EC:
 	adds r4, r0, #0
 	str r5, [r4, #32]
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r4, #0
 	add sp, #4
 	pop {r4, r5}
@@ -13731,7 +13731,7 @@ _0800D952:
 	orrs r0, r1
 	strb r0, [r4, #0]
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r1, [r5, #24]
 	cmp r1, #0
 	beq _0800D97E
@@ -13767,7 +13767,7 @@ sub_0800D98C:
 	bl CreateTask
 	adds r4, r0, #0
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r4, #0
 	add sp, #4
 	pop {r4}
@@ -13837,7 +13837,7 @@ _0800DA10:
 	cmp r6, #0
 	bne _0800DA34
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r1, [r7, #24]
 	cmp r1, #0
 	beq _0800DA2E
@@ -13957,7 +13957,7 @@ _0800DAD4:
 	ldr r0, [sp, #40]
 	str r0, [r7, #40]
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r6, #0
 	add sp, #4
 	pop {r3, r4, r5}
@@ -14140,7 +14140,7 @@ sub_0800DC20:
 	adds r1, #21
 	bl strcpy
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	mov r2, r9
 	ldr r1, [r2, #24]
 	cmp r1, #0
@@ -14330,7 +14330,7 @@ _0800DD9C:
 	orrs r1, r0
 	strh r1, [r5, #26]
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r0, [r4, #12]
 	cmp r0, #6
 	bhi _0800DDF8
@@ -14455,7 +14455,7 @@ _0800DEA8:
 	cmp r0, #0
 	beq _0800DEC8
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	.global _0800DEC8
 _0800DEC8:
 	ldr r1, [r6, #24]
@@ -14743,7 +14743,7 @@ sub_0800E1C6:
 	cmp r0, #0
 	bne _0800E262
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r0, [r4, #4]
 	cmp r0, #6
 	bhi _0800E250
@@ -15023,7 +15023,7 @@ _0800E4A2:
 	adds r0, r4, #0
 	bl sub_0800E4BC
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r4, #0
 	.global _0800E4B2
 _0800E4B2:
@@ -15069,7 +15069,7 @@ _0800E4DE:
 	.global _0800E4EE
 _0800E4EE:
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r1, [r4, #8]
 	cmp r1, #0
 	beq _0800E4FE
@@ -15265,7 +15265,7 @@ sub_0800E610:
 	str r5, [r4, #32]
 	str r6, [r4, #36]
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r4, #0
 	add sp, #4
 	pop {r4, r5, r6}
@@ -15309,7 +15309,7 @@ _0800E66A:
 	movs r0, #3
 	strb r0, [r4, #8]
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r1, [r5, #24]
 	cmp r1, #0
 	beq _0800E692
@@ -15348,7 +15348,7 @@ sub_0800E6A0:
 	adds r4, r0, #0
 	str r5, [r4, #32]
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r4, #0
 	add sp, #4
 	pop {r4, r5}
@@ -15445,7 +15445,7 @@ _0800E742:
 	cmp r5, #3
 	ble _0800E742
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	mov r0, r8
 	ldr r1, [r0, #24]
 	cmp r1, #0
@@ -15506,7 +15506,7 @@ sub_0800E788:
 	ldr r0, [sp, #36]
 	str r0, [r1, #24]
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r4, #0
 	add sp, #4
 	pop {r3, r4}
@@ -15640,7 +15640,7 @@ _0800E8BC:
 	.global _0800E8C6
 _0800E8C6:
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r1, [r7, #24]
 	cmp r1, #0
 	beq _0800E8D8
@@ -15818,7 +15818,7 @@ _0800EA30:
 	orrs r0, r1
 	strh r0, [r5, #20]
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r0, [r4, #16]
 	cmp r0, #0
 	beq _0800EA5C
@@ -15928,7 +15928,7 @@ _0800EADE:
 	cmp r0, #0
 	beq _0800EAFE
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	.global _0800EAFE
 _0800EAFE:
 	ldr r1, [r6, #24]
@@ -16145,7 +16145,7 @@ sub_0800ECF8:
 	mov r1, r10
 	str r1, [r0, #12]
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r4, #0
 	bl sub_08080BD4
 	adds r0, r4, #0
@@ -16191,7 +16191,7 @@ sub_0800ED5C:
 	cmp r0, #0
 	bne _0800EDB8
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r0, [r4, #8]
 	cmp r0, #0
 	beq _0800ED96
@@ -16508,7 +16508,7 @@ _0800F022:
 	adds r0, r4, #0
 	bl sub_0800F040
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r4, #0
 	.global _0800F034
 _0800F034:
@@ -16557,7 +16557,7 @@ _0800F068:
 	.global _0800F078
 _0800F078:
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r1, [r4, #12]
 	cmp r1, #0
 	beq _0800F088
@@ -16978,7 +16978,7 @@ _0800F380:
 	orrs r1, r0
 	strh r1, [r5, #18]
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r0, [r4, #12]
 	cmp r0, #6
 	bhi _0800F3DC
@@ -17103,7 +17103,7 @@ _0800F48C:
 	cmp r0, #0
 	beq _0800F4AC
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	.global _0800F4AC
 _0800F4AC:
 	ldr r1, [r6, #24]
@@ -17319,7 +17319,7 @@ sub_0800F6AC:
 	cmp r0, #0
 	bne _0800F752
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r0, [r4, #4]
 	cmp r0, #6
 	bhi _0800F740
@@ -17545,7 +17545,7 @@ _0800F8F6:
 	adds r0, r4, #0
 	bl sub_0800F910
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r4, #0
 	.global _0800F906
 _0800F906:
@@ -17591,7 +17591,7 @@ _0800F932:
 	.global _0800F942
 _0800F942:
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r1, [r4, #8]
 	cmp r1, #0
 	beq _0800F952
@@ -18092,7 +18092,7 @@ sub_0800FC90:
 	adds r4, r0, #0
 	str r5, [r4, #32]
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r4, #0
 	add sp, #4
 	pop {r4, r5}
@@ -18157,7 +18157,7 @@ _0800FCFE:
 	orrs r0, r1
 	strb r0, [r4, #0]
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r1, [r5, #24]
 	cmp r1, #0
 	beq _0800FD30
@@ -18191,7 +18191,7 @@ sub_0800FD3C:
 	bl CreateTask
 	adds r4, r0, #0
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r4, #0
 	add sp, #4
 	pop {r4}
@@ -18268,7 +18268,7 @@ _0800FDD0:
 	cmp r6, #0
 	bne _0800FDF4
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r1, [r7, #24]
 	cmp r1, #0
 	beq _0800FDEE
@@ -18328,7 +18328,7 @@ sub_0800FDFC:
 	str r0, [r4, #24]
 	str r7, [r4, #28]
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r6, #0
 	add sp, #4
 	pop {r3, r4, r5}
@@ -18449,7 +18449,7 @@ _0800FEA6:
 	adds r0, #132
 	strh r1, [r0, #0]
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	mov r0, r9
 	ldr r1, [r0, #24]
 	cmp r1, #0
@@ -18578,7 +18578,7 @@ _0801004C:
 	orrs r1, r0
 	strh r1, [r5, #24]
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r0, [r4, #12]
 	cmp r0, #6
 	bhi _080100A8

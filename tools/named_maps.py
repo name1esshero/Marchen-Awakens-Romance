@@ -22,6 +22,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import nfp
 import mapped_images
 import affine_images
+import regular_images
 
 ROOT = Path(__file__).resolve().parent.parent
 MANIFEST = ROOT / 'maps/nfp/manifest.json'
@@ -87,7 +88,7 @@ def build():
     for e in json.loads((ROOT/'assets.json').read_text()):
         if e['kind'] != 'mapped_image':continue
         layout = json.loads((ROOT/e['image_layout']).read_text())
-        if layout.get('format') == 'affine_tsc_u8':
+        if layout.get('format') in ('affine_tsc_u8','regular_tsc_u16'):
             for layer in layout['layers']:
                 layouts[layer['map_path']] = (layout, layer)
         else:
@@ -99,7 +100,11 @@ def build():
                              % (m['name'], len(raw), m['size']))
         if m['path'] in layouts:
             layout, layer = layouts[m['path']]
-            raw = affine_images.build_plane(layout, layer) if layer else mapped_images.build_map(raw, layout)
+            if layer:
+                raw = (regular_images.build_plane(layout,layer) if layout['format']=='regular_tsc_u16'
+                       else affine_images.build_plane(layout,layer))
+            else:
+                raw = mapped_images.build_map(raw, layout)
         dest = ROOT / 'build' / m['path']
         dest.parent.mkdir(parents=True, exist_ok=True)
         if not dest.exists() or dest.read_bytes() != raw:

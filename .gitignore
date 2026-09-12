@@ -12,9 +12,8 @@
 *.8bpp
 *.lz
 
-# Locally installed agbcc executables/libraries; headers are not build outputs.
-/tools/agbcc/bin/
-/tools/agbcc/lib/
+# Locally installed toolchain, including headers supplied by its installer.
+/tools/agbcc/
 
 # Python caches and local environments.
 __pycache__/
@@ -23,9 +22,12 @@ __pycache__/
 .venv/
 venv/
 
-# Local recovery snapshots and verbose build logs.
+# Local recovery snapshots and published/generated documentation outputs.
 /backups/
-/reports/build/*.log
+/reports/
+/graphics/index.html
+/graphics/**/index.html
+/sound/index.html
 
 # Editor/OS temporary files.
 *~
@@ -34,5 +36,5 @@ venv/
 .DS_Store
 Thumbs.db
 
-# Keep PNG/PAL/JSON sources, extracted .bin data, assembly, and audit metadata.
-# They remain inputs or useful reverse-engineering evidence, not build junk.
+# Keep editable PNG/PAL/JSON sources, extracted .bin data, and assembly.
+# Report snapshots are published separately; their generators stay tracked.

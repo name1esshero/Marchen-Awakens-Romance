@@ -1,6 +1,6 @@
 # Editable mapped backgrounds
 
-Open [the image browser](index.html). Eighty-two resources now have 116
+Open [the image browser](index.html). Ninety-one resources now have 158
 editable image layers using KMP maps or affine TSC frames.
 For example, [OP_05_A.KCG.png](OP_05_A.KCG.png) is the complete 240×160 picture
 of Ginta and Babbo. OP_06_A is 240×256; other resources use their own map sizes.
@@ -49,7 +49,8 @@ in `src/kmp.c`.
 
 The original [KMP migration report](../../reports/graphics/mapped-image-migration.json)
 listed 27 exceptions. The [affine migration](../../reports/graphics/affine-image-migration.json)
-resolves five, leaving 22 resources needing another map profile. These include regular TSC cases,
+resolves five, and the regular TSC migration below resolves nine more. Thirteen
+resources still need another map profile. These include regular TSC cases,
 missing same-name KMPs, and unresolved tile or palette references. OP_07_A
 references tile 1023 outside its own tile resource and remains unresolved.
 Those resources retain their tile-sheet sources rather than guessed pictures.
@@ -72,3 +73,18 @@ NE01's loader at 080411A4 confirms BG2CNT 188A, a 128×128 affine map, and a
 byte-index planes: 128×128 for NE13/NE33/SK02 and 256×256 for SK03. Those
 shapes are inferred from their plane sizes and valid references. The earlier
 claim that every TSC was a 2048-byte screenblock was incorrect.
+
+## Regular TSC screenblocks
+
+Nine more resources now have 42 editable 256×256 frames. Their JSON format is
+`regular_tsc_u16`; each frame names its TSC member and contains 1024 tilemap
+words. The map's palette banks 12–14 select the named TCL palette at colors
+192–239. Bank-zero entries are allowed only for fully transparent tiles.
+Per-bank transparent colors are recorded in PNG alpha without changing indices.
+
+See `reports/graphics/regular-image-migration.json` for the migrated resources.
+GA60_03 and NE21_01 reference tile 1023 outside their own tile payload; these
+remain unresolved. GA08, NE32, SN07 and SSN07 use multiple screenblocks and
+still need the runtime size/orientation traced. Together with the remaining
+KMP exceptions and unassociated tile source, 13 resources remain tile sheets.
+Animation ordering and duration are not inferred from filename order.

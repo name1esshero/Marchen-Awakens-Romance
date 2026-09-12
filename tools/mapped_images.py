@@ -62,7 +62,7 @@ def compile_image(entry, root=ROOT):
             if not isinstance(word, int) or not 0 <= word <= (255 if bpp == 8 else 0xFFFF):
                 raise ValueError('Map entry must be a u16')
             index, bank = word & 1023, (word >> 12) * 16 if bpp == 4 else 0
-            if index >= count or bank >= entry['palette_banks'] * 16:
+            if index >= count or bank >= (entry.get('palette_bank_base',0) + entry['palette_banks']) * 16:
                 raise ValueError('Map tile/palette reference outside its source')
             x, y = cell % width * 8, cell // width * 8
             tile = [[0]*8 for _ in range(8)]
@@ -72,6 +72,8 @@ def compile_image(entry, root=ROOT):
                     if not 0 <= value < (1 << bpp):
                         raise ValueError(f"{layer['image']}: pixel ({x+dx},{y+dy}) outside palette bank {bank//16}")
                     tile[7-dy if word & 0x800 else dy][7-dx if word & 0x400 else dx] = value
+            if bpp == 4 and bank < entry.get('palette_bank_base',0)*16 and any(v for row in tile for v in row):
+                raise ValueError('Nontransparent tile uses a palette bank outside this resource')
             if digest(tile) != layout['baseline_tiles'][index]:
                 if index in changed and changed[index] != tile:
                     raise ValueError(f'Conflicting edits to shared tile {index}')
@@ -229,7 +231,8 @@ def main():
             layout = read(ROOT/entry['image_layout'])
             layer = layout['layers'][0]
             pixels = render(tiles_from_bytes(raw, entry['bpp']), layer['entries'], layout['width_tiles'], layout['height_tiles'], entry['bpp'])
-            gfx.write_png(str(out), pixels, [(0,0,0)]*entry.get('palette_base',0) + gfx.read_jasc(str(ROOT/entry['palette_path'])))
+            gfx.write_png(str(out), pixels, [(0,0,0)]*entry.get('palette_base',0) + gfx.read_jasc(str(ROOT/entry['palette_path'])),
+                          transparent_indices=range(0,256,16) if layout.get('format')=='regular_tsc_u16' else None)
         else:
             out.write_bytes(raw)
 

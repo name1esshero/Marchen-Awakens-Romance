@@ -8,21 +8,21 @@
 @000388 TAKARA  // LITERAL: TAKARA (usage not inferred)
 @000671 F09A01  // LITERAL: F09A01 (usage not inferred)
 @000771  C0D04 ［ドロシー］  // EN: [Dorothy]
-@000790  C0F04 どうよ！？  // TODO: English translation
+@000790  C0F04 どうよ！？  // EN: How was that?!
 @0007E7 F01B09  // LITERAL: F01B09 (usage not inferred)
 @0008E7  C0D04 ［ギンタ］  // EN: [Ginta]
-@000904  C0F04 やったぁ！！  // TODO: English translation
+@000904  C0F04 やったぁ！！  // EN: We did it!!
 @000993 F09A07  // LITERAL: F09A07 (usage not inferred)
 @0009F7  C0D04 ［ドロシー］  // EN: [Dorothy]
-@000A16  C0F04 どれどれ？  // TODO: English translation
+@000A16  C0F04 どれどれ？  // EN: Let's see...
 @000D9C F38A04  // LITERAL: F38A04 (usage not inferred)
 @000E9C  C0D04 ［マール］  // EN: [Marl]
-@000EB9  C0F04 ありがとうございました！  // TODO: English translation
+@000EB9  C0F04 ありがとうございました！  // EN: Thank you very much!
 @0010BC F09A01  // LITERAL: F09A01 (usage not inferred)
 @0011E3  C0D04 ［ドロシー］  // EN: [Dorothy]
-@001202  C0F04 え、えええと…  // TODO: English translation
+@001202  C0F04 え、えええと…  // EN: Um, uhhh...
 @00124D  C0D04 ［マール］  // EN: [Marl]
-@00126A  C0F04 …  // TODO: English translation
+@00126A  C0F04 …  // EN: ...
 @0012B9 F38A03  // LITERAL: F38A03 (usage not inferred)
 @0012E7  C0D04 ［マール］  // EN: [Marl]
 @00139B F09A02  // LITERAL: F09A02 (usage not inferred)
@@ -30,23 +30,23 @@
 @00141E  C0F04 …！！  // EN: ...!!
 @001471 F38A01  // LITERAL: F38A01 (usage not inferred)
 @00149F  C0D04 ［ドロシー］  // EN: [Dorothy]
-@0014BE  C0F04 （こいつ…今…  // TODO: English translation
-@0014DF 　なんだろう、このイヤなかんじの魔力…）  // TODO: English translation
+@0014BE  C0F04 （こいつ…今…  // EN: (This guy... just now...
+@0014DF 　なんだろう、このイヤなかんじの魔力…）  // EN: What's this unsettling magic...?)
 @001577 F01B01  // LITERAL: F01B01 (usage not inferred)
 @001677  C0D04 ［ギンタ］  // EN: [Ginta]
-@001694  C0F04 これでふたつそろった！  // TODO: English translation
-@0016BD もうひとつのとびらもあいているよな！  // TODO: English translation
+@001694  C0F04 これでふたつそろった！  // EN: We've got two parts now!
+@0016BD もうひとつのとびらもあいているよな！  // EN: The other door should be open too!
 @001751 F38A02  // LITERAL: F38A02 (usage not inferred)
 @0017B5  C0D04 ［マール］  // EN: [Marl]
 @0017D2  C0F04 はい！  // EN: Yes!
-@0017EB のこりのパーツはあたまです！！  // TODO: English translation
+@0017EB のこりのパーツはあたまです！！  // EN: The head is the last part!!
 @001879 F01B01  // LITERAL: F01B01 (usage not inferred)
 @0018DD  C0D04 ［ギンタ］  // EN: [Ginta]
-@0018FA  C0F04 よし！ドロシー！  // TODO: English translation
-@00191D いったんもどろう！  // TODO: English translation
+@0018FA  C0F04 よし！ドロシー！  // EN: All right, Dorothy!
+@00191D いったんもどろう！  // EN: Let's head back for now!
 @00199F F09A07  // LITERAL: F09A07 (usage not inferred)
 @001A9F  C0D04 ［ドロシー］  // EN: [Dorothy]
-@001ABE  C0F04 え、ええ…  // TODO: English translation
+@001ABE  C0F04 え、ええ…  // EN: Y-yes...
 @00209C G_EV061.SPC  // LITERAL: G_EV061.SPC (usage not inferred)
-@000A33 こんな<F0><56>ＲＭみったこっとな〜いゾっと♪  // TODO: English translation
-@001304  C0F04 （へへ…ラッキー<F0><40>）  // TODO: English translation
+@000A33 こんな<F0><56>ＲＭみったこっとな〜いゾっと♪  // EN: I've never seen an ÄRM like this! ♪
+@001304  C0F04 （へへ…ラッキー<F0><40>）  // EN: (Heh heh... Lucky me! ♥)

@@ -35,6 +35,7 @@ def main():
         rows=records(source);english=sum(c.startswith('EN:') for _,_,c in rows)
         pending=sum(c.startswith('TODO:') for _,_,c in rows)
         literals=sum(c.startswith('LITERAL:') for _,_,c in rows)
+        formatting=sum(c.startswith('FORMAT:') for _,_,c in rows)
         page=[STYLE,'<title>'+escape(source.name)+'</title>',
               '<a href="../index.html">All scripts</a> · <a href="../../../text/nfp/'+escape(source.name)+'">Editable source</a>',
               '<h1>'+escape(source.name)+'</h1>',
@@ -52,7 +53,7 @@ def main():
             page.append('<p class="'+('pending' if comment.startswith('TODO:') else '')+'">'+escape(comment)+'</p></article>')
         page.append(FILTER)
         (OUT/'scripts'/(source.stem+'.html')).write_text('\n'.join(page),encoding='utf-8')
-        links.append('<li data-row data-pending="'+str(pending)+'"><a href="scripts/'+escape(source.stem)+'.html">'+escape(source.stem)+'</a> — '+str(english)+' English · '+str(pending)+' pending · '+str(literals)+' literal labels</li>')
+        links.append('<li data-row data-pending="'+str(pending)+'"><a href="scripts/'+escape(source.stem)+'.html">'+escape(source.stem)+'</a> — '+str(english)+' English · '+str(pending)+' pending · '+str(literals)+' literal labels · '+str(formatting)+' formatting records</li>')
     (OUT/'index.html').write_text(STYLE+'<title>MAR script review</title><h1>MAR script review</h1><p>Original Japanese, English annotations, and matching portrait assets. ASCII resource labels are separate from translated dialogue.</p><a href="../../graphics/index.html">Graphics galleries</a><p><input id="search" placeholder="Filter script name"></p><p><label><input type="checkbox" id="pending" style="width:auto"> Only scripts with pending translations</label></p><ul>'+''.join(links)+'</ul>'+FILTER,encoding='utf-8')
     print(f'{len(links)} script pages; {matched} exact-name portrait references')
 

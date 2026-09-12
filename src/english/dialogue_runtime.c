@@ -1,12 +1,135 @@
 /* Optional localization bridge. This file is excluded from the matching ROM.
  * Lookup uses the exact bytes passed to the recovered dialogue constructor,
  * so it works for both compressed scripts in RAM and constant ROM strings.
- * Ambiguous translations and messages needing pagination retain Japanese.
+ * Ambiguous translations retain Japanese. Longer translations use a parent
+ * task that keeps the script blocked while the original printer draws pages.
  * No VM offsets, resource names, or script command arguments are rewritten. */
 #include "dialogue.h"
 #include "english.h"
 
 extern void *DialogueStartOriginal(s32, s32, const char **, s32 *);
+extern void *CreateTask(void *, void *, u32, s32 *, u32);
+extern void FinishTask(void *);
+extern void ScriptAddPendingTasks(u32); /* Increment current script's pending count. */
+extern void ScriptCompletePendingTasks(u32); /* Decrement current script's pending count. */
+extern u32 sub_0807A134(u32, u32); /* Consume newly pressed key bits. */
+extern void CpuFill(void *, u32, u32);
+
+/* All mutable storage belongs to engine tasks, not unmapped ROM-extension
+ * BSS. The original task header occupies 32 bytes on the GBA. */
+struct EnglishPages
+{
+    const struct EnglishRowMapping *entries[3];
+    s32 *result;
+    s32 childResult;
+    s32 mode, count, entry, row, phase;
+    u8 ink, shadow;
+    u16 interval;
+};
+
+static void EnglishRememberStyle(struct EnglishPages *pages, const char *row)
+{
+    const u8 *text = (const u8 *)row;
+    u32 argument;
+    u8 command;
+    /* Generated mappings contain only validated leading ASCII controls,
+     * followed by double-byte glyphs. Style persists across source rows. */
+    while (*text && *text < 0x80)
+    {
+        command = *text++;
+        if (command == 'C' || command == 'c')
+        {
+            text = DialogueReadHex4(text, &argument);
+            pages->ink = argument >> 8;
+            pages->shadow = argument;
+        }
+        else if (command == 'T' || command == 't')
+        {
+            text = DialogueReadHex4(text, &argument);
+            pages->interval = argument;
+        }
+    }
+}
+
+static void EnglishClearPage(void *task)
+{
+    struct EnglishPages *pages = *(struct EnglishPages **)((u8 *)task + 32);
+    u32 column;
+    /* Same surface/pattern as 08011A60, executed by the VRAM task manager.
+     * Mode 1 reserves the first text row. Preserve its 11 scanlines, including
+     * shadow: tile rows contain 4 bytes each, with 24 tiles across the surface. */
+    if (pages->mode == 1)
+    {
+        for (column = 0; column < 24; column++)
+            CpuFill((u8 *)0x0600C020 + 768 + column * 32 + 12,
+                    20, 0x11111111);
+        CpuFill((void *)(0x0600C020 + 1536), 1536, 0x11111111);
+    }
+    else CpuFill((void *)0x0600C020, 3072, 0x11111111);
+    pages->childResult = -1;
+    FinishTask(task);
+}
+
+static void EnglishPageTask(void *task)
+{
+    struct EnglishPages *pages = (struct EnglishPages *)((u8 *)task + 32);
+    const char *rows[3];
+    s32 entry, row, used, i;
+    void *clear, *child;
+    struct DialogueState *state;
+    if (pages->phase == 1)
+    {
+        if (pages->childResult != -1) return;
+        if (pages->entry == pages->count)
+        {
+            /* Final-page dismissal remains the script's original command. */
+            if (pages->result) *pages->result = -1;
+            ScriptCompletePendingTasks(1);
+            FinishTask(task);
+            return;
+        }
+        pages->phase = 2;
+        return; /* Never reuse the press that fast-forwarded the printer. */
+    }
+    if (pages->phase == 2)
+    {
+        if (!sub_0807A134(1, 0)) return;
+        pages->phase = 3;
+    }
+    if (pages->phase == 3)
+    {
+        clear = CreateTask((void *)0x030032D4, EnglishClearPage, 0, 0,
+                           sizeof(struct EnglishPages *));
+        if (!clear) return; /* Retry allocation without dropping any text. */
+        pages->childResult = 0;
+        *(struct EnglishPages **)((u8 *)clear + 32) = pages;
+        pages->phase = 4;
+        return;
+    }
+    if (pages->phase == 4 && pages->childResult != -1) return;
+    pages->phase = 0;
+    entry = pages->entry;
+    row = pages->row;
+    used = 0;
+    while (entry < pages->count && used < 3 - pages->mode)
+    {
+        rows[used++] = pages->entries[entry]->rows[row++];
+        if (row == pages->entries[entry]->count) { entry++; row = 0; }
+    }
+    pages->childResult = 0;
+    child = DialogueStartOriginal(pages->mode, used, rows, &pages->childResult);
+    if (!child)
+        return; /* Keep the previous cursor until allocation succeeds. */
+    state = (struct DialogueState *)((u8 *)child + 32);
+    state->ink = pages->ink;
+    state->shadow = pages->shadow;
+    state->countdown = pages->interval;
+    if (pages->entry || pages->row) state->delay = pages->interval;
+    for (i = 0; i < used; i++) EnglishRememberStyle(pages, rows[i]);
+    pages->entry = entry;
+    pages->row = row;
+    pages->phase = 1;
+}
 
 static s32 CompareRow(const char *left, const char *right)
 {
@@ -57,8 +180,39 @@ __attribute__((section(".english.entry")))
 void *EnglishDialogueStart(s32 mode, s32 count, const char **rows, s32 *result)
 {
     const char *translated[3];
+    const struct EnglishRowMapping *entries[3];
+    struct EnglishPages *pages;
+    void *task;
+    s32 i;
     s32 translatedCount = EnglishTranslateRows(mode, count, rows, translated);
     if (translatedCount)
         return DialogueStartOriginal(mode, translatedCount, translated, result);
+    if ((mode == 0 || mode == 1) && count > 0 && count <= 3 - mode && rows)
+    {
+        for (i = 0; i < count; i++)
+        {
+            if (!rows[i]) break;
+            entries[i] = FindRow(rows[i]);
+            if (!entries[i] || !entries[i]->count) break;
+        }
+        if (i == count)
+        {
+            task = CreateTask((void *)0x030032C4, EnglishPageTask, 0, result,
+                              sizeof(struct EnglishPages));
+            if (task)
+            {
+                pages = (struct EnglishPages *)((u8 *)task + 32);
+                for (i = 0; i < count; i++) pages->entries[i] = entries[i];
+                pages->mode = mode;
+                pages->count = count;
+                pages->result = result;
+                pages->ink = 15;
+                pages->shadow = 4;
+                pages->interval = 2;
+                ScriptAddPendingTasks(1);
+                return task;
+            }
+        }
+    }
     return DialogueStartOriginal(mode, count, rows, result);
 }

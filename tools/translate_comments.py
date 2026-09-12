@@ -32,6 +32,10 @@ def main():
             # Preserve formatting tokens verbatim in the original. Removing
             # these from a comment lookup does not assign them engine meanings.
             clean = re.sub(r' ?C[0-9A-F]{4} ?', '', original).strip()
+            if path.parent.name == 'nfp' and not clean:
+                lines[i] = body + '  // FORMAT: Blank text / color controls only; no translatable characters.\n'
+                counts['formatting_records'] += 1
+                continue
             name = re.fullmatch(r'［([^］]+)］', clean)
             translated = lookup.get(name[1] if name else clean)
             if translated and name:

@@ -8231,7 +8231,7 @@ sub_0806C7AC:
 	strh r5, [r4, #32]
 	strh r6, [r4, #36]
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r4, #0
 	add sp, #4
 	pop {r4, r5, r6}
@@ -8337,7 +8337,7 @@ _0806C8BA:
 	.global _0806C8C8
 _0806C8C8:
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	movs r0, #0
 	movs r1, #1
 	bl sub_08011718
@@ -12296,7 +12296,7 @@ _0806EFE8:
 	cmp r0, #3
 	ble _0806EFE8
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r5, #0
 	add sp, #4
 	pop {r4, r5}
@@ -12426,7 +12426,7 @@ _0806F0C8:
 	.thumb
 	.global sub_0806F0D4
 sub_0806F0D4:
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	mov r2, r8
 	ldr r1, [r2, #24]
 	cmp r1, #0
@@ -12523,7 +12523,7 @@ _0806F160:
 	.global _0806F16C
 _0806F16C:
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r6, #0
 	add sp, #4
 	pop {r4, r5, r6}
@@ -13116,7 +13116,7 @@ sub_0806F632:
 	movs r1, #1
 	strh r1, [r0, #0]
 	movs r0, #1
-	bl sub_0807E420
+	bl ScriptAddPendingTasks
 	adds r0, r4, #0
 	add sp, #4
 	pop {r4}
@@ -13752,7 +13752,7 @@ _0806FA54:
 	cmp r0, #0
 	beq _0806FA7C
 	movs r0, #1
-	bl sub_0807E448
+	bl ScriptCompletePendingTasks
 	ldr r0, sub_0806FA8C
 	ldr r1, _0806FA90
 	adds r0, r0, r1

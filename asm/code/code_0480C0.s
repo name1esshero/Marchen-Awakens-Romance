@@ -8229,7 +8229,7 @@ _0804B6E2:
 	ldr r4, _0804B898
 	ldr r0, _0804B89C
 	ldr r1, _0804B8A0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	bl sub_08002148
@@ -8277,7 +8277,7 @@ _0804B7C8:
 	bl sub_0802A814
 	ldr r0, _0804B89C
 	add r1, sp, #28
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	ldr r3, [sp, #120]
 	lsls r2, r3, #2
 	movs r4, #142
@@ -8297,7 +8297,7 @@ _0804B7C8:
 	adds r4, r4, r0
 	ldr r0, _0804B89C
 	ldr r1, _0804B8A8
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	movs r2, #96
@@ -9619,7 +9619,7 @@ _0804C094:
 	add r4, sp, #40
 	adds r1, r4, #0
 	movs r2, #1
-	bl sub_08079E9C
+	bl BgAffineSet
 	ldr r2, [r4, #8]
 	movs r0, #132
 	lsls r0, r0, #4
@@ -10141,7 +10141,7 @@ sub_0804C3F6:
 	ldr r4, _0804C49C
 	ldr r0, _0804C4A0
 	ldr r1, _0804C4A4
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	bl sub_08002148
@@ -10154,7 +10154,7 @@ _0804C446:
 	bl sub_0802A814
 	ldr r0, _0804C4A0
 	add r1, sp, #28
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	lsls r2, r6, #2
 	movs r1, #149
 	lsls r1, r1, #2
@@ -10944,7 +10944,7 @@ _0804C95E:
 	.thumb
 	.global sub_0804C9C2
 sub_0804C9C2:
-	bl sub_08079E9C
+	bl BgAffineSet
 	ldr r2, [r4, #8]
 	movs r3, #132
 	lsls r3, r3, #4
@@ -14216,13 +14216,13 @@ sub_0804DE16:
 	ldr r5, _0804DEB8
 	ldr r1, _0804DEBC
 	adds r0, r5, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	bl sub_08002148
 	ldr r1, _0804DEC0
 	adds r0, r5, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	movs r0, #2
 	bl sub_08001B4C
@@ -14235,7 +14235,7 @@ sub_0804DE16:
 	adds r4, r4, r0
 	ldr r1, _0804DEC4
 	adds r0, r5, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	movs r2, #96
@@ -15721,7 +15721,7 @@ _0804E85E:
 	adds r0, r0, r1
 	ldr r1, [r0, #0]
 	adds r0, r5, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	bl sub_08002148
@@ -15737,7 +15737,7 @@ _0804E85E:
 	adds r0, r0, r2
 	ldr r1, [r0, #0]
 	adds r0, r5, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	movs r0, #2
 	bl sub_08001B4C
@@ -15755,7 +15755,7 @@ _0804E85E:
 	adds r0, r0, r1
 	ldr r1, [r0, #0]
 	adds r0, r5, #0
-	bl sub_0807AC3C
+	bl NfpOpenByName
 	adds r1, r0, #0
 	adds r0, r4, #0
 	movs r2, #96
