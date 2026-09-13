@@ -35,6 +35,35 @@ struct MapGenerationState {
     struct MapGenerationVector vectors[4];
 };
 
+/* A generated field's persistent 44-byte room definition. */
+struct GeneratedMapRoomRecord {
+    u8 unknown00[20];
+    s32 property14;
+    s32 property18;
+    u8 unknown1C[16];
+};
+
+/* Per-room event state. The generator owns a fixed pool of 64 records. */
+struct GeneratedMapRuntimeRoom {
+    s16 roomIndex;
+    u8 unknown02[18];
+    s8 active;
+    s8 scriptFlag;
+    u8 unknown16[2];
+};
+
+struct GeneratedFieldMap {
+    u16 width;
+    u16 height;
+    u16 unknown04;
+    u16 currentCell;
+    u8 unknown08[8];
+    s32 parameter10;
+    u8 unknown14[0x640];
+    u16 *cellRoomIndices;
+    struct GeneratedMapRoomRecord *rooms;
+};
+
 #define gMapGenerationSeed (*(u32 *)0x03004044)
 
 void MapGenerationSeedRandom(u32 seed);
@@ -79,5 +108,12 @@ s32 MapGenerationGetVectorValue6(u32 index);
 void MapGenerationSetVector(u32 index, s32 value0, s32 value4,
                             s32 value2, s32 value6);
 u32 MapAttributeGetConnectionMask(s32 tileX, s32 tileY);
+struct GeneratedMapRuntimeRoom *GeneratedMapFindRuntimeRoom(s32 roomIndex);
+s32 GeneratedMapGetCurrentRoomProperty14(struct GeneratedFieldMap *map);
+s32 GeneratedMapGetCurrentRoomProperty18(struct GeneratedFieldMap *map);
+void GeneratedMapSetParameter10(s32 value);
+s32 GeneratedMapGetParameter10(void);
+void GeneratedMapSetCurrentRoomFlag(s32 value);
+s32 GeneratedMapGetCurrentRoomFlag(void);
 
 #endif

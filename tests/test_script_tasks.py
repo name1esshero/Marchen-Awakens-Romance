@@ -56,7 +56,7 @@ int active(void) { return *(u32 *)(context+4); }
                         str(folder/'tasks.c'),str(folder/'mock.c'),'-o',str(library)],check=True)
         cls.lib = ctypes.CDLL(str(library))
         cls.lib.ScriptGetParentFrame.restype = ctypes.c_void_p
-        cls.lib.ScriptCommandReturn.argtypes = [ctypes.c_uint32,ctypes.POINTER(ctypes.c_uint32)]
+        cls.lib.ScriptNativeExit.argtypes = [ctypes.c_uint32,ctypes.POINTER(ctypes.c_uint32)]
         for name in ('ScriptGetPendingTasks','ScriptGetStepBudget','ScriptGetResult'):
             getattr(cls.lib,name).restype = ctypes.c_uint32
 
@@ -113,7 +113,7 @@ int active(void) { return *(u32 *)(context+4); }
     def test_return_unwinds_all_frames_and_publishes_result(self):
         self.assertIsNotNone(self.lib.ScriptGetParentFrame())
         arguments=(ctypes.c_uint32*1)(0x12345678)
-        self.assertEqual(self.lib.ScriptCommandReturn(1,arguments),1)
+        self.assertEqual(self.lib.ScriptNativeExit(1,arguments),1)
         self.assertEqual(self.lib.ScriptGetResult(),0x12345678)
         self.assertEqual(self.value('popCalls'),3)
         self.assertIsNone(self.lib.ScriptGetParentFrame())

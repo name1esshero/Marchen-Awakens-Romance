@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "description": "Context-specific resolutions for KMP tile indices outside the stored KCG payload. These affect editor rendering only; source KMP words and KCG bytes remain unchanged.",
+  "maps": {
+    "MAP27_A.KMP": [
+      {
+        "tiles": [1023],
+        "kind": "transparent",
+        "confidence": "inferred",
+        "evidence": "The sole 0x03FF word is at (2,30) in the otherwise tile-0 border. Tile 1023 is the maximum 10-bit tile value and is used as a blank fill marker by PW_BG01; the regular renderer itself does not special-case it."
+      }
+    ],
+    "PW_BG01.KMP": [
+      {
+        "tiles": [1023],
+        "kind": "transparent",
+        "confidence": "verified",
+        "evidence": "Scene setup 08066780 clears 0x06000000..0x0600FFFF before 08066870 loads 235 tiles at 0x06000000. Tile 1023 remains zero-filled."
+      }
+    ],
+    "PW_BOX.KMP": [
+      {
+        "tiles": [426, 427, 428, 429, 430],
+        "kind": "transparent",
+        "confidence": "verified",
+        "evidence": "The five cells are transparent in PW_BOX.KCG.png. Its 13,632-byte KCG ends at tile 426, while scene setup clears VRAM before loading it at 0x06004000, leaving the referenced tail zero-filled."
+      }
+    ]
+  }
+}

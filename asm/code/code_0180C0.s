@@ -1653,150 +1653,8 @@ _08018C3C:
 
 @ 018C4C..018D10 is decompiled as HitRegionTest(); see src/decompiled.json
 
-	.section .rom.00018D10, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_08018D10
-sub_08018D10:
-	push {r4, lr}
-	lsls r1, r1, #16
-	asrs r4, r1, #16
-	lsls r2, r2, #16
-	asrs r2, r2, #16
-	subs r0, #1
-	cmp r0, #7
-	bhi _08018D90
-	lsls r0, r0, #2
-	ldr r1, _08018D2C
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	mov pc, r0
-	.byte 0x00
-	.byte 0x00
-	.global _08018D2C
-_08018D2C:
-	.4byte 0x08018D30  @ ROM+0x18D30
-	.4byte 0x08018D50
-	.4byte 0x08018D54
-	.4byte 0x08018D5A
-	.4byte 0x08018D62
-	.4byte 0x08018D68
-	.4byte 0x08018D6C
-	.4byte 0x08018D7A
-	.4byte 0x08018D82
-	.4byte 0xE0191C21
-	.4byte 0x5E582104
-	.4byte 0x2104E015
-	.4byte 0x18215E58
-	.4byte 0x2104E018
-	.4byte 0xE0035E58
-	.4byte 0xE0021C21
-	.4byte 0x5E582100
-	.4byte 0x24061821
-	.4byte 0x18125F18
-
-	.thumb_func
-	.thumb
-	.global sub_08018D78
-sub_08018D78:
-	b _08018D94
-	.byte 0x00
-	.byte 0x21
-	.4byte 0x18215E58
-	.4byte 0x2100E008
-	.4byte 0x18215E58
-	.4byte 0x5F182402
-	.4byte 0xE0011812
-	.global _08018D90
-_08018D90:
-	movs r0, #0
-	b _08018D9A
-	.global _08018D94
-_08018D94:
-	ldr r0, _08018DA0
-	.2byte 0xF7EA
-	.byte 0xB5
-	.byte 0xF9
-	.global _08018D9A
-_08018D9A:
-	pop {r4}
-	pop {r1}
-	bx r1
-	.global _08018DA0
-_08018DA0:
-	.4byte 0x03003BC4  @ IWRAM+0x3BC4
-
-	.thumb_func
-	.thumb
-	.global sub_08018DA4
-sub_08018DA4:
-	push {r4, lr}
-	lsls r1, r1, #16
-	asrs r4, r1, #16
-	lsls r2, r2, #16
-	asrs r2, r2, #16
-	subs r0, #1
-	cmp r0, #7
-	bhi _08018E2A
-	lsls r0, r0, #2
-	ldr r1, _08018DC0
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	mov pc, r0
-	.byte 0x00
-	.byte 0x00
-	.global _08018DC0
-_08018DC0:
-	.4byte 0x08018DC4  @ ROM+0x18DC4
-	.4byte 0x08018E1E
-	.4byte 0x08018DE4
-	.4byte 0x08018DEA
-	.4byte 0x08018DF0
-	.4byte 0x08018DFC
-	.4byte 0x08018E02
-	.4byte 0x08018E0E
-	.4byte 0x08018E18
-	.4byte 0x5E582104
-	.4byte 0x2104E018
-	.byte 0x58
-	.byte 0x5E
-
-	.thumb_func
-	.thumb
-	.global sub_08018DEE
-sub_08018DEE:
-	b _08018E12
-	.4byte 0x5E582104
-	.4byte 0x21061824
-	.4byte 0xE0125E58
-	.4byte 0x5E582106
-	.4byte 0x2100E00F
-	.4byte 0x18245E58
-	.4byte 0x5E582106
-	.4byte 0x2100E009
-	.byte 0x58
-	.byte 0x5E
-	.global _08018E12
-_08018E12:
-	adds r4, r4, r0
-	adds r1, r2, #0
-	b _08018E24
-	.4byte 0x5E582100
-	.4byte 0x21021824
-	.4byte 0x18115E58
-	.global _08018E24
-_08018E24:
-	adds r0, r4, #0
-	.2byte 0xF058
-	.byte 0xF9
-	.byte 0xFF
-	.global _08018E2A
-_08018E2A:
-	pop {r4}
-	pop {r0}
-	bx r0
+@ 018D10..018E30 is decompiled as MapAttributeProbeDirection() and
+@ MapGenerationSetProbeDirection(); see src/decompiled.json
 
 @ 018E30..018E44 is decompiled as SoundStopPlayers4And5(); see src/decompiled.json
 
@@ -8620,7 +8478,7 @@ _0801BC10:
 	str r2, [sp, #8]
 	movs r2, #0
 	movs r3, #0
-	bl sub_08003178
+	bl KmpLoadResource
 	ldr r1, _0801BD38
 	adds r0, r4, r1
 	ldr r2, _0801BD3C

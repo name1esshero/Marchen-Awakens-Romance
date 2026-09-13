@@ -66,7 +66,7 @@ OBJS        := $(ASM_OBJS) $(C_OBJS)
 # Recompile matching C when a recovered structure or hardware definition changes.
 -include $(C_OBJS:.o=.d)
 
-.PHONY: all compare extract clean tidy stats test test-english ci script-sources script-catalog readability-audit
+.PHONY: all compare extract clean tidy stats test test-english ci script-sources script-catalog map-audit readability-audit
 .SUFFIXES:
 
 # Keep `all` first: it is the default goal.
@@ -264,6 +264,9 @@ script-sources: $(CUSTOM_SCRIPTS)
 
 script-catalog:
 	$(PYTHON) tools/script_map_catalog.py
+
+map-audit: script-catalog
+	$(PYTHON) tools/audit_map_sprites.py
 
 # --- verification ---------------------------------------------------------
 compare: $(TARGET)

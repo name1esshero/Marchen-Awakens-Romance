@@ -47,6 +47,12 @@ void RandomSeed(u32 seed) { seedValue=seed; }
 u32 sub_08080E4C(u32 dividend,u32 divisor) { return dividend%divisor; }
 s32 sub_08082640(const char *text) { return strtol(text,0,10); }
 s32 ParseDecimalInteger(const char *text) { return sub_08082640(text); }
+void ScriptPopFrame(void) {}
+void *ScriptGetParentFrame(void) { return 0; }
+u32 ScriptPopU32(void) { return 0; }
+void ScriptPushU32(u32 value) { (void)value; }
+s32 ScriptResourceLoadAndInstall(const char *name,s32 argument) { (void)name;(void)argument;return 0; }
+char *strupr(char *text) { char *p=text;for(;*p;p++)if(*p>='a'&&*p<='z')*p-=32;return text; }
 ''')
         library=folder/'native.so'
         subprocess.run(['gcc','-shared','-fPIC','-O2','-fno-builtin',

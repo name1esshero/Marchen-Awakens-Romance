@@ -1,5 +1,7 @@
 # MAR map editor
 
+The planned Porymap-style event, collision, and connections workflow is documented in [`docs/map-editor-roadmap.md`](../../docs/map-editor-roadmap.md).
+
 Run `make map-editor`, or `py tools/map_editor/server.py` on Windows.
 The server opens its full editor URL in your default browser automatically.
 If browser launch is unavailable, open the printed localhost URL manually.
@@ -12,11 +14,40 @@ Stop it with Ctrl+C. A different port is available with
 ## Editing and building
 
 Select a map and plane, choose a tile and palette bank, and paint on the map.
-Scroll the mouse wheel over the map viewport to zoom from 1× to 4× around
-the pointer. Scrollbars pan the map; wheel scrolling elsewhere behaves normally.
+Scroll the mouse wheel over the map viewport to zoom from 3.125% to 4× around
+the pointer. Use **Fit whole map** to select the largest scale that displays
+every tile; Ctrl+0 invokes the same action. Scrollbars pan the map; wheel
+scrolling elsewhere behaves normally.
 Horizontal/vertical flips, layer visibility, zoom, a grid, right-click picking,
 and stroke-level undo/redo are available. Select **Raw attributes** to paint
 numeric u8/u16 attributes. Their collision/event meanings are not fully decoded.
+The mode bar separates map painting, collision attributes, decoded event call
+sites, and field-load connections. Event mode groups objects, hit regions,
+field loads, and other calls; clickable hit/field markers select their source
+call. Connections mode shows incoming and outgoing `FldSet` dependencies and
+can open a decoded destination map. `FldSet` coordinates position the viewport;
+they are not currently presented as proven player warp coordinates.
+Every connection card renders the destination's real visual planes in a
+240×160 GBA viewport beginning at those coordinates. Incoming cards preview the
+same section of the current destination map.
+Literal sprite placements and hit rectangles can be dragged in Event mode.
+Their verified SPC integer operands update live, optionally snap to the 8-pixel
+grid, and participate in the same undo/redo and atomic save path as form edits.
+The Event transport previews decoded sprite calls and animates the real NCD
+frames using their stored durations. `SprMove` properties 0 and 1 interpolate X
+and Y to the command's verified target over its verified duration; its blocking
+flag advances the preview clock. Calls with register-derived IDs or targets are
+counted as unresolved and skipped. The sprite-resource tray still displays
+their decoded artwork—including Dorothy's `09A00` idle and `09A01` movement
+resources—so dynamic enemy and ally actors are no longer silently absent.
+An unplaced literal actor can be staged at the center of the map for a
+non-saving visual preview. This is deliberately session-only because its real
+position may come from another script, a register, or engine-owned battle state.
+The preview also follows the verified `SprGet` X/Y result into register 0 when
+that actor has a known or staged position. This covers Dorothy's `EV_BA03` and
+`EV_BA04` movement-animation intervals: staging her supplies the missing
+engine-owned starting position, her real `09A01` frames run for the command's
+58 or 32 frames, and the script then switches back to `09A00`.
 The default **Game BG order** preview draws the second field plane first and
 plane 0 last, matching the loader's plane-0/BG0 and plane-1/BG1 assignment and
 the GBA's lower-BG-number ordering when priorities tie. Disable it to inspect
@@ -34,6 +65,13 @@ and SPC framing files remain the baseline; unknown fields are preserved.
 Read-only calls now display compiler-generated embedded string arguments. This
 makes `FldSet("MAP...", x, y)` and sprite resource setup visible while their
 variable-length strings remain protected from fixed-allocation edits.
+
+For numbered fields, **Map scripts** also exposes matching `SP_M...`,
+`CH_M...`, and `HI_M...` filename families when those resources exist. The UI
+labels this relationship as inferred from the recovered naming convention;
+decoded `FldSet` references remain separately marked as verified. MAP01_3A,
+for example, links to CH_M01_3, whose decoded script links reach EV_BA03 and
+EV_BA04 and their Dorothy movement previews.
 
 Run `make` or `make english` after saving. An intentionally edited ROM should
 differ from baserom. Without overrides, the default Japanese build must still
@@ -59,11 +97,14 @@ to +BA. Tile and palette resource names are at +1C/+5C; palette destination
 and count are at +B0/+B4. The editor uses the PNG/layout compiler for artwork.
 It preserves map dimensions, plane offsets, the header, and all unknown bytes.
 
-All 47 MAP*.KMP members load. MAP27_A references tile 1023 outside its decoded
-484-tile resource. Those cells are shown in pink as unresolved, not asserted to
-be blank. Existing unresolved words can be preserved or replaced with valid
-tiles; the editor refuses to introduce additional unresolved references. Layer
-order, blending, scrolling, and affine effects are not emulator-verified.
+All 47 MAP*.KMP members load. The previously external references in MAP27_A,
+PW_BG01, and PW_BOX are described in `maps/tile_resolutions.json` and render as
+transparent without changing their source words. The PW resolutions are proved
+by the scene's VRAM clear and the transparent PNG tail; MAP27_A's lone 0x03FF
+border marker is explicitly marked as an inference. Any future reference with
+no documented resolution remains pink, and the editor refuses to introduce
+additional external references. Layer order, blending, scrolling, and affine
+effects are not emulator-verified.
 
 All 334 named SPC FUNC tables decode (33,064 native-call references).
 FUNC records contain a NUL-terminated name and u32 CODE references ending in
@@ -146,9 +187,10 @@ run the editor itself.
 ## Recording the README demonstration
 
 The tracked `docs/media/map-editor.gif` consists of actual browser screenshots
-of MAP01_A loading and scrolling in both directions. No replacement UI or
-generated artwork is used. Initial browser network latency is set to 800 ms
-to make the real loading state visible, then removed before scrolling.
+of the editor loading a field, changing between its four pages, and running the
+literal movement in EV_ICE02 with the Play button. No replacement UI or
+generated artwork is used. Initial browser network latency is set to 800 ms so
+the real loading state is visible, then removed before interaction.
 To regenerate it, start the isolated browser fixture
 described above, then run:
 
@@ -214,6 +256,9 @@ recovers embedded resources from most of these expression sequences while
 keeping dynamic IDs explicit. The editor API reports static `field_loads`,
 `sprite_resources`, `sprite_properties`, and `sprite_moves`;
 `maps/script_catalog.json` records the same data across every named script.
+`maps/sprite_placement_audit.json` separates literal initial positions from
+same-script actor reuse and resources whose position comes from another script
+or a runtime expression. Regenerate both with `make map-audit`.
 The viewport's **Show script-created sprites at initial positions** option
 joins literal IDs across those setup calls and draws the source PNG for the
 selected animation's first frame. These remain possible call sites rather than
@@ -252,7 +297,7 @@ keeps attributes editable as exact numeric values rather than guessing names.
 
 ### PW scene loading context
 
-`maps/runtime_scenes.json` records the two loader calls at 08066870 and 0806688E. PW_BG01 plane 0 loads at 06000000 in viewport 0; PW_BOX plane 0 loads at 06004000 in viewport 1 with palette offset 1. Both copy tiles and palettes (flags 3) and use tile-index offset 0. The box viewport is rendered at (-60, -20) pixels. The editor catalog/load API now exposes this read-only context. It does not yet simulate BG control registers or prior VRAM contents, so unresolved tile references stay flagged.
+`maps/runtime_scenes.json` records the two loader calls at 08066870 and 0806688E. PW_BG01 plane 0 loads at 06000000 in viewport 0; PW_BOX plane 0 loads at 06004000 in viewport 1 with palette offset 1. Both copy tiles and palettes (flags 3) and use tile-index offset 0. The box viewport is rendered at (-60, -20) pixels. Scene setup at 08066780 first clears 64 KiB beginning at 06000000. This proves that PW_BG01 tile 1023 and PW_BOX tiles 426–430 read transparent zero-filled VRAM; the editor resolves those cells through `maps/tile_resolutions.json`.
 
 ### Toward sprite and event authoring
 

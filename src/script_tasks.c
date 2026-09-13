@@ -129,7 +129,7 @@ extern void *ScriptGetParentFrame(void);
 extern void ScriptPopFrame(void);
 /* Native return: publish the argument, pop through the parent chain, then
  * pop the root frame. Native command success is one. */
-AT("0008045C") s32 ScriptCommandReturn(u32 count, const u32 *arguments)
+AT("0008045C") s32 ScriptNativeExit(u32 count, const u32 *arguments)
 {
  ScriptSetResult(arguments[0]);
  while(ScriptGetParentFrame()) ScriptPopFrame();

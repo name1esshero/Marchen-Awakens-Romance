@@ -1,0 +1,945 @@
+{
+  "version": 1,
+  "scope": "Static SPC call sites. external_or_dynamic means coordinates must come from another script, a runtime register, or an untraced native path.",
+  "totals": {
+    "resource_calls": 201,
+    "literal_initial": 135,
+    "same_script_actor": 3,
+    "external_or_dynamic": 63,
+    "dynamic_arguments": 52,
+    "preview_available": 197
+  },
+  "scripts": [
+    {
+      "name": "CH_M26_6.SPC",
+      "resources": [
+        {
+          "offset": 3987,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 1,
+          "resource": "EF_GEN03",
+          "display_name": "EF_GEN03",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 4201,
+          "operation": "SprChg",
+          "sprite": null,
+          "container": 2,
+          "resource": "LAST00",
+          "display_name": "LAST00",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 4522,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 2,
+          "resource": "75A01",
+          "display_name": "75A01",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 4943,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 1,
+          "resource": "EF_GEN03",
+          "display_name": "EF_GEN03",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 5118,
+          "operation": "SprChg",
+          "sprite": null,
+          "container": 2,
+          "resource": "LAST01",
+          "display_name": "LAST01",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 5346,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 2,
+          "resource": "76A01",
+          "display_name": "76A01",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 5752,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 1,
+          "resource": "EF_GEN03",
+          "display_name": "EF_GEN03",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 5927,
+          "operation": "SprChg",
+          "sprite": null,
+          "container": 2,
+          "resource": "LAST02",
+          "display_name": "LAST02",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 6155,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 2,
+          "resource": "77A01",
+          "display_name": "77A01",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 6831,
+          "operation": "SprChg",
+          "sprite": null,
+          "container": 2,
+          "resource": "76A03",
+          "display_name": "76A03",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 7378,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 2,
+          "resource": "LAST03",
+          "display_name": "LAST03",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 8595,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 2,
+          "resource": "78A01",
+          "display_name": "78A01",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        }
+      ]
+    },
+    {
+      "name": "END2.SPC",
+      "resources": [
+        {
+          "offset": 2104,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 0,
+          "resource": "MAP11_O",
+          "display_name": "MAP11_O",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 21789,
+          "operation": "SprInit",
+          "sprite": 1,
+          "container": 0,
+          "resource": "OP_06A",
+          "display_name": "OP_06A",
+          "animation": 0,
+          "placement_status": "literal_initial",
+          "dynamic": false
+        },
+        {
+          "offset": 23793,
+          "operation": "SprChg",
+          "sprite": 1,
+          "container": 0,
+          "resource": "OP_06B",
+          "display_name": "OP_06B",
+          "animation": 0,
+          "placement_status": "same_script_actor",
+          "dynamic": false
+        },
+        {
+          "offset": 24715,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 0,
+          "resource": "MAP11_O",
+          "display_name": "MAP11_O",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        }
+      ]
+    },
+    {
+      "name": "EV_AL02.SPC",
+      "resources": [
+        {
+          "offset": 5064,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 1,
+          "resource": "EF_GEN12",
+          "display_name": "EF_GEN12",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        }
+      ]
+    },
+    {
+      "name": "EV_AL02B.SPC",
+      "resources": [
+        {
+          "offset": 4119,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 1,
+          "resource": "EF_GEN12",
+          "display_name": "EF_GEN12",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        }
+      ]
+    },
+    {
+      "name": "EV_AL03.SPC",
+      "resources": [
+        {
+          "offset": 3209,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 2,
+          "resource": "01B07",
+          "display_name": "01B07",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        }
+      ]
+    },
+    {
+      "name": "EV_BA03.SPC",
+      "resources": [
+        {
+          "offset": 3106,
+          "operation": "SprChg",
+          "sprite": 2,
+          "container": 2,
+          "resource": "09A01",
+          "display_name": "Dorothy (moving)",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": false
+        },
+        {
+          "offset": 3240,
+          "operation": "SprChg",
+          "sprite": 2,
+          "container": 2,
+          "resource": "09A00",
+          "display_name": "Dorothy (idle)",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": false
+        }
+      ]
+    },
+    {
+      "name": "EV_BA04.SPC",
+      "resources": [
+        {
+          "offset": 2927,
+          "operation": "SprChg",
+          "sprite": 2,
+          "container": 2,
+          "resource": "09A01",
+          "display_name": "Dorothy (moving)",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": false
+        }
+      ]
+    },
+    {
+      "name": "EV_T2KIL.SPC",
+      "resources": [
+        {
+          "offset": 932,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 1,
+          "resource": "TAKARA",
+          "display_name": "TAKARA",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        }
+      ]
+    },
+    {
+      "name": "EV_T3KIL.SPC",
+      "resources": [
+        {
+          "offset": 1081,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 1,
+          "resource": "TAKARA",
+          "display_name": "TAKARA",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 4589,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 2,
+          "resource": "78A01",
+          "display_name": "78A01",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 10007,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 2,
+          "resource": "78A03",
+          "display_name": "78A03",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 10751,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 2,
+          "resource": "78A01",
+          "display_name": "78A01",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 13411,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 2,
+          "resource": "78A03",
+          "display_name": "78A03",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 13851,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 2,
+          "resource": "78A01",
+          "display_name": "78A01",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        }
+      ]
+    },
+    {
+      "name": "EV_UTA01.SPC",
+      "resources": [
+        {
+          "offset": 3493,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 0,
+          "resource": "MAP11_O",
+          "display_name": "MAP11_O",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        }
+      ]
+    },
+    {
+      "name": "G_EV020.SPC",
+      "resources": [
+        {
+          "offset": 1158,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 0,
+          "resource": "MAP05_O",
+          "display_name": "MAP05_O",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 1299,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 0,
+          "resource": "MAP05_O",
+          "display_name": "MAP05_O",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 7734,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 1,
+          "resource": "SP_DE02",
+          "display_name": "SP_DE02",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 8367,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 1,
+          "resource": "ARM_NE16",
+          "display_name": "ARM_NE16",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 8733,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 1,
+          "resource": "ARM_NE16",
+          "display_name": "ARM_NE16",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        }
+      ]
+    },
+    {
+      "name": "G_EV021.SPC",
+      "resources": [
+        {
+          "offset": 847,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 0,
+          "resource": "MAP05_O",
+          "display_name": "MAP05_O",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        }
+      ]
+    },
+    {
+      "name": "G_EV023.SPC",
+      "resources": [
+        {
+          "offset": 710,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 0,
+          "resource": "MAP05_O",
+          "display_name": "MAP05_O",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 851,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 0,
+          "resource": "MAP05_O",
+          "display_name": "MAP05_O",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 7241,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 1,
+          "resource": "ARM_WE11",
+          "display_name": "ARM_WE11",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 7761,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 1,
+          "resource": "EF_GEN12",
+          "display_name": "EF_GEN12",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        }
+      ]
+    },
+    {
+      "name": "G_EV023B.SPC",
+      "resources": [
+        {
+          "offset": 806,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 1,
+          "resource": "EF_GEN12",
+          "display_name": "EF_GEN12",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        }
+      ]
+    },
+    {
+      "name": "G_EV025.SPC",
+      "resources": [
+        {
+          "offset": 2664,
+          "operation": "SprInit",
+          "sprite": 0,
+          "container": 0,
+          "resource": "ARM050",
+          "display_name": "ARM050",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": false
+        },
+        {
+          "offset": 4032,
+          "operation": "SprInit",
+          "sprite": 0,
+          "container": 1,
+          "resource": "ARM_HO08",
+          "display_name": "ARM_HO08",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": false
+        },
+        {
+          "offset": 4467,
+          "operation": "SprInit",
+          "sprite": 0,
+          "container": 0,
+          "resource": "GARM052",
+          "display_name": "GARM052",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": false
+        }
+      ]
+    },
+    {
+      "name": "G_EV030.SPC",
+      "resources": [
+        {
+          "offset": 505,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 2,
+          "resource": "57A00",
+          "display_name": "57A00",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        }
+      ]
+    },
+    {
+      "name": "G_EV031.SPC",
+      "resources": [
+        {
+          "offset": 1721,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 1,
+          "resource": "ARM_UT20",
+          "display_name": "ARM_UT20",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        }
+      ]
+    },
+    {
+      "name": "MAP06_1A.SPC",
+      "resources": [
+        {
+          "offset": 668,
+          "operation": "SprInit",
+          "sprite": 17,
+          "container": 0,
+          "resource": "MAP00_O",
+          "display_name": "MAP00_O",
+          "animation": 3,
+          "placement_status": "external_or_dynamic",
+          "dynamic": false
+        }
+      ]
+    },
+    {
+      "name": "MAP10_A.SPC",
+      "resources": [
+        {
+          "offset": 943,
+          "operation": "SprInit",
+          "sprite": 17,
+          "container": 0,
+          "resource": "MAP00_O",
+          "display_name": "MAP00_O",
+          "animation": 3,
+          "placement_status": "external_or_dynamic",
+          "dynamic": false
+        }
+      ]
+    },
+    {
+      "name": "MAP24_4A.SPC",
+      "resources": [
+        {
+          "offset": 371,
+          "operation": "SprInit",
+          "sprite": 2,
+          "container": 0,
+          "resource": "MAP00_O",
+          "display_name": "MAP00_O",
+          "animation": 0,
+          "placement_status": "literal_initial",
+          "dynamic": false
+        },
+        {
+          "offset": 752,
+          "operation": "SprInit",
+          "sprite": 1,
+          "container": 1,
+          "resource": "TAKARA",
+          "display_name": "TAKARA",
+          "animation": 0,
+          "placement_status": "literal_initial",
+          "dynamic": false
+        },
+        {
+          "offset": 1298,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 1,
+          "resource": "TAKARA",
+          "display_name": "TAKARA",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        }
+      ]
+    },
+    {
+      "name": "MAP25_5A.SPC",
+      "resources": [
+        {
+          "offset": 747,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 1,
+          "resource": "TAKARA",
+          "display_name": "TAKARA",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 1283,
+          "operation": "SprInit",
+          "sprite": 17,
+          "container": 0,
+          "resource": "MAP00_O",
+          "display_name": "MAP00_O",
+          "animation": 0,
+          "placement_status": "literal_initial",
+          "dynamic": false
+        }
+      ]
+    },
+    {
+      "name": "MAP40_A.SPC",
+      "resources": [
+        {
+          "offset": 628,
+          "operation": "SprInit",
+          "sprite": 17,
+          "container": 1,
+          "resource": "TAKARA",
+          "display_name": "TAKARA",
+          "animation": 0,
+          "placement_status": "literal_initial",
+          "dynamic": false
+        },
+        {
+          "offset": 1084,
+          "operation": "SprInit",
+          "sprite": 18,
+          "container": 1,
+          "resource": "TAKARA",
+          "display_name": "TAKARA",
+          "animation": 0,
+          "placement_status": "literal_initial",
+          "dynamic": false
+        },
+        {
+          "offset": 1578,
+          "operation": "SprInit",
+          "sprite": 19,
+          "container": 0,
+          "resource": "MAP00_O",
+          "display_name": "MAP00_O",
+          "animation": 3,
+          "placement_status": "external_or_dynamic",
+          "dynamic": false
+        }
+      ]
+    },
+    {
+      "name": "OBJ_G.SPC",
+      "resources": [
+        {
+          "offset": 1196,
+          "operation": "SprChg",
+          "sprite": null,
+          "container": 1,
+          "resource": "TEST_E02",
+          "display_name": "TEST_E02",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        }
+      ]
+    },
+    {
+      "name": "OBJ_J.SPC",
+      "resources": [
+        {
+          "offset": 1142,
+          "operation": "SprChg",
+          "sprite": null,
+          "container": 0,
+          "resource": "MAP00_O",
+          "display_name": "MAP00_O",
+          "animation": 1,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        }
+      ]
+    },
+    {
+      "name": "OBJ_V.SPC",
+      "resources": [
+        {
+          "offset": 1042,
+          "operation": "SprChg",
+          "sprite": null,
+          "container": 1,
+          "resource": "ARM_HO08",
+          "display_name": "ARM_HO08",
+          "animation": 1,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 1284,
+          "operation": "SprChg",
+          "sprite": null,
+          "container": 0,
+          "resource": "MAP00_O",
+          "display_name": "MAP00_O",
+          "animation": 5,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        }
+      ]
+    },
+    {
+      "name": "OPEN.SPC",
+      "resources": [
+        {
+          "offset": 1410,
+          "operation": "SprInit",
+          "sprite": 10,
+          "container": 1,
+          "resource": "ARM_NE41",
+          "display_name": "ARM_NE41",
+          "animation": 0,
+          "placement_status": "literal_initial",
+          "dynamic": false
+        },
+        {
+          "offset": 4153,
+          "operation": "SprInit",
+          "sprite": 1,
+          "container": 2,
+          "resource": "01A09",
+          "display_name": "01A09",
+          "animation": 1,
+          "placement_status": "external_or_dynamic",
+          "dynamic": false
+        },
+        {
+          "offset": 4431,
+          "operation": "SprInit",
+          "sprite": 2,
+          "container": 1,
+          "resource": "ARM_UT20",
+          "display_name": "ARM_UT20",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": false
+        }
+      ]
+    },
+    {
+      "name": "SP_M24_4.SPC",
+      "resources": [
+        {
+          "offset": 6196,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 1,
+          "resource": "EF_GEN03",
+          "display_name": "EF_GEN03",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 6446,
+          "operation": "SprChg",
+          "sprite": null,
+          "container": 2,
+          "resource": "LAST00",
+          "display_name": "LAST00",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        }
+      ]
+    },
+    {
+      "name": "SP_M25_5.SPC",
+      "resources": [
+        {
+          "offset": 10480,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 1,
+          "resource": "EF_GEN03",
+          "display_name": "EF_GEN03",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 10714,
+          "operation": "SprChg",
+          "sprite": null,
+          "container": 2,
+          "resource": "LAST01",
+          "display_name": "LAST01",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        }
+      ]
+    },
+    {
+      "name": "SP_M26_2.SPC",
+      "resources": [
+        {
+          "offset": 3532,
+          "operation": "SprInit",
+          "sprite": null,
+          "container": 1,
+          "resource": "EF_GEN03",
+          "display_name": "EF_GEN03",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 3766,
+          "operation": "SprChg",
+          "sprite": null,
+          "container": 2,
+          "resource": "LAST02",
+          "display_name": "LAST02",
+          "animation": 0,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        }
+      ]
+    },
+    {
+      "name": "SP_M26_5.SPC",
+      "resources": [
+        {
+          "offset": 1167,
+          "operation": "SprChg",
+          "sprite": null,
+          "container": 1,
+          "resource": "ARM_HO08",
+          "display_name": "ARM_HO08",
+          "animation": 1,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        },
+        {
+          "offset": 1409,
+          "operation": "SprChg",
+          "sprite": null,
+          "container": 0,
+          "resource": "MAP00_O",
+          "display_name": "MAP00_O",
+          "animation": 5,
+          "placement_status": "external_or_dynamic",
+          "dynamic": true
+        }
+      ]
+    }
+  ]
+}

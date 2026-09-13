@@ -15,6 +15,15 @@ class MapNativeTests(unittest.TestCase):
 #include <assert.h>
 #include <string.h>
 static int called, values[5];
+u8 gIwramBase[4];
+u8 gMapGenerationRootOffset[1];
+static char field_name_buffer[18];
+void *HeapAlloc(void *heap,u32 size) {
+ (void)heap;assert(size==18);return field_name_buffer;
+}
+void GameStateCopyString12F4(char *destination) {
+ strcpy(destination,"MAP01_A");
+}
 void KmpLoadField(const char *name,s16 x,s16 y) {
  assert(!strcmp(name,"MAP01_A"));called=1;values[0]=x;values[1]=y;
 }

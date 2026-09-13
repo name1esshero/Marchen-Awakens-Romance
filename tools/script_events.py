@@ -186,12 +186,16 @@ def semantic_summary(decoded_calls):
     operands stay explicit so consumers cannot mistake them for literal IDs or
     coordinates.
     """
-    result=dict(field_loads=[],sprite_resources=[],sprite_properties=[],sprite_moves=[])
+    result=dict(field_loads=[],script_links=[],sprite_resources=[],sprite_properties=[],sprite_moves=[])
     for call in decoded_calls:
         args=call.get('decoded_arguments',[])
         if not args:continue
         values=[a.get('value') if a['kind'] in ('integer','string') else None for a in args]
         base=dict(offset=call['offset'],arguments=args)
+        if call['function'] in ('chain','exec'):
+            for value in values:
+                if isinstance(value,str) and value.upper().endswith('.SPC'):
+                    result['script_links'].append(dict(base,operation=call['function'],script=value.upper()))
         if call['function']=='FldSet' and len(args)==3:
             result['field_loads'].append(dict(base,destination=values[0],x=values[1],y=values[2]))
         elif call['function'] in ('SprInit','SprChg') and len(args)==5:

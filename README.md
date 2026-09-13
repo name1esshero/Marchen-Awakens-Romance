@@ -60,32 +60,42 @@ publish. See [publishing instructions](tools/site/README.md).
 
 ## Map editor
 
-![The map editor loading MAP01_A and scrolling vertically and horizontally](docs/media/map-editor.gif)
+![The map editor opening a field, changing pages, and playing a moving event object](docs/media/map-editor.gif)
 
-Actual screenshots of the running editor in Chromium. Initial network delivery
-was briefly throttled to make the loading state visible.
+This GIF is built from screenshots of the real editor running in Chromium. It
+shows a field opening, the Map/Collision/Connections/Events pages, and the Play
+button previewing a decoded 32-frame `SprMove` command.
 
 Run `make map-editor`, or `py tools/map_editor/server.py` on Windows.
 The server automatically opens the editor in your default browser;
 `--no-browser` disables this. The full URL is also printed in the terminal.
-The editor loads 47 maps with a visual tile selector, palette banks, flips,
-layer visibility, raw attribute painting, undo/redo, and JSON source saves.
-Its default game-order preview draws plane 0 above plane 1, matching the field
-loader's BG0/BG1 assignment; a checkbox restores raw file order for inspection.
-The wheel over the map zooms from 1× to 4× around the pointer; scrollbars pan.
-Existing native event calls expose supported constant integer arguments.
-The script decoder also exposes embedded field names and sprite resources;
-the checked-in static catalog currently covers 113 field-load call sites, 201
-sprite resource call sites, 1,690 sprite property calls, and 78 sprite moves.
-HitInit, HitHitRect, HitSet, and HitFree have verified field labels; literal
-hit rectangles can be previewed on the map and follow edits and undo.
-This preview shows the selected call, not simulated active event state.
-SprSet X/Y arguments have pixel labels and an optional yellow coordinate guide.
-See the [sprite placement and rendering trace](docs/sprite-rendering.md) for
-verified structures, animation routing and remaining decoding work.
-Run `make` or `make english` to build saved changes. Unknown properties, dynamic
-calls, new warps, and full event control flow remain undecoded; unresolved
-MAP27 tiles are marked explicitly. See [editor usage and format evidence](tools/map_editor/README.md).
+The basic workflow is:
+
+1. Choose a map on the left. Use the mouse wheel over the map to zoom, drag the
+   scrollbars to pan, or press **Fit whole map**.
+2. Choose **Map** to paint visual tiles, **Collision** to inspect or paint raw
+   tile attributes, **Events** to inspect objects and run decoded commands, or
+   **Connections** to preview fields loaded by scripts.
+3. In Events, choose a script and press **Play**. Literal sprite positions and
+   movement targets animate with the extracted game frames. Unresolved runtime
+   values are counted and shown instead of being guessed.
+4. Press **Save sources**, then run `make` or `make english`. The editor writes
+   reviewable JSON source overrides; it never edits the ROM directly.
+
+The editor supports 49 field and special-scene maps, a visual tile selector,
+palette banks, flips, layer visibility, raw attributes, draggable literal
+events, undo/redo, and source saves. Plane 0 is shown above plane 1 by default,
+matching the recovered BG0/BG1 setup. Numbered maps link their same-name,
+spawn, character-event, and history-event scripts; inferred filename links are
+labeled. The current catalog covers 113 field loads, 201 sprite resources,
+1,690 sprite properties, and 78 sprite moves.
+
+Dynamic register values, script branches, creating new events, and complete
+warp semantics still require more engine decoding. See the
+[plain editor guide](tools/map_editor/README.md), the
+[map editor roadmap](docs/map-editor-roadmap.md), and the
+[sprite rendering trace](docs/sprite-rendering.md) for the verified details and
+remaining work.
 The verified [script source language](docs/script-language.md) and
 `scripts/source/example.json` compile JSON control flow and native calls into
 standalone SPC files with rebuilt FUNC relocations.
@@ -272,8 +282,8 @@ English mappings, including the ÄRM Select names and descriptions.
 
 ## Decompilation status
 
-The provenance audit verifies **1,569 source-compiled C ranges (216,263 bytes,
-1.2890% of the complete 16 MiB ROM) and 10 BIOS assembly wrappers**; each declared
+The provenance audit verifies **1,573 source-compiled C ranges (216,447 bytes,
+1.2901% of the complete 16 MiB ROM) and 10 BIOS assembly wrappers**; each declared
 range is linked from its expected object and matches the Japanese ROM. Recent
 batches decode the save block, CRC-32 validation, asynchronous SRAM write and
 load/verification paths, MusicPlayer2000 sound routines including the complete

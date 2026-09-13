@@ -73,141 +73,18 @@ _080800F8:
 
 @ 080380..0803E4 is decompiled as ScriptNativeSubstring(); see src/decompiled.json
 
-	.section .rom.000803E4, "ax"
+@ 0803E4..080420 is decompiled as ScriptNativeChain(); see src/decompiled.json
+
+@ 080420..080430 is decompiled as ScriptNativeCall(); see src/decompiled.json
+
+@ 080430..08045C is decompiled as ScriptNativeResurn(); see src/decompiled.json
+
+@ 08045C..08047C is decompiled as ScriptNativeExit(); see src/decompiled.json
+
+@ 08047C..0804BC is decompiled as ScriptNativeExec(); see src/decompiled.json
+
+	.section .rom.000804BC, "ax"
 	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_080803E4
-sub_080803E4:
-	push {r4, lr}
-	sub sp, #20
-	adds r4, r1, #0
-	ldr r0, _08080410
-	ldr r0, [r0, #0]
-	ldr r0, [r0, #12]
-	ldr r1, [r0, #12]
-	adds r1, #16
-	mov r0, sp
-	.2byte 0xF002
-	.4byte 0xF7FEFA37
-	.4byte 0x6821FDDD
-	mov r0, sp
-	.2byte 0xF7FE
-	.4byte 0x2800FDC7
-	bne _08080414
-	movs r0, #1
-	b _08080418
-	.byte 0x00
-	.byte 0x00
-	.global _08080410
-_08080410:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-	.global _08080414
-_08080414:
-	movs r0, #1
-	negs r0, r0
-	.global _08080418
-_08080418:
-	add sp, #20
-	pop {r4}
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_08080420
-sub_08080420:
-	push {lr}
-	movs r3, #0
-	str r3, [r2, #0]
-	bl sub_0808047C
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_08080430
-sub_08080430:
-	push {r4, lr}
-	adds r4, r1, #0
-	.2byte 0xF7FD
-	.byte 0xBA
-	.byte 0xFF
-	cmp r0, #0
-	beq _0808044E
-	ldr r4, [r4, #0]
-	.2byte 0xF7FE
-	.4byte 0xF7FFFDBB
-	.4byte 0x1C20F8E1
-	.2byte 0xF7FF
-	.byte 0xCE
-	.byte 0xF8
-	b _08080452
-	.global _0808044E
-_0808044E:
-	.2byte 0xF7FE
-	.byte 0xB3
-	.byte 0xFD
-	.global _08080452
-_08080452:
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-@ 08045C..08047C is decompiled as ScriptCommandReturn(); see src/decompiled.json
-
-	.section .rom.0008047C, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_0808047C
-sub_0808047C:
-	push {r4, lr}
-	ldr r4, _080804A8
-	ldr r1, [r1, #0]
-	adds r0, r4, #0
-	.2byte 0xF002
-	.byte 0xF0
-	.byte 0xF9
-	adds r0, r4, #0
-	.2byte 0xF002
-	.4byte 0x4807FB11
-	ldr r0, [r0, #0]
-	ldr r0, [r0, #12]
-	ldr r0, [r0, #12]
-	adds r0, #16
-	adds r1, r4, #0
-	.2byte 0xF7FE
-	.4byte 0x2800FD7B
-	bne _080804B0
-	movs r0, #1
-	b _080804B4
-	.byte 0x00
-	.byte 0x00
-	.global _080804A8
-_080804A8:
-	.4byte 0x03004F30  @ IWRAM+0x4F30
-	.global _080804AC
-_080804AC:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-	.global _080804B0
-_080804B0:
-	movs r0, #1
-	negs r0, r0
-	.global _080804B4
-_080804B4:
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
 
 	.thumb_func
 	.thumb

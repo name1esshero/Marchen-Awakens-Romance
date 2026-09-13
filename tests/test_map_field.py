@@ -22,7 +22,7 @@ static int phase;
 static int expectedX,expectedY;
 void GameStateSetString12F4(const char *name) {assert(phase++==0);assert(!strcmp(name,"map01_a"));}
 char *strupr(char *text) {char *p=text;while(*p){*p=toupper((unsigned char)*p);p++;}return text;}
-void sub_08003178(char *name,void *vram,s32 slot,s32 plane,s32 palette,s32 extra,s32 flags) {
+void KmpLoadResource(const char *name,void *vram,s32 slot,s32 plane,s32 palette,s32 extra,s32 flags) {
  assert(!strcmp(name,"MAP01_A.KMP"));assert((uintptr_t)vram==0x06000000);
  assert(slot==phase-1 && plane==slot);assert(!palette && !extra);
  assert(flags==(slot==0?3:0));phase++;

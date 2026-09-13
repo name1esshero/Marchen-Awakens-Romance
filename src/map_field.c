@@ -12,7 +12,6 @@
 extern char *strcpy(char *,const char *);
 extern char *strcat(char *,const char *);
 extern char *strupr(char *);
-extern void sub_08003178(char *,void *,s32,s32,s32,s32,s32);
 extern s32 sub_08056290(void);
 extern void sub_08054350(void *, void *, s32, s32, s32, s32, s32);
 AT("000032B8") void KmpLoadField(const char *name,s16 x,s16 y)
@@ -24,8 +23,8 @@ AT("000032B8") void KmpLoadField(const char *name,s16 x,s16 y)
  strcpy(resource,name);
  strcat(resource,(const char *)0x08086A5C);
  strupr(resource);
- sub_08003178(resource,(void *)0x06000000,0,0,0,0,3);
- sub_08003178(resource,(void *)0x06000000,1,1,0,0,0);
+ KmpLoadResource(resource,(void *)0x06000000,0,0,0,0,3);
+ KmpLoadResource(resource,(void *)0x06000000,1,1,0,0,0);
  view=(struct KmpViewport *)0x03003BC4;
  px*=65536;py*=65536;
  KmpRenderViewport(view,px,py);

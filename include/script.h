@@ -44,6 +44,7 @@ struct ScrpHeader
 #define OP_PUSH_OPERAND 0x28
 #define OP_PUSH_IMMEDIATE 0x29
 #define OP_POP_OPERAND 0x2A
+#define OP_CONCAT_STRINGS 0x78
 #define OP_NATIVE_CALL 0x80
 #define NATIVE_OBJECT_COMMAND_22 0x22
 

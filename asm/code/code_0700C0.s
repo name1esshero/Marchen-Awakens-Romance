@@ -1839,53 +1839,10 @@ _08070D3C:
 	.4byte 0x00004700
 	.4byte 0x0000065C
 
-	.thumb_func
-	.thumb
-	.global sub_08070D60
-sub_08070D60:
-	movs r1, #203
-	lsls r1, r1, #3
-	adds r2, r0, r1
-	ldrh r1, [r0, #6]
-	ldr r3, _08070D80
-	adds r0, r0, r3
-	ldr r0, [r0, #0]
-	lsls r1, r1, #1
-	adds r1, r1, r0
-	ldrh r1, [r1, #0]
-	movs r0, #44
-	muls r1, r0
-	ldr r0, [r2, #0]
-	adds r0, r0, r1
-	ldr r0, [r0, #20]
-	bx lr
-	.global _08070D80
-_08070D80:
-	.4byte 0x00000654
+	@ 070D60..070DA8 is decompiled as generated-map room property accessors.
 
-	.thumb_func
-	.thumb
-	.global sub_08070D84
-sub_08070D84:
-	movs r1, #203
-	lsls r1, r1, #3
-	adds r2, r0, r1
-	ldrh r1, [r0, #6]
-	ldr r3, _08070DA4
-	adds r0, r0, r3
-	ldr r0, [r0, #0]
-	lsls r1, r1, #1
-	adds r1, r1, r0
-	ldrh r1, [r1, #0]
-	movs r0, #44
-	muls r1, r0
-	ldr r0, [r2, #0]
-	adds r0, r0, r1
-	ldr r0, [r0, #24]
-	bx lr
-	.global _08070DA4
-_08070DA4:
-	.4byte 0x00000654
+	.section .rom.00070DA8, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -2126,49 +2083,10 @@ sub_08070EE6:
 	pop {r1}
 	bx r1
 
-	.thumb_func
-	.thumb
-	.global sub_08070EEC
-sub_08070EEC:
-	push {r4, lr}
-	adds r4, r0, #0
-	.2byte 0xF7FF
-	.byte 0xCE
-	.byte 0xF8
-	adds r1, r0, #0
+	@ 070EEC..070F20 is decompiled as GeneratedMapFindRuntimeRoom().
 
-	.thumb_func
-	.thumb
-	.global sub_08070EF6
-sub_08070EF6:
-	adds r1, #24
-	movs r2, #0
-	.global _08070EFA
-_08070EFA:
-	movs r0, #20
-	ldrsb r0, [r1, r0]
-	cmp r0, #0
-	beq _08070F0E
-	movs r3, #0
-	ldrsh r0, [r1, r3]
-	cmp r0, r4
-	bne _08070F0E
-	adds r0, r1, #0
-	b _08070F18
-	.global _08070F0E
-_08070F0E:
-	adds r1, #24
-	adds r2, #1
-	cmp r2, #63
-	ble _08070EFA
-	movs r0, #0
-	.global _08070F18
-_08070F18:
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+	.section .rom.00070F20, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -2317,7 +2235,7 @@ sub_08070FC8:
 	cmp r1, r0
 	bne _08071048
 	adds r0, r5, #0
-	bl sub_08070EEC
+	bl GeneratedMapFindRuntimeRoom
 	adds r4, r0, #0
 	cmp r4, #0
 	bne _08071048
@@ -2431,81 +2349,11 @@ sub_08071066:
 	.global _08071068
 _08071068:
 	.4byte 0x08089468  @ ROM+0x89468
-	.4byte 0x1C04B510
-	.4byte 0xF80EF7FF
 
-	.thumb_func
-	.thumb
-	.global sub_08071074
-sub_08071074:
-	str r4, [r0, #16]
-	pop {r4}
-	pop {r0}
-	bx r0
-	.4byte 0xF7FFB500
-	.byte 0x07
-	.byte 0xF8
+	@ 07106C..0710BC is decompiled as generated-map parameter and room flag accessors.
 
-	.thumb_func
-	.thumb
-	.global sub_08071082
-sub_08071082:
-	ldr r0, [r0, #16]
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_08071088
-sub_08071088:
-	push {r4, lr}
-	adds r4, r0, #0
-	.2byte 0xF7FF
-	.byte 0x00
-	.byte 0xF8
-	ldrh r0, [r0, #6]
-	bl sub_08070EEC
-
-	.thumb_func
-	.thumb
-	.global sub_08071096
-sub_08071096:
-	cmp r0, #0
-	beq _0807109C
-	strb r4, [r0, #21]
-	.global _0807109C
-_0807109C:
-	pop {r4}
-	pop {r0}
-	bx r0
-
-	.thumb_func
-	.thumb
-	.global sub_080710A2
-sub_080710A2:
-	movs r0, r0
-
-	.thumb_func
-	.thumb
-	.global sub_080710A4
-sub_080710A4:
-	push {lr}
-	.2byte 0xF7FE
-
-	.thumb_func
-	.thumb
-	.global sub_080710A8
-sub_080710A8:
-	.2byte 0xFFF3
-	ldrh r0, [r0, #6]
-	bl sub_08070EEC
-	ldrb r0, [r0, #21]
-	lsls r0, r0, #24
-	asrs r0, r0, #24
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+	.section .rom.000710BC, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -2913,7 +2761,7 @@ sub_080712F8:
 	.global _08071328
 _08071328:
 	ldr r0, [r5, #36]
-	bl sub_08070EEC
+	bl GeneratedMapFindRuntimeRoom
 	adds r6, r0, #0
 	cmp r6, #0
 	bne _08071336

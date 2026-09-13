@@ -7,6 +7,7 @@ import struct
 import sys
 import tempfile
 import os
+import re
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 import gfx
@@ -22,6 +23,10 @@ SPRITE_CONTAINERS = {
     1: Path('graphics/battle/effects/manifest.json'),
     2: Path('graphics/battle/characters/manifest.json'),
 }
+
+# Character 09 is tied to Dorothy by the matching F09 portrait/dialogue calls;
+# A00 is the static pose and A01 is the six-frame movement sequence.
+SPRITE_RESOURCE_NAMES = {'09A00': 'Dorothy (idle)', '09A01': 'Dorothy (moving)'}
 
 
 def read(path):return json.loads(path.read_text())
@@ -104,6 +109,8 @@ def initial_sprite_placements(calls):
             item=active.get(values[0]);prop=values[1];value=values[2]
             if item and prop in (0,1) and isinstance(value,int):
                 item['xy'[prop]]=((value+0x8000)&0xFFFF)-0x8000
+                if len(args)>2 and isinstance(args[2].get('offset'),int):
+                    item['xy'[prop]+'_argument_offset']=args[2]['offset']
                 if item['x'] is not None and item['y'] is not None and not item['emitted']:
                     item['emitted']=True
                     result.append({k:v for k,v in item.items() if k!='emitted'})
@@ -118,6 +125,9 @@ class Project:
         self.members={e['name']:e for e in read(self.root/'maps/nfp/manifest.json') if (e['name'].startswith('MAP') or e['name'] in scene_maps) and e['name'].endswith('.KMP')}
         self.assets={e['archive_name']:e for e in read(self.root/'assets.json') if e.get('archive_name')}
         self.scripts={e['name']:e for e in read(self.root/'scripts/nfp/manifest.json')}
+        resolution_path=self.root/'maps/tile_resolutions.json'
+        self.tile_resolution_data=read(resolution_path) if resolution_path.exists() else {'version':1,'maps':{}}
+        if self.tile_resolution_data.get('version')!=1:raise ValueError('Unsupported tile-resolution revision')
         catalog_path=self.root/'maps/script_catalog.json'
         self.script_catalog=read(catalog_path) if catalog_path.exists() else {'scripts':[],'totals':{}}
         self.incoming={}
@@ -128,6 +138,26 @@ class Project:
                     self.incoming.setdefault(destination+'.KMP',[]).append(dict(link,script=script['name']))
         self.unsupported={}
         self.sprite_manifests={}
+
+    def map_script_associations(self,name):
+        """Expose proven and filename-family scripts associated with a field."""
+        result=[]
+        def add(script,relation,confidence,evidence):
+            if script in self.scripts and not any(item['script']==script for item in result):
+                result.append(dict(script=script,relation=relation,
+                                   confidence=confidence,evidence=evidence))
+        add(name[:-4]+'.SPC','same_resource_name','verified',
+            'KMP and SPC share a basename')
+        match=re.fullmatch(r'MAP(\d+)(?:_(\d+))?A\.KMP',name)
+        if match:
+            family='M'+match.group(1)+(('_'+match.group(2)) if match.group(2) else '')
+            for prefix,relation in (('SP_','spawn'),('CH_','character_event'),('HI_','history_event')):
+                add(prefix+family+'.SPC',relation,'inferred',
+                    'script and map share the recovered area-number naming family')
+        for link in self.incoming.get(name,[]):
+            add(link['script'],'loads_field','verified',
+                'decoded FldSet call names this KMP resource')
+        return result
 
     def sprite_preview(self,container,resource,animation):
         if container not in SPRITE_CONTAINERS or not isinstance(resource,str) or not isinstance(animation,int):
@@ -143,10 +173,14 @@ class Project:
         if not group:return None
         sequence=next((a for a in group['animations'] if a['index']==animation),None)
         if not sequence or not sequence['frames']:return None
-        frame=manifest['frames'][sequence['frames'][0]]
-        raw=(self.root/manifest_path.parent/frame['path']).read_bytes()
-        return dict(x=frame['x'],y=frame['y'],width=frame['width'],height=frame['height'],
-                    frame=frame['id'],image='data:image/png;base64,'+base64.b64encode(raw).decode('ascii'))
+        frames=[]
+        for frame_id in sequence['frames']:
+            frame=manifest['frames'][frame_id]
+            raw=(self.root/manifest_path.parent/frame['path']).read_bytes()
+            frames.append(dict(x=frame['x'],y=frame['y'],width=frame['width'],height=frame['height'],
+                duration=frame.get('duration',1),frame=frame['id'],
+                image='data:image/png;base64,'+base64.b64encode(raw).decode('ascii')))
+        return dict(frames[0],frames=frames)
 
     def entry(self,name):
         if name not in self.members:raise ValueError('Unknown map')
@@ -165,6 +199,17 @@ class Project:
         return [dict(scene=scene['id'],evidence=scene['evidence'],layer=layer)
                 for scene in read(path)['scenes'] for layer in scene['layers']
                 if layer['map']==name]
+
+    def tile_resolutions(self,name):
+        """Return explicit editor renderings for KCG-external tile values."""
+        result={}
+        for group in self.tile_resolution_data.get('maps',{}).get(name,[]):
+            if group.get('kind')!='transparent':raise ValueError('Unsupported tile resolution')
+            for tile in group.get('tiles',[]):
+                integer(tile,0,1023)
+                if str(tile) in result:raise ValueError('Duplicate tile resolution')
+                result[str(tile)]={key:group[key] for key in ('kind','confidence','evidence')}
+        return result
 
     def catalog(self):
         result=[]
@@ -186,9 +231,22 @@ class Project:
         placements=initial_sprite_placements(calls)
         for item in placements:
             item['preview']=self.sprite_preview(item['container'],item['resource'],item['animation'])
+        placed_offsets={item['init_offset'] for item in placements}
+        placed_sprites={item['sprite'] for item in placements}
+        candidates=[]
+        for item in script_events.semantic_summary(calls)['sprite_resources']:
+            candidate={key:item.get(key) for key in ('offset','operation','sprite','container','resource','animation','extra')}
+            candidate['display_name']=SPRITE_RESOURCE_NAMES.get(item.get('resource'),item.get('resource'))
+            candidate['placed']=item['offset'] in placed_offsets
+            candidate['placement_status']=('literal_initial' if candidate['placed'] else
+                'same_script_actor' if isinstance(item.get('sprite'),int) and item['sprite'] in placed_sprites else
+                'external_or_dynamic')
+            candidate['preview']=self.sprite_preview(item.get('container'),item.get('resource'),item.get('animation'))
+            candidate['dynamic']=not isinstance(item.get('sprite'),int) or not isinstance(item.get('resource'),str)
+            candidates.append(candidate)
         return dict(name=name,revision=sha(original+(self.root/e['text']).read_bytes()+json.dumps(doc,sort_keys=True).encode()),
                     document=doc,calls=calls,analysis=script_events.semantic_summary(calls),sprite_placements=placements,
-                    text_path=e['text'])
+                    sprite_candidates=candidates,text_path=e['text'])
 
     def load(self,name):
         member,original,entry,base=self.entry(name)
@@ -208,17 +266,27 @@ class Project:
         colors=gfx.read_jasc(str(self.root/entry['palette_path']))
         palette_base=entry.get('palette_bank_base',0)
         colors=[(0,0,0)]*(palette_base*16)+colors
+        resolved_tiles=self.tile_resolutions(name)
         unresolved=[]
+        resolved_cells=[]
         for plane in document['planes']:
             for cell,word in enumerate(plane['entries']):
-                if word&1023>=count or not palette_base<=word>>12<palette_base+entry['palette_banks']:
+                tile=word&1023
+                if tile>=count and str(tile) in resolved_tiles and palette_base<=word>>12<palette_base+entry['palette_banks']:
+                    resolved_cells.append(dict(plane=plane['index'],cell=cell,word=word,
+                                               resolution=resolved_tiles[str(tile)]))
+                elif tile>=count or not palette_base<=word>>12<palette_base+entry['palette_banks']:
                     unresolved.append(dict(plane=plane['index'],cell=cell,word=word))
         dependencies=[original,tile_raw,json.dumps(colors).encode(),json.dumps(document,sort_keys=True).encode()]
-        associated=[s for s in self.scripts if s==name[:-4]+'.SPC']
+        script_associations=self.map_script_associations(name)
+        associated=[item['script'] for item in script_associations]
         return dict(name=name,revision=sha(b''.join(dependencies)),document=document,
                     tiles=[[v for row in t for v in row] for t in mapped_images.tiles_from_bytes(tile_raw)],palette=colors,
                     palette_base=palette_base,palette_banks=entry['palette_banks'],scripts=associated,
-                    source=member['path'],unresolved=unresolved,runtime_contexts=self.runtime_contexts(name),_base=original)
+                    script_associations=script_associations,
+                    source=member['path'],unresolved=unresolved,resolved_tiles=resolved_tiles,resolved_cells=resolved_cells,
+                    runtime_contexts=self.runtime_contexts(name),
+                    incoming_field_loads=self.incoming.get(name,[]),_base=original)
 
     def save(self,name,payload):
         if not isinstance(payload,dict):raise ValueError('Invalid save request')

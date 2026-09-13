@@ -5,8 +5,8 @@
 #define AT(x) __attribute__((section(".rom." x)))
 #define INVALID ScriptCmdFail
 
-extern s32 sub_0807FEE4(void);
-extern s32 sub_0807FFD0(void);
+extern s32 ScriptCmdConcatStrings(void);
+extern s32 ScriptCmdCallNative(void);
 
 AT("001AC6A8") const char gScriptBuiltinNameResurn[8] = "resurn";
 AT("001AC6B0") const char gScriptBuiltinNameExit[8] = "exit";
@@ -42,11 +42,11 @@ extern s32 ScriptNativeStringLength(void);
 extern s32 ScriptNativeLeft(void);
 extern s32 ScriptNativeRight(void);
 extern s32 ScriptNativeSubstring(void);
-extern s32 sub_080803E4(void);
-extern s32 sub_0808047C(void);
-extern s32 sub_08080420(void);
-extern s32 sub_08080430(void);
-extern s32 ScriptCommandReturn(void);
+extern s32 ScriptNativeChain(void);
+extern s32 ScriptNativeExec(void);
+extern s32 ScriptNativeCall(void);
+extern s32 ScriptNativeResurn(void);
+extern s32 ScriptNativeExit(void);
 
 /* Built-in expression functions exposed by name to compiled scripts.  The
  * original library misspells "resurn"; keep it for bytecode compatibility. */
@@ -66,11 +66,11 @@ const struct ScriptResourceEntry gScriptBuiltinFunctions[] = {
     { gScriptBuiltinNameStrleft,  (u32)ScriptNativeLeft },
     { gScriptBuiltinNameStrright, (u32)ScriptNativeRight },
     { gScriptBuiltinNameStrmid,   (u32)ScriptNativeSubstring },
-    { gScriptBuiltinNameChain,    (u32)sub_080803E4 },
-    { gScriptBuiltinNameExec,     (u32)sub_0808047C },
-    { gScriptBuiltinNameCall,     (u32)sub_08080420 },
-    { gScriptBuiltinNameExit,     (u32)ScriptCommandReturn },
-    { gScriptBuiltinNameResurn,   (u32)sub_08080430 },
+    { gScriptBuiltinNameChain,    (u32)ScriptNativeChain },
+    { gScriptBuiltinNameExec,     (u32)ScriptNativeExec },
+    { gScriptBuiltinNameCall,     (u32)ScriptNativeCall },
+    { gScriptBuiltinNameExit,     (u32)ScriptNativeExit },
+    { gScriptBuiltinNameResurn,   (u32)ScriptNativeResurn },
     { 0, 0 },
 };
 
@@ -204,7 +204,7 @@ const ScriptOpcodeHandler gScriptOpcodeHandlers[SCRIPT_OPCODE_COUNT] = {
     INVALID, /* 0x75 */
     INVALID, /* 0x76 */
     INVALID, /* 0x77 */
-    sub_0807FEE4, /* 0x78 */
+    ScriptCmdConcatStrings, /* 0x78 */
     ScriptCmdFreeString, /* 0x79 */
     INVALID, /* 0x7A */
     INVALID, /* 0x7B */
@@ -213,7 +213,7 @@ const ScriptOpcodeHandler gScriptOpcodeHandlers[SCRIPT_OPCODE_COUNT] = {
     INVALID, /* 0x7E */
     INVALID, /* 0x7F */
     /* 0x80 */
-    sub_0807FFD0, /* 0x80 */
+    ScriptCmdCallNative, /* 0x80 */
     INVALID, /* 0x81 */
     INVALID, /* 0x82 */
     INVALID, /* 0x83 */

@@ -2314,7 +2314,7 @@ sub_0806989C:
 	adds r1, r6, #0
 	movs r2, #0
 	movs r3, #0
-	bl sub_08003178
+	bl KmpLoadResource
 	ldr r1, _080698E8
 	ldr r2, _080698EC
 	adds r0, r4, #0
@@ -5203,7 +5203,7 @@ sub_0806B300:
 	adds r1, r6, #0
 	movs r2, #0
 	movs r3, #0
-	bl sub_08003178
+	bl KmpLoadResource
 	ldr r1, _0806B344
 	ldr r2, _0806B348
 	adds r0, r4, #0
@@ -6246,7 +6246,7 @@ sub_0806BA70:
 	str r3, [sp, #8]
 	movs r2, #3
 	movs r3, #0
-	bl sub_08003178
+	bl KmpLoadResource
 	ldr r3, _0806BCD4
 	adds r4, r7, r3
 	adds r0, r4, #0
@@ -10426,7 +10426,7 @@ sub_0806DF0E:
 	adds r1, r5, #0
 	movs r2, #0
 	movs r3, #0
-	bl sub_08003178
+	bl KmpLoadResource
 	adds r0, r6, #0
 	movs r1, #0
 	movs r2, #0
@@ -12806,7 +12806,7 @@ _0806F832:
 	str r2, [sp, #8]
 	movs r2, #0
 	movs r3, #0
-	bl sub_08003178
+	bl KmpLoadResource
 	ldr r2, _0806F8B0
 	adds r0, r4, r2
 	movs r2, #160
@@ -13042,7 +13042,7 @@ _0806F9A0:
 	adds r1, r5, #0
 	movs r2, #0
 	movs r3, #0
-	bl sub_08003178
+	bl KmpLoadResource
 	adds r0, r4, #0
 	movs r1, #0
 	movs r2, #0

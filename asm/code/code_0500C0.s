@@ -5997,7 +5997,7 @@ _08052754:
 	str r6, [sp, #8]
 	movs r2, #0
 	movs r3, #0
-	bl sub_08003178
+	bl KmpLoadResource
 	ldr r4, _080527A4
 	adds r0, r4, #0
 	movs r1, #0
@@ -8739,7 +8739,7 @@ sub_080537D8:
 	str r1, [sp, #8]
 	ldr r1, _080538CC
 	movs r2, #2
-	bl sub_08003178
+	bl KmpLoadResource
 	ldr r0, _080538D0
 	lsls r4, r4, #16
 	mov r8, r4
@@ -12233,7 +12233,7 @@ sub_080552FE:
 	mov r1, r8
 	movs r2, #0
 	movs r3, #0
-	bl sub_08003178
+	bl KmpLoadResource
 	ldr r2, _08055360
 	adds r0, r4, #0
 	movs r1, #0
@@ -12247,7 +12247,7 @@ sub_080552FE:
 	str r5, [sp, #4]
 	str r6, [sp, #8]
 	movs r3, #0
-	bl sub_08003178
+	bl KmpLoadResource
 	add sp, #12
 	pop {r3}
 	mov r8, r3
@@ -12577,7 +12577,7 @@ sub_0805551C:
 	str r2, [sp, #8]
 	movs r2, #1
 	movs r3, #0
-	bl sub_08003178
+	bl KmpLoadResource
 	movs r0, #0
 	mov r10, r0
 	ldr r1, _08055590

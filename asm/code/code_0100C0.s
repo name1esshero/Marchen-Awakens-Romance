@@ -2614,7 +2614,7 @@ _08011736:
 	adds r0, r2, #0
 	ldr r1, _08011748
 	movs r2, #3
-	bl sub_08003178
+	bl KmpLoadResource
 	add sp, #12
 	pop {r0}
 	bx r0
@@ -3247,7 +3247,7 @@ _080122A0:
 	add r0, sp, #12
 	adds r1, r5, #0
 	movs r3, #0
-	bl sub_08003178
+	bl KmpLoadResource
 	ldr r1, [r4, #0]
 	lsls r0, r1, #6
 	subs r0, r0, r1
@@ -3280,42 +3280,7 @@ _080122F4:
 
 @ 0122F8..012318 is decompiled as ScriptNativeFieldSet(); see src/decompiled.json
 
-	.section .rom.00012318, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_08012318
-sub_08012318:
-	push {r4, r5, lr}
-	adds r5, r2, #0
-	ldr r0, _08012344
-	ldr r1, _08012348
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	subs r1, #172
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	ldr r0, [r0, #0]
-	movs r1, #18
-	.2byte 0xF067
-	.4byte 0x1C04FFDD
-	.2byte 0xF7F4
-	.byte 0x60
-	.byte 0xFB
-	str r4, [r5, #0]
-	movs r0, #1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _08012344
-_08012344:
-	.4byte 0x03000000  @ IWRAM
-	.global _08012348
-_08012348:
-	.4byte 0x00003FDC
+@ 012318..01234C is decompiled as ScriptNativeFieldGet(); see src/decompiled.json
 
 @ 01234C..012364 is decompiled as ScriptNativeSetRuntimePair(); see src/decompiled.json
 
@@ -5021,7 +4986,7 @@ _0801390C:
 	ldrsh r2, [r2, r4]
 	ldr r3, [sp, #56]
 	adds r3, #64
-	bl sub_08018D10
+	bl MapAttributeProbeDirection
 	adds r1, r0, #0
 	str r1, [sp, #44]
 	movs r5, #180
@@ -5229,7 +5194,7 @@ sub_08013A78:
 	ldr r4, [sp, #56]
 	adds r4, #64
 	adds r3, r4, #0
-	bl sub_08018D10
+	bl MapAttributeProbeDirection
 	str r0, [sp, #44]
 	.2byte 0xF7F2
 	.byte 0xC4
@@ -5490,7 +5455,7 @@ _08013C20:
 	movs r5, #2
 	ldrsh r2, [r3, r5]
 	adds r3, r4, #0
-	bl sub_08018DA4
+	bl MapGenerationSetProbeDirection
 	bl sub_08014DE4
 	.global _08013C40
 _08013C40:

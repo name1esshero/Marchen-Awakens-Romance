@@ -616,7 +616,7 @@ sub_0805849C:
 	adds r1, r6, #0
 	movs r2, #0
 	movs r3, #0
-	bl sub_08003178
+	bl KmpLoadResource
 	ldr r1, _080584E4
 	ldr r2, _080584E8
 	adds r0, r4, #0
@@ -1777,7 +1777,7 @@ sub_08058C3C:
 	ldr r3, [sp, #8]
 	lsrs r5, r0, #32
 	ldr r0, _08059014
-	bl sub_08003410
+	bl KmpGetCompressedTileAllocationSize
 	adds r1, r0, #0
 	ldr r0, _08059018
 	add r0, r8
@@ -5318,7 +5318,7 @@ sub_08059F60:
 	adds r1, r6, #0
 	movs r2, #0
 	movs r3, #0
-	bl sub_08003178
+	bl KmpLoadResource
 	ldr r1, _0805A010
 	ldr r2, _0805A014
 	adds r0, r4, #0
@@ -7496,7 +7496,7 @@ sub_0805ADC0:
 	str r3, [sp, #4]
 	movs r2, #3
 	str r2, [sp, #8]
-	bl sub_08003178
+	bl KmpLoadResource
 	ldr r3, _0805B00C
 	adds r6, r7, r3
 	adds r0, r6, #0
@@ -11349,7 +11349,7 @@ sub_0805C4EE:
 	adds r1, r6, #0
 	movs r2, #0
 	movs r3, #0
-	bl sub_08003178
+	bl KmpLoadResource
 	ldr r1, _0805C568
 	ldr r2, _0805C56C
 	adds r0, r4, #0
@@ -11431,7 +11431,7 @@ sub_0805C570:
 	str r2, [sp, #8]
 	movs r2, #1
 	movs r3, #0
-	bl sub_08003178
+	bl KmpLoadResource
 	movs r3, #0
 	mov r8, r3
 	movs r4, #230
@@ -14665,7 +14665,7 @@ sub_0805DC88:
 	adds r1, r5, #0
 	movs r2, #0
 	movs r3, #0
-	bl sub_08003178
+	bl KmpLoadResource
 	ldr r2, _0805DCE0
 	adds r0, r6, #0
 	movs r1, #0
@@ -17139,7 +17139,7 @@ sub_0805EF14:
 	str r2, [sp, #8]
 	movs r2, #0
 	movs r3, #0
-	bl sub_08003178
+	bl KmpLoadResource
 	ldr r0, _0805F180
 	ldr r2, _0805F184
 	movs r1, #0
@@ -17552,7 +17552,7 @@ sub_0805F1F8:
 	movs r2, #3
 	str r2, [sp, #8]
 	movs r2, #1
-	bl sub_08003178
+	bl KmpLoadResource
 	ldr r1, _0805F478
 	ldr r2, _0805F47C
 	ldr r0, _0805F480
@@ -18214,7 +18214,7 @@ sub_0805F6B8:
 	str r7, [sp, #8]
 	movs r2, #3
 	movs r3, #0
-	bl sub_08003178
+	bl KmpLoadResource
 	ldr r1, _0805F818
 	adds r0, r4, r1
 	ldr r0, [r0, #0]

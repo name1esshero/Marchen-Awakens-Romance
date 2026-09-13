@@ -8,7 +8,9 @@ const {chromium} = require(process.env.MAR_PLAYWRIGHT_MODULE || 'playwright-core
     const output = path.resolve('build/map-editor-demo');
     fs.mkdirSync(output, {recursive: true});
     fs.rmSync(path.join(output, 'frames.json'), {force: true});
-    const browser = await chromium.launch({headless: true});
+    const launch={headless:true};
+    if(process.env.MAR_BROWSER_EXECUTABLE)launch.executablePath=process.env.MAR_BROWSER_EXECUTABLE;
+    const browser = await chromium.launch(launch);
     const frames = [];
     const errors = [];
     try {
@@ -20,6 +22,11 @@ const {chromium} = require(process.env.MAR_PLAYWRIGHT_MODULE || 'playwright-core
             const state = await page.evaluate(() => ({
                 status: document.querySelector('#status')?.textContent,
                 map: document.querySelector('#maps')?.value,
+                mode: document.body.dataset.mode,
+                script: typeof script !== 'undefined' ? script?.name : null,
+                previewFrame: typeof playback !== 'undefined' ? playback.frame : null,
+                actorY: typeof playback !== 'undefined' && playback.actors[0]
+                    ? actorCoordinate(playback.actors[0], 'y', playback.frame) : null,
                 scrollX: document.querySelector('#map-scroll')?.scrollLeft,
                 scrollY: document.querySelector('#map-scroll')?.scrollTop,
             }));
@@ -40,30 +47,41 @@ const {chromium} = require(process.env.MAR_PLAYWRIGHT_MODULE || 'playwright-core
             offline: false, latency: 0, downloadThroughput: -1, uploadThroughput: -1,
         });
         await page.waitForFunction(() => typeof map !== 'undefined' && map && !busy);
-        await capture(1000);
-        const box = await page.locator('#map-scroll').boundingBox();
-        await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
-        for (let i = 0; i < 12; i++) {
-            await page.locator('#map-scroll').evaluate(el => el.scrollBy(0, 30));
-            await page.waitForTimeout(100);
-            await capture();
+        await capture(700);
+
+        // Open a different real field, then demonstrate the four persistent
+        // editing pages without substituting or fabricating page contents.
+        await page.locator('#maps').selectOption('MAP04_A.KMP');
+        await page.waitForFunction(() => map?.name === 'MAP04_A.KMP' && !busy);
+        await page.locator('#fit-map').click();await capture(700);
+        for (const mode of ['collision','connections','map','events']) {
+            await page.locator(`#modes button[data-mode="${mode}"]`).click();
+            await page.waitForTimeout(120);await capture(450);
         }
-        await capture(600);
-        for (let i = 0; i < 10; i++) {
-            await page.locator('#map-scroll').evaluate(el => el.scrollBy(30, 0));
-            await page.waitForTimeout(100);
-            await capture();
+
+        // EV_ICE02 contains the only currently proven sequence combining a
+        // literal initial position and literal SprMove target. Keep its actor
+        // in view and use the real Play control to record the 32-frame move.
+        await page.locator('#scripts').selectOption('EV_ICE02.SPC');
+        await page.waitForFunction(() => script?.name === 'EV_ICE02.SPC' && !busy);
+        await page.locator('#zoom').selectOption('1');
+        await page.locator('#map-scroll').evaluate(el => {el.scrollLeft=620;el.scrollTop=1660;});
+        await capture(700);
+        await page.locator('#preview-speed').selectOption('0.5');
+        await page.locator('#preview-play').click();
+        await page.waitForTimeout(50);await page.locator('#preview-pause').click();
+        for (let frame=0;frame<=32;frame+=4) {
+            await page.locator('#preview-time').fill(String(frame));
+            await page.locator('#preview-time').dispatchEvent('input');
+            await capture(110);
         }
-        await capture(600);
-        for (let i = 0; i < 12; i++) {
-            await page.locator('#map-scroll').evaluate(el => el.scrollBy(-30, -30));
-            await page.waitForTimeout(100);
-            await capture();
-        }
-        await capture(1000);
+        await capture(800);
         if (errors.length) throw Error(errors.join('\n'));
-        if (!frames.some(f => f.scrollX > 0) || !frames.some(f => f.scrollY > 0))
-            throw Error('Recording did not capture both scroll directions');
+        for (const mode of ['map','collision','events','connections'])
+            if (!frames.some(frame => frame.mode === mode)) throw Error(`Recording missed ${mode} page`);
+        const actorPositions=frames.map(frame=>frame.actorY).filter(Number.isFinite);
+        if (new Set(actorPositions.map(Math.round)).size < 2)
+            throw Error('Recording did not capture sprite movement');
         fs.writeFileSync(path.join(output, 'frames.json'), JSON.stringify({
             source: 'Unmodified Chromium page screenshots of the running map editor',
             viewport: {width: 1360, height: 900}, initialNetworkLatencyMs: 800, errors, frames,

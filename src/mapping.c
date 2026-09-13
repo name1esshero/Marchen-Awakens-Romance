@@ -102,15 +102,79 @@ extern void sub_08070140(void *state);
 extern void sub_0807017C(void *state, u32 a, u32 b);
 extern u32 Random(void);
 extern void sub_08070238(void *state, u32 value, u32 random);
-extern s32 sub_08070D60(void *state);
 extern void sub_08070DA8(void *state, s32 a, s32 b);
-extern s32 sub_08070D84(void *state);
 extern void sub_08070F80(void *state, s32 value);
-extern void sub_08071088(s32 value);
-extern s32 sub_080710A4(void);
 extern void sub_08070214(void *state, u32 value);
 extern s32 GameStateGetField4258(void);
 extern void GameStateSetField4258(s32 value);
+
+AT("00070EEC")
+struct GeneratedMapRuntimeRoom *GeneratedMapFindRuntimeRoom(s32 roomIndex)
+{
+    struct GeneratedMapRuntimeRoom *room;
+    s32 i;
+
+    room = (struct GeneratedMapRuntimeRoom *)
+        ((u8 *)GameStateGetBuffer38C0() + 24);
+    for (i = 0; i <= 63; room++, i++) {
+        if (room->active != 0 && room->roomIndex == roomIndex)
+            return room;
+    }
+    return 0;
+}
+AT("00070EEC") const u8 GeneratedMapFindRuntimeRoomTail[2] = {0, 0};
+
+AT("00070D60")
+s32 GeneratedMapGetCurrentRoomProperty14(struct GeneratedFieldMap *map)
+{
+    struct GeneratedMapRoomRecord * volatile *rooms = &map->rooms;
+    u32 roomOffset = map->cellRoomIndices[map->currentCell];
+    roomOffset *= sizeof(struct GeneratedMapRoomRecord);
+    return *(s32 *)((u8 *)*rooms + roomOffset + 20);
+}
+
+AT("00070D84")
+s32 GeneratedMapGetCurrentRoomProperty18(struct GeneratedFieldMap *map)
+{
+    struct GeneratedMapRoomRecord * volatile *rooms = &map->rooms;
+    u32 roomOffset = map->cellRoomIndices[map->currentCell];
+    roomOffset *= sizeof(struct GeneratedMapRoomRecord);
+    return *(s32 *)((u8 *)*rooms + roomOffset + 24);
+}
+
+AT("0007106C")
+void GeneratedMapSetParameter10(s32 value)
+{
+    ((struct GeneratedFieldMap *)GameStateGetBuffer38C0())->parameter10 = value;
+}
+
+AT("0007107C")
+s32 GeneratedMapGetParameter10(void)
+{
+    return ((struct GeneratedFieldMap *)GameStateGetBuffer38C0())->parameter10;
+}
+
+AT("00071088")
+void GeneratedMapSetCurrentRoomFlag(s32 value)
+{
+    struct GeneratedFieldMap *map = GameStateGetBuffer38C0();
+    struct GeneratedMapRuntimeRoom *room =
+        GeneratedMapFindRuntimeRoom(map->currentCell);
+
+    if (room != 0)
+        room->scriptFlag = value;
+}
+AT("00071088") const u8 GeneratedMapSetCurrentRoomFlagTail[2] = {0, 0};
+
+AT("000710A4")
+s32 GeneratedMapGetCurrentRoomFlag(void)
+{
+    struct GeneratedFieldMap *map = GameStateGetBuffer38C0();
+    struct GeneratedMapRuntimeRoom *room =
+        GeneratedMapFindRuntimeRoom(map->currentCell);
+    return room->scriptFlag;
+}
+AT("000710A4") const u8 GeneratedMapGetCurrentRoomFlagTail[2] = {0, 0};
 
 AT("000124B0") s32 ScriptNativeMapSetValue08(u32 count, const s32 *args, s32 *result)
 {
@@ -185,7 +249,7 @@ AT("00012570") const u8 ScriptNativeMapRandomizeTail[2] = {0};
 
 AT("00012594") s32 ScriptNativeMapQueryD60(u32 count, const s32 *args, s32 *result)
 {
-    *result = sub_08070D60(GameStateGetBuffer38C0());
+    *result = GeneratedMapGetCurrentRoomProperty14(GameStateGetBuffer38C0());
     return 1;
 }
 AT("00012594") const u8 ScriptNativeMapQueryD60Tail[2] = {0};
@@ -198,7 +262,7 @@ AT("000125AC") s32 ScriptNativeMapClearDState(u32 count, const s32 *args, s32 *r
 
 AT("000125C0") s32 ScriptNativeMapQueryD84(u32 count, const s32 *args, s32 *result)
 {
-    *result = sub_08070D84(GameStateGetBuffer38C0());
+    *result = GeneratedMapGetCurrentRoomProperty18(GameStateGetBuffer38C0());
     return 1;
 }
 AT("000125C0") const u8 ScriptNativeMapQueryD84Tail[2] = {0};
@@ -224,14 +288,14 @@ AT("00012604") s32 ScriptNativeMapGetSeed(u32 count, const s32 *args, s32 *resul
 
 AT("00012618") s32 ScriptNativeMapCall1088(u32 count, const s32 *args, s32 *result)
 {
-    sub_08071088(args[0]);
+    GeneratedMapSetCurrentRoomFlag(args[0]);
     return 1;
 }
 AT("00012618") const u8 ScriptNativeMapCall1088Tail[2] = {0};
 
 AT("00012628") s32 ScriptNativeMapQuery10A4(u32 count, const s32 *args, s32 *result)
 {
-    *result = sub_080710A4();
+    *result = GeneratedMapGetCurrentRoomFlag();
     return 1;
 }
 AT("00012628") const u8 ScriptNativeMapQuery10A4Tail[2] = {0};

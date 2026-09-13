@@ -8372,8 +8372,8 @@ _0807F37A:
 
 	.thumb_func
 	.thumb
-	.global sub_0807FEE4
-sub_0807FEE4:
+	.global ScriptCmdConcatStrings
+ScriptCmdConcatStrings:
 	push {r4, r5, r6, r7, lr}
 	mov r7, r9
 	mov r6, r8
@@ -8494,8 +8494,8 @@ _0807FF9C:
 
 	.thumb_func
 	.thumb
-	.global sub_0807FFD0
-sub_0807FFD0:
+	.global ScriptCmdCallNative
+ScriptCmdCallNative:
 	push {r4, r5, r6, r7, lr}
 	mov r7, r8
 	push {r7}

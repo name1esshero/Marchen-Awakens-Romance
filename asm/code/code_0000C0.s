@@ -6154,8 +6154,8 @@ _080030EC:
 
 	.thumb_func
 	.thumb
-	.global sub_08003178
-sub_08003178:
+	.global KmpLoadResource
+KmpLoadResource:
 	push {r4, r5, r6, r7, lr}
 	mov r7, r10
 	mov r6, r9
@@ -6201,7 +6201,6 @@ sub_08003178:
 	lsls r2, r2, #5
 	adds r1, r5, #0
 	bl CpuCopy
-	.global _080031D2
 _080031D2:
 	movs r0, #2
 	ands r6, r0
@@ -6226,23 +6225,15 @@ _080031D2:
 	cmp r0, #0
 	beq _0800320C
 	mov r0, r10
-
-	.thumb_func
-	.thumb
-	.global sub_08003200
-sub_08003200:
 	adds r1, r5, #0
 	.2byte 0xF7FE
 	.4byte 0xE005FFA1
-	.global _08003208
 _08003208:
-	.4byte 0x08086A54  @ ROM+0x86A54
-	.global _0800320C
+	.4byte 0x08086A54
 _0800320C:
 	mov r0, r10
 	adds r1, r5, #0
 	bl CpuCopy
-	.global _08003214
 _08003214:
 	mov r2, r8
 	lsls r4, r2, #6
@@ -6287,21 +6278,20 @@ _08003214:
 	bx r0
 	.byte 0x00
 	.byte 0x00
-	.global _0800326C
 _0800326C:
-	.4byte 0x03003BC4  @ IWRAM+0x3BC4
-	.global _08003270
+	.4byte 0x03003BC4
 _08003270:
 	.4byte 0xFFFFCC9C
-	.global _08003274
 _08003274:
 	.4byte 0xFFFFC43C
-	.global _08003278
 _08003278:
 	.4byte 0x00003BD0
-	.global _0800327C
 _0800327C:
 	.4byte 0x00003BD2
+
+@ 003178..003280 has a readable near-matching C reconstruction in
+@ src/kmp_loader.c; the original assembly remains until its final register
+@ allocation difference is resolved.
 
 @ 003280..003294 is decompiled as KmpSetClip(); see src/decompiled.json
 
@@ -6420,32 +6410,11 @@ _080033BA:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_08003410
-sub_08003410:
-	push {r4, lr}
-	adds r1, r0, #0
-	ldr r4, _08003434
-	adds r0, r4, #0
-	.2byte 0xF077
-	.byte 0x10
-	.byte 0xFC
-	adds r1, r0, #0
-	adds r1, #28
-	adds r0, r4, #0
-	.2byte 0xF077
-	.4byte 0x6800FC0B
-	lsrs r0, r0, #8
-	adds r0, #16
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _08003434
-_08003434:
-	.4byte 0x08086A54  @ ROM+0x86A54
+
+@ 003410..003438 is decompiled as KmpGetCompressedTileAllocationSize();
+@ see src/decompiled.json
+	.section .rom.00003438, "ax"
+	.syntax unified
 	.4byte 0x4647B5F0
 	.4byte 0xB082B480
 	.4byte 0x9C091C1D

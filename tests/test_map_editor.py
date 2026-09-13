@@ -52,15 +52,23 @@ class MapCodecTests(unittest.TestCase):
         data=Project(ROOT).script_data('MAP01_A.SPC')
         sprite=next(item for item in data['sprite_placements'] if item['resource']=='PS_WK02')
         self.assertEqual((sprite['x'],sprite['y']),(200,412))
+        self.assertIsInstance(sprite['x_argument_offset'],int)
+        self.assertIsInstance(sprite['y_argument_offset'],int)
         self.assertTrue(sprite['preview']['image'].startswith('data:image/png;base64,'))
+        self.assertTrue(sprite['preview']['frames'])
+        self.assertTrue(all(frame['duration']>0 for frame in sprite['preview']['frames']))
+        candidate=next(item for item in data['sprite_candidates'] if item['resource']=='PS_WK02')
+        self.assertTrue(candidate['placed'])
+        self.assertTrue(candidate['preview']['image'].startswith('data:image/png;base64,'))
 
     def test_all_maps_and_traced_scenes_round_trip(self):
         project=Project(ROOT);catalog=project.catalog()
         self.assertGreaterEqual(len(catalog['maps']),49);self.assertFalse(catalog['unsupported'])
-        for name in ('PW_BG01.KMP','PW_BOX.KMP'):
+        for name in ('MAP27_A.KMP','PW_BG01.KMP','PW_BOX.KMP'):
             data=project.load(name)
-            self.assertEqual(len(data['runtime_contexts']),1)
-            self.assertTrue(data['unresolved'])
+            self.assertFalse(data['unresolved'])
+            self.assertTrue(data['resolved_cells'])
+            self.assertTrue(all(cell['resolution']['kind']=='transparent' for cell in data['resolved_cells']))
         for item in catalog['maps']:
             with self.subTest(map=item['name']):
                 data=project.load(item['name'])
@@ -89,6 +97,29 @@ class MapCodecTests(unittest.TestCase):
         catalog=project.catalog()
         self.assertEqual(catalog['script_totals']['field_loads'],113)
         self.assertTrue(any(m['incoming_field_loads'] for m in catalog['maps']))
+
+    def test_script_chain_exposes_dorothy_event_resources(self):
+        project=Project(ROOT)
+        parent=project.script_data('CH_M01_3.SPC')
+        links={link['script'] for link in parent['analysis']['script_links']}
+        self.assertIn('EV_BA03.SPC',links)
+        child=project.script_data('EV_BA03.SPC')
+        names={item['display_name'] for item in child['sprite_candidates']}
+        self.assertIn('Dorothy (moving)',names)
+
+    def test_numbered_map_exposes_companion_spawn_and_character_scripts(self):
+        data=Project(ROOT).load('MAP01_3A.KMP')
+        relations={item['script']:item for item in data['script_associations']}
+        self.assertEqual(relations['MAP01_3A.SPC']['confidence'],'verified')
+        self.assertEqual(relations['SP_M01_3.SPC']['relation'],'spawn')
+        self.assertEqual(relations['CH_M01_3.SPC']['relation'],'character_event')
+        self.assertEqual(relations['CH_M01_3.SPC']['confidence'],'inferred')
+
+    def test_loaded_map_exposes_incoming_field_dependencies(self):
+        data=Project(ROOT).load('MAP00_A.KMP')
+        self.assertTrue(data['incoming_field_loads'])
+        self.assertTrue(all(link['destination']=='MAP00_A' for link in data['incoming_field_loads']))
+        self.assertIn('OPEN.SPC',data['scripts'])
 
     def test_tiles_attributes_preserve_every_other_byte(self):
         blob=(ROOT/'maps/nfp/MAP01_A.KMP.bin').read_bytes();doc=map_document(blob)

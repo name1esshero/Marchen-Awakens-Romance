@@ -108,6 +108,12 @@
     "file": "src/entity.c"
   },
   {
+    "addr": "08003410",
+    "size": 40,
+    "name": "KmpGetCompressedTileAllocationSize",
+    "file": "src/kmp_loader.c"
+  },
+  {
     "addr": "08003770",
     "size": 20,
     "name": "HeapFreeDefault",
@@ -2004,6 +2010,12 @@
     "file": "src/map_native.c"
   },
   {
+    "addr": "08012318",
+    "size": 52,
+    "name": "ScriptNativeFieldGet",
+    "file": "src/map_native.c"
+  },
+  {
     "addr": "0801234C",
     "size": 24,
     "name": "ScriptNativeSetRuntimePair",
@@ -2494,6 +2506,18 @@
     "size": 196,
     "name": "HitRegionTest",
     "file": "src/hit_region.c"
+  },
+  {
+    "addr": "08018D10",
+    "size": 148,
+    "name": "MapAttributeProbeDirection",
+    "file": "src/map_attributes.c"
+  },
+  {
+    "addr": "08018DA4",
+    "size": 140,
+    "name": "MapGenerationSetProbeDirection",
+    "file": "src/map_attributes.c"
   },
   {
     "addr": "08018E30",
@@ -4192,6 +4216,48 @@
     "size": 24,
     "name": "ClearBattleRuntimeBuffer",
     "file": "src/simple_adapters.c"
+  },
+  {
+    "addr": "08070D60",
+    "size": 36,
+    "name": "GeneratedMapGetCurrentRoomProperty14",
+    "file": "src/mapping.c"
+  },
+  {
+    "addr": "08070D84",
+    "size": 36,
+    "name": "GeneratedMapGetCurrentRoomProperty18",
+    "file": "src/mapping.c"
+  },
+  {
+    "addr": "08070EEC",
+    "size": 52,
+    "name": "GeneratedMapFindRuntimeRoom",
+    "file": "src/mapping.c"
+  },
+  {
+    "addr": "0807106C",
+    "size": 16,
+    "name": "GeneratedMapSetParameter10",
+    "file": "src/mapping.c"
+  },
+  {
+    "addr": "0807107C",
+    "size": 12,
+    "name": "GeneratedMapGetParameter10",
+    "file": "src/mapping.c"
+  },
+  {
+    "addr": "08071088",
+    "size": 28,
+    "name": "GeneratedMapSetCurrentRoomFlag",
+    "file": "src/mapping.c"
+  },
+  {
+    "addr": "080710A4",
+    "size": 24,
+    "name": "GeneratedMapGetCurrentRoomFlag",
+    "file": "src/mapping.c"
   },
   {
     "addr": "08071DD4",
@@ -6528,10 +6594,34 @@
     "file": "src/script_native.c"
   },
   {
+    "addr": "080803E4",
+    "size": 60,
+    "name": "ScriptNativeChain",
+    "file": "src/script_native.c"
+  },
+  {
+    "addr": "08080420",
+    "size": 16,
+    "name": "ScriptNativeCall",
+    "file": "src/script_native.c"
+  },
+  {
+    "addr": "08080430",
+    "size": 44,
+    "name": "ScriptNativeResurn",
+    "file": "src/script_native.c"
+  },
+  {
     "addr": "0808045C",
     "size": 32,
-    "name": "ScriptCommandReturn",
+    "name": "ScriptNativeExit",
     "file": "src/script_tasks.c"
+  },
+  {
+    "addr": "0808047C",
+    "size": 64,
+    "name": "ScriptNativeExec",
+    "file": "src/script_native.c"
   },
   {
     "addr": "080804EC",

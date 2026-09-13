@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "limitation": "Traced loader calls, not a complete scene or VRAM-state decoder. Out-of-resource tiles remain unresolved.",
+  "limitation": "Traced loader calls, not a complete scene or VRAM-state decoder. Context-specific external blank tiles are documented separately in maps/tile_resolutions.json.",
   "scenes": [
     {
       "id": "pw_screen",

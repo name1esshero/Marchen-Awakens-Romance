@@ -6,7 +6,8 @@ const fs=require('fs');const assert=require('assert');
  const session=JSON.parse(fs.readFileSync(process.argv[2]));
  assert.equal(session.isolated_fixture,true,'Only run mutations against the isolated browser fixture');
  const output=require('path').resolve(__dirname,'../reports/maps');
- const browser=await chromium.launch({headless:true});
+ const launch={headless:true};if(process.env.MAR_BROWSER_EXECUTABLE)launch.executablePath=process.env.MAR_BROWSER_EXECUTABLE;
+ const browser=await chromium.launch(launch);
  try{
   const page=await browser.newPage({viewport:{width:1500,height:1000}});
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
@@ -22,12 +23,15 @@ const fs=require('fs');const assert=require('assert');
   await page.mouse.wheel(0,120);await page.waitForFunction(()=>document.querySelector('#zoom').value==='2');
   for(let i=0;i<4;i++){await page.mouse.wheel(0,-120);await page.waitForTimeout(100);}
   assert.equal(await page.locator('#zoom').inputValue(),'4');
-  for(let i=0;i<5;i++){await page.mouse.wheel(0,120);await page.waitForTimeout(100);}
-  assert.equal(await page.locator('#zoom').inputValue(),'1');
+  for(let i=0;i<20;i++){await page.mouse.wheel(0,120);await page.waitForTimeout(50);}
+  assert.equal(await page.locator('#zoom').inputValue(),'0.03125');
   assert.equal(await page.evaluate(()=>dirty),false);
   const tilesBox=await page.locator('#tiles-scroll').boundingBox();await page.mouse.move(tilesBox.x+10,tilesBox.y+10);
   await page.mouse.wheel(0,120);await page.waitForTimeout(100);
-  assert.equal(await page.locator('#zoom').inputValue(),'1');
+  assert.equal(await page.locator('#zoom').inputValue(),'0.03125');
+  await page.locator('#fit-map').click();
+  const fitted=await page.evaluate(()=>{const viewport=document.querySelector('#map-scroll'),canvas=document.querySelector('#map');return {fits:canvas.width<=viewport.clientWidth&&canvas.height<=viewport.clientHeight,zoom:document.querySelector('#zoom').value};});
+  assert(fitted.fits);assert(Number(fitted.zoom)>=0.03125);
   await page.locator('#zoom').selectOption('2');
   await page.evaluate(()=>{window.scrollTo(0,0);const el=document.querySelector('#map-scroll');el.scrollLeft=0;el.scrollTop=0;});
   const initial=await page.evaluate(()=>map.document.planes[0].entries[0]);
@@ -41,9 +45,10 @@ const fs=require('fs');const assert=require('assert');
   let saved=JSON.parse(fs.readFileSync(session.root+'/maps/editable/MAP01_A.KMP.json'));assert.equal(saved.planes[0].entries[0]&1023,tile);
   await page.locator('#reload').click();await page.waitForFunction(()=>document.querySelector('#script-info').textContent.includes('literal calls editable')&&!busy);
   assert.equal((await page.evaluate(()=>map.document.planes[0].entries[0]))&1023,tile);
-  await page.locator('#layer').selectOption('attributes');await page.locator('#attribute').fill('7');await page.locator('#map').click({position:{x:8,y:8}});
+  await page.locator('#modes button[data-mode="collision"]').click();await page.locator('#attribute').fill('7');await page.locator('#map').click({position:{x:8,y:8}});
   await page.locator('#save').click();await page.waitForFunction(()=>document.querySelector('#status').textContent.startsWith('Saved editable'));
   saved=JSON.parse(fs.readFileSync(session.root+'/maps/editable/MAP01_A.KMP.json'));assert.equal(saved.attributes.entries[0],7);
+  await page.locator('#modes button[data-mode="events"]').click();
   const index=await page.evaluate(()=>script.calls.findIndex(c=>c.function==='SprSet'&&c.editable&&c.arguments.map(a=>a.value).join(',')==='1,0,256'));
   assert(index>=0);await page.locator('#calls').selectOption(String(index));
   assert((await page.locator('#arguments').textContent()).includes('X (pixels, signed 16-bit)'));
@@ -78,12 +83,11 @@ const fs=require('fs');const assert=require('assert');
   // Undo restores data but keeps the conservative unsaved flag.
   page.once('dialog',dialog=>dialog.accept());
   await page.locator('#maps').selectOption('MAP27_A.KMP');await page.waitForFunction(()=>map?.name==='MAP27_A.KMP'&&!busy);
-  const unresolved=await page.evaluate(()=>map.unresolved.length);assert(unresolved>0);
-  assert((await page.locator('#status').textContent()).includes('unresolved'));
-  const marked=await page.evaluate(()=>{const c=map.unresolved[0].cell,x=(c%map.document.width*8+2)*Number(document.querySelector('#zoom').value),y=(Math.floor(c/map.document.width)*8+5)*Number(document.querySelector('#zoom').value);return Array.from(document.querySelector('#map').getContext('2d').getImageData(x,y,1,1).data);});
-  assert.deepEqual(marked,[189,50,110,255]);
+  const unresolved=await page.evaluate(()=>map.unresolved.length);assert.equal(unresolved,0);
+  const resolved=await page.evaluate(()=>map.resolved_cells.length);assert.equal(resolved,1);
+  assert((await page.locator('#status').textContent()).includes('resolved'));
   assert.deepEqual(errors,[]);
-  const proof={sprite_coordinate_guide:true,sprite_guide_edit_undo:true,sprite_coordinate_labels:true,wheel_zoom:true,cursor_anchor:true,zoom_limits:true,wheel_outside_viewport:true,tile_paint:true,undo_redo:true,save_reload:true,attribute_save:true,event_save:true,hit_rectangle_preview:true,hit_labels:true,hit_preview_undo:true,unresolved_cells:unresolved,page_errors:errors};
+  const proof={sprite_coordinate_guide:true,sprite_guide_edit_undo:true,sprite_coordinate_labels:true,wheel_zoom:true,cursor_anchor:true,zoom_limits:true,fit_whole_map:true,wheel_outside_viewport:true,tile_paint:true,undo_redo:true,save_reload:true,attribute_save:true,event_save:true,hit_rectangle_preview:true,hit_labels:true,hit_preview_undo:true,resolved_external_cells:resolved,unresolved_cells:unresolved,page_errors:errors};
   fs.writeFileSync(output+'/browser-proof.json',JSON.stringify(proof,null,2)+'\n');
   console.log(JSON.stringify(proof));
  }finally{await browser.close();}

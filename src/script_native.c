@@ -178,3 +178,67 @@ AT("00080380") s32 ScriptNativeSubstring(u32 count,const struct ScriptSubstringA
  return 1;
 }
 AT("00080380") const u8 ScriptNativeSubstringTail[2]={0,0};
+
+extern void ScriptPopFrame(void);
+extern void *ScriptGetParentFrame(void);
+extern u32 ScriptPopU32(void);
+extern void ScriptPushU32(u32 value);
+extern s32 ScriptResourceLoadAndInstall(const char *name, s32 argument);
+extern char *strupr(char *text);
+
+/* Replace the current script resource with another while retaining the
+ * caller's resource name. */
+AT("000803E4") s32 ScriptNativeChain(
+    u32 count, const u32 *arguments, u32 *result)
+{
+    char resourceName[20];
+
+    strcpy(resourceName, VM->state->frame->resourceName);
+    ScriptPopFrame();
+    if (ScriptResourceLoadAndInstall(resourceName, arguments[0]) != 0)
+        return -1;
+    return 1;
+}
+
+#define SCRIPT_NAME_BUFFER ((char *)0x03004F30)
+
+/* Normalize a requested script name and load it into the current frame. */
+AT("0008047C") s32 ScriptNativeExec(
+    u32 count, const u32 *arguments, u32 *result)
+{
+    char *name = SCRIPT_NAME_BUFFER;
+
+    strcpy(name, (const char *)arguments[0]);
+    strupr(name);
+    if (ScriptResourceLoadAndInstall(
+            VM->state->frame->resourceName, (s32)name) != 0)
+        return -1;
+    return 1;
+}
+AT("0008047C") const u8 ScriptNativeExecTail[2] = { 0, 0 };
+
+/* CALL is EXEC with a cleared result slot for the new invocation. */
+AT("00080420") s32 ScriptNativeCall(
+    u32 count, const u32 *arguments, u32 *result)
+{
+    *result = 0;
+    return ScriptNativeExec(count, arguments, result);
+}
+AT("00080420") const u8 ScriptNativeCallTail[2] = { 0, 0 };
+
+/* Existing bytecode calls this misspelled built-in "resurn". It removes the
+ * current frame and replaces the parent's top stack value when one exists. */
+AT("00080430") s32 ScriptNativeResurn(
+    u32 count, const u32 *arguments, u32 *result)
+{
+    if (ScriptGetParentFrame()) {
+        u32 value = arguments[0];
+        ScriptPopFrame();
+        ScriptPopU32();
+        ScriptPushU32(value);
+    } else {
+        ScriptPopFrame();
+    }
+    return 1;
+}
+AT("00080430") const u8 ScriptNativeResurnTail[2] = { 0, 0 };

@@ -13,7 +13,6 @@ union MapArgument {s32 integer; const char *string;};
 extern char *strcpy(char *,const char *);
 extern char *strcat(char *,const char *);
 extern char *strupr(char *);
-extern void sub_08003178(const char *,void *,s32,s32,s32,s32,s32);
 
 /* BgSet loads one KMP plane into the BG character block selected by the
  * viewport index, then renders that viewport at a 16.16 pixel position. */
@@ -37,7 +36,7 @@ defaultVram:
 selectedVram:
     strcpy(resource,args[3].string);
     strcat(resource,(const char *)0x08086D88);
-    sub_08003178(resource,tileDestination,args[0].integer,0,
+    KmpLoadResource(resource,tileDestination,args[0].integer,0,
                  args[1].integer,args[2].integer,3);
     view=(struct KmpViewport *)((u8 *)0x03003BC4+args[0].integer*0xFC);
     KmpRenderViewport(view,args[4].integer<<16,args[5].integer<<16);
@@ -52,19 +51,30 @@ AT("000122F8") s32 ScriptNativeFieldSet(u32 count,const union MapArgument *args,
 }
 
 extern void *HeapAlloc(void *,u32);
-#ifdef NONMATCHING
+extern u8 gIwramBase[];
+extern u8 gMapGenerationRootOffset[];
+
+/* Return a heap-owned copy of the current field basename to the script VM.
+ * The allocation comes from the game state's default heap; the caller owns
+ * the returned 18-byte buffer. */
 AT("00012318") s32 ScriptNativeFieldGet(u32 count,const s32 *args,s32 *result)
 {
-    u32 offset=0x3FDC;
-    u8 *base=(u8 *)0x03000000;
-    u8 *root=*(u8 **)(base+offset);
-    void *heap=**(void ***)(root+offset-0xAC);
-    char *name=HeapAlloc(heap,18);
+    u8 *base;
+    u32 offset;
+    u8 *root;
+    void *heap;
+    char *name;
+
+    base = gIwramBase;
+    offset = (u32)gMapGenerationRootOffset;
+    root = *(u8 **)(base + offset);
+    offset -= 0xAC;
+    heap = **(void ***)(root + offset);
+    name = HeapAlloc(heap,18);
     GameStateCopyString12F4(name);
     *result=(s32)name;
     return 1;
 }
-#endif
 AT("000121C4") s32 ScriptNativeHitInit(u32 count,const s32 *args,s32 *result)
 {
     HitRegionInit(args[0], args[1], args[2], args[3], args[4]);

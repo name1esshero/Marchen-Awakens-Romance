@@ -112,7 +112,9 @@ s32 ScriptCmdReadContextField14(void);
 s32 ScriptCmdReadContextField114(void);
 s32 ScriptCmdReadTable38Field(void);
 s32 ScriptCmdReadTable3CField(void);
+s32 ScriptCmdConcatStrings(void);
 s32 ScriptCmdFreeString(void);
+s32 ScriptCmdCallNative(void);
 s32 ScriptCmdRestoreFrameAndGetResult(void);
 s32 ScriptCmdFail(void);
 

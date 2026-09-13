@@ -8,47 +8,53 @@
 /* Sample the leading edge/corner of an actor's collision bounds. Directions
  * run clockwise: north, northeast, east, southeast, south, southwest, west,
  * northwest. Invalid directions return zero without reading the map. */
-#ifdef NONMATCHING
 AT("00018D10")
 s32 MapAttributeProbeDirection(s32 direction, s32 x, s32 y,
                                const struct HitBounds *bounds)
 {
     s32 px = (s16)x;
     s32 py = (s16)y;
+    s32 probeX;
+    s32 probeY;
 
     switch (direction) {
     case 1:
-        py += bounds->top;
+        probeX = px;
+        probeY = py + bounds->top;
         break;
     case 2:
-        px += bounds->right;
-        py += bounds->top;
+        probeX = px + bounds->right;
+        probeY = py + bounds->top;
         break;
     case 3:
-        px += bounds->right;
+        probeX = px + bounds->right;
+        probeY = py;
         break;
     case 4:
-        px += bounds->right;
-        py += bounds->bottom;
+        probeX = px + bounds->right;
+        probeY = py + bounds->bottom;
         break;
     case 5:
-        py += bounds->bottom;
+        probeX = px;
+        probeY = py + bounds->bottom;
         break;
     case 6:
-        px += bounds->left;
-        py += bounds->bottom;
+        probeX = px + bounds->left;
+        probeY = py + bounds->bottom;
         break;
     case 7:
-        px += bounds->left;
+        probeX = px + bounds->left;
+        probeY = py;
         break;
     case 8:
-        px += bounds->left;
-        py += bounds->top;
+        probeX = px + bounds->left;
+        probeY = py + bounds->top;
         break;
     default:
         return 0;
     }
-    return KmpReadAttribute((struct KmpViewport *)0x03003BC4, px, py);
+    return KmpReadAttribute((struct KmpViewport *)0x03003BC4,
+                            probeX, probeY);
 }
 
 /* Store the same directional collision probe coordinate for the procedural
@@ -59,42 +65,47 @@ void MapGenerationSetProbeDirection(s32 direction, s32 x, s32 y,
 {
     s32 px = (s16)x;
     s32 py = (s16)y;
+    s32 probeX;
+    s32 probeY;
 
     switch (direction) {
     case 1:
-        py += bounds->top;
+        probeX = px;
+        probeY = py + bounds->top;
         break;
     case 2:
-        px += bounds->right;
-        py += bounds->top;
+        probeX = px + bounds->right;
+        probeY = py + bounds->top;
         break;
     case 3:
-        px += bounds->right;
+        probeX = px + bounds->right;
+        probeY = py;
         break;
     case 4:
-        px += bounds->right;
-        py += bounds->bottom;
+        probeX = px + bounds->right;
+        probeY = py + bounds->bottom;
         break;
     case 5:
-        py += bounds->bottom;
+        probeX = px;
+        probeY = py + bounds->bottom;
         break;
     case 6:
-        px += bounds->left;
-        py += bounds->bottom;
+        probeX = px + bounds->left;
+        probeY = py + bounds->bottom;
         break;
     case 7:
-        px += bounds->left;
+        probeX = px + bounds->left;
+        probeY = py;
         break;
     case 8:
-        px += bounds->left;
-        py += bounds->top;
+        probeX = px + bounds->left;
+        probeY = py + bounds->top;
         break;
     default:
         return;
     }
-    MapGenerationSetValues00And04(px, py);
+    MapGenerationSetValues00And04(probeX, probeY);
 }
-#endif
 
 /* Store a generated connection's four signed pixel offsets. The unusual
  * argument order reflects the native caller: horizontal endpoints arrive

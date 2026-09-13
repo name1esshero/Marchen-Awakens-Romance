@@ -6,7 +6,8 @@
  * Offsets describe the 32-bit GBA ABI; unknown regions stay explicitly opaque. */
 struct ScriptFrame
 {
-    u8 unknown000[0x30];
+    u8 unknown000[0x10];
+    char resourceName[0x20];      /* active SPC/resource name */
     void *storage;                 /* 030: allocated while loading frame data */
     u16 count034, count036;
     void *table038;
@@ -40,4 +41,9 @@ u32 ScriptRunWorkBatch(void);
 s32 ScriptSetFrameFlag(u32 index);
 void ScriptSetStepBudgetUnchecked(u32 value);
 void ScriptPopFrame(void);
+s32 ScriptNativeChain(u32 count, const u32 *arguments, u32 *result);
+s32 ScriptNativeExec(u32 count, const u32 *arguments, u32 *result);
+s32 ScriptNativeCall(u32 count, const u32 *arguments, u32 *result);
+s32 ScriptNativeResurn(u32 count, const u32 *arguments, u32 *result);
+s32 ScriptNativeExit(u32 count, const u32 *arguments);
 #endif
