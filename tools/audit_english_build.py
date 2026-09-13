@@ -80,12 +80,13 @@ def main():
                 raise ValueError('Linked English background differs from PNG/map source: ' + name)
             background_spans.append((offset, offset+len(data)))
         background_sources.append(dict(name=name, overrides=overrides))
-    if not differences or any(not (any(a<=i<b for a,b in background_spans) or 0x11790<=i<0x11870 or start+tile_start<=i<end or i-start in credit_metadata or effect_start+effect_tiles<=i<effect_end) for i in differences):
-        raise ValueError('English build changed bytes outside constructor bridge and verified UI tiles')
+    if not differences or any(not (any(a<=i<b for a,b in background_spans) or 0x11790<=i<0x11870 or 0x56474<=i<0x56484 or start+tile_start<=i<end or i-start in credit_metadata or effect_start+effect_tiles<=i<effect_end) for i in differences):
+        raise ValueError('English build changed bytes outside verified text bridges and UI tiles')
     output=subprocess.check_output(['arm-none-eabi-nm','-n','build/english/mar_english.elf'],cwd=ROOT,text=True)
     symbols={fields[2]:int(fields[0],16) for line in output.splitlines() if len(fields:=line.split())==3}
     names=('EnglishDialogueStart','DialogueStartOriginal','EnglishTranslateRows',
-           'EnglishPageTask','EnglishClearPage','gEnglishRows','gEnglishRowCount')
+           'EnglishTranslateSingle','EnglishItemGetName','EnglishPageTask',
+           'EnglishClearPage','gEnglishRows','gEnglishRowCount')
     for name in names:
         if not 0x09000000<=symbols[name]<0x0A000000:raise ValueError(name+' not in English extension')
     # The extension linker script supplies ROM only. Mutable pagination state
@@ -101,10 +102,13 @@ def main():
     bridge=localized[0x11790:0x11870]
     target=symbols['EnglishDialogueStart']|1
     if struct.pack('<I',target) not in bridge:raise ValueError('Bridge lacks Thumb entry pointer')
+    item_bridge=localized[0x56474:0x56484]
+    item_target=symbols['EnglishItemGetName']|1
+    if struct.pack('<I',item_target) not in item_bridge:raise ValueError('Item-name bridge lacks Thumb entry pointer')
     mappings=json.loads((ROOT/'reports/text/english-runtime.json').read_text())
     report=dict(sha1=hashlib.sha1(localized).hexdigest(),size=len(localized),
                 original_area_differing_bytes=len(differences),
-                change_scope='Constructor bridge, independently rebuilt EFFECT and SYSTEM UI tiles and explicit English credit layouts, rebuilt startup/shop background tiles and maps; C and strings in ROM expansion',
+                change_scope='Dialogue constructor and item-name bridges, independently rebuilt EFFECT and SYSTEM UI tiles and explicit English credit layouts, rebuilt startup/shop background tiles and maps; C and strings in ROM expansion',
                 english_backgrounds=background_sources,
                 english_effect_changed_frames=effect_changed,
                 english_effect_variants=[str(p.relative_to(ROOT)) for p in sorted((ROOT/'graphics/battle/effects/frames').glob('*_en.png'))],

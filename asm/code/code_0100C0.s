@@ -4168,444 +4168,66 @@ _080124A8:
 _080124AC:
 	.4byte 0x03003BC4  @ IWRAM+0x3BC4
 
-	.thumb_func
-	.thumb
-	.global sub_080124B0
-sub_080124B0:
-	push {lr}
-	movs r0, #0
-	ldrsb r0, [r1, r0]
-	bl MapGenerationSetValue08
-	movs r0, #1
-	pop {r1}
-	bx r1
+@ 0124B0..0124C0 is decompiled as ScriptNativeMapSetValue08(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080124C0
-sub_080124C0:
-	push {lr}
-	movs r0, #0
-	ldrsb r0, [r1, r0]
-	bl MapGenerationSetValue25
-	movs r0, #1
-	pop {r1}
-	bx r1
+@ 0124C0..0124D0 is decompiled as ScriptNativeMapSetValue25(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080124D0
-sub_080124D0:
-	push {lr}
-	movs r0, #0
-	bl sub_08075984
-	movs r0, #1
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 0124D0..0124E0 is decompiled as ScriptNativeMapResetGenerator(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080124E0
-sub_080124E0:
-	push {lr}
-	movs r0, #0
-	bl sub_08009F44
-	movs r0, #0
-	movs r1, #0
-	bl RuntimeActorSetField340
-	movs r0, #0
-	bl sub_0801C820
-	movs r0, #1
-	pop {r1}
-	bx r1
+@ 0124E0..0124FC is decompiled as ScriptNativeMapResetActor(); see src/decompiled.json
+
+	.section .rom.000124FC, "ax"
+	.syntax unified
 	.4byte 0x47702001
 
-	.thumb_func
-	.thumb
-	.global sub_08012500
-sub_08012500:
-	push {r4, lr}
-	adds r4, r2, #0
-	bl MapGenerationGetPointer1C
-	lsls r0, r0, #3
-	str r0, [r4, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 012500..012514 is decompiled as ScriptNativeMapGetPointer1COffset(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012514
-sub_08012514:
-	push {r4, lr}
-	adds r4, r2, #0
-	bl MapGenerationGetPointer20
-	lsls r0, r0, #3
-	str r0, [r4, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 012514..012528 is decompiled as ScriptNativeMapGetPointer20Offset(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012528
-sub_08012528:
-	push {r4, lr}
-	adds r4, r1, #0
-	bl GameStateGetBuffer38C0
-	ldrh r1, [r4, #0]
-	ldrh r2, [r4, #4]
-	ldrh r3, [r4, #8]
-	bl sub_080700A8
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 012528..012544 is decompiled as ScriptNativeMapConfigure3(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012544
-sub_08012544:
-	push {lr}
-	.2byte 0xF05D
+@ 012544..012558 is decompiled as ScriptNativeMapRefresh(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012548
-sub_08012548:
-	.2byte 0xFDA3
-	bl sub_08070140
-	ldr r0, _08012554
-	pop {r1}
-	bx r1
-	.global _08012554
-_08012554:
-	.4byte 0x00007FFF
+@ 012558..012570 is decompiled as ScriptNativeMapConfigure2(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012558
-sub_08012558:
-	push {r4, lr}
-	adds r4, r1, #0
-	bl GameStateGetBuffer38C0
-	ldrh r1, [r4, #0]
-	ldrh r2, [r4, #4]
-	bl sub_0807017C
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 012570..012594 is decompiled as ScriptNativeMapRandomize(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012570
-sub_08012570:
-	push {r4, r5, lr}
-	adds r4, r1, #0
-	bl GameStateGetBuffer38C0
-	adds r5, r0, #0
-	ldrh r4, [r4, #0]
-	bl Random
-	adds r2, r0, #0
-	adds r0, r5, #0
-	adds r1, r4, #0
-	bl sub_08070238
-	movs r0, #1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 012594..0125AC is decompiled as ScriptNativeMapQueryD60(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012594
-sub_08012594:
-	push {r4, lr}
-	adds r4, r2, #0
-	bl GameStateGetBuffer38C0
-	bl sub_08070D60
-	str r0, [r4, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 0125AC..0125C0 is decompiled as ScriptNativeMapClearDState(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080125AC
-sub_080125AC:
-	push {lr}
-	bl GameStateGetBuffer38C0
-	movs r1, #0
-	movs r2, #0
-	bl sub_08070DA8
-	movs r0, #1
-	pop {r1}
-	bx r1
+@ 0125C0..0125D8 is decompiled as ScriptNativeMapQueryD84(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080125C0
-sub_080125C0:
-	push {r4, lr}
-	adds r4, r2, #0
-	bl GameStateGetBuffer38C0
-	bl sub_08070D84
-	str r0, [r4, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 0125D8..0125F0 is decompiled as ScriptNativeMapSetMode(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080125D8
-sub_080125D8:
-	push {r4, lr}
-	adds r4, r1, #0
-	bl GameStateGetBuffer38C0
-	ldr r1, [r4, #0]
-	bl sub_08070F80
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 0125F0..012604 is decompiled as ScriptNativeMapSetSeed(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080125F0
-sub_080125F0:
-	push {r4, lr}
-	adds r4, r1, #0
-	bl GameStateGetBuffer38C0
-	ldr r1, [r4, #0]
-	str r1, [r0, #20]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 012604..012618 is decompiled as ScriptNativeMapGetSeed(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012604
-sub_08012604:
-	push {r4, lr}
-	adds r4, r2, #0
-	bl GameStateGetBuffer38C0
-	ldr r0, [r0, #20]
-	str r0, [r4, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 012618..012628 is decompiled as ScriptNativeMapCall1088(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012618
-sub_08012618:
-	push {lr}
-	ldr r0, [r1, #0]
-	bl sub_08071088
-	movs r0, #1
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 012628..01263C is decompiled as ScriptNativeMapQuery10A4(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012628
-sub_08012628:
-	push {r4, lr}
-	adds r4, r2, #0
-	bl sub_080710A4
-	str r0, [r4, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 01263C..012658 is decompiled as ScriptNativeMapGetField618(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0801263C
-sub_0801263C:
-	push {r4, lr}
-	adds r4, r2, #0
-	bl GameStateGetBuffer38C0
-	movs r1, #195
-	lsls r1, r1, #3
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	str r0, [r4, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 012658..01266C is decompiled as ScriptNativeMapSetField10(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012658
-sub_08012658:
-	push {r4, lr}
-	adds r4, r1, #0
-	bl GameStateGetBuffer38C0
-	ldr r1, [r4, #0]
-	str r1, [r0, #16]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 01266C..012680 is decompiled as ScriptNativeMapGetField10(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0801266C
-sub_0801266C:
-	push {r4, lr}
-	adds r4, r2, #0
-	bl GameStateGetBuffer38C0
-	ldr r0, [r0, #16]
-	str r0, [r4, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 012680..0126A0 is decompiled as ScriptNativeMapGetField624(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012680
-sub_08012680:
-	push {r4, lr}
-	adds r4, r2, #0
-	bl GameStateGetBuffer38C0
-	ldr r1, _0801269C
-	adds r0, r0, r1
-	movs r1, #0
-	ldrsh r0, [r0, r1]
-	str r0, [r4, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _0801269C
-_0801269C:
-	.4byte 0x00000624
+@ 0126A0..0126BC is decompiled as ScriptNativeMapSetField624(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080126A0
-sub_080126A0:
-	push {r4, lr}
-	adds r4, r1, #0
-	bl GameStateGetBuffer38C0
-	ldr r1, [r4, #0]
-	ldr r2, _080126B8
-	adds r0, r0, r2
-	strh r1, [r0, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
-	.global _080126B8
-_080126B8:
-	.4byte 0x00000624
+@ 0126BC..0126DC is decompiled as ScriptNativeMapGetField626(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080126BC
-sub_080126BC:
-	push {r4, lr}
-	adds r4, r2, #0
-	bl GameStateGetBuffer38C0
-	ldr r1, _080126D8
-	adds r0, r0, r1
-	movs r1, #0
-	ldrsh r0, [r0, r1]
-	str r0, [r4, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _080126D8
-_080126D8:
-	.4byte 0x00000626
+@ 0126DC..0126F8 is decompiled as ScriptNativeMapSetField626(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080126DC
-sub_080126DC:
-	push {r4, lr}
-	adds r4, r1, #0
-	bl GameStateGetBuffer38C0
-	ldr r1, [r4, #0]
-	ldr r2, _080126F4
-	adds r0, r0, r2
-	strh r1, [r0, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
-	.global _080126F4
-_080126F4:
-	.4byte 0x00000626
+@ 0126F8..012714 is decompiled as ScriptNativeMapGetField628(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080126F8
-sub_080126F8:
-	push {r4, lr}
-	adds r4, r2, #0
-	bl GameStateGetBuffer38C0
-	movs r1, #197
-	lsls r1, r1, #3
-	adds r0, r0, r1
-	movs r1, #0
-	ldrsh r0, [r0, r1]
-	str r0, [r4, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 012714..012730 is decompiled as ScriptNativeMapSetField628(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012714
-sub_08012714:
-	push {r4, lr}
-	adds r4, r1, #0
-	bl GameStateGetBuffer38C0
-	ldr r1, [r4, #0]
-	movs r2, #197
-	lsls r2, r2, #3
-	adds r0, r0, r2
-	strh r1, [r0, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+	.section .rom.00012730, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -4637,68 +4259,16 @@ _08012758:
 _0801275C:
 	.4byte 0x000032F4
 
-	.thumb_func
-	.thumb
-	.global sub_08012760
-sub_08012760:
-	push {lr}
-	bl sub_08070730
-	movs r0, #1
-	pop {r1}
-	bx r1
+@ 012760..01276C is decompiled as ScriptNativeMapFinalize(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0801276C
-sub_0801276C:
-	push {r4, lr}
-	adds r4, r1, #0
-	ldr r0, [r4, #0]
-	cmp r0, #3
-	bhi _08012782
-	bl GameStateGetBuffer38C0
-	ldr r1, [r4, #0]
-	bl sub_08070214
-	b _0801278C
-	.global _08012782
-_08012782:
-	bl GameStateGetBuffer38C0
-	movs r1, #0
-	bl sub_08070214
-	.global _0801278C
-_0801278C:
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 01276C..012794 is decompiled as ScriptNativeMapSelectSlot(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012794
-sub_08012794:
-	push {r4, lr}
-	adds r4, r2, #0
-	bl GameStateGetField4258
-	str r0, [r4, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 012794..0127A8 is decompiled as ScriptNativeGetField4258(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080127A8
-sub_080127A8:
-	push {lr}
-	ldr r0, [r1, #0]
-	bl GameStateSetField4258
-	movs r0, #1
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 0127A8..0127B8 is decompiled as ScriptNativeSetField4258(); see src/decompiled.json
+
+	.section .rom.000127B8, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -4908,97 +4478,22 @@ sub_0801294C:
 	pop {r1}
 	bx r1
 
-	.thumb_func
-	.thumb
-	.global sub_08012978
-sub_08012978:
-	push {lr}
-	ldr r0, [r1, #0]
-	bl GameStateSetField12EC
-	movs r0, #1
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 012978..012988 is decompiled as ScriptNativeSetField12EC(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012988
-sub_08012988:
-	push {lr}
-	bl sub_080067DC
-	movs r0, #1
-	pop {r1}
-	bx r1
+@ 012988..012994 is decompiled as ScriptNativeCall067DC(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012994
-sub_08012994:
-	push {lr}
-	ldr r0, [r1, #0]
-	ldr r1, [r1, #4]
-	bl sub_0800680C
-	movs r0, #1
-	pop {r1}
-	bx r1
-	.4byte 0x1C14B510
-	.4byte 0xF7F36808
-	.4byte 0x6020FF43
-	.byte 0x01
-	.byte 0x20
+@ 012994..0129A4 is decompiled as ScriptNativeCall0680C(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080129B2
-sub_080129B2:
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 0129A4..0129B8 is decompiled as ScriptNativeTestGameStateFlags(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080129B8
-sub_080129B8:
-	push {lr}
-	ldr r0, [r1, #0]
-	ldr r3, [r1, #4]
-	ldr r2, [r1, #8]
-	adds r1, r3, #0
-	bl sub_08006858
-	movs r0, #1
-	pop {r1}
-	bx r1
+@ 0129B8..0129CC is decompiled as ScriptNativeCall06858(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080129CC
-sub_080129CC:
-	push {r4, lr}
-	adds r4, r2, #0
-	bl GameStateGetField4256
-	str r0, [r4, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 0129CC..0129E0 is decompiled as ScriptNativeGetField4256(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080129E0
-sub_080129E0:
-	push {r4, lr}
-	adds r4, r2, #0
-	bl GameStateGetField60E
-	str r0, [r4, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 0129E0..0129F4 is decompiled as ScriptNativeGetField60E(); see src/decompiled.json
+
+	.section .rom.000129F4, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -5077,17 +4572,10 @@ _08012AC2:
 	.4byte 0x03003FDC
 	.4byte 0x000026F8
 
-	.thumb_func
-	.thumb
-	.global sub_08012AD4
-sub_08012AD4:
-	push {lr}
-	ldr r0, [r1, #0]
-	ldr r1, [r1, #4]
-	bl sub_08008740
-	movs r0, #1
-	pop {r1}
-	bx r1
+@ 012AD4..012AE4 is decompiled as ScriptNativeCall08740(); see src/decompiled.json
+
+	.section .rom.00012AE4, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -5160,23 +4648,10 @@ sub_08012B60:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_08012B64
-sub_08012B64:
-	push {r4, lr}
-	adds r4, r2, #0
-	ldr r2, [r1, #0]
-	movs r0, #0
-	movs r1, #0
-	bl sub_080560F8
-	lsls r0, r0, #16
-	asrs r0, r0, #16
-	str r0, [r4, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 012B64..012B80 is decompiled as ScriptNativeQueryResourceSlot(); see src/decompiled.json
+
+	.section .rom.00012B80, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -5305,19 +4780,10 @@ _08012C20:
 	pop {r1}
 	bx r1
 
-	.thumb_func
-	.thumb
-	.global sub_08012C54
-sub_08012C54:
-	push {lr}
-	ldr r0, [r1, #0]
-	ldr r3, [r1, #4]
-	ldr r2, [r1, #8]
-	adds r1, r3, #0
-	bl sub_080088E0
-	movs r0, #1
-	pop {r1}
-	bx r1
+@ 012C54..012C68 is decompiled as ScriptNativeCall088E0(); see src/decompiled.json
+
+	.section .rom.00012C68, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -5380,22 +4846,10 @@ sub_08012CA4:
 	pop {r1}
 	bx r1
 
-	.thumb_func
-	.thumb
-	.global sub_08012CD0
-sub_08012CD0:
-	push {lr}
-	movs r3, #0
-	ldrsh r0, [r1, r3]
-	movs r3, #4
-	ldrsh r1, [r1, r3]
-	bl sub_0806C7AC
-	ldr r0, _08012CE4
-	pop {r1}
-	bx r1
-	.global _08012CE4
-_08012CE4:
-	.4byte 0x00007FFF
+@ 012CD0..012CE8 is decompiled as ScriptNativeMapCoordinateCall(); see src/decompiled.json
+
+	.section .rom.00012CE8, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb

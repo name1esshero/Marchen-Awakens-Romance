@@ -272,7 +272,9 @@ docs-fetch: build/published-docs/.git
 # The matching mar.gba is never patched or used as an English build input.
 ENGLISH_DIR := build/english
 ENGLISH_OBJS := $(ENGLISH_DIR)/dialogue_bridge.o $(ENGLISH_DIR)/dialogue_runtime.o \
-                $(ENGLISH_DIR)/dialogue_original.o $(ENGLISH_DIR)/mappings.o $(ENGLISH_DIR)/system_graphics.o $(ENGLISH_DIR)/effect_graphics.o $(ENGLISH_DIR)/background_graphics.o
+                $(ENGLISH_DIR)/dialogue_original.o $(ENGLISH_DIR)/item_accessors.o \
+                $(ENGLISH_DIR)/item_name.o $(ENGLISH_DIR)/item_name_bridge.o \
+                $(ENGLISH_DIR)/mappings.o $(ENGLISH_DIR)/system_graphics.o $(ENGLISH_DIR)/effect_graphics.o $(ENGLISH_DIR)/background_graphics.o
 .PHONY: english english-stats
 english: mar_english.gba english-stats
 
@@ -289,6 +291,22 @@ $(ENGLISH_DIR)/dialogue_original.o: src/dialogue_start.c include/dialogue.h
 	$(CPP) $(CPPFLAGS) -DENGLISH=1 $< -o $(ENGLISH_DIR)/dialogue_original.i
 	$(CC1) $(CC1FLAGS) $(ENGLISH_DIR)/dialogue_original.i -o $(ENGLISH_DIR)/dialogue_original.s
 	$(AS) $(ASFLAGS) -o $@ $(ENGLISH_DIR)/dialogue_original.s
+
+$(ENGLISH_DIR)/item_accessors.o: src/item.c include/item.h
+	@mkdir -p $(ENGLISH_DIR)
+	$(CPP) $(CPPFLAGS) -DENGLISH=1 $< -o $(ENGLISH_DIR)/item_accessors.i
+	$(CC1) $(CC1FLAGS) $(ENGLISH_DIR)/item_accessors.i -o $(ENGLISH_DIR)/item_accessors.s
+	$(AS) $(ASFLAGS) -o $@ $(ENGLISH_DIR)/item_accessors.s
+
+$(ENGLISH_DIR)/item_name.o: src/english/item_name.c include/item.h include/english.h
+	@mkdir -p $(ENGLISH_DIR)
+	$(CPP) $(CPPFLAGS) -DENGLISH=1 $< -o $(ENGLISH_DIR)/item_name.i
+	$(CC1) $(CC1FLAGS) $(ENGLISH_DIR)/item_name.i -o $(ENGLISH_DIR)/item_name.s
+	$(AS) $(ASFLAGS) -o $@ $(ENGLISH_DIR)/item_name.s
+
+$(ENGLISH_DIR)/item_name_bridge.o: src/english/item_name_bridge.s
+	@mkdir -p $(ENGLISH_DIR)
+	$(AS) $(ASFLAGS) -o $@ $<
 
 $(ENGLISH_DIR)/dialogue_runtime.o: src/english/dialogue_runtime.c include/dialogue.h include/english.h include/input.h
 	@mkdir -p $(ENGLISH_DIR)
@@ -331,7 +349,7 @@ $(ENGLISH_DIR)/background_graphics.o: $(ENGLISH_DIR)/background_graphics.s
 	$(AS) $(ASFLAGS) -o $@ $<
 
 $(ENGLISH_DIR)/mar_english.elf: $(OBJS) $(ENGLISH_OBJS) ld_script.ld ld_english.ld
-	@printf '%s\n' $(filter-out $(BUILD)/src/dialogue_start.o $(BUILD)/asm/data/data_DD69E0.o $(BUILD)/asm/data/data_5AEAF0.o $(BUILD)/asm/data/data_F19AA0.o $(BUILD)/asm/data/data_F1A320.o $(BUILD)/asm/data/data_F1EF50.o $(BUILD)/asm/data/data_F21420.o $(BUILD)/asm/data/data_DA8990.o $(BUILD)/asm/data/data_DA9BF0.o,$(OBJS)) $(ENGLISH_OBJS) > $(ENGLISH_DIR)/objects.rsp
+	@printf '%s\n' $(filter-out $(BUILD)/src/dialogue_start.o $(BUILD)/src/item.o $(BUILD)/asm/data/data_DD69E0.o $(BUILD)/asm/data/data_5AEAF0.o $(BUILD)/asm/data/data_F19AA0.o $(BUILD)/asm/data/data_F1A320.o $(BUILD)/asm/data/data_F1EF50.o $(BUILD)/asm/data/data_F21420.o $(BUILD)/asm/data/data_DA8990.o $(BUILD)/asm/data/data_DA9BF0.o,$(OBJS)) $(ENGLISH_OBJS) > $(ENGLISH_DIR)/objects.rsp
 	$(LD) -T ld_english.ld --no-warn-rwx-segments -o $@ @$(ENGLISH_DIR)/objects.rsp -Map $(ENGLISH_DIR)/mar_english.map
 
 mar_english.gba: $(ENGLISH_DIR)/mar_english.elf

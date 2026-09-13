@@ -11,4 +11,5 @@ extern const struct EnglishRowMapping gEnglishRows[];
 extern const u32 gEnglishRowCount;
 /* Return zero if any row is missing/ambiguous or cannot fit this message. */
 s32 EnglishTranslateRows(s32 mode, s32 count, const char **source, const char **output);
+const char *EnglishTranslateSingle(const char *source);
 #endif

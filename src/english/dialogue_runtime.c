@@ -216,6 +216,14 @@ static const struct EnglishRowMapping *FindRow(const char *source)
     return 0;
 }
 
+const char *EnglishTranslateSingle(const char *source)
+{
+    const struct EnglishRowMapping *entry = FindRow(source);
+    if (entry && entry->count == 1)
+        return entry->rows[0];
+    return source;
+}
+
 s32 EnglishTranslateRows(s32 mode, s32 count, const char **source, const char **output)
 {
     s32 i, j, used = 0;

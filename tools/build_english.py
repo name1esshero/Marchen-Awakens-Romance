@@ -39,6 +39,15 @@ def collect(root=ROOT):
             raw = text_codec.encode(japanese)
             candidates[raw].add(english)
             locations[raw].append(path.name+':'+offset)
+            # Menu descriptions are assembled at runtime by copying one of
+            # these printer-control prefixes immediately before a definition
+            # table string. DialogueStart therefore receives the combined row,
+            # rather than the bare bytes present in the editable table.
+            if path.name in ('arm_definitions.txt', 'item_definitions.txt'):
+                for prefix in (b'T0000 C0F04', b'T0000 C0F04 '):
+                    alias = prefix + raw
+                    candidates[alias].add(english)
+                    locations[alias].append(path.name+':'+offset+':formatted')
     # MswStr always receives row strings, including empty padding literals.
     # One unmapped blank used to discard the translation of the entire message.
     candidates[b''].add('')

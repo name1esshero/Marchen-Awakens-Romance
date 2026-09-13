@@ -8,11 +8,13 @@ const struct ItemDefinition *ItemGetDefinition(s32 id)
     return &gItemDefinitions[(s16)id];
 }
 
+#ifndef ENGLISH
 __attribute__((section(".rom.00056474")))
 const char *ItemGetName(s32 id)
 {
     return gItemDefinitions[(s16)id].name;
 }
+#endif
 
 __attribute__((section(".rom.00056484")))
 const char *ItemGetDescription(s32 id)
@@ -89,4 +91,3 @@ s32 ItemGetField58(s32 id)
     id = (s16)id;
     return gItemDefinitions[id].field58;
 }
-

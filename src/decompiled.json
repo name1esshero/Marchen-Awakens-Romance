@@ -1,5 +1,17 @@
 [
   {
+    "addr": "080010C8",
+    "size": 32,
+    "name": "DisableDma1AndUpdateSound",
+    "file": "src/sound.c"
+  },
+  {
+    "addr": "08002148",
+    "size": 16,
+    "name": "Lz77UnCompVramSwapped",
+    "file": "src/runtime_leaf.c"
+  },
+  {
     "addr": "080025BC",
     "size": 40,
     "name": "ReadEngineCharacter",
@@ -84,10 +96,160 @@
     "file": "src/entity.c"
   },
   {
+    "addr": "08003770",
+    "size": 20,
+    "name": "HeapFreeDefault",
+    "file": "src/runtime_leaf.c"
+  },
+  {
+    "addr": "08003784",
+    "size": 52,
+    "name": "CreateCopyTask",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "080037B8",
+    "size": 32,
+    "name": "CopyThenFinishTask",
+    "file": "src/task_adapters.c"
+  },
+  {
     "addr": "0800380C",
     "size": 32,
     "name": "VramFillTask",
     "file": "src/script_tasks.c"
+  },
+  {
+    "addr": "08004CC0",
+    "size": 16,
+    "name": "SioGetPlayerId",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08004CD0",
+    "size": 12,
+    "name": "RuntimeGetByte4014",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08004FB8",
+    "size": 8,
+    "name": "RuntimeAdvanceWord4",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "0800503C",
+    "size": 4,
+    "name": "RuntimeReturnZero",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "08005084",
+    "size": 16,
+    "name": "RuntimeReadSignedByte",
+    "file": "src/runtime_leaf.c"
+  },
+  {
+    "addr": "08005E98",
+    "size": 16,
+    "name": "SoundSongStartU16",
+    "file": "src/runtime_leaf.c"
+  },
+  {
+    "addr": "08005EF0",
+    "size": 20,
+    "name": "RuntimeResetSelection",
+    "file": "src/runtime_leaf.c"
+  },
+  {
+    "addr": "08006784",
+    "size": 32,
+    "name": "GameStateTestFlagsAC",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "080067A4",
+    "size": 28,
+    "name": "GameStateSetPointer2C",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "080067C0",
+    "size": 28,
+    "name": "GameStateGetPointer2C",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08006834",
+    "size": 36,
+    "name": "GameStateTestFlags12C",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "08006898",
+    "size": 28,
+    "name": "GameStateSetField60E",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "080068B4",
+    "size": 28,
+    "name": "GameStateGetField60E",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "080068D0",
+    "size": 28,
+    "name": "GameStateSetField12EC",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "080068EC",
+    "size": 32,
+    "name": "GameStateGetField12EC",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "080069F8",
+    "size": 36,
+    "name": "GameStateCopyString12F4",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "08006A1C",
+    "size": 36,
+    "name": "GameStateSetString12F4",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "08006A40",
+    "size": 44,
+    "name": "GameStateSaveActorRecord0",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "08006A6C",
+    "size": 52,
+    "name": "GameStateLoadActorRecord0",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "08006AA0",
+    "size": 32,
+    "name": "GameStateGetField12EE",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08006AC0",
+    "size": 28,
+    "name": "GameStateSetField12EE",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08006BD8",
+    "size": 16,
+    "name": "IwramGetField0810",
+    "file": "src/runtime_accessors.c"
   },
   {
     "addr": "08006C54",
@@ -348,6 +510,36 @@
     "file": "src/runtime_buffers.c"
   },
   {
+    "addr": "080078E4",
+    "size": 36,
+    "name": "CreateTask078E4",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "08008658",
+    "size": 16,
+    "name": "RuntimeGetBufferE50",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08008684",
+    "size": 44,
+    "name": "RuntimeAddOffsets",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08008A70",
+    "size": 40,
+    "name": "NcdSpriteContainerReset",
+    "file": "src/ncd_sprite.c"
+  },
+  {
+    "addr": "08008BD8",
+    "size": 12,
+    "name": "SpriteAuxiliaryReset",
+    "file": "src/runtime_leaf.c"
+  },
+  {
     "addr": "08009048",
     "size": 20,
     "name": "RuntimeGetFieldE9C",
@@ -375,96 +567,6 @@
     "addr": "08009098",
     "size": 20,
     "name": "RuntimeGetFieldEB3",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "080098F8",
-    "size": 20,
-    "name": "RuntimeSetFieldEAE",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "0800990C",
-    "size": 24,
-    "name": "RuntimeGetFieldEAE",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08009924",
-    "size": 20,
-    "name": "RuntimeSetFieldEAF",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08009938",
-    "size": 24,
-    "name": "RuntimeGetFieldEAF",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08009950",
-    "size": 20,
-    "name": "RuntimeSetFieldEB0",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08009964",
-    "size": 24,
-    "name": "RuntimeGetFieldEB0",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08009CC4",
-    "size": 20,
-    "name": "RuntimeSetFieldEB1",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08009CD8",
-    "size": 24,
-    "name": "RuntimeGetFieldEB1",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08009CF0",
-    "size": 20,
-    "name": "RuntimeSetFieldEB4",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08009D04",
-    "size": 24,
-    "name": "RuntimeGetFieldEB4",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08009D1C",
-    "size": 20,
-    "name": "RuntimeSetFieldEB6",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08009D30",
-    "size": 24,
-    "name": "RuntimeGetFieldEB6",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08009D48",
-    "size": 20,
-    "name": "RuntimeSetFieldEB7",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08009D5C",
-    "size": 24,
-    "name": "RuntimeGetFieldEB7",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08009D9C",
-    "size": 28,
-    "name": "RuntimeRecordSetByte7A0",
     "file": "src/runtime_buffers.c"
   },
   {
@@ -525,6 +627,246 @@
     "addr": "08009710",
     "size": 24,
     "name": "RuntimeTestFlagC0",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "080097D0",
+    "size": 24,
+    "name": "RuntimeObjectSetField4A",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "080097E8",
+    "size": 24,
+    "name": "RuntimeObjectGetField4A",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "08009800",
+    "size": 24,
+    "name": "RuntimeObjectSetField4C",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "08009818",
+    "size": 24,
+    "name": "RuntimeObjectGetField4C",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "08009830",
+    "size": 56,
+    "name": "RuntimeActorHasReadyPart",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "080098F8",
+    "size": 20,
+    "name": "RuntimeSetFieldEAE",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "0800990C",
+    "size": 24,
+    "name": "RuntimeGetFieldEAE",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009924",
+    "size": 20,
+    "name": "RuntimeSetFieldEAF",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009938",
+    "size": 24,
+    "name": "RuntimeGetFieldEAF",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009950",
+    "size": 20,
+    "name": "RuntimeSetFieldEB0",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009964",
+    "size": 24,
+    "name": "RuntimeGetFieldEB0",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "080099B8",
+    "size": 40,
+    "name": "RuntimeCountMatchingValues",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009B24",
+    "size": 40,
+    "name": "RuntimePartSetField656",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009B4C",
+    "size": 36,
+    "name": "RuntimePartGetField656",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009B70",
+    "size": 40,
+    "name": "RuntimePartSetField652",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009B98",
+    "size": 36,
+    "name": "RuntimePartGetField652",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009BBC",
+    "size": 40,
+    "name": "RuntimePartSetField651",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009BE4",
+    "size": 36,
+    "name": "RuntimePartGetField651",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009C94",
+    "size": 48,
+    "name": "RuntimeCountReadyParts",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009CC4",
+    "size": 20,
+    "name": "RuntimeSetFieldEB1",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009CD8",
+    "size": 24,
+    "name": "RuntimeGetFieldEB1",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009CF0",
+    "size": 20,
+    "name": "RuntimeSetFieldEB4",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009D04",
+    "size": 24,
+    "name": "RuntimeGetFieldEB4",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009D1C",
+    "size": 20,
+    "name": "RuntimeSetFieldEB6",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009D30",
+    "size": 24,
+    "name": "RuntimeGetFieldEB6",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009D48",
+    "size": 20,
+    "name": "RuntimeSetFieldEB7",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009D5C",
+    "size": 24,
+    "name": "RuntimeGetFieldEB7",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009D74",
+    "size": 40,
+    "name": "RuntimeActorSetActiveVector",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009D9C",
+    "size": 28,
+    "name": "RuntimeRecordSetByte7A0",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009DB8",
+    "size": 28,
+    "name": "RuntimeActorGetField7A0",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009DD4",
+    "size": 28,
+    "name": "RuntimeActorSetField7A2",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009DF0",
+    "size": 32,
+    "name": "RuntimeActorGetField7A2",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009E10",
+    "size": 36,
+    "name": "RuntimeActorSetFields7A4_7A6",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009E34",
+    "size": 40,
+    "name": "RuntimeActorGetFields7A4_7A6",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009E5C",
+    "size": 28,
+    "name": "RuntimeActorSetField352",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009E78",
+    "size": 32,
+    "name": "RuntimeActorGetField352",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009E98",
+    "size": 28,
+    "name": "RuntimeActorGetField350",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009EB4",
+    "size": 28,
+    "name": "RuntimeActorSetField354",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009ED0",
+    "size": 28,
+    "name": "RuntimeActorGetField354",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009EEC",
+    "size": 24,
+    "name": "RuntimeActorGetField354Address",
     "file": "src/runtime_buffers.c"
   },
   {
@@ -864,6 +1206,90 @@
     "file": "src/runtime_objects.c"
   },
   {
+    "addr": "0800AEF0",
+    "size": 32,
+    "name": "RuntimeActorClearField0E",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "0800B1B8",
+    "size": 52,
+    "name": "CreateCoordinateTask",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "0800D628",
+    "size": 32,
+    "name": "GameStateGetRecord610",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "0800D664",
+    "size": 44,
+    "name": "CreateActorTaskD664",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "0800D98C",
+    "size": 52,
+    "name": "CreatePendingTaskD98C",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "0800E610",
+    "size": 60,
+    "name": "CreateIndexedPendingTask",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "0800F0A0",
+    "size": 44,
+    "name": "GameStateClearRecord1190IfZero",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "0800F0CC",
+    "size": 36,
+    "name": "GameStateGetRecord1190",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "0800F0F0",
+    "size": 44,
+    "name": "CreateActorTaskF0F0",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "0800F96C",
+    "size": 40,
+    "name": "GameStateClearBlock413C",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "0800F9B4",
+    "size": 56,
+    "name": "CreateSpriteTaskF9B4",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "0800FD3C",
+    "size": 52,
+    "name": "CreatePendingTaskFD3C",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "080106C8",
+    "size": 32,
+    "name": "GameStateGetRecord0B90",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "08010704",
+    "size": 44,
+    "name": "CreateActorTask10704",
+    "file": "src/task_adapters.c"
+  },
+  {
     "addr": "080109C4",
     "size": 104,
     "name": "ScriptSpriteResetTask",
@@ -888,6 +1314,18 @@
     "file": "src/script_sprite.c"
   },
   {
+    "addr": "08011438",
+    "size": 44,
+    "name": "GameStateClearRecord1090IfZero",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "08011484",
+    "size": 44,
+    "name": "CreateActorTask11484",
+    "file": "src/task_adapters.c"
+  },
+  {
     "addr": "08011504",
     "size": 16,
     "name": "HitRegionDisable",
@@ -910,6 +1348,12 @@
     "size": 32,
     "name": "HitRegionSetRect",
     "file": "src/hit_region.c"
+  },
+  {
+    "addr": "08011674",
+    "size": 20,
+    "name": "RuntimeGetTable1AD634",
+    "file": "src/runtime_misc.c"
   },
   {
     "addr": "0801174C",
@@ -1008,10 +1452,286 @@
     "file": "src/map_native.c"
   },
   {
+    "addr": "080124B0",
+    "size": 16,
+    "name": "ScriptNativeMapSetValue08",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "080124C0",
+    "size": 16,
+    "name": "ScriptNativeMapSetValue25",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "080124D0",
+    "size": 16,
+    "name": "ScriptNativeMapResetGenerator",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "080124E0",
+    "size": 28,
+    "name": "ScriptNativeMapResetActor",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "08012500",
+    "size": 20,
+    "name": "ScriptNativeMapGetPointer1COffset",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "08012514",
+    "size": 20,
+    "name": "ScriptNativeMapGetPointer20Offset",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "08012528",
+    "size": 28,
+    "name": "ScriptNativeMapConfigure3",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "08012544",
+    "size": 20,
+    "name": "ScriptNativeMapRefresh",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "08012558",
+    "size": 24,
+    "name": "ScriptNativeMapConfigure2",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "08012570",
+    "size": 36,
+    "name": "ScriptNativeMapRandomize",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "08012594",
+    "size": 24,
+    "name": "ScriptNativeMapQueryD60",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "080125AC",
+    "size": 20,
+    "name": "ScriptNativeMapClearDState",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "080125C0",
+    "size": 24,
+    "name": "ScriptNativeMapQueryD84",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "080125D8",
+    "size": 24,
+    "name": "ScriptNativeMapSetMode",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "080125F0",
+    "size": 20,
+    "name": "ScriptNativeMapSetSeed",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "08012604",
+    "size": 20,
+    "name": "ScriptNativeMapGetSeed",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "08012618",
+    "size": 16,
+    "name": "ScriptNativeMapCall1088",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "08012628",
+    "size": 20,
+    "name": "ScriptNativeMapQuery10A4",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "0801263C",
+    "size": 28,
+    "name": "ScriptNativeMapGetField618",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "08012658",
+    "size": 20,
+    "name": "ScriptNativeMapSetField10",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "0801266C",
+    "size": 20,
+    "name": "ScriptNativeMapGetField10",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "08012680",
+    "size": 32,
+    "name": "ScriptNativeMapGetField624",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "080126A0",
+    "size": 28,
+    "name": "ScriptNativeMapSetField624",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "080126BC",
+    "size": 32,
+    "name": "ScriptNativeMapGetField626",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "080126DC",
+    "size": 28,
+    "name": "ScriptNativeMapSetField626",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "080126F8",
+    "size": 28,
+    "name": "ScriptNativeMapGetField628",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "08012714",
+    "size": 28,
+    "name": "ScriptNativeMapSetField628",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "08012760",
+    "size": 12,
+    "name": "ScriptNativeMapFinalize",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "0801276C",
+    "size": 40,
+    "name": "ScriptNativeMapSelectSlot",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "08012794",
+    "size": 20,
+    "name": "ScriptNativeGetField4258",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "080127A8",
+    "size": 16,
+    "name": "ScriptNativeSetField4258",
+    "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "08012978",
+    "size": 16,
+    "name": "ScriptNativeSetField12EC",
+    "file": "src/script_native_adapters.c"
+  },
+  {
+    "addr": "08012988",
+    "size": 12,
+    "name": "ScriptNativeCall067DC",
+    "file": "src/script_native_adapters.c"
+  },
+  {
+    "addr": "08012994",
+    "size": 16,
+    "name": "ScriptNativeCall0680C",
+    "file": "src/script_native_adapters.c"
+  },
+  {
+    "addr": "080129A4",
+    "size": 20,
+    "name": "ScriptNativeTestGameStateFlags",
+    "file": "src/script_native_adapters.c"
+  },
+  {
+    "addr": "080129B8",
+    "size": 20,
+    "name": "ScriptNativeCall06858",
+    "file": "src/script_native_adapters.c"
+  },
+  {
+    "addr": "080129CC",
+    "size": 20,
+    "name": "ScriptNativeGetField4256",
+    "file": "src/script_native_adapters.c"
+  },
+  {
+    "addr": "080129E0",
+    "size": 20,
+    "name": "ScriptNativeGetField60E",
+    "file": "src/script_native_adapters.c"
+  },
+  {
+    "addr": "08012AD4",
+    "size": 16,
+    "name": "ScriptNativeCall08740",
+    "file": "src/script_native_adapters.c"
+  },
+  {
+    "addr": "08012B64",
+    "size": 28,
+    "name": "ScriptNativeQueryResourceSlot",
+    "file": "src/script_native_adapters.c"
+  },
+  {
+    "addr": "08012C54",
+    "size": 20,
+    "name": "ScriptNativeCall088E0",
+    "file": "src/script_native_adapters.c"
+  },
+  {
+    "addr": "08012CD0",
+    "size": 24,
+    "name": "ScriptNativeMapCoordinateCall",
+    "file": "src/script_native_adapters.c"
+  },
+  {
     "addr": "08018C4C",
     "size": 196,
     "name": "HitRegionTest",
     "file": "src/hit_region.c"
+  },
+  {
+    "addr": "08018E30",
+    "size": 20,
+    "name": "SoundStopPlayers4And5",
+    "file": "src/runtime_leaf.c"
+  },
+  {
+    "addr": "08019C34",
+    "size": 28,
+    "name": "RuntimePartInitHeader",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08019C50",
+    "size": 20,
+    "name": "RuntimeActorSetByteA4",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "080282B4",
+    "size": 68,
+    "name": "ObjectSetState1",
+    "file": "src/object.c"
   },
   {
     "addr": "080282F8",
@@ -1054,6 +1774,36 @@
     "size": 4,
     "name": "ObjectSetField34",
     "file": "src/object.c"
+  },
+  {
+    "addr": "080288DC",
+    "size": 28,
+    "name": "ObjectGetActiveRecordData",
+    "file": "src/object.c"
+  },
+  {
+    "addr": "0802ADC8",
+    "size": 28,
+    "name": "InputRepeatInit",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "080322A4",
+    "size": 20,
+    "name": "ScriptCommand22",
+    "file": "src/object_command.c"
+  },
+  {
+    "addr": "080322B8",
+    "size": 20,
+    "name": "ScriptCommandMode3",
+    "file": "src/object_command.c"
+  },
+  {
+    "addr": "080322CC",
+    "size": 144,
+    "name": "StartObjectCommandTask",
+    "file": "src/object_command.c"
   },
   {
     "addr": "08053960",
@@ -1150,6 +1900,54 @@
     "size": 24,
     "name": "ItemGetField58",
     "file": "src/item.c"
+  },
+  {
+    "addr": "08057218",
+    "size": 48,
+    "name": "GameStateCopyMapBuffer",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "0806C7A0",
+    "size": 12,
+    "name": "MapObjectResetMotion",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "0806C8F0",
+    "size": 40,
+    "name": "CreateTask6C8F0",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "0806E52C",
+    "size": 12,
+    "name": "MapGeneratorStep",
+    "file": "src/runtime_leaf.c"
+  },
+  {
+    "addr": "0806E538",
+    "size": 20,
+    "name": "Crc32Difference",
+    "file": "src/runtime_leaf.c"
+  },
+  {
+    "addr": "0806E748",
+    "size": 36,
+    "name": "CreateTask6E748",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "0806EEF0",
+    "size": 40,
+    "name": "CreateTask6EEF0",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "08070090",
+    "size": 24,
+    "name": "GameStateGetBuffer38C0",
+    "file": "src/runtime_misc.c"
   },
   {
     "addr": "08071DD4",
@@ -1395,6 +2193,18 @@
     "addr": "08078C08",
     "size": 16,
     "name": "SoundFadeOut",
+    "file": "src/sound.c"
+  },
+  {
+    "addr": "08078DC4",
+    "size": 20,
+    "name": "SoundCallCallback5DA8",
+    "file": "src/sound.c"
+  },
+  {
+    "addr": "08078DD8",
+    "size": 20,
+    "name": "SoundCallCallback5DAC",
     "file": "src/sound.c"
   },
   {
@@ -2064,6 +2874,12 @@
     "file": "src/sprite_engine_state.c"
   },
   {
+    "addr": "0807D21C",
+    "size": 32,
+    "name": "SpriteSetViewportOrigin",
+    "file": "src/runtime_leaf.c"
+  },
+  {
     "addr": "0807D3C4",
     "size": 12,
     "name": "SpriteEngineGetBuffer8",
@@ -2220,6 +3036,12 @@
     "file": "src/script_tasks.c"
   },
   {
+    "addr": "0807E964",
+    "size": 24,
+    "name": "VmAddToField220",
+    "file": "src/runtime_misc.c"
+  },
+  {
     "addr": "0807ED70",
     "size": 32,
     "name": "ScriptDispatchCurrentFrame",
@@ -2254,6 +3076,18 @@
     "size": 92,
     "name": "ScriptRunSlice",
     "file": "src/script_tasks.c"
+  },
+  {
+    "addr": "0807F274",
+    "size": 16,
+    "name": "VmGetField10",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "0807F284",
+    "size": 16,
+    "name": "VmGetField12",
+    "file": "src/runtime_misc.c"
   },
   {
     "addr": "0807F518",
@@ -2301,6 +3135,12 @@
     "addr": "0807F608",
     "size": 28,
     "name": "ScriptPopU32",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "0807F624",
+    "size": 64,
+    "name": "ScriptResolveOperand",
     "file": "src/script_bytecode.c"
   },
   {
@@ -2634,6 +3474,12 @@
     "file": "src/script_bytecode.c"
   },
   {
+    "addr": "08080068",
+    "size": 8,
+    "name": "ScriptCmdFail",
+    "file": "src/script_bytecode.c"
+  },
+  {
     "addr": "080800FC",
     "size": 20,
     "name": "ScriptNativeAbs",
@@ -2700,6 +3546,12 @@
     "file": "src/script_native.c"
   },
   {
+    "addr": "080802C8",
+    "size": 88,
+    "name": "ScriptNativeLeft",
+    "file": "src/script_native.c"
+  },
+  {
     "addr": "08080320",
     "size": 96,
     "name": "ScriptNativeRight",
@@ -2718,147 +3570,15 @@
     "file": "src/script_tasks.c"
   },
   {
-    "addr": "080097D0",
+    "addr": "080804EC",
     "size": 24,
-    "name": "RuntimeObjectSetField4A",
-    "file": "src/runtime_objects.c"
-  },
-  {
-    "addr": "080097E8",
-    "size": 24,
-    "name": "RuntimeObjectGetField4A",
-    "file": "src/runtime_objects.c"
-  },
-  {
-    "addr": "08009800",
-    "size": 24,
-    "name": "RuntimeObjectSetField4C",
-    "file": "src/runtime_objects.c"
-  },
-  {
-    "addr": "08009818",
-    "size": 24,
-    "name": "RuntimeObjectGetField4C",
-    "file": "src/runtime_objects.c"
-  },
-  {
-    "addr": "08009EB4",
-    "size": 28,
-    "name": "RuntimeActorSetField354",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08009ED0",
-    "size": 28,
-    "name": "RuntimeActorGetField354",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08004CC0",
-    "size": 16,
-    "name": "SioGetPlayerId",
-    "file": "src/runtime_accessors.c"
-  },
-  {
-    "addr": "08004CD0",
-    "size": 12,
-    "name": "RuntimeGetByte4014",
-    "file": "src/runtime_accessors.c"
-  },
-  {
-    "addr": "08004FB8",
-    "size": 8,
-    "name": "RuntimeAdvanceWord4",
-    "file": "src/runtime_accessors.c"
-  },
-  {
-    "addr": "080067A4",
-    "size": 28,
-    "name": "GameStateSetPointer2C",
-    "file": "src/runtime_accessors.c"
-  },
-  {
-    "addr": "080067C0",
-    "size": 28,
-    "name": "GameStateGetPointer2C",
-    "file": "src/runtime_accessors.c"
-  },
-  {
-    "addr": "08006898",
-    "size": 28,
-    "name": "GameStateSetField60E",
-    "file": "src/runtime_accessors.c"
-  },
-  {
-    "addr": "080068B4",
-    "size": 28,
-    "name": "GameStateGetField60E",
-    "file": "src/runtime_accessors.c"
-  },
-  {
-    "addr": "080068D0",
-    "size": 28,
-    "name": "GameStateSetField12EC",
-    "file": "src/runtime_accessors.c"
-  },
-  {
-    "addr": "080068EC",
-    "size": 32,
-    "name": "GameStateGetField12EC",
-    "file": "src/runtime_accessors.c"
-  },
-  {
-    "addr": "08006AA0",
-    "size": 32,
-    "name": "GameStateGetField12EE",
-    "file": "src/runtime_accessors.c"
-  },
-  {
-    "addr": "08006AC0",
-    "size": 28,
-    "name": "GameStateSetField12EE",
-    "file": "src/runtime_accessors.c"
-  },
-  {
-    "addr": "08006BD8",
-    "size": 16,
-    "name": "IwramGetField0810",
-    "file": "src/runtime_accessors.c"
-  },
-  {
-    "addr": "08008658",
-    "size": 16,
-    "name": "RuntimeGetBufferE50",
-    "file": "src/runtime_accessors.c"
-  },
-  {
-    "addr": "0800D628",
-    "size": 32,
-    "name": "GameStateGetRecord610",
-    "file": "src/runtime_accessors.c"
-  },
-  {
-    "addr": "08070090",
-    "size": 24,
-    "name": "GameStateGetBuffer38C0",
+    "name": "RuntimeGetBlock6120",
     "file": "src/runtime_misc.c"
   },
   {
-    "addr": "0807E964",
-    "size": 24,
-    "name": "VmAddToField220",
-    "file": "src/runtime_misc.c"
-  },
-  {
-    "addr": "0807F274",
-    "size": 16,
-    "name": "VmGetField10",
-    "file": "src/runtime_misc.c"
-  },
-  {
-    "addr": "0807F284",
-    "size": 16,
-    "name": "VmGetField12",
+    "addr": "080805D0",
+    "size": 48,
+    "name": "SpriteRuntimeSetAllFlags800",
     "file": "src/runtime_misc.c"
   },
   {
@@ -2872,473 +3592,5 @@
     "size": 8,
     "name": "RuntimeGetTable1AC8C0",
     "file": "src/runtime_misc.c"
-  },
-  {
-    "addr": "0802ADC8",
-    "size": 28,
-    "name": "InputRepeatInit",
-    "file": "src/runtime_misc.c"
-  },
-  {
-    "addr": "0806C7A0",
-    "size": 12,
-    "name": "MapObjectResetMotion",
-    "file": "src/runtime_misc.c"
-  },
-  {
-    "addr": "0800F0CC",
-    "size": 36,
-    "name": "GameStateGetRecord1190",
-    "file": "src/runtime_misc.c"
-  },
-  {
-    "addr": "0800503C",
-    "size": 4,
-    "name": "RuntimeReturnZero",
-    "file": "src/runtime_misc.c"
-  },
-  {
-    "addr": "08011674",
-    "size": 20,
-    "name": "RuntimeGetTable1AD634",
-    "file": "src/runtime_misc.c"
-  },
-  {
-    "addr": "080106C8",
-    "size": 32,
-    "name": "GameStateGetRecord0B90",
-    "file": "src/runtime_misc.c"
-  },
-  {
-    "addr": "080804EC",
-    "size": 24,
-    "name": "RuntimeGetBlock6120",
-    "file": "src/runtime_misc.c"
-  },
-  {
-    "addr": "080069F8",
-    "size": 36,
-    "name": "GameStateCopyString12F4",
-    "file": "src/runtime_misc.c"
-  },
-  {
-    "addr": "08002148",
-    "size": 16,
-    "name": "Lz77UnCompVramSwapped",
-    "file": "src/runtime_leaf.c"
-  },
-  {
-    "addr": "08008BD8",
-    "size": 12,
-    "name": "SpriteAuxiliaryReset",
-    "file": "src/runtime_leaf.c"
-  },
-  {
-    "addr": "08009B24",
-    "size": 40,
-    "name": "RuntimePartSetField656",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08009B4C",
-    "size": 36,
-    "name": "RuntimePartGetField656",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08009B70",
-    "size": 40,
-    "name": "RuntimePartSetField652",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08009B98",
-    "size": 36,
-    "name": "RuntimePartGetField652",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08009BBC",
-    "size": 40,
-    "name": "RuntimePartSetField651",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08009BE4",
-    "size": 36,
-    "name": "RuntimePartGetField651",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08009DB8",
-    "size": 28,
-    "name": "RuntimeActorGetField7A0",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08009DD4",
-    "size": 28,
-    "name": "RuntimeActorSetField7A2",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08009E5C",
-    "size": 28,
-    "name": "RuntimeActorSetField352",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08009E78",
-    "size": 32,
-    "name": "RuntimeActorGetField352",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08009E98",
-    "size": 28,
-    "name": "RuntimeActorGetField350",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "0806E52C",
-    "size": 12,
-    "name": "MapGeneratorStep",
-    "file": "src/runtime_leaf.c"
-  },
-  {
-    "addr": "08005084",
-    "size": 16,
-    "name": "RuntimeReadSignedByte",
-    "file": "src/runtime_leaf.c"
-  },
-  {
-    "addr": "08005E98",
-    "size": 16,
-    "name": "SoundSongStartU16",
-    "file": "src/runtime_leaf.c"
-  },
-  {
-    "addr": "08005EF0",
-    "size": 20,
-    "name": "RuntimeResetSelection",
-    "file": "src/runtime_leaf.c"
-  },
-  {
-    "addr": "08018E30",
-    "size": 20,
-    "name": "SoundStopPlayers4And5",
-    "file": "src/runtime_leaf.c"
-  },
-  {
-    "addr": "0807D21C",
-    "size": 32,
-    "name": "SpriteSetViewportOrigin",
-    "file": "src/runtime_leaf.c"
-  },
-  {
-    "addr": "08019C50",
-    "size": 20,
-    "name": "RuntimeActorSetByteA4",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08008684",
-    "size": 44,
-    "name": "RuntimeAddOffsets",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08006784",
-    "size": 32,
-    "name": "GameStateTestFlagsAC",
-    "file": "src/runtime_misc.c"
-  },
-  {
-    "addr": "08006834",
-    "size": 36,
-    "name": "GameStateTestFlags12C",
-    "file": "src/runtime_misc.c"
-  },
-  {
-    "addr": "08006A1C",
-    "size": 36,
-    "name": "GameStateSetString12F4",
-    "file": "src/runtime_misc.c"
-  },
-  {
-    "addr": "0800F96C",
-    "size": 40,
-    "name": "GameStateClearBlock413C",
-    "file": "src/runtime_misc.c"
-  },
-  {
-    "addr": "08057218",
-    "size": 48,
-    "name": "GameStateCopyMapBuffer",
-    "file": "src/runtime_misc.c"
-  },
-  {
-    "addr": "080078E4",
-    "size": 36,
-    "name": "CreateTask078E4",
-    "file": "src/task_adapters.c"
-  },
-  {
-    "addr": "0806C8F0",
-    "size": 40,
-    "name": "CreateTask6C8F0",
-    "file": "src/task_adapters.c"
-  },
-  {
-    "addr": "0806E748",
-    "size": 36,
-    "name": "CreateTask6E748",
-    "file": "src/task_adapters.c"
-  },
-  {
-    "addr": "0806EEF0",
-    "size": 40,
-    "name": "CreateTask6EEF0",
-    "file": "src/task_adapters.c"
-  },
-  {
-    "addr": "0800D664",
-    "size": 44,
-    "name": "CreateActorTaskD664",
-    "file": "src/task_adapters.c"
-  },
-  {
-    "addr": "0800F0F0",
-    "size": 44,
-    "name": "CreateActorTaskF0F0",
-    "file": "src/task_adapters.c"
-  },
-  {
-    "addr": "08010704",
-    "size": 44,
-    "name": "CreateActorTask10704",
-    "file": "src/task_adapters.c"
-  },
-  {
-    "addr": "08011484",
-    "size": 44,
-    "name": "CreateActorTask11484",
-    "file": "src/task_adapters.c"
-  },
-  {
-    "addr": "08078DC4",
-    "size": 20,
-    "name": "SoundCallCallback5DA8",
-    "file": "src/sound.c"
-  },
-  {
-    "addr": "08078DD8",
-    "size": 20,
-    "name": "SoundCallCallback5DAC",
-    "file": "src/sound.c"
-  },
-  {
-    "addr": "08006A40",
-    "size": 44,
-    "name": "GameStateSaveActorRecord0",
-    "file": "src/runtime_misc.c"
-  },
-  {
-    "addr": "08006A6C",
-    "size": 52,
-    "name": "GameStateLoadActorRecord0",
-    "file": "src/runtime_misc.c"
-  },
-  {
-    "addr": "08003784",
-    "size": 52,
-    "name": "CreateCopyTask",
-    "file": "src/task_adapters.c"
-  },
-  {
-    "addr": "0800B1B8",
-    "size": 52,
-    "name": "CreateCoordinateTask",
-    "file": "src/task_adapters.c"
-  },
-  {
-    "addr": "0800D98C",
-    "size": 52,
-    "name": "CreatePendingTaskD98C",
-    "file": "src/task_adapters.c"
-  },
-  {
-    "addr": "0800FD3C",
-    "size": 52,
-    "name": "CreatePendingTaskFD3C",
-    "file": "src/task_adapters.c"
-  },
-  {
-    "addr": "0800F9B4",
-    "size": 56,
-    "name": "CreateSpriteTaskF9B4",
-    "file": "src/task_adapters.c"
-  },
-  {
-    "addr": "0800E610",
-    "size": 60,
-    "name": "CreateIndexedPendingTask",
-    "file": "src/task_adapters.c"
-  },
-  {
-    "addr": "080010C8",
-    "size": 32,
-    "name": "DisableDma1AndUpdateSound",
-    "file": "src/sound.c"
-  },
-  {
-    "addr": "080037B8",
-    "size": 32,
-    "name": "CopyThenFinishTask",
-    "file": "src/task_adapters.c"
-  },
-  {
-    "addr": "08019C34",
-    "size": 28,
-    "name": "RuntimePartInitHeader",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08008A70",
-    "size": 40,
-    "name": "NcdSpriteContainerReset",
-    "file": "src/ncd_sprite.c"
-  },
-  {
-    "addr": "08009D74",
-    "size": 40,
-    "name": "RuntimeActorSetActiveVector",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08009DF0",
-    "size": 32,
-    "name": "RuntimeActorGetField7A2",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08009E10",
-    "size": 36,
-    "name": "RuntimeActorSetFields7A4_7A6",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08009E34",
-    "size": 40,
-    "name": "RuntimeActorGetFields7A4_7A6",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08009EEC",
-    "size": 24,
-    "name": "RuntimeActorGetField354Address",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08009C94",
-    "size": 48,
-    "name": "RuntimeCountReadyParts",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "080288DC",
-    "size": 28,
-    "name": "ObjectGetActiveRecordData",
-    "file": "src/object.c"
-  },
-  {
-    "addr": "0800AEF0",
-    "size": 32,
-    "name": "RuntimeActorClearField0E",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "0800F0A0",
-    "size": 44,
-    "name": "GameStateClearRecord1190IfZero",
-    "file": "src/runtime_misc.c"
-  },
-  {
-    "addr": "08011438",
-    "size": 44,
-    "name": "GameStateClearRecord1090IfZero",
-    "file": "src/runtime_misc.c"
-  },
-  {
-    "addr": "080805D0",
-    "size": 48,
-    "name": "SpriteRuntimeSetAllFlags800",
-    "file": "src/runtime_misc.c"
-  },
-  {
-    "addr": "08003770",
-    "size": 20,
-    "name": "HeapFreeDefault",
-    "file": "src/runtime_leaf.c"
-  },
-  {
-    "addr": "0806E538",
-    "size": 20,
-    "name": "Crc32Difference",
-    "file": "src/runtime_leaf.c"
-  },
-  {
-    "addr": "08009830",
-    "size": 56,
-    "name": "RuntimeActorHasReadyPart",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "080099B8",
-    "size": 40,
-    "name": "RuntimeCountMatchingValues",
-    "file": "src/runtime_buffers.c"
-  },
-  {
-    "addr": "08080068",
-    "size": 8,
-    "name": "ScriptCmdFail",
-    "file": "src/script_bytecode.c"
-  },
-  {
-    "addr": "080282B4",
-    "size": 68,
-    "name": "ObjectSetState1",
-    "file": "src/object.c"
-  },
-  {
-    "addr": "080322A4",
-    "size": 20,
-    "name": "ScriptCommand22",
-    "file": "src/object_command.c"
-  },
-  {
-    "addr": "080322B8",
-    "size": 20,
-    "name": "ScriptCommandMode3",
-    "file": "src/object_command.c"
-  },
-  {
-    "addr": "0807F624",
-    "size": 64,
-    "name": "ScriptResolveOperand",
-    "file": "src/script_bytecode.c"
-  },
-  {
-    "addr": "080802C8",
-    "size": 88,
-    "name": "ScriptNativeLeft",
-    "file": "src/script_native.c"
-  },
-  {
-    "addr": "080322CC",
-    "size": 144,
-    "name": "StartObjectCommandTask",
-    "file": "src/object_command.c"
   }
 ]

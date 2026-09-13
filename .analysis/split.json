@@ -57,8 +57,6 @@
  ],
  "data": [
   "asm/data/data_1B0000.s",
-  "asm/data/data_1B0720.s",
-  "asm/data/data_1B2BB6.s",
   "asm/data/data_1C3D40.s",
   "asm/data/data_1C9E00.s",
   "asm/data/data_1CF7A1.s",
@@ -988,8 +986,7 @@
   "asm/data/data_F28410.s",
   "asm/data/data_F68410.s",
   "asm/data/data_FA8410.s",
-  "asm/data/data_FE2C20.s",
-  "asm/data/data_FE3420.s",
+  "asm/data/data_FE8410.s",
   "asm/data/data_FFFF00.s"
  ],
  "code_end": 1769472,

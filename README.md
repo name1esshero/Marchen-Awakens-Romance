@@ -258,12 +258,16 @@ English mappings, including the ÄRM Select names and descriptions.
 
 ## Decompilation status
 
-The provenance audit verifies **547 ordinary C functions and 10 BIOS assembly
+The provenance audit verifies **589 ordinary C functions and 10 BIOS assembly
 wrappers**; each declared range is linked from its expected object and matches
-the Japanese ROM. The latest batch adds the VM operand resolver, left-substring
-native, an object state transition, both object-command wrappers, and their
-144-byte task constructor. The constructor now documents its 224-byte request
-payload, mode selector, VM argument pointer, and allocation-failure result.
+the Japanese ROM. The latest batch adds 31 native-script adapters for procedural
+map generation and map-state fields. These expose generator reset/configuration,
+randomization, seed access, signed coordinate fields, mode selection, and
+finalization as readable C while preserving the VM's original return protocol.
+Eleven adjacent event adapters add game-state setters/queries, two- and
+three-argument dispatch calls, resource-slot lookup, and a signed map-coordinate
+call. A twelfth candidate remains in assembly because agbcc canonicalizes its
+range check differently from the original instruction sequence.
 Equivalent C candidates that made agbcc choose different instruction bytes
 were rejected from the manifest. This is a verified function count, not a
 percentage of all game code. Earlier batches include eight list helpers, the `SprSet` and `SprGet`
@@ -395,9 +399,9 @@ included, where modern GCC differed on two counts in every function:
 | Leaf prologue | `push {lr}` | `push {r4, lr}`, saving a register it never uses |
 | `index * 24` | `((i * 2) + i) * 8` with shifts | load 24, then `muls` |
 
-The current manifest declares 557 linked ranges: 547 compiled-C ranges and ten
-BIOS inline-assembly wrapper ranges. Compiled C owns 18,808 bytes, including
-literal pools and alignment, or 2.9982% of the executable region after known
+The current manifest declares 599 linked ranges: 589 compiled-C ranges and ten
+BIOS inline-assembly wrapper ranges. Compiled C owns 19,744 bytes, including
+literal pools and alignment, or 3.1474% of the executable region after known
 PCM is excluded. The current target is at least 10%. This metric is not a pure
 function-completion percentage because the denominator still contains tables
 and undecoded data.
@@ -513,9 +517,11 @@ sequencing and PSG reconstruction remain unfinished.
 
 [Translation and English layout notes](text/translation/README.md) explain the
 actual dialogue printer, its double-byte English font mapping, and strict row
-limits. The optional `make english` build hooks the recovered dialogue constructor;
-longer translations wrap into A-button pages. Emulator validation and complete
-script/text discovery are still unfinished. Run `python3 tools/audit_setup.py`
+limits. The optional `make english` build hooks the recovered dialogue constructor
+and the direct item-name accessor used by menus. It also maps table descriptions
+after the runtime `T0000 C0F04` printer prefix; longer translations wrap into
+A-button pages. Emulator validation and complete script/text discovery are still
+unfinished. Run `python3 tools/audit_setup.py`
 for reproducible archive ownership and audio source checks.
 
 ### Generated compression files and cleanup

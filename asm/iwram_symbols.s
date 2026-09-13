@@ -14,6 +14,12 @@
 .global gIwramField0810Offset
 .set gIwramField0810Offset, 0x00000810
 
+@ Read-only definition table embedded in the monolithic 1B0000 data block.
+@ Keep this as an absolute symbol: labelling it must not split or duplicate the
+@ byte-exact incbin that also supplies the editable Japanese text tables.
+.global gItemDefinitions
+.set gItemDefinitions, 0x081B096C
+
 @ Absolute aliases retained for misidentified ADR-like words in an opaque
 @ table at 0800A03C. These targets fall inside newly compiled C ranges.
 .global _0800A1E0

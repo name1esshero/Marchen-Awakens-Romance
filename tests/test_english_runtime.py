@@ -222,6 +222,14 @@ void *DialogueStartOriginal(int mode,int count,const char **rows,int *result) {
             self.assertEqual(entries[raw], english_layout.wrap_lines(
                 english, english_layout.load_mapping()))
 
+    def test_definition_descriptions_include_runtime_control_prefix_aliases(self):
+        import text_codec
+        entries = dict(self.entries)
+        raw = text_codec.encode('体力を５０回復する')
+        for prefix in (b'T0000 C0F04', b'T0000 C0F04 '):
+            self.assertIn(prefix + raw, entries)
+            self.assertTrue(entries[prefix + raw][0].startswith(prefix))
+
     def test_executable_region_save_prompt_is_translated(self):
         import text_codec
         raw = text_codec.encode('セーブしますか？')
