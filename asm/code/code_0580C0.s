@@ -9313,7 +9313,9 @@ sub_0805BAA2:
 sub_0805BAA4:
 	movs r3, #0
 	ldrsh r0, [r4, r3]
-	bl sub_0805715C
+	.2byte 0xF7FB
+	.byte 0x58
+	.byte 0xFB
 	adds r0, #68
 	movs r4, #0
 	ldrsh r0, [r0, r4]
@@ -10016,7 +10018,9 @@ _0805BD90:
 	.thumb
 	.global sub_0805BD98
 sub_0805BD98:
-	bl sub_0805715C
+	.2byte 0xF7FB
+	.byte 0xE0
+	.byte 0xF9
 	adds r0, #68
 	movs r2, #0
 	ldrsh r0, [r0, r2]
@@ -10525,8 +10529,8 @@ _0805BF48:
 _0805BF56:
 	movs r2, #0
 	ldrsh r0, [r4, r2]
-	bl sub_0805715C
-	adds r0, #68
+	.2byte 0xF7FB
+	.4byte 0x3044F8FF
 	movs r3, #0
 	ldrsh r0, [r0, r3]
 	cmp r0, #3
@@ -10566,7 +10570,9 @@ sub_0805BF8E:
 _0805BF90:
 	movs r2, #0
 	ldrsh r0, [r4, r2]
-	bl sub_0805715C
+	.2byte 0xF7FB
+	.byte 0xE2
+	.byte 0xF8
 	adds r0, #68
 	movs r3, #0
 	ldrsh r4, [r0, r3]

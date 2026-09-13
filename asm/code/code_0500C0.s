@@ -8640,8 +8640,8 @@ sub_0805374C:
 _08053766:
 	movs r1, #0
 	ldrsh r0, [r4, r1]
-	bl sub_08057108
-	adds r1, r0, #0
+	.2byte 0xF003
+	.4byte 0x1C01FCCD
 	adds r0, r5, #0
 	.2byte 0xF02F
 	.4byte 0x1C30F879
@@ -9573,8 +9573,8 @@ _08053E92:
 	adds r0, r0, r4
 	movs r1, #0
 	ldrsh r0, [r0, r1]
-	bl sub_08057108
-	adds r1, r0, #0
+	.2byte 0xF003
+	.4byte 0x1C01F933
 	adds r0, r5, #0
 	.2byte 0xF02E
 	.4byte 0x1C30FCDF
@@ -9855,8 +9855,8 @@ _0805408A:
 	.global _08054094
 _08054094:
 	adds r0, r7, #0
-	bl sub_0805715C
-	ldr r4, [r0, #76]
+	.2byte 0xF003
+	.4byte 0x6CC4F861
 	.global _0805409C
 _0805409C:
 	cmp r6, #0
@@ -9952,7 +9952,9 @@ _08054128:
 _0805412C:
 	ldr r4, _0805414C
 	adds r0, r7, #0
-	bl sub_08057108
+	.2byte 0xF002
+	.byte 0xEA
+	.byte 0xFF
 	adds r2, r0, #0
 	ldr r0, _08054150
 	ldr r3, [r0, #44]
@@ -10010,7 +10012,9 @@ _08054180:
 _08054184:
 	ldr r4, _080541A4
 	adds r0, r7, #0
-	bl sub_08057108
+	.2byte 0xF002
+	.byte 0xBE
+	.byte 0xFF
 	adds r2, r0, #0
 	ldr r0, _080541A8
 	ldr r3, [r0, #44]
@@ -10264,8 +10268,8 @@ _0805432E:
 	.global _08054338
 _08054338:
 	adds r0, r4, #0
-	bl sub_0805715C
-	ldr r0, [r0, #76]
+	.2byte 0xF002
+	.4byte 0x6CC0FF0F
 	lsrs r0, r0, #1
 	bl sub_080562C8
 	.global _08054346
@@ -16107,43 +16111,12 @@ _080570FE:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_08057108
-sub_08057108:
-	adds r1, r0, #0
-	lsls r1, r1, #16
-	asrs r1, r1, #16
-	lsls r0, r1, #2
-	adds r0, r0, r1
-	lsls r0, r0, #4
-	ldr r1, _0805711C
-	adds r0, r0, r1
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _0805711C
-_0805711C:
-	.4byte 0x081BE7EC  @ ROM+0x1BE7EC
+@ 057108..057120 is decompiled as ConsumableGetName(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08057120
-sub_08057120:
-	adds r1, r0, #0
-	lsls r1, r1, #16
-	asrs r1, r1, #16
-	lsls r0, r1, #2
-	adds r0, r0, r1
-	lsls r0, r0, #4
-	ldr r1, _08057134
-	adds r0, r0, r1
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _08057134
-_08057134:
-	.4byte 0x081BE80E  @ ROM+0x1BE80E
+@ 057120..057138 is decompiled as ConsumableGetDescription(); see src/decompiled.json
+
+	.section .rom.00057138, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -16171,29 +16144,10 @@ _08057154:
 _08057158:
 	.4byte 0x000031D0
 
-	.thumb_func
-	.thumb
-	.global sub_0805715C
-sub_0805715C:
-	adds r1, r0, #0
+@ 05715C..057174 is decompiled as ConsumableGetResourceName(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0805715E
-sub_0805715E:
-	lsls r1, r1, #16
-	asrs r1, r1, #16
-	lsls r0, r1, #2
-	adds r0, r0, r1
-	lsls r0, r0, #4
-	ldr r1, _08057170
-	adds r0, r0, r1
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _08057170
-_08057170:
-	.4byte 0x081BE7EC  @ ROM+0x1BE7EC
+	.section .rom.00057174, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -16438,8 +16392,8 @@ sub_08057314:
 	asrs r2, r2, #16
 	mov r9, r2
 	adds r0, r1, #0
-	bl sub_0805715C
-	adds r4, r0, #0
+	.2byte 0xF7FF
+	.4byte 0x1C04FF15
 	adds r0, r7, #0
 	bl sub_08055F4C
 	adds r6, r0, #0

@@ -159,8 +159,6 @@
 .thumb_set _lseek_r, 0x08086949
 .global _read_r
 .thumb_set _read_r, 0x08086979
-.global _impure_ptr
-.set _impure_ptr, 0x08F2AFEC
 .global __errno
 .thumb_set __errno, 0x080868E9
 .global end

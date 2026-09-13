@@ -65,11 +65,22 @@ struct ItemDefinition {
     u8 description[30];
 };
 
+/* Printable fields for the one-based consumable ID zero sentinel.  Real
+ * consumable records place the same fields inside ItemDefinition. */
+struct ConsumableText {
+    u8 name[34];
+    u8 description[30];
+};
+
 extern const struct ArmDefinition gArmDefinitions[ARM_COUNT];
 extern const struct ItemDefinition gItemDefinitions[ITEM_COUNT];
+extern const struct ConsumableText gConsumableNoneText;
 const struct ArmDefinition *ItemGetDefinition(s32 id);
 const char *ItemGetName(s32 id);
 const char *ItemGetDescription(s32 id);
+const char *ConsumableGetName(s32 id);
+const char *ConsumableGetDescription(s32 id);
+const char *ConsumableGetResourceName(s32 id);
 s32 ItemGetField63(s32 id);
 s32 ItemGetField64(s32 id);
 s32 ItemGetField65(s32 id);

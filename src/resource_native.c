@@ -33,7 +33,7 @@ extern u8 gIwramBase[];
 extern u8 gMapGenerationRootOffset[];
 extern void *HeapAlloc(void *heap, u32 size);
 extern const char *ItemGetName(s32 id);
-extern const char *sub_08057108(s32 id);
+extern const char *ConsumableGetName(s32 id);
 extern char *strcpy(char *destination, const char *source);
 extern s32 sub_08055EC8(s32 id);
 extern void BitSet(void *bits, s32 index, s32 value);
@@ -181,7 +181,7 @@ AT("00012EA8") s32 ScriptNativeGetResourceName(u32 count, const s32 *args,
     if (args[1] == 0)
         strcpy(name, ItemGetName((s16)args[0]));
     else
-        strcpy(name, sub_08057108((s16)args[0]));
+        strcpy(name, ConsumableGetName((s16)args[0]));
     *result = name;
     return 1;
     }

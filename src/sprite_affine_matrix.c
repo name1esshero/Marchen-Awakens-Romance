@@ -1,7 +1,8 @@
 #include "gba/types.h"
+#include "math_tables.h"
 
 #define AT(x) __attribute__((section(".rom." x)))
-#define SIN_TABLE ((const s16 *)0x08F28860)
+#define SIN_TABLE gSineTable14
 
 #ifdef AGBCC
 #define TARGET_REGISTER(name) asm(name)
@@ -199,4 +200,3 @@ void SpriteAffineWriteAlternateAxis(s32 index, s32 angle0, s32 scaleX0, s32 scal
         }
     }
 }
-

@@ -14238,8 +14238,8 @@ _0801E0D0:
 	.thumb
 	.global sub_0801E0D6
 sub_0801E0D6:
-	bl sub_08057108
-	adds r2, r0, #0
+	.2byte 0xF039
+	.4byte 0x1C02F817
 	mov r0, sp
 	adds r1, r4, #0
 	bl sub_0802A814

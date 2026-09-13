@@ -10332,8 +10332,8 @@ _08065058:
 	movs r3, #0
 	ldrsh r5, [r0, r3]
 	adds r0, r5, #0
-	bl sub_0805715C
-	lsls r1, r7, #2
+	.2byte 0xF7F2
+	.4byte 0x00B9F873
 	adds r1, r1, r7
 	lsls r1, r1, #2
 	adds r1, r1, r7
@@ -10661,8 +10661,8 @@ sub_08065280:
 	adds r4, r4, r1
 	movs r1, #0
 	ldrsh r0, [r4, r1]
-	bl sub_08057120
-	adds r2, r0, #0
+	.2byte 0xF7F1
+	.4byte 0x1C02FF3F
 	mov r0, sp
 	adds r1, r5, #0
 	bl sub_0802A814
@@ -11880,8 +11880,8 @@ sub_08065DE0:
 	cmp r0, #0
 	beq _08065E18
 	ldr r4, _08065E14
-	bl sub_08057120
-	adds r2, r0, #0
+	.2byte 0xF7F1
+	.4byte 0x1C02F98D
 	mov r0, sp
 	adds r1, r4, #0
 	bl sub_0802A814

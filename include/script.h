@@ -49,8 +49,9 @@ struct ScrpHeader
 
 /* Every one of the 256 opcode slots is present. Unsupported slots point to
  * ScriptCmdFail. */
-#define gScriptOpcodeHandlers ((void **)0x08F2A860)
 #define SCRIPT_OPCODE_COUNT 256
+typedef s32 (*ScriptOpcodeHandler)(void);
+extern const ScriptOpcodeHandler gScriptOpcodeHandlers[SCRIPT_OPCODE_COUNT];
 
 /* The 128 native commands are name/handler pairs at 081AFEA4. The word at
  * 081AFEA0 belongs to the preceding table. Names point into the ASCII pool

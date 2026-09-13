@@ -381,7 +381,30 @@ def raw_regions(rom, start, end):
         if data and data[0] in (0x00, 0xFF) and data.count(data[0]) == len(data):
             out.append((pos, stop, "fill", None))
         else:
-            out.append((pos, stop, "raw", "data/data_%06X.bin" % pos))
+            # Large end-of-ROM chunks can contain a small initialized island
+            # surrounded by erased flash.  Peel off long 0xFF edges so the
+            # source binary represents the island itself rather than hundreds
+            # of kilobytes of reproducible erased bytes.  Zero runs are left
+            # alone because an all-zero area can be an initialized table.
+            first = 0
+            while first < len(data) and data[first] == 0xFF:
+                first += 1
+            last = len(data)
+            while last > first and data[last - 1] == 0xFF:
+                last -= 1
+            if first >= 0x100:
+                out.append((pos, pos + first, "fill", None))
+            else:
+                first = 0
+            if last < len(data) and len(data) - last < 0x100:
+                last = len(data)
+            if first < last:
+                raw_start = pos + first
+                raw_stop = pos + last
+                out.append((raw_start, raw_stop, "raw",
+                            "data/data_%06X.bin" % raw_start))
+            if last < len(data):
+                out.append((pos + last, stop, "fill", None))
         pos = stop
     return out
 

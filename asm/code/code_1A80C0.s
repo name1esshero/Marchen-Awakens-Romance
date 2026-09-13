@@ -519,7 +519,7 @@
 	.syntax unified
 	.thumb
 	strh r3, [r2, r1]
-	ldr r5, _081AC720
+	.inst.n 0x4D41
 	mov r7, r11
 	ldrsb r7, [r3, r1]
 	adds r0, #49
@@ -581,42 +581,44 @@ _081AC670:
 	.4byte 0x00000000
 	.4byte 0x00000000
 	.4byte 0x00006425
-	.4byte 0x75736572
-	.4byte 0x00006E72
-	.4byte 0x74697865
-	.4byte 0x00000000
-	.4byte 0x6C6C6163
-	.4byte 0x00000000
-	.4byte 0x63657865
-	.4byte 0x00000000
-	.4byte 0x69616863
-	.4byte 0x0000006E
-	.4byte 0x6D727473
-	.4byte 0x00006469
-	.4byte 0x72727473
-	.4byte 0x74686769
-	.4byte 0x00000000
-	.4byte 0x6C727473
-	.4byte 0x00746665
-	.4byte 0x6C727473
-	.4byte 0x00006E65
-	.4byte 0x63727473
-	.4byte 0x0000706D
-	.4byte 0x006C6176
-	.4byte 0x00727473
-	.4byte 0x6E617273
-	.4byte 0x00000064
-	.4byte 0x646E6172
-	.4byte 0x00000000
-	.4byte 0x006E696D
-	.4byte 0x0078616D
-	.global _081AC71C
-_081AC71C:
-	.4byte 0x00726863
-	.global _081AC720
-_081AC720:
-	.4byte 0x00637361
-	.4byte 0x00736261
+
+@ 1AC6A8..1AC6B0 is decompiled as gScriptBuiltinNameResurn(); see src/decompiled.json
+
+@ 1AC6B0..1AC6B8 is decompiled as gScriptBuiltinNameExit(); see src/decompiled.json
+
+@ 1AC6B8..1AC6C0 is decompiled as gScriptBuiltinNameCall(); see src/decompiled.json
+
+@ 1AC6C0..1AC6C8 is decompiled as gScriptBuiltinNameExec(); see src/decompiled.json
+
+@ 1AC6C8..1AC6D0 is decompiled as gScriptBuiltinNameChain(); see src/decompiled.json
+
+@ 1AC6D0..1AC6D8 is decompiled as gScriptBuiltinNameStrmid(); see src/decompiled.json
+
+@ 1AC6D8..1AC6E4 is decompiled as gScriptBuiltinNameStrright(); see src/decompiled.json
+
+@ 1AC6E4..1AC6EC is decompiled as gScriptBuiltinNameStrleft(); see src/decompiled.json
+
+@ 1AC6EC..1AC6F4 is decompiled as gScriptBuiltinNameStrlen(); see src/decompiled.json
+
+@ 1AC6F4..1AC6FC is decompiled as gScriptBuiltinNameStrcmp(); see src/decompiled.json
+
+@ 1AC6FC..1AC700 is decompiled as gScriptBuiltinNameVal(); see src/decompiled.json
+
+@ 1AC700..1AC704 is decompiled as gScriptBuiltinNameStr(); see src/decompiled.json
+
+@ 1AC704..1AC70C is decompiled as gScriptBuiltinNameSrand(); see src/decompiled.json
+
+@ 1AC70C..1AC714 is decompiled as gScriptBuiltinNameRand(); see src/decompiled.json
+
+@ 1AC714..1AC718 is decompiled as gScriptBuiltinNameMin(); see src/decompiled.json
+
+@ 1AC718..1AC71C is decompiled as gScriptBuiltinNameMax(); see src/decompiled.json
+
+@ 1AC71C..1AC720 is decompiled as gScriptBuiltinNameChr(); see src/decompiled.json
+
+@ 1AC720..1AC724 is decompiled as gScriptBuiltinNameAsc(); see src/decompiled.json
+
+@ 1AC724..1AC728 is decompiled as gScriptBuiltinNameAbs(); see src/decompiled.json
 
 @ 1AC728..1AC7A2 is decompiled as gVfprintfConstants(); see src/decompiled.json
 

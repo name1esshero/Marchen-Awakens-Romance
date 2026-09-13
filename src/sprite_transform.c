@@ -1,5 +1,6 @@
 /* Fixed-point transforms used by the sprite renderer. */
 #include "sprite_engine.h"
+#include "math_tables.h"
 
 #define AT(x) __attribute__((section(".rom." x)))
 #ifdef __GNUC__
@@ -8,7 +9,7 @@
 #define TARGET_REGISTER(name) asm(name)
 #endif
 
-#define SPRITE_SINE_TABLE ((const s16 *)0x08F28860)
+#define SPRITE_SINE_TABLE gSineTable14
 
 extern s32 sub_08080BFC(s32 dividend, s32 divisor);
 

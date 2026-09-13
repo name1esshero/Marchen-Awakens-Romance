@@ -272,8 +272,8 @@ English mappings, including the ÄRM Select names and descriptions.
 
 ## Decompilation status
 
-The provenance audit verifies **1,534 source-compiled C ranges (204,495 bytes,
-1.2189% of the complete 16 MiB ROM) and 10 BIOS assembly wrappers**; each declared
+The provenance audit verifies **1,569 source-compiled C ranges (216,263 bytes,
+1.2890% of the complete 16 MiB ROM) and 10 BIOS assembly wrappers**; each declared
 range is linked from its expected object and matches the Japanese ROM. Recent
 batches decode the save block, CRC-32 validation, asynchronous SRAM write and
 load/verification paths, MusicPlayer2000 sound routines including the complete
@@ -476,17 +476,21 @@ the last two types that were still reaching the ROM as anonymous chunks, the
 | Source of the ROM image | Bytes |
 |---|---|
 | Named assets | 14.43 MB |
-| Anonymous `data/` chunks | 0.91 MB |
+| Remaining typed-but-undecoded `data/` chunks | 23,956 bytes |
 
 A `TSC` member is not always a 2048-byte screenblock. The five decoded 8bpp resources use 256/1024-byte affine maps with one byte per tile. Regular background maps use 16-bit entries,
 with the tile index in bits 0-9, horizontal and vertical flip at bits 10 and
 11, and the palette bank in bits 12-15.
 
-What remains outside the filesystem is 0.91 MB, and it is not one thing. Four
-large regions sit past the directory's end at `0xF28410`; three of those are
-filler, one 256 KB region is real data. The rest is roughly 70 KB of
-name-keyed tables between the code and the archive, plus around a hundred
-alignment gaps of 14 to 15 bytes each.
+The remaining raw payloads are catalogued in
+[`docs/raw-data-inventory.md`](docs/raw-data-inventory.md). Renderer lookup
+tables at `0x08F28410` and the consumable ID-zero sentinel now compile from C.
+The bytecode VM's complete 256-entry opcode dispatch and its 19 named built-in
+functions also compile as symbolic C tables.
+The bundled libc's newlib `_reent` initialization and `_impure_ptr` now use their
+real source structures as well. Long erased-flash spans use linker fills, leaving
+four initialized raw regions totalling 23,956 bytes. These include UI/menu tables
+and two unusual high-ROM tables that still need their consumers identified.
 
 ## Checks and regeneration
 

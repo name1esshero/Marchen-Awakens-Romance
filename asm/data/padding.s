@@ -295,5 +295,14 @@
 	.section .rom.00F6B448, "a"
 	.fill 262144, 1, 0xFF
 
+	.section .rom.00FAB448, "a"
+	.fill 215992, 1, 0xFF
+
+	.section .rom.00FE4000, "a"
+	.fill 29768, 1, 0xFF
+
+	.section .rom.00FEB448, "a"
+	.fill 80824, 1, 0xFF
+
 	.section .rom.00FFFF00, "a"
 	.fill 256, 1, 0xFF

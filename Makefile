@@ -53,6 +53,11 @@ MAP_PLACEMENTS_INCS := $(BUILD)/generated/map_placements.inc \
                        $(BUILD)/generated/map_screen_positions.inc \
                        $(BUILD)/generated/map_neighbor_indices.inc \
                        $(BUILD)/generated/map_visibility_masks.inc
+MATH_TABLE_INCS := $(BUILD)/generated/oam_attribute_masks.inc \
+                   $(BUILD)/generated/oam_half_dimensions.inc \
+                   $(BUILD)/generated/oam_dimensions.inc \
+                   $(BUILD)/generated/sine_8_8.inc \
+                   $(BUILD)/generated/sine_2_14.inc
 
 ASM_OBJS    := $(patsubst %.s,$(BUILD)/%.o,$(ASM_SRCS))
 C_OBJS      := $(patsubst %.c,$(BUILD)/%.o,$(C_SRCS))
@@ -97,6 +102,11 @@ $(MAP_PLACEMENTS_INCS) &: data/map_placements.json tools/map_placements.py
 	$(PYTHON) tools/map_placements.py build
 
 $(BUILD)/src/map_placements.o: $(MAP_PLACEMENTS_INCS)
+
+$(MATH_TABLE_INCS) &: data/math_tables.json tools/math_tables.py
+	$(PYTHON) tools/math_tables.py build
+
+$(BUILD)/src/math_tables.o: $(MATH_TABLE_INCS)
 
 # Sound sample headers and signed PCM bytes are compiled from editable WAV/JSON.
 # List required inputs from the manifest, so a deleted WAV fails even on an incremental build.
@@ -352,6 +362,7 @@ extract:
 	$(PYTHON) tools/definition_tables.py extract $(BASEROM)
 	$(PYTHON) tools/resource_catalog.py extract $(BASEROM)
 	$(PYTHON) tools/map_placements.py extract $(BASEROM)
+	$(PYTHON) tools/math_tables.py extract $(BASEROM)
 	$(PYTHON) tools/font.py extract
 	$(PYTHON) tools/palettes.py extract
 	$(PYTHON) tools/named_scripts.py extract

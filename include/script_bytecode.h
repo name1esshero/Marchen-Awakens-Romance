@@ -37,6 +37,15 @@ struct ScriptBytecodeRoot {
     struct ScriptBytecodeContext *context;
 };
 
+/* Name/value entries installed in the bytecode VM's resource namespace.
+ * Function entries store a Thumb function pointer in value. */
+struct ScriptResourceEntry {
+    const char *name;
+    u32 value;
+};
+
+extern const struct ScriptResourceEntry gScriptBuiltinFunctions[];
+
 #define gScriptBytecodeRoot (*(struct ScriptBytecodeRoot **)0x0300611C)
 #define gScriptBytecodeVm (gScriptBytecodeRoot->context->vm)
 

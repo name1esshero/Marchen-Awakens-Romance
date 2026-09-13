@@ -4020,6 +4020,24 @@
     "file": "src/item.c"
   },
   {
+    "addr": "08057108",
+    "size": 24,
+    "name": "ConsumableGetName",
+    "file": "src/item.c"
+  },
+  {
+    "addr": "08057120",
+    "size": 24,
+    "name": "ConsumableGetDescription",
+    "file": "src/item.c"
+  },
+  {
+    "addr": "0805715C",
+    "size": 24,
+    "name": "ConsumableGetResourceName",
+    "file": "src/item.c"
+  },
+  {
     "addr": "08057218",
     "size": 48,
     "name": "GameStateCopyMapBuffer",
@@ -9102,6 +9120,120 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AC6A8",
+    "size": 8,
+    "name": "gScriptBuiltinNameResurn",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "081AC6B0",
+    "size": 8,
+    "name": "gScriptBuiltinNameExit",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "081AC6B8",
+    "size": 8,
+    "name": "gScriptBuiltinNameCall",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "081AC6C0",
+    "size": 8,
+    "name": "gScriptBuiltinNameExec",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "081AC6C8",
+    "size": 8,
+    "name": "gScriptBuiltinNameChain",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "081AC6D0",
+    "size": 8,
+    "name": "gScriptBuiltinNameStrmid",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "081AC6D8",
+    "size": 12,
+    "name": "gScriptBuiltinNameStrright",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "081AC6E4",
+    "size": 8,
+    "name": "gScriptBuiltinNameStrleft",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "081AC6EC",
+    "size": 8,
+    "name": "gScriptBuiltinNameStrlen",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "081AC6F4",
+    "size": 8,
+    "name": "gScriptBuiltinNameStrcmp",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "081AC6FC",
+    "size": 4,
+    "name": "gScriptBuiltinNameVal",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "081AC700",
+    "size": 4,
+    "name": "gScriptBuiltinNameStr",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "081AC704",
+    "size": 8,
+    "name": "gScriptBuiltinNameSrand",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "081AC70C",
+    "size": 8,
+    "name": "gScriptBuiltinNameRand",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "081AC714",
+    "size": 4,
+    "name": "gScriptBuiltinNameMin",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "081AC718",
+    "size": 4,
+    "name": "gScriptBuiltinNameMax",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "081AC71C",
+    "size": 4,
+    "name": "gScriptBuiltinNameChr",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "081AC720",
+    "size": 4,
+    "name": "gScriptBuiltinNameAsc",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "081AC724",
+    "size": 4,
+    "name": "gScriptBuiltinNameAbs",
+    "file": "src/script_opcode_table.c"
+  },
+  {
     "addr": "081AC728",
     "size": 122,
     "name": "gVfprintfConstants",
@@ -9222,6 +9354,12 @@
     "file": "src/definition_tables.c"
   },
   {
+    "addr": "081BE7EC",
+    "size": 64,
+    "name": "gConsumableNoneText",
+    "file": "src/definition_tables.c"
+  },
+  {
     "addr": "081BE82C",
     "size": 1040,
     "name": "gItemDefinitions",
@@ -9268,6 +9406,60 @@
     "size": 13280,
     "name": "gResourceCatalog",
     "file": "src/resource_catalog.c"
+  },
+  {
+    "addr": "08F28410",
+    "size": 16,
+    "name": "gOamAttributeMasks",
+    "file": "src/math_tables.c"
+  },
+  {
+    "addr": "08F28420",
+    "size": 32,
+    "name": "gOamHalfDimensions",
+    "file": "src/math_tables.c"
+  },
+  {
+    "addr": "08F28440",
+    "size": 32,
+    "name": "gOamDimensions",
+    "file": "src/math_tables.c"
+  },
+  {
+    "addr": "08F28460",
+    "size": 1024,
+    "name": "gSineTable8_8",
+    "file": "src/math_tables.c"
+  },
+  {
+    "addr": "08F28860",
+    "size": 8192,
+    "name": "gSineTable14",
+    "file": "src/math_tables.c"
+  },
+  {
+    "addr": "08F2A860",
+    "size": 1024,
+    "name": "gScriptOpcodeHandlers",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08F2AC60",
+    "size": 160,
+    "name": "gScriptBuiltinFunctions",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08F2AD00",
+    "size": 748,
+    "name": "gLibcReentrancy",
+    "file": "src/libc/reent_data.c"
+  },
+  {
+    "addr": "08F2AFEC",
+    "size": 4,
+    "name": "_impure_ptr",
+    "file": "src/libc/reent_data.c"
   },
   {
     "addr": "08F2AFF0",

@@ -6,27 +6,17 @@
 	.section .rom.001B02A4, "a"
 	.incbin "build/data/data_1B02A4.bin"
 
-@ ROM 1BE7EC..1BE82C (raw)
-@ Source: data/data_1BE7EC.bin, with text/ applied by tools/build_text.py
-	.section .rom.001BE7EC, "a"
-	.incbin "build/data/data_1BE7EC.bin"
-
 @ ROM 1BEC3C..1BF408 (raw)
 @ Source: data/data_1BEC3C.bin, with text/ applied by tools/build_text.py
 	.section .rom.001BEC3C, "a"
 	.incbin "build/data/data_1BEC3C.bin"
 
-@ ROM F28410..F2AFF0 (raw)
-@ Source: data/data_F28410.bin, with text/ applied by tools/build_text.py
-	.section .rom.00F28410, "a"
-	.incbin "build/data/data_F28410.bin"
+@ ROM FE0000..FE4000 (raw)
+@ Source: data/data_FE0000.bin, with text/ applied by tools/build_text.py
+	.section .rom.00FE0000, "a"
+	.incbin "build/data/data_FE0000.bin"
 
-@ ROM FAB448..FEB448 (raw)
-@ Source: data/data_FAB448.bin, with text/ applied by tools/build_text.py
-	.section .rom.00FAB448, "a"
-	.incbin "build/data/data_FAB448.bin"
-
-@ ROM FEB448..FFFF00 (raw)
-@ Source: data/data_FEB448.bin, with text/ applied by tools/build_text.py
-	.section .rom.00FEB448, "a"
-	.incbin "build/data/data_FEB448.bin"
+@ ROM FFF000..FFFF00 (raw)
+@ Source: data/data_FFF000.bin, with text/ applied by tools/build_text.py
+	.section .rom.00FFF000, "a"
+	.incbin "build/data/data_FFF000.bin"

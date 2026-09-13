@@ -2,6 +2,15 @@
  * as in the original callers. No range checks are added. */
 #include "item.h"
 
+#define AT(x) __attribute__((section(".rom." x)))
+
+/* Consumables use one-based IDs.  Their printable fields have the same
+ * 0x50-byte stride as ItemDefinition, but the lookup bases point at a blank
+ * ID-zero name/description immediately before gItemDefinitions. */
+#define CONSUMABLE_NAME_BASE        ((const char *)0x081BE7EC)
+#define CONSUMABLE_DESCRIPTION_BASE ((const char *)0x081BE80E)
+#define CONSUMABLE_RECORD_SIZE      0x50
+
 __attribute__((section(".rom.00056464")))
 const struct ArmDefinition *ItemGetDefinition(s32 id)
 {
@@ -92,4 +101,25 @@ s32 ItemGetField58(s32 id)
 {
     id = (s16)id;
     return gArmDefinitions[id].field58;
+}
+
+AT("00057108")
+const char *ConsumableGetName(s32 id)
+{
+    return CONSUMABLE_NAME_BASE + (s16)id * CONSUMABLE_RECORD_SIZE;
+}
+
+AT("00057120")
+const char *ConsumableGetDescription(s32 id)
+{
+    return CONSUMABLE_DESCRIPTION_BASE + (s16)id * CONSUMABLE_RECORD_SIZE;
+}
+
+/* Some resource-loading paths use a distinct entry point with the same
+ * lookup semantics.  Keep it named separately because callers may be patched
+ * independently by the English build. */
+AT("0005715C")
+const char *ConsumableGetResourceName(s32 id)
+{
+    return CONSUMABLE_NAME_BASE + (s16)id * CONSUMABLE_RECORD_SIZE;
 }

@@ -29,11 +29,6 @@ extern s32 sub_0807EBE0(s32 heap, void *table, s32 type, const char *name);
 extern s32 sub_0807EB5C(s32 heap, void *table, s32 type, const char *name,
                         const void *data, s32 size);
 
-struct ScriptResourceEntry {
-    const char *name;
-    u32 value;
-};
-
 AT("0007EE10") s32 ScriptResourceRegisterTable(
     const struct ScriptResourceEntry *entry)
 {
@@ -64,7 +59,7 @@ AT("0007EE3C") const u8 ScriptResourceRegisterTableToHeapTail[2] = {0};
 AT("0007EE7C") s32 ScriptResourceRegisterBuiltins(s32 heap, void *table)
 {
     if (ScriptResourceRegisterTableToHeap(
-            heap, table, (const struct ScriptResourceEntry *)0x08F2AC60))
+            heap, table, gScriptBuiltinFunctions))
         return -1;
     if (ScriptResourceRegisterTableToHeap(
             heap, table, (const struct ScriptResourceEntry *)0x081ACB7C))

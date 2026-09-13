@@ -11,6 +11,14 @@
 
 #define AT(x) __attribute__((section(".rom." x)))
 
+/* Item IDs are one-based.  ID zero has no name and displays one full-width
+ * Shift-JIS space (0x8140) as its description. */
+AT("001BE7EC")
+const struct ConsumableText gConsumableNoneText = {
+    { 0 },
+    { 0x81, 0x40 },
+};
+
 AT("001B096C")
 const struct ArmDefinition gArmDefinitions[ARM_COUNT] = {
 #include "../build/generated/arm_definitions.inc"
