@@ -628,7 +628,9 @@ sub_08068732:
 	.global _08068736
 _08068736:
 	movs r0, #101
-	bl SoundSongStartU16
+	.2byte 0xF79D
+	.byte 0xAE
+	.byte 0xFB
 	ldr r1, _08068768
 	add r1, r10
 	ldrh r0, [r1, #0]
@@ -1109,8 +1111,8 @@ _08068C5C:
 sub_08068CE8:
 	bl sub_0800696C
 	ldr r1, _08068D14
-	bl strcmp
-	cmp r0, #0
+	.2byte 0xF019
+	.4byte 0x2800FD8D
 	bne _08068D18
 	ldrb r0, [r7, #28]
 	movs r1, #49
@@ -1507,8 +1509,8 @@ _08069136:
 	adds r5, r1, r0
 	adds r0, r5, #0
 	movs r1, #0
-	bl NcdInitSprite
-	movs r0, #0
+	.2byte 0xF012
+	.4byte 0x2000FD73
 	ldr r1, _080692EC
 	bl FindResourceByName
 	adds r2, r0, #0
@@ -1568,7 +1570,9 @@ _080691A6:
 	adds r5, r2, r0
 	adds r0, r5, #0
 	movs r1, #0
-	bl NcdInitSprite
+	.2byte 0xF012
+	.byte 0x3A
+	.byte 0xFD
 	movs r0, #0
 	ldr r1, _080692F0
 	bl FindResourceByName
@@ -1636,8 +1640,8 @@ _0806922E:
 	adds r5, r3, r0
 	adds r0, r5, #0
 	movs r1, #0
-	bl NcdInitSprite
-	movs r0, #0
+	.2byte 0xF012
+	.4byte 0x2000FCF7
 	ldr r1, _080692F8
 	bl FindResourceByName
 	adds r2, r0, #0
@@ -1685,21 +1689,21 @@ _0806922E:
 	add r5, r8
 	adds r0, r5, #0
 	movs r1, #0
-	bl NcdInitSprite
-	ldr r5, _080692FC
+	.2byte 0xF012
+	.4byte 0x4D15FCC3
 	add r5, r8
 	adds r0, r5, #0
 	movs r1, #0
-	bl NcdInitSprite
-	bl sub_08053790
-	movs r0, #228
+	.2byte 0xF012
+	.4byte 0xF7EAFCBD
+	.4byte 0x20E4FA6D
 	lsls r0, r0, #4
 	add r0, r8
 	movs r1, #30
 	movs r2, #1
 	movs r3, #8
-	bl StepCounterInit
-	mov r0, r8
+	.2byte 0xF7EA
+	.4byte 0x4640FB4D
 	bl sub_080698F0
 	mov r0, r8
 	bl sub_08069C5C
@@ -1848,7 +1852,9 @@ _0806948E:
 	cmp r0, #0
 	ble _080694C6
 	movs r0, #101
-	bl SoundSongStartU16
+	.2byte 0xF79C
+	.byte 0xF8
+	.byte 0xFC
 	ldr r0, _080694D8
 	add r0, r8
 	ldrh r1, [r4, #0]
@@ -2094,7 +2100,9 @@ _080696CE:
 	.global _08069716
 _08069716:
 	ldr r0, [sp, #8]
-	bl FinishTask
+	.2byte 0xF011
+	.byte 0x48
+	.byte 0xF8
 	b _080697C6
 	.byte 0x00
 	.byte 0x00
@@ -2278,7 +2286,9 @@ sub_0806989C:
 	ldr r1, _080698E8
 	ldr r2, _080698EC
 	adds r0, r4, #0
-	bl KmpRenderViewport
+	.2byte 0xF798
+	.byte 0xBC
+	.byte 0xFE
 	add sp, #12
 	pop {r4, r5, r6}
 	pop {r0}
@@ -2362,7 +2372,9 @@ _08069956:
 	ldr r4, _08069B5C
 	add r4, r8
 	adds r0, r4, #0
-	bl sub_08053294
+	.2byte 0xF7E9
+	.byte 0x9A
+	.byte 0xFC
 	ldr r0, _08069B58
 	add r0, r8
 	str r0, [r4, #0]
@@ -2435,8 +2447,8 @@ _080699D4:
 	movs r4, #0
 	ldrsh r6, [r0, r4]
 	adds r0, r6, #0
-	bl ItemGetDefinition
-	lsls r5, r7, #4
+	.2byte 0xF7EC
+	.4byte 0x013DFD39
 	subs r4, r5, r7
 	lsls r4, r4, #2
 	subs r4, r4, r7
@@ -2464,8 +2476,8 @@ _080699D4:
 	muls r0, r2
 	adds r1, r1, r0
 	adds r0, r3, #0
-	bl NcdSpriteCopy
-	mov r3, r8
+	.2byte 0xF012
+	.4byte 0x4643FA99
 	adds r2, r3, r4
 	movs r0, #246
 	lsls r0, r0, #4
@@ -2537,8 +2549,8 @@ _08069A90:
 	adds r1, r5, r1
 	str r2, [sp, #20]
 	str r3, [sp, #24]
-	bl NcdSpriteCopy
-	mov r0, r9
+	.2byte 0xF012
+	.4byte 0x4648FA59
 	strh r0, [r6, #0]
 	mov r1, r10
 	strh r1, [r6, #2]
@@ -3007,8 +3019,8 @@ sub_08069DB8:
 	ldr r2, _08069DF4
 	str r2, [sp, #0]
 	movs r2, #0
-	bl CreateTask
-	ldr r1, _08069DF8
+	.2byte 0xF010
+	.4byte 0x490BFCD9
 	adds r3, r0, r1
 	str r4, [r3, #0]
 	movs r1, #20
@@ -3189,8 +3201,8 @@ sub_08069F18:
 	ldr r3, _0806A2D0
 	adds r0, r0, r3
 	ldr r0, [r0, #0]
-	bl HeapAlloc
-	ldr r1, _0806A2D4
+	.2byte 0xF010
+	.4byte 0x49E9F9DF
 	add r1, r9
 	str r0, [r1, #0]
 	bl sub_0806B23C
@@ -3207,8 +3219,8 @@ _08069F42:
 	adds r7, r1, r0
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdInitSprite
-	lsls r4, r5, #4
+	.2byte 0xF011
+	.4byte 0x012CFE6D
 	ldr r0, _0806A2D8
 	adds r4, r4, r0
 	movs r0, #0
@@ -3285,8 +3297,8 @@ _08069FE0:
 	adds r7, r3, r0
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdInitSprite
-	movs r0, #0
+	.2byte 0xF011
+	.4byte 0x2000FE1D
 	ldr r1, _0806A2E8
 	bl FindResourceByName
 	adds r2, r0, #0
@@ -3350,8 +3362,8 @@ _0806A064:
 	adds r7, r6, r0
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdInitSprite
-	movs r0, #0
+	.2byte 0xF011
+	.4byte 0x2000FDDD
 	ldr r1, _0806A2F0
 	bl FindResourceByName
 	adds r2, r0, #0
@@ -3412,7 +3424,9 @@ _0806A0DC:
 	adds r7, r1, r0
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdInitSprite
+	.2byte 0xF011
+	.byte 0xA0
+	.byte 0xFD
 	movs r0, #0
 	ldr r1, _0806A2F8
 	bl FindResourceByName
@@ -3468,8 +3482,8 @@ _0806A14A:
 	adds r7, r1, r0
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdInitSprite
-	movs r0, #0
+	.2byte 0xF011
+	.4byte 0x2000FD67
 	ldr r1, _0806A300
 	bl FindResourceByName
 	adds r2, r0, #0
@@ -3518,7 +3532,9 @@ _0806A1AE:
 	adds r7, r1, r0
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdInitSprite
+	.2byte 0xF011
+	.byte 0x34
+	.byte 0xFD
 	movs r0, #0
 	ldr r1, _0806A304
 	bl FindResourceByName
@@ -3559,19 +3575,23 @@ _0806A1AE:
 	add r7, r9
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdInitSprite
+	.2byte 0xF011
+	.byte 0x08
+	.byte 0xFD
 	ldr r7, _0806A30C
 	add r7, r9
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdInitSprite
+	.2byte 0xF011
+	.byte 0x02
+	.byte 0xFD
 	movs r7, #240
 	lsls r7, r7, #5
 	add r7, r9
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdInitSprite
-	movs r5, #0
+	.2byte 0xF011
+	.4byte 0x2500FCFB
 	movs r4, #0
 	.global _0806A23A
 _0806A23A:
@@ -3583,8 +3603,8 @@ _0806A23A:
 	adds r7, r1, r0
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdInitSprite
-	movs r0, #0
+	.2byte 0xF011
+	.4byte 0x2000FCEF
 	ldr r1, _0806A314
 	bl FindResourceByName
 	adds r2, r0, #0
@@ -3626,9 +3646,9 @@ _0806A23A:
 	add r7, r9
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdInitSprite
-	bl sub_08053790
-	b _0806A31C
+	.2byte 0xF011
+	.4byte 0xF7E9FCC1
+	.4byte 0xE035FA71
 	.global _0806A2B0
 _0806A2B0:
 	.4byte 0x000012B6
@@ -3717,8 +3737,8 @@ _0806A31C:
 	movs r1, #30
 	movs r2, #1
 	movs r3, #8
-	bl StepCounterInit
-	mov r0, r9
+	.2byte 0xF7E9
+	.4byte 0x4648FB1B
 	bl sub_0806B34C
 	mov r0, r9
 	bl sub_0806B834
@@ -4360,7 +4380,9 @@ sub_0806AC8E:
 	movs r0, r0
 	movs r0, #16
 	movs r1, #0
-	bl KeyInputConsumePressed
+	.2byte 0xF00F
+	.byte 0x4C
+	.byte 0xFA
 	cmp r0, #0
 	beq _0806ACCC
 	ldr r4, _0806ACC4
@@ -4378,8 +4400,8 @@ sub_0806AC8E:
 	.global _0806ACB8
 _0806ACB8:
 	movs r0, #101
-	bl SoundSongStartU16
-	ldrh r0, [r4, #0]
+	.2byte 0xF79B
+	.4byte 0x8820F8ED
 	adds r0, #1
 	b _0806ACF2
 	.global _0806ACC4
@@ -4392,7 +4414,9 @@ _0806ACC8:
 _0806ACCC:
 	movs r0, #32
 	movs r1, #0
-	bl KeyInputConsumePressed
+	.2byte 0xF00F
+	.byte 0x30
+	.byte 0xFA
 	adds r5, r0, #0
 	cmp r5, #0
 	beq _0806AD00
@@ -4406,8 +4430,8 @@ _0806ACCC:
 	.global _0806ACE8
 _0806ACE8:
 	movs r0, #101
-	bl SoundSongStartU16
-	ldrh r0, [r4, #0]
+	.2byte 0xF79B
+	.4byte 0x8820F8D5
 	subs r0, #1
 	.global _0806ACF2
 _0806ACF2:
@@ -4422,15 +4446,21 @@ _0806ACFC:
 _0806AD00:
 	movs r0, #1
 	movs r1, #0
-	bl KeyInputConsumePressed
+	.2byte 0xF00F
+	.byte 0x16
+	.byte 0xFA
 	adds r4, r0, #0
 	cmp r4, #0
 	beq _0806ADAC
 	movs r0, #106
-	bl SoundSongStartU16
+	.2byte 0xF79B
+	.byte 0xC2
+	.byte 0xF8
 	ldr r0, _0806AD7C
 	add r0, r9
-	bl MapObjectResetMotion
+	.2byte 0xF001
+	.byte 0x42
+	.byte 0xFD
 	ldr r0, _0806AD80
 	add r0, r9
 	movs r2, #0
@@ -4536,7 +4566,9 @@ sub_0806ADB2:
 	.global _0806ADBA
 _0806ADBA:
 	movs r0, #103
-	bl SoundSongStartU16
+	.2byte 0xF79B
+	.byte 0x6C
+	.byte 0xF8
 	ldr r0, _0806AE0C
 	add r0, r9
 	ldrh r0, [r0, #0]
@@ -5119,7 +5151,9 @@ sub_0806B300:
 	ldr r1, _0806B344
 	ldr r2, _0806B348
 	adds r0, r4, #0
-	bl KmpRenderViewport
+	.2byte 0xF797
+	.byte 0x8E
+	.byte 0xF9
 	add sp, #12
 	pop {r4, r5, r6}
 	pop {r0}
@@ -5220,8 +5254,8 @@ _0806B3B0:
 	ldr r4, _0806B688
 	add r4, r9
 	adds r0, r4, #0
-	bl sub_08053294
-	ldr r0, _0806B684
+	.2byte 0xF7E7
+	.4byte 0x48B2FF6D
 	add r0, r9
 	str r0, [r4, #0]
 	ldr r1, _0806B68C
@@ -5294,8 +5328,8 @@ _0806B42E:
 	ldrsh r4, [r0, r5]
 	mov r8, r4
 	mov r0, r8
-	bl ItemGetDefinition
-	mov r10, r0
+	.2byte 0xF7EB
+	.4byte 0x4682F80B
 	lsls r5, r7, #4
 	subs r4, r5, r7
 	lsls r4, r4, #2
@@ -5324,7 +5358,9 @@ _0806B42E:
 	movs r3, #52
 	muls r2, r3
 	adds r1, r1, r2
-	bl NcdSpriteCopy
+	.2byte 0xF010
+	.byte 0x6A
+	.byte 0xFD
 	adds r2, r6, r4
 	ldr r6, _0806B6B8
 	adds r1, r2, r6
@@ -5389,7 +5425,9 @@ _0806B4EA:
 	add r1, r9
 	str r2, [sp, #32]
 	str r3, [sp, #36]
-	bl NcdSpriteCopy
+	.2byte 0xF010
+	.byte 0x28
+	.byte 0xFD
 	ldr r3, [sp, #36]
 	strh r3, [r4, #0]
 	mov r0, sp
@@ -5433,8 +5471,8 @@ _0806B4EA:
 	ldr r7, _0806B6CC
 	adds r1, r1, r7
 	add r1, r9
-	bl NcdSpriteCopy
-	mov r0, r9
+	.2byte 0xF010
+	.4byte 0x4648FCFB
 	adds r2, r0, r4
 	ldr r3, _0806B6D0
 	adds r1, r2, r3
@@ -5488,7 +5526,9 @@ _0806B5BA:
 	adds r1, r5, r1
 	str r2, [sp, #32]
 	str r3, [sp, #36]
-	bl NcdSpriteCopy
+	.2byte 0xF010
+	.byte 0xC4
+	.byte 0xFC
 	mov r7, r8
 	strh r7, [r6, #0]
 	mov r0, r10
@@ -6150,8 +6190,8 @@ sub_0806BA70:
 	ldr r3, _0806BCD4
 	adds r4, r7, r3
 	adds r0, r4, #0
-	bl sub_08053294
-	ldr r0, _0806BCD8
+	.2byte 0xF7E7
+	.4byte 0x4885FBE9
 	str r0, [r4, #0]
 	ldr r1, _0806BCDC
 	adds r1, r7, r1
@@ -6278,8 +6318,8 @@ _0806BB68:
 	ldr r2, _0806BCD8
 	ldr r0, [r2, #4]
 	str r0, [sp, #40]
-	bl strlen
-	lsls r0, r0, #16
+	.2byte 0xF016
+	.4byte 0x0400FE77
 	asrs r1, r0, #16
 	lsrs r0, r0, #31
 	adds r1, r1, r0
@@ -6295,8 +6335,8 @@ _0806BB68:
 	orrs r0, r2
 	str r0, [sp, #44]
 	adds r0, r4, #0
-	bl sub_08053294
-	add r0, sp, #40
+	.2byte 0xF7E7
+	.4byte 0xA80AFB55
 	str r0, [r4, #0]
 	mov r3, r8
 	ldr r0, [r3, #0]
@@ -6364,7 +6404,9 @@ _0806BC64:
 	adds r0, r4, #0
 	str r2, [sp, #88]
 	str r3, [sp, #92]
-	bl NcdSpriteCopy
+	.2byte 0xF010
+	.byte 0x74
+	.byte 0xF9
 	ldr r0, _0806BCFC
 	adds r0, r0, r7
 	mov r9, r0
@@ -6513,7 +6555,9 @@ _0806BD34:
 	strb r0, [r4, #4]
 	adds r0, r4, #0
 	add r1, sp, #12
-	bl strcat
+	.2byte 0xF016
+	.byte 0x2F
+	.byte 0xFD
 
 	.thumb_func
 	.thumb
@@ -6549,7 +6593,9 @@ _0806BD70:
 	strb r0, [r4, #4]
 	adds r0, r4, #0
 	add r1, sp, #12
-	bl strcat
+	.2byte 0xF016
+	.byte 0x12
+	.byte 0xFD
 	.global _0806BDA0
 _0806BDA0:
 	adds r1, r4, #0
@@ -6617,8 +6663,8 @@ sub_0806BDE4:
 	ldr r1, [r0, #0]
 	str r1, [sp, #40]
 	ldr r0, [r0, #0]
-	bl strlen
-	lsrs r0, r0, #1
+	.2byte 0xF016
+	.4byte 0x0840FD49
 	lsls r0, r0, #3
 	movs r1, #104
 	subs r1, r1, r0
@@ -6628,8 +6674,8 @@ sub_0806BDE4:
 	ldr r2, _0806BF6C
 	adds r4, r7, r2
 	adds r0, r4, #0
-	bl sub_08053294
-	add r0, sp, #40
+	.2byte 0xF7E7
+	.4byte 0xA80AFA2D
 	str r0, [r4, #0]
 	ldr r3, _0806BF70
 	adds r1, r7, r3
@@ -6724,8 +6770,8 @@ _0806BED6:
 	adds r0, r4, #0
 	str r2, [sp, #88]
 	str r3, [sp, #92]
-	bl NcdSpriteCopy
-	ldr r0, sub_0806BF5C
+	.2byte 0xF010
+	.4byte 0x481CF83B
 	adds r0, r0, r7
 	mov r9, r0
 	movs r1, #0
@@ -6767,8 +6813,8 @@ _0806BF2C:
 	ldr r3, _0806BFA8
 	adds r2, r7, r3
 	ldr r2, [r2, #0]
-	bl CreateCopyTask
-	add sp, #96
+	.2byte 0xF797
+	.4byte 0xB018FC23
 	pop {r3, r4, r5}
 	mov r8, r3
 	mov r9, r4
@@ -6882,7 +6928,9 @@ sub_0806BFAC:
 	str r4, [r0, #0]
 	adds r0, r6, #0
 	movs r2, #12
-	bl memcpy
+	.2byte 0xF016
+	.byte 0x60
+	.byte 0xFB
 	ldr r0, _0806C02C
 	ldr r1, _0806C030
 	adds r0, r0, r1
@@ -6959,8 +7007,8 @@ _0806C03C:
 	.thumb
 	.global sub_0806C062
 sub_0806C062:
-	bl ItemGetName
-	adds r2, r0, #0
+	.2byte 0xF7EA
+	.4byte 0x1C02FA07
 	ldr r4, _0806C098
 	ldr r3, [r4, #0]
 	mov r0, sp
@@ -7045,7 +7093,9 @@ _0806C102:
 _0806C10C:
 	adds r2, r6, #0
 	movs r3, #0
-	bl DialogueStart
+	.2byte 0xF7A5
+	.byte 0x3E
+	.byte 0xFB
 	b _0806C138
 	.byte 0x00
 	.byte 0x00
@@ -7062,8 +7112,8 @@ _0806C138:
 	ldr r0, _0806C158
 	ldr r2, _0806C15C
 	movs r1, #0
-	bl KmpRenderViewport
-	add sp, #180
+	.2byte 0xF796
+	.4byte 0xB02DFA77
 	pop {r3, r4}
 	mov r8, r3
 	mov r9, r4
@@ -7124,8 +7174,8 @@ _0806C1B2:
 	add r4, r8
 	adds r0, r4, #0
 	movs r1, #0
-	bl NcdInitSprite
-	movs r0, #0
+	.2byte 0xF00F
+	.4byte 0x2000FD35
 	ldr r1, _0806C22C
 	bl FindResourceByName
 	adds r2, r0, #0
@@ -7203,8 +7253,8 @@ sub_0806C230:
 	adds r7, r0, #0
 	adds r6, r7, #0
 	adds r6, #32
-	bl RuntimeGetFieldEE8
-	cmp r0, #0
+	.2byte 0xF79B
+	.4byte 0x2800F9F1
 	beq _0806C2AE
 	movs r0, #249
 	lsls r0, r0, #2
@@ -7287,8 +7337,8 @@ _0806C298:
 _0806C2AE:
 	movs r0, #2
 	movs r1, #0
-	bl KeyInputConsumePressed
-	cmp r0, #0
+	.2byte 0xF00D
+	.4byte 0x2800FF3F
 	beq _0806C2FE
 	ldr r1, _0806C31C
 	adds r0, r6, r1
@@ -7297,7 +7347,9 @@ _0806C2AE:
 	cmp r4, #1
 	bne _0806C2FE
 	movs r0, #103
-	bl SoundSongStartU16
+	.2byte 0xF799
+	.byte 0xE6
+	.byte 0xFD
 	movs r3, #236
 	lsls r3, r3, #2
 	adds r2, r6, r3
@@ -7443,8 +7495,8 @@ _0806C36C:
 	adds r1, #12
 	adds r3, r6, r1
 	movs r1, #0
-	bl sub_08007134
-	movs r2, #240
+	.2byte 0xF79A
+	.4byte 0x22F0FEDB
 	lsls r2, r2, #2
 	adds r1, r6, r2
 	movs r0, #60
@@ -7468,7 +7520,9 @@ _0806C36C:
 	.global sub_0806C3A2
 sub_0806C3A2:
 	ldr r0, [r4, #0]
-	bl MapObjectResetMotion
+	.2byte 0xF000
+	.byte 0xFC
+	.byte 0xF9
 	ldr r1, [r4, #0]
 	ldrh r0, [r1, #6]
 	strh r0, [r1, #18]
@@ -7854,9 +7908,13 @@ _0806C540:
 	ldr r0, [r0, #0]
 	cmp r0, #0
 	beq _0806C58E
-	bl RuntimeStop
+	.2byte 0xF798
+	.byte 0xD4
+	.byte 0xFC
 	bl sub_08004F10
-	bl RuntimeClear
+	.2byte 0xF798
+	.byte 0x7C
+	.byte 0xFC
 	movs r0, #0
 	bl sub_08006F0C
 	movs r5, #128
@@ -7883,12 +7941,14 @@ _0806C564:
 	.global _0806C586
 _0806C586:
 	adds r0, r7, #0
-	bl FinishTask
+	.2byte 0xF00E
+	.byte 0x10
+	.byte 0xF9
 	b _0806C5B6
 	.global _0806C58E
 _0806C58E:
-	bl GameStateGetField425B
-	adds r4, r0, #0
+	.2byte 0xF79A
+	.4byte 0x1C04FCEF
 	lsls r4, r4, #16
 	asrs r4, r4, #16
 	movs r3, #236
@@ -7940,8 +8000,8 @@ sub_0806C5C6:
 	str r4, [r0, #0]
 	adds r0, r7, #0
 	movs r2, #12
-	bl memcpy
-	movs r0, #238
+	.2byte 0xF016
+	.4byte 0x20EEF857
 	lsls r0, r0, #2
 	add r0, r8
 	ldr r5, _0806C648
@@ -8047,7 +8107,9 @@ _0806C688:
 	movs r1, #2
 	adds r2, r7, #0
 	movs r3, #0
-	bl DialogueStart
+	.2byte 0xF7A5
+	.byte 0x7A
+	.byte 0xF8
 	b _0806C6C0
 	.byte 0x00
 	.byte 0x00
@@ -8068,14 +8130,16 @@ _0806C6A8:
 	movs r1, #1
 	adds r2, r7, #0
 	movs r3, #0
-	bl DialogueStart
+	.2byte 0xF7A5
+	.byte 0x68
+	.byte 0xF8
 	.global _0806C6C0
 _0806C6C0:
 	ldr r0, _0806C6EC
 	ldr r2, _0806C6F0
 	movs r1, #0
-	bl KmpRenderViewport
-	ldr r0, _0806C6F4
+	.2byte 0xF795
+	.4byte 0x480AFFB3
 	add r0, r8
 	ldrh r1, [r0, #0]
 	movs r0, #238
@@ -8118,10 +8182,12 @@ _0806C6F4:
 sub_0806C6F8:
 	push {r4, r5, lr}
 	adds r5, r0, #0
-	bl RuntimeGetCurrentRecord14C
+	.2byte 0xF798
+	.byte 0x4A
+	.byte 0xFC
 	adds r4, r0, #0
-	bl RuntimeReturnZero
-	lsls r0, r0, #24
+	.2byte 0xF798
+	.4byte 0x0600FC9B
 	cmp r0, #0
 	bne _0806C716
 	adds r0, r4, #0
@@ -8147,14 +8213,16 @@ sub_0806C71E:
 	adds r5, r0, #0
 	lsls r1, r1, #16
 	asrs r4, r1, #16
-	bl RuntimeReturnZero
+	.2byte 0xF798
+	.byte 0x8A
+	.byte 0xFC
 	lsls r0, r0, #24
 	cmp r0, #0
 	bne _0806C752
 	cmp r4, #0
 	beq _0806C752
-	bl SioGetPlayerId
-	movs r1, #0
+	.2byte 0xF798
+	.4byte 0x2100FAC5
 	lsls r0, r0, #24
 	cmp r0, #0
 	bne _0806C740
@@ -8220,12 +8288,16 @@ sub_0806C7AC:
 	movs r2, #16
 	str r2, [sp, #0]
 	movs r2, #0
-	bl CreateTask
+	.2byte 0xF00D
+	.byte 0xD8
+	.byte 0xFF
 	adds r4, r0, #0
 	strh r5, [r4, #32]
 	strh r6, [r4, #36]
 	movs r0, #1
-	bl ScriptAddPendingTasks
+	.2byte 0xF011
+	.byte 0x24
+	.byte 0xFE
 	adds r0, r4, #0
 	add sp, #4
 	pop {r4, r5, r6}
@@ -8331,8 +8403,8 @@ _0806C8BA:
 	.global _0806C8C8
 _0806C8C8:
 	movs r0, #1
-	bl ScriptCompletePendingTasks
-	movs r0, #0
+	.2byte 0xF011
+	.4byte 0x2000FDBD
 	movs r1, #1
 	bl sub_08011718
 	ldr r1, [r5, #24]
@@ -8344,7 +8416,9 @@ _0806C8C8:
 	.global _0806C8E2
 _0806C8E2:
 	adds r0, r5, #0
-	bl FinishTask
+	.2byte 0xF00D
+	.byte 0x62
+	.byte 0xFF
 	.global _0806C8E8
 _0806C8E8:
 	add sp, #12
@@ -8659,7 +8733,9 @@ sub_0806CCA4:
 	.global _0806CCB8
 _0806CCB8:
 	adds r0, r5, #0
-	bl FinishTask
+	.2byte 0xF00D
+	.byte 0x77
+	.byte 0xFD
 	.global _0806CCBE
 _0806CCBE:
 	add sp, #8
@@ -9201,7 +9277,9 @@ sub_0806D438:
 sub_0806D464:
 	beq _0806D52E
 	movs r0, #105
-	bl SoundSongStartU16
+	.2byte 0xF798
+	.byte 0x16
+	.byte 0xFD
 	adds r0, r6, #0
 	adds r0, #160
 	ldr r1, [r0, #0]
@@ -9275,7 +9353,9 @@ sub_0806D514:
 	.global _0806D526
 _0806D526:
 	mov r0, r9
-	bl FinishTask
+	.2byte 0xF00D
+	.byte 0x40
+	.byte 0xF9
 	b _0806D5FC
 	.global _0806D52E
 _0806D52E:
@@ -9347,8 +9427,8 @@ _0806D588:
 	ldrsb r0, [r2, r0]
 	cmp r0, #0
 	beq _0806D5FC
-	bl GameStateGetField425B
-	cmp r0, #0
+	.2byte 0xF799
+	.4byte 0x2800FCDD
 	beq _0806D5FC
 	movs r3, #139
 	lsls r3, r3, #1
@@ -9358,16 +9438,16 @@ _0806D588:
 	lsls r5, r5, #1
 	adds r0, r6, r5
 	strh r1, [r0, #0]
-	bl RuntimeGetCurrentRecord14C
-	adds r1, r6, #0
+	.2byte 0xF797
+	.4byte 0x1C31FCE3
 	adds r1, #252
 	movs r2, #20
 	bl CpuCopy
 	movs r0, #136
 	lsls r0, r0, #1
 	adds r4, r6, r0
-	bl SioGetPlayerId
-	movs r1, #0
+	.2byte 0xF797
+	.4byte 0x2100FB6F
 	lsls r0, r0, #24
 	cmp r0, #0
 	bne _0806D5EC
@@ -9518,7 +9598,9 @@ _0806D76A:
 	bl CpuFill
 	adds r4, #96
 	adds r0, r4, #0
-	bl sub_08053294
+	.2byte 0xF7E5
+	.byte 0x76
+	.byte 0xFD
 	adds r0, r5, #0
 	adds r0, #164
 	movs r2, #0
@@ -9536,8 +9618,8 @@ _0806D76A:
 	lsls r0, r0, #2
 	adds r0, r0, r4
 	ldr r0, [r0, #0]
-	bl strlen
-	lsrs r0, r0, #1
+	.2byte 0xF015
+	.4byte 0x0840F873
 	lsls r0, r0, #3
 	movs r1, #128
 	subs r1, r1, r0
@@ -9581,7 +9663,9 @@ _0806D7FC:
 	lsls r0, r0, #2
 	adds r0, r0, r4
 	ldr r0, [r0, #0]
-	bl strlen
+	.2byte 0xF015
+	.byte 0x50
+	.byte 0xF8
 	lsrs r0, r0, #1
 	lsls r0, r0, #3
 	movs r1, #128
@@ -10274,7 +10358,9 @@ sub_0806DF0E:
 	adds r0, r6, #0
 	movs r1, #0
 	movs r2, #0
-	bl KmpRenderViewport
+	.2byte 0xF794
+	.byte 0x54
+	.byte 0xFB
 	add sp, #12
 	pop {r4, r5, r6}
 	pop {r0}
@@ -10355,8 +10441,8 @@ sub_0806DFB0:
 	lsls r0, r0, #2
 	adds r0, r0, r7
 	mov r8, r0
-	bl sub_08053294
-	ldr r4, _0806E0A0
+	.2byte 0xF7E5
+	.4byte 0x4C21F93D
 	movs r1, #128
 	lsls r1, r1, #7
 	adds r0, r4, #0
@@ -10819,8 +10905,8 @@ sub_0806E438:
 	adds r0, r4, #0
 	movs r1, #44
 	adds r2, r7, #0
-	bl Crc32Difference
-	cmp r0, #0
+	.2byte 0xF000
+	.4byte 0x2800F86F
 	beq _0806E462
 	subs r6, #1
 	b _0806E4A0
@@ -10828,8 +10914,8 @@ sub_0806E438:
 _0806E462:
 	ldr r1, _0806E478
 	adds r0, r4, #0
-	bl strcmp
-	adds r5, r0, #0
+	.2byte 0xF014
+	.4byte 0x1C05F9D1
 	cmp r5, #0
 	beq _0806E47C
 	movs r6, #2
@@ -10856,8 +10942,8 @@ _0806E48A:
 	movs r1, #252
 	lsls r1, r1, #6
 	mov r2, r8
-	bl Crc32Difference
-	cmp r0, #0
+	.2byte 0xF000
+	.4byte 0x2800F84F
 	beq _0806E4A0
 	movs r6, #2
 	.global _0806E4A0
@@ -10985,14 +11071,16 @@ sub_0806E54C:
 	adds r0, #44
 	movs r1, #252
 	lsls r1, r1, #6
-	bl MapGeneratorStep
+	.2byte 0xF7FF
+	.byte 0xDA
+	.byte 0xFF
 	str r0, [r4, #36]
 	str r5, [r4, #40]
 	str r5, [r4, #32]
 	adds r0, r4, #0
 	movs r1, #44
-	bl MapGeneratorStep
-	str r0, [r4, #32]
+	.2byte 0xF7FF
+	.4byte 0x6220FFD3
 	movs r1, #224
 	lsls r1, r1, #20
 	adds r0, r4, #0
@@ -11043,8 +11131,8 @@ sub_0806E5AC:
 	cmp r0, #0
 	ble _0806E5F4
 	movs r0, #1
-	bl GameStateSetField42C0
-	adds r0, r4, #0
+	.2byte 0xF798
+	.4byte 0x1C20FD35
 	adds r0, #44
 	movs r1, #252
 	lsls r1, r1, #6
@@ -11063,7 +11151,9 @@ _0806E5F0:
 _0806E5F4:
 	movs r0, #1
 	negs r0, r0
-	bl GameStateSetField42C0
+	.2byte 0xF798
+	.byte 0x24
+	.byte 0xFD
 	adds r0, r4, #0
 	adds r1, r5, #0
 	movs r2, #0
@@ -11092,8 +11182,8 @@ sub_0806E610:
 	movs r2, #24
 	str r2, [sp, #0]
 	movs r2, #1
-	bl CreateTask
-	adds r1, r0, #0
+	.2byte 0xF00C
+	.4byte 0x1C01F8A9
 	cmp r1, #0
 
 	.thumb_func
@@ -11161,7 +11251,9 @@ _0806E67E:
 	adds r0, #44
 	movs r1, #252
 	lsls r1, r1, #6
-	bl BufferXor
+	.2byte 0xF00B
+	.byte 0xCE
+	.byte 0xFD
 	ldr r1, [r5, #4]
 	lsls r0, r0, #24
 	lsrs r0, r0, #24
@@ -11170,7 +11262,9 @@ _0806E67E:
 	str r4, [r1, #32]
 	adds r0, r1, #0
 	movs r1, #44
-	bl BufferXor
+	.2byte 0xF00B
+	.byte 0xC4
+	.byte 0xFD
 	ldr r3, [r5, #4]
 	lsls r0, r0, #24
 	lsrs r0, r0, #24
@@ -11218,8 +11312,8 @@ _0806E6E4:
 	str r0, [r5, #16]
 	str r0, [r5, #20]
 	movs r0, #128
-	bl GameStateSetField42BC
-	movs r0, #128
+	.2byte 0xF798
+	.4byte 0x2080FC8D
 	lsls r0, r0, #5
 	strh r0, [r6, #14]
 	b _0806E71A
@@ -11233,8 +11327,8 @@ _0806E6F6:
 	.global _0806E700
 _0806E700:
 	adds r0, r6, #0
-	bl FinishTask
-	b _0806E71A
+	.2byte 0xF00C
+	.4byte 0xE008F853
 	.global _0806E708
 _0806E708:
 	ldr r1, [r6, #24]
@@ -11246,7 +11340,9 @@ _0806E708:
 	.global _0806E714
 _0806E714:
 	adds r0, r6, #0
-	bl FinishTask
+	.2byte 0xF00C
+	.byte 0x49
+	.byte 0xF8
 	.global _0806E71A
 _0806E71A:
 	pop {r4, r5, r6, r7}
@@ -11455,8 +11551,8 @@ sub_0806E970:
 	str r2, [r0, #0]
 	mov r0, r8
 	movs r2, #12
-	bl memcpy
-	movs r1, #6
+	.2byte 0xF013
+	.4byte 0x2106FE7B
 	ldrsh r0, [r6, r1]
 	cmp r0, #0
 	bne _0806E9B4
@@ -11616,7 +11712,9 @@ _0806EA88:
 _0806EA94:
 	mov r2, r8
 	movs r3, #0
-	bl DialogueStart
+	.2byte 0xF7A2
+	.byte 0x7A
+	.byte 0xFE
 	b _0806EACC
 	.byte 0x00
 	.byte 0x00
@@ -11642,7 +11740,9 @@ _0806EAA8:
 	movs r1, #2
 	mov r2, r8
 	movs r3, #0
-	bl DialogueStart
+	.2byte 0xF7A2
+	.byte 0x62
+	.byte 0xFE
 	.global _0806EACC
 _0806EACC:
 	movs r0, #0
@@ -11654,8 +11754,8 @@ _0806EAD4:
 	ldr r0, _0806EAF4
 	ldr r2, _0806EAF8
 	movs r1, #0
-	bl KmpRenderViewport
-	add sp, #188
+	.2byte 0xF793
+	.4byte 0xB02FFDA9
 	pop {r3, r4}
 	mov r8, r3
 	mov r9, r4
@@ -11684,8 +11784,8 @@ _0806EAF8:
 	.global sub_0806EB0C
 sub_0806EB0C:
 	movs r2, #0
-	bl CreateTask
-	adds r5, r0, #0
+	.2byte 0xF00B
+	.4byte 0x1C05FE35
 	ldr r0, _0806EB3C
 	adds r4, r4, r0
 	ldr r0, [r4, #0]
@@ -11772,8 +11872,8 @@ sub_0806EBA2:
 	movs r0, #1
 	bl sub_0800696C
 	ldr r1, _0806EBE0
-	bl strcmp
-	cmp r0, #0
+	.2byte 0xF013
+	.4byte 0x2800FE21
 	bne _0806EBE4
 	ldrb r0, [r5, #28]
 	movs r1, #49
@@ -11903,8 +12003,8 @@ _0806ED28:
 	lsls r1, r4, #5
 	ldr r0, [r7, #0]
 	adds r0, r0, r1
-	bl TaskManagerDestroy
-	adds r0, r4, #0
+	.2byte 0xF00B
+	.4byte 0x1C20FC89
 	movs r1, #0
 	bl sub_08009728
 	adds r4, #1
@@ -11918,8 +12018,8 @@ _0806ED28:
 	bl sub_080090AC
 	movs r0, #30
 	movs r1, #1
-	bl sub_08005F04
-	b _0806EE2C
+	.2byte 0xF797
+	.4byte 0xE069F8D7
 	.global _0806ED58
 _0806ED58:
 	.4byte 0x00000AD4
@@ -12128,7 +12228,9 @@ _0806EF58:
 	movs r0, #1
 	bl sub_0800690C
 	bl sub_080572B8
-	bl GameStateCopyMapBuffer
+	.2byte 0xF7E8
+	.byte 0x44
+	.byte 0xF9
 	ldr r0, [r4, #0]
 	bl sub_0806E54C
 	movs r0, #3
@@ -12144,7 +12246,9 @@ _0806EF9A:
 	.global _0806EFA6
 _0806EFA6:
 	adds r0, r5, #0
-	bl FinishTask
+	.2byte 0xF00B
+	.byte 0x00
+	.byte 0xFC
 	.global _0806EFAC
 _0806EFAC:
 	pop {r4, r5}
@@ -12183,7 +12287,9 @@ sub_0806EFCC:
 	ldr r2, _0806F014
 	str r2, [sp, #0]
 	movs r2, #0
-	bl CreateTask
+	.2byte 0xF00B
+	.byte 0xCE
+	.byte 0xFB
 	adds r5, r0, #0
 	movs r0, #0
 	movs r4, #128
@@ -12200,8 +12306,8 @@ _0806EFE8:
 	cmp r0, #3
 	ble _0806EFE8
 	movs r0, #1
-	bl ScriptAddPendingTasks
-	adds r0, r5, #0
+	.2byte 0xF00F
+	.4byte 0x1C28FA0F
 	add sp, #4
 	pop {r4, r5}
 	pop {r1}
@@ -12330,7 +12436,9 @@ _0806F0C8:
 	.thumb
 	.global sub_0806F0D4
 sub_0806F0D4:
-	bl ScriptCompletePendingTasks
+	.2byte 0xF00F
+	.byte 0xB8
+	.byte 0xF9
 	mov r2, r8
 	ldr r1, [r2, #24]
 	cmp r1, #0
@@ -12341,7 +12449,9 @@ sub_0806F0D4:
 	.global _0806F0E6
 _0806F0E6:
 	mov r0, r8
-	bl FinishTask
+	.2byte 0xF00B
+	.byte 0x60
+	.byte 0xFB
 	.global _0806F0EC
 _0806F0EC:
 	pop {r3, r4}
@@ -12399,7 +12509,9 @@ sub_0806F120:
 	lsls r2, r2, #1
 	str r2, [sp, #0]
 	movs r2, #0
-	bl CreateTask
+	.2byte 0xF00B
+	.byte 0x1E
+	.byte 0xFB
 	adds r6, r0, #0
 	adds r1, r6, #0
 	adds r1, #254
@@ -12427,8 +12539,8 @@ _0806F160:
 	.global _0806F16C
 _0806F16C:
 	movs r0, #1
-	bl ScriptAddPendingTasks
-	adds r0, r6, #0
+	.2byte 0xF00F
+	.4byte 0x1C30F957
 	add sp, #4
 	pop {r4, r5, r6}
 	pop {r1}
@@ -12458,8 +12570,8 @@ sub_0806F188:
 	mov r10, r0
 	movs r0, #1
 	movs r1, #0
-	bl KeyInputConsumePressed
-	cmp r0, #0
+	.2byte 0xF00A
+	.4byte 0x2800FFC9
 	beq _0806F1C0
 	ldr r2, [sp, #12]
 	movs r3, #131
@@ -12541,7 +12653,9 @@ _0806F288:
 	strb r0, [r6, #0]
 	adds r0, r4, #0
 	movs r1, #0
-	bl NcdInitSprite
+	.2byte 0xF00C
+	.byte 0xCC
+	.byte 0xFC
 	movs r0, #0
 	ldr r1, _0806F3A0
 	bl FindResourceByName
@@ -12993,53 +13107,10 @@ sub_0806F602:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_0806F620
-sub_0806F620:
-	push {r4, lr}
-	sub sp, #4
-	adds r3, r0, #0
-	ldr r0, _0806F654
-	ldr r1, _0806F658
-	movs r2, #32
-	str r2, [sp, #0]
-	movs r2, #0
-	.2byte 0xF00B
+@ 06F620..06F664 is decompiled as CreateEncounterTransitionTask(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0806F632
-sub_0806F632:
-	.2byte 0xF8A4
-	adds r4, r0, #0
-	ldr r0, _0806F65C
-	ldr r0, [r0, #0]
-	ldr r1, _0806F660
-	adds r0, r0, r1
-	movs r1, #1
-	strh r1, [r0, #0]
-	movs r0, #1
-	bl ScriptAddPendingTasks
-	adds r0, r4, #0
-	add sp, #4
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _0806F654
-_0806F654:
-	.4byte 0x030032C4  @ IWRAM+0x32C4
-	.global _0806F658
-_0806F658:
-	.4byte 0x0806F665  @ ROM+0x6F665
-	.global _0806F65C
-_0806F65C:
-	.4byte 0x03004020  @ IWRAM+0x4020
-	.global _0806F660
-_0806F660:
-	.4byte 0x00000F24
+	.section .rom.0006F664, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -13362,8 +13433,8 @@ _0806F832:
 	movs r2, #160
 	lsls r2, r2, #15
 	movs r1, #0
-	bl KmpRenderViewport
-	mov r1, r9
+	.2byte 0xF792
+	.4byte 0x4649FEE7
 	mov r0, r10
 	strh r1, [r0, #0]
 	movs r0, #16
@@ -13483,8 +13554,8 @@ _0806F924:
 	ldrsh r2, [r5, r1]
 	lsls r2, r2, #16
 	movs r1, #0
-	bl KmpRenderViewport
-	ldr r0, [r5, #4]
+	.2byte 0xF792
+	.4byte 0x6868FE7F
 	cmp r0, #0
 	bne _0806F93A
 	b _0806FA7C
@@ -13534,7 +13605,9 @@ sub_0806F976:
 	ldr r0, _0806F988
 	ldr r0, [r0, #0]
 	movs r1, #4
-	bl SoundFadeOut
+	.2byte 0xF009
+	.byte 0x44
+	.byte 0xF9
 	strh r7, [r6, #14]
 	b _0806FA7C
 	.global _0806F984
@@ -13594,8 +13667,8 @@ _0806F9A0:
 	adds r0, r4, #0
 	movs r1, #0
 	movs r2, #0
-	bl KmpRenderViewport
-	movs r3, #128
+	.2byte 0xF792
+	.4byte 0x2380FE1F
 	lsls r3, r3, #1
 	movs r0, #1
 	str r0, [sp, #0]
@@ -13626,8 +13699,8 @@ _0806FA1C:
 	beq _0806FA7C
 	movs r0, #1
 	movs r1, #0
-	bl KeyInputConsumePressed
-	cmp r0, #0
+	.2byte 0xF00A
+	.4byte 0x2800FB85
 	beq _0806FA7C
 	ldr r3, _0806FA4C
 	movs r0, #1
@@ -13656,7 +13729,9 @@ _0806FA54:
 	cmp r0, #0
 	beq _0806FA7C
 	movs r0, #1
-	bl ScriptCompletePendingTasks
+	.2byte 0xF00E
+	.byte 0xF4
+	.byte 0xFC
 	ldr r0, sub_0806FA8C
 	ldr r1, _0806FA90
 	adds r0, r0, r1
@@ -13671,7 +13746,9 @@ _0806FA54:
 	.global _0806FA76
 _0806FA76:
 	adds r0, r6, #0
-	bl FinishTask
+	.2byte 0xF00A
+	.byte 0x98
+	.byte 0xFE
 	.global _0806FA7C
 _0806FA7C:
 	add sp, #28
@@ -13706,7 +13783,9 @@ sub_0806FA94:
 	lsls r2, r2, #1
 	str r2, [sp, #0]
 	movs r2, #0
-	bl CreateTask
+	.2byte 0xF00A
+	.byte 0x68
+	.byte 0xFE
 	movs r2, #184
 	lsls r2, r2, #1
 	adds r1, r0, r2
@@ -13980,7 +14059,9 @@ sub_0806FC38:
 	ldr r4, [sp, #4]
 	adds r0, r4, #0
 	movs r1, #0
-	bl NcdInitSprite
+	.2byte 0xF00B
+	.byte 0xE8
+	.byte 0xFF
 	ldr r1, _0806FC9C
 	movs r2, #0
 	ldrsh r0, [r7, r2]
@@ -14085,7 +14166,9 @@ _0806FCDC:
 	ldr r4, [sp, #12]
 	adds r0, r4, #0
 	movs r1, #0
-	bl NcdInitSprite
+	.2byte 0xF00B
+	.byte 0x8C
+	.byte 0xFF
 	ldr r1, _0806FD98
 	movs r3, #0
 	ldrsh r0, [r7, r3]
@@ -14561,7 +14644,9 @@ _08070028:
 	.global sub_08070036
 sub_08070036:
 	mov r0, r9
-	bl FinishTask
+	.2byte 0xF00A
+	.byte 0xB8
+	.byte 0xFB
 	b _08070080
 	.global _0807003E
 _0807003E:

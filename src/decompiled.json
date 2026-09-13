@@ -6,6 +6,18 @@
     "file": "src/sound.c"
   },
   {
+    "addr": "08001158",
+    "size": 104,
+    "name": "SoundIrqService",
+    "file": "src/sound.c"
+  },
+  {
+    "addr": "08001630",
+    "size": 12,
+    "name": "InitializeMainRuntime",
+    "file": "src/simple_adapters.c"
+  },
+  {
     "addr": "08002148",
     "size": 16,
     "name": "Lz77UnCompVramSwapped",
@@ -114,6 +126,12 @@
     "file": "src/task_adapters.c"
   },
   {
+    "addr": "080037D8",
+    "size": 52,
+    "name": "ScheduleVramFillTask",
+    "file": "src/task_constructors.c"
+  },
+  {
     "addr": "0800380C",
     "size": 32,
     "name": "VramFillTask",
@@ -208,6 +226,30 @@
     "size": 16,
     "name": "RuntimeReadSignedByte",
     "file": "src/runtime_leaf.c"
+  },
+  {
+    "addr": "08005378",
+    "size": 60,
+    "name": "CreateInputWaitTask",
+    "file": "src/task_constructors.c"
+  },
+  {
+    "addr": "08005720",
+    "size": 160,
+    "name": "SoundFadeTask",
+    "file": "src/sound_tasks.c"
+  },
+  {
+    "addr": "0800581C",
+    "size": 44,
+    "name": "SoundWaitTask",
+    "file": "src/sound_tasks.c"
+  },
+  {
+    "addr": "08005AC4",
+    "size": 104,
+    "name": "SoundStartTask",
+    "file": "src/sound_tasks.c"
   },
   {
     "addr": "08005B34",
@@ -324,6 +366,12 @@
     "file": "src/runtime_leaf.c"
   },
   {
+    "addr": "08005EA8",
+    "size": 48,
+    "name": "StartTrackedSong",
+    "file": "src/scene_native.c"
+  },
+  {
     "addr": "08005ED8",
     "size": 24,
     "name": "StopTrackedSong",
@@ -334,6 +382,12 @@
     "size": 20,
     "name": "RuntimeResetSelection",
     "file": "src/runtime_leaf.c"
+  },
+  {
+    "addr": "08005F04",
+    "size": 48,
+    "name": "StartSecondaryTrackedSong",
+    "file": "src/scene_native.c"
   },
   {
     "addr": "08005F34",
@@ -358,6 +412,12 @@
     "size": 28,
     "name": "StopSoundPlayer",
     "file": "src/scene_native.c"
+  },
+  {
+    "addr": "08006050",
+    "size": 40,
+    "name": "CreateSceneTask",
+    "file": "src/task_constructors.c"
   },
   {
     "addr": "08006784",
@@ -666,6 +726,12 @@
     "file": "src/game_state.c"
   },
   {
+    "addr": "08007134",
+    "size": 68,
+    "name": "CreateNamedRuntimeTask",
+    "file": "src/task_constructors.c"
+  },
+  {
     "addr": "080075CC",
     "size": 20,
     "name": "RuntimeGetBufferEB8",
@@ -706,6 +772,12 @@
     "size": 20,
     "name": "RuntimeSetFieldEE9",
     "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08007678",
+    "size": 20,
+    "name": "ClearRuntimeStatusBytes",
+    "file": "src/simple_adapters.c"
   },
   {
     "addr": "080078E4",
@@ -1410,6 +1482,18 @@
     "file": "src/runtime_buffers.c"
   },
   {
+    "addr": "0800AF88",
+    "size": 24,
+    "name": "RuntimeGetSignedByteE4B",
+    "file": "src/table_accessors.c"
+  },
+  {
+    "addr": "0800AFCC",
+    "size": 24,
+    "name": "RuntimeGetSignedByteE4C",
+    "file": "src/table_accessors.c"
+  },
+  {
     "addr": "0800B1B8",
     "size": 52,
     "name": "CreateCoordinateTask",
@@ -1428,6 +1512,12 @@
     "file": "src/task_adapters.c"
   },
   {
+    "addr": "0800D8EC",
+    "size": 56,
+    "name": "StartPendingEffectB",
+    "file": "src/task_constructors.c"
+  },
+  {
     "addr": "0800D98C",
     "size": 52,
     "name": "CreatePendingTaskD98C",
@@ -1438,6 +1528,18 @@
     "size": 60,
     "name": "CreateIndexedPendingTask",
     "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "0800E6A0",
+    "size": 56,
+    "name": "StartPendingFieldEffect",
+    "file": "src/task_constructors.c"
+  },
+  {
+    "addr": "0800E788",
+    "size": 100,
+    "name": "CreateFieldEffectTask",
+    "file": "src/task_constructors.c"
   },
   {
     "addr": "0800F0A0",
@@ -1468,6 +1570,12 @@
     "size": 56,
     "name": "CreateSpriteTaskF9B4",
     "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "0800FC90",
+    "size": 56,
+    "name": "StartPendingEffectA",
+    "file": "src/task_constructors.c"
   },
   {
     "addr": "0800FD3C",
@@ -1602,6 +1710,90 @@
     "file": "src/dialogue_commands.c"
   },
   {
+    "addr": "08011CE4",
+    "size": 36,
+    "name": "ScriptNativeEffectAConfigure6",
+    "file": "src/script_effect_native.c"
+  },
+  {
+    "addr": "08011D08",
+    "size": 32,
+    "name": "ScriptNativeEffectAConfigure5",
+    "file": "src/script_effect_native.c"
+  },
+  {
+    "addr": "08011D28",
+    "size": 40,
+    "name": "ScriptNativeEffectAWait",
+    "file": "src/script_effect_native.c"
+  },
+  {
+    "addr": "08011D50",
+    "size": 40,
+    "name": "ScriptNativeEffectAStart",
+    "file": "src/script_effect_native.c"
+  },
+  {
+    "addr": "08011D78",
+    "size": 20,
+    "name": "ScriptNativeEffectAQuery",
+    "file": "src/script_effect_native.c"
+  },
+  {
+    "addr": "08011D8C",
+    "size": 40,
+    "name": "ScriptNativeEffectAStartFull",
+    "file": "src/script_effect_native.c"
+  },
+  {
+    "addr": "08011DB4",
+    "size": 32,
+    "name": "ScriptNativeEffectACommand",
+    "file": "src/script_effect_native.c"
+  },
+  {
+    "addr": "08011DD4",
+    "size": 40,
+    "name": "ScriptNativeEffectBStartFull",
+    "file": "src/script_effect_native.c"
+  },
+  {
+    "addr": "08011DFC",
+    "size": 36,
+    "name": "ScriptNativeEffectBConfigure",
+    "file": "src/script_effect_native.c"
+  },
+  {
+    "addr": "08011E20",
+    "size": 40,
+    "name": "ScriptNativeEffectBWait",
+    "file": "src/script_effect_native.c"
+  },
+  {
+    "addr": "08011E48",
+    "size": 40,
+    "name": "ScriptNativeEffectBStart",
+    "file": "src/script_effect_native.c"
+  },
+  {
+    "addr": "08011E70",
+    "size": 20,
+    "name": "ScriptNativeEffectBQuery",
+    "file": "src/script_effect_native.c"
+  },
+  {
+    "addr": "08011E84",
+    "size": 40,
+    "name": "ScriptNativeEffectBStartExtended",
+    "file": "src/script_effect_native.c"
+  },
+  {
+    "addr": "08011EAC",
+    "size": 32,
+    "name": "ScriptNativeEffectBCommand",
+    "file": "src/script_effect_native.c"
+  },
+  {
     "addr": "08011ECC",
     "size": 40,
     "name": "ScriptNativeSpriteInit",
@@ -1612,6 +1804,12 @@
     "size": 32,
     "name": "ScriptNativeSpriteChange",
     "file": "src/script_sprite.c"
+  },
+  {
+    "addr": "08011F14",
+    "size": 44,
+    "name": "ScriptNativeSpriteWait",
+    "file": "src/script_effect_native.c"
   },
   {
     "addr": "08011F40",
@@ -1626,6 +1824,96 @@
     "file": "src/script_sprite_native.c"
   },
   {
+    "addr": "08011F7C",
+    "size": 32,
+    "name": "ScriptNativeSpriteConfigure",
+    "file": "src/script_effect_native.c"
+  },
+  {
+    "addr": "08011F9C",
+    "size": 40,
+    "name": "ScriptNativeSpriteEffect",
+    "file": "src/script_effect_native.c"
+  },
+  {
+    "addr": "08011FC4",
+    "size": 32,
+    "name": "ScriptNativeSpriteCommand",
+    "file": "src/script_effect_native.c"
+  },
+  {
+    "addr": "08011FE4",
+    "size": 40,
+    "name": "ScriptNativeFieldEffectStart",
+    "file": "src/script_effect_native.c"
+  },
+  {
+    "addr": "0801200C",
+    "size": 40,
+    "name": "ScriptNativeFieldEffectStartFull",
+    "file": "src/script_effect_native.c"
+  },
+  {
+    "addr": "08012034",
+    "size": 44,
+    "name": "ScriptNativeFieldEffectWait",
+    "file": "src/script_effect_native.c"
+  },
+  {
+    "addr": "08012060",
+    "size": 36,
+    "name": "ScriptNativeFieldEffectConfigure",
+    "file": "src/script_effect_native.c"
+  },
+  {
+    "addr": "08012084",
+    "size": 32,
+    "name": "ScriptNativeFieldEffectCommand",
+    "file": "src/script_effect_native.c"
+  },
+  {
+    "addr": "080120A4",
+    "size": 44,
+    "name": "ScriptNativeFieldEffectStart8",
+    "file": "src/script_effect_native.c"
+  },
+  {
+    "addr": "080120D0",
+    "size": 36,
+    "name": "ScriptNativeFieldEffectQuery",
+    "file": "src/script_effect_native.c"
+  },
+  {
+    "addr": "080120F4",
+    "size": 76,
+    "name": "ScriptNativeSetActorName",
+    "file": "src/script_effect_native.c"
+  },
+  {
+    "addr": "08012140",
+    "size": 40,
+    "name": "ScriptNativeEffectCStart",
+    "file": "src/script_effect_native.c"
+  },
+  {
+    "addr": "08012168",
+    "size": 20,
+    "name": "ScriptNativeEffectCQuery",
+    "file": "src/script_effect_native.c"
+  },
+  {
+    "addr": "0801217C",
+    "size": 40,
+    "name": "ScriptNativeEffectCStartFull",
+    "file": "src/script_effect_native.c"
+  },
+  {
+    "addr": "080121A4",
+    "size": 32,
+    "name": "ScriptNativeEffectCCommand",
+    "file": "src/script_effect_native.c"
+  },
+  {
     "addr": "080121C4",
     "size": 32,
     "name": "ScriptNativeHitInit",
@@ -1638,6 +1926,18 @@
     "file": "src/map_native.c"
   },
   {
+    "addr": "08012208",
+    "size": 40,
+    "name": "ScriptNativeHitEffectStart",
+    "file": "src/script_effect_native.c"
+  },
+  {
+    "addr": "08012230",
+    "size": 20,
+    "name": "ScriptNativeHitEffectQuery",
+    "file": "src/script_effect_native.c"
+  },
+  {
     "addr": "08012244",
     "size": 32,
     "name": "ScriptNativeHitRect",
@@ -1648,6 +1948,48 @@
     "size": 32,
     "name": "ScriptNativeFieldSet",
     "file": "src/map_native.c"
+  },
+  {
+    "addr": "0801234C",
+    "size": 24,
+    "name": "ScriptNativeSetRuntimePair",
+    "file": "src/map_inventory_native.c"
+  },
+  {
+    "addr": "08012364",
+    "size": 16,
+    "name": "ScriptNativeBattleFieldLock",
+    "file": "src/map_inventory_native.c"
+  },
+  {
+    "addr": "08012374",
+    "size": 16,
+    "name": "ScriptNativeBattleFieldUnlock",
+    "file": "src/map_inventory_native.c"
+  },
+  {
+    "addr": "08012384",
+    "size": 104,
+    "name": "ScriptNativeGetBattleFieldRect",
+    "file": "src/map_inventory_native.c"
+  },
+  {
+    "addr": "080123EC",
+    "size": 12,
+    "name": "ScriptNativeCall08968",
+    "file": "src/map_inventory_native.c"
+  },
+  {
+    "addr": "080123F8",
+    "size": 152,
+    "name": "ScriptNativeResetFieldScene",
+    "file": "src/map_inventory_native.c"
+  },
+  {
+    "addr": "08012490",
+    "size": 32,
+    "name": "ScriptNativeMapSetBoundedValue",
+    "file": "src/map_inventory_native.c"
   },
   {
     "addr": "080124B0",
@@ -1672,6 +2014,12 @@
     "size": 28,
     "name": "ScriptNativeMapResetActor",
     "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "080124FC",
+    "size": 4,
+    "name": "ScriptNativeBattleStatus",
+    "file": "src/map_inventory_native.c"
   },
   {
     "addr": "08012500",
@@ -1812,6 +2160,12 @@
     "file": "src/map_generation_native.c"
   },
   {
+    "addr": "08012730",
+    "size": 48,
+    "name": "ScriptNativeCopyGeneratedName",
+    "file": "src/map_inventory_native.c"
+  },
+  {
     "addr": "08012760",
     "size": 12,
     "name": "ScriptNativeMapFinalize",
@@ -1834,6 +2188,18 @@
     "size": 16,
     "name": "ScriptNativeSetField4258",
     "file": "src/map_generation_native.c"
+  },
+  {
+    "addr": "080127B8",
+    "size": 64,
+    "name": "ScriptNativeWriteMapValues",
+    "file": "src/map_inventory_native.c"
+  },
+  {
+    "addr": "0801294C",
+    "size": 44,
+    "name": "ScriptNativeRefreshMapValuesA",
+    "file": "src/map_inventory_native.c"
   },
   {
     "addr": "08012978",
@@ -1884,10 +2250,34 @@
     "file": "src/script_native_adapters.c"
   },
   {
+    "addr": "08012AE4",
+    "size": 128,
+    "name": "ScriptNativeConfigureResourceSlots",
+    "file": "src/script_native_adapters.c"
+  },
+  {
     "addr": "08012B64",
     "size": 28,
     "name": "ScriptNativeQueryResourceSlot",
     "file": "src/script_native_adapters.c"
+  },
+  {
+    "addr": "08012B80",
+    "size": 24,
+    "name": "ScriptNativeSelectLayer",
+    "file": "src/map_inventory_native.c"
+  },
+  {
+    "addr": "08012B98",
+    "size": 124,
+    "name": "ScriptNativeSetFriendArms",
+    "file": "src/resource_native.c"
+  },
+  {
+    "addr": "08012C14",
+    "size": 64,
+    "name": "ScriptNativeWriteMapValuesB",
+    "file": "src/map_inventory_native.c"
   },
   {
     "addr": "08012C54",
@@ -1896,15 +2286,63 @@
     "file": "src/script_native_adapters.c"
   },
   {
+    "addr": "08012C68",
+    "size": 60,
+    "name": "ScriptNativeSetBattleParty",
+    "file": "src/map_inventory_native.c"
+  },
+  {
+    "addr": "08012CA4",
+    "size": 44,
+    "name": "ScriptNativeRefreshMapValuesB",
+    "file": "src/map_inventory_native.c"
+  },
+  {
     "addr": "08012CD0",
     "size": 24,
     "name": "ScriptNativeMapCoordinateCall",
     "file": "src/script_native_adapters.c"
   },
   {
+    "addr": "08012CE8",
+    "size": 28,
+    "name": "ScriptNativeSetPendingMapValue",
+    "file": "src/map_inventory_native.c"
+  },
+  {
+    "addr": "08012D04",
+    "size": 72,
+    "name": "ScriptNativeCopyMapHalfwords",
+    "file": "src/map_inventory_native.c"
+  },
+  {
+    "addr": "08012D4C",
+    "size": 24,
+    "name": "ScriptNativeGetMapStatus",
+    "file": "src/map_inventory_native.c"
+  },
+  {
+    "addr": "08012D64",
+    "size": 52,
+    "name": "ScriptNativeClearMapHalfwords",
+    "file": "src/map_inventory_native.c"
+  },
+  {
     "addr": "08012D98",
     "size": 28,
     "name": "ScriptNativeQueryResourceId",
+    "file": "src/resource_native.c"
+  },
+  {
+    "addr": "08012DB4",
+    "size": 68,
+    "name": "ScriptNativeQueryModeResource",
+    "file": "src/resource_native.c"
+  },
+  {
+    "addr": "08012DF8",
+    "size": 60,
+    "name": "ScriptNativeSetModeResource",
     "file": "src/resource_native.c"
   },
   {
@@ -1929,6 +2367,12 @@
     "addr": "08012E64",
     "size": 68,
     "name": "ScriptNativeUseResource",
+    "file": "src/resource_native.c"
+  },
+  {
+    "addr": "08012EA8",
+    "size": 92,
+    "name": "ScriptNativeGetResourceName",
     "file": "src/resource_native.c"
   },
   {
@@ -1986,6 +2430,12 @@
     "file": "src/resource_native.c"
   },
   {
+    "addr": "08012FD0",
+    "size": 208,
+    "name": "CreateEncounterSpriteTask",
+    "file": "src/encounter_task.c"
+  },
+  {
     "addr": "08018C4C",
     "size": 196,
     "name": "HitRegionTest",
@@ -2008,6 +2458,18 @@
     "size": 20,
     "name": "RuntimeActorSetByteA4",
     "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "080256F8",
+    "size": 92,
+    "name": "CreateBattleTrackingTask",
+    "file": "src/task_constructors.c"
+  },
+  {
+    "addr": "080275C4",
+    "size": 88,
+    "name": "CreateBattleMotionTask",
+    "file": "src/task_constructors.c"
   },
   {
     "addr": "080282B4",
@@ -2064,10 +2526,454 @@
     "file": "src/object.c"
   },
   {
+    "addr": "0802A0B8",
+    "size": 96,
+    "name": "CreateBattleObjectTask",
+    "file": "src/task_constructors.c"
+  },
+  {
     "addr": "0802ADC8",
     "size": 28,
     "name": "InputRepeatInit",
     "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "0802AE94",
+    "size": 20,
+    "name": "BattleMode2AE0",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0802AEA8",
+    "size": 20,
+    "name": "BattleMode2AE1",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0802BB0C",
+    "size": 112,
+    "name": "CreateBattleFamilyTaskBB",
+    "file": "src/battle_family_tasks.c"
+  },
+  {
+    "addr": "0802C15C",
+    "size": 20,
+    "name": "BattleMode2C11",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0802C170",
+    "size": 20,
+    "name": "BattleMode2C12",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0802C184",
+    "size": 20,
+    "name": "BattleMode2C13",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0802C198",
+    "size": 132,
+    "name": "CreateBattleModeTask2C1",
+    "file": "src/battle_task_create.c"
+  },
+  {
+    "addr": "0802D078",
+    "size": 24,
+    "name": "BattleObjectCreateGroup0Variant0",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D090",
+    "size": 24,
+    "name": "BattleObjectCreateGroup0Variant1",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D0A8",
+    "size": 24,
+    "name": "BattleObjectCreateGroup0Variant2",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D0C0",
+    "size": 24,
+    "name": "BattleObjectCreateGroup0Variant3",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D0D8",
+    "size": 24,
+    "name": "BattleObjectCreateGroup0Variant4",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D0F0",
+    "size": 24,
+    "name": "BattleObjectCreateGroup1Variant0",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D108",
+    "size": 24,
+    "name": "BattleObjectCreateGroup1Variant1",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D120",
+    "size": 24,
+    "name": "BattleObjectCreateGroup1Variant2",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D138",
+    "size": 24,
+    "name": "BattleObjectCreateGroup1Variant3",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D150",
+    "size": 24,
+    "name": "BattleObjectCreateGroup1Variant4",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D168",
+    "size": 24,
+    "name": "BattleObjectCreateGroup2Variant0",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D180",
+    "size": 24,
+    "name": "BattleObjectCreateGroup2Variant1",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D198",
+    "size": 24,
+    "name": "BattleObjectCreateGroup2Variant2",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D1B0",
+    "size": 24,
+    "name": "BattleObjectCreateGroup2Variant3",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D1C8",
+    "size": 24,
+    "name": "BattleObjectCreateGroup2Variant4",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D1E0",
+    "size": 24,
+    "name": "BattleObjectCreateGroup3Variant0",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D1F8",
+    "size": 24,
+    "name": "BattleObjectCreateGroup3Variant1",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D210",
+    "size": 24,
+    "name": "BattleObjectCreateGroup3Variant2",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D228",
+    "size": 24,
+    "name": "BattleObjectCreateGroup3Variant3",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D240",
+    "size": 24,
+    "name": "BattleObjectCreateGroup3Variant4",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D258",
+    "size": 24,
+    "name": "BattleObjectCreateGroup4Variant0",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D270",
+    "size": 24,
+    "name": "BattleObjectCreateGroup4Variant1",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D288",
+    "size": 24,
+    "name": "BattleObjectCreateGroup4Variant2",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D2A0",
+    "size": 24,
+    "name": "BattleObjectCreateGroup4Variant3",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D2B8",
+    "size": 24,
+    "name": "BattleObjectCreateGroup4Variant4",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D2D0",
+    "size": 24,
+    "name": "BattleObjectCreateGroup5Variant0",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D2E8",
+    "size": 24,
+    "name": "BattleObjectCreateGroup5Variant1",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D300",
+    "size": 24,
+    "name": "BattleObjectCreateGroup5Variant2",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D318",
+    "size": 24,
+    "name": "BattleObjectCreateGroup5Variant3",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D330",
+    "size": 24,
+    "name": "BattleObjectCreateGroup5Variant4",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D348",
+    "size": 24,
+    "name": "BattleObjectCreateGroup6Variant0",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D360",
+    "size": 24,
+    "name": "BattleObjectCreateGroup6Variant1",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D378",
+    "size": 24,
+    "name": "BattleObjectCreateGroup6Variant2",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D390",
+    "size": 24,
+    "name": "BattleObjectCreateGroup6Variant3",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D3A8",
+    "size": 24,
+    "name": "BattleObjectCreateGroup6Variant4",
+    "file": "src/battle_object_adapters.c"
+  },
+  {
+    "addr": "0802D8D0",
+    "size": 112,
+    "name": "CreateBattleFamilyTaskD8",
+    "file": "src/battle_family_tasks.c"
+  },
+  {
+    "addr": "0802DB7C",
+    "size": 20,
+    "name": "BattleTaskDCreateVariant0",
+    "file": "src/battle_variant_adapters.c"
+  },
+  {
+    "addr": "0802DB90",
+    "size": 20,
+    "name": "BattleTaskDCreateVariant1",
+    "file": "src/battle_variant_adapters.c"
+  },
+  {
+    "addr": "0802DBA4",
+    "size": 20,
+    "name": "BattleTaskDCreateVariant2",
+    "file": "src/battle_variant_adapters.c"
+  },
+  {
+    "addr": "0802DBB8",
+    "size": 20,
+    "name": "BattleTaskDCreateVariant3",
+    "file": "src/battle_variant_adapters.c"
+  },
+  {
+    "addr": "0802DBCC",
+    "size": 20,
+    "name": "BattleTaskDCreateVariant4",
+    "file": "src/battle_variant_adapters.c"
+  },
+  {
+    "addr": "0802E370",
+    "size": 20,
+    "name": "BattleTaskECreateVariant1",
+    "file": "src/battle_variant_adapters.c"
+  },
+  {
+    "addr": "0802E384",
+    "size": 20,
+    "name": "BattleTaskECreateVariant2",
+    "file": "src/battle_variant_adapters.c"
+  },
+  {
+    "addr": "0802E398",
+    "size": 20,
+    "name": "BattleTaskECreateVariant3",
+    "file": "src/battle_variant_adapters.c"
+  },
+  {
+    "addr": "0802E3AC",
+    "size": 20,
+    "name": "BattleTaskECreateVariant4",
+    "file": "src/battle_variant_adapters.c"
+  },
+  {
+    "addr": "0802E3C0",
+    "size": 20,
+    "name": "BattleTaskECreateVariant5",
+    "file": "src/battle_variant_adapters.c"
+  },
+  {
+    "addr": "0802ECF8",
+    "size": 24,
+    "name": "BattleTaskHCreateGroup1",
+    "file": "src/battle_variant_adapters.c"
+  },
+  {
+    "addr": "0802ED10",
+    "size": 24,
+    "name": "BattleTaskHCreateGroup2",
+    "file": "src/battle_variant_adapters.c"
+  },
+  {
+    "addr": "0802ED28",
+    "size": 24,
+    "name": "BattleTaskHCreateGroup3",
+    "file": "src/battle_variant_adapters.c"
+  },
+  {
+    "addr": "0802ED40",
+    "size": 24,
+    "name": "BattleTaskHCreateGroup4",
+    "file": "src/battle_variant_adapters.c"
+  },
+  {
+    "addr": "0802ED58",
+    "size": 24,
+    "name": "BattleTaskHCreateGroup5",
+    "file": "src/battle_variant_adapters.c"
+  },
+  {
+    "addr": "0802ED70",
+    "size": 28,
+    "name": "BattleTaskHCreateSelected",
+    "file": "src/battle_variant_adapters.c"
+  },
+  {
+    "addr": "0802F340",
+    "size": 20,
+    "name": "BattleTaskFCreateVariant5",
+    "file": "src/battle_variant_adapters.c"
+  },
+  {
+    "addr": "0802F354",
+    "size": 20,
+    "name": "BattleTaskFCreateVariant4",
+    "file": "src/battle_variant_adapters.c"
+  },
+  {
+    "addr": "0802F368",
+    "size": 20,
+    "name": "BattleTaskFCreateVariant3",
+    "file": "src/battle_variant_adapters.c"
+  },
+  {
+    "addr": "0802F37C",
+    "size": 20,
+    "name": "BattleTaskFCreateVariant2",
+    "file": "src/battle_variant_adapters.c"
+  },
+  {
+    "addr": "0802F390",
+    "size": 20,
+    "name": "BattleTaskFCreateVariant1",
+    "file": "src/battle_variant_adapters.c"
+  },
+  {
+    "addr": "0802FC78",
+    "size": 20,
+    "name": "BattleMode2FC0",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0802FC8C",
+    "size": 20,
+    "name": "BattleMode2FC1",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0802FCA0",
+    "size": 148,
+    "name": "CreateBattleModeTask2FC",
+    "file": "src/battle_task_create.c"
+  },
+  {
+    "addr": "080301BC",
+    "size": 92,
+    "name": "CreateBattleResourceTask",
+    "file": "src/task_constructors.c"
+  },
+  {
+    "addr": "080308C8",
+    "size": 112,
+    "name": "CreateBattleFamilyTask308",
+    "file": "src/battle_family_tasks.c"
+  },
+  {
+    "addr": "08031108",
+    "size": 20,
+    "name": "BattleTaskGCreateVariant1",
+    "file": "src/battle_variant_adapters.c"
+  },
+  {
+    "addr": "0803111C",
+    "size": 20,
+    "name": "BattleTaskGCreateVariant2",
+    "file": "src/battle_variant_adapters.c"
+  },
+  {
+    "addr": "08031130",
+    "size": 20,
+    "name": "BattleTaskGCreateVariant3",
+    "file": "src/battle_variant_adapters.c"
+  },
+  {
+    "addr": "08031144",
+    "size": 20,
+    "name": "BattleTaskGCreateVariant4",
+    "file": "src/battle_variant_adapters.c"
   },
   {
     "addr": "080322A4",
@@ -2086,6 +2992,882 @@
     "size": 144,
     "name": "StartObjectCommandTask",
     "file": "src/object_command.c"
+  },
+  {
+    "addr": "08032F14",
+    "size": 20,
+    "name": "BattleMode32F2",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "08032F28",
+    "size": 20,
+    "name": "BattleMode32F3",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "08032F3C",
+    "size": 20,
+    "name": "BattleMode32F4",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "08032F50",
+    "size": 20,
+    "name": "BattleMode32F5",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "08032F64",
+    "size": 132,
+    "name": "CreateBattleModeTask32F",
+    "file": "src/battle_task_create.c"
+  },
+  {
+    "addr": "08033CD8",
+    "size": 20,
+    "name": "BattleMode33C2",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "08033CEC",
+    "size": 20,
+    "name": "BattleMode33C3",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "08033D00",
+    "size": 152,
+    "name": "CreateBattleModeTask33D",
+    "file": "src/battle_task_create.c"
+  },
+  {
+    "addr": "08034688",
+    "size": 20,
+    "name": "BattleMode3464",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0803469C",
+    "size": 20,
+    "name": "BattleMode3465",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "08035004",
+    "size": 116,
+    "name": "CreateBattleFamilyTask350",
+    "file": "src/battle_family_tasks.c"
+  },
+  {
+    "addr": "080355D4",
+    "size": 120,
+    "name": "CreateBattleFamilyTask355",
+    "file": "src/battle_family_tasks.c"
+  },
+  {
+    "addr": "08038B34",
+    "size": 20,
+    "name": "BattleMode38B4",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "08038B48",
+    "size": 20,
+    "name": "BattleMode38B5",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "080397A0",
+    "size": 116,
+    "name": "CreateBattleFamilyTask397",
+    "file": "src/battle_family_tasks.c"
+  },
+  {
+    "addr": "08039F28",
+    "size": 20,
+    "name": "BattleMode39F3",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "08039F3C",
+    "size": 20,
+    "name": "BattleMode39F4",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0803B7E4",
+    "size": 20,
+    "name": "BattleMode3B70",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0803B7F8",
+    "size": 20,
+    "name": "BattleMode3B71",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0803C070",
+    "size": 20,
+    "name": "BattleMode3C01",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0803C084",
+    "size": 20,
+    "name": "BattleMode3C02",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0803C098",
+    "size": 20,
+    "name": "BattleMode3C03",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0803C0C0",
+    "size": 20,
+    "name": "BattleMode3C05",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0803E238",
+    "size": 112,
+    "name": "CreateBattleFamilyTask3E2",
+    "file": "src/battle_family_tasks.c"
+  },
+  {
+    "addr": "0803EC34",
+    "size": 112,
+    "name": "CreateBattleFamilyTask3EC",
+    "file": "src/battle_family_tasks.c"
+  },
+  {
+    "addr": "08040784",
+    "size": 20,
+    "name": "BattleMode4070",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "08040798",
+    "size": 20,
+    "name": "BattleMode4071",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "080407AC",
+    "size": 144,
+    "name": "CreateBattleModeTask407",
+    "file": "src/battle_task_create.c"
+  },
+  {
+    "addr": "080414B4",
+    "size": 20,
+    "name": "BattleMode4142",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "080414C8",
+    "size": 20,
+    "name": "BattleMode4143",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "080414DC",
+    "size": 20,
+    "name": "BattleMode4144",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "080414F0",
+    "size": 20,
+    "name": "BattleMode4145",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "08041A04",
+    "size": 20,
+    "name": "BattleMode41A2",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "08041A18",
+    "size": 20,
+    "name": "BattleMode41A3",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "08041A2C",
+    "size": 20,
+    "name": "BattleMode41A4",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "08042238",
+    "size": 20,
+    "name": "BattleMode4222",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0804224C",
+    "size": 20,
+    "name": "BattleMode4223",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0804370C",
+    "size": 20,
+    "name": "BattleMode4373",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "08043720",
+    "size": 20,
+    "name": "BattleMode4376",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "08043734",
+    "size": 20,
+    "name": "BattleMode4378",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "080446E0",
+    "size": 20,
+    "name": "BattleMode4461",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "080446F4",
+    "size": 20,
+    "name": "BattleMode4462",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "08044708",
+    "size": 20,
+    "name": "BattleMode4473",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0804471C",
+    "size": 20,
+    "name": "BattleMode4474",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "08044D4C",
+    "size": 112,
+    "name": "CreateBattleFamilyTask44D",
+    "file": "src/battle_family_tasks.c"
+  },
+  {
+    "addr": "080450B8",
+    "size": 20,
+    "name": "BattleMode4501",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "080450CC",
+    "size": 20,
+    "name": "BattleMode4502",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "080450E0",
+    "size": 144,
+    "name": "CreateBattleModeTask450",
+    "file": "src/battle_task_create.c"
+  },
+  {
+    "addr": "08046408",
+    "size": 112,
+    "name": "CreateBattleFamilyTask464",
+    "file": "src/battle_family_tasks.c"
+  },
+  {
+    "addr": "08046818",
+    "size": 20,
+    "name": "BattleMode4681",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0804682C",
+    "size": 20,
+    "name": "BattleMode4682",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "08046840",
+    "size": 20,
+    "name": "BattleMode4683",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "080483B0",
+    "size": 20,
+    "name": "BattleMode4832",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "080483C4",
+    "size": 20,
+    "name": "BattleMode4833",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "080483D8",
+    "size": 136,
+    "name": "CreateBattleModeTask483",
+    "file": "src/battle_task_create.c"
+  },
+  {
+    "addr": "08048D30",
+    "size": 112,
+    "name": "CreateBattleFamilyTask48D",
+    "file": "src/battle_family_tasks.c"
+  },
+  {
+    "addr": "0804915C",
+    "size": 20,
+    "name": "BattleMode4912",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "08049170",
+    "size": 20,
+    "name": "BattleMode4913",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "08049184",
+    "size": 152,
+    "name": "CreateBattleModeTask491",
+    "file": "src/battle_task_create.c"
+  },
+  {
+    "addr": "0804A3D8",
+    "size": 24,
+    "name": "BattleTaskACreateGroup0Variant0",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A3F0",
+    "size": 24,
+    "name": "BattleTaskACreateGroup0Variant1",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A408",
+    "size": 24,
+    "name": "BattleTaskACreateGroup0Variant2",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A420",
+    "size": 24,
+    "name": "BattleTaskACreateGroup0Variant3",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A438",
+    "size": 24,
+    "name": "BattleTaskACreateGroup0Variant4",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A450",
+    "size": 24,
+    "name": "BattleTaskACreateGroup1Variant0",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A468",
+    "size": 24,
+    "name": "BattleTaskACreateGroup1Variant1",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A480",
+    "size": 24,
+    "name": "BattleTaskACreateGroup1Variant2",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A498",
+    "size": 24,
+    "name": "BattleTaskACreateGroup1Variant3",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A4B0",
+    "size": 24,
+    "name": "BattleTaskACreateGroup1Variant4",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A4C8",
+    "size": 24,
+    "name": "BattleTaskACreateGroup2Variant0",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A4E0",
+    "size": 24,
+    "name": "BattleTaskACreateGroup2Variant1",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A4F8",
+    "size": 24,
+    "name": "BattleTaskACreateGroup2Variant2",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A510",
+    "size": 24,
+    "name": "BattleTaskACreateGroup2Variant3",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A528",
+    "size": 24,
+    "name": "BattleTaskACreateGroup2Variant4",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A540",
+    "size": 24,
+    "name": "BattleTaskACreateGroup3Variant0",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A558",
+    "size": 24,
+    "name": "BattleTaskACreateGroup3Variant1",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A570",
+    "size": 24,
+    "name": "BattleTaskACreateGroup3Variant2",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A588",
+    "size": 24,
+    "name": "BattleTaskACreateGroup3Variant3",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A5A0",
+    "size": 24,
+    "name": "BattleTaskACreateGroup3Variant4",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A5B8",
+    "size": 24,
+    "name": "BattleTaskACreateGroup4Variant0",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A5D0",
+    "size": 24,
+    "name": "BattleTaskACreateGroup4Variant1",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A5E8",
+    "size": 24,
+    "name": "BattleTaskACreateGroup4Variant2",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A600",
+    "size": 24,
+    "name": "BattleTaskACreateGroup4Variant3",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A618",
+    "size": 24,
+    "name": "BattleTaskACreateGroup4Variant4",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A630",
+    "size": 24,
+    "name": "BattleTaskACreateGroup5Variant0",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A648",
+    "size": 24,
+    "name": "BattleTaskACreateGroup5Variant1",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A660",
+    "size": 24,
+    "name": "BattleTaskACreateGroup5Variant2",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A678",
+    "size": 24,
+    "name": "BattleTaskACreateGroup5Variant3",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A690",
+    "size": 24,
+    "name": "BattleTaskACreateGroup5Variant4",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A6A8",
+    "size": 24,
+    "name": "BattleTaskACreateGroup6Variant0",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A6C0",
+    "size": 24,
+    "name": "BattleTaskACreateGroup6Variant1",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A6D8",
+    "size": 24,
+    "name": "BattleTaskACreateGroup6Variant2",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A6F0",
+    "size": 24,
+    "name": "BattleTaskACreateGroup6Variant3",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804A708",
+    "size": 24,
+    "name": "BattleTaskACreateGroup6Variant4",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804AC28",
+    "size": 20,
+    "name": "BattleMode4AC0",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0804AC3C",
+    "size": 20,
+    "name": "BattleMode4AC1",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0804AC50",
+    "size": 20,
+    "name": "BattleMode4AC2",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0804AC78",
+    "size": 20,
+    "name": "BattleMode4AC4",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0804AF98",
+    "size": 120,
+    "name": "CreateBattleFamilyTask4AF",
+    "file": "src/battle_family_tasks.c"
+  },
+  {
+    "addr": "0804CB44",
+    "size": 120,
+    "name": "CreateBattleFamilyTask4CB",
+    "file": "src/battle_family_tasks.c"
+  },
+  {
+    "addr": "0804E640",
+    "size": 20,
+    "name": "BattleMode4E60",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0804E654",
+    "size": 20,
+    "name": "BattleMode4E61",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0804EC28",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup0Variant0",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804EC40",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup0Variant1",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804EC58",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup0Variant2",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804EC70",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup0Variant3",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804EC88",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup0Variant4",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804ECA0",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup0Variant5",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804ECB8",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup0Variant6",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804ECD0",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup1Variant0",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804ECE8",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup1Variant1",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804ED00",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup1Variant2",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804ED18",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup1Variant3",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804ED30",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup1Variant4",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804ED48",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup1Variant5",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804ED60",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup1Variant6",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804ED78",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup2Variant0",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804ED90",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup2Variant1",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804EDA8",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup2Variant2",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804EDC0",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup2Variant3",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804EDD8",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup2Variant4",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804EDF0",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup2Variant5",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804EE08",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup2Variant6",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804EE20",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup3Variant0",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804EE38",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup3Variant1",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804EE50",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup3Variant2",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804EE68",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup3Variant3",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804EE80",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup3Variant4",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804EE98",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup3Variant5",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804EEB0",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup3Variant6",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804EEC8",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup4Variant0",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804EEE0",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup4Variant1",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804EEF8",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup4Variant2",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804EF10",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup4Variant3",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804EF28",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup4Variant4",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804EF40",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup4Variant5",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804EF58",
+    "size": 24,
+    "name": "BattleTaskBCreateGroup4Variant6",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "0804F408",
+    "size": 20,
+    "name": "BattleMode4F40",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0804F41C",
+    "size": 20,
+    "name": "BattleMode4F41",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0804F430",
+    "size": 20,
+    "name": "BattleMode4F42",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0804F444",
+    "size": 144,
+    "name": "CreateBattleModeTask4F4",
+    "file": "src/battle_task_create.c"
+  },
+  {
+    "addr": "08050358",
+    "size": 112,
+    "name": "CreateBattleFamilyTask503",
+    "file": "src/battle_family_tasks.c"
+  },
+  {
+    "addr": "080507FC",
+    "size": 20,
+    "name": "BattleMode5075",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "08050810",
+    "size": 20,
+    "name": "BattleMode50810",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "08050824",
+    "size": 20,
+    "name": "BattleMode50820",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "08053294",
+    "size": 16,
+    "name": "Clear32ByteBlock",
+    "file": "src/simple_adapters.c"
   },
   {
     "addr": "08053960",
@@ -2190,6 +3972,12 @@
     "file": "src/runtime_misc.c"
   },
   {
+    "addr": "08061E70",
+    "size": 56,
+    "name": "InitializeMapFieldDisplay",
+    "file": "src/map_field.c"
+  },
+  {
     "addr": "0806C7A0",
     "size": 12,
     "name": "MapObjectResetMotion",
@@ -2226,10 +4014,22 @@
     "file": "src/task_adapters.c"
   },
   {
+    "addr": "0806F620",
+    "size": 68,
+    "name": "CreateEncounterTransitionTask",
+    "file": "src/task_constructors.c"
+  },
+  {
     "addr": "08070090",
     "size": 24,
     "name": "GameStateGetBuffer38C0",
     "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "08070730",
+    "size": 24,
+    "name": "ClearBattleRuntimeBuffer",
+    "file": "src/simple_adapters.c"
   },
   {
     "addr": "08071DD4",
@@ -2506,6 +4306,12 @@
     "size": 64,
     "name": "SoundPlayerStop",
     "file": "src/sound.c"
+  },
+  {
+    "addr": "08079D94",
+    "size": 20,
+    "name": "CallRuntimeHandler",
+    "file": "src/simple_adapters.c"
   },
   {
     "addr": "08079E98",
@@ -3360,16 +5166,70 @@
     "file": "src/script_frames.c"
   },
   {
+    "addr": "0807EE10",
+    "size": 44,
+    "name": "ScriptResourceRegisterTable",
+    "file": "src/script_resources.c"
+  },
+  {
+    "addr": "0807EE3C",
+    "size": 64,
+    "name": "ScriptResourceRegisterTableToHeap",
+    "file": "src/script_resources.c"
+  },
+  {
+    "addr": "0807EE7C",
+    "size": 72,
+    "name": "ScriptResourceRegisterBuiltins",
+    "file": "src/script_resources.c"
+  },
+  {
+    "addr": "0807EF94",
+    "size": 36,
+    "name": "ScriptResourceLoadAndInstall",
+    "file": "src/script_resources.c"
+  },
+  {
     "addr": "0807EFB8",
     "size": 140,
     "name": "ScriptPopFrame",
     "file": "src/script_frames.c"
   },
   {
+    "addr": "0807F044",
+    "size": 24,
+    "name": "InitializePointerRecord",
+    "file": "src/simple_adapters.c"
+  },
+  {
+    "addr": "0807F05C",
+    "size": 56,
+    "name": "ScriptResourceReset",
+    "file": "src/script_resources.c"
+  },
+  {
+    "addr": "0807F094",
+    "size": 88,
+    "name": "ScriptResourceResetArray",
+    "file": "src/script_resources.c"
+  },
+  {
     "addr": "0807F15C",
     "size": 92,
     "name": "ScriptRunSlice",
     "file": "src/script_tasks.c"
+  },
+  {
+    "addr": "0807F1D8",
+    "size": 16,
+    "name": "ScriptResourceLookupFirst",
+    "file": "src/script_resources.c"
+  },
+  {
+    "addr": "0807F1E8",
+    "size": 16,
+    "name": "ScriptResourceLookupSecond",
+    "file": "src/script_resources.c"
   },
   {
     "addr": "0807F274",
@@ -3382,6 +5242,60 @@
     "size": 16,
     "name": "VmGetField12",
     "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "0807F294",
+    "size": 76,
+    "name": "ScriptResourceNameFirst",
+    "file": "src/script_resources.c"
+  },
+  {
+    "addr": "0807F2E0",
+    "size": 76,
+    "name": "ScriptResourceNameSecond",
+    "file": "src/script_resources.c"
+  },
+  {
+    "addr": "0807F380",
+    "size": 24,
+    "name": "ScriptResourceGetValue",
+    "file": "src/script_resources.c"
+  },
+  {
+    "addr": "0807F398",
+    "size": 36,
+    "name": "ScriptResourceGetValueOrDefault",
+    "file": "src/script_resources.c"
+  },
+  {
+    "addr": "0807F3BC",
+    "size": 32,
+    "name": "ScriptResourceSetValue",
+    "file": "src/script_resources.c"
+  },
+  {
+    "addr": "0807F438",
+    "size": 56,
+    "name": "ScriptResourceGetFirst",
+    "file": "src/script_resource_handles.c"
+  },
+  {
+    "addr": "0807F470",
+    "size": 52,
+    "name": "ScriptResourceGetSecond",
+    "file": "src/script_resource_handles.c"
+  },
+  {
+    "addr": "0807F4A4",
+    "size": 56,
+    "name": "ScriptResourceSetFirst",
+    "file": "src/script_resource_handles.c"
+  },
+  {
+    "addr": "0807F4DC",
+    "size": 60,
+    "name": "ScriptResourceSetSecond",
+    "file": "src/script_resource_handles.c"
   },
   {
     "addr": "0807F518",
@@ -3882,9 +5796,238 @@
     "file": "src/runtime_misc.c"
   },
   {
-    "addr": "08085268",
-    "size": 8,
-    "name": "RuntimeGetTable1AC8C0",
-    "file": "src/runtime_misc.c"
+    "addr": "08082640",
+    "size": 12,
+    "name": "ParseDecimalInteger",
+    "file": "src/libc_adapters.c"
+  },
+  {
+    "addr": "0808264C",
+    "size": 72,
+    "name": "memcmp",
+    "file": "src/libc/memcmp.c"
+  },
+  {
+    "addr": "08082694",
+    "size": 96,
+    "name": "memcpy",
+    "file": "src/libc/memcpy.c"
+  },
+  {
+    "addr": "080826F4",
+    "size": 84,
+    "name": "memset",
+    "file": "src/libc/memset.c"
+  },
+  {
+    "addr": "080827C4",
+    "size": 72,
+    "name": "strcat",
+    "file": "src/libc/strcat.c"
+  },
+  {
+    "addr": "0808280C",
+    "size": 92,
+    "name": "strcmp",
+    "file": "src/libc/strcmp.c"
+  },
+  {
+    "addr": "08082868",
+    "size": 76,
+    "name": "strcpy",
+    "file": "src/libc/strcpy.c"
+  },
+  {
+    "addr": "080828B4",
+    "size": 68,
+    "name": "strlen",
+    "file": "src/libc/strlen.c"
+  },
+  {
+    "addr": "080828F8",
+    "size": 112,
+    "name": "strncpy",
+    "file": "src/libc/strncpy.c"
+  },
+  {
+    "addr": "08082968",
+    "size": 328,
+    "name": "_strtol_r",
+    "file": "src/libc/strtol.c"
+  },
+  {
+    "addr": "08082AB0",
+    "size": 52,
+    "name": "strupr",
+    "file": "src/libc/strupr.c"
+  },
+  {
+    "addr": "08082AE4",
+    "size": 4460,
+    "name": "__sprint",
+    "file": "src/libc/vfprintf.c"
+  },
+  {
+    "addr": "08083C50",
+    "size": 172,
+    "name": "__swsetup",
+    "file": "src/libc/wsetup.c"
+  },
+  {
+    "addr": "08083CFC",
+    "size": 3668,
+    "name": "quorem",
+    "file": "src/libc/dtoa.c"
+  },
+  {
+    "addr": "08084B50",
+    "size": 148,
+    "name": "fflush",
+    "file": "src/libc/fflush.c"
+  },
+  {
+    "addr": "08084BE4",
+    "size": 348,
+    "name": "std",
+    "file": "src/libc/findfp.c"
+  },
+  {
+    "addr": "08084D40",
+    "size": 640,
+    "name": "_free_r",
+    "file": "src/libc/freer.c"
+  },
+  {
+    "addr": "08084FC0",
+    "size": 556,
+    "name": "__sfvwrite",
+    "file": "src/libc/fvwrite.c"
+  },
+  {
+    "addr": "080851EC",
+    "size": 64,
+    "name": "_fwalk",
+    "file": "src/libc/fwalk.c"
+  },
+  {
+    "addr": "0808522C",
+    "size": 108,
+    "name": "_setlocale_r",
+    "file": "src/libc/locale.c"
+  },
+  {
+    "addr": "08085298",
+    "size": 220,
+    "name": "__smakebuf",
+    "file": "src/libc/makebuf.c"
+  },
+  {
+    "addr": "08085374",
+    "size": 1308,
+    "name": "malloc_extend_top",
+    "file": "src/libc/mallocr.c"
+  },
+  {
+    "addr": "08085890",
+    "size": 44,
+    "name": "_mbtowc_r",
+    "file": "src/libc/mbtowc_r.c"
+  },
+  {
+    "addr": "080858BC",
+    "size": 128,
+    "name": "memchr",
+    "file": "src/libc/memchr.c"
+  },
+  {
+    "addr": "0808593C",
+    "size": 136,
+    "name": "memmove",
+    "file": "src/libc/memmove.c"
+  },
+  {
+    "addr": "080859CC",
+    "size": 2256,
+    "name": "_Balloc",
+    "file": "src/libc/mprec.c"
+  },
+  {
+    "addr": "0808629C",
+    "size": 36,
+    "name": "isinf",
+    "file": "src/libc/s_isinf.c"
+  },
+  {
+    "addr": "080862C0",
+    "size": 32,
+    "name": "isnan",
+    "file": "src/libc/s_isnan.c"
+  },
+  {
+    "addr": "0808630C",
+    "size": 196,
+    "name": "__sread",
+    "file": "src/libc/stdio.c"
+  },
+  {
+    "addr": "080863D0",
+    "size": 1124,
+    "name": "NewlibSyscalls",
+    "file": "src/libc/syscalls.c"
+  },
+  {
+    "addr": "08086864",
+    "size": 88,
+    "name": "_calloc_r",
+    "file": "src/libc/callocr.c"
+  },
+  {
+    "addr": "080868E8",
+    "size": 12,
+    "name": "GetNewlibReentrancyState",
+    "file": "src/table_accessors.c"
+  },
+  {
+    "addr": "081AC728",
+    "size": 122,
+    "name": "gVfprintfConstants",
+    "file": "src/libc/vfprintf.c"
+  },
+  {
+    "addr": "081AC8A8",
+    "size": 18,
+    "name": "gDtoaConstants",
+    "file": "src/libc/dtoa.c"
+  },
+  {
+    "addr": "081AC8C0",
+    "size": 58,
+    "name": "gLocaleConstants",
+    "file": "src/libc/locale.c"
+  },
+  {
+    "addr": "081AC8FC",
+    "size": 292,
+    "name": "gMultiprecisionConstants",
+    "file": "src/libc/mprec.c"
+  },
+  {
+    "addr": "081ACA20",
+    "size": 38,
+    "name": "gNewlibSyscallStrings",
+    "file": "src/libc/syscalls.c",
+    "provider_size": 37
+  },
+  {
+    "addr": "08F2AFF0",
+    "size": 20,
+    "name": "gLocaleState",
+    "file": "src/libc/locale.c"
+  },
+  {
+    "addr": "08F2B004",
+    "size": 1092,
+    "name": "gMallocState",
+    "file": "src/libc/mallocr.c"
   }
 ]

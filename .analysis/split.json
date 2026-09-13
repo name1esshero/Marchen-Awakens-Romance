@@ -984,9 +984,10 @@
   "asm/data/data_F27630.s",
   "asm/data/data_F27EF0.s",
   "asm/data/data_F28410.s",
-  "asm/data/data_F68410.s",
-  "asm/data/data_FA8410.s",
-  "asm/data/data_FE8410.s",
+  "asm/data/data_F2B448.s",
+  "asm/data/data_F6B448.s",
+  "asm/data/data_FAB448.s",
+  "asm/data/data_FEB448.s",
   "asm/data/data_FFFF00.s"
  ],
  "code_end": 1769472,

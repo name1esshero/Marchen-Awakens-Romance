@@ -10,7 +10,7 @@
 #define SCRIPT_CONTINUE 1
 #define SCRIPT_WAIT 0x7FFF
 
-extern s32 sub_08005378(s32 first, s32 second, s32 mode);
+extern s32 CreateInputWaitTask(s32 first, s32 second, s32 mode);
 extern s32 sub_080053E4(s32 first, s32 second, s32 third, s32 mode);
 extern s32 sub_08006760(s32 first, s32 second);
 extern s32 sub_08006E88(s32 value);
@@ -51,7 +51,7 @@ void StopTrackedSong(u32 song);
 AT("00005B34") s32 ScriptNativeStartTask05378(u32 count, const s32 *args,
                                                s32 *result)
 {
-    return sub_08005378(args[0], args[1], 0);
+    return CreateInputWaitTask(args[0], args[1], 0);
 }
 
 AT("00005B44") s32 ScriptNativeStartTask053E4(u32 count, const s32 *args,
@@ -247,15 +247,15 @@ AT("00005E64") s32 ScriptNativeResetNineChannels(u32 count, const s32 *args,
     return SCRIPT_WAIT;
 }
 
-#ifdef NONMATCHING
 AT("00005EA8") void StartTrackedSong(u32 song, s32 force)
 {
-    if (force || GameStateGetField12EE() != (s32)song)
+    if (force)
+        sub_08078A70((u16)song);
+    else if (GameStateGetField12EE() != (s32)song)
         sub_08078A70((u16)song);
     GameStateSetField12EE(song);
 }
 AT("00005EA8") const u8 StartTrackedSongTail[2] = {0};
-#endif
 
 AT("00005ED8") void StopTrackedSong(u32 song)
 {
@@ -264,15 +264,15 @@ AT("00005ED8") void StopTrackedSong(u32 song)
 }
 AT("00005ED8") const u8 StopTrackedSongTail[2] = {0};
 
-#ifdef NONMATCHING
 AT("00005F04") void StartSecondaryTrackedSong(u32 song, s32 force)
 {
-    if (force || GameStateGetField42C4() != (s32)song)
+    if (force)
+        sub_08078A70((u16)song);
+    else if (GameStateGetField42C4() != (s32)song)
         sub_08078A70((u16)song);
     GameStateSetField42C4(song);
 }
 AT("00005F04") const u8 StartSecondaryTrackedSongTail[2] = {0};
-#endif
 
 AT("00005F34") void SoundSongStartAlternate(u32 song)
 {

@@ -220,8 +220,8 @@ AT("00012714") const u8 ScriptNativeMapSetField628Tail[2] = {0};
 
 AT("00012760") s32 ScriptNativeMapFinalize(u32 count, const s32 *args, s32 *result)
 {
-    extern void sub_08070730(void);
-    sub_08070730();
+    extern void ClearBattleRuntimeBuffer(void);
+    ClearBattleRuntimeBuffer();
     return 1;
 }
 

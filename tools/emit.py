@@ -17,6 +17,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import disasm
+import thumb
 
 ROM_BASE = 0x08000000
 CHUNK = 0x8000          # bytes of ROM per generated .s file
@@ -106,6 +107,23 @@ class Emitter:
     def h(self, addr):
         return struct.unpack_from("<H", self.rom, addr - ROM_BASE)[0]
 
+    def symbolic_code_pointer(self, value):
+        """Name a proven function pointer without changing its encoded bit.
+
+        Thumb function symbols carry bit zero through an ABS32 relocation, so
+        only substitute odd ROM words whose target is a known Thumb entry.
+        ARM pointers remain even. Branch-table addresses are intentionally
+        left numeric because they point inside functions rather than at an
+        entry in the recovered function graph.
+        """
+        address = value & ~1
+        mode = self.funcs.get(address)
+        name = KNOWN_SYMBOLS.get(address)
+        if name and ((value & 1 and mode == "thumb") or
+                     (not value & 1 and mode == "arm")):
+            return name
+        return None
+
     def in_range(self, addr):
         return self.emit_lo <= addr < self.emit_hi and not any(a <= addr < b for a,b in self.data_ranges)
 
@@ -121,6 +139,22 @@ class Emitter:
     def spans_label(self, addr, size):
         """True if a multi-byte literal starting here would bury a label."""
         return any((addr + k) in self.labels for k in range(1, size))
+
+    def pc_relative_crosses_hole(self, addr, halfword):
+        """Whether a Thumb literal/ADR target crosses source-owned bytes.
+
+        Once C replaces bytes in the middle of a generated assembly file,
+        the surviving spans become separate linker sections.  GAS cannot
+        resolve an ADR or PC-relative load across that boundary, and the
+        linked distance may no longer describe the opaque original data in
+        any case.  Preserve that halfword exactly.
+        """
+        insn = thumb.decode_thumb(self.rom, addr - ROM_BASE, addr)
+        if insn is None or insn.pool is None:
+            return False
+        lo, hi = sorted((addr, insn.pool))
+        return any(start < hi and end > lo
+                   for start, end in self.data_ranges)
 
     def label_for(self, addr):
         """Symbol for a branch or literal target, creating one on demand.
@@ -202,12 +236,19 @@ class Emitter:
                     continue
                 v = self.w(addr)
                 c = region_comment(v)
-                lines.append("\t.4byte 0x%08X%s" % (v, ("  @ %s" % c) if c else ""))
+                symbol = self.symbolic_code_pointer(v)
+                if symbol:
+                    lines.append("\t.4byte %s" % symbol)
+                else:
+                    lines.append("\t.4byte 0x%08X%s" %
+                                 (v, ("  @ %s" % c) if c else ""))
                 addr += 4
                 continue
 
             m = self.mode.get(addr)
-            if addr in self.force_literal:
+            if addr in self.force_literal or \
+                    (m == "thumb" and
+                     self.pc_relative_crosses_hole(addr, self.h(addr))):
                 # .inst.n pins the exact halfword. GAS is free to pick a
                 # different encoding for some mnemonics (notably the 3-operand
                 # add/sub immediates), so anything that did not round-trip is

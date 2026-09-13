@@ -1,0 +1,113 @@
+/* Battle command entry points whose only job is to select a fixed mode for a
+ * shared implementation.  The first four arguments retain the script/battle
+ * ABI; the selected mode is passed as the fifth argument on the stack.
+ */
+#include "gba/types.h"
+
+#define AT(x) __attribute__((section(".rom." x)))
+
+extern s32 sub_0802AEBC();
+extern s32 CreateBattleModeTask2C1();
+extern s32 CreateBattleModeTask2FC();
+extern s32 CreateBattleModeTask32F();
+#define sub_0802C198 CreateBattleModeTask2C1
+#define sub_0802FCA0 CreateBattleModeTask2FC
+#define sub_08032F64 CreateBattleModeTask32F
+extern s32 CreateBattleModeTask33D();
+extern s32 sub_080346B0();
+extern s32 sub_08038B5C();
+extern s32 sub_08039F50();
+extern s32 sub_0803B80C();
+extern s32 sub_0803C0D4();
+extern s32 CreateBattleModeTask407();
+extern s32 sub_08041504();
+extern s32 sub_08041A54();
+extern s32 sub_08042288();
+extern s32 sub_08043748();
+extern s32 sub_08044730();
+extern s32 CreateBattleModeTask450();
+extern s32 sub_08046854();
+extern s32 CreateBattleModeTask483();
+extern s32 CreateBattleModeTask491();
+extern s32 sub_0804AC8C();
+extern s32 sub_0804E668();
+extern s32 CreateBattleModeTask4F4();
+extern s32 sub_08050838();
+
+#define sub_08033D00 CreateBattleModeTask33D
+#define sub_080407AC CreateBattleModeTask407
+#define sub_080450E0 CreateBattleModeTask450
+#define sub_080483D8 CreateBattleModeTask483
+#define sub_08049184 CreateBattleModeTask491
+#define sub_0804F444 CreateBattleModeTask4F4
+
+#define DEFINE_MODE_ADAPTER(address, name, implementation, mode) \
+AT(address) s32 name(s32 a, s32 b, s32 c, s32 d)                  \
+{                                                                 \
+    return implementation(a, b, c, d, mode);                      \
+}
+
+DEFINE_MODE_ADAPTER("0002AE94", BattleMode2AE0, sub_0802AEBC, 0)
+DEFINE_MODE_ADAPTER("0002AEA8", BattleMode2AE1, sub_0802AEBC, 1)
+DEFINE_MODE_ADAPTER("0002C15C", BattleMode2C11, sub_0802C198, 1)
+DEFINE_MODE_ADAPTER("0002C170", BattleMode2C12, sub_0802C198, 2)
+DEFINE_MODE_ADAPTER("0002C184", BattleMode2C13, sub_0802C198, 3)
+DEFINE_MODE_ADAPTER("0002FC78", BattleMode2FC0, sub_0802FCA0, 0)
+DEFINE_MODE_ADAPTER("0002FC8C", BattleMode2FC1, sub_0802FCA0, 1)
+DEFINE_MODE_ADAPTER("00032F14", BattleMode32F2, sub_08032F64, 2)
+DEFINE_MODE_ADAPTER("00032F28", BattleMode32F3, sub_08032F64, 3)
+DEFINE_MODE_ADAPTER("00032F3C", BattleMode32F4, sub_08032F64, 4)
+DEFINE_MODE_ADAPTER("00032F50", BattleMode32F5, sub_08032F64, 5)
+DEFINE_MODE_ADAPTER("00033CD8", BattleMode33C2, sub_08033D00, 2)
+DEFINE_MODE_ADAPTER("00033CEC", BattleMode33C3, sub_08033D00, 3)
+DEFINE_MODE_ADAPTER("00034688", BattleMode3464, sub_080346B0, 4)
+DEFINE_MODE_ADAPTER("0003469C", BattleMode3465, sub_080346B0, 5)
+DEFINE_MODE_ADAPTER("00038B34", BattleMode38B4, sub_08038B5C, 4)
+DEFINE_MODE_ADAPTER("00038B48", BattleMode38B5, sub_08038B5C, 5)
+DEFINE_MODE_ADAPTER("00039F28", BattleMode39F3, sub_08039F50, 3)
+DEFINE_MODE_ADAPTER("00039F3C", BattleMode39F4, sub_08039F50, 4)
+DEFINE_MODE_ADAPTER("0003B7E4", BattleMode3B70, sub_0803B80C, 0)
+DEFINE_MODE_ADAPTER("0003B7F8", BattleMode3B71, sub_0803B80C, 1)
+DEFINE_MODE_ADAPTER("0003C084", BattleMode3C02, sub_0803C0D4, 2)
+DEFINE_MODE_ADAPTER("0003C070", BattleMode3C01, sub_0803C0D4, 1)
+DEFINE_MODE_ADAPTER("0003C098", BattleMode3C03, sub_0803C0D4, 3)
+DEFINE_MODE_ADAPTER("0003C0C0", BattleMode3C05, sub_0803C0D4, 5)
+DEFINE_MODE_ADAPTER("00040798", BattleMode4071, sub_080407AC, 1)
+DEFINE_MODE_ADAPTER("00040784", BattleMode4070, sub_080407AC, 0)
+DEFINE_MODE_ADAPTER("000414B4", BattleMode4142, sub_08041504, 2)
+DEFINE_MODE_ADAPTER("000414C8", BattleMode4143, sub_08041504, 3)
+DEFINE_MODE_ADAPTER("000414DC", BattleMode4144, sub_08041504, 4)
+DEFINE_MODE_ADAPTER("000414F0", BattleMode4145, sub_08041504, 5)
+DEFINE_MODE_ADAPTER("00041A04", BattleMode41A2, sub_08041A54, 2)
+DEFINE_MODE_ADAPTER("00041A18", BattleMode41A3, sub_08041A54, 3)
+DEFINE_MODE_ADAPTER("00041A2C", BattleMode41A4, sub_08041A54, 4)
+DEFINE_MODE_ADAPTER("00042238", BattleMode4222, sub_08042288, 2)
+DEFINE_MODE_ADAPTER("0004224C", BattleMode4223, sub_08042288, 3)
+DEFINE_MODE_ADAPTER("0004370C", BattleMode4373, sub_08043748, 3)
+DEFINE_MODE_ADAPTER("00043720", BattleMode4376, sub_08043748, 6)
+DEFINE_MODE_ADAPTER("00043734", BattleMode4378, sub_08043748, 8)
+DEFINE_MODE_ADAPTER("000446E0", BattleMode4461, sub_08044730, 1)
+DEFINE_MODE_ADAPTER("000446F4", BattleMode4462, sub_08044730, 2)
+DEFINE_MODE_ADAPTER("00044708", BattleMode4473, sub_08044730, 3)
+DEFINE_MODE_ADAPTER("0004471C", BattleMode4474, sub_08044730, 4)
+DEFINE_MODE_ADAPTER("000450B8", BattleMode4501, sub_080450E0, 1)
+DEFINE_MODE_ADAPTER("000450CC", BattleMode4502, sub_080450E0, 2)
+DEFINE_MODE_ADAPTER("00046818", BattleMode4681, sub_08046854, 1)
+DEFINE_MODE_ADAPTER("0004682C", BattleMode4682, sub_08046854, 2)
+DEFINE_MODE_ADAPTER("00046840", BattleMode4683, sub_08046854, 3)
+DEFINE_MODE_ADAPTER("000483B0", BattleMode4832, sub_080483D8, 2)
+DEFINE_MODE_ADAPTER("000483C4", BattleMode4833, sub_080483D8, 3)
+DEFINE_MODE_ADAPTER("00049170", BattleMode4913, sub_08049184, 3)
+DEFINE_MODE_ADAPTER("0004915C", BattleMode4912, sub_08049184, 2)
+DEFINE_MODE_ADAPTER("0004AC28", BattleMode4AC0, sub_0804AC8C, 0)
+DEFINE_MODE_ADAPTER("0004AC3C", BattleMode4AC1, sub_0804AC8C, 1)
+DEFINE_MODE_ADAPTER("0004AC50", BattleMode4AC2, sub_0804AC8C, 2)
+DEFINE_MODE_ADAPTER("0004AC78", BattleMode4AC4, sub_0804AC8C, 4)
+DEFINE_MODE_ADAPTER("0004E640", BattleMode4E60, sub_0804E668, 0)
+DEFINE_MODE_ADAPTER("0004E654", BattleMode4E61, sub_0804E668, 1)
+DEFINE_MODE_ADAPTER("0004F408", BattleMode4F40, sub_0804F444, 0)
+DEFINE_MODE_ADAPTER("0004F41C", BattleMode4F41, sub_0804F444, 1)
+DEFINE_MODE_ADAPTER("0004F430", BattleMode4F42, sub_0804F444, 2)
+DEFINE_MODE_ADAPTER("000507FC", BattleMode5075, sub_08050838, 5)
+DEFINE_MODE_ADAPTER("00050810", BattleMode50810, sub_08050838, 10)
+DEFINE_MODE_ADAPTER("00050824", BattleMode50820, sub_08050838, 20)

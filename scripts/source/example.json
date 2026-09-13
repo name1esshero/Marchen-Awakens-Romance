@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "stack_size": 1024,
+  "entry": "start",
+  "instructions": [
+    {
+      "label": "start"
+    },
+    {
+      "op": "native",
+      "name": "FldSet",
+      "args": [
+        {
+          "string": "MAP01_1A",
+          "register": 0
+        },
+        0,
+        0
+      ],
+      "result": 0
+    },
+    {
+      "op": "return"
+    }
+  ]
+}

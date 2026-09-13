@@ -37,9 +37,12 @@ struct KmpViewport
     u8 reserved10[8];
     u32 widthFixed, heightFixed;     /* 18, 1C: 16.16 pixel dimensions */
     u32 clipX, clipY, clipWidth, clipHeight;
+    u8 reserved30[0xCC];             /* complete viewport slot is 0xFC bytes */
 };
 void KmpInitViewport(struct KmpViewport *, const struct KmpHeader *, u16 *, u32, u32, u32);
 void KmpRenderViewport(struct KmpViewport *, s32 xFixed, s32 yFixed);
+void KmpLoadResource(const char *name, void *tileDestination, s32 slot, s32 plane,
+                     s32 paletteOffset, s32 tileOffset, s32 flags);
 void KmpLoadField(const char *name, s16 x, s16 y);
 void KmpSetClip(struct KmpViewport *, u32 x, u32 y, u32 width, u32 height);
 void KmpResetClip(struct KmpViewport *);

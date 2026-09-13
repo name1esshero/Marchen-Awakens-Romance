@@ -63,13 +63,15 @@ _080480F6:
 	.global sub_080480F8
 sub_080480F8:
 	ldr r1, [r6, #68]
-	bl RuntimeObjectGetField1A
-	adds r4, r6, #0
+	.2byte 0xF7C2
+	.4byte 0x1C34F99F
 	adds r4, #80
 	strh r0, [r4, #0]
 	ldr r0, [r6, #64]
 	ldr r1, [r6, #68]
-	bl RuntimeObjectGetField1E
+	.2byte 0xF7C2
+	.byte 0xB0
+	.byte 0xF9
 
 	.thumb_func
 	.thumb
@@ -104,7 +106,9 @@ sub_08048128:
 sub_08048130:
 	ldr r0, [r6, #72]
 	ldr r1, [r6, #76]
-	bl RuntimeObjectGetField1E
+	.2byte 0xF7C2
+	.byte 0x9A
+	.byte 0xF9
 	movs r3, #86
 	adds r3, r3, r6
 	mov r9, r3
@@ -144,7 +148,9 @@ sub_08048166:
 	.2byte 0xF910
 	add r1, sp, #32
 	add r0, sp, #28
-	bl GameStateGetField424C50
+	.2byte 0xF7BE
+	.byte 0x58
+	.byte 0xFE
 	ldr r0, [sp, #28]
 	asrs r0, r0, #16
 	adds r3, r6, #0
@@ -200,7 +206,9 @@ sub_08048182:
 	movs r3, #0
 	bl sub_08003AE4
 	movs r0, #0
-	bl RuntimeSetFieldE48
+	.2byte 0xF7C1
+	.byte 0xB8
+	.byte 0xFF
 	movs r0, #16
 	mov r2, r8
 	strh r0, [r2, #14]
@@ -226,10 +234,14 @@ _080481E4:
 _080481F0:
 	adds r0, r6, #0
 	movs r1, #1
-	bl ObjectSetFlag2
+	.2byte 0xF7E0
+	.byte 0xAE
+	.byte 0xF8
 	adds r0, r6, #0
 	movs r1, #1
-	bl ObjectSetState1
+	.2byte 0xF7E0
+	.byte 0x5A
+	.byte 0xF8
 	adds r0, r6, #0
 	adds r0, #84
 	ldrh r0, [r0, #0]
@@ -239,8 +251,8 @@ _080481F0:
 	ldrh r0, [r0, #0]
 	strh r0, [r6, #30]
 	movs r0, #150
-	bl SoundSongStartU16
-	movs r0, #26
+	.2byte 0xF7BD
+	.4byte 0x201AFE41
 	b _08048342
 	.global _0804821A
 _0804821A:
@@ -253,7 +265,9 @@ _0804821A:
 	.global _08048226
 _08048226:
 	movs r0, #190
-	bl SoundSongStartU16
+	.2byte 0xF7BD
+	.byte 0x36
+	.byte 0xFE
 	movs r0, #32
 	b _0804835A
 	.global _08048230
@@ -269,8 +283,8 @@ _08048230:
 	.global _08048240
 _08048240:
 	ldr r0, [r6, #64]
-	bl RuntimeActorGetField352
-	ldr r4, [r6, #64]
+	.2byte 0xF7C1
+	.4byte 0x6C34FE19
 	ldr r1, [r6, #68]
 	ldr r2, [r6, #72]
 
@@ -294,13 +308,17 @@ sub_0804824C:
 	bl sub_0802814C
 	adds r0, r6, #0
 	movs r1, #1
-	bl ObjectSetFlag400
+	.2byte 0xF7E0
+	.byte 0x58
+	.byte 0xF8
 	adds r0, r6, #0
 	movs r1, #5
-	bl ObjectSetField26
+	.2byte 0xF7E0
+	.byte 0x82
+	.byte 0xF8
 	movs r0, #207
-	bl SoundSongStartU16
-	movs r0, #48
+	.2byte 0xF7BD
+	.4byte 0x2030FE0B
 	b _080482F2
 	.global _08048286
 _08048286:
@@ -427,8 +445,8 @@ _0804835A:
 	.global _08048360
 _08048360:
 	movs r0, #1
-	bl RuntimeSetFieldE48
-	adds r0, r6, #0
+	.2byte 0xF7C1
+	.4byte 0x1C30FEED
 	bl sub_0802824C
 	mov r2, r8
 
@@ -445,7 +463,9 @@ sub_0804836E:
 	.global _0804837A
 _0804837A:
 	mov r0, r8
-	bl FinishTask
+	.2byte 0xF032
+	.byte 0x16
+	.byte 0xFA
 	.global _08048380
 _08048380:
 	adds r5, r6, #0
@@ -481,118 +501,14 @@ _080483A0:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_080483B0
-sub_080483B0:
-	push {r4, lr}
-	sub sp, #4
-	movs r4, #2
-	str r4, [sp, #0]
-	bl sub_080483D8
-	add sp, #4
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 0483B0..0483C4 is decompiled as BattleMode4832(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080483C4
-sub_080483C4:
-	push {r4, lr}
-	sub sp, #4
-	movs r4, #3
-	str r4, [sp, #0]
-	bl sub_080483D8
-	add sp, #4
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 0483C4..0483D8 is decompiled as BattleMode4833(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080483D8
-sub_080483D8:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r8
-	push {r7}
-	sub sp, #4
-	adds r5, r0, #0
-	adds r6, r1, #0
-	mov r8, r2
-	adds r4, r3, #0
-	ldr r0, [sp, #28]
-	lsls r0, r0, #16
-	asrs r7, r0, #16
-	ldr r0, _0804841C
-	lsls r1, r5, #5
-	ldr r0, [r0, #0]
-	adds r0, r0, r1
-	lsls r1, r6, #4
-	adds r0, r0, r1
-	ldr r1, _08048420
-	movs r2, #108
-	str r2, [sp, #0]
-	movs r2, #0
-	bl CreateTask
-	adds r2, r0, #0
-	cmp r2, #0
-	bne _08048424
-	cmp r4, #0
-	beq _08048416
-	movs r0, #1
-	negs r0, r0
-	str r0, [r4, #0]
-	.global _08048416
-_08048416:
-	movs r0, #0
-	b _08048454
-	.byte 0x00
-	.byte 0x00
-	.global _0804841C
-_0804841C:
-	.4byte 0x03004020  @ IWRAM+0x4020
-	.global _08048420
-_08048420:
-	.4byte 0x08048461  @ ROM+0x48461
-	.global _08048424
-_08048424:
-	adds r0, r2, #0
-	adds r0, #32
-	str r5, [r0, #64]
-	str r6, [r0, #68]
-	movs r1, #0
-	cmp r5, #0
-	bne _08048434
-	movs r1, #1
-	.global _08048434
-_08048434:
-	str r1, [r0, #72]
-	mov r1, r8
-	str r1, [r0, #100]
-	adds r0, r2, #0
-	adds r0, #112
-	strh r7, [r0, #0]
-	adds r1, r2, #0
-	adds r1, #136
-	movs r3, #1
-	negs r3, r3
-	adds r0, r1, #0
-	.global _0804844A
-_0804844A:
-	str r3, [r0, #0]
-	subs r0, #4
-	cmp r0, r1
-	bge _0804844A
-	adds r0, r2, #0
-	.global _08048454
-_08048454:
-	add sp, #4
-	pop {r3}
-	mov r8, r3
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
+@ 0483D8..048460 is decompiled as CreateBattleModeTask483(); see src/decompiled.json
+
+	.section .rom.00048460, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -697,14 +613,16 @@ _080484E2:
 _080484E4:
 	ldr r0, [r6, #64]
 	ldr r1, [r6, #68]
-	bl RuntimeObjectGetField1A
+	.2byte 0xF7C1
+	.byte 0xA8
+	.byte 0xFF
 	adds r5, r6, #0
 	adds r5, #76
 	strh r0, [r5, #0]
 	ldr r0, [r6, #64]
 	ldr r1, [r6, #68]
-	bl RuntimeObjectGetField1E
-	adds r4, r6, #0
+	.2byte 0xF7C1
+	.4byte 0x1C34FFB9
 	adds r4, #78
 	strh r0, [r4, #0]
 	adds r0, r6, #0
@@ -739,10 +657,14 @@ _08048536:
 	adds r0, r6, #0
 	movs r1, #3
 	movs r2, #2
-	bl ObjectSetFields34And36
+	.2byte 0xF7DF
+	.byte 0x24
+	.byte 0xFF
 	add r1, sp, #32
 	add r0, sp, #28
-	bl GameStateGetField424C50
+	.2byte 0xF7BE
+	.byte 0x6C
+	.byte 0xFC
 	ldr r0, [sp, #28]
 	asrs r0, r0, #16
 	adds r3, r6, #0
@@ -799,8 +721,8 @@ sub_08048582:
 	movs r3, #0
 	bl sub_08003AE4
 	movs r0, #0
-	bl RuntimeSetFieldE48
-	movs r0, #16
+	.2byte 0xF7C1
+	.4byte 0x2010FDCB
 	mov r1, r8
 	strh r0, [r1, #14]
 	adds r4, r5, #0
@@ -825,8 +747,8 @@ _080485BC:
 	beq _080486A8
 	ldr r0, [r6, #64]
 	ldr r1, [r6, #68]
-	bl RuntimeObjectGetField36
-	cmp r0, #7
+	.2byte 0xF7C2
+	.4byte 0x2807F881
 	bne _080485DA
 	adds r1, r6, #0
 	adds r1, #48
@@ -850,13 +772,19 @@ _080485DA:
 	.global sub_080485EE
 sub_080485EE:
 	movs r1, #1
-	bl ObjectSetFlag2
+	.2byte 0xF7DF
+	.byte 0xB0
+	.byte 0xFE
 	adds r0, r6, #0
 	movs r1, #1
-	bl ObjectSetState1
+	.2byte 0xF7DF
+	.byte 0x5C
+	.byte 0xFE
 	adds r0, r6, #0
 	movs r1, #1
-	bl ObjectSetFlag400
+	.2byte 0xF7DF
+	.byte 0x90
+	.byte 0xFE
 	movs r0, #32
 	b _08048664
 	.global _08048608
@@ -867,7 +795,9 @@ _08048608:
 	cmp r0, #12
 	ble _080486A8
 	movs r0, #161
-	bl SoundSongStartU16
+	.2byte 0xF7BD
+	.byte 0x40
+	.byte 0xFC
 	movs r0, #48
 	b _0804867E
 	.global _0804861C
@@ -939,8 +869,8 @@ _0804867E:
 	.global _08048684
 _08048684:
 	movs r0, #1
-	bl RuntimeSetFieldE48
-	adds r0, r6, #0
+	.2byte 0xF7C1
+	.4byte 0x1C30FD5B
 	bl sub_0802824C
 	mov r2, r8
 	ldr r1, [r2, #24]
@@ -952,7 +882,9 @@ _08048684:
 	.global _0804869E
 _0804869E:
 	mov r0, r8
-	bl FinishTask
+	.2byte 0xF032
+	.byte 0x84
+	.byte 0xF8
 	.global _080486A4
 _080486A4:
 	adds r4, r6, #0
@@ -1009,8 +941,8 @@ sub_080486D4:
 	lsls r2, r2, #4
 	str r2, [sp, #0]
 	movs r2, #0
-	bl CreateTask
-	adds r1, r0, #0
+	.2byte 0xF032
+	.4byte 0x1C01F841
 	cmp r1, #0
 	bne _08048718
 	cmp r4, #0
@@ -1191,13 +1123,15 @@ _080487E8:
 	ldr r4, _08048944
 	add r4, r8
 	ldr r1, [r4, #0]
-	bl RuntimeObjectGetField1A
-	ldr r1, _08048948
+	.2byte 0xF7C1
+	.4byte 0x4953FE21
 	add r1, r8
 	strh r0, [r1, #0]
 	ldr r0, [r5, #0]
 	ldr r1, [r4, #0]
-	bl RuntimeObjectGetField1E
+	.2byte 0xF7C1
+	.byte 0x32
+	.byte 0xFE
 	ldr r1, _0804894C
 	add r1, r8
 	strh r0, [r1, #0]
@@ -1212,7 +1146,9 @@ _080487E8:
 	bl sub_0802805C
 	mov r0, r8
 	movs r1, #1
-	bl ObjectSetFlag400
+	.2byte 0xF7DF
+	.byte 0x7C
+	.byte 0xFD
 	mov r4, r8
 	adds r4, #64
 	movs r3, #6
@@ -1241,8 +1177,8 @@ _08048834:
 	bl sub_0802805C
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectSetFlag400
-	movs r4, #144
+	.2byte 0xF7DF
+	.4byte 0x2490FD5D
 	lsls r4, r4, #2
 	add r4, r8
 	movs r1, #2
@@ -1317,7 +1253,9 @@ _080488A6:
 	mov r5, r8
 	.global _080488E8
 _080488E8:
-	bl Random
+	.2byte 0xF031
+	.byte 0x82
+	.byte 0xFC
 	ldr r2, _08048948
 	add r2, r8
 	movs r1, #255
@@ -1326,7 +1264,9 @@ _080488E8:
 	adds r0, r0, r2
 	subs r0, #127
 	strh r0, [r5, #28]
-	bl Random
+	.2byte 0xF031
+	.byte 0x78
+	.byte 0xFC
 	ldr r1, [sp, #28]
 	lsls r4, r1, #1
 	movs r3, #163
@@ -1389,8 +1329,8 @@ _0804895C:
 _08048962:
 	adds r0, r5, #0
 	movs r1, #3
-	bl ObjectSetFields34And36
-	movs r3, #30
+	.2byte 0xF7DF
+	.4byte 0x231EFD0F
 	add r9, r3
 	adds r5, #64
 	ldr r4, [sp, #28]
@@ -1495,10 +1435,12 @@ sub_080489EC:
 _080489F4:
 	ldr r0, [sp, #48]
 	movs r1, #1
-	bl ObjectSetFlag2
+	.2byte 0xF7DF
+	.byte 0xAC
+	.byte 0xFC
 	movs r0, #150
-	bl SoundSongStartU16
-	movs r0, #16
+	.2byte 0xF7BD
+	.4byte 0x2010FA4B
 	mov r1, r10
 	strh r0, [r1, #0]
 	b _08048C14
@@ -1541,10 +1483,14 @@ sub_08048A30:
 	ldr r5, _08048A84
 	add r5, r8
 	ldr r1, [r5, #0]
-	bl RuntimeObjectGetField36
+	.2byte 0xF7C1
+	.byte 0x46
+	.byte 0xFE
 	adds r6, r0, #0
 	ldr r0, [r4, #0]
-	bl RuntimeActorGetField352
+	.2byte 0xF7C1
+	.byte 0x16
+	.byte 0xFA
 
 	.thumb_func
 	.thumb
@@ -1633,11 +1579,11 @@ sub_08048AC0:
 	adds r4, r4, r3
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectSetFlag2
-	adds r0, r4, #0
+	.2byte 0xF7DF
+	.4byte 0x1C20FC3F
 	movs r1, #1
-	bl ObjectSetState1
-	ldrh r0, [r7, #52]
+	.2byte 0xF7DF
+	.4byte 0x8EB8FBEB
 	strh r0, [r5, #24]
 	ldrh r0, [r7, #54]
 	strh r0, [r5, #26]
@@ -1646,7 +1592,9 @@ sub_08048AC0:
 	ands r0, r4
 	cmp r0, #0
 	beq _08048B10
-	bl Random
+	.2byte 0xF031
+	.byte 0x7E
+	.byte 0xFB
 	movs r2, #164
 	lsls r2, r2, #4
 	add r2, r8
@@ -1665,7 +1613,9 @@ _08048B0C:
 	.4byte 0x0000021E
 	.global _08048B10
 _08048B10:
-	bl Random
+	.2byte 0xF031
+	.byte 0x6E
+	.byte 0xFB
 	movs r2, #164
 	lsls r2, r2, #4
 	add r2, r8
@@ -1679,8 +1629,8 @@ _08048B10:
 	.global _08048B28
 _08048B28:
 	strh r0, [r5, #0]
-	bl Random
-	movs r2, #168
+	.2byte 0xF031
+	.4byte 0x22A8FB61
 	lsls r2, r2, #4
 	add r2, r8
 	adds r2, r2, r6
@@ -1747,11 +1697,11 @@ _08048B92:
 	.thumb
 	.global sub_08048BA2
 sub_08048BA2:
-	bl RuntimeObjectGetField36
-	str r0, [sp, #64]
+	.2byte 0xF7C1
+	.4byte 0x9010FD95
 	ldr r0, [r7, #0]
-	bl RuntimeActorGetField352
-	adds r3, r0, #0
+	.2byte 0xF7C1
+	.4byte 0x1C03F965
 	ldr r0, [r7, #0]
 	ldr r4, [sp, #36]
 	ldr r1, [r4, #0]
@@ -1921,7 +1871,9 @@ _08048C7C:
 	.global _08048CB0
 _08048CB0:
 	ldr r0, [sp, #24]
-	bl FinishTask
+	.2byte 0xF031
+	.byte 0x7B
+	.byte 0xFD
 	.global _08048CB6
 _08048CB6:
 	ldr r0, _08048D2C
@@ -1930,13 +1882,15 @@ _08048CB6:
 	ldrsh r0, [r0, r3]
 	cmp r0, #0
 	beq _08048CD4
-	bl Random
-	movs r1, #7
+	.2byte 0xF031
+	.4byte 0x2107FA95
 	ands r0, r1
 	subs r0, #4
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateSetField4248
+	.2byte 0xF7BE
+	.byte 0x26
+	.byte 0xF8
 	.global _08048CD4
 _08048CD4:
 	movs r4, #0
@@ -1992,79 +1946,10 @@ _08048D1A:
 _08048D2C:
 	.4byte 0x00000AC2
 
-	.thumb_func
-	.thumb
-	.global sub_08048D30
-sub_08048D30:
-	push {r4, r5, r6, r7, lr}
-	sub sp, #4
-	adds r5, r0, #0
-	adds r6, r1, #0
-	adds r7, r2, #0
-	adds r4, r3, #0
-	ldr r0, _08048D68
-	lsls r1, r5, #5
-	ldr r0, [r0, #0]
-	adds r0, r0, r1
-	lsls r1, r6, #4
-	adds r0, r0, r1
-	ldr r1, _08048D6C
-	movs r2, #128
-	str r2, [sp, #0]
-	movs r2, #0
-	bl CreateTask
-	cmp r0, #0
-	bne _08048D70
-	cmp r4, #0
-	beq _08048D62
-	movs r0, #1
-	negs r0, r0
-	str r0, [r4, #0]
-	.global _08048D62
-_08048D62:
-	movs r0, #0
-	b _08048D96
-	.byte 0x00
-	.byte 0x00
-	.global _08048D68
-_08048D68:
-	.4byte 0x03004020  @ IWRAM+0x4020
-	.global _08048D6C
-_08048D6C:
-	.4byte 0x08048DA1  @ ROM+0x48DA1
-	.global _08048D70
-_08048D70:
-	adds r1, r0, #0
-	adds r1, #32
-	str r5, [r1, #64]
-	str r6, [r1, #68]
-	movs r2, #0
-	cmp r5, #0
-	bne _08048D80
-	movs r2, #1
-	.global _08048D80
-_08048D80:
-	str r2, [r1, #72]
-	str r7, [r1, #120]
-	adds r2, r0, #0
-	adds r2, #156
-	movs r3, #1
-	negs r3, r3
-	adds r1, r2, #0
-	.global _08048D8E
-_08048D8E:
-	str r3, [r1, #0]
-	subs r1, #4
-	cmp r1, r2
-	bge _08048D8E
-	.global _08048D96
-_08048D96:
-	add sp, #4
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 048D30..048DA0 is decompiled as CreateBattleFamilyTask48D(); see src/decompiled.json
+
+	.section .rom.00048DA0, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -2173,14 +2058,16 @@ _08048E2C:
 	.global sub_08048E2E
 sub_08048E2E:
 	ldr r1, [r7, #68]
-	bl RuntimeObjectGetField1A
+	.2byte 0xF7C1
+	.byte 0x04
+	.byte 0xFB
 	adds r5, r7, #0
 	adds r5, #80
 	strh r0, [r5, #0]
 	ldr r0, [r7, #64]
 	ldr r1, [r7, #68]
-	bl RuntimeObjectGetField1E
-	adds r4, r7, #0
+	.2byte 0xF7C1
+	.4byte 0x1C3CFB15
 	adds r4, #82
 	strh r0, [r4, #0]
 	movs r1, #0
@@ -2192,14 +2079,18 @@ sub_08048E2E:
 	adds r1, r0, #0
 	str r1, [r7, #76]
 	ldr r0, [r7, #72]
-	bl RuntimeObjectGetField1A
+	.2byte 0xF7C1
+	.byte 0xEE
+	.byte 0xFA
 	movs r3, #84
 	adds r3, r3, r7
 	mov r8, r3
 	strh r0, [r3, #0]
 	ldr r0, [r7, #72]
 	ldr r1, [r7, #76]
-	bl RuntimeObjectGetField1E
+	.2byte 0xF7C1
+	.byte 0xFE
+	.byte 0xFA
 	movs r1, #86
 	adds r1, r1, r7
 	mov r10, r1
@@ -2215,17 +2106,19 @@ sub_08048E2E:
 	adds r0, r7, #0
 	movs r1, #3
 	movs r2, #0
-	bl ObjectSetFields34And36
-	adds r0, r7, #0
+	.2byte 0xF7DF
+	.4byte 0x1C38FA79
 	movs r1, #1
-	bl ObjectSetState1
-	adds r0, r7, #0
+	.2byte 0xF7DF
+	.4byte 0x1C38FA0B
 	movs r1, #1
-	bl ObjectSetFlag2
-	movs r1, #1
+	.2byte 0xF7DF
+	.4byte 0x2101FA57
 	negs r1, r1
 	adds r0, r7, #0
-	bl ObjectSetField26
+	.2byte 0xF7DF
+	.byte 0x68
+	.byte 0xFA
 	adds r1, r7, #0
 	adds r1, #50
 	movs r0, #1
@@ -2235,8 +2128,8 @@ sub_08048E2E:
 	strh r0, [r7, #46]
 	ldr r0, [r7, #64]
 	ldr r1, [r7, #68]
-	bl RuntimeObjectGetField36
-	adds r2, r5, #0
+	.2byte 0xF7C1
+	.4byte 0x1C2AFC05
 	mov r3, r8
 	mov r6, r10
 	cmp r0, #7
@@ -2291,7 +2184,9 @@ _08048EE0:
 	strh r1, [r0, #0]
 	add r1, sp, #40
 	add r0, sp, #36
-	bl GameStateGetField424C50
+	.2byte 0xF7BD
+	.byte 0x7A
+	.byte 0xFF
 	ldr r0, [sp, #36]
 	asrs r0, r0, #16
 	adds r3, r7, #0
@@ -2341,8 +2236,8 @@ sub_08048F4A:
 	movs r3, #0
 	bl sub_08003AE4
 	movs r0, #0
-	bl RuntimeSetFieldE48
-	movs r0, #16
+	.2byte 0xF7C1
+	.4byte 0x2010F8DB
 	mov r2, r9
 	strh r0, [r2, #14]
 	mov r8, r4
@@ -2431,17 +2326,21 @@ _08049012:
 _0804902C:
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectSetState1
+	.2byte 0xF7DF
+	.byte 0x40
+	.byte 0xF9
 	adds r0, r7, #0
 	movs r1, #0
-	bl ObjectSetField26
+	.2byte 0xF7DF
+	.byte 0xA2
+	.byte 0xF9
 	adds r1, r7, #0
 	adds r1, #50
 	movs r0, #0
 	strb r0, [r1, #0]
 	movs r0, #172
-	bl SoundSongStartU16
-	movs r0, #48
+	.2byte 0xF7BC
+	.4byte 0x2030FF27
 	mov r2, r9
 	strh r0, [r2, #14]
 	b _08049130
@@ -2461,12 +2360,14 @@ _08049058:
 	beq _08049130
 	adds r0, r7, #0
 	movs r1, #0
-	bl ObjectSetState1
-	adds r0, r7, #0
+	.2byte 0xF7DF
+	.4byte 0x1C38F923
 	movs r1, #0
-	bl ObjectSetFlag2
-	ldr r0, [r7, #64]
-	bl RuntimeActorGetField352
+	.2byte 0xF7DF
+	.4byte 0x6C38F96F
+	.2byte 0xF7C0
+	.byte 0xFE
+	.byte 0xFE
 	adds r3, r0, #0
 	ldr r0, [r7, #64]
 	ldr r1, [r7, #68]
@@ -2543,8 +2444,8 @@ _080490F8:
 	.global _0804910C
 _0804910C:
 	movs r0, #1
-	bl RuntimeSetFieldE48
-	adds r0, r7, #0
+	.2byte 0xF7C1
+	.4byte 0x1C38F817
 	bl sub_0802824C
 	mov r5, r9
 	ldr r1, [r5, #24]
@@ -2556,7 +2457,9 @@ _0804910C:
 	.global _08049126
 _08049126:
 	mov r0, r9
-	bl FinishTask
+	.2byte 0xF031
+	.byte 0x40
+	.byte 0xFB
 	.global _0804912C
 _0804912C:
 	adds r6, r7, #0
@@ -2587,132 +2490,14 @@ _0804914A:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_0804915C
-sub_0804915C:
-	push {r4, lr}
+@ 04915C..049170 is decompiled as BattleMode4912(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804915E
-sub_0804915E:
-	sub sp, #4
-	movs r4, #2
-	str r4, [sp, #0]
-	bl sub_08049184
-	add sp, #4
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 049170..049184 is decompiled as BattleMode4913(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08049170
-sub_08049170:
-	push {r4, lr}
-	sub sp, #4
-	movs r4, #3
-	str r4, [sp, #0]
-	bl sub_08049184
-	add sp, #4
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 049184..04921C is decompiled as CreateBattleModeTask491(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08049184
-sub_08049184:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r8
-	push {r7}
-	sub sp, #4
-	adds r5, r0, #0
-	adds r6, r1, #0
-	mov r8, r2
-	adds r4, r3, #0
-	ldr r0, [sp, #28]
-	lsls r0, r0, #16
-	asrs r7, r0, #16
-	ldr r0, _080491C8
-	lsls r1, r5, #5
-	ldr r0, [r0, #0]
-	adds r0, r0, r1
-	lsls r1, r6, #4
-	adds r0, r0, r1
-	ldr r1, _080491CC
-	movs r2, #248
-	str r2, [sp, #0]
-	movs r2, #0
-	bl CreateTask
-	adds r2, r0, #0
-	cmp r2, #0
-	bne _080491D0
-	cmp r4, #0
-	beq _080491C2
-	movs r0, #1
-	negs r0, r0
-	str r0, [r4, #0]
-	.global _080491C2
-_080491C2:
-	movs r0, #0
-	b _0804920E
-	.byte 0x00
-	.byte 0x00
-	.global _080491C8
-_080491C8:
-	.4byte 0x03004020  @ IWRAM+0x4020
-	.global _080491CC
-_080491CC:
-	.4byte 0x0804921D  @ ROM+0x4921D
-	.global _080491D0
-_080491D0:
-	adds r0, r2, #0
-	adds r0, #224
-	str r5, [r0, #0]
-	adds r0, #4
-	str r6, [r0, #0]
-	adds r0, #4
-	movs r1, #0
-	cmp r5, #0
-	bne _080491E4
-	movs r1, #1
-	.global _080491E4
-_080491E4:
-	str r1, [r0, #0]
-	movs r1, #136
-	lsls r1, r1, #1
-	adds r0, r2, r1
-	mov r1, r8
-	str r1, [r0, #0]
-	movs r1, #131
-	lsls r1, r1, #1
-	adds r0, r2, r1
-	strh r7, [r0, #0]
-	movs r0, #138
-	lsls r0, r0, #1
-	adds r1, r2, r0
-	movs r3, #1
-	negs r3, r3
-	adds r0, r1, #0
-	.global _08049204
-_08049204:
-	str r3, [r0, #0]
-	subs r0, #4
-	cmp r0, r1
-	bge _08049204
-	adds r0, r2, #0
-	.global _0804920E
-_0804920E:
-	add sp, #4
-	pop {r3}
-	mov r8, r3
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+	.section .rom.0004921C, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -2854,15 +2639,15 @@ _080492DE:
 	adds r1, r1, r7
 	mov r8, r1
 	ldr r1, [r1, #0]
-	bl RuntimeObjectGetField1A
-	adds r4, r7, #0
+	.2byte 0xF7C1
+	.4byte 0x1C3CF8A5
 	adds r4, #208
 	strh r0, [r4, #0]
 	ldr r0, [r6, #0]
 	mov r2, r8
 	ldr r1, [r2, #0]
-	bl RuntimeObjectGetField1E
-	adds r1, r7, #0
+	.2byte 0xF7C1
+	.4byte 0x1C39F8B5
 	adds r1, #210
 	strh r0, [r1, #0]
 	movs r3, #0
@@ -2877,13 +2662,15 @@ _080492DE:
 	adds r5, #204
 	str r1, [r5, #0]
 	ldr r0, [r4, #0]
-	bl RuntimeObjectGetField1A
-	adds r6, r7, #0
+	.2byte 0xF7C1
+	.4byte 0x1C3EF88B
 	adds r6, #212
 	strh r0, [r6, #0]
 	ldr r0, [r4, #0]
 	ldr r1, [r5, #0]
-	bl RuntimeObjectGetField1E
+	.2byte 0xF7C1
+	.byte 0x9C
+	.byte 0xF8
 	adds r1, r7, #0
 	adds r1, #214
 	strh r0, [r1, #0]
@@ -3015,19 +2802,21 @@ _080493E0:
 	adds r0, r7, #0
 	movs r1, #3
 	movs r2, #3
-	bl ObjectSetFields34And36
-	ldr r0, [sp, #92]
+	.2byte 0xF7DE
+	.4byte 0x9817FFAB
 	movs r1, #3
 	movs r2, #2
-	bl ObjectSetFields34And36
+	.2byte 0xF7DE
+	.byte 0xA6
+	.byte 0xFF
 	ldr r0, [sp, #104]
 	movs r1, #3
 	movs r2, #1
-	bl ObjectSetFields34And36
-	add r0, sp, #28
+	.2byte 0xF7DE
+	.4byte 0xA807FFA1
 	ldr r1, [sp, #52]
-	bl GameStateGetField424C50
-	ldr r0, [sp, #28]
+	.2byte 0xF7BD
+	.4byte 0x9807FCE9
 	asrs r0, r0, #16
 	ldr r3, [sp, #64]
 	strh r0, [r3, #0]
@@ -3075,8 +2864,8 @@ _080493E0:
 	.global sub_080494A4
 sub_080494A4:
 	movs r0, #0
-	bl RuntimeSetFieldE48
-	movs r0, #10
+	.2byte 0xF7C0
+	.4byte 0x200AFE4B
 	b _08049620
 	.byte 0x00
 	.byte 0x00
@@ -3144,38 +2933,52 @@ _080494FA:
 _0804950C:
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectSetFlag2
+	.2byte 0xF7DE
+	.byte 0x20
+	.byte 0xFF
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectSetState1
+	.2byte 0xF7DE
+	.byte 0xCC
+	.byte 0xFE
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectSetFlag400
+	.2byte 0xF7DE
+	.byte 0x00
+	.byte 0xFF
 	adds r4, r7, #0
 	adds r4, #64
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectSetFlag2
+	.2byte 0xF7DE
+	.byte 0x12
+	.byte 0xFF
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectSetState1
+	.2byte 0xF7DE
+	.byte 0xBE
+	.byte 0xFE
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectSetFlag400
+	.2byte 0xF7DE
+	.byte 0xF2
+	.byte 0xFE
 	adds r4, #64
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectSetFlag2
-	adds r0, r4, #0
+	.2byte 0xF7DE
+	.4byte 0x1C20FF05
 	movs r1, #1
-	bl ObjectSetState1
-	adds r0, r4, #0
+	.2byte 0xF7DE
+	.4byte 0x1C20FEB1
 	movs r1, #1
-	bl ObjectSetFlag400
-	adds r5, r7, #0
+	.2byte 0xF7DE
+	.4byte 0x1C3DFEE5
 	adds r5, #192
 	ldr r0, [r5, #0]
-	bl RuntimeActorGetField352
+	.2byte 0xF7C0
+	.byte 0x8A
+	.byte 0xFC
 	adds r3, r0, #0
 	ldr r0, [r5, #0]
 	adds r1, r7, #0
@@ -3199,12 +3002,16 @@ _0804950C:
 	cmp r0, #2
 	bne _0804959A
 	movs r0, #170
-	bl SoundSongStartU16
+	.2byte 0xF7BC
+	.byte 0x80
+	.byte 0xFC
 	b _080495A0
 	.global _0804959A
 _0804959A:
 	movs r0, #171
-	bl SoundSongStartU16
+	.2byte 0xF7BC
+	.byte 0x7C
+	.byte 0xFC
 	.global _080495A0
 _080495A0:
 	adds r0, r7, #0
@@ -3312,7 +3119,9 @@ _08049650:
 	.global _08049656
 _08049656:
 	movs r0, #1
-	bl RuntimeSetFieldE48
+	.2byte 0xF7C0
+	.byte 0x72
+	.byte 0xFD
 	movs r3, #192
 	adds r3, r3, r7
 	mov r10, r3
@@ -3344,7 +3153,9 @@ _08049676:
 	.global _08049692
 _08049692:
 	ldr r0, [sp, #36]
-	bl FinishTask
+	.2byte 0xF031
+	.byte 0x8A
+	.byte 0xF8
 	.global _08049698
 _08049698:
 	movs r3, #0
@@ -3360,19 +3171,23 @@ _08049698:
 	ldrsh r0, [r3, r6]
 	cmp r0, #0
 	beq _080496D6
-	bl Random
+	.2byte 0xF030
+	.byte 0x9C
+	.byte 0xFD
 	movs r4, #3
 	ands r0, r4
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateSetField4246
-	bl Random
-	ands r0, r4
+	.2byte 0xF7BD
+	.4byte 0xF030FB0F
+	.4byte 0x4020FD93
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateSetField4248
+	.2byte 0xF7BD
+	.byte 0x25
+	.byte 0xFB
 	.global _080496D6
 _080496D6:
 	adds r4, r7, #0
@@ -3419,8 +3234,8 @@ sub_080496FC:
 	lsls r2, r2, #2
 	str r2, [sp, #0]
 	movs r2, #0
-	bl CreateTask
-	adds r1, r0, #0
+	.2byte 0xF031
+	.4byte 0x1C01F82D
 	cmp r1, #0
 	bne _08049740
 	cmp r4, #0
@@ -3593,15 +3408,15 @@ _08049812:
 	lsls r2, r2, #2
 	adds r4, r7, r2
 	ldr r1, [r4, #0]
-	bl RuntimeObjectGetField1A
-	movs r3, #244
+	.2byte 0xF7C0
+	.4byte 0x23F4FE0B
 	lsls r3, r3, #2
 	adds r1, r7, r3
 	strh r0, [r1, #0]
 	ldr r0, [r5, #0]
 	ldr r1, [r4, #0]
-	bl RuntimeObjectGetField1E
-	ldr r4, _0804997C
+	.2byte 0xF7C0
+	.4byte 0x4C51FE1B
 	adds r1, r7, r4
 	strh r0, [r1, #0]
 	movs r0, #242
@@ -3612,14 +3427,18 @@ _08049812:
 	lsls r1, r1, #2
 	adds r4, r7, r1
 	ldr r1, [r4, #0]
-	bl RuntimeObjectGetField1A
+	.2byte 0xF7C0
+	.byte 0xF6
+	.byte 0xFD
 	movs r2, #245
 	lsls r2, r2, #2
 	adds r1, r7, r2
 	strh r0, [r1, #0]
 	ldr r0, [r5, #0]
 	ldr r1, [r4, #0]
-	bl RuntimeObjectGetField1E
+	.2byte 0xF7C0
+	.byte 0x06
+	.byte 0xFE
 	ldr r3, _08049980
 	adds r1, r7, r3
 	strh r0, [r1, #0]
@@ -3715,7 +3534,9 @@ _08049904:
 	strh r0, [r1, #0]
 	add r0, sp, #4
 	mov r1, r10
-	bl GameStateGetField424C50
+	.2byte 0xF7BD
+	.byte 0x78
+	.byte 0xFA
 	ldr r0, [sp, #4]
 	asrs r0, r0, #16
 	movs r3, #246
@@ -3728,12 +3549,16 @@ _08049904:
 	adds r1, r7, r4
 	strh r0, [r1, #0]
 	movs r0, #0
-	bl RuntimeSetFieldE48
+	.2byte 0xF7C0
+	.byte 0xFA
+	.byte 0xFB
 	movs r0, #240
 	lsls r0, r0, #2
 	adds r4, r7, r0
 	ldr r0, [r4, #0]
-	bl RuntimeActorGetField352
+	.2byte 0xF7C0
+	.byte 0x90
+	.byte 0xFA
 	adds r2, r0, #0
 	ldr r0, [r4, #0]
 	movs r3, #241
@@ -3807,7 +3632,9 @@ _080499BE:
 	beq _08049ABE
 	cmp r1, #0
 	bne _08049ACC
-	bl Random
+	.2byte 0xF030
+	.byte 0x0A
+	.byte 0xFC
 	ldr r1, [sp, #16]
 	ldr r3, _08049A30
 	adds r2, r1, r3
@@ -3815,8 +3642,8 @@ _080499BE:
 	ands r0, r1
 	adds r2, r2, r0
 	strh r2, [r5, #28]
-	bl Random
-	ldr r2, [sp, #20]
+	.2byte 0xF030
+	.4byte 0x9A05FC01
 	adds r2, #16
 	movs r1, #127
 	ands r0, r1
@@ -3867,7 +3694,9 @@ _08049A3A:
 	asrs r2, r2, #16
 	adds r0, r5, #0
 	movs r1, #3
-	bl ObjectSetFields34And36
+	.2byte 0xF7DE
+	.byte 0xA0
+	.byte 0xFC
 	adds r2, r4, #1
 	lsls r2, r2, #16
 
@@ -3878,41 +3707,61 @@ sub_08049A4C:
 	asrs r2, r2, #16
 	mov r0, r9
 	movs r1, #3
-	bl ObjectSetFields34And36
-	adds r0, r6, #0
+	.2byte 0xF7DE
+	.4byte 0x1C30FC99
 	movs r1, #3
 	adds r2, r4, #0
-	bl ObjectSetFields34And36
+	.2byte 0xF7DE
+	.byte 0x94
+	.byte 0xFC
 	adds r0, r5, #0
 	movs r1, #1
-	bl ObjectSetFlag2
+	.2byte 0xF7DE
+	.byte 0x76
+	.byte 0xFC
 	adds r0, r5, #0
 	movs r1, #1
-	bl ObjectSetState1
+	.2byte 0xF7DE
+	.byte 0x22
+	.byte 0xFC
 	adds r0, r5, #0
 	movs r1, #1
-	bl ObjectSetFlag400
+	.2byte 0xF7DE
+	.byte 0x56
+	.byte 0xFC
 	mov r0, r9
 	movs r1, #1
-	bl ObjectSetFlag2
+	.2byte 0xF7DE
+	.byte 0x6A
+	.byte 0xFC
 	mov r0, r9
 	movs r1, #1
-	bl ObjectSetState1
+	.2byte 0xF7DE
+	.byte 0x16
+	.byte 0xFC
 	mov r0, r9
 	movs r1, #1
-	bl ObjectSetFlag400
+	.2byte 0xF7DE
+	.byte 0x4A
+	.byte 0xFC
 	adds r0, r6, #0
 	movs r1, #1
-	bl ObjectSetFlag2
+	.2byte 0xF7DE
+	.byte 0x5E
+	.byte 0xFC
 	adds r0, r6, #0
 	movs r1, #1
-	bl ObjectSetState1
+	.2byte 0xF7DE
+	.byte 0x0A
+	.byte 0xFC
 	adds r0, r6, #0
 	movs r1, #1
-	bl ObjectSetFlag400
+	.2byte 0xF7DE
+	.byte 0x3E
+	.byte 0xFC
 	movs r0, #170
-	bl SoundSongStartAlternate
-	movs r2, #247
+	.2byte 0xF7BC
+	.4byte 0x22F7FA43
 	lsls r2, r2, #2
 	adds r1, r7, r2
 	add r1, r10
@@ -4018,7 +3867,9 @@ _08049B42:
 	.global _08049B52
 _08049B52:
 	movs r0, #1
-	bl RuntimeSetFieldE48
+	.2byte 0xF7C0
+	.byte 0xF4
+	.byte 0xFA
 	movs r3, #160
 	lsls r3, r3, #2
 	adds r6, r7, r3
@@ -4055,7 +3906,9 @@ _08049B6A:
 	.global _08049B9C
 _08049B9C:
 	ldr r0, [sp, #12]
-	bl FinishTask
+	.2byte 0xF030
+	.byte 0x05
+	.byte 0xFE
 	.global _08049BA2
 _08049BA2:
 	movs r4, #246
@@ -4076,19 +3929,23 @@ _08049BA2:
 	ldrsh r0, [r0, r1]
 	cmp r0, #0
 	beq _08049BEA
-	bl Random
+	.2byte 0xF030
+	.byte 0x12
+	.byte 0xFB
 	movs r4, #3
 	ands r0, r4
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateSetField4246
-	bl Random
-	ands r0, r4
+	.2byte 0xF7BD
+	.4byte 0xF030F885
+	.4byte 0x4020FB09
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateSetField4248
+	.2byte 0xF7BD
+	.byte 0x9B
+	.byte 0xF8
 	.global _08049BEA
 _08049BEA:
 	movs r2, #240
@@ -4168,8 +4025,8 @@ sub_08049C48:
 	lsls r2, r2, #2
 	str r2, [sp, #0]
 	movs r2, #0
-	bl CreateTask
-	adds r1, r0, #0
+	.2byte 0xF030
+	.4byte 0x1C01FD87
 	cmp r1, #0
 	bne _08049C8C
 	cmp r4, #0
@@ -4344,14 +4201,18 @@ sub_08049D60:
 	lsls r1, r1, #2
 	adds r4, r7, r1
 	ldr r1, [r4, #0]
-	bl RuntimeObjectGetField1A
+	.2byte 0xF7C0
+	.byte 0x68
+	.byte 0xFB
 	movs r2, #229
 	lsls r2, r2, #2
 	adds r1, r7, r2
 	strh r0, [r1, #0]
 	ldr r0, [r5, #0]
 	ldr r1, [r4, #0]
-	bl RuntimeObjectGetField1E
+	.2byte 0xF7C0
+	.byte 0x78
+	.byte 0xFB
 	ldr r3, _08049E18
 	adds r1, r7, r3
 	strh r0, [r1, #0]
@@ -4375,11 +4236,13 @@ sub_08049D90:
 	movs r1, #1
 	negs r1, r1
 	adds r0, r7, #0
-	bl ObjectSetField26
-	adds r0, r7, #0
+	.2byte 0xF7DE
+	.4byte 0x1C38FAEB
 	movs r1, #3
 	movs r2, #2
-	bl ObjectSetFields34And36
+	.2byte 0xF7DE
+	.byte 0xEA
+	.byte 0xFA
 	ldr r1, _08049E20
 	ldr r4, _08049E24
 	adds r0, r1, r4
@@ -4420,8 +4283,8 @@ _08049DEC:
 	mov r0, r8
 	movs r1, #3
 	movs r2, #1
-	bl ObjectSetFields34And36
-	movs r0, #1
+	.2byte 0xF7DE
+	.4byte 0x2001FAC1
 	strb r0, [r5, #22]
 	strb r0, [r5, #23]
 	adds r0, #255
@@ -4455,7 +4318,9 @@ _08049E2C:
 	bl sub_080281A4
 	.global _08049E3C
 _08049E3C:
-	bl Random
+	.2byte 0xF030
+	.byte 0xD8
+	.byte 0xF9
 	ldr r4, _08049F34
 	adds r1, r4, #0
 	ands r0, r1
@@ -4464,7 +4329,9 @@ _08049E3C:
 	subs r0, #64
 	lsls r0, r0, #16
 	lsrs r4, r0, #16
-	bl Random
+	.2byte 0xF030
+	.byte 0xCE
+	.byte 0xF9
 	movs r1, #127
 	ands r1, r0
 	adds r2, r1, #0
@@ -4516,11 +4383,13 @@ _08049E3C:
 	movs r1, #1
 	negs r1, r1
 	adds r0, r4, #0
-	bl ObjectSetField26
-	adds r0, r4, #0
+	.2byte 0xF7DE
+	.4byte 0x1C20FA5F
 	movs r1, #3
 	movs r2, #2
-	bl ObjectSetFields34And36
+	.2byte 0xF7DE
+	.byte 0x5E
+	.byte 0xFA
 	ldrh r1, [r7, #28]
 	movs r2, #151
 	lsls r2, r2, #2
@@ -4542,8 +4411,8 @@ _08049E3C:
 _08049EEE:
 	ldr r0, [r5, #0]
 	adds r1, r6, #0
-	bl RuntimeGetActorRecord
-	adds r1, r0, #0
+	.2byte 0xF7C0
+	.4byte 0x1C01F967
 	movs r0, #0
 	ldrsb r0, [r1, r0]
 	cmp r0, #0
@@ -4604,10 +4473,14 @@ _08049F54:
 	adds r0, r7, r0
 	movs r1, #3
 	movs r2, #0
-	bl ObjectSetFields34And36
+	.2byte 0xF7DE
+	.byte 0x10
+	.byte 0xFA
 	ldr r0, [r5, #0]
 	adds r1, r6, #0
-	bl RuntimeObjectGetField1A
+	.2byte 0xF7C0
+	.byte 0x66
+	.byte 0xFA
 	ldr r1, [r4, #0]
 	lsls r1, r1, #6
 	adds r1, r7, r1
@@ -4617,8 +4490,8 @@ _08049F54:
 	strh r0, [r1, #0]
 	ldr r0, [r5, #0]
 	adds r1, r6, #0
-	bl RuntimeObjectGetField1E
-	ldr r1, [r4, #0]
+	.2byte 0xF7C0
+	.4byte 0x6821FA73
 	lsls r1, r1, #6
 	adds r1, r7, r1
 	subs r0, #24
@@ -4635,7 +4508,9 @@ _08049F9A:
 	ble _08049EEE
 	add r0, sp, #28
 	ldr r1, [sp, #44]
-	bl GameStateGetField424C50
+	.2byte 0xF7BC
+	.byte 0x3C
+	.byte 0xFF
 	ldr r0, [sp, #28]
 	asrs r0, r0, #16
 	movs r4, #230
@@ -4649,13 +4524,15 @@ _08049F9A:
 	adds r1, r7, r2
 	strh r0, [r1, #0]
 	movs r0, #0
-	bl RuntimeSetFieldE48
-	movs r3, #144
+	.2byte 0xF7C0
+	.4byte 0x2390F8BD
 	lsls r3, r3, #2
 	adds r4, r7, r3
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectSetFlag2
+	.2byte 0xF7DE
+	.byte 0xC0
+	.byte 0xF9
 	adds r0, r4, #0
 
 	.thumb_func
@@ -4663,16 +4540,18 @@ _08049F9A:
 	.global sub_08049FD6
 sub_08049FD6:
 	movs r1, #1
-	bl ObjectSetState1
+	.2byte 0xF7DE
+	.byte 0x6C
+	.byte 0xF9
 	movs r0, #170
-	bl SoundSongStartU16
-	adds r0, r7, #0
+	.2byte 0xF7BB
+	.4byte 0x1C38FF5B
 	movs r1, #1
-	bl ObjectSetState1
-	adds r0, r7, #0
+	.2byte 0xF7DE
+	.4byte 0x1C38F965
 	movs r1, #1
-	bl ObjectSetFlag2
-	movs r3, #1
+	.2byte 0xF7DE
+	.4byte 0x2301F9B1
 	ldr r4, [sp, #36]
 	strb r3, [r4, #0]
 	ldr r0, [sp, #40]
@@ -4749,18 +4628,22 @@ _0804A076:
 	lsls r1, r1, #2
 	adds r0, r7, r1
 	movs r1, #0
-	bl ObjectSetFlag2
-	adds r4, r7, #0
+	.2byte 0xF7DE
+	.4byte 0x1C3CF969
 	adds r4, #64
 	movs r6, #7
 	.global _0804A088
 _0804A088:
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectSetFlag2
+	.2byte 0xF7DE
+	.byte 0x62
+	.byte 0xF9
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectSetState1
+	.2byte 0xF7DE
+	.byte 0x0E
+	.byte 0xF9
 	adds r4, #64
 	subs r6, #1
 	cmp r6, #0
@@ -4774,8 +4657,8 @@ _0804A088:
 	lsls r3, r3, #2
 	adds r4, r7, r3
 	ldr r0, [r4, #0]
-	bl RuntimeActorGetField352
-	adds r2, r0, #0
+	.2byte 0xF7BF
+	.4byte 0x1C02FEE1
 	ldr r0, [r4, #0]
 	movs r4, #225
 	lsls r4, r4, #2
@@ -4789,7 +4672,9 @@ _0804A088:
 	str r4, [sp, #0]
 	bl sub_0800AAA8
 	movs r0, #171
-	bl SoundSongStartU16
+	.2byte 0xF7BB
+	.byte 0xE0
+	.byte 0xFE
 	ldr r0, _0804A0E4
 	adds r1, r7, r0
 	movs r0, #1
@@ -4825,14 +4710,16 @@ _0804A10A:
 	ands r0, r1
 	cmp r0, #0
 	beq _0804A170
-	bl Random
+	.2byte 0xF030
+	.byte 0x6C
+	.byte 0xF8
 	movs r1, #127
 	ands r1, r0
 	adds r2, r1, #0
 	adds r2, #32
 	str r2, [sp, #48]
-	bl Random
-	ldr r3, _0804A19C
+	.2byte 0xF030
+	.4byte 0x4B1DF865
 	adds r1, r3, #0
 	ands r0, r1
 
@@ -4872,7 +4759,9 @@ sub_0804A12C:
 	strh r0, [r5, #2]
 	mov r0, r8
 	movs r1, #1
-	bl ObjectSetState1
+	.2byte 0xF7DE
+	.byte 0xA2
+	.byte 0xF8
 	.global _0804A170
 _0804A170:
 	adds r5, #64
@@ -4912,7 +4801,9 @@ sub_0804A1A4:
 	adds r1, r2, #0
 	bl sub_08080504
 	movs r0, #171
-	bl SoundSongStartU16
+	.2byte 0xF7BB
+	.byte 0x74
+	.byte 0xFE
 	.global _0804A1B0
 _0804A1B0:
 	movs r4, #233
@@ -4955,21 +4846,25 @@ _0804A1E0:
 _0804A1EE:
 	adds r0, r7, #0
 	movs r1, #0
-	bl ObjectSetFlag2
-	adds r0, r7, #0
+	.2byte 0xF7DE
+	.4byte 0x1C38F8AF
 	movs r1, #0
-	bl ObjectSetState1
-	adds r4, r7, #0
+	.2byte 0xF7DE
+	.4byte 0x1C3CF85B
 	adds r4, #64
 	movs r6, #7
 	.global _0804A204
 _0804A204:
 	adds r0, r4, #0
 	movs r1, #0
-	bl ObjectSetFlag2
+	.2byte 0xF7DE
+	.byte 0xA4
+	.byte 0xF8
 	adds r0, r4, #0
 	movs r1, #0
-	bl ObjectSetState1
+	.2byte 0xF7DE
+	.byte 0x50
+	.byte 0xF8
 	adds r4, #64
 	subs r6, #1
 	cmp r6, #0
@@ -4988,13 +4883,19 @@ _0804A204:
 _0804A230:
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectSetFlag2
+	.2byte 0xF7DE
+	.byte 0x8E
+	.byte 0xF8
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectSetState1
+	.2byte 0xF7DE
+	.byte 0x3A
+	.byte 0xF8
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectSetFlag400
+	.2byte 0xF7DE
+	.byte 0x6E
+	.byte 0xF8
 	adds r4, #64
 	adds r6, #1
 	movs r1, #228
@@ -5006,8 +4907,8 @@ _0804A230:
 	.global _0804A258
 _0804A258:
 	movs r0, #130
-	bl SoundSongStartU16
-	movs r0, #64
+	.2byte 0xF7BB
+	.4byte 0x2040FE1D
 	mov r2, r10
 	strh r0, [r2, #14]
 	b _0804A2FC
@@ -5038,7 +4939,9 @@ _0804A288:
 	.global _0804A28C
 _0804A28C:
 	movs r0, #1
-	bl RuntimeSetFieldE48
+	.2byte 0xF7BF
+	.byte 0x57
+	.byte 0xFF
 
 	.thumb_func
 	.thumb
@@ -5098,7 +5001,9 @@ _0804A2DC:
 	.global _0804A2F6
 _0804A2F6:
 	mov r0, r10
-	bl FinishTask
+	.2byte 0xF030
+	.byte 0x58
+	.byte 0xFA
 	.global _0804A2FC
 _0804A2FC:
 	movs r3, #230
@@ -5119,19 +5024,25 @@ _0804A2FC:
 	ldrsh r0, [r0, r1]
 	cmp r0, #0
 	beq _0804A344
-	bl Random
-	movs r4, #3
+	.2byte 0xF02F
+	.4byte 0x2403FF65
 	ands r0, r4
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateSetField4246
-	bl Random
+	.2byte 0xF7BC
+	.byte 0xD8
+	.byte 0xFC
+	.2byte 0xF02F
+	.byte 0x5C
+	.byte 0xFF
 	ands r0, r4
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateSetField4248
+	.2byte 0xF7BC
+	.byte 0xEE
+	.byte 0xFC
 	.global _0804A344
 _0804A344:
 	movs r2, #232
@@ -5221,580 +5132,78 @@ _0804A3D0:
 _0804A3D4:
 	.4byte 0x000003A6
 
-	.thumb_func
-	.thumb
-	.global sub_0804A3D8
-sub_0804A3D8:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #0
-	str r4, [sp, #0]
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 04A3D8..04A3F0 is decompiled as BattleTaskACreateGroup0Variant0(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A3F0
-sub_0804A3F0:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #0
-	str r4, [sp, #0]
-	movs r4, #1
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04A3F0..04A408 is decompiled as BattleTaskACreateGroup0Variant1(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A408
-sub_0804A408:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #0
-	str r4, [sp, #0]
-	movs r4, #2
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04A408..04A420 is decompiled as BattleTaskACreateGroup0Variant2(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A420
-sub_0804A420:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #0
-	str r4, [sp, #0]
-	movs r4, #3
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
-	.4byte 0xB082B510
-	.4byte 0x94002400
-	.4byte 0x94012404
-	.4byte 0xF96CF000
-	.4byte 0xBC10B002
-	.4byte 0x4708BC02
+@ 04A420..04A438 is decompiled as BattleTaskACreateGroup0Variant3(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A450
-sub_0804A450:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #1
-	str r4, [sp, #0]
-	movs r4, #0
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04A438..04A450 is decompiled as BattleTaskACreateGroup0Variant4(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A468
-sub_0804A468:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #1
-	str r4, [sp, #0]
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 04A450..04A468 is decompiled as BattleTaskACreateGroup1Variant0(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A480
-sub_0804A480:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #1
-	str r4, [sp, #0]
-	movs r4, #2
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04A468..04A480 is decompiled as BattleTaskACreateGroup1Variant1(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A498
-sub_0804A498:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #1
-	str r4, [sp, #0]
-	movs r4, #3
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04A480..04A498 is decompiled as BattleTaskACreateGroup1Variant2(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A4B0
-sub_0804A4B0:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #1
-	str r4, [sp, #0]
-	movs r4, #4
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04A498..04A4B0 is decompiled as BattleTaskACreateGroup1Variant3(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A4C8
-sub_0804A4C8:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #2
-	str r4, [sp, #0]
-	movs r4, #0
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04A4B0..04A4C8 is decompiled as BattleTaskACreateGroup1Variant4(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A4E0
-sub_0804A4E0:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #2
-	str r4, [sp, #0]
-	movs r4, #1
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04A4C8..04A4E0 is decompiled as BattleTaskACreateGroup2Variant0(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A4F8
-sub_0804A4F8:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #2
-	str r4, [sp, #0]
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 04A4E0..04A4F8 is decompiled as BattleTaskACreateGroup2Variant1(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A510
-sub_0804A510:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #2
-	str r4, [sp, #0]
-	movs r4, #3
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04A4F8..04A510 is decompiled as BattleTaskACreateGroup2Variant2(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A528
-sub_0804A528:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #2
-	str r4, [sp, #0]
+@ 04A510..04A528 is decompiled as BattleTaskACreateGroup2Variant3(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A530
-sub_0804A530:
-	movs r4, #4
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04A528..04A540 is decompiled as BattleTaskACreateGroup2Variant4(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A540
-sub_0804A540:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #3
-	str r4, [sp, #0]
-	movs r4, #0
-	str r4, [sp, #4]
+@ 04A540..04A558 is decompiled as BattleTaskACreateGroup3Variant0(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A54C
-sub_0804A54C:
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04A558..04A570 is decompiled as BattleTaskACreateGroup3Variant1(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A558
-sub_0804A558:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #3
-	str r4, [sp, #0]
-	movs r4, #1
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04A570..04A588 is decompiled as BattleTaskACreateGroup3Variant2(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A570
-sub_0804A570:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #3
-	str r4, [sp, #0]
-	movs r4, #2
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04A588..04A5A0 is decompiled as BattleTaskACreateGroup3Variant3(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A588
-sub_0804A588:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #3
-	str r4, [sp, #0]
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
+@ 04A5A0..04A5B8 is decompiled as BattleTaskACreateGroup3Variant4(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A59C
-sub_0804A59C:
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 04A5B8..04A5D0 is decompiled as BattleTaskACreateGroup4Variant0(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A5A0
-sub_0804A5A0:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #3
-	str r4, [sp, #0]
-	movs r4, #4
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04A5D0..04A5E8 is decompiled as BattleTaskACreateGroup4Variant1(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A5B8
-sub_0804A5B8:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #4
-	str r4, [sp, #0]
-	movs r4, #0
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04A5E8..04A600 is decompiled as BattleTaskACreateGroup4Variant2(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A5D0
-sub_0804A5D0:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #4
-	str r4, [sp, #0]
-	movs r4, #1
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04A600..04A618 is decompiled as BattleTaskACreateGroup4Variant3(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A5E8
-sub_0804A5E8:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #4
-	str r4, [sp, #0]
-	movs r4, #2
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
+@ 04A618..04A630 is decompiled as BattleTaskACreateGroup4Variant4(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A5FE
-sub_0804A5FE:
-	bx r1
+@ 04A630..04A648 is decompiled as BattleTaskACreateGroup5Variant0(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A600
-sub_0804A600:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #4
-	str r4, [sp, #0]
-	movs r4, #3
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04A648..04A660 is decompiled as BattleTaskACreateGroup5Variant1(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A618
-sub_0804A618:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #4
-	str r4, [sp, #0]
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 04A660..04A678 is decompiled as BattleTaskACreateGroup5Variant2(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A630
-sub_0804A630:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #5
-	str r4, [sp, #0]
-	movs r4, #0
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04A678..04A690 is decompiled as BattleTaskACreateGroup5Variant3(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A648
-sub_0804A648:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #5
-	str r4, [sp, #0]
-	movs r4, #1
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04A690..04A6A8 is decompiled as BattleTaskACreateGroup5Variant4(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A660
-sub_0804A660:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #5
-	str r4, [sp, #0]
-	movs r4, #2
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04A6A8..04A6C0 is decompiled as BattleTaskACreateGroup6Variant0(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A678
-sub_0804A678:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #5
-	str r4, [sp, #0]
-	movs r4, #3
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04A6C0..04A6D8 is decompiled as BattleTaskACreateGroup6Variant1(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A690
-sub_0804A690:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #5
-	str r4, [sp, #0]
-	movs r4, #4
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04A6D8..04A6F0 is decompiled as BattleTaskACreateGroup6Variant2(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A6A8
-sub_0804A6A8:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #6
-	str r4, [sp, #0]
-	movs r4, #0
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04A6F0..04A708 is decompiled as BattleTaskACreateGroup6Variant3(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A6C0
-sub_0804A6C0:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #6
-	str r4, [sp, #0]
-	movs r4, #1
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04A708..04A720 is decompiled as BattleTaskACreateGroup6Variant4(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804A6D8
-sub_0804A6D8:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #6
-	str r4, [sp, #0]
-	movs r4, #2
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_0804A6F0
-sub_0804A6F0:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #6
-	str r4, [sp, #0]
-	movs r4, #3
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_0804A708
-sub_0804A708:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #6
-	str r4, [sp, #0]
-	movs r4, #4
-	str r4, [sp, #4]
-	bl sub_0804A720
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+	.section .rom.0004A720, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -5827,8 +5236,8 @@ sub_0804A720:
 	lsls r2, r2, #1
 	str r2, [sp, #0]
 	movs r2, #0
-	bl CreateTask
-	adds r1, r0, #0
+	.2byte 0xF030
+	.4byte 0x1C01F811
 	cmp r1, #0
 	bne _0804A778
 	cmp r4, #0
@@ -6018,15 +5427,15 @@ _0804A866:
 	lsls r1, r1, #1
 	adds r4, r7, r1
 	ldr r1, [r4, #0]
-	bl RuntimeObjectGetField1A
-	movs r2, #138
+	.2byte 0xF7BF
+	.4byte 0x228AFDE1
 	lsls r2, r2, #1
 	adds r1, r7, r2
 	strh r0, [r1, #0]
 	ldr r0, [r5, #0]
 	ldr r1, [r4, #0]
-	bl RuntimeObjectGetField1E
-	movs r3, #139
+	.2byte 0xF7BF
+	.4byte 0x238BFDF1
 	lsls r3, r3, #1
 	adds r1, r7, r3
 	strh r0, [r1, #0]
@@ -6070,7 +5479,9 @@ _0804A8DA:
 	adds r0, r7, #0
 	movs r1, #2
 	movs r2, #2
-	bl ObjectSetFields34And36
+	.2byte 0xF7DD
+	.byte 0x52
+	.byte 0xFD
 	ldr r1, _0804A9E4
 	movs r0, #1
 	bl FindResourceByName
@@ -6089,8 +5500,8 @@ _0804A8DA:
 	adds r0, r4, #0
 	movs r1, #2
 	movs r2, #1
-	bl ObjectSetFields34And36
-	adds r4, #64
+	.2byte 0xF7DD
+	.4byte 0x3440FD3B
 	adds r0, r4, #0
 	bl ObjectInit
 	str r6, [sp, #0]
@@ -6102,8 +5513,8 @@ _0804A8DA:
 	adds r0, r4, #0
 	movs r1, #2
 	movs r2, #1
-	bl ObjectSetFields34And36
-	adds r4, #64
+	.2byte 0xF7DD
+	.4byte 0x3440FD2B
 	adds r0, r4, #0
 	bl ObjectInit
 	movs r3, #141
@@ -6120,10 +5531,14 @@ _0804A8DA:
 	adds r0, r4, #0
 	movs r1, #2
 	movs r2, #0
-	bl ObjectSetFields34And36
+	.2byte 0xF7DD
+	.byte 0x16
+	.byte 0xFD
 	add r0, sp, #40
 	add r1, sp, #44
-	bl GameStateGetField424C50
+	.2byte 0xF7BC
+	.byte 0x5E
+	.byte 0xFA
 	ldr r0, [sp, #40]
 	asrs r0, r0, #16
 	movs r2, #132
@@ -6188,7 +5603,9 @@ sub_0804A982:
 	movs r3, #0
 	bl sub_08003AE4
 	movs r0, #0
-	bl RuntimeSetFieldE48
+	.2byte 0xF7BF
+	.byte 0xB0
+	.byte 0xFB
 	movs r0, #16
 	b _0804AB7C
 	.global _0804A9E4
@@ -6215,7 +5632,9 @@ _0804A9FA:
 	subs r2, #36
 	adds r1, r7, r2
 	ldr r1, [r1, #0]
-	bl RuntimeObjectGetField36
+	.2byte 0xF7BF
+	.byte 0x62
+	.byte 0xFE
 	cmp r0, #7
 	bne _0804AA34
 	movs r3, #138
@@ -6277,12 +5696,14 @@ _0804AA5E:
 	strh r0, [r1, #0]
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectSetFlag2
-	adds r0, r7, #0
+	.2byte 0xF7DD
+	.4byte 0x1C38FC69
 	movs r1, #1
-	bl ObjectSetState1
-	movs r0, #181
-	bl SoundSongStartU16
+	.2byte 0xF7DD
+	.4byte 0x20B5FC15
+	.2byte 0xF7BB
+	.byte 0x04
+	.byte 0xFA
 	movs r0, #32
 	b _0804AB9C
 	.global _0804AA94
@@ -6296,8 +5717,8 @@ _0804AA9C:
 	adds r0, r7, #0
 	adds r0, #64
 	movs r1, #1
-	bl ObjectSetFlag2
-	movs r0, #48
+	.2byte 0xF7DD
+	.4byte 0x2030FC57
 	b _0804AB7C
 	.global _0804AAAA
 _0804AAAA:
@@ -6310,7 +5731,9 @@ _0804AAB2:
 	adds r0, r7, #0
 	adds r0, #128
 	movs r1, #1
-	bl ObjectSetFlag2
+	.2byte 0xF7DD
+	.byte 0x4C
+	.byte 0xFC
 	movs r0, #64
 	mov r2, r8
 	strh r0, [r2, #14]
@@ -6326,8 +5749,8 @@ _0804AACC:
 	adds r0, r7, #0
 	adds r0, #192
 	movs r1, #1
-	bl ObjectSetFlag2
-	adds r1, r7, #0
+	.2byte 0xF7DD
+	.4byte 0x1C39FC3F
 	adds r1, #242
 	movs r0, #1
 	strb r0, [r1, #0]
@@ -6442,7 +5865,9 @@ _0804AB9C:
 	.global _0804ABA2
 _0804ABA2:
 	movs r0, #1
-	bl RuntimeSetFieldE48
+	.2byte 0xF7BF
+	.byte 0xCC
+	.byte 0xFA
 	adds r0, r7, #0
 	bl sub_0802824C
 	adds r4, r7, #0
@@ -6471,7 +5896,9 @@ sub_0804ABBE:
 	.global _0804ABD0
 _0804ABD0:
 	mov r0, r8
-	bl FinishTask
+	.2byte 0xF02F
+	.byte 0xEB
+	.byte 0xFD
 	.global _0804ABD6
 _0804ABD6:
 	movs r1, #136
@@ -6517,66 +5944,24 @@ _0804AC1C:
 	pop {r0}
 	bx r0
 
-	.thumb_func
-	.thumb
-	.global sub_0804AC28
-sub_0804AC28:
-	push {r4, lr}
-	sub sp, #4
-	movs r4, #0
-	str r4, [sp, #0]
-	bl sub_0804AC8C
-	add sp, #4
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04AC28..04AC3C is decompiled as BattleMode4AC0(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804AC3C
-sub_0804AC3C:
-	push {r4, lr}
-	sub sp, #4
-	movs r4, #1
-	str r4, [sp, #0]
-	bl sub_0804AC8C
-	add sp, #4
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04AC3C..04AC50 is decompiled as BattleMode4AC1(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804AC50
-sub_0804AC50:
-	push {r4, lr}
-	sub sp, #4
-	movs r4, #2
-	str r4, [sp, #0]
-	bl sub_0804AC8C
-	add sp, #4
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04AC50..04AC64 is decompiled as BattleMode4AC2(); see src/decompiled.json
+
+	.section .rom.0004AC64, "ax"
+	.syntax unified
 	.4byte 0xB081B510
 	.4byte 0x94002403
 	.4byte 0xF80EF000
 	.4byte 0xBC10B001
 	.4byte 0x4708BC02
 
-	.thumb_func
-	.thumb
-	.global sub_0804AC78
-sub_0804AC78:
-	push {r4, lr}
-	sub sp, #4
-	movs r4, #4
-	str r4, [sp, #0]
-	bl sub_0804AC8C
-	add sp, #4
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04AC78..04AC8C is decompiled as BattleMode4AC4(); see src/decompiled.json
+
+	.section .rom.0004AC8C, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -6603,8 +5988,8 @@ sub_0804AC8C:
 	movs r2, #104
 	str r2, [sp, #0]
 	movs r2, #0
-	bl CreateTask
-	adds r2, r0, #0
+	.2byte 0xF02F
+	.4byte 0x1C02FD61
 	cmp r2, #0
 	bne _0804ACD8
 	cmp r4, #0
@@ -6758,14 +6143,16 @@ _0804AD8A:
 _0804AD8C:
 	ldr r0, [r6, #64]
 	ldr r1, [r6, #68]
-	bl RuntimeObjectGetField1A
+	.2byte 0xF7BF
+	.byte 0x54
+	.byte 0xFB
 	adds r5, r6, #0
 	adds r5, #72
 	strh r0, [r5, #0]
 	ldr r0, [r6, #64]
 	ldr r1, [r6, #68]
-	bl RuntimeObjectGetField1E
-	adds r4, r6, #0
+	.2byte 0xF7BF
+	.4byte 0x1C34FB65
 	adds r4, #74
 	strh r0, [r4, #0]
 	adds r0, r6, #0
@@ -6830,10 +6217,14 @@ _0804AE02:
 	adds r0, r6, #0
 	movs r1, #3
 	movs r2, #2
-	bl ObjectSetFields34And36
+	.2byte 0xF7DD
+	.byte 0xBE
+	.byte 0xFA
 	ldr r0, [r6, #64]
 	ldr r1, [r6, #68]
-	bl RuntimeObjectGetField36
+	.2byte 0xF7BF
+	.byte 0x5E
+	.byte 0xFC
 
 	.thumb_func
 	.thumb
@@ -6855,7 +6246,9 @@ _0804AE20:
 	strh r0, [r6, #30]
 	add r1, sp, #32
 	add r0, sp, #28
-	bl GameStateGetField424C50
+	.2byte 0xF7BB
+	.byte 0xF6
+	.byte 0xFF
 	ldr r0, [sp, #28]
 	asrs r0, r0, #16
 	adds r3, r6, #0
@@ -6912,7 +6305,9 @@ sub_0804AE80:
 sub_0804AE8C:
 	.2byte 0xFE2B
 	movs r0, #0
-	bl RuntimeSetFieldE48
+	.2byte 0xF7BF
+	.byte 0x56
+	.byte 0xF9
 	movs r0, #16
 	b _0804AF42
 	.global _0804AE98
@@ -6930,15 +6325,17 @@ _0804AEA0:
 	beq _0804AF6C
 	adds r0, r6, #0
 	movs r1, #1
-	bl ObjectSetFlag2
-	adds r0, r6, #0
+	.2byte 0xF7DD
+	.4byte 0x1C30FA51
 	movs r1, #1
-	bl ObjectSetState1
-	adds r0, r6, #0
+	.2byte 0xF7DD
+	.4byte 0x1C30F9FD
 	movs r1, #1
-	bl ObjectSetFlag400
-	movs r0, #150
-	bl SoundSongStartU16
+	.2byte 0xF7DD
+	.4byte 0x2096FA31
+	.2byte 0xF7BA
+	.byte 0xE8
+	.byte 0xFF
 	movs r0, #26
 	b _0804AF28
 	.global _0804AECC
@@ -6949,7 +6346,9 @@ _0804AECC:
 	cmp r0, #3
 	ble _0804AF6C
 	movs r0, #190
-	bl SoundSongStartU16
+	.2byte 0xF7BA
+	.byte 0xDE
+	.byte 0xFF
 	movs r0, #32
 	b _0804AF42
 	.global _0804AEE0
@@ -7016,8 +6415,8 @@ _0804AF42:
 	.global _0804AF48
 _0804AF48:
 	movs r0, #1
-	bl RuntimeSetFieldE48
-	adds r0, r6, #0
+	.2byte 0xF7BF
+	.4byte 0x1C30F8F9
 	bl sub_0802824C
 	mov r0, r8
 	ldr r1, [r0, #24]
@@ -7029,7 +6428,9 @@ _0804AF48:
 	.global _0804AF62
 _0804AF62:
 	mov r0, r8
-	bl FinishTask
+	.2byte 0xF02F
+	.byte 0x22
+	.byte 0xFC
 	.global _0804AF68
 _0804AF68:
 	adds r4, r6, #0
@@ -7060,81 +6461,10 @@ _0804AF88:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_0804AF98
-sub_0804AF98:
-	push {r4, r5, r6, r7, lr}
-	sub sp, #4
-	adds r5, r0, #0
-	adds r6, r1, #0
-	adds r7, r2, #0
-	adds r4, r3, #0
-	ldr r0, _0804AFD0
-	lsls r1, r5, #5
-	ldr r0, [r0, #0]
-	adds r0, r0, r1
-	lsls r1, r6, #4
-	adds r0, r0, r1
-	ldr r1, _0804AFD4
-	movs r2, #180
-	str r2, [sp, #0]
-	movs r2, #0
-	bl CreateTask
-	adds r2, r0, #0
-	cmp r2, #0
-	bne _0804AFD8
-	cmp r4, #0
-	beq _0804AFCC
-	movs r0, #1
-	negs r0, r0
-	str r0, [r4, #0]
-	.global _0804AFCC
-_0804AFCC:
-	movs r0, #0
-	b _0804B008
-	.global _0804AFD0
-_0804AFD0:
-	.4byte 0x03004020  @ IWRAM+0x4020
-	.global _0804AFD4
-_0804AFD4:
-	.4byte 0x0804B011  @ ROM+0x4B011
-	.global _0804AFD8
-_0804AFD8:
-	adds r0, r2, #0
-	adds r0, #160
-	str r5, [r0, #0]
-	adds r0, #4
-	str r6, [r0, #0]
-	adds r0, #4
-	movs r1, #0
-	cmp r5, #0
-	bne _0804AFEC
-	movs r1, #1
-	.global _0804AFEC
-_0804AFEC:
-	str r1, [r0, #0]
-	adds r0, r2, #0
-	adds r0, #204
-	str r7, [r0, #0]
-	adds r1, r2, #0
-	adds r1, #208
-	movs r3, #1
-	negs r3, r3
-	adds r0, r1, #0
-	.global _0804AFFE
-_0804AFFE:
-	str r3, [r0, #0]
-	subs r0, #4
-	cmp r0, r1
-	bge _0804AFFE
-	adds r0, r2, #0
-	.global _0804B008
-_0804B008:
-	add sp, #4
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
+@ 04AF98..04B010 is decompiled as CreateBattleFamilyTask4AF(); see src/decompiled.json
+
+	.section .rom.0004B010, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -7295,15 +6625,17 @@ _0804B0EE:
 	adds r1, r1, r7
 	mov r9, r1
 	ldr r1, [r1, #0]
-	bl RuntimeObjectGetField1A
-	adds r2, r7, #0
+	.2byte 0xF7BF
+	.4byte 0x1C3AF99D
 	adds r2, #144
 	str r2, [sp, #36]
 	strh r0, [r2, #0]
 	ldr r0, [r5, #0]
 	mov r3, r9
 	ldr r1, [r3, #0]
-	bl RuntimeObjectGetField1E
+	.2byte 0xF7BF
+	.byte 0xAC
+	.byte 0xF9
 	adds r4, r7, #0
 	adds r4, #146
 	str r4, [sp, #40]
@@ -7321,14 +6653,16 @@ _0804B0EE:
 	adds r5, #140
 	str r1, [r5, #0]
 	ldr r0, [r4, #0]
-	bl RuntimeObjectGetField1A
+	.2byte 0xF7BF
+	.byte 0x80
+	.byte 0xF9
 	adds r1, r7, #0
 	adds r1, #148
 	strh r0, [r1, #0]
 	ldr r0, [r4, #0]
 	ldr r1, [r5, #0]
-	bl RuntimeObjectGetField1E
-	adds r1, r7, #0
+	.2byte 0xF7BF
+	.4byte 0x1C39F991
 	adds r1, #150
 	strh r0, [r1, #0]
 	ldr r1, _0804B22C
@@ -7345,11 +6679,13 @@ _0804B0EE:
 	bl sub_0802814C
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectSetFlag400
-	adds r0, r7, #0
+	.2byte 0xF7DD
+	.4byte 0x1C38F8D7
 	movs r1, #3
 	movs r2, #1
-	bl ObjectSetFields34And36
+	.2byte 0xF7DD
+	.byte 0x04
+	.byte 0xF9
 	ldr r1, _0804B230
 	movs r0, #1
 	bl FindResourceByName
@@ -7365,15 +6701,17 @@ _0804B0EE:
 	bl sub_0802814C
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectSetFlag400
+	.2byte 0xF7DD
+	.byte 0xBE
+	.byte 0xF8
 	adds r0, r4, #0
 	movs r1, #3
 	movs r2, #2
-	bl ObjectSetFields34And36
-	add r1, sp, #32
+	.2byte 0xF7DD
+	.4byte 0xA908F8EB
 	add r0, sp, #28
-	bl GameStateGetField424C50
-	ldr r0, [sp, #28]
+	.2byte 0xF7BB
+	.4byte 0x9807FE33
 	asrs r0, r0, #16
 	adds r3, r7, #0
 	adds r3, #152
@@ -7426,7 +6764,9 @@ _0804B0EE:
 	.thumb
 	.global sub_0804B21C
 sub_0804B21C:
-	bl RuntimeSetFieldE48
+	.2byte 0xF7BE
+	.byte 0x90
+	.byte 0xFF
 	movs r0, #16
 	mov r1, r10
 	strh r0, [r1, #14]
@@ -7465,10 +6805,14 @@ _0804B238:
 _0804B258:
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectSetFlag2
+	.2byte 0xF7DD
+	.byte 0x7A
+	.byte 0xF8
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectSetState1
+	.2byte 0xF7DD
+	.byte 0x26
+	.byte 0xF8
 	adds r0, r7, #0
 	adds r0, #144
 	ldrh r0, [r0, #0]
@@ -7478,8 +6822,8 @@ _0804B258:
 	ldrh r0, [r0, #0]
 	strh r0, [r7, #30]
 	movs r0, #140
-	bl SoundSongStartU16
-	movs r0, #26
+	.2byte 0xF7BA
+	.4byte 0x201AFE0D
 	b _0804B4A6
 	.global _0804B282
 _0804B282:
@@ -7500,7 +6844,9 @@ _0804B282:
 	.global _0804B29E
 _0804B29E:
 	movs r0, #192
-	bl SoundSongStartU16
+	.2byte 0xF7BA
+	.byte 0xFA
+	.byte 0xFD
 	movs r0, #32
 	b _0804B414
 	.global _0804B2A8
@@ -7598,16 +6944,16 @@ _0804B340:
 	bl sub_0802814C
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectSetFlag2
-	adds r0, r7, #0
+	.2byte 0xF7DC
+	.4byte 0x1C38FFFD
 
 	.thumb_func
 	.thumb
 	.global sub_0804B35C
 sub_0804B35C:
 	movs r1, #1
-	bl ObjectSetState1
-	adds r0, r7, #0
+	.2byte 0xF7DC
+	.4byte 0x1C38FFA9
 	adds r0, #148
 	ldrh r0, [r0, #0]
 	strh r0, [r7, #28]
@@ -7637,11 +6983,11 @@ _0804B376:
 _0804B392:
 	mov r0, r9
 	movs r1, #1
-	bl ObjectSetFlag2
-	mov r0, r9
+	.2byte 0xF7DC
+	.4byte 0x4648FFDD
 	movs r1, #1
-	bl ObjectSetState1
-	ldrh r1, [r7, #28]
+	.2byte 0xF7DC
+	.4byte 0x8BB9FF89
 	adds r0, r7, #0
 	adds r0, #92
 	strh r1, [r0, #0]
@@ -7651,8 +6997,8 @@ _0804B392:
 	strh r0, [r1, #0]
 	mov r2, r8
 	ldr r0, [r2, #0]
-	bl RuntimeActorGetField352
-	mov r12, r0
+	.2byte 0xF7BE
+	.4byte 0x4684FD5F
 	mov r3, r8
 	ldr r0, [r3, #0]
 	adds r1, r7, #0
@@ -7671,7 +7017,9 @@ _0804B392:
 	mov r3, r12
 	bl sub_0800AA10
 	movs r0, #113
-	bl SoundSongStartU16
+	.2byte 0xF7BA
+	.byte 0x59
+	.byte 0xFD
 
 	.thumb_func
 	.thumb
@@ -7792,8 +7140,8 @@ _0804B4A6:
 	.global _0804B4AC
 _0804B4AC:
 	movs r0, #1
-	bl RuntimeSetFieldE48
-	adds r0, r7, #0
+	.2byte 0xF7BE
+	.4byte 0x1C38FE47
 	bl sub_0802824C
 	adds r4, r7, #0
 	adds r4, #64
@@ -7810,7 +7158,9 @@ _0804B4AC:
 	.global _0804B4D2
 _0804B4D2:
 	mov r0, r10
-	bl FinishTask
+	.2byte 0xF02F
+	.byte 0x6A
+	.byte 0xF9
 	movs r0, #128
 	adds r0, r0, r7
 	mov r8, r0
@@ -7828,19 +7178,25 @@ _0804B4E6:
 	ldrsh r0, [r6, r1]
 	cmp r0, #0
 	beq _0804B510
-	bl Random
-	movs r4, #3
+	.2byte 0xF02E
+	.4byte 0x2403FE7F
 	ands r0, r4
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateSetField4246
-	bl Random
+	.2byte 0xF7BB
+	.byte 0xF2
+	.byte 0xFB
+	.2byte 0xF02E
+	.byte 0x76
+	.byte 0xFE
 	ands r0, r4
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateSetField4248
+	.2byte 0xF7BB
+	.byte 0x08
+	.byte 0xFC
 	.global _0804B510
 _0804B510:
 	movs r2, #0
@@ -7903,8 +7259,8 @@ sub_0804B548:
 	lsls r2, r2, #1
 	str r2, [sp, #0]
 	movs r2, #0
-	bl CreateTask
-	adds r1, r0, #0
+	.2byte 0xF02F
+	.4byte 0x1C01F907
 	cmp r1, #0
 	bne _0804B58C
 	cmp r4, #0
@@ -8166,15 +7522,15 @@ _0804B6E2:
 	adds r1, r1, r7
 	mov r8, r1
 	ldr r1, [r1, #0]
-	bl RuntimeObjectGetField1A
-	adds r4, r7, #0
+	.2byte 0xF7BE
+	.4byte 0x1C3CFEA3
 	adds r4, #208
 	strh r0, [r4, #0]
 	ldr r0, [r5, #0]
 	mov r2, r8
 	ldr r1, [r2, #0]
-	bl RuntimeObjectGetField1E
-	adds r1, r7, #0
+	.2byte 0xF7BE
+	.4byte 0x1C39FEB3
 	adds r1, #210
 	strh r0, [r1, #0]
 	movs r3, #0
@@ -8190,14 +7546,18 @@ _0804B6E2:
 	adds r5, #204
 	str r1, [r5, #0]
 	ldr r0, [r4, #0]
-	bl RuntimeObjectGetField1A
+	.2byte 0xF7BE
+	.byte 0x88
+	.byte 0xFE
 	movs r1, #212
 	adds r1, r1, r7
 	mov r10, r1
 	strh r0, [r1, #0]
 	ldr r0, [r4, #0]
 	ldr r1, [r5, #0]
-	bl RuntimeObjectGetField1E
+	.2byte 0xF7BE
+	.byte 0x98
+	.byte 0xFE
 	adds r5, #10
 	strh r0, [r5, #0]
 	mov r2, r10
@@ -8229,10 +7589,14 @@ _0804B6E2:
 	ldr r4, _0804B898
 	ldr r0, _0804B89C
 	ldr r1, _0804B8A0
-	bl NfpOpenByName
+	.2byte 0xF02F
+	.byte 0x5C
+	.byte 0xFA
 	adds r1, r0, #0
 	adds r0, r4, #0
-	bl Lz77UnCompVramSwapped
+	.2byte 0xF7B6
+	.byte 0xDE
+	.byte 0xFC
 	movs r3, #0
 	mov r4, r9
 	str r4, [sp, #72]
@@ -8277,7 +7641,9 @@ _0804B7C8:
 	bl sub_0802A814
 	ldr r0, _0804B89C
 	add r1, sp, #28
-	bl NfpOpenByName
+	.2byte 0xF02F
+	.byte 0x30
+	.byte 0xFA
 	ldr r3, [sp, #120]
 	lsls r2, r3, #2
 	movs r4, #142
@@ -8290,22 +7656,26 @@ _0804B7C8:
 	ble _0804B7C8
 	movs r0, #0
 	movs r1, #0
-	bl RuntimeGetBlock6120
+	.2byte 0xF034
+	.byte 0x7A
+	.byte 0xFE
 	adds r4, r0, #0
 	movs r0, #192
 	lsls r0, r0, #1
 	adds r4, r4, r0
 	ldr r0, _0804B89C
 	ldr r1, _0804B8A8
-	bl NfpOpenByName
+	.2byte 0xF02F
+	.byte 0x1A
+	.byte 0xFA
 	adds r1, r0, #0
 	adds r0, r4, #0
 	movs r2, #96
 	bl CpuCopy
 	adds r0, r5, #0
 	adds r1, r6, #0
-	bl GameStateGetField424C50
-	ldr r0, [sp, #56]
+	.2byte 0xF7BB
+	.4byte 0x980EFB03
 	asrs r0, r0, #16
 	movs r2, #0
 	ldr r1, [sp, #88]
@@ -8354,8 +7724,8 @@ _0804B7C8:
 	movs r3, #0
 	bl sub_08003AE4
 	movs r0, #0
-	bl RuntimeSetFieldE48
-	movs r0, #16
+	.2byte 0xF7BE
+	.4byte 0x2010FC5F
 	b _0804BB56
 	.byte 0x00
 	.byte 0x00
@@ -8429,13 +7799,17 @@ _0804B8D6:
 	str r2, [sp, #68]
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectSetFlag2
+	.2byte 0xF7DC
+	.byte 0x2C
+	.byte 0xFD
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectSetState1
+	.2byte 0xF7DC
+	.byte 0xD8
+	.byte 0xFC
 	movs r0, #140
-	bl SoundSongStartU16
-	ldrh r0, [r6, #0]
+	.2byte 0xF7BA
+	.4byte 0x8830FAC7
 	lsls r0, r0, #16
 	asrs r0, r0, #20
 	mov r8, r0
@@ -8503,8 +7877,8 @@ _0804B978:
 _0804B97E:
 	adds r0, r7, #0
 	movs r1, #3
-	bl ObjectSetFields34And36
-	movs r0, #26
+	.2byte 0xF7DC
+	.4byte 0x201AFD01
 	ldr r2, [sp, #64]
 	strh r0, [r2, #14]
 	adds r3, r7, #0
@@ -8538,8 +7912,8 @@ _0804B9A0:
 	.global _0804B9C0
 _0804B9C0:
 	movs r0, #192
-	bl SoundSongStartU16
-	movs r0, #32
+	.2byte 0xF7BA
+	.4byte 0x2020FA69
 	b _0804BC74
 	.global _0804B9CA
 _0804B9CA:
@@ -8574,14 +7948,14 @@ _0804B9EE:
 	bl sub_0802814C
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectSetFlag2
-	adds r0, r7, #0
+	.2byte 0xF7DC
+	.4byte 0x1C38FCA5
 	movs r1, #1
-	bl ObjectSetState1
-	adds r0, r7, #0
+	.2byte 0xF7DC
+	.4byte 0x1C38FC51
 	adds r1, r4, #0
-	bl ObjectSetField26
-	adds r4, r7, #0
+	.2byte 0xF7DC
+	.4byte 0x1C3CFCB3
 	adds r4, #64
 	movs r3, #1
 	.global _0804BA20
@@ -8668,8 +8042,8 @@ _0804BAA0:
 	bne _0804BAC0
 	movs r0, #142
 	str r3, [sp, #120]
-	bl SoundSongStartU16
-	movs r0, #1
+	.2byte 0xF7BA
+	.4byte 0x2001F9EF
 	strh r0, [r4, #0]
 	ldr r3, [sp, #120]
 	.global _0804BAC0
@@ -8739,7 +8113,9 @@ _0804BB26:
 	adds r0, r6, #0
 	movs r1, #3
 	str r3, [sp, #120]
-	bl ObjectSetFields34And36
+	.2byte 0xF7DC
+	.byte 0x2C
+	.byte 0xFC
 	ldr r2, _0804BB5C
 	adds r0, r5, r2
 	lsls r0, r0, #16
@@ -8894,7 +8270,9 @@ _0804BC1A:
 	adds r0, r4, #0
 	movs r1, #3
 	str r3, [sp, #120]
-	bl ObjectSetFields34And36
+	.2byte 0xF7DC
+	.byte 0xB2
+	.byte 0xFB
 	ldr r2, _0804BC7C
 	adds r0, r5, r2
 	lsls r0, r0, #16
@@ -8927,10 +8305,14 @@ _0804BC56:
 	adds r0, r4, #0
 	movs r1, #0
 	str r3, [sp, #120]
-	bl ObjectSetFlag2
+	.2byte 0xF7DC
+	.byte 0x7A
+	.byte 0xFB
 	adds r0, r4, #0
 	movs r1, #0
-	bl ObjectSetState1
+	.2byte 0xF7DC
+	.byte 0x26
+	.byte 0xFB
 	adds r4, #64
 	ldr r3, [sp, #120]
 	subs r3, #1
@@ -9059,7 +8441,9 @@ _0804BC80:
 	adds r6, #254
 	strh r4, [r6, #0]
 	movs r0, #143
-	bl SoundSongStartU16
+	.2byte 0xF7BA
+	.byte 0xA0
+	.byte 0xF8
 	movs r0, #96
 	ldr r4, [sp, #64]
 	strh r0, [r4, #14]
@@ -9144,8 +8528,8 @@ sub_0804BDB4:
 	.global _0804BDC0
 _0804BDC0:
 	ldr r0, [r2, #0]
-	bl RuntimeActorGetField352
-	adds r3, r0, #0
+	.2byte 0xF7BE
+	.4byte 0x1C03F859
 	ldr r1, [sp, #72]
 	ldr r0, [r1, #0]
 	adds r1, r7, #0
@@ -9187,8 +8571,8 @@ _0804BDFA:
 	movs r1, #1
 	ands r1, r2
 	adds r0, r7, #0
-	bl ObjectSetFlag2
-	ldrh r0, [r4, #0]
+	.2byte 0xF7DC
+	.4byte 0x8820FAA1
 	subs r0, #1
 	strh r0, [r4, #0]
 	.global _0804BE18
@@ -9210,11 +8594,11 @@ _0804BE18:
 _0804BE32:
 	adds r0, r7, #0
 	movs r1, #0
-	bl ObjectSetFlag2
-	adds r0, r7, #0
+	.2byte 0xF7DC
+	.4byte 0x1C38FA8D
 	movs r1, #0
-	bl ObjectSetState1
-	movs r0, #120
+	.2byte 0xF7DC
+	.4byte 0x2078FA39
 	strh r0, [r4, #0]
 	movs r0, #128
 	ldr r6, [sp, #64]
@@ -9389,7 +8773,9 @@ sub_0804BF14:
 	movs r3, #0
 	bl sub_08003AE4
 	movs r0, #143
-	bl SoundSongStopU16
+	.2byte 0xF7B9
+	.byte 0xEA
+	.byte 0xFF
 	mov r0, r8
 	ldr r6, [sp, #64]
 	strh r0, [r6, #14]
@@ -9490,7 +8876,9 @@ sub_0804BFCC:
 	.global sub_0804BFFA
 sub_0804BFFA:
 	movs r0, #1
-	bl RuntimeSetFieldE48
+	.2byte 0xF7BE
+	.byte 0xA0
+	.byte 0xF8
 	ldr r2, _0804C1A0
 	movs r4, #129
 	lsls r4, r4, #4
@@ -9552,7 +8940,9 @@ _0804C054:
 	.global _0804C074
 _0804C074:
 	ldr r0, [sp, #64]
-	bl FinishTask
+	.2byte 0xF02E
+	.byte 0x99
+	.byte 0xFB
 
 	.thumb_func
 	.thumb
@@ -9619,7 +9009,9 @@ _0804C094:
 	add r4, sp, #40
 	adds r1, r4, #0
 	movs r2, #1
-	bl BgAffineSet
+	.2byte 0xF02D
+	.byte 0xD4
+	.byte 0xFE
 	ldr r2, [r4, #8]
 	movs r0, #132
 	lsls r0, r0, #4
@@ -9780,19 +9172,23 @@ _0804C1EE:
 	ldrsh r0, [r4, r5]
 	cmp r0, #0
 	beq _0804C21A
-	bl Random
+	.2byte 0xF02D
+	.byte 0xFA
+	.byte 0xFF
 	movs r4, #7
 	ands r0, r4
 	subs r0, #4
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateSetField4246
-	bl Random
-	ands r0, r4
+	.2byte 0xF7BA
+	.4byte 0xF02DFD6D
+	.4byte 0x4020FFF1
 	subs r0, #4
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateSetField4248
+	.2byte 0xF7BA
+	.byte 0x83
+	.byte 0xFD
 	.global _0804C21A
 _0804C21A:
 	ldr r6, [sp, #100]
@@ -9843,8 +9239,8 @@ sub_0804C258:
 	adds r7, r2, #0
 	adds r4, r3, #0
 	movs r0, #8
-	bl SpriteRecordSizeForCount
-	adds r2, r0, #0
+	.2byte 0xF031
+	.4byte 0x1C02FC71
 	lsls r2, r2, #2
 	movs r0, #157
 	lsls r0, r0, #2
@@ -9859,7 +9255,9 @@ sub_0804C258:
 	str r2, [sp, #0]
 	movs r2, #0
 	adds r3, r4, #0
-	bl CreateTask
+	.2byte 0xF02E
+	.byte 0x78
+	.byte 0xFA
 	adds r1, r0, #0
 	cmp r1, #0
 	bne _0804C2A8
@@ -10092,14 +9490,18 @@ _0804C3C0:
 sub_0804C3CC:
 	add r4, r9
 	ldr r1, [r4, #0]
-	bl RuntimeObjectGetField1A
+	.2byte 0xF7BE
+	.byte 0x34
+	.byte 0xF8
 	movs r6, #134
 	lsls r6, r6, #1
 	add r6, r9
 	strh r0, [r6, #0]
 	ldr r0, [r5, #0]
 	ldr r1, [r4, #0]
-	bl RuntimeObjectGetField1E
+	.2byte 0xF7BE
+	.byte 0x44
+	.byte 0xF8
 	movs r5, #135
 	lsls r5, r5, #1
 	add r5, r9
@@ -10123,28 +9525,32 @@ sub_0804C3F6:
 	bl sub_0802814C
 	mov r0, r9
 	movs r1, #1
-	bl ObjectSetFlag2
-	mov r0, r9
+	.2byte 0xF7DB
+	.4byte 0x4648FFA1
 	movs r1, #1
-	bl ObjectSetState1
-	ldrh r0, [r6, #0]
+	.2byte 0xF7DB
+	.4byte 0x8830FF4D
 	mov r7, r9
 	strh r0, [r7, #28]
 	ldrh r0, [r5, #0]
 	strh r0, [r7, #30]
 	movs r0, #140
-	bl SoundSongStartU16
-	ldr r1, _0804C494
+	.2byte 0xF7B9
+	.4byte 0x491AFD37
 	add r1, r8
 	ldr r0, _0804C498
 	strh r0, [r1, #0]
 	ldr r4, _0804C49C
 	ldr r0, _0804C4A0
 	ldr r1, _0804C4A4
-	bl NfpOpenByName
+	.2byte 0xF02E
+	.byte 0x00
+	.byte 0xFC
 	adds r1, r0, #0
 	adds r0, r4, #0
-	bl Lz77UnCompVramSwapped
+	.2byte 0xF7B5
+	.byte 0x82
+	.byte 0xFE
 	movs r6, #0
 	.global _0804C446
 _0804C446:
@@ -10154,7 +9560,9 @@ _0804C446:
 	bl sub_0802A814
 	ldr r0, _0804C4A0
 	add r1, sp, #28
-	bl NfpOpenByName
+	.2byte 0xF02E
+	.byte 0xF2
+	.byte 0xFB
 	lsls r2, r6, #2
 	movs r1, #149
 	lsls r1, r1, #2
@@ -10166,8 +9574,8 @@ _0804C446:
 	ble _0804C446
 	movs r0, #0
 	movs r1, #0
-	bl RuntimeGetBlock6120
-	adds r4, r0, #0
+	.2byte 0xF034
+	.4byte 0x1C04F83D
 	movs r0, #192
 	lsls r0, r0, #1
 	adds r4, r4, r0
@@ -10220,7 +9628,9 @@ _0804C4B0:
 	.global _0804C4BA
 _0804C4BA:
 	movs r0, #192
-	bl SoundSongStartU16
+	.2byte 0xF7B9
+	.byte 0xEC
+	.byte 0xFC
 	movs r0, #16
 	b _0804C83C
 	.global _0804C4C4
@@ -10244,10 +9654,14 @@ _0804C4D0:
 	bl sub_0802814C
 	mov r0, r9
 	movs r1, #1
-	bl ObjectSetFlag2
+	.2byte 0xF7DB
+	.byte 0x34
+	.byte 0xFF
 	mov r0, r9
 	movs r1, #1
-	bl ObjectSetState1
+	.2byte 0xF7DB
+	.byte 0xE0
+	.byte 0xFE
 
 	.thumb_func
 	.thumb
@@ -10255,7 +9669,9 @@ _0804C4D0:
 sub_0804C4F4:
 	mov r0, r9
 	adds r1, r4, #0
-	bl ObjectSetField26
+	.2byte 0xF7DB
+	.byte 0x42
+	.byte 0xFF
 	mov r4, r9
 	adds r4, #64
 	movs r6, #2
@@ -10307,8 +9723,8 @@ _0804C544:
 	.global _0804C558
 _0804C558:
 	str r3, [sp, #76]
-	bl Random
-	ldr r1, [sp, #68]
+	.2byte 0xF02D
+	.4byte 0x9911FE49
 	adds r2, r1, r4
 	movs r1, #255
 	ands r0, r1
@@ -10317,7 +9733,9 @@ _0804C558:
 	adds r0, r0, r7
 	subs r0, #127
 	strh r0, [r2, #0]
-	bl Random
+	.2byte 0xF02D
+	.byte 0x3E
+	.byte 0xFE
 	mov r1, r8
 	adds r2, r1, r4
 	movs r1, #127
@@ -10358,7 +9776,9 @@ _0804C5A6:
 	.global _0804C5BA
 _0804C5BA:
 	movs r0, #8
-	bl SpriteRecordSizeForCount
+	.2byte 0xF031
+	.byte 0xC6
+	.byte 0xFA
 	adds r1, r0, #0
 	muls r1, r6
 	movs r2, #157
@@ -10475,8 +9895,8 @@ _0804C5BA:
 	movs r3, #0
 	bl sub_08003AE4
 	movs r0, #143
-	bl SoundSongStartU16
-	movs r0, #143
+	.2byte 0xF7B9
+	.4byte 0x208FFBF3
 	lsls r0, r0, #2
 	add r0, r9
 	strh r5, [r0, #0]
@@ -10551,11 +9971,13 @@ _0804C70E:
 	ldr r0, [r2, #0]
 	mov r3, r10
 	ldr r1, [r3, #0]
-	bl RuntimeObjectGetField36
-	str r0, [sp, #80]
+	.2byte 0xF7BD
+	.4byte 0x9014FFCF
 	mov r4, r8
 	ldr r0, [r4, #0]
-	bl RuntimeActorGetField352
+	.2byte 0xF7BD
+	.byte 0x9E
+	.byte 0xFB
 	adds r3, r0, #0
 	ldr r0, [r4, #0]
 	mov r2, r10
@@ -10586,7 +10008,9 @@ sub_0804C756:
 	cmp r0, #0
 	beq _0804C774
 	movs r0, #112
-	bl SoundSongStartU16
+	.2byte 0xF7B9
+	.byte 0x92
+	.byte 0xFB
 	.global _0804C774
 _0804C774:
 	adds r5, #64
@@ -10638,10 +10062,14 @@ sub_0804C7A4:
 _0804C7A8:
 	adds r0, r4, #0
 	movs r1, #0
-	bl ObjectSetFlag2
+	.2byte 0xF7DB
+	.byte 0xD2
+	.byte 0xFD
 	adds r0, r4, #0
 	movs r1, #0
-	bl ObjectSetState1
+	.2byte 0xF7DB
+	.byte 0x7E
+	.byte 0xFD
 	adds r4, #64
 	subs r6, #1
 	cmp r6, #0
@@ -10745,7 +10173,9 @@ _0804C854:
 	movs r1, #1
 	ands r1, r2
 	mov r0, r9
-	bl ObjectSetFlag2
+	.2byte 0xF7DB
+	.byte 0x72
+	.byte 0xFD
 	.global _0804C870
 _0804C870:
 	ldrh r0, [r4, #0]
@@ -10759,10 +10189,14 @@ _0804C878:
 _0804C87C:
 	mov r0, r9
 	movs r1, #0
-	bl ObjectSetFlag2
+	.2byte 0xF7DB
+	.byte 0x68
+	.byte 0xFD
 	mov r0, r9
 	movs r1, #0
-	bl ObjectSetState1
+	.2byte 0xF7DB
+	.byte 0x14
+	.byte 0xFD
 	movs r0, #128
 	ldr r7, [sp, #56]
 	strh r0, [r7, #14]
@@ -10775,7 +10209,9 @@ _0804C892:
 	cmp r0, #0
 	beq _0804C8AE
 	movs r0, #143
-	bl SoundSongStopU16
+	.2byte 0xF7B9
+	.byte 0x50
+	.byte 0xFB
 	movs r0, #240
 	lsls r0, r0, #8
 	.global _0804C8A8
@@ -10872,7 +10308,9 @@ sub_0804C934:
 	.global _0804C940
 _0804C940:
 	ldr r0, [sp, #56]
-	bl FinishTask
+	.2byte 0xF02D
+	.byte 0x33
+	.byte 0xFF
 	.global _0804C946
 _0804C946:
 	ldr r7, _0804CA8C
@@ -10944,8 +10382,8 @@ _0804C95E:
 	.thumb
 	.global sub_0804C9C2
 sub_0804C9C2:
-	bl BgAffineSet
-	ldr r2, [r4, #8]
+	.2byte 0xF02D
+	.4byte 0x68A2FA6B
 	movs r3, #132
 	lsls r3, r3, #4
 	adds r0, r7, r3
@@ -11119,15 +10557,17 @@ _0804CAC6:
 	ldrsh r0, [r0, r1]
 	cmp r0, #0
 	beq _0804CAF6
-	bl Random
+	.2byte 0xF02D
+	.byte 0x8C
+	.byte 0xFB
 	movs r4, #7
 	ands r0, r4
 	subs r0, #4
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateSetField4246
-	bl Random
-	ands r0, r4
+	.2byte 0xF7BA
+	.4byte 0xF02DF8FF
+	.4byte 0x4020FB83
 	subs r0, #4
 	lsls r0, r0, #16
 	asrs r0, r0, #16
@@ -11169,8 +10609,8 @@ _0804CB10:
 _0804CB16:
 	adds r0, r5, #0
 	movs r1, #3
-	bl ObjectSetFields34And36
-	movs r0, #128
+	.2byte 0xF7DB
+	.4byte 0x2080FC35
 	lsls r0, r0, #1
 	add r0, r9
 	ldr r1, [r0, #0]
@@ -11194,101 +10634,10 @@ sub_0804CB34:
 	pop {r0}
 	bx r0
 
-	.thumb_func
-	.thumb
-	.global sub_0804CB44
-sub_0804CB44:
-	push {r4, r5, r6, r7, lr}
-	sub sp, #4
-	adds r5, r0, #0
-	adds r6, r1, #0
-	adds r7, r2, #0
-	adds r4, r3, #0
-	ldr r0, _0804CB7C
-	lsls r1, r5, #5
-	ldr r0, [r0, #0]
-	adds r0, r0, r1
-	lsls r1, r6, #4
-	adds r0, r0, r1
-	ldr r1, _0804CB80
-	movs r2, #168
-	str r2, [sp, #0]
-	movs r2, #0
-	bl CreateTask
-	adds r2, r0, #0
-	cmp r2, #0
-	bne _0804CB84
-	cmp r4, #0
-	beq _0804CB78
-	movs r0, #1
-	negs r0, r0
-	str r0, [r4, #0]
-	.global _0804CB78
-_0804CB78:
-	movs r0, #0
-	b _0804CBB4
-	.global _0804CB7C
-_0804CB7C:
-	.4byte 0x03004020  @ IWRAM+0x4020
-	.global _0804CB80
-_0804CB80:
-	.4byte 0x0804CBBD  @ ROM+0x4CBBD
-	.global _0804CB84
-_0804CB84:
-	adds r0, r2, #0
-	adds r0, #160
-	str r5, [r0, #0]
-	adds r0, #4
-	str r6, [r0, #0]
-	adds r0, #4
-	movs r1, #0
-	cmp r5, #0
+@ 04CB44..04CBBC is decompiled as CreateBattleFamilyTask4CB(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804CB94
-sub_0804CB94:
-	bne _0804CB98
-	movs r1, #1
-	.global _0804CB98
-_0804CB98:
-	str r1, [r0, #0]
-	adds r0, r2, #0
-	adds r0, #192
-
-	.thumb_func
-	.thumb
-	.global sub_0804CB9E
-sub_0804CB9E:
-	str r7, [r0, #0]
-	adds r1, r2, #0
-	adds r1, #196
-	movs r3, #1
-	negs r3, r3
-	adds r0, r1, #0
-	.global _0804CBAA
-_0804CBAA:
-	str r3, [r0, #0]
-
-	.thumb_func
-	.thumb
-	.global sub_0804CBAC
-sub_0804CBAC:
-	subs r0, #4
-	cmp r0, r1
-	bge _0804CBAA
-
-	.thumb_func
-	.thumb
-	.global sub_0804CBB2
-sub_0804CBB2:
-	adds r0, r2, #0
-	.global _0804CBB4
-_0804CBB4:
-	add sp, #4
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
+	.section .rom.0004CBBC, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -11407,15 +10756,15 @@ _0804CC54:
 	adds r4, r7, #0
 	adds r4, #132
 	ldr r1, [r4, #0]
-	bl RuntimeObjectGetField1A
-	adds r1, r7, #0
+	.2byte 0xF7BD
+	.4byte 0x1C39FBEB
 	adds r1, #144
 	strh r0, [r1, #0]
 	mov r2, r8
 	ldr r0, [r2, #0]
 	ldr r1, [r4, #0]
-	bl RuntimeObjectGetField1E
-	adds r1, r7, #0
+	.2byte 0xF7BD
+	.4byte 0x1C39FBFB
 	adds r1, #146
 	strh r0, [r1, #0]
 	adds r0, r7, #0
@@ -11429,11 +10778,13 @@ _0804CC54:
 	bl sub_08028118
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectSetFlag2
-	adds r0, r7, #0
+	.2byte 0xF7DB
+	.4byte 0x1C38FB5D
 	movs r1, #3
 	movs r2, #2
-	bl ObjectSetFields34And36
+	.2byte 0xF7DB
+	.byte 0x72
+	.byte 0xFB
 	ldr r1, _0804CD5C
 	ldr r2, _0804CD60
 	adds r0, r1, r2
@@ -11505,8 +10856,8 @@ sub_0804CD0A:
 	adds r0, r4, #0
 	movs r1, #3
 	movs r2, #1
-	bl ObjectSetFields34And36
-	adds r0, r7, #0
+	.2byte 0xF7DB
+	.4byte 0x1C38FB31
 	adds r0, #114
 	strb r5, [r0, #0]
 	adds r0, #1
@@ -11581,8 +10932,8 @@ _0804CD8A:
 	strh r0, [r5, #0]
 	mov r0, r8
 	movs r1, #1
-	bl ObjectSetState1
-	mov r0, r8
+	.2byte 0xF7DB
+	.4byte 0x4640FA8F
 	movs r1, #1
 
 	.thumb_func
@@ -11598,8 +10949,8 @@ sub_0804CD9C:
 	.2byte 0xFADB
 	mov r0, r8
 	movs r1, #1
-	bl ObjectSetFlag400
-	ldr r0, [r6, #0]
+	.2byte 0xF7DB
+	.4byte 0x6830FABF
 
 	.thumb_func
 	.thumb
@@ -11635,7 +10986,9 @@ sub_0804CDB2:
 	str r4, [sp, #0]
 	bl sub_0800AAA8
 	movs r0, #191
-	bl SoundSongStartU16
+	.2byte 0xF7B9
+	.byte 0x66
+	.byte 0xF8
 	adds r1, r7, #0
 	adds r1, #152
 	movs r0, #30
@@ -11693,7 +11046,9 @@ _0804CE10:
 	lsls r1, r1, #16
 	lsrs r1, r1, #16
 	adds r0, r7, #0
-	bl ObjectSetFlag2
+	.2byte 0xF7DB
+	.byte 0x94
+	.byte 0xFA
 	ldrh r0, [r4, #0]
 	subs r0, #1
 	strh r0, [r4, #0]
@@ -11707,8 +11062,8 @@ _0804CE10:
 _0804CE3E:
 	adds r0, r7, #0
 	movs r1, #0
-	bl ObjectSetFlag2
-	adds r1, r7, #0
+	.2byte 0xF7DB
+	.4byte 0x1C39FA87
 	adds r1, #154
 	movs r0, #0
 	strh r0, [r1, #0]
@@ -11757,8 +11112,8 @@ sub_0804CE74:
 	.global _0804CE84
 _0804CE84:
 	mov r0, r10
-	bl FinishTask
-	adds r6, r7, #0
+	.2byte 0xF02D
+	.4byte 0x1C3EFC91
 	adds r6, #128
 	.global _0804CE8E
 _0804CE8E:
@@ -11770,19 +11125,25 @@ _0804CE92:
 	ldrsh r0, [r5, r1]
 	cmp r0, #0
 	beq _0804CEBC
-	bl Random
-	movs r4, #7
+	.2byte 0xF02D
+	.4byte 0x2407F9A9
 	ands r0, r4
 	subs r0, #4
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateSetField4246
-	bl Random
+	.2byte 0xF7B9
+	.byte 0x1C
+	.byte 0xFF
+	.2byte 0xF02D
+	.byte 0xA0
+	.byte 0xF9
 	ands r0, r4
 	subs r0, #4
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateSetField4248
+	.2byte 0xF7B9
+	.byte 0x32
+	.byte 0xFF
 	.global _0804CEBC
 _0804CEBC:
 	ldr r1, [r6, #0]
@@ -11823,8 +11184,8 @@ sub_0804CEDC:
 	lsls r2, r2, #1
 	str r2, [sp, #0]
 	movs r2, #0
-	bl CreateTask
-	adds r1, r0, #0
+	.2byte 0xF02D
+	.4byte 0x1C01FC3D
 	cmp r1, #0
 	bne _0804CF20
 	cmp r4, #0
@@ -12007,7 +11368,9 @@ _0804CFEC:
 	lsls r1, r1, #1
 	adds r4, r6, r1
 	ldr r1, [r4, #0]
-	bl RuntimeObjectGetField1A
+	.2byte 0xF7BD
+	.byte 0x1E
+	.byte 0xFA
 	movs r2, #168
 	lsls r2, r2, #1
 	adds r2, r2, r6
@@ -12015,8 +11378,8 @@ _0804CFEC:
 	strh r0, [r2, #0]
 	ldr r0, [r5, #0]
 	ldr r1, [r4, #0]
-	bl RuntimeObjectGetField1E
-	movs r3, #169
+	.2byte 0xF7BD
+	.4byte 0x23A9FA2D
 	lsls r3, r3, #1
 	adds r1, r6, r3
 	strh r0, [r1, #0]
@@ -12030,8 +11393,8 @@ _0804CFEC:
 	bl sub_08028118
 	ldr r0, [r5, #0]
 	ldr r1, [r4, #0]
-	bl RuntimeObjectGetField36
-	cmp r0, #7
+	.2byte 0xF7BD
+	.4byte 0x2807FB4D
 	bne _0804D054
 	mov r5, r8
 	ldrh r0, [r5, #0]
@@ -12105,7 +11468,9 @@ _0804D08E:
 	adds r0, r4, #0
 	movs r1, #3
 	movs r2, #2
-	bl ObjectSetFields34And36
+	.2byte 0xF7DB
+	.byte 0x6C
+	.byte 0xF9
 	movs r1, #175
 	lsls r1, r1, #1
 	adds r0, r6, r1
@@ -12118,7 +11483,9 @@ _0804D08E:
 	bge _0804D08E
 	adds r0, r6, #0
 	movs r1, #1
-	bl ObjectSetFlag2
+	.2byte 0xF7DB
+	.byte 0x44
+	.byte 0xF9
 	movs r4, #1
 	ldr r2, [sp, #28]
 	strb r4, [r2, #0]
@@ -12172,8 +11539,8 @@ sub_0804D0D8:
 	bl sub_08003AE4
 	movs r0, #4
 	movs r1, #150
-	bl StartIndexedSong
-	movs r5, #177
+	.2byte 0xF7B8
+	.4byte 0x25B1FF11
 	lsls r5, r5, #1
 	adds r0, r6, r5
 	strh r4, [r0, #0]
@@ -12252,11 +11619,11 @@ _0804D19A:
 	bl sub_0802814C
 	adds r0, r6, #0
 	adds r1, r4, #0
-	bl ObjectSetField26
-	adds r0, r6, #0
+	.2byte 0xF7DB
+	.4byte 0x1C30F8E5
 	movs r1, #1
-	bl ObjectSetState1
-	strh r5, [r6, #32]
+	.2byte 0xF7DB
+	.4byte 0x8435F87B
 	ldrh r1, [r6, #28]
 	movs r5, #170
 	lsls r5, r5, #1
@@ -12335,7 +11702,9 @@ _0804D248:
 	lsls r5, r5, #1
 	adds r4, r6, r5
 	ldr r0, [r4, #0]
-	bl RuntimeActorGetField352
+	.2byte 0xF7BC
+	.byte 0x12
+	.byte 0xFE
 	adds r3, r0, #0
 	ldr r4, [r4, #0]
 	movs r1, #162
@@ -12387,8 +11756,8 @@ sub_0804D2A8:
 	beq _0804D308
 	movs r0, #5
 	movs r1, #111
-	bl StartIndexedSong
-	movs r0, #1
+	.2byte 0xF7B8
+	.4byte 0x2001FE51
 	mov r8, r0
 	movs r5, #0
 	movs r1, #164
@@ -12405,21 +11774,29 @@ _0804D2C2:
 	beq _0804D2FA
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectSetState1
+	.2byte 0xF7DA
+	.byte 0xF0
+	.byte 0xFF
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectSetFlag2
+	.2byte 0xF7DB
+	.byte 0x3C
+	.byte 0xF8
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectSetFlag400
+	.2byte 0xF7DB
+	.byte 0x20
+	.byte 0xF8
 	ldr r0, [r7, #0]
 	adds r1, r5, #0
-	bl RuntimeObjectGetField1A
+	.2byte 0xF7BD
+	.byte 0xA8
+	.byte 0xF8
 	strh r0, [r4, #28]
 	ldr r0, [r7, #0]
 	adds r1, r5, #0
-	bl RuntimeObjectGetField1E
-	subs r0, #24
+	.2byte 0xF7BD
+	.4byte 0x3818F8BB
 	strh r0, [r4, #30]
 	.global _0804D2FA
 _0804D2FA:
@@ -12481,7 +11858,9 @@ _0804D334:
 	.global _0804D350
 _0804D350:
 	mov r0, r10
-	bl FinishTask
+	.2byte 0xF02D
+	.byte 0x2B
+	.byte 0xFA
 	.global _0804D356
 _0804D356:
 	movs r3, #177
@@ -12496,14 +11875,16 @@ sub_0804D35A:
 	ldrsh r0, [r0, r5]
 	cmp r0, #0
 	beq _0804D380
-	bl Random
+	.2byte 0xF02C
+	.byte 0x44
+	.byte 0xFF
 	movs r4, #7
 	ands r0, r4
 	subs r0, #4
 	lsls r0, r0, #16
 	asrs r5, r0, #16
-	bl Random
-	ands r0, r4
+	.2byte 0xF02C
+	.4byte 0x4020FF3D
 	subs r0, #4
 	lsls r0, r0, #16
 
@@ -12520,9 +11901,11 @@ _0804D380:
 	.global _0804D384
 _0804D384:
 	adds r0, r5, #0
-	bl GameStateSetField4246
-	adds r0, r4, #0
-	bl GameStateSetField4248
+	.2byte 0xF7B9
+	.4byte 0x1C20FCAD
+	.2byte 0xF7B9
+	.byte 0xC8
+	.byte 0xFC
 	movs r2, #150
 	subs r2, r2, r4
 	movs r0, #30
@@ -12562,8 +11945,8 @@ _0804D3BE:
 	asrs r2, r2, #16
 	adds r0, r6, #0
 	movs r1, #3
-	bl ObjectSetFields34And36
-	movs r1, #160
+	.2byte 0xF7DA
+	.4byte 0x21A0FFDF
 	lsls r1, r1, #1
 	adds r0, r6, r1
 	ldr r1, [r0, #0]
@@ -12621,8 +12004,8 @@ sub_0804D404:
 	.thumb
 	.global sub_0804D426
 sub_0804D426:
-	bl CreateTask
-	adds r1, r0, #0
+	.2byte 0xF02D
+	.4byte 0x1C01F9A9
 	cmp r1, #0
 	bne _0804D448
 	cmp r4, #0
@@ -12872,8 +12255,8 @@ _0804D586:
 	lsls r1, r1, #1
 	adds r4, r7, r1
 	ldr r1, [r4, #0]
-	bl RuntimeObjectGetField1A
-	movs r2, #136
+	.2byte 0xF7BC
+	.4byte 0x2288FF51
 	lsls r2, r2, #1
 	adds r2, r2, r7
 
@@ -12885,7 +12268,9 @@ sub_0804D5A0:
 	strh r0, [r2, #0]
 	ldr r0, [r5, #0]
 	ldr r1, [r4, #0]
-	bl RuntimeObjectGetField1E
+	.2byte 0xF7BC
+	.byte 0x60
+	.byte 0xFF
 	movs r3, #137
 	lsls r3, r3, #1
 	adds r1, r7, r3
@@ -12907,11 +12292,11 @@ sub_0804D5C6:
 	adds r0, r7, #0
 	movs r1, #3
 	movs r2, #2
-	bl ObjectSetFields34And36
-	ldr r0, [r5, #0]
+	.2byte 0xF7DA
+	.4byte 0x6828FEDB
 	ldr r1, [r4, #0]
-	bl RuntimeObjectGetField36
-	cmp r0, #7
+	.2byte 0xF7BD
+	.4byte 0x2807F87B
 	bne _0804D5FC
 	mov r5, r8
 	ldrh r0, [r5, #0]
@@ -12964,7 +12349,9 @@ sub_0804D620:
 	ldr r0, [sp, #32]
 	movs r1, #3
 	movs r2, #2
-	bl ObjectSetFields34And36
+	.2byte 0xF7DA
+	.byte 0xA8
+	.byte 0xFE
 	movs r1, #147
 	lsls r1, r1, #1
 	adds r0, r7, r1
@@ -12986,8 +12373,8 @@ sub_0804D620:
 	mov r0, r9
 	movs r1, #3
 	movs r2, #1
-	bl ObjectSetFields34And36
-	ldrh r1, [r7, #28]
+	.2byte 0xF7DA
+	.4byte 0x8BB9FE8F
 	adds r0, r7, #0
 	adds r0, #156
 	strh r1, [r0, #0]
@@ -13009,15 +12396,17 @@ sub_0804D620:
 	mov r0, r10
 	movs r1, #3
 	movs r2, #0
-	bl ObjectSetFields34And36
-	adds r1, r7, #0
+	.2byte 0xF7DA
+	.4byte 0x1C39FE75
 	adds r1, #224
 	movs r0, #128
 	lsls r0, r0, #2
 	strh r0, [r1, #0]
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectSetFlag2
+	.2byte 0xF7DA
+	.byte 0x52
+	.byte 0xFE
 	adds r0, r7, #0
 	adds r0, #50
 	movs r4, #1
@@ -13071,8 +12460,8 @@ sub_0804D6D4:
 	bl sub_08003AE4
 	movs r0, #4
 	movs r1, #150
-	bl StartIndexedSong
-	movs r3, #146
+	.2byte 0xF7B8
+	.4byte 0x2392FC1F
 	lsls r3, r3, #1
 	adds r0, r7, r3
 	strh r4, [r0, #0]
@@ -13167,13 +12556,13 @@ _0804D794:
 	bl sub_0802814C
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectSetState1
-	movs r0, #30
+	.2byte 0xF7DA
+	.4byte 0x201EFD83
 	strh r0, [r4, #0]
 	movs r0, #5
 	movs r1, #150
-	bl StartIndexedSong
-	movs r6, #146
+	.2byte 0xF7B8
+	.4byte 0x2692FBCD
 	lsls r6, r6, #1
 	adds r1, r7, r6
 	movs r0, #1
@@ -13319,20 +12708,20 @@ _0804D87A:
 _0804D89E:
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectSetState1
-	ldr r0, [sp, #40]
+	.2byte 0xF7DA
+	.4byte 0x980AFD07
 	movs r1, #1
-	bl ObjectSetState1
-	ldr r0, [sp, #40]
+	.2byte 0xF7DA
+	.4byte 0x980AFD03
 	movs r1, #1
-	bl ObjectSetFlag2
-	ldr r0, [sp, #40]
+	.2byte 0xF7DA
+	.4byte 0x980AFD4F
 	movs r1, #1
-	bl ObjectSetFlag400
-	ldr r0, [sp, #36]
+	.2byte 0xF7DA
+	.4byte 0x9809FD33
 	movs r1, #1
-	bl ObjectSetFlag2
-	movs r1, #143
+	.2byte 0xF7DA
+	.4byte 0x218FFD47
 	lsls r1, r1, #1
 	adds r0, r7, r1
 	ldrh r1, [r0, #0]
@@ -13394,8 +12783,8 @@ sub_0804D91A:
 	bl sub_08003AE4
 	movs r0, #4
 	movs r1, #208
-	bl StartIndexedSong
-	movs r3, #146
+	.2byte 0xF7B8
+	.4byte 0x2392FB15
 	lsls r3, r3, #1
 	adds r0, r7, r3
 	strh r4, [r0, #0]
@@ -13518,8 +12907,8 @@ sub_0804D9C2:
 	bgt _0804DA30
 	ldr r0, [sp, #36]
 	movs r1, #0
-	bl ObjectSetFlag2
-	movs r0, #128
+	.2byte 0xF7DA
+	.4byte 0x2080FCC3
 	lsls r0, r0, #1
 	ldr r1, [sp, #28]
 	strh r0, [r1, #14]
@@ -13534,13 +12923,15 @@ _0804D9DC:
 	adds r4, r7, r2
 	ldr r0, [r4, #0]
 	adds r1, r5, #0
-	bl RuntimeObjectGetField1A
-	adds r1, r7, #0
+	.2byte 0xF7BC
+	.4byte 0x1C39FD29
 	adds r1, #220
 	strh r0, [r1, #0]
 	ldr r0, [r4, #0]
 	adds r1, r5, #0
-	bl RuntimeObjectGetField1E
+	.2byte 0xF7BC
+	.byte 0x3A
+	.byte 0xFD
 	subs r0, #24
 	adds r1, r7, #0
 	adds r1, #222
@@ -13565,7 +12956,9 @@ _0804DA02:
 	blt _0804DA30
 	ldr r0, [sp, #36]
 	movs r1, #0
-	bl ObjectSetFlag2
+	.2byte 0xF7DA
+	.byte 0x96
+	.byte 0xFC
 	movs r0, #128
 	lsls r0, r0, #1
 	ldr r6, [sp, #28]
@@ -13576,7 +12969,9 @@ _0804DA30:
 	lsls r0, r0, #1
 	adds r4, r7, r0
 	ldr r0, [r4, #0]
-	bl RuntimeActorGetField352
+	.2byte 0xF7BC
+	.byte 0x1E
+	.byte 0xFA
 	adds r3, r0, #0
 	ldr r4, [r4, #0]
 	movs r1, #130
@@ -13635,19 +13030,29 @@ sub_0804DA6C:
 _0804DA9C:
 	movs r0, #5
 	movs r1, #192
-	bl StartIndexedSong
+	.2byte 0xF7B8
+	.byte 0x58
+	.byte 0xFA
 	ldr r0, [sp, #36]
 	movs r1, #0
-	bl ObjectSetFlag2
+	.2byte 0xF7DA
+	.byte 0x54
+	.byte 0xFC
 	mov r0, r8
 	movs r1, #1
-	bl ObjectSetState1
+	.2byte 0xF7DA
+	.byte 0x00
+	.byte 0xFC
 	mov r0, r8
 	movs r1, #1
-	bl ObjectSetFlag2
+	.2byte 0xF7DA
+	.byte 0x4C
+	.byte 0xFC
 	mov r0, r8
 	movs r1, #1
-	bl ObjectSetFlag400
+	.2byte 0xF7DA
+	.byte 0x30
+	.byte 0xFC
 	movs r1, #1
 	movs r5, #0
 	.global _0804DAC8
@@ -13874,7 +13279,9 @@ sub_0804DC04:
 	.global _0804DC2C
 _0804DC2C:
 	ldr r0, [sp, #28]
-	bl FinishTask
+	.2byte 0xF02C
+	.byte 0xBD
+	.byte 0xFD
 	.global _0804DC32
 _0804DC32:
 	movs r3, #146
@@ -13884,19 +13291,23 @@ _0804DC32:
 	ldrsh r0, [r0, r5]
 	cmp r0, #0
 	beq _0804DC62
-	bl Random
+	.2byte 0xF02C
+	.byte 0xD6
+	.byte 0xFA
 	movs r4, #3
 	ands r0, r4
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateSetField4246
-	bl Random
-	ands r0, r4
+	.2byte 0xF7B9
+	.4byte 0xF02CF849
+	.4byte 0x4020FACD
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateSetField4248
+	.2byte 0xF7B9
+	.byte 0x5F
+	.byte 0xF8
 	.global _0804DC62
 _0804DC62:
 	movs r6, #30
@@ -13932,8 +13343,8 @@ _0804DC8E:
 	asrs r2, r2, #16
 	adds r0, r7, #0
 	movs r1, #3
-	bl ObjectSetFields34And36
-	movs r5, #128
+	.2byte 0xF7DA
+	.4byte 0x2580FB77
 	lsls r5, r5, #1
 	adds r4, r7, r5
 	ldr r1, [r4, #0]
@@ -14000,8 +13411,8 @@ sub_0804DCDC:
 	lsls r2, r2, #1
 	str r2, [sp, #0]
 	movs r2, #0
-	bl CreateTask
-	adds r1, r0, #0
+	.2byte 0xF02C
+	.4byte 0x1C01FD43
 	cmp r1, #0
 	bne _0804DD14
 	cmp r4, #0
@@ -14216,27 +13627,27 @@ sub_0804DE16:
 	ldr r5, _0804DEB8
 	ldr r1, _0804DEBC
 	adds r0, r5, #0
-	bl NfpOpenByName
-	adds r1, r0, #0
+	.2byte 0xF02C
+	.4byte 0x1C01FF0B
 	adds r0, r4, #0
-	bl Lz77UnCompVramSwapped
-	ldr r1, _0804DEC0
+	.2byte 0xF7B4
+	.4byte 0x4924F98D
 	adds r0, r5, #0
-	bl NfpOpenByName
-	adds r1, r0, #0
+	.2byte 0xF02C
+	.4byte 0x1C01FF03
 	movs r0, #2
 	bl sub_08001B4C
 	movs r0, #0
 	movs r1, #0
-	bl RuntimeGetBlock6120
-	adds r4, r0, #0
+	.2byte 0xF032
+	.4byte 0x1C04FB53
 	movs r0, #192
 	lsls r0, r0, #1
 	adds r4, r4, r0
 	ldr r1, _0804DEC4
 	adds r0, r5, #0
-	bl NfpOpenByName
-	adds r1, r0, #0
+	.2byte 0xF02C
+	.4byte 0x1C01FEF3
 	adds r0, r4, #0
 	movs r2, #96
 	bl CpuCopy
@@ -14250,7 +13661,9 @@ sub_0804DE16:
 	bl sub_08028118
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectSetFlag2
+	.2byte 0xF7DA
+	.byte 0x6C
+	.byte 0xFA
 	movs r1, #160
 	lsls r1, r1, #1
 	adds r0, r7, r1
@@ -14259,7 +13672,9 @@ sub_0804DE16:
 	lsls r2, r2, #1
 	adds r1, r7, r2
 	ldr r1, [r1, #0]
-	bl RuntimeObjectGetField36
+	.2byte 0xF7BC
+	.byte 0x20
+	.byte 0xFC
 	cmp r0, #7
 	bne _0804DED0
 	adds r1, r7, #0
@@ -14348,8 +13763,8 @@ sub_0804DF00:
 _0804DF06:
 	ldr r0, [r6, #0]
 	adds r1, r5, #0
-	bl RuntimeGetActorRecord
-	adds r1, r0, #0
+	.2byte 0xF7BC
+	.4byte 0x1C01F95B
 	movs r0, #0
 	ldrsb r0, [r1, r0]
 	cmp r0, #0
@@ -14407,18 +13822,20 @@ _0804DF62:
 	adds r0, r7, r0
 	movs r1, #3
 	movs r2, #0
-	bl ObjectSetFields34And36
-	ldr r0, [r6, #0]
+	.2byte 0xF7DA
+	.4byte 0x6830FA0B
 	adds r1, r5, #0
-	bl RuntimeObjectGetField1A
-	ldr r1, [r4, #0]
+	.2byte 0xF7BC
+	.4byte 0x6821FA61
 	lsls r1, r1, #6
 	adds r1, r7, r1
 	adds r1, #92
 	strh r0, [r1, #0]
 	ldr r0, [r6, #0]
 	adds r1, r5, #0
-	bl RuntimeObjectGetField1E
+	.2byte 0xF7BC
+	.byte 0x70
+	.byte 0xFA
 
 	.thumb_func
 	.thumb
@@ -14490,7 +13907,9 @@ sub_0804DFB2:
 	movs r3, #0
 	bl sub_08003AE4
 	movs r0, #150
-	bl SoundSongStartU16
+	.2byte 0xF7B7
+	.byte 0x48
+	.byte 0xFF
 	movs r1, #175
 	lsls r1, r1, #1
 	adds r0, r7, r1
@@ -14593,7 +14012,9 @@ _0804E03E:
 	movs r3, #0
 	bl sub_08003AE4
 	movs r0, #151
-	bl SoundSongStartU16
+	.2byte 0xF7B7
+	.byte 0xE8
+	.byte 0xFE
 	movs r1, #175
 	lsls r1, r1, #1
 	adds r0, r7, r1
@@ -14662,11 +14083,11 @@ _0804E118:
 	bl sub_0802814C
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectSetState1
-	adds r0, r7, #0
+	.2byte 0xF7DA
+	.4byte 0x1C38F8C1
 	movs r1, #5
-	bl ObjectSetField26
-	movs r5, #171
+	.2byte 0xF7DA
+	.4byte 0x25ABF923
 
 	.thumb_func
 	.thumb
@@ -14782,8 +14203,8 @@ sub_0804E15A:
 	movs r3, #0
 	bl sub_08003AE4
 	movs r0, #143
-	bl SoundSongStartU16
-	movs r4, #176
+	.2byte 0xF7B7
+	.4byte 0x24B0FE41
 	lsls r4, r4, #1
 	adds r1, r7, r4
 	movs r0, #255
@@ -14801,14 +14222,16 @@ sub_0804E15A:
 _0804E232:
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectSetFlag2
-	adds r0, r4, #0
+	.2byte 0xF7DA
+	.4byte 0x1C20F88D
 	movs r1, #1
-	bl ObjectSetState1
-	adds r0, r4, #0
+	.2byte 0xF7DA
+	.4byte 0x1C20F839
 	movs r1, #1
 	negs r1, r1
-	bl ObjectSetField26
+	.2byte 0xF7DA
+	.byte 0x9A
+	.byte 0xF8
 	adds r4, #64
 	adds r5, #1
 	movs r1, #166
@@ -14828,8 +14251,8 @@ _0804E25C:
 	lsls r3, r3, #1
 	adds r4, r7, r3
 	ldr r0, [r4, #0]
-	bl RuntimeActorGetField352
-	adds r2, r0, #0
+	.2byte 0xF7BB
+	.4byte 0x1C02FE03
 	ldr r0, [r4, #0]
 	movs r4, #162
 	lsls r4, r4, #1
@@ -14952,7 +14375,9 @@ _0804E310:
 	bl sub_0802814C
 	adds r0, r7, #0
 	movs r1, #0
-	bl ObjectSetState1
+	.2byte 0xF7D9
+	.byte 0xB4
+	.byte 0xFF
 	movs r5, #0
 	movs r6, #166
 	lsls r6, r6, #1
@@ -14967,10 +14392,14 @@ _0804E310:
 _0804E360:
 	adds r0, r4, #0
 	movs r1, #0
-	bl ObjectSetField26
+	.2byte 0xF7DA
+	.byte 0x0C
+	.byte 0xF8
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectSetFlag400
+	.2byte 0xF7D9
+	.byte 0xDA
+	.byte 0xFF
 	adds r4, #64
 	adds r5, #1
 	ldr r0, [r6, #0]
@@ -14979,7 +14408,9 @@ _0804E360:
 	.global _0804E37A
 _0804E37A:
 	movs r0, #143
-	bl SoundSongStopU16
+	.2byte 0xF7B7
+	.byte 0xE2
+	.byte 0xFD
 	movs r0, #112
 	mov r1, r10
 	strh r0, [r1, #14]
@@ -15024,8 +14455,8 @@ _0804E3C4:
 	.global _0804E3C8
 _0804E3C8:
 	movs r0, #143
-	bl SoundSongStopU16
-	b _0804E4EA
+	.2byte 0xF7B7
+	.4byte 0xE08CFDBB
 	.global _0804E3D0
 _0804E3D0:
 	movs r6, #128
@@ -15179,7 +14610,9 @@ _0804E4D6:
 	.global _0804E4E4
 _0804E4E4:
 	mov r0, r10
-	bl FinishTask
+	.2byte 0xF02C
+	.byte 0x61
+	.byte 0xF9
 	.global _0804E4EA
 _0804E4EA:
 	ldr r3, _0804E530
@@ -15267,19 +14700,23 @@ _0804E56A:
 	ldrsh r0, [r0, r6]
 	cmp r0, #0
 	beq _0804E59A
-	bl Random
+	.2byte 0xF02B
+	.byte 0x3A
+	.byte 0xFE
 	movs r4, #3
 	ands r0, r4
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateSetField4246
-	bl Random
-	ands r0, r4
+	.2byte 0xF7B8
+	.4byte 0xF02BFBAD
+	.4byte 0x4020FE31
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateSetField4248
+	.2byte 0xF7B8
+	.byte 0xC3
+	.byte 0xFB
 	.global _0804E59A
 _0804E59A:
 	movs r0, #30
@@ -15327,8 +14764,8 @@ _0804E5D6:
 	asrs r2, r2, #16
 	adds r0, r7, #0
 	movs r1, #3
-	bl ObjectSetFields34And36
-	movs r4, #173
+	.2byte 0xF7D9
+	.4byte 0x24ADFED3
 	lsls r4, r4, #1
 	adds r1, r7, r4
 	ldrh r0, [r1, #0]
@@ -15382,33 +14819,12 @@ sub_0804E62E:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_0804E640
-sub_0804E640:
-	push {r4, lr}
-	sub sp, #4
-	movs r4, #0
-	str r4, [sp, #0]
-	bl sub_0804E668
-	add sp, #4
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04E640..04E654 is decompiled as BattleMode4E60(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804E654
-sub_0804E654:
-	push {r4, lr}
-	sub sp, #4
-	movs r4, #1
-	str r4, [sp, #0]
-	bl sub_0804E668
-	add sp, #4
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04E654..04E668 is decompiled as BattleMode4E61(); see src/decompiled.json
+
+	.section .rom.0004E668, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -15436,7 +14852,9 @@ sub_0804E668:
 	lsls r2, r2, #1
 	str r2, [sp, #0]
 	movs r2, #0
-	bl CreateTask
+	.2byte 0xF02C
+	.byte 0x72
+	.byte 0xF8
 	adds r1, r0, #0
 	cmp r1, #0
 	bne _0804E6B4
@@ -15614,22 +15032,22 @@ _0804E7A0:
 	adds r4, r6, #0
 	adds r4, #196
 	ldr r1, [r4, #0]
-	bl RuntimeObjectGetField1A
-	adds r1, r6, #0
+	.2byte 0xF7BB
+	.4byte 0x1C31FE47
 	adds r1, #204
 	strh r0, [r1, #0]
 	ldr r3, [sp, #36]
 	ldr r0, [r3, #0]
 	ldr r1, [r4, #0]
-	bl RuntimeObjectGetField1E
-	adds r1, r6, #0
+	.2byte 0xF7BB
+	.4byte 0x1C31FE57
 	adds r1, #206
 	strh r0, [r1, #0]
 	ldr r1, [sp, #36]
 	ldr r0, [r1, #0]
 	ldr r1, [r4, #0]
-	bl RuntimeObjectGetField36
-	movs r2, #230
+	.2byte 0xF7BB
+	.4byte 0x22E6FF81
 	adds r2, r2, r6
 	mov r9, r2
 	cmp r0, #7
@@ -15640,7 +15058,9 @@ _0804E7A0:
 _0804E7DC:
 	add r1, sp, #32
 	add r0, sp, #28
-	bl GameStateGetField424C50
+	.2byte 0xF7B8
+	.byte 0x1E
+	.byte 0xFB
 	ldr r0, [sp, #28]
 	asrs r0, r0, #16
 	ldr r3, [sp, #40]
@@ -15650,9 +15070,11 @@ _0804E7DC:
 	ldr r4, [sp, #44]
 	strh r0, [r4, #0]
 	movs r0, #0
-	bl RuntimeSetFieldE48
-	movs r0, #151
-	bl SoundSongStartU16
+	.2byte 0xF7BB
+	.4byte 0x2097FCA3
+	.2byte 0xF7B7
+	.byte 0x4C
+	.byte 0xFB
 	movs r0, #1
 	ldr r1, [sp, #60]
 	strh r0, [r1, #0]
@@ -15667,12 +15089,14 @@ _0804E7DC:
 	adds r0, r6, #0
 	movs r1, #1
 	movs r2, #3
-	bl ObjectSetFields34And36
+	.2byte 0xF7D9
+	.byte 0xB2
+	.byte 0xFD
 	movs r1, #1
 	negs r1, r1
 	adds r0, r6, #0
-	bl ObjectSetField26
-	mov r2, r9
+	.2byte 0xF7D9
+	.4byte 0x464AFDA9
 	ldrh r1, [r2, #0]
 	adds r0, r6, #0
 	adds r0, #48
@@ -15721,10 +15145,14 @@ _0804E85E:
 	adds r0, r0, r1
 	ldr r1, [r0, #0]
 	adds r0, r5, #0
-	bl NfpOpenByName
+	.2byte 0xF02C
+	.byte 0xD4
+	.byte 0xF9
 	adds r1, r0, #0
 	adds r0, r4, #0
-	bl Lz77UnCompVramSwapped
+	.2byte 0xF7B3
+	.byte 0x56
+	.byte 0xFC
 	ldr r2, _0804E920
 	mov r4, r9
 	movs r1, #0
@@ -15737,13 +15165,17 @@ _0804E85E:
 	adds r0, r0, r2
 	ldr r1, [r0, #0]
 	adds r0, r5, #0
-	bl NfpOpenByName
+	.2byte 0xF02C
+	.byte 0xC2
+	.byte 0xF9
 	adds r1, r0, #0
 	movs r0, #2
 	bl sub_08001B4C
 	movs r0, #0
 	movs r1, #0
-	bl RuntimeGetBlock6120
+	.2byte 0xF031
+	.byte 0x12
+	.byte 0xFE
 	adds r4, r0, #0
 	movs r0, #192
 	lsls r0, r0, #1
@@ -15755,8 +15187,8 @@ _0804E85E:
 	adds r0, r0, r1
 	ldr r1, [r0, #0]
 	adds r0, r5, #0
-	bl NfpOpenByName
-	adds r1, r0, #0
+	.2byte 0xF02C
+	.4byte 0x1C01F9AD
 	adds r0, r4, #0
 	movs r2, #96
 	bl CpuCopy
@@ -15859,10 +15291,14 @@ _0804E970:
 _0804E984:
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectSetFlag2
+	.2byte 0xF7D9
+	.byte 0xE4
+	.byte 0xFC
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectSetState1
+	.2byte 0xF7D9
+	.byte 0x90
+	.byte 0xFC
 	adds r4, #64
 	subs r5, #1
 	cmp r5, #0
@@ -16034,8 +15470,8 @@ _0804EA84:
 _0804EAB6:
 	ldr r2, [sp, #36]
 	ldr r0, [r2, #0]
-	bl RuntimeActorGetField352
-	adds r2, r0, #0
+	.2byte 0xF7BB
+	.4byte 0x1C02F9DD
 	ldr r3, [sp, #36]
 	ldr r0, [r3, #0]
 	adds r5, r6, #0
@@ -16135,7 +15571,9 @@ _0804EB6C:
 	.global _0804EB70
 _0804EB70:
 	movs r0, #1
-	bl RuntimeSetFieldE48
+	.2byte 0xF7BB
+	.byte 0xE5
+	.byte 0xFA
 
 	.thumb_func
 	.thumb
@@ -16173,7 +15611,9 @@ _0804EB92:
 	.global _0804EBAE
 _0804EBAE:
 	mov r0, r8
-	bl FinishTask
+	.2byte 0xF02B
+	.byte 0xFC
+	.byte 0xFD
 	.global _0804EBB4
 _0804EBB4:
 	ldr r3, [sp, #40]
@@ -16190,19 +15630,25 @@ _0804EBB4:
 	ldrsh r0, [r3, r4]
 	cmp r0, #0
 	beq _0804EBF4
-	bl Random
-	movs r4, #7
+	.2byte 0xF02B
+	.4byte 0x2407FB0D
 	ands r0, r4
 	subs r0, #4
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateSetField4246
-	bl Random
+	.2byte 0xF7B8
+	.byte 0x80
+	.byte 0xF8
+	.2byte 0xF02B
+	.byte 0x04
+	.byte 0xFB
 	ands r0, r4
 	subs r0, #4
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateSetField4248
+	.2byte 0xF7B8
+	.byte 0x96
+	.byte 0xF8
 	.global _0804EBF4
 _0804EBF4:
 	adds r4, r6, #0
@@ -16239,604 +15685,78 @@ _0804EC20:
 _0804EC24:
 	.4byte 0x0000FBFF
 
-	.thumb_func
-	.thumb
-	.global sub_0804EC28
-sub_0804EC28:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #0
-	str r4, [sp, #0]
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 04EC28..04EC40 is decompiled as BattleTaskBCreateGroup0Variant0(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804EC40
-sub_0804EC40:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #0
-	str r4, [sp, #0]
-	movs r4, #1
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04EC40..04EC58 is decompiled as BattleTaskBCreateGroup0Variant1(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804EC58
-sub_0804EC58:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #0
-	str r4, [sp, #0]
-	movs r4, #2
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04EC58..04EC70 is decompiled as BattleTaskBCreateGroup0Variant2(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804EC70
-sub_0804EC70:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #0
-	str r4, [sp, #0]
-	movs r4, #3
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04EC70..04EC88 is decompiled as BattleTaskBCreateGroup0Variant3(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804EC88
-sub_0804EC88:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #0
-	str r4, [sp, #0]
-	movs r4, #4
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04EC88..04ECA0 is decompiled as BattleTaskBCreateGroup0Variant4(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804ECA0
-sub_0804ECA0:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #0
-	str r4, [sp, #0]
-	movs r4, #5
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04ECA0..04ECB8 is decompiled as BattleTaskBCreateGroup0Variant5(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804ECB8
-sub_0804ECB8:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #0
-	str r4, [sp, #0]
-	movs r4, #6
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04ECB8..04ECD0 is decompiled as BattleTaskBCreateGroup0Variant6(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804ECD0
-sub_0804ECD0:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #1
-	str r4, [sp, #0]
-	movs r4, #0
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04ECD0..04ECE8 is decompiled as BattleTaskBCreateGroup1Variant0(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804ECE8
-sub_0804ECE8:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #1
-	str r4, [sp, #0]
-	str r4, [sp, #4]
-	bl sub_0804EF70
+@ 04ECE8..04ED00 is decompiled as BattleTaskBCreateGroup1Variant1(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804ECF6
-sub_0804ECF6:
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 04ED00..04ED18 is decompiled as BattleTaskBCreateGroup1Variant2(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804ED00
-sub_0804ED00:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #1
-	str r4, [sp, #0]
-	movs r4, #2
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04ED18..04ED30 is decompiled as BattleTaskBCreateGroup1Variant3(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804ED18
-sub_0804ED18:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #1
-	str r4, [sp, #0]
-	movs r4, #3
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04ED30..04ED48 is decompiled as BattleTaskBCreateGroup1Variant4(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804ED30
-sub_0804ED30:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #1
-	str r4, [sp, #0]
-	movs r4, #4
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04ED48..04ED60 is decompiled as BattleTaskBCreateGroup1Variant5(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804ED48
-sub_0804ED48:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #1
-	str r4, [sp, #0]
-	movs r4, #5
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04ED60..04ED78 is decompiled as BattleTaskBCreateGroup1Variant6(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804ED60
-sub_0804ED60:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #1
-	str r4, [sp, #0]
-	movs r4, #6
-	str r4, [sp, #4]
+@ 04ED78..04ED90 is decompiled as BattleTaskBCreateGroup2Variant0(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804ED6C
-sub_0804ED6C:
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04ED90..04EDA8 is decompiled as BattleTaskBCreateGroup2Variant1(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804ED78
-sub_0804ED78:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #2
-	str r4, [sp, #0]
-	movs r4, #0
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04EDA8..04EDC0 is decompiled as BattleTaskBCreateGroup2Variant2(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804ED90
-sub_0804ED90:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #2
-	str r4, [sp, #0]
-	movs r4, #1
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04EDC0..04EDD8 is decompiled as BattleTaskBCreateGroup2Variant3(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804EDA8
-sub_0804EDA8:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #2
-	str r4, [sp, #0]
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04EDD8..04EDF0 is decompiled as BattleTaskBCreateGroup2Variant4(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804EDBE
-sub_0804EDBE:
-	movs r0, r0
+@ 04EDF0..04EE08 is decompiled as BattleTaskBCreateGroup2Variant5(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804EDC0
-sub_0804EDC0:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #2
-	str r4, [sp, #0]
-	movs r4, #3
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04EE08..04EE20 is decompiled as BattleTaskBCreateGroup2Variant6(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804EDD8
-sub_0804EDD8:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #2
-	str r4, [sp, #0]
-	movs r4, #4
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04EE20..04EE38 is decompiled as BattleTaskBCreateGroup3Variant0(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804EDF0
-sub_0804EDF0:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #2
-	str r4, [sp, #0]
-	movs r4, #5
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04EE38..04EE50 is decompiled as BattleTaskBCreateGroup3Variant1(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804EE08
-sub_0804EE08:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #2
-	str r4, [sp, #0]
-	movs r4, #6
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04EE50..04EE68 is decompiled as BattleTaskBCreateGroup3Variant2(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804EE20
-sub_0804EE20:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #3
-	str r4, [sp, #0]
-	movs r4, #0
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04EE68..04EE80 is decompiled as BattleTaskBCreateGroup3Variant3(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804EE38
-sub_0804EE38:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #3
-	str r4, [sp, #0]
-	movs r4, #1
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04EE80..04EE98 is decompiled as BattleTaskBCreateGroup3Variant4(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804EE50
-sub_0804EE50:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #3
-	str r4, [sp, #0]
-	movs r4, #2
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04EE98..04EEB0 is decompiled as BattleTaskBCreateGroup3Variant5(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804EE68
-sub_0804EE68:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #3
-	str r4, [sp, #0]
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 04EEB0..04EEC8 is decompiled as BattleTaskBCreateGroup3Variant6(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804EE80
-sub_0804EE80:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #3
-	str r4, [sp, #0]
-	movs r4, #4
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04EEC8..04EEE0 is decompiled as BattleTaskBCreateGroup4Variant0(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804EE98
-sub_0804EE98:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #3
-	str r4, [sp, #0]
-	movs r4, #5
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04EEE0..04EEF8 is decompiled as BattleTaskBCreateGroup4Variant1(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804EEB0
-sub_0804EEB0:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #3
-	str r4, [sp, #0]
-	movs r4, #6
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04EEF8..04EF10 is decompiled as BattleTaskBCreateGroup4Variant2(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804EEC8
-sub_0804EEC8:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #4
-	str r4, [sp, #0]
-	movs r4, #0
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04EF10..04EF28 is decompiled as BattleTaskBCreateGroup4Variant3(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804EEE0
-sub_0804EEE0:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #4
-	str r4, [sp, #0]
-	movs r4, #1
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04EF28..04EF40 is decompiled as BattleTaskBCreateGroup4Variant4(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804EEF8
-sub_0804EEF8:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #4
-	str r4, [sp, #0]
-	movs r4, #2
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04EF40..04EF58 is decompiled as BattleTaskBCreateGroup4Variant5(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804EF10
-sub_0804EF10:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #4
-	str r4, [sp, #0]
-	movs r4, #3
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04EF58..04EF70 is decompiled as BattleTaskBCreateGroup4Variant6(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804EF28
-sub_0804EF28:
-	push {r4, lr}
-	sub sp, #8
-
-	.thumb_func
-	.thumb
-	.global sub_0804EF2C
-sub_0804EF2C:
-	movs r4, #4
-	str r4, [sp, #0]
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0804EF40
-sub_0804EF40:
-	push {r4, lr}
-
-	.thumb_func
-	.thumb
-	.global sub_0804EF42
-sub_0804EF42:
-	sub sp, #8
-	movs r4, #4
-	str r4, [sp, #0]
-	movs r4, #5
-	str r4, [sp, #4]
-	bl sub_0804EF70
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_0804EF58
-sub_0804EF58:
-	push {r4, lr}
-	sub sp, #8
-	movs r4, #4
-
-	.thumb_func
-	.thumb
-	.global sub_0804EF5E
-sub_0804EF5E:
-	str r4, [sp, #0]
-	movs r4, #6
-	str r4, [sp, #4]
-	bl sub_0804EF70
-
-	.thumb_func
-	.thumb
-	.global sub_0804EF68
-sub_0804EF68:
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+	.section .rom.0004EF70, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -16874,8 +15794,8 @@ sub_0804EF90:
 	lsls r2, r2, #1
 	str r2, [sp, #0]
 	movs r2, #0
-	bl CreateTask
-	adds r1, r0, #0
+	.2byte 0xF02B
+	.4byte 0x1C01FBE9
 	cmp r1, #0
 	bne _0804EFC8
 	cmp r4, #0
@@ -17070,15 +15990,17 @@ _0804F0AA:
 	lsls r1, r1, #1
 	adds r4, r7, r1
 	ldr r1, [r4, #0]
-	bl RuntimeObjectGetField1A
-	movs r2, #166
+	.2byte 0xF7BB
+	.4byte 0x22A6F9BF
 	lsls r2, r2, #1
 	adds r2, r2, r7
 	mov r8, r2
 	strh r0, [r2, #0]
 	ldr r0, [r5, #0]
 	ldr r1, [r4, #0]
-	bl RuntimeObjectGetField1E
+	.2byte 0xF7BB
+	.byte 0xCE
+	.byte 0xF9
 	movs r3, #167
 	lsls r3, r3, #1
 	adds r1, r7, r3
@@ -17115,7 +16037,9 @@ _0804F0AA:
 	adds r0, r7, #0
 	movs r1, #3
 	movs r2, #2
-	bl ObjectSetFields34And36
+	.2byte 0xF7D9
+	.byte 0x32
+	.byte 0xF9
 
 	.thumb_func
 	.thumb
@@ -17123,7 +16047,9 @@ _0804F0AA:
 sub_0804F124:
 	ldr r0, [r5, #0]
 	ldr r1, [r4, #0]
-	bl RuntimeObjectGetField36
+	.2byte 0xF7BB
+	.byte 0xD2
+	.byte 0xFA
 	cmp r0, #7
 	bne _0804F150
 	mov r1, r8
@@ -17172,7 +16098,9 @@ _0804F158:
 	adds r0, r4, #0
 	movs r1, #3
 	movs r2, #0
-	bl ObjectSetFields34And36
+	.2byte 0xF7D9
+	.byte 0x00
+	.byte 0xF9
 	movs r2, #171
 	lsls r2, r2, #1
 	adds r0, r7, r2
@@ -17196,17 +16124,17 @@ _0804F19C:
 	bge _0804F19C
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectSetState1
-	adds r0, r7, #0
+	.2byte 0xF7D9
+	.4byte 0x1C38F87D
 	movs r1, #1
-	bl ObjectSetFlag2
-	adds r0, r7, #0
+	.2byte 0xF7D9
+	.4byte 0x1C38F8C9
 	movs r1, #1
-	bl ObjectSetFlag400
-	movs r0, #4
+	.2byte 0xF7D9
+	.4byte 0x2004F8AD
 	movs r1, #210
-	bl StartIndexedSong
-	movs r0, #32
+	.2byte 0xF7B6
+	.4byte 0x2020FEC1
 	mov r3, r10
 	strh r0, [r3, #14]
 	.global _0804F1D8
@@ -17237,7 +16165,9 @@ _0804F1D8:
 	movs r3, #0
 	ldrsh r1, [r0, r3]
 	movs r0, #4
-	bl StartIndexedSong
+	.2byte 0xF7B6
+	.byte 0xA2
+	.byte 0xFE
 	movs r0, #32
 	mov r1, r10
 	strh r0, [r1, #14]
@@ -17264,7 +16194,9 @@ _0804F234:
 	lsls r3, r3, #1
 	adds r4, r7, r3
 	ldr r0, [r4, #0]
-	bl RuntimeActorGetField352
+	.2byte 0xF7BA
+	.byte 0x1C
+	.byte 0xFE
 	adds r3, r0, #0
 	ldr r4, [r4, #0]
 	movs r1, #162
@@ -17338,8 +16270,8 @@ sub_0804F284:
 	movs r3, #0
 	ldrsh r1, [r1, r3]
 	movs r0, #5
-	bl StartIndexedSong
-	movs r0, #1
+	.2byte 0xF7B6
+	.4byte 0x2001FE4F
 	mov r8, r0
 	movs r6, #0
 	movs r1, #164
@@ -17356,21 +16288,29 @@ _0804F2C6:
 	beq _0804F300
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectSetFlag2
+	.2byte 0xF7D9
+	.byte 0x3E
+	.byte 0xF8
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectSetState1
+	.2byte 0xF7D8
+	.byte 0xEA
+	.byte 0xFF
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectSetFlag400
+	.2byte 0xF7D9
+	.byte 0x1E
+	.byte 0xF8
 	ldr r0, [r5, #0]
 	adds r1, r6, #0
-	bl RuntimeObjectGetField1A
+	.2byte 0xF7BB
+	.byte 0xA6
+	.byte 0xF8
 	strh r0, [r4, #28]
 	ldr r0, [r5, #0]
 	adds r1, r6, #0
-	bl RuntimeObjectGetField1E
-	subs r0, #24
+	.2byte 0xF7BB
+	.4byte 0x3818F8B9
 	strh r0, [r4, #30]
 	adds r4, #64
 	.global _0804F300
@@ -17466,7 +16406,9 @@ _0804F37C:
 	.global _0804F398
 _0804F398:
 	mov r0, r10
-	bl FinishTask
+	.2byte 0xF02B
+	.byte 0x07
+	.byte 0xFA
 	.global _0804F39E
 _0804F39E:
 	movs r1, #173
@@ -17481,19 +16423,23 @@ sub_0804F3A4:
 	ldrsh r0, [r0, r2]
 	cmp r0, #0
 	beq _0804F3CE
-	bl Random
+	.2byte 0xF02A
+	.byte 0x20
+	.byte 0xFF
 	movs r4, #3
 	ands r0, r4
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateSetField4246
-	bl Random
-	ands r0, r4
+	.2byte 0xF7B7
+	.4byte 0xF02AFC93
+	.4byte 0x4020FF17
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateSetField4248
+	.2byte 0xF7B7
+	.byte 0xA9
+	.byte 0xFC
 	.global _0804F3CE
 _0804F3CE:
 	movs r3, #160
@@ -17533,142 +16479,16 @@ _0804F3F8:
 	pop {r0}
 	bx r0
 
-	.thumb_func
-	.thumb
-	.global sub_0804F408
-sub_0804F408:
-	push {r4, lr}
-	sub sp, #4
-	movs r4, #0
-	str r4, [sp, #0]
-	bl sub_0804F444
-	add sp, #4
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04F408..04F41C is decompiled as BattleMode4F40(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804F41C
-sub_0804F41C:
-	push {r4, lr}
-	sub sp, #4
-	movs r4, #1
-	str r4, [sp, #0]
-	bl sub_0804F444
-	add sp, #4
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04F41C..04F430 is decompiled as BattleMode4F41(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804F430
-sub_0804F430:
-	push {r4, lr}
-	sub sp, #4
-	movs r4, #2
-	str r4, [sp, #0]
-	bl sub_0804F444
-	add sp, #4
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 04F430..04F444 is decompiled as BattleMode4F42(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804F444
-sub_0804F444:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r8
-	push {r7}
-	sub sp, #4
-	adds r5, r0, #0
-	adds r6, r1, #0
-	mov r8, r2
-	adds r4, r3, #0
-	ldr r0, [sp, #28]
-	lsls r0, r0, #16
-	asrs r7, r0, #16
-	ldr r0, _0804F488
-	lsls r1, r5, #5
-	ldr r0, [r0, #0]
-	adds r0, r0, r1
-	lsls r1, r6, #4
-	adds r0, r0, r1
-	ldr r1, _0804F48C
-	movs r2, #196
-	str r2, [sp, #0]
-	movs r2, #0
-	bl CreateTask
-	adds r2, r0, #0
-	cmp r2, #0
-	bne _0804F490
-	cmp r4, #0
-	beq _0804F482
-	movs r0, #1
-	negs r0, r0
-	str r0, [r4, #0]
-	.global _0804F482
-_0804F482:
-	movs r0, #0
-	b _0804F4C6
-	.byte 0x00
-	.byte 0x00
-	.global _0804F488
-_0804F488:
-	.4byte 0x03004020  @ IWRAM+0x4020
-	.global _0804F48C
-_0804F48C:
-	.4byte 0x0804F4D5  @ ROM+0x4F4D5
-	.global _0804F490
-_0804F490:
-	adds r0, r2, #0
-	adds r0, #160
-	str r5, [r0, #0]
-	adds r0, #4
-	str r6, [r0, #0]
-	adds r0, #4
-	movs r1, #0
-	cmp r5, #0
-	bne _0804F4A4
-	movs r1, #1
-	.global _0804F4A4
-_0804F4A4:
-	str r1, [r0, #0]
-	adds r0, r2, #0
-	adds r0, #220
-	mov r1, r8
-	str r1, [r0, #0]
-	subs r0, #6
+@ 04F444..04F4D4 is decompiled as CreateBattleModeTask4F4(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0804F4B0
-sub_0804F4B0:
-	strh r7, [r0, #0]
-	adds r1, r2, #0
-	adds r1, #224
-	movs r3, #1
-	negs r3, r3
-	adds r0, r1, #0
-	.global _0804F4BC
-_0804F4BC:
-	str r3, [r0, #0]
-	subs r0, #4
-	cmp r0, r1
-	bge _0804F4BC
-	adds r0, r2, #0
-	.global _0804F4C6
-_0804F4C6:
-	add sp, #4
-	pop {r3}
-	mov r8, r3
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+	.section .rom.0004F4D4, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -17837,7 +16657,9 @@ _0804F5C0:
 	adds r2, #132
 	str r2, [sp, #40]
 	ldr r1, [r2, #0]
-	bl RuntimeObjectGetField1A
+	.2byte 0xF7BA
+	.byte 0x36
+	.byte 0xFF
 	movs r3, #144
 	adds r3, r3, r7
 	mov r9, r3
@@ -17846,7 +16668,9 @@ _0804F5C0:
 	ldr r0, [r4, #0]
 	ldr r5, [sp, #40]
 	ldr r1, [r5, #0]
-	bl RuntimeObjectGetField1E
+	.2byte 0xF7BA
+	.byte 0x44
+	.byte 0xFF
 	movs r1, #146
 	adds r1, r1, r7
 	mov r8, r1
@@ -17866,14 +16690,18 @@ _0804F5C0:
 	str r1, [r5, #0]
 	ldr r2, [sp, #44]
 	ldr r0, [r2, #0]
-	bl RuntimeObjectGetField1A
+	.2byte 0xF7BA
+	.byte 0x16
+	.byte 0xFF
 	adds r1, r7, #0
 	adds r1, #148
 	strh r0, [r1, #0]
 	ldr r3, [sp, #44]
 	ldr r0, [r3, #0]
 	ldr r1, [r5, #0]
-	bl RuntimeObjectGetField1E
+	.2byte 0xF7BA
+	.byte 0x26
+	.byte 0xFF
 	adds r1, r7, #0
 	adds r1, #150
 	strh r0, [r1, #0]
@@ -17896,8 +16724,8 @@ sub_0804F630:
 	adds r0, r7, #0
 	movs r1, #2
 	movs r2, #1
-	bl ObjectSetFields34And36
-	adds r0, r7, #0
+	.2byte 0xF7D8
+	.4byte 0x1C38FE9F
 	adds r0, #50
 	movs r4, #1
 	strb r4, [r0, #0]
@@ -17924,13 +16752,13 @@ sub_0804F668:
 	ldr r0, [sp, #68]
 	movs r1, #3
 	movs r2, #0
-	bl ObjectSetFields34And36
-	mov r5, r10
+	.2byte 0xF7D8
+	.4byte 0x4655FE85
 	ldr r0, [r5, #0]
 	ldr r2, [sp, #40]
 	ldr r1, [r2, #0]
-	bl RuntimeObjectGetField36
-	ldr r3, [sp, #40]
+	.2byte 0xF7BB
+	.4byte 0x9B0AF823
 	str r3, [sp, #72]
 	mov r1, r9
 	mov r2, r8
@@ -17975,8 +16803,8 @@ _0804F6AE:
 	strh r0, [r1, #0]
 	add r1, sp, #32
 	add r0, sp, #28
-	bl GameStateGetField424C50
-	ldr r0, [sp, #28]
+	.2byte 0xF7B7
+	.4byte 0x9807FBA3
 	asrs r0, r0, #16
 	adds r3, r7, #0
 	adds r3, #152
@@ -18021,8 +16849,8 @@ _0804F6AE:
 	movs r3, #0
 	bl sub_08003AE4
 	movs r0, #0
-	bl RuntimeSetFieldE48
-	movs r0, #16
+	.2byte 0xF7BA
+	.4byte 0x2010FD03
 	ldr r5, [sp, #36]
 	strh r0, [r5, #14]
 	str r6, [sp, #76]
@@ -18044,8 +16872,8 @@ _0804F742:
 _0804F75A:
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectSetFlag2
-	ldr r0, _0804F7DC
+	.2byte 0xF7D8
+	.4byte 0x481EFDF9
 	mov r2, r10
 	ldr r1, [r2, #0]
 	lsls r1, r1, #5
@@ -18247,8 +17075,8 @@ sub_0804F8A4:
 	lsrs r0, r0, #20
 	strh r0, [r7, #42]
 	movs r0, #142
-	bl SoundSongStartU16
-	movs r0, #48
+	.2byte 0xF7B6
+	.4byte 0x2030FAED
 	ldr r5, [sp, #36]
 	strh r0, [r5, #14]
 	b _0804FB3C
@@ -18304,10 +17132,12 @@ _0804F8D0:
 _0804F910:
 	adds r0, r7, #0
 	movs r1, #0
-	bl ObjectSetFlag2
+	.2byte 0xF7D8
+	.byte 0x1E
+	.byte 0xFD
 	movs r0, #201
-	bl SoundSongStartU16
-	ldrh r1, [r7, #28]
+	.2byte 0xF7B6
+	.4byte 0x8BB9FABD
 	adds r0, r7, #0
 	adds r0, #92
 	strh r1, [r0, #0]
@@ -18387,17 +17217,19 @@ _0804F986:
 	.global sub_0804F98C
 sub_0804F98C:
 	movs r1, #1
-	bl ObjectSetFlag2
-	adds r0, r4, #0
+	.2byte 0xF7D8
+	.4byte 0x1C20FCE1
 	movs r1, #1
-	bl ObjectSetState1
-	adds r0, r4, #0
+	.2byte 0xF7D8
+	.4byte 0x1C20FC8D
 	movs r1, #1
-	bl ObjectSetFlag400
-	adds r5, r7, #0
+	.2byte 0xF7D8
+	.4byte 0x1C3DFCC1
 	adds r5, #128
 	ldr r0, [r5, #0]
-	bl RuntimeActorGetField352
+	.2byte 0xF7BA
+	.byte 0x66
+	.byte 0xFA
 	mov r9, r0
 	ldr r0, [r5, #0]
 	adds r1, r7, #0
@@ -18592,7 +17424,9 @@ _0804FAE4:
 	.global _0804FAEA
 _0804FAEA:
 	movs r0, #1
-	bl RuntimeSetFieldE48
+	.2byte 0xF7BA
+	.byte 0x28
+	.byte 0xFB
 	adds r0, r7, #0
 	bl sub_0802824C
 	adds r4, r7, #0
@@ -18622,7 +17456,9 @@ sub_0804FB0C:
 	.global _0804FB1E
 _0804FB1E:
 	ldr r0, [sp, #36]
-	bl FinishTask
+	.2byte 0xF02A
+	.byte 0x44
+	.byte 0xFE
 	movs r6, #128
 	adds r6, r6, r7
 	mov r10, r6
@@ -18658,8 +17494,8 @@ sub_0804FB52:
 	ldrsh r0, [r1, r2]
 	cmp r0, #0
 	beq _0804FB7C
-	bl Random
-	movs r5, #3
+	.2byte 0xF02A
+	.4byte 0x2503FB49
 
 	.thumb_func
 	.thumb
@@ -18674,7 +17510,9 @@ sub_0804FB62:
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateSetField4246
+	.2byte 0xF7B7
+	.byte 0xBC
+	.byte 0xF8
 	.2byte 0xF02A
 
 	.thumb_func
@@ -18686,7 +17524,9 @@ sub_0804FB6E:
 	subs r0, #2
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateSetField4248
+	.2byte 0xF7B7
+	.byte 0xD2
+	.byte 0xF8
 	.global _0804FB7C
 _0804FB7C:
 	mov r3, r10
@@ -18728,7 +17568,9 @@ sub_0804FBA0:
 	movs r2, #252
 	str r2, [sp, #0]
 	movs r2, #0
-	bl CreateTask
+	.2byte 0xF02A
+	.byte 0xDC
+	.byte 0xFD
 	adds r2, r0, #0
 	cmp r2, #0
 	bne _0804FBE0
@@ -19047,14 +17889,18 @@ _0804FD74:
 	adds r1, r1, r7
 	mov r9, r1
 	ldr r1, [r1, #0]
-	bl RuntimeObjectGetField1A
+	.2byte 0xF7BA
+	.byte 0x5C
+	.byte 0xFB
 	adds r4, r7, #0
 	adds r4, #208
 	strh r0, [r4, #0]
 	ldr r0, [r5, #0]
 	mov r2, r9
 	ldr r1, [r2, #0]
-	bl RuntimeObjectGetField1E
+	.2byte 0xF7BA
+	.byte 0x6C
+	.byte 0xFB
 	adds r1, r7, #0
 	adds r1, #210
 	strh r0, [r1, #0]
@@ -19071,15 +17917,15 @@ _0804FD74:
 	adds r5, #204
 	str r1, [r5, #0]
 	ldr r0, [r4, #0]
-	bl RuntimeObjectGetField1A
-	movs r1, #212
+	.2byte 0xF7BA
+	.4byte 0x21D4FB41
 	adds r1, r1, r7
 	mov r8, r1
 	strh r0, [r1, #0]
 	ldr r0, [r4, #0]
 	ldr r1, [r5, #0]
-	bl RuntimeObjectGetField1E
-	adds r4, #14
+	.2byte 0xF7BA
+	.4byte 0x340EFB51
 	strh r0, [r4, #0]
 	adds r0, r7, #0
 	bl ObjectInit
@@ -19092,7 +17938,9 @@ _0804FD74:
 	adds r0, r7, #0
 	movs r1, #3
 	movs r2, #2
-	bl ObjectSetFields34And36
+	.2byte 0xF7D8
+	.byte 0xCE
+	.byte 0xFA
 	ldr r0, [sp, #40]
 	bl ObjectInit
 	ldr r2, _0804FE94
@@ -19104,11 +17952,11 @@ _0804FD74:
 	ldr r0, [sp, #40]
 	movs r1, #3
 	movs r2, #1
-	bl ObjectSetFields34And36
-	ldr r0, [sp, #40]
+	.2byte 0xF7D8
+	.4byte 0x980AFABF
 	movs r1, #1
-	bl ObjectSetFlag400
-	ldr r0, [sp, #44]
+	.2byte 0xF7D8
+	.4byte 0x980BFA89
 	bl ObjectInit
 	ldr r2, _0804FE98
 	str r6, [sp, #0]
@@ -19119,10 +17967,14 @@ _0804FD74:
 	ldr r0, [sp, #44]
 	movs r1, #3
 	movs r2, #0
-	bl ObjectSetFields34And36
+	.2byte 0xF7D8
+	.byte 0xAC
+	.byte 0xFA
 	ldr r0, [sp, #44]
 	movs r1, #1
-	bl ObjectSetFlag400
+	.2byte 0xF7D8
+	.byte 0x76
+	.byte 0xFA
 	mov r2, r8
 	ldrh r1, [r2, #0]
 	adds r0, r7, #0
@@ -19207,7 +18059,9 @@ _0804FEC0:
 	adds r5, r1, #0
 	add r1, sp, #32
 	add r0, sp, #28
-	bl GameStateGetField424C50
+	.2byte 0xF7B6
+	.byte 0xA8
+	.byte 0xFF
 	ldr r0, [sp, #28]
 	asrs r0, r0, #16
 
@@ -19263,8 +18117,8 @@ sub_0804FF10:
 	movs r2, #15
 	bl sub_08003AE4
 	movs r0, #0
-	bl RuntimeSetFieldE48
-	movs r0, #1
+	.2byte 0xF7BA
+	.4byte 0x2001F90D
 	ldr r5, [sp, #36]
 	strh r0, [r5, #14]
 	mov r9, r4
@@ -19284,8 +18138,8 @@ _0804FF2E:
 _0804FF42:
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectSetFlag2
-	adds r0, r7, #0
+	.2byte 0xF7D8
+	.4byte 0x1C38FA05
 	adds r0, #214
 	ldrh r0, [r0, #0]
 	subs r0, #24
@@ -19340,8 +18194,8 @@ sub_0804FF78:
 	movs r3, #0
 	bl sub_08003AE4
 	movs r0, #150
-	bl SoundSongStartU16
-	mov r2, r8
+	.2byte 0xF7B5
+	.4byte 0x4642FF77
 	strh r4, [r2, #0]
 	movs r0, #16
 	ldr r3, [sp, #36]
@@ -19401,7 +18255,9 @@ _0804FFE4:
 _0804FFF8:
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectSetState1
+	.2byte 0xF7D8
+	.byte 0x5A
+	.byte 0xF9
 	movs r0, #48
 	b _080501B4
 	.global _08050004
@@ -19414,13 +18270,19 @@ _08050004:
 _0805000C:
 	ldr r0, [sp, #40]
 	movs r1, #1
-	bl ObjectSetFlag2
+	.2byte 0xF7D8
+	.byte 0xA0
+	.byte 0xF9
 	ldr r0, [sp, #40]
 	movs r1, #1
-	bl ObjectSetState1
+	.2byte 0xF7D8
+	.byte 0x4C
+	.byte 0xF9
 	mov r2, r10
 	ldr r0, [r2, #0]
-	bl RuntimeActorGetField352
+	.2byte 0xF7B9
+	.byte 0x2A
+	.byte 0xFF
 	adds r3, r0, #0
 	mov r4, r10
 	ldr r0, [r4, #0]
@@ -19442,8 +18304,8 @@ _0805000C:
 sub_08050040:
 	bl sub_0800AA10
 	movs r0, #201
-	bl SoundSongStartU16
-	movs r0, #1
+	.2byte 0xF7B5
+	.4byte 0x2001FF27
 	mov r6, r8
 	strh r0, [r6, #0]
 	movs r0, #49

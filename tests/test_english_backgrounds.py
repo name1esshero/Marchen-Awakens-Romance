@@ -11,10 +11,18 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'tools'))
 import english_backgrounds as bg
 import gfx
+import graphics_catalog
 import lz77
 import mapped_images
 
 class EnglishBackgroundTests(unittest.TestCase):
+    def test_catalog_exposes_active_english_overrides(self):
+        graphics_catalog.main([])
+        page = (ROOT/'graphics/backgrounds/index.html').read_text()
+        for name in bg.NAMES:
+            self.assertIn(name + '_en.png', page)
+        self.assertEqual(page.count('>English override</a>'), len(bg.NAMES))
+
     def test_authored_pixels_survive_compression_and_map_repacking(self):
         assets = {e.get('archive_name'): e for e in json.loads((ROOT/'assets.json').read_text())}
         for name in bg.NAMES:

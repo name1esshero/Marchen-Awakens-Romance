@@ -23,6 +23,14 @@ SECTIONS
 
     __rom_end = .;
 
+    /* newlib's semihosting state is the first recovered static-RAM block.
+     * NOLOAD keeps it out of the cartridge while retaining its original
+     * addresses for the source-compiled syscall implementation. */
+    .bss 0x03004F68 (NOLOAD) :
+    {
+        build/src/libc/syscalls.o(.bss)
+    }
+
     /DISCARD/ : { *(.comment) *(.ARM.attributes) }
 }
 

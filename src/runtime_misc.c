@@ -48,11 +48,6 @@ AT("00080600") void *RuntimeGetPointer6120Field800(void)
  return *(void **)(*(u8 **)0x03006120+0x800);
 }
 
-AT("00085268") const void *RuntimeGetTable1AC8C0(u32 unused)
-{
- return (const void *)0x081AC8C0;
-}
-
 AT("0002ADC8") void InputRepeatInit(struct InputRepeatState *state,u32 mask)
 {
  state->counter=0;

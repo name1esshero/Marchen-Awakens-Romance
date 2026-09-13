@@ -10,6 +10,8 @@ extern void sub_0807915C(struct SoundPlayer *, const void *);
 extern void sub_08078644(struct SoundPlayer *, struct SoundTrack *);
 extern void sub_080789CC(struct SoundPlayer *,u16);
 extern void sub_08079240(struct SoundPlayer *);
+extern u8 gIwramBase[];
+extern u8 gSoundIrqModeOffset[];
 
 /* Two driver-owned callbacks installed in IWRAM.  agbcc emits the shared
  * _call_via_r1 trampoline for these indirect calls. */
@@ -33,6 +35,29 @@ AT("000010C8") void DisableDma1AndUpdateSound(void)
  *(volatile u16 *)0x0400010A=0;
  *ime=1;
  SoundUpdate();
+}
+
+/* Service the sound IRQ/DMA path. Before the mixer is enabled, this programs
+ * DMA1's control halves; afterwards the same IRQ acknowledgement is followed
+ * by a mixer update. */
+AT("00001158") void SoundIrqService(void)
+{
+    u8 *base = gIwramBase;
+    u32 offset = (u32)gSoundIrqModeOffset;
+    s8 enabled = *(volatile s8 *)(base + offset);
+
+    if (enabled == 0) {
+        *(volatile u16 *)0x04000208 = 0;
+        *(volatile u16 *)0x04000108 = 32;
+        *(volatile u16 *)0x0400010A = 192;
+        *(volatile u16 *)0x03007FF8 |= 1;
+        *(volatile u16 *)0x04000208 = 1;
+    } else {
+        *(volatile u16 *)0x04000208 = 0;
+        *(volatile u16 *)0x03007FF8 |= 1;
+        *(volatile u16 *)0x04000208 = 1;
+        SoundUpdate();
+    }
 }
 AT("00078A64")
 void SoundUpdate(void)

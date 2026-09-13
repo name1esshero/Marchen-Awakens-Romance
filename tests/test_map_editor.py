@@ -57,6 +57,21 @@ class MapCodecTests(unittest.TestCase):
                 document=dict(version=1,source_sha256=hashlib.sha256(original).hexdigest(),arguments={})
                 self.assertEqual(script_events.apply(original,original,document),original)
 
+    def test_script_analysis_exposes_field_and_sprite_calls(self):
+        project=Project(ROOT)
+        field=None;sprite=None
+        for name in project.scripts:
+            analysis=project.script_data(name)['analysis']
+            field=field or next((x for x in analysis['field_loads'] if isinstance(x['destination'],str)),None)
+            sprite=sprite or next((x for x in analysis['sprite_resources'] if isinstance(x['resource'],str)),None)
+            if field and sprite:break
+        self.assertTrue(field['destination'].startswith('MAP'))
+        self.assertIn(sprite['operation'],('SprInit','SprChg'))
+        self.assertTrue(sprite['resource'])
+        catalog=project.catalog()
+        self.assertEqual(catalog['script_totals']['field_loads'],113)
+        self.assertTrue(any(m['incoming_field_loads'] for m in catalog['maps']))
+
     def test_tiles_attributes_preserve_every_other_byte(self):
         blob=(ROOT/'maps/nfp/MAP01_A.KMP.bin').read_bytes();doc=map_document(blob)
         doc['planes'][0]['entries'][0]^=0x400

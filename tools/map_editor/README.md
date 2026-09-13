@@ -29,6 +29,9 @@ named script. Filter native calls by name and edit supported signed integer
 arguments. Save writes `maps/editable/NAME.KMP.json` and, if selected,
 `maps/events/NAME.SPC.json`. These are tracked source inputs. The original KMP
 and SPC framing files remain the baseline; unknown fields are preserved.
+Read-only calls now display compiler-generated embedded string arguments. This
+makes `FldSet("MAP...", x, y)` and sprite resource setup visible while their
+variable-length strings remain protected from fixed-allocation edits.
 
 Run `make` or `make english` after saving. An intentionally edited ROM should
 differ from baserom. Without overrides, the default Japanese build must still
@@ -204,9 +207,13 @@ for the connection to NCD animation selection and camera-relative rendering.
 
 `SprChg` is now traced to matching C: it replaces an active sprite's named NCD
 resource, animation and frame while preserving its position. `SprInit` creates
-an object asynchronously and starts at frame zero. String-expression argument
-sequences remain read-only until the operand stack is decoded; the editor does
-not yet automatically display spawned sprites. See the runtime trace above.
+an object asynchronously and starts at frame zero. The symbolic operand decoder
+recovers embedded resources from most of these expression sequences while
+keeping dynamic IDs explicit. The editor API reports static `field_loads`,
+`sprite_resources`, `sprite_properties`, and `sprite_moves`;
+`maps/script_catalog.json` records the same data across every named script.
+These are possible call sites rather than executed branch state, so the
+viewport does not pretend that every recovered sprite is active.
 
 ### Tilesets versus map layers
 
@@ -247,7 +254,13 @@ keeps attributes editable as exact numeric values rather than guessing names.
 
 SprInit's native adapter (08011ECC) is now readable, byte-matching agbcc C. It forwards five script arguments to the creation task at 08010AEC with fixed arguments 1 and 0, returns 1, and leaves the result slot untouched. This does not yet make insertion of new script statements safe.
 
-Remaining prerequisites are creation-task initialization and lifetime, script branch/relocation rewriting, trigger dispatch rather than guessed tile attributes, and archive/scene registration for new KMP/KCG/KCL/SPC resources. The editor currently edits existing verified literal arguments; it cannot yet create/register a new map or attach an arbitrary script to a tile or sprite.
+`tools/script_assembler.py` now emits the verified bytecode subset and rebuilds
+FUNC relocations from readable JSON; `make script-sources` compiles all source
+files under `scripts/source/`. Remaining prerequisites are lossless rewriting
+of arbitrary existing branch graphs, trigger dispatch rather than guessed tile
+attributes, and archive/scene registration for new KMP/KCG/KCL/SPC resources.
+The editor currently edits existing verified literal arguments; it cannot yet
+create/register a new map or attach an arbitrary script to a tile or sprite.
 
 ### Sprite creation worker (08010B6C)
 

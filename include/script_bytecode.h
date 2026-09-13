@@ -4,7 +4,10 @@
 #include "gba/types.h"
 
 struct ScriptBytecodeVm {
-    u8 unknown00[0x30];
+    u8 unknown00[0x10];
+    u16 firstNamedResourceCount;
+    u16 secondNamedResourceCount;
+    u8 unknown14[0x1C];
     u8 *bytecode;
     u8 unknown34[4];
     void *table38;

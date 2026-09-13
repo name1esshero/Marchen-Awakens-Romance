@@ -23,17 +23,68 @@ extern u32 Random(void);
 extern s32 sub_08080E4C(u32 random, u32 count);
 extern void sub_0806F120(s32 x, s32 y, s32 a, s32 b);
 extern s32 GameStateGetField42BA(void);
-extern void sub_0806F620(s32 value);
+extern void CreateEncounterTransitionTask(s32 value);
 extern void sub_080577C0(s32 value);
 extern s32 sub_080577E4(void);
 extern void sub_08057800(s32 value);
 extern s32 sub_08057844(void);
 extern u8 gIwramBase[];
 extern u8 gMapGenerationRootOffset[];
+extern void *HeapAlloc(void *heap, u32 size);
+extern const char *ItemGetName(s32 id);
+extern const char *sub_08057108(s32 id);
+extern char *strcpy(char *destination, const char *source);
+extern s32 sub_08055EC8(s32 id);
+extern void BitSet(void *bits, s32 index, s32 value);
 #define RUNTIME_STATE ({ \
     void **root = (void **)(gIwramBase + (u32)gMapGenerationRootOffset); \
     (u8 *)*root; \
 })
+
+/* Initialize the eight friend ARM slots and mark every valid ARM definition
+ * as owned. The clear before each assignment is behavior present in the ROM,
+ * even though the following halfword store immediately replaces it. */
+AT("00012B98") s32 ScriptNativeSetFriendArms(u32 count, const s32 *args,
+                                              s32 *result)
+{
+    register s32 i asm("r6") = 0;
+    register u8 **root asm("r5") = (u8 **)0x03003FDC;
+    s32 friendOffset = 0x3880;
+    register const s32 *input asm("r4") = args;
+    register const s16 *definitions asm("r9") = (const s16 *)0x081ACC90;
+    register s32 invalidDefinition asm("r8") = 444;
+
+    do {
+        register s32 byteOffset asm("r2");
+        register u8 *firstSlot asm("r1");
+        register u8 *slot asm("r0");
+        s32 definitionIndex;
+        s32 ownershipBit;
+
+        firstSlot = *root;
+        byteOffset = i << 1;
+        firstSlot += friendOffset;
+        firstSlot += byteOffset;
+        *(u16 *)firstSlot = 0;
+
+        slot = *root;
+        slot += friendOffset;
+        slot += byteOffset;
+        *(u16 *)slot = *input;
+
+        slot = *root;
+        slot += friendOffset;
+        slot += byteOffset;
+        definitionIndex = (s16)sub_08055EC8(*(s16 *)slot);
+        ownershipBit = definitions[definitionIndex];
+        if (ownershipBit != invalidDefinition)
+            BitSet(*root + 0x26F8, ownershipBit, 1);
+
+        input++;
+        i++;
+    } while (i <= 7);
+    return 1;
+}
 
 AT("00012D98") s32 ScriptNativeQueryResourceId(u32 count, const s32 *args, s32 *result)
 {
@@ -42,30 +93,47 @@ AT("00012D98") s32 ScriptNativeQueryResourceId(u32 count, const s32 *args, s32 *
 }
 AT("00012D98") const u8 ScriptNativeQueryResourceIdTail[2] = {0};
 
-#ifdef NONMATCHING
-/* Decoded, but agbcc currently chooses different temporary registers and
- * literal-pool positions than the original for these two handlers. */
 AT("00012DB4") s32 ScriptNativeQueryModeResource(u32 count, const s32 *args, s32 *result)
 {
+    register s32 *out asm("r4") = result;
+    register const s16 *shortArgs asm("r1") = (const s16 *)args;
+    register u8 *base asm("r0");
+    register u32 offset asm("r2");
     s32 value;
-    if (!RUNTIME_STATE[0x38B8])
-        value = sub_08056984((s16)args[0]);
+
+    base = gIwramBase;
+    offset = (u32)gMapGenerationRootOffset;
+    base += offset;
+    base = *(u8 **)base;
+    offset = 0x38B8;
+    base += offset;
+    if (*(u8 *)base == 0)
+        value = sub_08056984(shortArgs[0]);
     else
-        value = sub_08056EE0((s16)args[0]);
-    *result = (s16)value;
+        value = sub_08056EE0(shortArgs[0]);
+    *out = (s16)value;
     return 1;
 }
 AT("00012DB4") const u8 ScriptNativeQueryModeResourceTail[2] = {0};
 
 AT("00012DF8") s32 ScriptNativeSetModeResource(u32 count, const s32 *args, s32 *result)
 {
-    if (!RUNTIME_STATE[0x38B8])
-        sub_08056A8C((s16)args[0], 1);
+    register const s16 *shortArgs asm("r1") = (const s16 *)args;
+    register u8 *base asm("r0");
+    register u32 offset asm("r2");
+
+    base = gIwramBase;
+    offset = (u32)gMapGenerationRootOffset;
+    base += offset;
+    base = *(u8 **)base;
+    offset = 0x38B8;
+    base += offset;
+    if (*(u8 *)base == 0)
+        sub_08056A8C(shortArgs[0], 1);
     else
-        sub_08056A8C((s16)args[0], 2);
+        sub_08056A8C(shortArgs[0], 2);
     return 1;
 }
-#endif
 
 AT("00012E34") s32 ScriptNativeQueryResourceState(u32 count, const s32 *args, s32 *result)
 {
@@ -98,6 +166,27 @@ AT("00012E64") s32 ScriptNativeUseResource(u32 count, const s32 *args, s32 *resu
     return 1;
 }
 
+AT("00012EA8") s32 ScriptNativeGetResourceName(u32 count, const s32 *args,
+                                                char **result)
+{
+    u8 *iwram = gIwramBase;
+    u32 rootOffset = (u32)gMapGenerationRootOffset;
+    u8 *state = *(u8 **)(iwram + rootOffset);
+    rootOffset -= 172;
+    {
+    void *owner = *(void **)(state + rootOffset);
+    void *heap = *(void **)owner;
+    char *name = HeapAlloc(heap, 34);
+    if (args[1] == 0)
+        strcpy(name, ItemGetName((s16)args[0]));
+    else
+        strcpy(name, sub_08057108((s16)args[0]));
+    *result = name;
+    return 1;
+    }
+}
+AT("00012EA8") const u8 ScriptNativeGetResourceNameTail[2] = {0};
+
 AT("00012F04") s32 ScriptNativeResetEncounterState(u32 count, const s32 *args, s32 *result)
 {
     sub_0806EFCC(0);
@@ -127,7 +216,7 @@ AT("00012F54") const u8 ScriptNativeGetField42BATail[2] = {0};
 
 AT("00012F6C") s32 ScriptNativeStartEncounter(u32 count, const s32 *args, s32 *result)
 {
-    sub_0806F620(0);
+    CreateEncounterTransitionTask(0);
     return 0x7FFF;
 }
 

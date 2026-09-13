@@ -16,6 +16,35 @@ import thumb as T
 ROM_BASE = 0x08000000
 
 
+def load_recovered_entries(code_limit):
+    """Return function entries proven by later reverse-engineering work.
+
+    Recursive descent cannot reach callbacks that are only selected through
+    runtime state.  Matching C ranges and the decoded native-command registry
+    are stronger evidence than a guessed prologue, so feed both back into the
+    next analysis pass.
+    """
+    entries = {}
+    sources = (("src/decompiled.json", "addr"),
+               ("scripts/native_commands.json", "handler"))
+    for path, key in sources:
+        try:
+            records = json.load(open(path))
+        except OSError:
+            continue
+        for record in records:
+            value = record.get(key)
+            if not value:
+                continue
+            try:
+                address = int(value, 16) & ~1
+            except (TypeError, ValueError):
+                continue
+            if ROM_BASE + 0xC0 <= address < ROM_BASE + code_limit:
+                entries[address] = record.get("mode", "thumb")
+    return sorted(entries.items())
+
+
 class Analyzer:
     def __init__(self, rom):
         self.rom = rom
@@ -153,6 +182,10 @@ def main():
     else:
         entries.append((v, "arm"))
     entries.append((0x08000104, "arm"))     # interrupt dispatcher
+
+    recovered = load_recovered_entries(code_limit)
+    entries.extend(recovered)
+    print("recovered seeds : %d" % len(recovered))
 
     az.run(entries, code_limit)
 

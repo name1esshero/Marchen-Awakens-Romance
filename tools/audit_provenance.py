@@ -23,7 +23,8 @@ def main():
         offset=int(e['addr'],16)-0x08000000
         addr,size,obj=providers[offset]
         expected='build/'+str(Path(e['file']).with_suffix('.o'))
-        if addr!=offset+0x08000000 or size!=e['size'] or obj!=expected:
+        provider_size=e.get('provider_size', e['size'])
+        if addr!=offset+0x08000000 or size!=provider_size or obj!=expected:
             raise ValueError('Unexpected linked provider: '+e['name'])
         kind='inline_assembly_wrapper' if e['file']=='src/bios_calls.c' else 'compiled_c'
         ranges.append(dict(e,provider=obj,implementation=kind,byte_matching=rom[offset:offset+size]==base[offset:offset+size]))
@@ -33,7 +34,12 @@ def main():
     region_start,region_end=0xC0,0x1B0000
     pcm_bytes=sum(max(0,min(region_end,e['rom_offset']+e['size'])-max(region_start,e['rom_offset'])) for e in samples)
     region_bytes=region_end-region_start-pcm_bytes
-    c_bytes=sum(r['size'] for r in ranges if r['implementation']=='compiled_c')
+    # Count only the intersection with the stated measured region. Some
+    # source-compiled initialized data lives later in ROM and is still tracked
+    # in the provider list, but it must not inflate this percentage.
+    c_bytes=sum(max(0, min(region_end, int(r['addr'], 16) - 0x08000000 + r['size'])
+                       - max(region_start, int(r['addr'], 16) - 0x08000000))
+                for r in ranges if r['implementation']=='compiled_c')
     progress=dict(compiled_c_functions=sum(r['implementation']=='compiled_c' for r in ranges),
                   compiled_c_owned_bytes=c_bytes,
                   bios_wrapper_functions=sum(r['implementation']=='inline_assembly_wrapper' for r in ranges),

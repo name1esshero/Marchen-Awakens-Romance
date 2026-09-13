@@ -89,6 +89,14 @@ class Project:
         self.members={e['name']:e for e in read(self.root/'maps/nfp/manifest.json') if (e['name'].startswith('MAP') or e['name'] in scene_maps) and e['name'].endswith('.KMP')}
         self.assets={e['archive_name']:e for e in read(self.root/'assets.json') if e.get('archive_name')}
         self.scripts={e['name']:e for e in read(self.root/'scripts/nfp/manifest.json')}
+        catalog_path=self.root/'maps/script_catalog.json'
+        self.script_catalog=read(catalog_path) if catalog_path.exists() else {'scripts':[],'totals':{}}
+        self.incoming={}
+        for script in self.script_catalog['scripts']:
+            for link in script['field_loads']:
+                destination=link.get('destination')
+                if isinstance(destination,str):
+                    self.incoming.setdefault(destination+'.KMP',[]).append(dict(link,script=script['name']))
         self.unsupported={}
 
     def entry(self,name):
@@ -114,9 +122,9 @@ class Project:
         for name in sorted(self.members):
             try:
                 _,_,entry,doc=self.entry(name)
-                result.append(dict(name=name,width=doc['width'],height=doc['height'],tiles=entry['archive_name'],runtime_contexts=self.runtime_contexts(name)))
+                result.append(dict(name=name,width=doc['width'],height=doc['height'],tiles=entry['archive_name'],runtime_contexts=self.runtime_contexts(name),incoming_field_loads=self.incoming.get(name,[])))
             except (ValueError,KeyError,UnicodeError) as ex:self.unsupported[name]=str(ex)
-        return dict(maps=result,unsupported=self.unsupported,scripts=sorted(self.scripts))
+        return dict(maps=result,unsupported=self.unsupported,scripts=sorted(self.scripts),script_totals=self.script_catalog['totals'])
 
     def script_data(self,name):
         if name not in self.scripts:raise ValueError('Unknown script')
@@ -125,8 +133,9 @@ class Project:
         path=self.root/script_events.patch_path(name)
         doc=read(path) if path.exists() else dict(version=1,source_sha256=sha(original),arguments={})
         result=script_events.apply(blob,original,doc)
+        calls=script_events.calls(result)
         return dict(name=name,revision=sha(original+(self.root/e['text']).read_bytes()+json.dumps(doc,sort_keys=True).encode()),
-                    document=doc,calls=script_events.calls(result),
+                    document=doc,calls=calls,analysis=script_events.semantic_summary(calls),
                     text_path=e['text'])
 
     def load(self,name):

@@ -95,7 +95,14 @@ def write_code(rom, layout, force_literal=(), decompiled=()):
     sample_manifest = Path("sound/samples/manifest.json")
     samples = json.loads(sample_manifest.read_text()) if sample_manifest.exists() else []
     audio_ranges = [(e['rom_offset'], e['rom_offset']+e['size']) for e in samples]
-    em = emitter.Emitter(rom, layout, CODE_END, force_literal, audio_ranges)
+    # PC-relative instructions in opaque data can point into a range now
+    # supplied by C.  Tell the emitter about every source-owned hole so it
+    # preserves such halfwords literally instead of creating an assembler
+    # reference across independently linked sections.
+    source_ranges = [(start, end) for start, end, _name in decompiled
+                     if start < CODE_END]
+    em = emitter.Emitter(rom, layout, CODE_END, force_literal,
+                         audio_ranges + source_ranges)
     replacements = list(decompiled) + [(e['rom_offset'], e['rom_offset']+e['size'], e) for e in samples]
     replacements.sort(key=lambda e:e[0])
     assert all(a[1] <= b[0] for a,b in zip(replacements,replacements[1:])), 'Source ranges overlap'
@@ -160,7 +167,7 @@ def write_code(rom, layout, force_literal=(), decompiled=()):
     return files, em, linemaps
 
 
-def write_data(rom, gfx_manifest):
+def write_data(rom, gfx_manifest, decompiled=()):
     """Emit the non-code tail of the ROM, keeping graphics as separate files."""
     # Clear stale fragments: the region layout changes as more of the ROM is
     # identified, and a leftover .s from a previous split would be linked in
@@ -224,6 +231,17 @@ def write_data(rom, gfx_manifest):
     blocked = [b for b in blocked if not any(
         b[0] < a[1] and a[0] < b[1] for a in authoritative)]
     blocked.extend(authoritative)
+
+    # C can also own initialized tables in the non-code tail. Treat those
+    # ranges as holes in raw incbins, just as write_code does for functions.
+    # A C range must never silently carve bytes out of an editable asset.
+    data_c = [(start, end, None, "c") for start, end, _ in decompiled
+              if start >= CODE_END and start < ROM_END]
+    for start, end, _, _ in data_c:
+        if any(start < other_end and other_start < end
+               for other_start, other_end, _, _ in blocked):
+            raise ValueError("C-owned data overlaps an editable asset at %06X" % start)
+    blocked.extend(data_c)
     blocked.sort()
 
     regions = []          # (start, end, kind, path)
@@ -240,6 +258,8 @@ def write_data(rom, gfx_manifest):
 
     files = []
     for start, end, kind, path in regions:
+        if kind == "c":
+            continue
         # assets are staged into build/ by tools/build_assets.py so the
         # originals under graphics/ and scripts/ are never written to
         incpath = path
@@ -291,11 +311,11 @@ def main():
         force = [int(a, 16) for a in json.load(open(".analysis/force_literal.json"))]
     decompiled = load_decompiled()
     if decompiled:
-        print("C-provided functions: %d" % len(decompiled))
+        print("C-provided ranges: %d" % len(decompiled))
     code_files, em, linemaps = write_code(rom, layout, force, decompiled)
     with open(".analysis/linemap.json", "w") as f:
         json.dump(linemaps, f)
-    data_files, regions = write_data(rom, gfx)
+    data_files, regions = write_data(rom, gfx, decompiled)
 
     print("code files : %d" % len(code_files))
     print("data files : %d" % len(data_files))

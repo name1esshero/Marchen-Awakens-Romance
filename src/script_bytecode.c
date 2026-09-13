@@ -7,7 +7,7 @@
 
 extern s32 sub_08080BFC(s32 dividend, s32 divisor);
 extern s32 sub_08080C94(s32 dividend, s32 divisor);
-extern s32 sub_0807F1F8(void *record, s32 selector);
+extern s32 ScriptResourceSelectValueSlot(void *record, s32 selector);
 extern void HeapFree(void *heap, void *block);
 
 AT("0007F624") s32 *ScriptResolveOperand(u32 operand)
@@ -439,7 +439,7 @@ AT("0007FE10") s32 ScriptCmdReadContextField14(void)
     struct ScriptBytecodeRoot *root = gScriptBytecodeRoot;
     u32 offset = index * 8;
     offset += 20;
-    *destination=sub_0807F1F8((u8 *)root->context + offset,
+    *destination=ScriptResourceSelectValueSlot((u8 *)root->context + offset,
                               *destination);
     return 1;
 }
@@ -450,7 +450,7 @@ AT("0007FE44") s32 ScriptCmdReadContextField114(void)
     struct ScriptBytecodeRoot *root = gScriptBytecodeRoot;
     u32 offset = index * 8;
     offset += 276;
-    *destination=sub_0807F1F8((u8 *)root->context + offset,
+    *destination=ScriptResourceSelectValueSlot((u8 *)root->context + offset,
                               *destination);
     return 1;
 }
@@ -458,7 +458,7 @@ AT("0007FE7C") s32 ScriptCmdReadTable38Field(void)
 {
     u32 index=ScriptReadNextU8();
     s32 *destination=ScriptResolveOperand(ScriptReadNextU8());
-    *destination=sub_0807F1F8((u8 *)gScriptBytecodeVm->table38 + index*8,
+    *destination=ScriptResourceSelectValueSlot((u8 *)gScriptBytecodeVm->table38 + index*8,
                               *destination);
     return 1;
 }
@@ -467,7 +467,7 @@ AT("0007FEB0") s32 ScriptCmdReadTable3CField(void)
 {
     u32 index=ScriptReadNextU8();
     s32 *destination=ScriptResolveOperand(ScriptReadNextU8());
-    *destination=sub_0807F1F8((u8 *)gScriptBytecodeVm->table3C + index*8,
+    *destination=ScriptResourceSelectValueSlot((u8 *)gScriptBytecodeVm->table3C + index*8,
                               *destination);
     return 1;
 }

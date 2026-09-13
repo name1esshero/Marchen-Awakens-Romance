@@ -8410,7 +8410,7 @@ _081AC398:
 	movs r0, r0
 	movs r1, r0
 	lsls r0, r7, #1
-	adr r0, _081AC738
+	.inst.n 0xA0E0
 	lsrs r0, r1, #32
 	stmia r3!, {r5, r7}
 	lsrs r2, r3, #32
@@ -8429,7 +8429,7 @@ _081AC398:
 sub_081AC3CC:
 	movs r1, r0
 	lsls r0, r7, #1
-	adr r0, _081AC754
+	.inst.n 0xA0E0
 	lsrs r0, r1, #32
 	stmia r3!, {r2, r3, r4, r5, r7}
 	lsrs r2, r3, #32
@@ -8443,7 +8443,7 @@ sub_081AC3CC:
 	.2byte 0xB1CE
 	movs r1, r0
 	lsls r0, r7, #1
-	adr r0, _081AC770
+	.inst.n 0xA0E0
 	lsrs r0, r1, #32
 	stmia r3!, {r3, r4, r6, r7}
 	lsrs r2, r3, #32
@@ -8457,7 +8457,7 @@ sub_081AC3CC:
 	movs r0, r0
 	movs r1, r0
 	lsls r0, r7, #1
-	adr r0, _081AC78C
+	.inst.n 0xA0E0
 	lsrs r0, r1, #32
 	stmia r3!, {r2, r4, r5, r6, r7}
 	lsrs r2, r3, #32
@@ -8471,7 +8471,7 @@ sub_081AC3CC:
 	movs r0, r0
 	movs r1, r0
 	lsls r0, r7, #1
-	adr r0, _081AC7A8
+	.inst.n 0xA0E0  @ adr r0, _081AC7A8
 	lsrs r0, r1, #32
 	stmia r4!, {r4}
 	lsrs r2, r3, #32
@@ -8485,7 +8485,7 @@ sub_081AC3CC:
 	movs r0, r0
 	movs r1, r0
 	lsls r0, r7, #1
-	adr r0, _081AC7C4
+	.inst.n 0xA0E0  @ adr r0, _081AC7C4
 	lsrs r0, r1, #32
 	stmia r4!, {r2, r3, r5}
 	lsrs r2, r3, #32
@@ -8499,7 +8499,7 @@ sub_081AC3CC:
 	.2byte 0xB1CE
 	movs r1, r0
 	lsls r0, r7, #1
-	adr r0, _081AC7E0
+	.inst.n 0xA0E0  @ adr r0, _081AC7E0
 	lsrs r0, r1, #32
 	stmia r4!, {r3, r6}
 	lsrs r2, r3, #32
@@ -8509,9 +8509,9 @@ sub_081AC3CC:
 	lsls r5, r7, #14
 	strh r3, [r2, r7]
 	strh r4, [r7, #26]
-	ldr r1, _081AC7C4
+	.inst.n 0x49D4  @ ldr r1, _081AC7C4
 	strh r4, [r6, #26]
-	ldr r4, _081AC7C4
+	.inst.n 0x4CD3  @ ldr r4, _081AC7C4
 	strh r0, [r5, #26]
 	add r12, r10
 	strh r0, [r4, #26]
@@ -8534,7 +8534,7 @@ sub_081AC48C:
 	.2byte 0xB184
 	movs r1, r0
 	lsls r0, r7, #1
-	adr r0, _081AC81C
+	.inst.n 0xA0E0  @ adr r0, _081AC81C
 	lsrs r0, r1, #32
 	stmia r4!, {r2, r5, r6}
 	lsrs r2, r3, #32
@@ -8548,7 +8548,7 @@ sub_081AC48C:
 	movs r0, r0
 	movs r1, r0
 	lsls r0, r7, #1
-	adr r0, _081AC838
+	.inst.n 0xA0E0  @ adr r0, _081AC838
 	lsrs r0, r1, #32
 	stmia r4!, {r5, r7}
 	lsrs r2, r3, #32
@@ -8562,7 +8562,7 @@ sub_081AC48C:
 	.2byte 0xB1CE
 	movs r1, r0
 	lsls r0, r7, #1
-	adr r0, _081AC854
+	.inst.n 0xA0E0  @ adr r0, _081AC854
 	lsrs r0, r1, #32
 	stmia r4!, {r2, r3, r4, r5, r7}
 	lsrs r2, r3, #32
@@ -8576,7 +8576,7 @@ sub_081AC48C:
 	.2byte 0xB1CE
 	movs r1, r0
 	lsls r0, r7, #1
-	adr r0, _081AC870
+	.inst.n 0xA0E0  @ adr r0, _081AC870
 	lsrs r0, r1, #32
 	stmia r4!, {r3, r4, r6, r7}
 	lsrs r2, r3, #32
@@ -8592,7 +8592,7 @@ sub_081AC48C:
 	movs r0, r0
 	movs r1, r0
 	lsls r0, r7, #1
-	adr r0, _081AC890
+	.inst.n 0xA0E0  @ adr r0, _081AC890
 	lsrs r0, r1, #32
 	stmia r4!, {r2, r4, r5, r6, r7}
 	lsrs r2, r3, #32
@@ -8608,7 +8608,7 @@ sub_081AC48C:
 	movs r0, r0
 	movs r1, r0
 	lsls r0, r7, #1
-	adr r0, _081AC8B0
+	.inst.n 0xA0E0
 	lsrs r0, r1, #32
 	stmia r5!, {r2, r4}
 	lsrs r2, r3, #32
@@ -8622,7 +8622,7 @@ sub_081AC48C:
 	movs r0, r0
 	movs r1, r0
 	lsls r0, r7, #1
-	adr r0, _081AC8CC
+	.inst.n 0xA0E0
 	lsrs r0, r1, #32
 	stmia r5!, {r2, r4, r5}
 	lsrs r2, r3, #32
@@ -8638,7 +8638,7 @@ sub_081AC48C:
 	movs r0, r0
 	movs r1, r0
 	lsls r0, r7, #1
-	adr r0, sub_081AC8EC
+	.inst.n 0xA0E0
 	lsrs r0, r1, #32
 	stmia r5!, {r4, r6}
 	lsrs r2, r3, #32
@@ -8667,7 +8667,7 @@ _081AC584:
 	lsls r1, r6, #2
 	movs r1, r0
 	lsls r0, r7, #1
-	adr r0, _081AC924
+	.inst.n 0xA0E0
 	lsrs r0, r1, #32
 	stmia r5!, {r2, r3, r7}
 	lsrs r2, r3, #32
@@ -8681,7 +8681,7 @@ _081AC584:
 	movs r0, r0
 	movs r1, r0
 	lsls r0, r7, #1
-	adr r0, _081AC940
+	.inst.n 0xA0E0
 	lsrs r0, r1, #32
 	stmia r5!, {r3, r5, r7}
 	lsrs r2, r3, #32
@@ -8695,7 +8695,7 @@ _081AC584:
 	lsls r1, r6, #2
 	movs r1, r0
 	lsls r0, r7, #1
-	.inst.n 0xA0E0  @ adr r0, _081AC95C
+	.inst.n 0xA0E0
 	lsrs r0, r1, #32
 	stmia r5!, {r2, r6, r7}
 	lsrs r2, r3, #32
@@ -8709,7 +8709,7 @@ _081AC584:
 	movs r0, r0
 	movs r1, r0
 	lsls r0, r7, #1
-	.inst.n 0xA0E0  @ adr r0, _081AC978
+	.inst.n 0xA0E0
 	lsrs r0, r1, #32
 	stmia r5!, {r5, r6, r7}
 	lsrs r2, r3, #32
@@ -8723,7 +8723,7 @@ _081AC584:
 	movs r0, r0
 	movs r1, r0
 	lsls r0, r7, #1
-	.inst.n 0xA0E0  @ adr r0, _081AC994
+	.inst.n 0xA0E0
 	lsrs r0, r1, #32
 	stmia r5!, {r2, r3, r4, r5, r6, r7}
 	lsrs r2, r3, #32
@@ -8735,13 +8735,13 @@ _081AC584:
 	movs r3, r6
 	ldr r6, [sp, #884]
 	lsrs r7, r0, #32
-	ldr r6, _081AC8CC
+	.inst.n 0x4EA8
 	lsls r0, r0, #12
 	ldr r7, [sp, #116]
 	lsrs r7, r0, #32
 	str r0, [r0, #16]
 	lsls r0, r0, #12
-	ldr r6, _081AC8DC
+	.inst.n 0x4EA9
 	lsls r0, r0, #12
 	ldr r7, [sp, #372]
 	lsrs r7, r0, #32
@@ -8764,7 +8764,7 @@ sub_081AC64A:
 	str r2, [r2, r1]
 	movs r0, r0
 	movs r0, r0
-	ldr r7, _081AC768
+	.inst.n 0x4F43
 	cmp r4, r8
 	movs r0, r0
 	movs r0, r0
@@ -8826,47 +8826,13 @@ _081AC71C:
 _081AC720:
 	.4byte 0x00637361
 	.4byte 0x00736261
-	.4byte 0x20202020
-	.4byte 0x20202020
-	.4byte 0x20202020
-	.4byte 0x20202020
-	.global _081AC738
-_081AC738:
-	.4byte 0x30303030
-	.4byte 0x30303030
-	.4byte 0x30303030
-	.4byte 0x30303030
-	.4byte 0x00666E49
-	.4byte 0x004E614E
-	.4byte 0x33323130
-	.global _081AC754
-_081AC754:
-	.4byte 0x37363534
-	.4byte 0x62613938
-	.4byte 0x66656463
-	.4byte 0x00000000
-	.4byte 0x6C756E28
-	.global _081AC768
-_081AC768:
-	.4byte 0x0000296C
-	.4byte 0x33323130
-	.global _081AC770
-_081AC770:
-	.4byte 0x37363534
-	.4byte 0x42413938
-	.4byte 0x46454443
-	.4byte 0x00000000
-	.4byte 0x20677562
-	.4byte 0x76206E69
-	.4byte 0x69727066
-	.global _081AC78C
-_081AC78C:
-	.4byte 0x3A66746E
-	.4byte 0x64616220
-	.4byte 0x73616220
-	.4byte 0x00000065
-	.4byte 0x00000030
-	.4byte 0x0000002E
+
+@ 1AC728..1AC7A2 is decompiled as gVfprintfConstants(); see src/decompiled.json
+
+	.section .rom.001AC7A2, "ax"
+	.syntax unified
+	.byte 0x00
+	.byte 0x00
 
 	.thumb_func
 	.thumb
@@ -9010,196 +8976,31 @@ _081AC890:
 	movs r0, r0
 	movs r0, r0
 	movs r0, r0
-	ldr r1, [r1, #100]
-	ldr r6, [r4, #20]
-	ldr r6, [r5, #20]
-	ldrb r4, [r6, #5]
-	.global _081AC8B0
-_081AC8B0:
-	.4byte 0x00000000
-	str r6, [r1, #20]
-	lsls r6, r1, #1
-	movs r0, r6
+
+@ 1AC8A8..1AC8BA is decompiled as gDtoaConstants(); see src/decompiled.json
+
+	.section .rom.001AC8BA, "ax"
+	.syntax unified
+	.thumb
 	movs r0, r0
 	lsls r3, r0, #1
 	movs r0, r0
-	ldmia r0!, {r2, r4, r5, r6, r7}
-	lsrs r2, r3, #32
-	ldmia r0!, {r4, r5, r6, r7}
-	lsrs r2, r3, #32
-	ldmia r0!, {r4, r5, r6, r7}
-	lsrs r2, r3, #32
-	.global _081AC8CC
-_081AC8CC:
-	.4byte 0x081AC8F0  @ ROM+0x1AC8F0
-	ldmia r0!, {r4, r5, r6, r7}
-	lsrs r2, r3, #32
-	ldmia r0!, {r4, r5, r6, r7}
-	lsrs r2, r3, #32
-	ldmia r0!, {r4, r5, r6, r7}
-	lsrs r2, r3, #32
-	.global _081AC8DC
-_081AC8DC:
-	.4byte 0x081AC8F0  @ ROM+0x1AC8F0
-	ldmia r0!, {r4, r5, r6, r7}
-	lsrs r2, r3, #32
-	ldmia r0!, {r4, r5, r6, r7}
-	lsrs r2, r3, #32
-	.2byte 0xFFFF
 
-	.thumb_func
-	.thumb
-	.global sub_081AC8EA
-sub_081AC8EA:
-	.2byte 0xFFFF
+@ 1AC8C0..1AC8FA is decompiled as gLocaleConstants(); see src/decompiled.json
 
-	.thumb_func
+	.section .rom.001AC8FA, "ax"
+	.syntax unified
 	.thumb
-	.global sub_081AC8EC
-sub_081AC8EC:
-	.2byte 0xFFFF
+	movs r0, r0
 
-	.thumb_func
-	.thumb
-	.global sub_081AC8EE
-sub_081AC8EE:
-	.2byte 0xFFFF
-	movs r0, r0
-	movs r0, r0
-	movs r6, r5
-	movs r0, r0
-	lsls r3, r0, #1
-	movs r0, r0
-	movs r5, r0
-	movs r0, r0
-	movs r1, r3
-	movs r0, r0
-	lsls r5, r7, #1
-	movs r0, r0
-	.global _081AC908
-_081AC908:
-	.4byte 0x3FF00000
-	movs r0, r0
-	movs r0, r0
-	movs r0, r0
-	ands r4, r4
-	movs r0, r0
-	movs r0, r0
-	movs r0, r0
-	eors r1, r3
-	movs r0, r0
-	movs r0, r0
-	ands r0, r0
-	lsls r7, r1
-	.global _081AC924
-_081AC924:
-	.4byte 0x00000000
-	ldrh r0, [r0, #0]
-	lsrs r3, r0
-	movs r0, r0
-	movs r0, r0
-	ldr r0, [r0, #32]
-	lsrs r0, r7
-	movs r0, r0
-	movs r0, r0
-	strh r0, [r0, #36]
-	asrs r6, r5
-	movs r0, r0
-	movs r0, r0
-	.global _081AC940
-_081AC940:
-	.4byte 0x416312D0
-	movs r0, r0
-	movs r0, r0
-	bvc _081AC854
-	sbcs r7, r2
-	movs r0, r0
-	movs r0, r0
-	.inst.n 0xCD65  @ ldmia r5!, {r0, r2, r5, r6}
-	rors r5, r1
-	movs r0, r0
-	movs r0, r0
-	.inst.n 0xA05F  @ adr r0, _081ACAD8
-	tst r2, r0
-	.global _081AC95C
-_081AC95C:
-	.4byte 0x20000000
-	.inst.n 0x4876  @ ldr r0, _081ACB3C
-	tst r7, r6
-	movs r0, r0
-	.2byte 0xE800
-	subs r4, r2, r2
-	negs r5, r5
-	movs r0, r0
-	.inst.n 0xA200  @ adr r2, _081AC970
-	.global _081AC970
-_081AC970:
-	.4byte 0x42A2309C
-	.4byte 0xE5400000
-	.global _081AC978
-_081AC978:
-	.4byte 0x42D6BCC4
-	.4byte 0x1E900000
-	.byte 0xF5
-	.byte 0x6B
-	.global _081AC982
-_081AC982:
-	orrs r4, r1
-	movs r0, r0
-	movs r6, #52
-	stmia r3!, {r0, r3, r4, r5, r6}
-	muls r1, r0
-	strh r0, [r0, #0]
-	adds r7, #224
-	adds r4, #87
-	muls r6, r6
-	.global _081AC994
-_081AC994:
-	.4byte 0x85D8A000
-	.4byte 0x43ABC16D
-	.4byte 0x674EC800
-	.4byte 0x43E158E4
-	.4byte 0x60913D00
-	.4byte 0x4415AF1D
-	.4byte 0x78B58C40
-	.4byte 0x444B1AE4
-	.4byte 0xD6E2EF50
-	.4byte 0x4480F0CF
-	.4byte 0x064DD592
-	.4byte 0x44B52D02
-	.4byte 0xC7E14AF6
-	.4byte 0x44EA7843
-	.4byte 0x79D99DB4
-	.4byte 0x4341C379
-	.4byte 0x37E08000
-	.4byte 0x4693B8B5
-	.4byte 0xB5056E17
-	.4byte 0x4D384F03
-	.4byte 0xE93FF9F5
-	.4byte 0x5A827748
-	.4byte 0xF9301D32
-	.4byte 0x75154FDD
-	.4byte 0x7F73BF3C
-	.4byte 0x3C9CD2B2
-	.4byte 0x97D889BC
-	.4byte 0x3949F623
-	.4byte 0xD5A8A733
-	.4byte 0x32A50FFD
-	.4byte 0x44F4A73D
-	.4byte 0x255BBA08
-	.4byte 0xCF8C979D
-	.4byte 0x0AC80628
-	.4byte 0x64AC6F43
-	.4byte 0x0074743A
-	.4byte 0x7262735F
-	.4byte 0x48203A6B
-	.4byte 0x20706165
-	.4byte 0x20646E61
-	.4byte 0x63617473
-	.4byte 0x6F63206B
-	.4byte 0x73696C6C
-	.4byte 0x0A6E6F69
-	.4byte 0x00000000
+@ 1AC8FC..1ACA20 is decompiled as gMultiprecisionConstants(); see src/decompiled.json
+
+@ 1ACA20..1ACA46 is decompiled as gNewlibSyscallStrings(); see src/decompiled.json
+
+	.section .rom.001ACA46, "ax"
+	.syntax unified
+	.byte 0x00
+	.byte 0x00
 	.4byte 0x00000000
 	.4byte 0x00000000
 	.4byte 0x00000000
@@ -9380,8 +9181,9 @@ _081ACB3C:
 	.byte 0xDC
 	.global _081ACCFA
 _081ACCFA:
+	.thumb
 	lsrs r4, r0, #32
-	b _081AC982
+	.2byte 0xE641
 	.byte 0x04
 	.byte 0x08
 	.4byte 0x0804E655
@@ -9506,7 +9308,7 @@ sub_081ACD2A:
 	lsrs r4, r0, #32
 	.global _081ACDF8
 _081ACDF8:
-	.4byte 0x08043721  @ ROM+0x43721
+	.4byte BattleMode4376
 	.4byte 0x08043735
 	.4byte 0x08043F9D
 	.4byte 0x0804441D
@@ -9533,7 +9335,7 @@ _081ACDF8:
 	.4byte 0x0804EC89
 	.global _081ACE5C
 _081ACE5C:
-	.4byte 0x0804ED31  @ ROM+0x4ED31
+	.4byte BattleTaskBCreateGroup1Variant4
 	.4byte 0x0804EDD9
 	.4byte 0x0804EE81
 	.4byte 0x0804EF29
@@ -9743,7 +9545,7 @@ _081AD130:
 	.4byte 0x08050811
 	.global _081AD194
 _081AD194:
-	.4byte 0x08050825  @ ROM+0x50825
+	.4byte BattleMode50820
 	.4byte 0x08051035
 	.4byte 0x080410C1
 	.4byte 0x0803C071

@@ -46,6 +46,7 @@ u32 Random(void) { return randomValues[randomCallCount++]; }
 void RandomSeed(u32 seed) { seedValue=seed; }
 u32 sub_08080E4C(u32 dividend,u32 divisor) { return dividend%divisor; }
 s32 sub_08082640(const char *text) { return strtol(text,0,10); }
+s32 ParseDecimalInteger(const char *text) { return sub_08082640(text); }
 ''')
         library=folder/'native.so'
         subprocess.run(['gcc','-shared','-fPIC','-O2','-fno-builtin',

@@ -28,22 +28,39 @@ struct ScrpHeader
     u32 chunk_size;
 };
 
-/* Opcodes identified so far.
+/* Opcodes identified from the 256-entry dispatch table at 08F2A860.
  *
- * OP_PUSH_STRING is followed by a 16-bit length and that many bytes of
- * Shift-JIS text, the terminator included. A valid length and terminator are necessary but not sufficient to prove
- * instruction boundaries. The current scanner finds 8,640 round-tripping
- * records across 334 SPCs; complete control-flow coverage is not yet proven.
+ * 0x10 is a relative jump followed by a u16 distance. The compiler uses it
+ * to skip inline strings/data, then opcode 0x22 obtains the embedded address.
+ * A valid length and terminator are necessary but not sufficient to prove
+ * that an arbitrary 0x10 byte begins one of those compiler idioms. The current
+ * scanner finds 8,640 round-tripping records across 334 SPCs.
  *
  * Native command index 0x22 resolves to the object-task wrapper 080322A4,
  * not the actual message printer at 08011790. This does not establish
  * that every 0x22 byte is a print opcode or follows every string. */
-#define OP_PUSH_STRING  0x10
+#define OP_JUMP_RELATIVE 0x10
+#define OP_SET_BYTECODE_ADDRESS 0x22
+#define OP_PUSH_OPERAND 0x28
+#define OP_PUSH_IMMEDIATE 0x29
+#define OP_POP_OPERAND 0x2A
+#define OP_NATIVE_CALL 0x80
 #define NATIVE_OBJECT_COMMAND_22 0x22
 
-/* Native command table at 0x081ACCB0. A scan counted 444 pointer-shaped
- * words; that is not proof of the table boundary or bytecode opcode count. */
-#define gScriptOpcodeHandlers ((void **)0x081ACCB0)
-#define SCRIPT_SCANNED_POINTER_COUNT 444
+/* Every one of the 256 opcode slots is present. Unsupported slots point to
+ * ScriptCmdFail. */
+#define gScriptOpcodeHandlers ((void **)0x08F2A860)
+#define SCRIPT_OPCODE_COUNT 256
+
+/* The 128 native commands are name/handler pairs at 081AFEA4. The word at
+ * 081AFEA0 belongs to the preceding table. Names point into the ASCII pool
+ * near 08086D00. 081ACCB0 is an unrelated battle-action pointer table. */
+struct ScriptNativeCommand
+{
+    const char *name;
+    void *handler;
+};
+#define gScriptNativeCommands ((const struct ScriptNativeCommand *)0x081AFEA4)
+#define SCRIPT_NATIVE_COMMAND_COUNT 128
 
 #endif /* SCRIPT_H */

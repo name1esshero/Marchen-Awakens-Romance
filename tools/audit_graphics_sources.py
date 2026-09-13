@@ -50,6 +50,13 @@ def audit():
     for name in english_backgrounds.NAMES:
         path = ROOT/'graphics/backgrounds'/ (name + '_en.png')
         if path.exists():
+            original = ROOT/'graphics/backgrounds'/name
+            if original.exists():
+                import gfx
+                if gfx.read_png(str(original))[1] != gfx.read_png(str(path))[1]:
+                    raise ValueError('English background changes palette: '+str(path))
+                if gfx.png_alpha(str(original)) != gfx.png_alpha(str(path)):
+                    raise ValueError('English background changes transparency indices: '+str(path))
             add(path, 'english_background_override', name)
         source = ROOT/'graphics/backgrounds/source/english'/(name.removesuffix('.KCG')+'.generated.png')
         if source.exists():

@@ -68,6 +68,9 @@ Its default game-order preview draws plane 0 above plane 1, matching the field
 loader's BG0/BG1 assignment; a checkbox restores raw file order for inspection.
 The wheel over the map zooms from 1× to 4× around the pointer; scrollbars pan.
 Existing native event calls expose supported constant integer arguments.
+The script decoder also exposes embedded field names and sprite resources;
+the checked-in static catalog currently covers 113 field-load call sites, 201
+sprite resource call sites, 1,690 sprite property calls, and 78 sprite moves.
 HitInit, HitHitRect, HitSet, and HitFree have verified field labels; literal
 hit rectangles can be previewed on the map and follow edits and undo.
 This preview shows the selected call, not simulated active event state.
@@ -77,6 +80,9 @@ verified structures, animation routing and remaining decoding work.
 Run `make` or `make english` to build saved changes. Unknown properties, dynamic
 calls, new warps, and full event control flow remain undecoded; unresolved
 MAP27 tiles are marked explicitly. See [editor usage and format evidence](tools/map_editor/README.md).
+The verified [script source language](docs/script-language.md) and
+`scripts/source/example.json` compile JSON control flow and native calls into
+standalone SPC files with rebuilt FUNC relocations.
 
 ## Browse the recovered assets
 
@@ -260,9 +266,12 @@ English mappings, including the ÄRM Select names and descriptions.
 
 ## Decompilation status
 
-The provenance audit verifies **638 ordinary C functions and 10 BIOS assembly
-wrappers**; each declared range is linked from its expected object and matches
-the Japanese ROM. Recent batches add 31 procedural-map native adapters, eleven
+The provenance audit verifies **995 ordinary C ranges (51,016 bytes, 8.1324% of
+the measured code/data region) and 10 BIOS assembly wrappers**; each declared range is linked from its expected object and matches
+the Japanese ROM. The latest batch restores the game's original newlib sources
+and compiles them with the historical libc compiler, covering string, memory,
+stdio, locale, allocator, and floating-point formatting code plus their constant
+tables. Recent game-code batches add 31 procedural-map native adapters, eleven
 event adapters, fourteen resource handlers, 23 scene/sound handlers, and two
 KMP attribute helpers. `MapAttributeGetConnectionMask` proves that generated
 map connections use the `400–499` and `5400–5499` attribute classes and assigns
@@ -401,10 +410,10 @@ included, where modern GCC differed on two counts in every function:
 | Leaf prologue | `push {lr}` | `push {r4, lr}`, saving a register it never uses |
 | `index * 24` | `((i * 2) + i) * 8` with shifts | load 24, then `muls` |
 
-The current manifest declares 648 linked ranges: 638 compiled-C ranges and ten
-BIOS inline-assembly wrapper ranges. Compiled C owns 21,224 bytes, including
-literal pools and alignment, or 3.3833% of the executable region after known
-PCM is excluded. The current target is at least 10%. This metric is not a pure
+The current manifest declares 1,005 linked ranges: 995 compiled-C ranges and ten
+BIOS inline-assembly wrapper ranges. Compiled C owns 51,016 bytes, including
+literal pools and alignment, or 8.1324% of the executable region after known
+PCM is excluded. The current target is at least 20%. This metric is not a pure
 function-completion percentage because the denominator still contains tables
 and undecoded data.
 One range may contain multiple contiguous
@@ -444,8 +453,10 @@ matching build. `src/nonmatching/archive.c` holds partial readings of the
 background loader: `0x08027EAE` is inside `ArchiveTaskStep`, and its corrected
 structures are in `include/archive.h`.
 
-The analyzer's 19,536 labels are not a reliable function count: several labels
-are inside routines. For example `0x080032C4`, `0x080032CC`, `0x080032DC`, and
+The analyzer's 19,634 candidate entries are not a reliable function count. The
+refreshed pass seeds its graph with matching C and decoded native-command
+handlers, while several historical labels are still inside routines. For
+example `0x080032C4`, `0x080032CC`, `0x080032DC`, and
 `0x080032F2` belong to the routine beginning at `0x080032B8`. Check control flow
 before choosing a decompilation unit.
 

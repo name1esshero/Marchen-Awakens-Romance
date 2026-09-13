@@ -12,7 +12,7 @@
 #define VM (*(struct ScriptContext **)0x0300611C)
 extern void *HeapAlloc(void *,u32);
 extern u32 sub_08080E4C(u32 dividend,u32 divisor);
-extern s32 sub_08082640(const char *text);
+extern s32 ParseDecimalInteger(const char *text);
 extern s32 strcmp(const char *left,const char *right);
 extern u32 strlen(const char *text);
 extern char *strcpy(char *destination,const char *source);
@@ -93,7 +93,7 @@ AT("00080250") s32 ScriptNativeParseInteger(u32 count,const char **args,s32 *res
 {
  const char *text=args[0];
  if(!text)text=(const char *)0x081AC6A0;
- *result=sub_08082640(text);
+ *result=ParseDecimalInteger(text);
  return 1;
 }
 AT("00080270") s32 ScriptNativeCompareStrings(u32 count,const char **args,s32 *result)

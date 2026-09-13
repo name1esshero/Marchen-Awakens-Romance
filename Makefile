@@ -40,7 +40,7 @@ LDFLAGS     := -T ld_script.ld --no-warn-rwx-segments
 ASM_SRCS    := $(wildcard asm/*.s) $(wildcard asm/code/*.s) $(wildcard asm/data/*.s)
 # src/nonmatching/ holds readable C that does not yet reproduce the original
 # bytes; it is excluded so the default build stays byte-exact.
-C_SRCS      := $(wildcard src/*.c)
+C_SRCS      := $(wildcard src/*.c) $(wildcard src/libc/*.c)
 ifdef NONMATCHING
 C_SRCS      += $(wildcard src/nonmatching/*.c)
 endif
@@ -54,7 +54,7 @@ OBJS        := $(ASM_OBJS) $(C_OBJS)
 # Recompile matching C when a recovered structure or hardware definition changes.
 -include $(C_OBJS:.o=.d)
 
-.PHONY: all compare extract clean tidy stats test test-english ci
+.PHONY: all compare extract clean tidy stats test test-english ci script-sources script-catalog
 .SUFFIXES:
 
 # Keep `all` first: it is the default goal.
@@ -103,6 +103,72 @@ $(BUILD)/%.o: %.s
 # C is preprocessed with the modern toolchain, then compiled by agbcc, then
 # assembled. agbcc is a cc1 only: it takes preprocessed input and emits
 # assembly, so those three steps stay separate.
+$(BUILD)/src/libc_adapters.o: CC1FLAGS := -O2 -fhex-asm
+
+# The cartridge's standard library is the newlib snapshot bundled with agbcc.
+# Compile its recovered sources with the original libc compiler and flags, then
+# rename only the compiler-produced text section to its fixed ROM section.
+LIBC_ADDR_mbtowc_r := 00085890
+LIBC_ADDR_callocr  := 00086864
+LIBC_ADDR_dtoa     := 00083CFC
+LIBC_ADDR_fflush   := 00084B50
+LIBC_ADDR_findfp   := 00084BE4
+LIBC_ADDR_freer    := 00084D40
+LIBC_ADDR_fvwrite  := 00084FC0
+LIBC_ADDR_fwalk    := 000851EC
+LIBC_ADDR_locale   := 0008522C
+LIBC_ADDR_makebuf  := 00085298
+LIBC_ADDR_mallocr  := 00085374
+LIBC_ADDR_memchr   := 000858BC
+LIBC_ADDR_memcmp   := 0008264C
+LIBC_ADDR_memcpy   := 00082694
+LIBC_ADDR_memmove  := 0008593C
+LIBC_ADDR_memset   := 000826F4
+LIBC_ADDR_mprec    := 000859CC
+LIBC_ADDR_s_isinf  := 0008629C
+LIBC_ADDR_s_isnan  := 000862C0
+LIBC_ADDR_strcat   := 000827C4
+LIBC_ADDR_strcmp   := 0008280C
+LIBC_ADDR_strcpy   := 00082868
+LIBC_ADDR_strlen   := 000828B4
+LIBC_ADDR_strncpy  := 000828F8
+LIBC_ADDR_strtol   := 00082968
+LIBC_ADDR_strupr   := 00082AB0
+LIBC_ADDR_stdio    := 0008630C
+LIBC_ADDR_syscalls := 000863D0
+LIBC_ADDR_vfprintf := 00082AE4
+LIBC_ADDR_wsetup   := 00083C50
+
+LIBC_RODATA_ADDR_vfprintf := 001AC728
+LIBC_RODATA_ADDR_dtoa     := 001AC8A8
+LIBC_RODATA_ADDR_locale   := 001AC8C0
+LIBC_RODATA_ADDR_mprec    := 001AC8FC
+LIBC_RODATA_ADDR_syscalls := 001ACA20
+LIBC_DATA_ADDR_locale     := 00F2AFF0
+LIBC_DATA_ADDR_mallocr    := 00F2B004
+
+$(BUILD)/src/libc/%.o: src/libc/%.c
+	@mkdir -p $(dir $@)
+	@echo "LIBCC   $<"
+	@$(CPP) -Isrc/libc -Itools/agbcc/include -nostdinc -undef \
+		-DABORT_PROVIDED -DHAVE_GETTIMEOFDAY -D__thumb__ \
+		-DARM_RDI_MONITOR -D__GNUC__ -DINTERNAL_NEWLIB \
+		$(if $(filter mallocr,$*),-DDEFINE_MALLOC,) \
+		$(if $(filter freer,$*),-DDEFINE_FREE,) \
+		$(if $(filter callocr,$*),-DDEFINE_CALLOC,) \
+		-D__USER_LABEL_PREFIX__= $< -o $(BUILD)/src/libc/$*.i
+	@tools/agbcc/bin/old_agbcc -O2 -fno-builtin \
+		$(if $(filter mbtowc_r,$*),-fshort-enums,) \
+		$(BUILD)/src/libc/$*.i -o $(BUILD)/src/libc/$*.s
+	@printf '.text\n\t.align\t2, 0\n' >> $(BUILD)/src/libc/$*.s
+	@$(AS) -mcpu=arm7tdmi -o $(BUILD)/src/libc/$*.unplaced.o \
+		$(BUILD)/src/libc/$*.s
+	@$(OBJCOPY) --rename-section .text=.rom.$(LIBC_ADDR_$*) \
+		$(if $(LIBC_RODATA_ADDR_$*),--rename-section .rodata=.rom.$(LIBC_RODATA_ADDR_$*),) \
+		$(if $(LIBC_DATA_ADDR_$*),--rename-section .data=.rom.$(LIBC_DATA_ADDR_$*),) \
+		$(BUILD)/src/libc/$*.unplaced.o $@
+	@rm -f $(BUILD)/src/libc/$*.unplaced.o
+
 $(BUILD)/%.o: %.c
 	@mkdir -p $(dir $@)
 	@echo "CC1     $<"
@@ -136,6 +202,18 @@ test-english:
 # Public CI deliberately has no baserom. Local compare remains the stronger,
 # byte-for-byte verification when the legally obtained reference is present.
 ci: all english test
+
+CUSTOM_SCRIPT_SOURCES := $(wildcard scripts/source/*.json)
+CUSTOM_SCRIPTS := $(patsubst scripts/source/%.json,$(BUILD)/scripts/custom/%.SPC,$(CUSTOM_SCRIPT_SOURCES))
+
+$(BUILD)/scripts/custom/%.SPC: scripts/source/%.json tools/script_assembler.py tools/lz77.py
+	@mkdir -p $(dir $@)
+	$(PYTHON) tools/script_assembler.py $< $@ --compress
+
+script-sources: $(CUSTOM_SCRIPTS)
+
+script-catalog:
+	$(PYTHON) tools/script_map_catalog.py
 
 # --- verification ---------------------------------------------------------
 compare: $(TARGET)
