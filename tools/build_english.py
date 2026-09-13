@@ -88,7 +88,9 @@ def main():
                 fallback='Whole message remains Japanese if any row is unmapped or its mode is unsupported.',
                 limitations=['Pagination uses A between pages; emulator validation is still required.', 'Only the recovered DialogueStart path is hooked.',
                              'Static mapping coverage does not establish runtime message coverage.'])
-    (ROOT/'reports/text/english-runtime.json').write_text(json.dumps(report,indent=2)+'\n')
+    report_path=ROOT/'reports/text/english-runtime.json'
+    report_path.parent.mkdir(parents=True,exist_ok=True)
+    report_path.write_text(json.dumps(report,indent=2)+'\n')
     print(len(accepted),'exact row mappings;',len(rejected),'ambiguous or unsupported keys excluded')
 
 

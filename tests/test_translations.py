@@ -13,6 +13,18 @@ import translate_comments
 
 
 class TranslationTest(unittest.TestCase):
+    def test_english_build_creates_ignored_report_directory(self):
+        import build_english
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp)
+            with patch.object(build_english,'ROOT',root), \
+                 patch.object(sys,'argv',['build_english.py']), \
+                 contextlib.redirect_stdout(io.StringIO()):
+                build_english.main()
+            self.assertTrue((root/'build/english/mappings.c').is_file())
+            report=json.loads((root/'reports/text/english-runtime.json').read_text())
+            self.assertGreater(report['exact_row_mappings'],1000)
+
     def test_blank_color_records_are_not_counted_as_translations(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp)
