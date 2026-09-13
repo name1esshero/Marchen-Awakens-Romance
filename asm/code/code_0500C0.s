@@ -33,7 +33,7 @@ _080500DA:
 	.global sub_080500E4
 sub_080500E4:
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	movs r0, #201
 	bl SoundSongStartU16
 	mov r2, r10
@@ -180,7 +180,7 @@ _080501CC:
 _080501EC:
 	adds r0, r7, #0
 	movs r1, #0
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	adds r0, r7, #0
 	movs r1, #0
 	bl ObjectSetFlag2
@@ -937,7 +937,7 @@ _08050640:
 _08050654:
 	adds r0, r6, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	movs r0, #48
 	mov r1, r9
 	strh r0, [r1, #14]
@@ -1038,7 +1038,7 @@ _080506E2:
 _08050700:
 	adds r0, r6, #0
 	movs r1, #0
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	adds r0, r6, #0
 	movs r1, #0
 	bl ObjectSetFlag2
@@ -3368,7 +3368,7 @@ _08051424:
 	bl sub_0802814C
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	movs r0, #48
 	ldr r4, [sp, #36]
 	strh r0, [r4, #14]
@@ -3403,7 +3403,7 @@ _08051466:
 	bl ObjectSetFlag2
 	ldr r0, [sp, #60]
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	ldr r0, [r5, #0]
 	bl RuntimeActorGetField352
 	adds r3, r0, #0
@@ -3483,7 +3483,7 @@ _080514DC:
 _080514FC:
 	adds r0, r7, #0
 	movs r1, #0
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	adds r0, r7, #0
 	movs r1, #0
 	bl ObjectSetFlag2
@@ -4158,7 +4158,7 @@ _0805191C:
 	bge _0805191C
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	adds r0, r7, #0
 	movs r1, #1
 	bl ObjectSetFlag2
@@ -4327,7 +4327,7 @@ _08051A44:
 	bl ObjectSetFlag2
 	adds r0, r5, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	adds r0, r5, #0
 	movs r1, #1
 	bl ObjectSetFlag400
@@ -4649,7 +4649,7 @@ _08051CC4:
 	lsls r1, r1, #16
 	lsrs r1, r1, #16
 	adds r0, r4, #0
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	mov r1, r8
 	ldrh r0, [r1, #14]
 	adds r0, #1
@@ -4692,7 +4692,7 @@ _08051D1A:
 _08051D30:
 	str r1, [r4, #96]
 	adds r0, r4, #0
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	.global _08051D38
 _08051D38:
 	movs r0, #103

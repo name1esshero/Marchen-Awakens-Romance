@@ -11,6 +11,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import text_codec as tc
+import definition_text
 
 MIN_CHARS = 4          # ignore very short runs; they are usually not script
 TEXT_DIR = "text"
@@ -24,16 +25,23 @@ def load_excludes():
     """
     r = []
     try:
-        for m in json.load(open("assets.json")):
+        with open("assets.json") as source:
+            assets = json.load(source)
+        for m in assets:
             r.append((m["rom_offset"],
                       m["rom_offset"] + m["compressed_size"]))
     except OSError:
         pass
     try:
-        for m in json.load(open("assets_raw.json")):
+        with open("assets_raw.json") as source:
+            assets = json.load(source)
+        for m in assets:
             r.append((m["rom_offset"], m["rom_offset"] + m["raw_size"]))
     except OSError:
         pass
+    # Fixed-layout definition strings have explicit field boundaries and their
+    # own editable sources. A heuristic scan must never absorb or drop them.
+    r.extend(definition_text.ranges())
     r.sort()
     return r
 
@@ -113,6 +121,12 @@ def main():
         banks.setdefault((kind, off >> 16), []).append((off, raw, txt))
 
     index = []
+    for table in definition_text.TABLES:
+        records = definition_text.source_records(table)
+        index.append({"kind": table["kind"], "bank": "%06X" % table["base"],
+                      "path": table["path"], "count": len(records),
+                      "bytes": sum(len(tc.encode(text)) for text, _ in records.values()),
+                      "record_size": table["stride"], "records": table["records"]})
     for (kind, bank), items in sorted(banks.items()):
         path = os.path.join(TEXT_DIR, "%s_%06X.txt" % (kind, bank << 16))
         with open(path, "w", encoding="utf-8") as f:

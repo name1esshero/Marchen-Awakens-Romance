@@ -222,6 +222,13 @@ void *DialogueStartOriginal(int mode,int count,const char **rows,int *result) {
             self.assertEqual(entries[raw], english_layout.wrap_lines(
                 english, english_layout.load_mapping()))
 
+    def test_executable_region_save_prompt_is_translated(self):
+        import text_codec
+        raw = text_codec.encode('セーブしますか？')
+        expected = english_layout.wrap_lines(
+            'Would you like to save?', english_layout.load_mapping())
+        self.assertEqual(dict(self.entries)[raw], expected)
+
     def test_reported_color_dialogue_translates_with_safe_palette_controls(self):
         import text_codec
         entries = dict(self.entries)

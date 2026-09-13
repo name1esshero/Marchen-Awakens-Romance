@@ -24,11 +24,12 @@ def collect(root=ROOT):
     candidates = collections.defaultdict(set)
     locations = collections.defaultdict(list)
     paths = sorted((root/'text/nfp').glob('*.txt'))
-    # Item names are inserted into common acquisition messages at runtime, so
-    # they never appear as complete literals in the named NFP scripts.
-    item_text = root/'text/script_1B0000.txt'
-    if item_text.is_file():
-        paths.append(item_text)
+    # Item/ARM names are inserted into menus and common acquisition messages
+    # at runtime, so they never appear as complete literals in named scripts.
+    for extra in ('arm_definitions.txt', 'item_definitions.txt', 'runtime_strings.txt'):
+        path = root/'text'/extra
+        if path.is_file():
+            paths.append(path)
     for path in paths:
         for line in path.read_text().splitlines():
             if not line.startswith('@') or '  // EN:' not in line:continue

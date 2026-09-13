@@ -245,19 +245,27 @@ the original SPC filename; these entries override shared wording only in that
 script. Keep sentence fragments here to avoid changing unrelated dialogue. Run
 `python3 tools/translate_comments.py` to apply them without changing Japanese.
 Legacy `text/scrp_*.txt` files are retained for reference; edit `text/nfp` for
-script changes. Loose ROM text outside named sources still uses `text/script_*`.
+script changes. Loose ROM text outside named sources uses `text/script_*`;
+executable-region UI prompts recovered for the English runtime live in
+`text/runtime_strings.txt`.
+
+ÄRM names/descriptions and consumable/material text are fixed-layout data
+tables rather than scripts. Their complete editable sources are
+`text/arm_definitions.txt` (445 records) and `text/item_definitions.txt`
+(13 records). `python3 tools/definition_text.py` verifies every populated name
+and description against its exact record field. All 916 populated fields have
+English mappings, including the ÄRM Select names and descriptions.
 
 ## Decompilation status
 
-The provenance audit verifies **541 ordinary C functions and 10 BIOS assembly
+The provenance audit verifies **547 ordinary C functions and 10 BIOS assembly
 wrappers**; each declared range is linked from its expected object and matches
-the Japanese ROM. The latest batch adds 62 functions covering the 1,672-byte
-actor array and its 104-byte component array, task constructors and payloads,
-NCD sprite reset, game-state buffers, sound adapters, and small conditional
-helpers. The latest addition counts matches across a recovered five-element
-signed runtime lookup. Equivalent C candidates that made
-agbcc choose different instruction bytes were rejected from the manifest. This
-is a verified function count, not a
+the Japanese ROM. The latest batch adds the VM operand resolver, left-substring
+native, an object state transition, both object-command wrappers, and their
+144-byte task constructor. The constructor now documents its 224-byte request
+payload, mode selector, VM argument pointer, and allocation-failure result.
+Equivalent C candidates that made agbcc choose different instruction bytes
+were rejected from the manifest. This is a verified function count, not a
 percentage of all game code. Earlier batches include eight list helpers, the `SprSet` and `SprGet`
 native adapters, and 13 item-table accessors. Item names and descriptions are
 identified; other fields retain offsets until their gameplay meaning is
@@ -387,9 +395,12 @@ included, where modern GCC differed on two counts in every function:
 | Leaf prologue | `push {lr}` | `push {r4, lr}`, saving a register it never uses |
 | `index * 24` | `((i * 2) + i) * 8` with shifts | load 24, then `muls` |
 
-The current manifest declares 551 linked ranges: 541 compiled-C ranges and ten
-BIOS inline-assembly wrapper ranges. Compiled C owns 18,404 bytes, including
-literal pools and alignment. This is not a function-completion percentage.
+The current manifest declares 557 linked ranges: 547 compiled-C ranges and ten
+BIOS inline-assembly wrapper ranges. Compiled C owns 18,808 bytes, including
+literal pools and alignment, or 2.9982% of the executable region after known
+PCM is excluded. The current target is at least 10%. This metric is not a pure
+function-completion percentage because the denominator still contains tables
+and undecoded data.
 One range may contain multiple contiguous
 functions and alignment bytes. The [build provenance audit](https://github.com/name1esshero/Marchen-Awakens-Romance/wiki/Build-verification)
 checks their linked object providers and distinguishes them from preserved

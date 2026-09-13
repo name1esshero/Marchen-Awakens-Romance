@@ -1,0 +1,12 @@
+// Japanese runtime/UI strings stored in the executable region.
+// @offset is the original ROM address. English comments feed the optional
+// runtime mapping and never alter the byte-matching Japanese ROM.
+
+@089338 強制的にタイトルに戻ります。  // EN: You will return to the title screen.
+@089358 ダンジョンモードではセーブをすると  // EN: Saving in Dungeon Mode...
+@08937C ゲームをつづけますか？  // EN: Continue playing?
+@089394 セーブしました  // EN: Game saved.
+@0893A4 でんげんをきらないでください  // EN: Please do not turn off the power.
+@0893C4 セーブ中です  // EN: Saving...
+@0893D4 （前のデータに上書きします）  // EN: (Overwrite the previous save data.)
+@0893F4 セーブしますか？  // EN: Would you like to save?

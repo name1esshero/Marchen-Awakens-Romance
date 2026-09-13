@@ -26,7 +26,9 @@
 struct Object
 {
     void *record;               /* 0x00: the 72-byte heap record */
-    u8 filler_04[0x1C];
+    u8 filler_04[0x10];
+    u32 unk_14;                 /* cleared when state bit 0 is enabled */
+    u8 filler_18[8];
     u16 unk_20;                 /* 0x20: initialised to 0x100, which is 1.0
                                  *       read as 8.8 fixed point */
     u8 filler_22[2];
@@ -42,5 +44,6 @@ struct Object
 };
 
 void *ObjectGetActiveRecordData(struct Object *object);
+void ObjectSetState1(struct Object *object, u16 enabled);
 
 #endif /* OBJECT_H */

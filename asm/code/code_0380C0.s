@@ -767,7 +767,7 @@ _08038554:
 	.global sub_08038568
 sub_08038568:
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	movs r0, #206
 	bl SoundSongStartU16
 	movs r0, #48
@@ -832,7 +832,7 @@ sub_080385AA:
 	.thumb
 	.global sub_080385DC
 sub_080385DC:
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	movs r0, #64
 	b _0803860A
 	.global _080385E4
@@ -1056,7 +1056,7 @@ _08038768:
 	adds r4, r7, r0
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	adds r0, r4, #0
 	movs r1, #1
 	bl ObjectSetFlag2
@@ -1311,7 +1311,7 @@ _0803893C:
 	bl sub_0802814C
 	mov r0, r10
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	mov r0, r10
 	movs r1, #1
 	bl ObjectSetFlag400
@@ -2218,7 +2218,7 @@ sub_08038F8A:
 	strh r0, [r1, #0]
 	ldr r0, [sp, #40]
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	ldr r0, [sp, #40]
 	movs r1, #1
 	bl ObjectSetFlag2
@@ -2265,7 +2265,7 @@ _08038FE8:
 	bl ObjectSetFlag2
 	ldr r0, [sp, #44]
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	movs r0, #206
 	bl SoundSongStartU16
 	movs r2, #246
@@ -2331,7 +2331,7 @@ _08039032:
 	bl sub_0802814C
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	movs r0, #64
 	ldr r2, [sp, #28]
 	strh r0, [r2, #14]
@@ -2417,7 +2417,7 @@ _08039108:
 _0803910C:
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	movs r0, #64
 	ldr r2, [sp, #28]
 	strh r0, [r2, #14]
@@ -3797,7 +3797,7 @@ _08039BBE:
 	bl ObjectSetFlag2
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	ldr r0, _08039BFC
 	str r0, [r7, #120]
 	adds r0, r7, #0
@@ -5207,7 +5207,7 @@ sub_0803A570:
 	bl ObjectSetFlag2
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	adds r4, #64
 	adds r5, #1
 	ldr r0, [r6, #0]
@@ -5288,7 +5288,7 @@ _0803A5D4:
 	bl ObjectSetFlag2
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	adds r0, r4, #0
 	movs r1, #1
 	bl ObjectSetFlag400
@@ -6765,7 +6765,7 @@ _0803B060:
 _0803B082:
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	adds r0, r7, #0
 	movs r1, #1
 	bl ObjectSetFlag2
@@ -6804,13 +6804,13 @@ _0803B0B4:
 _0803B0CC:
 	adds r0, r2, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	ldr r0, [sp, #64]
 	movs r1, #1
 	bl ObjectSetFlag2
 	ldr r0, [sp, #68]
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	ldr r0, [sp, #68]
 	movs r1, #1
 	bl ObjectSetFlag2
@@ -6904,7 +6904,7 @@ _0803B188:
 	bne _0803B274
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	adds r0, r4, #0
 	movs r1, #1
 	bl ObjectSetFlag2
@@ -7242,7 +7242,7 @@ sub_0803B3AC:
 	adds r6, #64
 	adds r0, r6, #0
 	movs r1, #0
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	adds r0, r6, #0
 	movs r1, #0
 	bl ObjectSetFlag2
@@ -7250,7 +7250,7 @@ sub_0803B3AC:
 	adds r5, #128
 	adds r0, r5, #0
 	movs r1, #0
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	adds r0, r5, #0
 	movs r1, #0
 	bl ObjectSetFlag2
@@ -7288,7 +7288,7 @@ sub_0803B3AC:
 	bl ObjectSetFlag2
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	adds r0, r4, #0
 	movs r1, #1
 	bl ObjectSetFlag400
@@ -8585,7 +8585,7 @@ _0803BCAE:
 	bl sub_0802814C
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	ldr r4, _0803BCE4
 	adds r0, r7, r4
 	movs r1, #0
@@ -8816,7 +8816,7 @@ _0803BE30:
 	bl sub_0802814C
 	adds r0, r7, #0
 	movs r1, #0
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	ldr r4, _0803BE5C
 	adds r0, r7, r4
 	ldrh r0, [r0, #0]
@@ -9956,7 +9956,7 @@ _0803C5C8:
 	bl ObjectSetFlag2
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	adds r0, r4, #0
 	movs r1, #1
 	negs r1, r1
@@ -10436,7 +10436,7 @@ sub_0803C89A:
 	.global sub_0803C8B0
 sub_0803C8B0:
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	movs r1, #1
 	negs r1, r1
 	adds r0, r4, #0
@@ -10565,7 +10565,7 @@ _0803C964:
 	bl ObjectSetFlag2
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	adds r0, r4, #0
 	movs r1, #1
 	bl ObjectSetFlag400
@@ -11646,7 +11646,7 @@ sub_0803CFCA:
 	bl ObjectSetFlag2
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	ldr r0, [r5, #0]
 	ldr r1, [r4, #0]
 	bl RuntimeObjectGetField36
@@ -11771,7 +11771,7 @@ _0803D0E0:
 	adds r4, #64
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	adds r0, r4, #0
 	movs r1, #1
 	bl ObjectSetFlag2
@@ -11915,10 +11915,10 @@ _0803D1B2:
 	bl ObjectSetFlag2
 	adds r0, r7, #0
 	movs r1, #0
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	mov r0, r10
 	movs r1, #0
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	mov r0, r10
 	movs r1, #0
 	bl ObjectSetFlag2
@@ -12290,7 +12290,7 @@ _0803D466:
 	bl ObjectSetFlag2
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	adds r0, r4, #0
 	movs r1, #1
 	bl ObjectSetFlag400
@@ -13056,7 +13056,7 @@ _0803D988:
 	bl ObjectSetFlag2
 	adds r0, r5, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	adds r0, r5, #0
 	movs r1, #1
 	bl ObjectSetFlag400
@@ -13168,7 +13168,7 @@ _0803DA48:
 	bl ObjectSetFlag2
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	adds r1, r7, #0
 	adds r1, #114
 	movs r0, #1
@@ -13280,7 +13280,7 @@ _0803DB28:
 	bl ObjectSetFlag2
 	mov r0, r9
 	movs r1, #0
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	movs r2, #160
 	lsls r2, r2, #3
 	adds r0, r7, r2
@@ -13338,7 +13338,7 @@ _0803DB6E:
 	bl ObjectSetFlag2
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	adds r0, r4, #0
 	movs r1, #1
 	bl ObjectSetFlag400
@@ -13686,7 +13686,7 @@ sub_0803DDDA:
 	bl ObjectSetFlag2
 	adds r0, r5, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	adds r0, r5, #0
 	movs r1, #1
 	bl ObjectSetFlag400
@@ -14040,7 +14040,7 @@ _0803E024:
 	.global sub_0803E040
 sub_0803E040:
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	mov r2, r8
 	ldrh r0, [r2, #0]
 	strh r0, [r7, #28]
@@ -14185,7 +14185,7 @@ _0803E134:
 	lsls r0, r0, #6
 	adds r0, r7, r0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	movs r3, #0
 	ldrsh r0, [r5, r3]
 	lsls r0, r0, #6
@@ -14647,7 +14647,7 @@ _0803E444:
 	bl ObjectSetFlag2
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	movs r0, #181
 	bl SoundSongStartU16
 	movs r0, #32
@@ -15317,7 +15317,7 @@ _0803E8C4:
 _0803E8E2:
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	adds r0, r7, #0
 	movs r1, #1
 	bl ObjectSetFlag2
@@ -15462,7 +15462,7 @@ _0803E9B2:
 	bl ObjectSetFlag2
 	ldr r0, [sp, #68]
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	ldr r0, [sp, #68]
 	movs r1, #1
 	bl ObjectSetFlag400
@@ -15590,7 +15590,7 @@ _0803EAC0:
 _0803EADC:
 	adds r0, r7, #0
 	movs r1, #0
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	adds r0, r7, #0
 	movs r1, #0
 	bl ObjectSetFlag2
@@ -16076,7 +16076,7 @@ _0803EE08:
 	bl ObjectSetFlag2
 	adds r0, r5, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	adds r0, r5, #0
 	movs r1, #1
 	bl ObjectSetFlag400
@@ -16723,7 +16723,7 @@ _0803F26C:
 	bl ObjectSetFlag2
 	adds r0, r6, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	ldr r0, [r6, #64]
 	bl RuntimeActorGetField352
 	adds r2, r0, #0
@@ -16804,7 +16804,7 @@ _0803F2F8:
 	bgt _0803F31A
 	adds r0, r6, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	ldrh r0, [r4, #0]
 	adds r0, #1
 	strh r0, [r4, #0]
@@ -16821,7 +16821,7 @@ _0803F31A:
 	bl ObjectSetFlag2
 	adds r0, r6, #0
 	movs r1, #0
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	movs r0, #80
 	.global _0803F32C
 _0803F32C:
@@ -17879,7 +17879,7 @@ _0803F9F2:
 	bl SoundSongStartU16
 	ldr r0, [sp, #48]
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	ldr r0, [sp, #48]
 	movs r1, #1
 	bl ObjectSetFlag2
@@ -18099,7 +18099,7 @@ _0803FB84:
 	bl sub_0802814C
 	ldr r0, [sp, #48]
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	ldr r0, [sp, #48]
 	movs r1, #1
 	bl ObjectSetFlag2
@@ -18246,7 +18246,7 @@ sub_0803FC6A:
 	bl sub_0802814C
 	adds r0, r7, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	adds r4, r7, #0
 	adds r4, #64
 	adds r0, r4, #0
@@ -18254,7 +18254,7 @@ sub_0803FC6A:
 	bl ObjectSetFlag2
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 	adds r0, r4, #0
 	movs r1, #1
 	bl ObjectSetFlag400

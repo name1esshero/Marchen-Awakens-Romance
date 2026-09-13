@@ -121,6 +121,24 @@ AT("000802A8") s32 ScriptNativeStringLength(u32 count,const char **args,u32 *res
 
 struct ScriptSubstringArgs { const char *text; u32 start; u32 length; };
 
+AT("000802C8") s32 ScriptNativeLeft(u32 count,const struct ScriptSubstringArgs *args,char **result)
+{
+ const char *text=args->text;
+ u32 textLength,length;
+ char *copy;
+ if(!text)text=(const char *)0x081AC6A0;
+ textLength=strlen(text);
+ length=args->start;
+ if(length>textLength)length=textLength;
+ copy=HeapAlloc(VM->state->heap,length+1);
+ if(!copy)return -1;
+ strncpy(copy,text,length);
+ copy[length]=0;
+ *result=copy;
+ return 1;
+}
+AT("000802C8") const u8 ScriptNativeLeftTail[2]={0,0};
+
 AT("00080320") s32 ScriptNativeRight(u32 count,const struct ScriptSubstringArgs *args,char **result)
 {
  const char *text=args->text;

@@ -276,7 +276,7 @@ ENGLISH_OBJS := $(ENGLISH_DIR)/dialogue_bridge.o $(ENGLISH_DIR)/dialogue_runtime
 .PHONY: english english-stats
 english: mar_english.gba english-stats
 
-$(ENGLISH_DIR)/mappings.c: $(wildcard text/nfp/*.txt) text/script_1B0000.txt text/translation/english_font.json \
+$(ENGLISH_DIR)/mappings.c: $(wildcard text/nfp/*.txt) text/arm_definitions.txt text/item_definitions.txt text/runtime_strings.txt text/translation/english_font.json \
                          graphics/fonts/font.png graphics/fonts/font.json tools/build_english.py tools/english_layout.py
 	$(PYTHON) tools/build_english.py
 

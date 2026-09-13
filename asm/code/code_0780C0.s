@@ -13869,52 +13869,7 @@ _0807F4D4:
 
 @ 07F608..07F624 is decompiled as ScriptPopU32(); see src/decompiled.json
 
-	.section .rom.0007F624, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global ScriptResolveOperand
-ScriptResolveOperand:
-	push {lr}
-	adds r2, r0, #0
-	movs r0, #128
-	ands r0, r2
-	cmp r0, #0
-	beq _0807F64C
-	ldr r0, _0807F648
-	ldr r0, [r0, #0]
-	ldr r0, [r0, #12]
-	ldr r1, [r0, #12]
-	movs r0, #129
-	negs r0, r0
-	ands r0, r2
-	lsls r0, r0, #2
-	adds r1, #72
-	adds r1, r1, r0
-	ldr r0, [r1, #0]
-	b _0807F65A
-	.global _0807F648
-_0807F648:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-	.global _0807F64C
-_0807F64C:
-	ldr r0, _0807F660
-	ldr r0, [r0, #0]
-	ldr r1, [r0, #12]
-	lsls r0, r2, #2
-	adds r0, #72
-	ldr r1, [r1, #12]
-	adds r0, r1, r0
-	.global _0807F65A
-_0807F65A:
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _0807F660
-_0807F660:
-	.4byte 0x0300611C  @ IWRAM+0x611C
+@ 07F624..07F664 is decompiled as ScriptResolveOperand(); see src/decompiled.json
 
 @ 07F664..07F6C4 is decompiled as ScriptPushFrameAndJump(); see src/decompiled.json
 

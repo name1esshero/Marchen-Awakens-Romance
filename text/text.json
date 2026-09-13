@@ -1,10 +1,21 @@
 [
  {
-  "kind": "script",
-  "bank": "1B0000",
-  "path": "text/script_1B0000.txt",
-  "count": 760,
-  "bytes": 17276
+  "kind": "arm_definition_table",
+  "bank": "1B096C",
+  "path": "text/arm_definitions.txt",
+  "count": 890,
+  "bytes": 20190,
+  "record_size": 128,
+  "records": 445
+ },
+ {
+  "kind": "item_definition_table",
+  "bank": "1BE82C",
+  "path": "text/item_definitions.txt",
+  "count": 26,
+  "bytes": 422,
+  "record_size": 80,
+  "records": 13
  },
  {
   "kind": "script",

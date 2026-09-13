@@ -27,12 +27,6 @@ static struct ScriptBytecodeRoot root;
 #define AT(x)
 static struct ScriptBytecodeRoot *root_ptr = &root;
 #include "src/script_bytecode.c"
-
-s32 *ScriptResolveOperand(u32 operand) {
-    if (operand & 0x80)
-        return (s32 *)(unsigned long)vm.frame.live.registers[operand & 0x7f];
-    return &vm.frame.live.registers[operand];
-}
 s32 sub_08080BFC(s32 dividend, s32 divisor) { return dividend / divisor; }
 s32 sub_08080C94(s32 dividend, s32 divisor) { return dividend % divisor; }
 s32 sub_0807F1F8(void *record, s32 selector) { (void)record; return selector; }
@@ -62,6 +56,7 @@ int main(void) {
 
     reset(bytes); bytes[0]=3; bytes[1]=4;
     vm.frame.live.registers[3]=7; vm.frame.live.registers[4]=5;
+    assert(ScriptResolveOperand(3) == &vm.frame.live.registers[3]);
     assert(ScriptCmdAdd() == 1 && vm.frame.live.registers[3] == 12);
 
     reset(bytes); bytes[0]=3; bytes[1]=0x78; bytes[2]=0x56;

@@ -68,3 +68,22 @@ AT("000288DC") void *ObjectGetActiveRecordData(struct Object *object)
   return (u8 *)object->record+8;
  return 0;
 }
+
+/* Toggle state bit 0 on a live object. Enabling it also clears the pending
+ * position/state fields, clears bit 4, and sets bit 14. */
+AT("000282B4") void ObjectSetState1(struct Object *object, u16 enabled)
+{
+    if (object->flags & OBJECT_ACTIVE)
+    {
+        if (enabled)
+        {
+            object->unk_24 = 0;
+            object->unk_14 = 0;
+            object->flags = (object->flags & 0xFFEF) | 0x4001;
+        }
+        else
+        {
+            object->flags &= 0xFFFE;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+// MAR consumable/material names and descriptions (13 records, 80 bytes each)
+// One record per line: @<rom offset> <text>
+// Text is re-encoded to Shift-JIS at build time; a line may not grow
+// past its fixed source field. Anything after // is a source comment.
+
+@1BE83C サックリの実  // EN: Crisp Fruit
+@1BE85E 体力を５０回復する  // EN: Restores 50 HP.
+@1BE88C ジュクした実  // EN: Ripe Fruit
+@1BE8AE 体力を１５０回復する  // EN: Restores 150 HP.
+@1BE8DC ニガい実  // EN: Bitter Fruit
+@1BE8FE 体力を４５０回復する  // EN: Restores 450 HP.
+@1BE92C ヘブンズリーフ  // EN: Heaven's Leaf
+@1BE94E 体力を全回復する  // EN: Fully restores HP.
+@1BE97C 大きなヘブンズリーフ  // EN: Large Heaven's Leaf
+@1BE99E パーティーの体力を全回復する  // EN: Fully restores the party's HP.
+@1BE9CC ライフシード  // EN: Life Seed
+@1BE9EE 体力の最大値をふやす  // EN: Raises maximum HP.
+@1BEA1C マジックシード  // EN: Magic Seed
+@1BEA3E 魔力の最大値をふやす  // EN: Raises maximum magic power.
+@1BEA6C パワーシード  // EN: Power Seed
+@1BEA8E 攻撃力の最大値をふやす  // EN: Raises maximum attack.
+@1BEABC ガードシード  // EN: Guard Seed
+@1BEADE 防御力の最大値をふやす  // EN: Raises maximum defense.
+@1BEB0C アームシルバー  // EN: ÄRM Silver
+@1BEB2E 彫金の材料になる  // EN: Used as an engraving material.
+@1BEB5C アームゴールド  // EN: ÄRM Gold
+@1BEB7E 彫金の材料になる  // EN: Used as an engraving material.
+@1BEBAC アームプラチナ  // EN: ÄRM Platinum
+@1BEBCE 彫金の材料になる  // EN: Used as an engraving material.
+@1BEBFC アームジュエル  // EN: ÄRM Jewel
+@1BEC1E 彫金の材料になる  // EN: Used as an engraving material.

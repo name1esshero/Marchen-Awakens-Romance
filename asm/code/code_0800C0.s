@@ -67,65 +67,7 @@ _080800F8:
 
 @ 0802A8..0802C8 is decompiled as ScriptNativeStringLength(); see src/decompiled.json
 
-	.section .rom.000802C8, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global ScriptNativeLeft
-ScriptNativeLeft:
-	push {r4, r5, r6, r7, lr}
-	adds r4, r1, #0
-	adds r7, r2, #0
-	ldr r6, [r4, #0]
-	cmp r6, #0
-	bne _080802D6
-	ldr r6, _0808030C
-	.global _080802D6
-_080802D6:
-	adds r0, r6, #0
-	bl strlen
-	ldr r5, [r4, #4]
-	cmp r5, r0
-	bls _080802E4
-	adds r5, r0, #0
-	.global _080802E4
-_080802E4:
-	ldr r0, _08080310
-	ldr r0, [r0, #0]
-	ldr r0, [r0, #12]
-	ldr r0, [r0, #0]
-	adds r1, r5, #1
-	bl HeapAlloc
-	adds r4, r0, #0
-	cmp r4, #0
-	beq _08080314
-	adds r1, r6, #0
-	adds r2, r5, #0
-	bl strncpy
-	adds r1, r4, r5
-	movs r0, #0
-	strb r0, [r1, #0]
-	str r4, [r7, #0]
-	movs r0, #1
-	b _08080318
-	.global _0808030C
-_0808030C:
-	.4byte 0x081AC6A0  @ ROM+0x1AC6A0
-	.global _08080310
-_08080310:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-	.global _08080314
-_08080314:
-	movs r0, #1
-	negs r0, r0
-	.global _08080318
-_08080318:
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 0802C8..080320 is decompiled as ScriptNativeLeft(); see src/decompiled.json
 
 @ 080320..080380 is decompiled as ScriptNativeRight(); see src/decompiled.json
 

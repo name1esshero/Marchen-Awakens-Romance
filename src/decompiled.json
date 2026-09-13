@@ -3304,5 +3304,41 @@
     "size": 8,
     "name": "ScriptCmdFail",
     "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "080282B4",
+    "size": 68,
+    "name": "ObjectSetState1",
+    "file": "src/object.c"
+  },
+  {
+    "addr": "080322A4",
+    "size": 20,
+    "name": "ScriptCommand22",
+    "file": "src/object_command.c"
+  },
+  {
+    "addr": "080322B8",
+    "size": 20,
+    "name": "ScriptCommandMode3",
+    "file": "src/object_command.c"
+  },
+  {
+    "addr": "0807F624",
+    "size": 64,
+    "name": "ScriptResolveOperand",
+    "file": "src/script_bytecode.c"
+  },
+  {
+    "addr": "080802C8",
+    "size": 88,
+    "name": "ScriptNativeLeft",
+    "file": "src/script_native.c"
+  },
+  {
+    "addr": "080322CC",
+    "size": 144,
+    "name": "StartObjectCommandTask",
+    "file": "src/object_command.c"
   }
 ]

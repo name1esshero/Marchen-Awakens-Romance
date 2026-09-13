@@ -5762,7 +5762,7 @@ sub_0800B122:
 	bl ObjectSetFields34And36
 	adds r0, r4, #0
 	movs r1, #1
-	bl ObjectClearUnk2C
+	bl ObjectSetState1
 
 	.thumb_func
 	.thumb

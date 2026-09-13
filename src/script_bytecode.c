@@ -10,6 +10,22 @@ extern s32 sub_08080C94(s32 dividend, s32 divisor);
 extern s32 sub_0807F1F8(void *record, s32 selector);
 extern void HeapFree(void *heap, void *block);
 
+AT("0007F624") s32 *ScriptResolveOperand(u32 operand)
+{
+    s32 *result;
+    if (operand & 0x80)
+    {
+        struct ScriptBytecodeVm *vm = gScriptBytecodeVm;
+        result = (s32 *)vm->frame.live.registers[operand & -129];
+    }
+    else
+    {
+        struct ScriptBytecodeContext *context = gScriptBytecodeRoot->context;
+        result = &context->vm->frame.live.registers[operand];
+    }
+    return result;
+}
+
 AT("0007F518") u32 ScriptReadU8(u32 offset)
 {
     return gScriptBytecodeVm->bytecode[offset];
