@@ -1244,7 +1244,9 @@ _08000F50:
 	.4byte 0x00004014
 	.global _08000F54
 _08000F54:
-	bl sub_08078BA4
+	.2byte 0xF077
+	.byte 0x26
+	.byte 0xFE
 	movs r0, #1
 	movs r1, #1
 	bl sub_08079EA8
@@ -2498,7 +2500,9 @@ sub_0800163C:
 	movs r2, #0
 	movs r3, #128
 	lsls r3, r3, #3
-	bl sub_0807B32C
+	.2byte 0xF079
+	.byte 0x54
+	.byte 0xFD
 	ldr r0, [r7, #0]
 	adds r0, r0, r4
 	ldr r0, [r0, #0]
@@ -2599,8 +2603,8 @@ sub_0800163C:
 	strh r0, [r2, #0]
 	movs r0, #0
 	bl sub_08001A60
-	bl sub_080789EC
-	movs r0, #0
+	.2byte 0xF077
+	.4byte 0x2000F84B
 	add sp, #12
 	pop {r3, r4, r5}
 	mov r8, r3
@@ -11311,457 +11315,23 @@ _0800569E:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_080056AC
-sub_080056AC:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r10
-	mov r6, r9
-	mov r5, r8
-	push {r5, r6, r7}
-	sub sp, #4
-	adds r7, r0, #0
-	mov r8, r1
-	adds r6, r2, #0
-	mov r9, r3
-	ldr r3, [sp, #36]
-	ldr r0, _080056E0
-	ldr r1, _080056E4
-	mov r10, r1
-	movs r1, #16
-	str r1, [sp, #0]
-	mov r1, r10
-	movs r2, #0
-	.2byte 0xF075
-	.byte 0x54
-	.byte 0xF8
-	adds r4, r0, #0
-	cmp r4, #0
-	bne _080056E8
-	movs r0, #0
-	b _08005710
-	.byte 0x00
-	.byte 0x00
-	.global _080056E0
-_080056E0:
-	.4byte 0x030032C4  @ IWRAM+0x32C4
-	.global _080056E4
-_080056E4:
-	.4byte SoundFadeTask
-	.global _080056E8
-_080056E8:
-	adds r5, r4, #0
-	adds r5, #32
-	cmp r6, #0
-	beq _080056F6
-	movs r0, #1
-	.2byte 0xF078
-	.byte 0x95
-	.byte 0xFE
-	.global _080056F6
-_080056F6:
-	movs r0, #1
-	.2byte 0xF078
-	.byte 0x92
-	.byte 0xFE
-	str r7, [r4, #32]
-	mov r0, r8
-	str r0, [r5, #4]
-	str r6, [r5, #8]
-	mov r1, r9
-	str r1, [r5, #12]
-	adds r0, r4, #0
-	bl sub_08080BE8
-	adds r0, r4, #0
-	.global _08005710
-_08005710:
-	add sp, #4
-	pop {r3, r4, r5}
-	mov r8, r3
-	mov r9, r4
-	mov r10, r5
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
+@ 0056AC..005720 is decompiled as CreateSoundFadeTask(); see src/decompiled.json
 
 @ 005720..0057C0 is decompiled as SoundFadeTask(); see src/decompiled.json
 
-	.section .rom.000057C0, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_080057C0
-sub_080057C0:
-	push {r4, r5, r6, r7, lr}
-	sub sp, #4
-	adds r6, r0, #0
-	adds r4, r1, #0
-	adds r5, r2, #0
-	adds r7, r3, #0
-	.2byte 0xF001
-	.byte 0x74
-	.byte 0xFC
-	cmp r0, #0
-	beq _0800580E
-	cmp r4, #0
-	beq _08005808
-	ldr r0, _08005800
-	ldr r5, _08005804
-	movs r1, #12
-	str r1, [sp, #0]
-	adds r1, r5, #0
-	movs r2, #0
-	adds r3, r7, #0
-	.2byte 0xF074
-	.4byte 0x1C04FFC9
-	str r6, [r4, #36]
-	movs r0, #1
-	.2byte 0xF078
-	.byte 0x16
-	.byte 0xFE
-	adds r0, r4, #0
-	bl sub_08080BD4
-	adds r0, r4, #0
-	b _08005812
-	.byte 0x00
-	.byte 0x00
-	.global _08005800
-_08005800:
-	.4byte 0x030032C4  @ IWRAM+0x32C4
-	.global _08005804
-_08005804:
-	.4byte SoundWaitTask
-	.global _08005808
-_08005808:
-	adds r0, r6, #0
-	.2byte 0xF001
-	.byte 0x55
-	.byte 0xFC
-	.global _0800580E
-_0800580E:
-	str r0, [r5, #0]
-	movs r0, #0
-	.global _08005812
-_08005812:
-	add sp, #4
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 0057C0..00581C is decompiled as CreateSoundWaitTask(); see src/decompiled.json
 
 @ 00581C..005848 is decompiled as SoundWaitTask(); see src/decompiled.json
 
-	.section .rom.00005848, "ax"
-	.syntax unified
+@ 005848..005920 is decompiled as CreateSoundPlayerIdleWait(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08005848
-sub_08005848:
-	push {r4, r5, r6, lr}
-	sub sp, #4
-	adds r6, r0, #0
-	adds r4, r1, #0
-	cmp r6, #8
-	bhi _080058C8
-	lsls r0, r6, #2
-	ldr r1, _08005860
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	mov pc, r0
-	.byte 0x00
-	.byte 0x00
-	.global _08005860
-_08005860:
-	.4byte 0x08005864  @ ROM+0x5864
-	.4byte 0x080058C8
-	.4byte 0x08005888
-	.4byte 0x08005890
-	.4byte 0x08005898
-	.4byte 0x080058A0
-	.4byte 0x080058A8
-	.4byte 0x080058B0
-	.4byte 0x080058B8
-	.4byte 0x080058C0
-	.4byte 0xE01E4800
-	.4byte 0x03005FB0
-	.4byte 0xE01A4800
-	.4byte 0x03005FF0
-	.4byte 0xE0164800
-	.4byte 0x030060C0
-	.4byte 0xE0124800
-	.4byte 0x03006030
-	.4byte 0xE00E4800
-	.4byte 0x03005EB0
-	.4byte 0xE00A4800
-	.4byte 0x03005EF0
-	.4byte 0xE0064800
-	.4byte 0x03005F70
-	.4byte 0xE0024800
-	.4byte 0x03006080
-	.global _080058C8
-_080058C8:
-	ldr r0, _080058D8
-	ldr r0, [r0, #4]
-	cmp r0, #0
-	bge _080058DC
-	movs r0, #0
-	str r0, [r2, #0]
-	b _08005916
-	.byte 0x00
-	.byte 0x00
-	.global _080058D8
-_080058D8:
-	.4byte 0x03005F30  @ IWRAM+0x5F30
-	.global _080058DC
-_080058DC:
-	cmp r4, #0
-	beq _0800590C
-	ldr r0, _08005904
-	ldr r5, _08005908
-	movs r1, #12
-	str r1, [sp, #0]
-	adds r1, r5, #0
-	movs r2, #0
-	.2byte 0xF074
-	.byte 0x46
-	.byte 0xFF
-	adds r4, r0, #0
-	str r6, [r4, #36]
-	movs r0, #1
-	.2byte 0xF078
-	.4byte 0x1C20FD93
-	bl sub_08080BD4
-	adds r0, r4, #0
-	b _08005916
-	.global _08005904
-_08005904:
-	.4byte 0x030032C4  @ IWRAM+0x32C4
-	.global _08005908
-_08005908:
-	.4byte 0x08005921  @ ROM+0x5921
-	.global _0800590C
-_0800590C:
-	lsrs r0, r0, #31
-	movs r1, #1
-	eors r0, r1
-	str r0, [r2, #0]
-	movs r0, #0
-	.global _08005916
-_08005916:
-	add sp, #4
-	pop {r4, r5, r6}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 005920..0059C8 is decompiled as SoundPlayerIdleTask(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08005920
-sub_08005920:
-	push {r4, lr}
-	adds r4, r0, #0
-	ldr r0, [r4, #36]
-	cmp r0, #8
-	bhi _0800599C
-	lsls r0, r0, #2
-	ldr r1, _08005934
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	mov pc, r0
-	.global _08005934
-_08005934:
-	.4byte 0x08005938  @ ROM+0x5938
-	.4byte 0x0800599C
-	.4byte 0x0800595C
-	.4byte 0x08005964
-	.4byte 0x0800596C
-	.4byte 0x08005974
-	.4byte 0x0800597C
-	.4byte 0x08005984
-	.4byte 0x0800598C
-	.4byte 0x08005994
-	.4byte 0xE01E4800
-	.4byte 0x03005FB0
-	.4byte 0xE01A4800
-	.4byte 0x03005FF0
-	.4byte 0xE0164800
-	.4byte 0x030060C0
-	.4byte 0xE0124800
-	.4byte 0x03006030
-	.4byte 0xE00E4800
-	.4byte 0x03005EB0
-	.4byte 0xE00A4800
-	.4byte 0x03005EF0
-	.4byte 0xE0064800
-	.4byte 0x03005F70
-	.4byte 0xE0024800
-	.4byte 0x03006080
-	.global _0800599C
-_0800599C:
-	ldr r0, _080059C4
-	ldr r0, [r0, #4]
-	cmp r0, #0
-	bge _080059BC
-	movs r0, #1
-	.2byte 0xF078
-	.4byte 0x69A1FD4F
-	cmp r1, #0
-	beq _080059B6
-	movs r0, #1
-	negs r0, r0
-	str r0, [r1, #0]
-	.global _080059B6
-_080059B6:
-	adds r0, r4, #0
-	.2byte 0xF074
-	.byte 0xF8
-	.byte 0xFE
-	.global _080059BC
-_080059BC:
-	pop {r4}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _080059C4
-_080059C4:
-	.4byte 0x03005F30  @ IWRAM+0x5F30
-
-	.thumb_func
-	.thumb
-	.global sub_080059C8
-sub_080059C8:
-	push {r4, r5, r6, r7, lr}
-	sub sp, #4
-	adds r6, r0, #0
-	adds r7, r1, #0
-	adds r4, r2, #0
-	cmp r6, #8
-	bhi _08005A48
-	lsls r0, r6, #2
-	ldr r1, _080059E0
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	mov pc, r0
-	.global _080059E0
-_080059E0:
-	.4byte 0x080059E4  @ ROM+0x59E4
-	.4byte 0x08005A48
-	.4byte 0x08005A08
-	.4byte 0x08005A10
-	.4byte 0x08005A18
-	.4byte 0x08005A20
-	.4byte 0x08005A28
-	.4byte 0x08005A30
-	.4byte 0x08005A38
-	.4byte 0x08005A40
-	.4byte 0xE01E4800
-	.4byte 0x03005FB0
-	.4byte 0xE01A4800
-	.4byte 0x03005FF0
-	.4byte 0xE0164800
-	.4byte 0x030060C0
-	.4byte 0xE0124800
-	.4byte 0x03006030
-	.4byte 0xE00E4800
-	.4byte 0x03005EB0
-	.4byte 0xE00A4800
-	.4byte 0x03005EF0
-	.4byte 0xE0064800
-	.4byte 0x03005F70
-	.4byte 0xE0024800
-	.4byte 0x03006080
-	.global _08005A48
-_08005A48:
-	ldr r0, _08005A88
-	ldr r0, [r0, #4]
-	cmp r0, #0
-	blt _08005A98
-	ldr r1, _08005A8C
-	lsls r0, r6, #1
-	adds r0, r0, r6
-	lsls r0, r0, #2
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	.2byte 0xF073
-	.byte 0xF0
-	.byte 0xFB
-	ldr r0, _08005A90
-	ldr r1, _08005A94
-	movs r2, #12
-	str r2, [sp, #0]
-	movs r2, #0
-	adds r3, r4, #0
-	.2byte 0xF074
-	.byte 0x86
-	.byte 0xFE
-	adds r5, r0, #0
-	cmp r5, #0
-	beq _08005AB0
-	adds r4, r5, #0
-	adds r4, #32
-	movs r0, #1
-	.2byte 0xF078
-	.byte 0xD0
-	.byte 0xFC
-	str r6, [r4, #4]
-	str r7, [r4, #8]
-	adds r0, r5, #0
-	b _08005AB2
-	.global _08005A88
-_08005A88:
-	.4byte 0x03005F30  @ IWRAM+0x5F30
-	.global _08005A8C
-_08005A8C:
-	.4byte 0x0808B144  @ ROM+0x8B144
-	.global _08005A90
-_08005A90:
-	.4byte 0x030032C4  @ IWRAM+0x32C4
-	.global _08005A94
-_08005A94:
-	.4byte SoundStartTask
-	.global _08005A98
-_08005A98:
-	ldr r1, _08005ABC
-	lsls r0, r6, #1
-	adds r0, r0, r6
-	lsls r0, r0, #2
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	ldr r2, _08005AC0
-	lsls r1, r7, #3
-	adds r1, r1, r2
-	ldr r1, [r1, #0]
-	bl sub_0807915C
-	.global _08005AB0
-_08005AB0:
-	movs r0, #0
-	.global _08005AB2
-_08005AB2:
-	add sp, #4
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _08005ABC
-_08005ABC:
-	.4byte 0x0808B144  @ ROM+0x8B144
-	.global _08005AC0
-_08005AC0:
-	.4byte 0x0808B1B0  @ ROM+0x8B1B0
+@ 0059C8..005AC4 is decompiled as StartSongWithTransition(); see src/decompiled.json
 
 @ 005AC4..005B2C is decompiled as SoundStartTask(); see src/decompiled.json
 
-	.section .rom.00005B2C, "ax"
-	.syntax unified
-	.4byte 0x47704800
-	.4byte 0x00007FFF
+@ 005B2C..005B34 is decompiled as ScriptNativeDummy(); see src/decompiled.json
 
 @ 005B34..005B44 is decompiled as ScriptNativeStartTask05378(); see src/decompiled.json
 
@@ -11930,68 +11500,7 @@ _08005D18:
 
 @ 005D98..005DAC is decompiled as ScriptNativeStartTask057C0(); see src/decompiled.json
 
-	.section .rom.00005DAC, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_08005DAC
-sub_08005DAC:
-	push {lr}
-	adds r2, r1, #0
-	ldr r0, [r2, #0]
-	cmp r0, #8
-	bhi _08005E28
-	lsls r0, r0, #2
-	ldr r1, _08005DC0
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	mov pc, r0
-	.global _08005DC0
-_08005DC0:
-	.4byte 0x08005DC4  @ ROM+0x5DC4
-	.4byte 0x08005E28
-	.4byte 0x08005DE8
-	.4byte 0x08005DF0
-	.4byte 0x08005DF8
-	.4byte 0x08005E00
-	.4byte 0x08005E08
-	.4byte 0x08005E10
-	.4byte 0x08005E18
-	.4byte 0x08005E20
-	.4byte 0xE01E4800
-	.4byte 0x03005FB0
-	.4byte 0xE01A4800
-	.4byte 0x03005FF0
-	.4byte 0xE0164800
-	.4byte 0x030060C0
-	.4byte 0xE0124800
-	.4byte 0x03006030
-	.4byte 0xE00E4800
-	.4byte 0x03005EB0
-	.4byte 0xE00A4800
-	.4byte 0x03005EF0
-	.4byte 0xE0064800
-	.4byte 0x03005F70
-	.4byte 0xE0024800
-	.4byte 0x03006080
-	.global _08005E28
-_08005E28:
-	ldr r0, _08005E38
-
-	.thumb_func
-	.thumb
-	.global sub_08005E2A
-sub_08005E2A:
-	ldrh r2, [r2, #8]
-	movs r1, #255
-	bl sub_080799D0
-	movs r0, #1
-	pop {r1}
-	bx r1
-	.global _08005E38
-_08005E38:
-	.4byte 0x03005F30  @ IWRAM+0x5F30
+@ 005DAC..005E3C is decompiled as ScriptNativeSetSoundPlayerVolume(); see src/decompiled.json
 
 @ 005E3C..005E50 is decompiled as ScriptNativeStartTask05848(); see src/decompiled.json
 
@@ -12015,120 +11524,11 @@ _08005E38:
 
 @ 005F54..005F7C is decompiled as StartIndexedSong(); see src/decompiled.json
 
-	.section .rom.00005F7C, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_08005F7C
-sub_08005F7C:
-	push {r4, r5, lr}
-	sub sp, #40
-	ldr r0, _08005FD4
-	str r0, [sp, #0]
-	ldr r0, _08005FD8
-	str r0, [sp, #4]
-	ldr r0, _08005FDC
-	str r0, [sp, #8]
-	ldr r0, _08005FE0
-	str r0, [sp, #12]
-	ldr r0, _08005FE4
-	str r0, [sp, #16]
-	ldr r0, _08005FE8
-	str r0, [sp, #20]
-	ldr r0, _08005FEC
-	str r0, [sp, #24]
-	ldr r0, _08005FF0
-	str r0, [sp, #28]
-	ldr r0, _08005FF4
-	str r0, [sp, #32]
-	movs r4, #0
-	ldr r5, _08005FF8
-	ldr r0, _08005FFC
-	ldr r1, _08006000
-	lsls r2, r2, #3
-	adds r2, r2, r0
-	.global _08005FB0
-_08005FB0:
-	movs r0, #0
-	ldrsh r3, [r1, r0]
-	lsls r0, r3, #2
-	add r0, sp
-	ldr r0, [r0, #0]
-	ldr r0, [r0, #4]
-	cmp r0, #0
-	bge _08006004
-	lsls r0, r3, #1
-	adds r0, r0, r3
-	lsls r0, r0, #2
-	adds r0, r0, r5
-	ldr r0, [r0, #0]
-	ldr r1, [r2, #0]
-	bl sub_0807915C
-	adds r0, r4, #0
-	b _08006010
-	.global _08005FD4
-_08005FD4:
-	.4byte 0x03005F30  @ IWRAM+0x5F30
-	.global _08005FD8
-_08005FD8:
-	.4byte 0x03005FB0  @ IWRAM+0x5FB0
-	.global _08005FDC
-_08005FDC:
-	.4byte 0x03005FF0  @ IWRAM+0x5FF0
-	.global _08005FE0
-_08005FE0:
-	.4byte 0x030060C0  @ IWRAM+0x60C0
-	.global _08005FE4
-_08005FE4:
-	.4byte 0x03006030  @ IWRAM+0x6030
-	.global _08005FE8
-_08005FE8:
-	.4byte 0x03005EB0  @ IWRAM+0x5EB0
-	.global _08005FEC
-_08005FEC:
-	.4byte 0x03005EF0  @ IWRAM+0x5EF0
-	.global _08005FF0
-_08005FF0:
-	.4byte 0x03005F70  @ IWRAM+0x5F70
-	.global _08005FF4
-_08005FF4:
-	.4byte 0x03006080  @ IWRAM+0x6080
-	.global _08005FF8
-_08005FF8:
-	.4byte 0x0808B144  @ ROM+0x8B144
-	.global _08005FFC
-_08005FFC:
-	.4byte 0x0808B1B0  @ ROM+0x8B1B0
-	.global _08006000
-_08006000:
-	.4byte 0x081ACC44  @ ROM+0x1ACC44
-	.global _08006004
-_08006004:
-	adds r1, #2
-	adds r4, #1
-	cmp r4, #5
-	ble _08005FB0
-	movs r0, #1
-	negs r0, r0
-	.global _08006010
-_08006010:
-	add sp, #40
-	pop {r4, r5}
-	pop {r1}
-	bx r1
+@ 005F7C..006018 is decompiled as StartSongOnFreePlayer(); see src/decompiled.json
 
 @ 006018..006034 is decompiled as StopSoundPlayer(); see src/decompiled.json
 
-	.section .rom.00006034, "ax"
-	.syntax unified
-	.4byte 0x4A05B500
-	.4byte 0x18090041
-	.4byte 0x18890089
-	.4byte 0xF0726808
-	.4byte 0xBC01FDC5
-	.4byte 0x00004700
-	.4byte 0x0808B144
+@ 006034..006050 is decompiled as ResumeSoundPlayer(); see src/decompiled.json
 
 @ 006050..006078 is decompiled as CreateSceneTask(); see src/decompiled.json
 
@@ -12774,7 +12174,9 @@ _080063A4:
 	ldr r0, _08006478
 	adds r4, r4, r0
 	ldr r0, [r4, #0]
-	bl sub_0806E5AC
+	.2byte 0xF068
+	.byte 0xF8
+	.byte 0xF8
 	adds r0, r7, #0
 	adds r1, r7, #0
 	adds r2, r7, #0
@@ -12962,14 +12364,16 @@ _08006508:
 	ldr r0, _080065E0
 	adds r4, r4, r0
 	ldr r0, [r4, #0]
-	bl sub_0806E5AC
+	.2byte 0xF068
+	.byte 0x46
+	.byte 0xF8
 	ldr r0, [r4, #0]
 	ldr r1, _080065E4
 	adds r0, r0, r1
 	strb r5, [r0, #0]
 	ldr r0, [r4, #0]
-	bl sub_0806E54C
-	ldr r0, [r4, #0]
+	.2byte 0xF068
+	.4byte 0x6820F80F
 	ldr r2, _080065E8
 	adds r0, r0, r2
 	ldrb r0, [r0, #0]

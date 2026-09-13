@@ -13,7 +13,7 @@ extern void sub_0801097C(s32,s32,s32 *);
 extern void *HeapAlloc(void *,u32);
 extern void CpuFill(void *,u32,u32);
 #include "ncd.h"
-extern s32 FindResourceByName(s32,const char *);
+extern s32 SpriteResourceFindGroup(s32,const char *);
 extern void ScriptCompletePendingTasks(u32);
 extern void FinishTask(void *);
 __attribute__((section(".rom.00010B6C"))) void ScriptSpriteInitTask(struct SpriteInitTask *task)
@@ -27,7 +27,7 @@ __attribute__((section(".rom.00010B6C"))) void ScriptSpriteInitTask(struct Sprit
   *extra=HeapAlloc(0,72);CpuFill(*extra,72,0);NcdSpriteContainerReset(*extra);
   sprite->active=1;
   sprite->container=payload[6];
-  sprite->group=FindResourceByName(sprite->container,(char *)(payload+1));
+  sprite->group=SpriteResourceFindGroup(sprite->container,(char *)(payload+1));
   sprite->animation=payload[8];sprite->frame=payload[9];
   sprite->drawOrderBits=3;sprite->last=0;
   ((struct SpriteFlagByte *)&sprite->flags1)->enabled=1;*((u8 *)sprite)|=2;

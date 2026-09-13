@@ -26,4 +26,6 @@ void InitFont(struct Font *, const struct FontData *);
 void ClearFont(struct Font *);
 u32 FontGlyphStride(const struct Font *);
 const u16 *FontPalette(const struct Font *);
+u32 FontCharacterToGlyph(u32 code);
+const u8 *GetFontGlyph(const struct Font *, u32 code);
 #endif

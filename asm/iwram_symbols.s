@@ -13,6 +13,10 @@
 .set gIwramField3FD5Offset, 0x00003FD5
 .global gSoundIrqModeOffset
 .set gSoundIrqModeOffset, 0x00003FD6
+.global ReadSramFast
+.set ReadSramFast, 0x03006100
+.global VerifySramFast
+.set VerifySramFast, 0x03006104
 .global gIwramPointer2860Offset
 .set gIwramPointer2860Offset, 0x00002860
 .global gIwramField0810Offset
@@ -40,11 +44,33 @@
 .global gItemDefinitions
 .set gItemDefinitions, 0x081B096C
 
-.global gSoundPlayerTable
-.set gSoundPlayerTable, 0x0808B144
+.global gSoundPlayerCount
+.set gSoundPlayerCount, 9
+.global gSoundPlayer0
+.set gSoundPlayer0, 0x03005F30
+.global gSoundPlayer1
+.set gSoundPlayer1, 0x03005FB0
+.global gSoundPlayer2
+.set gSoundPlayer2, 0x03005FF0
+.global gSoundPlayer3
+.set gSoundPlayer3, 0x030060C0
+.global gSoundPlayer4
+.set gSoundPlayer4, 0x03006030
+.global gSoundPlayer5
+.set gSoundPlayer5, 0x03005EB0
+.global gSoundPlayer6
+.set gSoundPlayer6, 0x03005EF0
+.global gSoundPlayer7
+.set gSoundPlayer7, 0x03005F70
+.global gSoundPlayer8
+.set gSoundPlayer8, 0x03006080
 
-.global gSongTable
-.set gSongTable, 0x0808B1B0
+@ MusicPlayer2000's fixed ROM tables now come from src/sound_tables.c.  These
+@ two values are absolute driver constants rather than stored table objects.
+.global gSoundJumpTable
+.set gSoundJumpTable, 0x03005D20
+.global gSoundMaxLines
+.set gSoundMaxLines, 0
 .global _ctype_
 .set _ctype_, 0x081AC7A4
 

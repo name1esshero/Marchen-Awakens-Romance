@@ -20,7 +20,7 @@ void sub_0801097C(s32 id,s32 wait,s32 *ready){assert(id==3 && wait==1);*ready=0;
 void *HeapAlloc(void *heap,u32 size){assert(!heap && size==72);allocated++;return auxiliary;}
 void CpuFill(void *dest,u32 size,u32 value){assert(dest==auxiliary && size==72 && !value);memset(dest,0,size);}
 void NcdSpriteContainerReset(void *block){unsigned i;assert(block==auxiliary);for(i=0;i<72;i++)assert(!auxiliary[i]);}
-s32 FindResourceByName(s32 container,const char *name){assert(container==2 && !strcmp(name,"TEST"));return 7;}
+s32 SpriteResourceFindGroup(s32 container,const char *name){assert(container==2 && !strcmp(name,"TEST"));return 7;}
 void ScriptCompletePendingTasks(u32 count){assert(count==1);completed++;}
 void FinishTask(void *task){assert(task);finished++;}
 int main(void){

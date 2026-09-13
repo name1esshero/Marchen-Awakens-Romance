@@ -5,7 +5,8 @@
 
 void Lz77UnCompVramSwapped(void *destination, const void *source);
 void SpriteAuxiliaryReset(void *state);
-s32 MapGeneratorStep(void);
+u32 CalculateSaveCrc32(const void *data, u32 size);
+u32 CalculateCrc32(const void *data, u32 size);
 s32 RuntimeReadSignedByte(void);
 void SoundSongStartU16(u32 song);
 void RuntimeResetSelection(void);

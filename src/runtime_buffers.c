@@ -71,14 +71,14 @@ AT("00008684") void RuntimeAddOffsets(u32 first,u32 second)
  *(u32 *)(RUNTIME_BASE+0xE54)+=second;
 }
 
-extern u32 FindResourceByName(u32 type,const void *name);
+extern u32 SpriteResourceFindGroup(u32 type,const void *name);
 AT("00019C34") void RuntimePartInitHeader(u8 *record,const void *resourceName,u32 value)
 {
  u32 one=1;
  record[18]=one;
  record[19]=one;
  *(u16 *)(record+26)=one;
- *(u16 *)(record+28)=FindResourceByName(1,resourceName);
+ *(u16 *)(record+28)=SpriteResourceFindGroup(1,resourceName);
  *(u16 *)(record+16)=value;
 }
 

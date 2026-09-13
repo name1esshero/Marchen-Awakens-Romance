@@ -42,6 +42,9 @@ static u32 copiedSize;
 void sub_080869B8(void *data) { releasedData=data; releaseCount++; }
 void CpuCopy(void *destination,const void *source,u32 size) { copiedDestination=destination; copiedSource=source; copiedSize=size; }
 int sub_08080BFC(int dividend,int divisor) { return dividend/divisor; }
+char *strupr(char *s) { char *p=s; while (*p) { if (*p>='a' && *p<='z') *p-=32; p++; } return s; }
+char *strcpy(char *destination, const char *source) { char *result=destination; while ((*destination++=*source++)) {} return result; }
+s32 memcmp(const void *left, const void *right, u32 size) { const u8 *a=left; const u8 *b=right; while (size--) { if (*a != *b) return *a-*b; a++; b++; } return 0; }
 static void customCopy(void *destination,const void *source,u32 size) { copiedDestination=destination; copiedSource=source; copiedSize=size+1; }
 static int run(void) {
     struct SpriteResource resource;

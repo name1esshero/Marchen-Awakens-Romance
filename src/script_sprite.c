@@ -6,7 +6,7 @@
 #include "runtime_misc.h"
 extern char *strcpy(char *,const char *);
 extern char *strupr(char *);
-extern s32 FindResourceByName(s32,const char *);
+extern s32 SpriteResourceFindGroup(s32,const char *);
 __attribute__((section(".rom.00010C0C"))) void ScriptSpriteSelect(s32 id,s32 container,const char *name,s32 animation,s32 frame)
 {
  char resource[16];
@@ -14,7 +14,7 @@ __attribute__((section(".rom.00010C0C"))) void ScriptSpriteSelect(s32 id,s32 con
  if(sprite->active) {
   strcpy(resource,name);strupr(resource);
   sprite->container=container;
-  sprite->group=FindResourceByName(sprite->container,resource);
+  sprite->group=SpriteResourceFindGroup(sprite->container,resource);
   sprite->animation=animation;sprite->frame=frame;
   sprite->drawOrderBits=3;
  }

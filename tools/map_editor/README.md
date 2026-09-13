@@ -21,8 +21,10 @@ The default **Game BG order** preview draws the second field plane first and
 plane 0 last, matching the loader's plane-0/BG0 and plane-1/BG1 assignment and
 the GBA's lower-BG-number ordering when priorities tie. Disable it to inspect
 planes in their raw file order. Runtime priority changes, animated tiles,
-palette effects, sprites, and additional resources sharing VRAM are not yet
-simulated.
+palette effects, and additional resources sharing VRAM are not yet simulated.
+The editor draws the first frame of a script-created sprite when one literal
+`SprInit` is followed by literal X and Y `SprSet` calls for the same ID. It uses
+the decoded NCD cell layout and the frame's engine-relative origin.
 
 The **Event calls** panel selects the same-name SPC when present, or any other
 named script. Filter native calls by name and edit supported signed integer
@@ -212,8 +214,10 @@ recovers embedded resources from most of these expression sequences while
 keeping dynamic IDs explicit. The editor API reports static `field_loads`,
 `sprite_resources`, `sprite_properties`, and `sprite_moves`;
 `maps/script_catalog.json` records the same data across every named script.
-These are possible call sites rather than executed branch state, so the
-viewport does not pretend that every recovered sprite is active.
+The viewport's **Show script-created sprites at initial positions** option
+joins literal IDs across those setup calls and draws the source PNG for the
+selected animation's first frame. These remain possible call sites rather than
+executed branch state; register-derived IDs or coordinates remain omitted.
 
 ### Tilesets versus map layers
 

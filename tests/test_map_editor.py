@@ -13,7 +13,7 @@ import unittest
 from unittest.mock import patch
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
-from map_editor.model import Project,compile_map,map_document,override_path
+from map_editor.model import Project,compile_map,map_document,override_path,initial_sprite_placements
 from map_editor.server import make_server
 import script_events
 
@@ -36,6 +36,24 @@ def fixture(root):
 
 
 class MapCodecTests(unittest.TestCase):
+    def test_script_created_sprite_gets_its_first_literal_position(self):
+        def call(offset,name,*values):
+            args=[{'kind':'string' if isinstance(v,str) else 'integer','value':v}
+                  for v in values]
+            return {'offset':offset,'function':name,'decoded_arguments':args}
+        calls=[call(10,'SprInit',7,0,'PS_WK02',0,0),
+               call(20,'SprSet',7,0,200),call(30,'SprSet',7,1,412),
+               call(40,'SprSet',7,0,999)]
+        self.assertEqual(initial_sprite_placements(calls),[{
+            'sprite':7,'container':0,'resource':'PS_WK02','animation':0,
+            'x':200,'y':412,'init_offset':10}])
+
+    def test_map_script_exposes_renderable_initial_sprites(self):
+        data=Project(ROOT).script_data('MAP01_A.SPC')
+        sprite=next(item for item in data['sprite_placements'] if item['resource']=='PS_WK02')
+        self.assertEqual((sprite['x'],sprite['y']),(200,412))
+        self.assertTrue(sprite['preview']['image'].startswith('data:image/png;base64,'))
+
     def test_all_maps_and_traced_scenes_round_trip(self):
         project=Project(ROOT);catalog=project.catalog()
         self.assertGreaterEqual(len(catalog['maps']),49);self.assertFalse(catalog['unsupported'])

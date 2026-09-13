@@ -1,5 +1,6 @@
 """Source-level map/event editor model. All writes are validated before commit."""
 import hashlib
+import base64
 import json
 from pathlib import Path
 import struct
@@ -15,6 +16,12 @@ import script_events
 import named_scripts
 
 ROOT=Path(__file__).resolve().parents[2]
+
+SPRITE_CONTAINERS = {
+    0: Path('graphics/ui/manifest.json'),
+    1: Path('graphics/battle/effects/manifest.json'),
+    2: Path('graphics/battle/characters/manifest.json'),
+}
 
 
 def read(path):return json.loads(path.read_text())
@@ -81,6 +88,28 @@ def apply_override(blob,name,root):
     return compile_map(blob,read(path)) if path.exists() else blob
 
 
+def initial_sprite_placements(calls):
+    """Project literal SprInit/SprSet setup sequences into map coordinates."""
+    active={};result=[]
+    for call in calls:
+        args=call.get('decoded_arguments',[])
+        values=[a.get('value') if a.get('kind') in ('integer','string') else None
+                for a in args]
+        if call.get('function')=='SprInit' and len(values)==5 and isinstance(values[0],int):
+            active[values[0]]=dict(sprite=values[0],container=values[1],resource=values[2],
+                                   animation=values[3],x=None,y=None,init_offset=call['offset'],emitted=False)
+        elif call.get('function')=='SprChg' and len(values)==5 and isinstance(values[0],int) and values[0] in active:
+            active[values[0]].update(container=values[1],resource=values[2],animation=values[3])
+        elif call.get('function')=='SprSet' and len(values)==3 and isinstance(values[0],int):
+            item=active.get(values[0]);prop=values[1];value=values[2]
+            if item and prop in (0,1) and isinstance(value,int):
+                item['xy'[prop]]=((value+0x8000)&0xFFFF)-0x8000
+                if item['x'] is not None and item['y'] is not None and not item['emitted']:
+                    item['emitted']=True
+                    result.append({k:v for k,v in item.items() if k!='emitted'})
+    return result
+
+
 class Project:
     def __init__(self,root=ROOT):
         self.root=Path(root)
@@ -98,6 +127,26 @@ class Project:
                 if isinstance(destination,str):
                     self.incoming.setdefault(destination+'.KMP',[]).append(dict(link,script=script['name']))
         self.unsupported={}
+        self.sprite_manifests={}
+
+    def sprite_preview(self,container,resource,animation):
+        if container not in SPRITE_CONTAINERS or not isinstance(resource,str) or not isinstance(animation,int):
+            return None
+        if container not in self.sprite_manifests:
+            path=SPRITE_CONTAINERS[container];full=self.root/path
+            if not full.exists():return None
+            manifest=read(full)
+            self.sprite_manifests[container]=(path,manifest,
+                {group['name']:group for group in manifest['groups']})
+        manifest_path,manifest,groups=self.sprite_manifests[container]
+        group=groups.get(resource)
+        if not group:return None
+        sequence=next((a for a in group['animations'] if a['index']==animation),None)
+        if not sequence or not sequence['frames']:return None
+        frame=manifest['frames'][sequence['frames'][0]]
+        raw=(self.root/manifest_path.parent/frame['path']).read_bytes()
+        return dict(x=frame['x'],y=frame['y'],width=frame['width'],height=frame['height'],
+                    frame=frame['id'],image='data:image/png;base64,'+base64.b64encode(raw).decode('ascii'))
 
     def entry(self,name):
         if name not in self.members:raise ValueError('Unknown map')
@@ -134,8 +183,11 @@ class Project:
         doc=read(path) if path.exists() else dict(version=1,source_sha256=sha(original),arguments={})
         result=script_events.apply(blob,original,doc)
         calls=script_events.calls(result)
+        placements=initial_sprite_placements(calls)
+        for item in placements:
+            item['preview']=self.sprite_preview(item['container'],item['resource'],item['animation'])
         return dict(name=name,revision=sha(original+(self.root/e['text']).read_bytes()+json.dumps(doc,sort_keys=True).encode()),
-                    document=doc,calls=calls,analysis=script_events.semantic_summary(calls),
+                    document=doc,calls=calls,analysis=script_events.semantic_summary(calls),sprite_placements=placements,
                     text_path=e['text'])
 
     def load(self,name):

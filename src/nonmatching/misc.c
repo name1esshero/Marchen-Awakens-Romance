@@ -52,40 +52,4 @@ void AddNodeToBucket(struct BucketTable *table, struct ListNode *node)
 /* Field setters and counter initialization/reset now match with agbcc;
  * see src/object.c and src/step_counter.c. */
 
-/* sub_08079EDC and its two siblings at 0x08079F1C and 0x08079F5C.
- *
- * Save-memory access. SRAM on the GBA is 8-bit only and needs the slowest
- * wait state, so every one of these sets WAITCNT's SRAM field to 3 (8 cycles)
- * and then moves the data a byte at a time. The first two are copy routines; 08079F5C instead compares bytes and
- * returns the first mismatching destination address. The copy routines are
- * duplicated, which is what you would expect if they are copied into RAM to
- * run: sub_08079FA8 computes the byte span of this block in order to relocate
- * it.
- *
- * Original:
- *     adds r5, r0, #0          @ the arguments are copied into r4/r5 first
- *     adds r4, r1, #0
- *     adds r3, r2, #0
- *     ldrh r0, [REG_WAITCNT]
- *     ands r0, #0xFFFC
- *     orrs r0, #3              @ SRAM wait = 8 cycles
- *     strh r0, [REG_WAITCNT]
- *     ...                      @ for (i = size - 1; i != -1; i--) copy a byte
- *
- * Ours keeps the arguments where they arrive; the copy into callee-saved
- * registers is a habit of the original compiler, not something the source
- * asks for.
- */
-#define REG_WAITCNT (*(vu16 *)0x04000204)
-#define WAITCNT_SRAM_MASK 0xFFFC
-#define WAITCNT_SRAM_8    3
-
-void SramCopy(const u8 *src, u8 *dest, u32 size)
-{
-    s32 i;
-
-    REG_WAITCNT = (REG_WAITCNT & WAITCNT_SRAM_MASK) | WAITCNT_SRAM_8;
-
-    for (i = size - 1; i != -1; i--)
-        *dest++ = *src++;
-}
+/* The SRAM library candidates formerly kept here now match in src/sram.c. */

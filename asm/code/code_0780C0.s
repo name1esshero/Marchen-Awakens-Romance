@@ -420,7 +420,9 @@ _08078410:
 	ldr r0, [r0, #0]
 	mov r8, r0
 	adds r0, r7, #0
-	bl sub_08079280
+	.2byte 0xF000
+	.byte 0x32
+	.byte 0xFF
 	ldr r0, [r7, #4]
 	cmp r0, #0
 	bge _08078424
@@ -661,7 +663,9 @@ _08078580:
 	mov r9, r2
 	adds r0, r7, #0
 	adds r1, r5, #0
-	bl sub_08079348
+	.2byte 0xF000
+	.byte 0xD8
+	.byte 0xFE
 	ldr r4, [r5, #32]
 	cmp r4, #0
 	beq _08078610
@@ -725,7 +729,9 @@ _080785FE:
 	adds r1, r2, #0
 	ldrb r2, [r5, #9]
 	ldr r0, [r4, #36]
-	bl sub_08078948
+	.2byte 0xF000
+	.byte 0xA0
+	.byte 0xF9
 	str r0, [r4, #32]
 	.global _0807860A
 _0807860A:
@@ -1094,8 +1100,8 @@ _0807880C:
 _0807881E:
 	ldr r0, [sp, #0]
 	adds r1, r5, #0
-	bl sub_08079348
-	ldr r0, [r5, #4]
+	.2byte 0xF000
+	.4byte 0x6868FD91
 	str r0, [r4, #16]
 	ldr r0, [sp, #16]
 	strb r0, [r4, #19]
@@ -1152,7 +1158,9 @@ _08078886:
 	ldrb r2, [r5, #9]
 	adds r1, r3, #0
 	adds r0, r7, #0
-	bl sub_08078948
+	.2byte 0xF000
+	.byte 0x5C
+	.byte 0xF8
 	.global _08078890
 _08078890:
 	str r0, [r4, #32]
@@ -1296,2929 +1304,121 @@ _08078944:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_08078948
-sub_08078948:
-	push {r4, r5, r6, r7, lr}
-	mov r12, r0
-	lsls r1, r1, #24
-	lsrs r6, r1, #24
-	lsls r7, r2, #24
-	cmp r6, #178
-	bls _0807895C
-	movs r6, #178
-	movs r7, #255
-	lsls r7, r7, #24
-	.global _0807895C
-_0807895C:
-	ldr r3, _080789A4
-	adds r0, r6, r3
-	ldrb r5, [r0, #0]
-	ldr r4, _080789A8
-	movs r2, #15
-	adds r0, r5, #0
-	ands r0, r2
-	lsls r0, r0, #2
-	adds r0, r0, r4
-	lsrs r1, r5, #4
-	ldr r5, [r0, #0]
-	lsrs r5, r1
-	adds r0, r6, #1
-	adds r0, r0, r3
-	ldrb r1, [r0, #0]
-	adds r0, r1, #0
-	ands r0, r2
-	lsls r0, r0, #2
-	adds r0, r0, r4
-	lsrs r1, r1, #4
+@ 078948..0789AC is decompiled as SoundMidiKeyToFrequency(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08078984
-sub_08078984:
-	ldr r0, [r0, #0]
-	lsrs r0, r1
-	mov r1, r12
-	ldr r4, [r1, #4]
-	subs r0, r0, r5
-	adds r1, r7, #0
-	bl sub_08077DB0
-	adds r1, r0, #0
-	adds r1, r5, r1
-	adds r0, r4, #0
-	bl sub_08077DB0
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.global _080789A4
-_080789A4:
-	.4byte 0x080895C8  @ ROM+0x895C8
-	.global _080789A8
-_080789A8:
-	.4byte 0x0808967C  @ ROM+0x8967C
-	.4byte 0x00004770
-	.4byte 0x6B531C02
-	.4byte 0x42834803
-	.4byte 0x6850D103
-	.4byte 0x40084902
-	.4byte 0x47706050
-	.4byte 0x68736D53
-	.4byte 0x7FFFFFFF
+@ 0789AC..0789B0 is decompiled as SoundDriverUnusedNoOp(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080789CC
-sub_080789CC:
-	adds r2, r0, #0
-	lsls r1, r1, #16
-	lsrs r1, r1, #16
-	ldr r3, [r2, #52]
-	ldr r0, _080789E8
-	cmp r3, r0
-	bne _080789E4
-	strh r1, [r2, #38]
-	strh r1, [r2, #36]
-	movs r0, #128
-	lsls r0, r0, #1
-	strh r0, [r2, #40]
-	.global _080789E4
-_080789E4:
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _080789E8
-_080789E8:
-	.4byte 0x68736D53
+@ 0789B0..0789CC is decompiled as SoundPlayerResume(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080789EC
-sub_080789EC:
-	push {r4, r5, r6, lr}
-	ldr r0, _08078A40
-	movs r1, #2
-	negs r1, r1
-	ands r0, r1
-	ldr r1, _08078A44
-	ldr r2, _08078A48
-	.2byte 0xF001
-	.4byte 0x4813FA53
-	bl sub_08078DEC
-	ldr r0, _08078A50
-	bl sub_08078CA8
-	ldr r0, _08078A54
-	bl sub_08078F5C
-	ldr r0, _08078A58
-	lsls r0, r0, #16
-	lsrs r0, r0, #16
-	cmp r0, #0
-	beq _08078A3A
-	ldr r5, _08078A5C
-	adds r6, r0, #0
-	.global _08078A1E
-_08078A1E:
-	ldr r4, [r5, #0]
-	ldr r1, [r5, #4]
-	ldrb r2, [r5, #8]
-	adds r0, r4, #0
-	bl sub_080790E4
-	ldrh r0, [r5, #10]
-	strb r0, [r4, #11]
-	ldr r0, _08078A60
-	str r0, [r4, #24]
-	adds r5, #12
-	subs r6, #1
-	cmp r6, #0
-	bne _08078A1E
-	.global _08078A3A
-_08078A3A:
-	pop {r4, r5, r6}
-	pop {r0}
-	bx r0
-	.global _08078A40
-_08078A40:
-	.4byte 0x08077E45  @ ROM+0x77E45
-	.global _08078A44
-_08078A44:
-	.4byte 0x03005018  @ IWRAM+0x5018
-	.global _08078A48
-_08078A48:
-	.4byte 0x040000E0  @ IO+0xE0
-	.global _08078A4C
-_08078A4C:
-	.4byte 0x030053A0  @ IWRAM+0x53A0
-	.global _08078A50
-_08078A50:
-	.4byte 0x03005DB0  @ IWRAM+0x5DB0
-	.global _08078A54
-_08078A54:
-	.4byte 0x0095EC00
-	.global _08078A58
-_08078A58:
-	.4byte 0x00000009
-	.global _08078A5C
-_08078A5C:
-	.4byte 0x0808B144  @ ROM+0x8B144
-	.global _08078A60
-_08078A60:
-	.4byte 0x03006070  @ IWRAM+0x6070
+@ 0789CC..0789EC is decompiled as SoundPlayerFadeOut(); see src/decompiled.json
+
+@ 0789EC..078A64 is decompiled as SoundDriverInit(); see src/decompiled.json
 
 @ 078A64..078A70 is decompiled as SoundUpdate(); see src/decompiled.json
 
-	.section .rom.00078A70, "ax"
-	.syntax unified
+@ 078A70..078A9C is decompiled as SoundSongStart(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08078A70
-sub_08078A70:
-	push {lr}
-	lsls r0, r0, #16
-	ldr r2, _08078A94
-	ldr r1, _08078A98
-	lsrs r0, r0, #13
-	adds r0, r0, r1
-	ldrh r3, [r0, #4]
-	lsls r1, r3, #1
-	adds r1, r1, r3
-	lsls r1, r1, #2
-	adds r1, r1, r2
-	ldr r2, [r1, #0]
-	ldr r1, [r0, #0]
-	adds r0, r2, #0
-	bl sub_0807915C
-	pop {r0}
-	bx r0
-	.global _08078A94
-_08078A94:
-	.4byte 0x0808B144  @ ROM+0x8B144
-	.global _08078A98
-_08078A98:
-	.4byte 0x0808B1B0  @ ROM+0x8B1B0
+@ 078A9C..078AE8 is decompiled as SoundSongStartOrChange(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08078A9C
-sub_08078A9C:
-	push {lr}
-	lsls r0, r0, #16
-	ldr r2, _08078AC8
-	ldr r1, _08078ACC
-	lsrs r0, r0, #13
-	adds r0, r0, r1
-	ldrh r3, [r0, #4]
-	lsls r1, r3, #1
-	adds r1, r1, r3
-	lsls r1, r1, #2
-	adds r1, r1, r2
-	ldr r1, [r1, #0]
-	ldr r3, [r1, #0]
-	ldr r2, [r0, #0]
-	cmp r3, r2
-	beq _08078AD0
-	adds r0, r1, #0
-	adds r1, r2, #0
-	bl sub_0807915C
-	b _08078AE4
-	.byte 0x00
-	.byte 0x00
-	.global _08078AC8
-_08078AC8:
-	.4byte 0x0808B144  @ ROM+0x8B144
-	.global _08078ACC
-_08078ACC:
-	.4byte 0x0808B1B0  @ ROM+0x8B1B0
-	.global _08078AD0
-_08078AD0:
-	ldr r2, [r1, #4]
-	ldrh r0, [r1, #4]
-	cmp r0, #0
-	beq _08078ADC
-	cmp r2, #0
-	bge _08078AE4
-	.global _08078ADC
-_08078ADC:
-	adds r0, r1, #0
-	adds r1, r3, #0
-	bl sub_0807915C
-	.global _08078AE4
-_08078AE4:
-	pop {r0}
-	bx r0
-	.4byte 0x0400B500
-	.4byte 0x490A4A09
-	.4byte 0x18400B40
-	.4byte 0x00598883
-	.4byte 0x008918C9
-	.4byte 0x68091889
-	.4byte 0x6802680B
-	.4byte 0xD0094293
-	.4byte 0x1C111C08
-	.4byte 0xFB26F000
-	.4byte 0x0000E012
-	.4byte 0x0808B144
-	.4byte 0x0808B1B0
-	.4byte 0x8888684A
-	.4byte 0xD1042800
-	.4byte 0x1C191C08
-	.4byte 0xFB18F000
-	.4byte 0x2A00E004
-	.4byte 0x1C08DA02
-	.4byte 0xFF3CF7FF
-	.4byte 0x4700BC01
+@ 078AE8..078B3C is decompiled as SoundSongStartOrContinue(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08078B3C
-sub_08078B3C:
-	push {lr}
-	lsls r0, r0, #16
-	ldr r2, _08078B68
-	ldr r1, _08078B6C
-	lsrs r0, r0, #13
-	adds r0, r0, r1
-	ldrh r3, [r0, #4]
-	lsls r1, r3, #1
-	adds r1, r1, r3
-	lsls r1, r1, #2
-	adds r1, r1, r2
-	ldr r2, [r1, #0]
-	ldr r1, [r2, #0]
-	ldr r0, [r0, #0]
-	cmp r1, r0
-	bne _08078B62
-	adds r0, r2, #0
-	.2byte 0xF000
-	.byte 0x6F
-	.byte 0xFB
-	.global _08078B62
-_08078B62:
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _08078B68
-_08078B68:
-	.4byte 0x0808B144  @ ROM+0x8B144
-	.global _08078B6C
-_08078B6C:
-	.4byte 0x0808B1B0  @ ROM+0x8B1B0
-	.4byte 0x0400B500
-	.4byte 0x490A4A09
-	.4byte 0x18400B40
-	.4byte 0x00598883
-	.4byte 0x008918C9
-	.4byte 0x680A1889
-	.4byte 0x68006811
-	.4byte 0xD1024281
-	.4byte 0xF7FF1C10
-	.4byte 0xBC01FF0D
-	.4byte 0x00004700
-	.4byte 0x0808B144
-	.4byte 0x0808B1B0
+@ 078B3C..078B70 is decompiled as SoundSongStop(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08078BA4
-sub_08078BA4:
-	push {r4, r5, lr}
-	ldr r0, _08078BC8
-	lsls r0, r0, #16
-	lsrs r0, r0, #16
-	cmp r0, #0
-	beq _08078BC2
-	ldr r5, _08078BCC
-	adds r4, r0, #0
-	.global _08078BB4
-_08078BB4:
-	ldr r0, [r5, #0]
-	.2byte 0xF000
-	.4byte 0x350CFB43
-	subs r4, #1
-	cmp r4, #0
-	bne _08078BB4
-	.global _08078BC2
-_08078BC2:
-	pop {r4, r5}
-	pop {r0}
-	bx r0
-	.global _08078BC8
-_08078BC8:
-	.4byte 0x00000009
-	.global _08078BCC
-_08078BCC:
-	.4byte 0x0808B144  @ ROM+0x8B144
-	.4byte 0xF7FFB500
-	.4byte 0xBC01FEED
-	.4byte 0x00004700
-	.4byte 0x4808B530
-	.4byte 0x0C000400
-	.4byte 0xD0082800
-	.4byte 0x1C044D06
-	.4byte 0xF7FF6828
-	.4byte 0x350CFEDF
-	.4byte 0x2C003C01
-	.4byte 0xBC30D1F8
-	.4byte 0x4700BC01
-	.4byte 0x00000009
-	.4byte 0x0808B144
+@ 078B70..078BA4 is decompiled as SoundSongContinue(); see src/decompiled.json
+
+@ 078BA4..078BD0 is decompiled as SoundStopAllPlayers(); see src/decompiled.json
+
+@ 078BD0..078BDC is decompiled as SoundResumePlayer(); see src/decompiled.json
+
+@ 078BDC..078C08 is decompiled as SoundResumeAllPlayers(); see src/decompiled.json
 
 @ 078C08..078C18 is decompiled as SoundFadeOut(); see src/decompiled.json
 
-	.section .rom.00078C18, "ax"
-	.syntax unified
-	.4byte 0x04091C02
-	.4byte 0x6B530C09
-	.4byte 0x42834803
-	.4byte 0x84D1D103
-	.4byte 0x48028491
-	.4byte 0x47708510
-	.4byte 0x68736D53
-	.4byte 0x00000101
-	.4byte 0x04091C02
-	.4byte 0x6B530C09
-	.4byte 0x42834805
-	.4byte 0x84D1D107
-	.4byte 0x20028491
-	.4byte 0x68508510
-	.4byte 0x40084902
-	.4byte 0x47706050
-	.4byte 0x68736D53
-	.4byte 0x7FFFFFFF
-	.4byte 0x7A05B5F0
-	.4byte 0x2D006AC4
-	.4byte 0x2780DD1B
-	.4byte 0x1C387821
-	.4byte 0x28004008
-	.4byte 0x2640D011
-	.4byte 0x40081C30
-	.4byte 0xD00C2800
-	.4byte 0xF0001C20
-	.4byte 0x7027F8A9
-	.4byte 0x73E02002
-	.4byte 0x201674E6
-	.4byte 0x1C217660
-	.4byte 0x20013124
-	.4byte 0x3D017008
-	.4byte 0x2D003450
-	.4byte 0xBCF0DCE4
-	.4byte 0x4700BC01
+@ 078C18..078C38 is decompiled as SoundPlayerFadeOutTemporary(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08078CA8
-sub_08078CA8:
-	push {r4, r5, r6, lr}
-	sub sp, #4
-	adds r5, r0, #0
-	ldr r1, _08078D70
-	movs r0, #143
-	strh r0, [r1, #0]
-	ldr r3, _08078D74
-	movs r2, #0
-	strh r2, [r3, #0]
-	ldr r0, _08078D78
-	movs r1, #8
-	strb r1, [r0, #0]
-	adds r0, #6
-	strb r1, [r0, #0]
-	adds r0, #16
-	strb r1, [r0, #0]
-	subs r0, #20
-	movs r1, #128
-	strb r1, [r0, #0]
-	adds r0, #8
-	strb r1, [r0, #0]
-	adds r0, #16
-	strb r1, [r0, #0]
-	subs r0, #13
-	strb r2, [r0, #0]
-	movs r0, #119
-	strb r0, [r3, #0]
-	ldr r0, _08078D7C
-	ldr r4, [r0, #0]
-	ldr r6, [r4, #0]
-	ldr r0, _08078D80
-	cmp r6, r0
-	bne _08078D68
-	adds r0, r6, #1
-	str r0, [r4, #0]
-	ldr r1, _08078D84
-	ldr r0, _08078D88
-	str r0, [r1, #32]
-	ldr r0, _08078D8C
-	str r0, [r1, #68]
-	ldr r0, _08078D90
-	str r0, [r1, #76]
-	ldr r0, _08078D94
-	str r0, [r1, #112]
-	ldr r0, _08078D98
-	str r0, [r1, #116]
-	ldr r0, _08078D9C
-	str r0, [r1, #120]
-	ldr r0, _08078DA0
-	str r0, [r1, #124]
-	adds r2, r1, #0
-	adds r2, #128
-	ldr r0, _08078DA4
-	str r0, [r2, #0]
-	adds r1, #132
-	ldr r0, _08078DA8
-	str r0, [r1, #0]
-	str r5, [r4, #28]
-	ldr r0, _08078DAC
-	str r0, [r4, #40]
-	ldr r0, _08078DB0
-	str r0, [r4, #44]
-	ldr r0, _08078DB4
-	str r0, [r4, #48]
-	ldr r0, _08078DB8
-	movs r1, #0
-	strb r0, [r4, #12]
-	str r1, [sp, #0]
-	ldr r2, _08078DBC
-	mov r0, sp
-	adds r1, r5, #0
-	.2byte 0xF001
-	.4byte 0x2001F8B5
-	strb r0, [r5, #1]
-	movs r0, #17
-	strb r0, [r5, #28]
-	adds r1, r5, #0
-	adds r1, #65
-	movs r0, #2
-	strb r0, [r1, #0]
-	adds r1, #27
-	movs r0, #34
-	strb r0, [r1, #0]
-	adds r1, #37
-	movs r0, #3
-	strb r0, [r1, #0]
-	adds r1, #27
-	movs r0, #68
-	strb r0, [r1, #0]
-	adds r1, #36
-	movs r0, #4
-	strb r0, [r1, #1]
-	movs r0, #136
-	strb r0, [r1, #28]
-	str r6, [r4, #0]
-	.global _08078D68
-_08078D68:
-	add sp, #4
-	pop {r4, r5, r6}
-	pop {r0}
-	bx r0
-	.global _08078D70
-_08078D70:
-	.4byte 0x04000084  @ IO+0x84
-	.global _08078D74
-_08078D74:
-	.4byte 0x04000080  @ IO+0x80
-	.global _08078D78
-_08078D78:
-	.4byte 0x04000063  @ IO+0x63
-	.global _08078D7C
-_08078D7C:
-	.4byte 0x03007FF0  @ IWRAM+0x7FF0
-	.global _08078D80
-_08078D80:
-	.4byte 0x68736D53
-	.global _08078D84
-_08078D84:
-	.4byte 0x03005D20  @ IWRAM+0x5D20
-	.global _08078D88
-_08078D88:
-	.4byte 0x08079C1D  @ ROM+0x79C1D
-	.global _08078D8C
-_08078D8C:
-	.4byte 0x08078921  @ ROM+0x78921
-	.global _08078D90
-_08078D90:
-	.4byte 0x08078935  @ ROM+0x78935
-	.global _08078D94
-_08078D94:
-	.4byte 0x08079D75  @ ROM+0x79D75
-	.global _08078D98
-_08078D98:
-	.4byte 0x080788B9  @ ROM+0x788B9
-	.global _08078D9C
-_08078D9C:
-	.4byte 0x08078EB9  @ ROM+0x78EB9
-	.global _08078DA0
-_08078DA0:
-	.4byte 0x08078645  @ ROM+0x78645
-	.global _08078DA4
-_08078DA4:
-	.4byte 0x08079281  @ ROM+0x79281
-	.global _08078DA8
-_08078DA8:
-	.4byte 0x08079349  @ ROM+0x79349
-	.global _08078DAC
-_08078DAC:
-	.4byte 0x0807955D  @ ROM+0x7955D
-	.global _08078DB0
-_08078DB0:
-	.4byte 0x080794A5  @ ROM+0x794A5
-	.global _08078DB4
-_08078DB4:
-	.4byte 0x080793FD  @ ROM+0x793FD
-	.global _08078DB8
-_08078DB8:
-	.4byte 0x00000000
-	.global _08078DBC
-_08078DBC:
-	.4byte 0x05000040  @ PLTT+0x40
-	.4byte 0x4770DF2A
+@ 078C38..078C60 is decompiled as SoundPlayerFadeIn(); see src/decompiled.json
+
+@ 078C60..078CA8 is decompiled as SoundPlayerImmediateInit(); see src/decompiled.json
+
+@ 078CA8..078DC0 is decompiled as SoundDriverEnableCgb(); see src/decompiled.json
+
+@ 078DC0..078DC4 is decompiled as SoundDriverCopyJumpTableSwi(); see src/decompiled.json
 
 @ 078DC4..078DD8 is decompiled as SoundCallCallback5DA8(); see src/decompiled.json
 
 @ 078DD8..078DEC is decompiled as SoundCallCallback5DAC(); see src/decompiled.json
 
-	.section .rom.00078DEC, "ax"
-	.syntax unified
+@ 078DEC..078EB8 is decompiled as SoundDriverStateInit(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08078DEC
-sub_08078DEC:
-	push {r4, r5, lr}
-	sub sp, #4
-	adds r5, r0, #0
+@ 078EB8..078F5C is decompiled as SoundDriverSetSampleFrequency(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08078DF2
-sub_08078DF2:
-	movs r3, #0
-	str r3, [r5, #0]
-	ldr r2, _08078E84
-	ldr r0, [r2, #0]
-	movs r1, #128
-	lsls r1, r1, #18
-	ands r0, r1
-	cmp r0, #0
-	beq _08078E08
-	ldr r0, _08078E88
-	str r0, [r2, #0]
-	.global _08078E08
-_08078E08:
-	ldr r1, _08078E8C
-	movs r2, #128
-	lsls r2, r2, #3
-	adds r0, r2, #0
-	strh r0, [r1, #0]
-	subs r1, #66
-	movs r0, #143
-	strh r0, [r1, #0]
-	subs r1, #2
-	ldr r2, _08078E90
-	adds r0, r2, #0
-	strh r0, [r1, #0]
-	ldr r2, _08078E94
-	ldrb r1, [r2, #0]
-	movs r0, #63
-	ands r0, r1
-	movs r1, #64
-	orrs r0, r1
-	strb r0, [r2, #0]
-	ldr r1, _08078E98
-	movs r2, #212
-	lsls r2, r2, #2
-	adds r0, r5, r2
-	str r0, [r1, #0]
-	adds r1, #4
-	ldr r0, _08078E9C
+@ 078F5C..078FF4 is decompiled as SoundDriverSetMode(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08078E3C
-sub_08078E3C:
-	str r0, [r1, #0]
-	ldr r0, _08078EA0
-	str r5, [r0, #0]
-	str r3, [sp, #0]
-	ldr r2, _08078EA4
-	mov r0, sp
-	adds r1, r5, #0
-	.2byte 0xF001
-	.4byte 0x2008F82B
-	strb r0, [r5, #6]
-	movs r0, #15
-	strb r0, [r5, #7]
-	ldr r0, _08078EA8
-	str r0, [r5, #56]
-	ldr r0, _08078EAC
-	str r0, [r5, #40]
-	str r0, [r5, #44]
-	str r0, [r5, #48]
-	str r0, [r5, #60]
-	ldr r4, _08078EB0
-	adds r0, r4, #0
-	bl sub_080781DC
-	str r4, [r5, #52]
-	movs r0, #128
-	lsls r0, r0, #11
-	bl sub_08078EB8
-	ldr r0, _08078EB4
-	str r0, [r5, #0]
-	add sp, #4
-	pop {r4, r5}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _08078E84
-_08078E84:
-	.4byte 0x040000C4  @ IO+0xC4
-	.global _08078E88
-_08078E88:
-	.4byte 0x84400004
-	.global _08078E8C
-_08078E8C:
-	.4byte 0x040000C6  @ IO+0xC6
-	.global _08078E90
-_08078E90:
-	.4byte 0x00000B0E
-	.global _08078E94
-_08078E94:
-	.4byte 0x04000089  @ IO+0x89
-	.global _08078E98
-_08078E98:
-	.4byte 0x040000BC  @ REG_DMA1SAD
-	.global _08078E9C
-_08078E9C:
-	.4byte 0x040000A0  @ IO+0xA0
-	.global _08078EA0
-_08078EA0:
-	.4byte 0x03007FF0  @ IWRAM+0x7FF0
-	.global _08078EA4
-_08078EA4:
-	.4byte 0x05000260  @ PLTT+0x260
-	.global _08078EA8
-_08078EA8:
-	.4byte 0x080786B9  @ ROM+0x786B9
-	.global _08078EAC
-_08078EAC:
-	.4byte 0x08079E95  @ ROM+0x79E95
-	.global _08078EB0
-_08078EB0:
-	.4byte 0x03005D20  @ IWRAM+0x5D20
-	.global _08078EB4
-_08078EB4:
-	.4byte 0x68736D53
+@ 078FF4..079048 is decompiled as SoundDriverClear(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08078EB8
-sub_08078EB8:
-	push {r4, r5, r6, lr}
-	adds r2, r0, #0
-	ldr r0, _08078F38
-	ldr r4, [r0, #0]
-	movs r0, #240
-	lsls r0, r0, #12
-	ands r0, r2
-	lsrs r2, r0, #16
-	movs r6, #0
-	strb r2, [r4, #8]
-	ldr r1, _08078F3C
-	subs r0, r2, #1
-	lsls r0, r0, #1
-	adds r0, r0, r1
-	ldrh r5, [r0, #0]
-	str r5, [r4, #16]
-	movs r0, #198
-	lsls r0, r0, #3
-	adds r1, r5, #0
-	bl sub_08080BFC
-	strb r0, [r4, #11]
-	ldr r0, _08078F40
-	muls r0, r5
-	ldr r1, _08078F44
-	adds r0, r0, r1
-	ldr r1, _08078F48
-	bl sub_08080BFC
-	adds r1, r0, #0
-	str r1, [r4, #20]
-	movs r0, #128
-	lsls r0, r0, #17
-	bl sub_08080BFC
-	adds r0, #1
-	asrs r0, r0, #1
-	str r0, [r4, #24]
-	ldr r0, _08078F4C
-	strh r6, [r0, #0]
-	ldr r4, _08078F50
-	ldr r0, _08078F54
-	adds r1, r5, #0
-	bl sub_08080BFC
-	negs r0, r0
-	strh r0, [r4, #0]
-	bl sub_080790AC
-	ldr r1, _08078F58
-	.global _08078F1C
-_08078F1C:
-	ldrb r0, [r1, #0]
-	cmp r0, #159
-	beq _08078F1C
-	ldr r1, _08078F58
-	.global _08078F24
-_08078F24:
-	ldrb r0, [r1, #0]
-	cmp r0, #159
-	bne _08078F24
-	ldr r1, _08078F4C
-	movs r0, #128
-	strh r0, [r1, #0]
-	pop {r4, r5, r6}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _08078F38
-_08078F38:
-	.4byte 0x03007FF0  @ IWRAM+0x7FF0
-	.global _08078F3C
-_08078F3C:
-	.4byte 0x080896AC  @ ROM+0x896AC
-	.global _08078F40
-_08078F40:
-	.4byte 0x00091D1B
-	.global _08078F44
-_08078F44:
-	.4byte 0x00001388
-	.global _08078F48
-_08078F48:
-	.4byte 0x00002710
-	.global _08078F4C
-_08078F4C:
-	.4byte 0x04000102  @ IO+0x102
-	.global _08078F50
-_08078F50:
-	.4byte 0x04000100  @ REG_TM0CNT_L
-	.global _08078F54
-_08078F54:
-	.4byte 0x00044940
-	.global _08078F58
-_08078F58:
-	.4byte 0x04000006  @ REG_VCOUNT
+@ 079048..0790AC is decompiled as SoundDriverVSyncOff(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08078F5C
-sub_08078F5C:
-	push {r4, r5, lr}
-	adds r3, r0, #0
-	ldr r0, _08078FE8
-	ldr r5, [r0, #0]
-	ldr r1, [r5, #0]
-	ldr r0, _08078FEC
-	cmp r1, r0
-	bne _08078FE2
-	adds r0, r1, #1
-	str r0, [r5, #0]
-	movs r4, #255
-	ands r4, r3
-	cmp r4, #0
-	beq _08078F7E
-	movs r0, #127
-	ands r4, r0
-	strb r4, [r5, #5]
-	.global _08078F7E
-_08078F7E:
-	movs r4, #240
-	lsls r4, r4, #4
-	ands r4, r3
-	cmp r4, #0
-	beq _08078F9E
-	lsrs r0, r4, #8
-	strb r0, [r5, #6]
-	movs r4, #12
-	adds r0, r5, #0
-	adds r0, #80
-	movs r1, #0
-	.global _08078F94
-_08078F94:
-	strb r1, [r0, #0]
-	subs r4, #1
-	adds r0, #64
-	cmp r4, #0
-	bne _08078F94
-	.global _08078F9E
-_08078F9E:
-	movs r4, #240
-	lsls r4, r4, #8
-	ands r4, r3
-	cmp r4, #0
-	beq _08078FAC
-	lsrs r0, r4, #12
-	strb r0, [r5, #7]
-	.global _08078FAC
-_08078FAC:
-	movs r4, #176
-	lsls r4, r4, #16
-	ands r4, r3
-	cmp r4, #0
-	beq _08078FCA
-	movs r0, #192
-	lsls r0, r0, #14
-	ands r0, r4
-	lsrs r4, r0, #14
-	ldr r2, _08078FF0
-	ldrb r1, [r2, #0]
-	movs r0, #63
-	ands r0, r1
-	orrs r0, r4
-	strb r0, [r2, #0]
-	.global _08078FCA
-_08078FCA:
-	movs r4, #240
-	lsls r4, r4, #12
-	ands r4, r3
-	cmp r4, #0
-	beq _08078FDE
-	bl sub_08079048
-	adds r0, r4, #0
-	bl sub_08078EB8
-	.global _08078FDE
-_08078FDE:
-	ldr r0, _08078FEC
-	str r0, [r5, #0]
-	.global _08078FE2
-_08078FE2:
-	pop {r4, r5}
-	pop {r0}
-	bx r0
-	.global _08078FE8
-_08078FE8:
-	.4byte 0x03007FF0  @ IWRAM+0x7FF0
-	.global _08078FEC
-_08078FEC:
-	.4byte 0x68736D53
-	.global _08078FF0
-_08078FF0:
-	.4byte 0x04000089  @ IO+0x89
-	.4byte 0x4812B5F0
-	.4byte 0x68316806
-	.4byte 0x42814811
-	.4byte 0x1C48D11B
-	.4byte 0x250C6030
-	.4byte 0x34501C34
-	.4byte 0x70202000
-	.4byte 0x34403D01
-	.4byte 0xDCFA2D00
-	.4byte 0x2C0069F4
-	.4byte 0x2501D00B
-	.4byte 0x06282700
-	.4byte 0x6AF10E00
-	.4byte 0xFDCCF007
-	.4byte 0x35017027
-	.4byte 0x2D043440
-	.4byte 0x4803DDF5
-	.4byte 0xBCF06030
-	.4byte 0x4700BC01
-	.4byte 0x03007FF0
-	.4byte 0x68736D53
+@ 0790AC..0790E4 is decompiled as SoundDriverVSyncOn(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08079048
-sub_08079048:
-	push {lr}
-	sub sp, #4
-	ldr r0, _08079094
-	ldr r2, [r0, #0]
-	ldr r1, [r2, #0]
-	ldr r3, _08079098
-	adds r0, r1, r3
-	cmp r0, #1
-	bhi _0807908E
-	adds r0, r1, #0
-	adds r0, #10
-	str r0, [r2, #0]
-	ldr r3, _0807909C
-	ldr r0, [r3, #0]
-	movs r1, #128
-	lsls r1, r1, #18
-	ands r0, r1
-	cmp r0, #0
-	beq _08079072
-	ldr r0, _080790A0
-	str r0, [r3, #0]
-	.global _08079072
-_08079072:
-	ldr r1, _080790A4
-	movs r3, #128
-	lsls r3, r3, #3
-	adds r0, r3, #0
-	strh r0, [r1, #0]
-	movs r0, #0
-	str r0, [sp, #0]
-	movs r0, #212
-	lsls r0, r0, #2
-	adds r1, r2, r0
-	ldr r2, sub_080790A8
-	mov r0, sp
-	.2byte 0xF000
-	.byte 0x0B
-	.byte 0xFF
-	.global _0807908E
-_0807908E:
-	add sp, #4
-	pop {r0}
-	bx r0
-	.global _08079094
-_08079094:
-	.4byte 0x03007FF0  @ IWRAM+0x7FF0
-	.global _08079098
-_08079098:
-	.4byte 0x978C92AD
-	.global _0807909C
-_0807909C:
-	.4byte 0x040000C4  @ IO+0xC4
-	.global _080790A0
-_080790A0:
-	.4byte 0x84400004
-	.global _080790A4
-_080790A4:
-	.4byte 0x040000C6  @ IO+0xC6
+@ 0790E4..07915C is decompiled as SoundPlayerOpen(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080790A8
-sub_080790A8:
-	.4byte 0x0500018C  @ PLTT+0x18C
-
-	.thumb_func
-	.thumb
-	.global sub_080790AC
-sub_080790AC:
-	push {r4, lr}
-	ldr r0, _080790D8
-	ldr r2, [r0, #0]
-	ldr r3, [r2, #0]
-	ldr r0, _080790DC
-	cmp r3, r0
-	beq _080790D0
-	ldr r1, _080790E0
-	movs r4, #182
-	lsls r4, r4, #8
-	adds r0, r4, #0
-	strh r0, [r1, #0]
-	ldrb r0, [r2, #4]
-	movs r0, #0
-	strb r0, [r2, #4]
-	adds r0, r3, #0
-	subs r0, #10
-	str r0, [r2, #0]
-	.global _080790D0
-_080790D0:
-	pop {r4}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _080790D8
-_080790D8:
-	.4byte 0x03007FF0  @ IWRAM+0x7FF0
-	.global _080790DC
-_080790DC:
-	.4byte 0x68736D53
-	.global _080790E0
-_080790E0:
-	.4byte 0x040000C6  @ IO+0xC6
-
-	.thumb_func
-	.thumb
-	.global sub_080790E4
-sub_080790E4:
-	push {r4, r5, r6, r7, lr}
-	adds r7, r0, #0
-	adds r6, r1, #0
-	lsls r2, r2, #24
-	lsrs r4, r2, #24
-	cmp r4, #0
-	beq _08079148
-	cmp r4, #16
-	bls _080790F8
-	movs r4, #16
-	.global _080790F8
-_080790F8:
-	ldr r0, _08079150
-	ldr r5, [r0, #0]
-	ldr r1, [r5, #0]
-	ldr r0, _08079154
-	cmp r1, r0
-	bne _08079148
-	adds r0, r1, #1
-	str r0, [r5, #0]
-	adds r0, r7, #0
-	.2byte 0xF7FF
-	.4byte 0x62FEFE65
-	strb r4, [r7, #8]
-	movs r0, #128
-	lsls r0, r0, #24
-	str r0, [r7, #4]
-	cmp r4, #0
-	beq _0807912C
-	movs r1, #0
-	.global _0807911E
-_0807911E:
-	strb r1, [r6, #0]
-	subs r0, r4, #1
-	lsls r0, r0, #24
-	lsrs r4, r0, #24
-	adds r6, #80
-	cmp r4, #0
-	bne _0807911E
-	.global _0807912C
-_0807912C:
-	ldr r0, [r5, #32]
-	cmp r0, #0
-	beq _0807913C
-	str r0, [r7, #56]
-	ldr r0, [r5, #36]
-	str r0, [r7, #60]
-	movs r0, #0
-	str r0, [r5, #32]
-	.global _0807913C
-_0807913C:
-	str r7, [r5, #36]
-	ldr r0, _08079158
-	str r0, [r5, #32]
-	ldr r0, _08079154
-	str r0, [r5, #0]
-	str r0, [r7, #52]
-	.global _08079148
-_08079148:
-	pop {r4, r5, r6, r7}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _08079150
-_08079150:
-	.4byte 0x03007FF0  @ IWRAM+0x7FF0
-	.global _08079154
-_08079154:
-	.4byte 0x68736D53
-	.global _08079158
-_08079158:
-	.4byte 0x080783DD  @ ROM+0x783DD
-
-	.thumb_func
-	.thumb
-	.global sub_0807915C
-sub_0807915C:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r8
-	push {r7}
-	adds r5, r0, #0
-	adds r7, r1, #0
-	ldr r1, [r5, #52]
-	ldr r0, _0807923C
-	cmp r1, r0
-	bne _08079232
-	ldrb r0, [r5, #11]
-	ldrb r2, [r7, #2]
-	cmp r0, #0
-	beq _0807919E
-	ldr r0, [r5, #0]
-	cmp r0, #0
-	beq _08079188
-	ldr r1, [r5, #44]
-	movs r0, #64
-	ldrb r1, [r1, #0]
-	ands r0, r1
-	cmp r0, #0
-	bne _08079194
-	.global _08079188
-_08079188:
-	ldr r1, [r5, #4]
-	ldrh r0, [r5, #4]
-	cmp r0, #0
-	beq _0807919E
-	cmp r1, #0
-	blt _0807919E
-	.global _08079194
-_08079194:
-	ldrb r0, [r7, #2]
-	adds r2, r0, #0
-	ldrb r0, [r5, #9]
-	cmp r0, r2
-	bhi _08079232
-	.global _0807919E
-_0807919E:
-	ldr r0, [r5, #52]
-	adds r0, #1
-	str r0, [r5, #52]
-	movs r1, #0
-	str r1, [r5, #4]
-	str r7, [r5, #0]
-	ldr r0, [r7, #4]
-	str r0, [r5, #48]
-	strb r2, [r5, #9]
-	str r1, [r5, #12]
-	movs r0, #150
-	strh r0, [r5, #28]
-	strh r0, [r5, #32]
-	adds r0, #106
-	strh r0, [r5, #30]
-	strh r1, [r5, #34]
-	strh r1, [r5, #36]
-	movs r6, #0
-	ldr r4, [r5, #44]
-	ldrb r1, [r7, #0]
-	cmp r6, r1
-	bge _080791FE
-	ldrb r0, [r5, #8]
-	cmp r6, r0
-	bge _0807921E
-	mov r8, r6
-	.global _080791D2
-_080791D2:
-	adds r0, r5, #0
-	adds r1, r4, #0
-	bl sub_08078644
-	movs r0, #192
-	strb r0, [r4, #0]
-	mov r1, r8
-	str r1, [r4, #32]
-	lsls r1, r6, #2
-	adds r0, r7, #0
-	adds r0, #8
-
-	.thumb_func
-	.thumb
-	.global sub_080791E8
-sub_080791E8:
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	str r0, [r4, #64]
-	adds r6, #1
-
-	.thumb_func
-	.thumb
-	.global sub_080791F0
-sub_080791F0:
-	adds r4, #80
-	ldrb r0, [r7, #0]
-	cmp r6, r0
-	bge _080791FE
-	ldrb r1, [r5, #8]
-	cmp r6, r1
-	blt _080791D2
-	.global _080791FE
-_080791FE:
-	ldrb r0, [r5, #8]
-	cmp r6, r0
-	bge _0807921E
-	movs r1, #0
-	mov r8, r1
-	.global _08079208
-_08079208:
-	adds r0, r5, #0
-	adds r1, r4, #0
-	bl sub_08078644
-	mov r0, r8
-	strb r0, [r4, #0]
-	adds r6, #1
-	adds r4, #80
-	ldrb r1, [r5, #8]
-	cmp r6, r1
-	blt _08079208
-	.global _0807921E
-_0807921E:
-	movs r0, #128
-	ldrb r1, [r7, #3]
-	ands r0, r1
-	cmp r0, #0
-	beq _0807922E
-	ldrb r0, [r7, #3]
-	bl sub_08078F5C
-	.global _0807922E
-_0807922E:
-	ldr r0, _0807923C
-	str r0, [r5, #52]
-	.global _08079232
-_08079232:
-	pop {r3}
-	mov r8, r3
-	pop {r4, r5, r6, r7}
-	pop {r0}
-	bx r0
-	.global _0807923C
-_0807923C:
-	.4byte 0x68736D53
+@ 07915C..079240 is decompiled as SoundPlayerStart(); see src/decompiled.json
 
 @ 079240..079280 is decompiled as SoundPlayerStop(); see src/decompiled.json
 
-	.section .rom.00079280, "ax"
-	.syntax unified
+@ 079280..079348 is decompiled as SoundPlayerUpdateFade(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08079280
-sub_08079280:
-	push {r4, r5, r6, r7, lr}
-	adds r6, r0, #0
-	ldrh r1, [r6, #36]
-	cmp r1, #0
-	beq _08079342
-	ldrh r0, [r6, #38]
-	subs r0, #1
-	strh r0, [r6, #38]
-	ldr r3, _080792C0
-	adds r2, r3, #0
-	lsls r0, r0, #16
-	lsrs r3, r0, #16
-	cmp r3, #0
-	bne _08079342
-	strh r1, [r6, #38]
-	ldrh r1, [r6, #40]
-	movs r0, #2
-	ands r0, r1
-	cmp r0, #0
-	beq _080792C4
-	adds r0, r1, #0
-	adds r0, #16
-	strh r0, [r6, #40]
-	ands r0, r2
-	cmp r0, #255
-	bls _08079316
-	movs r0, #128
-	lsls r0, r0, #1
-	strh r0, [r6, #40]
-	strh r3, [r6, #36]
-	b _08079316
-	.byte 0x00
-	.byte 0x00
-	.global _080792C0
-_080792C0:
-	.4byte 0x0000FFFF
-	.global _080792C4
-_080792C4:
-	adds r0, r1, #0
-	subs r0, #16
-	strh r0, [r6, #40]
-	ands r0, r2
-	lsls r0, r0, #16
-	cmp r0, #0
-	bgt _08079316
-	ldrb r5, [r6, #8]
-	ldr r4, [r6, #44]
-	cmp r5, #0
-	ble _080792F6
-	.global _080792DA
-_080792DA:
-	adds r0, r6, #0
-	adds r1, r4, #0
-	bl sub_08078644
-	movs r0, #1
-	ldrh r7, [r6, #40]
-	ands r0, r7
-	cmp r0, #0
-	bne _080792EE
-	strb r0, [r4, #0]
-	.global _080792EE
-_080792EE:
-	subs r5, #1
-	adds r4, #80
-	cmp r5, #0
-	bgt _080792DA
-	.global _080792F6
-_080792F6:
-	movs r0, #1
-	ldrh r1, [r6, #40]
-	ands r0, r1
-	cmp r0, #0
-	beq _0807930A
-	ldr r0, [r6, #4]
-	movs r1, #128
-	lsls r1, r1, #24
-	orrs r0, r1
-	b _0807930E
-	.global _0807930A
-_0807930A:
-	movs r0, #128
-	lsls r0, r0, #24
-	.global _0807930E
-_0807930E:
-	str r0, [r6, #4]
-	movs r0, #0
-	strh r0, [r6, #36]
-	b _08079342
-	.global _08079316
-_08079316:
-	ldrb r5, [r6, #8]
-	ldr r4, [r6, #44]
-	cmp r5, #0
-	ble _08079342
-	movs r3, #128
-	movs r7, #0
-	movs r2, #3
-	.global _08079324
-_08079324:
-	ldrb r1, [r4, #0]
-	adds r0, r3, #0
-	ands r0, r1
-	cmp r0, #0
-	beq _0807933A
-	ldrh r7, [r6, #40]
-	lsrs r0, r7, #2
-	strb r0, [r4, #19]
-	adds r0, r1, #0
-	orrs r0, r2
-	strb r0, [r4, #0]
-	.global _0807933A
-_0807933A:
-	subs r5, #1
-	adds r4, #80
-	cmp r5, #0
-	bgt _08079324
-	.global _08079342
-_08079342:
-	pop {r4, r5, r6, r7}
-	pop {r0}
-	bx r0
+@ 079348..0793FC is decompiled as SoundTrackUpdateVolumeAndPitch(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08079348
-sub_08079348:
-	push {r4, lr}
-	adds r2, r1, #0
-	movs r0, #1
-	ldrb r1, [r2, #0]
-	ands r0, r1
-	cmp r0, #0
-	beq _080793AC
-	ldrb r3, [r2, #19]
-	ldrb r1, [r2, #18]
-	adds r0, r3, #0
-	muls r0, r1
-	lsrs r3, r0, #5
-	ldrb r4, [r2, #24]
-	cmp r4, #1
-	bne _08079370
-	movs r0, #22
-	ldrsb r0, [r2, r0]
-	adds r0, #128
-	muls r0, r3
-	lsrs r3, r0, #7
-	.global _08079370
-_08079370:
-	movs r0, #20
-	ldrsb r0, [r2, r0]
-	lsls r0, r0, #1
-	movs r1, #21
-	ldrsb r1, [r2, r1]
-	adds r1, r0, r1
-	cmp r4, #2
-	bne _08079386
-	movs r0, #22
-	ldrsb r0, [r2, r0]
-	adds r1, r1, r0
-	.global _08079386
-_08079386:
-	movs r0, #128
-	negs r0, r0
-	cmp r1, r0
-	bge _08079392
-	adds r1, r0, #0
-	b _08079398
-	.global _08079392
-_08079392:
-	cmp r1, #127
-	ble _08079398
-	movs r1, #127
-	.global _08079398
-_08079398:
-	adds r0, r1, #0
-	adds r0, #128
-	muls r0, r3
-	lsrs r0, r0, #8
-	strb r0, [r2, #16]
-	movs r0, #127
-	subs r0, r0, r1
-	muls r0, r3
-	lsrs r0, r0, #8
-	strb r0, [r2, #17]
-	.global _080793AC
-_080793AC:
-	ldrb r1, [r2, #0]
-	movs r0, #4
-	ands r0, r1
-	adds r3, r1, #0
-	cmp r0, #0
-	beq _080793F0
-	movs r0, #14
-	ldrsb r0, [r2, r0]
-	ldrb r1, [r2, #15]
-	muls r0, r1
-	movs r1, #12
-	ldrsb r1, [r2, r1]
-	adds r1, r1, r0
-	lsls r1, r1, #2
-	movs r0, #10
-	ldrsb r0, [r2, r0]
-	lsls r0, r0, #8
-	adds r1, r1, r0
-	movs r0, #11
-	ldrsb r0, [r2, r0]
-	lsls r0, r0, #8
-	adds r1, r1, r0
-	ldrb r0, [r2, #13]
-	adds r1, r0, r1
-	ldrb r0, [r2, #24]
-	cmp r0, #0
-	bne _080793EA
-	movs r0, #22
-	ldrsb r0, [r2, r0]
-	lsls r0, r0, #4
-	adds r1, r1, r0
-	.global _080793EA
-_080793EA:
-	asrs r0, r1, #8
-	strb r0, [r2, #8]
-	strb r1, [r2, #9]
-	.global _080793F0
-_080793F0:
-	movs r0, #250
-	ands r0, r3
-	strb r0, [r2, #0]
-	pop {r4}
-	pop {r0}
-	bx r0
+@ 0793FC..0794A4 is decompiled as SoundMidiKeyToCgbFrequency(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080793FC
-sub_080793FC:
-	push {r4, r5, r6, r7, lr}
-	lsls r0, r0, #24
-	lsrs r0, r0, #24
-	lsls r1, r1, #24
-	lsrs r5, r1, #24
-	lsls r2, r2, #24
-	lsrs r2, r2, #24
+@ 0794A4..0794F4 is decompiled as SoundDisableCgbOscillator(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0807940A
-sub_0807940A:
-	mov r12, r2
-	cmp r0, #4
-	bne _08079434
-	cmp r5, #20
-	bhi _08079418
-	movs r5, #0
-	b _08079426
-	.global _08079418
-_08079418:
-	adds r0, r5, #0
-	subs r0, #21
-	lsls r0, r0, #24
-	lsrs r5, r0, #24
-	cmp r5, #59
-	bls _08079426
-	movs r5, #59
-	.global _08079426
-_08079426:
-	ldr r0, _08079430
-	adds r0, r5, r0
-	ldrb r0, [r0, #0]
-	b _08079496
-	.byte 0x00
-	.byte 0x00
-	.global _08079430
-_08079430:
-	.4byte 0x08089760  @ ROM+0x89760
-	.global _08079434
-_08079434:
-	cmp r5, #35
-	bhi _08079440
-	movs r0, #0
-	mov r12, r0
-	movs r5, #0
-	b _08079452
-	.global _08079440
-_08079440:
-	adds r0, r5, #0
-	subs r0, #36
-	lsls r0, r0, #24
-	lsrs r5, r0, #24
-	cmp r5, #130
-	bls _08079452
-	movs r5, #130
-	movs r1, #255
-	mov r12, r1
-	.global _08079452
-_08079452:
-	ldr r3, _0807949C
-	adds r0, r5, r3
-	ldrb r6, [r0, #0]
-	ldr r4, _080794A0
-	movs r2, #15
-	adds r0, r6, #0
-	ands r0, r2
-	lsls r0, r0, #1
-	adds r0, r0, r4
-	movs r7, #0
-	ldrsh r1, [r0, r7]
-	asrs r0, r6, #4
-	adds r6, r1, #0
-	asrs r6, r0
-	adds r0, r5, #1
-	adds r0, r0, r3
-	ldrb r1, [r0, #0]
-	adds r0, r1, #0
-	ands r0, r2
-	lsls r0, r0, #1
-	adds r0, r0, r4
-	movs r2, #0
-	ldrsh r0, [r0, r2]
-	asrs r1, r1, #4
-	asrs r0, r1
-	subs r0, r0, r6
-	mov r7, r12
-	muls r7, r0
-	adds r0, r7, #0
-	asrs r0, r0, #8
-	adds r0, r6, r0
-	movs r1, #128
-	lsls r1, r1, #4
-	adds r0, r0, r1
-	.global _08079496
-_08079496:
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.global _0807949C
-_0807949C:
-	.4byte 0x080896C4  @ ROM+0x896C4
-	.global _080794A0
-_080794A0:
-	.4byte 0x08089748  @ ROM+0x89748
+@ 0794F4..07955C is decompiled as SoundUpdateCgbChannelVolume(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080794A4
-sub_080794A4:
-	lsls r0, r0, #24
-	lsrs r0, r0, #24
-	adds r1, r0, #0
-	cmp r0, #2
-	beq _080794CC
-	cmp r0, #2
-	bgt _080794B8
-	cmp r0, #1
-	beq _080794BE
-	b _080794E0
-	.global _080794B8
-_080794B8:
-	cmp r1, #3
-	beq _080794D4
-	b _080794E0
-	.global _080794BE
-_080794BE:
-	ldr r1, _080794C8
-	movs r0, #8
-	strb r0, [r1, #0]
-	adds r1, #2
-	b _080794E8
-	.global _080794C8
-_080794C8:
-	.4byte 0x04000063  @ IO+0x63
-	.global _080794CC
-_080794CC:
-	ldr r1, _080794D0
-	b _080794E2
-	.global _080794D0
-_080794D0:
-	.4byte 0x04000069  @ IO+0x69
-	.global _080794D4
-_080794D4:
-	ldr r1, _080794DC
-	movs r0, #0
-	b _080794EA
-	.byte 0x00
-	.byte 0x00
-	.global _080794DC
-_080794DC:
-	.4byte 0x04000070  @ IO+0x70
-	.global _080794E0
-_080794E0:
-	ldr r1, _080794F0
-	.global _080794E2
-_080794E2:
-	movs r0, #8
-	strb r0, [r1, #0]
-	adds r1, #4
-	.global _080794E8
-_080794E8:
-	movs r0, #128
-	.global _080794EA
-_080794EA:
-	strb r0, [r1, #0]
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _080794F0
-_080794F0:
-	.4byte 0x04000079  @ IO+0x79
+@ 07955C..0799A8 is decompiled as SoundUpdateCgbChannels(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080794F4
-sub_080794F4:
-	push {r4, lr}
-	adds r1, r0, #0
-	ldrb r0, [r1, #2]
-	lsls r2, r0, #24
-	lsrs r4, r2, #24
-	ldrb r3, [r1, #3]
-	lsls r0, r3, #24
-	lsrs r3, r0, #24
-	cmp r4, r3
-	bcc _08079514
-	lsrs r0, r2, #25
-	cmp r0, r3
-	bcc _08079520
-	movs r0, #15
-	strb r0, [r1, #27]
-	b _0807952E
-	.global _08079514
-_08079514:
-	lsrs r0, r0, #25
-	cmp r0, r4
-	bcc _08079520
-	movs r0, #240
-	strb r0, [r1, #27]
-	b _0807952E
-	.global _08079520
-_08079520:
-	movs r0, #255
-	strb r0, [r1, #27]
-	ldrb r2, [r1, #3]
-	ldrb r3, [r1, #2]
-	adds r0, r2, r3
-	lsrs r0, r0, #4
-	b _0807953E
-	.global _0807952E
-_0807952E:
-	ldrb r2, [r1, #3]
-	ldrb r3, [r1, #2]
-	adds r0, r2, r3
-	lsrs r0, r0, #4
-	strb r0, [r1, #10]
-	cmp r0, #15
-	bls _08079540
-	movs r0, #15
-	.global _0807953E
-_0807953E:
-	strb r0, [r1, #10]
-	.global _08079540
-_08079540:
-	ldrb r2, [r1, #6]
-	ldrb r3, [r1, #10]
-	adds r0, r2, #0
-	muls r0, r3
-	adds r0, #15
-	asrs r0, r0, #4
-	strb r0, [r1, #25]
-	ldrb r0, [r1, #28]
-	ldrb r2, [r1, #27]
-	ands r0, r2
-	strb r0, [r1, #27]
-	pop {r4}
-	pop {r0}
-	bx r0
+@ 0799A8..0799D0 is decompiled as SoundPlayerSetTempo(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0807955C
-sub_0807955C:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r10
-	mov r6, r9
-	mov r5, r8
-	push {r5, r6, r7}
-	sub sp, #28
-	ldr r0, _0807957C
-	ldr r0, [r0, #0]
-	str r0, [sp, #4]
-	ldrb r0, [r0, #10]
-	cmp r0, #0
-	beq _08079580
-	subs r0, #1
-	ldr r1, [sp, #4]
-	strb r0, [r1, #10]
-	b _08079586
-	.global _0807957C
-_0807957C:
-	.4byte 0x03007FF0  @ IWRAM+0x7FF0
-	.global _08079580
-_08079580:
-	movs r0, #14
-	ldr r2, [sp, #4]
-	strb r0, [r2, #10]
-	.global _08079586
-_08079586:
-	movs r6, #1
-	ldr r0, [sp, #4]
-	ldr r4, [r0, #28]
-	.global _0807958C
-_0807958C:
-	ldrb r1, [r4, #0]
-	movs r0, #199
-	ands r0, r1
-	adds r2, r6, #1
-	mov r10, r2
-	movs r2, #64
-	adds r2, r2, r4
-	mov r9, r2
-	cmp r0, #0
-	bne _080795A2
-	b _0807998C
-	.global _080795A2
-_080795A2:
-	cmp r6, #2
-	beq _080795D4
-	cmp r6, #2
-	bgt _080795B0
-	cmp r6, #1
-	beq _080795B6
-	b _0807960C
-	.global _080795B0
-_080795B0:
-	cmp r6, #3
-	beq _080795EC
-	b _0807960C
-	.global _080795B6
-_080795B6:
-	ldr r0, _080795C8
-	str r0, [sp, #8]
-	ldr r7, _080795CC
-	ldr r2, _080795D0
-	str r2, [sp, #12]
-	adds r0, #4
-	str r0, [sp, #16]
-	adds r2, #2
-	b _0807961C
-	.global _080795C8
-_080795C8:
-	.4byte 0x04000060  @ IO+0x60
-	.global _080795CC
-_080795CC:
-	.4byte 0x04000062  @ IO+0x62
-	.global _080795D0
-_080795D0:
-	.4byte 0x04000063  @ IO+0x63
-	.global _080795D4
-_080795D4:
-	ldr r0, _080795E0
-	str r0, [sp, #8]
-	ldr r7, _080795E4
-	ldr r2, _080795E8
-	b _08079614
-	.byte 0x00
-	.byte 0x00
-	.global _080795E0
-_080795E0:
-	.4byte 0x04000061  @ IO+0x61
-	.global _080795E4
-_080795E4:
-	.4byte 0x04000068  @ IO+0x68
-	.global _080795E8
-_080795E8:
-	.4byte 0x04000069  @ IO+0x69
-	.global _080795EC
-_080795EC:
-	ldr r0, _08079600
-	str r0, [sp, #8]
-	ldr r7, _08079604
-	ldr r2, _08079608
-	str r2, [sp, #12]
-	adds r0, #4
-	str r0, [sp, #16]
-	adds r2, #2
-	b _0807961C
-	.byte 0x00
-	.byte 0x00
-	.global _08079600
-_08079600:
-	.4byte 0x04000070  @ IO+0x70
-	.global _08079604
-_08079604:
-	.4byte 0x04000072  @ IO+0x72
-	.global _08079608
-_08079608:
-	.4byte 0x04000073  @ IO+0x73
-	.global _0807960C
-_0807960C:
-	ldr r0, _0807966C
-	str r0, [sp, #8]
-	ldr r7, _08079670
-	ldr r2, _08079674
-	.global _08079614
-_08079614:
-	str r2, [sp, #12]
-	adds r0, #11
-	str r0, [sp, #16]
-	adds r2, #4
-	.global _0807961C
-_0807961C:
-	str r2, [sp, #20]
-	ldr r0, [sp, #4]
-	ldrb r0, [r0, #10]
-	str r0, [sp, #0]
-	ldr r2, [sp, #12]
+@ 0799D0..079A38 is decompiled as SoundPlayerSetVolume(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08079626
-sub_08079626:
-	ldrb r0, [r2, #0]
-	mov r8, r0
-	adds r2, r1, #0
-	movs r0, #128
-	ands r0, r2
-	cmp r0, #0
-	beq _08079712
-	movs r3, #64
-	adds r0, r3, #0
-	ands r0, r2
-	lsls r0, r0, #24
-	lsrs r5, r0, #24
-	adds r0, r6, #1
-	mov r10, r0
-	movs r1, #64
-	adds r1, r1, r4
-	mov r9, r1
-	cmp r5, #0
-	bne _08079736
-	movs r0, #3
-	strb r0, [r4, #0]
-	strb r0, [r4, #29]
-	adds r0, r4, #0
-	str r3, [sp, #24]
-	bl sub_080794F4
-	ldr r3, [sp, #24]
-	cmp r6, #2
-	beq _08079684
-	cmp r6, #2
-	bgt _08079678
-	cmp r6, #1
-	beq _0807967E
-	b _080796D8
-	.byte 0x00
-	.byte 0x00
-	.global _0807966C
-_0807966C:
-	.4byte 0x04000071  @ IO+0x71
-	.global _08079670
-_08079670:
-	.4byte 0x04000078  @ IO+0x78
-	.global _08079674
-_08079674:
-	.4byte 0x04000079  @ IO+0x79
-	.global _08079678
-_08079678:
-	cmp r6, #3
-	beq _08079690
-	b _080796D8
-	.global _0807967E
-_0807967E:
-	ldrb r0, [r4, #31]
-	ldr r2, [sp, #8]
-	strb r0, [r2, #0]
-	.global _08079684
-_08079684:
-	ldr r0, [r4, #36]
-	lsls r0, r0, #6
-	ldrb r1, [r4, #30]
-	adds r0, r1, r0
-	strb r0, [r7, #0]
-	b _080796E4
-	.global _08079690
-_08079690:
-	ldr r1, [r4, #36]
-	ldr r0, [r4, #40]
-	cmp r1, r0
-	beq _080796B8
-	ldr r2, [sp, #8]
-	strb r3, [r2, #0]
-	ldr r1, _080796CC
-	ldr r2, [r4, #36]
-	ldr r0, [r2, #0]
-	str r0, [r1, #0]
-	adds r1, #4
-	ldr r0, [r2, #4]
-	str r0, [r1, #0]
-	adds r1, #4
-	ldr r0, [r2, #8]
-	str r0, [r1, #0]
-	adds r1, #4
-	ldr r0, [r2, #12]
-	str r0, [r1, #0]
-	str r2, [r4, #40]
-	.global _080796B8
-_080796B8:
-	ldr r0, [sp, #8]
-	strb r5, [r0, #0]
-	ldrb r0, [r4, #30]
-	strb r0, [r7, #0]
-	ldrb r0, [r4, #30]
-	cmp r0, #0
-	beq _080796D0
-	movs r0, #192
-	b _080796F2
-	.byte 0x00
-	.byte 0x00
-	.global _080796CC
-_080796CC:
-	.4byte 0x04000090  @ IO+0x90
-	.global _080796D0
-_080796D0:
-	movs r1, #128
-	negs r1, r1
-	strb r1, [r4, #26]
-	b _080796F4
-	.global _080796D8
-_080796D8:
-	ldrb r0, [r4, #30]
-	strb r0, [r7, #0]
-	ldr r0, [r4, #36]
-	lsls r0, r0, #3
-	ldr r2, [sp, #16]
-	strb r0, [r2, #0]
-	.global _080796E4
-_080796E4:
-	ldrb r0, [r4, #4]
-	adds r0, #8
-	mov r8, r0
-	ldrb r0, [r4, #30]
-	cmp r0, #0
-	beq _080796F2
-	movs r0, #64
-	.global _080796F2
-_080796F2:
-	strb r0, [r4, #26]
-	.global _080796F4
-_080796F4:
-	ldrb r1, [r4, #4]
-	movs r2, #0
-	strb r1, [r4, #11]
-	movs r0, #255
-	ands r0, r1
-	adds r1, r6, #1
-	mov r10, r1
-	movs r1, #64
-	adds r1, r1, r4
-	mov r9, r1
-	cmp r0, #0
-	bne _0807970E
-	b _0807984A
-	.global _0807970E
-_0807970E:
-	strb r2, [r4, #9]
-	b _08079878
-	.global _08079712
-_08079712:
-	movs r0, #4
-	ands r0, r2
-	cmp r0, #0
-	beq _08079744
-	ldrb r0, [r4, #13]
-	subs r0, #1
-	strb r0, [r4, #13]
-	movs r2, #255
-	ands r0, r2
-	lsls r0, r0, #24
-	adds r1, r6, #1
-	mov r10, r1
-	movs r2, #64
-	adds r2, r2, r4
-	mov r9, r2
-	cmp r0, #0
-	ble _08079736
-	b _0807988A
-	.global _08079736
-_08079736:
-	lsls r0, r6, #24
-	lsrs r0, r0, #24
-	bl sub_080794A4
-	movs r0, #0
-	strb r0, [r4, #0]
-	b _08079988
-	.global _08079744
-_08079744:
-	movs r0, #64
-	ands r0, r1
-	adds r2, r6, #1
-	mov r10, r2
-	movs r2, #64
-	adds r2, r2, r4
-	mov r9, r2
-	cmp r0, #0
-	beq _08079784
-	movs r0, #3
-	ands r0, r1
-	cmp r0, #0
-	beq _08079784
-	movs r0, #252
-	ands r0, r1
-	movs r2, #0
-	strb r0, [r4, #0]
-	ldrb r1, [r4, #7]
-	strb r1, [r4, #11]
-	movs r0, #255
-	ands r0, r1
-	cmp r0, #0
-	beq _080797B6
-	movs r0, #1
-	ldrb r1, [r4, #29]
-	orrs r0, r1
-	strb r0, [r4, #29]
-	cmp r6, #3
-	beq _08079878
-	ldrb r2, [r4, #7]
-	mov r8, r2
-	b _08079878
-	.global _08079784
-_08079784:
-	ldrb r0, [r4, #11]
-	cmp r0, #0
-	bne _08079878
-	cmp r6, #3
-	bne _08079796
-	movs r0, #1
-	ldrb r1, [r4, #29]
-	orrs r0, r1
-	strb r0, [r4, #29]
-	.global _08079796
-_08079796:
-	adds r0, r4, #0
-	bl sub_080794F4
-	movs r0, #3
-	ldrb r2, [r4, #0]
-	ands r0, r2
-	cmp r0, #0
-	bne _080797EA
-	ldrb r0, [r4, #9]
-	subs r0, #1
-	strb r0, [r4, #9]
-	movs r1, #255
+@ 079A38..079AAC is decompiled as SoundPlayerSetPitch(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080797AE
-sub_080797AE:
-	ands r0, r1
-	lsls r0, r0, #24
-	cmp r0, #0
-	bgt _080797E6
-	.global _080797B6
-_080797B6:
-	ldrb r2, [r4, #12]
-	ldrb r1, [r4, #10]
-	adds r0, r2, #0
-	muls r0, r1
-	adds r0, #255
-	asrs r0, r0, #8
-	movs r1, #0
-	strb r0, [r4, #9]
-	lsls r0, r0, #24
-	cmp r0, #0
-	beq _08079736
-	movs r0, #4
-	ldrb r2, [r4, #0]
-	orrs r0, r2
-	strb r0, [r4, #0]
-	movs r0, #1
-	ldrb r1, [r4, #29]
-	orrs r0, r1
-	strb r0, [r4, #29]
-	cmp r6, #3
-	beq _0807988A
-	movs r2, #8
-	mov r8, r2
-	b _0807988A
-	.global _080797E6
-_080797E6:
-	ldrb r0, [r4, #7]
-	b _08079876
-	.global _080797EA
-_080797EA:
-	cmp r0, #1
-	bne _080797F6
-	.global _080797EE
-_080797EE:
-	ldrb r0, [r4, #25]
-	strb r0, [r4, #9]
-	movs r0, #7
-	b _08079876
-	.global _080797F6
-_080797F6:
-	cmp r0, #2
-	bne _0807983A
-	ldrb r0, [r4, #9]
-	subs r0, #1
-	strb r0, [r4, #9]
-	movs r1, #255
-	ands r0, r1
-	lsls r0, r0, #24
-	ldrb r2, [r4, #25]
-	lsls r1, r2, #24
-	cmp r0, r1
-	bgt _08079836
-	.global _0807980E
-_0807980E:
-	ldrb r0, [r4, #6]
-	cmp r0, #0
-	bne _0807981E
-	movs r0, #252
-	ldrb r1, [r4, #0]
-	ands r0, r1
-	strb r0, [r4, #0]
-	b _080797B6
-	.global _0807981E
-_0807981E:
-	ldrb r0, [r4, #0]
-	subs r0, #1
-	strb r0, [r4, #0]
-	movs r0, #1
-	ldrb r2, [r4, #29]
-	orrs r0, r2
-	strb r0, [r4, #29]
-	cmp r6, #3
-	beq _080797EE
-	movs r0, #8
-	mov r8, r0
-	b _080797EE
-	.global _08079836
-_08079836:
-	ldrb r0, [r4, #5]
-	b _08079876
-	.global _0807983A
-_0807983A:
-	ldrb r0, [r4, #9]
-	adds r0, #1
-	strb r0, [r4, #9]
-	movs r1, #255
-	ands r0, r1
-	ldrb r2, [r4, #10]
-	cmp r0, r2
-	bcc _08079874
-	.global _0807984A
-_0807984A:
-	ldrb r0, [r4, #0]
-	subs r0, #1
-	movs r2, #0
-	strb r0, [r4, #0]
-	ldrb r1, [r4, #5]
-	strb r1, [r4, #11]
-	movs r0, #255
-	ands r0, r1
-	cmp r0, #0
-	beq _0807980E
+@ 079AAC..079B14 is decompiled as SoundPlayerSetPan(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0807985E
-sub_0807985E:
-	movs r0, #1
-	ldrb r1, [r4, #29]
-	orrs r0, r1
-	strb r0, [r4, #29]
-	ldrb r0, [r4, #10]
-	strb r0, [r4, #9]
-	cmp r6, #3
-	beq _08079878
-	ldrb r2, [r4, #5]
-	mov r8, r2
-	b _08079878
-	.global _08079874
-_08079874:
-	ldrb r0, [r4, #4]
-	.global _08079876
-_08079876:
-	strb r0, [r4, #11]
-	.global _08079878
-_08079878:
-	ldrb r0, [r4, #11]
-	subs r0, #1
-	strb r0, [r4, #11]
-	ldr r0, [sp, #0]
-	cmp r0, #0
-	bne _0807988A
-	subs r0, #1
-	str r0, [sp, #0]
-	b _08079784
-	.global _0807988A
-_0807988A:
-	movs r0, #2
-	ldrb r1, [r4, #29]
-	ands r0, r1
-	cmp r0, #0
-	beq _08079902
-	cmp r6, #3
-	bgt _080798CA
-	movs r0, #8
-	ldrb r2, [r4, #1]
-	ands r0, r2
-	cmp r0, #0
-	beq _080798CA
-	ldr r0, _080798B4
-	ldrb r0, [r0, #0]
-	cmp r0, #63
-	bgt _080798BC
-	ldr r0, [r4, #32]
-	adds r0, #2
-	ldr r1, _080798B8
-	b _080798C6
-	.byte 0x00
-	.byte 0x00
-	.global _080798B4
-_080798B4:
-	.4byte 0x04000089  @ IO+0x89
-	.global _080798B8
-_080798B8:
-	.4byte 0x000007FC
-	.global _080798BC
-_080798BC:
-	cmp r0, #127
-	bgt _080798CA
-	ldr r0, [r4, #32]
-	adds r0, #1
-	ldr r1, _080798D8
-	.global _080798C6
-_080798C6:
-	ands r0, r1
-	str r0, [r4, #32]
-	.global _080798CA
-_080798CA:
-	cmp r6, #4
-	beq _080798DC
-	ldr r0, [r4, #32]
-	ldr r1, [sp, #16]
-	strb r0, [r1, #0]
-	b _080798EA
-	.byte 0x00
-	.byte 0x00
-	.global _080798D8
-_080798D8:
-	.4byte 0x000007FE
-	.global _080798DC
-_080798DC:
-	ldr r2, [sp, #16]
-	ldrb r0, [r2, #0]
-	movs r1, #8
-	ands r1, r0
-	ldr r0, [r4, #32]
-	orrs r0, r1
-	strb r0, [r2, #0]
-	.global _080798EA
-_080798EA:
-	movs r0, #192
-	ldrb r1, [r4, #26]
-	ands r0, r1
-	adds r1, r4, #0
-	adds r1, #33
-	ldrb r1, [r1, #0]
-	adds r0, r1, r0
-	strb r0, [r4, #26]
-	movs r2, #255
-	ands r0, r2
-	ldr r1, [sp, #20]
-	strb r0, [r1, #0]
-	.global _08079902
-_08079902:
-	movs r0, #1
-	ldrb r2, [r4, #29]
-	ands r0, r2
-	cmp r0, #0
-	beq _08079988
-	ldr r1, _0807994C
-	ldrb r0, [r1, #0]
-	ldrb r2, [r4, #28]
-	bics r0, r2
-	ldrb r2, [r4, #27]
-	orrs r0, r2
-	strb r0, [r1, #0]
-	cmp r6, #3
-	bne _08079954
-	ldr r0, _08079950
-	ldrb r1, [r4, #9]
-	adds r0, r1, r0
-	ldrb r0, [r0, #0]
-	ldr r2, [sp, #12]
-	strb r0, [r2, #0]
-	movs r1, #128
-	adds r0, r1, #0
-	ldrb r2, [r4, #26]
-	ands r0, r2
-	cmp r0, #0
-	beq _08079988
-	ldr r0, [sp, #8]
-	strb r1, [r0, #0]
-	ldrb r0, [r4, #26]
-	ldr r1, [sp, #20]
-	strb r0, [r1, #0]
-	movs r0, #127
-	ldrb r2, [r4, #26]
-	ands r0, r2
-	strb r0, [r4, #26]
-	b _08079988
-	.byte 0x00
-	.byte 0x00
-	.global _0807994C
-_0807994C:
-	.4byte 0x04000081  @ IO+0x81
-	.global _08079950
-_08079950:
-	.4byte 0x0808979C  @ ROM+0x8979C
-	.global _08079954
-_08079954:
-	movs r0, #15
-	mov r1, r8
-	ands r1, r0
-	mov r8, r1
-	ldrb r2, [r4, #9]
-	lsls r0, r2, #4
-	add r0, r8
-	ldr r1, [sp, #12]
-	strb r0, [r1, #0]
-	movs r2, #128
-	ldrb r0, [r4, #26]
-	orrs r0, r2
-	ldr r1, [sp, #20]
-	strb r0, [r1, #0]
-	cmp r6, #1
-	bne _08079988
-	ldr r0, [sp, #8]
-	ldrb r1, [r0, #0]
-	movs r0, #8
-	ands r0, r1
-	cmp r0, #0
-	bne _08079988
-	ldrb r0, [r4, #26]
-	orrs r0, r2
-	ldr r1, [sp, #20]
-	strb r0, [r1, #0]
-	.global _08079988
-_08079988:
-	movs r0, #0
-	strb r0, [r4, #29]
-	.global _0807998C
-_0807998C:
-	mov r6, r10
-	mov r4, r9
-	cmp r6, #4
-	bgt _08079996
-	b _0807958C
-	.global _08079996
-_08079996:
-	add sp, #28
-	pop {r3, r4, r5}
-	mov r8, r3
-	mov r9, r4
-	mov r10, r5
-	pop {r4, r5, r6, r7}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.4byte 0x1C02B510
-	.4byte 0x0C090409
-	.4byte 0x48066B53
-	.4byte 0xD1054283
-	.4byte 0x8B9483D1
-	.4byte 0x43601C08
-	.4byte 0x84101200
-	.4byte 0xBC01BC10
-	.4byte 0x00004700
-	.4byte 0x68736D53
+@ 079B14..079B34 is decompiled as SoundTrackClearModulation(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080799D0
-sub_080799D0:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r9
-	mov r6, r8
-	push {r6, r7}
-	adds r4, r0, #0
-	lsls r1, r1, #16
-	lsrs r7, r1, #16
-	lsls r6, r2, #16
-	ldr r3, [r4, #52]
-	ldr r0, _08079A34
-	cmp r3, r0
-	bne _08079A28
-	adds r0, r3, #1
-	str r0, [r4, #52]
-	ldrb r2, [r4, #8]
-	ldr r1, [r4, #44]
-	movs r5, #1
-	cmp r2, #0
-	ble _08079A24
-	movs r0, #128
-	mov r8, r0
-	lsrs r6, r6, #18
-	movs r0, #3
-	mov r12, r0
-	.global _08079A00
-_08079A00:
-	adds r0, r7, #0
-	ands r0, r5
-	cmp r0, #0
-	beq _08079A1A
-	ldrb r3, [r1, #0]
-	mov r0, r8
-	ands r0, r3
-	cmp r0, #0
-	beq _08079A1A
-	strb r6, [r1, #19]
-	mov r0, r12
-	orrs r0, r3
-	strb r0, [r1, #0]
-	.global _08079A1A
-_08079A1A:
-	subs r2, #1
-	adds r1, #80
-	lsls r5, r5, #1
-	cmp r2, #0
-	bgt _08079A00
-	.global _08079A24
-_08079A24:
-	ldr r0, _08079A34
-	str r0, [r4, #52]
-	.global _08079A28
-_08079A28:
-	pop {r3, r4}
-	mov r8, r3
-	mov r9, r4
-	pop {r4, r5, r6, r7}
-	pop {r0}
+@ 079B34..079BA8 is decompiled as SoundPlayerSetModulationDepth(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08079A32
-sub_08079A32:
-	bx r0
-	.global _08079A34
-_08079A34:
-	.4byte 0x68736D53
-	.4byte 0x4657B5F0
-	.4byte 0x4645464E
-	.4byte 0x1C04B4E0
-	.4byte 0x0C090409
-	.4byte 0x0412468C
-	.4byte 0x6B630C16
-	.4byte 0x42834815
-	.4byte 0x1C58D121
-	.4byte 0x7A226360
-	.4byte 0x25016AE3
-	.4byte 0xDD182A00
-	.4byte 0x46812080
-	.4byte 0x16070430
-	.4byte 0x4680200C
-	.4byte 0x40284660
-	.4byte 0xD0092800
-	.4byte 0x46487819
-	.4byte 0x28004008
-	.4byte 0x72DFD004
-	.4byte 0x4640735E
-	.4byte 0x70184308
-	.4byte 0x33503A01
-	.4byte 0x2A00006D
-	.4byte 0x4804DCEC
-	.4byte 0xBC386360
-	.4byte 0x46A14698
-	.4byte 0xBCF046AA
-	.4byte 0x4700BC01
-	.4byte 0x68736D53
-	.4byte 0x464FB5F0
+@ 079BA8..079C1C is decompiled as SoundPlayerSetLfoSpeed(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08079AB0
-sub_08079AB0:
-	mov r6, r8
-	push {r6, r7}
-	adds r4, r0, #0
-	lsls r1, r1, #16
-	lsrs r7, r1, #16
-	lsls r2, r2, #24
-	lsrs r6, r2, #24
-	ldr r3, [r4, #52]
-	ldr r0, _08079B10
-	cmp r3, r0
-	bne _08079B04
-	adds r0, r3, #1
-	str r0, [r4, #52]
-	ldrb r2, [r4, #8]
-	ldr r1, [r4, #44]
-	movs r5, #1
-	cmp r2, #0
-	ble _08079B00
-	movs r0, #128
-	mov r8, r0
-	movs r0, #3
-	mov r12, r0
-	.global _08079ADC
-_08079ADC:
-	adds r0, r7, #0
-	ands r0, r5
-	cmp r0, #0
-	beq _08079AF6
-	ldrb r3, [r1, #0]
-	mov r0, r8
-	ands r0, r3
-	cmp r0, #0
-	beq _08079AF6
-	strb r6, [r1, #21]
-	mov r0, r12
-	orrs r0, r3
-	strb r0, [r1, #0]
-	.global _08079AF6
-_08079AF6:
-	subs r2, #1
-	adds r1, #80
-	lsls r5, r5, #1
-	cmp r2, #0
-	bgt _08079ADC
-	.global _08079B00
-_08079B00:
-	ldr r0, _08079B10
-	str r0, [r4, #52]
-	.global _08079B04
-_08079B04:
-	pop {r3, r4}
-	mov r8, r3
-	mov r9, r4
-	pop {r4, r5, r6, r7}
-	pop {r0}
-	bx r0
-	.global _08079B10
-_08079B10:
-	.4byte 0x68736D53
-	.4byte 0x22001C01
-	.4byte 0x76882000
-	.4byte 0x7E087588
-	.4byte 0xD1012800
-	.4byte 0xE000200C
-	.4byte 0x780A2003
-	.4byte 0x70084310
-	.4byte 0x00004770
-	.4byte 0x4657B5F0
-	.4byte 0x4645464E
-	.4byte 0x1C06B4E0
-	.4byte 0x0C090409
-	.4byte 0x0612468A
-	.4byte 0x46900E12
-	.4byte 0x48156B71
-	.4byte 0xD11F4281
-	.4byte 0x63701C48
-	.4byte 0x6AF47A35
-	.4byte 0x2D002701
-	.4byte 0x46C1DD16
-	.4byte 0x40384650
-	.4byte 0xD00C2800
-	.4byte 0x78212080
-	.4byte 0x28004008
-	.4byte 0x4640D007
-	.4byte 0x464975E0
-	.4byte 0xD1022900
-	.4byte 0xF7FF1C20
-	.4byte 0x3D01FFC7
-	.4byte 0x007F3450
-	.4byte 0xDCE92D00
-	.4byte 0x63704804
-	.4byte 0x4698BC38
-	.4byte 0x46AA46A1
-	.4byte 0xBC01BCF0
-	.4byte 0x00004700
-	.4byte 0x68736D53
-	.4byte 0x4657B5F0
-	.4byte 0x4645464E
-	.4byte 0x1C06B4E0
-	.4byte 0x0C090409
-	.4byte 0x0612468A
-	.4byte 0x46900E12
-	.4byte 0x48156B71
-	.4byte 0xD11F4281
-	.4byte 0x63701C48
-	.4byte 0x6AF47A35
-	.4byte 0x2D002701
-	.4byte 0x46C1DD16
-	.4byte 0x40384650
-	.4byte 0xD00C2800
-	.4byte 0x78212080
-	.4byte 0x28004008
-	.4byte 0x4640D007
-	.4byte 0x46497660
-	.4byte 0xD1022900
-	.4byte 0xF7FF1C20
-	.4byte 0x3D01FF8D
-	.4byte 0x007F3450
-	.4byte 0xDCE92D00
-	.4byte 0x63704804
-	.4byte 0x4698BC38
-	.4byte 0x46AA46A1
-	.4byte 0xBC01BCF0
-	.4byte 0x00004700
-	.4byte 0x68736D53
+@ 079C1C..079D74 is decompiled as SoundTrackMemoryCommand(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08079C1C
-sub_08079C1C:
-	push {r4, r5, r6, lr}
-	adds r4, r0, #0
-	adds r6, r1, #0
-	ldr r1, [r6, #64]
-	ldrb r5, [r1, #0]
-	adds r2, r1, #1
-	str r2, [r6, #64]
-	ldr r0, [r4, #24]
-	ldrb r1, [r1, #1]
-	adds r3, r1, r0
-	adds r0, r2, #1
-	str r0, [r6, #64]
-	ldrb r2, [r2, #1]
-	adds r0, #1
-	str r0, [r6, #64]
-	cmp r5, #17
-	bls _08079C40
-	b _08079D6E
-	.global _08079C40
-_08079C40:
-	lsls r0, r5, #2
-	ldr r1, _08079C4C
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	mov pc, r0
-	.byte 0x00
-	.byte 0x00
-	.global _08079C4C
-_08079C4C:
-	.4byte 0x08079C50  @ ROM+0x79C50
-	.4byte 0x08079C98
-	.4byte 0x08079C9C
-	.4byte 0x08079CA4
-	.4byte 0x08079CAC
-	.4byte 0x08079CB6
-	.4byte 0x08079CC4
-	.4byte 0x08079CD2
-	.4byte 0x08079CDA
-	.4byte 0x08079CE2
-	.4byte 0x08079CEA
-	.4byte 0x08079CF2
-	.4byte 0x08079CFA
-	.4byte 0x08079D02
-	.4byte 0x08079D10
-	.4byte 0x08079D1E
-	.4byte 0x08079D2C
-	.4byte 0x08079D3A
-	.4byte 0x08079D48
-	.4byte 0xE068701A
-	.4byte 0x18887819
-	.4byte 0xE0647018
-	.4byte 0x1A887819
-	.4byte 0xE0607018
-	.4byte 0x188069A0
-	.4byte 0x70187800
-	.4byte 0x69A0E05B
-	.4byte 0x78191880
-	.4byte 0x18087800
-	.4byte 0xE0547018
-	.4byte 0x188069A0
-	.4byte 0x78007819
-	.4byte 0x70181A08
-	.4byte 0x781BE04D
-	.4byte 0xD03D4293
-	.4byte 0x781BE046
-	.4byte 0xD1394293
-	.4byte 0x781BE042
-	.4byte 0xD8354293
-	.4byte 0x781BE03E
-	.4byte 0xD2314293
-	.4byte 0x781BE03A
-	.4byte 0xD92D4293
-	.4byte 0x781BE036
-	.4byte 0xD3294293
-	.4byte 0x69A0E032
-	.4byte 0x781B1880
-	.4byte 0x42837800
-	.4byte 0xE02BD022
-	.4byte 0x188069A0
-	.4byte 0x7800781B
-	.4byte 0xD11B4283
-	.4byte 0x69A0E024
-	.4byte 0x781B1880
-	.4byte 0x42837800
-	.4byte 0xE01DD814
-	.4byte 0x188069A0
-	.4byte 0x7800781B
-	.4byte 0xD20D4283
-	.4byte 0x69A0E016
-	.4byte 0x781B1880
-	.4byte 0x42837800
-	.4byte 0xE00FD906
-	.4byte 0x188069A0
-	.4byte 0x7800781B
-	.4byte 0xD2094283
-	.4byte 0x68024803
-	.4byte 0x1C311C20
-	.4byte 0xFF34F006
-	.4byte 0x0000E005
-	.4byte 0x03005D24
-	.4byte 0x30046C30
-	.byte 0x30
-	.byte 0x64
-	.global _08079D6E
-_08079D6E:
-	pop {r4, r5, r6}
-	pop {r0}
-	bx r0
-
-	.thumb_func
-	.thumb
-	.global sub_08079D74
-sub_08079D74:
-	push {lr}
-	ldr r2, [r1, #64]
-	ldrb r3, [r2, #0]
-	adds r2, #1
-	str r2, [r1, #64]
-	ldr r2, _08079D90
-	lsls r3, r3, #2
-	adds r3, r3, r2
-	ldr r2, [r3, #0]
-	bl sub_08080BC8
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _08079D90
-_08079D90:
-	.4byte 0x080897E0  @ ROM+0x897E0
+@ 079D74..079D94 is decompiled as SoundTrackDispatchExtendedCommand(); see src/decompiled.json
 
 @ 079D94..079DA8 is decompiled as CallRuntimeHandler(); see src/decompiled.json
 
-	.section .rom.00079DA8, "ax"
-	.syntax unified
+@ 079DA8..079DF0 is decompiled as SoundTrackReadWavePointer(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08079DA8
-sub_08079DA8:
-	push {r4, lr}
-	ldr r2, [r1, #64]
-	ldr r0, _08079DE0
-	ands r4, r0
-	ldrb r0, [r2, #0]
-	orrs r4, r0
-	ldrb r0, [r2, #1]
-	lsls r3, r0, #8
-	ldr r0, _08079DE4
-	ands r4, r0
-	orrs r4, r3
-	ldrb r0, [r2, #2]
-	lsls r3, r0, #16
-	ldr r0, _08079DE8
-	ands r4, r0
-	orrs r4, r3
-	ldrb r0, [r2, #3]
-	lsls r3, r0, #24
-	ldr r0, _08079DEC
-	ands r4, r0
-	orrs r4, r3
-	str r4, [r1, #40]
-	adds r2, #4
-	str r2, [r1, #64]
-	pop {r4}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _08079DE0
-_08079DE0:
-	.4byte 0xFFFFFF00
-	.global _08079DE4
-_08079DE4:
-	.4byte 0xFFFF00FF
-	.global _08079DE8
-_08079DE8:
-	.4byte 0xFF00FFFF
-	.global _08079DEC
-_08079DEC:
-	.4byte 0x00FFFFFF
+@ 079DF0..079E04 is decompiled as SoundTrackReadToneType(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08079DF0
-sub_08079DF0:
-	ldr r0, [r1, #64]
-	ldrb r2, [r0, #0]
-	adds r0, r1, #0
-	adds r0, #36
-	strb r2, [r0, #0]
-	ldr r0, [r1, #64]
-	adds r0, #1
-	str r0, [r1, #64]
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.4byte 0x78026C08
-	.4byte 0x302C1C08
-	.4byte 0x6C087002
-	.4byte 0x64083001
-	.4byte 0x00004770
-	.4byte 0x78006C08
-	.4byte 0x322D1C0A
-	.4byte 0x6C087010
-	.4byte 0x64083001
-	.4byte 0x00004770
-	.4byte 0x78006C08
-	.4byte 0x322E1C0A
-	.4byte 0x6C087010
-	.4byte 0x64083001
-	.4byte 0x00004770
-	.4byte 0x78006C08
-	.4byte 0x322F1C0A
-	.4byte 0x6C087010
-	.4byte 0x64083001
-	.4byte 0x00004770
-	.4byte 0x78026C08
-	.4byte 0x3001778A
-	.4byte 0x47706408
-	.4byte 0x78026C08
-	.4byte 0x300177CA
-	.4byte 0x47706408
-	.4byte 0x78006C08
-	.4byte 0x32261C0A
-	.4byte 0x6C087010
-	.4byte 0x64083001
-	.4byte 0x00004770
-	.4byte 0x78006C08
-	.4byte 0x32271C0A
-	.4byte 0x6C087010
-	.4byte 0x64083001
-	.4byte 0x00004770
+@ 079E04..079E18 is decompiled as SoundTrackReadToneAttack(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08079E94
-sub_08079E94:
-	bx lr
-	.byte 0x00
-	.byte 0x00
+@ 079E18..079E2C is decompiled as SoundTrackReadToneDecay(); see src/decompiled.json
+
+@ 079E2C..079E40 is decompiled as SoundTrackReadToneSustain(); see src/decompiled.json
+
+@ 079E40..079E54 is decompiled as SoundTrackReadToneRelease(); see src/decompiled.json
+
+@ 079E54..079E60 is decompiled as SoundTrackReadPseudoEchoVolume(); see src/decompiled.json
+
+@ 079E60..079E6C is decompiled as SoundTrackReadPseudoEchoLength(); see src/decompiled.json
+
+@ 079E6C..079E80 is decompiled as SoundTrackReadToneLength(); see src/decompiled.json
+
+@ 079E80..079E94 is decompiled as SoundTrackReadTonePanSweep(); see src/decompiled.json
+
+@ 079E94..079E98 is decompiled as SoundTrackNoOp(); see src/decompiled.json
 
 @ 079E98..079E9C is decompiled as ArcTan2(); see src/decompiled.json
 
@@ -4253,151 +1453,14 @@ sub_08079EA8:
 
 @ 079ED8..079EDC is decompiled as Sqrt(); see src/decompiled.json
 
-	.section .rom.00079EDC, "ax"
+@ 079EDC..079F1C is decompiled as ReadSram(); see src/decompiled.json
+
+@ 079F1C..079F5C is decompiled as WriteSram(); see src/decompiled.json
+
+@ 079F5C..079FA8 is decompiled as VerifySram(); see src/decompiled.json
+
+	.section .rom.00079FA8, "ax"
 	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_08079EDC
-sub_08079EDC:
-	push {r4, r5, lr}
-	adds r5, r0, #0
-	adds r4, r1, #0
-	adds r3, r2, #0
-	ldr r2, _08079F14
-	ldrh r0, [r2, #0]
-	ldr r1, _08079F18
-	ands r0, r1
-	movs r1, #3
-	orrs r0, r1
-	strh r0, [r2, #0]
-	subs r3, #1
-	movs r0, #1
-	negs r0, r0
-	cmp r3, r0
-	beq _08079F0C
-	adds r1, r0, #0
-	.global _08079EFE
-_08079EFE:
-	ldrb r0, [r5, #0]
-	strb r0, [r4, #0]
-	adds r5, #1
-	adds r4, #1
-	subs r3, #1
-	cmp r3, r1
-	bne _08079EFE
-	.global _08079F0C
-_08079F0C:
-	pop {r4, r5}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _08079F14
-_08079F14:
-	.4byte 0x04000204  @ REG_WAITCNT
-	.global _08079F18
-_08079F18:
-	.4byte 0x0000FFFC
-
-	.thumb_func
-	.thumb
-	.global sub_08079F1C
-sub_08079F1C:
-	push {r4, r5, lr}
-	adds r5, r0, #0
-	adds r4, r1, #0
-	adds r3, r2, #0
-	ldr r2, _08079F54
-	ldrh r0, [r2, #0]
-	ldr r1, _08079F58
-	ands r0, r1
-	movs r1, #3
-	orrs r0, r1
-	strh r0, [r2, #0]
-	subs r3, #1
-	movs r0, #1
-	negs r0, r0
-	cmp r3, r0
-	beq _08079F4C
-	adds r1, r0, #0
-	.global _08079F3E
-_08079F3E:
-	ldrb r0, [r5, #0]
-	strb r0, [r4, #0]
-	adds r5, #1
-	adds r4, #1
-	subs r3, #1
-	cmp r3, r1
-	bne _08079F3E
-	.global _08079F4C
-_08079F4C:
-	pop {r4, r5}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _08079F54
-_08079F54:
-	.4byte 0x04000204  @ REG_WAITCNT
-	.global _08079F58
-_08079F58:
-	.4byte 0x0000FFFC
-
-	.thumb_func
-	.thumb
-	.global sub_08079F5C
-sub_08079F5C:
-	push {r4, r5, lr}
-	adds r5, r0, #0
-	adds r4, r1, #0
-	adds r3, r2, #0
-	ldr r2, _08079F90
-	ldrh r0, [r2, #0]
-	ldr r1, _08079F94
-	ands r0, r1
-	movs r1, #3
-	orrs r0, r1
-	strh r0, [r2, #0]
-	subs r3, #1
-	movs r0, #1
-	negs r0, r0
-	cmp r3, r0
-	beq _08079F9E
-	adds r2, r0, #0
-	.global _08079F7E
-_08079F7E:
-	ldrb r1, [r4, #0]
-	ldrb r0, [r5, #0]
-	adds r5, #1
-	adds r4, #1
-	cmp r1, r0
-	beq _08079F98
-	subs r0, r4, #1
-	b _08079FA0
-	.byte 0x00
-	.byte 0x00
-	.global _08079F90
-_08079F90:
-	.4byte 0x04000204  @ REG_WAITCNT
-	.global _08079F94
-_08079F94:
-	.4byte 0x0000FFFC
-	.global _08079F98
-_08079F98:
-	subs r3, #1
-	cmp r3, r2
-	bne _08079F7E
-	.global _08079F9E
-_08079F9E:
-	movs r0, #0
-	.global _08079FA0
-_08079FA0:
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
 
 	.thumb_func
 	.thumb
@@ -4504,47 +1567,7 @@ _0807A03C:
 _0807A040:
 	.4byte 0x0000FFFC
 
-	.thumb_func
-	.thumb
-	.global sub_0807A044
-sub_0807A044:
-	push {r4, r5, r6, r7, lr}
-	adds r6, r0, #0
-	adds r5, r1, #0
-	adds r4, r2, #0
-	movs r7, #0
-	b _0807A056
-	.global _0807A050
-_0807A050:
-	adds r0, r7, #1
-	lsls r0, r0, #24
-	lsrs r7, r0, #24
-	.global _0807A056
-_0807A056:
-	cmp r7, #2
-	bhi _0807A078
-	adds r0, r6, #0
-	adds r1, r5, #0
-	adds r2, r4, #0
-	bl sub_08079F1C
-	ldr r0, _0807A080
-	ldr r3, [r0, #0]
-	adds r0, r6, #0
-	adds r1, r5, #0
-	adds r2, r4, #0
-	bl sub_08080BCC
-	adds r3, r0, #0
-	cmp r3, #0
-	bne _0807A050
-	.global _0807A078
-_0807A078:
-	adds r0, r3, #0
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.global _0807A080
-_0807A080:
-	.4byte 0x03006104  @ IWRAM+0x6104
+@ 07A044..07A084 is decompiled as WriteSramFast(); see src/decompiled.json
 
 @ 07A084..07A09C is decompiled as KeyInputInit(); see src/decompiled.json
 
@@ -5300,335 +2323,12 @@ _0807ADB8:
 
 @ 07AE08..07AE10 is decompiled as FontPalette(); see src/decompiled.json
 
-	.section .rom.0007AE10, "ax"
+@ 07AE10..07AE7C is decompiled as GetFontGlyph(); see src/decompiled.json
+
+@ 07AE7C..07AFF8 is decompiled as FontCharacterToGlyph(); see src/decompiled.json
+
+	.section .rom.0007AFF8, "ax"
 	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_0807AE10
-sub_0807AE10:
-	push {r4, r5, lr}
-	adds r5, r0, #0
-	lsls r1, r1, #16
-	lsrs r1, r1, #16
-	adds r2, r1, #0
-	ldr r0, _0807AE24
-	cmp r1, r0
-	bne _0807AE2C
-	ldr r0, _0807AE28
-	b _0807AE50
-	.global _0807AE24
-_0807AE24:
-	.4byte 0x0000F056
-	.global _0807AE28
-_0807AE28:
-	.4byte 0x000081FA
-	.global _0807AE2C
-_0807AE2C:
-	ldr r0, _0807AE38
-	cmp r1, r0
-	bne _0807AE40
-	ldr r0, _0807AE3C
-	b _0807AE50
-	.byte 0x00
-	.byte 0x00
-	.global _0807AE38
-_0807AE38:
-	.4byte 0x0000F040
-	.global _0807AE3C
-_0807AE3C:
-	.4byte 0x000081F9
-	.global _0807AE40
-_0807AE40:
-	adds r0, r2, #0
-	bl sub_0807AE7C
-	adds r4, r0, #0
-	ldr r0, _0807AE74
-	cmp r4, r0
-	bne _0807AE56
-	ldr r0, _0807AE78
-	.global _0807AE50
-_0807AE50:
-	bl sub_0807AE7C
-	adds r4, r0, #0
-	.global _0807AE56
-_0807AE56:
-	ldr r2, [r5, #0]
-	ldr r0, [r2, #52]
-	adds r0, r2, r0
-	ldr r3, [r2, #32]
-	ldr r1, [r2, #40]
-	muls r1, r3
-	adds r1, #7
-	lsrs r1, r1, #3
-	ldr r2, [r2, #36]
-	muls r1, r2
-	muls r1, r4
-	adds r0, r0, r1
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.global _0807AE74
-_0807AE74:
-	.4byte 0x0000FFFF
-	.global _0807AE78
-_0807AE78:
-	.4byte 0x000081A1
-
-	.thumb_func
-	.thumb
-	.global sub_0807AE7C
-sub_0807AE7C:
-	push {r4, lr}
-	lsls r4, r0, #16
-	lsrs r2, r4, #16
-	movs r1, #0
-	movs r0, #255
-	lsls r0, r0, #8
-	ands r0, r2
-	cmp r0, #0
-	bne _0807AE96
-	movs r0, #240
-	lsls r0, r0, #1
-	adds r1, r2, r0
-	b _0807AFEA
-	.global _0807AE96
-_0807AE96:
-	ldr r3, _0807AEB4
-	adds r0, r2, r3
-	lsls r0, r0, #16
-	lsrs r0, r0, #16
-	cmp r0, #10
-	bls _0807AEAE
-	ldr r3, _0807AEB8
-	adds r0, r2, r3
-	lsls r0, r0, #16
-	lsrs r0, r0, #16
-	cmp r0, #191
-	bhi _0807AEC0
-	.global _0807AEAE
-_0807AEAE:
-	ldr r0, _0807AEBC
-	adds r1, r2, r0
-	b _0807AFEA
-	.global _0807AEB4
-_0807AEB4:
-	.4byte 0x00007E50
-	.global _0807AEB8
-_0807AEB8:
-	.4byte 0x00007EC0
-	.global _0807AEBC
-_0807AEBC:
-	.4byte 0xFFFF7EC0
-	.global _0807AEC0
-_0807AEC0:
-	ldr r3, _0807AEE0
-	adds r0, r2, r3
-	lsls r0, r0, #16
-	lsrs r0, r0, #16
-	cmp r0, #55
-	bls _0807AF48
-	ldr r3, _0807AEE4
-	adds r0, r2, r3
-	lsls r0, r0, #16
-	lsrs r0, r0, #16
-	cmp r0, #81
-	bhi sub_0807AEEC
-	ldr r0, _0807AEE8
-	adds r1, r2, r0
-	b _0807AFEA
-	.byte 0x00
-	.byte 0x00
-	.global _0807AEE0
-_0807AEE0:
-	.4byte 0x00007C61
-	.global _0807AEE4
-_0807AEE4:
-	.4byte 0x00007BC0
-	.global _0807AEE8
-_0807AEE8:
-	.4byte 0xFFFF7E00
-
-	.thumb_func
-	.thumb
-	.global sub_0807AEEC
-sub_0807AEEC:
-	ldr r3, _0807AF00
-	adds r0, r2, r3
-	lsls r0, r0, #16
-	lsrs r0, r0, #16
-	cmp r0, #92
-	bhi _0807AF08
-	ldr r0, _0807AF04
-	adds r1, r2, r0
-	b _0807AFEA
-	.byte 0x00
-	.byte 0x00
-	.global _0807AF00
-_0807AF00:
-	.4byte 0x000078C0
-	.global _0807AF04
-_0807AF04:
-	.4byte 0xFFFF7D40
-	.global _0807AF08
-_0807AF08:
-	ldr r3, _0807AF2C
-	adds r0, r2, r3
-	lsls r0, r0, #16
-	lsrs r3, r0, #16
-	ldr r0, _0807AF30
-	cmp r3, r0
-	bhi _0807AF58
-	cmp r3, #90
-
-	.thumb_func
-	.thumb
-	.global sub_0807AF18
-sub_0807AF18:
-	bls _0807AF26
-	ldr r3, _0807AF34
-	adds r0, r2, r3
-	lsls r0, r0, #16
-	lsrs r0, r0, #16
-	cmp r0, #82
-	bhi _0807AF3C
-	.global _0807AF26
-_0807AF26:
-	ldr r0, _0807AF38
-	adds r1, r2, r0
-	b _0807AFEA
-	.global _0807AF2C
-_0807AF2C:
-	.4byte 0x00007DC0
-	.global _0807AF30
-_0807AF30:
-	.4byte 0x0000027F
-	.global _0807AF34
-_0807AF34:
-	.4byte 0x00007D61
-	.global _0807AF38
-_0807AF38:
-	.4byte 0xFFFF7E80
-	.global _0807AF3C
-_0807AF3C:
-	ldr r3, _0807AF50
-	adds r0, r2, r3
-	lsls r0, r0, #16
-	lsrs r0, r0, #16
-	cmp r0, #191
-	bhi _0807AFEA
-	.global _0807AF48
-_0807AF48:
-	ldr r0, _0807AF54
-	adds r1, r2, r0
-	b _0807AFEA
-	.byte 0x00
-	.byte 0x00
-	.global _0807AF50
-_0807AF50:
-	.4byte 0x00007CC0
-	.global _0807AF54
-_0807AF54:
-	.4byte 0xFFFF7E40
-	.global _0807AF58
-_0807AF58:
-	ldr r1, _0807AF7C
-	adds r0, r2, r1
-	lsls r0, r0, #16
-	ldr r1, _0807AF80
-	cmp r0, r1
-	bhi _0807AF84
-	lsrs r0, r4, #24
-	subs r0, #136
-	lsls r1, r0, #1
-	adds r1, r1, r0
-	lsls r1, r1, #6
-	movs r0, #255
-	ands r0, r2
-	adds r1, r1, r0
-	movs r3, #160
-	lsls r3, r3, #3
-	adds r1, r1, r3
-	b _0807AFEA
-	.global _0807AF7C
-_0807AF7C:
-	.4byte 0x000077C0
-	.global _0807AF80
-_0807AF80:
-	.4byte 0x104F0000
-	.global _0807AF84
-_0807AF84:
-	ldr r1, _0807AFB0
-	adds r0, r2, r1
-	lsls r0, r0, #16
-	lsrs r1, r0, #16
-	ldr r0, _0807AFB4
-	cmp r1, r0
-	bhi _0807AFE8
-	ldr r0, _0807AFB8
-	cmp r1, r0
-	bhi _0807AFBC
-	lsrs r0, r4, #24
-	subs r0, #152
-	lsls r1, r0, #1
-	adds r1, r1, r0
-	lsls r1, r1, #6
-	movs r0, #255
-	ands r0, r2
-	adds r1, r1, r0
-	movs r3, #136
-	lsls r3, r3, #5
-	adds r1, r1, r3
-	b _0807AFEA
-	.global _0807AFB0
-_0807AFB0:
-	.4byte 0x00006770
-	.global _0807AFB4
-_0807AFB4:
-	.4byte 0x0000521F
-	.global _0807AFB8
-_0807AFB8:
-	.4byte 0x0000076F
-	.global _0807AFBC
-_0807AFBC:
-	movs r1, #254
-	lsls r1, r1, #5
-	adds r0, r2, r1
-	lsls r0, r0, #16
-	ldr r1, _0807AFE4
-	cmp r0, r1
-	bhi _0807AFE8
-	lsrs r0, r2, #8
-	subs r0, #224
-	lsls r1, r0, #1
-	adds r1, r1, r0
-	lsls r1, r1, #6
-	movs r0, #255
-	ands r0, r2
-	adds r1, r1, r0
-	movs r3, #184
-	lsls r3, r3, #5
-	adds r1, r1, r3
-	b _0807AFEA
-	.byte 0x00
-	.byte 0x00
-	.global _0807AFE4
-_0807AFE4:
-	.4byte 0x0A6F0000
-	.global _0807AFE8
-_0807AFE8:
-	ldr r1, _0807AFF4
-	.global _0807AFEA
-_0807AFEA:
-	adds r0, r1, #0
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _0807AFF4
-_0807AFF4:
-	.4byte 0x0000FFFF
 
 	.thumb_func
 	.thumb
@@ -5748,7 +2448,9 @@ _0807B0BE:
 	cmp r4, #15
 	ble _0807B0BE
 	movs r0, #0
-	bl sub_0807B728
+	.2byte 0xF000
+	.byte 0x2A
+	.byte 0xFB
 	movs r0, #0
 	movs r1, #0
 	.2byte 0xF000
@@ -5767,8 +2469,8 @@ _0807B0BE:
 	movs r5, #128
 	lsls r5, r5, #2
 	adds r0, r5, #0
-	bl sub_0807D01C
-	movs r0, #120
+	.2byte 0xF001
+	.4byte 0x2078FF93
 	movs r1, #80
 	.2byte 0xF002
 	.4byte 0x2000F88F
@@ -5936,71 +2638,12 @@ _0807B220:
 
 @ 07B314..07B32C is decompiled as SpriteEngineGetValue612(); see src/decompiled.json
 
-	.section .rom.0007B32C, "ax"
-	.syntax unified
+@ 07B32C..07B384 is decompiled as SpriteTileAllocatorInit(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0807B32C
-sub_0807B32C:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r8
-	push {r7}
-	adds r6, r0, #0
-	adds r4, r1, #0
-	adds r7, r2, #0
-	adds r5, r3, #0
-	adds r1, r7, r5
-	movs r0, #128
-	lsls r0, r0, #3
-	cmp r1, r0
-	bhi _0807B378
-	str r6, [r4, #4]
-	movs r0, #128
-	lsls r0, r0, #6
-	mov r8, r0
-	adds r0, r6, #0
-	mov r1, r8
-	.2byte 0xF7FE
-	.byte 0xCC
-	.byte 0xFF
-	adds r2, r0, #0
-	str r2, [r4, #0]
-	cmp r2, #0
-	beq _0807B378
-	movs r0, #0
-	strh r7, [r4, #10]
-	strh r5, [r4, #12]
-	strh r0, [r4, #14]
-	mov r1, r8
-	orrs r5, r1
-	strh r5, [r2, #2]
-	ldr r1, _0807B374
-	strh r1, [r2, #0]
-	strh r0, [r4, #8]
-	ldr r0, [r4, #0]
-	b _0807B37A
-	.global _0807B374
-_0807B374:
-	.4byte 0x0000FFFF
-	.global _0807B378
-_0807B378:
-	movs r0, #0
-	.global _0807B37A
-_0807B37A:
-	pop {r3}
-	mov r8, r3
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.4byte 0x1C04B510
-	.4byte 0x29006821
-	.4byte 0x6860D002
-	.4byte 0xF84CF7FF
-	.4byte 0x21101C20
-	.4byte 0xF7862200
-	.4byte 0xBC10FCB5
-	.4byte 0x4700BC01
+@ 07B384..07B3A4 is decompiled as SpriteTileAllocatorReset(); see src/decompiled.json
+
+	.section .rom.0007B3A4, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -6176,11 +2819,11 @@ _0807B4A6:
 	mov r7, r8
 	ldr r0, [r7, #0]
 	adds r1, r5, #0
-	bl sub_080869C0
+	bl SpriteTileBlockIndex
 	strh r0, [r7, #8]
 	ldr r0, [r7, #0]
 	adds r1, r5, #0
-	bl sub_080869C0
+	bl SpriteTileBlockIndex
 	b _0807B516
 	.global _0807B4CC
 _0807B4CC:
@@ -6202,7 +2845,7 @@ _0807B4CC:
 	mov r2, r8
 	ldr r0, [r2, #0]
 	adds r1, r5, #0
-	bl sub_080869C0
+	bl SpriteTileBlockIndex
 	strh r0, [r7, #0]
 	cmp r4, #0
 	bne _0807B50A
@@ -6211,14 +2854,14 @@ _0807B4CC:
 	mov r1, r8
 	ldr r0, [r1, #0]
 	adds r1, r7, #0
-	bl sub_080869C0
+	bl SpriteTileBlockIndex
 	strh r0, [r4, #0]
 	.global _0807B50A
 _0807B50A:
 	mov r2, r8
 	ldr r0, [r2, #0]
 	adds r1, r5, #0
-	bl sub_080869C0
+	bl SpriteTileBlockIndex
 	mov r7, r8
 	.global _0807B516
 _0807B516:
@@ -6237,138 +2880,7 @@ _0807B51A:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_0807B52C
-sub_0807B52C:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r8
-	push {r7}
-	adds r6, r0, #0
-	movs r2, #14
-	ldrsh r0, [r6, r2]
-	cmp r0, #0
-	bne _0807B5F8
-	ldrh r0, [r6, #10]
-	subs r0, r1, r0
-	lsls r0, r0, #3
-	ldr r1, [r6, #0]
-	adds r4, r1, r0
-	ldrh r1, [r4, #2]
-	ldr r0, _0807B5EC
-	ands r0, r1
-	strh r0, [r4, #2]
-	ldrh r7, [r4, #2]
-	ldr r0, _0807B5F0
-	mov r12, r0
-	adds r5, r7, #0
-	ands r5, r0
-	ldrh r2, [r4, #0]
-	lsls r1, r2, #3
-	ldr r0, [r6, #0]
-	adds r3, r0, r1
-	lsls r0, r5, #3
-	adds r0, r0, r4
-	mov r8, r0
-	ldr r0, _0807B5F4
-	cmp r2, r0
-	beq _0807B59C
-	ldrh r1, [r3, #2]
-	movs r0, #192
-	lsls r0, r0, #8
-	ands r0, r1
-	cmp r0, #0
-	bne _0807B59C
-	adds r4, r3, #0
-	mov r0, r12
-	ands r0, r1
-	adds r5, r5, r0
-	movs r1, #128
-	lsls r1, r1, #6
-	ands r1, r7
-	adds r0, r5, #0
-	orrs r0, r1
-	strh r0, [r4, #2]
-	cmp r1, #0
-	bne _0807B5DE
-	ldr r0, [r6, #0]
-	adds r1, r4, #0
-	bl sub_080869C0
-	mov r1, r8
-	strh r0, [r1, #0]
-	.global _0807B59C
-_0807B59C:
-	movs r2, #128
-	lsls r2, r2, #6
-	ands r7, r2
-	cmp r7, #0
-	bne _0807B5DE
-	mov r0, r8
-	ldrh r1, [r0, #2]
-	movs r0, #192
-	lsls r0, r0, #8
-	ands r0, r1
-	cmp r0, #0
-	bne _0807B5DE
-	ldr r0, _0807B5F0
-	ands r0, r1
-	adds r0, r5, r0
-	lsls r0, r0, #16
-	lsrs r5, r0, #16
-	adds r0, r2, #0
-	ands r0, r1
-	orrs r0, r5
-	strh r0, [r4, #2]
-	ands r0, r2
-	cmp r0, #0
-	bne _0807B5DE
-	lsls r0, r5, #3
-	adds r0, r0, r4
-	mov r8, r0
-	ldr r0, [r6, #0]
-	adds r1, r4, #0
-	bl sub_080869C0
-	mov r1, r8
-	strh r0, [r1, #0]
-	.global _0807B5DE
-_0807B5DE:
-	ldr r0, [r6, #0]
-	adds r1, r4, #0
-	bl sub_080869C0
-	strh r0, [r6, #8]
-	b _0807B60A
-	.byte 0x00
-	.byte 0x00
-	.global _0807B5EC
-_0807B5EC:
-	.4byte 0x00003FFF
-	.global _0807B5F0
-_0807B5F0:
-	.4byte 0x00001FFF
-	.global _0807B5F4
-_0807B5F4:
-	.4byte 0x0000FFFF
-	.global _0807B5F8
-_0807B5F8:
-	ldrh r0, [r6, #10]
-	subs r0, r1, r0
-	lsls r0, r0, #3
-	ldr r1, [r6, #0]
-	adds r4, r1, r0
-	ldrh r1, [r4, #2]
-	ldr r0, _0807B614
-	ands r0, r1
-	strh r0, [r4, #2]
-	.global _0807B60A
-_0807B60A:
-	pop {r3}
-	mov r8, r3
-	pop {r4, r5, r6, r7}
-	pop {r0}
-	bx r0
-	.global _0807B614
-_0807B614:
-	.4byte 0x0000BFFF
+@ 07B52C..07B618 is decompiled as SpriteTileAllocatorRelease(); see src/decompiled.json
 
 @ 07B618..07B630 is decompiled as SpriteResourceRelease(); see src/decompiled.json
 
@@ -6376,96 +2888,15 @@ _0807B614:
 
 @ 07B644..07B64C is decompiled as SpriteResourceGetHandle(); see src/decompiled.json
 
-	.section .rom.0007B64C, "ax"
-	.syntax unified
-	.4byte 0x6804B5F0
-	.4byte 0x480D2500
-	.4byte 0x27C04684
-	.4byte 0x2680023F
-	.byte 0xB6
-	.byte 0x01
-	.global _0807B65E
-_0807B65E:
-	.thumb
-	ldrh r0, [r4, #2]
-	adds r2, r0, #0
-	adds r1, r2, #0
-	mov r0, r12
-	ands r1, r0
-	adds r3, r1, #0
-	adds r0, r2, #0
-	ands r0, r7
-	cmp r0, #0
-	bne _0807B674
-	adds r5, r5, r1
-	.global _0807B674
-_0807B674:
-	lsls r0, r3, #3
-	adds r4, r4, r0
-	ands r2, r6
+@ 07B64C..07B68C is decompiled as SpriteTileAllocatorFreeTotal(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0807B67A
-sub_0807B67A:
-	cmp r2, #0
-	beq _0807B65E
-	adds r0, r5, #0
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.4byte 0x00001FFF
-	.4byte 0x6803B5F0
-	.4byte 0x4F0C2400
-	.4byte 0x023626C0
-	.4byte 0x01AD2580
-	.4byte 0x1C11885A
-	.4byte 0x1C104039
-	.4byte 0x28004030
-	.4byte 0x42A1D102
-	.4byte 0x1C0CD900
-	.4byte 0x181B00C8
-	.4byte 0x2A00402A
-	.4byte 0x1C20D0F0
-	.4byte 0xBC02BCF0
-	.4byte 0x00004708
-	.4byte 0x00001FFF
+@ 07B68C..07B6C8 is decompiled as SpriteTileAllocatorLargestFree(); see src/decompiled.json
 
 @ 07B6C8..07B708 is decompiled as SpriteEngineSetFlag20C(); see src/decompiled.json
 
 @ 07B708..07B728 is decompiled as SpriteEngineTestFlag20C(); see src/decompiled.json
 
-	.section .rom.0007B728, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_0807B728
-sub_0807B728:
-	push {lr}
-	ldr r1, _0807B744
-	ldr r1, [r1, #0]
-	movs r2, #0
-	cmp r0, #0
-	beq _0807B738
-	ldr r0, _0807B748
-	adds r2, r0, #0
-	.global _0807B738
-_0807B738:
-	movs r3, #131
-	lsls r3, r3, #2
-	adds r0, r1, r3
-	strh r2, [r0, #0]
-	pop {r0}
-	bx r0
-	.global _0807B744
-_0807B744:
-	.4byte 0x03006118  @ IWRAM+0x6118
-	.global _0807B748
-_0807B748:
-	.4byte 0x0000FFFF
+@ 07B728..07B74C is decompiled as SpriteEngineSetAllFlags20C(); see src/decompiled.json
 
 @ 07B74C..07B760 is decompiled as SpriteEngineGetFlags20C(); see src/decompiled.json
 
@@ -6479,229 +2910,13 @@ _0807B748:
 
 @ 07B7F8..07B830 is decompiled as SpriteEngineDecrementCounter(); see src/decompiled.json
 
-	.section .rom.0007B830, "ax"
-	.syntax unified
+@ 07B830..07B8F4 is decompiled as SpriteEngineFindReusableGroup(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0807B830
-sub_0807B830:
-	push {r4, r5, r6, lr}
-	ldr r0, _0807B8D8
-	ldr r0, [r0, #0]
-	movs r1, #230
-	lsls r1, r1, #1
-	adds r4, r0, r1
-	adds r6, r4, #0
-	.2byte 0xF7FF
-	.4byte 0x0400FF85
-	lsrs r2, r0, #16
-	movs r1, #1
-	movs r5, #0
-	.global _0807B84A
-_0807B84A:
-	ldr r0, [r4, #0]
-	cmp r0, #0
-	bne _0807B858
-	adds r0, r2, #0
-	ands r0, r1
-	cmp r0, #0
-	beq _0807B8E4
-	.global _0807B858
-_0807B858:
-	adds r5, #1
-	adds r4, #4
-	lsls r0, r1, #17
-	lsrs r1, r0, #16
-	cmp r5, #15
-	ble _0807B84A
-	movs r1, #1
-	adds r4, r6, #0
-	movs r5, #0
-	ldr r3, _0807B8DC
-
-	.thumb_func
-	.thumb
-	.global sub_0807B86C
-sub_0807B86C:
-	ldr r0, [r4, #0]
-	ands r0, r3
-	cmp r0, #0
-	bne _0807B87C
-	adds r0, r2, #0
-	ands r0, r1
-	cmp r0, #0
-	beq _0807B8E4
-	.global _0807B87C
-_0807B87C:
-	adds r5, #1
-	adds r4, #4
-	lsls r0, r1, #17
-	lsrs r1, r0, #16
-	cmp r5, #15
-	ble sub_0807B86C
-	movs r1, #1
-	adds r4, r6, #0
-	movs r5, #0
-	ldr r3, _0807B8E0
-	.global _0807B890
-_0807B890:
-	ldr r0, [r4, #0]
-	ands r0, r3
-	cmp r0, #0
-	bne _0807B8A0
-	adds r0, r2, #0
-	ands r0, r1
-	cmp r0, #0
-	beq _0807B8E4
-	.global _0807B8A0
-_0807B8A0:
-	adds r5, #1
-	adds r4, #4
-	lsls r0, r1, #17
-	lsrs r1, r0, #16
-	cmp r5, #15
-	ble _0807B890
-	movs r1, #1
-	adds r4, r6, #0
-	movs r5, #0
-	movs r3, #255
-	.global _0807B8B4
-_0807B8B4:
-	ldr r0, [r4, #0]
-	ands r0, r3
-	cmp r0, #0
-	bne _0807B8C4
-	adds r0, r2, #0
-	ands r0, r1
-	cmp r0, #0
-	beq _0807B8E4
-	.global _0807B8C4
-_0807B8C4:
-	adds r5, #1
-	adds r4, #4
-	lsls r0, r1, #17
-	lsrs r1, r0, #16
-	cmp r5, #15
-	ble _0807B8B4
-	movs r0, #1
-	negs r0, r0
-	b _0807B8EE
-	.byte 0x00
-	.byte 0x00
-	.global _0807B8D8
-_0807B8D8:
-	.4byte 0x03006118  @ IWRAM+0x6118
-	.global _0807B8DC
-_0807B8DC:
-	.4byte 0x00FFFFFF
-	.global _0807B8E0
-_0807B8E0:
-	.4byte 0x0000FFFF
-	.global _0807B8E4
-_0807B8E4:
-	lsls r0, r5, #24
-	lsrs r0, r0, #24
-	.2byte 0xF7FF
-	.byte 0x3A
-	.byte 0xFF
-	adds r0, r5, #0
-	.global _0807B8EE
-_0807B8EE:
-	pop {r4, r5, r6}
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_0807B8F4
-sub_0807B8F4:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r9
-	mov r6, r8
-	push {r6, r7}
-	mov r8, r1
-	ldr r1, _0807B964
-	mov r9, r1
-	ldr r1, [r1, #0]
-	ldr r2, _0807B968
-	adds r1, r1, r2
-	lsls r0, r0, #5
-	ldr r1, [r1, #0]
-	adds r7, r1, r0
-	ldr r0, [r7, #4]
-	mov r3, r8
-	adds r6, r0, r3
-	movs r4, #0
-	ldrsb r4, [r6, r4]
-	adds r5, r4, #0
-	movs r0, #1
-	negs r0, r0
-	cmp r4, r0
-	bne _0807B954
-	bl sub_0807B830
-	adds r4, r0, #0
-	cmp r4, r5
-	beq _0807B954
-	lsls r0, r4, #24
-	lsrs r0, r0, #24
-	movs r1, #0
-	movs r2, #0
-	.2byte 0xF7FF
-	.byte 0x3E
-	.byte 0xFF
-	strb r4, [r6, #0]
-	mov r0, r9
-	ldr r2, [r0, #0]
-	lsls r1, r4, #3
-	movs r3, #166
-	lsls r3, r3, #1
-	adds r0, r2, r3
-	adds r0, r0, r1
-	str r7, [r0, #0]
-	adds r3, #4
-	adds r0, r2, r3
-	adds r0, r0, r1
-	mov r1, r8
-	str r1, [r0, #0]
-	.global _0807B954
-_0807B954:
-	adds r0, r4, #0
-	pop {r3, r4}
-	mov r8, r3
-	mov r9, r4
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _0807B964
-_0807B964:
-	.4byte 0x03006118  @ IWRAM+0x6118
-	.global _0807B968
-_0807B968:
-	.4byte 0x0000061C
+@ 07B8F4..07B96C is decompiled as SpriteResourceBindGroup(); see src/decompiled.json
 
 @ 07B96C..07B9CC is decompiled as NcdRegisterResource(); see src/decompiled.json
 
-	.section .rom.0007B9CC, "ax"
-	.syntax unified
-	.4byte 0x1C04B570
-	.4byte 0x68314E0C
-	.4byte 0x0052228E
-	.4byte 0x68001888
-	.4byte 0x19494D0A
-	.4byte 0x01646809
-	.4byte 0x68491861
-	.4byte 0xFD20F7FE
-	.4byte 0x19406830
-	.4byte 0x19006800
-	.4byte 0x22002180
-	.4byte 0xF986F786
-	.4byte 0xBC01BC70
-	.4byte 0x00004700
-	.4byte 0x03006118
-	.4byte 0x0000061C
+@ 07B9CC..07BA0C is decompiled as NcdResetResource(); see src/decompiled.json
 
 @ 07BA0C..07BA2C is decompiled as SpriteResourceGetLevel0(); see src/decompiled.json
 
@@ -6717,107 +2932,7 @@ _0807B968:
 
 @ 07BB48..07BB98 is decompiled as SpriteResourceGetTable28(); see src/decompiled.json
 
-	.section .rom.0007BB98, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global FindResourceByName
-FindResourceByName:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r8
-	push {r7}
-	sub sp, #12
-	adds r4, r0, #0
-	movs r0, #0
-	str r0, [sp, #8]
-	str r0, [sp, #4]
-	str r0, [sp, #0]
-	mov r0, sp
-	.2byte 0xF006
-	.byte 0x5C
-	.byte 0xFE
-	mov r0, sp
-	.2byte 0xF006
-	.4byte 0x46E8FF7D
-	ldr r0, _0807BBF4
-	ldr r0, [r0, #0]
-	ldr r1, _0807BBF8
-	adds r0, r0, r1
-	lsls r4, r4, #5
-	ldr r0, [r0, #0]
-	adds r7, r0, r4
-	movs r6, #0
-	ldr r0, [r7, #0]
-	ldr r0, [r0, #64]
-	subs r5, r0, #1
-	.global _0807BBCE
-_0807BBCE:
-	cmp r6, r5
-	beq _0807BC00
-
-	.thumb_func
-	.thumb
-	.global sub_0807BBD2
-sub_0807BBD2:
-	adds r0, r6, r5
-	lsrs r1, r0, #31
-	adds r0, r0, r1
-	asrs r4, r0, #1
-	lsls r1, r4, #4
-	ldr r0, [r7, #8]
-	adds r0, r0, r1
-	mov r1, r8
-	movs r2, #8
-	.2byte 0xF006
-	.byte 0x32
-	.byte 0xFD
-	cmp r0, #0
-	beq _0807BC18
-	cmp r0, #0
-	ble _0807BBFC
-	adds r5, r4, #0
-	b _0807BBCE
-	.global _0807BBF4
-_0807BBF4:
-	.4byte 0x03006118  @ IWRAM+0x6118
-	.global _0807BBF8
-_0807BBF8:
-	.4byte 0x0000061C
-	.global _0807BBFC
-_0807BBFC:
-	adds r6, r4, #1
-	b _0807BBCE
-	.global _0807BC00
-_0807BC00:
-	lsls r0, r6, #4
-	ldr r1, [r7, #8]
-	adds r0, r1, r0
-	mov r1, r8
-	movs r2, #8
-	.2byte 0xF006
-	.4byte 0x2800FD1F
-	beq _0807BC1C
-	movs r0, #1
-	negs r0, r0
-	b _0807BC1E
-	.global _0807BC18
-_0807BC18:
-	adds r0, r4, #0
-	b _0807BC1E
-	.global _0807BC1C
-_0807BC1C:
-	adds r0, r6, #0
-	.global _0807BC1E
-_0807BC1E:
-	add sp, #12
-	pop {r3}
-	mov r8, r3
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 07BB98..07BC2C is decompiled as SpriteResourceFindGroup(); see src/decompiled.json
 
 @ 07BC2C..07BC7C is decompiled as NcdInitSprite(); see src/decompiled.json
 
@@ -6902,7 +3017,9 @@ _0807BCAC:
 sub_0807BCFE:
 	beq _0807BD06
 	adds r0, r6, #0
-	bl sub_0807BEC0
+	.2byte 0xF000
+	.byte 0xDD
+	.byte 0xF8
 	.global _0807BD06
 _0807BD06:
 	ldrh r0, [r5, #6]
@@ -7001,44 +3118,10 @@ _0807BD98:
 _0807BDA8:
 	.4byte 0x03006118  @ IWRAM+0x6118
 
-	.thumb_func
-	.thumb
-	.global NcdQueueSprite
-NcdQueueSprite:
-	push {r4, r5, lr}
-	adds r4, r0, #0
-	ldr r5, _0807BDE8
-	ldr r3, [r5, #0]
-	adds r0, #38
-	ldrb r2, [r0, #0]
-	movs r0, #12
-	ands r0, r2
-	movs r2, #144
-	lsls r2, r2, #1
-	adds r3, r3, r2
-	adds r3, r3, r0
-	lsls r2, r1, #1
-	adds r2, r2, r1
-	lsls r2, r2, #2
-	ldr r0, [r3, #0]
-	adds r0, r0, r2
-	adds r1, r4, #0
-	.2byte 0xF7FE
-	.byte 0x52
-	.byte 0xFD
-	ldr r1, [r5, #0]
-	movs r0, #160
-	lsls r0, r0, #1
-	adds r1, r1, r0
-	ldr r0, [r1, #0]
-	adds r0, #1
-	str r0, [r1, #0]
-	pop {r4, r5}
-	pop {r0}
-	bx r0
-	.global _0807BDE8
-_0807BDE8:
-	.4byte 0x03006118  @ IWRAM+0x6118
+@ 07BDAC..07BDEC is decompiled as NcdQueueSprite(); see src/decompiled.json
+
+	.section .rom.0007BDEC, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -7176,105 +3259,7 @@ _0807BEB8:
 _0807BEBC:
 	.4byte 0x00000614
 
-	.thumb_func
-	.thumb
-	.global sub_0807BEC0
-sub_0807BEC0:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r8
-	push {r7}
-	adds r7, r0, #0
-	ldr r2, [r7, #48]
-	cmp r2, #0
-	beq _0807BF52
-	adds r0, #39
-	ldrb r0, [r0, #0]
-	lsls r0, r0, #30
-	lsrs r0, r0, #30
-	cmp r0, #1
-	beq _0807BF52
-	cmp r0, #1
-	bgt _0807BEE4
-	cmp r0, #0
-	beq _0807BEEA
-	b _0807BF52
-	.global _0807BEE4
-_0807BEE4:
-	cmp r0, #2
-	beq _0807BF3C
-	b _0807BF52
-	.global _0807BEEA
-_0807BEEA:
-	ldr r0, _0807BF0C
-	ldr r1, [r0, #0]
-	movs r0, #195
-	lsls r0, r0, #3
-	adds r1, r1, r0
-	movs r3, #10
-	ldrsh r0, [r7, r3]
-	lsls r0, r0, #4
-	ldr r1, [r1, #0]
-	adds r1, r1, r0
-	mov r8, r1
-	adds r4, r2, #0
-	movs r5, #0
-	adds r0, r7, #0
-	adds r0, #35
-	adds r6, r0, #0
-	b _0807BF22
-	.global _0807BF0C
-_0807BF0C:
-	.4byte 0x03006118  @ IWRAM+0x6118
-	.global _0807BF10
-_0807BF10:
-	movs r3, #0
-	ldrsh r1, [r4, r3]
-	mov r0, r8
-	bl sub_0807B52C
-	adds r0, r5, #1
-	lsls r0, r0, #16
-	lsrs r5, r0, #16
-	adds r4, #4
-	.global _0807BF22
-_0807BF22:
-	ldrb r0, [r6, #0]
-	cmp r5, r0
-	bcc _0807BF10
-	ldr r0, _0807BF38
-	ldr r0, [r0, #0]
-	movs r1, #142
-	lsls r1, r1, #1
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	ldr r1, [r7, #48]
-	b _0807BF4A
-	.global _0807BF38
-_0807BF38:
-	.4byte 0x03006118  @ IWRAM+0x6118
-	.global _0807BF3C
-_0807BF3C:
-	ldr r0, _0807BF5C
-	ldr r0, [r0, #0]
-	movs r3, #142
-	lsls r3, r3, #1
-	adds r0, r0, r3
-	ldr r0, [r0, #0]
-	adds r1, r2, #0
-	.global _0807BF4A
-_0807BF4A:
-	bl HeapFree
-	movs r0, #0
-	str r0, [r7, #48]
-	.global _0807BF52
-_0807BF52:
-	pop {r3}
-	mov r8, r3
-	pop {r4, r5, r6, r7}
-	pop {r0}
-	bx r0
-	.global _0807BF5C
-_0807BF5C:
-	.4byte 0x03006118  @ IWRAM+0x6118
+@ 07BEC0..07BF60 is decompiled as NcdRuntimeSpriteReleaseAllocation(); see src/decompiled.json
 
 @ 07BF60..07BF80 is decompiled as NcdSpriteCopy(); see src/decompiled.json
 
@@ -7670,7 +3655,9 @@ _0807C22A:
 	movs r1, #8
 	ldrsh r0, [r7, r1]
 	ldr r1, [r6, #4]
-	bl sub_0807B8F4
+	.2byte 0xF7FF
+	.byte 0x46
+	.byte 0xFB
 	adds r1, r0, #0
 	mov r2, r8
 	strh r0, [r2, #2]
@@ -8145,7 +4132,9 @@ _0807C584:
 	ldrsh r0, [r2, r3]
 	ldr r2, [sp, #8]
 	ldr r1, [r2, #4]
-	bl sub_0807B8F4
+	.2byte 0xF7FF
+	.byte 0x9C
+	.byte 0xF9
 	adds r1, r0, #0
 	ldr r3, [sp, #12]
 	strh r0, [r3, #2]
@@ -8215,8 +4204,8 @@ _0807C600:
 	adds r0, r7, #0
 	adds r1, r6, #0
 	adds r2, r5, #0
-	bl sub_0807CC18
-	adds r4, r0, #0
+	.2byte 0xF000
+	.4byte 0x1C04FAED
 	mov r8, r4
 	movs r0, #1
 	negs r0, r0
@@ -8225,7 +4214,9 @@ _0807C600:
 	adds r0, r7, #0
 	adds r1, r6, #0
 	adds r2, r5, #0
-	bl sub_0807CC84
+	.2byte 0xF000
+	.byte 0x18
+	.byte 0xFB
 	adds r4, r0, #0
 	cmp r4, r8
 	bne _0807C68C
@@ -8825,7 +4816,9 @@ _0807CA4A:
 	movs r1, #8
 	ldrsh r0, [r5, r1]
 	ldr r1, [r2, #4]
-	bl sub_0807B8F4
+	.2byte 0xF7FE
+	.byte 0x3A
+	.byte 0xFF
 	adds r1, r0, #0
 	ldr r2, [sp, #12]
 	strh r0, [r2, #2]
@@ -8898,8 +4891,8 @@ sub_0807CAC6:
 	adds r1, r6, #0
 	adds r2, r5, #0
 	str r3, [sp, #100]
-	bl sub_0807CC18
-	adds r4, r0, #0
+	.2byte 0xF000
+	.4byte 0x1C04F88F
 	mov r8, r4
 	movs r0, #1
 	negs r0, r0
@@ -8909,8 +4902,8 @@ sub_0807CAC6:
 	adds r0, r3, #0
 	adds r1, r6, #0
 	adds r2, r5, #0
-	bl sub_0807CC84
-	adds r4, r0, #0
+	.2byte 0xF000
+	.4byte 0x1C04F8B9
 	cmp r4, r8
 	bne _0807CB40
 	movs r0, #128
@@ -9054,144 +5047,9 @@ _0807CC00:
 
 @ 07CC04..07CC18 is decompiled as SpriteEngineGetBuffer4Entry(); see src/decompiled.json
 
-	.section .rom.0007CC18, "ax"
-	.syntax unified
+@ 07CC18..07CC84 is decompiled as SpriteAffineFind(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0807CC18
-sub_0807CC18:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r8
-	push {r7}
-	lsls r0, r0, #16
-	lsrs r0, r0, #16
-	mov r12, r0
-	lsls r2, r2, #16
-	asrs r2, r2, #16
-	ldr r3, _0807CC68
-	ldr r0, [r3, #0]
-	ldr r4, [r0, #24]
-	lsls r6, r1, #16
-	orrs r6, r2
-	ldr r5, [r0, #16]
-	ldr r0, [r0, #20]
-	eors r5, r0
-	movs r7, #0
-	mov r8, r3
-	movs r3, #31
-	.global _0807CC3E
-_0807CC3E:
-	ands r4, r3
-	movs r0, #1
-	lsls r0, r4
-	ands r0, r5
-	cmp r0, #0
-	beq _0807CC6C
-	lsls r0, r4, #3
-	adds r0, #28
-	mov r2, r8
-	ldr r1, [r2, #0]
-	adds r2, r1, r0
-	ldrh r0, [r2, #0]
-	cmp r0, r12
-	bne _0807CC6C
-	ldr r0, [r2, #4]
-	cmp r0, r6
-	bne _0807CC6C
-	str r4, [r1, #24]
-	adds r0, r4, #0
-	b _0807CC78
-	.byte 0x00
-	.byte 0x00
-	.global _0807CC68
-_0807CC68:
-	.4byte 0x03006118  @ IWRAM+0x6118
-	.global _0807CC6C
-_0807CC6C:
-	adds r7, #1
-	adds r4, #1
-	cmp r7, #31
-	ble _0807CC3E
-	movs r0, #1
-	negs r0, r0
-	.global _0807CC78
-_0807CC78:
-	pop {r3}
-	mov r8, r3
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807CC84
-sub_0807CC84:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r8
-	push {r7}
-	lsls r0, r0, #16
-	lsrs r0, r0, #16
-	mov r8, r0
-	lsls r2, r2, #16
-	asrs r2, r2, #16
-	ldr r4, sub_0807CCD0
-	ldr r0, [r4, #0]
-	ldr r3, [r0, #16]
-	ldr r0, [r0, #20]
-	mvns r5, r0
-	bics r5, r3
-	movs r3, #0
-	movs r0, #1
-	mov r12, r0
-	adds r7, r4, #0
-	lsls r4, r1, #16
-	orrs r4, r2
-	movs r6, #28
-	.global _0807CCAE
-_0807CCAE:
-	mov r2, r12
-	lsls r2, r3
-	adds r0, r5, #0
-	ands r0, r2
-	cmp r0, #0
-	beq _0807CCD4
-	ldr r0, [r7, #0]
-	ldr r1, [r0, #16]
-	orrs r1, r2
-	str r1, [r0, #16]
-	adds r1, r0, r6
-	mov r2, r8
-	strh r2, [r1, #0]
-	str r4, [r1, #4]
-	str r3, [r0, #24]
-	adds r0, r3, #0
-	b _0807CCE0
-
-	.thumb_func
-	.thumb
-	.global sub_0807CCD0
-sub_0807CCD0:
-	.4byte 0x03006118  @ IWRAM+0x6118
-	.global _0807CCD4
-_0807CCD4:
-	adds r6, #8
-	adds r3, #1
-	cmp r3, #31
-	ble _0807CCAE
-	movs r0, #1
-	negs r0, r0
-	.global _0807CCE0
-_0807CCE0:
-	pop {r3}
-	mov r8, r3
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 07CC84..07CCEC is decompiled as SpriteAffineAllocate(); see src/decompiled.json
 
 @ 07CCEC..07CD24 is decompiled as SpriteEngineSetFlag10(); see src/decompiled.json
 
@@ -9245,15 +5103,17 @@ _0807CE0A:
 	adds r1, r2, #0
 	adds r2, r3, #0
 	adds r3, r5, #0
-	bl sub_0807CE50
-	b _0807CE48
+	.2byte 0xF000
+	.4byte 0xE017F81D
 	.global _0807CE18
 _0807CE18:
 	adds r0, r4, #0
 	adds r1, r2, #0
 	adds r2, r3, #0
 	adds r3, r5, #0
-	bl sub_0807CEE8
+	.2byte 0xF000
+	.byte 0x62
+	.byte 0xF8
 	b _0807CE48
 	.global _0807CE26
 _0807CE26:
@@ -9261,8 +5121,8 @@ _0807CE26:
 	adds r1, r2, #0
 	adds r2, r3, #0
 	adds r3, r5, #0
-	bl sub_0807CF84
-	b _0807CE48
+	.2byte 0xF000
+	.4byte 0xE009F8A9
 	.global _0807CE34
 _0807CE34:
 	movs r0, #128
@@ -9273,7 +5133,9 @@ _0807CE34:
 	adds r0, r4, #0
 	adds r2, r3, #0
 	adds r3, r5, #0
-	bl sub_0807CE50
+	.2byte 0xF000
+	.byte 0x04
+	.byte 0xF8
 	.global _0807CE48
 _0807CE48:
 	pop {r4, r5}
@@ -9282,433 +5144,30 @@ _0807CE48:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_0807CE50
-sub_0807CE50:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r10
-	mov r6, r9
-	mov r5, r8
-	push {r5, r6, r7}
-	adds r4, r1, #0
-	adds r5, r2, #0
-	adds r6, r3, #0
-	lsls r4, r4, #16
-	asrs r4, r4, #16
-	lsls r5, r5, #16
-	asrs r5, r5, #16
-	lsls r6, r6, #16
-	asrs r6, r6, #16
-	.2byte 0xF7FF
-	.byte 0xCA
-	.byte 0xFE
-	mov r8, r0
-	ldr r2, _0807CEE0
-	ldr r1, _0807CEE4
-	adds r0, r4, #0
-	ands r0, r1
-	lsls r0, r0, #1
-	adds r0, r0, r2
-	movs r7, #0
-	ldrsh r3, [r0, r7]
-	mov r10, r3
-	movs r0, #128
-	lsls r0, r0, #3
-	adds r4, r4, r0
-	ands r4, r1
-	lsls r4, r4, #1
-	adds r4, r4, r2
-	movs r2, #0
-	ldrsh r1, [r4, r2]
-	mov r9, r1
-	adds r0, r5, #0
-	.2byte 0xF000
-	.byte 0x48
-	.byte 0xFD
-	adds r4, r0, #0
-	lsls r4, r4, #16
-	asrs r4, r4, #16
-	adds r0, r6, #0
-	.2byte 0xF000
-	.byte 0x42
-	.byte 0xFD
-	lsls r0, r0, #16
-	asrs r0, r0, #16
-	mov r1, r9
-	muls r1, r4
-	asrs r1, r1, #14
-	mov r3, r8
-	strh r1, [r3, #6]
-	mov r1, r10
-	muls r1, r4
-	asrs r1, r1, #14
-	strh r1, [r3, #14]
-	mov r1, r10
-	muls r1, r0
-	asrs r1, r1, #14
-	negs r1, r1
-	strh r1, [r3, #22]
-	mov r7, r9
-	muls r7, r0
-	adds r0, r7, #0
-	asrs r0, r0, #14
-	strh r0, [r3, #30]
-	pop {r3, r4, r5}
-	mov r8, r3
-	mov r9, r4
-	mov r10, r5
-	pop {r4, r5, r6, r7}
-	pop {r0}
-	bx r0
-	.global _0807CEE0
-_0807CEE0:
-	.4byte 0x08F28860  @ ROM+0xF28860
-	.global _0807CEE4
-_0807CEE4:
-	.4byte 0x00000FFF
+@ 07CE50..07CEE8 is decompiled as SpriteAffineWriteNormal(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0807CEE8
-sub_0807CEE8:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r10
-	mov r6, r9
-	mov r5, r8
-	push {r5, r6, r7}
-	adds r4, r1, #0
-	adds r5, r2, #0
-	adds r6, r3, #0
-	lsls r4, r4, #16
-	asrs r4, r4, #16
-	lsls r5, r5, #16
-	asrs r5, r5, #16
-	lsls r6, r6, #16
-	asrs r6, r6, #16
-	.2byte 0xF7FF
-	.byte 0x7E
-	.byte 0xFE
-	mov r8, r0
-	ldr r2, _0807CF7C
-	ldr r1, _0807CF80
-	adds r0, r4, #0
-	ands r0, r1
-	lsls r0, r0, #1
-	adds r0, r0, r2
-	movs r7, #0
-	ldrsh r3, [r0, r7]
-	mov r10, r3
-	movs r0, #128
-	lsls r0, r0, #3
-	adds r4, r4, r0
-	ands r4, r1
-	lsls r4, r4, #1
-	adds r4, r4, r2
-	movs r2, #0
-	ldrsh r1, [r4, r2]
-	mov r9, r1
-	adds r0, r5, #0
-	.2byte 0xF000
-	.byte 0xFC
-	.byte 0xFC
-	adds r4, r0, #0
-	lsls r4, r4, #16
-	asrs r4, r4, #16
-	adds r0, r6, #0
-	.2byte 0xF000
-	.byte 0xF6
-	.byte 0xFC
-	lsls r0, r0, #16
-	asrs r0, r0, #16
-	mov r1, r9
-	muls r1, r4
-	asrs r1, r1, #14
-	negs r1, r1
-	mov r3, r8
-	strh r1, [r3, #6]
-	mov r1, r10
-	muls r1, r4
-	asrs r1, r1, #14
-	negs r1, r1
-	strh r1, [r3, #14]
-	mov r1, r10
-	muls r1, r0
-	asrs r1, r1, #14
-	negs r1, r1
-	strh r1, [r3, #22]
-	mov r7, r9
-	muls r7, r0
-	adds r0, r7, #0
-	asrs r0, r0, #14
-	strh r0, [r3, #30]
-	pop {r3, r4, r5}
-	mov r8, r3
-	mov r9, r4
-	mov r10, r5
-	pop {r4, r5, r6, r7}
-	pop {r0}
-	bx r0
-	.global _0807CF7C
-_0807CF7C:
-	.4byte 0x08F28860  @ ROM+0xF28860
-	.global _0807CF80
-_0807CF80:
-	.4byte 0x00000FFF
+@ 07CEE8..07CF84 is decompiled as SpriteAffineWriteMirrored(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0807CF84
-sub_0807CF84:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r10
-	mov r6, r9
-	mov r5, r8
-	push {r5, r6, r7}
-	adds r4, r1, #0
-	adds r5, r2, #0
-	adds r6, r3, #0
-	lsls r4, r4, #16
-	asrs r4, r4, #16
-	lsls r5, r5, #16
-	asrs r5, r5, #16
-	lsls r6, r6, #16
-	asrs r6, r6, #16
-	.2byte 0xF7FF
-	.byte 0x30
-	.byte 0xFE
-	mov r8, r0
-	ldr r2, _0807D014
-	ldr r1, _0807D018
-	adds r0, r4, #0
-	ands r0, r1
-	lsls r0, r0, #1
-	adds r0, r0, r2
-	movs r7, #0
-	ldrsh r3, [r0, r7]
-	mov r10, r3
-	movs r0, #128
-	lsls r0, r0, #3
-	adds r4, r4, r0
-	ands r4, r1
-	lsls r4, r4, #1
-	adds r4, r4, r2
-	movs r2, #0
-	ldrsh r1, [r4, r2]
-	mov r9, r1
-	adds r0, r5, #0
-	.2byte 0xF000
-	.byte 0xAE
-	.byte 0xFC
-	adds r4, r0, #0
-	lsls r4, r4, #16
-	asrs r4, r4, #16
-	adds r0, r6, #0
-	.2byte 0xF000
-	.byte 0xA8
-	.byte 0xFC
-	lsls r0, r0, #16
-	asrs r0, r0, #16
-	mov r1, r9
-	muls r1, r4
-	asrs r1, r1, #14
-	mov r3, r8
-	strh r1, [r3, #6]
-	mov r1, r10
-	muls r1, r4
-	asrs r1, r1, #14
-	strh r1, [r3, #14]
-	mov r1, r10
-	muls r1, r0
-	asrs r1, r1, #14
-	strh r1, [r3, #22]
-	mov r7, r9
-	muls r7, r0
-	adds r0, r7, #0
-	asrs r0, r0, #14
-	negs r0, r0
-	strh r0, [r3, #30]
-	pop {r3, r4, r5}
-	mov r8, r3
-	mov r9, r4
-	mov r10, r5
-	pop {r4, r5, r6, r7}
-	pop {r0}
-	bx r0
-	.global _0807D014
-_0807D014:
-	.4byte 0x08F28860  @ ROM+0xF28860
-	.global _0807D018
-_0807D018:
-	.4byte 0x00000FFF
+@ 07CF84..07D01C is decompiled as SpriteAffineWriteAlternateAxis(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0807D01C
-sub_0807D01C:
-	ldr r1, _0807D02C
-	ldr r1, [r1, #0]
-	movs r2, #162
-	lsls r2, r2, #1
+@ 07D01C..07D030 is decompiled as SpriteEngineSetAffineWork(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0807D024
-sub_0807D024:
-	adds r1, r1, r2
-	str r0, [r1, #0]
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _0807D02C
-_0807D02C:
-	.4byte 0x03006118  @ IWRAM+0x6118
-	.4byte 0x68004803
-	.4byte 0x004921A2
-	.4byte 0x68001840
-	.4byte 0x00004770
-	.4byte 0x03006118
-	.4byte 0x4656B570
-	.4byte 0x4644464D
-	.4byte 0x0412B470
-	.4byte 0x684B1412
-	.4byte 0x688C4699
-	.4byte 0x4D1746A2
-	.4byte 0x268046A8
-	.4byte 0x199400F6
-	.4byte 0x40344E15
-	.4byte 0x44440064
-	.4byte 0x5F632500
-	.4byte 0x435D464D
-	.4byte 0x00524032
-	.4byte 0x26004442
-	.4byte 0x46565F93
-	.4byte 0x1C33435E
-	.4byte 0x13AD1AED
-	.4byte 0x23006045
-	.4byte 0x464D5ED2
-	.4byte 0x1C2A4355
-	.4byte 0x5FA32600
-	.4byte 0x435C4654
-	.4byte 0x18D21C23
-	.4byte 0x60821392
-	.4byte 0x60016809
-	.4byte 0x4698BC38
-	.4byte 0x46AA46A1
-	.4byte 0xBC01BC70
-	.4byte 0x00004700
-	.4byte 0x08F28860
-	.4byte 0x00000FFF
-	.4byte 0x4656B570
-	.4byte 0x4644464D
-	.4byte 0x0412B470
-	.4byte 0x680B1412
-	.4byte 0x688C4699
-	.4byte 0x4D1646A2
-	.4byte 0x268046A8
-	.4byte 0x199400F6
-	.4byte 0x40344E14
-	.4byte 0x44440064
-	.4byte 0x5F632500
-	.4byte 0x435D464D
-	.4byte 0x00524032
-	.4byte 0x26004442
-	.4byte 0x46565F93
-	.4byte 0x1C33435E
-	.4byte 0x13AD18ED
-	.4byte 0x23006005
-	.4byte 0x464B5ED2
-	.4byte 0x25004353
-	.4byte 0x46565F62
-	.4byte 0x1C324356
-	.4byte 0x13921AD2
-	.4byte 0x68496082
-	.4byte 0xBC386041
-	.4byte 0x46A14698
-	.4byte 0xBC7046AA
-	.4byte 0x4700BC01
-	.4byte 0x08F28860
-	.4byte 0x00000FFF
-	.4byte 0x4656B570
-	.4byte 0x4644464D
-	.4byte 0x0412B470
-	.4byte 0x680B1412
-	.4byte 0x684C4699
-	.4byte 0x4D1746A2
-	.4byte 0x268046A8
-	.4byte 0x199400F6
-	.4byte 0x40344E15
-	.4byte 0x44440064
-	.4byte 0x5F632500
-	.4byte 0x435D464D
-	.4byte 0x00524032
-	.4byte 0x26004442
-	.4byte 0x46565F93
-	.4byte 0x1C33435E
-	.4byte 0x13AD1AED
-	.4byte 0x23006005
-	.4byte 0x464D5ED2
-	.4byte 0x1C2A4355
-	.4byte 0x5FA32600
-	.4byte 0x435C4654
-	.4byte 0x18D21C23
-	.4byte 0x60421392
-	.4byte 0x60816889
-	.4byte 0x4698BC38
+@ 07D030..07D044 is decompiled as SpriteEngineGetAffineWork(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0807D1A0
-sub_0807D1A0:
-	mov r9, r4
-	mov r10, r5
-	pop {r4, r5, r6}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.4byte 0x08F28860
-	.4byte 0x00000FFF
-	.4byte 0x464FB5F0
-	.4byte 0xB4C04646
-	.4byte 0x68291C05
-	.4byte 0x46816868
-	.4byte 0x469068AA
-	.4byte 0x68074813
-	.4byte 0x005222A4
-	.4byte 0x220018B8
-	.4byte 0x46405E84
-	.4byte 0x03004348
-	.4byte 0x004921A2
-	.4byte 0x6831187E
-	.4byte 0xFD0AF003
-	.4byte 0x18241300
-	.4byte 0x22A5602C
-	.4byte 0x18B80052
-	.4byte 0x5E442100
-	.4byte 0x46484642
-	.4byte 0x03004350
-	.4byte 0xF0036831
-	.4byte 0x1300FCFB
-	.4byte 0x606C1824
-	.4byte 0x4698BC18
-	.4byte 0xBCF046A1
-	.4byte 0x4700BC01
-	.4byte 0x03006118
+@ 07D044..07D0C0 is decompiled as SpriteVectorRotateX(); see src/decompiled.json
+
+@ 07D0C0..07D138 is decompiled as SpriteVectorRotateY(); see src/decompiled.json
+
+@ 07D138..07D1B4 is decompiled as SpriteVectorRotateZ(); see src/decompiled.json
+
+@ 07D1B4..07D21C is decompiled as SpriteProjectPoint(); see src/decompiled.json
 
 @ 07D21C..07D23C is decompiled as SpriteSetViewportOrigin(); see src/decompiled.json
 
-	.section .rom.0007D23C, "ax"
+@ 07D23C..07D260 is decompiled as SpriteGetViewportOrigin(); see src/decompiled.json
+
+	.section .rom.0007D260, "ax"
 	.syntax unified
-	.4byte 0x4A07B510
-	.4byte 0x24A46813
-	.4byte 0x191A0064
-	.4byte 0x80028812
-	.4byte 0x005222A5
-	.4byte 0x88001898
-	.4byte 0xBC108008
-	.4byte 0x4700BC01
-	.4byte 0x03006118
 	.4byte 0x4657B5F0
 	.4byte 0x4645464E
 	.4byte 0xB082B4E0
@@ -10087,7 +5546,7 @@ sub_0807D644:
 	.global sub_0807D768
 sub_0807D768:
 	str r0, [r2, #12]
-	b _0807DB10
+	.2byte 0xE1D1
 	.4byte 0xE0865005
 	.4byte 0xE5D26025
 	.4byte 0xE2166010
@@ -10182,7 +5641,7 @@ _0807D872:
 	.global _0807D8C8
 _0807D8C8:
 	adds r0, #5
-	b _0807D9D4
+	.2byte 0xE083
 	.4byte 0xE1C030B4
 	.4byte 0xE59F401C
 	.4byte 0xE1D160B2
@@ -10198,342 +5657,25 @@ _0807D8EA:
 	.4byte 0xE8BD007C
 	.4byte 0xE12FFF1E
 	.4byte 0x000001CC
-	.4byte 0x0400B500
-	.4byte 0x14090409
-	.4byte 0x43481400
-	.4byte 0x28001C01
-	.4byte 0x31FFDA00
-	.4byte 0x14000208
-	.4byte 0x4708BC02
-	.4byte 0x0400B500
-	.4byte 0x14090409
-	.4byte 0xF0031200
-	.4byte 0x0400F96D
-	.4byte 0xBC021400
-	.4byte 0x00004708
+
+@ 07D8F8..07D92C is decompiled as SpriteFixed8Multiply(); see src/decompiled.json
 
 @ 07D92C..07D944 is decompiled as SpriteMathDivide65536ByS16(); see src/decompiled.json
 
-	.section .rom.0007D944, "ax"
-	.syntax unified
+@ 07D944..07D9F0 is decompiled as SpriteVectorLengthFixed(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0807D944
-sub_0807D944:
-	push {r4, r5, r6, lr}
-	adds r4, r0, #0
-	adds r5, r1, #0
-	cmp r4, #0
-	bge _0807D950
-	negs r4, r4
-	.global _0807D950
-_0807D950:
-	cmp r5, #0
-	bge _0807D956
-	negs r5, r5
-	.global _0807D956
-_0807D956:
-	movs r0, #128
-	lsls r0, r0, #5
-	cmp r4, r0
-	bgt _0807D962
-	cmp r5, r0
-	ble _0807D998
-	.global _0807D962
-_0807D962:
-	cmp r4, r5
-	ble _0807D96A
-	lsls r0, r4, #4
-	b _0807D96C
-	.global _0807D96A
-_0807D96A:
-	lsls r0, r5, #4
-	.global _0807D96C
-_0807D96C:
-	asrs r6, r0, #16
-	adds r0, r4, #0
-	adds r1, r6, #0
-	bl sub_08080BFC
-	adds r4, r0, #0
-	adds r0, r5, #0
-	adds r1, r6, #0
-	bl sub_08080BFC
-	adds r5, r0, #0
-	adds r0, r4, #0
-	muls r0, r4
-	asrs r0, r0, #12
-	adds r1, r5, #0
-	muls r1, r5
-	asrs r1, r1, #12
-	adds r0, r0, r1
-	bl sub_0807D9F0
-	muls r0, r6
-	b _0807D9EA
-	.global _0807D998
-_0807D998:
-	cmp r4, r5
-	ble _0807D9A8
-	cmp r4, #0
-	beq _0807D9BA
-	movs r0, #128
-	lsls r0, r0, #17
-	adds r1, r4, #0
-	b _0807D9B2
-	.global _0807D9A8
-_0807D9A8:
-	cmp r5, #0
-	beq _0807D9BA
-	movs r0, #128
-	lsls r0, r0, #17
-	adds r1, r5, #0
-	.global _0807D9B2
-_0807D9B2:
-	bl sub_08080BFC
-	adds r6, r0, #0
-	b _0807D9BC
-	.global _0807D9BA
-_0807D9BA:
-	movs r6, #0
-	.global _0807D9BC
-_0807D9BC:
-	adds r0, r4, #0
-	muls r0, r6
-	asrs r4, r0, #12
-	adds r0, r5, #0
-	muls r0, r6
-	asrs r5, r0, #12
-	cmp r6, #0
-	beq _0807D9E8
-	adds r0, r4, #0
-	muls r0, r4
-	asrs r0, r0, #12
-	adds r1, r5, #0
-	.global _0807D9D4
-_0807D9D4:
-	muls r1, r5
-	asrs r1, r1, #12
-	adds r0, r0, r1
-	bl sub_0807D9F0
-	lsls r0, r0, #12
-	adds r1, r6, #0
-	bl sub_08080BFC
-	b _0807D9EA
-	.global _0807D9E8
-_0807D9E8:
-	movs r0, #0
-	.global _0807D9EA
-_0807D9EA:
-	pop {r4, r5, r6}
-	pop {r1}
-	bx r1
+@ 07D9F0..07DA38 is decompiled as SpriteFixedSqrt(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0807D9F0
-sub_0807D9F0:
-	push {r4, r5, lr}
-	adds r5, r0, #0
-	cmp r5, #0
-	ble _0807DA24
-	movs r1, #128
-	lsls r1, r1, #5
-	cmp r5, r1
-	bge _0807DA02
-	adds r0, r1, #0
-	.global _0807DA02
-_0807DA02:
-	adds r4, r0, #0
-	cmp r4, #0
-	beq _0807DA1A
-	lsls r0, r5, #12
-	adds r1, r4, #0
-	bl sub_08080BFC
-	adds r0, r0, r4
-	lsrs r1, r0, #31
-	adds r0, r0, r1
-	asrs r0, r0, #1
-	b sub_0807DA1C
-	.global _0807DA1A
-_0807DA1A:
-	movs r0, #0
+@ 07DA38..07DAD0 is decompiled as SpritePackAffinePosition(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0807DA1C
-sub_0807DA1C:
-	cmp r0, r4
-	blt _0807DA02
-	adds r0, r4, #0
-	b _0807DA2E
-	.global _0807DA24
-_0807DA24:
-	cmp r5, #0
-	bne _0807DA2C
-	movs r0, #0
-	b _0807DA2E
-	.global _0807DA2C
-_0807DA2C:
-	ldr r0, _0807DA34
-	.global _0807DA2E
-_0807DA2E:
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.global _0807DA34
-_0807DA34:
-	.4byte 0xFFFFF000
-	.4byte 0x4646B570
-	.4byte 0x2110B440
-	.4byte 0x02125E42
-	.4byte 0x5EC12308
-	.4byte 0x5F442514
-	.4byte 0x1A524361
-	.4byte 0x5F81260A
-	.4byte 0x5F432516
-	.4byte 0x1A524359
-	.4byte 0x5F852612
-	.4byte 0x260C022D
-	.4byte 0x43615F81
-	.4byte 0x240E1A6D
-	.4byte 0x43595F01
-	.4byte 0x80021A6D
-	.4byte 0x46B04E12
-	.4byte 0x0C124032
-	.4byte 0x4B118844
-	.4byte 0x40211C19
-	.4byte 0x80414311
-	.4byte 0x402E4E0F
-	.4byte 0x1C32210F
-	.4byte 0x0112400A
-	.4byte 0x402178C4
-	.4byte 0x70C14311
-	.4byte 0x88810936
-	.4byte 0x4333400B
-	.4byte 0x46418083
-	.4byte 0x092D400D
-	.4byte 0x4A076841
-	.4byte 0x43294011
-	.4byte 0xBC086041
-	.4byte 0xBC704698
-	.4byte 0x4700BC01
-	.4byte 0x0FFF0000
-	.4byte 0xFFFFF000
-	.4byte 0x0000FFFF
-	.4byte 0xFF000FFF
-	.4byte 0x4646B570
-	.4byte 0x1C05B440
-	.4byte 0x8B294B1A
-	.4byte 0x1C104A1A
-	.4byte 0x00404008
-	.4byte 0x240018C0
-	.4byte 0x46885F01
-	.4byte 0x5E682118
-	.4byte 0x00E42480
-	.4byte 0x40101900
-	.4byte 0x18C00040
-	.4byte 0x5E462100
-	.4byte 0x5F28241A
-	.4byte 0xFF12F7FF
-	.4byte 0x04241C04
-	.4byte 0x211C1424
-	.global _0807DB10
-_0807DB10:
-	ldrsh r0, [r5, r1]
-
-	.thumb_func
-	.thumb
-	.global sub_0807DB12
-sub_0807DB12:
-	.2byte 0xF7FF
-	.4byte 0x0400FF0B
-	asrs r0, r0, #16
-	adds r1, r6, #0
-	muls r1, r4
-	asrs r1, r1, #14
-	strh r1, [r5, #8]
-	mov r1, r8
-	muls r1, r4
-	asrs r1, r1, #14
-	strh r1, [r5, #10]
-	mov r1, r8
-	muls r1, r0
-	asrs r1, r1, #14
-	negs r1, r1
-	strh r1, [r5, #12]
-	muls r0, r6
-	asrs r0, r0, #14
-	strh r0, [r5, #14]
-	pop {r3}
-	mov r8, r3
-	pop {r4, r5, r6}
-	pop {r0}
-	bx r0
-	.4byte 0x08F28860
-	.4byte 0x00000FFF
+@ 07DAD0..07DB4C is decompiled as SpriteBuildAffineMatrix(); see src/decompiled.json
 
 @ 07DB4C..07DB54 is decompiled as SpriteRecordSizeForCount(); see src/decompiled.json
 
-	.section .rom.0007DB54, "ax"
-	.syntax unified
+@ 07DB54..07DBB4 is decompiled as SpriteInterpolationInit(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0807DB54
-sub_0807DB54:
-	push {r4, r5, r6, r7, lr}
-	adds r6, r1, #0
-	adds r5, r2, #0
-	adds r4, r3, #0
-	ldr r7, [sp, #20]
-	str r7, [r0, #0]
-	str r6, [r0, #4]
-	lsls r2, r7, #2
-	adds r1, r6, r2
-	adds r3, r1, #4
-	str r3, [r0, #8]
-	adds r1, r3, r2
-	adds r1, #4
-	str r1, [r0, #12]
-	adds r1, r1, r2
-	adds r1, #4
-	str r1, [r0, #16]
-	adds r1, r1, r2
-	adds r1, #4
-	str r1, [r0, #20]
-	adds r1, r1, r2
-	adds r1, #4
-	str r1, [r0, #24]
-	adds r1, r1, r2
-	adds r1, #4
-	str r1, [r0, #28]
-	adds r1, r1, r2
-	adds r1, #4
-	str r1, [r0, #32]
-	cmp r7, #0
-	ble _0807DBAC
-	adds r1, r6, #0
-	adds r2, r7, #0
-	.global _0807DB96
-_0807DB96:
-	movs r6, #0
-	ldrsh r0, [r5, r6]
-	stmia r1!, {r0}
-	adds r5, #2
-	movs r6, #0
-	ldrsh r0, [r4, r6]
-	stmia r3!, {r0}
-	adds r4, #2
-	subs r2, #1
-	cmp r2, #0
-	bne _0807DB96
-	.global _0807DBAC
-_0807DBAC:
-	pop {r4, r5, r6, r7}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
+	.section .rom.0007DBB4, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -10591,8 +5733,8 @@ _0807DC00:
 sub_0807DC0A:
 	subs r1, r1, r2
 	str r3, [sp, #8]
-	bl sub_0807D944
-	ldr r1, [r4, #0]
+	.2byte 0xF7FF
+	.4byte 0x6821FE99
 	adds r1, r1, r0
 	str r1, [r4, #4]
 	adds r4, #4
@@ -10669,43 +5811,10 @@ sub_0807DC64:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_0807DC84
-sub_0807DC84:
-	push {r4, r5, r6, lr}
-	mov r6, r8
-	push {r6}
-	sub sp, #4
-	adds r5, r0, #0
-	adds r6, r1, #0
-	mov r8, r2
-	adds r4, r3, #0
-	ldr r1, [r4, #12]
-	ldr r2, [r4, #4]
-	ldr r3, [r4, #16]
-	ldr r0, [r4, #0]
-	str r0, [sp, #0]
-	adds r0, r5, #0
-	bl sub_0807DF18
-	strh r0, [r6, #0]
-	ldr r1, [r4, #12]
-	ldr r2, [r4, #8]
-	ldr r3, [r4, #20]
-	ldr r0, [r4, #0]
-	str r0, [sp, #0]
-	adds r0, r5, #0
-	bl sub_0807DF18
-	mov r1, r8
-	strh r0, [r1, #0]
-	add sp, #4
-	pop {r3}
-	mov r8, r3
-	pop {r4, r5, r6}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
+@ 07DC84..07DCC8 is decompiled as SpriteInterpolationEvaluatePair(); see src/decompiled.json
+
+	.section .rom.0007DCC8, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -11238,7 +6347,9 @@ _0807E01E:
 	ldmia r7!, {r2}
 	subs r1, r1, r2
 	str r3, [sp, #8]
-	bl sub_0807D944
+	.2byte 0xF7FF
+	.byte 0x8A
+	.byte 0xFC
 	ldr r1, [r4, #0]
 	adds r1, r1, r0
 	str r1, [r4, #4]
@@ -11306,48 +6417,10 @@ _0807E07A:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_0807E0A4
-sub_0807E0A4:
-	push {r4, r5, r6, lr}
-	mov r6, r8
-	push {r6}
-	sub sp, #4
-	adds r5, r0, #0
+@ 07E0A4..07E0E8 is decompiled as SpriteInterpolationEvaluatePairClamped(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0807E0AE
-sub_0807E0AE:
-	adds r6, r1, #0
-	mov r8, r2
-	adds r4, r3, #0
-	ldr r1, [r4, #12]
-	ldr r2, [r4, #4]
-	ldr r3, [r4, #16]
-	ldr r0, [r4, #0]
-	str r0, [sp, #0]
-	adds r0, r5, #0
-	bl sub_0807E264
-	strh r0, [r6, #0]
-	ldr r1, [r4, #12]
-	ldr r2, [r4, #8]
-	ldr r3, [r4, #20]
-	ldr r0, [r4, #0]
-	str r0, [sp, #0]
-	adds r0, r5, #0
-	bl sub_0807E264
-	mov r1, r8
-	strh r0, [r1, #0]
-	add sp, #4
-	pop {r3}
-	mov r8, r3
-	pop {r4, r5, r6}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
+	.section .rom.0007E0E8, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb

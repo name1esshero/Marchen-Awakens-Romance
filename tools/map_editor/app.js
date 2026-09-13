@@ -4,6 +4,7 @@ let token=new URLSearchParams(location.hash.slice(1)).get('token')||'';
 try{token=token||sessionStorage.getItem('mar-editor-token')||'';if(token)sessionStorage.setItem('mar-editor-token',token);}catch{}
 if(location.protocol!=='file:'){try{history.replaceState(null,'',location.pathname);}catch{}}
 let map=null,script=null,selectedTile=0,dirty=false,busy=false,stroke=null,visible=[],undo=[],redo=[],atlas=new Map(),catalog=null;
+const spriteImages=new Map();
 const clone=x=>JSON.parse(JSON.stringify(x));
 function status(message,error=false){$('status').textContent=message;$('status').className=error?'error':'';}
 function controls(){document.querySelectorAll('button,select,input').forEach(element=>element.disabled=busy);$('save').textContent=dirty?'Save sources *':'Save sources';$('undo').disabled=busy||!undo.length;$('redo').disabled=busy||!redo.length;}
@@ -97,8 +98,31 @@ function drawSpriteGuide(ctx, zoom) {
     ctx.stroke(); ctx.restore();
 }
 
+function drawInitialSprites(ctx,zoom) {
+    if (!$('show-sprites').checked || !script) return;
+    for (const item of script.sprite_placements||[]) {
+        const preview=item.preview;
+        if (!preview) continue;
+        let img=spriteImages.get(preview.image);
+        if (!img) {
+            img=new Image();img.onload=drawMap;img.src=preview.image;
+            spriteImages.set(preview.image,img);
+        }
+        if (!img.complete) continue;
+        ctx.drawImage(img,item.x+preview.x,item.y+preview.y,preview.width,preview.height);
+        ctx.save();
+        const label=`${item.sprite}: ${item.resource}`;
+        ctx.font='9px monospace';const width=ctx.measureText(label).width+4;
+        ctx.fillStyle='#101820cc';ctx.strokeStyle='#ffdf00';ctx.lineWidth=1/zoom;
+        ctx.fillRect(item.x-width/2,item.y+3,width,11);
+        ctx.strokeRect(item.x-width/2,item.y+3,width,11);
+        ctx.fillStyle='#ffdf00';ctx.fillText(label,item.x-width/2+2,item.y+12);
+        ctx.restore();
+    }
+}
+
 function layer(){return $('layer').value==='attributes'?map.document.attributes:map.document.planes[Number($('layer').value)];}
-function drawMap(){if(!map)return;const {width,height,planes,attributes}=map.document,zoom=Number($('zoom').value),c=$('map');c.width=width*8*zoom;c.height=height*8*zoom;const ctx=c.getContext('2d');ctx.imageSmoothingEnabled=false;ctx.scale(zoom,zoom);const drawPlanes=planes.map((plane,j)=>({plane,j}));if($('game-order').checked)drawPlanes.reverse();drawPlanes.forEach(({plane,j})=>{if(!visible[j])return;plane.entries.forEach((word,i)=>{const tile=word&1023,x=i%width*8,y=Math.floor(i/width)*8;if(tile>=map.tiles.length||word>>>12<map.palette_base||word>>>12>=map.palette_base+map.palette_banks){ctx.fillStyle='#bd326e';ctx.fillRect(x,y,8,8);ctx.strokeStyle='#fff';ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+8,y+8);ctx.stroke();return;}ctx.save();ctx.translate(x+(word&1024?8:0),y+(word&2048?8:0));ctx.scale(word&1024?-1:1,word&2048?-1:1);ctx.drawImage(tileAtlas(word>>>12),tile%32*8,Math.floor(tile/32)*8,8,8,0,0,8,8);ctx.restore();});});if($('layer').value==='attributes'&&attributes){attributes.entries.forEach((value,i)=>{if(!value)return;ctx.fillStyle=`hsla(${value*47%360},90%,60%,.45)`;ctx.fillRect(i%width*8,Math.floor(i/width)*8,8,8);});}if($('grid').checked){ctx.strokeStyle='#ffffff40';ctx.lineWidth=1/zoom;ctx.beginPath();for(let x=0;x<=width;x++){ctx.moveTo(x*8,0);ctx.lineTo(x*8,height*8);}for(let y=0;y<=height;y++){ctx.moveTo(0,y*8);ctx.lineTo(width*8,y*8);}ctx.stroke();}drawHitPreview(ctx,zoom);drawSpriteGuide(ctx,zoom);}
+function drawMap(){if(!map)return;const {width,height,planes,attributes}=map.document,zoom=Number($('zoom').value),c=$('map');c.width=width*8*zoom;c.height=height*8*zoom;const ctx=c.getContext('2d');ctx.imageSmoothingEnabled=false;ctx.scale(zoom,zoom);const drawPlanes=planes.map((plane,j)=>({plane,j}));if($('game-order').checked)drawPlanes.reverse();drawPlanes.forEach(({plane,j})=>{if(!visible[j])return;plane.entries.forEach((word,i)=>{const tile=word&1023,x=i%width*8,y=Math.floor(i/width)*8;if(tile>=map.tiles.length||word>>>12<map.palette_base||word>>>12>=map.palette_base+map.palette_banks){ctx.fillStyle='#bd326e';ctx.fillRect(x,y,8,8);ctx.strokeStyle='#fff';ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+8,y+8);ctx.stroke();return;}ctx.save();ctx.translate(x+(word&1024?8:0),y+(word&2048?8:0));ctx.scale(word&1024?-1:1,word&2048?-1:1);ctx.drawImage(tileAtlas(word>>>12),tile%32*8,Math.floor(tile/32)*8,8,8,0,0,8,8);ctx.restore();});});if($('layer').value==='attributes'&&attributes){attributes.entries.forEach((value,i)=>{if(!value)return;ctx.fillStyle=`hsla(${value*47%360},90%,60%,.45)`;ctx.fillRect(i%width*8,Math.floor(i/width)*8,8,8);});}if($('grid').checked){ctx.strokeStyle='#ffffff40';ctx.lineWidth=1/zoom;ctx.beginPath();for(let x=0;x<=width;x++){ctx.moveTo(x*8,0);ctx.lineTo(x*8,height*8);}for(let y=0;y<=height;y++){ctx.moveTo(0,y*8);ctx.lineTo(width*8,y*8);}ctx.stroke();}drawInitialSprites(ctx,zoom);drawHitPreview(ctx,zoom);drawSpriteGuide(ctx,zoom);}
 function point(event){const rect=$('map').getBoundingClientRect(),zoom=Number($('zoom').value);const x=Math.floor((event.clientX-rect.left)/(8*zoom)),y=Math.floor((event.clientY-rect.top)/(8*zoom));return x>=0&&y>=0&&x<map.document.width&&y<map.document.height?{x,y,index:y*map.document.width+x}:null;}
 function paint(event,pick=false){if(!map||busy)return;const p=point(event);if(!p)return;const target=layer(),word=target.entries[p.index];$('position').textContent=`Tile (${p.x}, ${p.y}) · pixel (${p.x*8}, ${p.y*8}) · value ${word} / 0x${word.toString(16).padStart(4,'0')}`;if(pick){if($('layer').value==='attributes')$('attribute').value=word;else{if((word&1023)>=map.tiles.length){status('This tile reference is unresolved. Choose a decoded tile to replace it.',true);return;}selectedTile=word&1023;$('palette').value=word>>>12;$('hflip').checked=!!(word&1024);$('vflip').checked=!!(word&2048);drawTiles();}return;}if(!stroke)return;let value;if($('layer').value==='attributes'){value=Number($('attribute').value);const max=target.word_size===1?255:65535;if(!Number.isInteger(value)||value<0||value>max){status(`Attribute must be an integer from 0 to ${max}.`,true);return;}}else value=selectedTile|(bank()<<12)|($('hflip').checked?1024:0)|($('vflip').checked?2048:0);if(word!==value){target.entries[p.index]=value;stroke.changed=true;dirty=true;drawMap();controls();}}
 // Wheel zoom is local to the viewport. Keep the same map pixel beneath the
@@ -135,7 +159,7 @@ $('maps').onchange=()=>{const name=$('maps').value;if(dirty&&!confirm('Discard u
 $('scripts').onchange=async()=>{const name=$('scripts').value;if(dirty&&!confirm('Switching scripts clears undo history. Save first to keep unsaved event edits. Continue?')){$('scripts').value=script?.name||'';return;}busy=true;controls();await loadScript(name);undo=[];redo=[];busy=false;controls();};
 $('reload').onclick=()=>{if(map&&(!dirty||confirm('Discard unsaved edits and reload?')))loadMap(map.name);};
 $('save').onclick=async()=>{if(!map||busy)return;endStroke();busy=true;controls();try{const data=await api('map/'+encodeURIComponent(map.name),{revision:map.revision,document:map.document,script:script?{name:script.name,revision:script.revision,document:script.document}:null});map=data;if(data.saved_script)script=data.saved_script;dirty=false;undo=[];redo=[];drawCalls();status('Saved editable JSON sources. Run make or make english to build your changes.');}catch(e){status('Not saved: '+e.message,true);}finally{busy=false;controls();}};
-$('undo').onclick=undoEdit;$('redo').onclick=redoEdit;$('calls').onchange=drawArgs;$('call-filter').oninput=drawCalls;$('palette').onchange=drawTiles;for(const id of ['zoom','grid','layer','game-order','hit-preview','sprite-guide'])$(id).onchange=drawMap;
+$('undo').onclick=undoEdit;$('redo').onclick=redoEdit;$('calls').onchange=drawArgs;$('call-filter').oninput=drawCalls;$('palette').onchange=drawTiles;for(const id of ['zoom','grid','layer','game-order','show-sprites','hit-preview','sprite-guide'])$(id).onchange=drawMap;
 window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue='';}});
 window.addEventListener('keydown',e=>{if(!(e.ctrlKey||e.metaKey))return;if(e.key.toLowerCase()==='s'){e.preventDefault();$('save').click();}if(e.target.matches('input,textarea'))return;if(e.key.toLowerCase()==='z'){e.preventDefault();e.shiftKey?redoEdit():undoEdit();}if(e.key.toLowerCase()==='y'){e.preventDefault();redoEdit();}});
 (async()=>{if(location.protocol==='file:'){status('This file cannot load maps directly. Run make map-editor (or py tools/map_editor/server.py on Windows), then open the full localhost URL printed in that terminal.',true);return;}try{status('Loading map catalog from the editor server…');catalog=await api('catalog');options($('maps'),catalog.maps.map(m=>[m.name,m.name]));options($('scripts'),[['','No script'],...catalog.scripts.map(s=>[s,s])]);if(catalog.maps.length)await loadMap(catalog.maps[0].name);else status('No supported maps found.',true);}catch(e){status(e.message,true);}})();

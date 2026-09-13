@@ -30,7 +30,7 @@ OBJCOPY     := $(PREFIX)objcopy
 PYTHON      ?= python3
 
 ASFLAGS     := -mcpu=arm7tdmi -mthumb-interwork -I.
-CPPFLAGS    := -nostdinc -undef -Iinclude -Itools/agbcc/include
+CPPFLAGS    := -nostdinc -undef -DAGBCC=1 -Iinclude -Itools/agbcc/include
 CC1FLAGS    := -mthumb-interwork -O2 -fhex-asm
 CFLAGS      := -mcpu=arm7tdmi -mthumb -mthumb-interwork -Os \
                -fno-builtin -fno-strict-aliasing -nostdinc -Iinclude \
@@ -104,6 +104,12 @@ $(BUILD)/%.o: %.s
 # assembled. agbcc is a cc1 only: it takes preprocessed input and emits
 # assembly, so those three steps stay separate.
 $(BUILD)/src/libc_adapters.o: CC1FLAGS := -O2 -fhex-asm
+
+# Nintendo's MusicPlayer2000 C module used the older compiler revision.  Its
+# register allocation differs from the game code compiler in small but
+# byte-visible ways (most notably the fade accumulator's r7 lifetime).
+$(BUILD)/src/sound_m4a.o: CC1 := tools/agbcc/bin/old_agbcc
+$(BUILD)/src/sound_cgb_update.o: CC1 := tools/agbcc/bin/old_agbcc
 
 # The cartridge's standard library is the newlib snapshot bundled with agbcc.
 # Compile its recovered sources with the original libc compiler and flags, then

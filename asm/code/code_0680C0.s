@@ -188,8 +188,8 @@ _080681CE:
 	adds r0, r4, #0
 	movs r1, #0
 	str r2, [sp, #0]
-	bl NcdQueueSprite
-	adds r0, r5, #0
+	.2byte 0xF013
+	.4byte 0x1C28FDE7
 	movs r1, #128
 	lsls r1, r1, #9
 	adds r5, r5, r1
@@ -214,7 +214,9 @@ _08068200:
 	adds r4, r6, r0
 	adds r0, r4, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF013
+	.byte 0xCE
+	.byte 0xFD
 	adds r0, r5, #0
 	movs r1, #128
 	lsls r1, r1, #9
@@ -233,12 +235,14 @@ _08068200:
 	bl sub_0807BFD0
 	adds r0, r4, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	ldr r4, _08068264
+	.2byte 0xF013
+	.4byte 0x4C0AFDB9
 	add r4, r8
 	adds r0, r4, #0
 	movs r1, #1
-	bl NcdQueueSprite
+	.2byte 0xF013
+	.byte 0xB3
+	.byte 0xFD
 	.global _08068246
 _08068246:
 	add sp, #4
@@ -824,7 +828,9 @@ _08068974:
 _08068980:
 	adds r0, r4, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF013
+	.byte 0x12
+	.byte 0xFA
 	adds r0, r5, #0
 	movs r1, #128
 	lsls r1, r1, #9
@@ -847,8 +853,8 @@ _0806899E:
 	bl sub_0807BFD0
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	b _080689C8
+	.2byte 0xF013
+	.4byte 0xE007F9FB
 	.global _080689B8
 _080689B8:
 	.4byte 0x081BF1BC  @ ROM+0x1BF1BC
@@ -858,7 +864,9 @@ _080689BC:
 	adds r7, r0, r4
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF013
+	.byte 0xF2
+	.byte 0xF9
 	.global _080689C8
 _080689C8:
 	adds r0, r6, #1
@@ -871,19 +879,23 @@ _080689C8:
 	mov r7, r9
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF013
+	.byte 0xE6
+	.byte 0xF9
 	movs r7, #130
 	lsls r7, r7, #1
 	add r7, r10
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	movs r7, #156
+	.2byte 0xF013
+	.4byte 0x279CF9DF
 	lsls r7, r7, #1
 	add r7, r10
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF013
+	.byte 0xD8
+	.byte 0xF9
 	movs r0, #135
 	lsls r0, r0, #2
 	add r0, r10
@@ -896,13 +908,17 @@ _080689C8:
 	add r7, r10
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF013
+	.byte 0xCA
+	.byte 0xF9
 	movs r7, #234
 	lsls r7, r7, #1
 	add r7, r10
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF013
+	.byte 0xC3
+	.byte 0xF9
 	.global _08068A26
 _08068A26:
 	add sp, #32
@@ -1512,8 +1528,8 @@ _08069136:
 	.2byte 0xF012
 	.4byte 0x2000FD73
 	ldr r1, _080692EC
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF012
+	.4byte 0x1C02FD25
 	str r6, [sp, #0]
 	adds r0, r5, #0
 	movs r1, #0
@@ -1575,7 +1591,9 @@ _080691A6:
 	.byte 0xFD
 	movs r0, #0
 	ldr r1, _080692F0
-	bl FindResourceByName
+	.2byte 0xF012
+	.byte 0xEC
+	.byte 0xFC
 	adds r2, r0, #0
 	ldr r4, _080692F4
 	add r4, r9
@@ -1643,8 +1661,8 @@ _0806922E:
 	.2byte 0xF012
 	.4byte 0x2000FCF7
 	ldr r1, _080692F8
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF012
+	.4byte 0x1C02FCA9
 	str r6, [sp, #0]
 	adds r0, r5, #0
 	movs r1, #0
@@ -2021,7 +2039,9 @@ _0806967C:
 	adds r0, r5, #0
 	str r1, [sp, #12]
 	str r2, [sp, #16]
-	bl sub_0807BEC0
+	.2byte 0xF012
+	.byte 0x1A
+	.byte 0xFC
 	adds r0, r4, #0
 	movs r3, #128
 	lsls r3, r3, #9
@@ -2068,8 +2088,8 @@ _080696CE:
 	muls r0, r6
 	adds r5, r7, r0
 	adds r0, r5, #0
-	bl sub_0807BEC0
-	adds r0, r4, #0
+	.2byte 0xF012
+	.4byte 0x1C20FBF3
 	movs r1, #128
 	lsls r1, r1, #9
 	adds r4, r4, r1
@@ -2085,11 +2105,13 @@ _080696CE:
 	lsls r5, r5, #4
 	add r5, r8
 	adds r0, r5, #0
-	bl sub_0807BEC0
-	ldr r5, _08069720
+	.2byte 0xF012
+	.4byte 0x4D08FBE1
 	add r5, r8
 	adds r0, r5, #0
-	bl sub_0807BEC0
+	.2byte 0xF012
+	.byte 0xDC
+	.byte 0xFB
 	ldr r3, [sp, #8]
 	ldr r1, [r3, #24]
 	cmp r1, #0
@@ -2126,13 +2148,17 @@ _0806972A:
 	bl sub_0807BFD0
 	adds r0, r5, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF012
+	.byte 0x34
+	.byte 0xFB
 	b _0806974E
 	.global _08069746
 _08069746:
 	adds r0, r5, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF012
+	.byte 0x2F
+	.byte 0xFB
 	.global _0806974E
 _0806974E:
 	adds r0, r4, #0
@@ -2156,8 +2182,8 @@ _08069762:
 	bl sub_0807BFD0
 	adds r0, r5, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	b _0806978C
+	.2byte 0xF012
+	.4byte 0xE007FB19
 	.global _0806977C
 _0806977C:
 	.4byte 0x081BF214  @ ROM+0x1BF214
@@ -2167,7 +2193,9 @@ _08069780:
 	adds r5, r0, r4
 	adds r0, r5, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF012
+	.byte 0x10
+	.byte 0xFB
 	.global _0806978C
 _0806978C:
 	adds r0, r7, #1
@@ -2188,12 +2216,16 @@ _0806978C:
 	add r5, r8
 	adds r0, r5, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF012
+	.byte 0xFC
+	.byte 0xFA
 	ldr r5, _080697DC
 	add r5, r8
 	adds r0, r5, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF012
+	.byte 0xF6
+	.byte 0xFA
 	.global _080697C0
 _080697C0:
 	mov r0, r8
@@ -2730,8 +2762,8 @@ _08069BC8:
 	adds r4, r2, #0
 	adds r0, r4, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	adds r0, r5, #0
+	.2byte 0xF012
+	.4byte 0x1C28F8ED
 	movs r1, #128
 	lsls r1, r1, #9
 	adds r5, r5, r1
@@ -2787,8 +2819,8 @@ sub_08069C1A:
 	adds r4, r6, r0
 	adds r0, r4, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	adds r0, r5, #0
+	.2byte 0xF012
+	.4byte 0x1C28F8C1
 	movs r3, #128
 	lsls r3, r3, #9
 	adds r5, r5, r3
@@ -2878,7 +2910,9 @@ sub_08069C5C:
 	adds r7, r6, r0
 	ldr r1, _08069D80
 	movs r0, #0
-	bl FindResourceByName
+	.2byte 0xF011
+	.byte 0x62
+	.byte 0xFF
 	adds r2, r0, #0
 	str r4, [sp, #0]
 	adds r0, r7, #0
@@ -2916,7 +2950,9 @@ sub_08069C5C:
 	adds r7, r6, r2
 	movs r0, #0
 	add r1, sp, #4
-	bl FindResourceByName
+	.2byte 0xF011
+	.byte 0x3A
+	.byte 0xFF
 	adds r2, r0, #0
 	mov r0, r9
 	str r0, [sp, #0]
@@ -3225,7 +3261,9 @@ _08069F42:
 	adds r4, r4, r0
 	movs r0, #0
 	adds r1, r4, #0
-	bl FindResourceByName
+	.2byte 0xF011
+	.byte 0x1C
+	.byte 0xFE
 	adds r2, r0, #0
 	str r6, [sp, #0]
 	adds r0, r7, #0
@@ -3300,8 +3338,8 @@ _08069FE0:
 	.2byte 0xF011
 	.4byte 0x2000FE1D
 	ldr r1, _0806A2E8
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF011
+	.4byte 0x1C02FDCF
 	ldr r4, _0806A2EC
 	add r4, r8
 	movs r0, #4
@@ -3365,8 +3403,8 @@ _0806A064:
 	.2byte 0xF011
 	.4byte 0x2000FDDD
 	ldr r1, _0806A2F0
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF011
+	.4byte 0x1C02FD8F
 	str r4, [sp, #0]
 	adds r0, r7, #0
 	movs r1, #0
@@ -3429,7 +3467,9 @@ _0806A0DC:
 	.byte 0xFD
 	movs r0, #0
 	ldr r1, _0806A2F8
-	bl FindResourceByName
+	.2byte 0xF011
+	.byte 0x52
+	.byte 0xFD
 	adds r2, r0, #0
 	str r4, [sp, #0]
 	adds r0, r7, #0
@@ -3485,8 +3525,8 @@ _0806A14A:
 	.2byte 0xF011
 	.4byte 0x2000FD67
 	ldr r1, _0806A300
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF011
+	.4byte 0x1C02FD19
 	str r5, [sp, #0]
 	adds r0, r7, #0
 	movs r1, #0
@@ -3537,7 +3577,9 @@ _0806A1AE:
 	.byte 0xFD
 	movs r0, #0
 	ldr r1, _0806A304
-	bl FindResourceByName
+	.2byte 0xF011
+	.byte 0xE6
+	.byte 0xFC
 	adds r2, r0, #0
 	str r5, [sp, #0]
 	adds r0, r7, #0
@@ -3606,8 +3648,8 @@ _0806A23A:
 	.2byte 0xF011
 	.4byte 0x2000FCEF
 	ldr r1, _0806A314
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF011
+	.4byte 0x1C02FCA1
 	str r4, [sp, #0]
 	adds r0, r7, #0
 	movs r1, #0
@@ -4835,7 +4877,9 @@ _0806B0C6:
 	bl sub_0807BFD0
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF010
+	.byte 0x60
+	.byte 0xFE
 	b _0806B0FC
 	.byte 0x00
 	.byte 0x00
@@ -4876,7 +4920,9 @@ _0806B110:
 	bl sub_0807BFD0
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF010
+	.byte 0x42
+	.byte 0xFE
 	b _0806B13C
 	.byte 0x00
 	.byte 0x00
@@ -4889,7 +4935,9 @@ _0806B130:
 	adds r7, r0, r4
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF010
+	.byte 0x38
+	.byte 0xFE
 	.global _0806B13C
 _0806B13C:
 	adds r0, r5, #1
@@ -4920,7 +4968,9 @@ sub_0806B160:
 	add r7, r9
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF010
+	.byte 0x1F
+	.byte 0xFE
 	.global _0806B16E
 _0806B16E:
 	ldr r0, _0806B21C
@@ -4935,8 +4985,8 @@ _0806B16E:
 	add r7, r9
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	movs r6, #128
+	.2byte 0xF010
+	.4byte 0x2680FE11
 	lsls r6, r6, #9
 	ldr r4, _0806B220
 	add r4, r9
@@ -4944,8 +4994,8 @@ _0806B16E:
 _0806B192:
 	adds r0, r4, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	adds r0, r6, #0
+	.2byte 0xF010
+	.4byte 0x1C30FE09
 	movs r2, #128
 	lsls r2, r2, #9
 	adds r6, r6, r2
@@ -4968,7 +5018,9 @@ sub_0806B1B4:
 	add r7, r9
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF010
+	.byte 0xF5
+	.byte 0xFD
 	.global _0806B1C2
 _0806B1C2:
 	movs r5, #0
@@ -4984,7 +5036,9 @@ _0806B1C2:
 	add r7, r9
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF010
+	.byte 0xE6
+	.byte 0xFD
 	.global _0806B1E0
 _0806B1E0:
 	ldr r0, _0806B234
@@ -4998,7 +5052,9 @@ _0806B1E0:
 	add r7, r9
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF010
+	.byte 0xD9
+	.byte 0xFD
 	.global _0806B1FA
 _0806B1FA:
 	mov r0, r9
@@ -5740,7 +5796,9 @@ _0806B70E:
 	adds r4, r2, #0
 	adds r0, r4, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF010
+	.byte 0x4A
+	.byte 0xFB
 	adds r0, r5, #0
 	movs r1, #128
 	lsls r1, r1, #9
@@ -5772,8 +5830,8 @@ _0806B748:
 	adds r4, r2, #0
 	adds r0, r4, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	adds r0, r5, #0
+	.2byte 0xF010
+	.4byte 0x1C28FB2D
 	movs r1, #128
 	lsls r1, r1, #9
 	adds r5, r5, r1
@@ -5822,8 +5880,8 @@ _0806B796:
 	adds r4, r6, r0
 	adds r0, r4, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	adds r0, r5, #0
+	.2byte 0xF010
+	.4byte 0x1C28FB03
 	movs r2, #128
 	lsls r2, r2, #9
 	adds r5, r5, r2
@@ -5876,8 +5934,8 @@ _0806B7EE:
 	adds r4, r6, r0
 	adds r0, r4, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	adds r0, r5, #0
+	.2byte 0xF010
+	.4byte 0x1C28FAD5
 	movs r3, #128
 	lsls r3, r3, #9
 	adds r5, r5, r3
@@ -5966,8 +6024,8 @@ sub_0806B834:
 	adds r7, r6, r0
 	ldr r1, _0806B958
 	movs r0, #0
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF010
+	.4byte 0x1C02F977
 	str r4, [sp, #0]
 	adds r0, r7, #0
 	movs r1, #0
@@ -6003,7 +6061,9 @@ sub_0806B834:
 	adds r7, r6, r0
 	movs r0, #0
 	add r1, sp, #4
-	bl FindResourceByName
+	.2byte 0xF010
+	.byte 0x50
+	.byte 0xF9
 	adds r2, r0, #0
 	mov r1, r9
 	str r1, [sp, #0]
@@ -6280,8 +6340,8 @@ _0806BB68:
 	adds r5, r7, r0
 	ldr r1, _0806BD18
 	movs r0, #0
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF010
+	.4byte 0x1C02F811
 	mov r1, r9
 	str r1, [sp, #0]
 	adds r0, r5, #0
@@ -6603,8 +6663,8 @@ _0806BDA0:
 	lsls r2, r2, #5
 	adds r5, r7, r2
 	movs r0, #0
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF00F
+	.4byte 0x1C02FEF5
 	movs r4, #0
 	str r4, [sp, #0]
 	adds r0, r5, #0
@@ -7177,8 +7237,8 @@ _0806C1B2:
 	.2byte 0xF00F
 	.4byte 0x2000FD35
 	ldr r1, _0806C22C
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF00F
+	.4byte 0x1C02FCE7
 	str r5, [sp, #0]
 	adds r0, r4, #0
 	movs r1, #0
@@ -7923,8 +7983,8 @@ _0806C540:
 	.global _0806C564
 _0806C564:
 	adds r0, r4, #0
-	bl sub_0807BEC0
-	adds r0, r5, #0
+	.2byte 0xF00F
+	.4byte 0x1C28FCAB
 	movs r2, #128
 	lsls r2, r2, #9
 	adds r5, r5, r2
@@ -9342,7 +9402,9 @@ _0806D4D0:
 	.thumb
 	.global sub_0806D514
 sub_0806D514:
-	bl sub_0807BEC0
+	.2byte 0xF00E
+	.byte 0xD4
+	.byte 0xFC
 	mov r2, r9
 	ldr r1, [r2, #24]
 	cmp r1, #0
@@ -9401,12 +9463,16 @@ _0806D54C:
 	bl sub_0807BC7C
 	adds r0, r5, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF00E
+	.byte 0x16
+	.byte 0xFC
 	.global _0806D580
 _0806D580:
 	adds r0, r5, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF00E
+	.byte 0x12
+	.byte 0xFC
 	.global _0806D588
 _0806D588:
 	adds r0, r7, #1
@@ -9421,7 +9487,9 @@ _0806D588:
 	bl sub_0807BFD0
 	adds r0, r5, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF00E
+	.byte 0x02
+	.byte 0xFC
 	mov r2, r9
 	movs r0, #0
 	ldrsb r0, [r2, r0]
@@ -9576,8 +9644,8 @@ _0806D76A:
 	adds r4, #104
 	ldr r1, _0806D7F0
 	movs r0, #0
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF00E
+	.4byte 0x1C02FA11
 	movs r1, #0
 	ldrsh r0, [r7, r1]
 	lsls r0, r0, #1
@@ -10221,8 +10289,8 @@ _0806DE48:
 	bl sub_0807BFD0
 	adds r0, r5, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	adds r0, r4, #0
+	.2byte 0xF00D
+	.4byte 0x1C20FFAB
 	movs r1, #128
 	lsls r1, r1, #9
 	adds r4, r4, r1
@@ -10254,7 +10322,9 @@ _0806DE80:
 	bl sub_0807BFD0
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF00D
+	.byte 0x8A
+	.byte 0xFF
 	adds r0, r4, #0
 	movs r1, #128
 	lsls r1, r1, #9
@@ -10267,7 +10337,9 @@ _0806DEA6:
 	mov r7, r8
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF00D
+	.byte 0x7E
+	.byte 0xFF
 	add sp, #44
 	pop {r3, r4, r5}
 	mov r8, r3
@@ -10402,7 +10474,9 @@ sub_0806DFB0:
 	adds r6, #52
 	ldr r1, _0806E09C
 	movs r0, #0
-	bl FindResourceByName
+	.2byte 0xF00D
+	.byte 0xE8
+	.byte 0xFD
 	adds r2, r0, #0
 	movs r0, #230
 	lsls r0, r0, #1
@@ -10623,741 +10697,40 @@ _0806E148:
 	.global _0806E14C
 _0806E14C:
 	.4byte 0x081BF390  @ ROM+0x1BF390
-	.4byte 0xB081B510
-	.4byte 0x1C0B1C04
-	.4byte 0x49064805
-	.4byte 0x92002210
-	.4byte 0xF00C2201
-	.4byte 0x2800FB0B
-	.4byte 0x62C4D006
-	.4byte 0x0000E005
-	.4byte 0x030032C4
-	.4byte 0x0806E185
-	.4byte 0xB0012000
-	.4byte 0xBC02BC10
-	.4byte 0x00004708
 
-	.thumb_func
-	.thumb
-	.global sub_0806E184
-sub_0806E184:
-	push {r4, r5, r6, lr}
-	adds r5, r0, #0
-	adds r4, r5, #0
-	adds r4, #32
-	ldr r6, [r4, #12]
-	ldrh r0, [r5, #14]
-	cmp r0, #6
-	bhi _0806E25E
-	lsls r0, r0, #2
-	ldr r1, _0806E1A0
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	mov pc, r0
-	.byte 0x00
-	.byte 0x00
-	.global _0806E1A0
-_0806E1A0:
-	.4byte 0x0806E1A4  @ ROM+0x6E1A4
-	.4byte 0x0806E1C0
-	.4byte 0x0806E25E
-	.4byte 0x0806E1C6
-	.4byte 0x0806E1D6
-	.4byte 0x0806E1FC
-	.4byte 0x0806E248
-	.4byte 0x0806E24E
-	.4byte 0x81E82002
-	.4byte 0x68E0E04B
-	.4byte 0x1C22490A
-	.4byte 0xF0003208
-	.4byte 0x2003F981
-	.4byte 0x68A181E8
-	.4byte 0xD0402900
-	.4byte 0x20016061
-	.4byte 0x42814240
-	.4byte 0x3801D108
-	.4byte 0xFF2CF798
-	.4byte 0x81E82005
-	.4byte 0x0000E035
-	.4byte 0x00003F2C
-	.4byte 0x81E82004
-	.4byte 0xF00068E0
-	.4byte 0x2800F91B
-	.4byte 0x2800D01E
-	.4byte 0x2001DD0D
-	.4byte 0xFF1AF798
-	.4byte 0x302C68E0
-	.4byte 0x018921FC
-	.4byte 0xF7932200
-	.4byte 0x69B0FD75
-	.4byte 0x61B03001
-	.4byte 0x2001E008
-	.4byte 0xF7984240
-	.4byte 0x68E0FF0B
-	.4byte 0x22004903
-	.4byte 0xFD68F793
-	.4byte 0x42402001
-	.4byte 0x0000E003
-	.4byte 0x00003F2C
-	.4byte 0x60602001
-	.4byte 0x81E82006
-	.4byte 0x69A9E007
-	.4byte 0xD0012900
-	.4byte 0x60086860
-	.4byte 0xF00C1C28
-	.byte 0xA7
-	.byte 0xFA
-	.global _0806E25E
-_0806E25E:
-	pop {r4, r5, r6}
-	pop {r0}
-	bx r0
-	.4byte 0xB081B510
-	.4byte 0x1C0B1C04
-	.4byte 0x49064805
-	.4byte 0x92002210
-	.4byte 0xF00C2201
-	.4byte 0x2800FA81
-	.4byte 0x62C4D006
-	.4byte 0x0000E005
-	.4byte 0x030032C4
-	.4byte 0x0806E299
-	.4byte 0xB0012000
-	.4byte 0xBC02BC10
-	.4byte 0x00004708
+@ 06E150..06E184 is decompiled as CreateSaveBlockLoadTask(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0806E298
-sub_0806E298:
-	push {r4, r5, r6, lr}
-	adds r6, r0, #0
-	adds r5, r6, #0
-	adds r5, #32
-	ldrh r0, [r6, #14]
-	cmp r0, #5
-	bhi _0806E358
-	lsls r0, r0, #2
-	ldr r1, _0806E2B0
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	mov pc, r0
-	.global _0806E2B0
-_0806E2B0:
-	.4byte 0x0806E2B4  @ ROM+0x6E2B4
-	.4byte 0x0806E2CC
-	.4byte 0x0806E31C
-	.4byte 0x0806E322
-	.4byte 0x0806E332
-	.4byte 0x0806E33E
-	.4byte 0x0806E348
-	.4byte 0x481168E9
-	.4byte 0xC11CC81C
-	.4byte 0x60086800
-	.4byte 0x490F68E8
-	.4byte 0x69416101
-	.4byte 0x61413101
-	.4byte 0x62442400
-	.4byte 0x21FC302C
-	.4byte 0xF00B0189
-	.4byte 0x68E9FF9B
-	.4byte 0x0E000600
-	.4byte 0x628C6248
-	.4byte 0x1C08620C
-	.4byte 0xF00B212C
-	.4byte 0x68E9FF91
-	.4byte 0x0E000600
-	.4byte 0x20016208
-	.4byte 0xE02181F0
-	.4byte 0x08089328
-	.4byte 0x3F828F5C
-	.4byte 0x81F02002
-	.4byte 0x68E8E01A
-	.4byte 0x1C2A4907
-	.4byte 0xF0003208
-	.4byte 0x2003F8C7
-	.4byte 0x68A881F0
-	.4byte 0xD00F2800
-	.4byte 0x20046068
-	.4byte 0x200581F0
-	.4byte 0xE00981F0
-	.4byte 0x00003F2C
-	.4byte 0x290069B1
-	.4byte 0x6868D001
-	.4byte 0x1C306008
-	.4byte 0xFA2AF00C
-	.global _0806E358
-_0806E358:
-	pop {r4, r5, r6}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.4byte 0xB081B530
-	.4byte 0x1C0D1C04
-	.4byte 0x48071C13
-	.4byte 0x22144907
-	.4byte 0x22019200
-	.4byte 0xFA02F00C
-	.4byte 0x29001C01
-	.4byte 0x3020D008
-	.4byte 0x60856044
-	.4byte 0xE0041C08
-	.4byte 0x030032C4
-	.4byte 0x0806E39D
-	.4byte 0xB0012000
-	.4byte 0xBC02BC30
-	.4byte 0x00004708
+@ 06E184..06E264 is decompiled as SaveBlockLoadTask(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0806E39C
-sub_0806E39C:
-	push {r4, r5, r6, lr}
-	adds r4, r0, #0
-	adds r6, r4, #0
-	adds r6, #32
-	ldr r0, _0806E3BC
-	ldr r1, _0806E3C0
-	adds r0, r0, r1
-	ldr r5, [r0, #0]
-	ldrh r0, [r4, #14]
-	cmp r0, #5
-	bhi _0806E432
-	lsls r0, r0, #2
-	ldr r1, _0806E3C4
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	mov pc, r0
-	.global _0806E3BC
-_0806E3BC:
-	.4byte 0x03000000  @ IWRAM
-	.global _0806E3C0
-_0806E3C0:
-	.4byte 0x00003FDC
-	.global _0806E3C4
-_0806E3C4:
-	.4byte 0x0806E3C8  @ ROM+0x6E3C8
-	.4byte 0x0806E3E0
-	.4byte 0x0806E3FA
-	.4byte 0x0806E400
-	.4byte 0x0806E410
-	.4byte 0x0806E41C
-	.4byte 0x0806E422
-	.4byte 0x62A82000
-	.4byte 0x1C286228
-	.4byte 0xF00B212C
-	.4byte 0x0600FF1D
-	.4byte 0x62280E00
-	.4byte 0x81E02001
-	.4byte 0x2002E01B
-	.4byte 0xE01881E0
-	.4byte 0x32101C32
-	.byte 0x28
-	.byte 0x1C
+@ 06E264..06E298 is decompiled as CreateSaveBlockWriteTask(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0806E406
-sub_0806E406:
-	movs r1, #44
-	bl sub_0806E4BC
-	movs r0, #3
-	strh r0, [r4, #14]
-	ldr r0, [r6, #16]
-	cmp r0, #0
-	beq _0806E432
-	str r0, [r6, #12]
-	movs r0, #4
-	strh r0, [r4, #14]
-	movs r0, #5
-	strh r0, [r4, #14]
-	b _0806E432
-	.byte 0xA1
-	.byte 0x69
-	.4byte 0xD0012900
-	.4byte 0x600868F0
-	.4byte 0xF00C1C20
-	.byte 0xBD
-	.byte 0xF9
-	.global _0806E432
-_0806E432:
-	pop {r4, r5, r6}
-	pop {r0}
-	bx r0
+@ 06E298..06E360 is decompiled as SaveBlockPrepareAndWriteTask(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0806E438
-sub_0806E438:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r9
-	mov r6, r8
-	push {r6, r7}
-	adds r4, r0, #0
-	movs r6, #0
-	ldr r7, [r4, #32]
-	ldr r0, [r4, #36]
-	mov r8, r0
-	ldr r0, [r4, #40]
-	mov r9, r0
-	str r6, [r4, #32]
-	adds r0, r4, #0
-	movs r1, #44
-	adds r2, r7, #0
-	.2byte 0xF000
-	.4byte 0x2800F86F
-	beq _0806E462
-	subs r6, #1
-	b _0806E4A0
-	.global _0806E462
-_0806E462:
-	ldr r1, _0806E478
-	adds r0, r4, #0
-	.2byte 0xF014
-	.4byte 0x1C05F9D1
-	cmp r5, #0
-	beq _0806E47C
-	movs r6, #2
-	negs r6, r6
-	b _0806E4A0
-	.byte 0x00
-	.byte 0x00
-	.global _0806E478
-_0806E478:
-	.4byte 0x08089328  @ ROM+0x89328
-	.global _0806E47C
-_0806E47C:
-	ldr r0, [r4, #16]
-	ldr r1, _0806E4B8
-	bl sub_080815C0
-	cmp r0, #0
-	beq _0806E48A
-	movs r6, #1
-	.global _0806E48A
-_0806E48A:
-	str r5, [r4, #36]
-	adds r0, r4, #0
-	adds r0, #44
-	movs r1, #252
-	lsls r1, r1, #6
-	mov r2, r8
-	.2byte 0xF000
-	.4byte 0x2800F84F
-	beq _0806E4A0
-	movs r6, #2
-	.global _0806E4A0
-_0806E4A0:
-	str r7, [r4, #32]
-	mov r0, r8
-	str r0, [r4, #36]
-	mov r0, r9
-	str r0, [r4, #40]
-	adds r0, r6, #0
-	pop {r3, r4}
-	mov r8, r3
-	mov r9, r4
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.global _0806E4B8
-_0806E4B8:
-	.4byte 0x3F828F5C
+@ 06E360..06E39C is decompiled as CreateSaveHeaderWriteTask(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0806E4BC
-sub_0806E4BC:
-	push {r4, r5, lr}
-	adds r5, r0, #0
-	adds r4, r1, #0
-	adds r3, r2, #0
+@ 06E39C..06E438 is decompiled as SaveHeaderWriteTask(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0806E4C4
-sub_0806E4C4:
-	movs r0, #0
-	adds r1, r5, #0
-	adds r2, r4, #0
-	bl sub_0806E610
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.4byte 0x1C0CB510
-	.4byte 0x21001C13
-	.4byte 0xF0001C22
-	.4byte 0xBC10F91F
-	.4byte 0x4708BC02
+@ 06E438..06E4BC is decompiled as ValidateSaveBlock(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0806E4E8
-sub_0806E4E8:
-	push {r4, r5, r6, r7, lr}
-	adds r7, r0, #0
-	adds r4, r1, #0
-	movs r2, #1
-	negs r2, r2
-	movs r1, #0
-	cmp r1, r4
-	bcs _0806E524
-	movs r6, #1
-	ldr r5, _0806E514
-	.global _0806E4FC
-_0806E4FC:
-	adds r0, r7, r1
-	ldrb r0, [r0, #0]
-	eors r2, r0
-	movs r3, #0
-	adds r1, #1
-	.global _0806E506
-_0806E506:
-	adds r0, r2, #0
-	ands r0, r6
-	cmp r0, #0
-	beq _0806E518
-	lsrs r2, r2, #1
-	eors r2, r5
-	b _0806E51A
-	.global _0806E514
-_0806E514:
-	.4byte 0xEDB88320
-	.global _0806E518
-_0806E518:
-	lsrs r2, r2, #1
-	.global _0806E51A
-_0806E51A:
-	adds r3, #1
-	cmp r3, #7
-	bls _0806E506
-	cmp r1, r4
-	bcc _0806E4FC
-	.global _0806E524
-_0806E524:
-	mvns r0, r2
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
+@ 06E4BC..06E4D4 is decompiled as CreateSaveWriteTask(); see src/decompiled.json
 
-@ 06E52C..06E538 is decompiled as MapGeneratorStep(); see src/decompiled.json
+@ 06E4D4..06E4E8 is decompiled as ReadSaveBytesAndSignal(); see src/decompiled.json
+
+@ 06E4E8..06E52C is decompiled as CalculateCrc32(); see src/decompiled.json
+
+@ 06E52C..06E538 is decompiled as CalculateSaveCrc32(); see src/decompiled.json
 
 @ 06E538..06E54C is decompiled as Crc32Difference(); see src/decompiled.json
 
-	.section .rom.0006E54C, "ax"
-	.syntax unified
+@ 06E54C..06E5AC is decompiled as WriteSaveBlock(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0806E54C
-sub_0806E54C:
-	push {r4, r5, r6, lr}
-	adds r4, r0, #0
-	ldr r6, _0806E5A0
-	adds r1, r4, #0
-	ldr r0, _0806E5A4
-	ldmia r0!, {r2, r3, r5}
-	stmia r1!, {r2, r3, r5}
-	ldr r0, [r0, #0]
-	str r0, [r1, #0]
-	ldr r0, _0806E5A8
-	str r0, [r4, #16]
-	ldr r0, [r4, #20]
-	adds r0, #1
-	str r0, [r4, #20]
-	movs r5, #0
-	str r5, [r4, #36]
-	adds r0, r4, #0
-	adds r0, #44
-	movs r1, #252
-	lsls r1, r1, #6
-	.2byte 0xF7FF
-	.byte 0xDA
-	.byte 0xFF
-	str r0, [r4, #36]
-	str r5, [r4, #40]
-	str r5, [r4, #32]
-	adds r0, r4, #0
-	movs r1, #44
-	.2byte 0xF7FF
-	.4byte 0x6220FFD3
-	movs r1, #224
-	lsls r1, r1, #20
-	adds r0, r4, #0
-	adds r2, r6, #0
-	bl sub_0807A044
-	lsls r0, r0, #16
-	asrs r0, r0, #16
-	pop {r4, r5, r6}
-	pop {r1}
+@ 06E5AC..06E610 is decompiled as LoadSaveBlock(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0806E59C
-sub_0806E59C:
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _0806E5A0
-_0806E5A0:
-	.4byte 0x00003F2C
-	.global _0806E5A4
-_0806E5A4:
-	.4byte 0x08089328  @ ROM+0x89328
-	.global _0806E5A8
-_0806E5A8:
-	.4byte 0x3F828F5C
+@ 06E610..06E650 is decompiled as CreateSaveTask(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0806E5AC
-sub_0806E5AC:
-	push {r4, r5, lr}
-	adds r4, r0, #0
-	ldr r5, _0806E5EC
-	ldr r1, _0806E5F0
-	movs r0, #224
-	lsls r0, r0, #20
-	ldr r3, [r1, #0]
-	adds r1, r4, #0
-	adds r2, r5, #0
-	bl sub_08080BCC
-	adds r0, r4, #0
-	bl sub_0806E438
-	lsls r0, r0, #16
-	asrs r0, r0, #16
-	cmp r0, #0
-	beq _0806E606
-	cmp r0, #0
-	ble _0806E5F4
-	movs r0, #1
-	.2byte 0xF798
-	.4byte 0x1C20FD35
-	adds r0, #44
-	movs r1, #252
-	lsls r1, r1, #6
-	movs r2, #0
-	bl CpuFill
-	b _0806E606
-	.byte 0x00
-	.byte 0x00
-	.global _0806E5EC
-_0806E5EC:
-	.4byte 0x00003F2C
-	.global _0806E5F0
-_0806E5F0:
-	.4byte 0x03006100  @ IWRAM+0x6100
-	.global _0806E5F4
-_0806E5F4:
-	movs r0, #1
-	negs r0, r0
-	.2byte 0xF798
-	.byte 0x24
-	.byte 0xFD
-	adds r0, r4, #0
-	adds r1, r5, #0
-	movs r2, #0
-	bl CpuFill
-	.global _0806E606
-_0806E606:
-	movs r0, #0
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 06E650..06E720 is decompiled as SaveWriteTask(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0806E610
-sub_0806E610:
-	push {r4, r5, r6, lr}
-	sub sp, #4
-	adds r5, r1, #0
-	adds r6, r2, #0
-	lsls r0, r0, #16
-	lsrs r4, r0, #16
-	ldr r0, _0806E63C
-	ldr r1, _0806E640
-	movs r2, #24
-	str r2, [sp, #0]
-	movs r2, #1
-	.2byte 0xF00C
-	.4byte 0x1C01F8A9
-	cmp r1, #0
-
-	.thumb_func
-	.thumb
-	.global sub_0806E62E
-sub_0806E62E:
-	beq _0806E644
-	adds r0, #32
-	strh r4, [r1, #32]
-	str r5, [r0, #4]
-	str r6, [r0, #12]
-	adds r0, r1, #0
-	b _0806E646
-	.global _0806E63C
-_0806E63C:
-	.4byte 0x030032C4  @ IWRAM+0x32C4
-	.global _0806E640
-_0806E640:
-	.4byte 0x0806E651  @ ROM+0x6E651
-	.global _0806E644
-_0806E644:
-	movs r0, #0
-	.global _0806E646
-_0806E646:
-	add sp, #4
-	pop {r4, r5, r6}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0806E650
-sub_0806E650:
-	push {r4, r5, r6, r7, lr}
-	adds r6, r0, #0
-	adds r5, r6, #0
-	adds r5, #32
-	ldrh r4, [r6, #14]
-	movs r7, #128
-	lsls r7, r7, #1
-	cmp r4, r7
-	beq _0806E6B8
-	cmp r4, r7
-	bgt _0806E66C
-	cmp r4, #0
-	beq _0806E67E
-	b _0806E71A
-	.global _0806E66C
-_0806E66C:
-	movs r0, #128
-	lsls r0, r0, #5
-	cmp r4, r0
-	beq _0806E6F6
-	movs r0, #128
-	lsls r0, r0, #6
-	cmp r4, r0
-	beq _0806E708
-	b _0806E71A
-	.global _0806E67E
-_0806E67E:
-	ldr r0, [r5, #4]
-	str r4, [r0, #36]
-	adds r0, #44
-	movs r1, #252
-	lsls r1, r1, #6
-	.2byte 0xF00B
-	.byte 0xCE
-	.byte 0xFD
-	ldr r1, [r5, #4]
-	lsls r0, r0, #24
-	lsrs r0, r0, #24
-	str r0, [r1, #36]
-	str r4, [r1, #40]
-	str r4, [r1, #32]
-	adds r0, r1, #0
-	movs r1, #44
-	.2byte 0xF00B
-	.byte 0xC4
-	.byte 0xFD
-	ldr r3, [r5, #4]
-	lsls r0, r0, #24
-	lsrs r0, r0, #24
-	str r0, [r3, #32]
-	movs r1, #224
-	lsls r1, r1, #20
-	ldr r2, [r5, #12]
-	adds r0, r3, #0
-	bl sub_08079F1C
-	strh r7, [r6, #14]
-	b _0806E71A
-	.global _0806E6B8
-_0806E6B8:
-	ldr r3, _0806E6E0
-	ldr r0, [r5, #4]
-	movs r1, #224
-	lsls r1, r1, #20
-	ldr r2, [r5, #12]
-	ldr r3, [r3, #0]
-	.2byte 0xF012
-
-	.thumb_func
-	.thumb
-	.global sub_0806E6C6
-sub_0806E6C6:
-	.2byte 0xFA82
-	cmp r0, #0
-	beq _0806E6E4
-	ldr r0, [r5, #20]
-	adds r0, #1
-	str r0, [r5, #20]
-	cmp r0, #15
-	ble _0806E71A
-	movs r0, #128
-	lsls r0, r0, #6
-	strh r0, [r6, #14]
-	b _0806E71A
-	.byte 0x00
-	.byte 0x00
-	.global _0806E6E0
-_0806E6E0:
-	.4byte 0x03006104  @ IWRAM+0x6104
-	.global _0806E6E4
-_0806E6E4:
-	str r0, [r5, #16]
-	str r0, [r5, #20]
-	movs r0, #128
-	.2byte 0xF798
-	.4byte 0x2080FC8D
-	lsls r0, r0, #5
-	strh r0, [r6, #14]
-	b _0806E71A
-	.global _0806E6F6
-_0806E6F6:
-	ldr r1, [r6, #24]
-	cmp r1, #0
-	beq _0806E700
-	movs r0, #1
-	str r0, [r1, #0]
-	.global _0806E700
-_0806E700:
-	adds r0, r6, #0
-	.2byte 0xF00C
-	.4byte 0xE008F853
-	.global _0806E708
-_0806E708:
-	ldr r1, [r6, #24]
-	cmp r1, #0
-	beq _0806E714
-	movs r0, #1
-	negs r0, r0
-	str r0, [r1, #0]
-	.global _0806E714
-_0806E714:
-	adds r0, r6, #0
-	.2byte 0xF00C
-	.byte 0x49
-	.byte 0xF8
-	.global _0806E71A
-_0806E71A:
-	pop {r4, r5, r6, r7}
-	pop {r0}
-	bx r0
-	.4byte 0x1C01B510
-	.4byte 0x4B071C1C
-	.4byte 0x050020E0
-	.4byte 0xF012681B
-	.4byte 0x2C00FA4D
-	.4byte 0x2001D001
-	.4byte 0x20006020
-	.4byte 0xBC02BC10
-	.4byte 0x00004708
-	.4byte 0x03006100
+@ 06E720..06E748 is decompiled as ReadSaveBytes(); see src/decompiled.json
 
 @ 06E748..06E76C is decompiled as CreateTask6E748(); see src/decompiled.json
 
@@ -12232,8 +11605,8 @@ _0806EF58:
 	.byte 0x44
 	.byte 0xF9
 	ldr r0, [r4, #0]
-	bl sub_0806E54C
-	movs r0, #3
+	.2byte 0xF7FF
+	.4byte 0x2003FADB
 	strh r0, [r5, #14]
 	.global _0806EF9A
 _0806EF9A:
@@ -12419,8 +11792,8 @@ _0806F092:
 	bl sub_0800690C
 	bl sub_080572B8
 	ldr r0, [r4, #0]
-	bl sub_0806E54C
-	movs r0, #2
+	.2byte 0xF7FF
+	.4byte 0x2002FA45
 	mov r4, r8
 	strh r0, [r4, #14]
 	.global _0806F0C8
@@ -12658,7 +12031,9 @@ _0806F288:
 	.byte 0xFC
 	movs r0, #0
 	ldr r1, _0806F3A0
-	bl FindResourceByName
+	.2byte 0xF00C
+	.byte 0x7E
+	.byte 0xFC
 	adds r2, r0, #0
 	movs r1, #0
 	ldrsh r0, [r5, r1]
@@ -13064,7 +12439,9 @@ _0806F5D6:
 	mov r7, r10
 	adds r0, r7, #0
 	movs r1, #1
-	bl NcdQueueSprite
+	.2byte 0xF00C
+	.byte 0xE6
+	.byte 0xFB
 	movs r6, #128
 	lsls r6, r6, #9
 	adds r5, r7, #0
@@ -13079,7 +12456,9 @@ _0806F5EC:
 	beq _0806F5FC
 	adds r0, r5, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF00C
+	.byte 0xD8
+	.byte 0xFB
 	.global _0806F5FC
 _0806F5FC:
 	adds r0, r6, #0
@@ -13831,7 +13210,9 @@ sub_0806FAC4:
 	ldr r4, [sp, #4]
 	adds r0, r4, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF00C
+	.byte 0x58
+	.byte 0xF9
 	.global _0806FAFC
 _0806FAFC:
 	movs r2, #128
@@ -13850,7 +13231,9 @@ _0806FB08:
 	adds r0, r4, #0
 	movs r1, #0
 	str r2, [sp, #20]
-	bl NcdQueueSprite
+	.2byte 0xF00C
+	.byte 0x48
+	.byte 0xF9
 	ldr r2, [sp, #20]
 	.global _0806FB1E
 _0806FB1E:
@@ -14069,8 +13452,8 @@ sub_0806FC38:
 	adds r0, r0, r1
 	ldr r1, [r0, #0]
 	movs r0, #0
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF00B
+	.4byte 0x1C02FF95
 	movs r0, #2
 	ldrsh r3, [r7, r0]
 	str r5, [sp, #0]
@@ -14176,8 +13559,8 @@ _0806FCDC:
 	adds r0, r0, r1
 	ldr r1, [r0, #0]
 	movs r0, #0
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF00B
+	.4byte 0x1C02FF39
 	movs r0, #2
 	ldrsh r3, [r7, r0]
 	mov r1, r8
@@ -14533,7 +13916,9 @@ _0806FF64:
 	strb r0, [r1, #0]
 	ldr r4, [sp, #4]
 	adds r0, r4, #0
-	bl sub_0807BEC0
+	.2byte 0xF00B
+	.byte 0x9C
+	.byte 0xFF
 	.global _0806FF88
 _0806FF88:
 	ldr r0, [sp, #4]
@@ -14559,8 +13944,8 @@ _0806FF9A:
 	adds r4, r7, #0
 	adds r0, r4, #0
 	str r1, [sp, #16]
-	bl sub_0807BEC0
-	ldr r1, [sp, #16]
+	.2byte 0xF00B
+	.4byte 0x9904FF85
 	.global _0806FFB8
 _0806FFB8:
 	adds r0, r1, #0
@@ -14587,7 +13972,9 @@ _0806FFCE:
 	beq _0806FFE8
 	ldr r4, [sp, #4]
 	adds r0, r4, #0
-	bl sub_0807BEC0
+	.2byte 0xF00B
+	.byte 0x6C
+	.byte 0xFF
 	.global _0806FFE8
 _0806FFE8:
 	movs r1, #128
@@ -14605,8 +13992,8 @@ _0806FFF4:
 	adds r4, r7, #0
 	adds r0, r4, #0
 	str r1, [sp, #16]
-	bl sub_0807BEC0
-	ldr r1, [sp, #16]
+	.2byte 0xF00B
+	.4byte 0x9904FF5D
 	.global _08070008
 _08070008:
 	adds r0, r1, #0
@@ -14658,7 +14045,9 @@ _0807003E:
 	ldr r4, [sp, #4]
 	adds r0, r4, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF00B
+	.byte 0xAD
+	.byte 0xFE
 	.global _08070052
 _08070052:
 	movs r7, #128
@@ -14675,7 +14064,9 @@ _0807005E:
 	beq _0807006E
 	adds r0, r6, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF00B
+	.byte 0x9F
+	.byte 0xFE
 	.global _0807006E
 _0807006E:
 	adds r0, r7, #0

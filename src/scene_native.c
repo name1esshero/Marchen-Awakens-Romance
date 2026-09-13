@@ -5,6 +5,7 @@
 #include "gba/types.h"
 #include "runtime_accessors.h"
 #include "runtime_misc.h"
+#include "sound.h"
 
 #define AT(x) __attribute__((section(".rom." x)))
 #define SCRIPT_CONTINUE 1
@@ -14,38 +15,19 @@ extern s32 CreateInputWaitTask(s32 first, s32 second, s32 mode);
 extern s32 sub_080053E4(s32 first, s32 second, s32 third, s32 mode);
 extern s32 sub_08006760(s32 first, s32 second);
 extern s32 sub_08006E88(s32 value);
-extern s32 FindResourceByName(s32 type, const char *name);
-extern s32 sub_08005848(s32 first, s32 second, s32 third, s32 mode);
-extern s32 sub_080057C0(s32 first, s32 second, s32 third, s32 mode);
+extern s32 SpriteResourceFindGroup(s32 type, const char *name);
 extern void sub_08005530(s32 first, s32 second, s32 third, s32 fourth,
                          s32 fifth, s32 sixth);
 extern void sub_08005498(s32 first, s32 second, s32 third, s32 fourth,
                          s32 fifth);
-extern void sub_080056AC(s32 first, s32 second, s32 third, s32 fourth,
-                         s32 fifth);
-extern void sub_080059C8(s32 first, s32 second, s32 third);
+extern struct EngineTask *StartSongWithTransition(u32 playerIndex,
+                                                  u32 songIndex,
+                                                  u32 *completion);
 extern void sub_0808053C(s16 *first, s16 *second, s16 *third);
 extern void sub_08080504(s32 first, s32 second, s32 third);
-extern void sub_0807915C(void *player, const void *song);
-extern void SoundPlayerStop(void *player);
 extern char *strcpy(char *destination, const char *source);
 extern char *strcat(char *destination, const char *source);
 
-struct SoundPlayerEntry {
-    void *player;
-    u8 unused04[8];
-};
-
-struct SongEntry {
-    const void *song;
-    u32 unused04;
-};
-
-extern struct SoundPlayerEntry gSoundPlayerTable[];
-extern struct SongEntry gSongTable[];
-extern void sub_08078A70(u16 song);
-extern void sub_08078A9C(u16 song);
-extern void sub_08078B3C(u16 song);
 void StopTrackedSong(u32 song);
 
 AT("00005B34") s32 ScriptNativeStartTask05378(u32 count, const s32 *args,
@@ -113,7 +95,7 @@ AT("00005BE0") s32 ScriptNativeFindNamedResource(u32 count,
     char name[16];
     strcpy(name, (const char *)args[0]);
     strcat(name, (const char *)0x08086A6C);
-    *result = FindResourceByName(sub_08006E88((s32)name),
+    *result = SpriteResourceFindGroup(sub_08006E88((s32)name),
                                  (const char *)args[1]);
     return SCRIPT_CONTINUE;
 }
@@ -190,7 +172,7 @@ AT("00005D24") s32 ScriptNativeSelectSceneValue(u32 count, const s32 *args,
     if (GameStateGetField12EE() == args[0]) {
         status = SCRIPT_CONTINUE;
     } else {
-        sub_080059C8(0, args[0], 0);
+        StartSongWithTransition(0, args[0], 0);
         GameStateSetField12EE(args[0]);
         status = SCRIPT_WAIT;
     }
@@ -200,16 +182,16 @@ AT("00005D24") s32 ScriptNativeSelectSceneValue(u32 count, const s32 *args,
 AT("00005D50") s32 ScriptNativeStartIndexedSong(u32 count, const s32 *args,
                                                  s32 *result)
 {
-    void *player = gSoundPlayerTable[6].player;
-    const void *song = gSongTable[args[0]].song;
-    sub_0807915C(player, song);
+    struct SoundPlayer *player = gSoundPlayerTable[6].player;
+    const void *song = gSongTable[args[0]].header;
+    SoundPlayerStart(player, song);
     return SCRIPT_WAIT;
 }
 
 AT("00005D78") s32 ScriptNativeStartTask056AC(u32 count, const s32 *args,
                                                s32 *result)
 {
-    sub_080056AC(args[1], args[0], args[2], 0, 0);
+    CreateSoundFadeTask(args[1], args[0], args[2], 0, 0);
     return SCRIPT_CONTINUE;
 }
 AT("00005D78") const u8 ScriptNativeStartTask056ACTail[2] = {0};
@@ -217,15 +199,39 @@ AT("00005D78") const u8 ScriptNativeStartTask056ACTail[2] = {0};
 AT("00005D98") s32 ScriptNativeStartTask057C0(u32 count, const s32 *args,
                                                s32 *result)
 {
-    sub_080057C0(args[0], args[1], (s32)result, 0);
+    CreateSoundWaitTask(args[0], args[1], result, 0);
     return SCRIPT_CONTINUE;
 }
 AT("00005D98") const u8 ScriptNativeStartTask057C0Tail[2] = {0};
 
+/* Select one of the nine MusicPlayer2000 instances used by scene scripts and
+ * apply the requested volume to every active track. */
+AT("00005DAC") s32 ScriptNativeSetSoundPlayerVolume(
+    u32 count, const s32 *args, s32 *result)
+{
+    struct SoundPlayer *player;
+
+    switch (args[0]) {
+    case 0: player = (struct SoundPlayer *)0x03005F30; break;
+    case 1: player = (struct SoundPlayer *)0x03005FB0; break;
+    case 2: player = (struct SoundPlayer *)0x03005FF0; break;
+    case 3: player = (struct SoundPlayer *)0x030060C0; break;
+    case 4: player = (struct SoundPlayer *)0x03006030; break;
+    case 5: player = (struct SoundPlayer *)0x03005EB0; break;
+    case 6: player = (struct SoundPlayer *)0x03005EF0; break;
+    case 7: player = (struct SoundPlayer *)0x03005F70; break;
+    case 8: player = (struct SoundPlayer *)0x03006080; break;
+    default: player = (struct SoundPlayer *)0x03005F30; break;
+    }
+    SoundPlayerSetVolume(player, 0xFF,
+                         *(const u16 *)((const u8 *)args + 8));
+    return SCRIPT_CONTINUE;
+}
+
 AT("00005E3C") s32 ScriptNativeStartTask05848(u32 count, const s32 *args,
                                                s32 *result)
 {
-    sub_08005848(args[0], args[1], (s32)result, 0);
+    CreateSoundPlayerIdleWait(args[0], args[1], result, 0);
     return SCRIPT_CONTINUE;
 }
 AT("00005E3C") const u8 ScriptNativeStartTask05848Tail[2] = {0};
@@ -242,7 +248,7 @@ AT("00005E64") s32 ScriptNativeResetNineChannels(u32 count, const s32 *args,
 {
     s32 channel;
     for (channel = 0; channel <= 8; channel++)
-        sub_080056AC(16, channel, 1, 1, 0);
+        CreateSoundFadeTask(16, channel, 1, 1, 0);
     GameStateSetField12EE(-1);
     return SCRIPT_WAIT;
 }
@@ -250,16 +256,16 @@ AT("00005E64") s32 ScriptNativeResetNineChannels(u32 count, const s32 *args,
 AT("00005EA8") void StartTrackedSong(u32 song, s32 force)
 {
     if (force)
-        sub_08078A70((u16)song);
+        SoundSongStart((u16)song);
     else if (GameStateGetField12EE() != (s32)song)
-        sub_08078A70((u16)song);
+        SoundSongStart((u16)song);
     GameStateSetField12EE(song);
 }
 AT("00005EA8") const u8 StartTrackedSongTail[2] = {0};
 
 AT("00005ED8") void StopTrackedSong(u32 song)
 {
-    sub_08078B3C((u16)song);
+    SoundSongStop((u16)song);
     GameStateSetField12EE(-1);
 }
 AT("00005ED8") const u8 StopTrackedSongTail[2] = {0};
@@ -267,34 +273,34 @@ AT("00005ED8") const u8 StopTrackedSongTail[2] = {0};
 AT("00005F04") void StartSecondaryTrackedSong(u32 song, s32 force)
 {
     if (force)
-        sub_08078A70((u16)song);
+        SoundSongStart((u16)song);
     else if (GameStateGetField42C4() != (s32)song)
-        sub_08078A70((u16)song);
+        SoundSongStart((u16)song);
     GameStateSetField42C4(song);
 }
 AT("00005F04") const u8 StartSecondaryTrackedSongTail[2] = {0};
 
 AT("00005F34") void SoundSongStartAlternate(u32 song)
 {
-    sub_08078A9C((u16)song);
+    SoundSongStartOrChange((u16)song);
 }
 AT("00005F34") const u8 SoundSongStartAlternateTail[2] = {0};
 
 AT("00005F44") void SoundSongStopU16(u32 song)
 {
-    sub_08078B3C((u16)song);
+    SoundSongStop((u16)song);
 }
 AT("00005F44") const u8 SoundSongStopU16Tail[2] = {0};
 
 AT("00005F54") void StartIndexedSong(u32 playerIndex, u32 songIndex)
 {
-    void *player = gSoundPlayerTable[playerIndex].player;
-    const void *song = gSongTable[songIndex].song;
-    sub_0807915C(player, song);
+    struct SoundPlayer *player = gSoundPlayerTable[playerIndex].player;
+    const void *song = gSongTable[songIndex].header;
+    SoundPlayerStart(player, song);
 }
 
 AT("00006018") void StopSoundPlayer(u32 playerIndex)
 {
-    void *player = gSoundPlayerTable[playerIndex].player;
+    struct SoundPlayer *player = gSoundPlayerTable[playerIndex].player;
     SoundPlayerStop(player);
 }

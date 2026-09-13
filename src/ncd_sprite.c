@@ -1,10 +1,79 @@
 /* NCD instance initialization at 0807BC2C, instruction-matched with agbcc. */
 #include "ncd.h"
 #include "heap.h"
+#include "list.h"
 #include "sprite_engine.h"
 extern void CpuFill(void *,u32,u32);
 extern void CpuCopy(void *,const void *,u32);
+extern void HeapFree(struct Heap *,void *);
 #define AT(x) __attribute__((section(".rom." x)))
+#ifdef __GNUC__
+#define TARGET_REGISTER(name)
+#define NCD_ALLOCATION_BARRIER(value) ((void)0)
+#else
+#define TARGET_REGISTER(name) asm(name)
+#define NCD_ALLOCATION_BARRIER(value) asm volatile("" : "+r"(value))
+#endif
+
+extern void SpriteTileAllocatorRelease(void *allocator, s32 tile);
+
+/* Release one resource's palette-binding table and clear its four descriptor
+ * slots.  NCD resources reserve 0x80 bytes here even though one descriptor is
+ * 0x20 bytes. */
+AT("0007B9CC") void NcdResetResource(u32 resource)
+{
+ register u32 offset TARGET_REGISTER("r4")=resource;
+ register struct SpriteEngineState **global TARGET_REGISTER("r6")=
+     (struct SpriteEngineState **)0x03006118;
+ register u32 resourcesOffset TARGET_REGISTER("r5");
+ struct SpriteEngineState *state=*global;
+ struct Heap *heap=*(struct Heap **)((u8 *)state+0x11C);
+ struct SpriteResourceDescriptor *resources;
+
+ resourcesOffset=0x61C;
+ resources=*(struct SpriteResourceDescriptor **)((u8 *)state+resourcesOffset);
+ offset <<=5;
+ {
+  register u32 slot TARGET_REGISTER("r1")=offset+(u32)resources;
+  HeapFree(heap,*(void **)(slot+4));
+ }
+ {
+  register struct SpriteResourceDescriptor *resetBase TARGET_REGISTER("r0");
+  resetBase=*(struct SpriteResourceDescriptor **)
+      ((u8 *)*global+resourcesOffset);
+  CpuFill((u8 *)resetBase+offset,128,0);
+ }
+}
+
+/* Sort one sprite into its flag-selected render queue and account for the
+ * queued object.  Each priority bucket is a 12-byte List. */
+AT("0007BDAC") void NcdQueueSprite(struct NcdSprite *sprite, u32 priority)
+{
+ register u8 *object TARGET_REGISTER("r4");
+ register u8 **global TARGET_REGISTER("r5");
+ register u8 *state TARGET_REGISTER("r3");
+ register u32 rawFlags TARGET_REGISTER("r2");
+ register u32 group TARGET_REGISTER("r0");
+ register u8 *countState TARGET_REGISTER("r1");
+ List *queue;
+ register u32 offset TARGET_REGISTER("r2");
+ object = (u8 *)sprite;
+ global = (u8 **)0x03006118;
+ state = *global;
+ rawFlags = object[38];
+ group = rawFlags & 12;
+ state += 288;
+ state += group;
+ offset = priority;
+ offset <<= 1;
+ offset += priority;
+ offset <<= 2;
+ queue = *(List **)state;
+ ListAppend((List *)((u8 *)queue + offset), (ListNode *)object);
+ countState = *global;
+ countState += 320;
+ (*(u32 *)countState)++;
+}
 __attribute__((section(".rom.0007BC2C"))) void NcdInitSprite(struct NcdSprite *sprite,s32 pool)
 {
  CpuFill(sprite,52,0);
@@ -75,3 +144,66 @@ AT("00008A70") void NcdSpriteContainerReset(void *container)
  NcdInitSprite((struct NcdSprite *)(record+8),0);
 }
 AT("00008A70") const u8 NcdSpriteContainerResetTail[2]={0};
+
+/* Byte-oriented view used while the remaining NCD runtime flags are decoded. */
+struct NcdRuntimeAllocation {
+ u8 unknown00[10];
+ s16 resourceIndex;
+ u8 unknown0C[23];
+ u8 partCount;
+ u8 unknown24[3];
+ u8 flags27;
+ u8 unknown28[8];
+ void *allocation;
+};
+
+/* Release every per-cell OBJ-tile handle owned by a multipart sprite.  Copy
+ * mode one borrows storage; copy mode two owns only its allocation array. */
+AT("0007BEC0")
+void NcdRuntimeSpriteReleaseAllocation(struct NcdSprite *sprite)
+{
+ struct NcdRuntimeAllocation *self = (struct NcdRuntimeAllocation *)sprite;
+ u8 *allocation = self->allocation;
+ u32 mode;
+ struct Heap *heap;
+ void *toFree;
+
+ if (allocation == 0)
+  return;
+ mode = self->flags27;
+ mode <<= 30;
+ mode >>= 30;
+ NCD_ALLOCATION_BARRIER(mode);
+ switch ((s32)mode) {
+ case 0:
+  {
+   u8 *state = *(u8 **)0x03006118;
+   void *allocator = *(void **)(state + 0x618)
+                   + self->resourceIndex * 16;
+   u8 *part = allocation;
+   u16 i = 0;
+   register u8 *countTemp TARGET_REGISTER("r0") = (u8 *)self + 35;
+   u8 *count;
+   NCD_ALLOCATION_BARRIER(countTemp);
+   count = countTemp;
+   while (i < *count) {
+    SpriteTileAllocatorRelease(allocator, *(s16 *)part);
+    i++;
+    part += 4;
+   }
+   heap = *(struct Heap **)(*(u8 **)0x03006118 + 0x11C);
+   toFree = self->allocation;
+  }
+  break;
+ case 1:
+  return;
+ case 2:
+  heap = *(struct Heap **)(*(u8 **)0x03006118 + 0x11C);
+  toFree = allocation;
+  break;
+ default:
+  return;
+ }
+ HeapFree(heap, toFree);
+ self->allocation = 0;
+}

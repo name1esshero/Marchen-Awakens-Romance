@@ -2,15 +2,12 @@
 #include "runtime_leaf.h"
 #include "runtime_accessors.h"
 #include "sound.h"
+#include "ncd.h"
 
 #define AT(x) __attribute__((section(".rom." x)))
 
 extern void LZ77UnCompVram(const void *source, void *destination);
-extern void sub_0807BEC0(void *state);
-extern s32 sub_0806E4E8();
 extern s32 sub_08004DA8(void);
-extern void sub_08078A70(u16 song);
-extern void sub_08078BA4(void);
 extern void StopSoundPlayer(u32 player);
 
 /* This call site uses destination/source order opposite to the BIOS wrapper. */
@@ -22,15 +19,15 @@ AT("00002148") void Lz77UnCompVramSwapped(void *destination, const void *source)
 /* Reset the embedded resource beginning eight bytes into a sprite sidecar. */
 AT("00008BD8") void SpriteAuxiliaryReset(void *state)
 {
-    sub_0807BEC0((u8 *)state + 8);
+    NcdRuntimeSpriteReleaseAllocation((struct NcdSprite *)((u8 *)state + 8));
 }
 
-/* Advance the procedural map generator and return its new state. */
-AT("0006E52C") s32 MapGeneratorStep(void)
+/* Public save-checksum entry point; the worker below contains the CRC loop. */
+AT("0006E52C") u32 CalculateSaveCrc32(const void *data, u32 size)
 {
-    return sub_0806E4E8();
+    return CalculateCrc32(data, size);
 }
-AT("0006E52C") const u8 MapGeneratorStepTail[2] = {0};
+AT("0006E52C") const u8 CalculateSaveCrc32Tail[2] = {0};
 
 AT("00005084") s32 RuntimeReadSignedByte(void)
 {
@@ -40,13 +37,13 @@ AT("00005084") const u8 RuntimeReadSignedByteTail[2] = {0};
 
 AT("00005E98") void SoundSongStartU16(u32 song)
 {
-    sub_08078A70((u16)song);
+    SoundSongStart((u16)song);
 }
 AT("00005E98") const u8 SoundSongStartU16Tail[2] = {0};
 
 AT("00005EF0") void RuntimeResetSelection(void)
 {
-    sub_08078BA4();
+    SoundStopAllPlayers();
     GameStateSetField12EE(-1);
 }
 AT("00005EF0") const u8 RuntimeResetSelectionTail[2] = {0};
@@ -76,6 +73,32 @@ AT("00003770") const u8 HeapFreeDefaultTail[2]={0};
 
 AT("0006E538") s32 Crc32Difference(const void *data,u32 size,s32 expected)
 {
- return expected-sub_0806E4E8(data,size);
+ return expected-CalculateCrc32(data,size);
 }
 AT("0006E538") const u8 Crc32DifferenceTail[2]={0};
+
+/* Standard reflected CRC-32 used to validate the cartridge save block. */
+AT("0006E4E8") u32 CalculateCrc32(const void *data, u32 size)
+{
+    const u8 *bytes;
+    u32 length;
+    u32 crc;
+    u32 offset;
+
+    bytes = data;
+    length = size;
+    crc = ~0u;
+
+    for (offset = 0; offset < length; offset++) {
+        u32 bit;
+
+        crc ^= bytes[offset];
+        for (bit = 0; bit <= 7; bit++) {
+            if (crc & 1)
+                crc = (crc >> 1) ^ 0xEDB88320;
+            else
+                crc >>= 1;
+        }
+    }
+    return ~crc;
+}

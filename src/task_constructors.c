@@ -16,7 +16,7 @@ extern void sub_08080BDC(void *task);
 extern void sub_08080BD4(void *task);
 extern void sub_0805615C(void);
 extern void sub_08009728(s32, s32);
-extern s32 FindResourceByName(s32, const char *);
+extern s32 SpriteResourceFindGroup(s32, const char *);
 
 AT("000037D8") void ScheduleVramFillTask(void *destination, u32 value, u32 size)
 {
@@ -165,7 +165,7 @@ AT("00027894") u8 *CreateBattleNamedTaskA(s32 owner, s32 slot,
     task[106] = slot;
     task[105] = owner == 0;
     task[107] = 0;
-    *(u16 *)(task + 112) = FindResourceByName(1, (const char *)0x080877A8);
+    *(u16 *)(task + 112) = SpriteResourceFindGroup(1, (const char *)0x080877A8);
     return task;
 }
 #endif
@@ -180,7 +180,7 @@ AT("00026140") u8 *CreateBattleNamedTaskB(s32 owner, s32 slot,
     task[253] = slot;
     task[252] = owner == 0;
     task[254] = 0;
-    *(u16 *)(task + 258) = FindResourceByName(1, (const char *)0x08087778);
+    *(u16 *)(task + 258) = SpriteResourceFindGroup(1, (const char *)0x08087778);
     return task;
 }
 #endif

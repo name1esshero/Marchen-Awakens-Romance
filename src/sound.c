@@ -6,9 +6,7 @@
 #define players ((const struct SoundPlayerEntry *)0x0808B144)
 #define songs ((const struct SoundSongEntry *)0x0808B1B0)
 extern void sub_08077DC0(void);
-extern void sub_0807915C(struct SoundPlayer *, const void *);
 extern void sub_08078644(struct SoundPlayer *, struct SoundTrack *);
-extern void sub_080789CC(struct SoundPlayer *,u16);
 extern void sub_08079240(struct SoundPlayer *);
 extern u8 gIwramBase[];
 extern u8 gSoundIrqModeOffset[];
@@ -90,7 +88,7 @@ void SoundPlayerStop(struct SoundPlayer *p)
 AT("00078C08")
 void SoundFadeOut(struct SoundPlayer *p,u16 interval)
 {
-    sub_080789CC(p,interval);
+    SoundPlayerFadeOut(p,interval);
 }
 
 AT("00078C08") const u8 SoundFadeOutTail[2]={0,0};

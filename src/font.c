@@ -11,6 +11,11 @@ void sub_0807ADE0(struct Font *, const struct FontData *)
     __attribute__((alias("SetFontData")));
 
 #define AT(x) __attribute__((section(".rom." x)))
+#ifdef AGBCC
+#define TARGET_REGISTER(name) asm(name)
+#else
+#define TARGET_REGISTER(name)
+#endif
 extern void CpuFill(void *, u32, u32);
 
 /* The dialogue reader accepts this wider lead-byte range, including private
@@ -54,6 +59,87 @@ const u16 *FontPalette(const struct Font *font)
 {
     const struct FontData *data = font->data;
     return (const u16 *)((const u8 *)data + data->paletteOffset);
+}
+
+/* Convert the game's 16-bit character encoding to a FONT.NFT glyph index.
+ * The arithmetic is deliberately expressed as wrapped 16-bit deltas: these
+ * are sparse Shift-JIS and private-use ranges, rather than Unicode ranges.
+ * Gaps in the kana block map to glyph zero as they did in the original. */
+AT("0007AE7C")
+u32 FontCharacterToGlyph(u32 input)
+{
+    u32 raw = input << 16;
+    register u32 code TARGET_REGISTER("r2") = raw >> 16;
+    u32 result = 0;
+
+    if ((code & 0xFF00) == 0) {
+        result = code + 0x1E0;
+    } else {
+        u16 delta = code - 0x81B0;
+        if (delta <= 0xA) {
+            result = code - 0x8140;
+        } else {
+            delta = code - 0x8140;
+            if (delta <= 0xBF)
+                result = code - 0x8140;
+            else if ((u16)(code - 0x839F) <= 0x37)
+                result = code - 0x81C0;
+            else if ((u16)(code - 0x8440) <= 0x51)
+                result = code - 0x8200;
+            else if ((u16)(code - 0x8740) <= 0x5C)
+                result = code - 0x82C0;
+            else if ((u16)(code - 0x8240) <= 0x27F) {
+                if ((u16)(code - 0x8240) <= 0x5A ||
+                    (u16)(code - 0x829F) <= 0x52)
+                    result = code - 0x8180;
+                else if ((u16)(code - 0x8340) <= 0xBF)
+                    result = code - 0x81C0;
+            } else if ((u16)(code - 0x8840) <= 0x104F) {
+                result = ((raw >> 24) - 0x88) * 192 +
+                         (code & 0xFF) + 0x500;
+            } else if ((u16)(code - 0x9890) <= 0x521F) {
+                if ((u16)(code - 0x9890) <= 0x76F)
+                    result = ((raw >> 24) - 0x98) * 192 +
+                             (code & 0xFF) + 0x1100;
+                else if ((u16)(code - 0xE040) <= 0xA6F)
+                    result = ((code >> 8) - 0xE0) * 192 +
+                             (code & 0xFF) + 0x1700;
+                else
+                    result = 0xFFFF;
+            } else {
+                result = 0xFFFF;
+            }
+        }
+    }
+    return result;
+}
+
+/* Resolve the two control-font aliases, substitute the game's missing-glyph
+ * box for unsupported codes, then locate the packed bitmap in FONT.NFT. */
+AT("0007AE10")
+const u8 *GetFontGlyph(const struct Font *font, u32 input)
+{
+    register const struct Font *handle TARGET_REGISTER("r5") = font;
+    u16 code = input;
+    register u32 glyph TARGET_REGISTER("r4");
+
+    if (code == 0xF056)
+        glyph = FontCharacterToGlyph(0x81FA);
+    else if (code == 0xF040)
+        glyph = FontCharacterToGlyph(0x81F9);
+    else {
+        glyph = FontCharacterToGlyph(code);
+        if (glyph == 0xFFFF)
+            glyph = FontCharacterToGlyph(0x81A1);
+    }
+
+    {
+        const struct FontData *data = handle->data;
+        const u8 *result = (const u8 *)data + data->glyphOffset;
+        u32 stride = ((data->width * data->bpp) + 7) >> 3;
+        stride *= data->height;
+        return result + glyph * stride;
+    }
 }
 
 /* Decode one engine character. The private lead-byte range extends beyond

@@ -99,28 +99,12 @@ sub_081A8140:
 	subs r0, r0, r2
 	.2byte 0xB108
 	movs r0, r0
-	movs r1, r1
-	movs r2, r1
-	ldr r0, [sp, #64]
-	lsrs r0, r1, #32
-	ldrb r4, [r5, #10]
-	lsrs r2, r3, #32
-	ldrb r2, [r1, #12]
-	lsrs r2, r3, #32
-	ldrb r3, [r2, #18]
-	lsrs r2, r3, #32
-	ldrb r5, [r7, #21]
-	lsrs r2, r3, #32
-	ldrb r2, [r4, #23]
-	lsrs r2, r3, #32
-	ldrb r2, [r3, #25]
-	lsrs r2, r3, #32
-	ldrb r3, [r2, #31]
-	lsrs r2, r3, #32
-	strh r1, [r4, #0]
-	lsrs r2, r3, #32
-	strh r5, [r3, #4]
-	lsrs r2, r3, #32
+
+@ 1A8164..1A8190 is decompiled as gSongHeader_020(); see src/decompiled.json
+
+	.section .rom.001A8190, "ax"
+	.syntax unified
+	.thumb
 	str r6, [r7, r2]
 	lsls r4, r7, #2
 	cmp r6, #187
@@ -624,7 +608,7 @@ _081A8634:
 	ldr r4, [sp, #292]
 	.inst.n 0x4BE7  @ ldr r3, _081A89E4
 	push {r3, r4, r7}
-	ldr r0, _081A8988
+	.inst.n 0x48CF  @ ldr r0, _081A8988
 	strh r0, [r6, #36]
 	add r3, sp, #824
 	cmp r12, r10
@@ -877,7 +861,7 @@ _081A87D0:
 	.global _081A87E2
 _081A87E2:
 	cmp r2, #212
-	bmi _081A8850
+	.2byte 0xD434
 	movs r0, #80
 	bls _081A8704
 	adds r4, #46
@@ -929,32 +913,12 @@ _081A882C:
 	lsrs r2, r3, #32
 	lsls r1, r6, #2
 	movs r0, r0
-	movs r1, r1
-	movs r2, r1
-	ldr r0, [sp, #64]
-	lsrs r0, r1, #32
-	strh r0, [r2, #12]
-	lsrs r2, r3, #32
-	strh r1, [r5, #14]
-	lsrs r2, r3, #32
-	strh r0, [r5, #24]
-	lsrs r2, r3, #32
-	strh r1, [r2, #30]
-	lsrs r2, r3, #32
-	.global _081A8850
-_081A8850:
-	strh r7, [r3, #32]
-	lsrs r2, r3, #32
-	strh r1, [r7, #40]
-	lsrs r2, r3, #32
-	strh r5, [r4, #42]
-	.global _081A885A
-_081A885A:
-	lsrs r2, r3, #32
-	strh r0, [r4, #48]
-	lsrs r2, r3, #32
-	strh r4, [r6, #50]
-	lsrs r2, r3, #32
+
+@ 1A8838..1A8864 is decompiled as gSongHeader_021(); see src/decompiled.json
+
+	.section .rom.001A8864, "ax"
+	.syntax unified
+	.thumb
 	str r6, [r7, r2]
 	lsls r4, r7, #2
 	adds r6, #187
@@ -1071,7 +1035,7 @@ sub_081A8920:
 _081A8922:
 	mvns r0, r4
 	.inst.n 0x48E0  @ ldr r0, _081A8CA8
-	bmi _081A885A
+	.2byte 0xD498
 	bmi _081A89B0
 	ldrh r7, [r0, #34]
 	bmi _081A89B6
@@ -1269,7 +1233,7 @@ _081A8A52:
 	ldrh r0, [r0, #34]
 	.global _081A8A58
 _081A8A58:
-	b _081A8C1C
+	.2byte 0xE0E0
 	.global _081A8A5A
 _081A8A5A:
 	ldr r0, [sp, #268]
@@ -1538,26 +1502,12 @@ _081A8C06:
 	ldrh r1, [r7, #30]
 	lsrs r2, r3, #32
 	lsls r1, r6, #2
-	.global _081A8C14
-_081A8C14:
-	movs r5, r0
-	movs r2, r1
-	ldr r0, [sp, #64]
-	lsrs r0, r1, #32
-	.global _081A8C1C
-_081A8C1C:
-	ldrh r4, [r4, #2]
-	lsrs r2, r3, #32
-	ldrh r7, [r5, #18]
-	.global _081A8C22
-_081A8C22:
-	lsrs r2, r3, #32
-	ldrh r5, [r0, #24]
-	lsrs r2, r3, #32
-	ldrh r2, [r3, #26]
-	lsrs r2, r3, #32
-	ldrh r2, [r5, #30]
-	lsrs r2, r3, #32
+
+@ 1A8C14..1A8C30 is decompiled as gSongHeader_022(); see src/decompiled.json
+
+	.section .rom.001A8C30, "ax"
+	.syntax unified
+	.thumb
 	str r6, [r7, r2]
 	lsls r4, r7, #2
 	subs r4, #187
@@ -1672,7 +1622,7 @@ _081A8CCE:
 	.global _081A8CDE
 _081A8CDE:
 	.2byte 0x47E4
-	bmi _081A8C14
+	.2byte 0xD498
 	.global _081A8CE2
 _081A8CE2:
 	bmi _081A8D6C
@@ -1684,7 +1634,7 @@ _081A8CE8:
 	.global _081A8CEC
 _081A8CEC:
 	mvns r4, r4
-	bmi _081A8C22
+	.2byte 0xD498
 	bmi _081A8D70
 	ldrh r3, [r0, #34]
 	.global _081A8CF4
@@ -1935,26 +1885,12 @@ _081A8E50:
 	.2byte 0xF0B2
 	subs r5, r1, r2
 	.2byte 0xB108
-	movs r5, r0
-	.global _081A8E5A
-_081A8E5A:
-	movs r2, r1
-	ldr r0, [sp, #64]
-	.global _081A8E5E
-_081A8E5E:
-	lsrs r0, r1, #32
-	ldrh r0, [r6, #32]
-	lsrs r2, r3, #32
-	ldrh r2, [r7, #38]
-	lsrs r2, r3, #32
-	ldrh r6, [r0, #42]
-	lsrs r2, r3, #32
-	ldrh r1, [r0, #46]
-	.global _081A8E6E
-_081A8E6E:
-	lsrs r2, r3, #32
-	ldrh r4, [r5, #46]
-	lsrs r2, r3, #32
+
+@ 1A8E58..1A8E74 is decompiled as gSongHeader_023(); see src/decompiled.json
+
+	.section .rom.001A8E74, "ax"
+	.syntax unified
+	.thumb
 	str r6, [r7, r2]
 	lsls r4, r7, #2
 	cmp r5, #187
@@ -2058,9 +1994,9 @@ _081A8F2A:
 	ldrh r5, [r0, #34]
 	ldrh r1, [r0, #34]
 	ldrh r5, [r0, #34]
-	bge _081A8E5A
+	.2byte 0xDA8C
 	ldr r4, [r7, #0]
-	bls _081A8E5E
+	.2byte 0xD98C
 	ldrh r0, [r0, #34]
 	ldrh r3, [r0, #34]
 	ldrh r0, [r0, #34]
@@ -2068,7 +2004,7 @@ _081A8F2A:
 	.2byte 0xB3B4
 	ldrh r6, [r7, #56]
 	lsrs r2, r3, #32
-	bls _081A8E6E
+	.2byte 0xD98C
 	ldr r6, [r7, #0]
 	cmp r4, r1
 	cmp r12, r1
@@ -2299,22 +2235,12 @@ _081A9208:
 	subs r1, r2, r2
 	.2byte 0xB108
 	movs r0, r0
-	movs r4, r0
-	movs r2, r1
-	ldr r0, [sp, #64]
-	.global _081A9216
-_081A9216:
-	lsrs r0, r1, #32
-	ldrh r4, [r6, #50]
-	lsrs r2, r3, #32
-	ldrh r5, [r4, #58]
-	lsrs r2, r3, #32
-	ldrh r4, [r3, #60]
-	lsrs r2, r3, #32
-	str r1, [sp, #436]
-	.global _081A9226
-_081A9226:
-	lsrs r2, r3, #32
+
+@ 1A9210..1A9228 is decompiled as gSongHeader_024(); see src/decompiled.json
+
+	.section .rom.001A9228, "ax"
+	.syntax unified
+	.thumb
 	str r6, [r7, r2]
 	lsls r4, r7, #2
 	ldr r3, _081A951C
@@ -2399,7 +2325,7 @@ _081A92A8:
 	ldr r0, [sp, #264]
 	.global _081A92BA
 _081A92BA:
-	bvs _081A9226
+	.2byte 0xD6B4
 	ldr r4, [sp, #232]
 	.global _081A92BE
 _081A92BE:
@@ -2439,7 +2365,7 @@ _081A92D6:
 	subs r2, #215
 	adds r7, #152
 	subs r2, #215
-	bvs _081A9216
+	.2byte 0xD698
 	subs r4, #214
 	subs r2, #140
 	subs r4, #214
@@ -2451,7 +2377,7 @@ _081A92EE:
 	subs r6, #215
 	.global _081A92F2
 _081A92F2:
-	bvs _081A9226
+	.2byte 0xD698
 	.global _081A92F4
 _081A92F4:
 	.2byte 0xD63C
@@ -3031,7 +2957,7 @@ _081A9680:
 	.global _081A9682
 _081A9682:
 	adds r7, #189
-	adr r0, _081A9948
+	.inst.n 0xA0B0  @ adr r0, _081A9948
 	subs r6, #217
 	ldrh r4, [r4, #34]
 	ldrh r4, [r7, #32]
@@ -3381,7 +3307,7 @@ _081A9904:
 	lsrs r2, r3, #32
 	.2byte 0xB6B3
 	subs r0, r3, r2
-	bls _081A9920
+	.2byte 0xD908
 	ldr r7, [r6, r0]
 	.global _081A9910
 _081A9910:
@@ -3393,31 +3319,15 @@ _081A9910:
 	subs r0, r3, r2
 	.2byte 0xB108
 	movs r0, r0
-	.global _081A9920
-_081A9920:
-	movs r0, r1
-	movs r2, r1
-	ldr r0, [sp, #64]
-	lsrs r0, r1, #32
-	str r2, [sp, #160]
-	lsrs r2, r3, #32
-	str r4, [sp, #200]
-	lsrs r2, r3, #32
-	str r5, [sp, #12]
-	lsrs r2, r3, #32
-	str r5, [sp, #320]
-	lsrs r2, r3, #32
-	str r6, [sp, #504]
-	lsrs r2, r3, #32
-	str r6, [sp, #796]
-	lsrs r2, r3, #32
-	str r7, [sp, #136]
-	lsrs r2, r3, #32
-	ldr r0, [sp, #656]
-	lsrs r2, r3, #32
+
+@ 1A9920..1A9948 is decompiled as gSongHeader_026(); see src/decompiled.json
+
+	.section .rom.001A9948, "ax"
+	.syntax unified
 	.global _081A9948
 _081A9948:
 	.4byte 0x00BC50BE
+	.thumb
 	mov r11, r7
 	adds r1, #189
 	sub sp, #128
@@ -3759,7 +3669,7 @@ _081A9BC2:
 	.2byte 0xB108
 	str r6, [r7, r2]
 	lsls r4, r7, #2
-	ldr r1, _081A9EC8
+	.inst.n 0x49BD
 	sub sp, #128
 	.global _081A9BD4
 _081A9BD4:
@@ -3894,7 +3804,7 @@ _081A9CB2:
 	.global _081A9CC0
 _081A9CC0:
 	ldr r0, [sp, #296]
-	ldr r0, _081AA010
+	.inst.n 0x48D3  @ ldr r0, _081AA010
 	bmi _081A9BD4
 	str r6, [r0, #68]
 	push {r1, r2, r7}
@@ -3924,11 +3834,11 @@ sub_081A9CDC:
 	ldr r5, [r0, #4]
 	.global _081A9CEC
 _081A9CEC:
-	ldr r2, _081A9F38
+	.inst.n 0x4A92  @ ldr r2, _081A9F38
 	.global _081A9CEE
 _081A9CEE:
 	strh r4, [r5, #50]
-	ldr r2, _081AA0D0
+	.inst.n 0x4AF7  @ ldr r2, _081AA0D0
 	add r0, sp, #416
 	sub sp, #192
 	.global _081A9CF6
@@ -4055,15 +3965,15 @@ _081A9DBC:
 	lsls r4, r7, #2
 	ldrb r5, [r7, #30]
 	movs r1, #239
-	adr r0, _081A9F98
+	.inst.n 0xA074  @ adr r0, _081A9F98
 	sub sp, #192
-	adr r0, _081AA08C
+	.inst.n 0xA0B0  @ adr r0, _081AA08C
 	movs r1, #239
-	adr r0, _081A9FA0
+	.inst.n 0xA074  @ adr r0, _081A9FA0
 	.global _081A9DCE
 _081A9DCE:
-	adr r0, _081AA090
-	adr r0, _081AA190
+	.inst.n 0xA0B0  @ adr r0, _081AA090
+	.inst.n 0xA0EF  @ adr r0, _081AA190
 	add r0, sp, #704
 	add r0, sp, #704
 	movs r6, #212
@@ -4115,7 +4025,7 @@ _081A9E24:
 	.2byte 0xF3B3
 	subs r5, r3, r2
 	bmi _081A9E44
-	ldr r0, _081A9ECC
+	.inst.n 0x4826
 	.global _081A9E34
 _081A9E34:
 	.4byte 0x8624268C
@@ -4127,7 +4037,7 @@ _081A9E44:
 	ldrh r4, [r2, #38]
 	subs r4, #38
 	bgt _081A9D64
-	ldr r0, _081A9EC0
+	.inst.n 0x481D
 	.2byte 0xB38C
 	ldr r5, [sp, #972]
 	lsrs r2, r3, #32
@@ -4138,9 +4048,9 @@ _081A9E44:
 	lsrs r2, r3, #32
 	add r0, sp, #704
 	add r0, sp, #704
-	adr r0, _081AA124
+	.inst.n 0xA0B0  @ adr r0, _081AA124
 	movs r1, #238
-	adr r0, _081AA038
+	.inst.n 0xA074  @ adr r0, _081AA038
 	ldmia r0!, {r1, r4, r5, r7}
 	subs r5, r3, r2
 	.2byte 0xB108
@@ -4175,24 +4085,11 @@ _081A9EA4:
 	.4byte 0xB0B03C39
 	.4byte 0x1A9E75B2
 	.4byte 0x0000B108
-	.4byte 0x000A000A
-	.4byte 0x08089810
-	.global _081A9EC0
-_081A9EC0:
-	.4byte 0x081A9948  @ ROM+0x1A9948
-	.4byte 0x081A9A7C
-	.global _081A9EC8
-_081A9EC8:
-	.4byte 0x081A9B30  @ ROM+0x1A9B30
-	.global _081A9ECC
-_081A9ECC:
-	.4byte 0x081A9B80  @ ROM+0x1A9B80
-	.4byte 0x081A9BCC
-	.4byte 0x081A9C27
-	.4byte 0x081A9C76
-	.4byte 0x081A9D1F
-	.4byte 0x081A9DBC
-	.4byte 0x081A9E6C
+
+@ 1A9EB8..1A9EE8 is decompiled as gSongHeader_027(); see src/decompiled.json
+
+	.section .rom.001A9EE8, "ax"
+	.syntax unified
 	.4byte 0x00BC50BE
 	.4byte 0x31BD4DBB
 	.4byte 0x6C3AD9A0
@@ -4224,6 +4121,7 @@ _081A9F38:
 	.byte 0xBC
 	.global _081A9F4E
 _081A9F4E:
+	.thumb
 	pop {pc}
 	.4byte 0x6C39ED32
 	.4byte 0x7437D9A0
@@ -4335,7 +4233,7 @@ _081AA078:
 	strh r4, [r6, #48]
 	strh r4, [r2, #54]
 	movs r6, #213
-	bge _081AA14C
+	.2byte 0xDA64
 	adds r4, #46
 	bmi _081A9FA0
 	strh r2, [r5, #48]
@@ -4410,28 +4308,12 @@ _081AA134:
 	subs r0, r4, r2
 	.2byte 0xB108
 	movs r0, r0
-	.global _081AA140
-_081AA140:
-	movs r6, r0
-	movs r2, r1
-	ldr r0, [sp, #64]
-	lsrs r0, r1, #32
-	ldr r6, [sp, #928]
-	lsrs r2, r3, #32
-	.global _081AA14C
-_081AA14C:
-	ldr r7, [sp, #300]
-	lsrs r2, r3, #32
-	ldr r7, [sp, #588]
-	lsrs r2, r3, #32
-	.global _081AA154
-_081AA154:
-	ldr r7, [sp, #832]
-	lsrs r2, r3, #32
-	ldr r7, [sp, #984]
-	lsrs r2, r3, #32
-	adr r0, _081AA28C
-	lsrs r2, r3, #32
+
+@ 1AA140..1AA160 is decompiled as gSongHeader_028(); see src/decompiled.json
+
+	.section .rom.001AA160, "ax"
+	.syntax unified
+	.thumb
 	str r6, [r7, r2]
 	lsls r4, r7, #2
 	subs r2, #187
@@ -4502,7 +4384,7 @@ _081AA206:
 	ldrh r0, [r7, #0]
 	adr r0, _081AA5B4
 	adds r5, #228
-	bmi _081AA140
+	.2byte 0xD498
 	str r2, [sp, #224]
 	strh r5, [r6, #48]
 	.global _081AA212
@@ -4824,7 +4706,7 @@ _081AA44A:
 	strh r4, [r0, #50]
 	strh r6, [r0, #50]
 	strh r7, [r0, #50]
-	ldr r1, _081AA814
+	.inst.n 0x49F0  @ ldr r1, _081AA814
 	bvs _081AA39E
 	bvs _081AA368
 	ldr r3, _081AA678
@@ -4834,7 +4716,7 @@ _081AA44A:
 	.global _081AA45C
 _081AA45C:
 	ldr r0, [sp, #300]
-	ldr r1, _081AA7C4
+	.inst.n 0x49D9  @ ldr r1, _081AA7C4
 	.global _081AA460
 _081AA460:
 	bmi _081AA37C
@@ -4843,7 +4725,7 @@ _081AA462:
 	ldrh r7, [r0, #34]
 	ldrh r6, [r0, #34]
 	ldrh r3, [r1, #34]
-	ldr r1, _081AA858
+	.inst.n 0x49FB  @ ldr r1, _081AA858
 	b _081A9DCE
 	.4byte 0x3D985842
 	.4byte 0xD4984798
@@ -4956,7 +4838,7 @@ _081AA538:
 	movs r1, #230
 	.global _081AA53A
 _081AA53A:
-	adr r0, _081AA71C
+	.inst.n 0xA078  @ adr r0, _081AA71C
 	adds r1, #234
 	.global _081AA53E
 _081AA53E:
@@ -4992,7 +4874,7 @@ _081AA55E:
 	.global _081AA562
 _081AA562:
 	ldr r1, [r4, #0]
-	adr r0, _081AA7E8
+	.inst.n 0xA0A0  @ adr r0, _081AA7E8
 	adds r1, #234
 	ldrh r4, [r5, #32]
 	movs r6, #212
@@ -5063,7 +4945,7 @@ _081AA5EE:
 	cmp r4, #38
 	bmi _081AA512
 	.2byte 0xB386
-	adr r5, _081AA82C
+	.inst.n 0xA589  @ adr r5, _081AA82C
 	lsrs r2, r3, #32
 	bmi _081AA526
 	adds r0, #38
@@ -5147,25 +5029,15 @@ _081AA6A4:
 	ldrh r4, [r2, #38]
 	adds r1, r3, #7
 	ldr r0, [sp, #272]
-	adr r2, _081AA98C
+	.inst.n 0xA2B2  @ adr r2, _081AA98C
 	subs r5, r4, r2
 	.2byte 0xB108
-	movs r6, r0
-	movs r2, r1
-	ldr r0, [sp, #64]
-	lsrs r0, r1, #32
-	adr r1, _081AA854
-	lsrs r2, r3, #32
-	adr r2, _081AA75C
-	lsrs r2, r3, #32
-	adr r2, _081AA9FC
-	lsrs r2, r3, #32
-	adr r4, _081AA794
-	lsrs r2, r3, #32
-	adr r4, _081AA9F0
-	lsrs r2, r3, #32
-	adr r5, _081AA798
-	lsrs r2, r3, #32
+
+@ 1AA6C8..1AA6E8 is decompiled as gSongHeader_030(); see src/decompiled.json
+
+	.section .rom.001AA6E8, "ax"
+	.syntax unified
+	.thumb
 	str r6, [r7, r2]
 	lsls r4, r7, #2
 	subs r4, #187
@@ -5354,7 +5226,7 @@ _081AA92E:
 	lsrs r2, r3, #32
 	cmp r1, #179
 	subs r1, r5, r2
-	b _081AA154
+	.2byte 0xE408
 	.byte 0x42
 	.byte 0x38
 	.4byte 0x982C49E4
@@ -6925,7 +6797,7 @@ sub_081AB25A:
 	subs r5, #223
 	bcc _081AB1AA
 	strh r4, [r0, #50]
-	ldr r1, _081AB5EC
+	.inst.n 0x49D9  @ ldr r1, _081AB5EC
 	bcc _081AB1A4
 	add lr, r0
 	bls _081AB19C
@@ -7012,26 +6884,12 @@ _081AB33E:
 	lsrs r2, r3, #32
 	lsls r1, r6, #2
 	movs r0, r0
-	movs r0, r1
-	movs r2, r1
-	ldr r0, [sp, #64]
-	lsrs r0, r1, #32
-	adr r6, _081AB6FC
-	lsrs r2, r3, #32
-	add r0, sp, #12
-	lsrs r2, r3, #32
-	add r0, sp, #1016
-	lsrs r2, r3, #32
-	add r2, sp, #348
-	lsrs r2, r3, #32
-	add r4, sp, #140
-	lsrs r2, r3, #32
-	add r5, sp, #732
-	lsrs r2, r3, #32
-	add r6, sp, #880
-	lsrs r2, r3, #32
-	.2byte 0xB173
-	lsrs r2, r3, #32
+
+@ 1AB350..1AB378 is decompiled as gSongHeader_031(); see src/decompiled.json
+
+	.section .rom.001AB378, "ax"
+	.syntax unified
+	.thumb
 	str r6, [r7, r2]
 	lsls r4, r7, #2
 	adds r7, #187
@@ -7270,32 +7128,31 @@ _081AB5EC:
 	.4byte 0x8CD4865C
 	.4byte 0x1AB5C7B2
 	.4byte 0x0000B108
-	.4byte 0x000A0006
-	.4byte 0x08089810
-	.4byte 0x081AB378
-	.4byte 0x081AB3F9
-	.4byte 0x081AB430
-	.4byte 0x081AB4FB
-	.4byte 0x081AB571
-	.4byte 0x081AB5C0
+
+@ 1AB6C0..1AB6E0 is decompiled as gSongHeader_032(); see src/decompiled.json
+
+	.section .rom.001AB6E0, "ax"
+	.syntax unified
 	.4byte 0x00BC55BE
 	.4byte 0x46BD3CBB
 	.4byte 0x866C3CD4
 	.4byte 0x3C86143C
 	.4byte 0x00B1850C
-	.4byte 0x00FA0001
-	.4byte 0x0808A0E0
-	.global _081AB6FC
-_081AB6FC:
-	.4byte 0x081AB6E0  @ ROM+0x1AB6E0
+
+@ 1AB6F4..1AB700 is decompiled as gSongHeader_101(); see src/decompiled.json
+
+	.section .rom.001AB700, "ax"
+	.syntax unified
 	.4byte 0x00BC5FBE
 	.4byte 0x47BD22BB
 	.4byte 0x866C3CD4
 	.4byte 0x3C861C3C
 	.4byte 0x00B18514
-	.4byte 0x00FA0001
-	.4byte 0x0808A0E0
-	.4byte 0x081AB700
+
+@ 1AB714..1AB720 is decompiled as gSongHeader_102(); see src/decompiled.json
+
+	.section .rom.001AB720, "ax"
+	.syntax unified
 	.4byte 0x00BC5FBE
 	.4byte 0x03BD32BB
 	.4byte 0x3CD440C0
@@ -7303,9 +7160,11 @@ _081AB6FC:
 	.4byte 0x143CD481
 	.4byte 0xD438C086
 	.4byte 0xB1850C3C
-	.4byte 0x00FA0001
-	.4byte 0x0808A0E0
-	.4byte 0x081AB720
+
+@ 1AB73C..1AB748 is decompiled as gSongHeader_103(); see src/decompiled.json
+
+	.section .rom.001AB748, "ax"
+	.syntax unified
 	.4byte 0x00BC5FBE
 	.4byte 0x04BD3CBB
 	.4byte 0x3CD440C0
@@ -7313,30 +7172,38 @@ _081AB6FC:
 	.4byte 0x183CD482
 	.4byte 0xD438C086
 	.4byte 0xB185103C
-	.4byte 0x00FA0001
-	.4byte 0x0808A0E0
-	.4byte 0x081AB748
+
+@ 1AB764..1AB770 is decompiled as gSongHeader_104(); see src/decompiled.json
+
+	.section .rom.001AB770, "ax"
+	.syntax unified
 	.4byte 0x00BC5CBE
 	.4byte 0x05BD3CBB
 	.4byte 0xA87F3CF7
 	.4byte 0x000000B1
-	.4byte 0x00FA0001
-	.4byte 0x0808A0E0
-	.4byte 0x081AB770
+
+@ 1AB780..1AB78C is decompiled as gSongHeader_105(); see src/decompiled.json
+
+	.section .rom.001AB78C, "ax"
+	.syntax unified
 	.4byte 0x00BC6EBE
 	.4byte 0x06BD3CBB
 	.4byte 0xB07F3CFF
 	.4byte 0x000000B1
-	.4byte 0x00FA0001
-	.4byte 0x0808A0E0
-	.4byte 0x081AB78C
+
+@ 1AB79C..1AB7A8 is decompiled as gSongHeader_106(); see src/decompiled.json
+
+	.section .rom.001AB7A8, "ax"
+	.syntax unified
 	.4byte 0x00BC55BE
 	.4byte 0x07BD3CBB
 	.4byte 0x98783CE7
 	.4byte 0x000000B1
-	.4byte 0x00FA0001
-	.4byte 0x0808A0E0
-	.4byte 0x081AB7A8
+
+@ 1AB7B8..1AB7C4 is decompiled as gSongHeader_107(); see src/decompiled.json
+
+	.section .rom.001AB7C4, "ax"
+	.syntax unified
 	.4byte 0x00BC50BE
 	.4byte 0x31BD3CBB
 	.4byte 0x8C5442D4
@@ -7386,14 +7253,11 @@ _081AB6FC:
 	.4byte 0x26D49C68
 	.4byte 0xD486D486
 	.4byte 0x0000B185
-	.4byte 0x00780006
-	.4byte 0x08089810
-	.4byte 0x081AB7C4
-	.4byte 0x081AB7F1
-	.4byte 0x081AB814
-	.4byte 0x081AB849
-	.4byte 0x081AB862
-	.4byte 0x081AB873
+
+@ 1AB888..1AB8A8 is decompiled as gSongHeader_109(); see src/decompiled.json
+
+	.section .rom.001AB8A8, "ax"
+	.syntax unified
 	.4byte 0x00BC50BE
 	.4byte 0x30BD3CBB
 	.4byte 0x885448D6
@@ -7423,17 +7287,17 @@ _081AB6FC:
 	.4byte 0x98409843
 	.4byte 0xECA048EB
 	.4byte 0xB191983C
-	.4byte 0x00780004
-	.4byte 0x08089810
-	.4byte 0x081AB8A8
-	.4byte 0x081AB8D1
-	.4byte 0x081AB8F0
-	.4byte 0x081AB903
+
+@ 1AB91C..1AB934 is decompiled as gSongHeader_110(); see src/decompiled.json
+
+	.section .rom.001AB934, "ax"
+	.syntax unified
 	.4byte 0x00BC5ABE
 	.byte 0xBB
 	.byte 0x3C
 	.global _081AB93A
 _081AB93A:
+	.thumb
 	lsrs r5, r7, #14
 	.global _081AB93C
 _081AB93C:
@@ -7441,14 +7305,12 @@ _081AB93C:
 	ldr r3, [sp, #480]
 	.2byte 0xB182
 	movs r0, r0
-	movs r1, r0
-	lsls r4, r6, #2
-	adr r0, _081ABCCC
-	lsrs r0, r1, #32
-	.global _081AB94C
-_081AB94C:
-	.2byte 0xB934
-	lsrs r2, r3, #32
+
+@ 1AB944..1AB950 is decompiled as gSongHeader_111(); see src/decompiled.json
+
+	.section .rom.001AB950, "ax"
+	.syntax unified
+	.thumb
 	ldrh r6, [r7, r2]
 	lsls r4, r7, #2
 	subs r4, #187
@@ -7457,12 +7319,12 @@ _081AB94C:
 	ldr r3, [sp, #496]
 	.2byte 0xB182
 	movs r0, r0
-	movs r1, r0
-	lsls r4, r6, #2
-	adr r0, _081ABCE8
-	lsrs r0, r1, #32
-	.2byte 0xB950
-	lsrs r2, r3, #32
+
+@ 1AB960..1AB96C is decompiled as gSongHeader_112(); see src/decompiled.json
+
+	.section .rom.001AB96C, "ax"
+	.syntax unified
+	.thumb
 	ldrh r6, [r7, r2]
 	lsls r4, r7, #2
 	.global _081AB970
@@ -7470,19 +7332,15 @@ _081AB970:
 	subs r4, #187
 	lsrs r5, r7, #22
 	subs r4, #246
-	adr r7, _081ABB74
+	.inst.n 0xA77F  @ adr r7, _081ABB74
 	.2byte 0xB182
 	movs r0, r0
-	.global _081AB97C
-_081AB97C:
-	movs r1, r0
-	.global _081AB97E
-_081AB97E:
-	lsls r4, r6, #2
-	adr r0, _081ABD04
-	lsrs r0, r1, #32
-	.2byte 0xB96C
-	lsrs r2, r3, #32
+
+@ 1AB97C..1AB988 is decompiled as gSongHeader_113(); see src/decompiled.json
+
+	.section .rom.001AB988, "ax"
+	.syntax unified
+	.thumb
 	ldrh r6, [r7, r2]
 	lsls r4, r7, #2
 	subs r4, #187
@@ -7491,12 +7349,12 @@ _081AB97E:
 	ldr r6, [sp, #400]
 	lsls r1, r6, #2
 	movs r0, r0
-	movs r1, r0
-	lsls r4, r6, #2
-	adr r0, _081ABD20
-	lsrs r0, r1, #32
-	.2byte 0xB988
-	lsrs r2, r3, #32
+
+@ 1AB998..1AB9A4 is decompiled as gSongHeader_115(); see src/decompiled.json
+
+	.section .rom.001AB9A4, "ax"
+	.syntax unified
+	.thumb
 	ldrh r6, [r7, r2]
 	lsls r4, r7, #2
 	subs r4, #187
@@ -7505,12 +7363,12 @@ _081AB97E:
 	ldr r6, [sp, #400]
 	lsls r1, r6, #2
 	movs r0, r0
-	movs r1, r0
-	lsls r4, r6, #2
-	adr r0, _081ABD3C
-	lsrs r0, r1, #32
-	.2byte 0xB9A4
-	lsrs r2, r3, #32
+
+@ 1AB9B4..1AB9C0 is decompiled as gSongHeader_116(); see src/decompiled.json
+
+	.section .rom.001AB9C0, "ax"
+	.syntax unified
+	.thumb
 	strb r6, [r7, r6]
 	lsls r4, r7, #2
 	subs r4, #187
@@ -7519,31 +7377,26 @@ _081AB97E:
 	ldr r6, [sp, #400]
 	lsls r1, r6, #2
 	movs r0, r0
-	movs r1, r0
-	lsls r4, r6, #2
-	adr r0, _081ABD58
-	lsrs r0, r1, #32
-	.2byte 0xB9C0
-	lsrs r2, r3, #32
+
+@ 1AB9D0..1AB9DC is decompiled as gSongHeader_117(); see src/decompiled.json
+
+	.section .rom.001AB9DC, "ax"
+	.syntax unified
+	.thumb
 	bics r6, r7
 	lsls r4, r7, #2
 	ldrh r3, [r7, r2]
 	lsls r5, r7
 	subs r4, #243
-	adr r4, _081ABBC8
+	.inst.n 0xA478  @ adr r4, _081ABBC8
 	.2byte 0xB183
 	movs r0, r0
-	movs r1, r0
-	lsls r0, r4, #2
-	adr r0, _081ABD74
-	lsrs r0, r1, #32
 
-	.thumb_func
+@ 1AB9EC..1AB9F8 is decompiled as gSongHeader_118(); see src/decompiled.json
+
+	.section .rom.001AB9F8, "ax"
+	.syntax unified
 	.thumb
-	.global sub_081AB9F4
-sub_081AB9F4:
-	.2byte 0xB9DC
-	lsrs r2, r3, #32
 	ldrh r6, [r7, r2]
 	lsls r4, r7, #2
 	subs r4, #187
@@ -7552,12 +7405,12 @@ sub_081AB9F4:
 	ldr r7, [sp, #448]
 	.2byte 0xB181
 	movs r0, r0
-	movs r1, r0
-	lsls r4, r6, #2
-	adr r0, _081ABD90
-	lsrs r0, r1, #32
-	.2byte 0xB9F8
-	lsrs r2, r3, #32
+
+@ 1ABA08..1ABA14 is decompiled as gSongHeader_119(); see src/decompiled.json
+
+	.section .rom.001ABA14, "ax"
+	.syntax unified
+	.thumb
 	ldrh r6, [r7, r2]
 	lsls r4, r7, #2
 	subs r4, #187
@@ -7582,7 +7435,7 @@ _081ABA3A:
 	ldrh r5, [r0, #34]
 	cmn r2, r2
 	cmp r10, r10
-	bcc _081AB94C
+	.2byte 0xD384
 	bcc _081ABACA
 	ldrh r5, [r0, #2]
 	add r10, r10
@@ -7607,27 +7460,21 @@ sub_081ABA60:
 	str r6, [r7, #0]
 	.global _081ABA62
 _081ABA62:
-	bcs _081AB97E
+	.2byte 0xD28C
 	bcs _081AB970
 	lsls r0, r1
-	bcs _081AB97C
-	bcs _081AB97E
+	.2byte 0xD288
+	.2byte 0xD288
 	.2byte 0xEA88
 	ldr r3, [sp, #264]
 	.2byte 0xB181
 	movs r0, r0
-	movs r3, r0
-	lsls r4, r6, #2
-	ldr r0, [sp, #64]
-	lsrs r0, r1, #32
-	.2byte 0xBA14
-	lsrs r2, r3, #32
-	.2byte 0xBA30
-	lsrs r2, r3, #32
-	.2byte 0xBA59
-	.global _081ABA86
-_081ABA86:
-	lsrs r2, r3, #32
+
+@ 1ABA74..1ABA88 is decompiled as gSongHeader_120(); see src/decompiled.json
+
+	.section .rom.001ABA88, "ax"
+	.syntax unified
+	.thumb
 	ldrh r6, [r7, r2]
 	lsls r4, r7, #2
 	subs r4, #187
@@ -7636,12 +7483,12 @@ _081ABA86:
 	ldr r6, [sp, #400]
 	lsls r1, r6, #2
 	movs r0, r0
-	movs r1, r0
-	lsls r4, r6, #2
-	adr r0, _081ABE20
-	lsrs r0, r1, #32
-	.2byte 0xBA88
-	lsrs r2, r3, #32
+
+@ 1ABA98..1ABAA4 is decompiled as gSongHeader_121(); see src/decompiled.json
+
+	.section .rom.001ABAA4, "ax"
+	.syntax unified
+	.thumb
 	ldrh r6, [r7, r2]
 	lsls r4, r7, #2
 	subs r4, #187
@@ -7650,14 +7497,14 @@ _081ABA86:
 	ldr r6, [sp, #400]
 	lsls r1, r6, #2
 	movs r0, r0
-	movs r1, r0
-	lsls r4, r6, #2
-	adr r0, _081ABE3C
-	lsrs r0, r1, #32
-	.2byte 0xBAA4
-	lsrs r2, r3, #32
+
+@ 1ABAB4..1ABAC0 is decompiled as gSongHeader_122(); see src/decompiled.json
+
+	.section .rom.001ABAC0, "ax"
+	.syntax unified
 	.global _081ABAC0
 _081ABAC0:
+	.thumb
 	ldrh r6, [r7, r2]
 	lsls r4, r7, #2
 	ldrh r3, [r7, r2]
@@ -7674,14 +7521,12 @@ _081ABACC:
 	ldr r0, [sp, #48]
 	lsls r1, r6, #2
 	movs r0, r0
-	movs r1, r0
-	lsls r4, r1, #2
-	adr r0, _081ABE60
-	lsrs r0, r1, #32
-	.global _081ABAE0
-_081ABAE0:
-	.2byte 0xBAC0
-	lsrs r2, r3, #32
+
+@ 1ABAD8..1ABAE4 is decompiled as gSongHeader_123(); see src/decompiled.json
+
+	.section .rom.001ABAE4, "ax"
+	.syntax unified
+	.thumb
 	ldrh r6, [r7, r2]
 	lsls r4, r7, #2
 	ldrh r3, [r7, r2]
@@ -7694,12 +7539,12 @@ _081ABAE0:
 	ldr r1, [sp, #48]
 	.2byte 0xB181
 	movs r0, r0
-	movs r1, r0
-	lsls r4, r1, #2
-	adr r0, _081ABE84
-	lsrs r0, r1, #32
-	.2byte 0xBAE4
-	lsrs r2, r3, #32
+
+@ 1ABAFC..1ABB08 is decompiled as gSongHeader_124(); see src/decompiled.json
+
+	.section .rom.001ABB08, "ax"
+	.syntax unified
+	.thumb
 	str r6, [r7, r2]
 	lsls r4, r7, #2
 	subs r4, #187
@@ -7710,12 +7555,12 @@ _081ABAE0:
 	strh r3, [r0, #50]
 	ldrh r5, [r0, #34]
 	ldrh r2, [r1, #34]
-	ldr r6, _081ABE84
+	.inst.n 0x4ED9
 	bmi _081ABA3A
 	ldrh r2, [r1, #34]
 	ldrh r4, [r1, #34]
 	ldrh r0, [r1, #34]
-	ldr r2, _081ABEDC
+	.inst.n 0x4AED  @ ldr r2, _081ABEDC
 	strh r7, [r3, #28]
 	add r11, r7
 	adr r0, _081ABD34
@@ -7724,7 +7569,7 @@ _081ABAE0:
 	.global _081ABB32
 _081ABB32:
 	sub sp, #192
-	adr r0, _081ABDF8
+	.inst.n 0xA0B0  @ adr r0, _081ABDF8
 	cmp r5, #178
 	subs r3, r7, r2
 	.2byte 0xB108
@@ -7737,7 +7582,7 @@ _081ABB40:
 	ldrh r0, [r4, #34]
 	ldrh r1, [r7, #32]
 	cmp r12, r12
-	bmi _081ABA86
+	.2byte 0xD49C
 	strh r3, [r0, #50]
 	strh r5, [r0, #50]
 	.2byte 0x47D3
@@ -7746,11 +7591,11 @@ _081ABB40:
 	strh r3, [r0, #50]
 	strh r7, [r0, #50]
 	cmp sp, sp
-	adr r0, _081ABDE0
+	.inst.n 0xA0A0  @ adr r0, _081ABDE0
 	sub sp, #192
 	sub sp, #192
 	sub sp, #192
-	adr r0, _081ABE28
+	.inst.n 0xA0B0
 	ldrb r2, [r6, r6]
 	subs r3, r7, r2
 	.2byte 0xB108
@@ -7787,8 +7632,8 @@ _081ABB74:
 	.2byte 0xEA8C
 	ldr r4, [sp, #296]
 	ldr r4, [sp, #284]
-	ldr r1, _081ABF00
-	ldr r2, _081ABDC8
+	.inst.n 0x49D4  @ ldr r1, _081ABF00
+	.inst.n 0x4A86  @ ldr r2, _081ABDC8
 	bls _081ABAC0
 	ldrh r1, [r1, #34]
 	.2byte 0x47D4
@@ -7806,11 +7651,11 @@ _081ABBC8:
 	.4byte 0x9C479C4A
 	cmp r12, r10
 	bics r6, r0
-	bls _081ABAE0
+	.2byte 0xD986
 	ldrh r5, [r0, #34]
-	ldr r1, _081ABF28
-	ldr r2, _081ABE08
-	ldr r4, _081ABE0C
+	.inst.n 0x49D4  @ ldr r1, _081ABF28
+	.inst.n 0x4A8C  @ ldr r2, _081ABE08
+	.inst.n 0x4C8C  @ ldr r4, _081ABE0C
 	.2byte 0xFB8C
 	adr r0, _081ABD18
 	bls _081ABB32
@@ -7978,15 +7823,11 @@ _081ABD90:
 	.4byte 0x86D48648
 	.4byte 0x1ABD3BB2
 	.4byte 0x0000B108
-	.4byte 0x00780007
-	.4byte 0x08089810
-	.4byte 0x081ABB08
-	.4byte 0x081ABB3C
-	.4byte 0x081ABB6C
-	.4byte 0x081ABBED
-	.4byte 0x081ABC3F
-	.4byte 0x081ABCDA
-	.4byte 0x081ABD2C
+
+@ 1ABDA4..1ABDC8 is decompiled as gSongHeader_125(); see src/decompiled.json
+
+	.section .rom.001ABDC8, "ax"
+	.syntax unified
 	.global _081ABDC8
 _081ABDC8:
 	.4byte 0x00BC50BE
@@ -8018,15 +7859,11 @@ _081ABE0C:
 	.4byte 0x6843EE12
 	.4byte 0xA03CEFA0
 	.4byte 0x000000B1
-	.4byte 0x00780003
-	.global _081ABE20
-_081ABE20:
-	.4byte 0x08089810  @ ROM+0x89810
-	.4byte 0x081ABDC8
-	.global _081ABE28
-_081ABE28:
-	.4byte 0x081ABDFA  @ ROM+0x1ABDFA
-	.4byte 0x081ABE0B
+
+@ 1ABE1C..1ABE30 is decompiled as gSongHeader_126(); see src/decompiled.json
+
+	.section .rom.001ABE30, "ax"
+	.syntax unified
 	.4byte 0x00BC5ABE
 	.4byte 0x38BD5ABB
 	.4byte 0xDA6439D9
@@ -8050,12 +7887,11 @@ _081ABE60:
 	.4byte 0x40884288
 	.4byte 0x9842ED88
 	.4byte 0x0000B193
-	.4byte 0x00780002
-	.4byte 0x08089810
-	.global _081ABE84
-_081ABE84:
-	.4byte 0x081ABE30  @ ROM+0x1ABE30
-	.4byte 0x081ABE62
+
+@ 1ABE7C..1ABE8C is decompiled as gSongHeader_127(); see src/decompiled.json
+
+	.section .rom.001ABE8C, "ax"
+	.syntax unified
 	.4byte 0x00BC46BE
 	.4byte 0x3DBD42BB
 	.4byte 0x6039E48C
@@ -8107,13 +7943,11 @@ _081ABF28:
 	.4byte 0xA07C21EE
 	.4byte 0x924031E1
 	.4byte 0x000000B1
-	.4byte 0x00780005
-	.4byte 0x08089810
-	.4byte 0x081ABE8C
-	.4byte 0x081ABECE
-	.4byte 0x081ABEE3
-	.4byte 0x081ABF0B
-	.4byte 0x081ABF26
+
+@ 1ABF40..1ABF5C is decompiled as gSongHeader_128(); see src/decompiled.json
+
+	.section .rom.001ABF5C, "ax"
+	.syntax unified
 	.4byte 0x00BC5ABE
 	.4byte 0x08BD34BB
 	.4byte 0x45D98C98
@@ -8165,76 +7999,92 @@ _081ABF28:
 	.4byte 0x398C3C34
 	.4byte 0x9FA0FE8C
 	.4byte 0x0000B181
-	.4byte 0x00780005
-	.4byte 0x08089810
-	.4byte 0x081ABF5C
-	.4byte 0x081ABFA0
-	.4byte 0x081ABFD1
-	.4byte 0x081ABFEC
-	.4byte 0x081ABFFF
+
+@ 1AC028..1AC044 is decompiled as gSongHeader_129(); see src/decompiled.json
+
+	.section .rom.001AC044, "ax"
+	.syntax unified
 	.4byte 0x00BC5ABE
 	.4byte 0x19BD5ABB
 	.4byte 0xB06C3CCF
 	.4byte 0xB1CE829F
-	.4byte 0x00780001
-	.4byte 0x0808A0E0
-	.4byte 0x081AC044
+
+@ 1AC054..1AC060 is decompiled as gSongHeader_130(); see src/decompiled.json
+
+	.section .rom.001AC060, "ax"
+	.syntax unified
 	.4byte 0x00BC5ABE
 	.4byte 0x1ABD5ABB
 	.4byte 0x9B783CEA
 	.4byte 0x0000B183
-	.4byte 0x00780001
-	.4byte 0x0808A0E0
-	.4byte 0x081AC060
+
+@ 1AC070..1AC07C is decompiled as gSongHeader_131(); see src/decompiled.json
+
+	.section .rom.001AC07C, "ax"
+	.syntax unified
 	.4byte 0x00BC5ABE
 	.4byte 0x45BD5ABB
 	.4byte 0xA57839F4
 	.4byte 0x000000B1
-	.4byte 0x00780001
-	.4byte 0x0808A0E0
-	.4byte 0x081AC07C
+
+@ 1AC08C..1AC098 is decompiled as gSongHeader_132(); see src/decompiled.json
+
+	.section .rom.001AC098, "ax"
+	.syntax unified
 	.4byte 0x00BC46BE
 	.4byte 0x23BD5ABB
 	.4byte 0xB0783CCF
 	.4byte 0x00B1CE8A
-	.4byte 0x00780001
-	.4byte 0x0808A0E0
-	.4byte 0x081AC098
+
+@ 1AC0A8..1AC0B4 is decompiled as gSongHeader_133(); see src/decompiled.json
+
+	.section .rom.001AC0B4, "ax"
+	.syntax unified
 	.4byte 0x00BC5ABE
 	.4byte 0x32BD5ABB
 	.4byte 0xB07F3CCF
 	.4byte 0xB1CEAEB0
-	.4byte 0x00780001
-	.4byte 0x0808A0E0
-	.4byte 0x081AC0B4
+
+@ 1AC0C4..1AC0D0 is decompiled as gSongHeader_134(); see src/decompiled.json
+
+	.section .rom.001AC0D0, "ax"
+	.syntax unified
 	.4byte 0x00BC3CBE
 	.4byte 0x44BD5ABB
 	.4byte 0xA8783CF7
 	.4byte 0x000000B1
-	.4byte 0x00780001
-	.4byte 0x0808A0E0
-	.4byte 0x081AC0D0
+
+@ 1AC0E0..1AC0EC is decompiled as gSongHeader_135(); see src/decompiled.json
+
+	.section .rom.001AC0EC, "ax"
+	.syntax unified
 	.4byte 0x00BC5ABE
 	.4byte 0x18BD3CBB
 	.4byte 0xB0643CCF
 	.4byte 0x00B1CE96
-	.4byte 0x00780001
-	.4byte 0x0808A0E0
-	.4byte 0x081AC0EC
+
+@ 1AC0FC..1AC108 is decompiled as gSongHeader_140(); see src/decompiled.json
+
+	.section .rom.001AC108, "ax"
+	.syntax unified
 	.4byte 0x00BC5ABE
 	.4byte 0x20BD5ABB
 	.4byte 0xB0783CCF
 	.4byte 0x00B1CEAE
-	.4byte 0x00780001
-	.4byte 0x0808A0E0
-	.4byte 0x081AC108
+
+@ 1AC118..1AC124 is decompiled as gSongHeader_141(); see src/decompiled.json
+
+	.section .rom.001AC124, "ax"
+	.syntax unified
 	.4byte 0x00BC46BE
 	.4byte 0x21BD5ABB
 	.4byte 0xA4783CF3
 	.4byte 0x0000B183
-	.4byte 0x00A00001
-	.4byte 0x0808A0E0
-	.4byte 0x081AC124
+
+@ 1AC134..1AC140 is decompiled as gSongHeader_142(); see src/decompiled.json
+
+	.section .rom.001AC140, "ax"
+	.syntax unified
 	.4byte 0x00BC5ABE
 	.4byte 0x18BD3CBB
 	.4byte 0x283CF68C
@@ -8253,24 +8103,29 @@ _081ABF28:
 	.4byte 0xC161B281
 	.4byte 0x9981081A
 	.4byte 0x00B13CCE
-	.4byte 0x00780002
-	.4byte 0x0808A0E0
-	.4byte 0x081AC140
-	.4byte 0x081AC15D
+
+@ 1AC188..1AC198 is decompiled as gSongHeader_143(); see src/decompiled.json
+
+	.section .rom.001AC198, "ax"
+	.syntax unified
 	.4byte 0x00BC5ABE
 	.4byte 0x2EBD5ABB
 	.4byte 0xAF643CFE
 	.4byte 0x0000B182
-	.4byte 0x00780001
-	.4byte 0x0808A0E0
-	.4byte 0x081AC198
+
+@ 1AC1A8..1AC1B4 is decompiled as gSongHeader_150(); see src/decompiled.json
+
+	.section .rom.001AC1B4, "ax"
+	.syntax unified
 	.4byte 0x00BC5ABE
 	.4byte 0x17BD3CBB
 	.4byte 0xB0583CCF
 	.4byte 0xB1CE819F
-	.4byte 0x00780001
-	.4byte 0x0808A0E0
-	.4byte 0x081AC1B4
+
+@ 1AC1C4..1AC1D0 is decompiled as gSongHeader_151(); see src/decompiled.json
+
+	.section .rom.001AC1D0, "ax"
+	.syntax unified
 	.4byte 0x00BC5ABE
 	.4byte 0x17BD3CBB
 	.4byte 0xA0403ECF
@@ -8285,72 +8140,92 @@ _081ABF28:
 	.4byte 0x9981081A
 	.4byte 0x3EA03CCE
 	.4byte 0x000000B1
-	.4byte 0x00780001
-	.4byte 0x0808A0E0
-	.4byte 0x081AC1D0
+
+@ 1AC208..1AC214 is decompiled as gSongHeader_152(); see src/decompiled.json
+
+	.section .rom.001AC214, "ax"
+	.syntax unified
 	.4byte 0x00BC5ABE
 	.4byte 0x1EBD5ABB
 	.4byte 0xA4783CF3
 	.4byte 0x0000B183
-	.4byte 0x00780001
-	.4byte 0x0808A0E0
-	.4byte 0x081AC214
+
+@ 1AC224..1AC230 is decompiled as gSongHeader_160(); see src/decompiled.json
+
+	.section .rom.001AC230, "ax"
+	.syntax unified
 	.4byte 0x00BC5ABE
 	.4byte 0x1FBD5ABB
 	.4byte 0xA4783CF3
 	.4byte 0x0000B183
-	.4byte 0x00780001
-	.4byte 0x0808A0E0
-	.4byte 0x081AC230
+
+@ 1AC240..1AC24C is decompiled as gSongHeader_161(); see src/decompiled.json
+
+	.section .rom.001AC24C, "ax"
+	.syntax unified
 	.4byte 0x00BC5ABE
 	.4byte 0x27BD5ABB
 	.4byte 0xAC783CFB
 	.4byte 0x000000B1
-	.4byte 0x00780001
-	.4byte 0x0808A0E0
-	.4byte 0x081AC24C
+
+@ 1AC25C..1AC268 is decompiled as gSongHeader_162(); see src/decompiled.json
+
+	.section .rom.001AC268, "ax"
+	.syntax unified
 	.4byte 0x00BC5ABE
 	.4byte 0x28BD5ABB
 	.4byte 0xB0783CCF
 	.4byte 0xB1CE839F
-	.4byte 0x00780001
-	.4byte 0x0808A0E0
-	.4byte 0x081AC268
+
+@ 1AC278..1AC284 is decompiled as gSongHeader_163(); see src/decompiled.json
+
+	.section .rom.001AC284, "ax"
+	.syntax unified
 	.4byte 0x00BC5ABE
 	.4byte 0x1CBD5ABB
 	.4byte 0x9B783CEA
 	.4byte 0x0000B183
-	.4byte 0x00780001
-	.4byte 0x0808A0E0
-	.4byte 0x081AC284
+
+@ 1AC294..1AC2A0 is decompiled as gSongHeader_170(); see src/decompiled.json
+
+	.section .rom.001AC2A0, "ax"
+	.syntax unified
 	.4byte 0x00BC5ABE
 	.4byte 0x1DBD5ABB
 	.4byte 0xB0783CCF
 	.4byte 0x00B1CE8F
-	.4byte 0x00780001
-	.4byte 0x0808A0E0
-	.4byte 0x081AC2A0
+
+@ 1AC2B0..1AC2BC is decompiled as gSongHeader_171(); see src/decompiled.json
+
+	.section .rom.001AC2BC, "ax"
+	.syntax unified
 	.4byte 0x00BC5ABE
 	.4byte 0x30BD5ABB
 	.4byte 0xB0783CCF
 	.4byte 0xB1CE819F
-	.4byte 0x00780001
-	.4byte 0x0808A0E0
-	.4byte 0x081AC2BC
+
+@ 1AC2CC..1AC2D8 is decompiled as gSongHeader_172(); see src/decompiled.json
+
+	.section .rom.001AC2D8, "ax"
+	.syntax unified
 	.4byte 0x00BC5ABE
 	.4byte 0x22BD5ABB
 	.4byte 0xA4783CF3
 	.4byte 0x0000B183
-	.4byte 0x00780001
-	.4byte 0x0808A0E0
-	.4byte 0x081AC2D8
+
+@ 1AC2E8..1AC2F4 is decompiled as gSongHeader_180(); see src/decompiled.json
+
+	.section .rom.001AC2F4, "ax"
+	.syntax unified
 	.4byte 0x00BC50BE
 	.4byte 0x12BD3CBB
 	.4byte 0x9E583CED
 	.4byte 0x000000B1
-	.4byte 0x00780001
-	.4byte 0x0808A0E0
-	.4byte 0x081AC2F4
+
+@ 1AC304..1AC310 is decompiled as gSongHeader_181(); see src/decompiled.json
+
+	.section .rom.001AC310, "ax"
+	.syntax unified
 	.4byte 0x00BC5ABE
 	.4byte 0x36BD3CBB
 	.4byte 0x947F3CCF
@@ -8363,43 +8238,46 @@ _081ABF28:
 	.4byte 0x1AC314B2
 	.4byte 0x829C8108
 	.4byte 0x000000B1
-	.4byte 0x00780001
-	.4byte 0x0808A0E0
-	.4byte 0x081AC310
+
+@ 1AC340..1AC34C is decompiled as gSongHeader_182(); see src/decompiled.json
+
+	.section .rom.001AC34C, "ax"
+	.syntax unified
 	.4byte 0x00BC5ABE
 	.4byte 0x13BD3CBB
 	.4byte 0x9E643CED
 	.4byte 0x000000B1
-	.4byte 0x00780001
-	.4byte 0x0808A0E0
-	.4byte 0x081AC34C
+
+@ 1AC35C..1AC368 is decompiled as gSongHeader_190(); see src/decompiled.json
+
+	.section .rom.001AC368, "ax"
+	.syntax unified
 	.4byte 0x00BC4BBE
 	.4byte 0x14BD3CBB
 	.4byte 0x9E643CED
 	.4byte 0x000000B1
-	.4byte 0x00A00001
-	.4byte 0x0808A0E0
-	.4byte 0x081AC368
+
+@ 1AC378..1AC384 is decompiled as gSongHeader_191(); see src/decompiled.json
+
+	.section .rom.001AC384, "ax"
+	.syntax unified
 	.4byte 0x00BC5ABE
 	.4byte 0x26BD5ABB
 	.global _081AC38C
 _081AC38C:
+	.thumb
 	subs r4, #251
 	add r4, sp, #480
 	.global _081AC390
 _081AC390:
 	lsls r1, r6, #2
 	movs r0, r0
-	.global _081AC394
-_081AC394:
-	movs r1, r0
-	lsls r0, r7, #1
-	.global _081AC398
-_081AC398:
-	adr r0, _081AC71C
-	lsrs r0, r1, #32
-	stmia r3!, {r2, r7}
-	lsrs r2, r3, #32
+
+@ 1AC394..1AC3A0 is decompiled as gSongHeader_192(); see src/decompiled.json
+
+	.section .rom.001AC3A0, "ax"
+	.syntax unified
+	.thumb
 	ldrh r6, [r7, r2]
 	lsls r4, r7, #2
 	subs r4, #187
@@ -8408,12 +8286,12 @@ _081AC398:
 	ldr r6, [sp, #400]
 	lsls r1, r6, #2
 	movs r0, r0
-	movs r1, r0
-	lsls r0, r7, #1
-	.inst.n 0xA0E0
-	lsrs r0, r1, #32
-	stmia r3!, {r5, r7}
-	lsrs r2, r3, #32
+
+@ 1AC3B0..1AC3BC is decompiled as gSongHeader_200(); see src/decompiled.json
+
+	.section .rom.001AC3BC, "ax"
+	.syntax unified
+	.thumb
 	str r6, [r7, r2]
 	lsls r4, r7, #2
 	subs r4, #187
@@ -8423,16 +8301,11 @@ _081AC398:
 	lsls r1, r6, #2
 	movs r0, r0
 
-	.thumb_func
+@ 1AC3CC..1AC3D8 is decompiled as gSongHeader_201(); see src/decompiled.json
+
+	.section .rom.001AC3D8, "ax"
+	.syntax unified
 	.thumb
-	.global sub_081AC3CC
-sub_081AC3CC:
-	movs r1, r0
-	lsls r0, r7, #1
-	.inst.n 0xA0E0
-	lsrs r0, r1, #32
-	stmia r3!, {r2, r3, r4, r5, r7}
-	lsrs r2, r3, #32
 	ldrh r6, [r7, r2]
 	lsls r4, r7, #2
 	ldrh r3, [r7, r2]
@@ -8441,12 +8314,12 @@ sub_081AC3CC:
 	add sp, #480
 	strh r7, [r3, #28]
 	.2byte 0xB1CE
-	movs r1, r0
-	lsls r0, r7, #1
-	.inst.n 0xA0E0
-	lsrs r0, r1, #32
-	stmia r3!, {r3, r4, r6, r7}
-	lsrs r2, r3, #32
+
+@ 1AC3E8..1AC3F4 is decompiled as gSongHeader_202(); see src/decompiled.json
+
+	.section .rom.001AC3F4, "ax"
+	.syntax unified
+	.thumb
 	ldrh r6, [r7, r2]
 	lsls r4, r7, #2
 	ldrh r3, [r7, r2]
@@ -8455,12 +8328,12 @@ sub_081AC3CC:
 	add r7, sp, #480
 	.2byte 0xB181
 	movs r0, r0
-	movs r1, r0
-	lsls r0, r7, #1
-	.inst.n 0xA0E0
-	lsrs r0, r1, #32
-	stmia r3!, {r2, r4, r5, r6, r7}
-	lsrs r2, r3, #32
+
+@ 1AC404..1AC410 is decompiled as gSongHeader_203(); see src/decompiled.json
+
+	.section .rom.001AC410, "ax"
+	.syntax unified
+	.thumb
 	ldrh r6, [r7, r2]
 	lsls r4, r7, #2
 	ldrh r3, [r7, r2]
@@ -8469,12 +8342,12 @@ sub_081AC3CC:
 	add r7, sp, #480
 	.2byte 0xB182
 	movs r0, r0
-	movs r1, r0
-	lsls r0, r7, #1
-	.inst.n 0xA0E0  @ adr r0, _081AC7A8
-	lsrs r0, r1, #32
-	stmia r4!, {r4}
-	lsrs r2, r3, #32
+
+@ 1AC420..1AC42C is decompiled as gSongHeader_204(); see src/decompiled.json
+
+	.section .rom.001AC42C, "ax"
+	.syntax unified
+	.thumb
 	ldrh r6, [r7, r2]
 	lsls r4, r7, #2
 	ldrh r3, [r7, r2]
@@ -8483,12 +8356,12 @@ sub_081AC3CC:
 	add r7, sp, #480
 	.2byte 0xB182
 	movs r0, r0
-	movs r1, r0
-	lsls r0, r7, #1
-	.inst.n 0xA0E0  @ adr r0, _081AC7C4
-	lsrs r0, r1, #32
-	stmia r4!, {r2, r3, r5}
-	lsrs r2, r3, #32
+
+@ 1AC43C..1AC448 is decompiled as gSongHeader_205(); see src/decompiled.json
+
+	.section .rom.001AC448, "ax"
+	.syntax unified
+	.thumb
 	ldrh r6, [r7, r2]
 	lsls r4, r7, #2
 	ldrh r3, [r7, r2]
@@ -8497,12 +8370,12 @@ sub_081AC3CC:
 	add sp, #480
 	strh r7, [r3, #20]
 	.2byte 0xB1CE
-	movs r1, r0
-	lsls r0, r7, #1
-	.inst.n 0xA0E0  @ adr r0, _081AC7E0
-	lsrs r0, r1, #32
-	stmia r4!, {r3, r6}
-	lsrs r2, r3, #32
+
+@ 1AC458..1AC464 is decompiled as gSongHeader_206(); see src/decompiled.json
+
+	.section .rom.001AC464, "ax"
+	.syntax unified
+	.thumb
 	ldrh r6, [r7, r2]
 	lsls r4, r7, #2
 	subs r4, #187
@@ -8517,27 +8390,27 @@ sub_081AC3CC:
 	strh r0, [r4, #26]
 	.2byte 0x47D3
 	strh r4, [r2, #18]
-	ldr r4, _081AC584
+	.inst.n 0x4C40
 	bmi _081AC38C
 	.2byte 0x443B
 	bcc _081AC390
 	subs r0, #62
-	bmi _081AC394
+	.2byte 0xD483
 
 	.thumb_func
 	.thumb
 	.global sub_081AC48C
 sub_081AC48C:
 	adds r0, #54
-	bcc _081AC398
+	.2byte 0xD383
 	movs r4, #57
 	.2byte 0xB184
-	movs r1, r0
-	lsls r0, r7, #1
-	.inst.n 0xA0E0  @ adr r0, _081AC81C
-	lsrs r0, r1, #32
-	stmia r4!, {r2, r5, r6}
-	lsrs r2, r3, #32
+
+@ 1AC494..1AC4A0 is decompiled as gSongHeader_207(); see src/decompiled.json
+
+	.section .rom.001AC4A0, "ax"
+	.syntax unified
+	.thumb
 	ldrh r6, [r7, r2]
 	lsls r4, r7, #2
 	ldrh r3, [r7, r2]
@@ -8546,12 +8419,12 @@ sub_081AC48C:
 	add r7, sp, #480
 	.2byte 0xB181
 	movs r0, r0
-	movs r1, r0
-	lsls r0, r7, #1
-	.inst.n 0xA0E0  @ adr r0, _081AC838
-	lsrs r0, r1, #32
-	stmia r4!, {r5, r7}
-	lsrs r2, r3, #32
+
+@ 1AC4B0..1AC4BC is decompiled as gSongHeader_208(); see src/decompiled.json
+
+	.section .rom.001AC4BC, "ax"
+	.syntax unified
+	.thumb
 	ldrh r6, [r7, r2]
 	lsls r4, r7, #2
 	ldrh r3, [r7, r2]
@@ -8560,12 +8433,12 @@ sub_081AC48C:
 	add sp, #480
 	strh r7, [r3, #12]
 	.2byte 0xB1CE
-	movs r1, r0
-	lsls r0, r7, #1
-	.inst.n 0xA0E0  @ adr r0, _081AC854
-	lsrs r0, r1, #32
-	stmia r4!, {r2, r3, r4, r5, r7}
-	lsrs r2, r3, #32
+
+@ 1AC4CC..1AC4D8 is decompiled as gSongHeader_209(); see src/decompiled.json
+
+	.section .rom.001AC4D8, "ax"
+	.syntax unified
+	.thumb
 	ldrh r6, [r7, r2]
 	lsls r4, r7, #2
 	ldrh r3, [r7, r2]
@@ -8574,12 +8447,12 @@ sub_081AC48C:
 	add sp, #508
 	strh r7, [r5, #28]
 	.2byte 0xB1CE
-	movs r1, r0
-	lsls r0, r7, #1
-	.inst.n 0xA0E0  @ adr r0, _081AC870
-	lsrs r0, r1, #32
-	stmia r4!, {r3, r4, r6, r7}
-	lsrs r2, r3, #32
+
+@ 1AC4E8..1AC4F4 is decompiled as gSongHeader_210(); see src/decompiled.json
+
+	.section .rom.001AC4F4, "ax"
+	.syntax unified
+	.thumb
 	ldrh r6, [r7, r2]
 	lsls r4, r7, #2
 	ldrh r3, [r7, r2]
@@ -8590,12 +8463,12 @@ sub_081AC48C:
 	ldmia r6!, {r0, r7}
 	lsls r1, r6, #2
 	movs r0, r0
-	movs r1, r0
-	lsls r0, r7, #1
-	.inst.n 0xA0E0  @ adr r0, _081AC890
-	lsrs r0, r1, #32
-	stmia r4!, {r2, r4, r5, r6, r7}
-	lsrs r2, r3, #32
+
+@ 1AC508..1AC514 is decompiled as gSongHeader_211(); see src/decompiled.json
+
+	.section .rom.001AC514, "ax"
+	.syntax unified
+	.thumb
 	ldrh r6, [r7, r2]
 	lsls r4, r7, #2
 	ldrh r3, [r7, r2]
@@ -8606,12 +8479,12 @@ sub_081AC48C:
 	ldmia r6!, {r0, r7}
 	lsls r1, r6, #2
 	movs r0, r0
-	movs r1, r0
-	lsls r0, r7, #1
-	.inst.n 0xA0E0
-	lsrs r0, r1, #32
-	stmia r5!, {r2, r4}
-	lsrs r2, r3, #32
+
+@ 1AC528..1AC534 is decompiled as gSongHeader_212(); see src/decompiled.json
+
+	.section .rom.001AC534, "ax"
+	.syntax unified
+	.thumb
 	ldrh r6, [r7, r2]
 	lsls r4, r7, #2
 	ldrh r3, [r7, r2]
@@ -8620,12 +8493,12 @@ sub_081AC48C:
 	add sp, #508
 	lsls r1, r6, #2
 	movs r0, r0
-	movs r1, r0
-	lsls r0, r7, #1
-	.inst.n 0xA0E0
-	lsrs r0, r1, #32
-	stmia r5!, {r2, r4, r5}
-	lsrs r2, r3, #32
+
+@ 1AC544..1AC550 is decompiled as gSongHeader_213(); see src/decompiled.json
+
+	.section .rom.001AC550, "ax"
+	.syntax unified
+	.thumb
 	ldrh r6, [r7, r2]
 	lsls r4, r7, #2
 	subs r4, #187
@@ -8636,12 +8509,12 @@ sub_081AC48C:
 	subs r5, r0, r3
 	.2byte 0xB108
 	movs r0, r0
-	movs r1, r0
-	lsls r0, r7, #1
-	.inst.n 0xA0E0
-	lsrs r0, r1, #32
-	stmia r5!, {r4, r6}
-	lsrs r2, r3, #32
+
+@ 1AC564..1AC570 is decompiled as gSongHeader_214(); see src/decompiled.json
+
+	.section .rom.001AC570, "ax"
+	.syntax unified
+	.thumb
 	ldrh r6, [r7, r2]
 	lsls r4, r7, #2
 	ldrh r3, [r7, r2]
@@ -8650,13 +8523,12 @@ sub_081AC48C:
 	add sp, #508
 	lsls r1, r6, #2
 	movs r0, r0
-	movs r1, r0
-	lsls r0, r7, #1
-	.global _081AC584
-_081AC584:
-	.4byte 0x0808A0E0  @ ROM+0x8A0E0
-	stmia r5!, {r4, r5, r6}
-	lsrs r2, r3, #32
+
+@ 1AC580..1AC58C is decompiled as gSongHeader_215(); see src/decompiled.json
+
+	.section .rom.001AC58C, "ax"
+	.syntax unified
+	.thumb
 	ldrh r6, [r7, r2]
 	lsls r4, r7, #2
 	ldrh r3, [r7, r2]
@@ -8665,12 +8537,12 @@ _081AC584:
 	add sp, #508
 	ldmia r6!, {r4, r5, r7}
 	lsls r1, r6, #2
-	movs r1, r0
-	lsls r0, r7, #1
-	.inst.n 0xA0E0
-	lsrs r0, r1, #32
-	stmia r5!, {r2, r3, r7}
-	lsrs r2, r3, #32
+
+@ 1AC59C..1AC5A8 is decompiled as gSongHeader_216(); see src/decompiled.json
+
+	.section .rom.001AC5A8, "ax"
+	.syntax unified
+	.thumb
 	ldrh r6, [r7, r2]
 	lsls r4, r7, #2
 	ldrh r3, [r7, r2]
@@ -8679,12 +8551,12 @@ _081AC584:
 	add sp, #508
 	lsls r1, r6, #2
 	movs r0, r0
-	movs r1, r0
-	lsls r0, r7, #1
-	.inst.n 0xA0E0
-	lsrs r0, r1, #32
-	stmia r5!, {r3, r5, r7}
-	lsrs r2, r3, #32
+
+@ 1AC5B8..1AC5C4 is decompiled as gSongHeader_217(); see src/decompiled.json
+
+	.section .rom.001AC5C4, "ax"
+	.syntax unified
+	.thumb
 	ldrh r6, [r7, r2]
 	lsls r4, r7, #2
 	ldrh r3, [r7, r2]
@@ -8693,12 +8565,12 @@ _081AC584:
 	add sp, #480
 	ldmia r6!, {r5, r7}
 	lsls r1, r6, #2
-	movs r1, r0
-	lsls r0, r7, #1
-	.inst.n 0xA0E0
-	lsrs r0, r1, #32
-	stmia r5!, {r2, r6, r7}
-	lsrs r2, r3, #32
+
+@ 1AC5D4..1AC5E0 is decompiled as gSongHeader_218(); see src/decompiled.json
+
+	.section .rom.001AC5E0, "ax"
+	.syntax unified
+	.thumb
 	subs r4, #190
 	lsls r4, r7, #2
 	ldrh r3, [r7, r2]
@@ -8707,12 +8579,12 @@ _081AC584:
 	add r0, sp, #480
 	lsls r1, r6, #2
 	movs r0, r0
-	movs r1, r0
-	lsls r0, r7, #1
-	.inst.n 0xA0E0
-	lsrs r0, r1, #32
-	stmia r5!, {r5, r6, r7}
-	lsrs r2, r3, #32
+
+@ 1AC5F0..1AC5FC is decompiled as gSongHeader_219(); see src/decompiled.json
+
+	.section .rom.001AC5FC, "ax"
+	.syntax unified
+	.thumb
 	strb r6, [r7, r6]
 	lsls r4, r7, #2
 	ldrh r3, [r7, r2]
@@ -8721,12 +8593,12 @@ _081AC584:
 	add r0, sp, #480
 	lsls r1, r6, #2
 	movs r0, r0
-	movs r1, r0
-	lsls r0, r7, #1
-	.inst.n 0xA0E0
-	lsrs r0, r1, #32
-	stmia r5!, {r2, r3, r4, r5, r6, r7}
-	lsrs r2, r3, #32
+
+@ 1AC60C..1AC618 is decompiled as gSongHeader_220(); see src/decompiled.json
+
+	.section .rom.001AC618, "ax"
+	.syntax unified
+	.thumb
 	strh r3, [r2, r1]
 	ldr r5, _081AC720
 	mov r7, r11
@@ -8995,10 +8867,11 @@ _081AC890:
 
 @ 1AC8FC..1ACA20 is decompiled as gMultiprecisionConstants(); see src/decompiled.json
 
-@ 1ACA20..1ACA46 is decompiled as gNewlibSyscallStrings(); see src/decompiled.json
+@ 1ACA20..1ACA45 is decompiled as gNewlibSyscallStrings(); see src/decompiled.json
 
-	.section .rom.001ACA46, "ax"
+	.section .rom.001ACA45, "ax"
 	.syntax unified
+	.byte 0x00
 	.byte 0x00
 	.byte 0x00
 	.4byte 0x00000000
@@ -9132,9 +9005,11 @@ _081ACB3C:
 	.4byte 0x08005E3D
 	.4byte 0x00000000
 	.4byte 0x00000000
-	.4byte 0x00020001
-	.4byte 0x00060003
-	.4byte 0x00080007
+
+@ 1ACC44..1ACC50 is decompiled as gDynamicSoundPlayerOrder(); see src/decompiled.json
+
+	.section .rom.001ACC50, "ax"
+	.syntax unified
 	.4byte 0xFFFF0000
 	.4byte 0xFFFFFFFF
 	.4byte 0xFFFFFFFF

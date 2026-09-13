@@ -5464,8 +5464,8 @@ sub_080869B8:
 
 	.thumb_func
 	.thumb
-	.global sub_080869C0
-sub_080869C0:
+	.global SpriteTileBlockIndex
+SpriteTileBlockIndex:
 	bx pc
 	.byte 0xC0
 	.byte 0x46

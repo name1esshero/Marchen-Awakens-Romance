@@ -79,7 +79,9 @@ sub_08028118:
 	mov r8, r3
 	ldr r4, [sp, #24]
 	adds r0, r5, #0
-	bl FindResourceByName
+	.2byte 0xF053
+	.byte 0x34
+	.byte 0xFD
 	adds r2, r0, #0
 	str r4, [sp, #0]
 	adds r0, r6, #0
@@ -239,7 +241,9 @@ _0802820A:
 	ldr r0, [r5, #0]
 	adds r0, r0, r6
 	adds r0, #8
-	bl sub_0807BEC0
+	.2byte 0xF053
+	.byte 0x56
+	.byte 0xFE
 	adds r6, #72
 	adds r4, #1
 	ldr r0, [r5, #24]
@@ -250,7 +254,9 @@ _0802820A:
 _08028220:
 	adds r0, r1, #0
 	adds r0, #8
-	bl sub_0807BEC0
+	.2byte 0xF053
+	.byte 0x4C
+	.byte 0xFE
 	.global _08028228
 _08028228:
 	ldr r0, _08028244
@@ -439,7 +445,9 @@ _080283F0:
 	cmp r0, #0
 	beq _0802843C
 	adds r0, r5, #0
-	bl sub_0807BEC0
+	.2byte 0xF053
+	.byte 0x5A
+	.byte 0xFD
 	ldr r0, [r4, #0]
 	adds r0, #8
 	movs r1, #0
@@ -648,7 +656,9 @@ _0802854E:
 	movs r0, #54
 	ldrsh r1, [r4, r0]
 	adds r0, r5, #0
-	bl NcdQueueSprite
+	.2byte 0xF053
+	.byte 0x2A
+	.byte 0xFC
 	.global _08028558
 _08028558:
 	ldrh r2, [r4, #40]
@@ -1452,7 +1462,9 @@ _08028A56:
 	ldr r1, [r4, #44]
 	ldr r2, [r4, #48]
 	adds r3, r4, #0
-	bl sub_0807E0A4
+	.2byte 0xF055
+	.byte 0x20
+	.byte 0xFB
 	.global _08028A64
 _08028A64:
 	cmp r7, #0
@@ -1535,7 +1547,9 @@ _08028ACA:
 	ldr r1, [r4, #44]
 	ldr r2, [r4, #48]
 	adds r3, r4, #0
-	bl sub_0807E0A4
+	.2byte 0xF055
+	.byte 0xE0
+	.byte 0xFA
 	ldr r0, [r4, #52]
 	ldrh r0, [r0, #0]
 	strh r0, [r4, #38]
@@ -3300,7 +3314,9 @@ sub_08029594:
 	ands r0, r2
 	strh r0, [r1, #0]
 	movs r0, #0
-	bl sub_0807B728
+	.2byte 0xF052
+	.byte 0xA8
+	.byte 0xF8
 	movs r0, #1
 	.2byte 0xF056
 	.4byte 0x2280FFF9
@@ -3968,8 +3984,8 @@ sub_080299B8:
 	adds r4, r0, #0
 	ldr r1, _08029A34
 	movs r0, #0
-	bl FindResourceByName
-	adds r1, r0, #0
+	.2byte 0xF052
+	.4byte 0x1C01F8EB
 	mov r2, r8
 	str r2, [sp, #0]
 	movs r0, #0
@@ -4340,7 +4356,9 @@ sub_08029C14:
 	bl sub_08028118
 	ldr r1, _08029C84
 	movs r0, #0
-	bl FindResourceByName
+	.2byte 0xF051
+	.byte 0xA8
+	.byte 0xFF
 	adds r7, r0, #0
 	adds r4, #64
 	adds r0, r4, #0
@@ -7452,7 +7470,9 @@ _0802B3B2:
 _0802B3B4:
 	ldr r1, _0802B450
 	movs r0, #1
-	bl FindResourceByName
+	.2byte 0xF050
+	.byte 0xEE
+	.byte 0xFB
 	adds r7, r0, #0
 	mov r0, r9
 	bl ObjectInit
@@ -8258,7 +8278,9 @@ _0802B8AC:
 	add r4, r9
 	ldrh r2, [r4, #0]
 	movs r1, #255
-	bl sub_080799D0
+	.2byte 0xF04E
+	.byte 0x82
+	.byte 0xF8
 	ldrh r0, [r4, #0]
 	subs r0, #2
 	strh r0, [r4, #0]
@@ -8310,7 +8332,9 @@ sub_0802B8E4:
 	ldr r0, [r0, #0]
 	movs r1, #255
 	adds r2, r4, #0
-	bl sub_080799D0
+	.2byte 0xF04E
+	.byte 0x54
+	.byte 0xF8
 	mov r0, r9
 	bl sub_0802824C
 	mov r4, r9
@@ -8864,8 +8888,8 @@ _0802BC44:
 	str r6, [r4, #0]
 	ldr r1, _0802BDB8
 	movs r0, #1
-	bl FindResourceByName
-	adds r5, r0, #0
+	.2byte 0xF04F
+	.4byte 0x1C05FF53
 	adds r0, r7, #0
 	bl ObjectInit
 	str r6, [sp, #0]
@@ -9274,7 +9298,9 @@ _0802BF94:
 	strh r4, [r1, #0]
 	ldr r1, _0802C014
 	movs r0, #1
-	bl FindResourceByName
+	.2byte 0xF04F
+	.byte 0xF2
+	.byte 0xFD
 	adds r5, r0, #0
 	str r4, [sp, #0]
 	adds r0, r7, #0
@@ -9750,7 +9776,9 @@ _0802C384:
 	.global _0802C386
 _0802C386:
 	movs r0, #1
-	bl FindResourceByName
+	.2byte 0xF04F
+	.byte 0x06
+	.byte 0xFC
 	adds r4, r0, #0
 	adds r0, r7, #0
 	bl ObjectInit
@@ -10341,8 +10369,8 @@ _0802C724:
 	bl ObjectInit
 	ldr r1, _0802C76C
 	movs r0, #1
-	bl FindResourceByName
-	adds r6, r0, #0
+	.2byte 0xF04F
+	.4byte 0x1C06FA33
 	movs r0, #0
 	str r0, [sp, #0]
 	mov r0, r8
@@ -10754,7 +10782,9 @@ _0802C9EC:
 	mov r0, r9
 	mov r2, r10
 	ldr r3, [sp, #48]
-	bl sub_0807DB54
+	.2byte 0xF051
+	.byte 0xA4
+	.byte 0xF8
 	mov r0, r9
 	bl sub_0807DBB4
 	adds r0, r7, #0
@@ -10805,8 +10835,8 @@ _0802CA3C:
 	adds r1, r6, #0
 	ldr r2, [sp, #40]
 	mov r3, r9
-	bl sub_0807DC84
-	movs r2, #0
+	.2byte 0xF051
+	.4byte 0x2200F909
 	ldrsh r1, [r6, r2]
 	movs r3, #0
 	ldrsh r0, [r4, r3]
@@ -11400,7 +11430,9 @@ _0802CE34:
 _0802CE3C:
 	ldr r1, _0802CEF8
 	movs r0, #1
-	bl FindResourceByName
+	.2byte 0xF04E
+	.byte 0xAA
+	.byte 0xFE
 	adds r4, r0, #0
 	adds r0, r7, #0
 	bl ObjectInit
@@ -12133,7 +12165,9 @@ sub_0802D564:
 	.byte 0xFF
 	ldr r1, _0802D66C
 	movs r0, #1
-	bl FindResourceByName
+	.2byte 0xF04E
+	.byte 0x10
+	.byte 0xFB
 	adds r5, r0, #0
 	adds r4, r7, #0
 	adds r4, #64
@@ -13498,7 +13532,9 @@ sub_0802DD46:
 	bl ObjectInit
 	ldr r1, _0802DF10
 	movs r0, #1
-	bl FindResourceByName
+	.2byte 0xF04D
+	.byte 0xF8
+	.byte 0xFE
 	mov r9, r0
 	mov r4, r8
 	str r4, [sp, #0]
@@ -14698,7 +14734,9 @@ _0802E570:
 	strh r0, [r2, #0]
 	ldr r1, _0802E650
 	movs r0, #1
-	bl FindResourceByName
+	.2byte 0xF04D
+	.byte 0xDE
+	.byte 0xFA
 	mov r9, r0
 	adds r0, r7, #0
 	bl ObjectInit
@@ -16033,7 +16071,9 @@ _0802EF08:
 	strh r0, [r4, #0]
 	ldr r1, _0802EFE8
 	movs r0, #1
-	bl FindResourceByName
+	.2byte 0xF04C
+	.byte 0x2E
+	.byte 0xFE
 	str r0, [sp, #36]
 	adds r0, r7, #0
 	bl ObjectInit
@@ -16960,8 +17000,8 @@ _0802F53E:
 	strh r0, [r2, #0]
 	ldr r1, _0802F698
 	movs r0, #1
-	bl FindResourceByName
-	adds r4, r0, #0
+	.2byte 0xF04C
+	.4byte 0x1C04FAF7
 	adds r0, r7, #0
 	bl ObjectInit
 	str r6, [sp, #0]
@@ -18153,7 +18193,9 @@ _0802FE1C:
 	.global _0802FE1E
 _0802FE1E:
 	movs r0, #1
-	bl FindResourceByName
+	.2byte 0xF04B
+	.byte 0xBA
+	.byte 0xFE
 	adds r6, r0, #0
 	adds r0, r7, #0
 	bl ObjectInit

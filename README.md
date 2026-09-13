@@ -13,6 +13,9 @@ Expected SHA-1: `5ed178bfbdf459867d64e5b91a9d9c72654e4051` (16,777,216 bytes).
 `make compare` checks every ROM byte when `baserom.gba` is present. `make`
 prints linked ROM, EWRAM, and IWRAM usage after the build; RAM figures cover
 static linked sections because this game allocates its working heaps at runtime.
+ROM usage counts occupied content rather than the padded file length. Runs of
+at least 32 identical `00` or `FF` fill bytes, plus cartridge address space
+beyond the image, are reported as free capacity.
 `make test` runs the host-side unit suite, `make test-english` runs its English
 subset, and `make ci` builds both `mar.gba` and `mar_english.gba` before running
 the same tests used by GitHub Actions. ROM-dependent source round-trip tests are
@@ -266,19 +269,16 @@ English mappings, including the ÄRM Select names and descriptions.
 
 ## Decompilation status
 
-The provenance audit verifies **996 ordinary C ranges (51,352 bytes, 8.1859% of
-the measured code/data region) and 10 BIOS assembly wrappers**; each declared range is linked from its expected object and matches
-the Japanese ROM. The latest batch restores the game's original newlib sources
-and compiles them with the historical libc compiler, covering string, memory,
-stdio, locale, allocator, and floating-point formatting code plus their constant
-tables. Recent game-code batches add 31 procedural-map native adapters, eleven
-event adapters, fourteen resource handlers, 23 scene/sound handlers, and two
-KMP attribute helpers. `MapAttributeGetConnectionMask` proves that generated
-map connections use the `400–499` and `5400–5499` attribute classes and assigns
-their north/east/south/west mask bits. Eleven runtime lifecycle and record
-helpers also replace assembly. This includes repairing an older partial range
-at `08004FB8`: `RuntimeAdvanceWord4` is now one complete C function beginning
-at its real entry point, `08004FB4`.
+The provenance audit verifies **1,240 ordinary C ranges (76,039 bytes, 12.1212%
+of the measured code/data region) and 10 BIOS assembly wrappers**; each declared
+range is linked from its expected object and matches the Japanese ROM. Recent
+batches decode the save block, CRC-32 validation, asynchronous SRAM write and
+load/verification paths, MusicPlayer2000 sound routines including the complete
+four-channel PSG update loop, script-facing player transitions, instrument
+banks, song tables, song headers, and the first two songs' track boundaries, sprite
+resource allocation, affine transforms, and sprite
+interpolation work arrays. The map work also identifies the generated-map
+connection attribute classes and their north/east/south/west mask bits.
 Equivalent C candidates that made agbcc choose different instruction bytes
 were rejected from the manifest. This is a verified function count, not a
 percentage of all game code. Earlier batches include eight list helpers, the `SprSet` and `SprGet`
@@ -410,10 +410,10 @@ included, where modern GCC differed on two counts in every function:
 | Leaf prologue | `push {lr}` | `push {r4, lr}`, saving a register it never uses |
 | `index * 24` | `((i * 2) + i) * 8` with shifts | load 24, then `muls` |
 
-The current manifest declares 1,006 linked ranges: 996 compiled-C ranges and ten
-BIOS inline-assembly wrapper ranges. Compiled C owns 51,352 bytes, including
-literal pools and alignment, or 8.1859% of the executable region after known
-PCM is excluded. The current target is at least 20%. This metric is not a pure
+The current manifest declares 1,250 linked ranges: 1,240 compiled-C ranges and
+ten BIOS inline-assembly wrapper ranges. Compiled C owns 76,039 bytes, including
+literal pools and alignment, or 12.1212% of the executable region after known
+PCM is excluded. This metric is not a pure
 function-completion percentage because the denominator still contains tables
 and undecoded data.
 One range may contain multiple contiguous
@@ -525,8 +525,11 @@ unclassified region and the limits of the former RLE identification.
 
 [115 editable driver-referenced WAV samples](sound/README.md) replace the old
 statistical sound guesses. Audio now rebuilds from WAV and header JSON, including
-computed loop interpolation guards. Song tables are documented, but musical
-sequencing and PSG reconstruction remain unfinished.
+computed loop interpolation guards. The driver-side MusicPlayer2000 sequencer,
+mixing helpers, fades, and PSG channel updater are recovered in C. Editable song
+sequence authoring and several game-side task constructors remain unfinished.
+The decoded structures, execution path, and remaining boundary are documented
+in [docs/sound-engine.md](docs/sound-engine.md).
 
 [Translation and English layout notes](text/translation/README.md) explain the
 actual dialogue printer, its double-byte English font mapping, and strict row

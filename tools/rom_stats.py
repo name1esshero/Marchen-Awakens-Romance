@@ -36,6 +36,21 @@ def format_size(value):
     return f"{value:,} bytes"
 
 
+def rom_occupancy(path, capacity, minimum_run=32):
+    """Count reusable erased/padding runs, not the padded file length.
+
+    Isolated 00/FF values are ordinary data.  Runs of at least 32 identical
+    fill bytes are reported as free, as is address space beyond the image.
+    """
+    data=path.read_bytes()
+    if len(data)>capacity:
+        raise ValueError('ROM image exceeds the GBA cartridge address space')
+    pattern=rb'\x00{%d,}|\xff{%d,}' % (minimum_run,minimum_run)
+    free=capacity-len(data)+sum(match.end()-match.start()
+                                for match in re.finditer(pattern,data))
+    return capacity-free,free
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("elf", type=Path)
@@ -49,11 +64,13 @@ def main():
         end = start + capacity
         used = sum(size for _, address, size in sections
                    if start <= address < end)
+        free=None
         if name == "ROM" and args.rom:
-            used = args.rom.stat().st_size
+            used,free=rom_occupancy(args.rom,capacity)
         percent = used * 100.0 / capacity
-        print(f"  {name:5} {format_size(used):>18} / "
-              f"{format_size(capacity):>18}  ({percent:6.2f}%)")
+        suffix=f"; {format_size(free)} free" if free is not None else ""
+        print(f"  {name:5} {format_size(used):>18} used / "
+              f"{format_size(capacity):>18} total  ({percent:6.2f}%{suffix})")
     print("  RAM figures count linked static sections; runtime heaps and stacks "
           "are allocated by the game.")
 

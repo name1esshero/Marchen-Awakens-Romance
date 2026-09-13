@@ -156,7 +156,9 @@ _0805819E:
 	.global _080581AE
 _080581AE:
 	adds r0, r4, #0
-	bl sub_0807BEC0
+	.2byte 0xF023
+	.byte 0x86
+	.byte 0xFE
 	adds r0, r5, #0
 
 	.thumb_func
@@ -177,8 +179,8 @@ sub_080581B6:
 	.global _080581CC
 _080581CC:
 	adds r0, r4, #0
-	bl sub_0807BEC0
-	adds r0, r5, #0
+	.2byte 0xF023
+	.4byte 0x1C28FE77
 	movs r2, #128
 	lsls r2, r2, #9
 	adds r5, r5, r2
@@ -205,7 +207,9 @@ _080581F4:
 	adds r0, r7, #0
 	str r1, [sp, #44]
 	str r2, [sp, #48]
-	bl sub_0807BEC0
+	.2byte 0xF023
+	.byte 0x5E
+	.byte 0xFE
 	adds r0, r4, #0
 	movs r3, #128
 	lsls r3, r3, #9
@@ -234,8 +238,8 @@ sub_0805820A:
 	.global _0805822C
 _0805822C:
 	adds r0, r4, #0
-	bl sub_0807BEC0
-	adds r0, r5, #0
+	.2byte 0xF023
+	.4byte 0x1C28FE47
 	movs r1, #128
 	lsls r1, r1, #9
 	adds r5, r5, r1
@@ -250,7 +254,9 @@ _0805822C:
 	.global _0805824A
 _0805824A:
 	adds r0, r4, #0
-	bl sub_0807BEC0
+	.2byte 0xF023
+	.byte 0x38
+	.byte 0xFE
 	adds r0, r5, #0
 	movs r2, #128
 	lsls r2, r2, #9
@@ -265,7 +271,9 @@ _0805824A:
 	.global _08058266
 _08058266:
 	adds r0, r4, #0
-	bl sub_0807BEC0
+	.2byte 0xF023
+	.byte 0x2A
+	.byte 0xFE
 	adds r0, r5, #0
 	movs r3, #128
 	lsls r3, r3, #9
@@ -277,8 +285,8 @@ _08058266:
 	ldr r7, _080582C4
 	add r7, r8
 	adds r0, r7, #0
-	bl sub_0807BEC0
-	movs r7, #221
+	.2byte 0xF023
+	.4byte 0x27DDFE1D
 	lsls r7, r7, #4
 	add r7, r8
 
@@ -287,16 +295,18 @@ _08058266:
 	.global sub_0805828C
 sub_0805828C:
 	adds r0, r7, #0
-	bl sub_0807BEC0
-	ldr r7, _080582C8
+	.2byte 0xF023
+	.4byte 0x4F0DFE17
 	add r7, r8
 	adds r0, r7, #0
-	bl sub_0807BEC0
+	.2byte 0xF023
+	.byte 0x12
+	.byte 0xFE
 	ldr r7, _080582CC
 	add r7, r8
 	adds r0, r7, #0
-	bl sub_0807BEC0
-	ldr r4, [sp, #24]
+	.2byte 0xF023
+	.4byte 0x9C06FE0D
 	ldr r1, [r4, #24]
 	cmp r1, #0
 	beq _080582B4
@@ -349,15 +359,17 @@ _080582D8:
 	bl sub_0807BFD0
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	b _08058300
+	.2byte 0xF023
+	.4byte 0xE005FD5D
 	.global _080582F4
 _080582F4:
 	mov r1, r8
 	adds r7, r1, r4
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF023
+	.byte 0x56
+	.byte 0xFD
 	.global _08058300
 _08058300:
 	adds r0, r5, #0
@@ -391,7 +403,9 @@ sub_08058320:
 	bl sub_0807BFD0
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF023
+	.byte 0x3E
+	.byte 0xFD
 	b _08058344
 	.byte 0x00
 	.byte 0x00
@@ -404,7 +418,9 @@ _08058338:
 	adds r7, r0, r4
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF023
+	.byte 0x34
+	.byte 0xFD
 	.global _08058344
 _08058344:
 	adds r0, r6, #1
@@ -418,13 +434,15 @@ _08058344:
 	add r7, r8
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	movs r7, #221
+	.2byte 0xF023
+	.4byte 0x27DDFD27
 	lsls r7, r7, #4
 	add r7, r8
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF023
+	.byte 0x20
+	.byte 0xFD
 
 	.thumb_func
 	.thumb
@@ -440,12 +458,16 @@ sub_0805836C:
 	add r7, r8
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF023
+	.byte 0x14
+	.byte 0xFD
 	ldr r7, _080583D4
 	add r7, r8
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF023
+	.byte 0x0E
+	.byte 0xFD
 	.global _08058390
 _08058390:
 	mov r0, r8
@@ -458,8 +480,8 @@ _08058390:
 _0805839E:
 	adds r0, r4, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	adds r0, r5, #0
+	.2byte 0xF023
+	.4byte 0x1C28FD03
 	movs r2, #128
 	lsls r2, r2, #9
 	adds r5, r5, r2
@@ -1114,7 +1136,9 @@ _080587FA:
 	beq _0805880A
 	adds r0, r5, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF023
+	.byte 0xD1
+	.byte 0xFA
 	.global _0805880A
 _0805880A:
 	adds r0, r6, #0
@@ -1142,7 +1166,9 @@ _0805882C:
 	beq _0805883C
 	adds r0, r5, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF023
+	.byte 0xB8
+	.byte 0xFA
 	.global _0805883C
 _0805883C:
 	adds r0, r6, #0
@@ -1190,7 +1216,9 @@ _0805887A:
 	adds r0, #108
 	adds r0, r5, r0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF023
+	.byte 0x92
+	.byte 0xFA
 	adds r0, r4, #0
 	movs r1, #128
 	lsls r1, r1, #9
@@ -1308,8 +1336,8 @@ sub_08058948:
 	adds r7, r6, r4
 	ldr r1, _08058A04
 	movs r0, #0
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF023
+	.4byte 0x1C02F923
 	str r5, [sp, #0]
 	adds r0, r7, #0
 	movs r1, #0
@@ -1346,8 +1374,8 @@ sub_08058948:
 	adds r7, r6, r2
 	movs r0, #0
 	add r1, sp, #4
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF023
+	.4byte 0x1C02F8FB
 	mov r3, r9
 	str r3, [sp, #0]
 	adds r0, r7, #0
@@ -1807,8 +1835,8 @@ _08058CB0:
 	adds r4, r4, r0
 	movs r0, #0
 	adds r1, r4, #0
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF022
+	.4byte 0x1C02FF65
 	str r6, [sp, #0]
 
 	.thumb_func
@@ -1871,8 +1899,8 @@ _08058D28:
 	.2byte 0xF022
 	.4byte 0x2000FF77
 	ldr r1, _08059040
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF022
+	.4byte 0x1C02FF29
 	ldr r4, _08059044
 	add r4, r9
 	movs r0, #4
@@ -1953,8 +1981,8 @@ _08058DD2:
 	.2byte 0xF022
 	.4byte 0x2000FF25
 	ldr r1, _08059054
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF022
+	.4byte 0x1C02FED7
 	str r4, [sp, #0]
 	adds r0, r7, #0
 	movs r1, #0
@@ -2011,7 +2039,9 @@ _08058E40:
 	.byte 0xFE
 	movs r0, #0
 	ldr r1, _0805905C
-	bl FindResourceByName
+	.2byte 0xF022
+	.byte 0x9E
+	.byte 0xFE
 	adds r2, r0, #0
 	str r5, [sp, #0]
 	adds r0, r7, #0
@@ -2071,7 +2101,9 @@ _08058EAC:
 	.byte 0xFE
 	movs r0, #0
 	ldr r1, _08059064
-	bl FindResourceByName
+	.2byte 0xF022
+	.byte 0x6A
+	.byte 0xFE
 	adds r2, r0, #0
 	str r4, [sp, #0]
 	adds r0, r7, #0
@@ -2134,7 +2166,9 @@ _08058F24:
 	.byte 0xFE
 	movs r0, #0
 	ldr r1, _0805906C
-	bl FindResourceByName
+	.2byte 0xF022
+	.byte 0x2E
+	.byte 0xFE
 	adds r2, r0, #0
 	str r4, [sp, #0]
 	adds r0, r7, #0
@@ -2198,7 +2232,9 @@ _08058F92:
 	.byte 0xFE
 	movs r0, #0
 	ldr r1, _08059070
-	bl FindResourceByName
+	.2byte 0xF022
+	.byte 0xF4
+	.byte 0xFD
 	adds r2, r0, #0
 	str r5, [sp, #0]
 	adds r0, r7, #0
@@ -2246,8 +2282,8 @@ _08058FF6:
 	.2byte 0xF022
 	.4byte 0x2000FE11
 	ldr r1, _08059078
-	bl FindResourceByName
-	b _0805907C
+	.2byte 0xF022
+	.4byte 0xE033FDC3
 	.global _08059014
 _08059014:
 	.4byte 0x08088ADC  @ ROM+0x88ADC
@@ -2393,7 +2429,9 @@ _0805907C:
 	.byte 0xFD
 	movs r0, #0
 	add r1, sp, #28
-	bl FindResourceByName
+	.2byte 0xF022
+	.byte 0x4A
+	.byte 0xFD
 	adds r2, r0, #0
 	movs r4, #0
 	str r4, [sp, #0]
@@ -2449,8 +2487,8 @@ sub_08059146:
 	.2byte 0xF022
 	.4byte 0x491FFD61
 	movs r0, #0
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF022
+	.4byte 0x1C02FD13
 
 	.thumb_func
 	.thumb
@@ -3512,8 +3550,8 @@ _08059726:
 sub_0805972A:
 	ldr r1, _0805974C
 	movs r0, #0
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF022
+	.4byte 0x1C02FA33
 	str r6, [sp, #0]
 	adds r0, r7, #0
 	movs r1, #0
@@ -4462,8 +4500,8 @@ _08059B52:
 sub_08059B5A:
 	str r1, [sp, #68]
 	str r2, [sp, #72]
-	bl sub_0807BEC0
-	adds r0, r5, #0
+	.2byte 0xF022
+	.4byte 0x1C28F9AF
 	movs r4, #128
 
 	.thumb_func
@@ -4517,7 +4555,9 @@ _08059B9C:
 	adds r0, r7, #0
 	str r1, [sp, #68]
 	str r2, [sp, #72]
-	bl sub_0807BEC0
+	.2byte 0xF022
+	.byte 0x8A
+	.byte 0xF9
 	adds r0, r5, #0
 	movs r3, #128
 	lsls r3, r3, #9
@@ -4569,7 +4609,9 @@ _08059BE0:
 	adds r0, r7, #0
 	str r1, [sp, #68]
 	str r2, [sp, #72]
-	bl sub_0807BEC0
+	.2byte 0xF022
+	.byte 0x68
+	.byte 0xF9
 	adds r0, r5, #0
 	movs r3, #128
 	lsls r3, r3, #9
@@ -4608,8 +4650,8 @@ sub_08059C0C:
 	.global _08059C18
 _08059C18:
 	adds r0, r4, #0
-	bl sub_0807BEC0
-	adds r0, r6, #0
+	.2byte 0xF022
+	.4byte 0x1C30F951
 	movs r5, #128
 	lsls r5, r5, #9
 	adds r6, r6, r5
@@ -4630,8 +4672,8 @@ _08059C38:
 	.thumb
 	.global sub_08059C3A
 sub_08059C3A:
-	bl sub_0807BEC0
-	adds r0, r6, #0
+	.2byte 0xF022
+	.4byte 0x1C30F941
 	movs r1, #128
 	lsls r1, r1, #9
 	adds r6, r6, r1
@@ -4655,8 +4697,8 @@ _08059C54:
 	.thumb
 	.global sub_08059C56
 sub_08059C56:
-	bl sub_0807BEC0
-	adds r0, r6, #0
+	.2byte 0xF022
+	.4byte 0x1C30F933
 	movs r2, #128
 	lsls r2, r2, #9
 	adds r6, r6, r2
@@ -4672,7 +4714,9 @@ sub_08059C56:
 sub_08059C6C:
 	add r7, r8
 	adds r0, r7, #0
-	bl sub_0807BEC0
+	.2byte 0xF022
+	.byte 0x26
+	.byte 0xF9
 	ldr r7, _08059D04
 	add r7, r8
 	adds r0, r7, #0
@@ -4686,7 +4730,9 @@ sub_08059C7C:
 	ldr r7, sub_08059D08
 	add r7, r8
 	adds r0, r7, #0
-	bl sub_0807BEC0
+	.2byte 0xF022
+	.byte 0x1C
+	.byte 0xF9
 	ldr r7, _08059D0C
 	add r7, r8
 	adds r0, r7, #0
@@ -4705,7 +4751,9 @@ sub_08059C90:
 sub_08059C94:
 	add r7, r8
 	adds r0, r7, #0
-	bl sub_0807BEC0
+	.2byte 0xF022
+	.byte 0x12
+	.byte 0xF9
 	movs r6, #128
 	lsls r6, r6, #9
 
@@ -4718,8 +4766,8 @@ sub_08059CA0:
 	.global _08059CA4
 _08059CA4:
 	adds r0, r4, #0
-	bl sub_0807BEC0
-	adds r0, r6, #0
+	.2byte 0xF022
+	.4byte 0x1C30F90B
 	movs r3, #128
 	lsls r3, r3, #9
 	adds r6, r6, r3
@@ -4840,8 +4888,8 @@ sub_08059D2E:
 	bne _08059D44
 	adds r0, r7, #0
 	movs r1, #1
-	bl NcdQueueSprite
-	b _08059D64
+	.2byte 0xF022
+	.4byte 0xE00FF835
 	.global _08059D44
 _08059D44:
 	lsls r0, r5, #16
@@ -4857,13 +4905,15 @@ _08059D44:
 sub_08059D52:
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	b _08059D64
+	.2byte 0xF022
+	.4byte 0xE003F829
 	.global _08059D5C
 _08059D5C:
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF022
+	.byte 0x24
+	.byte 0xF8
 	.global _08059D64
 _08059D64:
 	adds r0, r4, #0
@@ -4888,8 +4938,8 @@ _08059D7A:
 	bl sub_0807BFD0
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	b _08059DA4
+	.2byte 0xF022
+	.4byte 0xE007F80D
 	.global _08059D94
 _08059D94:
 	.4byte 0x081BED4C  @ ROM+0x1BED4C
@@ -4899,7 +4949,9 @@ _08059D98:
 	adds r7, r0, r4
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF022
+	.byte 0x04
+	.byte 0xF8
 	.global _08059DA4
 _08059DA4:
 	adds r0, r5, #1
@@ -4924,7 +4976,9 @@ _08059DA4:
 _08059DC8:
 	adds r0, r4, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF021
+	.byte 0xEE
+	.byte 0xFF
 	adds r0, r6, #0
 	movs r1, #128
 	lsls r1, r1, #9
@@ -4948,12 +5002,16 @@ sub_08059DDA:
 	add r7, r8
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF021
+	.byte 0xDA
+	.byte 0xFF
 	ldr r7, _08059ED8
 	add r7, r8
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF021
+	.byte 0xD4
+	.byte 0xFF
 	.global _08059E04
 _08059E04:
 	movs r6, #128
@@ -4964,7 +5022,9 @@ _08059E04:
 _08059E0C:
 	adds r0, r4, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF021
+	.byte 0xCC
+	.byte 0xFF
 	adds r0, r6, #0
 	movs r3, #128
 	lsls r3, r3, #9
@@ -5006,8 +5066,8 @@ sub_08059E32:
 sub_08059E36:
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	movs r6, #128
+	.2byte 0xF021
+	.4byte 0x2680FFB7
 	lsls r6, r6, #9
 	ldr r4, _08059EE8
 	add r4, r8
@@ -5015,7 +5075,9 @@ sub_08059E36:
 _08059E46:
 	adds r0, r4, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF021
+	.byte 0xAF
+	.byte 0xFF
 
 	.thumb_func
 	.thumb
@@ -5044,7 +5106,9 @@ sub_08059E6A:
 	add r7, r8
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF021
+	.byte 0x9B
+	.byte 0xFF
 	.global _08059E76
 _08059E76:
 	movs r2, #0
@@ -5070,7 +5134,9 @@ sub_08059E8A:
 	.global sub_08059E8E
 sub_08059E8E:
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF021
+	.byte 0x8C
+	.byte 0xFF
 	.global _08059E94
 _08059E94:
 	ldr r0, _08059EFC
@@ -5082,15 +5148,17 @@ _08059E94:
 	add r7, r8
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF021
+	.byte 0x81
+	.byte 0xFF
 	.global _08059EAA
 _08059EAA:
 	ldr r7, _08059F04
 	add r7, r8
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	mov r0, r8
+	.2byte 0xF021
+	.4byte 0x4640FF7B
 	bl sub_0805A7AC
 	.global _08059EBC
 _08059EBC:
@@ -6466,7 +6534,9 @@ _0805A7CA:
 	adds r4, r2, #0
 	adds r0, r4, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF021
+	.byte 0xEC
+	.byte 0xFA
 	adds r0, r5, #0
 	movs r1, #128
 	lsls r1, r1, #9
@@ -6498,8 +6568,8 @@ _0805A804:
 	adds r4, r2, #0
 	adds r0, r4, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	adds r0, r5, #0
+	.2byte 0xF021
+	.4byte 0x1C28FACF
 	movs r1, #128
 	lsls r1, r1, #9
 	adds r5, r5, r1
@@ -6556,8 +6626,8 @@ _0805A852:
 	adds r4, r6, r0
 	adds r0, r4, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	adds r0, r5, #0
+	.2byte 0xF021
+	.4byte 0x1C28FAA5
 	movs r2, #128
 	lsls r2, r2, #9
 	adds r5, r5, r2
@@ -6615,8 +6685,8 @@ sub_0805A8B0:
 	adds r4, r6, r0
 	adds r0, r4, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	adds r0, r5, #0
+	.2byte 0xF021
+	.4byte 0x1C28FA77
 
 	.thumb_func
 	.thumb
@@ -6674,8 +6744,8 @@ _0805A906:
 	adds r4, r6, r0
 	adds r0, r4, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	adds r0, r5, #0
+	.2byte 0xF021
+	.4byte 0x1C28FA49
 	movs r3, #128
 	lsls r3, r3, #9
 	adds r5, r5, r3
@@ -6777,8 +6847,8 @@ sub_0805A94C:
 	adds r7, r6, r1
 	ldr r1, _0805AA90
 	movs r0, #0
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF021
+	.4byte 0x1C02F8DD
 	str r5, [sp, #0]
 	adds r0, r7, #0
 	movs r1, #0
@@ -6815,8 +6885,8 @@ sub_0805A94C:
 	adds r7, r6, r2
 	movs r0, #0
 	add r1, sp, #4
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF021
+	.4byte 0x1C02F8B5
 	mov r3, r9
 	str r3, [sp, #0]
 	adds r0, r7, #0
@@ -7527,7 +7597,9 @@ _0805AEAC:
 	adds r5, r7, r3
 	ldr r1, _0805B058
 	movs r0, #0
-	bl FindResourceByName
+	.2byte 0xF020
+	.byte 0x70
+	.byte 0xFE
 
 	.thumb_func
 	.thumb
@@ -7817,7 +7889,9 @@ _0805B074:
 	adds r5, r7, r0
 	movs r0, #0
 	adds r1, r4, #0
-	bl FindResourceByName
+	.2byte 0xF020
+	.byte 0x7C
+	.byte 0xFD
 	adds r2, r0, #0
 	mov r1, r8
 	str r1, [sp, #0]
@@ -8242,8 +8316,8 @@ _0805B43C:
 	adds r4, r4, r0
 	movs r0, #0
 	adds r1, r4, #0
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF020
+	.4byte 0x1C02FB9D
 	mov r1, r8
 	str r1, [sp, #0]
 	adds r0, r7, #0
@@ -8327,7 +8401,9 @@ sub_0805B482:
 	.byte 0xFB
 	movs r0, #0
 	ldr r1, _0805B604
-	bl FindResourceByName
+	.2byte 0xF020
+	.byte 0x50
+	.byte 0xFB
 	adds r2, r0, #0
 	mov r1, r8
 	str r1, [sp, #0]
@@ -8411,7 +8487,9 @@ sub_0805B548:
 	.byte 0xFB
 	movs r0, #0
 	ldr r1, _0805B604
-	bl FindResourceByName
+	.2byte 0xF020
+	.byte 0xFE
+	.byte 0xFA
 	adds r2, r0, #0
 	mov r1, r8
 	str r1, [sp, #0]
@@ -9617,8 +9695,8 @@ sub_0805BBF6:
 	adds r7, r6, r2
 	ldr r1, sub_0805BC74
 	movs r0, #0
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF01F
+	.4byte 0x1C02FFCB
 	movs r4, #0
 
 	.thumb_func
@@ -10985,7 +11063,9 @@ sub_0805C336:
 _0805C344:
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF01F
+	.byte 0x30
+	.byte 0xFD
 	b _0805C368
 	.byte 0x00
 	.byte 0x00
@@ -11002,7 +11082,9 @@ _0805C354:
 	adds r7, r6, r0
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF01F
+	.byte 0x22
+	.byte 0xFD
 	.global _0805C368
 _0805C368:
 	adds r0, r5, #1
@@ -11031,21 +11113,25 @@ _0805C388:
 	adds r7, r6, r0
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF01F
+	.byte 0x08
+	.byte 0xFD
 	movs r7, #148
 	lsls r7, r7, #3
 	adds r0, r4, r7
 	adds r7, r6, r0
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF01F
+	.byte 0x00
+	.byte 0xFD
 	ldr r0, _0805C438
 	adds r4, r4, r0
 	adds r7, r6, r4
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	mov r0, r8
+	.2byte 0xF01F
+	.4byte 0x4640FCF9
 	movs r1, #128
 	lsls r1, r1, #9
 	add r8, r1
@@ -11076,7 +11162,9 @@ _0805C3D2:
 	bl sub_0807BFD0
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF01F
+	.byte 0xD9
+	.byte 0xFC
 	.global _0805C3FA
 _0805C3FA:
 	ldr r1, _0805C43C
@@ -11090,7 +11178,9 @@ _0805C404:
 	adds r7, r6, r2
 	adds r0, r7, #0
 	movs r1, #1
-	bl NcdQueueSprite
+	.2byte 0xF01F
+	.byte 0xCE
+	.byte 0xFC
 	movs r3, #239
 	lsls r3, r3, #3
 	adds r7, r6, r3
@@ -11103,7 +11193,9 @@ _0805C404:
 	.global sub_0805C41E
 sub_0805C41E:
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF01F
+	.byte 0xC4
+	.byte 0xFC
 	.global _0805C424
 _0805C424:
 	add sp, #44
@@ -11473,7 +11565,9 @@ _0805C670:
 	.byte 0xFA
 	movs r0, #0
 	add r1, sp, #12
-	bl FindResourceByName
+	.2byte 0xF01F
+	.byte 0x76
+	.byte 0xFA
 	adds r2, r0, #0
 	str r7, [sp, #0]
 	adds r0, r6, #0
@@ -11516,7 +11610,9 @@ _0805C670:
 	.byte 0xFA
 	movs r0, #0
 	ldr r1, _0805C904
-	bl FindResourceByName
+	.2byte 0xF01F
+	.byte 0x4A
+	.byte 0xFA
 	adds r2, r0, #0
 	str r7, [sp, #0]
 	adds r0, r6, #0
@@ -11563,8 +11659,8 @@ sub_0805C70E:
 	.2byte 0xF01F
 	.4byte 0x2000FA6B
 	ldr r1, _0805C90C
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF01F
+	.4byte 0x1C02FA1D
 	str r7, [sp, #0]
 	adds r0, r6, #0
 	movs r1, #0
@@ -12490,8 +12586,8 @@ _0805CD34:
 	adds r4, r4, r0
 	movs r0, #0
 	adds r1, r4, #0
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF01E
+	.4byte 0x1C02FF21
 	mov r0, r8
 	str r0, [sp, #0]
 	adds r0, r7, #0
@@ -12559,7 +12655,9 @@ sub_0805CDA6:
 	.byte 0xFF
 	ldr r1, _0805CE94
 	movs r0, #0
-	bl FindResourceByName
+	.2byte 0xF01E
+	.byte 0xEA
+	.byte 0xFE
 	adds r2, r0, #0
 	movs r0, #0
 	str r0, [sp, #0]
@@ -12769,7 +12867,9 @@ sub_0805CEFC:
 	.byte 0xFE
 	movs r0, #0
 	ldr r1, _0805D06C
-	bl FindResourceByName
+	.2byte 0xF01E
+	.byte 0x42
+	.byte 0xFE
 	adds r2, r0, #0
 	ldr r4, _0805D070
 	add r4, r9
@@ -12844,7 +12944,9 @@ sub_0805CF28:
 	.byte 0xFE
 	ldr r1, _0805D07C
 	movs r0, #0
-	bl FindResourceByName
+	.2byte 0xF01E
+	.byte 0xFC
+	.byte 0xFD
 	adds r2, r0, #0
 	movs r3, #0
 	mov r10, r3
@@ -12891,7 +12993,9 @@ sub_0805CF28:
 	.byte 0xFE
 	ldr r1, _0805D084
 	movs r0, #0
-	bl FindResourceByName
+	.2byte 0xF01E
+	.byte 0xCC
+	.byte 0xFD
 	adds r2, r0, #0
 	mov r1, r10
 	str r1, [sp, #0]
@@ -14116,7 +14220,9 @@ _0805D9BE:
 _0805D9C0:
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF01E
+	.byte 0xF2
+	.byte 0xF9
 	b _0805D9EC
 	.byte 0x00
 	.byte 0x00
@@ -14144,7 +14250,9 @@ _0805D9D8:
 	.global sub_0805D9E6
 sub_0805D9E6:
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF01E
+	.byte 0xE0
+	.byte 0xF9
 	.global _0805D9EC
 _0805D9EC:
 	adds r0, r5, #1
@@ -14161,7 +14269,9 @@ _0805D9EC:
 _0805DA00:
 	adds r0, r4, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF01E
+	.byte 0xD2
+	.byte 0xF9
 	adds r0, r7, #0
 	movs r1, #128
 	lsls r1, r1, #9
@@ -14204,7 +14314,9 @@ _0805DA44:
 	adds r0, r7, #0
 	movs r1, #0
 	str r2, [sp, #32]
-	bl NcdQueueSprite
+	.2byte 0xF01E
+	.byte 0xAA
+	.byte 0xF9
 	b _0805DA7A
 	.byte 0x00
 	.byte 0x00
@@ -14233,7 +14345,9 @@ sub_0805DA6C:
 	adds r0, r7, #0
 	movs r1, #0
 	str r2, [sp, #32]
-	bl NcdQueueSprite
+	.2byte 0xF01E
+	.byte 0x99
+	.byte 0xF9
 	.global _0805DA7A
 _0805DA7A:
 	ldr r2, [sp, #32]
@@ -14265,7 +14379,9 @@ _0805DA9C:
 	adds r7, r6, r0
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF01E
+	.byte 0x7E
+	.byte 0xF9
 	adds r0, r4, #0
 	movs r1, #128
 	lsls r1, r1, #9
@@ -14310,7 +14426,9 @@ _0805DAC6:
 sub_0805DAF6:
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF01E
+	.byte 0x57
+	.byte 0xF9
 
 	.thumb_func
 	.thumb
@@ -14320,17 +14438,19 @@ sub_0805DAFE:
 	adds r7, r6, r2
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	ldr r3, _0805DBAC
+	.2byte 0xF01E
+	.4byte 0x4B28F951
 	adds r7, r6, r3
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	ldr r4, _0805DBB0
+	.2byte 0xF01E
+	.4byte 0x4C26F94B
 	adds r7, r6, r4
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF01E
+	.byte 0x45
+	.byte 0xF9
 	.global _0805DB22
 _0805DB22:
 	movs r5, #0
@@ -14357,7 +14477,9 @@ _0805DB34:
 	adds r7, r6, r0
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF01E
+	.byte 0x32
+	.byte 0xF9
 	adds r0, r4, #0
 	movs r5, #128
 	lsls r5, r5, #9
@@ -14404,7 +14526,9 @@ _0805DB78:
 	bl sub_0807BFD0
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF01E
+	.byte 0x0A
+	.byte 0xF9
 	b _0805DBD4
 	.byte 0x00
 	.byte 0x00
@@ -14456,7 +14580,9 @@ sub_0805DBC6:
 	adds r7, r6, r0
 	adds r0, r7, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF01E
+	.byte 0xEC
+	.byte 0xF8
 	.global _0805DBD4
 _0805DBD4:
 	adds r0, r5, #1
@@ -14804,7 +14930,9 @@ sub_0805DE16:
 	adds r4, r0, r1
 	movs r0, #0
 	add r1, sp, #4
-	bl FindResourceByName
+	.2byte 0xF01D
+	.byte 0xB6
+	.byte 0xFE
 	adds r2, r0, #0
 	movs r0, #0
 	str r0, [sp, #0]
@@ -15071,8 +15199,8 @@ _0805DFC6:
 	adds r7, r6, r2
 	movs r0, #0
 	add r1, sp, #28
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF01D
+	.4byte 0x1C02FDE3
 	movs r3, #0
 	mov r10, r3
 	str r3, [sp, #0]
@@ -15132,7 +15260,9 @@ sub_0805E012:
 	adds r7, r6, r1
 	movs r0, #0
 	add r1, sp, #28
-	bl FindResourceByName
+	.2byte 0xF01D
+	.byte 0xA6
+	.byte 0xFD
 	adds r2, r0, #0
 	mov r3, r10
 	str r3, [sp, #0]
@@ -16043,8 +16173,8 @@ sub_0805E618:
 	adds r4, r6, r4
 	movs r0, #0
 	add r1, sp, #4
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF01D
+	.4byte 0x1C02FAB1
 	movs r0, #0
 	str r0, [sp, #0]
 	adds r0, r4, #0
@@ -16372,7 +16502,9 @@ _0805E982:
 	.byte 0xF9
 	movs r0, #0
 	ldr r1, _0805EA48
-	bl FindResourceByName
+	.2byte 0xF01D
+	.byte 0xFE
+	.byte 0xF8
 	adds r2, r0, #0
 	str r4, [sp, #0]
 	adds r0, r5, #0
@@ -16655,8 +16787,8 @@ sub_0805EC88:
 	lsls r0, r0, #3
 	adds r5, r7, r0
 	adds r0, r5, #0
-	bl sub_0807BEC0
-	ldr r4, _0805ECD8
+	.2byte 0xF01D
+	.4byte 0x4C10F915
 	ldr r1, _0805ECDC
 	adds r4, r4, r1
 	ldr r0, [r4, #0]
@@ -16752,7 +16884,9 @@ _0805ED0C:
 _0805ED30:
 	adds r0, r5, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF01D
+	.byte 0x3A
+	.byte 0xF8
 	b _0805ED58
 	.byte 0x00
 	.byte 0x00
@@ -16777,7 +16911,9 @@ _0805ED44:
 sub_0805ED50:
 	adds r0, r5, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF01D
+	.byte 0x2A
+	.byte 0xF8
 	.global _0805ED58
 _0805ED58:
 	adds r0, r6, #1
@@ -16798,8 +16934,8 @@ sub_0805ED5A:
 _0805ED6A:
 	adds r0, r4, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	adds r0, r5, #0
+	.2byte 0xF01D
+	.4byte 0x1C28F81D
 	movs r1, #128
 	lsls r1, r1, #9
 	adds r5, r5, r1
@@ -16811,25 +16947,29 @@ _0805ED6A:
 	adds r5, r7, r2
 	adds r0, r5, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	movs r3, #187
+	.2byte 0xF01D
+	.4byte 0x23BBF80F
 	lsls r3, r3, #3
 	adds r5, r7, r3
 	adds r0, r5, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF01D
+	.byte 0x08
+	.byte 0xF8
 	ldr r4, _0805EE34
 	adds r5, r7, r4
 	adds r0, r5, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF01D
+	.byte 0x02
+	.byte 0xF8
 	movs r0, #200
 	lsls r0, r0, #3
 	adds r5, r7, r0
 	adds r0, r5, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	ldr r1, _0805EE38
+	.2byte 0xF01C
+	.4byte 0x4920FFFB
 	adds r5, r7, r1
 	adds r0, r5, #0
 
@@ -16838,13 +16978,15 @@ _0805ED6A:
 	.global sub_0805EDBC
 sub_0805EDBC:
 	movs r1, #0
-	bl NcdQueueSprite
-	movs r2, #213
+	.2byte 0xF01C
+	.4byte 0x22D5FFF5
 	lsls r2, r2, #3
 	adds r5, r7, r2
 	adds r0, r5, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF01C
+	.byte 0xEE
+	.byte 0xFF
 	movs r5, #128
 	lsls r5, r5, #9
 	movs r3, #244
@@ -16854,8 +16996,8 @@ sub_0805EDBC:
 _0805EDDA:
 	adds r0, r4, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	adds r0, r5, #0
+	.2byte 0xF01C
+	.4byte 0x1C28FFE5
 	movs r1, #128
 	lsls r1, r1, #9
 	adds r5, r5, r1
@@ -16867,19 +17009,23 @@ _0805EDDA:
 	adds r5, r7, r2
 	adds r0, r5, #0
 	movs r1, #0
-	bl NcdQueueSprite
-	movs r3, #161
+	.2byte 0xF01C
+	.4byte 0x23A1FFD7
 	lsls r3, r3, #3
 	adds r5, r7, r3
 	adds r0, r5, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF01C
+	.byte 0xD0
+	.byte 0xFF
 	movs r4, #174
 	lsls r4, r4, #3
 	adds r5, r7, r4
 	adds r0, r5, #0
 	movs r1, #0
-	bl NcdQueueSprite
+	.2byte 0xF01C
+	.byte 0xC9
+	.byte 0xFF
 	.global _0805EE1A
 _0805EE1A:
 	add sp, #12
@@ -17863,7 +18009,9 @@ _0805F558:
 	adds r5, r7, r2
 	movs r0, #0
 	add r1, sp, #12
-	bl FindResourceByName
+	.2byte 0xF01C
+	.byte 0x0E
+	.byte 0xFB
 	adds r2, r0, #0
 	movs r4, #0
 	str r4, [sp, #0]
@@ -17959,7 +18107,9 @@ _0805F61A:
 	adds r5, r7, r1
 	movs r0, #0
 	add r1, sp, #12
-	bl FindResourceByName
+	.2byte 0xF01C
+	.byte 0xB2
+	.byte 0xFA
 	adds r2, r0, #0
 	movs r4, #0
 	str r4, [sp, #0]
@@ -18087,8 +18237,8 @@ sub_0805F6B8:
 	adds r5, r4, r2
 	movs r0, #0
 	add r1, sp, #12
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF01C
+	.4byte 0x1C02FA3D
 	str r6, [sp, #0]
 	adds r0, r5, #0
 	movs r1, #0
@@ -18443,8 +18593,8 @@ sub_0805FA34:
 	.2byte 0xF01C
 	.4byte 0x2000F8F7
 	ldr r1, _0805FC38
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF01C
+	.4byte 0x1C02F8A9
 	ldr r4, _0805FC3C
 	add r4, r9
 	movs r0, #4
@@ -18508,8 +18658,8 @@ _0805FAAE:
 	.2byte 0xF01C
 	.4byte 0x2000F8B7
 	ldr r1, _0805FC40
-	bl FindResourceByName
-	adds r2, r0, #0
+	.2byte 0xF01C
+	.4byte 0x1C02F869
 	str r6, [sp, #0]
 	adds r0, r5, #0
 	movs r1, #0
@@ -18566,7 +18716,9 @@ _0805FB1C:
 	.byte 0xF8
 	movs r0, #0
 	ldr r1, _0805FC48
-	bl FindResourceByName
+	.2byte 0xF01C
+	.byte 0x30
+	.byte 0xF8
 	adds r2, r0, #0
 	str r7, [sp, #0]
 	adds r0, r5, #0
@@ -18668,7 +18820,9 @@ sub_0805FB98:
 	bne _0805FC5C
 	ldr r1, _0805FC58
 	movs r0, #0
-	bl FindResourceByName
+	.2byte 0xF01B
+	.byte 0xCC
+	.byte 0xFF
 	adds r2, r0, #0
 	movs r0, #0
 	str r0, [sp, #0]
@@ -18721,7 +18875,9 @@ _0805FC58:
 _0805FC5C:
 	ldr r1, _0805FCE8
 	movs r0, #0
-	bl FindResourceByName
+	.2byte 0xF01B
+	.byte 0x9A
+	.byte 0xFF
 	adds r2, r0, #0
 	movs r0, #0
 	str r0, [sp, #0]

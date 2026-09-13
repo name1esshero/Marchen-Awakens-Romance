@@ -31,6 +31,11 @@ void CpuCopy(void *dest, const void *src, u32 size) {
     assert(size == 52);
     memcpy(dest, src, size);
 }
+void ListAppend(void *list, void *node) { (void)list; (void)node; }
+void HeapFree(struct Heap *heap, void *allocation) { (void)heap; (void)allocation; }
+void SpriteTileAllocatorRelease(void *allocator, s32 tile) {
+    (void)allocator; (void)tile;
+}
 int main(void) {
     struct {u32 before; struct NcdSprite sprite; u32 after;} data;
     unsigned char expected[52] = {0};

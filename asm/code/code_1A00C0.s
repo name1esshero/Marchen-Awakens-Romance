@@ -8,1809 +8,41 @@
 	.section .rom.001A00C0, "a"
 	.incbin "build/sound/samples/19EED0.bin", 4592, 9380
 
-	.section .rom.001A2564, "ax"
+@ 1A2564..1A262B is decompiled as gSong001Track1(); see src/decompiled.json
+
+@ 1A262B..1A283B is decompiled as gSong001Track2(); see src/decompiled.json
+
+@ 1A283B..1A2914 is decompiled as gSong001Track3(); see src/decompiled.json
+
+@ 1A2914..1A2980 is decompiled as gSong001Track4(); see src/decompiled.json
+
+@ 1A2980..1A29E5 is decompiled as gSong001Track5(); see src/decompiled.json
+
+@ 1A29E5..1A2B43 is decompiled as gSong001Track6(); see src/decompiled.json
+
+@ 1A2B43..1A2BD4 is decompiled as gSong001Track7(); see src/decompiled.json
+
+@ 1A2BD4..1A2BF8 is decompiled as gSongHeader_001(); see src/decompiled.json
+
+@ 1A2BF8..1A2CF5 is decompiled as gSong002Track1(); see src/decompiled.json
+
+@ 1A2CF5..1A2D84 is decompiled as gSong002Track2(); see src/decompiled.json
+
+@ 1A2D84..1A2DFE is decompiled as gSong002Track3(); see src/decompiled.json
+
+@ 1A2DFE..1A2EC5 is decompiled as gSong002Track4(); see src/decompiled.json
+
+@ 1A2EC5..1A2F23 is decompiled as gSong002Track5(); see src/decompiled.json
+
+@ 1A2F23..1A308E is decompiled as gSong002Track6(); see src/decompiled.json
+
+@ 1A308E..1A3104 is decompiled as gSong002Track7(); see src/decompiled.json
+
+@ 1A3104..1A3128 is decompiled as gSongHeader_002(); see src/decompiled.json
+
+	.section .rom.001A3128, "ax"
 	.syntax unified
 	.thumb
-	str r6, [r7, r2]
-	lsls r4, r7, #2
-	subs r4, #187
-	adds r0, #189
-	sub sp, #48
-	.2byte 0xEAB0
-	ldrb r7, [r0, r1]
-	.2byte 0xD49C
-	strh r5, [r0, #50]
-	strh r7, [r0, #50]
-	.inst.n 0x48EA  @ ldr r0, _081A2924
-	.2byte 0xD49C
-	strh r7, [r0, #50]
-	cmp r11, r10
-	.2byte 0xD485
-	strh r7, [r0, #10]
-	bics r2, r2
-	.2byte 0xED86
-	adr r0, _081A2684
-	str r2, [sp, #848]
-	strh r3, [r0, #50]
-	rors r4, r4
-	subs r4, #152
-	sbcs r0, r3
-	.2byte 0xD698
-	ldrh r0, [r0, #2]
-	subs r6, #211
-	subs r4, #136
-	.2byte 0xFB88
-	add sp, #248
-	.2byte 0x47EA
-	.2byte 0xD49C
-	strh r5, [r0, #50]
-	strh r7, [r0, #50]
-	.inst.n 0x48EA  @ ldr r0, _081A2954
-	.2byte 0xD49C
-	strh r7, [r0, #50]
-	strh r5, [r0, #50]
-	str r2, [sp, #284]
-	strh r3, [r0, #50]
-	subs r6, #237
-	.2byte 0xD4A0
-	bics r2, r2
-	.2byte 0xE486
-	.4byte 0x983C9841
-	.4byte 0x45D69841
-	.4byte 0x8843D388
-	.4byte 0x43E48841
-	.4byte 0x43983F98
-	.4byte 0x8846D698
-	.4byte 0x438845D3
-	.4byte 0x9845E488
-	.4byte 0x98459841
-	.4byte 0x885448D6
-	.4byte 0x884C47D3
-	.4byte 0xE5884848
-	.4byte 0xE498404A
-	.4byte 0xEA985C3E
-	.4byte 0x45D99C43
-	.4byte 0x8C47D48C
-	.4byte 0x4AF48C48
-	.4byte 0xB0B0B0A8
-	.4byte 0xA0B0B0B0
-	.4byte 0xA02C43EE
-	.4byte 0xA03C47EF
-	.4byte 0x9A4845E7
-	.4byte 0x864C3ED4
-	.4byte 0x42865440
-	.4byte 0x43D58658
-	.4byte 0xB0B0B05C
-	.4byte 0x256FB2B0
-	.4byte 0xBEB1081A
-	.4byte 0xBD00BC50
-	.4byte 0x3BD48C31
-	.4byte 0x8C43D448
-	.4byte 0x9843D43B
-	.4byte 0x8643D43B
-	.4byte 0x8643D43B
-	.4byte 0x8C43D43B
-	.4byte 0x9843D43B
-	.4byte 0x8643D43B
-	.4byte 0x8643D43B
-	.4byte 0xD4483BD4
-	.4byte 0xD43B8C43
-	.4byte 0xD43B9843
-	.4byte 0xD43B8643
-	.4byte 0xD43B8643
-	.4byte 0xD43B8C43
-	.4byte 0xD43B9843
-	.4byte 0xD43B8643
-	.4byte 0xD4B48643
-	.4byte 0x43D4483E
-	.4byte 0x483E8C4C
-	.4byte 0x984C43D4
-	.global _081A2684
-_081A2684:
-	.4byte 0x43D4483E
-	.4byte 0x483E864C
-	.4byte 0x864C43D4
-	.4byte 0x45D4483C
-	.4byte 0x483C8C4C
-	.4byte 0x984C45D4
-	.byte 0x3C
-	.byte 0x48
-	.global _081A269E
-_081A269E:
-	cmp r12, r10
-	subs r4, #134
-	cmp r12, r10
-	.2byte 0xB386
-	movs r6, #84
-	lsrs r2, r3, #32
-	subs r4, #212
-	bmi _081A2740
-	ldrh r1, [r0, #34]
-	bmi _081A272C
-	ldr r0, [sp, #260]
-	bmi sub_081A2730
-	strh r1, [r0, #50]
-	bmi _081A2734
-	strh r1, [r0, #50]
-	bmi sub_081A2738
-	ldrh r1, [r0, #34]
-	bmi _081A273C
-	ldr r0, [sp, #260]
-	bmi _081A2740
-	strh r1, [r0, #50]
-	bmi _081A2744
-	strh r1, [r0, #50]
-	subs r3, #180
-	mvns r4, r2
-	subs r3, #140
-	mvns r4, r2
-	subs r3, #152
-	subs r6, #212
-	subs r3, #134
-	subs r6, #212
-	subs r4, #134
-	bmi _081A27A2
-	ldrh r0, [r0, #34]
-	subs r4, #218
-	bge _081A2778
-	ldrh r0, [r0, #34]
-	subs r6, #212
-	bmi _081A27A6
-	ldrh r2, [r0, #34]
-	subs r6, #217
-	bls _081A2784
-	ldrh r2, [r0, #34]
-	subs r3, #212
-	mvns r4, r2
-	subs r3, #140
-	mvns r4, r2
-	subs r3, #152
-	mvns r4, r2
-	subs r3, #134
-	mvns r4, r2
-	subs r4, #134
-	cmp r12, r10
-	subs r4, #140
-	cmp r12, r10
-	subs r4, #152
-	cmp r12, r10
-	subs r4, #134
-	cmp r12, r10
-	.2byte 0xB386
-	movs r6, #84
-	lsrs r2, r3, #32
-	add r2, sp, #716
-	subs r6, r4, r0
-	bmi _081A2732
-
-	.thumb_func
-	.thumb
-	.global sub_081A2720
-sub_081A2720:
-	.inst.n 0x4843  @ ldr r0, _081A2830
-	mov r12, r10
-	bics r4, r1
-	mov r12, r10
-
-	.thumb_func
-	.thumb
-	.global sub_081A2728
-sub_081A2728:
-	bics r0, r3
-	mov r12, r10
-	.global _081A272C
-_081A272C:
-	bics r6, r0
-	mov r12, r10
-
-	.thumb_func
-	.thumb
-	.global sub_081A2730
-sub_081A2730:
-	bics r6, r0
-	.global _081A2732
-_081A2732:
-	mov r12, r10
-	.global _081A2734
-_081A2734:
-	bics r4, r1
-	mov r12, r10
-
-	.thumb_func
-	.thumb
-	.global sub_081A2738
-sub_081A2738:
-	bics r0, r3
-	mov r12, r10
-	.global _081A273C
-_081A273C:
-	bics r6, r0
-	mov r12, r10
-	.global _081A2740
-_081A2740:
-	sbcs r6, r0
-	.inst.n 0x48D4  @ ldr r0, _081A2A94
-	.global _081A2744
-_081A2744:
-	sbcs r4, r1
-	.inst.n 0x48D4  @ ldr r0, _081A2A98
-	sbcs r0, r3
-	.inst.n 0x48D4  @ ldr r0, _081A2A9C
-	sbcs r6, r0
-	.inst.n 0x48D4  @ ldr r0, _081A2AA0
-	sbcs r6, r0
-	.inst.n 0x48D4  @ ldr r0, _081A2AA4
-	sbcs r4, r1
-	.inst.n 0x48D4  @ ldr r0, _081A2AA8
-	sbcs r0, r3
-	.inst.n 0x48D4  @ ldr r0, _081A2AAC
-	sbcs r6, r0
-	.inst.n 0x48D4  @ ldr r0, _081A2AB0
-	bics r6, r0
-	.2byte 0x47D4
-	bics r4, r1
-	.2byte 0x47D4
-	bics r0, r3
-	.2byte 0x47D4
-	bics r6, r0
-	.2byte 0x47D4
-	bics r6, r0
-	.2byte 0x47D4
-	bics r4, r1
-	.2byte 0x47D4
-	.global _081A2778
-_081A2778:
-	bics r0, r3
-	.2byte 0x47D4
-	bics r6, r0
-	.2byte 0x47D4
-	.inst.n 0x4A86  @ ldr r2, _081A299C
-	bmi _081A269E
-	.global _081A2784
-_081A2784:
-	bics r0, r3
-	.inst.n 0x4AD4  @ ldr r2, _081A2AD8
-	.global _081A2788
-_081A2788:
-	bics r6, r0
-	.global _081A278A
-_081A278A:
-	.inst.n 0x4AD4  @ ldr r2, _081A2ADC
-	bics r6, r0
-	.inst.n 0x4AD4  @ ldr r2, sub_081A2AE0
-	.global _081A2790
-_081A2790:
-	bics r4, r1
-	.inst.n 0x4AD4  @ ldr r2, _081A2AE4
-	bics r0, r3
-	.inst.n 0x4AD4  @ ldr r2, _081A2AE8
-
-	.thumb_func
-	.thumb
-	.global sub_081A2798
-sub_081A2798:
-	bics r6, r0
-	.global _081A279A
-_081A279A:
-	.inst.n 0x4AD4  @ ldr r2, _081A2AEC
-	.2byte 0xED86
-	.inst.n 0x4841  @ ldr r0, _081A28A4
-	.global _081A27A0
-_081A27A0:
-	cmp sp, sp
-	.global _081A27A2
-_081A27A2:
-	.2byte 0xEDA0
-	.inst.n 0x48ED  @ ldr r0, _081A2B5C
-	.global _081A27A6
-_081A27A6:
-	push {r5, r7}
-	.global _081A27A8
-_081A27A8:
-	mvns r5, r5
-	.global _081A27AA
-_081A27AA:
-	.2byte 0xE448
-	.4byte 0x48D49A47
-	.byte 0x86
-	.byte 0xD9
-	.global _081A27B2
-_081A27B2:
-	ldrh r2, [r1, #34]
-	subs r6, #237
-	mvns r4, r4
-	.inst.n 0x4798  @ blx r3
-	.global _081A27BA
-_081A27BA:
-	push {r3, r4, r7}
-	ldr r5, [sp, #716]
-	subs r7, r4, r0
-	.2byte 0xB308
-	movs r7, #168
-	lsrs r2, r3, #32
-	.global _081A27C6
-_081A27C6:
-	rors r5, r5
-	.global _081A27C8
-_081A27C8:
-	.2byte 0xED48
-	.inst.n 0xA044  @ adr r0, _081A28DC
-	.2byte 0xED41
-	.global _081A27CE
-_081A27CE:
-	.inst.n 0xA046  @ adr r0, _081A28E8
-	.2byte 0xED3E
-	.inst.n 0xA046  @ adr r0, _081A28EC
-	.2byte 0xED43
-	.global _081A27D6
-_081A27D6:
-	.inst.n 0xA048  @ adr r0, _081A28F8
-	.2byte 0xED43
-	.inst.n 0xA047  @ adr r0, _081A28F8
-	.2byte 0xED3B
-	.inst.n 0xA03E  @ adr r0, _081A28D8
-	.2byte 0xED3C
-	.inst.n 0xA040  @ adr r0, _081A28E4
-	.2byte 0xED3E
-	.inst.n 0xA042  @ adr r0, _081A28F0
-	.global _081A27E8
-_081A27E8:
-	strb r3, [r6, r2]
-	subs r6, r4, r0
-	bmi _081A2800
-	.inst.n 0x483C  @ ldr r0, _081A28E0
-	.global _081A27F0
-_081A27F0:
-	cmp r12, r10
-	subs r4, #140
-	cmp r12, r10
-	subs r4, #152
-	cmp r12, r10
-	subs r4, #134
-	cmp r12, r10
-	subs r4, #134
-	.global _081A2800
-_081A2800:
-	cmp r12, r10
-	subs r4, #140
-	cmp r12, r10
-	subs r4, #152
-	cmp r12, r10
-	subs r4, #134
-	cmp r12, r10
-	push {r1, r2, r7}
-
-	.thumb_func
-	.thumb
-	.global sub_081A2810
-sub_081A2810:
-	bmi _081A2890
-	ldrh r7, [r0, #34]
-	bmi _081A2894
-	ldr r0, [sp, #284]
-	bmi _081A2898
-	strh r7, [r0, #50]
-
-	.thumb_func
-	.thumb
-	.global sub_081A281C
-sub_081A281C:
-	bmi _081A289C
-	strh r7, [r0, #50]
-	bmi _081A28A0
-	ldrh r7, [r0, #34]
-	bmi _081A28A4
-	ldr r0, [sp, #284]
-	bmi _081A28A8
-	strh r7, [r0, #50]
-	bmi _081A28AC
-	strh r7, [r0, #50]
-	.global _081A2830
-_081A2830:
-	.4byte 0x1A27EDB3
-	.2byte 0xB208
-	movs r6, #119
-	lsrs r2, r3, #32
-	.2byte 0xBEB1
-	pop {r4, r6}
-	pop {pc}
-	.4byte 0x37D48C32
-	.4byte 0x98D48C78
-	.global _081A2848
-_081A2848:
-	strh r4, [r2, #54]
-	strh r4, [r2, #54]
-	ldrh r4, [r2, #38]
-	ldr r0, [sp, #848]
-	strh r4, [r2, #54]
-	strh r4, [r2, #54]
-	adds r7, #212
-	ldrh r0, [r7, #34]
-	ldr r0, [sp, #848]
-	strh r4, [r2, #54]
-	strh r4, [r2, #54]
-	ldrh r4, [r2, #38]
-	ldr r0, [sp, #848]
-	strh r4, [r2, #54]
-	strh r4, [r2, #54]
-	.2byte 0xB3B4
-	cmp r0, #84
-	lsrs r2, r3, #32
-	strb r3, [r6, r2]
-	subs r0, r5, r0
-	bmi _081A2884
-	ldrb r1, [r7, #0]
-	bmi _081A2790
-	bmi _081A27AA
-	.global _081A2878
-_081A2878:
-	bmi _081A2788
-	bmi _081A278A
-	bmi sub_081A2798
-	bmi _081A27B2
-	bmi _081A2790
-	adds r7, #134
-	.global _081A2884
-_081A2884:
-	bmi _081A27A0
-	.global _081A2886
-_081A2886:
-	bmi _081A27BA
-
-	.thumb_func
-	.thumb
-	.global sub_081A2888
-sub_081A2888:
-	bmi sub_081A2798
-	bmi _081A279A
-	bls _081A27A8
-	bmi _081A27AA
-	.global _081A2890
-_081A2890:
-	ldrh r1, [r7, #32]
-	ldrh r2, [r3, #38]
-	.global _081A2894
-_081A2894:
-	strb r3, [r6, r2]
-	subs r0, r5, r0
-	.global _081A2898
-_081A2898:
-	.2byte 0xB308
-	cmp r0, #84
-	.global _081A289C
-_081A289C:
-	lsrs r2, r3, #32
-	adds r5, #212
-	.global _081A28A0
-_081A28A0:
-	ldrh r0, [r7, #34]
-	ldr r0, [sp, #848]
-	.global _081A28A4
-_081A28A4:
-	.4byte 0x86D486D4
-	.global _081A28A8
-_081A28A8:
-	ldrh r4, [r2, #38]
-	ldr r0, [sp, #848]
-	.global _081A28AC
-_081A28AC:
-	strh r4, [r2, #54]
-	strh r4, [r2, #54]
-	adds r3, #180
-	bmi _081A27CE
-	bmi _081A27E8
-	bmi _081A27C6
-	bmi _081A27C8
-	bmi _081A27D6
-	bmi _081A27F0
-	bmi _081A27CE
-	.2byte 0xB386
-	cmp r0, #158
-	lsrs r2, r3, #32
-	strb r3, [r6, r2]
-	subs r0, r5, r0
-	.2byte 0xB308
-	cmp r0, #84
-	lsrs r2, r3, #32
-	adds r5, #237
-	.inst.n 0xA070  @ adr r0, _081A2A94
-	.inst.n 0xA039  @ adr r0, _081A29BC
-
-	.thumb_func
-	.thumb
-	.global sub_081A28D6
-sub_081A28D6:
-	.2byte 0xEDB4
-	.global _081A28D8
-_081A28D8:
-	.4byte 0x3BA07037
-	.global _081A28DC
-_081A28DC:
-	.4byte 0xD0B3B4A0
-	.global _081A28E0
-_081A28E0:
-	.4byte 0xB3081A28
-	.global _081A28E4
-_081A28E4:
-	.4byte 0x081A28D7  @ ROM+0x1A28D7
-	.global _081A28E8
-_081A28E8:
-	.4byte 0xA07038ED
-	.global _081A28EC
-_081A28EC:
-	.4byte 0xA03EA03A
-	.global _081A28F0
-_081A28F0:
-	.4byte 0xA037A03C
-	.inst.n 0xA0ED  @ adr r0, _081A2CAC
-	.inst.n 0xA039  @ adr r0, _081A29DC
-	.global _081A28F8
-_081A28F8:
-	.4byte 0x54B3A036
-	subs r0, r5, r0
-	.2byte 0xB308
-
-	.thumb_func
-	.thumb
-	.global sub_081A2900
-sub_081A2900:
-	cmp r0, #84
-
-	.thumb_func
-	.thumb
-	.global sub_081A2902
-sub_081A2902:
-	lsrs r2, r3, #32
-	strb r3, [r6, r2]
-	subs r0, r5, r0
-	.2byte 0xB308
-	cmp r0, #84
-	lsrs r2, r3, #32
-	str r2, [r6, #120]
-	subs r0, r5, r0
-	.2byte 0xB108
-	str r6, [r7, r2]
-	lsls r4, r7, #2
-	subs r5, #189
-	sub sp, #48
-	sub sp, #192
-	sub sp, #192
-	.2byte 0xEAB0
-	str r3, [r0, #68]
-	.global _081A2924
-_081A2924:
-	.4byte 0x8642D49C
-	.4byte 0x45EA8643
-	.4byte 0x8643D49C
-	.4byte 0x92438642
-	.4byte 0x3BED863E
-	.4byte 0x3E92D4A0
-	.4byte 0x983CE486
-	.4byte 0x983C9839
-	.4byte 0xD38841D6
-	.byte 0x3F
-	.byte 0x88
-	.global _081A294A
-_081A294A:
-	ldrh r4, [r7, #0]
-	.global _081A294C
-_081A294C:
-	subs r7, #228
-	.global _081A294E
-_081A294E:
-	subs r2, #152
-	.global _081A2950
-_081A2950:
-	subs r7, #152
-	bvs _081A2886
-	.global _081A2954
-_081A2954:
-	.4byte 0x41D38843
-	.byte 0x88
-	.byte 0x3F
-	.global _081A295A
-_081A295A:
-	.2byte 0xE488
-	.byte 0x41
-	.byte 0x98
-	.global _081A295E
-_081A295E:
-	ldr r0, [sp, #240]
-	.global _081A2960
-_081A2960:
-	ldr r0, [sp, #260]
-	cmp lr, r10
-	bcc _081A2878
-	ldrh r3, [r0, #2]
-	ldrh r1, [r0, #2]
-	.global _081A296A
-_081A296A:
-	mvns r3, r7
-	.global _081A296C
-_081A296C:
-	sub sp, #192
-	.global _081A296E
-_081A296E:
-	sub sp, #192
-	.global _081A2970
-_081A2970:
-	sub sp, #192
-	.global _081A2972
-_081A2972:
-	sub sp, #192
-	sub sp, #192
-	sub sp, #192
-
-	.thumb_func
-	.thumb
-	.global sub_081A2978
-sub_081A2978:
-	sub sp, #192
-	.global _081A297A
-_081A297A:
-	adds r2, r6, #6
-	subs r1, r5, r0
-	.global _081A297E
-_081A297E:
-	.2byte 0xB108
-	str r6, [r7, r2]
-	.global _081A2982
-_081A2982:
-	lsls r4, r7, #2
-	strb r5, [r7, #18]
-	adds r7, #210
-	strh r4, [r4, #34]
-	strh r2, [r2, #38]
-	strh r2, [r2, #38]
-	adds r7, #228
-	add r4, sp, #384
-	strh r4, [r2, #54]
-	strh r4, [r2, #54]
-	adds r7, #228
-	.global _081A2998
-_081A2998:
-	add r4, sp, #384
-	strh r4, [r2, #54]
-	.global _081A299C
-_081A299C:
-	.4byte 0xE4B486D4
-	.4byte 0xB0B06037
-	.4byte 0x86D4ACB0
-	.4byte 0xB0E486D4
-	.4byte 0xB0B0B0B0
-	.4byte 0xB0E4B0B0
-	.4byte 0xB3B0B0B0
-	.4byte 0x081A2996
-	.global _081A29BC
-_081A29BC:
-	.4byte 0x1A2996B3
-	.4byte 0x2996B308
-	.4byte 0x96B3081A
-	.4byte 0xB3081A29
-	.4byte 0x081A2996
-	.global _081A29D0
-_081A29D0:
-	.4byte 0x1A2996B3
-	.global _081A29D4
-_081A29D4:
-	.4byte 0x2996B308
-	.global _081A29D8
-_081A29D8:
-	.4byte 0x96B3081A
-	.global _081A29DC
-_081A29DC:
-	.4byte 0xB2081A29
-	.4byte 0x081A299F
-	.global _081A29E4
-_081A29E4:
-	.4byte 0xBC50BEB1
-	.global _081A29E8
-_081A29E8:
-	.4byte 0x8C7FBD00
-	.4byte 0x8C3026D4
-
-	.thumb_func
-	.thumb
-	.global sub_081A29F0
-sub_081A29F0:
-	ldrh r4, [r2, #38]
-	adds r1, r3, #7
-	ldrh r0, [r1, #34]
-	movs r6, #212
-	strh r0, [r6, #48]
-	strh r4, [r2, #54]
-	strh r4, [r2, #54]
-	strh r4, [r2, #54]
-	ldrh r4, [r2, #38]
-	adds r1, r3, #7
-	ldrh r0, [r1, #34]
-	movs r6, #212
-	strh r0, [r6, #48]
-	strh r4, [r2, #54]
-	movs r6, #212
-	ldrh r0, [r6, #32]
-	ldrh r4, [r2, #38]
-	adds r1, r3, #7
-	ldrh r0, [r1, #34]
-	movs r6, #212
-	strh r0, [r6, #48]
-	strh r4, [r2, #46]
-	strh r4, [r2, #62]
-	strh r4, [r2, #54]
-	ldrh r4, [r2, #38]
-	adds r1, r3, #7
-	ldrh r0, [r1, #34]
-	movs r6, #212
-	strh r0, [r6, #48]
-	strh r4, [r2, #54]
-	bmi _081A2998
-	.global _081A2A2E
-_081A2A2E:
-	adds r0, #38
-	.global _081A2A30
-_081A2A30:
-	bmi _081A294C
-	bls _081A294E
-	.inst.n 0x481D  @ ldr r0, _081A2AAC
-	bmi _081A2950
-	.global _081A2A38
-_081A2A38:
-	adds r0, #38
-	bmi _081A294A
-	bmi _081A294C
-	.global _081A2A3E
-_081A2A3E:
-	bmi _081A294E
-	bmi _081A2950
-	bls _081A2960
-	.inst.n 0x481D  @ ldr r0, _081A2ABC
-	bmi _081A2960
-	adds r0, #38
-	bmi _081A295A
-	bmi _081A295E
-	adds r0, #38
-	bmi _081A296C
-	bls _081A296E
-	.inst.n 0x481D  @ ldr r0, _081A2ACC
-	bmi _081A2972
-	adds r0, #38
-	bmi _081A296A
-	bmi _081A296C
-	bmi _081A296E
-	bmi _081A2970
-	bls _081A297E
-	.inst.n 0x481D  @ ldr r0, _081A2ADC
-	bmi _081A2982
-
-	.thumb_func
-	.thumb
-	.global sub_081A2A68
-sub_081A2A68:
-	adds r0, #38
-	bmi _081A297A
-	push {r1, r2, r7}
-	.inst.n 0x4DB3  @ ldr r5, _081A2D3C
-	subs r2, r5, r0
-	.2byte 0xB308
-	cmp r2, #77
-	lsrs r2, r3, #32
-	.inst.n 0x4DB3  @ ldr r5, _081A2D48
-	subs r2, r5, r0
-	.2byte 0xB308
-	.global _081A2A7E
-_081A2A7E:
-	cmp r2, #77
-	lsrs r2, r3, #32
-	.inst.n 0x4DB3  @ ldr r5, _081A2D50
-	subs r2, r5, r0
-	.2byte 0xB308
-	cmp r2, #77
-	lsrs r2, r3, #32
-	.inst.n 0x4DB3  @ ldr r5, _081A2D5C
-	subs r2, r5, r0
-	.2byte 0xB308
-	cmp r2, #77
-	.global _081A2A94
-_081A2A94:
-	.4byte 0x26D4081A
-	.global _081A2A98
-_081A2A98:
-	.4byte 0x8CD48C30
-	.global _081A2A9C
-_081A2A9C:
-	.4byte 0x8C481DD9
-	.global _081A2AA0
-_081A2AA0:
-	.4byte 0x863026D4
-	.global _081A2AA4
-_081A2AA4:
-	.4byte 0x21EE86D4
-	.global _081A2AA8
-_081A2AA8:
-	.4byte 0x31EAA070
-	.global _081A2AAC
-_081A2AAC:
-	.4byte 0x26D48C3C
-	.global _081A2AB0
-_081A2AB0:
-	.4byte 0x86D48630
-	ldrh r4, [r2, #38]
-	ldrh r4, [r2, #38]
-	ldrh r4, [r2, #38]
-	ldrh r4, [r2, #38]
-	.global _081A2ABC
-_081A2ABC:
-	.4byte 0x98481DE4
-	.4byte 0x8C3026D4
-	.4byte 0x86D486D4
-	.4byte 0x8CD48CD4
-	.global _081A2ACC
-_081A2ACC:
-	.4byte 0x8CD48CD4
-	.4byte 0x98481DE4
-	.4byte 0x2AC0B3B4
-	.global _081A2AD8
-_081A2AD8:
-	.4byte 0x26D4081A
-	.global _081A2ADC
-_081A2ADC:
-	.4byte 0x86D4861C
-
-	.thumb_func
-	.thumb
-	.global sub_081A2AE0
-sub_081A2AE0:
-	.4byte 0x30268CD4
-	.global _081A2AE4
-_081A2AE4:
-	.4byte 0x861C268C
-	.global _081A2AE8
-_081A2AE8:
-	.4byte 0x21EE86D4
-	.global _081A2AEC
-_081A2AEC:
-	.4byte 0x31EAA070
-	.4byte 0x26D48C3C
-	.4byte 0x86D48630
-	.4byte 0x8CD48CD4
-	.4byte 0x8CD48CD4
-	.4byte 0xD48C98D4
-	.4byte 0xD486D486
-	.4byte 0xD48CD48C
-	.4byte 0xD48CD48C
-	.4byte 0x98D48C98
-	.4byte 0x8CD48CD4
-	.4byte 0x98D48CD4
-	.global _081A2B1C
-_081A2B1C:
-	bmi _081A2A38
-	bmi _081A2A2E
-	bmi _081A2A30
-	bmi _081A2A3E
-	.2byte 0xEE8C
-	ldrb r1, [r4, #0]
-	.2byte 0xB3A0
-	cmp r2, #77
-	lsrs r2, r3, #32
-	lsrs r3, r6, #18
-	subs r2, r5, r0
-	.2byte 0xB308
-	cmp r2, #77
-	lsrs r2, r3, #32
-	lsrs r3, r6, #18
-	subs r2, r5, r0
-	.2byte 0xB208
-	cmp r2, #45
-	lsrs r2, r3, #32
-	.2byte 0xBEB1
-	pop {r4, r6}
-	pop {pc}
-	.4byte 0xB0B08C38
-	.4byte 0xB0B0B0B0
-	.4byte 0xB0B0B0B0
-	.4byte 0xD4A8B0B0
-	.4byte 0x3E866037
-	.global _081A2B5C
-_081A2B5C:
-	.4byte 0x4386D486
-	.4byte 0x5C41E486
-	.4byte 0x863CD49A
-	.4byte 0x864186D4
-	.4byte 0x3E9040DD
-	.4byte 0xD4903C90
-	.4byte 0x863C863E
-	.4byte 0xD99C3BEA
-	.4byte 0x3ED38C37
-	.4byte 0x438CD38C
-	.4byte 0x9C41E98C
-	.4byte 0x41863CD4
-	.4byte 0x9040DD86
-	.4byte 0x903C903E
-	.4byte 0xDDA53EED
-	.4byte 0x903E903C
-	.4byte 0xD49C3FE9
-	.4byte 0x863F863E
-	.4byte 0x3C903EDD
-	.4byte 0xE4903A90
-	.4byte 0x40D49A41
-	.4byte 0x4186D486
-	.4byte 0x9040DD86
-	.4byte 0x903C903E
-	.4byte 0x92683ED4
-	.4byte 0xFA866043
-	.global _081A2BC4
-_081A2BC4:
-	ldrb r3, [r0, r1]
-	sub sp, #160
-	sub sp, #192
-	sub sp, #192
-	.global _081A2BCC
-_081A2BCC:
-	.inst.n 0x4CB2  @ ldr r4, _081A2E98
-	subs r3, r5, r0
-	.2byte 0xB108
-	movs r0, r0
-	movs r7, r0
-	movs r2, r1
-	ldr r0, [sp, #64]
-	lsrs r0, r1, #32
-	movs r5, #100
-	lsrs r2, r3, #32
-	movs r6, #43
-	lsrs r2, r3, #32
-	cmp r0, #59
-	lsrs r2, r3, #32
-	cmp r1, #20
-	.global _081A2BEA
-_081A2BEA:
-	lsrs r2, r3, #32
-	cmp r1, #128
-	lsrs r2, r3, #32
-	cmp r1, #229
-	lsrs r2, r3, #32
-	cmp r3, #67
-	lsrs r2, r3, #32
-	str r6, [r7, r2]
-	lsls r4, r7, #2
-	adds r2, #187
-	adds r2, #189
-	bmi _081A2B1C
-	ldr r4, [r7, #64]
-	subs r7, #140
-	subs r6, #140
-	.global _081A2C08
-_081A2C08:
-	sbcs r4, r1
-	subs r7, #140
-	bics r4, r1
-	add r12, r1
-	subs r5, #140
-	push {r2, r3, r7}
-	lsls r3, r6, #6
-	subs r4, r5, r0
-	.2byte 0xB308
-	cmp r4, #1
-	lsrs r2, r3, #32
-	lsls r3, r6, #6
-	subs r4, r5, r0
-	.2byte 0xB308
-	cmp r4, #1
-	lsrs r2, r3, #32
-	lsls r3, r6, #6
-	subs r4, r5, r0
-	.2byte 0xB308
-	cmp r4, #1
-	lsrs r2, r3, #32
-	subs r4, #212
-	ldrh r4, [r5, #34]
-	ldrh r7, [r7, #32]
-	ldrh r6, [r7, #32]
-	ldrh r1, [r0, #34]
-	ldrh r7, [r7, #32]
-	ldrh r3, [r0, #34]
-	ldrh r4, [r0, #34]
-	ldrh r6, [r0, #34]
-	.inst.n 0x4BBB  @ ldr r3, _081A2F34
-	ldrh r0, [r1, #34]
-
-	.thumb_func
-	.thumb
-	.global sub_081A2C48
-sub_081A2C48:
-	ldrh r7, [r0, #34]
-	ldrh r6, [r0, #34]
-	ldrh r5, [r0, #34]
-	ldrh r4, [r0, #34]
-	ldrh r3, [r0, #34]
-	cmn r4, r2
-
-	.thumb_func
-	.thumb
-	.global sub_081A2C54
-sub_081A2C54:
-	ldrh r4, [r5, #34]
-	ldrh r1, [r0, #34]
-	ldrh r0, [r0, #34]
-	ldrh r7, [r7, #32]
-	ldrh r6, [r7, #32]
-	ldrh r5, [r7, #32]
-	bmi _081A2BCC
-	ldr r0, [r1, #68]
-	.2byte 0x478C
-	mov r12, r1
-	cmp r12, r1
-	add r12, r1
-	.global _081A2C6C
-_081A2C6C:
-	.4byte 0xB48C438C
-	cmn r4, r2
-	ldrh r4, [r5, #34]
-	ldrh r1, [r0, #34]
-	ldrh r0, [r0, #34]
-	ldrh r7, [r7, #32]
-	.global _081A2C7A
-_081A2C7A:
-	ldrh r6, [r7, #32]
-	ldrh r4, [r7, #32]
-	bmi _081A2BEA
-	ldr r4, [r0, #68]
-	bics r4, r1
-	.global _081A2C84
-_081A2C84:
-	cmp r4, r1
-	sbcs r4, r1
-	lsls r4, r1
-	subs r7, #140
-	push {r2, r3, r7}
-	subs r6, #212
-	ldrh r4, [r5, #34]
-	ldrh r5, [r7, #32]
-	ldrh r4, [r7, #32]
-	ldrh r3, [r7, #32]
-	ldrh r2, [r7, #32]
-	ldrh r0, [r7, #32]
-	bmi _081A2C08
-	ldr r1, [r0, #68]
-	subs r7, #140
-	subs r6, #140
-	subs r7, #140
-	sbcs r4, r1
-	subs r6, #140
-	push {r2, r3, r7}
-	.global _081A2CAC
-_081A2CAC:
-	.4byte 0x8C448C43
-	ldrh r5, [r0, #34]
-	ldrh r6, [r0, #34]
-	ldrh r7, [r0, #34]
-	ldrh r3, [r0, #34]
-	str r3, [r6, #24]
-	subs r4, r5, r0
-	.2byte 0xB308
-	cmp r4, #82
-
-	.thumb_func
-	.thumb
-	.global sub_081A2CC0
-sub_081A2CC0:
-	lsrs r2, r3, #32
-	str r3, [r6, #24]
-	subs r4, r5, r0
-	.2byte 0xB308
-	cmp r4, #112
-	lsrs r2, r3, #32
-	ldrb r3, [r6, #30]
-	subs r4, r5, r0
-	.2byte 0xB308
-	cmp r4, #142
-	lsrs r2, r3, #32
-	ldr r5, [sp, #716]
-	subs r4, r5, r0
-	.2byte 0xBB08
-	bmi _081A2D76
-	ldr r3, [r0, #68]
-	add r12, r1
-	.2byte 0xBB8C
-	cmp r1, r8
-	mov r12, r1
-	.2byte 0xBB8C
-	.2byte 0x472D
-	.global _081A2CEC
-_081A2CEC:
-	.inst.n 0x4A8C  @ ldr r2, _081A2F20
-	.2byte 0xB28C
-	cmp r4, #1
-	lsrs r2, r3, #32
-	.2byte 0xBEB1
-	pop {r4, r6}
-	pop {pc}
-	.byte 0x31
-	.byte 0x8C
-	.4byte 0x8C5C3CD4
-	.global _081A2D00
-_081A2D00:
-	ldrh r7, [r7, #32]
-	ldrh r3, [r7, #32]
-	ldrh r6, [r7, #32]
-	ldrh r4, [r7, #32]
-	ldrh r7, [r7, #32]
-	ldrh r5, [r7, #32]
-	ldrh r3, [r7, #32]
-	bmi _081A2C7A
-	ldrb r4, [r7, r0]
-	subs r7, #140
-	subs r3, #140
-	subs r6, #140
-	.global _081A2D18
-_081A2D18:
-	subs r4, #140
-	subs r7, #140
-	sbcs r4, r1
-	subs r3, #140
-	push {r2, r3, r7}
-	.2byte 0xFCB3
-	subs r4, r5, r0
-	.2byte 0xB308
-	cmp r5, #15
-	lsrs r2, r3, #32
-	.2byte 0xFCB3
-	subs r4, r5, r0
-	.2byte 0xB308
-	.global _081A2D32
-_081A2D32:
-	cmp r5, #15
-	lsrs r2, r3, #32
-	.2byte 0xFCB3
-
-	.thumb_func
-	.thumb
-	.global sub_081A2D38
-sub_081A2D38:
-	subs r4, r5, r0
-	bmi _081A2D4E
-	.global _081A2D3C
-_081A2D3C:
-	.4byte 0x3F8C5C3C
-	.4byte 0x418C3E8C
-	.4byte 0x438C3F8C
-	.global _081A2D48
-_081A2D48:
-	.4byte 0x448C418C
-	.byte 0x8C
-	.byte 0xA8
-	.global _081A2D4E
-_081A2D4E:
-	add r0, sp, #672
-	.global _081A2D50
-_081A2D50:
-	.4byte 0x5C40D498
-	subs r7, #140
-	subs r6, #140
-	subs r4, #140
-	push {r2, r3, r7}
-	.global _081A2D5C
-_081A2D5C:
-	.4byte 0x5C3ED4A8
-	subs r5, #140
-	subs r4, #140
-	subs r3, #140
-	subs r2, #140
-	subs r0, #140
-	.global _081A2D6A
-_081A2D6A:
-	push {r2, r3, r7}
-	add r0, sp, #672
-	add r0, sp, #672
-	.2byte 0xB3A8
-	cmp r5, #80
-	lsrs r2, r3, #32
-	.global _081A2D76
-_081A2D76:
-	.2byte 0xB3A8
-	cmp r5, #93
-	lsrs r2, r3, #32
-	add r0, sp, #672
-	.2byte 0xFCB2
-	subs r4, r5, r0
-	.2byte 0xB108
-	str r6, [r7, r2]
-	lsls r4, r7, #2
-	subs r2, #189
-	adds r7, #210
-	strh r0, [r4, #34]
-	strh r0, [r7, #32]
-	strh r2, [r7, #32]
-	subs r4, #250
-
-	.thumb_func
-	.thumb
-	.global sub_081A2D94
-sub_081A2D94:
-	add r4, sp, #384
-	adds r7, #210
-	subs r0, #132
-	subs r2, #132
-	push {r2, r7}
-	str r2, [sp, #716]
-	subs r5, r5, r0
-
-	.thumb_func
-	.thumb
-	.global sub_081A2DA2
-sub_081A2DA2:
-	.2byte 0xB308
-	cmp r5, #146
-	lsrs r2, r3, #32
-	subs r4, #250
-	add sp, #384
-	str r2, [sp, #716]
-	subs r5, r5, r0
-
-	.thumb_func
-	.thumb
-	.global sub_081A2DB0
-sub_081A2DB0:
-	.2byte 0xB308
-	cmp r5, #146
-	lsrs r2, r3, #32
-	str r2, [sp, #716]
-	subs r5, r5, r0
-	.2byte 0xB308
-	cmp r5, #146
-	lsrs r2, r3, #32
-	subs r4, #207
-	add r0, sp, #400
-	strh r7, [r4, #12]
-	strh r6, [r1, #30]
-	add r0, sp, #828
-	strh r7, [r4, #12]
-	strh r6, [r1, #30]
-	subs r0, #207
-	.global _081A2DD0
-_081A2DD0:
-	add r0, sp, #368
-	.global _081A2DD2
-_081A2DD2:
-	ldmia r6!, {r0, r1, r2, r5, r7}
-	.inst.n 0xCF84  @ ldmia r7!, {r2, r7}
-	ldr r2, [r7, r0]
-	.global _081A2DD8
-_081A2DD8:
-	.inst.n 0xA6A8  @ adr r6, _081A307C
-	strh r6, [r1, #54]
-	subs r4, #207
-	add r0, sp, #400
-	.global _081A2DE0
-_081A2DE0:
-	strh r7, [r4, #12]
-	strh r6, [r1, #30]
-	add r0, sp, #828
-	strh r7, [r4, #12]
-	strh r6, [r1, #30]
-	subs r0, #207
-	add r0, sp, #368
-	.global _081A2DEE
-_081A2DEE:
-	ldmia r6!, {r0, r1, r2, r5, r7}
-	.inst.n 0xCF84  @ ldmia r7!, {r2, r7}
-	ldr r2, [r7, r0]
-	.inst.n 0xA6A8  @ adr r6, sub_081A3098
-	strh r6, [r1, #54]
-	str r2, [sp, #712]
-	subs r5, r5, r0
-	.2byte 0xB108
-	str r6, [r7, r2]
-	lsls r4, r7, #2
-	adds r0, #189
-
-	.thumb_func
-	.thumb
-	.global sub_081A2E04
-sub_081A2E04:
-	sub sp, #48
-	.global _081A2E06
-_081A2E06:
-	ldrh r0, [r6, #36]
-	mvns r4, r2
-	.global _081A2E0A
-_081A2E0A:
-	ldr r0, [sp, #336]
-	ldr r0, [sp, #848]
-	ldr r0, [sp, #272]
-	ldrh r2, [r0, #34]
-	bics r4, r1
-	bmi _081A2D48
-	bls _081A2D32
-	ldrh r6, [r0, #34]
-	cmp r12, r10
-	add r12, r1
-	bics r4, r1
-	ldrh r4, [r1, #36]
-	ldr r0, _081A3174
-	ldr r0, [sp, #336]
-	ldr r0, [sp, #848]
-
-	.thumb_func
-	.thumb
-	.global sub_081A2E28
-sub_081A2E28:
-	ldr r0, [sp, #292]
-	ldrh r7, [r0, #34]
-	ldrh r4, [r6, #36]
-	ldr r0, [sp, #288]
-	ldrh r4, [r2, #38]
-	ldr r3, _081A3198
-	bmi _081A2D50
-	ldrh r2, [r1, #34]
-	ldrh r1, [r1, #34]
-	.global _081A2E3A
-_081A2E3A:
-	ldrh r0, [r1, #34]
-	.global _081A2E3C
-_081A2E3C:
-	movs r1, #179
-	subs r6, r5, r0
-	ldrh r0, [r1, #32]
-	ldr r0, _081A3194
-	ldr r0, [sp, #336]
-	.global _081A2E46
-_081A2E46:
-	ldrh r4, [r2, #38]
-	adr r0, _081A31B0
-	.inst.n 0xA4A8  @ adr r4, _081A30EC
-	ldr r1, _081A31A0
-	bmi _081A2D6A
-	strb r0, [r1, r1]
-	.2byte 0x478C
-	mov r12, r1
-	cmp r12, r1
-	.global _081A2E58
-_081A2E58:
-	add r12, r1
-	.global _081A2E5A
-_081A2E5A:
-	bics r4, r1
-	push {r2, r3, r7}
-	.global _081A2E5E
-_081A2E5E:
-	cmn r4, r2
-	ldrh r4, [r2, #34]
-	ldrh r1, [r0, #34]
-	.global _081A2E64
-_081A2E64:
-	ldrh r0, [r0, #34]
-	ldrh r7, [r7, #32]
-	ldrh r6, [r7, #32]
-	ldrh r4, [r7, #32]
-	bmi _081A2DD8
-	strb r4, [r0, r1]
-	bics r4, r1
-	cmp r4, r1
-	.global _081A2E74
-_081A2E74:
-	sbcs r4, r1
-	.global _081A2E76
-_081A2E76:
-	lsls r4, r1
-	subs r7, #140
-	push {r2, r3, r7}
-	.global _081A2E7C
-_081A2E7C:
-	bmi _081A2DD0
-	strb r1, [r0, r1]
-	subs r7, #140
-	.global _081A2E82
-_081A2E82:
-	subs r6, #140
-	subs r7, #140
-	sbcs r4, r1
-	cmp r4, r1
-	push {r2, r3, r7}
-	ldrh r3, [r0, #34]
-	ldrh r4, [r0, #34]
-	ldrh r5, [r0, #34]
-	ldrh r6, [r0, #34]
-	ldrh r7, [r0, #34]
-	ldrh r3, [r0, #34]
-	.global _081A2E98
-_081A2E98:
-	.4byte 0x8C49A4A8
-	ldr r7, _081A316C
-	subs r6, r5, r0
-	.2byte 0xB308
-	cmp r6, #94
-	lsrs r2, r3, #32
-	ldr r3, [r6, #88]
-	.global _081A2EA8
-_081A2EA8:
-	subs r6, r5, r0
-	.global _081A2EAA
-_081A2EAA:
-	add r0, sp, #32
-	ldrb r3, [r6, #22]
-	subs r6, r5, r0
-	bmi _081A2EC4
-	.global _081A2EB2
-_081A2EB2:
-	strb r3, [r0, r1]
-	add r12, r1
-	.global _081A2EB6
-_081A2EB6:
-	cmp r12, r1
-	mov r12, r1
-	.2byte 0x478C
-	.inst.n 0x4A8C  @ ldr r2, _081A30F0
-	.global _081A2EBE
-_081A2EBE:
-	.2byte 0xB28C
-	.global _081A2EC0
-_081A2EC0:
-	cmp r6, #5
-	lsrs r2, r3, #32
-	.global _081A2EC4
-_081A2EC4:
-	.2byte 0xBEB1
-	pop {r4, r6}
-	pop {pc}
-	.global _081A2ECA
-_081A2ECA:
-	ldrh r0, [r5, #32]
-	sub sp, #192
-	.global _081A2ECE
-_081A2ECE:
-	sub sp, #192
-	sub sp, #192
-	bmi _081A2DEE
-	subs r4, #67
-	bmi _081A2E0A
-	add r8, r3
-	cmp r0, r3
-	ldrh r4, [r1, #36]
-	ldr r0, [sp, #268]
-	ldrh r4, [r2, #38]
-	ldrh r1, [r3, #38]
-	.global _081A2EE4
-_081A2EE4:
-	cmp r12, r10
-	mov r12, r1
-	.2byte 0x478C
-	bmi _081A2E06
-	subs r4, #72
-	.2byte 0x478C
-	mov r12, r1
-	cmp r12, r1
-	add r12, r1
-	bics r4, r1
-	.global _081A2EF8
-_081A2EF8:
-	push {r2, r3, r7}
-	cmn r4, r2
-	ldrh r4, [r7, #32]
-	ldrh r1, [r0, #34]
-	.global _081A2F00
-_081A2F00:
-	ldrh r0, [r0, #34]
-	ldrh r7, [r7, #32]
-	ldr r0, [sp, #248]
-	add r0, sp, #720
-	.global _081A2F08
-_081A2F08:
-	add r0, sp, #672
-	.global _081A2F0A
-_081A2F0A:
-	add r0, sp, #672
-	.2byte 0xB3A8
-	cmp r6, #235
-	lsrs r2, r3, #32
-	.2byte 0xFAB3
-	.global _081A2F14
-_081A2F14:
-	subs r6, r5, r0
-	.global _081A2F16
-_081A2F16:
-	add r0, sp, #32
-
-	.thumb_func
-	.thumb
-	.global sub_081A2F18
-sub_081A2F18:
-	add r0, sp, #672
-	add r0, sp, #672
-	.2byte 0xB2A8
-	cmp r6, #204
-	.global _081A2F20
-_081A2F20:
-	.4byte 0xBEB1081A
-	pop {r4, r6}
-	pop {pc}
-	.global _081A2F28
-_081A2F28:
-	ldrh r7, [r7, #34]
-	bcs _081A2E46
-	adds r0, #38
-	bcs _081A2E3A
-	bcs _081A2E3C
-	movs r6, #132
-	.global _081A2F34
-_081A2F34:
-	.4byte 0x26D48C44
-	ldr r0, [sp, #192]
-	strh r2, [r2, #38]
-	strh r2, [r2, #38]
-	strh r2, [r2, #38]
-	ands r6, r4
-	bmi _081A2E5E
-	adds r0, #38
-	push {r2, r3, r7}
-	bcs _081A2E64
-	adds r0, #38
-	bcs _081A2E58
-	bcs _081A2E5A
-	movs r6, #132
-	ldrh r0, [r0, #34]
-	movs r6, #212
-	ldr r0, [sp, #192]
-	strh r2, [r2, #38]
-	strh r2, [r2, #38]
-	strh r2, [r2, #38]
-	.2byte 0x4426
-	bmi _081A2E7C
-	adds r0, #38
-	push {r2, r3, r7}
-	bcs _081A2E82
-	bcs _081A2E74
-	bcs _081A2E76
-	movs r6, #132
-	ldrh r4, [r7, #32]
-	movs r6, #212
-	ldr r0, [sp, #192]
-	strh r2, [r2, #38]
-	strh r2, [r2, #38]
-	strh r2, [r2, #38]
-	subs r4, #38
-	bmi _081A2E98
-	adds r0, #38
-	.2byte 0xB38C
-	cmp r7, #72
-	lsrs r2, r3, #32
-	.global _081A2F86
-_081A2F86:
-	cmp r2, #179
-	subs r7, r5, r0
-	ldrh r0, [r1, #32]
-	movs r6, #210
-	strh r0, [r6, #32]
-
-	.thumb_func
-	.thumb
-	.global sub_081A2F90
-sub_081A2F90:
-	strh r2, [r2, #38]
-	strh r2, [r2, #38]
-	ands r6, r4
-	bmi _081A2EB2
-	adds r0, #38
-	bcs _081A2ECE
-	bcs _081A2EA8
-	bcs _081A2EAA
-	movs r6, #132
-	ldrh r0, [r0, #34]
-	movs r6, #212
-	ldrh r0, [r6, #32]
-	.2byte 0xB3B4
-	cmp r7, #139
-	lsrs r2, r3, #32
-	bcs _081A2ECA
-	subs r0, #38
-	bcs _081A2EBE
-	bcs _081A2EC0
-	movs r6, #132
-	ldrh r4, [r1, #34]
-	movs r6, #212
-	ldr r0, [sp, #224]
-	movs r6, #210
-	strh r0, [r0, #34]
-	strh r2, [r2, #38]
-	strh r2, [r2, #38]
-	strb r6, [r4, r0]
-	bcs _081A2EE4
-	b _081A36E6
-	.4byte 0xD4984831
-	.4byte 0x268C4C26
-	.4byte 0x30268634
-	.4byte 0x268CD486
-	.4byte 0x30268654
-	.4byte 0x26D4B486
-	.4byte 0x30268650
-	.global _081A2FE8
-_081A2FE8:
-	bmi _081A2EF8
-	movs r6, #140
-	.global _081A2FEC
-_081A2FEC:
-	strh r0, [r2, #50]
-	adds r0, #38
-	bmi _081A2F00
-	movs r6, #140
-	strh r0, [r2, #50]
-	adds r0, #38
-	bmi _081A2F08
-	bmi _081A2F0A
-	push {r1, r2, r7}
-	movs r6, #212
-	strh r4, [r1, #50]
-	adds r0, #38
-	.global _081A3004
-_081A3004:
-	bmi _081A2F14
-	.global _081A3006
-_081A3006:
-	bcc _081A2F16
-
-	.thumb_func
-	.thumb
-	.global sub_081A3008
-sub_081A3008:
-	bmi sub_081A2F18
-	.inst.n 0x4C26  @ ldr r4, _081A30A4
-	bmi _081A2F28
-	movs r6, #134
-	strh r0, [r6, #48]
-	ldrh r4, [r2, #38]
-	ldrb r6, [r4, r0]
-	movs r6, #134
-	strh r0, [r6, #48]
-	bmi _081A2F86
-	ldr r6, [r4, r0]
-	movs r6, #134
-	strh r0, [r6, #48]
-	ldrh r4, [r2, #38]
-	ldrb r6, [r4, r0]
-	movs r6, #134
-	strh r0, [r6, #48]
-	ldrh r4, [r2, #38]
-	ldr r6, [r4, r0]
-	movs r6, #134
-	strh r0, [r6, #48]
-	strh r4, [r2, #54]
-	strh r4, [r2, #54]
-	.2byte 0xB3B4
-	cmp r7, #203
-	lsrs r2, r3, #32
-	b _081A35A6
-	.global _081A303E
-_081A303E:
-	subs r7, r5, r0
-	.2byte 0xB308
-	cmp r7, #254
-	lsrs r2, r3, #32
-	subs r3, r6, r6
-	subs r0, r6, r0
-	.2byte 0xB308
-	cmp r7, #203
-	lsrs r2, r3, #32
-	b _081A35BA
-	.byte 0x2F
-	.byte 0x1A
-	.4byte 0x2FFEB308
-	.4byte 0x1BB3081A
-	.4byte 0xB3081A30
-	.4byte 0x081A2FCB
-	.4byte 0x1A2FE2B3
-	.4byte 0x2FFEB308
-	.4byte 0x26D4081A
-	.4byte 0x30268658
-	.4byte 0x268CD486
-	.4byte 0x3026865C
-	.global _081A307C
-_081A307C:
-	.4byte 0x268CD486
-
-	.thumb_func
-	.thumb
-	.global sub_081A3080
-sub_081A3080:
-	strh r0, [r3, #50]
-	.global _081A3082
-_081A3082:
-	strh r4, [r2, #54]
-	strh r4, [r2, #54]
-	strh r4, [r2, #54]
-
-	.thumb_func
-	.thumb
-	.global sub_081A3088
-sub_081A3088:
-	cmp r2, #178
-	subs r7, r5, r0
-	.2byte 0xB108
-	str r6, [r7, r2]
-
-	.thumb_func
-	.thumb
-	.global sub_081A3090
-sub_081A3090:
-	lsls r4, r7, #2
-	strb r5, [r7, #18]
-	adds r7, #210
-	strh r0, [r4, #34]
-
-	.thumb_func
-	.thumb
-	.global sub_081A3098
-sub_081A3098:
-	.4byte 0x84D284D2
-	.4byte 0xB06037D9
-	.byte 0xAC
-	.byte 0xD2
-	.global _081A30A2
-_081A30A2:
-	str r7, [r6, #0]
-	.global _081A30A4
-_081A30A4:
-	.4byte 0xD284D284
-	.4byte 0xB0D9B484
-	.4byte 0x1A30A0B3
-	.4byte 0x6037D908
-	.4byte 0x30A0B3B0
-	.4byte 0x37D9081A
-	.4byte 0xA8B0B060
-	.4byte 0x37D9A8A8
-	.4byte 0x8C328C64
-	.4byte 0x8C328C37
-	.4byte 0x8C328C37
-	.4byte 0xA8A837B4
-	.byte 0xA8
-	.byte 0xB3
-	.global _081A30D6
-_081A30D6:
-	adds r0, #194
-	lsrs r2, r3, #32
-	adds r7, #217
-	add r0, sp, #400
-	add r0, sp, #672
-	stmia r2!, {r0, r1, r4, r5, r7}
-	subs r0, r6, r0
-	bls sub_081A30F8
-	str r7, [r6, #64]
-	add r0, sp, #672
-	bls _081A303E
-	.global _081A30EC
-_081A30EC:
-	.4byte 0x378C328C
-	.global _081A30F0
-_081A30F0:
-	.4byte 0x378C328C
-	.4byte 0x6037D28C
-
-	.thumb_func
-	.thumb
-	.global sub_081A30F8
-sub_081A30F8:
-	bcs _081A3004
-	bcs _081A3006
-	.2byte 0xB284
-	adds r0, #156
-	lsrs r2, r3, #32
-	lsls r1, r6, #2
-	movs r7, r0
-	movs r2, r1
-	ldr r0, [sp, #64]
-	lsrs r0, r1, #32
-	cmp r3, #248
-	lsrs r2, r3, #32
-	cmp r4, #245
-	lsrs r2, r3, #32
-	cmp r5, #132
-	lsrs r2, r3, #32
-	cmp r5, #254
-	lsrs r2, r3, #32
-	cmp r6, #197
-	lsrs r2, r3, #32
-	cmp r7, #35
-	lsrs r2, r3, #32
-	adds r0, #142
-	lsrs r2, r3, #32
 	str r6, [r7, r2]
 	lsls r4, r7, #2
 	adds r2, #187
@@ -1820,7 +52,7 @@ sub_081A30F8:
 	eors r0, r0
 	.2byte 0xED8C
 	ldr r4, _081A3244
-	b _081A2A7E
+	.2byte 0xE4A0
 	.global _081A313C
 _081A313C:
 	.4byte 0xED985042
@@ -1828,9 +60,9 @@ _081A313C:
 	.byte 0xA0
 	.global _081A3142
 _081A3142:
-	ldr r0, _081A34D4
+	.inst.n 0x48E4  @ ldr r0, _081A34D4
 	.2byte 0xEA98
-	bls _081A3082
+	.2byte 0xD99C
 	ldrh r6, [r0, #34]
 	ldrh r5, [r0, #34]
 	ldrh r3, [r0, #34]
@@ -1842,12 +74,12 @@ _081A3142:
 	ldr r0, [sp, #824]
 	add r0, sp, #520
 	add r0, sp, #672
-	bls _081A30A2
+	.2byte 0xD9A0
 	bics r4, r1
 	.2byte 0xEA8C
 	ldr r4, [sp, #260]
 	lsrs r1, r3
-	b _081A2C84
+	.2byte 0xE58C
 	.byte 0x3E
 	.byte 0x98
 	.global _081A316C
@@ -1899,7 +131,7 @@ _081A31C6:
 	.2byte 0xEA8C
 	ldr r4, [sp, #260]
 	lsrs r1, r3
-	b _081A2CEC
+	.2byte 0xE58C
 	.byte 0x3E
 	.byte 0x98
 	.4byte 0xE4A043ED
@@ -1956,7 +188,7 @@ _081A3244:
 	.global _081A3252
 _081A3252:
 	push {r3, r4, r7}
-	b _081A3988
+	.2byte 0xE398
 	.byte 0x3E
 	.byte 0x2C
 	.4byte 0xE49841E5
@@ -1982,7 +214,7 @@ sub_081A3288:
 	lsrs r6, r4
 	ldr r0, [sp, #208]
 	ldr r0, [sp, #268]
-	b _081A2BC4
+	.2byte 0xE498
 	.byte 0x39
 	.byte 0x2C
 	.4byte 0xE4983CE5
@@ -2017,11 +249,11 @@ sub_081A3288:
 	.global _081A3302
 _081A3302:
 	swi #140
-	adr r0, _081A3430
+	.inst.n 0xA04A  @ adr r0, _081A3430
 	subs r4, #217
 	bge _081A3224
 	ldrh r5, [r0, #34]
-	ldr r2, _081A3690
+	.inst.n 0x4AE0  @ ldr r2, _081A3690
 	bls _081A3252
 	ldrh r2, [r7, #32]
 	rors r3, r3
@@ -2061,48 +293,38 @@ _081A3302:
 _081A338C:
 	ldr r0, [sp, #248]
 	.2byte 0xEBA0
-	adr r0, _081A35F4
+	.inst.n 0xA098  @ adr r0, _081A35F4
 	ldr r0, [sp, #940]
 	subs r4, #160
-	adr r0, _081A35F8
+	.inst.n 0xA098  @ adr r0, _081A35F8
 	ldr r0, [sp, #248]
 	.2byte 0xEBA0
-	adr r0, _081A3600
+	.inst.n 0xA098  @ adr r0, _081A3600
 	ldr r0, [sp, #940]
 	subs r4, #160
-	adr r0, _081A3604
+	.inst.n 0xA098  @ adr r0, _081A3604
 	ldr r0, [sp, #256]
 	subs r6, #160
-	adr r0, _081A360C
+	.inst.n 0xA098  @ adr r0, _081A360C
 	.global _081A33AA
 _081A33AA:
 	ldr r0, [sp, #940]
 	subs r4, #160
-	adr r0, _081A3610
+	.inst.n 0xA098  @ adr r0, _081A3610
 	ldr r0, [sp, #256]
 	subs r6, #160
-	adr r0, _081A3618
+	.inst.n 0xA098  @ adr r0, _081A3618
 	ldr r0, [sp, #916]
 	strh r2, [r6, #4]
 	subs r3, r6, r0
 	.2byte 0xB108
 	movs r0, r0
-	movs r6, r0
-	movs r2, r1
-	ldr r0, [sp, #64]
-	lsrs r0, r1, #32
-	adds r1, #40
-	lsrs r2, r3, #32
-	adds r1, #147
-	lsrs r2, r3, #32
-	adds r1, #238
-	lsrs r2, r3, #32
-	adds r2, #55
-	lsrs r2, r3, #32
-	adds r2, #209
-	lsrs r2, r3, #32
-	adds r3, #121
-	lsrs r2, r3, #32
+
+@ 1A33C0..1A33E0 is decompiled as gSongHeader_003(); see src/decompiled.json
+
+	.section .rom.001A33E0, "ax"
+	.syntax unified
+	.thumb
 	str r6, [r7, r2]
 	.global _081A33E2
 _081A33E2:
@@ -2133,7 +355,7 @@ _081A3402:
 	ldr r0, _081A3754
 	.2byte 0x4786
 	ldr r0, sub_081A3620
-	b _081A2D18
+	.2byte 0xE486
 	.byte 0x45
 	.byte 0x98
 	.4byte 0xB48C43D9
@@ -2226,7 +448,7 @@ _081A34AE:
 	.global _081A34B4
 _081A34B4:
 	strb r1, [r7, #16]
-	b _081A2DD2
+	.2byte 0xE48C
 	.global _081A34B8
 _081A34B8:
 	str r7, [sp, #248]
@@ -2241,7 +463,7 @@ _081A34BE:
 	bmi _081A33E6
 	strh r6, [r7, #48]
 	lsrs r1, r3
-	b _081A2DE0
+	.2byte 0xE48C
 	.global _081A34C6
 _081A34C6:
 	strh r6, [r7, #8]
@@ -2266,7 +488,7 @@ _081A34D4:
 	ldrh r1, [r7, #32]
 	bcs _081A3452
 	subs r4, r6, r0
-	b _081A2D00
+	.2byte 0xE408
 	.byte 0x3E
 	.byte 0x74
 	.4byte 0x8C39D998
@@ -2507,7 +729,7 @@ _081A365C:
 	.thumb
 	.global sub_081A367C
 sub_081A367C:
-	b _081A2FE8
+	.2byte 0xE4B4
 	.byte 0x42
 	.byte 0x48
 	.4byte 0x8C45D998
@@ -2528,7 +750,7 @@ sub_081A3698:
 	lsrs r2, r3, #32
 	strb r3, [r6, #26]
 	subs r6, r6, r0
-	b _081A2EB6
+	.2byte 0xE408
 	.4byte 0xD9984840
 	.4byte 0x40E48C45
 	.4byte 0x8C45D998
@@ -2577,7 +799,7 @@ _081A36F0:
 	.thumb
 	.global sub_081A3710
 sub_081A3710:
-	b _081A2FEC
+	.2byte 0xE46C
 	.byte 0x53
 	.byte 0x68
 	.4byte 0x5C30D48C
@@ -2676,7 +898,7 @@ _081A37D8:
 	adds r7, #100
 	lsrs r2, r3, #32
 	adds r0, #217
-	b _081A30D6
+	.2byte 0xE474
 	.4byte 0xD48C6453
 	.4byte 0xD4865C30
 	.4byte 0xD486D486
@@ -2772,7 +994,7 @@ _081A3870:
 	add r0, sp, #672
 	add r0, sp, #672
 	bmi _081A37B4
-	ldr r0, _081A3984
+	.inst.n 0x483A
 	subs r4, #134
 	subs r6, #134
 	sbcs r6, r0
@@ -2858,29 +1080,12 @@ _081A396C:
 	subs r0, #215
 	lsrs r2, r3, #32
 	lsls r1, r6, #2
-	movs r0, r1
-	movs r2, r1
-	ldr r0, [sp, #64]
-	lsrs r0, r1, #32
-	adds r3, #224
-	lsrs r2, r3, #32
-	.global _081A3984
-_081A3984:
-	.4byte 0x081A3499  @ ROM+0x1A3499
-	.global _081A3988
-_081A3988:
-	adds r5, #20
-	lsrs r2, r3, #32
-	adds r5, #125
-	lsrs r2, r3, #32
-	adds r6, #92
-	lsrs r2, r3, #32
-	adds r6, #182
-	lsrs r2, r3, #32
-	subs r0, #122
-	lsrs r2, r3, #32
-	subs r0, #211
-	lsrs r2, r3, #32
+
+@ 1A3978..1A39A0 is decompiled as gSongHeader_004(); see src/decompiled.json
+
+	.section .rom.001A39A0, "ax"
+	.syntax unified
+	.thumb
 	ldrsh r6, [r7, r6]
 	lsls r4, r7, #2
 	subs r4, #187
@@ -3225,28 +1430,12 @@ _081A3C1E:
 	.global _081A3C22
 _081A3C22:
 	lsls r1, r6, #2
-	movs r7, r0
-	movs r2, r1
-	.global _081A3C28
-_081A3C28:
-	ldr r0, [sp, #64]
-	lsrs r0, r1, #32
-	subs r1, #160
-	lsrs r2, r3, #32
-	subs r1, #248
-	lsrs r2, r3, #32
-	subs r2, #90
-	lsrs r2, r3, #32
-	subs r2, #146
-	lsrs r2, r3, #32
-	subs r3, #62
-	.global _081A3C3E
-_081A3C3E:
-	lsrs r2, r3, #32
-	subs r3, #164
-	lsrs r2, r3, #32
-	subs r3, #243
-	lsrs r2, r3, #32
+
+@ 1A3C24..1A3C48 is decompiled as gSongHeader_007(); see src/decompiled.json
+
+	.section .rom.001A3C48, "ax"
+	.syntax unified
+	.thumb
 	str r6, [r7, r2]
 	lsls r4, r7, #2
 	adds r0, #187
@@ -3355,7 +1544,7 @@ _081A3CEE:
 	bge _081A3C22
 	ldrh r0, [r1, #34]
 	cmp sp, r12
-	bvc _081A3C28
+	.2byte 0xD798
 	ldrh r2, [r1, #34]
 	.inst.n 0x48D8  @ ldr r0, _081A405C
 	.global _081A3CFA
@@ -3386,7 +1575,7 @@ _081A3D12:
 _081A3D1E:
 	ldr r0, [sp, #260]
 	mvns r1, r3
-	bvc _081A3C3E
+	.2byte 0xD78C
 	ldr r0, [sp, #272]
 	ldrh r3, [r3, #38]
 	.global _081A3D28
@@ -3593,11 +1782,11 @@ _081A3E54:
 	.global _081A3E58
 _081A3E58:
 	add r12, r10
-	.inst.n 0x48D4  @ ldr r0, _081A41AC
+	.inst.n 0x48D4
 	.global _081A3E5C
 _081A3E5C:
 	add r12, r1
-	.inst.n 0x48D4  @ ldr r0, _081A41B0
+	.inst.n 0x48D4
 	push {r2, r3, r7}
 	adds r3, #212
 	bmi _081A3F00
@@ -4100,22 +2289,17 @@ _081A41A0:
 _081A41A4:
 	.4byte 0x91B28C3F
 	.4byte 0xB1081A40
-	.global _081A41AC
-_081A41AC:
-	.4byte 0x000A0005
-	.global _081A41B0
-_081A41B0:
-	.4byte 0x08089810  @ ROM+0x89810
-	.4byte 0x081A3C48
-	.4byte 0x081A3D69
-	.4byte 0x081A3F31
-	.4byte 0x081A3FFF
-	.4byte 0x081A408D
+
+@ 1A41AC..1A41C8 is decompiled as gSongHeader_008(); see src/decompiled.json
+
+	.section .rom.001A41C8, "ax"
+	.syntax unified
 	.4byte 0x00BC50BE
 	.byte 0xBB
 	.byte 0x3C
 	.global _081A41CE
 _081A41CE:
+	.thumb
 	adds r1, #189
 	.global _081A41D0
 _081A41D0:
@@ -5210,7 +3394,7 @@ _081A488C:
 	bmi _081A47B0
 	movs r6, #134
 	ldrh r0, [r2, #34]
-	.inst.n 0x4826  @ ldr r0, _081A4940
+	.inst.n 0x4826
 	.global _081A48A8
 _081A48A8:
 	.4byte 0x26D48C98
@@ -5282,21 +3466,11 @@ _081A4910:
 	.4byte 0xB2A07021
 	.4byte 0x081A4763
 	.4byte 0x000000B1
-	.4byte 0x000A0007
-	.4byte 0x08089810
-	.4byte 0x081A41C8
-	.4byte 0x081A43F3
-	.4byte 0x081A44DD
-	.byte 0x09
-	.byte 0x46
-	.global _081A493E
-_081A493E:
-	lsrs r2, r3, #32
-	.global _081A4940
-_081A4940:
-	.4byte 0x081A4671  @ ROM+0x1A4671
-	.4byte 0x081A46C6
-	.4byte 0x081A475C
+
+@ 1A4928..1A494C is decompiled as gSongHeader_009(); see src/decompiled.json
+
+	.section .rom.001A494C, "ax"
+	.syntax unified
 	.4byte 0x00BC50BE
 	.4byte 0x11BD30BB
 	.4byte 0x41F7A8A8
@@ -5449,7 +3623,7 @@ _081A4A20:
 	lsrs r2, r3, #32
 	.global _081A4A22
 _081A4A22:
-	bmi _081A493E
+	.2byte 0xD48C
 	.global _081A4A24
 _081A4A24:
 	.4byte 0x44D44841
@@ -5636,7 +3810,7 @@ sub_081A4AD8:
 	strh r1, [r7, #48]
 	strh r5, [r7, #48]
 	.2byte 0xB3B4
-	.inst.n 0x4AC7  @ ldr r2, _081A4E4C
+	.inst.n 0x4AC7
 	lsrs r2, r3, #32
 	bmi _081A4A40
 	str r0, [r0, #4]
@@ -6157,18 +4331,11 @@ sub_081A4E20:
 	.4byte 0xA8A849ED
 	.4byte 0x1A4DF7B2
 	.4byte 0x0000B108
-	.4byte 0x000A0008
-	.4byte 0x08089810
-	.4byte 0x081A494C
-	.global _081A4E4C
-_081A4E4C:
-	.4byte 0x081A4974  @ ROM+0x1A4974
-	.4byte 0x081A49AC
-	.4byte 0x081A4ABD
-	.4byte 0x081A4B77
-	.4byte 0x081A4BEB
-	.4byte 0x081A4C27
-	.4byte 0x081A4DED
+
+@ 1A4E40..1A4E68 is decompiled as gSongHeader_010(); see src/decompiled.json
+
+	.section .rom.001A4E68, "ax"
+	.syntax unified
 	.4byte 0x00BC50BE
 	.4byte 0x10BD24BB
 	.global _081A4E70
@@ -6186,6 +4353,7 @@ _081A4E90:
 	.4byte 0x8641866C
 	.global _081A4E94
 _081A4E94:
+	.thumb
 	mvns r6, r5
 	bmi _081A4DDA
 	str r1, [r0, #4]
@@ -6377,13 +4545,11 @@ _081A5128:
 	.4byte 0xA8A8A8A8
 	.4byte 0x5100B28B
 	.4byte 0x00B1081A
-	.4byte 0x000A0005
-	.4byte 0x08089810
-	.4byte 0x081A4E68
-	.4byte 0x081A4F10
-	.4byte 0x081A5035
-	.4byte 0x081A50B8
-	.4byte 0x081A50FC
+
+@ 1A514C..1A5168 is decompiled as gSongHeader_011(); see src/decompiled.json
+
+	.section .rom.001A5168, "ax"
+	.syntax unified
 	.4byte 0x00BC50BE
 	.4byte 0x31BD2DBB
 	.4byte 0x1841F7A8
@@ -6397,6 +4563,7 @@ _081A5174:
 	.4byte 0x3CD48C36
 	.global _081A518C
 _081A518C:
+	.thumb
 	bmi _081A5258
 	.global _081A518E
 _081A518E:
@@ -6955,7 +5122,7 @@ _081A549A:
 	add r0, sp, #672
 	add r0, sp, #672
 	subs r4, #228
-	.inst.n 0xA470  @ adr r4, _081A56AC
+	.inst.n 0xA470
 	adds r7, #217
 	ldrh r0, [r5, #34]
 	.inst.n 0xA43C  @ adr r4, _081A55E4
@@ -7158,28 +5325,17 @@ _081A566E:
 	str r2, [r6, #40]
 	subs r5, r2, r1
 	.2byte 0xB108
-	movs r6, r0
-	movs r2, r1
-	ldr r0, [sp, #64]
-	lsrs r0, r1, #32
-	str r0, [r5, r5]
-	lsrs r2, r3, #32
-	strh r6, [r1, r4]
-	lsrs r2, r3, #32
-	strh r1, [r1, r6]
-	lsrs r2, r3, #32
-	strb r4, [r1, r1]
-	lsrs r2, r3, #32
-	strb r6, [r3, r3]
-	lsrs r2, r3, #32
-	.global _081A56AC
-_081A56AC:
-	.4byte 0x081A5555  @ ROM+0x1A5555
+
+@ 1A5690..1A56B0 is decompiled as gSongHeader_012(); see src/decompiled.json
+
+	.section .rom.001A56B0, "ax"
+	.syntax unified
 	.4byte 0x00BC50BE
 	.byte 0xBB
 	.byte 0x32
 	.global _081A56B6
 _081A56B6:
+	.thumb
 	adds r1, #189
 	.global _081A56B8
 _081A56B8:
@@ -7497,7 +5653,7 @@ _081A58E6:
 	.2byte 0xB308
 	ldr r4, [r2, r2]
 	lsrs r2, r3, #32
-	.inst.n 0xA5B3  @ adr r5, _081A5BC8
+	.inst.n 0xA5B3
 	subs r0, r3, r1
 	.2byte 0xB308
 	ldr r6, [r6, r2]
@@ -7555,7 +5711,7 @@ _081A5952:
 	subs r7, #219
 	.global _081A5956
 _081A5956:
-	.inst.n 0x4998  @ ldr r1, _081A5BB8
+	.inst.n 0x4998
 	b _081A548C
 	.byte 0x44
 	.byte 0x9C
@@ -7799,17 +5955,11 @@ _081A5B50:
 	.4byte 0x081A5AFE
 	.4byte 0x1A5ADCB2
 	.4byte 0x0000B108
-	.4byte 0x000A0005
-	.4byte 0x08089810
-	.global _081A5BB8
-_081A5BB8:
-	.4byte 0x081A56B0  @ ROM+0x1A56B0
-	.4byte 0x081A5859
-	.4byte 0x081A5923
-	.4byte 0x081A5A3B
-	.global _081A5BC8
-_081A5BC8:
-	.4byte 0x081A5AD8  @ ROM+0x1A5AD8
+
+@ 1A5BB0..1A5BCC is decompiled as gSongHeader_013(); see src/decompiled.json
+
+	.section .rom.001A5BCC, "ax"
+	.syntax unified
 	.4byte 0x00BC50BE
 	.4byte 0x65BD38BB
 	.4byte 0x984839E4
@@ -7973,7 +6123,7 @@ _081A5E10:
 	.2byte 0xB108
 	str r6, [r7, r2]
 	lsls r4, r7, #2
-	.inst.n 0x49BD  @ ldr r1, _081A6110
+	.inst.n 0x49BD
 	add r0, sp, #608
 	add r0, sp, #672
 	add r0, sp, #672
@@ -8218,27 +6368,12 @@ _081A60A0:
 	str r6, [r7, #0]
 	lsrs r2, r3, #32
 	lsls r1, r6, #2
-	movs r7, r0
-	movs r2, r1
-	ldr r0, [sp, #64]
-	lsrs r0, r1, #32
-	ldrh r4, [r1, r7]
-	lsrs r2, r3, #32
-	ldrb r6, [r5, r1]
-	lsrs r2, r3, #32
-	ldrb r1, [r4, r5]
-	lsrs r2, r3, #32
-	ldrsh r6, [r2, r0]
-	lsrs r2, r3, #32
-	ldrsh r1, [r0, r3]
-	lsrs r2, r3, #32
-	.global _081A6110
-_081A6110:
-	.4byte 0x081A5FF0  @ ROM+0x1A5FF0
-	.global _081A6114
-_081A6114:
-	str r7, [r6, #0]
-	lsrs r2, r3, #32
+
+@ 1A60F4..1A6118 is decompiled as gSongHeader_014(); see src/decompiled.json
+
+	.section .rom.001A6118, "ax"
+	.syntax unified
+	.thumb
 	str r6, [r7, r2]
 	lsls r4, r7, #2
 	.global _081A611C
@@ -8967,7 +7102,7 @@ _081A67E8:
 	.4byte 0xD284D284
 	.global _081A6808
 _081A6808:
-	b _081A6114
+	.2byte 0xE484
 	.global _081A680A
 _081A680A:
 	ldr r1, [r7, r0]
@@ -9453,38 +7588,15 @@ sub_081A6A8E:
 	.2byte 0xB1B2
 	subs r0, r5, r1
 	.2byte 0xB108
-	movs r1, r1
-	movs r2, r1
-	ldr r0, [sp, #64]
-	lsrs r0, r1, #32
-	str r0, [r3, #16]
-	lsrs r2, r3, #32
-	str r5, [r3, #60]
-	lsrs r2, r3, #32
-	str r7, [r3, #80]
-	.global _081A6AC6
-_081A6AC6:
-	lsrs r2, r3, #32
-	str r7, [r2, #96]
-	lsrs r2, r3, #32
-	str r2, [r0, #108]
-	lsrs r2, r3, #32
 
-	.thumb_func
-	.thumb
-	.global sub_081A6AD0
-sub_081A6AD0:
-	str r3, [r4, #112]
-	lsrs r2, r3, #32
-	str r0, [r5, #120]
-	lsrs r2, r3, #32
-	str r5, [r3, #124]
-	lsrs r2, r3, #32
-	ldr r4, [r4, #8]
-	lsrs r2, r3, #32
+@ 1A6AB4..1A6AE0 is decompiled as gSongHeader_015(); see src/decompiled.json
+
+	.section .rom.001A6AE0, "ax"
+	.syntax unified
 	.global _081A6AE0
 _081A6AE0:
 	.4byte 0x00BC50BE
+	.thumb
 	subs r4, #187
 	lsls r5, r7, #2
 	.inst.n 0x48D4  @ ldr r0, _081A6E3C
@@ -9568,7 +7680,7 @@ _081A6B72:
 	subs r3, r5, r1
 	.2byte 0xED08
 	ldr r7, [r1, r1]
-	blt _081A6AC6
+	.2byte 0xDBA2
 	str r2, [sp, #272]
 	mov r12, r10
 	.inst.n 0x488C  @ ldr r0, _081A6DB8
@@ -10463,7 +8575,7 @@ _081A70C0:
 	sub sp, #192
 	sub sp, #192
 	strh r7, [r5, #28]
-	ldr r7, _081A7398
+	.inst.n 0x4FB2
 	subs r0, r6, r1
 	.2byte 0xB108
 	.global _081A70D2
@@ -10834,7 +8946,7 @@ _081A72A2:
 	cmp r6, #212
 	ldrh r0, [r3, #34]
 	movs r4, #223
-	bmi _081A738E
+	.2byte 0xD470
 	ldr r2, [r5, r0]
 	swi #134
 	.global _081A72B0
@@ -10843,7 +8955,7 @@ _081A72B0:
 	cmp r2, #217
 	ldrh r0, [r3, #34]
 	movs r4, #219
-	bmi _081A739C
+	.2byte 0xD470
 	ldr r2, [r5, r0]
 	bvc _081A71CC
 	ldr r6, [r4, #64]
@@ -10998,31 +9110,12 @@ _081A7382:
 	strb r6, [r2, #3]
 	lsrs r2, r3, #32
 	lsls r1, r6, #2
-	movs r6, r0
-	.global _081A738E
-_081A738E:
-	movs r2, r1
-	adr r6, _081A76E4
-	lsrs r0, r1, #32
-	ldr r0, [r4, #44]
-	.global _081A7396
-_081A7396:
-	lsrs r2, r3, #32
-	.global _081A7398
-_081A7398:
-	.4byte 0x081A6BBB  @ ROM+0x1A6BBB
-	.global _081A739C
-_081A739C:
-	ldr r5, [r3, #76]
-	lsrs r2, r3, #32
-	ldr r0, [r4, #124]
-	lsrs r2, r3, #32
-	strb r3, [r1, #1]
-	lsrs r2, r3, #32
-	.global _081A73A8
-_081A73A8:
-	strb r2, [r2, #3]
-	lsrs r2, r3, #32
+
+@ 1A738C..1A73AC is decompiled as gSongHeader_016(); see src/decompiled.json
+
+	.section .rom.001A73AC, "ax"
+	.syntax unified
+	.thumb
 	adds r7, #190
 	lsls r4, r7, #2
 	cmp r0, #187
@@ -11167,7 +9260,7 @@ _081A7472:
 	ldrh r1, [r3, #34]
 	ldrh r4, [r3, #34]
 	ldr r4, [r3, r7]
-	bvc _081A7396
+	.2byte 0xD78C
 	strh r6, [r2, #50]
 	strh r7, [r2, #50]
 	strh r1, [r3, #50]
@@ -11180,7 +9273,7 @@ _081A7482:
 _081A7488:
 	ldrsb r5, [r3, r7]
 	ldrh r4, [r1, r6]
-	bgt _081A73A8
+	.2byte 0xDC8C
 	ldrh r7, [r2, #34]
 	str r6, [r2, r3]
 	.global _081A7492
@@ -11191,7 +9284,7 @@ _081A7492:
 	strh r0, [r2, #50]
 	strh r2, [r2, #50]
 	strh r4, [r2, #50]
-	ldr r5, _081A7814
+	.inst.n 0x4DDD  @ ldr r5, _081A7814
 	.global _081A74A0
 _081A74A0:
 	str r4, [r1, r2]
@@ -11440,7 +9533,7 @@ _081A75F8:
 	strh r0, [r2, #50]
 	strh r2, [r2, #50]
 	strh r4, [r2, #50]
-	ldr r5, _081A7974
+	.inst.n 0x4DDD  @ ldr r5, _081A7974
 
 	.thumb_func
 	.thumb
@@ -11523,7 +9616,7 @@ _081A764A:
 	strh r4, [r2, #50]
 	ldrsb r6, [r0, r2]
 	ldrh r4, [r1, r6]
-	ldr r7, _081A788C
+	.inst.n 0x4F8C  @ ldr r7, _081A788C
 	b _081A7576
 	.4byte 0x4FD59854
 	.global _081A7660
@@ -11795,18 +9888,11 @@ sub_081A77E8:
 sub_081A77F0:
 	subs r6, r6, r1
 	.2byte 0xB108
-	movs r3, r0
-	movs r2, r1
-	ldr r0, [sp, #64]
-	lsrs r0, r1, #32
-	strb r4, [r5, #14]
-	lsrs r2, r3, #32
-	.global _081A7800
-_081A7800:
-	strb r7, [r6, #19]
-	lsrs r2, r3, #32
-	strb r7, [r4, #25]
-	lsrs r2, r3, #32
+
+@ 1A77F4..1A7808 is decompiled as gSongHeader_018(); see src/decompiled.json
+
+	.section .rom.001A7808, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -11937,7 +10023,7 @@ _081A78A2:
 	.global _081A78BA
 _081A78BA:
 	push {r3, r4, r7}
-	adr r4, _081A7B8C
+	.inst.n 0xA4B3  @ adr r4, _081A7B8C
 	subs r0, r7, r1
 	.2byte 0xB308
 	ldrb r0, [r6, #2]
@@ -11968,7 +10054,7 @@ _081A78D4:
 	.global sub_081A78D8
 sub_081A78D8:
 	lsrs r2, r3, #32
-	adr r4, _081A7BA8
+	.inst.n 0xA4B3  @ adr r4, _081A7BA8
 	subs r0, r7, r1
 	.2byte 0xB308
 
@@ -11978,7 +10064,7 @@ sub_081A78D8:
 sub_081A78E0:
 	ldrb r0, [r6, #2]
 	lsrs r2, r3, #32
-	bpl _081A7800
+	.2byte 0xD58C
 	ldr r4, [r7, r0]
 	.global _081A78E8
 _081A78E8:
@@ -12087,7 +10173,7 @@ _081A7962:
 	ldr r4, [r7, #0]
 	subs r2, #152
 	subs r4, #152
-	b _081A7AA4
+	.2byte 0xE098
 	.byte 0x3A
 	.byte 0x98
 	.global _081A7974
@@ -12222,7 +10308,7 @@ _081A7A18:
 	bls _081A794C
 	add sp, #240
 	bmi _081A7990
-	ldr r0, _081A7B38
+	.inst.n 0x4840  @ ldr r0, _081A7B38
 	sbcs r6, r0
 	.2byte 0xB286
 	ldrb r1, [r2, #6]
@@ -12263,24 +10349,12 @@ _081A7A80:
 	ldrb r4, [r5, #9]
 	lsrs r2, r3, #32
 	lsls r1, r6, #2
-	movs r6, r0
-	movs r2, r1
-	ldr r0, [sp, #64]
-	lsrs r0, r1, #32
-	ldrb r0, [r1, #0]
-	lsrs r2, r3, #32
-	ldrb r3, [r2, #2]
-	lsrs r2, r3, #32
-	ldrb r4, [r2, #4]
-	lsrs r2, r3, #32
-	ldrb r1, [r1, #6]
-	lsrs r2, r3, #32
-	.global _081A7AA4
-_081A7AA4:
-	ldrb r1, [r0, #9]
-	lsrs r2, r3, #32
-	ldrb r4, [r4, #9]
-	lsrs r2, r3, #32
+
+@ 1A7A8C..1A7AAC is decompiled as gSongHeader_019(); see src/decompiled.json
+
+	.section .rom.001A7AAC, "ax"
+	.syntax unified
+	.thumb
 	str r6, [r7, r2]
 	lsls r4, r7, #2
 	sbcs r3, r7

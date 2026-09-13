@@ -2,9 +2,17 @@
 #include "sprite_engine.h"
 
 #define AT(x) __attribute__((section(".rom." x)))
+#ifdef __GNUC__
+#define TARGET_REGISTER(name)
+#else
+#define TARGET_REGISTER(name) asm(name)
+#endif
 
 extern void CpuCopy(void *destination, const void *source, u32 size);
 extern s32 sub_08080BFC(s32 dividend, s32 divisor);
+extern char *strcpy(char *destination, const char *source);
+extern char *strupr(char *string);
+extern s32 memcmp(const void *left, const void *right, u32 size);
 
 AT("0007B224")
 void *SpriteEngineGetOamEntry(u32 index)
@@ -110,6 +118,13 @@ u32 SpriteEngineTestFlag20C(u8 index)
     return gSpriteEngineState->flags20C & (1 << index);
 }
 
+/* Enable or clear every one of the renderer's sixteen resource-group flags. */
+AT("0007B728")
+void SpriteEngineSetAllFlags20C(s32 set)
+{
+    gSpriteEngineState->flags20C = set ? 0xFFFF : 0;
+}
+
 AT("0007B74C")
 u32 SpriteEngineGetFlags20C(void)
 {
@@ -162,6 +177,136 @@ void SpriteEngineDecrementCounter(u8 group, u32 index)
             SpriteEngineReleaseBinding(group);
     }
 }
+
+/* Choose an unprotected resource group, preferring groups whose complete
+ * four-level reference counter is empty before progressively weaker tests. */
+AT("0007B830")
+s32 SpriteEngineFindReusableGroup(void)
+{
+    u32 *counters = (u32 *)&gSpriteEngineState->counters[0][0];
+    u32 *base = counters;
+    u16 protected = SpriteEngineGetFlags20C();
+    u16 bit = 1;
+    s32 group = 0;
+
+    while (group <= 15) {
+        if (*counters == 0 && (protected & bit) == 0)
+            goto found;
+        group++;
+        counters++;
+        bit <<= 1;
+    }
+    bit = 1;
+    counters = base;
+    group = 0;
+    while (group <= 15) {
+        if ((*counters & 0x00FFFFFF) == 0 && (protected & bit) == 0)
+            goto found;
+        group++;
+        counters++;
+        bit <<= 1;
+    }
+    bit = 1;
+    counters = base;
+    group = 0;
+    while (group <= 15) {
+        if ((*counters & 0x0000FFFF) == 0 && (protected & bit) == 0)
+            goto found;
+        group++;
+        counters++;
+        bit <<= 1;
+    }
+    bit = 1;
+    counters = base;
+    group = 0;
+    while (group <= 15) {
+        if ((*counters & 0xFF) == 0 && (protected & bit) == 0)
+            goto found;
+        group++;
+        counters++;
+        bit <<= 1;
+    }
+    return -1;
+
+found:
+    SpriteEngineReleaseBinding((u8)group);
+    return group;
+}
+
+/* Bind one palette/resource entry to a reusable renderer group.  The reverse
+ * link lets the group's counters release the descriptor slot later. */
+AT("0007B8F4")
+s32 SpriteResourceBindGroup(u32 resource, u32 index)
+{
+    register u32 bindingIndex TARGET_REGISTER("r8") = index;
+    register struct SpriteEngineState **global TARGET_REGISTER("r9") =
+        (struct SpriteEngineState **)0x03006118;
+    struct SpriteResourceDescriptor *descriptor =
+        &(*global)->resources[resource];
+    register u32 bindingOffset TARGET_REGISTER("r3") = bindingIndex;
+    s8 *slot = &descriptor->bindingIndices[bindingOffset];
+    s32 group = *slot;
+    s32 previous = group;
+
+    if (group == -1) {
+        group = SpriteEngineFindReusableGroup();
+        if (group != previous) {
+            struct SpriteEngineState *state;
+            SpriteEngineSetCounter((u8)group, 0, 0);
+            *slot = group;
+            state = *global;
+            state->bindings[group].owner =
+                (struct SpriteBindingOwner *)descriptor;
+            state->bindings[group].index = bindingIndex;
+        }
+    }
+    return group;
+}
+
+/* Group names occupy the first eight bytes of sorted 16-byte records. */
+AT("0007BB98")
+s32 SpriteResourceFindGroup(u32 resource, const char *name)
+{
+    u32 keyWords[3];
+    char *key;
+    struct SpriteResourceDescriptor *descriptor;
+    s32 low;
+    s32 high;
+    s32 middle;
+    s32 order;
+
+    keyWords[2] = 0;
+    keyWords[1] = 0;
+    keyWords[0] = 0;
+    strcpy((char *)keyWords, name);
+    strupr((char *)keyWords);
+    key = (char *)keyWords;
+    descriptor = &gSpriteEngineState->resources[resource];
+    low = 0;
+    high = descriptor->header->entryCount - 1;
+    while (low != high) {
+        middle = (low + high) / 2;
+        order = memcmp(descriptor->level0[middle].name, key, 8);
+        if (order == 0)
+            goto middleFound;
+        if (order > 0)
+            high = middle;
+        else
+            low = middle + 1;
+    }
+    {
+        register u32 byteOffset TARGET_REGISTER("r0") = low << 4;
+        byteOffset = (u32)descriptor->level0 + byteOffset;
+        if (memcmp((void *)byteOffset, key, 8) == 0)
+            goto lowFound;
+    }
+    return -1;
+middleFound:
+    return middle;
+lowFound:
+    return low;
+}
+AT("0007BB98") const u8 SpriteResourceFindGroupTail[2] = {0, 0};
 
 AT("0007BA0C")
 struct SpriteResourceLevel0 *SpriteResourceGetLevel0(u32 resource, u32 index)
@@ -430,6 +575,27 @@ AT("0007CDD4")
 u32 SpriteEngineGetFlags14(void)
 {
     return gSpriteEngineState->flags14;
+}
+
+/* The renderer keeps the active affine-work descriptor immediately before
+ * the viewport origin.  Larger affine routines consume this pointer. */
+AT("0007D01C")
+void SpriteEngineSetAffineWork(void *work)
+{
+    *(void **)((u8 *)gSpriteEngineState + 0x144) = work;
+}
+
+AT("0007D030")
+void *SpriteEngineGetAffineWork(void)
+{
+    return *(void **)((u8 *)gSpriteEngineState + 0x144);
+}
+
+AT("0007D23C")
+void SpriteGetViewportOrigin(u16 *x, u16 *y)
+{
+    *x = *(u16 *)((u8 *)gSpriteEngineState + 0x148);
+    *y = *(u16 *)((u8 *)gSpriteEngineState + 0x14A);
 }
 
 AT("0007CC04")
