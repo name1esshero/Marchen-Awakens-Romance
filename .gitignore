@@ -12,6 +12,10 @@
 *.8bpp
 *.lz
 
+# Emulator screenshots dropped beside the ROM. Asset PNGs in subdirectories
+# remain tracked source files.
+/*.png
+
 # Locally installed toolchain, including headers supplied by its installer.
 /tools/agbcc/
 

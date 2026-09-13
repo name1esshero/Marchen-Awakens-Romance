@@ -142,6 +142,24 @@ AT("00009EEC") void *RuntimeActorGetField354Address(u32 actor)
 }
 
 extern u8 *sub_080083B8(u32 actor,u32 part);
+extern s16 *sub_080099E0(u32 actor,u32 group);
+
+/* Count occurrences of value in the five-element signed lookup returned for
+ * this actor/group pair. */
+AT("000099B8") u32 RuntimeCountMatchingValues(u32 actor,u32 group,s32 value)
+{
+ u32 count=0;
+ s16 *values=sub_080099E0(actor,group);
+ s32 remaining=4;
+ do {
+  if (*values==value)
+   count++;
+  remaining--;
+  values++;
+ } while (remaining>=0);
+ return count;
+}
+
 AT("00009C94") u32 RuntimeCountReadyParts(u32 actor)
 {
  u32 count=0;

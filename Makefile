@@ -54,11 +54,11 @@ OBJS        := $(ASM_OBJS) $(C_OBJS)
 # Recompile matching C when a recovered structure or hardware definition changes.
 -include $(C_OBJS:.o=.d)
 
-.PHONY: all compare extract clean tidy
+.PHONY: all compare extract clean tidy stats test test-english ci
 .SUFFIXES:
 
 # Keep `all` first: it is the default goal.
-all: $(TARGET)
+all: $(TARGET) stats
 
 include graphics.mk
 
@@ -122,6 +122,20 @@ $(ELF): $(OBJS) ld_script.ld
 $(TARGET): $(ELF)
 	@echo "OBJCOPY $@"
 	@$(OBJCOPY) -O binary --pad-to 0x09000000 $< $@
+
+stats: $(TARGET)
+	@$(PYTHON) tools/rom_stats.py $(ELF) --rom $(TARGET) --objdump $(PREFIX)objdump
+
+test:
+	@$(PYTHON) -m unittest discover -s tests
+
+test-english:
+	@$(PYTHON) -m unittest discover -s tests -p 'test_english*.py'
+	@$(PYTHON) -m unittest discover -s tests -p 'test_translations.py'
+
+# Public CI deliberately has no baserom. Local compare remains the stronger,
+# byte-for-byte verification when the legally obtained reference is present.
+ci: all english test
 
 # --- verification ---------------------------------------------------------
 compare: $(TARGET)
@@ -259,8 +273,8 @@ docs-fetch: build/published-docs/.git
 ENGLISH_DIR := build/english
 ENGLISH_OBJS := $(ENGLISH_DIR)/dialogue_bridge.o $(ENGLISH_DIR)/dialogue_runtime.o \
                 $(ENGLISH_DIR)/dialogue_original.o $(ENGLISH_DIR)/mappings.o $(ENGLISH_DIR)/system_graphics.o $(ENGLISH_DIR)/effect_graphics.o $(ENGLISH_DIR)/background_graphics.o
-.PHONY: english
-english: mar_english.gba
+.PHONY: english english-stats
+english: mar_english.gba english-stats
 
 $(ENGLISH_DIR)/mappings.c: $(wildcard text/nfp/*.txt) text/translation/english_font.json \
                          graphics/fonts/font.png graphics/fonts/font.json tools/build_english.py tools/english_layout.py
@@ -322,3 +336,6 @@ $(ENGLISH_DIR)/mar_english.elf: $(OBJS) $(ENGLISH_OBJS) ld_script.ld ld_english.
 
 mar_english.gba: $(ENGLISH_DIR)/mar_english.elf
 	$(OBJCOPY) -O binary --gap-fill 0xFF --pad-to 0x0A000000 $< $@
+
+english-stats: mar_english.gba
+	@$(PYTHON) tools/rom_stats.py $(ENGLISH_DIR)/mar_english.elf --rom mar_english.gba --objdump $(PREFIX)objdump

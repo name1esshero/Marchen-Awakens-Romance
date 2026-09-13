@@ -47,6 +47,7 @@ s32 RuntimeActorGetField7A2(u32 actor);
 void RuntimeActorSetFields7A4_7A6(u32 actor,s32 first,s32 second);
 void RuntimeActorGetFields7A4_7A6(u32 actor,u16 *first,u16 *second);
 void *RuntimeActorGetField354Address(u32 actor);
+u32 RuntimeCountMatchingValues(u32 actor,u32 group,s32 value);
 u32 RuntimeCountReadyParts(u32 actor);
 void RuntimeActorClearField0E(u32 actor);
 u32 RuntimeActorHasReadyPart(u32 actor);

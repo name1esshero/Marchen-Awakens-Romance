@@ -9,6 +9,8 @@ import sound_assets
 
 
 class SoundAssetTest(unittest.TestCase):
+    @unittest.skipUnless((sound_assets.ROOT/'baserom.gba').exists(),
+                         'baserom.gba is required for ROM comparison')
     def test_all_driver_samples_match_and_have_references(self):
         rom=(sound_assets.ROOT/'baserom.gba').read_bytes()
         samples=json.loads((sound_assets.OUT/'samples/manifest.json').read_text())

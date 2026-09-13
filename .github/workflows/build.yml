@@ -1,0 +1,41 @@
+name: Build and test
+
+permissions:
+  contents: read
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install ARM binutils
+        run: sudo apt-get update && sudo apt-get install -y binutils-arm-none-eabi gcc-arm-none-eabi
+
+      - name: Cache agbcc
+        id: cache-agbcc
+        uses: actions/cache@v4
+        with:
+          path: tools/agbcc
+          key: agbcc-linux-${{ runner.os }}-v1
+
+      - name: Build and install agbcc
+        if: steps.cache-agbcc.outputs.cache-hit != 'true'
+        run: |
+          git clone --depth 1 https://github.com/pret/agbcc.git /tmp/agbcc
+          cd /tmp/agbcc
+          ./build.sh
+          ./install.sh "$GITHUB_WORKSPACE"
+
+      - name: Build without a base ROM
+        run: make -j2
+
+      - name: Build English localization without a base ROM
+        run: make -j2 english
+
+      - name: Run Japanese and English tests
+        run: python3 -m unittest discover -s tests

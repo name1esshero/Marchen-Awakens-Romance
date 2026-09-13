@@ -44,6 +44,8 @@ class EnglishBackgroundTests(unittest.TestCase):
                     self.assertEqual(canonical(pixels), canonical(expected))
                     self.assertNotEqual(pixels, original)
 
+    @unittest.skipUnless((ROOT/'baserom.gba').exists(),
+                         'baserom.gba is required for ROM comparison')
     def test_missing_overrides_restore_original_tiles_and_map(self):
         assets = {e.get('archive_name'): e for e in json.loads((ROOT/'assets.json').read_text())}
         rom = (ROOT/'baserom.gba').read_bytes()

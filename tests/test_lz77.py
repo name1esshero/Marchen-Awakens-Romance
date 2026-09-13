@@ -28,6 +28,8 @@ class Lz77Tests(unittest.TestCase):
                     if length>=3 and length>best[0]:best=length,pos-candidate
                 self.assertEqual(lz77._find_match(data,pos,len(data),minimum),best)
 
+    @unittest.skipUnless((ROOT/'baserom.gba').exists(),
+                         'baserom.gba is required for ROM comparison')
     def test_every_graphic_recompresses_exactly_from_editable_sources(self):
         rom=(ROOT/'baserom.gba').read_bytes()
         entries=json.loads((ROOT/'assets.json').read_text())

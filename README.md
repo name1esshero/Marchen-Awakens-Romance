@@ -1,7 +1,8 @@
 # MAR — Knockin' on Heaven's Door (Japan)
 
 A work-in-progress GBA decompilation with a byte-identical ROM rebuild.
-The original ROM is required locally; it is not supplied by the tools.
+The normal build uses only checked-in source assets. The original ROM is an
+optional local verification input and is not supplied by the project.
 
 ```sh
 make -j4
@@ -9,7 +10,14 @@ make compare
 ```
 
 Expected SHA-1: `5ed178bfbdf459867d64e5b91a9d9c72654e4051` (16,777,216 bytes).
-`make compare` checks every ROM byte.
+`make compare` checks every ROM byte when `baserom.gba` is present. `make`
+prints linked ROM, EWRAM, and IWRAM usage after the build; RAM figures cover
+static linked sections because this game allocates its working heaps at runtime.
+`make test` runs the host-side unit suite, `make test-english` runs its English
+subset, and `make ci` builds both `mar.gba` and `mar_english.gba` before running
+the same tests used by GitHub Actions. ROM-dependent source round-trip tests are
+skipped in public CI and run automatically on a local checkout with
+`baserom.gba`.
 
 **Toolchain.** arm-none-eabi binutils for assembling and linking, and **agbcc**
 for C. agbcc is the period compiler preserved by the pret projects, and it is

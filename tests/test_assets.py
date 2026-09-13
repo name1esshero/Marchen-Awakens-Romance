@@ -21,6 +21,8 @@ import rle
 import text_codec
 
 ROOT = ncd.ROOT
+requires_baserom = unittest.skipUnless(
+    (ROOT/'baserom.gba').exists(), 'baserom.gba is required for ROM comparison')
 
 
 @lru_cache(maxsize=None)
@@ -40,6 +42,7 @@ class AssetTest(unittest.TestCase):
         for raw in (b'\xF0\x56\x82\x71\x82\x6C',b'\xF0\x40',b'\x80\x01',b' text  '):
             self.assertEqual(text_codec.encode(text_codec.decode_lossless(raw)),raw)
 
+    @requires_baserom
     def test_portrait_pixel_changes_only_its_cell_byte(self):
         original=original_container('SYSTEM')
         e=json.loads((ROOT/'graphics/portraits/manifest.json').read_text())[0]
@@ -56,6 +59,7 @@ class AssetTest(unittest.TestCase):
             conflict=bytearray(original);conflict[e['start']]^=2
             with self.assertRaises(ValueError):icons.apply(conflict,original,manifest)
 
+    @requires_baserom
     def test_scene_edit_roundtrip_and_conflict(self):
         original=original_container('CHR')
         info=ncd.layout(original)
@@ -82,6 +86,7 @@ class AssetTest(unittest.TestCase):
                 conflict[address]=(conflict[address]&~(15<<shift))|(other<<shift)
                 with self.assertRaises(ValueError):scenes.merge(conflict,original,'CHR')
 
+    @requires_baserom
     def test_unchanged_pixel_hash_cannot_hide_frame_resize(self):
         original=original_container('CHR');info=ncd.layout(original)
         px,_,pal,meta=scenes.render(original,info,0)
@@ -115,6 +120,7 @@ class AssetTest(unittest.TestCase):
                 data['frames'][1]['path']='b.png'
                 self.assertEqual(scenes.consolidate(data,folder,blob,info),[])
 
+    @requires_baserom
     def test_all_ncd_cells_and_palettes(self):
         for e in json.loads((ROOT/'graphics/sprite_containers.json').read_text()):
             blob=original_container(e['stem']);info=ncd.layout(blob)
@@ -125,10 +131,12 @@ class AssetTest(unittest.TestCase):
                 p=info['offsets'][4]+32*i
                 self.assertEqual(gfx.palette_to_bytes(colors),blob[p:p+32])
 
+    @requires_baserom
     def test_ncd_reconstruction_without_original_containers(self):
         for stem in sprite_sources.CATEGORIES:
             self.assertEqual(sprite_sources.compile(stem),original_container(stem),stem)
 
+    @requires_baserom
     def test_cell_pixels_and_animation_metadata_reach_reconstructed_ncd(self):
         base=sprite_sources.folder('CHR')
         original=original_container('CHR');info=ncd.layout(original)

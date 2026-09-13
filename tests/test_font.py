@@ -11,7 +11,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'tools'))
 import font
 import nfp
 
-ROM = (font.ROOT / 'baserom.gba').read_bytes()
+ROM_PATH = font.ROOT / 'baserom.gba'
+ROM = ROM_PATH.read_bytes() if ROM_PATH.exists() else b''
 
 
 def original_mapping(code):
@@ -69,6 +70,7 @@ def original_mapping(code):
     raise AssertionError('Mapping did not return')
 
 
+@unittest.skipUnless(ROM_PATH.exists(), 'baserom.gba is required for ROM comparison')
 class FontTest(unittest.TestCase):
     def test_all_character_codes_against_rom(self):
         for code in range(65536):

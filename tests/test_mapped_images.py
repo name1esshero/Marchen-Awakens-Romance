@@ -30,6 +30,8 @@ class MappedImagesTests(unittest.TestCase):
                      image_layout='layout.json', unused_tiles_image='unused.png')
         return entry, tiles, pixels, colors, layout
 
+    @unittest.skipUnless((mi.ROOT/'baserom.gba').exists(),
+                         'baserom.gba is required for ROM comparison')
     def test_all_migrated_pixels_and_map_planes_match_original_sources(self):
         rom = (mi.ROOT/'baserom.gba').read_bytes()
         maps = {e['name']:e for e in json.loads((mi.ROOT/'maps/nfp/manifest.json').read_text())}
