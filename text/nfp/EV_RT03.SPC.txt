@@ -37,7 +37,7 @@
 @000E9E  C0F04 魔力（まりょく）によって  // EN: They're made using magical power...
 @000EC9  C0904 彫金（ちょうきん） C0F04 された…  // EN: ...through a process called engraving...
 @000F1B  C0D04 ［ドロシー］  // EN: [Dorothy]
-@000F3A  C0F04 特殊能力を持つ C0904 アクセサリー C0F04 のことよ  // EN: ...accessories with special abilities.
+@000F3A  C0F04 特殊能力を持つ C0904 アクセサリー C0F04 のことよ  // EN: ...{color:0904}accessories{color:0F04} with special abilities.
 @000FED F01A07  // LITERAL: F01A07 (usage not inferred)
 @001051  C0D04 ［ギンタ］  // EN: [Ginta]
 @00106E  C0F04 アクセサリー！？  // EN: Accessories?!

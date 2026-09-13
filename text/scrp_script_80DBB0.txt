@@ -10,7 +10,7 @@
 @0003F8  C0D04 ［ギンタ］  // EN: [Ginta]
 @000415  C0F04 ……  // EN: ......
 @00042C いちおう、１コもらっとこ！  // EN: I'll take one, just in case!
-@0004DD  C0D04 サックリの実 C0F04 を  // EN: Crisp Fruit...
+@0004DD  C0D04 サックリの実 C0F04 を  // EN: {color:0D04}Crisp Fruit{color:0F04}
 @000505 手に入れた！  // EN: Obtained it!
 @000908 F01A01  // LITERAL: F01A01 (usage not inferred)
 @0009C9  C0D04 ［ギンタ］  // EN: [Ginta]

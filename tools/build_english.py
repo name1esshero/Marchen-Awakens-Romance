@@ -2,8 +2,9 @@
 """Compile reviewed exact-string mappings for the optional English dialogue path.
 
 Ambiguous wording across scripts is excluded until runtime script identity is
-recovered. Leading and trailing C/T controls survive; internal controls need translated
-markup and are rejected. Output uses the actual font and 21-glyph row limit.
+recovered. Leading and trailing C/T controls survive. Translations with explicit
+markup preserve interior emphasis; otherwise the translated row is rendered in
+normal dialogue colors. Output uses the actual font and 21-glyph row limit.
 """
 import argparse
 import collections
@@ -22,7 +23,13 @@ SUFFIX = re.compile(rb'(?: *[CTct][0-9A-Fa-f]{4})+ *$')
 def collect(root=ROOT):
     candidates = collections.defaultdict(set)
     locations = collections.defaultdict(list)
-    for path in sorted((root/'text/nfp').glob('*.txt')):
+    paths = sorted((root/'text/nfp').glob('*.txt'))
+    # Item names are inserted into common acquisition messages at runtime, so
+    # they never appear as complete literals in the named NFP scripts.
+    item_text = root/'text/script_1B0000.txt'
+    if item_text.is_file():
+        paths.append(item_text)
+    for path in paths:
         for line in path.read_text().splitlines():
             if not line.startswith('@') or '  // EN:' not in line:continue
             body, english = line.split('  // EN:',1)
@@ -45,9 +52,13 @@ def collect(root=ROOT):
             suffix_match = SUFFIX.search(body)
             suffix = suffix_match.group() if suffix_match else b''
             visible = body[:-len(suffix)] if suffix else body
-            if CONTROL.search(visible) and not english_layout.CONTROL_TAG.search(next(iter(translations))):
-                raise ValueError('Embedded formatting requires English markup')
-            rows = english_layout.wrap_lines(next(iter(translations)),mapping)
+            translation = next(iter(translations))
+            if CONTROL.search(visible) and not english_layout.CONTROL_TAG.search(translation):
+                # Japanese emphasis boundaries cannot be transferred by byte
+                # position after rewording. Reset translated text to the normal
+                # dialogue palette rather than rejecting the entire message.
+                translation = '{color:0F04}' + translation
+            rows = english_layout.wrap_lines(translation,mapping)
             while len(rows)>1 and rows[-1]==b'\0':rows.pop()
             if len(rows) > 255:raise ValueError('Translation exceeds 255-row mapping limit')
             # The pagination task carries style across page boundaries.
@@ -65,7 +76,7 @@ def literal(raw):
 
 
 def render(accepted):
-    lines=['/* Generated from reviewed text/nfp comments; do not edit. */', '#include "english.h"']
+    lines=['/* Generated from reviewed extracted-text comments; do not edit. */', '#include "english.h"']
     for i, (_, rows) in enumerate(accepted):
         lines.append('static const char *const rows_%d[] = {%s};' %
                      (i, ', '.join(literal(row[:-1]) for row in rows)))

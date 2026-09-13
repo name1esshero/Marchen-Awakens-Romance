@@ -210,8 +210,33 @@ void *DialogueStartOriginal(int mode,int count,const char **rows,int *result) {
             self.assertEqual(output[1],english_layout.wrap_lines('...',english_layout.load_mapping())[0][:-1])
 
     def test_reviewed_strings_have_no_conflicting_runtime_wording(self):
-        self.assertFalse([item for item in self.rejected
-                          if item['reason'].startswith('Context-dependent')])
+        self.assertFalse(self.rejected)
+
+    def test_dynamic_item_names_are_available_to_common_acquisition_messages(self):
+        import text_codec
+        entries = dict(self.entries)
+        for japanese, english in [('サックリの実', 'Crisp Fruit'),
+                                  ('ジュクした実', 'Ripe Fruit')]:
+            raw = text_codec.encode(japanese)
+            self.assertIn(raw, entries)
+            self.assertEqual(entries[raw], english_layout.wrap_lines(
+                english, english_layout.load_mapping()))
+
+    def test_reported_color_dialogue_translates_with_safe_palette_controls(self):
+        import text_codec
+        entries = dict(self.entries)
+        cases = [
+            (' C0D04 サックリの実 C0F04 を', b'C0D04', b'C0F04'),
+            (' C0F04 特殊能力を持つ C0904 アクセサリー C0F04 のことよ', b'C0904', b'C0F04'),
+            (' C0904 バッボ C0F04 の C0904 Ｂ C0F04 とおぼえるがよい', b'C0904', b'C0F04'),
+        ]
+        for japanese, highlight, normal in cases:
+            raw = text_codec.encode(japanese)
+            self.assertIn(raw, entries)
+            output = b''.join(entries[raw])
+            self.assertIn(highlight, output)
+            self.assertIn(normal, output)
+            self.assertNotEqual(output, raw + b'\0')
 
     def test_capacity_modes_unknown_and_ambiguous_rows(self):
         one=next(raw for raw,rows in self.entries if len(rows)==1)
