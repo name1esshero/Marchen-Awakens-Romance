@@ -596,5 +596,6 @@
   "080805D0": "SpriteRuntimeSetAllFlags800",
   "08003770": "HeapFreeDefault",
   "0806E538": "Crc32Difference",
-  "08009830": "RuntimeActorHasReadyPart"
+  "08009830": "RuntimeActorHasReadyPart",
+  "080099B8": "RuntimeCountMatchingValues"
 }

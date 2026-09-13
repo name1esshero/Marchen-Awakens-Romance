@@ -249,12 +249,13 @@ script changes. Loose ROM text outside named sources still uses `text/script_*`.
 
 ## Decompilation status
 
-The provenance audit verifies **539 ordinary C functions and 10 BIOS assembly
+The provenance audit verifies **541 ordinary C functions and 10 BIOS assembly
 wrappers**; each declared range is linked from its expected object and matches
-the Japanese ROM. The latest batch adds 60 functions covering the 1,672-byte
+the Japanese ROM. The latest batch adds 62 functions covering the 1,672-byte
 actor array and its 104-byte component array, task constructors and payloads,
 NCD sprite reset, game-state buffers, sound adapters, and small conditional
-helpers. Equivalent C candidates that made
+helpers. The latest addition counts matches across a recovered five-element
+signed runtime lookup. Equivalent C candidates that made
 agbcc choose different instruction bytes were rejected from the manifest. This
 is a verified function count, not a
 percentage of all game code. Earlier batches include eight list helpers, the `SprSet` and `SprGet`
@@ -359,7 +360,7 @@ coordinate arrays, per-direction values, and four signed four-component
 vectors. Names retain offsets where caller analysis has not established the
 game-level meaning. See [map generation and script bytecode](docs/map-and-script-runtime.md).
 
-Sixty-three bytecode routines now live in `src/script_bytecode.c`. They decode
+Sixty-four bytecode routines now live in `src/script_bytecode.c`. They decode
 little-endian operands, advance the instruction cursor, operate the VM's stack,
 resolve variables through the remaining operand resolver, and implement jump,
 call, return, switch, assignment, arithmetic, and bitwise commands. This turns
@@ -369,7 +370,7 @@ instruction byte.
 Seven more native-script routines now expose random range generation, RNG
 seeding, integer parsing, string comparison and length, and right/substring
 extraction. Thirty-six accessors in `src/game_state.c` describe the signed and
-unsigned fields around main-state offsets `0x4240..0x42C4`. Another 27 routines
+unsigned fields around main-state offsets `0x4240..0x42C4`. Another 28 routines
 in `src/runtime_buffers.c` expose the secondary allocation's buffers, scalar
 fields, and its 1,672-byte indexed record stride. Offset-based names remain
 until their callers establish stable gameplay meanings.
@@ -386,8 +387,8 @@ included, where modern GCC differed on two counts in every function:
 | Leaf prologue | `push {lr}` | `push {r4, lr}`, saving a register it never uses |
 | `index * 24` | `((i * 2) + i) * 8` with shifts | load 24, then `muls` |
 
-The current manifest declares 549 linked ranges: 539 compiled-C ranges and ten
-BIOS inline-assembly wrapper ranges. Compiled C owns 18,356 bytes, including
+The current manifest declares 551 linked ranges: 541 compiled-C ranges and ten
+BIOS inline-assembly wrapper ranges. Compiled C owns 18,404 bytes, including
 literal pools and alignment. This is not a function-completion percentage.
 One range may contain multiple contiguous
 functions and alignment bytes. The [build provenance audit](https://github.com/name1esshero/Marchen-Awakens-Romance/wiki/Build-verification)

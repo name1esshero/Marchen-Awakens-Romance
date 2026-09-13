@@ -3218,33 +3218,10 @@ _080099A6:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_080099B8
-sub_080099B8:
-	push {r4, r5, lr}
-	adds r5, r2, #0
-	movs r4, #0
-	bl sub_080099E0
-	adds r1, r0, #0
-	movs r2, #4
-	.global _080099C6
-_080099C6:
-	movs r3, #0
-	ldrsh r0, [r1, r3]
-	cmp r0, r5
-	bne _080099D0
-	adds r4, #1
-	.global _080099D0
-_080099D0:
-	subs r2, #1
-	adds r1, #2
-	cmp r2, #0
-	bge _080099C6
-	adds r0, r4, #0
-	pop {r4, r5}
-	pop {r1}
-	bx r1
+@ 0099B8..0099E0 is decompiled as RuntimeCountMatchingValues(); see src/decompiled.json
+
+	.section .rom.000099E0, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -3364,7 +3341,7 @@ sub_08009A9E:
 	ldrsh r2, [r7, r0]
 	mov r0, r8
 	mov r1, r9
-	bl sub_080099B8
+	bl RuntimeCountMatchingValues
 	adds r4, r0, #0
 	movs r1, #0
 	ldrsh r2, [r7, r1]

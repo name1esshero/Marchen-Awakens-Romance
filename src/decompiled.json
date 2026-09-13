@@ -3292,5 +3292,17 @@
     "size": 56,
     "name": "RuntimeActorHasReadyPart",
     "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "080099B8",
+    "size": 40,
+    "name": "RuntimeCountMatchingValues",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08080068",
+    "size": 8,
+    "name": "ScriptCmdFail",
+    "file": "src/script_bytecode.c"
   }
 ]

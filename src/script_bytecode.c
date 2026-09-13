@@ -471,3 +471,10 @@ AT("0008004C") s32 ScriptCmdRestoreFrameAndGetResult(void)
     ScriptPopFrame();
     return *(s32 *)((u8 *)gScriptBytecodeRoot->context + 532);
 }
+
+/* Used by unimplemented/invalid opcode slots to stop script execution. */
+AT("00080068") s32 ScriptCmdFail(void)
+{
+    return -1;
+}
+AT("00080068") const u8 ScriptCmdFailTail[2]={0,0};

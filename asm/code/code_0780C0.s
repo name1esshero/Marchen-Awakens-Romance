@@ -14210,10 +14210,10 @@ _08080048:
 
 @ 08004C..080068 is decompiled as ScriptCmdRestoreFrameAndGetResult(); see src/decompiled.json
 
-	.section .rom.00080068, "ax"
+@ 080068..080070 is decompiled as ScriptCmdFail(); see src/decompiled.json
+
+	.section .rom.00080070, "ax"
 	.syntax unified
-	.4byte 0x42402001
-	.4byte 0x00004770
 
 	.thumb_func
 	.thumb
