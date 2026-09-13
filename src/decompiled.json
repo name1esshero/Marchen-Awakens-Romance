@@ -4074,6 +4074,12 @@
     "file": "src/map_field.c"
   },
   {
+    "addr": "08065E50",
+    "size": 56,
+    "name": "InitializeFieldEventDisplay",
+    "file": "src/map_field.c"
+  },
+  {
     "addr": "0806C7A0",
     "size": 12,
     "name": "MapObjectResetMotion",

@@ -11360,7 +11360,7 @@ _08065A1E:
 	adds r0, r6, #0
 	bl sub_08065C94
 	adds r0, r6, #0
-	bl sub_08065E50
+	bl InitializeFieldEventDisplay
 	movs r0, #6
 	mov r3, r9
 	strh r0, [r3, #14]
@@ -11927,38 +11927,11 @@ _08065E48:
 _08065E4C:
 	.4byte 0xFF900000
 
-	.thumb_func
-	.thumb
-	.global sub_08065E50
-sub_08065E50:
-	push {r4, lr}
-	sub sp, #12
-	adds r4, r0, #0
-	bl sub_08056290
-	adds r2, r0, #0
-	movs r1, #130
-	lsls r1, r1, #1
-	adds r0, r4, r1
-	ldr r1, _08065E84
-	adds r4, r4, r1
-	movs r1, #194
-	str r1, [sp, #0]
-	movs r1, #8
-	str r1, [sp, #4]
-	movs r1, #0
-	str r1, [sp, #8]
-	adds r1, r4, #0
-	movs r3, #6
-	bl sub_08054350
-	add sp, #12
-	pop {r4}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _08065E84
-_08065E84:
-	.4byte 0x00000404
+@ 065E50..065E88 is decompiled as InitializeFieldEventDisplay(); see src/decompiled.json
+
+	.section .rom.00065E88, "ax"
+	.syntax unified
+
 	.4byte 0xB081B510
 	.4byte 0x1C0B1C04
 	.4byte 0x14240424

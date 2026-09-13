@@ -45,3 +45,14 @@ AT("00061E70") void InitializeMapFieldDisplay(void *state)
     sub_08054350((u8 *)state + 0xB94, (u8 *)state + 0x1BC4,
                  resource, 6, 194, 8, 0);
 }
+
+/* Same field-display setup as InitializeMapFieldDisplay, applied to the
+ * smaller substructures embedded in a field-event task (see
+ * CreateFieldEventTask in src/nonmatching/map_events.c) rather than the
+ * main engine state. */
+AT("00065E50") void InitializeFieldEventDisplay(void *task)
+{
+    s32 resource = sub_08056290();
+    sub_08054350((u8 *)task + 0x104, (u8 *)task + 0x404,
+                 resource, 6, 194, 8, 0);
+}
