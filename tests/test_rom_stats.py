@@ -3,6 +3,7 @@ import unittest
 from pathlib import Path
 
 from tools.rom_stats import rom_occupancy
+from tools.ram_layout import audit_layout, resolve_address
 
 
 class RomStatsTests(unittest.TestCase):
@@ -19,6 +20,21 @@ class RomStatsTests(unittest.TestCase):
             path=Path(directory)/'test.gba';path.write_bytes(b'x'*9)
             with self.assertRaisesRegex(ValueError,'exceeds'):
                 rom_occupancy(path,8)
+
+    def test_ram_layout_covers_both_physical_regions_without_overlap(self):
+        report = audit_layout()
+        self.assertEqual(report['totals']['EWRAM']['size'], 256 * 1024)
+        self.assertEqual(report['totals']['EWRAM']['kinds']['heap_arena'],
+                         256 * 1024)
+        self.assertEqual(report['totals']['IWRAM']['size'], 32 * 1024)
+        self.assertEqual(report['totals']['IWRAM']['kinds']['unassigned'], 968)
+        self.assertGreaterEqual(report['symbol_count'], 60)
+
+    def test_ram_address_resolution_prefers_nested_objects(self):
+        result = resolve_address('03003CC4')
+        self.assertEqual(result['partition']['name'], 'gMainRuntime')
+        self.assertEqual(result['symbols'][0]['name'], 'gKmpViewport1')
+        self.assertEqual(result['symbols'][0]['offset'], 4)
 
 
 if __name__=='__main__':

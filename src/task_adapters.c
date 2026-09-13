@@ -25,19 +25,19 @@ extern void CpuCopy(const void *source,void *destination,u32 size);
 
 AT("000078E4") struct EngineTask *CreateTask078E4(u32 *completion)
 {
- return CreateTask((struct TaskManager *)0x030032C4,sub_08007908,0,completion,76);
+ return CreateTask(&gMainTaskManager,sub_08007908,0,completion,76);
 }
 AT("0006C8F0") struct EngineTask *CreateTask6C8F0(u32 *completion)
 {
- return CreateTask((struct TaskManager *)0x030032C4,sub_0806C918,0,completion,0x4A14);
+ return CreateTask(&gMainTaskManager,sub_0806C918,0,completion,0x4A14);
 }
 AT("0006E748") struct EngineTask *CreateTask6E748(u32 *completion)
 {
- return CreateTask((struct TaskManager *)0x030032C4,sub_0806E76C,0,completion,20);
+ return CreateTask(&gMainTaskManager,sub_0806E76C,0,completion,20);
 }
 AT("0006EEF0") struct EngineTask *CreateTask6EEF0(u32 *completion)
 {
- return CreateTask((struct TaskManager *)0x030032C4,sub_0806EF18,0,completion,0x3F34);
+ return CreateTask(&gMainTaskManager,sub_0806EF18,0,completion,0x3F34);
 }
 
 AT("0000D664") struct EngineTask *CreateActorTaskD664(u32 value,u32 *completion)
@@ -67,7 +67,7 @@ AT("00011484") struct EngineTask *CreateActorTask11484(u32 value,u32 *completion
 
 AT("00003784") void CreateCopyTask(void *source,void *destination,u32 size)
 {
- struct EngineTask *task=CreateTask((struct TaskManager *)0x030032D4,CopyThenFinishTask,0,0,12);
+ struct EngineTask *task=CreateTask(&gAuxTaskManager,CopyThenFinishTask,0,0,12);
  u8 *payload=(u8 *)task+32;
  *(void **)payload=source;
  *(void **)(payload+4)=destination;
@@ -75,7 +75,7 @@ AT("00003784") void CreateCopyTask(void *source,void *destination,u32 size)
 }
 AT("0000B1B8") struct EngineTask *CreateCoordinateTask(u32 first,u32 second,u32 third,u32 *completion)
 {
- struct EngineTask *task=CreateTask((struct TaskManager *)0x030032C4,sub_0800B1EC,0,completion,40);
+ struct EngineTask *task=CreateTask(&gMainTaskManager,sub_0800B1EC,0,completion,40);
  u8 *payload=(u8 *)task+32;
  *(u16 *)payload=first;
  *(u16 *)(payload+2)=second;

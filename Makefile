@@ -46,6 +46,13 @@ C_SRCS      += $(wildcard src/nonmatching/*.c)
 endif
 TEXT_SRCS   := $(wildcard text/*.txt)
 DATA_BINS   := $(wildcard data/*.bin)
+DEFINITION_TABLE_INCS := $(BUILD)/generated/arm_definitions.inc \
+                         $(BUILD)/generated/item_definitions.inc
+RESOURCE_CATALOG_INC := $(BUILD)/generated/resource_catalog.inc
+MAP_PLACEMENTS_INCS := $(BUILD)/generated/map_placements.inc \
+                       $(BUILD)/generated/map_screen_positions.inc \
+                       $(BUILD)/generated/map_neighbor_indices.inc \
+                       $(BUILD)/generated/map_visibility_masks.inc
 
 ASM_OBJS    := $(patsubst %.s,$(BUILD)/%.o,$(ASM_SRCS))
 C_OBJS      := $(patsubst %.c,$(BUILD)/%.o,$(C_SRCS))
@@ -54,7 +61,7 @@ OBJS        := $(ASM_OBJS) $(C_OBJS)
 # Recompile matching C when a recovered structure or hardware definition changes.
 -include $(C_OBJS:.o=.d)
 
-.PHONY: all compare extract clean tidy stats test test-english ci script-sources script-catalog
+.PHONY: all compare extract clean tidy stats test test-english ci script-sources script-catalog readability-audit
 .SUFFIXES:
 
 # Keep `all` first: it is the default goal.
@@ -70,6 +77,27 @@ $(BUILD)/.data.stamp: $(DATA_BINS) $(TEXT_SRCS) tools/build_text.py             
 	$(PYTHON) tools/build_text.py
 	@touch $@
 
+# Fixed-layout definition records compile from field-oriented JSON plus the
+# readable charmap text sources.  The generated C initializers are disposable
+# build products; the raw ROM table is not an input.
+$(DEFINITION_TABLE_INCS) &: data/definition_tables.json \
+                           text/arm_definitions.txt text/item_definitions.txt \
+                           tools/definition_tables.py tools/definition_text.py \
+                           tools/text_codec.py
+	$(PYTHON) tools/definition_tables.py build
+
+$(BUILD)/src/definition_tables.o: $(DEFINITION_TABLE_INCS)
+
+$(RESOURCE_CATALOG_INC): data/resource_catalog.json tools/resource_catalog.py
+	$(PYTHON) tools/resource_catalog.py build
+
+$(BUILD)/src/resource_catalog.o: $(RESOURCE_CATALOG_INC)
+
+$(MAP_PLACEMENTS_INCS) &: data/map_placements.json tools/map_placements.py
+	$(PYTHON) tools/map_placements.py build
+
+$(BUILD)/src/map_placements.o: $(MAP_PLACEMENTS_INCS)
+
 # Sound sample headers and signed PCM bytes are compiled from editable WAV/JSON.
 # List required inputs from the manifest, so a deleted WAV fails even on an incremental build.
 SOUND_WAVS := $(shell $(PYTHON) -c 'import json; print(" ".join(e["wav"] for e in json.load(open("sound/samples/manifest.json"))))')
@@ -81,6 +109,8 @@ $(BUILD)/asm/code/%.o: asm/code/%.s $(BUILD)/.sound.stamp
 	@mkdir -p $(dir $@)
 	@echo "AS      $<"
 	@$(AS) $(ASFLAGS) -o $@ $<
+
+$(BUILD)/asm/sound_samples.o: asm/sound_samples.s $(BUILD)/.sound.stamp
 
 # --- assembly -------------------------------------------------------------
 # Data fragments incbin from build/data and graphics/, so those are real
@@ -195,8 +225,9 @@ $(TARGET): $(ELF)
 	@echo "OBJCOPY $@"
 	@$(OBJCOPY) -O binary --pad-to 0x09000000 $< $@
 
-stats: $(TARGET)
+stats: $(TARGET) ram_layout.json tools/ram_layout.py
 	@$(PYTHON) tools/rom_stats.py $(ELF) --rom $(TARGET) --objdump $(PREFIX)objdump
+	@$(PYTHON) tools/ram_layout.py --json reports/build/ram-layout.json >/dev/null
 
 test:
 	@$(PYTHON) -m unittest discover -s tests
@@ -204,6 +235,9 @@ test:
 test-english:
 	@$(PYTHON) -m unittest discover -s tests -p 'test_english*.py'
 	@$(PYTHON) -m unittest discover -s tests -p 'test_translations.py'
+
+readability-audit:
+	@$(PYTHON) tools/audit_magic_numbers.py
 
 # Public CI deliberately has no baserom. Local compare remains the stronger,
 # byte-for-byte verification when the legally obtained reference is present.
@@ -315,6 +349,9 @@ extract:
 	$(PYTHON) tools/extract_raw.py $(BASEROM) .analysis/runs.json
 	$(PYTHON) tools/gen_rules.py
 	$(PYTHON) tools/extract_text.py $(BASEROM)
+	$(PYTHON) tools/definition_tables.py extract $(BASEROM)
+	$(PYTHON) tools/resource_catalog.py extract $(BASEROM)
+	$(PYTHON) tools/map_placements.py extract $(BASEROM)
 	$(PYTHON) tools/font.py extract
 	$(PYTHON) tools/palettes.py extract
 	$(PYTHON) tools/named_scripts.py extract
@@ -444,11 +481,11 @@ $(ENGLISH_DIR)/background_graphics.o: $(ENGLISH_DIR)/background_graphics.s
 	$(AS) $(ASFLAGS) -o $@ $<
 
 $(ENGLISH_DIR)/mar_english.elf: $(OBJS) $(ENGLISH_OBJS) ld_script.ld ld_english.ld
-	@printf '%s\n' $(filter-out $(BUILD)/src/dialogue_start.o $(BUILD)/src/item.o $(BUILD)/src/menu_text.o $(BUILD)/asm/data/data_DD69E0.o $(BUILD)/asm/data/data_5AEAF0.o $(BUILD)/asm/data/data_F19AA0.o $(BUILD)/asm/data/data_F1A320.o $(BUILD)/asm/data/data_F1EF50.o $(BUILD)/asm/data/data_F21420.o $(BUILD)/asm/data/data_DA8990.o $(BUILD)/asm/data/data_DA9BF0.o,$(OBJS)) $(ENGLISH_OBJS) > $(ENGLISH_DIR)/objects.rsp
+	@printf '%s\n' $(filter-out $(BUILD)/src/dialogue_start.o $(BUILD)/src/item.o $(BUILD)/src/menu_text.o $(BUILD)/asm/data/japanese_localized_assets.o,$(OBJS)) $(ENGLISH_OBJS) > $(ENGLISH_DIR)/objects.rsp
 	$(LD) -T ld_english.ld --no-warn-rwx-segments -o $@ @$(ENGLISH_DIR)/objects.rsp -Map $(ENGLISH_DIR)/mar_english.map
 
 mar_english.gba: $(ENGLISH_DIR)/mar_english.elf
 	$(OBJCOPY) -O binary --gap-fill 0xFF --pad-to 0x0A000000 $< $@
 
-english-stats: mar_english.gba
+english-stats: mar_english.gba ram_layout.json tools/ram_layout.py
 	@$(PYTHON) tools/rom_stats.py $(ENGLISH_DIR)/mar_english.elf --rom mar_english.gba --objdump $(PREFIX)objdump

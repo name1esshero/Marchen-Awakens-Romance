@@ -154,7 +154,7 @@ AT("000059C8") struct EngineTask *StartSongWithTransition(
 
     if ((s32)player->status >= 0) {
         SoundPlayerStop(gSoundPlayerTable[playerIndex].player);
-        task = CreateTask((struct TaskManager *)0x030032C4,
+        task = CreateTask(&gMainTaskManager,
                           (void (*)(struct EngineTask *))SoundStartTask,
                           0, completion, sizeof(*data));
         if (task != 0) {

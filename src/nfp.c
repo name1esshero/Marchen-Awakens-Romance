@@ -17,6 +17,12 @@
 #include "gba/types.h"
 #include "nfp.h"
 
+#ifdef AGBCC
+#define TARGET_REGISTER(name) asm(name)
+#else
+#define TARGET_REGISTER(name)
+#endif
+
 /* Base of a mounted archive.
  *
  * The global holds a pointer to the filesystem state, whose first field is
@@ -165,9 +171,6 @@ void *sub_0807AC3C(const char *, const char *) __attribute__((alias("NfpOpenByNa
 void sub_0807AA30(s32, s32) __attribute__((alias("NfpSetMountActive")));
 s32 sub_0807AB7C(const char *) __attribute__((alias("NfpFindArchive")));
 
-/* Still assembly: see src/nonmatching/nfp_lookup.c for why. */
-extern s32 NfpFindEntryIndex(s32, const char *) __attribute__((alias("sub_0807ACC4")));
-
 /* Whether a mount slot is in use. The flag is the first byte of the record.
  *
  * Returns int rather than u8 deliberately: ldrb already zero-extends, so a
@@ -219,3 +222,81 @@ void *NfpOpenByName(const char *archive, const char *member)
 
     return (u8 *)NfpGetArchiveBase(handle) + entry->offset;
 }
+
+/* Binary-search the sorted directory. Directory names may occupy all twelve
+ * bytes, so each candidate is copied into a separately terminated buffer. */
+__attribute__((section(".rom.0007ACC4")))
+s32 NfpFindEntryIndex(s32 handle, const char *name)
+{
+    struct NfpEntry *directory;
+    register s32 low TARGET_REGISTER("r6");
+    s32 middle;
+    register s32 high TARGET_REGISTER("r4");
+    s32 count;
+    s32 comparison;
+    register s32 zero TARGET_REGISTER("r5") = 0;
+    char candidate[NFP_NAME_SIZE + 1];
+
+    candidate[NFP_NAME_SIZE] = zero;
+    directory = NfpGetDirectory(handle);
+    count = NfpGetEntryCount(handle);
+    if (count < 0)
+        return -1;
+    low = 0;
+    high = count - 1;
+    while (low != high) {
+        middle = (low + high) / 2;
+        CpuCopy(candidate, (u8 *)directory + middle * sizeof(*directory),
+                NFP_NAME_SIZE);
+        comparison = strcmp(name, candidate);
+        if (comparison == 0)
+            return middle;
+        if (comparison < 0)
+            high = middle;
+        else
+            low = middle + 1;
+    }
+    CpuCopy(candidate, (u8 *)directory + low * sizeof(*directory),
+            NFP_NAME_SIZE);
+    if (strcmp(name, candidate) == 0)
+        return low;
+    return -1;
+}
+
+/* Resolve a member and derive its stored span from the next directory entry.
+ * The final member ends at the mounted archive length. */
+__attribute__((section(".rom.0007AD4C")))
+u32 NfpGetEntrySizeByName(const char *archive, const char *member)
+{
+    register s32 handle TARGET_REGISTER("r5");
+    register s32 index TARGET_REGISTER("r4");
+    struct NfpEntry *entry;
+    struct NfpHeader *base;
+    u8 *data;
+    u32 end;
+
+    handle = NfpFindArchive(archive);
+    if (handle < 0)
+        return 0;
+    index = NfpFindEntryIndex(handle, member);
+    if (index < 0)
+        return 0;
+    entry = NfpGetEntry(handle, index);
+    if (entry == NULL)
+        return 0;
+    base = NfpGetArchiveBase(handle);
+    data = (u8 *)base + entry->offset;
+    index++;
+    if ((u32)index >= NfpGetEntryCount(handle))
+        end = gNfpState->mounts[handle].size;
+    else
+        end = (u32)base + *(u32 *)((u8 *)entry + sizeof(*entry) + 12);
+    return end - (u32)data;
+}
+__attribute__((section(".rom.0007AD4C")))
+const u8 NfpGetEntrySizeByNameTail[2] = {0, 0};
+
+s32 sub_0807ACC4(s32, const char *)
+    __attribute__((alias("NfpFindEntryIndex")));
+u32 sub_0807AD4C(const char *, const char *)
+    __attribute__((alias("NfpGetEntrySizeByName")));

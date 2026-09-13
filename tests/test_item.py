@@ -14,18 +14,18 @@ class ItemTests(unittest.TestCase):
 #include <stddef.h>
 #include <string.h>
 #include "item.h"
-const struct ItemDefinition gItemDefinitions[2] = {
-    { .name="Empty", .description="No effect" },
-    { .name="Babbo", .description="A living ARM", .field58=-1,
-      .field59=-2, .field5A=3, .field5C=-300, .field5E=500,
-      .field60=-32768, .field62=-128, .field63=127, .field64=-5, .field65=6 }
+const struct ArmDefinition gArmDefinitions[ARM_COUNT] = {
+    [0] = { .name="Empty", .description="No effect" },
+    [1] = { .name="Babbo", .description="A living ARM", .field58=-1,
+      .type=-2, .field5A=3, .field5C=-300, .field5E=500,
+      .field60=-32768, .field62=-128, .field63=127, .field64=-5, .element=6 }
 };
 int main(void) {
-    assert(sizeof(struct ItemDefinition)==128);
-    assert(offsetof(struct ItemDefinition,name)==16);
-    assert(offsetof(struct ItemDefinition,description)==50);
-    assert(offsetof(struct ItemDefinition,field58)==88);
-    assert(ItemGetDefinition(0x10001)==&gItemDefinitions[1]);
+    assert(sizeof(struct ArmDefinition)==128);
+    assert(offsetof(struct ArmDefinition,name)==16);
+    assert(offsetof(struct ArmDefinition,description)==50);
+    assert(offsetof(struct ArmDefinition,field58)==88);
+    assert(ItemGetDefinition(0x10001)==&gArmDefinitions[1]);
     assert(!strcmp(ItemGetName(1),"Babbo"));
     assert(!strcmp(ItemGetDescription(1),"A living ARM"));
     assert(ItemGetField58(1)==-1 && ItemGetField59(1)==-2);

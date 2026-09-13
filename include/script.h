@@ -60,7 +60,8 @@ struct ScriptNativeCommand
     const char *name;
     void *handler;
 };
-#define gScriptNativeCommands ((const struct ScriptNativeCommand *)0x081AFEA4)
 #define SCRIPT_NATIVE_COMMAND_COUNT 128
+extern const struct ScriptNativeCommand
+    gScriptNativeCommands[SCRIPT_NATIVE_COMMAND_COUNT];
 
 #endif /* SCRIPT_H */

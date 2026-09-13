@@ -9,6 +9,8 @@
 
 extern u8 *CreateTask(void *manager, void *callback, u32 priority,
                       s32 *result, u32 stateSize);
+extern u8 gMainTaskManager;
+extern u8 gAuxTaskManager;
 extern void ScriptAddPendingTasks(s32 count);
 extern char *strcpy(char *, const char *);
 extern void sub_08080BD8(void *task);
@@ -20,7 +22,7 @@ extern s32 SpriteResourceFindGroup(s32, const char *);
 
 AT("000037D8") void ScheduleVramFillTask(void *destination, u32 value, u32 size)
 {
-    u8 *task = CreateTask((void *)0x030032D4, (void *)0x0800380D,
+    u8 *task = CreateTask(&gAuxTaskManager, (void *)0x0800380D,
                           0, 0, 12);
     u8 *state = task + 32;
     *(void **)(task + 32) = destination;
@@ -31,7 +33,7 @@ AT("000037D8") void ScheduleVramFillTask(void *destination, u32 value, u32 size)
 AT("00005378") s32 CreateInputWaitTask(s32 keyMask, s32 repeatMask,
                                         s32 *result)
 {
-    u8 *task = CreateTask((void *)0x030032C4, (void *)0x080053B5,
+    u8 *task = CreateTask(&gMainTaskManager, (void *)0x080053B5,
                           0, result, 4);
     if (task != 0) {
         *(u16 *)(task + 32) = keyMask;
@@ -43,7 +45,7 @@ AT("00005378") s32 CreateInputWaitTask(s32 keyMask, s32 repeatMask,
 
 AT("00006050") u8 *CreateSceneTask(s32 *result)
 {
-    u8 *task = CreateTask((void *)0x030032C4, (void *)0x08006079,
+    u8 *task = CreateTask(&gMainTaskManager, (void *)0x08006079,
                           1, result, 88);
     if (task == 0)
         return 0;
@@ -55,7 +57,7 @@ AT("000061F0") u8 *CreateSceneModeTask(s32 mode, s32 *result)
 {
     u8 *task;
     mode = (s16)mode;
-    task = CreateTask((void *)0x030032C4, (void *)0x08006229,
+    task = CreateTask(&gMainTaskManager, (void *)0x08006229,
                       0, result, 112);
     if (task == 0)
         goto failed;
@@ -238,7 +240,7 @@ CREATE_PENDING_TASK("0000FC90", StartPendingEffectA,
 AT("00007134") u8 *CreateNamedRuntimeTask(const char *name, s32 value,
                                            s32 other, s32 *result)
 {
-    u8 *task = CreateTask((void *)0x030032C4, (void *)0x08007179,
+    u8 *task = CreateTask(&gMainTaskManager, (void *)0x08007179,
                           0, result, 44);
     u8 *state = task + 32;
     *(s32 *)(state + 8) = value;
@@ -262,7 +264,7 @@ AT("00010A2C") u8 *CreateSpriteWaitTask(s32 mode, s32 *result)
 
 AT("0006F620") u8 *CreateEncounterTransitionTask(s32 *result)
 {
-    u8 *task = CreateTask((void *)0x030032C4, (void *)0x0806F665,
+    u8 *task = CreateTask(&gMainTaskManager, (void *)0x0806F665,
                           0, result, 32);
     *(u16 *)(SECONDARY_RUNTIME + 0x0F24) = 1;
     ScriptAddPendingTasks(1);
@@ -273,7 +275,7 @@ AT("0006F620") u8 *CreateEncounterTransitionTask(s32 *result)
 AT("0006EFCC") u8 *CreateEncounterResetTask(s32 *result)
 {
     s32 i;
-    u8 *task = CreateTask((void *)0x030032C4, (void *)0x0806F019,
+    u8 *task = CreateTask(&gMainTaskManager, (void *)0x0806F019,
                           0, result, 0x3F34);
     for (i = 0; i <= 3; i++)
         sub_08009728(i, 0);
@@ -285,7 +287,7 @@ AT("0006EFCC") u8 *CreateEncounterResetTask(s32 *result)
 #ifdef NONMATCHING
 AT("0001B7FC") u8 *CreateObjectMotionTaskA(u8 *object, s32 *result)
 {
-    u8 *task = CreateTask((void *)0x030032C4, (void *)0x0801B83D,
+    u8 *task = CreateTask(&gMainTaskManager, (void *)0x0801B83D,
                           0, result, 16);
     u8 *state = task + 32;
     *(u8 **)(task + 32) = object;
@@ -300,7 +302,7 @@ AT("0001B7FC") u8 *CreateObjectMotionTaskA(u8 *object, s32 *result)
 #ifdef NONMATCHING
 AT("0001B8AC") u8 *CreateObjectMotionTaskB(u8 *object, s32 *result)
 {
-    u8 *task = CreateTask((void *)0x030032C4, (void *)0x0801B8ED,
+    u8 *task = CreateTask(&gMainTaskManager, (void *)0x0801B8ED,
                           0, result, 16);
     u8 *state = task + 32;
     *(u8 **)(task + 32) = object;
@@ -317,7 +319,7 @@ AT("0006C7AC") u8 *CreateMapCoordinateTask(s32 x, s32 y, s32 *result)
     u8 *task;
     x = (s16)x;
     y = (s16)y;
-    task = CreateTask((void *)0x030032C4, (void *)0x0806C7ED,
+    task = CreateTask(&gMainTaskManager, (void *)0x0806C7ED,
                       0, result, 16);
     *(u16 *)(task + 32) = x;
     *(u16 *)(task + 36) = y;
@@ -330,7 +332,7 @@ AT("0006C7AC") u8 *CreateMapCoordinateTask(s32 x, s32 y, s32 *result)
 AT("0006FA94") u8 *CreateEncounterSetupTask(s32 value, s32 *result)
 {
     register s32 savedValue asm("r4") = value;
-    u8 *task = CreateTask((void *)0x030032C4, (void *)0x0806FAC5,
+    u8 *task = CreateTask(&gMainTaskManager, (void *)0x0806FAC5,
                           0, result, 368);
     *(s32 *)(task + 368) = savedValue;
     return task;

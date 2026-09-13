@@ -122,6 +122,9 @@ AT(address) u8 *name(s32 owner, s32 slot, void *resource, s32 *result)     \
 }
 
 #ifdef NONMATCHING
+DEFINE_LARGE_BATTLE_TASK("00035B34", CreateLargeBattleTask35B, 0x08035BC1,
+                         1256, 1184, 1188, 1192, 1280, 1284, 1)
+
 DEFINE_LARGE_BATTLE_TASK("00031C34", CreateLargeBattleTask31C, 0x08031CBD,
                          428, 416, 420, 424, 452, 456, 1)
 DEFINE_LARGE_BATTLE_TASK("00037844", CreateLargeBattleTask378, 0x080378CD,

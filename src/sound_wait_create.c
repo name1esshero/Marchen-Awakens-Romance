@@ -15,7 +15,7 @@ AT("000057C0") struct EngineTask *CreateSoundWaitTask(
     s32 status = GameStateGetField425C(playerIndex);
     if (status != 0) {
         if (wait != 0) {
-            void *manager = (void *)0x030032C4;
+            void *manager = &gMainTaskManager;
             result = (s32 *)SoundWaitTask;
             wait = (s32)CreateTask((struct TaskManager *)manager,
                                    (void (*)(struct EngineTask *))result,

@@ -1,0 +1,642 @@
+{
+  "memory": {
+    "EWRAM": {
+      "start": "02000000",
+      "size": 262144
+    },
+    "IWRAM": {
+      "start": "03000000",
+      "size": 32768
+    }
+  },
+  "partitions": [
+    {
+      "memory": "EWRAM",
+      "start": "02000000",
+      "size": 65536,
+      "kind": "heap_arena",
+      "name": "gEwramHeap0"
+    },
+    {
+      "memory": "EWRAM",
+      "start": "02010000",
+      "size": 57344,
+      "kind": "heap_arena",
+      "name": "gEwramHeap1"
+    },
+    {
+      "memory": "EWRAM",
+      "start": "0201E000",
+      "size": 8192,
+      "kind": "heap_arena",
+      "name": "gEwramHeap2"
+    },
+    {
+      "memory": "EWRAM",
+      "start": "02020000",
+      "size": 32768,
+      "kind": "heap_arena",
+      "name": "gEwramHeap3"
+    },
+    {
+      "memory": "EWRAM",
+      "start": "02028000",
+      "size": 49152,
+      "kind": "heap_arena",
+      "name": "gEwramHeap4"
+    },
+    {
+      "memory": "EWRAM",
+      "start": "02034000",
+      "size": 32768,
+      "kind": "heap_arena",
+      "name": "gEwramHeap5"
+    },
+    {
+      "memory": "EWRAM",
+      "start": "0203C000",
+      "size": 16384,
+      "kind": "heap_arena",
+      "name": "gEwramHeap6"
+    },
+    {
+      "memory": "IWRAM",
+      "start": "03000000",
+      "size": 16352,
+      "kind": "fixed_runtime",
+      "name": "gMainRuntime"
+    },
+    {
+      "memory": "IWRAM",
+      "start": "03003FE0",
+      "size": 52,
+      "kind": "fixed_runtime",
+      "name": "gInterruptCallbackTable"
+    },
+    {
+      "memory": "IWRAM",
+      "start": "03004014",
+      "size": 52,
+      "kind": "fixed_runtime",
+      "name": "gRuntimeRoots"
+    },
+    {
+      "memory": "IWRAM",
+      "start": "03004048",
+      "size": 3520,
+      "kind": "fixed_runtime",
+      "name": "gSoundTracks"
+    },
+    {
+      "memory": "IWRAM",
+      "start": "03004E08",
+      "size": 352,
+      "kind": "fixed_runtime",
+      "name": "gUndecodedIwram4E08"
+    },
+    {
+      "memory": "IWRAM",
+      "start": "03004F68",
+      "size": 176,
+      "kind": "linked_bss",
+      "name": "gNewlibBss"
+    },
+    {
+      "memory": "IWRAM",
+      "start": "03005018",
+      "size": 896,
+      "kind": "copied_code",
+      "name": "gSoundMixerCode"
+    },
+    {
+      "memory": "IWRAM",
+      "start": "03005398",
+      "size": 8,
+      "kind": "fixed_runtime",
+      "name": "gSoundAlignment"
+    },
+    {
+      "memory": "IWRAM",
+      "start": "030053A0",
+      "size": 2432,
+      "kind": "fixed_runtime",
+      "name": "gSoundRuntime"
+    },
+    {
+      "memory": "IWRAM",
+      "start": "03005D20",
+      "size": 144,
+      "kind": "fixed_runtime",
+      "name": "gSoundJumpTable"
+    },
+    {
+      "memory": "IWRAM",
+      "start": "03005DB0",
+      "size": 256,
+      "kind": "fixed_runtime",
+      "name": "gCgbChannels"
+    },
+    {
+      "memory": "IWRAM",
+      "start": "03005EB0",
+      "size": 592,
+      "kind": "fixed_runtime",
+      "name": "gSoundPlayersAndMemory"
+    },
+    {
+      "memory": "IWRAM",
+      "start": "03006100",
+      "size": 40,
+      "kind": "fixed_runtime",
+      "name": "gEngineRoots"
+    },
+    {
+      "memory": "IWRAM",
+      "start": "03006128",
+      "size": 728,
+      "kind": "unassigned",
+      "name": "gIwramGap6128"
+    },
+    {
+      "memory": "IWRAM",
+      "start": "03006400",
+      "size": 5120,
+      "kind": "heap_arena",
+      "name": "gIwramHeap"
+    },
+    {
+      "memory": "IWRAM",
+      "start": "03007800",
+      "size": 1536,
+      "kind": "stack",
+      "name": "gIrqStackReserve"
+    },
+    {
+      "memory": "IWRAM",
+      "start": "03007E00",
+      "size": 256,
+      "kind": "stack",
+      "name": "gSystemStackReserve"
+    },
+    {
+      "memory": "IWRAM",
+      "start": "03007F00",
+      "size": 240,
+      "kind": "unassigned",
+      "name": "gIwramGap7F00"
+    },
+    {
+      "memory": "IWRAM",
+      "start": "03007FF0",
+      "size": 16,
+      "kind": "system",
+      "name": "gSoundAndIrqVectors"
+    }
+  ],
+  "symbols": [
+    {
+      "address": "03000008",
+      "size": 2048,
+      "name": "IntrMainRam",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "03000810",
+      "size": 4,
+      "name": "gIwramField0810",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "03000860",
+      "size": 4096,
+      "name": "gKmpScreenBuffer0",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "03000860",
+      "size": 12800,
+      "name": "gMainSubsystemStorage",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "03001860",
+      "size": 4096,
+      "name": "gKmpScreenBuffer1",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "03002860",
+      "size": 4,
+      "name": "gKmpScreenBlockPointer0",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "03002860",
+      "size": 16,
+      "name": "gKmpScreenBlockPointers",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "03002864",
+      "size": 4,
+      "name": "gKmpScreenBlockPointer1",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "03002868",
+      "size": 4,
+      "name": "gKmpScreenBlockPointer2",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "0300286C",
+      "size": 4,
+      "name": "gKmpScreenBlockPointer3",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "03003268",
+      "size": 64,
+      "name": "gKeyStateSlots",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "030032A8",
+      "size": 12,
+      "name": "gNfpStateData",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "030032C4",
+      "size": 16,
+      "name": "gMainTaskManager",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "030032D4",
+      "size": 16,
+      "name": "gAuxTaskManager",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "030032E4",
+      "size": 16,
+      "name": "gThirdTaskManager",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "030032F4",
+      "size": 4,
+      "name": "gMapState",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "03003BC4",
+      "size": 252,
+      "name": "gKmpViewport0",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "03003BC4",
+      "size": 1008,
+      "name": "gKmpViewports",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "03003CC0",
+      "size": 252,
+      "name": "gKmpViewport1",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "03003DBC",
+      "size": 252,
+      "name": "gKmpViewport2",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "03003EB8",
+      "size": 252,
+      "name": "gKmpViewport3",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "03003FB4",
+      "size": 4,
+      "name": "gEwramHeap0Handle",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "03003FB4",
+      "size": 28,
+      "name": "gEwramHeapHandles",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "03003FB8",
+      "size": 4,
+      "name": "gEwramHeap1Handle",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "03003FBC",
+      "size": 4,
+      "name": "gEwramHeap2Handle",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "03003FC0",
+      "size": 4,
+      "name": "gEwramHeap3Handle",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "03003FC4",
+      "size": 4,
+      "name": "gEwramHeap4Handle",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "03003FC8",
+      "size": 4,
+      "name": "gEwramHeap5Handle",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "03003FCC",
+      "size": 4,
+      "name": "gEwramHeap6Handle",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "03003FD0",
+      "size": 4,
+      "name": "gIwramHeapHandle",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "03003FD5",
+      "size": 1,
+      "name": "gIwramField3FD5",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "03003FD6",
+      "size": 1,
+      "name": "gSoundIrqMode",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "03003FDC",
+      "size": 4,
+      "name": "gMapGenerationRoot",
+      "parent": "gMainRuntime"
+    },
+    {
+      "address": "03004014",
+      "size": 4,
+      "name": "gPrimaryRuntime",
+      "parent": "gRuntimeRoots"
+    },
+    {
+      "address": "0300401C",
+      "size": 4,
+      "name": "gRuntimeRoot",
+      "parent": "gRuntimeRoots"
+    },
+    {
+      "address": "03004020",
+      "size": 4,
+      "name": "gSecondaryRuntime",
+      "parent": "gRuntimeRoots"
+    },
+    {
+      "address": "03004024",
+      "size": 4,
+      "name": "gRuntimeObjectTable",
+      "parent": "gRuntimeRoots"
+    },
+    {
+      "address": "03004044",
+      "size": 4,
+      "name": "gMapGenerationSeed",
+      "parent": "gRuntimeRoots"
+    },
+    {
+      "address": "03004048",
+      "size": 1040,
+      "name": "gSoundPlayer0Tracks",
+      "parent": "gSoundTracks"
+    },
+    {
+      "address": "03004458",
+      "size": 240,
+      "name": "gSoundPlayer1Tracks",
+      "parent": "gSoundTracks"
+    },
+    {
+      "address": "03004548",
+      "size": 240,
+      "name": "gSoundPlayer2Tracks",
+      "parent": "gSoundTracks"
+    },
+    {
+      "address": "03004638",
+      "size": 240,
+      "name": "gSoundPlayer3Tracks",
+      "parent": "gSoundTracks"
+    },
+    {
+      "address": "03004728",
+      "size": 240,
+      "name": "gSoundPlayer4Tracks",
+      "parent": "gSoundTracks"
+    },
+    {
+      "address": "03004818",
+      "size": 240,
+      "name": "gSoundPlayer5Tracks",
+      "parent": "gSoundTracks"
+    },
+    {
+      "address": "03004908",
+      "size": 800,
+      "name": "gSoundPlayer6Tracks",
+      "parent": "gSoundTracks"
+    },
+    {
+      "address": "03004C28",
+      "size": 240,
+      "name": "gSoundPlayer7Tracks",
+      "parent": "gSoundTracks"
+    },
+    {
+      "address": "03004D18",
+      "size": 240,
+      "name": "gSoundPlayer8Tracks",
+      "parent": "gSoundTracks"
+    },
+    {
+      "address": "030053A0",
+      "size": 848,
+      "name": "gSoundDriverStorage",
+      "parent": "gSoundRuntime"
+    },
+    {
+      "address": "03005D20",
+      "size": 144,
+      "name": "gSoundJumpTable",
+      "parent": "gSoundJumpTable"
+    },
+    {
+      "address": "03005DB0",
+      "size": 256,
+      "name": "gCgbChannels",
+      "parent": "gCgbChannels"
+    },
+    {
+      "address": "03005EB0",
+      "size": 64,
+      "name": "gSoundPlayer5",
+      "parent": "gSoundPlayersAndMemory"
+    },
+    {
+      "address": "03005EF0",
+      "size": 64,
+      "name": "gSoundPlayer6",
+      "parent": "gSoundPlayersAndMemory"
+    },
+    {
+      "address": "03005F30",
+      "size": 64,
+      "name": "gSoundPlayer0",
+      "parent": "gSoundPlayersAndMemory"
+    },
+    {
+      "address": "03005F70",
+      "size": 64,
+      "name": "gSoundPlayer7",
+      "parent": "gSoundPlayersAndMemory"
+    },
+    {
+      "address": "03005FB0",
+      "size": 64,
+      "name": "gSoundPlayer1",
+      "parent": "gSoundPlayersAndMemory"
+    },
+    {
+      "address": "03005FF0",
+      "size": 64,
+      "name": "gSoundPlayer2",
+      "parent": "gSoundPlayersAndMemory"
+    },
+    {
+      "address": "03006030",
+      "size": 64,
+      "name": "gSoundPlayer4",
+      "parent": "gSoundPlayersAndMemory"
+    },
+    {
+      "address": "03006070",
+      "size": 16,
+      "name": "gSoundSequenceMemory",
+      "parent": "gSoundPlayersAndMemory"
+    },
+    {
+      "address": "03006080",
+      "size": 64,
+      "name": "gSoundPlayer8",
+      "parent": "gSoundPlayersAndMemory"
+    },
+    {
+      "address": "030060C0",
+      "size": 64,
+      "name": "gSoundPlayer3",
+      "parent": "gSoundPlayersAndMemory"
+    },
+    {
+      "address": "03006100",
+      "size": 4,
+      "name": "ReadSramFast",
+      "parent": "gEngineRoots"
+    },
+    {
+      "address": "03006104",
+      "size": 4,
+      "name": "VerifySramFast",
+      "parent": "gEngineRoots"
+    },
+    {
+      "address": "03006108",
+      "size": 4,
+      "name": "gKeyStates",
+      "parent": "gEngineRoots"
+    },
+    {
+      "address": "0300610C",
+      "size": 4,
+      "name": "gRandomSeed",
+      "parent": "gEngineRoots"
+    },
+    {
+      "address": "03006110",
+      "size": 4,
+      "name": "gDefaultHeap",
+      "parent": "gEngineRoots"
+    },
+    {
+      "address": "03006114",
+      "size": 4,
+      "name": "gNfpState",
+      "parent": "gEngineRoots"
+    },
+    {
+      "address": "03006118",
+      "size": 4,
+      "name": "gSpriteEngineState",
+      "parent": "gEngineRoots"
+    },
+    {
+      "address": "0300611C",
+      "size": 4,
+      "name": "gScriptBytecodeRoot",
+      "parent": "gEngineRoots"
+    },
+    {
+      "address": "03006120",
+      "size": 4,
+      "name": "gRuntimeFlagsRoot",
+      "parent": "gEngineRoots"
+    },
+    {
+      "address": "03006124",
+      "size": 4,
+      "name": "gRuntimeRoot06124",
+      "parent": "gEngineRoots"
+    },
+    {
+      "address": "03007FF0",
+      "size": 4,
+      "name": "gSoundDriverState",
+      "parent": "gSoundAndIrqVectors"
+    },
+    {
+      "address": "03007FF8",
+      "size": 2,
+      "name": "gSoundVSyncFlags",
+      "parent": "gSoundAndIrqVectors"
+    },
+    {
+      "address": "03007FFA",
+      "size": 1,
+      "name": "gSoundIrqByte7FFA",
+      "parent": "gSoundAndIrqVectors"
+    },
+    {
+      "address": "03007FFC",
+      "size": 4,
+      "name": "gInterruptHandler",
+      "parent": "gSoundAndIrqVectors"
+    }
+  ]
+}

@@ -4,7 +4,7 @@
 
 #define AT(x) __attribute__((section(".rom." x)))
 
-extern s32 ScriptResourceInternName(s32 type, const char *name);
+extern s32 ScriptResourceRemove(s32 type, const char *name);
 extern u16 *ScriptResourceFind(s32 type, const char *name);
 extern s32 ScriptResourceSet(s32 type, const char *name, const void *data,
                              s32 size);
@@ -38,7 +38,7 @@ AT("0007EE10") s32 ScriptResourceRegisterTable(
     const struct ScriptResourceEntry *entry)
 {
     while (entry->name) {
-        ScriptResourceInternName(33, entry->name);
+        ScriptResourceRemove(33, entry->name);
         ScriptResourceSet(33, entry->name, &entry->value,
                           sizeof(entry->value));
         entry++;

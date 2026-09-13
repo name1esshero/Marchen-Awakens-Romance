@@ -31,7 +31,10 @@ char *strupr(char *text) {
 static List queues[3];
 static union { u32 align; u8 bytes[64]; } taskStorage;
 static void *failureArgument;
-void sub_0807A4B8(void *argument) { failureArgument=argument; }
+u32 HeapGetFreeBytes(struct Heap *heap) {
+    failureArgument=heap;
+    return 0;
+}
 static void callback(struct EngineTask *task) { (void)task; }
 static s32 findArchiveResult, findEntryResult;
 static struct NfpEntry directory[3];
@@ -233,7 +236,7 @@ void _start(void) {
             subprocess.run(['cc','-m32','-nostdlib','-fno-pie','-no-pie',
                             '-fno-stack-protector','-fno-builtin','-D__attribute__(x)=',
                             '-I'+str(ROOT/'include'),'-include',str(header),str(source),
-                            *(str(ROOT/'src'/name) for name in ('task_manager.c','task_create.c','task_scheduler.c','nfp_lifecycle.c','nfp_mount_helpers.c','nfp_convenience.c','list.c')),
+                            *(str(ROOT/'src'/name) for name in ('task_manager.c','nfp_lifecycle.c','nfp_mount_helpers.c','nfp_convenience.c','list.c')),
                             '-o',exe],check=True)
             subprocess.run([exe],check=True)
 

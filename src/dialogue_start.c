@@ -3,6 +3,7 @@
  * original strcpy has no length check. English callers validate before entry. */
 #include "dialogue.h"
 extern void *CreateTask(void *,void *,u32,s32 *,u32);
+extern u8 gMainTaskManager;
 extern void sub_08011870(void *);
 extern void ScriptAddPendingTasks(u32);
 extern char *strcpy(char *,const char *);
@@ -16,7 +17,7 @@ extern u32 strlen(const char *);
 __attribute__((section(DIALOGUE_SECTION)))
 void *DialogueStart(s32 mode, s32 count, const char **rows, s32 *result)
 {
- u8 *task = CreateTask((void *)0x030032C4, sub_08011870, 0, result, 508);
+ u8 *task = CreateTask(&gMainTaskManager, sub_08011870, 0, result, 508);
  struct DialogueState *state;
  s32 i;
  if (!task) return 0;

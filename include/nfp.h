@@ -23,6 +23,8 @@ struct NfpHeader
     u32 data_offset;        /* 0x3C: first payload, relative to the header */
 };
 
+extern const struct NfpHeader gRomNfpArchiveHeader;
+
 /* A directory entry: a 12-byte name and the payload's relative offset.
  * Lengths are implied by where the next payload begins, so a member's size
  * includes any alignment padding after it. */
@@ -77,6 +79,7 @@ void *NfpOpenByName(const char *archive, const char *member);
 s32 NfpFindArchive(const char *name);
 
 s32 NfpFindEntryIndex(s32 handle, const char *name);
+u32 NfpGetEntrySizeByName(const char *archive, const char *member);
 
 extern int strcmp(const char *a, const char *b);
 extern void NfpSetMountName(s32 handle, const char *name);

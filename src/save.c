@@ -6,6 +6,8 @@
 
 #define AT(x) __attribute__((section(".rom." x)))
 #define SRAM_BASE ((u8 *)0x0E000000)
+#define SAVE_HEADER_SIZE 44
+#define SAVE_FORMAT_VERSION 0x3F828F5C
 
 extern void CpuFill(void *destination, u32 size, u32 value);
 extern s32 strcmp(const char *left, const char *right);
@@ -17,21 +19,23 @@ struct SaveMagic {
     u32 words[4];
 };
 
+extern const struct SaveMagic gSaveMagic;
+
 AT("0006E54C") s32 WriteSaveBlock(struct SaveBlock *save)
 {
-    const struct SaveMagic *magic = (const struct SaveMagic *)0x08089328;
+    const struct SaveMagic *magic = &gSaveMagic;
     register u32 blockSize asm("r6") = SAVE_BLOCK_SIZE;
     u32 zero;
 
     *(struct SaveMagic *)save->magic = *magic;
-    save->format = 0x3F828F5C;
+    save->format = SAVE_FORMAT_VERSION;
     save->generation++;
     zero = 0;
     save->payloadCrc = zero;
     save->payloadCrc = CalculateSaveCrc32(save->payload, SAVE_PAYLOAD_SIZE);
     save->reserved28 = zero;
     save->headerCrc = zero;
-    save->headerCrc = CalculateSaveCrc32(save, 44);
+    save->headerCrc = CalculateSaveCrc32(save, SAVE_HEADER_SIZE);
     return (s16)(s32)WriteSramFast((const u8 *)save, SRAM_BASE, blockSize);
 }
 
@@ -63,12 +67,12 @@ AT("0006E438") s32 ValidateSaveBlock(struct SaveBlock *save)
     u32 reserved = save->reserved28;
 
     save->headerCrc = 0;
-    if (Crc32Difference(save, 44, headerCrc) != 0) {
+    if (Crc32Difference(save, SAVE_HEADER_SIZE, headerCrc) != 0) {
         result = -1;
-    } else if (strcmp(save->magic, (const char *)0x08089328) != 0) {
+    } else if (strcmp(save->magic, (const char *)&gSaveMagic) != 0) {
         result = -2;
     } else {
-        if (sub_080815C0(save->format, 0x3F828F5C) != 0)
+        if (sub_080815C0(save->format, SAVE_FORMAT_VERSION) != 0)
             result = 1;
         save->payloadCrc = 0;
         if (Crc32Difference(save->payload, SAVE_PAYLOAD_SIZE, payloadCrc) != 0)
@@ -123,7 +127,7 @@ AT("0006E610") struct EngineTask *CreateSaveTask(u32 mode,
     localSave = save;
     localSize = size;
     localMode = mode;
-    task = CreateTask((struct TaskManager *)0x030032C4, SaveWriteTask, 1,
+    task = CreateTask(&gMainTaskManager, SaveWriteTask, 1,
                       (u32 *)completion, 24);
     if (task == 0)
         return 0;
@@ -138,7 +142,7 @@ AT("0006E610") const u8 CreateSaveTaskTail[2] = {0};
 AT("0006E150") struct EngineTask *CreateSaveBlockLoadTask(
     struct SaveBlock *save, u32 *completion)
 {
-    struct EngineTask *task = CreateTask((struct TaskManager *)0x030032C4,
+    struct EngineTask *task = CreateTask(&gMainTaskManager,
         SaveBlockLoadTask, 1, completion, 16);
 
     if (task == 0)
@@ -215,7 +219,7 @@ AT("0006E184") void SaveBlockLoadTask(struct EngineTask *task)
 AT("0006E264") struct EngineTask *CreateSaveBlockWriteTask(
     struct SaveBlock *save, u32 *completion)
 {
-    struct EngineTask *task = CreateTask((struct TaskManager *)0x030032C4,
+    struct EngineTask *task = CreateTask(&gMainTaskManager,
         SaveBlockPrepareAndWriteTask, 1, completion, 16);
 
     if (task == 0)
@@ -233,12 +237,12 @@ AT("0006E298") void SaveBlockPrepareAndWriteTask(struct EngineTask *task)
 
     switch (*(u16 *)((u8 *)task + 14)) {
     case 0: {
-        const struct SaveMagic *magic = (const struct SaveMagic *)0x08089328;
+        const struct SaveMagic *magic = &gSaveMagic;
         u32 zero;
 
         *(struct SaveMagic *)(*(struct SaveBlock **)(work + 12))->magic =
             *magic;
-        (*(struct SaveBlock **)(work + 12))->format = 0x3F828F5C;
+        (*(struct SaveBlock **)(work + 12))->format = SAVE_FORMAT_VERSION;
         (*(struct SaveBlock **)(work + 12))->generation++;
         zero = 0;
         (*(struct SaveBlock **)(work + 12))->payloadCrc = zero;
@@ -248,7 +252,7 @@ AT("0006E298") void SaveBlockPrepareAndWriteTask(struct EngineTask *task)
         (*(struct SaveBlock **)(work + 12))->reserved28 = zero;
         (*(struct SaveBlock **)(work + 12))->headerCrc = zero;
         (*(struct SaveBlock **)(work + 12))->headerCrc =
-            (u8)BufferXor(*(const u8 **)(work + 12), 44);
+            (u8)BufferXor(*(const u8 **)(work + 12), SAVE_HEADER_SIZE);
         *(u16 *)((u8 *)task + 14) = 1;
         break;
     }
@@ -284,7 +288,7 @@ AT("0006E360") struct EngineTask *CreateSaveHeaderWriteTask(
     struct SaveBlock *save, u32 size, s32 *completion)
 {
     struct EngineTask *task = CreateTask(
-        (struct TaskManager *)0x030032C4, SaveHeaderWriteTask, 1,
+        &gMainTaskManager, SaveHeaderWriteTask, 1,
         (u32 *)completion, 20);
     u8 *work;
 
@@ -313,14 +317,14 @@ AT("0006E39C") void SaveHeaderWriteTask(struct EngineTask *task)
     case 0:
         save->reserved28 = 0;
         save->headerCrc = 0;
-        save->headerCrc = (u8)BufferXor((const u8 *)save, 44);
+        save->headerCrc = (u8)BufferXor((const u8 *)save, SAVE_HEADER_SIZE);
         *(u16 *)((u8 *)task + 14) = 1;
         break;
     case 1:
         *(u16 *)((u8 *)task + 14) = 2;
         break;
     case 2:
-        CreateSaveWriteTask(save, 44, (s32 *)(work + 16));
+        CreateSaveWriteTask(save, SAVE_HEADER_SIZE, (s32 *)(work + 16));
         *(u16 *)((u8 *)task + 14) = 3;
         /* Fall through and observe the child completion slot immediately. */
     case 3: {

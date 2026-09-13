@@ -17,7 +17,9 @@ def main():
     if rom!=base:raise ValueError('ROM differs; refusing to report a matching build')
     text=(ROOT/'build/mar.map').read_text()
     pattern=r'^ \.rom\.([0-9A-Fa-f]+)\s+(0x[0-9a-f]+)\s+(0x[0-9a-f]+)\s+(build/\S+\.o)'
-    providers={int(off,16):(int(addr,16),int(size,16),obj) for off,addr,size,obj in re.findall(pattern,text,re.M)}
+    linked_sections=[(int(off,16),int(addr,16),int(size,16),obj)
+                     for off,addr,size,obj in re.findall(pattern,text,re.M)]
+    providers={off:(addr,size,obj) for off,addr,size,obj in linked_sections}
     ranges=[]
     for e in json.loads((ROOT/'src/decompiled.json').read_text()):
         offset=int(e['addr'],16)-0x08000000
@@ -31,22 +33,32 @@ def main():
     assembly=list((ROOT/'asm/code').glob('*.s'))
     literal=sum(p.read_text().count('.inst.n') for p in assembly)
     samples=json.loads((ROOT/'sound/samples/manifest.json').read_text())
-    region_start,region_end=0xC0,0x1B0000
-    pcm_bytes=sum(max(0,min(region_end,e['rom_offset']+e['size'])-max(region_start,e['rom_offset'])) for e in samples)
-    region_bytes=region_end-region_start-pcm_bytes
-    # Count only the intersection with the stated measured region. Some
-    # source-compiled initialized data lives later in ROM and is still tracked
-    # in the provider list, but it must not inflate this percentage.
-    c_bytes=sum(max(0, min(region_end, int(r['addr'], 16) - 0x08000000 + r['size'])
-                       - max(region_start, int(r['addr'], 16) - 0x08000000))
-                for r in ranges if r['implementation']=='compiled_c')
+    # Track the remaining assembly body as a useful secondary diagnostic, but
+    # use the complete cartridge image as the progress denominator. Every byte
+    # occupying the ROM therefore counts, including assets, data, and padding.
+    asm_sections=[(off,size) for off,_addr,size,obj in linked_sections
+                  if obj.startswith('build/asm/code/')]
+    pcm_bytes=sum(max(0,min(off+size,e['rom_offset']+e['size'])
+                         -max(off,e['rom_offset']))
+                  for off,size in asm_sections for e in samples)
+    remaining_asm_bytes=sum(size for _off,size in asm_sections)-pcm_bytes
+    c_bytes=sum(r['size'] for r in ranges
+                if r['implementation']=='compiled_c')
+    bios_bytes=sum(r['size'] for r in ranges
+                   if r['implementation']=='inline_assembly_wrapper')
+    decompilation_bytes=remaining_asm_bytes+c_bytes+bios_bytes
+    rom_bytes=len(base)
     progress=dict(compiled_c_functions=sum(r['implementation']=='compiled_c' for r in ranges),
                   compiled_c_owned_bytes=c_bytes,
                   bios_wrapper_functions=sum(r['implementation']=='inline_assembly_wrapper' for r in ranges),
                   bios_wrapper_bytes=sum(r['size'] for r in ranges if r['implementation']=='inline_assembly_wrapper'),
-                  code_and_data_region_without_known_pcm_bytes=region_bytes,
-                  compiled_c_percent_of_that_region=round(100*c_bytes/region_bytes,4),
-                  scope='ROM 0000C0..1B0000 minus known PCM header/payload spans. Includes literals, tables and undecoded data; NOT a pure instruction-byte denominator.',
+                  remaining_assembly_bytes=remaining_asm_bytes,
+                  decompilation_provider_bytes=decompilation_bytes,
+                  compiled_c_percent_of_decompilation=round(100*c_bytes/decompilation_bytes,4),
+                  rom_bytes=rom_bytes,
+                  compiled_c_percent_of_rom=round(100*c_bytes/rom_bytes,4),
+                  progress_denominator='rom_bytes',
+                  scope='The authoritative percentage is compiled C bytes divided by the complete ROM image. Every ROM-resident byte counts in the denominator, including code, data, assets, and padding. The narrower assembly-provider percentage is retained only as a diagnostic.',
                   total_function_count=None,
                   limitation='Historical function starts include false positives and internal labels. Do not report a completion percentage from that count. C-owned sizes include alignment and literal pools.')
     record=dict(sha1=hashlib.sha1(rom).hexdigest(),byte_matching=True,

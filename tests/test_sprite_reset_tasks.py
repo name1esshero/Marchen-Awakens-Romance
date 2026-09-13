@@ -5,7 +5,8 @@ ROOT=Path(__file__).resolve().parents[1]
 class SpriteResetTests(unittest.TestCase):
  def test_reset_lifecycle(self):
   with tempfile.TemporaryDirectory() as temp:
-   p=Path(temp);source=(ROOT/'src/script_sprite_reset.c').read_text()
+   p=Path(temp);combined=(ROOT/'src/script_sprite.c').read_text()
+   source='#include "script_sprite.h"\n'+combined[combined.index('/* Deferred script-sprite reset workers'):]
    for address in ('000109C4','00010A70'):source=source.replace('__attribute__((section(".rom.'+address+'")))','')
    (p/'worker.c').write_text(source)
    (p/'test.c').write_text(r'''

@@ -44,7 +44,7 @@ AT("00005848") struct EngineTask *CreateSoundPlayerIdleWait(
         return 0;
     }
     if (waitValue != 0) {
-        struct TaskManager *manager = (struct TaskManager *)0x030032C4;
+        struct TaskManager *manager = &gMainTaskManager;
         callback = SoundPlayerIdleTask;
         waitValue = (u32)CreateTask(manager, callback, 0, completion, 12);
         ((struct SoundIdleTaskRecord *)waitValue)->playerIndex = index;

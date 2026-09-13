@@ -24,7 +24,7 @@ AT("000056AC") struct EngineTask *CreateSoundFadeTask(
     register void (*callback)(struct EngineTask *) asm("r10");
     struct TaskManager *manager;
 
-    manager = (struct TaskManager *)0x030032C4;
+    manager = &gMainTaskManager;
     callback = SoundFadeTask;
     task = CreateTask(manager, callback, 0, completion, 16);
     if (task == 0)

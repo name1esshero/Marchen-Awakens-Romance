@@ -28,6 +28,8 @@ class EnglishRuntimeTests(unittest.TestCase):
 #include <stdlib.h>
 #include <string.h>
 int captured_count, captured_mode, pending, key, clear_count, fail_alloc, fail_draw;
+unsigned char gMainTaskManager;
+unsigned char gAuxTaskManager;
 const char *captured_rows[3];
 static void *parent, *clear_task;
 static void (*parent_callback)(void *), (*clear_callback)(void *);
@@ -49,7 +51,7 @@ void *CreateTask(void *manager,void *callback,unsigned priority,int *result,unsi
     if(fail_alloc) { fail_alloc--; return 0; }
     task=calloc(1,32+size);
     if(result)*result=0;
-    if(manager==(void *)0x030032D4) { clear_task=task;clear_callback=callback; }
+    if(manager==&gAuxTaskManager) { clear_task=task;clear_callback=callback; }
     else { parent=task;parent_callback=callback; }
     return task;
 }

@@ -10,6 +10,8 @@
 
 extern void *DialogueStartOriginal(s32, s32, const char **, s32 *);
 extern void *CreateTask(void *, void *, u32, s32 *, u32);
+extern u8 gMainTaskManager;
+extern u8 gAuxTaskManager;
 extern void FinishTask(void *);
 extern void ScriptAddPendingTasks(u32); /* Increment current script's pending count. */
 extern void ScriptCompletePendingTasks(u32); /* Decrement current script's pending count. */
@@ -144,7 +146,7 @@ static void EnglishPageTask(void *task)
     }
     if (pages->phase == 3)
     {
-        clear = CreateTask((void *)0x030032D4, EnglishClearPage, 0, 0,
+        clear = CreateTask(&gAuxTaskManager, EnglishClearPage, 0, 0,
                            sizeof(struct EnglishPages *));
         if (!clear) return; /* Retry allocation without dropping any text. */
         pages->childResult = 0;
@@ -269,7 +271,7 @@ void *EnglishDialogueStart(s32 mode, s32 count, const char **rows, s32 *result)
         }
         if (i == count)
         {
-            task = CreateTask((void *)0x030032C4, EnglishPageTask, 0, result,
+            task = CreateTask(&gMainTaskManager, EnglishPageTask, 0, result,
                               sizeof(struct EnglishPages));
             if (task)
             {

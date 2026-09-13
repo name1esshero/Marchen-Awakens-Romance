@@ -2,6 +2,7 @@
 #define RUNTIME_MISC_H
 
 #include "gba/types.h"
+#include "battle_character.h"
 
 struct InputRepeatState {
     u16 previous;
@@ -32,7 +33,7 @@ void InputRepeatInit(struct InputRepeatState *state,u32 mask);
 void MapObjectResetMotion(struct MapObjectMotion *motion);
 u8 *GameStateGetRecord1190(u32 index);
 u32 RuntimeReturnZero(void);
-const void *RuntimeGetTable1AD634(u32 index);
+const struct BattleCharacterDefinition *RuntimeGetBattleCharacterDefinition(u32 index);
 u8 *RuntimeGetBlock6120(u32 slot,u32 group);
 void GameStateCopyString12F4(char *destination);
 void *GameStateGetRecord0B90(u32 index);

@@ -3,6 +3,7 @@
  * signed bytes or halfwords. Preserve those explicit narrowing operations.
  */
 #include "gba/types.h"
+#include "game_tables.h"
 
 #define AT(x) __attribute__((section(".rom." x)))
 
@@ -51,7 +52,7 @@ AT("00012B98") s32 ScriptNativeSetFriendArms(u32 count, const s32 *args,
     register u8 **root asm("r5") = (u8 **)0x03003FDC;
     s32 friendOffset = 0x3880;
     register const s32 *input asm("r4") = args;
-    register const s16 *definitions asm("r9") = (const s16 *)0x081ACC90;
+    register const s16 *definitions asm("r9") = gFriendArmOwnershipBits;
     register s32 invalidDefinition asm("r8") = 444;
 
     do {

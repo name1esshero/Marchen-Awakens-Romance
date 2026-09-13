@@ -29,7 +29,7 @@ AT("00061EA8") struct EngineTask *CreateFieldEventTask(
     third = (s16)third;
     fourth = (s16)fourth;
     value = (s16)value;
-    task = CreateTask((struct TaskManager *)0x030032C4,
+    task = CreateTask(&gMainTaskManager,
                       (void (*)(struct EngineTask *))0x08061F21,
                       0, completion, 160);
     data = (struct FieldEventTaskData *)task;

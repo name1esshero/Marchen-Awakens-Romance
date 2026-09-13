@@ -41,8 +41,6 @@
 @ Read-only definition table embedded in the monolithic 1B0000 data block.
 @ Keep this as an absolute symbol: labelling it must not split or duplicate the
 @ byte-exact incbin that also supplies the editable Japanese text tables.
-.global gItemDefinitions
-.set gItemDefinitions, 0x081B096C
 
 .global gSoundPlayerCount
 .set gSoundPlayerCount, 9
@@ -87,12 +85,17 @@
 
 @ Stable aliases used by compiled C and generated call sites. Keeping them in
 @ this non-generated file prevents a code-split refresh from discarding them.
-.global NfpFindEntryIndex
-.thumb_set NfpFindEntryIndex, 0x0807ACC5
+.global gMainTaskManager
+.set gMainTaskManager, 0x030032C4
+.global gAuxTaskManager
+.set gAuxTaskManager, 0x030032D4
+.global gThirdTaskManager
+.set gThirdTaskManager, 0x030032E4
+.global gSaveMagic
+.set gSaveMagic, 0x08089328
+
 .global _0807D3F6
 .set _0807D3F6, 0x0807D3F6
-.global ScriptResourceInternName
-.thumb_set ScriptResourceInternName, 0x0807EA8D
 .global _08001632
 .set _08001632, 0x08001632
 .global _0800163A

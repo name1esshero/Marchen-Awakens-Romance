@@ -72,9 +72,9 @@ AT("0000F0CC") u8 *GameStateGetRecord1190(u32 index)
 }
 
 AT("0000503C") u32 RuntimeReturnZero(void) { return 0; }
-AT("00011674") const void *RuntimeGetTable1AD634(u32 index)
+AT("00011674") const struct BattleCharacterDefinition *RuntimeGetBattleCharacterDefinition(u32 index)
 {
- return (const void *)(0x081AD634+index*120);
+ return &gBattleCharacterDefinitions[index];
 }
 AT("000804EC") u8 *RuntimeGetBlock6120(u32 slot,u32 group)
 {

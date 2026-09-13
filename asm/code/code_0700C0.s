@@ -45,8 +45,8 @@
 	adds r1, r5, r2
 	str r0, [r1, #0]
 	mov r0, r8
-	bl sub_08072C04
-	movs r2, #203
+	.2byte 0xF002
+	.4byte 0x22CBFD79
 	lsls r2, r2, #3
 	adds r1, r5, r2
 	str r0, [r1, #0]
@@ -200,7 +200,9 @@ sub_08070214:
 	adds r4, r0, #0
 	adds r5, r1, #0
 	adds r0, r5, #0
-	bl sub_08072C04
+	.2byte 0xF002
+	.byte 0xF2
+	.byte 0xFC
 	movs r2, #203
 	lsls r2, r2, #3
 	adds r1, r4, r2
@@ -263,7 +265,9 @@ sub_0807027C:
 	lsls r5, r5, #3
 	adds r0, r6, r5
 	ldr r0, [r0, #0]
-	bl sub_08072C04
+	.2byte 0xF002
+	.byte 0xBC
+	.byte 0xFC
 	movs r2, #203
 	lsls r2, r2, #3
 	adds r1, r6, r2
@@ -842,8 +846,8 @@ sub_08070624:
 	.global sub_08070664
 sub_08070664:
 	ldr r0, [r0, #0]
-	bl sub_08072C04
-	movs r2, #203
+	.2byte 0xF002
+	.4byte 0x22CBFACD
 	lsls r2, r2, #3
 	adds r1, r4, r2
 	str r0, [r1, #0]
@@ -932,8 +936,8 @@ sub_08070710:
 	lsls r1, r1, #3
 	adds r0, r4, r1
 	ldr r0, [r0, #0]
-	bl sub_08072C04
-	movs r2, #203
+	.2byte 0xF002
+	.4byte 0x22CBFA75
 	lsls r2, r2, #3
 	adds r4, r4, r2
 	str r0, [r4, #0]
@@ -6231,20 +6235,10 @@ _08072BF4:
 	pop {r1}
 	bx r1
 
-	.thumb_func
-	.thumb
-	.global sub_08072C04
-sub_08072C04:
-	ldr r1, _08072C10
-	lsls r0, r0, #2
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _08072C10
-_08072C10:
-	.4byte 0x081C090C  @ ROM+0x1C090C
+@ 072C04..072C14 is decompiled as GetBattleDefinition(); see src/decompiled.json
+
+	.section .rom.00072C14, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb

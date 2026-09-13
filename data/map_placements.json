@@ -1,0 +1,2093 @@
+{
+  "format": "MAR battle arena initial placements",
+  "rom_offset": 1833452,
+  "screen_positions": [
+    {
+      "arena": 0,
+      "index": 0,
+      "x": 240,
+      "y": 120,
+      "field_08": 80,
+      "flags": 0
+    },
+    {
+      "arena": 0,
+      "index": 1,
+      "x": 56,
+      "y": 120,
+      "field_08": 80,
+      "flags": 0
+    },
+    {
+      "arena": 0,
+      "index": 2,
+      "x": 32,
+      "y": 32,
+      "field_08": 32,
+      "flags": 0
+    },
+    {
+      "arena": 0,
+      "index": 3,
+      "x": 72,
+      "y": 200,
+      "field_08": 140,
+      "flags": 0
+    },
+    {
+      "arena": 0,
+      "index": 4,
+      "x": 128,
+      "y": 80,
+      "field_08": 32,
+      "flags": 0
+    },
+    {
+      "arena": 0,
+      "index": 5,
+      "x": 112,
+      "y": 180,
+      "field_08": 116,
+      "flags": 0
+    },
+    {
+      "arena": 0,
+      "index": 6,
+      "x": 72,
+      "y": 204,
+      "field_08": 132,
+      "flags": 0
+    },
+    {
+      "arena": 0,
+      "index": 7,
+      "x": 112,
+      "y": 180,
+      "field_08": 112,
+      "flags": 0
+    },
+    {
+      "arena": 0,
+      "index": 8,
+      "x": 72,
+      "y": 200,
+      "field_08": 128,
+      "flags": 0
+    },
+    {
+      "arena": 0,
+      "index": 9,
+      "x": 72,
+      "y": 200,
+      "field_08": 144,
+      "flags": 0
+    },
+    {
+      "arena": 0,
+      "index": 10,
+      "x": 112,
+      "y": 72,
+      "field_08": 32,
+      "flags": 0
+    },
+    {
+      "arena": 0,
+      "index": 11,
+      "x": 104,
+      "y": 184,
+      "field_08": 104,
+      "flags": 0
+    },
+    {
+      "arena": 0,
+      "index": 12,
+      "x": 72,
+      "y": 200,
+      "field_08": 120,
+      "flags": 0
+    },
+    {
+      "arena": 0,
+      "index": 13,
+      "x": 112,
+      "y": 184,
+      "field_08": 136,
+      "flags": 0
+    },
+    {
+      "arena": 0,
+      "index": 14,
+      "x": 72,
+      "y": 200,
+      "field_08": 152,
+      "flags": 0
+    },
+    {
+      "arena": 0,
+      "index": 15,
+      "x": 144,
+      "y": 164,
+      "field_08": 104,
+      "flags": 0
+    },
+    {
+      "arena": 0,
+      "index": 16,
+      "x": 72,
+      "y": 200,
+      "field_08": 120,
+      "flags": 0
+    },
+    {
+      "arena": 0,
+      "index": 17,
+      "x": 144,
+      "y": 164,
+      "field_08": 136,
+      "flags": 0
+    },
+    {
+      "arena": 0,
+      "index": 18,
+      "x": 72,
+      "y": 200,
+      "field_08": 152,
+      "flags": 0
+    },
+    {
+      "arena": 0,
+      "index": 19,
+      "x": 104,
+      "y": 68,
+      "field_08": 32,
+      "flags": 0
+    },
+    {
+      "arena": 1,
+      "index": 0,
+      "x": 96,
+      "y": 192,
+      "field_08": 104,
+      "flags": 0
+    },
+    {
+      "arena": 1,
+      "index": 1,
+      "x": 72,
+      "y": 208,
+      "field_08": 120,
+      "flags": 0
+    },
+    {
+      "arena": 1,
+      "index": 2,
+      "x": 96,
+      "y": 192,
+      "field_08": 136,
+      "flags": 0
+    },
+    {
+      "arena": 1,
+      "index": 3,
+      "x": 72,
+      "y": 208,
+      "field_08": 152,
+      "flags": 0
+    },
+    {
+      "arena": 1,
+      "index": 4,
+      "x": 128,
+      "y": 172,
+      "field_08": 88,
+      "flags": 0
+    },
+    {
+      "arena": 1,
+      "index": 5,
+      "x": 80,
+      "y": 200,
+      "field_08": 104,
+      "flags": 0
+    },
+    {
+      "arena": 1,
+      "index": 6,
+      "x": 72,
+      "y": 200,
+      "field_08": 120,
+      "flags": 0
+    },
+    {
+      "arena": 1,
+      "index": 7,
+      "x": 72,
+      "y": 200,
+      "field_08": 136,
+      "flags": 0
+    },
+    {
+      "arena": 1,
+      "index": 8,
+      "x": 72,
+      "y": 200,
+      "field_08": 152,
+      "flags": 0
+    },
+    {
+      "arena": 1,
+      "index": 9,
+      "x": 88,
+      "y": 192,
+      "field_08": 112,
+      "flags": 0
+    },
+    {
+      "arena": 1,
+      "index": 10,
+      "x": 72,
+      "y": 200,
+      "field_08": 128,
+      "flags": 0
+    },
+    {
+      "arena": 1,
+      "index": 11,
+      "x": 72,
+      "y": 204,
+      "field_08": 144,
+      "flags": 0
+    },
+    {
+      "arena": 1,
+      "index": 12,
+      "x": 184,
+      "y": 144,
+      "field_08": 112,
+      "flags": 0
+    },
+    {
+      "arena": 1,
+      "index": 13,
+      "x": 72,
+      "y": 204,
+      "field_08": 128,
+      "flags": 0
+    },
+    {
+      "arena": 1,
+      "index": 14,
+      "x": 72,
+      "y": 204,
+      "field_08": 144,
+      "flags": 0
+    },
+    {
+      "arena": 1,
+      "index": 15,
+      "x": 104,
+      "y": 184,
+      "field_08": 116,
+      "flags": 0
+    },
+    {
+      "arena": 1,
+      "index": 16,
+      "x": 72,
+      "y": 196,
+      "field_08": 132,
+      "flags": 0
+    },
+    {
+      "arena": 1,
+      "index": 17,
+      "x": 104,
+      "y": 68,
+      "field_08": 32,
+      "flags": 0
+    },
+    {
+      "arena": 1,
+      "index": 18,
+      "x": 72,
+      "y": 196,
+      "field_08": 116,
+      "flags": 0
+    },
+    {
+      "arena": 1,
+      "index": 19,
+      "x": 80,
+      "y": 192,
+      "field_08": 132,
+      "flags": 0
+    },
+    {
+      "arena": 2,
+      "index": 0,
+      "x": 120,
+      "y": 76,
+      "field_08": 32,
+      "flags": 0
+    },
+    {
+      "arena": 2,
+      "index": 1,
+      "x": 80,
+      "y": 196,
+      "field_08": 140,
+      "flags": 0
+    },
+    {
+      "arena": 2,
+      "index": 2,
+      "x": 88,
+      "y": 60,
+      "field_08": 32,
+      "flags": 0
+    },
+    {
+      "arena": 2,
+      "index": 3,
+      "x": 72,
+      "y": 200,
+      "field_08": 112,
+      "flags": 0
+    },
+    {
+      "arena": 2,
+      "index": 4,
+      "x": 72,
+      "y": 200,
+      "field_08": 128,
+      "flags": 0
+    },
+    {
+      "arena": 2,
+      "index": 5,
+      "x": 80,
+      "y": 200,
+      "field_08": 144,
+      "flags": 0
+    },
+    {
+      "arena": 2,
+      "index": 6,
+      "x": 64,
+      "y": 48,
+      "field_08": 32,
+      "flags": 0
+    },
+    {
+      "arena": 2,
+      "index": 7,
+      "x": 224,
+      "y": 128,
+      "field_08": 104,
+      "flags": 0
+    },
+    {
+      "arena": 2,
+      "index": 8,
+      "x": 80,
+      "y": 196,
+      "field_08": 120,
+      "flags": 0
+    },
+    {
+      "arena": 2,
+      "index": 9,
+      "x": 72,
+      "y": 200,
+      "field_08": 136,
+      "flags": 0
+    },
+    {
+      "arena": 2,
+      "index": 10,
+      "x": 72,
+      "y": 200,
+      "field_08": 152,
+      "flags": 0
+    },
+    {
+      "arena": 2,
+      "index": 11,
+      "x": 72,
+      "y": 200,
+      "field_08": 120,
+      "flags": 0
+    },
+    {
+      "arena": 2,
+      "index": 12,
+      "x": 72,
+      "y": 200,
+      "field_08": 136,
+      "flags": 0
+    },
+    {
+      "arena": 2,
+      "index": 13,
+      "x": 72,
+      "y": 200,
+      "field_08": 152,
+      "flags": 0
+    },
+    {
+      "arena": 2,
+      "index": 14,
+      "x": 216,
+      "y": 132,
+      "field_08": 112,
+      "flags": 0
+    },
+    {
+      "arena": 2,
+      "index": 15,
+      "x": 72,
+      "y": 200,
+      "field_08": 128,
+      "flags": 0
+    },
+    {
+      "arena": 2,
+      "index": 16,
+      "x": 72,
+      "y": 200,
+      "field_08": 144,
+      "flags": 0
+    },
+    {
+      "arena": 2,
+      "index": 17,
+      "x": 104,
+      "y": 184,
+      "field_08": 104,
+      "flags": 0
+    },
+    {
+      "arena": 2,
+      "index": 18,
+      "x": 80,
+      "y": 200,
+      "field_08": 120,
+      "flags": 0
+    },
+    {
+      "arena": 2,
+      "index": 19,
+      "x": 184,
+      "y": 148,
+      "field_08": 136,
+      "flags": 0
+    },
+    {
+      "arena": 2,
+      "index": 20,
+      "x": 184,
+      "y": 148,
+      "field_08": 152,
+      "flags": 0
+    },
+    {
+      "arena": 3,
+      "index": 0,
+      "x": 136,
+      "y": 120,
+      "field_08": 80,
+      "flags": 0
+    },
+    {
+      "arena": 3,
+      "index": 1,
+      "x": 128,
+      "y": 80,
+      "field_08": 32,
+      "flags": 0
+    },
+    {
+      "arena": 3,
+      "index": 2,
+      "x": 72,
+      "y": 200,
+      "field_08": 88,
+      "flags": 0
+    },
+    {
+      "arena": 3,
+      "index": 3,
+      "x": 72,
+      "y": 200,
+      "field_08": 104,
+      "flags": 0
+    },
+    {
+      "arena": 3,
+      "index": 4,
+      "x": 72,
+      "y": 200,
+      "field_08": 120,
+      "flags": 0
+    },
+    {
+      "arena": 3,
+      "index": 5,
+      "x": 72,
+      "y": 200,
+      "field_08": 136,
+      "flags": 0
+    },
+    {
+      "arena": 3,
+      "index": 6,
+      "x": 72,
+      "y": 200,
+      "field_08": 152,
+      "flags": 0
+    },
+    {
+      "arena": 3,
+      "index": 7,
+      "x": 72,
+      "y": 200,
+      "field_08": 104,
+      "flags": 0
+    },
+    {
+      "arena": 3,
+      "index": 8,
+      "x": 72,
+      "y": 200,
+      "field_08": 120,
+      "flags": 0
+    },
+    {
+      "arena": 3,
+      "index": 9,
+      "x": 72,
+      "y": 200,
+      "field_08": 152,
+      "flags": 0
+    },
+    {
+      "arena": 3,
+      "index": 10,
+      "x": 72,
+      "y": 200,
+      "field_08": 116,
+      "flags": 0
+    },
+    {
+      "arena": 3,
+      "index": 11,
+      "x": 72,
+      "y": 200,
+      "field_08": 132,
+      "flags": 0
+    },
+    {
+      "arena": 3,
+      "index": 12,
+      "x": 80,
+      "y": 56,
+      "field_08": 32,
+      "flags": 0
+    },
+    {
+      "arena": 3,
+      "index": 13,
+      "x": 80,
+      "y": 204,
+      "field_08": 140,
+      "flags": 0
+    },
+    {
+      "arena": 3,
+      "index": 14,
+      "x": 120,
+      "y": 76,
+      "field_08": 32,
+      "flags": 0
+    },
+    {
+      "arena": 3,
+      "index": 15,
+      "x": 72,
+      "y": 204,
+      "field_08": 140,
+      "flags": 0
+    },
+    {
+      "arena": 3,
+      "index": 16,
+      "x": 96,
+      "y": 66,
+      "field_08": 32,
+      "flags": 0
+    },
+    {
+      "arena": 3,
+      "index": 17,
+      "x": 72,
+      "y": 204,
+      "field_08": 140,
+      "flags": 0
+    },
+    {
+      "arena": 3,
+      "index": 18,
+      "x": 184,
+      "y": 108,
+      "field_08": 32,
+      "flags": 0
+    },
+    {
+      "arena": 3,
+      "index": 19,
+      "x": 72,
+      "y": 200,
+      "field_08": 140,
+      "flags": 0
+    },
+    {
+      "arena": 3,
+      "index": 20,
+      "x": 72,
+      "y": 188,
+      "field_08": 128,
+      "flags": 0
+    },
+    {
+      "arena": 3,
+      "index": 21,
+      "x": 104,
+      "y": 188,
+      "field_08": 144,
+      "flags": 0
+    },
+    {
+      "arena": 3,
+      "index": 22,
+      "x": 72,
+      "y": 200,
+      "field_08": 136,
+      "flags": 0
+    }
+  ],
+  "neighbor_indices": [
+    [
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      1,
+      0
+    ],
+    [
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      1,
+      0
+    ],
+    [
+      2,
+      3,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0
+    ],
+    [
+      4,
+      5,
+      6,
+      -1,
+      -1,
+      -1,
+      0,
+      0
+    ],
+    [
+      4,
+      7,
+      8,
+      9,
+      -1,
+      -1,
+      0,
+      0
+    ],
+    [
+      10,
+      11,
+      12,
+      13,
+      14,
+      -1,
+      0,
+      0
+    ],
+    [
+      10,
+      15,
+      16,
+      17,
+      18,
+      -1,
+      0,
+      0
+    ],
+    [
+      19,
+      20,
+      21,
+      22,
+      23,
+      -1,
+      0,
+      0
+    ],
+    [
+      19,
+      24,
+      25,
+      26,
+      27,
+      28,
+      0,
+      0
+    ],
+    [
+      19,
+      29,
+      30,
+      31,
+      -1,
+      -1,
+      0,
+      0
+    ],
+    [
+      19,
+      32,
+      33,
+      34,
+      -1,
+      -1,
+      0,
+      0
+    ],
+    [
+      19,
+      35,
+      36,
+      -1,
+      -1,
+      -1,
+      0,
+      0
+    ],
+    [
+      37,
+      38,
+      39,
+      -1,
+      -1,
+      -1,
+      0,
+      0
+    ],
+    [
+      40,
+      41,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0
+    ],
+    [
+      42,
+      43,
+      44,
+      45,
+      -1,
+      -1,
+      0,
+      0
+    ],
+    [
+      46,
+      47,
+      48,
+      49,
+      50,
+      -1,
+      0,
+      0
+    ],
+    [
+      46,
+      47,
+      51,
+      52,
+      53,
+      -1,
+      0,
+      0
+    ],
+    [
+      46,
+      54,
+      55,
+      56,
+      -1,
+      -1,
+      0,
+      0
+    ],
+    [
+      46,
+      57,
+      58,
+      59,
+      60,
+      -1,
+      0,
+      0
+    ],
+    [
+      61,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      1,
+      0
+    ],
+    [
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      0,
+      0
+    ],
+    [
+      62,
+      68,
+      69,
+      83,
+      70,
+      -1,
+      0,
+      0
+    ],
+    [
+      62,
+      71,
+      72,
+      -1,
+      -1,
+      -1,
+      0,
+      0
+    ],
+    [
+      73,
+      74,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0
+    ],
+    [
+      75,
+      76,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0
+    ],
+    [
+      77,
+      78,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0
+    ],
+    [
+      79,
+      80,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0
+    ],
+    [
+      -1,
+      81,
+      82,
+      -1,
+      -1,
+      -1,
+      2,
+      0
+    ]
+  ],
+  "visibility_masks": [
+    3221422080,
+    3932160,
+    1006632960,
+    62914560,
+    4228055040,
+    66846720,
+    3225354240,
+    1069547520,
+    3288268800,
+    4231987200,
+    1073479680,
+    4290969600,
+    4294901760
+  ],
+  "layouts": [
+    {
+      "index": 0,
+      "origin_name": "AD0_O",
+      "placements": [
+        {
+          "index": 0,
+          "kind": 1,
+          "resource_name": "AD0_R_0A",
+          "x": 56,
+          "y": 56,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 1,
+          "kind": 1,
+          "resource_name": "AD0_R_1A",
+          "x": 330,
+          "y": 240,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 2,
+          "kind": 1,
+          "resource_name": "AD0_R_2A",
+          "x": 140,
+          "y": 440,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 3,
+          "kind": 1,
+          "resource_name": "AD0_R_3A",
+          "x": 270,
+          "y": 300,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 4,
+          "kind": 1,
+          "resource_name": "AD0_R_4A",
+          "x": 400,
+          "y": 360,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 5,
+          "kind": 1,
+          "resource_name": "AD0_R_5A",
+          "x": 290,
+          "y": 56,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 6,
+          "kind": 1,
+          "resource_name": "AD0_R_6A",
+          "x": 160,
+          "y": 280,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 7,
+          "kind": 1,
+          "resource_name": "AD0_R_7A",
+          "x": 440,
+          "y": 430,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 8,
+          "kind": 1,
+          "resource_name": "AD0_R_8A",
+          "x": 410,
+          "y": 70,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 9,
+          "kind": 1,
+          "resource_name": "AD0_R_9A",
+          "x": 64,
+          "y": 56,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 10,
+          "kind": 1,
+          "resource_name": "AD0_R_AA",
+          "x": 64,
+          "y": 440,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 11,
+          "kind": 1,
+          "resource_name": "AD0_R_BA",
+          "x": 440,
+          "y": 450,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 12,
+          "kind": 1,
+          "resource_name": "AD0_R_CA",
+          "x": 300,
+          "y": 430,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 0,
+          "kind": 2,
+          "resource_name": "AD0_P_0A",
+          "x": 504,
+          "y": 80,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 1,
+          "kind": 2,
+          "resource_name": "AD0_P_1A",
+          "x": 376,
+          "y": 80,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 2,
+          "kind": 2,
+          "resource_name": "AD0_P_2A",
+          "x": 248,
+          "y": 80,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 3,
+          "kind": 2,
+          "resource_name": "AD0_P_3A",
+          "x": 120,
+          "y": 80,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 4,
+          "kind": 2,
+          "resource_name": "AD0_P_4A",
+          "x": 120,
+          "y": 80,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 5,
+          "kind": 2,
+          "resource_name": "AD0_P_5A",
+          "x": 120,
+          "y": 208,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 6,
+          "kind": 2,
+          "resource_name": "AD0_P_6A",
+          "x": 120,
+          "y": 336,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 7,
+          "kind": 2,
+          "resource_name": "AD0_P_7A",
+          "x": 120,
+          "y": 464,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "origin_name": "AD1_O",
+      "placements": [
+        {
+          "index": 0,
+          "kind": 1,
+          "resource_name": "AD1_R_0A",
+          "x": 160,
+          "y": 100,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 1,
+          "kind": 1,
+          "resource_name": "AD1_R_1A",
+          "x": 448,
+          "y": 108,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 2,
+          "kind": 1,
+          "resource_name": "AD1_R_2A",
+          "x": 74,
+          "y": 350,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 3,
+          "kind": 1,
+          "resource_name": "AD1_R_3A",
+          "x": 304,
+          "y": 366,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 4,
+          "kind": 1,
+          "resource_name": "AD1_R_4A",
+          "x": 178,
+          "y": 90,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 5,
+          "kind": 1,
+          "resource_name": "AD1_R_5A",
+          "x": 448,
+          "y": 158,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 6,
+          "kind": 1,
+          "resource_name": "AD1_R_6A",
+          "x": 94,
+          "y": 66,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 7,
+          "kind": 1,
+          "resource_name": "AD1_R_7A",
+          "x": 140,
+          "y": 400,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 8,
+          "kind": 1,
+          "resource_name": "AD1_R_8A",
+          "x": 170,
+          "y": 48,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 9,
+          "kind": 1,
+          "resource_name": "AD1_R_9A",
+          "x": 100,
+          "y": 430,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 10,
+          "kind": 1,
+          "resource_name": "AD1_R_AA",
+          "x": 110,
+          "y": 410,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 11,
+          "kind": 1,
+          "resource_name": "AD1_R_BA",
+          "x": 440,
+          "y": 410,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 12,
+          "kind": 1,
+          "resource_name": "AD1_R_CA",
+          "x": 440,
+          "y": 410,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 0,
+          "kind": 2,
+          "resource_name": "AD1_P_0A",
+          "x": 448,
+          "y": 80,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 1,
+          "kind": 2,
+          "resource_name": "AD1_P_1A",
+          "x": 320,
+          "y": 80,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 2,
+          "kind": 2,
+          "resource_name": "AD1_P_2A",
+          "x": 192,
+          "y": 80,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 3,
+          "kind": 2,
+          "resource_name": "AD1_P_3A",
+          "x": 64,
+          "y": 80,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 4,
+          "kind": 2,
+          "resource_name": "AD1_P_4A",
+          "x": 64,
+          "y": 120,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 5,
+          "kind": 2,
+          "resource_name": "AD1_P_5A",
+          "x": 64,
+          "y": 192,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 6,
+          "kind": 2,
+          "resource_name": "AD1_P_6A",
+          "x": 64,
+          "y": 320,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 7,
+          "kind": 2,
+          "resource_name": "AD1_P_7A",
+          "x": 64,
+          "y": 448,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "origin_name": "AD3_O",
+      "placements": [
+        {
+          "index": 0,
+          "kind": 1,
+          "resource_name": "AD3_R_0A",
+          "x": 191,
+          "y": 55,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 1,
+          "kind": 1,
+          "resource_name": "AD3_R_1A",
+          "x": 450,
+          "y": 420,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 2,
+          "kind": 1,
+          "resource_name": "AD3_R_2A",
+          "x": 408,
+          "y": 424,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 3,
+          "kind": 1,
+          "resource_name": "AD3_R_3A",
+          "x": 350,
+          "y": 296,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 4,
+          "kind": 1,
+          "resource_name": "AD3_R_4A",
+          "x": 148,
+          "y": 398,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 5,
+          "kind": 1,
+          "resource_name": "AD3_R_5A",
+          "x": 446,
+          "y": 160,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 6,
+          "kind": 1,
+          "resource_name": "AD3_R_6A",
+          "x": 275,
+          "y": 80,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 7,
+          "kind": 1,
+          "resource_name": "AD3_R_7A",
+          "x": 256,
+          "y": 428,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 8,
+          "kind": 1,
+          "resource_name": "AD3_R_8A",
+          "x": 410,
+          "y": 210,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 9,
+          "kind": 1,
+          "resource_name": "AD3_R_9A",
+          "x": 300,
+          "y": 463,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 10,
+          "kind": 1,
+          "resource_name": "AD3_R_AA",
+          "x": 176,
+          "y": 416,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 11,
+          "kind": 1,
+          "resource_name": "AD3_R_BA",
+          "x": 96,
+          "y": 440,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 12,
+          "kind": 1,
+          "resource_name": "AD3_R_CA",
+          "x": 152,
+          "y": 128,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 0,
+          "kind": 2,
+          "resource_name": "AD3_P_0A",
+          "x": 448,
+          "y": 80,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 1,
+          "kind": 2,
+          "resource_name": "AD3_P_1A",
+          "x": 320,
+          "y": 80,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 2,
+          "kind": 2,
+          "resource_name": "AD3_P_2A",
+          "x": 192,
+          "y": 80,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 3,
+          "kind": 2,
+          "resource_name": "AD3_P_3A",
+          "x": 64,
+          "y": 80,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 4,
+          "kind": 2,
+          "resource_name": "AD3_P_4A",
+          "x": 64,
+          "y": 120,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 5,
+          "kind": 2,
+          "resource_name": "AD3_P_5A",
+          "x": 64,
+          "y": 192,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 6,
+          "kind": 2,
+          "resource_name": "AD3_P_6A",
+          "x": 64,
+          "y": 320,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 7,
+          "kind": 2,
+          "resource_name": "AD3_P_7A",
+          "x": 64,
+          "y": 448,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "origin_name": "AD4_O",
+      "placements": [
+        {
+          "index": 0,
+          "kind": 1,
+          "resource_name": "AD4_R_0A",
+          "x": 56,
+          "y": 56,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 1,
+          "kind": 1,
+          "resource_name": "AD4_R_1A",
+          "x": 445,
+          "y": 114,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 2,
+          "kind": 1,
+          "resource_name": "AD4_R_2A",
+          "x": 328,
+          "y": 368,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 3,
+          "kind": 1,
+          "resource_name": "AD4_R_3A",
+          "x": 256,
+          "y": 344,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 4,
+          "kind": 1,
+          "resource_name": "AD4_R_4A",
+          "x": 160,
+          "y": 320,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 5,
+          "kind": 1,
+          "resource_name": "AD4_R_5A",
+          "x": 250,
+          "y": 455,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 6,
+          "kind": 1,
+          "resource_name": "AD4_R_6A",
+          "x": 343,
+          "y": 56,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 7,
+          "kind": 1,
+          "resource_name": "AD4_R_7A",
+          "x": 240,
+          "y": 456,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 8,
+          "kind": 1,
+          "resource_name": "AD4_R_8A",
+          "x": 345,
+          "y": 56,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 9,
+          "kind": 1,
+          "resource_name": "AD4_R_9A",
+          "x": 224,
+          "y": 56,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 10,
+          "kind": 1,
+          "resource_name": "AD4_R_AA",
+          "x": 216,
+          "y": 440,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 11,
+          "kind": 1,
+          "resource_name": "AD4_R_BA",
+          "x": 216,
+          "y": 448,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 12,
+          "kind": 1,
+          "resource_name": "AD4_R_CA",
+          "x": 224,
+          "y": 360,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 0,
+          "kind": 2,
+          "resource_name": "AD4_P_0A",
+          "x": 448,
+          "y": 80,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 1,
+          "kind": 2,
+          "resource_name": "AD4_P_1A",
+          "x": 320,
+          "y": 80,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 2,
+          "kind": 2,
+          "resource_name": "AD4_P_2A",
+          "x": 192,
+          "y": 80,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 3,
+          "kind": 2,
+          "resource_name": "AD4_P_3A",
+          "x": 64,
+          "y": 80,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 4,
+          "kind": 2,
+          "resource_name": "AD4_P_4A",
+          "x": 64,
+          "y": 120,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 5,
+          "kind": 2,
+          "resource_name": "AD4_P_5A",
+          "x": 64,
+          "y": 192,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 6,
+          "kind": 2,
+          "resource_name": "AD4_P_6A",
+          "x": 64,
+          "y": 320,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 7,
+          "kind": 2,
+          "resource_name": "AD4_P_7A",
+          "x": 64,
+          "y": 448,
+          "reserved": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  ]
+}

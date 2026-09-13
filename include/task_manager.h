@@ -13,6 +13,10 @@ struct TaskManager {
     u32 queueCount;
     u32 taskCount;
 };
+/* Global task schedulers in IWRAM. */
+extern struct TaskManager gMainTaskManager;
+extern struct TaskManager gAuxTaskManager;
+extern struct TaskManager gThirdTaskManager;
 void TaskManagerInit(struct TaskManager *manager, struct Heap *heap, u32 count);
 void TaskManagerDestroy(struct TaskManager *manager);
 u32 TaskManagerCount(struct TaskManager *manager);

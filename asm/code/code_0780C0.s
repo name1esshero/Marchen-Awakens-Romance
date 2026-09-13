@@ -1874,70 +1874,14 @@ _0807A4AC:
 _0807A4B4:
 	.4byte 0x03006110  @ IWRAM+0x6110
 
-	.thumb_func
-	.thumb
-	.global sub_0807A4B8
-sub_0807A4B8:
-	push {r4, r5, r6, r7, lr}
-	cmp r0, #0
-	bne _0807A4C2
-	ldr r0, _0807A4F4
-	ldr r0, [r0, #0]
-	.global _0807A4C2
-_0807A4C2:
-	adds r3, r0, #0
-	adds r3, #8
-	movs r4, #0
-	movs r7, #4
-	negs r7, r7
-	movs r6, #1
-	movs r5, #2
-	.global _0807A4D0
-_0807A4D0:
-	ldr r2, [r3, #0]
-	adds r1, r2, #0
-	ands r1, r7
-	adds r0, r2, #0
-	ands r0, r6
-	cmp r0, #0
-	bne _0807A4E4
-	adds r0, r4, #0
-	subs r0, #8
-	adds r4, r0, r1
-	.global _0807A4E4
-_0807A4E4:
-	adds r3, r3, r1
-	ands r2, r5
-	cmp r2, #0
-	beq _0807A4D0
-	adds r0, r4, #0
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.global _0807A4F4
-_0807A4F4:
-	.4byte 0x03006110  @ IWRAM+0x6110
-	.4byte 0x2800B5F0
-	.4byte 0x480ED101
-	.4byte 0x1C036800
-	.4byte 0x24003308
-	.4byte 0x427F2704
-	.4byte 0x25022601
-	.4byte 0x1C11681A
-	.4byte 0x1C104039
-	.4byte 0x28004030
-	.4byte 0x1C08D104
-	.4byte 0x42A03808
-	.4byte 0x1C04D900
-	.4byte 0x402A185B
-	.4byte 0xD0EF2A00
-	.4byte 0xBCF01C20
-	.4byte 0x4708BC02
-	.4byte 0x03006110
-	.4byte 0x68003808
-	.4byte 0x42492104
-	.4byte 0x38084008
-	.4byte 0x00004770
+@ 07A4B8..07A4F8 is decompiled as HeapGetFreeBytes(); see src/decompiled.json
+
+@ 07A4F8..07A53C is decompiled as HeapGetLargestFreeBlock(); see src/decompiled.json
+
+@ 07A53C..07A54C is decompiled as HeapGetAllocationSize(); see src/decompiled.json
+
+	.section .rom.0007A54C, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -2140,178 +2084,9 @@ _0807A5EE:
 
 @ 07ACA8..07ACC4 is decompiled as NfpFindEntryByArchiveName(); see src/decompiled.json
 
-	.section .rom.0007ACC4, "ax"
-	.syntax unified
+@ 07ACC4..07AD4C is decompiled as NfpFindEntryIndex(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0807ACC4
-sub_0807ACC4:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r8
-	push {r7}
-	sub sp, #16
-	adds r4, r0, #0
-	mov r8, r1
-	movs r5, #0
-	mov r0, sp
-	strb r5, [r0, #12]
-	adds r0, r4, #0
-	.2byte 0xF7FF
-	.byte 0xFA
-	.byte 0xFE
-	adds r7, r0, #0
-	adds r0, r4, #0
-	.2byte 0xF7FF
-	.byte 0x12
-	.byte 0xFF
-	cmp r0, #0
-	blt _0807AD34
-	movs r6, #0
-	subs r4, r0, #1
-	.global _0807ACEC
-_0807ACEC:
-	cmp r6, r4
-	beq _0807AD1C
-	adds r0, r6, r4
-	lsrs r1, r0, #31
-	adds r0, r0, r1
-	asrs r5, r0, #1
-	lsls r1, r5, #4
-	adds r1, r7, r1
-	mov r0, sp
-	movs r2, #12
-	bl CpuCopy
-	mov r0, r8
-	mov r1, sp
-	.2byte 0xF007
-	.byte 0x80
-	.byte 0xFD
-	cmp r0, #0
-	beq _0807AD3A
-	cmp r0, #0
-	bge _0807AD18
-	adds r4, r5, #0
-	b _0807ACEC
-	.global _0807AD18
-_0807AD18:
-	adds r6, r5, #1
-	b _0807ACEC
-	.global _0807AD1C
-_0807AD1C:
-	lsls r1, r6, #4
-	adds r1, r7, r1
-	mov r0, sp
-	movs r2, #12
-	bl CpuCopy
-	mov r0, r8
-	mov r1, sp
-	.2byte 0xF007
-	.byte 0x6E
-	.byte 0xFD
-	cmp r0, #0
-	beq _0807AD3E
-	.global _0807AD34
-_0807AD34:
-	movs r0, #1
-	negs r0, r0
-	b _0807AD40
-	.global _0807AD3A
-_0807AD3A:
-	adds r0, r5, #0
-	b _0807AD40
-	.global _0807AD3E
-_0807AD3E:
-	adds r0, r6, #0
-	.global _0807AD40
-_0807AD40:
-	add sp, #16
-	pop {r3}
-	mov r8, r3
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_0807AD4C
-sub_0807AD4C:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r8
-	push {r7}
-	adds r4, r1, #0
-	.2byte 0xF7FF
-	.byte 0x12
-	.byte 0xFF
-	adds r5, r0, #0
-	cmp r5, #0
-	blt _0807AD7A
-	adds r0, r5, #0
-	adds r1, r4, #0
-	bl sub_0807ACC4
-	adds r4, r0, #0
-	cmp r4, #0
-	blt _0807AD7A
-	adds r0, r5, #0
-	adds r1, r4, #0
-	.2byte 0xF7FF
-	.byte 0x5A
-	.byte 0xFF
-	adds r6, r0, #0
-	cmp r6, #0
-	bne _0807AD7E
-	.global _0807AD7A
-_0807AD7A:
-	movs r0, #0
-	b _0807ADB8
-	.global _0807AD7E
-_0807AD7E:
-	adds r0, r5, #0
-	.2byte 0xF7FF
-	.byte 0x8E
-	.byte 0xFE
-	adds r7, r0, #0
-	ldr r0, [r6, #12]
-	adds r0, r0, r7
-	mov r8, r0
-	adds r4, #1
-	adds r0, r5, #0
-	.2byte 0xF7FF
-	.byte 0xBA
-	.byte 0xFE
-	cmp r4, r0
-	bcc _0807ADB0
-	ldr r0, _0807ADAC
-	ldr r0, [r0, #0]
-	ldr r1, [r0, #0]
-	lsls r0, r5, #1
-	adds r0, r0, r5
-	lsls r0, r0, #3
-	adds r0, r0, r1
-	ldr r0, [r0, #20]
-	b _0807ADB4
-	.byte 0x00
-	.byte 0x00
-	.global _0807ADAC
-_0807ADAC:
-	.4byte 0x03006114  @ IWRAM+0x6114
-	.global _0807ADB0
-_0807ADB0:
-	ldr r0, [r6, #28]
-	adds r0, r7, r0
-	.global _0807ADB4
-_0807ADB4:
-	mov r1, r8
-	subs r0, r0, r1
-	.global _0807ADB8
-_0807ADB8:
-	pop {r3}
-	mov r8, r3
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 07AD4C..07ADC4 is decompiled as NfpGetEntrySizeByName(); see src/decompiled.json
 
 @ 07ADC4..07ADE0 is decompiled as InitFont(); see src/decompiled.json
 
@@ -7101,7 +6876,9 @@ _0807E63C:
 _0807E640:
 	movs r0, #33
 	mov r1, sp
-	bl ScriptResourceFind
+	.2byte 0xF000
+	.byte 0xB0
+	.byte 0xF9
 	adds r4, r0, #0
 	cmp r4, #0
 	bne _0807E654
@@ -7593,179 +7370,19 @@ _0807E960:
 
 @ 07E964..07E97C is decompiled as VmAddToField220(); see src/decompiled.json
 
-	.section .rom.0007E97C, "ax"
+@ 07E97C..07E9A8 is decompiled as ScriptResourceHash(); see src/decompiled.json
+
+@ 07E9A8..07E9F4 is decompiled as ScriptResourceFind(); see src/decompiled.json
+
+@ 07E9F4..07EA8C is decompiled as ScriptResourceSet(); see src/decompiled.json
+
+	.section .rom.0007EA8C, "ax"
 	.syntax unified
 
 	.thumb_func
 	.thumb
-	.global sub_0807E97C
-sub_0807E97C:
-	push {r4, lr}
-	adds r4, r1, #0
-	adds r1, r0, #0
-	b _0807E994
-	.global _0807E984
-_0807E984:
-	lsls r0, r1, #8
-	ldrb r1, [r4, #0]
-	adds r0, r0, r1
-	ldr r1, _0807E9A4
-	bl sub_08080C94
-	adds r1, r0, #0
-	adds r4, #1
-	.global _0807E994
-_0807E994:
-	movs r0, #0
-	ldrsb r0, [r4, r0]
-	cmp r0, #0
-	bne _0807E984
-	adds r0, r1, #0
-	pop {r4}
-	pop {r1}
-	bx r1
-	.global _0807E9A4
-_0807E9A4:
-	.4byte 0x0000024B
-
-	.thumb_func
-	.thumb
-	.global ScriptResourceFind
-ScriptResourceFind:
-	push {r4, r5, r6, lr}
-	adds r6, r0, #0
-	adds r5, r1, #0
-	bl sub_0807E97C
-	ldr r1, _0807E9E0
-	ldr r1, [r1, #0]
-	ldr r1, [r1, #12]
-	ldr r1, [r1, #8]
-	lsls r0, r0, #2
-	adds r0, r0, r1
-	ldr r4, [r0, #0]
-	cmp r4, #0
-	beq _0807E9EA
-	.global _0807E9C4
-_0807E9C4:
-	ldr r1, [r4, #4]
-	movs r0, #0
-	ldrsb r0, [r1, r0]
-	cmp r6, r0
-	bne _0807E9E4
-	adds r1, #1
-	adds r0, r5, #0
-	.2byte 0xF003
-	.4byte 0x2800FF1B
-	bne _0807E9E4
-	adds r0, r4, #0
-	adds r0, #8
-	b _0807E9EC
-	.global _0807E9E0
-_0807E9E0:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-	.global _0807E9E4
-_0807E9E4:
-	ldr r4, [r4, #0]
-	cmp r4, #0
-	bne _0807E9C4
-	.global _0807E9EA
-_0807E9EA:
-	movs r0, #0
-	.global _0807E9EC
-_0807E9EC:
-	pop {r4, r5, r6}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global ScriptResourceSet
-ScriptResourceSet:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r10
-	mov r6, r9
-	mov r5, r8
-	push {r5, r6, r7}
-	adds r7, r0, #0
-	adds r6, r1, #0
-	mov r8, r2
-	adds r5, r3, #0
-	bl sub_0807E97C
-	mov r10, r0
-	adds r0, r7, #0
-	adds r1, r6, #0
-	bl ScriptResourceFind
-	cmp r0, #0
-	beq _0807EA1C
-	movs r0, #1
-	b _0807EA7C
-	.global _0807EA1C
-_0807EA1C:
-	adds r0, r6, #0
-	.2byte 0xF003
-	.4byte 0x1C01FF49
-	ldr r0, _0807EA74
-	mov r9, r0
-	ldr r0, [r0, #0]
-	ldr r0, [r0, #12]
-	ldr r0, [r0, #4]
-	adds r1, r5, r1
-	adds r1, #13
-	.2byte 0xF7FB
-	.4byte 0x1C04FC5B
-	cmp r4, #0
-	beq _0807EA78
-	adds r0, #8
-	mov r1, r8
-	adds r2, r5, #0
-	bl CpuCopy
-	adds r0, r5, #0
-	adds r0, #8
-	adds r0, r4, r0
-	str r0, [r4, #4]
-	strb r7, [r0, #0]
-	ldr r0, [r4, #4]
-	adds r0, #1
-	adds r1, r6, #0
-	.2byte 0xF003
-	.4byte 0x4649FF07
-	ldr r0, [r1, #0]
-	ldr r0, [r0, #12]
-	ldr r1, [r0, #8]
-	mov r2, r10
-	lsls r0, r2, #2
-	adds r0, r0, r1
-
-	.thumb_func
-	.thumb
-	.global sub_0807EA68
-sub_0807EA68:
-	ldr r1, [r0, #0]
-	str r1, [r4, #0]
-	str r4, [r0, #0]
-	movs r0, #0
-	b _0807EA7C
-	.byte 0x00
-	.byte 0x00
-	.global _0807EA74
-_0807EA74:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-	.global _0807EA78
-_0807EA78:
-	movs r0, #1
-	negs r0, r0
-	.global _0807EA7C
-_0807EA7C:
-	pop {r3, r4, r5}
-	mov r8, r3
-	mov r9, r4
-	mov r10, r5
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+	.global ScriptResourceRemove
+ScriptResourceRemove:
 	.4byte 0x4647B5F0
 	.4byte 0x1C06B480
 	.4byte 0xF7FF1C0D
@@ -7812,7 +7429,9 @@ sub_0807EB18:
 	adds r5, r2, #0
 	adds r0, r6, #0
 	adds r1, r5, #0
-	bl sub_0807E97C
+	.2byte 0xF7FF
+	.byte 0x2A
+	.byte 0xFF
 	lsls r0, r0, #2
 	adds r0, r0, r4
 	ldr r4, [r0, #0]
@@ -7864,8 +7483,8 @@ sub_0807EB5C:
 	ldr r7, [sp, #32]
 	adds r0, r6, #0
 	adds r1, r5, #0
-	bl sub_0807E97C
-	mov r9, r0
+	.2byte 0xF7FF
+	.4byte 0x4681FF03
 	mov r0, r8
 	adds r1, r6, #0
 	adds r2, r5, #0
@@ -7941,8 +7560,8 @@ sub_0807EBE0:
 	adds r5, r3, #0
 	adds r0, r6, #0
 	adds r1, r5, #0
-	bl sub_0807E97C
-	mov r8, r0
+	.2byte 0xF7FF
+	.4byte 0x4680FEC1
 	lsls r0, r0, #2
 	add r0, r9
 	ldr r4, [r0, #0]

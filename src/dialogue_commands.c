@@ -6,6 +6,7 @@
 #include "dialogue.h"
 extern void FinishTask(void *);
 extern void *CreateTask(void *,void *,u32,s32 *,u32);
+extern u8 gMainTaskManager;
 extern void sub_08011A08(u32);
 extern void sub_08006ADC(u32,u32);
 #include "runtime_misc.h"
@@ -21,7 +22,7 @@ AT("00011774") const u8 DialogueFinishTaskTail[2]={0,0};
 AT("0001174C")
 void *DialogueCreateFinishTask(s32 *result)
 {
- void *task = CreateTask((void *)0x030032C4,DialogueFinishTask,0,result,4);
+ void *task = CreateTask(&gMainTaskManager,DialogueFinishTask,0,result,4);
  if (!task) return 0;
  return task;
 }

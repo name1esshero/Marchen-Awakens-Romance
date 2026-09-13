@@ -13,8 +13,8 @@ def main():
  rom=(ROOT/'baserom.gba').read_bytes();members=nfp.entries(rom)
  spans=[]
  for p in (ROOT/'asm/data').glob('*.s'):
-  m=re.search(r'ROM ([0-9A-F]+)\.\.([0-9A-F]+)',p.read_text())
-  if m:spans.append((int(m[1],16),int(m[2],16),str(p.relative_to(ROOT))))
+  for m in re.finditer(r'ROM ([0-9A-F]+)\.\.([0-9A-F]+)',p.read_text()):
+   spans.append((int(m[1],16),int(m[2],16),str(p.relative_to(ROOT))))
  windows=[(max(a,b-256),b) for a,b,_ in spans]+[(nfp.END,len(rom))]
  signatures=[]
  for magic in (b'NFP2.0',b'SCRP',b'RIFF',b'KMP',b'NC',b'KCG'):

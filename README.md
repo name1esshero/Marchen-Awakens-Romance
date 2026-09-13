@@ -11,8 +11,11 @@ make compare
 
 Expected SHA-1: `5ed178bfbdf459867d64e5b91a9d9c72654e4051` (16,777,216 bytes).
 `make compare` checks every ROM byte when `baserom.gba` is present. `make`
-prints linked ROM, EWRAM, and IWRAM usage after the build; RAM figures cover
-static linked sections because this game allocates its working heaps at runtime.
+prints linked ROM, EWRAM, and IWRAM usage after the build. The RAM report combines
+linked sections with `ram_layout.json`, which accounts for the game's fixed
+IWRAM objects and all seven EWRAM heap arenas. `tools/ram_snapshot.py` measures
+live allocations and fragmentation from emulator EWRAM/IWRAM dumps; see
+`docs/ram-layout.md`.
 ROM usage counts occupied content rather than the padded file length. Runs of
 at least 32 identical `00` or `FF` fill bytes, plus cartridge address space
 beyond the image, are reported as free capacity.
@@ -269,13 +272,13 @@ English mappings, including the ÄRM Select names and descriptions.
 
 ## Decompilation status
 
-The provenance audit verifies **1,240 ordinary C ranges (76,039 bytes, 12.1212%
-of the measured code/data region) and 10 BIOS assembly wrappers**; each declared
+The provenance audit verifies **1,534 source-compiled C ranges (204,495 bytes,
+1.2189% of the complete 16 MiB ROM) and 10 BIOS assembly wrappers**; each declared
 range is linked from its expected object and matches the Japanese ROM. Recent
 batches decode the save block, CRC-32 validation, asynchronous SRAM write and
 load/verification paths, MusicPlayer2000 sound routines including the complete
 four-channel PSG update loop, script-facing player transitions, instrument
-banks, song tables, song headers, and the first two songs' track boundaries, sprite
+banks, song tables, song headers, all 280 recovered song-track arrays, sprite
 resource allocation, affine transforms, and sprite
 interpolation work arrays. The map work also identifies the generated-map
 connection attribute classes and their north/east/south/west mask bits.
@@ -304,15 +307,12 @@ bytes). The 32-bit lifecycle test checks node ownership, traversal while freeing
 list links, mount-table allocation and state clearing. See
 [task and archive lifetime](docs/task-and-archive-lifetime.md).
 
-Two task-creation helpers add another 244 bytes of matching C in
-`src/task_create.c`: append to a priority queue or insert before an existing
-task. Tests cover header and payload initialization, optional completion words,
-queue links and allocation failure.
-
-The public task-creation wrapper and scheduler now add 212 bytes of matching C
-in `src/task_scheduler.c`. The wrapper accepts either a queue index or an existing
-task pointer. Scheduler tests cover removal before/after callbacks and tasks
-appended during the current pass.
+The consolidated `src/task_manager.c` contains task-manager lifecycle,
+two task-creation helpers, the public creation wrapper, and the scheduler. The
+helpers append to a priority queue or insert before an existing task. Tests
+cover header and payload initialization, optional completion words, queue links,
+allocation failure, removal before/after callbacks, and tasks appended during
+the current pass.
 
 Four archive mount helpers add 152 bytes of matching C in
 `src/nfp_mount_helpers.c`: active-name lookup, uppercase-name assignment,
@@ -376,7 +376,8 @@ and allocates one signed binding slot per palette. Deep clones allocate and copy
 their own per-cell handle arrays, distinguishing them from shallow mode-one
 clones.
 
-Thirty-nine procedural-map routines now live in `src/map_generation.c`. They
+Procedural-map state, native field/layer commands, and inventory-facing map
+adapters now live together in `src/mapping.c`. The generator routines
 identify the generator's private RNG and its state block at engine offset
 `0x1304`, including six working pointers, three indexed tables, two signed
 coordinate arrays, per-direction values, and four signed four-component
@@ -410,12 +411,13 @@ included, where modern GCC differed on two counts in every function:
 | Leaf prologue | `push {lr}` | `push {r4, lr}`, saving a register it never uses |
 | `index * 24` | `((i * 2) + i) * 8` with shifts | load 24, then `muls` |
 
-The current manifest declares 1,250 linked ranges: 1,240 compiled-C ranges and
-ten BIOS inline-assembly wrapper ranges. Compiled C owns 76,039 bytes, including
-literal pools and alignment, or 12.1212% of the executable region after known
-PCM is excluded. This metric is not a pure
-function-completion percentage because the denominator still contains tables
-and undecoded data.
+The current manifest declares 1,547 linked ranges: 1,537 compiled-C ranges and
+ten BIOS inline-assembly wrapper ranges. Compiled C owns 204,767 bytes, including
+functions, typed tables, literal pools, and alignment, or 1.2205% of the complete
+16 MiB ROM. This whole-ROM figure is the authoritative progress percentage: code,
+data, assets, and padding all count in its denominator. The audit also reports a
+narrower 29.0099% assembly-provider diagnostic to show conversion progress within
+the remaining `asm/code` and compiled-C body, but that is not the headline score.
 One range may contain multiple contiguous
 functions and alignment bytes. The [build provenance audit](https://github.com/name1esshero/Marchen-Awakens-Romance/wiki/Build-verification)
 checks their linked object providers and distinguishes them from preserved
@@ -447,9 +449,9 @@ indirections before the index; and mounts are 24-byte records indexed by
 handle, so the design supports several archives open at once even though this
 cartridge ships one.
 
-Readable nonmatching C still documents the glyph-index function, font glyph
-addressing, engine character reading, and NCD table lookup, excluded from the
-matching build. `src/nonmatching/archive.c` holds partial readings of the
+The glyph-index function, font glyph addressing, and engine character reading
+now compile as matching C. Readable nonmatching C still documents NCD table
+lookup outside the matching build. `src/nonmatching/archive.c` holds partial readings of the
 background loader: `0x08027EAE` is inside `ArchiveTaskStep`, and its corrected
 structures are in `include/archive.h`.
 
@@ -500,8 +502,14 @@ make -j4 compare
 `make extract` re-extracts original assets from `baserom.gba` and regenerates the
 split. Extraction can reset edited graphics; ordinary builds do not. Named
 script extraction preserves existing records/comments and adds missing records.
-The generated `asm/data` sources choose named font, palettes, scripts, and NCD
-containers ahead of overlapping heuristic scan hits.
+The generated `asm/data` directory is grouped by source type: graphics, maps,
+scripts, still-undecoded raw data, and explicit padding. Each payload retains
+its address-named linker section, so this organization does not alter ROM
+placement. PCM spans interleaved with the original code region live together in
+`asm/sound_samples.s`. Japanese artwork replaced by `make english` is isolated
+in `asm/data/japanese_localized_assets.s`, allowing the English linker to swap
+the complete localized set as one object. Uniform zero and `0xFF` regions use
+assembly fill directives rather than meaningless `.bin` files.
 
 ### Recovery snapshots
 

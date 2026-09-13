@@ -6,6 +6,11 @@ import re
 import subprocess
 from pathlib import Path
 
+try:
+    from tools.ram_layout import ROOT, audit_layout
+except ImportError:  # Direct execution places tools/ itself on sys.path.
+    from ram_layout import ROOT, audit_layout
+
 
 REGIONS = (
     ("ROM", 0x08000000, 32 * 1024 * 1024),
@@ -59,20 +64,32 @@ def main():
     args = parser.parse_args()
 
     sections = allocated_sections(args.elf, args.objdump)
+    ram_report = audit_layout(ROOT / "ram_layout.json")
     print("GBA linked memory usage")
     for name, start, capacity in REGIONS:
         end = start + capacity
-        used = sum(size for _, address, size in sections
-                   if start <= address < end)
+        linked = sum(size for _, address, size in sections
+                     if start <= address < end)
+        used = linked
         free=None
         if name == "ROM" and args.rom:
             used,free=rom_occupancy(args.rom,capacity)
+        elif name in ram_report["totals"]:
+            item = ram_report["totals"][name]
+            free = item["kinds"].get("unassigned", 0)
+            used = capacity - free
         percent = used * 100.0 / capacity
         suffix=f"; {format_size(free)} free" if free is not None else ""
-        print(f"  {name:5} {format_size(used):>18} used / "
+        verb = "used" if name == "ROM" else "accounted"
+        print(f"  {name:5} {format_size(used):>18} {verb} / "
               f"{format_size(capacity):>18} total  ({percent:6.2f}%{suffix})")
-    print("  RAM figures count linked static sections; runtime heaps and stacks "
-          "are allocated by the game.")
+        if name in ram_report["totals"]:
+            kinds = ram_report["totals"][name]["kinds"]
+            details = ", ".join(f"{kind} {format_size(size)}"
+                                for kind, size in kinds.items())
+            print(f"        {details}; ELF-linked subset {format_size(linked)}")
+    print("  Heap arenas and stacks are reserved ranges; live high-water usage "
+          "requires emulator/runtime telemetry.")
 
 
 if __name__ == "__main__":

@@ -15,7 +15,7 @@ ROW = re.compile(r'^@([0-9A-Fa-f]+)\s(.*?)(?:\s+//.*)?$')
 TABLES = (
     dict(kind='arm_definition_table', base=0x1B096C, records=445,
          stride=0x80, name_offset=0x10, name_size=34,
-         description_offset=0x32, description_size=38,
+         description_offset=0x32, description_size=34,
          path='text/arm_definitions.txt'),
     dict(kind='item_definition_table', base=0x1BE82C, records=13,
          stride=0x50, name_offset=0x10, name_size=34,

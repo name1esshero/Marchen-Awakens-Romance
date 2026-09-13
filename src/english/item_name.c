@@ -6,12 +6,12 @@
  * narrowing, then uses the same reviewed exact-string mapping as dialogue. */
 const char *EnglishItemGetName(s32 id)
 {
-    const char *japanese = gItemDefinitions[(s16)id].name;
+    const char *japanese = (const char *)gArmDefinitions[(s16)id].name;
     return EnglishTranslateSingle(japanese);
 }
 
 const char *EnglishItemGetDescription(s32 id)
 {
-    const char *japanese = gItemDefinitions[(s16)id].description;
+    const char *japanese = (const char *)gArmDefinitions[(s16)id].description;
     return EnglishTranslateSingle(japanese);
 }

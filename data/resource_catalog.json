@@ -1,0 +1,4157 @@
+{
+  "format": "MAR master resource catalog",
+  "rom_offset": 1837408,
+  "record_size": 16,
+  "records": [
+    {
+      "index": 0,
+      "name": "AD0_B_A.KMP",
+      "rom_offset": 13344
+    },
+    {
+      "index": 1,
+      "name": "AD0_P_0A.KCG",
+      "rom_offset": 38112
+    },
+    {
+      "index": 2,
+      "name": "AD0_P_0A.KCL",
+      "rom_offset": 61072
+    },
+    {
+      "index": 3,
+      "name": "AD0_P_0A.KMP",
+      "rom_offset": 61392
+    },
+    {
+      "index": 4,
+      "name": "AD0_P_1A.KMP",
+      "rom_offset": 69264
+    },
+    {
+      "index": 5,
+      "name": "AD0_P_2A.KMP",
+      "rom_offset": 77136
+    },
+    {
+      "index": 6,
+      "name": "AD0_P_3A.KMP",
+      "rom_offset": 85008
+    },
+    {
+      "index": 7,
+      "name": "AD0_P_4A.KMP",
+      "rom_offset": 92880
+    },
+    {
+      "index": 8,
+      "name": "AD0_P_5A.KMP",
+      "rom_offset": 104592
+    },
+    {
+      "index": 9,
+      "name": "AD0_P_6A.KMP",
+      "rom_offset": 116304
+    },
+    {
+      "index": 10,
+      "name": "AD0_P_7A.KMP",
+      "rom_offset": 128016
+    },
+    {
+      "index": 11,
+      "name": "AD0_R_0A.KMP",
+      "rom_offset": 139728
+    },
+    {
+      "index": 12,
+      "name": "AD0_R_1A.KMP",
+      "rom_offset": 164496
+    },
+    {
+      "index": 13,
+      "name": "AD0_R_2A.KMP",
+      "rom_offset": 189264
+    },
+    {
+      "index": 14,
+      "name": "AD0_R_3A.KMP",
+      "rom_offset": 214032
+    },
+    {
+      "index": 15,
+      "name": "AD0_R_4A.KMP",
+      "rom_offset": 238800
+    },
+    {
+      "index": 16,
+      "name": "AD0_R_5A.KMP",
+      "rom_offset": 263568
+    },
+    {
+      "index": 17,
+      "name": "AD0_R_6A.KMP",
+      "rom_offset": 288336
+    },
+    {
+      "index": 18,
+      "name": "AD0_R_7A.KMP",
+      "rom_offset": 313104
+    },
+    {
+      "index": 19,
+      "name": "AD0_R_8A.KMP",
+      "rom_offset": 337872
+    },
+    {
+      "index": 20,
+      "name": "AD0_R_9A.KMP",
+      "rom_offset": 362640
+    },
+    {
+      "index": 21,
+      "name": "AD0_R_AA.KMP",
+      "rom_offset": 387408
+    },
+    {
+      "index": 22,
+      "name": "AD0_R_BA.KMP",
+      "rom_offset": 412176
+    },
+    {
+      "index": 23,
+      "name": "AD0_R_CA.KMP",
+      "rom_offset": 436944
+    },
+    {
+      "index": 24,
+      "name": "AD1_B_A.KMP",
+      "rom_offset": 461712
+    },
+    {
+      "index": 25,
+      "name": "AD1_P_0A.KCG",
+      "rom_offset": 486480
+    },
+    {
+      "index": 26,
+      "name": "AD1_P_0A.KCL",
+      "rom_offset": 505344
+    },
+    {
+      "index": 27,
+      "name": "AD1_P_0A.KMP",
+      "rom_offset": 505568
+    },
+    {
+      "index": 28,
+      "name": "AD1_P_1A.KMP",
+      "rom_offset": 513440
+    },
+    {
+      "index": 29,
+      "name": "AD1_P_2A.KMP",
+      "rom_offset": 521312
+    },
+    {
+      "index": 30,
+      "name": "AD1_P_3A.KMP",
+      "rom_offset": 529184
+    },
+    {
+      "index": 31,
+      "name": "AD1_P_4A.KMP",
+      "rom_offset": 537056
+    },
+    {
+      "index": 32,
+      "name": "AD1_P_5A.KMP",
+      "rom_offset": 548768
+    },
+    {
+      "index": 33,
+      "name": "AD1_P_6A.KMP",
+      "rom_offset": 560480
+    },
+    {
+      "index": 34,
+      "name": "AD1_P_7A.KMP",
+      "rom_offset": 572192
+    },
+    {
+      "index": 35,
+      "name": "AD1_R_0A.KMP",
+      "rom_offset": 583904
+    },
+    {
+      "index": 36,
+      "name": "AD1_R_1A.KMP",
+      "rom_offset": 608672
+    },
+    {
+      "index": 37,
+      "name": "AD1_R_2A.KMP",
+      "rom_offset": 633440
+    },
+    {
+      "index": 38,
+      "name": "AD1_R_3A.KMP",
+      "rom_offset": 658208
+    },
+    {
+      "index": 39,
+      "name": "AD1_R_4A.KMP",
+      "rom_offset": 682976
+    },
+    {
+      "index": 40,
+      "name": "AD1_R_5A.KMP",
+      "rom_offset": 707744
+    },
+    {
+      "index": 41,
+      "name": "AD1_R_6A.KMP",
+      "rom_offset": 732512
+    },
+    {
+      "index": 42,
+      "name": "AD1_R_7A.KMP",
+      "rom_offset": 757280
+    },
+    {
+      "index": 43,
+      "name": "AD1_R_8A.KMP",
+      "rom_offset": 782048
+    },
+    {
+      "index": 44,
+      "name": "AD1_R_9A.KMP",
+      "rom_offset": 806816
+    },
+    {
+      "index": 45,
+      "name": "AD1_R_AA.KMP",
+      "rom_offset": 831584
+    },
+    {
+      "index": 46,
+      "name": "AD1_R_BA.KMP",
+      "rom_offset": 856352
+    },
+    {
+      "index": 47,
+      "name": "AD1_R_CA.KMP",
+      "rom_offset": 881120
+    },
+    {
+      "index": 48,
+      "name": "AD3_B_A.KMP",
+      "rom_offset": 905888
+    },
+    {
+      "index": 49,
+      "name": "AD3_P_0A.KCG",
+      "rom_offset": 930656
+    },
+    {
+      "index": 50,
+      "name": "AD3_P_0A.KCL",
+      "rom_offset": 950256
+    },
+    {
+      "index": 51,
+      "name": "AD3_P_0A.KMP",
+      "rom_offset": 950448
+    },
+    {
+      "index": 52,
+      "name": "AD3_P_1A.KMP",
+      "rom_offset": 958320
+    },
+    {
+      "index": 53,
+      "name": "AD3_P_2A.KMP",
+      "rom_offset": 966192
+    },
+    {
+      "index": 54,
+      "name": "AD3_P_3A.KMP",
+      "rom_offset": 974064
+    },
+    {
+      "index": 55,
+      "name": "AD3_P_4A.KMP",
+      "rom_offset": 981936
+    },
+    {
+      "index": 56,
+      "name": "AD3_P_5A.KMP",
+      "rom_offset": 993648
+    },
+    {
+      "index": 57,
+      "name": "AD3_P_6A.KMP",
+      "rom_offset": 1005360
+    },
+    {
+      "index": 58,
+      "name": "AD3_P_7A.KMP",
+      "rom_offset": 1017072
+    },
+    {
+      "index": 59,
+      "name": "AD3_R_0A.KMP",
+      "rom_offset": 1028784
+    },
+    {
+      "index": 60,
+      "name": "AD3_R_1A.KMP",
+      "rom_offset": 1053552
+    },
+    {
+      "index": 61,
+      "name": "AD3_R_2A.KMP",
+      "rom_offset": 1078320
+    },
+    {
+      "index": 62,
+      "name": "AD3_R_3A.KMP",
+      "rom_offset": 1103088
+    },
+    {
+      "index": 63,
+      "name": "AD3_R_4A.KMP",
+      "rom_offset": 1127856
+    },
+    {
+      "index": 64,
+      "name": "AD3_R_5A.KMP",
+      "rom_offset": 1152624
+    },
+    {
+      "index": 65,
+      "name": "AD3_R_6A.KMP",
+      "rom_offset": 1177392
+    },
+    {
+      "index": 66,
+      "name": "AD3_R_7A.KMP",
+      "rom_offset": 1202160
+    },
+    {
+      "index": 67,
+      "name": "AD3_R_8A.KMP",
+      "rom_offset": 1226928
+    },
+    {
+      "index": 68,
+      "name": "AD3_R_9A.KMP",
+      "rom_offset": 1251696
+    },
+    {
+      "index": 69,
+      "name": "AD3_R_AA.KMP",
+      "rom_offset": 1276464
+    },
+    {
+      "index": 70,
+      "name": "AD3_R_BA.KMP",
+      "rom_offset": 1301232
+    },
+    {
+      "index": 71,
+      "name": "AD3_R_CA.KMP",
+      "rom_offset": 1326000
+    },
+    {
+      "index": 72,
+      "name": "AD4_B_A.KMP",
+      "rom_offset": 1350768
+    },
+    {
+      "index": 73,
+      "name": "AD4_P_0A.KCG",
+      "rom_offset": 1375536
+    },
+    {
+      "index": 74,
+      "name": "AD4_P_0A.KCL",
+      "rom_offset": 1389680
+    },
+    {
+      "index": 75,
+      "name": "AD4_P_0A.KMP",
+      "rom_offset": 1389776
+    },
+    {
+      "index": 76,
+      "name": "AD4_P_1A.KMP",
+      "rom_offset": 1397648
+    },
+    {
+      "index": 77,
+      "name": "AD4_P_2A.KMP",
+      "rom_offset": 1405520
+    },
+    {
+      "index": 78,
+      "name": "AD4_P_3A.KMP",
+      "rom_offset": 1413392
+    },
+    {
+      "index": 79,
+      "name": "AD4_P_4A.KMP",
+      "rom_offset": 1421264
+    },
+    {
+      "index": 80,
+      "name": "AD4_P_5A.KMP",
+      "rom_offset": 1432976
+    },
+    {
+      "index": 81,
+      "name": "AD4_P_6A.KMP",
+      "rom_offset": 1444688
+    },
+    {
+      "index": 82,
+      "name": "AD4_P_7A.KMP",
+      "rom_offset": 1456400
+    },
+    {
+      "index": 83,
+      "name": "AD4_R_0A.KMP",
+      "rom_offset": 1468112
+    },
+    {
+      "index": 84,
+      "name": "AD4_R_1A.KMP",
+      "rom_offset": 1492880
+    },
+    {
+      "index": 85,
+      "name": "AD4_R_2A.KMP",
+      "rom_offset": 1517648
+    },
+    {
+      "index": 86,
+      "name": "AD4_R_3A.KMP",
+      "rom_offset": 1542416
+    },
+    {
+      "index": 87,
+      "name": "AD4_R_4A.KMP",
+      "rom_offset": 1567184
+    },
+    {
+      "index": 88,
+      "name": "AD4_R_5A.KMP",
+      "rom_offset": 1591952
+    },
+    {
+      "index": 89,
+      "name": "AD4_R_6A.KMP",
+      "rom_offset": 1616720
+    },
+    {
+      "index": 90,
+      "name": "AD4_R_7A.KMP",
+      "rom_offset": 1641488
+    },
+    {
+      "index": 91,
+      "name": "AD4_R_8A.KMP",
+      "rom_offset": 1666256
+    },
+    {
+      "index": 92,
+      "name": "AD4_R_9A.KMP",
+      "rom_offset": 1691024
+    },
+    {
+      "index": 93,
+      "name": "AD4_R_AA.KMP",
+      "rom_offset": 1715792
+    },
+    {
+      "index": 94,
+      "name": "AD4_R_BA.KMP",
+      "rom_offset": 1740560
+    },
+    {
+      "index": 95,
+      "name": "AD4_R_CA.KMP",
+      "rom_offset": 1765328
+    },
+    {
+      "index": 96,
+      "name": "AD_BG01.KCG",
+      "rom_offset": 1790096
+    },
+    {
+      "index": 97,
+      "name": "AD_BG01.KCL",
+      "rom_offset": 1797648
+    },
+    {
+      "index": 98,
+      "name": "AD_BG01.KMP",
+      "rom_offset": 1797680
+    },
+    {
+      "index": 99,
+      "name": "AD_BG02.KCG",
+      "rom_offset": 1799920
+    },
+    {
+      "index": 100,
+      "name": "AD_BG02.KCL",
+      "rom_offset": 1802304
+    },
+    {
+      "index": 101,
+      "name": "AD_BG02.KMP",
+      "rom_offset": 1802336
+    },
+    {
+      "index": 102,
+      "name": "AL_BG01.KCG",
+      "rom_offset": 1804576
+    },
+    {
+      "index": 103,
+      "name": "AL_BG01.KCL",
+      "rom_offset": 1813008
+    },
+    {
+      "index": 104,
+      "name": "AL_BG01.KMP",
+      "rom_offset": 1813040
+    },
+    {
+      "index": 105,
+      "name": "AL_BG02.KCG",
+      "rom_offset": 1815280
+    },
+    {
+      "index": 106,
+      "name": "AL_BG02.KCL",
+      "rom_offset": 1817984
+    },
+    {
+      "index": 107,
+      "name": "AL_BG02.KMP",
+      "rom_offset": 1818016
+    },
+    {
+      "index": 108,
+      "name": "AS_BG01.KCG",
+      "rom_offset": 1820256
+    },
+    {
+      "index": 109,
+      "name": "AS_BG01.KCL",
+      "rom_offset": 1829280
+    },
+    {
+      "index": 110,
+      "name": "AS_BG01.KMP",
+      "rom_offset": 1829312
+    },
+    {
+      "index": 111,
+      "name": "AS_BG02.KCG",
+      "rom_offset": 1831552
+    },
+    {
+      "index": 112,
+      "name": "AS_BG02.KCL",
+      "rom_offset": 1836704
+    },
+    {
+      "index": 113,
+      "name": "AS_BG02.KMP",
+      "rom_offset": 1836736
+    },
+    {
+      "index": 114,
+      "name": "AT_BG01.KCG",
+      "rom_offset": 1838976
+    },
+    {
+      "index": 115,
+      "name": "AT_BG01.KCL",
+      "rom_offset": 1846448
+    },
+    {
+      "index": 116,
+      "name": "AT_BG01.KMP",
+      "rom_offset": 1846480
+    },
+    {
+      "index": 117,
+      "name": "BA06.TCG",
+      "rom_offset": 1848720
+    },
+    {
+      "index": 118,
+      "name": "BA06.TCL",
+      "rom_offset": 1860576
+    },
+    {
+      "index": 119,
+      "name": "BA06_00.TSC",
+      "rom_offset": 1860672
+    },
+    {
+      "index": 120,
+      "name": "BA06_01.TSC",
+      "rom_offset": 1862720
+    },
+    {
+      "index": 121,
+      "name": "BA06_BG.TCG",
+      "rom_offset": 1864768
+    },
+    {
+      "index": 122,
+      "name": "BA06_BG.TCL",
+      "rom_offset": 1876800
+    },
+    {
+      "index": 123,
+      "name": "BA06_BG0.TSC",
+      "rom_offset": 1876896
+    },
+    {
+      "index": 124,
+      "name": "BA06_BG1.TSC",
+      "rom_offset": 1878944
+    },
+    {
+      "index": 125,
+      "name": "BA06_BG2.TSC",
+      "rom_offset": 1880992
+    },
+    {
+      "index": 126,
+      "name": "BA07.TCG",
+      "rom_offset": 1883040
+    },
+    {
+      "index": 127,
+      "name": "BA07.TCL",
+      "rom_offset": 1885664
+    },
+    {
+      "index": 128,
+      "name": "BA07.TSC",
+      "rom_offset": 1885760
+    },
+    {
+      "index": 129,
+      "name": "BGM_SET.SPC",
+      "rom_offset": 1887808
+    },
+    {
+      "index": 130,
+      "name": "BTIM00.SPC",
+      "rom_offset": 1892272
+    },
+    {
+      "index": 131,
+      "name": "BTIM01_3.SPC",
+      "rom_offset": 1893264
+    },
+    {
+      "index": 132,
+      "name": "BTIM03.SPC",
+      "rom_offset": 1894192
+    },
+    {
+      "index": 133,
+      "name": "BTIM04.SPC",
+      "rom_offset": 1894336
+    },
+    {
+      "index": 134,
+      "name": "BTIM04_4.SPC",
+      "rom_offset": 1898112
+    },
+    {
+      "index": 135,
+      "name": "BTIM05.SPC",
+      "rom_offset": 1899792
+    },
+    {
+      "index": 136,
+      "name": "BTIM07.SPC",
+      "rom_offset": 1900560
+    },
+    {
+      "index": 137,
+      "name": "BTIM24_1.SPC",
+      "rom_offset": 1905456
+    },
+    {
+      "index": 138,
+      "name": "BTIM24_2.SPC",
+      "rom_offset": 1908096
+    },
+    {
+      "index": 139,
+      "name": "BTIM24_4.SPC",
+      "rom_offset": 1910384
+    },
+    {
+      "index": 140,
+      "name": "BTIM25_1.SPC",
+      "rom_offset": 1912576
+    },
+    {
+      "index": 141,
+      "name": "BTIM25_2.SPC",
+      "rom_offset": 1916368
+    },
+    {
+      "index": 142,
+      "name": "BTIM25_4.SPC",
+      "rom_offset": 1918800
+    },
+    {
+      "index": 143,
+      "name": "BTIM26_1.SPC",
+      "rom_offset": 1924944
+    },
+    {
+      "index": 144,
+      "name": "BTIM26_3.SPC",
+      "rom_offset": 1927600
+    },
+    {
+      "index": 145,
+      "name": "BTIM26_5.SPC",
+      "rom_offset": 1931248
+    },
+    {
+      "index": 146,
+      "name": "BTIM40.SPC",
+      "rom_offset": 1938928
+    },
+    {
+      "index": 147,
+      "name": "BTIM41.SPC",
+      "rom_offset": 1939920
+    },
+    {
+      "index": 148,
+      "name": "BTIM42.SPC",
+      "rom_offset": 1940880
+    },
+    {
+      "index": 149,
+      "name": "BTI_DUNG.SPC",
+      "rom_offset": 1943088
+    },
+    {
+      "index": 150,
+      "name": "BTI_N.SPC",
+      "rom_offset": 1944176
+    },
+    {
+      "index": 151,
+      "name": "BTI_PSET.SPC",
+      "rom_offset": 1947728
+    },
+    {
+      "index": 152,
+      "name": "BTL_ESCP.SPC",
+      "rom_offset": 1949312
+    },
+    {
+      "index": 153,
+      "name": "BTOM00.SPC",
+      "rom_offset": 1950736
+    },
+    {
+      "index": 154,
+      "name": "BTOM01_3.SPC",
+      "rom_offset": 1950832
+    },
+    {
+      "index": 155,
+      "name": "BTOM03.SPC",
+      "rom_offset": 1951248
+    },
+    {
+      "index": 156,
+      "name": "BTOM04.SPC",
+      "rom_offset": 1951552
+    },
+    {
+      "index": 157,
+      "name": "BTOM04_4.SPC",
+      "rom_offset": 1951648
+    },
+    {
+      "index": 158,
+      "name": "BTOM04_6.SPC",
+      "rom_offset": 1951744
+    },
+    {
+      "index": 159,
+      "name": "BTOM05.SPC",
+      "rom_offset": 1952048
+    },
+    {
+      "index": 160,
+      "name": "BTOM07.SPC",
+      "rom_offset": 1952512
+    },
+    {
+      "index": 161,
+      "name": "BTOM07_3.SPC",
+      "rom_offset": 1952992
+    },
+    {
+      "index": 162,
+      "name": "BTOM24_1.SPC",
+      "rom_offset": 1953152
+    },
+    {
+      "index": 163,
+      "name": "BTOM24_2.SPC",
+      "rom_offset": 1953248
+    },
+    {
+      "index": 164,
+      "name": "BTOM24_4.SPC",
+      "rom_offset": 1953344
+    },
+    {
+      "index": 165,
+      "name": "BTOM25_1.SPC",
+      "rom_offset": 1953648
+    },
+    {
+      "index": 166,
+      "name": "BTOM25_2.SPC",
+      "rom_offset": 1953744
+    },
+    {
+      "index": 167,
+      "name": "BTOM25_4.SPC",
+      "rom_offset": 1953840
+    },
+    {
+      "index": 168,
+      "name": "BTOM25_5.SPC",
+      "rom_offset": 1953936
+    },
+    {
+      "index": 169,
+      "name": "BTOM26_1.SPC",
+      "rom_offset": 1954096
+    },
+    {
+      "index": 170,
+      "name": "BTOM26_2.SPC",
+      "rom_offset": 1954192
+    },
+    {
+      "index": 171,
+      "name": "BTOM26_3.SPC",
+      "rom_offset": 1954352
+    },
+    {
+      "index": 172,
+      "name": "BTOM26_5.SPC",
+      "rom_offset": 1954448
+    },
+    {
+      "index": 173,
+      "name": "BTOM26_6.SPC",
+      "rom_offset": 1954544
+    },
+    {
+      "index": 174,
+      "name": "BTOM40.SPC",
+      "rom_offset": 1954640
+    },
+    {
+      "index": 175,
+      "name": "BTOM41.SPC",
+      "rom_offset": 1954896
+    },
+    {
+      "index": 176,
+      "name": "BTOM42.SPC",
+      "rom_offset": 1954992
+    },
+    {
+      "index": 177,
+      "name": "BTO_DEF.SPC",
+      "rom_offset": 1955248
+    },
+    {
+      "index": 178,
+      "name": "BTO_DEF2.SPC",
+      "rom_offset": 1957232
+    },
+    {
+      "index": 179,
+      "name": "BTO_DUNG.SPC",
+      "rom_offset": 1958352
+    },
+    {
+      "index": 180,
+      "name": "BTO_N.SPC",
+      "rom_offset": 1960592
+    },
+    {
+      "index": 181,
+      "name": "CHR.NCD",
+      "rom_offset": 1963696
+    },
+    {
+      "index": 182,
+      "name": "CH_ESC.SPC",
+      "rom_offset": 3832480
+    },
+    {
+      "index": 183,
+      "name": "CH_M00A.SPC",
+      "rom_offset": 3838688
+    },
+    {
+      "index": 184,
+      "name": "CH_M01_3.SPC",
+      "rom_offset": 3839504
+    },
+    {
+      "index": 185,
+      "name": "CH_M03A.SPC",
+      "rom_offset": 3840256
+    },
+    {
+      "index": 186,
+      "name": "CH_M05A.SPC",
+      "rom_offset": 3840352
+    },
+    {
+      "index": 187,
+      "name": "CH_M08A.SPC",
+      "rom_offset": 3841248
+    },
+    {
+      "index": 188,
+      "name": "CH_M09A.SPC",
+      "rom_offset": 3841936
+    },
+    {
+      "index": 189,
+      "name": "CH_M10.SPC",
+      "rom_offset": 3845360
+    },
+    {
+      "index": 190,
+      "name": "CH_M11.SPC",
+      "rom_offset": 3845552
+    },
+    {
+      "index": 191,
+      "name": "CH_M24_3.SPC",
+      "rom_offset": 3847600
+    },
+    {
+      "index": 192,
+      "name": "CH_M24_A.SPC",
+      "rom_offset": 3847808
+    },
+    {
+      "index": 193,
+      "name": "CH_M26_6.SPC",
+      "rom_offset": 3848912
+    },
+    {
+      "index": 194,
+      "name": "CLPASS.KCG",
+      "rom_offset": 3854864
+    },
+    {
+      "index": 195,
+      "name": "CLPASS.KCL",
+      "rom_offset": 3857520
+    },
+    {
+      "index": 196,
+      "name": "CLPASS.KMP",
+      "rom_offset": 3857552
+    },
+    {
+      "index": 197,
+      "name": "CM_BG01.KCG",
+      "rom_offset": 3859792
+    },
+    {
+      "index": 198,
+      "name": "CM_BG01.KCL",
+      "rom_offset": 3866192
+    },
+    {
+      "index": 199,
+      "name": "CM_BG01.KMP",
+      "rom_offset": 3866224
+    },
+    {
+      "index": 200,
+      "name": "CM_BG02.KCG",
+      "rom_offset": 3868464
+    },
+    {
+      "index": 201,
+      "name": "CM_BG02.KCL",
+      "rom_offset": 3872848
+    },
+    {
+      "index": 202,
+      "name": "CM_BG02.KMP",
+      "rom_offset": 3872880
+    },
+    {
+      "index": 203,
+      "name": "D0_BOSS.SPC",
+      "rom_offset": 3875120
+    },
+    {
+      "index": 204,
+      "name": "D0_ENEMY.SPC",
+      "rom_offset": 3877344
+    },
+    {
+      "index": 205,
+      "name": "D0_ITEM.SPC",
+      "rom_offset": 3881904
+    },
+    {
+      "index": 206,
+      "name": "D0_MAKE.SPC",
+      "rom_offset": 3884880
+    },
+    {
+      "index": 207,
+      "name": "D0_NORM.SPC",
+      "rom_offset": 3886496
+    },
+    {
+      "index": 208,
+      "name": "D1_BOSS.SPC",
+      "rom_offset": 3887152
+    },
+    {
+      "index": 209,
+      "name": "D1_ENEMY.SPC",
+      "rom_offset": 3889296
+    },
+    {
+      "index": 210,
+      "name": "D1_ITEM.SPC",
+      "rom_offset": 3897984
+    },
+    {
+      "index": 211,
+      "name": "D1_MAKE.SPC",
+      "rom_offset": 3905232
+    },
+    {
+      "index": 212,
+      "name": "D2_BOSS.SPC",
+      "rom_offset": 3907872
+    },
+    {
+      "index": 213,
+      "name": "D2_ENEMY.SPC",
+      "rom_offset": 3910016
+    },
+    {
+      "index": 214,
+      "name": "D2_ITEM.SPC",
+      "rom_offset": 3923312
+    },
+    {
+      "index": 215,
+      "name": "D2_MAKE.SPC",
+      "rom_offset": 3940864
+    },
+    {
+      "index": 216,
+      "name": "D3_BOSS.SPC",
+      "rom_offset": 3944528
+    },
+    {
+      "index": 217,
+      "name": "D3_ENEMY.SPC",
+      "rom_offset": 3946672
+    },
+    {
+      "index": 218,
+      "name": "D3_ITEM.SPC",
+      "rom_offset": 3964160
+    },
+    {
+      "index": 219,
+      "name": "D3_MAKE.SPC",
+      "rom_offset": 3985856
+    },
+    {
+      "index": 220,
+      "name": "D4_BOSS.SPC",
+      "rom_offset": 3990544
+    },
+    {
+      "index": 221,
+      "name": "D4_ENEMY.SPC",
+      "rom_offset": 3992688
+    },
+    {
+      "index": 222,
+      "name": "D4_ITEM.SPC",
+      "rom_offset": 4014416
+    },
+    {
+      "index": 223,
+      "name": "D4_MAKE.SPC",
+      "rom_offset": 4037264
+    },
+    {
+      "index": 224,
+      "name": "DBG_BTL.SPC",
+      "rom_offset": 4043216
+    },
+    {
+      "index": 225,
+      "name": "DBG_BTLQ.SPC",
+      "rom_offset": 4044112
+    },
+    {
+      "index": 226,
+      "name": "DBG_ESC.SPC",
+      "rom_offset": 4049328
+    },
+    {
+      "index": 227,
+      "name": "DBG_FACE.SPC",
+      "rom_offset": 4052736
+    },
+    {
+      "index": 228,
+      "name": "DITEMCOM.SPC",
+      "rom_offset": 4086160
+    },
+    {
+      "index": 229,
+      "name": "DS_BG01.KCG",
+      "rom_offset": 4089472
+    },
+    {
+      "index": 230,
+      "name": "DS_BG01.KCL",
+      "rom_offset": 4102512
+    },
+    {
+      "index": 231,
+      "name": "DS_BG01.KMP",
+      "rom_offset": 4102544
+    },
+    {
+      "index": 232,
+      "name": "DS_BG02.KCG",
+      "rom_offset": 4104784
+    },
+    {
+      "index": 233,
+      "name": "DS_BG02.KCL",
+      "rom_offset": 4108688
+    },
+    {
+      "index": 234,
+      "name": "DS_BG02.KMP",
+      "rom_offset": 4108720
+    },
+    {
+      "index": 235,
+      "name": "DUNG_DEF.SPC",
+      "rom_offset": 4110960
+    },
+    {
+      "index": 236,
+      "name": "DUNG_END.SPC",
+      "rom_offset": 4112512
+    },
+    {
+      "index": 237,
+      "name": "D_VS_R.SPC",
+      "rom_offset": 4115472
+    },
+    {
+      "index": 238,
+      "name": "EFCSTART.KMP",
+      "rom_offset": 4118800
+    },
+    {
+      "index": 239,
+      "name": "EFFECT.NCD",
+      "rom_offset": 4121040
+    },
+    {
+      "index": 240,
+      "name": "END2.SPC",
+      "rom_offset": 6096704
+    },
+    {
+      "index": 241,
+      "name": "ENE_SET.SPC",
+      "rom_offset": 6105120
+    },
+    {
+      "index": 242,
+      "name": "EV_AL01.SPC",
+      "rom_offset": 6113712
+    },
+    {
+      "index": 243,
+      "name": "EV_AL02.SPC",
+      "rom_offset": 6117360
+    },
+    {
+      "index": 244,
+      "name": "EV_AL02B.SPC",
+      "rom_offset": 6120816
+    },
+    {
+      "index": 245,
+      "name": "EV_AL03.SPC",
+      "rom_offset": 6126288
+    },
+    {
+      "index": 246,
+      "name": "EV_AL04.SPC",
+      "rom_offset": 6130064
+    },
+    {
+      "index": 247,
+      "name": "EV_BA01.SPC",
+      "rom_offset": 6130768
+    },
+    {
+      "index": 248,
+      "name": "EV_BA02.SPC",
+      "rom_offset": 6134640
+    },
+    {
+      "index": 249,
+      "name": "EV_BA03.SPC",
+      "rom_offset": 6136784
+    },
+    {
+      "index": 250,
+      "name": "EV_BA04.SPC",
+      "rom_offset": 6138400
+    },
+    {
+      "index": 251,
+      "name": "EV_BIN01.SPC",
+      "rom_offset": 6140400
+    },
+    {
+      "index": 252,
+      "name": "EV_BIN02.SPC",
+      "rom_offset": 6141488
+    },
+    {
+      "index": 253,
+      "name": "EV_BIN03.SPC",
+      "rom_offset": 6142608
+    },
+    {
+      "index": 254,
+      "name": "EV_EDO01.SPC",
+      "rom_offset": 6143824
+    },
+    {
+      "index": 255,
+      "name": "EV_GO01.SPC",
+      "rom_offset": 6147584
+    },
+    {
+      "index": 256,
+      "name": "EV_GO02.SPC",
+      "rom_offset": 6150592
+    },
+    {
+      "index": 257,
+      "name": "EV_GO03.SPC",
+      "rom_offset": 6152768
+    },
+    {
+      "index": 258,
+      "name": "EV_GO04.SPC",
+      "rom_offset": 6153856
+    },
+    {
+      "index": 259,
+      "name": "EV_GO05.SPC",
+      "rom_offset": 6156544
+    },
+    {
+      "index": 260,
+      "name": "EV_GO06.SPC",
+      "rom_offset": 6158528
+    },
+    {
+      "index": 261,
+      "name": "EV_GO07.SPC",
+      "rom_offset": 6159968
+    },
+    {
+      "index": 262,
+      "name": "EV_GO08.SPC",
+      "rom_offset": 6161552
+    },
+    {
+      "index": 263,
+      "name": "EV_GO09.SPC",
+      "rom_offset": 6162512
+    },
+    {
+      "index": 264,
+      "name": "EV_GO10.SPC",
+      "rom_offset": 6165200
+    },
+    {
+      "index": 265,
+      "name": "EV_GO11.SPC",
+      "rom_offset": 6166880
+    },
+    {
+      "index": 266,
+      "name": "EV_GO12.SPC",
+      "rom_offset": 6171072
+    },
+    {
+      "index": 267,
+      "name": "EV_GTOB.SPC",
+      "rom_offset": 6173120
+    },
+    {
+      "index": 268,
+      "name": "EV_GTOB2.SPC",
+      "rom_offset": 6175440
+    },
+    {
+      "index": 269,
+      "name": "EV_ICE01.SPC",
+      "rom_offset": 6176608
+    },
+    {
+      "index": 270,
+      "name": "EV_ICE02.SPC",
+      "rom_offset": 6179152
+    },
+    {
+      "index": 271,
+      "name": "EV_ICE03.SPC",
+      "rom_offset": 6182656
+    },
+    {
+      "index": 272,
+      "name": "EV_ICE04.SPC",
+      "rom_offset": 6183984
+    },
+    {
+      "index": 273,
+      "name": "EV_ICE05.SPC",
+      "rom_offset": 6184784
+    },
+    {
+      "index": 274,
+      "name": "EV_ICE06.SPC",
+      "rom_offset": 6185408
+    },
+    {
+      "index": 275,
+      "name": "EV_ICE07.SPC",
+      "rom_offset": 6185968
+    },
+    {
+      "index": 276,
+      "name": "EV_ICE08.SPC",
+      "rom_offset": 6188032
+    },
+    {
+      "index": 277,
+      "name": "EV_ICE09.SPC",
+      "rom_offset": 6188688
+    },
+    {
+      "index": 278,
+      "name": "EV_ICE10.SPC",
+      "rom_offset": 6193920
+    },
+    {
+      "index": 279,
+      "name": "EV_ICE11.SPC",
+      "rom_offset": 6197792
+    },
+    {
+      "index": 280,
+      "name": "EV_ICE12.SPC",
+      "rom_offset": 6201488
+    },
+    {
+      "index": 281,
+      "name": "EV_IWA.SPC",
+      "rom_offset": 6208112
+    },
+    {
+      "index": 282,
+      "name": "EV_JA01.SPC",
+      "rom_offset": 6209072
+    },
+    {
+      "index": 283,
+      "name": "EV_JA02.SPC",
+      "rom_offset": 6214656
+    },
+    {
+      "index": 284,
+      "name": "EV_JA03.SPC",
+      "rom_offset": 6216784
+    },
+    {
+      "index": 285,
+      "name": "EV_JA04.SPC",
+      "rom_offset": 6219536
+    },
+    {
+      "index": 286,
+      "name": "EV_JA04B.SPC",
+      "rom_offset": 6222080
+    },
+    {
+      "index": 287,
+      "name": "EV_JA04C.SPC",
+      "rom_offset": 6225088
+    },
+    {
+      "index": 288,
+      "name": "EV_MON01.SPC",
+      "rom_offset": 6226032
+    },
+    {
+      "index": 289,
+      "name": "EV_MON02.SPC",
+      "rom_offset": 6227680
+    },
+    {
+      "index": 290,
+      "name": "EV_MON03.SPC",
+      "rom_offset": 6229392
+    },
+    {
+      "index": 291,
+      "name": "EV_MON04.SPC",
+      "rom_offset": 6230208
+    },
+    {
+      "index": 292,
+      "name": "EV_MON05.SPC",
+      "rom_offset": 6231360
+    },
+    {
+      "index": 293,
+      "name": "EV_MON06.SPC",
+      "rom_offset": 6231968
+    },
+    {
+      "index": 294,
+      "name": "EV_PA01.SPC",
+      "rom_offset": 6232656
+    },
+    {
+      "index": 295,
+      "name": "EV_RT01.SPC",
+      "rom_offset": 6234192
+    },
+    {
+      "index": 296,
+      "name": "EV_RT02.SPC",
+      "rom_offset": 6235392
+    },
+    {
+      "index": 297,
+      "name": "EV_RT03.SPC",
+      "rom_offset": 6237616
+    },
+    {
+      "index": 298,
+      "name": "EV_START.SPC",
+      "rom_offset": 6240896
+    },
+    {
+      "index": 299,
+      "name": "EV_T1KIL.SPC",
+      "rom_offset": 6242592
+    },
+    {
+      "index": 300,
+      "name": "EV_T2KIL.SPC",
+      "rom_offset": 6244752
+    },
+    {
+      "index": 301,
+      "name": "EV_T3KIL.SPC",
+      "rom_offset": 6247472
+    },
+    {
+      "index": 302,
+      "name": "EV_T4KIL.SPC",
+      "rom_offset": 6253920
+    },
+    {
+      "index": 303,
+      "name": "EV_UTA01.SPC",
+      "rom_offset": 6258432
+    },
+    {
+      "index": 304,
+      "name": "EV_VE01.SPC",
+      "rom_offset": 6262144
+    },
+    {
+      "index": 305,
+      "name": "EV_VE02.SPC",
+      "rom_offset": 6263648
+    },
+    {
+      "index": 306,
+      "name": "FONT.NFT",
+      "rom_offset": 6266992
+    },
+    {
+      "index": 307,
+      "name": "FULL_ITM.SPC",
+      "rom_offset": 6330960
+    },
+    {
+      "index": 308,
+      "name": "GA08.TCG",
+      "rom_offset": 6331968
+    },
+    {
+      "index": 309,
+      "name": "GA08.TCL",
+      "rom_offset": 6341792
+    },
+    {
+      "index": 310,
+      "name": "GA08_00.TSC",
+      "rom_offset": 6341888
+    },
+    {
+      "index": 311,
+      "name": "GA08_01.TSC",
+      "rom_offset": 6345984
+    },
+    {
+      "index": 312,
+      "name": "GA08_02.TSC",
+      "rom_offset": 6350080
+    },
+    {
+      "index": 313,
+      "name": "GA08_03.TSC",
+      "rom_offset": 6354176
+    },
+    {
+      "index": 314,
+      "name": "GA08_10.TSC",
+      "rom_offset": 6358272
+    },
+    {
+      "index": 315,
+      "name": "GA08_11.TSC",
+      "rom_offset": 6362368
+    },
+    {
+      "index": 316,
+      "name": "GA08_12.TSC",
+      "rom_offset": 6366464
+    },
+    {
+      "index": 317,
+      "name": "GA08_13.TSC",
+      "rom_offset": 6370560
+    },
+    {
+      "index": 318,
+      "name": "GA13.TCG",
+      "rom_offset": 6374656
+    },
+    {
+      "index": 319,
+      "name": "GA13.TCL",
+      "rom_offset": 6379520
+    },
+    {
+      "index": 320,
+      "name": "GA13_00.TSC",
+      "rom_offset": 6379616
+    },
+    {
+      "index": 321,
+      "name": "GA13_01.TSC",
+      "rom_offset": 6381664
+    },
+    {
+      "index": 322,
+      "name": "GA13_02.TSC",
+      "rom_offset": 6383712
+    },
+    {
+      "index": 323,
+      "name": "GA13_03.TSC",
+      "rom_offset": 6385760
+    },
+    {
+      "index": 324,
+      "name": "GA13_04.TSC",
+      "rom_offset": 6387808
+    },
+    {
+      "index": 325,
+      "name": "GA13_05.TSC",
+      "rom_offset": 6389856
+    },
+    {
+      "index": 326,
+      "name": "GA13_06.TSC",
+      "rom_offset": 6391904
+    },
+    {
+      "index": 327,
+      "name": "GA13_10.TSC",
+      "rom_offset": 6393952
+    },
+    {
+      "index": 328,
+      "name": "GA13_11.TSC",
+      "rom_offset": 6396000
+    },
+    {
+      "index": 329,
+      "name": "GA24.TCG",
+      "rom_offset": 6398048
+    },
+    {
+      "index": 330,
+      "name": "GA24.TCL",
+      "rom_offset": 6405728
+    },
+    {
+      "index": 331,
+      "name": "GA24_00.TSC",
+      "rom_offset": 6405824
+    },
+    {
+      "index": 332,
+      "name": "GA24_01.TSC",
+      "rom_offset": 6407872
+    },
+    {
+      "index": 333,
+      "name": "GA24_02.TSC",
+      "rom_offset": 6409920
+    },
+    {
+      "index": 334,
+      "name": "GA24_03.TSC",
+      "rom_offset": 6411968
+    },
+    {
+      "index": 335,
+      "name": "GA24_10.TSC",
+      "rom_offset": 6414016
+    },
+    {
+      "index": 336,
+      "name": "GA24_11.TSC",
+      "rom_offset": 6416064
+    },
+    {
+      "index": 337,
+      "name": "GA24_12.TSC",
+      "rom_offset": 6418112
+    },
+    {
+      "index": 338,
+      "name": "GA24_13.TSC",
+      "rom_offset": 6420160
+    },
+    {
+      "index": 339,
+      "name": "GA25.TCG",
+      "rom_offset": 6422208
+    },
+    {
+      "index": 340,
+      "name": "GA25.TCL",
+      "rom_offset": 6430464
+    },
+    {
+      "index": 341,
+      "name": "GA25_00.TSC",
+      "rom_offset": 6430560
+    },
+    {
+      "index": 342,
+      "name": "GA25_01.TSC",
+      "rom_offset": 6432608
+    },
+    {
+      "index": 343,
+      "name": "GA25_02.TSC",
+      "rom_offset": 6434656
+    },
+    {
+      "index": 344,
+      "name": "GA25_03.TSC",
+      "rom_offset": 6436704
+    },
+    {
+      "index": 345,
+      "name": "GA25_10.TSC",
+      "rom_offset": 6438752
+    },
+    {
+      "index": 346,
+      "name": "GA25_11.TSC",
+      "rom_offset": 6440800
+    },
+    {
+      "index": 347,
+      "name": "GA25_12.TSC",
+      "rom_offset": 6442848
+    },
+    {
+      "index": 348,
+      "name": "GA25_13.TSC",
+      "rom_offset": 6444896
+    },
+    {
+      "index": 349,
+      "name": "GA26.TCG",
+      "rom_offset": 6446944
+    },
+    {
+      "index": 350,
+      "name": "GA26.TCL",
+      "rom_offset": 6450592
+    },
+    {
+      "index": 351,
+      "name": "GA26_00.TSC",
+      "rom_offset": 6450688
+    },
+    {
+      "index": 352,
+      "name": "GA26_01.TSC",
+      "rom_offset": 6452736
+    },
+    {
+      "index": 353,
+      "name": "GA26_10.TSC",
+      "rom_offset": 6454784
+    },
+    {
+      "index": 354,
+      "name": "GA26_11.TSC",
+      "rom_offset": 6456832
+    },
+    {
+      "index": 355,
+      "name": "GA60.TCG",
+      "rom_offset": 6458880
+    },
+    {
+      "index": 356,
+      "name": "GA60.TCL",
+      "rom_offset": 6464928
+    },
+    {
+      "index": 357,
+      "name": "GA60_00.TSC",
+      "rom_offset": 6465024
+    },
+    {
+      "index": 358,
+      "name": "GA60_01.TSC",
+      "rom_offset": 6467072
+    },
+    {
+      "index": 359,
+      "name": "GA60_02.TSC",
+      "rom_offset": 6469120
+    },
+    {
+      "index": 360,
+      "name": "GA60_03.TSC",
+      "rom_offset": 6471168
+    },
+    {
+      "index": 361,
+      "name": "GA60_04.TSC",
+      "rom_offset": 6473216
+    },
+    {
+      "index": 362,
+      "name": "GA60_05.TSC",
+      "rom_offset": 6475264
+    },
+    {
+      "index": 363,
+      "name": "GA60_06.TSC",
+      "rom_offset": 6477312
+    },
+    {
+      "index": 364,
+      "name": "GA60_10.TSC",
+      "rom_offset": 6479360
+    },
+    {
+      "index": 365,
+      "name": "GA60_11.TSC",
+      "rom_offset": 6481408
+    },
+    {
+      "index": 366,
+      "name": "GA60_12.TSC",
+      "rom_offset": 6483456
+    },
+    {
+      "index": 367,
+      "name": "GA60_13.TSC",
+      "rom_offset": 6485504
+    },
+    {
+      "index": 368,
+      "name": "GA60_14.TSC",
+      "rom_offset": 6487552
+    },
+    {
+      "index": 369,
+      "name": "GA60_15.TSC",
+      "rom_offset": 6489600
+    },
+    {
+      "index": 370,
+      "name": "GA60_16.TSC",
+      "rom_offset": 6491648
+    },
+    {
+      "index": 371,
+      "name": "GA_BG01.KCG",
+      "rom_offset": 6493696
+    },
+    {
+      "index": 372,
+      "name": "GA_BG01.KCL",
+      "rom_offset": 6500880
+    },
+    {
+      "index": 373,
+      "name": "GA_BG01.KMP",
+      "rom_offset": 6500912
+    },
+    {
+      "index": 374,
+      "name": "GMAP27_A.SPC",
+      "rom_offset": 6503152
+    },
+    {
+      "index": 375,
+      "name": "G_EV001.SPC",
+      "rom_offset": 6503392
+    },
+    {
+      "index": 376,
+      "name": "G_EV002.SPC",
+      "rom_offset": 6504704
+    },
+    {
+      "index": 377,
+      "name": "G_EV003.SPC",
+      "rom_offset": 6505696
+    },
+    {
+      "index": 378,
+      "name": "G_EV004.SPC",
+      "rom_offset": 6510080
+    },
+    {
+      "index": 379,
+      "name": "G_EV005.SPC",
+      "rom_offset": 6510512
+    },
+    {
+      "index": 380,
+      "name": "G_EV006.SPC",
+      "rom_offset": 6513920
+    },
+    {
+      "index": 381,
+      "name": "G_EV007.SPC",
+      "rom_offset": 6516864
+    },
+    {
+      "index": 382,
+      "name": "G_EV010.SPC",
+      "rom_offset": 6519056
+    },
+    {
+      "index": 383,
+      "name": "G_EV011.SPC",
+      "rom_offset": 6520000
+    },
+    {
+      "index": 384,
+      "name": "G_EV011B.SPC",
+      "rom_offset": 6524432
+    },
+    {
+      "index": 385,
+      "name": "G_EV011C.SPC",
+      "rom_offset": 6526272
+    },
+    {
+      "index": 386,
+      "name": "G_EV012.SPC",
+      "rom_offset": 6529136
+    },
+    {
+      "index": 387,
+      "name": "G_EV013.SPC",
+      "rom_offset": 6530848
+    },
+    {
+      "index": 388,
+      "name": "G_EV020.SPC",
+      "rom_offset": 6532400
+    },
+    {
+      "index": 389,
+      "name": "G_EV020B.SPC",
+      "rom_offset": 6537184
+    },
+    {
+      "index": 390,
+      "name": "G_EV020C.SPC",
+      "rom_offset": 6541792
+    },
+    {
+      "index": 391,
+      "name": "G_EV021.SPC",
+      "rom_offset": 6544272
+    },
+    {
+      "index": 392,
+      "name": "G_EV022.SPC",
+      "rom_offset": 6548256
+    },
+    {
+      "index": 393,
+      "name": "G_EV023.SPC",
+      "rom_offset": 6548304
+    },
+    {
+      "index": 394,
+      "name": "G_EV023B.SPC",
+      "rom_offset": 6552944
+    },
+    {
+      "index": 395,
+      "name": "G_EV023C.SPC",
+      "rom_offset": 6553424
+    },
+    {
+      "index": 396,
+      "name": "G_EV024.SPC",
+      "rom_offset": 6555776
+    },
+    {
+      "index": 397,
+      "name": "G_EV025.SPC",
+      "rom_offset": 6559584
+    },
+    {
+      "index": 398,
+      "name": "G_EV025B.SPC",
+      "rom_offset": 6562256
+    },
+    {
+      "index": 399,
+      "name": "G_EV030.SPC",
+      "rom_offset": 6567136
+    },
+    {
+      "index": 400,
+      "name": "G_EV031.SPC",
+      "rom_offset": 6570272
+    },
+    {
+      "index": 401,
+      "name": "G_EV032.SPC",
+      "rom_offset": 6572192
+    },
+    {
+      "index": 402,
+      "name": "G_EV040.SPC",
+      "rom_offset": 6572240
+    },
+    {
+      "index": 403,
+      "name": "G_EV041.SPC",
+      "rom_offset": 6574160
+    },
+    {
+      "index": 404,
+      "name": "G_EV042.SPC",
+      "rom_offset": 6576080
+    },
+    {
+      "index": 405,
+      "name": "G_EV043.SPC",
+      "rom_offset": 6578304
+    },
+    {
+      "index": 406,
+      "name": "G_EV044.SPC",
+      "rom_offset": 6580240
+    },
+    {
+      "index": 407,
+      "name": "G_EV050.SPC",
+      "rom_offset": 6581856
+    },
+    {
+      "index": 408,
+      "name": "G_EV051.SPC",
+      "rom_offset": 6586272
+    },
+    {
+      "index": 409,
+      "name": "G_EV052.SPC",
+      "rom_offset": 6589632
+    },
+    {
+      "index": 410,
+      "name": "G_EV060.SPC",
+      "rom_offset": 6590560
+    },
+    {
+      "index": 411,
+      "name": "G_EV061.SPC",
+      "rom_offset": 6592976
+    },
+    {
+      "index": 412,
+      "name": "G_EV062.SPC",
+      "rom_offset": 6597040
+    },
+    {
+      "index": 413,
+      "name": "G_EV063.SPC",
+      "rom_offset": 6604880
+    },
+    {
+      "index": 414,
+      "name": "G_VS_R.SPC",
+      "rom_offset": 6606128
+    },
+    {
+      "index": 415,
+      "name": "HI_DUNG.SPC",
+      "rom_offset": 6606800
+    },
+    {
+      "index": 416,
+      "name": "HI_M00.SPC",
+      "rom_offset": 6607504
+    },
+    {
+      "index": 417,
+      "name": "HI_M01_1.SPC",
+      "rom_offset": 6609072
+    },
+    {
+      "index": 418,
+      "name": "HI_M01_2.SPC",
+      "rom_offset": 6609680
+    },
+    {
+      "index": 419,
+      "name": "HI_M04.SPC",
+      "rom_offset": 6610464
+    },
+    {
+      "index": 420,
+      "name": "HI_M07.SPC",
+      "rom_offset": 6611024
+    },
+    {
+      "index": 421,
+      "name": "HI_M07_2.SPC",
+      "rom_offset": 6613232
+    },
+    {
+      "index": 422,
+      "name": "HI_M09.SPC",
+      "rom_offset": 6613376
+    },
+    {
+      "index": 423,
+      "name": "HI_M11.SPC",
+      "rom_offset": 6613968
+    },
+    {
+      "index": 424,
+      "name": "HI_M24.SPC",
+      "rom_offset": 6615440
+    },
+    {
+      "index": 425,
+      "name": "HI_M24_1.SPC",
+      "rom_offset": 6620704
+    },
+    {
+      "index": 426,
+      "name": "HI_M24_2.SPC",
+      "rom_offset": 6623088
+    },
+    {
+      "index": 427,
+      "name": "HI_M24_4.SPC",
+      "rom_offset": 6627184
+    },
+    {
+      "index": 428,
+      "name": "HI_M25_1.SPC",
+      "rom_offset": 6631760
+    },
+    {
+      "index": 429,
+      "name": "HI_M25_2.SPC",
+      "rom_offset": 6632768
+    },
+    {
+      "index": 430,
+      "name": "HI_M26_2.SPC",
+      "rom_offset": 6634256
+    },
+    {
+      "index": 431,
+      "name": "HI_M42.SPC",
+      "rom_offset": 6635008
+    },
+    {
+      "index": 432,
+      "name": "HI_NORM.SPC",
+      "rom_offset": 6635168
+    },
+    {
+      "index": 433,
+      "name": "IT_BG01.KCG",
+      "rom_offset": 6636048
+    },
+    {
+      "index": 434,
+      "name": "IT_BG01.KCL",
+      "rom_offset": 6641872
+    },
+    {
+      "index": 435,
+      "name": "IT_BG01.KMP",
+      "rom_offset": 6641904
+    },
+    {
+      "index": 436,
+      "name": "IT_BG02.KCG",
+      "rom_offset": 6644144
+    },
+    {
+      "index": 437,
+      "name": "IT_BG02.KCL",
+      "rom_offset": 6648432
+    },
+    {
+      "index": 438,
+      "name": "IT_BG02.KMP",
+      "rom_offset": 6648464
+    },
+    {
+      "index": 439,
+      "name": "JA05.TCG",
+      "rom_offset": 6650704
+    },
+    {
+      "index": 440,
+      "name": "JA05.TCL",
+      "rom_offset": 6656768
+    },
+    {
+      "index": 441,
+      "name": "JA05_A.TSC",
+      "rom_offset": 6656864
+    },
+    {
+      "index": 442,
+      "name": "JA05_B.TSC",
+      "rom_offset": 6658912
+    },
+    {
+      "index": 443,
+      "name": "JA05_C.TSC",
+      "rom_offset": 6660960
+    },
+    {
+      "index": 444,
+      "name": "JA05_D.TSC",
+      "rom_offset": 6663008
+    },
+    {
+      "index": 445,
+      "name": "J_HOLE.SPC",
+      "rom_offset": 6665056
+    },
+    {
+      "index": 446,
+      "name": "J_VS_M.SPC",
+      "rom_offset": 6666672
+    },
+    {
+      "index": 447,
+      "name": "L11_0_0.SPC",
+      "rom_offset": 6667440
+    },
+    {
+      "index": 448,
+      "name": "L11_0_2.SPC",
+      "rom_offset": 6670288
+    },
+    {
+      "index": 449,
+      "name": "L11_0_3.SPC",
+      "rom_offset": 6672960
+    },
+    {
+      "index": 450,
+      "name": "L24_0_0.SPC",
+      "rom_offset": 6674128
+    },
+    {
+      "index": 451,
+      "name": "L24_1_0.SPC",
+      "rom_offset": 6677856
+    },
+    {
+      "index": 452,
+      "name": "L25_4_0.SPC",
+      "rom_offset": 6678272
+    },
+    {
+      "index": 453,
+      "name": "MAP00_A.KCG",
+      "rom_offset": 6680224
+    },
+    {
+      "index": 454,
+      "name": "MAP00_A.KCL",
+      "rom_offset": 6701312
+    },
+    {
+      "index": 455,
+      "name": "MAP00_A.KMP",
+      "rom_offset": 6701568
+    },
+    {
+      "index": 456,
+      "name": "MAP00_A.SPC",
+      "rom_offset": 6922944
+    },
+    {
+      "index": 457,
+      "name": "MAP01_1A.KCG",
+      "rom_offset": 6923776
+    },
+    {
+      "index": 458,
+      "name": "MAP01_1A.KCL",
+      "rom_offset": 6947520
+    },
+    {
+      "index": 459,
+      "name": "MAP01_1A.KMP",
+      "rom_offset": 6947840
+    },
+    {
+      "index": 460,
+      "name": "MAP01_1A.SPC",
+      "rom_offset": 6971072
+    },
+    {
+      "index": 461,
+      "name": "MAP01_2A.KCG",
+      "rom_offset": 6971664
+    },
+    {
+      "index": 462,
+      "name": "MAP01_2A.KCL",
+      "rom_offset": 6994080
+    },
+    {
+      "index": 463,
+      "name": "MAP01_2A.KMP",
+      "rom_offset": 6994400
+    },
+    {
+      "index": 464,
+      "name": "MAP01_2A.SPC",
+      "rom_offset": 7006880
+    },
+    {
+      "index": 465,
+      "name": "MAP01_3A.KCG",
+      "rom_offset": 7007136
+    },
+    {
+      "index": 466,
+      "name": "MAP01_3A.KCL",
+      "rom_offset": 7033264
+    },
+    {
+      "index": 467,
+      "name": "MAP01_3A.KMP",
+      "rom_offset": 7033584
+    },
+    {
+      "index": 468,
+      "name": "MAP01_3A.SPC",
+      "rom_offset": 7076784
+    },
+    {
+      "index": 469,
+      "name": "MAP01_4A.KMP",
+      "rom_offset": 7077536
+    },
+    {
+      "index": 470,
+      "name": "MAP01_4A.SPC",
+      "rom_offset": 7102304
+    },
+    {
+      "index": 471,
+      "name": "MAP01_5A.KMP",
+      "rom_offset": 7102736
+    },
+    {
+      "index": 472,
+      "name": "MAP01_5A.SPC",
+      "rom_offset": 7127504
+    },
+    {
+      "index": 473,
+      "name": "MAP01_6A.KMP",
+      "rom_offset": 7128064
+    },
+    {
+      "index": 474,
+      "name": "MAP01_A.KCG",
+      "rom_offset": 7149856
+    },
+    {
+      "index": 475,
+      "name": "MAP01_A.KCL",
+      "rom_offset": 7176416
+    },
+    {
+      "index": 476,
+      "name": "MAP01_A.KMP",
+      "rom_offset": 7176704
+    },
+    {
+      "index": 477,
+      "name": "MAP01_A.SPC",
+      "rom_offset": 7201472
+    },
+    {
+      "index": 478,
+      "name": "MAP03_A.KCG",
+      "rom_offset": 7201984
+    },
+    {
+      "index": 479,
+      "name": "MAP03_A.KCL",
+      "rom_offset": 7225776
+    },
+    {
+      "index": 480,
+      "name": "MAP03_A.KMP",
+      "rom_offset": 7226096
+    },
+    {
+      "index": 481,
+      "name": "MAP03_A.SPC",
+      "rom_offset": 7250864
+    },
+    {
+      "index": 482,
+      "name": "MAP04_4A.KMP",
+      "rom_offset": 7251216
+    },
+    {
+      "index": 483,
+      "name": "MAP04_4A.SPC",
+      "rom_offset": 7391760
+    },
+    {
+      "index": 484,
+      "name": "MAP04_5A.KMP",
+      "rom_offset": 7392256
+    },
+    {
+      "index": 485,
+      "name": "MAP04_5A.SPC",
+      "rom_offset": 7424896
+    },
+    {
+      "index": 486,
+      "name": "MAP04_6A.KCG",
+      "rom_offset": 7425488
+    },
+    {
+      "index": 487,
+      "name": "MAP04_6A.KCL",
+      "rom_offset": 7451696
+    },
+    {
+      "index": 488,
+      "name": "MAP04_6A.KMP",
+      "rom_offset": 7452016
+    },
+    {
+      "index": 489,
+      "name": "MAP04_6A.SPC",
+      "rom_offset": 7476784
+    },
+    {
+      "index": 490,
+      "name": "MAP04_7A.KCG",
+      "rom_offset": 7477072
+    },
+    {
+      "index": 491,
+      "name": "MAP04_7A.KCL",
+      "rom_offset": 7493984
+    },
+    {
+      "index": 492,
+      "name": "MAP04_7A.KMP",
+      "rom_offset": 7494304
+    },
+    {
+      "index": 493,
+      "name": "MAP04_A.KCG",
+      "rom_offset": 7519072
+    },
+    {
+      "index": 494,
+      "name": "MAP04_A.KCL",
+      "rom_offset": 7543744
+    },
+    {
+      "index": 495,
+      "name": "MAP04_A.KMP",
+      "rom_offset": 7544064
+    },
+    {
+      "index": 496,
+      "name": "MAP04_A.SPC",
+      "rom_offset": 7839168
+    },
+    {
+      "index": 497,
+      "name": "MAP05_A.KCG",
+      "rom_offset": 7840464
+    },
+    {
+      "index": 498,
+      "name": "MAP05_A.KCL",
+      "rom_offset": 7859936
+    },
+    {
+      "index": 499,
+      "name": "MAP05_A.KMP",
+      "rom_offset": 7860224
+    },
+    {
+      "index": 500,
+      "name": "MAP05_A.SPC",
+      "rom_offset": 7909568
+    },
+    {
+      "index": 501,
+      "name": "MAP06_1A.KCG",
+      "rom_offset": 7910448
+    },
+    {
+      "index": 502,
+      "name": "MAP06_1A.KCL",
+      "rom_offset": 7935088
+    },
+    {
+      "index": 503,
+      "name": "MAP06_1A.KMP",
+      "rom_offset": 7935312
+    },
+    {
+      "index": 504,
+      "name": "MAP06_1A.SPC",
+      "rom_offset": 7975440
+    },
+    {
+      "index": 505,
+      "name": "MAP06_2A.KCG",
+      "rom_offset": 7976192
+    },
+    {
+      "index": 506,
+      "name": "MAP06_2A.KCL",
+      "rom_offset": 8000144
+    },
+    {
+      "index": 507,
+      "name": "MAP06_2A.KMP",
+      "rom_offset": 8000432
+    },
+    {
+      "index": 508,
+      "name": "MAP06_2A.SPC",
+      "rom_offset": 8008304
+    },
+    {
+      "index": 509,
+      "name": "MAP06_A.KCG",
+      "rom_offset": 8008768
+    },
+    {
+      "index": 510,
+      "name": "MAP06_A.KCL",
+      "rom_offset": 8033408
+    },
+    {
+      "index": 511,
+      "name": "MAP06_A.KMP",
+      "rom_offset": 8033632
+    },
+    {
+      "index": 512,
+      "name": "MAP06_A.SPC",
+      "rom_offset": 8046112
+    },
+    {
+      "index": 513,
+      "name": "MAP07_1A.KMP",
+      "rom_offset": 8046400
+    },
+    {
+      "index": 514,
+      "name": "MAP07_1A.SPC",
+      "rom_offset": 8127488
+    },
+    {
+      "index": 515,
+      "name": "MAP07_2A.KCG",
+      "rom_offset": 8127648
+    },
+    {
+      "index": 516,
+      "name": "MAP07_2A.KCL",
+      "rom_offset": 8147168
+    },
+    {
+      "index": 517,
+      "name": "MAP07_2A.KMP",
+      "rom_offset": 8147360
+    },
+    {
+      "index": 518,
+      "name": "MAP07_2A.SPC",
+      "rom_offset": 8159072
+    },
+    {
+      "index": 519,
+      "name": "MAP07_3A.KCG",
+      "rom_offset": 8159296
+    },
+    {
+      "index": 520,
+      "name": "MAP07_3A.KCL",
+      "rom_offset": 8183776
+    },
+    {
+      "index": 521,
+      "name": "MAP07_3A.KMP",
+      "rom_offset": 8184064
+    },
+    {
+      "index": 522,
+      "name": "MAP07_3A.SPC",
+      "rom_offset": 8199552
+    },
+    {
+      "index": 523,
+      "name": "MAP07_A.KCG",
+      "rom_offset": 8199712
+    },
+    {
+      "index": 524,
+      "name": "MAP07_A.KCL",
+      "rom_offset": 8221168
+    },
+    {
+      "index": 525,
+      "name": "MAP07_A.KMP",
+      "rom_offset": 8221296
+    },
+    {
+      "index": 526,
+      "name": "MAP07_A.SPC",
+      "rom_offset": 8718352
+    },
+    {
+      "index": 527,
+      "name": "MAP08_A.KCG",
+      "rom_offset": 8719984
+    },
+    {
+      "index": 528,
+      "name": "MAP08_A.KCL",
+      "rom_offset": 8741296
+    },
+    {
+      "index": 529,
+      "name": "MAP08_A.KMP",
+      "rom_offset": 8741552
+    },
+    {
+      "index": 530,
+      "name": "MAP08_A.SPC",
+      "rom_offset": 8766320
+    },
+    {
+      "index": 531,
+      "name": "MAP09_A.KCG",
+      "rom_offset": 8766784
+    },
+    {
+      "index": 532,
+      "name": "MAP09_A.KCL",
+      "rom_offset": 8790304
+    },
+    {
+      "index": 533,
+      "name": "MAP09_A.KMP",
+      "rom_offset": 8790624
+    },
+    {
+      "index": 534,
+      "name": "MAP09_A.SPC",
+      "rom_offset": 8855712
+    },
+    {
+      "index": 535,
+      "name": "MAP10_1A.KCG",
+      "rom_offset": 8856752
+    },
+    {
+      "index": 536,
+      "name": "MAP10_1A.KCL",
+      "rom_offset": 8875456
+    },
+    {
+      "index": 537,
+      "name": "MAP10_1A.KMP",
+      "rom_offset": 8875712
+    },
+    {
+      "index": 538,
+      "name": "MAP10_1A.SPC",
+      "rom_offset": 8886656
+    },
+    {
+      "index": 539,
+      "name": "MAP10_A.KCG",
+      "rom_offset": 8887136
+    },
+    {
+      "index": 540,
+      "name": "MAP10_A.KCL",
+      "rom_offset": 8911360
+    },
+    {
+      "index": 541,
+      "name": "MAP10_A.KMP",
+      "rom_offset": 8911680
+    },
+    {
+      "index": 542,
+      "name": "MAP10_A.SPC",
+      "rom_offset": 8939520
+    },
+    {
+      "index": 543,
+      "name": "MAP11_1A.KCG",
+      "rom_offset": 8940192
+    },
+    {
+      "index": 544,
+      "name": "MAP11_1A.KCL",
+      "rom_offset": 8962960
+    },
+    {
+      "index": 545,
+      "name": "MAP11_1A.KMP",
+      "rom_offset": 8963248
+    },
+    {
+      "index": 546,
+      "name": "MAP11_1A.SPC",
+      "rom_offset": 8988016
+    },
+    {
+      "index": 547,
+      "name": "MAP11_2.SPC",
+      "rom_offset": 8988800
+    },
+    {
+      "index": 548,
+      "name": "MAP11_2A.KCG",
+      "rom_offset": 8989040
+    },
+    {
+      "index": 549,
+      "name": "MAP11_2A.KCL",
+      "rom_offset": 9012272
+    },
+    {
+      "index": 550,
+      "name": "MAP11_2A.KMP",
+      "rom_offset": 9012464
+    },
+    {
+      "index": 551,
+      "name": "MAP11_2G.SPC",
+      "rom_offset": 9031088
+    },
+    {
+      "index": 552,
+      "name": "MAP11_A.KCG",
+      "rom_offset": 9031328
+    },
+    {
+      "index": 553,
+      "name": "MAP11_A.KCL",
+      "rom_offset": 9054480
+    },
+    {
+      "index": 554,
+      "name": "MAP11_A.KMP",
+      "rom_offset": 9054800
+    },
+    {
+      "index": 555,
+      "name": "MAP11_A.SPC",
+      "rom_offset": 9104144
+    },
+    {
+      "index": 556,
+      "name": "MAP24_1A.KCG",
+      "rom_offset": 9105168
+    },
+    {
+      "index": 557,
+      "name": "MAP24_1A.KCL",
+      "rom_offset": 9124448
+    },
+    {
+      "index": 558,
+      "name": "MAP24_1A.KMP",
+      "rom_offset": 9124672
+    },
+    {
+      "index": 559,
+      "name": "MAP24_1A.SPC",
+      "rom_offset": 9267712
+    },
+    {
+      "index": 560,
+      "name": "MAP24_2A.KMP",
+      "rom_offset": 9268784
+    },
+    {
+      "index": 561,
+      "name": "MAP24_2A.SPC",
+      "rom_offset": 9447152
+    },
+    {
+      "index": 562,
+      "name": "MAP24_4A.KCG",
+      "rom_offset": 9448048
+    },
+    {
+      "index": 563,
+      "name": "MAP24_4A.KCL",
+      "rom_offset": 9469808
+    },
+    {
+      "index": 564,
+      "name": "MAP24_4A.KMP",
+      "rom_offset": 9470128
+    },
+    {
+      "index": 565,
+      "name": "MAP24_4A.SPC",
+      "rom_offset": 9608560
+    },
+    {
+      "index": 566,
+      "name": "MAP24_A.KCG",
+      "rom_offset": 9609392
+    },
+    {
+      "index": 567,
+      "name": "MAP24_A.KCL",
+      "rom_offset": 9632928
+    },
+    {
+      "index": 568,
+      "name": "MAP24_A.KMP",
+      "rom_offset": 9633248
+    },
+    {
+      "index": 569,
+      "name": "MAP24_A.SPC",
+      "rom_offset": 9645728
+    },
+    {
+      "index": 570,
+      "name": "MAP25_1A.KCG",
+      "rom_offset": 9646400
+    },
+    {
+      "index": 571,
+      "name": "MAP25_1A.KCL",
+      "rom_offset": 9671504
+    },
+    {
+      "index": 572,
+      "name": "MAP25_1A.KMP",
+      "rom_offset": 9671824
+    },
+    {
+      "index": 573,
+      "name": "MAP25_1A.SPC",
+      "rom_offset": 9822544
+    },
+    {
+      "index": 574,
+      "name": "MAP25_2A.KMP",
+      "rom_offset": 9823024
+    },
+    {
+      "index": 575,
+      "name": "MAP25_2A.SPC",
+      "rom_offset": 10019824
+    },
+    {
+      "index": 576,
+      "name": "MAP25_4A.KMP",
+      "rom_offset": 10021120
+    },
+    {
+      "index": 577,
+      "name": "MAP25_4A.SPC",
+      "rom_offset": 10512832
+    },
+    {
+      "index": 578,
+      "name": "MAP25_5A.KCG",
+      "rom_offset": 10514016
+    },
+    {
+      "index": 579,
+      "name": "MAP25_5A.KCL",
+      "rom_offset": 10537984
+    },
+    {
+      "index": 580,
+      "name": "MAP25_5A.KMP",
+      "rom_offset": 10538304
+    },
+    {
+      "index": 581,
+      "name": "MAP25_5A.SPC",
+      "rom_offset": 10586112
+    },
+    {
+      "index": 582,
+      "name": "MAP26_1A.KCG",
+      "rom_offset": 10586864
+    },
+    {
+      "index": 583,
+      "name": "MAP26_1A.KCL",
+      "rom_offset": 10608128
+    },
+    {
+      "index": 584,
+      "name": "MAP26_1A.KMP",
+      "rom_offset": 10608320
+    },
+    {
+      "index": 585,
+      "name": "MAP26_1A.SPC",
+      "rom_offset": 10773104
+    },
+    {
+      "index": 586,
+      "name": "MAP26_2A.KCG",
+      "rom_offset": 10773936
+    },
+    {
+      "index": 587,
+      "name": "MAP26_2A.KCL",
+      "rom_offset": 10798224
+    },
+    {
+      "index": 588,
+      "name": "MAP26_2A.KMP",
+      "rom_offset": 10798544
+    },
+    {
+      "index": 589,
+      "name": "MAP26_2A.SPC",
+      "rom_offset": 10844816
+    },
+    {
+      "index": 590,
+      "name": "MAP26_3A.KMP",
+      "rom_offset": 10845328
+    },
+    {
+      "index": 591,
+      "name": "MAP26_3A.SPC",
+      "rom_offset": 11117392
+    },
+    {
+      "index": 592,
+      "name": "MAP26_5A.KMP",
+      "rom_offset": 11118336
+    },
+    {
+      "index": 593,
+      "name": "MAP26_5A.SPC",
+      "rom_offset": 11502576
+    },
+    {
+      "index": 594,
+      "name": "MAP26_6A.KMP",
+      "rom_offset": 11504112
+    },
+    {
+      "index": 595,
+      "name": "MAP26_6A.SPC",
+      "rom_offset": 11567664
+    },
+    {
+      "index": 596,
+      "name": "MAP27_A.KCG",
+      "rom_offset": 11568032
+    },
+    {
+      "index": 597,
+      "name": "MAP27_A.KCL",
+      "rom_offset": 11579168
+    },
+    {
+      "index": 598,
+      "name": "MAP27_A.KMP",
+      "rom_offset": 11579264
+    },
+    {
+      "index": 599,
+      "name": "MAP40_A.KMP",
+      "rom_offset": 11585600
+    },
+    {
+      "index": 600,
+      "name": "MAP40_A.SPC",
+      "rom_offset": 11813888
+    },
+    {
+      "index": 601,
+      "name": "MAP41_A.KMP",
+      "rom_offset": 11814720
+    },
+    {
+      "index": 602,
+      "name": "MAP41_A.SPC",
+      "rom_offset": 11864064
+    },
+    {
+      "index": 603,
+      "name": "MAP42_A.KMP",
+      "rom_offset": 11864464
+    },
+    {
+      "index": 604,
+      "name": "MAP42_A.SPC",
+      "rom_offset": 12095824
+    },
+    {
+      "index": 605,
+      "name": "MAP99_A.KCG",
+      "rom_offset": 12096560
+    },
+    {
+      "index": 606,
+      "name": "MAP99_A.KCL",
+      "rom_offset": 12096592
+    },
+    {
+      "index": 607,
+      "name": "MAP99_A.KMP",
+      "rom_offset": 12096624
+    },
+    {
+      "index": 608,
+      "name": "ML_BG01.KCG",
+      "rom_offset": 12102960
+    },
+    {
+      "index": 609,
+      "name": "ML_BG01.KCL",
+      "rom_offset": 12111408
+    },
+    {
+      "index": 610,
+      "name": "ML_BG01.KMP",
+      "rom_offset": 12111440
+    },
+    {
+      "index": 611,
+      "name": "MWA.KCG",
+      "rom_offset": 12113680
+    },
+    {
+      "index": 612,
+      "name": "MWA.KCL",
+      "rom_offset": 12114752
+    },
+    {
+      "index": 613,
+      "name": "MWA.KMP",
+      "rom_offset": 12114784
+    },
+    {
+      "index": 614,
+      "name": "NE01.TCG",
+      "rom_offset": 12119072
+    },
+    {
+      "index": 615,
+      "name": "NE01.TCL",
+      "rom_offset": 12126112
+    },
+    {
+      "index": 616,
+      "name": "NE01.TSC",
+      "rom_offset": 12126208
+    },
+    {
+      "index": 617,
+      "name": "NE05.TCL",
+      "rom_offset": 12126464
+    },
+    {
+      "index": 618,
+      "name": "NE13.TCG",
+      "rom_offset": 12126560
+    },
+    {
+      "index": 619,
+      "name": "NE13.TCL",
+      "rom_offset": 12132960
+    },
+    {
+      "index": 620,
+      "name": "NE13_A.TSC",
+      "rom_offset": 12133056
+    },
+    {
+      "index": 621,
+      "name": "NE13_B.TSC",
+      "rom_offset": 12133312
+    },
+    {
+      "index": 622,
+      "name": "NE13_C.TSC",
+      "rom_offset": 12133568
+    },
+    {
+      "index": 623,
+      "name": "NE21.TCG",
+      "rom_offset": 12133824
+    },
+    {
+      "index": 624,
+      "name": "NE21.TCL",
+      "rom_offset": 12145808
+    },
+    {
+      "index": 625,
+      "name": "NE21_00.TSC",
+      "rom_offset": 12145904
+    },
+    {
+      "index": 626,
+      "name": "NE21_01.TSC",
+      "rom_offset": 12147952
+    },
+    {
+      "index": 627,
+      "name": "NE21_02.TSC",
+      "rom_offset": 12150000
+    },
+    {
+      "index": 628,
+      "name": "NE21_03.TSC",
+      "rom_offset": 12152048
+    },
+    {
+      "index": 629,
+      "name": "NE21_04.TSC",
+      "rom_offset": 12154096
+    },
+    {
+      "index": 630,
+      "name": "NE21_05.TSC",
+      "rom_offset": 12156144
+    },
+    {
+      "index": 631,
+      "name": "NE32.TCG",
+      "rom_offset": 12158192
+    },
+    {
+      "index": 632,
+      "name": "NE32.TCL",
+      "rom_offset": 12165744
+    },
+    {
+      "index": 633,
+      "name": "NE32.TSC",
+      "rom_offset": 12165840
+    },
+    {
+      "index": 634,
+      "name": "NE33.TCG",
+      "rom_offset": 12174032
+    },
+    {
+      "index": 635,
+      "name": "NE33.TCL",
+      "rom_offset": 12180352
+    },
+    {
+      "index": 636,
+      "name": "NE33_A.TSC",
+      "rom_offset": 12180448
+    },
+    {
+      "index": 637,
+      "name": "NE33_B.TSC",
+      "rom_offset": 12180704
+    },
+    {
+      "index": 638,
+      "name": "NE33_C.TSC",
+      "rom_offset": 12180960
+    },
+    {
+      "index": 639,
+      "name": "NET_00_A.KMP",
+      "rom_offset": 12181216
+    },
+    {
+      "index": 640,
+      "name": "NET_03_A.KMP",
+      "rom_offset": 12187552
+    },
+    {
+      "index": 641,
+      "name": "NET_04_A.KMP",
+      "rom_offset": 12193888
+    },
+    {
+      "index": 642,
+      "name": "NET_05_A.KMP",
+      "rom_offset": 12200224
+    },
+    {
+      "index": 643,
+      "name": "NET_07_A.KMP",
+      "rom_offset": 12206560
+    },
+    {
+      "index": 644,
+      "name": "NET_24_A.KMP",
+      "rom_offset": 12212896
+    },
+    {
+      "index": 645,
+      "name": "NET_25_A.KMP",
+      "rom_offset": 12219232
+    },
+    {
+      "index": 646,
+      "name": "NET_26_A.KMP",
+      "rom_offset": 12225568
+    },
+    {
+      "index": 647,
+      "name": "NET_AD_A.KMP",
+      "rom_offset": 12231904
+    },
+    {
+      "index": 648,
+      "name": "OBJ_D.SPC",
+      "rom_offset": 12238240
+    },
+    {
+      "index": 649,
+      "name": "OBJ_G.SPC",
+      "rom_offset": 12239008
+    },
+    {
+      "index": 650,
+      "name": "OBJ_J.SPC",
+      "rom_offset": 12239808
+    },
+    {
+      "index": 651,
+      "name": "OBJ_S.SPC",
+      "rom_offset": 12240800
+    },
+    {
+      "index": 652,
+      "name": "OBJ_V.SPC",
+      "rom_offset": 12241456
+    },
+    {
+      "index": 653,
+      "name": "OPEN.SPC",
+      "rom_offset": 12242368
+    },
+    {
+      "index": 654,
+      "name": "OP_01_A.KCG",
+      "rom_offset": 12247440
+    },
+    {
+      "index": 655,
+      "name": "OP_01_A.KCL",
+      "rom_offset": 12262992
+    },
+    {
+      "index": 656,
+      "name": "OP_01_A.KMP",
+      "rom_offset": 12263088
+    },
+    {
+      "index": 657,
+      "name": "OP_04_A.KCG",
+      "rom_offset": 12266880
+    },
+    {
+      "index": 658,
+      "name": "OP_04_A.KCL",
+      "rom_offset": 12281168
+    },
+    {
+      "index": 659,
+      "name": "OP_04_A.KMP",
+      "rom_offset": 12281264
+    },
+    {
+      "index": 660,
+      "name": "OP_05_A.KCG",
+      "rom_offset": 12285056
+    },
+    {
+      "index": 661,
+      "name": "OP_05_A.KCL",
+      "rom_offset": 12301408
+    },
+    {
+      "index": 662,
+      "name": "OP_05_A.KMP",
+      "rom_offset": 12301504
+    },
+    {
+      "index": 663,
+      "name": "OP_06_A.KCG",
+      "rom_offset": 12305296
+    },
+    {
+      "index": 664,
+      "name": "OP_06_A.KCL",
+      "rom_offset": 12318576
+    },
+    {
+      "index": 665,
+      "name": "OP_06_A.KMP",
+      "rom_offset": 12318768
+    },
+    {
+      "index": 666,
+      "name": "OP_07_A.KCG",
+      "rom_offset": 12324720
+    },
+    {
+      "index": 667,
+      "name": "OP_07_A.KCL",
+      "rom_offset": 12333968
+    },
+    {
+      "index": 668,
+      "name": "OP_07_A.KMP",
+      "rom_offset": 12334288
+    },
+    {
+      "index": 669,
+      "name": "OP_08_A.KCG",
+      "rom_offset": 12340624
+    },
+    {
+      "index": 670,
+      "name": "OP_08_A.KCL",
+      "rom_offset": 12351040
+    },
+    {
+      "index": 671,
+      "name": "OP_08_A.KMP",
+      "rom_offset": 12351360
+    },
+    {
+      "index": 672,
+      "name": "OP_09_A.KCG",
+      "rom_offset": 12357696
+    },
+    {
+      "index": 673,
+      "name": "OP_09_A.KCL",
+      "rom_offset": 12371808
+    },
+    {
+      "index": 674,
+      "name": "OP_09_A.KMP",
+      "rom_offset": 12372128
+    },
+    {
+      "index": 675,
+      "name": "OP_0A_A.KCG",
+      "rom_offset": 12378464
+    },
+    {
+      "index": 676,
+      "name": "OP_0A_A.KCL",
+      "rom_offset": 12383872
+    },
+    {
+      "index": 677,
+      "name": "OP_0A_A.KMP",
+      "rom_offset": 12384192
+    },
+    {
+      "index": 678,
+      "name": "PHANTOM.SPC",
+      "rom_offset": 12390528
+    },
+    {
+      "index": 679,
+      "name": "PS_BG01.KCG",
+      "rom_offset": 12391264
+    },
+    {
+      "index": 680,
+      "name": "PS_BG01.KCL",
+      "rom_offset": 12405120
+    },
+    {
+      "index": 681,
+      "name": "PS_BG01.KMP",
+      "rom_offset": 12405152
+    },
+    {
+      "index": 682,
+      "name": "PV_BG01.KCG",
+      "rom_offset": 12407392
+    },
+    {
+      "index": 683,
+      "name": "PV_BG01.KCL",
+      "rom_offset": 12415120
+    },
+    {
+      "index": 684,
+      "name": "PV_BG01.KMP",
+      "rom_offset": 12415152
+    },
+    {
+      "index": 685,
+      "name": "PV_BG11.KCG",
+      "rom_offset": 12417392
+    },
+    {
+      "index": 686,
+      "name": "PV_BG11.KCL",
+      "rom_offset": 12418480
+    },
+    {
+      "index": 687,
+      "name": "PV_BG11.KMP",
+      "rom_offset": 12418512
+    },
+    {
+      "index": 688,
+      "name": "PW_BG01.KCG",
+      "rom_offset": 12420752
+    },
+    {
+      "index": 689,
+      "name": "PW_BG01.KCL",
+      "rom_offset": 12426416
+    },
+    {
+      "index": 690,
+      "name": "PW_BG01.KMP",
+      "rom_offset": 12426448
+    },
+    {
+      "index": 691,
+      "name": "PW_BOX.KCG",
+      "rom_offset": 12428688
+    },
+    {
+      "index": 692,
+      "name": "PW_BOX.KCL",
+      "rom_offset": 12433664
+    },
+    {
+      "index": 693,
+      "name": "PW_BOX.KMP",
+      "rom_offset": 12433696
+    },
+    {
+      "index": 694,
+      "name": "SBA06.TCG",
+      "rom_offset": 12435936
+    },
+    {
+      "index": 695,
+      "name": "SBA06.TCL",
+      "rom_offset": 12447792
+    },
+    {
+      "index": 696,
+      "name": "SBA06_00.TSC",
+      "rom_offset": 12447888
+    },
+    {
+      "index": 697,
+      "name": "SBA06_01.TSC",
+      "rom_offset": 12449936
+    },
+    {
+      "index": 698,
+      "name": "SHOPPA01.SPC",
+      "rom_offset": 12451984
+    },
+    {
+      "index": 699,
+      "name": "SHOPPA02.SPC",
+      "rom_offset": 12452880
+    },
+    {
+      "index": 700,
+      "name": "SHOPPA03.SPC",
+      "rom_offset": 12453792
+    },
+    {
+      "index": 701,
+      "name": "SHOPPA04.SPC",
+      "rom_offset": 12454608
+    },
+    {
+      "index": 702,
+      "name": "SHOPPA05.SPC",
+      "rom_offset": 12455440
+    },
+    {
+      "index": 703,
+      "name": "SHOPPE01.SPC",
+      "rom_offset": 12456848
+    },
+    {
+      "index": 704,
+      "name": "SHOPPE02.SPC",
+      "rom_offset": 12457680
+    },
+    {
+      "index": 705,
+      "name": "SK02.TCG",
+      "rom_offset": 12458576
+    },
+    {
+      "index": 706,
+      "name": "SK02.TCL",
+      "rom_offset": 12463200
+    },
+    {
+      "index": 707,
+      "name": "SK02_00.TSC",
+      "rom_offset": 12463296
+    },
+    {
+      "index": 708,
+      "name": "SK02_01.TSC",
+      "rom_offset": 12463552
+    },
+    {
+      "index": 709,
+      "name": "SK02_02.TSC",
+      "rom_offset": 12463808
+    },
+    {
+      "index": 710,
+      "name": "SK02_03.TSC",
+      "rom_offset": 12464064
+    },
+    {
+      "index": 711,
+      "name": "SK03.TCG",
+      "rom_offset": 12464320
+    },
+    {
+      "index": 712,
+      "name": "SK03.TCL",
+      "rom_offset": 12468944
+    },
+    {
+      "index": 713,
+      "name": "SK03_00.TSC",
+      "rom_offset": 12469040
+    },
+    {
+      "index": 714,
+      "name": "SK03_01.TSC",
+      "rom_offset": 12470064
+    },
+    {
+      "index": 715,
+      "name": "SK03_02.TSC",
+      "rom_offset": 12471088
+    },
+    {
+      "index": 716,
+      "name": "SK03_03.TSC",
+      "rom_offset": 12472112
+    },
+    {
+      "index": 717,
+      "name": "SM_BG01.KCG",
+      "rom_offset": 12473136
+    },
+    {
+      "index": 718,
+      "name": "SM_BG01.KCL",
+      "rom_offset": 12482448
+    },
+    {
+      "index": 719,
+      "name": "SM_BG01.KMP",
+      "rom_offset": 12482480
+    },
+    {
+      "index": 720,
+      "name": "SM_BG12.KCG",
+      "rom_offset": 12484720
+    },
+    {
+      "index": 721,
+      "name": "SM_BG12.KCL",
+      "rom_offset": 12489392
+    },
+    {
+      "index": 722,
+      "name": "SM_BG12.KMP",
+      "rom_offset": 12489424
+    },
+    {
+      "index": 723,
+      "name": "SN06.TCG",
+      "rom_offset": 12491664
+    },
+    {
+      "index": 724,
+      "name": "SN06.TCL",
+      "rom_offset": 12495552
+    },
+    {
+      "index": 725,
+      "name": "SN06.TSC",
+      "rom_offset": 12495648
+    },
+    {
+      "index": 726,
+      "name": "SN07.TCG",
+      "rom_offset": 12497696
+    },
+    {
+      "index": 727,
+      "name": "SN07.TCL",
+      "rom_offset": 12509392
+    },
+    {
+      "index": 728,
+      "name": "SN07_A.TSC",
+      "rom_offset": 12509488
+    },
+    {
+      "index": 729,
+      "name": "SN07_B.TSC",
+      "rom_offset": 12517680
+    },
+    {
+      "index": 730,
+      "name": "SPR_DUNG.SPC",
+      "rom_offset": 12525872
+    },
+    {
+      "index": 731,
+      "name": "SPR_NORM.SPC",
+      "rom_offset": 12526832
+    },
+    {
+      "index": 732,
+      "name": "SP_BG01.KCG",
+      "rom_offset": 12528256
+    },
+    {
+      "index": 733,
+      "name": "SP_BG01.KCL",
+      "rom_offset": 12537440
+    },
+    {
+      "index": 734,
+      "name": "SP_BG01.KMP",
+      "rom_offset": 12537472
+    },
+    {
+      "index": 735,
+      "name": "SP_BG11.KCG",
+      "rom_offset": 12539712
+    },
+    {
+      "index": 736,
+      "name": "SP_BG11.KCL",
+      "rom_offset": 12550320
+    },
+    {
+      "index": 737,
+      "name": "SP_BG11.KMP",
+      "rom_offset": 12550352
+    },
+    {
+      "index": 738,
+      "name": "SP_BG12.KCG",
+      "rom_offset": 12552592
+    },
+    {
+      "index": 739,
+      "name": "SP_BG12.KCL",
+      "rom_offset": 12555296
+    },
+    {
+      "index": 740,
+      "name": "SP_BG12.KMP",
+      "rom_offset": 12555328
+    },
+    {
+      "index": 741,
+      "name": "SP_BG21.KCG",
+      "rom_offset": 12557568
+    },
+    {
+      "index": 742,
+      "name": "SP_BG21.KCL",
+      "rom_offset": 12566592
+    },
+    {
+      "index": 743,
+      "name": "SP_BG21.KMP",
+      "rom_offset": 12566624
+    },
+    {
+      "index": 744,
+      "name": "SP_BG22.KCG",
+      "rom_offset": 12568864
+    },
+    {
+      "index": 745,
+      "name": "SP_BG22.KCL",
+      "rom_offset": 12579056
+    },
+    {
+      "index": 746,
+      "name": "SP_BG22.KMP",
+      "rom_offset": 12579088
+    },
+    {
+      "index": 747,
+      "name": "SP_M00.SPC",
+      "rom_offset": 12581328
+    },
+    {
+      "index": 748,
+      "name": "SP_M01.SPC",
+      "rom_offset": 12582624
+    },
+    {
+      "index": 749,
+      "name": "SP_M01_1.SPC",
+      "rom_offset": 12584176
+    },
+    {
+      "index": 750,
+      "name": "SP_M01_3.SPC",
+      "rom_offset": 12584368
+    },
+    {
+      "index": 751,
+      "name": "SP_M01_4.SPC",
+      "rom_offset": 12585696
+    },
+    {
+      "index": 752,
+      "name": "SP_M01_5.SPC",
+      "rom_offset": 12585888
+    },
+    {
+      "index": 753,
+      "name": "SP_M01_6.SPC",
+      "rom_offset": 12586128
+    },
+    {
+      "index": 754,
+      "name": "SP_M04.SPC",
+      "rom_offset": 12586544
+    },
+    {
+      "index": 755,
+      "name": "SP_M04_4.SPC",
+      "rom_offset": 12587408
+    },
+    {
+      "index": 756,
+      "name": "SP_M04_5.SPC",
+      "rom_offset": 12587600
+    },
+    {
+      "index": 757,
+      "name": "SP_M05.SPC",
+      "rom_offset": 12587824
+    },
+    {
+      "index": 758,
+      "name": "SP_M06_1.SPC",
+      "rom_offset": 12588096
+    },
+    {
+      "index": 759,
+      "name": "SP_M06_2.SPC",
+      "rom_offset": 12588832
+    },
+    {
+      "index": 760,
+      "name": "SP_M07.SPC",
+      "rom_offset": 12589024
+    },
+    {
+      "index": 761,
+      "name": "SP_M07_1.SPC",
+      "rom_offset": 12589520
+    },
+    {
+      "index": 762,
+      "name": "SP_M08.SPC",
+      "rom_offset": 12590992
+    },
+    {
+      "index": 763,
+      "name": "SP_M09.SPC",
+      "rom_offset": 12591968
+    },
+    {
+      "index": 764,
+      "name": "SP_M10.SPC",
+      "rom_offset": 12592208
+    },
+    {
+      "index": 765,
+      "name": "SP_M10_1.SPC",
+      "rom_offset": 12592432
+    },
+    {
+      "index": 766,
+      "name": "SP_M24.SPC",
+      "rom_offset": 12592960
+    },
+    {
+      "index": 767,
+      "name": "SP_M24_1.SPC",
+      "rom_offset": 12593248
+    },
+    {
+      "index": 768,
+      "name": "SP_M24_2.SPC",
+      "rom_offset": 12593664
+    },
+    {
+      "index": 769,
+      "name": "SP_M24_3.SPC",
+      "rom_offset": 12594048
+    },
+    {
+      "index": 770,
+      "name": "SP_M24_4.SPC",
+      "rom_offset": 12594368
+    },
+    {
+      "index": 771,
+      "name": "SP_M25_1.SPC",
+      "rom_offset": 12598416
+    },
+    {
+      "index": 772,
+      "name": "SP_M25_2.SPC",
+      "rom_offset": 12598672
+    },
+    {
+      "index": 773,
+      "name": "SP_M25_4.SPC",
+      "rom_offset": 12599120
+    },
+    {
+      "index": 774,
+      "name": "SP_M25_5.SPC",
+      "rom_offset": 12600672
+    },
+    {
+      "index": 775,
+      "name": "SP_M26_1.SPC",
+      "rom_offset": 12605456
+    },
+    {
+      "index": 776,
+      "name": "SP_M26_2.SPC",
+      "rom_offset": 12605824
+    },
+    {
+      "index": 777,
+      "name": "SP_M26_3.SPC",
+      "rom_offset": 12608336
+    },
+    {
+      "index": 778,
+      "name": "SP_M26_5.SPC",
+      "rom_offset": 12608736
+    },
+    {
+      "index": 779,
+      "name": "SP_M40.SPC",
+      "rom_offset": 12611808
+    },
+    {
+      "index": 780,
+      "name": "SP_M41.SPC",
+      "rom_offset": 12612480
+    },
+    {
+      "index": 781,
+      "name": "SP_M42.SPC",
+      "rom_offset": 12612672
+    },
+    {
+      "index": 782,
+      "name": "SROLL.SPC",
+      "rom_offset": 12613472
+    },
+    {
+      "index": 783,
+      "name": "SSN07.TCG",
+      "rom_offset": 12613872
+    },
+    {
+      "index": 784,
+      "name": "SSN07.TCL",
+      "rom_offset": 12625568
+    },
+    {
+      "index": 785,
+      "name": "SSN07_A.TSC",
+      "rom_offset": 12625664
+    },
+    {
+      "index": 786,
+      "name": "SSN07_B.TSC",
+      "rom_offset": 12633856
+    },
+    {
+      "index": 787,
+      "name": "ST_BG01.KCG",
+      "rom_offset": 12642048
+    },
+    {
+      "index": 788,
+      "name": "ST_BG01.KCL",
+      "rom_offset": 12647040
+    },
+    {
+      "index": 789,
+      "name": "ST_BG01.KMP",
+      "rom_offset": 12647072
+    },
+    {
+      "index": 790,
+      "name": "ST_BG02.KCG",
+      "rom_offset": 12649312
+    },
+    {
+      "index": 791,
+      "name": "ST_BG02.KCL",
+      "rom_offset": 12653552
+    },
+    {
+      "index": 792,
+      "name": "ST_BG02.KMP",
+      "rom_offset": 12653584
+    },
+    {
+      "index": 793,
+      "name": "ST_BG03.KCG",
+      "rom_offset": 12655824
+    },
+    {
+      "index": 794,
+      "name": "ST_BG03.KCL",
+      "rom_offset": 12659984
+    },
+    {
+      "index": 795,
+      "name": "ST_BG03.KMP",
+      "rom_offset": 12660016
+    },
+    {
+      "index": 796,
+      "name": "ST_BG11.KCG",
+      "rom_offset": 12662256
+    },
+    {
+      "index": 797,
+      "name": "ST_BG11.KCL",
+      "rom_offset": 12670944
+    },
+    {
+      "index": 798,
+      "name": "ST_BG11.KMP",
+      "rom_offset": 12670976
+    },
+    {
+      "index": 799,
+      "name": "SYSTEM.NCD",
+      "rom_offset": 12673216
+    },
+    {
+      "index": 800,
+      "name": "S_BTLIRQ.SPC",
+      "rom_offset": 13965936
+    },
+    {
+      "index": 801,
+      "name": "S_BTLOUT.SPC",
+      "rom_offset": 13966192
+    },
+    {
+      "index": 802,
+      "name": "S_CHRIRQ.SPC",
+      "rom_offset": 13966448
+    },
+    {
+      "index": 803,
+      "name": "S_DUNG.SPC",
+      "rom_offset": 13968144
+    },
+    {
+      "index": 804,
+      "name": "S_HITIRQ.SPC",
+      "rom_offset": 13970240
+    },
+    {
+      "index": 805,
+      "name": "S_MAIN.SPC",
+      "rom_offset": 13970496
+    },
+    {
+      "index": 806,
+      "name": "S_MAP11.SPC",
+      "rom_offset": 13970640
+    },
+    {
+      "index": 807,
+      "name": "S_MAPIRQ.SPC",
+      "rom_offset": 13972656
+    },
+    {
+      "index": 808,
+      "name": "S_SIOBTL.SPC",
+      "rom_offset": 13995168
+    },
+    {
+      "index": 809,
+      "name": "S_SPRIRQ.SPC",
+      "rom_offset": 13996112
+    },
+    {
+      "index": 810,
+      "name": "T_C01.KCG",
+      "rom_offset": 13996416
+    },
+    {
+      "index": 811,
+      "name": "T_C01.KCL",
+      "rom_offset": 13998560
+    },
+    {
+      "index": 812,
+      "name": "T_C01.KMP",
+      "rom_offset": 13998592
+    },
+    {
+      "index": 813,
+      "name": "T_C02.KCG",
+      "rom_offset": 14000832
+    },
+    {
+      "index": 814,
+      "name": "T_C02.KCL",
+      "rom_offset": 14001936
+    },
+    {
+      "index": 815,
+      "name": "T_C02.KMP",
+      "rom_offset": 14001968
+    },
+    {
+      "index": 816,
+      "name": "T_ML_BG.KCG",
+      "rom_offset": 14004208
+    },
+    {
+      "index": 817,
+      "name": "T_ML_BG.KCL",
+      "rom_offset": 14015792
+    },
+    {
+      "index": 818,
+      "name": "T_ML_BG.KMP",
+      "rom_offset": 14015856
+    },
+    {
+      "index": 819,
+      "name": "T_TTL06.KCG",
+      "rom_offset": 14018096
+    },
+    {
+      "index": 820,
+      "name": "T_TTL06.KCL",
+      "rom_offset": 14027392
+    },
+    {
+      "index": 821,
+      "name": "T_TTL06.KMP",
+      "rom_offset": 14027520
+    },
+    {
+      "index": 822,
+      "name": "VSMAP01.KMP",
+      "rom_offset": 14029760
+    },
+    {
+      "index": 823,
+      "name": "WM_BG01.KCG",
+      "rom_offset": 14038272
+    },
+    {
+      "index": 824,
+      "name": "WM_BG01.KCL",
+      "rom_offset": 14046032
+    },
+    {
+      "index": 825,
+      "name": "WM_BG01.KMP",
+      "rom_offset": 14046064
+    },
+    {
+      "index": 826,
+      "name": "WM_BG02.KCG",
+      "rom_offset": 14048304
+    },
+    {
+      "index": 827,
+      "name": "WM_BG02.KCL",
+      "rom_offset": 14052592
+    },
+    {
+      "index": 828,
+      "name": "WM_BG02.KMP",
+      "rom_offset": 14052624
+    },
+    {
+      "index": 829,
+      "name": "W_MAP.SPC",
+      "rom_offset": 14054864
+    }
+  ]
+}

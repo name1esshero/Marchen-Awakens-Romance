@@ -1653,19 +1653,19 @@
     "addr": "080109C4",
     "size": 104,
     "name": "ScriptSpriteResetTask",
-    "file": "src/script_sprite_reset.c"
+    "file": "src/script_sprite.c"
   },
   {
     "addr": "08010A70",
     "size": 124,
     "name": "ScriptSpriteResetAllTask",
-    "file": "src/script_sprite_reset.c"
+    "file": "src/script_sprite.c"
   },
   {
     "addr": "08010B6C",
     "size": 160,
     "name": "ScriptSpriteInitTask",
-    "file": "src/script_sprite_init.c"
+    "file": "src/script_sprite.c"
   },
   {
     "addr": "08010C0C",
@@ -1869,13 +1869,13 @@
     "addr": "08011F40",
     "size": 40,
     "name": "ScriptNativeSpriteSet",
-    "file": "src/script_sprite_native.c"
+    "file": "src/script_sprite.c"
   },
   {
     "addr": "08011F68",
     "size": 20,
     "name": "ScriptNativeSpriteGet",
-    "file": "src/script_sprite_native.c"
+    "file": "src/script_sprite.c"
   },
   {
     "addr": "08011F7C",
@@ -2007,253 +2007,253 @@
     "addr": "0801234C",
     "size": 24,
     "name": "ScriptNativeSetRuntimePair",
-    "file": "src/map_inventory_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012364",
     "size": 16,
     "name": "ScriptNativeBattleFieldLock",
-    "file": "src/map_inventory_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012374",
     "size": 16,
     "name": "ScriptNativeBattleFieldUnlock",
-    "file": "src/map_inventory_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012384",
     "size": 104,
     "name": "ScriptNativeGetBattleFieldRect",
-    "file": "src/map_inventory_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "080123EC",
     "size": 12,
     "name": "ScriptNativeCall08968",
-    "file": "src/map_inventory_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "080123F8",
     "size": 152,
     "name": "ScriptNativeResetFieldScene",
-    "file": "src/map_inventory_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012490",
     "size": 32,
     "name": "ScriptNativeMapSetBoundedValue",
-    "file": "src/map_inventory_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "080124B0",
     "size": 16,
     "name": "ScriptNativeMapSetValue08",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "080124C0",
     "size": 16,
     "name": "ScriptNativeMapSetValue25",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "080124D0",
     "size": 16,
     "name": "ScriptNativeMapResetGenerator",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "080124E0",
     "size": 28,
     "name": "ScriptNativeMapResetActor",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "080124FC",
     "size": 4,
     "name": "ScriptNativeBattleStatus",
-    "file": "src/map_inventory_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012500",
     "size": 20,
     "name": "ScriptNativeMapGetPointer1COffset",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012514",
     "size": 20,
     "name": "ScriptNativeMapGetPointer20Offset",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012528",
     "size": 28,
     "name": "ScriptNativeMapConfigure3",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012544",
     "size": 20,
     "name": "ScriptNativeMapRefresh",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012558",
     "size": 24,
     "name": "ScriptNativeMapConfigure2",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012570",
     "size": 36,
     "name": "ScriptNativeMapRandomize",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012594",
     "size": 24,
     "name": "ScriptNativeMapQueryD60",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "080125AC",
     "size": 20,
     "name": "ScriptNativeMapClearDState",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "080125C0",
     "size": 24,
     "name": "ScriptNativeMapQueryD84",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "080125D8",
     "size": 24,
     "name": "ScriptNativeMapSetMode",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "080125F0",
     "size": 20,
     "name": "ScriptNativeMapSetSeed",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012604",
     "size": 20,
     "name": "ScriptNativeMapGetSeed",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012618",
     "size": 16,
     "name": "ScriptNativeMapCall1088",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012628",
     "size": 20,
     "name": "ScriptNativeMapQuery10A4",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "0801263C",
     "size": 28,
     "name": "ScriptNativeMapGetField618",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012658",
     "size": 20,
     "name": "ScriptNativeMapSetField10",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "0801266C",
     "size": 20,
     "name": "ScriptNativeMapGetField10",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012680",
     "size": 32,
     "name": "ScriptNativeMapGetField624",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "080126A0",
     "size": 28,
     "name": "ScriptNativeMapSetField624",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "080126BC",
     "size": 32,
     "name": "ScriptNativeMapGetField626",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "080126DC",
     "size": 28,
     "name": "ScriptNativeMapSetField626",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "080126F8",
     "size": 28,
     "name": "ScriptNativeMapGetField628",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012714",
     "size": 28,
     "name": "ScriptNativeMapSetField628",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012730",
     "size": 48,
     "name": "ScriptNativeCopyGeneratedName",
-    "file": "src/map_inventory_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012760",
     "size": 12,
     "name": "ScriptNativeMapFinalize",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "0801276C",
     "size": 40,
     "name": "ScriptNativeMapSelectSlot",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012794",
     "size": 20,
     "name": "ScriptNativeGetField4258",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "080127A8",
     "size": 16,
     "name": "ScriptNativeSetField4258",
-    "file": "src/map_generation_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "080127B8",
     "size": 64,
     "name": "ScriptNativeWriteMapValues",
-    "file": "src/map_inventory_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "0801294C",
     "size": 44,
     "name": "ScriptNativeRefreshMapValuesA",
-    "file": "src/map_inventory_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012978",
@@ -2319,7 +2319,7 @@
     "addr": "08012B80",
     "size": 24,
     "name": "ScriptNativeSelectLayer",
-    "file": "src/map_inventory_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012B98",
@@ -2331,7 +2331,7 @@
     "addr": "08012C14",
     "size": 64,
     "name": "ScriptNativeWriteMapValuesB",
-    "file": "src/map_inventory_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012C54",
@@ -2343,13 +2343,13 @@
     "addr": "08012C68",
     "size": 60,
     "name": "ScriptNativeSetBattleParty",
-    "file": "src/map_inventory_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012CA4",
     "size": 44,
     "name": "ScriptNativeRefreshMapValuesB",
-    "file": "src/map_inventory_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012CD0",
@@ -2361,25 +2361,25 @@
     "addr": "08012CE8",
     "size": 28,
     "name": "ScriptNativeSetPendingMapValue",
-    "file": "src/map_inventory_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012D04",
     "size": 72,
     "name": "ScriptNativeCopyMapHalfwords",
-    "file": "src/map_inventory_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012D4C",
     "size": 24,
     "name": "ScriptNativeGetMapStatus",
-    "file": "src/map_inventory_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012D64",
     "size": 52,
     "name": "ScriptNativeClearMapHalfwords",
-    "file": "src/map_inventory_native.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012D98",
@@ -4179,235 +4179,235 @@
     "addr": "08071DD4",
     "size": 12,
     "name": "MapGenerationSeedRandom",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08071DE0",
     "size": 32,
     "name": "MapGenerationRandom",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08071E00",
     "size": 28,
     "name": "MapGenerationGetState",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08071E1C",
     "size": 24,
     "name": "MapGenerationSetValues00And04",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08071E34",
     "size": 12,
     "name": "MapGenerationGetValue00",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08071E40",
     "size": 12,
     "name": "MapGenerationGetValue04",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08071E4C",
     "size": 16,
     "name": "MapGenerationSetPointer0C",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08071E5C",
     "size": 16,
     "name": "MapGenerationSetPointer14",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08071E6C",
     "size": 16,
     "name": "MapGenerationSetPointer10",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08071E7C",
     "size": 16,
     "name": "MapGenerationSetPointer18",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08071E8C",
     "size": 12,
     "name": "MapGenerationGetPointer0C",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08071E98",
     "size": 12,
     "name": "MapGenerationGetPointer14",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08071EA4",
     "size": 12,
     "name": "MapGenerationGetPointer10",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08071EB0",
     "size": 12,
     "name": "MapGenerationGetPointer18",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08071EBC",
     "size": 12,
     "name": "MapGenerationGetPointer1C",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08071EC8",
     "size": 12,
     "name": "MapGenerationGetPointer20",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08071ED4",
     "size": 16,
     "name": "MapGenerationSetPointer1C",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08071EE4",
     "size": 16,
     "name": "MapGenerationSetPointer20",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08071EF4",
     "size": 24,
     "name": "MapGenerationGetTable38",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08071F0C",
     "size": 24,
     "name": "MapGenerationGetTable48",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08071F24",
     "size": 36,
     "name": "MapGenerationSetTables",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08071F48",
     "size": 24,
     "name": "MapGenerationSetValue26",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08071F60",
     "size": 24,
     "name": "MapGenerationGetValue26",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08071F78",
     "size": 24,
     "name": "MapGenerationSetTable58",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08071F90",
     "size": 24,
     "name": "MapGenerationGetTable58",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08071FA8",
     "size": 24,
     "name": "MapGenerationSetValue68",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08071FC0",
     "size": 24,
     "name": "MapGenerationGetValue68",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08071FD8",
     "size": 20,
     "name": "MapGenerationGetValue24",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08071FEC",
     "size": 24,
     "name": "MapGenerationSetValue24",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08072004",
     "size": 28,
     "name": "MapGenerationSetValue2E",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08072020",
     "size": 24,
     "name": "MapGenerationGetValue2E",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08072038",
     "size": 20,
     "name": "MapGenerationGetValue25",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "0807204C",
     "size": 24,
     "name": "MapGenerationSetValue25",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08072064",
     "size": 16,
     "name": "MapGenerationGetValue08",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08072074",
     "size": 20,
     "name": "MapGenerationSetValue08",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "08072088",
     "size": 24,
     "name": "MapGenerationGetVectorValue0",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "080720A0",
     "size": 24,
     "name": "MapGenerationGetVectorValue2",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "080720B8",
     "size": 24,
     "name": "MapGenerationGetVectorValue4",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "080720D0",
     "size": 24,
     "name": "MapGenerationGetVectorValue6",
-    "file": "src/map_generation.c"
+    "file": "src/mapping.c"
   },
   {
     "addr": "080720E8",
@@ -4420,6 +4420,12 @@
     "size": 164,
     "name": "MapAttributeGetConnectionMask",
     "file": "src/map_attributes.c"
+  },
+  {
+    "addr": "08072C04",
+    "size": 16,
+    "name": "GetBattleDefinition",
+    "file": "src/table_accessors.c"
   },
   {
     "addr": "08078948",
@@ -4956,6 +4962,24 @@
     "file": "src/heap.c"
   },
   {
+    "addr": "0807A4B8",
+    "size": 64,
+    "name": "HeapGetFreeBytes",
+    "file": "src/heap.c"
+  },
+  {
+    "addr": "0807A4F8",
+    "size": 68,
+    "name": "HeapGetLargestFreeBlock",
+    "file": "src/heap.c"
+  },
+  {
+    "addr": "0807A53C",
+    "size": 16,
+    "name": "HeapGetAllocationSize",
+    "file": "src/heap.c"
+  },
+  {
     "addr": "0807A5FC",
     "size": 72,
     "name": "TaskManagerInit",
@@ -4971,31 +4995,31 @@
     "addr": "0807A688",
     "size": 120,
     "name": "TaskCreateInQueue",
-    "file": "src/task_create.c"
+    "file": "src/task_manager.c"
   },
   {
     "addr": "0807A700",
     "size": 124,
     "name": "TaskCreateBefore",
-    "file": "src/task_create.c"
+    "file": "src/task_manager.c"
   },
   {
     "addr": "0807A77C",
     "size": 48,
     "name": "CreateTask",
-    "file": "src/task_scheduler.c"
+    "file": "src/task_manager.c"
   },
   {
     "addr": "0807A7AC",
     "size": 24,
     "name": "FinishTask",
-    "file": "src/task_scheduler.c"
+    "file": "src/task_manager.c"
   },
   {
     "addr": "0807A7C4",
     "size": 164,
     "name": "TaskManagerRun",
-    "file": "src/task_scheduler.c"
+    "file": "src/task_manager.c"
   },
   {
     "addr": "0807A868",
@@ -5188,6 +5212,18 @@
     "size": 28,
     "name": "NfpFindEntryByArchiveName",
     "file": "src/nfp_convenience.c"
+  },
+  {
+    "addr": "0807ACC4",
+    "size": 136,
+    "name": "NfpFindEntryIndex",
+    "file": "src/nfp.c"
+  },
+  {
+    "addr": "0807AD4C",
+    "size": 120,
+    "name": "NfpGetEntrySizeByName",
+    "file": "src/nfp.c"
   },
   {
     "addr": "0807ADC4",
@@ -5824,6 +5860,24 @@
     "size": 24,
     "name": "VmAddToField220",
     "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "0807E97C",
+    "size": 44,
+    "name": "ScriptResourceHash",
+    "file": "src/script_resource_table.c"
+  },
+  {
+    "addr": "0807E9A8",
+    "size": 76,
+    "name": "ScriptResourceFind",
+    "file": "src/script_resource_table.c"
+  },
+  {
+    "addr": "0807E9F4",
+    "size": 152,
+    "name": "ScriptResourceSet",
+    "file": "src/script_resource_table.c"
   },
   {
     "addr": "0807ED70",
@@ -6858,10 +6912,94 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081A3128",
+    "size": 107,
+    "name": "gSong003Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A3193",
+    "size": 91,
+    "name": "gSong003Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A31EE",
+    "size": 73,
+    "name": "gSong003Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A3237",
+    "size": 154,
+    "name": "gSong003Track4",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A32D1",
+    "size": 168,
+    "name": "gSong003Track5",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A3379",
+    "size": 71,
+    "name": "gSong003Track6",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081A33C0",
     "size": 32,
     "name": "gSongHeader_003",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081A33E0",
+    "size": 185,
+    "name": "gSong004Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A3499",
+    "size": 123,
+    "name": "gSong004Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A3514",
+    "size": 105,
+    "name": "gSong004Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A357D",
+    "size": 223,
+    "name": "gSong004Track4",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A365C",
+    "size": 90,
+    "name": "gSong004Track5",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A36B6",
+    "size": 452,
+    "name": "gSong004Track6",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A387A",
+    "size": 89,
+    "name": "gSong004Track7",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A38D3",
+    "size": 165,
+    "name": "gSong004Track8",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081A3978",
@@ -6870,10 +7008,82 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081A39A0",
+    "size": 88,
+    "name": "gSong007Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A39F8",
+    "size": 98,
+    "name": "gSong007Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A3A5A",
+    "size": 56,
+    "name": "gSong007Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A3A92",
+    "size": 172,
+    "name": "gSong007Track4",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A3B3E",
+    "size": 102,
+    "name": "gSong007Track5",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A3BA4",
+    "size": 79,
+    "name": "gSong007Track6",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A3BF3",
+    "size": 49,
+    "name": "gSong007Track7",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081A3C24",
     "size": 36,
     "name": "gSongHeader_007",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081A3C48",
+    "size": 289,
+    "name": "gSong008Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A3D69",
+    "size": 456,
+    "name": "gSong008Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A3F31",
+    "size": 206,
+    "name": "gSong008Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A3FFF",
+    "size": 142,
+    "name": "gSong008Track4",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A408D",
+    "size": 287,
+    "name": "gSong008Track5",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081A41AC",
@@ -6882,10 +7092,100 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081A41C8",
+    "size": 555,
+    "name": "gSong009Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A43F3",
+    "size": 234,
+    "name": "gSong009Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A44DD",
+    "size": 300,
+    "name": "gSong009Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A4609",
+    "size": 104,
+    "name": "gSong009Track4",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A4671",
+    "size": 85,
+    "name": "gSong009Track5",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A46C6",
+    "size": 150,
+    "name": "gSong009Track6",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A475C",
+    "size": 460,
+    "name": "gSong009Track7",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081A4928",
     "size": 36,
     "name": "gSongHeader_009",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081A494C",
+    "size": 40,
+    "name": "gSong010Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A4974",
+    "size": 56,
+    "name": "gSong010Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A49AC",
+    "size": 273,
+    "name": "gSong010Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A4ABD",
+    "size": 186,
+    "name": "gSong010Track4",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A4B77",
+    "size": 116,
+    "name": "gSong010Track5",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A4BEB",
+    "size": 60,
+    "name": "gSong010Track6",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A4C27",
+    "size": 454,
+    "name": "gSong010Track7",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A4DED",
+    "size": 83,
+    "name": "gSong010Track8",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081A4E40",
@@ -6894,10 +7194,76 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081A4E68",
+    "size": 168,
+    "name": "gSong011Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A4F10",
+    "size": 293,
+    "name": "gSong011Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A5035",
+    "size": 131,
+    "name": "gSong011Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A50B8",
+    "size": 68,
+    "name": "gSong011Track4",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A50FC",
+    "size": 80,
+    "name": "gSong011Track5",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081A514C",
     "size": 28,
     "name": "gSongHeader_011",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081A5168",
+    "size": 422,
+    "name": "gSong012Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A530E",
+    "size": 123,
+    "name": "gSong012Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A5389",
+    "size": 195,
+    "name": "gSong012Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A544C",
+    "size": 146,
+    "name": "gSong012Track4",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A54DE",
+    "size": 119,
+    "name": "gSong012Track5",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A5555",
+    "size": 315,
+    "name": "gSong012Track6",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081A5690",
@@ -6906,10 +7272,82 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081A56B0",
+    "size": 425,
+    "name": "gSong013Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A5859",
+    "size": 202,
+    "name": "gSong013Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A5923",
+    "size": 280,
+    "name": "gSong013Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A5A3B",
+    "size": 157,
+    "name": "gSong013Track4",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A5AD8",
+    "size": 216,
+    "name": "gSong013Track5",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081A5BB0",
     "size": 28,
     "name": "gSongHeader_013",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081A5BCC",
+    "size": 162,
+    "name": "gSong014Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A5C6E",
+    "size": 243,
+    "name": "gSong014Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A5D61",
+    "size": 181,
+    "name": "gSong014Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A5E16",
+    "size": 171,
+    "name": "gSong014Track4",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A5EC1",
+    "size": 303,
+    "name": "gSong014Track5",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A5FF0",
+    "size": 71,
+    "name": "gSong014Track6",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A6037",
+    "size": 189,
+    "name": "gSong014Track7",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081A60F4",
@@ -6918,10 +7356,100 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081A6118",
+    "size": 709,
+    "name": "gSong015Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A63DD",
+    "size": 322,
+    "name": "gSong015Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A651F",
+    "size": 248,
+    "name": "gSong015Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A6617",
+    "size": 171,
+    "name": "gSong015Track4",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A66C2",
+    "size": 97,
+    "name": "gSong015Track5",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A6723",
+    "size": 133,
+    "name": "gSong015Track6",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A67A8",
+    "size": 53,
+    "name": "gSong015Track7",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A67DD",
+    "size": 199,
+    "name": "gSong015Track8",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A68A4",
+    "size": 528,
+    "name": "gSong015Track9",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081A6AB4",
     "size": 44,
     "name": "gSongHeader_015",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081A6AE0",
+    "size": 219,
+    "name": "gSong016Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A6BBB",
+    "size": 290,
+    "name": "gSong016Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A6CDD",
+    "size": 771,
+    "name": "gSong016Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A6FE0",
+    "size": 107,
+    "name": "gSong016Track4",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A704B",
+    "size": 135,
+    "name": "gSong016Track5",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A70D2",
+    "size": 698,
+    "name": "gSong016Track6",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081A738C",
@@ -6930,10 +7458,64 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081A73AC",
+    "size": 331,
+    "name": "gSong018Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A74F7",
+    "size": 368,
+    "name": "gSong018Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A7667",
+    "size": 397,
+    "name": "gSong018Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081A77F4",
     "size": 20,
     "name": "gSongHeader_018",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081A7808",
+    "size": 139,
+    "name": "gSong019Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A7893",
+    "size": 129,
+    "name": "gSong019Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A7914",
+    "size": 117,
+    "name": "gSong019Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A7989",
+    "size": 184,
+    "name": "gSong019Track4",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A7A41",
+    "size": 35,
+    "name": "gSong019Track5",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A7A64",
+    "size": 40,
+    "name": "gSong019Track6",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081A7A8C",
@@ -6942,10 +7524,118 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081A7AAC",
+    "size": 94,
+    "name": "gSong020Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A7B0A",
+    "size": 393,
+    "name": "gSong020Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A7C93",
+    "size": 234,
+    "name": "gSong020Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A7D7D",
+    "size": 101,
+    "name": "gSong020Track4",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A7DE2",
+    "size": 120,
+    "name": "gSong020Track5",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A7E5A",
+    "size": 377,
+    "name": "gSong020Track6",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A7FD3",
+    "size": 78,
+    "name": "gSong020Track7",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A8021",
+    "size": 124,
+    "name": "gSong020Track8",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A809D",
+    "size": 199,
+    "name": "gSong020Track9",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081A8164",
     "size": 44,
     "name": "gSongHeader_020",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081A8190",
+    "size": 89,
+    "name": "gSong021Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A81E9",
+    "size": 319,
+    "name": "gSong021Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A8328",
+    "size": 169,
+    "name": "gSong021Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A83D1",
+    "size": 78,
+    "name": "gSong021Track4",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A841F",
+    "size": 282,
+    "name": "gSong021Track5",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A8539",
+    "size": 44,
+    "name": "gSong021Track6",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A8565",
+    "size": 187,
+    "name": "gSong021Track7",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A8620",
+    "size": 84,
+    "name": "gSong021Track8",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A8674",
+    "size": 452,
+    "name": "gSong021Track9",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081A8838",
@@ -6954,10 +7644,70 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081A8864",
+    "size": 523,
+    "name": "gSong022Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A8A6F",
+    "size": 150,
+    "name": "gSong022Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A8B05",
+    "size": 85,
+    "name": "gSong022Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A8B5A",
+    "size": 144,
+    "name": "gSong022Track4",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A8BEA",
+    "size": 42,
+    "name": "gSong022Track5",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081A8C14",
     "size": 28,
     "name": "gSongHeader_022",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081A8C30",
+    "size": 202,
+    "name": "gSong023Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A8CFA",
+    "size": 76,
+    "name": "gSong023Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A8D46",
+    "size": 123,
+    "name": "gSong023Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A8DC1",
+    "size": 43,
+    "name": "gSong023Track4",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A8DEC",
+    "size": 108,
+    "name": "gSong023Track5",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081A8E58",
@@ -6966,10 +7716,82 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081A8E74",
+    "size": 241,
+    "name": "gSong024Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A8F65",
+    "size": 55,
+    "name": "gSong024Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A8F9C",
+    "size": 465,
+    "name": "gSong024Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A916D",
+    "size": 163,
+    "name": "gSong024Track4",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081A9210",
     "size": 24,
     "name": "gSongHeader_024",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081A9228",
+    "size": 522,
+    "name": "gSong026Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A9432",
+    "size": 209,
+    "name": "gSong026Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A9503",
+    "size": 77,
+    "name": "gSong026Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A9550",
+    "size": 302,
+    "name": "gSong026Track4",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A967E",
+    "size": 73,
+    "name": "gSong026Track5",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A96C7",
+    "size": 91,
+    "name": "gSong026Track6",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A9722",
+    "size": 386,
+    "name": "gSong026Track7",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A98A4",
+    "size": 124,
+    "name": "gSong026Track8",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081A9920",
@@ -6978,10 +7800,106 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081A9948",
+    "size": 308,
+    "name": "gSong027Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A9A7C",
+    "size": 180,
+    "name": "gSong027Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A9B30",
+    "size": 80,
+    "name": "gSong027Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A9B80",
+    "size": 76,
+    "name": "gSong027Track4",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A9BCC",
+    "size": 91,
+    "name": "gSong027Track5",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A9C27",
+    "size": 79,
+    "name": "gSong027Track6",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A9C76",
+    "size": 169,
+    "name": "gSong027Track7",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A9D1F",
+    "size": 157,
+    "name": "gSong027Track8",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A9DBC",
+    "size": 176,
+    "name": "gSong027Track9",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A9E6C",
+    "size": 76,
+    "name": "gSong027Track10",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081A9EB8",
     "size": 48,
     "name": "gSongHeader_027",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081A9EE8",
+    "size": 99,
+    "name": "gSong028Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A9F4B",
+    "size": 72,
+    "name": "gSong028Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A9F93",
+    "size": 61,
+    "name": "gSong028Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A9FD0",
+    "size": 38,
+    "name": "gSong028Track4",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081A9FF6",
+    "size": 85,
+    "name": "gSong028Track5",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081AA04B",
+    "size": 245,
+    "name": "gSong028Track6",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AA140",
@@ -6990,10 +7908,94 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AA160",
+    "size": 193,
+    "name": "gSong030Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081AA221",
+    "size": 167,
+    "name": "gSong030Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081AA2C8",
+    "size": 357,
+    "name": "gSong030Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081AA42D",
+    "size": 150,
+    "name": "gSong030Track4",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081AA4C3",
+    "size": 105,
+    "name": "gSong030Track5",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081AA52C",
+    "size": 412,
+    "name": "gSong030Track6",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AA6C8",
     "size": 32,
     "name": "gSongHeader_030",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AA6E8",
+    "size": 283,
+    "name": "gSong031Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081AA803",
+    "size": 251,
+    "name": "gSong031Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081AA8FE",
+    "size": 345,
+    "name": "gSong031Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081AAA57",
+    "size": 460,
+    "name": "gSong031Track4",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081AAC23",
+    "size": 404,
+    "name": "gSong031Track5",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081AADB7",
+    "size": 293,
+    "name": "gSong031Track6",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081AAEDC",
+    "size": 663,
+    "name": "gSong031Track7",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081AB173",
+    "size": 477,
+    "name": "gSong031Track8",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AB350",
@@ -7002,10 +8004,52 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AB378",
+    "size": 129,
+    "name": "gSong032Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081AB3F9",
+    "size": 55,
+    "name": "gSong032Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081AB430",
+    "size": 203,
+    "name": "gSong032Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081AB4FB",
+    "size": 118,
+    "name": "gSong032Track4",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081AB571",
+    "size": 79,
+    "name": "gSong032Track5",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081AB5C0",
+    "size": 256,
+    "name": "gSong032Track6",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AB6C0",
     "size": 32,
     "name": "gSongHeader_032",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AB6E0",
+    "size": 20,
+    "name": "gSong101Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AB6F4",
@@ -7014,10 +8058,22 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AB700",
+    "size": 20,
+    "name": "gSong102Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AB714",
     "size": 12,
     "name": "gSongHeader_102",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AB720",
+    "size": 28,
+    "name": "gSong103Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AB73C",
@@ -7026,10 +8082,22 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AB748",
+    "size": 28,
+    "name": "gSong104Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AB764",
     "size": 12,
     "name": "gSongHeader_104",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AB770",
+    "size": 16,
+    "name": "gSong105Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AB780",
@@ -7038,10 +8106,22 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AB78C",
+    "size": 16,
+    "name": "gSong106Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AB79C",
     "size": 12,
     "name": "gSongHeader_106",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AB7A8",
+    "size": 16,
+    "name": "gSong107Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AB7B8",
@@ -7050,10 +8130,70 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AB7C4",
+    "size": 45,
+    "name": "gSong109Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081AB7F1",
+    "size": 35,
+    "name": "gSong109Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081AB814",
+    "size": 53,
+    "name": "gSong109Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081AB849",
+    "size": 25,
+    "name": "gSong109Track4",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081AB862",
+    "size": 17,
+    "name": "gSong109Track5",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081AB873",
+    "size": 21,
+    "name": "gSong109Track6",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AB888",
     "size": 32,
     "name": "gSongHeader_109",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AB8A8",
+    "size": 41,
+    "name": "gSong110Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081AB8D1",
+    "size": 31,
+    "name": "gSong110Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081AB8F0",
+    "size": 19,
+    "name": "gSong110Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081AB903",
+    "size": 25,
+    "name": "gSong110Track4",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AB91C",
@@ -7062,10 +8202,22 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AB934",
+    "size": 16,
+    "name": "gSong111Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AB944",
     "size": 12,
     "name": "gSongHeader_111",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AB950",
+    "size": 16,
+    "name": "gSong112Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AB960",
@@ -7074,10 +8226,22 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AB96C",
+    "size": 16,
+    "name": "gSong113Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AB97C",
     "size": 12,
     "name": "gSongHeader_113",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AB988",
+    "size": 16,
+    "name": "gSong115Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AB998",
@@ -7086,10 +8250,22 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AB9A4",
+    "size": 16,
+    "name": "gSong116Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AB9B4",
     "size": 12,
     "name": "gSongHeader_116",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AB9C0",
+    "size": 16,
+    "name": "gSong117Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AB9D0",
@@ -7098,10 +8274,22 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AB9DC",
+    "size": 16,
+    "name": "gSong118Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AB9EC",
     "size": 12,
     "name": "gSongHeader_118",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AB9F8",
+    "size": 16,
+    "name": "gSong119Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081ABA08",
@@ -7110,10 +8298,34 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081ABA14",
+    "size": 28,
+    "name": "gSong120Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081ABA30",
+    "size": 41,
+    "name": "gSong120Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081ABA59",
+    "size": 27,
+    "name": "gSong120Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081ABA74",
     "size": 20,
     "name": "gSongHeader_120",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081ABA88",
+    "size": 16,
+    "name": "gSong121Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081ABA98",
@@ -7122,10 +8334,22 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081ABAA4",
+    "size": 16,
+    "name": "gSong122Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081ABAB4",
     "size": 12,
     "name": "gSongHeader_122",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081ABAC0",
+    "size": 24,
+    "name": "gSong123Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081ABAD8",
@@ -7134,10 +8358,58 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081ABAE4",
+    "size": 24,
+    "name": "gSong124Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081ABAFC",
     "size": 12,
     "name": "gSongHeader_124",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081ABB08",
+    "size": 52,
+    "name": "gSong125Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081ABB3C",
+    "size": 48,
+    "name": "gSong125Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081ABB6C",
+    "size": 129,
+    "name": "gSong125Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081ABBED",
+    "size": 82,
+    "name": "gSong125Track4",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081ABC3F",
+    "size": 155,
+    "name": "gSong125Track5",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081ABCDA",
+    "size": 82,
+    "name": "gSong125Track6",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081ABD2C",
+    "size": 120,
+    "name": "gSong125Track7",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081ABDA4",
@@ -7146,10 +8418,40 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081ABDC8",
+    "size": 50,
+    "name": "gSong126Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081ABDFA",
+    "size": 17,
+    "name": "gSong126Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081ABE0B",
+    "size": 17,
+    "name": "gSong126Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081ABE1C",
     "size": 20,
     "name": "gSongHeader_126",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081ABE30",
+    "size": 50,
+    "name": "gSong127Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081ABE62",
+    "size": 26,
+    "name": "gSong127Track2",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081ABE7C",
@@ -7158,10 +8460,70 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081ABE8C",
+    "size": 66,
+    "name": "gSong128Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081ABECE",
+    "size": 21,
+    "name": "gSong128Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081ABEE3",
+    "size": 40,
+    "name": "gSong128Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081ABF0B",
+    "size": 27,
+    "name": "gSong128Track4",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081ABF26",
+    "size": 26,
+    "name": "gSong128Track5",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081ABF40",
     "size": 28,
     "name": "gSongHeader_128",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081ABF5C",
+    "size": 68,
+    "name": "gSong129Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081ABFA0",
+    "size": 49,
+    "name": "gSong129Track2",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081ABFD1",
+    "size": 27,
+    "name": "gSong129Track3",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081ABFEC",
+    "size": 19,
+    "name": "gSong129Track4",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081ABFFF",
+    "size": 41,
+    "name": "gSong129Track5",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AC028",
@@ -7170,10 +8532,22 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AC044",
+    "size": 16,
+    "name": "gSong130Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AC054",
     "size": 12,
     "name": "gSongHeader_130",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AC060",
+    "size": 16,
+    "name": "gSong131Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AC070",
@@ -7182,10 +8556,22 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AC07C",
+    "size": 16,
+    "name": "gSong132Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AC08C",
     "size": 12,
     "name": "gSongHeader_132",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AC098",
+    "size": 16,
+    "name": "gSong133Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AC0A8",
@@ -7194,10 +8580,22 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AC0B4",
+    "size": 16,
+    "name": "gSong134Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AC0C4",
     "size": 12,
     "name": "gSongHeader_134",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AC0D0",
+    "size": 16,
+    "name": "gSong135Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AC0E0",
@@ -7206,10 +8604,22 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AC0EC",
+    "size": 16,
+    "name": "gSong140Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AC0FC",
     "size": 12,
     "name": "gSongHeader_140",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AC108",
+    "size": 16,
+    "name": "gSong141Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AC118",
@@ -7218,10 +8628,28 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AC124",
+    "size": 16,
+    "name": "gSong142Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AC134",
     "size": 12,
     "name": "gSongHeader_142",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AC140",
+    "size": 29,
+    "name": "gSong143Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
+    "addr": "081AC15D",
+    "size": 43,
+    "name": "gSong143Track2",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AC188",
@@ -7230,10 +8658,22 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AC198",
+    "size": 16,
+    "name": "gSong150Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AC1A8",
     "size": 12,
     "name": "gSongHeader_150",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AC1B4",
+    "size": 16,
+    "name": "gSong151Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AC1C4",
@@ -7242,10 +8682,22 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AC1D0",
+    "size": 56,
+    "name": "gSong152Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AC208",
     "size": 12,
     "name": "gSongHeader_152",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AC214",
+    "size": 16,
+    "name": "gSong160Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AC224",
@@ -7254,10 +8706,22 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AC230",
+    "size": 16,
+    "name": "gSong161Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AC240",
     "size": 12,
     "name": "gSongHeader_161",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AC24C",
+    "size": 16,
+    "name": "gSong162Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AC25C",
@@ -7266,10 +8730,22 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AC268",
+    "size": 16,
+    "name": "gSong163Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AC278",
     "size": 12,
     "name": "gSongHeader_163",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AC284",
+    "size": 16,
+    "name": "gSong170Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AC294",
@@ -7278,10 +8754,22 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AC2A0",
+    "size": 16,
+    "name": "gSong171Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AC2B0",
     "size": 12,
     "name": "gSongHeader_171",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AC2BC",
+    "size": 16,
+    "name": "gSong172Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AC2CC",
@@ -7290,10 +8778,22 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AC2D8",
+    "size": 16,
+    "name": "gSong180Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AC2E8",
     "size": 12,
     "name": "gSongHeader_180",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AC2F4",
+    "size": 16,
+    "name": "gSong181Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AC304",
@@ -7302,10 +8802,22 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AC310",
+    "size": 48,
+    "name": "gSong182Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AC340",
     "size": 12,
     "name": "gSongHeader_182",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AC34C",
+    "size": 16,
+    "name": "gSong190Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AC35C",
@@ -7314,10 +8826,22 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AC368",
+    "size": 16,
+    "name": "gSong191Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AC378",
     "size": 12,
     "name": "gSongHeader_191",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AC384",
+    "size": 16,
+    "name": "gSong192Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AC394",
@@ -7326,10 +8850,22 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AC3A0",
+    "size": 16,
+    "name": "gSong200Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AC3B0",
     "size": 12,
     "name": "gSongHeader_200",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AC3BC",
+    "size": 16,
+    "name": "gSong201Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AC3CC",
@@ -7338,10 +8874,22 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AC3D8",
+    "size": 16,
+    "name": "gSong202Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AC3E8",
     "size": 12,
     "name": "gSongHeader_202",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AC3F4",
+    "size": 16,
+    "name": "gSong203Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AC404",
@@ -7350,10 +8898,22 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AC410",
+    "size": 16,
+    "name": "gSong204Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AC420",
     "size": 12,
     "name": "gSongHeader_204",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AC42C",
+    "size": 16,
+    "name": "gSong205Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AC43C",
@@ -7362,10 +8922,22 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AC448",
+    "size": 16,
+    "name": "gSong206Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AC458",
     "size": 12,
     "name": "gSongHeader_206",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AC464",
+    "size": 48,
+    "name": "gSong207Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AC494",
@@ -7374,10 +8946,22 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AC4A0",
+    "size": 16,
+    "name": "gSong208Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AC4B0",
     "size": 12,
     "name": "gSongHeader_208",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AC4BC",
+    "size": 16,
+    "name": "gSong209Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AC4CC",
@@ -7386,10 +8970,22 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AC4D8",
+    "size": 16,
+    "name": "gSong210Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AC4E8",
     "size": 12,
     "name": "gSongHeader_210",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AC4F4",
+    "size": 20,
+    "name": "gSong211Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AC508",
@@ -7398,10 +8994,22 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AC514",
+    "size": 20,
+    "name": "gSong212Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AC528",
     "size": 12,
     "name": "gSongHeader_212",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AC534",
+    "size": 16,
+    "name": "gSong213Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AC544",
@@ -7410,10 +9018,22 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AC550",
+    "size": 20,
+    "name": "gSong214Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AC564",
     "size": 12,
     "name": "gSongHeader_214",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AC570",
+    "size": 16,
+    "name": "gSong215Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AC580",
@@ -7422,10 +9042,22 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AC58C",
+    "size": 16,
+    "name": "gSong216Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AC59C",
     "size": 12,
     "name": "gSongHeader_216",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AC5A8",
+    "size": 16,
+    "name": "gSong217Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AC5B8",
@@ -7434,16 +9066,34 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AC5C4",
+    "size": 16,
+    "name": "gSong218Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AC5D4",
     "size": 12,
     "name": "gSongHeader_218",
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AC5E0",
+    "size": 16,
+    "name": "gSong219Track1",
+    "file": "src/song_tracks.c"
+  },
+  {
     "addr": "081AC5F0",
     "size": 12,
     "name": "gSongHeader_219",
     "file": "src/song_headers.c"
+  },
+  {
+    "addr": "081AC5FC",
+    "size": 16,
+    "name": "gSong220Track1",
+    "file": "src/song_tracks.c"
   },
   {
     "addr": "081AC60C",
@@ -7486,6 +9136,138 @@
     "size": 12,
     "name": "gDynamicSoundPlayerOrder",
     "file": "src/sound_player_order.c"
+  },
+  {
+    "addr": "081ACC50",
+    "size": 32,
+    "name": "gBattleRuntimePresetA",
+    "file": "src/game_tables.c"
+  },
+  {
+    "addr": "081ACC70",
+    "size": 32,
+    "name": "gBattleRuntimePresetB",
+    "file": "src/game_tables.c"
+  },
+  {
+    "addr": "081ACC90",
+    "size": 16,
+    "name": "gFriendArmOwnershipBits",
+    "file": "src/game_tables.c"
+  },
+  {
+    "addr": "081ACCA0",
+    "size": 16,
+    "name": "gBattlePartyDefaults",
+    "file": "src/game_tables.c"
+  },
+  {
+    "addr": "081ACCB0",
+    "size": 1776,
+    "name": "gBattleActionHandlers",
+    "file": "src/game_tables.c"
+  },
+  {
+    "addr": "081AD3A0",
+    "size": 192,
+    "name": "gTwoDigitResourceNames",
+    "file": "src/game_tables.c"
+  },
+  {
+    "addr": "081AD460",
+    "size": 52,
+    "name": "gGeneratedEffectNames",
+    "file": "src/game_tables.c"
+  },
+  {
+    "addr": "081AD494",
+    "size": 8,
+    "name": "gResourceSlotIndices",
+    "file": "src/game_tables.c"
+  },
+  {
+    "addr": "081AD49C",
+    "size": 8,
+    "name": "gResourceSlotMasks",
+    "file": "src/game_tables.c"
+  },
+  {
+    "addr": "081AD4A4",
+    "size": 400,
+    "name": "gCharacterGrowthThresholds",
+    "file": "src/game_tables.c"
+  },
+  {
+    "addr": "081AD634",
+    "size": 10320,
+    "name": "gBattleCharacterDefinitions",
+    "file": "src/battle_character_data.c"
+  },
+  {
+    "addr": "081AFE84",
+    "size": 32,
+    "name": "gEngineStartupHandlers",
+    "file": "src/game_tables.c"
+  },
+  {
+    "addr": "081AFEA4",
+    "size": 1024,
+    "name": "gScriptNativeCommands",
+    "file": "src/game_tables.c"
+  },
+  {
+    "addr": "081B096C",
+    "size": 56960,
+    "name": "gArmDefinitions",
+    "file": "src/definition_tables.c"
+  },
+  {
+    "addr": "081BE82C",
+    "size": 1040,
+    "name": "gItemDefinitions",
+    "file": "src/definition_tables.c"
+  },
+  {
+    "addr": "081BF408",
+    "size": 1008,
+    "name": "gBattleArenaScreenPositions",
+    "file": "src/map_placements.c"
+  },
+  {
+    "addr": "081BF7F8",
+    "size": 448,
+    "name": "gBattleArenaNeighborIndices",
+    "file": "src/map_placements.c"
+  },
+  {
+    "addr": "081BF9B8",
+    "size": 52,
+    "name": "gBattleArenaVisibilityMasks",
+    "file": "src/map_placements.c"
+  },
+  {
+    "addr": "081BF9EC",
+    "size": 3872,
+    "name": "gBattleArenaLayouts",
+    "file": "src/map_placements.c"
+  },
+  {
+    "addr": "081C090C",
+    "size": 20,
+    "name": "gBattleArenaLayoutTable",
+    "file": "src/map_placements.c"
+  },
+  {
+    "addr": "081C0920",
+    "size": 64,
+    "name": "gRomNfpArchiveHeader",
+    "file": "src/resource_catalog.c"
+  },
+  {
+    "addr": "081C0960",
+    "size": 13280,
+    "name": "gResourceCatalog",
+    "file": "src/resource_catalog.c"
   },
   {
     "addr": "08F2AFF0",

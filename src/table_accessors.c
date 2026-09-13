@@ -1,5 +1,7 @@
 /* Typed views over fixed runtime and ROM tables. */
 #include "gba/types.h"
+#include "map_placements.h"
+#include "item.h"
 
 #define AT(x) __attribute__((section(".rom." x)))
 #define RUNTIME (*(u8 **)0x03004020)
@@ -26,23 +28,23 @@ s32 RuntimeGetSignedByteE4C(void)
 
 #ifdef NONMATCHING
 AT("00056F68")
-void *GetItemDefinitionPointer(s32 itemId)
+void *ArmGetField78Pointer(s32 armId)
 {
-    return *(void **)(0x081B09E8 + (s16)itemId * 128 - 4);
+    return (void *)gArmDefinitions[(s16)armId].field78;
 }
 
 AT("00056F7C")
-u32 GetItemDefinitionByte124(s32 itemId)
+u32 ArmGetField7C(s32 armId)
 {
-    return *(u8 *)(0x081B096C + (s16)itemId * 128 + 124);
+    return gArmDefinitions[(s16)armId].field7C;
 }
+#endif
 
 AT("00072C04")
 void *GetBattleDefinition(s32 index)
 {
-    return ((void **)0x081C090C)[index];
+    return (void *)gBattleArenaLayoutTable[index];
 }
-#endif
 
 AT("000868E8")
 void *GetNewlibReentrancyState(void)

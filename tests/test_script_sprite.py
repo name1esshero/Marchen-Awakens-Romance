@@ -6,6 +6,8 @@ class ScriptSpriteTests(unittest.TestCase):
     def test_selection(self):
         with tempfile.TemporaryDirectory() as temp:
             p=Path(temp)
+            combined=(ROOT/'src/script_sprite.c').read_text()
+            (p/'worker.c').write_text(combined[:combined.index('/* Native sprite properties')])
             (p/'test.c').write_text(r'''
 #include "script_sprite.h"
 #include <assert.h>
@@ -49,6 +51,6 @@ int main(void) {
  return 0;
 }
 ''')
-            subprocess.run(['gcc','-O2','-I'+str(ROOT/'include'),str(p/'test.c'),str(ROOT/'src/script_sprite.c'),'-o',str(p/'test')],check=True)
+            subprocess.run(['gcc','-O2','-I'+str(ROOT/'include'),str(p/'test.c'),str(p/'worker.c'),'-o',str(p/'test')],check=True)
             subprocess.run([str(p/'test')],check=True)
 if __name__=='__main__':unittest.main()

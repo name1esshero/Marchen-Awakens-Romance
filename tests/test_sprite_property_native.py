@@ -5,7 +5,9 @@ ROOT=Path(__file__).resolve().parents[1]
 class SpritePropertyNativeTests(unittest.TestCase):
  def test_adapters(self):
   with tempfile.TemporaryDirectory() as temp:
-   p=Path(temp);source=(ROOT/'src/script_sprite_native.c').read_text()
+   p=Path(temp);combined=(ROOT/'src/script_sprite.c').read_text()
+   source='#include "script_sprite.h"\n'+combined[
+       combined.index('/* Native sprite properties'):combined.index('/* SprInit worker')]
    for a in ('00011F40','00011F68'):source=source.replace('__attribute__((section(".rom.'+a+'")))','')
    (p/'worker.c').write_text(source)
    (p/'test.c').write_text(r'''

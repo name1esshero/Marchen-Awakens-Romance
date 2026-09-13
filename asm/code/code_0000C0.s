@@ -6215,7 +6215,9 @@ _080031D2:
 	.4byte 0x1C05FD2B
 	mov r0, r9
 	adds r1, r4, #0
-	bl sub_0807AD4C
+	.2byte 0xF077
+	.byte 0xAE
+	.byte 0xFD
 	adds r2, r0, #0
 	adds r0, r7, #0
 	adds r0, #184
