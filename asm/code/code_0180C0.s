@@ -5156,7 +5156,7 @@ sub_0801A5BA:
 	adds r1, #118
 	movs r4, #0
 	ldrsh r1, [r1, r4]
-	bl sub_08005F54
+	bl StartIndexedSong
 	movs r0, #128
 	lsls r0, r0, #2
 	b _0801A60A
@@ -5422,7 +5422,7 @@ _0801A7B4:
 	adds r1, #118
 	movs r2, #0
 	ldrsh r1, [r1, r2]
-	bl sub_08005F54
+	bl StartIndexedSong
 	.global _0801A7D6
 _0801A7D6:
 	ldr r0, [r4, #0]
@@ -9270,11 +9270,11 @@ _0801C1B4:
 	ldr r0, _0801C1E8
 	add r0, r9
 	strh r2, [r0, #0]
-	bl sub_08004EF8
+	bl RuntimeStop
 	bl sub_08004F10
 	movs r0, #0
 	bl sub_08006F0C
-	bl sub_08004E50
+	bl RuntimeClear
 	.global _0801C1DC
 _0801C1DC:
 	mov r3, r9
@@ -9351,7 +9351,7 @@ _0801C24C:
 	add r1, r9
 	movs r0, #0
 	strh r0, [r1, #0]
-	bl sub_08004EF8
+	bl RuntimeStop
 	bl sub_08004F10
 	movs r0, #0
 	bl sub_08006F0C
@@ -9366,7 +9366,7 @@ _0801C26C:
 	.4byte 0x000005EC
 	.global _0801C270
 _0801C270:
-	bl sub_08004E50
+	bl RuntimeClear
 	movs r0, #198
 	lsls r0, r0, #3
 	add r0, r9
@@ -9975,7 +9975,7 @@ _0801C6A0:
 	ands r0, r2
 	orrs r0, r1
 	strb r0, [r6, #2]
-	bl sub_08004F94
+	bl RuntimeGetCurrentRecord14C
 	movs r1, #190
 	lsls r1, r1, #3
 	add r1, r8
@@ -11507,7 +11507,7 @@ _0801D120:
 	beq sub_0801D17C
 	movs r0, #1
 	movs r1, #127
-	bl sub_08005F54
+	bl StartIndexedSong
 	movs r0, #136
 	lsls r0, r0, #1
 	b _0801D4EA
@@ -11556,7 +11556,7 @@ _0801D178:
 sub_0801D17C:
 	movs r0, #6
 	movs r1, #125
-	bl sub_08005F54
+	bl StartIndexedSong
 	movs r0, #192
 	lsls r0, r0, #2
 	ldr r1, [sp, #28]
@@ -11581,7 +11581,7 @@ _0801D198:
 	strh r0, [r1, #0]
 	movs r0, #6
 	movs r1, #125
-	bl sub_08005F54
+	bl StartIndexedSong
 	ldr r5, [sp, #28]
 	strh r4, [r5, #14]
 	b sub_0801D710

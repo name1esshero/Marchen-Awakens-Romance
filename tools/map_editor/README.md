@@ -17,6 +17,12 @@ the pointer. Scrollbars pan the map; wheel scrolling elsewhere behaves normally.
 Horizontal/vertical flips, layer visibility, zoom, a grid, right-click picking,
 and stroke-level undo/redo are available. Select **Raw attributes** to paint
 numeric u8/u16 attributes. Their collision/event meanings are not fully decoded.
+The default **Game BG order** preview draws the second field plane first and
+plane 0 last, matching the loader's plane-0/BG0 and plane-1/BG1 assignment and
+the GBA's lower-BG-number ordering when priorities tie. Disable it to inspect
+planes in their raw file order. Runtime priority changes, animated tiles,
+palette effects, sprites, and additional resources sharing VRAM are not yet
+simulated.
 
 The **Event calls** panel selects the same-name SPC when present, or any other
 named script. Filter native calls by name and edit supported signed integer

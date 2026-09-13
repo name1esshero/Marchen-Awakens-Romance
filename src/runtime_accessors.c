@@ -21,10 +21,6 @@ AT("00004CD0") u32 RuntimeGetByte4014(void)
 {
  return **(u8 **)0x03004014;
 }
-AT("00004FB8") void RuntimeAdvanceWord4(u32 unused,u32 *state)
-{
- state[1]++;
-}
 AT("000067A4") void GameStateSetPointer2C(u32 index,void *value)
 {
  u8 *base=GAME_STATE_BASE;

@@ -76,5 +76,8 @@ s32 MapGenerationGetVectorValue0(u32 index);
 s32 MapGenerationGetVectorValue2(u32 index);
 s32 MapGenerationGetVectorValue4(u32 index);
 s32 MapGenerationGetVectorValue6(u32 index);
+void MapGenerationSetVector(u32 index, s32 value0, s32 value4,
+                            s32 value2, s32 value6);
+u32 MapAttributeGetConnectionMask(s32 tileX, s32 tileY);
 
 #endif

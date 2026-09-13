@@ -64,6 +64,8 @@ The server automatically opens the editor in your default browser;
 `--no-browser` disables this. The full URL is also printed in the terminal.
 The editor loads 47 maps with a visual tile selector, palette banks, flips,
 layer visibility, raw attribute painting, undo/redo, and JSON source saves.
+Its default game-order preview draws plane 0 above plane 1, matching the field
+loader's BG0/BG1 assignment; a checkbox restores raw file order for inspection.
 The wheel over the map zooms from 1× to 4× around the pointer; scrollbars pan.
 Existing native event calls expose supported constant integer arguments.
 HitInit, HitHitRect, HitSet, and HitFree have verified field labels; literal
@@ -258,16 +260,16 @@ English mappings, including the ÄRM Select names and descriptions.
 
 ## Decompilation status
 
-The provenance audit verifies **589 ordinary C functions and 10 BIOS assembly
+The provenance audit verifies **638 ordinary C functions and 10 BIOS assembly
 wrappers**; each declared range is linked from its expected object and matches
-the Japanese ROM. The latest batch adds 31 native-script adapters for procedural
-map generation and map-state fields. These expose generator reset/configuration,
-randomization, seed access, signed coordinate fields, mode selection, and
-finalization as readable C while preserving the VM's original return protocol.
-Eleven adjacent event adapters add game-state setters/queries, two- and
-three-argument dispatch calls, resource-slot lookup, and a signed map-coordinate
-call. A twelfth candidate remains in assembly because agbcc canonicalizes its
-range check differently from the original instruction sequence.
+the Japanese ROM. Recent batches add 31 procedural-map native adapters, eleven
+event adapters, fourteen resource handlers, 23 scene/sound handlers, and two
+KMP attribute helpers. `MapAttributeGetConnectionMask` proves that generated
+map connections use the `400–499` and `5400–5499` attribute classes and assigns
+their north/east/south/west mask bits. Eleven runtime lifecycle and record
+helpers also replace assembly. This includes repairing an older partial range
+at `08004FB8`: `RuntimeAdvanceWord4` is now one complete C function beginning
+at its real entry point, `08004FB4`.
 Equivalent C candidates that made agbcc choose different instruction bytes
 were rejected from the manifest. This is a verified function count, not a
 percentage of all game code. Earlier batches include eight list helpers, the `SprSet` and `SprGet`
@@ -399,9 +401,9 @@ included, where modern GCC differed on two counts in every function:
 | Leaf prologue | `push {lr}` | `push {r4, lr}`, saving a register it never uses |
 | `index * 24` | `((i * 2) + i) * 8` with shifts | load 24, then `muls` |
 
-The current manifest declares 599 linked ranges: 589 compiled-C ranges and ten
-BIOS inline-assembly wrapper ranges. Compiled C owns 19,744 bytes, including
-literal pools and alignment, or 3.1474% of the executable region after known
+The current manifest declares 648 linked ranges: 638 compiled-C ranges and ten
+BIOS inline-assembly wrapper ranges. Compiled C owns 21,224 bytes, including
+literal pools and alignment, or 3.3833% of the executable region after known
 PCM is excluded. The current target is at least 10%. This metric is not a pure
 function-completion percentage because the denominator still contains tables
 and undecoded data.

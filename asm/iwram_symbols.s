@@ -20,6 +20,12 @@
 .global gItemDefinitions
 .set gItemDefinitions, 0x081B096C
 
+.global gSoundPlayerTable
+.set gSoundPlayerTable, 0x0808B144
+
+.global gSongTable
+.set gSongTable, 0x0808B1B0
+
 @ Absolute aliases retained for misidentified ADR-like words in an opaque
 @ table at 0800A03C. These targets fall inside newly compiled C ranges.
 .global _0800A1E0

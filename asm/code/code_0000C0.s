@@ -1351,7 +1351,7 @@ _08000FF2:
 	asrs r0, r0, #24
 	cmp r0, #1
 	ble _08001054
-	bl sub_08005044
+	bl RuntimeGetLinkPlayerIfActive
 	lsls r0, r0, #24
 	lsrs r4, r0, #24
 	.global _08001026
@@ -1410,7 +1410,7 @@ _08001074:
 	strb r0, [r5, #0]
 	.global _08001078
 _08001078:
-	bl sub_08004E04
+	bl RuntimeGetOptionalField130
 	adds r4, r0, #0
 	movs r0, #192
 	lsls r0, r0, #1
@@ -1474,7 +1474,7 @@ sub_080010E8:
 	cmp r0, #0
 	beq _080010FE
 	bl sub_08004FC4
-	bl sub_08004E6C
+	bl RuntimeReleaseField17C
 	.global _080010FE
 _080010FE:
 	ldr r4, _08001144
@@ -1497,7 +1497,7 @@ _0800111C:
 	bl GameStateGetField425A
 	cmp r0, #0
 	beq _08001148
-	bl sub_08005044
+	bl RuntimeGetLinkPlayerIfActive
 	movs r1, #0
 	lsls r0, r0, #24
 	cmp r0, #0
@@ -1506,7 +1506,7 @@ _0800111C:
 	.global _08001132
 _08001132:
 	adds r0, r1, #0
-	bl sub_08005074
+	bl RuntimeGetByte4CDCU8
 	lsls r0, r0, #24
 	lsrs r0, r0, #24
 	bl GameStateSetField425B
@@ -10123,99 +10123,16 @@ _08004DFE:
 	pop {r1}
 	bx r1
 
-	.thumb_func
-	.thumb
-	.global sub_08004E04
-sub_08004E04:
-	push {lr}
-	ldr r0, _08004E18
-	ldr r0, [r0, #0]
-	cmp r0, #0
-	beq _08004E1C
-	movs r1, #152
-	lsls r1, r1, #1
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	b _08004E1E
-	.global _08004E18
-_08004E18:
-	.4byte 0x03004014  @ IWRAM+0x4014
-	.global _08004E1C
-_08004E1C:
-	movs r0, #0
-	.global _08004E1E
-_08004E1E:
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 004E04..004E24 is decompiled as RuntimeGetOptionalField130(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08004E24
-sub_08004E24:
-	push {r4, lr}
-	ldr r4, _08004E4C
-	str r0, [r4, #0]
-	movs r1, #236
-	lsls r1, r1, #2
-	movs r2, #0
-	bl CpuFill
-	ldr r0, [r4, #0]
-	movs r2, #164
-	lsls r2, r2, #1
-	adds r1, r0, r2
-	adds r0, #8
-	str r0, [r1, #0]
-	bl sub_080046B0
-	pop {r4}
-	pop {r0}
-	bx r0
+@ 004E24..004E50 is decompiled as RuntimeInitialize(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08004E4A
-sub_08004E4A:
-	movs r0, r0
-	.global _08004E4C
-_08004E4C:
-	.4byte 0x0300401C  @ IWRAM+0x401C
+@ 004E50..004E6C is decompiled as RuntimeClear(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08004E50
-sub_08004E50:
-	push {lr}
-	bl sub_08004758
-	ldr r0, _08004E68
-	ldr r0, [r0, #0]
-	movs r1, #236
-	lsls r1, r1, #2
-	movs r2, #0
-	bl CpuFill
-	pop {r0}
-	bx r0
-	.global _08004E68
-_08004E68:
-	.4byte 0x0300401C  @ IWRAM+0x401C
+@ 004E6C..004E88 is decompiled as RuntimeReleaseField17C(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08004E6C
-sub_08004E6C:
-	push {lr}
-	bl sub_08004B08
-	ldr r0, _08004E84
-	ldr r0, [r0, #0]
-	movs r1, #190
-	lsls r1, r1, #1
-	adds r0, r0, r1
-	bl sub_080048C0
-	pop {r0}
-	bx r0
-	.global _08004E84
-_08004E84:
-	.4byte 0x0300401C  @ IWRAM+0x401C
+	.section .rom.00004E88, "ax"
+	.syntax unified
 	.4byte 0x1C05B570
 	.4byte 0x1C261C0C
 	.4byte 0x783036FA
@@ -10258,23 +10175,10 @@ sub_08004EDC:
 _08004EF4:
 	.4byte 0x0300401C  @ IWRAM+0x401C
 
-	.thumb_func
-	.thumb
-	.global sub_08004EF8
-sub_08004EF8:
-	push {lr}
-	bl sub_08004840
-	ldr r0, _08004F0C
-	ldr r1, [r0, #0]
-	movs r0, #0
-	strh r0, [r1, #0]
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _08004F0C
-_08004F0C:
-	.4byte 0x0300401C  @ IWRAM+0x401C
+@ 004EF8..004F10 is decompiled as RuntimeStop(); see src/decompiled.json
+
+	.section .rom.00004F10, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -10347,34 +10251,12 @@ sub_08004F70:
 	.byte 0x00
 	.4byte 0x0300401C
 
-	.thumb_func
-	.thumb
-	.global sub_08004F94
-sub_08004F94:
-	ldr r0, _08004FB0
-	ldr r0, [r0, #0]
-	movs r2, #214
-	lsls r2, r2, #1
-	adds r1, r0, r2
-	ldrh r2, [r1, #0]
-	lsls r1, r2, #1
-	adds r1, r1, r2
-	lsls r1, r1, #3
-	movs r2, #166
-	lsls r2, r2, #1
-	adds r1, r1, r2
-	adds r0, r0, r1
-	bx lr
-	.global _08004FB0
-_08004FB0:
-	.4byte 0x0300401C  @ IWRAM+0x401C
-	.4byte 0x68014802
+@ 004F94..004FB4 is decompiled as RuntimeGetCurrentRecord14C(); see src/decompiled.json
 
-@ 004FB8..004FC0 is decompiled as RuntimeAdvanceWord4(); see src/decompiled.json
+@ 004FB4..004FC4 is decompiled as RuntimeAdvanceWord4(); see src/decompiled.json
 
-	.section .rom.00004FC0, "ax"
+	.section .rom.00004FC4, "ax"
 	.syntax unified
-	.4byte 0x0300401C
 
 	.thumb_func
 	.thumb
@@ -10456,55 +10338,13 @@ _08005038:
 
 @ 00503C..005040 is decompiled as RuntimeReturnZero(); see src/decompiled.json
 
-	.section .rom.00005040, "ax"
-	.syntax unified
-	.4byte 0x00004770
+@ 005040..005044 is decompiled as RuntimeNoOp(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08005044
-sub_08005044:
-	push {lr}
+@ 005044..005064 is decompiled as RuntimeGetLinkPlayerIfActive(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08005046
-sub_08005046:
-	bl sub_08004DA8
-	lsls r0, r0, #24
-	asrs r0, r0, #24
-	cmp r0, #1
-	bgt _08005056
-	movs r0, #0
-	b _0800505E
-	.global _08005056
-_08005056:
-	bl SioGetPlayerId
-	lsls r0, r0, #24
-	lsrs r0, r0, #24
-	.global _0800505E
-_0800505E:
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.4byte 0xF7FFB500
-	.4byte 0x0600FE33
-	.4byte 0xBC020E00
-	.4byte 0x00004708
+@ 005064..005074 is decompiled as RuntimeGetByte4014U8(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08005074
-sub_08005074:
-	push {lr}
-	bl sub_08004CDC
-	lsls r0, r0, #24
-	lsrs r0, r0, #24
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 005074..005084 is decompiled as RuntimeGetByte4CDCU8(); see src/decompiled.json
 
 @ 005084..005094 is decompiled as RuntimeReadSignedByte(); see src/decompiled.json
 
@@ -12036,178 +11876,28 @@ _08005B24:
 	.4byte 0x47704800
 	.4byte 0x00007FFF
 
-	.thumb_func
-	.thumb
-	.global sub_08005B34
-sub_08005B34:
-	push {lr}
-	ldr r0, [r1, #0]
-	ldr r1, [r1, #4]
-	movs r2, #0
-	bl sub_08005378
-	pop {r1}
-	bx r1
+@ 005B34..005B44 is decompiled as ScriptNativeStartTask05378(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08005B44
-sub_08005B44:
-	push {lr}
-	ldr r0, [r1, #0]
-	ldr r3, [r1, #4]
-	ldr r2, [r1, #8]
-	adds r1, r3, #0
-	movs r3, #0
-	bl sub_080053E4
-	pop {r1}
-	bx r1
+@ 005B44..005B58 is decompiled as ScriptNativeStartTask053E4(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08005B58
-sub_08005B58:
-	push {r4, lr}
-	adds r4, r2, #0
-	ldr r0, [r1, #0]
-	.2byte 0xF000
+@ 005B58..005B6C is decompiled as ScriptNativeTestGameFlag(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08005B60
-sub_08005B60:
-	.2byte 0xFE11
-	str r0, [r4, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 005B6C..005B7C is decompiled as ScriptNativeSetGameValue(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08005B6C
-sub_08005B6C:
-	push {lr}
-	ldr r0, [r1, #0]
-	ldr r1, [r1, #4]
-	bl sub_08006760
-	movs r0, #1
-	pop {r1}
-	bx r1
+@ 005B7C..005B90 is decompiled as ScriptNativeGetStatePointer(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08005B7C
-sub_08005B7C:
-	push {r4, lr}
-	adds r4, r2, #0
-	ldr r0, [r1, #0]
-	bl GameStateGetPointer2C
-	str r0, [r4, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 005B90..005BA0 is decompiled as ScriptNativeSetStatePointer(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08005B90
-sub_08005B90:
-	push {lr}
-	ldr r0, [r1, #0]
-	ldr r1, [r1, #4]
-	bl GameStateSetPointer2C
-	movs r0, #1
-	pop {r1}
-	bx r1
+@ 005BA0..005BCC is decompiled as ScriptNativeAdvanceStatePointer(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08005BA0
-sub_08005BA0:
-	push {r4, r5, r6, lr}
-	adds r4, r1, #0
-	adds r6, r2, #0
-	ldr r5, [r4, #0]
-	adds r0, r5, #0
-	bl GameStateGetPointer2C
-	adds r1, r0, #0
-	ldr r0, [r4, #4]
-	adds r1, r1, r0
-	adds r0, r5, #0
-	bl GameStateSetPointer2C
-	ldr r0, [r4, #0]
-	bl GameStateGetPointer2C
-	str r0, [r6, #0]
-	movs r0, #1
-	pop {r4, r5, r6}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 005BCC..005BE0 is decompiled as ScriptNativeLookupResource(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08005BCC
-sub_08005BCC:
-	push {r4, lr}
-	adds r4, r2, #0
-	ldr r0, [r1, #0]
-	bl sub_08006E88
-	str r0, [r4, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 005BE0..005C14 is decompiled as ScriptNativeFindNamedResource(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08005BE0
-sub_08005BE0:
-	push {r4, r5, lr}
-	sub sp, #16
-	adds r4, r1, #0
-	adds r5, r2, #0
-	ldr r1, [r4, #0]
-	mov r0, sp
-	bl strcpy
-	ldr r1, _08005C10
-	mov r0, sp
-	bl strcat
-	mov r0, sp
-	bl sub_08006E88
-	ldr r1, [r4, #4]
-	bl FindResourceByName
-	str r0, [r5, #0]
-	movs r0, #1
-	add sp, #16
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.global _08005C10
-_08005C10:
-	.4byte 0x08086A6C  @ ROM+0x86A6C
+@ 005C14..005C38 is decompiled as ScriptNativeStartTask05530(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08005C14
-sub_08005C14:
-	push {r4, lr}
-	sub sp, #8
-	ldr r0, [r1, #0]
-	ldrh r4, [r1, #4]
-	ldrh r2, [r1, #8]
-	ldrh r3, [r1, #12]
-	ldr r1, [r1, #16]
-	str r1, [sp, #0]
-	movs r1, #0
-	str r1, [sp, #4]
-	adds r1, r4, #0
-	bl sub_08005530
-	movs r0, #1
-	add sp, #8
-	pop {r4}
-	pop {r1}
-	bx r1
+	.section .rom.00005C38, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -12236,20 +11926,10 @@ sub_08005C38:
 	.4byte 0x03000000
 	.4byte 0x00003AF8
 
-	.thumb_func
-	.thumb
-	.global sub_08005C74
-sub_08005C74:
-	push {r4, lr}
-	adds r4, r2, #0
-	bl RuntimeGetPointer6120Field800
-	str r0, [r4, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 005C74..005C88 is decompiled as ScriptNativeGetSpriteRuntime(); see src/decompiled.json
+
+	.section .rom.00005C88, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -12355,103 +12035,16 @@ _08005D18:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_08005D24
-sub_08005D24:
-	push {r4, lr}
-	adds r4, r1, #0
-	bl GameStateGetField12EE
-	ldr r1, [r4, #0]
+@ 005D24..005D50 is decompiled as ScriptNativeSelectSceneValue(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08005D2E
-sub_08005D2E:
-	cmp r0, r1
-	bne _08005D36
-	movs r0, #1
-	b _08005D46
-	.global _08005D36
-_08005D36:
-	movs r0, #0
-	movs r2, #0
-	bl sub_080059C8
-	ldr r0, [r4, #0]
-	bl GameStateSetField12EE
-	ldr r0, _08005D4C
-	.global _08005D46
-_08005D46:
-	pop {r4}
-	pop {r1}
-	bx r1
-	.global _08005D4C
-_08005D4C:
-	.4byte 0x00007FFF
+@ 005D50..005D78 is decompiled as ScriptNativeStartIndexedSong(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08005D50
-sub_08005D50:
-	push {lr}
-	ldr r0, _08005D6C
-	ldr r0, [r0, #72]
-	ldr r2, _08005D70
-	ldr r1, [r1, #0]
-	lsls r1, r1, #3
-	adds r1, r1, r2
-	ldr r1, [r1, #0]
-	bl sub_0807915C
-	ldr r0, _08005D74
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _08005D6C
-_08005D6C:
-	.4byte 0x0808B144  @ ROM+0x8B144
-	.global _08005D70
-_08005D70:
-	.4byte 0x0808B1B0  @ ROM+0x8B1B0
-	.global _08005D74
-_08005D74:
-	.4byte 0x00007FFF
+@ 005D78..005D98 is decompiled as ScriptNativeStartTask056AC(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08005D78
-sub_08005D78:
-	push {lr}
-	sub sp, #4
-	ldr r0, [r1, #4]
-	ldr r3, [r1, #0]
-	ldr r2, [r1, #8]
-	movs r1, #0
-	str r1, [sp, #0]
-	adds r1, r3, #0
-	movs r3, #0
-	bl sub_080056AC
-	movs r0, #1
-	add sp, #4
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 005D98..005DAC is decompiled as ScriptNativeStartTask057C0(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08005D98
-sub_08005D98:
-	push {lr}
-	ldr r0, [r1, #0]
-	ldr r1, [r1, #4]
-	movs r3, #0
-	bl sub_080057C0
-	movs r0, #1
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+	.section .rom.00005DAC, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -12513,69 +12106,11 @@ sub_08005E2A:
 _08005E38:
 	.4byte 0x03005F30  @ IWRAM+0x5F30
 
-	.thumb_func
-	.thumb
-	.global sub_08005E3C
-sub_08005E3C:
-	push {lr}
-	ldr r0, [r1, #0]
-	ldr r1, [r1, #4]
-	movs r3, #0
-	bl sub_08005848
-	movs r0, #1
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 005E3C..005E50 is decompiled as ScriptNativeStartTask05848(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08005E50
-sub_08005E50:
-	push {lr}
-	ldr r0, [r1, #0]
-	bl sub_08005ED8
-	ldr r0, _08005E60
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _08005E60
-_08005E60:
-	.4byte 0x00007FFF
+@ 005E50..005E64 is decompiled as ScriptNativeStopTrackedSong(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08005E64
-sub_08005E64:
-	push {r4, r5, lr}
-	sub sp, #4
-	movs r4, #0
-	movs r5, #0
-	.global _08005E6C
-_08005E6C:
-	str r5, [sp, #0]
-	movs r0, #16
-	adds r1, r4, #0
-	movs r2, #1
-	movs r3, #1
-	bl sub_080056AC
-	adds r4, #1
-	cmp r4, #8
-	ble _08005E6C
-	movs r0, #1
-	negs r0, r0
-	bl GameStateSetField12EE
-	ldr r0, _08005E94
-	add sp, #4
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _08005E94
-_08005E94:
-	.4byte 0x00007FFF
+@ 005E64..005E98 is decompiled as ScriptNativeResetNineChannels(); see src/decompiled.json
 
 @ 005E98..005EA8 is decompiled as SoundSongStartU16(); see src/decompiled.json
 
@@ -12617,21 +12152,7 @@ sub_08005ED2:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_08005ED8
-sub_08005ED8:
-	push {lr}
-	lsls r0, r0, #16
-	lsrs r0, r0, #16
-	bl sub_08078B3C
-	movs r0, #1
-	negs r0, r0
-	bl GameStateSetField12EE
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
+@ 005ED8..005EF0 is decompiled as StopTrackedSong(); see src/decompiled.json
 
 @ 005EF0..005F04 is decompiled as RuntimeResetSelection(); see src/decompiled.json
 
@@ -12668,58 +12189,14 @@ _08005F26:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_08005F34
-sub_08005F34:
-	push {lr}
-	lsls r0, r0, #16
-	lsrs r0, r0, #16
-	bl sub_08078A9C
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
+@ 005F34..005F44 is decompiled as SoundSongStartAlternate(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08005F44
-sub_08005F44:
-	push {lr}
-	lsls r0, r0, #16
-	lsrs r0, r0, #16
-	bl sub_08078B3C
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
+@ 005F44..005F54 is decompiled as SoundSongStopU16(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08005F54
-sub_08005F54:
-	push {lr}
-	ldr r3, _08005F74
-	lsls r2, r0, #1
-	adds r2, r2, r0
-	lsls r2, r2, #2
-	adds r2, r2, r3
-	ldr r0, [r2, #0]
-	ldr r2, _08005F78
-	lsls r1, r1, #3
-	adds r1, r1, r2
-	ldr r1, [r1, #0]
-	bl sub_0807915C
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _08005F74
-_08005F74:
-	.4byte 0x0808B144  @ ROM+0x8B144
-	.global _08005F78
-_08005F78:
-	.4byte 0x0808B1B0  @ ROM+0x8B1B0
+@ 005F54..005F7C is decompiled as StartIndexedSong(); see src/decompiled.json
+
+	.section .rom.00005F7C, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -12821,25 +12298,10 @@ _08006010:
 	pop {r1}
 	bx r1
 
-	.thumb_func
-	.thumb
-	.global sub_08006018
-sub_08006018:
-	push {lr}
-	ldr r2, _08006030
-	lsls r1, r0, #1
-	adds r1, r1, r0
-	lsls r1, r1, #2
-	adds r1, r1, r2
-	ldr r0, [r1, #0]
-	bl SoundPlayerStop
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _08006030
-_08006030:
-	.4byte 0x0808B144  @ ROM+0x8B144
+@ 006018..006034 is decompiled as StopSoundPlayer(); see src/decompiled.json
+
+	.section .rom.00006034, "ax"
+	.syntax unified
 	.4byte 0x4A05B500
 	.4byte 0x18090041
 	.4byte 0x18890089
@@ -14803,9 +14265,9 @@ _0800719A:
 	b _080073A2
 	.global _0800719C
 _0800719C:
-	bl sub_08004F94
+	bl RuntimeGetCurrentRecord14C
 	adds r6, r0, #0
-	bl sub_08005044
+	bl RuntimeGetLinkPlayerIfActive
 	movs r1, #0
 	lsls r0, r0, #24
 	cmp r0, #0
@@ -14866,7 +14328,7 @@ _080071FC:
 	.global _080071FE
 _080071FE:
 	ldr r0, _08007214
-	bl sub_08004E24
+	bl RuntimeInitialize
 	bl sub_08004F10
 	movs r0, #1
 	bl sub_08006F0C
@@ -14935,7 +14397,7 @@ sub_08007268:
 	b _080073D2
 	.global _0800726C
 _0800726C:
-	bl sub_08005044
+	bl RuntimeGetLinkPlayerIfActive
 	movs r1, #0
 	lsls r0, r0, #24
 	cmp r0, #0
@@ -14944,7 +14406,7 @@ _0800726C:
 	.global _0800727A
 _0800727A:
 	adds r0, r1, #0
-	bl sub_08005074
+	bl RuntimeGetByte4CDCU8
 	lsls r0, r0, #24
 	lsrs r0, r0, #24
 	cmp r0, #1
@@ -14966,7 +14428,7 @@ _08007292:
 	str r0, [r5, #4]
 	cmp r0, #179
 	bgt _08007330
-	bl sub_08005044
+	bl RuntimeGetLinkPlayerIfActive
 	lsls r0, r0, #24
 	cmp r0, #0
 	bne _080072DC
@@ -15046,7 +14508,7 @@ _08007334:
 	b _080073D2
 	.global _0800733A
 _0800733A:
-	bl sub_08005044
+	bl RuntimeGetLinkPlayerIfActive
 	lsls r0, r0, #24
 	cmp r0, #0
 	bne _08007372
@@ -15163,9 +14625,9 @@ sub_08007410:
 	movs r0, #32
 	adds r0, r0, r5
 	mov r9, r0
-	bl sub_08004F94
+	bl RuntimeGetCurrentRecord14C
 	adds r6, r0, #0
-	bl sub_08005044
+	bl RuntimeGetLinkPlayerIfActive
 	movs r1, #0
 	lsls r0, r0, #24
 	cmp r0, #0
@@ -15214,7 +14676,7 @@ _08007468:
 	str r0, [r5, #32]
 	cmp r0, #179
 	bgt _08007510
-	bl sub_08005044
+	bl RuntimeGetLinkPlayerIfActive
 	lsls r0, r0, #24
 	cmp r0, #0
 	bne _080074BE
@@ -15293,7 +14755,7 @@ _08007510:
 	b _080075BE
 	.global _08007518
 _08007518:
-	bl sub_08005044
+	bl RuntimeGetLinkPlayerIfActive
 	lsls r0, r0, #24
 	cmp r0, #0
 	bne _0800753C
@@ -15335,11 +14797,11 @@ _08007552:
 	b _080075BE
 	.global _0800756A
 _0800756A:
-	bl sub_08004EF8
+	bl RuntimeStop
 	bl sub_08004F10
 	movs r0, #0
 	bl sub_08006F0C
-	bl sub_08004E50
+	bl RuntimeClear
 	bl sub_08007678
 	ldr r1, [r5, #24]
 	cmp r1, #0
@@ -15354,11 +14816,11 @@ _0800758C:
 	b _080075BE
 	.global _08007594
 _08007594:
-	bl sub_08004EF8
+	bl RuntimeStop
 	bl sub_08004F10
 	movs r0, #0
 	bl sub_08006F0C
-	bl sub_08004E50
+	bl RuntimeClear
 	movs r0, #1
 	bl RuntimeSetFieldEE8
 	ldr r1, [r5, #24]

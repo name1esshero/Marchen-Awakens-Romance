@@ -7989,7 +7989,7 @@ _0804340C:
 	cmp r0, #0
 	beq _08043428
 	movs r0, #143
-	bl sub_08005F44
+	bl SoundSongStopU16
 	movs r0, #240
 	lsls r0, r0, #8
 	.global _08043422
@@ -11440,7 +11440,7 @@ _08044A8C:
 sub_08044AA2:
 	movs r0, #4
 	movs r1, #142
-	bl sub_08005F54
+	bl StartIndexedSong
 	movs r0, #32
 	ldr r3, [sp, #24]
 	strh r0, [r3, #14]
@@ -11666,7 +11666,7 @@ sub_08044BE4:
 	bne _08044C58
 	movs r0, #5
 	movs r1, #162
-	bl sub_08005F54
+	bl StartIndexedSong
 	b _08044C60
 	.byte 0x00
 	.byte 0x00
@@ -11686,7 +11686,7 @@ _08044C54:
 _08044C58:
 	movs r0, #5
 	movs r1, #161
-	bl sub_08005F54
+	bl StartIndexedSong
 	.global _08044C60
 _08044C60:
 	movs r0, #2
@@ -12991,7 +12991,7 @@ sub_080454BC:
 _080454E8:
 	movs r0, #4
 	movs r1, #216
-	bl sub_08005F54
+	bl StartIndexedSong
 	movs r0, #32
 	ldr r2, [sp, #36]
 	strh r0, [r2, #14]
@@ -13141,7 +13141,7 @@ _080455B4:
 	bl sub_0800AA10
 	movs r0, #5
 	movs r1, #130
-	bl sub_08005F54
+	bl StartIndexedSong
 	strh r4, [r6, #0]
 	movs r0, #64
 	ldr r1, [sp, #36]
@@ -15457,7 +15457,7 @@ sub_08046540:
 	bl RuntimeSetFieldE48
 	movs r0, #4
 	movs r1, #134
-	bl sub_08005F54
+	bl StartIndexedSong
 	movs r0, #16
 	mov r3, r9
 	strh r0, [r3, #14]
@@ -17851,7 +17851,7 @@ sub_080474F6:
 	cmp r0, #0
 	beq _08047528
 	movs r0, #143
-	bl sub_08005F44
+	bl SoundSongStopU16
 	movs r0, #240
 	lsls r0, r0, #8
 	.global _08047514
@@ -19111,7 +19111,7 @@ _08047CD8:
 	cmp r0, #0
 	beq _08047CF8
 	movs r0, #143
-	bl sub_08005F44
+	bl SoundSongStopU16
 	movs r0, #240
 
 	.thumb_func

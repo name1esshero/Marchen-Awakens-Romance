@@ -10011,11 +10011,11 @@ sub_0800CCD6:
 	strh r0, [r1, #0]
 	adds r1, #5
 	strb r0, [r1, #0]
-	bl sub_08004EF8
+	bl RuntimeStop
 	bl sub_08004F10
 	movs r0, #0
 	bl sub_08006F0C
-	bl sub_08004E50
+	bl RuntimeClear
 	movs r0, #144
 	lsls r0, r0, #8
 	strh r0, [r7, #14]
@@ -10118,11 +10118,11 @@ sub_0800CD5A:
 	adds r0, #233
 	mov r4, r9
 	strb r4, [r0, #0]
-	bl sub_08004EF8
+	bl RuntimeStop
 	bl sub_08004F10
 	movs r0, #0
 	bl sub_08006F0C
-	bl sub_08004E50
+	bl RuntimeClear
 	strh r6, [r7, #14]
 	b sub_0800CF88
 	.global _0800CDB4
@@ -10649,7 +10649,7 @@ _0800D12C:
 	.global sub_0800D130
 sub_0800D130:
 	push {r4, r5, lr}
-	bl sub_08004F94
+	bl RuntimeGetCurrentRecord14C
 	adds r5, r0, #0
 	bl RuntimeGetBufferEB8
 	adds r4, r0, #0

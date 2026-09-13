@@ -3911,7 +3911,7 @@ sub_08049A4C:
 	movs r1, #1
 	bl ObjectSetFlag400
 	movs r0, #170
-	bl sub_08005F34
+	bl SoundSongStartAlternate
 	movs r2, #247
 	lsls r2, r2, #2
 	adds r1, r7, r2
@@ -9389,7 +9389,7 @@ sub_0804BF14:
 	movs r3, #0
 	bl sub_08003AE4
 	movs r0, #143
-	bl sub_08005F44
+	bl SoundSongStopU16
 	mov r0, r8
 	ldr r6, [sp, #64]
 	strh r0, [r6, #14]
@@ -10775,7 +10775,7 @@ _0804C892:
 	cmp r0, #0
 	beq _0804C8AE
 	movs r0, #143
-	bl sub_08005F44
+	bl SoundSongStopU16
 	movs r0, #240
 	lsls r0, r0, #8
 	.global _0804C8A8
@@ -12172,7 +12172,7 @@ sub_0804D0D8:
 	bl sub_08003AE4
 	movs r0, #4
 	movs r1, #150
-	bl sub_08005F54
+	bl StartIndexedSong
 	movs r5, #177
 	lsls r5, r5, #1
 	adds r0, r6, r5
@@ -12387,7 +12387,7 @@ sub_0804D2A8:
 	beq _0804D308
 	movs r0, #5
 	movs r1, #111
-	bl sub_08005F54
+	bl StartIndexedSong
 	movs r0, #1
 	mov r8, r0
 	movs r5, #0
@@ -13071,7 +13071,7 @@ sub_0804D6D4:
 	bl sub_08003AE4
 	movs r0, #4
 	movs r1, #150
-	bl sub_08005F54
+	bl StartIndexedSong
 	movs r3, #146
 	lsls r3, r3, #1
 	adds r0, r7, r3
@@ -13172,7 +13172,7 @@ _0804D794:
 	strh r0, [r4, #0]
 	movs r0, #5
 	movs r1, #150
-	bl sub_08005F54
+	bl StartIndexedSong
 	movs r6, #146
 	lsls r6, r6, #1
 	adds r1, r7, r6
@@ -13394,7 +13394,7 @@ sub_0804D91A:
 	bl sub_08003AE4
 	movs r0, #4
 	movs r1, #208
-	bl sub_08005F54
+	bl StartIndexedSong
 	movs r3, #146
 	lsls r3, r3, #1
 	adds r0, r7, r3
@@ -13635,7 +13635,7 @@ sub_0804DA6C:
 _0804DA9C:
 	movs r0, #5
 	movs r1, #192
-	bl sub_08005F54
+	bl StartIndexedSong
 	ldr r0, [sp, #36]
 	movs r1, #0
 	bl ObjectSetFlag2
@@ -14979,7 +14979,7 @@ _0804E360:
 	.global _0804E37A
 _0804E37A:
 	movs r0, #143
-	bl sub_08005F44
+	bl SoundSongStopU16
 	movs r0, #112
 	mov r1, r10
 	strh r0, [r1, #14]
@@ -15024,7 +15024,7 @@ _0804E3C4:
 	.global _0804E3C8
 _0804E3C8:
 	movs r0, #143
-	bl sub_08005F44
+	bl SoundSongStopU16
 	b _0804E4EA
 	.global _0804E3D0
 _0804E3D0:
@@ -17205,7 +17205,7 @@ _0804F19C:
 	bl ObjectSetFlag400
 	movs r0, #4
 	movs r1, #210
-	bl sub_08005F54
+	bl StartIndexedSong
 	movs r0, #32
 	mov r3, r10
 	strh r0, [r3, #14]
@@ -17237,7 +17237,7 @@ _0804F1D8:
 	movs r3, #0
 	ldrsh r1, [r0, r3]
 	movs r0, #4
-	bl sub_08005F54
+	bl StartIndexedSong
 	movs r0, #32
 	mov r1, r10
 	strh r0, [r1, #14]
@@ -17338,7 +17338,7 @@ sub_0804F284:
 	movs r3, #0
 	ldrsh r1, [r1, r3]
 	movs r0, #5
-	bl sub_08005F54
+	bl StartIndexedSong
 	movs r0, #1
 	mov r8, r0
 	movs r6, #0

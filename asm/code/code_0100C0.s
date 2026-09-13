@@ -4969,29 +4969,10 @@ _08012D90:
 _08012D94:
 	.4byte 0x000031D0
 
-	.thumb_func
-	.thumb
-	.global sub_08012D98
-sub_08012D98:
-	push {r4, lr}
-	adds r4, r2, #0
-	movs r2, #0
-	ldrsh r0, [r1, r2]
-	bl sub_080570BC
+@ 012D98..012DB4 is decompiled as ScriptNativeQueryResourceId(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012DA4
-sub_08012DA4:
-	lsls r0, r0, #16
-	asrs r0, r0, #16
-	str r0, [r4, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+	.section .rom.00012DB4, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -5078,86 +5059,16 @@ _08012E2E:
 	pop {r1}
 	bx r1
 
-	.thumb_func
-	.thumb
-	.global sub_08012E34
-sub_08012E34:
-	push {r4, lr}
-	adds r4, r2, #0
-	bl sub_08056290
-	str r0, [r4, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 012E34..012E48 is decompiled as ScriptNativeQueryResourceState(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012E48
-sub_08012E48:
-	push {lr}
-	ldr r0, [r1, #0]
-	bl sub_080562C8
-	movs r0, #1
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 012E48..012E58 is decompiled as ScriptNativeSetResourceState(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012E58
-sub_08012E58:
-	push {lr}
-	bl sub_080563AC
-	movs r0, #1
-	pop {r1}
-	bx r1
+@ 012E58..012E64 is decompiled as ScriptNativeResetResourceState(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012E64
-sub_08012E64:
-	push {r4, lr}
-	adds r4, r1, #0
-	movs r1, #0
-	ldrsh r0, [r4, r1]
+@ 012E64..012EA8 is decompiled as ScriptNativeUseResource(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012E6C
-sub_08012E6C:
-	bl sub_08056304
-	lsls r0, r0, #16
-	cmp r0, #0
-	beq _08012E9A
-	movs r1, #0
-	ldrsh r0, [r4, r1]
-	ldr r1, _08012EA4
-	bl sub_08055F88
-	bl sub_08056130
-	adds r2, r0, #0
-	lsls r2, r2, #16
-	asrs r2, r2, #16
-	movs r0, #0
-	movs r1, #0
-	bl sub_080087EC
-	movs r0, #0
-	movs r1, #0
-	bl sub_080083E0
-	.global _08012E9A
-_08012E9A:
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _08012EA4
-_08012EA4:
-	.4byte 0x000003E7
+	.section .rom.00012EA8, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -5213,158 +5124,26 @@ _08012EF8:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_08012F04
-sub_08012F04:
-	push {lr}
-	movs r0, #0
-	bl sub_0806EFCC
-	movs r0, #1
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 012F04..012F14 is decompiled as ScriptNativeResetEncounterState(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012F14
-sub_08012F14:
-	push {r4, r5, r6, lr}
-	adds r4, r0, #0
-	adds r5, r1, #0
-	adds r6, r2, #0
-	bl Random
-	adds r1, r4, #0
-	bl sub_08080E4C
-	lsls r0, r0, #16
-	asrs r0, r0, #14
-	adds r0, r0, r5
-	ldr r0, [r0, #0]
-	str r0, [r6, #0]
-	movs r0, #1
-	pop {r4, r5, r6}
-	pop {r1}
-	bx r1
+@ 012F14..012F38 is decompiled as ScriptNativeChooseRandomValue(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012F38
-sub_08012F38:
-	push {lr}
-	movs r2, #0
-	ldrsh r0, [r1, r2]
-	movs r2, #4
-	ldrsh r1, [r1, r2]
-	movs r2, #0
-	movs r3, #0
-	bl sub_0806F120
-	ldr r0, _08012F50
-	pop {r1}
-	bx r1
-	.global _08012F50
-_08012F50:
-	.4byte 0x00007FFF
+@ 012F38..012F54 is decompiled as ScriptNativeStartMapCoordinateEvent(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012F54
-sub_08012F54:
-	push {r4, lr}
-	adds r4, r2, #0
-	bl GameStateGetField42BA
-	lsls r0, r0, #16
-	asrs r0, r0, #16
-	str r0, [r4, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 012F54..012F6C is decompiled as ScriptNativeGetField42BA(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012F6A
-sub_08012F6A:
-	movs r0, r0
+@ 012F6C..012F80 is decompiled as ScriptNativeStartEncounter(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012F6C
-sub_08012F6C:
-	push {lr}
-	movs r0, #0
-	bl sub_0806F620
-	ldr r0, _08012F7C
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _08012F7C
-_08012F7C:
-	.4byte 0x00007FFF
+@ 012F80..012F90 is decompiled as ScriptNativeSetEncounterValue(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012F80
-sub_08012F80:
-	push {lr}
-	movs r2, #0
-	ldrsh r0, [r1, r2]
-	bl sub_080577C0
-	movs r0, #1
-	pop {r1}
-	bx r1
+@ 012F90..012FA8 is decompiled as ScriptNativeGetEncounterValue(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012F90
-sub_08012F90:
-	push {r4, lr}
+@ 012FA8..012FB8 is decompiled as ScriptNativeSetEncounterMode(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012F92
-sub_08012F92:
-	adds r4, r2, #0
-	bl sub_080577E4
-	lsls r0, r0, #16
-	asrs r0, r0, #16
-	str r0, [r4, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 012FB8..012FD0 is decompiled as ScriptNativeGetEncounterMode(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08012FA8
-sub_08012FA8:
-	push {lr}
-	movs r0, #0
-	ldrsb r0, [r1, r0]
-	bl sub_08057800
-	movs r0, #1
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_08012FB8
-sub_08012FB8:
-	push {r4, lr}
-	adds r4, r2, #0
-	bl sub_08057844
-	lsls r0, r0, #24
-	asrs r0, r0, #24
-	str r0, [r4, #0]
-	movs r0, #1
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+	.section .rom.00012FD0, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb

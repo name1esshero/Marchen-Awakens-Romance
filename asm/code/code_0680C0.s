@@ -7854,9 +7854,9 @@ _0806C540:
 	ldr r0, [r0, #0]
 	cmp r0, #0
 	beq _0806C58E
-	bl sub_08004EF8
+	bl RuntimeStop
 	bl sub_08004F10
-	bl sub_08004E50
+	bl RuntimeClear
 	movs r0, #0
 	bl sub_08006F0C
 	movs r5, #128
@@ -8118,7 +8118,7 @@ _0806C6F4:
 sub_0806C6F8:
 	push {r4, r5, lr}
 	adds r5, r0, #0
-	bl sub_08004F94
+	bl RuntimeGetCurrentRecord14C
 	adds r4, r0, #0
 	bl RuntimeReturnZero
 	lsls r0, r0, #24
@@ -9358,7 +9358,7 @@ _0806D588:
 	lsls r5, r5, #1
 	adds r0, r6, r5
 	strh r1, [r0, #0]
-	bl sub_08004F94
+	bl RuntimeGetCurrentRecord14C
 	adds r1, r6, #0
 	adds r1, #252
 	movs r2, #20

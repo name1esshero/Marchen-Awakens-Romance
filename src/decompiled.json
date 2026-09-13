@@ -132,10 +132,46 @@
     "file": "src/runtime_accessors.c"
   },
   {
-    "addr": "08004FB8",
-    "size": 8,
+    "addr": "08004E04",
+    "size": 32,
+    "name": "RuntimeGetOptionalField130",
+    "file": "src/runtime_core.c"
+  },
+  {
+    "addr": "08004E24",
+    "size": 44,
+    "name": "RuntimeInitialize",
+    "file": "src/runtime_core.c"
+  },
+  {
+    "addr": "08004E50",
+    "size": 28,
+    "name": "RuntimeClear",
+    "file": "src/runtime_core.c"
+  },
+  {
+    "addr": "08004E6C",
+    "size": 28,
+    "name": "RuntimeReleaseField17C",
+    "file": "src/runtime_core.c"
+  },
+  {
+    "addr": "08004EF8",
+    "size": 24,
+    "name": "RuntimeStop",
+    "file": "src/runtime_core.c"
+  },
+  {
+    "addr": "08004F94",
+    "size": 32,
+    "name": "RuntimeGetCurrentRecord14C",
+    "file": "src/runtime_core.c"
+  },
+  {
+    "addr": "08004FB4",
+    "size": 16,
     "name": "RuntimeAdvanceWord4",
-    "file": "src/runtime_accessors.c"
+    "file": "src/runtime_core.c"
   },
   {
     "addr": "0800503C",
@@ -144,10 +180,142 @@
     "file": "src/runtime_misc.c"
   },
   {
+    "addr": "08005040",
+    "size": 4,
+    "name": "RuntimeNoOp",
+    "file": "src/runtime_core.c"
+  },
+  {
+    "addr": "08005044",
+    "size": 32,
+    "name": "RuntimeGetLinkPlayerIfActive",
+    "file": "src/runtime_core.c"
+  },
+  {
+    "addr": "08005064",
+    "size": 16,
+    "name": "RuntimeGetByte4014U8",
+    "file": "src/runtime_core.c"
+  },
+  {
+    "addr": "08005074",
+    "size": 16,
+    "name": "RuntimeGetByte4CDCU8",
+    "file": "src/runtime_core.c"
+  },
+  {
     "addr": "08005084",
     "size": 16,
     "name": "RuntimeReadSignedByte",
     "file": "src/runtime_leaf.c"
+  },
+  {
+    "addr": "08005B34",
+    "size": 16,
+    "name": "ScriptNativeStartTask05378",
+    "file": "src/scene_native.c"
+  },
+  {
+    "addr": "08005B44",
+    "size": 20,
+    "name": "ScriptNativeStartTask053E4",
+    "file": "src/scene_native.c"
+  },
+  {
+    "addr": "08005B58",
+    "size": 20,
+    "name": "ScriptNativeTestGameFlag",
+    "file": "src/scene_native.c"
+  },
+  {
+    "addr": "08005B6C",
+    "size": 16,
+    "name": "ScriptNativeSetGameValue",
+    "file": "src/scene_native.c"
+  },
+  {
+    "addr": "08005B7C",
+    "size": 20,
+    "name": "ScriptNativeGetStatePointer",
+    "file": "src/scene_native.c"
+  },
+  {
+    "addr": "08005B90",
+    "size": 16,
+    "name": "ScriptNativeSetStatePointer",
+    "file": "src/scene_native.c"
+  },
+  {
+    "addr": "08005BA0",
+    "size": 44,
+    "name": "ScriptNativeAdvanceStatePointer",
+    "file": "src/scene_native.c"
+  },
+  {
+    "addr": "08005BCC",
+    "size": 20,
+    "name": "ScriptNativeLookupResource",
+    "file": "src/scene_native.c"
+  },
+  {
+    "addr": "08005BE0",
+    "size": 52,
+    "name": "ScriptNativeFindNamedResource",
+    "file": "src/scene_native.c"
+  },
+  {
+    "addr": "08005C14",
+    "size": 36,
+    "name": "ScriptNativeStartTask05530",
+    "file": "src/scene_native.c"
+  },
+  {
+    "addr": "08005C74",
+    "size": 20,
+    "name": "ScriptNativeGetSpriteRuntime",
+    "file": "src/scene_native.c"
+  },
+  {
+    "addr": "08005D24",
+    "size": 44,
+    "name": "ScriptNativeSelectSceneValue",
+    "file": "src/scene_native.c"
+  },
+  {
+    "addr": "08005D50",
+    "size": 40,
+    "name": "ScriptNativeStartIndexedSong",
+    "file": "src/scene_native.c"
+  },
+  {
+    "addr": "08005D78",
+    "size": 32,
+    "name": "ScriptNativeStartTask056AC",
+    "file": "src/scene_native.c"
+  },
+  {
+    "addr": "08005D98",
+    "size": 20,
+    "name": "ScriptNativeStartTask057C0",
+    "file": "src/scene_native.c"
+  },
+  {
+    "addr": "08005E3C",
+    "size": 20,
+    "name": "ScriptNativeStartTask05848",
+    "file": "src/scene_native.c"
+  },
+  {
+    "addr": "08005E50",
+    "size": 20,
+    "name": "ScriptNativeStopTrackedSong",
+    "file": "src/scene_native.c"
+  },
+  {
+    "addr": "08005E64",
+    "size": 52,
+    "name": "ScriptNativeResetNineChannels",
+    "file": "src/scene_native.c"
   },
   {
     "addr": "08005E98",
@@ -156,10 +324,40 @@
     "file": "src/runtime_leaf.c"
   },
   {
+    "addr": "08005ED8",
+    "size": 24,
+    "name": "StopTrackedSong",
+    "file": "src/scene_native.c"
+  },
+  {
     "addr": "08005EF0",
     "size": 20,
     "name": "RuntimeResetSelection",
     "file": "src/runtime_leaf.c"
+  },
+  {
+    "addr": "08005F34",
+    "size": 16,
+    "name": "SoundSongStartAlternate",
+    "file": "src/scene_native.c"
+  },
+  {
+    "addr": "08005F44",
+    "size": 16,
+    "name": "SoundSongStopU16",
+    "file": "src/scene_native.c"
+  },
+  {
+    "addr": "08005F54",
+    "size": 40,
+    "name": "StartIndexedSong",
+    "file": "src/scene_native.c"
+  },
+  {
+    "addr": "08006018",
+    "size": 28,
+    "name": "StopSoundPlayer",
+    "file": "src/scene_native.c"
   },
   {
     "addr": "08006784",
@@ -1704,6 +1902,90 @@
     "file": "src/script_native_adapters.c"
   },
   {
+    "addr": "08012D98",
+    "size": 28,
+    "name": "ScriptNativeQueryResourceId",
+    "file": "src/resource_native.c"
+  },
+  {
+    "addr": "08012E34",
+    "size": 20,
+    "name": "ScriptNativeQueryResourceState",
+    "file": "src/resource_native.c"
+  },
+  {
+    "addr": "08012E48",
+    "size": 16,
+    "name": "ScriptNativeSetResourceState",
+    "file": "src/resource_native.c"
+  },
+  {
+    "addr": "08012E58",
+    "size": 12,
+    "name": "ScriptNativeResetResourceState",
+    "file": "src/resource_native.c"
+  },
+  {
+    "addr": "08012E64",
+    "size": 68,
+    "name": "ScriptNativeUseResource",
+    "file": "src/resource_native.c"
+  },
+  {
+    "addr": "08012F04",
+    "size": 16,
+    "name": "ScriptNativeResetEncounterState",
+    "file": "src/resource_native.c"
+  },
+  {
+    "addr": "08012F14",
+    "size": 36,
+    "name": "ScriptNativeChooseRandomValue",
+    "file": "src/resource_native.c"
+  },
+  {
+    "addr": "08012F38",
+    "size": 28,
+    "name": "ScriptNativeStartMapCoordinateEvent",
+    "file": "src/resource_native.c"
+  },
+  {
+    "addr": "08012F54",
+    "size": 24,
+    "name": "ScriptNativeGetField42BA",
+    "file": "src/resource_native.c"
+  },
+  {
+    "addr": "08012F6C",
+    "size": 20,
+    "name": "ScriptNativeStartEncounter",
+    "file": "src/resource_native.c"
+  },
+  {
+    "addr": "08012F80",
+    "size": 16,
+    "name": "ScriptNativeSetEncounterValue",
+    "file": "src/resource_native.c"
+  },
+  {
+    "addr": "08012F90",
+    "size": 24,
+    "name": "ScriptNativeGetEncounterValue",
+    "file": "src/resource_native.c"
+  },
+  {
+    "addr": "08012FA8",
+    "size": 16,
+    "name": "ScriptNativeSetEncounterMode",
+    "file": "src/resource_native.c"
+  },
+  {
+    "addr": "08012FB8",
+    "size": 24,
+    "name": "ScriptNativeGetEncounterMode",
+    "file": "src/resource_native.c"
+  },
+  {
     "addr": "08018C4C",
     "size": 196,
     "name": "HitRegionTest",
@@ -2182,6 +2464,18 @@
     "size": 24,
     "name": "MapGenerationGetVectorValue6",
     "file": "src/map_generation.c"
+  },
+  {
+    "addr": "080720E8",
+    "size": 72,
+    "name": "MapGenerationSetVector",
+    "file": "src/map_attributes.c"
+  },
+  {
+    "addr": "08072130",
+    "size": 164,
+    "name": "MapAttributeGetConnectionMask",
+    "file": "src/map_attributes.c"
   },
   {
     "addr": "08078A64",

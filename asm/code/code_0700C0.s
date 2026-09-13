@@ -4581,148 +4581,12 @@ _08071DB0:
 
 @ 0720D0..0720E8 is decompiled as MapGenerationGetVectorValue6(); see src/decompiled.json
 
-	.section .rom.000720E8, "ax"
+@ 0720E8..072130 is decompiled as MapGenerationSetVector(); see src/decompiled.json
+
+@ 072130..0721D4 is decompiled as MapAttributeGetConnectionMask(); see src/decompiled.json
+
+	.section .rom.000721D4, "ax"
 	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_080720E8
-sub_080720E8:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r8
-	push {r7}
-	adds r4, r0, #0
-	adds r5, r1, #0
-	adds r6, r2, #0
-	mov r8, r3
-	ldr r7, [sp, #24]
-	bl MapGenerationGetState
-	lsls r4, r4, #3
-	adds r0, r0, r4
-	adds r0, #108
-	strh r5, [r0, #0]
-	bl MapGenerationGetState
-	adds r0, r0, r4
-	adds r0, #112
-	strh r6, [r0, #0]
-	bl MapGenerationGetState
-	adds r0, r0, r4
-	adds r0, #110
-	mov r1, r8
-	strh r1, [r0, #0]
-	bl MapGenerationGetState
-	adds r0, r0, r4
-	adds r0, #114
-	strh r7, [r0, #0]
-	pop {r3}
-	mov r8, r3
-	pop {r4, r5, r6, r7}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_08072130
-sub_08072130:
-	push {r4, r5, r6, r7, lr}
-	adds r7, r0, #0
-	adds r5, r1, #0
-	movs r6, #0
-	ldr r0, _080721C8
-	lsls r1, r7, #3
-	subs r2, r5, #1
-	lsls r2, r2, #3
-	bl KmpReadAttribute
-	adds r1, r0, #0
-	ldr r2, _080721CC
-	adds r0, r1, r2
-	cmp r0, #99
-	bls _08072156
-	ldr r2, _080721D0
-	adds r0, r1, r2
-	cmp r0, #99
-	bhi _08072158
-	.global _08072156
-_08072156:
-	movs r6, #1
-	.global _08072158
-_08072158:
-	ldr r0, _080721C8
-	adds r1, r7, #1
-	lsls r1, r1, #3
-	lsls r4, r5, #3
-	adds r2, r4, #0
-	bl KmpReadAttribute
-	adds r1, r0, #0
-	ldr r2, _080721CC
-	adds r0, r1, r2
-	cmp r0, #99
-	bls _08072178
-	ldr r2, _080721D0
-	adds r0, r1, r2
-	cmp r0, #99
-	bhi _0807217C
-	.global _08072178
-_08072178:
-	movs r0, #2
-	orrs r6, r0
-	.global _0807217C
-_0807217C:
-	ldr r0, _080721C8
-	lsls r1, r7, #3
-	adds r2, r5, #1
-	lsls r2, r2, #3
-	bl KmpReadAttribute
-	adds r1, r0, #0
-	ldr r2, _080721CC
-	adds r0, r1, r2
-	cmp r0, #99
-	bls _0807219A
-	ldr r2, _080721D0
-	adds r0, r1, r2
-	cmp r0, #99
-	bhi _0807219E
-	.global _0807219A
-_0807219A:
-	movs r0, #4
-	orrs r6, r0
-	.global _0807219E
-_0807219E:
-	ldr r0, _080721C8
-	subs r1, r7, #1
-	lsls r1, r1, #3
-	adds r2, r4, #0
-	bl KmpReadAttribute
-	adds r1, r0, #0
-	ldr r2, _080721CC
-	adds r0, r1, r2
-	cmp r0, #99
-	bls _080721BC
-	ldr r2, _080721D0
-	adds r0, r1, r2
-	cmp r0, #99
-	bhi _080721C0
-	.global _080721BC
-_080721BC:
-	movs r0, #8
-	orrs r6, r0
-	.global _080721C0
-_080721C0:
-	adds r0, r6, #0
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.global _080721C8
-_080721C8:
-	.4byte 0x03003BC4  @ IWRAM+0x3BC4
-	.global _080721CC
-_080721CC:
-	.4byte 0xFFFFFE70
-	.global _080721D0
-_080721D0:
-	.4byte 0xFFFFEAE8
 
 	.thumb_func
 	.thumb
@@ -4756,7 +4620,7 @@ sub_080721D4:
 _08072210:
 	adds r0, r6, #0
 	adds r1, r5, #0
-	bl sub_08072130
+	bl MapAttributeGetConnectionMask
 	adds r4, r0, #0
 	subs r0, r4, #3
 	cmp r0, #9
@@ -4861,7 +4725,7 @@ _08072302:
 	movs r1, #0
 	movs r2, #0
 	movs r3, #0
-	bl sub_080720E8
+	bl MapGenerationSetVector
 	adds r0, r4, #0
 	movs r1, #0
 	bl MapGenerationSetTable58
@@ -4996,7 +4860,7 @@ _0807243C:
 	str r0, [sp, #0]
 	adds r0, r4, #0
 	movs r2, #32
-	bl sub_080720E8
+	bl MapGenerationSetVector
 	adds r0, r4, #0
 	movs r1, #3
 	bl MapGenerationSetTable58

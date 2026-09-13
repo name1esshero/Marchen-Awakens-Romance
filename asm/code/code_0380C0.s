@@ -16919,7 +16919,7 @@ sub_0803F3B2:
 	movs r0, #0
 	strh r0, [r7, #0]
 	movs r0, #152
-	bl sub_08005F44
+	bl SoundSongStopU16
 	movs r0, #96
 	mov r1, r8
 	strh r0, [r1, #14]
@@ -16968,7 +16968,7 @@ _0803F418:
 	.global _0803F41C
 _0803F41C:
 	movs r0, #152
-	bl sub_08005F44
+	bl SoundSongStopU16
 	b _0803F496
 	.global _0803F424
 _0803F424:

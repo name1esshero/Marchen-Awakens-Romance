@@ -1555,7 +1555,7 @@ _08030AC4:
 	cmp r0, #0
 	beq _08030B9C
 	movs r0, #214
-	bl sub_08005F44
+	bl SoundSongStopU16
 	ldr r0, [r5, #64]
 	ldr r1, [r5, #68]
 	ldr r2, [r5, #72]
@@ -1659,7 +1659,7 @@ _08030B74:
 	adds r0, r5, #0
 	bl sub_0802824C
 	movs r0, #214
-	bl sub_08005F44
+	bl SoundSongStopU16
 	ldr r1, [r7, #24]
 	cmp r1, #0
 	beq _08030B92
@@ -2012,7 +2012,7 @@ _08030D80:
 	cmp r0, #0
 	beq _08030E20
 	movs r0, #214
-	bl sub_08005F44
+	bl SoundSongStopU16
 	ldr r0, _08030DD4
 	ldr r1, [r5, #64]
 	lsls r1, r1, #5
@@ -2074,7 +2074,7 @@ _08030DF6:
 	adds r0, r5, #0
 	bl sub_0802824C
 	movs r0, #214
-	bl sub_08005F44
+	bl SoundSongStopU16
 	mov r0, r8
 	ldr r1, [r0, #24]
 	cmp r1, #0
@@ -2387,7 +2387,7 @@ _08031018:
 	cmp r0, #0
 	beq _080310DE
 	movs r0, #214
-	bl sub_08005F44
+	bl SoundSongStopU16
 	ldr r0, _0803106C
 	ldr r1, [r5, #64]
 	lsls r1, r1, #5
@@ -2465,7 +2465,7 @@ _080310B4:
 	adds r0, r5, #0
 	bl sub_0802824C
 	movs r0, #214
-	bl sub_08005F44
+	bl SoundSongStopU16
 	mov r0, r8
 	ldr r1, [r0, #24]
 	cmp r1, #0

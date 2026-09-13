@@ -2397,7 +2397,7 @@ _08050E16:
 _08050E24:
 	movs r0, #4
 	movs r1, #142
-	bl sub_08005F54
+	bl StartIndexedSong
 	ldr r0, _08050ECC
 	mov r1, r8
 	strh r0, [r1, #0]
@@ -2459,7 +2459,7 @@ sub_08050E7A:
 	beq _08050EA8
 	movs r0, #5
 	movs r1, #201
-	bl sub_08005F54
+	bl StartIndexedSong
 	movs r1, #197
 	lsls r1, r1, #3
 
@@ -4390,12 +4390,12 @@ _08051AB6:
 	ble _08051A44
 	movs r0, #5
 	movs r1, #117
-	bl sub_08005F54
+	bl StartIndexedSong
 	.global _08051ACA
 _08051ACA:
 	movs r0, #4
 	movs r1, #190
-	bl sub_08005F54
+	bl StartIndexedSong
 	movs r2, #176
 	lsls r2, r2, #1
 	adds r1, r7, r2

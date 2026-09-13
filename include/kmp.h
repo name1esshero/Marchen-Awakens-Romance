@@ -45,4 +45,9 @@ void KmpSetClip(struct KmpViewport *, u32 x, u32 y, u32 width, u32 height);
 void KmpResetClip(struct KmpViewport *);
 u16 *KmpAttributeAddress(struct KmpViewport *, u32, u32);
 s32 KmpReadAttribute(struct KmpViewport *, s32 pixelX, s32 pixelY);
+struct HitBounds;
+s32 MapAttributeProbeDirection(s32 direction, s32 x, s32 y,
+                               const struct HitBounds *bounds);
+void MapGenerationSetProbeDirection(s32 direction, s32 x, s32 y,
+                                    const struct HitBounds *bounds);
 #endif

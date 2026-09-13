@@ -16918,7 +16918,7 @@ sub_080271A8:
 	cmp r0, #0
 	beq _08027230
 	movs r0, #143
-	bl sub_08005F44
+	bl SoundSongStopU16
 	movs r0, #128
 	lsls r0, r0, #1
 	ldr r1, [sp, #52]

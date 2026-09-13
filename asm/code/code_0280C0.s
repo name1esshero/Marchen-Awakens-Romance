@@ -7320,7 +7320,7 @@ _0802B2EE:
 	adds r2, r3, #0
 	bl sub_08005530
 	movs r0, #152
-	bl sub_08005F44
+	bl SoundSongStopU16
 	movs r0, #96
 	b _0802B354
 	.global _0802B320
@@ -8182,7 +8182,7 @@ sub_0802B878:
 	ands r0, r2
 	strh r0, [r1, #0]
 	movs r0, #152
-	bl sub_08005F44
+	bl SoundSongStopU16
 	movs r0, #240
 	lsls r0, r0, #8
 	.global _0802B89E
@@ -11021,7 +11021,7 @@ _0802CB66:
 	movs r1, #0
 	bl ObjectSetState1
 	movs r0, #182
-	bl sub_08005F44
+	bl SoundSongStopU16
 	movs r0, #150
 	bl SoundSongStartU16
 	ldr r1, _0802CBB4

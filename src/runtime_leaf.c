@@ -11,7 +11,7 @@ extern s32 sub_0806E4E8();
 extern s32 sub_08004DA8(void);
 extern void sub_08078A70(u16 song);
 extern void sub_08078BA4(void);
-extern void sub_08006018(u32 player);
+extern void StopSoundPlayer(u32 player);
 
 /* This call site uses destination/source order opposite to the BIOS wrapper. */
 AT("00002148") void Lz77UnCompVramSwapped(void *destination, const void *source)
@@ -53,8 +53,8 @@ AT("00005EF0") const u8 RuntimeResetSelectionTail[2] = {0};
 
 AT("00018E30") void SoundStopPlayers4And5(void)
 {
-    sub_08006018(4);
-    sub_08006018(5);
+    StopSoundPlayer(4);
+    StopSoundPlayer(5);
 }
 AT("00018E30") const u8 SoundStopPlayers4And5Tail[2] = {0};
 
