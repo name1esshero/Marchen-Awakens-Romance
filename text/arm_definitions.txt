@@ -29,21 +29,21 @@
 @1B0F1E すごいドリルスコップ！  // EN: An amazing Drill Scoop!
 @1B0F7C アイスリング  // EN: Ice Ring
 @1B0F9E 腕を氷の剣にする  // EN: Turns an arm into an ice sword.
-@1B0FFC スノーマンガード　ＣＬ２  // EN: Snowman Guard CL2
+@1B0FFC スノーマンガード　ＣＬ２  // EN: Snow Guard CL2
 @1B101E ユキちゃんがガードする  // EN: Yuki guards the user.
-@1B107C スノーマンガード　ＣＬ３  // EN: Snowman Guard CL3
+@1B107C スノーマンガード　ＣＬ３  // EN: Snow Guard CL3
 @1B109E 長時間ユキちゃんがガードする  // EN: Yuki guards for a long time.
-@1B10FC スノーマンアタック　ＣＬ１  // EN: Snowman Attack CL1
+@1B10FC スノーマンアタック　ＣＬ１  // EN: Snow Attack CL1
 @1B111E 敵の上にユキちゃんをおとす  // EN: Drops Yuki onto the enemy.
-@1B117C スノーマンアタック　ＣＬ２  // EN: Snowman Attack CL2
+@1B117C スノーマンアタック　ＣＬ２  // EN: Snow Attack CL2
 @1B119E ユキちゃんの回転アタック  // EN: Yuki performs a spinning attack.
-@1B11FC スノーマンアタック　ＣＬ３  // EN: Snowman Attack CL3
+@1B11FC スノーマンアタック　ＣＬ３  // EN: Snow Attack CL3
 @1B121E ツララをロケット発射する  // EN: Fires icicles like rockets.
-@1B127C スノーマンアタック　ＣＬ４  // EN: Snowman Attack CL4
+@1B127C スノーマンアタック　ＣＬ４  // EN: Snow Attack CL4
 @1B129E モーレツなふぶきをはく  // EN: Blasts out a fierce blizzard.
-@1B12FC スノーマンアタック　ＣＬ５  // EN: Snowman Attack CL5
+@1B12FC スノーマンアタック　ＣＬ５  // EN: Snow Attack CL5
 @1B131E なだれをおこす  // EN: Causes an avalanche.
-@1B137C スノーマンアタック　ＳＰ  // EN: Snowman Attack SP
+@1B137C スノーマンアタック　ＳＰ  // EN: Snow Attack SP
 @1B139E すごいスノーマンアタック！  // EN: An amazing Snowman Attack!
 @1B13FC １３トーテムポールチェーン  // EN: 13 Totem Pole Chain
 @1B141E 地面からトーテムポールが飛び出す  // EN: Totem poles burst from the ground.
@@ -131,11 +131,11 @@
 @1B289E ものすごい電撃が横に走る  // EN: Sends a tremendous shock sideways.
 @1B28FC エレクトリック・アイ　ＳＰ  // EN: Electric Eye SP
 @1B291E すごいエレクトリック・アイ！  // EN: An amazing Electric Eye!
-@1B297C アイスドアース　ＣＬ２  // EN: Ice de Earth CL2
+@1B297C アイスドアース　ＣＬ２  // EN: Ice Earth CL2
 @1B299E 小さな氷をぶつける  // EN: Strikes with a small chunk of ice.
-@1B29FC アイスドアース　ＣＬ３  // EN: Ice de Earth CL3
+@1B29FC アイスドアース　ＣＬ３  // EN: Ice Earth CL3
 @1B2A1E たくさんの氷をぶつける  // EN: Strikes with many chunks of ice.
-@1B2A7C アイスドアース　ＣＬ４  // EN: Ice de Earth CL4
+@1B2A7C アイスドアース　ＣＬ４  // EN: Ice Earth CL4
 @1B2A9E たくさんの氷を勢いよくぶつける  // EN: Hurls many chunks of ice with force.
 @1B2AFC フレイムボール　ＣＬ２  // EN: Flame Ball CL2
 @1B2B1E 炎のかたまりをぶつける  // EN: Strikes with a ball of flame.

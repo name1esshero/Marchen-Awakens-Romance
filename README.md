@@ -266,7 +266,7 @@ English mappings, including the ÄRM Select names and descriptions.
 
 ## Decompilation status
 
-The provenance audit verifies **995 ordinary C ranges (51,016 bytes, 8.1324% of
+The provenance audit verifies **996 ordinary C ranges (51,352 bytes, 8.1859% of
 the measured code/data region) and 10 BIOS assembly wrappers**; each declared range is linked from its expected object and matches
 the Japanese ROM. The latest batch restores the game's original newlib sources
 and compiles them with the historical libc compiler, covering string, memory,
@@ -410,9 +410,9 @@ included, where modern GCC differed on two counts in every function:
 | Leaf prologue | `push {lr}` | `push {r4, lr}`, saving a register it never uses |
 | `index * 24` | `((i * 2) + i) * 8` with shifts | load 24, then `muls` |
 
-The current manifest declares 1,005 linked ranges: 995 compiled-C ranges and ten
-BIOS inline-assembly wrapper ranges. Compiled C owns 51,016 bytes, including
-literal pools and alignment, or 8.1324% of the executable region after known
+The current manifest declares 1,006 linked ranges: 996 compiled-C ranges and ten
+BIOS inline-assembly wrapper ranges. Compiled C owns 51,352 bytes, including
+literal pools and alignment, or 8.1859% of the executable region after known
 PCM is excluded. The current target is at least 20%. This metric is not a pure
 function-completion percentage because the denominator still contains tables
 and undecoded data.
@@ -531,10 +531,12 @@ sequencing and PSG reconstruction remain unfinished.
 [Translation and English layout notes](text/translation/README.md) explain the
 actual dialogue printer, its double-byte English font mapping, and strict row
 limits. The optional `make english` build hooks the recovered dialogue constructor
-and the direct item-name accessor used by menus. It also maps table descriptions
-after the runtime `T0000 C0F04` printer prefix; longer translations wrap into
-A-button pages. Emulator validation and complete script/text discovery are still
-unfinished. Run `python3 tools/audit_setup.py`
+and the direct item name and description accessors used by menus. The ARM deck's
+fixed-width category, element, equipment, and stat labels are decoded in
+`src/menu_text.c`; its English labels stay within the original pointer-addressed
+slots. Table descriptions are also mapped after the runtime `T0000 C0F04`
+printer prefix; longer translations wrap into A-button pages. Emulator validation
+and complete script/text discovery are still unfinished. Run `python3 tools/audit_setup.py`
 for reproducible archive ownership and audio source checks.
 
 ### Generated compression files and cleanup

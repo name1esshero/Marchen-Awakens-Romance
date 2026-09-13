@@ -304,100 +304,11 @@ _08088450:
 	.4byte 0x30432030
 	.4byte 0x20343046
 	.4byte 0x00007325
-	.4byte 0x43836C83
-	.4byte 0x83836083
-	.4byte 0x56F05B81
-	.4byte 0x6C827182
-	.4byte 0x00005E81
-	.4byte 0x5B814B83
-	.4byte 0x42836683
-	.4byte 0x93834183
-	.4byte 0x718256F0
-	.4byte 0x5E816C82
-	.4byte 0x00000000
-	.4byte 0x5B815F83
-	.4byte 0x6C834E83
-	.4byte 0x56F05883
-	.4byte 0x6C827182
-	.4byte 0x00005E81
-	.4byte 0x5B817A83
-	.4byte 0x5B818A83
-	.4byte 0x718256F0
-	.4byte 0x5E816C82
-	.4byte 0x00000000
-	.4byte 0x42836683
-	.4byte 0x93838183
-	.4byte 0x87835683
-	.4byte 0x56F09383
-	.4byte 0x6C827182
-	.4byte 0x00005E81
-	.4byte 0x46834583
-	.4byte 0x93837C83
-	.4byte 0x718256F0
-	.4byte 0x5E816C82
-	.4byte 0x00000000
-	.4byte 0xAE918B97
-	.4byte 0x0000AB90
-	.4byte 0xAE916E92
-	.4byte 0x0000AB90
-	.4byte 0xAE919795
-	.4byte 0x0000AB90
-	.4byte 0xAE91D896
-	.4byte 0x0000AB90
-	.4byte 0xAE91CE89
-	.4byte 0x0000AB90
-	.4byte 0xAE918590
-	.4byte 0x0000AB90
-	.4byte 0xAE91B396
-	.4byte 0x0000AB90
-	.4byte 0xF5949591
-	.4byte 0x718256F0
-	.4byte 0x00006C82
-	.4byte 0x40818B97
-	.4byte 0x00000000
-	.4byte 0x40816E92
-	.4byte 0x00000000
-	.4byte 0x40819795
-	.4byte 0x00000000
-	.4byte 0x4081D896
-	.4byte 0x00000000
-	.4byte 0x4081CE89
-	.4byte 0x00000000
-	.4byte 0x40818590
-	.4byte 0x00000000
 
-	.thumb_func
-	.thumb
-	.global sub_08088554
-sub_08088554:
-	lsls r1, r0
-	movs r0, r0
-	strh r6, [r2, #20]
-	ldmia r5!, {r0, r1, r2, r4, r7}
-	lsls r1, r0
-	lsls r1, r0
-	movs r0, r0
-	movs r0, r0
-	ldr r6, [r2, #8]
-	b sub_08087E82
-	.4byte 0x4081CD97
-	.4byte 0x00000000
-	.4byte 0x828C558D
-	.4byte 0x4081CD97
-	.4byte 0x00000000
-	.4byte 0xCD97CC91
-	.4byte 0x40814081
-	.4byte 0x00000000
-	.4byte 0x77826482
-	.4byte 0x40816F82
-	.4byte 0x40814081
-	.4byte 0x64826D82
-	.4byte 0x73827782
-	.4byte 0x00000000
-	.4byte 0x75826B82
-	.4byte 0x40814481
-	.4byte 0x00000000
-	.4byte 0x00005E81
+@ 088460..0885B0 is decompiled as MenuTextConstants(); see src/decompiled.json
+
+	.section .rom.000885B0, "ax"
+	.syntax unified
 	.4byte 0x00005882
 	.4byte 0x00005782
 	.4byte 0x00005682

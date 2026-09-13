@@ -5988,6 +5988,12 @@
     "file": "src/table_accessors.c"
   },
   {
+    "addr": "08088460",
+    "size": 336,
+    "name": "MenuTextConstants",
+    "file": "src/menu_text.c"
+  },
+  {
     "addr": "081AC728",
     "size": 122,
     "name": "gVfprintfConstants",

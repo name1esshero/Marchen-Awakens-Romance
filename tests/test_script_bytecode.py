@@ -29,7 +29,7 @@ static struct ScriptBytecodeRoot *root_ptr = &root;
 #include "src/script_bytecode.c"
 s32 sub_08080BFC(s32 dividend, s32 divisor) { return dividend / divisor; }
 s32 sub_08080C94(s32 dividend, s32 divisor) { return dividend % divisor; }
-s32 sub_0807F1F8(void *record, s32 selector) { (void)record; return selector; }
+s32 ScriptResourceSelectValueSlot(void *record, s32 selector) { (void)record; return selector; }
 void HeapFree(void *heap, void *block) { (void)heap; (void)block; }
 void ScriptPopFrame(void) {}
 

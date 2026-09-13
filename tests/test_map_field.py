@@ -31,6 +31,10 @@ void KmpRenderViewport(struct KmpViewport *view,s32 x,s32 y) {
  assert((uintptr_t)view==0x03003BC4+(phase-3)*0xFC);
  assert(x==expectedX && y==expectedY);phase++;
 }
+s32 sub_08056290(void) { return 7; }
+void sub_08054350(void *a,void *b,s32 c,s32 d,s32 e,s32 f,s32 g) {
+ (void)a;(void)b;(void)c;(void)d;(void)e;(void)f;(void)g;
+}
 int main(void) {
  struct KmpHeader header={0};struct KmpViewport view={0};
  phase=0;expectedX=-32768*65536;expectedY=32767*65536;

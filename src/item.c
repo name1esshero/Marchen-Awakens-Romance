@@ -16,11 +16,13 @@ const char *ItemGetName(s32 id)
 }
 #endif
 
+#ifndef ENGLISH
 __attribute__((section(".rom.00056484")))
 const char *ItemGetDescription(s32 id)
 {
     return gItemDefinitions[(s16)id].description;
 }
+#endif
 
 __attribute__((section(".rom.00056494")))
 s32 ItemGetField63(s32 id)
