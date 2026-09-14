@@ -27,6 +27,10 @@ extern u32 testRandomSeed;
 struct KeyState *testKeyStates;
 vu16 testKeyRegister;
 u32 testRandomSeed;
+/* RuntimeRandom keeps its state in the secondary runtime allocation, which the
+ * ROM link resolves; give the host build somewhere for it to point. */
+static u8 runtimeAllocation[0x1000];
+u8 *gSecondaryRuntime = runtimeAllocation;
 void CpuFill(void *p, u32 size, u32 value) {
     assert(size==64 && value==0);
     memset(p, 0, size);

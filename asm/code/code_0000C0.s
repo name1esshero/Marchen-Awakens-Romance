@@ -1249,7 +1249,7 @@ _08000F54:
 	.byte 0xFE
 	movs r0, #1
 	movs r1, #1
-	bl sub_08079EA8
+	bl IntrWait
 	ldr r6, _08000F8C
 	adds r0, r5, r6
 	movs r4, #0
@@ -1445,13 +1445,13 @@ _08001078:
 _08001096:
 	movs r0, #1
 	movs r1, #1
-	bl sub_08079EA8
+	bl IntrWait
 	b _080010A8
 	.global _080010A0
 _080010A0:
 	movs r0, #1
 	movs r1, #128
-	bl sub_08079EA8
+	bl IntrWait
 	.global _080010A8
 _080010A8:
 	movs r0, #1
@@ -10228,25 +10228,10 @@ _08004FE2:
 _08004FEC:
 	.4byte 0x0300401C  @ IWRAM+0x401C
 
-	.thumb_func
-	.thumb
-	.global sub_08004FF0
-sub_08004FF0:
-	lsls r0, r0, #16
-	asrs r0, r0, #16
-	ldr r2, _08005008
-	lsls r1, r0, #1
-	adds r1, r1, r0
-	lsls r1, r1, #3
-	movs r0, #190
-	lsls r0, r0, #1
-	adds r1, r1, r0
-	ldr r0, [r2, #0]
-	adds r0, r0, r1
-	bx lr
-	.global _08005008
-_08005008:
-	.4byte 0x0300401C  @ IWRAM+0x401C
+@ 004FF0..00500C is decompiled as RuntimeGetRecord17C(); see src/decompiled.json
+
+	.section .rom.0000500C, "ax"
+	.syntax unified
 	.4byte 0x49090400
 	.byte 0x00
 	.byte 0x12
@@ -13408,7 +13393,7 @@ _0800719C:
 	.global _080071B0
 _080071B0:
 	adds r0, r1, #0
-	bl sub_08004FF0
+	bl RuntimeGetRecord17C
 	adds r7, r0, #0
 	mov r0, r8
 	ldrh r1, [r0, #14]
@@ -13788,7 +13773,7 @@ sub_08007410:
 	.global _08007434
 _08007434:
 	adds r0, r1, #0
-	bl sub_08004FF0
+	bl RuntimeGetRecord17C
 	adds r7, r0, #0
 	ldrh r1, [r5, #14]
 	movs r0, #128

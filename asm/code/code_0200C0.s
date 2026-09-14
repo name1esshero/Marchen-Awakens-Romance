@@ -6616,7 +6616,7 @@ _08022AC0:
 	movs r1, #0
 	ldrsh r0, [r0, r1]
 	adds r1, r7, #0
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	ldr r3, [r0, #0]
 	cmp r3, #0
 	bne _08022AEA
@@ -7032,7 +7032,7 @@ _08022DEA:
 	movs r3, #0
 	ldrsh r0, [r4, r3]
 	adds r1, r7, #0
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	ldr r0, [r0, #8]
 	cmp r0, #0
 	beq _08022E5C

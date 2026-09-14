@@ -222,6 +222,12 @@
     "file": "src/runtime_core.c"
   },
   {
+    "addr": "08004FF0",
+    "size": 28,
+    "name": "RuntimeGetRecord17C",
+    "file": "src/runtime_core.c"
+  },
+  {
     "addr": "0800503C",
     "size": 4,
     "name": "RuntimeReturnZero",
@@ -874,6 +880,18 @@
     "size": 36,
     "name": "CreateTask078E4",
     "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "0800832C",
+    "size": 44,
+    "name": "RuntimeRandom",
+    "file": "src/random.c"
+  },
+  {
+    "addr": "080083B8",
+    "size": 40,
+    "name": "RuntimeGetActorPartRecord",
+    "file": "src/runtime_objects.c"
   },
   {
     "addr": "08008658",
@@ -5169,6 +5187,12 @@
     "addr": "08079EA4",
     "size": 4,
     "name": "CpuSet",
+    "file": "src/bios_calls.c"
+  },
+  {
+    "addr": "08079EA8",
+    "size": 8,
+    "name": "IntrWait",
     "file": "src/bios_calls.c"
   },
   {

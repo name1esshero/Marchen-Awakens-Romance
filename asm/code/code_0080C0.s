@@ -323,38 +323,10 @@ _08008300:
 	.4byte 0x03004020
 	.4byte 0x00000EA4
 
-	.thumb_func
-	.thumb
-	.global sub_0800832C
-sub_0800832C:
-	ldr r0, _08008348
-	ldr r1, [r0, #0]
-	ldr r0, _0800834C
-	adds r1, r1, r0
-	ldr r2, [r1, #0]
-	ldr r0, _08008350
-	muls r0, r2
-	ldr r2, _08008354
-	adds r0, r0, r2
-	str r0, [r1, #0]
-	lsls r0, r0, #1
-	lsrs r0, r0, #17
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _08008348
-_08008348:
-	.4byte 0x03004020  @ IWRAM+0x4020
-	.global _0800834C
-_0800834C:
-	.4byte 0x00000EA4
-	.global _08008350
-_08008350:
-	.4byte 0x41C64E6D
-	.global _08008354
-_08008354:
-	.4byte 0x00003039
+@ 00832C..008358 is decompiled as RuntimeRandom(); see src/decompiled.json
 
+	.section .rom.00008358, "ax"
+	.syntax unified
 	.thumb_func
 	.thumb
 	.global sub_08008358
@@ -406,38 +378,10 @@ _080083B0:
 _080083B4:
 	.4byte 0x00001E42
 
-	.thumb_func
-	.thumb
-	.global sub_080083B8
-sub_080083B8:
-	ldr r3, _080083D8
-	movs r2, #209
-	lsls r2, r2, #3
-	muls r2, r0
-	movs r0, #144
-	lsls r0, r0, #1
-	adds r2, r2, r0
-	ldr r0, [r3, #0]
-	adds r0, r0, r2
-	movs r2, #104
-	muls r1, r2
-	ldr r2, _080083DC
-	adds r1, r1, r2
-	adds r0, r0, r1
-	bx lr
+@ 0083B8..0083E0 is decompiled as RuntimeGetActorPartRecord(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080083D6
-sub_080083D6:
-	movs r0, r0
-	.global _080083D8
-_080083D8:
-	.4byte 0x03004020  @ IWRAM+0x4020
-	.global _080083DC
-_080083DC:
-	.4byte 0x000004DC
-
+	.section .rom.000083E0, "ax"
+	.syntax unified
 	.thumb_func
 	.thumb
 	.global sub_080083E0
@@ -455,7 +399,7 @@ sub_080083E0:
 _080083F2:
 	mov r0, r8
 	adds r1, r7, #0
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	adds r6, r0, #0
 	movs r1, #104
 	movs r2, #0
@@ -486,7 +430,7 @@ _080083F2:
 _08008432:
 	mov r0, r8
 	adds r1, r7, #0
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	adds r6, r0, #0
 	mov r0, r10
 	mov r1, r8
@@ -670,7 +614,7 @@ sub_0800856C:
 _08008592:
 	adds r0, r7, #0
 	adds r1, r5, #0
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	adds r4, r0, #0
 	mov r0, r8
 	adds r1, r7, #0
@@ -722,7 +666,7 @@ sub_080085E8:
 	push {r4, r5, r6, lr}
 	adds r4, r0, #0
 	adds r5, r1, #0
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	adds r6, r0, #0
 	adds r0, r4, #0
 	adds r1, r5, #0
@@ -5109,19 +5053,19 @@ _0800ACD0:
 	movs r1, #10
 	bl __divsi3
 	adds r5, r0, #1
-	bl sub_0800832C
+	bl RuntimeRandom
 	movs r1, #1
 	ands r1, r0
 	cmp r1, #0
 	beq _0800AD04
-	bl sub_0800832C
+	bl RuntimeRandom
 	adds r1, r5, #0
 	bl __umodsi3
 	adds r5, r0, #0
 	b _0800AD10
 	.global _0800AD04
 _0800AD04:
-	bl sub_0800832C
+	bl RuntimeRandom
 	adds r1, r5, #0
 	bl __umodsi3
 	negs r5, r0
@@ -5179,19 +5123,19 @@ _0800AD64:
 	lsls r0, r0, #16
 	asrs r0, r0, #18
 	adds r5, r0, #1
-	bl sub_0800832C
+	bl RuntimeRandom
 	movs r1, #1
 	ands r1, r0
 	cmp r1, #0
 	beq _0800AD8A
-	bl sub_0800832C
+	bl RuntimeRandom
 	adds r1, r5, #0
 	bl __umodsi3
 	adds r5, r0, #0
 	b _0800AD96
 	.global _0800AD8A
 _0800AD8A:
-	bl sub_0800832C
+	bl RuntimeRandom
 	adds r1, r5, #0
 	bl __umodsi3
 	negs r5, r0
@@ -5265,7 +5209,7 @@ sub_0800ADEC:
 	asrs r1, r0, #8
 	cmp r1, #0
 	bge _0800ADFC
-	bl sub_0800832C
+	bl RuntimeRandom
 	adds r1, r0, #0
 	movs r0, #1
 	ands r1, r0
@@ -7141,7 +7085,7 @@ _0800B864:
 	bl CpuFill
 	movs r0, #0
 	movs r1, #0
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	adds r1, r0, #0
 	ldr r2, [r1, #0]
 	movs r0, #2
@@ -7158,7 +7102,7 @@ _0800B864:
 	.2byte 0xF002
 	.4byte 0x2001FF71
 	movs r1, #0
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	adds r1, r0, #0
 	ldr r2, [r1, #0]
 	movs r4, #3
@@ -10522,7 +10466,7 @@ _0800CE5A:
 _0800CE6E:
 	movs r0, #1
 	adds r1, r4, #0
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	movs r1, #104
 	movs r2, #0
 	bl CpuFill
@@ -10553,7 +10497,7 @@ _0800CE94:
 	bl GameStateSetEntry3894
 	movs r0, #1
 	adds r1, r4, #0
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	movs r1, #104
 	movs r2, #0
 	bl CpuFill
@@ -11033,7 +10977,7 @@ sub_0800D1C8:
 	.global _0800D1D4
 _0800D1D4:
 	adds r0, r1, #0
-	bl sub_08004FF0
+	bl RuntimeGetRecord17C
 	adds r4, r0, #0
 	.2byte 0xF7FA
 	.byte 0x00

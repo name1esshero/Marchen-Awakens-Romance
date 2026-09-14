@@ -142,58 +142,35 @@ block at the end of the file produces `Error: changed section attributes for
 .rom.ADDR`, because the assembler reopens a section it had emitted as code and
 finds read-only data flags instead.
 
-## Open: where a pool address is materialised
+## Where a pool address is materialised
 
-A global's address and the load through it can be scheduled apart, and source
-order does not appear to control the split. `RuntimeActorGetField234`
-(0x0800943C) keeps the pool address in r2 across the multiply and dereferences
-it only afterwards:
+A global's address and the load through it can be scheduled apart: the ROM
+often keeps the pool address in a register across other work and dereferences
+it later. Two things control this, and both are source-level.
 
-    ldr  r2, [pc, #24]      @ address of the gSecondaryRuntime slot
-    movs r1, #209 / lsls r1, r1, #3 / muls r0, r1
-    ldr  r1, [r2, #0]       @ the load, after the multiply
+**Hold the address, not the value.** Writing `u8 **root = (u8 **)0x0300401C;`
+and dereferencing at the point of use gives `ldr r2, pool` early and
+`ldr r0, [r2]` late. Reading the pointer straight into a local
+(`u8 *base = RUNTIME_ROOT;`) emits both loads together, and referencing the
+global inline emits both at the point of use.
 
-Shapes tried all give either both loads early or both late: reading the pointer
-into a local before the multiply, a single combined expression, pointer rather
-than integer accumulation, and dereferencing the pointer expression directly.
-Everything else in that function now matches, including the `ldrb`+shift tail,
-which is the part previously believed impossible. If you find the shape that
-splits the two loads, record it here.
+**Assign the root after the first statement that uses the index.** The pool
+load lands where the assignment sits relative to the surrounding arithmetic.
+`RuntimeGetRecord17C` (0x08004FF0) needs it after the parameter's narrowing:
 
-## The game-state record getters: a family worth cracking
+    s32 narrowed = index;      /* lsl #16 / asr #16 */
+    u8 **root;
+    u32 offset;
+    root = (u8 **)0x0300401C;  /* ldr r2, pool lands here */
+    offset = narrowed * 24 + 380;
+    return *root + offset;
 
-`sub_0800D648`, `sub_080106E8`, `sub_08011464`, `sub_0800F994` and others all
-have one shape: take the map-generation root pointer, add a constant, add a
-scaled index, return it. Solving one solves a macro family, so it is worth more
-effort than a lone function.
+Declaring and initialising `root` first hoists the pool load above the
+narrowing; computing `offset` before assigning `root` sinks it below the
+shifts. Only the spelling above puts it between them, as the ROM has.
 
-Two thirds of it is already understood:
-
-- **Derive the constant, do not load it.** The ROM writes
-  `subs r2, #160` / `adds r2, #96` against the already-loaded root offset rather
-  than loading a third pool word. Write it that way and agbcc does the same:
-  `GAME_STATE_BASE + ((u32)gMapGenerationRootOffset - 160) + index * 8`
-  emits `sub r0, r0, #0xa0`. This also matters because a third live pool
-  constant is what forces the register pressure below.
-- **The matched sibling is the template.** `GameStateGetRecord610` (0x0800D628)
-  is the same family and matches from the plain one-line expression
-  `return GAME_STATE_BASE + 0x610 + index * 44;`. Its constant is buildable with
-  `movs`+`lsls`, so it never needs the derivation trick.
-
-What is left is a register swap, at identical instruction count and size. The
-ROM keeps the index in r0 for the whole function and copies the result out of r1
-at the end:
-
-    lsls r0, r0, #3 ... adds r1, r1, r0 / adds r0, r1, #0
-
-agbcc instead copies the parameter out of r0 first and builds the result in r0:
-
-    add r1, r0, #0 ... ldr r0, [r2] / add r0, r0, r1
-
-The return-value pseudo takes r0, so the parameter is evicted. Shapes tried:
-one-line expression, index accumulated first, accumulating into the base
-pointer, reusing one variable for both the root address and the loaded value,
-`s32` and `u32` parameters, `<<` versus `*`. All produce the leading copy.
+This does **not** resolve the record-getter family below, whose remaining
+difference is register pressure rather than scheduling.
 
 ## Method notes
 
@@ -206,3 +183,11 @@ pointer, reusing one variable for both the root address and the loaded value,
   assembles and diffs `objdump` output for this reason.
 - `make compare` stays the final authority. Everything above is a way to spend
   fewer of those minute-and-a-half runs.
+- **After adding a function, run the host tests, not just `make compare`.** The
+  tests compile individual `.c` files on their own, so a new reference to a
+  symbol the ROM link resolves -- `gSecondaryRuntime`, `gIwramBase`, anything
+  `.set` in `asm/game_table_handlers.s` -- fails at link with "undefined
+  reference" even though the ROM is byte-exact. Fix it by defining the symbol in
+  that test's scaffold, never by changing the source back. This has now bitten
+  five tests: test_item, test_map_field, test_map_native, test_script_native and
+  test_input_random.

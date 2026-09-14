@@ -8276,7 +8276,7 @@ sub_0806C73E:
 	.global _0806C740
 _0806C740:
 	adds r0, r1, #0
-	bl sub_08004FF0
+	bl RuntimeGetRecord17C
 	adds r1, r0, #0
 	adds r0, r5, #0
 	adds r0, #8
@@ -9504,7 +9504,7 @@ _0806D588:
 	.global _0806D5EC
 _0806D5EC:
 	adds r0, r1, #0
-	bl sub_08004FF0
+	bl RuntimeGetRecord17C
 	adds r1, r0, #0
 	adds r0, r4, #0
 	movs r2, #20

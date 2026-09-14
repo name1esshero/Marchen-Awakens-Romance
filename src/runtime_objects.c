@@ -32,6 +32,20 @@ AT("0000A1C4") void *RuntimeGetActorRecord(u32 actor,u32 part)
  partOffset+=0x23C;
  return base+partOffset;
 }
+/* The same actor record's other per-part table: stride 104 rather than 168,
+ * based at +0x4DC. Callers treat each entry as a party slot. */
+AT("000083B8") void *RuntimeGetActorPartRecord(u32 actor,u32 part)
+{
+ u8 **root=&gSecondaryRuntime;
+ u32 actorOffset=actor*1672;
+ u8 *base;
+ u32 partOffset;
+ actorOffset+=0x120;
+ base=*root+actorOffset;
+ partOffset=part*104;
+ partOffset+=0x4DC;
+ return base+partOffset;
+}
 
 #define GET_S8(address,name,field) \
  AT(address) s32 name(u32 group,u32 slot) { u8 **table=OBJECT_TABLE; return *(s8 *)(table[group*4+slot]+(field)); }

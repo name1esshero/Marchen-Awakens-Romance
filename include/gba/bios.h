@@ -15,6 +15,7 @@
 #define SWI_RL_UNCOMP_WRAM   0x14
 #define SWI_REGISTER_RAM_RESET 0x01
 #define SWI_SQRT             0x08
+#define SWI_INTR_WAIT        0x04
 
 /* CpuSet / CpuFastSet control word flags */
 #define CPU_SET_SRC_FIXED 0x01000000

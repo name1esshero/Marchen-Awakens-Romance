@@ -1428,18 +1428,7 @@ _08078944:
 
 @ 079EA4..079EA8 is decompiled as CpuSet(); see src/decompiled.json
 
-	.section .rom.00079EA8, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_08079EA8
-sub_08079EA8:
-	movs r2, #0
-	swi #4
-	bx lr
-	.byte 0x00
-	.byte 0x00
+@ 079EA8..079EB0 is decompiled as IntrWait(); see src/decompiled.json
 
 @ 079EB0..079EB4 is decompiled as LZ77UnCompVram(); see src/decompiled.json
 

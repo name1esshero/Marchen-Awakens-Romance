@@ -73,6 +73,17 @@ void SoftReset(void)
         :: "i"(SWI_REGISTER_RAM_RESET), "i"(0));
 }
 
+/* Wait for an interrupt. The ROM clears r2 first; the BIOS ignores it, but the
+ * instruction is part of the function's bytes. */
+AT_ROM("00079EA8") void IntrWait(u32 discardOldFlags, u32 waitFlags)
+{
+    asm volatile("movs r2, #0\n\tswi %0\n\tbx lr" :: "i"(SWI_INTR_WAIT));
+}
+/* Six bytes of instructions, so the section needs its two zero bytes spelled
+ * out; the assembler would otherwise pad the code section with a Thumb nop. */
+__attribute__((section(".rom.00079EA8"), used))
+const u8 IntrWaitTail[2] = {0};
+
 /* Aliases for the labels the not-yet-decompiled assembly still calls. */
 void sub_08079E98(s16, s16)              __attribute__((alias("ArcTan2")));
 void sub_08079E9C(void *, void *, s32)   __attribute__((alias("BgAffineSet")));

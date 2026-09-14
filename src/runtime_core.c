@@ -28,6 +28,19 @@ AT("00004E04") void *RuntimeGetOptionalField130(void)
 }
 AT("00004E04") const u8 RuntimeGetOptionalField130Tail[2] = {0, 0};
 
+/** One of the 24-byte records based at +0x17C in the main allocation. The
+ * index arrives narrowed to 16 bits by the callers' ABI. */
+AT("00004FF0") void *RuntimeGetRecord17C(s16 index)
+{
+    s32 narrowed = index;
+    u8 **root;
+    u32 offset;
+
+    root = (u8 **)0x0300401C;
+    offset = narrowed * 24 + 380;
+    return *root + offset;
+}
+
 AT("00004E24") void RuntimeInitialize(u8 *state)
 {
     u8 **root = (u8 **)0x0300401C;

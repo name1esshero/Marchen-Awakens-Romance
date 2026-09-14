@@ -5722,7 +5722,7 @@ _0801AA2C:
 	movs r1, #0
 	ldrsh r0, [r0, r1]
 	mov r1, r9
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	adds r4, r0, #0
 	ldr r0, [r4, #0]
 	cmp r0, #0
@@ -6839,7 +6839,7 @@ _0801B1A4:
 	movs r1, #0
 	ldrsh r0, [r5, r1]
 	movs r1, #0
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	adds r4, r0, #0
 	movs r2, #0
 	ldrsh r0, [r5, r2]
@@ -8150,11 +8150,11 @@ sub_0801BA24:
 	adds r4, r0, #0
 	adds r5, r1, #0
 	movs r1, #0
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	adds r6, r0, #0
 	adds r0, r4, #0
 	adds r1, r5, #0
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	adds r4, r0, #0
 	mov r0, sp
 	adds r1, r6, #0
@@ -8274,7 +8274,7 @@ sub_0801BB0C:
 	.global _0801BB30
 _0801BB30:
 	adds r0, r1, #0
-	bl sub_08004FF0
+	bl RuntimeGetRecord17C
 	adds r4, r0, #0
 	mov r3, r9
 	ldrh r5, [r3, #14]
@@ -8493,7 +8493,7 @@ _0801BC10:
 _0801BC8A:
 	movs r0, #0
 	mov r1, r8
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	movs r1, #104
 	movs r2, #0
 	bl CpuFill
@@ -8504,7 +8504,7 @@ _0801BC8A:
 	.thumb
 	.global sub_0801BC9E
 sub_0801BC9E:
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	movs r1, #104
 	movs r2, #0
 	bl CpuFill
@@ -8536,7 +8536,7 @@ sub_0801BC9E:
 sub_0801BCDA:
 	movs r0, #0
 	mov r1, r8
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	adds r5, r0, #0
 	str r7, [r5, #0]
 	ldrb r0, [r6, #0]
@@ -8632,11 +8632,11 @@ _0801BD4A:
 	bl sub_08009A04
 	movs r0, #1
 	mov r1, r8
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	adds r4, r0, #0
 	movs r0, #0
 	mov r1, r8
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	adds r1, r0, #0
 	adds r0, r4, #0
 	movs r2, #104
@@ -9580,7 +9580,7 @@ _0801C362:
 _0801C378:
 	ldr r0, [r4, #0]
 	mov r1, r8
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	adds r5, r0, #0
 	ldr r1, [r4, #0]
 	ldr r3, [r5, #0]
@@ -9620,7 +9620,7 @@ _0801C3B6:
 _0801C3C0:
 	adds r0, r1, #0
 	mov r1, r8
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	adds r5, r0, #0
 	movs r1, #0
 	ldr r0, [r4, #0]
@@ -9943,7 +9943,7 @@ sub_0801C5B4:
 	movs r0, #1
 	.global _0801C5CC
 _0801C5CC:
-	bl sub_08004FF0
+	bl RuntimeGetRecord17C
 	adds r7, r0, #0
 	movs r0, #3
 	ldrsb r0, [r7, r0]
@@ -10081,7 +10081,7 @@ sub_0801C6D0:
 	add r7, r8
 	lsls r0, r4, #16
 	asrs r0, r0, #16
-	bl sub_08004FF0
+	bl RuntimeGetRecord17C
 	adds r6, r0, #0
 	ldrb r0, [r6, #0]
 	adds r0, #1

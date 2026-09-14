@@ -7102,7 +7102,7 @@ _080148FC:
 	lsls r0, r0, #24
 	asrs r0, r0, #24
 	adds r1, r5, #0
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	adds r1, r0, #0
 	ldr r0, [r1, #8]
 	strh r0, [r4, #2]
@@ -7418,7 +7418,7 @@ _08014B44:
 	ldrb r1, [r1, #0]
 	lsls r1, r1, #24
 	asrs r1, r1, #24
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	ldr r4, [sp, #52]
 	adds r4, #74
 	movs r3, #0
@@ -7508,7 +7508,7 @@ _08014BC6:
 	ldrb r1, [r1, #0]
 	lsls r1, r1, #24
 	asrs r1, r1, #24
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	movs r4, #0
 	str r4, [r0, #8]
 	ldr r0, [sp, #52]
@@ -8493,7 +8493,7 @@ _080151D4:
 	ldrsb r0, [r4, r0]
 	movs r1, #0
 	ldrsb r1, [r5, r1]
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	adds r1, r0, #0
 	ldr r4, [sp, #80]
 	movs r5, #0
@@ -11943,7 +11943,7 @@ _08016906:
 	beq _08016930
 	adds r0, r6, #0
 	adds r1, r5, #0
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	adds r1, r0, #0
 	ldr r0, [r1, #8]
 	cmp r0, #0
@@ -11969,7 +11969,7 @@ _08016930:
 	.4byte 0x1C04FC39
 	adds r0, r6, #0
 	movs r1, #0
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	adds r1, r0, #0
 	adds r0, r4, #0
 	adds r0, #74
@@ -12034,7 +12034,7 @@ _080169A2:
 	strh r0, [r4, #0]
 	adds r0, r6, #0
 	movs r1, #0
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	adds r1, r0, #0
 	movs r2, #0
 	ldrsh r0, [r4, r2]
@@ -12063,7 +12063,7 @@ _080169E8:
 	adds r4, r0, #0
 	adds r0, r6, #0
 	adds r1, r5, #0
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	adds r1, r0, #0
 	ldr r0, [r1, #8]
 	strh r0, [r4, #2]
@@ -12110,7 +12110,7 @@ _08016A36:
 	beq _08016A5E
 	adds r0, r6, #0
 	adds r1, r5, #0
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	adds r1, r0, #0
 	ldr r0, [r1, #8]
 	lsrs r4, r0, #1
@@ -12141,7 +12141,7 @@ _08016A5E:
 	adds r5, r0, #0
 	adds r0, r6, #0
 	movs r1, #0
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	adds r1, r0, #0
 	adds r0, r5, #0
 	adds r0, #74
@@ -12195,7 +12195,7 @@ _08016ACC:
 	bl sub_080238CC
 	adds r0, r6, #0
 	movs r1, #0
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	adds r1, r0, #0
 	adds r0, r5, #0
 	adds r0, #74
@@ -12224,7 +12224,7 @@ _08016B02:
 	adds r4, r0, #0
 	adds r0, r6, #0
 	adds r1, r5, #0
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	adds r1, r0, #0
 	ldr r0, [r1, #8]
 	strh r0, [r4, #2]
@@ -12558,7 +12558,7 @@ sub_08016D5A:
 	adds r4, r0, #0
 	movs r0, #0
 	adds r1, r5, #0
-	bl sub_080083B8
+	bl RuntimeGetActorPartRecord
 	adds r1, r0, #0
 	ldr r0, [r1, #8]
 	cmp r0, #0

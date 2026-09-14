@@ -8,4 +8,5 @@ void RandomInit(u32 seed);
 void RandomSeed(u32 seed);
 u32 RandomGetSeed(void);
 u32 Random(void);
+u32 RuntimeRandom(void);
 #endif
