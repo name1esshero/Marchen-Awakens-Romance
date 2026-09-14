@@ -111,6 +111,14 @@ Several agbcc-specific compiler behaviors produce functions that are logically c
 *   **Assembly:** Code that cannot be matched in C is left in `asm/` and included via `INCLUDE_ASM`.
 *   **Documentation:** Every time a function is moved to `nonmatching`, document *why* it failed (e.g., "Compiler optimized register allocation incorrectly," "Operand order mismatch").
 
+## 8a. Fast Iteration: Compile Against a Single .o, Not the Whole ROM
+A full `make -j$(nproc) && make compare` is the required final confirmation for any change, but it is far too slow (~60-90s) to use for every micro-iteration while hunting a byte-exact register allocation or instruction order. Instead:
+1.  Write the candidate function in a throwaway `.c` file and run the same `cpp` + `agbcc` + `as` invocation the Makefile uses on it directly (check `Makefile`/build logs for the exact flags), producing a single `.o` in about a second.
+2.  `objdump -d` that `.o` and diff it instruction-by-instruction against the real ROM bytes at the target address (pulled from `baserom.gba`, not from the `.s` file's own text — the original disassembler sometimes hid real instructions behind raw `.2byte`/`.4byte` runs).
+3.  Iterate the C shape (declaration order, expression grouping, register hints, `s16` vs `s32`, etc.) against this single-`.o` loop until the disassembly matches exactly.
+4.  Only then drop the function into its real source file, remove the corresponding raw asm (see §8's rule: nothing decompiled to C should be left duplicated in `asm/`), and run the full `make && make compare` plus the test suite as the final, authoritative check.
+This single-`.o` loop is roughly 60-90x faster per iteration than a full build and was the key unlock that made bulk small-function decompilation practical in one session.
+
 ---
 
 ## 9. AI Prompting Instructions
