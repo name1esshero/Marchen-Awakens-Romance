@@ -1,4 +1,25 @@
-/* Small views into the secondary runtime allocation at IWRAM 03004020. */
+/* Small views into the secondary runtime allocation at IWRAM 03004020.
+ *
+ * Most of this file is one-line accessors named for the byte offset they read,
+ * because that offset is all the ROM tells us; a name like RuntimeGetFieldEE8
+ * means "the field at +0xEE8" and nothing more until a call site explains it.
+ * Rename them as their meaning is recovered rather than inventing one here.
+ *
+ * Three strides run through the whole file and are worth knowing before
+ * reading any of it:
+ *
+ *   +0x0000..        singleton fields and buffers hanging off the allocation
+ *                    base, addressed by a bare constant offset.
+ *   index * 1672     one per-actor record. The actor index scales by the
+ *                    record size, then the field offset is added.
+ *   part  * 104      one per-part sub-record inside an actor record, so a
+ *                    part accessor is actor*1672 + part*104 + field.
+ *
+ * The ACTOR_*, PART_* and ACTOR_LATE_* macro families below exist so those
+ * three arithmetic shapes are written once each. A macro's expansion is also
+ * load-bearing for matching: the statement order in the body is what makes
+ * agbcc emit the ROM's instruction order, so do not "simplify" one into a
+ * single expression without re-checking `make compare`. */
 #include "runtime_buffers.h"
 #include "runtime_state.h"
 #include "rom_section.h"
