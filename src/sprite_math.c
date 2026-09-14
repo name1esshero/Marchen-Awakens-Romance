@@ -20,10 +20,8 @@ s32 SpriteFixed8Multiply(s32 left, s32 right)
     register s32 rounded TARGET_REGISTER("r1");
 
     left <<= 16;
-    asm("" : "+r"(left));
     right <<= 16;
     right >>= 16;
-    asm("" : "+r"(right));
     left >>= 16;
     product = left * right;
     rounded = product;
@@ -36,10 +34,8 @@ AT("0007D8F8")
 s32 SpriteFixed8Divide(s32 dividend, s32 divisor)
 {
     dividend <<= 16;
-    asm("" : "+r"(dividend));
     divisor <<= 16;
     divisor >>= 16;
-    asm("" : "+r"(divisor));
     dividend >>= 8;
     return (s16)__divsi3(dividend, divisor);
 }

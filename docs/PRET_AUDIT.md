@@ -24,22 +24,25 @@ are forced-register declarations, inline assembly or scheduling fences, and
 raw ROM addresses used by logic or tables. The largest warning groups are
 missing Doxygen comments and names that are not yet PascalCase.
 
-The current mechanical scan reports 230 hard-rule occurrences, 528 missing
+The current mechanical scan reports 169 hard-rule occurrences, 528 missing
 function-documentation warnings, and 12 documented low-level exceptions. An
 earlier cleanup replaced all 630 raw ROM addresses with verified symbols and
 added or converted documentation for 421 manifest-backed functions.
 
-A later pass cut the hard-rule count from 351 to 230 by proving which forced
-registers were load-bearing rather than assuming it. `tools/drop_register_hints.py`
+A later pass cut the hard-rule count from 351 to 169 by proving which compiler
+hints were load-bearing rather than assuming it. See
+`docs/COMPILER_HINT_CLEANUP.md` for the method and its pitfalls. `tools/drop_register_hints.py`
 removes one pin at a time, recompiles that single translation unit with the real
 toolchain, and keeps the removal only when the generated assembly is unchanged.
 Removals are cumulative because register allocation is global, so a hint that
 looks redundant alone can become necessary once its neighbours are gone: in
 `src/sprite_transform.c` 54 of 61 hints passed individually but only 34 survived
-cumulatively. That run removed 121 hints across 18 files with the ROM still
-byte-identical.
+cumulatively. The comparison must be on machine code rather than assembly text,
+because a removed scheduling fence also removes `.code 16` directives that would
+otherwise register as a difference. In total 182 hints were removed with the ROM
+still byte-identical.
 
-The 230 that remain are, by construction, the ones the compiler actually needs
+The 169 that remain are, by construction, the ones the compiler actually needs
 for the current C. Each must either match as ordinary C after a structural
 rewrite or return to an assembly implementation with its readable C kept under
 `src/nonmatching/`.

@@ -137,7 +137,6 @@ void SpriteTileAllocatorRelease(struct SpriteTileAllocator *allocator, s32 tile)
 
     if (allocator->mode != 0)
         goto releaseFixedBlock;
-    ALLOCATOR_MEMORY_BARRIER();
     offset = tile - allocator->tileBase;
     offset <<= 3;
     base = allocator->blocks;
@@ -145,7 +144,6 @@ void SpriteTileAllocatorRelease(struct SpriteTileAllocator *allocator, s32 tile)
     block->sizeAndFlags &= 0x3FFF;
     flags = block->sizeAndFlags;
     maskValue = 0x1FFF;
-    ALLOCATOR_VALUE_BARRIER(maskValue);
     sizeMask = maskValue;
     size = flags & sizeMask;
     link = block->link;

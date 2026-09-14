@@ -706,16 +706,16 @@ AT("00012CE8") s32 ScriptNativeSetPendingMapValue(u32 count, const s32 *args,
 AT("00012D04") s32 ScriptNativeCopyMapHalfwords(u32 count, const s32 *args,
                                                  s32 *result)
 {
-    register u32 itemCount asm("r4") = count;
+    u32 itemCount = count;
     register union {
         const s32 *source;
         s32 step;
-    } iteration asm("r5");
-    register s32 index asm("r0");
+    } iteration;
+    s32 index;
     register s32 fixedIndex asm("r2");
-    register const s32 *source asm("r3");
+    const s32 *source;
     u8 * volatile *root;
-    register s32 destinationOffset asm("r6");
+    s32 destinationOffset;
 
     iteration.source = args;
     GameStateClearRecord426A();
@@ -755,16 +755,16 @@ AT("00012D4C") const u8 ScriptNativeGetMapStatusTail[2] = {0};
 AT("00012D64") s32 ScriptNativeClearMapHalfwords(u32 count, const s32 *args,
                                                   s32 *result)
 {
-    register s32 i asm("r1");
-    register s32 fixed asm("r2");
-    register s32 step asm("r3");
-    register s32 value asm("r4");
+    s32 i;
+    s32 fixed;
+    s32 step;
+    s32 value;
     register u8 **root asm("r6");
-    register s32 offset asm("r5");
+    s32 offset;
     register union {
         u8 *base;
         s32 next;
-    } temporary asm("r0");
+    } temporary;
 
     i = 0;
     root = (u8 **)0x03003FDC;

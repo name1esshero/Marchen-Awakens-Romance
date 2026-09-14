@@ -24,26 +24,22 @@ void SpriteVectorRotateX(struct SpriteVector3 *out,
                          const struct SpriteVector3 *in, s32 angle)
 {
     s32 first;
-    register s32 second TARGET_REGISTER("r10");
-    register const s16 *tableFirst TARGET_REGISTER("r5");
+    s32 second;
+    const s16 *tableFirst;
     const s16 *table;
     s32 cosineIndex;
-    register s32 mask TARGET_REGISTER("r6");
-    register s32 accum TARGET_REGISTER("r5");
+    s32 mask;
+    s32 accum;
     register s32 value TARGET_REGISTER("r3");
     s32 temp;
 
     angle = (angle << 16) >> 16;
-    asm("" : "+r"(angle));
     first = in->y;
     temp = in->z;
-    asm("" : "+r"(temp));
     second = temp;
     tableFirst = SPRITE_SINE_TABLE;
-    asm("" : "+r"(tableFirst));
     table = tableFirst;
     mask = 0x400;
-    asm("" : "+r"(mask));
     cosineIndex = angle + mask;
     mask = 0xFFF;
     cosineIndex &= mask;
@@ -90,26 +86,22 @@ void SpriteVectorRotateY(struct SpriteVector3 *out,
                          const struct SpriteVector3 *in, s32 angle)
 {
     s32 first;
-    register s32 second TARGET_REGISTER("r10");
-    register const s16 *tableFirst TARGET_REGISTER("r5");
+    s32 second;
+    const s16 *tableFirst;
     const s16 *table;
     s32 cosineIndex;
-    register s32 mask TARGET_REGISTER("r6");
-    register s32 accum TARGET_REGISTER("r5");
+    s32 mask;
+    s32 accum;
     register s32 value TARGET_REGISTER("r3");
     s32 temp;
 
     angle = (angle << 16) >> 16;
-    asm("" : "+r"(angle));
     first = in->x;
     temp = in->z;
-    asm("" : "+r"(temp));
     second = temp;
     tableFirst = SPRITE_SINE_TABLE;
-    asm("" : "+r"(tableFirst));
     table = tableFirst;
     mask = 0x400;
-    asm("" : "+r"(mask));
     cosineIndex = angle + mask;
     mask = 0xFFF;
     cosineIndex &= mask;
@@ -157,26 +149,22 @@ void SpriteVectorRotateZ(struct SpriteVector3 *out,
                          const struct SpriteVector3 *in, s32 angle)
 {
     s32 first;
-    register s32 second TARGET_REGISTER("r10");
-    register const s16 *tableFirst TARGET_REGISTER("r5");
+    s32 second;
+    const s16 *tableFirst;
     const s16 *table;
     s32 cosineIndex;
-    register s32 mask TARGET_REGISTER("r6");
-    register s32 accum TARGET_REGISTER("r5");
+    s32 mask;
+    s32 accum;
     register s32 value TARGET_REGISTER("r3");
     s32 temp;
 
     angle = (angle << 16) >> 16;
-    asm("" : "+r"(angle));
     first = in->x;
     temp = in->y;
-    asm("" : "+r"(temp));
     second = temp;
     tableFirst = SPRITE_SINE_TABLE;
-    asm("" : "+r"(tableFirst));
     table = tableFirst;
     mask = 0x400;
-    asm("" : "+r"(mask));
     cosineIndex = angle + mask;
     mask = 0xFFF;
     cosineIndex &= mask;
@@ -340,9 +328,7 @@ void SpriteBuildAffineMatrix(struct SpriteAffineTransform *transform)
     register s32 inverseY TARGET_REGISTER("r0");
     register s32 index TARGET_REGISTER("r0");
 
-    asm("" : "+r"(table));
     rawAngle = state->angle;
-    asm("" : "+r"(rawAngle));
     mask = 0xFFF;
     index = mask;
     index &= rawAngle;

@@ -79,7 +79,7 @@ s32 SpriteAffineAllocate(u16 key, u32 high, s16 low)
         (struct SpriteEngineState **)0x03006118;
     u32 available;
     s32 slot;
-    register u32 one TARGET_REGISTER("r12");
+    u32 one;
     struct SpriteEngineState **savedGlobal;
     register u32 transform TARGET_REGISTER("r4");
     u32 offset;
@@ -98,7 +98,7 @@ s32 SpriteAffineAllocate(u16 key, u32 high, s16 low)
     offset = 28;
 
     {
-        register u32 mask TARGET_REGISTER("r2");
+        u32 mask;
 
     search:
         mask = one << slot;

@@ -120,7 +120,7 @@ AT("00012DB4") const u8 ScriptNativeQueryModeResourceTail[2] = {0};
 AT("00012DF8") s32 ScriptNativeSetModeResource(u32 count, const s32 *args, s32 *result)
 {
     register const s16 *shortArgs asm("r1") = (const s16 *)args;
-    register u8 *base asm("r0");
+    u8 *base;
     u32 offset;
 
     base = gIwramBase;

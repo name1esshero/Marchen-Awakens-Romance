@@ -34,30 +34,62 @@ ROOT = Path(__file__).resolve().parents[1]
 # `register T name TARGET_REGISTER("r5") = init;` or the bare asm() spelling.
 HINT = re.compile(r'\s*(?:TARGET_REGISTER\(\s*"r\d+"\s*\)|asm\s*\(\s*"r\d+"\s*\))')
 
+# A scheduling fence: a whole statement built on an empty asm template, used to
+# stop agbcc reordering the instructions around it. Files spell it directly as
+# `asm volatile("" : "+r"(x));` and also hide it behind per-file macros.
+FENCE = re.compile(r'^\s*asm\s+volatile\s*\(\s*""[^;]*\)\s*;?\s*$'
+                   r'|^\s*asm\s*\(\s*""\s*:[^;]*\)\s*;\s*$')
+
+# `#define NCD_ALLOCATION_BARRIER(value) asm volatile("" : "+r"(value))`
+FENCE_MACRO_DEF = re.compile(
+    r'^\s*#\s*define\s+(\w+)\s*\([^)]*\)\s*asm\s+volatile\s*\(\s*""', re.MULTILINE)
+
+
+def fence_matcher(text):
+    """A predicate matching fence statements, including this file's own macros."""
+    names = FENCE_MACRO_DEF.findall(text)
+    if not names:
+        return FENCE.match
+    call = re.compile(r'^\s*(?:%s)\s*\([^;]*\)\s*;\s*$' % '|'.join(names))
+    return lambda line: FENCE.match(line) or call.match(line)
+
 # Two translation units were built by the older agbcc snapshot; see the Makefile.
 OLD_AGBCC = {'sound_m4a', 'sound_cgb_update'}
 
 
 def compile_unit(relpath):
-    """Compile one src/*.c the way the Makefile does; return its assembly text."""
+    """Compile one src/*.c the way the Makefile does; return its disassembly.
+
+    The comparison has to be on machine code, not on the compiler's assembly
+    text: a scheduling fence emits `.code 16` directives that vanish with it,
+    so identical instructions would otherwise look like a difference.
+    """
     stem = Path(relpath).stem
     cc1 = ROOT / 'tools/agbcc/bin' / ('old_agbcc' if stem in OLD_AGBCC else 'agbcc')
     flags = ['-O2', '-fhex-asm']
     if stem != 'libc_adapters':
         flags.insert(0, '-mthumb-interwork')
     with tempfile.TemporaryDirectory() as tmp:
-        pre, asm = Path(tmp) / 'unit.i', Path(tmp) / 'unit.s'
-        cpp = subprocess.run(
+        pre = Path(tmp) / 'unit.i'
+        asm = Path(tmp) / 'unit.s'
+        obj = Path(tmp) / 'unit.o'
+        steps = [
             ['arm-none-eabi-cpp', '-nostdinc', '-undef', '-DAGBCC=1',
              '-Iinclude', '-Itools/agbcc/include', relpath, '-o', str(pre)],
-            cwd=ROOT, capture_output=True, text=True)
-        if cpp.returncode != 0:
+            [str(cc1), *flags, str(pre), '-o', str(asm)],
+            ['arm-none-eabi-as', '-mcpu=arm7tdmi', '-mthumb-interwork', '-I.',
+             '-o', str(obj), str(asm)],
+        ]
+        for step in steps:
+            if subprocess.run(step, cwd=ROOT,
+                              capture_output=True, text=True).returncode != 0:
+                return None
+        dis = subprocess.run(['arm-none-eabi-objdump', '-d', str(obj)],
+                             cwd=ROOT, capture_output=True, text=True)
+        if dis.returncode != 0:
             return None
-        cc = subprocess.run([str(cc1), *flags, str(pre), '-o', str(asm)],
-                            cwd=ROOT, capture_output=True, text=True)
-        if cc.returncode != 0:
-            return None
-        return asm.read_text()
+        # Drop the header lines, which name the temporary object file.
+        return '\n'.join(dis.stdout.split('\n')[2:])
 
 
 def strip_hint(line):
@@ -66,6 +98,26 @@ def strip_hint(line):
     if stripped == line:
         return line
     return re.sub(r'\bregister\s+', '', stripped, count=1)
+
+
+def group_by_function(lines, indices):
+    """Bucket line indices by the function body that encloses them.
+
+    Register allocation is per-function, so hints only interact within one.
+    Function bodies are found by brace depth: a top-level `{` opens one.
+    """
+    owner, depth, current = {}, 0, None
+    for n, line in enumerate(lines):
+        if depth == 0 and line.startswith('{'):
+            current = n
+        owner[n] = current
+        depth += line.count('{') - line.count('}')
+        if depth <= 0:
+            depth, current = 0, None
+    groups = {}
+    for i in indices:
+        groups.setdefault(owner.get(i), []).append(i)
+    return list(groups.values())
 
 
 def process(relpath, dry_run=False):
@@ -78,24 +130,55 @@ def process(relpath, dry_run=False):
         print(f'{relpath}: SKIPPED (does not compile standalone)')
         return 0
 
+    is_fence = fence_matcher(original)
+
     # The macro definition itself is the mechanism, not a use site.
     sites = [i for i, line in enumerate(lines)
-             if HINT.search(line) and not line.lstrip().startswith('#define')]
+             if (HINT.search(line) and not line.lstrip().startswith('#define'))
+             or (is_fence(line) and not line.lstrip().startswith('#define'))]
+
+    def rewrite(state):
+        full.write_text('\n'.join(l for l in state if l is not None))
+
+    def replacement(i):
+        """What line i becomes when its hint is dropped; None means delete."""
+        if is_fence(lines[i]):
+            return None                 # a fence is a whole statement
+        dropped = strip_hint(lines[i])
+        return dropped if dropped != lines[i] else lines[i]
+
+    def accepts(indices):
+        """Does dropping every hint in `indices` leave the assembly unchanged?"""
+        trial = list(lines)
+        for i in indices:
+            trial[i] = replacement(i)
+        rewrite(trial)
+        return compile_unit(relpath) == baseline
 
     removed = kept = 0
-    for i in sites:
-        pinned = lines[i]
-        unpinned = strip_hint(pinned)
-        if unpinned == pinned:
+    pending = list(sites)
+
+    # Fences usually come in sets that only work as a set: dropping one while
+    # its partner still pins the schedule changes the instruction order. Try
+    # each function's fences together before falling back to one at a time.
+    # Register allocation is per-function, so that is the right grouping.
+    for group in group_by_function(lines, [i for i in pending
+                                           if is_fence(lines[i])]):
+        if accepts(group):
+            for i in group:
+                lines[i] = replacement(i)
+            removed += len(group)
+            pending = [i for i in pending if i not in set(group)]
+
+    for i in pending:
+        if replacement(i) == lines[i]:
             continue
-        lines[i] = unpinned
-        full.write_text('\n'.join(lines))
-        if compile_unit(relpath) == baseline:
+        if accepts([i]):
+            lines[i] = replacement(i)
             removed += 1
         else:
-            lines[i] = pinned
-            full.write_text('\n'.join(lines))
             kept += 1
+    rewrite(lines)
 
     identical = compile_unit(relpath) == baseline
     if dry_run or not identical:
@@ -123,7 +206,8 @@ def main():
     if args.all:
         targets = sorted(
             str(p.relative_to(ROOT)) for p in (ROOT / 'src').glob('*.c')
-            if HINT.search(p.read_text()))
+            if any(HINT.search(l) or fence_matcher(p.read_text())(l)
+                   for l in p.read_text().split('\n')))
     if not targets:
         parser.error('no files given; pass paths or --all')
 

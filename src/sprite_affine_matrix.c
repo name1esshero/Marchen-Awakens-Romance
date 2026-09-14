@@ -48,17 +48,14 @@ void SpriteAffineWriteNormal(s32 index, s32 angle0, s32 scaleX0, s32 scaleY0)
     register s32 invY TARGET_REGISTER("r0");
     MATCH_RW3(angle, scaleX, scaleY);
     angle = (s16)angle; scaleX = (s16)scaleX; scaleY = (s16)scaleY;
-    MATCH_RW3(angle, scaleX, scaleY);
     entry = SpriteEngineGetBuffer4Entry(index);
     table = SIN_TABLE; mask = 0xFFF;
     sineTemp = table[angle & mask];
     sine = sineTemp;
-    MATCH_OUT(tableHold);
     angle += 0x400;
     angle &= mask;
     angle <<= 1;
     angle += (s32)table;
-    MATCH_RW(angle);
     MATCH_OUT(valueHold);
     cosine = *(const s16 *)angle;
     MATCH_IN3(sineTemp, tableHold, valueHold);
@@ -70,18 +67,15 @@ void SpriteAffineWriteNormal(s32 index, s32 angle0, s32 scaleX0, s32 scaleY0)
     {
         s32 value;
         value = (cosine * invX) >> 14;
-        MATCH_RW(value);
         {
             register struct AffineOamColumns *base TARGET_REGISTER("r3") = entry;
-            register s32 finalValue TARGET_REGISTER("r7");
-            register s32 finalShifted TARGET_REGISTER("r0");
+            s32 finalValue;
+            s32 finalShifted;
             base->pa = value;
             base->pb = (sine * invX) >> 14;
             base->pc = -((sine * invY) >> 14);
             finalValue = cosine * invY;
-            MATCH_RW(finalValue);
             finalShifted = finalValue;
-            MATCH_RW(finalShifted);
             base->pd = finalShifted >> 14;
         }
     }
@@ -105,17 +99,14 @@ void SpriteAffineWriteMirrored(s32 index, s32 angle0, s32 scaleX0, s32 scaleY0)
     register s32 invY TARGET_REGISTER("r0");
     MATCH_RW3(angle, scaleX, scaleY);
     angle = (s16)angle; scaleX = (s16)scaleX; scaleY = (s16)scaleY;
-    MATCH_RW3(angle, scaleX, scaleY);
     entry = SpriteEngineGetBuffer4Entry(index);
     table = SIN_TABLE; mask = 0xFFF;
     sineTemp = table[angle & mask];
     sine = sineTemp;
-    MATCH_OUT(tableHold);
     angle += 0x400;
     angle &= mask;
     angle <<= 1;
     angle += (s32)table;
-    MATCH_RW(angle);
     MATCH_OUT(valueHold);
     cosine = *(const s16 *)angle;
     MATCH_IN3(sineTemp, tableHold, valueHold);
@@ -127,18 +118,15 @@ void SpriteAffineWriteMirrored(s32 index, s32 angle0, s32 scaleX0, s32 scaleY0)
     {
         s32 value;
         value = -((cosine * invX) >> 14);
-        MATCH_RW(value);
         {
             register struct AffineOamColumns *base TARGET_REGISTER("r3") = entry;
-            register s32 finalValue TARGET_REGISTER("r7");
-            register s32 finalShifted TARGET_REGISTER("r0");
+            s32 finalValue;
+            s32 finalShifted;
             base->pa = value;
             base->pb = -((sine * invX) >> 14);
             base->pc = -((sine * invY) >> 14);
             finalValue = cosine * invY;
-            MATCH_RW(finalValue);
             finalShifted = finalValue;
-            MATCH_RW(finalShifted);
             base->pd = finalShifted >> 14;
         }
     }
@@ -162,17 +150,14 @@ void SpriteAffineWriteAlternateAxis(s32 index, s32 angle0, s32 scaleX0, s32 scal
     register s32 invY TARGET_REGISTER("r0");
     MATCH_RW3(angle, scaleX, scaleY);
     angle = (s16)angle; scaleX = (s16)scaleX; scaleY = (s16)scaleY;
-    MATCH_RW3(angle, scaleX, scaleY);
     entry = SpriteEngineGetBuffer4Entry(index);
     table = SIN_TABLE; mask = 0xFFF;
     sineTemp = table[angle & mask];
     sine = sineTemp;
-    MATCH_OUT(tableHold);
     angle += 0x400;
     angle &= mask;
     angle <<= 1;
     angle += (s32)table;
-    MATCH_RW(angle);
     MATCH_OUT(valueHold);
     cosine = *(const s16 *)angle;
     MATCH_IN3(sineTemp, tableHold, valueHold);
@@ -184,18 +169,15 @@ void SpriteAffineWriteAlternateAxis(s32 index, s32 angle0, s32 scaleX0, s32 scal
     {
         s32 value;
         value = (cosine * invX) >> 14;
-        MATCH_RW(value);
         {
             register struct AffineOamColumns *base TARGET_REGISTER("r3") = entry;
-            register s32 finalValue TARGET_REGISTER("r7");
-            register s32 finalShifted TARGET_REGISTER("r0");
+            s32 finalValue;
+            s32 finalShifted;
             base->pa = value;
             base->pb = (sine * invX) >> 14;
             base->pc = (sine * invY) >> 14;
             finalValue = cosine * invY;
-            MATCH_RW(finalValue);
             finalShifted = finalValue;
-            MATCH_RW(finalShifted);
             base->pd = -(finalShifted >> 14);
         }
     }

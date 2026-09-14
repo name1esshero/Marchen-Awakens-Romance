@@ -30,7 +30,7 @@ AT("00005848") struct EngineTask *CreateSoundPlayerIdleWait(
     u32 index;
     register u32 waitValue asm("r4");
     register void (*callback)(struct EngineTask *) asm("r5");
-    register struct EngineTask *returnTask asm("r0");
+    struct EngineTask *returnTask;
 
     index = playerIndex;
     waitValue = wait;

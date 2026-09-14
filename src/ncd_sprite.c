@@ -173,7 +173,6 @@ void NcdRuntimeSpriteReleaseAllocation(struct NcdSprite *sprite)
  mode = self->flags27;
  mode <<= 30;
  mode >>= 30;
- NCD_ALLOCATION_BARRIER(mode);
  switch ((s32)mode) {
  case 0:
   {

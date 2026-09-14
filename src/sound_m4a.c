@@ -531,7 +531,7 @@ AT("000789B0") void SoundPlayerResume(struct SoundPlayer *player)
 /** Begin a permanent fade to silence. */
 AT("000789CC") void SoundPlayerFadeOut(struct SoundPlayer *player, u16 interval)
 {
-    register u16 fadeInterval asm("r1") = interval;
+    u16 fadeInterval = interval;
     register u32 ident asm("r3") = player->ident;
 
     if (ident == SOUND_PLAYER_READY) {
@@ -634,7 +634,7 @@ AT("00078BDC") void SoundResumeAllPlayers(void)
 AT("00078C18") void SoundPlayerFadeOutTemporary(
     struct SoundPlayer *player, u16 interval)
 {
-    register u16 fadeInterval asm("r1") = interval;
+    u16 fadeInterval = interval;
     register u32 ident asm("r3") = player->ident;
 
     if (ident == SOUND_PLAYER_READY) {
@@ -646,7 +646,7 @@ AT("00078C18") void SoundPlayerFadeOutTemporary(
 
 AT("00078C38") void SoundPlayerFadeIn(struct SoundPlayer *player, u16 interval)
 {
-    register u16 fadeInterval asm("r1") = interval;
+    u16 fadeInterval = interval;
     register u32 ident asm("r3") = player->ident;
 
     if (ident == SOUND_PLAYER_READY) {
