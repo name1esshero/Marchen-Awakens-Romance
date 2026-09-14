@@ -24,6 +24,12 @@
     "file": "src/runtime_accessors.c"
   },
   {
+    "addr": "08001A48",
+    "size": 24,
+    "name": "IwramGetField3FD5",
+    "file": "src/runtime_accessors.c"
+  },
+  {
     "addr": "08001B34",
     "size": 24,
     "name": "IwramGetPointer2860",

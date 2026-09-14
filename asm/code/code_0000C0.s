@@ -2769,31 +2769,10 @@ _08001A30:
 
 @ 001A34..001A48 is decompiled as IwramSetField3FD5(); see src/decompiled.json
 
-	.section .rom.00001A48, "ax"
+@ 001A48..001A60 is decompiled as IwramGetField3FD5(); see src/decompiled.json
+
+	.section .rom.00001A60, "ax"
 	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_08001A48
-sub_08001A48:
-	ldr r0, sub_08001A58
-	ldr r1, _08001A5C
-	adds r0, r0, r1
-	ldrb r0, [r0, #0]
-	lsls r0, r0, #24
-	asrs r0, r0, #24
-	bx lr
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_08001A58
-sub_08001A58:
-	.4byte 0x03000000  @ IWRAM
-	.global _08001A5C
-_08001A5C:
-	.4byte 0x00003FD5
 
 	.thumb_func
 	.thumb
@@ -3172,7 +3151,7 @@ _08001D1C:
 	b _08001DAA
 	.global _08001D28
 _08001D28:
-	bl sub_08001A48
+	bl IwramGetField3FD5
 	cmp r0, #0
 	beq _08001D3C
 	adds r0, r4, #0
@@ -3467,7 +3446,7 @@ _08001EC8:
 	b _08001FF0
 	.global _08001ED8
 _08001ED8:
-	bl sub_08001A48
+	bl IwramGetField3FD5
 	cmp r0, #0
 	beq _08001EEC
 	adds r0, r4, #0
@@ -3664,7 +3643,7 @@ sub_08001FF8:
 	adds r6, r0, #0
 	adds r5, r1, #0
 	adds r4, r2, #0
-	bl sub_08001A48
+	bl IwramGetField3FD5
 
 	.thumb_func
 	.thumb

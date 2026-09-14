@@ -85,6 +85,10 @@ AT("00001A34") void IwramSetField3FD5(u32 value)
 {
  gIwramBase[(u32)gIwramField3FD5Offset]=value;
 }
+AT("00001A48") s32 IwramGetField3FD5(void)
+{
+ return (s8)gIwramBase[(u32)gIwramField3FD5Offset];
+}
 AT("00001B34") u32 IwramGetPointer2860(u32 index0)
 {
  u32 index=index0;
