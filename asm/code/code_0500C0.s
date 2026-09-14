@@ -8383,7 +8383,7 @@ _080535EC:
 	ldr r1, _0805362C
 	add r1, r12
 	ldr r0, [sp, #4]
-	bl sub_08001B4C
+	bl IwramSetPointer2860
 	ldr r4, _0805362C
 	ldr r0, _08053630
 	adds r1, r4, r0

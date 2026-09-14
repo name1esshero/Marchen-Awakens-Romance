@@ -1260,14 +1260,14 @@ _080089D0:
 	cmp r4, #3
 	ble _080089D0
 	movs r0, #2
-	bl sub_08001B34
+	bl IwramGetPointer2860
 	movs r4, #128
 	lsls r4, r4, #4
 	adds r1, r4, #0
 	movs r2, #0
 	bl CpuFill
 	movs r0, #3
-	bl sub_08001B34
+	bl IwramGetPointer2860
 	adds r1, r4, #0
 	movs r2, #0
 	bl CpuFill
@@ -2892,24 +2892,10 @@ _08009500:
 _08009504:
 	.4byte 0x08086C84  @ ROM+0x86C84
 
-	.thumb_func
-	.thumb
-	.global sub_08009508
-sub_08009508:
-	ldr r1, _08009518
-	ldr r1, [r1, #0]
-	lsls r0, r0, #2
-	ldr r2, _0800951C
-	adds r1, r1, r2
-	adds r1, r1, r0
-	ldr r0, [r1, #0]
-	bx lr
-	.global _08009518
-_08009518:
-	.4byte 0x03004020  @ IWRAM+0x4020
-	.global _0800951C
-_0800951C:
-	.4byte 0x00000E3C
+@ 009508..009520 is decompiled as RuntimeGetPointerE3C(); see src/decompiled.json
+
+	.section .rom.00009520, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -3129,25 +3115,11 @@ _08009752:
 _08009758:
 	.4byte 0x03004020  @ IWRAM+0x4020
 
-	.thumb_func
-	.thumb
-	.global sub_0800975C
-sub_0800975C:
-	ldr r1, _08009774
-	ldr r1, [r1, #0]
-	movs r2, #209
-	lsls r2, r2, #3
-	muls r0, r2
-	adds r1, r1, r0
-	movs r0, #214
-	lsls r0, r0, #2
-	adds r1, r1, r0
-	movs r2, #0
-	ldrsh r0, [r1, r2]
-	bx lr
-	.global _08009774
-_08009774:
-	.4byte 0x03004020  @ IWRAM+0x4020
+@ 00975C..009774 is decompiled as RuntimeActorGetField358(); see src/decompiled.json
+
+	.section .rom.00009778, "ax"
+	.syntax unified
+
 	.4byte 0x68124A05
 	.4byte 0x00DB23D1
 	.4byte 0x18124358
@@ -3156,50 +3128,18 @@ _08009774:
 	.4byte 0x00004770
 	.4byte 0x03004020
 
-	.thumb_func
-	.thumb
-	.global sub_08009794
-sub_08009794:
-	ldr r1, _080097AC
-	ldr r1, [r1, #0]
-	movs r2, #209
-	lsls r2, r2, #3
-	muls r0, r2
-	adds r1, r1, r0
-	ldr r0, _080097B0
-	adds r1, r1, r0
-	movs r0, #0
-	ldrsb r0, [r1, r0]
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _080097AC
-_080097AC:
-	.4byte 0x03004020  @ IWRAM+0x4020
-	.global _080097B0
-_080097B0:
-	.4byte 0x0000079C
+	.section .rom.00009794, "ax"
+	.syntax unified
 
-	.thumb_func
-	.thumb
-	.global sub_080097B4
-sub_080097B4:
-	ldr r2, _080097C8
-	ldr r2, [r2, #0]
-	movs r3, #209
-	lsls r3, r3, #3
-	muls r0, r3
-	adds r2, r2, r0
-	ldr r0, _080097CC
-	adds r2, r2, r0
-	strb r1, [r2, #0]
-	bx lr
-	.global _080097C8
-_080097C8:
-	.4byte 0x03004020  @ IWRAM+0x4020
-	.global _080097CC
-_080097CC:
-	.4byte 0x0000079C
+@ 009794..0097B4 is decompiled as RuntimeActorGetField79C(); see src/decompiled.json
+
+	.section .rom.000097B4, "ax"
+	.syntax unified
+
+@ 0097B4..0097D0 is decompiled as RuntimeActorSetField79C(); see src/decompiled.json
+
+	.section .rom.000097D0, "ax"
+	.syntax unified
 
 @ 0097D0..0097E8 is decompiled as RuntimeObjectSetField4A(); see src/decompiled.json
 

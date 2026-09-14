@@ -21,8 +21,6 @@ extern void sub_0806C7AC(s32 x, s32 y, s32 *result);
 extern void sub_080560C4(s32 a, s32 b, s32 index, s32 value);
 extern void sub_080561B8(s32 value);
 extern void sub_080083E0(s32 a, s32 b);
-extern s32 *sub_080083B8(s32 owner, s32 slot);
-extern void sub_0800945C(s32 owner, s32 enabled);
 
 AT("00012978") s32 ScriptNativeSetField12EC(u32 count, const s32 *args, s32 *result)
 {
@@ -108,25 +106,6 @@ AT("00012C54") s32 ScriptNativeCall088E0(u32 count, const s32 *args, s32 *result
     sub_080088E0(args[0], args[1], args[2]);
     return 1;
 }
-
-#ifdef NONMATCHING
-AT("00012C68") s32 ScriptNativeConfigureActorSlots(u32 count,
-    const s32 *args, s32 *result)
-{
-    s32 i;
-    for (i = 0; i <= 2; i++) {
-        s32 value = args[i + 1];
-        if (value != -1) {
-            s32 *slot = sub_080083B8(args[0], i);
-            slot[0] = value;
-            slot[2] = 100;
-            slot[3] = 100;
-        }
-    }
-    sub_0800945C(args[0], 1);
-    return 1;
-}
-#endif
 
 AT("00012CD0") s32 ScriptNativeMapCoordinateCall(u32 count, const s32 *args, s32 *result)
 {

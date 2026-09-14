@@ -4136,7 +4136,7 @@ sub_08039E26:
 	adds r0, r0, r1
 	ldr r1, [r0, #0]
 	movs r0, #2
-	bl sub_08001B4C
+	bl IwramSetPointer2860
 	adds r0, r7, #0
 	adds r0, #134
 	ldrh r2, [r0, #0]
@@ -5633,7 +5633,7 @@ _0803A866:
 	adds r0, r0, r1
 	ldr r1, [r0, #0]
 	movs r0, #2
-	bl sub_08001B4C
+	bl IwramSetPointer2860
 	movs r6, #203
 	lsls r6, r6, #1
 	adds r1, r7, r6
@@ -7754,7 +7754,7 @@ sub_0803B6C8:
 	adds r0, r0, r1
 	ldr r1, [r0, #0]
 	movs r0, #2
-	bl sub_08001B4C
+	bl IwramSetPointer2860
 	ldr r5, _0803B710
 	adds r0, r7, r5
 	ldrh r2, [r0, #0]
@@ -8469,7 +8469,7 @@ _0803BB6A:
 	ble _0803BB6A
 	movs r0, #2
 	adds r1, r5, #0
-	bl sub_08001B4C
+	bl IwramSetPointer2860
 	movs r0, #0
 	movs r1, #0
 	.2byte 0xF044
@@ -13623,7 +13623,7 @@ _0803DC88:
 	adds r0, r7, r2
 	ldr r0, [r0, #0]
 	movs r1, #1
-	bl sub_080097B4
+	bl RuntimeActorSetField79C
 	movs r0, #1
 	.2byte 0xF042
 	.4byte 0x2280FC93
@@ -16765,7 +16765,7 @@ _0803F1D4:
 	adds r0, r0, r1
 	ldr r1, [r0, #0]
 	movs r0, #2
-	bl sub_08001B4C
+	bl IwramSetPointer2860
 	ldr r3, _0803F228
 	adds r4, r4, r3
 	strh r5, [r4, #0]
@@ -16822,7 +16822,7 @@ _0803F240:
 	adds r0, r0, r1
 	ldr r1, [r0, #0]
 	movs r0, #2
-	bl sub_08001B4C
+	bl IwramSetPointer2860
 	movs r0, #15
 	strh r0, [r4, #0]
 	b _0803F492
@@ -16978,7 +16978,7 @@ _0803F344:
 	adds r0, r0, r1
 	ldr r1, [r0, #0]
 	movs r0, #2
-	bl sub_08001B4C
+	bl IwramSetPointer2860
 	movs r0, #15
 	.global _0803F36C
 _0803F36C:

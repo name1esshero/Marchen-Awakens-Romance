@@ -209,6 +209,7 @@ AT("00009830") const u8 RuntimeActorHasReadyPartTail[2]={0};
 #define ACTOR_LATE_GET_S8(address,name,field) AT(address) s32 name(u32 index) { u8 *base=gSecondaryRuntime; index*=1672; base+=index; base+=(field); return *(s8 *)base; }
 #define ACTOR_LATE_GET_S16(address,name,field) AT(address) s32 name(u32 index) { u8 *base=gSecondaryRuntime; index*=1672; base+=index; base+=(field); return *(s16 *)base; }
 #define ACTOR_LATE_SET_S16(address,name,field) AT(address) void name(u32 index,s32 value) { u8 *base=gSecondaryRuntime; index*=1672; base+=index; base+=(field); *(s16 *)base=value; }
+#define ACTOR_LATE_SET_S8(address,name,field) AT(address) void name(u32 index,s32 value) { u8 *base=gSecondaryRuntime; index*=1672; base+=index; base+=(field); *(s8 *)base=value; }
 
 AT("00009304") u32 RuntimeGetPointerE30(u32 index) { u8 *base=gSecondaryRuntime; u32 offset=index*4; base+=0xE30; return *(u32 *)(base+offset); }
 ACTOR_SET_U32("00009630",RuntimeActorSetField33C,0x33C)
@@ -222,3 +223,7 @@ ACTOR_GET_U32("000096F4",RuntimeActorGetField228,0x228)
 AT("00009710") u32 RuntimeTestFlagC0(u32 bit) { return gSecondaryRuntime[0xC0] & (1u<<bit); }
 ACTOR_SET_U32("00009EB4",RuntimeActorSetField354,0x354)
 ACTOR_GET_U32("00009ED0",RuntimeActorGetField354,0x354)
+AT("00009508") u32 RuntimeGetPointerE3C(u32 index) { u8 *base=gSecondaryRuntime; u32 offset=index*4; base+=0xE3C; return *(u32 *)(base+offset); }
+ACTOR_LATE_GET_S16("0000975C",RuntimeActorGetField358,0x358)
+ACTOR_LATE_GET_S8("00009794",RuntimeActorGetField79C,0x79C)
+ACTOR_LATE_SET_S8("000097B4",RuntimeActorSetField79C,0x79C)

@@ -424,7 +424,7 @@ extern void sub_08008C14(s32);
 extern void sub_08016D28(void);
 extern void sub_08009F44(s32);
 extern void RuntimeActorSetField340(s32, s32);
-extern void *sub_08001B34(s32);
+extern void *IwramGetPointer2860(s32);
 extern void CpuFill(void *, u32, u32);
 extern void sub_08006ADC(s32, s32);
 extern u8 *GameStateGetRecord1190(u32);
@@ -527,7 +527,7 @@ AT("000123F8") s32 ScriptNativeResetFieldScene(u32 count, const s32 *args,
     sub_08016D28();
     sub_08009F44(0);
     RuntimeActorSetField340(0, 0);
-    CpuFill(sub_08001B34(2), 2048, 0);
+    CpuFill(IwramGetPointer2860(2), 2048, 0);
     sub_08006ADC(2, 0);
     sub_08006ADC(3, 0);
     GameStateGetRecord1190(2)[1] |= 4;

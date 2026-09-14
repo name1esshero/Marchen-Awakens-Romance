@@ -11,7 +11,7 @@
 #define KMP_SCREEN_BUFFERS ((u16 *)(gIwramBase + 0x0860))
 
 extern u8 gIwramBase[];
-extern void sub_08001B4C(s32 background, u16 *screenBuffer);
+extern void IwramSetPointer2860(s32 background, u16 *screenBuffer);
 
 /* KCG members on this path have a GBA LZ header: the upper 24 bits of its
  * first word are the decoded byte count. The loader reserves sixteen extra
@@ -67,7 +67,7 @@ void KmpLoadResource(const char *name, void *tileDestination, s32 slot,
     view = (struct KmpViewport *)(viewportBase + viewportOffset);
     screenBuffer = KMP_SCREEN_BUFFERS + slot * 0x400;
     KmpInitViewport(view, data, screenBuffer, slot, plane, 0);
-    sub_08001B4C(slot, screenBuffer);
+    IwramSetPointer2860(slot, screenBuffer);
 
     iwramBase = viewportBase - 0x3BC4;
     slotBase = iwramBase + viewportOffset;

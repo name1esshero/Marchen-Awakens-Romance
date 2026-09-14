@@ -6101,7 +6101,7 @@ _0802278C:
 	mov r10, r0
 	movs r1, #0
 	ldrsh r0, [r4, r1]
-	bl sub_0800975C
+	bl RuntimeActorGetField358
 	movs r1, #199
 	lsls r1, r1, #1
 	add r1, r9
@@ -7424,7 +7424,7 @@ sub_08023074:
 	mov r10, r0
 	movs r1, #0
 	ldrsh r0, [r4, r1]
-	bl sub_0800975C
+	bl RuntimeActorGetField358
 	movs r1, #165
 	lsls r1, r1, #1
 	add r1, r9
@@ -7574,7 +7574,7 @@ _0802312A:
 	ldr r1, [sp, #16]
 	strb r0, [r1, #0]
 	movs r0, #0
-	bl sub_08009508
+	bl RuntimeGetPointerE3C
 	str r0, [r7, #48]
 	ldr r2, [sp, #20]
 	ldrb r1, [r2, #0]
@@ -7625,7 +7625,7 @@ sub_080231C8:
 	.global _080231E8
 _080231E8:
 	adds r0, r1, #0
-	bl sub_08009508
+	bl RuntimeGetPointerE3C
 	ldr r2, [sp, #8]
 	str r0, [r2, #48]
 	ldr r0, [sp, #32]
@@ -8503,7 +8503,7 @@ _080237C4:
 	.global _080237D6
 _080237D6:
 	adds r0, r1, #0
-	bl sub_08009508
+	bl RuntimeGetPointerE3C
 	str r0, [r4, #56]
 	adds r3, r7, #0
 	adds r3, #119

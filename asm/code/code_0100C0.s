@@ -5785,14 +5785,14 @@ sub_08014106:
 	adds r4, r7, r0
 	movs r0, #0
 	ldrsb r0, [r4, r0]
-	bl sub_08009794
+	bl RuntimeActorGetField79C
 	str r0, [sp, #44]
 	adds r0, r7, #0
 	bl sub_08016C4C
 	movs r0, #0
 	ldrsb r0, [r4, r0]
 	ldr r1, [sp, #44]
-	bl sub_080097B4
+	bl RuntimeActorSetField79C
 	.2byte 0xF7F2
 	.4byte 0x2800FF05
 	beq _0801417C
@@ -5909,7 +5909,7 @@ sub_080141DA:
 _080141DC:
 	movs r0, #0
 	ldrsb r0, [r5, r0]
-	bl sub_08009794
+	bl RuntimeActorGetField79C
 	cmp r0, #0
 	beq _080141F0
 	movs r0, #180
@@ -5931,7 +5931,7 @@ sub_080141F8:
 	movs r0, #0
 	ldrsb r0, [r4, r0]
 	movs r1, #0
-	bl sub_080097B4
+	bl RuntimeActorSetField79C
 	adds r0, r7, #0
 	bl sub_08016BA4
 	ldr r1, [sp, #52]
@@ -6114,7 +6114,7 @@ sub_0801431C:
 	adds r4, r7, r0
 	movs r0, #0
 	ldrsb r0, [r4, r0]
-	bl sub_08009794
+	bl RuntimeActorGetField79C
 	cmp r0, #0
 	bne _08014350
 	movs r0, #2
@@ -6133,7 +6133,7 @@ _08014350:
 	movs r0, #0
 	ldrsb r0, [r4, r0]
 	movs r1, #0
-	bl sub_080097B4
+	bl RuntimeActorSetField79C
 	adds r0, r7, #0
 	bl sub_08016BA4
 	ldr r0, [sp, #52]
@@ -6397,7 +6397,7 @@ _080144F8:
 	adds r4, r7, r3
 	movs r0, #0
 	ldrsb r0, [r4, r0]
-	bl sub_08009794
+	bl RuntimeActorGetField79C
 	cmp r0, #0
 	bne _08014524
 	adds r0, r7, #0
@@ -6421,7 +6421,7 @@ _08014524:
 	movs r0, #0
 	ldrsb r0, [r4, r0]
 	movs r1, #0
-	bl sub_080097B4
+	bl RuntimeActorSetField79C
 	adds r0, r7, #0
 	bl sub_08016BA4
 	ldr r0, [sp, #52]
@@ -12446,7 +12446,7 @@ _08016C90:
 	movs r0, #0
 	ldrsb r0, [r6, r0]
 	movs r1, #0
-	bl sub_080097B4
+	bl RuntimeActorSetField79C
 	movs r5, #0
 	ldrsb r5, [r6, r5]
 	ldr r7, _08016D24
@@ -12691,14 +12691,14 @@ _08016DEA:
 	adds r4, r6, r0
 	movs r0, #0
 	ldrsb r0, [r4, r0]
-	bl sub_08009794
+	bl RuntimeActorGetField79C
 	adds r5, r0, #0
 	adds r0, r6, #0
 	bl sub_08016C4C
 	movs r0, #0
 	ldrsb r0, [r4, r0]
 	adds r1, r5, #0
-	bl sub_080097B4
+	bl RuntimeActorSetField79C
 	movs r0, #184
 	lsls r0, r0, #3
 	b _08016EEC

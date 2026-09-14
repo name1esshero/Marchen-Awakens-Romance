@@ -1309,7 +1309,7 @@ _08000FB4:
 	.byte 0xB0
 	.byte 0xF8
 	movs r0, #1
-	bl sub_08001A34
+	bl IwramSetField3FD5
 	bl sub_08079FA8
 	ldr r2, _08001038
 	adds r0, r2, #0
@@ -2767,23 +2767,10 @@ _08001A2C:
 _08001A30:
 	.4byte 0x04000004  @ REG_DISPSTAT
 
-	.thumb_func
-	.thumb
-	.global sub_08001A34
-sub_08001A34:
-	ldr r1, _08001A40
-	ldr r2, _08001A44
-	adds r1, r1, r2
-	strb r0, [r1, #0]
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _08001A40
-_08001A40:
-	.4byte 0x03000000  @ IWRAM
-	.global _08001A44
-_08001A44:
-	.4byte 0x00003FD5
+@ 001A34..001A48 is decompiled as IwramSetField3FD5(); see src/decompiled.json
+
+	.section .rom.00001A48, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -2941,45 +2928,16 @@ _08001B2C:
 _08001B30:
 	.4byte 0x00001850
 
-	.thumb_func
-	.thumb
-	.global sub_08001B34
-sub_08001B34:
-	ldr r1, _08001B44
-	lsls r0, r0, #2
-	ldr r2, _08001B48
-	adds r1, r1, r2
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _08001B44
-_08001B44:
-	.4byte 0x03000000  @ IWRAM
-	.global _08001B48
-_08001B48:
-	.4byte 0x00002860
+@ 001B34..001B4C is decompiled as IwramGetPointer2860(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08001B4C
-sub_08001B4C:
-	ldr r2, _08001B5C
-	lsls r0, r0, #2
-	ldr r3, _08001B60
-	adds r2, r2, r3
-	adds r0, r0, r2
-	str r1, [r0, #0]
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _08001B5C
-_08001B5C:
-	.4byte 0x03000000  @ IWRAM
-	.global _08001B60
-_08001B60:
-	.4byte 0x00002860
+	.section .rom.00001B4C, "ax"
+	.syntax unified
+
+@ 001B4C..001B64 is decompiled as IwramSetPointer2860(); see src/decompiled.json
+
+	.section .rom.00001B64, "ax"
+	.syntax unified
+
 	.4byte 0x9E05B5F0
 	.4byte 0x4F0D4C0C
 	.4byte 0x602919E5
@@ -6255,7 +6213,7 @@ _08003214:
 	.2byte 0xF7FF
 	.4byte 0x4640F9E5
 	adds r1, r5, #0
-	bl sub_08001B4C
+	bl IwramSetPointer2860
 	ldr r2, _08003274
 	adds r6, r6, r2
 	adds r4, r4, r6
@@ -10769,25 +10727,7 @@ _08005358:
 _0800535C:
 	.4byte 0x00003F2C
 
-	.thumb_func
-	.thumb
-	.global sub_08005360
-sub_08005360:
-	ldr r0, _08005370
-	ldr r1, _08005374
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	subs r1, #164
-	adds r0, r0, r1
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _08005370
-_08005370:
-	.4byte 0x03000000  @ IWRAM
-	.global _08005374
-_08005374:
-	.4byte 0x00003FDC
+@ 005360..005378 is decompiled as GameStateGetBuffer3F38(); see src/decompiled.json
 
 @ 005378..0053B4 is decompiled as CreateInputWaitTask(); see src/decompiled.json
 
@@ -11162,7 +11102,7 @@ _080055CC:
 	b _0800569E
 	.global _080055D6
 _080055D6:
-	bl sub_08005360
+	bl GameStateGetBuffer3F38
 	movs r1, #0
 	.2byte 0xF074
 	.byte 0xEE
@@ -11174,7 +11114,7 @@ _080055D6:
 	.2byte 0xF078
 	.byte 0x2E
 	.byte 0xFF
-	bl sub_08005360
+	bl GameStateGetBuffer3F38
 	movs r1, #0
 	movs r2, #1
 	.2byte 0xF074
@@ -11248,7 +11188,7 @@ _08005670:
 	.4byte 0x030032C4  @ IWRAM+0x32C4
 	.global _08005674
 _08005674:
-	bl sub_08005360
+	bl GameStateGetBuffer3F38
 	movs r1, #0
 	movs r2, #0
 	.2byte 0xF074
@@ -11335,7 +11275,7 @@ sub_08005C38:
 	sub sp, #4
 	adds r4, r1, #0
 	adds r5, r2, #0
-	bl sub_08005360
+	bl GameStateGetBuffer3F38
 	adds r1, r0, #0
 	ldr r3, [r4, #0]
 	movs r0, #0
@@ -12172,14 +12112,14 @@ _080063A4:
 	.2byte 0xF008
 	.4byte 0xF001FE59
 	.4byte 0x2002FFB3
-	bl sub_08001B34
+	bl IwramGetPointer2860
 	movs r4, #128
 	lsls r4, r4, #4
 	adds r1, r4, #0
 	movs r2, #0
 	bl CpuFill
 	movs r0, #3
-	bl sub_08001B34
+	bl IwramGetPointer2860
 	adds r1, r4, #0
 	movs r2, #0
 	bl CpuFill
@@ -12366,14 +12306,14 @@ _08006508:
 	.2byte 0xF008
 	.4byte 0xF001FDA1
 	.4byte 0x2002FEFB
-	bl sub_08001B34
+	bl IwramGetPointer2860
 	movs r4, #128
 	lsls r4, r4, #4
 	adds r1, r4, #0
 	movs r2, #0
 	bl CpuFill
 	movs r0, #3
-	bl sub_08001B34
+	bl IwramGetPointer2860
 	adds r1, r4, #0
 	movs r2, #0
 	bl CpuFill

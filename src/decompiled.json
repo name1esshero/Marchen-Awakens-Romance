@@ -18,6 +18,24 @@
     "file": "src/simple_adapters.c"
   },
   {
+    "addr": "08001A34",
+    "size": 20,
+    "name": "IwramSetField3FD5",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08001B34",
+    "size": 24,
+    "name": "IwramGetPointer2860",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08001B4C",
+    "size": 24,
+    "name": "IwramSetPointer2860",
+    "file": "src/runtime_accessors.c"
+  },
+  {
     "addr": "08002148",
     "size": 16,
     "name": "Lz77UnCompVramSwapped",
@@ -232,6 +250,12 @@
     "size": 16,
     "name": "RuntimeReadSignedByte",
     "file": "src/runtime_leaf.c"
+  },
+  {
+    "addr": "08005360",
+    "size": 24,
+    "name": "GameStateGetBuffer3F38",
+    "file": "src/runtime_accessors.c"
   },
   {
     "addr": "08005378",
@@ -906,6 +930,12 @@
     "file": "src/runtime_buffers.c"
   },
   {
+    "addr": "08009508",
+    "size": 24,
+    "name": "RuntimeGetPointerE3C",
+    "file": "src/runtime_buffers.c"
+  },
+  {
     "addr": "08009630",
     "size": 28,
     "name": "RuntimeActorSetField33C",
@@ -957,6 +987,24 @@
     "addr": "08009710",
     "size": 24,
     "name": "RuntimeTestFlagC0",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "0800975C",
+    "size": 28,
+    "name": "RuntimeActorGetField358",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009794",
+    "size": 32,
+    "name": "RuntimeActorGetField79C",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "080097B4",
+    "size": 28,
+    "name": "RuntimeActorSetField79C",
     "file": "src/runtime_buffers.c"
   },
   {

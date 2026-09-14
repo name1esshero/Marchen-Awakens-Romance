@@ -2572,7 +2572,7 @@ _080411A4:
 	.2byte 0xF039
 	.4byte 0x1C01FD25
 	movs r0, #2
-	bl sub_08001B4C
+	bl IwramSetPointer2860
 	movs r0, #0
 	movs r1, #0
 	.2byte 0xF03F
@@ -4326,7 +4326,7 @@ _08041D72:
 	.2byte 0xF038
 	.4byte 0x1C01FF47
 	movs r0, #2
-	bl sub_08001B4C
+	bl IwramSetPointer2860
 	movs r0, #0
 	movs r1, #0
 	.2byte 0xF03E
@@ -8233,7 +8233,7 @@ sub_080435D6:
 	adds r0, r0, r1
 	ldr r1, [r0, #0]
 	movs r0, #2
-	bl sub_08001B4C
+	bl IwramSetPointer2860
 	ldrh r1, [r4, #0]
 	movs r2, #0
 	ldrsh r0, [r4, r2]
@@ -12231,7 +12231,7 @@ _08045034:
 	adds r0, r0, r1
 	ldr r1, [r0, #0]
 	movs r0, #2
-	bl sub_08001B4C
+	bl IwramSetPointer2860
 	ldrh r1, [r5, #56]
 	movs r4, #56
 	ldrsh r0, [r5, r4]
@@ -17325,7 +17325,7 @@ _080471C8:
 	.byte 0xFD
 	adds r1, r0, #0
 	movs r0, #2
-	bl sub_08001B4C
+	bl IwramSetPointer2860
 	movs r0, #0
 	movs r1, #0
 	.2byte 0xF039
@@ -19376,7 +19376,7 @@ sub_08047EBC:
 	adds r0, r0, r1
 	ldr r1, [r0, #0]
 	movs r0, #2
-	bl sub_08001B4C
+	bl IwramSetPointer2860
 	ldrh r1, [r4, #0]
 	movs r3, #0
 	ldrsh r0, [r4, r3]

@@ -11508,7 +11508,7 @@ _08034E5E:
 	adds r0, r0, r1
 	ldr r1, [r0, #0]
 	movs r0, #2
-	bl sub_08001B4C
+	bl IwramSetPointer2860
 	ldrh r1, [r4, #0]
 	movs r2, #0
 	ldrsh r0, [r4, r2]
@@ -12470,7 +12470,7 @@ _080354E6:
 	adds r0, r0, r1
 	ldr r1, [r0, #0]
 	movs r0, #2
-	bl sub_08001B4C
+	bl IwramSetPointer2860
 	adds r2, r5, #0
 	adds r2, #124
 	ldrh r0, [r2, #0]

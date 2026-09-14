@@ -6,14 +6,6 @@
 #include "runtime_state.h"
 #include "rom_section.h"
 
-#ifdef NONMATCHING
-AT("00009508")
-void *RuntimeGetPointerTableEntry(s32 index)
-{
-    return *(void **)(gSecondaryRuntime + 0xE3C + index * 4);
-}
-#endif
-
 AT("0000AF88")
 s32 RuntimeGetSignedByteE4B(void)
 {

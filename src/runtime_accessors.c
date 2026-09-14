@@ -78,3 +78,33 @@ AT("0000D628") void *GameStateGetRecord610(u32 index)
 {
  return GAME_STATE_BASE+0x610+index*44;
 }
+AT("00001A34") void IwramSetField3FD5(u32 value)
+{
+ gIwramBase[(u32)gIwramField3FD5Offset]=value;
+}
+AT("00001B34") u32 IwramGetPointer2860(u32 index0)
+{
+ register u32 index asm("r0")=index0;
+ u32 base=(u32)gIwramBase;
+ index*=4;
+ base+=(u32)gIwramPointer2860Offset;
+ index+=base;
+ return *(u32 *)index;
+}
+AT("00001B4C") void IwramSetPointer2860(u32 index0,u32 value)
+{
+ register u32 index asm("r0")=index0;
+ u32 base=(u32)gIwramBase;
+ index*=4;
+ base+=(u32)gIwramPointer2860Offset;
+ index+=base;
+ *(u32 *)index=value;
+}
+AT("00005360") void *GameStateGetBuffer3F38(void)
+{
+ void **root=(void **)(gIwramBase+(u32)gMapGenerationRootOffset);
+ u8 *base=*(u8 **)root;
+ u32 offset=(u32)gMapGenerationRootOffset;
+ offset-=164;
+ return base+offset;
+}

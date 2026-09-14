@@ -2505,13 +2505,13 @@ _080193F8:
 	ldr r4, _0801951C
 	movs r0, #2
 	adds r1, r4, #0
-	bl sub_08001B4C
+	bl IwramSetPointer2860
 	movs r2, #128
 	lsls r2, r2, #4
 	adds r4, r4, r2
 	movs r0, #3
 	adds r1, r4, #0
-	bl sub_08001B4C
+	bl IwramSetPointer2860
 	movs r0, #0
 	ldrsb r0, [r6, r0]
 
@@ -5855,7 +5855,7 @@ sub_0801AAC8:
 	movs r0, #16
 	strh r0, [r1, #0]
 	movs r0, #2
-	bl sub_08001B34
+	bl IwramGetPointer2860
 	subs r4, #44
 	adds r1, r4, #0
 	movs r2, #0
@@ -6095,7 +6095,7 @@ _0801AC60:
 	movs r1, #0
 	bl sub_0801B95C
 	movs r0, #2
-	bl sub_08001B34
+	bl IwramGetPointer2860
 	adds r1, r0, #0
 	movs r4, #0
 	mov r9, r4
@@ -10516,7 +10516,7 @@ sub_0801C94E:
 	.thumb
 	.global sub_0801C9CC
 sub_0801C9CC:
-	bl sub_08001B34
+	bl IwramGetPointer2860
 	movs r4, #128
 	lsls r4, r4, #4
 	adds r1, r4, #0
@@ -10616,7 +10616,7 @@ _0801CA60:
 	adds r4, r5, r6
 	strh r0, [r4, #0]
 	movs r0, #2
-	bl sub_08001B34
+	bl IwramGetPointer2860
 	adds r1, r0, #0
 	movs r0, #0
 	mov r8, r0
