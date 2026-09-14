@@ -121,6 +121,24 @@ block at the end of the file produces `Error: changed section attributes for
 .rom.ADDR`, because the assembler reopens a section it had emitted as code and
 finds read-only data flags instead.
 
+## Open: where a pool address is materialised
+
+A global's address and the load through it can be scheduled apart, and source
+order does not appear to control the split. `RuntimeActorGetField234`
+(0x0800943C) keeps the pool address in r2 across the multiply and dereferences
+it only afterwards:
+
+    ldr  r2, [pc, #24]      @ address of the gSecondaryRuntime slot
+    movs r1, #209 / lsls r1, r1, #3 / muls r0, r1
+    ldr  r1, [r2, #0]       @ the load, after the multiply
+
+Shapes tried all give either both loads early or both late: reading the pointer
+into a local before the multiply, a single combined expression, pointer rather
+than integer accumulation, and dereferencing the pointer expression directly.
+Everything else in that function now matches, including the `ldrb`+shift tail,
+which is the part previously believed impossible. If you find the shape that
+splits the two loads, record it here.
+
 ## Method notes
 
 - Iterate against a single translation unit, not the ROM. `cpp` + `agbcc` +
