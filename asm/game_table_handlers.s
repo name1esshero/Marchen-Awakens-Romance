@@ -535,3 +535,19 @@
 .set sub_08075299, 0x08075299
 .global sub_0807571D
 .set sub_0807571D, 0x0807571D
+
+@ Short CGB (Game Boy wave-channel) waveform patterns referenced by
+@ sound_tables.c's SoundToneData wave field. Not part of the PCM sample
+@ pipeline (sound/samples/manifest.json), and not yet otherwise identified.
+.global gCgbWaveform_08089CF0
+.set gCgbWaveform_08089CF0, 0x08089CF0
+.global gCgbWaveform_0808ABB4
+.set gCgbWaveform_0808ABB4, 0x0808ABB4
+.global gCgbWaveform_0808B034
+.set gCgbWaveform_0808B034, 0x0808B034
+.global gCgbWaveform_0808B054
+.set gCgbWaveform_0808B054, 0x0808B054
+.global gCgbWaveform_0808B064
+.set gCgbWaveform_0808B064, 0x0808B064
+.global gCgbWaveform_0808B0A4
+.set gCgbWaveform_0808B0A4, 0x0808B0A4

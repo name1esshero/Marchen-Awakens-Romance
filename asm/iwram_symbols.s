@@ -199,3 +199,23 @@
 .set _081AC982, 0x081AC982
 .global _081AC994
 .set _081AC994, 0x081AC994
+
+@ MusicPlayer2000 per-player IWRAM track pools, referenced from gSoundPlayerTable.
+.global gSoundPlayer0Tracks
+.set gSoundPlayer0Tracks, 0x03004048
+.global gSoundPlayer1Tracks
+.set gSoundPlayer1Tracks, 0x03004458
+.global gSoundPlayer2Tracks
+.set gSoundPlayer2Tracks, 0x03004548
+.global gSoundPlayer3Tracks
+.set gSoundPlayer3Tracks, 0x03004638
+.global gSoundPlayer4Tracks
+.set gSoundPlayer4Tracks, 0x03004728
+.global gSoundPlayer5Tracks
+.set gSoundPlayer5Tracks, 0x03004818
+.global gSoundPlayer6Tracks
+.set gSoundPlayer6Tracks, 0x03004908
+.global gSoundPlayer7Tracks
+.set gSoundPlayer7Tracks, 0x03004C28
+.global gSoundPlayer8Tracks
+.set gSoundPlayer8Tracks, 0x03004D18

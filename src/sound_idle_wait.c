@@ -6,6 +6,7 @@
 extern void ScriptAddPendingTasks(u32 count);
 extern void sub_08080BD4(void *task);
 extern void SoundPlayerIdleTask(struct EngineTask *task);
+extern struct SoundPlayer gSoundPlayer0, gSoundPlayer1;
 
 struct SoundIdleTaskRecord
 {
@@ -26,8 +27,8 @@ AT("00005848") struct EngineTask *CreateSoundPlayerIdleWait(
     index = playerIndex;
     waitValue = wait;
     switch (index) {
-    case 0: player = (struct SoundPlayer *)0x03005F30; break;
-    case 1: player = (struct SoundPlayer *)0x03005FB0; break;
+    case 0: player = &gSoundPlayer0; break;
+    case 1: player = &gSoundPlayer1; break;
     case 2: player = (struct SoundPlayer *)0x03005FF0; break;
     case 3: player = (struct SoundPlayer *)0x030060C0; break;
     case 4: player = (struct SoundPlayer *)0x03006030; break;
@@ -35,7 +36,7 @@ AT("00005848") struct EngineTask *CreateSoundPlayerIdleWait(
     case 6: player = (struct SoundPlayer *)0x03005EF0; break;
     case 7: player = (struct SoundPlayer *)0x03005F70; break;
     case 8: player = (struct SoundPlayer *)0x03006080; break;
-    default: player = (struct SoundPlayer *)0x03005F30; break;
+    default: player = &gSoundPlayer0; break;
     }
 
     status = player->status;

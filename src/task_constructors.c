@@ -19,10 +19,13 @@ extern void sub_08080BD4(void *task);
 extern void sub_0805615C(void);
 extern void sub_08009728(s32, s32);
 extern s32 SpriteResourceFindGroup(s32, const char *);
+extern void VramFillTask(void *task);
+extern void ScriptSpriteResetTask(void *task);
+extern void ScriptSpriteResetAllTask(void *task);
 
 AT("000037D8") void ScheduleVramFillTask(void *destination, u32 value, u32 size)
 {
-    u8 *task = CreateTask(&gAuxTaskManager, (void *)0x0800380D,
+    u8 *task = CreateTask(&gAuxTaskManager, (void *)((u32)VramFillTask + 1),
                           0, 0, 12);
     u8 *state = task + 32;
     *(void **)(task + 32) = destination;
@@ -104,7 +107,7 @@ AT("000256F8") u8 *CreateBattleTrackingTask(s32 owner, s32 slot,
 #ifdef NONMATCHING
 AT("0001097C") u8 *CreateSpriteResetTask(s32 sprite, s32 mode, s32 *result)
 {
-    u8 *task = CreateTask(gSecondaryRuntime + 64, (void *)0x080109C5,
+    u8 *task = CreateTask(gSecondaryRuntime + 64, (void *)((u32)ScriptSpriteResetTask + 1),
                           0, result, 8);
     *(s32 *)(task + 32) = sprite;
     *(s32 *)(task + 36) = mode;
@@ -252,7 +255,7 @@ AT("00007134") u8 *CreateNamedRuntimeTask(const char *name, s32 value,
 #ifdef NONMATCHING
 AT("00010A2C") u8 *CreateSpriteWaitTask(s32 mode, s32 *result)
 {
-    u8 *task = CreateTask(gSecondaryRuntime + 64, (void *)0x08010A71,
+    u8 *task = CreateTask(gSecondaryRuntime + 64, (void *)((u32)ScriptSpriteResetAllTask + 1),
                           0, result, 8);
     *(s32 *)(task + 36) = mode;
     ScriptAddPendingTasks(1);

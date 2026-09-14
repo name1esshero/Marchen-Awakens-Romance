@@ -2,6 +2,127 @@
 
 #include "rom_section.h"
 
+/* PCM sample and CGB waveform data referenced by the SoundToneData tables
+ * below; see asm/sound_samples.s and asm/game_table_handlers.s. */
+extern const u8 gCgbWaveform_08089CF0[];
+extern const u8 gCgbWaveform_0808ABB4[];
+extern const u8 gCgbWaveform_0808B034[];
+extern const u8 gCgbWaveform_0808B054[];
+extern const u8 gCgbWaveform_0808B064[];
+extern const u8 gCgbWaveform_0808B0A4[];
+extern const u8 gWave_0808B89C[];
+extern const u8 gWave_0808E990[];
+extern const u8 gWave_0808F9AC[];
+extern const u8 gWave_08091F80[];
+extern const u8 gWave_08094C24[];
+extern const u8 gWave_08098418[];
+extern const u8 gWave_0809A8B4[];
+extern const u8 gWave_0809D3B8[];
+extern const u8 gWave_0809FCBC[];
+extern const u8 gWave_080A32BC[];
+extern const u8 gWave_080A5950[];
+extern const u8 gWave_080A7D4C[];
+extern const u8 gWave_080A9928[];
+extern const u8 gWave_080AAE64[];
+extern const u8 gWave_080AD068[];
+extern const u8 gWave_080AE1AC[];
+extern const u8 gWave_080AF4E0[];
+extern const u8 gWave_080B2BBC[];
+extern const u8 gWave_080B3FF0[];
+extern const u8 gWave_080B5144[];
+extern const u8 gWave_080B53DC[];
+extern const u8 gWave_080B5C5C[];
+extern const u8 gWave_080B6F60[];
+extern const u8 gWave_080B83F4[];
+extern const u8 gWave_080BBB0C[];
+extern const u8 gWave_080BDD90[];
+extern const u8 gWave_080C22A4[];
+extern const u8 gWave_080C3C6C[];
+extern const u8 gWave_080C8600[];
+extern const u8 gWave_080CB454[];
+extern const u8 gWave_080CDE0C[];
+extern const u8 gWave_080CFC68[];
+extern const u8 gWave_080D69FC[];
+extern const u8 gWave_080D89D0[];
+extern const u8 gWave_080DF764[];
+extern const u8 gWave_080E146C[];
+extern const u8 gWave_080E1538[];
+extern const u8 gWave_080E4090[];
+extern const u8 gWave_080E5114[];
+extern const u8 gWave_080E6620[];
+extern const u8 gWave_080E73F8[];
+extern const u8 gWave_080E7F0C[];
+extern const u8 gWave_080E8408[];
+extern const u8 gWave_080E989C[];
+extern const u8 gWave_080EB138[];
+extern const u8 gWave_080EF5CC[];
+extern const u8 gWave_080EF9A8[];
+extern const u8 gWave_080F1670[];
+extern const u8 gWave_080F30AC[];
+extern const u8 gWave_080F35D0[];
+extern const u8 gWave_080F3E84[];
+extern const u8 gWave_080F72D8[];
+extern const u8 gWave_080FB4EC[];
+extern const u8 gWave_080FBD14[];
+extern const u8 gWave_080FF6C8[];
+extern const u8 gWave_081030DC[];
+extern const u8 gWave_0810594C[];
+extern const u8 gWave_08106424[];
+extern const u8 gWave_08107414[];
+extern const u8 gWave_0810A564[];
+extern const u8 gWave_0810B22C[];
+extern const u8 gWave_0810C6A8[];
+extern const u8 gWave_0810E2BC[];
+extern const u8 gWave_08110EBC[];
+extern const u8 gWave_08112BD0[];
+extern const u8 gWave_08115A24[];
+extern const u8 gWave_081165D4[];
+extern const u8 gWave_08116F9C[];
+extern const u8 gWave_0811D424[];
+extern const u8 gWave_081222F8[];
+extern const u8 gWave_0812798C[];
+extern const u8 gWave_081282B0[];
+extern const u8 gWave_0812AB64[];
+extern const u8 gWave_0812ECD8[];
+extern const u8 gWave_0812FD0C[];
+extern const u8 gWave_08132310[];
+extern const u8 gWave_08137498[];
+extern const u8 gWave_08138240[];
+extern const u8 gWave_08138730[];
+extern const u8 gWave_0813C25C[];
+extern const u8 gWave_0813D2D0[];
+extern const u8 gWave_0813E10C[];
+extern const u8 gWave_0813F560[];
+extern const u8 gWave_08141978[];
+extern const u8 gWave_0814718C[];
+extern const u8 gWave_08148270[];
+extern const u8 gWave_0814DF30[];
+extern const u8 gWave_08151FA4[];
+extern const u8 gWave_08153F00[];
+extern const u8 gWave_08158E14[];
+extern const u8 gWave_0815B328[];
+extern const u8 gWave_0815D03C[];
+extern const u8 gWave_081612D0[];
+extern const u8 gWave_08163564[];
+extern const u8 gWave_0816D8CC[];
+extern const u8 gWave_08170180[];
+extern const u8 gWave_08172AEC[];
+extern const u8 gWave_0817D644[];
+extern const u8 gWave_081833B8[];
+extern const u8 gWave_08185E8C[];
+extern const u8 gWave_08188608[];
+extern const u8 gWave_0818A3FC[];
+extern const u8 gWave_0818C700[];
+extern const u8 gWave_0818D564[];
+extern const u8 gWave_0818D8A8[];
+extern const u8 gWave_0818EA0C[];
+extern const u8 gWave_081930B0[];
+extern const u8 gWave_08194BC4[];
+extern const u8 gWave_08196338[];
+extern const u8 gWave_08198F6C[];
+extern const u8 gWave_0819B220[];
+extern const u8 gWave_0819B524[];
+
 /* Fixed-point pitch, sample-rate, PSG, and extended-command tables. */
 AT("000895C8") const u8 gSoundScaleTable[180] = {
     0xE0, 0xE1, 0xE2, 0xE3, 0xE4, 0xE5, 0xE6, 0xE7, 0xE8, 0xE9, 0xEA, 0xEB,
@@ -65,703 +186,948 @@ AT("0008979C") const u8 gCgb3VolumeTable[68] = {
     0x54, 0x58, 0x5A, 0x5C, 0x60, 0x00, 0x00, 0x00,
 };
 
+/* Extended-command dispatch table; each thumb-bit-set address is one of
+ * these already-decompiled per-field track readers, declared generically
+ * here since only their address (not their real signature) is needed. */
+extern void CallRuntimeHandler(void);
+extern void SoundTrackReadWavePointer(void);
+extern void SoundTrackReadToneType(void);
+extern void SoundTrackReadToneAttack(void);
+extern void SoundTrackReadToneDecay(void);
+extern void SoundTrackReadToneSustain(void);
+extern void SoundTrackReadToneRelease(void);
+extern void SoundTrackReadPseudoEchoVolume(void);
+extern void SoundTrackReadPseudoEchoLength(void);
+extern void SoundTrackReadToneLength(void);
+extern void SoundTrackReadTonePanSweep(void);
+
 AT("000897E0") void *const gSoundExtendedCommandTable[12] = {
-        (void *)0x08079D95,     (void *)0x08079DA9,
-        (void *)0x08079DF1,     (void *)0x08079D95,
-        (void *)0x08079E05,     (void *)0x08079E19,
-        (void *)0x08079E2D,     (void *)0x08079E41,
-        (void *)0x08079E55,     (void *)0x08079E61,
-        (void *)0x08079E6D,     (void *)0x08079E81,
+    [0] = (void *)((u32)CallRuntimeHandler + 1), [1] = (void *)((u32)SoundTrackReadWavePointer + 1), [2] = (void *)((u32)SoundTrackReadToneType + 1), [3] = (void *)((u32)CallRuntimeHandler + 1),
+    [4] = (void *)((u32)SoundTrackReadToneAttack + 1), [5] = (void *)((u32)SoundTrackReadToneDecay + 1), [6] = (void *)((u32)SoundTrackReadToneSustain + 1), [7] = (void *)((u32)SoundTrackReadToneRelease + 1),
+    [8] = (void *)((u32)SoundTrackReadPseudoEchoVolume + 1), [9] = (void *)((u32)SoundTrackReadPseudoEchoLength + 1), [10] = (void *)((u32)SoundTrackReadToneLength + 1), [11] = (void *)((u32)SoundTrackReadTonePanSweep + 1),
 };
+
 /* Voice records use the standard 12-byte ToneData layout.  The wave field
  * is a sample pointer for PCM voices, a small oscillator ID for PSG voices,
  * or a subordinate tone table for split/drum voices. */
 AT("00089810") const struct SoundToneData gVoiceGroupMain[188] = {
-    {0, 60, 0, 0, 0x0808B89C, 255, 127, 206, 216}, /*   0 */
-    {3, 60, 0, 0, 0x0808B034, 0, 0, 12, 3}, /*   1 */
-    {1, 60, 0, 0, 0x00000002, 0, 1, 8, 4}, /*   2 */
-    {1, 60, 0, 0, 0x00000002, 0, 6, 0, 0}, /*   3 */
-    {2, 60, 0, 0, 0x00000002, 0, 0, 14, 0}, /*   4 */
-    {1, 60, 0, 0, 0x00000000, 0, 0, 6, 0}, /*   5 */
-    {0, 60, 0, 0, 0x0808E990, 255, 127, 206, 216}, /*   6 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*   7 */
-    {0, 60, 0, 0, 0x0808F9AC, 255, 127, 206, 216}, /*   8 */
-    {0, 60, 0, 0, 0x08091F80, 255, 127, 206, 216}, /*   9 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  10 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  11 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  12 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  13 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  14 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  15 */
-    {0, 60, 0, 0, 0x08094C24, 255, 127, 206, 204}, /*  16 */
-    {0, 60, 0, 0, 0x08098418, 255, 127, 206, 204}, /*  17 */
-    {0, 60, 0, 0, 0x0809A8B4, 255, 127, 206, 204}, /*  18 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  19 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  20 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  21 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  22 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  23 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  24 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  25 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  26 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  27 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  28 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  29 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  30 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  31 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  32 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  33 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  34 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  35 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  36 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  37 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  38 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  39 */
-    {0, 60, 0, 0, 0x0809D3B8, 255, 127, 206, 204}, /*  40 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  41 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  42 */
-    {0, 60, 0, 0, 0x0809FCBC, 255, 127, 206, 204}, /*  43 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  44 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  45 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  46 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  47 */
-    {0, 60, 0, 0, 0x080A32BC, 255, 127, 206, 204}, /*  48 */
-    {0, 60, 0, 0, 0x080A5950, 255, 127, 206, 204}, /*  49 */
-    {0, 60, 0, 0, 0x080A7D4C, 255, 127, 206, 204}, /*  50 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  51 */
-    {0, 60, 0, 0, 0x080A9928, 255, 127, 206, 204}, /*  52 */
-    {0, 60, 0, 0, 0x080AAE64, 255, 127, 206, 204}, /*  53 */
-    {0, 60, 0, 0, 0x080AD068, 255, 127, 206, 204}, /*  54 */
-    {0, 60, 0, 0, 0x080AE1AC, 255, 127, 206, 204}, /*  55 */
-    {0, 60, 0, 0, 0x080AF4E0, 255, 127, 206, 204}, /*  56 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  57 */
-    {0, 60, 0, 0, 0x080B2BBC, 37, 127, 206, 188}, /*  58 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  59 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  60 */
-    {0, 60, 0, 0, 0x080B3FF0, 255, 127, 206, 188}, /*  61 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  62 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  63 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  64 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  65 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  66 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  67 */
-    {0, 60, 0, 0, 0x080B5144, 255, 127, 206, 188}, /*  68 */
-    {0, 60, 0, 0, 0x080B53DC, 255, 127, 206, 188}, /*  69 */
-    {0, 60, 0, 0, 0x080B5C5C, 255, 127, 206, 188}, /*  70 */
-    {0, 60, 0, 0, 0x080B6F60, 255, 127, 206, 204}, /*  71 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  72 */
-    {0, 60, 0, 0, 0x080B83F4, 255, 127, 206, 188}, /*  73 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  74 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  75 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  76 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  77 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  78 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  79 */
-    {0, 60, 0, 0, 0x080BBB0C, 255, 127, 206, 188}, /*  80 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  81 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  82 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  83 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  84 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  85 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  86 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  87 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  88 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  89 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  90 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  91 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  92 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  93 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  94 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  95 */
-    {0, 60, 0, 0, 0x080BDD90, 255, 127, 206, 188}, /*  96 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  97 */
-    {0, 60, 0, 0, 0x080C22A4, 255, 127, 206, 242}, /*  98 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  99 */
-    {0, 60, 0, 0, 0x080C3C6C, 255, 188, 255, 216}, /* 100 */
-    {0, 60, 0, 0, 0x080C8600, 255, 188, 255, 216}, /* 101 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 102 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 103 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 104 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 105 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 106 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 107 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 108 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 109 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 110 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 111 */
-    {0, 60, 0, 0, 0x080CB454, 255, 127, 206, 216}, /* 112 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 113 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 114 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 115 */
-    {0, 60, 0, 0, 0x080CDE0C, 255, 127, 206, 216}, /* 116 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 117 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 118 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 119 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 120 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 121 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 122 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 123 */
-    {0, 60, 0, 0, 0x080CFC68, 255, 127, 206, 204}, /* 124 */
-    {0, 60, 0, 0, 0x080D69FC, 255, 127, 206, 188}, /* 125 */
-    {0, 60, 0, 0, 0x080D89D0, 255, 127, 206, 204}, /* 126 */
-    {128, 0, 0, 0, 0x08089CF0, 0, 0, 0, 0}, /* 127 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 128 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 129 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 130 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 131 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 132 */
-    {8, 30, 0, 192, 0x080DF764, 255, 0, 255, 216}, /* 133 */
-    {8, 60, 0, 0, 0x080E146C, 255, 0, 255, 165}, /* 134 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 135 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 136 */
-    {0, 60, 0, 0, 0x080E1538, 255, 127, 206, 165}, /* 137 */
-    {8, 60, 0, 0, 0x080E4090, 255, 0, 255, 204}, /* 138 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 139 */
-    {8, 60, 0, 0, 0x080E5114, 255, 0, 255, 165}, /* 140 */
-    {8, 60, 0, 0, 0x080E6620, 255, 0, 255, 165}, /* 141 */
-    {8, 60, 0, 0, 0x080E73F8, 255, 0, 255, 127}, /* 142 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 143 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 144 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 145 */
-    {8, 60, 0, 0, 0x080E7F0C, 255, 165, 255, 38}, /* 146 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 147 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 148 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 149 */
-    {8, 60, 0, 0, 0x080E8408, 255, 165, 255, 38}, /* 150 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 151 */
-    {8, 60, 0, 0, 0x080E989C, 255, 0, 206, 188}, /* 152 */
-    {8, 60, 0, 0, 0x080EB138, 255, 188, 206, 204}, /* 153 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 154 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 155 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 156 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 157 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 158 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 159 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 160 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 161 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 162 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 163 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 164 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 165 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 166 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 167 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 168 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 169 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 170 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 171 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 172 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 173 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 174 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 175 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 176 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 177 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 178 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 179 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 180 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 181 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 182 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 183 */
-    {8, 60, 0, 0, 0x080EF5CC, 255, 127, 206, 165}, /* 184 */
-    {8, 60, 0, 0, 0x080EF9A8, 255, 127, 206, 242}, /* 185 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 186 */
-    {8, 60, 0, 0, 0x080F1670, 255, 127, 206, 242}, /* 187 */
+    [0] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0808B89C, .attack = 255, .decay = 127, .sustain = 206, .release = 216 },
+    [1] = { .type = 3, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gCgbWaveform_0808B034, .attack = 0, .decay = 0, .sustain = 12, .release = 3 },
+    [2] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 1, .sustain = 8, .release = 4 },
+    [3] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 6, .sustain = 0, .release = 0 },
+    [4] = { .type = 2, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 14, .release = 0 },
+    [5] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000000, .attack = 0, .decay = 0, .sustain = 6, .release = 0 },
+    [6] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0808E990, .attack = 255, .decay = 127, .sustain = 206, .release = 216 },
+    [7] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [8] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0808F9AC, .attack = 255, .decay = 127, .sustain = 206, .release = 216 },
+    [9] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_08091F80, .attack = 255, .decay = 127, .sustain = 206, .release = 216 },
+    [10] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [11] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [12] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [13] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [14] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [15] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [16] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_08094C24, .attack = 255, .decay = 127, .sustain = 206, .release = 204 },
+    [17] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_08098418, .attack = 255, .decay = 127, .sustain = 206, .release = 204 },
+    [18] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0809A8B4, .attack = 255, .decay = 127, .sustain = 206, .release = 204 },
+    [19] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [20] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [21] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [22] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [23] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [24] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [25] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [26] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [27] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [28] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [29] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [30] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [31] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [32] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [33] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [34] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [35] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [36] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [37] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [38] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [39] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [40] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0809D3B8, .attack = 255, .decay = 127, .sustain = 206, .release = 204 },
+    [41] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [42] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [43] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0809FCBC, .attack = 255, .decay = 127, .sustain = 206, .release = 204 },
+    [44] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [45] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [46] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [47] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [48] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080A32BC, .attack = 255, .decay = 127, .sustain = 206, .release = 204 },
+    [49] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080A5950, .attack = 255, .decay = 127, .sustain = 206, .release = 204 },
+    [50] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080A7D4C, .attack = 255, .decay = 127, .sustain = 206, .release = 204 },
+    [51] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [52] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080A9928, .attack = 255, .decay = 127, .sustain = 206, .release = 204 },
+    [53] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080AAE64, .attack = 255, .decay = 127, .sustain = 206, .release = 204 },
+    [54] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080AD068, .attack = 255, .decay = 127, .sustain = 206, .release = 204 },
+    [55] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080AE1AC, .attack = 255, .decay = 127, .sustain = 206, .release = 204 },
+    [56] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080AF4E0, .attack = 255, .decay = 127, .sustain = 206, .release = 204 },
+    [57] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [58] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080B2BBC, .attack = 37, .decay = 127, .sustain = 206, .release = 188 },
+    [59] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [60] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [61] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080B3FF0, .attack = 255, .decay = 127, .sustain = 206, .release = 188 },
+    [62] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [63] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [64] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [65] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [66] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [67] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [68] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080B5144, .attack = 255, .decay = 127, .sustain = 206, .release = 188 },
+    [69] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080B53DC, .attack = 255, .decay = 127, .sustain = 206, .release = 188 },
+    [70] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080B5C5C, .attack = 255, .decay = 127, .sustain = 206, .release = 188 },
+    [71] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080B6F60, .attack = 255, .decay = 127, .sustain = 206, .release = 204 },
+    [72] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [73] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080B83F4, .attack = 255, .decay = 127, .sustain = 206, .release = 188 },
+    [74] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [75] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [76] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [77] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [78] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [79] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [80] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080BBB0C, .attack = 255, .decay = 127, .sustain = 206, .release = 188 },
+    [81] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [82] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [83] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [84] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [85] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [86] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [87] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [88] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [89] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [90] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [91] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [92] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [93] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [94] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [95] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [96] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080BDD90, .attack = 255, .decay = 127, .sustain = 206, .release = 188 },
+    [97] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [98] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080C22A4, .attack = 255, .decay = 127, .sustain = 206, .release = 242 },
+    [99] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [100] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080C3C6C, .attack = 255, .decay = 188, .sustain = 255, .release = 216 },
+    [101] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080C8600, .attack = 255, .decay = 188, .sustain = 255, .release = 216 },
+    [102] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [103] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [104] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [105] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [106] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [107] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [108] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [109] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [110] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [111] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [112] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080CB454, .attack = 255, .decay = 127, .sustain = 206, .release = 216 },
+    [113] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [114] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [115] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [116] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080CDE0C, .attack = 255, .decay = 127, .sustain = 206, .release = 216 },
+    [117] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [118] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [119] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [120] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [121] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [122] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [123] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [124] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080CFC68, .attack = 255, .decay = 127, .sustain = 206, .release = 204 },
+    [125] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080D69FC, .attack = 255, .decay = 127, .sustain = 206, .release = 188 },
+    [126] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080D89D0, .attack = 255, .decay = 127, .sustain = 206, .release = 204 },
+    [127] = { .type = 128, .key = 0, .length = 0, .panSweep = 0, .wave = (u32)gCgbWaveform_08089CF0, .attack = 0, .decay = 0, .sustain = 0, .release = 0 },
+    [128] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [129] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [130] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [131] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [132] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [133] = { .type = 8, .key = 30, .length = 0, .panSweep = 192, .wave = (u32)gWave_080DF764, .attack = 255, .decay = 0, .sustain = 255, .release = 216 },
+    [134] = { .type = 8, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080E146C, .attack = 255, .decay = 0, .sustain = 255, .release = 165 },
+    [135] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [136] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [137] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080E1538, .attack = 255, .decay = 127, .sustain = 206, .release = 165 },
+    [138] = { .type = 8, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080E4090, .attack = 255, .decay = 0, .sustain = 255, .release = 204 },
+    [139] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [140] = { .type = 8, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080E5114, .attack = 255, .decay = 0, .sustain = 255, .release = 165 },
+    [141] = { .type = 8, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080E6620, .attack = 255, .decay = 0, .sustain = 255, .release = 165 },
+    [142] = { .type = 8, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080E73F8, .attack = 255, .decay = 0, .sustain = 255, .release = 127 },
+    [143] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [144] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [145] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [146] = { .type = 8, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080E7F0C, .attack = 255, .decay = 165, .sustain = 255, .release = 38 },
+    [147] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [148] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [149] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [150] = { .type = 8, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080E8408, .attack = 255, .decay = 165, .sustain = 255, .release = 38 },
+    [151] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [152] = { .type = 8, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080E989C, .attack = 255, .decay = 0, .sustain = 206, .release = 188 },
+    [153] = { .type = 8, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080EB138, .attack = 255, .decay = 188, .sustain = 206, .release = 204 },
+    [154] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [155] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [156] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [157] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [158] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [159] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [160] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [161] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [162] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [163] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [164] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [165] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [166] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [167] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [168] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [169] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [170] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [171] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [172] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [173] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [174] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [175] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [176] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [177] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [178] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [179] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [180] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [181] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [182] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [183] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [184] = { .type = 8, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080EF5CC, .attack = 255, .decay = 127, .sustain = 206, .release = 165 },
+    [185] = { .type = 8, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080EF9A8, .attack = 255, .decay = 127, .sustain = 206, .release = 242 },
+    [186] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [187] = { .type = 8, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080F1670, .attack = 255, .decay = 127, .sustain = 206, .release = 242 },
 };
 
 AT("0008A0E0") const struct SoundToneData gVoiceGroupSecondary[127] = {
-    {4, 60, 0, 0, 0x00000001, 0, 0, 12, 4}, /*   0 */
-    {3, 60, 0, 0, 0x0808B034, 0, 1, 12, 0}, /*   1 */
-    {3, 60, 0, 0, 0x0808B064, 0, 0, 12, 0}, /*   2 */
-    {0, 60, 0, 0, 0x080F30AC, 64, 127, 206, 165}, /*   3 */
-    {0, 60, 0, 0, 0x080F35D0, 255, 127, 206, 204}, /*   4 */
-    {0, 60, 0, 0, 0x080F3E84, 64, 38, 206, 216}, /*   5 */
-    {0, 60, 0, 0, 0x080F72D8, 255, 38, 206, 216}, /*   6 */
-    {0, 60, 0, 0, 0x080FB4EC, 255, 127, 206, 204}, /*   7 */
-    {0, 60, 0, 0, 0x080FBD14, 255, 127, 206, 204}, /*   8 */
-    {0, 60, 0, 0, 0x080FF6C8, 255, 127, 206, 204}, /*   9 */
-    {0, 60, 0, 0, 0x081030DC, 255, 127, 206, 204}, /*  10 */
-    {0, 60, 0, 0, 0x0810594C, 255, 127, 206, 127}, /*  11 */
-    {0, 60, 0, 0, 0x08106424, 255, 127, 206, 127}, /*  12 */
-    {0, 60, 0, 0, 0x08107414, 255, 127, 206, 127}, /*  13 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  14 */
-    {0, 60, 0, 0, 0x0810A564, 255, 127, 206, 127}, /*  15 */
-    {0, 60, 0, 0, 0x0810B22C, 255, 127, 206, 127}, /*  16 */
-    {0, 60, 0, 0, 0x0810C6A8, 255, 127, 206, 127}, /*  17 */
-    {0, 60, 0, 0, 0x0810E2BC, 255, 127, 206, 127}, /*  18 */
-    {0, 60, 0, 0, 0x08110EBC, 255, 127, 206, 127}, /*  19 */
-    {0, 60, 0, 0, 0x08112BD0, 255, 127, 206, 127}, /*  20 */
-    {0, 60, 0, 0, 0x08115A24, 255, 127, 206, 127}, /*  21 */
-    {0, 60, 0, 0, 0x081165D4, 255, 127, 206, 127}, /*  22 */
-    {0, 60, 0, 0, 0x08116F9C, 255, 127, 206, 127}, /*  23 */
-    {0, 60, 0, 0, 0x0811D424, 255, 127, 206, 127}, /*  24 */
-    {0, 60, 0, 0, 0x081222F8, 255, 127, 206, 127}, /*  25 */
-    {0, 60, 0, 0, 0x0812798C, 255, 127, 231, 127}, /*  26 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  27 */
-    {0, 60, 0, 0, 0x081282B0, 255, 127, 231, 204}, /*  28 */
-    {0, 60, 0, 0, 0x0812AB64, 255, 127, 231, 204}, /*  29 */
-    {0, 60, 0, 0, 0x0812ECD8, 255, 127, 231, 127}, /*  30 */
-    {0, 60, 0, 0, 0x0812FD0C, 255, 127, 231, 127}, /*  31 */
-    {0, 60, 0, 0, 0x08132310, 255, 127, 231, 127}, /*  32 */
-    {0, 60, 0, 0, 0x08137498, 255, 127, 231, 127}, /*  33 */
-    {0, 60, 0, 0, 0x08138240, 255, 127, 231, 127}, /*  34 */
-    {0, 60, 0, 0, 0x08138730, 255, 127, 231, 127}, /*  35 */
-    {0, 60, 0, 0, 0x0813C25C, 255, 127, 231, 127}, /*  36 */
-    {0, 60, 0, 0, 0x0813D2D0, 255, 127, 231, 127}, /*  37 */
-    {0, 60, 0, 0, 0x0813E10C, 255, 127, 231, 127}, /*  38 */
-    {0, 60, 0, 0, 0x0813F560, 255, 127, 231, 127}, /*  39 */
-    {0, 60, 0, 0, 0x08141978, 255, 127, 231, 127}, /*  40 */
-    {0, 60, 0, 0, 0x0814718C, 255, 127, 231, 127}, /*  41 */
-    {0, 60, 0, 0, 0x08148270, 255, 127, 231, 127}, /*  42 */
-    {0, 60, 0, 0, 0x0814DF30, 255, 127, 231, 127}, /*  43 */
-    {0, 60, 0, 0, 0x08151FA4, 255, 127, 231, 127}, /*  44 */
-    {0, 60, 0, 0, 0x08153F00, 255, 127, 231, 127}, /*  45 */
-    {0, 60, 0, 0, 0x08158E14, 255, 127, 231, 127}, /*  46 */
-    {0, 60, 0, 0, 0x0815B328, 255, 127, 231, 127}, /*  47 */
-    {0, 60, 0, 0, 0x0815D03C, 255, 127, 231, 127}, /*  48 */
-    {0, 60, 0, 0, 0x081612D0, 255, 127, 231, 127}, /*  49 */
-    {0, 60, 0, 0, 0x08163564, 255, 127, 231, 127}, /*  50 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  51 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  52 */
-    {0, 60, 0, 0, 0x0816D8CC, 255, 127, 231, 127}, /*  53 */
-    {0, 60, 0, 0, 0x08170180, 255, 127, 231, 127}, /*  54 */
-    {0, 60, 0, 0, 0x08172AEC, 255, 127, 231, 127}, /*  55 */
-    {0, 60, 0, 0, 0x0817D644, 255, 127, 231, 127}, /*  56 */
-    {0, 60, 0, 0, 0x081833B8, 255, 127, 231, 127}, /*  57 */
-    {8, 60, 0, 0, 0x08185E8C, 255, 127, 231, 127}, /*  58 */
-    {0, 60, 0, 0, 0x08188608, 255, 127, 231, 127}, /*  59 */
-    {0, 60, 0, 0, 0x0818A3FC, 255, 127, 231, 127}, /*  60 */
-    {0, 60, 0, 0, 0x0818C700, 255, 127, 231, 127}, /*  61 */
-    {0, 60, 0, 0, 0x0818D564, 255, 127, 231, 127}, /*  62 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  63 */
-    {0, 60, 0, 0, 0x0818D8A8, 255, 127, 231, 127}, /*  64 */
-    {0, 60, 0, 0, 0x0818EA0C, 255, 127, 231, 127}, /*  65 */
-    {0, 60, 0, 0, 0x081930B0, 255, 127, 231, 127}, /*  66 */
-    {0, 60, 0, 0, 0x08194BC4, 255, 127, 231, 127}, /*  67 */
-    {0, 60, 0, 0, 0x08196338, 255, 127, 231, 127}, /*  68 */
-    {0, 60, 0, 0, 0x08198F6C, 255, 127, 231, 127}, /*  69 */
-    {0, 60, 0, 0, 0x0819B220, 255, 127, 231, 127}, /*  70 */
-    {0, 60, 0, 0, 0x0819B524, 255, 127, 231, 127}, /*  71 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  72 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  73 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  74 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  75 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  76 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  77 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  78 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  79 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  80 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  81 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  82 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  83 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  84 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  85 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  86 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  87 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  88 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  89 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  90 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  91 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  92 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  93 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  94 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  95 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  96 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  97 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  98 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  99 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 100 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 101 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 102 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 103 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 104 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 105 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 106 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 107 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 108 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 109 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 110 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 111 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 112 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 113 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 114 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 115 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 116 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 117 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 118 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 119 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 120 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 121 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 122 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 123 */
-    {4, 60, 0, 0, 0x00000000, 0, 0, 12, 1}, /* 124 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 125 */
-    {2, 60, 0, 0, 0x00000003, 0, 1, 12, 0}, /* 126 */
+    [0] = { .type = 4, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000001, .attack = 0, .decay = 0, .sustain = 12, .release = 4 },
+    [1] = { .type = 3, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gCgbWaveform_0808B034, .attack = 0, .decay = 1, .sustain = 12, .release = 0 },
+    [2] = { .type = 3, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gCgbWaveform_0808B064, .attack = 0, .decay = 0, .sustain = 12, .release = 0 },
+    [3] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080F30AC, .attack = 64, .decay = 127, .sustain = 206, .release = 165 },
+    [4] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080F35D0, .attack = 255, .decay = 127, .sustain = 206, .release = 204 },
+    [5] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080F3E84, .attack = 64, .decay = 38, .sustain = 206, .release = 216 },
+    [6] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080F72D8, .attack = 255, .decay = 38, .sustain = 206, .release = 216 },
+    [7] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080FB4EC, .attack = 255, .decay = 127, .sustain = 206, .release = 204 },
+    [8] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080FBD14, .attack = 255, .decay = 127, .sustain = 206, .release = 204 },
+    [9] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_080FF6C8, .attack = 255, .decay = 127, .sustain = 206, .release = 204 },
+    [10] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_081030DC, .attack = 255, .decay = 127, .sustain = 206, .release = 204 },
+    [11] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0810594C, .attack = 255, .decay = 127, .sustain = 206, .release = 127 },
+    [12] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_08106424, .attack = 255, .decay = 127, .sustain = 206, .release = 127 },
+    [13] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_08107414, .attack = 255, .decay = 127, .sustain = 206, .release = 127 },
+    [14] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [15] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0810A564, .attack = 255, .decay = 127, .sustain = 206, .release = 127 },
+    [16] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0810B22C, .attack = 255, .decay = 127, .sustain = 206, .release = 127 },
+    [17] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0810C6A8, .attack = 255, .decay = 127, .sustain = 206, .release = 127 },
+    [18] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0810E2BC, .attack = 255, .decay = 127, .sustain = 206, .release = 127 },
+    [19] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_08110EBC, .attack = 255, .decay = 127, .sustain = 206, .release = 127 },
+    [20] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_08112BD0, .attack = 255, .decay = 127, .sustain = 206, .release = 127 },
+    [21] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_08115A24, .attack = 255, .decay = 127, .sustain = 206, .release = 127 },
+    [22] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_081165D4, .attack = 255, .decay = 127, .sustain = 206, .release = 127 },
+    [23] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_08116F9C, .attack = 255, .decay = 127, .sustain = 206, .release = 127 },
+    [24] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0811D424, .attack = 255, .decay = 127, .sustain = 206, .release = 127 },
+    [25] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_081222F8, .attack = 255, .decay = 127, .sustain = 206, .release = 127 },
+    [26] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0812798C, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [27] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [28] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_081282B0, .attack = 255, .decay = 127, .sustain = 231, .release = 204 },
+    [29] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0812AB64, .attack = 255, .decay = 127, .sustain = 231, .release = 204 },
+    [30] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0812ECD8, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [31] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0812FD0C, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [32] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_08132310, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [33] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_08137498, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [34] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_08138240, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [35] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_08138730, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [36] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0813C25C, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [37] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0813D2D0, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [38] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0813E10C, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [39] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0813F560, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [40] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_08141978, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [41] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0814718C, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [42] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_08148270, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [43] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0814DF30, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [44] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_08151FA4, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [45] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_08153F00, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [46] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_08158E14, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [47] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0815B328, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [48] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0815D03C, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [49] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_081612D0, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [50] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_08163564, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [51] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [52] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [53] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0816D8CC, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [54] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_08170180, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [55] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_08172AEC, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [56] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0817D644, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [57] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_081833B8, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [58] = { .type = 8, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_08185E8C, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [59] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_08188608, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [60] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0818A3FC, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [61] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0818C700, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [62] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0818D564, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [63] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [64] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0818D8A8, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [65] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0818EA0C, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [66] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_081930B0, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [67] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_08194BC4, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [68] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_08196338, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [69] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_08198F6C, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [70] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0819B220, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [71] = { .type = 0, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gWave_0819B524, .attack = 255, .decay = 127, .sustain = 231, .release = 127 },
+    [72] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [73] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [74] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [75] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [76] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [77] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [78] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [79] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [80] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [81] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [82] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [83] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [84] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [85] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [86] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [87] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [88] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [89] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [90] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [91] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [92] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [93] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [94] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [95] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [96] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [97] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [98] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [99] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [100] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [101] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [102] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [103] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [104] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [105] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [106] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [107] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [108] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [109] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [110] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [111] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [112] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [113] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [114] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [115] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [116] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [117] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [118] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [119] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [120] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [121] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [122] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [123] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [124] = { .type = 4, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000000, .attack = 0, .decay = 0, .sustain = 12, .release = 1 },
+    [125] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [126] = { .type = 2, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000003, .attack = 0, .decay = 1, .sustain = 12, .release = 0 },
 };
 
 AT("0008A6D4") const struct SoundToneData gVoiceGroupEffects[128] = {
-    {1, 60, 0, 0, 0x00000003, 0, 2, 9, 4}, /*   0 */
-    {2, 60, 0, 0, 0x00000002, 0, 2, 9, 5}, /*   1 */
-    {1, 60, 0, 0, 0x00000000, 0, 2, 10, 4}, /*   2 */
-    {3, 60, 0, 0, 0x0808B054, 0, 6, 12, 2}, /*   3 */
-    {2, 60, 0, 0, 0x00000001, 0, 2, 12, 4}, /*   4 */
-    {4, 60, 0, 0, 0x00000000, 0, 0, 12, 2}, /*   5 */
-    {3, 60, 0, 0, 0x0808B0A4, 0, 4, 6, 6}, /*   6 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*   7 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*   8 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*   9 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  10 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  11 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  12 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  13 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  14 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  15 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  16 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  17 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  18 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  19 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  20 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  21 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  22 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  23 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  24 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  25 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  26 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  27 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  28 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  29 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  30 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  31 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  32 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  33 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  34 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  35 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  36 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  37 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  38 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  39 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  40 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  41 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  42 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  43 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  44 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  45 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  46 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  47 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  48 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  49 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  50 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  51 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  52 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  53 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  54 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  55 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  56 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  57 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  58 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  59 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  60 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  61 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  62 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  63 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  64 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  65 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  66 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  67 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  68 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  69 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  70 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  71 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  72 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  73 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  74 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  75 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  76 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  77 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  78 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  79 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  80 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  81 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  82 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  83 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  84 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  85 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  86 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  87 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  88 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  89 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  90 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  91 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  92 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  93 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  94 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  95 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  96 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  97 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  98 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /*  99 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 100 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 101 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 102 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 103 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 104 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 105 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 106 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 107 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 108 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 109 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 110 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 111 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 112 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 113 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 114 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 115 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 116 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 117 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 118 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 119 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 120 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 121 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 122 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 123 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 124 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 125 */
-    {1, 60, 0, 0, 0x00000002, 0, 0, 15, 0}, /* 126 */
-    {128, 0, 0, 0, 0x0808ABB4, 0, 0, 0, 0}, /* 127 */
+    [0] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000003, .attack = 0, .decay = 2, .sustain = 9, .release = 4 },
+    [1] = { .type = 2, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 2, .sustain = 9, .release = 5 },
+    [2] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000000, .attack = 0, .decay = 2, .sustain = 10, .release = 4 },
+    [3] = { .type = 3, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gCgbWaveform_0808B054, .attack = 0, .decay = 6, .sustain = 12, .release = 2 },
+    [4] = { .type = 2, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000001, .attack = 0, .decay = 2, .sustain = 12, .release = 4 },
+    [5] = { .type = 4, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000000, .attack = 0, .decay = 0, .sustain = 12, .release = 2 },
+    [6] = { .type = 3, .key = 60, .length = 0, .panSweep = 0, .wave = (u32)gCgbWaveform_0808B0A4, .attack = 0, .decay = 4, .sustain = 6, .release = 6 },
+    [7] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [8] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [9] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [10] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [11] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [12] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [13] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [14] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [15] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [16] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [17] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [18] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [19] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [20] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [21] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [22] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [23] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [24] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [25] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [26] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [27] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [28] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [29] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [30] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [31] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [32] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [33] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [34] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [35] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [36] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [37] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [38] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [39] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [40] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [41] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [42] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [43] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [44] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [45] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [46] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [47] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [48] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [49] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [50] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [51] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [52] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [53] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [54] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [55] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [56] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [57] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [58] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [59] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [60] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [61] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [62] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [63] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [64] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [65] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [66] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [67] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [68] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [69] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [70] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [71] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [72] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [73] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [74] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [75] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [76] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [77] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [78] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [79] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [80] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [81] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [82] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [83] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [84] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [85] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [86] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [87] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [88] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [89] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [90] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [91] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [92] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [93] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [94] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [95] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [96] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [97] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [98] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [99] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [100] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [101] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [102] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [103] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [104] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [105] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [106] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [107] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [108] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [109] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [110] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [111] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [112] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [113] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [114] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [115] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [116] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [117] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [118] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [119] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [120] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [121] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [122] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [123] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [124] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [125] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [126] = { .type = 1, .key = 60, .length = 0, .panSweep = 0, .wave = 0x00000002, .attack = 0, .decay = 0, .sustain = 15, .release = 0 },
+    [127] = { .type = 128, .key = 0, .length = 0, .panSweep = 0, .wave = (u32)gCgbWaveform_0808ABB4, .attack = 0, .decay = 0, .sustain = 0, .release = 0 },
 };
 /* Nine MusicPlayer2000 instances and their fixed IWRAM track pools. */
+extern struct SoundPlayer gSoundPlayer0, gSoundPlayer1, gSoundPlayer2, gSoundPlayer3,
+    gSoundPlayer4, gSoundPlayer5, gSoundPlayer6, gSoundPlayer7, gSoundPlayer8;
+extern struct SoundTrack gSoundPlayer0Tracks[], gSoundPlayer1Tracks[], gSoundPlayer2Tracks[],
+    gSoundPlayer3Tracks[], gSoundPlayer4Tracks[], gSoundPlayer5Tracks[], gSoundPlayer6Tracks[],
+    gSoundPlayer7Tracks[], gSoundPlayer8Tracks[];
+
 AT("0008B144") const struct SoundPlayerEntry gSoundPlayerTable[9] = {
-    {(struct SoundPlayer *)0x03005F30, (struct SoundTrack *)0x03004048, 13, 0, 0}, /* player 0 */
-    {(struct SoundPlayer *)0x03005FB0, (struct SoundTrack *)0x03004458, 3, 0, 0}, /* player 1 */
-    {(struct SoundPlayer *)0x03005FF0, (struct SoundTrack *)0x03004548, 3, 0, 0}, /* player 2 */
-    {(struct SoundPlayer *)0x030060C0, (struct SoundTrack *)0x03004638, 3, 0, 0}, /* player 3 */
-    {(struct SoundPlayer *)0x03006030, (struct SoundTrack *)0x03004728, 3, 0, 0}, /* player 4 */
-    {(struct SoundPlayer *)0x03005EB0, (struct SoundTrack *)0x03004818, 3, 0, 0}, /* player 5 */
-    {(struct SoundPlayer *)0x03005EF0, (struct SoundTrack *)0x03004908, 10, 0, 0}, /* player 6 */
-    {(struct SoundPlayer *)0x03005F70, (struct SoundTrack *)0x03004C28, 3, 0, 0}, /* player 7 */
-    {(struct SoundPlayer *)0x03006080, (struct SoundTrack *)0x03004D18, 3, 0, 0}, /* player 8 */
+    [0] = { .player = &gSoundPlayer0, .tracks = gSoundPlayer0Tracks, .trackCount = 13 },
+    [1] = { .player = &gSoundPlayer1, .tracks = gSoundPlayer1Tracks, .trackCount = 3 },
+    [2] = { .player = &gSoundPlayer2, .tracks = gSoundPlayer2Tracks, .trackCount = 3 },
+    [3] = { .player = &gSoundPlayer3, .tracks = gSoundPlayer3Tracks, .trackCount = 3 },
+    [4] = { .player = &gSoundPlayer4, .tracks = gSoundPlayer4Tracks, .trackCount = 3 },
+    [5] = { .player = &gSoundPlayer5, .tracks = gSoundPlayer5Tracks, .trackCount = 3 },
+    [6] = { .player = &gSoundPlayer6, .tracks = gSoundPlayer6Tracks, .trackCount = 10 },
+    [7] = { .player = &gSoundPlayer7, .tracks = gSoundPlayer7Tracks, .trackCount = 3 },
+    [8] = { .player = &gSoundPlayer8, .tracks = gSoundPlayer8Tracks, .trackCount = 3 },
 };
 
-/* Song IDs are direct indexes into this table.  Header addresses identify the
+/* Song header symbols are declared as opaque byte arrays here: each one's
+ * real type (from src/song_headers.c) varies with its track count, but
+ * only the address is needed to build this table. */
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_001[];
+extern const u8 gSongHeader_002[];
+extern const u8 gSongHeader_003[];
+extern const u8 gSongHeader_004[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_007[];
+extern const u8 gSongHeader_008[];
+extern const u8 gSongHeader_009[];
+extern const u8 gSongHeader_010[];
+extern const u8 gSongHeader_011[];
+extern const u8 gSongHeader_012[];
+extern const u8 gSongHeader_013[];
+extern const u8 gSongHeader_014[];
+extern const u8 gSongHeader_015[];
+extern const u8 gSongHeader_016[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_018[];
+extern const u8 gSongHeader_019[];
+extern const u8 gSongHeader_020[];
+extern const u8 gSongHeader_021[];
+extern const u8 gSongHeader_022[];
+extern const u8 gSongHeader_023[];
+extern const u8 gSongHeader_024[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_026[];
+extern const u8 gSongHeader_027[];
+extern const u8 gSongHeader_028[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_030[];
+extern const u8 gSongHeader_031[];
+extern const u8 gSongHeader_032[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_101[];
+extern const u8 gSongHeader_102[];
+extern const u8 gSongHeader_103[];
+extern const u8 gSongHeader_104[];
+extern const u8 gSongHeader_105[];
+extern const u8 gSongHeader_106[];
+extern const u8 gSongHeader_107[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_109[];
+extern const u8 gSongHeader_110[];
+extern const u8 gSongHeader_111[];
+extern const u8 gSongHeader_112[];
+extern const u8 gSongHeader_113[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_115[];
+extern const u8 gSongHeader_116[];
+extern const u8 gSongHeader_117[];
+extern const u8 gSongHeader_118[];
+extern const u8 gSongHeader_119[];
+extern const u8 gSongHeader_120[];
+extern const u8 gSongHeader_121[];
+extern const u8 gSongHeader_122[];
+extern const u8 gSongHeader_123[];
+extern const u8 gSongHeader_124[];
+extern const u8 gSongHeader_125[];
+extern const u8 gSongHeader_126[];
+extern const u8 gSongHeader_127[];
+extern const u8 gSongHeader_128[];
+extern const u8 gSongHeader_129[];
+extern const u8 gSongHeader_130[];
+extern const u8 gSongHeader_131[];
+extern const u8 gSongHeader_132[];
+extern const u8 gSongHeader_133[];
+extern const u8 gSongHeader_134[];
+extern const u8 gSongHeader_135[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_140[];
+extern const u8 gSongHeader_141[];
+extern const u8 gSongHeader_142[];
+extern const u8 gSongHeader_143[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_150[];
+extern const u8 gSongHeader_151[];
+extern const u8 gSongHeader_152[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_160[];
+extern const u8 gSongHeader_161[];
+extern const u8 gSongHeader_162[];
+extern const u8 gSongHeader_163[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_170[];
+extern const u8 gSongHeader_171[];
+extern const u8 gSongHeader_172[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_180[];
+extern const u8 gSongHeader_181[];
+extern const u8 gSongHeader_182[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_190[];
+extern const u8 gSongHeader_191[];
+extern const u8 gSongHeader_192[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_000[];
+extern const u8 gSongHeader_200[];
+extern const u8 gSongHeader_201[];
+extern const u8 gSongHeader_202[];
+extern const u8 gSongHeader_203[];
+extern const u8 gSongHeader_204[];
+extern const u8 gSongHeader_205[];
+extern const u8 gSongHeader_206[];
+extern const u8 gSongHeader_207[];
+extern const u8 gSongHeader_208[];
+extern const u8 gSongHeader_209[];
+extern const u8 gSongHeader_210[];
+extern const u8 gSongHeader_211[];
+extern const u8 gSongHeader_212[];
+extern const u8 gSongHeader_213[];
+extern const u8 gSongHeader_214[];
+extern const u8 gSongHeader_215[];
+extern const u8 gSongHeader_216[];
+extern const u8 gSongHeader_217[];
+extern const u8 gSongHeader_218[];
+extern const u8 gSongHeader_219[];
+extern const u8 gSongHeader_220[];
+
+/* Song IDs are direct indexes into this table. Header addresses identify the
  * editable sequence that each game-side caller selects. */
 AT("0008B1B0") const struct SoundSongEntry gSongTable[221] = {
-    {(const void *)0x0808B898, 0, 0}, /*   0 */
-    {(const void *)0x081A2BD4, 0, 0}, /*   1 */
-    {(const void *)0x081A3104, 0, 0}, /*   2 */
-    {(const void *)0x081A33C0, 0, 0}, /*   3 */
-    {(const void *)0x081A3978, 0, 0}, /*   4 */
-    {(const void *)0x0808B898, 0, 0}, /*   5 */
-    {(const void *)0x0808B898, 0, 0}, /*   6 */
-    {(const void *)0x081A3C24, 0, 0}, /*   7 */
-    {(const void *)0x081A41AC, 0, 0}, /*   8 */
-    {(const void *)0x081A4928, 0, 0}, /*   9 */
-    {(const void *)0x081A4E40, 0, 0}, /*  10 */
-    {(const void *)0x081A514C, 0, 0}, /*  11 */
-    {(const void *)0x081A5690, 0, 0}, /*  12 */
-    {(const void *)0x081A5BB0, 0, 0}, /*  13 */
-    {(const void *)0x081A60F4, 0, 0}, /*  14 */
-    {(const void *)0x081A6AB4, 0, 0}, /*  15 */
-    {(const void *)0x081A738C, 0, 0}, /*  16 */
-    {(const void *)0x0808B898, 0, 0}, /*  17 */
-    {(const void *)0x081A77F4, 0, 0}, /*  18 */
-    {(const void *)0x081A7A8C, 0, 0}, /*  19 */
-    {(const void *)0x081A8164, 0, 0}, /*  20 */
-    {(const void *)0x081A8838, 0, 0}, /*  21 */
-    {(const void *)0x081A8C14, 0, 0}, /*  22 */
-    {(const void *)0x081A8E58, 0, 0}, /*  23 */
-    {(const void *)0x081A9210, 0, 0}, /*  24 */
-    {(const void *)0x0808B898, 0, 0}, /*  25 */
-    {(const void *)0x081A9920, 0, 0}, /*  26 */
-    {(const void *)0x081A9EB8, 0, 0}, /*  27 */
-    {(const void *)0x081AA140, 0, 0}, /*  28 */
-    {(const void *)0x0808B898, 0, 0}, /*  29 */
-    {(const void *)0x081AA6C8, 0, 0}, /*  30 */
-    {(const void *)0x081AB350, 0, 0}, /*  31 */
-    {(const void *)0x081AB6C0, 0, 0}, /*  32 */
-    {(const void *)0x0808B898, 0, 0}, /*  33 */
-    {(const void *)0x0808B898, 0, 0}, /*  34 */
-    {(const void *)0x0808B898, 0, 0}, /*  35 */
-    {(const void *)0x0808B898, 0, 0}, /*  36 */
-    {(const void *)0x0808B898, 0, 0}, /*  37 */
-    {(const void *)0x0808B898, 0, 0}, /*  38 */
-    {(const void *)0x0808B898, 0, 0}, /*  39 */
-    {(const void *)0x0808B898, 0, 0}, /*  40 */
-    {(const void *)0x0808B898, 0, 0}, /*  41 */
-    {(const void *)0x0808B898, 0, 0}, /*  42 */
-    {(const void *)0x0808B898, 0, 0}, /*  43 */
-    {(const void *)0x0808B898, 0, 0}, /*  44 */
-    {(const void *)0x0808B898, 0, 0}, /*  45 */
-    {(const void *)0x0808B898, 0, 0}, /*  46 */
-    {(const void *)0x0808B898, 0, 0}, /*  47 */
-    {(const void *)0x0808B898, 0, 0}, /*  48 */
-    {(const void *)0x0808B898, 0, 0}, /*  49 */
-    {(const void *)0x0808B898, 0, 0}, /*  50 */
-    {(const void *)0x0808B898, 0, 0}, /*  51 */
-    {(const void *)0x0808B898, 0, 0}, /*  52 */
-    {(const void *)0x0808B898, 0, 0}, /*  53 */
-    {(const void *)0x0808B898, 0, 0}, /*  54 */
-    {(const void *)0x0808B898, 0, 0}, /*  55 */
-    {(const void *)0x0808B898, 0, 0}, /*  56 */
-    {(const void *)0x0808B898, 0, 0}, /*  57 */
-    {(const void *)0x0808B898, 0, 0}, /*  58 */
-    {(const void *)0x0808B898, 0, 0}, /*  59 */
-    {(const void *)0x0808B898, 0, 0}, /*  60 */
-    {(const void *)0x0808B898, 0, 0}, /*  61 */
-    {(const void *)0x0808B898, 0, 0}, /*  62 */
-    {(const void *)0x0808B898, 0, 0}, /*  63 */
-    {(const void *)0x0808B898, 0, 0}, /*  64 */
-    {(const void *)0x0808B898, 0, 0}, /*  65 */
-    {(const void *)0x0808B898, 0, 0}, /*  66 */
-    {(const void *)0x0808B898, 0, 0}, /*  67 */
-    {(const void *)0x0808B898, 0, 0}, /*  68 */
-    {(const void *)0x0808B898, 0, 0}, /*  69 */
-    {(const void *)0x0808B898, 0, 0}, /*  70 */
-    {(const void *)0x0808B898, 0, 0}, /*  71 */
-    {(const void *)0x0808B898, 0, 0}, /*  72 */
-    {(const void *)0x0808B898, 0, 0}, /*  73 */
-    {(const void *)0x0808B898, 0, 0}, /*  74 */
-    {(const void *)0x0808B898, 0, 0}, /*  75 */
-    {(const void *)0x0808B898, 0, 0}, /*  76 */
-    {(const void *)0x0808B898, 0, 0}, /*  77 */
-    {(const void *)0x0808B898, 0, 0}, /*  78 */
-    {(const void *)0x0808B898, 0, 0}, /*  79 */
-    {(const void *)0x0808B898, 0, 0}, /*  80 */
-    {(const void *)0x0808B898, 0, 0}, /*  81 */
-    {(const void *)0x0808B898, 0, 0}, /*  82 */
-    {(const void *)0x0808B898, 0, 0}, /*  83 */
-    {(const void *)0x0808B898, 0, 0}, /*  84 */
-    {(const void *)0x0808B898, 0, 0}, /*  85 */
-    {(const void *)0x0808B898, 0, 0}, /*  86 */
-    {(const void *)0x0808B898, 0, 0}, /*  87 */
-    {(const void *)0x0808B898, 0, 0}, /*  88 */
-    {(const void *)0x0808B898, 0, 0}, /*  89 */
-    {(const void *)0x0808B898, 0, 0}, /*  90 */
-    {(const void *)0x0808B898, 0, 0}, /*  91 */
-    {(const void *)0x0808B898, 0, 0}, /*  92 */
-    {(const void *)0x0808B898, 0, 0}, /*  93 */
-    {(const void *)0x0808B898, 0, 0}, /*  94 */
-    {(const void *)0x0808B898, 0, 0}, /*  95 */
-    {(const void *)0x0808B898, 0, 0}, /*  96 */
-    {(const void *)0x0808B898, 0, 0}, /*  97 */
-    {(const void *)0x0808B898, 0, 0}, /*  98 */
-    {(const void *)0x0808B898, 0, 0}, /*  99 */
-    {(const void *)0x0808B898, 0, 0}, /* 100 */
-    {(const void *)0x081AB6F4, 1, 1}, /* 101 */
-    {(const void *)0x081AB714, 1, 1}, /* 102 */
-    {(const void *)0x081AB73C, 1, 1}, /* 103 */
-    {(const void *)0x081AB764, 1, 1}, /* 104 */
-    {(const void *)0x081AB780, 1, 1}, /* 105 */
-    {(const void *)0x081AB79C, 1, 1}, /* 106 */
-    {(const void *)0x081AB7B8, 1, 1}, /* 107 */
-    {(const void *)0x0808B898, 0, 0}, /* 108 */
-    {(const void *)0x081AB888, 6, 6}, /* 109 */
-    {(const void *)0x081AB91C, 6, 6}, /* 110 */
-    {(const void *)0x081AB944, 2, 2}, /* 111 */
-    {(const void *)0x081AB960, 2, 2}, /* 112 */
-    {(const void *)0x081AB97C, 2, 2}, /* 113 */
-    {(const void *)0x0808B898, 0, 0}, /* 114 */
-    {(const void *)0x081AB998, 2, 2}, /* 115 */
-    {(const void *)0x081AB9B4, 2, 2}, /* 116 */
-    {(const void *)0x081AB9D0, 2, 2}, /* 117 */
-    {(const void *)0x081AB9EC, 2, 2}, /* 118 */
-    {(const void *)0x081ABA08, 3, 3}, /* 119 */
-    {(const void *)0x081ABA74, 6, 6}, /* 120 */
-    {(const void *)0x081ABA98, 3, 3}, /* 121 */
-    {(const void *)0x081ABAB4, 3, 3}, /* 122 */
-    {(const void *)0x081ABAD8, 3, 3}, /* 123 */
-    {(const void *)0x081ABAFC, 3, 3}, /* 124 */
-    {(const void *)0x081ABDA4, 0, 0}, /* 125 */
-    {(const void *)0x081ABE1C, 6, 6}, /* 126 */
-    {(const void *)0x081ABE7C, 6, 6}, /* 127 */
-    {(const void *)0x081ABF40, 0, 0}, /* 128 */
-    {(const void *)0x081AC028, 6, 6}, /* 129 */
-    {(const void *)0x081AC054, 4, 4}, /* 130 */
-    {(const void *)0x081AC070, 4, 4}, /* 131 */
-    {(const void *)0x081AC08C, 4, 4}, /* 132 */
-    {(const void *)0x081AC0A8, 4, 4}, /* 133 */
-    {(const void *)0x081AC0C4, 4, 4}, /* 134 */
-    {(const void *)0x081AC0E0, 4, 4}, /* 135 */
-    {(const void *)0x0808B898, 0, 0}, /* 136 */
-    {(const void *)0x0808B898, 0, 0}, /* 137 */
-    {(const void *)0x0808B898, 0, 0}, /* 138 */
-    {(const void *)0x0808B898, 0, 0}, /* 139 */
-    {(const void *)0x081AC0FC, 4, 4}, /* 140 */
-    {(const void *)0x081AC118, 4, 4}, /* 141 */
-    {(const void *)0x081AC134, 2, 2}, /* 142 */
-    {(const void *)0x081AC188, 5, 5}, /* 143 */
-    {(const void *)0x0808B898, 0, 0}, /* 144 */
-    {(const void *)0x0808B898, 0, 0}, /* 145 */
-    {(const void *)0x0808B898, 0, 0}, /* 146 */
-    {(const void *)0x0808B898, 0, 0}, /* 147 */
-    {(const void *)0x0808B898, 0, 0}, /* 148 */
-    {(const void *)0x0808B898, 0, 0}, /* 149 */
-    {(const void *)0x081AC1A8, 4, 4}, /* 150 */
-    {(const void *)0x081AC1C4, 4, 4}, /* 151 */
-    {(const void *)0x081AC208, 5, 5}, /* 152 */
-    {(const void *)0x0808B898, 0, 0}, /* 153 */
-    {(const void *)0x0808B898, 0, 0}, /* 154 */
-    {(const void *)0x0808B898, 0, 0}, /* 155 */
-    {(const void *)0x0808B898, 0, 0}, /* 156 */
-    {(const void *)0x0808B898, 0, 0}, /* 157 */
-    {(const void *)0x0808B898, 0, 0}, /* 158 */
-    {(const void *)0x0808B898, 0, 0}, /* 159 */
-    {(const void *)0x081AC224, 4, 4}, /* 160 */
-    {(const void *)0x081AC240, 4, 4}, /* 161 */
-    {(const void *)0x081AC25C, 4, 4}, /* 162 */
-    {(const void *)0x081AC278, 4, 4}, /* 163 */
-    {(const void *)0x0808B898, 0, 0}, /* 164 */
-    {(const void *)0x0808B898, 0, 0}, /* 165 */
-    {(const void *)0x0808B898, 0, 0}, /* 166 */
-    {(const void *)0x0808B898, 0, 0}, /* 167 */
-    {(const void *)0x0808B898, 0, 0}, /* 168 */
-    {(const void *)0x0808B898, 0, 0}, /* 169 */
-    {(const void *)0x081AC294, 4, 4}, /* 170 */
-    {(const void *)0x081AC2B0, 4, 4}, /* 171 */
-    {(const void *)0x081AC2CC, 4, 4}, /* 172 */
-    {(const void *)0x0808B898, 0, 0}, /* 173 */
-    {(const void *)0x0808B898, 0, 0}, /* 174 */
-    {(const void *)0x0808B898, 0, 0}, /* 175 */
-    {(const void *)0x0808B898, 0, 0}, /* 176 */
-    {(const void *)0x0808B898, 0, 0}, /* 177 */
-    {(const void *)0x0808B898, 0, 0}, /* 178 */
-    {(const void *)0x0808B898, 0, 0}, /* 179 */
-    {(const void *)0x081AC2E8, 4, 4}, /* 180 */
-    {(const void *)0x081AC304, 4, 4}, /* 181 */
-    {(const void *)0x081AC340, 5, 5}, /* 182 */
-    {(const void *)0x0808B898, 0, 0}, /* 183 */
-    {(const void *)0x0808B898, 0, 0}, /* 184 */
-    {(const void *)0x0808B898, 0, 0}, /* 185 */
-    {(const void *)0x0808B898, 0, 0}, /* 186 */
-    {(const void *)0x0808B898, 0, 0}, /* 187 */
-    {(const void *)0x0808B898, 0, 0}, /* 188 */
-    {(const void *)0x0808B898, 0, 0}, /* 189 */
-    {(const void *)0x081AC35C, 4, 4}, /* 190 */
-    {(const void *)0x081AC378, 4, 4}, /* 191 */
-    {(const void *)0x081AC394, 4, 4}, /* 192 */
-    {(const void *)0x0808B898, 0, 0}, /* 193 */
-    {(const void *)0x0808B898, 0, 0}, /* 194 */
-    {(const void *)0x0808B898, 0, 0}, /* 195 */
-    {(const void *)0x0808B898, 0, 0}, /* 196 */
-    {(const void *)0x0808B898, 0, 0}, /* 197 */
-    {(const void *)0x0808B898, 0, 0}, /* 198 */
-    {(const void *)0x0808B898, 0, 0}, /* 199 */
-    {(const void *)0x081AC3B0, 4, 4}, /* 200 */
-    {(const void *)0x081AC3CC, 4, 4}, /* 201 */
-    {(const void *)0x081AC3E8, 4, 4}, /* 202 */
-    {(const void *)0x081AC404, 4, 4}, /* 203 */
-    {(const void *)0x081AC420, 4, 4}, /* 204 */
-    {(const void *)0x081AC43C, 4, 4}, /* 205 */
-    {(const void *)0x081AC458, 4, 4}, /* 206 */
-    {(const void *)0x081AC494, 4, 4}, /* 207 */
-    {(const void *)0x081AC4B0, 4, 4}, /* 208 */
-    {(const void *)0x081AC4CC, 4, 4}, /* 209 */
-    {(const void *)0x081AC4E8, 4, 4}, /* 210 */
-    {(const void *)0x081AC508, 5, 5}, /* 211 */
-    {(const void *)0x081AC528, 5, 5}, /* 212 */
-    {(const void *)0x081AC544, 4, 4}, /* 213 */
-    {(const void *)0x081AC564, 4, 4}, /* 214 */
-    {(const void *)0x081AC580, 4, 4}, /* 215 */
-    {(const void *)0x081AC59C, 4, 4}, /* 216 */
-    {(const void *)0x081AC5B8, 4, 4}, /* 217 */
-    {(const void *)0x081AC5D4, 4, 4}, /* 218 */
-    {(const void *)0x081AC5F0, 4, 4}, /* 219 */
-    {(const void *)0x081AC60C, 4, 4}, /* 220 */
+    [0] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [1] = { .header = gSongHeader_001, .player = 0, .otherPlayer = 0 },
+    [2] = { .header = gSongHeader_002, .player = 0, .otherPlayer = 0 },
+    [3] = { .header = gSongHeader_003, .player = 0, .otherPlayer = 0 },
+    [4] = { .header = gSongHeader_004, .player = 0, .otherPlayer = 0 },
+    [5] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [6] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [7] = { .header = gSongHeader_007, .player = 0, .otherPlayer = 0 },
+    [8] = { .header = gSongHeader_008, .player = 0, .otherPlayer = 0 },
+    [9] = { .header = gSongHeader_009, .player = 0, .otherPlayer = 0 },
+    [10] = { .header = gSongHeader_010, .player = 0, .otherPlayer = 0 },
+    [11] = { .header = gSongHeader_011, .player = 0, .otherPlayer = 0 },
+    [12] = { .header = gSongHeader_012, .player = 0, .otherPlayer = 0 },
+    [13] = { .header = gSongHeader_013, .player = 0, .otherPlayer = 0 },
+    [14] = { .header = gSongHeader_014, .player = 0, .otherPlayer = 0 },
+    [15] = { .header = gSongHeader_015, .player = 0, .otherPlayer = 0 },
+    [16] = { .header = gSongHeader_016, .player = 0, .otherPlayer = 0 },
+    [17] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [18] = { .header = gSongHeader_018, .player = 0, .otherPlayer = 0 },
+    [19] = { .header = gSongHeader_019, .player = 0, .otherPlayer = 0 },
+    [20] = { .header = gSongHeader_020, .player = 0, .otherPlayer = 0 },
+    [21] = { .header = gSongHeader_021, .player = 0, .otherPlayer = 0 },
+    [22] = { .header = gSongHeader_022, .player = 0, .otherPlayer = 0 },
+    [23] = { .header = gSongHeader_023, .player = 0, .otherPlayer = 0 },
+    [24] = { .header = gSongHeader_024, .player = 0, .otherPlayer = 0 },
+    [25] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [26] = { .header = gSongHeader_026, .player = 0, .otherPlayer = 0 },
+    [27] = { .header = gSongHeader_027, .player = 0, .otherPlayer = 0 },
+    [28] = { .header = gSongHeader_028, .player = 0, .otherPlayer = 0 },
+    [29] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [30] = { .header = gSongHeader_030, .player = 0, .otherPlayer = 0 },
+    [31] = { .header = gSongHeader_031, .player = 0, .otherPlayer = 0 },
+    [32] = { .header = gSongHeader_032, .player = 0, .otherPlayer = 0 },
+    [33] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [34] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [35] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [36] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [37] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [38] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [39] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [40] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [41] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [42] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [43] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [44] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [45] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [46] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [47] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [48] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [49] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [50] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [51] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [52] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [53] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [54] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [55] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [56] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [57] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [58] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [59] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [60] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [61] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [62] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [63] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [64] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [65] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [66] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [67] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [68] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [69] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [70] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [71] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [72] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [73] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [74] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [75] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [76] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [77] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [78] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [79] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [80] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [81] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [82] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [83] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [84] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [85] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [86] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [87] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [88] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [89] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [90] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [91] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [92] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [93] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [94] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [95] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [96] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [97] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [98] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [99] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [100] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [101] = { .header = gSongHeader_101, .player = 1, .otherPlayer = 1 },
+    [102] = { .header = gSongHeader_102, .player = 1, .otherPlayer = 1 },
+    [103] = { .header = gSongHeader_103, .player = 1, .otherPlayer = 1 },
+    [104] = { .header = gSongHeader_104, .player = 1, .otherPlayer = 1 },
+    [105] = { .header = gSongHeader_105, .player = 1, .otherPlayer = 1 },
+    [106] = { .header = gSongHeader_106, .player = 1, .otherPlayer = 1 },
+    [107] = { .header = gSongHeader_107, .player = 1, .otherPlayer = 1 },
+    [108] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [109] = { .header = gSongHeader_109, .player = 6, .otherPlayer = 6 },
+    [110] = { .header = gSongHeader_110, .player = 6, .otherPlayer = 6 },
+    [111] = { .header = gSongHeader_111, .player = 2, .otherPlayer = 2 },
+    [112] = { .header = gSongHeader_112, .player = 2, .otherPlayer = 2 },
+    [113] = { .header = gSongHeader_113, .player = 2, .otherPlayer = 2 },
+    [114] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [115] = { .header = gSongHeader_115, .player = 2, .otherPlayer = 2 },
+    [116] = { .header = gSongHeader_116, .player = 2, .otherPlayer = 2 },
+    [117] = { .header = gSongHeader_117, .player = 2, .otherPlayer = 2 },
+    [118] = { .header = gSongHeader_118, .player = 2, .otherPlayer = 2 },
+    [119] = { .header = gSongHeader_119, .player = 3, .otherPlayer = 3 },
+    [120] = { .header = gSongHeader_120, .player = 6, .otherPlayer = 6 },
+    [121] = { .header = gSongHeader_121, .player = 3, .otherPlayer = 3 },
+    [122] = { .header = gSongHeader_122, .player = 3, .otherPlayer = 3 },
+    [123] = { .header = gSongHeader_123, .player = 3, .otherPlayer = 3 },
+    [124] = { .header = gSongHeader_124, .player = 3, .otherPlayer = 3 },
+    [125] = { .header = gSongHeader_125, .player = 0, .otherPlayer = 0 },
+    [126] = { .header = gSongHeader_126, .player = 6, .otherPlayer = 6 },
+    [127] = { .header = gSongHeader_127, .player = 6, .otherPlayer = 6 },
+    [128] = { .header = gSongHeader_128, .player = 0, .otherPlayer = 0 },
+    [129] = { .header = gSongHeader_129, .player = 6, .otherPlayer = 6 },
+    [130] = { .header = gSongHeader_130, .player = 4, .otherPlayer = 4 },
+    [131] = { .header = gSongHeader_131, .player = 4, .otherPlayer = 4 },
+    [132] = { .header = gSongHeader_132, .player = 4, .otherPlayer = 4 },
+    [133] = { .header = gSongHeader_133, .player = 4, .otherPlayer = 4 },
+    [134] = { .header = gSongHeader_134, .player = 4, .otherPlayer = 4 },
+    [135] = { .header = gSongHeader_135, .player = 4, .otherPlayer = 4 },
+    [136] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [137] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [138] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [139] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [140] = { .header = gSongHeader_140, .player = 4, .otherPlayer = 4 },
+    [141] = { .header = gSongHeader_141, .player = 4, .otherPlayer = 4 },
+    [142] = { .header = gSongHeader_142, .player = 2, .otherPlayer = 2 },
+    [143] = { .header = gSongHeader_143, .player = 5, .otherPlayer = 5 },
+    [144] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [145] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [146] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [147] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [148] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [149] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [150] = { .header = gSongHeader_150, .player = 4, .otherPlayer = 4 },
+    [151] = { .header = gSongHeader_151, .player = 4, .otherPlayer = 4 },
+    [152] = { .header = gSongHeader_152, .player = 5, .otherPlayer = 5 },
+    [153] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [154] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [155] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [156] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [157] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [158] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [159] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [160] = { .header = gSongHeader_160, .player = 4, .otherPlayer = 4 },
+    [161] = { .header = gSongHeader_161, .player = 4, .otherPlayer = 4 },
+    [162] = { .header = gSongHeader_162, .player = 4, .otherPlayer = 4 },
+    [163] = { .header = gSongHeader_163, .player = 4, .otherPlayer = 4 },
+    [164] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [165] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [166] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [167] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [168] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [169] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [170] = { .header = gSongHeader_170, .player = 4, .otherPlayer = 4 },
+    [171] = { .header = gSongHeader_171, .player = 4, .otherPlayer = 4 },
+    [172] = { .header = gSongHeader_172, .player = 4, .otherPlayer = 4 },
+    [173] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [174] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [175] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [176] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [177] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [178] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [179] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [180] = { .header = gSongHeader_180, .player = 4, .otherPlayer = 4 },
+    [181] = { .header = gSongHeader_181, .player = 4, .otherPlayer = 4 },
+    [182] = { .header = gSongHeader_182, .player = 5, .otherPlayer = 5 },
+    [183] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [184] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [185] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [186] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [187] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [188] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [189] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [190] = { .header = gSongHeader_190, .player = 4, .otherPlayer = 4 },
+    [191] = { .header = gSongHeader_191, .player = 4, .otherPlayer = 4 },
+    [192] = { .header = gSongHeader_192, .player = 4, .otherPlayer = 4 },
+    [193] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [194] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [195] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [196] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [197] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [198] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [199] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },
+    [200] = { .header = gSongHeader_200, .player = 4, .otherPlayer = 4 },
+    [201] = { .header = gSongHeader_201, .player = 4, .otherPlayer = 4 },
+    [202] = { .header = gSongHeader_202, .player = 4, .otherPlayer = 4 },
+    [203] = { .header = gSongHeader_203, .player = 4, .otherPlayer = 4 },
+    [204] = { .header = gSongHeader_204, .player = 4, .otherPlayer = 4 },
+    [205] = { .header = gSongHeader_205, .player = 4, .otherPlayer = 4 },
+    [206] = { .header = gSongHeader_206, .player = 4, .otherPlayer = 4 },
+    [207] = { .header = gSongHeader_207, .player = 4, .otherPlayer = 4 },
+    [208] = { .header = gSongHeader_208, .player = 4, .otherPlayer = 4 },
+    [209] = { .header = gSongHeader_209, .player = 4, .otherPlayer = 4 },
+    [210] = { .header = gSongHeader_210, .player = 4, .otherPlayer = 4 },
+    [211] = { .header = gSongHeader_211, .player = 5, .otherPlayer = 5 },
+    [212] = { .header = gSongHeader_212, .player = 5, .otherPlayer = 5 },
+    [213] = { .header = gSongHeader_213, .player = 4, .otherPlayer = 4 },
+    [214] = { .header = gSongHeader_214, .player = 4, .otherPlayer = 4 },
+    [215] = { .header = gSongHeader_215, .player = 4, .otherPlayer = 4 },
+    [216] = { .header = gSongHeader_216, .player = 4, .otherPlayer = 4 },
+    [217] = { .header = gSongHeader_217, .player = 4, .otherPlayer = 4 },
+    [218] = { .header = gSongHeader_218, .player = 4, .otherPlayer = 4 },
+    [219] = { .header = gSongHeader_219, .player = 4, .otherPlayer = 4 },
+    [220] = { .header = gSongHeader_220, .player = 4, .otherPlayer = 4 },
 };
+
