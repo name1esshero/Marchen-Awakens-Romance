@@ -1,7 +1,7 @@
 #include "gba/types.h"
 #include "math_tables.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 #define SIN_TABLE gSineTable14
 
 #ifdef AGBCC

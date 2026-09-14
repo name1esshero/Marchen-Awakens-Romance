@@ -4,7 +4,7 @@
 #include "sound.h"
 #include "ncd.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 
 extern void LZ77UnCompVram(const void *source, void *destination);
 extern s32 sub_08004DA8(void);

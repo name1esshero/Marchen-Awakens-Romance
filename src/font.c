@@ -10,7 +10,7 @@ void SetFontData(struct Font *font, const struct FontData *data)
 void sub_0807ADE0(struct Font *, const struct FontData *)
     __attribute__((alias("SetFontData")));
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 #ifdef AGBCC
 #define TARGET_REGISTER(name) asm(name)
 #else
@@ -119,9 +119,9 @@ u32 FontCharacterToGlyph(u32 input)
 AT("0007AE10")
 const u8 *GetFontGlyph(const struct Font *font, u32 input)
 {
-    register const struct Font *handle TARGET_REGISTER("r5") = font;
+    const struct Font *handle = font;
     u16 code = input;
-    register u32 glyph TARGET_REGISTER("r4");
+    u32 glyph;
 
     if (code == 0xF056)
         glyph = FontCharacterToGlyph(0x81FA);

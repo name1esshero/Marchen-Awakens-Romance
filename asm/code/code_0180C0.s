@@ -3199,7 +3199,7 @@ _08019898:
 	.byte 0xA2
 	.byte 0xFC
 	movs r1, #101
-	bl sub_08080E4C
+	bl __umodsi3
 	cmp r0, r5
 	bls _080198C0
 	.global _080198B6
@@ -11383,7 +11383,7 @@ _0801CF14:
 	movs r3, #0
 	ldrsh r1, [r0, r3]
 	ldr r0, [r2, #0]
-	bl sub_08080BFC
+	bl __divsi3
 	adds r6, r0, #0
 	ldr r0, [sp, #32]
 	mov r1, r8
@@ -13738,7 +13738,7 @@ sub_0801DE54:
 	ldrb r4, [r2, #0]
 	subs r1, r1, r4
 	adds r1, #1
-	bl sub_08080E4C
+	bl __umodsi3
 	adds r0, r0, r4
 	ldrh r1, [r7, #4]
 	adds r0, r0, r1
@@ -13765,7 +13765,7 @@ _0801DE9E:
 	ldrb r4, [r2, #0]
 	subs r1, r1, r4
 	adds r1, #1
-	bl sub_08080E4C
+	bl __umodsi3
 	adds r4, r0, r4
 	mov r0, r8
 	bl sub_08056404
@@ -13795,7 +13795,7 @@ sub_0801DED2:
 	ldrb r4, [r2, #0]
 	subs r1, r1, r4
 	adds r1, #1
-	bl sub_08080E4C
+	bl __umodsi3
 	adds r0, r0, r4
 	ldrh r1, [r7, #10]
 	adds r0, r0, r1
@@ -13823,7 +13823,7 @@ _0801DEFC:
 	ldrb r4, [r2, #0]
 	subs r1, r1, r4
 	adds r1, #1
-	bl sub_08080E4C
+	bl __umodsi3
 	adds r0, r0, r4
 	ldrh r1, [r7, #12]
 	adds r0, r0, r1
@@ -13881,7 +13881,7 @@ _0801DF5A:
 	ldrb r4, [r2, #0]
 	subs r1, r1, r4
 	adds r1, #1
-	bl sub_08080E4C
+	bl __umodsi3
 
 	.thumb_func
 	.thumb
@@ -13913,7 +13913,7 @@ _0801DF86:
 	ldrb r4, [r2, #0]
 	subs r1, r1, r4
 	adds r1, #1
-	bl sub_08080E4C
+	bl __umodsi3
 	adds r0, r0, r4
 	ldrb r1, [r5, #3]
 	adds r0, r0, r1
@@ -13935,7 +13935,7 @@ _0801DFB2:
 	ldrb r4, [r2, #0]
 	subs r1, r1, r4
 	adds r1, #1
-	bl sub_08080E4C
+	bl __umodsi3
 	adds r0, r0, r4
 	ldrb r1, [r5, #4]
 	adds r0, r0, r1
@@ -13957,7 +13957,7 @@ _0801DFDE:
 	ldrb r4, [r2, #0]
 	subs r1, r1, r4
 	adds r1, #1
-	bl sub_08080E4C
+	bl __umodsi3
 	adds r0, r0, r4
 	ldrb r1, [r5, #5]
 	adds r0, r0, r1
@@ -13979,7 +13979,7 @@ _0801E00A:
 	ldrb r4, [r2, #0]
 	subs r1, r1, r4
 	adds r1, #1
-	bl sub_08080E4C
+	bl __umodsi3
 	adds r0, r0, r4
 	ldrb r1, [r5, #6]
 	adds r0, r0, r1
@@ -14053,7 +14053,7 @@ _0801E08A:
 	.2byte 0xF05C
 	.4byte 0x2208F8AD
 	ldrsh r1, [r4, r2]
-	bl sub_08080E4C
+	bl __umodsi3
 	adds r5, r0, #0
 	.2byte 0xF05C
 	.byte 0xA6

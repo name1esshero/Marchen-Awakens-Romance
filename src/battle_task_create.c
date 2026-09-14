@@ -6,8 +6,8 @@
  */
 #include "gba/types.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
-#define BATTLE_RUNTIME (*(u8 **)0x03004020)
+#include "runtime_state.h"
+#include "rom_section.h"
 
 extern u8 *CreateTask(void *manager, void *callback, u32 priority,
                       s32 *result, u32 stateSize);
@@ -18,7 +18,7 @@ u8 *CreateBattleModeTask2C1(s32 owner, s32 slot, void *resource, s32 *result,
 {
     void *savedResource = resource;
     s32 mode = (s16)selectedMode;
-    u8 *task = CreateTask(BATTLE_RUNTIME + owner * 32 + slot * 16,
+    u8 *task = CreateTask(gSecondaryRuntime + owner * 32 + slot * 16,
                           (void *)0x0802C21D, 0, result, 116);
     u8 *state;
     s32 *empty;
@@ -53,12 +53,12 @@ u8 *CreateBattleModeTask2FC(s32 owner, s32 slot, void *resource, s32 *result,
 {
     void *savedResource = resource;
     s32 mode = (s16)selectedMode;
-    register u8 *task asm("r2");
+    u8 *task;
     s32 *empty;
     s32 *cursor;
     s32 emptyValue;
 
-    task = CreateTask(BATTLE_RUNTIME + owner * 32 + slot * 16,
+    task = CreateTask(gSecondaryRuntime + owner * 32 + slot * 16,
                       (void *)0x0802FD35, 0, result, 236);
     if (task == 0) {
         if (result != 0)
@@ -86,9 +86,9 @@ u8 *CreateBattleModeTask32F(s32 owner, s32 slot, void *resource, s32 *result,
 {
     void *savedResource = resource;
     s32 mode = (s16)selectedMode;
-    register u8 *task asm("r1");
+    u8 *task;
 
-    task = CreateTask(BATTLE_RUNTIME + owner * 32 + slot * 16,
+    task = CreateTask(gSecondaryRuntime + owner * 32 + slot * 16,
                       (void *)0x08032FE9, 0, result, 200);
     if (task == 0) {
         if (result != 0)
@@ -113,11 +113,11 @@ u8 *name(s32 owner, s32 slot, void *resource, s32 *result, s32 selectedMode)\
 {                                                                          \
     void *savedResource = resource;                                         \
     s32 mode = (s16)selectedMode;                                           \
-    register u8 *task asm("r2");                                          \
+    u8 *task;                                                              \
     s32 *empty;                                                             \
     s32 *cursor;                                                            \
     s32 emptyValue;                                                         \
-    task = CreateTask(BATTLE_RUNTIME + owner * 32 + slot * 16,             \
+    task = CreateTask(gSecondaryRuntime + owner * 32 + slot * 16,             \
                       (void *)(callback), 0, result, (stateSize));          \
     if (task == 0) {                                                        \
         if (result != 0)                                                    \
@@ -171,7 +171,7 @@ u8 *CreateBattleModeTask4E6(s32 owner, s32 slot, void *resource, s32 *result,
     s32 *cursor;
     s32 emptyValue;
 
-    task = CreateTask(BATTLE_RUNTIME + owner * 32 + slot * 16,
+    task = CreateTask(gSecondaryRuntime + owner * 32 + slot * 16,
                       (void *)0x0804E701, 0, result, 256);
     if (task == 0) {
         if (result != 0)
@@ -203,13 +203,13 @@ u8 *CreateBattleModeTask483(s32 owner, s32 slot, void *resource, s32 *result,
 {
     void *savedResource = resource;
     s32 mode = (s16)selectedMode;
-    register u8 *task asm("r2");
+    u8 *task;
     u8 *state;
     s32 *empty;
     s32 *cursor;
     s32 emptyValue;
 
-    task = CreateTask(BATTLE_RUNTIME + owner * 32 + slot * 16,
+    task = CreateTask(gSecondaryRuntime + owner * 32 + slot * 16,
                       (void *)0x08048461, 0, result, 108);
     if (task == 0) {
         if (result != 0)
@@ -246,7 +246,7 @@ u8 *CreateBattleModeTask4AC(s32 owner, s32 slot, void *resource, s32 *result,
     s32 emptyValue;
     s32 remaining;
 
-    task = CreateTask(BATTLE_RUNTIME + owner * 32 + slot * 16,
+    task = CreateTask(gSecondaryRuntime + owner * 32 + slot * 16,
                       (void *)0x0804AD09, 0, result, 104);
     if (task == 0) {
         if (result != 0)
@@ -272,7 +272,7 @@ u8 *CreateBattleModeTask4AC(s32 owner, s32 slot, void *resource, s32 *result,
 #endif
 
 #define CREATE_BATTLE_TASK(callback)                                      \
-    u8 *task = CreateTask(BATTLE_RUNTIME + owner * 32 + slot * 16,       \
+    u8 *task = CreateTask(gSecondaryRuntime + owner * 32 + slot * 16,       \
                           (callback), 0, result, 300);                    \
     if (task == 0) {                                                      \
         if (result != 0)                                                  \

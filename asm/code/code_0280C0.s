@@ -65,151 +65,14 @@ _08028110:
 _08028114:
 	.4byte 0x00003FB4
 
-	.thumb_func
-	.thumb
-	.global sub_08028118
-sub_08028118:
-	push {r4, r5, r6, lr}
-	mov r6, r8
-	push {r6}
-	sub sp, #4
-	adds r6, r0, #0
-	adds r5, r1, #0
-	adds r1, r2, #0
-	mov r8, r3
-	ldr r4, [sp, #24]
-	adds r0, r5, #0
-	.2byte 0xF053
-	.byte 0x34
-	.byte 0xFD
-	adds r2, r0, #0
-	str r4, [sp, #0]
-	adds r0, r6, #0
-	adds r1, r5, #0
-	mov r3, r8
-	.2byte 0xF000
+@ 028118..02814C is decompiled as ObjectSetResourceGroupByName(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0802813C
-sub_0802813C:
-	.2byte 0xF807
-	add sp, #4
-	pop {r3}
-	mov r8, r3
-	pop {r4, r5, r6}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
+@ 02814C..0281A4 is decompiled as ObjectSetResourceGroup(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0802814C
-sub_0802814C:
-	push {r4, r5, r6, lr}
-	adds r4, r0, #0
-	adds r5, r1, #0
-	ldrh r1, [r4, #40]
-	movs r0, #128
-	lsls r0, r0, #8
-	ands r0, r1
-	cmp r0, #0
-	beq _08028198
-	ldr r0, _080281A0
-	ands r0, r1
-	movs r6, #128
-	lsls r6, r6, #7
-	adds r1, r6, #0
-	orrs r0, r1
-	strh r0, [r4, #40]
-	movs r0, #1
-	negs r0, r0
+@ 0281A4..0281E0 is decompiled as ObjectCopyFieldsFromTemplate(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08028170
-sub_08028170:
-	cmp r5, r0
-	beq _08028176
-	str r5, [r4, #8]
-	.global _08028176
-_08028176:
-	cmp r2, r0
-	beq _0802817C
-	str r2, [r4, #12]
-	.global _0802817C
-_0802817C:
-	cmp r3, r0
-	beq _08028182
-	str r3, [r4, #16]
-	.global _08028182
-_08028182:
-	ldr r0, [sp, #16]
-	str r0, [r4, #20]
-	movs r0, #0
-	strh r0, [r4, #36]
-	ldr r0, [r4, #8]
-	ldr r1, [r4, #12]
-	ldr r2, [r4, #16]
-	.2byte 0xF053
-	.byte 0x5A
-	.byte 0xFC
-	ldr r0, [r0, #4]
-	str r0, [r4, #24]
-	.global _08028198
-_08028198:
-	pop {r4, r5, r6}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _080281A0
-_080281A0:
-	.4byte 0x0000FFEF
-
-	.thumb_func
-	.thumb
-	.global sub_080281A4
-sub_080281A4:
-	push {r4, r5, r6, lr}
-	adds r5, r0, #0
-	adds r6, r1, #0
-	ldrh r1, [r5, #40]
-	movs r0, #128
-	lsls r0, r0, #8
-	ands r0, r1
-	cmp r0, #0
-	beq _080281D6
-	ldr r4, [r5, #0]
-	adds r0, r5, #0
-	adds r1, r6, #0
-	movs r2, #64
-	.2byte 0xF7D9
-
-	.thumb_func
-	.thumb
-	.global sub_080281C0
-sub_080281C0:
-	.2byte 0xFE79
-	str r4, [r5, #0]
-	str r6, [r5, #4]
-	ldrh r1, [r5, #40]
-	ldr r0, _080281DC
-	ands r0, r1
-	movs r2, #128
-	lsls r2, r2, #7
-	adds r1, r2, #0
-	orrs r0, r1
-	strh r0, [r5, #40]
-	.global _080281D6
-_080281D6:
-	pop {r4, r5, r6}
-	pop {r0}
-	bx r0
-	.global _080281DC
-_080281DC:
-	.4byte 0x0000FDFF
+	.section .rom.000281E0, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -2210,7 +2073,7 @@ sub_08028EEC:
 	str r0, [sp, #0]
 	adds r0, r5, #0
 	movs r1, #0
-	bl sub_08028118
+	bl ObjectSetResourceGroupByName
 	movs r0, #31
 	movs r1, #0
 	.2byte 0xF057
@@ -3076,7 +2939,7 @@ sub_08029456:
 	str r0, [sp, #0]
 	adds r0, r5, #0
 	movs r1, #0
-	bl sub_08028118
+	bl ObjectSetResourceGroupByName
 	movs r0, #31
 	movs r1, #0
 	.2byte 0xF057
@@ -3857,7 +3720,7 @@ _080298C4:
 	str r1, [sp, #0]
 	adds r0, r4, #0
 	movs r3, #0
-	bl sub_08028118
+	bl ObjectSetResourceGroupByName
 	adds r0, r4, #0
 	movs r1, #1
 	.2byte 0xF7FE
@@ -3900,7 +3763,7 @@ sub_080298F2:
 	.thumb
 	.global sub_08029920
 sub_08029920:
-	bl sub_08028118
+	bl ObjectSetResourceGroupByName
 	adds r0, r4, #0
 	movs r1, #0
 	movs r2, #0
@@ -3919,7 +3782,7 @@ sub_08029920:
 	movs r1, #0
 	adds r2, r6, #0
 	movs r3, #1
-	bl sub_08028118
+	bl ObjectSetResourceGroupByName
 	adds r0, r4, #0
 	movs r1, #0
 	movs r2, #1
@@ -4249,7 +4112,7 @@ sub_08029B34:
 	adds r0, r4, #0
 	movs r1, #0
 	movs r3, #0
-	bl sub_08028118
+	bl ObjectSetResourceGroupByName
 	adds r0, r4, #0
 	movs r1, #1
 	.2byte 0xF7FE
@@ -4269,7 +4132,7 @@ sub_08029B34:
 	adds r0, r4, #0
 	movs r1, #0
 	movs r3, #0
-	bl sub_08028118
+	bl ObjectSetResourceGroupByName
 	b _08029DE4
 	.global _08029B98
 _08029B98:
@@ -4321,7 +4184,7 @@ _08029BAA:
 	movs r1, #0
 	add r2, sp, #4
 	movs r3, #0
-	bl sub_08028118
+	bl ObjectSetResourceGroupByName
 	adds r4, #64
 	adds r0, r4, #0
 	bl ObjectInit
@@ -4341,7 +4204,7 @@ sub_08029C14:
 	adds r0, r4, #0
 	movs r1, #0
 	movs r3, #0
-	bl sub_08028118
+	bl ObjectSetResourceGroupByName
 	adds r4, #64
 	adds r0, r4, #0
 	bl ObjectInit
@@ -4353,7 +4216,7 @@ sub_08029C14:
 	str r0, [sp, #0]
 	adds r0, r4, #0
 	movs r1, #0
-	bl sub_08028118
+	bl ObjectSetResourceGroupByName
 	ldr r1, _08029C84
 	movs r0, #0
 	.2byte 0xF051
@@ -4370,7 +4233,7 @@ sub_08029C14:
 	adds r0, r4, #0
 	movs r1, #0
 	adds r2, r7, #0
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	movs r1, #4
 	ldrsh r0, [r6, r1]
 	cmp r0, #5
@@ -4473,7 +4336,7 @@ _08029C88:
 	.thumb
 	.global sub_08029DA4
 sub_08029DA4:
-	bl sub_08080C94
+	bl __modsi3
 	adds r3, r0, #0
 	lsls r3, r3, #16
 	asrs r3, r3, #16
@@ -4481,7 +4344,7 @@ sub_08029DA4:
 	adds r0, r4, #0
 	movs r1, #0
 	adds r2, r7, #0
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	b _08029DE4
 
 	.thumb_func
@@ -4503,7 +4366,7 @@ sub_08029DBC:
 	adds r0, r4, #0
 	movs r1, #0
 	movs r3, #0
-	bl sub_08028118
+	bl ObjectSetResourceGroupByName
 	.global _08029DE4
 _08029DE4:
 	adds r0, r6, #0
@@ -5333,7 +5196,7 @@ sub_0802A52A:
 	adds r1, #76
 	movs r3, #0
 	ldrsh r1, [r1, r3]
-	bl sub_08080BFC
+	bl __divsi3
 	cmp r0, #127
 	bgt _0802A57A
 	movs r0, #1
@@ -5536,7 +5399,7 @@ _0802A682:
 	bne _0802A698
 	ldr r0, [sp, #36]
 	adds r1, r5, #0
-	bl sub_08080C94
+	bl __modsi3
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	mov r9, r0
@@ -6271,7 +6134,7 @@ sub_0802ABEA:
 	strb r0, [r4, #0]
 	adds r0, r6, #0
 	movs r1, #10
-	bl sub_08080DD4
+	bl __udivsi3
 	adds r6, r0, #0
 	adds r7, #1
 	ldr r3, [sp, #16]
@@ -7482,7 +7345,7 @@ _0802B3B4:
 	movs r1, #1
 	adds r2, r7, #0
 	movs r3, #0
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	mov r0, r9
 	movs r1, #1
 	.2byte 0xF7FC
@@ -7622,7 +7485,7 @@ _0802B4C8:
 	bl ObjectInit
 	adds r0, r5, #0
 	adds r1, r4, #0
-	bl sub_080281A4
+	bl ObjectCopyFieldsFromTemplate
 	lsls r1, r6, #1
 	ldr r0, _0802B54C
 	add r0, r9
@@ -8897,7 +8760,7 @@ _0802BC44:
 	movs r1, #1
 	adds r2, r5, #0
 	movs r3, #0
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r0, r7, #0
 	movs r1, #1
 	movs r2, #3
@@ -9307,7 +9170,7 @@ _0802BF94:
 	movs r1, #1
 	adds r2, r5, #0
 	movs r3, #3
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r0, r7, #0
 	movs r1, #1
 	.2byte 0xF7FC
@@ -9793,7 +9656,7 @@ sub_0802C39A:
 	movs r1, #1
 	adds r2, r4, #0
 	movs r3, #0
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r0, r7, #0
 	movs r1, #3
 	movs r2, #1
@@ -9885,7 +9748,7 @@ _0802C416:
 	adds r0, r7, #0
 	adds r1, r2, #0
 	movs r3, #1
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r0, r7, #0
 	movs r1, #3
 	.2byte 0xF7FB
@@ -10377,7 +10240,7 @@ _0802C724:
 	movs r1, #1
 	adds r2, r6, #0
 	movs r3, #0
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	mov r0, r8
 	movs r1, #3
 	movs r2, #1
@@ -10477,7 +10340,7 @@ _0802C7E2:
 	adds r1, #64
 	add r1, r8
 	adds r0, r4, #0
-	bl sub_080281A4
+	bl ObjectCopyFieldsFromTemplate
 	adds r4, #64
 	ldr r1, [sp, #28]
 	adds r1, #1
@@ -10557,7 +10420,7 @@ _0802C862:
 	mov r0, r8
 	adds r1, r2, #0
 	movs r3, #1
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	mov r0, r8
 	movs r1, #0
 	.2byte 0xF7FB
@@ -11040,7 +10903,7 @@ _0802CBB8:
 	mov r0, r8
 	adds r1, r2, #0
 	movs r3, #0
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	b _0802CC3C
 	.global _0802CBE4
 _0802CBE4:
@@ -11442,7 +11305,7 @@ _0802CE3C:
 	movs r1, #1
 	adds r2, r4, #0
 	movs r3, #0
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r0, r7, #0
 	movs r1, #1
 	.2byte 0xF7FB
@@ -11496,7 +11359,7 @@ _0802CEAE:
 	bl ObjectInit
 	adds r0, r4, #0
 	adds r1, r7, #0
-	bl sub_080281A4
+	bl ObjectCopyFieldsFromTemplate
 	mov r0, r8
 	strh r0, [r4, #30]
 	adds r4, #64
@@ -12178,7 +12041,7 @@ sub_0802D564:
 	movs r1, #1
 	adds r2, r5, #0
 	movs r3, #0
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r0, r4, #0
 	movs r1, #2
 	movs r2, #1
@@ -12193,7 +12056,7 @@ sub_0802D564:
 	movs r1, #1
 	adds r2, r5, #0
 	movs r3, #1
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r0, r4, #0
 	movs r1, #2
 	movs r2, #1
@@ -12213,7 +12076,7 @@ sub_0802D564:
 	adds r0, r4, #0
 	movs r1, #1
 	adds r2, r5, #0
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r0, r4, #0
 	movs r1, #2
 	movs r2, #0
@@ -13542,7 +13405,7 @@ sub_0802DD46:
 	movs r1, #1
 	mov r2, r9
 	movs r3, #2
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r0, r7, #0
 	movs r1, #2
 	movs r2, #2
@@ -13567,7 +13430,7 @@ sub_0802DD46:
 	movs r1, #1
 	mov r2, r9
 	movs r3, #3
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r0, r4, #0
 	movs r1, #2
 	movs r2, #2
@@ -13593,7 +13456,7 @@ _0802DE12:
 	bl ObjectInit
 	adds r0, r5, #0
 	adds r1, r4, #0
-	bl sub_080281A4
+	bl ObjectCopyFieldsFromTemplate
 	adds r5, #64
 	subs r6, #1
 	cmp r6, #0
@@ -13609,7 +13472,7 @@ _0802DE12:
 	movs r1, #1
 	mov r2, r9
 	movs r3, #1
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r0, r4, #0
 	movs r1, #2
 	movs r2, #1
@@ -14745,7 +14608,7 @@ _0802E570:
 	movs r1, #1
 	mov r2, r9
 	movs r3, #0
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r0, r7, #0
 	movs r1, #2
 	movs r2, #2
@@ -14760,7 +14623,7 @@ _0802E570:
 	movs r1, #1
 	mov r2, r9
 	movs r3, #3
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r0, r4, #0
 	movs r1, #2
 	movs r2, #3
@@ -14818,7 +14681,7 @@ _0802E682:
 	movs r1, #1
 	mov r2, r9
 	movs r3, #5
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r0, r6, #0
 	movs r1, #2
 	movs r2, #1
@@ -15273,7 +15136,7 @@ _0802E96A:
 	adds r0, r7, #0
 	adds r1, r2, #0
 	movs r3, #4
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r1, r7, #0
 	adds r1, #246
 	movs r0, #15
@@ -15349,7 +15212,7 @@ _0802E9E6:
 	adds r0, r7, #0
 	adds r1, r2, #0
 	movs r3, #1
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r4, r7, #0
 	adds r4, #212
 	ldr r0, _0802EA68
@@ -15503,7 +15366,7 @@ _0802EAC8:
 	adds r0, r7, #0
 	adds r1, r2, #0
 	movs r3, #2
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r0, r7, #0
 	movs r1, #1
 	.2byte 0xF7F9
@@ -16100,7 +15963,7 @@ sub_0802EF54:
 	adds r0, r4, #0
 	movs r1, #1
 	ldr r2, [sp, #36]
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r0, r4, #0
 	movs r1, #2
 	movs r2, #0
@@ -16121,7 +15984,7 @@ sub_0802EF54:
 	movs r1, #1
 	ldr r2, [sp, #36]
 	movs r3, #4
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r0, r7, #0
 	movs r1, #1
 	.2byte 0xF7F9
@@ -16207,7 +16070,7 @@ _0802EFEC:
 	adds r0, r7, #0
 	movs r1, #1
 	ldr r2, [sp, #36]
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	ldrh r0, [r6, #0]
 	strh r0, [r7, #28]
 	ldrh r0, [r4, #0]
@@ -16382,7 +16245,7 @@ _0802F13A:
 	adds r0, r7, #0
 	adds r1, r2, #0
 	movs r3, #4
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r0, r7, #0
 	movs r1, #1
 	.2byte 0xF7F9
@@ -17009,7 +16872,7 @@ _0802F53E:
 	movs r1, #1
 	adds r2, r4, #0
 	movs r3, #0
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r0, r7, #0
 	movs r1, #2
 	movs r2, #2
@@ -17024,7 +16887,7 @@ _0802F53E:
 	movs r1, #1
 	adds r2, r4, #0
 	movs r3, #3
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	mov r0, r10
 	movs r1, #2
 	movs r2, #3
@@ -17042,7 +16905,7 @@ _0802F53E:
 	movs r1, #1
 	adds r2, r4, #0
 	movs r3, #5
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r0, r5, #0
 	movs r1, #2
 	movs r2, #1
@@ -17501,7 +17364,7 @@ _0802F8EA:
 	adds r0, r7, #0
 	adds r1, r2, #0
 	movs r3, #4
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 
 	.thumb_func
 	.thumb
@@ -17592,7 +17455,7 @@ sub_0802F970:
 	adds r0, r7, #0
 	adds r1, r2, #0
 	movs r3, #1
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r4, r7, #0
 	adds r4, #212
 	ldr r0, _0802F9E8
@@ -17756,7 +17619,7 @@ sub_0802FA66:
 	adds r0, r7, #0
 	adds r1, r2, #0
 	movs r3, #2
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r0, r7, #0
 	movs r1, #1
 	.2byte 0xF7F8
@@ -18205,7 +18068,7 @@ _0802FE1E:
 	movs r1, #1
 	adds r2, r6, #0
 	movs r3, #0
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r0, r7, #0
 	movs r1, #3
 	movs r2, #2
@@ -18222,7 +18085,7 @@ _0802FE1E:
 	movs r1, #1
 	adds r2, r6, #0
 	movs r3, #1
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r0, r5, #0
 	movs r1, #3
 	movs r2, #1
@@ -18250,7 +18113,7 @@ _0802FE1E:
 	movs r1, #1
 	adds r2, r6, #0
 	movs r3, #2
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r0, r4, #0
 	movs r1, #3
 	movs r2, #1

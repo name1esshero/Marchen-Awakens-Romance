@@ -1,6 +1,6 @@
 /* Byte-oriented string length and XOR checksums, including high-bit bytes. */
 #include "byte_utils.h"
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 
 AT("0007A210")
 u32 ByteStringLength(const u8 *text)

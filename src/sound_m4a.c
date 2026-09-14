@@ -3,7 +3,7 @@
  */
 #include "sound.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 #define TRACK_EXISTS       0x80
 #define TRACK_START        0x40
 #define TRACK_VOLUME_DIRTY 0x01
@@ -661,7 +661,7 @@ AT("00078C38") void SoundPlayerFadeIn(struct SoundPlayer *player, u16 interval)
 AT("00079DA8") void SoundTrackReadWavePointer(
     struct SoundPlayer *player, struct SoundTrack *track)
 {
-    register u32 wave asm("r4");
+    u32 wave;
     const u8 *command = track->command;
 
     wave &= 0xFFFFFF00;

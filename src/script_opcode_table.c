@@ -2,7 +2,7 @@
 #include "script.h"
 #include "script_bytecode.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 #define INVALID ScriptCmdFail
 
 extern s32 ScriptCmdConcatStrings(void);

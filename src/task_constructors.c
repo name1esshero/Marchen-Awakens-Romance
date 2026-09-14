@@ -4,8 +4,8 @@
  */
 #include "gba/types.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
-#define SECONDARY_RUNTIME (*(u8 **)0x03004020)
+#include "runtime_state.h"
+#include "rom_section.h"
 
 extern u8 *CreateTask(void *manager, void *callback, u32 priority,
                       s32 *result, u32 stateSize);
@@ -74,7 +74,7 @@ AT("000275C4") u8 *CreateBattleMotionTask(s32 valueA, s32 owner, s32 valueB,
                                            void *resource, void *context,
                                            s32 *result)
 {
-    u8 *task = CreateTask(SECONDARY_RUNTIME + owner * 32,
+    u8 *task = CreateTask(gSecondaryRuntime + owner * 32,
                           (void *)0x0802761D, 0, result, 104);
     u8 *state = task + 32;
     *(u16 *)(task + 120) = valueA;
@@ -90,7 +90,7 @@ extern s32 RuntimeActorGetField352(s32 owner);
 AT("000256F8") u8 *CreateBattleTrackingTask(s32 owner, s32 slot,
                                              s32 unused, s32 *result)
 {
-    u8 *task = CreateTask(SECONDARY_RUNTIME + owner * 32,
+    u8 *task = CreateTask(gSecondaryRuntime + owner * 32,
                           (void *)0x08025755, 0, result, 52);
     u8 *state = task + 32;
     task[71] = owner;
@@ -104,7 +104,7 @@ AT("000256F8") u8 *CreateBattleTrackingTask(s32 owner, s32 slot,
 #ifdef NONMATCHING
 AT("0001097C") u8 *CreateSpriteResetTask(s32 sprite, s32 mode, s32 *result)
 {
-    u8 *task = CreateTask(SECONDARY_RUNTIME + 64, (void *)0x080109C5,
+    u8 *task = CreateTask(gSecondaryRuntime + 64, (void *)0x080109C5,
                           0, result, 8);
     *(s32 *)(task + 32) = sprite;
     *(s32 *)(task + 36) = mode;
@@ -118,7 +118,7 @@ AT("0001097C") u8 *CreateSpriteResetTask(s32 sprite, s32 mode, s32 *result)
 AT("000301BC") u8 *CreateBattleResourceTask(s32 owner, s32 slot,
                                              void *resource, s32 *result)
 {
-    u8 *task = CreateTask(SECONDARY_RUNTIME + owner * 32 + slot * 16,
+    u8 *task = CreateTask(gSecondaryRuntime + owner * 32 + slot * 16,
                           (void *)0x08030219, 0, result, 24);
     if (task == 0) {
         if (result)
@@ -139,7 +139,7 @@ AT("000301BC") u8 *CreateBattleResourceTask(s32 owner, s32 slot,
 AT("0002A0B8") u8 *CreateBattleObjectTask(s32 owner, s32 slot,
                                            void *resource, s32 *result)
 {
-    u8 *task = CreateTask(SECONDARY_RUNTIME + owner * 32,
+    u8 *task = CreateTask(gSecondaryRuntime + owner * 32,
                           (void *)0x0802A119, 0, result, 32);
     if (task == 0) {
         if (result)
@@ -161,7 +161,7 @@ AT("0002A0B8") u8 *CreateBattleObjectTask(s32 owner, s32 slot,
 AT("00027894") u8 *CreateBattleNamedTaskA(s32 owner, s32 slot,
                                            s32 unused, s32 *result)
 {
-    u8 *task = CreateTask(SECONDARY_RUNTIME + owner * 32,
+    u8 *task = CreateTask(gSecondaryRuntime + owner * 32,
                           (void *)0x080278F5, 0, result, 116);
     task[104] = owner;
     task[106] = slot;
@@ -176,7 +176,7 @@ AT("00027894") u8 *CreateBattleNamedTaskA(s32 owner, s32 slot,
 AT("00026140") u8 *CreateBattleNamedTaskB(s32 owner, s32 slot,
                                            s32 unused, s32 *result)
 {
-    u8 *task = CreateTask(SECONDARY_RUNTIME + owner * 32,
+    u8 *task = CreateTask(gSecondaryRuntime + owner * 32,
                           (void *)0x080261A5, 0, result, 240);
     task[251] = owner;
     task[253] = slot;
@@ -190,7 +190,7 @@ AT("00026140") u8 *CreateBattleNamedTaskB(s32 owner, s32 slot,
 AT("0000E788") u8 *CreateFieldEffectTask(s32 owner, s32 slot, s32 a, s32 b,
                                           s32 c, s32 d, s32 *result)
 {
-    u8 *task = CreateTask(SECONDARY_RUNTIME + owner * 32,
+    u8 *task = CreateTask(gSecondaryRuntime + owner * 32,
                           (void *)0x0800E7ED, 0, result, 32);
     u8 *state = task + 32;
     *(s32 *)(task + 32) = owner;
@@ -208,7 +208,7 @@ AT("0000E788") u8 *CreateFieldEffectTask(s32 owner, s32 slot, s32 a, s32 b,
 AT("0000ECF8") u8 *CreateFieldCommandTask(s32 owner, s32 a, s32 b, s32 c,
                                            s32 *result)
 {
-    u8 *task = CreateTask(SECONDARY_RUNTIME + owner * 32,
+    u8 *task = CreateTask(gSecondaryRuntime + owner * 32,
                           (void *)0x0800ED5D, 0, result, 16);
     u8 *state = task + 32;
     *(s32 *)(task + 32) = owner;
@@ -231,11 +231,11 @@ AT(address) u8 *name(s32 value, s32 *result)                               \
 }
 
 CREATE_PENDING_TASK("0000D8EC", StartPendingEffectB,
-                    SECONDARY_RUNTIME + 64, (void *)0x0800D925)
+                    gSecondaryRuntime + 64, (void *)0x0800D925)
 CREATE_PENDING_TASK("0000E6A0", StartPendingFieldEffect,
-                    SECONDARY_RUNTIME + value * 32, (void *)0x0800E6D9)
+                    gSecondaryRuntime + value * 32, (void *)0x0800E6D9)
 CREATE_PENDING_TASK("0000FC90", StartPendingEffectA,
-                    SECONDARY_RUNTIME + 64, (void *)0x0800FCC9)
+                    gSecondaryRuntime + 64, (void *)0x0800FCC9)
 
 AT("00007134") u8 *CreateNamedRuntimeTask(const char *name, s32 value,
                                            s32 other, s32 *result)
@@ -252,7 +252,7 @@ AT("00007134") u8 *CreateNamedRuntimeTask(const char *name, s32 value,
 #ifdef NONMATCHING
 AT("00010A2C") u8 *CreateSpriteWaitTask(s32 mode, s32 *result)
 {
-    u8 *task = CreateTask(SECONDARY_RUNTIME + 64, (void *)0x08010A71,
+    u8 *task = CreateTask(gSecondaryRuntime + 64, (void *)0x08010A71,
                           0, result, 8);
     *(s32 *)(task + 36) = mode;
     ScriptAddPendingTasks(1);
@@ -266,7 +266,7 @@ AT("0006F620") u8 *CreateEncounterTransitionTask(s32 *result)
 {
     u8 *task = CreateTask(&gMainTaskManager, (void *)0x0806F665,
                           0, result, 32);
-    *(u16 *)(SECONDARY_RUNTIME + 0x0F24) = 1;
+    *(u16 *)(gSecondaryRuntime + 0x0F24) = 1;
     ScriptAddPendingTasks(1);
     return task;
 }

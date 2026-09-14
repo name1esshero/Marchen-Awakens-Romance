@@ -1,7 +1,7 @@
 #include "sound.h"
 #include "task_manager.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 
 extern void SoundFadeTask(struct EngineTask *task);
 extern void ScriptAddPendingTasks(u32 count);

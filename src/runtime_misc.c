@@ -1,7 +1,7 @@
 /* Small helpers from the map renderer, script VM, and scene runtimes. */
 #include "runtime_misc.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 extern u8 gIwramBase[];
 extern u8 gMapGenerationRootOffset[];
 #define GAME_STATE_BASE ({ \

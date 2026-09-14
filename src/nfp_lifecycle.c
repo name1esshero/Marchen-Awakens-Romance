@@ -3,7 +3,7 @@
  */
 #include "nfp.h"
 #include "heap.h"
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 extern void CpuFill(void *, u32, u32);
 extern void HeapFree(struct Heap *, void *);
 

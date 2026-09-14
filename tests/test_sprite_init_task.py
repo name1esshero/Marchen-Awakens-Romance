@@ -9,7 +9,6 @@ class SpriteInitTaskTests(unittest.TestCase):
    combined=(ROOT/'src/script_sprite.c').read_text()
    source='#include "script_sprite.h"\n'+combined[
        combined.index('/* SprInit worker'):combined.index('/* Deferred script-sprite reset workers')]
-   source=source.replace('__attribute__((section(".rom.00010B6C")))','')
    (p/'worker.c').write_text(source)
    (p/'test.c').write_text(r'''
 #include <assert.h>
@@ -43,6 +42,6 @@ int main(void){
  return 0;
 }
 ''')
-   subprocess.run(['gcc','-O2','-fno-strict-aliasing','-I'+str(ROOT/'include'),str(p/'test.c'),'-o',str(p/'test')],check=True)
+   subprocess.run(['gcc','-O2','-fno-strict-aliasing','-D','AT(x)=','-I'+str(ROOT/'include'),str(p/'test.c'),'-o',str(p/'test')],check=True)
    subprocess.run([str(p/'test')],check=True)
 if __name__=='__main__':unittest.main()

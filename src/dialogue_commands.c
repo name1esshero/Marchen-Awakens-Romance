@@ -10,7 +10,7 @@ extern u8 gMainTaskManager;
 extern void sub_08011A08(u32);
 extern void sub_08006ADC(u32,u32);
 #include "runtime_misc.h"
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 AT("00011774")
 void DialogueFinishTask(void *task)
 {

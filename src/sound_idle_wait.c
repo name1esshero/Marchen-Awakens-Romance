@@ -1,7 +1,7 @@
 #include "sound.h"
 #include "task_manager.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 
 extern void ScriptAddPendingTasks(u32 count);
 extern void sub_08080BD4(void *task);

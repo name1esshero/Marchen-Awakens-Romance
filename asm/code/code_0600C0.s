@@ -1688,7 +1688,7 @@ sub_08060CEA:
 sub_08060D44:
 	movs r0, #160
 	lsls r0, r0, #15
-	bl sub_08080BFC
+	bl __divsi3
 	str r0, [r4, #0]
 	movs r4, #0
 	mov r8, r4
@@ -4415,7 +4415,7 @@ _0806250A:
 	subs r1, r1, r0
 	movs r0, #192
 	lsls r0, r0, #14
-	bl sub_08080BFC
+	bl __divsi3
 	str r0, [r4, #0]
 	movs r6, #0
 	movs r4, #130
@@ -5512,7 +5512,7 @@ _08062D36:
 	subs r1, r1, r0
 	movs r0, #192
 	lsls r0, r0, #14
-	bl sub_08080BFC
+	bl __divsi3
 	str r0, [r4, #0]
 	ldr r4, _08062DC8
 	add r4, r8
@@ -11313,7 +11313,7 @@ _080659BA:
 	subs r1, r1, r0
 	movs r0, #192
 	lsls r0, r0, #14
-	bl sub_08080BFC
+	bl __divsi3
 	str r0, [r4, #0]
 	ldr r0, _08065A38
 	adds r4, r6, r0
@@ -13194,7 +13194,7 @@ sub_08066B00:
 	subs r1, r1, r0
 	movs r0, #160
 	lsls r0, r0, #15
-	bl sub_08080BFC
+	bl __divsi3
 	str r0, [r4, #0]
 	movs r7, #0
 	movs r5, #0

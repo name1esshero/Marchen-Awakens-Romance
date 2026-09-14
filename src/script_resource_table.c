@@ -2,7 +2,7 @@
 #include "gba/types.h"
 #include "script_bytecode.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 struct ScriptResourceNode {
     struct ScriptResourceNode *next;
     char *typedName;
@@ -19,7 +19,7 @@ extern struct ScriptBytecodeRoot *gScriptResourceRootForLookup;
 extern struct ScriptBytecodeRoot *gScriptResourceRootForHeadUpdate;
 extern struct ScriptBytecodeRoot *gScriptResourceRootForHeap;
 
-extern s32 sub_08080C94(s32 dividend, s32 divisor);
+extern s32 __modsi3(s32 dividend, s32 divisor);
 extern u32 strlen(const char *text);
 extern s32 strcmp(const char *left, const char *right);
 extern char *strcpy(char *destination, const char *source);
@@ -33,7 +33,7 @@ AT("0007E97C") s32 ScriptResourceHash(s32 type, const char *name)
     s32 hash = type;
 
     while (*(const s8 *)name != 0) {
-        hash = sub_08080C94((hash << 8) + *(const u8 *)name, 587);
+        hash = __modsi3((hash << 8) + *(const u8 *)name, 587);
         name++;
     }
     return hash;

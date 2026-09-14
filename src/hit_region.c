@@ -1,5 +1,5 @@
 #include "hit_region.h"
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 
 AT("00011504") void HitRegionDisable(s32 id)
 {

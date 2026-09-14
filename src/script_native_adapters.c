@@ -5,7 +5,7 @@
  */
 #include "gba/types.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 
 extern void GameStateSetField12EC(s32 value);
 extern void sub_080067DC(void);

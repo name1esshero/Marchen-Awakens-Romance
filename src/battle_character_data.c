@@ -1,6 +1,6 @@
 #include "battle_character.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 
 /*
  * The engine indexes this table with characterId * 120. The first fields are

@@ -6,8 +6,8 @@
  */
 #include "gba/types.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
-#define SECONDARY_RUNTIME (*(u8 **)0x03004020)
+#include "runtime_state.h"
+#include "rom_section.h"
 
 extern u8 *CreateTask(void *, void *, u32, s32 *, u32);
 
@@ -16,7 +16,7 @@ extern u8 *CreateTask(void *, void *, u32, s32 *, u32);
                            emptyStartOffset, emptyEndOffset)                  \
 AT(address) u8 *name(s32 owner, s32 slot, void *resource, s32 *result)       \
 {                                                                           \
-    u8 *task = CreateTask(SECONDARY_RUNTIME + owner * 32 + slot * 16,       \
+    u8 *task = CreateTask(gSecondaryRuntime + owner * 32 + slot * 16,       \
                           (void *)(callback), 0, result, (stateSize));        \
     u8 *state;                                                               \
     s32 *end;                                                                \
@@ -95,7 +95,7 @@ AT(address) u8 *name(s32 owner, s32 slot, void *resource, s32 *result)     \
     register s32 work asm("r4") = (s32)result;                            \
     s32 *cursor;                                                            \
     s32 remaining;                                                         \
-    task = CreateTask(SECONDARY_RUNTIME + owner * 32 + slot * 16,          \
+    task = CreateTask(gSecondaryRuntime + owner * 32 + slot * 16,          \
                       (void *)(callback), 0, (s32 *)work, (stateSize));     \
     if (task == 0) {                                                        \
         if (work != 0)                                                      \

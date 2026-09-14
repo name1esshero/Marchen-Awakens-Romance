@@ -3,7 +3,7 @@
  */
 #include "gba/types.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 
 extern s32 strtol(const char *text, char **end, s32 radix);
 

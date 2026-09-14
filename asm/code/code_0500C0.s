@@ -620,7 +620,7 @@ sub_080504D4:
 	adds r0, r6, #0
 	movs r1, #1
 	movs r3, #0
-	bl sub_08028118
+	bl ObjectSetResourceGroupByName
 	adds r0, r6, #0
 	movs r1, #3
 	movs r2, #2
@@ -1509,7 +1509,7 @@ sub_08050996:
 	adds r0, r6, #0
 	movs r1, #1
 	movs r3, #0
-	bl sub_08028118
+	bl ObjectSetResourceGroupByName
 	adds r0, r6, #0
 	movs r1, #3
 	movs r2, #1
@@ -1563,7 +1563,7 @@ sub_080509EE:
 	bl ObjectInit
 	adds r0, r4, #0
 	adds r1, r6, #0
-	bl sub_080281A4
+	bl ObjectCopyFieldsFromTemplate
 	adds r4, #64
 	adds r7, #1
 	movs r2, #0
@@ -2984,7 +2984,7 @@ sub_080511A0:
 	adds r0, r7, #0
 	movs r1, #1
 	movs r3, #0
-	bl sub_08028118
+	bl ObjectSetResourceGroupByName
 	adds r0, r7, #0
 	movs r1, #3
 	movs r2, #2
@@ -3003,7 +3003,7 @@ sub_0805121C:
 	ldr r0, [sp, #60]
 	movs r1, #1
 	movs r3, #0
-	bl sub_08028118
+	bl ObjectSetResourceGroupByName
 	ldr r0, [sp, #60]
 	movs r1, #3
 	movs r2, #0
@@ -3309,7 +3309,7 @@ _08051424:
 	adds r0, r7, #0
 	adds r1, r2, #0
 	movs r3, #1
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r0, r7, #0
 	movs r1, #1
 	.2byte 0xF7D6
@@ -4002,7 +4002,7 @@ _080517FA:
 	adds r0, r7, #0
 	movs r1, #1
 	movs r3, #0
-	bl sub_08028118
+	bl ObjectSetResourceGroupByName
 	b _0805188A
 	.byte 0x00
 	.byte 0x00
@@ -4016,7 +4016,7 @@ _0805187C:
 	adds r0, r7, #0
 	movs r1, #1
 	movs r3, #0
-	bl sub_08028118
+	bl ObjectSetResourceGroupByName
 	.global _0805188A
 _0805188A:
 	adds r0, r7, #0
@@ -4099,7 +4099,7 @@ sub_080518FC:
 	movs r1, #1
 	adds r2, r5, #0
 	movs r3, #0
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r0, r4, #0
 	movs r1, #3
 	movs r2, #0
@@ -4113,7 +4113,7 @@ _0805191C:
 	bl ObjectInit
 	adds r0, r5, #0
 	adds r1, r4, #0
-	bl sub_080281A4
+	bl ObjectCopyFieldsFromTemplate
 	adds r5, #64
 	subs r6, #1
 	cmp r6, #0
@@ -4617,7 +4617,7 @@ _08051CC4:
 	ldr r3, [r4, #84]
 	str r7, [sp, #0]
 	adds r0, r4, #0
-	bl sub_0802814C
+	bl ObjectSetResourceGroup
 	adds r0, r4, #0
 	movs r1, #1
 	.2byte 0xF7D6
@@ -8970,7 +8970,7 @@ _08053A1E:
 	bgt _08053A46
 	mov r0, r9
 	adds r1, r7, #0
-	bl sub_08080BFC
+	bl __divsi3
 	cmp r0, #0
 	beq _08053A46
 	adds r0, r4, #0
@@ -9049,15 +9049,15 @@ _08053A8A:
 _08053AA0:
 	mov r0, r9
 	adds r1, r7, #0
-	bl sub_08080C94
+	bl __modsi3
 	adds r4, r0, #0
 	adds r0, r7, #0
 	movs r1, #10
-	bl sub_08080BFC
+	bl __divsi3
 	adds r7, r0, #0
 	adds r0, r4, #0
 	adds r1, r7, #0
-	bl sub_08080BFC
+	bl __divsi3
 	strh r0, [r5, #0]
 	adds r0, r6, #0
 	movs r2, #128
@@ -9109,7 +9109,7 @@ _08053ACE:
 	.thumb
 	.global sub_08053B4C
 sub_08053B4C:
-	bl sub_08080BFC
+	bl __divsi3
 	lsls r0, r0, #16
 	cmp r0, #0
 	beq _08053B78
@@ -9120,11 +9120,11 @@ sub_08053B4C:
 	movs r1, #2
 	ldrsh r0, [r6, r1]
 	movs r1, #100
-	bl sub_08080C94
+	bl __modsi3
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	movs r1, #10
-	bl sub_08080BFC
+	bl __divsi3
 	adds r0, #79
 	strb r0, [r4, #1]
 	adds r4, #2
@@ -9137,11 +9137,11 @@ _08053B78:
 	movs r1, #2
 	ldrsh r0, [r6, r1]
 	movs r1, #100
-	bl sub_08080C94
+	bl __modsi3
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	movs r1, #10
-	bl sub_08080C94
+	bl __modsi3
 	adds r0, #79
 	strb r0, [r4, #1]
 	adds r4, #2
@@ -9155,7 +9155,7 @@ _08053B78:
 	movs r1, #4
 	ldrsh r0, [r6, r1]
 	movs r1, #100
-	bl sub_08080BFC
+	bl __divsi3
 	lsls r0, r0, #16
 	cmp r0, #0
 	beq _08053BCC
@@ -9164,7 +9164,7 @@ _08053B78:
 	movs r1, #4
 	ldrsh r0, [r6, r1]
 	movs r1, #100
-	bl sub_08080BFC
+	bl __divsi3
 	adds r0, #79
 	strb r0, [r4, #1]
 	adds r4, #2
@@ -9174,13 +9174,13 @@ _08053BCC:
 	ldrsh r5, [r6, r0]
 	adds r0, r5, #0
 	movs r1, #10
-	bl sub_08080BFC
+	bl __divsi3
 	lsls r0, r0, #16
 	cmp r0, #0
 	bne _08053BEC
 	adds r0, r5, #0
 	movs r1, #100
-	bl sub_08080BFC
+	bl __divsi3
 	lsls r0, r0, #16
 	cmp r0, #0
 	beq _08053C0A
@@ -9196,11 +9196,11 @@ _08053BEC:
 sub_08053BF2:
 	ldrsh r0, [r6, r1]
 	movs r1, #100
-	bl sub_08080C94
+	bl __modsi3
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	movs r1, #10
-	bl sub_08080BFC
+	bl __divsi3
 	adds r0, #79
 	strb r0, [r4, #1]
 	adds r4, #2
@@ -9213,11 +9213,11 @@ _08053C0A:
 	movs r1, #4
 	ldrsh r0, [r6, r1]
 	movs r1, #100
-	bl sub_08080C94
+	bl __modsi3
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	movs r1, #10
-	bl sub_08080C94
+	bl __modsi3
 	adds r0, #79
 	strb r0, [r4, #1]
 	adds r0, r7, #0
@@ -9255,7 +9255,7 @@ sub_08053C48:
 	movs r1, #2
 	ldrsh r0, [r6, r1]
 	movs r1, #100
-	bl sub_08080BFC
+	bl __divsi3
 	lsls r0, r0, #16
 	cmp r0, #0
 	beq _08053C88
@@ -9266,7 +9266,7 @@ sub_08053C48:
 	movs r1, #2
 	ldrsh r0, [r6, r1]
 	movs r1, #100
-	bl sub_08080BFC
+	bl __divsi3
 	adds r0, #79
 	strb r0, [r7, #1]
 	adds r4, r7, #2
@@ -9276,13 +9276,13 @@ _08053C88:
 	ldrsh r5, [r6, r0]
 	adds r0, r5, #0
 	movs r1, #10
-	bl sub_08080BFC
+	bl __divsi3
 	lsls r0, r0, #16
 	cmp r0, #0
 	bne _08053CA8
 	adds r0, r5, #0
 	movs r1, #100
-	bl sub_08080BFC
+	bl __divsi3
 	lsls r0, r0, #16
 	cmp r0, #0
 	beq _08053CCA
@@ -9295,11 +9295,11 @@ _08053CA8:
 	movs r1, #2
 	ldrsh r0, [r6, r1]
 	movs r1, #100
-	bl sub_08080C94
+	bl __modsi3
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	movs r1, #10
-	bl sub_08080BFC
+	bl __divsi3
 	adds r0, #79
 	strb r0, [r4, #1]
 	adds r4, #2
@@ -9312,7 +9312,7 @@ _08053CCA:
 	movs r1, #2
 	ldrsh r0, [r6, r1]
 	movs r1, #100
-	bl sub_08080C94
+	bl __modsi3
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	movs r1, #10
@@ -9336,7 +9336,7 @@ sub_08053CE4:
 	movs r1, #4
 	ldrsh r0, [r6, r1]
 	movs r1, #100
-	bl sub_08080BFC
+	bl __divsi3
 	lsls r0, r0, #16
 	cmp r0, #0
 	beq _08053D1E
@@ -9345,7 +9345,7 @@ sub_08053CE4:
 	movs r1, #4
 	ldrsh r0, [r6, r1]
 	movs r1, #100
-	bl sub_08080BFC
+	bl __divsi3
 	adds r0, #79
 	strb r0, [r4, #1]
 	adds r4, #2
@@ -9355,13 +9355,13 @@ _08053D1E:
 	ldrsh r5, [r6, r0]
 	adds r0, r5, #0
 	movs r1, #10
-	bl sub_08080BFC
+	bl __divsi3
 	lsls r0, r0, #16
 	cmp r0, #0
 	bne _08053D3E
 	adds r0, r5, #0
 	movs r1, #100
-	bl sub_08080BFC
+	bl __divsi3
 	lsls r0, r0, #16
 	cmp r0, #0
 	beq _08053D5C
@@ -9372,11 +9372,11 @@ _08053D3E:
 	movs r1, #4
 	ldrsh r0, [r6, r1]
 	movs r1, #100
-	bl sub_08080C94
+	bl __modsi3
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	movs r1, #10
-	bl sub_08080BFC
+	bl __divsi3
 	adds r0, #79
 	strb r0, [r4, #1]
 	adds r4, #2
@@ -9389,11 +9389,11 @@ _08053D5C:
 	movs r1, #4
 	ldrsh r0, [r6, r1]
 	movs r1, #100
-	bl sub_08080C94
+	bl __modsi3
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	movs r1, #10
-	bl sub_08080C94
+	bl __modsi3
 	adds r0, #79
 	strb r0, [r4, #1]
 	adds r0, r7, #0
@@ -9615,7 +9615,7 @@ sub_08053ECC:
 	asrs r2, r2, #16
 	mov r9, r2
 	lsls r0, r0, #16
-	bl sub_08080BFC
+	bl __divsi3
 	lsls r4, r0, #5
 	subs r4, r4, r0
 	lsrs r6, r4, #16
@@ -16511,7 +16511,7 @@ _080573E6:
 	movs r2, #0
 	ldrsh r1, [r1, r2]
 	subs r1, #1
-	bl sub_08080E4C
+	bl __umodsi3
 	adds r0, #1
 	lsls r0, r0, #16
 	asrs r5, r0, #16
@@ -16558,7 +16558,7 @@ _08057438:
 	movs r2, #0
 	ldrsh r1, [r1, r2]
 	subs r1, #1
-	bl sub_08080E4C
+	bl __umodsi3
 	adds r0, #1
 	lsls r0, r0, #16
 	asrs r5, r0, #16
@@ -16607,7 +16607,7 @@ _08057490:
 	movs r2, #0
 	ldrsh r1, [r1, r2]
 	subs r1, #1
-	bl sub_08080E4C
+	bl __umodsi3
 	adds r0, #1
 	lsls r0, r0, #16
 	asrs r5, r0, #16
@@ -16638,7 +16638,7 @@ _080574C8:
 	movs r2, #0
 	ldrsh r1, [r1, r2]
 	subs r1, #1
-	bl sub_08080E4C
+	bl __umodsi3
 	adds r0, #1
 	lsls r0, r0, #16
 	asrs r5, r0, #16

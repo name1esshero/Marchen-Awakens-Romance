@@ -7,7 +7,7 @@
  * The original 16-byte filename buffer and unchecked copies are preserved.
  */
 #include "kmp.h"
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 #include "runtime_misc.h"
 extern char *strcpy(char *,const char *);
 extern char *strcat(char *,const char *);
@@ -25,7 +25,7 @@ AT("000032B8") void KmpLoadField(const char *name,s16 x,s16 y)
  strupr(resource);
  KmpLoadResource(resource,(void *)0x06000000,0,0,0,0,3);
  KmpLoadResource(resource,(void *)0x06000000,1,1,0,0,0);
- view=(struct KmpViewport *)0x03003BC4;
+ view=gKmpViewports;
  px*=65536;py*=65536;
  KmpRenderViewport(view,px,py);
  view=(struct KmpViewport *)((u8 *)view+0xFC);

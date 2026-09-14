@@ -16,6 +16,7 @@
 
 #include "gba/types.h"
 #include "nfp.h"
+#include "rom_section.h"
 
 #ifdef AGBCC
 #define TARGET_REGISTER(name) asm(name)
@@ -29,7 +30,7 @@
  * the mount array, so there are two indirections before the index. Mount
  * records are 24 bytes, which the original builds as ((i * 2) + i) * 8.
  */
-__attribute__((section(".rom.0007AAA0")))
+AT("0007AAA0")
 struct NfpHeader *NfpGetArchiveBase(s32 handle)
 {
     return gNfpState->mounts[handle].base;
@@ -37,7 +38,7 @@ struct NfpHeader *NfpGetArchiveBase(s32 handle)
 
 /* The directory: one 16-byte record per member, a 12-byte name and the
  * payload's offset relative to the header. */
-__attribute__((section(".rom.0007AAD0")))
+AT("0007AAD0")
 struct NfpEntry *NfpGetDirectory(s32 handle)
 {
     struct NfpHeader *header = NfpGetArchiveBase(handle);
@@ -45,11 +46,11 @@ struct NfpEntry *NfpGetDirectory(s32 handle)
     return (struct NfpEntry *)((u8 *)header + header->table_offset);
 }
 
-__attribute__((section(".rom.0007AAD0")))
+AT("0007AAD0")
 const u8 NfpGetDirectoryTail[2] = {0, 0};
 
 /* Where the payloads begin, past the header and the directory. */
-__attribute__((section(".rom.0007AAE0")))
+AT("0007AAE0")
 void *NfpGetData(s32 handle)
 {
     struct NfpHeader *header = NfpGetArchiveBase(handle);
@@ -57,18 +58,18 @@ void *NfpGetData(s32 handle)
     return (u8 *)header + header->data_offset;
 }
 
-__attribute__((section(".rom.0007AAE0")))
+AT("0007AAE0")
 const u8 NfpGetDataTail[2] = {0, 0};
 
 /* How many members the archive holds. 830 for this cartridge. */
-__attribute__((section(".rom.0007AB08")))
+AT("0007AB08")
 u32 NfpGetEntryCount(s32 handle)
 {
     return NfpGetArchiveBase(handle)->count;
 }
 
 /* Mark a mount slot in use, or free it. Counterpart to NfpMountIsActive. */
-__attribute__((section(".rom.0007AA30")))
+AT("0007AA30")
 void NfpSetMountActive(s32 handle, s32 active)
 {
     gNfpState->mounts[handle].active = active;
@@ -81,7 +82,7 @@ void NfpSetMountActive(s32 handle, s32 active)
  *
  * A linear scan, unlike the member lookup: there are only a handful of mount
  * slots and they are not kept sorted, so there is nothing to binary search. */
-__attribute__((section(".rom.0007AB7C")))
+AT("0007AB7C")
 s32 NfpFindArchive(const char *name)
 {
     s32 handle;
@@ -99,14 +100,14 @@ s32 NfpFindArchive(const char *name)
 }
 
 /* Point a mount slot at its archive header. */
-__attribute__((section(".rom.0007AAB8")))
+AT("0007AAB8")
 void NfpSetArchiveBase(s32 handle, struct NfpHeader *base)
 {
     gNfpState->mounts[handle].base = base;
 }
 
 /* First unused mount slot, or -1 when they are all taken. */
-__attribute__((section(".rom.0007ABF0")))
+AT("0007ABF0")
 s32 NfpFindFreeSlot(void)
 {
     s32 handle;
@@ -130,7 +131,7 @@ s32 NfpFindFreeSlot(void)
  *
  * This is what the boot code calls to register the cartridge's one archive.
  */
-__attribute__((section(".rom.0007AB14")))
+AT("0007AB14")
 s32 NfpMount(const char *name, void *base, void *end)
 {
     s32 handle;
@@ -152,7 +153,7 @@ s32 NfpMount(const char *name, void *base, void *end)
 }
 
 /* Alignment tail, so the section ends with zeros rather than a THUMB nop. */
-__attribute__((section(".rom.0007AB14")))
+AT("0007AB14")
 const u8 NfpMountTail[2] = {0, 0};
 
 void sub_0807AAB8(s32, struct NfpHeader *) __attribute__((alias("NfpSetArchiveBase")));
@@ -176,20 +177,20 @@ s32 sub_0807AB7C(const char *) __attribute__((alias("NfpFindArchive")));
  * Returns int rather than u8 deliberately: ldrb already zero-extends, so a
  * narrower return type makes the compiler re-widen the value at every call
  * site with an "lsls r0, r0, #24" the original does not have. */
-__attribute__((section(".rom.0007AA18")))
+AT("0007AA18")
 s32 NfpMountIsActive(s32 handle)
 {
     return gNfpState->mounts[handle].active;
 }
 
 /* One directory record by index. Records are 16 bytes, hence the shift. */
-__attribute__((section(".rom.0007AC28")))
+AT("0007AC28")
 struct NfpEntry *NfpGetEntry(s32 handle, s32 index)
 {
     return &NfpGetDirectory(handle)[index];
 }
 
-__attribute__((section(".rom.0007AC28")))
+AT("0007AC28")
 const u8 NfpGetEntryTail[2] = {0, 0};
 
 /* Resolve "archive", "member" to the member's bytes.
@@ -201,7 +202,7 @@ const u8 NfpGetEntryTail[2] = {0, 0};
  * Returns NULL if the archive is not mounted, the member does not exist, or
  * the directory record cannot be reached.
  */
-__attribute__((section(".rom.0007AC3C")))
+AT("0007AC3C")
 void *NfpOpenByName(const char *archive, const char *member)
 {
     s32 handle;
@@ -225,7 +226,7 @@ void *NfpOpenByName(const char *archive, const char *member)
 
 /* Binary-search the sorted directory. Directory names may occupy all twelve
  * bytes, so each candidate is copied into a separately terminated buffer. */
-__attribute__((section(".rom.0007ACC4")))
+AT("0007ACC4")
 s32 NfpFindEntryIndex(s32 handle, const char *name)
 {
     struct NfpEntry *directory;
@@ -265,7 +266,7 @@ s32 NfpFindEntryIndex(s32 handle, const char *name)
 
 /* Resolve a member and derive its stored span from the next directory entry.
  * The final member ends at the mounted archive length. */
-__attribute__((section(".rom.0007AD4C")))
+AT("0007AD4C")
 u32 NfpGetEntrySizeByName(const char *archive, const char *member)
 {
     register s32 handle TARGET_REGISTER("r5");
@@ -293,7 +294,7 @@ u32 NfpGetEntrySizeByName(const char *archive, const char *member)
         end = (u32)base + *(u32 *)((u8 *)entry + sizeof(*entry) + 12);
     return end - (u32)data;
 }
-__attribute__((section(".rom.0007AD4C")))
+AT("0007AD4C")
 const u8 NfpGetEntrySizeByNameTail[2] = {0, 0};
 
 s32 sub_0807ACC4(s32, const char *)

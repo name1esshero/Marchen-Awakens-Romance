@@ -1,5 +1,5 @@
 #include "sound.h"
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 #ifdef __GNUC__
 #define SOUND_TABLE_BARRIER(songTable, order) ((void)0)
 #else

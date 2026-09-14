@@ -4,8 +4,8 @@
 #include "task_adapters.h"
 #include "ncd.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
-#define SECONDARY_RUNTIME (*(u8 **)0x03004020)
+#include "runtime_state.h"
+#include "rom_section.h"
 
 extern void sub_08007908(struct EngineTask *);
 extern void sub_0806C918(struct EngineTask *);
@@ -42,25 +42,25 @@ AT("0006EEF0") struct EngineTask *CreateTask6EEF0(u32 *completion)
 
 AT("0000D664") struct EngineTask *CreateActorTaskD664(u32 value,u32 *completion)
 {
- struct EngineTask *task=CreateTask((struct TaskManager *)(SECONDARY_RUNTIME+64),sub_0800D690,1,completion,84);
+ struct EngineTask *task=CreateTask((struct TaskManager *)(gSecondaryRuntime+64),sub_0800D690,1,completion,84);
  *(u32 *)((u8 *)task+104)=value;
  return task;
 }
 AT("0000F0F0") struct EngineTask *CreateActorTaskF0F0(u32 value,u32 *completion)
 {
- struct EngineTask *task=CreateTask((struct TaskManager *)(SECONDARY_RUNTIME+96),sub_0800F11C,1,completion,20);
+ struct EngineTask *task=CreateTask((struct TaskManager *)(gSecondaryRuntime+96),sub_0800F11C,1,completion,20);
  *(u32 *)((u8 *)task+32)=value;
  return task;
 }
 AT("00010704") struct EngineTask *CreateActorTask10704(u32 value,u32 *completion)
 {
- struct EngineTask *task=CreateTask((struct TaskManager *)(SECONDARY_RUNTIME+64),sub_08010730,1,completion,12);
+ struct EngineTask *task=CreateTask((struct TaskManager *)(gSecondaryRuntime+64),sub_08010730,1,completion,12);
  *(u32 *)((u8 *)task+32)=value;
  return task;
 }
 AT("00011484") struct EngineTask *CreateActorTask11484(u32 value,u32 *completion)
 {
- struct EngineTask *task=CreateTask((struct TaskManager *)(SECONDARY_RUNTIME+64),sub_080114B0,1,completion,12);
+ struct EngineTask *task=CreateTask((struct TaskManager *)(gSecondaryRuntime+64),sub_080114B0,1,completion,12);
  *(u32 *)((u8 *)task+32)=value;
  return task;
 }
@@ -84,19 +84,19 @@ AT("0000B1B8") struct EngineTask *CreateCoordinateTask(u32 first,u32 second,u32 
 }
 AT("0000D98C") struct EngineTask *CreatePendingTaskD98C(u32 *completion)
 {
- struct EngineTask *task=CreateTask((struct TaskManager *)(SECONDARY_RUNTIME+64),sub_0800D9C0,0,completion,4);
+ struct EngineTask *task=CreateTask((struct TaskManager *)(gSecondaryRuntime+64),sub_0800D9C0,0,completion,4);
  ScriptAddPendingTasks(1);
  return task;
 }
 AT("0000FD3C") struct EngineTask *CreatePendingTaskFD3C(u32 *completion)
 {
- struct EngineTask *task=CreateTask((struct TaskManager *)(SECONDARY_RUNTIME+64),sub_0800FD70,0,completion,4);
+ struct EngineTask *task=CreateTask((struct TaskManager *)(gSecondaryRuntime+64),sub_0800FD70,0,completion,4);
  ScriptAddPendingTasks(1);
  return task;
 }
 AT("0000F9B4") struct EngineTask *CreateSpriteTaskF9B4(u32 value,u32 *completion)
 {
- struct EngineTask *task=CreateTask((struct TaskManager *)(SECONDARY_RUNTIME+64),sub_0800F9EC,1,completion,84);
+ struct EngineTask *task=CreateTask((struct TaskManager *)(gSecondaryRuntime+64),sub_0800F9EC,1,completion,84);
  u8 *payload=(u8 *)task+32;
  *(u32 *)(payload+72)=value;
  NcdSpriteContainerReset(payload);
@@ -104,7 +104,7 @@ AT("0000F9B4") struct EngineTask *CreateSpriteTaskF9B4(u32 value,u32 *completion
 }
 AT("0000E610") struct EngineTask *CreateIndexedPendingTask(u32 index,u32 value,u32 *completion)
 {
- struct EngineTask *task=CreateTask((struct TaskManager *)(SECONDARY_RUNTIME+index*32),sub_0800E64C,1,completion,8);
+ struct EngineTask *task=CreateTask((struct TaskManager *)(gSecondaryRuntime+index*32),sub_0800E64C,1,completion,8);
  *(u32 *)((u8 *)task+32)=index;
  *(u32 *)((u8 *)task+36)=value;
  ScriptAddPendingTasks(1);

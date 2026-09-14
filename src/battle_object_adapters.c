@@ -3,7 +3,7 @@
  * object groups and one of five variants. */
 #include "gba/types.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 
 extern void *sub_0802D3C0(s32 owner, s32 slot, void *resource, void *result,
                           s32 group, s32 variant);

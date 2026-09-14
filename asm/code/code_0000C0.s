@@ -4242,12 +4242,12 @@ _08002410:
 	adds r4, r7, r6
 	adds r0, r5, #0
 	movs r1, #10
-	bl sub_08080C94
+	bl __modsi3
 	adds r0, #48
 	strb r0, [r4, #0]
 	adds r0, r5, #0
 	movs r1, #10
-	bl sub_08080BFC
+	bl __divsi3
 	adds r5, r0, #0
 	cmp r0, #0
 	bne _0800240E
@@ -4328,7 +4328,7 @@ sub_08002470:
 	str r1, [sp, #4]
 	adds r1, r2, #0
 	lsls r0, r3, #16
-	bl sub_08080BFC
+	bl __divsi3
 	adds r6, r0, #0
 	lsls r4, r6, #6
 	subs r4, r4, r6
@@ -6647,7 +6647,7 @@ _080035E0:
 	movs r2, #0
 	ldrsh r1, [r5, r2]
 	str r3, [sp, #4]
-	bl sub_08080BFC
+	bl __divsi3
 	mov r1, r9
 	adds r1, #4
 	mov r9, r1
@@ -6850,7 +6850,7 @@ _08003734:
 	.byte 0xFD
 	ldrh r4, [r6, #0]
 	adds r1, r4, #0
-	bl sub_08080E4C
+	bl __umodsi3
 	lsls r0, r0, #16
 	lsrs r1, r0, #16
 	adds r0, r1, #1
@@ -7523,7 +7523,7 @@ _08003CA6:
 	ldrsh r1, [r3, r2]
 	movs r0, #128
 	lsls r0, r0, #19
-	bl sub_08080BFC
+	bl __divsi3
 	mov r7, r10
 	str r0, [r7, #0]
 	movs r0, #0
@@ -7603,7 +7603,7 @@ _08003D18:
 	movs r4, #128
 	lsls r4, r4, #19
 	adds r0, r4, #0
-	bl sub_08080BFC
+	bl __divsi3
 	mov r7, r10
 	str r0, [r7, #0]
 	ldr r0, [sp, #8]
@@ -7733,7 +7733,7 @@ _08003E66:
 	ldrsh r1, [r3, r2]
 	movs r0, #128
 	lsls r0, r0, #20
-	bl sub_08080BFC
+	bl __divsi3
 	mov r7, r10
 	str r0, [r7, #0]
 	movs r0, #128

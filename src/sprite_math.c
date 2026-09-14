@@ -1,14 +1,14 @@
 /* Fixed-point helpers used by the sprite interpolation and affine renderer. */
 #include "gba/types.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 #ifdef __GNUC__
 #define TARGET_REGISTER(name)
 #else
 #define TARGET_REGISTER(name) asm(name)
 #endif
 
-extern s32 sub_08080BFC(s32 dividend, s32 divisor);
+extern s32 __divsi3(s32 dividend, s32 divisor);
 s32 SpriteFixedSqrt(s32 value);
 
 /* Signed 8.8 helpers used by the renderer's affine calculations. Multiplication
@@ -41,7 +41,7 @@ s32 SpriteFixed8Divide(s32 dividend, s32 divisor)
     divisor >>= 16;
     asm("" : "+r"(divisor));
     dividend >>= 8;
-    return (s16)sub_08080BFC(dividend, divisor);
+    return (s16)__divsi3(dividend, divisor);
 }
 
 /* The cartridge stores zero alignment bytes after the divide helper. */
@@ -68,20 +68,20 @@ s32 SpriteVectorLengthFixed(s32 x, s32 y)
             scale = (absX << 4) >> 16;
         else
             scale = (absY << 4) >> 16;
-        absX = sub_08080BFC(absX, scale);
-        absY = sub_08080BFC(absY, scale);
+        absX = __divsi3(absX, scale);
+        absY = __divsi3(absY, scale);
         return SpriteFixedSqrt(((absX * absX) >> 12)
                              + ((absY * absY) >> 12)) * scale;
     }
 
     if (absX > absY) {
         if (absX != 0)
-            scale = sub_08080BFC(0x01000000, absX);
+            scale = __divsi3(0x01000000, absX);
         else
             scale = 0;
     } else {
         if (absY != 0)
-            scale = sub_08080BFC(0x01000000, absY);
+            scale = __divsi3(0x01000000, absY);
         else
             scale = 0;
     }
@@ -91,7 +91,7 @@ s32 SpriteVectorLengthFixed(s32 x, s32 y)
     if (scale == 0)
         return 0;
     else
-        return sub_08080BFC(
+        return __divsi3(
             SpriteFixedSqrt(((absX * absX) >> 12)
                           + ((absY * absY) >> 12)) << 12,
             scale);
@@ -119,7 +119,7 @@ s32 SpriteFixedSqrt(s32 value)
             if (previous != 0) {
                 s32 rounded;
 
-                estimate = sub_08080BFC(input << 12, previous);
+                estimate = __divsi3(input << 12, previous);
                 estimate += previous;
                 rounded = estimate + ((u32)estimate >> 31);
                 estimate = rounded >> 1;

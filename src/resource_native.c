@@ -5,7 +5,7 @@
 #include "gba/types.h"
 #include "game_tables.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 
 extern s32 sub_080570BC(s32 id);
 extern s32 sub_08056984(s32 id);
@@ -21,7 +21,7 @@ extern void sub_080087EC(s32 a, s32 b, s32 value);
 extern void sub_080083E0(s32 a, s32 b);
 extern void sub_0806EFCC(s32 value);
 extern u32 Random(void);
-extern s32 sub_08080E4C(u32 random, u32 count);
+extern s32 __umodsi3(u32 random, u32 count);
 extern void sub_0806F120(s32 x, s32 y, s32 a, s32 b);
 extern s32 GameStateGetField42BA(void);
 extern void CreateEncounterTransitionTask(s32 value);
@@ -197,7 +197,7 @@ AT("00012F04") const u8 ScriptNativeResetEncounterStateTail[2] = {0};
 
 AT("00012F14") s32 ScriptNativeChooseRandomValue(u32 count, const s32 *args, s32 *result)
 {
-    s32 index = (s16)sub_08080E4C(Random(), count);
+    s32 index = (s16)__umodsi3(Random(), count);
     *result = args[index];
     return 1;
 }

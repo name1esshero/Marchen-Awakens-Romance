@@ -5,7 +5,7 @@
  * Callers must select a valid slot; the original routines do not bounds-check.
  */
 #include "input.h"
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 extern void CpuFill(void *, u32, u32);
 
 AT("0007A084")

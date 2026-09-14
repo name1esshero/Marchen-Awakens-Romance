@@ -8,7 +8,7 @@
  */
 #include "gba/types.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 
 extern void sub_0800FDFC(s32, s32, s32, s32, s32, s32);
 extern void sub_0800FF64(s32, s32, s32, s32, s32);
@@ -171,8 +171,8 @@ AT("00011FC4") s32 ScriptNativeSpriteCommand(u32 count, const s32 *args, s32 *re
 
 AT("00011FE4") s32 ScriptNativeFieldEffectStart(u32 count, const s32 *args, s32 *result)
 {
-    register s32 first asm("r0") = args[0];
-    register s32 second asm("r4") = args[1];
+    s32 first = args[0];
+    s32 second = args[1];
     sub_0800EB18(first, second, args[2], 0, 0, args[3], 1, 0);
     return 1;
 }

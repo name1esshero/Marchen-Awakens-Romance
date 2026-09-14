@@ -1,7 +1,7 @@
 /* Path/interpolation work-buffer setup and paired coordinate evaluation. */
 #include "sprite_engine.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 #ifdef __GNUC__
 #define TARGET_REGISTER(name)
 #else

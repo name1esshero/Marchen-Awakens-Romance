@@ -5,7 +5,7 @@
 #include "runtime_leaf.h"
 #include "runtime_misc.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 #define MAIN_ARCHIVE_NAME ((const char *)0x08086A54)
 #define KMP_VIEWPORTS ((struct KmpViewport *)(gIwramBase + 0x3BC4))
 #define KMP_SCREEN_BUFFERS ((u16 *)(gIwramBase + 0x0860))

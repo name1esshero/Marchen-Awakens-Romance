@@ -2,7 +2,7 @@
  * mounted-archive primitives. Invalid archive names return zero. */
 #include "nfp.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 
 AT("0007AAF0")
 u32 NfpGetEntryCountByName(const char *archive)

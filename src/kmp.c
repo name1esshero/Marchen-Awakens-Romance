@@ -1,6 +1,6 @@
 /* Recovered KMP viewport initialization and 16-bit attribute addressing. */
 #include "kmp.h"
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 
 /* This helper always assumes u16 attributes, as does the original.
  * 08003104 is the separate bounds-checked reader that also handles u8 data. */

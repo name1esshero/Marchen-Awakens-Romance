@@ -6,7 +6,7 @@
 extern void CpuFill(void *,u32,u32);
 extern void CpuCopy(void *,const void *,u32);
 extern void HeapFree(struct Heap *,void *);
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 #ifdef __GNUC__
 #define TARGET_REGISTER(name)
 #define NCD_ALLOCATION_BARRIER(value) ((void)0)

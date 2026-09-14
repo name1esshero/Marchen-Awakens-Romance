@@ -3,7 +3,7 @@
  * of pulses before switching to a repeating interval. No animation-specific
  * interpretation is assumed. */
 #include "gba/types.h"
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 
 struct StepCounter
 {

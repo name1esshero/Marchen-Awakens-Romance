@@ -2550,6 +2550,24 @@
     "file": "src/task_constructors.c"
   },
   {
+    "addr": "08028118",
+    "size": 52,
+    "name": "ObjectSetResourceGroupByName",
+    "file": "src/object.c"
+  },
+  {
+    "addr": "0802814C",
+    "size": 88,
+    "name": "ObjectSetResourceGroup",
+    "file": "src/object.c"
+  },
+  {
+    "addr": "080281A4",
+    "size": 60,
+    "name": "ObjectCopyFieldsFromTemplate",
+    "file": "src/object.c"
+  },
+  {
     "addr": "080282B4",
     "size": 68,
     "name": "ObjectSetState1",

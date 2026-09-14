@@ -5,7 +5,7 @@
  * resource belongs to heap zero, while the other blocks use the VM heap.
  * Unknown table roles remain offset-named in the recovered layout. */
 #include "script_vm.h"
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 #define VM (*(struct ScriptContext **)0x0300611C)
 extern s32 sub_08080070(struct ScriptFrame *);
 AT("0007ED70") s32 ScriptDispatchCurrentFrame(void)

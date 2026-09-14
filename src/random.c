@@ -2,7 +2,7 @@
  * Random returns bits 16..30, a value in 0..32767, and retains the full state.
  */
 #include "random.h"
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 AT("0007A184")
 void RandomInit(u32 seed)
 {

@@ -2,11 +2,11 @@
 #include "script_bytecode.h"
 
 #ifndef AT
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 #endif
 
-extern s32 sub_08080BFC(s32 dividend, s32 divisor);
-extern s32 sub_08080C94(s32 dividend, s32 divisor);
+extern s32 __divsi3(s32 dividend, s32 divisor);
+extern s32 __modsi3(s32 dividend, s32 divisor);
 extern s32 ScriptResourceSelectValueSlot(void *record, s32 selector);
 extern void HeapFree(void *heap, void *block);
 
@@ -222,7 +222,7 @@ AT("0007F96C") s32 ScriptCmdDivide(void)
     s32 *destination;
     if (divisor == 0) return -1;
     destination=ScriptResolveOperand(left);
-    *destination=sub_08080BFC(*destination,divisor);
+    *destination=__divsi3(*destination,divisor);
     return 1;
 }
 AT("0007F96C") const u8 ScriptCmdDivideTail[2] = {0,0};
@@ -234,7 +234,7 @@ AT("0007F9A4") s32 ScriptCmdDivideImmediate(void)
     s32 *destination;
     if (divisor == 0) return -1;
     destination=ScriptResolveOperand(operand);
-    *destination=sub_08080BFC(*destination,divisor);
+    *destination=__divsi3(*destination,divisor);
     return 1;
 }
 AT("0007F9A4") const u8 ScriptCmdDivideImmediateTail[2] = {0,0};
@@ -246,7 +246,7 @@ AT("0007F9D8") s32 ScriptCmdModulo(void)
     s32 *destination;
     if (divisor == 0) return -1;
     destination=ScriptResolveOperand(left);
-    *destination=sub_08080C94(*destination,divisor);
+    *destination=__modsi3(*destination,divisor);
     return 1;
 }
 AT("0007F9D8") const u8 ScriptCmdModuloTail[2] = {0,0};
@@ -258,7 +258,7 @@ AT("0007FA10") s32 ScriptCmdModuloImmediate(void)
     s32 *destination;
     if (divisor == 0) return -1;
     destination=ScriptResolveOperand(operand);
-    *destination=sub_08080C94(*destination,divisor);
+    *destination=__modsi3(*destination,divisor);
     return 1;
 }
 AT("0007FA10") const u8 ScriptCmdModuloImmediateTail[2] = {0,0};

@@ -1,7 +1,7 @@
 #include "game_tables.h"
 #include "script.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 
 /* Fixed 16-halfword blocks copied into battle runtime work areas. */
 AT("001ACC50") const u16 gBattleRuntimePresetA[16] = {

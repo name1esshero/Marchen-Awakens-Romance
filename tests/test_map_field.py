@@ -10,7 +10,7 @@ class MapFieldTests(unittest.TestCase):
     def test_field_name_resources_viewport_stride_and_signed_coordinates(self):
         with tempfile.TemporaryDirectory() as temp:
             folder=Path(temp)
-            source=(ROOT/'src/map_field.c').read_text().replace('__attribute__((section(".rom." x)))','').replace('(const char *)0x08086A5C','".KMP"')
+            source=(ROOT/'src/map_field.c').read_text().replace('(const char *)0x08086A5C','".KMP"')
             (folder/'field.c').write_text(source)
             (folder/'test.c').write_text(r'''
 #include "kmp.h"
@@ -49,7 +49,7 @@ int main(void) {
  return 0;
 }
 ''')
-            subprocess.run(['gcc','-O2','-I'+str(ROOT/'include'),str(folder/'field.c'),str(folder/'test.c'),'-o',str(folder/'test')],check=True)
+            subprocess.run(['gcc','-O2','-D','AT(x)=','-I'+str(ROOT/'include'),str(folder/'field.c'),str(folder/'test.c'),'-o',str(folder/'test')],check=True)
             subprocess.run([str(folder/'test')],check=True)
 
 if __name__=='__main__':unittest.main()

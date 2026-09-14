@@ -2,7 +2,7 @@
 #include "gba/types.h"
 #include "script_bytecode.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 
 extern s32 ScriptResourceRemove(s32 type, const char *name);
 extern u16 *ScriptResourceFind(s32 type, const char *name);

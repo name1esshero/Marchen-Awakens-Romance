@@ -3,7 +3,7 @@
  * Initialization preserves the original lack of allocation-failure checks.
  */
 #include "task_manager.h"
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 extern void HeapFree(struct Heap *, void *);
 
 AT("0007A5FC")

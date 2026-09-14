@@ -7,7 +7,7 @@
 #include "runtime_misc.h"
 #include "sound.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 #define SCRIPT_CONTINUE 1
 #define SCRIPT_WAIT 0x7FFF
 

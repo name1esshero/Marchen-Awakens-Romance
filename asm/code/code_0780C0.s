@@ -5542,7 +5542,7 @@ _0807DC42:
 	beq _0807DC52
 	ldr r0, [r4, #0]
 	lsls r0, r0, #12
-	bl sub_08080BFC
+	bl __divsi3
 	b _0807DC54
 	.global _0807DC52
 _0807DC52:
@@ -5632,7 +5632,7 @@ _0807DCF8:
 	subs r0, r0, r1
 	lsls r0, r0, #12
 	adds r1, r2, #0
-	bl sub_08080BFC
+	bl __divsi3
 	b _0807DD16
 	.global _0807DD14
 _0807DD14:
@@ -5764,7 +5764,7 @@ _0807DDE2:
 	lsls r0, r0, #12
 	str r2, [sp, #20]
 	str r3, [sp, #24]
-	bl sub_08080BFC
+	bl __divsi3
 	adds r4, r0, #0
 	ldr r2, [sp, #20]
 	ldr r3, [sp, #24]
@@ -5837,7 +5837,7 @@ _0807DE5C:
 	lsls r0, r0, #12
 	str r2, [sp, #20]
 	str r3, [sp, #24]
-	bl sub_08080BFC
+	bl __divsi3
 	adds r4, r0, #0
 	ldr r2, [sp, #20]
 	ldr r3, [sp, #24]
@@ -5877,7 +5877,7 @@ _0807DEA2:
 	ldr r3, [sp, #0]
 	ldr r0, [r3, #0]
 	lsls r0, r0, #12
-	bl sub_08080BFC
+	bl __divsi3
 	adds r4, r0, #0
 	b _0807DEBA
 	.global _0807DEB8
@@ -5914,7 +5914,7 @@ _0807DED8:
 	lsls r0, r0, #12
 	adds r1, r2, #0
 	str r3, [sp, #24]
-	bl sub_08080BFC
+	bl __divsi3
 	ldr r3, [sp, #24]
 	b _0807DEFA
 	.global _0807DEF8
@@ -6035,7 +6035,7 @@ _0807DF72:
 	asrs r0, r0, #12
 	lsls r0, r0, #12
 	adds r1, r6, #0
-	bl sub_08080BFC
+	bl __divsi3
 	adds r0, r0, r5
 	muls r0, r7
 	b _0807DFB0
@@ -6055,7 +6055,7 @@ _0807DFB0:
 	subs r0, r0, r5
 	lsls r0, r0, #12
 	adds r1, r6, #0
-	bl sub_08080BFC
+	bl __divsi3
 	mov r1, r9
 	subs r0, r0, r1
 	adds r0, r4, r0
@@ -6158,7 +6158,7 @@ _0807E060:
 	beq _0807E070
 	ldr r0, [r4, #0]
 	lsls r0, r0, #12
-	bl sub_08080BFC
+	bl __divsi3
 	b _0807E072
 	.global _0807E070
 _0807E070:
@@ -6248,7 +6248,7 @@ _0807E12A:
 	lsls r0, r0, #12
 	adds r1, r2, #0
 	str r3, [sp, #16]
-	bl sub_08080BFC
+	bl __divsi3
 	ldr r3, [sp, #16]
 	b _0807E14C
 	.global _0807E14A
@@ -6317,7 +6317,7 @@ _0807E1A8:
 	ldr r0, [r6, #0]
 	lsls r0, r0, #12
 	str r3, [sp, #16]
-	bl sub_08080BFC
+	bl __divsi3
 	adds r2, r0, #0
 	ldr r3, [sp, #16]
 	b _0807E1C0
@@ -6399,7 +6399,7 @@ _0807E222:
 	lsls r0, r0, #12
 	adds r1, r2, #0
 	str r3, [sp, #16]
-	bl sub_08080BFC
+	bl __divsi3
 	ldr r3, [sp, #16]
 	b _0807E244
 	.global _0807E242
@@ -6506,7 +6506,7 @@ sub_0807E2C2:
 	asrs r0, r0, #12
 	lsls r0, r0, #12
 	adds r1, r6, #0
-	bl sub_08080BFC
+	bl __divsi3
 	adds r0, r0, r5
 	muls r0, r7
 	b _0807E2DA
@@ -6526,7 +6526,7 @@ _0807E2DA:
 	subs r0, r0, r5
 	lsls r0, r0, #12
 	adds r1, r6, #0
-	bl sub_08080BFC
+	bl __divsi3
 	mov r1, r9
 	subs r0, r0, r1
 	adds r0, r4, r0

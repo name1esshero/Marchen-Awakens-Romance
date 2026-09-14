@@ -28,6 +28,20 @@ struct HitBounds
 };
 s32 HitRegionTest(s16 x, s16 y, const struct HitBounds *bounds);
 
+/* Directional collision probe, clockwise from north. Used by
+ * MapAttributeProbeDirection and MapGenerationSetProbeDirection. */
+enum MapProbeDirection
+{
+    MAP_DIR_NORTH = 1,
+    MAP_DIR_NORTHEAST,
+    MAP_DIR_EAST,
+    MAP_DIR_SOUTHEAST,
+    MAP_DIR_SOUTH,
+    MAP_DIR_SOUTHWEST,
+    MAP_DIR_WEST,
+    MAP_DIR_NORTHWEST,
+};
+
 /* The original lookup does not bounds-check id; valid table indices are 0..15. */
 void HitRegionDisable(s32 id);
 void HitRegionDisableAll(void);

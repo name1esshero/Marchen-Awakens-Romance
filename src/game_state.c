@@ -1,7 +1,7 @@
 /* Typed access to fields in the engine's main runtime allocation. */
 #include "game_state.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 extern u8 gIwramBase[];
 extern u8 gMapGenerationRootOffset[];
 #define GAME_STATE_BASE ({ \

@@ -1,7 +1,8 @@
 /* Small, typed accessors shared by the map, scene, and link runtimes. */
 #include "runtime_accessors.h"
+#include "runtime_state.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 extern u8 gIwramBase[];
 extern u8 gMapGenerationRootOffset[];
 extern u8 gIwramField3FD5Offset[];
@@ -71,7 +72,7 @@ AT("00006BD8") u32 IwramGetField0810(void)
 }
 AT("00008658") void *RuntimeGetBufferE50(void)
 {
- return *(u8 **)0x03004020+0xE50;
+ return gSecondaryRuntime+0xE50;
 }
 AT("0000D628") void *GameStateGetRecord610(u32 index)
 {

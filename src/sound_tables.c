@@ -1,6 +1,6 @@
 #include "sound.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 
 /* Fixed-point pitch, sample-rate, PSG, and extended-command tables. */
 AT("000895C8") const u8 gSoundScaleTable[180] = {

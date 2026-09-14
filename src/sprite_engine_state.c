@@ -1,7 +1,7 @@
 /* Small accessors for the sprite renderer's global work state. */
 #include "sprite_engine.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 #ifdef __GNUC__
 #define TARGET_REGISTER(name)
 #else
@@ -9,7 +9,7 @@
 #endif
 
 extern void CpuCopy(void *destination, const void *source, u32 size);
-extern s32 sub_08080BFC(s32 dividend, s32 divisor);
+extern s32 __divsi3(s32 dividend, s32 divisor);
 extern char *strcpy(char *destination, const char *source);
 extern char *strupr(char *string);
 extern s32 memcmp(const void *left, const void *right, u32 size);
@@ -610,7 +610,7 @@ AT("0007D92C")
 s32 SpriteMathDivide65536ByS16(s32 value)
 {
     s32 divisor = (s16)value;
-    return (s16)sub_08080BFC(0x10000, divisor);
+    return (s16)__divsi3(0x10000, divisor);
 }
 
 AT("0007DB4C")

@@ -2,7 +2,7 @@
  * stops each 80-byte track through 08078644, then restores the ready signature.
  * Update invokes the mixer; fade-out delegates to the interval setter. */
 #include "sound.h"
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 #define players ((const struct SoundPlayerEntry *)0x0808B144)
 #define songs ((const struct SoundSongEntry *)0x0808B1B0)
 extern void sub_08077DC0(void);

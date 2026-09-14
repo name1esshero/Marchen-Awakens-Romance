@@ -1,6 +1,6 @@
 /* Packed flag helpers; no allocation or implicit bounds checks. */
 #include "bitset.h"
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 AT("0007A190")
 void BitSet(u8 *bits, u32 index, s32 enabled)
 {

@@ -1,6 +1,6 @@
 #include "gba/types.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 
 /* MusicPlayer2000 sequence bytecode, split at every song-header track entry.
  * Each array retains its original ROM address so GOTO/PATT operands remain

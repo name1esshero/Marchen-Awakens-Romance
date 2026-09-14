@@ -2,7 +2,7 @@
 #include "gba/types.h"
 #include "heap.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 #ifdef __GNUC__
 #define TARGET_REGISTER(name)
 #define ALLOCATOR_MEMORY_BARRIER() ((void)0)

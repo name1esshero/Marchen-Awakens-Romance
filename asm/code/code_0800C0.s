@@ -995,7 +995,7 @@ _08080C80:
 	.global _08080C84
 _08080C84:
 	push {lr}
-	bl sub_08080C90
+	bl __div0
 	movs r0, #0
 	pop {pc}
 	.byte 0x00
@@ -1003,8 +1003,8 @@ _08080C84:
 
 	.thumb_func
 	.thumb
-	.global sub_08080C90
-sub_08080C90:
+	.global __div0
+__div0:
 	mov pc, lr
 	.byte 0x00
 	.byte 0x00
@@ -1144,7 +1144,7 @@ _08080D54:
 	.global _08080D58
 _08080D58:
 	push {lr}
-	bl sub_08080C90
+	bl __div0
 	movs r0, #0
 	pop {pc}
 	.byte 0x00
@@ -1294,7 +1294,7 @@ _08080E3C:
 	.global _08080E42
 _08080E42:
 	push {lr}
-	bl sub_08080C90
+	bl __div0
 	movs r0, #0
 	pop {pc}
 
@@ -1424,7 +1424,7 @@ _08080EFE:
 	.global _08080F02
 _08080F02:
 	push {lr}
-	bl sub_08080C90
+	bl __div0
 	movs r0, #0
 	pop {pc}
 

@@ -16021,7 +16021,7 @@ _08026974:
 	movs r2, #0
 	ldrsh r1, [r0, r2]
 	adds r0, r7, #0
-	bl sub_08080C94
+	bl __modsi3
 	lsls r1, r0, #3
 	adds r1, r1, r0
 	lsls r1, r1, #3
@@ -16874,7 +16874,7 @@ _08026F48:
 	.byte 0x52
 	.byte 0xF9
 	movs r1, #208
-	bl sub_08080E4C
+	bl __umodsi3
 	adds r0, #16
 	strh r0, [r5, #0]
 	.2byte 0xF053
@@ -16918,7 +16918,7 @@ sub_08026F86:
 	movs r4, #0
 	ldrsh r1, [r0, r4]
 	mov r0, r9
-	bl sub_08080C94
+	bl __modsi3
 	lsls r1, r0, #3
 	adds r1, r1, r0
 	lsls r1, r1, #3
@@ -17916,7 +17916,7 @@ _0802765C:
 	movs r2, #2
 	ldrsh r4, [r1, r2]
 	movs r1, #208
-	bl sub_08080E4C
+	bl __umodsi3
 	adds r4, r4, r0
 	adds r4, #16
 	strh r4, [r6, #62]

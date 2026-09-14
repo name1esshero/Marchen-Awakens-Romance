@@ -1,29 +1,28 @@
 /* Views of the secondary runtime's actor records and its 4-by-4 object table. */
 #include "runtime_objects.h"
-#define AT(x) __attribute__((section(".rom." x)))
-extern u8 *gSecondaryRuntime;
+#include "runtime_state.h"
+#include "rom_section.h"
 extern u8 *gRuntimeObjectTable[];
-#define RUNTIME_BASE gSecondaryRuntime
 #define OBJECT_TABLE gRuntimeObjectTable
 #define RUNTIME_OBJECT(group,slot) OBJECT_TABLE[(group)*4+(slot)]
 
-AT("0000A0E8") void *RuntimeGetPointerEA0(void) { return *(void **)(RUNTIME_BASE+0xEA0); }
-AT("0000A0FC") void RuntimeSetPointerEA0(void *v) { *(void **)(RUNTIME_BASE+0xEA0)=v; }
+AT("0000A0E8") void *RuntimeGetPointerEA0(void) { return *(void **)(gSecondaryRuntime+0xEA0); }
+AT("0000A0FC") void RuntimeSetPointerEA0(void *v) { *(void **)(gSecondaryRuntime+0xEA0)=v; }
 AT("0000A110") void RuntimeSetFieldsE48ToE4A(s32 a,s32 b,s32 c)
 {
- RUNTIME_BASE[0xE48]=a;
- RUNTIME_BASE[0xE49]=b;
- RUNTIME_BASE[0xE4A]=c;
+ gSecondaryRuntime[0xE48]=a;
+ gSecondaryRuntime[0xE49]=b;
+ gSecondaryRuntime[0xE4A]=c;
 }
-AT("0000A140") void RuntimeSetFieldE48(s32 v) { RUNTIME_BASE[0xE48]=v; }
-AT("0000A154") s32 RuntimeGetFieldE48(void) { return *(s8 *)(RUNTIME_BASE+0xE48); }
-AT("0000A16C") void RuntimeSetFieldE49(s32 v) { RUNTIME_BASE[0xE49]=v; }
-AT("0000A180") s32 RuntimeGetFieldE49(void) { return *(s8 *)(RUNTIME_BASE+0xE49); }
-AT("0000A198") void RuntimeSetFieldE4A(s32 v) { RUNTIME_BASE[0xE4A]=v; }
-AT("0000A1AC") s32 RuntimeGetFieldE4A(void) { return *(s8 *)(RUNTIME_BASE+0xE4A); }
+AT("0000A140") void RuntimeSetFieldE48(s32 v) { gSecondaryRuntime[0xE48]=v; }
+AT("0000A154") s32 RuntimeGetFieldE48(void) { return *(s8 *)(gSecondaryRuntime+0xE48); }
+AT("0000A16C") void RuntimeSetFieldE49(s32 v) { gSecondaryRuntime[0xE49]=v; }
+AT("0000A180") s32 RuntimeGetFieldE49(void) { return *(s8 *)(gSecondaryRuntime+0xE49); }
+AT("0000A198") void RuntimeSetFieldE4A(s32 v) { gSecondaryRuntime[0xE4A]=v; }
+AT("0000A1AC") s32 RuntimeGetFieldE4A(void) { return *(s8 *)(gSecondaryRuntime+0xE4A); }
 AT("0000A1C4") void *RuntimeGetActorRecord(u32 actor,u32 part)
 {
- u8 **root=(u8 **)0x03004020;
+ u8 **root=&gSecondaryRuntime;
  u32 actorOffset=actor*1672;
  u8 *base;
  u32 partOffset;

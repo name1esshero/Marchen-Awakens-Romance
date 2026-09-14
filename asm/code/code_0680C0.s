@@ -3321,7 +3321,7 @@ _08069F42:
 	subs r1, r1, r0
 	movs r0, #192
 	lsls r0, r0, #14
-	bl sub_08080BFC
+	bl __divsi3
 	str r0, [r4, #0]
 	movs r5, #0
 	movs r6, #0

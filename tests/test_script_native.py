@@ -14,7 +14,6 @@ class ScriptNativeTests(unittest.TestCase):
         cls.temp=tempfile.TemporaryDirectory();folder=Path(cls.temp.name)
         source=(ROOT/'src/script_native.c').read_text()
         source='struct ScriptContext; extern struct ScriptContext *hostVm; extern const char hostEmpty[],hostFormat[];\n'+source.replace('(*(struct ScriptContext **)0x0300611C)','hostVm').replace('0x081AC6A0','hostEmpty').replace('0x081AC6A4','hostFormat')
-        source=source.replace('__attribute__((section(".rom." x)))','')
         (folder/'native.c').write_text(source)
         (folder/'mock.c').write_text(r'''
 #include "script_vm.h"
@@ -44,7 +43,7 @@ s32 siprintf(char *text,const char *format,...) {
 }
 u32 Random(void) { return randomValues[randomCallCount++]; }
 void RandomSeed(u32 seed) { seedValue=seed; }
-u32 sub_08080E4C(u32 dividend,u32 divisor) { return dividend%divisor; }
+u32 __umodsi3(u32 dividend,u32 divisor) { return dividend%divisor; }
 s32 sub_08082640(const char *text) { return strtol(text,0,10); }
 s32 ParseDecimalInteger(const char *text) { return sub_08082640(text); }
 void ScriptPopFrame(void) {}
@@ -55,7 +54,7 @@ s32 ScriptResourceLoadAndInstall(const char *name,s32 argument) { (void)name;(vo
 char *strupr(char *text) { char *p=text;for(;*p;p++)if(*p>='a'&&*p<='z')*p-=32;return text; }
 ''')
         library=folder/'native.so'
-        subprocess.run(['gcc','-shared','-fPIC','-O2','-fno-builtin',
+        subprocess.run(['gcc','-shared','-fPIC','-O2','-fno-builtin','-D','AT(x)=',
                         '-I'+str(ROOT/'include'),str(folder/'native.c'),str(folder/'mock.c'),
                         '-o',str(library)],check=True)
         cls.lib=ctypes.CDLL(str(library))

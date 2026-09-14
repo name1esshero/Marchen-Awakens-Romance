@@ -1,6 +1,6 @@
 #include "gba/types.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 #define SONG_HEADER_TYPE(count) \
     struct { \
         u8 trackCount, blockCount, priority, reverb; \

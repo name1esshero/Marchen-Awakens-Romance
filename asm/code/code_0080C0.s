@@ -2656,7 +2656,7 @@ _08009358:
 	lsls r2, r2, #1
 	adds r1, r5, r2
 	ldr r1, [r1, #0]
-	bl sub_08080BFC
+	bl __divsi3
 	adds r6, r0, #0
 	lsls r4, r6, #6
 	subs r4, r4, r6
@@ -2967,7 +2967,7 @@ sub_0800956C:
 	subs r2, #4
 	adds r1, r3, r2
 	ldr r1, [r1, #0]
-	bl sub_08080BFC
+	bl __divsi3
 	adds r5, r0, #0
 	lsls r4, r5, #6
 	subs r4, r4, r5
@@ -3433,7 +3433,7 @@ _08009A76:
 	adds r6, #1
 	adds r0, r6, #0
 	movs r1, #20
-	bl sub_08080C94
+	bl __modsi3
 	adds r6, r0, #0
 	lsls r4, r6, #16
 	asrs r4, r4, #16
@@ -3482,7 +3482,7 @@ sub_08009ABC:
 	adds r6, #1
 	adds r0, r6, #0
 	movs r1, #20
-	bl sub_08080C94
+	bl __modsi3
 	adds r6, r0, #0
 	lsls r0, r6, #16
 	asrs r0, r0, #16
@@ -3638,7 +3638,7 @@ _08009C7C:
 	.global sub_08009C86
 sub_08009C86:
 	movs r1, #100
-	bl sub_08080BFC
+	bl __divsi3
 	adds r0, #1
 	.global _08009C8E
 _08009C8E:
@@ -5167,7 +5167,7 @@ _0800ACD0:
 	bl sub_08009C40
 	adds r6, r0, #0
 	movs r1, #10
-	bl sub_08080BFC
+	bl __divsi3
 	adds r5, r0, #1
 	bl sub_0800832C
 	movs r1, #1
@@ -5176,14 +5176,14 @@ _0800ACD0:
 	beq _0800AD04
 	bl sub_0800832C
 	adds r1, r5, #0
-	bl sub_08080E4C
+	bl __umodsi3
 	adds r5, r0, #0
 	b _0800AD10
 	.global _0800AD04
 _0800AD04:
 	bl sub_0800832C
 	adds r1, r5, #0
-	bl sub_08080E4C
+	bl __umodsi3
 	negs r5, r0
 	.global _0800AD10
 _0800AD10:
@@ -5246,14 +5246,14 @@ _0800AD64:
 	beq _0800AD8A
 	bl sub_0800832C
 	adds r1, r5, #0
-	bl sub_08080E4C
+	bl __umodsi3
 	adds r5, r0, #0
 	b _0800AD96
 	.global _0800AD8A
 _0800AD8A:
 	bl sub_0800832C
 	adds r1, r5, #0
-	bl sub_08080E4C
+	bl __umodsi3
 	negs r5, r0
 	.global _0800AD96
 _0800AD96:
@@ -5868,7 +5868,7 @@ _0800B0F8:
 	adds r0, r4, #0
 	movs r1, #1
 	movs r3, #0
-	bl sub_08028118
+	bl ObjectSetResourceGroupByName
 	adds r0, r4, #0
 	movs r1, #3
 

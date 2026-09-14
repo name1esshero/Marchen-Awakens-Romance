@@ -7,7 +7,7 @@
  * destination/byte count/pattern before marking itself for scheduler removal.
  */
 #include "gba/types.h"
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 extern void FinishTask(void *);
 extern void CpuFill(void *,u32,u32);
 AT("0000380C") void VramFillTask(void *task)

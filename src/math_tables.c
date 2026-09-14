@@ -3,7 +3,7 @@
  * initializers are disposable build products. */
 #include "math_tables.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 
 AT("00F28410") const u8 gOamAttributeMasks[16] = {
 #include "../build/generated/oam_attribute_masks.inc"

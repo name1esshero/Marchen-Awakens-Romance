@@ -1,7 +1,7 @@
 /* Fixed-selector adapters for battle task constructors. */
 #include "gba/types.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 
 extern void *sub_0802DBE0(s32, s32, void *, void *, s32);
 extern void *sub_0802E3D4(s32, s32, void *, void *, s32);

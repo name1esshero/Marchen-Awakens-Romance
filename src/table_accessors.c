@@ -3,27 +3,27 @@
 #include "map_placements.h"
 #include "item.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
-#define RUNTIME (*(u8 **)0x03004020)
+#include "runtime_state.h"
+#include "rom_section.h"
 
 #ifdef NONMATCHING
 AT("00009508")
 void *RuntimeGetPointerTableEntry(s32 index)
 {
-    return *(void **)(RUNTIME + 0xE3C + index * 4);
+    return *(void **)(gSecondaryRuntime + 0xE3C + index * 4);
 }
 #endif
 
 AT("0000AF88")
 s32 RuntimeGetSignedByteE4B(void)
 {
-    return *(s8 *)(RUNTIME + 0xE4B);
+    return *(s8 *)(gSecondaryRuntime + 0xE4B);
 }
 
 AT("0000AFCC")
 s32 RuntimeGetSignedByteE4C(void)
 {
-    return *(s8 *)(RUNTIME + 0xE4C);
+    return *(s8 *)(gSecondaryRuntime + 0xE4C);
 }
 
 #ifdef NONMATCHING

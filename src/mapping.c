@@ -1,7 +1,8 @@
 /* Procedural map-generation state and its deterministic local RNG. */
 #include "map_generation.h"
+#include "kmp.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 
 extern u8 gIwramBase[];
 extern u8 gMapGenerationRootOffset[];
@@ -540,7 +541,7 @@ AT("00012490") s32 ScriptNativeMapSetBoundedValue(u32 count, const s32 *args,
 {
     s32 value = args[0];
     if ((u32)(value - 400) <= 99)
-        sub_080728A0((void *)0x03003BC4, value);
+        sub_080728A0((void *)gKmpViewports, value);
     return 1;
 }
 

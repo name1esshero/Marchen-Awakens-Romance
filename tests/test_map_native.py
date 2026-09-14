@@ -8,7 +8,7 @@ class MapNativeTests(unittest.TestCase):
     def test_arguments_truncation_free_dispatch_and_return_protocol(self):
         with tempfile.TemporaryDirectory() as temp:
             folder=Path(temp)
-            source=(ROOT/'src/map_native.c').read_text().replace('__attribute__((section(".rom." x)))','')
+            source=(ROOT/'src/map_native.c').read_text()
             (folder/'native.c').write_text(source)
             (folder/'test.c').write_text(r'''
 #include "native.c"
@@ -51,6 +51,6 @@ int main(void) {
  return 0;
 }
 ''')
-            subprocess.run(['gcc','-O2','-I'+str(ROOT/'include'),str(folder/'test.c'),'-o',str(folder/'test')],check=True)
+            subprocess.run(['gcc','-O2','-D','AT(x)=','-I'+str(ROOT/'include'),str(folder/'test.c'),'-o',str(folder/'test')],check=True)
             subprocess.run([str(folder/'test')],check=True)
 if __name__=='__main__':unittest.main()

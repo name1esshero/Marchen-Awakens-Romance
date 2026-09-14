@@ -6,7 +6,7 @@
 #include "kmp.h"
 #include "hit_region.h"
 #include "runtime_misc.h"
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 /* Native arguments occupy four bytes on GBA. String and integer arguments
  * share the same VM slots; only FldSet reads a string here. */
 union MapArgument {s32 integer; const char *string;};
@@ -38,7 +38,7 @@ selectedVram:
     strcat(resource,(const char *)0x08086D88);
     KmpLoadResource(resource,tileDestination,args[0].integer,0,
                  args[1].integer,args[2].integer,3);
-    view=(struct KmpViewport *)((u8 *)0x03003BC4+args[0].integer*0xFC);
+    view=&gKmpViewports[args[0].integer];
     KmpRenderViewport(view,args[4].integer<<16,args[5].integer<<16);
     return 0x7FFF;
 }

@@ -3,7 +3,7 @@
 #include "map_generation.h"
 #include "hit_region.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 
 /* Sample the leading edge/corner of an actor's collision bounds. Directions
  * run clockwise: north, northeast, east, southeast, south, southwest, west,
@@ -18,43 +18,42 @@ s32 MapAttributeProbeDirection(s32 direction, s32 x, s32 y,
     s32 probeY;
 
     switch (direction) {
-    case 1:
+    case MAP_DIR_NORTH:
         probeX = px;
         probeY = py + bounds->top;
         break;
-    case 2:
+    case MAP_DIR_NORTHEAST:
         probeX = px + bounds->right;
         probeY = py + bounds->top;
         break;
-    case 3:
+    case MAP_DIR_EAST:
         probeX = px + bounds->right;
         probeY = py;
         break;
-    case 4:
+    case MAP_DIR_SOUTHEAST:
         probeX = px + bounds->right;
         probeY = py + bounds->bottom;
         break;
-    case 5:
+    case MAP_DIR_SOUTH:
         probeX = px;
         probeY = py + bounds->bottom;
         break;
-    case 6:
+    case MAP_DIR_SOUTHWEST:
         probeX = px + bounds->left;
         probeY = py + bounds->bottom;
         break;
-    case 7:
+    case MAP_DIR_WEST:
         probeX = px + bounds->left;
         probeY = py;
         break;
-    case 8:
+    case MAP_DIR_NORTHWEST:
         probeX = px + bounds->left;
         probeY = py + bounds->top;
         break;
     default:
         return 0;
     }
-    return KmpReadAttribute((struct KmpViewport *)0x03003BC4,
-                            probeX, probeY);
+    return KmpReadAttribute(gKmpViewports, probeX, probeY);
 }
 
 /* Store the same directional collision probe coordinate for the procedural
@@ -69,35 +68,35 @@ void MapGenerationSetProbeDirection(s32 direction, s32 x, s32 y,
     s32 probeY;
 
     switch (direction) {
-    case 1:
+    case MAP_DIR_NORTH:
         probeX = px;
         probeY = py + bounds->top;
         break;
-    case 2:
+    case MAP_DIR_NORTHEAST:
         probeX = px + bounds->right;
         probeY = py + bounds->top;
         break;
-    case 3:
+    case MAP_DIR_EAST:
         probeX = px + bounds->right;
         probeY = py;
         break;
-    case 4:
+    case MAP_DIR_SOUTHEAST:
         probeX = px + bounds->right;
         probeY = py + bounds->bottom;
         break;
-    case 5:
+    case MAP_DIR_SOUTH:
         probeX = px;
         probeY = py + bounds->bottom;
         break;
-    case 6:
+    case MAP_DIR_SOUTHWEST:
         probeX = px + bounds->left;
         probeY = py + bounds->bottom;
         break;
-    case 7:
+    case MAP_DIR_WEST:
         probeX = px + bounds->left;
         probeY = py;
         break;
-    case 8:
+    case MAP_DIR_NORTHWEST:
         probeX = px + bounds->left;
         probeY = py + bounds->top;
         break;
@@ -121,6 +120,17 @@ void MapGenerationSetVector(u32 index, s32 value0, s32 value4,
 }
 AT("000720E8") const u8 MapGenerationSetVectorTail[2] = {0, 0};
 
+/* Neighbor connection bits returned by MapAttributeGetConnectionMask. */
+#define MAP_CONNECTION_NORTH 1
+#define MAP_CONNECTION_EAST  2
+#define MAP_CONNECTION_SOUTH 4
+#define MAP_CONNECTION_WEST  8
+
+/* Attribute classes treated as a procedural connection tile. */
+#define MAP_ATTR_CONNECTION_CLASS_LO       400
+#define MAP_ATTR_CONNECTION_CLASS_HI      5400
+#define MAP_ATTR_CONNECTION_CLASS_COUNT     99
+
 /* Return a NESW bit mask for neighboring procedural connection tiles.
  * Classes 400..499 and 5400..5499 are treated alike by the original code.
  * This establishes connectivity semantics, but does not yet establish the
@@ -131,25 +141,25 @@ u32 MapAttributeGetConnectionMask(s32 tileX, s32 tileY)
     u32 mask = 0;
     s32 attribute;
 
-    attribute = KmpReadAttribute((struct KmpViewport *)0x03003BC4,
-                                 tileX << 3, (tileY - 1) << 3);
-    if ((u32)(attribute - 400) <= 99 || (u32)(attribute - 5400) <= 99)
-        mask = 1;
+    attribute = KmpReadAttribute(gKmpViewports, tileX << 3, (tileY - 1) << 3);
+    if ((u32)(attribute - MAP_ATTR_CONNECTION_CLASS_LO) <= MAP_ATTR_CONNECTION_CLASS_COUNT
+     || (u32)(attribute - MAP_ATTR_CONNECTION_CLASS_HI) <= MAP_ATTR_CONNECTION_CLASS_COUNT)
+        mask = MAP_CONNECTION_NORTH;
 
-    attribute = KmpReadAttribute((struct KmpViewport *)0x03003BC4,
-                                 (tileX + 1) << 3, tileY << 3);
-    if ((u32)(attribute - 400) <= 99 || (u32)(attribute - 5400) <= 99)
-        mask |= 2;
+    attribute = KmpReadAttribute(gKmpViewports, (tileX + 1) << 3, tileY << 3);
+    if ((u32)(attribute - MAP_ATTR_CONNECTION_CLASS_LO) <= MAP_ATTR_CONNECTION_CLASS_COUNT
+     || (u32)(attribute - MAP_ATTR_CONNECTION_CLASS_HI) <= MAP_ATTR_CONNECTION_CLASS_COUNT)
+        mask |= MAP_CONNECTION_EAST;
 
-    attribute = KmpReadAttribute((struct KmpViewport *)0x03003BC4,
-                                 tileX << 3, (tileY + 1) << 3);
-    if ((u32)(attribute - 400) <= 99 || (u32)(attribute - 5400) <= 99)
-        mask |= 4;
+    attribute = KmpReadAttribute(gKmpViewports, tileX << 3, (tileY + 1) << 3);
+    if ((u32)(attribute - MAP_ATTR_CONNECTION_CLASS_LO) <= MAP_ATTR_CONNECTION_CLASS_COUNT
+     || (u32)(attribute - MAP_ATTR_CONNECTION_CLASS_HI) <= MAP_ATTR_CONNECTION_CLASS_COUNT)
+        mask |= MAP_CONNECTION_SOUTH;
 
-    attribute = KmpReadAttribute((struct KmpViewport *)0x03003BC4,
-                                 (tileX - 1) << 3, tileY << 3);
-    if ((u32)(attribute - 400) <= 99 || (u32)(attribute - 5400) <= 99)
-        mask |= 8;
+    attribute = KmpReadAttribute(gKmpViewports, (tileX - 1) << 3, tileY << 3);
+    if ((u32)(attribute - MAP_ATTR_CONNECTION_CLASS_LO) <= MAP_ATTR_CONNECTION_CLASS_COUNT
+     || (u32)(attribute - MAP_ATTR_CONNECTION_CLASS_HI) <= MAP_ATTR_CONNECTION_CLASS_COUNT)
+        mask |= MAP_CONNECTION_WEST;
 
     return mask;
 }

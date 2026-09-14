@@ -9,7 +9,7 @@
  */
 #include "item.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 
 /* Item IDs are one-based.  ID zero has no name and displays one full-width
  * Shift-JIS space (0x8140) as its description. */

@@ -1,12 +1,10 @@
 /* Constructor for the five-part encounter sprite task. The task owns five
  * 72-byte NCD sprite containers followed by selection and completion state.
- * The explicit register-bound temporaries reproduce the original agbcc loop
- * allocation while keeping the state layout and initialization readable.
  */
 #include "gba/types.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
-#define SECONDARY_RUNTIME (*(u8 **)0x03004020)
+#include "runtime_state.h"
+#include "rom_section.h"
 
 extern u8 *CreateTask(void *, void *, u32, s32 *, u32);
 extern void NcdSpriteContainerReset(void *);
@@ -16,11 +14,11 @@ extern void RuntimeObjectSetField4C(s32, s32, s32);
 AT("00012FD0") u8 *CreateEncounterSpriteTask(s32 owner, s32 slot,
                                               void *context, s32 *result)
 {
-    u8 *task = CreateTask(SECONDARY_RUNTIME + owner * 32,
+    u8 *task = CreateTask(gSecondaryRuntime + owner * 32,
                           (void *)0x080130A1, 0, result, 668);
     u8 *state = task + 32;
-    register s32 objectIndex asm("r0");
-    register s32 zero asm("r10");
+    s32 objectIndex;
+    s32 zero;
     u8 *sprite;
     s32 remaining;
     task[392] = owner;

@@ -39,6 +39,12 @@ struct KmpViewport
     u32 clipX, clipY, clipWidth, clipHeight;
     u8 reserved30[0xCC];             /* complete viewport slot is 0xFC bytes */
 };
+
+/* Fixed IWRAM viewport slots, indexed by struct size (0xFC bytes each).
+ * Index 0 is the primary field viewport that collision/attribute probing
+ * reads from; KmpLoadField also uses index 1 for the second rendered plane. */
+#define gKmpViewports ((struct KmpViewport *)0x03003BC4)
+
 void KmpInitViewport(struct KmpViewport *, const struct KmpHeader *, u16 *, u32, u32, u32);
 void KmpRenderViewport(struct KmpViewport *, s32 xFixed, s32 yFixed);
 void KmpLoadResource(const char *name, void *tileDestination, s32 slot, s32 plane,

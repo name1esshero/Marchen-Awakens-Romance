@@ -20,10 +20,10 @@ class HitRegionTests(unittest.TestCase):
     def setUpClass(cls):
         cls.temp = tempfile.TemporaryDirectory()
         folder = Path(cls.temp.name)
-        source = (ROOT / 'src/hit_region.c').read_text().replace('__attribute__((section(".rom." x)))', '')
+        source = (ROOT / 'src/hit_region.c').read_text()
         (folder / 'hit.c').write_text(source)
         (folder / 'mock.c').write_text('#include "hit_region.h"\nstruct HitRegion regions[17];\nstruct HitRegion *sub_08011464(s32 id){return &regions[id];}\n')
-        subprocess.run(['gcc', '-shared', '-fPIC', '-O2', '-I'+str(ROOT/'include'), str(folder/'hit.c'), str(folder/'mock.c'), '-o', str(folder/'hit.so')], check=True)
+        subprocess.run(['gcc', '-shared', '-fPIC', '-O2', '-D', 'AT(x)=', '-I'+str(ROOT/'include'), str(folder/'hit.c'), str(folder/'mock.c'), '-o', str(folder/'hit.so')], check=True)
         cls.lib = ctypes.CDLL(str(folder/'hit.so'))
         cls.lib.HitRegionTest.argtypes = [ctypes.c_int16, ctypes.c_int16, ctypes.POINTER(Bounds)]
         cls.regions = (Region * 17).in_dll(cls.lib, 'regions')

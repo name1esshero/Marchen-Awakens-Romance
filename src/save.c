@@ -4,7 +4,7 @@
 #include "game_state.h"
 #include "byte_utils.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 #define SRAM_BASE ((u8 *)0x0E000000)
 #define SAVE_HEADER_SIZE 44
 #define SAVE_FORMAT_VERSION 0x3F828F5C
@@ -24,7 +24,7 @@ extern const struct SaveMagic gSaveMagic;
 AT("0006E54C") s32 WriteSaveBlock(struct SaveBlock *save)
 {
     const struct SaveMagic *magic = &gSaveMagic;
-    register u32 blockSize asm("r6") = SAVE_BLOCK_SIZE;
+    u32 blockSize = SAVE_BLOCK_SIZE;
     u32 zero;
 
     *(struct SaveMagic *)save->magic = *magic;
@@ -41,7 +41,7 @@ AT("0006E54C") s32 WriteSaveBlock(struct SaveBlock *save)
 
 AT("0006E5AC") s32 LoadSaveBlock(struct SaveBlock *save)
 {
-    register u32 blockSize asm("r5") = SAVE_BLOCK_SIZE;
+    u32 blockSize = SAVE_BLOCK_SIZE;
     s32 status;
 
     ReadSramFast(SRAM_BASE, (u8 *)save, blockSize);
@@ -157,9 +157,9 @@ AT("0006E150") const u8 CreateSaveBlockLoadTaskTail[2] = {0};
  * the whole block. */
 AT("0006E184") void SaveBlockLoadTask(struct EngineTask *task)
 {
-    register struct EngineTask *localTask asm("r5") = task;
-    register u8 *work asm("r4") = (u8 *)localTask + 32;
-    register struct SaveBlock *save asm("r6") =
+    struct EngineTask *localTask = task;
+    u8 *work = (u8 *)localTask + 32;
+    struct SaveBlock *save =
         *(struct SaveBlock **)(work + 12);
 
     switch (*(u16 *)((u8 *)localTask + 14)) {
@@ -207,7 +207,7 @@ AT("0006E184") void SaveBlockLoadTask(struct EngineTask *task)
         *(u16 *)((u8 *)localTask + 14) = 6;
         break;
     case 6: {
-        register u32 *completion asm("r1") = localTask->completion;
+        u32 *completion = localTask->completion;
         if (completion != 0)
             *completion = *(s32 *)(work + 4);
         FinishTask(localTask);
@@ -306,8 +306,8 @@ AT("0006E360") const u8 CreateSaveHeaderWriteTaskTail[2] = {0};
  * before this parent reports completion. */
 AT("0006E39C") void SaveHeaderWriteTask(struct EngineTask *task)
 {
-    register u8 *work asm("r6") = (u8 *)task + 32;
-    register struct SaveBlock *save asm("r5");
+    u8 *work = (u8 *)task + 32;
+    struct SaveBlock *save;
     u8 *iwram = gIwramBase;
     u32 rootOffset = (u32)gMapGenerationRootOffset;
 
@@ -377,11 +377,11 @@ AT("0006E650") void SaveWriteTask(struct EngineTask *task)
             s32 attempts = *(s32 *)(work + 20) + 1;
             *(u32 *)(work + 20) = attempts;
             if (attempts > 15) {
-                register u32 failedState asm("r0") = 0x2000;
+                u32 failedState = 0x2000;
                 *(u16 *)((u8 *)task + 14) = failedState;
             }
         } else {
-            register u32 finishedState asm("r0");
+            u32 finishedState;
             *(u32 *)(work + 16) = (u32)mismatch;
             *(u32 *)(work + 20) = (u32)mismatch;
             GameStateSetField42BC(128);

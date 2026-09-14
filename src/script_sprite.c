@@ -4,10 +4,11 @@
  */
 #include "script_sprite.h"
 #include "runtime_misc.h"
+#include "rom_section.h"
 extern char *strcpy(char *,const char *);
 extern char *strupr(char *);
 extern s32 SpriteResourceFindGroup(s32,const char *);
-__attribute__((section(".rom.00010C0C"))) void ScriptSpriteSelect(s32 id,s32 container,const char *name,s32 animation,s32 frame)
+AT("00010C0C") void ScriptSpriteSelect(s32 id,s32 container,const char *name,s32 animation,s32 frame)
 {
  char resource[16];
  struct ScriptSprite *sprite=GameStateGetRecord0B90(id);
@@ -20,7 +21,7 @@ __attribute__((section(".rom.00010C0C"))) void ScriptSpriteSelect(s32 id,s32 con
  }
 }
 
-__attribute__((section(".rom.00011EF4"))) s32 ScriptNativeSpriteChange(u32 count,const union SpriteArgument *args,s32 *result)
+AT("00011EF4") s32 ScriptNativeSpriteChange(u32 count,const union SpriteArgument *args,s32 *result)
 {
  ScriptSpriteSelect(args[0].integer,args[1].integer,args[2].string,args[3].integer,args[4].integer);
  return 1;
@@ -30,7 +31,7 @@ __attribute__((section(".rom.00011EF4"))) s32 ScriptNativeSpriteChange(u32 count
  * The fifth script value is forwarded unchanged; it is not a start-frame
  * selector. The creation task initializes the animation at frame zero. */
 extern void sub_08010AEC(s32,s32,const char *,s32,s32,s32,s32);
-__attribute__((section(".rom.00011ECC"))) s32 ScriptNativeSpriteInit(u32 count,const union SpriteArgument *args,s32 *result)
+AT("00011ECC") s32 ScriptNativeSpriteInit(u32 count,const union SpriteArgument *args,s32 *result)
 {
  sub_08010AEC(args[0].integer,args[1].integer,args[2].string,args[3].integer,args[4].integer,1,0);
  return 1;
@@ -41,18 +42,18 @@ __attribute__((section(".rom.00011ECC"))) s32 ScriptNativeSpriteInit(u32 count,c
  * SprGet passes through the VM result pointer. SprSet leaves it untouched. */
 extern s32 sub_08010E44(s32,s32,s32,s32,s32,s32,s32);
 extern s32 sub_08011174(s32,s32,s32 *,s32);
-__attribute__((section(".rom.00011F40"))) s32 ScriptNativeSpriteSet(u32 count,const s32 *args,s32 *result)
+AT("00011F40") s32 ScriptNativeSpriteSet(u32 count,const s32 *args,s32 *result)
 {
  sub_08010E44(args[0],args[1],0,0,args[2],1,0);
  return 1;
 }
-__attribute__((section(".rom.00011F40"))) const u8 ScriptNativeSpriteSetTail[2]={0,0};
-__attribute__((section(".rom.00011F68"))) s32 ScriptNativeSpriteGet(u32 count,const s32 *args,s32 *result)
+AT("00011F40") const u8 ScriptNativeSpriteSetTail[2]={0,0};
+AT("00011F68") s32 ScriptNativeSpriteGet(u32 count,const s32 *args,s32 *result)
 {
  sub_08011174(args[0],args[1],result,0);
  return 1;
 }
-__attribute__((section(".rom.00011F68"))) const u8 ScriptNativeSpriteGetTail[2]={0,0};
+AT("00011F68") const u8 ScriptNativeSpriteGetTail[2]={0,0};
 
 /* SprInit worker, 08010B6C..08010C0C. State 0 schedules preparation;
  * state 16 waits on payload +44. Only then are the sprite resources activated.
@@ -71,7 +72,7 @@ extern void CpuFill(void *,u32,u32);
 extern s32 SpriteResourceFindGroup(s32,const char *);
 extern void ScriptCompletePendingTasks(u32);
 extern void FinishTask(void *);
-__attribute__((section(".rom.00010B6C"))) void ScriptSpriteInitTask(struct SpriteInitTask *task)
+AT("00010B6C") void ScriptSpriteInitTask(struct SpriteInitTask *task)
 {
  s32 *payload=&task->id;
  struct ScriptSprite *sprite=GameStateGetRecord0B90(task->id);
@@ -92,7 +93,7 @@ __attribute__((section(".rom.00010B6C"))) void ScriptSpriteInitTask(struct Sprit
  }
  }
 }
-__attribute__((section(".rom.00010B6C"))) const u8 ScriptSpriteInitTaskTail[2]={0,0};
+AT("00010B6C") const u8 ScriptSpriteInitTaskTail[2]={0,0};
 
 /* Deferred script-sprite reset workers. Active records wait while +0x1A
  * is nonzero. Auxiliary teardown precedes clearing the 40-byte record.
@@ -105,7 +106,7 @@ extern void HeapFree(void *,void *);
 extern void CpuFill(void *,u32,u32);
 extern void ScriptCompletePendingTasks(u32);
 extern void FinishTask(void *);
-__attribute__((section(".rom.000109C4"))) void ScriptSpriteResetTask(void *task)
+AT("000109C4") void ScriptSpriteResetTask(void *task)
 {
  struct ScriptSprite *sprite=GameStateGetRecord0B90(*(s32 *)((u8 *)task+32));
  if(sprite->active){
@@ -123,9 +124,9 @@ __attribute__((section(".rom.000109C4"))) void ScriptSpriteResetTask(void *task)
  if(*(s32 **)((u8 *)task+24))**(s32 **)((u8 *)task+24)=-1;
  FinishTask(task);
 }
-__attribute__((section(".rom.000109C4"))) const u8 ScriptSpriteResetTaskTail[2]={0,0};
+AT("000109C4") const u8 ScriptSpriteResetTaskTail[2]={0,0};
 
-__attribute__((section(".rom.00010A70"))) void ScriptSpriteResetAllTask(void *task)
+AT("00010A70") void ScriptSpriteResetAllTask(void *task)
 {
  struct ScriptSprite *sprite=GameStateGetRecord0B90(0);
  s32 waiting=0,i=31;
@@ -151,4 +152,4 @@ __attribute__((section(".rom.00010A70"))) void ScriptSpriteResetAllTask(void *ta
   FinishTask(task);
  }
 }
-__attribute__((section(".rom.00010A70"))) const u8 ScriptSpriteResetAllTaskTail[2]={0,0};
+AT("00010A70") const u8 ScriptSpriteResetAllTaskTail[2]={0,0};

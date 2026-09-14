@@ -2,7 +2,7 @@
  * as in the original callers. No range checks are added. */
 #include "item.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 
 /* Consumables use one-based IDs.  Their printable fields have the same
  * 0x50-byte stride as ItemDefinition, but the lookup bases point at a blank

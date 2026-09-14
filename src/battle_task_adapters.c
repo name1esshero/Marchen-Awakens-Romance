@@ -3,7 +3,7 @@
  * result. These entry tables specialize the final two task fields. */
 #include "gba/types.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 
 extern void *sub_0804A720(s32 owner, s32 slot, void *resource, void *result, s32 group, s32 variant);
 extern void *sub_0804EF70(s32 owner, s32 slot, void *resource, void *result, s32 group, s32 variant);

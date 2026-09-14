@@ -2,7 +2,7 @@
 #include "task_manager.h"
 /* The original source reused argument registers across CreateTask.  Keeping
  * those lvalues preserves agbcc's allocation while the control flow stays C. */
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 extern void SoundWaitTask(struct EngineTask *task);
 extern void ScriptAddPendingTasks(s32 count);
 extern void sub_08080BD4(void *task);

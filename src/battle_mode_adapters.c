@@ -4,7 +4,7 @@
  */
 #include "gba/types.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 
 extern s32 sub_0802AEBC();
 extern s32 CreateBattleModeTask2C1();

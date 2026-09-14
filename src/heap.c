@@ -3,7 +3,7 @@
  * heap; HeapInitDefault instead requires caller-supplied storage.
  */
 #include "heap.h"
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 extern void CpuFill(void *, u32, u32);
 extern void *sub_0807A54C(struct Heap *, u32, u32);
 

@@ -1958,7 +1958,7 @@ _08058D28:
 	subs r1, #6
 	movs r0, #192
 	lsls r0, r0, #14
-	bl sub_08080BFC
+	bl __divsi3
 	str r0, [r4, #0]
 	movs r5, #0
 	movs r3, #208
@@ -8390,7 +8390,7 @@ sub_0805B482:
 	subs r1, r1, r0
 	movs r0, #192
 	lsls r0, r0, #14
-	bl sub_08080BFC
+	bl __divsi3
 	str r0, [r4, #0]
 	ldr r0, _0805B618
 	adds r7, r6, r0
@@ -9491,7 +9491,7 @@ _0805BB32:
 	subs r1, r1, r0
 	movs r0, #192
 	lsls r0, r0, #14
-	bl sub_08080BFC
+	bl __divsi3
 	str r0, [r4, #0]
 
 	.thumb_func
@@ -10247,7 +10247,7 @@ sub_0805BE88:
 	.thumb
 	.global sub_0805BE8C
 sub_0805BE8C:
-	bl sub_08080BFC
+	bl __divsi3
 	str r0, [r4, #0]
 	subs r7, #36
 	adds r4, r6, r7
@@ -10707,7 +10707,7 @@ sub_0805C070:
 	subs r1, r1, r0
 	movs r0, #192
 	lsls r0, r0, #14
-	bl sub_08080BFC
+	bl __divsi3
 	str r0, [r4, #0]
 	subs r7, #36
 	adds r4, r6, r7

@@ -3,7 +3,7 @@
  */
 #include "gba/types.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 
 extern void sub_08004BA4(void);
 extern void RuntimeSetFieldEE8(s32 value);

@@ -1,7 +1,7 @@
 /* Mount names are uppercased on assignment. Unmount only clears the active
  * flag; callers retain ownership of archive data. */
 #include "nfp.h"
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 extern char *strcpy(char *,const char *);
 extern char *strupr(char *);
 AT("0007AA48")

@@ -2,7 +2,7 @@
 #include "gba/types.h"
 #include "runtime_accessors.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 #define RUNTIME_ROOT (*(u8 **)0x0300401C)
 
 extern void CpuFill(void *destination, u32 size, u32 value);

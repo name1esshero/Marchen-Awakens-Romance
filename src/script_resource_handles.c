@@ -1,7 +1,7 @@
 /* Lazy name-backed handles used by the script VM's two resource classes. */
 #include "gba/types.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 
 extern s32 ScriptResourceNameFirst(const char *name);
 extern s32 ScriptResourceNameSecond(const char *name);

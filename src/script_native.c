@@ -8,10 +8,10 @@
  */
 #include "script_vm.h"
 #include "random.h"
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 #define VM (*(struct ScriptContext **)0x0300611C)
 extern void *HeapAlloc(void *,u32);
-extern u32 sub_08080E4C(u32 dividend,u32 divisor);
+extern u32 __umodsi3(u32 dividend,u32 divisor);
 extern s32 ParseDecimalInteger(const char *text);
 extern s32 strcmp(const char *left,const char *right);
 extern u32 strlen(const char *text);
@@ -68,7 +68,7 @@ AT("000801E0") s32 ScriptNativeRandomRange(u32 count,const u32 *args,u32 *result
 {
  u32 low=Random();
  u32 high=Random();
- *result=sub_08080E4C(low | (high << 15),args[0]);
+ *result=__umodsi3(low | (high << 15),args[0]);
  return 1;
 }
 

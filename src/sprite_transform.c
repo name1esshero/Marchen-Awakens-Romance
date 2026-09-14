@@ -2,7 +2,7 @@
 #include "sprite_engine.h"
 #include "math_tables.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 #ifdef __GNUC__
 #define TARGET_REGISTER(name)
 #else
@@ -11,7 +11,7 @@
 
 #define SPRITE_SINE_TABLE gSineTable14
 
-extern s32 sub_08080BFC(s32 dividend, s32 divisor);
+extern s32 __divsi3(s32 dividend, s32 divisor);
 
 /* Rotate a 18.14 fixed-point vector around the X axis. Angles use the
  * engine's 4096-step turn, and the sine table's quarter turn supplies cosine. */
@@ -213,7 +213,7 @@ void SpriteProjectPoint(struct SpriteVector3 *point)
 
     numerator <<= 12;
     divisor = (s32 *)(state + 324);
-    origin += sub_08080BFC(numerator, *divisor) >> 12;
+    origin += __divsi3(numerator, *divisor) >> 12;
     out->x = origin;
     origin = *(s16 *)(state + 330);
     {
@@ -221,7 +221,7 @@ void SpriteProjectPoint(struct SpriteVector3 *point)
         numerator = oldY * secondScale;
     }
     numerator <<= 12;
-    origin += sub_08080BFC(numerator, *divisor) >> 12;
+    origin += __divsi3(numerator, *divisor) >> 12;
     out->y = origin;
 }
 

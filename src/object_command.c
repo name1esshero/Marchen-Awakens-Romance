@@ -6,8 +6,8 @@
  */
 #include "gba/types.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
-#define gObjectHeap (*(u8 **)0x03004020)
+#include "runtime_state.h"
+#include "rom_section.h"
 
 extern void *CreateTask(void *state, void *callback, u32 priority,
                         s32 *result, u32 payloadSize);
@@ -34,7 +34,7 @@ void *StartObjectCommandTask(u32 window, u32 line, const s32 *arguments,
     s32 commandMode = (s16)mode;
     s32 i;
 
-    request = CreateTask(gObjectHeap + (window << 5) + (line << 4),
+    request = CreateTask(gSecondaryRuntime + (window << 5) + (line << 4),
                          ObjectCommandTaskMain, 0, result, 192);
     if (request == 0)
     {

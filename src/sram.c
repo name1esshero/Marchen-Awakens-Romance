@@ -1,6 +1,6 @@
 #include "sram.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 #define WAITCNT_ADDRESS ((vu16 *)0x04000204)
 #define WAITCNT_SRAM_MASK 0xFFFC
 #define WAITCNT_SRAM_8_CYCLES 3

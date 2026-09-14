@@ -1,7 +1,7 @@
 /* Initial room/player placement for the four AD battle-map families. */
 #include "map_placements.h"
 
-#define AT(x) __attribute__((section(".rom." x)))
+#include "rom_section.h"
 
 AT("001BF408")
 const struct BattleArenaScreenPosition
