@@ -491,7 +491,7 @@ _08008432:
 	mov r0, r10
 	mov r1, r8
 	adds r2, r7, #0
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	str r0, [r6, #0]
@@ -541,7 +541,7 @@ _08008432:
 	mov r0, r9
 	adds r1, r4, #0
 	adds r2, r5, #0
-	bl sub_08056CD0
+	bl GameStateCopyRecord
 	movs r0, #0
 	mov r1, r9
 	adds r2, r4, #0
@@ -567,7 +567,7 @@ _080084D8:
 	mov r0, r10
 	mov r1, r8
 	movs r2, #0
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	lsls r0, r0, #16
 	asrs r5, r0, #16
 	movs r1, #0
@@ -675,7 +675,7 @@ _08008592:
 	mov r0, r8
 	adds r1, r7, #0
 	adds r2, r5, #0
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	str r0, [r4, #0]
@@ -1020,7 +1020,7 @@ sub_080087EC:
 	adds r2, #14
 	adds r0, r5, #0
 	adds r1, r4, #0
-	bl sub_08056CD0
+	bl GameStateCopyRecord
 	movs r0, #0
 	adds r1, r5, #0
 	adds r2, r4, #0
@@ -3345,7 +3345,7 @@ sub_08009A24:
 	asrs r4, r4, #16
 	adds r0, r5, #0
 	adds r1, r4, #0
-	bl sub_08056DFC
+	bl GameStateGetPartField64C
 	lsls r0, r0, #16
 	asrs r6, r0, #16
 	adds r0, r6, #0
@@ -9237,7 +9237,7 @@ _0800C666:
 _0800C686:
 	adds r0, r4, #0
 	movs r2, #0
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	lsls r0, r0, #16
 	asrs r5, r0, #16
 	ldr r1, _0800C808
@@ -9257,7 +9257,7 @@ _0800C686:
 _0800C6AA:
 	adds r0, r4, #0
 	adds r2, r6, #0
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	lsls r0, r0, #16
 	asrs r4, r0, #16
 	ldr r3, _0800C808
@@ -9277,7 +9277,7 @@ _0800C6D0:
 	mov r0, r9
 	movs r2, #0
 	adds r3, r4, #0
-	bl sub_080560C4
+	bl GameStateSetEntry3894
 	ldr r2, _0800C808
 	ldr r0, [r2, #0]
 	ldr r3, _0800C80C
@@ -9296,7 +9296,7 @@ _0800C6F2:
 	adds r0, r4, #0
 	adds r2, r6, #0
 	adds r3, r5, #0
-	bl sub_080560C4
+	bl GameStateSetEntry3894
 	.2byte 0xF7F8
 	.byte 0xE0
 	.byte 0xFA
@@ -9326,7 +9326,7 @@ _0800C70A:
 _0800C72C:
 	adds r0, r4, #0
 	movs r2, #0
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	adds r1, r5, #0
 	adds r1, #72
 	strh r0, [r1, #0]
@@ -9727,7 +9727,7 @@ _0800C982:
 _0800C9A2:
 	adds r0, r4, #0
 	movs r2, #0
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	lsls r0, r0, #16
 	asrs r5, r0, #16
 	ldr r3, _0800CB50
@@ -9747,7 +9747,7 @@ _0800C9A2:
 _0800C9C6:
 	adds r0, r4, #0
 	adds r2, r6, #0
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	lsls r0, r0, #16
 	asrs r4, r0, #16
 	ldr r1, _0800CB50
@@ -9767,7 +9767,7 @@ _0800C9EC:
 	mov r0, r9
 	movs r2, #0
 	adds r3, r4, #0
-	bl sub_080560C4
+	bl GameStateSetEntry3894
 	ldr r3, _0800CB50
 	ldr r0, [r3, #0]
 	ldr r4, _0800CB54
@@ -9786,7 +9786,7 @@ _0800CA0E:
 	adds r0, r4, #0
 	adds r2, r6, #0
 	adds r3, r5, #0
-	bl sub_080560C4
+	bl GameStateSetEntry3894
 	.2byte 0xF7F8
 	.byte 0x52
 	.byte 0xF9
@@ -9819,7 +9819,7 @@ sub_0800CA26:
 _0800CA48:
 	adds r0, r4, #0
 	movs r2, #0
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	adds r1, r5, #0
 	adds r1, #72
 	strh r0, [r1, #0]
@@ -10530,7 +10530,7 @@ _0800CE6E:
 	movs r1, #1
 	adds r2, r4, #0
 	movs r3, #0
-	bl sub_080560C4
+	bl GameStateSetEntry3894
 	adds r4, #1
 	cmp r4, #2
 	ble _0800CE6E
@@ -10543,14 +10543,14 @@ _0800CE94:
 	movs r0, #2
 	movs r1, #1
 	adds r2, r4, #0
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	adds r3, r0, #0
 	lsls r3, r3, #16
 	asrs r3, r3, #16
 	movs r0, #2
 	movs r1, #0
 	adds r2, r4, #0
-	bl sub_080560C4
+	bl GameStateSetEntry3894
 	movs r0, #1
 	adds r1, r4, #0
 	bl sub_080083B8
@@ -10561,7 +10561,7 @@ _0800CE94:
 	movs r1, #1
 	adds r2, r4, #0
 	movs r3, #0
-	bl sub_080560C4
+	bl GameStateSetEntry3894
 	adds r4, #1
 	cmp r4, #2
 	ble _0800CE94

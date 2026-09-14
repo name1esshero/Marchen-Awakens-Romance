@@ -2536,7 +2536,7 @@ _080699D4:
 sub_08069A56:
 	strb r1, [r2, #0]
 	adds r0, r6, #0
-	bl sub_08056EE0
+	bl GameStateGetEntry2AE0
 	adds r1, r0, #0
 
 	.thumb_func
@@ -5437,7 +5437,7 @@ _0806B42E:
 	orrs r0, r1
 	strb r0, [r2, #0]
 	mov r0, r8
-	bl sub_08056984
+	bl GameStateGetEntry2768Total
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	str r0, [sp, #12]
@@ -6437,7 +6437,7 @@ _0806BB68:
 	adds r0, r7, r1
 	movs r2, #0
 	ldrsh r0, [r0, r2]
-	bl sub_080568B4
+	bl GameStateGetEntry2768
 	lsls r0, r0, #16
 	asrs r1, r0, #16
 	add r4, sp, #32
@@ -7740,7 +7740,7 @@ _0806C456:
 _0806C45E:
 	movs r2, #14
 	ldrsh r0, [r1, r2]
-	bl sub_08056984
+	bl GameStateGetEntry2768Total
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	cmp r0, #98
@@ -11749,7 +11749,7 @@ _0806F052:
 	.global _0806F06E
 _0806F06E:
 	adds r0, r5, #0
-	bl sub_08056984
+	bl GameStateGetEntry2768Total
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	cmp r0, #98

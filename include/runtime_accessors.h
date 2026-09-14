@@ -21,5 +21,15 @@ void IwramSetField3FD5(u32 value);
 u32 IwramGetPointer2860(u32 index);
 void IwramSetPointer2860(u32 index,u32 value);
 void *GameStateGetBuffer3F38(void);
+s32 GameStateGetEntry2768(s32 index);
+s32 GameStateGetEntry2AE0(s32 index);
+s32 GameStateGetEntry31D0(s32 index);
+s32 GameStateGetEncounterValue(void);
+s32 GameStateGetEncounterMode(void);
+void GameStateSetFlag2730(s32 index);
+s32 GameStateTestFlag2730(s32 index);
+s32 GameStateTestFlag26F8(s32 index);
+s32 GameStateGetCurrentEntry3894(void);
+void GameStateClearEntry31D0(s32 index);
 
 #endif

@@ -57,3 +57,12 @@ AT("00065E50") void InitializeFieldEventDisplay(void *task)
     sub_08054350((u8 *)task + 0x104, (u8 *)task + 0x404,
                  resource, 6, 194, 8, 0);
 }
+
+/* Third field-display setup, for the substructures at +0x5A4/+0x7AC of the
+ * task that 08054C74 creates. */
+AT("000558A4") void InitializeFieldDisplay5A4(void *task)
+{
+    s32 resource = sub_08056290();
+    sub_08054350((u8 *)task + 0x5A4, (u8 *)task + 0x7AC,
+                 resource, 6, 194, 8, 0);
+}

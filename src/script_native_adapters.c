@@ -15,10 +15,10 @@ extern void sub_08006858(s32 a, s32 b, s32 c);
 extern s32 GameStateGetField4256(void);
 extern s32 GameStateGetField60E(void);
 extern void sub_08008740(s32 a, s32 b);
-extern s32 sub_080560F8(s32 a, s32 b, s32 index);
+extern s32 GameStateGetEntry3894(s32 a, s32 b, s32 index);
 extern void sub_080088E0(s32 a, s32 b, s32 c);
 extern void sub_0806C7AC(s32 x, s32 y, s32 *result);
-extern void sub_080560C4(s32 a, s32 b, s32 index, s32 value);
+extern void GameStateSetEntry3894(s32 a, s32 b, s32 index, s32 value);
 extern void sub_080561B8(s32 value);
 extern void sub_080083E0(s32 a, s32 b);
 
@@ -78,17 +78,17 @@ AT("00012AE4") s32 ScriptNativeConfigureResourceSlots(u32 count,
 {
     s32 value;
     if (args[0] != -1)
-        sub_080560C4(0, 0, 0, args[0]);
+        GameStateSetEntry3894(0, 0, 0, args[0]);
     if (args[1] != -1)
-        sub_080560C4(0, 0, 1, args[1]);
+        GameStateSetEntry3894(0, 0, 1, args[1]);
     if (args[2] != -1)
-        sub_080560C4(0, 0, 2, args[2]);
+        GameStateSetEntry3894(0, 0, 2, args[2]);
 
-    value = (s16)sub_080560F8(0, 0, 0);
+    value = (s16)GameStateGetEntry3894(0, 0, 0);
     sub_080561B8(value);
-    value = (s16)sub_080560F8(0, 0, 1);
+    value = (s16)GameStateGetEntry3894(0, 0, 1);
     sub_080561B8(value);
-    value = (s16)sub_080560F8(0, 0, 2);
+    value = (s16)GameStateGetEntry3894(0, 0, 2);
     sub_080561B8(value);
     sub_080083E0(0, 1);
     return 1;
@@ -97,7 +97,7 @@ AT("00012AE4") const u8 ScriptNativeConfigureResourceSlotsTail[2] = {0};
 
 AT("00012B64") s32 ScriptNativeQueryResourceSlot(u32 count, const s32 *args, s32 *result)
 {
-    *result = (s16)sub_080560F8(0, 0, args[0]);
+    *result = (s16)GameStateGetEntry3894(0, 0, args[0]);
     return 1;
 }
 

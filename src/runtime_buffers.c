@@ -227,3 +227,22 @@ AT("00009508") u32 RuntimeGetPointerE3C(u32 index) { u8 *base=gSecondaryRuntime;
 ACTOR_LATE_GET_S16("0000975C",RuntimeActorGetField358,0x358)
 ACTOR_LATE_GET_S8("00009794",RuntimeActorGetField79C,0x79C)
 ACTOR_LATE_SET_S8("000097B4",RuntimeActorSetField79C,0x79C)
+
+AT("00019C64") s32 RuntimeActorGetByteA4(u32 actor,u32 part)
+{
+ u8 *record;
+ extern u8 *RuntimeGetActorRecord(u32 actor,u32 part);
+ record=RuntimeGetActorRecord(actor,part);
+ return (s8)record[0xA4];
+}
+AT("00019C64") const u8 RuntimeActorGetByteA4Tail[2]={0};
+
+AT("00019CA0") u32 RuntimeActorGetByte66(u32 actor,u32 part)
+{
+ u8 *record;
+ extern u8 *RuntimeGetActorRecord(u32 actor,u32 part);
+ record=RuntimeGetActorRecord(actor,part);
+ record+=100; /* the per-actor sub-record the setters at 019C78 also use */
+ return record[2];
+}
+AT("00019CA0") const u8 RuntimeActorGetByte66Tail[2]={0};

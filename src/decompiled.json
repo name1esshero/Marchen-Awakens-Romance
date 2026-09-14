@@ -2604,6 +2604,18 @@
     "file": "src/runtime_buffers.c"
   },
   {
+    "addr": "08019C64",
+    "size": 20,
+    "name": "RuntimeActorGetByteA4",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08019CA0",
+    "size": 16,
+    "name": "RuntimeActorGetByte66",
+    "file": "src/runtime_buffers.c"
+  },
+  {
     "addr": "080256F8",
     "size": 92,
     "name": "CreateBattleTrackingTask",
@@ -2688,6 +2700,18 @@
     "file": "src/object.c"
   },
   {
+    "addr": "08029E00",
+    "size": 52,
+    "name": "ObjectGroupReset",
+    "file": "src/object_group.c"
+  },
+  {
+    "addr": "08029E34",
+    "size": 64,
+    "name": "ObjectGroupSetFlag2",
+    "file": "src/object_group.c"
+  },
+  {
     "addr": "0802A0B8",
     "size": 96,
     "name": "CreateBattleObjectTask",
@@ -2697,6 +2721,12 @@
     "addr": "0802ADC8",
     "size": 28,
     "name": "InputRepeatInit",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "0802AE74",
+    "size": 32,
+    "name": "InputRepeatRearm",
     "file": "src/runtime_misc.c"
   },
   {
@@ -4050,6 +4080,48 @@
     "file": "src/step_counter.c"
   },
   {
+    "addr": "080558A4",
+    "size": 56,
+    "name": "InitializeFieldDisplay5A4",
+    "file": "src/map_field.c"
+  },
+  {
+    "addr": "08055FE8",
+    "size": 52,
+    "name": "GameStateRecordSetField4",
+    "file": "src/game_state_records.c"
+  },
+  {
+    "addr": "0805601C",
+    "size": 52,
+    "name": "GameStateRecordSetField6",
+    "file": "src/game_state_records.c"
+  },
+  {
+    "addr": "08056050",
+    "size": 52,
+    "name": "GameStateRecordAddField6",
+    "file": "src/game_state_records.c"
+  },
+  {
+    "addr": "080560C4",
+    "size": 52,
+    "name": "GameStateSetEntry3894",
+    "file": "src/game_state_records.c"
+  },
+  {
+    "addr": "080560F8",
+    "size": 56,
+    "name": "GameStateGetEntry3894",
+    "file": "src/game_state_records.c"
+  },
+  {
+    "addr": "08056130",
+    "size": 44,
+    "name": "GameStateGetCurrentEntry3894",
+    "file": "src/runtime_accessors.c"
+  },
+  {
     "addr": "08056464",
     "size": 16,
     "name": "ItemGetDefinition",
@@ -4128,6 +4200,66 @@
     "file": "src/item.c"
   },
   {
+    "addr": "080568B4",
+    "size": 36,
+    "name": "GameStateGetEntry2768",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08056984",
+    "size": 44,
+    "name": "GameStateGetEntry2768Total",
+    "file": "src/game_state_records.c"
+  },
+  {
+    "addr": "08056A34",
+    "size": 44,
+    "name": "GameStateSetFlag2730",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08056A60",
+    "size": 44,
+    "name": "GameStateTestFlag2730",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08056B2C",
+    "size": 44,
+    "name": "GameStateTestFlag26F8",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08056CD0",
+    "size": 40,
+    "name": "GameStateCopyRecord",
+    "file": "src/game_state_records.c"
+  },
+  {
+    "addr": "08056DFC",
+    "size": 64,
+    "name": "GameStateGetPartField64C",
+    "file": "src/game_state_records.c"
+  },
+  {
+    "addr": "08056EE0",
+    "size": 36,
+    "name": "GameStateGetEntry2AE0",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08056F68",
+    "size": 20,
+    "name": "ItemGetField78",
+    "file": "src/item.c"
+  },
+  {
+    "addr": "08056F7C",
+    "size": 20,
+    "name": "ItemGetField7C",
+    "file": "src/item.c"
+  },
+  {
     "addr": "08057108",
     "size": 24,
     "name": "ConsumableGetName",
@@ -4140,16 +4272,52 @@
     "file": "src/item.c"
   },
   {
+    "addr": "08057138",
+    "size": 36,
+    "name": "GameStateGetEntry31D0",
+    "file": "src/runtime_accessors.c"
+  },
+  {
     "addr": "0805715C",
     "size": 24,
     "name": "ConsumableGetResourceName",
     "file": "src/item.c"
   },
   {
+    "addr": "08057174",
+    "size": 44,
+    "name": "GameStateClearEntry31D0",
+    "file": "src/runtime_accessors.c"
+  },
+  {
     "addr": "08057218",
     "size": 48,
     "name": "GameStateCopyMapBuffer",
     "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "08057514",
+    "size": 40,
+    "name": "GameStateClearRecord426A",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "080577E4",
+    "size": 28,
+    "name": "GameStateGetEncounterValue",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08057844",
+    "size": 28,
+    "name": "GameStateGetEncounterMode",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "0805F874",
+    "size": 28,
+    "name": "SceneDraw5F874",
+    "file": "src/scene_draw_adapters.c"
   },
   {
     "addr": "08061E70",

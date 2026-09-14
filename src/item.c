@@ -123,3 +123,22 @@ const char *ConsumableGetResourceName(s32 id)
 {
     return CONSUMABLE_NAME_BASE + (s16)id * CONSUMABLE_RECORD_SIZE;
 }
+
+/* field78 is read through the address of field7C: the original source
+ * computed the record address from the 0x7C offset and stepped back one
+ * word, which is why the literal pool holds the field7C base. */
+AT("00056F68")
+u32 ItemGetField78(s32 id)
+{
+    const u8 *record;
+    id = (s16)id;
+    record = (const u8 *)&gArmDefinitions[id].field7C;
+    return *(const u32 *)(record - 4);
+}
+
+AT("00056F7C")
+u32 ItemGetField7C(s32 id)
+{
+    id = (s16)id;
+    return gArmDefinitions[id].field7C;
+}
