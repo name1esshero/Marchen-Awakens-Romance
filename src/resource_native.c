@@ -8,15 +8,15 @@
 #include "rom_section.h"
 
 extern s32 sub_080570BC(s32 id);
-extern s32 sub_08056984(s32 id);
-extern s32 sub_08056EE0(s32 id);
+extern s32 GameStateGetEntry2768Total(s32 id);
+extern s32 GameStateGetEntry2AE0(s32 id);
 extern void sub_08056A8C(s32 id, s32 mode);
 extern s32 sub_08056290(void);
 extern void sub_080562C8(s32 value);
 extern void sub_080563AC(void);
 extern s32 sub_08056304(s32 value);
 extern void sub_08055F88(s32 value, s32 limit);
-extern s32 sub_08056130(void);
+extern s32 GameStateGetCurrentEntry3894(void);
 extern void sub_080087EC(s32 a, s32 b, s32 value);
 extern void sub_080083E0(s32 a, s32 b);
 extern void sub_0806EFCC(s32 value);
@@ -26,9 +26,9 @@ extern void sub_0806F120(s32 x, s32 y, s32 a, s32 b);
 extern s32 GameStateGetField42BA(void);
 extern void CreateEncounterTransitionTask(s32 value);
 extern void sub_080577C0(s32 value);
-extern s32 sub_080577E4(void);
+extern s32 GameStateGetEncounterValue(void);
 extern void sub_08057800(s32 value);
-extern s32 sub_08057844(void);
+extern s32 GameStateGetEncounterMode(void);
 extern u8 gIwramBase[];
 extern u8 gMapGenerationRootOffset[];
 extern void *HeapAlloc(void *heap, u32 size);
@@ -109,9 +109,9 @@ AT("00012DB4") s32 ScriptNativeQueryModeResource(u32 count, const s32 *args, s32
     offset = 0x38B8;
     base += offset;
     if (*(u8 *)base == 0)
-        value = sub_08056984(shortArgs[0]);
+        value = GameStateGetEntry2768Total(shortArgs[0]);
     else
-        value = sub_08056EE0(shortArgs[0]);
+        value = GameStateGetEntry2AE0(shortArgs[0]);
     *out = (s16)value;
     return 1;
 }
@@ -161,7 +161,7 @@ AT("00012E64") s32 ScriptNativeUseResource(u32 count, const s32 *args, s32 *resu
     if ((s16)sub_08056304((s16)args[0]))
     {
         sub_08055F88((s16)args[0], 999);
-        sub_080087EC(0, 0, (s16)sub_08056130());
+        sub_080087EC(0, 0, (s16)GameStateGetCurrentEntry3894());
         sub_080083E0(0, 0);
     }
     return 1;
@@ -229,7 +229,7 @@ AT("00012F80") s32 ScriptNativeSetEncounterValue(u32 count, const s32 *args, s32
 
 AT("00012F90") s32 ScriptNativeGetEncounterValue(u32 count, const s32 *args, s32 *result)
 {
-    *result = (s16)sub_080577E4();
+    *result = (s16)GameStateGetEncounterValue();
     return 1;
 }
 AT("00012F90") const u8 ScriptNativeGetEncounterValueTail[2] = {0};
@@ -242,7 +242,7 @@ AT("00012FA8") s32 ScriptNativeSetEncounterMode(u32 count, const s32 *args, s32 
 
 AT("00012FB8") s32 ScriptNativeGetEncounterMode(u32 count, const s32 *args, s32 *result)
 {
-    *result = (s8)sub_08057844();
+    *result = (s8)GameStateGetEncounterMode();
     return 1;
 }
 AT("00012FB8") const u8 ScriptNativeGetEncounterModeTail[2] = {0};

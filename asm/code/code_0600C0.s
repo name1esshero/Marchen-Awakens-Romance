@@ -831,7 +831,7 @@ _080606FC:
 	.byte 0x60
 	.byte 0xF8
 	adds r0, r4, #0
-	bl sub_08056B2C
+	bl GameStateTestFlag26F8
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	mov r9, r0
@@ -1198,7 +1198,7 @@ _0806094E:
 	adds r0, r6, r1
 	movs r2, #0
 	ldrsh r0, [r0, r2]
-	bl sub_08056A60
+	bl GameStateTestFlag2730
 	lsls r0, r0, #16
 	asrs r2, r0, #16
 	cmp r2, #0
@@ -3481,7 +3481,7 @@ _08061C4A:
 	add r0, r10
 	movs r6, #0
 	ldrsh r0, [r0, r6]
-	bl sub_08056984
+	bl GameStateGetEntry2768Total
 	lsls r0, r0, #16
 	asrs r1, r0, #16
 	mov r0, r8
@@ -5430,7 +5430,7 @@ _08062CAC:
 	asrs r6, r0, #16
 	movs r1, #0
 	ldrsh r0, [r4, r1]
-	bl sub_08056984
+	bl GameStateGetEntry2768Total
 	lsls r0, r0, #16
 	cmp r0, #0
 	beq _08062CD0
@@ -7116,7 +7116,7 @@ sub_08063A32:
 	adds r1, r1, r0
 	movs r7, #0
 	ldrsh r0, [r1, r7]
-	bl sub_08056984
+	bl GameStateGetEntry2768Total
 	lsls r0, r0, #16
 	asrs r1, r0, #16
 	mov r0, sp
@@ -7940,7 +7940,7 @@ sub_08063F90:
 	adds r0, r6, r1
 	movs r2, #0
 	ldrsh r0, [r0, r2]
-	bl sub_080568B4
+	bl GameStateGetEntry2768
 	lsls r0, r0, #16
 	cmp r0, #0
 	beq _08063FB6
@@ -8301,7 +8301,7 @@ sub_08064194:
 	adds r0, r7, r2
 	movs r3, #0
 	ldrsh r0, [r0, r3]
-	bl sub_080568B4
+	bl GameStateGetEntry2768
 	lsls r0, r0, #16
 	asrs r1, r0, #16
 	add r4, sp, #32
@@ -10808,7 +10808,7 @@ _0806538C:
 	adds r0, r0, r1
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08057138
+	bl GameStateGetEntry31D0
 	movs r3, #255
 	lsls r3, r3, #2
 	adds r1, r7, r3
@@ -11250,7 +11250,7 @@ sub_0806594E:
 	adds r0, r0, r1
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08057174
+	bl GameStateClearEntry31D0
 	bl sub_08057018
 	adds r1, r0, #0
 	movs r4, #252
@@ -11327,7 +11327,7 @@ _080659BA:
 	.global sub_080659E0
 sub_080659E0:
 	asrs r0, r0, #16
-	bl sub_08057138
+	bl GameStateGetEntry31D0
 	movs r2, #255
 	lsls r2, r2, #2
 	adds r7, r6, r2
@@ -11346,7 +11346,7 @@ sub_080659E0:
 	adds r0, r0, r1
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08057138
+	bl GameStateGetEntry31D0
 	strh r0, [r7, #0]
 	ldr r1, _08065A3C
 	movs r2, #0
@@ -12548,7 +12548,7 @@ _0806655A:
 	bne _080665A4
 	movs r2, #0
 	ldrsh r0, [r5, r2]
-	bl sub_08056A34
+	bl GameStateSetFlag2730
 	ldr r1, [r4, #0]
 	ldrh r0, [r5, #0]
 	strh r0, [r1, #18]
@@ -15239,7 +15239,7 @@ _08067DC6:
 	add r0, r10
 	movs r6, #0
 	ldrsh r0, [r0, r6]
-	bl sub_08056984
+	bl GameStateGetEntry2768Total
 	lsls r0, r0, #16
 	asrs r1, r0, #16
 	mov r0, r8

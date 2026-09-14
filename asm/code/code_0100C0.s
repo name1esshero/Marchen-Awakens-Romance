@@ -7088,7 +7088,7 @@ _080148FC:
 	ldrb r0, [r0, #0]
 	movs r1, #0
 	adds r2, r5, #0
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	cmp r0, #0
@@ -7121,7 +7121,7 @@ _0801493C:
 	ldrb r0, [r0, #0]
 	movs r1, #0
 	adds r2, r5, #0
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	cmp r0, #0
@@ -7148,7 +7148,7 @@ _08014966:
 	ldrb r0, [r0, #0]
 	movs r1, #0
 	movs r2, #0
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	adds r2, r0, #0
 	lsls r2, r2, #16
 	asrs r2, r2, #16
@@ -11937,7 +11937,7 @@ _08016906:
 	ldrb r0, [r0, #0]
 	adds r1, r6, #0
 	adds r2, r5, #0
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	lsls r0, r0, #16
 	cmp r0, #0
 	beq _08016930
@@ -12054,7 +12054,7 @@ _080169E8:
 	ldrb r0, [r0, #0]
 	adds r1, r6, #0
 	adds r2, r5, #0
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	cmp r0, #0
@@ -12104,7 +12104,7 @@ _08016A36:
 	ldrb r0, [r0, #0]
 	adds r1, r6, #0
 	adds r2, r5, #0
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	lsls r0, r0, #16
 	cmp r0, #0
 	beq _08016A5E
@@ -12215,7 +12215,7 @@ _08016B02:
 	ldrb r0, [r0, #0]
 	adds r1, r6, #0
 	adds r2, r5, #0
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	cmp r0, #0
@@ -12543,7 +12543,7 @@ _08016D40:
 	ldrb r0, [r0, #0]
 	movs r1, #0
 	adds r2, r5, #0
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	cmp r0, #0
@@ -12583,7 +12583,7 @@ _08016D76:
 	ldrb r0, [r0, #0]
 	movs r1, #0
 	movs r2, #0
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	adds r2, r0, #0
 	lsls r2, r2, #16
 	asrs r2, r2, #16

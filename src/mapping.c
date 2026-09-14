@@ -403,14 +403,14 @@ AT("000127A8") const u8 ScriptNativeSetField4258Tail[2] = {0};
 extern void sub_080728A0(void *state, s32 value);
 extern void *GameStateGetBuffer38C0(void);
 extern char *strcpy(char *, const char *);
-extern void sub_08056CD0(s32, s32, const s16 *);
+extern void GameStateCopyRecord(s32, s32, const s16 *);
 extern void sub_08056D4C(s32, s32, s32);
 extern void sub_08056E3C(s32, s32, s32);
 extern void sub_08056CF8(void);
 extern void sub_0800690C(s32, s32);
 extern void ScriptAddPendingTasks(s32);
 extern void RuntimeSetFieldEB4(s32);
-extern void sub_08057514(void);
+extern void GameStateClearRecord426A(void);
 extern s32 GameStateGetField42BA(void);
 extern void sub_08008968(u32 count, const s32 *args, s32 *result);
 extern s32 RuntimeGetFieldEB2(void);
@@ -566,7 +566,7 @@ AT("00012730") s32 ScriptNativeCopyGeneratedName(u32 count, const s32 *args,
     s32 i;                                                                  \
     for (i = 0; i < 20; i++)                                                \
         values[i] = args[i + 2];                                            \
-    sub_08056CD0((s16)args[0], (s16)args[1], values);                       \
+    GameStateCopyRecord((s16)args[0], (s16)args[1], values);                       \
     sub_08056D4C(0, (s16)args[0], (s16)args[1])
 
 AT("000127B8") s32 ScriptNativeWriteMapValues(u32 count, const s32 *args,
@@ -707,7 +707,7 @@ AT("00012D04") s32 ScriptNativeCopyMapHalfwords(u32 count, const s32 *args,
     register s32 destinationOffset asm("r6");
 
     iteration.source = args;
-    sub_08057514();
+    GameStateClearRecord426A();
     if (itemCount > 40)
         itemCount = 40;
     index = 0;

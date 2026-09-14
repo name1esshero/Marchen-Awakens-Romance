@@ -91,5 +91,7 @@ s32 ItemGetField59(s32 id);
 s32 ItemGetField5A(s32 id);
 s32 ItemGetField62(s32 id);
 s32 ItemGetField58(s32 id);
+u32 ItemGetField78(s32 id);
+u32 ItemGetField7C(s32 id);
 
 #endif

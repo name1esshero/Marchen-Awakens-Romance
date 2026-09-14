@@ -1797,7 +1797,7 @@ _08018F0A:
 	mov r5, r10
 	lsls r0, r5, #16
 	asrs r0, r0, #16
-	bl sub_08056F68
+	bl ItemGetField78
 	adds r1, r0, #0
 	movs r0, #1
 	ands r0, r1
@@ -2556,7 +2556,7 @@ sub_08019414:
 	.global _0801945A
 _0801945A:
 	mov r0, r9
-	bl sub_08056F68
+	bl ItemGetField78
 	movs r1, #128
 	lsls r1, r1, #7
 	ands r1, r0
@@ -2609,7 +2609,7 @@ _0801949C:
 	mov r3, r10
 	lsls r0, r3, #16
 	asrs r0, r0, #16
-	bl sub_08056F68
+	bl ItemGetField78
 	movs r1, #128
 	lsls r1, r1, #7
 	ands r1, r0
@@ -3159,7 +3159,7 @@ sub_08019850:
 	ldr r4, [sp, #32]
 	lsls r0, r4, #16
 	asrs r0, r0, #16
-	bl sub_08056F68
+	bl ItemGetField78
 	mov r8, r0
 	ldr r0, _080198BC
 	mov r1, r8
@@ -3190,7 +3190,7 @@ sub_08019850:
 _08019898:
 	lsls r4, r4, #16
 	asrs r0, r4, #16
-	bl sub_08056F7C
+	bl ItemGetField7C
 	lsls r0, r0, #24
 	lsrs r5, r0, #24
 	cmp r5, #0
@@ -3549,7 +3549,7 @@ sub_08019AF2:
 	.2byte 0xF03C
 	.4byte 0x1C05FCB1
 	adds r0, r4, #0
-	bl sub_08056F68
+	bl ItemGetField78
 	adds r4, r0, #0
 	movs r0, #64
 	ands r0, r4
@@ -3717,20 +3717,11 @@ sub_08019BD4:
 	.section .rom.00019C64, "ax"
 	.syntax unified
 
-	.thumb_func
-	.thumb
-	.global sub_08019C64
-sub_08019C64:
-	push {lr}
-	.2byte 0xF7F0
-	.4byte 0x30A4FAAD
-	ldrb r0, [r0, #0]
-	lsls r0, r0, #24
-	asrs r0, r0, #24
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 019C64..019C78 is decompiled as RuntimeActorGetByteA4(); see src/decompiled.json
+
+	.section .rom.00019C78, "ax"
+	.syntax unified
+
 
 	.thumb_func
 	.thumb
@@ -3757,18 +3748,11 @@ sub_08019C78:
 	pop {r0}
 	bx r0
 
-	.thumb_func
-	.thumb
-	.global sub_08019CA0
-sub_08019CA0:
-	push {lr}
-	.2byte 0xF7F0
-	.4byte 0x3064FA8F
-	ldrb r0, [r0, #2]
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 019CA0..019CB0 is decompiled as RuntimeActorGetByte66(); see src/decompiled.json
+
+	.section .rom.00019CB0, "ax"
+	.syntax unified
+
 
 	.thumb_func
 	.thumb
@@ -5679,7 +5663,7 @@ _0801A9A4:
 	movs r2, #0
 	ldrsh r1, [r5, r2]
 	movs r2, #0
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	ldr r3, [sp, #28]
 	ldr r2, _0801AB70
 	adds r1, r3, r2
@@ -8208,7 +8192,7 @@ sub_0801BA64:
 	ldrb r0, [r0, #0]
 	mov r1, r8
 	movs r2, #0
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	adds r5, r0, #0
 	lsls r5, r5, #16
 	asrs r5, r5, #16
@@ -8217,7 +8201,7 @@ sub_0801BA64:
 	ldrb r0, [r0, #0]
 	mov r1, r8
 	mov r2, r9
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	adds r3, r0, #0
 	lsls r3, r3, #16
 	asrs r3, r3, #16
@@ -8226,14 +8210,14 @@ sub_0801BA64:
 	ldrb r0, [r0, #0]
 	mov r1, r8
 	movs r2, #0
-	bl sub_080560C4
+	bl GameStateSetEntry3894
 	ldr r0, [r4, #0]
 	adds r0, r0, r6
 	ldrb r0, [r0, #0]
 	mov r1, r8
 	mov r2, r9
 	adds r3, r5, #0
-	bl sub_080560C4
+	bl GameStateSetEntry3894
 	pop {r3, r4}
 	mov r8, r3
 	mov r9, r4
@@ -8528,11 +8512,11 @@ sub_0801BC9E:
 	movs r1, #1
 	mov r2, r8
 	movs r3, #0
-	bl sub_080560C4
+	bl GameStateSetEntry3894
 	movs r0, #2
 	movs r1, #0
 	mov r2, r8
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	lsls r0, r0, #16
 	asrs r7, r0, #16
 	cmp r7, #0
@@ -8633,7 +8617,7 @@ _0801BD4A:
 	adds r2, #14
 	movs r0, #0
 	adds r1, r4, #0
-	bl sub_08056CD0
+	bl GameStateCopyRecord
 	movs r0, #0
 	movs r1, #0
 	adds r2, r4, #0
@@ -9538,12 +9522,12 @@ _0801C31A:
 	movs r1, #0
 	mov r2, r8
 	movs r3, #0
-	bl sub_080560C4
+	bl GameStateSetEntry3894
 	movs r0, #2
 	movs r1, #1
 	mov r2, r8
 	movs r3, #0
-	bl sub_080560C4
+	bl GameStateSetEntry3894
 	movs r4, #1
 	add r8, r4
 	mov r0, r8
@@ -9602,7 +9586,7 @@ _0801C378:
 	ldr r3, [r5, #0]
 	movs r0, #2
 	mov r2, r8
-	bl sub_080560C4
+	bl GameStateSetEntry3894
 	movs r0, #1
 	add r8, r0
 	ldr r1, [sp, #12]
@@ -9648,7 +9632,7 @@ _0801C3D4:
 	ldr r3, [r5, #0]
 	movs r0, #2
 	mov r2, r8
-	bl sub_080560C4
+	bl GameStateSetEntry3894
 	movs r0, #1
 	add r8, r0
 	ldr r1, [sp, #12]
@@ -11049,7 +11033,7 @@ _0801CD52:
 	movs r0, #0
 	movs r1, #0
 	mov r2, r8
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	mov r10, r0
@@ -11111,7 +11095,7 @@ _0801CDB4:
 	movs r0, #0
 	movs r1, #0
 	mov r2, r8
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	mov r10, r0
@@ -11981,7 +11965,7 @@ sub_0801D330:
 	movs r0, #0
 	movs r1, #0
 	mov r2, r8
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	lsls r0, r0, #16
 	cmp r0, #0
 	bne _0801D35C
@@ -12397,7 +12381,7 @@ _0801D5C2:
 	movs r0, #0
 	movs r1, #0
 	mov r2, r8
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	mov r10, r0
@@ -12421,7 +12405,7 @@ _0801D5E8:
 	movs r0, #0
 	movs r1, #0
 	movs r2, #0
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	adds r2, r0, #0
 	lsls r2, r2, #16
 	asrs r2, r2, #16
@@ -12438,7 +12422,7 @@ _0801D5E8:
 	movs r0, #0
 	movs r1, #0
 	movs r2, #0
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	bl sub_08055F4C
@@ -12666,7 +12650,7 @@ _0801D7CC:
 	movs r0, #0
 	movs r1, #0
 	mov r2, r8
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	lsls r0, r0, #16
 	movs r5, #1
 	add r5, r8
@@ -14145,7 +14129,7 @@ sub_0801E114:
 	adds r6, #1
 	movs r2, #14
 	ldrsh r0, [r5, r2]
-	bl sub_08056984
+	bl GameStateGetEntry2768Total
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	cmp r0, #98
@@ -14717,7 +14701,7 @@ _0801E4EA:
 	ldrsh r0, [r3, r2]
 	movs r2, #16
 	ldrsh r1, [r3, r2]
-	bl sub_08019CA0
+	bl RuntimeActorGetByte66
 	cmp r0, #0
 	beq _0801E550
 	adds r0, r6, #0

@@ -1789,7 +1789,7 @@ _08028CEA:
 _08028D40:
 	adds r0, r4, #0
 	movs r1, #1
-	bl sub_08029E34
+	bl ObjectGroupSetFlag2
 	movs r2, #5
 	subs r2, r2, r5
 	lsls r2, r2, #16
@@ -2392,7 +2392,7 @@ _0802912C:
 	ldr r0, _08029224
 	adds r5, r7, r0
 	adds r0, r5, #0
-	bl sub_0802AE74
+	bl InputRepeatRearm
 	movs r0, #1
 	movs r1, #0
 	.2byte 0xF050
@@ -2430,7 +2430,7 @@ sub_08029164:
 	beq _08029178
 	adds r0, r4, #0
 	movs r1, #0
-	bl sub_08029E34
+	bl ObjectGroupSetFlag2
 	.global _08029178
 _08029178:
 	movs r3, #238
@@ -3035,7 +3035,7 @@ sub_080294C0:
 sub_08029506:
 	adds r0, r6, r0
 	movs r1, #0
-	bl sub_08029E34
+	bl ObjectGroupSetFlag2
 	b _08029548
 	.global _08029510
 _08029510:
@@ -3079,7 +3079,7 @@ sub_0802952A:
 	adds r0, r0, r1
 	adds r0, r6, r0
 	movs r1, #1
-	bl sub_08029E34
+	bl ObjectGroupSetFlag2
 	.global _08029548
 _08029548:
 	ldr r2, _0802957C
@@ -4390,77 +4390,16 @@ sub_08029DE6:
 _08029DFC:
 	.4byte 0x0808785C  @ ROM+0x8785C
 
-	.thumb_func
-	.thumb
-	.global sub_08029E00
-sub_08029E00:
-	push {r4, r5, lr}
-	adds r4, r0, #0
-	adds r0, #156
-	bl sub_080281E0
-	adds r0, r4, #0
-	adds r0, #92
-	bl sub_080281E0
-	adds r0, r4, #0
-	adds r0, #28
-	bl sub_080281E0
-	adds r4, #220
-	movs r5, #3
-	.global _08029E1E
-_08029E1E:
-	adds r0, r4, #0
-	bl sub_080281E0
-	adds r4, #64
-	subs r5, #1
-	cmp r5, #0
-	bge _08029E1E
-	pop {r4, r5}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
+@ 029E00..029E34 is decompiled as ObjectGroupReset(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08029E34
-sub_08029E34:
-	push {r4, r5, r6, lr}
-	adds r4, r0, #0
-	lsls r1, r1, #16
-	lsrs r6, r1, #16
-	adds r0, #156
-	adds r1, r6, #0
-	.2byte 0xF7FE
-	.byte 0x88
-	.byte 0xFA
-	adds r0, r4, #0
-	adds r0, #92
-	adds r1, r6, #0
-	.2byte 0xF7FE
-	.4byte 0x1C20FA83
-	adds r0, #28
-	adds r1, r6, #0
-	.2byte 0xF7FE
-	.byte 0x7E
-	.byte 0xFA
-	adds r4, #220
-	movs r5, #3
-	.global _08029E5C
-_08029E5C:
-	adds r0, r4, #0
-	adds r1, r6, #0
-	.2byte 0xF7FE
-	.byte 0x78
-	.byte 0xFA
-	adds r4, #64
-	subs r5, #1
-	cmp r5, #0
-	bge _08029E5C
-	pop {r4, r5, r6}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
+	.section .rom.00029E34, "ax"
+	.syntax unified
+
+@ 029E34..029E74 is decompiled as ObjectGroupSetFlag2(); see src/decompiled.json
+
+	.section .rom.00029E74, "ax"
+	.syntax unified
+
 
 	.thumb_func
 	.thumb
@@ -5219,7 +5158,7 @@ _0802A55C:
 	add r0, r8
 	movs r2, #0
 	ldrsh r0, [r0, r2]
-	bl sub_08056F68
+	bl ItemGetField78
 	movs r1, #8
 	ands r1, r0
 	cmp r1, #0
@@ -5256,7 +5195,7 @@ _0802A598:
 	add r0, r8
 	movs r3, #0
 	ldrsh r0, [r0, r3]
-	bl sub_08056F68
+	bl ItemGetField78
 	movs r1, #64
 	ands r1, r0
 	cmp r1, #0
@@ -5290,7 +5229,7 @@ _0802A5D2:
 	add r0, r8
 	movs r2, #0
 	ldrsh r0, [r0, r2]
-	bl sub_08056F68
+	bl ItemGetField78
 	ldr r1, _0802A654
 	ands r1, r0
 	cmp r1, #0
@@ -5326,7 +5265,7 @@ _0802A60C:
 	.global sub_0802A614
 sub_0802A614:
 	ldrsh r0, [r4, r2]
-	bl sub_08056F68
+	bl ItemGetField78
 	movs r1, #1
 	ands r1, r0
 	cmp r1, #0
@@ -5376,7 +5315,7 @@ _0802A65E:
 	add r0, r8
 	movs r2, #0
 	ldrsh r0, [r0, r2]
-	bl sub_08056F68
+	bl ItemGetField78
 	movs r1, #1
 	ands r1, r0
 	cmp r1, #0
@@ -6508,29 +6447,8 @@ _0802AE6A:
 _0802AE70:
 	.4byte 0x0000FFFF
 
-	.thumb_func
-	.thumb
-	.global sub_0802AE74
-sub_0802AE74:
-	push {lr}
-	adds r1, r0, #0
-	ldrb r2, [r1, #5]
-	cmp r2, #0
-	bne _0802AE88
-	ldr r0, _0802AE90
-	strh r0, [r1, #0]
-	strb r2, [r1, #6]
-	ldrb r0, [r1, #8]
-	strb r0, [r1, #7]
-	.global _0802AE88
-_0802AE88:
-	movs r0, #0
-	strb r0, [r1, #5]
-	pop {r0}
-	bx r0
-	.global _0802AE90
-_0802AE90:
-	.4byte 0x0000FFFF
+@ 02AE74..02AE94 is decompiled as InputRepeatRearm(); see src/decompiled.json
+
 
 @ 02AE94..02AEA8 is decompiled as BattleMode2AE0(); see src/decompiled.json
 
@@ -12947,7 +12865,7 @@ _0802DAA2:
 	.thumb
 	.global sub_0802DAA6
 sub_0802DAA6:
-	bl sub_08019C64
+	bl RuntimeActorGetByteA4
 	cmp r0, #0
 	beq _0802DB62
 	ldr r0, _0802DAF0

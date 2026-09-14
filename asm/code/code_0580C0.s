@@ -5398,7 +5398,7 @@ sub_0805A018:
 	ldrsh r3, [r2, r0]
 	mov r10, r3
 	mov r0, r10
-	bl sub_08056984
+	bl GameStateGetEntry2768Total
 	lsls r0, r0, #16
 	asrs r1, r0, #16
 	mov r0, sp
@@ -6197,7 +6197,7 @@ _0805A56C:
 	movs r0, #0
 	ldrsh r2, [r1, r0]
 	adds r0, r2, #0
-	bl sub_08056984
+	bl GameStateGetEntry2768Total
 	lsls r0, r0, #16
 	asrs r1, r0, #16
 	mov r0, sp
@@ -7113,7 +7113,7 @@ sub_0805AB64:
 	adds r0, r4, r2
 	movs r3, #0
 	ldrsh r0, [r0, r3]
-	bl sub_080568B4
+	bl GameStateGetEntry2768
 	lsls r0, r0, #16
 	cmp r0, #0
 	beq _0805ABC0
@@ -7706,7 +7706,7 @@ sub_0805AEB8:
 	adds r0, r7, r2
 	movs r3, #0
 	ldrsh r0, [r0, r3]
-	bl sub_080568B4
+	bl GameStateGetEntry2768
 	lsls r0, r0, #16
 	asrs r1, r0, #16
 	add r4, sp, #32
@@ -8776,7 +8776,7 @@ _0805B7D8:
 	adds r0, r0, r1
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08057138
+	bl GameStateGetEntry31D0
 	ldr r3, _0805B800
 	adds r1, r6, r3
 	b _0805B8F0
@@ -8945,7 +8945,7 @@ _0805B8D4:
 	adds r0, r0, r1
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08057138
+	bl GameStateGetEntry31D0
 	ldr r2, _0805B908
 
 	.thumb_func
@@ -9219,7 +9219,7 @@ _0805BA54:
 	.global _0805BA5E
 _0805BA5E:
 	movs r1, #0
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	lsls r0, r0, #16
 	asrs r5, r0, #16
 	movs r0, #105
@@ -9530,7 +9530,7 @@ sub_0805BB52:
 sub_0805BB54:
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08057138
+	bl GameStateGetEntry31D0
 
 	.thumb_func
 	.thumb
@@ -9608,7 +9608,7 @@ sub_0805BB70:
 	.thumb
 	.global sub_0805BB7E
 sub_0805BB7E:
-	bl sub_08057138
+	bl GameStateGetEntry31D0
 	strh r0, [r7, #0]
 	movs r0, #192
 	lsls r0, r0, #2
@@ -10072,7 +10072,7 @@ _0805BDD8:
 	.global _0805BDE2
 _0805BDE2:
 	movs r1, #0
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	lsls r0, r0, #16
 	asrs r5, r0, #16
 
@@ -10256,7 +10256,7 @@ sub_0805BE8C:
 	adds r0, r0, r1
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08057138
+	bl GameStateGetEntry31D0
 	ldr r2, _0805BF3C
 	adds r7, r6, r2
 	strh r0, [r7, #0]
@@ -10274,7 +10274,7 @@ sub_0805BE8C:
 	adds r0, r0, r1
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08057138
+	bl GameStateGetEntry31D0
 	strh r0, [r7, #0]
 	movs r0, #192
 	lsls r0, r0, #2
@@ -10634,7 +10634,7 @@ _0805BFF0:
 	adds r0, r0, r1
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08057174
+	bl GameStateClearEntry31D0
 	bl sub_08057018
 	adds r1, r0, #0
 	ldr r4, _0805C030
@@ -10716,7 +10716,7 @@ sub_0805C070:
 	adds r0, r0, r1
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08057138
+	bl GameStateGetEntry31D0
 
 	.thumb_func
 	.thumb
@@ -10739,7 +10739,7 @@ sub_0805C090:
 	adds r0, r0, r1
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08057138
+	bl GameStateGetEntry31D0
 	strh r0, [r7, #0]
 	movs r0, #192
 	lsls r0, r0, #2
@@ -10763,7 +10763,7 @@ _0805C0CC:
 	adds r0, r0, r1
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08057138
+	bl GameStateGetEntry31D0
 	ldr r7, _0805C114
 	adds r1, r6, r7
 	strh r0, [r1, #0]
@@ -11493,7 +11493,7 @@ _0805C604:
 _0805C606:
 	movs r1, #0
 	mov r2, r8
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	lsls r0, r0, #16
 	asrs r6, r0, #16
 	adds r0, r6, #0
@@ -13566,7 +13566,7 @@ _0805D538:
 	movs r0, #1
 	movs r1, #0
 	adds r2, r5, #0
-	bl sub_080560C4
+	bl GameStateSetEntry3894
 	adds r0, r4, #0
 	movs r2, #128
 	lsls r2, r2, #9
@@ -13613,7 +13613,7 @@ _0805D57E:
 	movs r0, #2
 	movs r1, #0
 	adds r2, r5, #0
-	bl sub_080560C4
+	bl GameStateSetEntry3894
 	adds r0, r4, #0
 	movs r2, #128
 	lsls r2, r2, #9
@@ -13653,7 +13653,7 @@ _0805D5BA:
 	movs r0, #0
 	movs r1, #0
 	adds r2, r5, #0
-	bl sub_080560C4
+	bl GameStateSetEntry3894
 	adds r0, r4, #0
 	movs r2, #128
 	lsls r2, r2, #9
@@ -15894,7 +15894,7 @@ _0805E44C:
 _0805E44E:
 	movs r1, #0
 	adds r2, r6, #0
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	lsls r0, r0, #16
 	asrs r1, r0, #16
 	.global _0805E45A
@@ -16571,7 +16571,7 @@ sub_0805E9E0:
 	.byte 0x10
 	.byte 0xF9
 	adds r0, r7, #0
-	bl sub_0805F874
+	bl SceneDraw5F874
 	movs r0, #1
 	b _0805EBE8
 	.byte 0x00
@@ -16720,7 +16720,7 @@ _0805EB90:
 	adds r1, r7, r4
 	str r0, [r1, #0]
 	adds r0, r7, #0
-	bl sub_0805F874
+	bl SceneDraw5F874
 	b _0805ECE8
 	.byte 0x00
 	.byte 0x00
@@ -18443,22 +18443,11 @@ _0805F86C:
 _0805F870:
 	.4byte 0x00000946
 
-	.thumb_func
-	.thumb
-	.global sub_0805F874
-sub_0805F874:
-	push {r4, lr}
-	adds r4, r0, #0
-	bl sub_0805EF14
-	adds r0, r4, #0
-	bl sub_0805F1F8
-	adds r0, r4, #0
-	bl sub_0805F6B8
-	pop {r4}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
+@ 05F874..05F890 is decompiled as SceneDraw5F874(); see src/decompiled.json
+
+	.section .rom.0005F890, "ax"
+	.syntax unified
+
 	.4byte 0xB081B530
 	.4byte 0x1C0B1C04
 	.4byte 0x490A4809

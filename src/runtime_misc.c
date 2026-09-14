@@ -160,3 +160,22 @@ AT("000805D0") void SpriteRuntimeSetAllFlags800(u32 enabled)
  }
  *(u32 *)flags=enabled;
 }
+
+/* Clears the 0x50-byte record that follows the map buffers. */
+AT("00057514") void GameStateClearRecord426A(void)
+{
+ CpuFill(GAME_STATE_BASE+0x426A,0x50,0);
+}
+
+/* Rearms the repeat state unless the caller asked for one call to be skipped
+ * by leaving unused05 non-zero. */
+AT("0002AE74") void InputRepeatRearm(struct InputRepeatState *state)
+{
+ if (state->unused05==0)
+ {
+  state->previous=0xFFFF;
+  state->active=0;
+  state->initialDelay=state->repeatDelay;
+ }
+ state->unused05=0;
+}

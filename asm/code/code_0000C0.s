@@ -12267,7 +12267,7 @@ _08006488:
 	ldrb r0, [r0, #0]
 	movs r1, #0
 	movs r2, #0
-	bl sub_080560F8
+	bl GameStateGetEntry3894
 	adds r2, r0, #0
 	lsls r2, r2, #16
 	asrs r2, r2, #16
@@ -15162,14 +15162,14 @@ _08007DA4:
 	.byte 0x06
 	.byte 0xFA
 	adds r4, r0, #0
-	bl sub_08056130
+	bl GameStateGetCurrentEntry3894
 	adds r4, #72
 	strh r0, [r4, #0]
 	movs r0, #0
 	movs r1, #0
 	.2byte 0xF002
 	.4byte 0x7445F9FD
-	bl sub_08056130
+	bl GameStateGetCurrentEntry3894
 	adds r2, r0, #0
 	lsls r2, r2, #16
 	asrs r2, r2, #16
@@ -15474,10 +15474,10 @@ _08007FF0:
 	.byte 0xE0
 	.byte 0xF8
 	adds r4, r0, #0
-	bl sub_08056130
+	bl GameStateGetCurrentEntry3894
 	adds r4, #72
 	strh r0, [r4, #0]
-	bl sub_08056130
+	bl GameStateGetCurrentEntry3894
 	adds r2, r0, #0
 	lsls r2, r2, #16
 	asrs r2, r2, #16
