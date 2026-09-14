@@ -110,11 +110,12 @@ Both are candidates for the `src/nonmatching/` route rather than more search.
 Recorded at the time of writing; regenerate rather than trusting these numbers.
 
 - Hard-rule findings: 351 → 230 in a first pass that compared assembly text,
-  then 230 → 169 once the comparison moved to machine code. 182 hints removed
-  in total; 169 survive and are, by construction, load-bearing for the current C.
-- Remaining concentrations: `sprite_affine_matrix.c` (42), `sprite_transform.c`
-  (17), `sprite_interpolation.c` (5), `sram.c` (4), `mapping.c` (4),
-  `nfp.c` (3), `sound_m4a.c` (4), `sound_idle_wait.c` (3).
+  then 230 → 162 once the comparison moved to machine code, then → 157 as the
+  sound files' padding halfwords stopped being inline asm. 210 hints removed in
+  total; 157 survive and are, by construction, load-bearing for the current C.
+- Remaining concentrations: `sprite_affine_matrix.c`, `sprite_transform.c`,
+  `sprite_interpolation.c`, `sram.c`, `mapping.c`, `nfp.c`, `sound_m4a.c`.
+  Regenerate with `make pret-audit` rather than trusting a per-file count here.
 - `make compare` byte-exact and all 140 host tests passing throughout.
 
 ## Watch out for
