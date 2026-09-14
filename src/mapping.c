@@ -576,6 +576,63 @@ AT("000127B8") s32 ScriptNativeWriteMapValues(u32 count, const s32 *args,
     return 1;
 }
 
+extern u8 *sub_08055F4C(s32 mode);
+extern void sub_08001EB4(void *dest, const void *src, u32 size);
+extern void BitSet(u8 *bits, u32 index, s32 enabled);
+
+/* DeckMake: args[0] selects a deck/shuffle mode, same case set as
+ * ShuffleDeckCopy. Builds a 20-entry s16 value table from args[1..20],
+ * copies it 14 bytes into whatever sub_08055F4C(mode) returns, then flags
+ * one bit per raw VM argument in the save's deck bitset (offset 0x26F8). */
+AT("000127F8") s32 ScriptNativeDeckMake(u32 count, const s32 *args,
+                                         s32 *result)
+{
+    switch (args[0]) {
+    case 1:
+    case 3:
+    case 4:
+    case 6:
+    case 7:
+    case 8:
+    case 9:
+    case 22:
+    {
+        s16 values[20];
+        register s32 mode asm("r3") = args[0];
+        s32 i;
+        u32 j;
+
+        for (i = 0; i < 20; i++)
+            values[i] = args[i + 1];
+        sub_08001EB4(sub_08055F4C((s16)mode) + 14, values, 40);
+        for (j = 0; j < count; j++)
+            BitSet(GAME_ROOT + 0x26F8, args[j], 1);
+    }
+    }
+    return 1;
+}
+
+extern void sub_080087EC(s32 a, s32 b, s32 value);
+
+/* ShuffleDeckCopy: args[2] selects a deck/shuffle mode. Most values are
+ * silent no-ops; only a handful actually forward to the shared handler. */
+AT("000128C8") s32 ScriptNativeShuffleDeckCopy(u32 count, const s32 *args,
+                                                s32 *result)
+{
+    switch (args[2]) {
+    case 1:
+    case 3:
+    case 4:
+    case 6:
+    case 7:
+    case 8:
+    case 9:
+    case 22:
+        sub_080087EC(args[0], args[1], args[2]);
+    }
+    return 1;
+}
+
 #define REFRESH_MAP_VALUES(address, name)                                  \
 AT(address) s32 name(u32 count, const s32 *args, s32 *result)              \
 {                                                                          \

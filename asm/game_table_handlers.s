@@ -551,3 +551,7 @@
 .set gCgbWaveform_0808B064, 0x0808B064
 .global gCgbWaveform_0808B0A4
 .set gCgbWaveform_0808B0A4, 0x0808B0A4
+.global sub_08001EB4
+.set sub_08001EB4, 0x08001EB4
+.global sub_080569B0
+.set sub_080569B0, 0x080569B0

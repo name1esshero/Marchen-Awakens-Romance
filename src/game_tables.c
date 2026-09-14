@@ -762,9 +762,9 @@ extern void ScriptNativeCall0680C(void);
 extern void ScriptNativeCall06858(void);
 extern void ScriptNativeGetField4256(void);
 extern void ScriptNativeGetField60E(void);
-extern void sub_080127F8(void);
+extern void ScriptNativeDeckMake(void);
 extern void ScriptNativeWriteMapValues(void);
-extern void sub_080128C8(void);
+extern void ScriptNativeShuffleDeckCopy(void);
 extern void ScriptNativeRefreshMapValuesA(void);
 extern void ScriptNativeBattleStatus(void);
 extern void ScriptNativeMapCoordinateCall(void);
@@ -893,9 +893,9 @@ AT("001AFEA4") const struct ScriptNativeCommand
     [98] = { .name = gScriptNativeName_BgSetAttrEnables, .handler = (void *)((u32)ScriptNativeCall06858 + 1) },
     [99] = { .name = gScriptNativeName_GetIrqCause, .handler = (void *)((u32)ScriptNativeGetField4256 + 1) },
     [100] = { .name = gScriptNativeName_GetBtlRoomNo, .handler = (void *)((u32)ScriptNativeGetField60E + 1) },
-    [101] = { .name = gScriptNativeName_DeckMake, .handler = (void *)((u32)sub_080127F8 + 1) },
+    [101] = { .name = gScriptNativeName_DeckMake, .handler = (void *)((u32)ScriptNativeDeckMake + 1) },
     [102] = { .name = gScriptNativeName_ShuffleDeckMake, .handler = (void *)((u32)ScriptNativeWriteMapValues + 1) },
-    [103] = { .name = gScriptNativeName_ShuffleDeckCopy, .handler = (void *)((u32)sub_080128C8 + 1) },
+    [103] = { .name = gScriptNativeName_ShuffleDeckCopy, .handler = (void *)((u32)ScriptNativeShuffleDeckCopy + 1) },
     [104] = { .name = gScriptNativeName_DeckShuffle, .handler = (void *)((u32)ScriptNativeRefreshMapValuesA + 1) },
     [105] = { .name = gScriptNativeName_BtlStatus, .handler = (void *)((u32)ScriptNativeBattleStatus + 1) },
     [106] = { .name = gScriptNativeName_PopMenu, .handler = (void *)((u32)ScriptNativeMapCoordinateCall + 1) },

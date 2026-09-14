@@ -2268,6 +2268,18 @@
     "file": "src/mapping.c"
   },
   {
+    "addr": "080127F8",
+    "size": 208,
+    "name": "ScriptNativeDeckMake",
+    "file": "src/mapping.c"
+  },
+  {
+    "addr": "080128C8",
+    "size": 132,
+    "name": "ScriptNativeShuffleDeckCopy",
+    "file": "src/mapping.c"
+  },
+  {
     "addr": "0801294C",
     "size": 44,
     "name": "ScriptNativeRefreshMapValuesA",
