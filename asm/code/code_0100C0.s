@@ -14371,7 +14371,7 @@ sub_08017BD8:
 sub_08017C0E:
 	adds r0, r2, #0
 	adds r1, r2, #0
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 
 	.thumb_func
 	.thumb

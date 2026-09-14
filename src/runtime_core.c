@@ -115,3 +115,18 @@ AT("00005074") u32 RuntimeGetByte4CDCU8(void)
     return (u8)sub_08004CDC();
 }
 AT("00005074") const u8 RuntimeGetByte4CDCU8Tail[2] = {0, 0};
+
+extern u32 RuntimeReturnZero(void);
+extern void CpuCopy(void *destination, const void *source, u32 size);
+
+/* Bytes of the current 0x14C record that the caller-supplied header owns. */
+#define RUNTIME_RECORD_14C_HEADER_SIZE 8
+
+/* Overwrite the header of the currently selected 0x14C record. */
+AT("0006C6F8") void RuntimeStoreCurrentRecord14C(const void *source)
+{
+    void *record = RuntimeGetCurrentRecord14C();
+
+    if ((u8)RuntimeReturnZero() == 0)
+        CpuCopy(record, source, RUNTIME_RECORD_14C_HEADER_SIZE);
+}

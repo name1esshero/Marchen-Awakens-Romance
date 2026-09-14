@@ -99,13 +99,13 @@ extern void RuntimeActorSetField340(s32 actor, s32 value);
 extern void sub_0801C820(s32 value);
 extern void *GameStateGetBuffer38C0(void);
 extern void sub_080700A8(void *state, u32 a, u32 b, u32 c);
-extern void sub_08070140(void *state);
+extern void MapGenerationRelease(void *state);
 extern void sub_0807017C(void *state, u32 a, u32 b);
 extern u32 Random(void);
 extern void sub_08070238(void *state, u32 value, u32 random);
 extern void sub_08070DA8(void *state, s32 a, s32 b);
 extern void sub_08070F80(void *state, s32 value);
-extern void sub_08070214(void *state, u32 value);
+extern void BattleRuntimeSetArena(void *buffer, u32 arenaIndex);
 extern s32 GameStateGetField4258(void);
 extern void GameStateSetField4258(s32 value);
 
@@ -227,7 +227,7 @@ AT("00012528") const u8 ScriptNativeMapConfigure3Tail[2] = {0};
 AT("00012544") s32 ScriptNativeMapRefresh(u32 count, const s32 *args, s32 *result)
 {
     void *state = GameStateGetBuffer38C0();
-    sub_08070140(state);
+    MapGenerationRelease(state);
     return 0x7FFF;
 }
 
@@ -373,9 +373,9 @@ AT("00012760") s32 ScriptNativeMapFinalize(u32 count, const s32 *args, s32 *resu
 AT("0001276C") s32 ScriptNativeMapSelectSlot(u32 count, const s32 *args, s32 *result)
 {
     if ((u32)args[0] <= 3)
-        sub_08070214(GameStateGetBuffer38C0(), args[0]);
+        BattleRuntimeSetArena(GameStateGetBuffer38C0(), args[0]);
     else
-        sub_08070214(GameStateGetBuffer38C0(), 0);
+        BattleRuntimeSetArena(GameStateGetBuffer38C0(), 0);
     return 1;
 }
 
@@ -769,4 +769,26 @@ AT("00012D64") s32 ScriptNativeClearMapHalfwords(u32 count, const s32 *args,
         i = temporary.next >> 16;
     } while (i <= 255);
     return 1;
+}
+
+extern void HeapFree(void *heap, void *allocation);
+extern void HitRegionDisableAll(void);
+extern void sub_08010A2C(s32 arg0, s32 arg1);
+
+/* The two heap blocks the generated map owns, at fixed offsets in the
+ * 0x38C0 generation buffer. */
+#define MAP_GENERATION_BLOCK_650 0x650
+#define MAP_GENERATION_BLOCK_654 0x654
+
+/* Release everything the current generated map owns and reset the runtime
+ * state that referenced it. */
+AT("00070140") void MapGenerationRelease(void *state)
+{
+    u8 *generation = state;
+
+    GameStateSetField4258(0);
+    HeapFree(0, *(void **)(generation + MAP_GENERATION_BLOCK_650));
+    HeapFree(0, *(void **)(generation + MAP_GENERATION_BLOCK_654));
+    HitRegionDisableAll();
+    sub_08010A2C(0, 0);
 }

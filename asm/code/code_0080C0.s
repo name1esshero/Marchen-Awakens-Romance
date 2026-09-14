@@ -10293,7 +10293,7 @@ sub_0800CCF6:
 	lsls r2, r2, #1
 	adds r0, r2, #0
 	adds r1, r2, #0
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	movs r0, #1
 	.2byte 0xF073
 	.byte 0x64

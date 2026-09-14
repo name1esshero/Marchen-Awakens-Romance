@@ -1143,7 +1143,7 @@ _08030848:
 	.global sub_0803085A
 sub_0803085A:
 	adds r1, r2, #0
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	adds r6, r7, #4
 	adds r0, r6, #0
 	bl sub_0802824C

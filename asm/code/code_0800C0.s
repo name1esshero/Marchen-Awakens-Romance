@@ -83,79 +83,14 @@ _080800F8:
 
 @ 08047C..0804BC is decompiled as ScriptNativeExec(); see src/decompiled.json
 
-	.section .rom.000804BC, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_080804BC
-sub_080804BC:
-	push {r4, lr}
-	adds r4, r0, #0
-	ldr r1, _080804E4
-	movs r2, #0
-	bl CpuFill
-	ldr r0, _080804E8
-	str r4, [r0, #0]
-	movs r2, #128
-	lsls r2, r2, #1
-	adds r0, r2, #0
-	adds r1, r2, #0
-	bl sub_08080504
-	movs r0, #1
-	.2byte 0xF000
-	.4byte 0xBC10F879
-	pop {r0}
-	bx r0
-	.global _080804E4
-_080804E4:
-	.4byte 0x000008CC
-	.global _080804E8
-_080804E8:
-	.4byte 0x03006120  @ IWRAM+0x6120
+@ 0804BC..0804EC is decompiled as SpriteRuntimeInit(); see src/decompiled.json
 
 @ 0804EC..080504 is decompiled as RuntimeGetBlock6120(); see src/decompiled.json
 
-	.section .rom.00080504, "ax"
-	.syntax unified
+@ 080504..08053C is decompiled as SpriteRuntimeSetFields8C4(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08080504
-sub_08080504:
-	push {r4, r5, r6, lr}
-	ldr r4, _0808052C
-	ands r1, r4
-	ands r2, r4
-	ldr r3, _08080530
-	ldr r3, [r3, #0]
-	ldr r6, _08080534
-	adds r5, r3, r6
-	ands r4, r0
-	strh r4, [r5, #0]
-	ldr r4, _08080538
-	adds r0, r3, r4
-	strh r1, [r0, #0]
-	adds r6, #4
-	adds r3, r3, r6
-	strh r2, [r3, #0]
-	pop {r4, r5, r6}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _0808052C
-_0808052C:
-	.4byte 0x000001FF
-	.global _08080530
-_08080530:
-	.4byte 0x03006120  @ IWRAM+0x6120
-	.global _08080534
-_08080534:
-	.4byte 0x000008C4
-	.global _08080538
-_08080538:
-	.4byte 0x000008C6
+	.section .rom.0008053C, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -195,56 +130,9 @@ _0808056C:
 _08080570:
 	.4byte 0x000008C8
 
-	.thumb_func
-	.thumb
-	.global sub_08080574
-sub_08080574:
-	push {lr}
-	lsls r0, r0, #24
-	lsrs r3, r0, #24
-	cmp r1, #0
-	beq _08080598
-	ldr r0, _08080594
-	ldr r2, [r0, #0]
-	movs r0, #128
-	lsls r0, r0, #4
-	adds r2, r2, r0
-	movs r1, #1
-	lsls r1, r3
-	ldr r0, [r2, #0]
-	orrs r0, r1
-	b _080805AA
-	.byte 0x00
-	.byte 0x00
-	.global _08080594
-_08080594:
-	.4byte 0x03006120  @ IWRAM+0x6120
-	.global _08080598
-_08080598:
-	ldr r0, _080805B0
-	ldr r2, [r0, #0]
-	movs r0, #128
-	lsls r0, r0, #4
-	adds r2, r2, r0
-	movs r1, #1
-	lsls r1, r3
-	ldr r0, [r2, #0]
-	bics r0, r1
-	.global _080805AA
-_080805AA:
-	str r0, [r2, #0]
-	pop {r0}
-	bx r0
-	.global _080805B0
-_080805B0:
-	.4byte 0x03006120  @ IWRAM+0x6120
-	.4byte 0x0E000600
-	.4byte 0x680A4904
-	.4byte 0x01092180
-	.4byte 0x21011852
-	.4byte 0x68104081
-	.4byte 0x47704008
-	.4byte 0x03006120
+@ 080574..0805B4 is decompiled as SpriteRuntimeSetFlag800(); see src/decompiled.json
+
+@ 0805B4..0805D0 is decompiled as SpriteRuntimeTestFlag800(); see src/decompiled.json
 
 @ 0805D0..080600 is decompiled as SpriteRuntimeSetAllFlags800(); see src/decompiled.json
 

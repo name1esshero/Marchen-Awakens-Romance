@@ -54,3 +54,22 @@ void InitializePointerRecord(void **record, void *value)
     record[0] = value;
 }
 AT("0007F044") const u8 InitializePointerRecordTail[2] = {0};
+
+extern void *GetBattleDefinition(s32 index);
+
+/* Offsets into the battle runtime buffer returned by
+ * GameStateGetBuffer38C0(): the selected arena index and the layout record
+ * GetBattleDefinition() resolves it to. */
+#define BATTLE_RUNTIME_ARENA_INDEX 0x648
+#define BATTLE_RUNTIME_ARENA_LAYOUT 0x658
+
+AT("00070214")
+void BattleRuntimeSetArena(void *buffer, u32 arenaIndex)
+{
+    u8 *runtime = buffer;
+
+    *(void **)(runtime + BATTLE_RUNTIME_ARENA_LAYOUT) =
+        GetBattleDefinition(arenaIndex);
+    *(u32 *)(runtime + BATTLE_RUNTIME_ARENA_INDEX) = arenaIndex;
+}
+AT("00070214") const u8 BattleRuntimeSetArenaTail[2] = {0};

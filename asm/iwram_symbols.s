@@ -163,8 +163,6 @@
 .thumb_set __errno, 0x080868E9
 .global end
 .set end, 0x03006128
-.global sub_0807F3DC
-.thumb_set sub_0807F3DC, 0x0807F3DD
 
 @ Labels inside source-compiled newlib constant tables. Remaining assembly uses
 @ PC-relative ADR/loads to these exact addresses, so keep stable aliases while

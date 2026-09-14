@@ -2034,7 +2034,7 @@ _0801909C:
 	lsls r2, r2, #1
 	adds r0, r2, #0
 	adds r1, r2, #0
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	movs r0, #0
 	ldrsb r0, [r6, r0]
 	movs r1, #0
@@ -2125,7 +2125,7 @@ _0801913A:
 	movs r0, #128
 	movs r1, #128
 	movs r2, #128
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	movs r0, #0
 	ldrsb r0, [r6, r0]
 	movs r1, #0
@@ -2227,7 +2227,7 @@ _080191EA:
 	movs r0, #128
 	movs r1, #128
 	movs r2, #128
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	movs r0, #0
 	ldrsb r0, [r6, r0]
 	movs r1, #0
@@ -2375,7 +2375,7 @@ _080192DA:
 	lsls r2, r2, #1
 	adds r0, r2, #0
 	adds r1, r2, #0
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	mov r2, r8
 	asrs r0, r2, #16
 	.2byte 0xF03D

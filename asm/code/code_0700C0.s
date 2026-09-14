@@ -72,39 +72,10 @@ _08070138:
 _0807013C:
 	.4byte 0x00000654
 
-	.thumb_func
-	.thumb
-	.global sub_08070140
-sub_08070140:
-	push {r4, lr}
-	adds r4, r0, #0
-	movs r0, #0
-	.2byte 0xF796
-	.4byte 0x21CAFF23
-	lsls r1, r1, #3
-	adds r0, r4, r1
-	ldr r1, [r0, #0]
-	movs r0, #0
-	bl HeapFree
-	ldr r0, _08070178
-	adds r4, r4, r0
-	ldr r1, [r4, #0]
-	movs r0, #0
-	bl HeapFree
-	.2byte 0xF7A1
-	.byte 0xD6
-	.byte 0xF9
-	movs r0, #0
-	movs r1, #0
-	bl sub_08010A2C
-	pop {r4}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _08070178
-_08070178:
-	.4byte 0x00000654
+@ 070140..07017C is decompiled as MapGenerationRelease(); see src/decompiled.json
+
+	.section .rom.0007017C, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -192,30 +163,10 @@ _0807020C:
 _08070210:
 	.4byte 0x0000064C
 
-	.thumb_func
-	.thumb
-	.global sub_08070214
-sub_08070214:
-	push {r4, r5, lr}
-	adds r4, r0, #0
-	adds r5, r1, #0
-	adds r0, r5, #0
-	.2byte 0xF002
-	.byte 0xF2
-	.byte 0xFC
-	movs r2, #203
-	lsls r2, r2, #3
-	adds r1, r4, r2
-	str r0, [r1, #0]
-	movs r0, #201
-	lsls r0, r0, #3
-	adds r4, r4, r0
-	str r5, [r4, #0]
-	pop {r4, r5}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
+@ 070214..070238 is decompiled as BattleRuntimeSetArena(); see src/decompiled.json
+
+	.section .rom.00070238, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -759,44 +710,10 @@ _080705E8:
 _080705EC:
 	.4byte 0x08089468  @ ROM+0x89468
 
-	.thumb_func
-	.thumb
-	.global sub_080705F0
-sub_080705F0:
-	push {r4, lr}
-	adds r1, r0, #0
-	movs r3, #0
-	cmp r1, #0
-	bne _08070600
-	b _08070616
-	.global _080705FC
-_080705FC:
-	adds r0, r3, #0
-	b _0807061A
-	.global _08070600
-_08070600:
-	movs r2, #0
-	movs r4, #1
-	.global _08070604
-_08070604:
-	adds r0, r1, #0
-	ands r0, r4
-	cmp r0, #0
-	bne _080705FC
-	asrs r1, r1, #1
-	adds r3, #1
-	adds r2, #1
-	cmp r2, #31
-	ble _08070604
-	.global _08070616
-_08070616:
-	movs r0, #1
-	negs r0, r0
-	.global _0807061A
-_0807061A:
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 0705F0..070620 is decompiled as FindLowestSetBit(); see src/decompiled.json
+
+	.section .rom.00070620, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -2484,7 +2401,7 @@ sub_08071136:
 	.thumb
 	.global sub_0807113E
 sub_0807113E:
-	bl sub_080705F0
+	bl FindLowestSetBit
 	adds r6, r0, #0
 	movs r3, #152
 	lsls r3, r3, #1
@@ -2553,7 +2470,7 @@ _080711A6:
 	cmp r0, #0
 	beq _08071226
 	asrs r0, r7, #20
-	bl sub_080705F0
+	bl FindLowestSetBit
 	adds r6, r0, #0
 	movs r1, #152
 	lsls r1, r1, #1
@@ -2619,7 +2536,7 @@ _08071226:
 	cmp r0, #0
 	beq _080712AE
 	asrs r0, r7, #24
-	bl sub_080705F0
+	bl FindLowestSetBit
 	adds r6, r0, #0
 	movs r3, #152
 	lsls r3, r3, #1
@@ -2698,7 +2615,7 @@ _080712AE:
 	cmp r0, #0
 	beq _08071328
 	asrs r0, r7, #28
-	bl sub_080705F0
+	bl FindLowestSetBit
 	adds r6, r0, #0
 	movs r3, #152
 	lsls r3, r3, #1

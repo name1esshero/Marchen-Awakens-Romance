@@ -6470,20 +6470,20 @@ sub_0803AE26:
 	.2byte 0xF045
 	.4byte 0x200CFBC9
 	movs r1, #0
-	bl sub_08080574
+	bl SpriteRuntimeSetFlag800
 	movs r0, #13
 	movs r1, #0
-	bl sub_08080574
+	bl SpriteRuntimeSetFlag800
 	movs r0, #14
 	movs r1, #0
-	bl sub_08080574
+	bl SpriteRuntimeSetFlag800
 	movs r6, #16
 	.global _0803AE58
 _0803AE58:
 	lsls r0, r6, #24
 	lsrs r0, r0, #24
 	movs r1, #0
-	bl sub_08080574
+	bl SpriteRuntimeSetFlag800
 	adds r6, #1
 	cmp r6, #31
 	ble _0803AE58
@@ -6491,7 +6491,7 @@ _0803AE58:
 	lsls r2, r2, #1
 	adds r0, r2, #0
 	adds r1, r2, #0
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	movs r0, #1
 	str r0, [sp, #0]
 	movs r3, #218
@@ -7231,34 +7231,34 @@ _0803B32C:
 _0803B34A:
 	movs r0, #12
 	movs r1, #0
-	bl sub_08080574
+	bl SpriteRuntimeSetFlag800
 	movs r0, #13
 	movs r1, #0
-	bl sub_08080574
+	bl SpriteRuntimeSetFlag800
 	movs r0, #14
 	movs r1, #0
-	bl sub_08080574
+	bl SpriteRuntimeSetFlag800
 	movs r6, #16
 	.global _0803B364
 _0803B364:
 	lsls r0, r6, #24
 	lsrs r0, r0, #24
 	movs r1, #0
-	bl sub_08080574
+	bl SpriteRuntimeSetFlag800
 	adds r6, #1
 	cmp r6, #31
 	ble _0803B364
 	movs r0, #96
 	movs r1, #96
 	movs r2, #96
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	b _0803B390
 	.global _0803B380
 _0803B380:
 	ldr r2, _0803B3A8
 	adds r0, r2, #0
 	adds r1, r2, #0
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	movs r0, #171
 	.2byte 0xF7CA
 	.byte 0x84
@@ -7619,7 +7619,7 @@ _0803B5EA:
 	lsls r2, r2, #1
 	adds r0, r2, #0
 	adds r1, r2, #0
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	ldr r2, [sp, #40]
 	ldr r1, [r2, #24]
 	cmp r1, #0
@@ -13630,7 +13630,7 @@ _0803DC88:
 	lsls r2, r2, #1
 	adds r0, r2, #0
 	adds r1, r2, #0
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	ldr r3, [sp, #36]
 	ldr r1, [r3, #24]
 	cmp r1, #0
@@ -16669,17 +16669,17 @@ sub_0803F152:
 	.2byte 0xFA10
 	movs r0, #13
 	movs r1, #0
-	bl sub_08080574
+	bl SpriteRuntimeSetFlag800
 	movs r0, #14
 	movs r1, #0
-	bl sub_08080574
+	bl SpriteRuntimeSetFlag800
 	movs r4, #16
 	.global _0803F166
 _0803F166:
 	lsls r0, r4, #24
 	lsrs r0, r0, #24
 	movs r1, #0
-	bl sub_08080574
+	bl SpriteRuntimeSetFlag800
 	adds r4, #1
 	cmp r4, #31
 	ble _0803F166
@@ -16687,7 +16687,7 @@ _0803F166:
 	lsls r2, r2, #1
 	adds r0, r2, #0
 	adds r1, r2, #0
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	movs r4, #1
 	str r4, [sp, #0]
 	mov r2, r9
@@ -17013,7 +17013,7 @@ _0803F39E:
 	lsls r0, r4, #24
 	lsrs r0, r0, #24
 	movs r1, #0
-	bl sub_08080574
+	bl SpriteRuntimeSetFlag800
 	adds r4, #1
 	cmp r4, #31
 	ble _0803F39E
@@ -17025,7 +17025,7 @@ _0803F39E:
 	.global sub_0803F3B2
 sub_0803F3B2:
 	movs r2, #0
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	movs r3, #128
 	lsls r3, r3, #1
 	movs r0, #1
@@ -17118,7 +17118,7 @@ _0803F438:
 	adds r0, r4, #0
 	adds r1, r4, #0
 	adds r2, r4, #0
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	ldr r2, _0803F4C8
 	ldr r0, _0803F4CC
 	ldr r1, _0803F4D0
