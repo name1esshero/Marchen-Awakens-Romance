@@ -14,7 +14,11 @@
 extern s32 __divsi3(s32 dividend, s32 divisor);
 
 /* Rotate a 18.14 fixed-point vector around the X axis. Angles use the
- * engine's 4096-step turn, and the sine table's quarter turn supplies cosine. */
+ * engine's 4096-step turn, and the sine table's quarter turn supplies cosine.
+ *
+ * The register hints and asm("" : "+r"(...)) fences below are load-bearing,
+ * not decoration: removing them (tested) changes agbcc's instruction
+ * selection and the function no longer matches the ROM byte-for-byte. */
 AT("0007D044")
 void SpriteVectorRotateX(struct SpriteVector3 *out,
                          const struct SpriteVector3 *in, s32 angle)
@@ -75,7 +79,12 @@ void SpriteVectorRotateX(struct SpriteVector3 *out,
     out->x = in->x;
 }
 
-/* Rotate a vector around the Y axis. */
+/* Rotate a vector around the Y axis.
+ *
+ * The register hints and asm("" : "+r"(...)) fences below are
+ * load-bearing, not decoration: removing them (tested) changes
+ * agbcc's instruction selection and the function no longer
+ * matches the ROM byte-for-byte. */
 AT("0007D0C0")
 void SpriteVectorRotateY(struct SpriteVector3 *out,
                          const struct SpriteVector3 *in, s32 angle)
@@ -137,7 +146,12 @@ void SpriteVectorRotateY(struct SpriteVector3 *out,
     out->y = in->y;
 }
 
-/* Rotate a vector around the Z axis. */
+/* Rotate a vector around the Z axis.
+ *
+ * The register hints and asm("" : "+r"(...)) fences below are
+ * load-bearing, not decoration: removing them (tested) changes
+ * agbcc's instruction selection and the function no longer
+ * matches the ROM byte-for-byte. */
 AT("0007D138")
 void SpriteVectorRotateZ(struct SpriteVector3 *out,
                          const struct SpriteVector3 *in, s32 angle)
@@ -198,7 +212,11 @@ void SpriteVectorRotateZ(struct SpriteVector3 *out,
     out->z = in->z;
 }
 
-/* Apply the renderer's scale and viewport origin to an X/Y point. */
+/* Apply the renderer's scale and viewport origin to an X/Y point.
+ *
+ * The register hints below are load-bearing, not decoration: removing
+ * them (tested) changes agbcc's instruction selection and the function
+ * no longer matches the ROM byte-for-byte. */
 AT("0007D1B4")
 void SpriteProjectPoint(struct SpriteVector3 *point)
 {
@@ -227,7 +245,12 @@ void SpriteProjectPoint(struct SpriteVector3 *point)
 
 /* Transform the sprite's center-to-corner offset and pack the signed 24-bit
  * screen coordinates into the renderer's OAM-shaped work record. Existing
- * affine and attribute flag bits in the record are preserved. */
+ * affine and attribute flag bits in the record are preserved.
+ *
+ * The register hints and the asm("" : "+r"(product)) fence below are
+ * load-bearing, not decoration: removing them (tested) changes agbcc's
+ * instruction selection and the function no longer matches the ROM
+ * byte-for-byte. */
 AT("0007DA38")
 void SpritePackAffinePosition(struct SpriteAffineTransform *state)
 {
@@ -299,7 +322,11 @@ void SpritePackAffinePosition(struct SpriteAffineTransform *state)
 }
 
 /* Build the four OAM affine coefficients for an angle and independent X/Y
- * scales. The engine stores sine/cosine in 18.14 fixed point. */
+ * scales. The engine stores sine/cosine in 18.14 fixed point.
+ *
+ * The register hints and asm("" : "+r"(...)) fences below are load-bearing,
+ * not decoration: removing them (tested) changes agbcc's instruction
+ * selection and the function no longer matches the ROM byte-for-byte. */
 AT("0007DAD0")
 void SpriteBuildAffineMatrix(struct SpriteAffineTransform *transform)
 {

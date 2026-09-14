@@ -9,7 +9,11 @@
 #endif
 
 /* Find a live affine slot with the requested key and packed transform.  The
- * search wraps at 32 entries and begins at the last successful slot. */
+ * search wraps at 32 entries and begins at the last successful slot.
+ *
+ * The register hints below are load-bearing, not decoration: removing
+ * them (tested) changes agbcc's instruction selection and the function
+ * no longer matches the ROM byte-for-byte. */
 AT("0007CC18")
 s32 SpriteAffineFind(u16 key, u32 high, s16 low)
 {
@@ -60,7 +64,12 @@ s32 SpriteAffineFind(u16 key, u32 high, s16 low)
 AT("0007CC18") const u8 SpriteAffineFindTail[2] = {0, 0};
 
 /* Reserve the first affine slot that is absent from both allocation masks.
- * The transform is stored in the renderer's packed high:low representation. */
+ * The transform is stored in the renderer's packed high:low representation.
+ *
+ * The register hints and the asm volatile("" : "+r"(available)) fence
+ * below are load-bearing, not decoration: removing them (tested) changes
+ * agbcc's instruction selection and the function no longer matches the
+ * ROM byte-for-byte. */
 AT("0007CC84")
 s32 SpriteAffineAllocate(u16 key, u32 high, s16 low)
 {

@@ -42,9 +42,9 @@ void *SpriteTileAllocatorInit(struct Heap *heap,
     struct SpriteTileAllocator *state = allocator;
     u32 base = tileBase;
     u32 count = tileCount;
-    register u32 allocationSize TARGET_REGISTER("r8");
-    register u16 *blocks TARGET_REGISTER("r2");
-    register u32 sentinel TARGET_REGISTER("r1");
+    u32 allocationSize;
+    u16 *blocks;
+    u32 sentinel;
 
     if (base + count > 1024)
         return 0;
@@ -67,9 +67,9 @@ void *SpriteTileAllocatorInit(struct Heap *heap,
 AT("0007B64C")
 u32 SpriteTileAllocatorFreeTotal(struct SpriteTileAllocator *allocator)
 {
-    register struct SpriteTileBlock *block TARGET_REGISTER("r4") = allocator->blocks;
-    register u32 total TARGET_REGISTER("r5") = 0;
-    register u32 sizeMask TARGET_REGISTER("r12") = 0x1FFF;
+    struct SpriteTileBlock *block = allocator->blocks;
+    u32 total = 0;
+    u32 sizeMask = 0x1FFF;
     u32 unavailableMask = 0xC000;
     u32 finalMask = 0x2000;
 

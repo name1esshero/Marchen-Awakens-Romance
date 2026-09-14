@@ -59,8 +59,8 @@ AT("0007E9A8") const u8 ScriptResourceFindTail[2] = {0, 0};
 AT("0007E9F4") s32 ScriptResourceSet(s32 type, const char *name,
                                        const void *value, s32 size)
 {
-    register s32 bucket asm("r10") = ScriptResourceHash(type, name);
-    register struct ScriptBytecodeRoot **root asm("r9");
+    s32 bucket = ScriptResourceHash(type, name);
+    struct ScriptBytecodeRoot **root;
     struct ScriptResourceNode *node;
     u32 nameLength;
 
@@ -80,14 +80,14 @@ AT("0007E9F4") s32 ScriptResourceSet(s32 type, const char *name,
     strcpy(node->typedName + 1, name);
 
     {
-        register struct ScriptBytecodeRoot **rootRead asm("r1") = root;
-        register struct ScriptBytecodeRoot *outer asm("r0") = *rootRead;
+        struct ScriptBytecodeRoot **rootRead = root;
+        struct ScriptBytecodeRoot *outer = *rootRead;
         struct ScriptResourceTable *table =
             (struct ScriptResourceTable *)outer->context;
-        register struct ScriptResourceNode **buckets asm("r1") =
+        struct ScriptResourceNode **buckets =
             table->buckets;
-        register u32 bucketOffset asm("r0") = (u32)bucket << 2;
-        register struct ScriptResourceNode **head asm("r0");
+        u32 bucketOffset = (u32)bucket << 2;
+        struct ScriptResourceNode **head;
         bucketOffset += (u32)buckets;
         head = (struct ScriptResourceNode **)bucketOffset;
         node->next = *head;

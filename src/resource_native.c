@@ -53,7 +53,7 @@ AT("00012B98") s32 ScriptNativeSetFriendArms(u32 count, const s32 *args,
     s32 friendOffset = 0x3880;
     register const s32 *input asm("r4") = args;
     register const s16 *definitions asm("r9") = gFriendArmOwnershipBits;
-    register s32 invalidDefinition asm("r8") = 444;
+    register s32 invalidDefinition asm("r8") = FRIEND_ARM_NO_OWNERSHIP_BIT;
 
     do {
         register s32 byteOffset asm("r2");

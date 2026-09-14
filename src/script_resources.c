@@ -98,10 +98,10 @@ AT("0007F05C") s32 ScriptResourceReset(s32 index)
  * again after each free because the heap callback may update VM state. */
 AT("0007F094") s32 ScriptResourceResetArray(s32 index)
 {
-    register struct ScriptResourceSlot *slot asm("r4");
-    register u32 count asm("r0");
-    register u32 i asm("r5");
-    register void **blocks asm("r6");
+    struct ScriptResourceSlot *slot;
+    u32 count;
+    u32 i;
+    void **blocks;
     void *heap;
 
     slot = sub_0807F354(index);

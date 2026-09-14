@@ -22,10 +22,10 @@ extern void SpriteTileAllocatorRelease(void *allocator, s32 tile);
  * 0x20 bytes. */
 AT("0007B9CC") void NcdResetResource(u32 resource)
 {
- register u32 offset TARGET_REGISTER("r4")=resource;
- register struct SpriteEngineState **global TARGET_REGISTER("r6")=
+ u32 offset=resource;
+ struct SpriteEngineState **global=
      (struct SpriteEngineState **)0x03006118;
- register u32 resourcesOffset TARGET_REGISTER("r5");
+ u32 resourcesOffset;
  struct SpriteEngineState *state=*global;
  struct Heap *heap=*(struct Heap **)((u8 *)state+0x11C);
  struct SpriteResourceDescriptor *resources;
@@ -34,11 +34,11 @@ AT("0007B9CC") void NcdResetResource(u32 resource)
  resources=*(struct SpriteResourceDescriptor **)((u8 *)state+resourcesOffset);
  offset <<=5;
  {
-  register u32 slot TARGET_REGISTER("r1")=offset+(u32)resources;
+  u32 slot=offset+(u32)resources;
   HeapFree(heap,*(void **)(slot+4));
  }
  {
-  register struct SpriteResourceDescriptor *resetBase TARGET_REGISTER("r0");
+  struct SpriteResourceDescriptor *resetBase;
   resetBase=*(struct SpriteResourceDescriptor **)
       ((u8 *)*global+resourcesOffset);
   CpuFill((u8 *)resetBase+offset,128,0);
@@ -74,7 +74,7 @@ AT("0007BDAC") void NcdQueueSprite(struct NcdSprite *sprite, u32 priority)
  countState += 320;
  (*(u32 *)countState)++;
 }
-__attribute__((section(".rom.0007BC2C"))) void NcdInitSprite(struct NcdSprite *sprite,s32 pool)
+AT("0007BC2C") void NcdInitSprite(struct NcdSprite *sprite,s32 pool)
 {
  CpuFill(sprite,52,0);
  sprite->animation=-1;
@@ -88,7 +88,7 @@ __attribute__((section(".rom.0007BC2C"))) void NcdInitSprite(struct NcdSprite *s
  sprite->flag28 = 1;
 }
 
-__attribute__((section(".rom.0007BF60")))
+AT("0007BF60")
 void NcdSpriteCopy(struct NcdSprite *destination, const struct NcdSprite *source)
 {
  CpuCopy(destination,source,52);
@@ -97,7 +97,7 @@ void NcdSpriteCopy(struct NcdSprite *destination, const struct NcdSprite *source
 
 /* Register an NCD container and resolve its ROM-relative table offsets once.
  * Its signed-byte binding table has one slot per palette and starts unassigned. */
-__attribute__((section(".rom.0007B96C")))
+AT("0007B96C")
 void NcdRegisterResource(struct NcdHeader *header, u32 resource)
 {
  struct SpriteResourceDescriptor *descriptor;
@@ -116,7 +116,7 @@ void NcdRegisterResource(struct NcdHeader *header, u32 resource)
 }
 
 /* Clone the instance and give the copy its own per-cell handle table. */
-__attribute__((section(".rom.0007BF80")))
+AT("0007BF80")
 void NcdSpriteDeepCopy(struct NcdSprite *destination, const struct NcdSprite *source)
 {
  CpuCopy(destination, source, 52);
