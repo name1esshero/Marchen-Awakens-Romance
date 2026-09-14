@@ -4,6 +4,8 @@
 
 #include "rom_section.h"
 
+extern const struct ScriptResourceEntry gScriptResourceEntries[];
+extern const u8 gScriptResourceDefaultValue[];
 extern s32 ScriptResourceRemove(s32 type, const char *name);
 extern u16 *ScriptResourceFind(s32 type, const char *name);
 extern s32 ScriptResourceSet(s32 type, const char *name, const void *data,
@@ -18,7 +20,7 @@ struct ScriptResourceSlot {
  * playback) verified against ROM data; not yet reconstructed as a matching
  * C array, so it is aliased rather than re-typed. */
 #define gScriptEngineFunctions \
-    ((const struct ScriptResourceEntry *)0x081ACB7C)
+    gScriptResourceEntries
 /* Same {name, handler} layout as gScriptNativeCommands, reused here under
  * ScriptResourceEntry's generic type -- the THUMB-bit-set handler addresses
  * verified against decompiled.json in game_tables.c apply here too. */
@@ -26,7 +28,7 @@ extern const struct ScriptResourceEntry gScriptNativeCommands[];
 /* Zero-filled 16-byte fallback record (the trailing "%d" belongs to
  * unrelated, adjacent ROM data) returned when a resource value slot holds
  * no override. */
-#define sScriptResourceDefaultValue ((void *)0x081AC698)
+#define sScriptResourceDefaultValue ((void *)gScriptResourceDefaultValue)
 
 struct ScriptResourceSlot *ScriptResourceSlotFirst(s32 index);
 struct ScriptResourceSlot *ScriptResourceSlotSecond(s32 index);
@@ -70,7 +72,7 @@ AT("0007EE3C") s32 ScriptResourceRegisterTableToHeap(
 }
 AT("0007EE3C") const u8 ScriptResourceRegisterTableToHeapTail[2] = {0};
 
-/* Install the built-in VM, game, and native-command resource tables. */
+/** Install the built-in VM, game, and native-command resource tables. */
 AT("0007EE7C") s32 ScriptResourceRegisterBuiltins(s32 heap, void *table)
 {
     if (ScriptResourceRegisterTableToHeap(
@@ -94,7 +96,7 @@ AT("0007EF94") s32 ScriptResourceLoadAndInstall(const char *name, s32 slot)
 }
 AT("0007EF94") const u8 ScriptResourceLoadAndInstallTail[2] = {0};
 
-/* Return a resource slot to its empty state. Shared allocations (values above
+/** Return a resource slot to its empty state. Shared allocations (values above
  * one) belong to the VM heap and must be released before the slot is reused. */
 AT("0007F05C") s32 ScriptResourceReset(s32 index)
 {
@@ -109,7 +111,7 @@ AT("0007F05C") s32 ScriptResourceReset(s32 index)
     return 0;
 }
 
-/* The second slot class owns an array of allocations. Its live count is read
+/** The second slot class owns an array of allocations. Its live count is read
  * again after each free because the heap callback may update VM state. */
 AT("0007F094") s32 ScriptResourceResetArray(s32 index)
 {
@@ -155,7 +157,7 @@ AT("0007F1E8") s32 ScriptResourceLookupSecond(const char *key)
 }
 AT("0007F1E8") const u8 ScriptResourceLookupSecondTail[2] = {0};
 
-/* Return the stable numeric slot assigned to a resource name.  The two name
+/** Return the stable numeric slot assigned to a resource name.  The two name
  * classes have independent 32-entry namespaces in the active script VM. */
 AT("0007F294") s32 ScriptResourceNameFirst(const char *key)
 {
@@ -199,7 +201,7 @@ AT("0007F2E0") s32 ScriptResourceNameSecond(const char *key)
 }
 AT("0007F2E0") const u8 ScriptResourceNameSecondTail[2] = {0};
 
-/* Both resource classes keep their slots inline in the VM context: class one
+/** Both resource classes keep their slots inline in the VM context: class one
  * starts at offset 20 with its live count at 16, class two at offset 276 with
  * its count at 18.  Out-of-range slots resolve to a null record rather than
  * trapping, which is what the lazy handles in script_resource_handles.c
@@ -244,7 +246,7 @@ extern void *HeapAlloc(void *heap, u32 size);
 extern u32 strlen(const char *text);
 extern char *strcpy(char *destination, const char *source);
 
-/* Replace a value slot with a heap-owned copy of a string.  The previous
+/** Replace a value slot with a heap-owned copy of a string.  The previous
  * allocation, if any, is released first; a failed allocation leaves the slot
  * null but still reports success, matching the original. */
 AT("0007F3DC") s32 ScriptResourceSetStringValue(u32 *record, s32 selector,

@@ -12,6 +12,20 @@
 extern u8 *CreateTask(void *manager, void *callback, u32 priority,
                       s32 *result, u32 stateSize);
 
+extern void sub_0802C21C(void *task);
+extern void sub_0802FD34(void *task);
+extern void sub_08032FE8(void *task);
+extern void sub_08033D98(void *task);
+extern void sub_0804083C(void *task);
+extern void sub_08045170(void *task);
+extern void sub_0804921C(void *task);
+extern void sub_0804F4D4(void *task);
+extern void sub_0804E700(void *task);
+extern void sub_08048460(void *task);
+extern void sub_0804AD08(void *task);
+extern void sub_0802D464(void *task);
+extern void sub_0804A7C4(void *task);
+
 AT("0002C198")
 u8 *CreateBattleModeTask2C1(s32 owner, s32 slot, void *resource, s32 *result,
                              s32 selectedMode)
@@ -19,7 +33,7 @@ u8 *CreateBattleModeTask2C1(s32 owner, s32 slot, void *resource, s32 *result,
     void *savedResource = resource;
     s32 mode = (s16)selectedMode;
     u8 *task = CreateTask(gSecondaryRuntime + owner * 32 + slot * 16,
-                          (void *)0x0802C21D, 0, result, 116);
+                          (void *)sub_0802C21C, 0, result, 116);
     u8 *state;
     s32 *empty;
     s32 *cursor;
@@ -59,7 +73,7 @@ u8 *CreateBattleModeTask2FC(s32 owner, s32 slot, void *resource, s32 *result,
     s32 emptyValue;
 
     task = CreateTask(gSecondaryRuntime + owner * 32 + slot * 16,
-                      (void *)0x0802FD35, 0, result, 236);
+                      (void *)sub_0802FD34, 0, result, 236);
     if (task == 0) {
         if (result != 0)
             *result = -1;
@@ -89,7 +103,7 @@ u8 *CreateBattleModeTask32F(s32 owner, s32 slot, void *resource, s32 *result,
     u8 *task;
 
     task = CreateTask(gSecondaryRuntime + owner * 32 + slot * 16,
-                      (void *)0x08032FE9, 0, result, 200);
+                      (void *)sub_08032FE8, 0, result, 200);
     if (task == 0) {
         if (result != 0)
             *result = -1;
@@ -140,23 +154,23 @@ u8 *name(s32 owner, s32 slot, void *resource, s32 *result, s32 selectedMode)\
 }
 
 DEFINE_SEQUENTIAL_MODE_TASK("00033D00", CreateBattleModeTask33D,
-                            0x08033D99, 244, 224, 268, 262, 272)
+                            sub_08033D98, 244, 224, 268, 262, 272)
 AT("00033D00") const u8 CreateBattleModeTask33DTail[2] = {0};
 
 DEFINE_SEQUENTIAL_MODE_TASK("000407AC", CreateBattleModeTask407,
-                            0x0804083D, 192, 160, 216, 208, 220)
+                            sub_0804083C, 192, 160, 216, 208, 220)
 AT("000407AC") const u8 CreateBattleModeTask407Tail[2] = {0};
 
 DEFINE_SEQUENTIAL_MODE_TASK("000450E0", CreateBattleModeTask450,
-                            0x08045171, 200, 160, 224, 214, 228)
+                            sub_08045170, 200, 160, 224, 214, 228)
 AT("000450E0") const u8 CreateBattleModeTask450Tail[2] = {0};
 
 DEFINE_SEQUENTIAL_MODE_TASK("00049184", CreateBattleModeTask491,
-                            0x0804921D, 248, 224, 272, 262, 276)
+                            sub_0804921C, 248, 224, 272, 262, 276)
 AT("00049184") const u8 CreateBattleModeTask491Tail[2] = {0};
 
 DEFINE_SEQUENTIAL_MODE_TASK("0004F444", CreateBattleModeTask4F4,
-                            0x0804F4D5, 196, 160, 220, 214, 224)
+                            sub_0804F4D4, 196, 160, 220, 214, 224)
 AT("0004F444") const u8 CreateBattleModeTask4F4Tail[2] = {0};
 
 #ifdef NONMATCHING
@@ -166,13 +180,13 @@ u8 *CreateBattleModeTask4E6(s32 owner, s32 slot, void *resource, s32 *result,
 {
     void *savedResource = resource;
     s32 mode = (s16)selectedMode;
-    register u8 *task asm("r1");
+    u8 *task;
     s32 *end;
     s32 *cursor;
     s32 emptyValue;
 
     task = CreateTask(gSecondaryRuntime + owner * 32 + slot * 16,
-                      (void *)0x0804E701, 0, result, 256);
+                      (void *)sub_0804E700, 0, result, 256);
     if (task == 0) {
         if (result != 0)
             *result = -1;
@@ -210,7 +224,7 @@ u8 *CreateBattleModeTask483(s32 owner, s32 slot, void *resource, s32 *result,
     s32 emptyValue;
 
     task = CreateTask(gSecondaryRuntime + owner * 32 + slot * 16,
-                      (void *)0x08048461, 0, result, 108);
+                      (void *)sub_08048460, 0, result, 108);
     if (task == 0) {
         if (result != 0)
             *result = -1;
@@ -239,7 +253,7 @@ u8 *CreateBattleModeTask4AC(s32 owner, s32 slot, void *resource, s32 *result,
 {
     void *savedResource = resource;
     s32 mode = (s16)selectedMode;
-    register u8 *task asm("r2");
+    u8 *task;
     u8 *state;
     s16 *modeField;
     s32 *cursor;
@@ -247,7 +261,7 @@ u8 *CreateBattleModeTask4AC(s32 owner, s32 slot, void *resource, s32 *result,
     s32 remaining;
 
     task = CreateTask(gSecondaryRuntime + owner * 32 + slot * 16,
-                      (void *)0x0804AD09, 0, result, 104);
+                      (void *)sub_0804AD08, 0, result, 104);
     if (task == 0) {
         if (result != 0)
             *result = -1;
@@ -292,13 +306,13 @@ AT("0002D3C0")
 void *BattleObjectCreateTask(s32 owner, s32 slot, void *resource, s32 *result,
                              s32 group, s32 variant)
 {
-    CREATE_BATTLE_TASK((void *)0x0802D465);
+    CREATE_BATTLE_TASK((void *)sub_0802D464);
 }
 
 AT("0004A720")
 void *BattleTaskACreateTask(s32 owner, s32 slot, void *resource, s32 *result,
                             s32 group, s32 variant)
 {
-    CREATE_BATTLE_TASK((void *)0x0804A7C5);
+    CREATE_BATTLE_TASK((void *)sub_0804A7C4);
 }
 #endif

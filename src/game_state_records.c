@@ -103,7 +103,7 @@ AT("000560F8") s32 GameStateGetEntry3894(s32 row,s32 group,s32 slot)
  return *(s16 *)base;
 }
 
-/* Copies one 40-byte entry out of the record table reached by sub_08056E3C. */
+/** Copies one 40-byte entry out of the record table reached by sub_08056E3C. */
 AT("00056CD0") void GameStateCopyRecord(s32 a,s32 b,void *destination)
 {
  u8 *source;
@@ -117,7 +117,7 @@ AT("00056CD0") void GameStateCopyRecord(s32 a,s32 b,void *destination)
  CpuCopy(source,destination,40);
 }
 
-/* Sums the two per-id contributions and saturates at 99. */
+/** Sums the two per-id contributions and saturates at 99. */
 AT("00056984") s32 GameStateGetEntry2768Total(s32 id)
 {
  s32 v;

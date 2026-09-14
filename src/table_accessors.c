@@ -6,6 +6,9 @@
 #include "runtime_state.h"
 #include "rom_section.h"
 
+struct _reent;
+extern struct _reent *_impure_ptr;
+
 AT("0000AF88")
 s32 RuntimeGetSignedByteE4B(void)
 {
@@ -41,5 +44,5 @@ void *GetBattleDefinition(s32 index)
 AT("000868E8")
 void *GetNewlibReentrancyState(void)
 {
-    return *(void **)0x08F2AFEC;
+    return _impure_ptr;
 }

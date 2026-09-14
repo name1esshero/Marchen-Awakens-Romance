@@ -15,7 +15,7 @@ extern struct SoundPlayer gSoundPlayer5;
 extern struct SoundPlayer gSoundPlayer6;
 extern struct SoundPlayer gSoundPlayer7;
 extern struct SoundPlayer gSoundPlayer8;
-/* Try the six player slots in the engine's priority order and return the
+/** Try the six player slots in the engine's priority order and return the
  * order position used, or -1 when every eligible player is active. */
 AT("00005F7C") s32 StartSongOnFreePlayer(void *context, void *arguments, u32 song)
 {

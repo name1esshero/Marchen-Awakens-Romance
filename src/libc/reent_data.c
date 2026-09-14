@@ -4,7 +4,7 @@
 #define AT(x) __attribute__((section(".rom." x)))
 #define C_LOCALE_NAME ((const char *)0x081AC8BC)
 
-/* This is _REENT_INIT with the existing shared "C" locale string named
+/** This is _REENT_INIT with the existing shared "C" locale string named
  * explicitly, so no compiler-created duplicate string enters the ROM. */
 AT("00F2AD00")
 struct _reent gLibcReentrancy = {

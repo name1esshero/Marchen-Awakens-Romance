@@ -11,7 +11,7 @@
 
 #include "rom_section.h"
 
-/* Item IDs are one-based.  ID zero has no name and displays one full-width
+/** Item IDs are one-based.  ID zero has no name and displays one full-width
  * Shift-JIS space (0x8140) as its description. */
 AT("001BE7EC")
 const struct ConsumableText gConsumableNoneText = {

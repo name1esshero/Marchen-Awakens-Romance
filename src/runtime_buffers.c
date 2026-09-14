@@ -80,7 +80,7 @@ AT("00019C34") void RuntimePartInitHeader(u8 *record,const void *resourceName,u3
  *(u16 *)(record+16)=value;
 }
 
-/* Per-actor animation and position state.  The explicit arithmetic order is
+/** Per-actor animation and position state.  The explicit arithmetic order is
  * retained because it reproduces the original agbcc instruction schedule. */
 AT("00009DB8") s32 RuntimeActorGetField7A0(u32 actor) { u8 *base=gSecondaryRuntime; actor*=1672; base+=actor; base+=0x7A0; return *(s8 *)base; }
 AT("00009DD4") void RuntimeActorSetField7A2(u32 actor,s32 value) { u8 *base=gSecondaryRuntime; actor*=1672; base+=actor; base+=0x7A2; *(s16 *)base=value; }
@@ -142,7 +142,7 @@ AT("00009EEC") void *RuntimeActorGetField354Address(u32 actor)
 extern u8 *sub_080083B8(u32 actor,u32 part);
 extern s16 *sub_080099E0(u32 actor,u32 group);
 
-/* Count occurrences of value in the five-element signed lookup returned for
+/** Count occurrences of value in the five-element signed lookup returned for
  * this actor/group pair. */
 AT("000099B8") u32 RuntimeCountMatchingValues(u32 actor,u32 group,s32 value)
 {

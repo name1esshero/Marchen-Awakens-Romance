@@ -392,7 +392,7 @@ AT("0007F6C4") s32 ScriptCmdJumpRelative(void)
     return 1;
 }
 
-/* Save all 16 VM registers (register 15 is the stack cursor), then the frame
+/** Save all 16 VM registers (register 15 is the stack cursor), then the frame
  * flags and return cursor. Callback execution is therefore nestable. */
 AT("0007F664") s32 ScriptPushFrameAndJump(u32 callbackIndex, u32 destination)
 {
@@ -488,7 +488,7 @@ AT("0008004C") s32 ScriptCmdRestoreFrameAndGetResult(void)
     return *(s32 *)((u8 *)gScriptBytecodeRoot->context + 532);
 }
 
-/* Used by unimplemented/invalid opcode slots to stop script execution. */
+/** Used by unimplemented/invalid opcode slots to stop script execution. */
 AT("00080068") s32 ScriptCmdFail(void)
 {
     return -1;

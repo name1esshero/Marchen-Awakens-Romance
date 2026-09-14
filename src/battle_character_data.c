@@ -2,7 +2,7 @@
 
 #include "rom_section.h"
 
-/*
+/**
  * The engine indexes this table with characterId * 120. The first fields are
  * copied into live HP/stat slots, armIds selects up to ten equipped ARMs, the
  * six four-coordinate boxes describe the character's interaction extents,

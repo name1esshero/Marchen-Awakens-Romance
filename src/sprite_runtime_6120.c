@@ -49,7 +49,7 @@ AT("00080504") void SpriteRuntimeSetFields8C4(s32 first,s32 second,s32 third)
  *(u16 *)(block+SPRITE_RUNTIME_FIELD_8C8)=third;
 }
 
-/* The matching getter for the 0x8C4 triple (0x0808053C) is still in
+/** The matching getter for the 0x8C4 triple (0x0808053C) is still in
  * asm/code/code_0800C0.s: the ROM reloads the block pointer before the third
  * field, which agbcc common-subexpression-eliminates away in every natural
  * C spelling tried so far. */

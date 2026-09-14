@@ -18,7 +18,7 @@ void sub_0807ADE0(struct Font *, const struct FontData *)
 #endif
 extern void CpuFill(void *, u32, u32);
 
-/* The dialogue reader accepts this wider lead-byte range, including private
+/** The dialogue reader accepts this wider lead-byte range, including private
  * font codes outside standard Shift-JIS. */
 AT("000025E4")
 u32 IsEngineDoubleByte(const u8 *text)
@@ -36,6 +36,10 @@ void InitFont(struct Font *font, const struct FontData *data)
     SetFontData(font, data);
 }
 
+/**
+ * @brief Clear the font object's active data pointer.
+ * @param font Font object to reset.
+ */
 AT("0007ADE4")
 void ClearFont(struct Font *font)
 {
@@ -43,7 +47,7 @@ void ClearFont(struct Font *font)
 }
 AT("0007ADE4") const u8 ClearFontTail[2] = {0, 0};
 
-/* Rows are rounded to eight pixels before multiplying by bit depth. */
+/** Rows are rounded to eight pixels before multiplying by bit depth. */
 AT("0007ADF4")
 u32 FontGlyphStride(const struct Font *font)
 {
@@ -61,7 +65,7 @@ const u16 *FontPalette(const struct Font *font)
     return (const u16 *)((const u8 *)data + data->paletteOffset);
 }
 
-/* Convert the game's 16-bit character encoding to a FONT.NFT glyph index.
+/** Convert the game's 16-bit character encoding to a FONT.NFT glyph index.
  * The arithmetic is deliberately expressed as wrapped 16-bit deltas: these
  * are sparse Shift-JIS and private-use ranges, rather than Unicode ranges.
  * Gaps in the kana block map to glyph zero as they did in the original. */
@@ -114,7 +118,7 @@ u32 FontCharacterToGlyph(u32 input)
     return result;
 }
 
-/* Resolve the two control-font aliases, substitute the game's missing-glyph
+/** Resolve the two control-font aliases, substitute the game's missing-glyph
  * box for unsupported codes, then locate the packed bitmap in FONT.NFT. */
 AT("0007AE10")
 const u8 *GetFontGlyph(const struct Font *font, u32 input)
@@ -142,7 +146,7 @@ const u8 *GetFontGlyph(const struct Font *font, u32 input)
     }
 }
 
-/* Decode one engine character. The private lead-byte range extends beyond
+/** Decode one engine character. The private lead-byte range extends beyond
  * standard Shift-JIS. The high and low bytes occupy disjoint bits, so their
  * sum is the combined code; callers advance the cursor themselves. */
 AT("000025BC")

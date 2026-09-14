@@ -28,7 +28,7 @@ struct SoundWaitTaskData {
     s32 playerIndex;
 };
 
-/* A second wait form reads MusicPlayer2000's status word directly.  The
+/** A second wait form reads MusicPlayer2000's status word directly.  The
  * signed high bit marks an idle or paused player. */
 AT("00005920") void SoundPlayerIdleTask(struct SoundWaitTaskData *task)
 {
@@ -55,7 +55,7 @@ AT("00005920") void SoundPlayerIdleTask(struct SoundWaitTaskData *task)
     }
 }
 
-/* Complete a script wait once the selected sound player becomes idle. */
+/** Complete a script wait once the selected sound player becomes idle. */
 AT("0000581C") void SoundWaitTask(struct SoundWaitTaskData *task)
 {
     if (GameStateGetField425C(task->playerIndex) != 0)
@@ -130,7 +130,7 @@ struct SoundStartTask {
 
 void SoundStartTask(struct SoundStartTask *task);
 
-/* Start immediately when the selected player is idle.  When it is already
+/** Start immediately when the selected player is idle.  When it is already
  * active, stop it and schedule SoundStartTask so scripts can wait through the
  * short transition. */
 AT("000059C8") struct EngineTask *StartSongWithTransition(
@@ -172,7 +172,7 @@ AT("000059C8") struct EngineTask *StartSongWithTransition(
     return 0;
 }
 
-/* Wait four scheduler ticks before installing a song in its selected player,
+/** Wait four scheduler ticks before installing a song in its selected player,
  * then finish on the following callback. */
 AT("00005AC4") void SoundStartTask(struct SoundStartTask *task)
 {

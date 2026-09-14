@@ -152,7 +152,7 @@ AT("0006E150") struct EngineTask *CreateSaveBlockLoadTask(
 }
 AT("0006E150") const u8 CreateSaveBlockLoadTaskTail[2] = {0};
 
-/* Read and validate a complete save without blocking the caller.  A damaged
+/** Read and validate a complete save without blocking the caller.  A damaged
  * payload keeps its header and advances recoveryCount; a damaged header clears
  * the whole block. */
 AT("0006E184") void SaveBlockLoadTask(struct EngineTask *task)
@@ -229,7 +229,7 @@ AT("0006E264") struct EngineTask *CreateSaveBlockWriteTask(
 }
 AT("0006E264") const u8 CreateSaveBlockWriteTaskTail[2] = {0};
 
-/* Prepare every field in a full save block, then delegate the physical SRAM
+/** Prepare every field in a full save block, then delegate the physical SRAM
  * transfer to SaveWriteTask and forward its completion status. */
 AT("0006E298") void SaveBlockPrepareAndWriteTask(struct EngineTask *task)
 {
@@ -301,7 +301,7 @@ AT("0006E360") struct EngineTask *CreateSaveHeaderWriteTask(
 }
 AT("0006E360") const u8 CreateSaveHeaderWriteTaskTail[2] = {0};
 
-/* Write and verify the 44-byte save header asynchronously.  Two deliberately
+/** Write and verify the 44-byte save header asynchronously.  Two deliberately
  * separate wait states give the child SRAM task a frame to publish its result
  * before this parent reports completion. */
 AT("0006E39C") void SaveHeaderWriteTask(struct EngineTask *task)

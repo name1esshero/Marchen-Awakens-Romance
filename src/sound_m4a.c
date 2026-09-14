@@ -127,7 +127,7 @@ struct SoundDriverState
     struct SoundChannel channels[12]; /* +50 */
 };
 
-/* Enable the four Game Boy-compatible PSG channels and replace the generic
+/** Enable the four Game Boy-compatible PSG channels and replace the generic
  * sequence handlers with this driver's CGB-aware commands. */
 AT("00078CA8") void SoundDriverEnableCgb(void *channelStorage)
 {
@@ -180,14 +180,14 @@ AT("00078CA8") void SoundDriverEnableCgb(void *channelStorage)
     sound->ident = ident;
 }
 
-/* BIOS CpuFastSet-style helper used when cloning the sequence jump table. */
+/** BIOS CpuFastSet-style helper used when cloning the sequence jump table. */
 AT("00078DC0") void SoundDriverCopyJumpTableSwi(void)
 {
     asm("swi 0x2A");
 }
 
 
-/* Interpolate the two adjacent MIDI scale entries, then scale the wave's
+/** Interpolate the two adjacent MIDI scale entries, then scale the wave's
  * native frequency by the high half of each 32x32-bit product. */
 AT("00078948") u32 SoundMidiKeyToFrequency(
     struct SoundWaveData *wave, u8 key, u8 fineAdjust)
@@ -212,12 +212,12 @@ AT("00078948") u32 SoundMidiKeyToFrequency(
             + sub_08077DB0(upperFrequency - lowerFrequency, fine));
 }
 
-/* Empty compatibility entry retained by this MusicPlayer2000 build. */
+/** Empty compatibility entry retained by this MusicPlayer2000 build. */
 AT("000789AC") void SoundDriverUnusedNoOp(void)
 {
 }
 
-/* Install the relocatable mixer in IWRAM, initialize its driver/channel
+/** Install the relocatable mixer in IWRAM, initialize its driver/channel
  * state, and register all nine player slots with their shared MEMACC area. */
 AT("000789EC") void SoundDriverInit(void)
 {
@@ -238,7 +238,7 @@ AT("000789EC") void SoundDriverInit(void)
     }
 }
 
-/* Materialize each just-started track's default runtime state.  Track
+/** Materialize each just-started track's default runtime state.  Track
  * bytecode itself is left intact; the callback clears its transient tail. */
 AT("00078C60") void SoundPlayerImmediateInit(struct SoundPlayer *player)
 {
@@ -261,7 +261,7 @@ AT("00078C60") void SoundPlayerImmediateInit(struct SoundPlayer *player)
     }
 }
 
-/* Configure direct-sound timing for a frequency-table slot and synchronize
+/** Configure direct-sound timing for a frequency-table slot and synchronize
  * Timer 0's restart to the final visible scanline. */
 AT("00078EB8") void SoundDriverSetSampleFrequency(u32 frequency)
 {
@@ -289,7 +289,7 @@ AT("00078EB8") void SoundDriverSetSampleFrequency(u32 frequency)
     *(volatile u16 *)0x04000102 = 0x80;
 }
 
-/* Establish the core direct-sound state and hardware DMA/FIFO routing. */
+/** Establish the core direct-sound state and hardware DMA/FIFO routing. */
 AT("00078DEC") void SoundDriverStateInit(void *state)
 {
     struct SoundDriverState *sound = state;
@@ -322,7 +322,7 @@ AT("00078DEC") void SoundDriverStateInit(void *state)
     sound->ident = SOUND_PLAYER_READY;
 }
 
-/* Apply packed MusicPlayer2000 mode fields: reverb, channel count, master
+/** Apply packed MusicPlayer2000 mode fields: reverb, channel count, master
  * volume, DAC resolution, and direct-sound sample-rate selection. */
 AT("00078F5C") void SoundDriverSetMode(u32 mode)
 {
@@ -365,7 +365,7 @@ AT("00078F5C") void SoundDriverSetMode(u32 mode)
     sound->ident = SOUND_PLAYER_READY;
 }
 
-/* Silence every software and CGB channel while holding the driver lock. */
+/** Silence every software and CGB channel while holding the driver lock. */
 AT("00078FF4") void SoundDriverClear(void)
 {
     struct SoundDriverState *sound =
@@ -396,7 +396,7 @@ AT("00078FF4") void SoundDriverClear(void)
     sound->ident = SOUND_PLAYER_READY;
 }
 
-/* Suspend FIFO DMA and clear the direct-sound PCM ring buffer.  The driver's
+/** Suspend FIFO DMA and clear the direct-sound PCM ring buffer.  The driver's
  * signature advances by ten while VBlank mixing is disabled. */
 AT("00079048") void SoundDriverVSyncOff(void)
 {
@@ -415,7 +415,7 @@ AT("00079048") void SoundDriverVSyncOff(void)
     }
 }
 
-/* Restart FIFO DMA after a temporary sound shutdown. */
+/** Restart FIFO DMA after a temporary sound shutdown. */
 AT("000790AC") void SoundDriverVSyncOn(void)
 {
     struct SoundDriverState *sound =
@@ -429,7 +429,7 @@ AT("000790AC") void SoundDriverVSyncOn(void)
     sound->ident = ident - 10;
 }
 
-/* Register a player and its track storage with the global M4A driver. */
+/** Register a player and its track storage with the global M4A driver. */
 AT("000790E4") void SoundPlayerOpen(
     struct SoundPlayer *player, struct SoundTrack *tracks, u8 trackCount)
 {
@@ -467,7 +467,7 @@ AT("000790E4") void SoundPlayerOpen(
     player->ident = SOUND_PLAYER_READY;
 }
 
-/* Start a sequence after enforcing the player's replacement-priority policy.
+/** Start a sequence after enforcing the player's replacement-priority policy.
  * Every active track is reset and pointed at its corresponding bytecode part;
  * surplus player tracks are explicitly retired. */
 AT("0007915C") void SoundPlayerStart(
@@ -519,7 +519,7 @@ AT("0007915C") void SoundPlayerStart(
     }
 }
 
-/* Resume a paused sequence player. */
+/** Resume a paused sequence player. */
 AT("000789B0") void SoundPlayerResume(struct SoundPlayer *player)
 {
     register u32 ident asm("r3") = player->ident;
@@ -528,7 +528,7 @@ AT("000789B0") void SoundPlayerResume(struct SoundPlayer *player)
         player->status &= ~SOUND_PLAYER_PAUSED;
 }
 
-/* Begin a permanent fade to silence. */
+/** Begin a permanent fade to silence. */
 AT("000789CC") void SoundPlayerFadeOut(struct SoundPlayer *player, u16 interval)
 {
     register u16 fadeInterval asm("r1") = interval;
@@ -541,7 +541,7 @@ AT("000789CC") void SoundPlayerFadeOut(struct SoundPlayer *player, u16 interval)
     }
 }
 
-/* Start the requested song on the player selected by its song-table entry. */
+/** Start the requested song on the player selected by its song-table entry. */
 AT("00078A70") void SoundSongStart(u16 songNumber)
 {
     const struct SoundPlayerEntry *playerTable = gSoundPlayerTable;
@@ -552,7 +552,7 @@ AT("00078A70") void SoundSongStart(u16 songNumber)
     SoundPlayerStart(player->player, song->header);
 }
 
-/* Start a song unless that player is already running the same unpaused song. */
+/** Start a song unless that player is already running the same unpaused song. */
 AT("00078A9C") void SoundSongStartOrChange(u16 songNumber)
 {
     const struct SoundPlayerEntry *playerTable = gSoundPlayerTable;
@@ -568,7 +568,7 @@ AT("00078A9C") void SoundSongStartOrChange(u16 songNumber)
     }
 }
 
-/* Continue a paused copy of the requested song, restarting it if it ended or
+/** Continue a paused copy of the requested song, restarting it if it ended or
  * if this player currently owns a different song. */
 AT("00078AE8") void SoundSongStartOrContinue(u16 songNumber)
 {
@@ -585,7 +585,7 @@ AT("00078AE8") void SoundSongStartOrContinue(u16 songNumber)
         SoundPlayerResume(player->player);
 }
 
-/* Stop or resume a song only when its selected player still owns it. */
+/** Stop or resume a song only when its selected player still owns it. */
 AT("00078B3C") void SoundSongStop(u16 songNumber)
 {
     const struct SoundPlayerEntry *playerTable = gSoundPlayerTable;
@@ -608,7 +608,7 @@ AT("00078B70") void SoundSongContinue(u16 songNumber)
         SoundPlayerResume(player->player);
 }
 
-/* This title defines nine MusicPlayer2000 player slots. */
+/** This title defines nine MusicPlayer2000 player slots. */
 AT("00078BA4") void SoundStopAllPlayers(void)
 {
     s32 i;
@@ -630,7 +630,7 @@ AT("00078BDC") void SoundResumeAllPlayers(void)
         SoundPlayerResume(gSoundPlayerTable[i].player);
 }
 
-/* Mark a fade as temporary so completion pauses rather than retires tracks. */
+/** Mark a fade as temporary so completion pauses rather than retires tracks. */
 AT("00078C18") void SoundPlayerFadeOutTemporary(
     struct SoundPlayer *player, u16 interval)
 {
@@ -657,7 +657,7 @@ AT("00078C38") void SoundPlayerFadeIn(struct SoundPlayer *player, u16 interval)
     }
 }
 
-/* Extended sequence command: read a little-endian WaveData pointer.  The
+/** Extended sequence command: read a little-endian WaveData pointer.  The
  * original driver intentionally constructs each byte independently. */
 AT("00079DA8") void SoundTrackReadWavePointer(
     struct SoundPlayer *player, struct SoundTrack *track)
@@ -689,7 +689,7 @@ AT("00079DA8") void SoundTrackReadWavePointer(
     track->command += 4;
 }
 
-/* One-byte extended commands configuring a programmable instrument. */
+/** One-byte extended commands configuring a programmable instrument. */
 AT("00079DF0") void SoundTrackReadToneType(
     struct SoundPlayer *player, struct SoundTrack *track)
 {
@@ -753,13 +753,13 @@ AT("00079E80") void SoundTrackReadTonePanSweep(
     track->command++;
 }
 
-/* Reserved extended opcode. */
+/** Reserved extended opcode. */
 AT("00079E94") void SoundTrackNoOp(
     struct SoundPlayer *player, struct SoundTrack *track)
 {
 }
 
-/* Advance a player's fade timer.  A completed permanent fade stops and
+/** Advance a player's fade timer.  A completed permanent fade stops and
  * disables every track; a temporary fade pauses the player for resumption.
  */
 AT("00079280") void SoundPlayerUpdateFade(struct SoundPlayer *player)
@@ -821,7 +821,7 @@ AT("00079280") void SoundPlayerUpdateFade(struct SoundPlayer *player)
     }
 }
 
-/* Recalculate the left/right mix and final pitch after sequence commands or
+/** Recalculate the left/right mix and final pitch after sequence commands or
  * modulation mark either half of a track dirty. */
 AT("00079348") void SoundTrackUpdateVolumeAndPitch(
     struct SoundPlayer *player, struct SoundTrack *track)
@@ -862,7 +862,7 @@ AT("00079348") void SoundTrackUpdateVolumeAndPitch(
     track->flags &= ~(TRACK_PITCH_DIRTY | TRACK_VOLUME_DIRTY);
 }
 
-/* Convert a MIDI key and 8-bit fine adjustment to the GBA PSG frequency
+/** Convert a MIDI key and 8-bit fine adjustment to the GBA PSG frequency
  * encoding.  Channel four uses the hardware noise-period lookup instead. */
 AT("000793FC") u32 SoundMidiKeyToCgbFrequency(
     u8 channel, u8 key, u8 fineAdjust)
@@ -899,7 +899,7 @@ AT("000793FC") u32 SoundMidiKeyToCgbFrequency(
     }
 }
 
-/* Silence one of the four Game Boy-compatible oscillators. */
+/** Silence one of the four Game Boy-compatible oscillators. */
 AT("000794A4") void SoundDisableCgbOscillator(u8 channel)
 {
     switch (channel) {
@@ -941,7 +941,7 @@ static inline int SoundCgbChooseHardPan(struct SoundCgbChannel *channel)
     return 0;
 }
 
-/* Derive the PSG envelope and stereo routing from the channel's left/right
+/** Derive the PSG envelope and stereo routing from the channel's left/right
  * mix.  Strongly one-sided mixes use hardware panning; balanced mixes retain
  * both speakers and clamp the four-bit envelope. */
 AT("000794F4") void SoundUpdateCgbChannelVolume(
@@ -963,7 +963,7 @@ AT("000794F4") void SoundUpdateCgbChannelVolume(
     channel->pan &= channel->panMask;
 }
 
-/* Change sequence speed.  tempoBase is the song tempo, tempoScale is the
+/** Change sequence speed.  tempoBase is the song tempo, tempoScale is the
  * caller-controlled multiplier, and tempoInterval is the effective value. */
 AT("000799A8") void SoundPlayerSetTempo(
     struct SoundPlayer *player, u16 tempo)
@@ -1121,7 +1121,7 @@ AT("00079BA8") void SoundPlayerSetLfoSpeed(
     else                               \
         goto branchNotTaken
 
-/* MEMACC is the sequence language's tiny state machine.  It can assign and
+/** MEMACC is the sequence language's tiny state machine.  It can assign and
  * add/subtract immediate or scratch-memory bytes, then conditionally execute
  * the normal four-byte GOTO command. */
 AT("00079C1C") void SoundTrackMemoryCommand(
@@ -1168,7 +1168,7 @@ branchNotTaken:
     track->command += 4;
 }
 
-/* Dispatch an extended command through the table immediately following the
+/** Dispatch an extended command through the table immediately following the
  * driver's pitch data. */
 AT("00079D74") void SoundTrackDispatchExtendedCommand(
     struct SoundPlayer *player, struct SoundTrack *track)

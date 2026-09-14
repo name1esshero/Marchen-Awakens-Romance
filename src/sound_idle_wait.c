@@ -14,6 +14,14 @@ struct SoundIdleTaskRecord
     s32 playerIndex;
 };
 
+/**
+ * @brief Query a sound player or create a task that waits for it to become idle.
+ * @param playerIndex Index in the engine's nine-player set.
+ * @param wait Nonzero to create an asynchronous wait task.
+ * @param result Receives the immediate busy result when no task is created.
+ * @param completion Optional task completion word.
+ * @return The wait task, or null for an immediate result or inactive player.
+ */
 AT("00005848") struct EngineTask *CreateSoundPlayerIdleWait(
     u32 playerIndex, u32 wait, s32 *result, u32 *completion)
 {

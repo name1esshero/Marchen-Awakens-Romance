@@ -273,7 +273,7 @@ extern void sub_08074BC1(void);
 extern void sub_08075299(void);
 extern void sub_0807571D(void);
 
-/* Fixed 16-halfword blocks copied into battle runtime work areas. */
+/** Fixed 16-halfword blocks copied into battle runtime work areas. */
 AT("001ACC50") const u16 gBattleRuntimePresetA[BATTLE_PRESET_SIZE] = {
     0x0000, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF,
     0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF,
@@ -283,7 +283,7 @@ AT("001ACC70") const u16 gBattleRuntimePresetB[BATTLE_PRESET_SIZE] = {
     0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
 };
 
-/* Friend ARM definition index -> ownership bit. */
+/** Friend ARM definition index -> ownership bit. */
 AT("001ACC90") const s16 gFriendArmOwnershipBits[8] = {
     1, 2, 12, FRIEND_ARM_NO_OWNERSHIP_BIT, 23, FRIEND_ARM_NO_OWNERSHIP_BIT, 21, 1,
 };
@@ -291,7 +291,7 @@ AT("001ACCA0") const u16 gBattlePartyDefaults[8] = {
     1, 3, 4, 6, 9, 8, 7, 22,
 };
 
-/* Battle action/effect dispatch slots. Repeated fallback entries are
+/** Battle action/effect dispatch slots. Repeated fallback entries are
  * retained. Handlers are not yet individually decompiled; each name is
  * a plain alias for its ROM address, declared in asm/game_table_handlers.s. */
 AT("001ACCB0") void *const gBattleActionHandlers[BATTLE_ACTION_HANDLER_COUNT] = {
@@ -412,54 +412,54 @@ AT("001ACCB0") void *const gBattleActionHandlers[BATTLE_ACTION_HANDLER_COUNT] = 
 /* Decimal resource names "00" through "47", named in place at their fixed
  * ROM addresses rather than copied, since the strings are shared with other
  * unrelated data in the same pool. */
-#define gTwoDigitName00 ((const char *)0x08086C30)
-#define gTwoDigitName01 ((const char *)0x08086C2C)
-#define gTwoDigitName02 ((const char *)0x08086C28)
-#define gTwoDigitName03 ((const char *)0x08086C24)
-#define gTwoDigitName04 ((const char *)0x08086C20)
-#define gTwoDigitName05 ((const char *)0x08086C1C)
-#define gTwoDigitName06 ((const char *)0x08086C18)
-#define gTwoDigitName07 ((const char *)0x08086C14)
-#define gTwoDigitName08 ((const char *)0x08086C10)
-#define gTwoDigitName09 ((const char *)0x08086C0C)
-#define gTwoDigitName10 ((const char *)0x08086C08)
-#define gTwoDigitName11 ((const char *)0x08086C04)
-#define gTwoDigitName12 ((const char *)0x08086C00)
-#define gTwoDigitName13 ((const char *)0x08086BFC)
-#define gTwoDigitName14 ((const char *)0x08086BF8)
-#define gTwoDigitName15 ((const char *)0x08086BF4)
-#define gTwoDigitName16 ((const char *)0x08086BF0)
-#define gTwoDigitName17 ((const char *)0x08086BEC)
-#define gTwoDigitName18 ((const char *)0x08086BE8)
-#define gTwoDigitName19 ((const char *)0x08086BE4)
-#define gTwoDigitName20 ((const char *)0x08086BE0)
-#define gTwoDigitName21 ((const char *)0x08086BDC)
-#define gTwoDigitName22 ((const char *)0x08086BD8)
-#define gTwoDigitName23 ((const char *)0x08086BD4)
-#define gTwoDigitName24 ((const char *)0x08086BD0)
-#define gTwoDigitName25 ((const char *)0x08086BCC)
-#define gTwoDigitName26 ((const char *)0x08086BC8)
-#define gTwoDigitName27 ((const char *)0x08086BC4)
-#define gTwoDigitName28 ((const char *)0x08086BC0)
-#define gTwoDigitName29 ((const char *)0x08086BBC)
-#define gTwoDigitName30 ((const char *)0x08086BB8)
-#define gTwoDigitName31 ((const char *)0x08086BB4)
-#define gTwoDigitName32 ((const char *)0x08086BB0)
-#define gTwoDigitName33 ((const char *)0x08086BAC)
-#define gTwoDigitName34 ((const char *)0x08086BA8)
-#define gTwoDigitName35 ((const char *)0x08086BA4)
-#define gTwoDigitName36 ((const char *)0x08086BA0)
-#define gTwoDigitName37 ((const char *)0x08086B9C)
-#define gTwoDigitName38 ((const char *)0x08086B98)
-#define gTwoDigitName39 ((const char *)0x08086B94)
-#define gTwoDigitName40 ((const char *)0x08086B90)
-#define gTwoDigitName41 ((const char *)0x08086B8C)
-#define gTwoDigitName42 ((const char *)0x08086B88)
-#define gTwoDigitName43 ((const char *)0x08086B84)
-#define gTwoDigitName44 ((const char *)0x08086B80)
-#define gTwoDigitName45 ((const char *)0x08086B7C)
-#define gTwoDigitName46 ((const char *)0x08086B78)
-#define gTwoDigitName47 ((const char *)0x08086B74)
+extern const char gTwoDigitName00[];
+extern const char gTwoDigitName01[];
+extern const char gTwoDigitName02[];
+extern const char gTwoDigitName03[];
+extern const char gTwoDigitName04[];
+extern const char gTwoDigitName05[];
+extern const char gTwoDigitName06[];
+extern const char gTwoDigitName07[];
+extern const char gTwoDigitName08[];
+extern const char gTwoDigitName09[];
+extern const char gTwoDigitName10[];
+extern const char gTwoDigitName11[];
+extern const char gTwoDigitName12[];
+extern const char gTwoDigitName13[];
+extern const char gTwoDigitName14[];
+extern const char gTwoDigitName15[];
+extern const char gTwoDigitName16[];
+extern const char gTwoDigitName17[];
+extern const char gTwoDigitName18[];
+extern const char gTwoDigitName19[];
+extern const char gTwoDigitName20[];
+extern const char gTwoDigitName21[];
+extern const char gTwoDigitName22[];
+extern const char gTwoDigitName23[];
+extern const char gTwoDigitName24[];
+extern const char gTwoDigitName25[];
+extern const char gTwoDigitName26[];
+extern const char gTwoDigitName27[];
+extern const char gTwoDigitName28[];
+extern const char gTwoDigitName29[];
+extern const char gTwoDigitName30[];
+extern const char gTwoDigitName31[];
+extern const char gTwoDigitName32[];
+extern const char gTwoDigitName33[];
+extern const char gTwoDigitName34[];
+extern const char gTwoDigitName35[];
+extern const char gTwoDigitName36[];
+extern const char gTwoDigitName37[];
+extern const char gTwoDigitName38[];
+extern const char gTwoDigitName39[];
+extern const char gTwoDigitName40[];
+extern const char gTwoDigitName41[];
+extern const char gTwoDigitName42[];
+extern const char gTwoDigitName43[];
+extern const char gTwoDigitName44[];
+extern const char gTwoDigitName45[];
+extern const char gTwoDigitName46[];
+extern const char gTwoDigitName47[];
 
 AT("001AD3A0") const char *const gTwoDigitResourceNames[TWO_DIGIT_RESOURCE_NAME_COUNT] = {
     [0] = gTwoDigitName00, [1] = gTwoDigitName01, [2] = gTwoDigitName02, [3] = gTwoDigitName03,
@@ -478,19 +478,19 @@ AT("001AD3A0") const char *const gTwoDigitResourceNames[TWO_DIGIT_RESOURCE_NAME_
 
 /* Names of thirteen procedurally-generated battle effects, named in place
  * for the same reason as gTwoDigitResourceNames above. */
-#define gEffectNameEF_GEN01 ((const char *)0x08086D24)
-#define gEffectNameEF_GEN02 ((const char *)0x08086D18)
-#define gEffectNameEF_GEN03 ((const char *)0x08086D0C)
-#define gEffectNameEF_GEN04 ((const char *)0x08086D00)
-#define gEffectNameEF_GEN05 ((const char *)0x08086CF4)
-#define gEffectNameEF_GEN06 ((const char *)0x08086CE8)
-#define gEffectNameEF_GEN07 ((const char *)0x08086CDC)
-#define gEffectNameEF_GEN08 ((const char *)0x08086CD0)
-#define gEffectNameEF_GEN09 ((const char *)0x08086CC4)
-#define gEffectNameEF_GEN10 ((const char *)0x08086CB8)
-#define gEffectNameEF_GEN11 ((const char *)0x08086CAC)
-#define gEffectNameEF_GEN12 ((const char *)0x08086CA0)
-#define gEffectNameEF_GEN13 ((const char *)0x08086C94)
+extern const char gEffectNameEF_GEN01[];
+extern const char gEffectNameEF_GEN02[];
+extern const char gEffectNameEF_GEN03[];
+extern const char gEffectNameEF_GEN04[];
+extern const char gEffectNameEF_GEN05[];
+extern const char gEffectNameEF_GEN06[];
+extern const char gEffectNameEF_GEN07[];
+extern const char gEffectNameEF_GEN08[];
+extern const char gEffectNameEF_GEN09[];
+extern const char gEffectNameEF_GEN10[];
+extern const char gEffectNameEF_GEN11[];
+extern const char gEffectNameEF_GEN12[];
+extern const char gEffectNameEF_GEN13[];
 
 AT("001AD460") const char *const gGeneratedEffectNames[GENERATED_EFFECT_NAME_COUNT] = {
     [0] = gEffectNameEF_GEN01, [1] = gEffectNameEF_GEN02, [2] = gEffectNameEF_GEN03, [3] = gEffectNameEF_GEN04,
@@ -507,7 +507,7 @@ AT("001AD49C") const u16 gResourceSlotMasks[4] = {
     1 << 8, 1 << 9, 1 << 10, 1 << 11,
 };
 
-/* Cumulative character-growth thresholds; values flatten at the level cap. */
+/** Cumulative character-growth thresholds; values flatten at the level cap. */
 AT("001AD4A4") const u32 gCharacterGrowthThresholds[100] = {
     0, 0, 10, 30, 60, 100, 160, 240,
     340, 460, 600, 770, 970, 1200, 1460, 1750,
@@ -524,7 +524,7 @@ AT("001AD4A4") const u32 gCharacterGrowthThresholds[100] = {
     95490, 96990, 98490, 99999,
 };
 
-/* Eight engine startup/state handlers used by the pre-script dispatcher. */
+/** Eight engine startup/state handlers used by the pre-script dispatcher. */
 AT("001AFE84") void *const gEngineStartupHandlers[ENGINE_STARTUP_HANDLER_COUNT] = {
     (void *)sub_0800080C, (void *)sub_080008B4, (void *)sub_08000978, (void *)sub_08000A3C,
     (void *)sub_08000B00, (void *)sub_08000BAC, (void *)sub_08000C70, (void *)sub_08000D34,
@@ -533,134 +533,134 @@ AT("001AFE84") void *const gEngineStartupHandlers[ENGINE_STARTUP_HANDLER_COUNT] 
 /* Script-visible native command registry. Names are pointers into the ASCII
  * pool near 08086D00. Handler addresses in the ROM have the thumb bit set;
  * the four still-unnamed ones are declared here by their real (even) address. */
-#define gScriptNativeName_MswStr ((const char *)0x0808737C)
-#define gScriptNativeName_MswHit ((const char *)0x08087374)
-#define gScriptNativeName_MswInit ((const char *)0x0808736C)
-#define gScriptNativeName_FceInit ((const char *)0x08087364)
-#define gScriptNativeName_FceChg ((const char *)0x0808735C)
-#define gScriptNativeName_FceFree ((const char *)0x08087354)
-#define gScriptNativeName_FceSet ((const char *)0x0808734C)
-#define gScriptNativeName_FceGet ((const char *)0x08087344)
-#define gScriptNativeName_FceMove ((const char *)0x0808733C)
-#define gScriptNativeName_FceSync ((const char *)0x08087334)
-#define gScriptNativeName_ChrInit ((const char *)0x0808732C)
-#define gScriptNativeName_ChrChg ((const char *)0x08087324)
-#define gScriptNativeName_ChrFree ((const char *)0x0808731C)
-#define gScriptNativeName_ChrSet ((const char *)0x08087314)
-#define gScriptNativeName_ChrGet ((const char *)0x0808730C)
-#define gScriptNativeName_ChrMove ((const char *)0x08087304)
-#define gScriptNativeName_ChrSync ((const char *)0x080872FC)
-#define gScriptNativeName_SprInit ((const char *)0x080872F4)
-#define gScriptNativeName_SprChg ((const char *)0x080872EC)
-#define gScriptNativeName_SprFree ((const char *)0x080872E4)
-#define gScriptNativeName_SprSet ((const char *)0x080872DC)
-#define gScriptNativeName_SprGet ((const char *)0x080872D4)
-#define gScriptNativeName_SprMove ((const char *)0x080872CC)
-#define gScriptNativeName_SprSync ((const char *)0x080872C4)
-#define gScriptNativeName_SprHitRect ((const char *)0x080872B8)
-#define gScriptNativeName_PccInit ((const char *)0x080872B0)
-#define gScriptNativeName_PccFree ((const char *)0x080872A8)
-#define gScriptNativeName_PccChg ((const char *)0x080872A0)
-#define gScriptNativeName_PccSet ((const char *)0x08087298)
-#define gScriptNativeName_PccGet ((const char *)0x08087290)
-#define gScriptNativeName_PccMove ((const char *)0x08087288)
-#define gScriptNativeName_PccSync ((const char *)0x08087280)
-#define gScriptNativeName_PccStat ((const char *)0x08087278)
-#define gScriptNativeName_ExtSet ((const char *)0x08087270)
-#define gScriptNativeName_ExtGet ((const char *)0x08087268)
-#define gScriptNativeName_ExtMove ((const char *)0x08087260)
-#define gScriptNativeName_ExtSync ((const char *)0x08087258)
-#define gScriptNativeName_HitInit ((const char *)0x08087250)
-#define gScriptNativeName_HitGet ((const char *)0x08087248)
-#define gScriptNativeName_HitSet ((const char *)0x08087240)
-#define gScriptNativeName_HitFree ((const char *)0x08087238)
-#define gScriptNativeName_HitHitRect ((const char *)0x0808722C)
-#define gScriptNativeName_BgSet ((const char *)0x08087224)
-#define gScriptNativeName_FldSet ((const char *)0x0808721C)
-#define gScriptNativeName_FldGet ((const char *)0x08087214)
-#define gScriptNativeName_CameraMode ((const char *)0x08087208)
-#define gScriptNativeName_PmbDeckMake ((const char *)0x080871FC)
-#define gScriptNativeName_PmbStatusInit ((const char *)0x080871EC)
-#define gScriptNativeName_PmbSetParty ((const char *)0x080871E0)
-#define gScriptNativeName_PmdGetParty ((const char *)0x080871D4)
-#define gScriptNativeName_PmbDefFashion ((const char *)0x080871C4)
-#define gScriptNativeName_PmbSetFriend ((const char *)0x080871B4)
-#define gScriptNativeName_BtlDeckMake ((const char *)0x080871A8)
-#define gScriptNativeName_BtlStatusInit ((const char *)0x08087198)
-#define gScriptNativeName_BtlSetParty ((const char *)0x0808718C)
-#define gScriptNativeName_BtlDeckShuffle ((const char *)0x0808717C)
-#define gScriptNativeName_BtlFldLock ((const char *)0x08087170)
-#define gScriptNativeName_BtlFldUnLock ((const char *)0x08087160)
-#define gScriptNativeName_BtlFldRect ((const char *)0x08087154)
-#define gScriptNativeName_BtlGetCentorX ((const char *)0x08087144)
-#define gScriptNativeName_BtlGetCentorY ((const char *)0x08087134)
-#define gScriptNativeName_BtlStart ((const char *)0x08087128)
-#define gScriptNativeName_BtlWin ((const char *)0x08087120)
-#define gScriptNativeName_BtlEnd ((const char *)0x08087118)
-#define gScriptNativeName_BtlFldSetInfo ((const char *)0x08087108)
-#define gScriptNativeName_BtlEscapeFlgSet ((const char *)0x080870F8)
-#define gScriptNativeName_BtlSetWallView ((const char *)0x080870E8)
-#define gScriptNativeName_BtlLogoPut ((const char *)0x080870DC)
-#define gScriptNativeName_DungGenInit ((const char *)0x080870D0)
-#define gScriptNativeName_DungGenFree ((const char *)0x080870C4)
-#define gScriptNativeName_DungGenMake ((const char *)0x080870B8)
-#define gScriptNativeName_DungGenStart ((const char *)0x080870A8)
-#define gScriptNativeName_DungGenResize ((const char *)0x08087098)
-#define gScriptNativeName_DungGenGetChrX ((const char *)0x08087088)
-#define gScriptNativeName_DungGenGetChrY ((const char *)0x08087078)
-#define gScriptNativeName_DungDispCoffer ((const char *)0x08087068)
-#define gScriptNativeName_DungSetFloor ((const char *)0x08087058)
-#define gScriptNativeName_DungGetFloor ((const char *)0x08087048)
-#define gScriptNativeName_DungSetEvFlg ((const char *)0x08087038)
-#define gScriptNativeName_DungGetEvFlg ((const char *)0x08087028)
-#define gScriptNativeName_DungGetGenNo ((const char *)0x08087018)
-#define gScriptNativeName_DungSetBtlOdds ((const char *)0x08087008)
-#define gScriptNativeName_DungGetBtlOdds ((const char *)0x08086FF8)
-#define gScriptNativeName_DungGetBossFlg ((const char *)0x08086FE8)
-#define gScriptNativeName_DungSetBossFlg ((const char *)0x08086FD8)
-#define gScriptNativeName_DungGetBossTreasure ((const char *)0x08086FC4)
-#define gScriptNativeName_DungSetBossTreasure ((const char *)0x08086FB0)
-#define gScriptNativeName_DungGetBossBtl ((const char *)0x08086FA0)
-#define gScriptNativeName_DungSetBossBtl ((const char *)0x08086F90)
-#define gScriptNativeName_DungSaveScrName ((const char *)0x08086F80)
-#define gScriptNativeName_DungGenEvClear ((const char *)0x08086F70)
-#define gScriptNativeName_DungChangeTbl ((const char *)0x08086F60)
-#define gScriptNativeName_GetPlayMode ((const char *)0x08086F54)
-#define gScriptNativeName_SetPlayMode ((const char *)0x08086F48)
-#define gScriptNativeName_SetBabbo ((const char *)0x08086F3C)
-#define gScriptNativeName_BgIntAttr ((const char *)0x08086F30)
-#define gScriptNativeName_BgSetAttrEnable ((const char *)0x08086F20)
-#define gScriptNativeName_BgGetAttrEnable ((const char *)0x08086F10)
-#define gScriptNativeName_BgSetAttrEnables ((const char *)0x08086EFC)
-#define gScriptNativeName_GetIrqCause ((const char *)0x08086EF0)
-#define gScriptNativeName_GetBtlRoomNo ((const char *)0x08086EE0)
-#define gScriptNativeName_DeckMake ((const char *)0x08086ED4)
-#define gScriptNativeName_ShuffleDeckMake ((const char *)0x08086EC4)
-#define gScriptNativeName_ShuffleDeckCopy ((const char *)0x08086EB4)
-#define gScriptNativeName_DeckShuffle ((const char *)0x08086EA8)
-#define gScriptNativeName_BtlStatus ((const char *)0x08086E9C)
-#define gScriptNativeName_PopMenu ((const char *)0x08086E94)
-#define gScriptNativeName_SysMenuExec ((const char *)0x08086E88)
-#define gScriptNativeName_ShopListMake ((const char *)0x08086E78)
-#define gScriptNativeName_ItemInit ((const char *)0x08086E6C)
-#define gScriptNativeName_ItemGet ((const char *)0x08086E64)
-#define gScriptNativeName_GetHaveArm ((const char *)0x08086E58)
-#define gScriptNativeName_ArmGet ((const char *)0x08086E50)
-#define gScriptNativeName_GetPewter ((const char *)0x08086E44)
-#define gScriptNativeName_AddPewter ((const char *)0x08086E38)
-#define gScriptNativeName_AllHpRecover ((const char *)0x08086E28)
-#define gScriptNativeName_OneHpRecover ((const char *)0x08086E18)
-#define gScriptNativeName_GetSelectSpot ((const char *)0x08086E08)
-#define gScriptNativeName_GetBoxInName ((const char *)0x08086DF8)
-#define gScriptNativeName_GetDungData ((const char *)0x08086DEC)
-#define gScriptNativeName_BuffRand ((const char *)0x08086DE0)
-#define gScriptNativeName_SpotPut ((const char *)0x08086DD8)
-#define gScriptNativeName_SioMapNoGet ((const char *)0x08086DCC)
-#define gScriptNativeName_StaffRoll ((const char *)0x08086DC0)
-#define gScriptNativeName_SetDungCnt ((const char *)0x08086DB4)
-#define gScriptNativeName_GetDungCnt ((const char *)0x08086DA8)
-#define gScriptNativeName_SetFhantom ((const char *)0x08086D9C)
-#define gScriptNativeName_GetFhantom ((const char *)0x08086D90)
+extern const char gScriptNativeName_MswStr[];
+extern const char gScriptNativeName_MswHit[];
+extern const char gScriptNativeName_MswInit[];
+extern const char gScriptNativeName_FceInit[];
+extern const char gScriptNativeName_FceChg[];
+extern const char gScriptNativeName_FceFree[];
+extern const char gScriptNativeName_FceSet[];
+extern const char gScriptNativeName_FceGet[];
+extern const char gScriptNativeName_FceMove[];
+extern const char gScriptNativeName_FceSync[];
+extern const char gScriptNativeName_ChrInit[];
+extern const char gScriptNativeName_ChrChg[];
+extern const char gScriptNativeName_ChrFree[];
+extern const char gScriptNativeName_ChrSet[];
+extern const char gScriptNativeName_ChrGet[];
+extern const char gScriptNativeName_ChrMove[];
+extern const char gScriptNativeName_ChrSync[];
+extern const char gScriptNativeName_SprInit[];
+extern const char gScriptNativeName_SprChg[];
+extern const char gScriptNativeName_SprFree[];
+extern const char gScriptNativeName_SprSet[];
+extern const char gScriptNativeName_SprGet[];
+extern const char gScriptNativeName_SprMove[];
+extern const char gScriptNativeName_SprSync[];
+extern const char gScriptNativeName_SprHitRect[];
+extern const char gScriptNativeName_PccInit[];
+extern const char gScriptNativeName_PccFree[];
+extern const char gScriptNativeName_PccChg[];
+extern const char gScriptNativeName_PccSet[];
+extern const char gScriptNativeName_PccGet[];
+extern const char gScriptNativeName_PccMove[];
+extern const char gScriptNativeName_PccSync[];
+extern const char gScriptNativeName_PccStat[];
+extern const char gScriptNativeName_ExtSet[];
+extern const char gScriptNativeName_ExtGet[];
+extern const char gScriptNativeName_ExtMove[];
+extern const char gScriptNativeName_ExtSync[];
+extern const char gScriptNativeName_HitInit[];
+extern const char gScriptNativeName_HitGet[];
+extern const char gScriptNativeName_HitSet[];
+extern const char gScriptNativeName_HitFree[];
+extern const char gScriptNativeName_HitHitRect[];
+extern const char gScriptNativeName_BgSet[];
+extern const char gScriptNativeName_FldSet[];
+extern const char gScriptNativeName_FldGet[];
+extern const char gScriptNativeName_CameraMode[];
+extern const char gScriptNativeName_PmbDeckMake[];
+extern const char gScriptNativeName_PmbStatusInit[];
+extern const char gScriptNativeName_PmbSetParty[];
+extern const char gScriptNativeName_PmdGetParty[];
+extern const char gScriptNativeName_PmbDefFashion[];
+extern const char gScriptNativeName_PmbSetFriend[];
+extern const char gScriptNativeName_BtlDeckMake[];
+extern const char gScriptNativeName_BtlStatusInit[];
+extern const char gScriptNativeName_BtlSetParty[];
+extern const char gScriptNativeName_BtlDeckShuffle[];
+extern const char gScriptNativeName_BtlFldLock[];
+extern const char gScriptNativeName_BtlFldUnLock[];
+extern const char gScriptNativeName_BtlFldRect[];
+extern const char gScriptNativeName_BtlGetCentorX[];
+extern const char gScriptNativeName_BtlGetCentorY[];
+extern const char gScriptNativeName_BtlStart[];
+extern const char gScriptNativeName_BtlWin[];
+extern const char gScriptNativeName_BtlEnd[];
+extern const char gScriptNativeName_BtlFldSetInfo[];
+extern const char gScriptNativeName_BtlEscapeFlgSet[];
+extern const char gScriptNativeName_BtlSetWallView[];
+extern const char gScriptNativeName_BtlLogoPut[];
+extern const char gScriptNativeName_DungGenInit[];
+extern const char gScriptNativeName_DungGenFree[];
+extern const char gScriptNativeName_DungGenMake[];
+extern const char gScriptNativeName_DungGenStart[];
+extern const char gScriptNativeName_DungGenResize[];
+extern const char gScriptNativeName_DungGenGetChrX[];
+extern const char gScriptNativeName_DungGenGetChrY[];
+extern const char gScriptNativeName_DungDispCoffer[];
+extern const char gScriptNativeName_DungSetFloor[];
+extern const char gScriptNativeName_DungGetFloor[];
+extern const char gScriptNativeName_DungSetEvFlg[];
+extern const char gScriptNativeName_DungGetEvFlg[];
+extern const char gScriptNativeName_DungGetGenNo[];
+extern const char gScriptNativeName_DungSetBtlOdds[];
+extern const char gScriptNativeName_DungGetBtlOdds[];
+extern const char gScriptNativeName_DungGetBossFlg[];
+extern const char gScriptNativeName_DungSetBossFlg[];
+extern const char gScriptNativeName_DungGetBossTreasure[];
+extern const char gScriptNativeName_DungSetBossTreasure[];
+extern const char gScriptNativeName_DungGetBossBtl[];
+extern const char gScriptNativeName_DungSetBossBtl[];
+extern const char gScriptNativeName_DungSaveScrName[];
+extern const char gScriptNativeName_DungGenEvClear[];
+extern const char gScriptNativeName_DungChangeTbl[];
+extern const char gScriptNativeName_GetPlayMode[];
+extern const char gScriptNativeName_SetPlayMode[];
+extern const char gScriptNativeName_SetBabbo[];
+extern const char gScriptNativeName_BgIntAttr[];
+extern const char gScriptNativeName_BgSetAttrEnable[];
+extern const char gScriptNativeName_BgGetAttrEnable[];
+extern const char gScriptNativeName_BgSetAttrEnables[];
+extern const char gScriptNativeName_GetIrqCause[];
+extern const char gScriptNativeName_GetBtlRoomNo[];
+extern const char gScriptNativeName_DeckMake[];
+extern const char gScriptNativeName_ShuffleDeckMake[];
+extern const char gScriptNativeName_ShuffleDeckCopy[];
+extern const char gScriptNativeName_DeckShuffle[];
+extern const char gScriptNativeName_BtlStatus[];
+extern const char gScriptNativeName_PopMenu[];
+extern const char gScriptNativeName_SysMenuExec[];
+extern const char gScriptNativeName_ShopListMake[];
+extern const char gScriptNativeName_ItemInit[];
+extern const char gScriptNativeName_ItemGet[];
+extern const char gScriptNativeName_GetHaveArm[];
+extern const char gScriptNativeName_ArmGet[];
+extern const char gScriptNativeName_GetPewter[];
+extern const char gScriptNativeName_AddPewter[];
+extern const char gScriptNativeName_AllHpRecover[];
+extern const char gScriptNativeName_OneHpRecover[];
+extern const char gScriptNativeName_GetSelectSpot[];
+extern const char gScriptNativeName_GetBoxInName[];
+extern const char gScriptNativeName_GetDungData[];
+extern const char gScriptNativeName_BuffRand[];
+extern const char gScriptNativeName_SpotPut[];
+extern const char gScriptNativeName_SioMapNoGet[];
+extern const char gScriptNativeName_StaffRoll[];
+extern const char gScriptNativeName_SetDungCnt[];
+extern const char gScriptNativeName_GetDungCnt[];
+extern const char gScriptNativeName_SetFhantom[];
+extern const char gScriptNativeName_GetFhantom[];
 
 extern void DialogueCommandShow(void);
 extern void DialogueCommandPrompt(void);
@@ -921,5 +921,4 @@ AT("001AFEA4") const struct ScriptNativeCommand
     [126] = { .name = gScriptNativeName_SetFhantom, .handler = (void *)((u32)ScriptNativeSetEncounterMode + 1) },
     [127] = { .name = gScriptNativeName_GetFhantom, .handler = (void *)((u32)ScriptNativeGetEncounterMode + 1) },
 };
-
 

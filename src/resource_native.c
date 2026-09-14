@@ -42,7 +42,7 @@ extern void BitSet(void *bits, s32 index, s32 value);
     (u8 *)*root; \
 })
 
-/* Initialize the eight friend ARM slots and mark every valid ARM definition
+/** Initialize the eight friend ARM slots and mark every valid ARM definition
  * as owned. The clear before each assignment is behavior present in the ROM,
  * even though the following halfword store immediately replaces it. */
 AT("00012B98") s32 ScriptNativeSetFriendArms(u32 count, const s32 *args,

@@ -7,6 +7,11 @@
 
 extern s32 strtol(const char *text, char **end, s32 radix);
 
+/**
+ * @brief Parse a base-ten signed integer.
+ * @param text Null-terminated number text.
+ * @return Parsed integer value using the bundled libc rules.
+ */
 AT("00082640")
 s32 ParseDecimalInteger(const char *text)
 {

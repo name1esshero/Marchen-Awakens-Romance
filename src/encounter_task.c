@@ -11,11 +11,21 @@ extern void NcdSpriteContainerReset(void *);
 extern void RuntimeObjectSetField4A(s32, s32, s32);
 extern void RuntimeObjectSetField4C(s32, s32, s32);
 
+/**
+ * @brief Create and initialize the five-sprite encounter task.
+ * @param owner Runtime owner whose task manager and object fields are used.
+ * @param slot Object slot within the owner.
+ * @param context Encounter-specific context retained by the task.
+ * @param result Completion result written by the task system.
+ * @return The new task, or null when task allocation fails.
+ */
+extern void sub_080130A0(void *task);
+
 AT("00012FD0") u8 *CreateEncounterSpriteTask(s32 owner, s32 slot,
                                               void *context, s32 *result)
 {
     u8 *task = CreateTask(gSecondaryRuntime + owner * 32,
-                          (void *)0x080130A1, 0, result, 668);
+                          (void *)sub_080130A0, 0, result, 668);
     u8 *state = task + 32;
     s32 objectIndex;
     s32 zero;

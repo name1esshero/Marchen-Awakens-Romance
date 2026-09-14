@@ -11,7 +11,7 @@
 extern s32 __divsi3(s32 dividend, s32 divisor);
 s32 SpriteFixedSqrt(s32 value);
 
-/* Signed 8.8 helpers used by the renderer's affine calculations. Multiplication
+/** Signed 8.8 helpers used by the renderer's affine calculations. Multiplication
  * rounds negative products toward zero before dropping the fractional byte. */
 AT("0007D8F8")
 s32 SpriteFixed8Multiply(s32 left, s32 right)
@@ -48,7 +48,7 @@ s32 SpriteFixed8Divide(s32 dividend, s32 divisor)
 AT("0007D8F8")
 const u8 SpriteFixed8Tail[2] = {0, 0};
 
-/* Length of a 20.12 fixed-point vector.  Large components are reduced before
+/** Length of a 20.12 fixed-point vector.  Large components are reduced before
  * squaring to avoid overflow; small components are expanded to retain useful
  * precision and scaled back after taking the square root. */
 AT("0007D944")
@@ -97,7 +97,7 @@ s32 SpriteVectorLengthFixed(s32 x, s32 y)
             scale);
 }
 
-/* Square root for signed 20.12 fixed-point values.  Newton iteration starts
+/** Square root for signed 20.12 fixed-point values.  Newton iteration starts
  * at max(value, 1.0) and stops as soon as the estimate no longer decreases.
  * Negative inputs use the engine's -1.0 error sentinel. */
 AT("0007D9F0")

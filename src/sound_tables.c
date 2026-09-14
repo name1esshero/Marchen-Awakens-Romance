@@ -123,7 +123,7 @@ extern const u8 gWave_08198F6C[];
 extern const u8 gWave_0819B220[];
 extern const u8 gWave_0819B524[];
 
-/* Fixed-point pitch, sample-rate, PSG, and extended-command tables. */
+/** Fixed-point pitch, sample-rate, PSG, and extended-command tables. */
 AT("000895C8") const u8 gSoundScaleTable[180] = {
     0xE0, 0xE1, 0xE2, 0xE3, 0xE4, 0xE5, 0xE6, 0xE7, 0xE8, 0xE9, 0xEA, 0xEB,
     0xD0, 0xD1, 0xD2, 0xD3, 0xD4, 0xD5, 0xD6, 0xD7, 0xD8, 0xD9, 0xDA, 0xDB,
@@ -207,7 +207,7 @@ AT("000897E0") void *const gSoundExtendedCommandTable[12] = {
     [8] = (void *)((u32)SoundTrackReadPseudoEchoVolume + 1), [9] = (void *)((u32)SoundTrackReadPseudoEchoLength + 1), [10] = (void *)((u32)SoundTrackReadToneLength + 1), [11] = (void *)((u32)SoundTrackReadTonePanSweep + 1),
 };
 
-/* Voice records use the standard 12-byte ToneData layout.  The wave field
+/** Voice records use the standard 12-byte ToneData layout.  The wave field
  * is a sample pointer for PCM voices, a small oscillator ID for PSG voices,
  * or a subordinate tone table for split/drum voices. */
 AT("00089810") const struct SoundToneData gVoiceGroupMain[188] = {
@@ -905,7 +905,7 @@ extern const u8 gSongHeader_218[];
 extern const u8 gSongHeader_219[];
 extern const u8 gSongHeader_220[];
 
-/* Song IDs are direct indexes into this table. Header addresses identify the
+/** Song IDs are direct indexes into this table. Header addresses identify the
  * editable sequence that each game-side caller selects. */
 AT("0008B1B0") const struct SoundSongEntry gSongTable[221] = {
     [0] = { .header = gSongHeader_000, .player = 0, .otherPlayer = 0 },

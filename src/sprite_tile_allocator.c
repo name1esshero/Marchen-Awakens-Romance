@@ -112,7 +112,7 @@ void SpriteTileAllocatorReset(struct SpriteTileAllocator *allocator)
     CpuFill(allocator, 16, 0);
 }
 
-/* Release an OBJ-tile allocation and merge it with adjacent free spans.  The
+/** Release an OBJ-tile allocation and merge it with adjacent free spans.  The
  * packed high bits mark allocated/sentinel blocks; the low 13 bits are the
  * span in 8-byte block records. */
 AT("0007B52C")

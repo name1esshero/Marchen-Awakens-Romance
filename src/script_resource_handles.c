@@ -90,7 +90,7 @@ AT("0007F4DC") s32 ScriptResourceSetSecond(u8 *record, s32 selector,
 /* Offset of the VM context's own first-class resource handle. */
 #define SCRIPT_CONTEXT_RECORD_224 548
 
-/* Store a value in the VM context's built-in resource handle.  Nothing in the
+/** Store a value in the VM context's built-in resource handle.  Nothing in the
  * already-disassembled ROM branches here, so the original disassembly left
  * these bytes as data; the argument convention comes from the tail call. */
 AT("0007F1B8") void ScriptResourceSetRecord224(u32 value)

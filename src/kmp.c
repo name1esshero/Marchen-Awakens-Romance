@@ -2,7 +2,7 @@
 #include "kmp.h"
 #include "rom_section.h"
 
-/* This helper always assumes u16 attributes, as does the original.
+/** This helper always assumes u16 attributes, as does the original.
  * 08003104 is the separate bounds-checked reader that also handles u8 data. */
 AT("00003160")
 u16 *KmpAttributeAddress(struct KmpViewport *view, u32 x, u32 y)
@@ -38,7 +38,8 @@ s32 KmpReadAttribute(struct KmpViewport *view, s32 x, s32 y)
  s32 tileX = x >> 3;
  s32 tileY = y >> 3;
  s32 result;
- if (tileX < 0 || tileX >= (s32)view->data->widthTiles || tileY < 0 || tileY >= (s32)view->data->heightTiles)
+ if (tileX < 0 || tileX >= (s32)view->data->widthTiles ||
+     tileY < 0 || tileY >= (s32)view->data->heightTiles)
   return -1;
  data = view->data;
  if (data->wordAttributes)
@@ -55,6 +56,12 @@ __attribute__((section(".rom.00003104"))) const u8 KmpReadAttributeTail[2]={0,0}
  */
 extern void sub_08002650(struct KmpViewport *, s32, s32);
 extern void sub_08002798(struct KmpViewport *, s32, s32);
+/**
+ * @brief Render a KMP viewport with its regular or affine renderer.
+ * @param view Viewport configuration and destination buffer.
+ * @param x Horizontal 16.16 map position.
+ * @param y Vertical 16.16 map position.
+ */
 AT("00002630")
 void KmpRenderViewport(struct KmpViewport *view, s32 x, s32 y)
 {

@@ -24,7 +24,7 @@ const struct BattleArenaLayout gBattleArenaLayouts[BATTLE_ARENA_LAYOUT_COUNT] = 
 #include "../build/generated/map_placements.inc"
 };
 
-/* Arena selector order used by GetBattleDefinition. */
+/** Arena selector order used by GetBattleDefinition. */
 AT("001C090C")
 const struct BattleArenaLayout *const gBattleArenaLayoutTable[5] = {
     &gBattleArenaLayouts[3],

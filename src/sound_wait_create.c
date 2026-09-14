@@ -7,7 +7,7 @@ extern void SoundWaitTask(struct EngineTask *task);
 extern void ScriptAddPendingTasks(s32 count);
 extern void sub_08080BD4(void *task);
 struct SoundWaitRecord { u8 header[36]; s32 playerIndex; };
-/* Return the current busy state immediately, or create a script-visible wait
+/** Return the current busy state immediately, or create a script-visible wait
  * task when the caller requests asynchronous completion. */
 AT("000057C0") struct EngineTask *CreateSoundWaitTask(
     s32 playerIndex, s32 wait, s32 *result, s32 *completion)

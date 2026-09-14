@@ -50,7 +50,7 @@ void *HeapAlloc(struct Heap *heap, u32 size)
     return sub_0807A54C(heap, size, 0);
 }
 
-/* Walk the boundary-tag blocks. The stored size includes the eight-byte
+/** Walk the boundary-tag blocks. The stored size includes the eight-byte
  * header; low bit 0 marks an allocation and low bit 1 marks the final block. */
 AT("0007A4B8")
 u32 HeapGetFreeBytes(struct Heap *heap)

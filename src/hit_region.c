@@ -1,12 +1,14 @@
 #include "hit_region.h"
 #include "rom_section.h"
 
+/** @brief Disable one indexed hit region. */
 AT("00011504") void HitRegionDisable(s32 id)
 {
     sub_08011464(id)->active = 0;
 }
 AT("00011504") const u8 HitRegionDisableTail[2] = {0, 0};
 
+/** @brief Disable every entry in the sixteen-region hit table. */
 AT("00011514") void HitRegionDisableAll(void)
 {
     struct HitRegion *region = sub_08011464(0);
@@ -20,7 +22,7 @@ AT("00011514") void HitRegionDisableAll(void)
 }
 AT("00011514") const u8 HitRegionDisableAllTail[2] = {0, 0};
 
-/* Native HitInit (080121C4) creates an overlap region. Signed halfwords
+/** Native HitInit (080121C4) creates an overlap region. Signed halfwords
  * deliberately retain the original truncation of script integer arguments. */
 AT("00011530") void HitRegionInit(s32 id, s32 x, s32 y, s32 width, s32 height)
 {
@@ -33,7 +35,7 @@ AT("00011530") void HitRegionInit(s32 id, s32 x, s32 y, s32 width, s32 height)
     region->mode = 0;
 }
 
-/* Native HitHitRect (08012244) reactivates and changes the rectangle while
+/** Native HitHitRect (08012244) reactivates and changes the rectangle while
  * preserving its mode. Despite its name, this function performs no hit test. */
 AT("00011654") void HitRegionSetRect(s32 id, s32 x, s32 y, s32 width, s32 height)
 {
@@ -45,7 +47,7 @@ AT("00011654") void HitRegionSetRect(s32 id, s32 x, s32 y, s32 width, s32 height
     region->rect.height = height;
 }
 
-/* Test the actor's translated corner bounds against active map regions.
+/** Test the actor's translated corner bounds against active map regions.
  * All comparisons are strict: touching an edge never counts as a hit.
  * Signed coordinate promotion and unrestricted signed widths intentionally
  * preserve the original behavior, including malformed/inverted rectangles.

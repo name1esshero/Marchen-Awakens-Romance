@@ -173,6 +173,7 @@ See the [sound source guide](sound/README.md) and
 | Command | Purpose |
 |---|---|
 | `make readability-audit` | Report unexplained magic numbers in C sources |
+| `make pret-audit` | Audit mechanically enforceable PRET source standards |
 | `make site` | Stage galleries and documentation under `build/site` and `build/wiki` |
 | `make docs-fetch` | Restore missing published gallery/report outputs |
 | `make snapshot` | Create a checksummed recovery archive under `backups/` |
@@ -201,6 +202,7 @@ Use normal build targets for day-to-day editing.
 
 More technical documentation is available in
 [docs/decompilation-notes.md](docs/decompilation-notes.md),
+[docs/PRET_AUDIT.md](docs/PRET_AUDIT.md),
 [docs/map-and-script-runtime.md](docs/map-and-script-runtime.md),
 [docs/save-format.md](docs/save-format.md), and
 [docs/ram-layout.md](docs/ram-layout.md).

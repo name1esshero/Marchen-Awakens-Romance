@@ -8,11 +8,13 @@
 #include "script_vm.h"
 #include "random.h"
 #include "rom_section.h"
+extern const u8 gScriptEmptyText[];
+extern const char gScriptDecimalFormat[];
 #define VM (*(struct ScriptContext **)0x0300611C)
 /* Verified ROM string data; aliased rather than AT()-pinned because the
  * literal-pool region they live in is shared with other, unrelated code. */
-#define sText_Empty ((const u8 *)0x081AC6A0)
-#define sText_PercentD ((const char *)0x081AC6A4)
+#define sText_Empty gScriptEmptyText
+#define sText_PercentD gScriptDecimalFormat
 extern void *HeapAlloc(void *,u32);
 extern u32 __umodsi3(u32 dividend,u32 divisor);
 extern s32 ParseDecimalInteger(const char *text);
@@ -65,7 +67,7 @@ AT("000801B4") s32 ScriptNativeMin(u32 count,const s32 *args,s32 *result)
 }
 AT("000801B4") const u8 ScriptNativeMinTail[2]={0,0};
 
-/* Native calls receive their arguments as an array in r1 and write their
+/** Native calls receive their arguments as an array in r1 and write their
  * scalar result through r2. The first ABI argument is the argument count. */
 AT("000801E0") s32 ScriptNativeRandomRange(u32 count,const u32 *args,u32 *result)
 {
@@ -189,7 +191,7 @@ extern void ScriptPushU32(u32 value);
 extern s32 ScriptResourceLoadAndInstall(const char *name, s32 argument);
 extern char *strupr(char *text);
 
-/* Replace the current script resource with another while retaining the
+/** Replace the current script resource with another while retaining the
  * caller's resource name. */
 AT("000803E4") s32 ScriptNativeChain(
     u32 count, const u32 *arguments, u32 *result)
@@ -205,7 +207,7 @@ AT("000803E4") s32 ScriptNativeChain(
 
 #define SCRIPT_NAME_BUFFER ((char *)0x03004F30)
 
-/* Normalize a requested script name and load it into the current frame. */
+/** Normalize a requested script name and load it into the current frame. */
 AT("0008047C") s32 ScriptNativeExec(
     u32 count, const u32 *arguments, u32 *result)
 {
@@ -220,7 +222,7 @@ AT("0008047C") s32 ScriptNativeExec(
 }
 AT("0008047C") const u8 ScriptNativeExecTail[2] = { 0, 0 };
 
-/* CALL is EXEC with a cleared result slot for the new invocation. */
+/** CALL is EXEC with a cleared result slot for the new invocation. */
 AT("00080420") s32 ScriptNativeCall(
     u32 count, const u32 *arguments, u32 *result)
 {
@@ -229,7 +231,7 @@ AT("00080420") s32 ScriptNativeCall(
 }
 AT("00080420") const u8 ScriptNativeCallTail[2] = { 0, 0 };
 
-/* Existing bytecode calls this misspelled built-in "resurn". It removes the
+/** Existing bytecode calls this misspelled built-in "resurn". It removes the
  * current frame and replaces the parent's top stack value when one exists. */
 AT("00080430") s32 ScriptNativeResurn(
     u32 count, const u32 *arguments, u32 *result)

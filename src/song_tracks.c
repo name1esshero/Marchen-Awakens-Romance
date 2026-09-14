@@ -2,7 +2,7 @@
 
 #include "rom_section.h"
 
-/* MusicPlayer2000 sequence bytecode, split at every song-header track entry.
+/** MusicPlayer2000 sequence bytecode, split at every song-header track entry.
  * Each array retains its original ROM address so GOTO/PATT operands remain
  * stable.  A command-level assembler can replace individual byte runs
  * incrementally without hiding track ownership behind an incbin. */

@@ -48,7 +48,7 @@ extern s32 ScriptNativeCall(void);
 extern s32 ScriptNativeResurn(void);
 extern s32 ScriptNativeExit(void);
 
-/* Built-in expression functions exposed by name to compiled scripts.  The
+/** Built-in expression functions exposed by name to compiled scripts.  The
  * original library misspells "resurn"; keep it for bytecode compatibility. */
 AT("00F2AC60")
 const struct ScriptResourceEntry gScriptBuiltinFunctions[] = {

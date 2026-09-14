@@ -7,6 +7,12 @@
 extern void CpuFill(void *, u32, u32);
 extern void HeapFree(struct Heap *, void *);
 
+/**
+ * @brief Initialize the archive mount table.
+ * @param state Filesystem state published as the active NFP state.
+ * @param heap Heap used to allocate mount records.
+ * @param count Number of mount records to allocate.
+ */
 AT("0007A9C0")
 void NfpInit(struct NfpState *state, struct Heap *heap, s32 count)
 {
@@ -17,6 +23,7 @@ void NfpInit(struct NfpState *state, struct Heap *heap, s32 count)
     gNfpState->mount_count = count;
 }
 
+/** @brief Free the mount table and clear the active NFP state. */
 AT("0007A9F0")
 void NfpShutdown(void)
 {

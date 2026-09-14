@@ -5,6 +5,12 @@ asset provenance, measurements, and implementation references that were
 previously kept in the project README. The main README is now a practical
 setup and tool guide.
 
+Some historical entries describe forced-register experiments that predate the
+current PRET standard. They are retained as investigation records, not as
+approved techniques. Any matching C that still depends on those constructs is
+listed by `make pret-audit` and must eventually be rewritten as natural C or
+returned to assembly with its readable candidate kept under `src/nonmatching/`.
+
 
 A work-in-progress GBA decompilation with a byte-identical ROM rebuild.
 The normal build uses only checked-in source assets. The original ROM is an

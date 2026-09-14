@@ -9,12 +9,13 @@
 #include "kmp.h"
 #include "rom_section.h"
 #include "runtime_misc.h"
+extern const char gMapArchiveKmpExtension[];
 extern char *strcpy(char *,const char *);
 extern char *strcat(char *,const char *);
 extern char *strupr(char *);
 extern s32 sub_08056290(void);
 extern void sub_08054350(void *, void *, s32, s32, s32, s32, s32);
-#define sText_KmpExtension ((const char *)0x08086A5C)
+#define sText_KmpExtension gMapArchiveKmpExtension
 AT("000032B8") void KmpLoadField(const char *name,s16 x,s16 y)
 {
  char resource[16]; /* basename + .KMP + terminator; original has no length check */
@@ -39,7 +40,7 @@ AT("00003294") void KmpResetClip(struct KmpViewport *view)
 {view->clipX=0;view->clipY=0;view->clipWidth=view->data->widthTiles;view->clipHeight=view->data->heightTiles;}
 AT("00003294") const u8 KmpResetClipTail[2]={0,0};
 
-/* Prepare the two field-display substructures used by the map scene. */
+/** Prepare the two field-display substructures used by the map scene. */
 AT("00061E70") void InitializeMapFieldDisplay(void *state)
 {
     s32 resource = sub_08056290();
@@ -47,7 +48,7 @@ AT("00061E70") void InitializeMapFieldDisplay(void *state)
                  resource, 6, 194, 8, 0);
 }
 
-/* Same field-display setup as InitializeMapFieldDisplay, applied to the
+/** Same field-display setup as InitializeMapFieldDisplay, applied to the
  * smaller substructures embedded in a field-event task (see
  * CreateFieldEventTask in src/nonmatching/map_events.c) rather than the
  * main engine state. */
@@ -58,7 +59,7 @@ AT("00065E50") void InitializeFieldEventDisplay(void *task)
                  resource, 6, 194, 8, 0);
 }
 
-/* Third field-display setup, for the substructures at +0x5A4/+0x7AC of the
+/** Third field-display setup, for the substructures at +0x5A4/+0x7AC of the
  * task that 08054C74 creates. */
 AT("000558A4") void InitializeFieldDisplay5A4(void *task)
 {

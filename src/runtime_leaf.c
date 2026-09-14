@@ -10,19 +10,19 @@ extern void LZ77UnCompVram(const void *source, void *destination);
 extern s32 sub_08004DA8(void);
 extern void StopSoundPlayer(u32 player);
 
-/* This call site uses destination/source order opposite to the BIOS wrapper. */
+/** This call site uses destination/source order opposite to the BIOS wrapper. */
 AT("00002148") void Lz77UnCompVramSwapped(void *destination, const void *source)
 {
     LZ77UnCompVram(source, destination);
 }
 
-/* Reset the embedded resource beginning eight bytes into a sprite sidecar. */
+/** Reset the embedded resource beginning eight bytes into a sprite sidecar. */
 AT("00008BD8") void SpriteAuxiliaryReset(void *state)
 {
     NcdRuntimeSpriteReleaseAllocation((struct NcdSprite *)((u8 *)state + 8));
 }
 
-/* Public save-checksum entry point; the worker below contains the CRC loop. */
+/** Public save-checksum entry point; the worker below contains the CRC loop. */
 AT("0006E52C") u32 CalculateSaveCrc32(const void *data, u32 size)
 {
     return CalculateCrc32(data, size);
@@ -55,7 +55,7 @@ AT("00018E30") void SoundStopPlayers4And5(void)
 }
 AT("00018E30") const u8 SoundStopPlayers4And5Tail[2] = {0};
 
-/* The sprite renderer stores its current origin in its global work block. */
+/** The sprite renderer stores its current origin in its global work block. */
 AT("0007D21C") void SpriteSetViewportOrigin(u16 x,u16 y)
 {
     u8 *state=*(u8 **)0x03006118;
@@ -77,7 +77,7 @@ AT("0006E538") s32 Crc32Difference(const void *data,u32 size,s32 expected)
 }
 AT("0006E538") const u8 Crc32DifferenceTail[2]={0};
 
-/* Standard reflected CRC-32 used to validate the cartridge save block. */
+/** Standard reflected CRC-32 used to validate the cartridge save block. */
 AT("0006E4E8") u32 CalculateCrc32(const void *data, u32 size)
 {
     const u8 *bytes;

@@ -5,7 +5,7 @@
 
 #include "rom_section.h"
 
-/* Sample the leading edge/corner of an actor's collision bounds. Directions
+/** Sample the leading edge/corner of an actor's collision bounds. Directions
  * run clockwise: north, northeast, east, southeast, south, southwest, west,
  * northwest. Invalid directions return zero without reading the map. */
 AT("00018D10")
@@ -56,7 +56,7 @@ s32 MapAttributeProbeDirection(s32 direction, s32 x, s32 y,
     return KmpReadAttribute(gKmpViewports, probeX, probeY);
 }
 
-/* Store the same directional collision probe coordinate for the procedural
+/** Store the same directional collision probe coordinate for the procedural
  * connection machinery. Invalid directions leave the saved coordinate alone. */
 AT("00018DA4")
 void MapGenerationSetProbeDirection(s32 direction, s32 x, s32 y,
@@ -106,7 +106,7 @@ void MapGenerationSetProbeDirection(s32 direction, s32 x, s32 y,
     MapGenerationSetValues00And04(probeX, probeY);
 }
 
-/* Store a generated connection's four signed pixel offsets. The unusual
+/** Store a generated connection's four signed pixel offsets. The unusual
  * argument order reflects the native caller: horizontal endpoints arrive
  * before the two vertical endpoints. */
 AT("000720E8")
@@ -131,7 +131,7 @@ AT("000720E8") const u8 MapGenerationSetVectorTail[2] = {0, 0};
 #define MAP_ATTR_CONNECTION_CLASS_HI      5400
 #define MAP_ATTR_CONNECTION_CLASS_COUNT     99
 
-/* Return a NESW bit mask for neighboring procedural connection tiles.
+/** Return a NESW bit mask for neighboring procedural connection tiles.
  * Classes 400..499 and 5400..5499 are treated alike by the original code.
  * This establishes connectivity semantics, but does not yet establish the
  * complete collision meaning of either class on ordinary field maps. */

@@ -17,7 +17,7 @@ extern void HeapFree(struct Heap *,void *);
 
 extern void SpriteTileAllocatorRelease(void *allocator, s32 tile);
 
-/* Release one resource's palette-binding table and clear its four descriptor
+/** Release one resource's palette-binding table and clear its four descriptor
  * slots.  NCD resources reserve 0x80 bytes here even though one descriptor is
  * 0x20 bytes. */
 AT("0007B9CC") void NcdResetResource(u32 resource)
@@ -45,7 +45,7 @@ AT("0007B9CC") void NcdResetResource(u32 resource)
  }
 }
 
-/* Sort one sprite into its flag-selected render queue and account for the
+/** Sort one sprite into its flag-selected render queue and account for the
  * queued object.  Each priority bucket is a 12-byte List. */
 AT("0007BDAC") void NcdQueueSprite(struct NcdSprite *sprite, u32 priority)
 {
@@ -95,7 +95,7 @@ void NcdSpriteCopy(struct NcdSprite *destination, const struct NcdSprite *source
  destination->copyMode27=1;
 }
 
-/* Register an NCD container and resolve its ROM-relative table offsets once.
+/** Register an NCD container and resolve its ROM-relative table offsets once.
  * Its signed-byte binding table has one slot per palette and starts unassigned. */
 AT("0007B96C")
 void NcdRegisterResource(struct NcdHeader *header, u32 resource)
@@ -115,7 +115,7 @@ void NcdRegisterResource(struct NcdHeader *header, u32 resource)
  descriptor->table28 = (u8 *)header + header->tilesOffset;
 }
 
-/* Clone the instance and give the copy its own per-cell handle table. */
+/** Clone the instance and give the copy its own per-cell handle table. */
 AT("0007BF80")
 void NcdSpriteDeepCopy(struct NcdSprite *destination, const struct NcdSprite *source)
 {
@@ -129,7 +129,7 @@ void NcdSpriteDeepCopy(struct NcdSprite *destination, const struct NcdSprite *so
  }
 }
 
-/* Reset the 72-byte owner record and initialize its embedded NCD sprite at
+/** Reset the 72-byte owner record and initialize its embedded NCD sprite at
  * offset eight.  The four trailing halfwords are renderer bookkeeping. */
 AT("00008A70") void NcdSpriteContainerReset(void *container)
 {
@@ -157,7 +157,7 @@ struct NcdRuntimeAllocation {
  void *allocation;
 };
 
-/* Release every per-cell OBJ-tile handle owned by a multipart sprite.  Copy
+/** Release every per-cell OBJ-tile handle owned by a multipart sprite.  Copy
  * mode one borrows storage; copy mode two owns only its allocation array. */
 AT("0007BEC0")
 void NcdRuntimeSpriteReleaseAllocation(struct NcdSprite *sprite)

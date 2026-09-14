@@ -11,7 +11,7 @@
 extern s32 sub_0807DF18(s32 position, s32 step, s32 start, s32 end, s32 base);
 extern s32 sub_0807E264(s32 position, s32 step, s32 start, s32 end, s32 base);
 
-/* Divide caller storage into eight count-sized arrays, leaving one word
+/** Divide caller storage into eight count-sized arrays, leaving one word
  * between arrays, then widen the input coordinate pairs from s16 to s32. */
 AT("0007DB54")
 void SpriteInterpolationInit(struct SpriteInterpolation *state, s32 *storage,
@@ -59,7 +59,7 @@ void SpriteInterpolationInit(struct SpriteInterpolation *state, s32 *storage,
 AT("0007DB54")
 const u8 SpriteInterpolationInitTail[2] = {0, 0};
 
-/* Evaluate the same interpolation position for the X and Y parameter sets. */
+/** Evaluate the same interpolation position for the X and Y parameter sets. */
 AT("0007DC84")
 void SpriteInterpolationEvaluatePair(s32 position, s16 *outX, s16 *outY,
                                      const struct SpriteInterpolationPair *pair)
@@ -73,7 +73,7 @@ void SpriteInterpolationEvaluatePair(s32 position, s16 *outX, s16 *outY,
 AT("0007DC84")
 const u8 SpriteInterpolationEvaluatePairTail[2] = {0, 0};
 
-/* Evaluate a position without the looping evaluator's range wrap. */
+/** Evaluate a position without the looping evaluator's range wrap. */
 AT("0007E0A4")
 void SpriteInterpolationEvaluatePairClamped(
     s32 position, s16 *outX, s16 *outY,

@@ -17,6 +17,8 @@ struct FieldEventTaskData {
     s16 value;
 };
 
+extern void sub_08061F20(void *task);
+
 AT("00061EA8") struct EngineTask *CreateFieldEventTask(
     s32 first, s32 second, s32 third, s32 fourth, s32 value,
     void *objectData, u32 *completion)
@@ -30,7 +32,7 @@ AT("00061EA8") struct EngineTask *CreateFieldEventTask(
     fourth = (s16)fourth;
     value = (s16)value;
     task = CreateTask(&gMainTaskManager,
-                      (void (*)(struct EngineTask *))0x08061F21,
+                      (void (*)(struct EngineTask *))sub_08061F20,
                       0, completion, 160);
     data = (struct FieldEventTaskData *)task;
     data->firstCoordinate = first;

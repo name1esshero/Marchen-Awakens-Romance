@@ -24,7 +24,7 @@
 #define TARGET_REGISTER(name)
 #endif
 
-/* Base of a mounted archive.
+/** Base of a mounted archive.
  *
  * The global holds a pointer to the filesystem state, whose first field is
  * the mount array, so there are two indirections before the index. Mount
@@ -36,7 +36,7 @@ struct NfpHeader *NfpGetArchiveBase(s32 handle)
     return gNfpState->mounts[handle].base;
 }
 
-/* The directory: one 16-byte record per member, a 12-byte name and the
+/** The directory: one 16-byte record per member, a 12-byte name and the
  * payload's offset relative to the header. */
 AT("0007AAD0")
 struct NfpEntry *NfpGetDirectory(s32 handle)
@@ -49,7 +49,7 @@ struct NfpEntry *NfpGetDirectory(s32 handle)
 AT("0007AAD0")
 const u8 NfpGetDirectoryTail[2] = {0, 0};
 
-/* Where the payloads begin, past the header and the directory. */
+/** Where the payloads begin, past the header and the directory. */
 AT("0007AAE0")
 void *NfpGetData(s32 handle)
 {
@@ -61,14 +61,14 @@ void *NfpGetData(s32 handle)
 AT("0007AAE0")
 const u8 NfpGetDataTail[2] = {0, 0};
 
-/* How many members the archive holds. 830 for this cartridge. */
+/** How many members the archive holds. 830 for this cartridge. */
 AT("0007AB08")
 u32 NfpGetEntryCount(s32 handle)
 {
     return NfpGetArchiveBase(handle)->count;
 }
 
-/* Mark a mount slot in use, or free it. Counterpart to NfpMountIsActive. */
+/** Mark a mount slot in use, or free it. Counterpart to NfpMountIsActive. */
 AT("0007AA30")
 void NfpSetMountActive(s32 handle, s32 active)
 {
@@ -78,7 +78,7 @@ void NfpSetMountActive(s32 handle, s32 active)
 /* A mount's name, or NULL if the slot is free. The name sits immediately
  * after the active flag, so the record is one byte of state followed by the
  * string the caller will match against. */
-/* Resolve an archive name to its handle, or -1 if it is not mounted.
+/** Resolve an archive name to its handle, or -1 if it is not mounted.
  *
  * A linear scan, unlike the member lookup: there are only a handful of mount
  * slots and they are not kept sorted, so there is nothing to binary search. */
@@ -99,14 +99,14 @@ s32 NfpFindArchive(const char *name)
     return -1;
 }
 
-/* Point a mount slot at its archive header. */
+/** Point a mount slot at its archive header. */
 AT("0007AAB8")
 void NfpSetArchiveBase(s32 handle, struct NfpHeader *base)
 {
     gNfpState->mounts[handle].base = base;
 }
 
-/* First unused mount slot, or -1 when they are all taken. */
+/** First unused mount slot, or -1 when they are all taken. */
 AT("0007ABF0")
 s32 NfpFindFreeSlot(void)
 {
@@ -121,7 +121,7 @@ s32 NfpFindFreeSlot(void)
     return -1;
 }
 
-/* Mount an archive under a name, returning its handle.
+/** Mount an archive under a name, returning its handle.
  *
  * Mounting is idempotent: if the name is already mounted its existing handle
  * comes straight back, so callers can mount on demand without tracking state.
@@ -172,7 +172,7 @@ void *sub_0807AC3C(const char *, const char *) __attribute__((alias("NfpOpenByNa
 void sub_0807AA30(s32, s32) __attribute__((alias("NfpSetMountActive")));
 s32 sub_0807AB7C(const char *) __attribute__((alias("NfpFindArchive")));
 
-/* Whether a mount slot is in use. The flag is the first byte of the record.
+/** Whether a mount slot is in use. The flag is the first byte of the record.
  *
  * Returns int rather than u8 deliberately: ldrb already zero-extends, so a
  * narrower return type makes the compiler re-widen the value at every call
@@ -183,7 +183,7 @@ s32 NfpMountIsActive(s32 handle)
     return gNfpState->mounts[handle].active;
 }
 
-/* One directory record by index. Records are 16 bytes, hence the shift. */
+/** One directory record by index. Records are 16 bytes, hence the shift. */
 AT("0007AC28")
 struct NfpEntry *NfpGetEntry(s32 handle, s32 index)
 {
@@ -193,7 +193,7 @@ struct NfpEntry *NfpGetEntry(s32 handle, s32 index)
 AT("0007AC28")
 const u8 NfpGetEntryTail[2] = {0, 0};
 
-/* Resolve "archive", "member" to the member's bytes.
+/** Resolve "archive", "member" to the member's bytes.
  *
  * This is the front door of the named filesystem: callers request a member
  * by name. Audio resources follow a separate direct-pointer path. The
@@ -224,7 +224,7 @@ void *NfpOpenByName(const char *archive, const char *member)
     return (u8 *)NfpGetArchiveBase(handle) + entry->offset;
 }
 
-/* Binary-search the sorted directory. Directory names may occupy all twelve
+/** Binary-search the sorted directory. Directory names may occupy all twelve
  * bytes, so each candidate is copied into a separately terminated buffer. */
 AT("0007ACC4")
 s32 NfpFindEntryIndex(s32 handle, const char *name)
@@ -264,7 +264,7 @@ s32 NfpFindEntryIndex(s32 handle, const char *name)
     return -1;
 }
 
-/* Resolve a member and derive its stored span from the next directory entry.
+/** Resolve a member and derive its stored span from the next directory entry.
  * The final member ends at the mounted archive length. */
 AT("0007AD4C")
 u32 NfpGetEntrySizeByName(const char *archive, const char *member)

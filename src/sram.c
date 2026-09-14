@@ -25,7 +25,7 @@ AT(address) void name(const u8 *source, u8 *destination, u32 size)          \
 DEFINE_SRAM_COPY(ReadSram, "00079EDC")
 DEFINE_SRAM_COPY(WriteSram, "00079F1C")
 
-/* Return the first mismatching SRAM address, or NULL when all bytes agree. */
+/** Return the first mismatching SRAM address, or NULL when all bytes agree. */
 AT("00079F5C")
 u8 *VerifySram(const u8 *source, const u8 *destination, u32 size)
 {
@@ -48,11 +48,11 @@ u8 *VerifySram(const u8 *source, const u8 *destination, u32 size)
 }
 AT("00079F5C") const u8 VerifySramTail[2] = {0, 0};
 
-/* Write and verify up to three times through the verifier copied to IWRAM. */
+/** Write and verify up to three times through the verifier copied to IWRAM. */
 AT("0007A044")
 u8 *WriteSramFast(const u8 *source, u8 *destination, u32 size)
 {
-    register u8 *mismatch asm("r3");
+    u8 *mismatch;
     u8 attempt = 0;
 
     while (attempt <= 2) {

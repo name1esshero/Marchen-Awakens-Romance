@@ -108,7 +108,7 @@ AT("00006834") s32 GameStateTestFlags12C(u32 bit)
  return BitTest(ORDERED_GAME_STATE_BASE+0x12C,bit);
 }
 
-/* Copy a caller-owned string into the fixed game-state text buffer. */
+/** Copy a caller-owned string into the fixed game-state text buffer. */
 AT("00006A1C") void GameStateSetString12F4(const char *source)
 {
  strcpy((char *)(ORDERED_GAME_STATE_BASE+0x12F4),source);
@@ -161,13 +161,13 @@ AT("000805D0") void SpriteRuntimeSetAllFlags800(u32 enabled)
  *(u32 *)flags=enabled;
 }
 
-/* Clears the 0x50-byte record that follows the map buffers. */
+/** Clears the 0x50-byte record that follows the map buffers. */
 AT("00057514") void GameStateClearRecord426A(void)
 {
  CpuFill(GAME_STATE_BASE+0x426A,0x50,0);
 }
 
-/* Rearms the repeat state unless the caller asked for one call to be skipped
+/** Rearms the repeat state unless the caller asked for one call to be skipped
  * by leaving unused05 non-zero. */
 AT("0002AE74") void InputRepeatRearm(struct InputRepeatState *state)
 {

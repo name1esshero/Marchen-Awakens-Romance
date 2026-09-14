@@ -218,7 +218,7 @@ AT("000120D0") s32 ScriptNativeFieldEffectQuery(u32 count, const s32 *args, s32 
 
 union EffectArgument { s32 integer; const char *string; };
 
-/* Select one of the two short actor-name fields and copy an upper-case script
+/** Select one of the two short actor-name fields and copy an upper-case script
  * string into it. The original VM trusts its input to fit this 4-byte local. */
 AT("000120F4") s32 ScriptNativeSetActorName(u32 count,
     const union EffectArgument *args, s32 *result)

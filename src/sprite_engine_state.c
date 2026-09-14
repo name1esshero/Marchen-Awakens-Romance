@@ -118,7 +118,7 @@ u32 SpriteEngineTestFlag20C(u8 index)
     return gSpriteEngineState->flags20C & (1 << index);
 }
 
-/* Enable or clear every one of the renderer's sixteen resource-group flags. */
+/** Enable or clear every one of the renderer's sixteen resource-group flags. */
 AT("0007B728")
 void SpriteEngineSetAllFlags20C(s32 set)
 {
@@ -178,7 +178,7 @@ void SpriteEngineDecrementCounter(u8 group, u32 index)
     }
 }
 
-/* Choose an unprotected resource group, preferring groups whose complete
+/** Choose an unprotected resource group, preferring groups whose complete
  * four-level reference counter is empty before progressively weaker tests. */
 AT("0007B830")
 s32 SpriteEngineFindReusableGroup(void)
@@ -233,7 +233,7 @@ found:
     return group;
 }
 
-/* Bind one palette/resource entry to a reusable renderer group.  The reverse
+/** Bind one palette/resource entry to a reusable renderer group.  The reverse
  * link lets the group's counters release the descriptor slot later. */
 AT("0007B8F4")
 s32 SpriteResourceBindGroup(u32 resource, u32 index)
@@ -263,7 +263,7 @@ s32 SpriteResourceBindGroup(u32 resource, u32 index)
     return group;
 }
 
-/* Group names occupy the first eight bytes of sorted 16-byte records. */
+/** Group names occupy the first eight bytes of sorted 16-byte records. */
 AT("0007BB98")
 s32 SpriteResourceFindGroup(u32 resource, const char *name)
 {
@@ -577,7 +577,7 @@ u32 SpriteEngineGetFlags14(void)
     return gSpriteEngineState->flags14;
 }
 
-/* The renderer keeps the active affine-work descriptor immediately before
+/** The renderer keeps the active affine-work descriptor immediately before
  * the viewport origin.  Larger affine routines consume this pointer. */
 AT("0007D01C")
 void SpriteEngineSetAffineWork(void *work)

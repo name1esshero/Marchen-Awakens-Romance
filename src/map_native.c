@@ -10,12 +10,13 @@
 /* Native arguments occupy four bytes on GBA. String and integer arguments
  * share the same VM slots; only FldSet reads a string here. */
 union MapArgument {s32 integer; const char *string;};
+extern const char gScriptKmpExtension[];
 extern char *strcpy(char *,const char *);
 extern char *strcat(char *,const char *);
 extern char *strupr(char *);
-#define sText_KmpExtension ((const char *)0x08086D88)
+#define sText_KmpExtension gScriptKmpExtension
 
-/* BgSet loads one KMP plane into the BG character block selected by the
+/** BgSet loads one KMP plane into the BG character block selected by the
  * viewport index, then renders that viewport at a 16.16 pixel position. */
 AT("00012264") s32 ScriptNativeBackgroundSet(u32 count,const union MapArgument *args,s32 *result)
 {
@@ -57,7 +58,7 @@ extern void *HeapAlloc(void *,u32);
 extern u8 gIwramBase[];
 extern u8 gMapGenerationRootOffset[];
 
-/* Return a heap-owned copy of the current field basename to the script VM.
+/** Return a heap-owned copy of the current field basename to the script VM.
  * The allocation comes from the game state's default heap; the caller owns
  * the returned 18-byte buffer. */
 AT("00012318") s32 ScriptNativeFieldGet(u32 count,const s32 *args,s32 *result)

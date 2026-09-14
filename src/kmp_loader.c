@@ -6,14 +6,15 @@
 #include "runtime_misc.h"
 
 #include "rom_section.h"
-#define MAIN_ARCHIVE_NAME ((const char *)0x08086A54)
+extern const char gMainArchiveName[];
+#define MAIN_ARCHIVE_NAME gMainArchiveName
 #define KMP_VIEWPORTS ((struct KmpViewport *)(gIwramBase + 0x3BC4))
 #define KMP_SCREEN_BUFFERS ((u16 *)(gIwramBase + 0x0860))
 
 extern u8 gIwramBase[];
 extern void IwramSetPointer2860(s32 background, u16 *screenBuffer);
 
-/* KCG members on this path have a GBA LZ header: the upper 24 bits of its
+/** KCG members on this path have a GBA LZ header: the upper 24 bits of its
  * first word are the decoded byte count. The loader reserves sixteen extra
  * bytes for its working/alignment area. */
 AT("00003410")

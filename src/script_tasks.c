@@ -32,7 +32,7 @@ AT("0007E448") void ScriptCompletePendingTasks(u32 count)
   *(u32 *)(state+0x220) -= count;
 }
 
-/* VM shutdown clears the active flag and execution-state pointer; storage is
+/** VM shutdown clears the active flag and execution-state pointer; storage is
  * released by the caller. The result word at context +8 is copied to the
  * script task's caller at 080052CE. Native command 0808045C sets that result
  * and unwinds frames. Frame +0x40 is the parent link: 0807EFB8 restores it
@@ -127,7 +127,7 @@ AT("0007F15C") s32 ScriptRunSlice(void)
 extern void ScriptSetResult(u32);
 extern void *ScriptGetParentFrame(void);
 extern void ScriptPopFrame(void);
-/* Native return: publish the argument, pop through the parent chain, then
+/** Native return: publish the argument, pop through the parent chain, then
  * pop the root frame. Native command success is one. */
 AT("0008045C") s32 ScriptNativeExit(u32 count, const u32 *arguments)
 {

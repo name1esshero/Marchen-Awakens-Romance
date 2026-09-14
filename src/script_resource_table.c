@@ -27,7 +27,7 @@ extern void CpuCopy(void *destination, const void *source, u32 size);
 extern void *HeapAlloc(void *heap, u32 size);
 extern void HeapFree(void *heap, void *allocation);
 
-/* Fold the resource class and name into one of the VM's 587 buckets. */
+/** Fold the resource class and name into one of the VM's 587 buckets. */
 AT("0007E97C") s32 ScriptResourceHash(s32 type, const char *name)
 {
     s32 hash = type;
@@ -56,6 +56,14 @@ AT("0007E9A8") u8 *ScriptResourceFind(s32 type, const char *name)
 }
 AT("0007E9A8") const u8 ScriptResourceFindTail[2] = {0, 0};
 
+/**
+ * @brief Insert a new typed value into the script resource hash table.
+ * @param type Resource class stored before the copied name.
+ * @param name Null-terminated resource name.
+ * @param value Value bytes copied into the new node.
+ * @param size Number of value bytes to copy.
+ * @return Zero on success, one for a duplicate, or negative one on allocation failure.
+ */
 AT("0007E9F4") s32 ScriptResourceSet(s32 type, const char *name,
                                        const void *value, s32 size)
 {

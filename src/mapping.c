@@ -453,7 +453,7 @@ AT("0001234C") s32 ScriptNativeSetRuntimePair(u32 count, const s32 *args,
     return 1;
 }
 
-/* Temporarily lock/unlock the generated battlefield while an event script
+/** Temporarily lock/unlock the generated battlefield while an event script
  * changes its actors or collision state. */
 AT("00012364") s32 ScriptNativeBattleFieldLock(u32 count, const s32 *args,
                                                 s32 *result)
@@ -471,7 +471,7 @@ AT("00012374") s32 ScriptNativeBattleFieldUnlock(u32 count, const s32 *args,
 }
 AT("00012374") const u8 ScriptNativeBattleFieldUnlockTail[2] = {0};
 
-/* Read one component of the active battlefield rectangle. Engine coordinates
+/** Read one component of the active battlefield rectangle. Engine coordinates
  * are stored in metatiles and exposed to scripts in pixels. */
 AT("00012384") s32 ScriptNativeGetBattleFieldRect(u32 count, const s32 *args,
                                                    s32 *result)
@@ -580,7 +580,7 @@ extern u8 *sub_08055F4C(s32 mode);
 extern void sub_08001EB4(void *dest, const void *src, u32 size);
 extern void BitSet(u8 *bits, u32 index, s32 enabled);
 
-/* DeckMake: args[0] selects a deck/shuffle mode, same case set as
+/** DeckMake: args[0] selects a deck/shuffle mode, same case set as
  * ShuffleDeckCopy. Builds a 20-entry s16 value table from args[1..20],
  * copies it 14 bytes into whatever sub_08055F4C(mode) returns, then flags
  * one bit per raw VM argument in the save's deck bitset (offset 0x26F8). */
@@ -614,7 +614,7 @@ AT("000127F8") s32 ScriptNativeDeckMake(u32 count, const s32 *args,
 
 extern void sub_080087EC(s32 a, s32 b, s32 value);
 
-/* ShuffleDeckCopy: args[2] selects a deck/shuffle mode. Most values are
+/** ShuffleDeckCopy: args[2] selects a deck/shuffle mode. Most values are
  * silent no-ops; only a handful actually forward to the shared handler. */
 AT("000128C8") s32 ScriptNativeShuffleDeckCopy(u32 count, const s32 *args,
                                                 s32 *result)
@@ -656,7 +656,7 @@ AT("00012B80") s32 ScriptNativeSelectLayer(u32 count, const s32 *args,
     return 1;
 }
 
-/* Populate the three active battle-party slots. A value of -1 leaves that
+/** Populate the three active battle-party slots. A value of -1 leaves that
  * slot empty; initialized combatants start with both percentage fields at
  * 100. */
 AT("00012C68") s32 ScriptNativeSetBattleParty(u32 count, const s32 *args,
@@ -780,7 +780,7 @@ extern void sub_08010A2C(s32 arg0, s32 arg1);
 #define MAP_GENERATION_BLOCK_650 0x650
 #define MAP_GENERATION_BLOCK_654 0x654
 
-/* Release everything the current generated map owns and reset the runtime
+/** Release everything the current generated map owns and reset the runtime
  * state that referenced it. */
 AT("00070140") void MapGenerationRelease(void *state)
 {

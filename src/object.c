@@ -111,7 +111,7 @@ AT("000288DC") void *ObjectGetActiveRecordData(struct Object *object)
  return 0;
 }
 
-/* Toggle state bit 0 on a live object. Enabling it also clears the pending
+/** Toggle state bit 0 on a live object. Enabling it also clears the pending
  * position/state fields, clears bit 4, and sets bit 14. */
 AT("000282B4") void ObjectSetState1(struct Object *object, u16 enabled)
 {

@@ -7,8 +7,9 @@
 /* Consumables use one-based IDs.  Their printable fields have the same
  * 0x50-byte stride as ItemDefinition, but the lookup bases point at a blank
  * ID-zero name/description immediately before gItemDefinitions. */
-#define CONSUMABLE_NAME_BASE        ((const char *)0x081BE7EC)
-#define CONSUMABLE_DESCRIPTION_BASE ((const char *)0x081BE80E)
+extern const char gConsumableNoneDescription[];
+#define CONSUMABLE_NAME_BASE        ((const char *)&gConsumableNoneText)
+#define CONSUMABLE_DESCRIPTION_BASE gConsumableNoneDescription
 #define CONSUMABLE_RECORD_SIZE      0x50
 
 AT("00056464")
@@ -115,7 +116,7 @@ const char *ConsumableGetDescription(s32 id)
     return CONSUMABLE_DESCRIPTION_BASE + (s16)id * CONSUMABLE_RECORD_SIZE;
 }
 
-/* Some resource-loading paths use a distinct entry point with the same
+/** Some resource-loading paths use a distinct entry point with the same
  * lookup semantics.  Keep it named separately because callers may be patched
  * independently by the English build. */
 AT("0005715C")
@@ -124,7 +125,7 @@ const char *ConsumableGetResourceName(s32 id)
     return CONSUMABLE_NAME_BASE + (s16)id * CONSUMABLE_RECORD_SIZE;
 }
 
-/* field78 is read through the address of field7C: the original source
+/** field78 is read through the address of field7C: the original source
  * computed the record address from the 0x7C offset and stepped back one
  * word, which is why the literal pool holds the field7C base. */
 AT("00056F68")

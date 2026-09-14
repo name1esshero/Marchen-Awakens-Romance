@@ -15,7 +15,7 @@ extern void sub_08004840(void);
 extern s32 sub_08004DA8(void);
 extern u32 sub_08004CDC(void);
 
-/* A secondary allocation is optional during early startup and teardown. */
+/** A secondary allocation is optional during early startup and teardown. */
 AT("00004E04") void *RuntimeGetOptionalField130(void)
 {
     u8 *state = *(u8 **)0x03004014;
@@ -122,7 +122,7 @@ extern void CpuCopy(void *destination, const void *source, u32 size);
 /* Bytes of the current 0x14C record that the caller-supplied header owns. */
 #define RUNTIME_RECORD_14C_HEADER_SIZE 8
 
-/* Overwrite the header of the currently selected 0x14C record. */
+/** Overwrite the header of the currently selected 0x14C record. */
 AT("0006C6F8") void RuntimeStoreCurrentRecord14C(const void *source)
 {
     void *record = RuntimeGetCurrentRecord14C();

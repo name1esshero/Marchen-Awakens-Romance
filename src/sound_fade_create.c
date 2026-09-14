@@ -15,6 +15,15 @@ struct SoundFadeData
     s32 stopPlayerOnFinish;
 };
 
+/**
+ * @brief Create a script-visible sound fade task.
+ * @param countdown Fade duration consumed by the task callback.
+ * @param playerIndex Sound player to fade.
+ * @param completePendingOnFinish Whether completion releases an extra script wait.
+ * @param stopPlayerOnFinish Whether the player stops after fading.
+ * @param completion Optional task completion word.
+ * @return The initialized task, or null when allocation fails.
+ */
 AT("000056AC") struct EngineTask *CreateSoundFadeTask(
     s32 countdown, s32 playerIndex, s32 completePendingOnFinish,
     s32 stopPlayerOnFinish, u32 *completion)

@@ -94,7 +94,7 @@ struct EngineTask *TaskCreateBefore(struct TaskManager *manager,void (*callback)
     return task;
 }
 
-/* Dispatch visits queues in ascending order and observes next links after
+/** Dispatch visits queues in ascending order and observes next links after
  * callbacks, allowing newly inserted following tasks to run in this pass. */
 AT("0007A77C")
 struct EngineTask *CreateTask(struct TaskManager *manager,void (*callback)(struct EngineTask *),u32 queueOrTask,u32 *completion,u32 size)
@@ -106,7 +106,7 @@ struct EngineTask *CreateTask(struct TaskManager *manager,void (*callback)(struc
 }
 AT("0007A77C") const u8 CreateTaskTail[2]={0,0};
 
-/* Only a running task can transition to the scheduler's removal state. */
+/** Only a running task can transition to the scheduler's removal state. */
 AT("0007A7AC")
 void FinishTask(struct EngineTask *task)
 {

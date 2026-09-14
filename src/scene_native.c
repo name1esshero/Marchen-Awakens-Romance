@@ -8,9 +8,10 @@
 #include "sound.h"
 
 #include "rom_section.h"
+extern const char gSceneNcdExtension[];
 #define SCRIPT_CONTINUE 1
 #define SCRIPT_WAIT 0x7FFF
-#define sText_NcdExtension ((const char *)0x08086A6C)
+#define sText_NcdExtension gSceneNcdExtension
 
 extern s32 CreateInputWaitTask(s32 first, s32 second, s32 mode);
 extern s32 sub_080053E4(s32 first, s32 second, s32 third, s32 mode);
@@ -205,7 +206,7 @@ AT("00005D98") s32 ScriptNativeStartTask057C0(u32 count, const s32 *args,
 }
 AT("00005D98") const u8 ScriptNativeStartTask057C0Tail[2] = {0};
 
-/* Select one of the nine MusicPlayer2000 instances used by scene scripts and
+/** Select one of the nine MusicPlayer2000 instances used by scene scripts and
  * apply the requested volume to every active track. */
 AT("00005DAC") s32 ScriptNativeSetSoundPlayerVolume(
     u32 count, const s32 *args, s32 *result)

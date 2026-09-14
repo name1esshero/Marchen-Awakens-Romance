@@ -66,7 +66,7 @@ OBJS        := $(ASM_OBJS) $(C_OBJS)
 # Recompile matching C when a recovered structure or hardware definition changes.
 -include $(C_OBJS:.o=.d)
 
-.PHONY: all compare extract clean tidy stats test test-english ci script-sources script-catalog map-audit readability-audit
+.PHONY: all compare extract clean tidy stats test test-english ci script-sources script-catalog map-audit readability-audit pret-audit
 .SUFFIXES:
 
 # Keep `all` first: it is the default goal.
@@ -248,6 +248,9 @@ test-english:
 
 readability-audit:
 	@$(PYTHON) tools/audit_magic_numbers.py
+
+pret-audit:
+	@$(PYTHON) tools/audit_pret_standards.py
 
 # Public CI deliberately has no baserom. Local compare remains the stronger,
 # byte-for-byte verification when the legally obtained reference is present.

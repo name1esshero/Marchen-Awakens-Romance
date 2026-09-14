@@ -191,7 +191,7 @@ GAME_STATE_FLAG_SET("00056A34",GameStateSetFlag2730,0x2730)
 GAME_STATE_FLAG_TEST("00056A60",GameStateTestFlag2730,0x2730)
 GAME_STATE_FLAG_TEST("00056B2C",GameStateTestFlag26F8,0x26F8)
 
-/* state+0x38B8 selects which row of the 0x3894 table is current. */
+/** state+0x38B8 selects which row of the 0x3894 table is current. */
 AT("00056130") s32 GameStateGetCurrentEntry3894(void)
 {
  u8 *iwram;
