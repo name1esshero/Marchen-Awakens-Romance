@@ -21,6 +21,7 @@
 #define CGB_ENVELOPE_INCREASE    0x08
 #define CGB_FIXED_PITCH          0x08
 
+extern void sub_080783DC(void);
 extern void sub_08078644(struct SoundPlayer *, struct SoundTrack *);
 extern u32 sub_08077DB0(u32 first, u32 second);
 extern void sub_08077E44(void);
@@ -461,7 +462,7 @@ AT("000790E4") void SoundPlayerOpen(
         sound->mainHead = 0;
     }
     sound->playerHead = player;
-    sound->mainHead = (void *)0x080783DD;
+    sound->mainHead = (void *)((u32)sub_080783DC + 1);
     sound->ident = SOUND_PLAYER_READY;
     player->ident = SOUND_PLAYER_READY;
 }

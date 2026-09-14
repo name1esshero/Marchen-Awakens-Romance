@@ -14,6 +14,7 @@ extern char *strcat(char *,const char *);
 extern char *strupr(char *);
 extern s32 sub_08056290(void);
 extern void sub_08054350(void *, void *, s32, s32, s32, s32, s32);
+#define sText_KmpExtension ((const char *)0x08086A5C)
 AT("000032B8") void KmpLoadField(const char *name,s16 x,s16 y)
 {
  char resource[16]; /* basename + .KMP + terminator; original has no length check */
@@ -21,7 +22,7 @@ AT("000032B8") void KmpLoadField(const char *name,s16 x,s16 y)
  s32 px=x,py=y;
  GameStateSetString12F4(name);
  strcpy(resource,name);
- strcat(resource,(const char *)0x08086A5C);
+ strcat(resource,sText_KmpExtension);
  strupr(resource);
  KmpLoadResource(resource,(void *)0x06000000,0,0,0,0,3);
  KmpLoadResource(resource,(void *)0x06000000,1,1,0,0,0);

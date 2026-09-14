@@ -2,7 +2,6 @@
  * result slot. Allocation failure returns -1 without changing that slot.
  * Character conversion follows the engine's private double-byte encoding,
  * including F0xx codes; it is not Unicode or general-purpose Shift-JIS.
- * The empty fallback at 081AC6A0 and "%d" at 081AC6A4 are verified ROM data.
  * Original behavior is retained: min/max read args[0] even for count zero,
  * abs(INT_MIN) keeps 0x80000000, and character strings truncate to two bytes.
  */
@@ -10,6 +9,10 @@
 #include "random.h"
 #include "rom_section.h"
 #define VM (*(struct ScriptContext **)0x0300611C)
+/* Verified ROM string data; aliased rather than AT()-pinned because the
+ * literal-pool region they live in is shared with other, unrelated code. */
+#define sText_Empty ((const u8 *)0x081AC6A0)
+#define sText_PercentD ((const char *)0x081AC6A4)
 extern void *HeapAlloc(void *,u32);
 extern u32 __umodsi3(u32 dividend,u32 divisor);
 extern s32 ParseDecimalInteger(const char *text);
@@ -29,7 +32,7 @@ AT("00080110") s32 ScriptNativeCharacterCode(u32 count,const u8 **args,u32 *resu
 {
  const u8 *text=args[0];
  u32 first;
- if(!text)text=(const u8 *)0x081AC6A0;
+ if(!text)text=sText_Empty;
  first=text[0];
  if(first-128<=31 || first>223) *result=text[1]+(first<<8);
  else *result=first;
@@ -83,7 +86,7 @@ AT("00080214") s32 ScriptNativeIntegerString(u32 count,const s32 *args,char **re
 {
  char *text=HeapAlloc(VM->state->heap,16);
  s32 status;
- if(text){s32 value=args[0];siprintf(text,(const char *)0x081AC6A4,value);*result=text;status=1;}
+ if(text){s32 value=args[0];siprintf(text,sText_PercentD,value);*result=text;status=1;}
  else status=-1;
  return status;
 }
@@ -92,7 +95,7 @@ AT("00080214") const u8 ScriptNativeIntegerStringTail[2]={0,0};
 AT("00080250") s32 ScriptNativeParseInteger(u32 count,const char **args,s32 *result)
 {
  const char *text=args[0];
- if(!text)text=(const char *)0x081AC6A0;
+ if(!text)text=(const char *)sText_Empty;
  *result=ParseDecimalInteger(text);
  return 1;
 }
@@ -101,9 +104,9 @@ AT("00080270") s32 ScriptNativeCompareStrings(u32 count,const char **args,s32 *r
  const char *left=args[0];
  const char *right;
  s32 comparison;
- if(!left)left=(const char *)0x081AC6A0;
+ if(!left)left=(const char *)sText_Empty;
  right=args[1];
- if(!right)right=(const char *)0x081AC6A0;
+ if(!right)right=(const char *)sText_Empty;
  comparison=strcmp(left,right);
  if(comparison<0)comparison=-1;
  else if(comparison>0)comparison=1;
@@ -114,7 +117,7 @@ AT("00080270") s32 ScriptNativeCompareStrings(u32 count,const char **args,s32 *r
 AT("000802A8") s32 ScriptNativeStringLength(u32 count,const char **args,u32 *result)
 {
  const char *text=args[0];
- if(!text)text=(const char *)0x081AC6A0;
+ if(!text)text=(const char *)sText_Empty;
  *result=strlen(text);
  return 1;
 }
@@ -126,7 +129,7 @@ AT("000802C8") s32 ScriptNativeLeft(u32 count,const struct ScriptSubstringArgs *
  const char *text=args->text;
  u32 textLength,length;
  char *copy;
- if(!text)text=(const char *)0x081AC6A0;
+ if(!text)text=(const char *)sText_Empty;
  textLength=strlen(text);
  length=args->start;
  if(length>textLength)length=textLength;
@@ -144,7 +147,7 @@ AT("00080320") s32 ScriptNativeRight(u32 count,const struct ScriptSubstringArgs 
  const char *text=args->text;
  u32 textLength,length,offset;
  char *copy;
- if(!text)text=(const char *)0x081AC6A0;
+ if(!text)text=(const char *)sText_Empty;
  textLength=strlen(text);
  length=args->start;
  if(length>textLength)length=textLength;
@@ -162,7 +165,7 @@ AT("00080380") s32 ScriptNativeSubstring(u32 count,const struct ScriptSubstringA
  const char *text=args->text;
  u32 textLength,start,length;
  char *copy;
- if(!text)text=(const char *)0x081AC6A0;
+ if(!text)text=(const char *)sText_Empty;
  textLength=strlen(text);
  start=args->start;
  if(start>textLength)start=textLength;

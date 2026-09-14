@@ -13,6 +13,21 @@ struct ScriptResourceSlot {
     void *allocation;
 };
 
+/* 24-entry {name, handler} table of core VM/engine commands (dummy, Pad,
+ * Wait, GetBool/SetBool, GetVar/SetVar/AddVar, CrtFade family, Se/Bgm
+ * playback) verified against ROM data; not yet reconstructed as a matching
+ * C array, so it is aliased rather than re-typed. */
+#define gScriptEngineFunctions \
+    ((const struct ScriptResourceEntry *)0x081ACB7C)
+/* Same {name, handler} layout as gScriptNativeCommands, reused here under
+ * ScriptResourceEntry's generic type -- the THUMB-bit-set handler addresses
+ * verified against decompiled.json in game_tables.c apply here too. */
+extern const struct ScriptResourceEntry gScriptNativeCommands[];
+/* Zero-filled 16-byte fallback record (the trailing "%d" belongs to
+ * unrelated, adjacent ROM data) returned when a resource value slot holds
+ * no override. */
+#define sScriptResourceDefaultValue ((void *)0x081AC698)
+
 extern struct ScriptResourceSlot *sub_0807F32C(s32 index);
 extern struct ScriptResourceSlot *sub_0807F354(s32 index);
 extern void HeapFree(void *heap, void *allocation);
@@ -62,10 +77,10 @@ AT("0007EE7C") s32 ScriptResourceRegisterBuiltins(s32 heap, void *table)
             heap, table, gScriptBuiltinFunctions))
         return -1;
     if (ScriptResourceRegisterTableToHeap(
-            heap, table, (const struct ScriptResourceEntry *)0x081ACB7C))
+            heap, table, gScriptEngineFunctions))
         return -1;
     if (ScriptResourceRegisterTableToHeap(
-            heap, table, (const struct ScriptResourceEntry *)0x081AFEA4))
+            heap, table, gScriptNativeCommands))
         return -1;
     return 0;
 }
@@ -210,7 +225,7 @@ AT("0007F398") void *ScriptResourceGetValueOrDefault(u32 *record,
     value = (void *)*slot;
     if (value != 0)
         return value;
-    return (void *)0x081AC698;
+    return sScriptResourceDefaultValue;
 }
 
 AT("0007F3BC") s32 ScriptResourceSetValue(u32 *record, s32 selector,

@@ -13,6 +13,7 @@ union MapArgument {s32 integer; const char *string;};
 extern char *strcpy(char *,const char *);
 extern char *strcat(char *,const char *);
 extern char *strupr(char *);
+#define sText_KmpExtension ((const char *)0x08086D88)
 
 /* BgSet loads one KMP plane into the BG character block selected by the
  * viewport index, then renders that viewport at a 16.16 pixel position. */
@@ -35,7 +36,7 @@ defaultVram:
     tileDestination=(void *)0x06000000;
 selectedVram:
     strcpy(resource,args[3].string);
-    strcat(resource,(const char *)0x08086D88);
+    strcat(resource,sText_KmpExtension);
     KmpLoadResource(resource,tileDestination,args[0].integer,0,
                  args[1].integer,args[2].integer,3);
     view=&gKmpViewports[args[0].integer];
