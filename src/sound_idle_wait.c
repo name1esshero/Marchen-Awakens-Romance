@@ -69,4 +69,4 @@ AT("00005848") struct EngineTask *CreateSoundPlayerIdleWait(
     return returnTask;
 }
 
-asm(".section .rom.00005848,\"ax\",%progbits\n.space 2, 0\n");
+AT("00005848") const u8 CreateSoundPlayerIdleWaitTail[2] = {0};

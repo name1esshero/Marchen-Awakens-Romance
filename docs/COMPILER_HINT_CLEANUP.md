@@ -68,6 +68,43 @@ declaration order, `if`/`else` assignment, a ternary, reusing the `left`
 parameter, and splitting the final shifts. The one pin is currently the only
 way to reproduce the copy, so it stays; both fences went.
 
+## Alignment padding is not inline assembly
+
+Three files emitted their trailing zero halfword as
+`asm(".section .rom.ADDR,\"ax\",%progbits\n.space 2, 0\n");`, which the audit
+counts as inline assembly. The project already has a plain-C idiom for exactly
+this, used throughout `src/`:
+
+    AT("00005848") const u8 CreateSoundPlayerIdleWaitTail[2] = {0};
+
+All fifteen padding halfwords across `sound_idle_wait.c`, `sound_cgb_update.c`
+and `sound_m4a.c` converted cleanly. One catch: the tail must be written
+*immediately after its own function*, not collected in a block at the end of
+the file. Grouping them produces `Error: changed section attributes for
+.rom.ADDR`, because `as` reopens a section it had emitted as code and finds
+read-only data flags instead. Adjacent placement keeps each section opened once.
+
+## Cases that resist a clean rewrite
+
+Two functions were tried properly and kept their pin, because agbcc will not
+produce the ROM's register choice from any ordinary C shape:
+
+`SpriteFixed8Multiply` (0x0807D8F8) needs `product` in r0 and a *copy* in r1,
+but `product` is dead after the compare, so agbcc coalesces them. Tried:
+separate locals in both declaration orders, `if`/`else` assignment, a ternary,
+reusing the `left` parameter, and splitting the final shifts. Its two fences
+did come out; only the pin is load-bearing.
+
+`SpriteResourceFindGroup` (`sprite_engine_state.c`) needs the scaled index
+computed *first* (into r0), the base loaded second (r1), and then
+`add r0, r1, r0` -- base as the left operand. agbcc ties the two together: the
+operand written first in the C addition gets both the lower register and the
+`rn` slot. Writing `offset + base` gets the evaluation order right and the add
+backwards; writing `base + offset` fixes the add and reverses the registers.
+The natural `descriptor->level0[low].name` form is otherwise instruction-exact.
+
+Both are candidates for the `src/nonmatching/` route rather than more search.
+
 ## State
 
 Recorded at the time of writing; regenerate rather than trusting these numbers.

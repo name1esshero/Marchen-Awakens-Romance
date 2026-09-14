@@ -409,4 +409,4 @@ __attribute__((section(".rom.0007955C"))) void SoundUpdateCgbChannels(void)
 
 
 /* The original module used a zero halfword for final alignment. */
-asm(".section .rom.0007955C,\"ax\",%progbits\n.space 2, 0\n");
+__attribute__((section(".rom.0007955C"))) const u8 SoundUpdateCgbChannelsTail[2] = {0};

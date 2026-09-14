@@ -216,6 +216,7 @@ AT("00078948") u32 SoundMidiKeyToFrequency(
 AT("000789AC") void SoundDriverUnusedNoOp(void)
 {
 }
+AT("000789AC") const u8 SoundDriverUnusedNoOpTail[2] = {0};
 
 /** Install the relocatable mixer in IWRAM, initialize its driver/channel
  * state, and register all nine player slots with their shared MEMACC area. */
@@ -621,6 +622,7 @@ AT("00078BD0") void SoundResumePlayer(struct SoundPlayer *player)
 {
     SoundPlayerResume(player);
 }
+AT("00078BD0") const u8 SoundResumePlayerTail[2] = {0};
 
 AT("00078BDC") void SoundResumeAllPlayers(void)
 {
@@ -696,6 +698,7 @@ AT("00079DF0") void SoundTrackReadToneType(
     track->toneType = *track->command;
     track->command++;
 }
+AT("00079DF0") const u8 SoundTrackReadToneTypeTail[2] = {0};
 
 AT("00079E04") void SoundTrackReadToneAttack(
     struct SoundPlayer *player, struct SoundTrack *track)
@@ -703,6 +706,7 @@ AT("00079E04") void SoundTrackReadToneAttack(
     track->toneAttack = *track->command;
     track->command++;
 }
+AT("00079E04") const u8 SoundTrackReadToneAttackTail[2] = {0};
 
 AT("00079E18") void SoundTrackReadToneDecay(
     struct SoundPlayer *player, struct SoundTrack *track)
@@ -710,6 +714,7 @@ AT("00079E18") void SoundTrackReadToneDecay(
     track->toneDecay = *track->command;
     track->command++;
 }
+AT("00079E18") const u8 SoundTrackReadToneDecayTail[2] = {0};
 
 AT("00079E2C") void SoundTrackReadToneSustain(
     struct SoundPlayer *player, struct SoundTrack *track)
@@ -717,6 +722,7 @@ AT("00079E2C") void SoundTrackReadToneSustain(
     track->toneSustain = *track->command;
     track->command++;
 }
+AT("00079E2C") const u8 SoundTrackReadToneSustainTail[2] = {0};
 
 AT("00079E40") void SoundTrackReadToneRelease(
     struct SoundPlayer *player, struct SoundTrack *track)
@@ -724,6 +730,7 @@ AT("00079E40") void SoundTrackReadToneRelease(
     track->toneRelease = *track->command;
     track->command++;
 }
+AT("00079E40") const u8 SoundTrackReadToneReleaseTail[2] = {0};
 
 AT("00079E54") void SoundTrackReadPseudoEchoVolume(
     struct SoundPlayer *player, struct SoundTrack *track)
@@ -745,6 +752,7 @@ AT("00079E6C") void SoundTrackReadToneLength(
     track->toneLength = *track->command;
     track->command++;
 }
+AT("00079E6C") const u8 SoundTrackReadToneLengthTail[2] = {0};
 
 AT("00079E80") void SoundTrackReadTonePanSweep(
     struct SoundPlayer *player, struct SoundTrack *track)
@@ -752,12 +760,14 @@ AT("00079E80") void SoundTrackReadTonePanSweep(
     track->tonePanSweep = *track->command;
     track->command++;
 }
+AT("00079E80") const u8 SoundTrackReadTonePanSweepTail[2] = {0};
 
 /** Reserved extended opcode. */
 AT("00079E94") void SoundTrackNoOp(
     struct SoundPlayer *player, struct SoundTrack *track)
 {
 }
+AT("00079E94") const u8 SoundTrackNoOpTail[2] = {0};
 
 /** Advance a player's fade timer.  A completed permanent fade stops and
  * disables every track; a temporary fade pauses the player for resumption.
@@ -1062,6 +1072,7 @@ AT("00079B14") static void SoundTrackClearModulation(struct SoundTrack *track)
     else
         track->flags |= TRACK_MIX_DIRTY;
 }
+AT("00079B14") const u8 SoundTrackClearModulationTail[2] = {0};
 
 AT("00079B34") void SoundPlayerSetModulationDepth(
     struct SoundPlayer *player, u16 trackBits, u8 depth)
@@ -1181,14 +1192,3 @@ AT("00079D74") void SoundTrackDispatchExtendedCommand(
 /* The original object filled halfword alignment gaps with zero rather than
  * the assembler's Thumb NOP.  Keep those bytes explicit and executable so
  * each recovered section remains identical. */
-asm(".section .rom.000789AC,\"ax\",%progbits\n.space 2, 0\n"
-    ".section .rom.00078BD0,\"ax\",%progbits\n.space 2, 0\n"
-    ".section .rom.00079B14,\"ax\",%progbits\n.space 2, 0\n"
-    ".section .rom.00079DF0,\"ax\",%progbits\n.space 2, 0\n"
-    ".section .rom.00079E04,\"ax\",%progbits\n.space 2, 0\n"
-    ".section .rom.00079E18,\"ax\",%progbits\n.space 2, 0\n"
-    ".section .rom.00079E2C,\"ax\",%progbits\n.space 2, 0\n"
-    ".section .rom.00079E40,\"ax\",%progbits\n.space 2, 0\n"
-    ".section .rom.00079E6C,\"ax\",%progbits\n.space 2, 0\n"
-    ".section .rom.00079E80,\"ax\",%progbits\n.space 2, 0\n"
-    ".section .rom.00079E94,\"ax\",%progbits\n.space 2, 0\n");

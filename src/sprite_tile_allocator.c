@@ -5,12 +5,8 @@
 #include "rom_section.h"
 #ifdef __GNUC__
 #define TARGET_REGISTER(name)
-#define ALLOCATOR_MEMORY_BARRIER() ((void)0)
-#define ALLOCATOR_VALUE_BARRIER(value) ((void)0)
 #else
 #define TARGET_REGISTER(name) asm(name)
-#define ALLOCATOR_MEMORY_BARRIER() asm volatile("" ::: "memory")
-#define ALLOCATOR_VALUE_BARRIER(value) asm volatile("" : "+r"(value))
 #endif
 
 extern void CpuFill(void *destination, u32 size, u32 value);
