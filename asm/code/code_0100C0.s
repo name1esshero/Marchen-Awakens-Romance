@@ -8256,7 +8256,7 @@ sub_0801504C:
 	movs r0, #1
 	strb r0, [r1, #0]
 	adds r0, r2, #0
-	bl sub_08072A98
+	bl MapGenerationAdvanceCurrentFieldEntries
 	movs r1, #0
 	movs r0, #0
 	ldrsb r0, [r5, r0]

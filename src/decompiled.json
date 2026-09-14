@@ -30,6 +30,12 @@
     "file": "src/runtime_accessors.c"
   },
   {
+    "addr": "08001AF0",
+    "size": 68,
+    "name": "InitBufferTable2050",
+    "file": "src/runtime_accessors.c"
+  },
+  {
     "addr": "08001B34",
     "size": 24,
     "name": "IwramGetPointer2860",
@@ -4676,55 +4682,55 @@
   {
     "addr": "08071EF4",
     "size": 24,
-    "name": "MapGenerationGetTable38",
+    "name": "MapGenerationGetTileX",
     "file": "src/mapping.c"
   },
   {
     "addr": "08071F0C",
     "size": 24,
-    "name": "MapGenerationGetTable48",
+    "name": "MapGenerationGetTileY",
     "file": "src/mapping.c"
   },
   {
     "addr": "08071F24",
     "size": 36,
-    "name": "MapGenerationSetTables",
+    "name": "MapGenerationSetTilePosition",
     "file": "src/mapping.c"
   },
   {
     "addr": "08071F48",
     "size": 24,
-    "name": "MapGenerationSetValue26",
+    "name": "MapGenerationSetEntryState",
     "file": "src/mapping.c"
   },
   {
     "addr": "08071F60",
     "size": 24,
-    "name": "MapGenerationGetValue26",
+    "name": "MapGenerationGetEntryState",
     "file": "src/mapping.c"
   },
   {
     "addr": "08071F78",
     "size": 24,
-    "name": "MapGenerationSetTable58",
+    "name": "MapGenerationSetCountdown",
     "file": "src/mapping.c"
   },
   {
     "addr": "08071F90",
     "size": 24,
-    "name": "MapGenerationGetTable58",
+    "name": "MapGenerationGetCountdown",
     "file": "src/mapping.c"
   },
   {
     "addr": "08071FA8",
     "size": 24,
-    "name": "MapGenerationSetValue68",
+    "name": "MapGenerationSetUpdatePending",
     "file": "src/mapping.c"
   },
   {
     "addr": "08071FC0",
     "size": 24,
-    "name": "MapGenerationGetValue68",
+    "name": "MapGenerationGetUpdatePending",
     "file": "src/mapping.c"
   },
   {
@@ -4742,13 +4748,13 @@
   {
     "addr": "08072004",
     "size": 28,
-    "name": "MapGenerationSetValue2E",
+    "name": "MapGenerationSetFieldId",
     "file": "src/mapping.c"
   },
   {
     "addr": "08072020",
     "size": 24,
-    "name": "MapGenerationGetValue2E",
+    "name": "MapGenerationGetFieldId",
     "file": "src/mapping.c"
   },
   {
@@ -4810,6 +4816,30 @@
     "size": 164,
     "name": "MapAttributeGetConnectionMask",
     "file": "src/map_attributes.c"
+  },
+  {
+    "addr": "080729F4",
+    "size": 68,
+    "name": "MapGenerationClearCurrentFieldEntries",
+    "file": "src/mapping.c"
+  },
+  {
+    "addr": "08072A38",
+    "size": 96,
+    "name": "MapGenerationGetCurrentFieldPosition",
+    "file": "src/mapping.c"
+  },
+  {
+    "addr": "08072A98",
+    "size": 112,
+    "name": "MapGenerationAdvanceCurrentFieldEntries",
+    "file": "src/mapping.c"
+  },
+  {
+    "addr": "08072B08",
+    "size": 64,
+    "name": "MapGenerationHasFreeEntryForField",
+    "file": "src/mapping.c"
   },
   {
     "addr": "08072C04",

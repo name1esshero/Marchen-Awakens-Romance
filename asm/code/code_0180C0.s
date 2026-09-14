@@ -5672,7 +5672,7 @@ _0801A9A4:
 	lsls r3, r3, #4
 	adds r5, r4, r3
 	adds r0, r5, #0
-	bl sub_08001AF0
+	bl InitBufferTable2050
 	ldr r0, _0801AB74
 	adds r1, r4, r0
 	ldr r0, _0801AB78
@@ -8441,7 +8441,7 @@ _0801BC10:
 	strh r0, [r1, #22]
 	ldr r4, _0801BD28
 	adds r0, r4, #0
-	bl sub_08001AF0
+	bl InitBufferTable2050
 	ldr r0, _0801BD2C
 	strh r0, [r4, #2]
 	ldr r0, _0801BD30

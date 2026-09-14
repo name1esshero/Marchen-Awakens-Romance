@@ -4387,31 +4387,31 @@ _08071DB0:
 
 @ 071EE4..071EF4 is decompiled as MapGenerationSetPointer20(); see src/decompiled.json
 
-@ 071EF4..071F0C is decompiled as MapGenerationGetTable38(); see src/decompiled.json
+@ 071EF4..071F0C is decompiled as MapGenerationGetTileX(); see src/decompiled.json
 
-@ 071F0C..071F24 is decompiled as MapGenerationGetTable48(); see src/decompiled.json
+@ 071F0C..071F24 is decompiled as MapGenerationGetTileY(); see src/decompiled.json
 
-@ 071F24..071F48 is decompiled as MapGenerationSetTables(); see src/decompiled.json
+@ 071F24..071F48 is decompiled as MapGenerationSetTilePosition(); see src/decompiled.json
 
-@ 071F48..071F60 is decompiled as MapGenerationSetValue26(); see src/decompiled.json
+@ 071F48..071F60 is decompiled as MapGenerationSetEntryState(); see src/decompiled.json
 
-@ 071F60..071F78 is decompiled as MapGenerationGetValue26(); see src/decompiled.json
+@ 071F60..071F78 is decompiled as MapGenerationGetEntryState(); see src/decompiled.json
 
-@ 071F78..071F90 is decompiled as MapGenerationSetTable58(); see src/decompiled.json
+@ 071F78..071F90 is decompiled as MapGenerationSetCountdown(); see src/decompiled.json
 
-@ 071F90..071FA8 is decompiled as MapGenerationGetTable58(); see src/decompiled.json
+@ 071F90..071FA8 is decompiled as MapGenerationGetCountdown(); see src/decompiled.json
 
-@ 071FA8..071FC0 is decompiled as MapGenerationSetValue68(); see src/decompiled.json
+@ 071FA8..071FC0 is decompiled as MapGenerationSetUpdatePending(); see src/decompiled.json
 
-@ 071FC0..071FD8 is decompiled as MapGenerationGetValue68(); see src/decompiled.json
+@ 071FC0..071FD8 is decompiled as MapGenerationGetUpdatePending(); see src/decompiled.json
 
 @ 071FD8..071FEC is decompiled as MapGenerationGetValue24(); see src/decompiled.json
 
 @ 071FEC..072004 is decompiled as MapGenerationSetValue24(); see src/decompiled.json
 
-@ 072004..072020 is decompiled as MapGenerationSetValue2E(); see src/decompiled.json
+@ 072004..072020 is decompiled as MapGenerationSetFieldId(); see src/decompiled.json
 
-@ 072020..072038 is decompiled as MapGenerationGetValue2E(); see src/decompiled.json
+@ 072020..072038 is decompiled as MapGenerationGetFieldId(); see src/decompiled.json
 
 @ 072038..07204C is decompiled as MapGenerationGetValue25(); see src/decompiled.json
 
@@ -5658,236 +5658,17 @@ _080729E4:
 	pop {r1}
 	bx r1
 
-	.thumb_func
-	.thumb
-	.global sub_080729F4
-sub_080729F4:
-	push {r4, r5, lr}
-	.2byte 0xF794
-	.4byte 0x1C05F949
-	.2byte 0xF7FF
-	.byte 0x32
-	.byte 0xFB
-	lsls r0, r0, #24
-	cmp r0, #0
-	beq _08072A30
-	movs r4, #0
-	.global _08072A08
-_08072A08:
-	adds r0, r4, #0
-	.2byte 0xF7FF
-	.4byte 0x0400FB09
-	asrs r0, r0, #16
-	cmp r0, r5
-	bne _08072A2A
-	adds r0, r4, #0
-	.2byte 0xF7FF
-	.byte 0xA2
-	.byte 0xFA
-	lsls r0, r0, #16
-	cmp r0, #0
-	beq _08072A2A
-	adds r0, r4, #0
-	movs r1, #0
-	.2byte 0xF7FF
-	.byte 0x8F
-	.byte 0xFA
-	.global _08072A2A
-_08072A2A:
-	adds r4, #1
-	cmp r4, #3
-	ble _08072A08
-	.global _08072A30
-_08072A30:
-	pop {r4, r5}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
+@ 0729F4..072A38 is decompiled as MapGenerationClearCurrentFieldEntries().
+	.section .rom.00072A38, "ax"
 
-	.thumb_func
-	.thumb
-	.global sub_08072A38
-sub_08072A38:
-	push {r4, r5, r6, r7, lr}
-	adds r6, r0, #0
-	adds r7, r1, #0
-	.2byte 0xF794
-	.4byte 0x1C05F925
-	.2byte 0xF7FF
-	.byte 0x0E
-	.byte 0xFB
-	lsls r0, r0, #24
-	cmp r0, #0
-	bne _08072A6C
-	b _08072A8E
-	.global _08072A50
-_08072A50:
-	adds r0, r4, #0
-	.2byte 0xF7FF
-	.4byte 0x3001FA4F
-	lsls r0, r0, #3
-	str r0, [r6, #0]
-	adds r0, r4, #0
-	.2byte 0xF7FF
-	.4byte 0x3001FA55
-	lsls r0, r0, #3
-	str r0, [r7, #0]
-	movs r0, #1
-	b _08072A90
-	.global _08072A6C
-_08072A6C:
-	movs r4, #0
-	.global _08072A6E
-_08072A6E:
-	adds r0, r4, #0
-	.2byte 0xF7FF
-	.byte 0xD6
-	.byte 0xFA
-	lsls r0, r0, #16
-	asrs r0, r0, #16
-	cmp r0, r5
-	bne _08072A88
-	adds r0, r4, #0
-	.2byte 0xF7FF
-	.4byte 0x0400FA6F
-	cmp r0, #0
-	bne _08072A50
-	.global _08072A88
-_08072A88:
-	adds r4, #1
-	cmp r4, #3
-	ble _08072A6E
-	.global _08072A8E
-_08072A8E:
-	movs r0, #0
-	.global _08072A90
-_08072A90:
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 072A38..072A98 is decompiled as MapGenerationGetCurrentFieldPosition().
+	.section .rom.00072A98, "ax"
 
-	.thumb_func
-	.thumb
-	.global sub_08072A98
-sub_08072A98:
-	push {r4, r5, lr}
-	adds r4, r0, #0
-	.2byte 0xF794
-	.byte 0xF6
-	.byte 0xF8
-	adds r5, r0, #0
-	cmp r4, r5
-	bne _08072B00
-	.2byte 0xF7FF
-	.4byte 0x0600FADD
-	cmp r0, #0
-	beq _08072B00
-	movs r4, #0
-	.global _08072AB2
-_08072AB2:
-	adds r0, r4, #0
-	.2byte 0xF7FF
-	.byte 0x54
-	.byte 0xFA
-	lsls r0, r0, #16
-	cmp r0, #0
-	beq _08072AFA
-	adds r0, r4, #0
-	.2byte 0xF7FF
-	.byte 0xAE
-	.byte 0xFA
-	lsls r0, r0, #16
-	asrs r0, r0, #16
-	cmp r0, r5
-	bne _08072AFA
-	adds r0, r4, #0
-	.2byte 0xF7FF
-	.4byte 0x1C01FA5F
-	subs r1, #1
-	cmp r1, #0
-	bne _08072AEC
-	adds r0, r4, #0
-	movs r1, #0
-	.2byte 0xF7FF
-	.4byte 0x1C20FA33
-	movs r1, #0
-	.2byte 0xF7FF
-	.4byte 0xE006FA47
-	.global _08072AEC
-_08072AEC:
-	adds r0, r4, #0
-	.2byte 0xF7FF
-	.4byte 0x1C20FA43
-	movs r1, #1
-	.2byte 0xF7FF
-	.byte 0x57
-	.byte 0xFA
-	.global _08072AFA
-_08072AFA:
-	adds r4, #1
-	cmp r4, #3
-	ble _08072AB2
-	.global _08072B00
-_08072B00:
-	pop {r4, r5}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
+@ 072A98..072B08 is decompiled as MapGenerationAdvanceCurrentFieldEntries().
+	.section .rom.00072B08, "ax"
 
-	.thumb_func
-	.thumb
-	.global sub_08072B08
-sub_08072B08:
-	push {r4, r5, lr}
-	adds r5, r0, #0
-	.2byte 0xF7FF
-	.byte 0xAA
-	.byte 0xFA
-	lsls r0, r0, #24
-	cmp r0, #0
-	bne _08072B1C
-	b _08072B3E
-	.global _08072B18
-_08072B18:
-	movs r0, #1
-	b _08072B40
-	.global _08072B1C
-_08072B1C:
-	movs r4, #0
-	.global _08072B1E
-_08072B1E:
-	adds r0, r4, #0
-	.2byte 0xF7FF
-	.byte 0x7E
-	.byte 0xFA
-	lsls r0, r0, #16
-	asrs r0, r0, #16
-	cmp r0, r5
-	bne _08072B38
-	adds r0, r4, #0
-	.2byte 0xF7FF
-	.4byte 0x0400FA17
-	cmp r0, #0
-	beq _08072B18
-	.global _08072B38
-_08072B38:
-	adds r4, #1
-	cmp r4, #3
-	ble _08072B1E
-	.global _08072B3E
-_08072B3E:
-	movs r0, #0
-	.global _08072B40
-_08072B40:
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 072B08..072B48 is decompiled as MapGenerationHasFreeEntryForField().
+	.section .rom.00072B48, "ax"
 
 	.thumb_func
 	.thumb
@@ -7892,7 +7673,7 @@ _08073920:
 	movs r1, #1
 	movs r3, #0
 	bl sub_0807BC7C
-	bl sub_080729F4
+	bl MapGenerationClearCurrentFieldEntries
 	movs r0, #80
 	mov r1, r9
 	strh r0, [r1, #14]
@@ -8075,7 +7856,7 @@ _08073ABC:
 	adds r0, #156
 	adds r1, r7, #0
 	adds r1, #160
-	bl sub_08072A38
+	bl MapGenerationGetCurrentFieldPosition
 	cmp r0, #0
 	bne _08073ACE
 	str r0, [r7, #104]

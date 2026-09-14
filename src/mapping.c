@@ -1,6 +1,7 @@
 /* Procedural map-generation state and its deterministic local RNG. */
 #include "map_generation.h"
 #include "kmp.h"
+#include "game_state.h"
 
 #include "rom_section.h"
 
@@ -57,34 +58,43 @@ AT("00071EC8") void *MapGenerationGetPointer20(void) { return MapGenerationGetSt
 AT("00071ED4") void MapGenerationSetPointer1C(void *v) { MapGenerationGetState()->pointer1C = v; }
 AT("00071EE4") void MapGenerationSetPointer20(void *v) { MapGenerationGetState()->pointer20 = v; }
 
-AT("00071EF4") void *MapGenerationGetTable38(u32 i) { return MapGenerationGetState()->table38[i]; }
-AT("00071EF4") const u8 MapGenerationGetTable38Tail[2] = {0, 0};
-AT("00071F0C") void *MapGenerationGetTable48(u32 i) { return MapGenerationGetState()->table48[i]; }
-AT("00071F0C") const u8 MapGenerationGetTable48Tail[2] = {0, 0};
+/** @brief Read an entry's tile X. @param i Entry index. @return Signed tile X. */
+AT("00071EF4") s32 MapGenerationGetTileX(u32 i) { return MapGenerationGetState()->tileX[i]; }
+AT("00071EF4") const u8 MapGenerationGetTileXTail[2] = {0, 0};
+/** @brief Read an entry's tile Y. @param i Entry index. @return Signed tile Y. */
+AT("00071F0C") s32 MapGenerationGetTileY(u32 i) { return MapGenerationGetState()->tileY[i]; }
+AT("00071F0C") const u8 MapGenerationGetTileYTail[2] = {0, 0};
 
+/**
+ * @brief Store a generation entry's tile coordinates.
+ * @param i Entry index.
+ * @param tileX Horizontal tile coordinate.
+ * @param tileY Vertical tile coordinate.
+ * @return Nothing.
+ */
 AT("00071F24")
-void MapGenerationSetTables(u32 i, void *table38, void *table48)
+void MapGenerationSetTilePosition(u32 i, s32 tileX, s32 tileY)
 {
-    MapGenerationGetState()->table38[i] = table38;
-    MapGenerationGetState()->table48[i] = table48;
+    MapGenerationGetState()->tileX[i] = tileX;
+    MapGenerationGetState()->tileY[i] = tileY;
 }
 
-AT("00071F48") void MapGenerationSetValue26(u32 i, s32 v) { MapGenerationGetState()->values26[i] = v; }
-AT("00071F60") s32 MapGenerationGetValue26(u32 i) { return MapGenerationGetState()->values26[i]; }
-AT("00071F78") void MapGenerationSetTable58(u32 i, void *v) { MapGenerationGetState()->table58[i] = v; }
-AT("00071F90") void *MapGenerationGetTable58(u32 i) { return MapGenerationGetState()->table58[i]; }
-AT("00071F90") const u8 MapGenerationGetTable58Tail[2] = {0, 0};
-AT("00071FA8") void MapGenerationSetValue68(u32 i, s32 v) { MapGenerationGetState()->values68[i] = v; }
-AT("00071FA8") const u8 MapGenerationSetValue68Tail[2] = {0, 0};
-AT("00071FC0") s32 MapGenerationGetValue68(u32 i) { return MapGenerationGetState()->values68[i]; }
+AT("00071F48") void MapGenerationSetEntryState(u32 i, s32 v) { MapGenerationGetState()->entryState[i] = v; }
+AT("00071F60") s32 MapGenerationGetEntryState(u32 i) { return MapGenerationGetState()->entryState[i]; }
+AT("00071F78") void MapGenerationSetCountdown(u32 i, s32 v) { MapGenerationGetState()->countdown[i] = v; }
+AT("00071F90") s32 MapGenerationGetCountdown(u32 i) { return MapGenerationGetState()->countdown[i]; }
+AT("00071F90") const u8 MapGenerationGetCountdownTail[2] = {0, 0};
+AT("00071FA8") void MapGenerationSetUpdatePending(u32 i, s32 v) { MapGenerationGetState()->updatePending[i] = v; }
+AT("00071FA8") const u8 MapGenerationSetUpdatePendingTail[2] = {0, 0};
+AT("00071FC0") s32 MapGenerationGetUpdatePending(u32 i) { return MapGenerationGetState()->updatePending[i]; }
 AT("00071FD8") s32 MapGenerationGetValue24(void) { return MapGenerationGetState()->value24; }
 AT("00071FD8") const u8 MapGenerationGetValue24Tail[2] = {0, 0};
 AT("00071FEC") void MapGenerationSetValue24(s32 v) { s32 n = (s8)v; MapGenerationGetState()->value24 = n; }
 AT("00071FEC") const u8 MapGenerationSetValue24Tail[2] = {0, 0};
 
-AT("00072004") void MapGenerationSetValue2E(u32 i, s32 v) { s32 n = (s16)v; MapGenerationGetState()->values2E[i] = n; }
-AT("00072004") const u8 MapGenerationSetValue2ETail[2] = {0, 0};
-AT("00072020") s32 MapGenerationGetValue2E(u32 i) { return MapGenerationGetState()->values2E[i]; }
+AT("00072004") void MapGenerationSetFieldId(u32 i, s32 v) { s32 n = (s16)v; MapGenerationGetState()->fieldId[i] = n; }
+AT("00072004") const u8 MapGenerationSetFieldIdTail[2] = {0, 0};
+AT("00072020") s32 MapGenerationGetFieldId(u32 i) { return MapGenerationGetState()->fieldId[i]; }
 AT("00072038") s32 MapGenerationGetValue25(void) { return MapGenerationGetState()->value25; }
 AT("00072038") const u8 MapGenerationGetValue25Tail[2] = {0, 0};
 AT("0007204C") void MapGenerationSetValue25(s32 v) { s32 n = (s8)v; MapGenerationGetState()->value25 = n; }
@@ -803,3 +813,129 @@ AT("00070140") void MapGenerationRelease(void *state)
     HitRegionDisableAll();
     sub_08010A2C(0, 0);
 }
+
+/**
+ * @brief Clear nonzero generation entries associated with the current field.
+ * The low byte of value08 gates this update; value2E identifies the field and
+ * value26 holds the cleared state. Their broader gameplay meanings are pending.
+ * @return Nothing.
+ */
+AT("000729F4")
+void MapGenerationClearCurrentFieldEntries(void)
+{
+    s32 field = GameStateGetField4256();
+    s32 i;
+    if ((u8)MapGenerationGetValue08())
+    {
+        for (i = 0; i < MAP_GENERATION_ENTRY_COUNT; i++)
+        {
+            if ((s16)MapGenerationGetFieldId(i) == field
+                && (u16)MapGenerationGetEntryState(i) != 0)
+                MapGenerationSetEntryState(i, 0);
+        }
+    }
+}
+AT("000729F4") const u8 MapGenerationClearCurrentFieldEntriesTail[2] = {0, 0};
+
+/**
+ * @brief Find the first active generation entry belonging to the current field.
+ * @param x Receives the entry's X coordinate in pixels.
+ * @param y Receives the entry's Y coordinate in pixels.
+ * @return One when an entry is found, otherwise zero.
+ */
+AT("00072A38")
+s32 MapGenerationGetCurrentFieldPosition(s32 *x, s32 *y)
+{
+    s32 field;
+    s32 i;
+
+    field = GameStateGetField4256();
+    if ((u8)MapGenerationGetValue08())
+        goto search;
+    goto notFound;
+
+found:
+    *x = (MapGenerationGetTileX(i) + 1) * 8;
+    *y = (MapGenerationGetTileY(i) + 1) * 8;
+    return 1;
+
+search:
+    for (i = 0; i < MAP_GENERATION_ENTRY_COUNT; i++)
+    {
+        if ((s16)MapGenerationGetFieldId(i) == field
+         && (u16)MapGenerationGetEntryState(i) != 0)
+            goto found;
+    }
+
+notFound:
+    return 0;
+}
+AT("00072A38") const u8 MapGenerationGetCurrentFieldPositionTail[2] = {0, 0};
+
+/**
+ * @brief Advance active generation-entry countdowns for the current field.
+ * @param field Field identifier supplied by the caller.
+ * @return Nothing.
+ */
+AT("00072A98")
+void MapGenerationAdvanceCurrentFieldEntries(s32 field)
+{
+    s32 activeField;
+    s32 i;
+    s32 countdown;
+
+    activeField = GameStateGetField4256();
+    if (field != activeField || !(u8)MapGenerationGetValue08())
+        return;
+
+    for (i = 0; i < MAP_GENERATION_ENTRY_COUNT; i++)
+    {
+        if ((u16)MapGenerationGetEntryState(i) != 0
+         && (s16)MapGenerationGetFieldId(i) == activeField)
+        {
+            countdown = MapGenerationGetCountdown(i);
+            countdown--;
+            if (countdown == 0)
+            {
+                MapGenerationSetEntryState(i, 0);
+                MapGenerationSetCountdown(i, 0);
+            }
+            else
+            {
+                MapGenerationSetCountdown(i, countdown);
+                MapGenerationSetUpdatePending(i, 1);
+            }
+        }
+    }
+}
+AT("00072A98") const u8 MapGenerationAdvanceCurrentFieldEntriesTail[2] = {0, 0};
+
+/**
+ * @brief Check whether a generated field has an inactive entry slot.
+ * @param field Field identifier to search for.
+ * @return One when a matching inactive entry exists, otherwise zero.
+ */
+AT("00072B08")
+s32 MapGenerationHasFreeEntryForField(s32 field)
+{
+    s32 i;
+
+    if ((u8)MapGenerationGetValue08())
+        goto search;
+    goto notFound;
+
+found:
+    return 1;
+
+search:
+    for (i = 0; i < MAP_GENERATION_ENTRY_COUNT; i++)
+    {
+        if ((s16)MapGenerationGetFieldId(i) == field
+         && (u16)MapGenerationGetEntryState(i) == 0)
+            goto found;
+    }
+
+notFound:
+    return 0;
+}
+AT("00072B08") const u8 MapGenerationHasFreeEntryForFieldTail[2] = {0, 0};

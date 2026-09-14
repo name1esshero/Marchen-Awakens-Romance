@@ -19,6 +19,7 @@ void *RuntimeGetBufferE50(void);
 void *GameStateGetRecord610(u32 index);
 void IwramSetField3FD5(u32 value);
 s32 IwramGetField3FD5(void);
+void InitBufferTable2050(u8 *base);
 u32 IwramGetPointer2860(u32 index);
 void IwramSetPointer2860(u32 index,u32 value);
 void *GameStateGetBuffer3F38(void);

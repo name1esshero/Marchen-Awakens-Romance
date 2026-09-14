@@ -32,7 +32,10 @@ class EnglishBackgroundTests(unittest.TestCase):
                 self.assertTrue(overrides)
                 self.assertEqual(len(data), entry['compressed_size'])
                 raw, _ = lz77.decompress(data)
-                self.assertLessEqual(len(raw), 0x4000)
+                # These layers share character VRAM with later scenes.  The
+                # English compiler must never grow beyond the source layer's
+                # allocation merely because its temporary heap buffer can.
+                self.assertEqual(len(raw), entry['raw_size'])
                 layout = json.loads((ROOT/entry['image_layout']).read_text())
                 tiles = mapped_images.tiles_from_bytes(raw)
                 for layer in layout['layers']:

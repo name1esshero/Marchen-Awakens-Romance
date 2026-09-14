@@ -334,7 +334,7 @@ sub_08008358:
 	push {r4, r5, lr}
 	ldr r4, _080083AC
 	adds r0, r4, #0
-	bl sub_08001AF0
+	bl InitBufferTable2050
 	movs r5, #0
 	ldr r0, _080083B0
 	strh r0, [r4, #2]
@@ -11287,7 +11287,7 @@ _0800D392:
 	cmp r0, #99
 	bhi _0800D3CC
 	ldrh r0, [r4, #0]
-	bl sub_08072B08
+	bl MapGenerationHasFreeEntryForField
 	cmp r0, #0
 	beq _0800D3BC
 	mov r0, r10

@@ -85,6 +85,16 @@ AT("00001A34") void IwramSetField3FD5(u32 value)
 {
  gIwramBase[(u32)gIwramField3FD5Offset]=value;
 }
+/* The block this initialises is laid out as a 0x50-byte header, four 2 KiB
+ * buffers, and then the four-entry table of pointers to them at +0x2050.
+ * Named for that table's offset until a caller explains what it holds. */
+AT("00001AF0") void InitBufferTable2050(u8 *base)
+{
+ *(u8 **)(base+0x2050)=base+0x50;
+ *(u8 **)(base+0x2054)=base+0x850;
+ *(u8 **)(base+0x2058)=base+0x1050;
+ *(u8 **)(base+0x205C)=base+0x1850;
+}
 AT("00001A48") s32 IwramGetField3FD5(void)
 {
  return (s8)gIwramBase[(u32)gIwramField3FD5Offset];

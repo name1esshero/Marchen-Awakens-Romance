@@ -2390,7 +2390,7 @@ sub_0800163C:
 	.4byte 0x2281FF2F
 	lsls r2, r2, #4
 	adds r0, r5, r2
-	bl sub_08001AF0
+	bl InitBufferTable2050
 	ldr r1, _080019B8
 	adds r0, r5, r1
 	bl SpriteRuntimeInit
@@ -2862,50 +2862,7 @@ _08001AD4:
 	.4byte 0x03000000
 	.4byte 0x00003FD6
 
-	.thumb_func
-	.thumb
-	.global sub_08001AF0
-sub_08001AF0:
-	ldr r1, _08001B1C
-	adds r2, r0, r1
-	adds r1, r0, #0
-	adds r1, #80
-	str r1, [r2, #0]
-	ldr r3, _08001B20
-	adds r2, r0, r3
-	movs r3, #133
-	lsls r3, r3, #4
-	adds r1, r0, r3
-	str r1, [r2, #0]
-	ldr r1, _08001B24
-	adds r2, r0, r1
-	ldr r3, _08001B28
-	adds r1, r0, r3
-	str r1, [r2, #0]
-	ldr r2, _08001B2C
-	adds r1, r0, r2
-	ldr r3, _08001B30
-	adds r0, r0, r3
-	str r0, [r1, #0]
-	bx lr
-	.global _08001B1C
-_08001B1C:
-	.4byte 0x00002050
-	.global _08001B20
-_08001B20:
-	.4byte 0x00002054
-	.global _08001B24
-_08001B24:
-	.4byte 0x00002058
-	.global _08001B28
-_08001B28:
-	.4byte 0x00001050
-	.global _08001B2C
-_08001B2C:
-	.4byte 0x0000205C
-	.global _08001B30
-_08001B30:
-	.4byte 0x00001850
+@ 001AF0..001B34 is decompiled as InitBufferTable2050(); see src/decompiled.json
 
 @ 001B34..001B4C is decompiled as IwramGetPointer2860(); see src/decompiled.json
 

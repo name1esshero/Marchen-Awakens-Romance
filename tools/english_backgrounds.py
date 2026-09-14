@@ -16,7 +16,6 @@ import mapped_images
 ROOT = Path(__file__).resolve().parents[1]
 NAMES = ('T_C01.KCG', 'T_TTL06.KCG', 'SM_BG12.KCG')
 
-
 def compile_entry(entry, root=ROOT):
     layout = json.loads((root / entry['image_layout']).read_text())
     overrides = {}
@@ -59,8 +58,17 @@ def compile_entry(entry, root=ROOT):
         raw = b''.join(tiles)
         if len(raw) > 0x4000:
             raise ValueError(f"{entry['archive_name']}: {len(tiles)} English tiles exceed one 16 KiB character block")
-        raw = raw.ljust(entry['raw_size'], b'\0')
-        entry = dict(entry, raw_size=len(raw))
+        # Background character data occupies a fixed VRAM range. Growing it can
+        # overwrite tiles which a later scene expects to remain resident, even
+        # though the temporary heap allocation itself follows the LZ header.
+        budget = entry['raw_size']
+        if len(raw) > budget:
+            raise ValueError(
+                f"{entry['archive_name']}: {len(tiles)} English tiles need "
+                f"{len(raw)} bytes but its fixed VRAM allocation is {budget}. "
+                f"Share more tiles or simplify the translated artwork.")
+        raw = raw.ljust(budget, b'\0')
+        entry = dict(entry, raw_size=budget)
         map_data = mapped_images.build_map(map_data, layout)
     compressed = build_assets.compress_raw(entry, raw)
     if lz77.decompress(compressed)[0] != raw:

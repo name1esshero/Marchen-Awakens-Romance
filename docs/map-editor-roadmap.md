@@ -112,3 +112,34 @@ navigation, event-type add menus, a selected-event index control, warnings for
 invalid placement, keyboard duplication/deletion, and an optional ruler. Its
 [current shortcuts](https://github.com/huderlem/porymap/blob/master/docsrc/manual/shortcuts.rst)
 are a good default vocabulary for the eventual desktop-style UI.
+
+### Attribute inspection and generation-entry cleanup
+
+Collision mode now lists the exact attribute values present in the map with
+their tile counts. Choose a value to use it as the brush, or right-click a tile
+to sample it. The inspector explains the verified procedural connection classes
+400–499 and 5400–5499; those cells have a green overlay. Other colors only
+distinguish raw values. They do not declare a tile walkable or blocked. Unknown
+values remain editable and survive saves unchanged. Counts refresh after a
+paint stroke and undo/redo.
+
+`MapGenerationClearCurrentFieldEntries` (080729F4, 68 bytes) now replaces its
+assembly body with matching C. It checks the low byte of generation state +08,
+then clears nonzero +26 entries whose signed +2E field matches the active field
+identifier. This is generation-state cleanup, not evidence of a tile-trigger
+format. Trigger attachment, arbitrary script insertion and new-map registration
+remain unfinished.
+
+The adjacent lookup at 08072A38 now compiles to byte-matching C after preserving
+its original shared-found-block control flow. This lookup proves
+that generation arrays +38/+48 contain integer tile X/Y values, not pointers.
+Their accessors and declarations now use coordinate names and signed integers.
+The first active matching entry yields `(tile + 1) * 8` pixel coordinates; this
+is not enough evidence to assign arbitrary NPC spawn positions.
+
+The following 112-byte helper at 08072A98 is also matching C. For active
+entries belonging to the current field, it decrements a signed countdown. A
+countdown reaching zero clears the entry state; other values set the entry's
+update-pending byte. The state fields at +26, +2E, +58, and +68 are consequently
+named `entryState`, `fieldId`, `countdown`, and `updatePending`. These records
+belong to procedural field generation and are not general scripted NPC events.
