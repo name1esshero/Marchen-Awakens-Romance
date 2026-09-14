@@ -4116,6 +4116,12 @@
     "file": "src/map_field.c"
   },
   {
+    "addr": "0806C6F8",
+    "size": 36,
+    "name": "RuntimeStoreCurrentRecord14C",
+    "file": "src/runtime_core.c"
+  },
+  {
     "addr": "0806C7A0",
     "size": 12,
     "name": "MapObjectResetMotion",
@@ -4252,6 +4258,24 @@
     "size": 24,
     "name": "GameStateGetBuffer38C0",
     "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "08070140",
+    "size": 60,
+    "name": "MapGenerationRelease",
+    "file": "src/mapping.c"
+  },
+  {
+    "addr": "08070214",
+    "size": 36,
+    "name": "BattleRuntimeSetArena",
+    "file": "src/simple_adapters.c"
+  },
+  {
+    "addr": "080705F0",
+    "size": 48,
+    "name": "FindLowestSetBit",
+    "file": "src/bit_scan.c"
   },
   {
     "addr": "08070730",
@@ -6084,6 +6108,12 @@
     "file": "src/script_tasks.c"
   },
   {
+    "addr": "0807F1B8",
+    "size": 32,
+    "name": "ScriptResourceSetRecord224",
+    "file": "src/script_resource_handles.c"
+  },
+  {
     "addr": "0807F1D8",
     "size": 16,
     "name": "ScriptResourceLookupFirst",
@@ -6120,6 +6150,18 @@
     "file": "src/script_resources.c"
   },
   {
+    "addr": "0807F32C",
+    "size": 40,
+    "name": "ScriptResourceSlotFirst",
+    "file": "src/script_resources.c"
+  },
+  {
+    "addr": "0807F354",
+    "size": 44,
+    "name": "ScriptResourceSlotSecond",
+    "file": "src/script_resources.c"
+  },
+  {
     "addr": "0807F380",
     "size": 24,
     "name": "ScriptResourceGetValue",
@@ -6135,6 +6177,12 @@
     "addr": "0807F3BC",
     "size": 32,
     "name": "ScriptResourceSetValue",
+    "file": "src/script_resources.c"
+  },
+  {
+    "addr": "0807F3DC",
+    "size": 92,
+    "name": "ScriptResourceSetStringValue",
     "file": "src/script_resources.c"
   },
   {
@@ -6666,10 +6714,34 @@
     "file": "src/script_native.c"
   },
   {
+    "addr": "080804BC",
+    "size": 48,
+    "name": "SpriteRuntimeInit",
+    "file": "src/sprite_runtime_6120.c"
+  },
+  {
     "addr": "080804EC",
     "size": 24,
     "name": "RuntimeGetBlock6120",
     "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "08080504",
+    "size": 56,
+    "name": "SpriteRuntimeSetFields8C4",
+    "file": "src/sprite_runtime_6120.c"
+  },
+  {
+    "addr": "08080574",
+    "size": 64,
+    "name": "SpriteRuntimeSetFlag800",
+    "file": "src/sprite_runtime_6120.c"
+  },
+  {
+    "addr": "080805B4",
+    "size": 28,
+    "name": "SpriteRuntimeTestFlag800",
+    "file": "src/sprite_runtime_6120.c"
   },
   {
     "addr": "080805D0",

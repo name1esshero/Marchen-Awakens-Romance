@@ -67,7 +67,7 @@ _08050120:
 	ldr r2, _08050178
 	adds r0, r2, #0
 	adds r1, r2, #0
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	movs r3, #128
 	lsls r3, r3, #1
 	movs r0, #1
@@ -319,7 +319,7 @@ sub_080502B4:
 	lsls r2, r2, #1
 	adds r0, r2, #0
 	adds r1, r2, #0
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 
 	.thumb_func
 	.thumb

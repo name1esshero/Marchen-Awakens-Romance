@@ -6683,7 +6683,7 @@ _08042BE8:
 	.global sub_08042BEC
 sub_08042BEC:
 	adds r1, r2, #0
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	movs r3, #128
 	lsls r3, r3, #1
 	movs r0, #1
@@ -6840,7 +6840,7 @@ _08042CE8:
 	lsls r2, r2, #1
 	adds r0, r2, #0
 	adds r1, r2, #0
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	mov r2, r10
 	ldr r1, [r2, #24]
 	str r4, [sp, #44]
@@ -15380,7 +15380,7 @@ _0804660A:
 	lsls r0, r4, #24
 	lsrs r0, r0, #24
 	movs r1, #0
-	bl sub_08080574
+	bl SpriteRuntimeSetFlag800
 	adds r4, #1
 	cmp r4, #31
 	ble _0804660A
@@ -15627,7 +15627,7 @@ _08046784:
 	lsls r2, r2, #1
 	adds r0, r2, #0
 	adds r1, r2, #0
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	mov r3, r9
 	ldr r1, [r3, #24]
 	cmp r1, #0

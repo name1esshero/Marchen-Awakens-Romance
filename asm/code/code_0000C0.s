@@ -1314,7 +1314,7 @@ _08000FB4:
 	ldr r2, _08001038
 	adds r0, r2, #0
 	adds r1, r2, #0
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	movs r0, #0
 	.2byte 0xF005
 	.4byte 0x4D1AF83F
@@ -2393,7 +2393,7 @@ sub_0800163C:
 	bl sub_08001AF0
 	ldr r1, _080019B8
 	adds r0, r5, r1
-	bl sub_080804BC
+	bl SpriteRuntimeInit
 	movs r0, #0
 	movs r1, #0
 	.2byte 0xF07E
@@ -8601,7 +8601,7 @@ sub_08004460:
 	ldr r2, _0800448C
 	adds r0, r2, #0
 	adds r1, r2, #0
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	b _0800449A
 	.byte 0x00
 	.byte 0x00
@@ -8613,7 +8613,7 @@ _08004490:
 	movs r0, #0
 	movs r1, #0
 	movs r2, #0
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	.global _0800449A
 _0800449A:
 	mov r0, r8
@@ -8637,7 +8637,7 @@ _080044B4:
 	lsls r2, r2, #1
 	adds r0, r2, #0
 	adds r1, r2, #0
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	.global _080044C0
 _080044C0:
 	cmp r7, #0
@@ -8724,7 +8724,7 @@ _0800452E:
 	ldr r2, _0800454C
 	adds r0, r2, #0
 	adds r1, r2, #0
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	b _0800455A
 	.byte 0x00
 	.byte 0x00
@@ -8736,7 +8736,7 @@ _08004550:
 	movs r0, #0
 	movs r1, #0
 	movs r2, #0
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	.global _0800455A
 _0800455A:
 	movs r0, #4
@@ -8763,7 +8763,7 @@ _08004578:
 	lsls r2, r2, #1
 	adds r0, r2, #0
 	adds r1, r2, #0
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	.global _08004584
 _08004584:
 	adds r0, r5, #0
@@ -8885,7 +8885,7 @@ _08004640:
 	ldrsh r1, [r4, r2]
 	movs r3, #18
 	ldrsh r2, [r4, r3]
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	movs r0, #4
 	ldrsb r0, [r4, r0]
 	cmp r0, #0
@@ -11228,7 +11228,7 @@ _08005642:
 	ldrsh r1, [r5, r2]
 	movs r3, #18
 	ldrsh r2, [r5, r3]
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	ldr r0, [r5, #32]
 	cmp r0, #0
 	beq _0800569E
@@ -11238,7 +11238,7 @@ _08005642:
 	ldrsh r1, [r5, r2]
 	movs r3, #6
 	ldrsh r2, [r5, r3]
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	movs r0, #128
 	lsls r0, r0, #6
 	strh r0, [r6, #14]
@@ -11405,7 +11405,7 @@ _08005CC0:
 	ldrsh r1, [r4, r2]
 	movs r3, #0
 	ldrsh r2, [r5, r3]
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	movs r0, #1
 	add sp, #8
 	pop {r4, r5, r6}
@@ -12151,7 +12151,7 @@ _080063A4:
 	adds r0, r7, #0
 	adds r1, r7, #0
 	adds r2, r7, #0
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	ldr r0, [r4, #0]
 	ldr r1, _0800647C
 	adds r0, r0, r1
@@ -12353,7 +12353,7 @@ _08006508:
 	lsls r2, r2, #1
 	adds r0, r2, #0
 	adds r1, r2, #0
-	bl sub_08080504
+	bl SpriteRuntimeSetFields8C4
 	movs r0, #1
 	bl sub_0800D548
 	movs r0, #1

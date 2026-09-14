@@ -8020,7 +8020,7 @@ _0806C58E:
 	cmp r4, #0
 	beq _0806C5B0
 	ldr r0, [r5, #0]
-	bl sub_0806C6F8
+	bl RuntimeStoreCurrentRecord14C
 	.global _0806C5B0
 _0806C5B0:
 	adds r0, r6, #0
@@ -8236,29 +8236,10 @@ _0806C6F0:
 _0806C6F4:
 	.4byte 0x000003B6
 
-	.thumb_func
-	.thumb
-	.global sub_0806C6F8
-sub_0806C6F8:
-	push {r4, r5, lr}
-	adds r5, r0, #0
-	.2byte 0xF798
-	.byte 0x4A
-	.byte 0xFC
-	adds r4, r0, #0
-	.2byte 0xF798
-	.4byte 0x0600FC9B
-	cmp r0, #0
-	bne _0806C716
-	adds r0, r4, #0
-	adds r1, r5, #0
-	movs r2, #8
-	bl CpuCopy
-	.global _0806C716
-_0806C716:
-	pop {r4, r5}
-	pop {r0}
-	bx r0
+@ 06C6F8..06C71C is decompiled as RuntimeStoreCurrentRecord14C(); see src/decompiled.json
+
+	.section .rom.0006C71C, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb

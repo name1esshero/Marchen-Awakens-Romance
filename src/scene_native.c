@@ -25,7 +25,7 @@ extern struct EngineTask *StartSongWithTransition(u32 playerIndex,
                                                   u32 songIndex,
                                                   u32 *completion);
 extern void sub_0808053C(s16 *first, s16 *second, s16 *third);
-extern void sub_08080504(s32 first, s32 second, s32 third);
+extern void SpriteRuntimeSetFields8C4(s32 first, s32 second, s32 third);
 extern char *strcpy(char *destination, const char *source);
 extern char *strcat(char *destination, const char *source);
 
@@ -137,7 +137,7 @@ AT("00005C88") s32 ScriptNativeSetRuntimeCoordinate(u32 count,
         third = args[1];
         break;
     }
-    sub_08080504(first, second, third);
+    SpriteRuntimeSetFields8C4(first, second, third);
     return SCRIPT_CONTINUE;
 }
 

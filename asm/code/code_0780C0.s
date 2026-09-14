@@ -8023,16 +8023,7 @@ _0807F158:
 
 @ 07F15C..07F1B8 is decompiled as ScriptRunSlice(); see src/decompiled.json
 
-	.section .rom.0007F1B8, "ax"
-	.syntax unified
-	.4byte 0x1C02B500
-	.4byte 0x68004805
-	.4byte 0x218968C0
-	.4byte 0x18400089
-	.4byte 0xF0002100
-	.4byte 0xBC01F96B
-	.4byte 0x00004700
-	.4byte 0x0300611C
+@ 07F1B8..07F1D8 is decompiled as ScriptResourceSetRecord224(); see src/decompiled.json
 
 @ 07F1D8..07F1E8 is decompiled as ScriptResourceLookupFirst(); see src/decompiled.json
 
@@ -8132,76 +8123,9 @@ _0807F26C:
 
 @ 07F2E0..07F32C is decompiled as ScriptResourceNameSecond(); see src/decompiled.json
 
-	.section .rom.0007F32C, "ax"
-	.syntax unified
+@ 07F32C..07F354 is decompiled as ScriptResourceSlotFirst(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0807F32C
-sub_0807F32C:
-	push {lr}
-	adds r1, r0, #0
-	cmp r1, #0
-	blt _0807F340
-	ldr r0, _0807F344
-	ldr r0, [r0, #0]
-	ldr r2, [r0, #12]
-	ldrh r0, [r2, #16]
-	cmp r1, r0
-	blt _0807F348
-	.global _0807F340
-_0807F340:
-	movs r0, #0
-	b _0807F34E
-	.global _0807F344
-_0807F344:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-	.global _0807F348
-_0807F348:
-	lsls r0, r1, #3
-	adds r0, #20
-	adds r0, r2, r0
-	.global _0807F34E
-_0807F34E:
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_0807F354
-sub_0807F354:
-	push {lr}
-	adds r1, r0, #0
-	cmp r1, #0
-	blt _0807F368
-	ldr r0, _0807F36C
-	ldr r0, [r0, #0]
-	ldr r2, [r0, #12]
-	ldrh r0, [r2, #18]
-	cmp r1, r0
-	blt _0807F370
-	.global _0807F368
-_0807F368:
-	movs r0, #0
-	b _0807F37A
-	.global _0807F36C
-_0807F36C:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-	.global _0807F370
-_0807F370:
-	lsls r0, r1, #3
-	movs r1, #138
-	lsls r1, r1, #1
-	adds r0, r0, r1
-	adds r0, r2, r0
-	.global _0807F37A
-_0807F37A:
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 07F354..07F380 is decompiled as ScriptResourceSlotSecond(); see src/decompiled.json
 
 @ 07F380..07F398 is decompiled as ScriptResourceGetValue(); see src/decompiled.json
 
@@ -8209,31 +8133,7 @@ _0807F37A:
 
 @ 07F3BC..07F3DC is decompiled as ScriptResourceSetValue(); see src/decompiled.json
 
-	.section .rom.0007F3DC, "ax"
-	.syntax unified
-	.4byte 0x1C16B570
-	.4byte 0xD0042800
-	.4byte 0xFF08F7FF
-	.4byte 0x2D001C05
-	.4byte 0x2001D102
-	.4byte 0xE01B4240
-	.4byte 0x29006829
-	.4byte 0x480ED005
-	.4byte 0x68C06800
-	.4byte 0xF7FB6800
-	.4byte 0x480BF813
-	.4byte 0x68C06800
-	.4byte 0x1C306804
-	.4byte 0xFA50F003
-	.4byte 0x31011C01
-	.4byte 0xF7FA1C20
-	.4byte 0x6028FF67
-	.4byte 0xD0022800
-	.4byte 0xF0031C31
-	.4byte 0x2000FA1F
-	.4byte 0xBC02BC70
-	.4byte 0x00004708
-	.4byte 0x0300611C
+@ 07F3DC..07F438 is decompiled as ScriptResourceSetStringValue(); see src/decompiled.json
 
 @ 07F438..07F470 is decompiled as ScriptResourceGetFirst(); see src/decompiled.json
 

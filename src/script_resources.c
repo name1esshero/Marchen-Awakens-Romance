@@ -28,8 +28,8 @@ extern const struct ScriptResourceEntry gScriptNativeCommands[];
  * no override. */
 #define sScriptResourceDefaultValue ((void *)0x081AC698)
 
-extern struct ScriptResourceSlot *sub_0807F32C(s32 index);
-extern struct ScriptResourceSlot *sub_0807F354(s32 index);
+struct ScriptResourceSlot *ScriptResourceSlotFirst(s32 index);
+struct ScriptResourceSlot *ScriptResourceSlotSecond(s32 index);
 extern void HeapFree(void *heap, void *allocation);
 extern s32 ScriptResourceReset(s32 index);
 extern s32 ScriptResourceResetArray(s32 index);
@@ -98,7 +98,7 @@ AT("0007EF94") const u8 ScriptResourceLoadAndInstallTail[2] = {0};
  * one) belong to the VM heap and must be released before the slot is reused. */
 AT("0007F05C") s32 ScriptResourceReset(s32 index)
 {
-    struct ScriptResourceSlot *slot = sub_0807F32C(index);
+    struct ScriptResourceSlot *slot = ScriptResourceSlotFirst(index);
 
     if (slot == 0)
         return -1;
@@ -119,7 +119,7 @@ AT("0007F094") s32 ScriptResourceResetArray(s32 index)
     void **blocks;
     void *heap;
 
-    slot = sub_0807F354(index);
+    slot = ScriptResourceSlotSecond(index);
     if (slot == 0)
         return -1;
 
@@ -198,6 +198,74 @@ AT("0007F2E0") s32 ScriptResourceNameSecond(const char *key)
     return (*(u16 *)(state + 18))++;
 }
 AT("0007F2E0") const u8 ScriptResourceNameSecondTail[2] = {0};
+
+/* Both resource classes keep their slots inline in the VM context: class one
+ * starts at offset 20 with its live count at 16, class two at offset 276 with
+ * its count at 18.  Out-of-range slots resolve to a null record rather than
+ * trapping, which is what the lazy handles in script_resource_handles.c
+ * rely on. */
+AT("0007F32C") struct ScriptResourceSlot *ScriptResourceSlotFirst(s32 index)
+{
+    struct ScriptBytecodeContext *context;
+    u32 offset;
+
+    if (index >= 0) {
+        context = gScriptBytecodeRoot->context;
+        if (index < *(u16 *)((u8 *)context + 16))
+            goto found;
+    }
+    return 0;
+found:
+    offset = index * 8;
+    offset += 20;
+    return (struct ScriptResourceSlot *)((u8 *)context + offset);
+}
+AT("0007F32C") const u8 ScriptResourceSlotFirstTail[2] = {0};
+
+AT("0007F354") struct ScriptResourceSlot *ScriptResourceSlotSecond(s32 index)
+{
+    struct ScriptBytecodeContext *context;
+    u32 offset;
+
+    if (index >= 0) {
+        context = gScriptBytecodeRoot->context;
+        if (index < *(u16 *)((u8 *)context + 18))
+            goto found;
+    }
+    return 0;
+found:
+    offset = index * 8;
+    offset += 276;
+    return (struct ScriptResourceSlot *)((u8 *)context + offset);
+}
+AT("0007F354") const u8 ScriptResourceSlotSecondTail[2] = {0};
+
+extern void *HeapAlloc(void *heap, u32 size);
+extern u32 strlen(const char *text);
+extern char *strcpy(char *destination, const char *source);
+
+/* Replace a value slot with a heap-owned copy of a string.  The previous
+ * allocation, if any, is released first; a failed allocation leaves the slot
+ * null but still reports success, matching the original. */
+AT("0007F3DC") s32 ScriptResourceSetStringValue(u32 *record, s32 selector,
+                                                 const char *value)
+{
+    u32 *slot;
+    char *copy;
+
+    if (record == 0)
+        return -1;
+    slot = ScriptResourceSelectValueSlot(record, selector);
+    if (slot == 0)
+        return -1;
+    if (*slot != 0)
+        HeapFree(gScriptBytecodeRoot->context->heap, (void *)*slot);
+    copy = HeapAlloc(gScriptBytecodeRoot->context->heap, strlen(value) + 1);
+    *slot = (u32)copy;
+    if (copy != 0)
+        strcpy(copy, value);
+    return 0;
+}
 
 AT("0007F380") u32 *ScriptResourceGetValue(u32 *record, s32 selector)
 {
