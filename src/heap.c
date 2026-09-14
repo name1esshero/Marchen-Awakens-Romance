@@ -7,6 +7,7 @@
 extern void CpuFill(void *, u32, u32);
 extern void *sub_0807A54C(struct Heap *, u32, u32);
 
+/** Heap init default in the engine heap allocator. */
 AT("0007A270")
 struct Heap *HeapInitDefault(void *memory, u32 size)
 {
@@ -22,6 +23,7 @@ struct Heap *HeapInitDefault(void *memory, u32 size)
     return heap;
 }
 
+/** Heap create in the engine heap allocator. */
 AT("0007A2A8")
 struct Heap *HeapCreate(void *memory, u32 size)
 {
@@ -44,6 +46,7 @@ struct Heap *HeapCreate(void *memory, u32 size)
     return heap;
 }
 
+/** Heap alloc in the engine heap allocator. */
 AT("0007A2EC")
 void *HeapAlloc(struct Heap *heap, u32 size)
 {
@@ -74,6 +77,7 @@ u32 HeapGetFreeBytes(struct Heap *heap)
     return freeBytes;
 }
 
+/** Heap get largest free block in the engine heap allocator. */
 AT("0007A4F8")
 u32 HeapGetLargestFreeBlock(struct Heap *heap)
 {
@@ -99,6 +103,7 @@ u32 HeapGetLargestFreeBlock(struct Heap *heap)
     return largest;
 }
 
+/** Heap get allocation size in the engine heap allocator. */
 AT("0007A53C")
 u32 HeapGetAllocationSize(const void *allocation)
 {

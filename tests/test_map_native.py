@@ -8,10 +8,11 @@ class MapNativeTests(unittest.TestCase):
     def test_arguments_truncation_free_dispatch_and_return_protocol(self):
         with tempfile.TemporaryDirectory() as temp:
             folder=Path(temp)
-            source=(ROOT/'src/map_native.c').read_text().replace(
-                '((const char *)0x08086D88)', '".KMP"')
-            (folder/'native.c').write_text(source)
+            (folder/'native.c').write_text((ROOT/'src/map_native.c').read_text())
             (folder/'test.c').write_text(r'''
+/* The ROM resolves this through asm/game_table_handlers.s; the host link
+ * supplies the literal it aliases. */
+const char gScriptKmpExtension[] = ".KMP";
 #include "native.c"
 #include <assert.h>
 #include <ctype.h>

@@ -14,6 +14,10 @@ class ItemTests(unittest.TestCase):
 #include <stddef.h>
 #include <string.h>
 #include "item.h"
+/* The ROM resolves these through asm/game_table_handlers.s; the host link
+ * needs its own storage because it compiles src/item.c in isolation. */
+const struct ConsumableText gConsumableNoneText;
+const char gConsumableNoneDescription[1];
 const struct ArmDefinition gArmDefinitions[ARM_COUNT] = {
     [0] = { .name="Empty", .description="No effect" },
     [1] = { .name="Babbo", .description="A living ARM", .field58=-1,

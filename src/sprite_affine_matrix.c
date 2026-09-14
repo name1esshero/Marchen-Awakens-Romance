@@ -36,9 +36,9 @@ void SpriteAffineWriteNormal(s32 index, s32 angle0, s32 scaleX0, s32 scaleY0)
     register s32 angle TARGET_REGISTER("r4") = angle0;
     register s32 scaleX TARGET_REGISTER("r5") = scaleX0;
     register s32 scaleY TARGET_REGISTER("r6") = scaleY0;
-    register const s16 *table TARGET_REGISTER("r2");
+    const s16 *table;
     register u32 mask TARGET_REGISTER("r1");
-    register struct AffineOamColumns *entry TARGET_REGISTER("r8");
+    struct AffineOamColumns *entry;
     register s32 sine TARGET_REGISTER("r10");
     register s32 sineTemp TARGET_REGISTER("r3");
     register s32 tableHold TARGET_REGISTER("r7");
@@ -68,7 +68,7 @@ void SpriteAffineWriteNormal(s32 index, s32 angle0, s32 scaleX0, s32 scaleY0)
     invY = SpriteMathDivide65536ByS16(scaleY);
     invY = (s16)invY;
     {
-        register s32 value TARGET_REGISTER("r1");
+        s32 value;
         value = (cosine * invX) >> 14;
         MATCH_RW(value);
         {
@@ -93,9 +93,9 @@ void SpriteAffineWriteMirrored(s32 index, s32 angle0, s32 scaleX0, s32 scaleY0)
     register s32 angle TARGET_REGISTER("r4") = angle0;
     register s32 scaleX TARGET_REGISTER("r5") = scaleX0;
     register s32 scaleY TARGET_REGISTER("r6") = scaleY0;
-    register const s16 *table TARGET_REGISTER("r2");
+    const s16 *table;
     register u32 mask TARGET_REGISTER("r1");
-    register struct AffineOamColumns *entry TARGET_REGISTER("r8");
+    struct AffineOamColumns *entry;
     register s32 sine TARGET_REGISTER("r10");
     register s32 sineTemp TARGET_REGISTER("r3");
     register s32 tableHold TARGET_REGISTER("r7");
@@ -125,7 +125,7 @@ void SpriteAffineWriteMirrored(s32 index, s32 angle0, s32 scaleX0, s32 scaleY0)
     invY = SpriteMathDivide65536ByS16(scaleY);
     invY = (s16)invY;
     {
-        register s32 value TARGET_REGISTER("r1");
+        s32 value;
         value = -((cosine * invX) >> 14);
         MATCH_RW(value);
         {
@@ -150,9 +150,9 @@ void SpriteAffineWriteAlternateAxis(s32 index, s32 angle0, s32 scaleX0, s32 scal
     register s32 angle TARGET_REGISTER("r4") = angle0;
     register s32 scaleX TARGET_REGISTER("r5") = scaleX0;
     register s32 scaleY TARGET_REGISTER("r6") = scaleY0;
-    register const s16 *table TARGET_REGISTER("r2");
+    const s16 *table;
     register u32 mask TARGET_REGISTER("r1");
-    register struct AffineOamColumns *entry TARGET_REGISTER("r8");
+    struct AffineOamColumns *entry;
     register s32 sine TARGET_REGISTER("r10");
     register s32 sineTemp TARGET_REGISTER("r3");
     register s32 tableHold TARGET_REGISTER("r7");
@@ -182,7 +182,7 @@ void SpriteAffineWriteAlternateAxis(s32 index, s32 angle0, s32 scaleX0, s32 scal
     invY = SpriteMathDivide65536ByS16(scaleY);
     invY = (s16)invY;
     {
-        register s32 value TARGET_REGISTER("r1");
+        s32 value;
         value = (cosine * invX) >> 14;
         MATCH_RW(value);
         {

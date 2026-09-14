@@ -48,6 +48,7 @@ selectedVram:
     return 0x7FFF;
 }
 
+/** Execute the field set native script command. */
 AT("000122F8") s32 ScriptNativeFieldSet(u32 count,const union MapArgument *args,s32 *result)
 {
     KmpLoadField(args[0].string, (s16)args[1].integer, (s16)args[2].integer);
@@ -79,16 +80,19 @@ AT("00012318") s32 ScriptNativeFieldGet(u32 count,const s32 *args,s32 *result)
     *result=(s32)name;
     return 1;
 }
+/** Execute the hit init native script command. */
 AT("000121C4") s32 ScriptNativeHitInit(u32 count,const s32 *args,s32 *result)
 {
     HitRegionInit(args[0], args[1], args[2], args[3], args[4]);
     return 1;
 }
+/** Execute the hit rect native script command. */
 AT("00012244") s32 ScriptNativeHitRect(u32 count,const s32 *args,s32 *result)
 {
     HitRegionSetRect(args[0], args[1], args[2], args[3], args[4]);
     return 1;
 }
+/** Execute the hit free native script command. */
 AT("000121E4") s32 ScriptNativeHitFree(u32 count,const s32 *args,s32 *result)
 {
     if (args[0] != -1)

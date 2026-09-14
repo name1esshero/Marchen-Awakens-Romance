@@ -109,9 +109,9 @@ AT("0007E9F4") const u8 ScriptResourceSetTail[2] = {0, 0};
 #ifdef NONMATCHING
 AT("0007EA8C") s32 ScriptResourceRemove(s32 type, const char *name)
 {
-    register s32 localType asm("r6") = type;
-    register const char *localName asm("r5") = name;
-    register s32 bucket asm("r8") =
+    s32 localType = type;
+    const char *localName = name;
+    s32 bucket =
         ScriptResourceHash(localType, localName);
     struct ScriptResourceNode *node =
         ((struct ScriptResourceTable *)gScriptResourceRootForLookup->context)

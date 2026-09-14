@@ -238,12 +238,12 @@ found:
 AT("0007B8F4")
 s32 SpriteResourceBindGroup(u32 resource, u32 index)
 {
-    register u32 bindingIndex TARGET_REGISTER("r8") = index;
-    register struct SpriteEngineState **global TARGET_REGISTER("r9") =
+    u32 bindingIndex = index;
+    struct SpriteEngineState **global =
         (struct SpriteEngineState **)0x03006118;
     struct SpriteResourceDescriptor *descriptor =
         &(*global)->resources[resource];
-    register u32 bindingOffset TARGET_REGISTER("r3") = bindingIndex;
+    u32 bindingOffset = bindingIndex;
     s8 *slot = &descriptor->bindingIndices[bindingOffset];
     s32 group = *slot;
     s32 previous = group;

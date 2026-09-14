@@ -26,6 +26,7 @@ extern void sub_0804AD08(void *task);
 extern void sub_0802D464(void *task);
 extern void sub_0804A7C4(void *task);
 
+/** Implement create battle mode task2 c1 using the recovered battle task layout. */
 AT("0002C198")
 u8 *CreateBattleModeTask2C1(s32 owner, s32 slot, void *resource, s32 *result,
                              s32 selectedMode)
@@ -61,6 +62,7 @@ u8 *CreateBattleModeTask2C1(s32 owner, s32 slot, void *resource, s32 *result,
 }
 AT("0002C198") const u8 CreateBattleModeTask2C1Tail[2] = {0};
 
+/** Implement create battle mode task2 f c using the recovered battle task layout. */
 AT("0002FCA0")
 u8 *CreateBattleModeTask2FC(s32 owner, s32 slot, void *resource, s32 *result,
                              s32 selectedMode)
@@ -94,6 +96,7 @@ u8 *CreateBattleModeTask2FC(s32 owner, s32 slot, void *resource, s32 *result,
     return task;
 }
 
+/** Implement create battle mode task32 f using the recovered battle task layout. */
 AT("00032F64")
 u8 *CreateBattleModeTask32F(s32 owner, s32 slot, void *resource, s32 *result,
                              s32 selectedMode)
@@ -211,6 +214,7 @@ u8 *CreateBattleModeTask4E6(s32 owner, s32 slot, void *resource, s32 *result,
 }
 #endif
 
+/** Implement create battle mode task483 using the recovered battle task layout. */
 AT("000483D8")
 u8 *CreateBattleModeTask483(s32 owner, s32 slot, void *resource, s32 *result,
                              s32 selectedMode)

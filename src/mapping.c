@@ -7,9 +7,11 @@
 extern u8 gIwramBase[];
 extern u8 gMapGenerationRootOffset[];
 
+/** Map generation seed random using the recovered runtime layout. */
 AT("00071DD4")
 void MapGenerationSeedRandom(u32 seed) { gMapGenerationSeed = seed; }
 
+/** Map generation random using the recovered runtime layout. */
 AT("00071DE0")
 u32 MapGenerationRandom(void)
 {
@@ -17,6 +19,7 @@ u32 MapGenerationRandom(void)
     return (gMapGenerationSeed << 1) >> 17;
 }
 
+/** Get the map-generation state. */
 AT("00071E00")
 struct MapGenerationState *MapGenerationGetState(void)
 {
@@ -24,6 +27,7 @@ struct MapGenerationState *MapGenerationGetState(void)
     return (struct MapGenerationState *)((u8 *)*root + 0x1304);
 }
 
+/** Set the map-generation values00 and04. */
 AT("00071E1C")
 void MapGenerationSetValues00And04(u32 value00, u32 value04)
 {
@@ -31,12 +35,19 @@ void MapGenerationSetValues00And04(u32 value00, u32 value04)
     MapGenerationGetState()->value04 = value04;
 }
 
+/** Get the map-generation value00. */
 AT("00071E34") u32 MapGenerationGetValue00(void) { return MapGenerationGetState()->value00; }
+/** Get the map-generation value04. */
 AT("00071E40") u32 MapGenerationGetValue04(void) { return MapGenerationGetState()->value04; }
+/** Set the map-generation pointer0 c. */
 AT("00071E4C") void MapGenerationSetPointer0C(void *v) { MapGenerationGetState()->pointer0C = v; }
+/** Set the map-generation pointer14. */
 AT("00071E5C") void MapGenerationSetPointer14(void *v) { MapGenerationGetState()->pointer14 = v; }
+/** Set the map-generation pointer10. */
 AT("00071E6C") void MapGenerationSetPointer10(void *v) { MapGenerationGetState()->pointer10 = v; }
+/** Set the map-generation pointer18. */
 AT("00071E7C") void MapGenerationSetPointer18(void *v) { MapGenerationGetState()->pointer18 = v; }
+/** Get the map-generation pointer0 c. */
 AT("00071E8C") void *MapGenerationGetPointer0C(void) { return MapGenerationGetState()->pointer0C; }
 AT("00071E98") void *MapGenerationGetPointer14(void) { return MapGenerationGetState()->pointer14; }
 AT("00071EA4") void *MapGenerationGetPointer10(void) { return MapGenerationGetState()->pointer10; }

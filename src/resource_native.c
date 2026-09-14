@@ -48,16 +48,16 @@ extern void BitSet(void *bits, s32 index, s32 value);
 AT("00012B98") s32 ScriptNativeSetFriendArms(u32 count, const s32 *args,
                                               s32 *result)
 {
-    register s32 i asm("r6") = 0;
-    register u8 **root asm("r5") = (u8 **)0x03003FDC;
+    s32 i = 0;
+    u8 **root = (u8 **)0x03003FDC;
     s32 friendOffset = 0x3880;
-    register const s32 *input asm("r4") = args;
-    register const s16 *definitions asm("r9") = gFriendArmOwnershipBits;
-    register s32 invalidDefinition asm("r8") = FRIEND_ARM_NO_OWNERSHIP_BIT;
+    const s32 *input = args;
+    const s16 *definitions = gFriendArmOwnershipBits;
+    s32 invalidDefinition = FRIEND_ARM_NO_OWNERSHIP_BIT;
 
     do {
-        register s32 byteOffset asm("r2");
-        register u8 *firstSlot asm("r1");
+        s32 byteOffset;
+        u8 *firstSlot;
         register u8 *slot asm("r0");
         s32 definitionIndex;
         s32 ownershipBit;
@@ -96,8 +96,8 @@ AT("00012D98") const u8 ScriptNativeQueryResourceIdTail[2] = {0};
 
 AT("00012DB4") s32 ScriptNativeQueryModeResource(u32 count, const s32 *args, s32 *result)
 {
-    register s32 *out asm("r4") = result;
-    register const s16 *shortArgs asm("r1") = (const s16 *)args;
+    s32 *out = result;
+    const s16 *shortArgs = (const s16 *)args;
     register u8 *base asm("r0");
     register u32 offset asm("r2");
     s32 value;
@@ -121,7 +121,7 @@ AT("00012DF8") s32 ScriptNativeSetModeResource(u32 count, const s32 *args, s32 *
 {
     register const s16 *shortArgs asm("r1") = (const s16 *)args;
     register u8 *base asm("r0");
-    register u32 offset asm("r2");
+    u32 offset;
 
     base = gIwramBase;
     offset = (u32)gMapGenerationRootOffset;

@@ -87,7 +87,7 @@ AT("00001A34") void IwramSetField3FD5(u32 value)
 }
 AT("00001B34") u32 IwramGetPointer2860(u32 index0)
 {
- register u32 index asm("r0")=index0;
+ u32 index=index0;
  u32 base=(u32)gIwramBase;
  index*=4;
  base+=(u32)gIwramPointer2860Offset;
@@ -96,7 +96,7 @@ AT("00001B34") u32 IwramGetPointer2860(u32 index0)
 }
 AT("00001B4C") void IwramSetPointer2860(u32 index0,u32 value)
 {
- register u32 index asm("r0")=index0;
+ u32 index=index0;
  u32 base=(u32)gIwramBase;
  index*=4;
  base+=(u32)gIwramPointer2860Offset;

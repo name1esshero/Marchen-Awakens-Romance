@@ -18,11 +18,11 @@ void SpriteInterpolationInit(struct SpriteInterpolation *state, s32 *storage,
                              const s16 *x, const s16 *y, volatile s32 count)
 {
     register s32 *output TARGET_REGISTER("r6");
-    register const s16 *inputX TARGET_REGISTER("r5");
-    register const s16 *inputY TARGET_REGISTER("r4");
+    const s16 *inputX;
+    const s16 *inputY;
     s32 remainingCount;
     register s32 *outputX TARGET_REGISTER("r1");
-    register s32 remaining TARGET_REGISTER("r2");
+    s32 remaining;
     register s32 *outputY TARGET_REGISTER("r3") = output;
     register u8 *afterX TARGET_REGISTER("r1");
     s32 offset;

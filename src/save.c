@@ -103,7 +103,7 @@ AT("0006E4D4") s32 ReadSaveBytesAndSignal(void *destination, u32 size,
 AT("0006E4BC") void *CreateSaveWriteTask(struct SaveBlock *save, u32 size,
                                           s32 *completion)
 {
-    register struct SaveBlock *localSave asm("r5");
+    struct SaveBlock *localSave;
     register u32 localSize asm("r4");
     register s32 *localCompletion asm("r3");
 

@@ -12,6 +12,7 @@ extern const char gConsumableNoneDescription[];
 #define CONSUMABLE_DESCRIPTION_BASE gConsumableNoneDescription
 #define CONSUMABLE_RECORD_SIZE      0x50
 
+/** Return the arm definition selected by a signed-16-bit ID. */
 AT("00056464")
 const struct ArmDefinition *ItemGetDefinition(s32 id)
 {
@@ -19,6 +20,7 @@ const struct ArmDefinition *ItemGetDefinition(s32 id)
 }
 
 #ifndef ENGLISH
+/** Return the Japanese name for a signed-16-bit arm ID. */
 AT("00056474")
 const char *ItemGetName(s32 id)
 {
@@ -27,6 +29,7 @@ const char *ItemGetName(s32 id)
 #endif
 
 #ifndef ENGLISH
+/** Return the Japanese description for a signed-16-bit arm ID. */
 AT("00056484")
 const char *ItemGetDescription(s32 id)
 {
@@ -34,6 +37,7 @@ const char *ItemGetDescription(s32 id)
 }
 #endif
 
+/** Return field 0x63 from the signed-16-bit arm definition ID. */
 AT("00056494")
 s32 ItemGetField63(s32 id)
 {
@@ -41,6 +45,7 @@ s32 ItemGetField63(s32 id)
     return gArmDefinitions[id].field63;
 }
 
+/** Return field 0x64 from the signed-16-bit arm definition ID. */
 AT("000564AC")
 s32 ItemGetField64(s32 id)
 {
@@ -48,6 +53,7 @@ s32 ItemGetField64(s32 id)
     return gArmDefinitions[id].field64;
 }
 
+/** Return field 0x65 from the signed-16-bit arm definition ID. */
 AT("000564C4")
 s32 ItemGetField65(s32 id)
 {
@@ -55,6 +61,7 @@ s32 ItemGetField65(s32 id)
     return gArmDefinitions[id].element;
 }
 
+/** Return field 0x5C from the signed-16-bit arm definition ID. */
 AT("000564DC")
 s32 ItemGetField5C(s32 id)
 {
@@ -62,6 +69,7 @@ s32 ItemGetField5C(s32 id)
     return gArmDefinitions[id].field5C;
 }
 
+/** Return field 0x5E from the signed-16-bit arm definition ID. */
 AT("000564F0")
 s32 ItemGetField5E(s32 id)
 {
@@ -69,6 +77,7 @@ s32 ItemGetField5E(s32 id)
     return gArmDefinitions[id].field5E;
 }
 
+/** Return field 0x60 from the signed-16-bit arm definition ID. */
 AT("00056504")
 s32 ItemGetField60(s32 id)
 {
@@ -76,6 +85,7 @@ s32 ItemGetField60(s32 id)
     return gArmDefinitions[id].field60;
 }
 
+/** Return field 0x59 from the signed-16-bit arm definition ID. */
 AT("00056518")
 s32 ItemGetField59(s32 id)
 {
@@ -83,6 +93,7 @@ s32 ItemGetField59(s32 id)
     return gArmDefinitions[id].type;
 }
 
+/** Return field 0x5A from the signed-16-bit arm definition ID. */
 AT("00056530")
 s32 ItemGetField5A(s32 id)
 {
@@ -90,6 +101,7 @@ s32 ItemGetField5A(s32 id)
     return gArmDefinitions[id].field5A;
 }
 
+/** Return field 0x62 from the signed-16-bit arm definition ID. */
 AT("00056548")
 s32 ItemGetField62(s32 id)
 {
@@ -97,6 +109,7 @@ s32 ItemGetField62(s32 id)
     return gArmDefinitions[id].field62;
 }
 
+/** Return field 0x58 from the signed-16-bit arm definition ID. */
 AT("00056560")
 s32 ItemGetField58(s32 id)
 {
@@ -104,12 +117,14 @@ s32 ItemGetField58(s32 id)
     return gArmDefinitions[id].field58;
 }
 
+/** Return a consumable name from the fixed-stride text table. */
 AT("00057108")
 const char *ConsumableGetName(s32 id)
 {
     return CONSUMABLE_NAME_BASE + (s16)id * CONSUMABLE_RECORD_SIZE;
 }
 
+/** Return a consumable description from the fixed-stride text table. */
 AT("00057120")
 const char *ConsumableGetDescription(s32 id)
 {

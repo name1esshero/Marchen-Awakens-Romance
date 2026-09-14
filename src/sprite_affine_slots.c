@@ -17,16 +17,16 @@
 AT("0007CC18")
 s32 SpriteAffineFind(u16 key, u32 high, s16 low)
 {
-    register u32 wantedKey TARGET_REGISTER("r12") = key;
-    register s32 lowValue TARGET_REGISTER("r2") = low;
-    register u32 slot TARGET_REGISTER("r4");
-    register u32 occupied TARGET_REGISTER("r5");
-    register u32 transform TARGET_REGISTER("r6");
+    u32 wantedKey = key;
+    s32 lowValue = low;
+    u32 slot;
+    u32 occupied;
+    u32 transform;
     s32 checked;
     struct SpriteEngineState **global =
         (struct SpriteEngineState **)0x03006118;
-    register struct SpriteEngineState **savedGlobal TARGET_REGISTER("r8");
-    register u32 slotMask TARGET_REGISTER("r3");
+    struct SpriteEngineState **savedGlobal;
+    u32 slotMask;
 
     slot = (*global)->affineSearchCursor;
     transform = high << 16;
@@ -37,14 +37,14 @@ s32 SpriteAffineFind(u16 key, u32 high, s16 low)
     slotMask = 31;
 
     do {
-        register u32 one TARGET_REGISTER("r0");
+        u32 one;
 
         slot &= slotMask;
         one = 1;
         if ((occupied & (one << slot)) != 0) {
             register u32 entryOffset TARGET_REGISTER("r0") = slot << 3;
             register struct SpriteEngineState **globalReg TARGET_REGISTER("r2");
-            register struct SpriteEngineState *state TARGET_REGISTER("r1");
+            struct SpriteEngineState *state;
             register struct SpriteAffineSlot *entry TARGET_REGISTER("r2");
 
             entryOffset += 28;
@@ -73,19 +73,19 @@ AT("0007CC18") const u8 SpriteAffineFindTail[2] = {0, 0};
 AT("0007CC84")
 s32 SpriteAffineAllocate(u16 key, u32 high, s16 low)
 {
-    register u32 wantedKey TARGET_REGISTER("r8") = key;
-    register s32 lowValue TARGET_REGISTER("r2") = low;
-    register struct SpriteEngineState **global TARGET_REGISTER("r4") =
+    u32 wantedKey = key;
+    s32 lowValue = low;
+    struct SpriteEngineState **global =
         (struct SpriteEngineState **)0x03006118;
-    register u32 available TARGET_REGISTER("r5");
-    register s32 slot TARGET_REGISTER("r3");
+    u32 available;
+    s32 slot;
     register u32 one TARGET_REGISTER("r12");
     struct SpriteEngineState **savedGlobal;
     register u32 transform TARGET_REGISTER("r4");
-    register u32 offset TARGET_REGISTER("r6");
+    u32 offset;
     register struct SpriteEngineState *state TARGET_REGISTER("r0") = *global;
-    register u32 used TARGET_REGISTER("r3") = state->flags10;
-    register u32 reserved TARGET_REGISTER("r0") = state->flags14;
+    u32 used = state->flags10;
+    u32 reserved = state->flags14;
 
     available = ~reserved;
     asm volatile("" : "+r"(available));
@@ -108,7 +108,7 @@ s32 SpriteAffineAllocate(u16 key, u32 high, s16 low)
         state = *savedGlobal;
         state->flags10 |= mask;
         {
-            register struct SpriteAffineSlot *entry TARGET_REGISTER("r1") =
+            struct SpriteAffineSlot *entry =
                 (struct SpriteAffineSlot *)((u8 *)state + offset);
 
             entry->key = wantedKey;

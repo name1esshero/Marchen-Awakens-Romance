@@ -118,20 +118,20 @@ void SpriteTileAllocatorReset(struct SpriteTileAllocator *allocator)
 AT("0007B52C")
 void SpriteTileAllocatorRelease(struct SpriteTileAllocator *allocator, s32 tile)
 {
-    register struct SpriteTileBlock *block TARGET_REGISTER("r4");
+    struct SpriteTileBlock *block;
     struct SpriteTileBlock *previous;
     struct SpriteTileBlock *next;
     u32 flags;
     u32 size;
     u32 last;
-    register u32 offset TARGET_REGISTER("r0");
-    register u32 sizeMask TARGET_REGISTER("r12");
-    register u32 maskValue TARGET_REGISTER("r0");
+    u32 offset;
+    u32 sizeMask;
+    u32 maskValue;
     register struct SpriteTileBlock *base TARGET_REGISTER("r1");
     u32 link;
     u32 previousFlags;
     register u32 previousSize TARGET_REGISTER("r0");
-    register u32 nextFlags TARGET_REGISTER("r1");
+    u32 nextFlags;
     u32 nextSize;
     u32 combined;
 

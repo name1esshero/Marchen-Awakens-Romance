@@ -230,7 +230,7 @@ AT("0007ACC4")
 s32 NfpFindEntryIndex(s32 handle, const char *name)
 {
     struct NfpEntry *directory;
-    register s32 low TARGET_REGISTER("r6");
+    s32 low;
     s32 middle;
     register s32 high TARGET_REGISTER("r4");
     s32 count;
@@ -269,7 +269,7 @@ s32 NfpFindEntryIndex(s32 handle, const char *name)
 AT("0007AD4C")
 u32 NfpGetEntrySizeByName(const char *archive, const char *member)
 {
-    register s32 handle TARGET_REGISTER("r5");
+    s32 handle;
     register s32 index TARGET_REGISTER("r4");
     struct NfpEntry *entry;
     struct NfpHeader *base;

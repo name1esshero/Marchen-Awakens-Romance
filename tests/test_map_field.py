@@ -10,14 +10,16 @@ class MapFieldTests(unittest.TestCase):
     def test_field_name_resources_viewport_stride_and_signed_coordinates(self):
         with tempfile.TemporaryDirectory() as temp:
             folder=Path(temp)
-            source=(ROOT/'src/map_field.c').read_text().replace('(const char *)0x08086A5C','".KMP"')
-            (folder/'field.c').write_text(source)
+            (folder/'field.c').write_text((ROOT/'src/map_field.c').read_text())
             (folder/'test.c').write_text(r'''
 #include "kmp.h"
 #include <assert.h>
 #include <ctype.h>
 #include <stdint.h>
 #include <string.h>
+/* The ROM resolves this through asm/game_table_handlers.s; the host link
+ * supplies the literal it aliases. */
+const char gMapArchiveKmpExtension[] = ".KMP";
 static int phase;
 static int expectedX,expectedY;
 void GameStateSetString12F4(const char *name) {assert(phase++==0);assert(!strcmp(name,"map01_a"));}

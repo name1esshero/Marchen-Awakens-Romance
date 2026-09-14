@@ -8,6 +8,7 @@
 #include "rom_section.h"
 extern void CpuFill(void *, u32, u32);
 
+/** Key input init in the shared key-input state. */
 AT("0007A084")
 void KeyInputInit(struct KeyState *states)
 {
@@ -15,6 +16,7 @@ void KeyInputInit(struct KeyState *states)
     CpuFill(states, 64, 0);
 }
 
+/** Key input poll in the shared key-input state. */
 AT("0007A09C")
 void KeyInputPoll(u32 slot)
 {
@@ -29,6 +31,7 @@ void KeyInputPoll(u32 slot)
     state->pressed = state->held & ~state->previous;
 }
 
+/** Key input set in the shared key-input state. */
 AT("0007A0F0")
 void KeyInputSet(u16 held, u32 slot)
 {
@@ -43,6 +46,7 @@ void KeyInputSet(u16 held, u32 slot)
     state->pressed = state->held & ~state->previous;
 }
 
+/** Key input consume pressed in the shared key-input state. */
 AT("0007A134")
 u32 KeyInputConsumePressed(u16 mask, u32 slot)
 {
@@ -58,6 +62,7 @@ u32 KeyInputConsumePressed(u16 mask, u32 slot)
 }
 AT("0007A134") const u8 KeyInputConsumePressedTail[2] = {0, 0};
 
+/** Key input any held in the shared key-input state. */
 AT("0007A160")
 u32 KeyInputAnyHeld(u32 mask, u32 slot)
 {

@@ -11,6 +11,7 @@ extern void sub_08011A08(u32);
 extern void sub_08006ADC(u32,u32);
 #include "runtime_misc.h"
 #include "rom_section.h"
+/** Report dialogue completion and release its task. */
 AT("00011774")
 void DialogueFinishTask(void *task)
 {
@@ -19,6 +20,7 @@ void DialogueFinishTask(void *task)
  FinishTask(task);
 }
 AT("00011774") const u8 DialogueFinishTaskTail[2]={0,0};
+/** Create the task that reports dialogue completion. */
 AT("0001174C")
 void *DialogueCreateFinishTask(s32 *result)
 {
@@ -26,6 +28,7 @@ void *DialogueCreateFinishTask(s32 *result)
  if (!task) return 0;
  return task;
 }
+/** Start the dialogue prompt cursor and yield to the script VM. */
 AT("00011CC4")
 s32 DialogueCommandPrompt(void)
 {
@@ -33,6 +36,7 @@ s32 DialogueCommandPrompt(void)
  return 1;
 }
 AT("00011CC4") const u8 DialogueCommandPromptTail[2]={0,0};
+/** Schedule dialogue completion and yield to the script VM. */
 AT("00011CD4")
 s32 DialogueCommandFinish(void)
 {
@@ -40,6 +44,7 @@ s32 DialogueCommandFinish(void)
  return 1;
 }
 AT("00011CD4") const u8 DialogueCommandFinishTail[2]={0,0};
+/** Start dialogue rows and enable their two display windows. */
 AT("00011C68")
 s32 DialogueCommandShow(s32 count, const char **rows)
 {

@@ -14,7 +14,7 @@ AT(address) void name(const u8 *source, u8 *destination, u32 size)          \
 {                                                                           \
     register vu16 *waitcnt asm("r2") = WAITCNT_ADDRESS;                    \
     register u16 wait asm("r0") = *waitcnt;                                \
-    register u16 mask asm("r1") = WAITCNT_SRAM_MASK;                       \
+    u16 mask = WAITCNT_SRAM_MASK;                       \
     wait &= mask;                                                            \
     wait |= WAITCNT_SRAM_8_CYCLES;                                          \
     *waitcnt = wait;                                                         \
@@ -31,7 +31,7 @@ u8 *VerifySram(const u8 *source, const u8 *destination, u32 size)
 {
     register vu16 *waitcnt asm("r2") = WAITCNT_ADDRESS;
     register u16 wait asm("r0") = *waitcnt;
-    register u16 mask asm("r1") = WAITCNT_SRAM_MASK;
+    u16 mask = WAITCNT_SRAM_MASK;
     wait &= mask;
     wait |= WAITCNT_SRAM_8_CYCLES;
     *waitcnt = wait;

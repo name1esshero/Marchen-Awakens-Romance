@@ -16,7 +16,7 @@ s32 SpriteFixedSqrt(s32 value);
 AT("0007D8F8")
 s32 SpriteFixed8Multiply(s32 left, s32 right)
 {
-    register s32 product TARGET_REGISTER("r0");
+    s32 product;
     register s32 rounded TARGET_REGISTER("r1");
 
     left <<= 16;
@@ -103,8 +103,8 @@ s32 SpriteVectorLengthFixed(s32 x, s32 y)
 AT("0007D9F0")
 s32 SpriteFixedSqrt(s32 value)
 {
-    register s32 previous TARGET_REGISTER("r4");
-    register s32 input TARGET_REGISTER("r5") = value;
+    s32 previous;
+    s32 input = value;
     register s32 estimate TARGET_REGISTER("r0");
 
     if (input > 0) {

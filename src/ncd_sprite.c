@@ -49,14 +49,14 @@ AT("0007B9CC") void NcdResetResource(u32 resource)
  * queued object.  Each priority bucket is a 12-byte List. */
 AT("0007BDAC") void NcdQueueSprite(struct NcdSprite *sprite, u32 priority)
 {
- register u8 *object TARGET_REGISTER("r4");
- register u8 **global TARGET_REGISTER("r5");
- register u8 *state TARGET_REGISTER("r3");
+ u8 *object;
+ u8 **global;
+ u8 *state;
  register u32 rawFlags TARGET_REGISTER("r2");
- register u32 group TARGET_REGISTER("r0");
- register u8 *countState TARGET_REGISTER("r1");
+ u32 group;
+ u8 *countState;
  List *queue;
- register u32 offset TARGET_REGISTER("r2");
+ u32 offset;
  object = (u8 *)sprite;
  global = (u8 **)0x03006118;
  state = *global;

@@ -23,15 +23,15 @@ AT("0007D044")
 void SpriteVectorRotateX(struct SpriteVector3 *out,
                          const struct SpriteVector3 *in, s32 angle)
 {
-    register s32 first TARGET_REGISTER("r9");
+    s32 first;
     register s32 second TARGET_REGISTER("r10");
     register const s16 *tableFirst TARGET_REGISTER("r5");
-    register const s16 *table TARGET_REGISTER("r8");
-    register s32 cosineIndex TARGET_REGISTER("r4");
+    const s16 *table;
+    s32 cosineIndex;
     register s32 mask TARGET_REGISTER("r6");
     register s32 accum TARGET_REGISTER("r5");
     register s32 value TARGET_REGISTER("r3");
-    register s32 temp TARGET_REGISTER("r4");
+    s32 temp;
 
     angle = (angle << 16) >> 16;
     asm("" : "+r"(angle));
@@ -56,7 +56,7 @@ void SpriteVectorRotateX(struct SpriteVector3 *out,
     angle = (s32)((const u8 *)table + angle);
     value = *(const s16 *)angle;
     {
-        register s32 product TARGET_REGISTER("r6") = second;
+        s32 product = second;
         product *= value;
         value = product;
     }
@@ -64,8 +64,8 @@ void SpriteVectorRotateX(struct SpriteVector3 *out,
     accum >>= 14;
     out->y = accum;
     {
-        register s32 sine TARGET_REGISTER("r2") = *(const s16 *)angle;
-        register s32 product TARGET_REGISTER("r5") = first;
+        s32 sine = *(const s16 *)angle;
+        s32 product = first;
         product *= sine;
         sine = product;
         value = *(s16 *)cosineIndex;
@@ -89,15 +89,15 @@ AT("0007D0C0")
 void SpriteVectorRotateY(struct SpriteVector3 *out,
                          const struct SpriteVector3 *in, s32 angle)
 {
-    register s32 first TARGET_REGISTER("r9");
+    s32 first;
     register s32 second TARGET_REGISTER("r10");
     register const s16 *tableFirst TARGET_REGISTER("r5");
-    register const s16 *table TARGET_REGISTER("r8");
-    register s32 cosineIndex TARGET_REGISTER("r4");
+    const s16 *table;
+    s32 cosineIndex;
     register s32 mask TARGET_REGISTER("r6");
     register s32 accum TARGET_REGISTER("r5");
     register s32 value TARGET_REGISTER("r3");
-    register s32 temp TARGET_REGISTER("r4");
+    s32 temp;
 
     angle = (angle << 16) >> 16;
     asm("" : "+r"(angle));
@@ -122,7 +122,7 @@ void SpriteVectorRotateY(struct SpriteVector3 *out,
     angle = (s32)((const u8 *)table + angle);
     value = *(const s16 *)angle;
     {
-        register s32 product TARGET_REGISTER("r6") = second;
+        s32 product = second;
         product *= value;
         value = product;
     }
@@ -130,12 +130,12 @@ void SpriteVectorRotateY(struct SpriteVector3 *out,
     accum >>= 14;
     out->x = accum;
     {
-        register s32 sine TARGET_REGISTER("r2") = *(const s16 *)angle;
+        s32 sine = *(const s16 *)angle;
         value = first;
         value *= sine;
         sine = *(s16 *)cosineIndex;
         {
-            register s32 product TARGET_REGISTER("r6") = second;
+            s32 product = second;
             product *= sine;
             sine = product;
         }
@@ -156,15 +156,15 @@ AT("0007D138")
 void SpriteVectorRotateZ(struct SpriteVector3 *out,
                          const struct SpriteVector3 *in, s32 angle)
 {
-    register s32 first TARGET_REGISTER("r9");
+    s32 first;
     register s32 second TARGET_REGISTER("r10");
     register const s16 *tableFirst TARGET_REGISTER("r5");
-    register const s16 *table TARGET_REGISTER("r8");
-    register s32 cosineIndex TARGET_REGISTER("r4");
+    const s16 *table;
+    s32 cosineIndex;
     register s32 mask TARGET_REGISTER("r6");
     register s32 accum TARGET_REGISTER("r5");
     register s32 value TARGET_REGISTER("r3");
-    register s32 temp TARGET_REGISTER("r4");
+    s32 temp;
 
     angle = (angle << 16) >> 16;
     asm("" : "+r"(angle));
@@ -189,7 +189,7 @@ void SpriteVectorRotateZ(struct SpriteVector3 *out,
     angle = (s32)((const u8 *)table + angle);
     value = *(const s16 *)angle;
     {
-        register s32 product TARGET_REGISTER("r6") = second;
+        s32 product = second;
         product *= value;
         value = product;
     }
@@ -197,8 +197,8 @@ void SpriteVectorRotateZ(struct SpriteVector3 *out,
     accum >>= 14;
     out->x = accum;
     {
-        register s32 sine TARGET_REGISTER("r2") = *(const s16 *)angle;
-        register s32 product TARGET_REGISTER("r5") = first;
+        s32 sine = *(const s16 *)angle;
+        s32 product = first;
         product *= sine;
         sine = product;
         value = *(s16 *)cosineIndex;
@@ -220,14 +220,14 @@ void SpriteVectorRotateZ(struct SpriteVector3 *out,
 AT("0007D1B4")
 void SpriteProjectPoint(struct SpriteVector3 *point)
 {
-    register struct SpriteVector3 *out TARGET_REGISTER("r5") = point;
+    struct SpriteVector3 *out = point;
     s32 oldX = out->x;
-    register s32 oldY TARGET_REGISTER("r9") = out->y;
-    register s32 scale TARGET_REGISTER("r8") = out->z;
+    s32 oldY = out->y;
+    s32 scale = out->z;
     u8 *state = *(u8 **)0x03006118;
     register s32 origin TARGET_REGISTER("r4") = *(s16 *)(state + 328);
-    register s32 numerator TARGET_REGISTER("r0") = scale * oldX;
-    register s32 *divisor TARGET_REGISTER("r6");
+    s32 numerator = scale * oldX;
+    s32 *divisor;
 
     numerator <<= 12;
     divisor = (s32 *)(state + 324);
@@ -235,7 +235,7 @@ void SpriteProjectPoint(struct SpriteVector3 *point)
     out->x = origin;
     origin = *(s16 *)(state + 330);
     {
-        register s32 secondScale TARGET_REGISTER("r2") = scale;
+        s32 secondScale = scale;
         numerator = oldY * secondScale;
     }
     numerator <<= 12;
@@ -255,11 +255,11 @@ AT("0007DA38")
 void SpritePackAffinePosition(struct SpriteAffineTransform *state)
 {
     register s32 packedX TARGET_REGISTER("r2");
-    register s32 product TARGET_REGISTER("r1");
+    s32 product;
     register s32 halfWidth TARGET_REGISTER("r4");
     register s32 halfHeight TARGET_REGISTER("r3");
     register s32 packedY TARGET_REGISTER("r5");
-    register u32 bits TARGET_REGISTER("r6");
+    u32 bits;
     register u32 highMask TARGET_REGISTER("r8");
 
     packedX = state->centerX;
@@ -330,12 +330,12 @@ void SpritePackAffinePosition(struct SpriteAffineTransform *state)
 AT("0007DAD0")
 void SpriteBuildAffineMatrix(struct SpriteAffineTransform *transform)
 {
-    register struct SpriteAffineTransform *state TARGET_REGISTER("r5") = transform;
-    register const s16 *table TARGET_REGISTER("r3") = SPRITE_SINE_TABLE;
-    register u32 mask TARGET_REGISTER("r2");
+    struct SpriteAffineTransform *state = transform;
+    const s16 *table = SPRITE_SINE_TABLE;
+    u32 mask;
     register u32 rawAngle TARGET_REGISTER("r1");
-    register s32 sine TARGET_REGISTER("r8");
-    register s32 cosine TARGET_REGISTER("r6");
+    s32 sine;
+    s32 cosine;
     register s32 inverseX TARGET_REGISTER("r4");
     register s32 inverseY TARGET_REGISTER("r0");
     register s32 index TARGET_REGISTER("r0");

@@ -24,19 +24,33 @@ are forced-register declarations, inline assembly or scheduling fences, and
 raw ROM addresses used by logic or tables. The largest warning groups are
 missing Doxygen comments and names that are not yet PascalCase.
 
-The current mechanical scan reports 351 hard-rule occurrences, 759 missing
-function-documentation warnings, and 12 documented low-level exceptions. This
-cleanup removed seven forced-register declarations whose generated object code
-was unchanged, replaced all 630 raw ROM addresses with verified symbols, and
-added or converted documentation for 200 manifest-backed functions. The
-remaining compiler hints cannot be removed mechanically: every one must either
-match as ordinary C after a structural rewrite or return to an assembly
-implementation while its readable C stays under `src/nonmatching/`.
+The current mechanical scan reports 230 hard-rule occurrences, 528 missing
+function-documentation warnings, and 12 documented low-level exceptions. An
+earlier cleanup replaced all 630 raw ROM addresses with verified symbols and
+added or converted documentation for 421 manifest-backed functions.
+
+A later pass cut the hard-rule count from 351 to 230 by proving which forced
+registers were load-bearing rather than assuming it. `tools/drop_register_hints.py`
+removes one pin at a time, recompiles that single translation unit with the real
+toolchain, and keeps the removal only when the generated assembly is unchanged.
+Removals are cumulative because register allocation is global, so a hint that
+looks redundant alone can become necessary once its neighbours are gone: in
+`src/sprite_transform.c` 54 of 61 hints passed individually but only 34 survived
+cumulatively. That run removed 121 hints across 18 files with the ROM still
+byte-identical.
+
+The 230 that remain are, by construction, the ones the compiler actually needs
+for the current C. Each must either match as ordinary C after a structural
+rewrite or return to an assembly implementation with its readable C kept under
+`src/nonmatching/`.
 
 ## Remediation order
 
-1. Move functions that require forced registers or inline scheduling fences
-   back behind their original assembly implementation. Keep readable C under
+1. Run `tools/drop_register_hints.py --all` first: it clears every hint the
+   compiler does not actually need, so later effort is spent only on real
+   mismatches. Then, for each surviving hint, attempt a structural rewrite that
+   matches as ordinary C. Only when that fails should the function move back
+   behind its original assembly implementation, keeping readable C under
    `src/nonmatching/` with the exact mismatch documented.
 2. Move the ten BIOS instruction wrappers from naked inline C into a small
    named assembly wrapper file, preserving their C prototypes.

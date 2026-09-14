@@ -13,7 +13,7 @@ class ScriptNativeTests(unittest.TestCase):
     def setUpClass(cls):
         cls.temp=tempfile.TemporaryDirectory();folder=Path(cls.temp.name)
         source=(ROOT/'src/script_native.c').read_text()
-        source='struct ScriptContext; extern struct ScriptContext *hostVm; extern const char hostEmpty[],hostFormat[];\n'+source.replace('(*(struct ScriptContext **)0x0300611C)','hostVm').replace('0x081AC6A0','hostEmpty').replace('0x081AC6A4','hostFormat')
+        source='struct ScriptContext; extern struct ScriptContext *hostVm;\n'+source.replace('(*(struct ScriptContext **)0x0300611C)','hostVm')
         (folder/'native.c').write_text(source)
         (folder/'mock.c').write_text(r'''
 #include "script_vm.h"
@@ -21,7 +21,10 @@ class ScriptNativeTests(unittest.TestCase):
 #include <stdarg.h>
 #include <string.h>
 #include <stdlib.h>
-const char hostEmpty[]="",hostFormat[]="%d";
+/* The ROM resolves these through asm/game_table_handlers.s; the host
+ * build supplies the literals they alias. */
+const u8 gScriptEmptyText[]="";
+const char gScriptDecimalFormat[]="%d";
 struct ScriptContext context,*hostVm=&context;
 struct ScriptExecutionState state;
 unsigned char buffer[16];

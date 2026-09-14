@@ -49,6 +49,7 @@ RECORD_SET_CLAMPED("00055FE8",GameStateRecordSetField4,4)
  * one proved by the byte-identical sibling above. */
 RECORD_SET_CLAMPED("0005601C",GameStateRecordSetField6,6)
 
+/** Game state record add field6 using the recovered runtime layout. */
 AT("00056050") void GameStateRecordAddField6(s32 id,s32 value)
 {
  u8 *record;
@@ -71,6 +72,7 @@ AT("00056050") void GameStateRecordAddField6(s32 id,s32 value)
 #define TABLE_3894_ROW_SIZE 12
 #define TABLE_3894_GROUP 3
 
+/** Game state set entry3894 using the recovered runtime layout. */
 AT("000560C4") void GameStateSetEntry3894(s32 row,s32 group,s32 slot,s32 value)
 {
  u8 *iwram;
@@ -87,6 +89,7 @@ AT("000560C4") void GameStateSetEntry3894(s32 row,s32 group,s32 slot,s32 value)
  *(u16 *)base=value;
 }
 
+/** Game state get entry3894 using the recovered runtime layout. */
 AT("000560F8") s32 GameStateGetEntry3894(s32 row,s32 group,s32 slot)
 {
  u8 *iwram;
@@ -136,6 +139,7 @@ AT("00056984") s32 GameStateGetEntry2768Total(s32 id)
 #define ACTOR_RECORD_SIZE 1672
 #define PART_RECORD_SIZE 104
 
+/** Game state get part field64 c using the recovered runtime layout. */
 AT("00056DFC") s32 GameStateGetPartField64C(s16 actorArg,s16 partArg)
 {
  u8 *base;

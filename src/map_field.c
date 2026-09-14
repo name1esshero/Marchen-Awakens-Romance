@@ -16,6 +16,7 @@ extern char *strupr(char *);
 extern s32 sub_08056290(void);
 extern void sub_08054350(void *, void *, s32, s32, s32, s32, s32);
 #define sText_KmpExtension gMapArchiveKmpExtension
+/** Kmp load field for the active map viewport. */
 AT("000032B8") void KmpLoadField(const char *name,s16 x,s16 y)
 {
  char resource[16]; /* basename + .KMP + terminator; original has no length check */
@@ -33,9 +34,11 @@ AT("000032B8") void KmpLoadField(const char *name,s16 x,s16 y)
  view=(struct KmpViewport *)((u8 *)view+0xFC);
  KmpRenderViewport(view,px,py);
 }
+/** Kmp set clip for the active map viewport. */
 AT("00003280") void KmpSetClip(struct KmpViewport *view,u32 x,u32 y,u32 width,u32 height)
 {view->clipX=x;view->clipY=y;view->clipWidth=width;view->clipHeight=height;}
 AT("00003280") const u8 KmpSetClipTail[2]={0,0};
+/** Kmp reset clip for the active map viewport. */
 AT("00003294") void KmpResetClip(struct KmpViewport *view)
 {view->clipX=0;view->clipY=0;view->clipWidth=view->data->widthTiles;view->clipHeight=view->data->heightTiles;}
 AT("00003294") const u8 KmpResetClipTail[2]={0,0};
