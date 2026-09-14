@@ -2004,6 +2004,12 @@
     "file": "src/map_native.c"
   },
   {
+    "addr": "08012264",
+    "size": 148,
+    "name": "ScriptNativeBackgroundSet",
+    "file": "src/map_native.c"
+  },
+  {
     "addr": "080122F8",
     "size": 32,
     "name": "ScriptNativeFieldSet",

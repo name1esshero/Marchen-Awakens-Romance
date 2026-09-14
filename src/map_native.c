@@ -17,7 +17,6 @@ extern char *strupr(char *);
 
 /* BgSet loads one KMP plane into the BG character block selected by the
  * viewport index, then renders that viewport at a 16.16 pixel position. */
-#ifdef NONMATCHING
 AT("00012264") s32 ScriptNativeBackgroundSet(u32 count,const union MapArgument *args,s32 *result)
 {
     char resource[16];
@@ -25,12 +24,16 @@ AT("00012264") s32 ScriptNativeBackgroundSet(u32 count,const union MapArgument *
     struct KmpViewport *view;
     strcpy(resource,args[3].string);
     strupr(resource);
-    switch (args[0].integer) {
-    case 1:goto defaultVram;
-    case 2:tileDestination=(void *)0x06008000;break;
-    case 3:tileDestination=(void *)0x0600C000;break;
-    default:goto defaultVram;
-    }
+    if(args[0].integer==1)goto defaultVram;
+    if(args[0].integer<=1)goto defaultVram;
+    if(args[0].integer==2)goto case2Vram;
+    if(args[0].integer==3)goto case3Vram;
+    goto defaultVram;
+case2Vram:
+    tileDestination=(void *)0x06008000;
+    goto selectedVram;
+case3Vram:
+    tileDestination=(void *)0x0600C000;
     goto selectedVram;
 defaultVram:
     tileDestination=(void *)0x06000000;
@@ -43,7 +46,6 @@ selectedVram:
     KmpRenderViewport(view,args[4].integer<<16,args[5].integer<<16);
     return 0x7FFF;
 }
-#endif
 
 AT("000122F8") s32 ScriptNativeFieldSet(u32 count,const union MapArgument *args,s32 *result)
 {

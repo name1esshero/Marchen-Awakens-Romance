@@ -8,13 +8,34 @@ class MapNativeTests(unittest.TestCase):
     def test_arguments_truncation_free_dispatch_and_return_protocol(self):
         with tempfile.TemporaryDirectory() as temp:
             folder=Path(temp)
-            source=(ROOT/'src/map_native.c').read_text()
+            source=(ROOT/'src/map_native.c').read_text().replace(
+                '((const char *)0x08086D88)', '".KMP"')
             (folder/'native.c').write_text(source)
             (folder/'test.c').write_text(r'''
 #include "native.c"
 #include <assert.h>
+#include <ctype.h>
+#include <stdint.h>
 #include <string.h>
 static int called, values[5];
+static int bgPhase;
+char *strupr(char *text) {
+ char *p=text;while(*p){*p=toupper((unsigned char)*p);p++;}return text;
+}
+void KmpLoadResource(const char *name,void *vram,s32 slot,s32 plane,s32 palette,s32 extra,s32 flags) {
+ /* strupr's result is overwritten by a second, unmodified strcpy before use
+  * in the real ROM, so the name reaching here keeps its original case. */
+ assert(!strcmp(name,"map01_b.KMP"));
+ assert((uintptr_t)vram==(slot==2?0x06008000u:slot==3?0x0600C000u:0x06000000u));
+ assert(!plane && !palette && extra==7 && flags==3);called=6;values[0]=slot;
+}
+void KmpRenderViewport(struct KmpViewport *view,s32 x,s32 y) {
+ /* Index by sizeof(struct KmpViewport) as the host compiles it, not the
+  * hardcoded 0xFC GBA (32-bit pointer) stride -- host pointers are 8 bytes,
+  * so the host struct size differs from the real ROM's. */
+ assert(view==gKmpViewports+values[0]);
+ assert(x==11<<16 && y==22<<16);bgPhase=1;
+}
 u8 gIwramBase[4];
 u8 gMapGenerationRootOffset[1];
 static char field_name_buffer[18];
@@ -48,6 +69,16 @@ int main(void) {
  args[0]=-1;
  assert(ScriptNativeHitFree(1,args,&out)==0x7FFF && called==5);
  assert(out==123456);
+ {
+  union MapArgument bg[6];s32 slot;
+  bg[1].integer=0;bg[2].integer=7;bg[3].string="map01_b";
+  bg[4].integer=11;bg[5].integer=22;
+  for(slot=1;slot<=5;slot++){
+   bgPhase=0;bg[0].integer=slot;
+   assert(ScriptNativeBackgroundSet(6,bg,&out)==0x7FFF);
+   assert(called==6 && values[0]==slot && bgPhase==1 && out==123456);
+  }
+ }
  return 0;
 }
 ''')

@@ -704,7 +704,7 @@ extern void ScriptNativeHitEffectQuery(void);
 extern void ScriptNativeHitEffectStart(void);
 extern void ScriptNativeHitFree(void);
 extern void ScriptNativeHitRect(void);
-extern void sub_08012264(void);
+extern void ScriptNativeBackgroundSet(void);
 extern void ScriptNativeFieldSet(void);
 extern void ScriptNativeFieldGet(void);
 extern void ScriptNativeSetRuntimePair(void);
@@ -834,7 +834,7 @@ AT("001AFEA4") const struct ScriptNativeCommand
     [39] = { .name = gScriptNativeName_HitSet, .handler = (void *)((u32)ScriptNativeHitEffectStart + 1) },
     [40] = { .name = gScriptNativeName_HitFree, .handler = (void *)((u32)ScriptNativeHitFree + 1) },
     [41] = { .name = gScriptNativeName_HitHitRect, .handler = (void *)((u32)ScriptNativeHitRect + 1) },
-    [42] = { .name = gScriptNativeName_BgSet, .handler = (void *)((u32)sub_08012264 + 1) },
+    [42] = { .name = gScriptNativeName_BgSet, .handler = (void *)((u32)ScriptNativeBackgroundSet + 1) },
     [43] = { .name = gScriptNativeName_FldSet, .handler = (void *)((u32)ScriptNativeFieldSet + 1) },
     [44] = { .name = gScriptNativeName_FldGet, .handler = (void *)((u32)ScriptNativeFieldGet + 1) },
     [45] = { .name = gScriptNativeName_CameraMode, .handler = (void *)((u32)ScriptNativeSetRuntimePair + 1) },
