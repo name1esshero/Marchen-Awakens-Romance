@@ -48,6 +48,19 @@ for the current C. Each must either match as ordinary C after a structural
 rewrite or return to an assembly implementation with its readable C kept under
 `src/nonmatching/`.
 
+Re-ran `tools/drop_register_hints.py --all` on 2026-09-14: it removed zero
+additional hints (all 22 forced-register and 92 TARGET_REGISTER pins report
+load-bearing). This confirms the count is stable, not that it is finished --
+per the remediation order below, the next step for each surviving hint is a
+structural C rewrite, not another mechanical pass. Manual attempts at two of
+the six forced-register files (`src/sound_fade_create.c`'s single r10 pin,
+`src/sound_idle_wait.c`'s three pins) via reordering declarations did not
+reproduce the original register allocation -- these look like the fully
+register-starved kind (§5a) rather than one fixable by variable ordering
+alone. `src/sprite_affine_matrix.c` carries the largest single concentration
+(48 of the 92 TARGET_REGISTER pins) and is the highest-value structural-rewrite
+target for a future pass.
+
 ## Remediation order
 
 1. Run `tools/drop_register_hints.py --all` first: it clears every hint the
