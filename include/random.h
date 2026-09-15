@@ -9,4 +9,6 @@ void RandomSeed(u32 seed);
 u32 RandomGetSeed(void);
 u32 Random(void);
 u32 RuntimeRandom(void);
+u16 *RandomPoolInitialize(void *buffer, const u16 *count);
+u16 RandomPoolTake(u16 *buffer, u16 *count);
 #endif

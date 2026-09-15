@@ -144,6 +144,18 @@
     "file": "src/kmp_loader.c"
   },
   {
+    "addr": "080036F0",
+    "size": 52,
+    "name": "RandomPoolInitialize",
+    "file": "src/random_pool.c"
+  },
+  {
+    "addr": "08003724",
+    "size": 76,
+    "name": "RandomPoolTake",
+    "file": "src/random_pool.c"
+  },
+  {
     "addr": "08003770",
     "size": 20,
     "name": "HeapFreeDefault",
@@ -4818,6 +4830,12 @@
     "file": "src/map_attributes.c"
   },
   {
+    "addr": "08072924",
+    "size": 116,
+    "name": "MapCollectAttributePositions",
+    "file": "src/map_attributes.c"
+  },
+  {
     "addr": "080729F4",
     "size": 68,
     "name": "MapGenerationClearCurrentFieldEntries",
@@ -4840,6 +4858,12 @@
     "size": 64,
     "name": "MapGenerationHasFreeEntryForField",
     "file": "src/mapping.c"
+  },
+  {
+    "addr": "08072B48",
+    "size": 188,
+    "name": "MapGenerationFindOverlappingEntry",
+    "file": "src/map_attributes.c"
   },
   {
     "addr": "08072C04",

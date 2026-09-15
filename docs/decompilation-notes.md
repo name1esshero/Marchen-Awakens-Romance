@@ -762,3 +762,30 @@ used); an `s32` parameter cast in place narrows with `asr` through a scratch
 register; and an `s32` parameter copied to a local and cast there narrows in
 place with `asr`. Only the third gives in-place *and* sign-correct, and it is
 what CreateFieldEventTask needs. See docs/AGBCC_CODEGEN.md.
+
+## Map queries and random pools (2026-09-15)
+
+Four assembly ranges (432 bytes) now compile as ordinary agbcc C:
+
+| Address | Bytes | Function | Recovered behavior |
+| --- | ---: | --- | --- |
+| 080036F0 | 52 | RandomPoolInitialize | Allocate or reuse storage and fill indices 0 through count minus one. |
+| 08003724 | 76 | RandomPoolTake | Draw without replacement, using the last live entry to fill the removed slot. |
+| 08072924 | 116 | MapCollectAttributePositions | Bounded, row-major exact-attribute search with boolean result. |
+| 08072B48 | 188 | MapGenerationFindOverlappingEntry | Inclusive rectangle overlap against active current-field entries. |
+
+The pool functions are called by the 20-entry shuffle at 08056CF8. Empty-pool
+draws return element zero without advancing the RNG or decrementing the count;
+the caller must still provide readable storage. This behavior is preserved,
+not replaced with an invented error sentinel.
+
+Following `AGBCC_CODEGEN.md`, candidates were compiled with the existing flags
+and compared with disassembly of `baserom.gba`. In the overlap routine, assigning
+the signed bound to a local before subtraction preserves the original value's
+register lifetime. No forced-register declarations, assembly fences, inline
+instructions, or compiler changes were introduced. Removed assembly includes
+the spurious internal `sub_0800376C` label, which was only the pool draw epilogue.
+
+Host coverage exercises allocation/reuse, draw uniqueness, first/last removal,
+empty pools, search capacity and scan ordering, out-of-map attributes, mirrored
+bounds, touching edges, field filtering, and entry-state narrowing.

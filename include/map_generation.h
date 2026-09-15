@@ -13,6 +13,12 @@ s32 MapGenerationGetCurrentFieldPosition(s32 *x, s32 *y);
 void MapGenerationAdvanceCurrentFieldEntries(s32 field);
 s32 MapGenerationHasFreeEntryForField(s32 field);
 
+/* The actor facing value used by 08072B48, distinct from MapProbeDirection. */
+#define MAP_ENTRY_FACING_MIRRORED 3
+struct HitBounds;
+s32 MapGenerationFindOverlappingEntry(s32 unused, const struct HitBounds *bounds,
+    s32 x, s32 y, s32 direction);
+
 struct MapGenerationVector {
     s16 value0;
     s16 value2;

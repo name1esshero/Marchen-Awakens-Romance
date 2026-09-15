@@ -7177,7 +7177,7 @@ _0800B902:
 	str r1, [sp, #16]
 	add r1, sp, #20
 	movs r3, #0
-	bl sub_08072924
+	bl MapCollectAttributePositions
 	ldr r0, [sp, #20]
 	lsls r0, r0, #3
 	str r0, [sp, #20]

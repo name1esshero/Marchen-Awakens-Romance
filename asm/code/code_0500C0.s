@@ -15203,7 +15203,7 @@ sub_08056CF8:
 	bl CpuCopy
 	movs r0, #0
 	adds r1, r4, #0
-	bl sub_080036F0
+	bl RandomPoolInitialize
 	adds r5, r0, #0
 	ldrh r0, [r4, #0]
 	cmp r0, #0
@@ -15219,7 +15219,7 @@ sub_08056D1C:
 _08056D22:
 	adds r0, r5, #0
 	adds r1, r6, #0
-	bl sub_08003724
+	bl RandomPoolTake
 	lsls r0, r0, #16
 	asrs r0, r0, #15
 	add r0, sp

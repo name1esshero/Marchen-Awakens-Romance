@@ -144,6 +144,22 @@ update-pending byte. The state fields at +26, +2E, +58, and +68 are consequently
 named `entryState`, `fieldId`, `countdown`, and `updatePending`. These records
 belong to procedural field generation and are not general scripted NPC events.
 
+## Recovered attribute search and entry overlap
+
+`MapCollectAttributePositions` (08072924) is now matching C. It scans a
+half-open rectangle in tile coordinates, row by row, for an exact attribute
+value and writes matching X/Y pairs into separate arrays. It stops at the
+caller's capacity and returns a boolean, not the number of matches. Attribute
+-1 can select out-of-map probes through `KmpReadAttribute`. The engine's caller
+must supply a positive capacity; the original writes before testing the limit.
+
+`MapGenerationFindOverlappingEntry` (08072B48) is also matching C. It tests
+active current-field entries against actor bounds, mirroring horizontal corner
+offsets when the supplied facing value is 3. Entry vectors contain X/Y plus
+width/height, and touching edges count as overlap. It returns a field ID, not an
+entry index. This recovered geometry can inform procedural-event previews;
+it does not establish a universal tile-trigger or NPC spawn format.
+
 ### Fixed a catalog filter that hid 143 of 193 extracted maps
 
 `Project.__init__` limited the editor's map catalog to KMP entries whose name

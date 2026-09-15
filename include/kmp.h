@@ -2,6 +2,8 @@
 #define KMP_H
 #include "gba/types.h"
 
+#define KMP_TILE_SIZE 8
+
 /* KMP header fields traced through 08002650, 08003104 and 08003178.
  * Offsets are relative to the KMP member. Unknown fields stay reserved. */
 struct KmpHeader
@@ -55,6 +57,9 @@ void KmpSetClip(struct KmpViewport *, u32 x, u32 y, u32 width, u32 height);
 void KmpResetClip(struct KmpViewport *);
 u16 *KmpAttributeAddress(struct KmpViewport *, u32, u32);
 s32 KmpReadAttribute(struct KmpViewport *, s32 pixelX, s32 pixelY);
+/** Collect matching tile coordinates within a half-open tile rectangle. */
+s32 MapCollectAttributePositions(struct KmpViewport *view, s32 *xs, s32 *ys,
+    s32 left, s32 top, s32 right, s32 bottom, s32 attribute, s32 capacity);
 struct HitBounds;
 s32 MapAttributeProbeDirection(s32 direction, s32 x, s32 y,
                                const struct HitBounds *bounds);

@@ -5521,83 +5521,8 @@ _08072914:
 _08072920:
 	.4byte 0x03003BC4  @ IWRAM+0x3BC4
 
-	.thumb_func
-	.thumb
-	.global sub_08072924
-sub_08072924:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r10
-	mov r6, r9
-	mov r5, r8
-	push {r5, r6, r7}
-	sub sp, #8
-	mov r8, r0
-	mov r9, r1
-	adds r7, r2, #0
-	str r3, [sp, #0]
-	ldr r3, [sp, #44]
-	ldr r0, [sp, #56]
-	mov r10, r0
-	movs r6, #0
-	ldr r5, [sp, #40]
-	b _08072978
-	.global _08072944
-_08072944:
-	ldr r4, [sp, #0]
-	cmp r4, r3
-	bge _08072976
-	.global _0807294A
-_0807294A:
-	lsls r1, r4, #3
-	mov r0, r8
-	lsls r2, r5, #3
-	str r3, [sp, #4]
-	.2byte 0xF790
-	.4byte 0x9B01FBD7
-	ldr r1, [sp, #52]
-	cmp r0, r1
-	bne _08072970
-	mov r0, r9
-	adds r0, #4
-	mov r9, r0
-	subs r0, #4
-	stmia r0!, {r4}
-	stmia r7!, {r5}
-	adds r6, #1
-	cmp r6, r10
-	bge _08072982
-	.global _08072970
-_08072970:
-	adds r4, #1
-	cmp r4, r3
-	blt _0807294A
-	.global _08072976
-_08072976:
-	adds r5, #1
-	.global _08072978
-_08072978:
-	ldr r1, [sp, #48]
-	cmp r5, r1
-	blt _08072944
-	cmp r6, #0
-	beq _08072986
-	.global _08072982
-_08072982:
-	movs r0, #1
-	b _08072988
-	.global _08072986
-_08072986:
-	movs r0, #0
-	.global _08072988
-_08072988:
-	add sp, #8
-	pop {r3, r4, r5}
-	mov r8, r3
-	mov r9, r4
-	mov r10, r5
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
+@ 072924..072998 is matching C; see src/decompiled.json.
+	.section .rom.00072998, "ax"
 
 	.thumb_func
 	.thumb
@@ -5639,7 +5564,7 @@ sub_080729D0:
 	mov r1, r10
 	adds r2, r7, #0
 	mov r3, r8
-	bl sub_08072924
+	bl MapCollectAttributePositions
 	cmp r0, #0
 	bne _080729E2
 	movs r0, #0
@@ -5670,116 +5595,8 @@ _080729E4:
 @ 072B08..072B48 is decompiled as MapGenerationHasFreeEntryForField().
 	.section .rom.00072B48, "ax"
 
-	.thumb_func
-	.thumb
-	.global sub_08072B48
-sub_08072B48:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r10
-	mov r6, r9
-	mov r5, r8
-	push {r5, r6, r7}
-	sub sp, #4
-	ldr r0, [sp, #36]
-	cmp r0, #3
-	bne _08072B76
-	movs r4, #4
-	ldrsh r0, [r1, r4]
-	subs r0, r2, r0
-	mov r9, r0
-	movs r4, #0
-	ldrsh r0, [r1, r4]
-	subs r0, r2, r0
-	b _08072B84
-	.global _08072B6A
-_08072B6A:
-	adds r0, r6, #0
-	.2byte 0xF7FF
-	.byte 0x58
-	.byte 0xFA
-	lsls r0, r0, #16
-	asrs r0, r0, #16
-	b _08072BF4
-	.global _08072B76
-_08072B76:
-	movs r4, #0
-	ldrsh r0, [r1, r4]
-	adds r0, r0, r2
-	mov r9, r0
-	movs r4, #4
-	ldrsh r0, [r1, r4]
-	adds r0, r0, r2
-	.global _08072B84
-_08072B84:
-	mov r8, r0
-	movs r2, #2
-	ldrsh r0, [r1, r2]
-	adds r0, r0, r3
-	str r0, [sp, #0]
-	movs r4, #6
-	ldrsh r0, [r1, r4]
-	adds r0, r0, r3
-	mov r10, r0
-	movs r6, #0
-	.global _08072B98
-_08072B98:
-	adds r0, r6, #0
-	.2byte 0xF7FF
-	.4byte 0x0400F9E1
-	cmp r0, #0
-	beq _08072BEC
-	adds r0, r6, #0
-	.2byte 0xF7FF
-	.4byte 0x1C04FA3B
-	lsls r4, r4, #16
-	asrs r4, r4, #16
-	.2byte 0xF794
-	.byte 0x6C
-	.byte 0xF8
-	cmp r4, r0
-	bne _08072BEC
-	adds r0, r6, #0
-	.2byte 0xF7FF
-	.4byte 0x1C07FA65
-	adds r0, r6, #0
-	.2byte 0xF7FF
-	.4byte 0x1C04FA79
-	adds r4, r7, r4
-	adds r0, r6, #0
-	.2byte 0xF7FF
-	.byte 0x68
-	.byte 0xFA
-	adds r5, r0, #0
-	adds r0, r6, #0
-	.2byte 0xF7FF
-	.byte 0x7C
-	.byte 0xFA
-	adds r0, r5, r0
-	cmp r9, r4
-	bgt _08072BEC
-	ldr r1, [sp, #0]
-	cmp r1, r0
-	bgt _08072BEC
-	cmp r7, r8
-	bgt _08072BEC
-	cmp r5, r10
-	ble _08072B6A
-	.global _08072BEC
-_08072BEC:
-	adds r6, #1
-	cmp r6, #3
-	ble _08072B98
-	movs r0, #0
-	.global _08072BF4
-_08072BF4:
-	add sp, #4
-	pop {r3, r4, r5}
-	mov r8, r3
-	mov r9, r4
-	mov r10, r5
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
+@ 072B48..072C04 is matching C; see src/decompiled.json.
+	.section .rom.00072C04, "ax"
 
 @ 072C04..072C14 is decompiled as GetBattleDefinition(); see src/decompiled.json
 

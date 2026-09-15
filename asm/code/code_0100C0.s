@@ -8243,7 +8243,7 @@ sub_0801504C:
 	adds r1, r6, #0
 	mov r2, r10
 	mov r3, r8
-	bl sub_08072B48
+	bl MapGenerationFindOverlappingEntry
 	adds r2, r0, #0
 	str r2, [sp, #44]
 	cmp r2, #0

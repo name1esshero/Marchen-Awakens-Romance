@@ -2,6 +2,7 @@
 #include "kmp.h"
 #include "map_generation.h"
 #include "hit_region.h"
+#include "game_state.h"
 
 #include "rom_section.h"
 
@@ -162,4 +163,89 @@ u32 MapAttributeGetConnectionMask(s32 tileX, s32 tileY)
         mask |= MAP_CONNECTION_WEST;
 
     return mask;
+}
+
+/**
+ * @brief Collect tiles with an exact attribute value, scanning rows then columns.
+ * @param view Viewport containing the attribute plane.
+ * @param xs,ys Receive matching tile X/Y coordinates in scan order.
+ * @param left,top First tile column and row to scan, inclusive.
+ * @param right,bottom Last tile column and row, exclusive.
+ * @param attribute Exact attribute to find, including -1 for out-of-map probes.
+ * @param capacity Positive capacity of each output array, as required by callers.
+ * @return One if any matches were written, otherwise zero; this is not a count.
+ */
+AT("00072924")
+s32 MapCollectAttributePositions(struct KmpViewport *view, s32 *xs, s32 *ys,
+    s32 left, s32 top, s32 right, s32 bottom, s32 attribute, s32 capacity)
+{
+    s32 x, y, count = 0;
+
+    for (y = top; y < bottom; y++)
+    {
+        for (x = left; x < right; x++)
+        {
+            if (KmpReadAttribute(view, x * KMP_TILE_SIZE, y * KMP_TILE_SIZE) == attribute)
+            {
+                *xs++ = x;
+                *ys++ = y;
+                count++;
+                if (count >= capacity)
+                    goto found;
+            }
+        }
+    }
+    if (count == 0)
+        goto notFound;
+found:
+    return 1;
+notFound:
+    return 0;
+}
+
+/**
+ * @brief Find the first active current-field entry intersecting actor bounds.
+ * @param unused Reserved argument; the original routine ignores it.
+ * @param bounds Actor corner offsets relative to its position.
+ * @param x Actor X in pixels.
+ * @param y Actor Y in pixels.
+ * @param direction Facing value; value 3 mirrors the horizontal bounds.
+ * @return Matching field ID or zero. Touching rectangle edges count as a hit.
+ * Entry vectors contain X, Y, width and height; they are not corner offsets.
+ */
+AT("00072B48")
+s32 MapGenerationFindOverlappingEntry(s32 unused, const struct HitBounds *bounds,
+    s32 x, s32 y, s32 direction)
+{
+    s32 left, right, top, bottom;
+    s32 i, field, entryX, entryRight, entryY, entryBottom;
+
+    if (direction == MAP_ENTRY_FACING_MIRRORED)
+    {
+        left = x - bounds->right;
+        right = bounds->left;
+        right = x - right;
+    }
+    else
+    {
+        left = x + bounds->left;
+        right = bounds->right + x;
+    }
+    top = bounds->top + y;
+    bottom = bounds->bottom + y;
+    for (i = 0; i < MAP_GENERATION_ENTRY_COUNT; i++)
+    {
+        if ((u16)MapGenerationGetEntryState(i) == 0)
+            continue;
+        field = (s16)MapGenerationGetFieldId(i);
+        if (field != GameStateGetField4256())
+            continue;
+        entryX = MapGenerationGetVectorValue0(i);
+        entryRight = entryX + MapGenerationGetVectorValue4(i);
+        entryY = MapGenerationGetVectorValue2(i);
+        entryBottom = entryY + MapGenerationGetVectorValue6(i);
+        if (left <= entryRight && top <= entryBottom && entryX <= right && entryY <= bottom)
+            return (s16)MapGenerationGetFieldId(i);
+    }
+    return 0;
 }
