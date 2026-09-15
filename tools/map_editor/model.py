@@ -120,9 +120,13 @@ def initial_sprite_placements(calls):
 class Project:
     def __init__(self,root=ROOT):
         self.root=Path(root)
-        context_path=self.root/'maps/runtime_scenes.json'
-        scene_maps={layer['map'] for scene in read(context_path)['scenes'] for layer in scene['layers']} if context_path.exists() else set()
-        self.members={e['name']:e for e in read(self.root/'maps/nfp/manifest.json') if (e['name'].startswith('MAP') or e['name'] in scene_maps) and e['name'].endswith('.KMP')}
+        # Every extracted KMP is offered; entry()/catalog() already sort any
+        # map that fails to decode into `unsupported` rather than crashing.
+        # This used to be restricted to names starting with "MAP" (plus a
+        # runtime_scenes.json allowlist), which hid 143 of 193 extracted maps
+        # (AD0/AD1/AD3/AD4 areas, NET, OP, SP, ST, T, ...) that decode fine
+        # through the exact same path already trusted for the visible ones.
+        self.members={e['name']:e for e in read(self.root/'maps/nfp/manifest.json') if e['name'].endswith('.KMP')}
         self.assets={e['archive_name']:e for e in read(self.root/'assets.json') if e.get('archive_name')}
         self.scripts={e['name']:e for e in read(self.root/'scripts/nfp/manifest.json')}
         resolution_path=self.root/'maps/tile_resolutions.json'

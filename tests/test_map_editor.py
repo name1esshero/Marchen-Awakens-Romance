@@ -63,7 +63,12 @@ class MapCodecTests(unittest.TestCase):
 
     def test_all_maps_and_traced_scenes_round_trip(self):
         project=Project(ROOT);catalog=project.catalog()
-        self.assertGreaterEqual(len(catalog['maps']),49);self.assertFalse(catalog['unsupported'])
+        # Every extracted KMP is attempted. EFCSTART.KMP is a known, genuine
+        # exception: its header names a "TEST_M00.KCG" tile source that was
+        # never extracted as an asset, so it stays unsupported rather than
+        # being force-decoded against the wrong tiles.
+        self.assertGreaterEqual(len(catalog['maps']),192)
+        self.assertEqual(catalog['unsupported'],{'EFCSTART.KMP':'No verified editable 4bpp tile source'})
         for name in ('MAP27_A.KMP','PW_BG01.KMP','PW_BOX.KMP'):
             data=project.load(name)
             self.assertFalse(data['unresolved'])

@@ -143,3 +143,20 @@ countdown reaching zero clears the entry state; other values set the entry's
 update-pending byte. The state fields at +26, +2E, +58, and +68 are consequently
 named `entryState`, `fieldId`, `countdown`, and `updatePending`. These records
 belong to procedural field generation and are not general scripted NPC events.
+
+### Fixed a catalog filter that hid 143 of 193 extracted maps
+
+`Project.__init__` limited the editor's map catalog to KMP entries whose name
+started with `MAP`, plus a small allowlist proven by `maps/runtime_scenes.json`
+evidence. That heuristic dates back to the editor's first commit and was never
+about whether a map actually decodes — it just reflected which maps had been
+checked by hand at the time. Every excluded map (the `AD0`/`AD1`/`AD3`/`AD4`
+area screens, `NET`, `OP`, `SP`, `ST`, `T`, and others, 143 files total) decodes
+correctly through the exact same `entry()`/`map_document()` path already
+trusted for the visible 49, so the filter is gone: the catalog now offers every
+`.KMP` manifest entry and lets the existing per-map `try`/`except` in
+`catalog()` sort real failures into `unsupported`. Only one map, `EFCSTART.KMP`,
+lands there: its header names a `TEST_M00.KCG` tile source that was never
+extracted as an asset, so it is left unsupported rather than force-decoded
+against the wrong tiles. `tests/test_map_editor.py` now asserts on this
+specific, documented exception instead of requiring zero unsupported maps.
