@@ -22,6 +22,9 @@ extern s32 strcmp(const char *left,const char *right);
 extern u32 strlen(const char *text);
 extern char *strcpy(char *destination,const char *source);
 extern char *strncpy(char *destination,const char *source,u32 length);
+/** Native script command: absolute value. INT_MIN is preserved unchanged
+ * (0x80000000 has no positive representation), matching the original.
+ * @return Always 1. */
 AT("000800FC") s32 ScriptNativeAbs(u32 count,const s32 *args,s32 *result)
 {
  s32 value=args[0];
@@ -30,6 +33,10 @@ AT("000800FC") s32 ScriptNativeAbs(u32 count,const s32 *args,s32 *result)
  return 1;
 }
 AT("000800FC") const u8 ScriptNativeAbsTail[2]={0,0};
+/** Native script command: decode the first character of a string in the
+ * engine's private double-byte encoding (lead bytes 128-159 and 224-255
+ * consume a second byte). NULL is treated as the empty string.
+ * @return Always 1. */
 AT("00080110") s32 ScriptNativeCharacterCode(u32 count,const u8 **args,u32 *result)
 {
  const u8 *text=args[0];
@@ -40,6 +47,9 @@ AT("00080110") s32 ScriptNativeCharacterCode(u32 count,const u8 **args,u32 *resu
  else *result=first;
  return 1;
 }
+/** Native script command: encode a character code back into the engine's
+ * private double-byte encoding as a heap-allocated string.
+ * @return 1 on success, -1 if the allocation fails. */
 AT("00080140") s32 ScriptNativeCharacterString(u32 count,const u32 *args,u8 **result)
 {
  u8 *text=HeapAlloc(VM->state->heap,4);
@@ -52,6 +62,9 @@ AT("00080140") s32 ScriptNativeCharacterString(u32 count,const u32 *args,u8 **re
  return 1;
 }
 AT("00080140") const u8 ScriptNativeCharacterStringTail[2]={0,0};
+/** Native script command: maximum of the given arguments. Reads args[0]
+ * even when count is 0, matching the original.
+ * @return Always 1. */
 AT("00080188") s32 ScriptNativeMax(u32 count,const s32 *args,s32 *result)
 {
  u32 i; s32 value=args[0];
@@ -59,6 +72,9 @@ AT("00080188") s32 ScriptNativeMax(u32 count,const s32 *args,s32 *result)
  *result=value;return 1;
 }
 AT("00080188") const u8 ScriptNativeMaxTail[2]={0,0};
+/** Native script command: minimum of the given arguments. Reads args[0]
+ * even when count is 0, matching the original.
+ * @return Always 1. */
 AT("000801B4") s32 ScriptNativeMin(u32 count,const s32 *args,s32 *result)
 {
  u32 i; s32 value=args[0];
@@ -84,6 +100,9 @@ AT("00080204") s32 ScriptNativeSeedRandom(u32 count,const u32 *args,u32 *result)
 }
 AT("00080204") const u8 ScriptNativeSeedRandomTail[2]={0,0};
 extern s32 siprintf(char *,const char *,...);
+/** Native script command: format an integer as a heap-allocated decimal
+ * string.
+ * @return 1 on success, -1 if the allocation fails. */
 AT("00080214") s32 ScriptNativeIntegerString(u32 count,const s32 *args,char **result)
 {
  char *text=HeapAlloc(VM->state->heap,16);
@@ -94,6 +113,9 @@ AT("00080214") s32 ScriptNativeIntegerString(u32 count,const s32 *args,char **re
 }
 AT("00080214") const u8 ScriptNativeIntegerStringTail[2]={0,0};
 
+/** Native script command: parse a decimal integer from a string. NULL is
+ * treated as the empty string.
+ * @return Always 1. */
 AT("00080250") s32 ScriptNativeParseInteger(u32 count,const char **args,s32 *result)
 {
  const char *text=args[0];
@@ -101,6 +123,9 @@ AT("00080250") s32 ScriptNativeParseInteger(u32 count,const char **args,s32 *res
  *result=ParseDecimalInteger(text);
  return 1;
 }
+/** Native script command: compare two strings, normalizing the result to
+ * -1/0/1. NULL arguments are treated as the empty string.
+ * @return Always 1. */
 AT("00080270") s32 ScriptNativeCompareStrings(u32 count,const char **args,s32 *result)
 {
  const char *left=args[0];
@@ -116,6 +141,9 @@ AT("00080270") s32 ScriptNativeCompareStrings(u32 count,const char **args,s32 *r
  return 1;
 }
 
+/** Native script command: string length. NULL is treated as the empty
+ * string.
+ * @return Always 1. */
 AT("000802A8") s32 ScriptNativeStringLength(u32 count,const char **args,u32 *result)
 {
  const char *text=args[0];
@@ -126,6 +154,9 @@ AT("000802A8") s32 ScriptNativeStringLength(u32 count,const char **args,u32 *res
 
 struct ScriptSubstringArgs { const char *text; u32 start; u32 length; };
 
+/** Native script command: LEFT$-style substring, clamped to the string's
+ * actual length.
+ * @return 1 on success, -1 if the allocation fails. */
 AT("000802C8") s32 ScriptNativeLeft(u32 count,const struct ScriptSubstringArgs *args,char **result)
 {
  const char *text=args->text;
@@ -144,6 +175,9 @@ AT("000802C8") s32 ScriptNativeLeft(u32 count,const struct ScriptSubstringArgs *
 }
 AT("000802C8") const u8 ScriptNativeLeftTail[2]={0,0};
 
+/** Native script command: RIGHT$-style substring, clamped to the string's
+ * actual length.
+ * @return 1 on success, -1 if the allocation fails. */
 AT("00080320") s32 ScriptNativeRight(u32 count,const struct ScriptSubstringArgs *args,char **result)
 {
  const char *text=args->text;
@@ -162,6 +196,9 @@ AT("00080320") s32 ScriptNativeRight(u32 count,const struct ScriptSubstringArgs 
 }
 AT("00080320") const u8 ScriptNativeRightTail[2]={0,0};
 
+/** Native script command: MID$-style substring by start and length, both
+ * clamped to the string's actual length.
+ * @return 1 on success, -1 if the allocation fails. */
 AT("00080380") s32 ScriptNativeSubstring(u32 count,const struct ScriptSubstringArgs *args,char **result)
 {
  const char *text=args->text;
