@@ -43,6 +43,12 @@
  * The logic below is confirmed correct against every branch, literal, and
  * call target in the disassembly; only its generated instruction order and
  * register choice remain unmatched.
+ *
+ * Also checked against old_agbcc (the separate compiler snapshot
+ * src/sound_m4a.c and src/sound_cgb_update.c build with, since this game's
+ * developer is known to have mixed compiler snapshots across subsystems):
+ * identical mismatch. This is a cross-snapshot agbcc allocator behavior, not
+ * a wrong-compiler issue for this specific function.
  */
 
 #include "gba/types.h"

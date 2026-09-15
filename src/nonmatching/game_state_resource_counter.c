@@ -25,6 +25,10 @@
  * sub_08004DA8 in src/nonmatching/runtime_link_status.c and for the
  * `register`-pinned functions audited in docs/PRET_AUDIT.md. Per project
  * direction, no register-forcing hint is added here to paper over it.
+ *
+ * Also checked against old_agbcc (the snapshot src/sound_m4a.c and
+ * src/sound_cgb_update.c build with): identical mismatch. Not a
+ * wrong-compiler-snapshot issue for this function.
  */
 
 #include "gba/types.h"
