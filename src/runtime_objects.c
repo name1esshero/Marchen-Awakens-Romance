@@ -6,20 +6,35 @@ extern u8 *gRuntimeObjectTable[];
 #define OBJECT_TABLE gRuntimeObjectTable
 #define RUNTIME_OBJECT(group,slot) OBJECT_TABLE[(group)*4+(slot)]
 
+/** @return The secondary runtime's +0xEA0 pointer field. See
+ * RuntimeSetPointerEA0(). */
 AT("0000A0E8") void *RuntimeGetPointerEA0(void) { return *(void **)(gSecondaryRuntime+0xEA0); }
+/** Set the secondary runtime's +0xEA0 pointer field. */
 AT("0000A0FC") void RuntimeSetPointerEA0(void *v) { *(void **)(gSecondaryRuntime+0xEA0)=v; }
+/** Set the secondary runtime's three adjacent byte fields at +0xE48,
+ * +0xE49, and +0xE4A in one call. See the individual per-field
+ * accessors below. */
 AT("0000A110") void RuntimeSetFieldsE48ToE4A(s32 a,s32 b,s32 c)
 {
  gSecondaryRuntime[0xE48]=a;
  gSecondaryRuntime[0xE49]=b;
  gSecondaryRuntime[0xE4A]=c;
 }
+/** Set the secondary runtime's +0xE48 byte field. */
 AT("0000A140") void RuntimeSetFieldE48(s32 v) { gSecondaryRuntime[0xE48]=v; }
+/** @return The secondary runtime's +0xE48 byte field, sign-extended. */
 AT("0000A154") s32 RuntimeGetFieldE48(void) { return *(s8 *)(gSecondaryRuntime+0xE48); }
+/** Set the secondary runtime's +0xE49 byte field. */
 AT("0000A16C") void RuntimeSetFieldE49(s32 v) { gSecondaryRuntime[0xE49]=v; }
+/** @return The secondary runtime's +0xE49 byte field, sign-extended. */
 AT("0000A180") s32 RuntimeGetFieldE49(void) { return *(s8 *)(gSecondaryRuntime+0xE49); }
+/** Set the secondary runtime's +0xE4A byte field. */
 AT("0000A198") void RuntimeSetFieldE4A(s32 v) { gSecondaryRuntime[0xE4A]=v; }
+/** @return The secondary runtime's +0xE4A byte field, sign-extended. */
 AT("0000A1AC") s32 RuntimeGetFieldE4A(void) { return *(s8 *)(gSecondaryRuntime+0xE4A); }
+/** @return One of an actor's per-part records (168-byte stride, based at
+ * +0x23C within the actor's 1672-byte block). See RuntimeGetActorPartRecord()
+ * for the other, 104-byte-stride table on the same actor. */
 AT("0000A1C4") void *RuntimeGetActorRecord(u32 actor,u32 part)
 {
  u8 **root=&gSecondaryRuntime;
@@ -32,7 +47,7 @@ AT("0000A1C4") void *RuntimeGetActorRecord(u32 actor,u32 part)
  partOffset+=0x23C;
  return base+partOffset;
 }
-/* The same actor record's other per-part table: stride 104 rather than 168,
+/** The same actor record's other per-part table: stride 104 rather than 168,
  * based at +0x4DC. Callers treat each entry as a party slot. */
 AT("000083B8") void *RuntimeGetActorPartRecord(u32 actor,u32 part)
 {
@@ -68,6 +83,8 @@ SET_FLAG("0000A318",RuntimeObjectSetFlag04,0x04)
 SET_FLAG("0000A334",RuntimeObjectSetFlag05,0x05)
 SET_FLAG("0000A350",RuntimeObjectSetFlag0A,0x0A)
 SET_FLAG("0000A36C",RuntimeObjectSetFlag09,0x09)
+/** @return A runtime object's +0x48 s16 field. See
+ * RuntimeObjectSetField48(). */
 AT("0000A388") s32 RuntimeObjectGetField48(u32 group,u32 slot)
 {
  u8 **table=OBJECT_TABLE;
@@ -81,12 +98,24 @@ AT("0000A388") s32 RuntimeObjectGetField48(u32 group,u32 slot)
 #define GET_U32(address,name,field) AT(address) u32 name(u32 group,u32 slot) { u8 **table=OBJECT_TABLE; return *(u32 *)(table[group*4+slot]+(field)); }
 
 SET_S16("0000A3A0",RuntimeObjectSetField48,0x48)
+/** Set a runtime object's +0x18 field from an integer, storing it as a
+ * 16.16 fixed-point value (shifted left 16 bits). Paired with
+ * RuntimeObjectGetWord18()'s raw fixed-point reader. */
 AT("0000A424") void RuntimeObjectSetFixed18(u32 group,u32 slot,s32 value) { OBJECT_PTR(); *(u32 *)(object+0x18)=value<<16; }
 GET_S16("0000A43C",RuntimeObjectGetField1A,0x1A)
+/** Set a runtime object's +0x1C field from an integer, storing it as a
+ * 16.16 fixed-point value (shifted left 16 bits). Paired with
+ * RuntimeObjectGetWord1C()'s raw fixed-point reader. */
 AT("0000A454") void RuntimeObjectSetFixed1C(u32 group,u32 slot,s32 value) { OBJECT_PTR(); *(u32 *)(object+0x1C)=value<<16; }
 GET_S16("0000A46C",RuntimeObjectGetField1E,0x1E)
+/** Set a runtime object's +0x20 field from an integer, storing it as a
+ * 16.16 fixed-point value (shifted left 16 bits). Paired with
+ * RuntimeObjectGetWord20()'s raw fixed-point reader. */
 AT("0000A4F0") void RuntimeObjectSetFixed20(u32 group,u32 slot,s32 value) { OBJECT_PTR(); *(u32 *)(object+0x20)=value<<16; }
 GET_S16("0000A508",RuntimeObjectGetField22,0x22)
+/** Set a runtime object's +0x24 field from an integer, storing it as a
+ * 16.16 fixed-point value (shifted left 16 bits). Paired with
+ * RuntimeObjectGetWord24()'s raw fixed-point reader. */
 AT("0000A520") void RuntimeObjectSetFixed24(u32 group,u32 slot,s32 value) { OBJECT_PTR(); *(u32 *)(object+0x24)=value<<16; }
 GET_S16("0000A538",RuntimeObjectGetField26,0x26)
 SET_U32("0000A5B4",RuntimeObjectSetWord18,0x18)
@@ -97,6 +126,7 @@ SET_U32("0000A668",RuntimeObjectSetWord20,0x20)
 GET_U32("0000A67C",RuntimeObjectGetWord20,0x20)
 SET_U32("0000A690",RuntimeObjectSetWord24,0x24)
 GET_U32("0000A6A4",RuntimeObjectGetWord24,0x24)
+/** Set a runtime object's +0x36 byte field. See RuntimeObjectGetField36(). */
 AT("0000A6B8") void RuntimeObjectSetField36(u32 group,u32 slot,s32 value) { OBJECT_PTR(); *(s8 *)(object+0x36)=value; }
 GET_S8("0000A6D0",RuntimeObjectGetField36,0x36)
 GET_S16("0000A75C",RuntimeObjectGetField3A,0x3A)
@@ -108,6 +138,7 @@ SET_S16("0000A7CC",RuntimeObjectSetField3E,0x3E)
 GET_S16("0000A7E0",RuntimeObjectGetField40,0x40)
 SET_S16("0000A7F8",RuntimeObjectSetField40,0x40)
 GET_S8("0000A810",RuntimeObjectGetField39,0x39)
+/** Set a runtime object's +0x39 byte field. See RuntimeObjectGetField39(). */
 AT("0000A82C") void RuntimeObjectSetField39(u32 group,u32 slot,s32 value) { OBJECT_PTR(); *(s8 *)(object+0x39)=value; }
 SET_S16("000097D0",RuntimeObjectSetField4A,0x4A)
 GET_S16("000097E8",RuntimeObjectGetField4A,0x4A)
