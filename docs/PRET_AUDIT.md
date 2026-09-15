@@ -159,3 +159,23 @@ with this session's earlier finding that the remaining hard-error surface is
 disproportionately made of near-misses, not functions nobody has looked at
 yet. Anyone continuing this work should expect a similar hit rate: several
 close-but-not-exact attempts per clean match.
+
+Same session, continued: landed two more functions as clean, byte-exact
+matches (`RuntimeSetFlagC0` at 0x08009728, `GameStateSelectDeckPointer` at
+0x0800696C -- the latter needed the two-local-variable idiom documented in
+"Method notes" in `docs/AGBCC_CODEGEN.md` to avoid a `.set`-symbol folding
+false match), then reconstructed a fourth as `src/nonmatching/`:
+
+- `sub_08070EA0` -> `GeneratedMapFindFreeRuntimeRoom`
+  (`src/nonmatching/generated_map_free_runtime_room.c`). A sibling of the
+  already-matching `GeneratedMapFindRuntimeRoom` (0x08070EEC): mode 0
+  returns the same room-array base pointer, mode -1 searches the same
+  64-entry array for the first *inactive* room (a free slot to allocate
+  into) instead of an active one matching an index. Logically confirmed
+  correct; the per-iteration active-byte check has an extra register copy
+  in the ROM (`adds r1,r5,#0` before combining with the base) that no C
+  shape reproduced without also changing the addition's grouping or the
+  loop's register assignment (r4/r5 swapped from the ROM's in every
+  variant tried) -- see the function's own header comment for the full list
+  of shapes tried. Same allocator-not-steerable family as the OR/ADD
+  register ties already documented, not a logic error.
