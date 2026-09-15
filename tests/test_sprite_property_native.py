@@ -7,7 +7,7 @@ class SpritePropertyNativeTests(unittest.TestCase):
   with tempfile.TemporaryDirectory() as temp:
    p=Path(temp);combined=(ROOT/'src/script_sprite.c').read_text()
    source='#include "script_sprite.h"\n'+combined[
-       combined.index('/* Native sprite properties'):combined.index('/* SprInit worker')]
+       combined.index('/* Native sprite property adapters'):combined.index('/* SprInit worker task')]
    (p/'worker.c').write_text(source)
    (p/'test.c').write_text(r'''
 #include <assert.h>

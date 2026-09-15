@@ -8,7 +8,7 @@ class SpriteInitTaskTests(unittest.TestCase):
    p=Path(temp)
    combined=(ROOT/'src/script_sprite.c').read_text()
    source='#include "script_sprite.h"\n'+combined[
-       combined.index('/* SprInit worker'):combined.index('/* Deferred script-sprite reset workers')]
+       combined.index('/* SprInit worker task'):combined.index('/* Deferred script-sprite reset workers')]
    (p/'worker.c').write_text(source)
    (p/'test.c').write_text(r'''
 #include <assert.h>

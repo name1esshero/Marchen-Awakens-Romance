@@ -12,6 +12,7 @@ extern void CpuFill(void *destination, u32 size, u32 value);
 extern void *sub_08070EA0(s32 index);
 extern s32 sub_08080BC8(s32 arg0, s32 arg1, void *handler);
 
+/** Zero-argument entry point that forwards to the shared init routine. */
 AT("00001630")
 void InitializeMainRuntime(void)
 {
@@ -19,6 +20,7 @@ void InitializeMainRuntime(void)
 }
 AT("00001630") const u8 InitializeMainRuntimeTail[2] = {0};
 
+/** Clear both status bytes at runtime offsets 0xEE8 and 0xEE9. */
 AT("00007678")
 void ClearRuntimeStatusBytes(void)
 {
@@ -27,6 +29,8 @@ void ClearRuntimeStatusBytes(void)
 }
 AT("00007678") const u8 ClearRuntimeStatusBytesTail[2] = {0};
 
+/** Zero a fixed 32-byte block. Named by its literal size; no caller-specific
+ * meaning has been recovered. */
 AT("00053294")
 void Clear32ByteBlock(void *destination)
 {
@@ -34,6 +38,7 @@ void Clear32ByteBlock(void *destination)
 }
 AT("00053294") const u8 Clear32ByteBlockTail[2] = {0};
 
+/** Zero the 1536-byte battle runtime buffer returned by sub_08070EA0(0). */
 AT("00070730")
 void ClearBattleRuntimeBuffer(void)
 {
@@ -41,12 +46,16 @@ void ClearBattleRuntimeBuffer(void)
 }
 AT("00070730") const u8 ClearBattleRuntimeBufferTail[2] = {0};
 
+/** Forward two arguments to whatever handler is currently registered at the
+ * fixed IWRAM slot 0x03005D20, calling through it in register r2 per that
+ * handler's calling convention. */
 AT("00079D94")
 void CallRuntimeHandler(s32 arg0, s32 arg1)
 {
     sub_08080BC8(arg0, arg1, *(void **)0x03005D20);
 }
 
+/** Zero an 8-byte, two-pointer record and set only its first slot. */
 AT("0007F044")
 void InitializePointerRecord(void **record, void *value)
 {
@@ -63,6 +72,10 @@ extern void *GetBattleDefinition(s32 index);
 #define BATTLE_RUNTIME_ARENA_INDEX 0x648
 #define BATTLE_RUNTIME_ARENA_LAYOUT 0x658
 
+/** Select a battle arena: store its index and resolved layout record into
+ * the buffer returned by GameStateGetBuffer38C0().
+ * @param buffer That runtime buffer.
+ * @param arenaIndex Arena index to look up and record. */
 AT("00070214")
 void BattleRuntimeSetArena(void *buffer, u32 arenaIndex)
 {

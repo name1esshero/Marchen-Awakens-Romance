@@ -7,7 +7,7 @@ class ScriptSpriteTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             p=Path(temp)
             combined=(ROOT/'src/script_sprite.c').read_text()
-            (p/'worker.c').write_text(combined[:combined.index('/* Native sprite properties')])
+            (p/'worker.c').write_text(combined[:combined.index('/* Native sprite property adapters')])
             (p/'test.c').write_text(r'''
 #include "script_sprite.h"
 #include <assert.h>

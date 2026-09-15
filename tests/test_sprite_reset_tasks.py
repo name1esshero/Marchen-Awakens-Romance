@@ -6,7 +6,7 @@ class SpriteResetTests(unittest.TestCase):
  def test_reset_lifecycle(self):
   with tempfile.TemporaryDirectory() as temp:
    p=Path(temp);combined=(ROOT/'src/script_sprite.c').read_text()
-   source='#include "script_sprite.h"\n'+combined[combined.index('/* Deferred script-sprite reset workers'):]
+   source='#include "script_sprite.h"\n'+combined[combined.index('/* Deferred script-sprite reset workers and their supporting declarations'):]
    (p/'worker.c').write_text(source)
    (p/'test.c').write_text(r'''
 #include <assert.h>

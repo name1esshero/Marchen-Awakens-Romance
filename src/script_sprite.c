@@ -1,13 +1,20 @@
-/* 08010C0C: replace an active script sprite's NCD selection.
- * Preserve the original unchecked 16-byte name buffer and s16 truncation.
- * Inactive sprites are untouched; resource lookup failure is stored as -1.
- */
 #include "script_sprite.h"
 #include "runtime_misc.h"
 #include "rom_section.h"
 extern char *strcpy(char *,const char *);
 extern char *strupr(char *);
 extern s32 SpriteResourceFindGroup(s32,const char *);
+/**
+ * @brief Replace an active script sprite's NCD selection.
+ * Preserves the original unchecked 16-byte name buffer and s16 truncation.
+ * Inactive sprites are untouched; a resource lookup failure is stored as -1.
+ * @param id Script sprite record index.
+ * @param container NCD container to select from.
+ * @param name Resource group name, uppercased before lookup.
+ * @param animation New animation index.
+ * @param frame New frame index.
+ * @return Nothing.
+ */
 AT("00010C0C") void ScriptSpriteSelect(s32 id,s32 container,const char *name,s32 animation,s32 frame)
 {
  char resource[16];
@@ -21,33 +28,43 @@ AT("00010C0C") void ScriptSpriteSelect(s32 id,s32 container,const char *name,s32
  }
 }
 
+/** SprChg script command: forward its five VM arguments to
+ * ScriptSpriteSelect(). @return Always 1. */
 AT("00011EF4") s32 ScriptNativeSpriteChange(u32 count,const union SpriteArgument *args,s32 *result)
 {
  ScriptSpriteSelect(args[0].integer,args[1].integer,args[2].string,args[3].integer,args[4].integer);
  return 1;
 }
 
-/* SprInit (08011ECC): schedule sprite creation through 08010AEC.
- * The fifth script value is forwarded unchanged; it is not a start-frame
- * selector. The creation task initializes the animation at frame zero. */
 extern void sub_08010AEC(s32,s32,const char *,s32,s32,s32,s32);
+/**
+ * @brief SprInit script command: schedule sprite creation through
+ * sub_08010AEC(). The fifth script value is forwarded unchanged; it is not
+ * a start-frame selector. The creation task initializes the animation at
+ * frame zero.
+ * @return Always 1.
+ */
 AT("00011ECC") s32 ScriptNativeSpriteInit(u32 count,const union SpriteArgument *args,s32 *result)
 {
  sub_08010AEC(args[0].integer,args[1].integer,args[2].string,args[3].integer,args[4].integer,1,0);
  return 1;
 }
 
-/* Native sprite properties. SprSet fixes the task parameters to 0,0,value,1,0.
- * Both adapters return 1 regardless of the delegated helper's return value.
- * SprGet passes through the VM result pointer. SprSet leaves it untouched. */
+/* Native sprite property adapters: SprSet and SprGet script commands. */
 extern s32 sub_08010E44(s32,s32,s32,s32,s32,s32,s32);
 extern s32 sub_08011174(s32,s32,s32 *,s32);
+/** SprSet script command: fix the task parameters to 0,0,value,1,0 and
+ * delegate to sub_08010E44(). Leaves the VM result pointer untouched.
+ * @return Always 1, regardless of the delegated helper's return value. */
 AT("00011F40") s32 ScriptNativeSpriteSet(u32 count,const s32 *args,s32 *result)
 {
  sub_08010E44(args[0],args[1],0,0,args[2],1,0);
  return 1;
 }
 AT("00011F40") const u8 ScriptNativeSpriteSetTail[2]={0,0};
+/** SprGet script command: pass the VM result pointer through to
+ * sub_08011174(). @return Always 1, regardless of the delegated helper's
+ * return value. */
 AT("00011F68") s32 ScriptNativeSpriteGet(u32 count,const s32 *args,s32 *result)
 {
  sub_08011174(args[0],args[1],result,0);
@@ -55,10 +72,7 @@ AT("00011F68") s32 ScriptNativeSpriteGet(u32 count,const s32 *args,s32 *result)
 }
 AT("00011F68") const u8 ScriptNativeSpriteGetTail[2]={0,0};
 
-/* SprInit worker, 08010B6C..08010C0C. State 0 schedules preparation;
- * state 16 waits on payload +44. Only then are the sprite resources activated.
- * Auxiliary block semantics and flag bits remain unnamed where unverified.
- * Preserve the original unchecked allocation and failure behavior. */
+/* SprInit worker task and its supporting declarations. */
 #include "runtime_misc.h"
 struct SpriteFlagByte {u8 enabled:1,rest:7;};
 struct SpriteInitTask {
@@ -72,6 +86,15 @@ extern void CpuFill(void *,u32,u32);
 extern s32 SpriteResourceFindGroup(s32,const char *);
 extern void ScriptCompletePendingTasks(u32);
 extern void FinishTask(void *);
+/**
+ * @brief SprInit worker task (08010B6C..08010C0C). State 0 schedules
+ * preparation; state 16 waits on payload +44, then activates the sprite's
+ * resources. Auxiliary block semantics and flag bits remain unnamed where
+ * unverified. Preserves the original unchecked allocation and failure
+ * behavior.
+ * @param task This task's own record.
+ * @return Nothing.
+ */
 AT("00010B6C") void ScriptSpriteInitTask(struct SpriteInitTask *task)
 {
  s32 *payload=&task->id;
@@ -95,10 +118,7 @@ AT("00010B6C") void ScriptSpriteInitTask(struct SpriteInitTask *task)
 }
 AT("00010B6C") const u8 ScriptSpriteInitTaskTail[2]={0,0};
 
-/* Deferred script-sprite reset workers. Active records wait while +0x1A
- * is nonzero. Auxiliary teardown precedes clearing the 40-byte record.
- * Fields +0x14/+0x16 reset to 256; their exact semantics remain unverified.
- * The all-sprites worker visits 32 slots and leaves inactive slots untouched. */
+/* Deferred script-sprite reset workers and their supporting declarations. */
 #include "runtime_misc.h"
 #include "runtime_leaf.h"
 struct ResetFields {u8 before[20];s16 value20,value22;};
@@ -106,6 +126,14 @@ extern void HeapFree(void *,void *);
 extern void CpuFill(void *,u32,u32);
 extern void ScriptCompletePendingTasks(u32);
 extern void FinishTask(void *);
+/**
+ * @brief Deferred script-sprite reset worker for a single sprite. Waits
+ * while the sprite's +0x1A field is nonzero; otherwise tears down its
+ * auxiliary block (if any) and clears its 40-byte record. Fields +0x14/+0x16
+ * reset to 256; their exact semantics remain unverified.
+ * @param task This task's own record; +32 holds the sprite index.
+ * @return Nothing.
+ */
 AT("000109C4") void ScriptSpriteResetTask(void *task)
 {
  struct ScriptSprite *sprite=GameStateGetRecord0B90(*(s32 *)((u8 *)task+32));
@@ -126,6 +154,14 @@ AT("000109C4") void ScriptSpriteResetTask(void *task)
 }
 AT("000109C4") const u8 ScriptSpriteResetTaskTail[2]={0,0};
 
+/**
+ * @brief Deferred reset worker that visits all 32 script sprite slots,
+ * resetting each inactive-after-wait sprite the same way as
+ * ScriptSpriteResetTask(). Slots still waiting on +0x1A are left untouched
+ * and counted; the task only finishes once none remain waiting.
+ * @param task This task's own record.
+ * @return Nothing.
+ */
 AT("00010A70") void ScriptSpriteResetAllTask(void *task)
 {
  struct ScriptSprite *sprite=GameStateGetRecord0B90(0);
