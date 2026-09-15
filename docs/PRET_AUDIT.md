@@ -73,6 +73,26 @@ alone. `src/sprite_affine_matrix.c` carries the largest single concentration
 (48 of the 92 TARGET_REGISTER pins) and is the highest-value structural-rewrite
 target for a future pass.
 
+A second round on 2026-09-14 tried the single-.o iteration technique on two
+previously unaudited functions, `sprite_tile_allocator.c`'s
+`SpriteTileAllocatorRelease` and `resource_native.c`'s
+`ScriptNativeSetFriendArms`, with several declaration-order and expression-
+merging variants each. Both failed the same specific way every time: removing
+the hint does not corrupt the logic, it just lands the value in the *adjacent*
+register (wants r0, agbcc naturally picks r1, or vice versa), which then
+cascades through the rest of the function's register choices. That is
+precisely the "Reverse Register Allocation Order" quirk in §5a, not a
+declaration-ordering problem, so reordering locals can't fix it. Given
+`tools/drop_register_hints.py` already exhaustively proved every remaining
+hint load-bearing by direct machine-code comparison (a stronger check than
+manual iteration), and two fresh attempts both hit this same wall, further
+progress here likely needs a genuinely different technique -- not more
+manual guessing at declaration order -- to be worth the time. Good next
+ideas for whoever picks this up: try forcing extra register pressure with a
+deliberate dummy live value to shift the allocator's choices, or study
+whether agbcc's allocator order is fully deterministic from something
+inspectable (e.g. total live-range count) rather than trial and error.
+
 ## Remediation order
 
 1. Run `tools/drop_register_hints.py --all` first: it clears every hint the
