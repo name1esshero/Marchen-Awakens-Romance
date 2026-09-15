@@ -97,8 +97,7 @@ def audit_prohibited():
             if "TARGET_REGISTER" in original and original.lstrip().startswith("#define"):
                 matched.add("target_register_macro")
             for kind in sorted(matched):
-                severity = "exception" if relative(path) == "src/bios_calls.c" else "error"
-                findings.append(issue(kind, path, number, original, severity))
+                findings.append(issue(kind, path, number, original, "error"))
     return findings
 
 

@@ -180,12 +180,6 @@ AT("00078CA8") void SoundDriverEnableCgb(void *channelStorage)
     sound->ident = ident;
 }
 
-/** BIOS CpuFastSet-style helper used when cloning the sequence jump table. */
-AT("00078DC0") void SoundDriverCopyJumpTableSwi(void)
-{
-    asm("swi 0x2A");
-}
-
 
 /** Interpolate the two adjacent MIDI scale entries, then scale the wave's
  * native frequency by the high half of each 32x32-bit product. */

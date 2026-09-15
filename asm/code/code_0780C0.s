@@ -1342,7 +1342,17 @@ _08078944:
 
 @ 078CA8..078DC0 is decompiled as SoundDriverEnableCgb(); see src/decompiled.json
 
-@ 078DC0..078DC4 is decompiled as SoundDriverCopyJumpTableSwi(); see src/decompiled.json
+@ BIOS CpuFastSet call (SWI 0x2A) used when the sound driver clones its own
+@ sequence jump table. A separate copy from bios_calls.s's CpuFastSet, kept
+@ here since it is part of the m4a sound driver rather than the game's own
+@ BIOS wrapper set.
+	.section .rom.00078DC0, "ax"
+	.thumb_func
+	.thumb
+	.global SoundDriverCopyJumpTableSwi
+SoundDriverCopyJumpTableSwi:
+	svc 0x2A
+	bx lr
 
 @ 078DC4..078DD8 is decompiled as SoundCallCallback5DA8(); see src/decompiled.json
 

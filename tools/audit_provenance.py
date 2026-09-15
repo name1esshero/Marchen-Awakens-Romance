@@ -28,7 +28,7 @@ def main():
         provider_size=e.get('provider_size', e['size'])
         if addr!=offset+0x08000000 or size!=provider_size or obj!=expected:
             raise ValueError('Unexpected linked provider: '+e['name'])
-        kind='inline_assembly_wrapper' if e['file']=='src/bios_calls.c' else 'compiled_c'
+        kind='compiled_c'
         ranges.append(dict(e,provider=obj,implementation=kind,byte_matching=rom[offset:offset+size]==base[offset:offset+size]))
     assembly=list((ROOT/'asm/code').glob('*.s'))
     literal=sum(p.read_text().count('.inst.n') for p in assembly)

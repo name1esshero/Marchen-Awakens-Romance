@@ -4962,12 +4962,6 @@
     "file": "src/sound_m4a.c"
   },
   {
-    "addr": "08078DC0",
-    "size": 4,
-    "name": "SoundDriverCopyJumpTableSwi",
-    "file": "src/sound_m4a.c"
-  },
-  {
     "addr": "08078DC4",
     "size": 20,
     "name": "SoundCallCallback5DA8",
@@ -5194,72 +5188,6 @@
     "size": 4,
     "name": "SoundTrackNoOp",
     "file": "src/sound_m4a.c"
-  },
-  {
-    "addr": "08079E98",
-    "size": 4,
-    "name": "ArcTan2",
-    "file": "src/bios_calls.c"
-  },
-  {
-    "addr": "08079E9C",
-    "size": 4,
-    "name": "BgAffineSet",
-    "file": "src/bios_calls.c"
-  },
-  {
-    "addr": "08079EA0",
-    "size": 4,
-    "name": "CpuFastSet",
-    "file": "src/bios_calls.c"
-  },
-  {
-    "addr": "08079EA4",
-    "size": 4,
-    "name": "CpuSet",
-    "file": "src/bios_calls.c"
-  },
-  {
-    "addr": "08079EA8",
-    "size": 8,
-    "name": "IntrWait",
-    "file": "src/bios_calls.c"
-  },
-  {
-    "addr": "08079EB0",
-    "size": 4,
-    "name": "LZ77UnCompVram",
-    "file": "src/bios_calls.c"
-  },
-  {
-    "addr": "08079EB4",
-    "size": 4,
-    "name": "LZ77UnCompWram",
-    "file": "src/bios_calls.c"
-  },
-  {
-    "addr": "08079EB8",
-    "size": 4,
-    "name": "RLUnCompWram",
-    "file": "src/bios_calls.c"
-  },
-  {
-    "addr": "08079EBC",
-    "size": 4,
-    "name": "RegisterRamReset",
-    "file": "src/bios_calls.c"
-  },
-  {
-    "addr": "08079EC0",
-    "size": 24,
-    "name": "SoftReset",
-    "file": "src/bios_calls.c"
-  },
-  {
-    "addr": "08079ED8",
-    "size": 4,
-    "name": "Sqrt",
-    "file": "src/bios_calls.c"
   },
   {
     "addr": "08079EDC",
