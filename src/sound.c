@@ -57,6 +57,7 @@ AT("00001158") void SoundIrqService(void)
         SoundUpdate();
     }
 }
+/** Advance the sound engine one tick, forwarding to sub_08077DC0(). */
 AT("00078A64")
 void SoundUpdate(void)
 {
@@ -64,6 +65,8 @@ void SoundUpdate(void)
 }
 
 AT("00078A64") const u8 SoundUpdateTail[2]={0,0};
+/** Stop a ready sound player: pause it, stop every track, then restore its
+ * ready state. A no-op if the player isn't ready. */
 AT("00079240")
 void SoundPlayerStop(struct SoundPlayer *p)
 {
@@ -85,6 +88,7 @@ void SoundPlayerStop(struct SoundPlayer *p)
     }
 }
 
+/** Thin wrapper around SoundPlayerFadeOut(). */
 AT("00078C08")
 void SoundFadeOut(struct SoundPlayer *p,u16 interval)
 {

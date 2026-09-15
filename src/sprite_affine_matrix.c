@@ -30,6 +30,12 @@ struct AffineOamColumns {
     u8 padding18[6]; s16 pd;
 };
 
+/** Write an OAM affine matrix entry from an angle and per-axis scale.
+ * @param index OAM affine entry index.
+ * @param angle0 Rotation angle (12-bit table index, narrowed to s16).
+ * @param scaleX0 Horizontal scale (narrowed to s16).
+ * @param scaleY0 Vertical scale (narrowed to s16).
+ * @return Nothing. */
 AT("0007CE50")
 void SpriteAffineWriteNormal(s32 index, s32 angle0, s32 scaleX0, s32 scaleY0)
 {
@@ -81,6 +87,8 @@ void SpriteAffineWriteNormal(s32 index, s32 angle0, s32 scaleX0, s32 scaleY0)
     }
 }
 
+/** SpriteAffineWriteNormal() with its pa/pb columns negated, mirroring the
+ * sprite horizontally. */
 AT("0007CEE8")
 void SpriteAffineWriteMirrored(s32 index, s32 angle0, s32 scaleX0, s32 scaleY0)
 {
@@ -132,6 +140,9 @@ void SpriteAffineWriteMirrored(s32 index, s32 angle0, s32 scaleX0, s32 scaleY0)
     }
 }
 
+/** SpriteAffineWriteNormal() with its pc/pd columns' sign flipped relative
+ * to each other, used where the caller needs the opposite rotation
+ * handedness rather than a mirror. */
 AT("0007CF84")
 void SpriteAffineWriteAlternateAxis(s32 index, s32 angle0, s32 scaleX0, s32 scaleY0)
 {

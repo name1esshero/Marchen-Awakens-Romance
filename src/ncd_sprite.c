@@ -74,6 +74,8 @@ AT("0007BDAC") void NcdQueueSprite(struct NcdSprite *sprite, u32 priority)
  countState += 320;
  (*(u32 *)countState)++;
 }
+/** Zero a 52-byte sprite record and set its default animation/frame (-1),
+ * scale (256, i.e. 1.0), container (0xFFFF, none), and three enable flags. */
 AT("0007BC2C") void NcdInitSprite(struct NcdSprite *sprite,s32 pool)
 {
  CpuFill(sprite,52,0);
@@ -88,6 +90,7 @@ AT("0007BC2C") void NcdInitSprite(struct NcdSprite *sprite,s32 pool)
  sprite->flag28 = 1;
 }
 
+/** Copy a full 52-byte sprite record and mark the copy's copyMode27 flag. */
 AT("0007BF60")
 void NcdSpriteCopy(struct NcdSprite *destination, const struct NcdSprite *source)
 {

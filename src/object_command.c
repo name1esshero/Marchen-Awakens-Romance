@@ -26,6 +26,13 @@ struct ObjectCommandRequest
     s32 childResults[1];
 };
 
+/** Create a display-object command task for a window/line pair.
+ * @param window Selects the task manager together with line.
+ * @param line Sub-slot within the window's task managers.
+ * @param arguments VM arguments passed through to the task.
+ * @param result Set to -1 if creation fails.
+ * @param mode Command mode (narrowed to a signed halfword).
+ * @return The new task's request record, or NULL if creation fails. */
 AT("000322CC")
 void *StartObjectCommandTask(u32 window, u32 line, const s32 *arguments,
                              s32 *result, s32 mode)
@@ -54,12 +61,14 @@ void *StartObjectCommandTask(u32 window, u32 line, const s32 *arguments,
 }
 AT("000322CC") const u8 StartObjectCommandTaskTail[2] = {0, 0};
 
+/** StartObjectCommandTask() with mode fixed to 2. */
 AT("000322A4")
 void *ScriptCommand22(u32 window, u32 line, const s32 *arguments, s32 *result)
 {
     return StartObjectCommandTask(window, line, arguments, result, 2);
 }
 
+/** StartObjectCommandTask() with mode fixed to 3. */
 AT("000322B8")
 void *ScriptCommandMode3(u32 window, u32 line, const s32 *arguments, s32 *result)
 {

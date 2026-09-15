@@ -27,6 +27,8 @@ extern void SpriteRuntimeSetAllFlags800(u32 enabled);
 
 void SpriteRuntimeSetFields8C4(s32 first,s32 second,s32 third);
 
+/** Zero the sprite runtime block, install it as the cached base, reset the
+ * 0x8C4 triple to its neutral default, and enable all 0x800 flags. */
 AT("000804BC") void SpriteRuntimeInit(void *block)
 {
  CpuFill(block,SPRITE_RUNTIME_BLOCK_SIZE,0);
@@ -37,6 +39,8 @@ AT("000804BC") void SpriteRuntimeInit(void *block)
  SpriteRuntimeSetAllFlags800(1);
 }
 
+/** Set the sprite runtime's 0x8C4 triple, masking each value to 9 bits.
+ * See SpriteRuntimeInit() and its unrecovered getter's note above. */
 AT("00080504") void SpriteRuntimeSetFields8C4(s32 first,s32 second,s32 third)
 {
  u8 *block;
@@ -62,6 +66,8 @@ AT("00080574") void SpriteRuntimeSetFlag800(u8 bit,u32 enabled)
   *(u32 *)(SPRITE_RUNTIME_BLOCK+SPRITE_RUNTIME_FLAGS)&=~(1<<bit);
 }
 
+/** @return Whether a bit is set in the sprite runtime's 0x800 flag word.
+ * See SpriteRuntimeSetFlag800(). */
 AT("000805B4") u32 SpriteRuntimeTestFlag800(u8 bit)
 {
  u32 *flags=(u32 *)(SPRITE_RUNTIME_BLOCK+SPRITE_RUNTIME_FLAGS);

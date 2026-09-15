@@ -78,6 +78,9 @@ struct SoundFadeTask {
     struct SoundFadeTaskData data;
 };
 
+/** CreateSoundFadeTask()'s worker: start the fade on first run, then count
+ * down each pass until it completes, optionally releasing a pending script
+ * wait and/or stopping the player. @return Nothing. */
 AT("00005720") void SoundFadeTask(struct SoundFadeTask *task)
 {
     struct SoundFadeTaskData *data = &task->data;
@@ -202,6 +205,7 @@ done:
 }
 AT("00005AC4") const u8 SoundStartTaskTail[2] = {0};
 
+/** Resume a sound player by index into the engine's nine-player table. */
 AT("00006034") void ResumeSoundPlayer(u32 playerIndex)
 {
     SoundResumePlayer(gSoundPlayerTable[playerIndex].player);
