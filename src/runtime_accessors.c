@@ -17,14 +17,19 @@ extern void sub_08056F90(void);
     (u8 *)*root; \
 })
 
+/** @return This console's multiplayer id, bits 4-5 of REG_SIOCNT (the
+ * hardware multi-play ID field). */
 AT("00004CC0") u32 SioGetPlayerId(void)
 {
  return (*(volatile u32 *)0x04000128<<26)>>30;
 }
+/** @return The byte pointed to by the pointer stored at fixed IWRAM slot
+ * 0x03004014. See RuntimeGetByte4014U8() for the narrowed wrapper. */
 AT("00004CD0") u32 RuntimeGetByte4014(void)
 {
  return **(u8 **)0x03004014;
 }
+/** Store an indexed pointer into the game state's +0x2C table. */
 AT("000067A4") void GameStateSetPointer2C(u32 index,void *value)
 {
  u8 *base=GAME_STATE_BASE;
@@ -33,6 +38,7 @@ AT("000067A4") void GameStateSetPointer2C(u32 index,void *value)
  base+=index;
  *(void **)base=value;
 }
+/** @return An indexed pointer from the game state's +0x2C table. */
 AT("000067C0") void *GameStateGetPointer2C(u32 index)
 {
  u8 *base=GAME_STATE_BASE;
@@ -41,30 +47,41 @@ AT("000067C0") void *GameStateGetPointer2C(u32 index)
  base+=index;
  return *(void **)base;
 }
+/** Set the game state's +0x60E u16 field. Meaning not yet recovered. */
 AT("00006898") void GameStateSetField60E(u32 value)
 {
  *(u16 *)(GAME_STATE_BASE+0x60E)=value;
 }
+/** @return The game state's +0x60E u16 field. */
 AT("000068B4") u32 GameStateGetField60E(void)
 {
  return *(u16 *)(GAME_STATE_BASE+0x60E);
 }
+/** Set the game state's +0x12EC signed byte field. Meaning not yet
+ * recovered. */
 AT("000068D0") void GameStateSetField12EC(s32 value)
 {
  *(s8 *)(GAME_STATE_BASE+0x12EC)=value;
 }
+/** @return The game state's +0x12EC signed byte field. */
 AT("000068EC") s32 GameStateGetField12EC(void)
 {
  return *(s8 *)(GAME_STATE_BASE+0x12EC);
 }
+/** @return The current menu selection field at +0x12EE, or -1 for "nothing
+ * selected" (see RuntimeResetSelection() in runtime_leaf.c). */
 AT("00006AA0") s32 GameStateGetField12EE(void)
 {
  return *(s16 *)(GAME_STATE_BASE+0x12EE);
 }
+/** Set the current menu selection field at +0x12EE. Pass -1 to clear it;
+ * see GameStateGetField12EE(). */
 AT("00006AC0") void GameStateSetField12EE(s32 value)
 {
  *(u16 *)(GAME_STATE_BASE+0x12EE)=value;
 }
+/** @return The u16 field at fixed IWRAM offset 0x810. Meaning not yet
+ * recovered. */
 AT("00006BD8") u32 IwramGetField0810(void)
 {
  u8 *base=gIwramBase;
@@ -73,19 +90,23 @@ AT("00006BD8") u32 IwramGetField0810(void)
  base+=offset;
  return *(u16 *)base;
 }
+/** @return The secondary runtime's +0xE50 buffer. */
 AT("00008658") void *RuntimeGetBufferE50(void)
 {
  return gSecondaryRuntime+0xE50;
 }
+/** @return One of the 44-byte records based at the game state's +0x610. */
 AT("0000D628") void *GameStateGetRecord610(u32 index)
 {
  return GAME_STATE_BASE+0x610+index*44;
 }
+/** Set the byte field at the fixed IWRAM offset named gIwramField3FD5Offset.
+ * See IwramGetField3FD5() for the signed reader. */
 AT("00001A34") void IwramSetField3FD5(u32 value)
 {
  gIwramBase[(u32)gIwramField3FD5Offset]=value;
 }
-/* The block this initialises is laid out as a 0x50-byte header, four 2 KiB
+/** The block this initialises is laid out as a 0x50-byte header, four 2 KiB
  * buffers, and then the four-entry table of pointers to them at +0x2050.
  * Named for that table's offset until a caller explains what it holds. */
 AT("00001AF0") void InitBufferTable2050(u8 *base)
@@ -95,10 +116,14 @@ AT("00001AF0") void InitBufferTable2050(u8 *base)
  *(u8 **)(base+0x2058)=base+0x1050;
  *(u8 **)(base+0x205C)=base+0x1850;
 }
+/** @return The byte field at gIwramField3FD5Offset, sign-extended. See
+ * IwramSetField3FD5(). */
 AT("00001A48") s32 IwramGetField3FD5(void)
 {
  return (s8)gIwramBase[(u32)gIwramField3FD5Offset];
 }
+/** @return An indexed pointer from the fixed-IWRAM table at
+ * gIwramPointer2860Offset. See IwramSetPointer2860(). */
 AT("00001B34") u32 IwramGetPointer2860(u32 index0)
 {
  u32 index=index0;
@@ -108,6 +133,8 @@ AT("00001B34") u32 IwramGetPointer2860(u32 index0)
  index+=base;
  return *(u32 *)index;
 }
+/** Store an indexed pointer into the fixed-IWRAM table at
+ * gIwramPointer2860Offset. See IwramGetPointer2860(). */
 AT("00001B4C") void IwramSetPointer2860(u32 index0,u32 value)
 {
  u32 index=index0;
@@ -117,6 +144,8 @@ AT("00001B4C") void IwramSetPointer2860(u32 index0,u32 value)
  index+=base;
  *(u32 *)index=value;
 }
+/** @return A buffer 164 bytes before the map-generation root offset's own
+ * address value. Relationship to the game state root pointer unresolved. */
 AT("00005360") void *GameStateGetBuffer3F38(void)
 {
  void **root=(void **)(gIwramBase+(u32)gMapGenerationRootOffset);
@@ -151,6 +180,8 @@ GAME_STATE_TABLE_GET_S16("000568B4",GameStateGetEntry2768,0x2768)
 GAME_STATE_TABLE_GET_S16("00056EE0",GameStateGetEntry2AE0,0x2AE0)
 GAME_STATE_TABLE_GET_S16("00057138",GameStateGetEntry31D0,0x31D0)
 
+/** @return A signed 16-bit encounter-related field stored 180 bytes before
+ * the game state root. Exact meaning not yet recovered. */
 AT("000577E4") s32 GameStateGetEncounterValue(void)
 {
  u8 *iwram=gIwramBase;
@@ -159,6 +190,8 @@ AT("000577E4") s32 GameStateGetEncounterValue(void)
  offset-=180;
  return *(s16 *)(base+offset);
 }
+/** @return A signed byte encounter-related field stored 178 bytes before
+ * the game state root. Exact meaning not yet recovered. */
 AT("00057844") s32 GameStateGetEncounterMode(void)
 {
  u8 *iwram=gIwramBase;
@@ -218,6 +251,10 @@ AT("00056130") s32 GameStateGetCurrentEntry3894(void)
  return (s16)GameStateGetEntry3894(*base,0,0);
 }
 
+/** Clear one entry of the map-generation state's +0x31D0 s16 table and
+ * notify the shared invalidation callback.
+ * @param index Entry to clear, narrowed to 16 bits.
+ * @return Nothing. */
 AT("00057174") void GameStateClearEntry31D0(s32 index)
 {
  u8 *iwram;
