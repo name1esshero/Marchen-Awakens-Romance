@@ -109,6 +109,32 @@ registers. Both halves are coupled through the allocator and no plain
 expression reaches that combination. Some functions genuinely need the pin, or
 belong in `src/nonmatching/`.
 
+## Bitwise OR ties a register like addition does; AND does not
+
+`iorsi3` has the same commutative-operand ambiguity as `addsi3` (see
+"Addition" above): for `*(u16 *)p |= CONST;` written as a bare literal with
+no named locals, agbcc is free to put the loaded field value or the
+constructed constant in either scratch register, and source order does not
+decide which. Confirmed in `sub_08006ADC` (see
+`src/nonmatching/iwram_set_flags_0810.c`): the ROM builds the constant into
+one register, copies it into the OR's destination register, *then* loads the
+field into the other register; agbcc's natural allocation for the identical
+literal expression swaps which value lands in which of those two registers.
+
+The asymmetry worth remembering: `*(u16 *)p &= CONST;` written the same
+bare-literal way, in the *same function*, reproduces the ROM exactly. `andsi3`
+does not tie its operand to the destination the way `iorsi3` and `addsi3` do,
+at least not in a way this case exercises. Do not assume every commutative
+bitwise op has the same tie -- check `andsi3` and `iorsi3` separately.
+
+Naming either OR operand as a local (to try steering the allocator) does
+change which register it lands in, but for a `switch` with one case per bit
+this also makes the case bodies structurally identical apart from the
+constant, and agbcc merges them into one shared tail with per-case jumps --
+which changes the instruction count and order regardless of whether the
+registers are now right. No plain expression found gets both requirements at
+once for this shape.
+
 ## Copies that the allocator will not make
 
 Where the ROM keeps a value in one register and a modified copy in another,
