@@ -30,10 +30,19 @@
  * src/sound_m4a.c, confirmed by disassembling its linked bytes) instead
  * compiles to `ands r0, r1; cmp r0, #0; beq`, so this is not simply "the
  * idiom picked the wrong instruction" -- the same C shape produces both
- * forms elsewhere in this very file, and no variant tried here (`if (x & y)`,
- * `if (y & x)`, wrapping the whole body in the positive condition instead of
- * an early return) reproduces the bare `tst`. Left as a one-instruction
- * mismatch for a future pass with a working hypothesis (see
+ * forms elsewhere in this very file.
+ *
+ * Confirmed with tools/agbcc_probe.py (see docs/AGBCC_CODEGEN.md) that this
+ * is not a compiler-snapshot issue: old_agbcc, the snapshot this file
+ * actually builds with, produces the identical `ands+cmp` for the isolated
+ * snippet. Nine probed variants of `if (byte_field & 0x80) { ... }` -- `!(x)`
+ * negation, the mask as a local variable, the mask as a second parameter,
+ * a signed sign-bit check `(s8)x < 0` (0x80 is the sign bit, and this
+ * compiles to `lsl #24`/`asr #24` instead of either form), a boolean-return
+ * shape, and the full surrounding do-while/linked-list structure reproduced
+ * exactly -- all still emit `ands+cmp`, never `tst`. No natural C shape
+ * found reproduces the ROM's bare `tst`. Left as a one-instruction mismatch
+ * for a future pass with these ruled-out hypotheses recorded (see
  * docs/PRET_AUDIT.md) rather than guessed at further.
  */
 
