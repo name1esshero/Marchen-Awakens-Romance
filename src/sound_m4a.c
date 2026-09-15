@@ -624,6 +624,7 @@ AT("00078BD0") void SoundResumePlayer(struct SoundPlayer *player)
 }
 AT("00078BD0") const u8 SoundResumePlayerTail[2] = {0};
 
+/** Resume every one of the engine's nine MusicPlayer2000 slots. */
 AT("00078BDC") void SoundResumeAllPlayers(void)
 {
     s32 i;
@@ -646,6 +647,7 @@ AT("00078C18") void SoundPlayerFadeOutTemporary(
     }
 }
 
+/** Fade a ready player in over interval frames and clear its paused flag. */
 AT("00078C38") void SoundPlayerFadeIn(struct SoundPlayer *player, u16 interval)
 {
     u16 fadeInterval = interval;
@@ -708,6 +710,8 @@ AT("00079E04") void SoundTrackReadToneAttack(
 }
 AT("00079E04") const u8 SoundTrackReadToneAttackTail[2] = {0};
 
+/** One-byte extended command: set the current programmable instrument's
+ * decay rate. */
 AT("00079E18") void SoundTrackReadToneDecay(
     struct SoundPlayer *player, struct SoundTrack *track)
 {
@@ -716,6 +720,8 @@ AT("00079E18") void SoundTrackReadToneDecay(
 }
 AT("00079E18") const u8 SoundTrackReadToneDecayTail[2] = {0};
 
+/** One-byte extended command: set the current programmable instrument's
+ * sustain level. */
 AT("00079E2C") void SoundTrackReadToneSustain(
     struct SoundPlayer *player, struct SoundTrack *track)
 {
@@ -724,6 +730,8 @@ AT("00079E2C") void SoundTrackReadToneSustain(
 }
 AT("00079E2C") const u8 SoundTrackReadToneSustainTail[2] = {0};
 
+/** One-byte extended command: set the current programmable instrument's
+ * release rate. */
 AT("00079E40") void SoundTrackReadToneRelease(
     struct SoundPlayer *player, struct SoundTrack *track)
 {
@@ -732,6 +740,8 @@ AT("00079E40") void SoundTrackReadToneRelease(
 }
 AT("00079E40") const u8 SoundTrackReadToneReleaseTail[2] = {0};
 
+/** One-byte extended command: set the current track's pseudo-echo
+ * volume. */
 AT("00079E54") void SoundTrackReadPseudoEchoVolume(
     struct SoundPlayer *player, struct SoundTrack *track)
 {
@@ -739,6 +749,8 @@ AT("00079E54") void SoundTrackReadPseudoEchoVolume(
     track->command++;
 }
 
+/** One-byte extended command: set the current track's pseudo-echo
+ * length. */
 AT("00079E60") void SoundTrackReadPseudoEchoLength(
     struct SoundPlayer *player, struct SoundTrack *track)
 {
@@ -746,6 +758,8 @@ AT("00079E60") void SoundTrackReadPseudoEchoLength(
     track->command++;
 }
 
+/** One-byte extended command: set the current programmable instrument's
+ * note length. */
 AT("00079E6C") void SoundTrackReadToneLength(
     struct SoundPlayer *player, struct SoundTrack *track)
 {
@@ -754,6 +768,7 @@ AT("00079E6C") void SoundTrackReadToneLength(
 }
 AT("00079E6C") const u8 SoundTrackReadToneLengthTail[2] = {0};
 
+/** One-byte extended command: set the current track's pan sweep rate. */
 AT("00079E80") void SoundTrackReadTonePanSweep(
     struct SoundPlayer *player, struct SoundTrack *track)
 {
@@ -987,6 +1002,8 @@ AT("000799A8") void SoundPlayerSetTempo(
     }
 }
 
+/** Apply a fade volume to every existing track selected by trackBits, on
+ * a ready player. */
 AT("000799D0") void SoundPlayerSetVolume(
     struct SoundPlayer *player, u16 trackBits, u16 volume)
 {
@@ -1012,6 +1029,8 @@ AT("000799D0") void SoundPlayerSetVolume(
     player->ident = SOUND_PLAYER_READY;
 }
 
+/** Apply a pitch offset to every existing track selected by trackBits, on
+ * a ready player. */
 AT("00079A38") void SoundPlayerSetPitch(
     struct SoundPlayer *player, u16 trackBits, s16 pitch)
 {
@@ -1038,6 +1057,8 @@ AT("00079A38") void SoundPlayerSetPitch(
     player->ident = SOUND_PLAYER_READY;
 }
 
+/** Apply a pan offset to every existing track selected by trackBits, on a
+ * ready player. */
 AT("00079AAC") void SoundPlayerSetPan(
     struct SoundPlayer *player, u16 trackBits, s8 pan)
 {
@@ -1063,6 +1084,9 @@ AT("00079AAC") void SoundPlayerSetPan(
     player->ident = SOUND_PLAYER_READY;
 }
 
+/** Reset a track's LFO modulation state and flag it dirty (pitch or mix,
+ * depending on modulation type). Called when modulation depth reaches
+ * zero. */
 AT("00079B14") static void SoundTrackClearModulation(struct SoundTrack *track)
 {
     track->lfoCounter = 0;
@@ -1074,6 +1098,9 @@ AT("00079B14") static void SoundTrackClearModulation(struct SoundTrack *track)
 }
 AT("00079B14") const u8 SoundTrackClearModulationTail[2] = {0};
 
+/** Set the LFO modulation depth on every existing track selected by
+ * trackBits, on a ready player; clearing depth to zero also resets that
+ * track's modulation state. */
 AT("00079B34") void SoundPlayerSetModulationDepth(
     struct SoundPlayer *player, u16 trackBits, u8 depth)
 {
@@ -1100,6 +1127,8 @@ AT("00079B34") void SoundPlayerSetModulationDepth(
     player->ident = SOUND_PLAYER_READY;
 }
 
+/** Set the LFO speed on every existing track selected by trackBits, on a
+ * ready player. */
 AT("00079BA8") void SoundPlayerSetLfoSpeed(
     struct SoundPlayer *player, u16 trackBits, u8 speed)
 {
