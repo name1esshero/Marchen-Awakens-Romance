@@ -179,3 +179,20 @@ false match), then reconstructed a fourth as `src/nonmatching/`:
   variant tried) -- see the function's own header comment for the full list
   of shapes tried. Same allocator-not-steerable family as the OR/ADD
   register ties already documented, not a logic error.
+- `sub_0807EC58` -> `ScriptFrameReleasePools`
+  (`src/nonmatching/script_frame_release_pools.c`), called from
+  `ScriptPopFrame()`. Frees both of a script frame's element pools
+  (table038 outright, table03C element-by-element since each slot's data
+  is itself an array of pointers), clears the frame's unrecovered
+  0x44..0xA9 work area, and stashes values into `dispatchState`/
+  `dispatchIndex` that `ScriptPopFrame()` immediately overwrites anyway.
+  This one came very close: the whole function -- both loops' outer
+  structure, five chained pointer computations spilled to five specific
+  stack slots, two `CpuFill`s, the final field writes -- matches
+  instruction-for-instruction except inside table03C's inner loop, where
+  every shape tried (count read bare vs. hoisted to a local, `for` vs.
+  `while` with an explicit "next slot" pointer, several
+  declaration/statement orders) either swaps which of the slot's count and
+  the next-slot address lands in r0 vs. r1, or leaves an extra
+  register-to-register copy before the data pointer reaches r4 that the
+  ROM doesn't have. Documented in full in the file's header comment.
