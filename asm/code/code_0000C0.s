@@ -12658,60 +12658,9 @@ _08006964:
 _08006968:
 	.4byte 0x000012F2
 
-	.thumb_func
-	.thumb
-	.global sub_0800696C
-sub_0800696C:
-	push {lr}
-	cmp r0, #1
-	beq _0800697A
-	cmp r0, #2
-	beq _08006994
-	movs r0, #0
-	b _080069A0
-	.global _0800697A
-_0800697A:
-	ldr r0, _08006988
-	ldr r1, _0800698C
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	ldr r1, _08006990
-	b _0800699E
-	.byte 0x00
-	.byte 0x00
-	.global _08006988
-_08006988:
-	.4byte 0x03000000  @ IWRAM
-	.global _0800698C
-_0800698C:
-	.4byte 0x00003FDC
-	.global _08006990
-_08006990:
-	.4byte 0x000012F0
-	.global _08006994
-_08006994:
-	ldr r0, _080069A4
-	ldr r1, _080069A8
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	ldr r1, _080069AC
-	.global _0800699E
-_0800699E:
-	adds r0, r0, r1
-	.global _080069A0
-_080069A0:
-	pop {r1}
-	bx r1
-	.global _080069A4
-_080069A4:
-	.4byte 0x03000000  @ IWRAM
-	.global _080069A8
-_080069A8:
-	.4byte 0x00003FDC
-	.global _080069AC
-_080069AC:
-	.4byte 0x000012F2
+@ 00696C..0069B0 is decompiled as GameStateSelectDeckPointer(); see src/decompiled.json
 
+	.section .rom.000069B0, "ax"
 	.thumb_func
 	.thumb
 	.global sub_080069B0

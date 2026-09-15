@@ -90,6 +90,7 @@
   "080068B4": "GameStateGetField60E",
   "080068D0": "GameStateSetField12EC",
   "080068EC": "GameStateGetField12EC",
+  "0800696C": "GameStateSelectDeckPointer",
   "080069F8": "GameStateCopyString12F4",
   "08006A1C": "GameStateSetString12F4",
   "08006A40": "GameStateSaveActorRecord0",

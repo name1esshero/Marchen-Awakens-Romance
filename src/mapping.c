@@ -721,6 +721,31 @@ extern u8 *sub_08055F4C(s32 mode);
 extern void sub_08001EB4(void *dest, const void *src, u32 size);
 extern void BitSet(u8 *bits, u32 index, s32 enabled);
 
+/** Select one of two adjacent game-state fields used by the deck system
+ * (called with mode 1 and 2 from the deck-record initializer at 0x080083E0
+ * and 0x080087EC); any other mode yields NULL. Exact field meaning
+ * unresolved -- likely a left/right or player/opponent deck slot pair.
+ * @param mode 1 selects +0x12F0, 2 selects +0x12F2.
+ * @return A pointer into the game state, or NULL for an unrecognized mode.
+ */
+AT("0000696C")
+void *GameStateSelectDeckPointer(s32 mode)
+{
+    switch (mode) {
+    case 1: {
+        u8 *iwram = gIwramBase;
+        u32 offset = (u32)gMapGenerationRootOffset;
+        return *(u8 **)(iwram + offset) + 0x12F0;
+    }
+    case 2: {
+        u8 *iwram = gIwramBase;
+        u32 offset = (u32)gMapGenerationRootOffset;
+        return *(u8 **)(iwram + offset) + 0x12F2;
+    }
+    }
+    return 0;
+}
+
 /** DeckMake: args[0] selects a deck/shuffle mode, same case set as
  * ShuffleDeckCopy. Builds a 20-entry s16 value table from args[1..20],
  * copies it 14 bytes into whatever sub_08055F4C(mode) returns, then flags

@@ -463,13 +463,13 @@ _08008432:
 	adds r4, r6, #0
 	adds r4, #28
 	movs r0, #1
-	bl sub_0800696C
+	bl GameStateSelectDeckPointer
 	adds r1, r0, #0
 	adds r0, r4, #0
 	.2byte 0xF07A
 	.4byte 0x3402F9EF
 	movs r0, #2
-	bl sub_0800696C
+	bl GameStateSelectDeckPointer
 	adds r1, r0, #0
 	adds r0, r4, #0
 	.2byte 0xF07A
@@ -13877,13 +13877,13 @@ _0800E874:
 	adds r4, r5, #0
 	adds r4, #67
 	movs r0, #1
-	bl sub_0800696C
+	bl GameStateSelectDeckPointer
 	adds r1, r0, #0
 	adds r0, r4, #0
 	.2byte 0xF073
 	.4byte 0x3402FFF1
 	movs r0, #2
-	bl sub_0800696C
+	bl GameStateSelectDeckPointer
 	adds r1, r0, #0
 	adds r0, r4, #0
 	.2byte 0xF073
@@ -13959,7 +13959,7 @@ sub_0800E8E4:
 	adds r4, r5, #0
 	adds r4, #67
 	movs r0, #1
-	bl sub_0800696C
+	bl GameStateSelectDeckPointer
 	adds r1, r0, #0
 	adds r0, r4, #0
 	.2byte 0xF073
@@ -13967,7 +13967,7 @@ sub_0800E8E4:
 	.byte 0xFF
 	adds r4, #2
 	movs r0, #2
-	bl sub_0800696C
+	bl GameStateSelectDeckPointer
 	adds r1, r0, #0
 	adds r0, r4, #0
 	.2byte 0xF073

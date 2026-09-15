@@ -8104,7 +8104,7 @@ sub_0801B9DE:
 	bgt sub_0801B9FA
 	cmp r5, #1
 	blt sub_0801B9FA
-	bl sub_0800696C
+	bl GameStateSelectDeckPointer
 	adds r1, r0, #0
 	mov r0, sp
 	.2byte 0xF066
@@ -8564,7 +8564,7 @@ sub_0801BCDA:
 	adds r4, r5, #0
 	adds r4, #28
 	adds r0, r7, #0
-	bl sub_0800696C
+	bl GameStateSelectDeckPointer
 	adds r1, r0, #0
 	adds r0, r4, #0
 	.2byte 0xF066
@@ -9891,7 +9891,7 @@ sub_0801C56C:
 	bgt _0801C58A
 	cmp r5, #1
 	blt _0801C58A
-	bl sub_0800696C
+	bl GameStateSelectDeckPointer
 	adds r1, r0, #0
 	mov r0, sp
 	.2byte 0xF066
@@ -13513,7 +13513,7 @@ sub_0801DD28:
 	bgt _0801DD46
 	cmp r5, #1
 	blt _0801DD46
-	bl sub_0800696C
+	bl GameStateSelectDeckPointer
 	adds r1, r0, #0
 	mov r0, sp
 	.2byte 0xF064

@@ -1125,7 +1125,7 @@ _08068C5C:
 	.thumb
 	.global sub_08068CE8
 sub_08068CE8:
-	bl sub_0800696C
+	bl GameStateSelectDeckPointer
 	ldr r1, _08068D14
 	.2byte 0xF019
 	.4byte 0x2800FD8D
@@ -11224,7 +11224,7 @@ sub_0806EBA2:
 	movs r0, #0
 	strh r0, [r5, #22]
 	movs r0, #1
-	bl sub_0800696C
+	bl GameStateSelectDeckPointer
 	ldr r1, _0806EBE0
 	.2byte 0xF013
 	.4byte 0x2800FE21

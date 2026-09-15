@@ -2118,6 +2118,12 @@
     "file": "src/map_native.c"
   },
   {
+    "addr": "0800696C",
+    "size": 68,
+    "name": "GameStateSelectDeckPointer",
+    "file": "src/mapping.c"
+  },
+  {
     "addr": "0801234C",
     "size": 24,
     "name": "ScriptNativeSetRuntimePair",

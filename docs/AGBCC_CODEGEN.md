@@ -200,6 +200,24 @@ difference is register pressure rather than scheduling.
 
 ## Method notes
 
+- **A single-file probe doesn't know the project's `.set` symbols.**
+  `gIwramBase`, `gMapGenerationRootOffset`, and the rest of
+  `asm/iwram_symbols.s` are absolute `.set` constants, not real addresses in
+  a section. When both operands of a sum are that kind of symbol, `as` can
+  fold `gIwramBase + gMapGenerationRootOffset` into one relocatable literal
+  pool word at assemble time -- collapsing what the ROM writes as two
+  separate loads and an `adds` into a single `ldr`. A probe or single-.o test
+  that leaves these `extern` and undefined won't see that folding (the
+  symbols simply stay unresolved, so `as` can't fold them), and will report a
+  false match for C that turns out to change the real build's byte count.
+  Confirmed on `GameStateSelectDeckPointer` (0x0800696C): a direct
+  `gIwramBase + (u32)gMapGenerationRootOffset` inline matched in isolation
+  but changed the linked size in the real build; splitting the sum across
+  two locals first (`u8 *iwram = gIwramBase; u32 offset = (u32)...; return
+  *(u8 **)(iwram + offset) + ...;`, the same shape `GAME_STATE_BASE` in
+  runtime_accessors.c already uses) reproduced the ROM's unfolded form in
+  both places. When a function touches one of these symbols, confirm with a
+  real `make && make compare` before trusting an isolated probe.
 - Iterate against a single translation unit, not the ROM. `cpp` + `agbcc` +
   `as` on one file takes about a second; a full `make && make compare` takes a
   minute and a half. See `docs/PRET_STANDARDS.md` §8a.
