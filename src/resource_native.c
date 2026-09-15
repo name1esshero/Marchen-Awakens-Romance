@@ -87,6 +87,8 @@ AT("00012B98") s32 ScriptNativeSetFriendArms(u32 count, const s32 *args,
     return 1;
 }
 
+/** Native script command: look up a resource's id via sub_080570BC().
+ * @return Always 1. */
 AT("00012D98") s32 ScriptNativeQueryResourceId(u32 count, const s32 *args, s32 *result)
 {
     *result = (s16)sub_080570BC((s16)args[0]);
@@ -94,6 +96,9 @@ AT("00012D98") s32 ScriptNativeQueryResourceId(u32 count, const s32 *args, s32 *
 }
 AT("00012D98") const u8 ScriptNativeQueryResourceIdTail[2] = {0};
 
+/** Native script command: read a resource total from one of two tables,
+ * selected by the map-generation state's +0x38B8 mode byte.
+ * @return Always 1. */
 AT("00012DB4") s32 ScriptNativeQueryModeResource(u32 count, const s32 *args, s32 *result)
 {
     s32 *out = result;
@@ -117,6 +122,9 @@ AT("00012DB4") s32 ScriptNativeQueryModeResource(u32 count, const s32 *args, s32
 }
 AT("00012DB4") const u8 ScriptNativeQueryModeResourceTail[2] = {0};
 
+/** Native script command: forward to sub_08056A8C() with a mode of 1 or 2,
+ * selected by the map-generation state's +0x38B8 mode byte.
+ * @return Always 1. */
 AT("00012DF8") s32 ScriptNativeSetModeResource(u32 count, const s32 *args, s32 *result)
 {
     register const s16 *shortArgs asm("r1") = (const s16 *)args;
@@ -136,6 +144,8 @@ AT("00012DF8") s32 ScriptNativeSetModeResource(u32 count, const s32 *args, s32 *
     return 1;
 }
 
+/** Native script command: read a resource state via sub_08056290().
+ * @return Always 1. */
 AT("00012E34") s32 ScriptNativeQueryResourceState(u32 count, const s32 *args, s32 *result)
 {
     *result = sub_08056290();
@@ -143,6 +153,7 @@ AT("00012E34") s32 ScriptNativeQueryResourceState(u32 count, const s32 *args, s3
 }
 AT("00012E34") const u8 ScriptNativeQueryResourceStateTail[2] = {0};
 
+/** Native script command: forward to sub_080562C8(). @return Always 1. */
 AT("00012E48") s32 ScriptNativeSetResourceState(u32 count, const s32 *args, s32 *result)
 {
     sub_080562C8(args[0]);
@@ -150,12 +161,16 @@ AT("00012E48") s32 ScriptNativeSetResourceState(u32 count, const s32 *args, s32 
 }
 AT("00012E48") const u8 ScriptNativeSetResourceStateTail[2] = {0};
 
+/** Native script command: forward to sub_080563AC(). @return Always 1. */
 AT("00012E58") s32 ScriptNativeResetResourceState(u32 count, const s32 *args, s32 *result)
 {
     sub_080563AC();
     return 1;
 }
 
+/** Native script command: consume a resource if sub_08056304() allows it,
+ * then apply its follow-up effects.
+ * @return Always 1. */
 AT("00012E64") s32 ScriptNativeUseResource(u32 count, const s32 *args, s32 *result)
 {
     if ((s16)sub_08056304((s16)args[0]))
@@ -167,6 +182,9 @@ AT("00012E64") s32 ScriptNativeUseResource(u32 count, const s32 *args, s32 *resu
     return 1;
 }
 
+/** Native script command: allocate a 34-byte buffer from the map generation
+ * owner's heap and copy in an item or consumable's name.
+ * @return Always 1. */
 AT("00012EA8") s32 ScriptNativeGetResourceName(u32 count, const s32 *args,
                                                 char **result)
 {
@@ -188,6 +206,7 @@ AT("00012EA8") s32 ScriptNativeGetResourceName(u32 count, const s32 *args,
 }
 AT("00012EA8") const u8 ScriptNativeGetResourceNameTail[2] = {0};
 
+/** Native script command: forward to sub_0806EFCC(0). @return Always 1. */
 AT("00012F04") s32 ScriptNativeResetEncounterState(u32 count, const s32 *args, s32 *result)
 {
     sub_0806EFCC(0);
@@ -195,6 +214,8 @@ AT("00012F04") s32 ScriptNativeResetEncounterState(u32 count, const s32 *args, s
 }
 AT("00012F04") const u8 ScriptNativeResetEncounterStateTail[2] = {0};
 
+/** Native script command: pick one of the VM's own arguments at random.
+ * @return Always 1. */
 AT("00012F14") s32 ScriptNativeChooseRandomValue(u32 count, const s32 *args, s32 *result)
 {
     s32 index = (s16)__umodsi3(Random(), count);
@@ -202,12 +223,16 @@ AT("00012F14") s32 ScriptNativeChooseRandomValue(u32 count, const s32 *args, s32
     return 1;
 }
 
+/** Native script command: forward map coordinates to sub_0806F120().
+ * @return Always 0x7FFF. */
 AT("00012F38") s32 ScriptNativeStartMapCoordinateEvent(u32 count, const s32 *args, s32 *result)
 {
     sub_0806F120((s16)args[0], (s16)args[1], 0, 0);
     return 0x7FFF;
 }
 
+/** Native script command: read GameStateGetField42BA().
+ * @return Always 1. */
 AT("00012F54") s32 ScriptNativeGetField42BA(u32 count, const s32 *args, s32 *result)
 {
     *result = (s16)GameStateGetField42BA();
@@ -215,18 +240,23 @@ AT("00012F54") s32 ScriptNativeGetField42BA(u32 count, const s32 *args, s32 *res
 }
 AT("00012F54") const u8 ScriptNativeGetField42BATail[2] = {0};
 
+/** Native script command: start the encounter-transition task.
+ * @return Always 0x7FFF. */
 AT("00012F6C") s32 ScriptNativeStartEncounter(u32 count, const s32 *args, s32 *result)
 {
     CreateEncounterTransitionTask(0);
     return 0x7FFF;
 }
 
+/** Native script command: forward to sub_080577C0(). @return Always 1. */
 AT("00012F80") s32 ScriptNativeSetEncounterValue(u32 count, const s32 *args, s32 *result)
 {
     sub_080577C0((s16)args[0]);
     return 1;
 }
 
+/** Native script command: read GameStateGetEncounterValue().
+ * @return Always 1. */
 AT("00012F90") s32 ScriptNativeGetEncounterValue(u32 count, const s32 *args, s32 *result)
 {
     *result = (s16)GameStateGetEncounterValue();
@@ -234,12 +264,15 @@ AT("00012F90") s32 ScriptNativeGetEncounterValue(u32 count, const s32 *args, s32
 }
 AT("00012F90") const u8 ScriptNativeGetEncounterValueTail[2] = {0};
 
+/** Native script command: forward to sub_08057800(). @return Always 1. */
 AT("00012FA8") s32 ScriptNativeSetEncounterMode(u32 count, const s32 *args, s32 *result)
 {
     sub_08057800((s8)args[0]);
     return 1;
 }
 
+/** Native script command: read GameStateGetEncounterMode().
+ * @return Always 1. */
 AT("00012FB8") s32 ScriptNativeGetEncounterMode(u32 count, const s32 *args, s32 *result)
 {
     *result = (s8)GameStateGetEncounterMode();
