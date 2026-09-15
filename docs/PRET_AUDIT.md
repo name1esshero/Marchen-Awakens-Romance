@@ -19,15 +19,27 @@ The project satisfies its primary correctness requirements:
   already has a recovered name.
 
 The source does not yet satisfy every readability and matching-method rule.
-The generated report is the authoritative list. The largest hard-error groups
-are forced-register declarations, inline assembly or scheduling fences, and
-raw ROM addresses used by logic or tables. The largest warning groups are
-missing Doxygen comments and names that are not yet PascalCase.
+The generated report is the authoritative list. The remaining hard-error
+groups are forced-register declarations and TARGET_REGISTER pins; missing
+Doxygen comments have been eliminated (see below).
 
-The current mechanical scan reports 157 hard-rule occurrences, 529 missing
-function-documentation warnings, and 12 documented low-level exceptions. An
+The current mechanical scan reports 157 hard-rule occurrences, 0 missing
+function-documentation warnings, and 13 documented low-level exceptions. An
 earlier cleanup replaced all 630 raw ROM addresses with verified symbols and
 added or converted documentation for 421 manifest-backed functions.
+
+A 2026-09-14 pass closed out the remaining Doxygen backlog: 531 missing-doc
+warnings across 37 files went to zero over 12 commits, verified with
+`make compare` and the full 140-test host suite after every file (or small
+group of files). Two of those commits needed care beyond adding comments:
+`script_sprite.c`'s plain-text section banners doubled as literal slice
+markers for four host tests that compile parts of the file standalone
+against a fake ABI (replacing a banner with a Doxygen block broke that
+slicing until the banners were restored alongside the new comments and the
+tests' anchor strings updated to match), and a few cross-file claims (e.g.
+`ScriptNativeSpriteEffect` and `ScriptNativeHitEffectQuery` sharing workers
+with commands in `script_sprite.c`) were checked against the actual callee
+signatures before being written down, not assumed from naming alone.
 
 A later pass cut the hard-rule count from 351 to 157 by proving which compiler
 hints were load-bearing rather than assuming it. See
@@ -76,7 +88,9 @@ target for a future pass.
 4. Replace proven flags, limits, strides, and structure offsets with named
    constants. Do not invent semantic names without call-site evidence.
 5. Rename placeholder and non-PascalCase functions as their behavior becomes
-   known, then add Doxygen comments to public functions and recovered structs.
+   known. Doxygen coverage over every manifest-backed function is complete;
+   keep it that way by documenting each newly decompiled function as it
+   lands, rather than letting the backlog reaccumulate.
 6. Periodically re-check `src/nonmatching/` against `src/decompiled.json`. A
    file there is stale once its address appears in the manifest, meaning the
    function was matched elsewhere and nobody removed the old copy. Two of the
