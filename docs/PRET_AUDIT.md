@@ -196,3 +196,18 @@ false match), then reconstructed a fourth as `src/nonmatching/`:
   the next-slot address lands in r0 vs. r1, or leaves an extra
   register-to-register copy before the data pointer reaches r4 that the
   ROM doesn't have. Documented in full in the file's header comment.
+- `sub_08080070` -> `ScriptRunFrameStep`
+  (`src/nonmatching/script_run_frame_step.c`), called from
+  `ScriptDispatchCurrentFrame()`. Dispatches one deferred callback bit from
+  the frame's 8-entry callback table if one is pending, else reads one
+  bytecode opcode and tail-calls its handler out of the 256-entry
+  `gScriptOpcodeHandlers` table. Needed two raw `bl` fragments manually
+  decoded (to already-decompiled `ScriptPushFrameAndJump` and
+  `ScriptReadNextU8`) to find the function's true extent. Very close: only
+  two spots differ from the ROM -- clearing a callback bit compiles
+  in-place (`bic r1,r1,r3`) since the loaded value is dead after, where the
+  ROM copies it to a fresh register first (the same destination-register
+  tie documented elsewhere), and re-fetching the callback table's base a
+  second time gets CSE'd against the already-loaded frame pointer no
+  matter how the source repeats the expression, where the ROM redoes the
+  two loads from scratch. Full detail in the file's header comment.
