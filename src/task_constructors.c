@@ -47,6 +47,11 @@ extern void sub_0806F664(void *task);
 
 extern void sub_0806FAC4(void *task);
 
+/** Schedule an asynchronous VRAM fill on the aux task manager.
+ * @param destination VRAM address to fill.
+ * @param value Fill value.
+ * @param size Number of bytes to fill.
+ * @return Nothing. */
 AT("000037D8") void ScheduleVramFillTask(void *destination, u32 value, u32 size)
 {
     u8 *task = CreateTask(&gAuxTaskManager, (void *)((u32)VramFillTask + 1),
@@ -57,6 +62,12 @@ AT("000037D8") void ScheduleVramFillTask(void *destination, u32 value, u32 size)
     *(u32 *)(state + 8) = size;
 }
 
+/** Schedule a task that waits for the given keys, marking one script wait
+ * pending if the task is created.
+ * @param keyMask Keys to wait for.
+ * @param repeatMask Keys eligible for repeat while held.
+ * @param result Optional task completion word.
+ * @return Always 0x7fff, regardless of whether the task was created. */
 AT("00005378") s32 CreateInputWaitTask(s32 keyMask, s32 repeatMask,
                                         s32 *result)
 {
@@ -70,6 +81,9 @@ AT("00005378") s32 CreateInputWaitTask(s32 keyMask, s32 repeatMask,
     return 0x7fff;
 }
 
+/** Create the main scene task.
+ * @param result Optional task completion word.
+ * @return The new task, or NULL if creation fails. */
 AT("00006050") u8 *CreateSceneTask(s32 *result)
 {
     u8 *task = CreateTask(&gMainTaskManager, sub_08006078,
@@ -97,6 +111,15 @@ done:
 }
 #endif
 
+/** Create a battle actor's motion task on its owner's per-actor task slot.
+ * @param valueA Stored at +120; meaning unresolved.
+ * @param owner Battle actor slot; selects the task manager and is recorded
+ * at task byte 113.
+ * @param valueB Stored at +114; meaning unresolved.
+ * @param resource Motion resource, stored at state +72.
+ * @param context Motion context, stored at state +76.
+ * @param result Optional task completion word.
+ * @return The new task. */
 AT("000275C4") u8 *CreateBattleMotionTask(s32 valueA, s32 owner, s32 valueB,
                                            void *resource, void *context,
                                            s32 *result)
@@ -114,6 +137,13 @@ AT("000275C4") u8 *CreateBattleMotionTask(s32 valueA, s32 owner, s32 valueB,
 
 extern s32 RuntimeObjectGetField1A(s32 owner, s32 slot);
 extern s32 RuntimeActorGetField352(s32 owner);
+/** Create a battle actor-tracking task, snapshotting the actor's current
+ * +0x1A field and +0x352 field into the task state at creation time.
+ * @param owner Battle actor slot; selects the task manager.
+ * @param slot Stored at task byte 72.
+ * @param unused Not read by this constructor.
+ * @param result Optional task completion word.
+ * @return The new task. */
 AT("000256F8") u8 *CreateBattleTrackingTask(s32 owner, s32 slot,
                                              s32 unused, s32 *result)
 {
@@ -142,6 +172,13 @@ AT("0001097C") u8 *CreateSpriteResetTask(s32 sprite, s32 mode, s32 *result)
 }
 #endif
 
+/** Create a battle resource task on a per-owner, per-slot task manager.
+ * @param owner Battle actor slot; selects the task manager together with
+ * slot.
+ * @param slot Sub-slot within the owner's task managers.
+ * @param resource Resource pointer stored at state +16.
+ * @param result Set to 0 on success, -1 if creation fails.
+ * @return The new task, or NULL if creation fails. */
 AT("000301BC") u8 *CreateBattleResourceTask(s32 owner, s32 slot,
                                              void *resource, s32 *result)
 {
@@ -163,6 +200,13 @@ AT("000301BC") u8 *CreateBattleResourceTask(s32 owner, s32 slot,
     return task;
 }
 
+/** Create a battle display-object task on the owner's per-actor task slot.
+ * @param owner Battle actor slot; selects the task manager and whether this
+ * is the player side (owner == 0).
+ * @param slot Stored at state +4; also folded into the +12 id (owner*4+slot).
+ * @param resource Resource pointer stored at state +28.
+ * @param result Optional task completion word, set to -1 if creation fails.
+ * @return The new task, or NULL if creation fails. */
 AT("0002A0B8") u8 *CreateBattleObjectTask(s32 owner, s32 slot,
                                            void *resource, s32 *result)
 {
@@ -214,6 +258,16 @@ AT("00026140") u8 *CreateBattleNamedTaskB(s32 owner, s32 slot,
 }
 #endif
 
+/** Create a field-effect task on the owner's per-actor task slot and mark
+ * one script wait pending.
+ * @param owner Field object slot; selects the task manager.
+ * @param slot Stored at state +4.
+ * @param a Stored at state +8.
+ * @param b Stored at state +20.
+ * @param c Stored at state +12.
+ * @param d Stored at state +24.
+ * @param result Optional task completion word.
+ * @return The new task. */
 AT("0000E788") u8 *CreateFieldEffectTask(s32 owner, s32 slot, s32 a, s32 b,
                                           s32 c, s32 d, s32 *result)
 {
@@ -264,6 +318,12 @@ CREATE_PENDING_TASK("0000E6A0", StartPendingFieldEffect,
 CREATE_PENDING_TASK("0000FC90", StartPendingEffectA,
                     gSecondaryRuntime + 64, sub_0800FCC8)
 
+/** Create a runtime task carrying a copied name string and two values.
+ * @param name Copied into the task's inline name buffer at state +12.
+ * @param value Stored at state +8.
+ * @param other Stored at state +36.
+ * @param result Optional task completion word.
+ * @return The new task. */
 AT("00007134") u8 *CreateNamedRuntimeTask(const char *name, s32 value,
                                            s32 other, s32 *result)
 {
@@ -289,6 +349,10 @@ AT("00010A2C") u8 *CreateSpriteWaitTask(s32 mode, s32 *result)
 }
 #endif
 
+/** Create the encounter-transition task and set the secondary runtime's
+ * 0x0F24 flag, marking one script wait pending.
+ * @param result Optional task completion word.
+ * @return The new task. */
 AT("0006F620") u8 *CreateEncounterTransitionTask(s32 *result)
 {
     u8 *task = CreateTask(&gMainTaskManager, sub_0806F664,

@@ -46,6 +46,10 @@ extern s32 sub_0807EBE0(s32 heap, void *table, s32 type, const char *name);
 extern s32 sub_0807EB5C(s32 heap, void *table, s32 type, const char *name,
                         const void *data, s32 size);
 
+/** Register a {name, value} table as type-33 resources, replacing any
+ * existing entry of the same name.
+ * @param entry Name-terminated table (a null name ends the table).
+ * @return Always 0. */
 AT("0007EE10") s32 ScriptResourceRegisterTable(
     const struct ScriptResourceEntry *entry)
 {
@@ -59,6 +63,12 @@ AT("0007EE10") s32 ScriptResourceRegisterTable(
 }
 AT("0007EE10") const u8 ScriptResourceRegisterTableTail[2] = {0};
 
+/** Register a {name, value} table as type-33 resources on a specific heap
+ * and table, as ScriptResourceRegisterTable() does on the active VM.
+ * @param heap Target heap.
+ * @param table Target resource table.
+ * @param entry Name-terminated table (a null name ends the table).
+ * @return Always 0. */
 AT("0007EE3C") s32 ScriptResourceRegisterTableToHeap(
     s32 heap, void *table, const struct ScriptResourceEntry *entry)
 {
@@ -88,6 +98,10 @@ AT("0007EE7C") s32 ScriptResourceRegisterBuiltins(s32 heap, void *table)
 }
 AT("0007EE7C") const u8 ScriptResourceRegisterBuiltinsTail[2] = {0};
 
+/** Load a named resource into a slot and install it.
+ * @param name Resource name to load.
+ * @param slot Slot to install the loaded resource into.
+ * @return Always 0. */
 AT("0007EF94") s32 ScriptResourceLoadAndInstall(const char *name, s32 slot)
 {
     s32 status;
@@ -145,12 +159,17 @@ AT("0007F094") s32 ScriptResourceResetArray(s32 index)
     return 0;
 }
 
+/** Resolve a first-class resource name to its slot and reset that slot.
+ * @return 0 on success, -1 if the slot lookup fails. */
 AT("0007F1D8") s32 ScriptResourceLookupFirst(const char *key)
 {
     return ScriptResourceReset(ScriptResourceNameFirst(key));
 }
 AT("0007F1D8") const u8 ScriptResourceLookupFirstTail[2] = {0};
 
+/** Resolve a second-class resource name to its slot and reset that slot's
+ * array of allocations.
+ * @return 0 on success, -1 if the slot lookup fails. */
 AT("0007F1E8") s32 ScriptResourceLookupSecond(const char *key)
 {
     return ScriptResourceResetArray(ScriptResourceNameSecond(key));
@@ -180,6 +199,11 @@ AT("0007F294") s32 ScriptResourceNameFirst(const char *key)
 }
 AT("0007F294") const u8 ScriptResourceNameFirstTail[2] = {0};
 
+/** Return the stable numeric slot assigned to a second-class resource name,
+ * assigning the next free slot on first use. See ScriptResourceNameFirst()
+ * for the first-class equivalent; the two share the same scheme over an
+ * independent 32-entry namespace.
+ * @return The resource's slot index, or -1 if the namespace is full. */
 AT("0007F2E0") s32 ScriptResourceNameSecond(const char *key)
 {
     u8 *root;
@@ -224,6 +248,8 @@ found:
 }
 AT("0007F32C") const u8 ScriptResourceSlotFirstTail[2] = {0};
 
+/** @return The second-class resource slot at index, or NULL if index is out
+ * of range. See ScriptResourceSlotFirst() for the layout this mirrors. */
 AT("0007F354") struct ScriptResourceSlot *ScriptResourceSlotSecond(s32 index)
 {
     struct ScriptBytecodeContext *context;
@@ -269,6 +295,8 @@ AT("0007F3DC") s32 ScriptResourceSetStringValue(u32 *record, s32 selector,
     return 0;
 }
 
+/** @return The raw value slot for a record/selector pair, or NULL if record
+ * is NULL or the selector doesn't resolve to a slot. */
 AT("0007F380") u32 *ScriptResourceGetValue(u32 *record, s32 selector)
 {
     u32 *slot;
@@ -281,6 +309,8 @@ AT("0007F380") u32 *ScriptResourceGetValue(u32 *record, s32 selector)
     return (u32 *)*slot;
 }
 
+/** Like ScriptResourceGetValue(), but returns the shared zero-filled default
+ * record instead of NULL when the slot holds no value. */
 AT("0007F398") void *ScriptResourceGetValueOrDefault(u32 *record,
                                                       s32 selector)
 {
@@ -298,6 +328,9 @@ AT("0007F398") void *ScriptResourceGetValueOrDefault(u32 *record,
     return sScriptResourceDefaultValue;
 }
 
+/** Write a raw value into a record's selected slot.
+ * @return 0 on success, -1 if record is NULL or the selector doesn't
+ * resolve to a slot. */
 AT("0007F3BC") s32 ScriptResourceSetValue(u32 *record, s32 selector,
                                            u32 value)
 {
