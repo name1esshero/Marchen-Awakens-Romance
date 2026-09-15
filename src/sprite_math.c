@@ -11,26 +11,18 @@
 extern s32 __divsi3(s32 dividend, s32 divisor);
 s32 SpriteFixedSqrt(s32 value);
 
-/** Signed 8.8 helpers used by the renderer's affine calculations. Multiplication
- * rounds negative products toward zero before dropping the fractional byte. */
-AT("0007D8F8")
-s32 SpriteFixed8Multiply(s32 left, s32 right)
-{
-    s32 product;
-    register s32 rounded TARGET_REGISTER("r1");
+/* SpriteFixed8Multiply (0x0807D8F8) is real assembly at
+ * asm/code/code_0780C0.s; no plain-C shape reproduces the ROM's register
+ * copy (see src/nonmatching/sprite_fixed8_multiply.c and
+ * docs/COMPILER_HINT_CLEANUP.md). */
 
-    left <<= 16;
-    right <<= 16;
-    right >>= 16;
-    left >>= 16;
-    product = left * right;
-    rounded = product;
-    if (product < 0)
-        rounded += 255;
-    return (rounded << 8) >> 16;
-}
-
-AT("0007D8F8")
+/**
+ * @brief Divides one signed 8.8 fixed-point value by another.
+ * @param dividend The numerator, in 8.8 fixed-point.
+ * @param divisor The denominator, in 8.8 fixed-point.
+ * @return The quotient, in 8.8 fixed-point.
+ */
+AT("0007D914")
 s32 SpriteFixed8Divide(s32 dividend, s32 divisor)
 {
     dividend <<= 16;
@@ -40,8 +32,11 @@ s32 SpriteFixed8Divide(s32 dividend, s32 divisor)
     return (s16)__divsi3(dividend, divisor);
 }
 
-/* The cartridge stores zero alignment bytes after the divide helper. */
-AT("0007D8F8")
+/* The cartridge stores zero alignment bytes after the divide helper. Shares
+ * SpriteFixed8Divide's section so the two are emitted contiguously with no
+ * inter-function padding, the same way they sat inside the old combined
+ * Multiply+Divide+Tail group before Multiply moved to real assembly. */
+AT("0007D914")
 const u8 SpriteFixed8Tail[2] = {0, 0};
 
 /** Length of a 20.12 fixed-point vector.  Large components are reduced before

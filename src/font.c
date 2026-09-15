@@ -11,11 +11,6 @@ void sub_0807ADE0(struct Font *, const struct FontData *)
     __attribute__((alias("SetFontData")));
 
 #include "rom_section.h"
-#ifdef AGBCC
-#define TARGET_REGISTER(name) asm(name)
-#else
-#define TARGET_REGISTER(name)
-#endif
 extern void CpuFill(void *, u32, u32);
 
 /** The dialogue reader accepts this wider lead-byte range, including private
@@ -73,7 +68,7 @@ AT("0007AE7C")
 u32 FontCharacterToGlyph(u32 input)
 {
     u32 raw = input << 16;
-    register u32 code TARGET_REGISTER("r2") = raw >> 16;
+    u16 code = (u16)input;
     u32 result = 0;
 
     if ((code & 0xFF00) == 0) {

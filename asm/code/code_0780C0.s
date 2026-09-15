@@ -5432,9 +5432,35 @@ _0807D8EA:
 	.4byte 0xE12FFF1E
 	.4byte 0x000001CC
 
-@ 07D8F8..07D92C is decompiled as SpriteFixed8Multiply(); see src/decompiled.json
+@ Signed 8.8 fixed-point multiply. Rounds a negative product toward zero
+@ before dropping the fractional byte; `rounded` must be a genuine copy of
+@ `product` kept alive past the compare (agbcc's plain-C allocator always
+@ coalesces the two into one register once `product` is dead there, so no
+@ ordinary C shape reproduces this without a forced-register pin -- see
+@ docs/COMPILER_HINT_CLEANUP.md). Readable non-matching C is kept at
+@ src/nonmatching/sprite_fixed8_multiply.c.
+	.section .rom.0007D8F8, "ax"
+	.thumb_func
+	.thumb
+	.global SpriteFixed8Multiply
+SpriteFixed8Multiply:
+	push {lr}
+	lsls r0, r0, #16
+	lsls r1, r1, #16
+	asrs r1, r1, #16
+	asrs r0, r0, #16
+	muls r0, r1
+	adds r1, r0, #0
+	cmp r0, #0
+	bge 1f
+	adds r1, #0xFF
+1:
+	lsls r0, r1, #8
+	asrs r0, r0, #16
+	pop {r1}
+	bx r1
 
-@ 07D92C..07D944 is decompiled as SpriteMathDivide65536ByS16(); see src/decompiled.json
+@ 07D914..07D92C is decompiled as SpriteFixed8Divide(); see src/decompiled.json
 
 @ 07D944..07D9F0 is decompiled as SpriteVectorLengthFixed(); see src/decompiled.json
 

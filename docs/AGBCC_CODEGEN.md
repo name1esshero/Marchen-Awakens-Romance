@@ -153,6 +153,24 @@ parameter, splitting the final shifts — put both in r0. A live range that
 genuinely extends past the modification is what forces the copy; if the
 original source had one, it is not visible in the result.
 
+## Compare a derived index without overwriting the lookup index
+
+`NfpGetEntrySizeByName` (0x0807AD4C) formerly pinned its directory index to
+`r4`. Removing the pin alone swapped several registers throughout the
+function. Keeping the index unchanged and expressing the next-entry test
+directly fixed the allocation with the existing compiler flags:
+
+```c
+/* index has already been checked for a failed lookup. */
+if ((u32)index + 1 >= NfpGetEntryCount(handle))
+```
+
+This replaces `index++;` followed by the comparison. No later statement
+needs the incremented index. The generated instructions and the linked ROM
+are unchanged, while the local now retains its original meaning. When a
+pin seems necessary, check whether one local is being reused for a derived
+value that could instead be expressed at its use site.
+
 ## Alignment padding is plain C, not inline assembly
 
 A trailing zero halfword belongs in the project's existing idiom:

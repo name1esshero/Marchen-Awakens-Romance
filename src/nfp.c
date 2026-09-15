@@ -270,7 +270,7 @@ AT("0007AD4C")
 u32 NfpGetEntrySizeByName(const char *archive, const char *member)
 {
     s32 handle;
-    register s32 index TARGET_REGISTER("r4");
+    s32 index;
     struct NfpEntry *entry;
     struct NfpHeader *base;
     u8 *data;
@@ -287,8 +287,7 @@ u32 NfpGetEntrySizeByName(const char *archive, const char *member)
         return 0;
     base = NfpGetArchiveBase(handle);
     data = (u8 *)base + entry->offset;
-    index++;
-    if ((u32)index >= NfpGetEntryCount(handle))
+    if ((u32)index + 1 >= NfpGetEntryCount(handle))
         end = gNfpState->mounts[handle].size;
     else
         end = (u32)base + *(u32 *)((u8 *)entry + sizeof(*entry) + 12);

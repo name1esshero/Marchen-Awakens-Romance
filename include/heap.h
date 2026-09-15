@@ -33,6 +33,7 @@ struct Heap {
 struct Heap *HeapInitDefault(void *memory, u32 size);
 struct Heap *HeapCreate(void *memory, u32 size);
 void *HeapAlloc(struct Heap *heap, u32 size);
+void HeapFree(struct Heap *heap, void *allocation);
 u32 HeapGetFreeBytes(struct Heap *heap);
 u32 HeapGetLargestFreeBlock(struct Heap *heap);
 u32 HeapGetAllocationSize(const void *allocation);

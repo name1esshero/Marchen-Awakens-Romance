@@ -1033,7 +1033,7 @@
   },
   {
     "addr": "08009728",
-    "size": 48,
+    "size": 52,
     "name": "RuntimeSetFlagC0",
     "file": "src/runtime_buffers.c"
   },
@@ -6126,9 +6126,9 @@
     "file": "src/sprite_engine_state.c"
   },
   {
-    "addr": "0807D8F8",
-    "size": 52,
-    "name": "SpriteFixed8Multiply",
+    "addr": "0807D914",
+    "size": 24,
+    "name": "SpriteFixed8Divide",
     "file": "src/sprite_math.c"
   },
   {

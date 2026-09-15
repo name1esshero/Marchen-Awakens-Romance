@@ -144,10 +144,8 @@ void SpriteTileAllocatorRelease(struct SpriteTileAllocator *allocator, s32 tile)
     u32 flags;
     u32 size;
     u32 last;
-    u32 offset;
     u32 sizeMask;
     u32 maskValue;
-    register struct SpriteTileBlock *base TARGET_REGISTER("r1");
     u32 link;
     u32 previousFlags;
     register u32 previousSize TARGET_REGISTER("r0");
@@ -157,10 +155,7 @@ void SpriteTileAllocatorRelease(struct SpriteTileAllocator *allocator, s32 tile)
 
     if (allocator->mode != 0)
         goto releaseFixedBlock;
-    offset = tile - allocator->tileBase;
-    offset <<= 3;
-    base = allocator->blocks;
-    block = (struct SpriteTileBlock *)((u8 *)base + offset);
+    block = allocator->blocks + (tile - allocator->tileBase);
     block->sizeAndFlags &= 0x3FFF;
     flags = block->sizeAndFlags;
     maskValue = 0x1FFF;
@@ -202,9 +197,6 @@ updateCursor:
     return;
 
 releaseFixedBlock:
-    offset = tile - allocator->tileBase;
-    offset <<= 3;
-    base = allocator->blocks;
-    block = (struct SpriteTileBlock *)((u8 *)base + offset);
+    block = allocator->blocks + (tile - allocator->tileBase);
     block->sizeAndFlags &= 0xBFFF;
 }
