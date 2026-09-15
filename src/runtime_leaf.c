@@ -35,12 +35,16 @@ AT("00005084") s32 RuntimeReadSignedByte(void)
 }
 AT("00005084") const u8 RuntimeReadSignedByteTail[2] = {0};
 
+/** Narrow-argument wrapper so callers with a full-width song id can still
+ * reach SoundSongStart(), which only takes a u16. */
 AT("00005E98") void SoundSongStartU16(u32 song)
 {
     SoundSongStart((u16)song);
 }
 AT("00005E98") const u8 SoundSongStartU16Tail[2] = {0};
 
+/** Stop all sound players and clear the current menu selection (field12EE)
+ * back to its "nothing selected" sentinel of -1. */
 AT("00005EF0") void RuntimeResetSelection(void)
 {
     SoundStopAllPlayers();
@@ -48,6 +52,8 @@ AT("00005EF0") void RuntimeResetSelection(void)
 }
 AT("00005EF0") const u8 RuntimeResetSelectionTail[2] = {0};
 
+/** Stop the two sound players reserved for whatever caller needs both silent
+ * at once; players 4 and 5 have no other meaning recovered yet. */
 AT("00018E30") void SoundStopPlayers4And5(void)
 {
     StopSoundPlayer(4);
@@ -71,6 +77,8 @@ AT("00003770") void HeapFreeDefault(void *allocation)
 }
 AT("00003770") const u8 HeapFreeDefaultTail[2]={0};
 
+/** Compare a buffer's CRC-32 against an expected value.
+ * @return Zero when they match, otherwise their signed difference. */
 AT("0006E538") s32 Crc32Difference(const void *data,u32 size,s32 expected)
 {
  return expected-CalculateCrc32(data,size);

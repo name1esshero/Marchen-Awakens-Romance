@@ -14,6 +14,14 @@ extern s32 ScriptResourceSetValue(s32 record, s32 selector, u32 value);
 extern s32 ScriptResourceSetStringValue(s32 *record, s32 selector,
                                         const char *value);
 
+/**
+ * @brief Read a field from a first-class resource, resolving and caching its
+ * handle by name on first use.
+ * @param record Handle record: a name pointer at +0, a cached slot at +4.
+ * @param selector Field to read.
+ * @return The field's value; 0 if record is NULL; -1 if the name fails to
+ * resolve to a slot.
+ */
 AT("0007F438") s32 ScriptResourceGetFirst(u8 *record, s32 selector)
 {
     void *slot;
@@ -31,6 +39,14 @@ AT("0007F438") s32 ScriptResourceGetFirst(u8 *record, s32 selector)
     return ScriptResourceGetValue(*(s32 **)(record + 4), selector);
 }
 
+/**
+ * @brief Read a field from a second-class resource, resolving and caching its
+ * handle by name on first use.
+ * @param record Handle record: a name pointer at +0, a cached slot at +4.
+ * @param selector Field to read.
+ * @return The field's value, or a class default if the name fails to
+ * resolve; 0 if record is NULL.
+ */
 AT("0007F470") s32 ScriptResourceGetSecond(u8 *record, s32 selector)
 {
     void *slot;
@@ -49,6 +65,15 @@ AT("0007F470") s32 ScriptResourceGetSecond(u8 *record, s32 selector)
 }
 AT("0007F470") const u8 ScriptResourceGetSecondTail[2] = {0};
 
+/**
+ * @brief Write a field on a first-class resource, resolving and caching its
+ * handle by name on first use.
+ * @param record Handle record: a name pointer at +0, a cached slot at +4.
+ * @param selector Field to write.
+ * @param value New value for the field.
+ * @return The setter's status; 0 if record is NULL or the name fails to
+ * resolve to a slot.
+ */
 AT("0007F4A4") s32 ScriptResourceSetFirst(u8 *record, s32 selector,
                                            u32 value)
 {
@@ -68,6 +93,15 @@ AT("0007F4A4") s32 ScriptResourceSetFirst(u8 *record, s32 selector,
 }
 AT("0007F4A4") const u8 ScriptResourceSetFirstTail[2] = {0};
 
+/**
+ * @brief Write a string field on a second-class resource, resolving and
+ * caching its handle by name on first use.
+ * @param record Handle record: a name pointer at +0, a cached slot at +4.
+ * @param selector Field to write.
+ * @param value New value, passed through as a string pointer.
+ * @return The setter's status; 0 if record is NULL; -1 if the name fails to
+ * resolve to a slot.
+ */
 AT("0007F4DC") s32 ScriptResourceSetSecond(u8 *record, s32 selector,
                                             u32 value)
 {

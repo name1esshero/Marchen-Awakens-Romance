@@ -4,6 +4,12 @@
 #include "random.h"
 #include "runtime_state.h"
 #include "rom_section.h"
+/**
+ * @brief Seed the main LCG. Thin wrapper kept separate so callers that only
+ * know the "init" entry point still reach the same state as RandomSeed().
+ * @param seed Initial generator state.
+ * @return Nothing.
+ */
 AT("0007A184")
 void RandomInit(u32 seed)
 {
@@ -11,18 +17,31 @@ void RandomInit(u32 seed)
 }
 AT("0007A184") const u8 RandomInitTail[2] = {0, 0};
 
+/**
+ * @brief Overwrite the main LCG's state directly.
+ * @param seed New generator state.
+ * @return Nothing.
+ */
 AT("0007A1D8")
 void RandomSeed(u32 seed)
 {
     gRandomSeed = seed;
 }
 
+/**
+ * @brief Read the main LCG's raw 32-bit state without advancing it.
+ * @return The current seed value.
+ */
 AT("0007A1E4")
 u32 RandomGetSeed(void)
 {
     return gRandomSeed;
 }
 
+/**
+ * @brief Advance the main LCG and return its next pseudo-random value.
+ * @return A value in 0..32767 taken from bits 16..30 of the new state.
+ */
 AT("0007A1F0")
 u32 Random(void)
 {
@@ -32,10 +51,13 @@ u32 Random(void)
     return (next >> 16) & 0x7FFF;
 }
 
-/* A second generator running the same LCG, but over its own state inside the
- * secondary runtime allocation rather than gRandomSeed. What distinguishes the
- * two callers is not yet recovered; all known call sites are still in
- * asm/code/code_0080C0.s. */
+/**
+ * @brief A second generator running the same LCG, but over its own state
+ * inside the secondary runtime allocation rather than gRandomSeed. What
+ * distinguishes the two callers is not yet recovered; all known call sites
+ * are still in asm/code/code_0080C0.s.
+ * @return A value in 0..32767 taken from bits 16..30 of the new state.
+ */
 AT("0000832C")
 u32 RuntimeRandom(void)
 {

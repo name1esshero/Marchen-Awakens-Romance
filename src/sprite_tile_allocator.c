@@ -29,6 +29,15 @@ struct SpriteTileAllocator {
 extern u32 SpriteTileBlockIndex(struct SpriteTileBlock *base,
                                 struct SpriteTileBlock *block);
 
+/**
+ * @brief Allocate and initialize an 8 KiB OBJ-tile free-list for a tile range.
+ * @param heap Heap the block table itself is allocated from.
+ * @param allocator Allocator state to initialize.
+ * @param tileBase First OBJ tile index this allocator manages.
+ * @param tileCount Number of OBJ tiles this allocator manages.
+ * @return The new block table, or NULL if the range is out of bounds or the
+ * heap allocation fails.
+ */
 AT("0007B32C")
 void *SpriteTileAllocatorInit(struct Heap *heap,
                               struct SpriteTileAllocator *allocator,
@@ -60,6 +69,11 @@ void *SpriteTileAllocatorInit(struct Heap *heap,
     return ((volatile struct SpriteTileAllocator *)state)->blocks;
 }
 
+/**
+ * @brief Sum every free block's size across the whole allocator.
+ * @param allocator Allocator to scan.
+ * @return Total free space, in 8-byte block units.
+ */
 AT("0007B64C")
 u32 SpriteTileAllocatorFreeTotal(struct SpriteTileAllocator *allocator)
 {
@@ -82,6 +96,11 @@ u32 SpriteTileAllocatorFreeTotal(struct SpriteTileAllocator *allocator)
     return total;
 }
 
+/**
+ * @brief Find the single largest contiguous free block.
+ * @param allocator Allocator to scan.
+ * @return Size of the largest free block, in 8-byte block units.
+ */
 AT("0007B68C")
 u32 SpriteTileAllocatorLargestFree(struct SpriteTileAllocator *allocator)
 {
@@ -100,6 +119,11 @@ u32 SpriteTileAllocatorLargestFree(struct SpriteTileAllocator *allocator)
     return largest;
 }
 
+/**
+ * @brief Free the allocator's block table and clear its state to zero.
+ * @param allocator Allocator to reset.
+ * @return Nothing.
+ */
 AT("0007B384")
 void SpriteTileAllocatorReset(struct SpriteTileAllocator *allocator)
 {

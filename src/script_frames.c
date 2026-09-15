@@ -8,6 +8,8 @@
 #include "rom_section.h"
 #define VM (*(struct ScriptContext **)0x0300611C)
 extern s32 sub_08080070(struct ScriptFrame *);
+/** Dispatch the VM's current frame once.
+ * @return The dispatch's reported work, or 0 if there is no current frame. */
 AT("0007ED70") s32 ScriptDispatchCurrentFrame(void)
 {
  struct ScriptFrame *frame=VM->state->frame;
@@ -17,6 +19,10 @@ AT("0007ED70") s32 ScriptDispatchCurrentFrame(void)
  return result;
 }
 AT("0007ED70") const u8 ScriptDispatchCurrentFrameTail[2]={0,0};
+/** Repeatedly dispatch the current frame until it stops reporting work or
+ * the VM's per-slice step budget is reached. Always attempts one dispatch,
+ * unlike ScriptRunSlice, which checks the pending counter first.
+ * @return Total work accumulated this batch. */
 AT("0007ED90") u32 ScriptRunWorkBatch(void)
 {
  u32 work=0;
@@ -27,6 +33,10 @@ AT("0007ED90") u32 ScriptRunWorkBatch(void)
  } while(work < VM->state->stepBudget && status>0);
  return work;
 }
+/** Set one bit of the VM's current frame flags.
+ * @param index Bit index, 0..7.
+ * @return 0 on success; -1 if there is no current frame or index is out of
+ * range. */
 AT("0007EDC0") s32 ScriptSetFrameFlag(u32 index)
 {
  struct ScriptFrame *frame=VM->state->frame;
@@ -37,6 +47,10 @@ AT("0007EDC0") s32 ScriptSetFrameFlag(u32 index)
  }
  return -1;
 }
+/** Set the VM's per-slice step budget, without validating the caller's
+ * frame state. A value of 0 is replaced with the default budget of 10.
+ * @param value New step budget.
+ * @return Nothing. */
 AT("0007EDF0") void ScriptSetStepBudgetUnchecked(u32 value)
 {
  u32 *limit=&VM->state->stepBudget;
@@ -45,6 +59,11 @@ AT("0007EDF0") void ScriptSetStepBudgetUnchecked(u32 value)
 }
 extern void sub_0807EC58(void);
 extern void HeapFree(void *,void *);
+/** Restore the VM's parent frame, then free the popped frame's allocations
+ * (storage, both work tables, and its optional owned resource) and the frame
+ * itself. The optional resource is freed from heap zero; the other blocks
+ * from the VM heap.
+ * @return Nothing. */
 AT("0007EFB8") void ScriptPopFrame(void)
 {
  struct ScriptExecutionState *state;

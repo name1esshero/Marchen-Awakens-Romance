@@ -6,6 +6,14 @@
 #include "rom_section.h"
 extern void HeapFree(struct Heap *, void *);
 
+/**
+ * @brief Allocate a manager's priority queue array and initialize every
+ * queue empty. Preserves the original lack of an allocation-failure check.
+ * @param manager Manager to initialize.
+ * @param heap Heap the queue array and future tasks are allocated from.
+ * @param count Number of priority queues to allocate.
+ * @return Nothing.
+ */
 AT("0007A5FC")
 void TaskManagerInit(struct TaskManager *manager, struct Heap *heap, u32 count)
 {
@@ -20,6 +28,12 @@ void TaskManagerInit(struct TaskManager *manager, struct Heap *heap, u32 count)
 }
 AT("0007A5FC") const u8 TaskManagerInitTail[2] = {0, 0};
 
+/**
+ * @brief Free every queued task node and then the queue array itself.
+ * Does not run task callbacks or free the manager struct.
+ * @param manager Manager to tear down.
+ * @return Nothing.
+ */
 AT("0007A644")
 void TaskManagerDestroy(struct TaskManager *manager)
 {
@@ -39,6 +53,7 @@ void TaskManagerDestroy(struct TaskManager *manager)
     manager->taskCount = 0;
 }
 
+/** @return The manager's live task count. */
 AT("0007A868")
 u32 TaskManagerCount(struct TaskManager *manager)
 {
@@ -48,6 +63,18 @@ u32 TaskManagerCount(struct TaskManager *manager)
 /* Allocate a task header plus zeroed caller payload. The allocation-failure
     * handler remains assembly; preserve its original 0x00600000 argument. */
 extern void CpuFill(void *,u32,u32);
+/**
+ * @brief Allocate a task header plus a zeroed caller payload and append it
+ * to the end of one priority queue.
+ * @param manager Owning task manager.
+ * @param callback Function TaskManagerRun() invokes each pass while the task
+ * is running.
+ * @param priority Index of the queue to append to.
+ * @param completion Optional pointer the caller polls for completion; reset
+ * to 0 here if given.
+ * @param size Size of the caller payload following the task header.
+ * @return The new task, or NULL if the allocation fails.
+ */
 AT("0007A688")
 struct EngineTask *TaskCreateInQueue(struct TaskManager *manager,void (*callback)(struct EngineTask *),u32 priority,u32 *completion,u32 size)
 {
@@ -71,6 +98,18 @@ struct EngineTask *TaskCreateInQueue(struct TaskManager *manager,void (*callback
     return task;
 }
 AT("0007A688") const u8 TaskCreateInQueueTail[2]={0,0};
+/**
+ * @brief Allocate a task header plus a zeroed caller payload and insert it
+ * into another task's queue immediately before that task.
+ * @param manager Owning task manager.
+ * @param callback Function TaskManagerRun() invokes each pass while the task
+ * is running.
+ * @param at Existing task to insert before; also supplies the target queue.
+ * @param completion Optional pointer the caller polls for completion; reset
+ * to 0 here if given.
+ * @param size Size of the caller payload following the task header.
+ * @return The new task, or NULL if the allocation fails.
+ */
 AT("0007A700")
 struct EngineTask *TaskCreateBefore(struct TaskManager *manager,void (*callback)(struct EngineTask *),struct EngineTask *at,u32 *completion,u32 size)
 {
