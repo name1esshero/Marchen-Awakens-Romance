@@ -63,6 +63,7 @@ u32 RuntimeActorGetField224(u32 index);
 void RuntimeActorSetField228(u32 index,u32 value);
 u32 RuntimeActorGetField228(u32 index);
 u32 RuntimeTestFlagC0(u32 bit);
+void RuntimeSetFlagC0(u32 bit, s32 enable);
 void RuntimeActorSetField354(u32 index,u32 value);
 u32 RuntimeActorGetField354(u32 index);
 u32 RuntimeGetPointerE3C(u32 index);

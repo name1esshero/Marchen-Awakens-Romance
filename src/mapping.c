@@ -543,7 +543,7 @@ extern s32 RuntimeGetFieldEB3(void);
 extern void RuntimeSetFieldEB3(s32);
 extern void SpriteEngineSetFlag20C(s32, s32);
 extern void GameStateSetField4254(s32);
-extern void sub_08009728(s32, s32);
+extern void RuntimeSetFlagC0(u32, s32);
 extern void sub_08008C14(s32);
 extern void sub_08016D28(void);
 extern void sub_08009F44(s32);
@@ -653,7 +653,7 @@ AT("000123F8") s32 ScriptNativeResetFieldScene(u32 count, const s32 *args,
         SpriteEngineSetFlag20C(15, 0);
     RuntimeSetFieldEB3(0);
     GameStateSetField4254(0);
-    sub_08009728(2, 0);
+    RuntimeSetFlagC0(2, 0);
     sub_08008C14(2);
     sub_08016D28();
     sub_08009F44(0);

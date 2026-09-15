@@ -293,6 +293,15 @@ ACTOR_GET_U32("000096F4",RuntimeActorGetField228,0x228)
 /** @return Whether a bit is set in the secondary runtime's +0xC0 flag
  * byte. */
 AT("00009710") u32 RuntimeTestFlagC0(u32 bit) { return gSecondaryRuntime[0xC0] & (1u<<bit); }
+/** Set or clear a bit in the secondary runtime's +0xC0 flag byte. See
+ * RuntimeTestFlagC0(). */
+AT("00009728") void RuntimeSetFlagC0(u32 bit, s32 enable)
+{
+    if (enable)
+        gSecondaryRuntime[0xC0] |= 1 << bit;
+    else
+        gSecondaryRuntime[0xC0] &= ~(1 << bit);
+}
 ACTOR_SET_U32("00009EB4",RuntimeActorSetField354,0x354)
 ACTOR_GET_U32("00009ED0",RuntimeActorGetField354,0x354)
 /** @return An indexed pointer from the secondary runtime's +0xE3C table. */

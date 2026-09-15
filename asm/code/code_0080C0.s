@@ -1156,7 +1156,7 @@ sub_08008968:
 	bl sub_08008A44
 	movs r0, #2
 	movs r1, #1
-	bl sub_08009728
+	bl RuntimeSetFlagC0
 	movs r0, #1
 	.2byte 0xF7FE
 	.4byte 0x2001F9D5
@@ -3019,45 +3019,7 @@ _08009620:
 
 @ 009710..009728 is decompiled as RuntimeTestFlagC0(); see src/decompiled.json
 
-	.section .rom.00009728, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_08009728
-sub_08009728:
-	push {lr}
-	adds r3, r0, #0
-	cmp r1, #0
-	beq _08009744
-	ldr r0, _08009740
-	ldr r2, [r0, #0]
-	adds r2, #192
-	movs r0, #1
-	lsls r0, r3
-	ldrb r1, [r2, #0]
-	orrs r0, r1
-	b _08009752
-	.global _08009740
-_08009740:
-	.4byte 0x03004020  @ IWRAM+0x4020
-	.global _08009744
-_08009744:
-	ldr r0, _08009758
-	ldr r2, [r0, #0]
-	adds r2, #192
-	movs r1, #1
-	lsls r1, r3
-	ldrb r0, [r2, #0]
-	bics r0, r1
-	.global _08009752
-_08009752:
-	strb r0, [r2, #0]
-	pop {r0}
-	bx r0
-	.global _08009758
-_08009758:
-	.4byte 0x03004020  @ IWRAM+0x4020
+@ 009728..009758 is decompiled as RuntimeSetFlagC0(); see src/decompiled.json
 
 @ 00975C..009774 is decompiled as RuntimeActorGetField358(); see src/decompiled.json
 
@@ -7870,10 +7832,10 @@ _0800BE7E:
 	strb r0, [r1, #0]
 	movs r0, #0
 	movs r1, #1
-	bl sub_08009728
+	bl RuntimeSetFlagC0
 	movs r0, #1
 	movs r1, #1
-	bl sub_08009728
+	bl RuntimeSetFlagC0
 	movs r0, #192
 	lsls r0, r0, #2
 	strh r0, [r7, #14]
@@ -7918,7 +7880,7 @@ sub_0800BECE:
 	movs r1, #0
 	ldrsb r1, [r0, r1]
 	movs r0, #0
-	bl sub_08009728
+	bl RuntimeSetFlagC0
 	adds r0, r7, #0
 	adds r0, #239
 	movs r1, #0
@@ -7929,7 +7891,7 @@ sub_0800BECE:
 sub_0800BEE8:
 	ldrsb r1, [r0, r1]
 	movs r0, #1
-	bl sub_08009728
+	bl RuntimeSetFlagC0
 	mov r5, r8
 
 	.thumb_func

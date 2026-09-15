@@ -7500,7 +7500,7 @@ sub_08014BB4:
 _08014BC6:
 	adds r0, r1, #0
 	movs r1, #1
-	bl sub_08009728
+	bl RuntimeSetFlagC0
 	movs r0, #0
 	ldrsb r0, [r5, r0]
 	ldr r2, _08014C30
@@ -7598,7 +7598,7 @@ _08014C56:
 _08014C76:
 	adds r0, r1, #0
 	movs r1, #0
-	bl sub_08009728
+	bl RuntimeSetFlagC0
 
 	.thumb_func
 	.thumb

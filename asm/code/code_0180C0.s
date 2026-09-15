@@ -1861,7 +1861,7 @@ _08018F3A:
 _08018F80:
 	adds r0, r1, #0
 	movs r1, #1
-	bl sub_08009728
+	bl RuntimeSetFlagC0
 	movs r1, #0
 	movs r0, #0
 	ldrsb r0, [r5, r0]
@@ -1953,7 +1953,7 @@ _08018FFA:
 _08019024:
 	adds r0, r1, #0
 	movs r1, #0
-	bl sub_08009728
+	bl RuntimeSetFlagC0
 	movs r5, #147
 	lsls r5, r5, #2
 	adds r1, r7, r5
@@ -2050,7 +2050,7 @@ _0801909C:
 _080190CC:
 	adds r0, r1, #0
 	movs r1, #0
-	bl sub_08009728
+	bl RuntimeSetFlagC0
 	movs r1, #0
 	movs r0, #0
 	ldrsb r0, [r6, r0]
@@ -2141,7 +2141,7 @@ _0801913A:
 _08019166:
 	adds r0, r1, #0
 	movs r1, #0
-	bl sub_08009728
+	bl RuntimeSetFlagC0
 	movs r2, #0
 	movs r0, #0
 	ldrsb r0, [r6, r0]
@@ -2204,7 +2204,7 @@ _080191B4:
 _080191CC:
 	adds r0, r1, #0
 	movs r1, #1
-	bl sub_08009728
+	bl RuntimeSetFlagC0
 	movs r0, #0
 	ldrsb r0, [r6, r0]
 	movs r1, #0
@@ -2300,7 +2300,7 @@ _0801926C:
 _0801927E:
 	adds r0, r1, #0
 	movs r1, #0
-	bl sub_08009728
+	bl RuntimeSetFlagC0
 	mov r1, r10
 	lsls r4, r1, #16
 	asrs r5, r4, #16

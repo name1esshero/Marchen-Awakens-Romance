@@ -1032,6 +1032,12 @@
     "file": "src/runtime_buffers.c"
   },
   {
+    "addr": "08009728",
+    "size": 48,
+    "name": "RuntimeSetFlagC0",
+    "file": "src/runtime_buffers.c"
+  },
+  {
     "addr": "0800975C",
     "size": 28,
     "name": "RuntimeActorGetField358",

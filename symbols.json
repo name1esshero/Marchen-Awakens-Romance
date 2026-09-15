@@ -162,6 +162,7 @@
   "080096D8": "RuntimeActorSetField228",
   "080096F4": "RuntimeActorGetField228",
   "08009710": "RuntimeTestFlagC0",
+  "08009728": "RuntimeSetFlagC0",
   "080097D0": "RuntimeObjectSetField4A",
   "080097E8": "RuntimeObjectGetField4A",
   "08009800": "RuntimeObjectSetField4C",

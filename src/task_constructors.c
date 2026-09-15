@@ -19,7 +19,7 @@ extern void sub_08080BD8(void *task);
 extern void sub_08080BDC(void *task);
 extern void sub_08080BD4(void *task);
 extern void sub_0805615C(void);
-extern void sub_08009728(s32, s32);
+extern void RuntimeSetFlagC0(u32, s32);
 extern s32 SpriteResourceFindGroup(s32, const char *);
 extern void VramFillTask(void *task);
 extern void ScriptSpriteResetTask(void *task);
@@ -369,7 +369,7 @@ AT("0006EFCC") u8 *CreateEncounterResetTask(s32 *result)
     u8 *task = CreateTask(&gMainTaskManager, sub_0806F018,
                           0, result, 0x3F34);
     for (i = 0; i <= 3; i++)
-        sub_08009728(i, 0);
+        RuntimeSetFlagC0(i, 0);
     ScriptAddPendingTasks(1);
     return task;
 }

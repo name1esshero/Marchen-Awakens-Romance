@@ -11360,7 +11360,7 @@ _0806ED28:
 	.2byte 0xF00B
 	.4byte 0x1C20FC89
 	movs r1, #0
-	bl sub_08009728
+	bl RuntimeSetFlagC0
 	adds r4, #1
 	cmp r4, #3
 	ble _0806ED28
@@ -11651,7 +11651,7 @@ sub_0806EFCC:
 	.global _0806EFE8
 _0806EFE8:
 	movs r1, #0
-	bl sub_08009728
+	bl RuntimeSetFlagC0
 	adds r0, r4, #0
 	movs r1, #128
 	lsls r1, r1, #9
