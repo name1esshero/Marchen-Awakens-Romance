@@ -101,8 +101,10 @@ inspectable (e.g. total live-range count) rather than trial and error.
    matches as ordinary C. Only when that fails should the function move back
    behind its original assembly implementation, keeping readable C under
    `src/nonmatching/` with the exact mismatch documented.
-2. Move the ten BIOS instruction wrappers from naked inline C into a small
-   named assembly wrapper file, preserving their C prototypes.
+2. Done: the BIOS instruction wrappers (eleven, not ten -- the sound driver
+   ships its own separate CpuFastSet copy) now live in real assembly
+   (asm/code/bios_calls.s and one entry in asm/code/code_0780C0.s) instead of
+   naked inline C, with plain extern prototypes at their call sites.
 3. Replace raw ROM function and string addresses with verified linker symbols.
    Confirm odd THUMB pointers before subtracting their low bit.
 4. Replace proven flags, limits, strides, and structure offsets with named
@@ -123,3 +125,37 @@ inspectable (e.g. total live-range count) rather than trial and error.
 This order preserves the byte-identical build throughout the cleanup. A lower
 C percentage is preferable to counting C that violates the project's matching
 rules.
+
+## New-decompile session, 2026-09-14/15
+
+Reconstructed three previously-undecompiled functions (all logically verified
+against the disassembly, none forced with a new register hint or inline
+asm), landing two as `src/nonmatching/` and one still unresolved:
+
+- `sub_08004DA8` -> `RuntimeGetLinkActivityState`
+  (`src/nonmatching/runtime_link_status.c`). Also documents that the
+  disassembly's `sub_08004DBC` is a false split with no real callers, and
+  manually decodes the function's two unresolved `bl` targets (both
+  `SioGetPlayerId`) from their raw ARMv4T BL encoding.
+- `sub_08056290`/`sub_080562C8` -> `GameStateGetResourceCounter`/
+  `GameStateAddResourceCounter` (`src/nonmatching/game_state_resource_counter.c`).
+  A 999999-capped counter at the game root's +0x38BC.
+- `sub_08078644` -> `SoundTrackReleaseChannels`
+  (`src/nonmatching/sound_track_release_channels.c`). Matches down to a
+  single instruction: the ROM's first condition is a bare `tst`, agbcc's
+  normal codegen for the identical `if (flags & CONST)` idiom is
+  `ands+cmp+beq` (confirmed against the already-matching
+  `SoundPlayerImmediateInit()` a few functions earlier in the same file,
+  which uses the same idiom and gets `ands+cmp+beq`), and no variant tried
+  reproduces the bare `tst`. A genuinely new failure mode, not the register-
+  swap one documented above -- worth its own investigation rather than
+  assuming it is the same quirk.
+
+All three needed a `register ... asm("rN")` pin just to reach the exact
+register-swap failure mode already documented above (RuntimeGetLinkActivityState,
+GameState*ResourceCounter) or hit a *different*, still-unexplained
+instruction-selection difference (SoundTrackReleaseChannels) -- consistent
+with this session's earlier finding that the remaining hard-error surface is
+disproportionately made of near-misses, not functions nobody has looked at
+yet. Anyone continuing this work should expect a similar hit rate: several
+close-but-not-exact attempts per clean match.
