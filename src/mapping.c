@@ -79,31 +79,56 @@ void MapGenerationSetTilePosition(u32 i, s32 tileX, s32 tileY)
     MapGenerationGetState()->tileY[i] = tileY;
 }
 
+/** Set a generation entry's active state. See MapGenerationClearCurrentFieldEntries(). */
 AT("00071F48") void MapGenerationSetEntryState(u32 i, s32 v) { MapGenerationGetState()->entryState[i] = v; }
+/** @return A generation entry's active state (nonzero when active). */
 AT("00071F60") s32 MapGenerationGetEntryState(u32 i) { return MapGenerationGetState()->entryState[i]; }
+/** Set a generation entry's countdown. See MapGenerationAdvanceCurrentFieldEntries(). */
 AT("00071F78") void MapGenerationSetCountdown(u32 i, s32 v) { MapGenerationGetState()->countdown[i] = v; }
+/** @return A generation entry's countdown. */
 AT("00071F90") s32 MapGenerationGetCountdown(u32 i) { return MapGenerationGetState()->countdown[i]; }
 AT("00071F90") const u8 MapGenerationGetCountdownTail[2] = {0, 0};
+/** Set a generation entry's update-pending flag. */
 AT("00071FA8") void MapGenerationSetUpdatePending(u32 i, s32 v) { MapGenerationGetState()->updatePending[i] = v; }
 AT("00071FA8") const u8 MapGenerationSetUpdatePendingTail[2] = {0, 0};
+/** @return A generation entry's update-pending flag. */
 AT("00071FC0") s32 MapGenerationGetUpdatePending(u32 i) { return MapGenerationGetState()->updatePending[i]; }
+/** @return The map-generation state's value24 field. Meaning not yet
+ * recovered. */
 AT("00071FD8") s32 MapGenerationGetValue24(void) { return MapGenerationGetState()->value24; }
 AT("00071FD8") const u8 MapGenerationGetValue24Tail[2] = {0, 0};
+/** Set the map-generation state's value24 field (narrowed to a signed
+ * byte). */
 AT("00071FEC") void MapGenerationSetValue24(s32 v) { s32 n = (s8)v; MapGenerationGetState()->value24 = n; }
 AT("00071FEC") const u8 MapGenerationSetValue24Tail[2] = {0, 0};
 
+/** Set a generation entry's field identifier (narrowed to a signed
+ * halfword). */
 AT("00072004") void MapGenerationSetFieldId(u32 i, s32 v) { s32 n = (s16)v; MapGenerationGetState()->fieldId[i] = n; }
 AT("00072004") const u8 MapGenerationSetFieldIdTail[2] = {0, 0};
+/** @return A generation entry's field identifier. */
 AT("00072020") s32 MapGenerationGetFieldId(u32 i) { return MapGenerationGetState()->fieldId[i]; }
+/** @return The map-generation state's value25 field. Meaning not yet
+ * recovered. */
 AT("00072038") s32 MapGenerationGetValue25(void) { return MapGenerationGetState()->value25; }
 AT("00072038") const u8 MapGenerationGetValue25Tail[2] = {0, 0};
+/** Set the map-generation state's value25 field (narrowed to a signed
+ * byte). */
 AT("0007204C") void MapGenerationSetValue25(s32 v) { s32 n = (s8)v; MapGenerationGetState()->value25 = n; }
 AT("0007204C") const u8 MapGenerationSetValue25Tail[2] = {0, 0};
+/** @return The map-generation state's value08 field. Gates most generation
+ * updates when its low byte is nonzero (see MapGenerationClearCurrentFieldEntries()). */
 AT("00072064") s32 MapGenerationGetValue08(void) { return MapGenerationGetState()->value08; }
+/** Set the map-generation state's value08 field (narrowed to a signed
+ * byte). See MapGenerationGetValue08(). */
 AT("00072074") void MapGenerationSetValue08(s32 v) { s32 n = (s8)v; MapGenerationGetState()->value08 = n; }
+/** @return A generation entry's vector, component 0. */
 AT("00072088") s32 MapGenerationGetVectorValue0(u32 i) { return MapGenerationGetState()->vectors[i].value0; }
+/** @return A generation entry's vector, component 2. */
 AT("000720A0") s32 MapGenerationGetVectorValue2(u32 i) { return MapGenerationGetState()->vectors[i].value2; }
+/** @return A generation entry's vector, component 4. */
 AT("000720B8") s32 MapGenerationGetVectorValue4(u32 i) { return MapGenerationGetState()->vectors[i].value4; }
+/** @return A generation entry's vector, component 6. */
 AT("000720D0") s32 MapGenerationGetVectorValue6(u32 i) { return MapGenerationGetState()->vectors[i].value6; }
 
 /* Script-facing procedural-map commands. */
@@ -130,6 +155,9 @@ extern void BattleRuntimeSetArena(void *buffer, u32 arenaIndex);
 extern s32 GameStateGetField4258(void);
 extern void GameStateSetField4258(s32 value);
 
+/** @return The active runtime room record matching roomIndex among the 64
+ * slots based at the battle runtime buffer's +24, or NULL if none is
+ * active with that index. */
 AT("00070EEC")
 struct GeneratedMapRuntimeRoom *GeneratedMapFindRuntimeRoom(s32 roomIndex)
 {
@@ -146,6 +174,8 @@ struct GeneratedMapRuntimeRoom *GeneratedMapFindRuntimeRoom(s32 roomIndex)
 }
 AT("00070EEC") const u8 GeneratedMapFindRuntimeRoomTail[2] = {0, 0};
 
+/** @return The current cell's room record's +20 field. Meaning not yet
+ * recovered. */
 AT("00070D60")
 s32 GeneratedMapGetCurrentRoomProperty14(struct GeneratedFieldMap *map)
 {
@@ -155,6 +185,8 @@ s32 GeneratedMapGetCurrentRoomProperty14(struct GeneratedFieldMap *map)
     return *(s32 *)((u8 *)*rooms + roomOffset + 20);
 }
 
+/** @return The current cell's room record's +24 field. Meaning not yet
+ * recovered. */
 AT("00070D84")
 s32 GeneratedMapGetCurrentRoomProperty18(struct GeneratedFieldMap *map)
 {
@@ -164,18 +196,23 @@ s32 GeneratedMapGetCurrentRoomProperty18(struct GeneratedFieldMap *map)
     return *(s32 *)((u8 *)*rooms + roomOffset + 24);
 }
 
+/** Set the current generated field map's +parameter10 field. Meaning not
+ * yet recovered. */
 AT("0007106C")
 void GeneratedMapSetParameter10(s32 value)
 {
     ((struct GeneratedFieldMap *)GameStateGetBuffer38C0())->parameter10 = value;
 }
 
+/** @return The current generated field map's parameter10 field. */
 AT("0007107C")
 s32 GeneratedMapGetParameter10(void)
 {
     return ((struct GeneratedFieldMap *)GameStateGetBuffer38C0())->parameter10;
 }
 
+/** Set the current cell's active runtime room's script flag, if that room
+ * is found. See GeneratedMapFindRuntimeRoom(). */
 AT("00071088")
 void GeneratedMapSetCurrentRoomFlag(s32 value)
 {
@@ -188,6 +225,9 @@ void GeneratedMapSetCurrentRoomFlag(s32 value)
 }
 AT("00071088") const u8 GeneratedMapSetCurrentRoomFlagTail[2] = {0, 0};
 
+/** @return The current cell's active runtime room's script flag. Unlike
+ * GeneratedMapSetCurrentRoomFlag(), this does not guard against the room
+ * lookup failing. */
 AT("000710A4")
 s32 GeneratedMapGetCurrentRoomFlag(void)
 {
@@ -198,18 +238,23 @@ s32 GeneratedMapGetCurrentRoomFlag(void)
 }
 AT("000710A4") const u8 GeneratedMapGetCurrentRoomFlagTail[2] = {0, 0};
 
+/** Native script command: forward to MapGenerationSetValue08().
+ * @return Always 1. */
 AT("000124B0") s32 ScriptNativeMapSetValue08(u32 count, const s32 *args, s32 *result)
 {
     MapGenerationSetValue08((s8)args[0]);
     return 1;
 }
 
+/** Native script command: forward to MapGenerationSetValue25().
+ * @return Always 1. */
 AT("000124C0") s32 ScriptNativeMapSetValue25(u32 count, const s32 *args, s32 *result)
 {
     MapGenerationSetValue25((s8)args[0]);
     return 1;
 }
 
+/** Native script command: forward to sub_08075984(0). @return Always 1. */
 AT("000124D0") s32 ScriptNativeMapResetGenerator(u32 count, const s32 *args, s32 *result)
 {
     sub_08075984(0);
@@ -217,6 +262,8 @@ AT("000124D0") s32 ScriptNativeMapResetGenerator(u32 count, const s32 *args, s32
 }
 AT("000124D0") const u8 ScriptNativeMapResetGeneratorTail[2] = {0};
 
+/** Native script command: reset actor 0's field340 and related state
+ * through three engine calls. @return Always 1. */
 AT("000124E0") s32 ScriptNativeMapResetActor(u32 count, const s32 *args, s32 *result)
 {
     sub_08009F44(0);
@@ -225,18 +272,24 @@ AT("000124E0") s32 ScriptNativeMapResetActor(u32 count, const s32 *args, s32 *re
     return 1;
 }
 
+/** Native script command: read MapGenerationGetPointer1C() as a pixel
+ * offset (its raw tile value shifted left 3). @return Always 1. */
 AT("00012500") s32 ScriptNativeMapGetPointer1COffset(u32 count, const s32 *args, s32 *result)
 {
     *result = (u32)MapGenerationGetPointer1C() << 3;
     return 1;
 }
 
+/** Native script command: read MapGenerationGetPointer20() as a pixel
+ * offset (its raw tile value shifted left 3). @return Always 1. */
 AT("00012514") s32 ScriptNativeMapGetPointer20Offset(u32 count, const s32 *args, s32 *result)
 {
     *result = (u32)MapGenerationGetPointer20() << 3;
     return 1;
 }
 
+/** Native script command: forward three u16-narrowed arguments to
+ * sub_080700A8() on the current generated field map. @return Always 1. */
 AT("00012528") s32 ScriptNativeMapConfigure3(u32 count, const s32 *args, s32 *result)
 {
     void *state = GameStateGetBuffer38C0();
@@ -245,6 +298,9 @@ AT("00012528") s32 ScriptNativeMapConfigure3(u32 count, const s32 *args, s32 *re
 }
 AT("00012528") const u8 ScriptNativeMapConfigure3Tail[2] = {0};
 
+/** Native script command: release the current generated field map's
+ * resources via MapGenerationRelease(). @return Always SCRIPT_WAIT
+ * (0x7FFF). */
 AT("00012544") s32 ScriptNativeMapRefresh(u32 count, const s32 *args, s32 *result)
 {
     void *state = GameStateGetBuffer38C0();
@@ -252,6 +308,8 @@ AT("00012544") s32 ScriptNativeMapRefresh(u32 count, const s32 *args, s32 *resul
     return 0x7FFF;
 }
 
+/** Native script command: forward two u16-narrowed arguments to
+ * sub_0807017C() on the current generated field map. @return Always 1. */
 AT("00012558") s32 ScriptNativeMapConfigure2(u32 count, const s32 *args, s32 *result)
 {
     void *state = GameStateGetBuffer38C0();
@@ -259,6 +317,9 @@ AT("00012558") s32 ScriptNativeMapConfigure2(u32 count, const s32 *args, s32 *re
     return 1;
 }
 
+/** Native script command: forward a u16-narrowed argument plus a fresh
+ * random value to sub_08070238() on the current generated field map.
+ * @return Always 1. */
 AT("00012570") s32 ScriptNativeMapRandomize(u32 count, const s32 *args, s32 *result)
 {
     void *state = GameStateGetBuffer38C0();
@@ -269,6 +330,8 @@ AT("00012570") s32 ScriptNativeMapRandomize(u32 count, const s32 *args, s32 *res
 }
 AT("00012570") const u8 ScriptNativeMapRandomizeTail[2] = {0};
 
+/** Native script command: forward to GeneratedMapGetCurrentRoomProperty14().
+ * @return Always 1. */
 AT("00012594") s32 ScriptNativeMapQueryD60(u32 count, const s32 *args, s32 *result)
 {
     *result = GeneratedMapGetCurrentRoomProperty14(GameStateGetBuffer38C0());
@@ -276,12 +339,16 @@ AT("00012594") s32 ScriptNativeMapQueryD60(u32 count, const s32 *args, s32 *resu
 }
 AT("00012594") const u8 ScriptNativeMapQueryD60Tail[2] = {0};
 
+/** Native script command: forward to sub_08070DA8(state, 0, 0) on the
+ * current generated field map. @return Always 1. */
 AT("000125AC") s32 ScriptNativeMapClearDState(u32 count, const s32 *args, s32 *result)
 {
     sub_08070DA8(GameStateGetBuffer38C0(), 0, 0);
     return 1;
 }
 
+/** Native script command: forward to GeneratedMapGetCurrentRoomProperty18().
+ * @return Always 1. */
 AT("000125C0") s32 ScriptNativeMapQueryD84(u32 count, const s32 *args, s32 *result)
 {
     *result = GeneratedMapGetCurrentRoomProperty18(GameStateGetBuffer38C0());
@@ -289,6 +356,8 @@ AT("000125C0") s32 ScriptNativeMapQueryD84(u32 count, const s32 *args, s32 *resu
 }
 AT("000125C0") const u8 ScriptNativeMapQueryD84Tail[2] = {0};
 
+/** Native script command: forward to sub_08070F80() on the current
+ * generated field map. @return Always 1. */
 AT("000125D8") s32 ScriptNativeMapSetMode(u32 count, const s32 *args, s32 *result)
 {
     sub_08070F80(GameStateGetBuffer38C0(), args[0]);
@@ -296,18 +365,24 @@ AT("000125D8") s32 ScriptNativeMapSetMode(u32 count, const s32 *args, s32 *resul
 }
 AT("000125D8") const u8 ScriptNativeMapSetModeTail[2] = {0};
 
+/** Native script command: set the current generated field map's +0x14 seed
+ * field. @return Always 1. */
 AT("000125F0") s32 ScriptNativeMapSetSeed(u32 count, const s32 *args, s32 *result)
 {
     *(s32 *)((u8 *)GameStateGetBuffer38C0() + 0x14) = args[0];
     return 1;
 }
 
+/** Native script command: read the current generated field map's +0x14
+ * seed field. @return Always 1. */
 AT("00012604") s32 ScriptNativeMapGetSeed(u32 count, const s32 *args, s32 *result)
 {
     *result = *(s32 *)((u8 *)GameStateGetBuffer38C0() + 0x14);
     return 1;
 }
 
+/** Native script command: forward to GeneratedMapSetCurrentRoomFlag().
+ * @return Always 1. */
 AT("00012618") s32 ScriptNativeMapCall1088(u32 count, const s32 *args, s32 *result)
 {
     GeneratedMapSetCurrentRoomFlag(args[0]);
@@ -315,6 +390,8 @@ AT("00012618") s32 ScriptNativeMapCall1088(u32 count, const s32 *args, s32 *resu
 }
 AT("00012618") const u8 ScriptNativeMapCall1088Tail[2] = {0};
 
+/** Native script command: forward to GeneratedMapGetCurrentRoomFlag().
+ * @return Always 1. */
 AT("00012628") s32 ScriptNativeMapQuery10A4(u32 count, const s32 *args, s32 *result)
 {
     *result = GeneratedMapGetCurrentRoomFlag();
@@ -322,6 +399,8 @@ AT("00012628") s32 ScriptNativeMapQuery10A4(u32 count, const s32 *args, s32 *res
 }
 AT("00012628") const u8 ScriptNativeMapQuery10A4Tail[2] = {0};
 
+/** Native script command: read the current generated field map's +0x618
+ * s32 field. @return Always 1. */
 AT("0001263C") s32 ScriptNativeMapGetField618(u32 count, const s32 *args, s32 *result)
 {
     *result = *(s32 *)((u8 *)GameStateGetBuffer38C0() + 0x618);
@@ -329,24 +408,32 @@ AT("0001263C") s32 ScriptNativeMapGetField618(u32 count, const s32 *args, s32 *r
 }
 AT("0001263C") const u8 ScriptNativeMapGetField618Tail[2] = {0};
 
+/** Native script command: set the current generated field map's +0x10 s32
+ * field. @return Always 1. */
 AT("00012658") s32 ScriptNativeMapSetField10(u32 count, const s32 *args, s32 *result)
 {
     *(s32 *)((u8 *)GameStateGetBuffer38C0() + 0x10) = args[0];
     return 1;
 }
 
+/** Native script command: read the current generated field map's +0x10 s32
+ * field. @return Always 1. */
 AT("0001266C") s32 ScriptNativeMapGetField10(u32 count, const s32 *args, s32 *result)
 {
     *result = *(s32 *)((u8 *)GameStateGetBuffer38C0() + 0x10);
     return 1;
 }
 
+/** Native script command: read the current generated field map's +0x624
+ * s16 field. @return Always 1. */
 AT("00012680") s32 ScriptNativeMapGetField624(u32 count, const s32 *args, s32 *result)
 {
     *result = *(s16 *)((u8 *)GameStateGetBuffer38C0() + 0x624);
     return 1;
 }
 
+/** Native script command: set the current generated field map's +0x624
+ * s16 field. @return Always 1. */
 AT("000126A0") s32 ScriptNativeMapSetField624(u32 count, const s32 *args, s32 *result)
 {
     void *state = GameStateGetBuffer38C0();
@@ -355,12 +442,16 @@ AT("000126A0") s32 ScriptNativeMapSetField624(u32 count, const s32 *args, s32 *r
     return 1;
 }
 
+/** Native script command: read the current generated field map's +0x626
+ * s16 field. @return Always 1. */
 AT("000126BC") s32 ScriptNativeMapGetField626(u32 count, const s32 *args, s32 *result)
 {
     *result = *(s16 *)((u8 *)GameStateGetBuffer38C0() + 0x626);
     return 1;
 }
 
+/** Native script command: set the current generated field map's +0x626
+ * s16 field. @return Always 1. */
 AT("000126DC") s32 ScriptNativeMapSetField626(u32 count, const s32 *args, s32 *result)
 {
     void *state = GameStateGetBuffer38C0();
@@ -369,12 +460,16 @@ AT("000126DC") s32 ScriptNativeMapSetField626(u32 count, const s32 *args, s32 *r
     return 1;
 }
 
+/** Native script command: read the current generated field map's +0x628
+ * s16 field. @return Always 1. */
 AT("000126F8") s32 ScriptNativeMapGetField628(u32 count, const s32 *args, s32 *result)
 {
     *result = *(s16 *)((u8 *)GameStateGetBuffer38C0() + 0x628);
     return 1;
 }
 
+/** Native script command: set the current generated field map's +0x628
+ * s16 field. @return Always 1. */
 AT("00012714") s32 ScriptNativeMapSetField628(u32 count, const s32 *args, s32 *result)
 {
     void *state = GameStateGetBuffer38C0();
@@ -384,6 +479,8 @@ AT("00012714") s32 ScriptNativeMapSetField628(u32 count, const s32 *args, s32 *r
 }
 AT("00012714") const u8 ScriptNativeMapSetField628Tail[2] = {0};
 
+/** Native script command: forward to ClearBattleRuntimeBuffer().
+ * @return Always 1. */
 AT("00012760") s32 ScriptNativeMapFinalize(u32 count, const s32 *args, s32 *result)
 {
     extern void ClearBattleRuntimeBuffer(void);
@@ -391,6 +488,8 @@ AT("00012760") s32 ScriptNativeMapFinalize(u32 count, const s32 *args, s32 *resu
     return 1;
 }
 
+/** Native script command: select a battle arena (0-3), falling back to
+ * arena 0 for any other value. @return Always 1. */
 AT("0001276C") s32 ScriptNativeMapSelectSlot(u32 count, const s32 *args, s32 *result)
 {
     if ((u32)args[0] <= 3)
@@ -400,6 +499,8 @@ AT("0001276C") s32 ScriptNativeMapSelectSlot(u32 count, const s32 *args, s32 *re
     return 1;
 }
 
+/** Native script command: forward to GameStateGetField4258().
+ * @return Always 1. */
 AT("00012794") s32 ScriptNativeGetField4258(u32 count, const s32 *args, s32 *result)
 {
     *result = GameStateGetField4258();
@@ -407,6 +508,8 @@ AT("00012794") s32 ScriptNativeGetField4258(u32 count, const s32 *args, s32 *res
 }
 AT("00012794") const u8 ScriptNativeGetField4258Tail[2] = {0};
 
+/** Native script command: forward to GameStateSetField4258().
+ * @return Always 1. */
 AT("000127A8") s32 ScriptNativeSetField4258(u32 count, const s32 *args, s32 *result)
 {
     GameStateSetField4258(args[0]);
@@ -466,6 +569,8 @@ extern u8 gIwramBaseRectY[];
 extern u8 gIwramBaseRectWidth[];
 extern u8 gIwramBaseRectHeight[];
 
+/** Native script command: forward two arguments to RuntimeSetFieldE48() and
+ * RuntimeSetFieldE4A(). @return Always 1. */
 AT("0001234C") s32 ScriptNativeSetRuntimePair(u32 count, const s32 *args,
                                                 s32 *result)
 {
@@ -526,6 +631,8 @@ AT("00012384") s32 ScriptNativeGetBattleFieldRect(u32 count, const s32 *args,
     return 1;
 }
 
+/** Native script command: forward all VM arguments and the result slot to
+ * sub_08008968(). @return Always 1. */
 AT("000123EC") s32 ScriptNativeCall08968(u32 count, const s32 *args,
                                           s32 *result)
 {
@@ -533,6 +640,9 @@ AT("000123EC") s32 ScriptNativeCall08968(u32 count, const s32 *args,
     return 1;
 }
 
+/** Native script command: tear down the field scene's sprite-engine flags,
+ * actor state, and two 2 KiB IWRAM buffers, then mark rooms 2 and 3 for
+ * their bit-4 refresh. @return Always 1. */
 AT("000123F8") s32 ScriptNativeResetFieldScene(u32 count, const s32 *args,
                                                s32 *result)
 {
@@ -557,6 +667,9 @@ AT("000123F8") s32 ScriptNativeResetFieldScene(u32 count, const s32 *args,
 }
 AT("000123F8") const u8 ScriptNativeResetFieldSceneTail[2] = {0};
 
+/** Native script command: forward to sub_080728A0() on the KMP viewport
+ * table, but only for values in the procedural connection class range
+ * 400-499 (see docs/map-editor-roadmap.md). @return Always 1. */
 AT("00012490") s32 ScriptNativeMapSetBoundedValue(u32 count, const s32 *args,
                                                    s32 *result)
 {
@@ -566,12 +679,15 @@ AT("00012490") s32 ScriptNativeMapSetBoundedValue(u32 count, const s32 *args,
     return 1;
 }
 
+/** Native script command: does nothing but succeed. @return Always 1. */
 AT("000124FC") s32 ScriptNativeBattleStatus(u32 count, const s32 *args,
                                              s32 *result)
 {
     return 1;
 }
 
+/** Native script command: copy the current map state's name string into
+ * the current generated field map's +0x62A buffer. @return Always 1. */
 AT("00012730") s32 ScriptNativeCopyGeneratedName(u32 count, const s32 *args,
                                                   s32 *result)
 {
@@ -590,6 +706,10 @@ AT("00012730") s32 ScriptNativeCopyGeneratedName(u32 count, const s32 *args,
     GameStateCopyRecord((s16)args[0], (s16)args[1], values);                       \
     sub_08056D4C(0, (s16)args[0], (s16)args[1])
 
+/** Native script command: copy a 20-entry s16 value table (from args[2..21])
+ * into the map record selected by args[0]/args[1] and refresh it. See
+ * ScriptNativeWriteMapValuesB() for the other call site sharing this body.
+ * @return Always 1. */
 AT("000127B8") s32 ScriptNativeWriteMapValues(u32 count, const s32 *args,
                                                s32 *result)
 {
@@ -665,6 +785,8 @@ AT(address) s32 name(u32 count, const s32 *args, s32 *result)              \
 
 REFRESH_MAP_VALUES("0001294C", ScriptNativeRefreshMapValuesA)
 
+/** Native script command: forward to sub_0800690C() for layer 1 or 2 only;
+ * other layer values are a silent no-op. @return Always 1. */
 AT("00012B80") s32 ScriptNativeSelectLayer(u32 count, const s32 *args,
                                             s32 *result)
 {
@@ -696,6 +818,8 @@ AT("00012C68") s32 ScriptNativeSetBattleParty(u32 count, const s32 *args,
     return 1;
 }
 
+/** Native script command: same body as ScriptNativeWriteMapValues(), used
+ * from a different bytecode call site. @return Always 1. */
 AT("00012C14") s32 ScriptNativeWriteMapValuesB(u32 count, const s32 *args,
                                                 s32 *result)
 {
@@ -705,6 +829,8 @@ AT("00012C14") s32 ScriptNativeWriteMapValuesB(u32 count, const s32 *args,
 
 REFRESH_MAP_VALUES("00012CA4", ScriptNativeRefreshMapValuesB)
 
+/** Native script command: mark one script wait pending and forward to
+ * RuntimeSetFieldEB4(). @return Always SCRIPT_WAIT (0x7fff). */
 AT("00012CE8") s32 ScriptNativeSetPendingMapValue(u32 count, const s32 *args,
                                                    s32 *result)
 {
@@ -713,6 +839,9 @@ AT("00012CE8") s32 ScriptNativeSetPendingMapValue(u32 count, const s32 *args,
     return 0x7fff;
 }
 
+/** Native script command: clear the game state's +0x426A record, then copy
+ * up to 40 of the VM's own argument slots into it as packed halfwords.
+ * @return Always 1. */
 AT("00012D04") s32 ScriptNativeCopyMapHalfwords(u32 count, const s32 *args,
                                                  s32 *result)
 {
@@ -754,6 +883,8 @@ AT("00012D04") s32 ScriptNativeCopyMapHalfwords(u32 count, const s32 *args,
     return 1;
 }
 
+/** Native script command: forward to GameStateGetField42BA().
+ * @return Always 1. */
 AT("00012D4C") s32 ScriptNativeGetMapStatus(u32 count, const s32 *args,
                                             s32 *result)
 {
@@ -762,6 +893,9 @@ AT("00012D4C") s32 ScriptNativeGetMapStatus(u32 count, const s32 *args,
 }
 AT("00012D4C") const u8 ScriptNativeGetMapStatusTail[2] = {0};
 
+/** Native script command: counterpart to ScriptNativeCopyMapHalfwords()
+ * that clears the game state's +0x426A record entries instead of copying
+ * VM arguments into them. @return Always 1. */
 AT("00012D64") s32 ScriptNativeClearMapHalfwords(u32 count, const s32 *args,
                                                   s32 *result)
 {
