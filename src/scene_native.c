@@ -32,18 +32,24 @@ extern char *strcat(char *destination, const char *source);
 
 void StopTrackedSong(u32 song);
 
+/** Native script command: forward to CreateInputWaitTask() with mode fixed
+ * to 0. @return The task's own status. */
 AT("00005B34") s32 ScriptNativeStartTask05378(u32 count, const s32 *args,
                                                s32 *result)
 {
     return CreateInputWaitTask(args[0], args[1], 0);
 }
 
+/** Native script command: forward to sub_080053E4() with mode fixed to 0.
+ * @return The delegated call's status. */
 AT("00005B44") s32 ScriptNativeStartTask053E4(u32 count, const s32 *args,
                                                s32 *result)
 {
     return sub_080053E4(args[0], args[1], args[2], 0);
 }
 
+/** Native script command: forward to GameStateTestFlagsAC().
+ * @return Always SCRIPT_CONTINUE. */
 AT("00005B58") s32 ScriptNativeTestGameFlag(u32 count, const s32 *args,
                                              s32 *result)
 {
@@ -51,6 +57,8 @@ AT("00005B58") s32 ScriptNativeTestGameFlag(u32 count, const s32 *args,
     return SCRIPT_CONTINUE;
 }
 
+/** Native script command: forward two arguments to sub_08006760().
+ * @return Always SCRIPT_CONTINUE. */
 AT("00005B6C") s32 ScriptNativeSetGameValue(u32 count, const s32 *args,
                                              s32 *result)
 {
@@ -58,6 +66,8 @@ AT("00005B6C") s32 ScriptNativeSetGameValue(u32 count, const s32 *args,
     return SCRIPT_CONTINUE;
 }
 
+/** Native script command: read one of the game state's +0x2C indexed
+ * pointers. @return Always SCRIPT_CONTINUE. */
 AT("00005B7C") s32 ScriptNativeGetStatePointer(u32 count, const s32 *args,
                                                s32 *result)
 {
@@ -65,6 +75,8 @@ AT("00005B7C") s32 ScriptNativeGetStatePointer(u32 count, const s32 *args,
     return SCRIPT_CONTINUE;
 }
 
+/** Native script command: write one of the game state's +0x2C indexed
+ * pointers. @return Always SCRIPT_CONTINUE. */
 AT("00005B90") s32 ScriptNativeSetStatePointer(u32 count, const s32 *args,
                                                s32 *result)
 {
@@ -72,6 +84,9 @@ AT("00005B90") s32 ScriptNativeSetStatePointer(u32 count, const s32 *args,
     return SCRIPT_CONTINUE;
 }
 
+/** Native script command: advance one of the game state's +0x2C indexed
+ * pointers by a byte offset and report its new value.
+ * @return Always SCRIPT_CONTINUE. */
 AT("00005BA0") s32 ScriptNativeAdvanceStatePointer(u32 count,
                                                    const s32 *args,
                                                    s32 *result)
@@ -83,6 +98,8 @@ AT("00005BA0") s32 ScriptNativeAdvanceStatePointer(u32 count,
 }
 AT("00005BA0") const u8 ScriptNativeAdvanceStatePointerTail[2] = {0};
 
+/** Native script command: forward to sub_08006E88().
+ * @return Always SCRIPT_CONTINUE. */
 AT("00005BCC") s32 ScriptNativeLookupResource(u32 count, const s32 *args,
                                               s32 *result)
 {
@@ -90,6 +107,9 @@ AT("00005BCC") s32 ScriptNativeLookupResource(u32 count, const s32 *args,
     return SCRIPT_CONTINUE;
 }
 
+/** Native script command: look up a named sprite resource group within the
+ * NCD container named by args[0] plus the scene's NCD extension.
+ * @return Always SCRIPT_CONTINUE. */
 AT("00005BE0") s32 ScriptNativeFindNamedResource(u32 count,
                                                   const s32 *args,
                                                   s32 *result)
@@ -102,6 +122,9 @@ AT("00005BE0") s32 ScriptNativeFindNamedResource(u32 count,
     return SCRIPT_CONTINUE;
 }
 
+/** Native script command: forward five arguments (three narrowed to u16)
+ * to sub_08005530(), with its sixth argument fixed to 0.
+ * @return Always SCRIPT_CONTINUE. */
 AT("00005C14") s32 ScriptNativeStartTask05530(u32 count, const s32 *args,
                                                s32 *result)
 {
@@ -110,6 +133,8 @@ AT("00005C14") s32 ScriptNativeStartTask05530(u32 count, const s32 *args,
     return SCRIPT_CONTINUE;
 }
 
+/** Native script command: forward to RuntimeGetPointer6120Field800().
+ * @return Always SCRIPT_CONTINUE. */
 AT("00005C74") s32 ScriptNativeGetSpriteRuntime(u32 count, const s32 *args,
                                                 s32 *result)
 {
@@ -166,6 +191,10 @@ AT("00005CDC") s32 ScriptNativeGetRuntimeCoordinate(u32 count,
 AT("00005CDC") const u8 ScriptNativeGetRuntimeCoordinateTail[2] = {0};
 #endif
 
+/** Native script command: if the requested scene value differs from the
+ * current menu selection (+0x12EE), start a transition to it and wait;
+ * otherwise continue immediately.
+ * @return SCRIPT_CONTINUE if already selected, otherwise SCRIPT_WAIT. */
 AT("00005D24") s32 ScriptNativeSelectSceneValue(u32 count, const s32 *args,
                                                  s32 *result)
 {
@@ -181,6 +210,8 @@ AT("00005D24") s32 ScriptNativeSelectSceneValue(u32 count, const s32 *args,
     return status;
 }
 
+/** Native script command: start a song on sound player 6.
+ * @return Always SCRIPT_WAIT. */
 AT("00005D50") s32 ScriptNativeStartIndexedSong(u32 count, const s32 *args,
                                                  s32 *result)
 {
@@ -190,6 +221,9 @@ AT("00005D50") s32 ScriptNativeStartIndexedSong(u32 count, const s32 *args,
     return SCRIPT_WAIT;
 }
 
+/** Native script command: forward to CreateSoundFadeTask(), with its
+ * completePendingOnFinish and completion arguments fixed to 0.
+ * @return Always SCRIPT_CONTINUE. */
 AT("00005D78") s32 ScriptNativeStartTask056AC(u32 count, const s32 *args,
                                                s32 *result)
 {
@@ -198,6 +232,9 @@ AT("00005D78") s32 ScriptNativeStartTask056AC(u32 count, const s32 *args,
 }
 AT("00005D78") const u8 ScriptNativeStartTask056ACTail[2] = {0};
 
+/** Native script command: forward to CreateSoundWaitTask(), publishing its
+ * immediate result through the VM's result slot.
+ * @return Always SCRIPT_CONTINUE. */
 AT("00005D98") s32 ScriptNativeStartTask057C0(u32 count, const s32 *args,
                                                s32 *result)
 {
@@ -230,6 +267,9 @@ AT("00005DAC") s32 ScriptNativeSetSoundPlayerVolume(
     return SCRIPT_CONTINUE;
 }
 
+/** Native script command: forward to CreateSoundPlayerIdleWait(), publishing
+ * its immediate result through the VM's result slot.
+ * @return Always SCRIPT_CONTINUE. */
 AT("00005E3C") s32 ScriptNativeStartTask05848(u32 count, const s32 *args,
                                                s32 *result)
 {
@@ -238,6 +278,8 @@ AT("00005E3C") s32 ScriptNativeStartTask05848(u32 count, const s32 *args,
 }
 AT("00005E3C") const u8 ScriptNativeStartTask05848Tail[2] = {0};
 
+/** Native script command: forward to StopTrackedSong().
+ * @return Always SCRIPT_WAIT. */
 AT("00005E50") s32 ScriptNativeStopTrackedSong(u32 count, const s32 *args,
                                                 s32 *result)
 {
@@ -245,6 +287,9 @@ AT("00005E50") s32 ScriptNativeStopTrackedSong(u32 count, const s32 *args,
     return SCRIPT_WAIT;
 }
 
+/** Native script command: fade out all nine sound channels and clear the
+ * current menu selection (+0x12EE).
+ * @return Always SCRIPT_WAIT. */
 AT("00005E64") s32 ScriptNativeResetNineChannels(u32 count, const s32 *args,
                                                   s32 *result)
 {
@@ -255,6 +300,8 @@ AT("00005E64") s32 ScriptNativeResetNineChannels(u32 count, const s32 *args,
     return SCRIPT_WAIT;
 }
 
+/** Start a song and remember it as the current menu selection (+0x12EE),
+ * skipping the restart when it's already playing unless force is set. */
 AT("00005EA8") void StartTrackedSong(u32 song, s32 force)
 {
     if (force)
@@ -265,6 +312,8 @@ AT("00005EA8") void StartTrackedSong(u32 song, s32 force)
 }
 AT("00005EA8") const u8 StartTrackedSongTail[2] = {0};
 
+/** Stop a song and clear the current menu selection (+0x12EE) back to its
+ * "nothing selected" sentinel of -1. */
 AT("00005ED8") void StopTrackedSong(u32 song)
 {
     SoundSongStop((u16)song);
@@ -272,6 +321,8 @@ AT("00005ED8") void StopTrackedSong(u32 song)
 }
 AT("00005ED8") const u8 StopTrackedSongTail[2] = {0};
 
+/** StartTrackedSong()'s counterpart tracking a second, independent
+ * selection field (+0x42C4) instead of +0x12EE. */
 AT("00005F04") void StartSecondaryTrackedSong(u32 song, s32 force)
 {
     if (force)
@@ -282,18 +333,21 @@ AT("00005F04") void StartSecondaryTrackedSong(u32 song, s32 force)
 }
 AT("00005F04") const u8 StartSecondaryTrackedSongTail[2] = {0};
 
+/** Narrow-argument wrapper around SoundSongStartOrChange(). */
 AT("00005F34") void SoundSongStartAlternate(u32 song)
 {
     SoundSongStartOrChange((u16)song);
 }
 AT("00005F34") const u8 SoundSongStartAlternateTail[2] = {0};
 
+/** Narrow-argument wrapper around SoundSongStop(). */
 AT("00005F44") void SoundSongStopU16(u32 song)
 {
     SoundSongStop((u16)song);
 }
 AT("00005F44") const u8 SoundSongStopU16Tail[2] = {0};
 
+/** Start a song by table index on a given sound player. */
 AT("00005F54") void StartIndexedSong(u32 playerIndex, u32 songIndex)
 {
     struct SoundPlayer *player = gSoundPlayerTable[playerIndex].player;
@@ -301,6 +355,8 @@ AT("00005F54") void StartIndexedSong(u32 playerIndex, u32 songIndex)
     SoundPlayerStart(player, song);
 }
 
+/** Stop the sound player at a given index in the engine's nine-player
+ * table. */
 AT("00006018") void StopSoundPlayer(u32 playerIndex)
 {
     struct SoundPlayer *player = gSoundPlayerTable[playerIndex].player;
