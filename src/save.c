@@ -21,6 +21,9 @@ struct SaveMagic {
 
 extern const struct SaveMagic gSaveMagic;
 
+/** Stamp a save block's magic, format version, and generation counter,
+ * recompute its payload and header CRCs, and write it to SRAM synchronously.
+ * @return The SRAM write's status, narrowed to s16. */
 AT("0006E54C") s32 WriteSaveBlock(struct SaveBlock *save)
 {
     const struct SaveMagic *magic = &gSaveMagic;
@@ -39,6 +42,10 @@ AT("0006E54C") s32 WriteSaveBlock(struct SaveBlock *save)
     return (s16)(s32)WriteSramFast((const u8 *)save, SRAM_BASE, blockSize);
 }
 
+/** Read a save block from SRAM synchronously and validate it, clearing just
+ * the payload on a damaged payload or the whole block on a damaged header.
+ * Records the outcome via GameStateSetField42C0().
+ * @return Always 0. */
 AT("0006E5AC") s32 LoadSaveBlock(struct SaveBlock *save)
 {
     u32 blockSize = SAVE_BLOCK_SIZE;
@@ -59,6 +66,10 @@ AT("0006E5AC") s32 LoadSaveBlock(struct SaveBlock *save)
 }
 AT("0006E5AC") const u8 LoadSaveBlockTail[2] = {0};
 
+/** Check a save block's header CRC, magic, format version, and payload CRC,
+ * restoring the block's CRC/reserved fields before returning either way.
+ * @return 0 if fully valid; -1 on a bad header CRC; -2 on bad magic; 1 if
+ * only the format version differs; 2 if only the payload CRC is bad. */
 AT("0006E438") s32 ValidateSaveBlock(struct SaveBlock *save)
 {
     s32 result = 0;
@@ -85,6 +96,9 @@ AT("0006E438") s32 ValidateSaveBlock(struct SaveBlock *save)
     return result;
 }
 
+/** Read size bytes from SRAM synchronously and immediately signal
+ * completion.
+ * @return Always 0. */
 AT("0006E720") s32 ReadSaveBytes(void *destination, u32 unused, u32 size,
                                   s32 *completion)
 {
@@ -94,12 +108,15 @@ AT("0006E720") s32 ReadSaveBytes(void *destination, u32 unused, u32 size,
     return 0;
 }
 
+/** ReadSaveBytes() with its unused second argument fixed to 0.
+ * @return Always 0. */
 AT("0006E4D4") s32 ReadSaveBytesAndSignal(void *destination, u32 size,
                                            s32 *completion)
 {
     return ReadSaveBytes(destination, 0, size, completion);
 }
 
+/** CreateSaveTask() with mode fixed to 0 (a plain SRAM write task). */
 AT("0006E4BC") void *CreateSaveWriteTask(struct SaveBlock *save, u32 size,
                                           s32 *completion)
 {
@@ -113,6 +130,9 @@ AT("0006E4BC") void *CreateSaveWriteTask(struct SaveBlock *save, u32 size,
     return CreateSaveTask(0, localSave, localSize, localCompletion);
 }
 
+/** Create a task that writes size bytes of save to SRAM via SaveWriteTask().
+ * @param mode Stored at task state +0; passed through unnamed.
+ * @return The new task, or NULL if creation fails. */
 AT("0006E610") struct EngineTask *CreateSaveTask(u32 mode,
                                                   struct SaveBlock *save,
                                                   u32 size,
@@ -139,6 +159,9 @@ AT("0006E610") struct EngineTask *CreateSaveTask(u32 mode,
 }
 AT("0006E610") const u8 CreateSaveTaskTail[2] = {0};
 
+/** Create a task that asynchronously reads and validates a complete save
+ * block via SaveBlockLoadTask().
+ * @return The new task, or NULL if creation fails. */
 AT("0006E150") struct EngineTask *CreateSaveBlockLoadTask(
     struct SaveBlock *save, u32 *completion)
 {
@@ -216,6 +239,9 @@ AT("0006E184") void SaveBlockLoadTask(struct EngineTask *task)
     }
 }
 
+/** Create a task that prepares and writes a complete save block
+ * asynchronously via SaveBlockPrepareAndWriteTask().
+ * @return The new task, or NULL if creation fails. */
 AT("0006E264") struct EngineTask *CreateSaveBlockWriteTask(
     struct SaveBlock *save, u32 *completion)
 {
@@ -284,6 +310,9 @@ AT("0006E298") void SaveBlockPrepareAndWriteTask(struct EngineTask *task)
 }
 AT("0006E298") const u8 SaveBlockPrepareAndWriteTaskTail[2] = {0};
 
+/** Create a task that writes and verifies just the save header
+ * asynchronously via SaveHeaderWriteTask().
+ * @return The new task, or NULL if creation fails. */
 AT("0006E360") struct EngineTask *CreateSaveHeaderWriteTask(
     struct SaveBlock *save, u32 size, s32 *completion)
 {
@@ -346,6 +375,9 @@ AT("0006E39C") void SaveHeaderWriteTask(struct EngineTask *task)
     }
 }
 
+/** Recompute a save's CRCs, write it to SRAM, then verify the write and
+ * retry up to 15 times before reporting failure.
+ * @return Nothing. */
 AT("0006E650") void SaveWriteTask(struct EngineTask *task)
 {
     u8 *taskBytes = (u8 *)task;
