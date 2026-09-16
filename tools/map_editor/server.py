@@ -58,6 +58,8 @@ def make_server(project, port=8765):
                         return self.reply(200,public(project.load(unquote(path[len('/api/map/'):]))))
                     if path.startswith('/api/script/'):
                         return self.reply(200,project.script_data(unquote(path[len('/api/script/'):])) )
+                    if path.startswith('/api/marscript/'):
+                        return self.reply(200,project.marscript_data(unquote(path[len('/api/marscript/'):])) )
                 files={'/':('index.html','text/html; charset=utf-8'),'/app.js':('app.js','text/javascript; charset=utf-8'),'/style.css':('style.css','text/css; charset=utf-8')}
                 if path not in files:return self.reply(404,{'error':'Not found'})
                 name,mime=files[path];self.reply(200,(STATIC/name).read_bytes(),mime)
@@ -67,15 +69,19 @@ def make_server(project, port=8765):
         def do_POST(self):
             if not self.allowed(True):return
             path=urlsplit(self.path).path
-            if not path.startswith('/api/map/'):return self.reply(404,{'error':'Not found'})
+            if not (path.startswith('/api/map/') or path.startswith('/api/marscript/')):
+                return self.reply(404,{'error':'Not found'})
             try:
                 size=int(self.headers.get('Content-Length','0'))
                 if not 0<size<=8*1024*1024:raise ValueError('Invalid request length')
                 if self.headers.get_content_type()!='application/json':raise ValueError('Expected JSON')
                 payload=json.loads(self.rfile.read(size))
                 with lock:
-                    data=project.save(unquote(path[len('/api/map/'):]),payload)
-                    if payload.get('script'):data['saved_script']=project.script_data(payload['script']['name'])
+                    if path.startswith('/api/marscript/'):
+                        data=project.save_marscript(unquote(path[len('/api/marscript/'):]),payload)
+                    else:
+                        data=project.save(unquote(path[len('/api/map/'):]),payload)
+                        if payload.get('script'):data['saved_script']=project.script_data(payload['script']['name'])
                 self.reply(200,public(data))
             except (ValueError,KeyError,TypeError,UnicodeError,IndexError,struct.error) as ex:
                 self.reply(409 if 'changed on disk' in str(ex) else 400,{'error':str(ex)})

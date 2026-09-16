@@ -21,12 +21,22 @@ scrolling elsewhere behaves normally.
 Horizontal/vertical flips, layer visibility, zoom, a grid, right-click picking,
 and stroke-level undo/redo are available. Select **Raw attributes** to paint
 numeric u8/u16 attributes. Their collision/event meanings are not fully decoded.
+
+Map and Collision mode share a Porymap-style tool palette above the tile
+selector: **Pencil** (N) paints the current selection; **Bucket Fill** (B)
+flood-fills a contiguous region (matching Porymap's Bucket Fill Tool: whole
+connected region only, no fill-all-matching-tiles variant); **Eyedropper**
+(E) samples a tile with a left click, the same as right-clicking with any
+other tool active; **Pointer** (P) just inspects the hovered cell without
+painting. Bare N/B/E/P switch tools while focus isn't in a text field;
+right-click always samples regardless of the active tool.
+
 The mode bar separates map painting, collision attributes, decoded event call
-sites, and field-load connections. Event mode groups objects, hit regions,
-field loads, and other calls; clickable hit/field markers select their source
-call. Connections mode shows incoming and outgoing `FldSet` dependencies and
-can open a decoded destination map. `FldSet` coordinates position the viewport;
-they are not currently presented as proven player warp coordinates.
+sites, field-load connections, and script text. Event mode groups objects, hit
+regions, field loads, and other calls; clickable hit/field markers select their
+source call. Connections mode shows incoming and outgoing `FldSet` dependencies
+and can open a decoded destination map. `FldSet` coordinates position the
+viewport; they are not currently presented as proven player warp coordinates.
 Every connection card renders the destination's real visual planes in a
 240×160 GBA viewport beginning at those coordinates. Incoming cards preview the
 same section of the current destination map.
@@ -57,14 +67,20 @@ The editor draws the first frame of a script-created sprite when one literal
 `SprInit` is followed by literal X and Y `SprSet` calls for the same ID. It uses
 the decoded NCD cell layout and the frame's engine-relative origin.
 
-The **Event calls** panel selects the same-name SPC when present, or any other
-named script. Filter native calls by name and edit supported signed integer
-arguments. Save writes `maps/editable/NAME.KMP.json` and, if selected,
+The script selector itself lives in the **Scripts** tab (see below), not in
+Event mode's own sidebar -- Event mode shows which script is currently
+selected and an **Open in Scripts tab** button, and filters/inspects that
+script's decoded calls. Filter native calls by name and edit supported signed
+integer arguments. Save writes `maps/editable/NAME.KMP.json` and, if selected,
 `maps/events/NAME.SPC.json`. These are tracked source inputs. The original KMP
 and SPC framing files remain the baseline; unknown fields are preserved.
 Read-only calls now display compiler-generated embedded string arguments. This
 makes `FldSet("MAP...", x, y)` and sprite resource setup visible while their
-variable-length strings remain protected from fixed-allocation edits.
+variable-length strings remain protected from fixed-allocation edits. If the
+selected script has a marscript override (see below), this per-argument editor
+shows its decoded values read-only instead: the override is the sole source of
+truth for that script's content, and an argument edit here would silently have
+no effect once it does.
 
 For numbered fields, **Map scripts** also exposes matching `SP_M...`,
 `CH_M...`, and `HI_M...` filename families when those resources exist. The UI
@@ -72,6 +88,30 @@ labels this relationship as inferred from the recovered naming convention;
 decoded `FldSet` references remain separately marked as verified. MAP01_3A,
 for example, links to CH_M01_3, whose decoded script links reach EV_BA03 and
 EV_BA04 and their Dorothy movement previews.
+
+## Scripts tab: editing script text with marscript
+
+The **Scripts** tab is a full-text editor for [marscript](../../docs/marscript-language.md),
+the readable scripting language that compiles to the game's native SCRP/CODE
+bytecode. Choose a script from the dropdown; the editor shows either a saved
+override (`scripts/marscript/NAME.SPC.marscript`, if one exists) or the
+current script decompiled fresh, so what you first see always matches what
+Event mode already shows. Edit the text and click **Save script** to write
+the override; **Reset to original** deletes it and reverts to the
+decompiled view. Both are validated -- a save that doesn't compile is
+rejected before anything is written, matching every other save path in this
+editor.
+
+A saved override fully replaces that script's content for `mar_english.gba`
+only. `mar.gba` never reads `scripts/marscript/` and is completely
+unaffected by anything saved here, by design: the Japanese ROM's whole
+purpose is matching `baserom.gba` byte for byte, and it has no ROM expansion
+region for grown content to live in even if it wanted to. If your edit no
+longer fits the script's original archive slot, saving still succeeds --
+`tools/marscript_rom_build.py` places the grown content in the English
+build's ROM expansion region automatically at build time, and the status
+line says so. Run `make english` (or `make map-editor`'s own build step)
+afterward to actually build your changes.
 
 Run `make` or `make english` after saving. An intentionally edited ROM should
 differ from baserom. Without overrides, the default Japanese build must still

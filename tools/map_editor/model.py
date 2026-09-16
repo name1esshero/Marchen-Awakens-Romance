@@ -11,10 +11,13 @@ import re
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 import gfx
+import lz77
 import mapped_images
 import build_assets
 import script_events
 import named_scripts
+import marscript
+from script_assembler import assemble
 
 ROOT=Path(__file__).resolve().parents[2]
 
@@ -91,6 +94,18 @@ def override_path(name):
 def apply_override(blob,name,root):
     path=Path(root)/override_path(name)
     return compile_map(blob,read(path)) if path.exists() else blob
+
+
+def marscript_override_path(name):
+    if Path(name).name!=name or not name.endswith('.SPC'):raise ValueError('Invalid script name')
+    return Path('scripts/marscript')/(name+'.marscript')
+
+
+def marscript_identifier(name):
+    # Matches tools/marscript_rom_build.py's and tools/resource_catalog.py's
+    # own copy of this transform -- marscript identifiers can't contain '.'
+    # or '-'.
+    return name.replace('.','_').replace('-','_')
 
 
 def initial_sprite_placements(calls):
@@ -227,10 +242,27 @@ class Project:
     def script_data(self,name):
         if name not in self.scripts:raise ValueError('Unknown script')
         e=self.scripts[name];original=(self.root/e['path']).read_bytes()
-        blob=named_scripts.rebuild(original,named_scripts.edits(self.root/e['text']))
-        path=self.root/script_events.patch_path(name)
-        doc=read(path) if path.exists() else dict(version=1,source_sha256=sha(original),arguments={})
-        result=script_events.apply(blob,original,doc)
+        override=self.root/marscript_override_path(name)
+        has_override=override.exists()
+        if has_override:
+            # A marscript override fully supersedes the two narrower editors
+            # below (named-script text edits and per-argument literal
+            # edits) for this script -- Events mode's calls/sprite/hit view
+            # must reflect what the override actually compiles to, or it
+            # would silently show stale data once someone starts using the
+            # Scripts tab. The old per-argument editor still decodes
+            # structurally-editable calls from these bytes, but the
+            # frontend disables it whenever has_marscript_override is set,
+            # since a saved argument edit here would have no effect once
+            # the override recompiles this script from scratch every build.
+            document,_=marscript.compile_source(override.read_text(encoding='utf-8'))
+            result=assemble(document)
+            doc=dict(version=1,source_sha256=sha(original),arguments={})
+        else:
+            blob=named_scripts.rebuild(original,named_scripts.edits(self.root/e['text']))
+            path=self.root/script_events.patch_path(name)
+            doc=read(path) if path.exists() else dict(version=1,source_sha256=sha(original),arguments={})
+            result=script_events.apply(blob,original,doc)
         calls=script_events.calls(result)
         placements=initial_sprite_placements(calls)
         for item in placements:
@@ -248,9 +280,80 @@ class Project:
             candidate['preview']=self.sprite_preview(item.get('container'),item.get('resource'),item.get('animation'))
             candidate['dynamic']=not isinstance(item.get('sprite'),int) or not isinstance(item.get('resource'),str)
             candidates.append(candidate)
-        return dict(name=name,revision=sha(original+(self.root/e['text']).read_bytes()+json.dumps(doc,sort_keys=True).encode()),
+        revision_bytes=original+(self.root/e['text']).read_bytes()+json.dumps(doc,sort_keys=True).encode()+(override.read_bytes() if has_override else b'')
+        return dict(name=name,revision=sha(revision_bytes),
                     document=doc,calls=calls,analysis=script_events.semantic_summary(calls),sprite_placements=placements,
-                    sprite_candidates=candidates,text_path=e['text'])
+                    sprite_candidates=candidates,text_path=e['text'],has_marscript_override=has_override)
+
+    def marscript_data(self,name):
+        """The Scripts tab's view of one script: readable marscript text, plus
+        enough to know whether it's an editable-in-this-editor override or a
+        read-only view of the current (possibly text/argument-edited) bytes.
+
+        An existing scripts/marscript/<NAME>.marscript override is shown
+        verbatim -- it's the user's own saved source, not re-derived. With no
+        override, the script is decompiled fresh from its current bytes (the
+        same bytes script_data() already computes: original plus any
+        named-script text edits and event-argument overrides already in
+        place), so what a first-time editor sees here matches what Events
+        mode already shows before any marscript edit exists.
+        """
+        if name not in self.scripts:raise ValueError('Unknown script')
+        e=self.scripts[name];original=(self.root/e['path']).read_bytes()
+        override=self.root/marscript_override_path(name)
+        has_override=override.exists()
+        if has_override:
+            source=override.read_text(encoding='utf-8')
+        else:
+            blob=named_scripts.rebuild(original,named_scripts.edits(self.root/e['text']))
+            doc_path=self.root/script_events.patch_path(name)
+            doc=read(doc_path) if doc_path.exists() else dict(version=1,source_sha256=sha(original),arguments={})
+            current=script_events.apply(blob,original,doc)
+            source=marscript.decompile_to_source(marscript.unpack(current),marscript_identifier(name))
+        revision=sha(original+(override.read_bytes() if has_override else b'\0'))
+        return dict(name=name,revision=revision,source=source,has_override=has_override,
+                    original_slot_size=len(original))
+
+    def save_marscript(self,name,payload):
+        """Compiles and validates before writing anything, same as save()'s
+        map/event-argument path. Growth past the script's original archive
+        slot is allowed (tools/marscript_rom_build.py's expansion region
+        handles it at build time) -- this only rejects a source that doesn't
+        actually compile, never one that's merely bigger.
+        """
+        if not isinstance(payload,dict):raise ValueError('Invalid save request')
+        current=self.marscript_data(name)
+        if payload.get('revision')!=current['revision']:raise ValueError('Script changed on disk; reload before saving')
+        path=self.root/marscript_override_path(name)
+        if payload.get('reset'):
+            if path.exists():path.unlink()
+            return self.marscript_data(name)
+        source=payload.get('source')
+        if not isinstance(source,str) or not source.strip():raise ValueError('Script source must not be empty')
+        document,parsed_name=marscript.compile_source(source)
+        expected=marscript_identifier(name)
+        if parsed_name!=expected:
+            raise ValueError(f'Script is named {parsed_name!r} in the source; expected {expected!r} for {name}')
+        compiled=assemble(document) # raises on anything that fails to assemble
+        # tools/marscript_rom_build.py's actual placement decision compares
+        # against the *stored* archive member -- LZ77-compressed for a
+        # compressed script, not the raw assembled bytes -- so this must
+        # match that exact comparison, or the "will use the expansion
+        # region" message would be wrong for every compressed script.
+        original=(self.root/self.scripts[name]['path']).read_bytes()
+        packed_size=len(lz77.compress(compiled)) if original[:1]==b'\x10' else len(compiled)
+        content=source.encode('utf-8')
+        path.parent.mkdir(parents=True,exist_ok=True)
+        fd,temp=tempfile.mkstemp(prefix='.editor-',dir=path.parent)
+        try:
+            with os.fdopen(fd,'wb') as stream:stream.write(content);stream.flush();os.fsync(stream.fileno())
+            os.replace(temp,path)
+        except Exception:
+            Path(temp).unlink(missing_ok=True)
+            raise
+        result=self.marscript_data(name)
+        result['compiled_size']=packed_size
+        return result
 
     def load(self,name):
         member,original,entry,base=self.entry(name)
@@ -307,10 +410,16 @@ class Project:
         if script:
             previous=self.script_data(script['name'])
             if previous['revision']!=script['revision']:raise ValueError('Script changed on disk; reload before saving')
-            e=self.scripts[script['name']];original=(self.root/e['path']).read_bytes()
-            blob=named_scripts.rebuild(original,named_scripts.edits(self.root/e['text']))
-            script_events.apply(blob,original,script['document']) # size/opcode validation before writing
-            writes[self.root/script_events.patch_path(script['name'])]=(json.dumps(script['document'],indent=2)+'\n').encode()
+            if not previous['has_marscript_override']:
+                # A marscript override (if one exists) is the sole source of
+                # truth for this script's content -- writing an event-argument
+                # override alongside it would just be silently ignored by
+                # script_data()'s override branch, so skip it rather than
+                # leave a pointless (usually empty) file behind.
+                e=self.scripts[script['name']];original=(self.root/e['path']).read_bytes()
+                blob=named_scripts.rebuild(original,named_scripts.edits(self.root/e['text']))
+                script_events.apply(blob,original,script['document']) # size/opcode validation before writing
+                writes[self.root/script_events.patch_path(script['name'])]=(json.dumps(script['document'],indent=2)+'\n').encode()
         before={p:p.read_bytes() if p.exists() else None for p in writes}
         staged=[]
         try:

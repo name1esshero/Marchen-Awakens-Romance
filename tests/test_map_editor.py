@@ -233,4 +233,72 @@ class SaveTests(unittest.TestCase):
         finally:server.shutdown();server.server_close();thread.join()
 
 
+class MarscriptTabTests(unittest.TestCase):
+    """The Scripts tab's model-layer contract: marscript_data()/save_marscript(),
+    and script_data()/save()'s awareness of a marscript override once one
+    exists. tools/marscript_rom_build.py's own tests cover the build-time
+    placement decision this feeds into; these cover the editor's view of it.
+    """
+    def setUp(self):
+        self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup)
+        self.root=Path(self.temp.name);self.project=fixture(self.root)
+
+    def test_no_override_matches_script_data_exactly(self):
+        marscript_view=self.project.marscript_data('MAP01_A.SPC')
+        self.assertFalse(marscript_view['has_override'])
+        self.assertIn('script MAP01_A_SPC',marscript_view['source'])
+        self.assertFalse(self.project.script_data('MAP01_A.SPC')['has_marscript_override'])
+
+    def test_save_persists_and_updates_events_view(self):
+        before=self.project.marscript_data('MAP01_A.SPC')
+        saved=self.project.save_marscript('MAP01_A.SPC',{'revision':before['revision'],'source':before['source']})
+        self.assertTrue(saved['has_override'])
+        self.assertTrue((self.root/'scripts/marscript/MAP01_A.SPC.marscript').exists())
+        self.assertEqual(saved['compiled_size'],saved['original_slot_size'],
+                         'an unedited decompile/recompile must round-trip to the exact original size')
+        events_view=self.project.script_data('MAP01_A.SPC')
+        self.assertTrue(events_view['has_marscript_override'])
+        self.assertGreater(len(events_view['calls']),0)
+
+    def test_stale_revision_rejected(self):
+        self.project.save_marscript('MAP01_A.SPC',
+            {'revision':self.project.marscript_data('MAP01_A.SPC')['revision'],
+             'source':self.project.marscript_data('MAP01_A.SPC')['source']})
+        with self.assertRaisesRegex(ValueError,'changed on disk'):
+            self.project.save_marscript('MAP01_A.SPC',{'revision':'stale','source':'script X { end }'})
+
+    def test_invalid_source_rejected_before_writing(self):
+        before=self.project.marscript_data('MAP01_A.SPC')
+        with self.assertRaises(ValueError):
+            self.project.save_marscript('MAP01_A.SPC',{'revision':before['revision'],'source':'not marscript'})
+        self.assertFalse((self.root/'scripts/marscript/MAP01_A.SPC.marscript').exists())
+
+    def test_reset_removes_override(self):
+        before=self.project.marscript_data('MAP01_A.SPC')
+        saved=self.project.save_marscript('MAP01_A.SPC',{'revision':before['revision'],'source':before['source']})
+        result=self.project.save_marscript('MAP01_A.SPC',{'revision':saved['revision'],'reset':True})
+        self.assertFalse(result['has_override'])
+        self.assertFalse((self.root/'scripts/marscript/MAP01_A.SPC.marscript').exists())
+        self.assertFalse(self.project.script_data('MAP01_A.SPC')['has_marscript_override'])
+
+    def test_growth_past_original_slot_is_allowed(self):
+        before=self.project.marscript_data('MAP01_A.SPC')
+        grown=before['source'].rstrip().removesuffix('}')+'    add r0, r0\n'*400+'}\n'
+        saved=self.project.save_marscript('MAP01_A.SPC',{'revision':before['revision'],'source':grown})
+        self.assertTrue(saved['has_override'])
+        self.assertGreater(saved['compiled_size'],saved['original_slot_size'])
+
+    def test_map_save_skips_empty_event_argument_override_once_marscript_exists(self):
+        before=self.project.marscript_data('MAP01_A.SPC')
+        self.project.save_marscript('MAP01_A.SPC',{'revision':before['revision'],'source':before['source']})
+        map_data=self.project.load('MAP01_A.KMP')
+        script_view=self.project.script_data('MAP01_A.SPC')
+        payload={'revision':map_data['revision'],'document':map_data['document'],
+                 'script':{'name':'MAP01_A.SPC','revision':script_view['revision'],'document':script_view['document']}}
+        self.project.save('MAP01_A.KMP',payload)
+        self.assertFalse((self.root/script_events.patch_path('MAP01_A.SPC')).exists(),
+                         'saving the map must not create a pointless maps/events override once a '
+                         'marscript override is the real source of truth for this script')
+
+
 if __name__=='__main__':unittest.main()

@@ -10,19 +10,25 @@ exist in MAR.
 
 The target window has persistent project and map navigation, a large central
 map viewport, and a property inspector on the right. Modes above the viewport
-separate **Map**, **Collision**, **Events**, and **Connections**. Changing mode
-changes the palette and inspector without opening another page. Selection,
-zoom, layer visibility, and map position remain stable between modes.
+separate **Map**, **Collision**, **Events**, **Connections**, and **Scripts**.
+Changing mode changes the palette and inspector without opening another page.
+Selection, zoom, layer visibility, and map position remain stable between modes.
 
 The current editor already supplies the central viewport, visual tile palette,
-layer visibility, raw attributes, script calls, decoded sprite previews, hit
-rectangle previews, and atomic source saves. Wheel zoom now reaches 3.125%, and
-**Fit whole map** selects the largest scale that displays every tile.
+a Porymap-style tool palette (Pencil/Bucket Fill/Eyedropper/Pointer, with the
+usual N/B/E/P shortcuts), layer visibility, raw attributes, script calls,
+decoded sprite previews, hit rectangle previews, and atomic source saves.
+Wheel zoom now reaches 3.125%, and **Fit whole map** selects the largest scale
+that displays every tile.
 
-The workspace now has persistent **Map**, **Collision**, **Events**, and
-**Connections** modes. Events can be filtered by decoded class and selected from
-the map when a hit rectangle or field-load marker is clicked. Connections lists
-both incoming and outgoing `FldSet` dependencies and navigates to decoded maps.
+The workspace now has persistent **Map**, **Collision**, **Events**,
+**Connections**, and **Scripts** modes. Events can be filtered by decoded
+class and selected from the map when a hit rectangle or field-load marker is
+clicked. Connections lists both incoming and outgoing `FldSet` dependencies
+and navigates to decoded maps. Scripts is a full marscript text editor (see
+`docs/marscript-language.md` and the "Safe source editing milestones" section
+below) -- the script picker itself lives there now rather than duplicated in
+every mode's sidebar.
 The selected call's source offset and editable literal arguments remain visible
 in the inspector.
 
@@ -83,14 +89,30 @@ script form only after variable-length script rebuilding is supported.
 
 ## Safe source editing milestones
 
-1. Finish instruction semantics and label branch targets in the SPC assembler.
+1. **Done:** instruction semantics and branch-target labeling for the SPC
+   assembler -- `tools/marscript.py`'s flow-tracing disassembler/reassembler,
+   proven byte-exact against every real script (see
+   `docs/marscript-language.md`).
 2. Represent decoded events in a versioned JSON model with stable local IDs.
 3. **Implemented for existing literal sprites and hit regions:** drag editing,
    optional 8-pixel snapping, signed-coordinate clamping, and undo/redo. Field
    loads containing embedded strings remain read-only under the fixed-size SPC
-   patcher.
-4. Add event creation/deletion once the assembler can resize CODE and update all
-   affected offsets safely.
+   patcher -- **superseded for any script with a marscript override** (see
+   below), which can freely rewrite string arguments and everything else.
+4. **Done, for `mar_english.gba`:** the Scripts tab writes a full marscript
+   override (`scripts/marscript/NAME.SPC.marscript`), no longer limited to
+   same-size edits -- `tools/marscript_rom_build.py` places a grown script in
+   the English build's ROM expansion region automatically, updating that
+   script's resource-catalog entry via a linker symbol rather than a
+   precomputed offset. Proven against a real build, not just in isolation
+   (`tests/test_marscript_rom_build.py`'s end-to-end test actually grows a
+   script and links the ROM). `mar.gba` is untouched by design -- it has no
+   expansion region and must always match `baserom.gba` exactly, so this
+   milestone deliberately doesn't apply to it. Event/object *insertion* (a
+   new sprite or hit region that didn't exist before, as opposed to rewriting
+   an existing script's logic) still isn't a first-class editor concept the
+   way Porymap's event list is, since MAR has no separate structured event
+   table to insert into -- events live entirely in script bytecode.
 5. Add new-map registration after the archive directory, map lookup tables,
    initial player placement, and field-load resource lifetime are all writable.
 6. Validate generated Japanese and English ROMs, reject stale sources, and show
