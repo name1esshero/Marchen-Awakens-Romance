@@ -28,6 +28,25 @@ struct ScrpHeader
     u32 chunk_size;
 };
 
+/* The first 6 bytes of the CODE chunk's own payload (i.e. immediately after
+ * chunk_size above), before the instruction stream begins. Not yet read by
+ * any decompiled C -- the script-loading routine that would read them is a
+ * different function from the opcode-execution loop already recovered in
+ * src/script_bytecode.c, and hasn't been found yet. Field names here
+ * reflect tools/marscript.py's independent verification (334/334 real
+ * scripts disassemble and reassemble byte-for-byte using them); see
+ * docs/decompiled-flags.md for what remains unconfirmed. */
+struct ScrpCodeHeader
+{
+    u32 stackSize;      /* Varies across the corpus (not a fixed constant);
+                          * see docs/decompiled-flags.md for a real value
+                          * distribution and an unconfirmed packed-field lead. */
+    u16 headerField;     /* Only ever 0 or 1 across all 334 scripts. NOT a byte
+                          * offset into the instruction stream -- real execution
+                          * starts at the first instruction (offset 0) regardless
+                          * of this value. Remaining meaning unconfirmed. */
+};
+
 /* Opcodes identified from the 256-entry dispatch table at 08F2A860.
  *
  * 0x10 is a relative jump followed by a u16 distance. The compiler uses it
@@ -40,12 +59,19 @@ struct ScrpHeader
  * not the actual message printer at 08011790. This does not establish
  * that every 0x22 byte is a print opcode or follows every string. */
 #define OP_JUMP_RELATIVE 0x10
+/* Dispatch/switch table: 1-byte entry count, then that many 8-byte
+ * (u32 value, u32 target) entries. `target` confirmed a real branch target
+ * (see docs/decompiled-flags.md); `value`'s role is not yet established. */
+#define OP_DISPATCH_TABLE 0x15
 #define OP_SET_BYTECODE_ADDRESS 0x22
 #define OP_PUSH_OPERAND 0x28
 #define OP_PUSH_IMMEDIATE 0x29
 #define OP_POP_OPERAND 0x2A
 #define OP_CONCAT_STRINGS 0x78
 #define OP_NATIVE_CALL 0x80
+/* Consistently the last instruction before a script's CODE payload ends;
+ * see docs/decompiled-flags.md for what that evidence does and doesn't show. */
+#define OP_RESTORE_RESULT 0x8F
 #define NATIVE_OBJECT_COMMAND_22 0x22
 
 /* Every one of the 256 opcode slots is present. Unsupported slots point to

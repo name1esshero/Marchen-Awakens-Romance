@@ -413,7 +413,8 @@ ENGLISH_OBJS := $(ENGLISH_DIR)/dialogue_bridge.o $(ENGLISH_DIR)/dialogue_runtime
                 $(ENGLISH_DIR)/dialogue_original.o $(ENGLISH_DIR)/item_accessors.o \
                 $(ENGLISH_DIR)/item_name.o $(ENGLISH_DIR)/item_name_bridge.o $(ENGLISH_DIR)/item_description_bridge.o \
                 $(ENGLISH_DIR)/menu_text.o \
-                $(ENGLISH_DIR)/mappings.o $(ENGLISH_DIR)/system_graphics.o $(ENGLISH_DIR)/effect_graphics.o $(ENGLISH_DIR)/background_graphics.o
+                $(ENGLISH_DIR)/mappings.o $(ENGLISH_DIR)/system_graphics.o $(ENGLISH_DIR)/effect_graphics.o $(ENGLISH_DIR)/background_graphics.o \
+                $(ENGLISH_DIR)/script_assets_english.o $(ENGLISH_DIR)/marscript_expansion.o $(ENGLISH_DIR)/resource_catalog.o
 .PHONY: english english-stats
 english: mar_english.gba english-stats
 
@@ -497,8 +498,55 @@ $(ENGLISH_DIR)/background_graphics.s: tools/english_backgrounds.py tools/build_a
 $(ENGLISH_DIR)/background_graphics.o: $(ENGLISH_DIR)/background_graphics.s
 	$(AS) $(ASFLAGS) -o $@ $<
 
+# --- English-only marscript script pipeline --------------------------------
+# tools/marscript_rom_build.py, tools/split_scripts_english.py and
+# tools/resource_catalog.py's build-english mode together let a script be
+# freely rewritten via a scripts/marscript/<NAME>.marscript override for
+# mar_english.gba, without ever touching mar.gba: every object below only
+# ever replaces its base counterpart in mar_english.elf's own link (see the
+# filter-out list below), via the same "independent object, filtered out
+# for English" pattern already used for system_graphics.o/effect_graphics.o
+# above. With no overrides present, all three compile to byte-identical
+# output to their base counterparts.
+$(BUILD)/.marscript-scripts.stamp: $(wildcard scripts/nfp/*.bin) $(wildcard text/nfp/*.txt) \
+                                   $(wildcard maps/events/*.json) $(wildcard scripts/marscript/*.marscript) \
+                                   scripts/nfp/manifest.json tools/marscript_rom_build.py tools/marscript.py \
+                                   tools/script_assembler.py tools/script_events.py tools/named_scripts.py \
+                                   tools/text_codec.py tools/lz77.py
+	$(PYTHON) tools/marscript_rom_build.py
+	@touch $@
+
+build/english/script_assets_english.s build/english/marscript_expansion.s &: asm/data/script_assets.s \
+                                   tools/split_scripts_english.py $(BUILD)/.marscript-scripts.stamp
+	$(PYTHON) tools/split_scripts_english.py
+
+$(ENGLISH_DIR)/script_assets_english.o: build/english/script_assets_english.s $(BUILD)/.marscript-scripts.stamp
+	@mkdir -p $(ENGLISH_DIR)
+	$(AS) $(ASFLAGS) -o $@ $<
+
+$(ENGLISH_DIR)/marscript_expansion.o: build/english/marscript_expansion.s
+	@mkdir -p $(ENGLISH_DIR)
+	$(AS) $(ASFLAGS) -o $@ $<
+
+RESOURCE_CATALOG_ENGLISH_INC := build/generated/resource_catalog_english.inc
+RESOURCE_CATALOG_ENGLISH_EXTERNS_INC := build/generated/resource_catalog_english_externs.inc
+
+$(RESOURCE_CATALOG_ENGLISH_INC) $(RESOURCE_CATALOG_ENGLISH_EXTERNS_INC) &: data/resource_catalog.json \
+                                   tools/resource_catalog.py $(BUILD)/.marscript-scripts.stamp
+	$(PYTHON) tools/resource_catalog.py build-english
+
+$(ENGLISH_DIR)/resource_catalog.o: src/english/resource_catalog_english.c include/resource_catalog.h \
+                                   include/nfp.h include/rom_section.h $(RESOURCE_CATALOG_ENGLISH_INC) \
+                                   $(RESOURCE_CATALOG_ENGLISH_EXTERNS_INC)
+	@mkdir -p $(ENGLISH_DIR)
+	$(CPP) $(CPPFLAGS) -DENGLISH=1 $< -o $(ENGLISH_DIR)/resource_catalog.i
+	$(CC1) $(CC1FLAGS) $(ENGLISH_DIR)/resource_catalog.i -o $(ENGLISH_DIR)/resource_catalog.s
+	$(AS) $(ASFLAGS) -o $@ $(ENGLISH_DIR)/resource_catalog.s
+
 $(ENGLISH_DIR)/mar_english.elf: $(OBJS) $(ENGLISH_OBJS) ld_script.ld ld_english.ld
-	@printf '%s\n' $(filter-out $(BUILD)/src/dialogue_start.o $(BUILD)/src/item.o $(BUILD)/src/menu_text.o $(BUILD)/asm/data/japanese_localized_assets.o,$(OBJS)) $(ENGLISH_OBJS) > $(ENGLISH_DIR)/objects.rsp
+	@printf '%s\n' $(filter-out $(BUILD)/src/dialogue_start.o $(BUILD)/src/item.o $(BUILD)/src/menu_text.o \
+	    $(BUILD)/asm/data/japanese_localized_assets.o $(BUILD)/asm/data/script_assets.o $(BUILD)/src/resource_catalog.o, \
+	    $(OBJS)) $(ENGLISH_OBJS) > $(ENGLISH_DIR)/objects.rsp
 	$(LD) -T ld_english.ld --no-warn-rwx-segments -o $@ @$(ENGLISH_DIR)/objects.rsp -Map $(ENGLISH_DIR)/mar_english.map
 
 mar_english.gba: $(ENGLISH_DIR)/mar_english.elf

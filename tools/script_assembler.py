@@ -11,11 +11,12 @@ import struct
 from pathlib import Path
 
 import lz77
+import text_codec
 
 OPS = {
     'jump': (0x11, 'target'), 'jump_if_zero': (0x12, 'operand,target'),
     'call': (0x13, 'target'), 'return': (0x14, ''),
-    'copy': (0x20, 'operand,operand'), 'set': (0x21, 'operand,i32'),
+    'copy': (0x20, 'operand,operand'), 'set_i32': (0x21, 'operand,i32'),
     'address': (0x22, 'operand,target'), 'push': (0x28, 'operand'),
     'push_i32': (0x29, 'i32'), 'pop': (0x2A, 'operand'),
     'add': (0x30, 'operand,operand'), 'add_i32': (0x31, 'operand,i32'),
@@ -44,6 +45,16 @@ OPS = {
     'read_table3c': (0x73, 'u8,operand'),
     'concat_strings': (0x78, 'operand,operand'),
     'free_string': (0x79, 'operand'), 'restore_result': (0x8F, ''),
+    # Raw single-instruction form of the native-call dispatch opcode.
+    # Normally built compositely by the `native` convenience form below
+    # (which also emits the required stack-allocation/arg-push/pop
+    # sequence around it) -- listed directly here only so
+    # tools/marscript.py's decoder can reproduce an isolated real 0x80
+    # instruction byte-for-byte when it isn't part of a recognized call
+    # (see docs/marscript-language.md). Not meant for hand-authored
+    # scripts: writing this opcode outside a real call's exact sequence
+    # produces a well-formed but semantically broken dispatch.
+    'native_call': (0x80, 'i32'),
 }
 
 def integer(value, lo, hi, label):
@@ -53,10 +64,31 @@ def integer(value, lo, hi, label):
 
 def encoded_size(ins):
     if 'label' in ins:return 0
+    if ins.get('op') == 'string':
+        # A standalone, labelable string block: opcode 0x10 + u16 length +
+        # NUL-terminated Shift-JIS bytes (see text_codec.py -- most real
+        # script text is Japanese, not ASCII, and a character's encoded
+        # byte length is not its Python string length). Same framing the
+        # native-arg string handling below already builds inline, but as
+        # its own instruction so a preceding label can be resolved as its
+        # address (via the `address` opcode) the same way jump/call
+        # targets already work.
+        return 3+len(text_codec.encode(ins['value']))+1
+    if ins.get('op') == 'switch':
+        # SWITCH (opcode 0x15, fully decompiled as ScriptCmdSwitch in
+        # src/script_bytecode.c): 1-byte operand register, 1-byte entry
+        # count, then that many (u32 candidate, u32 target) entries.
+        return 3+8*len(ins['entries'])
+    if ins.get('op') == 'raw':
+        # Opaque bytes carried through exactly, never interpreted -- see
+        # tools/marscript.py's `raw` statement.
+        return len(bytes.fromhex(ins['value']))
     if ins.get('op') == 'native':
-        strings=sum(3+len(a['string'].encode('ascii'))+1 for a in ins.get('args',[]) if isinstance(a,dict) and 'string' in a)
+        strings=sum(3+len(text_codec.encode(a['string']))+1 for a in ins.get('args',[]) if isinstance(a,dict) and 'string' in a)
         address_ops=6*sum(isinstance(a,dict) and 'string' in a for a in ins.get('args',[]))
-        return strings+address_ops+6+sum(2 if isinstance(a,dict) and 'string' in a else 5 for a in ins.get('args',[]))+5+5+2
+        # A dict arg -- {'string':...} or {'register':...} -- pushes via the
+        # 2-byte `push <reg>` form; a plain int pushes via 5-byte `push_i32`.
+        return strings+address_ops+6+sum(2 if isinstance(a,dict) else 5 for a in ins.get('args',[]))+5+5+2
     op=ins.get('op'); spec=OPS.get(op)
     if not spec:raise ValueError('unknown opcode '+repr(op))
     return 1+sum({'operand':1,'u8':1,'u16':2,'i32':4,'target':4}[x] for x in spec[1].split(',') if x)
@@ -77,8 +109,16 @@ def assemble(document):
     out=bytearray(); references={}
     def target(value):
         if isinstance(value,str):
-            if value not in labels:raise ValueError('unknown label '+value)
-            return labels[value]
+            # An optional "+N" suffix targets N bytes past the label rather
+            # than the label itself -- needed for e.g. a `string` block,
+            # where a real address load points 3 bytes into its payload
+            # (past the 0x10 opcode + u16 length header), not at the block's
+            # own start. Labels can only mark whole-instruction boundaries
+            # (body_offset only advances between instructions), so an
+            # in-instruction offset has to be expressed this way instead.
+            name,plus,offset=value.partition('+')
+            if name not in labels:raise ValueError('unknown label '+name)
+            return labels[name]+(integer(int(offset),0,0xffffffff,'target offset') if plus else 0)
         return integer(value,0,0xffffffff,'target')
     def emit_fixed(ins):
         opcode,spec=OPS[ins['op']]; out.append(opcode)
@@ -92,6 +132,48 @@ def assemble(document):
             else:out.extend(struct.pack('<I',target(value)))
     for ins in instructions:
         if 'label' in ins:continue
+        if ins.get('op') == 'raw':
+            out.extend(bytes.fromhex(ins['value']));continue
+        if ins.get('op') == 'string':
+            # Shift-JIS with `<XX>`-escaped control/private bytes, the same
+            # codec tools/marscript.py's decoder and extract_scrp_text.py
+            # both use for this exact byte layout -- not plain ASCII, since
+            # most real script text is Japanese dialogue.
+            value=text_codec.encode(ins['value'])+b'\0'
+            if len(value)>65535:raise ValueError('string literal too long')
+            out.extend(b'\x10'+struct.pack('<H',len(value))+value);continue
+        if ins.get('op') == 'switch':
+            entries=ins['entries']
+            out.append(0x15)
+            out.append(integer(ins['operand'],0,255,'switch operand'))
+            out.append(integer(len(entries),0,255,'switch entry count'))
+            for candidate,dest in entries:
+                out.extend(struct.pack('<i',integer(candidate,-0x80000000,0x7fffffff,'switch candidate')))
+                out.extend(struct.pack('<I',target(dest)))
+            continue
+        if ins.get('op') == 'native_call' and 'name' in ins:
+            # Reproduces a real native_call site verbatim without also
+            # rebuilding its argument pushes (unlike the `native`
+            # convenience form below, which builds both) -- needed because
+            # tools/marscript.py's decoder can't always safely prove where
+            # a call's own argument setup begins (see _find_call_spans),
+            # but every native_call site is named by a FUNC relocation in
+            # the real file and that relocation must never be silently
+            # dropped on recompile, or the call becomes unresolved at
+            # runtime. Requires the immediately preceding instruction to be
+            # the matching `push_i32 <argc>` (opcode 0x29) -- exactly the
+            # adjacency tools/script_events.py's own FUNC reader checks for
+            # (code[ref]==0x29 and code[ref+5]==0x80) -- rather than ever
+            # registering a relocation against the wrong offset.
+            name=ins['name']
+            if not isinstance(name,str) or not name or '\0' in name or len(name.encode('ascii'))>63:
+                raise ValueError('native_call name must be 1..63 ASCII bytes')
+            if len(out)<5 or out[-5]!=0x29:
+                raise ValueError('native_call "name" must immediately follow a push_i32 <argc> instruction')
+            reference=6+len(out)-5
+            out.extend(b'\x80\0\0\0\0')
+            references.setdefault(name,[]).append(reference)
+            continue
         if ins.get('op') != 'native':emit_fixed(ins);continue
         name=ins.get('name'); args=ins.get('args',[]); result=ins.get('result',0)
         if not isinstance(name,str) or not name or '\0' in name or len(name.encode('ascii'))>63:
@@ -99,7 +181,7 @@ def assemble(document):
         string_regs=[]
         for index,arg in enumerate(args):
             if isinstance(arg,dict) and 'string' in arg:
-                value=arg['string'].encode('ascii')+b'\0'
+                value=text_codec.encode(arg['string'])+b'\0'
                 if len(value)>65535:raise ValueError('embedded string too long')
                 payload=len(out)+3
                 out.extend(b'\x10'+struct.pack('<H',len(value))+value)
@@ -110,6 +192,12 @@ def assemble(document):
         regs=dict(string_regs)
         for index,arg in enumerate(args):
             if index in regs:out.extend(bytes((0x28,regs[index])))
+            elif isinstance(arg,dict) and 'register' in arg:
+                # A dynamic argument: pushes a register's live value rather
+                # than a literal, matching real scripts (the map editor's own
+                # audit found ~31% of sprite-related native calls need state
+                # from elsewhere rather than a literal initial value).
+                out.extend(bytes((0x28,integer(arg['register'],0,255,'native argument register'))))
             else:out.extend(b'\x29'+struct.pack('<i',integer(arg,-0x80000000,0x7fffffff,'native argument')))
         reference=6+len(out)
         out.extend(b'\x29'+struct.pack('<i',len(args)))
@@ -125,7 +213,23 @@ def assemble(document):
         func.extend(name.encode('ascii')+b'\0')
         for ref in refs:func.extend(struct.pack('<I',ref))
         func.extend(b'\0\0\0\0')
-    chunks=b'CODE'+struct.pack('<I',len(code))+code
+    if func:
+        # One more zero byte past the last name's own 4-byte ref-list
+        # terminator, marking "no more names" for the outer name-reading
+        # loop (tools/script_events.py's calls(): `while pos<len(payload)
+        # and payload[pos]:`) -- real scripts don't strictly need it
+        # (reaching the end of the payload already stops that loop just as
+        # well), but it is present with zero exceptions in 331 of 334 real
+        # scripts' FUNC chunks (the other 3 have no native calls at all, so
+        # no FUNC chunk). Confirmed by a full-corpus survey, not a guess.
+        func.extend(b'\0')
+    # Whatever chunk(s) a real script had between CODE and FUNC/TERM --
+    # empty for almost every real script, an opaque, undocumented NVAR
+    # chunk for at least one (see tools/marscript.py's extra_chunks()).
+    # Preserved byte-for-byte, never interpreted, never generated for a
+    # new script (only decompile_to_source() ever sets this field).
+    extra_chunks=bytes.fromhex(document.get('extra_chunks_hex',''))
+    chunks=b'CODE'+struct.pack('<I',len(code))+code+extra_chunks
     if func:chunks+=b'FUNC'+struct.pack('<I',len(func))+func
     chunks+=b'TERM'
     return b'SCRP'+struct.pack('<I',len(chunks))+chunks
