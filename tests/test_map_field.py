@@ -13,6 +13,7 @@ class MapFieldTests(unittest.TestCase):
             (folder/'field.c').write_text((ROOT/'src/map_field.c').read_text())
             (folder/'test.c').write_text(r'''
 #include "kmp.h"
+#include "map_events.h"
 #include <assert.h>
 #include <ctype.h>
 #include <stdint.h>
@@ -22,6 +23,17 @@ class MapFieldTests(unittest.TestCase):
 const char gMapArchiveKmpExtension[] = ".KMP";
 static int phase;
 static int expectedX,expectedY;
+struct TaskManager gMainTaskManager;
+static union { void *alignment; u8 bytes[256]; } eventStorage;
+static u32 eventCompletion;
+void sub_08061F20(struct EngineTask *task) { (void)task; }
+struct EngineTask *CreateTask(struct TaskManager *manager,
+    void (*callback)(struct EngineTask *), u32 queue, u32 *completion, u32 size) {
+ assert(manager == &gMainTaskManager && callback == sub_08061F20);
+ assert(queue == 0 && completion == &eventCompletion && size == 160);
+ memset(eventStorage.bytes, 0xA5, sizeof(eventStorage.bytes));
+ return (struct EngineTask *)eventStorage.bytes;
+}
 void GameStateSetString12F4(const char *name) {assert(phase++==0);assert(!strcmp(name,"map01_a"));}
 char *strupr(char *text) {char *p=text;while(*p){*p=toupper((unsigned char)*p);p++;}return text;}
 void KmpLoadResource(const char *name,void *vram,s32 slot,s32 plane,s32 palette,s32 extra,s32 flags) {
@@ -48,6 +60,18 @@ int main(void) {
  assert(view.clipX==3 && view.clipY==4 && view.clipWidth==5 && view.clipHeight==6);
  KmpResetClip(&view);
  assert(view.clipX==0 && view.clipY==0 && view.clipWidth==64 && view.clipHeight==128);
+ {
+  struct EngineTask *task = CreateFieldEventTask(-32768,32767,-1,0,-123,
+      &header,&eventCompletion);
+  struct FieldEventTaskData *data = (void *)(eventStorage.bytes + ENGINE_TASK_HEADER_SIZE);
+  unsigned i;
+  assert(task == (struct EngineTask *)eventStorage.bytes);
+  assert(data->firstCoordinate == -32768 && data->secondCoordinate == 32767);
+  assert(data->thirdCoordinate == -1 && data->fourthCoordinate == 0);
+  assert(data->value == -123 && data->objectData == &header);
+  for (i = 0; i < ENGINE_TASK_HEADER_SIZE; i++) assert(eventStorage.bytes[i] == 0xA5);
+  assert(data->unknown86[0] == 0xA5 && data->unknown94[0] == 0xA5);
+ }
  return 0;
 }
 ''')

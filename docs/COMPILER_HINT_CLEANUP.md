@@ -131,16 +131,18 @@ computed *first* (into r0), the base loaded second (r1), and then
 operand written first in the C addition gets both the lower register and the
 `rn` slot. Writing `offset + base` gets the evaluation order right and the add
 backwards; writing `base + offset` fixes the add and reverses the registers.
-The natural `descriptor->level0[low].name` form is otherwise instruction-exact.
-Still a candidate for the `src/nonmatching/` route rather than more search.
+The earlier trial recorded the natural `descriptor->level0[low].name` form
+as otherwise instruction-exact; recheck that against the current source
+before relying on it. These failed candidates do not rule out a different
+matching reconstruction.
 
 ## SpriteFixed8Multiply moved to real assembly
 
 A forced-register pin is exactly the "compiler hack" the Golden Rule forbids
-keeping in `src/`; `tools/drop_register_hints.py --all` independently confirms
-every surviving pin (this one included) is load-bearing, so the only
-Golden-Rule-compliant options are a real structural rewrite (tried and failed,
-above) or moving the function behind honest assembly, per PRET_STANDARDS.md
+keeping in `src/`. The removal tool found that its tested removals changed
+the current function's machine code; it did not rule out other C forms.
+Golden-Rule-compliant options are a matching structural rewrite or keeping
+the function in honest assembly, per PRET_STANDARDS.md
 §8/§8a and the precedent already set for the BIOS SWI wrappers
 (`8d7874c8`).
 
@@ -206,8 +208,57 @@ tests broke this way. Fix the test by defining the aliased literal, not by
 reverting the source. Tests that string-substituted the old raw address silently
 become no-ops and must be updated too.
 
+## Matching object cleanup: linker symbols and signed bounds
+
+`ObjectFreeNcdResources` (0x080281E0, 108 bytes) and
+`ObjectFreeAuxiliaryResources` (0x0802824C, 104 bytes) moved from
+`src/nonmatching/object_free.c` into matching `src/object.c`.
+
+Two corrections were necessary:
+
+- The original loads the IWRAM base and heap-root offset separately before
+  adding them. Numeric constants fold together. The linker symbols
+  `gIwramBase` and `gObjectHeapRootOffset`, assigned to separate locals,
+  reproduce the two loads without a scheduling barrier or register pin.
+- `Object.unk_18` is stored as `u32`, but the release loop uses signed
+  comparisons. The loop explicitly casts it to `s32`. The previous reference
+  C used an unsigned comparison, which could walk a huge array for a negative
+  count. Zero and negative counts must skip per-record releases while still
+  freeing and clearing the active object's record array.
+
+Both agbcc and old_agbcc produced the same matching 212-byte candidate after
+these corrections. The existing compiler selection was retained. This is
+evidence that the older notes' claimed compiler limitation was incomplete,
+not evidence that the entire subsystem needs a different compiler.
+
+Validation: the linked Japanese ROM matches its original SHA-1, the English
+build succeeds, and all 143 host tests pass. The new object-release test checks
+both release callbacks, 72-byte record strides, the eight-byte embedded-sprite
+offset, inactive objects, null records, and zero/negative counts. The replaced
+assembly and obsolete nonmatching source were removed.
+
 ## Next
 
 For each surviving hint, attempt a structural rewrite that matches as ordinary
 C. Only when that fails should the function move back behind its assembly, with
 readable C kept under `src/nonmatching/` and the mismatch documented.
+
+## Field-event constructor: a layout error behind a supposed compiler mismatch
+
+`CreateFieldEventTask` (0x08061EA8) now matches all 120 bytes as plain C in
+`src/map_field.c`. Its old reference combined the task header and payload,
+and placed the final halfword two bytes too late. A payload based at task
++32, with the last halfword at payload +0x92 (task +0xB2), fixes the layout.
+Signed 16-bit parameters copied into ordinary signed locals then produce the
+original register allocation without any hints. Both compiler snapshots
+matched the isolated candidate; no build flags or compiler selection changed.
+
+The linked Japanese ROM matches exactly. The replaced assembly and obsolete
+`src/nonmatching/map_events.c` were removed. The field-loader host test now
+also checks constructor arguments, signed coordinate extremes, object binding,
+and that constructor writes leave the task header and unknown fields alone.
+This replaces the earlier claim that argument narrowing or high-register
+pressure alone prevented a match.
+
+Validation on the updated checkout: all 168 host tests pass, the English
+build succeeds, and the PRET audit remains at 149 errors and zero warnings.

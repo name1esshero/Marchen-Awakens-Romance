@@ -7,6 +7,7 @@
  * The original 16-byte filename buffer and unchecked copies are preserved.
  */
 #include "kmp.h"
+#include "map_events.h"
 #include "rom_section.h"
 #include "runtime_misc.h"
 extern const char gMapArchiveKmpExtension[];
@@ -53,7 +54,7 @@ AT("00061E70") void InitializeMapFieldDisplay(void *state)
 
 /** Same field-display setup as InitializeMapFieldDisplay, applied to the
  * smaller substructures embedded in a field-event task (see
- * CreateFieldEventTask in src/nonmatching/map_events.c) rather than the
+ * CreateFieldEventTask below) rather than the
  * main engine state. */
 AT("00065E50") void InitializeFieldEventDisplay(void *task)
 {
@@ -70,3 +71,37 @@ AT("000558A4") void InitializeFieldDisplay5A4(void *task)
     sub_08054350((u8 *)task + 0x5A4, (u8 *)task + 0x7AC,
                  resource, 6, 194, 8, 0);
 }
+
+extern void sub_08061F20(struct EngineTask *task);
+
+/** Create a field-event task with four signed coordinates and an object binding.
+ * The original assumes task allocation succeeds. The extra signed value's
+ * role remains unknown; it is stored at task offset 0xB2. */
+AT("00061EA8")
+struct EngineTask *CreateFieldEventTask(s16 first, s16 second, s16 third,
+    s16 fourth, s16 value, void *objectData, u32 *completion)
+{
+    struct EngineTask *task;
+    struct FieldEventTaskData *data;
+    s32 firstCoordinate, secondCoordinate, thirdCoordinate, fourthCoordinate;
+    s32 eventValue;
+
+    firstCoordinate = first;
+    secondCoordinate = second;
+    thirdCoordinate = third;
+    fourthCoordinate = fourth;
+    eventValue = value;
+    task = CreateTask(&gMainTaskManager, sub_08061F20, 0, completion,
+        FIELD_EVENT_TASK_DATA_SIZE);
+    data = (struct FieldEventTaskData *)((u8 *)task + ENGINE_TASK_HEADER_SIZE);
+    data->firstCoordinate = firstCoordinate;
+    data->fourthCoordinate = fourthCoordinate;
+    data->objectData = objectData;
+    data->secondCoordinate = secondCoordinate;
+    data->thirdCoordinate = thirdCoordinate;
+    data->value = eventValue;
+    return task;
+}
+
+struct EngineTask *sub_08061EA8(s16, s16, s16, s16, s16, void *, u32 *)
+    __attribute__((alias("CreateFieldEventTask")));

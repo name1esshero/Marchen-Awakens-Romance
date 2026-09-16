@@ -4,6 +4,8 @@
 #include "heap.h"
 #include "list.h"
 
+#define ENGINE_TASK_HEADER_SIZE 32
+
 /* Task creation indexes this list array by its priority argument. Task nodes
  * begin with intrusive next/previous links; their remaining header is separate.
  */

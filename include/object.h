@@ -20,9 +20,11 @@
 
 #define OBJECT_STRUCT_SIZE  64      /* the caller's struct, cleared on init */
 #define OBJECT_RECORD_SIZE  72      /* the heap record the manager allocates */
+#define OBJECT_RECORD_SPRITE_OFFSET 8
 
 /* Bits in the flags halfword at +0x28. */
 #define OBJECT_ACTIVE 0x8000        /* gates the flag setters */
+#define OBJECT_MULTIPLE_RECORDS 0x0200 /* record points to unk_18 entries */
 
 struct Object
 {
@@ -37,8 +39,8 @@ struct Object
     u32 unk_14;                 /* cleared when state bit 0 is enabled */
     u32 unk_18;                  /* 0x18: cached from level1->unknown04 by
                                  *       ObjectSetResourceGroup; read back as a
-                                 *       loop count of 72-byte record entries by
-                                 *       the free routines */
+                                 *       signed loop count of 72-byte record
+                                 *       entries by the free routines */
     u8 filler_1C[4];
     u16 unk_20;                 /* 0x20: initialised to 0x100, which is 1.0
                                  *       read as 8.8 fixed point */
@@ -76,8 +78,7 @@ void ObjectSetResourceGroupByName(struct Object *object, s32 resource, const cha
  * template pointer itself into +0x04. A no-op on an inactive object. */
 void ObjectCopyFieldsFromTemplate(struct Object *object, const void *template);
 
-/* ObjectFreeNcdResources (0x080281E0) and ObjectFreeAuxiliaryResources
- * (0x0802824C): understood but not yet byte-matching. See
- * src/nonmatching/object_free.c. */
+void ObjectFreeNcdResources(struct Object *object);
+void ObjectFreeAuxiliaryResources(struct Object *object);
 
 #endif /* OBJECT_H */

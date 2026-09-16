@@ -3728,77 +3728,10 @@ _08061D88:
 
 @ 061E70..061EA8 is decompiled as InitializeMapFieldDisplay(); see src/decompiled.json
 
-	.section .rom.00061EA8, "ax"
+@ 061EA8..061F20 is matching CreateFieldEventTask in src/map_field.c.
+
+	.section .rom.00061F20, "ax"
 	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_08061EA8
-sub_08061EA8:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r9
-	mov r6, r8
-	push {r6, r7}
-	sub sp, #4
-	adds r5, r0, #0
-	adds r6, r1, #0
-	mov r8, r2
-	adds r4, r3, #0
-	ldr r0, [sp, #32]
-	ldr r7, [sp, #36]
-	ldr r3, [sp, #40]
-	lsls r5, r5, #16
-	asrs r5, r5, #16
-	lsls r6, r6, #16
-	asrs r6, r6, #16
-	mov r1, r8
-	lsls r1, r1, #16
-	asrs r1, r1, #16
-	mov r8, r1
-	lsls r4, r4, #16
-	asrs r4, r4, #16
-	lsls r0, r0, #16
-	asrs r0, r0, #16
-	mov r9, r0
-	ldr r0, _08061F18
-	ldr r1, _08061F1C
-	movs r2, #160
-	str r2, [sp, #0]
-	movs r2, #0
-	.2byte 0xF018
-	.byte 0x4A
-	.byte 0xFC
-	adds r2, r0, #0
-	adds r1, r2, #0
-	adds r1, #32
-	adds r0, #158
-	strh r5, [r0, #0]
-	subs r0, #2
-	strh r4, [r0, #0]
-	str r7, [r1, #120]
-	adds r0, #6
-	strh r6, [r0, #0]
-	adds r0, #2
-	mov r1, r8
-	strh r1, [r0, #0]
-	adds r0, #14
-	mov r1, r9
-	strh r1, [r0, #0]
-	adds r0, r2, #0
-	add sp, #4
-	pop {r3, r4}
-	mov r8, r3
-	mov r9, r4
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.global _08061F18
-_08061F18:
-	.4byte 0x030032C4  @ IWRAM+0x32C4
-	.global _08061F1C
-_08061F1C:
-	.4byte 0x08061F21  @ ROM+0x61F21
-
 	.thumb_func
 	.thumb
 	.global sub_08061F20

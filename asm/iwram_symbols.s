@@ -1,6 +1,8 @@
 @ Named locations in IWRAM used by matching C sources.
 .global gIwramBase
 .set gIwramBase, 0x03000000
+.global gObjectHeapRootOffset
+.set gObjectHeapRootOffset, 0x00003FB4
 .global gMapGenerationRootOffset
 .set gMapGenerationRootOffset, 0x00003FDC
 .global gMapStateOffset

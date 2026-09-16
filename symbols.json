@@ -1612,5 +1612,8 @@
   "08F2AD00": "gLibcReentrancy",
   "08F2AFEC": "_impure_ptr",
   "08F2AFF0": "gLocaleState",
-  "08F2B004": "gMallocState"
+  "08F2B004": "gMallocState",
+  "080281E0": "ObjectFreeNcdResources",
+  "0802824C": "ObjectFreeAuxiliaryResources",
+  "08061EA8": "CreateFieldEventTask"
 }

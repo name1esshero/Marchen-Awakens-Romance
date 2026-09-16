@@ -3,7 +3,87 @@
  * meanings and the units of fields +24/+26/+34/+36 remain unresolved.
  * A zero two-byte alignment tail belongs to the original +28388 range. */
 #include "object.h"
+#include "heap.h"
+#include "ncd.h"
 #include "rom_section.h"
+
+extern u8 gIwramBase[];
+extern u8 gObjectHeapRootOffset[];
+extern void NcdRuntimeSpriteReleaseAllocation(struct NcdSprite *sprite);
+extern void SpriteAuxiliaryReset(void *state);
+
+/** Release an active object's sprite allocations, then free its record array.
+ * The multiple-record count is interpreted as signed by the original engine;
+ * zero and negative counts skip the per-record releases. */
+AT("000281E0")
+void ObjectFreeNcdResources(struct Object *object)
+{
+    s32 i;
+
+    if (object->flags & OBJECT_ACTIVE)
+    {
+        if (object->record != NULL)
+        {
+            if (object->flags & OBJECT_MULTIPLE_RECORDS)
+            {
+                for (i = 0; i < (s32)object->unk_18; i++)
+                    NcdRuntimeSpriteReleaseAllocation((struct NcdSprite *)
+                        ((u8 *)object->record + i * OBJECT_RECORD_SIZE
+                         + OBJECT_RECORD_SPRITE_OFFSET));
+            }
+            else
+            {
+                NcdRuntimeSpriteReleaseAllocation((struct NcdSprite *)
+                    ((u8 *)object->record + OBJECT_RECORD_SPRITE_OFFSET));
+            }
+        }
+        {
+            u8 *iwram = gIwramBase;
+            u32 offset = (u32)gObjectHeapRootOffset;
+            struct Heap *heap = *(struct Heap **)(iwram + offset);
+
+            HeapFree(heap, object->record);
+        }
+        object->record = NULL;
+        object->flags = 0;
+    }
+}
+
+/** Release auxiliary state for each active object record, then free the array.
+ * A null array still goes through HeapFree and clears the object's flags. */
+AT("0002824C")
+void ObjectFreeAuxiliaryResources(struct Object *object)
+{
+    s32 i;
+
+    if (object->flags & OBJECT_ACTIVE)
+    {
+        if (object->record != NULL)
+        {
+            if (object->flags & OBJECT_MULTIPLE_RECORDS)
+            {
+                for (i = 0; i < (s32)object->unk_18; i++)
+                    SpriteAuxiliaryReset((u8 *)object->record + i * OBJECT_RECORD_SIZE);
+            }
+            else
+            {
+                SpriteAuxiliaryReset(object->record);
+            }
+        }
+        {
+            u8 *iwram = gIwramBase;
+            u32 offset = (u32)gObjectHeapRootOffset;
+            struct Heap *heap = *(struct Heap **)(iwram + offset);
+
+            HeapFree(heap, object->record);
+        }
+        object->record = NULL;
+        object->flags = 0;
+    }
+}
+
+void sub_080281E0(struct Object *) __attribute__((alias("ObjectFreeNcdResources")));
+void sub_0802824C(struct Object *) __attribute__((alias("ObjectFreeAuxiliaryResources")));
 
 extern s32 SpriteResourceFindGroup(u32 resource, const char *name);
 extern struct SpriteResourceLevel1 *SpriteResourceGetLevel1(u32 resource, u32 index0, u32 offset);

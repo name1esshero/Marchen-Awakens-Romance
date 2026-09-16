@@ -655,7 +655,21 @@ UI authoring commands `ui_text.py --write --replace` and
 
 Object resource-group family at 0x08028118: `ObjectSetResourceGroupByName`, `ObjectSetResourceGroup`, and `ObjectCopyFieldsFromTemplate` are now matching C in src/object.c, extending the struct in include/object.h with four newly-identified fields (unk_04, unk_08, unk_0C, unk_10, unk_18). `ObjectSetResourceGroup` conditionally updates whichever of resource/group/offset a caller passes something other than -1 for, then always re-derives a cached element count (unk_18) from `SpriteResourceGetLevel1`. `ObjectCopyFieldsFromTemplate` bulk-overwrites the 64-byte object from a caller's template but preserves the manager-owned record pointer and stashes the template pointer itself at +0x04.
 
-Two neighboring functions in that same family, `ObjectFreeNcdResources` (0x080281E0) and `ObjectFreeAuxiliaryResources` (0x0802824C), are understood but not yet byte-matching; they are recorded in src/nonmatching/object_free.c rather than forced. Both free an active object's heap record after releasing whatever it holds (via `NcdRuntimeSpriteReleaseAllocation` or `SpriteAuxiliaryReset` respectively, over `unk_18` entries spaced 72 bytes apart). What blocks the match is a single heap-handle load: the ROM computes it as two literal-pool words (0x03000000 and 0x00003FB4) added at runtime, while agbcc folds every C shape tried (a flat cast, split pointer arithmetic, a struct-with-filler member access, an extern-symbol-plus-offset) into one combined literal instead. Each function compiles exactly 12 bytes short of its ROM slot as a result.
+`ObjectFreeNcdResources` (0x080281E0, 108 bytes) and
+`ObjectFreeAuxiliaryResources` (0x0802824C, 104 bytes) now match in
+`src/object.c`. Both release the active object's records before freeing and
+clearing the array. The multiple-record flag is 0x0200, the stride is 72 bytes,
+and the NCD sprite lies eight bytes into each record. The loop treats the
+record count as signed: zero and negative counts skip per-record cleanup but
+still free the array.
+
+The earlier reference C used an unsigned comparison and folded the heap root
+into one literal. Separate linker symbols for the IWRAM base and the object
+heap root offset preserve the original two-load address calculation. Both
+agbcc snapshots produced matching code after these corrections; the normal
+compiler remains in use. The obsolete reference file and 212 bytes of
+assembly bodies were removed. Host tests cover inactive objects, null records,
+single records, multiple records, and zero/negative counts.
 
 libgcc runtime cluster around 0x08080BFC: identified as `__divsi3` (signed division, 148 bytes) followed immediately by the default `__div0` handler (a 2-byte `mov pc, lr` stub) at 0x08080C90, both verified byte-for-byte against the real objects in tools/agbcc/lib/libgcc.a's `_divsi3.o` and `_dvmd_tls.o` (ignoring only the `bl` operand to `__div0`, which is relocation-dependent and resolves correctly). `__modsi3` (0x08080C94), `__udivsi3` (0x08080DD4), and `__umodsi3` (0x08080E4C) were already aliased in asm/iwram_symbols.s but still referenced by their raw `sub_` addresses at every call site in src/resource_native.c, src/script_bytecode.c, src/script_native.c, src/script_resource_table.c, and across asm/code/*.s; both sets of call sites (division helpers and __div0, a new alias) now use the readable names. These are genuine assembly library routines, not decompiled C — no C source was written for them, consistent with them being hand-written libgcc code in the original toolchain too.
 
@@ -733,9 +747,9 @@ REGISTER-HINT CORRECTION (later, after tooling the audit): the two
 "Register-forcing cleanup" entries above conclude that a specific list of
 functions still genuinely need their register hints. That conclusion was drawn
 per function -- every hint in a candidate was dropped at once, and if the ROM
-stopped matching the whole set was put back. Register allocation is global to a
-function, so that test answers "does this function need at least one hint",
-not "does it need this one". Several functions on the "genuinely necessary"
+stopped matching the whole set was put back. That only shows that removing
+the tested set changes the current C's output. It does not prove that this
+function, or any equivalent C reconstruction, needs a hint. Several functions on the "genuinely necessary"
 lists turned out to need only a subset: src/nfp.c went from five hints to
 three, and src/ncd_sprite.c, src/resource_native.c and
 src/sprite_tile_allocator.c each shed one or more, all byte-exact.
@@ -754,14 +768,11 @@ difference), and remember that fences come in sets -- dropping one while its
 partner still pins the schedule changes the instruction order, so each looks
 load-bearing alone while the whole set is removable.
 
-Idiom (1) in the batch B entry above also needs a caveat. A 16-bit parameter
-narrowed *in place* does not by itself mean the parameter was declared `s16`.
-There are three shapes: an `s16` parameter narrows in place but with `lsr`
-(zero-extend, which agbcc may choose freely when only the low half is ever
-used); an `s32` parameter cast in place narrows with `asr` through a scratch
-register; and an `s32` parameter copied to a local and cast there narrows in
-place with `asr`. Only the third gives in-place *and* sign-correct, and it is
-what CreateFieldEventTask needs. See docs/AGBCC_CODEGEN.md.
+The earlier argument-narrowing probes described specific C candidates, not
+universal rules for `s16` parameters. `CreateFieldEventTask` now matches with
+`s16` parameters after correcting the task-payload structure and its final
+halfword offset. See the field-event constructor findings below and
+`docs/AGBCC_CODEGEN.md` for the corrected explanation.
 
 ## Map queries and random pools (2026-09-15)
 
@@ -824,3 +835,18 @@ the whole ScriptNativeRefreshMapValuesA/B expansion with a full
 alone -- the macro is currently committed, matching code, and changing its
 statement structure carries real risk of a silent mismatch a narrow test
 would miss.
+
+## Field-event constructor: corrected layout and matching C
+
+`CreateFieldEventTask` (0x08061EA8, 120 bytes) is now reconstructed in
+`src/map_field.c`. It allocates a 160-byte payload after the 32-byte task
+header, binds an object pointer, and stores four signed coordinates plus one
+additional signed value whose purpose is not yet known. The payload layout
+is documented in `include/map_events.h`.
+
+The old nonmatching structure misplaced the last halfword at task +0xB4;
+the ROM stores it at +0xB2. Separating header and payload, using signed
+16-bit parameters, and fixing that offset reproduces the original bytes
+without pins, barriers, or a compiler change. Both agbcc snapshots matched
+the isolated candidate. This supersedes the earlier argument-narrowing
+explanation: the original reference layout was also wrong.

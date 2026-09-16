@@ -5,28 +5,17 @@ Run `make pret-audit` to regenerate the detailed machine-readable reports at
 `python3 tools/audit_pret_standards.py --strict` when checking whether the
 hard-error backlog has reached zero.
 
-## Current result
-
-The project satisfies its primary correctness requirements:
+## Verified snapshot: object-cleanup batch, 2026-09-15
 
 - `make compare` reproduces the Japanese ROM byte for byte.
-- The host suite passes all 140 tests.
-- `tools/audit_provenance.py` verifies every declared source range and reports
-  1,640 compiled-C ranges plus ten BIOS assembly-wrapper ranges.
-- No unresolved Git conflict markers remain.
-- Every project header has an include guard or `#pragma once`.
-- `tools/audit_thumb_ptrs.py` finds no odd raw function pointer whose target
-  already has a recovered name.
+- All 143 host tests pass, and the English build succeeds.
+- The mechanical PRET audit reports 149 errors, zero warnings, and zero
+  documented exceptions. The project is not yet fully PRET-compliant.
 
-The source does not yet satisfy every readability and matching-method rule.
-The generated report is the authoritative list. The remaining hard-error
-groups are forced-register declarations and TARGET_REGISTER pins; missing
-Doxygen comments have been eliminated (see below).
-
-The current mechanical scan reports 157 hard-rule occurrences, 0 missing
-function-documentation warnings, and 13 documented low-level exceptions. An
-earlier cleanup replaced all 630 raw ROM addresses with verified symbols and
-added or converted documentation for 421 manifest-backed functions.
+These results describe this batch. Use fresh tool output for current counts;
+older counts below describe historical passes. The earlier 157-error and
+13-exception snapshot is stale. The mechanical audit does not establish that
+every name, type, comment, or claimed decompilation is semantically correct.
 
 A 2026-09-14 pass closed out the remaining Doxygen backlog: 531 missing-doc
 warnings across 37 files went to zero over 12 commits, verified with
@@ -73,31 +62,23 @@ alone. `src/sprite_affine_matrix.c` carries the largest single concentration
 (48 of the 92 TARGET_REGISTER pins) and is the highest-value structural-rewrite
 target for a future pass.
 
-A second round on 2026-09-14 tried the single-.o iteration technique on two
-previously unaudited functions, `sprite_tile_allocator.c`'s
-`SpriteTileAllocatorRelease` and `resource_native.c`'s
-`ScriptNativeSetFriendArms`, with several declaration-order and expression-
-merging variants each. Both failed the same specific way every time: removing
-the hint does not corrupt the logic, it just lands the value in the *adjacent*
-register (wants r0, agbcc naturally picks r1, or vice versa), which then
-cascades through the rest of the function's register choices. That is
-precisely the "Reverse Register Allocation Order" quirk in §5a, not a
-declaration-ordering problem, so reordering locals can't fix it. Given
-`tools/drop_register_hints.py` already exhaustively proved every remaining
-hint load-bearing by direct machine-code comparison (a stronger check than
-manual iteration), and two fresh attempts both hit this same wall, further
-progress here likely needs a genuinely different technique -- not more
-manual guessing at declaration order -- to be worth the time. Good next
-ideas for whoever picks this up: try forcing extra register pressure with a
-deliberate dummy live value to shift the allocator's choices, or study
-whether agbcc's allocator order is fully deterministic from something
-inspectable (e.g. total live-range count) rather than trial and error.
+A 2026-09-14 round tried declaration-order and expression-merging variants
+for `SpriteTileAllocatorRelease` and `ScriptNativeSetFriendArms` without a
+match. This establishes failure of those candidates, not an immutable
+register-allocation limitation. Subsequent typed array indexing removed the
+allocator's base-pointer pin, demonstrating why conclusions must remain
+provisional. Do not add dummy live values or forced registers to manufacture
+a match; reconstruct the real types, expressions, and lifetimes instead.
+
+The removal tool tests specific transformations of the current C. It is not
+an exhaustive search of equivalent C programs and cannot prove that a pin is
+inherently necessary.
 
 ## Remediation order
 
-1. Run `tools/drop_register_hints.py --all` first: it clears every hint the
-   compiler does not actually need, so later effort is spent only on real
-   mismatches. Then, for each surviving hint, attempt a structural rewrite that
+1. Run `tools/drop_register_hints.py --all` first: it tests whether direct hint
+   removals preserve the generated code. A remaining hint may still be
+   removable through a different C expression or type. Then, for each surviving hint, attempt a structural rewrite that
    matches as ordinary C. Only when that fails should the function move back
    behind its original assembly implementation, keeping readable C under
    `src/nonmatching/` with the exact mismatch documented.
@@ -141,24 +122,17 @@ asm), landing two as `src/nonmatching/` and one still unresolved:
   `GameStateAddResourceCounter` (`src/nonmatching/game_state_resource_counter.c`).
   A 999999-capped counter at the game root's +0x38BC.
 - `sub_08078644` -> `SoundTrackReleaseChannels`
-  (`src/nonmatching/sound_track_release_channels.c`). Matches down to a
-  single instruction: the ROM's first condition is a bare `tst`, agbcc's
-  normal codegen for the identical `if (flags & CONST)` idiom is
-  `ands+cmp+beq` (confirmed against the already-matching
-  `SoundPlayerImmediateInit()` a few functions earlier in the same file,
-  which uses the same idiom and gets `ands+cmp+beq`), and no variant tried
-  reproduces the bare `tst`. A genuinely new failure mode, not the register-
-  swap one documented above -- worth its own investigation rather than
-  assuming it is the same quirk.
+  (`src/nonmatching/sound_track_release_channels.c`). The previous claim of
+  a single-instruction mismatch is incorrect for the current reference C.
+  A fresh `--old` probe also changes the initial load order, channel-type
+  calculation, indirect-call register, and final list-head store. The ROM
+  calls its local `bx r3` trampoline at 0x08078634; the reference emits
+  `_call_via_r1`. Resolving the first `tst` alone would not complete this match.
 
-All three needed a `register ... asm("rN")` pin just to reach the exact
-register-swap failure mode already documented above (RuntimeGetLinkActivityState,
-GameState*ResourceCounter) or hit a *different*, still-unexplained
-instruction-selection difference (SoundTrackReleaseChannels) -- consistent
-with this session's earlier finding that the remaining hard-error surface is
-disproportionately made of near-misses, not functions nobody has looked at
-yet. Anyone continuing this work should expect a similar hit rate: several
-close-but-not-exact attempts per clean match.
+The resource-counter reference also needs more than a register swap: the
+current increment function's compiled C caches the counter pointer/value
+across the store, whereas the ROM reloads through the root. Verify every
+instruction and relocation before calling either candidate a near-match.
 
 Same session, continued: landed two more functions as clean, byte-exact
 matches (`RuntimeSetFlagC0` at 0x08009728, `GameStateSelectDeckPointer` at

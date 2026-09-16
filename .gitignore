@@ -42,5 +42,13 @@ venv/
 .DS_Store
 Thumbs.db
 
+# AI-agent tooling config (Cline rules/hooks/workflows, Claude Code
+# settings, etc.) stays out of the repo entirely -- contributors run
+# whatever agent, model, and conventions they prefer, and none of that is
+# this project's call to make for them.
+/.clinerules/
+/.claude/
+/.cline/
+
 # Keep editable PNG/PAL/JSON sources, extracted .bin data, and assembly.
 # Report snapshots are published separately; their generators stay tracked.

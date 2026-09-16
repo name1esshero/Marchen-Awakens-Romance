@@ -2700,6 +2700,18 @@
     "file": "src/object.c"
   },
   {
+    "addr": "080281E0",
+    "size": 108,
+    "name": "ObjectFreeNcdResources",
+    "file": "src/object.c"
+  },
+  {
+    "addr": "0802824C",
+    "size": 104,
+    "name": "ObjectFreeAuxiliaryResources",
+    "file": "src/object.c"
+  },
+  {
     "addr": "080282B4",
     "size": 68,
     "name": "ObjectSetState1",
@@ -4377,6 +4389,12 @@
     "addr": "08061E70",
     "size": 56,
     "name": "InitializeMapFieldDisplay",
+    "file": "src/map_field.c"
+  },
+  {
+    "addr": "08061EA8",
+    "size": 120,
+    "name": "CreateFieldEventTask",
     "file": "src/map_field.c"
   },
   {

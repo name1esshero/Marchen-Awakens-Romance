@@ -69,26 +69,29 @@ readily than `ldrsb`:
 Note the `mov rN,#0` that materialises a zero index: Thumb's signed loads only
 have a register-offset form, so a zero offset still costs a register.
 
-## Narrowing a 16-bit argument: three shapes, not one
+## Argument narrowing depends on the surrounding layout
 
-A function whose parameters are logically 16-bit narrows them in the prologue,
-and the three ways of writing that produce three different prologues. Picking
-the wrong one costs a scratch register or flips sign-extension to zero-extension.
+Earlier probes of `CreateFieldEventTask` compared in-place casts, `s16`
+parameters, and copying an argument to a local before casting. They produced
+different scratch registers and sign/zero-extension instructions. Those were
+observations about particular candidates, not rules that `s16` parameters
+always zero-extend or that copy-then-cast is the only matching form.
 
-| source | emitted |
-|---|---|
-| `s32` parameter cast in place: `first = (s16)first;` | `lsl r0, r6, #16` / `asr r6, r0, #16` — correct sign, but via a scratch register |
-| `s16` parameter | `lsl r5, r5, #16` / `lsr r5, r5, #16` — in place, but **zero**-extends |
-| `s32` parameter copied to a local, then cast: `a = first; a = (s16)a;` | `lsl r5, r5, #16` / `asr r5, r5, #16` — in place and sign-correct |
+The recovered function at 0x08061EA8 now matches with `s16` parameters and
+ordinary `s32` locals assigned from them, without redundant casts. The key
+structural correction was representing the payload **after** the 32-byte
+`EngineTask` header instead of treating the entire task as the payload.
+The compiler then retains the same base pointers and live values as the ROM.
 
-The `lsr` in the middle row is not a bug: where every use of the value stores
-into a 16-bit field, the upper bits are dead and agbcc may pick either shift.
-If the ROM shows `asr`, the value's upper bits mattered somewhere, or the source
-used the third shape.
+One remaining byte difference exposed a real layout error: the final signed
+halfword is at task offset **0xB2**, not 0xB4. Its payload offset is 0x92,
+and the preceding gap is 12 bytes. Correcting that gap completed the match
+with both compiler snapshots; the normal agbcc configuration is retained.
+See `src/map_field.c` and `include/map_events.h`.
 
-Matching `CreateFieldEventTask` (0x08061EA8) came down to exactly this: the
-copy-then-cast shape reproduces its prologue instruction for instruction, where
-both other spellings do not. See `src/nonmatching/map_events.c`.
+When narrowing differs, check the actual field offsets and pointer bases as
+well as the local types. A register-allocation mismatch can conceal an
+incorrect reconstruction of the structure.
 
 ## Addition: which operand becomes `rn`
 
@@ -101,15 +104,16 @@ The three-register alternative `add %0, %1, %2` is only selected when neither
 operand can be made to share the destination; the common alternatives are the
 two-operand `add %0, %0, %2` forms.
 
-This is a real limit. In `SpriteResourceFindGroup` the ROM computes a scaled
+In the tested `SpriteResourceFindGroup` candidates, the ROM computes a scaled
 index first (into r0), loads a base second (r1), then adds `add r0, r1, r0` —
 base as `rn`. Writing `offset + base` gets the evaluation order right and the
 add operands backwards; writing `base + offset` fixes the add and swaps the
-registers. Both halves are coupled through the allocator and no plain
-expression reaches that combination. Some functions genuinely need the pin, or
-belong in `src/nonmatching/`.
+registers. Those expressions did not reach the required combination. This
+does not prove that no ordinary C reconstruction can match; local types,
+lifetimes, and control flow remain possible causes. Keep unsuccessful
+reconstructions nonmatching rather than treating a pin as a completed match.
 
-## Bitwise OR ties a register like addition does; AND does not
+## Bitwise OR and AND: distinguish observations from allocator rules
 
 `iorsi3` has the same commutative-operand ambiguity as `addsi3` (see
 "Addition" above): for `*(u16 *)p |= CONST;` written as a bare literal with
@@ -122,10 +126,11 @@ field into the other register; agbcc's natural allocation for the identical
 literal expression swaps which value lands in which of those two registers.
 
 The asymmetry worth remembering: `*(u16 *)p &= CONST;` written the same
-bare-literal way, in the *same function*, reproduces the ROM exactly. `andsi3`
-does not tie its operand to the destination the way `iorsi3` and `addsi3` do,
-at least not in a way this case exercises. Do not assume every commutative
-bitwise op has the same tie -- check `andsi3` and `iorsi3` separately.
+bare-literal way, in the *same function*, reproduced the ROM in that trial.
+This observation does not establish a general difference in operand ties:
+Thumb register AND and OR both update a destination operand. Inspect the
+machine-description alternative and generated code for the actual case
+before attributing a mismatch to a general allocator rule.
 
 Naming either OR operand as a local (to try steering the allocator) does
 change which register it lands in, but for a `switch` with one case per bit
@@ -135,7 +140,7 @@ which changes the instruction count and order regardless of whether the
 registers are now right. No plain expression found gets both requirements at
 once for this shape.
 
-## Copies that the allocator will not make
+## Copies that the tested expressions did not retain
 
 Where the ROM keeps a value in one register and a modified copy in another,
 agbcc will coalesce the two if the original is dead after the branch. In
