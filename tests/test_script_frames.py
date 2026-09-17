@@ -15,7 +15,7 @@ class ScriptFrameTests(unittest.TestCase):
     def setUpClass(cls):
         cls.temp=tempfile.TemporaryDirectory();folder=Path(cls.temp.name)
         source=(ROOT/'src/script_frames.c').read_text()
-        source='struct ScriptContext; extern struct ScriptContext *hostVm;\n'+source.replace('(*(struct ScriptContext **)0x0300611C)','hostVm')
+        source='struct ScriptContext; extern struct ScriptContext *hostVm;\n'+source.replace('gScriptContext','hostVm')
         (folder/'frames.c').write_text(source)
         (folder/'mock.c').write_text(r'''
 #include "script_vm.h"
@@ -23,22 +23,22 @@ class ScriptFrameTests(unittest.TestCase):
 struct ScriptContext context, *hostVm=&context;
 struct ScriptExecutionState state;
 struct ScriptFrame frame, parent;
-int calls, status, cleanupCalls, freeCount, parentRestored;
-void *freed[5], *heaps[5];
+int calls, status, freeCount, parentRestored;
+void *freed[16], *heaps[16];
 void resetFrames(void) {
  memset(&context,0,sizeof(context));memset(&state,0,sizeof(state));
  memset(&frame,0,sizeof(frame));memset(&parent,0,sizeof(parent));
  context.state=&state;state.frame=&frame;state.heap=(void *)0x1010;
  state.stepBudget=3;state.dispatchState=7;state.dispatchIndex=9;
- frame.parent=&parent;calls=cleanupCalls=freeCount=parentRestored=0;status=1;
+ frame.parent=&parent;calls=freeCount=parentRestored=0;status=1;
 }
 s32 sub_08080070(struct ScriptFrame *arg) { if(arg!=&frame)return -99;calls++;return status; }
-void sub_0807EC58(void) { cleanupCalls++; }
 void HeapFree(void *heap,void *pointer) {
  if(state.frame==&parent)parentRestored++;
- if(freeCount<5){freed[freeCount]=pointer;heaps[freeCount]=heap;}
+ if(freeCount<16){freed[freeCount]=pointer;heaps[freeCount]=heap;}
  freeCount++;
 }
+void CpuFill(void *destination,u32 size,u32 value) { memset(destination,value,size); }
 void setPending(u32 n) { state.pendingTasks=n; }
 void clearFrame(void) { state.frame=0; }
 void setFlags(u16 n) { frame.flags=n; }
@@ -59,6 +59,30 @@ int freeOrderValid(int owned) {
   if(heaps[i]!=(owned && i==3 ? 0 : state.heap))return 0;
  }
  return 1;
+}
+int releasePoolsValid(void) {
+ struct ScriptFramePoolEntry direct[1], nested[1];
+ void *elements[3]={(void *)0x6060,0,(void *)0x7070};
+ u8 *raw=(u8 *)&frame;
+ int i;
+ resetFrames();
+ direct[0].count=2;direct[0].data=(void *)0x5050;
+ nested[0].count=3;nested[0].data=elements;
+ frame.count034=1;frame.table038=direct;
+ frame.count036=1;frame.table03C=nested;
+ frame.programCounter=9;memset(frame.work048,0xA5,sizeof(frame.work048));
+ frame.field084=0;memset(frame.callbackAddresses,0xA5,sizeof(frame.callbackAddresses));
+ frame.dispatchFlags=0xFFFF;frame.flags=0xFFFF;
+ *(u32 *)(raw+0x28)=11;*(u32 *)(raw+0x2C)=13;
+ ScriptFrameReleasePools();
+ if(freeCount!=4 || freed[0]!=(void *)0x5050 || freed[1]!=(void *)0x6060 ||
+    freed[2]!=(void *)0x7070 || freed[3]!=elements)return 0;
+ for(i=0;i<4;i++)if(heaps[i]!=state.heap)return 0;
+ if(direct[0].count || direct[0].data || nested[0].count || nested[0].data)return 0;
+ if(frame.programCounter || frame.field084!=24 || frame.dispatchFlags || frame.flags)return 0;
+ for(i=0;i<sizeof(frame.work048);i++)if(frame.work048[i])return 0;
+ for(i=0;i<8;i++)if(frame.callbackAddresses[i])return 0;
+ return state.dispatchState==(u32)(unsigned long)&frame && state.dispatchIndex==0;
 }
 ''')
         library=folder/'frames.so'
@@ -107,7 +131,6 @@ int freeOrderValid(int owned) {
         for owned in (0,1):
             self.lib.resetFrames();self.lib.setOwnedBlocks(owned)
             self.lib.ScriptPopFrame()
-            self.assertEqual(self.value('cleanupCalls'),1)
             self.assertEqual(self.lib.freeOrderValid(owned),1)
             self.assertEqual(self.value('parentRestored'),4+owned)
             self.assertEqual(self.lib.popStateValid(),1)
@@ -117,6 +140,9 @@ int freeOrderValid(int owned) {
         self.assertEqual(self.value('freeCount'),1)
         self.assertEqual(self.value('parentRestored'),1)
         self.assertEqual(self.lib.popStateValid(),1)
+
+    def test_release_pools_frees_nested_allocations_and_resets_frame(self):
+        self.assertEqual(self.lib.releasePoolsValid(),1)
 
 
 if __name__=='__main__':unittest.main()

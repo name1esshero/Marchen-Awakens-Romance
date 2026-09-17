@@ -37,13 +37,13 @@ AT("00005920") void SoundPlayerIdleTask(struct SoundWaitTaskData *task)
     switch (task->playerIndex) {
     case 0: player = &gSoundPlayer0; break;
     case 1: player = &gSoundPlayer1; break;
-    case 2: player = (struct SoundPlayer *)0x03005FF0; break;
-    case 3: player = (struct SoundPlayer *)0x030060C0; break;
-    case 4: player = (struct SoundPlayer *)0x03006030; break;
-    case 5: player = (struct SoundPlayer *)0x03005EB0; break;
-    case 6: player = (struct SoundPlayer *)0x03005EF0; break;
-    case 7: player = (struct SoundPlayer *)0x03005F70; break;
-    case 8: player = (struct SoundPlayer *)0x03006080; break;
+    case 2: player = &gSoundPlayer2; break;
+    case 3: player = &gSoundPlayer3; break;
+    case 4: player = &gSoundPlayer4; break;
+    case 5: player = &gSoundPlayer5; break;
+    case 6: player = &gSoundPlayer6; break;
+    case 7: player = &gSoundPlayer7; break;
+    case 8: player = &gSoundPlayer8; break;
     default: player = &gSoundPlayer0; break;
     }
 
@@ -146,13 +146,13 @@ AT("000059C8") struct EngineTask *StartSongWithTransition(
     switch (playerIndex) {
     case 0: player = &gSoundPlayer0; break;
     case 1: player = &gSoundPlayer1; break;
-    case 2: player = (struct SoundPlayer *)0x03005FF0; break;
-    case 3: player = (struct SoundPlayer *)0x030060C0; break;
-    case 4: player = (struct SoundPlayer *)0x03006030; break;
-    case 5: player = (struct SoundPlayer *)0x03005EB0; break;
-    case 6: player = (struct SoundPlayer *)0x03005EF0; break;
-    case 7: player = (struct SoundPlayer *)0x03005F70; break;
-    case 8: player = (struct SoundPlayer *)0x03006080; break;
+    case 2: player = &gSoundPlayer2; break;
+    case 3: player = &gSoundPlayer3; break;
+    case 4: player = &gSoundPlayer4; break;
+    case 5: player = &gSoundPlayer5; break;
+    case 6: player = &gSoundPlayer6; break;
+    case 7: player = &gSoundPlayer7; break;
+    case 8: player = &gSoundPlayer8; break;
     default: player = &gSoundPlayer0; break;
     }
 

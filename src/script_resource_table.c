@@ -76,7 +76,7 @@ AT("0007E9F4") s32 ScriptResourceSet(s32 type, const char *name,
         return 1;
 
     nameLength = strlen(name);
-    root = (struct ScriptBytecodeRoot **)0x0300611C;
+    root = &gScriptBytecodeRoot;
     node = HeapAlloc(*(void **)((u8 *)(*root)->context + 4),
                      size + nameLength + 13);
     if (node == 0)

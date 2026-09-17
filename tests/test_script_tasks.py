@@ -17,7 +17,7 @@ class ScriptTaskTests(unittest.TestCase):
         folder = Path(cls.temp.name)
         source = (ROOT / 'src/script_tasks.c').read_text()
         # Replace only the hardware context-slot address, retaining the C logic.
-        source = 'extern void *hostContext;\n' + source.replace('0x0300611C', '(unsigned long)&hostContext')
+        source = 'extern void *hostContext;\n' + source.replace('(u8 *)gScriptContext', '(u8 *)hostContext')
         (folder/'tasks.c').write_text(source)
         (folder/'mock.c').write_text(r'''
 #include "gba/types.h"

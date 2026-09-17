@@ -23,8 +23,7 @@ extern void SpriteTileAllocatorRelease(void *allocator, s32 tile);
 AT("0007B9CC") void NcdResetResource(u32 resource)
 {
  u32 offset=resource;
- struct SpriteEngineState **global=
-     (struct SpriteEngineState **)0x03006118;
+ struct SpriteEngineState **global=&gSpriteEngineState;
  u32 resourcesOffset;
  struct SpriteEngineState *state=*global;
  struct Heap *heap=*(struct Heap **)((u8 *)state+0x11C);
@@ -58,7 +57,7 @@ AT("0007BDAC") void NcdQueueSprite(struct NcdSprite *sprite, u32 priority)
  List *queue;
  u32 offset;
  object = (u8 *)sprite;
- global = (u8 **)0x03006118;
+ global = (u8 **)&gSpriteEngineState;
  state = *global;
  rawFlags = object[38];
  group = rawFlags & 12;
@@ -179,7 +178,7 @@ void NcdRuntimeSpriteReleaseAllocation(struct NcdSprite *sprite)
  switch ((s32)mode) {
  case 0:
   {
-   u8 *state = *(u8 **)0x03006118;
+   u8 *state = (u8 *)gSpriteEngineState;
    void *allocator = *(void **)(state + 0x618)
                    + self->resourceIndex * 16;
    u8 *part = allocation;
@@ -193,14 +192,14 @@ void NcdRuntimeSpriteReleaseAllocation(struct NcdSprite *sprite)
     i++;
     part += 4;
    }
-   heap = *(struct Heap **)(*(u8 **)0x03006118 + 0x11C);
+   heap = *(struct Heap **)((u8 *)gSpriteEngineState + 0x11C);
    toFree = self->allocation;
   }
   break;
  case 1:
   return;
  case 2:
-  heap = *(struct Heap **)(*(u8 **)0x03006118 + 0x11C);
+  heap = *(struct Heap **)((u8 *)gSpriteEngineState + 0x11C);
   toFree = allocation;
   break;
  default:

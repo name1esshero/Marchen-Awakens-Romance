@@ -23,8 +23,7 @@ s32 SpriteAffineFind(u16 key, u32 high, s16 low)
     u32 occupied;
     u32 transform;
     s32 checked;
-    struct SpriteEngineState **global =
-        (struct SpriteEngineState **)0x03006118;
+    struct SpriteEngineState **global = &gSpriteEngineState;
     struct SpriteEngineState **savedGlobal;
     u32 slotMask;
 
@@ -75,8 +74,7 @@ s32 SpriteAffineAllocate(u16 key, u32 high, s16 low)
 {
     u32 wantedKey = key;
     s32 lowValue = low;
-    struct SpriteEngineState **global =
-        (struct SpriteEngineState **)0x03006118;
+    struct SpriteEngineState **global = &gSpriteEngineState;
     u32 available;
     s32 slot;
     u32 one;

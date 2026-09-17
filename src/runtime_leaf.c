@@ -3,6 +3,7 @@
 #include "runtime_accessors.h"
 #include "sound.h"
 #include "ncd.h"
+#include "sprite_engine.h"
 
 #include "rom_section.h"
 
@@ -64,7 +65,7 @@ AT("00018E30") const u8 SoundStopPlayers4And5Tail[2] = {0};
 /** The sprite renderer stores its current origin in its global work block. */
 AT("0007D21C") void SpriteSetViewportOrigin(u16 x,u16 y)
 {
-    u8 *state=*(u8 **)0x03006118;
+    u8 *state=(u8 *)gSpriteEngineState;
     *(u16 *)(state+328)=x;
     *(u16 *)(state+330)=y;
 }

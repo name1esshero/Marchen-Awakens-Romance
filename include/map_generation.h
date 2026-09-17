@@ -80,7 +80,7 @@ struct GeneratedFieldMap {
     struct GeneratedMapRoomRecord *rooms;
 };
 
-#define gMapGenerationSeed (*(u32 *)0x03004044)
+extern u32 gMapGenerationSeed;
 
 void MapGenerationSeedRandom(u32 seed);
 u32 MapGenerationRandom(void);

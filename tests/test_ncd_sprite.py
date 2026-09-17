@@ -36,6 +36,7 @@ void HeapFree(struct Heap *heap, void *allocation) { (void)heap; (void)allocatio
 void SpriteTileAllocatorRelease(void *allocator, s32 tile) {
     (void)allocator; (void)tile;
 }
+struct SpriteEngineState *gSpriteEngineState;
 int main(void) {
     struct {u32 before; struct NcdSprite sprite; u32 after;} data;
     unsigned char expected[52] = {0};

@@ -1,5 +1,7 @@
 /* Small helpers from the map renderer, script VM, and scene runtimes. */
 #include "runtime_misc.h"
+#include "sprite_engine.h"
+#include "script_vm.h"
 
 #include "rom_section.h"
 extern u8 gIwramBase[];
@@ -30,7 +32,7 @@ AT("00070090") void *GameStateGetBuffer38C0(void)
  * not yet recovered. */
 AT("0007E964") void VmAddToField220(u32 value)
 {
- u8 *vm=*(u8 **)0x0300611C;
+ u8 *vm=(u8 *)gScriptContext;
  u32 *field=(u32 *)(*(u8 **)(vm+0x0C)+0x220);
  *field+=value;
 }
@@ -39,7 +41,7 @@ AT("0007E964") void VmAddToField220(u32 value)
  * recovered. */
 AT("0007F274") u32 VmGetField10(void)
 {
- u8 *vm=*(u8 **)0x0300611C;
+ u8 *vm=(u8 *)gScriptContext;
  return *(u16 *)(*(u8 **)(vm+0x0C)+0x10);
 }
 
@@ -47,15 +49,15 @@ AT("0007F274") u32 VmGetField10(void)
  * recovered. */
 AT("0007F284") u32 VmGetField12(void)
 {
- u8 *vm=*(u8 **)0x0300611C;
+ u8 *vm=(u8 *)gScriptContext;
  return *(u16 *)(*(u8 **)(vm+0x0C)+0x12);
 }
 
-/** @return The sprite runtime's +0x800 field, based at the fixed pointer
- * stored at 0x03006120. See SpriteRuntimeSetAllFlags800(). */
+/** @return The sprite runtime's +0x800 field. See
+ * SpriteRuntimeSetAllFlags800(). */
 AT("00080600") void *RuntimeGetPointer6120Field800(void)
 {
- return *(void **)(*(u8 **)0x03006120+0x800);
+ return *(void **)(gSpriteRuntime+0x800);
 }
 
 /** Initialize a key-repeat state with default delays and no keys held.
@@ -96,15 +98,15 @@ AT("00011674") const struct BattleCharacterDefinition *RuntimeGetBattleCharacter
 {
  return &gBattleCharacterDefinitions[index];
 }
-/** @return A slot within a group of the sprite runtime block based at the
- * fixed pointer stored at 0x03006120. Each group spans 1024 bytes; slot
+/** @return A slot within a group of the cached sprite runtime block. Each
+ * group spans 1024 bytes; slot
  * selects a 32-byte block within it.
  * @param slot Block index within the group.
  * @param group Group index. */
 AT("000804EC") u8 *RuntimeGetBlock6120(u32 slot,u32 group)
 {
  u32 slotBits=slot<<24;
- u8 **root=(u8 **)0x03006120;
+ u8 **root=&gSpriteRuntime;
  group<<=10;
  {
   u8 *base=*root;
@@ -196,10 +198,10 @@ AT("000805D0") void SpriteRuntimeSetAllFlags800(u32 enabled)
 {
  u8 *flags;
  if (enabled) {
-  flags=*(u8 **)0x03006120+0x800;
+  flags=gSpriteRuntime+0x800;
   enabled=-1;
  } else {
-  flags=*(u8 **)0x03006120+0x800;
+  flags=gSpriteRuntime+0x800;
  }
  *(u32 *)flags=enabled;
 }

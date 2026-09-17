@@ -6,8 +6,63 @@
  * Unknown table roles remain offset-named in the recovered layout. */
 #include "script_vm.h"
 #include "rom_section.h"
-#define VM (*(struct ScriptContext **)0x0300611C)
+#define VM gScriptContext
 extern s32 sub_08080070(struct ScriptFrame *);
+extern void HeapFree(void *,void *);
+extern void CpuFill(void *,u32,u32);
+
+/** Release allocations owned by the current frame's two temporary pools,
+ * then reset the interpreter fields that refer to them. table038 entries own
+ * one allocation; table03C entries own an array and each non-null element in
+ * that array. ScriptPopFrame frees the two entry tables themselves afterward.
+ * @return Nothing. */
+AT("0007EC58") void ScriptFrameReleasePools(void)
+{
+ struct ScriptFrame *frame=VM->state->frame;
+ struct ScriptFramePoolEntry *entry;
+ s32 i;
+ u8 *raw;
+
+ if(!frame) return;
+
+ i=0;
+ entry=frame->table038;
+ for(;i<frame->count034;i++,entry++)
+ {
+  if(entry->count>1) HeapFree(VM->state->heap,entry->data);
+  entry->count=0;
+  entry->data=0;
+ }
+
+ i=0;
+ entry=frame->table03C;
+ for(;i<frame->count036;i++,entry++)
+ {
+  if(entry->count>1)
+  {
+   u32 j=0;
+   void **array=entry->data;
+   for(;j<entry->count;j++,array++)
+   {
+    if(*array) HeapFree(VM->state->heap,*array);
+   }
+  }
+  if(entry->data) HeapFree(VM->state->heap,entry->data);
+  entry->count=0;
+  entry->data=0;
+ }
+
+ frame->programCounter=0;
+ CpuFill(frame->work048,SCRIPT_FRAME_WORK_RESET_SIZE,0);
+ CpuFill(frame->callbackAddresses,SCRIPT_FRAME_CALLBACK_RESET_SIZE,0);
+ frame->dispatchFlags=0;
+ frame->flags=0;
+ raw=(u8 *)frame;
+ frame->field084=*(u32 *)(raw+SCRIPT_FRAME_SOURCE_WORD_A_OFFSET)
+                 +*(u32 *)(raw+SCRIPT_FRAME_SOURCE_WORD_B_OFFSET);
+ VM->state->dispatchState=(u32)frame;
+ VM->state->dispatchIndex=0;
+}
 /** Dispatch the VM's current frame once.
  * @return The dispatch's reported work, or 0 if there is no current frame. */
 AT("0007ED70") s32 ScriptDispatchCurrentFrame(void)
@@ -57,8 +112,6 @@ AT("0007EDF0") void ScriptSetStepBudgetUnchecked(u32 value)
  *limit=value;
  if(!value) *limit=10;
 }
-extern void sub_0807EC58(void);
-extern void HeapFree(void *,void *);
 /** Restore the VM's parent frame, then free the popped frame's allocations
  * (storage, both work tables, and its optional owned resource) and the frame
  * itself. The optional resource is freed from heap zero; the other blocks
@@ -68,7 +121,7 @@ AT("0007EFB8") void ScriptPopFrame(void)
 {
  struct ScriptExecutionState *state;
  struct ScriptFrame *frame;
- sub_0807EC58();
+ ScriptFrameReleasePools();
  state=VM->state;
  frame=state->frame;
  state->frame=frame->parent;

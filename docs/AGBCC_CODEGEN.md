@@ -191,6 +191,23 @@ block at the end of the file produces `Error: changed section attributes for
 .rom.ADDR`, because the assembler reopens a section it had emitted as code and
 finds read-only data flags instead.
 
+## Initialize an index before loading a moving pointer
+
+`ScriptFrameReleasePools` (0x0807EC58) shows that declaration order can be
+the final difference in a nested loop. The ROM clears the element index
+before loading the pointer array. This ordinary C shape reproduces that order:
+
+    u32 index = 0;
+    void **element = entry->data;
+    for (; index < entry->count; index++, element++) {
+        if (*element)
+            HeapFree(heap, *element);
+    }
+
+Declaring and initializing `element` first reverses the two instructions and
+causes a four-byte mismatch. No register pinning is needed; the source-level
+initialization and moving-pointer loop are sufficient.
+
 ## Where a pool address is materialised
 
 A global's address and the load through it can be scheduled apart: the ROM

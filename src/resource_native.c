@@ -4,6 +4,7 @@
  */
 #include "gba/types.h"
 #include "game_tables.h"
+#include "game_state.h"
 
 #include "rom_section.h"
 
@@ -49,7 +50,7 @@ AT("00012B98") s32 ScriptNativeSetFriendArms(u32 count, const s32 *args,
                                               s32 *result)
 {
     s32 i = 0;
-    u8 **root = (u8 **)0x03003FDC;
+    u8 **root = &gMapGenerationRoot;
     s32 friendOffset = 0x3880;
     const s32 *input = args;
     const s16 *definitions = gFriendArmOwnershipBits;

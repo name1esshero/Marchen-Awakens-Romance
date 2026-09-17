@@ -267,8 +267,7 @@ AT("0007B8F4")
 s32 SpriteResourceBindGroup(u32 resource, u32 index)
 {
     u32 bindingIndex = index;
-    struct SpriteEngineState **global =
-        (struct SpriteEngineState **)0x03006118;
+    struct SpriteEngineState **global = &gSpriteEngineState;
     struct SpriteResourceDescriptor *descriptor =
         &(*global)->resources[resource];
     u32 bindingOffset = bindingIndex;

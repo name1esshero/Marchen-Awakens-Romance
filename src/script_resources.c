@@ -188,7 +188,7 @@ AT("0007F294") s32 ScriptResourceNameFirst(const char *key)
     if (found != 0)
         return *found;
 
-    root = (u8 *)0x0300611C;
+    root = (u8 *)&gScriptBytecodeRoot;
     state = *(u8 **)(*(u8 **)root + 12);
     if (*(u16 *)(state + 16) > 31)
         return -1;
@@ -214,7 +214,7 @@ AT("0007F2E0") s32 ScriptResourceNameSecond(const char *key)
     if (found != 0)
         return *found;
 
-    root = (u8 *)0x0300611C;
+    root = (u8 *)&gScriptBytecodeRoot;
     state = *(u8 **)(*(u8 **)root + 12);
     if (*(u16 *)(state + 18) > 31)
         return -1;

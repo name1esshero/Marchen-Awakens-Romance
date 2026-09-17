@@ -2,6 +2,11 @@
 #define SCRIPT_VM_H
 #include "gba/types.h"
 
+#define SCRIPT_FRAME_WORK_RESET_SIZE 0x40
+#define SCRIPT_FRAME_CALLBACK_RESET_SIZE 0x20
+#define SCRIPT_FRAME_SOURCE_WORD_A_OFFSET 0x28
+#define SCRIPT_FRAME_SOURCE_WORD_B_OFFSET 0x2C
+
 /* Partial layouts recovered from the VM's allocation, dispatch and teardown.
  * Offsets describe the 32-bit GBA ABI; unknown regions stay explicitly opaque. */
 struct ScriptFrame
@@ -13,10 +18,19 @@ struct ScriptFrame
     void *table038;
     void *table03C;
     struct ScriptFrame *parent;    /* 040: restored when this frame is popped */
-    u8 unknown044[0x66];
+    u32 programCounter;            /* 044: cleared when frame pools are released */
+    u8 work048[0x3C];              /* 048..083: transient interpreter state */
+    u32 field084;                  /* 084: sum of the words at 028 and 02C */
+    u32 callbackAddresses[8];      /* 088: callbacks selected by dispatchFlags */
+    u16 dispatchFlags;             /* 0A8: pending callback bits */
     u16 flags;                    /* 0AA: setter accepts bit indices 0..7 */
     void *resource;                /* 0AC: freed through heap zero if owned */
     u32 ownsResource;              /* 0B0 */
+};
+struct ScriptFramePoolEntry
+{
+    u32 count;
+    void *data;
 };
 struct ScriptExecutionState
 {
@@ -36,10 +50,12 @@ struct ScriptContext
     u32 result;
     struct ScriptExecutionState *state;
 };
+extern struct ScriptContext *gScriptContext;
 s32 ScriptDispatchCurrentFrame(void);
 u32 ScriptRunWorkBatch(void);
 s32 ScriptSetFrameFlag(u32 index);
 void ScriptSetStepBudgetUnchecked(u32 value);
+void ScriptFrameReleasePools(void);
 void ScriptPopFrame(void);
 s32 ScriptNativeChain(u32 count, const u32 *arguments, u32 *result);
 s32 ScriptNativeExec(u32 count, const u32 *arguments, u32 *result);

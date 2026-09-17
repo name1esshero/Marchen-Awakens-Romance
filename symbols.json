@@ -1615,5 +1615,6 @@
   "08F2B004": "gMallocState",
   "080281E0": "ObjectFreeNcdResources",
   "0802824C": "ObjectFreeAuxiliaryResources",
-  "08061EA8": "CreateFieldEventTask"
+  "08061EA8": "CreateFieldEventTask",
+  "0807EC58": "ScriptFrameReleasePools"
 }

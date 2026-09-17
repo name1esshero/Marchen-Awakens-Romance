@@ -251,16 +251,16 @@ AT("00005DAC") s32 ScriptNativeSetSoundPlayerVolume(
     struct SoundPlayer *player;
 
     switch (args[0]) {
-    case 0: player = (struct SoundPlayer *)0x03005F30; break;
-    case 1: player = (struct SoundPlayer *)0x03005FB0; break;
-    case 2: player = (struct SoundPlayer *)0x03005FF0; break;
-    case 3: player = (struct SoundPlayer *)0x030060C0; break;
-    case 4: player = (struct SoundPlayer *)0x03006030; break;
-    case 5: player = (struct SoundPlayer *)0x03005EB0; break;
-    case 6: player = (struct SoundPlayer *)0x03005EF0; break;
-    case 7: player = (struct SoundPlayer *)0x03005F70; break;
-    case 8: player = (struct SoundPlayer *)0x03006080; break;
-    default: player = (struct SoundPlayer *)0x03005F30; break;
+    case 0: player = &gSoundPlayer0; break;
+    case 1: player = &gSoundPlayer1; break;
+    case 2: player = &gSoundPlayer2; break;
+    case 3: player = &gSoundPlayer3; break;
+    case 4: player = &gSoundPlayer4; break;
+    case 5: player = &gSoundPlayer5; break;
+    case 6: player = &gSoundPlayer6; break;
+    case 7: player = &gSoundPlayer7; break;
+    case 8: player = &gSoundPlayer8; break;
+    default: player = &gSoundPlayer0; break;
     }
     SoundPlayerSetVolume(player, 0xFF,
                          *(const u16 *)((const u8 *)args + 8));

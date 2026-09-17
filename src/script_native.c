@@ -10,7 +10,7 @@
 #include "rom_section.h"
 extern const u8 gScriptEmptyText[];
 extern const char gScriptDecimalFormat[];
-#define VM (*(struct ScriptContext **)0x0300611C)
+#define VM gScriptContext
 /* Verified ROM string data; aliased rather than AT()-pinned because the
  * literal-pool region they live in is shared with other, unrelated code. */
 #define sText_Empty gScriptEmptyText

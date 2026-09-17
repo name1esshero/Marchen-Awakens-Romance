@@ -1,16 +1,16 @@
 /* Sprite-runtime block accessors.
  *
  * The whole sprite runtime lives in one 0x8CC-byte IWRAM block whose base
- * pointer is cached at 0x03006120.  Field 0x800 is a 32-bit flag word, and
+ * pointer is cached in gSpriteRuntime. Field 0x800 is a 32-bit flag word, and
  * the three u16 fields at 0x8C4/0x8C6/0x8C8 hold a triple of 9-bit values
  * that the scene runtime reads and writes together (see scene_native.c).
  */
-#include "gba/types.h"
+#include "sprite_engine.h"
 
 #include "rom_section.h"
 
 /* Cached base of the sprite runtime block. */
-#define SPRITE_RUNTIME_BLOCK (*(u8 **)0x03006120)
+#define SPRITE_RUNTIME_BLOCK gSpriteRuntime
 
 #define SPRITE_RUNTIME_BLOCK_SIZE 0x8CC
 #define SPRITE_RUNTIME_FLAGS 0x800

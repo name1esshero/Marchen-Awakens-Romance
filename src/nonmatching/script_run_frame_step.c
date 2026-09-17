@@ -10,8 +10,8 @@
  * if the corresponding function pointer in the 8-entry table at +0x88 is
  * non-null, dispatches it through ScriptPushFrameAndJump(bit, callback)
  * and returns immediately (does not check the remaining bits). This is
- * the callback array ScriptFrameReleasePools() (src/nonmatching/
- * script_frame_release_pools.c) frees/clears, and +0xAA is the same
+ * the callback array ScriptFrameReleasePools() (src/script_frames.c)
+ * frees/clears, and +0xAA is the same
  * halfword src/script_frames.c's ScriptSetFrameFlag() sets bits in --
  * this is `frame->flags`.
  *
@@ -50,7 +50,7 @@
 #include "gba/types.h"
 #include "script_vm.h"
 
-#define VM (*(struct ScriptContext **)0x0300611C)
+#define VM gScriptContext
 extern s32 ScriptPushFrameAndJump(u32 callbackIndex, u32 destination);
 extern u32 ScriptReadNextU8(void);
 

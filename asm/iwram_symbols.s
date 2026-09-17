@@ -5,6 +5,10 @@
 .set gObjectHeapRootOffset, 0x00003FB4
 .global gMapGenerationRootOffset
 .set gMapGenerationRootOffset, 0x00003FDC
+.global gMapGenerationRoot
+.set gMapGenerationRoot, 0x03003FDC
+.global gMapGenerationSeed
+.set gMapGenerationSeed, 0x03004044
 .global gMapStateOffset
 .set gMapStateOffset, 0x000032F4
 .global gSecondaryRuntime
@@ -15,6 +19,14 @@
 .set gIwramField3FD5Offset, 0x00003FD5
 .global gSoundIrqModeOffset
 .set gSoundIrqModeOffset, 0x00003FD6
+.global gScriptContext
+.set gScriptContext, 0x0300611C
+.global gScriptBytecodeRoot
+.set gScriptBytecodeRoot, 0x0300611C
+.global gSpriteEngineState
+.set gSpriteEngineState, 0x03006118
+.global gSpriteRuntime
+.set gSpriteRuntime, 0x03006120
 .global ReadSramFast
 .set ReadSramFast, 0x03006100
 .global VerifySramFast

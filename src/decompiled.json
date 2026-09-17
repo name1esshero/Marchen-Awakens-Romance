@@ -6288,6 +6288,12 @@
     "file": "src/script_resource_table.c"
   },
   {
+    "addr": "0807EC58",
+    "size": 280,
+    "name": "ScriptFrameReleasePools",
+    "file": "src/script_frames.c"
+  },
+  {
     "addr": "0807ED70",
     "size": 32,
     "name": "ScriptDispatchCurrentFrame",

@@ -38,10 +38,11 @@
  * sequence of what was tried.
  */
 #include "gba/types.h"
+#include "game_state.h"
 
 #include "rom_section.h"
 
-#define GAME_ROOT (*(u8 **)0x03003FDC)
+#define GAME_ROOT gMapGenerationRoot
 
 extern u8 *sub_08055F4C(s32 mode);
 extern s32 sub_080569B0(s32 value);

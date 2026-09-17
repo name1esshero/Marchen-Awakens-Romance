@@ -142,9 +142,12 @@ struct SpriteBindingOwner {
     s8 *bindingIndices;
 };
 
-#ifndef gSpriteEngineState
-#define gSpriteEngineState (*(struct SpriteEngineState **)0x03006118)
-#endif
+extern struct SpriteEngineState *gSpriteEngineState;
+
+/* The sprite runtime allocates its 0x8CC-byte working block elsewhere, then
+ * caches that block's base here for the renderer, scene runtime, and KMP
+ * loader.  The linker supplies its fixed IWRAM address. */
+extern u8 *gSpriteRuntime;
 
 void *SpriteEngineGetOamEntry(u32 index);
 void *SpriteEngineAllocateOamEntry(void);

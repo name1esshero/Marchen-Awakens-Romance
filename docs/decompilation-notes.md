@@ -768,6 +768,13 @@ difference), and remember that fences come in sets -- dropping one while its
 partner still pins the schedule changes the instruction order, so each looks
 load-bearing alone while the whole set is removable.
 
+Shiftability cleanup, sound players: the fixed IWRAM M4A player objects are
+now declared once in `include/sound.h` and used through `gSoundPlayer0` through
+`gSoundPlayer8` across the idle-wait, sound-task, and scene-native code. This
+replaced every raw player-address cast in those paths with the existing linker
+symbols and remained byte-exact. It is a naming and linker-interface recovery,
+not an assumption that player storage has become dynamically allocated.
+
 The earlier argument-narrowing probes described specific C candidates, not
 universal rules for `s16` parameters. `CreateFieldEventTask` now matches with
 `s16` parameters after correcting the task-payload structure and its final
@@ -850,3 +857,21 @@ the ROM stores it at +0xB2. Separating header and payload, using signed
 without pins, barriers, or a compiler change. Both agbcc snapshots matched
 the isolated candidate. This supersedes the earlier argument-narrowing
 explanation: the original reference layout was also wrong.
+## Script frame temporary pools (0x0807EC58)
+
+`ScriptFrameReleasePools` releases two arrays of `{count, data}` records. The
+first owns one allocation per active record. The second owns a pointer array
+and each non-null allocation referenced by that array. It then clears the
+frame's interpreter work state and restores `field084` to the sum of the words
+at offsets 0x28 and 0x2C. The function is a byte-exact clean-C match. Its
+inner loop requires the element index to be initialized before the moving
+pointer is loaded; this is source ordering, not register pinning.
+
+## Engine-root linker symbols
+
+`gScriptContext`/`gScriptBytecodeRoot` name compatible script views stored at
+one root slot. `gSpriteEngineState` and `gSpriteRuntime` name the renderer
+state and the runtime block it caches. `gMapGenerationRoot` names the existing
+main-runtime root. Their linker aliases replace raw IWRAM-address casts in
+matching C paths. The Japanese ROM remained byte-identical after the change;
+`COMPILER_HINT_CLEANUP.md` records the typed views and host-test handling.

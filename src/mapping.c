@@ -522,7 +522,7 @@ AT("000127A8") const u8 ScriptNativeSetField4258Tail[2] = {0};
  * state. Script values use 32-bit slots; several older subsystems consume
  * signed halfwords, so those conversions are kept explicit here.
  */
-#define GAME_ROOT (*(u8 **)0x03003FDC)
+#define GAME_ROOT gMapGenerationRoot
 
 extern void sub_080728A0(void *state, s32 value);
 extern void *GameStateGetBuffer38C0(void);
@@ -887,7 +887,7 @@ AT("00012D04") s32 ScriptNativeCopyMapHalfwords(u32 count, const s32 *args,
         itemCount = 40;
     index = 0;
     if (index < itemCount) {
-        root = (u8 * volatile *)0x03003FDC;
+        root = (u8 * volatile *)&gMapGenerationRoot;
         destinationOffset = 0x426A;
         fixedIndex = 0x10000;
         source = iteration.source;
@@ -936,7 +936,7 @@ AT("00012D64") s32 ScriptNativeClearMapHalfwords(u32 count, const s32 *args,
     } temporary;
 
     i = 0;
-    root = (u8 **)0x03003FDC;
+    root = &gMapGenerationRoot;
     offset = 0x31D0;
     fixed = 0x10000;
     value = 0;

@@ -44,10 +44,10 @@ otherwise register as a difference. In total 210 hints were removed with the ROM
 fifteen alignment-padding halfwords in the sound files moved from inline asm to
 the project's AT(...) Tail[2] idiom.
 
-The 157 that remain are, by construction, the ones the compiler actually needs
-for the current C. Each must either match as ordinary C after a structural
-rewrite or return to an assembly implementation with its readable C kept under
-`src/nonmatching/`.
+The 157 that remain were needed by the C shapes tested at that time. That does
+not establish that the original source required them: each still needs a
+structural recovery attempt in ordinary C, or an assembly implementation with
+its readable C kept under `src/nonmatching/`.
 
 Re-ran `tools/drop_register_hints.py --all` on 2026-09-14: it removed zero
 additional hints (all 22 forced-register and 92 TARGET_REGISTER pins report
@@ -56,9 +56,8 @@ per the remediation order below, the next step for each surviving hint is a
 structural C rewrite, not another mechanical pass. Manual attempts at two of
 the six forced-register files (`src/sound_fade_create.c`'s single r10 pin,
 `src/sound_idle_wait.c`'s three pins) via reordering declarations did not
-reproduce the original register allocation -- these look like the fully
-register-starved kind (§5a) rather than one fixable by variable ordering
-alone. `src/sprite_affine_matrix.c` carries the largest single concentration
+reproduce the original register allocation. Those probes rule out only the
+tested declaration orders, not a clean-C reconstruction. `src/sprite_affine_matrix.c` carries the largest single concentration
 (48 of the 92 TARGET_REGISTER pins) and is the highest-value structural-rewrite
 target for a future pass.
 
@@ -153,23 +152,13 @@ false match), then reconstructed a fourth as `src/nonmatching/`:
   variant tried) -- see the function's own header comment for the full list
   of shapes tried. Same allocator-not-steerable family as the OR/ADD
   register ties already documented, not a logic error.
-- `sub_0807EC58` -> `ScriptFrameReleasePools`
-  (`src/nonmatching/script_frame_release_pools.c`), called from
-  `ScriptPopFrame()`. Frees both of a script frame's element pools
-  (table038 outright, table03C element-by-element since each slot's data
-  is itself an array of pointers), clears the frame's unrecovered
-  0x44..0xA9 work area, and stashes values into `dispatchState`/
-  `dispatchIndex` that `ScriptPopFrame()` immediately overwrites anyway.
-  This one came very close: the whole function -- both loops' outer
-  structure, five chained pointer computations spilled to five specific
-  stack slots, two `CpuFill`s, the final field writes -- matches
-  instruction-for-instruction except inside table03C's inner loop, where
-  every shape tried (count read bare vs. hoisted to a local, `for` vs.
-  `while` with an explicit "next slot" pointer, several
-  declaration/statement orders) either swaps which of the slot's count and
-  the next-slot address lands in r0 vs. r1, or leaves an extra
-  register-to-register copy before the data pointer reaches r4 that the
-  ROM doesn't have. Documented in full in the file's header comment.
+- `sub_0807EC58` is now the byte-exact `ScriptFrameReleasePools` in
+  `src/script_frames.c`. The earlier claim that its inner loop could not be
+  reproduced in ordinary C was false. Initializing the element index before
+  loading the moving pointer, then advancing both in the `for` header,
+  produces the original instruction order without register variables or
+  inline assembly. The recovered `ScriptFrame` fields at 0x44, 0x84,
+  0x88 and 0xA8 are now typed and the obsolete nonmatching file is gone.
 - `sub_08080070` -> `ScriptRunFrameStep`
   (`src/nonmatching/script_run_frame_step.c`), called from
   `ScriptDispatchCurrentFrame()`. Dispatches one deferred callback bit from

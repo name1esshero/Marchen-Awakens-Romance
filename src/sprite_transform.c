@@ -212,7 +212,7 @@ void SpriteProjectPoint(struct SpriteVector3 *point)
     s32 oldX = out->x;
     s32 oldY = out->y;
     s32 scale = out->z;
-    u8 *state = *(u8 **)0x03006118;
+    u8 *state = (u8 *)gSpriteEngineState;
     register s32 origin TARGET_REGISTER("r4") = *(s16 *)(state + 328);
     s32 numerator = scale * oldX;
     s32 *divisor;

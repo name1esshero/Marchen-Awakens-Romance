@@ -13,7 +13,7 @@ class ScriptNativeTests(unittest.TestCase):
     def setUpClass(cls):
         cls.temp=tempfile.TemporaryDirectory();folder=Path(cls.temp.name)
         source=(ROOT/'src/script_native.c').read_text()
-        source='struct ScriptContext; extern struct ScriptContext *hostVm;\n'+source.replace('(*(struct ScriptContext **)0x0300611C)','hostVm')
+        source='struct ScriptContext; extern struct ScriptContext *hostVm;\n'+source.replace('gScriptContext','hostVm')
         (folder/'native.c').write_text(source)
         (folder/'mock.c').write_text(r'''
 #include "script_vm.h"

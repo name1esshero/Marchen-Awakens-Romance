@@ -113,6 +113,15 @@ struct SoundSongHeader
     const u8 *parts[16];
 };
 extern const struct SoundPlayerEntry gSoundPlayerTable[9];
+extern struct SoundPlayer gSoundPlayer0;
+extern struct SoundPlayer gSoundPlayer1;
+extern struct SoundPlayer gSoundPlayer2;
+extern struct SoundPlayer gSoundPlayer3;
+extern struct SoundPlayer gSoundPlayer4;
+extern struct SoundPlayer gSoundPlayer5;
+extern struct SoundPlayer gSoundPlayer6;
+extern struct SoundPlayer gSoundPlayer7;
+extern struct SoundPlayer gSoundPlayer8;
 extern const struct SoundSongEntry gSongTable[221];
 extern const s16 gDynamicSoundPlayerOrder[6];
 extern const u8 gSoundScaleTable[180];

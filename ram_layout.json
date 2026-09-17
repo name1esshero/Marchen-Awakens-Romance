@@ -605,7 +605,7 @@
     {
       "address": "03006120",
       "size": 4,
-      "name": "gRuntimeFlagsRoot",
+      "name": "gSpriteRuntime",
       "parent": "gEngineRoots"
     },
     {

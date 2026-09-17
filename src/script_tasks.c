@@ -7,6 +7,7 @@
  * destination/byte count/pattern before marking itself for scheduler removal.
  */
 #include "gba/types.h"
+#include "script_vm.h"
 #include "rom_section.h"
 extern void FinishTask(void *);
 extern void CpuFill(void *,u32,u32);
@@ -23,7 +24,7 @@ AT("0000380C") const u8 VramFillTaskTail[2]={0,0};
  * +0x220), if a VM is active. See ScriptGetPendingTasks(). */
 AT("0007E420") void ScriptAddPendingTasks(u32 count)
 {
- u8 *context = *(u8 **)0x0300611C;
+ u8 *context = (u8 *)gScriptContext;
  u8 *state;
  if (context && (state = *(u8 **)(context+12)))
   *(u32 *)(state+0x220) += count;
@@ -32,7 +33,7 @@ AT("0007E420") void ScriptAddPendingTasks(u32 count)
  * state +0x220), if a VM is active. See ScriptGetPendingTasks(). */
 AT("0007E448") void ScriptCompletePendingTasks(u32 count)
 {
- u8 *context = *(u8 **)0x0300611C;
+ u8 *context = (u8 *)gScriptContext;
  u8 *state;
  if (context && (state = *(u8 **)(context+12)))
   *(u32 *)(state+0x220) -= count;
@@ -50,27 +51,27 @@ AT("0007E448") void ScriptCompletePendingTasks(u32 count)
  */
 AT("0007E384") void ScriptDeactivate(void)
 {
- u8 *context=*(u8 **)0x0300611C;
+ u8 *context=(u8 *)gScriptContext;
  *(u32 *)(context+4)=0;
  *(u32 *)(context+12)=0;
 }
 /** Set the active VM context's result word (+8). See ScriptGetResult(). */
 AT("0007E394") void ScriptSetResult(u32 value)
 {
- u8 *context=*(u8 **)0x0300611C;
+ u8 *context=(u8 *)gScriptContext;
  *(u32 *)(context+8)=value;
 }
 /** @return The active VM context's result word (+8). */
 AT("0007E3A0") u32 ScriptGetResult(void)
 {
- u8 *context=*(u8 **)0x0300611C;
+ u8 *context=(u8 *)gScriptContext;
  return *(u32 *)(context+8);
 }
 /** @return The current frame's parent link (frame +64), or NULL if there is
  * no VM, execution state, or current frame. */
 AT("0007E3AC") void *ScriptGetParentFrame(void)
 {
- u8 *context=*(u8 **)0x0300611C;
+ u8 *context=(u8 *)gScriptContext;
  u8 *state,*frame;
  if(context && (state=*(u8 **)(context+12)) && (frame=*(u8 **)(state+12)))
   return *(void **)(frame+64);
@@ -82,7 +83,7 @@ AT("0007E3AC") const u8 ScriptGetParentFrameTail[2]={0,0};
  * incremental adjusters. */
 AT("0007E3D4") void ScriptSetPendingTasks(u32 count)
 {
- u8 *context=*(u8 **)0x0300611C;
+ u8 *context=(u8 *)gScriptContext;
  u8 *state;
  if(context && (state=*(u8 **)(context+12)))
   *(u32 *)(state+0x220)=count;
@@ -92,7 +93,7 @@ AT("0007E3D4") void ScriptSetPendingTasks(u32 count)
  * ScriptRunSlice() dispatch while nonzero. */
 AT("0007E3F8") u32 ScriptGetPendingTasks(void)
 {
- u8 *context=*(u8 **)0x0300611C;
+ u8 *context=(u8 *)gScriptContext;
  u8 *state;
  if(context && (state=*(u8 **)(context+12)))
   return *(u32 *)(state+0x220);
@@ -104,7 +105,7 @@ AT("0007E3F8") const u8 ScriptGetPendingTasksTail[2]={0,0};
  * ScriptGetStepBudget(). */
 AT("0007E470") void ScriptSetStepBudget(u32 value)
 {
- u8 *context=*(u8 **)0x0300611C;
+ u8 *context=(u8 *)gScriptContext;
  u8 *state;
  if(context && (state=*(u8 **)(context+12)))
  {
@@ -117,7 +118,7 @@ AT("0007E470") void ScriptSetStepBudget(u32 value)
  * or 0 if there is no active VM. */
 AT("0007E49C") u32 ScriptGetStepBudget(void)
 {
- u8 *context=*(u8 **)0x0300611C;
+ u8 *context=(u8 *)gScriptContext;
  u8 *state;
  if(context && (state=*(u8 **)(context+12)))
   return *(u32 *)(state+0x214);
@@ -140,13 +141,13 @@ AT("0007F15C") s32 ScriptRunSlice(void)
 {
  u32 processed=0;
  s32 status=1;
- u8 *state=*(u8 **)(*(u8 **)0x0300611C+12);
+ u8 *state=*(u8 **)((u8 *)gScriptContext+12);
  while(processed < *(u32 *)(state+0x214) && status>0)
  {
   if(*(u32 *)(state+0x220)) break;
   status=ScriptDispatchCurrentFrame();
   processed+=status;
-  state=*(u8 **)(*(u8 **)0x0300611C+12);
+  state=*(u8 **)((u8 *)gScriptContext+12);
  }
  return status>1 ? 1 : status;
 }

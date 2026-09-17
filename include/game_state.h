@@ -3,6 +3,10 @@
 
 #include "gba/types.h"
 
+/* Main runtime root cached in IWRAM. The historical name is retained from
+ * the map-generation code that first recovered this slot. */
+extern u8 *gMapGenerationRoot;
+
 /* Accessors for the main runtime object. Offset-based names are intentional:
  * callers establish storage type and signedness, but not every gameplay name
  * has been proved yet. */

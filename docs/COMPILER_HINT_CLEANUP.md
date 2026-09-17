@@ -17,6 +17,15 @@ Two spellings, both hard errors in the audit:
 - A scheduling fence: a whole statement `asm("" : "+r"(x));`, used to stop
   agbcc reordering the instructions around it.
 
+## Shiftability: named sound-player globals
+
+The nine fixed M4A player objects already have linker-defined symbols in
+`asm/iwram_symbols.s`. Their declarations now live in `include/sound.h`, and
+the sound-task, idle-wait, and scene-native code uses `gSoundPlayer0` through
+`gSoundPlayer8` rather than raw `0x0300xxxx` casts. This preserves the ROM
+exactly while making the shared player-selection logic readable and linkable
+through one named interface.
+
 ## Method
 
 Never assume a hint is needed. Prove it:
@@ -262,3 +271,54 @@ pressure alone prevented a match.
 
 Validation on the updated checkout: all 168 host tests pass, the English
 build succeeds, and the PRET audit remains at 149 errors and zero warnings.
+## Script frame pool cleanup
+
+`ScriptFrameReleasePools` at 0x0807EC58 now matches in clean C. The previous
+notes that described its inner loop as impossible to steer were based on an
+incomplete search. Initializing the index before loading the pointer array and
+advancing both values in the loop header produces the ROM's exact order. This
+conversion removed 280 bytes of assembly and the corresponding
+`src/nonmatching` file without register variables or inline assembly.
+
+## Shiftability: recovered engine-root globals
+
+The fixed IWRAM root slots are now expressed as typed linker symbols rather
+than casts of numeric addresses in recovered C. `gScriptContext` and
+`gScriptBytecodeRoot` are compatible typed views of the same root slot: the
+script-task runtime uses the outer context, while bytecode resource code uses
+the nested bytecode view. `gSpriteEngineState` names the renderer-state root,
+and `gSpriteRuntime` names the cached base written by `SpriteRuntimeInit()`
+for its separate 0x8CC-byte block. `gMapGenerationRoot` names the documented
+main-runtime root that map-generation code originally exposed through an
+IWRAM-base-plus-offset expression.
+
+These names are defined by `.set` aliases in `asm/iwram_symbols.s`, so they
+retain the original addresses without placing hard-coded addresses in C. The
+conversion covered the script task/resource paths, renderer accessors, NCD
+sprite helpers, affine-slot code, map-native paths, and scene/runtime helpers.
+Isolated host
+tests define the named globals they use, while the ROM link resolves them
+through the linker aliases.
+
+Validation after the conversion: focused script and sprite host tests pass,
+and `make compare` reports a byte-identical ROM. The names document observed
+layout and ownership only; opaque field offsets remain opaque until their
+semantics are recovered.
+
+## Current structural probes: SRAM and save wrapper
+
+The SRAM copy/verify routines were re-tested without register pins. A real
+`remaining` loop variable correctly recreates the ROM's initial `size` copy
+into r3. The remaining mismatch is narrower: agbcc puts the volatile WAITCNT
+load in r1 and the `0xFFFC` literal in r0, while the ROM uses r0 and r1 in the
+opposite roles. The direct volatile read-modify-write spelling has the same
+swap. The matching pins were restored; this is evidence about the candidates
+tested, not evidence that the original C needed pins.
+
+`CreateSaveWriteTask()` was also tested with ordinary locals and with its
+local declarations and assignments reversed, and with the standard C
+`register` storage class but no asm constraint. All candidates preserve its
+shape and size, but assign the saved input pointer to r4 and size to r5; the
+ROM assigns them to r5 and r4. Its matching declarations were likewise
+restored. Future attempts should look for a real lifetime or type difference,
+not add an artificial dependency merely to exchange registers.
