@@ -185,6 +185,42 @@ also caught an unrelated, pre-existing manifest error surfaced by the same
 run: `RuntimeSetFlagC0` (`2ad2ddbe`) was recorded as 48 bytes against an
 actual linked size of 52; corrected in the same pass.
 
+## Sound-player lifecycle helpers moved to real assembly
+
+`SoundPlayerResume` (0x080789B0), `SoundPlayerFadeOut` (0x080789CC),
+`SoundPlayerFadeOutTemporary` (0x08078C18), and `SoundPlayerFadeIn`
+(0x08078C38) all read the same ready signature at `SoundPlayer + 0x34`.
+Their source-level behavior is now documented together in
+`src/nonmatching/sound_player_lifecycle.c`; their named Thumb instructions
+are in `asm/code/code_0780C0.s`.
+
+Removing each `asm("r3")` pin was tested with the exact old_agbcc command
+used by `src/sound_m4a.c`. The compiler selected a different temporary for
+the ready signature and therefore changed the compare and following stores.
+Direct field tests and separate ordinary local variables produced the same
+near match. These trials only describe the current reconstruction; they do
+not establish that the original source used a forced register.
+
+The moved implementation is literal-for-literal matched against
+`baserom.gba`, includes only named labels and normal Thumb instructions, and
+has no inline assembly in matching C. `SoundPlayerFadeOut`'s two-byte
+literal-pool alignment is explicitly filled with zero: the assembler's
+default Thumb alignment fill is `mov r8, r8`, while the ROM stores `00 00`.
+
+## Dynamic sound-player selection moved to real assembly
+
+`StartSongOnFreePlayer` (0x08005F7C) selects the first inactive player from
+the six-entry dynamic priority order. Its ordinary C form remains in
+`src/nonmatching/sound_player_select.c`; the matching implementation is a
+named Thumb routine in `asm/code/code_0000C0.s`.
+
+The old match used an empty inline-assembly fence only to hold the song table
+and dynamic-order table live until after the selected song entry was formed.
+Without it, old_agbcc moves the song-entry index computation ahead of the
+order-table load, so the bytes differ despite identical behavior. The assembly
+uses linker symbols for all nine player globals and the three tables rather
+than hardcoded ROM or IWRAM addresses.
+
 ## State
 
 Recorded at the time of writing; regenerate rather than trusting these numbers.
@@ -194,7 +230,9 @@ Recorded at the time of writing; regenerate rather than trusting these numbers.
   sound files' padding halfwords stopped being inline asm, then → 156 moving
   the BIOS SWI wrappers to real assembly (`8d7874c8`), then → 152 (two solo
   structural rewrites: `FontCharacterToGlyph`, `NfpGetEntrySizeByName`), then
-  → 149 moving `SpriteFixed8Multiply` to real assembly, the current count.
+  → 149 moving `SpriteFixed8Multiply` to real assembly, then → 141 moving
+  the four sound-player lifecycle helpers, then → 140 moving dynamic
+  sound-player selection to real assembly, the current count.
   `tools/drop_register_hints.py --all` finds 0 further mechanically-safe
   removals at 149; everything left needs either a structural rewrite (slow,
   one function at a time, as above) or the same real-assembly move.

@@ -514,28 +514,6 @@ AT("0007915C") void SoundPlayerStart(
     }
 }
 
-/** Resume a paused sequence player. */
-AT("000789B0") void SoundPlayerResume(struct SoundPlayer *player)
-{
-    register u32 ident asm("r3") = player->ident;
-
-    if (ident == SOUND_PLAYER_READY)
-        player->status &= ~SOUND_PLAYER_PAUSED;
-}
-
-/** Begin a permanent fade to silence. */
-AT("000789CC") void SoundPlayerFadeOut(struct SoundPlayer *player, u16 interval)
-{
-    u16 fadeInterval = interval;
-    register u32 ident asm("r3") = player->ident;
-
-    if (ident == SOUND_PLAYER_READY) {
-        player->fadeCounter = fadeInterval;
-        player->fadeInterval = fadeInterval;
-        player->fadeVolume = 64 << FADE_VOLUME_SHIFT;
-    }
-}
-
 /** Start the requested song on the player selected by its song-table entry. */
 AT("00078A70") void SoundSongStart(u16 songNumber)
 {
@@ -625,34 +603,6 @@ AT("00078BDC") void SoundResumeAllPlayers(void)
 
     for (i = 0; i < (u16)(u32)gSoundPlayerCount; i++)
         SoundPlayerResume(gSoundPlayerTable[i].player);
-}
-
-/** Mark a fade as temporary so completion pauses rather than retires tracks. */
-AT("00078C18") void SoundPlayerFadeOutTemporary(
-    struct SoundPlayer *player, u16 interval)
-{
-    u16 fadeInterval = interval;
-    register u32 ident asm("r3") = player->ident;
-
-    if (ident == SOUND_PLAYER_READY) {
-        player->fadeCounter = fadeInterval;
-        player->fadeInterval = fadeInterval;
-        player->fadeVolume = (64 << FADE_VOLUME_SHIFT) | FADE_TEMPORARY;
-    }
-}
-
-/** Fade a ready player in over interval frames and clear its paused flag. */
-AT("00078C38") void SoundPlayerFadeIn(struct SoundPlayer *player, u16 interval)
-{
-    u16 fadeInterval = interval;
-    register u32 ident asm("r3") = player->ident;
-
-    if (ident == SOUND_PLAYER_READY) {
-        player->fadeCounter = fadeInterval;
-        player->fadeInterval = fadeInterval;
-        player->fadeVolume = FADE_IN;
-        player->status &= ~SOUND_PLAYER_PAUSED;
-    }
 }
 
 /** Extended sequence command: read a little-endian WaveData pointer.  The

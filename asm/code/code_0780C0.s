@@ -1308,9 +1308,56 @@ _08078944:
 
 @ 0789AC..0789B0 is decompiled as SoundDriverUnusedNoOp(); see src/decompiled.json
 
-@ 0789B0..0789CC is decompiled as SoundPlayerResume(); see src/decompiled.json
 
-@ 0789CC..0789EC is decompiled as SoundPlayerFadeOut(); see src/decompiled.json
+@ The source-level forms for these four helpers are retained in
+@ src/nonmatching/sound_player_lifecycle.c.  old_agbcc coalesces the ready
+@ signature with another short-lived value in every ordinary-C shape tested,
+@ while the original keeps it in r3.  Keep the ROM instructions here rather
+@ than retaining a forced-register declaration in matching C.
+	.section .rom.000789B0, "ax"
+	.thumb
+	.thumb_func
+	.global SoundPlayerResume
+SoundPlayerResume:
+	adds r2, r0, #0
+	ldr r3, [r2, #52]
+	ldr r0, 1f
+	cmp r3, r0
+	bne 2f
+	ldr r0, [r2, #4]
+	ldr r1, 3f
+	ands r0, r1
+	str r0, [r2, #4]
+2:
+	bx lr
+1:
+	.4byte 0x68736D53
+3:
+	.4byte 0x7FFFFFFF
+
+	.section .rom.000789CC, "ax"
+	.thumb
+	.thumb_func
+	.global SoundPlayerFadeOut
+SoundPlayerFadeOut:
+	adds r2, r0, #0
+	lsls r1, r1, #16
+	lsrs r1, r1, #16
+	ldr r3, [r2, #52]
+	ldr r0, 1f
+	cmp r3, r0
+	bne 2f
+	strh r1, [r2, #38]
+	strh r1, [r2, #36]
+	movs r0, #128
+	lsls r0, r0, #1
+	strh r0, [r2, #40]
+2:
+	bx lr
+	.balign 4, 0
+1:
+	.4byte 0x68736D53
+
 
 @ 0789EC..078A64 is decompiled as SoundDriverInit(); see src/decompiled.json
 
@@ -1334,9 +1381,57 @@ _08078944:
 
 @ 078C08..078C18 is decompiled as SoundFadeOut(); see src/decompiled.json
 
-@ 078C18..078C38 is decompiled as SoundPlayerFadeOutTemporary(); see src/decompiled.json
+	.section .rom.00078C18, "ax"
+	.thumb
+	.thumb_func
+	.global SoundPlayerFadeOutTemporary
+SoundPlayerFadeOutTemporary:
+	adds r2, r0, #0
+	lsls r1, r1, #16
+	lsrs r1, r1, #16
+	ldr r3, [r2, #52]
+	ldr r0, 1f
+	cmp r3, r0
+	bne 2f
+	strh r1, [r2, #38]
+	strh r1, [r2, #36]
+	ldr r0, 3f
+	strh r0, [r2, #40]
+2:
+	bx lr
+	.align 2
+1:
+	.4byte 0x68736D53
+3:
+	.4byte 0x00000101
 
-@ 078C38..078C60 is decompiled as SoundPlayerFadeIn(); see src/decompiled.json
+	.section .rom.00078C38, "ax"
+	.thumb
+	.thumb_func
+	.global SoundPlayerFadeIn
+SoundPlayerFadeIn:
+	adds r2, r0, #0
+	lsls r1, r1, #16
+	lsrs r1, r1, #16
+	ldr r3, [r2, #52]
+	ldr r0, 1f
+	cmp r3, r0
+	bne 2f
+	strh r1, [r2, #38]
+	strh r1, [r2, #36]
+	movs r0, #2
+	strh r0, [r2, #40]
+	ldr r0, [r2, #4]
+	ldr r1, 3f
+	ands r0, r1
+	str r0, [r2, #4]
+2:
+	bx lr
+1:
+	.4byte 0x68736D53
+3:
+	.4byte 0x7FFFFFFF
+
 
 @ 078C60..078CA8 is decompiled as SoundPlayerImmediateInit(); see src/decompiled.json
 

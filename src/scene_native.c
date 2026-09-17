@@ -3,6 +3,7 @@
  * interpreter whether to continue immediately or wait for an engine task.
  */
 #include "gba/types.h"
+#include "game_state.h"
 #include "runtime_accessors.h"
 #include "runtime_misc.h"
 #include "sound.h"

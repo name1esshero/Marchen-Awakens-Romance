@@ -162,6 +162,10 @@ void SoundPlayerResume(struct SoundPlayer *player);
 void SoundPlayerFadeOut(struct SoundPlayer *player, u16 interval);
 void SoundPlayerFadeOutTemporary(struct SoundPlayer *player, u16 interval);
 void SoundPlayerFadeIn(struct SoundPlayer *player, u16 interval);
+void SoundPlayerSetTempo(struct SoundPlayer *player, u16 tempo);
+void SoundPlayerSetVolume(struct SoundPlayer *player, u16 trackBits,
+                          u16 volume);
+void SoundFadeOut(struct SoundPlayer *player, u16 interval);
 void SoundPlayerStop(struct SoundPlayer *player);
 void SoundSongStart(u16 song);
 void SoundSongStartOrChange(u16 song);

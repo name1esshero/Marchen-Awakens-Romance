@@ -510,12 +510,6 @@
     "file": "src/scene_native.c"
   },
   {
-    "addr": "08005F7C",
-    "size": 156,
-    "name": "StartSongOnFreePlayer",
-    "file": "src/sound_player_select.c"
-  },
-  {
     "addr": "08006018",
     "size": 28,
     "name": "StopSoundPlayer",
@@ -4914,18 +4908,6 @@
     "file": "src/sound_m4a.c"
   },
   {
-    "addr": "080789B0",
-    "size": 28,
-    "name": "SoundPlayerResume",
-    "file": "src/sound_m4a.c"
-  },
-  {
-    "addr": "080789CC",
-    "size": 32,
-    "name": "SoundPlayerFadeOut",
-    "file": "src/sound_m4a.c"
-  },
-  {
     "addr": "080789EC",
     "size": 120,
     "name": "SoundDriverInit",
@@ -4990,18 +4972,6 @@
     "size": 16,
     "name": "SoundFadeOut",
     "file": "src/sound.c"
-  },
-  {
-    "addr": "08078C18",
-    "size": 32,
-    "name": "SoundPlayerFadeOutTemporary",
-    "file": "src/sound_m4a.c"
-  },
-  {
-    "addr": "08078C38",
-    "size": 40,
-    "name": "SoundPlayerFadeIn",
-    "file": "src/sound_m4a.c"
   },
   {
     "addr": "08078C60",

@@ -8,9 +8,9 @@ extern s32 ScriptResourceNameFirst(const char *name);
 extern s32 ScriptResourceNameSecond(const char *name);
 extern void *ScriptResourceSlotFirst(s32 index);
 extern void *ScriptResourceSlotSecond(s32 index);
-extern s32 ScriptResourceGetValue(s32 record, s32 selector);
-extern s32 ScriptResourceGetValueOrDefault(s32 record, s32 selector);
-extern s32 ScriptResourceSetValue(s32 record, s32 selector, u32 value);
+extern u32 *ScriptResourceGetValue(u32 *record, s32 selector);
+extern void *ScriptResourceGetValueOrDefault(u32 *record, s32 selector);
+extern s32 ScriptResourceSetValue(u32 *record, s32 selector, u32 value);
 extern s32 ScriptResourceSetStringValue(s32 *record, s32 selector,
                                         const char *value);
 
@@ -36,7 +36,7 @@ AT("0007F438") s32 ScriptResourceGetFirst(u8 *record, s32 selector)
         if (!slot)
             return -1;
     }
-    return ScriptResourceGetValue(*(s32 **)(record + 4), selector);
+    return (s32)ScriptResourceGetValue(*(u32 **)(record + 4), selector);
 }
 
 /**
@@ -61,7 +61,7 @@ AT("0007F470") s32 ScriptResourceGetSecond(u8 *record, s32 selector)
         if (!slot)
             return 0;
     }
-    return ScriptResourceGetValueOrDefault(*(s32 **)(record + 4), selector);
+    return (s32)ScriptResourceGetValueOrDefault(*(u32 **)(record + 4), selector);
 }
 AT("0007F470") const u8 ScriptResourceGetSecondTail[2] = {0};
 
@@ -89,7 +89,7 @@ AT("0007F4A4") s32 ScriptResourceSetFirst(u8 *record, s32 selector,
         if (!slot)
             return 0;
     }
-    return ScriptResourceSetValue(*(s32 **)(record + 4), selector, value);
+    return ScriptResourceSetValue(*(u32 **)(record + 4), selector, value);
 }
 AT("0007F4A4") const u8 ScriptResourceSetFirstTail[2] = {0};
 

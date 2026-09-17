@@ -11264,7 +11264,95 @@ _08005D18:
 
 @ 005F54..005F7C is decompiled as StartIndexedSong(); see src/decompiled.json
 
-@ 005F7C..006018 is decompiled as StartSongOnFreePlayer(); see src/decompiled.json
+@ Source-level form: src/nonmatching/sound_player_select.c.  The prior
+@ matching C used an empty asm scheduling fence.  Keep the independently
+@ verified Thumb implementation here until ordinary C expresses the original
+@ table-load lifetime without a compiler constraint.
+	.section .rom.00005F7C, "ax"
+	.thumb
+	.thumb_func
+	.global StartSongOnFreePlayer
+StartSongOnFreePlayer:
+	push {r4, r5, lr}
+	sub sp, #40
+	ldr r0, .LStartSongPlayer0
+	str r0, [sp, #0]
+	ldr r0, .LStartSongPlayer1
+	str r0, [sp, #4]
+	ldr r0, .LStartSongPlayer2
+	str r0, [sp, #8]
+	ldr r0, .LStartSongPlayer3
+	str r0, [sp, #12]
+	ldr r0, .LStartSongPlayer4
+	str r0, [sp, #16]
+	ldr r0, .LStartSongPlayer5
+	str r0, [sp, #20]
+	ldr r0, .LStartSongPlayer6
+	str r0, [sp, #24]
+	ldr r0, .LStartSongPlayer7
+	str r0, [sp, #28]
+	ldr r0, .LStartSongPlayer8
+	str r0, [sp, #32]
+	movs r4, #0
+	ldr r5, .LStartSongPlayerTable
+	ldr r0, .LStartSongTable
+	ldr r1, .LStartSongOrder
+	lsls r2, r2, #3
+	adds r2, r2, r0
+.LStartSongLoop:
+	movs r0, #0
+	ldrsh r3, [r1, r0]
+	lsls r0, r3, #2
+	add r0, sp
+	ldr r0, [r0, #0]
+	ldr r0, [r0, #4]
+	cmp r0, #0
+	bge .LStartSongNext
+	lsls r0, r3, #1
+	adds r0, r0, r3
+	lsls r0, r0, #2
+	adds r0, r0, r5
+	ldr r0, [r0, #0]
+	ldr r1, [r2, #0]
+	bl SoundPlayerStart
+	adds r0, r4, #0
+	b .LStartSongDone
+.LStartSongPlayer0:
+	.4byte gSoundPlayer0
+.LStartSongPlayer1:
+	.4byte gSoundPlayer1
+.LStartSongPlayer2:
+	.4byte gSoundPlayer2
+.LStartSongPlayer3:
+	.4byte gSoundPlayer3
+.LStartSongPlayer4:
+	.4byte gSoundPlayer4
+.LStartSongPlayer5:
+	.4byte gSoundPlayer5
+.LStartSongPlayer6:
+	.4byte gSoundPlayer6
+.LStartSongPlayer7:
+	.4byte gSoundPlayer7
+.LStartSongPlayer8:
+	.4byte gSoundPlayer8
+.LStartSongPlayerTable:
+	.4byte gSoundPlayerTable
+.LStartSongTable:
+	.4byte gSongTable
+.LStartSongOrder:
+	.4byte gDynamicSoundPlayerOrder
+.LStartSongNext:
+	adds r1, #2
+	adds r4, #1
+	cmp r4, #5
+	ble .LStartSongLoop
+	movs r0, #1
+	negs r0, r0
+.LStartSongDone:
+	add sp, #40
+	pop {r4, r5}
+	pop {r1}
+	bx r1
 
 @ 006018..006034 is decompiled as StopSoundPlayer(); see src/decompiled.json
 
