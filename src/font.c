@@ -13,6 +13,12 @@ void sub_0807ADE0(struct Font *, const struct FontData *)
 #include "rom_section.h"
 extern void CpuFill(void *, u32, u32);
 
+/* 0x100 - 0x81 and the inclusive 0x81..0x9F range width.  The encoding
+ * test is intentionally expressed in this wrapped form because it is the
+ * compact lead-byte range check emitted by the original compiler. */
+#define ENGINE_MULTIBYTE_LEAD_BIAS 0x7F
+#define ENGINE_MULTIBYTE_LEAD_SPAN 0x1E
+
 /** The dialogue reader accepts this wider lead-byte range, including private
  * font codes outside standard Shift-JIS. */
 AT("000025E4")
@@ -24,6 +30,65 @@ u32 IsEngineDoubleByte(const u8 *text)
 }
 AT("000025E4") const u8 IsEngineDoubleByteTail[2] = {0, 0};
 
+/**
+ * @brief Copy a C string's characters without copying its terminator.
+ * @param destination First byte to write.
+ * @param source NUL-terminated source text.
+ * @return Number of bytes written.
+ */
+AT("0002AD78")
+u32 CopyTextWithoutTerminator(u8 *destination, const char *source)
+{
+    u8 *start;
+    u8 *current;
+    u8 character;
+
+    start = destination;
+    current = start;
+    goto check;
+
+copy:
+    character = *(const u8 *)source;
+    *current = character;
+    source++;
+    current++;
+
+check:
+    character = *(const u8 *)source;
+    if (*(const s8 *)source != 0)
+        goto copy;
+    return current - start;
+}
+
+/**
+ * @brief Encode one engine character and terminate the resulting text.
+ * @param text Destination with room for a two-byte character and terminator.
+ * @param code Engine character code.
+ * @return Number of encoded character bytes, excluding the terminator.
+ */
+AT("0002AD98")
+u32 WriteEngineCharacter(u8 *text, u16 code)
+{
+    u8 lead = code >> 8;
+
+    if ((u8)(lead + ENGINE_MULTIBYTE_LEAD_BIAS) <= ENGINE_MULTIBYTE_LEAD_SPAN) {
+        text[0] = lead;
+        text[1] = code;
+        text[2] = 0;
+        return 2;
+    }
+
+    text[0] = code;
+    text[1] = 0;
+    return 1;
+}
+AT("0002AD98") const u8 WriteEngineCharacterTail[2] = {0, 0};
+
+/**
+ * @brief Initialize a font handle with the supplied font data.
+ * @param font Handle to initialize.
+ * @param data Backing FONT.NFT data.
+ */
 AT("0007ADC4")
 void InitFont(struct Font *font, const struct FontData *data)
 {

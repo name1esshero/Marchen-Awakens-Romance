@@ -5045,11 +5045,8 @@ _0804221C:
 	.global _08042220
 _08042220:
 	.4byte 0x00003DCC
-	.4byte 0xB081B510
-	.4byte 0x94002401
-	.4byte 0xF82CF000
-	.4byte 0xBC10B001
-	.4byte 0x4708BC02
+
+@ 042224..042238 is decompiled as BattleMode4221(); see src/decompiled.json
 
 @ 042238..04224C is decompiled as BattleMode4222(); see src/decompiled.json
 
@@ -5057,25 +5054,13 @@ _08042220:
 
 	.section .rom.00042260, "ax"
 	.syntax unified
-	.4byte 0xB081B510
-	.4byte 0x94002404
-	.4byte 0xF80EF000
-	.4byte 0xBC10B001
-	.4byte 0x4708BC02
-	.4byte 0xB081B510
-	.byte 0x05
-	.byte 0x24
 
-	.thumb_func
-	.thumb
-	.global sub_0804227A
-sub_0804227A:
-	str r4, [sp, #0]
-	bl sub_08042288
-	add sp, #4
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 042260..042274 is decompiled as BattleMode4224(); see src/decompiled.json
+
+@ 042274..042288 is decompiled as BattleMode4225(); see src/decompiled.json
+
+	.section .rom.00042288, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -10687,7 +10672,7 @@ _08044614:
 	ble _080446B4
 	ldr r0, [r6, #64]
 	ldr r1, [r6, #68]
-	bl sub_08019C78
+	bl SpriteUiSetupDefault
 	movs r0, #48
 	b _0804468A
 	.global _0804462A

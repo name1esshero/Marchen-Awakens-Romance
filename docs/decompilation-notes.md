@@ -875,3 +875,71 @@ state and the runtime block it caches. `gMapGenerationRoot` names the existing
 main-runtime root. Their linker aliases replace raw IWRAM-address casts in
 matching C paths. The Japanese ROM remained byte-identical after the change;
 `COMPILER_HINT_CLEANUP.md` records the typed views and host-test handling.
+
+## SpriteUiInitialize (0x08019C08)
+
+The 44 bytes after `sub_08019BD4` were hidden in an eleven-word raw-data run
+despite a real caller at 0x08019AD6. The caller establishes a 12-byte state
+at its runtime +0x70 field, passes a resource name in r2, and invokes this
+five-argument initializer. `SpriteUiInitialize` now records the confirmed
+layout: it activates the state, initializes the two byte arguments, sets a
+-48 vertical baseline and one active slot, then resolves the supplied name
+through `SpriteResourceFindGroup(1, name)`.
+
+The direct structured C form in `src/sprite_ui.c` is instruction-for-
+instruction identical to the ROM with the regular agbcc compiler: no register
+pinning, inline assembly, or compiler-specific workaround was needed. The
+raw run in `asm/code/code_0180C0.s` was removed, its symbol and manifest entry
+were added, and `make compare` confirmed the final full-ROM SHA-1.
+
+`SpriteUiSetupDefault` at 0x08019C78 configures the same state for an actor
+part. It obtains the actor record, selects the state at its confirmed +0x64
+offset, marks it as kind 1, and derives its vertical offset from byte 0x62 of
+the default \u00c4RM definition (ID 85), scaled by 60. The straightforward typed
+C implementation exactly reproduces all 40 ROM bytes, including the signed
+byte multiplication sequence.
+
+## Text encoder helpers (0x0802AD78 and 0x0802AD98)
+
+Two functions in `code_0280C0.s` had been split incorrectly: the analyzer
+placed a function label four bytes into the first function, hiding its
+prologue in raw words. `CopyTextWithoutTerminator` copies source characters
+up to, but not including, the NUL terminator and returns the number of bytes
+written. `WriteEngineCharacter` writes one ordinary character or the two
+bytes of an engine multibyte character, then appends a NUL terminator. Its
+wrapped lead-byte test covers the inclusive `0x81..0x9F` range.
+
+Both are ordinary C in `src/font.c`. The copy routine keeps explicit named
+`copy` and `check` labels because this is the natural control-flow shape that
+preserves the ROM's separate unsigned load for the stored byte and signed
+load for the terminator test. It uses no register constraint or inline
+assembly. The compiled objects match 32 and 48 original bytes respectively;
+the latter includes its two-byte zero padding.
+
+## Actor-part field 0x80 clear (0x08019818)
+
+`RuntimeClearActorPartField80IfArmFlag20` accepts an actor, part, and signed
+ÄRM ID. It checks bit 5 of byte 0x74 in that ÄRM definition, then zeroes the
+36-byte field at the actor-part record's +0x80 offset when the bit is set. It
+returns whether it performed that clear. The C spells the flag test as a
+shift-to-sign comparison because that is the compiler's compact expression
+of the exact bit test in the ROM; the offsets and shift each have named
+constants.
+
+This extraction was also a shared-section case: the raw function was inside
+the existing `.rom.000180C0` assembly section. Removing it without a new
+`.rom.00019850` boundary shifted the later code and the full comparison
+reported 991 changed bytes. Splitting the retained assembly at the next
+function's original address restored all placement. The final full ROM
+comparison is byte-identical.
+
+## Battle-mode adapters (0x08042224, 0x08042260, 0x08042274)
+
+The three raw wrappers adjacent to `BattleMode4222` and `BattleMode4223`
+only differ by the mode passed as their fifth argument to the common
+`sub_08042288` implementation. They are now the ordinary typed
+`DEFINE_MODE_ADAPTER` calls `BattleMode4221`, `BattleMode4224`, and
+`BattleMode4225`. The existing macro emits the original 20-byte wrapper form
+for modes 1, 4, and 5 exactly. The assembly after the removed mode-4 and
+mode-5 wrappers is explicitly restarted at `.rom.00042288` so its original
+address cannot slide.

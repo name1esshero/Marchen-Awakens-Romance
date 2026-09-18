@@ -22,10 +22,45 @@
  * single expression without re-checking `make compare`. */
 #include "runtime_buffers.h"
 #include "runtime_state.h"
+#include "item.h"
 #include "rom_section.h"
+
+#define ARM_DEFINITION_FIELD74 0x74
+#define ARM_FIELD74_BIT5_SIGN_SHIFT 26
+#define ACTOR_PART_FIELD80_OFFSET 0x80
+#define ACTOR_PART_FIELD80_SIZE 0x24
+
+extern void CpuFill(void *destination, u32 size, u32 value);
+extern u8 *RuntimeGetActorRecord(u32 actor, u32 part);
 
 /** @return The secondary runtime's +0xEB8 buffer. */
 AT("000075CC") void *RuntimeGetBufferEB8(void) { return gSecondaryRuntime+0xEB8; }
+
+/**
+ * @brief Clear a part's +0x80 36-byte state when the selected \u00c4RM permits it.
+ * @return One when the field was cleared, otherwise zero.
+ */
+AT("00019818")
+u32 RuntimeClearActorPartField80IfArmFlag20(u32 actor, u32 part, s16 armId)
+{
+    const u8 *definition = (const u8 *)ItemGetDefinition(armId);
+    u32 result;
+
+    if ((definition[ARM_DEFINITION_FIELD74] << ARM_FIELD74_BIT5_SIGN_SHIFT) < 0)
+        goto clear;
+    result = 0;
+    goto done;
+
+clear:
+    CpuFill((u8 *)RuntimeGetActorRecord(actor, part) + ACTOR_PART_FIELD80_OFFSET,
+            ACTOR_PART_FIELD80_SIZE, 0);
+    result = 1;
+
+done:
+    return result;
+}
+AT("00019818") const u8 RuntimeClearActorPartField80IfArmFlag20Tail[2] = {0, 0};
+
 /** @return The secondary runtime's +0xED0 buffer. */
 AT("000075E0") void *RuntimeGetBufferED0(void) { return gSecondaryRuntime+0xED0; }
 /** @return The secondary runtime's +0xEEA buffer. */

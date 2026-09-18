@@ -37,6 +37,7 @@ s32 RuntimePartGetField651(u32 actor,u32 part);
 void RuntimeActorSetByteA4(u32 actor,u32 part,u32 value);
 s32 RuntimeActorGetByteA4(u32 actor,u32 part);
 u32 RuntimeActorGetByte66(u32 actor,u32 part);
+u32 RuntimeClearActorPartField80IfArmFlag20(u32 actor, u32 part, s16 armId);
 void RuntimeAddOffsets(u32 first,u32 second);
 void RuntimePartInitHeader(u8 *record,const void *resourceName,u32 value);
 s32 RuntimeActorGetField7A0(u32 actor);

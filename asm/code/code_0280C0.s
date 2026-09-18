@@ -6167,39 +6167,9 @@ _0802AD62:
 	pop {r4, r5, r6, r7}
 	pop {r1}
 	bx r1
-	.4byte 0x1C04B510
-	.4byte 0xE0021C22
-	.global _0802AD80
-_0802AD80:
-	strb r3, [r2, #0]
-	adds r1, #1
+@ 02AD78..02AD98 is decompiled as CopyTextWithoutTerminator(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0802AD84
-sub_0802AD84:
-	adds r2, #1
-	ldrb r3, [r1, #0]
-	movs r0, #0
-	ldrsb r0, [r1, r0]
-	cmp r0, #0
-	bne _0802AD80
-	subs r0, r2, r4
-	pop {r4}
-	pop {r1}
-	bx r1
-	.4byte 0x1C02B500
-	.4byte 0x0C0B0409
-	.4byte 0x1C080E09
-	.4byte 0x0600307F
-	.4byte 0x281E0E00
-	.4byte 0x7013D904
-	.4byte 0x70502000
-	.4byte 0xE0042001
-	.4byte 0x70537011
-	.4byte 0x70902000
-	.4byte 0xBC022002
-	.4byte 0x00004708
+@ 02AD98..02ADC8 is decompiled as WriteEngineCharacter(); see src/decompiled.json
 
 @ 02ADC8..02ADE4 is decompiled as InputRepeatInit(); see src/decompiled.json
 

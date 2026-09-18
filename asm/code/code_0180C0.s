@@ -3130,20 +3130,10 @@ _08019812:
 	pop {r4, r5, r6}
 	pop {r1}
 	bx r1
-	.4byte 0x1C04B530
-	.4byte 0x04101C0D
-	.4byte 0xF03C1400
-	.4byte 0x3074FE1F
-	.4byte 0x06807800
-	.4byte 0xDB012800
-	.4byte 0xE0092000
-	.4byte 0x1C291C20
-	.4byte 0xFCC4F7F0
-	.4byte 0x21243080
-	.4byte 0xF7E82200
-	.4byte 0x2001FA61
-	.4byte 0xBC02BC30
-	.4byte 0x00004708
+@ 019818..019850 is decompiled as RuntimeClearActorPartField80IfArmFlag20(); see src/decompiled.json
+
+	.section .rom.00019850, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -3698,17 +3688,7 @@ sub_08019BD4:
 	pop {r4, r5}
 	pop {r1}
 	bx r1
-	.4byte 0x1C04B530
-	.4byte 0x9D031C11
-	.4byte 0x22012000
-	.4byte 0x70607022
-	.4byte 0x70E570A3
-	.4byte 0x48048122
-	.4byte 0x200180E0
-	.4byte 0xFFB8F061
-	.4byte 0xBC308160
-	.4byte 0x4700BC01
-	.4byte 0x0000FFD0
+@ 019C08..019C34 is decompiled as SpriteUiInitialize(); see src/decompiled.json
 
 @ 019C34..019C50 is decompiled as RuntimePartInitHeader(); see src/decompiled.json
 
@@ -3719,34 +3699,7 @@ sub_08019BD4:
 
 @ 019C64..019C78 is decompiled as RuntimeActorGetByteA4(); see src/decompiled.json
 
-	.section .rom.00019C78, "ax"
-	.syntax unified
-
-
-	.thumb_func
-	.thumb
-	.global sub_08019C78
-sub_08019C78:
-	push {r4, lr}
-	.2byte 0xF7F0
-	.4byte 0x1C04FAA3
-	adds r4, #100
-	movs r0, #1
-	strb r0, [r4, #2]
-	movs r0, #85
-	.2byte 0xF03C
-	.byte 0xEC
-	.byte 0xFB
-	adds r0, #98
-	movs r1, #0
-	ldrsb r1, [r0, r1]
-	lsls r0, r1, #4
-	subs r0, r0, r1
-	lsls r0, r0, #2
-	strh r0, [r4, #6]
-	pop {r4}
-	pop {r0}
-	bx r0
+@ 019C78..019CA0 is decompiled as SpriteUiSetupDefault(); see src/decompiled.json
 
 @ 019CA0..019CB0 is decompiled as RuntimeActorGetByte66(); see src/decompiled.json
 

@@ -21,6 +21,8 @@ struct FontData
 struct Font { const struct FontData *data; };
 void SetFontData(struct Font *font, const struct FontData *data);
 u16 ReadEngineCharacter(const u8 *text);
+u32 CopyTextWithoutTerminator(u8 *destination, const char *source);
+u32 WriteEngineCharacter(u8 *text, u16 code);
 u32 IsEngineDoubleByte(const u8 *text);
 void InitFont(struct Font *, const struct FontData *);
 void ClearFont(struct Font *);

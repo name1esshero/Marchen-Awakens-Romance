@@ -2640,6 +2640,18 @@
     "file": "src/runtime_leaf.c"
   },
   {
+    "addr": "08019818",
+    "size": 56,
+    "name": "RuntimeClearActorPartField80IfArmFlag20",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08019C08",
+    "size": 44,
+    "name": "SpriteUiInitialize",
+    "file": "src/sprite_ui.c"
+  },
+  {
     "addr": "08019C34",
     "size": 28,
     "name": "RuntimePartInitHeader",
@@ -2656,6 +2668,12 @@
     "size": 20,
     "name": "RuntimeActorGetByteA4",
     "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08019C78",
+    "size": 40,
+    "name": "SpriteUiSetupDefault",
+    "file": "src/sprite_ui.c"
   },
   {
     "addr": "08019CA0",
@@ -2776,6 +2794,18 @@
     "size": 96,
     "name": "CreateBattleObjectTask",
     "file": "src/task_constructors.c"
+  },
+  {
+    "addr": "0802AD78",
+    "size": 32,
+    "name": "CopyTextWithoutTerminator",
+    "file": "src/font.c"
+  },
+  {
+    "addr": "0802AD98",
+    "size": 48,
+    "name": "WriteEngineCharacter",
+    "file": "src/font.c"
   },
   {
     "addr": "0802ADC8",
@@ -3456,6 +3486,12 @@
     "file": "src/battle_mode_adapters.c"
   },
   {
+    "addr": "08042224",
+    "size": 20,
+    "name": "BattleMode4221",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
     "addr": "08042238",
     "size": 20,
     "name": "BattleMode4222",
@@ -3465,6 +3501,18 @@
     "addr": "0804224C",
     "size": 20,
     "name": "BattleMode4223",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "08042260",
+    "size": 20,
+    "name": "BattleMode4224",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "08042274",
+    "size": 20,
+    "name": "BattleMode4225",
     "file": "src/battle_mode_adapters.c"
   },
   {
