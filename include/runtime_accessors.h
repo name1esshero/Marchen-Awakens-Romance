@@ -5,6 +5,7 @@
 
 u32 SioGetPlayerId(void);
 u32 RuntimeGetByte4014(void);
+u32 RuntimeTestFlag(u32 bit);
 void RuntimeAdvanceWord4(void);
 void GameStateSetPointer2C(u32 index,void *value);
 void *GameStateGetPointer2C(u32 index);

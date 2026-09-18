@@ -971,3 +971,35 @@ caller yet establishes their gameplay role. Retained assembly restarts at
 0x08001C14 after their removal, so the following routine remains fixed at
 its original address. All six routines were first checked against their
 individual objects, then with a complete byte-identical ROM comparison.
+
+## Runtime task constructor at 0x08069DB4
+
+`sub_08069DB4` is now documented in
+[`src/nonmatching/runtime_task_69db4.c`](../src/nonmatching/runtime_task_69db4.c).
+It allocates a 0x7038-byte main-task-manager task for `sub_08069E00`, stores
+its supplied object at task-relative +0x11CC, sets that object's +20
+halfword to 20, and records object +0xA90 at task-relative +0x11D0. The
+worker remains assembly, so these are deliberately offset-based names rather
+than guessed structure fields.
+
+The readable C is behaviorally faithful but remains outside the matching
+build: agbcc's ordinary common-subexpression elimination folds the two task
+addresses together and reuses the argument instead of performing the ROM's
+intervening reload through +0x11CC. This is recorded as a dependency for the
+worker's eventual decompilation, not worked around with volatile access,
+register pinning, or inline assembly.
+
+## Primary-runtime flag accessors
+
+`RuntimeTestFlag` (0x08004D90) reads a selected bit mask from byte +3 of the
+allocation stored in the fixed IWRAM pointer `gPrimaryRuntime`. Declaring its
+public argument full-width and narrowing it into a local reproduces the ROM's
+argument copy and register allocation without compiler hints. Its caller-side
+adapter, `RuntimeTestFlagU8` (0x08005094), narrows both the argument and return
+value and also compiles byte-exactly.
+
+Naming the fixed 0x03004014 slot also removed that raw address from the two
+existing matching accessors that use it. The symbol is now defined beside the
+other IWRAM roots in `asm/iwram_symbols.s` and declared in
+`include/runtime_state.h`. Both newly recovered functions replace raw
+assembly, with retained assembly restarted at 0x08004DA8 and 0x080050A8.

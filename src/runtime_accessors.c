@@ -28,10 +28,20 @@ AT("00004CC0") u32 SioGetPlayerId(void)
  return (*(volatile u32 *)0x04000128<<26)>>30;
 }
 /** @return The byte pointed to by the pointer stored at fixed IWRAM slot
- * 0x03004014. See RuntimeGetByte4014U8() for the narrowed wrapper. */
+ * gPrimaryRuntime. See RuntimeGetByte4014U8() for the narrowed wrapper. */
 AT("00004CD0") u32 RuntimeGetByte4014(void)
 {
- return **(u8 **)0x03004014;
+ return *gPrimaryRuntime;
+}
+/** Return the selected bit mask from the primary runtime's flag byte. */
+AT("00004D90") u32 RuntimeTestFlag(u32 bit)
+{
+ u32 index=(u8)bit;
+ u8 *runtime=gPrimaryRuntime;
+ u32 result=1;
+ result<<=index;
+ result&=runtime[3];
+ return result;
 }
 /** Store an indexed pointer into the game state's +0x2C table. */
 AT("000067A4") void GameStateSetPointer2C(u32 index,void *value)

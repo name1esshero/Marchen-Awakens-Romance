@@ -13,6 +13,8 @@
 .set gMapStateOffset, 0x000032F4
 .global gSecondaryRuntime
 .set gSecondaryRuntime, 0x03004020
+.global gPrimaryRuntime
+.set gPrimaryRuntime, 0x03004014
 .global gRuntimeObjectTable
 .set gRuntimeObjectTable, 0x03004024
 .global gIwramField3FD5Offset

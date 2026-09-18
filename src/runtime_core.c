@@ -1,6 +1,7 @@
 /* Lifecycle and record-selection helpers for the main runtime allocation. */
 #include "gba/types.h"
 #include "runtime_accessors.h"
+#include "runtime_state.h"
 
 #include "rom_section.h"
 #define RUNTIME_ROOT (*(u8 **)0x0300401C)
@@ -18,7 +19,7 @@ extern u32 sub_08004CDC(void);
 /** A secondary allocation is optional during early startup and teardown. */
 AT("00004E04") void *RuntimeGetOptionalField130(void)
 {
-    u8 *state = *(u8 **)0x03004014;
+    u8 *state = gPrimaryRuntime;
     void *result;
     if (state != 0)
         result = *(void **)(state + 0x130);

@@ -9,4 +9,8 @@
  * address is that fixed IWRAM slot, not a macro over a raw address. */
 extern u8 *gSecondaryRuntime;
 
+/* Fixed IWRAM pointer to the primary runtime allocation used by the link and
+ * early-runtime accessors. */
+extern u8 *gPrimaryRuntime;
+
 #endif /* RUNTIME_STATE_H */

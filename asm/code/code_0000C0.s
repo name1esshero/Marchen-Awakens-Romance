@@ -9817,23 +9817,10 @@ sub_08004D70:
 	.4byte 0x00004770
 	.4byte 0x03004014
 
-	.thumb_func
-	.thumb
-	.global sub_08004D90
-sub_08004D90:
-	adds r1, r0, #0
-	lsls r1, r1, #24
-	lsrs r1, r1, #24
-	ldr r0, _08004DA4
-	ldr r2, [r0, #0]
-	movs r0, #1
-	lsls r0, r1
-	ldrb r1, [r2, #3]
-	ands r0, r1
-	bx lr
-	.global _08004DA4
-_08004DA4:
-	.4byte 0x03004014  @ IWRAM+0x4014
+@ 004D90..004DA8 is decompiled as RuntimeTestFlag(); see src/decompiled.json
+
+	.section .rom.00004DA8, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -10112,28 +10099,10 @@ _08005038:
 
 @ 005084..005094 is decompiled as RuntimeReadSignedByte(); see src/decompiled.json
 
-	.section .rom.00005094, "ax"
+@ 005094..0050A8 is decompiled as RuntimeTestFlagU8(); see src/decompiled.json
+
+	.section .rom.000050A8, "ax"
 	.syntax unified
-	.4byte 0x0600B500
-	.byte 0x00
-	.byte 0x0E
-
-	.thumb_func
-	.thumb
-	.global sub_0800509A
-sub_0800509A:
-	bl sub_08004D90
-	lsls r0, r0, #24
-	lsrs r0, r0, #24
-	pop {r1}
-
-	.thumb_func
-	.thumb
-	.global sub_080050A4
-sub_080050A4:
-	bx r1
-	.byte 0x00
-	.byte 0x00
 
 	.thumb_func
 	.thumb

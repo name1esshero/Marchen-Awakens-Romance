@@ -36,6 +36,13 @@ AT("00005084") s32 RuntimeReadSignedByte(void)
 }
 AT("00005084") const u8 RuntimeReadSignedByteTail[2] = {0};
 
+/** Narrow-argument and narrow-result adapter for RuntimeTestFlag(). */
+AT("00005094") u32 RuntimeTestFlagU8(u32 bit)
+{
+    return (u8)RuntimeTestFlag((u8)bit);
+}
+AT("00005094") const u8 RuntimeTestFlagU8Tail[2] = {0};
+
 /** Narrow-argument wrapper so callers with a full-width song id can still
  * reach SoundSongStart(), which only takes a u16. */
 AT("00005E98") void SoundSongStartU16(u32 song)

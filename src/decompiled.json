@@ -234,6 +234,12 @@
     "file": "src/runtime_accessors.c"
   },
   {
+    "addr": "08004D90",
+    "size": 24,
+    "name": "RuntimeTestFlag",
+    "file": "src/runtime_accessors.c"
+  },
+  {
     "addr": "08004E04",
     "size": 32,
     "name": "RuntimeGetOptionalField130",
@@ -315,6 +321,12 @@
     "addr": "08005084",
     "size": 16,
     "name": "RuntimeReadSignedByte",
+    "file": "src/runtime_leaf.c"
+  },
+  {
+    "addr": "08005094",
+    "size": 20,
+    "name": "RuntimeTestFlagU8",
     "file": "src/runtime_leaf.c"
   },
   {
