@@ -9228,11 +9228,8 @@ _0803C06C:
 
 	.section .rom.0003C0AC, "ax"
 	.syntax unified
-	.4byte 0xB081B510
-	.4byte 0x94002404
-	.4byte 0xF80EF000
-	.4byte 0xBC10B001
-	.4byte 0x4708BC02
+
+@ 03C0AC..03C0C0 is decompiled as BattleMode3C04(); see src/decompiled.json
 
 @ 03C0C0..03C0D4 is decompiled as BattleMode3C05(); see src/decompiled.json
 

@@ -2855,12 +2855,8 @@ _08001AD0:
 	.global _08001AD4
 _08001AD4:
 	.4byte 0x04000208  @ REG_IME
-	.4byte 0x49044803
-	.4byte 0x78001840
-	.4byte 0x16000600
-	.4byte 0x00004770
-	.4byte 0x03000000
-	.4byte 0x00003FD6
+
+@ 001AD8..001AF0 is decompiled as SoundGetIrqMode(); see src/decompiled.json
 
 @ 001AF0..001B34 is decompiled as InitBufferTable2050(); see src/decompiled.json
 
@@ -2893,38 +2889,15 @@ _08001AD4:
 	.4byte 0x0000287C
 	.4byte 0x00002874
 	.4byte 0x00002872
-	.4byte 0x49034802
-	.4byte 0x21011840
-	.byte 0x01
-	.byte 0x70
 
-	.thumb_func
-	.thumb
-	.global sub_08001BBA
-sub_08001BBA:
-	bx lr
-	.4byte 0x03000000
-	.4byte 0x00002870
-	.4byte 0x49034802
-	.4byte 0x21001840
-	.4byte 0x47707001
-	.4byte 0x03000000
-	.4byte 0x00002870
-	.4byte 0x49034802
-	.4byte 0x78001840
-	.4byte 0x00004770
-	.4byte 0x03000000
-	.4byte 0x00002871
-	.4byte 0x49034802
-	.4byte 0x78001840
-	.4byte 0x00004770
-	.4byte 0x03000000
-	.4byte 0x00002870
-	.4byte 0x4A034902
-	.4byte 0x70081889
-	.4byte 0x00004770
-	.4byte 0x03000000
-	.4byte 0x00002870
+@ 001BB0..001BC4 is decompiled as IwramEnableField2870(); see src/decompiled.json
+@ 001BC4..001BD8 is decompiled as IwramClearField2870(); see src/decompiled.json
+@ 001BD8..001BEC is decompiled as IwramGetField2871(); see src/decompiled.json
+@ 001BEC..001C00 is decompiled as IwramGetField2870(); see src/decompiled.json
+@ 001C00..001C14 is decompiled as IwramSetField2870(); see src/decompiled.json
+
+	.section .rom.00001C14, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb

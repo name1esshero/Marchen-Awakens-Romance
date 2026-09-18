@@ -3768,11 +3768,8 @@ _080419E8:
 	.global _080419EC
 _080419EC:
 	.4byte 0x00000322
-	.4byte 0xB081B510
-	.4byte 0x94002401
-	.4byte 0xF82CF000
-	.4byte 0xBC10B001
-	.4byte 0x4708BC02
+
+@ 0419F0..041A04 is decompiled as BattleMode41A1(); see src/decompiled.json
 
 @ 041A04..041A18 is decompiled as BattleMode41A2(); see src/decompiled.json
 
@@ -3782,11 +3779,11 @@ _080419EC:
 
 	.section .rom.00041A40, "ax"
 	.syntax unified
-	.4byte 0xB081B510
-	.4byte 0x94002405
-	.4byte 0xF804F000
-	.4byte 0xBC10B001
-	.4byte 0x4708BC02
+
+@ 041A40..041A54 is decompiled as BattleMode41A5(); see src/decompiled.json
+
+	.section .rom.00041A54, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb

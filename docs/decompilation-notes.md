@@ -919,7 +919,7 @@ the latter includes its two-byte zero padding.
 ## Actor-part field 0x80 clear (0x08019818)
 
 `RuntimeClearActorPartField80IfArmFlag20` accepts an actor, part, and signed
-ÄRM ID. It checks bit 5 of byte 0x74 in that ÄRM definition, then zeroes the
+ARM ID. It checks bit 5 of byte 0x74 in that ARM definition, then zeroes the
 36-byte field at the actor-part record's +0x80 offset when the bit is set. It
 returns whether it performed that clear. The C spells the flag test as a
 shift-to-sign comparison because that is the compiler's compact expression
@@ -933,7 +933,7 @@ reported 991 changed bytes. Splitting the retained assembly at the next
 function's original address restored all placement. The final full ROM
 comparison is byte-identical.
 
-## Battle-mode adapters (0x08042224, 0x08042260, 0x08042274)
+## Battle-mode adapters
 
 The three raw wrappers adjacent to `BattleMode4222` and `BattleMode4223`
 only differ by the mode passed as their fifth argument to the common
@@ -943,3 +943,31 @@ only differ by the mode passed as their fifth argument to the common
 for modes 1, 4, and 5 exactly. The assembly after the removed mode-4 and
 mode-5 wrappers is explicitly restarted at `.rom.00042288` so its original
 address cannot slide.
+
+The same typed wrapper shape also recovered `BattleMode3C04` (0x0803C0AC),
+`BattleMode41A1` and `BattleMode41A5` (0x080419F0 and 0x08041A40), and
+`BattleMode4AC3` (0x0804AC64). Each has an already-decompiled neighbouring
+mode that calls the same implementation with an otherwise identical ABI.
+Their C bodies name that implementation and pass only the fixed mode;
+`make compare` verified all four wrappers against the complete ROM. The
+0x08041A40 extraction also adds an explicit retained-assembly section at
+0x08041A54, preserving the following shared implementation's placement.
+
+## Sound IRQ and early-IWRAM control accessors
+
+`SoundGetIrqMode` (0x08001AD8) is the signed-byte reader for the same
+`gSoundIrqModeOffset` field that `SoundIrqService` checks before choosing its
+DMA/mixer path. Keeping `gIwramBase` and the named offset as separate locals
+is ordinary C and preserves the ROM's two literal loads, addition, signed
+byte conversion, and literal-pool layout exactly.
+
+Five adjacent raw leaf routines are now named IWRAM control accessors:
+`IwramEnableField2870` (0x08001BB0), `IwramClearField2870` (0x08001BC4),
+`IwramGetField2871` (0x08001BD8), `IwramGetField2870` (0x08001BEC), and
+`IwramSetField2870` (0x08001C00). They respectively set, clear, read, read,
+and write the two neighbouring byte fields at fixed IWRAM offsets 0x2870 and
+0x2871. The field-level names deliberately retain those offsets because no
+caller yet establishes their gameplay role. Retained assembly restarts at
+0x08001C14 after their removal, so the following routine remains fixed at
+its original address. All six routines were first checked against their
+individual objects, then with a complete byte-identical ROM comparison.

@@ -30,6 +30,12 @@
     "file": "src/runtime_accessors.c"
   },
   {
+    "addr": "08001AD8",
+    "size": 24,
+    "name": "SoundGetIrqMode",
+    "file": "src/runtime_accessors.c"
+  },
+  {
     "addr": "08001AF0",
     "size": 68,
     "name": "InitBufferTable2050",
@@ -45,6 +51,36 @@
     "addr": "08001B4C",
     "size": 24,
     "name": "IwramSetPointer2860",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08001BB0",
+    "size": 20,
+    "name": "IwramEnableField2870",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08001BC4",
+    "size": 20,
+    "name": "IwramClearField2870",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08001BD8",
+    "size": 20,
+    "name": "IwramGetField2871",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08001BEC",
+    "size": 20,
+    "name": "IwramGetField2870",
+    "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08001C00",
+    "size": 20,
+    "name": "IwramSetField2870",
     "file": "src/runtime_accessors.c"
   },
   {
@@ -3408,6 +3444,12 @@
     "file": "src/battle_mode_adapters.c"
   },
   {
+    "addr": "0803C0AC",
+    "size": 20,
+    "name": "BattleMode3C04",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
     "addr": "0803C0C0",
     "size": 20,
     "name": "BattleMode3C05",
@@ -3468,6 +3510,12 @@
     "file": "src/battle_mode_adapters.c"
   },
   {
+    "addr": "080419F0",
+    "size": 20,
+    "name": "BattleMode41A1",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
     "addr": "08041A04",
     "size": 20,
     "name": "BattleMode41A2",
@@ -3483,6 +3531,12 @@
     "addr": "08041A2C",
     "size": 20,
     "name": "BattleMode41A4",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "08041A40",
+    "size": 20,
+    "name": "BattleMode41A5",
     "file": "src/battle_mode_adapters.c"
   },
   {
@@ -3873,6 +3927,12 @@
     "addr": "0804AC50",
     "size": 20,
     "name": "BattleMode4AC2",
+    "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0804AC64",
+    "size": 20,
+    "name": "BattleMode4AC3",
     "file": "src/battle_mode_adapters.c"
   },
   {

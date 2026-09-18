@@ -7,6 +7,7 @@
 extern u8 gIwramBase[];
 extern u8 gMapGenerationRootOffset[];
 extern u8 gIwramField3FD5Offset[];
+extern u8 gSoundIrqModeOffset[];
 extern u8 gIwramPointer2860Offset[];
 extern u8 gIwramField0810Offset[];
 extern s32 GameStateGetEntry3894(s32 row,s32 group,s32 slot);
@@ -16,6 +17,9 @@ extern void sub_08056F90(void);
     void **root = (void **)(gIwramBase + (u32)gMapGenerationRootOffset); \
     (u8 *)*root; \
 })
+
+#define IWRAM_FIELD_2870_OFFSET 0x2870
+#define IWRAM_FIELD_2871_OFFSET 0x2871
 
 /** @return This console's multiplayer id, bits 4-5 of REG_SIOCNT (the
  * hardware multi-play ID field). */
@@ -122,6 +126,14 @@ AT("00001A48") s32 IwramGetField3FD5(void)
 {
  return (s8)gIwramBase[(u32)gIwramField3FD5Offset];
 }
+/** @return The signed sound IRQ mode stored in IWRAM. */
+AT("00001AD8") s32 SoundGetIrqMode(void)
+{
+ u8 *base=gIwramBase;
+ u32 offset=(u32)gSoundIrqModeOffset;
+ base+=offset;
+ return *(s8 *)base;
+}
 /** @return An indexed pointer from the fixed-IWRAM table at
  * gIwramPointer2860Offset. See IwramSetPointer2860(). */
 AT("00001B34") u32 IwramGetPointer2860(u32 index0)
@@ -143,6 +155,46 @@ AT("00001B4C") void IwramSetPointer2860(u32 index0,u32 value)
  base+=(u32)gIwramPointer2860Offset;
  index+=base;
  *(u32 *)index=value;
+}
+/** Set the byte control field at fixed IWRAM offset 0x2870. */
+AT("00001BB0") void IwramEnableField2870(void)
+{
+ u8 *base=gIwramBase;
+ u32 offset=IWRAM_FIELD_2870_OFFSET;
+ base+=offset;
+ *base=1;
+}
+/** Clear the byte control field at fixed IWRAM offset 0x2870. */
+AT("00001BC4") void IwramClearField2870(void)
+{
+ u8 *base=gIwramBase;
+ u32 offset=IWRAM_FIELD_2870_OFFSET;
+ base+=offset;
+ *base=0;
+}
+/** @return The byte field at fixed IWRAM offset 0x2871. */
+AT("00001BD8") u32 IwramGetField2871(void)
+{
+ u8 *base=gIwramBase;
+ u32 offset=IWRAM_FIELD_2871_OFFSET;
+ base+=offset;
+ return *base;
+}
+/** @return The byte control field at fixed IWRAM offset 0x2870. */
+AT("00001BEC") u32 IwramGetField2870(void)
+{
+ u8 *base=gIwramBase;
+ u32 offset=IWRAM_FIELD_2870_OFFSET;
+ base+=offset;
+ return *base;
+}
+/** Write the byte control field at fixed IWRAM offset 0x2870. */
+AT("00001C00") void IwramSetField2870(u32 value)
+{
+ u8 *base=gIwramBase;
+ u32 offset=IWRAM_FIELD_2870_OFFSET;
+ base+=offset;
+ *base=value;
 }
 /** @return A buffer 164 bytes before the map-generation root offset's own
  * address value. Relationship to the game state root pointer unresolved. */

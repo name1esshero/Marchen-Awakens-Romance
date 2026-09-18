@@ -5956,11 +5956,8 @@ _0804AC1C:
 
 	.section .rom.0004AC64, "ax"
 	.syntax unified
-	.4byte 0xB081B510
-	.4byte 0x94002403
-	.4byte 0xF80EF000
-	.4byte 0xBC10B001
-	.4byte 0x4708BC02
+
+@ 04AC64..04AC78 is decompiled as BattleMode4AC3(); see src/decompiled.json
 
 @ 04AC78..04AC8C is decompiled as BattleMode4AC4(); see src/decompiled.json
 
