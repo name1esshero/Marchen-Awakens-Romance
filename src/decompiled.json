@@ -90,6 +90,18 @@
     "file": "src/runtime_leaf.c"
   },
   {
+    "addr": "08002158",
+    "size": 48,
+    "name": "IsMainMountName",
+    "file": "src/runtime_leaf.c"
+  },
+  {
+    "addr": "080023B0",
+    "size": 40,
+    "name": "ApplyTileRemainderMask",
+    "file": "src/kmp.c"
+  },
+  {
     "addr": "080025BC",
     "size": 40,
     "name": "ReadEngineCharacter",
@@ -114,6 +126,12 @@
     "file": "src/kmp.c"
   },
   {
+    "addr": "080028C8",
+    "size": 36,
+    "name": "KmpDrawViewport",
+    "file": "src/kmp.c"
+  },
+  {
     "addr": "08003104",
     "size": 92,
     "name": "KmpReadAttribute",
@@ -124,6 +142,12 @@
     "size": 24,
     "name": "KmpAttributeAddress",
     "file": "src/kmp.c"
+  },
+  {
+    "addr": "08003178",
+    "size": 264,
+    "name": "KmpLoadResource",
+    "file": "src/kmp_loader.c"
   },
   {
     "addr": "08003280",
@@ -222,6 +246,18 @@
     "file": "src/script_tasks.c"
   },
   {
+    "addr": "0800382C",
+    "size": 120,
+    "name": "CreatePaletteInterpolationTask",
+    "file": "src/palette_tasks.c"
+  },
+  {
+    "addr": "080041E0",
+    "size": 136,
+    "name": "CreatePaletteSequenceTask",
+    "file": "src/palette_tasks.c"
+  },
+  {
     "addr": "08004CC0",
     "size": 16,
     "name": "SioGetPlayerId",
@@ -238,6 +274,12 @@
     "size": 24,
     "name": "RuntimeTestFlag",
     "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08004DA8",
+    "size": 92,
+    "name": "RuntimeGetLinkActivityState",
+    "file": "src/runtime_core.c"
   },
   {
     "addr": "08004E04",
@@ -261,6 +303,12 @@
     "addr": "08004E6C",
     "size": 28,
     "name": "RuntimeReleaseField17C",
+    "file": "src/runtime_core.c"
+  },
+  {
+    "addr": "08004E88",
+    "size": 84,
+    "name": "RuntimeHistoryPush",
     "file": "src/runtime_core.c"
   },
   {
@@ -474,6 +522,18 @@
     "file": "src/scene_native.c"
   },
   {
+    "addr": "08005C88",
+    "size": 84,
+    "name": "ScriptNativeSetRuntimeCoordinate",
+    "file": "src/scene_native.c"
+  },
+  {
+    "addr": "08005CDC",
+    "size": 72,
+    "name": "ScriptNativeGetRuntimeCoordinate",
+    "file": "src/scene_native.c"
+  },
+  {
     "addr": "08005D24",
     "size": 44,
     "name": "ScriptNativeSelectSceneValue",
@@ -570,6 +630,12 @@
     "file": "src/scene_native.c"
   },
   {
+    "addr": "08005F7C",
+    "size": 156,
+    "name": "StartSongOnFreePlayer",
+    "file": "src/scene_native.c"
+  },
+  {
     "addr": "08006018",
     "size": 28,
     "name": "StopSoundPlayer",
@@ -586,6 +652,18 @@
     "size": 40,
     "name": "CreateSceneTask",
     "file": "src/task_constructors.c"
+  },
+  {
+    "addr": "080061F0",
+    "size": 56,
+    "name": "CreateSceneModeTask",
+    "file": "src/task_constructors.c"
+  },
+  {
+    "addr": "08006760",
+    "size": 36,
+    "name": "GameStateSetFlagsAC",
+    "file": "src/runtime_misc.c"
   },
   {
     "addr": "08006784",
@@ -606,9 +684,27 @@
     "file": "src/runtime_accessors.c"
   },
   {
+    "addr": "080067DC",
+    "size": 48,
+    "name": "GameStateInitializeAttributeFlags",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "0800680C",
+    "size": 40,
+    "name": "GameStateSetAttributeFlag",
+    "file": "src/runtime_misc.c"
+  },
+  {
     "addr": "08006834",
     "size": 36,
-    "name": "GameStateTestFlags12C",
+    "name": "GameStateTestAttributeFlag",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "08006858",
+    "size": 64,
+    "name": "GameStateSetAttributeFlagRange",
     "file": "src/runtime_misc.c"
   },
   {
@@ -634,6 +730,12 @@
     "size": 32,
     "name": "GameStateGetField12EC",
     "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "0800696C",
+    "size": 68,
+    "name": "GameStateSelectDeckPointer",
+    "file": "src/mapping.c"
   },
   {
     "addr": "080069F8",
@@ -672,10 +774,22 @@
     "file": "src/runtime_accessors.c"
   },
   {
+    "addr": "08006ADC",
+    "size": 252,
+    "name": "IwramSetFlags0810",
+    "file": "src/runtime_accessors.c"
+  },
+  {
     "addr": "08006BD8",
     "size": 16,
     "name": "IwramGetField0810",
     "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08006C2C",
+    "size": 40,
+    "name": "HitBoundsTranslate",
+    "file": "src/hit_region.c"
   },
   {
     "addr": "08006C54",
@@ -762,6 +876,12 @@
     "file": "src/game_state.c"
   },
   {
+    "addr": "08006DF0",
+    "size": 48,
+    "name": "GameStateSetField424C50",
+    "file": "src/game_state.c"
+  },
+  {
     "addr": "08006E20",
     "size": 48,
     "name": "GameStateGetField424C50",
@@ -789,6 +909,12 @@
     "addr": "08006EEC",
     "size": 32,
     "name": "GameStateGetField4265",
+    "file": "src/game_state.c"
+  },
+  {
+    "addr": "08006F0C",
+    "size": 40,
+    "name": "GameStateSetField425A",
     "file": "src/game_state.c"
   },
   {
@@ -900,6 +1026,12 @@
     "file": "src/task_constructors.c"
   },
   {
+    "addr": "080073DC",
+    "size": 52,
+    "name": "CreateNamedRuntimeRecordTask",
+    "file": "src/task_constructors.c"
+  },
+  {
     "addr": "080075CC",
     "size": 20,
     "name": "RuntimeGetBufferEB8",
@@ -915,6 +1047,12 @@
     "addr": "080075F0",
     "size": 20,
     "name": "RuntimeGetBufferEEA",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08007604",
+    "size": 28,
+    "name": "RuntimeSetBufferEEAName",
     "file": "src/runtime_buffers.c"
   },
   {
@@ -1104,6 +1242,12 @@
     "file": "src/runtime_buffers.c"
   },
   {
+    "addr": "08009778",
+    "size": 28,
+    "name": "RuntimeActorSetField358",
+    "file": "src/runtime_buffers.c"
+  },
+  {
     "addr": "08009794",
     "size": 32,
     "name": "RuntimeActorGetField79C",
@@ -1146,6 +1290,12 @@
     "file": "src/runtime_buffers.c"
   },
   {
+    "addr": "08009868",
+    "size": 56,
+    "name": "RuntimeActorHasPartField37Value6",
+    "file": "src/runtime_buffers.c"
+  },
+  {
     "addr": "080098F8",
     "size": 20,
     "name": "RuntimeSetFieldEAE",
@@ -1185,6 +1335,12 @@
     "addr": "080099B8",
     "size": 40,
     "name": "RuntimeCountMatchingValues",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009A04",
+    "size": 32,
+    "name": "RuntimeUpdateFiveParts",
     "file": "src/runtime_buffers.c"
   },
   {
@@ -1524,6 +1680,12 @@
     "file": "src/runtime_objects.c"
   },
   {
+    "addr": "0800A3B8",
+    "size": 52,
+    "name": "RuntimeActorPartSetFixed18And1C",
+    "file": "src/runtime_objects.c"
+  },
+  {
     "addr": "0800A424",
     "size": 24,
     "name": "RuntimeObjectSetFixed18",
@@ -1545,6 +1707,12 @@
     "addr": "0800A46C",
     "size": 24,
     "name": "RuntimeObjectGetField1E",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A484",
+    "size": 52,
+    "name": "RuntimeActorPartSetFixed20And24",
     "file": "src/runtime_objects.c"
   },
   {
@@ -1572,6 +1740,18 @@
     "file": "src/runtime_objects.c"
   },
   {
+    "addr": "0800A550",
+    "size": 48,
+    "name": "RuntimeActorPartSetWords18And1C",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A580",
+    "size": 52,
+    "name": "RuntimeActorPartGetWords18And1C",
+    "file": "src/runtime_objects.c"
+  },
+  {
     "addr": "0800A5B4",
     "size": 20,
     "name": "RuntimeObjectSetWord18",
@@ -1593,6 +1773,18 @@
     "addr": "0800A5F0",
     "size": 20,
     "name": "RuntimeObjectGetWord1C",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A604",
+    "size": 48,
+    "name": "RuntimeActorPartSetWords20And24",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A634",
+    "size": 52,
+    "name": "RuntimeActorPartGetWords20And24",
     "file": "src/runtime_objects.c"
   },
   {
@@ -1704,6 +1896,12 @@
     "file": "src/table_accessors.c"
   },
   {
+    "addr": "0800AFA0",
+    "size": 44,
+    "name": "RuntimeSetModeE4B",
+    "file": "src/table_accessors.c"
+  },
+  {
     "addr": "0800AFCC",
     "size": 24,
     "name": "RuntimeGetSignedByteE4C",
@@ -1713,6 +1911,12 @@
     "addr": "0800B1B8",
     "size": 52,
     "name": "CreateCoordinateTask",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "0800B478",
+    "size": 36,
+    "name": "CreateTaskB478",
     "file": "src/task_adapters.c"
   },
   {
@@ -2190,12 +2394,6 @@
     "file": "src/map_native.c"
   },
   {
-    "addr": "0800696C",
-    "size": 68,
-    "name": "GameStateSelectDeckPointer",
-    "file": "src/mapping.c"
-  },
-  {
     "addr": "0801234C",
     "size": 24,
     "name": "ScriptNativeSetRuntimePair",
@@ -2468,25 +2666,25 @@
   {
     "addr": "08012988",
     "size": 12,
-    "name": "ScriptNativeCall067DC",
+    "name": "ScriptNativeInitializeAttributeFlags",
     "file": "src/script_native_adapters.c"
   },
   {
     "addr": "08012994",
     "size": 16,
-    "name": "ScriptNativeCall0680C",
+    "name": "ScriptNativeSetAttributeFlag",
     "file": "src/script_native_adapters.c"
   },
   {
     "addr": "080129A4",
     "size": 20,
-    "name": "ScriptNativeTestGameStateFlags",
+    "name": "ScriptNativeTestAttributeFlag",
     "file": "src/script_native_adapters.c"
   },
   {
     "addr": "080129B8",
     "size": 20,
-    "name": "ScriptNativeCall06858",
+    "name": "ScriptNativeSetAttributeFlagRange",
     "file": "src/script_native_adapters.c"
   },
   {
@@ -2500,6 +2698,12 @@
     "size": 20,
     "name": "ScriptNativeGetField60E",
     "file": "src/script_native_adapters.c"
+  },
+  {
+    "addr": "080129F4",
+    "size": 224,
+    "name": "ScriptNativePmbDeckMake",
+    "file": "src/mapping.c"
   },
   {
     "addr": "08012AD4",
@@ -2694,6 +2898,18 @@
     "file": "src/encounter_task.c"
   },
   {
+    "addr": "08015268",
+    "size": 20,
+    "name": "BattleActionUnavailable",
+    "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "08017E4C",
+    "size": 36,
+    "name": "FieldActorUpdateForMode",
+    "file": "src/map_field.c"
+  },
+  {
     "addr": "08018C4C",
     "size": 196,
     "name": "HitRegionTest",
@@ -2760,9 +2976,33 @@
     "file": "src/runtime_buffers.c"
   },
   {
+    "addr": "0801B7FC",
+    "size": 64,
+    "name": "CreateObjectMotionTaskA",
+    "file": "src/task_constructors.c"
+  },
+  {
+    "addr": "0801B8AC",
+    "size": 64,
+    "name": "CreateObjectMotionTaskB",
+    "file": "src/task_constructors.c"
+  },
+  {
+    "addr": "0801BAD8",
+    "size": 52,
+    "name": "CreateTask1BAD8",
+    "file": "src/task_adapters.c"
+  },
+  {
     "addr": "080256F8",
     "size": 92,
     "name": "CreateBattleTrackingTask",
+    "file": "src/task_constructors.c"
+  },
+  {
+    "addr": "08026140",
+    "size": 100,
+    "name": "CreateBattleNamedTaskB",
     "file": "src/task_constructors.c"
   },
   {
@@ -2770,6 +3010,18 @@
     "size": 88,
     "name": "CreateBattleMotionTask",
     "file": "src/task_constructors.c"
+  },
+  {
+    "addr": "08027894",
+    "size": 96,
+    "name": "CreateBattleNamedTaskA",
+    "file": "src/task_constructors.c"
+  },
+  {
+    "addr": "08027DE0",
+    "size": 552,
+    "name": "ArchiveTaskStep",
+    "file": "src/archive.c"
   },
   {
     "addr": "08028118",
@@ -3150,6 +3402,12 @@
     "file": "src/battle_object_adapters.c"
   },
   {
+    "addr": "0802D3C0",
+    "size": 164,
+    "name": "BattleObjectCreateTask",
+    "file": "src/battle_task_create.c"
+  },
+  {
     "addr": "0802D8D0",
     "size": 112,
     "name": "CreateBattleFamilyTaskD8",
@@ -3336,6 +3594,12 @@
     "file": "src/battle_variant_adapters.c"
   },
   {
+    "addr": "08031C34",
+    "size": 136,
+    "name": "CreateLargeBattleTask31C",
+    "file": "src/battle_family_tasks.c"
+  },
+  {
     "addr": "080322A4",
     "size": 20,
     "name": "ScriptCommand22",
@@ -3426,6 +3690,18 @@
     "file": "src/battle_family_tasks.c"
   },
   {
+    "addr": "08035B34",
+    "size": 140,
+    "name": "CreateLargeBattleTask35B",
+    "file": "src/battle_family_tasks.c"
+  },
+  {
+    "addr": "08037844",
+    "size": 136,
+    "name": "CreateLargeBattleTask378",
+    "file": "src/battle_family_tasks.c"
+  },
+  {
     "addr": "08038B34",
     "size": 20,
     "name": "BattleMode38B4",
@@ -3507,6 +3783,12 @@
     "addr": "0803EC34",
     "size": 112,
     "name": "CreateBattleFamilyTask3EC",
+    "file": "src/battle_family_tasks.c"
+  },
+  {
+    "addr": "0803FF14",
+    "size": 136,
+    "name": "CreateLargeBattleTask3FF",
     "file": "src/battle_family_tasks.c"
   },
   {
@@ -3954,6 +4236,12 @@
     "file": "src/battle_task_adapters.c"
   },
   {
+    "addr": "0804A720",
+    "size": 164,
+    "name": "BattleTaskACreateTask",
+    "file": "src/battle_task_create.c"
+  },
+  {
     "addr": "0804AC28",
     "size": 20,
     "name": "BattleMode4AC0",
@@ -3984,6 +4272,12 @@
     "file": "src/battle_mode_adapters.c"
   },
   {
+    "addr": "0804AC8C",
+    "size": 124,
+    "name": "CreateBattleModeTask4AC",
+    "file": "src/battle_task_create.c"
+  },
+  {
     "addr": "0804AF98",
     "size": 120,
     "name": "CreateBattleFamilyTask4AF",
@@ -3993,6 +4287,12 @@
     "addr": "0804CB44",
     "size": 120,
     "name": "CreateBattleFamilyTask4CB",
+    "file": "src/battle_family_tasks.c"
+  },
+  {
+    "addr": "0804DCD0",
+    "size": 136,
+    "name": "CreateLargeBattleTask4DC",
     "file": "src/battle_family_tasks.c"
   },
   {
@@ -4006,6 +4306,12 @@
     "size": 20,
     "name": "BattleMode4E61",
     "file": "src/battle_mode_adapters.c"
+  },
+  {
+    "addr": "0804E668",
+    "size": 152,
+    "name": "CreateBattleModeTask4E6",
+    "file": "src/battle_task_create.c"
   },
   {
     "addr": "0804EC28",
@@ -4266,6 +4572,12 @@
     "file": "src/battle_mode_adapters.c"
   },
   {
+    "addr": "08051E84",
+    "size": 52,
+    "name": "CreateTask51E84",
+    "file": "src/task_adapters.c"
+  },
+  {
     "addr": "08053294",
     "size": 16,
     "name": "Clear32ByteBlock",
@@ -4288,6 +4600,18 @@
     "size": 92,
     "name": "StepCounterAdvance",
     "file": "src/step_counter.c"
+  },
+  {
+    "addr": "08053FD4",
+    "size": 36,
+    "name": "NcdReleaseSpriteArray",
+    "file": "src/ncd_sprite.c"
+  },
+  {
+    "addr": "0805427C",
+    "size": 128,
+    "name": "TryPurchaseArmOrConsumable",
+    "file": "src/item.c"
   },
   {
     "addr": "080558A4",
@@ -4330,6 +4654,18 @@
     "size": 44,
     "name": "GameStateGetCurrentEntry3894",
     "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08056290",
+    "size": 56,
+    "name": "GameStateGetResourceCounter",
+    "file": "src/game_state_records.c"
+  },
+  {
+    "addr": "080562C8",
+    "size": 60,
+    "name": "GameStateAddResourceCounter",
+    "file": "src/game_state_records.c"
   },
   {
     "addr": "08056464",
@@ -4422,6 +4758,12 @@
     "file": "src/game_state_records.c"
   },
   {
+    "addr": "080569B0",
+    "size": 72,
+    "name": "CountPmbDeckEntryCopies",
+    "file": "src/game_state_records.c"
+  },
+  {
     "addr": "08056A34",
     "size": 44,
     "name": "GameStateSetFlag2730",
@@ -4500,9 +4842,15 @@
     "file": "src/runtime_accessors.c"
   },
   {
+    "addr": "080571E8",
+    "size": 48,
+    "name": "GameStateSnapshotMapBuffer",
+    "file": "src/runtime_misc.c"
+  },
+  {
     "addr": "08057218",
     "size": 48,
-    "name": "GameStateCopyMapBuffer",
+    "name": "GameStateRestoreMapBuffer",
     "file": "src/runtime_misc.c"
   },
   {
@@ -4542,10 +4890,46 @@
     "file": "src/map_field.c"
   },
   {
+    "addr": "08062304",
+    "size": 128,
+    "name": "CreateTask62304",
+    "file": "src/task_adapters.c"
+  },
+  {
     "addr": "08065E50",
     "size": 56,
     "name": "InitializeFieldEventDisplay",
     "file": "src/map_field.c"
+  },
+  {
+    "addr": "08065E88",
+    "size": 44,
+    "name": "CreateFieldEventModeTask",
+    "file": "src/task_constructors.c"
+  },
+  {
+    "addr": "08066068",
+    "size": 72,
+    "name": "CreateTask66068",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "080683C4",
+    "size": 68,
+    "name": "CreateTask683C4",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "08068C0C",
+    "size": 48,
+    "name": "CreateTask68C0C",
+    "file": "src/task_adapters.c"
+  },
+  {
+    "addr": "08069DB4",
+    "size": 76,
+    "name": "CreateRuntimeTask69DB4",
+    "file": "src/task_constructors.c"
   },
   {
     "addr": "0806C6F8",
@@ -4692,15 +5076,33 @@
     "file": "src/task_adapters.c"
   },
   {
+    "addr": "0806EAFC",
+    "size": 72,
+    "name": "CreateTask6EAFC",
+    "file": "src/task_adapters.c"
+  },
+  {
     "addr": "0806EEF0",
     "size": 40,
     "name": "CreateTask6EEF0",
     "file": "src/task_adapters.c"
   },
   {
+    "addr": "0806EFCC",
+    "size": 76,
+    "name": "CreateEncounterResetTask",
+    "file": "src/task_constructors.c"
+  },
+  {
     "addr": "0806F620",
     "size": 68,
     "name": "CreateEncounterTransitionTask",
+    "file": "src/task_constructors.c"
+  },
+  {
+    "addr": "0806FA94",
+    "size": 48,
+    "name": "CreateEncounterSetupTask",
     "file": "src/task_constructors.c"
   },
   {
@@ -4749,6 +5151,12 @@
     "addr": "08070EEC",
     "size": 52,
     "name": "GeneratedMapFindRuntimeRoom",
+    "file": "src/mapping.c"
+  },
+  {
+    "addr": "08070F20",
+    "size": 96,
+    "name": "GeneratedMapChooseAttributeIndex",
     "file": "src/mapping.c"
   },
   {
@@ -5064,6 +5472,24 @@
     "file": "src/table_accessors.c"
   },
   {
+    "addr": "08075EBC",
+    "size": 24,
+    "name": "RuntimeUpdateFirstThreeGroups",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08077370",
+    "size": 132,
+    "name": "CreateBattleSpriteEffectTask",
+    "file": "src/task_constructors.c"
+  },
+  {
+    "addr": "08077B44",
+    "size": 128,
+    "name": "CreateLargeBattleSpriteEffectTask",
+    "file": "src/task_constructors.c"
+  },
+  {
     "addr": "08078948",
     "size": 100,
     "name": "SoundMidiKeyToFrequency",
@@ -5073,6 +5499,18 @@
     "addr": "080789AC",
     "size": 4,
     "name": "SoundDriverUnusedNoOp",
+    "file": "src/sound_m4a.c"
+  },
+  {
+    "addr": "080789B0",
+    "size": 28,
+    "name": "SoundPlayerResume",
+    "file": "src/sound_m4a.c"
+  },
+  {
+    "addr": "080789CC",
+    "size": 32,
+    "name": "SoundPlayerFadeOut",
     "file": "src/sound_m4a.c"
   },
   {
@@ -5140,6 +5578,18 @@
     "size": 16,
     "name": "SoundFadeOut",
     "file": "src/sound.c"
+  },
+  {
+    "addr": "08078C18",
+    "size": 32,
+    "name": "SoundPlayerFadeOutTemporary",
+    "file": "src/sound_m4a.c"
+  },
+  {
+    "addr": "08078C38",
+    "size": 40,
+    "name": "SoundPlayerFadeIn",
+    "file": "src/sound_m4a.c"
   },
   {
     "addr": "08078C60",
@@ -6282,6 +6732,12 @@
     "file": "src/sprite_engine_state.c"
   },
   {
+    "addr": "0807D8F8",
+    "size": 28,
+    "name": "SpriteFixed8Multiply",
+    "file": "src/sprite_math.c"
+  },
+  {
     "addr": "0807D914",
     "size": 24,
     "name": "SpriteFixed8Divide",
@@ -6423,6 +6879,12 @@
     "addr": "0807E9F4",
     "size": 152,
     "name": "ScriptResourceSet",
+    "file": "src/script_resource_table.c"
+  },
+  {
+    "addr": "0807EA8C",
+    "size": 140,
+    "name": "ScriptResourceRemove",
     "file": "src/script_resource_table.c"
   },
   {
@@ -9868,6 +10330,12 @@
     "size": 37,
     "name": "gNewlibSyscallStrings",
     "file": "src/libc/syscalls.c"
+  },
+  {
+    "addr": "081ACB58",
+    "size": 36,
+    "name": "gTileRemainderMasks",
+    "file": "src/math_tables.c"
   },
   {
     "addr": "081ACC44",

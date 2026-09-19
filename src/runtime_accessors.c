@@ -20,6 +20,17 @@ extern void sub_08056F90(void);
 
 #define IWRAM_FIELD_2870_OFFSET 0x2870
 #define IWRAM_FIELD_2871_OFFSET 0x2871
+#define IWRAM_FLAGS_0810_OFFSET 0x0810
+
+#define IWRAM_FLAG_0810_MODE_0 (1 << 8)
+#define IWRAM_FLAG_0810_MODE_1 (1 << 9)
+#define IWRAM_FLAG_0810_MODE_2 (1 << 10)
+#define IWRAM_FLAG_0810_MODE_3 (1 << 11)
+
+struct IwramFlags0810
+{
+    u16 value;
+};
 
 /** @return This console's multiplayer id, bits 4-5 of REG_SIOCNT (the
  * hardware multi-play ID field). */
@@ -93,6 +104,91 @@ AT("00006AA0") s32 GameStateGetField12EE(void)
 AT("00006AC0") void GameStateSetField12EE(s32 value)
 {
  *(u16 *)(GAME_STATE_BASE+0x12EE)=value;
+}
+/**
+ * @brief Set or clear one of the four mode flags in the IWRAM +0x810 word.
+ * @param mode Flag index from 0 through 3. Other values leave the word alone.
+ * @param enabled Nonzero to set the flag, zero to clear it.
+ */
+AT("00006ADC")
+void IwramSetFlags0810(s32 mode, s32 enabled)
+{
+    if (enabled)
+    {
+        switch (mode)
+        {
+        case 0:
+        {
+            u32 offset = IWRAM_FLAGS_0810_OFFSET >> 4;
+            offset <<= 4;
+            ((struct IwramFlags0810 *)(gIwramBase + offset))->value |=
+                IWRAM_FLAG_0810_MODE_0;
+            break;
+        }
+        case 1:
+        {
+            u32 offset = IWRAM_FLAGS_0810_OFFSET >> 4;
+            offset <<= 4;
+            ((struct IwramFlags0810 *)(gIwramBase + offset))->value |=
+                IWRAM_FLAG_0810_MODE_1;
+            break;
+        }
+        case 2:
+        {
+            u32 offset = IWRAM_FLAGS_0810_OFFSET >> 4;
+            offset <<= 4;
+            ((struct IwramFlags0810 *)(gIwramBase + offset))->value |=
+                IWRAM_FLAG_0810_MODE_2;
+            break;
+        }
+        case 3:
+        {
+            u32 offset = IWRAM_FLAGS_0810_OFFSET >> 4;
+            offset <<= 4;
+            ((struct IwramFlags0810 *)(gIwramBase + offset))->value |=
+                IWRAM_FLAG_0810_MODE_3;
+            break;
+        }
+        }
+    }
+    else
+    {
+        switch (mode)
+        {
+        case 0:
+        {
+            u32 offset = IWRAM_FLAGS_0810_OFFSET >> 4;
+            offset <<= 4;
+            ((struct IwramFlags0810 *)(gIwramBase + offset))->value &=
+                ~IWRAM_FLAG_0810_MODE_0;
+            break;
+        }
+        case 1:
+        {
+            u32 offset = IWRAM_FLAGS_0810_OFFSET >> 4;
+            offset <<= 4;
+            ((struct IwramFlags0810 *)(gIwramBase + offset))->value &=
+                ~IWRAM_FLAG_0810_MODE_1;
+            break;
+        }
+        case 2:
+        {
+            u32 offset = IWRAM_FLAGS_0810_OFFSET >> 4;
+            offset <<= 4;
+            ((struct IwramFlags0810 *)(gIwramBase + offset))->value &=
+                ~IWRAM_FLAG_0810_MODE_2;
+            break;
+        }
+        case 3:
+        {
+            u32 offset = IWRAM_FLAGS_0810_OFFSET >> 4;
+            offset <<= 4;
+            ((struct IwramFlags0810 *)(gIwramBase + offset))->value &=
+                ~IWRAM_FLAG_0810_MODE_3;
+            break;
+        }
+        }
+    }
 }
 /** @return The u16 field at fixed IWRAM offset 0x810. Meaning not yet
  * recovered. */

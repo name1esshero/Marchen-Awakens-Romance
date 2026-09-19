@@ -16,6 +16,7 @@ s32 GameStateGetField12EC(void);
 s32 GameStateGetField12EE(void);
 void GameStateSetField12EE(s32 value);
 u32 IwramGetField0810(void);
+void IwramSetFlags0810(s32 mode, s32 enabled);
 void *RuntimeGetBufferE50(void);
 void *GameStateGetRecord610(u32 index);
 void IwramSetField3FD5(u32 value);

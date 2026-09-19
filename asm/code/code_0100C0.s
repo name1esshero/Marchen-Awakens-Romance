@@ -841,7 +841,7 @@ _080107A2:
 	adds r3, r4, #0
 	adds r3, #28
 	mov r0, r10
-	bl sub_08006C2C
+	bl HitBoundsTranslate
 	.global _080107BC
 _080107BC:
 	ldrb r1, [r4, #0]
@@ -3184,97 +3184,19 @@ _08011AEE:
 
 @ 012978..012988 is decompiled as ScriptNativeSetField12EC(); see src/decompiled.json
 
-@ 012988..012994 is decompiled as ScriptNativeCall067DC(); see src/decompiled.json
+@ 012988..012994 is decompiled as ScriptNativeInitializeAttributeFlags(); see src/decompiled.json
 
-@ 012994..0129A4 is decompiled as ScriptNativeCall0680C(); see src/decompiled.json
+@ 012994..0129A4 is decompiled as ScriptNativeSetAttributeFlag(); see src/decompiled.json
 
-@ 0129A4..0129B8 is decompiled as ScriptNativeTestGameStateFlags(); see src/decompiled.json
+@ 0129A4..0129B8 is decompiled as ScriptNativeTestAttributeFlag(); see src/decompiled.json
 
-@ 0129B8..0129CC is decompiled as ScriptNativeCall06858(); see src/decompiled.json
+@ 0129B8..0129CC is decompiled as ScriptNativeSetAttributeFlagRange(); see src/decompiled.json
 
 @ 0129CC..0129E0 is decompiled as ScriptNativeGetField4256(); see src/decompiled.json
 
 @ 0129E0..0129F4 is decompiled as ScriptNativeGetField60E(); see src/decompiled.json
 
-	.section .rom.000129F4, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_080129F4
-sub_080129F4:
-	push {r4, r5, r6, r7, lr}
-	adds r4, r1, #0
-	ldr r0, [r4, #0]
-	subs r0, #1
-	cmp r0, #21
-	bhi _08012AC2
-	lsls r0, r0, #2
-	ldr r1, _08012A0C
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	mov pc, r0
-	.byte 0x00
-	.byte 0x00
-	.global _08012A0C
-_08012A0C:
-	.4byte 0x08012A10  @ ROM+0x12A10
-	.4byte 0x08012A68
-	.4byte 0x08012AC2
-	.4byte 0x08012A68
-	.4byte 0x08012A68
-	.4byte 0x08012AC2
-	.4byte 0x08012A68
-	.4byte 0x08012A68
-	.4byte 0x08012A68
-	.4byte 0x08012A68
-	.4byte 0x08012AC2
-	.4byte 0x08012AC2
-	.4byte 0x08012AC2
-	.4byte 0x08012AC2
-	.4byte 0x08012AC2
-	.4byte 0x08012AC2
-	.4byte 0x08012AC2
-	.4byte 0x08012AC2
-	.4byte 0x08012AC2
-	.4byte 0x08012AC2
-	.4byte 0x08012AC2
-	.4byte 0x08012AC2
-	.4byte 0x08012A68
-	.4byte 0x5E602100
-	.4byte 0xFA6EF043
-	.4byte 0x1C012200
-	.4byte 0x2613310E
-	.4byte 0x80023034
-	.4byte 0x3E013802
-	.4byte 0xDAFA2E00
-	.4byte 0x1D254F11
-	.4byte 0x26131C0C
-	.4byte 0x5EA82200
-	.4byte 0xFF8EF043
-	.4byte 0x14000400
-	.4byte 0xDC0A2862
-	.4byte 0x80206828
-	.4byte 0x490B6838
-	.4byte 0x22001840
-	.4byte 0x22015EA1
-	.4byte 0xFB70F067
-	.4byte 0x35043402
-	.4byte 0x2E003E01
-	.4byte 0x2000DAE8
-	.4byte 0xF7F52100
-	.byte 0x8F
-	.byte 0xFC
-	.global _08012AC2
-_08012AC2:
-	movs r0, #1
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.4byte 0x03003FDC
-	.4byte 0x000026F8
+@ 0129F4..012AD4 is decompiled as ScriptNativePmbDeckMake(); see src/decompiled.json
 
 @ 012AD4..012AE4 is decompiled as ScriptNativeCall08740(); see src/decompiled.json
 
@@ -4122,7 +4044,7 @@ _0801357E:
 	.global _08013596
 _08013596:
 	movs r0, #0
-	bl sub_0800AFA0
+	bl RuntimeSetModeE4B
 	strb r5, [r4, #0]
 	movs r4, #133
 	lsls r4, r4, #2
@@ -4637,7 +4559,7 @@ _080138D0:
 	.global _0801390C
 _0801390C:
 	adds r0, r7, #0
-	bl sub_08017E4C
+	bl FieldActorUpdateForMode
 	movs r0, #0
 	ldrsb r0, [r4, r0]
 	movs r4, #182
@@ -4849,7 +4771,7 @@ sub_08013A78:
 	.byte 0x04
 	.byte 0xFE
 	adds r0, r7, #0
-	bl sub_08017E4C
+	bl FieldActorUpdateForMode
 	movs r0, #0
 	ldrsb r0, [r5, r0]
 	mov r2, r9
@@ -6932,7 +6854,7 @@ _08014896:
 	.global _0801489E
 _0801489E:
 	movs r0, #0
-	bl sub_0800AFA0
+	bl RuntimeSetModeE4B
 	ldr r0, _080149E0
 	movs r3, #162
 	lsls r3, r3, #2
@@ -8457,22 +8379,12 @@ sub_08015230:
 	pop {r0}
 	bx r0
 
-	.thumb_func
-	.thumb
-	.global sub_08015268
-sub_08015268:
-	push {lr}
-	ldr r0, [r3, #0]
-	cmp r0, #0
-	beq _08015276
-	movs r0, #1
-	negs r0, r0
-	str r0, [r3, #0]
-	.global _08015276
-_08015276:
-	movs r0, #0
-	pop {r1}
-	bx r1
+
+@ 015268..01527C is decompiled as BattleActionUnavailable();
+@ see src/decompiled.json
+
+	.section .rom.0001527C, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -14620,31 +14532,10 @@ _08017E3C:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_08017E4C
-sub_08017E4C:
-	push {r4, lr}
-	adds r4, r0, #0
-	.2byte 0xF7EE
-	.byte 0x82
-	.byte 0xFF
-	cmp r0, #1
-	bne _08017E60
-	adds r0, r4, #0
-	bl sub_08018590
-	b _08017E6A
-	.global _08017E60
-_08017E60:
-	adds r0, r4, #0
-	movs r1, #3
-	movs r2, #4
-	bl sub_08017E70
-	.global _08017E6A
-_08017E6A:
-	pop {r4}
-	pop {r0}
-	bx r0
+@ 017E4C..017E70 is decompiled as FieldActorUpdateForMode(); see src/decompiled.json
+
+	.section .rom.00017E70, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb

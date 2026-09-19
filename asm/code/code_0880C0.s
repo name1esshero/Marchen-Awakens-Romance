@@ -2083,9 +2083,13 @@ _080894F4:
 	movs r0, r0
 	.global _0808951C
 _0808951C:
+	.global gResource77A03
+gResource77A03:
 	.4byte 0x30413737
 	ldrsh r3, [r6, r4]
 	movs r0, r0
+	.global gResourceSpBa04
+gResourceSpBa04:
 	str r3, [r2, r1]
 	negs r7, r3
 
@@ -2095,6 +2099,8 @@ _0808951C:
 sub_08089528:
 	adds r0, #65
 	movs r4, r6
+	.global gResourceTestE02
+gResourceTestE02:
 	cmp r4, r10
 	strb r3, [r2, r1]
 	cmp r7, r11

@@ -22,7 +22,6 @@
 #define CGB_FIXED_PITCH          0x08
 
 extern void sub_080783DC(void);
-extern void sub_08078644(struct SoundPlayer *, struct SoundTrack *);
 extern u32 sub_08077DB0(u32 first, u32 second);
 extern void sub_08077E44(void);
 extern void sub_080781DC(void *jumpTable);
@@ -158,7 +157,7 @@ AT("00078CA8") void SoundDriverEnableCgb(void *channelStorage)
     gSoundJumpTable[28] = SoundTrackDispatchExtendedCommand;
     gSoundJumpTable[29] = sub_080788B8;
     gSoundJumpTable[30] = SoundDriverSetSampleFrequency;
-    gSoundJumpTable[31] = sub_08078644;
+    gSoundJumpTable[31] = SoundTrackReleaseChannels;
     gSoundJumpTable[32] = SoundPlayerUpdateFade;
     gSoundJumpTable[33] = SoundTrackUpdateVolumeAndPitch;
     sound->cgbChannels = channels;
@@ -212,6 +211,30 @@ AT("000789AC") void SoundDriverUnusedNoOp(void)
 }
 AT("000789AC") const u8 SoundDriverUnusedNoOpTail[2] = {0};
 
+/** Resume a paused sequence player while holding its identity lock. */
+AT("000789B0") void SoundPlayerResume(struct SoundPlayer *player)
+{
+    if (player->ident == SOUND_PLAYER_READY)
+    {
+        player->ident++;
+        player->status &= ~SOUND_PLAYER_PAUSED;
+        player->ident = SOUND_PLAYER_READY;
+    }
+}
+
+/** Begin a permanent fade to silence. */
+AT("000789CC") void SoundPlayerFadeOut(struct SoundPlayer *player, u16 interval)
+{
+    if (player->ident == SOUND_PLAYER_READY)
+    {
+        player->ident++;
+        player->fadeCounter = interval;
+        player->fadeInterval = interval;
+        player->fadeVolume = 64 << 2;
+        player->ident = SOUND_PLAYER_READY;
+    }
+}
+
 /** Install the relocatable mixer in IWRAM, initialize its driver/channel
  * state, and register all nine player slots with their shared MEMACC area. */
 AT("000789EC") void SoundDriverInit(void)
@@ -253,6 +276,35 @@ AT("00078C60") void SoundPlayerImmediateInit(struct SoundPlayer *player)
         }
         trackCount--;
         track++;
+    }
+}
+
+/** Fade to silence, leaving the player paused so it can be resumed. */
+AT("00078C18") void SoundPlayerFadeOutTemporary(
+    struct SoundPlayer *player, u16 interval)
+{
+    if (player->ident == SOUND_PLAYER_READY)
+    {
+        player->ident++;
+        player->fadeCounter = interval;
+        player->fadeInterval = interval;
+        player->fadeVolume = (64 << 2) | 1;
+        player->ident = SOUND_PLAYER_READY;
+    }
+}
+
+/** Fade a ready player in and clear its paused flag. */
+AT("00078C38") void SoundPlayerFadeIn(
+    struct SoundPlayer *player, u16 interval)
+{
+    if (player->ident == SOUND_PLAYER_READY)
+    {
+        player->ident++;
+        player->fadeCounter = interval;
+        player->fadeInterval = interval;
+        player->fadeVolume = 2;
+        player->status &= ~SOUND_PLAYER_PAUSED;
+        player->ident = SOUND_PLAYER_READY;
     }
 }
 
@@ -495,7 +547,7 @@ AT("0007915C") void SoundPlayerStart(
         i = 0;
         track = player->tracks;
         while (i < song->trackCount && i < player->trackCount) {
-            sub_08078644(player, track);
+            SoundTrackReleaseChannels(player, track);
             track->flags = TRACK_EXISTS | TRACK_START;
             track->channel = 0;
             track->command = song->parts[i];
@@ -503,7 +555,7 @@ AT("0007915C") void SoundPlayerStart(
             track++;
         }
         while (i < player->trackCount) {
-            sub_08078644(player, track);
+            SoundTrackReleaseChannels(player, track);
             track->flags = 0;
             i++;
             track++;
@@ -758,7 +810,7 @@ AT("00079280") void SoundPlayerUpdateFade(struct SoundPlayer *player)
             while (count > 0) {
                 u32 temporary;
 
-                sub_08078644(player, track);
+                SoundTrackReleaseChannels(player, track);
                 temporary = FADE_TEMPORARY;
                 fadeVolume = player->fadeVolume;
                 temporary &= fadeVolume;

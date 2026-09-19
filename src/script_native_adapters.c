@@ -6,13 +6,10 @@
 #include "gba/types.h"
 
 #include "rom_section.h"
+#include "runtime_misc.h"
 #include "task_constructors.h"
 
 extern void GameStateSetField12EC(s32 value);
-extern void sub_080067DC(void);
-extern void sub_0800680C(s32 a, s32 b);
-extern s32 GameStateTestFlags12C(s32 flags);
-extern void sub_08006858(s32 a, s32 b, s32 c);
 extern s32 GameStateGetField4256(void);
 extern s32 GameStateGetField60E(void);
 extern void sub_08008740(s32 a, s32 b);
@@ -31,34 +28,36 @@ AT("00012978") s32 ScriptNativeSetField12EC(u32 count, const s32 *args, s32 *res
 }
 AT("00012978") const u8 ScriptNativeSetField12ECTail[2] = {0};
 
-/** Native script command: forward to sub_080067DC(). @return Always 1. */
-AT("00012988") s32 ScriptNativeCall067DC(u32 count, const s32 *args, s32 *result)
+/** Initialize the background-attribute enable bank. @return Always 1. */
+AT("00012988") s32 ScriptNativeInitializeAttributeFlags(u32 count,
+    const s32 *args, s32 *result)
 {
-    sub_080067DC();
+    GameStateInitializeAttributeFlags();
     return 1;
 }
 
-/** Native script command: forward two arguments to sub_0800680C().
- * @return Always 1. */
-AT("00012994") s32 ScriptNativeCall0680C(u32 count, const s32 *args, s32 *result)
+/** Set one background-attribute enable bit. @return Always 1. */
+AT("00012994") s32 ScriptNativeSetAttributeFlag(u32 count, const s32 *args,
+                                                 s32 *result)
 {
-    sub_0800680C(args[0], args[1]);
+    GameStateSetAttributeFlag(args[0], args[1]);
     return 1;
 }
 
-/** Native script command: forward to GameStateTestFlags12C().
- * @return Always 1. */
-AT("000129A4") s32 ScriptNativeTestGameStateFlags(u32 count, const s32 *args, s32 *result)
+/** Test one background-attribute enable bit. @return Always 1. */
+AT("000129A4") s32 ScriptNativeTestAttributeFlag(u32 count, const s32 *args,
+                                                  s32 *result)
 {
-    *result = GameStateTestFlags12C(args[0]);
+    *result = GameStateTestAttributeFlag(args[0]);
     return 1;
 }
 
-/** Native script command: forward three arguments to sub_08006858().
+/** Set an inclusive range of background-attribute enable bits.
  * @return Always 1. */
-AT("000129B8") s32 ScriptNativeCall06858(u32 count, const s32 *args, s32 *result)
+AT("000129B8") s32 ScriptNativeSetAttributeFlagRange(u32 count,
+    const s32 *args, s32 *result)
 {
-    sub_08006858(args[0], args[1], args[2]);
+    GameStateSetAttributeFlagRange(args[0], args[1], args[2]);
     return 1;
 }
 

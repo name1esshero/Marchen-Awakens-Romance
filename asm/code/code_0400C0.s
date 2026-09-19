@@ -1022,7 +1022,7 @@ _08040732:
 	movs r3, #0
 	ldrsh r1, [r1, r3]
 	lsls r1, r1, #16
-	bl sub_08006DF0
+	bl GameStateSetField424C50
 	subs r4, #24
 	adds r0, r7, r4
 	ldr r1, [r0, #0]
@@ -2314,7 +2314,7 @@ _0804105A:
 	movs r6, #0
 	ldrsh r1, [r1, r6]
 	lsls r1, r1, #16
-	bl sub_08006DF0
+	bl GameStateSetField424C50
 	movs r1, #0
 	ldrsh r0, [r5, r1]
 	cmp r0, #0
@@ -3694,7 +3694,7 @@ _08041960:
 	movs r3, #0
 	ldrsh r1, [r1, r3]
 	lsls r1, r1, #16
-	bl sub_08006DF0
+	bl GameStateSetField424C50
 	ldr r4, _080419EC
 	adds r0, r6, r4
 	movs r1, #0
@@ -6855,7 +6855,7 @@ _08042D2E:
 	movs r3, #0
 	ldrsh r1, [r1, r3]
 	lsls r1, r1, #16
-	bl sub_08006DF0
+	bl GameStateSetField424C50
 	movs r1, #0
 	ldrsh r0, [r4, r1]
 	cmp r0, #0
@@ -8315,7 +8315,7 @@ _0804368A:
 	movs r3, #0
 	ldrsh r1, [r1, r3]
 	lsls r1, r1, #16
-	bl sub_08006DF0
+	bl GameStateSetField424C50
 	ldr r4, _08043708
 	adds r0, r7, r4
 	movs r1, #0
@@ -10779,7 +10779,7 @@ _080446B4:
 sub_080446C0:
 	ldrsh r1, [r1, r2]
 	lsls r1, r1, #16
-	bl sub_08006DF0
+	bl GameStateSetField424C50
 	ldr r1, [r6, #64]
 	adds r0, r6, #0
 	bl sub_080285E4
@@ -12240,7 +12240,7 @@ _0804506C:
 	movs r2, #18
 	ldrsh r1, [r5, r2]
 	lsls r1, r1, #16
-	bl sub_08006DF0
+	bl GameStateSetField424C50
 	movs r3, #28
 	ldrsh r0, [r5, r3]
 	cmp r0, #0
@@ -13112,7 +13112,7 @@ _08045702:
 	movs r4, #0
 	ldrsh r1, [r3, r4]
 	lsls r1, r1, #16
-	bl sub_08006DF0
+	bl GameStateSetField424C50
 	movs r5, #0
 	ldrsh r0, [r6, r5]
 	cmp r0, #0
@@ -14015,7 +14015,7 @@ _08045CF4:
 	movs r3, #0
 	ldrsh r1, [r1, r3]
 	lsls r1, r1, #16
-	bl sub_08006DF0
+	bl GameStateSetField424C50
 	adds r4, #30
 	adds r0, r7, r4
 	movs r5, #0
@@ -15033,7 +15033,7 @@ _08046388:
 	movs r3, #0
 	ldrsh r1, [r1, r3]
 	lsls r1, r1, #16
-	bl sub_08006DF0
+	bl GameStateSetField424C50
 	adds r4, #6
 	adds r0, r7, r4
 	movs r5, #0
@@ -15648,7 +15648,7 @@ _080467C4:
 	movs r3, #0
 	ldrsh r1, [r7, r3]
 	lsls r1, r1, #16
-	bl sub_08006DF0
+	bl GameStateSetField424C50
 	movs r4, #0
 	ldrsh r0, [r6, r4]
 	cmp r0, #0

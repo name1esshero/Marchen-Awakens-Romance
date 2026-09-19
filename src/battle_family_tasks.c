@@ -110,38 +110,33 @@ BATTLE_TASK_TAIL("00050358", CreateBattleFamilyTask503)
                                  emptyCount)                               \
 AT(address) u8 *name(s32 owner, s32 slot, void *resource, s32 *result)     \
 {                                                                          \
+    void *savedResource = resource;                                        \
     u8 *task;                                                               \
-    s32 primaryOffset;                                                      \
-    s32 work = (s32)result;                                                 \
     s32 *cursor;                                                            \
     s32 remaining;                                                         \
+    s32 emptyValue;                                                        \
     task = CreateTask(gSecondaryRuntime + owner * 32 + slot * 16,          \
-                      (void *)(callback), 0, (s32 *)work, (stateSize));     \
+                      (void *)(callback), 0, result, (stateSize));          \
     if (task == 0) {                                                        \
-        if (work != 0)                                                      \
-            *(s32 *)work = -1;                                              \
+        if (result != 0)                                                    \
+            *result = -1;                                                   \
         return 0;                                                           \
     }                                                                       \
-    primaryOffset = (ownerOffset);                                          \
-    *(s32 *)(task + primaryOffset) = owner;                                 \
-    work = (slotOffset);                                                     \
-    *(s32 *)(task + work) = slot;                                           \
-    primaryOffset += (flagOffset) - (ownerOffset);                          \
-    *(s32 *)(task + primaryOffset) = owner == 0;                            \
-    work = (resourceOffset);                                                 \
-    *(void **)(task + work) = resource;                                     \
-    work += (emptyStartOffset) - (resourceOffset);                          \
-    cursor = (s32 *)(task + work);                                          \
+    *(s32 *)(task + (ownerOffset)) = owner;                                 \
+    *(s32 *)(task + (slotOffset)) = slot;                                   \
+    *(s32 *)(task + (flagOffset)) = owner == 0;                             \
+    *(void **)(task + (resourceOffset)) = savedResource;                    \
+    emptyValue = -1;                                                       \
     remaining = (emptyCount) - 1;                                          \
+    cursor = (s32 *)(task + (emptyStartOffset));                            \
     do {                                                                    \
-        *cursor = -1;                                                       \
+        *cursor = emptyValue;                                               \
         cursor--;                                                           \
         remaining--;                                                        \
     } while (remaining >= 0);                                               \
     return task;                                                            \
 }
 
-#ifdef NONMATCHING
 DEFINE_LARGE_BATTLE_TASK("00035B34", CreateLargeBattleTask35B, sub_08035BC0,
                          1256, 1184, 1188, 1192, 1280, 1284, 1)
 
@@ -153,4 +148,3 @@ DEFINE_LARGE_BATTLE_TASK("0003FF14", CreateLargeBattleTask3FF, sub_0803FF9C,
                          392, 352, 356, 360, 416, 420, 1)
 DEFINE_LARGE_BATTLE_TASK("0004DCD0", CreateLargeBattleTask4DC, sub_0804DD58,
                          372, 352, 356, 360, 392, 400, 2)
-#endif

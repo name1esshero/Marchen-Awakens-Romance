@@ -60,6 +60,10 @@ u32 ScriptPopU32(void);
 s32 *ScriptResolveOperand(u32 operand);
 s32 ScriptPushFrameAndJump(u32 callbackIndex, u32 destination);
 s32 ScriptRestoreFrame(void);
+s32 ScriptResourceHash(s32 type, const char *name);
+u8 *ScriptResourceFind(s32 type, const char *name);
+s32 ScriptResourceSet(s32 type, const char *name, const void *value, s32 size);
+s32 ScriptResourceRemove(s32 type, const char *name);
 
 s32 ScriptCmdJump(void);
 s32 ScriptCmdJumpIfZero(void);

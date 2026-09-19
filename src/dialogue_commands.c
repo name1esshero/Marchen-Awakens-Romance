@@ -7,6 +7,7 @@
 #include "gba/io_reg.h"
 #include "kmp.h"
 #include "ncd.h"
+#include "runtime_accessors.h"
 #include "sprite_engine.h"
 extern void FinishTask(void *);
 extern void *CreateTask(void *,void *,u32,s32 *,u32);
@@ -15,7 +16,6 @@ extern void sub_08011A60(void *task);
 extern void sub_0807BC7C(struct NcdSprite *sprite, s32 container, s32 group,
                          s32 animation, s32 frame);
 extern void ScriptAddPendingTasks(u32 count);
-extern void sub_08006ADC(u32,u32);
 #include "runtime_misc.h"
 #include "rom_section.h"
 
@@ -102,8 +102,8 @@ AT("00011C68")
 s32 DialogueCommandShow(s32 count, const char **rows)
 {
  DialogueStart(0,count,rows,0);
- sub_08006ADC(2,1);
- sub_08006ADC(3,1);
+ IwramSetFlags0810(2,1);
+ IwramSetFlags0810(3,1);
  GameStateGetRecord1190(2)[1] |= 4;
  GameStateGetRecord1190(3)[1] |= 4;
  GameStateGetRecord1190(2)[0] |= 2;

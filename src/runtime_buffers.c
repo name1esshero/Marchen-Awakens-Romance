@@ -32,6 +32,7 @@
 
 extern void CpuFill(void *destination, u32 size, u32 value);
 extern u8 *RuntimeGetActorRecord(u32 actor, u32 part);
+extern char *strcpy(char *destination, const char *source);
 
 /** @return The secondary runtime's +0xEB8 buffer. */
 AT("000075CC") void *RuntimeGetBufferEB8(void) { return gSecondaryRuntime+0xEB8; }
@@ -65,6 +66,12 @@ AT("00019818") const u8 RuntimeClearActorPartField80IfArmFlag20Tail[2] = {0, 0};
 AT("000075E0") void *RuntimeGetBufferED0(void) { return gSecondaryRuntime+0xED0; }
 /** @return The secondary runtime's +0xEEA buffer. */
 AT("000075F0") void *RuntimeGetBufferEEA(void) { return gSecondaryRuntime+0xEEA; }
+
+/** Copy a name into the secondary runtime's +0xEEA text buffer. */
+AT("00007604") void RuntimeSetBufferEEAName(const char *name)
+{
+    strcpy(gSecondaryRuntime + 0xEEA, name);
+}
 /** @return The secondary runtime's +0xEE8 byte field, sign-extended. */
 AT("00007620") s32 RuntimeGetFieldEE8(void) { return *(s8 *)(gSecondaryRuntime+0xEE8); }
 /** Set the secondary runtime's +0xEE8 byte field. */
@@ -183,6 +190,27 @@ AT("00009E5C") void RuntimeActorSetField352(u32 actor,s32 value) { u8 *base=gSec
 AT("00009E78") s32 RuntimeActorGetField352(u32 actor) { u8 *base=gSecondaryRuntime; actor*=1672; base+=actor; base+=0x352; return *(s16 *)base; }
 AT("00009E98") s32 RuntimeActorGetField350(u32 actor) { u8 *base=gSecondaryRuntime; actor*=1672; base+=actor; base+=0x350; return *(s8 *)base; }
 
+/** Set an actor record's +0x358 halfword field. See
+ * RuntimeActorGetField358(). */
+AT("00009778")
+void RuntimeActorSetField358(u32 actor, s32 value)
+{
+    u8 *base = gSecondaryRuntime;
+    u32 stride = 1672;
+
+    actor *= stride;
+    base += actor;
+    base += 0x358;
+    *(u16 *)base = value;
+}
+
+/**
+ * @brief Enable an actor's active vector and set its three signed components.
+ * @param actor Actor record index.
+ * @param first First vector component.
+ * @param second Second vector component.
+ * @param third Third vector component.
+ */
 AT("00009D74") void RuntimeActorSetActiveVector(u32 actor,s32 first,s32 second,s32 third)
 {
  u8 **root=&gSecondaryRuntime;
@@ -246,6 +274,7 @@ AT("00009EEC") void *RuntimeActorGetField354Address(u32 actor)
 
 extern u8 *RuntimeGetActorPartRecord(u32 actor,u32 part);
 extern s16 *sub_080099E0(u32 actor,u32 group);
+extern void sub_08009A24(s32 actor, s32 group, s32 part);
 
 /** Count occurrences of value in the five-element signed lookup returned for
  * this actor/group pair. */
@@ -261,6 +290,25 @@ AT("000099B8") u32 RuntimeCountMatchingValues(u32 actor,u32 group,s32 value)
   values++;
  } while (remaining>=0);
  return count;
+}
+
+/** Apply the shared part update to all five parts of an actor/group pair. */
+AT("00009A04") void RuntimeUpdateFiveParts(s32 actor, s32 group)
+{
+    s32 part;
+
+    for (part = 0; part <= 4; part++)
+        sub_08009A24(actor, group, part);
+}
+AT("00009A04") const u8 RuntimeUpdateFivePartsTail[2] = {0};
+
+/** Update actor zero across the first three runtime groups. */
+AT("00075EBC") void RuntimeUpdateFirstThreeGroups(void)
+{
+    s32 group;
+
+    for (group = 0; group <= 2; group++)
+        RuntimeUpdateFiveParts(0, group);
 }
 
 /** @return How many of an actor's four part records have both their +0 and
@@ -309,6 +357,25 @@ AT("00009830") u32 RuntimeActorHasReadyPart(u32 actor)
  return 0;
 }
 AT("00009830") const u8 RuntimeActorHasReadyPartTail[2]={0};
+
+/** @return Whether any of an actor's four part records has a nonzero +0
+ * byte and a signed +0x37 byte equal to 6. */
+AT("00009868")
+u32 RuntimeActorHasPartField37Value6(u32 actor)
+{
+    s32 part = 0;
+
+    do
+    {
+        u8 *record = RuntimeGetActorRecord(actor, part);
+
+        if (*(s8 *)record && *(s8 *)(record + 0x37) == 6)
+            return 1;
+        part++;
+    } while (part <= 3);
+
+    return 0;
+}
 
 #define ACTOR_GET_S8(address,name,field) AT(address) s32 name(u32 index) { u8 *base=gSecondaryRuntime; index*=1672; base+=(field); base+=index; return *(s8 *)base; }
 #define ACTOR_SET_S8(address,name,field) AT(address) void name(u32 index,s32 value) { u8 *base=gSecondaryRuntime; index*=1672; base+=(field); base+=index; *(s8 *)base=value; }

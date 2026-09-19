@@ -447,13 +447,13 @@ sub_08060458:
 	strh r0, [r4, #0]
 	movs r0, #0
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #1
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #2
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	ldr r0, _080604C4
 	adds r5, r5, r0
 	ldr r0, [r5, #0]
@@ -1443,7 +1443,7 @@ sub_08060AC0:
 	strb r0, [r2, #0]
 	movs r0, #3
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #0
 	movs r1, #1
 	bl DialogueLoadWindowGraphics
@@ -2357,8 +2357,9 @@ _0806138C:
 	.4byte 0xD1282801
 	.4byte 0x444D4D0F
 	.4byte 0x5F282400
-	.4byte 0xF7F22100
-	.4byte 0x1C04FF63
+	.2byte 0x2100
+	bl TryPurchaseArmOrConsumable
+	.2byte 0x1C04
 	.4byte 0x14240424
 	.4byte 0x5E2A2000
 	.4byte 0x21001C20
@@ -2488,7 +2489,7 @@ _08061482:
 	.4byte 0x46801400
 	.4byte 0xDDDD2801
 	.4byte 0x44484812
-	.4byte 0xFD2EF7F2
+	bl NcdReleaseSpriteArray
 	.4byte 0x44484811
 	.4byte 0xFF94F7F2
 	.4byte 0x444D4D10
@@ -2942,13 +2943,13 @@ sub_08061868:
 	strh r0, [r1, #0]
 	movs r0, #0
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #1
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #2
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	ldr r0, _0806191C
 	str r5, [sp, #0]
 	str r5, [sp, #4]
@@ -4069,38 +4070,10 @@ _080622D8:
 	bx r0
 	.byte 0x00
 	.byte 0x00
-	.4byte 0xB081B530
-	.4byte 0x1C0B1C04
-	.4byte 0x49134812
-	.4byte 0x92004A13
-	.4byte 0xF0182200
-	.4byte 0x1C05FA31
-	.4byte 0x18294811
-	.4byte 0x2009600C
-	.4byte 0x4A1082A0
-	.4byte 0x680A18A8
-	.4byte 0x010921A9
-	.4byte 0x60021852
-	.4byte 0x21012000
-	.4byte 0xF95EF7F4
-	.4byte 0x22981C01
-	.4byte 0x18A80192
-	.4byte 0x04088001
-	.4byte 0x28051400
-	.4byte 0x3202DC0E
-	.4byte 0x800118A8
-	.4byte 0x0000E00E
-	.4byte 0x030032C4
-	.4byte 0x08062385
-	.4byte 0x000025F4
-	.4byte 0x000024B4
-	.4byte 0x000024B8
-	.4byte 0x18294804
-	.4byte 0x80082006
-	.4byte 0xB0011C28
-	.4byte 0xBC02BC30
-	.4byte 0x00004708
-	.4byte 0x00002602
+@ 062304..062384 is decompiled as CreateTask62304(); see src/decompiled.json
+
+	.section .rom.00062384, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -5562,7 +5535,7 @@ _08062E00:
 	.2byte 0xF7A3
 	.4byte 0x2003F847
 	movs r1, #0
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #3
 	ldr r2, [sp, #28]
 	strh r0, [r2, #14]
@@ -5571,7 +5544,7 @@ _08062E00:
 _08062E1A:
 	movs r0, #3
 	movs r1, #0
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #3
 	.global _08062E24
 _08062E24:
@@ -6475,13 +6448,13 @@ sub_080635EC:
 	strh r0, [r1, #0]
 	movs r0, #0
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #1
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #2
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	ldr r0, _080636F0
 	str r5, [sp, #0]
 	str r5, [sp, #4]
@@ -8659,7 +8632,7 @@ sub_080644F4:
 	push {r4, lr}
 	sub sp, #12
 	adds r4, r0, #0
-	bl sub_08056290
+	bl GameStateGetResourceCounter
 	adds r2, r0, #0
 	movs r1, #169
 	lsls r1, r1, #5
@@ -9555,7 +9528,7 @@ _08064B44:
 	.4byte 0x016D25FA
 	.4byte 0x2200444D
 	.4byte 0x21015EA8
-	.4byte 0xFB70F7EF
+	bl TryPurchaseArmOrConsumable
 	.4byte 0x04241C04
 	.4byte 0x23001424
 	.4byte 0x1C205EEA
@@ -10061,13 +10034,13 @@ sub_08064E98:
 	strh r0, [r1, #0]
 	movs r0, #0
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #1
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #3
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	ldr r0, sub_08064F6C
 	str r5, [sp, #0]
 	str r5, [sp, #4]
@@ -11526,13 +11499,13 @@ sub_08065BA4:
 	strh r0, [r1, #0]
 	movs r0, #0
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #1
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #3
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	ldr r0, _08065C88
 	str r5, [sp, #0]
 	str r5, [sp, #4]
@@ -11865,17 +11838,11 @@ _08065E4C:
 	.section .rom.00065E88, "ax"
 	.syntax unified
 
-	.4byte 0xB081B510
-	.4byte 0x1C0B1C04
-	.4byte 0x14240424
-	.4byte 0x49064805
-	.4byte 0x92002220
-	.4byte 0xF0142200
-	.4byte 0x8684FC6D
-	.4byte 0xBC10B001
-	.4byte 0x4708BC02
-	.4byte 0x030032C4
-	.4byte 0x08065EB5
+@ 065E88..065EB4 is decompiled as CreateFieldEventModeTask();
+@ see src/decompiled.json
+
+	.section .rom.00065EB4, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -12016,24 +11983,10 @@ _0806605A:
 	bx r0
 	.byte 0x00
 	.byte 0x00
-	.4byte 0xB081B510
-	.4byte 0x1C0B1C04
-	.4byte 0x490A4809
-	.4byte 0x011222C4
-	.4byte 0x22009200
-	.4byte 0xFB7EF014
-	.4byte 0x21C51C02
-	.4byte 0x18500109
-	.4byte 0x7E216004
-	.4byte 0x400820C0
-	.4byte 0xD0052800
-	.4byte 0xE004201C
-	.4byte 0x030032C4
-	.4byte 0x080660B1
-	.4byte 0x82A0200C
-	.4byte 0xB0011C10
-	.4byte 0xBC02BC10
-	.4byte 0x00004708
+@ 066068..0660B0 is decompiled as CreateTask66068(); see src/decompiled.json
+
+	.section .rom.000660B0, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -12504,7 +12457,7 @@ _080665A0:
 _080665A4:
 	movs r0, #153
 	movs r1, #1
-	bl sub_08006760
+	bl GameStateSetFlagsAC
 	ldr r0, [r4, #0]
 	movs r1, #29
 	strh r1, [r0, #22]
@@ -14108,7 +14061,7 @@ _08067456:
 	.byte 0xFD
 	movs r0, #3
 	movs r1, #0
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #8
 	b _080675E6
 	.4byte 0x21002002
@@ -14333,8 +14286,9 @@ _080675E6:
 	.4byte 0x1C304446
 	.4byte 0xFBBEF014
 	.4byte 0x014020D0
-	.4byte 0xF7EC4440
-	.4byte 0x9B07FC43
+	.2byte 0x4440
+	bl NcdReleaseSpriteArray
+	.2byte 0x9B07
 	.4byte 0x29006999
 	.4byte 0x2001D002
 	.4byte 0x60084240

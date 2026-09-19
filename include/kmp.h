@@ -43,7 +43,7 @@ struct KmpViewport
     u8 reserved0B;
     u16 paletteBankOffset;          /* 0C: added to KMP destination palette bank */
     u16 tileIndexOffset;            /* 0E: added to each screen entry */
-    u8 reserved10[8];
+    u32 unknown10, unknown14;
     u32 widthFixed, heightFixed;     /* 18, 1C: 16.16 pixel dimensions */
     u32 clipX, clipY, clipWidth, clipHeight;
     u8 reserved30[0xCC];             /* complete viewport slot is 0xFC bytes */
@@ -55,7 +55,9 @@ struct KmpViewport
 #define gKmpViewports ((struct KmpViewport *)0x03003BC4)
 
 void KmpInitViewport(struct KmpViewport *, const struct KmpHeader *, u16 *, u32, u32, u32);
+void ApplyTileRemainderMask(void *destination, u32 count);
 void KmpRenderViewport(struct KmpViewport *, s32 xFixed, s32 yFixed);
+void KmpDrawViewport(struct KmpViewport *);
 void KmpLoadResource(const char *name, void *tileDestination, s32 slot, s32 plane,
                      s32 paletteOffset, s32 tileOffset, s32 flags);
 u32 KmpGetCompressedTileAllocationSize(const char *mapResource);

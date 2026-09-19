@@ -1,15 +1,31 @@
 /* Small adapters shared by the renderer and sprite runtime. */
 #include "runtime_leaf.h"
 #include "runtime_accessors.h"
+#include "runtime_state.h"
 #include "sound.h"
 #include "ncd.h"
+#include "nfp.h"
 #include "sprite_engine.h"
 
 #include "rom_section.h"
 
 extern void LZ77UnCompVram(const void *source, void *destination);
-extern s32 sub_08004DA8(void);
 extern void StopSoundPlayer(u32 player);
+
+/**
+ * @brief Test whether a filesystem mount name denotes the main MAR archive.
+ *
+ * SYSTEM is checked first because the original routine distinguishes the two
+ * built-in mount names before accepting MAR. Unknown names are rejected too.
+ */
+AT("00002158") s32 IsMainMountName(const char *name)
+{
+    if (strcmp(name, gSystemMountName) == 0)
+        return FALSE;
+    if (strcmp(name, gMainMountName) == 0)
+        return TRUE;
+    return FALSE;
+}
 
 /** This call site uses destination/source order opposite to the BIOS wrapper. */
 AT("00002148") void Lz77UnCompVramSwapped(void *destination, const void *source)
@@ -32,7 +48,7 @@ AT("0006E52C") const u8 CalculateSaveCrc32Tail[2] = {0};
 
 AT("00005084") s32 RuntimeReadSignedByte(void)
 {
-    return (s8)sub_08004DA8();
+    return (s8)RuntimeGetLinkActivityState();
 }
 AT("00005084") const u8 RuntimeReadSignedByteTail[2] = {0};
 

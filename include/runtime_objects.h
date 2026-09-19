@@ -12,6 +12,12 @@ s32 RuntimeGetFieldE49(void);
 void RuntimeSetFieldE4A(s32 value);
 s32 RuntimeGetFieldE4A(void);
 void *RuntimeGetActorRecord(u32 actor,u32 part);
+void RuntimeActorPartSetFixed18And1C(u32 actor, u32 part, s32 first, s32 second);
+void RuntimeActorPartSetFixed20And24(u32 actor, u32 part, s32 first, s32 second);
+void RuntimeActorPartSetWords18And1C(u32 actor, u32 part, u32 first, u32 second);
+void RuntimeActorPartGetWords18And1C(u32 actor, u32 part, u32 *first, u32 *second);
+void RuntimeActorPartSetWords20And24(u32 actor, u32 part, u32 first, u32 second);
+void RuntimeActorPartGetWords20And24(u32 actor, u32 part, u32 *first, u32 *second);
 
 s32 RuntimeObjectGetField00(u32 group,u32 slot);
 s32 RuntimeObjectGetField01(u32 group,u32 slot);

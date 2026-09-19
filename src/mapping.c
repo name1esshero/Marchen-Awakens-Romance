@@ -174,6 +174,53 @@ struct GeneratedMapRuntimeRoom *GeneratedMapFindRuntimeRoom(s32 roomIndex)
 }
 AT("00070EEC") const u8 GeneratedMapFindRuntimeRoomTail[2] = {0, 0};
 
+/** Select one flat tile index whose attribute equals @p attribute.
+ *
+ * The generator supplies a ten-index stack buffer and expects the caller's
+ * attribute class to fit that capacity. It uses its own deterministic random
+ * stream to select one. Map dimensions are interpreted as signed values here,
+ * matching the original loop's signed bounds checks.
+ *
+ * @return A matching flat tile index, or -1 when the map has no match.
+ */
+AT("00070F20")
+s32 GeneratedMapChooseAttributeIndex(struct KmpViewport *view, u32 attribute)
+{
+    s32 matches[10];
+    s32 count;
+    s32 index;
+    s32 *output;
+    u16 *attributes;
+    const struct KmpHeader *map;
+    s32 result;
+
+    count = 0;
+    attributes = KmpAttributeAddress(view, 0, 0);
+    index = 0;
+    map = view->data;
+    if (count < (s32)map->widthTiles * (s32)map->heightTiles) {
+        output = matches;
+        do {
+            if (*attributes++ == attribute) {
+                *output++ = index;
+                count++;
+            }
+            index++;
+        } while (index < (s32)map->widthTiles * (s32)map->heightTiles);
+    }
+
+    if (count == 0)
+        goto no_match;
+    result = matches[MapGenerationRandom() % count];
+    goto done;
+
+no_match:
+    result = -1;
+done:
+    return result;
+}
+AT("00070F20") const u8 GeneratedMapChooseAttributeIndexTail[2] = {0, 0};
+
 /** @return The current cell's room record's +20 field. Meaning not yet
  * recovered. */
 AT("00070D60")
@@ -549,8 +596,8 @@ extern void sub_08016D28(void);
 extern void sub_08009F44(s32);
 extern void RuntimeActorSetField340(s32, s32);
 extern void *IwramGetPointer2860(s32);
+extern void IwramSetFlags0810(s32 mode, s32 enabled);
 extern void CpuFill(void *, u32, u32);
-extern void sub_08006ADC(s32, s32);
 extern u8 *GameStateGetRecord1190(u32);
 extern void RuntimeSetFieldE48(s32);
 extern void RuntimeSetFieldE4A(s32);
@@ -659,8 +706,8 @@ AT("000123F8") s32 ScriptNativeResetFieldScene(u32 count, const s32 *args,
     sub_08009F44(0);
     RuntimeActorSetField340(0, 0);
     CpuFill(IwramGetPointer2860(2), 2048, 0);
-    sub_08006ADC(2, 0);
-    sub_08006ADC(3, 0);
+    IwramSetFlags0810(2, 0);
+    IwramSetFlags0810(3, 0);
     GameStateGetRecord1190(2)[1] |= 4;
     GameStateGetRecord1190(3)[1] |= 4;
     return 1;
@@ -720,6 +767,12 @@ AT("000127B8") s32 ScriptNativeWriteMapValues(u32 count, const s32 *args,
 extern u8 *sub_08055F4C(s32 mode);
 extern void sub_08001EB4(void *dest, const void *src, u32 size);
 extern void BitSet(u8 *bits, u32 index, s32 enabled);
+extern void sub_080083E0(s32 first, s32 second);
+
+#define PMB_DECK_ENTRY_COUNT 20
+#define PMB_DECK_VALUES_OFFSET 14
+#define PMB_DECK_MAX_ENTRY 98
+#define GAME_STATE_DECK_FLAGS_OFFSET 0x26F8
 
 /** Select one of two adjacent game-state fields used by the deck system
  * (called with mode 1 and 2 from the deck-record initializer at 0x080083E0
@@ -764,15 +817,14 @@ AT("000127F8") s32 ScriptNativeDeckMake(u32 count, const s32 *args,
     case 22:
     {
         s16 values[20];
-        register s32 mode asm("r3") = args[0];
+        s32 mode = args[0];
         s32 i;
-        u32 j;
 
         for (i = 0; i < 20; i++)
             values[i] = args[i + 1];
         sub_08001EB4(sub_08055F4C((s16)mode) + 14, values, 40);
-        for (j = 0; j < count; j++)
-            BitSet(GAME_ROOT + 0x26F8, args[j], 1);
+        for (i = 0; (u32)i < count; i++)
+            BitSet(GAME_ROOT + 0x26F8, args[i], 1);
     }
     }
     return 1;
@@ -796,6 +848,53 @@ AT("000128C8") s32 ScriptNativeShuffleDeckCopy(u32 count, const s32 *args,
     case 22:
         sub_080087EC(args[0], args[1], args[2]);
     }
+    return 1;
+}
+
+/** PmbDeckMake: clear the selected twenty-entry deck, pack valid input
+ * entries at its front, and mark each accepted entry as owned. The accepted
+ * modes are shared with ScriptNativeDeckMake().
+ * @return Always 1. */
+AT("000129F4") s32 ScriptNativePmbDeckMake(u32 count, const s32 *args,
+                                            s32 *result)
+{
+    switch (args[0]) {
+    case 1:
+    case 3:
+    case 4:
+    case 6:
+    case 7:
+    case 8:
+    case 9:
+    case 22:
+    {
+        u8 *record = sub_08055F4C((s16)args[0]);
+        s32 i;
+        s32 outputIndex;
+        s16 zero = 0;
+        s16 *values;
+        u8 **gameState;
+
+        values = (s16 *)(record + PMB_DECK_VALUES_OFFSET);
+        for (i = PMB_DECK_ENTRY_COUNT - 1; i >= 0; i--)
+            values[i] = zero;
+
+        gameState = &gMapGenerationRoot;
+        outputIndex = 0;
+        for (i = 0; i < PMB_DECK_ENTRY_COUNT; i++) {
+            if ((s16)CountPmbDeckEntryCopies((s16)args[i + 1])
+                <= PMB_DECK_MAX_ENTRY) {
+                values[outputIndex] = (s16)args[i + 1];
+                BitSet(*gameState + GAME_STATE_DECK_FLAGS_OFFSET,
+                       values[outputIndex], 1);
+                outputIndex++;
+            }
+        }
+        sub_080083E0(0, 0);
+        break;
+    }
+    }
+
     return 1;
 }
 

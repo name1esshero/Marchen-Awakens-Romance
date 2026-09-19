@@ -24,6 +24,8 @@ struct NfpHeader
 };
 
 extern const struct NfpHeader gRomNfpArchiveHeader;
+extern const char gSystemMountName[];
+extern const char gMainMountName[];
 
 /* A directory entry: a 12-byte name and the payload's relative offset.
  * Lengths are implied by where the next payload begins, so a member's size
@@ -77,6 +79,9 @@ struct NfpEntry *NfpGetEntry(s32 handle, s32 index);
 void *NfpOpenByName(const char *archive, const char *member);
 
 s32 NfpFindArchive(const char *name);
+
+/** Return TRUE only for the main MAR filesystem mount name. */
+s32 IsMainMountName(const char *name);
 
 s32 NfpFindEntryIndex(s32 handle, const char *name);
 u32 NfpGetEntrySizeByName(const char *archive, const char *member);

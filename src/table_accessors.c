@@ -9,6 +9,18 @@
 struct _reent;
 extern struct _reent *_impure_ptr;
 
+/** Set secondary-runtime mode byte +0xE4B. Clearing the mode also clears the
+ * adjacent +0xE4C state byte. */
+AT("0000AFA0")
+void RuntimeSetModeE4B(s32 value)
+{
+    u8 **root = &gSecondaryRuntime;
+
+    if (value == 0)
+        (*root)[0xE4C] = value;
+    (*root)[0xE4B] = value;
+}
+
 /** Read the signed byte at secondary-runtime offset 0xE4B. Named by offset;
  * no caller has yet established what this field tracks.
  * @return The field's current value, sign-extended. */
@@ -26,20 +38,6 @@ s32 RuntimeGetSignedByteE4C(void)
 {
     return *(s8 *)(gSecondaryRuntime + 0xE4C);
 }
-
-#ifdef NONMATCHING
-AT("00056F68")
-void *ArmGetField78Pointer(s32 armId)
-{
-    return (void *)gArmDefinitions[(s16)armId].field78;
-}
-
-AT("00056F7C")
-u32 ArmGetField7C(s32 armId)
-{
-    return gArmDefinitions[(s16)armId].field7C;
-}
-#endif
 
 /** Look up a battle arena's layout table entry.
  * @param index Battle arena index.

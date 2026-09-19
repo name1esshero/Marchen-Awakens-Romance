@@ -18,7 +18,7 @@
 extern const u16 gBattleRuntimePresetA[BATTLE_PRESET_SIZE];
 extern const u16 gBattleRuntimePresetB[BATTLE_PRESET_SIZE];
 extern const s16 gFriendArmOwnershipBits[8];
-extern const u16 gBattlePartyDefaults[8];
+extern const s16 gBattlePartyDefaults[8];
 extern void *const gBattleActionHandlers[BATTLE_ACTION_HANDLER_COUNT];
 extern const char *const gTwoDigitResourceNames[TWO_DIGIT_RESOURCE_NAME_COUNT];
 extern const char *const gGeneratedEffectNames[GENERATED_EFFECT_NAME_COUNT];
@@ -26,5 +26,7 @@ extern const u16 gResourceSlotIndices[RESOURCE_SLOT_COUNT];
 extern const u16 gResourceSlotMasks[RESOURCE_SLOT_COUNT];
 extern const u32 gCharacterGrowthThresholds[CHARACTER_GROWTH_THRESHOLD_COUNT];
 extern void *const gEngineStartupHandlers[ENGINE_STARTUP_HANDLER_COUNT];
+
+s32 BattleActionUnavailable(s32 owner, s32 slot, void *resource, s32 *status);
 
 #endif

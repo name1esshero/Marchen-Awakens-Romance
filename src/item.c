@@ -2,7 +2,12 @@
  * as in the original callers. No range checks are added. */
 #include "item.h"
 
+#include "game_state.h"
 #include "rom_section.h"
+
+extern s32 GameStateGetEntry2768Total(s32 id);
+extern void sub_08056A8C(s32 id, s32 mode);
+extern u16 sub_080570BC(s32 id);
 
 /* Consumables use one-based IDs.  Their printable fields have the same
  * 0x50-byte stride as ItemDefinition, but the lookup bases point at a blank
@@ -11,6 +16,60 @@ extern const char gConsumableNoneDescription[];
 #define CONSUMABLE_NAME_BASE        ((const char *)&gConsumableNoneText)
 #define CONSUMABLE_DESCRIPTION_BASE gConsumableNoneDescription
 #define CONSUMABLE_RECORD_SIZE      0x50
+
+enum
+{
+    ARM_PURCHASE_MAX_COPIES = 98,
+    ARM_INVENTORY_MODE = 1,
+    CONSUMABLE_COST_OFFSET = 0x4C,
+    CONSUMABLE_ADD_FAILED = 0xFFFF
+};
+
+/**
+ * @brief Spend the shared resource counter to add an ARM or consumable.
+ * @param id Signed 16-bit ARM or consumable identifier.
+ * @param isConsumable Zero for an ARM; nonzero for a consumable.
+ * @return A ResourcePurchaseResult describing the attempted purchase.
+ */
+AT("0005427C")
+s32 TryPurchaseArmOrConsumable(s32 id, s32 isConsumable)
+{
+    s32 savedId;
+    s32 resourceId;
+
+    resourceId = (s16)id;
+    savedId = resourceId;
+    if ((s16)isConsumable == 0)
+    {
+        const struct ArmDefinition *definition = ItemGetDefinition(resourceId);
+
+        if (definition->field6C > GameStateGetResourceCounter())
+            return RESOURCE_PURCHASE_NOT_ENOUGH;
+        if ((s16)GameStateGetEntry2768Total(resourceId) <=
+            ARM_PURCHASE_MAX_COPIES)
+        {
+            GameStateAddResourceCounter(-definition->field6C);
+            sub_08056A8C(resourceId, ARM_INVENTORY_MODE);
+            return RESOURCE_PURCHASE_SUCCESS;
+        }
+    }
+    else
+    {
+        const u8 *entry =
+            (const u8 *)ConsumableGetResourceName(savedId);
+
+        if (*(const u32 *)(entry + CONSUMABLE_COST_OFFSET) >
+            GameStateGetResourceCounter())
+            return RESOURCE_PURCHASE_NOT_ENOUGH;
+        if (sub_080570BC(savedId) != CONSUMABLE_ADD_FAILED)
+        {
+            GameStateAddResourceCounter(
+                -*(const u32 *)(entry + CONSUMABLE_COST_OFFSET));
+            return RESOURCE_PURCHASE_SUCCESS;
+        }
+    }
+    return RESOURCE_PURCHASE_FULL;
+}
 
 /** Return the arm definition selected by a signed-16-bit ID. */
 AT("00056464")

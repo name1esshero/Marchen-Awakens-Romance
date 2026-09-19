@@ -22,5 +22,6 @@ struct FieldEventTaskData
 
 struct EngineTask *CreateFieldEventTask(s16 first, s16 second, s16 third,
     s16 fourth, s16 value, void *objectData, u32 *completion);
+void FieldActorUpdateForMode(void *actorState);
 
 #endif

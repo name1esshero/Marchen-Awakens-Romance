@@ -25,10 +25,19 @@ u32 KmpGetCompressedTileAllocationSize(const char *mapResource)
     return (*tiles >> 8) + 16;
 }
 
-#ifdef NONMATCHING
+/**
+ * @brief Load selected palette and tile members and configure a KMP viewport.
+ * @param name KMP member name in the main archive.
+ * @param tileDestination VRAM destination for the KCG tile data.
+ * @param slot Viewport and screen-buffer slot.
+ * @param plane Tilemap plane selected from the KMP header.
+ * @param paletteOffset Additional destination palette-bank offset.
+ * @param tileOffset Additional tile-index offset.
+ * @param flags Combination of KMP_LOAD_PALETTE and KMP_LOAD_TILES.
+ */
 AT("00003178")
 void KmpLoadResource(const char *name, void *tileDestination, s32 slot,
-                     volatile s32 plane,
+                     s32 plane,
                      s32 paletteOffset, s32 tileOffset, s32 flags)
 {
     const void *resource;
@@ -75,4 +84,3 @@ void KmpLoadResource(const char *name, void *tileDestination, s32 slot,
     *(u16 *)(slotBase + 0x3BD0) = paletteOffset;
     *(u16 *)(slotBase + 0x3BD2) = tileOffset;
 }
-#endif

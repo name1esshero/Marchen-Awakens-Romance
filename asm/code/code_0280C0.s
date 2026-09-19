@@ -9112,7 +9112,7 @@ _0802C122:
 	movs r5, #0
 	ldrsh r1, [r4, r5]
 	lsls r1, r1, #16
-	bl sub_08006DF0
+	bl GameStateSetField424C50
 	ldr r1, [r7, #64]
 	adds r0, r7, #0
 	bl sub_080285E4
@@ -9656,7 +9656,7 @@ _0802C558:
 	movs r2, #0
 	ldrsh r1, [r1, r2]
 	lsls r1, r1, #16
-	bl sub_08006DF0
+	bl GameStateSetField424C50
 	ldr r1, [r7, #64]
 	adds r0, r7, #0
 	bl sub_080285E4
@@ -11441,120 +11441,8 @@ _0802D068:
 
 @ 02D3A8..02D3C0 is decompiled as BattleObjectCreateGroup6Variant4(); see src/decompiled.json
 
-	.section .rom.0002D3C0, "ax"
+	.section .rom.0002D464, "ax"
 	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_0802D3C0
-sub_0802D3C0:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r9
-	mov r6, r8
-	push {r6, r7}
-	sub sp, #4
-	adds r5, r0, #0
-	adds r6, r1, #0
-	mov r9, r2
-	adds r4, r3, #0
-	ldr r0, [sp, #32]
-	ldr r1, [sp, #36]
-	lsls r0, r0, #16
-
-	.thumb_func
-	.thumb
-	.global sub_0802D3D8
-sub_0802D3D8:
-	asrs r7, r0, #16
-	lsls r1, r1, #16
-	asrs r1, r1, #16
-	mov r8, r1
-	ldr r0, _0802D410
-	lsls r1, r5, #5
-	ldr r0, [r0, #0]
-	adds r0, r0, r1
-	lsls r1, r6, #4
-	adds r0, r0, r1
-	ldr r1, _0802D414
-	movs r2, #150
-	lsls r2, r2, #1
-	str r2, [sp, #0]
-	movs r2, #0
-	.2byte 0xF04D
-	.4byte 0x1C01F9C1
-	cmp r1, #0
-	bne _0802D418
-	cmp r4, #0
-	beq _0802D40A
-	movs r0, #1
-	negs r0, r0
-	str r0, [r4, #0]
-	.global _0802D40A
-_0802D40A:
-	movs r0, #0
-	b _0802D456
-	.byte 0x00
-	.byte 0x00
-	.global _0802D410
-_0802D410:
-	.4byte 0x03004020  @ IWRAM+0x4020
-	.global _0802D414
-_0802D414:
-	.4byte 0x0802D465  @ ROM+0x2D465
-	.global _0802D418
-_0802D418:
-	movs r2, #144
-	lsls r2, r2, #1
-	adds r0, r1, r2
-	str r5, [r0, #0]
-	movs r4, #146
-	lsls r4, r4, #1
-	adds r0, r1, r4
-	str r6, [r0, #0]
-	adds r2, #36
-	adds r0, r1, r2
-
-	.thumb_func
-	.thumb
-	.global sub_0802D42C
-sub_0802D42C:
-	mov r4, r9
-	str r4, [r0, #0]
-	subs r2, #12
-	adds r0, r1, r2
-	strh r7, [r0, #0]
-	movs r4, #157
-	lsls r4, r4, #1
-	adds r0, r1, r4
-	mov r2, r8
-	strh r2, [r0, #0]
-	movs r3, #1
-	negs r3, r3
-	movs r2, #0
-	adds r4, #14
-	adds r0, r1, r4
-	.global _0802D44A
-_0802D44A:
-	str r3, [r0, #0]
-	subs r0, #4
-	subs r2, #1
-	cmp r2, #0
-	bge _0802D44A
-	adds r0, r1, #0
-	.global _0802D456
-_0802D456:
-	add sp, #4
-
-	.thumb_func
-	.thumb
-	.global sub_0802D458
-sub_0802D458:
-	pop {r3, r4}
-	mov r8, r3
-	mov r9, r4
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
 
 	.thumb_func
 	.thumb
@@ -12339,7 +12227,7 @@ _0802D87A:
 	movs r4, #0
 	ldrsh r1, [r1, r4]
 	lsls r1, r1, #16
-	bl sub_08006DF0
+	bl GameStateSetField424C50
 	movs r1, #128
 	lsls r1, r1, #1
 	adds r0, r7, r1
@@ -12826,7 +12714,7 @@ _0802DB62:
 	movs r2, #34
 	ldrsh r1, [r5, r2]
 	lsls r1, r1, #16
-	bl sub_08006DF0
+	bl GameStateSetField424C50
 	.global _0802DB72
 _0802DB72:
 	add sp, #36
@@ -13953,7 +13841,7 @@ _0802E30A:
 	movs r4, #0
 	ldrsh r1, [r1, r4]
 	lsls r1, r1, #16
-	bl sub_08006DF0
+	bl GameStateSetField424C50
 	movs r5, #128
 	lsls r5, r5, #2
 	adds r0, r7, r5
@@ -15352,7 +15240,7 @@ _0802ECB8:
 	movs r3, #0
 	ldrsh r1, [r1, r3]
 	lsls r1, r1, #16
-	bl sub_08006DF0
+	bl GameStateSetField424C50
 	mov r4, r10
 	ldr r1, [r4, #0]
 	adds r0, r7, #0
@@ -16235,7 +16123,7 @@ _0802F306:
 	movs r2, #0
 	ldrsh r1, [r1, r2]
 	lsls r1, r1, #16
-	bl sub_08006DF0
+	bl GameStateSetField424C50
 	mov r3, r8
 	ldr r1, [r3, #0]
 	adds r0, r7, #0
@@ -17613,7 +17501,7 @@ _0802FC38:
 	movs r3, #0
 	ldrsh r1, [r1, r3]
 	lsls r1, r1, #16
-	bl sub_08006DF0
+	bl GameStateSetField424C50
 	mov r4, r9
 	ldr r1, [r4, #0]
 	adds r0, r7, #0

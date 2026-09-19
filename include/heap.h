@@ -14,6 +14,12 @@ struct Heap {
     u32 size;
     struct HeapBlock *scanStart;
 };
+
+/* Offset from the IWRAM base to the object/archive heap handle.  Code which
+ * must preserve the original separate base and offset loads should materialize
+ * this value in a local before adding it to gIwramBase. */
+#define OBJECT_HEAP_ROOT_OFFSET 0x00003FB4
+
 #ifndef gDefaultHeap
 #define gDefaultHeap (*(struct Heap **)0x03006110)
 #endif
@@ -28,7 +34,7 @@ struct Heap {
  * object cleanup in src/object.c expresses these as the linker symbols
  * gIwramBase and gObjectHeapRootOffset. */
 #ifndef gHeapHandle
-#define gHeapHandle (*(struct Heap **)0x03003FB4)
+#define gHeapHandle (*(struct Heap **)(0x03000000 + OBJECT_HEAP_ROOT_OFFSET))
 #endif
 struct Heap *HeapInitDefault(void *memory, u32 size);
 struct Heap *HeapCreate(void *memory, u32 size);

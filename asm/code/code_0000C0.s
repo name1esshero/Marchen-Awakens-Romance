@@ -206,6 +206,8 @@ _08000232:
 	.4byte 0x1AFFFFF6
 	.4byte 0xE8BD00FF
 	.4byte 0xE12FFF1E
+	.global ApplyEightWordMaskArm
+ApplyEightWordMaskArm:
 	.4byte 0xE92D0005
 	.4byte 0xE5902000
 	.4byte 0xE0022001
@@ -3789,20 +3791,8 @@ sub_08002118:
 
 @ 002148..002158 is decompiled as Lz77UnCompVramSwapped(); see src/decompiled.json
 
-	.section .rom.00002158, "ax"
+	.section .rom.00002188, "ax"
 	.syntax unified
-	.4byte 0x1C04B510
-	.4byte 0xF0804906
-	.4byte 0x2800FB55
-	.4byte 0x4905D005
-	.4byte 0xF0801C20
-	.4byte 0x2800FB4F
-	.4byte 0x2000D006
-	.4byte 0x0000E005
-	.4byte 0x08086A48
-	.4byte 0x08086A50
-	.4byte 0xBC102001
-	.4byte 0x4708BC02
 	.4byte 0x4657B5F0
 	.4byte 0x4645464E
 	.4byte 0x4682B4E0
@@ -3989,7 +3979,7 @@ sub_080022CC:
 	bx r0
 	.global _08002344
 _08002344:
-	.4byte 0x080002CC  @ ROM+0x2CC
+	.4byte ApplyEightWordMaskArm
 	.global _08002348
 _08002348:
 	.4byte 0x08000290  @ ROM+0x290
@@ -4031,7 +4021,7 @@ _08002380:
 	beq _0800239E
 	lsls r0, r5, #5
 	adds r0, r6, r0
-	bl sub_080023B0
+	bl ApplyTileRemainderMask
 	b _0800239E
 	.global _08002394
 _08002394:
@@ -4053,33 +4043,11 @@ _0800239E:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_080023B0
-sub_080023B0:
-	push {lr}
-	adds r3, r0, #0
-	lsls r1, r1, #24
-	lsrs r0, r1, #24
-	cmp r0, #8
-	beq _080023CC
-	ldr r2, _080023D0
-	ldr r1, _080023D4
-	lsls r0, r0, #2
-	adds r0, r0, r1
-	ldr r1, [r0, #0]
-	adds r0, r3, #0
-	bl sub_08080BC8
-	.global _080023CC
-_080023CC:
-	pop {r0}
-	bx r0
-	.global _080023D0
-_080023D0:
-	.4byte 0x080002CC  @ ROM+0x2CC
-	.global _080023D4
-_080023D4:
-	.4byte 0x081ACB58  @ ROM+0x1ACB58
+@ 0023B0..0023D8 is decompiled as ApplyTileRemainderMask();
+@ see src/decompiled.json
+
+	.section .rom.000023D8, "ax"
+	.syntax unified
 	.4byte 0x1C04B510
 	.4byte 0x280018A0
 	.4byte 0x1AA0DB08
@@ -4782,30 +4750,10 @@ _080028A8:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_080028C8
-sub_080028C8:
-	push {lr}
-	adds r1, r0, #0
-	ldr r0, [r1, #0]
-	cmp r0, #0
-	beq _080028E8
-	movs r0, #8
-	ldrsb r0, [r1, r0]
-	cmp r0, #0
-	bne _080028E2
-	adds r0, r1, #0
-	bl sub_08003358
-	b _080028E8
-	.global _080028E2
-_080028E2:
-	adds r0, r1, #0
-	bl sub_08002DA8
-	.global _080028E8
-_080028E8:
-	pop {r0}
-	bx r0
+@ 0028C8..0028EC is decompiled as KmpDrawViewport(); see src/decompiled.json
+
+	.section .rom.000028EC, "ax"
+	.syntax unified
 	.4byte 0x4657B5F0
 	.4byte 0x4645464E
 	.4byte 0xB08EB4E0
@@ -6016,149 +5964,8 @@ _080030EC:
 
 @ 003160..003178 is decompiled as KmpAttributeAddress(); see src/decompiled.json
 
-	.section .rom.00003178, "ax"
+	.section .rom.00003280, "ax"
 	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global KmpLoadResource
-KmpLoadResource:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r10
-	mov r6, r9
-	mov r5, r8
-	push {r5, r6, r7}
-	sub sp, #12
-	adds r4, r0, #0
-	mov r10, r1
-	mov r8, r2
-	str r3, [sp, #8]
-	ldr r6, [sp, #52]
-	ldr r0, _08003208
-	mov r9, r0
-	adds r1, r4, #0
-	.2byte 0xF077
-	.byte 0x52
-	.byte 0xFD
-	adds r7, r0, #0
-	movs r0, #1
-	ands r0, r6
-	cmp r0, #0
-	beq _080031D2
-	adds r1, r7, #0
-	adds r1, #92
-	mov r0, r9
-	.2byte 0xF077
-	.byte 0x48
-	.byte 0xFD
-	adds r5, r0, #0
-	movs r0, #0
-	movs r1, #0
-	.2byte 0xF07D
-	.4byte 0x1C39F99B
-	adds r1, #176
-	ldr r1, [r1, #0]
-	ldr r2, [sp, #44]
-	adds r1, r1, r2
-	lsls r1, r1, #5
-	adds r0, r0, r1
-	adds r1, r7, #0
-	adds r1, #180
-	ldr r2, [r1, #0]
-	lsls r2, r2, #5
-	adds r1, r5, #0
-	bl CpuCopy
-_080031D2:
-	movs r0, #2
-	ands r6, r0
-	cmp r6, #0
-	beq _08003214
-	adds r4, r7, #0
-	adds r4, #28
-	mov r0, r9
-	adds r1, r4, #0
-	.2byte 0xF077
-	.4byte 0x1C05FD2B
-	mov r0, r9
-	adds r1, r4, #0
-	.2byte 0xF077
-	.byte 0xAE
-	.byte 0xFD
-	adds r2, r0, #0
-	adds r0, r7, #0
-	adds r0, #184
-	movs r1, #0
-	ldrsh r0, [r0, r1]
-	cmp r0, #0
-	beq _0800320C
-	mov r0, r10
-	adds r1, r5, #0
-	.2byte 0xF7FE
-	.4byte 0xE005FFA1
-_08003208:
-	.4byte 0x08086A54
-_0800320C:
-	mov r0, r10
-	adds r1, r5, #0
-	bl CpuCopy
-_08003214:
-	mov r2, r8
-	lsls r4, r2, #6
-	subs r4, r4, r2
-	lsls r4, r4, #2
-	ldr r6, _0800326C
-	adds r0, r4, r6
-	lsls r5, r2, #11
-	ldr r2, _08003270
-	adds r1, r6, r2
-	adds r5, r5, r1
-	ldr r1, [sp, #8]
-	str r1, [sp, #0]
-	movs r1, #0
-	str r1, [sp, #4]
-	adds r1, r7, #0
-	adds r2, r5, #0
-	mov r3, r8
-	.2byte 0xF7FF
-	.4byte 0x4640F9E5
-	adds r1, r5, #0
-	bl IwramSetPointer2860
-	ldr r2, _08003274
-	adds r6, r6, r2
-	adds r4, r4, r6
-	ldr r1, _08003278
-	adds r0, r4, r1
-	mov r2, sp
-	ldrh r2, [r2, #44]
-	strh r2, [r0, #0]
-	ldr r0, _0800327C
-	adds r4, r4, r0
-	ldr r0, [sp, #48]
-	strh r0, [r4, #0]
-	add sp, #12
-	pop {r3, r4, r5}
-	mov r8, r3
-	mov r9, r4
-	mov r10, r5
-	pop {r4, r5, r6, r7}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-_0800326C:
-	.4byte 0x03003BC4
-_08003270:
-	.4byte 0xFFFFCC9C
-_08003274:
-	.4byte 0xFFFFC43C
-_08003278:
-	.4byte 0x00003BD0
-_0800327C:
-	.4byte 0x00003BD2
-
-@ 003178..003280 has a readable near-matching C reconstruction in
-@ src/kmp_loader.c; the original assembly remains until its final register
-@ allocation difference is resolved.
 
 @ 003280..003294 is decompiled as KmpSetClip(); see src/decompiled.json
 
@@ -6674,41 +6481,15 @@ _080036E6:
 
 	.section .rom.0000382C, "ax"
 	.syntax unified
-	.4byte 0x464FB5F0
-	.4byte 0xB4C04646
-	.4byte 0x4688B081
-	.4byte 0x46991C17
-	.4byte 0x04009B09
-	.4byte 0x48061406
-	.4byte 0x22144906
-	.4byte 0x22039200
-	.4byte 0xFF96F076
-	.4byte 0x2D001C05
-	.4byte 0x2000D106
-	.4byte 0x0000E01D
-	.4byte 0x030032C4
-	.4byte 0x080038A5
-	.4byte 0xD1002E00
-	.4byte 0x1C2C2601
-	.4byte 0x842E3420
-	.4byte 0x464060E7
-	.4byte 0x98086120
-	.4byte 0x46490100
-	.4byte 0x80604308
-	.4byte 0x04402080
-	.4byte 0x20206060
-	.4byte 0x20FF5E29
-	.4byte 0xF07D0600
-	.4byte 0x60A0F9B5
-	.4byte 0xB0011C28
-	.4byte 0x4698BC18
-	.4byte 0xBCF046A1
-	.4byte 0x4708BC02
+@ 00382C..0038A4 is decompiled as CreatePaletteInterpolationTask();
+@ see src/decompiled.json
 
+	.section .rom.000038A4, "ax"
+	.syntax unified
 	.thumb_func
 	.thumb
-	.global sub_080038A4
-sub_080038A4:
+	.global PaletteInterpolationTask
+PaletteInterpolationTask:
 	push {r4, r5, lr}
 	sub sp, #4
 	adds r5, r0, #0
@@ -8030,71 +7811,16 @@ _080041D0:
 	pop {r4, r5, r6, r7}
 	pop {r0}
 	bx r0
-	.4byte 0x4657B5F0
-	.4byte 0x4645464E
-	.4byte 0xB081B4E0
-	.4byte 0x46914688
-	.4byte 0x9F09469A
-	.4byte 0x04009B0A
-	.4byte 0x48061404
-	.4byte 0x22244906
-	.4byte 0x22039200
-	.4byte 0xFABAF076
-	.4byte 0x2E001C06
-	.4byte 0x2000D106
-	.4byte 0x0000E021
-	.4byte 0x030032C4
-	.4byte 0x08004269
-	.byte 0x00
-	.byte 0x2C
 
+@ 0041E0..004268 is decompiled as CreatePaletteSequenceTask();
+@ see src/decompiled.json
+
+	.section .rom.00004268, "ax"
+	.syntax unified
 	.thumb_func
 	.thumb
-	.global sub_0800421E
-sub_0800421E:
-	bne _08004222
-	movs r4, #1
-	.global _08004222
-_08004222:
-	adds r5, r6, #0
-	adds r5, #32
-	strh r4, [r6, #32]
-	strh r7, [r5, #16]
-	lsls r4, r7, #1
-	movs r0, #0
-	adds r1, r4, #0
-	.2byte 0xF076
-	.byte 0x5C
-	.byte 0xF8
-	str r0, [r5, #4]
-	mov r1, r8
-	adds r2, r4, #0
-	bl CpuCopy
-	movs r0, #0
-	adds r1, r4, #0
-	.2byte 0xF076
-	.4byte 0x60A8F853
-	mov r1, r9
-	adds r2, r4, #0
-	bl CpuCopy
-	mov r0, r10
-	str r0, [r5, #12]
-	adds r0, r6, #0
-	add sp, #4
-	pop {r3, r4, r5}
-	mov r8, r3
-	mov r9, r4
-	mov r10, r5
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_08004268
-sub_08004268:
+	.global PaletteSequenceTask
+PaletteSequenceTask:
 	push {r4, r5, r6, r7, lr}
 	sub sp, #8
 	adds r6, r0, #0
@@ -9822,72 +9548,7 @@ sub_08004D70:
 	.section .rom.00004DA8, "ax"
 	.syntax unified
 
-	.thumb_func
-	.thumb
-	.global sub_08004DA8
-sub_08004DA8:
-	push {r4, r5, lr}
-	ldr r5, _08004DF4
-	ldr r0, [r5, #0]
-	movs r4, #152
-	lsls r4, r4, #1
-	adds r0, r0, r4
-	ldr r0, [r0, #0]
-	movs r1, #192
-	lsls r1, r1, #1
-	ands r0, r1
-
-	.thumb_func
-	.thumb
-	.global sub_08004DBC
-sub_08004DBC:
-	cmp r0, #0
-	bne _08004DCA
-	.2byte 0xF7FF
-	.byte 0x7E
-	.byte 0xFF
-	lsls r0, r0, #24
-	cmp r0, #0
-	beq _08004DFC
-	.global _08004DCA
-_08004DCA:
-	ldr r0, [r5, #0]
-	adds r0, r0, r4
-	ldr r0, [r0, #0]
-	movs r1, #14
-	ands r0, r1
-	cmp r0, #0
-	beq _08004DF8
-	.2byte 0xF7FF
-	.byte 0x72
-	.byte 0xFF
-	ldr r2, [r5, #0]
-	adds r2, r2, r4
-	lsls r0, r0, #24
-	lsrs r0, r0, #24
-	movs r1, #1
-	lsls r1, r0
-	ldr r0, [r2, #0]
-	ands r0, r1
-	cmp r0, #0
-	beq _08004DF8
-	movs r0, #2
-	b _08004DFE
-	.global _08004DF4
-_08004DF4:
-	.4byte 0x03004014  @ IWRAM+0x4014
-	.global _08004DF8
-_08004DF8:
-	movs r0, #1
-	b _08004DFE
-	.global _08004DFC
-_08004DFC:
-	movs r0, #0
-	.global _08004DFE
-_08004DFE:
-	pop {r4, r5}
-	pop {r1}
-	bx r1
+@ 004DA8..004E04 is decompiled as RuntimeGetLinkActivityState(); see src/decompiled.json
 
 @ 004E04..004E24 is decompiled as RuntimeGetOptionalField130(); see src/decompiled.json
 
@@ -9897,29 +9558,7 @@ _08004DFE:
 
 @ 004E6C..004E88 is decompiled as RuntimeReleaseField17C(); see src/decompiled.json
 
-	.section .rom.00004E88, "ax"
-	.syntax unified
-	.4byte 0x1C05B570
-	.4byte 0x1C261C0C
-	.4byte 0x783036FA
-	.4byte 0x700831FB
-	.4byte 0x30017830
-	.4byte 0x20007030
-	.4byte 0x210A5630
-	.4byte 0xFEF6F07B
-	.4byte 0x21007030
-	.4byte 0x00485671
-	.4byte 0x00C01840
-	.4byte 0x1C281824
-	.4byte 0xC402C802
-	.4byte 0xC4026869
-	.4byte 0xC8023004
-	.4byte 0xC802C402
-	.4byte 0xC802C402
-	.4byte 0x6800C402
-	.4byte 0x20016020
-	.4byte 0xBC02BC70
-	.4byte 0x00004708
+@ 004E88..004EDC is decompiled as RuntimeHistoryPush(); see src/decompiled.json
 
 @ 004EDC..004EF8 is decompiled as RuntimeStart(); see src/decompiled.json
 
@@ -11017,112 +10656,12 @@ sub_08005C38:
 
 @ 005C74..005C88 is decompiled as ScriptNativeGetSpriteRuntime(); see src/decompiled.json
 
-	.section .rom.00005C88, "ax"
+@ 005C88..005CDC is decompiled as ScriptNativeSetRuntimeCoordinate(); see src/decompiled.json
+
+@ 005CDC..005D24 is decompiled as ScriptNativeGetRuntimeCoordinate(); see src/decompiled.json
+
+	.section .rom.00005D24, "ax"
 	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_08005C88
-sub_08005C88:
-	push {r4, r5, r6, lr}
-	sub sp, #8
-	adds r6, r1, #0
-	mov r4, sp
-	adds r4, #2
-	add r5, sp, #4
-	mov r0, sp
-	adds r1, r4, #0
-	adds r2, r5, #0
-	bl sub_0808053C
-	ldr r0, [r6, #0]
-	cmp r0, #1
-	beq _08005CB6
-	cmp r0, #1
-	bcc _08005CAE
-	cmp r0, #2
-	beq _08005CBC
-	b _08005CC0
-	.global _08005CAE
-_08005CAE:
-	mov r1, sp
-	ldr r0, [r6, #4]
-	strh r0, [r1, #0]
-	b _08005CC0
-	.global _08005CB6
-_08005CB6:
-	ldr r0, [r6, #4]
-	strh r0, [r4, #0]
-	b _08005CC0
-	.global _08005CBC
-_08005CBC:
-	ldr r0, [r6, #4]
-	strh r0, [r5, #0]
-	.global _08005CC0
-_08005CC0:
-	mov r0, sp
-	movs r1, #0
-	ldrsh r0, [r0, r1]
-	movs r2, #0
-	ldrsh r1, [r4, r2]
-	movs r3, #0
-	ldrsh r2, [r5, r3]
-	bl SpriteRuntimeSetFields8C4
-	movs r0, #1
-	add sp, #8
-	pop {r4, r5, r6}
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_08005CDC
-sub_08005CDC:
-	push {r4, r5, r6, r7, lr}
-	sub sp, #8
-	adds r4, r1, #0
-	adds r5, r2, #0
-	mov r6, sp
-	adds r6, #2
-	add r7, sp, #4
-	mov r0, sp
-	adds r1, r6, #0
-	adds r2, r7, #0
-	bl sub_0808053C
-	ldr r4, [r4, #0]
-	cmp r4, #1
-	beq _08005D0C
-	cmp r4, #1
-	bcc _08005D04
-	cmp r4, #2
-	beq _08005D12
-	b _08005D18
-	.global _08005D04
-_08005D04:
-	mov r0, sp
-	movs r1, #0
-	ldrsh r0, [r0, r1]
-	b _08005D16
-	.global _08005D0C
-_08005D0C:
-	movs r1, #0
-	ldrsh r0, [r6, r1]
-	b _08005D16
-	.global _08005D12
-_08005D12:
-	movs r1, #0
-	ldrsh r0, [r7, r1]
-	.global _08005D16
-_08005D16:
-	str r0, [r5, #0]
-	.global _08005D18
-_08005D18:
-	movs r0, #1
-	add sp, #8
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
 
 @ 005D24..005D50 is decompiled as ScriptNativeSelectSceneValue(); see src/decompiled.json
 
@@ -11156,95 +10695,7 @@ _08005D18:
 
 @ 005F54..005F7C is decompiled as StartIndexedSong(); see src/decompiled.json
 
-@ Source-level form: src/nonmatching/sound_player_select.c.  The prior
-@ matching C used an empty asm scheduling fence.  Keep the independently
-@ verified Thumb implementation here until ordinary C expresses the original
-@ table-load lifetime without a compiler constraint.
-	.section .rom.00005F7C, "ax"
-	.thumb
-	.thumb_func
-	.global StartSongOnFreePlayer
-StartSongOnFreePlayer:
-	push {r4, r5, lr}
-	sub sp, #40
-	ldr r0, .LStartSongPlayer0
-	str r0, [sp, #0]
-	ldr r0, .LStartSongPlayer1
-	str r0, [sp, #4]
-	ldr r0, .LStartSongPlayer2
-	str r0, [sp, #8]
-	ldr r0, .LStartSongPlayer3
-	str r0, [sp, #12]
-	ldr r0, .LStartSongPlayer4
-	str r0, [sp, #16]
-	ldr r0, .LStartSongPlayer5
-	str r0, [sp, #20]
-	ldr r0, .LStartSongPlayer6
-	str r0, [sp, #24]
-	ldr r0, .LStartSongPlayer7
-	str r0, [sp, #28]
-	ldr r0, .LStartSongPlayer8
-	str r0, [sp, #32]
-	movs r4, #0
-	ldr r5, .LStartSongPlayerTable
-	ldr r0, .LStartSongTable
-	ldr r1, .LStartSongOrder
-	lsls r2, r2, #3
-	adds r2, r2, r0
-.LStartSongLoop:
-	movs r0, #0
-	ldrsh r3, [r1, r0]
-	lsls r0, r3, #2
-	add r0, sp
-	ldr r0, [r0, #0]
-	ldr r0, [r0, #4]
-	cmp r0, #0
-	bge .LStartSongNext
-	lsls r0, r3, #1
-	adds r0, r0, r3
-	lsls r0, r0, #2
-	adds r0, r0, r5
-	ldr r0, [r0, #0]
-	ldr r1, [r2, #0]
-	bl SoundPlayerStart
-	adds r0, r4, #0
-	b .LStartSongDone
-.LStartSongPlayer0:
-	.4byte gSoundPlayer0
-.LStartSongPlayer1:
-	.4byte gSoundPlayer1
-.LStartSongPlayer2:
-	.4byte gSoundPlayer2
-.LStartSongPlayer3:
-	.4byte gSoundPlayer3
-.LStartSongPlayer4:
-	.4byte gSoundPlayer4
-.LStartSongPlayer5:
-	.4byte gSoundPlayer5
-.LStartSongPlayer6:
-	.4byte gSoundPlayer6
-.LStartSongPlayer7:
-	.4byte gSoundPlayer7
-.LStartSongPlayer8:
-	.4byte gSoundPlayer8
-.LStartSongPlayerTable:
-	.4byte gSoundPlayerTable
-.LStartSongTable:
-	.4byte gSongTable
-.LStartSongOrder:
-	.4byte gDynamicSoundPlayerOrder
-.LStartSongNext:
-	adds r1, #2
-	adds r4, #1
-	cmp r4, #5
-	ble .LStartSongLoop
-	movs r0, #1
-	negs r0, r0
-.LStartSongDone:
-	add sp, #40
-	pop {r4, r5}
-	pop {r1}
-	bx r1
+@ 005F7C..006018 is decompiled as StartSongOnFreePlayer(); see src/decompiled.json
 
 @ 006018..006034 is decompiled as StopSoundPlayer(); see src/decompiled.json
 
@@ -11317,16 +10768,16 @@ _080060A8:
 sub_080060B0:
 	movs r0, #0
 	movs r1, #0
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #1
 	movs r1, #0
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #2
 	movs r1, #0
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #3
 	movs r1, #0
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	b _08006116
 	.global _080060D2
 _080060D2:
@@ -11361,7 +10812,7 @@ _080060F4:
 	ldrsh r0, [r0, r1]
 	adds r1, r4, #0
 	adds r1, #104
-	bl sub_080061F0
+	bl CreateSceneModeTask
 	movs r0, #129
 	lsls r0, r0, #5
 	b _08006118
@@ -11573,46 +11024,10 @@ _080061E8:
 _080061EC:
 	.4byte 0x00003CD4
 
-	.thumb_func
-	.thumb
-	.global sub_080061F0
-sub_080061F0:
-	push {r4, lr}
-	sub sp, #4
-	adds r3, r1, #0
-	lsls r0, r0, #16
-	asrs r4, r0, #16
-	ldr r0, _08006214
-	ldr r1, _08006218
-	movs r2, #112
-	str r2, [sp, #0]
-	movs r2, #0
-	.2byte 0xF074
-	.byte 0xBA
-	.byte 0xFA
-	cmp r0, #0
-	beq _0800621C
-	adds r1, r0, #0
-	adds r1, #142
-	strh r4, [r1, #0]
-	b _0800621E
-	.global _08006214
-_08006214:
-	.4byte 0x030032C4  @ IWRAM+0x32C4
-	.global _08006218
-_08006218:
-	.4byte 0x08006229  @ ROM+0x6229
-	.global _0800621C
-_0800621C:
-	movs r0, #0
-	.global _0800621E
-_0800621E:
-	add sp, #4
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 0061F0..006228 is decompiled as CreateSceneModeTask(); see src/decompiled.json
+
+	.section .rom.00006228, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -11934,10 +11349,10 @@ _080063A4:
 	bl CpuFill
 	movs r0, #2
 	movs r1, #0
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #3
 	movs r1, #0
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #2
 	.2byte 0xF008
 	.byte 0x52
@@ -12128,10 +11543,10 @@ _08006508:
 	bl CpuFill
 	movs r0, #2
 	movs r1, #0
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #3
 	movs r1, #0
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #2
 	.2byte 0xF008
 	.byte 0x9A
@@ -12412,30 +11827,7 @@ _08006758:
 _0800675C:
 	.4byte 0x081ACC90  @ ROM+0x1ACC90
 
-	.thumb_func
-	.thumb
-	.global sub_08006760
-sub_08006760:
-	push {lr}
-	adds r3, r0, #0
-	adds r2, r1, #0
-	ldr r0, _0800677C
-	ldr r1, _08006780
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	adds r0, #172
-	adds r1, r3, #0
-	.2byte 0xF073
-	.4byte 0xBC01FD0D
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _0800677C
-_0800677C:
-	.4byte 0x03000000  @ IWRAM
-	.global _08006780
-_08006780:
-	.4byte 0x00003FDC
+@ 006760..006784 is decompiled as GameStateSetFlagsAC(); see src/decompiled.json
 
 @ 006784..0067A4 is decompiled as GameStateTestFlagsAC(); see src/decompiled.json
 
@@ -12443,118 +11835,17 @@ _08006780:
 
 @ 0067C0..0067DC is decompiled as GameStateGetPointer2C(); see src/decompiled.json
 
-	.section .rom.000067DC, "ax"
-	.syntax unified
+@ 0067DC..00680C is decompiled as GameStateInitializeAttributeFlags();
+@ see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080067DC
-sub_080067DC:
-	push {lr}
-	ldr r0, _08006800
-	ldr r1, _08006804
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	movs r1, #150
-	lsls r1, r1, #1
-	adds r0, r0, r1
-	ldr r1, _08006808
-	movs r2, #1
-	negs r2, r2
-	bl CpuFill
-	movs r0, #0
-	.2byte 0xF000
-	.byte 0x4E
-	.byte 0xF8
-	pop {r0}
-	bx r0
-	.global _08006800
-_08006800:
-	.4byte 0x03000000  @ IWRAM
-	.global _08006804
-_08006804:
-	.4byte 0x00003FDC
-	.global _08006808
-_08006808:
-	.4byte 0x000004E2
+@ 00680C..006834 is decompiled as GameStateSetAttributeFlag();
+@ see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0800680C
-sub_0800680C:
-	push {lr}
-	adds r3, r0, #0
-	adds r2, r1, #0
-	ldr r0, _0800682C
-	ldr r1, _08006830
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	movs r1, #150
-	lsls r1, r1, #1
-	adds r0, r0, r1
-	adds r1, r3, #0
-	.2byte 0xF073
-	.4byte 0xBC01FCB5
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _0800682C
-_0800682C:
-	.4byte 0x03000000  @ IWRAM
-	.global _08006830
-_08006830:
-	.4byte 0x00003FDC
+@ 006834..006858 is decompiled as GameStateTestAttributeFlag();
+@ see src/decompiled.json
 
-@ 006834..006858 is decompiled as GameStateTestFlags12C(); see src/decompiled.json
-
-	.section .rom.00006858, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_08006858
-sub_08006858:
-	push {r4, r5, r6, r7, lr}
-	adds r3, r0, #0
-	adds r5, r1, #0
-	cmp r2, #0
-	beq _08006864
-	movs r2, #1
-	.global _08006864
-_08006864:
-	adds r7, r2, #0
-	ldr r0, _08006890
-	ldr r1, _08006894
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	movs r1, #150
-	lsls r1, r1, #1
-	adds r6, r0, r1
-	adds r4, r3, #0
-	cmp r4, r5
-	bgt _0800688A
-	.global _0800687A
-_0800687A:
-	adds r0, r6, #0
-	adds r1, r4, #0
-	adds r2, r7, #0
-	.2byte 0xF073
-	.byte 0x86
-	.byte 0xFC
-	adds r4, #1
-	cmp r4, r5
-	ble _0800687A
-	.global _0800688A
-_0800688A:
-	pop {r4, r5, r6, r7}
-	pop {r0}
-	bx r0
-	.global _08006890
-_08006890:
-	.4byte 0x03000000  @ IWRAM
-	.global _08006894
-_08006894:
-	.4byte 0x00003FDC
+@ 006858..006898 is decompiled as GameStateSetAttributeFlagRange();
+@ see src/decompiled.json
 
 @ 006898..0068B4 is decompiled as GameStateSetField60E(); see src/decompiled.json
 
@@ -12702,183 +11993,7 @@ _080069F4:
 
 @ 006AC0..006ADC is decompiled as GameStateSetField12EE(); see src/decompiled.json
 
-	.section .rom.00006ADC, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_08006ADC
-sub_08006ADC:
-	push {lr}
-	cmp r1, #0
-	beq _08006B5C
-	cmp r0, #1
-	beq _08006B14
-	cmp r0, #1
-	bgt _08006AF0
-	cmp r0, #0
-	beq _08006AFA
-	b _08006BCC
-	.global _08006AF0
-_08006AF0:
-	cmp r0, #2
-	beq _08006B2C
-	cmp r0, #3
-	beq _08006B44
-	b _08006BCC
-	.global _08006AFA
-_08006AFA:
-	ldr r0, _08006B10
-	movs r1, #129
-	lsls r1, r1, #4
-	adds r0, r0, r1
-	ldrh r2, [r0, #0]
-	movs r3, #128
-	lsls r3, r3, #1
-	adds r1, r3, #0
-	orrs r1, r2
-	b _08006BCA
-	.byte 0x00
-	.byte 0x00
-	.global _08006B10
-_08006B10:
-	.4byte 0x03000000  @ IWRAM
-	.global _08006B14
-_08006B14:
-	ldr r0, _08006B28
-	movs r1, #129
-	lsls r1, r1, #4
-	adds r0, r0, r1
-	ldrh r2, [r0, #0]
-	movs r3, #128
-	lsls r3, r3, #2
-	adds r1, r3, #0
-	orrs r1, r2
-	b _08006BCA
-	.global _08006B28
-_08006B28:
-	.4byte 0x03000000  @ IWRAM
-	.global _08006B2C
-_08006B2C:
-	ldr r0, _08006B40
-	movs r1, #129
-	lsls r1, r1, #4
-	adds r0, r0, r1
-	ldrh r2, [r0, #0]
-	movs r3, #128
-	lsls r3, r3, #3
-	adds r1, r3, #0
-	orrs r1, r2
-	b _08006BCA
-	.global _08006B40
-_08006B40:
-	.4byte 0x03000000  @ IWRAM
-	.global _08006B44
-_08006B44:
-	ldr r0, _08006B58
-	movs r1, #129
-	lsls r1, r1, #4
-	adds r0, r0, r1
-	ldrh r2, [r0, #0]
-	movs r3, #128
-	lsls r3, r3, #4
-	adds r1, r3, #0
-	orrs r1, r2
-	b _08006BCA
-	.global _08006B58
-_08006B58:
-	.4byte 0x03000000  @ IWRAM
-	.global _08006B5C
-_08006B5C:
-	cmp r0, #1
-	beq _08006B8C
-	cmp r0, #1
-	bgt _08006B6A
-	cmp r0, #0
-	beq _08006B74
-	b _08006BCC
-	.global _08006B6A
-_08006B6A:
-	cmp r0, #2
-	beq _08006BA4
-	cmp r0, #3
-	beq _08006BBC
-	b _08006BCC
-	.global _08006B74
-_08006B74:
-	ldr r0, _08006B84
-	movs r1, #129
-	lsls r1, r1, #4
-	adds r0, r0, r1
-	ldrh r2, [r0, #0]
-	ldr r1, _08006B88
-	b _08006BC8
-	.byte 0x00
-	.byte 0x00
-	.global _08006B84
-_08006B84:
-	.4byte 0x03000000  @ IWRAM
-	.global _08006B88
-_08006B88:
-	.4byte 0x0000FEFF
-	.global _08006B8C
-_08006B8C:
-	ldr r0, _08006B9C
-	movs r3, #129
-	lsls r3, r3, #4
-	adds r0, r0, r3
-	ldrh r2, [r0, #0]
-	ldr r1, _08006BA0
-	b _08006BC8
-	.byte 0x00
-	.byte 0x00
-	.global _08006B9C
-_08006B9C:
-	.4byte 0x03000000  @ IWRAM
-	.global _08006BA0
-_08006BA0:
-	.4byte 0x0000FDFF
-	.global _08006BA4
-_08006BA4:
-	ldr r0, _08006BB4
-	movs r1, #129
-	lsls r1, r1, #4
-	adds r0, r0, r1
-	ldrh r2, [r0, #0]
-	ldr r1, _08006BB8
-	b _08006BC8
-	.byte 0x00
-	.byte 0x00
-	.global _08006BB4
-_08006BB4:
-	.4byte 0x03000000  @ IWRAM
-	.global _08006BB8
-_08006BB8:
-	.4byte 0x0000FBFF
-	.global _08006BBC
-_08006BBC:
-	ldr r0, _08006BD0
-	movs r3, #129
-	lsls r3, r3, #4
-	adds r0, r0, r3
-	ldrh r2, [r0, #0]
-	ldr r1, _08006BD4
-	.global _08006BC8
-_08006BC8:
-	ands r1, r2
-	.global _08006BCA
-_08006BCA:
-	strh r1, [r0, #0]
-	.global _08006BCC
-_08006BCC:
-	pop {r0}
-	bx r0
-	.global _08006BD0
-_08006BD0:
-	.4byte 0x03000000  @ IWRAM
-	.global _08006BD4
-_08006BD4:
-	.4byte 0x0000F7FF
+@ 006ADC..006BD8 is decompiled as IwramSetFlags0810(); see src/decompiled.json
 
 @ 006BD8..006BE8 is decompiled as IwramGetField0810(); see src/decompiled.json
 
@@ -12924,30 +12039,8 @@ sub_08006BE8:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_08006C2C
-sub_08006C2C:
-	push {r4, lr}
-	lsls r1, r1, #16
-	asrs r1, r1, #16
-	lsls r2, r2, #16
-	asrs r2, r2, #16
-	ldrh r4, [r3, #0]
-	adds r4, r1, r4
-	strh r4, [r0, #0]
-	ldrh r4, [r3, #4]
-	adds r1, r1, r4
-	strh r1, [r0, #4]
-	ldrh r1, [r3, #2]
-	adds r1, r2, r1
-	strh r1, [r0, #2]
-	ldrh r1, [r3, #6]
-	adds r2, r2, r1
-	strh r2, [r0, #6]
-	pop {r4}
-	pop {r0}
-	bx r0
+	@ 00006C2C..00006C54 is decompiled as HitBoundsTranslate();
+	@ see src/decompiled.json.
 
 @ 006C54..006C70 is decompiled as GameStateGetField4240(); see src/decompiled.json
 
@@ -12977,42 +12070,7 @@ sub_08006C2C:
 
 @ 006DD4..006DF0 is decompiled as GameStateSetField4245(); see src/decompiled.json
 
-	.section .rom.00006DF0, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_08006DF0
-sub_08006DF0:
-	push {r4, lr}
-	ldr r3, _08006E10
-	ldr r2, _08006E14
-	adds r3, r3, r2
-	ldr r2, [r3, #0]
-	ldr r4, _08006E18
-	adds r2, r2, r4
-	str r0, [r2, #0]
-	ldr r0, [r3, #0]
-	ldr r2, _08006E1C
-	adds r0, r0, r2
-	str r1, [r0, #0]
-	pop {r4}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _08006E10
-_08006E10:
-	.4byte 0x03000000  @ IWRAM
-	.global _08006E14
-_08006E14:
-	.4byte 0x00003FDC
-	.global _08006E18
-_08006E18:
-	.4byte 0x0000424C
-	.global _08006E1C
-_08006E1C:
-	.4byte 0x00004250
+@ 006DF0..006E20 is decompiled as GameStateSetField424C50(); see src/decompiled.json
 
 @ 006E20..006E50 is decompiled as GameStateGetField424C50(); see src/decompiled.json
 
@@ -13077,37 +12135,7 @@ _08006EC6:
 
 @ 006EEC..006F0C is decompiled as GameStateGetField4265(); see src/decompiled.json
 
-	.section .rom.00006F0C, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_08006F0C
-sub_08006F0C:
-	push {r4, lr}
-	adds r4, r0, #0
-	.2byte 0xF000
-	.byte 0xB2
-	.byte 0xFB
-	ldr r0, _08006F28
-	ldr r1, _08006F2C
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	ldr r1, _08006F30
-	adds r0, r0, r1
-	strb r4, [r0, #0]
-	pop {r4}
-	pop {r0}
-	bx r0
-	.global _08006F28
-_08006F28:
-	.4byte 0x03000000  @ IWRAM
-	.global _08006F2C
-_08006F2C:
-	.4byte 0x00003FDC
-	.global _08006F30
-_08006F30:
-	.4byte 0x0000425A
+@ 006F0C..006F34 is decompiled as GameStateSetField425A(); see src/decompiled.json
 
 @ 006F34..006F54 is decompiled as GameStateGetField425A(); see src/decompiled.json
 
@@ -13244,7 +12272,7 @@ _080071FE:
 	.byte 0xFE
 	bl sub_08004F10
 	movs r0, #1
-	bl sub_08006F0C
+	bl GameStateSetField425A
 	movs r0, #16
 	b _08007334
 	.byte 0x00
@@ -13528,19 +12556,11 @@ _080073D2:
 	pop {r4, r5, r6, r7}
 	pop {r0}
 	bx r0
-	.4byte 0xB081B530
-	.4byte 0x1C0B1C05
-	.4byte 0x49094808
-	.4byte 0x92002220
-	.4byte 0xF0732200
-	.4byte 0x1C04F9C5
-	.4byte 0x1C293024
-	.4byte 0xFA36F07B
-	.4byte 0xB0011C20
-	.4byte 0xBC02BC30
-	.4byte 0x00004708
-	.4byte 0x030032C4
-	.4byte 0x08007411
+@ 0073DC..007410 is decompiled as CreateNamedRuntimeRecordTask();
+@ see src/decompiled.json
+
+	.section .rom.00007410, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -13743,7 +12763,7 @@ _0800756A:
 	.2byte 0xF7FD
 	.4byte 0xF7FDFCC5
 	.4byte 0x2000FCCF
-	bl sub_08006F0C
+	bl GameStateSetField425A
 	.2byte 0xF7FD
 	.byte 0x6A
 	.byte 0xFC
@@ -13768,7 +12788,7 @@ _08007594:
 	.byte 0xFC
 	bl sub_08004F10
 	movs r0, #0
-	bl sub_08006F0C
+	bl GameStateSetField425A
 	.2byte 0xF7FD
 	.4byte 0x2001FC55
 	.2byte 0xF000
@@ -13805,13 +12825,8 @@ _080075BE:
 
 	.section .rom.00007604, "ax"
 	.syntax unified
-	.4byte 0x1C01B500
-	.4byte 0x68004803
-	.4byte 0x18804A03
-	.4byte 0xF92AF07B
-	.4byte 0x4700BC01
-	.4byte 0x03004020
-	.4byte 0x00000EEA
+@ 007604..007620 is decompiled as RuntimeSetBufferEEAName();
+@ see src/decompiled.json
 
 @ 007620..007638 is decompiled as RuntimeGetFieldEE8(); see src/decompiled.json
 

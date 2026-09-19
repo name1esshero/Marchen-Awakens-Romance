@@ -5,6 +5,8 @@
 
 #define MAP_GENERATION_ENTRY_COUNT 4
 
+struct KmpViewport;
+
 /** Clear generation entries whose field identifier matches the active field. */
 void MapGenerationClearCurrentFieldEntries(void);
 
@@ -60,6 +62,7 @@ struct GeneratedMapRoomRecord {
 };
 
 /* Per-room event state. The generator owns a fixed pool of 64 records. */
+#define GENERATED_MAP_RUNTIME_ROOM_ACTIVE_OFFSET 20
 struct GeneratedMapRuntimeRoom {
     s16 roomIndex;
     u8 unknown02[18];
@@ -125,6 +128,7 @@ void MapGenerationSetVector(u32 index, s32 value0, s32 value4,
                             s32 value2, s32 value6);
 u32 MapAttributeGetConnectionMask(s32 tileX, s32 tileY);
 struct GeneratedMapRuntimeRoom *GeneratedMapFindRuntimeRoom(s32 roomIndex);
+s32 GeneratedMapChooseAttributeIndex(struct KmpViewport *view, u32 attribute);
 s32 GeneratedMapGetCurrentRoomProperty14(struct GeneratedFieldMap *map);
 s32 GeneratedMapGetCurrentRoomProperty18(struct GeneratedFieldMap *map);
 void GeneratedMapSetParameter10(s32 value);

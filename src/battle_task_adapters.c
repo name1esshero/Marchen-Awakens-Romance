@@ -5,8 +5,29 @@
 
 #include "rom_section.h"
 
-extern void *sub_0804A720(s32 owner, s32 slot, void *resource, void *result, s32 group, s32 variant);
+/** Reject an unavailable battle action.
+ * The table uses this fallback for unsupported slots. The first three
+ * dispatch arguments are unused. A nonzero status becomes -1; zero remains
+ * unchanged.
+ * @param owner Unused battle owner argument.
+ * @param slot Unused battle slot argument.
+ * @param resource Unused action resource argument.
+ * @param status Action status updated when it is nonzero.
+ * @return Always zero.
+ */
+AT("00015268")
+s32 BattleActionUnavailable(s32 owner, s32 slot, void *resource, s32 *status)
+{
+    if (*status != 0)
+        *status = -1;
+    return 0;
+}
+
+extern void *BattleTaskACreateTask(s32 owner, s32 slot, void *resource,
+                                   void *result, s32 group, s32 variant);
 extern void *sub_0804EF70(s32 owner, s32 slot, void *resource, void *result, s32 group, s32 variant);
+
+#define sub_0804A720 BattleTaskACreateTask
 
 /** Create the battle task for constructor group 0, variant 0. */
 AT("0004A3D8")

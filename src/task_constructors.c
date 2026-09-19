@@ -12,6 +12,9 @@
 
 extern const char gBattleNamedTaskAResourceName[];
 extern const char gBattleNamedTaskBResourceName[];
+extern const char gResource77A03[];
+extern const char gResourceSpBa04[];
+extern const char gResourceTestE02[];
 extern u8 *CreateTask(void *manager, void *callback, u32 priority,
                       s32 *result, u32 stateSize);
 extern u8 gMainTaskManager;
@@ -37,12 +40,17 @@ extern void sub_080278F4(void *task);
 extern void sub_0802A118(void *task);
 extern void sub_08030218(void *task);
 extern void sub_08007178(void *task);
+extern void sub_08007410(void *task);
+extern void sub_08076C5C(void *task);
+extern void sub_08077584(void *task);
 extern void sub_0800D924(void *task);
 extern void sub_0800E6D8(void *task);
 extern void sub_0800ED5C(void *task);
 extern void sub_0800FCC8(void *task);
 extern void sub_0801B83C(void *task);
 extern void sub_0801B8EC(void *task);
+extern void sub_08065EB4(void *task);
+extern void sub_08069E00(void *task);
 extern void sub_0806F018(void *task);
 extern void sub_0806F664(void *task);
 
@@ -80,6 +88,83 @@ struct MapCoordinateTask
     struct MapCoordinateTaskData data;
 };
 
+/* State owned by the field-effect task created at 0x08077370. The unknown
+ * spans are retained until its callback is decompiled; the known members are
+ * named from the constructor's writes and resource lookups. */
+struct BattleSpriteEffectTaskState
+{
+    u8 unknown00[84];
+    u32 value54;
+    s32 owner;
+    u32 value5C;
+    s32 resourceGroup60;
+    s32 resourceGroup64;
+    s32 x;
+    s32 y;
+    u8 unknown70[52];
+    u32 valueA4;
+};
+
+struct LargeBattleSpriteEffectTaskState
+{
+    u8 unknown00[84];
+    u32 value54;
+    s32 owner;
+    u32 value5C;
+    s32 resourceGroup60;
+    s32 resourceGroup64;
+    s32 x;
+    s32 y;
+    u8 unknown70[712];
+};
+
+/* Known fields of two battle tasks whose callbacks still own the preceding
+ * state. Offsets are from the complete EngineTask allocation. */
+struct BattleNamedTaskA
+{
+    u8 unknown00[104];
+    u8 owner;
+    u8 isPrimary;
+    u8 slot;
+    u8 reset;
+    u8 unknown108[4];
+    u16 resourceGroup;
+};
+
+struct BattleNamedTaskB
+{
+    u8 unknown00[251];
+    u8 owner;
+    u8 isPrimary;
+    u8 slot;
+    u8 reset;
+    u8 unknown255[3];
+    u16 resourceGroup;
+};
+
+struct MotionObject
+{
+    u8 unknown00[24];
+    s16 field18;
+    s16 field1A;
+    u8 unknown1C[11];
+    u8 flags27;
+};
+
+struct ObjectMotionTaskState
+{
+    struct MotionObject *object;
+    s16 value04;
+    u16 unknown06;
+    s16 value08;
+};
+
+enum
+{
+    MOTION_OBJECT_FLAGS_OFFSET = 39,
+    MOTION_OBJECT_FLAG_2 = 1 << 2
+};
+
 enum
 {
     MAP_COORDINATE_MODE_0,
@@ -89,6 +174,41 @@ enum
     MAP_COORDINATE_MODE_4,
     MAP_FIELD_EVENT_X = 204,
     MAP_FIELD_EVENT_Y = 92
+};
+
+enum
+{
+    NAMED_RUNTIME_RECORD_TASK_STATE_SIZE = 32,
+    NAMED_RUNTIME_RECORD_TASK_NAME_OFFSET = 36
+};
+
+enum
+{
+    RUNTIME_TASK_69DB4_PAYLOAD_SIZE = 0x7038,
+    RUNTIME_TASK_69DB4_OWNER_STATE_OFFSET = 20,
+    RUNTIME_TASK_69DB4_OWNER_NEXT_STATE = 20,
+    RUNTIME_TASK_69DB4_OWNER_SLOT = 0x11CC,
+    RUNTIME_TASK_69DB4_TARGET_SLOT = 0x11D0,
+    RUNTIME_TASK_69DB4_OWNER_TARGET = 0xA90
+};
+
+/* The constructor accepts a parent scene-work block and creates a child task.
+ * Both allocations are accessed through this partial union so the parent
+ * state write may alias the child task's stored parent pointer. This matches
+ * the ROM's required reload without volatile access or compiler hints. */
+union RuntimeTask69DB4State
+{
+    struct
+    {
+        u8 unknown0000[RUNTIME_TASK_69DB4_OWNER_STATE_OFFSET];
+        u16 state;
+    } owner;
+    struct
+    {
+        u8 unknown0000[RUNTIME_TASK_69DB4_OWNER_SLOT];
+        union RuntimeTask69DB4State *owner;
+        u8 *target;
+    } child;
 };
 
 static void MapCoordinateTask(void *rawTask);
@@ -143,6 +263,28 @@ AT("000053B4") static void InputWaitTask(void *rawTask)
     }
 }
 
+/**
+ * @brief Create a large scene child task and bind it to its parent work block.
+ * @param owner Parent scene-work block. Its state changes to 20.
+ * @param completion Optional completion word owned by the task system.
+ * @return The newly allocated child task.
+ */
+AT("00069DB4")
+u8 *CreateRuntimeTask69DB4(union RuntimeTask69DB4State *owner,
+                           s32 *completion)
+{
+    union RuntimeTask69DB4State *task =
+        (union RuntimeTask69DB4State *)CreateTask(
+            &gMainTaskManager, sub_08069E00, 0, completion,
+            RUNTIME_TASK_69DB4_PAYLOAD_SIZE);
+
+    task->child.owner = owner;
+    owner->owner.state = RUNTIME_TASK_69DB4_OWNER_NEXT_STATE;
+    task->child.target = (u8 *)task->child.owner
+        + RUNTIME_TASK_69DB4_OWNER_TARGET;
+    return (u8 *)task;
+}
+
 /** Create the main scene task.
  * @param result Optional task completion word.
  * @return The new task, or NULL if creation fails. */
@@ -155,23 +297,96 @@ AT("00006050") u8 *CreateSceneTask(s32 *result)
     return task;
 }
 
-#ifdef NONMATCHING
-AT("000061F0") u8 *CreateSceneModeTask(s32 mode, s32 *result)
+/**
+ * @brief Create the runtime task handled by sub_08007410 and copy its name.
+ * @param resourceName Name stored at the start of the task-specific payload.
+ * @param completion Optional completion word owned by the task system.
+ * @return The newly allocated task.
+ */
+AT("000073DC") u8 *CreateNamedRuntimeRecordTask(const char *resourceName,
+                                                 s32 *completion)
 {
-    u8 *task;
-    mode = (s16)mode;
-    task = CreateTask(&gMainTaskManager, sub_08006228,
-                      0, result, 112);
-    if (task == 0)
-        goto failed;
-    *(u16 *)(task + 142) = (s16)mode;
-    goto done;
-failed:
-    task = 0;
-done:
+    u8 *task = CreateTask(&gMainTaskManager, sub_08007410, 0, completion,
+                          NAMED_RUNTIME_RECORD_TASK_STATE_SIZE);
+
+    strcpy((char *)task + NAMED_RUNTIME_RECORD_TASK_NAME_OFFSET, resourceName);
     return task;
 }
-#endif
+
+/**
+ * @brief Create a field-event mode task.
+ * @param mode Signed 16-bit mode stored in the task state.
+ * @param completion Optional completion word owned by the task system.
+ * @return The newly allocated task.
+ */
+AT("00065E88") u8 *CreateFieldEventModeTask(s16 mode, s32 *completion)
+{
+    u8 *task;
+    s32 signedMode = mode;
+
+    task = CreateTask(&gMainTaskManager, sub_08065EB4, 0, completion, 32);
+    *(u16 *)(task + 52) = signedMode;
+    return task;
+}
+
+/**
+ * Create the field-effect task that uses the 77A03 and SP_BA04 sprite groups.
+ * Positions arrive as 16.16 fixed-point values and are stored as pixels.
+ */
+AT("00077370") u8 *CreateBattleSpriteEffectTask(s32 *completion, u32 value54,
+    s32 owner, u32 value5C, s32 x, s32 y, u32 valueA4)
+{
+    u8 *task = CreateTask(gSecondaryRuntime + owner * 32,
+                          sub_08076C5C, 0, completion,
+                          sizeof(struct BattleSpriteEffectTaskState));
+    struct BattleSpriteEffectTaskState *state = (void *)(task + 32);
+
+    state->value54 = value54;
+    state->owner = owner;
+    state->value5C = value5C;
+    state->x = x >> 16;
+    state->y = y >> 16;
+    state->valueA4 = valueA4;
+    state->resourceGroup60 = SpriteResourceFindGroup(2, gResource77A03);
+    state->resourceGroup64 = SpriteResourceFindGroup(1, gResourceSpBa04);
+    return task;
+}
+
+/**
+ * Create the larger battle sprite-effect task that pairs the 77A03 character
+ * graphics with the TEST_E02 effect group. Positions are 16.16 fixed-point.
+ */
+AT("00077B44") u8 *CreateLargeBattleSpriteEffectTask(s32 *completion,
+    u32 value54, s32 owner, u32 value5C, s32 x, s32 y)
+{
+    u8 *task = CreateTask(gSecondaryRuntime + owner * 32,
+                          sub_08077584, 0, completion,
+                          sizeof(struct LargeBattleSpriteEffectTaskState));
+    struct LargeBattleSpriteEffectTaskState *state = (void *)(task + 32);
+
+    state->value54 = value54;
+    state->owner = owner;
+    state->value5C = value5C;
+    state->x = x >> 16;
+    state->y = y >> 16;
+    state->resourceGroup60 = SpriteResourceFindGroup(2, gResource77A03);
+    state->resourceGroup64 = SpriteResourceFindGroup(1, gResourceTestE02);
+    return task;
+}
+
+/** Create a scene-mode task and store its signed mode in the task state. */
+AT("000061F0") u8 *CreateSceneModeTask(s16 mode, s32 *result)
+{
+    s32 signedMode = mode;
+    u8 *task = CreateTask(&gMainTaskManager, sub_08006228,
+                          0, result, 112);
+
+    if (task == 0)
+        return 0;
+    *(u16 *)(task + 142) = signedMode;
+    return task;
+}
+AT("000061F0") const u8 CreateSceneModeTaskTail[2] = {0};
 
 /** Create a battle actor's motion task on its owner's per-actor task slot.
  * @param valueA Stored at +120; meaning unresolved.
@@ -290,35 +505,37 @@ AT("0002A0B8") u8 *CreateBattleObjectTask(s32 owner, s32 slot,
     return task;
 }
 
-#ifdef NONMATCHING
+/** Create the smaller named battle task and resolve its sprite group. */
 AT("00027894") u8 *CreateBattleNamedTaskA(s32 owner, s32 slot,
                                            s32 unused, s32 *result)
 {
-    u8 *task = CreateTask(gSecondaryRuntime + owner * 32,
-                          sub_080278F4, 0, result, 116);
-    task[104] = owner;
-    task[106] = slot;
-    task[105] = owner == 0;
-    task[107] = 0;
-    *(u16 *)(task + 112) = SpriteResourceFindGroup(1, gBattleNamedTaskAResourceName);
-    return task;
-}
-#endif
+    struct BattleNamedTaskA *task = (struct BattleNamedTaskA *)CreateTask(
+        gSecondaryRuntime + owner * 32, sub_080278F4, 0, result, 116);
 
-#ifdef NONMATCHING
+    task->owner = owner;
+    task->slot = slot;
+    task->isPrimary = owner == 0;
+    task->reset = 0;
+    task->resourceGroup = SpriteResourceFindGroup(
+        1, gBattleNamedTaskAResourceName);
+    return (u8 *)task;
+}
+
+/** Create the larger named battle task and resolve its sprite group. */
 AT("00026140") u8 *CreateBattleNamedTaskB(s32 owner, s32 slot,
                                            s32 unused, s32 *result)
 {
-    u8 *task = CreateTask(gSecondaryRuntime + owner * 32,
-                          sub_080261A4, 0, result, 240);
-    task[251] = owner;
-    task[253] = slot;
-    task[252] = owner == 0;
-    task[254] = 0;
-    *(u16 *)(task + 258) = SpriteResourceFindGroup(1, gBattleNamedTaskBResourceName);
-    return task;
+    struct BattleNamedTaskB *task = (struct BattleNamedTaskB *)CreateTask(
+        gSecondaryRuntime + owner * 32, sub_080261A4, 0, result, 240);
+
+    task->owner = owner;
+    task->slot = slot;
+    task->isPrimary = owner == 0;
+    task->reset = 0;
+    task->resourceGroup = SpriteResourceFindGroup(
+        1, gBattleNamedTaskBResourceName);
+    return (u8 *)task;
 }
-#endif
 
 /** Create a field-effect task on the owner's per-actor task slot and mark
  * one script wait pending.
@@ -424,47 +641,58 @@ AT("0006F620") u8 *CreateEncounterTransitionTask(s32 *result)
     return task;
 }
 
-#ifdef NONMATCHING
+/**
+ * @brief Create the encounter reset task and clear all four runtime flags.
+ *
+ * The flag index is narrowed to the engine's signed 16-bit index width after
+ * each increment. agbcc represents that recurrence in the high halfword of
+ * its induction register, matching the original routine without hints.
+ *
+ * @param result Optional task completion word.
+ * @return The newly created reset task.
+ */
 AT("0006EFCC") u8 *CreateEncounterResetTask(s32 *result)
 {
     s32 i;
     u8 *task = CreateTask(&gMainTaskManager, sub_0806F018,
                           0, result, 0x3F34);
-    for (i = 0; i <= 3; i++)
+    for (i = 0; i <= 3; i = (s16)(i + 1))
         RuntimeSetFlagC0(i, 0);
     ScriptAddPendingTasks(1);
     return task;
 }
-#endif
 
-#ifdef NONMATCHING
+/** Create the first object-motion task and initialize its vertical movement. */
 AT("0001B7FC") u8 *CreateObjectMotionTaskA(u8 *object, s32 *result)
 {
     u8 *task = CreateTask(&gMainTaskManager, sub_0801B83C,
                           0, result, 16);
-    u8 *state = task + 32;
-    *(u8 **)(task + 32) = object;
-    *(u16 *)(object + 24) = 120;
-    *(u16 *)(object + 26) = -32;
-    *(u16 *)(state + 4) = -32;
-    *(u16 *)(state + 8) = 24;
+    struct ObjectMotionTaskState *state =
+        (struct ObjectMotionTaskState *)(task + 32);
+    struct MotionObject *motionObject = (struct MotionObject *)object;
+
+    state->object = motionObject;
+    motionObject->field18 = 120;
+    motionObject->field1A = -32;
+    state->value04 = -32;
+    state->value08 = 24;
     return task;
 }
-#endif
 
-#ifdef NONMATCHING
+/** Create the second object-motion task and enable motion flag 2. */
 AT("0001B8AC") u8 *CreateObjectMotionTaskB(u8 *object, s32 *result)
 {
     u8 *task = CreateTask(&gMainTaskManager, sub_0801B8EC,
                           0, result, 16);
-    u8 *state = task + 32;
-    *(u8 **)(task + 32) = object;
-    object[39] |= 4;
-    *(u16 *)(state + 4) = 256;
-    *(u16 *)(state + 8) = 0;
+    struct ObjectMotionTaskState *state =
+        (struct ObjectMotionTaskState *)(task + 32);
+
+    state->object = (struct MotionObject *)object;
+    object[MOTION_OBJECT_FLAGS_OFFSET] |= MOTION_OBJECT_FLAG_2;
+    state->value04 = 256;
+    state->value08 = 0;
     return task;
 }
-#endif
 
 /** Create the map task that processes a signed tile-coordinate pair. */
 AT("0006C7AC") struct EngineTask *CreateMapCoordinateTask(s16 mode,
@@ -535,13 +763,15 @@ AT("0006C7EC") static void MapCoordinateTask(void *rawTask)
     }
 }
 
-#ifdef NONMATCHING
+/** Create the encounter setup task and store its initial mode in the final
+ * payload word. */
 AT("0006FA94") u8 *CreateEncounterSetupTask(s32 value, s32 *result)
 {
     s32 savedValue = value;
     u8 *task = CreateTask(&gMainTaskManager, (void *)sub_0806FAC4,
                           0, result, 368);
-    *(s32 *)(task + 368) = savedValue;
+    u8 *state = task + 32;
+
+    *(s32 *)(state + 336) = savedValue;
     return task;
 }
-#endif

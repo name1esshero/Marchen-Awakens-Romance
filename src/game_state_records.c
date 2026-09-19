@@ -5,6 +5,8 @@
  * "greater than 998" on the signed 16-bit value. */
 #include "gba/types.h"
 
+#include "game_state.h"
+#include "game_tables.h"
 #include "rom_section.h"
 
 extern u8 gIwramBase[];
@@ -14,6 +16,7 @@ extern u8 *sub_08056E3C(s32 a,s32 b,s32 c);
 extern void CpuCopy(const void *source,void *destination,u32 size);
 extern s32 sub_08056918(s32 id);
 extern s32 GameStateGetEntry2768(s32 id);
+extern s32 sub_080568D8(s32 entry, s32 deckId);
 
 #define GAME_STATE_BASE ({ \
     void **root=(void **)(gIwramBase+(u32)gMapGenerationRootOffset); \
@@ -22,6 +25,46 @@ extern s32 GameStateGetEntry2768(s32 id);
 
 #define RECORD_FIELD_MAX 998
 #define RECORD_FIELD_LIMIT 999
+
+#define GAME_STATE_RESOURCE_COUNTER_OFFSET 0x38BC
+#define GAME_STATE_RESOURCE_COUNTER_MAX 999999
+
+struct GameStateResourceCounter
+{
+ u8 padding[GAME_STATE_RESOURCE_COUNTER_OFFSET];
+ u32 value;
+};
+
+/* The runtime root is read again after updating the counter.  The union view
+ * expresses that the slot and the state it points at may alias, preserving
+ * the reload found in the original code without volatile or an optimizer
+ * barrier. */
+union GameStateRootSlot
+{
+ struct GameStateResourceCounter *state;
+ u32 raw;
+};
+
+/** Read the six-digit resource counter, repairing an out-of-range value. */
+AT("00056290") u32 GameStateGetResourceCounter(void)
+{
+    u32 offset;
+    u8 *state;
+    u8 **root;
+    u32 *counter;
+    u8 *iwram;
+    u32 rootOffset;
+
+    iwram = gIwramBase;
+    rootOffset = GAME_STATE_ROOT_IWRAM_OFFSET;
+    root = (u8 **)(iwram + rootOffset);
+    state = *root;
+    offset = GAME_STATE_RESOURCE_COUNTER_OFFSET;
+    counter = (u32 *)(state + offset);
+    if (*counter > GAME_STATE_RESOURCE_COUNTER_MAX - 1)
+        *counter = GAME_STATE_RESOURCE_COUNTER_MAX;
+    return *(u32 *)(*root + offset);
+}
 
 /* Record field 4 is the ceiling the field-2 accumulator clamps against;
  * field 6 is a second independent counter with the same 999 ceiling. */
@@ -66,6 +109,19 @@ AT("00056050") void GameStateRecordAddField6(s32 id,s32 value)
   stored=RECORD_FIELD_LIMIT;
   *(u16 *)(record+6)=stored;
  }
+}
+
+/** Add to the game-state resource counter and saturate it at six digits. */
+AT("000562C8") void GameStateAddResourceCounter(u32 value)
+{
+ union GameStateRootSlot *root;
+ struct GameStateResourceCounter *state;
+
+ root=(union GameStateRootSlot *)(gIwramBase+(u32)gMapGenerationRootOffset);
+ state=root->state;
+ state->value+=value;
+ if (root->state->value>GAME_STATE_RESOURCE_COUNTER_MAX-1)
+  root->state->value=GAME_STATE_RESOURCE_COUNTER_MAX;
 }
 
 /* state+0x3894 holds s16 entries in 12-byte rows of six. */
@@ -131,6 +187,41 @@ AT("00056984") s32 GameStateGetEntry2768Total(s32 id)
  total=(s16)(total+GameStateGetEntry2768(v));
  if (total>98)
   total=99;
+ return total;
+}
+
+#define PMB_DECK_ENTRY_COUNT_LIMIT 98
+#define PMB_DECK_ENTRY_COUNT_OVERFLOW 99
+#define FIXED_POINT_ONE (1 << 16)
+
+/**
+ * @brief Count one PMB entry across the saved total and all default decks.
+ *
+ * A result above 98 is represented by the sentinel 99. The fixed-point loop
+ * counter is the same 16.16 counter convention used by adjacent game-state
+ * routines; the deck pointer itself advances by one signed halfword.
+ */
+AT("000569B0") s32 CountPmbDeckEntryCopies(s32 id)
+{
+ s32 entry;
+ s32 total;
+ s32 fixedIndex;
+ const s16 *deck;
+ s32 index;
+
+ entry=(s16)id;
+ total=(s16)GameStateGetEntry2768(entry);
+ fixedIndex=FIXED_POINT_ONE;
+ deck=gBattlePartyDefaults;
+ do
+ {
+  total=(s16)(total+sub_080568D8(entry,*deck));
+  index=fixedIndex;
+  fixedIndex+=FIXED_POINT_ONE;
+  deck++;
+ } while ((index>>16)<=(s32)ARRAY_COUNT(gBattlePartyDefaults)-1);
+ if (total>PMB_DECK_ENTRY_COUNT_LIMIT)
+  total=PMB_DECK_ENTRY_COUNT_OVERFLOW;
  return total;
 }
 

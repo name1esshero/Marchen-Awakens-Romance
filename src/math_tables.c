@@ -5,6 +5,19 @@
 
 #include "rom_section.h"
 
+/* Masks retaining zero through eight packed 4bpp pixels in a 32-bit row. */
+AT("001ACB58") const u32 gTileRemainderMasks[9] = {
+    0x00000000,
+    0x0000000F,
+    0x000000FF,
+    0x00000FFF,
+    0x0000FFFF,
+    0x000FFFFF,
+    0x00FFFFFF,
+    0x0FFFFFFF,
+    0xFFFFFFFF
+};
+
 AT("00F28410") const u8 gOamAttributeMasks[16] = {
 #include "../build/generated/oam_attribute_masks.inc"
 };

@@ -23,6 +23,12 @@ enum ArmElement {
     ARM_ELEMENT_NEUTRAL,
 };
 
+enum ResourcePurchaseResult {
+    RESOURCE_PURCHASE_SUCCESS = 1,
+    RESOURCE_PURCHASE_NOT_ENOUGH = 2,
+    RESOURCE_PURCHASE_FULL = 3,
+};
+
 /* 128-byte ÄRM records at 081B096C.  The old disassembly called these items,
  * but they are the complete battle/deck ÄRM catalog.  Names and descriptions
  * use the game charmap.  Unverified gameplay fields retain their byte offsets
@@ -93,5 +99,6 @@ s32 ItemGetField62(s32 id);
 s32 ItemGetField58(s32 id);
 u32 ItemGetField78(s32 id);
 u32 ItemGetField7C(s32 id);
+s32 TryPurchaseArmOrConsumable(s32 id, s32 isConsumable);
 
 #endif

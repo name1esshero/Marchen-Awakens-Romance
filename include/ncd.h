@@ -56,4 +56,5 @@ void NcdResetResource(u32 resource);
 void NcdQueueSprite(struct NcdSprite *sprite, u32 priority);
 void NcdSpriteContainerReset(void *container);
 void NcdRuntimeSpriteReleaseAllocation(struct NcdSprite *sprite);
+void NcdReleaseSpriteArray(struct NcdSprite *sprites);
 #endif

@@ -2,6 +2,10 @@
 .set gConsumableNoneDescription, 0x081BE80E
 .global gMainArchiveName
 .set gMainArchiveName, 0x08086A54
+.global gSystemMountName
+.set gSystemMountName, 0x08086A48
+.global gMainMountName
+.set gMainMountName, 0x08086A50
 .global gMapArchiveKmpExtension
 .set gMapArchiveKmpExtension, 0x08086A5C
 .global gScriptKmpExtension
@@ -377,8 +381,6 @@
 .set sub_08000C70, 0x08000C70
 .global sub_08000D34
 .set sub_08000D34, 0x08000D34
-.global sub_08015269
-.set sub_08015269, 0x08015269
 .global sub_08023B99
 .set sub_08023B99, 0x08023B99
 .global sub_08023FA5
@@ -913,8 +915,6 @@
 .set gCgbWaveform_0808B0A4, 0x0808B0A4
 .global sub_08001EB4
 .set sub_08001EB4, 0x08001EB4
-.global sub_080569B0
-.set sub_080569B0, 0x080569B0
 .global gTwoDigitName00
 .set gTwoDigitName00, 0x08086C30
 .global gTwoDigitName01

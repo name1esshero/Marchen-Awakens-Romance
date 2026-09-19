@@ -1,6 +1,11 @@
 /* Recovered KMP viewport initialization and 16-bit attribute addressing. */
 #include "kmp.h"
+#include "math_tables.h"
 #include "rom_section.h"
+
+typedef void (*TileMaskFunc)(void *destination, u32 mask);
+
+extern void ApplyEightWordMaskArm(void *destination, u32 mask);
 
 /** This helper always assumes u16 attributes, as does the original.
  * 08003104 is the separate bounds-checked reader that also handles u8 data. */
@@ -56,6 +61,8 @@ __attribute__((section(".rom.00003104"))) const u8 KmpReadAttributeTail[2]={0,0}
  */
 extern void sub_08002650(struct KmpViewport *, s32, s32);
 extern void sub_08002798(struct KmpViewport *, s32, s32);
+extern void sub_08002DA8(struct KmpViewport *);
+extern void sub_08003358(struct KmpViewport *);
 /**
  * @brief Render a KMP viewport with its regular or affine renderer.
  * @param view Viewport configuration and destination buffer.
@@ -71,3 +78,31 @@ void KmpRenderViewport(struct KmpViewport *view, s32 x, s32 y)
         sub_08002798(view, x, y);
 }
 AT("00002630") const u8 KmpRenderViewportTail[2] = {0, 0};
+
+/** Mask unused pixels in an eight-row 4bpp tile fragment. The mask table
+ * retains `count` low nibbles in each 32-bit row. */
+AT("000023B0")
+void ApplyTileRemainderMask(void *destination, u32 count)
+{
+    u8 narrowed = count;
+
+    if (narrowed != KMP_TILE_SIZE)
+    {
+        TileMaskFunc applyMask = ApplyEightWordMaskArm;
+        applyMask(destination, gTileRemainderMasks[narrowed]);
+    }
+}
+
+/** Submit a loaded viewport through the renderer selected by its mode byte.
+ * Empty viewport slots have no KMP data and are skipped. */
+AT("000028C8")
+void KmpDrawViewport(struct KmpViewport *view)
+{
+    if (view->data != 0)
+    {
+        if ((s8)view->renderMode == 0)
+            sub_08003358(view);
+        else
+            sub_08002DA8(view);
+    }
+}

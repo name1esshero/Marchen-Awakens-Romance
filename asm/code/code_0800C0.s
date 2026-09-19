@@ -707,7 +707,9 @@ sub_08080BC4:
 
 	.thumb_func
 	.thumb
+	.global _call_via_r2
 	.global sub_08080BC8
+_call_via_r2:
 sub_08080BC8:
 	bx r2
 	.byte 0xC0

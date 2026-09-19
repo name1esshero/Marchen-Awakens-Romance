@@ -20,5 +20,6 @@ typedef u32 bool32;
 #define TRUE  1
 #define FALSE 0
 #define NULL ((void *)0)
+#define ARRAY_COUNT(array) (sizeof(array) / sizeof((array)[0]))
 
 #endif /* GBA_TYPES_H */

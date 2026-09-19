@@ -1,6 +1,29 @@
 #include "hit_region.h"
 #include "rom_section.h"
 
+/** Translate corner bounds by an object's signed world position. */
+AT("00006C2C")
+void HitBoundsTranslate(struct HitBounds *destination, s32 x, s32 y,
+                        const struct HitBounds *source)
+{
+    s32 translatedX = (s16)x;
+    s32 translatedY = (s16)y;
+    s32 field;
+    s32 top;
+
+    field = (u16)source->left;
+    destination->left = translatedX + field;
+    field = (u16)source->right;
+    destination->right = translatedX + field;
+    top = (u16)source->top;
+    /* Keep the signed addition rooted at translatedY. This is equivalent to
+     * translatedY + top and preserves the original agbcc operand order. */
+    top = translatedY - -top;
+    destination->top = top;
+    translatedY += (u16)source->bottom;
+    destination->bottom = translatedY;
+}
+
 /** @brief Disable one indexed hit region. */
 AT("00011504") void HitRegionDisable(s32 id)
 {

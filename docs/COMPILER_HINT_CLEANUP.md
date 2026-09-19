@@ -56,8 +56,8 @@ against a fixed baseline overstates what can go.
 schedule changes the instruction order, so each looks necessary in isolation
 while the whole set is removable. The tool therefore tries all fences in a
 function together before falling back to one at a time. `SpriteFixed8Multiply`
-is the worked example: both of its fences are removable together, and only its
-`register s32 rounded asm("r1")` pin is genuinely load-bearing.
+first demonstrated this interaction; a later source-lifetime reconstruction
+removed its remaining register pin as well.
 
 ## Worked example: SpriteFixed8Multiply (0x0807D8F8)
 
@@ -71,11 +71,20 @@ The ROM keeps `product` in r0 and a separate `rounded` in r1:
     .L:
     lsls r0, r1, #8
 
-Plain C coalesces the two into r0, because `product` is dead after the compare.
-Every shape tried produced the coalesced form: separate locals in either
-declaration order, `if`/`else` assignment, a ternary, reusing the `left`
-parameter, and splitting the final shifts. The one pin is currently the only
-way to reproduce the copy, so it stays; both fences went.
+The first clean-C attempts left `product` dead after the comparison, so agbcc
+coalesced `product` and `rounded` in r0. The matching reconstruction reuses
+`product` for the final narrowing after copying it into `rounded`:
+
+    product = left * right;
+    rounded = product;
+    if (product < 0)
+        rounded += 255;
+    product = rounded << 8;
+    return product >> 16;
+
+That last assignment extends the real source variable's lifetime far enough
+for agbcc to preserve the r0/r1 copy. The function now compiles byte-identically
+from ordinary C in `src/sprite_math.c`, with no fences or register pinning.
 
 ## Character-code width removes a font register pin
 
@@ -106,6 +115,139 @@ has already passed its negative-result check at this point.
 This is a concrete example of the compiler notes' variable-lifetime rule:
 equivalent expressions can give the allocator different live ranges.
 
+## Structural patterns that can replace register pinning
+
+The successful clean-C matches so far point to a better search strategy than
+trying arbitrary declaration orders.  agbcc allocates registers from the
+values that are live at each program point.  Source expressions that are
+mathematically equivalent can therefore produce different allocation when
+they create, reuse, or end a value at a different time.  Before concluding
+that a pin is load-bearing, test the following ordinary-C shapes against the
+isolated machine code.
+
+**Represent the actual storage width immediately.**
+`FontCharacterToGlyph` stopped needing an `r2` pin when its packed character
+code became a `u16` local instead of a `u32` containing a narrowed value.  The
+wide shifted input remains a separate value for the high-byte calculation.
+This tells the compiler which value truly ends after the 16-bit operations,
+rather than keeping one wide temporary live through the whole function.
+
+**Keep an input, its normalized form, and a loop value distinct when the ROM
+does.** `GameStateSetAttributeFlagRange` (0x08006858) matches without pins with
+three separate stages:
+
+```c
+if (enabled != 0)
+    enabled = 1;
+value = enabled;
+flags = ORDERED_GAME_STATE_BASE + GAME_STATE_ATTRIBUTE_FLAGS_OFFSET;
+for (index = first; index <= last; index++)
+    BitSet(flags, index, value);
+```
+
+Passing `enabled` directly shortens one lifetime and lets agbcc coalesce values
+that the ROM keeps apart.  The separate `value` is not dummy work: it models
+the stable argument reused by every iteration while `enabled` has finished
+normalization.  This naturally reproduces the ROM's r5/r6/r7 allocation.
+
+**Do not combine address components before proving the load order.** The
+matching object-release helpers and the `ORDERED_GAME_STATE_BASE` form load a
+named IWRAM base and a named root offset into separate locals, then add them.
+Writing one folded pointer expression can shorten both lifetimes or fold
+constants, changing literal-load and register order.  Separate linker symbols
+also preserve shiftability; raw addresses and artificial barriers do not.
+
+**Use a typed function-pointer local when the original makes an indirect
+call.** `ApplyTileRemainderMask` (0x080023B0) assigns
+`ApplyEightWordMaskArm` to a `TileMaskFunc` local and invokes that local.  Plain
+C then emits the existing `_call_via_r2` trampoline exactly.  A direct call or
+inline assembly would describe a different source operation.  The trampoline
+register is a result of normal allocation and the function-pointer type, not a
+register request.
+
+**Separate a current index from a next-entry test.** In
+`NfpGetEntrySizeByName`, writing `(u32)index + 1 >= count` instead of mutating
+`index` before the comparison ended the current-index lifetime at the right
+place and removed its `r4` pin.  Apply the same idea to pointer advancement:
+initializing the index before loading the pointer array and advancing both in
+the loop header made `ScriptFrameReleasePools` match without steering.
+
+**Check the recovered layout before blaming the allocator.**
+`CreateFieldEventTask` appeared to have unavoidable argument pressure, but the
+reference C had placed a payload halfword two bytes late.  Correcting the
+task/payload boundary and using signed 16-bit locals produced the original
+allocation.  A wrong offset, signedness, or field width changes live ranges
+and addressing modes, so register experiments based on the wrong model are
+misleading.
+
+**Model real aliasing instead of using `volatile` to defeat optimization.**
+`CreateRuntimeTask69DB4` (0x08069DB4) stores a parent work pointer in a new
+child task, writes the parent's state, then reloads the stored pointer before
+forming another child-task field. The former reference C used unrelated
+`u8 **` and `u16 *` casts. Under C's alias rules agbcc could then prove that
+the state write did not change the stored pointer, so it forwarded the
+original argument and combined the two child offsets.
+
+A partial union with parent-work and child-task views expresses that the two
+accesses can alias. agbcc then emits the ROM's reload and independent
+`0x11CC`/`0x11D0` offsets naturally. This is ordinary, shiftable C: the task
+manager and callback remain named symbols, and no raw address, forced register,
+inline assembly, or `volatile` qualifier is involved. Use this pattern only
+when the recovered data model really permits aliasing; adding a union solely
+as an optimizer barrier would be another fakematch.
+
+This pattern improved but did not complete the resource-counter pair at
+0x08056290/0x080562C8. A shared root/counter view makes the add routine perform
+the ROM's second root dereference, address calculation, and counter load, but
+agbcc still rotates the three live values among r2/r3/r4. The tested
+struct-member, moving-pointer, u16-offset, declaration-order, and delayed-
+assignment forms all retain that register mismatch, so both routines remain
+in `src/nonmatching/game_state_resource_counter.c`.
+
+**Modify the value that the ROM keeps as the arithmetic destination.** The
+newlib `_Bfree` source at 0x08085A24 loads a bucket index into r0 and the bucket
+array into r1, then keeps the scaled index as the destination of their add.
+Spelling the operation as `key += (u32)buckets` produces `add r0, r0, r1`;
+advancing the bucket pointer instead produces the equivalent
+`add r1, r1, r0`. This is a useful source-level choice for commutative
+operations. `_Bfree` was already present and matching in
+`src/libc/mprec.c`; the stale duplicate reconstruction in
+`src/nonmatching/misc.c` was removed.
+
+These are candidate-generation rules, not promises that any one spelling will
+match.  Compare assembled instructions after each cumulative change.  If no
+honest C shape matches, retain honest assembly and a readable nonmatching C
+reference as required by `PRET_STANDARDS.md`; never encode the desired answer
+with a forced register, empty scheduling fence, volatile abuse, or fake data
+dependency.
+
+## Reuse one semantic index across consecutive loops
+
+`ScriptNativeDeckMake` (0x080127F8) formerly pinned its cached deck mode to
+`r3`. The first loop copies twenty values and the second loop marks each input
+as owned. The reference C had separate signed and unsigned loop variables,
+which let agbcc place the short-lived copy counter in `r3` and the mode in
+`r4`. The ROM instead resets and reuses `r4` for the second loop.
+
+The matching source uses one `s32 i` for both loops. The first comparison is
+signed, so agbcc retains its compact countdown form. The second compares
+`(u32)i` with the unsigned argument count, preserving the ROM's unsigned
+branch:
+
+```c
+for (i = 0; i < DECK_ENTRY_COUNT; i++)
+    values[i] = args[i + 1];
+
+for (i = 0; (u32)i < count; i++)
+    BitSet(flags, args[i], TRUE);
+```
+
+This extends the real index lifetime across the intervening calls. agbcc then
+allocates that index to `r4` and the cached mode to `r3` without any register
+request. The result is byte-identical and shiftable. When two nearby loops use
+the same conceptual index and the ROM resets the same physical register,
+test one shared source variable before assuming the allocation needs steering.
+
 ## Alignment padding is not inline assembly
 
 Three files emitted their trailing zero halfword as
@@ -124,15 +266,7 @@ read-only data flags instead. Adjacent placement keeps each section opened once.
 
 ## Cases that resist a clean rewrite
 
-Two functions were tried properly and kept their pin, because agbcc will not
-produce the ROM's register choice from any ordinary C shape:
-
-`SpriteFixed8Multiply` (0x0807D8F8) needs `product` in r0 and a *copy* in r1,
-but `product` is dead after the compare, so agbcc coalesces them. Tried:
-separate locals in both declaration orders, `if`/`else` assignment, a ternary,
-reusing the `left` parameter, and splitting the final shifts. Its two fences
-did come out; only the pin is load-bearing. **Moved to real assembly** (see
-below) rather than kept as pinned C, per the Golden Rule.
+One function in this pass still resisted the clean shapes tested:
 
 `SpriteResourceFindGroup` (`sprite_engine_state.c`) needs the scaled index
 computed *first* (into r0), the base loaded second (r1), and then
@@ -145,30 +279,14 @@ as otherwise instruction-exact; recheck that against the current source
 before relying on it. These failed candidates do not rule out a different
 matching reconstruction.
 
-## SpriteFixed8Multiply moved to real assembly
+## SpriteFixed8Multiply recovered as clean C
 
-A forced-register pin is exactly the "compiler hack" the Golden Rule forbids
-keeping in `src/`. The removal tool found that its tested removals changed
-the current function's machine code; it did not rule out other C forms.
-Golden-Rule-compliant options are a matching structural rewrite or keeping
-the function in honest assembly, per PRET_STANDARDS.md
-§8/§8a and the precedent already set for the BIOS SWI wrappers
-(`8d7874c8`).
-
-The real instructions were extracted directly from the previously-matching
-build (`objdump` of `build/mar.elf`, cross-checked byte-for-byte against
-`baserom.gba`) rather than hand-derived, since the pinned C already compiled
-to the right bytes -- only its *location* (hacked C vs. honest asm) needed to
-change. Now at `asm/code/code_0780C0.s`, with the readable, non-matching C
-kept at `src/nonmatching/sprite_fixed8_multiply.c` for reference.
-
-One trap along the way: the function's single internal branch
-(`bge`, skipping the `+= 255` rounding step) must be a **plain local label**
-(`1:` / `1f`), not `.global`. A `.global` branch target defers its offset to
-a linker relocation instead of resolving it at assemble time; the relocated
-result still assembled to a 2-byte instruction, but with the wrong offset
-byte (`da fe` instead of the ROM's `da 00`) until final link -- a mismatch
-that a same-file objdump can hide if you don't check post-link bytes.
+Moving the function to honest assembly was a compliant intermediate state,
+but it was not proof that natural C was impossible. The successful rewrite
+preserves the algorithm while making `product` carry the final shifted value.
+This changes agbcc's lifetime graph enough to reproduce the ROM's r0-to-r1
+copy without naming a register or inserting an assembly fence. The assembly
+body and the obsolete nonmatching reference have therefore been removed.
 
 A second trap: `SpriteFixed8Divide` and `SpriteFixed8Tail` had never been
 independently tracked in `decompiled.json` -- they rode inside
@@ -185,41 +303,43 @@ also caught an unrelated, pre-existing manifest error surfaced by the same
 run: `RuntimeSetFlagC0` (`2ad2ddbe`) was recorded as 48 bytes against an
 actual linked size of 52; corrected in the same pass.
 
-## Sound-player lifecycle helpers moved to real assembly
+## Sound-player lifecycle helpers recovered from original library structure
 
 `SoundPlayerResume` (0x080789B0), `SoundPlayerFadeOut` (0x080789CC),
 `SoundPlayerFadeOutTemporary` (0x08078C18), and `SoundPlayerFadeIn`
 (0x08078C38) all read the same ready signature at `SoundPlayer + 0x34`.
-Their source-level behavior is now documented together in
-`src/nonmatching/sound_player_lifecycle.c`; their named Thumb instructions
-are in `asm/code/code_0780C0.s`.
+They now compile byte-identically from clean C in `src/sound_m4a.c`.
 
-Removing each `asm("r3")` pin was tested with the exact old_agbcc command
-used by `src/sound_m4a.c`. The compiler selected a different temporary for
-the ready signature and therefore changed the compare and following stores.
-Direct field tests and separate ordinary local variables produced the same
-near match. These trials only describe the current reconstruction; they do
-not establish that the original source used a forced register.
+The missing source-level dependency was MusicPlayer2000's identity lock. The
+standard library shape increments `player->ident` on entry to the guarded
+body and restores `SOUND_PLAYER_READY` on exit. Because these four helpers
+make no calls, old_agbcc correctly removes both stores as unobservable. Their
+presence in the source still changes the compiler's lifetime analysis before
+dead-store elimination, preserving the ready signature in r3 exactly as the
+ROM does. Omitting the apparently dead lock operations made every direct and
+local-variable reconstruction allocate that value to a different register.
 
-The moved implementation is literal-for-literal matched against
-`baserom.gba`, includes only named labels and normal Thumb instructions, and
-has no inline assembly in matching C. `SoundPlayerFadeOut`'s two-byte
-literal-pool alignment is explicitly filled with zero: the assembler's
-default Thumb alignment fill is `mov r8, r8`, while the ROM stores `00 00`.
+This is legitimate source recovery rather than register steering: the same
+lock protocol remains observable in neighboring player functions that do
+call other routines. It removed four assembly implementations and the entire
+nonmatching lifecycle file with no forced register, inline assembly,
+`volatile`, or compiler change. Full ROM comparison remains exact.
 
-## Dynamic sound-player selection moved to real assembly
+## Dynamic sound-player selection recovered as clean C
 
 `StartSongOnFreePlayer` (0x08005F7C) selects the first inactive player from
-the six-entry dynamic priority order. Its ordinary C form remains in
-`src/nonmatching/sound_player_select.c`; the matching implementation is a
-named Thumb routine in `asm/code/code_0000C0.s`.
+the six-entry dynamic priority order. It now compiles byte-identically from
+ordinary C in `src/scene_native.c`.
 
-The old match used an empty inline-assembly fence only to hold the song table
-and dynamic-order table live until after the selected song entry was formed.
-Without it, old_agbcc moves the song-entry index computation ahead of the
-order-table load, so the bytes differ despite identical behavior. The assembly
-uses linker symbols for all nine player globals and the three tables rather
-than hardcoded ROM or IWRAM addresses.
+The old reconstruction declared and initialized the table pointers before it
+filled the local player-pointer array. agbcc consequently hoisted the table
+loads and song-entry calculation ahead of the nine stack stores, and an empty
+assembly fence had been used to prevent that schedule. The matching source
+fills the array first, then assigns the table pointers, and explicitly
+initializes the loop counter before those assignments. This produces the ROM's
+natural order: nine stack stores, loop-counter initialization, three table
+loads, then the song-entry calculation. The assembly fallback and nonmatching
+reference were removed; all player and table addresses remain linker symbols.
 
 ## State
 
@@ -232,7 +352,9 @@ Recorded at the time of writing; regenerate rather than trusting these numbers.
   structural rewrites: `FontCharacterToGlyph`, `NfpGetEntrySizeByName`), then
   → 149 moving `SpriteFixed8Multiply` to real assembly, then → 141 moving
   the four sound-player lifecycle helpers, then → 140 moving dynamic
-  sound-player selection to real assembly, the current count.
+  sound-player selection to real assembly. Later structural reconstruction
+  restored `SpriteFixed8Multiply` and all four lifecycle helpers as clean,
+  matching C. Regenerate the current count with `make pret-audit`.
   `tools/drop_register_hints.py --all` finds 0 further mechanically-safe
   removals at 149; everything left needs either a structural rewrite (slow,
   one function at a time, as above) or the same real-assembly move.
@@ -243,7 +365,7 @@ Recorded at the time of writing; regenerate rather than trusting these numbers.
   `sram.c`, `sprite_interpolation.c`, `sound_m4a.c`, `resource_native.c`,
   `mapping.c`, `sprite_math.c`, `sound_idle_wait.c`, `ncd_sprite.c`, `nfp.c`,
   `sprite_tile_allocator.c`, `sprite_engine_state.c`, `save.c`,
-  `sound_fade_create.c`, `sound_player_select.c`.
+  `sound_fade_create.c`.
 - `make compare` byte-exact and all host tests passing throughout.
 
 ## Watch out for

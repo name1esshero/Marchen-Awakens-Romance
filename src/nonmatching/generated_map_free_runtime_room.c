@@ -24,9 +24,10 @@
  * that function's "find a free slot to allocate into" counterpart.
  *
  * Logically confirmed correct (every read/write offset accounted for), but
- * not byte-exact. The mode-0 case, the loop bounds/stride, and the
- * mode-out-of-range case all match. The remaining difference is on the
- * per-iteration active-byte check: the ROM computes it as
+ * not byte-exact. Explicit search/occupied labels recover the ROM's block
+ * order, place the loop count in r4 and the byte offset in r5, and match every
+ * instruction except the address addition in the active-byte check. The ROM
+ * computes that address as
  *
  *     bl GameStateGetBuffer38C0
  *     adds r1, r5, #0      @ copy the byte-offset accumulator
@@ -36,8 +37,9 @@
  *
  * i.e. it copies the offset accumulator into a scratch register before
  * adding it to the freshly-returned base, then adds the constant 44
- * separately. Every C shape tried for this one line reproduces the *count*
- * of instructions in some variant but not this exact grouping:
+ * separately. The closest ordinary C emits the equivalent single
+ * `add r0, r0, r5`, making the candidate two bytes shorter. Other shapes
+ * tried for this one line do not recover the copy:
  *   - `p = base + offset; p += 44;` (two statements) and
  *     `p = base + (offset + 44);` (grouped) both compile to a *direct*
  *     `add r0, r0, offsetReg` with no copy -- the copy never appears unless
@@ -52,16 +54,10 @@
  *     *second*, separately-materialized induction variable in a third
  *     register (r6) alongside `i`'s own register -- the ROM only ever uses
  *     two registers (r4, r5) for this loop.
- *   - Every variable declaration/initialization/increment order tried
- *     (offset declared before or after `i`; incremented before or after
- *     `i` in the loop body or in the `for` header) puts the loop's
- *     induction variable (`i`, tested against 63) in r5 and the byte-offset
- *     accumulator in r4; the ROM has them the other way around (counter in
- *     r4, offset in r5). This pairs with the copy above -- both look like
- *     one more instance of GCC 2.9's allocator not being steerable from
- *     this kind of plain C for this shape, in the same family as the
- *     documented OR/ADD register-tie cases, rather than a wrong
- *     reconstruction of the logic.
+ *   - Structured `for` and `while` spellings put the induction variable in
+ *     r5 and the byte offset in r4. Naming the ROM's real occupied/continue
+ *     edge explicitly fixes both registers and the success-block placement;
+ *     it does not fix the final two- versus three-register add choice.
  *
  * The mode==-1 "found" return path (`return buffer + offset + 24;`) *does*
  * reproduce the ROM's copy-then-add grouping exactly once written as
@@ -69,36 +65,33 @@
  * per-iteration check differs.
  */
 
-#include "gba/types.h"
-
-struct GeneratedMapRuntimeRoom {
-    s16 roomIndex;
-    u8 unknown02[18];
-    s8 active;
-    s8 scriptFlag;
-    u8 unknown16[2];
-};
-
-extern void *GameStateGetBuffer38C0(void);
+#include "map_generation.h"
+#include "runtime_misc.h"
 
 void *GeneratedMapFindFreeRuntimeRoom(s32 mode)
 {
     s32 i;
     s32 offset;
-    struct GeneratedMapRuntimeRoom *room;
-
     if (mode == 0)
         return (u8 *)GameStateGetBuffer38C0() + 24;
 
-    if (mode == -1) {
-        offset = 0;
-        for (i = 0; i <= 63; i++) {
-            room = (struct GeneratedMapRuntimeRoom *)
-                ((u8 *)GameStateGetBuffer38C0() + offset + 24);
-            if (room->active == 0)
-                return (u8 *)GameStateGetBuffer38C0() + (offset + 24);
-            offset += 24;
-        }
-    }
+    if (mode != -1)
+        goto no_room;
+
+    offset = 0;
+    i = 0;
+search:
+    if (*((s8 *)GameStateGetBuffer38C0() + offset + 24
+          + GENERATED_MAP_RUNTIME_ROOM_ACTIVE_OFFSET) != 0)
+        goto occupied;
+    return (u8 *)GameStateGetBuffer38C0() + (offset + 24);
+
+occupied:
+    offset += sizeof(struct GeneratedMapRuntimeRoom);
+    i++;
+    if (i <= 63)
+        goto search;
+
+no_room:
     return 0;
 }

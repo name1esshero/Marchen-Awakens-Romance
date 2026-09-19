@@ -4,6 +4,7 @@
 void *RuntimeGetBufferEB8(void);
 void *RuntimeGetBufferED0(void);
 void *RuntimeGetBufferEEA(void);
+void RuntimeSetBufferEEAName(const char *name);
 s32 RuntimeGetFieldEE8(void);
 void RuntimeSetFieldEE8(s32 value);
 s32 RuntimeGetFieldEE9(void);
@@ -52,9 +53,12 @@ void RuntimeActorSetFields7A4_7A6(u32 actor,s32 first,s32 second);
 void RuntimeActorGetFields7A4_7A6(u32 actor,u16 *first,u16 *second);
 void *RuntimeActorGetField354Address(u32 actor);
 u32 RuntimeCountMatchingValues(u32 actor,u32 group,s32 value);
+void RuntimeUpdateFiveParts(s32 actor, s32 group);
+void RuntimeUpdateFirstThreeGroups(void);
 u32 RuntimeCountReadyParts(u32 actor);
 void RuntimeActorClearField0E(u32 actor);
 u32 RuntimeActorHasReadyPart(u32 actor);
+u32 RuntimeActorHasPartField37Value6(u32 actor);
 u32 RuntimeGetPointerE30(u32 index);
 void RuntimeActorSetField33C(u32 index,u32 value);
 u32 RuntimeActorGetField33C(u32 index);
@@ -70,6 +74,7 @@ void RuntimeActorSetField354(u32 index,u32 value);
 u32 RuntimeActorGetField354(u32 index);
 u32 RuntimeGetPointerE3C(u32 index);
 s32 RuntimeActorGetField358(u32 index);
+void RuntimeActorSetField358(u32 index, s32 value);
 s32 RuntimeActorGetField79C(u32 index);
 void RuntimeActorSetField79C(u32 index,s32 value);
 #endif

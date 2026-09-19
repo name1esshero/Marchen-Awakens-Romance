@@ -26,6 +26,32 @@ extern void sub_0804AD08(void *task);
 extern void sub_0802D464(void *task);
 extern void sub_0804A7C4(void *task);
 
+enum
+{
+    ENGINE_TASK_HEADER_SIZE = 32,
+    BATTLE_OBJECT_TASK_STATE_SIZE = 300,
+    BATTLE_OBJECT_TASK_OWNER_OFFSET = 288,
+    BATTLE_OBJECT_TASK_SLOT_OFFSET = 292,
+    BATTLE_OBJECT_TASK_GROUP_OFFSET = 312,
+    BATTLE_OBJECT_TASK_VARIANT_OFFSET = 314,
+    BATTLE_OBJECT_TASK_RESOURCE_OFFSET = 324,
+    BATTLE_OBJECT_TASK_EMPTY_OFFSET = 328
+};
+
+/** Known layout of the battle-mode task created at 0x0804E668. */
+struct BattleModeTask4E6
+{
+    u8 unknown000[224];
+    s32 owner;
+    s32 slot;
+    s32 isPrimary;
+    u8 unknown0EC[30];
+    s16 mode;
+    u8 unknown10C[8];
+    void *resource;
+    s32 empty[2];
+};
+
 /** Implement create battle mode task2 c1 using the recovered battle task layout. */
 AT("0002C198")
 u8 *CreateBattleModeTask2C1(s32 owner, s32 slot, void *resource, s32 *result,
@@ -176,43 +202,50 @@ DEFINE_SEQUENTIAL_MODE_TASK("0004F444", CreateBattleModeTask4F4,
                             sub_0804F4D4, 196, 160, 220, 214, 224)
 AT("0004F444") const u8 CreateBattleModeTask4F4Tail[2] = {0};
 
-#ifdef NONMATCHING
+/**
+ * @brief Create the 4E6 battle-mode task and initialize its empty slots.
+ * @param owner Battle participant that owns the task-manager bank.
+ * @param slot Task-manager slot within the participant's bank.
+ * @param resource Resource record retained by the task.
+ * @param result Optional completion word, set to -1 if allocation fails.
+ * @param selectedMode Mode selected by the fixed battle-command adapter.
+ * @return The new task, or NULL if allocation fails.
+ */
 AT("0004E668")
 u8 *CreateBattleModeTask4E6(s32 owner, s32 slot, void *resource, s32 *result,
                              s32 selectedMode)
 {
     void *savedResource = resource;
     s32 mode = (s16)selectedMode;
-    u8 *task;
+    struct BattleModeTask4E6 *task;
     s32 *end;
     s32 *cursor;
     s32 emptyValue;
 
-    task = CreateTask(gSecondaryRuntime + owner * 32 + slot * 16,
-                      (void *)sub_0804E700, 0, result, 256);
+    task = (struct BattleModeTask4E6 *)CreateTask(
+        gSecondaryRuntime + owner * 32 + slot * 16,
+        (void *)sub_0804E700, 0, result,
+        sizeof(*task) - ENGINE_TASK_HEADER_SIZE);
     if (task == 0) {
         if (result != 0)
             *result = -1;
         return 0;
     }
-    *(s32 *)(task + 224) = owner;
-    *(s32 *)(task + 228) = slot;
-    *(s32 *)(task + 232) = owner == 0;
-    result = savedResource;
-    *(void **)(task + 276) = result;
-    *(s16 *)(task + 266) = mode;
-    result = (s32 *)280;
-    end = (s32 *)(task + (s32)result);
+    task->owner = owner;
+    task->slot = slot;
+    task->isPrimary = owner == 0;
+    task->resource = savedResource;
+    task->mode = mode;
+    end = task->empty;
     emptyValue = -1;
-    result = (s32 *)((s32)result + 4);
-    cursor = (s32 *)(task + (s32)result);
+    cursor = end + 1;
     do {
         *cursor = emptyValue;
         cursor--;
     } while ((s32)cursor >= (s32)end);
-    return task;
+    return (u8 *)task;
 }
-#endif
+AT("0004E668") const u8 CreateBattleModeTask4E6Tail[2] = {0};
 
 /** Implement create battle mode task483 using the recovered battle task layout. */
 AT("000483D8")
@@ -250,7 +283,15 @@ u8 *CreateBattleModeTask483(s32 owner, s32 slot, void *resource, s32 *result,
     return task;
 }
 
-#ifdef NONMATCHING
+/**
+ * @brief Create the compact 4AC battle-mode task.
+ * @param owner Battle participant that owns the task-manager bank.
+ * @param slot Task-manager slot within the participant's bank.
+ * @param resource Resource record retained by the task.
+ * @param result Optional completion word, set to -1 if allocation fails.
+ * @param selectedMode Mode selected by the fixed battle-command adapter.
+ * @return The new task, or NULL if allocation fails.
+ */
 AT("0004AC8C")
 u8 *CreateBattleModeTask4AC(s32 owner, s32 slot, void *resource, s32 *result,
                              s32 selectedMode)
@@ -287,25 +328,39 @@ u8 *CreateBattleModeTask4AC(s32 owner, s32 slot, void *resource, s32 *result,
     } while (remaining >= 0);
     return task;
 }
-#endif
 
 #define CREATE_BATTLE_TASK(callback)                                      \
-    u8 *task = CreateTask(gSecondaryRuntime + owner * 32 + slot * 16,       \
-                          (callback), 0, result, 300);                    \
+    void *savedResource = resource;                                       \
+    s32 savedGroup = (s16)group;                                          \
+    s32 savedVariant = (s16)variant;                                      \
+    u8 *task;                                                             \
+    s32 *cursor;                                                          \
+    s32 remaining;                                                        \
+    s32 emptyValue;                                                       \
+    task = CreateTask(gSecondaryRuntime + owner * 32 + slot * 16,          \
+                      (callback), 0, result,                              \
+                      BATTLE_OBJECT_TASK_STATE_SIZE);                     \
     if (task == 0) {                                                      \
         if (result != 0)                                                  \
             *result = -1;                                                 \
         return 0;                                                         \
     }                                                                     \
-    *(s32 *)(task + 288) = owner;                                         \
-    *(s32 *)(task + 292) = slot;                                          \
-    *(void **)(task + 324) = resource;                                    \
-    *(s16 *)(task + 312) = group;                                         \
-    *(s16 *)(task + 314) = variant;                                       \
-    *(s32 *)(task + 328) = -1;                                            \
+    *(s32 *)(task + BATTLE_OBJECT_TASK_OWNER_OFFSET) = owner;             \
+    *(s32 *)(task + BATTLE_OBJECT_TASK_SLOT_OFFSET) = slot;               \
+    *(void **)(task + BATTLE_OBJECT_TASK_RESOURCE_OFFSET) = savedResource;\
+    *(s16 *)(task + BATTLE_OBJECT_TASK_GROUP_OFFSET) = savedGroup;        \
+    *(s16 *)(task + BATTLE_OBJECT_TASK_VARIANT_OFFSET) = savedVariant;    \
+    emptyValue = -1;                                                      \
+    remaining = 0;                                                        \
+    cursor = (s32 *)(task + BATTLE_OBJECT_TASK_EMPTY_OFFSET);             \
+    do {                                                                  \
+        *cursor = emptyValue;                                             \
+        cursor--;                                                         \
+        remaining--;                                                      \
+    } while (remaining >= 0);                                             \
     return task
 
-#ifdef NONMATCHING
+/** Create the battle-object task selected by the fixed group/variant adapters. */
 AT("0002D3C0")
 void *BattleObjectCreateTask(s32 owner, s32 slot, void *resource, s32 *result,
                              s32 group, s32 variant)
@@ -314,9 +369,9 @@ void *BattleObjectCreateTask(s32 owner, s32 slot, void *resource, s32 *result,
 }
 
 AT("0004A720")
+/** Create the A-family battle task selected by fixed group/variant adapters. */
 void *BattleTaskACreateTask(s32 owner, s32 slot, void *resource, s32 *result,
                             s32 group, s32 variant)
 {
     CREATE_BATTLE_TASK((void *)sub_0804A7C4);
 }
-#endif

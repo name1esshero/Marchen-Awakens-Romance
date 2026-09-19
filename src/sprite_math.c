@@ -11,10 +11,30 @@
 extern s32 __divsi3(s32 dividend, s32 divisor);
 s32 SpriteFixedSqrt(s32 value);
 
-/* SpriteFixed8Multiply (0x0807D8F8) is real assembly at
- * asm/code/code_0780C0.s; no plain-C shape reproduces the ROM's register
- * copy (see src/nonmatching/sprite_fixed8_multiply.c and
- * docs/COMPILER_HINT_CLEANUP.md). */
+/**
+ * @brief Multiplies two signed 8.8 fixed-point values.
+ * @param left The left operand, in 8.8 fixed-point.
+ * @param right The right operand, in 8.8 fixed-point.
+ * @return The product, in 8.8 fixed-point, rounded toward zero.
+ */
+AT("0007D8F8")
+s32 SpriteFixed8Multiply(s32 left, s32 right)
+{
+    s32 product;
+    s32 rounded;
+
+    left <<= 16;
+    right <<= 16;
+    right >>= 16;
+    left >>= 16;
+    product = left * right;
+    rounded = product;
+    if (product < 0)
+        rounded += 255;
+
+    product = rounded << 8;
+    return product >> 16;
+}
 
 /**
  * @brief Divides one signed 8.8 fixed-point value by another.

@@ -596,13 +596,13 @@ sub_08058404:
 	strh r0, [r1, #0]
 	movs r0, #0
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #1
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #2
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	ldr r0, _080584E0
 	str r5, [sp, #0]
 	str r5, [sp, #4]
@@ -5303,13 +5303,13 @@ sub_08059F60:
 	strh r0, [r1, #0]
 	movs r0, #0
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #1
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #2
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	ldr r0, _0805A00C
 	str r5, [sp, #0]
 	str r5, [sp, #4]
@@ -11331,16 +11331,16 @@ sub_0805C4EE:
 	strh r0, [r1, #0]
 	movs r0, #0
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #1
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #2
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #3
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	ldr r0, _0805C564
 	str r5, [sp, #0]
 	str r5, [sp, #4]
@@ -14653,10 +14653,10 @@ sub_0805DC88:
 	strh r0, [r1, #0]
 	movs r0, #0
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #2
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	ldr r0, _0805DCDC
 	str r4, [sp, #0]
 	str r4, [sp, #4]
@@ -19539,7 +19539,7 @@ _08060050:
 sub_08060052:
 	movs r0, #3
 	movs r1, #0
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 
 	.thumb_func
 	.thumb

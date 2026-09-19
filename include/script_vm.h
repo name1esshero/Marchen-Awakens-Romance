@@ -4,6 +4,7 @@
 
 #define SCRIPT_FRAME_WORK_RESET_SIZE 0x40
 #define SCRIPT_FRAME_CALLBACK_RESET_SIZE 0x20
+#define SCRIPT_FRAME_CALLBACK_COUNT 8
 #define SCRIPT_FRAME_SOURCE_WORD_A_OFFSET 0x28
 #define SCRIPT_FRAME_SOURCE_WORD_B_OFFSET 0x2C
 
@@ -21,7 +22,8 @@ struct ScriptFrame
     u32 programCounter;            /* 044: cleared when frame pools are released */
     u8 work048[0x3C];              /* 048..083: transient interpreter state */
     u32 field084;                  /* 084: sum of the words at 028 and 02C */
-    u32 callbackAddresses[8];      /* 088: callbacks selected by dispatchFlags */
+    u32 callbackAddresses[SCRIPT_FRAME_CALLBACK_COUNT];
+                                    /* 088: callbacks selected by dispatchFlags */
     u16 dispatchFlags;             /* 0A8: pending callback bits */
     u16 flags;                    /* 0AA: setter accepts bit indices 0..7 */
     void *resource;                /* 0AC: freed through heap zero if owned */

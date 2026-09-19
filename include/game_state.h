@@ -3,6 +3,10 @@
 
 #include "gba/types.h"
 
+/* Offset of the main-runtime root pointer within IWRAM. This is a fixed RAM
+ * layout field, not a ROM address. */
+#define GAME_STATE_ROOT_IWRAM_OFFSET 0x3FDC
+
 /* Main runtime root cached in IWRAM. The historical name is retained from
  * the map-generation code that first recovered this slot. */
 extern u8 *gMapGenerationRoot;
@@ -24,11 +28,13 @@ s32 GameStateGetField4244(void);
 void GameStateSetField4244(s32 value);
 s32 GameStateGetField4245(void);
 void GameStateSetField4245(s32 value);
+void GameStateSetField424C50(u32 first, u32 second);
 void GameStateGetField424C50(u32 *first,u32 *second);
 u32 GameStateGetField424C(void);
 u32 GameStateGetField4250(void);
 void GameStateSetField4265(u32 index,s32 value);
 s32 GameStateGetField4265(u32 index);
+void GameStateSetField425A(s32 value);
 s32 GameStateGetField425A(void);
 void GameStateSetField425B(s32 value);
 s32 GameStateGetField425B(void);
@@ -46,5 +52,8 @@ s32 GameStateGetField425C(u32 index);
 void GameStateSetField425C(u32 index,s32 value);
 s32 GameStateGetField4269(void);
 void GameStateSetField4269(s32 value);
+s32 CountPmbDeckEntryCopies(s32 id);
+u32 GameStateGetResourceCounter(void);
+void GameStateAddResourceCounter(u32 value);
 
 #endif

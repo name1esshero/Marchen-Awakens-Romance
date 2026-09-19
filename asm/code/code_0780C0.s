@@ -394,7 +394,7 @@ _080783E6:
 	cmp r3, #0
 	beq _080783F8
 	ldr r0, [r0, #60]
-	bl sub_08078634
+	bl SoundCallViaR3
 	.global _080783F8
 _080783F8:
 	pop {r0}
@@ -528,7 +528,7 @@ _080784AE:
 	subs r0, #207
 	adds r1, r7, #0
 	adds r2, r5, #0
-	bl sub_08078634
+	bl SoundCallViaR3
 	b _080784F0
 	.global _080784C4
 _080784C4:
@@ -543,7 +543,7 @@ _080784C4:
 	ldr r3, [r3, r0]
 	adds r0, r7, #0
 	adds r1, r5, #0
-	bl sub_08078634
+	bl SoundCallViaR3
 	ldrb r0, [r5, #0]
 	cmp r0, #0
 	beq _0807854C
@@ -717,7 +717,7 @@ _080785E0:
 	adds r1, r2, #0
 	ldrb r2, [r5, #9]
 	adds r0, r6, #0
-	bl sub_08078634
+	bl SoundCallViaR3
 	str r0, [r4, #32]
 	ldrb r0, [r4, #29]
 	movs r1, #2
@@ -765,8 +765,8 @@ _08078624:
 
 	.thumb_func
 	.thumb
-	.global sub_08078634
-sub_08078634:
+	.global SoundCallViaR3
+SoundCallViaR3:
 	bx r3
 	.byte 0x00
 	.byte 0x00
@@ -782,8 +782,8 @@ _08078640:
 
 	.thumb_func
 	.thumb
-	.global sub_08078644
-sub_08078644:
+	.global SoundTrackReleaseChannels
+SoundTrackReleaseChannels:
 	push {r4, r5, r6, lr}
 	adds r5, r1, #0
 	ldrb r1, [r5, #0]
@@ -806,7 +806,7 @@ _08078658:
 	ldr r3, _08078684
 	ldr r3, [r3, #0]
 	ldr r3, [r3, #44]
-	bl sub_08078634
+	bl SoundCallViaR3
 	.global _08078670
 _08078670:
 	strb r6, [r4, #0]
@@ -1151,7 +1151,7 @@ _08078874:
 	ldr r0, [sp, #12]
 	ldr r3, [sp, #4]
 	ldr r3, [r3, #48]
-	bl sub_08078634
+	bl SoundCallViaR3
 	b _08078890
 	.global _08078886
 _08078886:
@@ -1309,54 +1309,8 @@ _08078944:
 @ 0789AC..0789B0 is decompiled as SoundDriverUnusedNoOp(); see src/decompiled.json
 
 
-@ The source-level forms for these four helpers are retained in
-@ src/nonmatching/sound_player_lifecycle.c.  old_agbcc coalesces the ready
-@ signature with another short-lived value in every ordinary-C shape tested,
-@ while the original keeps it in r3.  Keep the ROM instructions here rather
-@ than retaining a forced-register declaration in matching C.
-	.section .rom.000789B0, "ax"
-	.thumb
-	.thumb_func
-	.global SoundPlayerResume
-SoundPlayerResume:
-	adds r2, r0, #0
-	ldr r3, [r2, #52]
-	ldr r0, 1f
-	cmp r3, r0
-	bne 2f
-	ldr r0, [r2, #4]
-	ldr r1, 3f
-	ands r0, r1
-	str r0, [r2, #4]
-2:
-	bx lr
-1:
-	.4byte 0x68736D53
-3:
-	.4byte 0x7FFFFFFF
-
-	.section .rom.000789CC, "ax"
-	.thumb
-	.thumb_func
-	.global SoundPlayerFadeOut
-SoundPlayerFadeOut:
-	adds r2, r0, #0
-	lsls r1, r1, #16
-	lsrs r1, r1, #16
-	ldr r3, [r2, #52]
-	ldr r0, 1f
-	cmp r3, r0
-	bne 2f
-	strh r1, [r2, #38]
-	strh r1, [r2, #36]
-	movs r0, #128
-	lsls r0, r0, #1
-	strh r0, [r2, #40]
-2:
-	bx lr
-	.balign 4, 0
-1:
-	.4byte 0x68736D53
+@ 0789B0..0789EC is decompiled as SoundPlayerResume() and
+@ SoundPlayerFadeOut(); see src/decompiled.json
 
 
 @ 0789EC..078A64 is decompiled as SoundDriverInit(); see src/decompiled.json
@@ -1381,56 +1335,8 @@ SoundPlayerFadeOut:
 
 @ 078C08..078C18 is decompiled as SoundFadeOut(); see src/decompiled.json
 
-	.section .rom.00078C18, "ax"
-	.thumb
-	.thumb_func
-	.global SoundPlayerFadeOutTemporary
-SoundPlayerFadeOutTemporary:
-	adds r2, r0, #0
-	lsls r1, r1, #16
-	lsrs r1, r1, #16
-	ldr r3, [r2, #52]
-	ldr r0, 1f
-	cmp r3, r0
-	bne 2f
-	strh r1, [r2, #38]
-	strh r1, [r2, #36]
-	ldr r0, 3f
-	strh r0, [r2, #40]
-2:
-	bx lr
-	.align 2
-1:
-	.4byte 0x68736D53
-3:
-	.4byte 0x00000101
-
-	.section .rom.00078C38, "ax"
-	.thumb
-	.thumb_func
-	.global SoundPlayerFadeIn
-SoundPlayerFadeIn:
-	adds r2, r0, #0
-	lsls r1, r1, #16
-	lsrs r1, r1, #16
-	ldr r3, [r2, #52]
-	ldr r0, 1f
-	cmp r3, r0
-	bne 2f
-	strh r1, [r2, #38]
-	strh r1, [r2, #36]
-	movs r0, #2
-	strh r0, [r2, #40]
-	ldr r0, [r2, #4]
-	ldr r1, 3f
-	ands r0, r1
-	str r0, [r2, #4]
-2:
-	bx lr
-1:
-	.4byte 0x68736D53
-3:
-	.4byte 0x7FFFFFFF
+@ 078C18..078C60 is decompiled as SoundPlayerFadeOutTemporary() and
+@ SoundPlayerFadeIn(); see src/decompiled.json
 
 
 @ 078C60..078CA8 is decompiled as SoundPlayerImmediateInit(); see src/decompiled.json
@@ -5527,33 +5433,7 @@ _0807D8EA:
 	.4byte 0xE12FFF1E
 	.4byte 0x000001CC
 
-@ Signed 8.8 fixed-point multiply. Rounds a negative product toward zero
-@ before dropping the fractional byte; `rounded` must be a genuine copy of
-@ `product` kept alive past the compare (agbcc's plain-C allocator always
-@ coalesces the two into one register once `product` is dead there, so no
-@ ordinary C shape reproduces this without a forced-register pin -- see
-@ docs/COMPILER_HINT_CLEANUP.md). Readable non-matching C is kept at
-@ src/nonmatching/sprite_fixed8_multiply.c.
-	.section .rom.0007D8F8, "ax"
-	.thumb_func
-	.thumb
-	.global SpriteFixed8Multiply
-SpriteFixed8Multiply:
-	push {lr}
-	lsls r0, r0, #16
-	lsls r1, r1, #16
-	asrs r1, r1, #16
-	asrs r0, r0, #16
-	muls r0, r1
-	adds r1, r0, #0
-	cmp r0, #0
-	bge 1f
-	adds r1, #0xFF
-1:
-	lsls r0, r1, #8
-	asrs r0, r0, #16
-	pop {r1}
-	bx r1
+@ 07D8F8..07D914 is decompiled as SpriteFixed8Multiply(); see src/decompiled.json
 
 @ 07D914..07D92C is decompiled as SpriteFixed8Divide(); see src/decompiled.json
 
@@ -7496,48 +7376,9 @@ _0807E960:
 
 @ 07E9F4..07EA8C is decompiled as ScriptResourceSet(); see src/decompiled.json
 
-	.section .rom.0007EA8C, "ax"
+	@ 07EA8C..07EB18 is decompiled as ScriptResourceRemove().
+	.section .rom.0007EB18, "ax"
 	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global ScriptResourceRemove
-ScriptResourceRemove:
-	.4byte 0x4647B5F0
-	.4byte 0x1C06B480
-	.4byte 0xF7FF1C0D
-	.4byte 0x4680FF71
-	.4byte 0x6800480D
-	.4byte 0x688168C0
-	.4byte 0x00904642
-	.4byte 0x68041840
-	.4byte 0x2C002700
-	.4byte 0x6861D00E
-	.4byte 0x56082000
-	.4byte 0xD1054286
-	.4byte 0x1C283101
-	.4byte 0xFEA4F003
-	.4byte 0xD0072800
-	.4byte 0x68241C27
-	.4byte 0xD1F02C00
-	.4byte 0xE0192001
-	.4byte 0x0300611C
-	.4byte 0xD10B2F00
-	.4byte 0x68104A04
-	.4byte 0x688168C0
-	.4byte 0x00984643
-	.4byte 0x68211840
-	.4byte 0xE0046001
-	.4byte 0x0300611C
-	.4byte 0x60386820
-	.4byte 0x68104A06
-	.4byte 0x684068C0
-	.4byte 0xF7FB1C21
-	.4byte 0x2000FC93
-	.4byte 0x4698BC08
-	.4byte 0xBC02BCF0
-	.4byte 0x00004708
-	.4byte 0x0300611C
 
 	.thumb_func
 	.thumb

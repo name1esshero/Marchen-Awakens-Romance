@@ -3,6 +3,8 @@
 .set gIwramBase, 0x03000000
 .global gObjectHeapRootOffset
 .set gObjectHeapRootOffset, 0x00003FB4
+.global gArchiveRenderContextOffset
+.set gArchiveRenderContextOffset, 0x00003FD0
 .global gMapGenerationRootOffset
 .set gMapGenerationRootOffset, 0x00003FDC
 .global gMapGenerationRoot

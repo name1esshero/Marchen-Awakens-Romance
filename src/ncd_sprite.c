@@ -17,6 +17,13 @@ extern void HeapFree(struct Heap *,void *);
 
 extern void SpriteTileAllocatorRelease(void *allocator, s32 tile);
 
+enum
+{
+ NCD_RELEASE_ARRAY_COUNT = 8,
+ NCD_RELEASE_COUNTER_SHIFT = 16,
+ NCD_RELEASE_COUNTER_UNIT = 1 << NCD_RELEASE_COUNTER_SHIFT,
+};
+
 /** Release one resource's palette-binding table and clear its four descriptor
  * slots.  NCD resources reserve 0x80 bytes here even though one descriptor is
  * 0x20 bytes. */
@@ -207,4 +214,25 @@ void NcdRuntimeSpriteReleaseAllocation(struct NcdSprite *sprite)
  }
  HeapFree(heap, toFree);
  self->allocation = 0;
+}
+
+/**
+ * @brief Release the allocations owned by an eight-entry sprite array.
+ * @param sprites First sprite in the contiguous array.
+ */
+AT("00053FD4")
+void NcdReleaseSpriteArray(struct NcdSprite *sprites)
+{
+ s32 fixedIndex = NCD_RELEASE_COUNTER_UNIT;
+ struct NcdSprite *sprite = sprites;
+ s32 previousIndex;
+
+ do
+ {
+  NcdRuntimeSpriteReleaseAllocation(sprite);
+  previousIndex = fixedIndex;
+  fixedIndex += NCD_RELEASE_COUNTER_UNIT;
+  sprite++;
+ } while ((previousIndex >> NCD_RELEASE_COUNTER_SHIFT)
+          <= NCD_RELEASE_ARRAY_COUNT - 1);
 }

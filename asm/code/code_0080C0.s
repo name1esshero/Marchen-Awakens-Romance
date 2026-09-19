@@ -184,10 +184,10 @@ sub_08008206:
 	bl sub_0800612C
 	ldr r4, _080082E8
 	adds r0, r4, #0
-	bl sub_080028C8
+	bl KmpDrawViewport
 	adds r0, r4, #0
 	adds r0, #252
-	bl sub_080028C8
+	bl KmpDrawViewport
 	movs r0, #2
 	.2byte 0xF7FE
 	.byte 0x60
@@ -197,7 +197,7 @@ sub_08008206:
 	movs r3, #252
 	lsls r3, r3, #1
 	adds r0, r4, r3
-	bl sub_080028C8
+	bl KmpDrawViewport
 	.global _0800823A
 _0800823A:
 	movs r0, #3
@@ -209,12 +209,12 @@ _0800823A:
 	movs r1, #189
 	lsls r1, r1, #2
 	adds r0, r4, r1
-	bl sub_080028C8
+	bl KmpDrawViewport
 	.global _0800824E
 _0800824E:
 	adds r0, r6, #0
 	adds r1, r5, #0
-	bl sub_08006DF0
+	bl GameStateSetField424C50
 	ldr r5, _080082EC
 	ldr r3, [r5, #0]
 	ldr r2, _080082F0
@@ -349,16 +349,16 @@ sub_08008358:
 	strh r0, [r4, #0]
 	movs r0, #0
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #1
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #2
 	movs r1, #0
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #3
 	movs r1, #0
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	strh r5, [r4, #28]
 	movs r0, #1
 	movs r1, #1
@@ -1127,10 +1127,10 @@ _08008964:
 sub_08008968:
 	push {r4, lr}
 	movs r0, #1
-	bl sub_0800AFA0
+	bl RuntimeSetModeE4B
 	movs r0, #1
 	movs r1, #0
-	bl sub_08009A04
+	bl RuntimeUpdateFiveParts
 	movs r0, #2
 	bl sub_08008BE4
 	movs r0, #2
@@ -3004,16 +3004,7 @@ _08009620:
 
 @ 00975C..009774 is decompiled as RuntimeActorGetField358(); see src/decompiled.json
 
-	.section .rom.00009778, "ax"
-	.syntax unified
-
-	.4byte 0x68124A05
-	.4byte 0x00DB23D1
-	.4byte 0x18124358
-	.4byte 0x008020D6
-	.4byte 0x80111812
-	.4byte 0x00004770
-	.4byte 0x03004020
+@ 009778..009794 is decompiled as RuntimeActorSetField358(); see src/decompiled.json
 
 	.section .rom.00009794, "ax"
 	.syntax unified
@@ -3038,22 +3029,11 @@ _08009620:
 
 @ 009830..009868 is decompiled as RuntimeActorHasReadyPart(); see src/decompiled.json
 
-	.section .rom.00009868, "ax"
+@ 009868..0098A0 is decompiled as RuntimeActorHasPartField37Value6(); see
+@ src/decompiled.json
+
+	.section .rom.000098A0, "ax"
 	.syntax unified
-	.4byte 0x1C05B530
-	.4byte 0x1C282400
-	.4byte 0xF0001C21
-	.4byte 0x1C01FCA7
-	.4byte 0x56082000
-	.4byte 0xD0082800
-	.4byte 0x30371C08
-	.4byte 0x06007800
-	.4byte 0x28061600
-	.4byte 0x2001D101
-	.4byte 0x3401E003
-	.4byte 0xDDEA2C03
-	.4byte 0xBC302000
-	.4byte 0x4708BC02
 
 	.thumb_func
 	.thumb
@@ -3190,28 +3170,10 @@ sub_080099E0:
 _08009A00:
 	.4byte 0x03004020  @ IWRAM+0x4020
 
-	.thumb_func
-	.thumb
-	.global sub_08009A04
-sub_08009A04:
-	push {r4, r5, r6, lr}
-	adds r6, r0, #0
-	adds r5, r1, #0
-	movs r4, #0
-	.global _08009A0C
-_08009A0C:
-	adds r0, r6, #0
-	adds r1, r5, #0
-	adds r2, r4, #0
-	bl sub_08009A24
-	adds r4, #1
-	cmp r4, #4
-	ble _08009A0C
-	pop {r4, r5, r6}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
+@ 009A04..009A24 is decompiled as RuntimeUpdateFiveParts(); see src/decompiled.json
+
+	.section .rom.00009A24, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -3926,21 +3888,11 @@ sub_0800A0E2:
 
 @ 00A3A0..00A3B8 is decompiled as RuntimeObjectSetField48(); see src/decompiled.json
 
-	.section .rom.0000A3B8, "ax"
+@ 00A3B8..00A3EC is decompiled as RuntimeActorPartSetFixed18And1C(); see
+@ src/decompiled.json
+
+	.section .rom.0000A3EC, "ax"
 	.syntax unified
-	.4byte 0x4D0BB530
-	.4byte 0x00E424D1
-	.4byte 0x24904360
-	.4byte 0x19000064
-	.4byte 0x1824682C
-	.4byte 0x434820A8
-	.4byte 0x0089218F
-	.4byte 0x18241840
-	.4byte 0x61A20412
-	.4byte 0x61E3041B
-	.4byte 0xBC01BC30
-	.4byte 0x00004700
-	.4byte 0x03004020
 
 	.thumb_func
 	.thumb
@@ -3995,31 +3947,11 @@ _0800A420:
 
 @ 00A46C..00A484 is decompiled as RuntimeObjectGetField1E(); see src/decompiled.json
 
-	.section .rom.0000A484, "ax"
-	.syntax unified
-	.4byte 0x4D0BB530
-	.4byte 0x00E424D1
-	.4byte 0x24904360
-	.4byte 0x19000064
-	.4byte 0x1824682C
-	.4byte 0x434820A8
-	.4byte 0x0089218F
-	.4byte 0x18241840
+@ 00A484..00A4B8 is decompiled as RuntimeActorPartSetFixed20And24(); see
+@ src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0800A4A4
-sub_0800A4A4:
-	lsls r2, r2, #16
-	str r2, [r4, #32]
-	lsls r3, r3, #16
-	str r3, [r4, #36]
-	pop {r4, r5}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.4byte 0x03004020
+	.section .rom.0000A4B8, "ax"
+	.syntax unified
 	.4byte 0x4D0CB530
 	.4byte 0x00E424D1
 	.4byte 0x24904360
@@ -4043,33 +3975,11 @@ sub_0800A4A4:
 
 @ 00A538..00A550 is decompiled as RuntimeObjectGetField26(); see src/decompiled.json
 
-	.section .rom.0000A550, "ax"
-	.syntax unified
-	.4byte 0x4D0AB530
-	.4byte 0x00E424D1
-	.4byte 0x24904360
-	.4byte 0x19000064
-	.4byte 0x1824682C
-	.4byte 0x434820A8
-	.4byte 0x0089218F
-	.4byte 0x18241840
-	.4byte 0x61E361A2
-	.4byte 0xBC01BC30
-	.4byte 0x00004700
-	.4byte 0x03004020
-	.4byte 0x4D0BB530
-	.4byte 0x00E424D1
-	.4byte 0x24904360
-	.4byte 0x19000064
-	.4byte 0x1824682C
-	.4byte 0x434820A8
-	.4byte 0x0089218F
-	.4byte 0x18241840
-	.4byte 0x601069A0
-	.4byte 0x601869E0
-	.4byte 0xBC01BC30
-	.4byte 0x00004700
-	.4byte 0x03004020
+@ 00A550..00A580 is decompiled as RuntimeActorPartSetWords18And1C(); see
+@ src/decompiled.json
+
+@ 00A580..00A5B4 is decompiled as RuntimeActorPartGetWords18And1C(); see
+@ src/decompiled.json
 
 @ 00A5B4..00A5C8 is decompiled as RuntimeObjectSetWord18(); see src/decompiled.json
 
@@ -4079,49 +3989,11 @@ sub_0800A4A4:
 
 @ 00A5F0..00A604 is decompiled as RuntimeObjectGetWord1C(); see src/decompiled.json
 
-	.section .rom.0000A604, "ax"
-	.syntax unified
-	.4byte 0x4D0AB530
-	.4byte 0x00E424D1
-	.byte 0x60
-	.byte 0x43
+@ 00A604..00A634 is decompiled as RuntimeActorPartSetWords20And24(); see
+@ src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0800A60E
-sub_0800A60E:
-	movs r4, #144
-	lsls r4, r4, #1
-	adds r0, r0, r4
-	ldr r4, [r5, #0]
-	adds r4, r4, r0
-	movs r0, #168
-	muls r0, r1
-	movs r1, #143
-	lsls r1, r1, #2
-	adds r0, r0, r1
-	adds r4, r4, r0
-	str r2, [r4, #32]
-	str r3, [r4, #36]
-	pop {r4, r5}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.4byte 0x03004020
-	.4byte 0x4D0BB530
-	.4byte 0x00E424D1
-	.4byte 0x24904360
-	.4byte 0x19000064
-	.4byte 0x1824682C
-	.4byte 0x434820A8
-	.4byte 0x0089218F
-	.4byte 0x18241840
-	.4byte 0x60106A20
-	.4byte 0x60186A60
-	.4byte 0xBC01BC30
-	.4byte 0x00004700
-	.4byte 0x03004020
+@ 00A634..00A668 is decompiled as RuntimeActorPartGetWords20And24(); see
+@ src/decompiled.json
 
 @ 00A668..00A67C is decompiled as RuntimeObjectSetWord20(); see src/decompiled.json
 
@@ -5425,47 +5297,7 @@ sub_0800AF74:
 
 @ 00AF88..00AFA0 is decompiled as RuntimeGetSignedByteE4B(); see src/decompiled.json
 
-	.section .rom.0000AFA0, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_0800AFA0
-sub_0800AFA0:
-	push {lr}
-	adds r1, r0, #0
-	ldr r2, _0800AFC0
-	cmp r1, #0
-	bne _0800AFB2
-	ldr r0, [r2, #0]
-	ldr r3, _0800AFC4
-	adds r0, r0, r3
-	strb r1, [r0, #0]
-	.global _0800AFB2
-_0800AFB2:
-	ldr r0, [r2, #0]
-	ldr r2, _0800AFC8
-	adds r0, r0, r2
-	strb r1, [r0, #0]
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _0800AFC0
-_0800AFC0:
-	.2byte 0x4020
-
-	.thumb_func
-	.thumb
-	.global sub_0800AFC2
-sub_0800AFC2:
-	lsls r0, r0, #12
-	.global _0800AFC4
-_0800AFC4:
-	.4byte 0x00000E4C
-	.global _0800AFC8
-_0800AFC8:
-	.4byte 0x00000E4B
+@ 00AFA0..00AFCC is decompiled as RuntimeSetModeE4B(); see src/decompiled.json
 
 @ 00AFCC..00AFE4 is decompiled as RuntimeGetSignedByteE4C(); see src/decompiled.json
 
@@ -6348,22 +6180,12 @@ sub_0800B474:
 	bx r1
 	.byte 0x00
 	.byte 0x00
-	.4byte 0xB081B500
-	.4byte 0x48051C03
-	.4byte 0x22804905
-	.4byte 0x92000052
-	.4byte 0xF06F2200
 
-	.thumb_func
-	.thumb
-	.global sub_0800B48C
-sub_0800B48C:
-	.2byte 0xF977
-	add sp, #4
-	pop {r1}
-	bx r1
-	.4byte 0x030032C4
-	.4byte 0x0800B49D
+@ 00B478..00B49C is decompiled as CreateTaskB478();
+@ see src/decompiled.json
+
+	.section .rom.0000B49C, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -7266,13 +7088,13 @@ _0800B9E0:
 	bl sub_0800612C
 	ldr r4, _0800BB0C
 	adds r0, r4, #0
-	bl sub_080028C8
+	bl KmpDrawViewport
 	adds r4, #252
 	adds r0, r4, #0
-	bl sub_080028C8
+	bl KmpDrawViewport
 	ldr r0, [sp, #20]
 	ldr r1, [sp, #24]
-	bl sub_08006DF0
+	bl GameStateSetField424C50
 	movs r0, #0
 	movs r1, #1
 	bl sub_0800945C
@@ -7333,14 +7155,14 @@ _0800BAC2:
 	bl sub_08056D4C
 	movs r0, #0
 	movs r1, #0
-	bl sub_08009A04
+	bl RuntimeUpdateFiveParts
 	movs r0, #0
 	movs r1, #1
 	movs r2, #0
 	bl sub_08056D4C
 	movs r0, #1
 	movs r1, #0
-	bl sub_08009A04
+	bl RuntimeUpdateFiveParts
 	ldr r0, _0800BB18
 	mov r2, r10
 	adds r2, #224
@@ -7699,13 +7521,13 @@ _0800BDA4:
 	bl sub_0800612C
 	ldr r4, _0800BEB0
 	adds r0, r4, #0
-	bl sub_080028C8
+	bl KmpDrawViewport
 	adds r0, r4, #0
 	adds r0, #252
-	bl sub_080028C8
+	bl KmpDrawViewport
 	ldr r0, [sp, #20]
 	ldr r1, [sp, #24]
-	bl sub_08006DF0
+	bl GameStateSetField424C50
 	ldr r5, _0800BEB4
 	ldr r3, [r5, #0]
 	ldr r6, _0800BEB8
@@ -10165,7 +9987,7 @@ sub_0800CCD6:
 	.byte 0xF9
 	bl sub_08004F10
 	movs r0, #0
-	bl sub_08006F0C
+	bl GameStateSetField425A
 	.2byte 0xF7F8
 	.4byte 0x2090F8B1
 	lsls r0, r0, #8
@@ -10274,7 +10096,7 @@ sub_0800CD5A:
 	.2byte 0xF7F8
 	.4byte 0xF7F8F8AB
 	.4byte 0x2000F8B5
-	bl sub_08006F0C
+	bl GameStateSetField425A
 	.2byte 0xF7F8
 	.byte 0x50
 	.byte 0xF8
@@ -10518,7 +10340,7 @@ sub_0800CF18:
 	cmp r0, #0
 	bne sub_0800CF88
 	movs r0, #0
-	bl sub_0800AFA0
+	bl RuntimeSetModeE4B
 	movs r0, #0
 	.2byte 0xF7F9
 	.byte 0xFE
@@ -15022,7 +14844,7 @@ _0800F20A:
 	lsls r1, r1, #30
 	lsrs r1, r1, #31
 	adds r0, r6, #0
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	ldr r3, _0800F26C
 	lsls r0, r6, #6
 	subs r0, r0, r6
@@ -15051,7 +14873,7 @@ _0800F20A:
 	ldr r1, _0800F27C
 	adds r0, r3, r1
 	adds r0, r2, r0
-	bl sub_080028C8
+	bl KmpDrawViewport
 	b _0800F2BC
 	.global _0800F26C
 _0800F26C:

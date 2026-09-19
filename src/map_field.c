@@ -7,6 +7,7 @@
  * The original 16-byte filename buffer and unchecked copies are preserved.
  */
 #include "kmp.h"
+#include "game_state.h"
 #include "map_events.h"
 #include "rom_section.h"
 #include "runtime_misc.h"
@@ -14,9 +15,21 @@ extern const char gMapArchiveKmpExtension[];
 extern char *strcpy(char *,const char *);
 extern char *strcat(char *,const char *);
 extern char *strupr(char *);
-extern s32 sub_08056290(void);
 extern void sub_08054350(void *, void *, s32, s32, s32, s32, s32);
 #define sText_KmpExtension gMapArchiveKmpExtension
+
+extern void sub_08018590(void *actorState);
+extern void sub_08017E70(void *actorState, s32 first, s32 second);
+
+/** Update a field actor using the handler selected by game-state mode 1. */
+AT("00017E4C") void FieldActorUpdateForMode(void *actorState)
+{
+    if (GameStateGetField4254() == 1)
+        sub_08018590(actorState);
+    else
+        sub_08017E70(actorState, 3, 4);
+}
+
 /** Kmp load field for the active map viewport. */
 AT("000032B8") void KmpLoadField(const char *name,s16 x,s16 y)
 {
@@ -47,7 +60,7 @@ AT("00003294") const u8 KmpResetClipTail[2]={0,0};
 /** Prepare the two field-display substructures used by the map scene. */
 AT("00061E70") void InitializeMapFieldDisplay(void *state)
 {
-    s32 resource = sub_08056290();
+    s32 resource = GameStateGetResourceCounter();
     sub_08054350((u8 *)state + 0xB94, (u8 *)state + 0x1BC4,
                  resource, 6, 194, 8, 0);
 }
@@ -58,7 +71,7 @@ AT("00061E70") void InitializeMapFieldDisplay(void *state)
  * main engine state. */
 AT("00065E50") void InitializeFieldEventDisplay(void *task)
 {
-    s32 resource = sub_08056290();
+    s32 resource = GameStateGetResourceCounter();
     sub_08054350((u8 *)task + 0x104, (u8 *)task + 0x404,
                  resource, 6, 194, 8, 0);
 }
@@ -67,7 +80,7 @@ AT("00065E50") void InitializeFieldEventDisplay(void *task)
  * task that 08054C74 creates. */
 AT("000558A4") void InitializeFieldDisplay5A4(void *task)
 {
-    s32 resource = sub_08056290();
+    s32 resource = GameStateGetResourceCounter();
     sub_08054350((u8 *)task + 0x5A4, (u8 *)task + 0x7AC,
                  resource, 6, 194, 8, 0);
 }

@@ -147,6 +147,8 @@ void SoundDriverInit(void);
 void SoundPlayerOpen(struct SoundPlayer *player, struct SoundTrack *tracks,
                      u8 trackCount);
 void SoundPlayerImmediateInit(struct SoundPlayer *player);
+void SoundTrackReleaseChannels(struct SoundPlayer *player,
+                               struct SoundTrack *track);
 void SoundDriverSetSampleFrequency(u32 frequency);
 void SoundDriverStateInit(void *sound);
 void SoundDriverSetMode(u32 mode);

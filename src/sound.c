@@ -1,12 +1,11 @@
 /* Matched sound-driver control routines. Stop pauses the player, locks it,
- * stops each 80-byte track through 08078644, then restores the ready signature.
+ * releases each 80-byte track's channels, then restores the ready signature.
  * Update invokes the mixer; fade-out delegates to the interval setter. */
 #include "sound.h"
 #include "rom_section.h"
 #define players gSoundPlayerTable
 #define songs gSongTable
 extern void sub_08077DC0(void);
-extern void sub_08078644(struct SoundPlayer *, struct SoundTrack *);
 extern void sub_08079240(struct SoundPlayer *);
 extern u8 gIwramBase[];
 extern u8 gSoundIrqModeOffset[];
@@ -80,7 +79,7 @@ void SoundPlayerStop(struct SoundPlayer *p)
         track=p->tracks;
         while (count > 0)
         {
-            sub_08078644(p,track);
+            SoundTrackReleaseChannels(p,track);
             count--;
             track++;
         }

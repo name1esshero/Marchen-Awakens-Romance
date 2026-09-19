@@ -6,10 +6,6 @@
 
 extern const struct ScriptResourceEntry gScriptResourceEntries[];
 extern const u8 gScriptResourceDefaultValue[];
-extern s32 ScriptResourceRemove(s32 type, const char *name);
-extern u16 *ScriptResourceFind(s32 type, const char *name);
-extern s32 ScriptResourceSet(s32 type, const char *name, const void *data,
-                             s32 size);
 struct ScriptResourceSlot {
     u32 referenceCount;
     void *allocation;
@@ -184,7 +180,7 @@ AT("0007F294") s32 ScriptResourceNameFirst(const char *key)
     u8 *state;
     u16 *found;
 
-    found = ScriptResourceFind(35, key);
+    found = (u16 *)ScriptResourceFind(35, key);
     if (found != 0)
         return *found;
 
@@ -210,7 +206,7 @@ AT("0007F2E0") s32 ScriptResourceNameSecond(const char *key)
     u8 *state;
     u16 *found;
 
-    found = ScriptResourceFind(36, key);
+    found = (u16 *)ScriptResourceFind(36, key);
     if (found != 0)
         return *found;
 

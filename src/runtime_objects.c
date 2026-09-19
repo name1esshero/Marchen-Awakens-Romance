@@ -6,6 +6,24 @@ extern u8 *gRuntimeObjectTable[];
 #define OBJECT_TABLE gRuntimeObjectTable
 #define RUNTIME_OBJECT(group,slot) OBJECT_TABLE[(group)*4+(slot)]
 
+#define ACTOR_RECORD_SIZE 1672
+#define ACTOR_RECORD_HEADER_OFFSET 0x120
+#define ACTOR_PART_RECORD_SIZE 168
+#define ACTOR_PART_RECORDS_OFFSET 0x23C
+
+/* This expanded address calculation is shared by the paired actor-part
+ * accessors below. Its statement order reproduces the original agbcc code. */
+#define ACTOR_PART_RECORD_SETUP() \
+    u8 **root = &gSecondaryRuntime; \
+    u32 actorOffset = actor * ACTOR_RECORD_SIZE; \
+    u8 *record; \
+    u32 partOffset; \
+    actorOffset += ACTOR_RECORD_HEADER_OFFSET; \
+    record = *root + actorOffset; \
+    partOffset = part * ACTOR_PART_RECORD_SIZE; \
+    partOffset += ACTOR_PART_RECORDS_OFFSET; \
+    record += partOffset
+
 /** @return The secondary runtime's +0xEA0 pointer field. See
  * RuntimeSetPointerEA0(). */
 AT("0000A0E8") void *RuntimeGetPointerEA0(void) { return *(void **)(gSecondaryRuntime+0xEA0); }
@@ -46,6 +64,67 @@ AT("0000A1C4") void *RuntimeGetActorRecord(u32 actor,u32 part)
  partOffset=part*168;
  partOffset+=0x23C;
  return base+partOffset;
+}
+
+/** Store two integer coordinates as 16.16 values in an actor-part record. */
+AT("0000A3B8")
+void RuntimeActorPartSetFixed18And1C(u32 actor, u32 part, s32 first, s32 second)
+{
+    ACTOR_PART_RECORD_SETUP();
+
+    *(u32 *)(record + 0x18) = first << 16;
+    *(u32 *)(record + 0x1C) = second << 16;
+}
+
+/** Store two integer coordinates as 16.16 values in the record's second
+ * coordinate pair. */
+AT("0000A484")
+void RuntimeActorPartSetFixed20And24(u32 actor, u32 part, s32 first, s32 second)
+{
+    ACTOR_PART_RECORD_SETUP();
+
+    *(u32 *)(record + 0x20) = first << 16;
+    *(u32 *)(record + 0x24) = second << 16;
+}
+
+/** Store the raw 32-bit values at actor-part offsets +0x18 and +0x1C. */
+AT("0000A550")
+void RuntimeActorPartSetWords18And1C(u32 actor, u32 part, u32 first, u32 second)
+{
+    ACTOR_PART_RECORD_SETUP();
+
+    *(u32 *)(record + 0x18) = first;
+    *(u32 *)(record + 0x1C) = second;
+}
+
+/** Read the raw 32-bit values at actor-part offsets +0x18 and +0x1C. */
+AT("0000A580")
+void RuntimeActorPartGetWords18And1C(u32 actor, u32 part, u32 *first, u32 *second)
+{
+    ACTOR_PART_RECORD_SETUP();
+
+    *first = *(u32 *)(record + 0x18);
+    *second = *(u32 *)(record + 0x1C);
+}
+
+/** Store the raw 32-bit values at actor-part offsets +0x20 and +0x24. */
+AT("0000A604")
+void RuntimeActorPartSetWords20And24(u32 actor, u32 part, u32 first, u32 second)
+{
+    ACTOR_PART_RECORD_SETUP();
+
+    *(u32 *)(record + 0x20) = first;
+    *(u32 *)(record + 0x24) = second;
+}
+
+/** Read the raw 32-bit values at actor-part offsets +0x20 and +0x24. */
+AT("0000A634")
+void RuntimeActorPartGetWords20And24(u32 actor, u32 part, u32 *first, u32 *second)
+{
+    ACTOR_PART_RECORD_SETUP();
+
+    *first = *(u32 *)(record + 0x20);
+    *second = *(u32 *)(record + 0x24);
 }
 /** The same actor record's other per-part table: stride 104 rather than 168,
  * based at +0x4DC. Callers treat each entry as a party slot. */

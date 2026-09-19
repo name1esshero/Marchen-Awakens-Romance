@@ -13,7 +13,8 @@ extern void sub_08000B00(void);
 extern void sub_08000BAC(void);
 extern void sub_08000C70(void);
 extern void sub_08000D34(void);
-extern void sub_08015269(void);
+extern s32 BattleActionUnavailable(s32 owner, s32 slot, void *resource,
+                                   s32 *status);
 extern void sub_08023B99(void);
 extern void sub_08023FA5(void);
 extern void sub_08024701(void);
@@ -287,28 +288,28 @@ AT("001ACC70") const u16 gBattleRuntimePresetB[BATTLE_PRESET_SIZE] = {
 AT("001ACC90") const s16 gFriendArmOwnershipBits[8] = {
     1, 2, 12, FRIEND_ARM_NO_OWNERSHIP_BIT, 23, FRIEND_ARM_NO_OWNERSHIP_BIT, 21, 1,
 };
-AT("001ACCA0") const u16 gBattlePartyDefaults[8] = {
+AT("001ACCA0") const s16 gBattlePartyDefaults[8] = {
     1, 3, 4, 6, 9, 8, 7, 22,
 };
 
 /** Battle action/effect dispatch slots. Repeated fallback entries are
- * retained. Handlers are not yet individually decompiled; each name is
- * a plain alias for its ROM address, declared in asm/game_table_handlers.s. */
+ * retained. BattleActionUnavailable is matching C; the remaining handlers
+ * are address aliases declared in asm/game_table_handlers.s until decoded. */
 AT("001ACCB0") void *const gBattleActionHandlers[BATTLE_ACTION_HANDLER_COUNT] = {
-    [0] = (void *)sub_08015269, [1] = (void *)sub_08015269, [2] = (void *)sub_08015269, [3] = (void *)sub_0803DE59,
+    [0] = (void *)BattleActionUnavailable, [1] = (void *)BattleActionUnavailable, [2] = (void *)BattleActionUnavailable, [3] = (void *)sub_0803DE59,
     [4] = (void *)sub_0803E239, [5] = (void *)sub_0803E5E1, [6] = (void *)sub_0803EC35, [7] = (void *)sub_0803EF65,
     [8] = (void *)sub_0803F515, [9] = (void *)sub_0803FF15, [10] = (void *)sub_08040785, [11] = (void *)sub_08040799,
-    [12] = (void *)sub_08015269, [13] = (void *)sub_08075299, [14] = (void *)sub_08075299, [15] = (void *)sub_0804CB45,
+    [12] = (void *)BattleActionUnavailable, [13] = (void *)sub_08075299, [14] = (void *)sub_08075299, [15] = (void *)sub_0804CB45,
     [16] = (void *)sub_0804CEDD, [17] = (void *)sub_0804D405, [18] = (void *)sub_0804DCD1, [19] = (void *)sub_0804E641,
-    [20] = (void *)sub_0804E655, [21] = (void *)sub_080256F9, [22] = (void *)sub_080256F9, [23] = (void *)sub_08015269,
+    [20] = (void *)sub_0804E655, [21] = (void *)sub_080256F9, [22] = (void *)sub_080256F9, [23] = (void *)BattleActionUnavailable,
     [24] = (void *)sub_08031109, [25] = (void *)sub_0803111D, [26] = (void *)sub_08031131, [27] = (void *)sub_08031145,
     [28] = (void *)sub_0804F409, [29] = (void *)sub_0804F41D, [30] = (void *)sub_0804F431, [31] = (void *)sub_0804FBA1,
     [32] = (void *)sub_08050359, [33] = (void *)sub_08031C35, [34] = (void *)sub_080322A5, [35] = (void *)sub_080322B9,
-    [36] = (void *)sub_08015269, [37] = (void *)sub_080507FD, [38] = (void *)sub_08050811, [39] = (void *)sub_08050825,
+    [36] = (void *)BattleActionUnavailable, [37] = (void *)sub_080507FD, [38] = (void *)sub_08050811, [39] = (void *)sub_08050825,
     [40] = (void *)sub_08051035, [41] = (void *)sub_0802D8D1, [42] = (void *)sub_08051649, [43] = (void *)sub_080410C1,
-    [44] = (void *)sub_08015269, [45] = (void *)sub_08015269, [46] = (void *)sub_08015269, [47] = (void *)sub_0802FC79,
+    [44] = (void *)BattleActionUnavailable, [45] = (void *)BattleActionUnavailable, [46] = (void *)BattleActionUnavailable, [47] = (void *)sub_0802FC79,
     [48] = (void *)sub_0802FC8D, [49] = (void *)sub_080516DD, [50] = (void *)sub_0803C071, [51] = (void *)sub_0803C085,
-    [52] = (void *)sub_0803C099, [53] = (void *)sub_0803C0C1, [54] = (void *)sub_08015269, [55] = (void *)sub_08015269,
+    [52] = (void *)sub_0803C099, [53] = (void *)sub_0803C0C1, [54] = (void *)BattleActionUnavailable, [55] = (void *)BattleActionUnavailable,
     [56] = (void *)sub_0804AC29, [57] = (void *)sub_0804AC3D, [58] = (void *)sub_0804AC51, [59] = (void *)sub_0804AC79,
     [60] = (void *)sub_080414B5, [61] = (void *)sub_080414C9, [62] = (void *)sub_080414DD, [63] = (void *)sub_080414F1,
     [64] = (void *)sub_08041A05, [65] = (void *)sub_08041A19, [66] = (void *)sub_08041A2D, [67] = (void *)sub_08042239,
@@ -361,15 +362,15 @@ AT("001ACCB0") void *const gBattleActionHandlers[BATTLE_ACTION_HANDLER_COUNT] = 
     [252] = (void *)sub_08047FED, [253] = (void *)sub_080483B1, [254] = (void *)sub_080483C5, [255] = (void *)sub_080486D5,
     [256] = (void *)sub_080272FD, [257] = (void *)sub_08048D31, [258] = (void *)sub_0804915D, [259] = (void *)sub_08049171,
     [260] = (void *)sub_080496FD, [261] = (void *)sub_08049C49, [262] = (void *)sub_080308C9, [263] = (void *)sub_08030BC5,
-    [264] = (void *)sub_08030E49, [265] = (void *)sub_08015269, [266] = (void *)sub_08015269, [267] = (void *)sub_08015269,
-    [268] = (void *)sub_08015269, [269] = (void *)sub_08015269, [270] = (void *)sub_08015269, [271] = (void *)sub_08015269,
-    [272] = (void *)sub_08015269, [273] = (void *)sub_08015269, [274] = (void *)sub_08015269, [275] = (void *)sub_08015269,
-    [276] = (void *)sub_08015269, [277] = (void *)sub_08015269, [278] = (void *)sub_08015269, [279] = (void *)sub_08015269,
-    [280] = (void *)sub_08015269, [281] = (void *)sub_08015269, [282] = (void *)sub_08015269, [283] = (void *)sub_08015269,
-    [284] = (void *)sub_08015269, [285] = (void *)sub_08015269, [286] = (void *)sub_08015269, [287] = (void *)sub_08015269,
-    [288] = (void *)sub_08015269, [289] = (void *)sub_08015269, [290] = (void *)sub_08015269, [291] = (void *)sub_08015269,
-    [292] = (void *)sub_08015269, [293] = (void *)sub_08015269, [294] = (void *)sub_08015269, [295] = (void *)sub_08015269,
-    [296] = (void *)sub_08015269, [297] = (void *)sub_08015269, [298] = (void *)sub_08015269, [299] = (void *)sub_08015269,
+    [264] = (void *)sub_08030E49, [265] = (void *)BattleActionUnavailable, [266] = (void *)BattleActionUnavailable, [267] = (void *)BattleActionUnavailable,
+    [268] = (void *)BattleActionUnavailable, [269] = (void *)BattleActionUnavailable, [270] = (void *)BattleActionUnavailable, [271] = (void *)BattleActionUnavailable,
+    [272] = (void *)BattleActionUnavailable, [273] = (void *)BattleActionUnavailable, [274] = (void *)BattleActionUnavailable, [275] = (void *)BattleActionUnavailable,
+    [276] = (void *)BattleActionUnavailable, [277] = (void *)BattleActionUnavailable, [278] = (void *)BattleActionUnavailable, [279] = (void *)BattleActionUnavailable,
+    [280] = (void *)BattleActionUnavailable, [281] = (void *)BattleActionUnavailable, [282] = (void *)BattleActionUnavailable, [283] = (void *)BattleActionUnavailable,
+    [284] = (void *)BattleActionUnavailable, [285] = (void *)BattleActionUnavailable, [286] = (void *)BattleActionUnavailable, [287] = (void *)BattleActionUnavailable,
+    [288] = (void *)BattleActionUnavailable, [289] = (void *)BattleActionUnavailable, [290] = (void *)BattleActionUnavailable, [291] = (void *)BattleActionUnavailable,
+    [292] = (void *)BattleActionUnavailable, [293] = (void *)BattleActionUnavailable, [294] = (void *)BattleActionUnavailable, [295] = (void *)BattleActionUnavailable,
+    [296] = (void *)BattleActionUnavailable, [297] = (void *)BattleActionUnavailable, [298] = (void *)BattleActionUnavailable, [299] = (void *)BattleActionUnavailable,
     [300] = (void *)sub_08023B99, [301] = (void *)sub_08023FA5, [302] = (void *)sub_08023FA5, [303] = (void *)sub_08024701,
     [304] = (void *)sub_08026141, [305] = (void *)sub_0802AE95, [306] = (void *)sub_0802AEA9, [307] = (void *)sub_0802BB0D,
     [308] = (void *)sub_08072C15, [309] = (void *)sub_08031109, [310] = (void *)sub_0803111D, [311] = (void *)sub_080507FD,
@@ -708,7 +709,7 @@ extern void ScriptNativeBackgroundSet(void);
 extern void ScriptNativeFieldSet(void);
 extern void ScriptNativeFieldGet(void);
 extern void ScriptNativeSetRuntimePair(void);
-extern void sub_080129F4(void);
+extern void ScriptNativePmbDeckMake(void);
 extern void ScriptNativeCall08740(void);
 extern void ScriptNativeConfigureResourceSlots(void);
 extern void ScriptNativeQueryResourceSlot(void);
@@ -757,9 +758,9 @@ extern void ScriptNativeMapSelectSlot(void);
 extern void ScriptNativeGetField4258(void);
 extern void ScriptNativeSetField4258(void);
 extern void ScriptNativeSetField12EC(void);
-extern void ScriptNativeCall067DC(void);
-extern void ScriptNativeCall0680C(void);
-extern void ScriptNativeCall06858(void);
+extern void ScriptNativeInitializeAttributeFlags(void);
+extern void ScriptNativeSetAttributeFlag(void);
+extern void ScriptNativeSetAttributeFlagRange(void);
 extern void ScriptNativeGetField4256(void);
 extern void ScriptNativeGetField60E(void);
 extern void ScriptNativeDeckMake(void);
@@ -838,7 +839,7 @@ AT("001AFEA4") const struct ScriptNativeCommand
     [43] = { .name = gScriptNativeName_FldSet, .handler = (void *)((u32)ScriptNativeFieldSet + 1) },
     [44] = { .name = gScriptNativeName_FldGet, .handler = (void *)((u32)ScriptNativeFieldGet + 1) },
     [45] = { .name = gScriptNativeName_CameraMode, .handler = (void *)((u32)ScriptNativeSetRuntimePair + 1) },
-    [46] = { .name = gScriptNativeName_PmbDeckMake, .handler = (void *)((u32)sub_080129F4 + 1) },
+    [46] = { .name = gScriptNativeName_PmbDeckMake, .handler = (void *)((u32)ScriptNativePmbDeckMake + 1) },
     [47] = { .name = gScriptNativeName_PmbStatusInit, .handler = (void *)((u32)ScriptNativeCall08740 + 1) },
     [48] = { .name = gScriptNativeName_PmbSetParty, .handler = (void *)((u32)ScriptNativeConfigureResourceSlots + 1) },
     [49] = { .name = gScriptNativeName_PmdGetParty, .handler = (void *)((u32)ScriptNativeQueryResourceSlot + 1) },
@@ -887,10 +888,10 @@ AT("001AFEA4") const struct ScriptNativeCommand
     [92] = { .name = gScriptNativeName_GetPlayMode, .handler = (void *)((u32)ScriptNativeGetField4258 + 1) },
     [93] = { .name = gScriptNativeName_SetPlayMode, .handler = (void *)((u32)ScriptNativeSetField4258 + 1) },
     [94] = { .name = gScriptNativeName_SetBabbo, .handler = (void *)((u32)ScriptNativeSetField12EC + 1) },
-    [95] = { .name = gScriptNativeName_BgIntAttr, .handler = (void *)((u32)ScriptNativeCall067DC + 1) },
-    [96] = { .name = gScriptNativeName_BgSetAttrEnable, .handler = (void *)((u32)ScriptNativeCall0680C + 1) },
-    [97] = { .name = gScriptNativeName_BgGetAttrEnable, .handler = (void *)((u32)ScriptNativeCall0680C + 1) },
-    [98] = { .name = gScriptNativeName_BgSetAttrEnables, .handler = (void *)((u32)ScriptNativeCall06858 + 1) },
+    [95] = { .name = gScriptNativeName_BgIntAttr, .handler = (void *)((u32)ScriptNativeInitializeAttributeFlags + 1) },
+    [96] = { .name = gScriptNativeName_BgSetAttrEnable, .handler = (void *)((u32)ScriptNativeSetAttributeFlag + 1) },
+    [97] = { .name = gScriptNativeName_BgGetAttrEnable, .handler = (void *)((u32)ScriptNativeSetAttributeFlag + 1) },
+    [98] = { .name = gScriptNativeName_BgSetAttrEnables, .handler = (void *)((u32)ScriptNativeSetAttributeFlagRange + 1) },
     [99] = { .name = gScriptNativeName_GetIrqCause, .handler = (void *)((u32)ScriptNativeGetField4256 + 1) },
     [100] = { .name = gScriptNativeName_GetBtlRoomNo, .handler = (void *)((u32)ScriptNativeGetField60E + 1) },
     [101] = { .name = gScriptNativeName_DeckMake, .handler = (void *)((u32)ScriptNativeDeckMake + 1) },
@@ -921,4 +922,3 @@ AT("001AFEA4") const struct ScriptNativeCommand
     [126] = { .name = gScriptNativeName_SetFhantom, .handler = (void *)((u32)ScriptNativeSetEncounterMode + 1) },
     [127] = { .name = gScriptNativeName_GetFhantom, .handler = (void *)((u32)ScriptNativeGetEncounterMode + 1) },
 };
-

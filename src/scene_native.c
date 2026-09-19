@@ -15,8 +15,10 @@ extern const char gSceneNcdExtension[];
 #define SCRIPT_WAIT 0x7FFF
 #define sText_NcdExtension gSceneNcdExtension
 
+#define SOUND_PLAYER_POINTER_CAPACITY 10
+#define DYNAMIC_SOUND_PLAYER_COUNT 6
+
 extern s32 sub_080053E4(s32 first, s32 second, s32 third, s32 mode);
-extern s32 sub_08006760(s32 first, s32 second);
 extern s32 sub_08006E88(s32 value);
 extern s32 SpriteResourceFindGroup(s32 type, const char *name);
 extern void sub_08005530(s32 first, s32 second, s32 third, s32 fourth,
@@ -58,12 +60,12 @@ AT("00005B58") s32 ScriptNativeTestGameFlag(u32 count, const s32 *args,
     return SCRIPT_CONTINUE;
 }
 
-/** Native script command: forward two arguments to sub_08006760().
+/** Native script command: enable or disable a game-state flag.
  * @return Always SCRIPT_CONTINUE. */
 AT("00005B6C") s32 ScriptNativeSetGameValue(u32 count, const s32 *args,
                                              s32 *result)
 {
-    sub_08006760(args[0], args[1]);
+    GameStateSetFlagsAC(args[0], args[1]);
     return SCRIPT_CONTINUE;
 }
 
@@ -144,9 +146,8 @@ AT("00005C74") s32 ScriptNativeGetSpriteRuntime(u32 count, const s32 *args,
 }
 AT("00005C74") const u8 ScriptNativeGetSpriteRuntimeTail[2] = {0};
 
-#ifdef NONMATCHING
 AT("00005C88") s32 ScriptNativeSetRuntimeCoordinate(u32 count,
-                                                     const s32 *args,
+                                                     const u32 *args,
                                                      s32 *result)
 {
     s16 first;
@@ -168,8 +169,12 @@ AT("00005C88") s32 ScriptNativeSetRuntimeCoordinate(u32 count,
     return SCRIPT_CONTINUE;
 }
 
+/**
+ * Read one of the sprite runtime's three coordinates into the script result.
+ * The selector is unsigned, matching the VM argument representation.
+ */
 AT("00005CDC") s32 ScriptNativeGetRuntimeCoordinate(u32 count,
-                                                     const s32 *args,
+                                                     const u32 *args,
                                                      s32 *result)
 {
     s16 first;
@@ -190,7 +195,6 @@ AT("00005CDC") s32 ScriptNativeGetRuntimeCoordinate(u32 count,
     return SCRIPT_CONTINUE;
 }
 AT("00005CDC") const u8 ScriptNativeGetRuntimeCoordinateTail[2] = {0};
-#endif
 
 /** Native script command: if the requested scene value differs from the
  * current menu selection (+0x12EE), start a transition to it and wait;
@@ -354,6 +358,49 @@ AT("00005F54") void StartIndexedSong(u32 playerIndex, u32 songIndex)
     struct SoundPlayer *player = gSoundPlayerTable[playerIndex].player;
     const void *song = gSongTable[songIndex].header;
     SoundPlayerStart(player, song);
+}
+
+/** Start a song on the first inactive player in the engine's dynamic
+ * six-entry priority order.
+ * @return The selected order index, or -1 when every candidate is active. */
+AT("00005F7C") s32 StartSongOnFreePlayer(void *context, void *arguments,
+                                          u32 song)
+{
+    struct SoundPlayer *players[SOUND_PLAYER_POINTER_CAPACITY];
+    const struct SoundPlayerEntry *playerTable;
+    const struct SoundSongEntry *songTable;
+    const struct SoundSongEntry *songEntry;
+    const s16 *order;
+    s32 i;
+
+    players[0] = &gSoundPlayer0;
+    players[1] = &gSoundPlayer1;
+    players[2] = &gSoundPlayer2;
+    players[3] = &gSoundPlayer3;
+    players[4] = &gSoundPlayer4;
+    players[5] = &gSoundPlayer5;
+    players[6] = &gSoundPlayer6;
+    players[7] = &gSoundPlayer7;
+    players[8] = &gSoundPlayer8;
+
+    i = 0;
+    playerTable = gSoundPlayerTable;
+    songTable = gSongTable;
+    order = gDynamicSoundPlayerOrder;
+    songEntry = &songTable[song];
+    while (i < DYNAMIC_SOUND_PLAYER_COUNT)
+    {
+        s32 player = *order;
+
+        if ((s32)players[player]->status < 0)
+        {
+            SoundPlayerStart(playerTable[player].player, songEntry->header);
+            return i;
+        }
+        order++;
+        i++;
+    }
+    return -1;
 }
 
 /** Stop the sound player at a given index in the engine's nine-player

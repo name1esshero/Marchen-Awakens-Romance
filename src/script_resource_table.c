@@ -14,11 +14,6 @@ struct ScriptResourceTable {
     struct ScriptResourceNode **buckets;
 };
 
-/* Separate names model the three independent root reads in removal. */
-extern struct ScriptBytecodeRoot *gScriptResourceRootForLookup;
-extern struct ScriptBytecodeRoot *gScriptResourceRootForHeadUpdate;
-extern struct ScriptBytecodeRoot *gScriptResourceRootForHeap;
-
 extern s32 __modsi3(s32 dividend, s32 divisor);
 extern u32 strlen(const char *text);
 extern s32 strcmp(const char *left, const char *right);
@@ -105,8 +100,7 @@ AT("0007E9F4") s32 ScriptResourceSet(s32 type, const char *name,
 }
 AT("0007E9F4") const u8 ScriptResourceSetTail[2] = {0, 0};
 
-/* Remove an existing class/name pair and release its table allocation. */
-#ifdef NONMATCHING
+/** Remove an existing class/name pair and release its table allocation. */
 AT("0007EA8C") s32 ScriptResourceRemove(s32 type, const char *name)
 {
     s32 localType = type;
@@ -114,7 +108,7 @@ AT("0007EA8C") s32 ScriptResourceRemove(s32 type, const char *name)
     s32 bucket =
         ScriptResourceHash(localType, localName);
     struct ScriptResourceNode *node =
-        ((struct ScriptResourceTable *)gScriptResourceRootForLookup->context)
+        ((struct ScriptResourceTable *)gScriptBytecodeRoot->context)
             ->buckets[bucket];
     struct ScriptResourceNode *previous = 0;
 
@@ -132,11 +126,10 @@ AT("0007EA8C") s32 ScriptResourceRemove(s32 type, const char *name)
 found:
     if (previous == 0)
         ((struct ScriptResourceTable *)
-            gScriptResourceRootForHeadUpdate->context)
+            gScriptBytecodeRoot->context)
             ->buckets[bucket] = node->next;
     else
         previous->next = node->next;
-    HeapFree(*(void **)((u8 *)gScriptResourceRootForHeap->context + 4), node);
+    HeapFree(*(void **)((u8 *)gScriptBytecodeRoot->context + 4), node);
     return 0;
 }
-#endif

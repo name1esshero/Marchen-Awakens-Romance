@@ -5,9 +5,9 @@
 
 #include "rom_section.h"
 
-extern void *sub_0802D3C0(s32 owner, s32 slot, void *resource, void *result,
-                          s32 group, s32 variant);
-#define BattleObjectCreate sub_0802D3C0
+extern void *BattleObjectCreateTask(s32 owner, s32 slot, void *resource,
+                                    void *result, s32 group, s32 variant);
+#define BattleObjectCreate BattleObjectCreateTask
 
 /** Create the battle task for constructor group 0, variant 0. */
 AT("0002D078")

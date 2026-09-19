@@ -867,15 +867,12 @@ _081ACB3C:
 	.4byte 0x20001000
 	.4byte 0x04000100
 	.4byte 0x40001000
-	.4byte 0x00000000
-	.4byte 0x0000000F
-	.4byte 0x000000FF
-	.4byte 0x00000FFF
-	.4byte 0x0000FFFF
-	.4byte 0x000FFFFF
-	.4byte 0x00FFFFFF
-	.4byte 0x0FFFFFFF
-	.4byte 0xFFFFFFFF
+
+@ 1ACB58..1ACB7C is decompiled as gTileRemainderMasks();
+@ see src/decompiled.json
+
+	.section .rom.001ACB7C, "ax"
+	.syntax unified
 	.4byte 0x08086B50
 	.4byte 0x08005B2D
 	.4byte 0x08086B4C

@@ -29,8 +29,8 @@ extern s32 CreateBattleModeTask450();
 extern s32 sub_08046854();
 extern s32 CreateBattleModeTask483();
 extern s32 CreateBattleModeTask491();
-extern s32 sub_0804AC8C();
-extern s32 sub_0804E668();
+extern s32 CreateBattleModeTask4AC();
+extern s32 CreateBattleModeTask4E6();
 extern s32 CreateBattleModeTask4F4();
 extern s32 sub_08050838();
 
@@ -39,6 +39,8 @@ extern s32 sub_08050838();
 #define sub_080450E0 CreateBattleModeTask450
 #define sub_080483D8 CreateBattleModeTask483
 #define sub_08049184 CreateBattleModeTask491
+#define sub_0804AC8C CreateBattleModeTask4AC
+#define sub_0804E668 CreateBattleModeTask4E6
 #define sub_0804F444 CreateBattleModeTask4F4
 
 #define DEFINE_MODE_ADAPTER(address, name, implementation, mode) \

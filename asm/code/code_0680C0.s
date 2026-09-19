@@ -348,7 +348,7 @@ _080682A8:
 	.4byte 0xFAC6F7ED
 	.4byte 0x1C11E004
 	.4byte 0x20003114
-	.4byte 0xFE86F7FD
+	bl CreateTask66068
 	.4byte 0x81E02009
 	.4byte 0x6950E02B
 	.4byte 0xD0282800
@@ -382,23 +382,10 @@ _080683BA:
 	bx r0
 	.byte 0x00
 	.byte 0x00
-	.4byte 0xB081B530
-	.4byte 0x1C0B1C05
-	.4byte 0x490D480C
-	.4byte 0x0092228E
-	.4byte 0x22009200
-	.4byte 0xF9D0F012
-	.4byte 0x218E1C04
-	.4byte 0x18600089
-	.4byte 0x200F6005
-	.4byte 0xF7EF82A8
-	.4byte 0x228FF9FB
-	.4byte 0x18A10092
-	.4byte 0x1C208008
-	.4byte 0xBC30B001
-	.4byte 0x4708BC02
-	.4byte 0x030032C4
-	.4byte 0x08068409
+@ 0683C4..068408 is decompiled as CreateTask683C4(); see src/decompiled.json
+
+	.section .rom.00068408, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -1048,18 +1035,11 @@ _08068A26:
 	.4byte 0x08088F4C
 	.4byte 0x0000022A
 	.4byte 0x08088F54
-	.4byte 0xB081B510
-	.4byte 0x48081C03
-	.4byte 0x22AD4908
-	.4byte 0x92000112
-	.4byte 0xF0112200
-	.4byte 0x1C04FDAD
-	.4byte 0xFA9AF7ED
-	.4byte 0xB0011C20
-	.4byte 0xBC02BC10
-	.4byte 0x00004708
-	.4byte 0x030032C4
-	.4byte 0x08068C3D
+@ 068C0C..068C3C is decompiled as CreateTask68C0C();
+@ see src/decompiled.json
+
+	.section .rom.00068C3C, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -1190,8 +1170,9 @@ _08068D48:
 	.4byte 0xE026FF29
 	.4byte 0x00000AC8
 	.4byte 0x4A021D38
-	.4byte 0xF7FF18B9
-	.4byte 0xE01EFB2F
+	.2byte 0x18B9
+	bl CreateTask683C4
+	.2byte 0xE01E
 	.4byte 0x00000AC8
 	.4byte 0x4A021D38
 	.4byte 0xF7F518B9
@@ -2300,7 +2281,7 @@ sub_08069890:
 	.2byte 0xF925
 	movs r0, #2
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	ldr r0, _080698E4
 
 	.thumb_func
@@ -3042,53 +3023,11 @@ _08069DA4:
 sub_08069DB0:
 	pop {r0}
 	bx r0
-	.4byte 0xB081B510
 
-	.thumb_func
-	.thumb
-	.global sub_08069DB8
-sub_08069DB8:
-	adds r4, r0, #0
-	adds r3, r1, #0
-	ldr r0, _08069DEC
-	ldr r1, _08069DF0
-	ldr r2, _08069DF4
-	str r2, [sp, #0]
-	movs r2, #0
-	.2byte 0xF010
-	.4byte 0x490BFCD9
-	adds r3, r0, r1
-	str r4, [r3, #0]
-	movs r1, #20
-	strh r1, [r4, #20]
-	ldr r1, _08069DFC
-	adds r2, r0, r1
-	ldr r1, [r3, #0]
-	movs r3, #169
-	lsls r3, r3, #4
-	adds r1, r1, r3
-	str r1, [r2, #0]
-	add sp, #4
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _08069DEC
-_08069DEC:
-	.4byte 0x030032C4  @ IWRAM+0x32C4
-	.global _08069DF0
-_08069DF0:
-	.4byte 0x08069E01  @ ROM+0x69E01
-	.global _08069DF4
-_08069DF4:
-	.4byte 0x00007038
-	.global _08069DF8
-_08069DF8:
-	.4byte 0x000011CC
-	.global _08069DFC
-_08069DFC:
-	.4byte 0x000011D0
+@ 069DB4..069E00 is decompiled as CreateRuntimeTask69DB4(); see src/decompiled.json
+
+	.section .rom.00069E00, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -5183,13 +5122,13 @@ sub_0806B23C:
 	strh r0, [r1, #0]
 	movs r0, #0
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #1
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #2
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	ldr r0, _0806B340
 	str r5, [sp, #0]
 	str r5, [sp, #4]
@@ -6998,7 +6937,7 @@ sub_0806BFAC:
 	strh r1, [r0, #0]
 	movs r0, #3
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	mov r8, r5
 	mov r9, r4
 	movs r5, #128
@@ -7976,7 +7915,7 @@ _0806C540:
 	.byte 0x7C
 	.byte 0xFC
 	movs r0, #0
-	bl sub_08006F0C
+	bl GameStateSetField425A
 	movs r5, #128
 	lsls r5, r5, #9
 	adds r4, r6, #0
@@ -8091,7 +8030,7 @@ sub_0806C5C6:
 	strh r1, [r0, #0]
 	movs r0, #3
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #0
 	movs r1, #1
 	bl DialogueLoadWindowGraphics
@@ -8492,8 +8431,9 @@ _0806CAF0:
 	.4byte 0x00004A0C
 	.4byte 0x00004A08
 	.4byte 0x18E14B0C
-	.4byte 0xF7E51C20
-	.4byte 0x200BF9AB
+	.2byte 0x1C20
+	bl CreateTask51E84
+	.2byte 0x200B
 	.4byte 0x490981E8
 	.4byte 0x68001860
 	.4byte 0xD1002800
@@ -8518,12 +8458,12 @@ _0806CAF0:
 	.4byte 0x0000E010
 	.4byte 0x00004A0C
 	.4byte 0x18604903
-	.4byte 0xFFB4F001
+	bl CreateTask6EAFC
 	.4byte 0x81E82009
 	.4byte 0x0000E091
 	.4byte 0x00004A0C
 	.4byte 0x18A04A03
-	.4byte 0xF832F7FC
+	bl CreateTask68C0C
 	.4byte 0x81E8200C
 	.4byte 0x0000E087
 	.4byte 0x00004A0C
@@ -8547,8 +8487,9 @@ _0806CAF0:
 	.4byte 0x18D04B09
 	.4byte 0x312C1C11
 	.4byte 0xF7954A08
-	.4byte 0xF7EAF957
-	.4byte 0xE00FFAEF
+	.2byte 0xF957
+	bl GameStateSnapshotMapBuffer
+	.2byte 0xE00F
 	.4byte 0x00004A0C
 	.4byte 0x03000000
 	.4byte 0x00003FDC
@@ -8556,7 +8497,7 @@ _0806CAF0:
 	.4byte 0x00FF00FF
 	.4byte 0x00001390
 	.4byte 0x00001364
-	.4byte 0xFAF6F7EA
+	bl GameStateRestoreMapBuffer
 	.4byte 0xFA30F003
 	.4byte 0x00C921C3
 	.4byte 0x4A0E1840
@@ -8938,8 +8879,9 @@ _0806CEC8:
 	.4byte 0x1970006D
 	.4byte 0x5E802200
 	.4byte 0x18400080
-	.4byte 0xF79A6800
-	.4byte 0x238AFA47
+	.2byte 0x6800
+	bl RuntimeSetBufferEEAName
+	.2byte 0x238A
 	.4byte 0x18F0005B
 	.4byte 0x1C308801
 	.4byte 0x8001309C
@@ -10226,10 +10168,10 @@ sub_0806DF0E:
 	strh r0, [r1, #0]
 	movs r0, #0
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #2
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	ldr r0, _0806DFAC
 	str r4, [sp, #0]
 	str r4, [sp, #4]
@@ -10757,7 +10699,7 @@ _0806E9B4:
 	strh r0, [r1, #0]
 	movs r0, #3
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #0
 	movs r1, #1
 	bl DialogueLoadWindowGraphics
@@ -10959,40 +10901,10 @@ _0806EAF4:
 	.global _0806EAF8
 _0806EAF8:
 	.4byte 0xFF900000
-	.4byte 0xB081B530
-	.4byte 0x4C0B1C03
-	.4byte 0x480C490B
-	.4byte 0x1C209000
+@ 06EAFC..06EB44 is decompiled as CreateTask6EAFC(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0806EB0C
-sub_0806EB0C:
-	movs r2, #0
-	.2byte 0xF00B
-	.4byte 0x1C05FE35
-	ldr r0, _0806EB3C
-	adds r4, r4, r0
-	ldr r0, [r4, #0]
-	ldr r1, _0806EB40
-	adds r0, r0, r1
-	movs r1, #2
-	strb r1, [r0, #0]
-	bl sub_0805615C
-	adds r0, r5, #0
-	add sp, #4
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.4byte 0x030032C4
-	.4byte 0x0806EB45
-	.4byte 0x00000B24
-	.global _0806EB3C
-_0806EB3C:
-	.4byte 0x00000D18
-	.global _0806EB40
-_0806EB40:
-	.4byte 0x000038B8
+	.section .rom.0006EB44, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -11121,7 +11033,7 @@ sub_0806EBEC:
 	.4byte 0x005B2380
 	.4byte 0x1D28E108
 	.4byte 0x18A94A03
-	.4byte 0xFF2CF7AC
+	bl CreateTask1BAD8
 	.4byte 0x81F0200E
 	.4byte 0x0000E12E
 	.4byte 0x00000AC8
@@ -11129,8 +11041,9 @@ sub_0806EBEC:
 	.4byte 0x4A0518E8
 	.4byte 0xF79818A9
 	.4byte 0x4B04FDB3
-	.4byte 0xF79C18E8
-	.4byte 0x200AFBEB
+	.2byte 0x18E8
+	bl CreateTaskB478
+	.2byte 0x200A
 	.4byte 0xE11D81F0
 	.4byte 0x00000AD4
 	.4byte 0x00000AC8
@@ -11460,52 +11373,9 @@ _0806EFC4:
 _0806EFC8:
 	.4byte 0x0808941C  @ ROM+0x8941C
 
-	.thumb_func
-	.thumb
-	.global sub_0806EFCC
-sub_0806EFCC:
-	push {r4, r5, lr}
-	sub sp, #4
-	adds r3, r0, #0
-	ldr r0, _0806F00C
-	ldr r1, _0806F010
-	ldr r2, _0806F014
-	str r2, [sp, #0]
-	movs r2, #0
-	.2byte 0xF00B
-	.byte 0xCE
-	.byte 0xFB
-	adds r5, r0, #0
-	movs r0, #0
-	movs r4, #128
-	lsls r4, r4, #9
-	.global _0806EFE8
-_0806EFE8:
-	movs r1, #0
-	bl RuntimeSetFlagC0
-	adds r0, r4, #0
-	movs r1, #128
-	lsls r1, r1, #9
-	adds r4, r4, r1
-	asrs r0, r0, #16
-	cmp r0, #3
-	ble _0806EFE8
-	movs r0, #1
-	.2byte 0xF00F
-	.4byte 0x1C28FA0F
-	add sp, #4
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.global _0806F00C
-_0806F00C:
-	.4byte 0x030032C4  @ IWRAM+0x32C4
-	.global _0806F010
-_0806F010:
-	.4byte 0x0806F019  @ ROM+0x6F019
-	.global _0806F014
-_0806F014:
-	.4byte 0x00003F34
+@ 06EFCC..06F018 is decompiled as CreateEncounterResetTask(); see src/decompiled.json
+
+	.section .rom.0006F018, "ax"
 
 	.thumb_func
 	.thumb
@@ -12504,7 +12374,7 @@ _0806F780:
 	adds r1, r6, #0
 	adds r1, #40
 	adds r0, r5, #0
-	bl sub_0806FA94
+	bl CreateEncounterSetupTask
 	b _0806F8D8
 	.global _0806F78C
 _0806F78C:
@@ -12960,38 +12830,7 @@ sub_0806FA8C:
 _0806FA90:
 	.4byte 0x0000080C
 
-	.thumb_func
-	.thumb
-	.global sub_0806FA94
-sub_0806FA94:
-	push {r4, lr}
-	sub sp, #4
-	adds r4, r0, #0
-	adds r3, r1, #0
-	ldr r0, _0806FABC
-	ldr r1, _0806FAC0
-	movs r2, #184
-	lsls r2, r2, #1
-	str r2, [sp, #0]
-	movs r2, #0
-	.2byte 0xF00A
-	.byte 0x68
-	.byte 0xFE
-	movs r2, #184
-	lsls r2, r2, #1
-	adds r1, r0, r2
-	str r4, [r1, #0]
-	add sp, #4
-	pop {r4}
-	pop {r1}
-	bx r1
-	.global _0806FABC
-_0806FABC:
-	.4byte 0x030032C4  @ IWRAM+0x32C4
-	.global _0806FAC0
-_0806FAC0:
-	.4byte 0x0806FAC5  @ ROM+0x6FAC5
-
+	.section .rom.0006FAC4, "ax", %progbits
 	.thumb_func
 	.thumb
 	.global sub_0806FAC4

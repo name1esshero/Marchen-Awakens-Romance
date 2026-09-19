@@ -20,8 +20,45 @@ extern void sub_08004B08(void);
 extern void sub_080048C0(void *state);
 extern void sub_080047AC(void);
 extern void sub_08004840(void);
-extern s32 sub_08004DA8(void);
 extern u32 sub_08004CDC(void);
+
+#define LINK_STATE_FIELD_OFFSET 0x130
+#define LINK_STATE_CONNECTION_MASK 0x180
+#define LINK_STATE_ACTIVITY_MASK 0xE
+
+/**
+ * @brief Classify the current link-play activity state.
+ * @return 0 when disconnected as player zero, 2 when this player's activity
+ * bit is set, and 1 for the remaining connected or idle states.
+ */
+AT("00004DA8") s32 RuntimeGetLinkActivityState(void)
+{
+    u8 **root;
+    u8 *runtime;
+    u32 offset;
+
+    root = &gPrimaryRuntime;
+    runtime = *root;
+    offset = LINK_STATE_FIELD_OFFSET;
+
+    if ((*(u32 *)(runtime + offset) & LINK_STATE_CONNECTION_MASK) == 0)
+    {
+        if ((s8)SioGetPlayerId() == 0)
+            goto inactive;
+    }
+
+    if ((*(u32 *)(*root + offset) & LINK_STATE_ACTIVITY_MASK) == 0)
+        goto active;
+
+    if (*(u32 *)(*root + offset) & (1 << (u8)SioGetPlayerId()))
+        return 2;
+
+active:
+    return 1;
+
+inactive:
+    return 0;
+}
 
 /** A secondary allocation is optional during early startup and teardown. */
 AT("00004E04") void *RuntimeGetOptionalField130(void)
@@ -79,6 +116,40 @@ AT("00004E6C") void RuntimeReleaseField17C(void)
     sub_080048C0(RUNTIME_ROOT + 0x17C);
 }
 
+/**
+ * @brief Advance a ten-entry circular history and copy one snapshot into it.
+ *
+ * The entry is copied one word at a time. Keeping the two cursors explicit
+ * documents the fixed 24-byte record ABI and reproduces the original copy
+ * without relying on an untyped block operation.
+ *
+ * @param entry Snapshot to append.
+ * @param history Circular history to update.
+ * @return TRUE.
+ */
+AT("00004E88")
+s32 RuntimeHistoryPush(const struct RuntimeHistoryEntry *entry,
+                       struct RuntimeHistory *history)
+{
+    const u32 *source;
+    u32 *destination;
+
+    history->previousIndex = history->currentIndex;
+    history->currentIndex++;
+    history->currentIndex %= RUNTIME_HISTORY_ENTRY_COUNT;
+
+    source = entry->words;
+    destination = history->entries[history->currentIndex].words;
+    *destination++ = *source++;
+    *destination++ = *source++;
+    *destination++ = *source++;
+    *destination++ = *source++;
+    *destination++ = *source++;
+    *destination = *source;
+    return TRUE;
+}
+AT("00004E88") const u8 RuntimeHistoryPushTail[2] = {0, 0};
+
 /** Run the shared startup routine, mark the runtime active, and reset its
  * frame counter. */
 AT("00004EDC") void RuntimeStart(void)
@@ -114,14 +185,6 @@ AT("00004FB4") void RuntimeAdvanceWord4(void)
     state[1]++;
 }
 
-#ifdef NONMATCHING
-AT("00004FF0") void *RuntimeGetRecord17C(s32 index)
-{
-    s32 offset = (s16)index * 24;
-    return RUNTIME_ROOT + 0x17C + offset;
-}
-#endif
-
 /** Does nothing; kept as a callable no-op handler. */
 AT("00005040") void RuntimeNoOp(void) {}
 AT("00005040") const u8 RuntimeNoOpTail[2] = {0, 0};
@@ -131,7 +194,7 @@ AT("00005040") const u8 RuntimeNoOpTail[2] = {0, 0};
 AT("00005044") u32 RuntimeGetLinkPlayerIfActive(void)
 {
     u32 player;
-    if ((s8)sub_08004DA8() <= 1)
+    if ((s8)RuntimeGetLinkActivityState() <= 1)
         player = 0;
     else
         player = (u8)SioGetPlayerId();

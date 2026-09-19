@@ -5,6 +5,7 @@
 #include "gba/types.h"
 #include "game_tables.h"
 #include "game_state.h"
+#include "task_constructors.h"
 
 #include "rom_section.h"
 
@@ -12,15 +13,12 @@ extern s32 sub_080570BC(s32 id);
 extern s32 GameStateGetEntry2768Total(s32 id);
 extern s32 GameStateGetEntry2AE0(s32 id);
 extern void sub_08056A8C(s32 id, s32 mode);
-extern s32 sub_08056290(void);
-extern void sub_080562C8(s32 value);
 extern void sub_080563AC(void);
 extern s32 sub_08056304(s32 value);
 extern void sub_08055F88(s32 value, s32 limit);
 extern s32 GameStateGetCurrentEntry3894(void);
 extern void sub_080087EC(s32 a, s32 b, s32 value);
 extern void sub_080083E0(s32 a, s32 b);
-extern void sub_0806EFCC(s32 value);
 extern u32 Random(void);
 extern s32 __umodsi3(u32 random, u32 count);
 extern void sub_0806F120(s32 x, s32 y, s32 a, s32 b);
@@ -145,19 +143,19 @@ AT("00012DF8") s32 ScriptNativeSetModeResource(u32 count, const s32 *args, s32 *
     return 1;
 }
 
-/** Native script command: read a resource state via sub_08056290().
+/** Native script command: read the capped resource counter.
  * @return Always 1. */
 AT("00012E34") s32 ScriptNativeQueryResourceState(u32 count, const s32 *args, s32 *result)
 {
-    *result = sub_08056290();
+    *result = GameStateGetResourceCounter();
     return 1;
 }
 AT("00012E34") const u8 ScriptNativeQueryResourceStateTail[2] = {0};
 
-/** Native script command: forward to sub_080562C8(). @return Always 1. */
+/** Native script command: add to the capped resource counter. @return Always 1. */
 AT("00012E48") s32 ScriptNativeSetResourceState(u32 count, const s32 *args, s32 *result)
 {
-    sub_080562C8(args[0]);
+    GameStateAddResourceCounter(args[0]);
     return 1;
 }
 AT("00012E48") const u8 ScriptNativeSetResourceStateTail[2] = {0};
@@ -207,10 +205,10 @@ AT("00012EA8") s32 ScriptNativeGetResourceName(u32 count, const s32 *args,
 }
 AT("00012EA8") const u8 ScriptNativeGetResourceNameTail[2] = {0};
 
-/** Native script command: forward to sub_0806EFCC(0). @return Always 1. */
+/** Native script command: create an encounter reset task. @return Always 1. */
 AT("00012F04") s32 ScriptNativeResetEncounterState(u32 count, const s32 *args, s32 *result)
 {
-    sub_0806EFCC(0);
+    CreateEncounterResetTask(0);
     return 1;
 }
 AT("00012F04") const u8 ScriptNativeResetEncounterStateTail[2] = {0};

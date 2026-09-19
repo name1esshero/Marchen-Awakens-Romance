@@ -1,9 +1,22 @@
 /* Typed access to fields in the engine's main runtime allocation. */
 #include "game_state.h"
+#include "runtime_misc.h"
 
 #include "rom_section.h"
 extern u8 gIwramBase[];
 extern u8 gMapGenerationRootOffset[];
+
+struct IwramGameStateRootLayout {
+    u8 unknown00[GAME_STATE_ROOT_IWRAM_OFFSET];
+    u8 *gameState;
+};
+
+struct GameStateFields424C50 {
+    u8 unknown00[0x424C];
+    u32 field424C;
+    u32 field4250;
+};
+
 #define GAME_STATE_BASE ({ \
     void **root = (void **)(gIwramBase + (u32)gMapGenerationRootOffset); \
     (u8 *)*root; \
@@ -39,6 +52,16 @@ AT("00006DB4") s32 GameStateGetField4245(void) { return FIELD(s8,0x4245); }
 /** Store the game-state value at offset 0x4245. */
 AT("00006DD4") void GameStateSetField4245(s32 v) { FIELD(s8,0x4245)=v; }
 
+/** Store the paired game-state values at offsets 0x424C and 0x4250. */
+AT("00006DF0") void GameStateSetField424C50(u32 first, u32 second)
+{
+    struct IwramGameStateRootLayout *iwram =
+        (struct IwramGameStateRootLayout *)gIwramBase;
+
+    ((struct GameStateFields424C50 *)iwram->gameState)->field424C = first;
+    ((struct GameStateFields424C50 *)iwram->gameState)->field4250 = second;
+}
+
 /** Return the game-state value at offset 0x424C50. */
 AT("00006E20") void GameStateGetField424C50(u32 *first,u32 *second)
 {
@@ -63,6 +86,20 @@ AT("00006EEC") s32 GameStateGetField4265(u32 i)
  u8 *field=GAME_STATE_BASE+0x4265;
  field+=i;
  return *(s8 *)field;
+}
+/** Clear the shared runtime status bytes and store the game-state value at
+ * offset 0x425A. */
+AT("00006F0C") void GameStateSetField425A(s32 value)
+{
+    u8 *iwram;
+    u32 offset;
+    u8 *state;
+
+    ClearRuntimeStatusBytes();
+    iwram = gIwramBase;
+    offset = (u32)gMapGenerationRootOffset;
+    state = *(u8 **)(iwram + offset);
+    state[0x425A] = value;
 }
 /** Return the game-state value at offset 0x425A. */
 AT("00006F34") s32 GameStateGetField425A(void) { return FIELD(s8,0x425A); }

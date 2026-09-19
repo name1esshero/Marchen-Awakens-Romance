@@ -1,84 +1,97 @@
-/* sub_08080070, called as `sub_08080070(frame)` from
- * ScriptDispatchCurrentFrame() in src/script_frames.c. The passed `frame`
- * argument is dead code in the ROM: the function re-derives
- * VM->state->frame itself via the global VM pointer instead of using r0,
- * even though the caller always passes the same value. Kept in the
- * signature to match the existing extern declaration and call site.
+/**
+ * @file script_run_frame_step.c
+ * @brief Nonmatching reconstruction of one script-interpreter step.
  *
- * If bit 0 of the frame's +0xA8 halfword is clear, walks the frame's 8
- * deferred-callback bits at +0xAA: for the first set bit, clears it and,
- * if the corresponding function pointer in the 8-entry table at +0x88 is
- * non-null, dispatches it through ScriptPushFrameAndJump(bit, callback)
- * and returns immediately (does not check the remaining bits). This is
- * the callback array ScriptFrameReleasePools() (src/script_frames.c)
- * frees/clears, and +0xAA is the same
- * halfword src/script_frames.c's ScriptSetFrameFlag() sets bits in --
- * this is `frame->flags`.
+ * The frame argument is unused in the ROM. The routine reads the active frame
+ * from gScriptContext, dispatches at most one pending callback, records the
+ * bytecode position, and invokes the next opcode handler.
  *
- * Otherwise (or if no callback bit was set/dispatched), records the
- * dispatching frame and its +0x44 field (the same field ScriptReadNextU8()
- * reads as the bytecode program counter -- see src/script_bytecode.c) into
- * VM->state->dispatchState/dispatchIndex, then reads one opcode byte and
- * tail-calls its handler out of the 256-entry gScriptOpcodeHandlers table
- * (include/script.h) with no arguments, per that table's established
- * calling convention (see src/script_bytecode.c's ScriptCmd* functions).
+ * The VM was evidently manipulated through a shared word-storage view rather
+ * than only through the later recovered ScriptContext/ScriptFrame types. A
+ * partial union preserves that real alias relationship: agbcc then keeps the
+ * context in r4, reloads state->frame after the flag store, and addresses the
+ * flag at frame+0xAA exactly as the ROM does.
  *
- * Logically confirmed correct and very close: the loop structure, the
- * mask-vs-value AND (once written as `u32 mask = 1 << bit;` matching the
- * ROM's own `movs r1,#1 / lsls r1,r5` -- writing the check as a bare
- * `value & (1 << bit)` instead makes agbcc shift the *value* right by
- * `bit` and test bit 0, which is a different, wrong-shaped instruction
- * sequence, not merely a register difference), the early-return dispatch,
- * and the whole opcode-dispatch tail (including reproducing the compiler's
- * own two absolute-address literal pool entries, decoded from the ROM's
- * unresolved raw `bl` bytes to ScriptPushFrameAndJump and ScriptReadNextU8
- * respectively) all match. Two differences remain:
- *   - Clearing the bit (`value & ~mask`, stored back) compiles in-place
- *     (`bic r1,r1,r3`) since `value` is dead after; the ROM copies value
- *     into a fresh register first, then `bics` (`adds r0,r3,#0` /
- *     `bics r0,r1`) -- one more instance of the destination-register ties
- *     documented in docs/AGBCC_CODEGEN.md, not reproduced by any spelling
- *     tried for this store.
- *   - Fetching the +0x88 table's base a second time: the ROM re-derives
- *     `VM->state->frame` from scratch (two more loads through the global)
- *     for this second use, where agbcc's ordinary CSE reuses the frame
- *     pointer already loaded for the flags check just above, whether or
- *     not the source repeats the `VM->state->frame` expression textually.
- *     No shape tried defeats that CSE for this one access.
+ * Reusing one pointer scratch for the current context and the opcode table
+ * reproduces the ROM's r4 lifetime. Reusing one scalar scratch for the bit
+ * mask and callback address likewise puts it in r1 and the loaded flag word
+ * in r3. One instruction-allocation difference remains: the ROM copies r3
+ * to r0 and clears r0, while agbcc clears r3 in place. No register forcing,
+ * volatile qualifier, or inline assembly is used.
  */
 
 #include "gba/types.h"
+#include "script.h"
 #include "script_vm.h"
 
-#define VM gScriptContext
+#define SCRIPT_DISPATCH_BLOCKED 1
+
 extern s32 ScriptPushFrameAndJump(u32 callbackIndex, u32 destination);
 extern u32 ScriptReadNextU8(void);
 
-typedef s32 (*ScriptOpcodeHandler)(void);
-#define SCRIPT_OPCODE_COUNT 256
-extern const ScriptOpcodeHandler gScriptOpcodeHandlers[SCRIPT_OPCODE_COUNT];
-
-s32 ScriptRunFrameStep(struct ScriptFrame *frame)
+/* Shared storage view used by the original VM. Only fields reached by this
+ * routine are exposed; the typed public layouts remain in script_vm.h. */
+union ScriptRuntimeStorage
 {
-    u8 *raw;
-    s32 bit;
+    u32 word;
+    struct
+    {
+        u8 padding[12];
+        union ScriptRuntimeStorage *next;
+    } link;
+    struct
+    {
+        u8 padding[136];
+        u32 addresses[SCRIPT_FRAME_CALLBACK_COUNT];
+    } callbacks;
+};
 
-    if (!(*(u16 *)((u8 *)VM->state->frame + 0xA8) & 1)) {
-        for (bit = 0; bit <= 7; bit++) {
-            u32 mask = 1 << bit;
-            u16 value;
-            raw = (u8 *)VM->state->frame;
-            value = *(u16 *)(raw + 0xAA);
-            if (mask & value) {
-                *(u16 *)(raw + 0xAA) = value & ~mask;
-                raw = (u8 *)VM->state->frame;
-                if (((void **)(raw + 0x88))[bit])
-                    return ScriptPushFrameAndJump(bit, (u32)((void **)(raw + 0x88))[bit]);
+struct ScriptRuntimeFlag
+{
+    u16 value;
+};
+
+union ScriptDispatchPointer
+{
+    union ScriptRuntimeStorage *runtime;
+    const ScriptOpcodeHandler *handlers;
+};
+
+s32 ScriptRunFrameStep(struct ScriptFrame *unusedFrame)
+{
+    s32 bit;
+    union ScriptDispatchPointer data;
+
+    if (!(gScriptContext->state->frame->dispatchFlags & SCRIPT_DISPATCH_BLOCKED))
+    {
+        for (bit = 0; bit < SCRIPT_FRAME_CALLBACK_COUNT; bit++)
+        {
+            union ScriptRuntimeStorage *frame;
+            struct ScriptRuntimeFlag *flags;
+            u32 value;
+            u16 flagWord;
+
+            data.runtime = (union ScriptRuntimeStorage *)gScriptContext;
+            frame = data.runtime->link.next->link.next;
+            flags = (struct ScriptRuntimeFlag *)((u8 *)frame + 0xAA);
+            value = 1 << bit;
+            flagWord = flags->value;
+
+            if (value & flagWord)
+            {
+                flags->value = flagWord & ~value;
+                frame = data.runtime->link.next->link.next;
+                value = frame->callbacks.addresses[bit];
+                if (value != 0)
+                    return ScriptPushFrameAndJump(bit, value);
             }
         }
     }
 
-    VM->state->dispatchState = (u32)VM->state->frame;
-    VM->state->dispatchIndex = *(s32 *)((u8 *)VM->state->frame + 0x44);
-    return gScriptOpcodeHandlers[ScriptReadNextU8()]();
+    gScriptContext->state->dispatchState =
+        (u32)gScriptContext->state->frame;
+    gScriptContext->state->dispatchIndex =
+        gScriptContext->state->frame->programCounter;
+    data.handlers = gScriptOpcodeHandlers;
+    return data.handlers[ScriptReadNextU8()]();
 }

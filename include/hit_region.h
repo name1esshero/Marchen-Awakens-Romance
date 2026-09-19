@@ -26,6 +26,8 @@ struct HitBounds
 {
     s16 left, top, right, bottom;
 };
+void HitBoundsTranslate(struct HitBounds *destination, s32 x, s32 y,
+                        const struct HitBounds *source);
 s32 HitRegionTest(s16 x, s16 y, const struct HitBounds *bounds);
 
 /* Directional collision probe, clockwise from north. Used by

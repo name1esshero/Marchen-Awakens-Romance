@@ -661,7 +661,7 @@ _08070540:
 	movs r1, #180
 	lsls r1, r1, #1
 	ldr r0, [sp, #308]
-	bl sub_08070F20
+	bl GeneratedMapChooseAttributeIndex
 	adds r7, r0, #0
 	ldr r4, [sp, #32]
 	ldr r1, [r4, #20]
@@ -1896,7 +1896,7 @@ sub_08070E68:
 	bl sub_0800612C
 	ldr r4, _08070E9C
 	adds r0, r4, #0
-	bl sub_080028C8
+	bl KmpDrawViewport
 	adds r4, #252
 
 	.thumb_func
@@ -1904,7 +1904,7 @@ sub_08070E68:
 	.global sub_08070E86
 sub_08070E86:
 	adds r0, r4, #0
-	bl sub_080028C8
+	bl KmpDrawViewport
 	pop {r4, r5, r6}
 	pop {r0}
 	bx r0
@@ -2002,85 +2002,10 @@ sub_08070EE6:
 
 	@ 070EEC..070F20 is decompiled as GeneratedMapFindRuntimeRoom().
 
-	.section .rom.00070F20, "ax"
+	.section .rom.00070F80, "ax"
 	.syntax unified
 
-	.thumb_func
-	.thumb
-	.global sub_08070F20
-sub_08070F20:
-	push {r4, r5, r6, r7, lr}
-	sub sp, #40
-	adds r4, r0, #0
-	adds r7, r1, #0
-	movs r5, #0
-	movs r1, #0
-	movs r2, #0
-	.2byte 0xF792
-	.4byte 0x1C03F917
-	movs r2, #0
-	ldr r4, [r4, #0]
-	ldr r1, [r4, #20]
-	ldr r0, [r4, #24]
-
-	.thumb_func
-	.thumb
-	.global sub_08070F3C
-sub_08070F3C:
-	muls r0, r1
-	cmp r5, r0
-	bge _08070F5C
-	mov r6, sp
-	.global _08070F44
-_08070F44:
-	ldrh r0, [r3, #0]
-	adds r3, #2
-	cmp r0, r7
-	bne _08070F50
-	stmia r6!, {r2}
-	adds r5, #1
-	.global _08070F50
-_08070F50:
-	adds r2, #1
-	ldr r0, [r4, #20]
-	ldr r1, [r4, #24]
-	muls r0, r1
-	cmp r2, r0
-	blt _08070F44
-	.global _08070F5C
-_08070F5C:
-	cmp r5, #0
-	beq _08070F72
-	.2byte 0xF000
-	.byte 0x3E
-	.byte 0xFF
-	adds r1, r5, #0
-	bl __umodsi3
-	lsls r0, r0, #2
-	add r0, sp
-	ldr r0, [r0, #0]
-	b _08070F76
-	.global _08070F72
-_08070F72:
-	movs r0, #1
-
-	.thumb_func
-	.thumb
-	.global sub_08070F74
-sub_08070F74:
-	negs r0, r0
-	.global _08070F76
-_08070F76:
-	add sp, #40
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_08070F7E
-sub_08070F7E:
-	movs r0, r0
+	@ 070F20..070F80 is decompiled as GeneratedMapChooseAttributeIndex().
 
 	.thumb_func
 	.thumb
@@ -2206,7 +2131,7 @@ sub_08071016:
 	mov r0, sp
 	movs r1, #180
 	lsls r1, r1, #1
-	bl sub_08070F20
+	bl GeneratedMapChooseAttributeIndex
 	adds r5, r0, #0
 	ldr r4, [sp, #0]
 	ldr r1, [r4, #20]
@@ -4837,7 +4762,7 @@ _080724D0:
 	movs r2, #10
 	ldrsh r1, [r5, r2]
 	lsls r1, r1, #16
-	bl sub_08006DF0
+	bl GameStateSetField424C50
 	ldr r0, [r5, #24]
 	cmp r0, #0
 	beq _0807252A
@@ -5139,7 +5064,7 @@ _080726C0:
 	movs r2, #10
 	ldrsh r1, [r7, r2]
 	lsls r1, r1, #16
-	bl sub_08006DF0
+	bl GameStateSetField424C50
 	ldr r0, [r7, #24]
 	cmp r0, #0
 	beq _08072700
@@ -8548,7 +8473,7 @@ _0807409C:
 	ldrsh r1, [r1, r5]
 	adds r1, #28
 	lsls r1, r1, #16
-	bl sub_08006DF0
+	bl GameStateSetField424C50
 	ldr r0, [r7, #0]
 	cmp r0, #0
 	bne _080740C0
@@ -12787,7 +12712,7 @@ _08075DE8:
 	movs r2, #32
 	ldrsh r1, [r4, r2]
 	lsls r1, r1, #16
-	bl sub_08006DF0
+	bl GameStateSetField424C50
 	ldr r0, [r4, #8]
 	cmp r0, #0
 	beq _08075E10
@@ -12910,23 +12835,11 @@ _08075E8A:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_08075EBC
-sub_08075EBC:
-	push {r4, lr}
-	movs r4, #0
-	.global _08075EC0
-_08075EC0:
-	movs r0, #0
-	adds r1, r4, #0
-	bl sub_08009A04
-	adds r4, #1
-	cmp r4, #2
-	ble _08075EC0
-	pop {r4}
-	pop {r0}
-	bx r0
+	@ 00075EBC..00075ED4 is decompiled as RuntimeUpdateFirstThreeGroups();
+	@ see src/decompiled.json.
+
+	.section .rom.00075ED4, "ax"
+	.syntax unified
 	.4byte 0x4657B5F0
 	.4byte 0x4645464E
 	.4byte 0xB091B4E0
@@ -15234,39 +15147,9 @@ _08077360:
 	pop {r4, r5, r6, r7}
 	pop {r0}
 	bx r0
-	.4byte 0x4657B5F0
-	.4byte 0x4645464E
-	.4byte 0xB081B4E0
-	.4byte 0x468A1C04
-	.4byte 0x1C1F4691
-	.4byte 0x9E0A9D09
-	.4byte 0x01514816
-	.4byte 0x18406800
-	.4byte 0x22A84915
-	.4byte 0x22009200
-	.4byte 0xF0031C23
-	.4byte 0x4680F9EF
-	.4byte 0x34204644
-	.4byte 0x65604650
-	.4byte 0x65A14649
-	.4byte 0x142D65E7
-	.4byte 0x143666A5
-	.4byte 0x464066E6
-	.4byte 0x9A0B30C4
-	.4byte 0x490B6002
-	.4byte 0xF0042002
-	.4byte 0x6620FBE9
-	.4byte 0x20014909
-	.4byte 0xFBE4F004
-	.4byte 0x46406660
-	.4byte 0xBC38B001
-	.4byte 0x46A14698
-	.4byte 0xBCF046AA
-	.4byte 0x4708BC02
-	.4byte 0x03004020
-	.4byte 0x08076C5D
-	.4byte 0x0808951C
-	.4byte 0x08089524
+	@ 077370..0773F4 is decompiled as CreateBattleSpriteEffectTask().
+	.section .rom.000773F4, "ax"
+	.syntax unified
 	.4byte 0x464FB5F0
 	.4byte 0xB4C04646
 	.4byte 0x1C0FB087
@@ -16193,38 +16076,9 @@ _08077B36:
 	pop {r4, r5, r6, r7}
 	pop {r0}
 	bx r0
-	.4byte 0x4657B5F0
-	.4byte 0x4645464E
-	.4byte 0xB081B4E0
-	.4byte 0x468A1C04
-	.4byte 0x1C1F4690
-	.4byte 0x9E0A9D09
-	.4byte 0x01514815
-	.4byte 0x18406800
-	.4byte 0x22CE4914
-	.4byte 0x92000092
-	.4byte 0x1C232200
-	.4byte 0xFE04F002
-	.4byte 0x464C4681
-	.4byte 0x46503420
-	.4byte 0x46426560
-	.4byte 0x65E765A2
-	.4byte 0x66A5142D
-	.4byte 0x66E61436
-	.4byte 0x2002490B
-	.4byte 0xF802F004
-	.4byte 0x490A6620
-	.4byte 0xF0032001
-	.4byte 0x6660FFFD
-	.4byte 0xB0014648
-	.4byte 0x4698BC38
-	.4byte 0x46AA46A1
-	.4byte 0xBC02BCF0
-	.4byte 0x00004708
-	.4byte 0x03004020
-	.4byte 0x08077585
-	.4byte 0x0808951C
-	.4byte 0x0808952C
+	@ 077B44..077BC4 is decompiled as CreateLargeBattleSpriteEffectTask().
+	.section .rom.00077BC4, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb

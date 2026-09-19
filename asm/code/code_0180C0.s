@@ -5647,16 +5647,16 @@ _0801A9A4:
 	strh r0, [r5, #0]
 	movs r0, #0
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #1
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #2
 	movs r1, #0
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #3
 	movs r1, #0
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	ldr r1, _0801AB90
 	adds r4, r4, r1
 	strh r6, [r4, #0]
@@ -6466,7 +6466,7 @@ _0801AF70:
 	movs r1, #217
 	lsls r1, r1, #3
 	add r1, r10
-	bl sub_0801B7FC
+	bl CreateObjectMotionTaskA
 	movs r2, #215
 	lsls r2, r2, #3
 	add r2, r10
@@ -6948,7 +6948,7 @@ _0801B298:
 	movs r1, #217
 	lsls r1, r1, #3
 	add r1, r10
-	bl sub_0801B8AC
+	bl CreateObjectMotionTaskB
 	ldr r0, _0801B3D8
 	movs r2, #131
 	lsls r2, r2, #4
@@ -7382,7 +7382,7 @@ _0801B5A2:
 	movs r1, #0
 	ldrsb r1, [r4, r1]
 	movs r0, #2
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	mov r8, r10
 	movs r3, #2
 	mov r9, r3
@@ -7743,46 +7743,7 @@ _0801B7EE:
 _0801B7F8:
 	.4byte 0x030032C4  @ IWRAM+0x32C4
 
-	.thumb_func
-	.thumb
-	.global sub_0801B7FC
-sub_0801B7FC:
-	push {r4, lr}
-	sub sp, #4
-	adds r4, r0, #0
-	adds r3, r1, #0
-	ldr r0, _0801B830
-	ldr r1, _0801B834
-	movs r2, #16
-	str r2, [sp, #0]
-	movs r2, #0
-	.2byte 0xF05E
-	.4byte 0x1C02FFB5
-	adds r2, #32
-	str r4, [r0, #32]
-	movs r1, #120
-	strh r1, [r4, #24]
-	ldr r1, _0801B838
-	strh r1, [r4, #26]
-	strh r1, [r2, #4]
-	movs r1, #24
-	strh r1, [r2, #8]
-	add sp, #4
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _0801B830
-_0801B830:
-	.4byte 0x030032C4  @ IWRAM+0x32C4
-	.global _0801B834
-_0801B834:
-	.4byte 0x0801B83D  @ ROM+0x1B83D
-	.global _0801B838
-_0801B838:
-	.4byte 0x0000FFE0
-
+	.section .rom.0001B83C, "ax", %progbits
 	.thumb_func
 	.thumb
 	.global sub_0801B83C
@@ -7854,44 +7815,7 @@ _0801B89E:
 _0801B8A8:
 	.4byte 0x030032C4  @ IWRAM+0x32C4
 
-	.thumb_func
-	.thumb
-	.global sub_0801B8AC
-sub_0801B8AC:
-	push {r4, lr}
-	sub sp, #4
-	adds r4, r0, #0
-	adds r3, r1, #0
-	ldr r0, _0801B8E4
-	ldr r1, _0801B8E8
-	movs r2, #16
-	str r2, [sp, #0]
-	movs r2, #0
-	.2byte 0xF05E
-	.4byte 0x1C03FF5D
-	adds r3, #32
-	str r4, [r0, #32]
-	adds r4, #39
-	ldrb r1, [r4, #0]
-	movs r2, #4
-	orrs r1, r2
-	strb r1, [r4, #0]
-	movs r2, #0
-	movs r1, #128
-	lsls r1, r1, #1
-	strh r1, [r3, #4]
-	strh r2, [r3, #8]
-	add sp, #4
-	pop {r4}
-	pop {r1}
-	bx r1
-	.global _0801B8E4
-_0801B8E4:
-	.4byte 0x030032C4  @ IWRAM+0x32C4
-	.global _0801B8E8
-_0801B8E8:
-	.4byte 0x0801B8ED  @ ROM+0x1B8ED
-
+	.section .rom.0001B8EC, "ax", %progbits
 	.thumb_func
 	.thumb
 	.global sub_0801B8EC
@@ -8188,19 +8112,12 @@ _0801BAD0:
 	.global _0801BAD4
 _0801BAD4:
 	.4byte 0x000038B8
-	.4byte 0xB081B510
-	.4byte 0x1C0B1C04
-	.4byte 0x49084807
-	.4byte 0x92004A08
-	.4byte 0xF05E2200
-	.4byte 0x22BDFE47
-	.4byte 0x188100D2
-	.4byte 0xB001600C
-	.4byte 0xBC02BC10
-	.4byte 0x00004708
-	.4byte 0x030032C4
-	.4byte 0x0801BB0D
-	.4byte 0x0000061C
+
+@ 01BAD8..01BB0C is decompiled as CreateTask1BAD8();
+@ see src/decompiled.json
+
+	.section .rom.0001BB0C, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -8425,16 +8342,16 @@ _0801BC10:
 	.byte 0xFC
 	movs r0, #0
 	movs r1, #1
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #1
 	movs r1, #0
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #2
 	movs r1, #0
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r0, #3
 	movs r1, #0
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	strh r5, [r4, #28]
 	movs r2, #0
 	mov r8, r2
@@ -8582,7 +8499,7 @@ _0801BD4A:
 	bl sub_08056D4C
 	movs r0, #0
 	mov r1, r8
-	bl sub_08009A04
+	bl RuntimeUpdateFiveParts
 	movs r0, #1
 	mov r1, r8
 	bl RuntimeGetActorPartRecord
@@ -9270,7 +9187,7 @@ _0801C1B4:
 	.2byte 0xF7E8
 	.4byte 0xF7E8FE95
 	.4byte 0x2000FE9F
-	bl sub_08006F0C
+	bl GameStateSetField425A
 	.2byte 0xF7E8
 	.byte 0x3A
 	.byte 0xFE
@@ -9359,7 +9276,7 @@ _0801C24C:
 	.byte 0xFE
 	bl sub_08004F10
 	movs r0, #0
-	bl sub_08006F0C
+	bl GameStateSetField425A
 	mov r0, r9
 	strh r6, [r0, #14]
 	b sub_0801C43C
@@ -12595,7 +12512,7 @@ _0801D7BE:
 	movs r1, #0
 	ldrsb r1, [r7, r1]
 	movs r0, #2
-	bl sub_08006ADC
+	bl IwramSetFlags0810
 	movs r4, #0
 	mov r8, r4
 	.global _0801D7CC
@@ -13970,7 +13887,7 @@ sub_0801E04C:
 	movs r2, #0
 	bl sub_0801E168
 	ldr r0, [r4, #4]
-	bl sub_080562C8
+	bl GameStateAddResourceCounter
 	movs r6, #1
 	movs r5, #0
 	movs r7, #0

@@ -197,7 +197,10 @@ lookup at `0x0807BAF8` uses `cell.paletteIndex * 32`; the following graphics
 lookup uses `cell.tileIndex * 32`. Every cell's geometry and palette index
 validates, and the maximum referenced tile end exactly matches each NCD member
 boundary. See [include/ncd.h](../include/ncd.h) and
-[src/nonmatching/ncd.c](../src/nonmatching/ncd.c).
+[tools/ncd.py](../tools/ncd.py). The former `src/nonmatching/ncd.c` contained
+three standalone format-navigation examples with no corresponding ROM entry
+points or callers. It was removed from the nonmatching backlog rather than
+misrepresenting host-side reference code as an unfinished game function.
 
 All 105 KCL/TCL palette members and all 762 NCD palette banks round-trip to
 BGR555 without losing bits. Backgrounds may select multiple banks; the gallery
@@ -701,12 +704,61 @@ caseN:
 
 ScriptNativeShuffleDeckCopy decompiled to matching C (0x080128C8, 132 bytes, the "ShuffleDeckCopy" native command in gScriptNativeCommands): the raw asm in asm/code/code_0100C0.s recursive-descent-disassembled this function's own 22-entry jump table as if it were code, producing a spurious `sub_0801290C` label and a long run of nonsense `cmp r1,#70`/`lsrs r1,r0,#32` instruction pairs -- the same "ASCII/data misdecoded as code" failure mode already documented for game_tables.c's string pool, but here hitting a jump table instead of strings. Extracting the raw ROM bytes directly (bypassing objdump's instruction-level view entirely) and parsing them as a flat array of 22 little-endian words resolved it: the table's true base is one word after its label (`ldr r1,_080128E0` loads a pooled constant that itself holds the address 0x080128E4, not 0x080128E0 -- an easy trap when skimming disassembly, since the pool word and the table's first real entry sit at consecutive addresses and both look identical). Once correctly parsed, the table has exactly two distinct targets: a shared handler that forwards args[0..2] to sub_080087EC (not yet decompiled), taken for original deck-type values {1,3,4,6,7,8,9,22}, and a no-op default for every other value in 1..22. This compiled to a plain `switch` with case-fallthrough (matching the existing ScriptNativeSelectLayer style already in src/mapping.c) and matched byte-for-byte on the first attempt -- no register hints, no restructuring, no ldr-hoisting workaround needed here, unlike ScriptNativeBackgroundSet. Verified with make compare; audit_provenance.py now reports 1590 compiled C / 1600 total mapped ranges (+1). Two siblings in the same jump-table family remain undecompiled and are the next candidates: DeckMake (sub_080127F8, 22-way) and PmbDeckMake (sub_080129F4, 22-way) -- both immediately adjacent to this function in ROM and very likely to have the same base-address-off-by-one trap in their raw asm, so extract their table bytes directly rather than trusting the .s file's own labels when attempting them.
 
-ScriptNativeDeckMake decompiled to matching C (0x080127F8, 208 bytes, the "DeckMake" native command in gScriptNativeCommands, immediately adjacent to ShuffleDeckCopy): same jump-table-base-off-by-one trap as ShuffleDeckCopy (the `ldr r1,_08012814` pool word holds 0x08012818, one word past the label, and the true table starts there), and the same case set {1,3,4,6,7,8,9,22} forwarding to a shared handler -- but here the handler body is substantial: it copies a 20-entry s16 table from args[1..20] into offset+14 of whatever sub_08055F4C(mode) returns (both functions still unnamed sub_ addresses; no other call sites exist yet to hint at real names), then flags one bit per raw VM argument in a bitset living at GAME_ROOT+0x26F8 via the already-decompiled BitSet (0807A190) -- GAME_ROOT being this exact file's own pre-existing `#define GAME_ROOT (*(u8 **)0x03003FDC)`. One new symbol had to be aliased: sub_08001EB4 (the buffer-copy call) turned out to be a mid-function entry point inside the already-disassembled-but-differently-labeled sub_08001E70 in asm/code/code_0000C0.s -- no `.global` or even local label existed at that exact address before this, since nothing had branched there until now. Added via the same zero-risk `.global`/`.set` absolute alias technique in asm/game_table_handlers.s used throughout this session, rather than inserting a label into the live instruction stream. The values-copy loop needed one register hint to match: agbcc's register allocator put the cached `mode` value (args[0], read once before the loop and reused once after) in r4 and the loop counter in r3, while the ROM has them swapped (r3=mode, r4=counter) -- declaration-order reshuffling alone did not change this (tried caching mode into its own named local first, no effect), so `register s32 mode asm("r3")` was added, verified necessary the same way as always (build, check size, full make compare). Hinting the loop counter itself was tried too and made things worse -- it defeated the compiler's automatic loop-strength-reduction (collapsing per-iteration `args[i+1]`/`values[i]` addressing into plain pointer increments), replacing it with explicit index-multiply arithmetic and changing the loop's exit condition shape entirely, so the counter was left unhinted. Verified with make compare; audit_provenance.py now reports 1591 compiled C / 1601 total mapped ranges (+1). PmbDeckMake (sub_080129F4) remains as the last function in this three-part family, and per the pattern seen twice now should be checked for the same table-base trap before anything else.
+[SUPERSEDED: the function still matches, but the register pin described here
+has been removed; see the correction below.] ScriptNativeDeckMake decompiled
+to matching C (0x080127F8, 208 bytes, the "DeckMake" native command in
+gScriptNativeCommands, immediately adjacent to ShuffleDeckCopy): same
+jump-table-base-off-by-one trap as ShuffleDeckCopy (the `ldr r1,_08012814`
+pool word holds 0x08012818, one word past the label, and the true table starts
+there), and the same case set {1,3,4,6,7,8,9,22} forwarding to a shared
+handler. The body copies a 20-entry s16 table from args[1..20] into offset+14
+of whatever sub_08055F4C(mode) returns, then flags one bit per raw VM argument
+in the game-state deck bitset via BitSet. The first reconstruction used a
+forced `r3` mode local to exchange the mode and copy-loop counter registers;
+that conclusion was incomplete.
 
-PmbDeckMake attempted and left nonmatching (0x080129F4, 224 bytes): same jump-table-base trap and same case set {1,3,4,6,7,8,9,22} as DeckMake/ShuffleDeckCopy, but a more involved handler -- zeroes a 20-entry s16 array inside sub_08055F4C(mode)'s return, then validates and compacts args[1..20] through sub_080569B0() (score <= 98 to pass) into that array, flagging each accepted value's bit via BitSet. Logic is fully understood and cross-checked against the ROM byte-for-byte (see src/nonmatching/mapping_pmb_deck.c's header). What blocks the match: agbcc fuses the args[0] read with the args-pointer advance needed for a second "source" pointer into one `ldmia r4!, {r0}`, where the ROM keeps them as two separate instructions (a plain `ldrsh` now, an explicit `adds r5,r4,#4` later, once the second loop actually needs its own pointer). This fusion is driven by data dependency, not source order -- tried moving the second-pointer assignment earlier and later in the C, declaring it as its own named local, hoisting the zero-fill constant and the bitset base pointer (both of which *did* fix their own separate, real mismatches earlier in the same function), and a register hint on the mode value (the same fix that worked for DeckMake's r3/r4 swap, aimed at a different register here and had no effect on this fusion). Each fix that resolved one instruction-count mismatch shifted the compiler's own switch-generated jump table (not hand-authored -- it's regenerated from wherever this function's compiled case-handler code actually lands) enough to introduce a new mismatch elsewhere, so this was stopped rather than continued as an open-ended chain of increasingly specific hints chasing a moving target. Recorded here per docs/PRET_STANDARDS.md section 8's requirement to document *why* a function was left nonmatching. This closes out the three-function DeckMake/ShuffleDeckCopy/PmbDeckMake family: two decompiled to byte-exact matching C, one left as a fully-understood nonmatching reference.
+CORRECTION -- ScriptNativeDeckMake clean-C register allocation: the ROM resets
+`r4` after the copy and reuses it as the ownership loop index. Modeling both
+loops with the same signed `i` local extends that real variable's lifetime and
+naturally assigns it to `r4`, leaving the cached mode in `r3`. Casting `i` to
+`u32` only for the second comparison preserves its unsigned branch against the
+`u32 count` parameter while the first loop retains agbcc's signed countdown.
+This source matches every byte without a register request, compiler barrier,
+volatile access, or build change. See `docs/COMPILER_HINT_CLEANUP.md` for the
+reusable pattern.
 
-Hidden-code audit (code misdecoded as data, the inverse of the game_tables.c/jump-table traps documented above): scanned every asm/code/*.s file for runs of 8+ consecutive raw `.4byte`/`.byte` directives (i.e. regions the original recursive-descent disassembly gave up on and emitted as inert data) whose bytes begin with a Thumb `push {..., lr}` prologue encoding. 43 such runs found across the codebase, several showing the unmistakable `mov r7,r10 / mov r6,r9 / mov r5,r8 / push {r4-r7,lr}` idiom Thumb code uses to save high registers -- a strong signal of genuine compiled prologues rather than coincidental data bytes. One was independently confirmed two ways at once: sub_080569B0 (the address PmbDeckMake's investigation above needed a `.set` alias for, since no label existed there) is exactly the first candidate this scan flagged in code_0500C0.s, sitting immediately after the already-labeled sub_08056984's real `bx r1` epilogue -- the original disassembly's reachability walk simply never found an internal branch into it, since (as far as could be told before this session) nothing else in the already-decoded portions of the ROM calls it. Disassembling its 72 bytes gives a fully coherent, self-consistent function (an 8-iteration accumulation loop over a lookup table at a literal-pool address, clamped to a max of 98 -- exactly matching how PmbDeckMake's nonmatching reference uses its return value). Attempted to give it a proper `.global`/instruction-level label in place of the `.4byte` run (converting data directives to their equivalent mnemonics is normally byte-identical and should carry zero risk) but this broke alignment across thousands of downstream lines in the same file -- GNU `as`'s own encoding choices for `bl` and `ldr rX, =literal` do not always reproduce the exact original bytes even when the semantic instruction is identical, so a hand-transcribed disassembly is not a safe drop-in replacement for the original bytes the way it would be in, say, LLVM's disassemble/reassemble round trip. Reverted immediately (`make compare` confirmed byte-exact again) and kept the existing `.set` absolute-alias technique instead, which touches zero bytes and was already in place for this address. The other 42 candidates are unverified leads, not confirmed hits -- each needs the same two-step check this one got (cross-reference for an actual caller, then disassemble and sanity-check control flow) before being trusted. Their addresses, by file:
-code_0000C0.s: 0x08002158, 0x080028EC, 0x08003438, 0x0800382C, 0x080041E0, 0x08004E88, 0x080073DC
+ScriptNativePmbDeckMake decompiled to matching C (0x080129F4, 224 bytes): decoding the ROM bytes as forced Thumb first established that the apparent instructions at 0x08012A10..0x08012A64 are the function's 22-entry jump table, and that modes {1,3,4,6,7,8,9,22} share the real body. The body clears twenty halfwords at record offsets +14 through +52, accepts only entries whose `CountPmbDeckEntryCopies()` result is at most 98, packs accepted values at the front, and marks their ownership bits. An explicit `s16 zero = 0` gives the clear value and array base the ROM's r2/r1 allocation, while retaining `&gMapGenerationRoot` as a local places the global-slot address in r7 at the correct point. The final pointer mismatch was resolved by recovering the likely source abstraction: use an integer `outputIndex` for the packed destination and keep `args[i + 1]` as an indexed input. agbcc then performs two independent loop-strength reductions, naturally producing the ROM's r5 input cursor and conditionally advanced r4 output cursor. This clean form has no forced register, volatile access, dead branch, or compiler workaround. The raw assembly block and nonmatching source were removed, the native-command table now names the function, and the complete ROM remains byte-identical.
+
+ScriptRunFrameStep nonmatching diagnosis corrected (0x08080070): the ROM does not reload `gScriptContext` for the callback lookup as previously documented. At the start of each callback-bit iteration it loads the context into r4, reaches the frame through `context->state->frame`, clears the selected flag, and then reloads `state->frame` through the same context before reading `callbackAddresses[bit]`. Modeling those accesses with the VM's recovered shared-storage union is the missing alias information: it now reproduces the r4 context lifetime, the post-store frame reload, the exact frame+0xAA flag address, r6 global-slot lifetime, and r5 loop index. The remaining mismatch is one low-register cluster: the ROM holds mask/value in r1/r3 and copies the value to r0 for BIC, while agbcc holds them in r3/r1 and clears r1 in place. The old CSE diagnosis was false and has been removed.
+
+CreateEncounterResetTask promoted to matching C (0x0806EFCC, 76 bytes): the
+four-iteration loop's apparent 16.16 fixed-point induction is agbcc's
+strength reduction of `i = (s16)(i + 1)` on an `s32` loop variable. That
+explicit assignment narrowing produces the ROM's initial zero argument,
+`0x10000` next-value accumulator, arithmetic high-halfword extraction, and
+signed `<= 3` comparison exactly. Declaring the variable itself as `s16`
+instead emits repeated low-halfword extension and does not match; a plain
+`i++` emits a normal integer loop. The raw assembly was removed, the native
+caller now uses the descriptive name through `task_constructors.h`, and the
+linked ROM remains byte-identical. This is clean type-driven C with no forced
+register, inline assembly, volatile qualifier, or compiler change.
+
+ScriptRunFrameStep lifetime refinement (still nonmatching): one union pointer
+scratch used first for the current VM context and later for the opcode-handler
+table naturally assigns the context to the ROM's r4. Reusing one `u32` value
+for the callback bit mask and then the callback address assigns it to r1 and
+moves the loaded flag word to r3. Writing the test in its recovered operand
+order, `value & flagWord`, also reproduces the ROM's `mov r0, r1; and r0, r3`
+sequence. The candidate now differs only in the clear:
+agbcc emits `bic r3, r3, r1; strh r3, [r2]`, while the ROM copies r3 to r0,
+clears r0, and stores r0. Named result, copied-record, scalar-width, compound
+assignment, operand-order, shared-result, inline-helper, and declaration-order
+forms were tested; none retained that final copy without adding false source
+semantics. The function remains in `src/nonmatching/` as PRET standards
+require.
+
+[PARTLY SUPERSEDED -- 0x080569B0 is now matching C; see the correction below.] Hidden-code audit (code misdecoded as data, the inverse of the game_tables.c/jump-table traps documented above): scanned every asm/code/*.s file for runs of 8+ consecutive raw `.4byte`/`.byte` directives (i.e. regions the original recursive-descent disassembly gave up on and emitted as inert data) whose bytes begin with a Thumb `push {..., lr}` prologue encoding. 43 such runs found across the codebase, several showing the unmistakable `mov r7,r10 / mov r6,r9 / mov r5,r8 / push {r4-r7,lr}` idiom Thumb code uses to save high registers -- a strong signal of genuine compiled prologues rather than coincidental data bytes. One was independently confirmed two ways at once: sub_080569B0 (the address PmbDeckMake's investigation above needed a `.set` alias for, since no label existed there) is exactly the first candidate this scan flagged in code_0500C0.s, sitting immediately after the already-labeled sub_08056984's real `bx r1` epilogue -- the original disassembly's reachability walk simply never found an internal branch into it, since (as far as could be told before this session) nothing else in the already-decoded portions of the ROM calls it. Disassembling its 72 bytes gives a fully coherent, self-consistent function (an 8-iteration accumulation loop over a lookup table at a literal-pool address, clamped to a max of 98 -- exactly matching how PmbDeckMake's nonmatching reference uses its return value). Attempted to give it a proper `.global`/instruction-level label in place of the `.4byte` run (converting data directives to their equivalent mnemonics is normally byte-identical and should carry zero risk) but this broke alignment across thousands of downstream lines in the same file -- GNU `as`'s own encoding choices for `bl` and `ldr rX, =literal` do not always reproduce the exact original bytes even when the semantic instruction is identical, so a hand-transcribed disassembly is not a safe drop-in replacement for the original bytes the way it would be in, say, LLVM's disassemble/reassemble round trip. Reverted immediately (`make compare` confirmed byte-exact again) and kept the existing `.set` absolute-alias technique instead, which touches zero bytes and was already in place for this address. The other 42 candidates are unverified leads, not confirmed hits -- each needs the same two-step check this one got (cross-reference for an actual caller, then disassemble and sanity-check control flow) before being trusted. Their addresses, by file:
+code_0000C0.s: 0x08002158 (now `IsMainMountName`), 0x080028EC, 0x08003438, 0x0800382C, 0x080041E0, 0x08004E88, 0x080073DC
 code_0080C0.s: 0x08009868, 0x0800A3B8, 0x0800A484, 0x0800A550, 0x0800DCF8
 code_0100C0.s: 0x0801674C, 0x08017A74
 code_0180C0.s: 0x08019818, 0x08019C08
@@ -715,12 +767,22 @@ code_0280C0.s: 0x0802AB44, 0x0802AD98
 code_0400C0.s: 0x08042260
 code_0500C0.s: 0x08051BD4, 0x08053ADC, 0x080544CC, 0x08056578, 0x0805685C, 0x080571E8
 code_0580C0.s: 0x0805DBF0
-code_0600C0.s: 0x08065E88
+code_0600C0.s: 0x08065E88 (now `CreateFieldEventModeTask`)
 code_0680C0.s: 0x08068F4C, 0x0806B98C, 0x0806C758, 0x0806D60C, 0x0806DEC0
 code_0700C0.s: 0x08075ED4, 0x08077370, 0x08077B44
 code_0780C0.s: 0x0807D260, 0x0807EA90, 0x0807F1B8, 0x0807F3DC
 code_0800C0.s: 0x08081554, 0x08082390
 If pursuing these, alias with `.set` (never hand-splice instructions into the byte stream) and verify each with the same cross-reference-then-disassemble check before writing any C against it.
+
+Correction for 0x080569B0: it is now the byte-exact
+`CountPmbDeckEntryCopies` in `src/game_state_records.c`. The function starts
+with the saved count for one PMB entry, adds its occurrence count across all
+eight signed `gBattlePartyDefaults` deck IDs, and maps totals above 98 to the
+sentinel 99. Its 16.16 induction counter is genuine source behavior; spelling
+the fixed-point counter, copied pre-increment value, and advancing table
+pointer directly reproduces all 72 bytes. The raw `.4byte` block and temporary
+`.set` alias have been removed. This confirms that suspected data runs should
+be reconstructed from their behavior rather than transcribed to assembly.
 Bulk small-function decompilation, round one: RuntimeGetPointerE3C (0x08009508, 24 bytes, `u8 *gSecondaryRuntime` indexed pointer-array getter at fixed offset 0xE3C) decompiled to byte-exact matching C, following the same file's existing RuntimeGetPointerE30 precedent exactly. This required discovering and documenting a new technique: unlike every previously-decompiled function this session, this one was NOT in its own dedicated `.section .rom.ADDR, "ax"` block -- it was one of many small functions packed inline inside a single large shared section (`.rom.0000931C`, ~1KB, covering a dozen-plus unrelated functions with no internal section boundaries). Simply removing its raw asm and adding an AT()-pinned C replacement silently corrupted the ROM layout: since linker sections are concatenated by name-sort order with zero gaps, shrinking the shared section just closed the hole instead of leaving room for a same-named replacement section, shifting everything physically after it forward and breaking call sites throughout the ROM (caught only via `arm-none-eabi-nm` showing the new function at the wrong address, since `make` itself did not error). The fix: insert a new `.section .rom.<next-function-address>, "ax"` + `.syntax unified` directive immediately before whatever function originally followed in the shared section, splitting it into a correctly-shortened head and a newly-and-correctly-named tail. Zero byte risk, confirmed via `make compare`. Documented and relayed to the parallel decompilation agents working other files, since this pattern (functions living inside shared multi-function sections rather than their own dedicated ones) is common outside the handful of larger, individually-`tools/split.py`-sectioned functions handled earlier this session.
 
 [SUPERSEDED -- see the CORRECTION a few entries below, and docs/AGBCC_CODEGEN.md: the ldrsb/ldrb reasoning in this entry is wrong.] Three adjacent candidates in the same cluster (sub_0800943C/GetField234, sub_0800945C/SetField234, sub_08009498/SetField34C -- all `gSecondaryRuntime`-indexed byte field accessors at offsets 0x234/0x34C) were attempted and reverted after failing to reproduce exact register allocation despite several C restructuring attempts (variable declaration order, expression shape, and a register hint that fixed the store's final base register but left operand order and an unrelated pool-load register choice still mismatched). The getter's mismatch looks like a genuinely different codegen path (`ldrb`+shift-sign-extend in the ROM vs `ldrsb` in every C shape tried, mirroring the documented "different agbcc pass per ROM region" possibility already noted for sound_m4a.c) rather than something a C-level rewrite can fix without forbidden techniques (forced registers used speculatively without proof, compiler flags). Reverted cleanly (confirmed via `make compare`) rather than force a fakematch or leave a broken intermediate state. `RuntimeGetPointerE3C` is the only net addition from this cluster; audit_provenance.py now reports 1592 compiled C / 1602 total mapped ranges (+1).
@@ -737,7 +799,7 @@ CORRECTION (later, after reading the agbcc source): the diagnosis in the two ent
 
 Stale-duplicate cleanup: found and removed two dead `#ifdef NONMATCHING` stubs whose addresses had since been superseded by real, currently-matching implementations elsewhere -- both were never compiled (the project never defines NONMATCHING for the default build; see the Makefile's `ifdef NONMATCHING` guard around `src/nonmatching/*.c`), just stale leftovers from earlier abandoned decompilation attempts. `RuntimeGetPointerTableEntry` (src/table_accessors.c, AT("00009508")) duplicated this session's own newly-matched `RuntimeGetPointerE3C` (src/runtime_buffers.c) at the exact same address. `ScriptNativeConfigureActorSlots` (src/script_native_adapters.c, AT("00012C68")) duplicated the already-matching `ScriptNativeSetBattleParty` (src/mapping.c) -- identical logic, just a different name from an earlier pass. Removed both (plus their now-unused `extern` declarations) rather than leaving misleading dead code that could confuse a future pass into thinking those addresses were still open. A full scan of every `#ifdef NONMATCHING` block across the codebase against src/decompiled.json found no further duplicates. Verified with make compare (no behavior change, since neither stub ever compiled).
 
-Bulk small-function pass, batch B (asm/code/code_0180C0.s, code_0200C0.s, code_0280C0.s, code_0400C0.s, code_0500C0.s, code_0580C0.s, code_0600C0.s): 33 functions decompiled and verified byte-exact (`make compare` clean after every group), 1,144 bytes of asm removed from those files. Method: enumerate `.thumb_func` blocks whose label address is not yet in src/decompiled.json, disassemble the real bytes out of baserom.gba rather than trusting the .s text (the splitter emits `bl` to unlabelled targets as raw `.2byte`/`.4byte`, which hides the instruction stream), cut the function's bytes out of the .s only after a byte-size walk over the removed lines lands exactly on the next function's address, replace them with the `@ AAAAAA..BBBBBB is decompiled as Name(); see src/decompiled.json` marker plus a `.section .rom.00BBBBBB, "ax"` split so the following code keeps its own address (the shared-section trap: removing bytes from the middle of one big section otherwise slides everything after it), and rename every `bl sub_ADDRESS` reference in asm/ and src/ to the new C name. Iterating on codegen is much faster against a single .o than a full ROM build: cpp + agbcc + as on one throwaway .c and `objdump -d` the result, then compare instruction-by-instruction with the ROM disassembly; a full `make && make compare` only as the group-level confirmation. Functions: item.c gained ItemGetField78 (056F68) and ItemGetField7C (056F7C); runtime_buffers.c gained RuntimeActorGetByteA4 (019C64) and RuntimeActorGetByte66 (019CA0); runtime_accessors.c gained GameStateGetEntry2768/2AE0/31D0 (0568B4, 056EE0, 057138), GameStateGetEncounterValue (0577E4) and GameStateGetEncounterMode (057844) -- both named from their only callers, ScriptNativeGetEncounterValue/Mode in resource_native.c -- plus GameStateSetFlag2730 (056A34), GameStateTestFlag2730 (056A60), GameStateTestFlag26F8 (056B2C), GameStateGetCurrentEntry3894 (056130) and GameStateClearEntry31D0 (057174); runtime_misc.c gained GameStateClearRecord426A (057514) and InputRepeatRearm (02AE74); new src/game_state_records.c holds the 84-byte record family at state+0x35E0 (GameStateRecordSetField4 055FE8, GameStateRecordSetField6 05601C, GameStateRecordAddField6 056050), the s16 table at +0x3894 (GameStateSetEntry3894 0560C4, GameStateGetEntry3894 0560F8), GameStateCopyRecord (056CD0), GameStateGetEntry2768Total (056984) and GameStateGetPartField64C (056DFC); new src/object_group.c holds ObjectGroupReset (029E00) and ObjectGroupSetFlag2 (029E34); new src/scene_draw_adapters.c holds SceneDraw5F874 (05F874); map_field.c gained InitializeFieldDisplay5A4 (0558A4), a third sibling of InitializeMapFieldDisplay. Five agbcc idioms did nearly all the work and are worth reusing: (1) a 16-bit parameter that the prologue sign-extends *in place* (`lsls r0,r0,#16 / asrs r0,r0,#16` with no preceding `adds rN,r0,#0`) means the parameter was declared `s16`, not `s32` cast at the top of the body -- declaring it `s16` and copying it into an `s32` local is what reproduces GameStateGetPartField64C exactly; (2) conversely, a preamble that copies an argument to a callee-saved register and only then shifts it is `v=value; v=(s16)v;` as two statements, and writing `value=(s16)value` instead costs one extra `adds`; (3) the map-generation root is reached as `iwram=gIwramBase; offset=(u32)gMapGenerationRootOffset; base=*(u8 **)(iwram+offset);` with those two locals spelled out in that order -- the expression form in the GAME_STATE_BASE macro allocates the two literals into the opposite registers, and when the same function later uses the offset again (`offset-=180`) the local form is the only way to get the `subs r1,#180` literal reuse the ROM has; (4) walking a base pointer one statement at a time (`base+=0x3894; base+=index;`) reproduces the ROM's add order, while a single compound expression reorders the adds and, worse, lets agbcc fold a nearby constant (it derived 0x64C as `subs r1,#60` off a live 1672 instead of loading the 0x64C literal the ROM uses); (5) storing a constant that the ROM loads straight into the store register (`ldr r0,=999 / strh r0`) needs the constant assigned to a local first (`stored=999; field=stored;`), since assigning the literal directly costs an extra `adds r0,r2,#0`. Trailing 0x0000 alignment padding is supplied by the established `AT("000XXXXX") const u8 NameTail[2]={0};` trick -- GNU as otherwise pads a code section with a 0x46C0 `nop` and the two bytes mismatch. One bonus hidden-code find: 0805601C is a real function (GameStateRecordSetField6) that the original recursive descent left as a `.4byte` run between two decoded neighbours; nothing in the ROM calls it (checked with a full-image BL scan), and its signature is taken from the byte-identical sibling at 08055FE8, which is the only reason it was safe to write C for it. Left mid-investigation, each blocked on register allocation rather than logic: 08055FB8 (record field-2 accumulator clamped against field 4 -- the logic is `v+=field2; field2=v; v=(s16)v; limit=field4; if (v>=(s16)field4) field2=limit;` and the only mismatch is that the ROM keeps the record pointer in r1 and the limit in r2 while agbcc emits r2/r1, unaffected by declaration order or by inlining the limit load); 08055F4C (the record lookup itself, `index=(s16)sub_08055EC8((s16)id); if (index==-1) return index; else return *(u8 **)(iwram+offset)+index*84+0x35E0;` written with a single `result` local so the early return lays out as `bne`/`b` like the ROM -- structurally identical output, index in r2 instead of r1 and the root pointer in r1 instead of r2); 08056290 and 080562C8 (the 999,999-saturating counter at state+0x38BC: 08056290 needs the root pointer re-read after a *conditional* store, which the macro form does reproduce, but with r3/r4 swapped against the ROM; 080562C8 additionally needs the value re-loaded after an *unconditional* `+=`, and agbcc forwards the stored value instead, so some other source shape is involved); 0801B7FC and 0801DADC (identical CreateTask adapters, correct size, one register-allocation difference around the shared 0xFFE0 literal) and 0801DB8C (same family, needs the 0 hoisted above the 256); 080577C0 (the encounter-value setter paired with GameStateGetEncounterValue -- correct size, value lands in r2 instead of r1); 080577A0 (digit-to-character, where agbcc merges the two branches into `+48` then `+7` while the ROM keeps two separate `adds`); and 08056F68's sibling shape generally. Also examined from the earlier hidden-code candidate list: 0x0802AB44 is genuine code (a printf-family number formatter whose entry point the disassembler missed although its body from 0802AB7C onward is decoded, with four real callers at 0802AA6C/AA82/AA98/AAAE inside the format loop at 0802AA12), 0x0802AD98 is a genuine 46-byte Shift-JIS-aware character emitter called from 0802AACA (writes a two-byte character when the high byte is 0x81..0x9F, otherwise one byte, NUL-terminates and returns the length), 0x080571E8 is a genuine 512-byte CpuCopy between state+0x33D0 and state+0x31D0 called from 0806CC06 (the mirror of the already-decompiled GameStateCopyMapBuffer at 00057218), 0x0805DBF0 (caller 0805CD14) and 0x080544CC (caller 0806726A) are genuine but large; 0x08019818, 0x08027BEC, 0x08042260, 0x08051BD4, 0x08053ADC, 0x08056578, 0x0805685C and 0x08065E88 have no caller anywhere in the image (full BL scan plus even-word and THUMB-bit pointer scans) and are deferred; 0x08019C08 does have a caller at 08019AD6 and is a small five-argument initialiser, not yet written.
+Bulk small-function pass, batch B (asm/code/code_0180C0.s, code_0200C0.s, code_0280C0.s, code_0400C0.s, code_0500C0.s, code_0580C0.s, code_0600C0.s): 33 functions decompiled and verified byte-exact (`make compare` clean after every group), 1,144 bytes of asm removed from those files. Method: enumerate `.thumb_func` blocks whose label address is not yet in src/decompiled.json, disassemble the real bytes out of baserom.gba rather than trusting the .s text (the splitter emits `bl` to unlabelled targets as raw `.2byte`/`.4byte`, which hides the instruction stream), cut the function's bytes out of the .s only after a byte-size walk over the removed lines lands exactly on the next function's address, replace them with the `@ AAAAAA..BBBBBB is decompiled as Name(); see src/decompiled.json` marker plus a `.section .rom.00BBBBBB, "ax"` split so the following code keeps its own address (the shared-section trap: removing bytes from the middle of one big section otherwise slides everything after it), and rename every `bl sub_ADDRESS` reference in asm/ and src/ to the new C name. Iterating on codegen is much faster against a single .o than a full ROM build: cpp + agbcc + as on one throwaway .c and `objdump -d` the result, then compare instruction-by-instruction with the ROM disassembly; a full `make && make compare` only as the group-level confirmation. Functions: item.c gained ItemGetField78 (056F68) and ItemGetField7C (056F7C); runtime_buffers.c gained RuntimeActorGetByteA4 (019C64) and RuntimeActorGetByte66 (019CA0); runtime_accessors.c gained GameStateGetEntry2768/2AE0/31D0 (0568B4, 056EE0, 057138), GameStateGetEncounterValue (0577E4) and GameStateGetEncounterMode (057844) -- both named from their only callers, ScriptNativeGetEncounterValue/Mode in resource_native.c -- plus GameStateSetFlag2730 (056A34), GameStateTestFlag2730 (056A60), GameStateTestFlag26F8 (056B2C), GameStateGetCurrentEntry3894 (056130) and GameStateClearEntry31D0 (057174); runtime_misc.c gained GameStateClearRecord426A (057514) and InputRepeatRearm (02AE74); new src/game_state_records.c holds the 84-byte record family at state+0x35E0 (GameStateRecordSetField4 055FE8, GameStateRecordSetField6 05601C, GameStateRecordAddField6 056050), the s16 table at +0x3894 (GameStateSetEntry3894 0560C4, GameStateGetEntry3894 0560F8), GameStateCopyRecord (056CD0), GameStateGetEntry2768Total (056984) and GameStateGetPartField64C (056DFC); new src/object_group.c holds ObjectGroupReset (029E00) and ObjectGroupSetFlag2 (029E34); new src/scene_draw_adapters.c holds SceneDraw5F874 (05F874); map_field.c gained InitializeFieldDisplay5A4 (0558A4), a third sibling of InitializeMapFieldDisplay. Five agbcc idioms did nearly all the work and are worth reusing: (1) a 16-bit parameter that the prologue sign-extends *in place* (`lsls r0,r0,#16 / asrs r0,r0,#16` with no preceding `adds rN,r0,#0`) means the parameter was declared `s16`, not `s32` cast at the top of the body -- declaring it `s16` and copying it into an `s32` local is what reproduces GameStateGetPartField64C exactly; (2) conversely, a preamble that copies an argument to a callee-saved register and only then shifts it is `v=value; v=(s16)v;` as two statements, and writing `value=(s16)value` instead costs one extra `adds`; (3) the map-generation root is reached as `iwram=gIwramBase; offset=(u32)gMapGenerationRootOffset; base=*(u8 **)(iwram+offset);` with those two locals spelled out in that order -- the expression form in the GAME_STATE_BASE macro allocates the two literals into the opposite registers, and when the same function later uses the offset again (`offset-=180`) the local form is the only way to get the `subs r1,#180` literal reuse the ROM has; (4) walking a base pointer one statement at a time (`base+=0x3894; base+=index;`) reproduces the ROM's add order, while a single compound expression reorders the adds and, worse, lets agbcc fold a nearby constant (it derived 0x64C as `subs r1,#60` off a live 1672 instead of loading the 0x64C literal the ROM uses); (5) storing a constant that the ROM loads straight into the store register (`ldr r0,=999 / strh r0`) needs the constant assigned to a local first (`stored=999; field=stored;`), since assigning the literal directly costs an extra `adds r0,r2,#0`. Trailing 0x0000 alignment padding is supplied by the established `AT("000XXXXX") const u8 NameTail[2]={0};` trick -- GNU as otherwise pads a code section with a 0x46C0 `nop` and the two bytes mismatch. One bonus hidden-code find: 0805601C is a real function (GameStateRecordSetField6) that the original recursive descent left as a `.4byte` run between two decoded neighbours; nothing in the ROM calls it (checked with a full-image BL scan), and its signature is taken from the byte-identical sibling at 08055FE8, which is the only reason it was safe to write C for it. Left mid-investigation, each blocked on register allocation rather than logic: 08055FB8 (record field-2 accumulator clamped against field 4 -- the logic is `v+=field2; field2=v; v=(s16)v; limit=field4; if (v>=(s16)field4) field2=limit;` and the only mismatch is that the ROM keeps the record pointer in r1 and the limit in r2 while agbcc emits r2/r1, unaffected by declaration order or by inlining the limit load); 08055F4C (the record lookup itself, `index=(s16)sub_08055EC8((s16)id); if (index==-1) return index; else return *(u8 **)(iwram+offset)+index*84+0x35E0;` written with a single `result` local so the early return lays out as `bne`/`b` like the ROM -- structurally identical output, index in r2 instead of r1 and the root pointer in r1 instead of r2); [SUPERSEDED: both functions now match clean C; see the correction below.] 08056290 and 080562C8 (the 999,999-saturating counter at state+0x38BC: 08056290 needs the root pointer re-read after a *conditional* store, which the macro form does reproduce, but with r3/r4 swapped against the ROM; 080562C8 additionally needs the value re-loaded after an *unconditional* `+=`, and agbcc forwards the stored value instead, so some other source shape is involved); 0801B7FC and 0801DADC (identical CreateTask adapters, correct size, one register-allocation difference around the shared 0xFFE0 literal) and 0801DB8C (same family, needs the 0 hoisted above the 256); 080577C0 (the encounter-value setter paired with GameStateGetEncounterValue -- correct size, value lands in r2 instead of r1); 080577A0 (digit-to-character, where agbcc merges the two branches into `+48` then `+7` while the ROM keeps two separate `adds`); and 08056F68's sibling shape generally. Also examined from the earlier hidden-code candidate list: 0x0802AB44 is genuine code (a printf-family number formatter whose entry point the disassembler missed although its body from 0802AB7C onward is decoded, with four real callers at 0802AA6C/AA82/AA98/AAAE inside the format loop at 0802AA12), 0x0802AD98 is a genuine 46-byte Shift-JIS-aware character emitter called from 0802AACA (writes a two-byte character when the high byte is 0x81..0x9F, otherwise one byte, NUL-terminates and returns the length), 0x080571E8 is a genuine 512-byte CpuCopy between state+0x33D0 and state+0x31D0 called from 0806CC06 (the mirror of the already-decompiled GameStateCopyMapBuffer at 00057218), 0x0805DBF0 (caller 0805CD14) and 0x080544CC (caller 0806726A) are genuine but large; 0x08019818, 0x08027BEC, 0x08042260, 0x08051BD4, 0x08053ADC, 0x08056578, 0x0805685C have no caller anywhere in the image (full BL scan plus even-word and THUMB-bit pointer scans) and are deferred; 0x08065E88 has since been recovered as byte-exact `CreateFieldEventModeTask`; 0x08019C08 does have a caller at 08019AD6 and is a small five-argument initialiser, not yet written.
 
 Bulk small-function pass over code_0680C0.s/code_0700C0.s/code_0780C0.s/code_0800C0.s (batch C), 12 functions / 584 bytes, all verified byte-exact with `make compare` after each one: SpriteRuntimeInit (0x080804BC, 48), SpriteRuntimeSetFields8C4 (0x08080504, 56), SpriteRuntimeSetFlag800 (0x08080574, 64) and SpriteRuntimeTestFlag800 (0x080805B4, 28) in the new src/sprite_runtime_6120.c; ScriptResourceSlotFirst (0x0807F32C, 40), ScriptResourceSlotSecond (0x0807F354, 44) and ScriptResourceSetStringValue (0x0807F3DC, 92) in src/script_resources.c; ScriptResourceSetRecord224 (0x0807F1B8, 32) in src/script_resource_handles.c; FindLowestSetBit (0x080705F0, 48) in the new src/bit_scan.c; BattleRuntimeSetArena (0x08070214, 36) in src/simple_adapters.c; MapGenerationRelease (0x08070140, 60) in src/mapping.c; RuntimeStoreCurrentRecord14C (0x0806C6F8, 36) in src/runtime_core.c. Several reusable lessons came out of it. (a) The `.set alias, CSymbol` trick for keeping a removed function's `sub_08XXXXXX` name resolvable does NOT work -- GNU `as` equates to a symbol that is undefined in that translation unit and exports nothing, so the link fails with "undefined reference"; the working approach is the one the project already uses for CpuFill/CpuCopy, i.e. renaming the `bl sub_08XXXXXX` call sites in asm/code/*.s to the new C name (a pure symbol-name edit, identical encoding, zero alignment risk). SpriteRuntimeSetFields8C4 alone had 79 such call sites across 12 files. (b) agbcc's *tail merging* is what produces a single shared store at the end of an if/else: writing SpriteRuntimeSetFlag800 with explicit `flags`/`value` locals and one trailing store (the "obvious" transcription of the ROM) reproduced the logic but permanently swapped r0/r1 in both arms; the plain, natural `if (enabled) *p |= 1<<bit; else *p &= ~(1<<bit);` matched on the first try because agbcc merges the two identical `str` tails itself. Prefer the natural spelling and let the optimizer do the merging. (c) Block *order* is the most common near-miss in these guard-style accessors. ScriptResourceSlotFirst/Second emit the failure block (`movs r0,#0; b`) between the guard and the success block; a plain `if (bad) return 0; ... return ptr;` emits them the other way round. `if (ok) { ...; if (ok2) goto found; } return 0; found: ...` reproduces the ROM order exactly, and the same trick (with an extra `goto` pair) was needed for FindLowestSetBit, where the ROM additionally uses `bne X / b Y` instead of an inverted `beq` -- a tell that the source reached the not-found return through its own explicit branch rather than by falling out of an `if`. (d) `pop {r0} / bx r0` versus `pop {r1} / bx r1` in a Thumb epilogue is a reliable **return-type** signal, not noise: agbcc pops into r0 only when r0 is dead, i.e. the function returns void. ScriptResourceSetRecord224 was written returning `s32` first and mismatched on exactly those two halfwords; changing it to `void` matched. (e) The `AT("...") const u8 XxxTail[2] = {0};` idiom already used throughout src/ is needed whenever the function's own instructions end on a 2-byte-but-not-4-byte boundary AND the ROM has `0x0000` there -- otherwise agbcc's own alignment pads with `0x46C0` (`nop`) and the two bytes mismatch. It must NOT be added when the function already ends flush with its literal pool (MapGenerationRelease), or the section grows past the original size. Two functions were attempted and abandoned rather than forced, both pure register-allocation disagreements with identical logic and (for the second) identical size: SpriteRuntimeGetFields8C4 (0x0808053C, 56 bytes) -- the ROM keeps the *address* 0x03006120 in a callee-saved register and re-dereferences it before writing the third output, while agbcc common-subexpression-eliminates the load in every spelling tried (inline macro at all three uses, a named local, u16* vs s16* out-parameters); short of a `volatile` qualifier that would force three loads instead of two, nothing reproduced it. CopyBytesAdvance (0x0807E738, 52 bytes, the "copy n bytes, return source+n" helper that the 0x7E6xx-0x7F0xx resource serializers call a dozen times, `CpuCopy` above 64 bytes and an inline byte loop below) -- the ROM holds five values (preserved source r5, preserved destination r0, preserved size r4, walking source r3, counter r2 = the incoming size register), and every combination of locals tried either coalesced the preserved size with the counter (52 bytes, right size, wrong registers) or added one `adds rX, rY, #0` too many (56 bytes); the spelling that got closest is `const u8 *in = source; if (size > 64) goto useDma; if (size > 0) { do { *destination++ = *in++; } while (--size != 0); } return in; useDma: CpuCopy(destination, source, size); return source + size;`.
 
@@ -974,20 +1036,22 @@ individual objects, then with a complete byte-identical ROM comparison.
 
 ## Runtime task constructor at 0x08069DB4
 
-`sub_08069DB4` is now documented in
-[`src/nonmatching/runtime_task_69db4.c`](../src/nonmatching/runtime_task_69db4.c).
-It allocates a 0x7038-byte main-task-manager task for `sub_08069E00`, stores
-its supplied object at task-relative +0x11CC, sets that object's +20
-halfword to 20, and records object +0xA90 at task-relative +0x11D0. The
-worker remains assembly, so these are deliberately offset-based names rather
-than guessed structure fields.
+`CreateRuntimeTask69DB4` now contributes its complete 76 bytes from matching
+C in [`src/task_constructors.c`](../src/task_constructors.c). It allocates a
+0x7038-byte main-task-manager child task for `sub_08069E00`, stores its parent
+work block at child-task offset +0x11CC, sets the parent's +20 halfword to 20,
+and records parent +0xA90 at child-task offset +0x11D0. The worker remains
+assembly, so unresolved fields keep offset-based names.
 
-The readable C is behaviorally faithful but remains outside the matching
-build: agbcc's ordinary common-subexpression elimination folds the two task
-addresses together and reuses the argument instead of performing the ROM's
-intervening reload through +0x11CC. This is recorded as a dependency for the
-worker's eventual decompilation, not worked around with volatile access,
-register pinning, or inline assembly.
+The former nonmatching source used unrelated pointer casts. That allowed
+agbcc to assume the parent-state store could not affect the child's stored
+parent pointer, forward the original argument, and derive +0x11D0 by adding
+four to the already-live +0x11CC offset. A partial union containing parent and
+child views expresses the observed aliasing relationship. The compiler then
+reloads the parent through +0x11CC and loads both large child offsets
+independently, exactly matching the ROM. The implementation uses named task
+manager and callback symbols and remains shiftable; it needs no raw address,
+`volatile`, register pin, or inline assembly.
 
 ## Primary-runtime flag accessors
 
@@ -1093,3 +1157,841 @@ runtime block beginning at +0xE50. This is the same block exposed by
 offset-based name is retained because the gameplay meaning of the remaining
 words is not yet established. All three functions passed the complete ROM
 comparison after their assembly bodies were removed.
+
+## KMP draw dispatch and background attribute enables
+
+`KmpDrawViewport` (0x080028C8, 36 bytes) now gives eleven assembly callers a
+named renderer entry point. It skips empty viewport slots and dispatches a
+loaded slot through the regular or alternate draw path according to the
+signed `renderMode` byte. This is distinct from `KmpRenderViewport`, which
+updates the viewport from 16.16 map coordinates before drawing.
+
+`ApplyTileRemainderMask` (0x080023B0, 40 bytes) masks the unused packed 4bpp
+pixels at the end of a tile fragment. Its nine-entry mask table at 0x081ACB58
+is now the typed C array `gTileRemainderMasks`, covering zero through eight
+retained nibbles. The helper calls the original eight-word ARM mask routine
+through agbcc's normal `_call_via_r2` interworking helper. Both routines now
+have descriptive symbols; the ARM body remains honest assembly. This removes
+a raw ROM table and a hardcoded function address while preserving the exact
+interworking sequence.
+
+The `BgIntAttr`, `BgSetAttrEnable`, `BgGetAttrEnable`, and
+`BgSetAttrEnables` native names identify the game-state bank at +0x12C as
+10,000 background-attribute enable bits. Three newly decompiled functions
+initialize all 1,250 bytes to enabled, set one bit, or set an inclusive range;
+the existing test helper is renamed `GameStateTestAttributeFlag`. The range
+implementation uses a separate local for the normalized Boolean value. That
+ordinary source shape naturally preserves the ROM's `r5`/`r6`/`r7`
+allocation, so no register pinning or inline assembly is involved.
+The original native table maps both `BgSetAttrEnable` and
+`BgGetAttrEnable` to the setter adapter at 0x08012994; the separate test
+adapter exists at 0x080129A4 but is not selected by that table. The C table
+keeps this cartridge behavior exactly rather than silently correcting it.
+Hidden-code audit, map-buffer restore: ROM 0x080571E8..0x08057218 was emitted
+as twelve anonymous `.4byte` values in `asm/code/code_0500C0.s`, but direct
+Thumb disassembly shows a complete function. `GameStateSnapshotMapBuffer()`
+copies 512 bytes from game-state offset `0x31D0` into the snapshot at
+`0x33D0`; it is the exact inverse of the adjacent
+`GameStateRestoreMapBuffer()`. The two functions
+compile from the same shiftable `ORDERED_GAME_STATE_BASE` and `CpuCopy()` C
+shape with only their source and destination offsets exchanged. The known
+caller at 0x0806CC06 and the adjacent snapshot call now branch to the named
+symbols instead of embedding unresolved BL halfwords. The 48-byte function,
+its manifest entry, and both renamed calls pass `make compare` with SHA1
+`5ed178bfbdf459867d64e5b91a9d9c72654e4051`. This confirms that anonymous
+word runs inside `asm/code` must be audited as possible Thumb before being
+classified as data; valid prologue/call/epilogue structure and a mirrored
+neighbor provided stronger evidence here than the original splitter labels.
+This pass also corrected the project-local `CpuCopy` declaration: ROM
+0x08001EB4 writes through r0 and reads through r1, so its ABI is
+`CpuCopy(destination, source, size)`. Earlier source had the two pointer names
+reversed; the generated bytes were unaffected because both arguments are
+pointers, but the comments and map-buffer direction were semantically wrong.
+
+## Archive loader is one state-machine function
+
+`ArchiveTaskStep` spans ROM 0x08027DE0..0x08028008. The former
+`LoadArchiveEntry` label at 0x08027EAE and `sub_08027F02` at 0x08027F02 are
+internal blocks, not callable functions: neither has a prologue or independent
+return, and no call targets either address. Their false function symbols have
+been removed. [`src/nonmatching/archive.c`](../src/nonmatching/archive.c) now
+contains the complete ordinary-C state machine rather than stopping after its
+abort path.
+
+State 1 frees the prior tile buffer, derives its byte size from the current
+20-byte entry and the header's 4bpp/8bpp flag, allocates a replacement, and
+dispatches raw, BIOS RLE, or BIOS LZ77 decoding. State 5 applies either the
+64x64 or 32x32 map-transfer path, queues an asynchronous tile copy, copies the
+palette unless the archive declares it shared, advances the entry, and returns
+the task to state 0. Status bit 0 gates each step; bit 12 marks completion and
+bit 15 records allocation failure. Both stop bits use the same cleanup path.
+
+The C currently differs only in agbcc register allocation and remains honestly
+nonmatching. It uses named IWRAM linker offsets, typed archive/task structures,
+and named callees, with no fixed ROM address, forced register, `volatile`
+optimizer barrier, or inline assembly. The reconstruction also confirmed that
+`CreateCopyTask` stores `destination, source, size`, matching the underlying
+`CpuCopy` ABI; its old parameter names described those first two arguments in
+reverse. The normal build still matches SHA1
+`5ed178bfbdf459867d64e5b91a9d9c72654e4051` after that naming correction.
+
+## Dead identity-lock stores recover four sound functions
+
+`SoundPlayerResume`, `SoundPlayerFadeOut`, `SoundPlayerFadeOutTemporary`, and
+`SoundPlayerFadeIn` now compile from clean C in `src/sound_m4a.c`. Their
+earlier reconstructions omitted MusicPlayer2000's `ident++`/restore lock pair
+because the ROM contains no corresponding stores. The old compiler removes
+those stores in call-free helpers, but the authentic source operations still
+affect lifetime analysis before elimination and make it retain the ready
+signature in r3. Restoring that source-level protocol produced all four ROM
+functions exactly, including literal pools and alignment, without a register
+pin or scheduling fence. This is a useful warning for other library-derived
+near matches: source eliminated from the final instruction stream can still
+determine allocation, especially when neighboring functions reveal a shared
+locking convention.
+
+## Source lifetime recovers SpriteFixed8Multiply
+
+`SpriteFixed8Multiply` at 0x0807D8F8 now compiles byte-identically from clean
+C in `src/sprite_math.c`. Earlier attempts let the multiplication result die
+after its sign comparison, so agbcc coalesced it with the rounded result and
+omitted the ROM's `r0` to `r1` copy. Reusing the multiplication-result variable
+for the final shifted value keeps that source value live across the rounding
+step and naturally produces the required copy. This removed both the honest
+assembly fallback and `src/nonmatching/sprite_fixed8_multiply.c`; it requires
+no register pin, inline assembly, volatile access, or hardcoded address.
+
+## Source order recovers StartSongOnFreePlayer
+
+`StartSongOnFreePlayer` at 0x08005F7C now compiles byte-identically from clean
+C in `src/scene_native.c`. Its former C reconstruction initialized the player,
+song, and order table pointers before filling its local array of nine player
+objects. agbcc legally scheduled those literal loads before the array stores,
+so the old matching version needed an empty assembly fence and was later moved
+to honest assembly. Filling the array first and assigning the pointer locals
+afterwards makes the normal optimizer emit the ROM's exact schedule. Explicitly
+initializing the loop counter before the pointer assignments also reproduces
+the remaining setup order. The result uses only named symbols and ordinary C;
+the assembly body and `src/nonmatching/sound_player_select.c` are gone.
+
+## Dereference lifetime recovers RuntimeGetLinkActivityState
+
+`RuntimeGetLinkActivityState` at 0x08004DA8 now compiles byte-identically from
+clean C in `src/runtime_core.c`. The old nonmatching version initialized a
+global-slot pointer and the +0x130 field offset together. agbcc consequently
+put the slot in r4, put the offset in r5, and scheduled the offset calculation
+before the first dereference. The ROM instead keeps the slot in r5 and the
+offset in r4. Assigning `runtime = *root` before initializing the offset
+expresses the missing lifetime: the compiler must perform the dereference
+first and then naturally chooses the ROM's registers and schedule. Explicit
+`active` and `inactive` labels reproduce the ROM's return-block order and
+literal-pool position. This also confirms that `sub_08004DBC` was an internal
+branch label rather than a function. The stale nonmatching file and both raw
+assembly labels were removed, and callers now use the named header prototype.
+
+## Record typing recovers IwramSetFlags0810
+
+`IwramSetFlags0810` at 0x08006ADC now contributes its full 252 bytes from
+clean C in `src/runtime_accessors.c`. It sets or clears bits 8 through 11 in
+the fixed IWRAM word at +0x810 according to a mode from 0 through 3. The
+earlier scalar `u16 *` reconstruction was logically correct, but agbcc loaded
+the word into r1 and copied the constructed bit from r3 into r2; the ROM uses
+r2 for the word and r1 for the result.
+
+The fixed word is now represented as the `value` member of a partial
+`struct IwramFlags0810`. Applying the same compound OR/AND operations through
+that member gives agbcc the original register lifetimes and reproduces every
+case, shared tail, literal pool, and branch byte-for-byte. This is a data-model
+correction rather than a compiler hint: it uses named bit masks and a named
+symbol, and needs no volatile access, register pin, inline assembly, or raw
+address. All assembly callers now branch to the C symbol, and the obsolete
+nonmatching source and raw function body were removed.
+
+## MusicPlayer2000 provenance resolves SoundTrackReleaseChannels
+
+The 104-byte routine at 0x08078644 is now named
+`SoundTrackReleaseChannels`, and its indirect-call helper at 0x08078634 is
+named `SoundCallViaR3`. The routine releases every PCM or CGB channel linked
+from a sequence track, disables an active CGB oscillator through the sound
+driver callback, clears both sides of the track/channel relationship, and
+leaves the track's channel head null.
+
+This routine is an instruction-for-instruction copy of Nintendo
+MusicPlayer2000's `TrackStop` in `pret/pokeemerald/src/m4a_1.s`. The exact
+agreement includes the initial `tst`, the channel-type mask in r3, the callback
+loaded into r3, and the local `bx r3` trampoline. Those were precisely the
+details that ordinary-C probes could not reproduce together. This evidence
+changes the classification: it is preserved library assembly, not a C
+function waiting for a compiler-shape trick. Its speculative
+`src/nonmatching/` reconstruction was therefore removed. Keeping this body in
+named assembly follows the PRET standard: exact matching takes priority, and
+genuine hand-written assembly must not be disguised as forced or artificial C.
+
+## Union aliasing recovers GameStateAddResourceCounter
+
+`GameStateAddResourceCounter` at 0x080562C8 now compiles byte-identically from
+clean C in `src/game_state_records.c`. It adds a possibly signed script delta
+to the u32 resource counter at game state +0x38BC, then clamps the unsigned
+result to 999999. The ROM deliberately reloads the game-state pointer and
+counter after the first store instead of forwarding the value already held in
+a register.
+
+Representing the IWRAM root slot as a union of the typed game-state pointer and
+its raw word gives agbcc the alias relationship needed to retain those reloads.
+That model also produces the ROM's exact r3/r4 root and offset allocation; it
+requires no `volatile`, register pin, inline assembly, or raw address.
+
+The sibling getter at 0x08056290 is now also byte-exact. Its original shape is
+different: it stores the fixed IWRAM root-slot offset `0x3FDC` in a named local,
+forms the root pointer from `gIwramBase`, dereferences the root, and only then
+assigns the resource-counter field offset. Those ordinary lifetimes give agbcc
+the ROM's r4 root slot, r3 field offset, and r2 temporary counter address. The
+layout constant is centralized as `GAME_STATE_ROOT_IWRAM_OFFSET`; it is a RAM
+structure offset rather than an absolute ROM address.
+
+## Actor accessors recovered from raw word regions
+
+Two regions in `asm/code/code_0080C0.s` that were emitted as anonymous
+`.4byte` data are compiled Thumb functions:
+
+- `RuntimeActorSetField358` at 0x08009778 is the missing setter paired with
+  `RuntimeActorGetField358`. It indexes the 1672-byte actor records and stores
+  a halfword at record offset `0x358`.
+- `RuntimeActorHasPartField37Value6` at 0x08009868 scans the four 168-byte
+  records returned by `RuntimeGetActorRecord`. It returns true when a record's
+  first signed byte is nonzero and its signed byte at `+0x37` equals 6.
+
+Both routines compile byte-for-byte from ordinary C without register hints,
+inline assembly, raw addresses, or volatile qualifiers. The second conversion
+also exposed a section-boundary rule for mixed assembly/C regions: after
+removing a raw function body, the following assembly function must begin in a
+section named for its own ROM offset. Otherwise it remains attached to the
+removed function's old section and the linker places it at the earlier
+address, shifting every intervening section. `sub_080098A0` therefore begins
+in `.rom.000098A0` explicitly.
+
+The same audit then recovered six more functions from the actor-part accessor
+cluster at 0x0800A3B8..0x0800A668. They set or get the paired 32-bit values at
+record offsets `0x18/0x1C` and `0x20/0x24`; the two fixed-point setters shift
+their integer inputs left by 16 before storing. All six share the address
+calculation already established by `RuntimeGetActorRecord`: a 1672-byte actor
+stride, `0x120` actor header, 168-byte part stride, and `0x23C` part-table
+offset. Naming those four layout constants and retaining the original
+statement order reproduces 304 bytes exactly from clean C.
+
+The signed-halfword pair readers at 0x0800A3EC and 0x0800A4B8 remain in
+assembly. Ordinary typed loads followed by halfword stores let agbcc reduce
+the ROM's signed `ldrsh` operations to unsigned `ldrh`; no artificial
+`volatile` qualifier or register hint was accepted. Their regions were split
+at their real function boundaries so later C sections remain shiftable.
+
+## Named runtime-record constructor recovered from raw words
+
+The 52-byte region at 0x080073DC..0x08007410 was previously emitted as thirteen
+anonymous `.4byte` values. Decoding those words as Thumb instructions revealed
+`CreateNamedRuntimeRecordTask`, a task constructor that allocates 32 bytes of
+task-specific state for `sub_08007410`, copies the supplied resource name to
+task offset 36, and returns the new task. The function has no direct `bl`
+reference or obvious stored function pointer in the ROM, so its argument ABI
+was recovered from the body: r0 is the source string and r1 is the optional
+task completion pointer passed through to `CreateTask`.
+
+The recovered function now compiles instruction-for-instruction from ordinary
+C in `src/task_constructors.c`. Its name-buffer offset and payload size are
+named constants, and it uses the existing `gMainTaskManager`, `CreateTask`, and
+`strcpy` symbols. It contains no absolute address, forced register, inline
+assembly, fake volatile access, or optimizer-only branch. The following
+assembly begins in an explicit `.rom.00007410` section so removing the raw
+words does not make later code depend on this function's size. The complete
+ROM still matches SHA-1 `5ed178bfbdf459867d64e5b91a9d9c72654e4051`.
+
+## Allocator leads resolved without hints
+
+A typed `PmbDeckArguments` record was a useful intermediate clue for
+`ScriptNativePmbDeckMake`: it produced the correct r5 input and r4 output
+cursors, but agbcc hoisted the entries pointer above the clear loop. A
+redundant unreachable conditional could suppress that optimization, but was
+correctly rejected under `PRET_STANDARDS.md`. The final matching source instead
+models the packed destination with `outputIndex` and the input as
+`args[i + 1]`; ordinary loop-strength reduction then produces both target
+cursors at the correct point with no hint or fake dependency.
+
+For `GameStateGetResourceCounter`, grouping the root slot and field offset in a
+two-member aggregate produced the ROM's r4/r3 allocation, but kept the final
+counter address in callee-saved r5 and changed the prologue. That clue led to
+the clean match described above: a named numeric root-slot offset plus the
+actual dereference/field-offset statement order. Both functions are now
+matching C, and the failed intermediate shapes remain documented because the
+same lifetime patterns recur in other agbcc allocator mismatches.
+
+## Field-event constructor recovered from raw words
+
+The 44-byte region at 0x08065E88..0x08065EB4 is another task constructor that
+the original disassembly classified as data. `CreateFieldEventModeTask`
+narrows its first argument to a signed halfword, creates a 32-byte task for
+the callback at 0x08065EB4, stores that mode at task offset 52, and returns
+the task pointer. Its second argument is the optional completion word passed
+to `CreateTask`.
+
+The direct C translation reproduces every instruction and literal without a
+register hint, inline assembly, raw address, volatile access, or dead branch.
+The callback now begins in `.rom.00065EB4`, preserving its independent section
+boundary after the raw constructor words were removed. The exact signature is
+`s16 mode`, with that parameter first copied into an ordinary `s32` local. This
+is why agbcc emits the ROM's in-place signed extension in r4; an `s32` argument
+cast in the body uses r0 as a scratch, while storing the `s16` parameter
+directly lets the compiler reduce the extension to an unsigned one.
+
+The same raw-code pass confirmed 0x08056578 as a 128-byte compactor for the
+444-entry signed-halfword table at game-state offset 0x2E58. It clears a
+444-element stack array, copies nonzero entries into it in order, and writes
+the whole array back, leaving zeros after the packed entries. Separate lexical
+scopes for the read and write loops recover the first loop exactly: they keep
+its 16.16 induction value in r3, step in r5, limit in r4, source in r2, and
+destination in r1. A union view of the root slot also preserves the write
+loop's per-iteration root reload. The remaining write-loop difference is a
+swap of the two low-register temporaries used for the index and destination
+address. Because no clean type or lifetime found so far resolves that swap,
+the function remains raw bytes rather than being promoted with a register pin
+or artificial volatile access.
+
+## Battle sprite-effect constructors recovered from raw words
+
+The raw-word regions at 0x08077370..0x080773F4 and
+0x08077B44..0x08077BC4 are complete task constructors, not data or literal
+pools. They are now `CreateBattleSpriteEffectTask` and
+`CreateLargeBattleSpriteEffectTask` in `src/task_constructors.c`. Both choose a
+task manager from `gSecondaryRuntime + owner * 32`, retain three caller values,
+convert the caller's 16.16 X/Y coordinates to signed pixel coordinates, and
+resolve two named sprite-resource groups. The smaller task allocates 0xA8
+bytes, uses `77A03_` with `SP_BA04`, and stores its seventh argument at state
+offset 0xA4. The larger task allocates 0x338 bytes and uses `77A03_` with
+`TEST_E02`.
+
+The three embedded resource names at 0x0808951C, 0x08089524, and 0x0808952C
+now have real in-stream labels (`gResource77A03`, `gResourceSpBa04`, and
+`gResourceTestE02`). C therefore refers to relocatable symbols rather than
+absolute ROM addresses. Partial task-state structures document every known
+field while leaving callback-owned spans unnamed until those callbacks are
+decompiled. Both constructors compile instruction-for-instruction with normal
+agbcc C: no register pins, inline assembly, volatile qualifiers, dead branches,
+or fixed addresses are involved. The rebuilt ROM remains byte-identical with
+SHA-1 `5ed178bfbdf459867d64e5b91a9d9c72654e4051`.
+
+## Script resource removal root alias corrected
+
+`ScriptResourceRemove` (0x0807EA8C..0x0807EB18) had a complete C
+reconstruction hidden behind `NONMATCHING`, but that reconstruction declared
+three artificial globals for its lookup, bucket-head update, and heap access.
+The ROM reads the same `gScriptBytecodeRoot` in all three places. Expressing
+that real alias relationship lets agbcc retain the root-slot address in r2
+across the head-bucket update and the following `HeapFree`, exactly matching
+the original control flow without register hints or volatile accesses.
+
+The 140-byte raw-word body is now replaced by `ScriptResourceRemove` in
+`src/script_resource_table.c`, and the hash-table API has normal prototypes in
+`script_bytecode.h`. This is another case where decompiling the surrounding
+global relationship solved a register-allocation mismatch: treating identical
+storage as separate globals hid the lifetime that the original C naturally
+gave the compiler. The full ROM remains byte-identical.
+
+## Sprite runtime coordinate commands matched from the VM type
+
+`ScriptNativeSetRuntimeCoordinate` (0x08005C88) and
+`ScriptNativeGetRuntimeCoordinate` (0x08005CDC) were complete guarded C
+reconstructions whose only structural mismatch came from declaring the VM
+argument array as signed. Their selector is a `u32`: with that real type,
+agbcc lowers the cases for selectors 0, 1, and 2 to the ROM's unsigned
+`cmp`/`bcc` chain. Both commands now compile byte-identically from ordinary C,
+replacing 156 bytes of assembly. The old duplicate nonmatching sketches of
+the already-matched `RuntimeGetRecord17C`, `ItemGetField78`, and
+`ItemGetField7C` were removed at the same time so they no longer imply that
+those functions remain unresolved.
+
+## Task payload bases resolve two constructor mismatches
+
+`CreateSceneModeTask` (0x080061F0) now compiles exactly from a signed 16-bit
+mode parameter and an ordinary 112-byte task allocation. Copying that parameter
+to a signed 32-bit local gives agbcc the ROM's in-place sign extension. The two
+zero bytes immediately after the function are alignment data, represented by
+the explicit `CreateSceneModeTaskTail` object instead of being hidden in an
+assembly body.
+
+`CreateEncounterSetupTask` (0x0806FA94) also matches once its final word is
+expressed through the actual payload base. `CreateTask` returns the 32-byte task
+header, so the callback-owned 368-byte allocation begins at `task + 32`; the
+stored setup value is at payload offset 336. Writing the field through that
+base prevents agbcc from treating the allocation size and the final absolute
+task offset as one retained value. It therefore keeps the caller's setup value
+in r4 and reconstructs the offset after `CreateTask`, matching the ROM without
+a register hint. The callback begins in its own `.rom.0006FAC4` section so the
+replacement remains shiftable. Both changes preserve the exact ROM SHA-1
+`5ed178bfbdf459867d64e5b91a9d9c72654e4051`.
+
+## ARM and consumable purchase path recovered
+
+The raw 128-byte function at 0x0805427C is now
+`TryPurchaseArmOrConsumable`. It verifies the shared resource counter against
+the selected entry's cost, checks whether the relevant inventory can accept
+the entry, deducts the cost, and records the purchase. Its three documented
+results distinguish success, insufficient resources, and a full inventory.
+
+The two callers at 0x080613B2 and 0x08064B98 now use relocatable named calls;
+the first had been split across two raw word directives. The function uses
+the existing ARM definition and game-state APIs, named result and sentinel
+constants, and an explicit signed-16 interpretation of the copy total. That
+cast reproduces the ROM's narrowing while retaining the callee's correct
+`s32` prototype. The false internal `sub_080542CE` label is gone, the next
+assembly function starts at its true 0x080542FC boundary, and `make compare`
+retains SHA1 `5ed178bfbdf459867d64e5b91a9d9c72654e4051`.
+
+## Large task payload constructor recovered
+
+The 128-byte raw region at 0x08062304 is now `CreateTask62304`. It allocates a
+0x25F4-byte task payload for `sub_08062384`, retains its owner, advances that
+owner to stage 9, derives a resource at owner offset 0xA90, and asks
+`sub_080565F8` to select an entry. The selected signed value is cached; values
+above 5 use fallback entry 6.
+
+The recovered payload structure places the owner, resource, selection, and
+fallback inside the allocation rather than exposing task-relative arithmetic.
+Reading the owner back from its initialized payload field is required to
+reproduce the original source lifetime and exact agbcc output. The raw body is
+gone, the following callback starts in its true 0x08062384 section, and the
+sole caller at 0x08055AAE now uses a relocatable `bl CreateTask62304` despite
+straddling two old word directives. `make compare` retains SHA1
+`5ed178bfbdf459867d64e5b91a9d9c72654e4051`.
+
+## Battle task records recover four constructor matches
+
+The constructors at 0x08026140 and 0x08027894 initialize the same logical
+record shape at different offsets: owner, primary-side flag, slot, reset byte,
+and a sprite resource-group index. Raw byte indexing let agbcc reuse the slot
+address for the adjacent flag and produced a different instruction sequence.
+The partial `BattleNamedTaskA` and `BattleNamedTaskB` structures express the
+callback-owned layouts directly. Their member accesses now reproduce both ROM
+functions exactly and document the previously anonymous fields.
+
+The object-motion constructors at 0x0801B7FC and 0x0801B8AC share a task
+payload containing an object pointer and two signed halfwords. Representing
+that payload as `ObjectMotionTaskState` gives agbcc the ROM's literal and zero
+lifetimes, resolving both matches. The object's known signed halfwords are
+also recorded in `MotionObject`. The second constructor keeps its flag update
+as a byte access with named offset and mask constants: using a typed object
+member there changes agbcc's alias assumptions and retains an extra task-state
+base register, while the named byte access states the same verified layout
+without an absolute address or compiler hint. All four following callbacks
+begin in independent ROM sections, so the new C remains shiftable.
+### Battle-mode and group/variant task records recover four constructors
+
+Four guarded constructors proved to have stale nonmatching status once their
+task fields were modeled according to the callbacks that consume them:
+
+- `CreateBattleModeTask4AC` (0x0804AC8C) already compiled instruction-for-
+  instruction from its ordinary C body. Its old assembly included the false
+  internal function label `sub_0804ACE4`; that label disappeared with the
+  duplicated body.
+- `CreateBattleModeTask4E6` (0x0804E668) matched after its signed mode,
+  retained resource pointer, and two-entry `empty` array were represented by
+  one partial `BattleModeTask4E6` structure. Writing the backward fill as
+  `end = task->empty`, then initializing the sentinel, then setting
+  `cursor = end + 1` naturally reproduces the ROM's register allocation.
+- `BattleObjectCreateTask` (0x0802D3C0) and `BattleTaskACreateTask`
+  (0x0804A720) share the same 300-byte payload layout. Converting their fifth
+  and sixth arguments to the signed 16-bit values actually stored by the task,
+  and expressing the terminal sentinel as the family's one-entry backward
+  fill, gives the original `r9`/`r8`/`r7` lifetimes without register hints.
+
+`CreateBattleModeTask4E6` also has an intentional two-byte zero tail. A plain
+`const u8[2]` in the function's section preserves it; leaving alignment to the
+assembler emits a Thumb NOP (`c0 46`) instead. All four functions are clean,
+shiftable C and pass the full byte-for-byte ROM comparison.
+
+### Large battle-task constructor family recovered
+
+Five large constructors—`CreateLargeBattleTask31C`,
+`CreateLargeBattleTask35B`, `CreateLargeBattleTask378`,
+`CreateLargeBattleTask3FF`, and `CreateLargeBattleTask4DC`—shared one stale
+nonmatching macro. The provisional macro reused integer locals for the result
+pointer and several field offsets. That obscured the original source
+lifetimes, leaving the returned task in r2 and rotating the sentinel loop's
+value, counter, and cursor registers.
+
+The matching family keeps the caller's resource pointer as a resource pointer,
+writes the named owner/slot/side/resource offsets directly, then initializes
+the one- or two-word empty range with separate `emptyValue`, `remaining`, and
+`cursor` locals. This ordinary shape naturally retains the task in r1 and
+reproduces every shifted immediate and backward-fill instruction in all five
+ROM bodies. Their duplicated assembly and the disassembler's internal false
+labels were removed. The full ROM comparison remains byte-identical.
+
+### KMP resource loader matched after removing false volatility
+
+`KmpLoadResource` (0x08003178) now compiles byte-identically from its full
+264-byte C implementation. The previous reconstruction marked the ordinary
+`plane` value as `volatile`; that qualifier had no runtime justification and
+made agbcc allocate the final IWRAM-base literal to r0 instead of the ROM's r2.
+Removing it produces the complete original instruction stream directly.
+
+The loader now documents the whole map-graphics path in matching C: optional
+palette-bank upload, optional raw or LZ tile upload, 0xFC-byte viewport-slot
+selection, 0x800-byte screen-buffer selection, viewport initialization, and
+the per-slot palette/tile offsets. All pointers use archive, runtime, and IWRAM
+symbols rather than fixed ROM addresses, so the reconstruction remains
+shiftable. The old assembly body is gone and the full ROM hash still matches.
+
+### Archive loader state machine recovered from one continuous function
+
+`ArchiveTaskStep` (0x08027DE0) is one 552-byte task callback, not the three
+functions suggested by the old recursive-descent labels at 0x08027EAE and
+0x08027F02. The reconstructed state machine frees aborted allocations,
+decodes raw/RLE/LZ77 tile payloads in stage 1, commits 32x32 or 64x64 maps and
+their palettes in stage 5, and advances all other stages.
+
+Two source details completed the byte match. First, the ROM recomputes the
+20-byte entry address after calls rather than retaining an entry pointer; the
+direct indexed accesses expose those real lifetimes. Second, the heap handle
+is formed from the IWRAM base plus the named `OBJECT_HEAP_ROOT_OFFSET`. A
+scoped numeric offset produces the ROM's r2/r7 scratch allocation, whereas an
+equivalent linker-symbol expression rotates the call registers. The result
+uses ordinary structured C, has no volatile or register hints, and retains
+separate linker-based placement through `AT("00027DE0")`.
+
+Hidden-code audit follow-up: the 48-byte raw-word run at 0x08002158 is now
+the byte-exact `IsMainMountName` in `src/runtime_leaf.c`. Forced-Thumb
+disassembly revealed two `strcmp` calls against the built-in mount names
+`SYSTEM` and `MAR`; the routine returns true only for `MAR`. Expressing the
+two tests as early returns reproduces the branch layout and literal pool
+exactly. The strings are referenced through `gSystemMountName` and
+`gMainMountName`, so the C contains no ROM address. The former `.4byte`
+body was removed and the following raw region now starts at its true
+0x08002188 boundary.
+
+The same audit confirmed that the raw run beginning at 0x0800DCF8 is also
+code: a direct BL at 0x0800E03A reaches it. It creates a 32-byte task state,
+stores six caller values, adds one or two pending-task counts, initializes
+the task, and returns it. A typed reconstruction reproduces all state writes
+and control flow, but agbcc loads the fifth stack argument into r6 before
+`CreateTask`; the ROM instead reserves r6 for the callback literal and loads
+that argument after the call. Function-pointer locals, typed and old-style
+prototypes, explicit THUMB-bit expressions, and declaration-order variants
+did not recover that allocation. The raw code remains until a natural source
+shape is found.
+
+Hidden-code audit follow-up, 0x08004E88: the 84-byte raw-word run between
+`RuntimeReleaseField17C` and `RuntimeStart` is the complete
+`RuntimeHistoryPush` function, including its two-byte zero alignment tail.
+It maintains a ten-entry circular history: copy currentIndex to previousIndex,
+increment currentIndex modulo ten, then copy a 24-byte entry into the selected
+slot. The cursor fields are signed bytes at history offsets 0xFA and 0xFB.
+
+The final byte match established a useful source distinction. A whole-struct
+assignment is logically equivalent but agbcc emits two three-register block
+transfers. Six word assignments through advancing typed cursors produce the
+ROM's exact one-register `ldmia`/`stmia` sequence without a compiler hint or
+false qualifier. The former `.4byte` body is gone, the record/history layouts
+and counts are named in `runtime_state.h`, and `make compare` retains SHA1
+`5ed178bfbdf459867d64e5b91a9d9c72654e4051`.
+
+## Palette interpolation constructor recovered from raw words
+
+The 120-byte raw-word region at 0x0800382C is
+`CreatePaletteInterpolationTask`. It allocates a 20-byte state for the callback
+at 0x080038A4, normalizes a zero duration to one frame, packs the palette bank
+and index, and records two palette buffers. Its transition uses 8.24 fixed
+point: `blend` begins at `0x01000000`, while `blendStep` is
+`-0x01000000 / remainingFrames`. The differing signs are behavior, not merely
+a code-generation detail; using the positive initializer in both expressions
+would make the callback move away from its termination value.
+
+The recovered structure and named constants now live in
+`src/palette_tasks.c`. The callback's former address-only name was replaced by
+`PaletteInterpolationTask`, and the following assembly was split into its true
+`.rom.000038A4` section. `make compare` confirms the exact ROM SHA1, with no
+register hint, inline assembly, volatile qualifier, or fixed address in the
+new C.
+
+The neighboring raw constructor at 0x08003438 has also been decoded
+semantically but is not promoted yet. It either performs an immediate
+halfword-array interpolation/copy or creates a 28-byte delayed-start task. A
+typed candidate reproduces the complete stack layout, literals, state writes,
+copy loop, return paths, and total size. Its only remaining mismatch is the
+three signed-16 normalization destinations: the ROM normalizes the first two
+arguments through r0 before saving them, while ordinary equivalent C lets
+agbcc normalize directly into the saved registers and later inserts a move
+before the immediate call. Signed/unsigned parameter variants, explicit
+casts, old-style callee declarations, temporary aggregates, and arithmetic
+normalization forms were tested. None yielded the target without artificial
+compiler steering, so the raw body remains honestly classified until its
+natural source lifetime is found.
+
+## Palette sequence constructor and verified zero tail
+
+The raw region at 0x080041E0 is one 136-byte constructor,
+`CreatePaletteSequenceTask`; the apparent entry at 0x0800421E was an internal
+address created by the old recursive disassembly. The function creates a
+36-byte task state for `PaletteSequenceTask` at 0x08004268, normalizes a zero
+frame count to one, allocates two `colorCount * sizeof(u16)` buffers, copies
+the caller's two color arrays into them, and retains the output target. The
+typed state in `src/palette_tasks.c` documents those owned buffers and the
+signed halfword fields consumed by the callback.
+
+The compiled instructions and literal pool end at 0x08004266. The original
+two bytes at 0x08004266 are zero, whereas GNU `as` fills an implicit gap in an
+executable section with the Thumb NOP bytes `C0 46`. A two-byte const data
+object in the same placed section records the verified ROM bytes explicitly.
+This is alignment data, not executable C or an optimizer hint, and the next
+assembly section begins at its true callback boundary, 0x08004268. With that
+tail represented, `make compare` reproduces SHA1
+`5ed178bfbdf459867d64e5b91a9d9c72654e4051`.
+
+## Five more raw-word functions recovered
+
+A call-target scan found five functions whose entry bytes had no assembly
+symbol because their bodies were still represented as raw words:
+
+- `RuntimeSetBufferEEAName` at 0x08007604 copies the supplied name into the
+  secondary runtime's +0xEEA buffer with `strcpy`.
+- `CreateTaskB478` at 0x0800B478 creates a 256-byte main-manager task.
+- `CreateTask1BAD8` at 0x0801BAD8 creates a 0x61C-byte task and stores its
+  owner value at task offset 0x5E8.
+- `CreateTask51E84` at 0x08051E84 creates a 0x7E8-byte task and stores its
+  owner value at task offset 0x7A4.
+- `CreateTask68C0C` at 0x08068C0C creates a 0xAD0-byte task and then resets
+  the shared runtime state through `sub_0805615C`.
+
+Straightforward typed calls to `CreateTask` reproduce all four constructors;
+no allocator hint is needed. The callback meanings are not yet established,
+so their constructors retain address suffixes rather than receiving invented
+gameplay names. The source callers were also partly raw. Three BL pairs began
+at addresses two bytes past a word boundary, so each encoded displacement was
+split across adjacent `.4byte` directives. Those directives are now a
+preserved leading halfword, a relocatable `bl` to the C symbol, and a
+preserved trailing halfword. Two word-aligned calls were replaced directly.
+The result removes 216 raw function bytes and five fixed call displacements;
+`make compare` retains SHA1
+`5ed178bfbdf459867d64e5b91a9d9c72654e4051`.
+
+## Sprite-array cleanup and two task payloads recovered
+
+Three more callable regions previously emitted as raw words now build from
+clean C:
+
+- `NcdReleaseSpriteArray` at 0x08053FD4 releases the allocations in eight
+  consecutive 52-byte `NcdSprite` records.
+- `CreateTask66068` at 0x08066068 creates a 0xC40-byte task state, retains its
+  owner at payload offset 0xC30, and selects owner stage 12 or 28 from the
+  owner's high flag bits.
+- `CreateTask683C4` at 0x080683C4 creates a 0x238-byte task state, retains its
+  owner at payload offset 0x218, sets owner stage 15, and caches the current
+  encounter value at payload offset 0x21C.
+
+The two constructor payloads are represented by structures rather than raw
+task-relative stores. That structure recovery is also required for exact
+code generation in `CreateTask683C4`: raw arithmetic causes agbcc to reuse the
+allocation-size register, while `task + 1` followed by a typed field access
+reproduces the ROM naturally. `CreateTask66068` has a verified two-byte zero
+tail at 0x080660AE; representing it explicitly prevents GNU `as` from filling
+the gap with a Thumb NOP. Five caller displacements are now relocatable named
+branches. The manifest's five accidentally duplicated records were removed,
+so coverage statistics once again count unique ROM ranges. `make compare`
+retains SHA1 `5ed178bfbdf459867d64e5b91a9d9c72654e4051`.
+
+## Task constructor reveals an IWRAM aggregate relationship
+
+`CreateTask6EAFC` at 0x0806EAFC now replaces 72 bytes previously emitted as
+raw words. It creates a 0xB24-byte main-manager task for `sub_0806EB44`, writes
+mode 2 at offset 0x38B8 of the current game-state object, resets shared runtime
+state through `sub_0805615C`, and returns the new task.
+
+The target code keeps the address of `gMainTaskManager` live and adds 0xD18 to
+reach the game-state root pointer. A verified partial IWRAM aggregate records
+that relationship in C, replacing absolute-address arithmetic while leaving
+the intervening bytes explicitly unknown. The apparent `sub_0806EB0C` entry
+was inside this function and has been removed; the following callback begins
+at the true 0x0806EB44 boundary. Its caller now uses a relocatable named `bl`.
+`make compare` retains SHA1
+`5ed178bfbdf459867d64e5b91a9d9c72654e4051`.
+
+## VRAM and viewport reset remains raw
+
+The callable region at 0x0805EE40 clears all 96 KiB of VRAM, clears the four
+0xFC-byte KMP viewport records, resets two viewport words, initializes four
+display-control halfwords, and enables three display flags through
+`IwramSetFlags0810`.  This confirms that the region is code rather than an
+opaque data block and that `KmpViewport` offsets 0x10 and 0x14 are 32-bit
+fields.
+
+A typed partial aggregate reproduced the behavior but made agbcc preserve
+extra registers.  A named-offset version matched through all viewport clears,
+then allocated the final display-control temporaries differently.  The ROM
+reuses both an address offset and the value 0x1F43 through subtract-immediate
+sequences; introducing C locals to express those relationships disturbed the
+earlier allocation instead of reproducing the complete function.  The raw
+region therefore remains authoritative until a natural, complete C shape is
+found.  No partial reconstruction or register-forcing workaround was added.
+
+## Random map-attribute position selector recovered
+
+`GeneratedMapChooseAttributeIndex` at 0x08070F20 is now clean matching C. It
+walks the current KMP's entire u16 attribute grid, records matching flat tile
+indices in the generator's ten-entry scratch array, and returns an index
+selected by `MapGenerationRandom`; no match returns -1. Two generator callers
+now branch to the descriptive symbol instead of `sub_08070F20`.
+
+The KMP header stores dimensions as unsigned layout values, while this routine
+uses signed bounds checks. Casting both operands before each multiplication
+reproduces the ROM's multiplication destination and signed branches. A result
+local and explicit failure/done labels preserve the original success-first
+block order. The former 96-byte assembly body and its false internal labels
+are gone, including a verified two-byte zero tail at 0x08070F7E. The full ROM
+comparison retains SHA1 `5ed178bfbdf459867d64e5b91a9d9c72654e4051`.
+
+`GeneratedMapFindFreeRuntimeRoom` was refined alongside this work. Expressing
+its real occupied/continue edge with labels gives agbcc the ROM's r4 loop
+counter, r5 byte offset, and inline success block. Its only remaining
+difference is one address operation: the ROM copies r5 to r1 and then adds r1
+to the returned base, while ordinary C selects the equivalent two-register
+`add r0, r5`. The candidate now uses the shared runtime-room structure and
+documents that exact two-byte blocker; it remains nonmatching rather than
+accepting a register constraint or artificial operation.
+
+## Battle dispatch fallback recovered
+
+The 20-byte function at 0x08015268 is now matching C as
+`BattleActionUnavailable`. It is the repeated fallback in 44 entries of the
+444-entry `gBattleActionHandlers` table. The handler ignores the first three
+dispatch arguments, changes a nonzero status word to -1, preserves zero, and
+returns zero.
+
+The old table used an absolute odd-address alias (`sub_08015269`) to preserve
+the THUMB bit. Every fallback entry now references the C function symbol, so
+the linker supplies the THUMB function-pointer bit and can relocate the
+handler. The raw assembly body and obsolete absolute alias were removed.
+`make compare` retains the expected SHA1.
+
+Two larger raw-code candidates were decoded while selecting this function.
+The region at 0x08056578 compacts the nonzero entries of the game-state
+halfword table at +0x2E58 into a zero-filled 444-entry stack buffer before
+copying it back. Its two loops use the engine's 16.16 induction form, but the
+current clean reconstruction assigns the loop pointers and step to different
+registers, so it remains raw. The no-argument routine at 0x0806DEC0 clears
+VRAM and four `KmpViewport` records, resets their +0x10/+0x14 fields and the
+display-control state, loads `ST_BG11.KMP`, and renders viewport zero. A typed
+version reproduces the calls and writes but changes saved-register allocation
+when its repeated offsets are expressed cleanly; it also remains raw rather
+than accepting a register constraint.
+
+## Game-state flag setter recovered
+
+The 36-byte region at 0x08006760 is now clean matching C as
+`GameStateSetFlagsAC`. It enables or disables one bit in the game state's
++0xAC flag bank through `BitSet`; the adjacent `GameStateTestFlagsAC` reads
+the same bank. The script-native setter and field-runtime caller now use the
+relocatable name instead of `sub_08006760`.
+
+This function also confirms a useful natural agbcc source pattern. Loading
+`gIwramBase` and the linker-defined game-state-root offset into separate local
+variables before dereferencing the root reproduces the ROM's literal order
+and argument shuffle. The match needs no register declaration, inline
+assembly, volatile access, or fixed address.
+
+## Runtime-status-aware game-state setter recovered
+
+The 40-byte function at 0x08006F0C is now matching C as
+`GameStateSetField425A`. Before storing the signed-byte field at game-state
+offset +0x425A, it clears the paired runtime status bytes at +0xEE8 and
++0xEE9 through `ClearRuntimeStatusBytes`. All eight known callers now use the
+relocatable function name.
+
+Like the +0xAC flag setter, this function naturally matches when the IWRAM
+base, linker-defined root offset, and dereferenced game-state pointer are
+expressed as separate locals. Keeping the status reset as its real helper
+call also preserves the original saved value across that call. No register
+pin, inline assembly, fixed address, or dead compiler-shaping code is needed.
+
+## Paired game-state field setter recovered
+
+The 48-byte region at 0x08006DF0 is now matching C as
+`GameStateSetField424C50`. It stores the paired 32-bit values at game-state
+offsets +0x424C and +0x4250. All 68 known callers now branch to its
+relocatable symbol.
+
+The target reloads the game-state root before the second store. A typed
+partial IWRAM layout and a typed partial game-state layout express the real
+alias relationship: the pointed-to game state could overlap the IWRAM root
+slot, so the first store can invalidate that slot. agbcc then emits the reload
+naturally. This exact match replaces a pattern that could otherwise be
+mistaken for a need for volatile access or register pinning.
+
+## Five-part runtime update wrapper recovered
+
+The 32-byte function at 0x08009A04 is now matching C as
+`RuntimeUpdateFiveParts`. It calls the shared per-part updater for part
+indices zero through four while preserving the actor and group arguments.
+All eight known callers use the relocatable name.
+
+The function body matched directly as an ordinary bounded loop. The original
+two zero alignment bytes required an explicit source-level tail object because
+the assembler otherwise selected its THUMB NOP fill. The raw successor at
+0x08009A24 also required its own section boundary after the wrapper was
+removed from the assembly source; the first full-ROM comparison caught both
+layout details before the change was accepted.
+
+## Secondary-runtime mode setter recovered
+
+The 44-byte region at 0x0800AFA0 is now matching C as
+`RuntimeSetModeE4B`. It always stores the requested mode in secondary-runtime
+byte +0xE4B; mode zero also clears the adjacent +0xE4C state byte. All six
+known callers now use the relocatable name.
+
+Keeping `&gSecondaryRuntime` as a local pointer-to-pointer naturally preserves
+the global slot across both stores and reproduces the ROM's reload. The old
+`sub_0800AFC2` label was not a function at all: it split the upper halfword of
+the `0x03004020` global-address literal and is removed with the raw body. The
+result uses ordinary C without fixed addresses, register pins, inline
+assembly, volatile access, or dead code.
+
+## Field-actor mode dispatcher recovered
+
+The 36-byte function at 0x08017E4C is now matching C as
+`FieldActorUpdateForMode`. It chooses the dedicated mode-1 actor handler when
+game-state field +0x4254 equals one; all other modes use the general handler
+with arguments 3 and 4. Both known callers now use its relocatable name.
+
+Decoding the formerly literal branch at 0x08017E50 proved that its target is
+the existing `GameStateGetField4254` accessor. The wrapper then matched as a
+direct C conditional. The raw successor begins at 0x08017E70 and now has an
+explicit section boundary, preventing its bytes from being absorbed into the
+new C section.
+
+
+## Three-group runtime update wrapper recovered
+
+The 24-byte function at 0x08075EBC is now matching C as
+`RuntimeUpdateFirstThreeGroups`. It applies `RuntimeUpdateFiveParts` to actor
+zero for runtime groups zero through two. The bounded loop compiles directly
+to the original instruction stream and uses no compiler hints or fixed ROM
+addresses.
+
+This extraction also confirms that the word run beginning at 0x08075ED4 is
+code, not a literal pool or padding: it starts with a high-register function
+prologue and continues as the previously audited hidden function in that
+region. Its raw bytes remain intact in a new explicit section so removing the
+wrapper cannot slide or relabel that code.
+
+## Hit-bounds translation recovered
+
+The 40-byte function at 0x08006C2C is now matching C as
+`HitBoundsTranslate`. It translates all four signed corner offsets in a
+`HitBounds` record by a world-space x/y position. Its sole raw caller now uses
+the relocatable name.
+
+The ROM canonicalizes both incoming coordinates to signed 16-bit values before
+reading any bound. Explicit signed locals reproduce that ABI behavior. The
+first two source fields share a temporary, while the final bottom coordinate
+updates the y local. For the top coordinate, `translatedY - -top` is a
+well-defined signed addition over the field's proven range and prevents agbcc
+from commuting the otherwise equivalent operands. This recovers the exact
+THUMB encoding without a register constraint, inline assembly, volatile
+access, dead code, or a fixed address.
