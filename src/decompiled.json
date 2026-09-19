@@ -264,6 +264,12 @@
     "file": "src/runtime_core.c"
   },
   {
+    "addr": "08004EDC",
+    "size": 28,
+    "name": "RuntimeStart",
+    "file": "src/runtime_core.c"
+  },
+  {
     "addr": "08004EF8",
     "size": 24,
     "name": "RuntimeStop",
@@ -339,6 +345,12 @@
     "addr": "08005378",
     "size": 60,
     "name": "CreateInputWaitTask",
+    "file": "src/task_constructors.c"
+  },
+  {
+    "addr": "080053B4",
+    "size": 48,
+    "name": "InputWaitTask",
     "file": "src/task_constructors.c"
   },
   {
@@ -958,6 +970,12 @@
     "size": 16,
     "name": "RuntimeGetBufferE50",
     "file": "src/runtime_accessors.c"
+  },
+  {
+    "addr": "08008668",
+    "size": 28,
+    "name": "RuntimeClearOffsetBuffer",
+    "file": "src/runtime_buffers.c"
   },
   {
     "addr": "08008684",

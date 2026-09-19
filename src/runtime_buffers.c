@@ -147,6 +147,12 @@ AT("00019C50") void RuntimeActorSetByteA4(u32 actor,u32 part,u32 value)
 }
 AT("00019C50") const u8 RuntimeActorSetByteA4Tail[2]={0};
 
+/** Clear the 76-byte secondary-runtime offset buffer beginning at +0xE50. */
+AT("00008668") void RuntimeClearOffsetBuffer(void)
+{
+    CpuFill(gSecondaryRuntime + 0xE50, 76, 0);
+}
+
 /** Add two values into the secondary runtime's +0xE50/+0xE54 u32 fields
  * (RuntimeGetBufferE50() and its unnamed neighbor). */
 AT("00008684") void RuntimeAddOffsets(u32 first,u32 second)

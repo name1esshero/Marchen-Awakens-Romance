@@ -723,27 +723,8 @@ sub_080085E8:
 
 @ 008658..008668 is decompiled as RuntimeGetBufferE50(); see src/decompiled.json
 
-	.section .rom.00008668, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_08008668
-sub_08008668:
-	push {lr}
-	ldr r0, _08008680
-	ldr r0, [r0, #0]
-	movs r1, #229
-	lsls r1, r1, #4
-	adds r0, r0, r1
-	movs r1, #76
-	movs r2, #0
-	bl CpuFill
-	pop {r0}
-	bx r0
-	.global _08008680
-_08008680:
-	.4byte 0x03004020  @ IWRAM+0x4020
+@ 008668..008684 is decompiled as RuntimeClearOffsetBuffer();
+@ see src/decompiled.json
 
 @ 008684..0086B0 is decompiled as RuntimeAddOffsets(); see src/decompiled.json
 

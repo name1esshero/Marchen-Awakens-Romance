@@ -1069,3 +1069,27 @@ orders its basic blocks differently, so the worker remains assembly rather
 than using control-flow tricks. This also exposed and corrected the parameter
 names of `ScheduleVramFillTask`: its payload is destination, byte count, then
 fill pattern, matching the eventual `CpuFill` call.
+
+## Runtime startup and input-wait task
+
+Three additional raw assembly ranges now compile as ordinary, byte-identical
+agbcc C. `RuntimeStart` (0x08004EDC, 28 bytes) runs the shared runtime setup,
+sets the primary runtime header's active halfword, and clears its frame
+counter. Modeling those first eight bytes as `struct RuntimeHeader` is also
+what makes agbcc allocate the zero constant in the same register as the ROM;
+no register hint is needed.
+
+`InputWaitTask` (0x080053B4, 48 bytes) is the worker created by
+`CreateInputWaitTask`. The constructor's first two parameters are now
+correctly named `inputSlot` and `keyMask`: the worker passes the latter as the
+mask and the former as the input-state index to `KeyInputConsumePressed`.
+After a matching press it balances one pending script task, writes -1 to the
+optional completion word, and finishes. A typed four-byte task payload
+replaces the previous anonymous offsets.
+
+`RuntimeClearOffsetBuffer` (0x08008668, 28 bytes) clears the 76-byte secondary
+runtime block beginning at +0xE50. This is the same block exposed by
+`RuntimeGetBufferE50`; `RuntimeAddOffsets` updates its first two words. The
+offset-based name is retained because the gameplay meaning of the remaining
+words is not yet established. All three functions passed the complete ROM
+comparison after their assembly bodies were removed.

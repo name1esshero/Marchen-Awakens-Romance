@@ -6,6 +6,13 @@
 #include "rom_section.h"
 #define RUNTIME_ROOT (*(u8 **)0x0300401C)
 
+struct RuntimeHeader
+{
+    u16 isRunning;
+    u16 padding02;
+    u32 frameCounter;
+};
+
 extern void CpuFill(void *destination, u32 size, u32 value);
 extern void sub_080046B0(void);
 extern void sub_08004758(void);
@@ -72,18 +79,17 @@ AT("00004E6C") void RuntimeReleaseField17C(void)
     sub_080048C0(RUNTIME_ROOT + 0x17C);
 }
 
-#ifdef NONMATCHING
+/** Run the shared startup routine, mark the runtime active, and reset its
+ * frame counter. */
 AT("00004EDC") void RuntimeStart(void)
 {
-    u8 *state;
-    u32 stopped = 0;
-    u32 running = 1;
+    struct RuntimeHeader *state;
+
     sub_080047AC();
-    state = RUNTIME_ROOT;
-    *(u16 *)state = running;
-    *(u32 *)(state + 4) = stopped;
+    state = (struct RuntimeHeader *)RUNTIME_ROOT;
+    state->isRunning = TRUE;
+    state->frameCounter = 0;
 }
-#endif
 
 /** Run the shared stop routine and clear the runtime's running flag. */
 AT("00004EF8") void RuntimeStop(void)

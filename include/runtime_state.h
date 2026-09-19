@@ -13,4 +13,14 @@ extern u8 *gSecondaryRuntime;
  * early-runtime accessors. */
 extern u8 *gPrimaryRuntime;
 
+void *RuntimeGetOptionalField130(void);
+void RuntimeInitialize(u8 *state);
+void RuntimeClear(void);
+void RuntimeReleaseField17C(void);
+void RuntimeStart(void);
+void RuntimeStop(void);
+void *RuntimeGetCurrentRecord14C(void);
+void RuntimeAdvanceWord4(void);
+void *RuntimeGetRecord17C(s16 index);
+
 #endif /* RUNTIME_STATE_H */

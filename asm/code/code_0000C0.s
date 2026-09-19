@@ -9921,25 +9921,7 @@ _08004DFE:
 	.4byte 0xBC02BC70
 	.4byte 0x00004708
 
-	.thumb_func
-	.thumb
-	.global sub_08004EDC
-sub_08004EDC:
-	push {lr}
-	bl sub_080047AC
-	ldr r0, _08004EF4
-	ldr r1, [r0, #0]
-	movs r2, #0
-	movs r0, #1
-	strh r0, [r1, #0]
-	str r2, [r1, #4]
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _08004EF4
-_08004EF4:
-	.4byte 0x0300401C  @ IWRAM+0x401C
+@ 004EDC..004EF8 is decompiled as RuntimeStart(); see src/decompiled.json
 
 @ 004EF8..004F10 is decompiled as RuntimeStop(); see src/decompiled.json
 
@@ -10502,42 +10484,10 @@ _0800535C:
 
 @ 005378..0053B4 is decompiled as CreateInputWaitTask(); see src/decompiled.json
 
-	.section .rom.000053B4, "ax"
-	.syntax unified
+@ 0053B4..0053E4 is decompiled as InputWaitTask(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080053B4
-sub_080053B4:
-	push {r4, lr}
-	adds r4, r0, #0
-	ldrh r0, [r4, #34]
-	movs r2, #32
-	ldrsh r1, [r4, r2]
-	.2byte 0xF074
-	.4byte 0x2800FEB9
-	beq _080053DE
-	movs r0, #1
-	.2byte 0xF079
-	.byte 0x3E
-	.byte 0xF8
-	ldr r1, [r4, #24]
-	cmp r1, #0
-	beq _080053D8
-	movs r0, #1
-	negs r0, r0
-	str r0, [r1, #0]
-	.global _080053D8
-_080053D8:
-	adds r0, r4, #0
-	.2byte 0xF075
-	.byte 0xE7
-	.byte 0xF9
-	.global _080053DE
-_080053DE:
-	pop {r4}
-	pop {r0}
-	bx r0
+	.section .rom.000053E4, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -13310,7 +13260,7 @@ _08007218:
 	lsls r0, r0, #24
 	cmp r0, #0
 	beq _08007232
-	bl sub_08004EDC
+	bl RuntimeStart
 	.2byte 0xF000
 	.4byte 0x2000FA27
 	str r0, [r5, #4]

@@ -5,6 +5,7 @@
 #include "gba/types.h"
 
 #include "dialogue.h"
+#include "input.h"
 #include "runtime_state.h"
 #include "rom_section.h"
 #include "task_constructors.h"
@@ -26,7 +27,6 @@ extern s32 SpriteResourceFindGroup(s32, const char *);
 extern void VramFillTask(void *task);
 extern void ScriptSpriteResetTask(void *task);
 extern void ScriptSpriteResetAllTask(void *task);
-extern void sub_080053B4(void *task);
 extern void sub_08006078(void *task);
 extern void sub_08006228(void *task);
 extern void sub_0800E7EC(void *task);
@@ -61,6 +61,15 @@ struct MapCoordinateTaskData
     u32 eventCompletion;
 };
 
+struct InputWaitTask
+{
+    u8 unknown00[24];
+    s32 *completion;
+    u8 unknown1C[4];
+    s16 inputSlot;
+    u16 keyMask;
+};
+
 struct MapCoordinateTask
 {
     u8 unknown00[14];
@@ -83,6 +92,7 @@ enum
 };
 
 static void MapCoordinateTask(void *rawTask);
+static void InputWaitTask(void *rawTask);
 
 /** Schedule an asynchronous VRAM fill on the aux task manager.
  * @param destination VRAM address to fill.
@@ -101,21 +111,36 @@ AT("000037D8") void ScheduleVramFillTask(void *destination, u32 size, u32 value)
 
 /** Schedule a task that waits for the given keys, marking one script wait
  * pending if the task is created.
- * @param keyMask Keys to wait for.
- * @param repeatMask Keys eligible for repeat while held.
+ * @param inputSlot Key-input state slot to inspect.
+ * @param keyMask Keys to consume from the slot's pressed state.
  * @param result Optional task completion word.
  * @return Always 0x7fff, regardless of whether the task was created. */
-AT("00005378") s32 CreateInputWaitTask(s32 keyMask, s32 repeatMask,
+AT("00005378") s32 CreateInputWaitTask(s32 inputSlot, s32 keyMask,
                                         s32 *result)
 {
-    u8 *task = CreateTask(&gMainTaskManager, sub_080053B4,
+    u8 *task = CreateTask(&gMainTaskManager, InputWaitTask,
                           0, result, 4);
     if (task != 0) {
-        *(u16 *)(task + 32) = keyMask;
-        *(u16 *)(task + 34) = repeatMask;
+        *(u16 *)(task + 32) = inputSlot;
+        *(u16 *)(task + 34) = keyMask;
         ScriptAddPendingTasks(1);
     }
     return 0x7fff;
+}
+
+/** Wait until a requested key is pressed, then complete the script wait and
+ * release the task. */
+AT("000053B4") static void InputWaitTask(void *rawTask)
+{
+    struct InputWaitTask *task = rawTask;
+
+    if (KeyInputConsumePressed(task->keyMask, task->inputSlot))
+    {
+        ScriptCompletePendingTasks(1);
+        if (task->completion != 0)
+            *task->completion = -1;
+        FinishTask(rawTask);
+    }
 }
 
 /** Create the main scene task.

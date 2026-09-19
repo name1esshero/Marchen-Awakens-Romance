@@ -7,6 +7,7 @@
 #include "runtime_accessors.h"
 #include "runtime_misc.h"
 #include "sound.h"
+#include "task_constructors.h"
 
 #include "rom_section.h"
 extern const char gSceneNcdExtension[];
@@ -14,7 +15,6 @@ extern const char gSceneNcdExtension[];
 #define SCRIPT_WAIT 0x7FFF
 #define sText_NcdExtension gSceneNcdExtension
 
-extern s32 CreateInputWaitTask(s32 first, s32 second, s32 mode);
 extern s32 sub_080053E4(s32 first, s32 second, s32 third, s32 mode);
 extern s32 sub_08006760(s32 first, s32 second);
 extern s32 sub_08006E88(s32 value);
