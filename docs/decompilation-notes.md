@@ -1034,3 +1034,38 @@ bodies remain separately written because that is the natural switch form that
 reproduces the ROM's two distinct jump-table destinations. The task header's
 previously anonymous +14 halfword is now named `EngineTask.stage` while
 preserving the established 32-byte ABI.
+
+## Message-window graphics loader
+
+`DialogueLoadWindowGraphics` (0x08011718) configures KMP viewport slot 3 for
+the ornate message window stored as `MWA.KMP`. It always points the viewport
+at BG character block 3 and passes its first argument through as the KMP plane.
+When its second argument is nonzero it loads both the palette and tile members;
+when zero it reconfigures the viewport using graphics already in VRAM.
+
+The previously anonymous string at 0x08086D78 is now the linker symbol
+`gMessageWindowMapResourceName`. The C ternary for the load flags naturally
+reproduces the ROM's branch and stack argument stores, including its literal
+pool and two-byte alignment tail. All assembly callers now reference the named
+function, and the complete 52-byte raw assembly body has been removed.
+
+`DialogueCreatePromptTask` (0x08011A08) is the corresponding dialogue-prompt
+constructor. It creates a 56-byte main-manager task, initializes the embedded
+52-byte NCD sprite, selects the `CURSOR` group from sprite resource zero, sets
+its initial container/group/animation/frame tuple, and adds one pending script
+task. The resource name at 0x08086D80 is now
+`gDialogueCursorResourceName`. The constructor's entire 88-byte body is
+matching C; `DialogueCommandPrompt` calls it by name while the prompt worker at
+0x08011A60 remains assembly.
+
+The prompt worker was decoded far enough to establish its behavior. Stage zero
+waits for A, clears 3072 bytes of message-window tiles with pattern
+`0x11111111`, reloads the MWA background, releases the cursor allocation, and
+advances to stage 16. Stage 16 balances the pending-script count, reports -1,
+and finishes. Other stages position the cursor 212 pixels right and 36 pixels
+below window record 3 before advancing and queueing its NCD animation. A
+straightforward C implementation produces the same 148 bytes of operations but
+orders its basic blocks differently, so the worker remains assembly rather
+than using control-flow tricks. This also exposed and corrected the parameter
+names of `ScheduleVramFillTask`: its payload is destination, byte count, then
+fill pattern, matching the eventual `CpuFill` call.

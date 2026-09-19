@@ -22,4 +22,6 @@ struct DialogueState
 const u8 *DialogueReadHex4(const u8 *, u32 *);
 u16 DialogueNextGlyph(struct DialogueState *);
 void *DialogueStart(s32 mode, s32 count, const char **rows, s32 *result);
+void DialogueLoadWindowGraphics(s32 plane, bool32 loadGraphics);
+void *DialogueCreatePromptTask(s32 *result);
 #endif

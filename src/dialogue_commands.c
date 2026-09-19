@@ -4,13 +4,66 @@
  * still assembly. Finish reports -1 through the task result pointer before
  * releasing the task. Return value 1 is the native command convention here. */
 #include "dialogue.h"
+#include "gba/io_reg.h"
+#include "kmp.h"
+#include "ncd.h"
+#include "sprite_engine.h"
 extern void FinishTask(void *);
 extern void *CreateTask(void *,void *,u32,s32 *,u32);
 extern u8 gMainTaskManager;
-extern void sub_08011A08(u32);
+extern void sub_08011A60(void *task);
+extern void sub_0807BC7C(struct NcdSprite *sprite, s32 container, s32 group,
+                         s32 animation, s32 frame);
+extern void ScriptAddPendingTasks(u32 count);
 extern void sub_08006ADC(u32,u32);
 #include "runtime_misc.h"
 #include "rom_section.h"
+
+extern const char gMessageWindowMapResourceName[];
+extern const char gDialogueCursorResourceName[];
+
+enum
+{
+    MESSAGE_WINDOW_KMP_SLOT = 3,
+    MESSAGE_WINDOW_CHAR_BLOCK = 3
+};
+
+/**
+ * Configure the ornate message-window background in KMP viewport slot 3.
+ *
+ * @param plane KMP plane rendered by the viewport.
+ * @param loadGraphics Whether to load the MWA palette and tiles into VRAM.
+ */
+AT("00011718")
+void DialogueLoadWindowGraphics(s32 plane, bool32 loadGraphics)
+{
+    KmpLoadResource(gMessageWindowMapResourceName,
+                    BG_CHAR_ADDR(MESSAGE_WINDOW_CHAR_BLOCK),
+                    MESSAGE_WINDOW_KMP_SLOT, plane, 0, 0,
+                    loadGraphics ? KMP_LOAD_ALL : 0);
+}
+
+/**
+ * Create the task that displays and updates the dialogue prompt cursor.
+ *
+ * @param result Optional task completion word.
+ * @return The newly created task.
+ */
+AT("00011A08")
+void *DialogueCreatePromptTask(s32 *result)
+{
+    u8 *task;
+    struct NcdSprite *cursor;
+    s32 group;
+
+    task = CreateTask(&gMainTaskManager, sub_08011A60, 1, result, 56);
+    cursor = (struct NcdSprite *)(task + 32);
+    NcdInitSprite(cursor, 0);
+    group = SpriteResourceFindGroup(0, gDialogueCursorResourceName);
+    sub_0807BC7C(cursor, 0, group, 0, 0);
+    ScriptAddPendingTasks(1);
+    return task;
+}
 /** Report dialogue completion and release its task. */
 AT("00011774")
 void DialogueFinishTask(void *task)
@@ -32,7 +85,7 @@ void *DialogueCreateFinishTask(s32 *result)
 AT("00011CC4")
 s32 DialogueCommandPrompt(void)
 {
- sub_08011A08(0);
+ DialogueCreatePromptTask(0);
  return 1;
 }
 AT("00011CC4") const u8 DialogueCommandPromptTail[2]={0,0};

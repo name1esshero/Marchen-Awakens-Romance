@@ -7020,7 +7020,7 @@ _0806BFF0:
 	ble _0806BFF0
 	movs r0, #0
 	movs r1, #1
-	bl sub_08011718
+	bl DialogueLoadWindowGraphics
 	ldr r1, _0806C038
 	adds r0, r7, r1
 	movs r1, #0
@@ -8094,7 +8094,7 @@ sub_0806C5C6:
 	bl sub_08006ADC
 	movs r0, #0
 	movs r1, #1
-	bl sub_08011718
+	bl DialogueLoadWindowGraphics
 	movs r2, #0
 	ldrsh r0, [r5, r2]
 	cmp r0, #1
@@ -10760,7 +10760,7 @@ _0806E9B4:
 	bl sub_08006ADC
 	movs r0, #0
 	movs r1, #1
-	bl sub_08011718
+	bl DialogueLoadWindowGraphics
 	movs r1, #2
 	ldrsh r0, [r6, r1]
 	cmp r0, #1

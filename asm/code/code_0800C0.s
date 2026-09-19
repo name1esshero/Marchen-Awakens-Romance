@@ -5878,8 +5878,12 @@ _08086D5C:
 	.4byte 0x00000041
 	.4byte 0x49575F46
 	.4byte 0x0000004E
+	.global gMessageWindowMapResourceName
+gMessageWindowMapResourceName:
 	.4byte 0x2E41574D
 	.4byte 0x00504D4B
+	.global gDialogueCursorResourceName
+gDialogueCursorResourceName:
 	.4byte 0x53525543
 	.4byte 0x0000524F
 	.4byte 0x504D4B2E

@@ -1446,7 +1446,7 @@ sub_08060AC0:
 	bl sub_08006ADC
 	movs r0, #0
 	movs r1, #1
-	bl sub_08011718
+	bl DialogueLoadWindowGraphics
 	add r1, sp, #4
 	ldr r0, _08060BA0
 	ldmia r0!, {r2, r3, r4}
@@ -10587,7 +10587,7 @@ sub_08065280:
 	str r0, [sp, #48]
 	movs r0, #0
 	movs r1, #1
-	bl sub_08011718
+	bl DialogueLoadWindowGraphics
 	ldr r5, _080652CC
 	movs r1, #250
 	lsls r1, r1, #5
@@ -11804,7 +11804,7 @@ sub_08065DE0:
 	str r0, [sp, #48]
 	movs r0, #0
 	movs r1, #1
-	bl sub_08011718
+	bl DialogueLoadWindowGraphics
 	movs r2, #255
 	lsls r2, r2, #2
 	adds r1, r4, r2

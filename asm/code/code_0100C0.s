@@ -2587,42 +2587,7 @@ _08011702:
 _08011714:
 	.4byte 0x081AFE84  @ ROM+0x1AFE84
 
-	.thumb_func
-	.thumb
-	.global sub_08011718
-sub_08011718:
-	push {lr}
-	sub sp, #12
-	adds r3, r0, #0
-	ldr r2, _08011730
-	movs r0, #0
-	str r0, [sp, #0]
-	str r0, [sp, #4]
-	cmp r1, #0
-	beq _08011734
-	movs r0, #3
-	str r0, [sp, #8]
-	b _08011736
-	.global _08011730
-_08011730:
-	.4byte 0x08086D78  @ ROM+0x86D78
-	.global _08011734
-_08011734:
-	str r1, [sp, #8]
-	.global _08011736
-_08011736:
-	adds r0, r2, #0
-	ldr r1, _08011748
-	movs r2, #3
-	bl KmpLoadResource
-	add sp, #12
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _08011748
-_08011748:
-	.4byte 0x0600C000  @ VRAM+0xC000
+@ 011718..01174C is decompiled as DialogueLoadWindowGraphics(); see src/decompiled.json
 
 @ 01174C..011774 is decompiled as DialogueCreateFinishTask(); see src/decompiled.json
 
@@ -2720,7 +2685,7 @@ _080118AC:
 _080118B0:
 	movs r0, #0
 	movs r1, #0
-	bl sub_08011718
+	bl DialogueLoadWindowGraphics
 	movs r0, #16
 	mov r1, r10
 	strh r0, [r1, #14]
@@ -2930,67 +2895,10 @@ _08011A00:
 _08011A04:
 	.4byte 0x000001E3
 
-	.thumb_func
-	.thumb
-	.global sub_08011A08
-sub_08011A08:
-	push {r4, r5, lr}
+@ 011A08..011A60 is decompiled as DialogueCreatePromptTask(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08011A0A
-sub_08011A0A:
-	sub sp, #4
-	adds r3, r0, #0
-	ldr r0, _08011A54
-	ldr r1, _08011A58
-	movs r2, #56
-	str r2, [sp, #0]
-	movs r2, #1
-	.2byte 0xF068
-	.byte 0xB0
-	.byte 0xFE
-	adds r5, r0, #0
-	adds r4, r5, #0
-	adds r4, #32
-	adds r0, r4, #0
-	movs r1, #0
-
-	.thumb_func
-	.thumb
-	.global sub_08011A26
-sub_08011A26:
-	.2byte 0xF06A
-	.4byte 0x490CF901
-	movs r0, #0
-	.2byte 0xF06A
-	.4byte 0x1C02F8B3
-	movs r0, #0
-	str r0, [sp, #0]
-	adds r0, r4, #0
-	movs r1, #0
-	movs r3, #0
-	bl sub_0807BC7C
-	movs r0, #1
-	.2byte 0xF06C
-	.byte 0xEC
-	.byte 0xFC
-	adds r0, r5, #0
-	add sp, #4
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _08011A54
-_08011A54:
-	.4byte 0x030032C4  @ IWRAM+0x32C4
-	.global _08011A58
-_08011A58:
-	.4byte 0x08011A61  @ ROM+0x11A61
-	.global _08011A5C
-_08011A5C:
-	.4byte 0x08086D80  @ ROM+0x86D80
+	.section .rom.00011A60, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -3024,7 +2932,7 @@ _08011A74:
 	.byte 0xFE
 	movs r0, #0
 	movs r1, #1
-	bl sub_08011718
+	bl DialogueLoadWindowGraphics
 	adds r0, r5, #0
 
 	.thumb_func

@@ -4,6 +4,13 @@
 
 #define KMP_TILE_SIZE 8
 
+enum
+{
+    KMP_LOAD_PALETTE = 1 << 0,
+    KMP_LOAD_TILES = 1 << 1,
+    KMP_LOAD_ALL = KMP_LOAD_PALETTE | KMP_LOAD_TILES
+};
+
 /* KMP header fields traced through 08002650, 08003104 and 08003178.
  * Offsets are relative to the KMP member. Unknown fields stay reserved. */
 struct KmpHeader

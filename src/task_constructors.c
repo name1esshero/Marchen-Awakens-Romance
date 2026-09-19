@@ -4,6 +4,7 @@
  */
 #include "gba/types.h"
 
+#include "dialogue.h"
 #include "runtime_state.h"
 #include "rom_section.h"
 #include "task_constructors.h"
@@ -47,7 +48,6 @@ extern void sub_0806F664(void *task);
 
 extern void sub_0806FAC4(void *task);
 extern void ScriptCompletePendingTasks(u32 count);
-extern void sub_08011718(s32 mode, s32 enabled);
 extern void FinishTask(void *task);
 extern void *CreateFieldEventTask(s16 first, s16 second, s16 third,
     s16 fourth, s16 value, void *objectData, u32 *completion);
@@ -86,17 +86,17 @@ static void MapCoordinateTask(void *rawTask);
 
 /** Schedule an asynchronous VRAM fill on the aux task manager.
  * @param destination VRAM address to fill.
- * @param value Fill value.
  * @param size Number of bytes to fill.
+ * @param value Fill value.
  * @return Nothing. */
-AT("000037D8") void ScheduleVramFillTask(void *destination, u32 value, u32 size)
+AT("000037D8") void ScheduleVramFillTask(void *destination, u32 size, u32 value)
 {
     u8 *task = CreateTask(&gAuxTaskManager, (void *)((u32)VramFillTask + 1),
                           0, 0, 12);
     u8 *state = task + 32;
     *(void **)(task + 32) = destination;
-    *(u32 *)(state + 4) = value;
-    *(u32 *)(state + 8) = size;
+    *(u32 *)(state + 4) = size;
+    *(u32 *)(state + 8) = value;
 }
 
 /** Schedule a task that waits for the given keys, marking one script wait
@@ -502,7 +502,7 @@ AT("0006C7EC") static void MapCoordinateTask(void *rawTask)
         break;
     case 2:
         ScriptCompletePendingTasks(1);
-        sub_08011718(0, 1);
+        DialogueLoadWindowGraphics(0, TRUE);
         if (task->completion != 0)
             *task->completion = data->result;
         FinishTask(task);

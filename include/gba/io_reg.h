@@ -30,6 +30,8 @@
 #define VRAM        0x06000000
 #define OAM         0x07000000
 
+#define BG_CHAR_ADDR(n) ((void *)(VRAM + (n) * 0x4000))
+
 /* key bits, as read from REG_KEYINPUT (active low) */
 #define KEY_A      0x0001
 #define KEY_B      0x0002

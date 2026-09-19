@@ -362,7 +362,7 @@ sub_08008358:
 	strh r5, [r4, #28]
 	movs r0, #1
 	movs r1, #1
-	bl sub_08011718
+	bl DialogueLoadWindowGraphics
 	pop {r4, r5}
 	pop {r0}
 	bx r0

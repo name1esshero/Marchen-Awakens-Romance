@@ -9836,7 +9836,7 @@ sub_08054048:
 	bl sub_08006ADC
 	movs r0, #0
 	movs r1, #1
-	bl sub_08011718
+	bl DialogueLoadWindowGraphics
 	mov r10, r4
 	mov r9, r5
 	mov r0, r8
@@ -12315,7 +12315,7 @@ sub_0805536C:
 	str r1, [r4, #4]
 	movs r0, #0
 	movs r1, #1
-	bl sub_08011718
+	bl DialogueLoadWindowGraphics
 	ldr r2, _080553BC
 
 	.thumb_func

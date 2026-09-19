@@ -1840,7 +1840,7 @@ _08028E2E:
 	strh r0, [r2, #0]
 	movs r0, #0
 	movs r1, #1
-	bl sub_08011718
+	bl DialogueLoadWindowGraphics
 	ldr r1, _08028FAC
 	adds r0, r4, r1
 	ldr r2, _08028FB0
@@ -2637,7 +2637,7 @@ sub_08029376:
 	bl sub_08029A38
 	movs r0, #0
 	movs r1, #1
-	bl sub_08011718
+	bl DialogueLoadWindowGraphics
 	ldr r3, _080293DC
 	adds r0, r6, r3
 	movs r1, #0

@@ -1860,6 +1860,12 @@
     "file": "src/runtime_misc.c"
   },
   {
+    "addr": "08011718",
+    "size": 52,
+    "name": "DialogueLoadWindowGraphics",
+    "file": "src/dialogue_commands.c"
+  },
+  {
     "addr": "0801174C",
     "size": 40,
     "name": "DialogueCreateFinishTask",
@@ -1876,6 +1882,12 @@
     "size": 224,
     "name": "DialogueStart",
     "file": "src/dialogue_start.c"
+  },
+  {
+    "addr": "08011A08",
+    "size": 88,
+    "name": "DialogueCreatePromptTask",
+    "file": "src/dialogue_commands.c"
   },
   {
     "addr": "08011AF4",

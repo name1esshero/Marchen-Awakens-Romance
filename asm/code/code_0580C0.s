@@ -8142,7 +8142,7 @@ sub_0805B258:
 	str r0, [sp, #80]
 	movs r0, #0
 	movs r1, #1
-	bl sub_08011718
+	bl DialogueLoadWindowGraphics
 	mov r1, sp
 	ldr r0, _0805B29C
 	ldmia r0!, {r2, r3, r5}
@@ -12174,7 +12174,7 @@ sub_0805CA94:
 	bl CpuFill
 	movs r0, #0
 	movs r1, #1
-	bl sub_08011718
+	bl DialogueLoadWindowGraphics
 	ldr r1, _0805CAE8
 	adds r3, r5, r1
 	ldrh r1, [r3, #0]
