@@ -4524,10 +4524,28 @@
     "file": "src/runtime_core.c"
   },
   {
+    "addr": "0806C758",
+    "size": 72,
+    "name": "RuntimeAreFirstFlagsSet",
+    "file": "src/runtime_misc.c"
+  },
+  {
     "addr": "0806C7A0",
     "size": 12,
     "name": "MapObjectResetMotion",
     "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "0806C7AC",
+    "size": 64,
+    "name": "CreateMapCoordinateTask",
+    "file": "src/task_constructors.c"
+  },
+  {
+    "addr": "0806C7EC",
+    "size": 260,
+    "name": "MapCoordinateTask",
+    "file": "src/task_constructors.c"
   },
   {
     "addr": "0806C8F0",

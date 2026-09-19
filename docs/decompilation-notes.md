@@ -1003,3 +1003,34 @@ existing matching accessors that use it. The symbol is now defined beside the
 other IWRAM roots in `asm/iwram_symbols.s` and declared in
 `include/runtime_state.h`. Both newly recovered functions replace raw
 assembly, with retained assembly restarted at 0x08004DA8 and 0x080050A8.
+
+## Map coordinate task constructor
+
+`CreateMapCoordinateTask` (0x0806C7AC) creates a 16-byte main-manager task
+for `sub_0806C7EC`, stores its signed tile coordinates at task offsets +32
+and +36, and adds one pending script task. Its script-native caller now uses
+the named function through `include/task_constructors.h` rather than an
+address-derived placeholder declaration.
+
+The original function's in-place signed extension is reproduced by declaring
+the coordinates as `s16` parameters and copying them into `s32` locals before
+task creation. This is ordinary C and produces the exact ROM instructions;
+the earlier `#ifdef NONMATCHING` wrapper and its duplicated assembly have been
+replaced by the matching implementation.
+
+`RuntimeAreFirstFlagsSet` (0x0806C758), immediately before the coordinate
+constructor, is also matching C now. It tests each primary-runtime flag below
+a caller-supplied count and returns whether all of them are set. The ROM uses
+16.16 counters for both the scanned index and number of set flags; the C keeps
+that representation explicit through `FIXED_16_16_ONE` rather than replacing
+it with superficially equivalent integer counters that compile differently.
+
+The constructor's `MapCoordinateTask` worker (0x0806C7EC) is also fully
+decoded. Stage 0 maps five command modes onto field-event parameters at the
+fixed field coordinates (204, 92), stage 1 waits for the child event's
+completion word, and stage 2 reports the signed result, balances the script's
+pending-task count, and finishes. The two identical mode-0 and mode-1 case
+bodies remain separately written because that is the natural switch form that
+reproduces the ROM's two distinct jump-table destinations. The task header's
+previously anonymous +14 halfword is now named `EngineTask.stage` while
+preserving the established 32-byte ABI.

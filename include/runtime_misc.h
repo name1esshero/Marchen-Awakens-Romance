@@ -32,6 +32,7 @@ const void *RuntimeGetTable1AC8C0(u32 unused);
 void InputRepeatInit(struct InputRepeatState *state,u32 mask);
 void InputRepeatRearm(struct InputRepeatState *state);
 void MapObjectResetMotion(struct MapObjectMotion *motion);
+u32 RuntimeAreFirstFlagsSet(s16 flagCount);
 u8 *GameStateGetRecord1190(u32 index);
 u32 RuntimeReturnZero(void);
 const struct BattleCharacterDefinition *RuntimeGetBattleCharacterDefinition(u32 index);

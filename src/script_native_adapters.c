@@ -6,6 +6,7 @@
 #include "gba/types.h"
 
 #include "rom_section.h"
+#include "task_constructors.h"
 
 extern void GameStateSetField12EC(s32 value);
 extern void sub_080067DC(void);
@@ -17,7 +18,6 @@ extern s32 GameStateGetField60E(void);
 extern void sub_08008740(s32 a, s32 b);
 extern s32 GameStateGetEntry3894(s32 a, s32 b, s32 index);
 extern void sub_080088E0(s32 a, s32 b, s32 c);
-extern void sub_0806C7AC(s32 x, s32 y, s32 *result);
 extern void GameStateSetEntry3894(s32 a, s32 b, s32 index, s32 value);
 extern void sub_080561B8(s32 value);
 extern void sub_080083E0(s32 a, s32 b);
@@ -132,11 +132,11 @@ AT("00012C54") s32 ScriptNativeCall088E0(u32 count, const s32 *args, s32 *result
 }
 
 /** Native script command: forward a signed x/y coordinate pair (packed as
- * two of the VM's 32-bit argument slots) to sub_0806C7AC().
+ * two of the VM's 32-bit argument slots) to CreateMapCoordinateTask().
  * @return Always 0x7FFF. */
 AT("00012CD0") s32 ScriptNativeMapCoordinateCall(u32 count, const s32 *args, s32 *result)
 {
     const s16 *coordinates = (const s16 *)args;
-    sub_0806C7AC(coordinates[0], coordinates[2], result);
+    CreateMapCoordinateTask(coordinates[0], coordinates[2], result);
     return 0x7FFF;
 }

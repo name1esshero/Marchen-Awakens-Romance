@@ -6,6 +6,7 @@
 
 #include "runtime_state.h"
 #include "rom_section.h"
+#include "task_constructors.h"
 
 extern const char gBattleNamedTaskAResourceName[];
 extern const char gBattleNamedTaskBResourceName[];
@@ -41,11 +42,47 @@ extern void sub_0800ED5C(void *task);
 extern void sub_0800FCC8(void *task);
 extern void sub_0801B83C(void *task);
 extern void sub_0801B8EC(void *task);
-extern void sub_0806C7EC(void *task);
 extern void sub_0806F018(void *task);
 extern void sub_0806F664(void *task);
 
 extern void sub_0806FAC4(void *task);
+extern void ScriptCompletePendingTasks(u32 count);
+extern void sub_08011718(s32 mode, s32 enabled);
+extern void FinishTask(void *task);
+extern void *CreateFieldEventTask(s16 first, s16 second, s16 third,
+    s16 fourth, s16 value, void *objectData, u32 *completion);
+
+struct MapCoordinateTaskData
+{
+    s16 mode;
+    s16 result;
+    s16 coordinate;
+    u16 unused06;
+    u32 eventCompletion;
+};
+
+struct MapCoordinateTask
+{
+    u8 unknown00[14];
+    u16 stage;
+    u8 unknown10[8];
+    s32 *completion;
+    u8 unknown1C[4];
+    struct MapCoordinateTaskData data;
+};
+
+enum
+{
+    MAP_COORDINATE_MODE_0,
+    MAP_COORDINATE_MODE_1,
+    MAP_COORDINATE_MODE_2,
+    MAP_COORDINATE_MODE_3,
+    MAP_COORDINATE_MODE_4,
+    MAP_FIELD_EVENT_X = 204,
+    MAP_FIELD_EVENT_Y = 92
+};
+
+static void MapCoordinateTask(void *rawTask);
 
 /** Schedule an asynchronous VRAM fill on the aux task manager.
  * @param destination VRAM address to fill.
@@ -404,20 +441,74 @@ AT("0001B8AC") u8 *CreateObjectMotionTaskB(u8 *object, s32 *result)
 }
 #endif
 
-#ifdef NONMATCHING
-AT("0006C7AC") u8 *CreateMapCoordinateTask(s32 x, s32 y, s32 *result)
+/** Create the map task that processes a signed tile-coordinate pair. */
+AT("0006C7AC") struct EngineTask *CreateMapCoordinateTask(s16 mode,
+    s16 coordinate, s32 *result)
 {
+    s32 signedMode = mode;
+    s32 signedCoordinate = coordinate;
     u8 *task;
-    x = (s16)x;
-    y = (s16)y;
-    task = CreateTask(&gMainTaskManager, sub_0806C7EC,
+    task = CreateTask(&gMainTaskManager, MapCoordinateTask,
                       0, result, 16);
-    *(u16 *)(task + 32) = x;
-    *(u16 *)(task + 36) = y;
+    *(u16 *)((u8 *)task + 32) = signedMode;
+    *(u16 *)((u8 *)task + 36) = signedCoordinate;
     ScriptAddPendingTasks(1);
-    return task;
+    return (struct EngineTask *)task;
 }
-#endif
+
+/** Advance a map-coordinate command through field-event launch, wait, and
+ * script-completion stages. */
+AT("0006C7EC") static void MapCoordinateTask(void *rawTask)
+{
+    struct MapCoordinateTask *task = rawTask;
+    struct MapCoordinateTaskData *data = &task->data;
+
+    switch (task->stage) {
+    case 0:
+        switch (data->mode) {
+        case MAP_COORDINATE_MODE_0:
+            CreateFieldEventTask(4, MAP_FIELD_EVENT_X, MAP_FIELD_EVENT_Y,
+                data->coordinate, 3, 0,
+                &data->eventCompletion);
+            break;
+        case MAP_COORDINATE_MODE_1:
+            CreateFieldEventTask(4, MAP_FIELD_EVENT_X, MAP_FIELD_EVENT_Y,
+                data->coordinate, 3, 0,
+                &data->eventCompletion);
+            break;
+        case MAP_COORDINATE_MODE_2:
+            CreateFieldEventTask(3, MAP_FIELD_EVENT_X, MAP_FIELD_EVENT_Y,
+                data->coordinate, 3, 0,
+                &data->eventCompletion);
+            break;
+        case MAP_COORDINATE_MODE_3:
+            CreateFieldEventTask(2, MAP_FIELD_EVENT_X, MAP_FIELD_EVENT_Y,
+                data->coordinate, 4, 0,
+                &data->eventCompletion);
+            break;
+        case MAP_COORDINATE_MODE_4:
+            CreateFieldEventTask(5, MAP_FIELD_EVENT_X, MAP_FIELD_EVENT_Y,
+                data->coordinate, 2, 0,
+                &data->eventCompletion);
+            break;
+        }
+        task->stage = 1;
+        break;
+    case 1:
+        if (data->eventCompletion != 0) {
+            data->result = data->eventCompletion;
+            task->stage = 2;
+        }
+        break;
+    case 2:
+        ScriptCompletePendingTasks(1);
+        sub_08011718(0, 1);
+        if (task->completion != 0)
+            *task->completion = data->result;
+        FinishTask(task);
+        break;
+    }
+}
 
 #ifdef NONMATCHING
 AT("0006FA94") u8 *CreateEncounterSetupTask(s32 value, s32 *result)

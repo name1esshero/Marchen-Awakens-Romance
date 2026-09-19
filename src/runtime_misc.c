@@ -1,5 +1,6 @@
 /* Small helpers from the map renderer, script VM, and scene runtimes. */
 #include "runtime_misc.h"
+#include "runtime_leaf.h"
 #include "sprite_engine.h"
 #include "script_vm.h"
 
@@ -17,6 +18,7 @@ extern u8 gMapGenerationRootOffset[];
     u32 offset=(u32)gMapGenerationRootOffset; \
     *(u8 **)(iwram+offset); \
 })
+#define FIXED_16_16_ONE (1 << 16)
 extern s32 BitTest(const void *bits,u32 bit);
 extern void CpuFill(void *destination,u32 size,u32 value);
 extern void CpuCopy(const void *source,void *destination,u32 size);
@@ -82,6 +84,33 @@ AT("0006C7A0") void MapObjectResetMotion(struct MapObjectMotion *motion)
  motion->field14=0;
  motion->field12=0;
  motion->field16=0;
+}
+
+/** Return whether each primary-runtime flag below flagCount is set. */
+AT("0006C758") u32 RuntimeAreFirstFlagsSet(s16 flagCount)
+{
+    s32 count = flagCount;
+    s32 setCount = 0;
+    s32 index = 0;
+
+    if (setCount < count) {
+        s32 indexFixed = FIXED_16_16_ONE;
+        s32 setCountFixed = indexFixed;
+
+        do {
+            if ((u8)RuntimeTestFlagU8((u8)index)) {
+                s32 previous = setCountFixed;
+                setCountFixed += FIXED_16_16_ONE;
+                setCount = previous >> 16;
+            }
+            {
+                s32 previous = indexFixed;
+                indexFixed += FIXED_16_16_ONE;
+                index = previous >> 16;
+            }
+        } while (index < count);
+    }
+    return setCount == count;
 }
 
 /** @return One of the 20-byte records based at the game state's +0x1190.

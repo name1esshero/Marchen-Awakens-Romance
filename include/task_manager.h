@@ -26,7 +26,9 @@ struct EngineTask {
  ListNode node;
  struct TaskManager *manager;
  s8 state;
- u8 unknown[7];
+ u8 unknown0D;
+ u16 stage;
+ u32 unknown10;
  void (*callback)(struct EngineTask *);
  u32 *completion;
  u32 priority;
