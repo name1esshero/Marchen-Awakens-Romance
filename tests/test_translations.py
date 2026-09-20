@@ -97,5 +97,23 @@ class TranslationTest(unittest.TestCase):
                                  [l.partition('  //')[0] for l in original.splitlines()])
                 self.assertIn('// EN: [Ginta]',actual)
 
+    def test_question_punctuation_variants_reuse_base_translation(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp)
+            folder=root/'text/nfp';folder.mkdir(parents=True)
+            dictionaries=root/'text/translation';dictionaries.mkdir()
+            (dictionaries/'english.json').write_text(json.dumps({'スノウ':'Snow','ああ！':'Yeah!'}))
+            original='@000001 スノウ！？  // TODO: English translation\n@000020 ああ！？  // TODO: English translation\n'
+            path=folder/'PUNCT.SPC.txt';path.write_text(original)
+            with patch.object(translate_comments,'ROOT',root),contextlib.redirect_stdout(io.StringIO()):
+                translate_comments.main()
+                first=path.read_text()
+                translate_comments.main()
+            self.assertEqual(first,path.read_text())
+            self.assertIn('@000001 スノウ！？  // EN: Snow!?',first)
+            self.assertIn('@000020 ああ！？  // EN: Yeah!?',first)
+            self.assertEqual([l.partition('  //')[0] for l in first.splitlines()],
+                             [l.partition('  //')[0] for l in original.splitlines()])
+
 
 if __name__=='__main__':unittest.main()

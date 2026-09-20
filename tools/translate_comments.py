@@ -10,6 +10,14 @@ from pathlib import Path
 import re
 
 ROOT = Path(__file__).resolve().parent.parent
+PUNCTUATION_SUFFIXES = (
+    ('！！', '!!'),
+    ('！？', '!?'),
+    ('？！', '?!'),
+    ('？', '?'),
+    ('！', '!'),
+    ('…', '...'),
+)
 
 
 def main():
@@ -41,9 +49,9 @@ def main():
             if translated is not None and name:
                 translated = '[' + translated + ']'
             if translated is None:
-                for punctuation in ('！！', '！', '…'):
+                for punctuation, english_punctuation in PUNCTUATION_SUFFIXES:
                     if clean.endswith(punctuation) and clean[:-len(punctuation)] in lookup:
-                        translated = lookup[clean[:-len(punctuation)]] + {'！！':'!!','！':'!','…':'...'}[punctuation]
+                        translated = lookup[clean[:-len(punctuation)]] + english_punctuation
                         break
             if translated is not None:
                 # An explicit empty mapping omits grammar with no English equivalent.
