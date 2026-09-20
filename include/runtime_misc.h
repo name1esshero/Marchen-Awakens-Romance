@@ -5,6 +5,7 @@
 #include "battle_character.h"
 
 s32 EncodeHexDigitFromS16(const s16 *digit);
+void FormatDecimalString(char *destination, s32 value);
 
 struct InputRepeatState {
     u16 previous;

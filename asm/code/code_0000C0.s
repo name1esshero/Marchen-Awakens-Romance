@@ -4007,94 +4007,10 @@ _0800239E:
 	.4byte 0xBC02BC10
 	.4byte 0x00004708
 
-	.thumb_func
-	.thumb
-	.global sub_08002404
-sub_08002404:
-	push {r4, r5, r6, r7, lr}
-	adds r7, r0, #0
-	adds r5, r1, #0
-	movs r6, #0
-	b _08002410
-	.global _0800240E
-_0800240E:
-	adds r6, #1
-	.global _08002410
-_08002410:
-	adds r4, r7, r6
-	adds r0, r5, #0
-	movs r1, #10
-	bl __modsi3
-	adds r0, #48
-	strb r0, [r4, #0]
-	adds r0, r5, #0
-	movs r1, #10
-	bl __divsi3
-	adds r5, r0, #0
-	cmp r0, #0
-	bne _0800240E
-	adds r6, #1
+@ 002404..002470 is decompiled as FormatDecimalString(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0800242E
-sub_0800242E:
-	cmp r6, #1
-	bne _08002436
-	strb r0, [r7, #1]
-	b _0800246A
-	.global _08002436
-_08002436:
-	movs r0, #0
-	mov r12, r0
-	subs r5, r6, #1
-	lsrs r0, r6, #31
-	adds r0, r6, r0
-	asrs r0, r0, #1
-	adds r6, r7, r6
-	cmp r0, #0
-
-	.thumb_func
-	.thumb
-	.global sub_08002446
-sub_08002446:
-	ble _08002466
-	adds r4, r0, #0
-	.global _0800244A
-_0800244A:
-	mov r0, r12
-	adds r2, r7, r0
-	movs r3, #0
-	ldrsb r3, [r2, r3]
-	adds r1, r7, r5
-
-	.thumb_func
-	.thumb
-	.global sub_08002454
-sub_08002454:
-	ldrb r0, [r1, #0]
-	strb r0, [r2, #0]
-	strb r3, [r1, #0]
-
-	.thumb_func
-	.thumb
-	.global sub_0800245A
-sub_0800245A:
-	subs r4, #1
-	movs r0, #1
-	add r12, r0
-	subs r5, #1
-	cmp r4, #0
-	bne _0800244A
-	.global _08002466
-_08002466:
-	movs r0, #0
-	strb r0, [r6, #0]
-	.global _0800246A
-_0800246A:
-	pop {r4, r5, r6, r7}
-	pop {r0}
-	bx r0
+	.section .rom.00002470, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb

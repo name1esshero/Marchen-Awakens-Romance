@@ -10,6 +10,7 @@
   "08002148": "Lz77UnCompVramSwapped",
   "08002158": "IsMainMountName",
   "080023B0": "ApplyTileRemainderMask",
+  "08002404": "FormatDecimalString",
   "080025BC": "ReadEngineCharacter",
   "080025E4": "IsEngineDoubleByte",
   "08002604": "KmpInitViewport",

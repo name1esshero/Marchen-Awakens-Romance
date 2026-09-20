@@ -114,6 +114,12 @@
     "file": "src/kmp.c"
   },
   {
+    "addr": "08002404",
+    "size": 108,
+    "name": "FormatDecimalString",
+    "file": "src/runtime_misc.c"
+  },
+  {
     "addr": "080025BC",
     "size": 40,
     "name": "ReadEngineCharacter",

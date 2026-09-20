@@ -24,6 +24,53 @@ extern u8 gMapGenerationRootOffset[];
 extern void CpuFill(void *destination,u32 size,u32 value);
 extern void CpuCopy(void *destination,const void *source,u32 size);
 
+/** Write a nonnegative integer as a terminated decimal string. Digits are
+ * generated least-significant first, then reversed in place. */
+AT("00002404") void FormatDecimalString(char *destination, s32 value)
+{
+    s32 length;
+    s32 first;
+    s32 last;
+    s32 half;
+    s32 remaining;
+    char *end;
+
+    for (length = 0; ; length++)
+    {
+        destination[length] = value % 10 + '0';
+        if ((value /= 10) == 0)
+            break;
+    }
+    length++;
+
+    if (length == 1)
+    {
+        destination[1] = 0;
+    }
+    else
+    {
+        first = 0;
+        last = length - 1;
+        half = length / 2;
+        end = destination + length;
+        if (half > 0)
+        {
+            remaining = half;
+            do
+            {
+                s32 character = (s8)destination[first];
+
+                destination[first] = destination[last];
+                destination[last] = character;
+                remaining--;
+                first++;
+                last--;
+            } while (remaining != 0);
+        }
+        *end = 0;
+    }
+}
+
 /** Convert one signed-halfword digit value to an uppercase hexadecimal
  * character. Values above nine use the A-F offset; callers are responsible
  * for supplying a valid hexadecimal digit. */

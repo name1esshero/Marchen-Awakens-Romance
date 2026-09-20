@@ -2623,3 +2623,19 @@ its sole argument unchanged. The task-creation path first tests a value through
 this hook and later stores the same hooked value in the new task. The one-line
 C function reproduces the original `bx lr`; an explicit two-byte zero tail
 preserves the following function's alignment.
+
+## Decimal string formatter (2026-09-20)
+
+`FormatDecimalString` at 0x08002404 converts a nonnegative integer to decimal
+text. It writes remainders from least-significant to most-significant, reverses
+the completed digit range in place, and appends a zero terminator. Its caller
+uses the result to render a numeric UI value.
+
+The original loop shape comes from an ordinary unbounded `for` loop whose
+increment advances the output index and whose body exits when the combined
+divide-and-assign expression reaches zero. Keeping the quotient test in that
+expression preserves the quotient in r0 for both the comparison and the
+single-digit terminator. The reverse loop uses signed character promotion,
+which accounts for the ROM's `ldrsb`. This source reproduces all 108 bytes
+without register constraints, address arithmetic, volatile accesses, or inline
+assembly.

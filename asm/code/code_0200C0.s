@@ -8704,7 +8704,7 @@ sub_080238CC:
 	strh r1, [r0, #0]
 	add r0, sp, #4
 	adds r1, r5, #0
-	bl sub_08002404
+	bl FormatDecimalString
 	add r0, sp, #4
 	.2byte 0xF05E
 	.byte 0xB4
