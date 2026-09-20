@@ -774,6 +774,7 @@
   "0805715C": "ConsumableGetResourceName",
   "080571E8": "GameStateSnapshotMapBuffer",
   "08057218": "GameStateRestoreMapBuffer",
+  "0805753C": "GameStateGetMapHalfwordRecord",
   "08061E70": "InitializeMapFieldDisplay",
   "08061EA8": "CreateFieldEventTask",
   "08062304": "CreateTask62304",

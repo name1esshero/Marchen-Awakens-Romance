@@ -15871,37 +15871,10 @@ _08057510:
 
 @ 057514..05753C is decompiled as GameStateClearRecord426A(); see src/decompiled.json
 
-	.section .rom.0005753C, "ax"
+@ 05753C..057558 is decompiled as GameStateGetMapHalfwordRecord(); see src/decompiled.json
+
+	.section .rom.00057558, "ax"
 	.syntax unified
-
-
-	.thumb_func
-	.thumb
-	.global sub_0805753C
-sub_0805753C:
-	ldr r0, _0805754C
-	ldr r1, _08057550
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-
-	.thumb_func
-	.thumb
-	.global sub_08057544
-sub_08057544:
-	ldr r1, _08057554
-	adds r0, r0, r1
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _0805754C
-_0805754C:
-	.4byte 0x03000000  @ IWRAM
-	.global _08057550
-_08057550:
-	.4byte 0x00003FDC
-	.global _08057554
-_08057554:
-	.4byte 0x0000426A
 	.4byte 0x2500B5F0
 	.4byte 0x4A124811
 	.4byte 0x68081881

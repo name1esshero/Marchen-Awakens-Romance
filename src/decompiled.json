@@ -5016,6 +5016,12 @@
     "file": "src/runtime_misc.c"
   },
   {
+    "addr": "0805753C",
+    "size": 28,
+    "name": "GameStateGetMapHalfwordRecord",
+    "file": "src/runtime_misc.c"
+  },
+  {
     "addr": "080577A0",
     "size": 32,
     "name": "EncodeHexDigitFromS16",

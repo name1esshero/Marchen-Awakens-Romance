@@ -2605,3 +2605,12 @@ value. Its only caller compares this count with the corresponding five-entry
 runtime count while choosing replacement values. A descending `for` loop and
 typed `s16 *` walk reproduce the ROM directly, including its signed argument
 truncation and two-byte alignment tail.
+
+## Map halfword-record accessor (2026-09-20)
+
+`GameStateGetMapHalfwordRecord` at 0x0805753C returns the shared 0x50-byte record at
+game-state offset 0x426A. The map renderer indexes signed halfwords from this
+record while composing its runtime output. The same named offset is now used
+by `GameStateClearRecord426A`, which confirms the accessor and clearing routine
+operate on one object. A direct typed lookup through the IWRAM root pointer
+reproduces all 28 bytes without register hints or integerized addresses.

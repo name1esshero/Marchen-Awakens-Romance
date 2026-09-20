@@ -20,6 +20,7 @@ extern u8 gMapGenerationRootOffset[];
     *(u8 **)(iwram+offset); \
 })
 #define FIXED_16_16_ONE (1 << 16)
+#define GAME_STATE_MAP_HALFWORD_RECORD_OFFSET 0x426A
 extern void CpuFill(void *destination,u32 size,u32 value);
 extern void CpuCopy(void *destination,const void *source,u32 size);
 
@@ -250,7 +251,14 @@ AT("000805D0") void SpriteRuntimeSetAllFlags800(u32 enabled)
 /** Clears the 0x50-byte record that follows the map buffers. */
 AT("00057514") void GameStateClearRecord426A(void)
 {
- CpuFill(GAME_STATE_BASE+0x426A,0x50,0);
+ CpuFill(GAME_STATE_BASE+GAME_STATE_MAP_HALFWORD_RECORD_OFFSET,0x50,0);
+}
+
+/** Return the shared 0x50-byte record that follows the map buffers. */
+AT("0005753C") s16 *GameStateGetMapHalfwordRecord(void)
+{
+ void **root=(void **)(gIwramBase+(u32)gMapGenerationRootOffset);
+ return (s16 *)((u8 *)*root+GAME_STATE_MAP_HALFWORD_RECORD_OFFSET);
 }
 
 /** Rearms the repeat state unless the caller asked for one call to be skipped

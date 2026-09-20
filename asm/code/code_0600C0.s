@@ -8694,7 +8694,7 @@ sub_0806457A:
 	adds r1, r5, r0
 	movs r0, #6
 	strh r0, [r1, #0]
-	bl sub_0805753C
+	bl GameStateGetMapHalfwordRecord
 	ldr r2, _080645C8
 	adds r1, r6, r2
 	str r0, [r1, #0]

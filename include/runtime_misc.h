@@ -47,6 +47,7 @@ void GameStateClearBlock413C(void);
 void ConsumableInventorySaveSnapshot(void);
 void ConsumableInventoryRestoreSnapshot(void);
 void GameStateClearRecord426A(void);
+s16 *GameStateGetMapHalfwordRecord(void);
 void GameStateSaveActorRecord0(void);
 void GameStateLoadActorRecord0(void);
 void GameStateClearRecord1190IfZero(u32 value);
