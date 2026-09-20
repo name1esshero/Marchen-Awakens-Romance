@@ -5992,7 +5992,67 @@ _0807DA34:
 
 @ 07DB4C..07DB54 is decompiled as SpriteRecordSizeForCount(); see src/decompiled.json
 
-@ 07DB54..07DBB4 is decompiled as SpriteInterpolationInit(); see src/decompiled.json
+	.section .rom.0007DB54, "ax"
+	.syntax unified
+
+	.thumb_func
+	.thumb
+	.global SpriteInterpolationInit
+	.type SpriteInterpolationInit, %function
+SpriteInterpolationInit:
+	push {r4, r5, r6, r7, lr}
+	adds r6, r1, #0
+	adds r5, r2, #0
+	adds r4, r3, #0
+	ldr r7, [sp, #20]
+	str r7, [r0, #0]
+	str r6, [r0, #4]
+	lsls r2, r7, #2
+	adds r1, r6, r2
+	adds r3, r1, #4
+	str r3, [r0, #8]
+	adds r1, r3, r2
+	adds r1, #4
+	str r1, [r0, #12]
+	adds r1, r1, r2
+	adds r1, #4
+	str r1, [r0, #16]
+	adds r1, r1, r2
+	adds r1, #4
+	str r1, [r0, #20]
+	adds r1, r1, r2
+	adds r1, #4
+	str r1, [r0, #24]
+	adds r1, r1, r2
+	adds r1, #4
+	str r1, [r0, #28]
+	adds r1, r1, r2
+	adds r1, #4
+	str r1, [r0, #32]
+	cmp r7, #0
+	ble .LSpriteInterpolationInitDone
+	adds r1, r6, #0
+	adds r2, r7, #0
+.LSpriteInterpolationInitLoop:
+	movs r6, #0
+	ldrsh r0, [r5, r6]
+	stmia r1!, {r0}
+	adds r5, #2
+	movs r6, #0
+	ldrsh r0, [r4, r6]
+	stmia r3!, {r0}
+	adds r4, #2
+	subs r2, #1
+	cmp r2, #0
+	bne .LSpriteInterpolationInitLoop
+.LSpriteInterpolationInitDone:
+	pop {r4, r5, r6, r7}
+	pop {r0}
+	bx r0
+	.size SpriteInterpolationInit, . - SpriteInterpolationInit
+
+	.byte 0
+	.byte 0
 
 	.section .rom.0007DBB4, "ax"
 	.syntax unified

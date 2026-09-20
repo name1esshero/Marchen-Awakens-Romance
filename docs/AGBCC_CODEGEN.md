@@ -631,3 +631,22 @@ through all 256 slots; the other advances only on a match and therefore
 becomes the copy count. Replacing either with a conventional integer loop is
 behaviorally correct but does not reproduce this compiler's instruction
 sequence.
+
+### Do not use an uninitialized register variable to create an allocation cycle
+
+The former `SpriteInterpolationInit` reconstruction initialized a variable
+pinned to r3 from a pointer pinned to r6 before the r6 value itself had been
+assigned. That source happened to compile to the desired allocation, but it
+read an indeterminate automatic value and therefore did not model a valid game
+operation. An empty assembly memory barrier then preserved three more chosen
+lifetimes. Neither construct is acceptable recovered C.
+
+Without those hints, agbcc emits the same 94-byte body and the same control
+flow, but rotates storage, count, and the Y output among r7, r3, and r6. A
+state-field reload recovers the Y output in r3 but leaves storage and count
+swapped. Exhaustive testing of all 120 declaration orders for the five
+relevant locals found no candidate with the ROM's first five instructions;
+assignment ordering, direct and incremental layout expressions, and both
+compiler frontends also failed. When an exact match depends on reading an
+uninitialized value, preserve the routine in named assembly and keep the
+well-defined typed C as a nonmatching reference.

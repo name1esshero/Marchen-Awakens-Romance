@@ -359,11 +359,34 @@ Recorded at the time of writing; regenerate rather than trusting these numbers.
   removals at 149; everything left needs either a structural rewrite (slow,
   one function at a time, as above) or the same real-assembly move.
 - Current concentrations as of 2026-09-20 (regenerate with `make pret-audit`):
-  `sprite_affine_matrix.c` (43), `sprite_transform.c` (20),
-  and `sprite_interpolation.c` (8). These counts include duplicate rule
+  `sprite_affine_matrix.c` (43) and `sprite_transform.c` (20). These counts
+  include duplicate rule
   classifications where one constrained declaration is both a forced-register
   and inline-assembly finding.
 - `make compare` byte-exact and all host tests passing throughout.
+
+## Interpolation initializer fallback (2026-09-20)
+
+`SpriteInterpolationInit` (0x0807DB54) partitions caller storage into eight
+signed-word arrays separated by one word, then widens paired signed-halfword
+coordinates into the first two arrays. The previous matching source forced
+four machine registers, inserted an empty assembly memory barrier, and
+initialized one register variable from an uninitialized pointer. The last
+construct was undefined C behavior in addition to being compiler steering.
+
+Natural typed candidates retain the ROM's 94-byte size and control flow but
+cycle the three important allocations: storage becomes r7, count becomes r3,
+and the Y output becomes r6 instead of r6, r7, and r3. Reloading the Y pointer
+from the state recovers r3, but leaves storage and count swapped. Both compiler
+frontends, direct and incremental array layout expressions, assignment-order
+permutations, and all 120 declaration orders of the relevant locals were
+checked. None produced the ROM prologue without machine-register requests.
+
+The exact routine and its two-byte tail are now named assembly in
+`asm/code/code_0780C0.s`. The ordinary typed reconstruction remains in
+`src/nonmatching/sprite_interpolation_init.c`, and the two matching evaluator
+functions remain in `src/sprite_interpolation.c`. This removes eight hard audit
+findings and leaves the unresolved allocation visible for future work.
 
 ## Watch out for
 

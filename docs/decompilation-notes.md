@@ -2425,3 +2425,20 @@ without specifying machine registers. The exact 106-byte routine and its
 two-byte tail are now named assembly in `asm/code/code_0780C0.s`; the clean
 typed search is retained in `src/nonmatching/sprite_affine_find.c`. This
 removes all six findings from the former matching source.
+
+## Interpolation work-buffer initialization (2026-09-20)
+
+`SpriteInterpolationInit()` (0x0807DB54) assigns eight `s32` work arrays in a
+caller-owned buffer, with one unused word between consecutive arrays, and
+widens the initial X/Y coordinate pairs from `s16`. The prior matching C forced
+four registers and used an empty assembly fence; it also read an uninitialized
+pointer solely to influence allocation.
+
+Clean typed C preserves the algorithm, size, branches, and stores but rotates
+the storage, count, and Y-output registers. Reloading the Y pointer through the
+state structure corrects one member of that cycle, while all 120 declaration
+orders for the relevant locals fail to correct the remaining pair. Both agbcc
+frontends and several layout and assignment spellings were also checked. The
+exact 94-byte routine plus its two-byte tail therefore remains named assembly,
+and `src/nonmatching/sprite_interpolation_init.c` holds the well-defined C
+reference for later source-shape work.

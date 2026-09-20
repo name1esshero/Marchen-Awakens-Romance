@@ -26,16 +26,6 @@
   },
   {
     "kind": "inline_assembly",
-    "file": "src/sprite_interpolation.c",
-    "detail": "#define TARGET_REGISTER(name) asm(name)"
-  },
-  {
-    "kind": "inline_assembly",
-    "file": "src/sprite_interpolation.c",
-    "detail": "asm(\"\" : \"+r\"(output), \"+r\"(inputX), \"+r\"(inputY) : : \"memory\");"
-  },
-  {
-    "kind": "inline_assembly",
     "file": "src/sprite_transform.c",
     "detail": "#define TARGET_REGISTER(name) asm(name)"
   },
@@ -238,36 +228,6 @@
     "kind": "target_register_macro",
     "file": "src/sprite_affine_matrix.c",
     "detail": "register u32 mask TARGET_REGISTER(\"r1\");"
-  },
-  {
-    "kind": "target_register_macro",
-    "file": "src/sprite_interpolation.c",
-    "detail": "#define TARGET_REGISTER(name)"
-  },
-  {
-    "kind": "target_register_macro",
-    "file": "src/sprite_interpolation.c",
-    "detail": "#define TARGET_REGISTER(name) asm(name)"
-  },
-  {
-    "kind": "target_register_macro",
-    "file": "src/sprite_interpolation.c",
-    "detail": "register s32 *output TARGET_REGISTER(\"r6\");"
-  },
-  {
-    "kind": "target_register_macro",
-    "file": "src/sprite_interpolation.c",
-    "detail": "register s32 *outputX TARGET_REGISTER(\"r1\");"
-  },
-  {
-    "kind": "target_register_macro",
-    "file": "src/sprite_interpolation.c",
-    "detail": "register s32 *outputY TARGET_REGISTER(\"r3\") = output;"
-  },
-  {
-    "kind": "target_register_macro",
-    "file": "src/sprite_interpolation.c",
-    "detail": "register u8 *afterX TARGET_REGISTER(\"r1\");"
   },
   {
     "kind": "target_register_macro",

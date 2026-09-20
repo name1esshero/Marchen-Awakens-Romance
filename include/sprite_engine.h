@@ -223,7 +223,7 @@ void SpriteProjectPoint(struct SpriteVector3 *point);
 void SpritePackAffinePosition(struct SpriteAffineTransform *transform);
 void SpriteBuildAffineMatrix(struct SpriteAffineTransform *transform);
 void SpriteInterpolationInit(struct SpriteInterpolation *state, s32 *storage,
-                             const s16 *x, const s16 *y, volatile s32 count);
+                             const s16 *x, const s16 *y, s32 count);
 void SpriteInterpolationEvaluatePair(s32 position, s16 *outX, s16 *outY,
                                      const struct SpriteInterpolationPair *pair);
 void SpriteInterpolationEvaluatePairClamped(

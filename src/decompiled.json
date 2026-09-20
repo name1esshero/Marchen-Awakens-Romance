@@ -6840,12 +6840,6 @@
     "file": "src/sprite_engine_state.c"
   },
   {
-    "addr": "0807DB54",
-    "size": 96,
-    "name": "SpriteInterpolationInit",
-    "file": "src/sprite_interpolation.c"
-  },
-  {
     "addr": "0807DC84",
     "size": 68,
     "name": "SpriteInterpolationEvaluatePair",

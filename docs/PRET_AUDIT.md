@@ -15,7 +15,7 @@ error. The audit prints known, new, and resolved counts on one line.
 
 - `make compare` reproduces the Japanese ROM byte for byte.
 - `make english` succeeds and all 197 host tests pass.
-- The mechanical PRET audit reports **71 errors / 0 warnings / 17 documented
+- The mechanical PRET audit reports **63 errors / 0 warnings / 17 documented
   exceptions** on one summary line. Every exception is enumerated in the
   generated report.
 
@@ -82,6 +82,15 @@ is named assembly, and its readable wraparound search is retained under
 the engine-root address to r9, expanding the saved-register frame; the older
 frontend also differs. This removes the six findings from
 `src/sprite_affine_slots.c` without encoding that allocation in C.
+
+`SpriteInterpolationInit` no longer uses four forced-register declarations, an
+empty assembly scheduling fence, or an initializer that reads an uninitialized
+pointer. Its exact 94-byte routine and two-byte tail are named assembly, while
+the typed eight-array initializer remains in `src/nonmatching/`. Both compiler
+frontends and all 120 declaration orders for the five relevant locals failed
+to recover the ROM's storage/count/output register cycle. This removes all
+eight findings from `src/sprite_interpolation.c`; only the two clean matching
+interpolation evaluators remain in that translation unit.
 
 ## Verified snapshot: renderer reference fallback, 2026-09-20
 
