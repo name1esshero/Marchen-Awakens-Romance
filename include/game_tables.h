@@ -4,6 +4,7 @@
 #include "gba/types.h"
 
 #define BATTLE_PRESET_SIZE 16
+#define BATTLE_PARTY_DEFAULT_COUNT 8
 
 /* Sentinel meaning "this friend ARM definition has no ownership bit". */
 #define FRIEND_ARM_NO_OWNERSHIP_BIT 444
@@ -18,7 +19,7 @@
 extern const u16 gBattleRuntimePresetA[BATTLE_PRESET_SIZE];
 extern const u16 gBattleRuntimePresetB[BATTLE_PRESET_SIZE];
 extern const s16 gFriendArmOwnershipBits[8];
-extern const s16 gBattlePartyDefaults[8];
+extern const s16 gBattlePartyDefaults[BATTLE_PARTY_DEFAULT_COUNT];
 extern void *const gBattleActionHandlers[BATTLE_ACTION_HANDLER_COUNT];
 extern const char *const gTwoDigitResourceNames[TWO_DIGIT_RESOURCE_NAME_COUNT];
 extern const char *const gGeneratedEffectNames[GENERATED_EFFECT_NAME_COUNT];

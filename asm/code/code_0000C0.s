@@ -11735,7 +11735,7 @@ sub_080069B0:
 	lsls r0, r0, #16
 	asrs r4, r0, #16
 	adds r0, r4, #0
-	bl sub_08055EC8
+	bl BattlePartyFindDefaultIndex
 	lsls r0, r0, #16
 	ldr r1, _080069D8
 	cmp r0, r1

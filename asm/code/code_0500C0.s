@@ -12586,7 +12586,7 @@ _080555A6:
 	lsls r0, r0, #16
 	asrs r7, r0, #16
 	adds r0, r7, #0
-	bl sub_08055EC8
+	bl BattlePartyFindDefaultIndex
 	adds r4, r0, #0
 	lsls r4, r4, #16
 	asrs r4, r4, #16
@@ -13446,97 +13446,14 @@ _08055D7C:
 	.4byte 0x00000AB8
 	.4byte 0x00000AB4
 
-	.thumb_func
-	.thumb
-	.global sub_08055EC8
-sub_08055EC8:
-	push {r4, r5, r6, lr}
-	lsls r0, r0, #16
-	asrs r4, r0, #16
-	movs r2, #0
-	movs r1, #128
-	lsls r1, r1, #9
-	ldr r3, _08055EE4
-	adds r5, r1, #0
-	.global _08055ED8
-_08055ED8:
-	movs r6, #0
-	ldrsh r0, [r3, r6]
-	cmp r0, r4
-	bne _08055EE8
-	adds r0, r2, #0
-	b _08055EF8
-	.global _08055EE4
-_08055EE4:
-	.4byte 0x081ACCA0  @ ROM+0x1ACCA0
-	.global _08055EE8
-_08055EE8:
-	adds r0, r1, #0
-	adds r1, r1, r5
-	adds r3, #2
-	asrs r2, r0, #16
+@ 055EC8..055F00 is decompiled as BattlePartyFindDefaultIndex(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08055EF0
-sub_08055EF0:
-	cmp r2, #7
-	ble _08055ED8
-	movs r0, #1
-	negs r0, r0
-	.global _08055EF8
-_08055EF8:
-	pop {r4, r5, r6}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 055F00..055F38 is decompiled as GameStateHasField3880Value22(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08055F00
-sub_08055F00:
-	push {r4, lr}
-	ldr r0, _08055F20
-	ldr r0, [r0, #0]
-	movs r2, #128
-	lsls r2, r2, #9
-	movs r3, #226
-	lsls r3, r3, #6
-	adds r1, r0, r3
-	adds r3, r2, #0
-	.global _08055F12
-_08055F12:
-	movs r4, #0
-	ldrsh r0, [r1, r4]
-	cmp r0, #22
-	bne _08055F24
-	movs r0, #1
-	b _08055F32
-	.byte 0x00
-	.byte 0x00
-	.global _08055F20
-_08055F20:
-	.4byte 0x03003FDC  @ IWRAM+0x3FDC
-	.global _08055F24
-_08055F24:
-	adds r0, r2, #0
-	adds r2, r2, r3
-	adds r1, #2
-	asrs r0, r0, #16
-	cmp r0, #7
-	ble _08055F12
-	movs r0, #0
-	.global _08055F32
-_08055F32:
-	pop {r4}
-	pop {r1}
-	bx r1
-	.4byte 0x49030400
-	.4byte 0x184013C0
-	.4byte 0x5E402100
-	.4byte 0x00004770
-	.4byte 0x081ACCA0
+@ 055F38..055F4C is decompiled as BattlePartyGetDefaultId(); see src/decompiled.json
+
+	.section .rom.00055F4C, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -13545,7 +13462,7 @@ sub_08055F4C:
 	push {lr}
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08055EC8
+	bl BattlePartyFindDefaultIndex
 	lsls r0, r0, #16
 	asrs r1, r0, #16
 	movs r0, #1
@@ -13579,72 +13496,9 @@ _08055F80:
 _08055F84:
 	.4byte 0x000035E0
 
-	.thumb_func
-	.thumb
-	.global sub_08055F88
-sub_08055F88:
-	push {r4, lr}
-	adds r4, r1, #0
-	lsls r0, r0, #16
-	asrs r0, r0, #16
-	lsls r4, r4, #16
-	asrs r4, r4, #16
-	bl sub_08055F4C
-	adds r1, r0, #0
-	lsls r4, r4, #16
-	lsrs r4, r4, #16
-	strh r4, [r1, #2]
-	lsls r4, r4, #16
-	asrs r4, r4, #16
+@ 055F88..055FB8 is decompiled as GameStateRecordSetField2(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08055FA4
-sub_08055FA4:
-	ldrh r2, [r1, #4]
-	movs r3, #4
-	ldrsh r0, [r1, r3]
-	cmp r4, r0
-	blt _08055FB0
-	strh r2, [r1, #2]
-	.global _08055FB0
-_08055FB0:
-	pop {r4}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_08055FB8
-sub_08055FB8:
-	push {r4, lr}
-	adds r4, r1, #0
-	lsls r0, r0, #16
-	asrs r0, r0, #16
-	lsls r4, r4, #16
-	asrs r4, r4, #16
-	bl sub_08055F4C
-	adds r1, r0, #0
-	ldrh r0, [r1, #2]
-	adds r4, r4, r0
-	strh r4, [r1, #2]
-	lsls r4, r4, #16
-	asrs r4, r4, #16
-	ldrh r2, [r1, #4]
-	movs r3, #4
-	ldrsh r0, [r1, r3]
-	cmp r4, r0
-	blt _08055FE0
-	strh r2, [r1, #2]
-	.global _08055FE0
-_08055FE0:
-	pop {r4}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
+@ 055FB8..055FE8 is decompiled as GameStateRecordAddField2(); see src/decompiled.json
 
 @ 055FE8..05601C is decompiled as GameStateRecordSetField4(); see src/decompiled.json
 
@@ -13797,7 +13651,7 @@ _080561C8:
 	cmp r0, r3
 	bne _0805621C
 	adds r0, r3, #0
-	bl sub_08055EC8
+	bl BattlePartyFindDefaultIndex
 	lsls r0, r0, #16
 	asrs r0, r0, #15
 	adds r0, r0, r4
@@ -13865,7 +13719,7 @@ _08056230:
 	bne _0805627C
 	strh r4, [r1, #0]
 	adds r0, r3, #0
-	bl sub_08055EC8
+	bl BattlePartyFindDefaultIndex
 	lsls r0, r0, #16
 	asrs r0, r0, #15
 	adds r0, r0, r6
@@ -14053,7 +13907,7 @@ _080563B4:
 	beq _080563CC
 	adds r0, r4, #0
 	ldr r1, _08056400
-	bl sub_08055F88
+	bl GameStateRecordSetField2
 	.global _080563CC
 _080563CC:
 	adds r0, r6, #0
@@ -15663,7 +15517,7 @@ _0805724E:
 	cmp r0, #0
 	beq _08057294
 	adds r0, r4, #0
-	bl sub_08055EC8
+	bl BattlePartyFindDefaultIndex
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	movs r1, #84
@@ -15822,7 +15676,7 @@ _08057366:
 	movs r2, #0
 	ldrsh r1, [r0, r2]
 	adds r0, r7, #0
-	bl sub_08055FB8
+	bl GameStateRecordAddField2
 	b _080574FE
 	.global _08057376
 _08057376:
@@ -15853,7 +15707,7 @@ _08057390:
 	asrs r0, r0, #16
 	movs r2, #0
 	ldrsh r1, [r5, r2]
-	bl sub_08055FB8
+	bl GameStateRecordAddField2
 	adds r0, r4, #0
 	movs r1, #128
 	lsls r1, r1, #9
@@ -16664,7 +16518,7 @@ _080578EE:
 	str r0, [r7, #0]
 	movs r3, #0
 	ldrsh r0, [r4, r3]
-	bl sub_08055EC8
+	bl BattlePartyFindDefaultIndex
 	ldr r2, _08057960
 	adds r1, r6, r2
 	strh r0, [r1, #0]

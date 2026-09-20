@@ -23,8 +23,151 @@ extern s32 sub_080568D8(s32 entry, s32 deckId);
     (u8 *)*root; \
 })
 
+#define FIXED_POINT_ONE (1 << 16)
+#define GAME_STATE_PARTY_IDS_OFFSET 0x3880
+#define GAME_STATE_PARTY_SPECIAL_ID 22
+
+/**
+ * @brief Find an ID in the default eight-member battle-party table.
+ * @param id Signed party-member ID.
+ * @return The table index, or -1 when the ID is absent.
+ */
+AT("00055EC8") s32 BattlePartyFindDefaultIndex(s32 id)
+{
+    s32 target;
+    s32 result;
+    s32 index;
+    s32 fixedIndex;
+    const s16 *entry;
+    s32 nextIndex;
+
+    target = (s16)id;
+    index = 0;
+    fixedIndex = FIXED_POINT_ONE;
+    entry = gBattlePartyDefaults;
+    do
+    {
+        if (*entry == target)
+        {
+            result = index;
+            goto done;
+        }
+        nextIndex = fixedIndex;
+        fixedIndex += FIXED_POINT_ONE;
+        entry++;
+        index = nextIndex >> 16;
+    } while (index <= BATTLE_PARTY_DEFAULT_COUNT - 1);
+    result = -1;
+done:
+    return result;
+}
+AT("00055EC8") const u8 BattlePartyFindDefaultIndexTail[2] = {0};
+
+/**
+ * @brief Test whether runtime field 0x3880 contains party-member ID 22.
+ * @return TRUE when the ID is present in one of the eight entries.
+ */
+AT("00055F00") bool32 GameStateHasField3880Value22(void)
+{
+    bool32 result;
+    s32 fixedIndex;
+    s32 offset;
+    u8 *state;
+    const s16 *entry;
+    s32 nextIndex;
+
+    state = gMapGenerationRoot;
+    fixedIndex = FIXED_POINT_ONE;
+    offset = GAME_STATE_PARTY_IDS_OFFSET;
+    entry = (const s16 *)(state + offset);
+    do
+    {
+        if (*entry == GAME_STATE_PARTY_SPECIAL_ID)
+        {
+            result = TRUE;
+            goto done;
+        }
+        nextIndex = fixedIndex;
+        fixedIndex += FIXED_POINT_ONE;
+        entry++;
+    } while ((nextIndex >> 16) <= BATTLE_PARTY_DEFAULT_COUNT - 1);
+    result = FALSE;
+done:
+    return result;
+}
+
+/**
+ * @brief Read one signed ID from the default battle-party table.
+ * @param index Signed table index.
+ * @return The party-member ID at index.
+ */
+AT("00055F38") s32 BattlePartyGetDefaultId(s32 index)
+{
+    const u8 *table;
+
+    index = (s32)((u32)index << 16);
+    table = (const u8 *)gBattlePartyDefaults;
+    index >>= 15;
+    return *(s16 *)(table + index);
+}
+
+#define GAME_STATE_RECORD_FIELD2_OFFSET 2
+#define GAME_STATE_RECORD_FIELD4_OFFSET 4
 #define RECORD_FIELD_MAX 998
 #define RECORD_FIELD_LIMIT 999
+
+/**
+ * @brief Set record field 2, clamping it to the signed limit in field 4.
+ * @param id Signed record identifier.
+ * @param value New field value.
+ */
+AT("00055F88") void GameStateRecordSetField2(s32 id, s32 value)
+{
+    u8 *record;
+    s32 narrowedValue;
+    u16 storedValue;
+    u16 limit;
+
+    narrowedValue = value;
+    id = (s16)id;
+    narrowedValue = (s16)narrowedValue;
+    record = sub_08055F4C(id);
+    storedValue = narrowedValue;
+    *(u16 *)(record + GAME_STATE_RECORD_FIELD2_OFFSET) = storedValue;
+    limit = *(u16 *)(record + GAME_STATE_RECORD_FIELD4_OFFSET);
+    if ((s16)storedValue >= *(s16 *)(record + GAME_STATE_RECORD_FIELD4_OFFSET))
+    {
+        *(u16 *)(record + GAME_STATE_RECORD_FIELD2_OFFSET) = limit;
+    }
+}
+AT("00055F88") const u8 GameStateRecordSetField2Tail[2] = {0};
+
+/**
+ * @brief Add to record field 2, clamping it to the signed limit in field 4.
+ * @param id Signed record identifier.
+ * @param value Amount to add.
+ */
+AT("00055FB8") void GameStateRecordAddField2(s32 id, s32 value)
+{
+    u8 *record;
+    s32 narrowedValue;
+    u16 storedValue;
+    u16 limit;
+
+    narrowedValue = value;
+    id = (s16)id;
+    narrowedValue = (s16)narrowedValue;
+    record = sub_08055F4C(id);
+    narrowedValue += *(u16 *)(record + GAME_STATE_RECORD_FIELD2_OFFSET);
+    *(u16 *)(record + GAME_STATE_RECORD_FIELD2_OFFSET) = narrowedValue;
+    storedValue = narrowedValue;
+    limit = *(u16 *)(record + GAME_STATE_RECORD_FIELD4_OFFSET);
+    if ((s16)storedValue >= *(s16 *)(record + GAME_STATE_RECORD_FIELD4_OFFSET))
+    {
+        *(u16 *)(record + GAME_STATE_RECORD_FIELD2_OFFSET) = limit;
+    }
+}
+AT("00055FB8") const u8 GameStateRecordAddField2Tail[2] = {0};
 
 #define GAME_STATE_RESOURCE_COUNTER_OFFSET 0x38BC
 #define GAME_STATE_RESOURCE_COUNTER_MAX 999999
@@ -192,7 +335,6 @@ AT("00056984") s32 GameStateGetEntry2768Total(s32 id)
 
 #define PMB_DECK_ENTRY_COUNT_LIMIT 98
 #define PMB_DECK_ENTRY_COUNT_OVERFLOW 99
-#define FIXED_POINT_ONE (1 << 16)
 
 /**
  * @brief Count one PMB entry across the saved total and all default decks.

@@ -8427,7 +8427,7 @@ _08064314:
 	add r0, r9
 	movs r3, #0
 	ldrsh r0, [r0, r3]
-	bl sub_08055EC8
+	bl BattlePartyFindDefaultIndex
 	lsls r0, r0, #16
 	ldr r1, _080644D0
 	asrs r0, r0, #14

@@ -824,7 +824,7 @@ sub_08008740:
 	lsls r0, r5, #16
 	asrs r4, r0, #16
 	adds r0, r4, #0
-	bl sub_08055EC8
+	bl BattlePartyFindDefaultIndex
 	lsls r0, r0, #16
 	ldr r1, _080087CC
 	cmp r0, r1
@@ -928,7 +928,7 @@ sub_080087EC:
 	lsls r2, r2, #16
 	asrs r4, r2, #16
 	adds r0, r4, #0
-	bl sub_08055EC8
+	bl BattlePartyFindDefaultIndex
 	lsls r0, r0, #16
 	ldr r1, _080088DC
 	cmp r0, r1
@@ -13560,7 +13560,7 @@ _0800E874:
 	strb r0, [r5, #17]
 	movs r1, #8
 	ldrsh r0, [r6, r1]
-	bl sub_08055EC8
+	bl BattlePartyFindDefaultIndex
 	lsls r0, r0, #16
 	ldr r1, _0800E8B8
 	cmp r0, r1
@@ -13676,7 +13676,7 @@ _0800E956:
 	strb r0, [r5, #17]
 	lsls r0, r6, #16
 	asrs r0, r0, #16
-	bl sub_08055EC8
+	bl BattlePartyFindDefaultIndex
 	lsls r0, r0, #16
 	ldr r1, _0800E978
 	cmp r0, r1

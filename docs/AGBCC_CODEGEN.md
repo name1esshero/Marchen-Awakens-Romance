@@ -495,3 +495,29 @@ offset, and narrows the shared result to `s8` at return. Collapsing the result
 into the input lets agbcc merge the branches into `+ '0'` followed by a
 conditional `+ 7`. The explicit result expresses the observed two-result
 source flow and reproduces the ROM without dead code or compiler hints.
+
+
+### Preserve a stored halfword as a distinct value before a signed comparison
+
+`GameStateRecordSetField2` and `GameStateRecordAddField2` write a value through
+a `u16` field and then compare that stored-width value with a signed `s16`
+limit. Keeping a separate `u16 storedValue` makes the truncation part of the C
+model. agbcc consequently emits the ROM's explicit zero-extension followed by
+sign-extension and retains the record pointer in r1 and the unsigned limit in
+r2. Reusing only the `s32` arithmetic value removes those conversions and, in
+the add routine, swaps the record and limit registers.
+
+This is useful beyond this record family: when the ROM stores a narrow value
+and immediately compares it at that width, model the stored representation as
+a separate exact-width local. Do not reproduce the register choice with a
+forced-register declaration.
+
+### Split assembly sections after removing an interior range
+
+Replacing 08055EC8..08055F4C with C initially moved the following assembly
+resolver from 08055F4C down to 08055EC8. The local function bytes were exact,
+but every relocated caller changed because the surrounding assembly was still
+one continuous section. The correct fix is a new `.section .rom.00055F4C`
+boundary before the surviving resolver. Whenever C replaces bytes from the
+middle of an assembly section, anchor the first surviving byte in its own
+addressed section before trusting a function-level object comparison.

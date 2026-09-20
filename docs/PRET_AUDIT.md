@@ -417,3 +417,18 @@ byte-identical.
   typed signed coordinates and the named BIOS `Sqrt`/`ArcTan2` calls. All raw
   callers use relocatable symbols. Neither helper contains a register pin,
   inline assembly, volatile access, dead code, or fixed address.
+
+
+## Battle-party helper batch (2026-09-20)
+
+Five routines at 0x08055EC8..0x08055FE8 now build from documented, shiftable C,
+removing 228 bytes of assembly. All call sites use linker symbols, the shared
+party table uses `BATTLE_PARTY_DEFAULT_COUNT`, and the runtime root is accessed
+through `gMapGenerationRoot`. The batch adds no raw ROM address, forced
+register, inline assembly, artificial volatile access, or unreachable
+compiler-shaping code. The hidden getter at 0x08055F38 was recovered from raw
+word directives. Full ROM comparison remains byte-identical.
+
+The resolver at 0x08055F4C was deliberately retained in assembly: its clean C
+candidate is behaviorally and structurally correct but swaps two low registers.
+This follows `PRET_STANDARDS.md` rather than forcing a cosmetic match.

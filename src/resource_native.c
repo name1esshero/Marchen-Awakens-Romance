@@ -16,7 +16,6 @@ extern s32 GameStateGetEntry2AE0(s32 id);
 extern void sub_08056A8C(s32 id, s32 mode);
 extern void sub_080563AC(void);
 extern s32 sub_08056304(s32 value);
-extern void sub_08055F88(s32 value, s32 limit);
 extern s32 GameStateGetCurrentEntry3894(void);
 extern void sub_080087EC(s32 a, s32 b, s32 value);
 extern void sub_080083E0(s32 a, s32 b);
@@ -35,7 +34,6 @@ extern void *HeapAlloc(void *heap, u32 size);
 extern const char *ItemGetName(s32 id);
 extern const char *ConsumableGetName(s32 id);
 extern char *strcpy(char *destination, const char *source);
-extern s32 sub_08055EC8(s32 id);
 extern void BitSet(void *bits, s32 index, s32 value);
 #define RUNTIME_STATE ({ \
     void **root = (void **)(gIwramBase + (u32)gMapGenerationRootOffset); \
@@ -76,7 +74,7 @@ AT("00012B98") s32 ScriptNativeSetFriendArms(u32 count, const s32 *args,
         slot = *root;
         slot += friendOffset;
         slot += byteOffset;
-        definitionIndex = (s16)sub_08055EC8(*(s16 *)slot);
+        definitionIndex = (s16)BattlePartyFindDefaultIndex(*(s16 *)slot);
         ownershipBit = definitions[definitionIndex];
         if (ownershipBit != invalidDefinition)
             BitSet(*root + GAME_STATE_DECK_FLAGS_OFFSET, ownershipBit, 1);
@@ -175,7 +173,7 @@ AT("00012E64") s32 ScriptNativeUseResource(u32 count, const s32 *args, s32 *resu
 {
     if ((s16)sub_08056304((s16)args[0]))
     {
-        sub_08055F88((s16)args[0], 999);
+        GameStateRecordSetField2((s16)args[0], 999);
         sub_080087EC(0, 0, (s16)GameStateGetCurrentEntry3894());
         sub_080083E0(0, 0);
     }

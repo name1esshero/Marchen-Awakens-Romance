@@ -1641,7 +1641,7 @@ _08058B58:
 	str r0, [r1, #0]
 	movs r1, #0
 	ldrsh r0, [r4, r1]
-	bl sub_08055EC8
+	bl BattlePartyFindDefaultIndex
 	ldr r2, _08058BC8
 	adds r1, r5, r2
 	strh r0, [r1, #0]
@@ -7939,7 +7939,7 @@ sub_0805B0A8:
 	add r0, r9
 	movs r3, #0
 	ldrsh r0, [r0, r3]
-	bl sub_08055EC8
+	bl BattlePartyFindDefaultIndex
 	lsls r0, r0, #16
 	ldr r1, _0805B234
 	asrs r0, r0, #14
@@ -11497,7 +11497,7 @@ _0805C606:
 	lsls r0, r0, #16
 	asrs r6, r0, #16
 	adds r0, r6, #0
-	bl sub_08055EC8
+	bl BattlePartyFindDefaultIndex
 	adds r4, r0, #0
 	lsls r4, r4, #16
 	asrs r4, r4, #16
@@ -12417,7 +12417,7 @@ _0805CBFA:
 	movs r0, #153
 	.2byte 0xF7A9
 	.4byte 0x7020FDAD
-	bl sub_08055F00
+	bl GameStateHasField3880Value22
 	ldr r2, _0805CC60
 	adds r1, r5, r2
 	strh r0, [r1, #0]
@@ -14765,7 +14765,7 @@ sub_0805DD44:
 	movs r3, #0
 	ldrsh r7, [r0, r3]
 	adds r0, r7, #0
-	bl sub_08055EC8
+	bl BattlePartyFindDefaultIndex
 	lsls r0, r0, #16
 	asrs r5, r0, #16
 	cmp r7, #0
@@ -15298,7 +15298,7 @@ sub_0805E012:
 	ldr r1, [sp, #44]
 	movs r2, #0
 	ldrsh r0, [r1, r2]
-	bl sub_08055EC8
+	bl BattlePartyFindDefaultIndex
 	ldr r3, [sp, #44]
 	movs r1, #0
 	ldrsh r0, [r3, r1]
@@ -15572,7 +15572,7 @@ _0805E224:
 	adds r2, r2, r0
 	movs r1, #0
 	ldrsh r0, [r2, r1]
-	bl sub_08055EC8
+	bl BattlePartyFindDefaultIndex
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	movs r2, #0
@@ -15788,7 +15788,7 @@ sub_0805E384:
 	adds r0, r4, r0
 	movs r2, #0
 	ldrsh r0, [r0, r2]
-	bl sub_08055EC8
+	bl BattlePartyFindDefaultIndex
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	lsls r1, r0, #3
@@ -15906,7 +15906,7 @@ _0805E45A:
 	add r0, r8
 	strh r1, [r0, #0]
 	adds r0, r1, #0
-	bl sub_08055EC8
+	bl BattlePartyFindDefaultIndex
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	lsls r1, r0, #3
@@ -15993,7 +15993,7 @@ _0805E4E6:
 	beq _0805E544
 	movs r3, #18
 	ldrsh r0, [r1, r3]
-	bl sub_08055EC8
+	bl BattlePartyFindDefaultIndex
 	ldr r5, _0805E53C
 	adds r1, r4, r5
 	strh r0, [r1, #0]
@@ -16029,7 +16029,7 @@ _0805E540:
 _0805E544:
 	movs r2, #18
 	ldrsh r0, [r1, r2]
-	bl sub_08055EC8
+	bl BattlePartyFindDefaultIndex
 	ldr r3, _0805E588
 	adds r1, r4, r3
 	strh r0, [r1, #0]
@@ -16086,7 +16086,7 @@ sub_0805E594:
 	sub sp, #16
 	mov r8, r0
 	movs r0, #1
-	bl sub_08055EC8
+	bl BattlePartyFindDefaultIndex
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	mov r9, r0

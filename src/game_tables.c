@@ -288,7 +288,7 @@ AT("001ACC70") const u16 gBattleRuntimePresetB[BATTLE_PRESET_SIZE] = {
 AT("001ACC90") const s16 gFriendArmOwnershipBits[8] = {
     1, 2, 12, FRIEND_ARM_NO_OWNERSHIP_BIT, 23, FRIEND_ARM_NO_OWNERSHIP_BIT, 21, 1,
 };
-AT("001ACCA0") const s16 gBattlePartyDefaults[8] = {
+AT("001ACCA0") const s16 gBattlePartyDefaults[BATTLE_PARTY_DEFAULT_COUNT] = {
     1, 3, 4, 6, 9, 8, 7, 22,
 };
 

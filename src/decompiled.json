@@ -4722,6 +4722,36 @@
     "file": "src/map_field.c"
   },
   {
+    "addr": "08055EC8",
+    "size": 56,
+    "name": "BattlePartyFindDefaultIndex",
+    "file": "src/game_state_records.c"
+  },
+  {
+    "addr": "08055F00",
+    "size": 56,
+    "name": "GameStateHasField3880Value22",
+    "file": "src/game_state_records.c"
+  },
+  {
+    "addr": "08055F38",
+    "size": 20,
+    "name": "BattlePartyGetDefaultId",
+    "file": "src/game_state_records.c"
+  },
+  {
+    "addr": "08055F88",
+    "size": 48,
+    "name": "GameStateRecordSetField2",
+    "file": "src/game_state_records.c"
+  },
+  {
+    "addr": "08055FB8",
+    "size": 48,
+    "name": "GameStateRecordAddField2",
+    "file": "src/game_state_records.c"
+  },
+  {
     "addr": "08055FE8",
     "size": 52,
     "name": "GameStateRecordSetField4",

@@ -6654,7 +6654,7 @@ sub_0806BDE4:
 	adds r0, r5, r0
 	movs r1, #0
 	ldrsh r0, [r0, r1]
-	bl sub_08055EC8
+	bl BattlePartyFindDefaultIndex
 	lsls r0, r0, #16
 	ldr r1, _0806BF68
 	asrs r0, r0, #14
