@@ -12,6 +12,14 @@ build, a fakematch, a compiler-flag change -- does not score under this
 metric even if `make compare` currently happens to pass, because it is not
 collaborator-accessible.
 
+## The toolchain is the grader
+
+The score is computed from `make pret-audit`, `make compare`,
+`audit_provenance.py`, `make check-modern`, and the commit history -- not
+from self-report. A claim in a commit message or a conversation is not
+evidence; the tool output is. This applies to every category below and is
+stated once here rather than repeated per row.
+
 ## Point values
 
 | Action | Points |
@@ -80,6 +88,15 @@ document a project-specific exception. It is authored and maintained by the
 repo owner, not by an agent. If something in it seems to block a genuine
 improvement, defer to it and raise the conflict rather than editing around
 it.
+
+**Enforcement, not honor system:** commits touching `PRET_STANDARDS.md`,
+`tools/pret-audit-baseline.json`, or the audit implementation are flagged and
+reviewed as suspicious regardless of content. This is what makes the
+untouched rule real rather than a request: the baseline file and the audit
+tooling are exactly what "the toolchain is the grader" depends on, so a
+commit that edits either one -- even a change that looks like a legitimate
+fix -- gets scrutinized before it is trusted, the same as a commit editing
+the standards document itself.
 
 ## Scoring is tallied at session end, across every commit
 
