@@ -22,10 +22,25 @@ struct SoundFadeData
  * @param completion Optional task completion word.
  * @return The initialized task, or null when allocation fails.
  *
- * The exact ROM keeps the callback in sl while it stages the allocation size
- * through r1. agbcc instead passes the same call in fewer instructions from
- * this natural source. Keep this readable candidate here until the original
- * source lifetime that explains that preservation is recovered.
+ * The precise mechanism: the ROM's `CreateTask` call setup uses r1 as a
+ * scratch register for the stack-passed size argument (`movs r1,#16;
+ * str r1,[sp]`) before overwriting r1 with the callback pointer
+ * (`mov r1, sl`) for the actual call -- so the callback pointer, loaded
+ * earlier, has to survive that scratch use somewhere else, and the ROM
+ * preserves it in sl (r10) for that window. This candidate's compiled
+ * output picks r2 as the stack-argument scratch instead of r1 (confirmed
+ * with the size argument pulled into its own local, declared before the
+ * call, which changes nothing), so the callback pointer never needs to
+ * move out of r1 in the first place and sl is never touched -- one fewer
+ * high register preserved across the whole function (`push {r6,r7}` for
+ * r8/r9 only, not the ROM's `push {r5,r6,r7}` for r8/r9/sl). Like
+ * sound_idle_wait.c's index/switch-temp coalescing, this looks like a
+ * genuine difference in how many registers the compiler decides it needs,
+ * not an instruction-order or expression-grouping question; forcing r1 to
+ * be used as the scratch would mean steering the allocator rather than
+ * recovering the original source shape. Keep this readable candidate here
+ * until the original source lifetime that explains the ROM's choice is
+ * recovered.
  */
 struct EngineTask *CreateSoundFadeTask(
     s32 countdown, s32 playerIndex, s32 completePendingOnFinish,
