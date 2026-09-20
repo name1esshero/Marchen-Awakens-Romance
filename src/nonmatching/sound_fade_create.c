@@ -1,8 +1,6 @@
 #include "sound.h"
 #include "task_manager.h"
 
-#include "rom_section.h"
-
 extern void SoundFadeTask(struct EngineTask *task);
 extern void ScriptAddPendingTasks(u32 count);
 extern void sub_08080BE8(void *task);
@@ -23,23 +21,25 @@ struct SoundFadeData
  * @param stopPlayerOnFinish Whether the player stops after fading.
  * @param completion Optional task completion word.
  * @return The initialized task, or null when allocation fails.
+ *
+ * The exact ROM keeps the callback in sl while it stages the allocation size
+ * through r1. agbcc instead passes the same call in fewer instructions from
+ * this natural source. Keep this readable candidate here until the original
+ * source lifetime that explains that preservation is recovered.
  */
-AT("000056AC") struct EngineTask *CreateSoundFadeTask(
+struct EngineTask *CreateSoundFadeTask(
     s32 countdown, s32 playerIndex, s32 completePendingOnFinish,
     s32 stopPlayerOnFinish, u32 *completion)
 {
     struct EngineTask *task;
     struct SoundFadeData *data;
-    register void (*callback)(struct EngineTask *) asm("r10");
-    struct TaskManager *manager;
 
-    manager = &gMainTaskManager;
-    callback = SoundFadeTask;
-    task = CreateTask(manager, callback, 0, completion, 16);
+    task = CreateTask(&gMainTaskManager, SoundFadeTask, 0, completion,
+                      sizeof(*data));
     if (task == 0)
         return 0;
 
-    data = (struct SoundFadeData *)((u8 *)task + 32);
+    data = (struct SoundFadeData *)(task + 1);
     if (completePendingOnFinish != 0)
         ScriptAddPendingTasks(1);
     ScriptAddPendingTasks(1);

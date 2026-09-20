@@ -14,8 +14,8 @@ error. The audit prints known, new, and resolved counts on one line.
 ## Verified snapshot: pointer/integer authenticity audit, 2026-09-20
 
 - `make compare` reproduces the Japanese ROM byte for byte.
-- `make english` succeeds and all 196 host tests pass.
-- The mechanical PRET audit reports **101 errors / 0 warnings / 17 documented
+- `make english` succeeds and all 197 host tests pass.
+- The mechanical PRET audit reports **99 errors / 0 warnings / 17 documented
   exceptions** on one summary line. Every exception is enumerated in the
   generated report.
 
@@ -42,6 +42,12 @@ two independent address calculations. The distinct lexical lifetimes make
 agbcc reuse r0 naturally and remove the last forced-register and duplicate
 inline-assembly findings from `src/resource_native.c` without changing the
 ROM.
+
+`CreateSoundFadeTask` no longer claims a fixed r10 callback register as C.
+The exact symbolic implementation is retained in assembly and the natural,
+typed reconstruction is kept in `src/nonmatching/sound_fade_create.c`. This
+removes its forced-register and duplicate inline-assembly findings while
+leaving the unresolved callback lifetime visible to future contributors.
 
 ## Verified snapshot: renderer reference fallback, 2026-09-20
 
@@ -112,11 +118,14 @@ Re-ran `tools/drop_register_hints.py --all` on 2026-09-14: it removed zero
 additional hints (all 22 forced-register and 92 TARGET_REGISTER pins report
 load-bearing). This confirms the count is stable, not that it is finished --
 per the remediation order below, the next step for each surviving hint is a
-structural C rewrite, not another mechanical pass. Manual attempts at two of
-the six forced-register files (`src/sound_fade_create.c`'s single r10 pin,
-`src/sound_idle_wait.c`'s three pins) via reordering declarations did not
-reproduce the original register allocation. Those probes rule out only the
-tested declaration orders, not a clean-C reconstruction. `src/sprite_affine_matrix.c` carries the largest single concentration
+structural C rewrite, not another mechanical pass. Manual attempts at the
+former `src/sound_fade_create.c` r10 pin and `src/sound_idle_wait.c`'s three
+pins via reordering declarations did not reproduce the original register
+allocation. `CreateSoundFadeTask` has since moved to exact assembly with its
+clean candidate retained under `src/nonmatching/`; the sound-idle routines
+remain matching C with unresolved pins. Those probes rule out only the tested
+declaration orders, not a clean-C reconstruction.
+`src/sprite_affine_matrix.c` carries the largest single concentration
 (48 of the 92 TARGET_REGISTER pins) and is the highest-value structural-rewrite
 target for a future pass.
 

@@ -438,12 +438,6 @@
     "file": "src/task_constructors.c"
   },
   {
-    "addr": "080056AC",
-    "size": 116,
-    "name": "CreateSoundFadeTask",
-    "file": "src/sound_fade_create.c"
-  },
-  {
     "addr": "08005720",
     "size": 160,
     "name": "SoundFadeTask",

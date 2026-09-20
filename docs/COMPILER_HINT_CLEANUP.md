@@ -364,8 +364,7 @@ Recorded at the time of writing; regenerate rather than trusting these numbers.
   biggest remaining chunk), `sprite_transform.c` (20), `sprite_affine_slots.c`,
   `sram.c`, `sprite_interpolation.c`, `sound_m4a.c`, `resource_native.c`,
   `mapping.c`, `sprite_math.c`, `sound_idle_wait.c`, `ncd_sprite.c`, `nfp.c`,
-  `sprite_tile_allocator.c`, `sprite_engine_state.c`, `save.c`,
-  `sound_fade_create.c`.
+  `sprite_tile_allocator.c`, `sprite_engine_state.c`, `save.c`.
 - `make compare` byte-exact and all host tests passing throughout.
 
 ## Watch out for
@@ -517,6 +516,29 @@ a physical register. agbcc consequently reuses r0 for both calculations and
 emits the original 55 instructions with no differences. The Japanese ROM
 retains its exact SHA-1, and `src/resource_native.c` now contains no forced
 register or inline-assembly findings.
+
+## Preserve unresolved callback lifetime honestly
+
+`CreateSoundFadeTask()` (0x080056AC) formerly pinned its callback to r10. The
+ROM loads `SoundFadeTask`, moves it into sl, uses r1 to stage the 16-byte task
+payload size on the stack, then moves the callback back into r1 for
+`CreateTask()`. That choice expands both the high-register save/restore
+sequence and the call setup; the exact function is 116 bytes.
+
+Without the constraint, agbcc passes the callback directly and emits a
+108-byte function. Explicit signed and unsigned size locals, a separate queue
+local, declaration and initialization orders, direct and local callback forms,
+plain `register` storage, and both `agbcc` and `old_agbcc` were tested. All
+natural candidates retained the shorter call. These failures identify the
+missing fact as a source lifetime or abstraction, but do not prove that the
+original developers requested r10.
+
+Following `PRET_STANDARDS.md`, the matching implementation is now ordinary
+symbolic Thumb assembly in `asm/code/code_0000C0.s`; its calls and literal
+pool reference relocatable symbols. The more readable typed implementation is
+retained in `src/nonmatching/sound_fade_create.c`. This removes the forced
+register and duplicate inline-assembly audit findings without pretending the
+current C shape is authentic.
 
 ## Reuse an initialized search value before its loop role
 

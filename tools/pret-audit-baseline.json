@@ -21,11 +21,6 @@
   },
   {
     "kind": "forced_register",
-    "file": "src/sound_fade_create.c",
-    "detail": "register void (*callback)(struct EngineTask *) asm(\"r10\");"
-  },
-  {
-    "kind": "forced_register",
     "file": "src/sound_idle_wait.c",
     "detail": "register u32 status asm(\"r0\");"
   },
@@ -78,11 +73,6 @@
     "kind": "inline_assembly",
     "file": "src/save.c",
     "detail": "register u32 localSize asm(\"r4\");"
-  },
-  {
-    "kind": "inline_assembly",
-    "file": "src/sound_fade_create.c",
-    "detail": "register void (*callback)(struct EngineTask *) asm(\"r10\");"
   },
   {
     "kind": "inline_assembly",

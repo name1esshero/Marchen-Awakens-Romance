@@ -429,6 +429,17 @@ difference is register pressure rather than scheduling.
   without a register constraint. This is useful when the repeated values are
   semantically independent. Do not split one continuous pointer walk merely
   to influence allocation.
+- **Treat unexplained high-register preservation as an unresolved lifetime,
+  not permission to pin it.** `CreateSoundFadeTask` loads its callback before
+  staging the fifth `CreateTask` argument through r1, preserves the callback
+  in sl, and moves it back to r1 for the call. Natural C passes the same
+  callback directly and produces a 108-byte function instead of the ROM's
+  116-byte function. Separate size and queue locals, callback initialization
+  orders, plain `register` storage, direct callback expressions, and both
+  compiler binaries all produce the shorter form. Until a caller, macro, or
+  wider structure exposes the real lifetime, keep the exact symbolic function
+  in assembly and the readable candidate in `src/nonmatching/`; an r10
+  constraint states a machine allocation rather than recovering source.
 - **After adding a function, run the host tests, not just `make compare`.** The
   tests compile individual `.c` files on their own, so a new reference to a
   symbol the ROM link resolves -- `gSecondaryRuntime`, `gIwramBase`, anything

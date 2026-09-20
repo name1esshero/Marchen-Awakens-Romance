@@ -2325,3 +2325,21 @@ boundary. Expressing each calculation with a block-scoped `u8 *slot` gives
 agbcc the original non-overlapping lifetimes and reproduces all 55 ROM
 instructions without the former r0 register constraint. This removes the last
 PRET hard errors from `src/resource_native.c` while keeping the ROM byte exact.
+
+## Sound fade constructor fallback (2026-09-20)
+
+`CreateSoundFadeTask` at 0x080056AC is behaviorally reconstructed, but its
+natural C remains eight bytes shorter than the ROM. The ROM preserves the
+`SoundFadeTask` callback in sl while r1 temporarily carries the 16-byte task
+payload size to the stack. Both project compiler binaries and ordinary
+callback, size, queue, initialization-order, and storage-class variants pass
+the callback directly instead.
+
+The former matching source forced that unexplained allocation with an r10
+constraint. It has been replaced by the PRET-compliant fallback: the exact
+116-byte routine is symbolic, relocatable assembly in
+`asm/code/code_0000C0.s`, while the clean typed candidate lives in
+`src/nonmatching/sound_fade_create.c`. Its calls still use `CreateTask`,
+`ScriptAddPendingTasks`, and `sub_08080BE8` by symbol, and its literal pool
+uses `gMainTaskManager` and `SoundFadeTask`; no raw software address was
+introduced.
