@@ -39,8 +39,13 @@ EWRAM/IWRAM literals and header aliases that expand to them.
 The following are intentionally not failures:
 
 - GBA hardware registers and the fixed VRAM, palette, OAM, BIOS, and save-memory
-  regions. Their physical addresses are part of the platform.
+  regions. Their physical addresses are part of the platform. Named `#define`
+  constants and typed volatile access macros are the normal PRET interface for
+  these addresses.
 - Ordinary typed pointer arithmetic and `u8 *` byte-offset arithmetic.
+- `#define` aliases that resolve to linker symbols or platform constants. A
+  macro that merely hides a fixed software-object address is still reported as
+  transitional address debt.
 - Named EWRAM/IWRAM linker symbols. Exact RAM placement belongs in the linker;
   C should refer to the object by name.
 - `AT()` section annotations. The matching linker must reproduce the original
