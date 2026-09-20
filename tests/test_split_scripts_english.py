@@ -17,7 +17,10 @@ import split_scripts_english as sse
 class SplitScriptsEnglishTests(unittest.TestCase):
     def test_english_script_assets_mirrors_base_structure(self):
         base_entries = sse.load_sections(sse.ROM_DATA_MANIFEST, 'script_assets')
-        sse.write_script_assets_english()
+        # This verifies manifest structure and path rewriting in a clean
+        # checkout. Production builds keep source validation enabled after
+        # generating the script payloads.
+        sse.write_script_assets_english(validate_sources=False)
         english = sse.ENGLISH_SCRIPT_ASSETS.read_text()
 
         base_sections = [f'\t.section .rom.{int(entry["start"], 16):08X}, "a"'

@@ -58,6 +58,27 @@ class RomDataSectionTests(unittest.TestCase):
             rom_data_sections.write_assembly(sections, output)
             self.assertIn(".fill 4, 4, 0x09FFC000", output.read_text())
 
+    def test_structural_render_can_skip_generated_payload_validation(self):
+        sections = [{
+            "group": "script_assets",
+            "start": "00001000",
+            "end": "00001020",
+            "kind": "script",
+            "source": "build/scripts/nfp/DOES_NOT_EXIST.SPC.bin",
+        }]
+        with tempfile.TemporaryDirectory() as tmp:
+            output = Path(tmp) / "scripts.s"
+            with self.assertRaises(FileNotFoundError):
+                rom_data_sections.write_assembly(sections, output)
+            rom_data_sections.write_assembly(
+                sections, output, english_scripts=True,
+                validate_sources=False)
+            text = output.read_text()
+            self.assertIn('.section .rom.00001000, "a"', text)
+            self.assertIn(
+                '.incbin "build/english/scripts/nfp/DOES_NOT_EXIST.SPC.bin"',
+                text)
+
 
 if __name__ == "__main__":
     unittest.main()

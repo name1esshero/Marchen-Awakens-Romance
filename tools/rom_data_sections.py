@@ -36,7 +36,14 @@ def replace_sources(manifest_path, replacements):
         manifest_path.write_text(json.dumps(manifest, indent=2) + "\n")
 
 
-def write_assembly(sections, output, english_scripts=False):
+def write_assembly(sections, output, english_scripts=False,
+                   validate_sources=True):
+    """Write placement assembly for a manifest group.
+
+    Production callers validate every generated payload's existence and exact
+    size. Structural tests may disable that I/O check when they only need to
+    inspect section addresses and transformed paths from a clean checkout.
+    """
     lines = [
         "@ Generated ROM data placement; do not edit.",
         "@ Payloads come from human-editable sources and their build tools.",
@@ -64,23 +71,24 @@ def write_assembly(sections, output, english_scripts=False):
         source = entry["source"]
         if english_scripts:
             source = source.replace("build/scripts/nfp/", "build/english/scripts/nfp/")
-        source_path = ROOT / source
-        if not source_path.exists():
-            raise FileNotFoundError(f"{source}: generated payload is missing")
-        actual_size = source_path.stat().st_size
         expected_size = end - start
         source_offset = entry.get("source_offset", 0)
-        if "source_offset" not in entry and actual_size != expected_size:
-            raise ValueError(
-                f"{source}: expected {expected_size} bytes for ROM "
-                f"{start:06X}..{end:06X}, found {actual_size}"
-            )
-        if source_offset + expected_size > actual_size:
-            raise ValueError(
-                f"{source}: needs bytes {source_offset}.."
-                f"{source_offset + expected_size}, found {actual_size}"
-            )
-        if source_offset == 0 and actual_size == expected_size:
+        if validate_sources:
+            source_path = ROOT / source
+            if not source_path.exists():
+                raise FileNotFoundError(f"{source}: generated payload is missing")
+            actual_size = source_path.stat().st_size
+            if "source_offset" not in entry and actual_size != expected_size:
+                raise ValueError(
+                    f"{source}: expected {expected_size} bytes for ROM "
+                    f"{start:06X}..{end:06X}, found {actual_size}"
+                )
+            if source_offset + expected_size > actual_size:
+                raise ValueError(
+                    f"{source}: needs bytes {source_offset}.."
+                    f"{source_offset + expected_size}, found {actual_size}"
+                )
+        if "source_offset" not in entry:
             incbin = f'\t.incbin "{source}"'
         else:
             incbin = f'\t.incbin "{source}", {source_offset}, {expected_size}'

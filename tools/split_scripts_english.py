@@ -43,9 +43,10 @@ def marscript_identifier(name):
     return name.replace('.', '_').replace('-', '_')
 
 
-def write_script_assets_english():
+def write_script_assets_english(validate_sources=True):
     sections = load_sections(ROM_DATA_MANIFEST, 'script_assets')
-    write_assembly(sections, ENGLISH_SCRIPT_ASSETS, english_scripts=True)
+    write_assembly(sections, ENGLISH_SCRIPT_ASSETS, english_scripts=True,
+                   validate_sources=validate_sources)
 
 
 def write_expansion_asm():
