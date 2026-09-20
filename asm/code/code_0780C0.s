@@ -7856,7 +7856,7 @@ sub_0807E314:
 	adds r2, r5, #0
 	mov r3, r8
 	bl ScriptExecutionStateInitialize
-	bl sub_0807F0EC
+	bl ScriptResetExecutionState
 	ldr r0, [sp, #32]
 	.2byte 0xF000
 	.4byte 0x6831FD41
@@ -8675,82 +8675,7 @@ _0807E960:
 
 @ 07F094..07F0EC is decompiled as ScriptResourceResetArray(); see src/decompiled.json
 
-	.section .rom.0007F0EC, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_0807F0EC
-sub_0807F0EC:
-	push {r4, r5, lr}
-	ldr r1, _0807F158
-	ldr r0, [r1, #0]
-	ldr r0, [r0, #12]
-	movs r2, #134
-	lsls r2, r2, #2
-	adds r0, r0, r2
-	ldr r0, [r0, #0]
-	cmp r0, #0
-	beq _0807F11A
-	adds r4, r1, #0
-	.global _0807F102
-_0807F102:
-	.2byte 0xF7FF
-	.4byte 0xF7FFFF59
-	.4byte 0x6820FDA7
-	ldr r0, [r0, #12]
-	movs r1, #134
-	lsls r1, r1, #2
-	adds r0, r0, r1
-	ldr r0, [r0, #0]
-	cmp r0, #0
-	bne _0807F102
-	.global _0807F11A
-_0807F11A:
-	.2byte 0xF000
-	.4byte 0x1C05F8AB
-	movs r4, #0
-	cmp r4, r5
-	bge _0807F132
-	.global _0807F126
-_0807F126:
-	adds r0, r4, #0
-	.2byte 0xF7FF
-	.byte 0x98
-	.byte 0xFF
-	adds r4, #1
-	cmp r4, r5
-	blt _0807F126
-	.global _0807F132
-_0807F132:
-	.2byte 0xF000
-	.4byte 0x1C05F8A7
-	movs r4, #0
-	cmp r4, r5
-	bge _0807F14A
-	.global _0807F13E
-_0807F13E:
-	adds r0, r4, #0
-	.2byte 0xF7FF
-	.byte 0xA8
-	.byte 0xFF
-	adds r4, #1
-	cmp r4, r5
-	blt _0807F13E
-	.global _0807F14A
-_0807F14A:
-	movs r0, #64
-	.2byte 0xF7FF
-	.byte 0x50
-	.byte 0xFE
-	pop {r4, r5}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _0807F158
-_0807F158:
-	.4byte 0x0300611C  @ IWRAM+0x611C
+@ 07F0EC..07F15C is decompiled as ScriptResetExecutionState(); see src/decompiled.json
 
 @ 07F15C..07F1B8 is decompiled as ScriptRunSlice(); see src/decompiled.json
 

@@ -59,6 +59,7 @@ s32 ScriptSetFrameFlag(u32 index);
 void ScriptSetStepBudgetUnchecked(u32 value);
 void ScriptFrameReleasePools(void);
 void ScriptPopFrame(void);
+void ScriptResetExecutionState(void);
 s32 ScriptNativeChain(u32 count, const u32 *arguments, u32 *result);
 s32 ScriptNativeExec(u32 count, const u32 *arguments, u32 *result);
 s32 ScriptNativeCall(u32 count, const u32 *arguments, u32 *result);

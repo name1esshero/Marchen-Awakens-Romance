@@ -6996,6 +6996,12 @@
     "file": "src/script_resources.c"
   },
   {
+    "addr": "0807F0EC",
+    "size": 112,
+    "name": "ScriptResetExecutionState",
+    "file": "src/script_frames.c"
+  },
+  {
     "addr": "0807F15C",
     "size": 92,
     "name": "ScriptRunSlice",
@@ -7022,13 +7028,13 @@
   {
     "addr": "0807F274",
     "size": 16,
-    "name": "VmGetField10",
+    "name": "ScriptGetFirstNamedResourceCount",
     "file": "src/runtime_misc.c"
   },
   {
     "addr": "0807F284",
     "size": 16,
-    "name": "VmGetField12",
+    "name": "ScriptGetSecondNamedResourceCount",
     "file": "src/runtime_misc.c"
   },
   {

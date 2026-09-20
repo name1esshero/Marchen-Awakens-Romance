@@ -2548,3 +2548,12 @@ and the two pointer records. Direct typed access through the mutable global
 root preserves the ROM's reloads around calls and gives the exact 204-byte
 function without compiler steering. The word at 0x0807EF90 is a separate
 no-op leaf and remains at its original address in assembly.
+
+## Script execution-state reset (2026-09-20)
+
+`ScriptResetExecutionState` at 0x0807F0EC is now clean matching C. It unwinds
+the active frame chain, releases each newly exposed frame's temporary pools,
+resets every live slot in both named-resource classes, and changes the
+per-slice dispatch budget to 64. This also confirms that the halfwords at
+execution-state offsets 0x10 and 0x12 are the live counts for the first and
+second named-resource slot banks; their accessors now carry those names.

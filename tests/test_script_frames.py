@@ -39,6 +39,10 @@ void HeapFree(void *heap,void *pointer) {
  freeCount++;
 }
 void CpuFill(void *destination,u32 size,u32 value) { memset(destination,value,size); }
+u32 ScriptGetFirstNamedResourceCount(void) { return 0; }
+u32 ScriptGetSecondNamedResourceCount(void) { return 0; }
+s32 ScriptResourceReset(s32 index) { (void)index; return 0; }
+s32 ScriptResourceResetArray(s32 index) { (void)index; return 0; }
 void setPending(u32 n) { state.pendingTasks=n; }
 void clearFrame(void) { state.frame=0; }
 void setFlags(u16 n) { frame.flags=n; }

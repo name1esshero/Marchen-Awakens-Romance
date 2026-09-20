@@ -27,8 +27,8 @@ struct MapObjectMotion {
 
 void *GameStateGetBuffer38C0(void);
 void VmAddToField220(u32 value);
-u32 VmGetField10(void);
-u32 VmGetField12(void);
+u32 ScriptGetFirstNamedResourceCount(void);
+u32 ScriptGetSecondNamedResourceCount(void);
 void *RuntimeGetPointer6120Field800(void);
 void ClearRuntimeStatusBytes(void);
 const void *RuntimeGetTable1AC8C0(u32 unused);

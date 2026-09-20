@@ -5,11 +5,14 @@
  * resource belongs to heap zero, while the other blocks use the VM heap.
  * Unknown table roles remain offset-named in the recovered layout. */
 #include "script_vm.h"
+#include "runtime_misc.h"
 #include "rom_section.h"
 #define VM gScriptContext
 extern s32 sub_08080070(struct ScriptFrame *);
 extern void HeapFree(void *,void *);
 extern void CpuFill(void *,u32,u32);
+extern s32 ScriptResourceReset(s32 index);
+extern s32 ScriptResourceResetArray(s32 index);
 
 /** Release allocations owned by the current frame's two temporary pools,
  * then reset the interpreter fields that refer to them. table038 entries own
@@ -112,6 +115,29 @@ AT("0007EDF0") void ScriptSetStepBudgetUnchecked(u32 value)
  u32 *limit=&VM->state->stepBudget;
  *limit=value;
  if(!value) *limit=10;
+}
+
+/** Release every active frame and reset both classes of named-resource slot.
+ * New execution states use a 64-step dispatch budget after this reset. */
+AT("0007F0EC") void ScriptResetExecutionState(void)
+{
+    s32 count;
+    s32 index;
+
+    while (VM->state->dispatchState != 0) {
+        ScriptPopFrame();
+        ScriptFrameReleasePools();
+    }
+
+    count = ScriptGetFirstNamedResourceCount();
+    for (index = 0; index < count; index++)
+        ScriptResourceReset(index);
+
+    count = ScriptGetSecondNamedResourceCount();
+    for (index = 0; index < count; index++)
+        ScriptResourceResetArray(index);
+
+    ScriptSetStepBudgetUnchecked(64);
 }
 /** Restore the VM's parent frame, then free the popped frame's allocations
  * (storage, both work tables, and its optional owned resource) and the frame

@@ -782,3 +782,12 @@ global pointer, while it cannot modify an automatic copy of that pointer.
 Prefer the direct global expression when the ROM visibly reloads a mutable
 root after calls; cache it only when the generated code and ownership model
 show that the pointee remains stable.
+
+### Let the function literal pool supply trailing alignment
+
+`ScriptResetExecutionState` at 0x0807F0EC ends with a two-byte alignment gap
+before its compiler-generated `gScriptContext` literal. That gap belongs to
+the function section and appears naturally when agbcc and the assembler emit
+the literal pool. Adding a separate two-byte tail object after the C function
+incorrectly grows the section to 116 bytes; the unadorned function produces
+the ROM's exact 112 bytes.

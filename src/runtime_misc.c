@@ -59,17 +59,15 @@ AT("0007E964") void VmAddToField220(u32 value)
  *field+=value;
 }
 
-/** @return The active script VM context's +0x10 u16 field. Meaning not yet
- * recovered. */
-AT("0007F274") u32 VmGetField10(void)
+/** @return The number of first-class named-resource slots in use. */
+AT("0007F274") u32 ScriptGetFirstNamedResourceCount(void)
 {
  u8 *vm=(u8 *)gScriptContext;
  return *(u16 *)(*(u8 **)(vm+0x0C)+0x10);
 }
 
-/** @return The active script VM context's +0x12 u16 field. Meaning not yet
- * recovered. */
-AT("0007F284") u32 VmGetField12(void)
+/** @return The number of second-class named-resource slots in use. */
+AT("0007F284") u32 ScriptGetSecondNamedResourceCount(void)
 {
  u8 *vm=(u8 *)gScriptContext;
  return *(u16 *)(*(u8 **)(vm+0x0C)+0x12);
