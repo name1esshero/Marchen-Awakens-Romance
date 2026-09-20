@@ -19,6 +19,28 @@ ordinary edits above a finding do not create false regressions; duplicates are
 counted independently so one fixed error cannot hide one newly introduced
 error. The audit prints known, new, and resolved counts on one line.
 
+## Verified snapshot: stale-claim audit and GameStateFindRecord35E0, 2026-09-20
+
+- `make compare` reproduces the Japanese ROM byte for byte.
+- The mechanical PRET audit is **0 errors / 0 warnings / 18 documented
+  exceptions**.
+- `audit_provenance.py` now reports 1825/1825 mapped ranges compiled C.
+
+A systematic grep for "abandoned"/"unmatchable"-style phrasing across this
+file and `docs/decompilation-notes.md`, prompted by `SpriteRuntimeGetFields8C4`
+(previous entry) having been exactly that kind of stale claim, found three
+more pure documentation-lag cases (functions already matched elsewhere with
+nobody updating the note that called them unresolved) and one genuine,
+still-open case that turned into a new match. See "Stale-claim audit, and a
+new decompile it turned up" in `docs/decompilation-notes.md` for detail on
+all four. The new match, `GameStateFindRecord35E0` (0x08055F4C), was a
+block-order artifact, not the register-allocation difference two separate
+notes had both (accurately, at the time) described: writing the ROM's exact
+`if (found) { ...; return ...; } return failure;` shape instead of the
+inverted `if (!found) return failure; ...; return ...;` every prior attempt
+used puts the registers back in the ROM's own assignment as a side effect
+of matching the fallthrough order.
+
 ## Verified snapshot: SpriteRuntimeGetFields8C4 and probe tool bytes mode, 2026-09-20
 
 - `make compare` reproduces the Japanese ROM byte for byte.
@@ -370,10 +392,16 @@ asm), landing two as `src/nonmatching/` and one still unresolved:
   removed and the original assembly retained under semantic names, as required
   by PRET's rule against forcing hand-written assembly through unnatural C.
 
-The resource-counter getter still needs more than a superficial register swap:
-the matching union alias model for the increment function does not reproduce
-the getter's r4/r3 root-and-offset allocation. Verify every instruction and
-relocation before promoting the remaining candidate.
+**Stale, corrected later the same session**: this paragraph described the
+resource-counter getter (`GameStateGetResourceCounter`) as still needing
+more than a superficial register swap, contradicting the "now matches as
+clean C" note two paragraphs above for the same function. It matches; see
+`src/game_state_records.c` and `src/decompiled.json`. Original text, kept
+for reference: "The resource-counter getter still needs more than a
+superficial register swap: the matching union alias model for the increment
+function does not reproduce the getter's r4/r3 root-and-offset allocation.
+Verify every instruction and relocation before promoting the remaining
+candidate."
 
 Same session, continued: landed two more functions as clean, byte-exact
 matches (`RuntimeSetFlagC0` at 0x08009728, `GameStateSelectDeckPointer` at

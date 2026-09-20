@@ -1,8 +1,8 @@
 /* Accessors for the 84-byte records at map-generation state +0x35E0 and for
- * the small s16 table at +0x3894.  sub_08055F4C resolves a record by its
- * signed 16-bit id and is still assembly, so it keeps its placeholder name.
- * The stored counters saturate at 999, which the original code expresses as
- * "greater than 998" on the signed 16-bit value. */
+ * the small s16 table at +0x3894.  GameStateFindRecord35E0() resolves a
+ * record by its signed 16-bit id.  The stored counters saturate at 999,
+ * which the original code expresses as "greater than 998" on the signed
+ * 16-bit value. */
 #include "gba/types.h"
 
 #include "game_state.h"
@@ -13,7 +13,6 @@
 
 extern u8 gIwramBase[];
 extern u8 gMapGenerationRootOffset[];
-extern u8 *sub_08055F4C(s32 id);
 extern u8 *sub_08056E3C(s32 a,s32 b,s32 c);
 extern void CpuCopy(const void *source,void *destination,u32 size);
 extern s32 sub_08056918(s32 id);
@@ -113,6 +112,25 @@ AT("00055F38") s32 BattlePartyGetDefaultId(s32 index)
     return *(s16 *)(table + index);
 }
 
+/**
+ * @brief Resolve one of the eight 84-byte records at +0x35E0 by deck/party id.
+ * @param id Signed deck/party identifier accepted by BattlePartyFindDefaultIndex().
+ * @return The record, or (u8 *)-1 when the id has no default-party slot.
+ */
+AT("00055F4C") u8 *GameStateFindRecord35E0(s32 id)
+{
+    s16 index = BattlePartyFindDefaultIndex((s16)id);
+    void **root;
+    u32 offset;
+
+    if (index != -1) {
+        root = (void **)(gIwramBase + (u32)gMapGenerationRootOffset);
+        offset = (u32)index * 84 + 0x35E0;
+        return (u8 *)*root + offset;
+    }
+    return (u8 *)(s32)index;
+}
+
 #define GAME_STATE_RECORD_FIELD2_OFFSET 2
 #define GAME_STATE_RECORD_FIELD4_OFFSET 4
 #define RECORD_FIELD_MAX 998
@@ -133,7 +151,7 @@ AT("00055F88") void GameStateRecordSetField2(s32 id, s32 value)
     narrowedValue = value;
     id = (s16)id;
     narrowedValue = (s16)narrowedValue;
-    record = sub_08055F4C(id);
+    record = GameStateFindRecord35E0(id);
     storedValue = narrowedValue;
     *(u16 *)(record + GAME_STATE_RECORD_FIELD2_OFFSET) = storedValue;
     limit = *(u16 *)(record + GAME_STATE_RECORD_FIELD4_OFFSET);
@@ -159,7 +177,7 @@ AT("00055FB8") void GameStateRecordAddField2(s32 id, s32 value)
     narrowedValue = value;
     id = (s16)id;
     narrowedValue = (s16)narrowedValue;
-    record = sub_08055F4C(id);
+    record = GameStateFindRecord35E0(id);
     narrowedValue += *(u16 *)(record + GAME_STATE_RECORD_FIELD2_OFFSET);
     *(u16 *)(record + GAME_STATE_RECORD_FIELD2_OFFSET) = narrowedValue;
     storedValue = narrowedValue;
@@ -226,7 +244,7 @@ AT("000562C8") void GameStateAddResourceCounter(u32 value)
   v=value; \
   id=(s16)id; \
   v=(s16)v; \
-  record=sub_08055F4C(id); \
+  record=GameStateFindRecord35E0(id); \
   stored=v; \
   *(u16 *)(record+(field))=stored; \
   if ((s16)stored>RECORD_FIELD_MAX) \
@@ -250,7 +268,7 @@ AT("00056050") void GameStateRecordAddField6(s32 id,s32 value)
  v=value;
  id=(s16)id;
  v=(s16)v;
- record=sub_08055F4C(id);
+ record=GameStateFindRecord35E0(id);
  v+=*(u16 *)(record+6);
  *(u16 *)(record+6)=v;
  if ((s16)v>RECORD_FIELD_MAX)

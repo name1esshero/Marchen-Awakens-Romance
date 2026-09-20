@@ -12591,7 +12591,7 @@ _080555A6:
 	lsls r4, r4, #16
 	asrs r4, r4, #16
 	adds r0, r7, #0
-	bl sub_08055F4C
+	bl GameStateFindRecord35E0
 	mov r9, r0
 	mov r0, r10
 	lsls r5, r0, #2
@@ -13452,49 +13452,7 @@ _08055D7C:
 
 @ 055F38..055F4C is decompiled as BattlePartyGetDefaultId(); see src/decompiled.json
 
-	.section .rom.00055F4C, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_08055F4C
-sub_08055F4C:
-	push {lr}
-	lsls r0, r0, #16
-	asrs r0, r0, #16
-	bl BattlePartyFindDefaultIndex
-	lsls r0, r0, #16
-	asrs r1, r0, #16
-	movs r0, #1
-	negs r0, r0
-	cmp r1, r0
-	bne _08055F66
-	adds r0, r1, #0
-	b _08055F78
-	.global _08055F66
-_08055F66:
-	ldr r2, _08055F7C
-	ldr r0, _08055F80
-	adds r2, r2, r0
-	movs r0, #84
-	muls r1, r0
-	ldr r0, _08055F84
-	adds r1, r1, r0
-	ldr r0, [r2, #0]
-	adds r0, r0, r1
-	.global _08055F78
-_08055F78:
-	pop {r1}
-	bx r1
-	.global _08055F7C
-_08055F7C:
-	.4byte 0x03000000  @ IWRAM
-	.global _08055F80
-_08055F80:
-	.4byte 0x00003FDC
-	.global _08055F84
-_08055F84:
-	.4byte 0x000035E0
+@ 055F4C..055F88 is decompiled as GameStateFindRecord35E0(); see src/decompiled.json
 
 @ 055F88..055FB8 is decompiled as GameStateRecordSetField2(); see src/decompiled.json
 
@@ -13947,7 +13905,7 @@ sub_08056404:
 	push {r4, r5, r6, lr}
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08055F4C
+	bl GameStateFindRecord35E0
 	adds r5, r0, #0
 	movs r4, #0
 	movs r0, #0
@@ -14409,7 +14367,7 @@ sub_080568D8:
 	lsls r1, r1, #16
 	asrs r1, r1, #16
 	adds r0, r1, #0
-	bl sub_08055F4C
+	bl GameStateFindRecord35E0
 	movs r5, #0
 	movs r2, #128
 	lsls r2, r2, #9
@@ -14519,7 +14477,7 @@ sub_080569F8:
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	movs r5, #0
-	bl sub_08055F4C
+	bl GameStateFindRecord35E0
 	movs r2, #128
 	lsls r2, r2, #9
 	adds r1, r0, #0
@@ -14736,7 +14694,7 @@ sub_08056BC4:
 	lsls r4, r4, #16
 	asrs r4, r4, #16
 	adds r0, r5, #0
-	bl sub_08055F4C
+	bl GameStateFindRecord35E0
 	lsls r4, r4, #1
 	adds r0, #14
 	adds r0, r0, r4
@@ -14772,7 +14730,7 @@ sub_08056C08:
 	lsls r1, r1, #16
 	asrs r4, r1, #16
 	adds r0, r5, #0
-	bl sub_08055F4C
+	bl GameStateFindRecord35E0
 	adds r3, r0, #0
 	movs r2, #0
 	movs r1, #14
@@ -14827,7 +14785,7 @@ sub_08056C60:
 	lsls r2, r2, #16
 	asrs r6, r2, #16
 	adds r0, r7, #0
-	bl sub_08055F4C
+	bl GameStateFindRecord35E0
 	adds r3, r0, #0
 	movs r2, #0
 	movs r1, #14
@@ -15550,7 +15508,7 @@ sub_08057314:
 	.2byte 0xF7FF
 	.4byte 0x1C04FF15
 	adds r0, r7, #0
-	bl sub_08055F4C
+	bl GameStateFindRecord35E0
 	adds r6, r0, #0
 	adds r0, r4, #0
 	adds r0, #68
@@ -16393,7 +16351,7 @@ _080578EE:
 	adds r4, r6, r0
 	movs r1, #0
 	ldrsh r0, [r4, r1]
-	bl sub_08055F4C
+	bl GameStateFindRecord35E0
 	ldr r2, _0805795C
 	adds r7, r6, r2
 	str r0, [r7, #0]

@@ -11662,7 +11662,7 @@ _080066C0:
 	movs r1, #0
 	ldrsh r4, [r0, r1]
 	adds r0, r4, #0
-	bl sub_08055F4C
+	bl GameStateFindRecord35E0
 	adds r6, r0, #0
 	ldr r0, _08006754
 	lsls r1, r4, #4
@@ -11858,7 +11858,7 @@ sub_080069B0:
 	cmp r0, r1
 	beq _080069EE
 	adds r0, r4, #0
-	bl sub_08055F4C
+	bl GameStateFindRecord35E0
 	adds r2, r0, #0
 	ldrb r0, [r2, #0]
 	cmp r0, #98

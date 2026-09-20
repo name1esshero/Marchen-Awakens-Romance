@@ -6367,7 +6367,7 @@ _0801AEB4:
 	adds r7, r0, #0
 	movs r2, #40
 	ldrsh r0, [r5, r2]
-	bl sub_08055F4C
+	bl GameStateFindRecord35E0
 	adds r0, #80
 	movs r3, #0
 	ldrsh r0, [r0, r3]
@@ -8392,7 +8392,7 @@ sub_0801BC9E:
 	cmp r7, #0
 	beq _0801BDC2
 	adds r0, r7, #0
-	bl sub_08055F4C
+	bl GameStateFindRecord35E0
 	adds r6, r0, #0
 	ldr r0, _0801BD40
 	mov r4, r10
@@ -10933,7 +10933,7 @@ _0801CD84:
 	.global _0801CD88
 _0801CD88:
 	mov r0, r10
-	bl sub_08055F4C
+	bl GameStateFindRecord35E0
 	adds r2, r0, #0
 	movs r3, #2
 	ldrsh r0, [r2, r3]
@@ -11049,7 +11049,7 @@ sub_0801CE08:
 	bl sub_0807BC7C
 	mov r6, r10
 	adds r0, r6, #0
-	bl sub_08055F4C
+	bl GameStateFindRecord35E0
 	adds r2, r0, #0
 	ldrh r0, [r2, #2]
 	movs r1, #208
@@ -11119,7 +11119,7 @@ _0801CEC0:
 	bl sub_0801DD28
 	mov r9, r0
 	adds r0, r6, #0
-	bl sub_08055F4C
+	bl GameStateFindRecord35E0
 	adds r2, r0, #0
 	adds r0, #80
 	movs r6, #0
@@ -12257,7 +12257,7 @@ _0801D5C2:
 	mov r10, r0
 	cmp r0, #0
 	beq _0801D5E8
-	bl sub_08055F4C
+	bl GameStateFindRecord35E0
 	adds r2, r0, #0
 	movs r5, #2
 	ldrsh r0, [r2, r5]
@@ -12295,7 +12295,7 @@ _0801D5E8:
 	bl GameStateGetEntry3894
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl sub_08055F4C
+	bl GameStateFindRecord35E0
 	adds r2, r0, #0
 	movs r3, #4
 	ldrsh r1, [r2, r3]
@@ -13504,7 +13504,7 @@ sub_0801DDE8:
 	adds r4, r1, #0
 	lsls r0, r7, #16
 	asrs r0, r0, #16
-	bl sub_08055F4C
+	bl GameStateFindRecord35E0
 	adds r5, r0, #0
 	ldrb r1, [r5, #0]
 	ldr r0, [r5, #72]
@@ -13574,7 +13574,7 @@ sub_0801DE54:
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	mov r8, r0
-	bl sub_08055F4C
+	bl GameStateFindRecord35E0
 	adds r7, r0, #0
 	adds r0, #80
 	movs r1, #0

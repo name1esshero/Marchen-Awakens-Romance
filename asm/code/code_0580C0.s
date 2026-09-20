@@ -1635,7 +1635,7 @@ _08058B58:
 	adds r4, r5, r0
 	movs r1, #0
 	ldrsh r0, [r4, r1]
-	bl sub_08055F4C
+	bl GameStateFindRecord35E0
 	ldr r2, _08058BC4
 	adds r1, r5, r2
 	str r0, [r1, #0]
@@ -11502,7 +11502,7 @@ _0805C606:
 	lsls r4, r4, #16
 	asrs r4, r4, #16
 	adds r0, r6, #0
-	bl sub_08055F4C
+	bl GameStateFindRecord35E0
 	mov r10, r0
 	mov r0, r8
 	lsls r0, r0, #2
@@ -15302,7 +15302,7 @@ sub_0805E012:
 	ldr r3, [sp, #44]
 	movs r1, #0
 	ldrsh r0, [r3, r1]
-	bl sub_08055F4C
+	bl GameStateFindRecord35E0
 	adds r5, r0, #0
 	ldrb r2, [r5, #0]
 	add r0, sp, #4
@@ -16715,7 +16715,7 @@ _0805EB90:
 	adds r1, r1, r0
 	movs r3, #0
 	ldrsh r0, [r1, r3]
-	bl sub_08055F4C
+	bl GameStateFindRecord35E0
 	ldr r4, _0805EBCC
 	adds r1, r7, r4
 	str r0, [r1, #0]

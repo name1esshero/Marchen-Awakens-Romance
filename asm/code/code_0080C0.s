@@ -388,7 +388,7 @@ _08008432:
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	str r0, [r6, #0]
-	bl sub_08055F4C
+	bl GameStateFindRecord35E0
 	adds r5, r0, #0
 	ldrb r0, [r5, #0]
 	str r0, [r6, #4]
@@ -572,7 +572,7 @@ _08008592:
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	str r0, [r4, #0]
-	bl sub_08055F4C
+	bl GameStateFindRecord35E0
 	ldr r1, [r4, #4]
 	strb r1, [r0, #0]
 	ldr r1, [r4, #8]
@@ -779,7 +779,7 @@ sub_08008740:
 	cmp r0, r1
 	beq _080087E6
 	adds r0, r4, #0
-	bl sub_08055F4C
+	bl GameStateFindRecord35E0
 	adds r4, r0, #0
 	ldr r1, _080087D0
 	lsls r0, r6, #4
@@ -883,7 +883,7 @@ sub_080087EC:
 	cmp r0, r1
 	beq _080088D0
 	adds r0, r4, #0
-	bl sub_08055F4C
+	bl GameStateFindRecord35E0
 	adds r6, r0, #0
 	lsls r5, r7, #16
 	asrs r5, r5, #16

@@ -770,7 +770,7 @@ AT("000127B8") s32 ScriptNativeWriteMapValues(u32 count, const s32 *args,
     return 1;
 }
 
-extern u8 *sub_08055F4C(s32 mode);
+extern u8 *GameStateFindRecord35E0(s32 id);
 extern void sub_08001EB4(void *dest, const void *src, u32 size);
 extern void BitSet(u8 *bits, u32 index, s32 enabled);
 extern void sub_080083E0(s32 first, s32 second);
@@ -806,7 +806,7 @@ void *GameStateSelectDeckPointer(s32 mode)
 
 /** DeckMake: args[0] selects a deck/shuffle mode, same case set as
  * ShuffleDeckCopy. Builds a 20-entry s16 value table from args[1..20],
- * copies it 14 bytes into whatever sub_08055F4C(mode) returns, then flags
+ * copies it 14 bytes into whatever GameStateFindRecord35E0(mode) returns, then flags
  * one bit per raw VM argument in the save's deck bitset (offset 0x26F8). */
 AT("000127F8") s32 ScriptNativeDeckMake(u32 count, const s32 *args,
                                          s32 *result)
@@ -827,7 +827,7 @@ AT("000127F8") s32 ScriptNativeDeckMake(u32 count, const s32 *args,
 
         for (i = 0; i < 20; i++)
             values[i] = args[i + 1];
-        sub_08001EB4(sub_08055F4C((s16)mode) + 14, values, 40);
+        sub_08001EB4(GameStateFindRecord35E0((s16)mode) + 14, values, 40);
         for (i = 0; (u32)i < count; i++)
             BitSet(GAME_ROOT + GAME_STATE_DECK_FLAGS_OFFSET, args[i], 1);
     }
@@ -873,7 +873,7 @@ AT("000129F4") s32 ScriptNativePmbDeckMake(u32 count, const s32 *args,
     case 9:
     case 22:
     {
-        u8 *record = sub_08055F4C((s16)args[0]);
+        u8 *record = GameStateFindRecord35E0((s16)args[0]);
         s32 i;
         s32 outputIndex;
         s16 zero = 0;

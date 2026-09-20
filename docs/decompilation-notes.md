@@ -719,7 +719,7 @@ PRET audit to zero hard findings.
 
 pret-standards cleanup, remaining audit scope closed out: applied the same raw-hex-elimination treatment to every file flagged in the earlier full-codebase audit. script_native.c named its two shared literal-pool strings (sText_Empty, sText_PercentD) via #define alias, since (as with game_tables.c) the addresses sit in a misdecoded-as-code ASCII region shared with unrelated code. item.c's two consumable-name-table bases were already correctly named; standardized its raw `__attribute__((section(...)))` uses to the shared AT() macro instead, matching every other file. kmp_loader.c was already correctly named (no change needed). map_field.c, map_native.c, and scene_native.c each named their one raw ".KMP"/".NCD" extension-string address (sText_KmpExtension x2, sText_NcdExtension), verified against the actual ROM bytes at each address before naming rather than guessed. script_resources.c's two builtin-function-table registrations were discovered, by inspecting the raw bytes, to be exact type-punned reuses of two already-known tables: 0x081ACB7C is a 24-entry {name, handler} table of core VM/engine commands (dummy/Pad/Wait/GetVar family/CrtFade family/Bgm-Se playback, verified entry-by-entry against ROM bytes) not yet reconstructed as a matching C array so aliased as gScriptEngineFunctions rather than retyped, and 0x081AFEA4 is literally gScriptNativeCommands from game_tables.c reinterpreted through ScriptResourceEntry's compatible layout, re-declared extern under its real name; its third raw address (0x081AC698, a 12-byte zero-filled fallback record) is now sScriptResourceDefaultValue. sound_m4a.c's one remaining raw address followed the established THUMB-bit pattern: subtracting 1 landed on an existing sub_080783DC label already present in asm/code/code_0780C0.s, confirming it as a genuine not-yet-decompiled function rather than data, so it is now `(void *)((u32)sub_080783DC + 1)` with a matching extern declaration. Also fixed the sound_idle_wait.c/sound_tasks.c bonus-scope item flagged during the sound_tables.c work: all nine raw `(struct SoundPlayer *)0x03005F30`/`0x03005FB0` casts across both files now use `&gSoundPlayer0`/`&gSoundPlayer1`. tools/audit_thumb_ptrs.py now reports 0 remaining candidates across all of src/*.c. Verified with make compare after every file; full 140-test suite and audit_provenance.py (1588 compiled C / 1598 total mapped ranges, unchanged) both re-run clean at the end of this pass. Also retested (not just re-affirmed by pattern) the hardest remaining register-forcing cluster -- see the "register-order hypothesis retested" entry above -- confirming sprite_affine_matrix.c's fence-backed Write functions are genuinely necessary, not declaration-order artifacts. [SUPERSEDED: this held only for removing a function's hints all at once. Tested one hint at a time, sprite_affine_matrix.c gave up 24 of them byte-exact; see the REGISTER-HINT CORRECTION at the end of this file.]
 
-ScriptNativeBackgroundSet decompiled to matching C (0x08012264, 148 bytes, the "BgSet" native command in gScriptNativeCommands): previously existed only as a read-only C sketch wrapped in `#ifdef NONMATCHING` inside src/map_native.c -- a preprocessor guard that is never actually defined anywhere in the build, meaning that C was pure documentation and the real ROM bytes were still linked from the untouched raw disassembly in asm/code/code_0100C0.s. Unwrapping it and testing surfaced two real gaps rather than the sketch being correct as written: the switch statement's `case 1:` (which does the same thing as `default:`) gets merged away by agbcc's switch lowering, so the compiled comparison chain pivots on value 2 instead of matching the ROM's literal, doubly-redundant `cmp r0,#1` / `cmp r0,#1` sequence -- fixed by rewriting the switch as an explicit if/goto chain that names each case's comparison directly, which does not get merged. Second, agbcc hoists each case's `ldr r5, =address` load above its branch when the assignment lives in the same compound `if (...) { assign; goto } ` block (a pure load has no ordering dependency the compiler is obligated to respect), while the ROM only loads the address after the branch is taken -- fixed by giving each case its own separate goto-labeled block instead of an inline compound statement, which stops the compiler from being able to hoist across the branch. Both fixes are examples of the section 5a "reverse register order" and "ldr/lsls scheduling" quirks applying to control flow shaping as well as register allocation -- restructuring equivalent C into a form closer to the compiler's actual lowering, not adding compiler hacks. Once byte-exact, the corresponding raw asm block in asm/code/code_0100C0.s was deleted (replaced with the standard "is decompiled as X(); see src/decompiled.json" marker matching every neighboring already-matched function) and src/decompiled.json gained its entry; game_tables.c's gScriptNativeCommands[42] handler reference was updated from the sub_08012264 placeholder to the real name. audit_provenance.py now reports 1589 compiled C / 1599 total mapped ranges (+1 from the prior 1588/1598), and the THUMB-bit audit tool (tools/audit_thumb_ptrs.py) also gained one fewer real unknown handler in gScriptNativeCommands (3 of the original 4 unknowns remain: PmbDeckMake/DeckMake/ShuffleDeckCopy, all large multi-way jump-table dispatchers in the same family, not yet attempted -- flagged in an automated small-function sweep as still unresolved and likely to hit the same jump-table-resists-matching class documented for the sub_08003AE4 interpolation cluster).
+ScriptNativeBackgroundSet decompiled to matching C (0x08012264, 148 bytes, the "BgSet" native command in gScriptNativeCommands): previously existed only as a read-only C sketch wrapped in `#ifdef NONMATCHING` inside src/map_native.c -- a preprocessor guard that is never actually defined anywhere in the build, meaning that C was pure documentation and the real ROM bytes were still linked from the untouched raw disassembly in asm/code/code_0100C0.s. Unwrapping it and testing surfaced two real gaps rather than the sketch being correct as written: the switch statement's `case 1:` (which does the same thing as `default:`) gets merged away by agbcc's switch lowering, so the compiled comparison chain pivots on value 2 instead of matching the ROM's literal, doubly-redundant `cmp r0,#1` / `cmp r0,#1` sequence -- fixed by rewriting the switch as an explicit if/goto chain that names each case's comparison directly, which does not get merged. Second, agbcc hoists each case's `ldr r5, =address` load above its branch when the assignment lives in the same compound `if (...) { assign; goto } ` block (a pure load has no ordering dependency the compiler is obligated to respect), while the ROM only loads the address after the branch is taken -- fixed by giving each case its own separate goto-labeled block instead of an inline compound statement, which stops the compiler from being able to hoist across the branch. Both fixes are examples of the section 5a "reverse register order" and "ldr/lsls scheduling" quirks applying to control flow shaping as well as register allocation -- restructuring equivalent C into a form closer to the compiler's actual lowering, not adding compiler hacks. Once byte-exact, the corresponding raw asm block in asm/code/code_0100C0.s was deleted (replaced with the standard "is decompiled as X(); see src/decompiled.json" marker matching every neighboring already-matched function) and src/decompiled.json gained its entry; game_tables.c's gScriptNativeCommands[42] handler reference was updated from the sub_08012264 placeholder to the real name. audit_provenance.py now reports 1589 compiled C / 1599 total mapped ranges (+1 from the prior 1588/1598), and the THUMB-bit audit tool (tools/audit_thumb_ptrs.py) also gained one fewer real unknown handler in gScriptNativeCommands (3 of the original 4 unknowns remain at the time of this entry: PmbDeckMake/DeckMake/ShuffleDeckCopy, all large multi-way jump-table dispatchers in the same family, not yet attempted -- flagged in an automated small-function sweep as still unresolved and likely to hit the same jump-table-resists-matching class documented for the sub_08003AE4 interpolation cluster. **Stale as of 2026-09-20**: all three have since matched as `ScriptNativePmbDeckMake`, `ScriptNativeDeckMake`, and `ScriptNativeShuffleDeckCopy` in `src/mapping.c`; see `src/decompiled.json`.).
 
 Technique note -- fixing the ldr-hoisting mismatch (worked example: ScriptNativeBackgroundSet, 0x08012264): when a case assigns a pool constant and then jumps to shared code, e.g. `if (x == N) { ptr = ADDRESS; goto shared; }`, agbcc treats the load as unconditional and safe to hoist above the comparison, since the load itself has no side effects it must order after the branch. The ROM only performs the load once the branch is actually taken. Fix: give the assignment its own goto-labeled block instead of a compound if-body --
     if (x == N) goto caseN;
@@ -2599,11 +2599,18 @@ with the corresponding descriptive symbol.
 
 ### Deferred neighboring lookup
 
-The 0x08011464 hit-region lookup remains in assembly. Several direct typed
-forms correctly index `struct HitRegion`, but agbcc coalesces the result into
-`r0`; the ROM keeps the address in `r1` until its final move to `r0`. No typed
-source shape tested so far reproduces that lifetime naturally, so the routine
-was left intact instead of adding register or expression-order steering.
+**Stale, corrected later the same session**: the paragraph below described
+the 0x08011464 hit-region lookup as remaining in assembly. It has since
+matched: `GameStateGetHitRegion` in `src/hit_region.c`, read through the
+`IwramGameStateRootLayout` struct-root technique documented elsewhere in
+this file. See `src/decompiled.json` for the current entry. Original text,
+kept for the register-coalescing detail in case a similar case recurs: "The
+0x08011464 hit-region lookup remains in assembly. Several direct typed
+forms correctly index `struct HitRegion`, but agbcc coalesces the result
+into `r0`; the ROM keeps the address in `r1` until its final move to `r0`.
+No typed source shape tested so far reproduces that lifetime naturally, so
+the routine was left intact instead of adding register or expression-order
+steering."
 
 ## Actor-part value counting (2026-09-20)
 
@@ -2953,3 +2960,42 @@ added). The out-parameters are `s16 *`, matching the pre-existing caller
 convention in `scene_native.c` rather than the `u16 *` used during
 exploration -- purely a signature choice, the mechanism above is unaffected
 by signedness. `audit_provenance.py` now reports 1824/1824.
+
+## Stale-claim audit, and a new decompile it turned up (2026-09-20)
+
+User-requested scan for "abandoned"/"unmatchable" claims across this file
+and `PRET_AUDIT.md` that might no longer hold, prompted by
+`SpriteRuntimeGetFields8C4` (above) having been exactly that kind of stale
+claim. Found three more, all pure documentation lag -- the underlying
+functions were already matched elsewhere and nobody updated the note that
+called them unresolved: the hit-region lookup ("Deferred neighboring
+lookup" above, actually `GameStateGetHitRegion`, matched earlier this same
+session), the `PmbDeckMake`/`DeckMake`/`ShuffleDeckCopy` trio (matched in
+`src/mapping.c`, unrelated to when this file's "3 of 4 unknowns remain"
+note was written), and `GameStateGetResourceCounter` in `PRET_AUDIT.md`
+(contradicted by its own "now matches" note two paragraphs earlier). All
+three corrected in place rather than deleted, keeping the original text for
+its mechanism detail.
+
+One claim checked out as real and still open, and turned into a new match:
+`sub_08055F4C`, the 84-byte-record resolver referenced at the top of this
+file and again in `PRET_AUDIT.md`'s "left in assembly" note. Both notes
+described the same register swap (agbcc puts the resolved index in r2 and
+the root-slot address in r1; the ROM has them the other way round) and both
+were accurate -- but neither had a formal `src/nonmatching/` candidate, so
+per the four-part correct-deferral bar this was prose, not a deferral.
+Retesting with `agbcc_probe.py --bytes` (the tool fixed earlier this
+session) found the swap was a block-order artifact, not a genuine register
+allocation difference: every prior candidate wrote `if (index == -1) return
+...;` with the compute-and-return path as the implicit fallthrough, which
+is backwards from the ROM's `if (index != -1) { ...; return ...; } return
+(u8 *)-1;` shape (compute-and-return as the immediate fallthrough after
+`bne`, failure path at the very end). Writing the condition the ROM's way
+around puts the index back in r1 and the root-slot address in r2 as a side
+effect of the fallthrough order, and reproduces every remaining instruction
+and register exactly -- confirmed with `--bytes` before touching the real
+build, then with a full `make compare` after integration. Now
+`GameStateFindRecord35E0` in `src/game_state_records.c` (0x08055F4C, 60
+bytes including its literal pool), called from over thirty raw `bl` sites
+across six `asm/code/*.s` files plus two `src/*.c` files, all renamed.
+`audit_provenance.py` now reports 1825/1825.

@@ -4824,6 +4824,12 @@
     "file": "src/game_state_records.c"
   },
   {
+    "addr": "08055F4C",
+    "size": 60,
+    "name": "GameStateFindRecord35E0",
+    "file": "src/game_state_records.c"
+  },
+  {
     "addr": "08055F88",
     "size": 48,
     "name": "GameStateRecordSetField2",
