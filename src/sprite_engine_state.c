@@ -594,18 +594,18 @@ u32 SpriteEngineGetFlags14(void)
     return gSpriteEngineState->flags14;
 }
 
-/** The renderer keeps the active affine-work descriptor immediately before
- * the viewport origin.  Larger affine routines consume this pointer. */
+/** Set the perspective divisor used when projecting sprite points. */
 AT("0007D01C")
-void SpriteEngineSetAffineWork(void *work)
+void SpriteEngineSetProjectionDivisor(s32 divisor)
 {
-    *(void **)((u8 *)gSpriteEngineState + 0x144) = work;
+    gSpriteEngineState->projectionDivisor = divisor;
 }
 
+/** @return The perspective divisor used when projecting sprite points. */
 AT("0007D030")
-void *SpriteEngineGetAffineWork(void)
+s32 SpriteEngineGetProjectionDivisor(void)
 {
-    return *(void **)((u8 *)gSpriteEngineState + 0x144);
+    return gSpriteEngineState->projectionDivisor;
 }
 
 /** Read the renderer's current viewport origin. See
@@ -613,8 +613,8 @@ void *SpriteEngineGetAffineWork(void)
 AT("0007D23C")
 void SpriteGetViewportOrigin(u16 *x, u16 *y)
 {
-    *x = *(u16 *)((u8 *)gSpriteEngineState + 0x148);
-    *y = *(u16 *)((u8 *)gSpriteEngineState + 0x14A);
+    *x = gSpriteEngineState->viewportOriginX;
+    *y = gSpriteEngineState->viewportOriginY;
 }
 
 /** @return The 32-byte entry at index within buffer4 (the OAM entry

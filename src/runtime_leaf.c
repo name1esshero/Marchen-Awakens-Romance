@@ -88,9 +88,8 @@ AT("00018E30") const u8 SoundStopPlayers4And5Tail[2] = {0};
 /** The sprite renderer stores its current origin in its global work block. */
 AT("0007D21C") void SpriteSetViewportOrigin(u16 x,u16 y)
 {
-    u8 *state=(u8 *)gSpriteEngineState;
-    *(u16 *)(state+328)=x;
-    *(u16 *)(state+330)=y;
+    gSpriteEngineState->viewportOriginX=x;
+    gSpriteEngineState->viewportOriginY=y;
 }
 
 extern void HeapFree(void *heap,void *allocation);

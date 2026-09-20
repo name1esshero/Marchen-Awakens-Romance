@@ -5412,9 +5412,9 @@ _0807CE48:
 
 @ 07CF84..07D01C is decompiled as SpriteAffineWriteAlternateAxis(); see src/decompiled.json
 
-@ 07D01C..07D030 is decompiled as SpriteEngineSetAffineWork(); see src/decompiled.json
+@ 07D01C..07D030 is decompiled as SpriteEngineSetProjectionDivisor(); see src/decompiled.json
 
-@ 07D030..07D044 is decompiled as SpriteEngineGetAffineWork(); see src/decompiled.json
+@ 07D030..07D044 is decompiled as SpriteEngineGetProjectionDivisor(); see src/decompiled.json
 
 	.section .rom.0007D044, "ax"
 	.syntax divided

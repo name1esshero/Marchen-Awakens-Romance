@@ -6668,13 +6668,13 @@
   {
     "addr": "0807D01C",
     "size": 20,
-    "name": "SpriteEngineSetAffineWork",
+    "name": "SpriteEngineSetProjectionDivisor",
     "file": "src/sprite_engine_state.c"
   },
   {
     "addr": "0807D030",
     "size": 20,
-    "name": "SpriteEngineGetAffineWork",
+    "name": "SpriteEngineGetProjectionDivisor",
     "file": "src/sprite_engine_state.c"
   },
   {

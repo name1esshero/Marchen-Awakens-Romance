@@ -2447,7 +2447,11 @@ reference for later source-shape work.
 
 The sprite-state values at offsets 0x144..0x14B are now identified as a signed
 projection divisor followed by signed X/Y viewport origins. They are used by
-`SpriteProjectPoint`, `SpriteSetViewportOrigin`, and the corresponding getter.
+`SpriteProjectPoint`, `SpriteEngineSetProjectionDivisor`,
+`SpriteEngineGetProjectionDivisor`, `SpriteSetViewportOrigin`, and the
+corresponding origin getter. Earlier `SetAffineWork`/`GetAffineWork` names were
+incorrect pointer-based guesses and have been replaced with the verified
+numeric role.
 
 The prior projection reconstruction forced its running origin into r4.
 Removing that constraint preserves the 104-byte function size but rotates six
