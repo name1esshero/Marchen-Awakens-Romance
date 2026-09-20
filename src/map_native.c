@@ -4,6 +4,7 @@
  * retained verbatim, without assuming 0x7FFF means an ordinary success code.
  */
 #include "kmp.h"
+#include "gba/io_reg.h"
 #include "hit_region.h"
 #include "runtime_misc.h"
 #include "rom_section.h"
@@ -31,20 +32,21 @@ AT("00012264") s32 ScriptNativeBackgroundSet(u32 count,const union MapArgument *
     if(args[0].integer==3)goto case3Vram;
     goto defaultVram;
 case2Vram:
-    tileDestination=(void *)0x06008000;
+    tileDestination=BG_CHAR_ADDR(2);
     goto selectedVram;
 case3Vram:
-    tileDestination=(void *)0x0600C000;
+    tileDestination=BG_CHAR_ADDR(3);
     goto selectedVram;
 defaultVram:
-    tileDestination=(void *)0x06000000;
+    tileDestination=BG_CHAR_ADDR(0);
 selectedVram:
     strcpy(resource,args[3].string);
     strcat(resource,sText_KmpExtension);
     KmpLoadResource(resource,tileDestination,args[0].integer,0,
                  args[1].integer,args[2].integer,3);
     view=&gKmpViewports[args[0].integer];
-    KmpRenderViewport(view,args[4].integer<<16,args[5].integer<<16);
+    KmpRenderViewport(view,args[4].integer<<KMP_FIXED_SHIFT,
+                      args[5].integer<<KMP_FIXED_SHIFT);
     return 0x7FFF;
 }
 

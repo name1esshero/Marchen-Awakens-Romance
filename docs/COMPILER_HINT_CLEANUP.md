@@ -547,3 +547,14 @@ flow were tested. None matched without changing other instructions. The
 constraint therefore remains pending a better source model; the failed probes
 are evidence about those spellings only, not proof that original C required a
 fixed register.
+
+## Reload a mutable root through its real volatile indirection
+
+`ScriptNativeClearMapHalfwords()` (0x08012D64) originally reloads the generated
+map root pointer on every loop iteration. Declaring the root as an ordinary
+`u8 **` let agbcc hoist the dereference and forced the reconstruction to pin
+that pointer to `r6`. The neighboring copy routine already exposed the actual
+type: `u8 * volatile *`. Applying that type to the clear routine expresses the
+mutable IWRAM pointer slot, naturally retains the reload, and reproduces the
+original allocation without a forced register. The 256-entry count, 16.16
+step, and record offsets are now named constants as well.

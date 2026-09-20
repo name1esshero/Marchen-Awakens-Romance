@@ -11,6 +11,8 @@
 .set gMapGenerationRoot, 0x03003FDC
 .global gMapGenerationSeed
 .set gMapGenerationSeed, 0x03004044
+.global gKmpViewports
+.set gKmpViewports, 0x03003BC4
 .global gMapStateOffset
 .set gMapStateOffset, 0x000032F4
 .global gSecondaryRuntime

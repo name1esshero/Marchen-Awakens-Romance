@@ -9,6 +9,12 @@
 extern u8 gIwramBase[];
 extern u8 gMapGenerationRootOffset[];
 
+#define MAP_HALFWORD_COPY_LIMIT 40
+#define MAP_HALFWORD_RECORD_OFFSET 0x426A
+#define MAP_HALFWORD_CLEAR_OFFSET 0x31D0
+#define MAP_HALFWORD_RECORD_COUNT 256
+#define FIXED_16_16_ONE (1 << 16)
+
 /** Map generation seed random using the recovered runtime layout. */
 AT("00071DD4")
 void MapGenerationSeedRandom(u32 seed) { gMapGenerationSeed = seed; }
@@ -982,13 +988,13 @@ AT("00012D04") s32 ScriptNativeCopyMapHalfwords(u32 count, const s32 *args,
 
     iteration.source = args;
     GameStateClearRecord426A();
-    if (itemCount > 40)
-        itemCount = 40;
+    if (itemCount > MAP_HALFWORD_COPY_LIMIT)
+        itemCount = MAP_HALFWORD_COPY_LIMIT;
     index = 0;
     if (index < itemCount) {
         root = (u8 * volatile *)&gMapGenerationRoot;
-        destinationOffset = 0x426A;
-        fixedIndex = 0x10000;
+        destinationOffset = MAP_HALFWORD_RECORD_OFFSET;
+        fixedIndex = FIXED_16_16_ONE;
         source = iteration.source;
         iteration.step = fixedIndex;
         do {
@@ -1027,7 +1033,7 @@ AT("00012D64") s32 ScriptNativeClearMapHalfwords(u32 count, const s32 *args,
     s32 fixed;
     s32 step;
     s32 value;
-    register u8 **root asm("r6");
+    u8 * volatile *root;
     s32 offset;
     register union {
         u8 *base;
@@ -1036,8 +1042,8 @@ AT("00012D64") s32 ScriptNativeClearMapHalfwords(u32 count, const s32 *args,
 
     i = 0;
     root = &gMapGenerationRoot;
-    offset = 0x31D0;
-    fixed = 0x10000;
+    offset = MAP_HALFWORD_CLEAR_OFFSET;
+    fixed = FIXED_16_16_ONE;
     value = 0;
     step = fixed;
     do {
@@ -1046,7 +1052,7 @@ AT("00012D64") s32 ScriptNativeClearMapHalfwords(u32 count, const s32 *args,
         temporary.next = fixed;
         fixed += step;
         i = temporary.next >> 16;
-    } while (i <= 255);
+    } while (i < MAP_HALFWORD_RECORD_COUNT);
     return 1;
 }
 

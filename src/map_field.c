@@ -7,6 +7,7 @@
  * The original 16-byte filename buffer and unchecked copies are preserved.
  */
 #include "kmp.h"
+#include "gba/io_reg.h"
 #include "game_state.h"
 #include "map_events.h"
 #include "rom_section.h"
@@ -68,12 +69,12 @@ AT("000032B8") void KmpLoadField(const char *name,s16 x,s16 y)
  strcpy(resource,name);
  strcat(resource,sText_KmpExtension);
  strupr(resource);
- KmpLoadResource(resource,(void *)0x06000000,0,0,0,0,3);
- KmpLoadResource(resource,(void *)0x06000000,1,1,0,0,0);
+ KmpLoadResource(resource,BG_CHAR_ADDR(0),0,0,0,0,3);
+ KmpLoadResource(resource,BG_CHAR_ADDR(0),1,1,0,0,0);
  view=gKmpViewports;
- px*=65536;py*=65536;
+ px*=KMP_FIXED_ONE;py*=KMP_FIXED_ONE;
  KmpRenderViewport(view,px,py);
- view=(struct KmpViewport *)((u8 *)view+0xFC);
+ view++;
  KmpRenderViewport(view,px,py);
 }
 /** Kmp set clip for the active map viewport. */

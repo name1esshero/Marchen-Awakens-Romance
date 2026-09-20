@@ -23,6 +23,7 @@ class MapFieldTests(unittest.TestCase):
 const char gMapArchiveKmpExtension[] = ".KMP";
 static int phase;
 static int expectedX,expectedY;
+struct KmpViewport gKmpViewports[2];
 struct TaskManager gMainTaskManager;
 static union { void *alignment; u8 bytes[256]; } eventStorage;
 static u32 eventCompletion;
@@ -42,7 +43,7 @@ void KmpLoadResource(const char *name,void *vram,s32 slot,s32 plane,s32 palette,
  assert(flags==(slot==0?3:0));phase++;
 }
 void KmpRenderViewport(struct KmpViewport *view,s32 x,s32 y) {
- assert((uintptr_t)view==0x03003BC4+(phase-3)*0xFC);
+ assert(view==&gKmpViewports[phase-3]);
  assert(x==expectedX && y==expectedY);phase++;
 }
 u32 GameStateGetResourceCounter(void) { return 7; }

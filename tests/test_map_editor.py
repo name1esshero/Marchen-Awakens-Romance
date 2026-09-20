@@ -112,6 +112,31 @@ class MapCodecTests(unittest.TestCase):
         names={item['display_name'] for item in child['sprite_candidates']}
         self.assertIn('Dorothy (moving)',names)
 
+    def test_map_event_sources_follow_verified_script_chains(self):
+        project=Project(ROOT)
+        data=project.load('MAP01_3A.KMP')
+        sources={item['script']:item for item in data['event_sources']}
+        self.assertIn('MAP01_3A.SPC',sources)
+        self.assertIn('CH_M01_3.SPC',sources)
+        self.assertIn('EV_BA03.SPC',sources)
+        self.assertIn('EV_BA04.SPC',sources)
+        self.assertEqual(sources['EV_BA03.SPC']['relation'],'script_chain')
+        self.assertEqual(sources['EV_BA03.SPC']['confidence'],'verified')
+        self.assertGreater(sources['EV_BA03.SPC']['depth'],0)
+        self.assertEqual(sources['EV_BA03.SPC']['event_counts']['sprite_resources'],2)
+        self.assertEqual(sources['EV_BA03.SPC']['event_counts']['sprite_moves'],1)
+
+    def test_event_model_has_stable_source_ids(self):
+        data=Project(ROOT).script_data('MAP01_A.SPC')
+        model=data['event_model']
+        self.assertEqual(model['version'],1)
+        self.assertEqual(model['script'],'MAP01_A.SPC')
+        self.assertEqual(len(model['items']),len(data['calls']))
+        self.assertEqual(len({item['id'] for item in model['items']}),len(model['items']))
+        for item,call in zip(model['items'],data['calls']):
+            self.assertEqual(item['id'],call['event_id'])
+            self.assertEqual(item['source_offset'],call['offset'])
+
     def test_numbered_map_exposes_companion_spawn_and_character_scripts(self):
         data=Project(ROOT).load('MAP01_3A.KMP')
         relations={item['script']:item for item in data['script_associations']}

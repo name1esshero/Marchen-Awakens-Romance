@@ -3,6 +3,8 @@
 #include "gba/types.h"
 
 #define KMP_TILE_SIZE 8
+#define KMP_FIXED_SHIFT 16
+#define KMP_FIXED_ONE (1 << KMP_FIXED_SHIFT)
 
 enum
 {
@@ -52,7 +54,7 @@ struct KmpViewport
 /* Fixed IWRAM viewport slots, indexed by struct size (0xFC bytes each).
  * Index 0 is the primary field viewport that collision/attribute probing
  * reads from; KmpLoadField also uses index 1 for the second rendered plane. */
-#define gKmpViewports ((struct KmpViewport *)0x03003BC4)
+extern struct KmpViewport gKmpViewports[];
 
 void KmpInitViewport(struct KmpViewport *, const struct KmpHeader *, u16 *, u32, u32, u32);
 void ApplyTileRemainderMask(void *destination, u32 count);

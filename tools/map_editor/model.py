@@ -148,7 +148,12 @@ class Project:
         self.tile_resolution_data=read(resolution_path) if resolution_path.exists() else {'version':1,'maps':{}}
         if self.tile_resolution_data.get('version')!=1:raise ValueError('Unsupported tile-resolution revision')
         catalog_path=self.root/'maps/script_catalog.json'
-        self.script_catalog=read(catalog_path) if catalog_path.exists() else {'scripts':[],'totals':{}}
+        self.script_catalog=(read(catalog_path) if catalog_path.exists() else
+                             {'version':2,'scripts':[],'totals':{}})
+        if self.script_catalog.get('version') not in (1,2):
+            raise ValueError('Unsupported script-catalog revision')
+        self.script_summaries={item['name']:item for item in self.script_catalog['scripts']}
+        self.script_links=self.script_catalog.get('script_links',{})
         self.incoming={}
         for script in self.script_catalog['scripts']:
             for link in script['field_loads']:
@@ -157,6 +162,36 @@ class Project:
                     self.incoming.setdefault(destination+'.KMP',[]).append(dict(link,script=script['name']))
         self.unsupported={}
         self.sprite_manifests={}
+
+    def map_event_sources(self,name):
+        """Return the scripts that can contribute events to one map.
+
+        Direct associations retain their verified/inferred confidence. Links
+        reached through decoded ``chain``/``exec`` calls are verified script
+        dependencies, but no claim is made that every conditional path runs.
+        """
+        result=[];seen=set();queue=[]
+        for item in self.map_script_associations(name):
+            queue.append(dict(item,depth=0,parent=None))
+        while queue and len(result)<64:
+            item=queue.pop(0);script=item['script']
+            if script in seen or script not in self.scripts:continue
+            seen.add(script)
+            summary=self.script_summaries.get(script,{})
+            item=dict(item,event_counts={
+                'field_loads':len(summary.get('field_loads',[])),
+                'sprite_resources':len(summary.get('sprite_resources',[])),
+                'sprite_properties':len(summary.get('sprite_properties',[])),
+                'sprite_moves':len(summary.get('sprite_moves',[])),
+            })
+            result.append(item)
+            for link in self.script_links.get(script,[]):
+                target=link.get('script')
+                if isinstance(target,str) and target in self.scripts and target not in seen:
+                    queue.append(dict(script=target,relation='script_chain',
+                        confidence='verified',depth=item['depth']+1,parent=script,
+                        evidence=f"decoded {link.get('operation','script')} call at CODE +0x{link['offset']:X}"))
+        return result
 
     def map_script_associations(self,name):
         """Expose proven and filename-family scripts associated with a field."""
@@ -264,6 +299,8 @@ class Project:
             doc=read(path) if path.exists() else dict(version=1,source_sha256=sha(original),arguments={})
             result=script_events.apply(blob,original,doc)
         calls=script_events.calls(result)
+        for call in calls:
+            call['event_id']=f"{name}:{call['offset']:08X}"
         placements=initial_sprite_placements(calls)
         for item in placements:
             item['preview']=self.sprite_preview(item['container'],item['resource'],item['animation'])
@@ -281,9 +318,18 @@ class Project:
             candidate['dynamic']=not isinstance(item.get('sprite'),int) or not isinstance(item.get('resource'),str)
             candidates.append(candidate)
         revision_bytes=original+(self.root/e['text']).read_bytes()+json.dumps(doc,sort_keys=True).encode()+(override.read_bytes() if has_override else b'')
+        event_items=[]
+        for index,call in enumerate(calls):
+            function=call['function']
+            event_class=('sprite' if re.match(r'^Spr(?:Init|Chg|Set|Move|Free)',function) else
+                'hit' if re.match(r'^Hit(?:Init|HitRect|HitHitRect|Set|Free)',function) else
+                'field' if function=='FldSet' else 'other')
+            event_items.append(dict(id=call['event_id'],event_class=event_class,
+                function=function,source_offset=call['offset'],call_index=index))
         return dict(name=name,revision=sha(revision_bytes),
                     document=doc,calls=calls,analysis=script_events.semantic_summary(calls),sprite_placements=placements,
-                    sprite_candidates=candidates,text_path=e['text'],has_marscript_override=has_override)
+                    sprite_candidates=candidates,event_model=dict(version=1,script=name,items=event_items),
+                    text_path=e['text'],has_marscript_override=has_override)
 
     def marscript_data(self,name):
         """The Scripts tab's view of one script: readable marscript text, plus
@@ -391,6 +437,7 @@ class Project:
                     tiles=[[v for row in t for v in row] for t in mapped_images.tiles_from_bytes(tile_raw)],palette=colors,
                     palette_base=palette_base,palette_banks=entry['palette_banks'],scripts=associated,
                     script_associations=script_associations,
+                    event_sources=self.map_event_sources(name),
                     source=member['path'],unresolved=unresolved,resolved_tiles=resolved_tiles,resolved_cells=resolved_cells,
                     runtime_contexts=self.runtime_contexts(name),
                     incoming_field_loads=self.incoming.get(name,[]),_base=original)

@@ -1,11 +1,4436 @@
 {
-  "version": 1,
+  "version": 2,
   "scope": "Static native call sites; branches are not executed",
   "totals": {
     "field_loads": 113,
     "sprite_resources": 201,
     "sprite_properties": 1690,
-    "sprite_moves": 78
+    "sprite_moves": 78,
+    "script_links": 667
+  },
+  "script_links": {
+    "BTIM00.SPC": [
+      {
+        "offset": 781,
+        "operation": "chain",
+        "script": "BTI_PSET.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTIM01_3.SPC": [
+      {
+        "offset": 711,
+        "operation": "chain",
+        "script": "BTI_PSET.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTIM03.SPC": [
+      {
+        "offset": 67,
+        "operation": "chain",
+        "script": "EV_JA02.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTIM04.SPC": [
+      {
+        "offset": 3226,
+        "operation": "chain",
+        "script": "BTI_PSET.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTIM04_4.SPC": [
+      {
+        "offset": 1382,
+        "operation": "chain",
+        "script": "BTI_PSET.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTIM05.SPC": [
+      {
+        "offset": 572,
+        "operation": "chain",
+        "script": "BTI_PSET.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTIM07.SPC": [
+      {
+        "offset": 4076,
+        "operation": "chain",
+        "script": "EV_GO04.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 4203,
+        "operation": "chain",
+        "script": "BTI_PSET.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTIM24_1.SPC": [
+      {
+        "offset": 2220,
+        "operation": "chain",
+        "script": "BTI_PSET.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTIM24_2.SPC": [
+      {
+        "offset": 1912,
+        "operation": "chain",
+        "script": "BTI_PSET.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTIM24_4.SPC": [
+      {
+        "offset": 1830,
+        "operation": "chain",
+        "script": "BTI_PSET.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTIM25_1.SPC": [
+      {
+        "offset": 3239,
+        "operation": "chain",
+        "script": "BTI_PSET.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTIM25_2.SPC": [
+      {
+        "offset": 2037,
+        "operation": "chain",
+        "script": "BTI_PSET.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTIM25_4.SPC": [
+      {
+        "offset": 5305,
+        "operation": "chain",
+        "script": "BTI_PSET.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTIM26_1.SPC": [
+      {
+        "offset": 2233,
+        "operation": "chain",
+        "script": "BTI_PSET.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTIM26_3.SPC": [
+      {
+        "offset": 3114,
+        "operation": "chain",
+        "script": "BTI_PSET.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTIM26_5.SPC": [
+      {
+        "offset": 6649,
+        "operation": "chain",
+        "script": "BTI_PSET.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTIM40.SPC": [
+      {
+        "offset": 781,
+        "operation": "chain",
+        "script": "BTI_PSET.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTIM41.SPC": [
+      {
+        "offset": 753,
+        "operation": "chain",
+        "script": "BTI_PSET.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTIM42.SPC": [
+      {
+        "offset": 1843,
+        "operation": "chain",
+        "script": "BTI_PSET.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTI_DUNG.SPC": [
+      {
+        "offset": 604,
+        "operation": "chain",
+        "script": "D0_ENEMY.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 651,
+        "operation": "chain",
+        "script": "D1_ENEMY.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 698,
+        "operation": "chain",
+        "script": "D2_ENEMY.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 745,
+        "operation": "chain",
+        "script": "D3_ENEMY.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 792,
+        "operation": "chain",
+        "script": "D4_ENEMY.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTI_N.SPC": [
+      {
+        "offset": 588,
+        "operation": "chain",
+        "script": "BTIM00.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 692,
+        "operation": "chain",
+        "script": "BTIM01_3.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 793,
+        "operation": "chain",
+        "script": "BTIM03.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 894,
+        "operation": "chain",
+        "script": "BTIM04.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 998,
+        "operation": "chain",
+        "script": "BTIM04_4.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1102,
+        "operation": "chain",
+        "script": "BTIM04_6.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1203,
+        "operation": "chain",
+        "script": "BTIM05.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1304,
+        "operation": "chain",
+        "script": "BTIM07.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1408,
+        "operation": "chain",
+        "script": "BTIM24_1.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1512,
+        "operation": "chain",
+        "script": "BTIM24_2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1616,
+        "operation": "chain",
+        "script": "BTIM24_3.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1720,
+        "operation": "chain",
+        "script": "BTIM24_4.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1824,
+        "operation": "chain",
+        "script": "BTIM25_1.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1928,
+        "operation": "chain",
+        "script": "BTIM25_2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2032,
+        "operation": "chain",
+        "script": "BTIM25_3.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2136,
+        "operation": "chain",
+        "script": "BTIM25_4.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2240,
+        "operation": "chain",
+        "script": "BTIM25_5.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2344,
+        "operation": "chain",
+        "script": "BTIM26_1.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2448,
+        "operation": "chain",
+        "script": "BTIM26_2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2552,
+        "operation": "chain",
+        "script": "BTIM26_3.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2656,
+        "operation": "chain",
+        "script": "BTIM26_4.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2760,
+        "operation": "chain",
+        "script": "BTIM26_5.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2864,
+        "operation": "chain",
+        "script": "BTIM26_6.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2965,
+        "operation": "chain",
+        "script": "BTIM40.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3066,
+        "operation": "chain",
+        "script": "BTIM41.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3167,
+        "operation": "chain",
+        "script": "BTIM42.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTI_PSET.SPC": [
+      {
+        "offset": 1222,
+        "operation": "chain",
+        "script": "ENE_SET.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTL_ESCP.SPC": [
+      {
+        "offset": 970,
+        "operation": "chain",
+        "script": "BGM_SET.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTOM00.SPC": [
+      {
+        "offset": 29,
+        "operation": "chain",
+        "script": "BTO_DEF.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTOM01_3.SPC": [
+      {
+        "offset": 84,
+        "operation": "exec",
+        "script": "BTO_DEF2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 125,
+        "operation": "chain",
+        "script": "EV_BA02.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 171,
+        "operation": "chain",
+        "script": "BTO_DEF.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 245,
+        "operation": "chain",
+        "script": "BTO_DEF.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTOM03.SPC": [
+      {
+        "offset": 67,
+        "operation": "exec",
+        "script": "BTO_DEF2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 108,
+        "operation": "chain",
+        "script": "EV_JA03.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 155,
+        "operation": "exec",
+        "script": "BTO_DEF2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 196,
+        "operation": "chain",
+        "script": "EV_JA04.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTOM04.SPC": [
+      {
+        "offset": 29,
+        "operation": "chain",
+        "script": "BTO_DEF.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTOM04_4.SPC": [
+      {
+        "offset": 29,
+        "operation": "chain",
+        "script": "BTO_DEF.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTOM04_6.SPC": [
+      {
+        "offset": 67,
+        "operation": "exec",
+        "script": "BTO_DEF2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 109,
+        "operation": "chain",
+        "script": "EV_ICE11.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 156,
+        "operation": "exec",
+        "script": "BTO_DEF2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 198,
+        "operation": "chain",
+        "script": "EV_ICE10.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTOM05.SPC": [
+      {
+        "offset": 95,
+        "operation": "exec",
+        "script": "BTO_DEF2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 136,
+        "operation": "chain",
+        "script": "G_EV024.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 248,
+        "operation": "exec",
+        "script": "BTO_DEF2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 289,
+        "operation": "chain",
+        "script": "G_EV025.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 335,
+        "operation": "chain",
+        "script": "BTO_DEF.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTOM07.SPC": [
+      {
+        "offset": 46,
+        "operation": "chain",
+        "script": "BTO_DEF.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 92,
+        "operation": "chain",
+        "script": "BTO_DEF.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 175,
+        "operation": "chain",
+        "script": "BTO_DEF.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 222,
+        "operation": "exec",
+        "script": "BTO_DEF2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 263,
+        "operation": "chain",
+        "script": "EV_GO05.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 309,
+        "operation": "chain",
+        "script": "BTO_DEF.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTOM07_3.SPC": [
+      {
+        "offset": 30,
+        "operation": "exec",
+        "script": "BTO_DEF2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 71,
+        "operation": "chain",
+        "script": "EV_GO11.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTOM24_1.SPC": [
+      {
+        "offset": 29,
+        "operation": "chain",
+        "script": "BTO_DEF.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTOM24_2.SPC": [
+      {
+        "offset": 29,
+        "operation": "chain",
+        "script": "BTO_DEF.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTOM24_4.SPC": [
+      {
+        "offset": 95,
+        "operation": "exec",
+        "script": "BTO_DEF2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 137,
+        "operation": "chain",
+        "script": "EV_T1KIL.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 183,
+        "operation": "chain",
+        "script": "BTO_DEF.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTOM25_1.SPC": [
+      {
+        "offset": 29,
+        "operation": "chain",
+        "script": "BTO_DEF.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTOM25_2.SPC": [
+      {
+        "offset": 29,
+        "operation": "chain",
+        "script": "BTO_DEF.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTOM25_4.SPC": [
+      {
+        "offset": 29,
+        "operation": "chain",
+        "script": "BTO_DEF.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTOM25_5.SPC": [
+      {
+        "offset": 30,
+        "operation": "exec",
+        "script": "BTO_DEF2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 72,
+        "operation": "chain",
+        "script": "EV_T2KIL.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTOM26_1.SPC": [
+      {
+        "offset": 29,
+        "operation": "chain",
+        "script": "BTO_DEF.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTOM26_2.SPC": [
+      {
+        "offset": 30,
+        "operation": "exec",
+        "script": "BTO_DEF2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 72,
+        "operation": "chain",
+        "script": "EV_T3KIL.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTOM26_3.SPC": [
+      {
+        "offset": 29,
+        "operation": "chain",
+        "script": "BTO_DEF.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTOM26_5.SPC": [
+      {
+        "offset": 29,
+        "operation": "chain",
+        "script": "BTO_DEF.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTOM26_6.SPC": [
+      {
+        "offset": 30,
+        "operation": "chain",
+        "script": "EV_T4KIL.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTOM40.SPC": [
+      {
+        "offset": 66,
+        "operation": "exec",
+        "script": "BTO_DEF.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 108,
+        "operation": "chain",
+        "script": "EV_GTOB2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 149,
+        "operation": "chain",
+        "script": "BTO_DEF.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTOM41.SPC": [
+      {
+        "offset": 29,
+        "operation": "chain",
+        "script": "BTO_DEF.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTOM42.SPC": [
+      {
+        "offset": 47,
+        "operation": "exec",
+        "script": "BTO_DEF2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 88,
+        "operation": "chain",
+        "script": "EV_AL03.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 134,
+        "operation": "chain",
+        "script": "BTO_DEF.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTO_DEF.SPC": [
+      {
+        "offset": 650,
+        "operation": "chain",
+        "script": "ENE_SET.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1507,
+        "operation": "chain",
+        "script": "BGM_SET.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTO_DUNG.SPC": [
+      {
+        "offset": 704,
+        "operation": "chain",
+        "script": "ENE_SET.SPC",
+        "dynamic": false
+      }
+    ],
+    "BTO_N.SPC": [
+      {
+        "offset": 112,
+        "operation": "chain",
+        "script": "BTOM00.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 216,
+        "operation": "chain",
+        "script": "BTOM01_3.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 317,
+        "operation": "chain",
+        "script": "BTOM03.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 418,
+        "operation": "chain",
+        "script": "BTOM04.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 522,
+        "operation": "chain",
+        "script": "BTOM04_4.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 626,
+        "operation": "chain",
+        "script": "BTOM04_6.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 727,
+        "operation": "chain",
+        "script": "BTOM05.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 828,
+        "operation": "chain",
+        "script": "BTOM07.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 932,
+        "operation": "chain",
+        "script": "BTOM07_3.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1036,
+        "operation": "chain",
+        "script": "BTOM24_1.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1140,
+        "operation": "chain",
+        "script": "BTOM24_2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1244,
+        "operation": "chain",
+        "script": "BTOM24_3.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1348,
+        "operation": "chain",
+        "script": "BTOM24_4.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1452,
+        "operation": "chain",
+        "script": "BTOM25_1.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1556,
+        "operation": "chain",
+        "script": "BTOM25_2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1660,
+        "operation": "chain",
+        "script": "BTOM25_3.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1764,
+        "operation": "chain",
+        "script": "BTOM25_4.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1868,
+        "operation": "chain",
+        "script": "BTOM25_5.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1972,
+        "operation": "chain",
+        "script": "BTOM26_1.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2076,
+        "operation": "chain",
+        "script": "BTOM26_2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2180,
+        "operation": "chain",
+        "script": "BTOM26_3.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2284,
+        "operation": "chain",
+        "script": "BTOM26_4.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2388,
+        "operation": "chain",
+        "script": "BTOM26_5.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2492,
+        "operation": "chain",
+        "script": "BTOM26_6.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2593,
+        "operation": "chain",
+        "script": "BTOM40.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2694,
+        "operation": "chain",
+        "script": "BTOM41.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2795,
+        "operation": "chain",
+        "script": "BTOM42.SPC",
+        "dynamic": false
+      }
+    ],
+    "CH_ESC.SPC": [
+      {
+        "offset": 638,
+        "operation": "chain",
+        "script": "OPEN.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 987,
+        "operation": "chain",
+        "script": "EV_START.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3020,
+        "operation": "chain",
+        "script": "EV_JA02.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3288,
+        "operation": "chain",
+        "script": "EV_JA04.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 4257,
+        "operation": "chain",
+        "script": "EV_AL02.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 4782,
+        "operation": "chain",
+        "script": "EV_ICE01.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 5055,
+        "operation": "chain",
+        "script": "EV_ICE09.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 5324,
+        "operation": "chain",
+        "script": "EV_ICE11.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 5848,
+        "operation": "chain",
+        "script": "G_EV010.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 6110,
+        "operation": "chain",
+        "script": "G_EV020.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 6391,
+        "operation": "chain",
+        "script": "EV_MON01.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 6667,
+        "operation": "chain",
+        "script": "G_EV021.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 6935,
+        "operation": "chain",
+        "script": "G_EV023.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 7208,
+        "operation": "chain",
+        "script": "EV_MON03.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 7473,
+        "operation": "chain",
+        "script": "EV_MON04.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 7999,
+        "operation": "chain",
+        "script": "G_EV002.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 8260,
+        "operation": "exec",
+        "script": "MAP06_2A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 8301,
+        "operation": "chain",
+        "script": "G_EV005.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 8823,
+        "operation": "chain",
+        "script": "G_EV030.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 9361,
+        "operation": "chain",
+        "script": "EV_VE01.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 9643,
+        "operation": "chain",
+        "script": "EV_GO01.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 9913,
+        "operation": "chain",
+        "script": "EV_GO06.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 10193,
+        "operation": "chain",
+        "script": "EV_GO12.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 11229,
+        "operation": "chain",
+        "script": "MAP24_4A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 11615,
+        "operation": "chain",
+        "script": "MAP25_5A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 12001,
+        "operation": "chain",
+        "script": "MAP26_2A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 12931,
+        "operation": "chain",
+        "script": "END2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 13199,
+        "operation": "chain",
+        "script": "SROLL.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 15577,
+        "operation": "chain",
+        "script": "BTLTEST.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 16059,
+        "operation": "chain",
+        "script": "FULL_ITM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 16559,
+        "operation": "chain",
+        "script": "DBG_FACE.SPC",
+        "dynamic": false
+      }
+    ],
+    "CH_M00A.SPC": [
+      {
+        "offset": 342,
+        "operation": "chain",
+        "script": "G_VS_R.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 434,
+        "operation": "chain",
+        "script": "D_VS_R.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 958,
+        "operation": "chain",
+        "script": "EV_RT02.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1729,
+        "operation": "chain",
+        "script": "EV_RT01.SPC",
+        "dynamic": false
+      }
+    ],
+    "CH_M01_3.SPC": [
+      {
+        "offset": 46,
+        "operation": "chain",
+        "script": "EV_BA01.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 129,
+        "operation": "chain",
+        "script": "EV_BA04.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 897,
+        "operation": "chain",
+        "script": "EV_BA03.SPC",
+        "dynamic": false
+      }
+    ],
+    "CH_M05A.SPC": [
+      {
+        "offset": 2090,
+        "operation": "chain",
+        "script": "EV_MON03.SPC",
+        "dynamic": false
+      }
+    ],
+    "CH_M08A.SPC": [
+      {
+        "offset": 1033,
+        "operation": "chain",
+        "script": "J_VS_M.SPC",
+        "dynamic": false
+      }
+    ],
+    "CH_M09A.SPC": [
+      {
+        "offset": 2821,
+        "operation": "chain",
+        "script": "SHOPPA03.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 8610,
+        "operation": "chain",
+        "script": "SHOPPA01.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 8657,
+        "operation": "chain",
+        "script": "SHOPPA02.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 8704,
+        "operation": "chain",
+        "script": "SHOPPA04.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 8751,
+        "operation": "chain",
+        "script": "SHOPPA05.SPC",
+        "dynamic": false
+      }
+    ],
+    "CH_M10.SPC": [
+      {
+        "offset": 75,
+        "operation": "chain",
+        "script": "SHOPPE01.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 150,
+        "operation": "chain",
+        "script": "SHOPPE02.SPC",
+        "dynamic": false
+      }
+    ],
+    "CH_M11.SPC": [
+      {
+        "offset": 4872,
+        "operation": "chain",
+        "script": "G_EV043.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 4955,
+        "operation": "chain",
+        "script": "G_EV044.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 5038,
+        "operation": "chain",
+        "script": "G_EV052.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 5121,
+        "operation": "chain",
+        "script": "G_EV063.SPC",
+        "dynamic": false
+      }
+    ],
+    "D0_ENEMY.SPC": [
+      {
+        "offset": 3796,
+        "operation": "chain",
+        "script": "BTI_PSET.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3913,
+        "operation": "chain",
+        "script": "ENE_SET.SPC",
+        "dynamic": false
+      }
+    ],
+    "D0_ITEM.SPC": [
+      {
+        "offset": 2583,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      }
+    ],
+    "D0_MAKE.SPC": [
+      {
+        "offset": 660,
+        "operation": "chain",
+        "script": "D0_BOSS.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1121,
+        "operation": "chain",
+        "script": "D0_BOSS.SPC",
+        "dynamic": false
+      }
+    ],
+    "D1_ENEMY.SPC": [
+      {
+        "offset": 7426,
+        "operation": "chain",
+        "script": "BTI_PSET.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 7543,
+        "operation": "chain",
+        "script": "ENE_SET.SPC",
+        "dynamic": false
+      }
+    ],
+    "D1_ITEM.SPC": [
+      {
+        "offset": 6598,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      }
+    ],
+    "D1_MAKE.SPC": [
+      {
+        "offset": 660,
+        "operation": "chain",
+        "script": "D1_BOSS.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1121,
+        "operation": "chain",
+        "script": "D1_BOSS.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1582,
+        "operation": "chain",
+        "script": "D1_BOSS.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2043,
+        "operation": "chain",
+        "script": "D1_BOSS.SPC",
+        "dynamic": false
+      }
+    ],
+    "D2_ENEMY.SPC": [
+      {
+        "offset": 11476,
+        "operation": "chain",
+        "script": "BTI_PSET.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 11593,
+        "operation": "chain",
+        "script": "ENE_SET.SPC",
+        "dynamic": false
+      }
+    ],
+    "D2_ITEM.SPC": [
+      {
+        "offset": 16648,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      }
+    ],
+    "D2_MAKE.SPC": [
+      {
+        "offset": 660,
+        "operation": "chain",
+        "script": "D2_BOSS.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1121,
+        "operation": "chain",
+        "script": "D2_BOSS.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1582,
+        "operation": "chain",
+        "script": "D2_BOSS.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2043,
+        "operation": "chain",
+        "script": "D2_BOSS.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2504,
+        "operation": "chain",
+        "script": "D2_BOSS.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2965,
+        "operation": "chain",
+        "script": "D2_BOSS.SPC",
+        "dynamic": false
+      }
+    ],
+    "D3_ENEMY.SPC": [
+      {
+        "offset": 15162,
+        "operation": "chain",
+        "script": "BTI_PSET.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 15279,
+        "operation": "chain",
+        "script": "ENE_SET.SPC",
+        "dynamic": false
+      }
+    ],
+    "D3_ITEM.SPC": [
+      {
+        "offset": 20533,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      }
+    ],
+    "D3_MAKE.SPC": [
+      {
+        "offset": 660,
+        "operation": "chain",
+        "script": "D3_BOSS.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1121,
+        "operation": "chain",
+        "script": "D3_BOSS.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1582,
+        "operation": "chain",
+        "script": "D3_BOSS.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2043,
+        "operation": "chain",
+        "script": "D3_BOSS.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2504,
+        "operation": "chain",
+        "script": "D3_BOSS.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2965,
+        "operation": "chain",
+        "script": "D3_BOSS.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3426,
+        "operation": "chain",
+        "script": "D3_BOSS.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3887,
+        "operation": "chain",
+        "script": "D3_BOSS.SPC",
+        "dynamic": false
+      }
+    ],
+    "D4_ENEMY.SPC": [
+      {
+        "offset": 18434,
+        "operation": "chain",
+        "script": "PHANTOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 18889,
+        "operation": "chain",
+        "script": "BTI_PSET.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 19006,
+        "operation": "chain",
+        "script": "ENE_SET.SPC",
+        "dynamic": false
+      }
+    ],
+    "D4_ITEM.SPC": [
+      {
+        "offset": 21438,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      }
+    ],
+    "D4_MAKE.SPC": [
+      {
+        "offset": 660,
+        "operation": "chain",
+        "script": "D4_BOSS.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1144,
+        "operation": "chain",
+        "script": "D4_BOSS.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1628,
+        "operation": "chain",
+        "script": "D4_BOSS.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2112,
+        "operation": "chain",
+        "script": "D4_BOSS.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2596,
+        "operation": "chain",
+        "script": "D4_BOSS.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3080,
+        "operation": "chain",
+        "script": "D4_BOSS.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3564,
+        "operation": "chain",
+        "script": "D4_BOSS.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 4048,
+        "operation": "chain",
+        "script": "D4_BOSS.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 4532,
+        "operation": "chain",
+        "script": "D4_BOSS.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 4993,
+        "operation": "chain",
+        "script": "D4_BOSS.SPC",
+        "dynamic": false
+      }
+    ],
+    "DBG_BTLQ.SPC": [
+      {
+        "offset": 47,
+        "operation": "exec",
+        "script": "BTI_PSET.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1356,
+        "operation": "exec",
+        "script": "BTI_PSET.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2848,
+        "operation": "exec",
+        "script": "BTI_PSET.SPC",
+        "dynamic": false
+      }
+    ],
+    "DUNG_END.SPC": [
+      {
+        "offset": 719,
+        "operation": "chain",
+        "script": "EV_MON05.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1008,
+        "operation": "chain",
+        "script": "EV_MON06.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_AL01.SPC": [
+      {
+        "offset": 11644,
+        "operation": "chain",
+        "script": "EV_AL02.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_AL02.SPC": [
+      {
+        "offset": 184,
+        "operation": "exec",
+        "script": "MAP42_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 10962,
+        "operation": "chain",
+        "script": "EV_AL02B.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_EDO01.SPC": [
+      {
+        "offset": 11881,
+        "operation": "chain",
+        "script": "EV_ICE01.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_GO01.SPC": [
+      {
+        "offset": 212,
+        "operation": "exec",
+        "script": "MAP07_A.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_GO03.SPC": [
+      {
+        "offset": 324,
+        "operation": "exec",
+        "script": "MAP07_A.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_GO05.SPC": [
+      {
+        "offset": 4704,
+        "operation": "chain",
+        "script": "EV_GO06.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_GO06.SPC": [
+      {
+        "offset": 245,
+        "operation": "exec",
+        "script": "MAP07_A.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_GO09.SPC": [
+      {
+        "offset": 7609,
+        "operation": "chain",
+        "script": "EV_GO10.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_GO11.SPC": [
+      {
+        "offset": 12315,
+        "operation": "chain",
+        "script": "EV_GO12.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_GO12.SPC": [
+      {
+        "offset": 5488,
+        "operation": "chain",
+        "script": "EV_UTA01.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_ICE01.SPC": [
+      {
+        "offset": 138,
+        "operation": "exec",
+        "script": "MAP04_A.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_ICE03.SPC": [
+      {
+        "offset": 2888,
+        "operation": "chain",
+        "script": "EV_ICE04.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_ICE04.SPC": [
+      {
+        "offset": 405,
+        "operation": "exec",
+        "script": "MAP04_A.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_ICE05.SPC": [
+      {
+        "offset": 1106,
+        "operation": "chain",
+        "script": "EV_ICE07.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_ICE07.SPC": [
+      {
+        "offset": 425,
+        "operation": "exec",
+        "script": "MAP04_4A.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_ICE11.SPC": [
+      {
+        "offset": 10927,
+        "operation": "chain",
+        "script": "EV_ICE12.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_JA04.SPC": [
+      {
+        "offset": 7084,
+        "operation": "chain",
+        "script": "EV_JA04B.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_JA04B.SPC": [
+      {
+        "offset": 8213,
+        "operation": "chain",
+        "script": "EV_JA04C.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_JA04C.SPC": [
+      {
+        "offset": 1853,
+        "operation": "chain",
+        "script": "G_EV001.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_MON05.SPC": [
+      {
+        "offset": 1028,
+        "operation": "chain",
+        "script": "G_EV021.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_MON06.SPC": [
+      {
+        "offset": 1172,
+        "operation": "chain",
+        "script": "G_EV013.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_RT02.SPC": [
+      {
+        "offset": 6412,
+        "operation": "chain",
+        "script": "EV_RT03.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_START.SPC": [
+      {
+        "offset": 411,
+        "operation": "exec",
+        "script": "MAP00_A.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_T1KIL.SPC": [
+      {
+        "offset": 5898,
+        "operation": "chain",
+        "script": "G_EV050.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_T2KIL.SPC": [
+      {
+        "offset": 8371,
+        "operation": "chain",
+        "script": "G_EV061.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_T3KIL.SPC": [
+      {
+        "offset": 20951,
+        "operation": "chain",
+        "script": "G_EV062.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_T4KIL.SPC": [
+      {
+        "offset": 14205,
+        "operation": "chain",
+        "script": "END2.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_UTA01.SPC": [
+      {
+        "offset": 10473,
+        "operation": "chain",
+        "script": "L11_0_0.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_VE01.SPC": [
+      {
+        "offset": 925,
+        "operation": "exec",
+        "script": "MAP11_A.SPC",
+        "dynamic": false
+      }
+    ],
+    "EV_VE02.SPC": [
+      {
+        "offset": 139,
+        "operation": "exec",
+        "script": "MAP11_1A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2230,
+        "operation": "exec",
+        "script": "MAP11_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 8963,
+        "operation": "exec",
+        "script": "MAP11_1A.SPC",
+        "dynamic": false
+      }
+    ],
+    "G_EV001.SPC": [
+      {
+        "offset": 167,
+        "operation": "exec",
+        "script": "MAP41_A.SPC",
+        "dynamic": false
+      }
+    ],
+    "G_EV002.SPC": [
+      {
+        "offset": 167,
+        "operation": "exec",
+        "script": "MAP06_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2164,
+        "operation": "chain",
+        "script": "G_EV031.SPC",
+        "dynamic": false
+      }
+    ],
+    "G_EV003.SPC": [
+      {
+        "offset": 452,
+        "operation": "exec",
+        "script": "MAP06_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 13694,
+        "operation": "exec",
+        "script": "MAP06_1A.SPC",
+        "dynamic": false
+      }
+    ],
+    "G_EV006.SPC": [
+      {
+        "offset": 9055,
+        "operation": "chain",
+        "script": "G_EV007.SPC",
+        "dynamic": false
+      }
+    ],
+    "G_EV007.SPC": [
+      {
+        "offset": 5747,
+        "operation": "chain",
+        "script": "EV_VE01.SPC",
+        "dynamic": false
+      }
+    ],
+    "G_EV010.SPC": [
+      {
+        "offset": 255,
+        "operation": "exec",
+        "script": "MAP10_A.SPC",
+        "dynamic": false
+      }
+    ],
+    "G_EV011.SPC": [
+      {
+        "offset": 13455,
+        "operation": "chain",
+        "script": "G_EV011B.SPC",
+        "dynamic": false
+      }
+    ],
+    "G_EV011B.SPC": [
+      {
+        "offset": 210,
+        "operation": "exec",
+        "script": "MAP10_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 5193,
+        "operation": "chain",
+        "script": "G_EV011C.SPC",
+        "dynamic": false
+      }
+    ],
+    "G_EV011C.SPC": [
+      {
+        "offset": 186,
+        "operation": "exec",
+        "script": "MAP10_1A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 7845,
+        "operation": "chain",
+        "script": "G_EV012.SPC",
+        "dynamic": false
+      }
+    ],
+    "G_EV012.SPC": [
+      {
+        "offset": 257,
+        "operation": "exec",
+        "script": "MAP10_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 5027,
+        "operation": "chain",
+        "script": "G_EV020.SPC",
+        "dynamic": false
+      }
+    ],
+    "G_EV013.SPC": [
+      {
+        "offset": 244,
+        "operation": "exec",
+        "script": "MAP10_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3778,
+        "operation": "chain",
+        "script": "G_EV023.SPC",
+        "dynamic": false
+      }
+    ],
+    "G_EV020.SPC": [
+      {
+        "offset": 138,
+        "operation": "exec",
+        "script": "MAP05_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 14869,
+        "operation": "chain",
+        "script": "G_EV020B.SPC",
+        "dynamic": false
+      }
+    ],
+    "G_EV020B.SPC": [
+      {
+        "offset": 14196,
+        "operation": "chain",
+        "script": "G_EV020C.SPC",
+        "dynamic": false
+      }
+    ],
+    "G_EV020C.SPC": [
+      {
+        "offset": 6777,
+        "operation": "chain",
+        "script": "EV_MON01.SPC",
+        "dynamic": false
+      }
+    ],
+    "G_EV021.SPC": [
+      {
+        "offset": 221,
+        "operation": "exec",
+        "script": "MAP05_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 11989,
+        "operation": "chain",
+        "script": "EV_MON02.SPC",
+        "dynamic": false
+      }
+    ],
+    "G_EV023.SPC": [
+      {
+        "offset": 408,
+        "operation": "exec",
+        "script": "MAP05_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 11749,
+        "operation": "exec",
+        "script": "G_EV023B.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 12657,
+        "operation": "exec",
+        "script": "G_EV023B.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 14631,
+        "operation": "chain",
+        "script": "G_EV023C.SPC",
+        "dynamic": false
+      }
+    ],
+    "G_EV024.SPC": [
+      {
+        "offset": 11887,
+        "operation": "chain",
+        "script": "EV_MON04.SPC",
+        "dynamic": false
+      }
+    ],
+    "G_EV025.SPC": [
+      {
+        "offset": 7831,
+        "operation": "chain",
+        "script": "G_EV025B.SPC",
+        "dynamic": false
+      }
+    ],
+    "G_EV025B.SPC": [
+      {
+        "offset": 14460,
+        "operation": "chain",
+        "script": "G_EV030.SPC",
+        "dynamic": false
+      }
+    ],
+    "G_EV030.SPC": [
+      {
+        "offset": 8814,
+        "operation": "chain",
+        "script": "G_EV002.SPC",
+        "dynamic": false
+      }
+    ],
+    "G_EV031.SPC": [
+      {
+        "offset": 5690,
+        "operation": "chain",
+        "script": "G_EV003.SPC",
+        "dynamic": false
+      }
+    ],
+    "G_EV040.SPC": [
+      {
+        "offset": 719,
+        "operation": "exec",
+        "script": "MAP11_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 5600,
+        "operation": "chain",
+        "script": "L11_0_2.SPC",
+        "dynamic": false
+      }
+    ],
+    "G_EV041.SPC": [
+      {
+        "offset": 290,
+        "operation": "exec",
+        "script": "MAP11_2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 6080,
+        "operation": "chain",
+        "script": "G_EV042.SPC",
+        "dynamic": false
+      }
+    ],
+    "G_EV042.SPC": [
+      {
+        "offset": 1063,
+        "operation": "exec",
+        "script": "MAP11_A.SPC",
+        "dynamic": false
+      }
+    ],
+    "G_EV050.SPC": [
+      {
+        "offset": 388,
+        "operation": "exec",
+        "script": "MAP11_2.SPC",
+        "dynamic": false
+      }
+    ],
+    "G_EV051.SPC": [
+      {
+        "offset": 1469,
+        "operation": "exec",
+        "script": "MAP11_A.SPC",
+        "dynamic": false
+      }
+    ],
+    "G_EV060.SPC": [
+      {
+        "offset": 680,
+        "operation": "exec",
+        "script": "MAP06_2A.SPC",
+        "dynamic": false
+      }
+    ],
+    "G_EV061.SPC": [
+      {
+        "offset": 311,
+        "operation": "exec",
+        "script": "MAP11_2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 12228,
+        "operation": "exec",
+        "script": "MAP24_A.SPC",
+        "dynamic": false
+      }
+    ],
+    "G_EV062.SPC": [
+      {
+        "offset": 1087,
+        "operation": "exec",
+        "script": "MAP11_2G.SPC",
+        "dynamic": false
+      }
+    ],
+    "HI_DUNG.SPC": [
+      {
+        "offset": 577,
+        "operation": "chain",
+        "script": "D0_MAKE.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 623,
+        "operation": "chain",
+        "script": "D1_MAKE.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 669,
+        "operation": "chain",
+        "script": "D2_MAKE.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 715,
+        "operation": "chain",
+        "script": "D3_MAKE.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 761,
+        "operation": "chain",
+        "script": "D4_MAKE.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1302,
+        "operation": "chain",
+        "script": "DUNG_END.SPC",
+        "dynamic": false
+      }
+    ],
+    "HI_M04.SPC": [
+      {
+        "offset": 47,
+        "operation": "chain",
+        "script": "EV_ICE02.SPC",
+        "dynamic": false
+      }
+    ],
+    "HI_M07.SPC": [
+      {
+        "offset": 46,
+        "operation": "chain",
+        "script": "EV_GO02.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3915,
+        "operation": "chain",
+        "script": "EV_GO03.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 6465,
+        "operation": "chain",
+        "script": "EV_GO07.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 6511,
+        "operation": "chain",
+        "script": "EV_GO08.SPC",
+        "dynamic": false
+      }
+    ],
+    "HI_M07_2.SPC": [
+      {
+        "offset": 46,
+        "operation": "chain",
+        "script": "EV_GO09.SPC",
+        "dynamic": false
+      }
+    ],
+    "HI_M09.SPC": [
+      {
+        "offset": 151,
+        "operation": "chain",
+        "script": "EV_AL01.SPC",
+        "dynamic": false
+      }
+    ],
+    "HI_M11.SPC": [
+      {
+        "offset": 1461,
+        "operation": "chain",
+        "script": "EV_VE02.SPC",
+        "dynamic": false
+      }
+    ],
+    "HI_M24_1.SPC": [
+      {
+        "offset": 2605,
+        "operation": "chain",
+        "script": "G_EV040.SPC",
+        "dynamic": false
+      }
+    ],
+    "HI_M24_4.SPC": [
+      {
+        "offset": 14118,
+        "operation": "chain",
+        "script": "G_EV041.SPC",
+        "dynamic": false
+      }
+    ],
+    "HI_M25_2.SPC": [
+      {
+        "offset": 3676,
+        "operation": "chain",
+        "script": "G_EV051.SPC",
+        "dynamic": false
+      }
+    ],
+    "HI_M42.SPC": [
+      {
+        "offset": 85,
+        "operation": "chain",
+        "script": "EV_EDO01.SPC",
+        "dynamic": false
+      }
+    ],
+    "HI_NORM.SPC": [
+      {
+        "offset": 150,
+        "operation": "chain",
+        "script": "HI_M00.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 251,
+        "operation": "chain",
+        "script": "HI_M01.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 355,
+        "operation": "chain",
+        "script": "HI_M01_1.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 459,
+        "operation": "chain",
+        "script": "HI_M01_2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 563,
+        "operation": "chain",
+        "script": "HI_M01_3.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 664,
+        "operation": "chain",
+        "script": "HI_M03.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 765,
+        "operation": "chain",
+        "script": "HI_M04.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 868,
+        "operation": "chain",
+        "script": "G_EV004.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 969,
+        "operation": "chain",
+        "script": "HI_M07.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1073,
+        "operation": "chain",
+        "script": "HI_M07_2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1174,
+        "operation": "chain",
+        "script": "HI_M08.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1275,
+        "operation": "chain",
+        "script": "HI_M09.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1376,
+        "operation": "chain",
+        "script": "HI_M11.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1480,
+        "operation": "chain",
+        "script": "HI_M11_1.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1581,
+        "operation": "chain",
+        "script": "HI_M42.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1682,
+        "operation": "chain",
+        "script": "HI_M24.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1786,
+        "operation": "chain",
+        "script": "HI_M24_1.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1890,
+        "operation": "chain",
+        "script": "HI_M24_2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1994,
+        "operation": "chain",
+        "script": "HI_M24_4.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2098,
+        "operation": "chain",
+        "script": "HI_M25_1.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2202,
+        "operation": "chain",
+        "script": "HI_M25_2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2306,
+        "operation": "chain",
+        "script": "HI_M26_2.SPC",
+        "dynamic": false
+      }
+    ],
+    "J_HOLE.SPC": [
+      {
+        "offset": 5145,
+        "operation": "chain",
+        "script": "BGM_SET.SPC",
+        "dynamic": false
+      }
+    ],
+    "L11_0_0.SPC": [
+      {
+        "offset": 57,
+        "operation": "exec",
+        "script": "MAP11_2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 8300,
+        "operation": "chain",
+        "script": "L24_0_0.SPC",
+        "dynamic": false
+      }
+    ],
+    "L11_0_2.SPC": [
+      {
+        "offset": 8011,
+        "operation": "chain",
+        "script": "L24_1_0.SPC",
+        "dynamic": false
+      }
+    ],
+    "L11_0_3.SPC": [
+      {
+        "offset": 2781,
+        "operation": "exec",
+        "script": "MAP24_4A.SPC",
+        "dynamic": false
+      }
+    ],
+    "L24_0_0.SPC": [
+      {
+        "offset": 57,
+        "operation": "exec",
+        "script": "MAP24_A.SPC",
+        "dynamic": false
+      }
+    ],
+    "L24_1_0.SPC": [
+      {
+        "offset": 445,
+        "operation": "exec",
+        "script": "MAP24_1A.SPC",
+        "dynamic": false
+      }
+    ],
+    "MAP00_A.SPC": [
+      {
+        "offset": 1768,
+        "operation": "chain",
+        "script": "EV_IWA.SPC",
+        "dynamic": false
+      }
+    ],
+    "MAP01_1A.SPC": [
+      {
+        "offset": 1187,
+        "operation": "chain",
+        "script": "EV_BIN01.SPC",
+        "dynamic": false
+      }
+    ],
+    "MAP01_2A.SPC": [
+      {
+        "offset": 173,
+        "operation": "chain",
+        "script": "EV_BIN02.SPC",
+        "dynamic": false
+      }
+    ],
+    "MAP01_3A.SPC": [
+      {
+        "offset": 1678,
+        "operation": "chain",
+        "script": "EV_BIN03.SPC",
+        "dynamic": false
+      }
+    ],
+    "MAP03_A.SPC": [
+      {
+        "offset": 194,
+        "operation": "chain",
+        "script": "EV_JA01.SPC",
+        "dynamic": false
+      }
+    ],
+    "MAP04_4A.SPC": [
+      {
+        "offset": 67,
+        "operation": "chain",
+        "script": "EV_ICE03.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 151,
+        "operation": "chain",
+        "script": "EV_ICE06.SPC",
+        "dynamic": false
+      }
+    ],
+    "MAP04_5A.SPC": [
+      {
+        "offset": 1104,
+        "operation": "chain",
+        "script": "EV_ICE08.SPC",
+        "dynamic": false
+      }
+    ],
+    "MAP04_6A.SPC": [
+      {
+        "offset": 67,
+        "operation": "chain",
+        "script": "EV_ICE09.SPC",
+        "dynamic": false
+      }
+    ],
+    "MAP06_1A.SPC": [
+      {
+        "offset": 1403,
+        "operation": "chain",
+        "script": "G_EV006.SPC",
+        "dynamic": false
+      }
+    ],
+    "MAP06_2A.SPC": [
+      {
+        "offset": 656,
+        "operation": "chain",
+        "script": "G_EV005.SPC",
+        "dynamic": false
+      }
+    ],
+    "MAP07_A.SPC": [
+      {
+        "offset": 171,
+        "operation": "chain",
+        "script": "EV_GO01.SPC",
+        "dynamic": false
+      }
+    ],
+    "MAP09_A.SPC": [
+      {
+        "offset": 2561,
+        "operation": "chain",
+        "script": "EV_PA01.SPC",
+        "dynamic": false
+      }
+    ],
+    "MAP10_1A.SPC": [
+      {
+        "offset": 679,
+        "operation": "chain",
+        "script": "G_EV011.SPC",
+        "dynamic": false
+      }
+    ],
+    "MAP40_A.SPC": [
+      {
+        "offset": 1976,
+        "operation": "chain",
+        "script": "EV_GTOB.SPC",
+        "dynamic": false
+      }
+    ],
+    "OBJ_J.SPC": [
+      {
+        "offset": 1855,
+        "operation": "chain",
+        "script": "J_HOLE.SPC",
+        "dynamic": false
+      }
+    ],
+    "OPEN.SPC": [
+      {
+        "offset": 13468,
+        "operation": "chain",
+        "script": "EV_START.SPC",
+        "dynamic": false
+      }
+    ],
+    "SPR_DUNG.SPC": [
+      {
+        "offset": 286,
+        "operation": "chain",
+        "script": "D0_ITEM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 367,
+        "operation": "chain",
+        "script": "D0_ITEM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 675,
+        "operation": "chain",
+        "script": "D1_ITEM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 756,
+        "operation": "chain",
+        "script": "D1_ITEM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1064,
+        "operation": "chain",
+        "script": "D2_ITEM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1145,
+        "operation": "chain",
+        "script": "D2_ITEM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1453,
+        "operation": "chain",
+        "script": "D3_ITEM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1534,
+        "operation": "chain",
+        "script": "D3_ITEM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1842,
+        "operation": "chain",
+        "script": "D4_ITEM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1923,
+        "operation": "chain",
+        "script": "D4_ITEM.SPC",
+        "dynamic": false
+      }
+    ],
+    "SPR_NORM.SPC": [
+      {
+        "offset": 150,
+        "operation": "chain",
+        "script": "SP_M00.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 251,
+        "operation": "chain",
+        "script": "SP_M01.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 355,
+        "operation": "chain",
+        "script": "SP_M01_1.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 459,
+        "operation": "chain",
+        "script": "SP_M01_2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 563,
+        "operation": "chain",
+        "script": "SP_M01_3.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 667,
+        "operation": "chain",
+        "script": "SP_M01_4.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 771,
+        "operation": "chain",
+        "script": "SP_M01_5.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 875,
+        "operation": "chain",
+        "script": "SP_M01_6.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 976,
+        "operation": "chain",
+        "script": "SP_M03.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1077,
+        "operation": "chain",
+        "script": "SP_M04.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1181,
+        "operation": "chain",
+        "script": "SP_M04_4.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1285,
+        "operation": "chain",
+        "script": "SP_M04_5.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1386,
+        "operation": "chain",
+        "script": "SP_M05.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1487,
+        "operation": "chain",
+        "script": "SP_M06.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1591,
+        "operation": "chain",
+        "script": "SP_M06_1.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1695,
+        "operation": "chain",
+        "script": "SP_M06_2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1796,
+        "operation": "chain",
+        "script": "SP_M07.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1900,
+        "operation": "chain",
+        "script": "SP_M07_1.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2001,
+        "operation": "chain",
+        "script": "SP_M08.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2102,
+        "operation": "chain",
+        "script": "SP_M09.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2203,
+        "operation": "chain",
+        "script": "SP_M10.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2307,
+        "operation": "chain",
+        "script": "SP_M10_1.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2408,
+        "operation": "chain",
+        "script": "SP_M11.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2512,
+        "operation": "chain",
+        "script": "SP_M11_1.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2616,
+        "operation": "chain",
+        "script": "SP_M11_2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2717,
+        "operation": "chain",
+        "script": "SP_M24.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2821,
+        "operation": "chain",
+        "script": "SP_M24_1.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2925,
+        "operation": "chain",
+        "script": "SP_M24_2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3029,
+        "operation": "chain",
+        "script": "SP_M24_4.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3133,
+        "operation": "chain",
+        "script": "SP_M25_1.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3237,
+        "operation": "chain",
+        "script": "SP_M25_2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3341,
+        "operation": "chain",
+        "script": "SP_M25_4.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3445,
+        "operation": "chain",
+        "script": "SP_M25_5.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3549,
+        "operation": "chain",
+        "script": "SP_M26_1.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3653,
+        "operation": "chain",
+        "script": "SP_M26_2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3757,
+        "operation": "chain",
+        "script": "SP_M26_3.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3861,
+        "operation": "chain",
+        "script": "SP_M26_5.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3962,
+        "operation": "chain",
+        "script": "SP_M40.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 4063,
+        "operation": "chain",
+        "script": "SP_M41.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 4164,
+        "operation": "chain",
+        "script": "SP_M42.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M00.SPC": [
+      {
+        "offset": 2238,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3039,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M01.SPC": [
+      {
+        "offset": 4168,
+        "operation": "chain",
+        "script": "OBJ_J.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M01_1.SPC": [
+      {
+        "offset": 72,
+        "operation": "chain",
+        "script": "OBJ_V.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 144,
+        "operation": "chain",
+        "script": "OBJ_V.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M01_3.SPC": [
+      {
+        "offset": 46,
+        "operation": "chain",
+        "script": "EV_BA01.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 129,
+        "operation": "chain",
+        "script": "EV_BA04.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 897,
+        "operation": "chain",
+        "script": "EV_BA03.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1009,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1864,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2346,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M01_4.SPC": [
+      {
+        "offset": 131,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M01_5.SPC": [
+      {
+        "offset": 131,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 231,
+        "operation": "chain",
+        "script": "OBJ_J.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M01_6.SPC": [
+      {
+        "offset": 131,
+        "operation": "exec",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 361,
+        "operation": "exec",
+        "script": "MAP01_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 492,
+        "operation": "exec",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 723,
+        "operation": "exec",
+        "script": "MAP01_5A.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M04.SPC": [
+      {
+        "offset": 112,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 915,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1046,
+        "operation": "exec",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1177,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1308,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1380,
+        "operation": "chain",
+        "script": "OBJ_S.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1452,
+        "operation": "chain",
+        "script": "OBJ_S.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1524,
+        "operation": "chain",
+        "script": "OBJ_S.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1748,
+        "operation": "chain",
+        "script": "EV_ICE05.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M04_4.SPC": [
+      {
+        "offset": 131,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M04_5.SPC": [
+      {
+        "offset": 131,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 203,
+        "operation": "chain",
+        "script": "OBJ_S.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M05.SPC": [
+      {
+        "offset": 131,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 262,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 334,
+        "operation": "chain",
+        "script": "OBJ_V.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M06_1.SPC": [
+      {
+        "offset": 112,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 943,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1365,
+        "operation": "chain",
+        "script": "OBJ_D.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M06_2.SPC": [
+      {
+        "offset": 131,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M07.SPC": [
+      {
+        "offset": 131,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 262,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 393,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 524,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 624,
+        "operation": "chain",
+        "script": "OBJ_J.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 724,
+        "operation": "chain",
+        "script": "OBJ_J.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 824,
+        "operation": "chain",
+        "script": "OBJ_J.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 896,
+        "operation": "chain",
+        "script": "OBJ_S.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 968,
+        "operation": "chain",
+        "script": "OBJ_V.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M07_1.SPC": [
+      {
+        "offset": 131,
+        "operation": "exec",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 361,
+        "operation": "exec",
+        "script": "MAP01_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 492,
+        "operation": "exec",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 722,
+        "operation": "exec",
+        "script": "MAP01_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 853,
+        "operation": "exec",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1083,
+        "operation": "exec",
+        "script": "MAP07_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1214,
+        "operation": "exec",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1515,
+        "operation": "exec",
+        "script": "MAP07_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1627,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2602,
+        "operation": "exec",
+        "script": "MAP07_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2733,
+        "operation": "exec",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3068,
+        "operation": "exec",
+        "script": "MAP07_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3199,
+        "operation": "exec",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3534,
+        "operation": "exec",
+        "script": "MAP07_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3665,
+        "operation": "exec",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 4000,
+        "operation": "exec",
+        "script": "MAP07_A.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M09.SPC": [
+      {
+        "offset": 131,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 262,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M10.SPC": [
+      {
+        "offset": 131,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 203,
+        "operation": "chain",
+        "script": "OBJ_D.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M10_1.SPC": [
+      {
+        "offset": 112,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M24_1.SPC": [
+      {
+        "offset": 296,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 427,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 558,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 630,
+        "operation": "chain",
+        "script": "OBJ_G.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 702,
+        "operation": "chain",
+        "script": "OBJ_V.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M24_2.SPC": [
+      {
+        "offset": 296,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 427,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 558,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 630,
+        "operation": "chain",
+        "script": "OBJ_D.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M24_4.SPC": [
+      {
+        "offset": 10812,
+        "operation": "exec",
+        "script": "OBJ_S.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 12258,
+        "operation": "chain",
+        "script": "L11_0_3.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 12389,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M25_1.SPC": [
+      {
+        "offset": 296,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M25_2.SPC": [
+      {
+        "offset": 72,
+        "operation": "exec",
+        "script": "OBJ_D.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 203,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 334,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 465,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 596,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 668,
+        "operation": "chain",
+        "script": "OBJ_S.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 740,
+        "operation": "chain",
+        "script": "OBJ_V.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 812,
+        "operation": "chain",
+        "script": "OBJ_S.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M25_4.SPC": [
+      {
+        "offset": 2800,
+        "operation": "exec",
+        "script": "OBJ_D.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2946,
+        "operation": "chain",
+        "script": "L25_4_0.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3018,
+        "operation": "exec",
+        "script": "OBJ_D.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3164,
+        "operation": "chain",
+        "script": "L25_4_0.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3236,
+        "operation": "exec",
+        "script": "OBJ_D.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3382,
+        "operation": "chain",
+        "script": "L25_4_0.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3513,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3644,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3716,
+        "operation": "chain",
+        "script": "OBJ_S.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M25_5.SPC": [
+      {
+        "offset": 15123,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 15195,
+        "operation": "chain",
+        "script": "OBJ_G.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M26_1.SPC": [
+      {
+        "offset": 296,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 427,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 499,
+        "operation": "chain",
+        "script": "OBJ_V.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 571,
+        "operation": "chain",
+        "script": "OBJ_D.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M26_3.SPC": [
+      {
+        "offset": 296,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 427,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 499,
+        "operation": "chain",
+        "script": "OBJ_G.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 571,
+        "operation": "chain",
+        "script": "OBJ_V.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 643,
+        "operation": "chain",
+        "script": "OBJ_D.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M26_5.SPC": [
+      {
+        "offset": 7119,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 7250,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 7381,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 7512,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 7624,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 8370,
+        "operation": "chain",
+        "script": "OBJ_D.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 8442,
+        "operation": "chain",
+        "script": "OBJ_G.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M40.SPC": [
+      {
+        "offset": 131,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 243,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1046,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1118,
+        "operation": "chain",
+        "script": "OBJ_D.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M41.SPC": [
+      {
+        "offset": 131,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      }
+    ],
+    "SP_M42.SPC": [
+      {
+        "offset": 147,
+        "operation": "chain",
+        "script": "OBJ_S.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 219,
+        "operation": "exec",
+        "script": "OBJ_S.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1245,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1376,
+        "operation": "chain",
+        "script": "DITEMCOM.SPC",
+        "dynamic": false
+      }
+    ],
+    "S_BTLIRQ.SPC": [
+      {
+        "offset": 80,
+        "operation": "chain",
+        "script": "BTI_N.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 153,
+        "operation": "chain",
+        "script": "BTI_DUNG.SPC",
+        "dynamic": false
+      }
+    ],
+    "S_BTLOUT.SPC": [
+      {
+        "offset": 80,
+        "operation": "chain",
+        "script": "BTO_N.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 153,
+        "operation": "chain",
+        "script": "BTO_DUNG.SPC",
+        "dynamic": false
+      }
+    ],
+    "S_CHRIRQ.SPC": [
+      {
+        "offset": 151,
+        "operation": "chain",
+        "script": "CH_M00A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 253,
+        "operation": "chain",
+        "script": "CH_M01A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 357,
+        "operation": "chain",
+        "script": "CH_M01_3.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 459,
+        "operation": "chain",
+        "script": "CH_M03A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 561,
+        "operation": "chain",
+        "script": "CH_M05A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 663,
+        "operation": "chain",
+        "script": "CH_M08A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 765,
+        "operation": "chain",
+        "script": "CH_M09A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 866,
+        "operation": "chain",
+        "script": "CH_M10.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 967,
+        "operation": "chain",
+        "script": "CH_M11.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1071,
+        "operation": "chain",
+        "script": "CH_M11_1.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1174,
+        "operation": "chain",
+        "script": "CH_M24_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1278,
+        "operation": "chain",
+        "script": "CH_M26_6.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1380,
+        "operation": "chain",
+        "script": "CH_M42A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1482,
+        "operation": "chain",
+        "script": "CH_ESC.SPC",
+        "dynamic": false
+      }
+    ],
+    "S_DUNG.SPC": [
+      {
+        "offset": 53,
+        "operation": "chain",
+        "script": "DUNG_DEF.SPC",
+        "dynamic": false
+      }
+    ],
+    "S_HITIRQ.SPC": [
+      {
+        "offset": 82,
+        "operation": "chain",
+        "script": "HI_NORM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 154,
+        "operation": "chain",
+        "script": "HI_DUNG.SPC",
+        "dynamic": false
+      }
+    ],
+    "S_MAIN.SPC": [
+      {
+        "offset": 49,
+        "operation": "chain",
+        "script": "OPEN.SPC",
+        "dynamic": false
+      }
+    ],
+    "S_MAP11.SPC": [
+      {
+        "offset": 1028,
+        "operation": "chain",
+        "script": "W_MAP.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1270,
+        "operation": "chain",
+        "script": "MAP11_1A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1534,
+        "operation": "exec",
+        "script": "MAP11_2.SPC",
+        "dynamic": false
+      }
+    ],
+    "S_MAPIRQ.SPC": [
+      {
+        "offset": 325,
+        "operation": "chain",
+        "script": "MAP01_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 485,
+        "operation": "chain",
+        "script": "MAP40_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 828,
+        "operation": "chain",
+        "script": "MAP00_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 989,
+        "operation": "chain",
+        "script": "MAP01_1A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1356,
+        "operation": "chain",
+        "script": "MAP01_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1517,
+        "operation": "chain",
+        "script": "MAP01_2A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1678,
+        "operation": "chain",
+        "script": "MAP01_4A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1839,
+        "operation": "chain",
+        "script": "MAP01_5A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2223,
+        "operation": "chain",
+        "script": "MAP01_1A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2384,
+        "operation": "chain",
+        "script": "MAP01_3A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2775,
+        "operation": "chain",
+        "script": "MAP01_2A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3112,
+        "operation": "chain",
+        "script": "MAP01_1A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3449,
+        "operation": "chain",
+        "script": "MAP01_1A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3807,
+        "operation": "chain",
+        "script": "MAP08_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 3851,
+        "operation": "chain",
+        "script": "W_MAP.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 4115,
+        "operation": "chain",
+        "script": "MAP41_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 4489,
+        "operation": "chain",
+        "script": "MAP42_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 4573,
+        "operation": "chain",
+        "script": "EV_ICE06.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 4810,
+        "operation": "chain",
+        "script": "MAP04_4A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 5154,
+        "operation": "chain",
+        "script": "MAP04_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 5277,
+        "operation": "chain",
+        "script": "MAP04_5A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 5645,
+        "operation": "chain",
+        "script": "MAP04_6A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 5806,
+        "operation": "chain",
+        "script": "MAP04_4A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 6151,
+        "operation": "chain",
+        "script": "MAP04_5A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 6488,
+        "operation": "chain",
+        "script": "MAP04_5A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 6823,
+        "operation": "chain",
+        "script": "MAP10_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 6961,
+        "operation": "chain",
+        "script": "W_MAP.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 7226,
+        "operation": "chain",
+        "script": "MAP06_1A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 7593,
+        "operation": "chain",
+        "script": "MAP06_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 7754,
+        "operation": "chain",
+        "script": "MAP06_2A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 8122,
+        "operation": "chain",
+        "script": "MAP06_1A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 8504,
+        "operation": "chain",
+        "script": "MAP11_1A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 8665,
+        "operation": "chain",
+        "script": "MAP07_2A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 9032,
+        "operation": "chain",
+        "script": "MAP07_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 9392,
+        "operation": "chain",
+        "script": "MAP07_2A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 9530,
+        "operation": "chain",
+        "script": "W_MAP.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 9794,
+        "operation": "chain",
+        "script": "MAP05_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 10059,
+        "operation": "chain",
+        "script": "MAP10_1A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 10434,
+        "operation": "chain",
+        "script": "MAP10_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 10557,
+        "operation": "chain",
+        "script": "S_MAP11.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 10895,
+        "operation": "chain",
+        "script": "MAP11_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 11055,
+        "operation": "chain",
+        "script": "MAP07_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 11422,
+        "operation": "chain",
+        "script": "MAP11_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 11582,
+        "operation": "chain",
+        "script": "MAP24_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 11948,
+        "operation": "chain",
+        "script": "MAP03_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 12086,
+        "operation": "chain",
+        "script": "W_MAP.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 12350,
+        "operation": "chain",
+        "script": "MAP42_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 12716,
+        "operation": "chain",
+        "script": "MAP00_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 12876,
+        "operation": "chain",
+        "script": "MAP03_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 13242,
+        "operation": "chain",
+        "script": "MAP03_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 13402,
+        "operation": "chain",
+        "script": "MAP09_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 13768,
+        "operation": "chain",
+        "script": "MAP09_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 13928,
+        "operation": "chain",
+        "script": "MAP04_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 14039,
+        "operation": "chain",
+        "script": "G_EV010.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 14194,
+        "operation": "chain",
+        "script": "MAP10_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 14545,
+        "operation": "exec",
+        "script": "MAP11_2.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 14749,
+        "operation": "chain",
+        "script": "MAP24_1A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 14910,
+        "operation": "chain",
+        "script": "MAP25_1A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 15071,
+        "operation": "chain",
+        "script": "MAP26_1A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 15431,
+        "operation": "chain",
+        "script": "MAP24_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 15554,
+        "operation": "chain",
+        "script": "MAP24_2A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 15899,
+        "operation": "chain",
+        "script": "MAP24_1A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 16022,
+        "operation": "chain",
+        "script": "MAP24_4A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 16367,
+        "operation": "chain",
+        "script": "MAP24_2A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 16703,
+        "operation": "chain",
+        "script": "MAP24_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 16826,
+        "operation": "chain",
+        "script": "MAP25_2A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 17171,
+        "operation": "chain",
+        "script": "MAP25_1A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 17294,
+        "operation": "chain",
+        "script": "MAP25_4A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 17639,
+        "operation": "chain",
+        "script": "MAP25_2A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 17762,
+        "operation": "chain",
+        "script": "MAP25_5A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 18107,
+        "operation": "chain",
+        "script": "MAP25_4A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 18443,
+        "operation": "chain",
+        "script": "MAP24_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 18566,
+        "operation": "chain",
+        "script": "MAP26_2A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 18911,
+        "operation": "chain",
+        "script": "MAP26_1A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 19034,
+        "operation": "chain",
+        "script": "MAP26_3A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 19379,
+        "operation": "chain",
+        "script": "MAP26_2A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 19502,
+        "operation": "chain",
+        "script": "MAP26_5A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 19847,
+        "operation": "chain",
+        "script": "MAP26_3A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 19970,
+        "operation": "chain",
+        "script": "MAP26_6A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 20315,
+        "operation": "chain",
+        "script": "MAP26_5A.SPC",
+        "dynamic": false
+      }
+    ],
+    "S_SPRIRQ.SPC": [
+      {
+        "offset": 121,
+        "operation": "chain",
+        "script": "SPR_NORM.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 194,
+        "operation": "chain",
+        "script": "SPR_DUNG.SPC",
+        "dynamic": false
+      }
+    ],
+    "W_MAP.SPC": [
+      {
+        "offset": 777,
+        "operation": "chain",
+        "script": "MAP01_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 970,
+        "operation": "chain",
+        "script": "MAP03_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1163,
+        "operation": "chain",
+        "script": "MAP09_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1356,
+        "operation": "chain",
+        "script": "MAP04_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1549,
+        "operation": "chain",
+        "script": "MAP10_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1742,
+        "operation": "chain",
+        "script": "MAP06_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 1958,
+        "operation": "chain",
+        "script": "MAP11_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2337,
+        "operation": "chain",
+        "script": "MAP40_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2619,
+        "operation": "chain",
+        "script": "MAP41_A.SPC",
+        "dynamic": false
+      },
+      {
+        "offset": 2901,
+        "operation": "chain",
+        "script": "MAP42_A.SPC",
+        "dynamic": false
+      }
+    ]
   },
   "scripts": [
     {

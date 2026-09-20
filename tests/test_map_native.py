@@ -20,6 +20,7 @@ const char gScriptKmpExtension[] = ".KMP";
 #include <string.h>
 static int called, values[5];
 static int bgPhase;
+struct KmpViewport gKmpViewports[6];
 char *strupr(char *text) {
  char *p=text;while(*p){*p=toupper((unsigned char)*p);p++;}return text;
 }

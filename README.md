@@ -89,7 +89,8 @@ Basic workflow:
 3. Scroll over the viewport to zoom, use **Fit whole map** to see everything,
    and drag to pan.
 4. In **Events**, select a decoded script and press **Play** to preview supported
-   sprite movement.
+   sprite movement. The map event-source list also draws literal sprites from
+   direct companion scripts with their real decoded artwork.
 5. Press **Save sources** to write editable source overrides.
 6. Run `make -j4` or `make -j4 english` to compile the saved changes.
 

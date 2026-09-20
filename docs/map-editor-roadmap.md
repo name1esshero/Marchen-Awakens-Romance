@@ -32,6 +32,19 @@ every mode's sidebar.
 The selected call's source offset and editable literal arguments remain visible
 in the inspector.
 
+Event mode now builds a map-level source list instead of showing only the
+same-basename script. Direct field, spawn, character-event, history-event, and
+incoming field-load associations are loaded together. Every literal sprite
+placement in those direct sources is drawn with its real decoded NCD frame and
+a source-script label, so objects contributed by companion scripts no longer
+disappear merely because another script is selected. Decoded `chain` and
+`exec` dependencies with decoded map, sprite, or movement events are listed in
+the same source browser and loaded on demand. This puts Dorothy's `EV_BA03` and
+`EV_BA04` scenes one click from `MAP01_3A`, including their real artwork and
+movement preview. Chained scripts are not all overlaid automatically:
+dispatcher scripts contain mutually exclusive branches for many unrelated
+scenes, and drawing every branch would misrepresent runtime state.
+
 Event mode now includes a playback transport. It previews literal sprite
 creation, resource/animation changes, X/Y assignments, blocking X/Y `SprMove`
 tweens, and frees in CODE order. NCD frame durations animate the actual
@@ -93,7 +106,11 @@ script form only after variable-length script rebuilding is supported.
    assembler -- `tools/marscript.py`'s flow-tracing disassembler/reassembler,
    proven byte-exact against every real script (see
    `docs/marscript-language.md`).
-2. Represent decoded events in a versioned JSON model with stable local IDs.
+2. **Implemented for decoded call sites:** every script response contains a
+   versioned event model and stable `SCRIPT.SPC:CODE_OFFSET` IDs. These remain
+   stable across literal argument edits and byte-exact decompile/recompile
+   cycles. A future structural insertion can deliberately issue new IDs when
+   code offsets move.
 3. **Implemented for existing literal sprites and hit regions:** drag editing,
    optional 8-pixel snapping, signed-coordinate clamping, and undo/redo. Field
    loads containing embedded strings remain read-only under the fixed-size SPC

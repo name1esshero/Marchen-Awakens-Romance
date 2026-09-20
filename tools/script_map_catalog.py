@@ -17,20 +17,24 @@ def clean(record,fields):
 
 
 def build(root=ROOT):
-    manifest=json.loads((root/'scripts/nfp/manifest.json').read_text());scripts=[]
-    totals={k:0 for k in ('field_loads','sprite_resources','sprite_properties','sprite_moves')}
+    manifest=json.loads((root/'scripts/nfp/manifest.json').read_text());scripts=[];script_links={}
+    event_keys=('field_loads','sprite_resources','sprite_properties','sprite_moves')
+    totals={k:0 for k in event_keys};totals['script_links']=0
     for entry in manifest:
         blob=(root/entry['path']).read_bytes();summary=script_events.semantic_summary(script_events.calls(blob))
         record={'name':entry['name'],'source_sha256':hashlib.sha256(blob).hexdigest()}
         record['field_loads']=[clean(x,('destination','x','y')) for x in summary['field_loads']]
+        links=[clean(x,('operation','script')) for x in summary['script_links']]
+        if links:script_links[entry['name']]=links
         record['sprite_resources']=[clean(x,('operation','sprite','container','resource','animation','extra')) for x in summary['sprite_resources']]
         record['sprite_properties']=[clean(x,('sprite','property','value')) for x in summary['sprite_properties']]
         record['sprite_moves']=[{'offset':x['offset'],'values':x['values'],
                                 'dynamic':any(v is None for v in x['values'])} for x in summary['sprite_moves']]
-        for key in totals:totals[key]+=len(record[key])
-        if any(record[k] for k in totals):scripts.append(record)
-    return {'version':1,'scope':'Static native call sites; branches are not executed',
-            'totals':totals,'scripts':scripts}
+        for key in event_keys:totals[key]+=len(record[key])
+        totals['script_links']+=len(links)
+        if any(record[k] for k in event_keys):scripts.append(record)
+    return {'version':2,'scope':'Static native call sites; branches are not executed',
+            'totals':totals,'script_links':script_links,'scripts':scripts}
 
 
 def main():

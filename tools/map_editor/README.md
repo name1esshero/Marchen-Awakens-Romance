@@ -39,7 +39,17 @@ and can open a decoded destination map. `FldSet` coordinates position the
 viewport; they are not currently presented as proven player warp coordinates.
 Every connection card renders the destination's real visual planes in a
 240×160 GBA viewport beginning at those coordinates. Incoming cards preview the
-same section of the current destination map.
+same section of the current destination map. Double-clicking an outgoing card
+loads its destination map; incoming cards open their source script because an
+incoming `FldSet` call does not by itself identify that script's owning map.
+The **Map event sources** list combines the map's direct same-name, spawn,
+character, history, and incoming-load scripts. Literal sprite placements from
+all of those sources are drawn together with their real NCD artwork and source
+script names. Click a source to inspect and play that script. Verified chained
+scripts containing map or sprite activity also appear in the source list and
+load on demand, so scene actors such as Dorothy are reachable without following
+several links by hand. They are not all drawn at once because many are
+conditional alternatives selected by dispatcher logic.
 Literal sprite placements and hit rectangles can be dragged in Event mode.
 Their verified SPC integer operands update live, optionally snap to the 8-pixel
 grid, and participate in the same undo/redo and atomic save path as form edits.
@@ -296,6 +306,9 @@ recovers embedded resources from most of these expression sequences while
 keeping dynamic IDs explicit. The editor API reports static `field_loads`,
 `sprite_resources`, `sprite_properties`, and `sprite_moves`;
 `maps/script_catalog.json` records the same data across every named script.
+Its version-2 records also include decoded `chain`/`exec` dependencies, which
+the editor uses to expose the event-source graph without embedding ROM
+addresses or precomputed file offsets.
 `maps/sprite_placement_audit.json` separates literal initial positions from
 same-script actor reuse and resources whose position comes from another script
 or a runtime expression. Regenerate both with `make map-audit`.

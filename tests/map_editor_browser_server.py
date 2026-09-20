@@ -36,6 +36,8 @@ def main():
             if not any(item['name']==name for item in entries):entries.append(entry)
             path.write_text(json.dumps(entries))
 
+        copy(Path('maps/script_catalog.json'))
+
         member,_,entry,_=source.entry('MAP27_A.KMP')
         paths={member['path'],entry['palette_path'],entry['path']+'.png'}
         if entry.get('image_layout'):
@@ -52,6 +54,7 @@ def main():
             target=work/rel;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/rel,target)
         path=work/'scripts/nfp/manifest.json'
         entries=json.loads(path.read_text());entries.append(hit_script);path.write_text(json.dumps(entries))
+        add_map('AD4_B_A.KMP')
 
         # The documentation recording uses real numbered fields and scripts.
         add_map('MAP01_3A.KMP')
