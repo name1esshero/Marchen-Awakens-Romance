@@ -25,21 +25,6 @@
     "detail": "#define TARGET_REGISTER(name) asm(name)"
   },
   {
-    "kind": "inline_assembly",
-    "file": "src/sprite_transform.c",
-    "detail": "#define TARGET_REGISTER(name) asm(name)"
-  },
-  {
-    "kind": "inline_assembly",
-    "file": "src/sprite_transform.c",
-    "detail": "asm(\"\" : \"+r\"(inverseX));"
-  },
-  {
-    "kind": "inline_assembly",
-    "file": "src/sprite_transform.c",
-    "detail": "asm(\"\" : \"+r\"(product));"
-  },
-  {
     "kind": "target_register_macro",
     "file": "src/sprite_affine_matrix.c",
     "detail": "#define TARGET_REGISTER(name)"
@@ -228,85 +213,5 @@
     "kind": "target_register_macro",
     "file": "src/sprite_affine_matrix.c",
     "detail": "register u32 mask TARGET_REGISTER(\"r1\");"
-  },
-  {
-    "kind": "target_register_macro",
-    "file": "src/sprite_transform.c",
-    "detail": "#define TARGET_REGISTER(name)"
-  },
-  {
-    "kind": "target_register_macro",
-    "file": "src/sprite_transform.c",
-    "detail": "#define TARGET_REGISTER(name) asm(name)"
-  },
-  {
-    "kind": "target_register_macro",
-    "file": "src/sprite_transform.c",
-    "detail": "register s32 halfHeight TARGET_REGISTER(\"r3\");"
-  },
-  {
-    "kind": "target_register_macro",
-    "file": "src/sprite_transform.c",
-    "detail": "register s32 halfWidth TARGET_REGISTER(\"r4\");"
-  },
-  {
-    "kind": "target_register_macro",
-    "file": "src/sprite_transform.c",
-    "detail": "register s32 index TARGET_REGISTER(\"r0\");"
-  },
-  {
-    "kind": "target_register_macro",
-    "file": "src/sprite_transform.c",
-    "detail": "register s32 inverseX TARGET_REGISTER(\"r4\");"
-  },
-  {
-    "kind": "target_register_macro",
-    "file": "src/sprite_transform.c",
-    "detail": "register s32 inverseY TARGET_REGISTER(\"r0\");"
-  },
-  {
-    "kind": "target_register_macro",
-    "file": "src/sprite_transform.c",
-    "detail": "register s32 packedX TARGET_REGISTER(\"r2\");"
-  },
-  {
-    "kind": "target_register_macro",
-    "file": "src/sprite_transform.c",
-    "detail": "register s32 packedY TARGET_REGISTER(\"r5\");"
-  },
-  {
-    "kind": "target_register_macro",
-    "file": "src/sprite_transform.c",
-    "detail": "register s32 value TARGET_REGISTER(\"r3\");"
-  },
-  {
-    "kind": "target_register_macro",
-    "file": "src/sprite_transform.c",
-    "detail": "register s32 value TARGET_REGISTER(\"r3\");"
-  },
-  {
-    "kind": "target_register_macro",
-    "file": "src/sprite_transform.c",
-    "detail": "register s32 value TARGET_REGISTER(\"r3\");"
-  },
-  {
-    "kind": "target_register_macro",
-    "file": "src/sprite_transform.c",
-    "detail": "register u32 flags TARGET_REGISTER(\"r4\") = state->packedXAndFlags;"
-  },
-  {
-    "kind": "target_register_macro",
-    "file": "src/sprite_transform.c",
-    "detail": "register u32 highMask TARGET_REGISTER(\"r8\");"
-  },
-  {
-    "kind": "target_register_macro",
-    "file": "src/sprite_transform.c",
-    "detail": "register u32 preserve TARGET_REGISTER(\"r3\") = 0xFFFFF000;"
-  },
-  {
-    "kind": "target_register_macro",
-    "file": "src/sprite_transform.c",
-    "detail": "register u32 rawAngle TARGET_REGISTER(\"r1\");"
   }
 ]

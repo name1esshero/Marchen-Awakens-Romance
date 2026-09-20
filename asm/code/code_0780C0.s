@@ -5416,11 +5416,215 @@ _0807CE48:
 
 @ 07D030..07D044 is decompiled as SpriteEngineGetAffineWork(); see src/decompiled.json
 
-@ 07D044..07D0C0 is decompiled as SpriteVectorRotateX(); see src/decompiled.json
+	.section .rom.0007D044, "ax"
+	.syntax divided
+	.align 2, 0
+	.thumb_func
+	.thumb
+	.global SpriteVectorRotateX
+	.type SpriteVectorRotateX, %function
+SpriteVectorRotateX:
+	push {r4, r5, r6, lr}
+	mov r6, sl
+	mov r5, r9
+	mov r4, r8
+	push {r4, r5, r6}
+	lsl r2, r2, #16
+	asr r2, r2, #16
+	ldr r3, [r1, #4]
+	mov r9, r3
+	ldr r4, [r1, #8]
+	mov sl, r4
+	ldr r5, .LSpriteVectorRotateXPool
+	mov r8, r5
+	mov r6, #128
+	lsl r6, r6, #3
+	add r4, r2, r6
+	ldr r6, .LSpriteVectorRotateXPool + 4
+	and r4, r4, r6
+	lsl r4, r4, #1
+	add r4, r4, r8
+	mov r5, #0
+	ldrsh r3, [r4, r5]
+	mov r5, r9
+	mul r5, r5, r3
+	and r2, r2, r6
+	lsl r2, r2, #1
+	add r2, r2, r8
+	mov r6, #0
+	ldrsh r3, [r2, r6]
+	mov r6, sl
+	mul r6, r6, r3
+	add r3, r6, #0
+	sub r5, r5, r3
+	asr r5, r5, #14
+	str r5, [r0, #4]
+	mov r3, #0
+	ldrsh r2, [r2, r3]
+	mov r5, r9
+	mul r5, r5, r2
+	add r2, r5, #0
+	mov r6, #0
+	ldrsh r3, [r4, r6]
+	mov r4, sl
+	mul r4, r4, r3
+	add r3, r4, #0
+	add r2, r2, r3
+	asr r2, r2, #14
+	str r2, [r0, #8]
+	ldr r1, [r1]
+	str r1, [r0]
+	pop {r3, r4, r5}
+	mov r8, r3
+	mov r9, r4
+	mov sl, r5
+	pop {r4, r5, r6}
+	pop {r0}
+	bx r0
+	.align 2, 0
+.LSpriteVectorRotateXPool:
+	.word gSineTable14
+	.word 0x0FFF
+	.size SpriteVectorRotateX, . - SpriteVectorRotateX
 
-@ 07D0C0..07D138 is decompiled as SpriteVectorRotateY(); see src/decompiled.json
+	.section .rom.0007D0C0, "ax"
+	.align 2, 0
+	.thumb_func
+	.thumb
+	.global SpriteVectorRotateY
+	.type SpriteVectorRotateY, %function
+SpriteVectorRotateY:
+	push {r4, r5, r6, lr}
+	mov r6, sl
+	mov r5, r9
+	mov r4, r8
+	push {r4, r5, r6}
+	lsl r2, r2, #16
+	asr r2, r2, #16
+	ldr r3, [r1]
+	mov r9, r3
+	ldr r4, [r1, #8]
+	mov sl, r4
+	ldr r5, .LSpriteVectorRotateYPool
+	mov r8, r5
+	mov r6, #128
+	lsl r6, r6, #3
+	add r4, r2, r6
+	ldr r6, .LSpriteVectorRotateYPool + 4
+	and r4, r4, r6
+	lsl r4, r4, #1
+	add r4, r4, r8
+	mov r5, #0
+	ldrsh r3, [r4, r5]
+	mov r5, r9
+	mul r5, r5, r3
+	and r2, r2, r6
+	lsl r2, r2, #1
+	add r2, r2, r8
+	mov r6, #0
+	ldrsh r3, [r2, r6]
+	mov r6, sl
+	mul r6, r6, r3
+	add r3, r6, #0
+	add r5, r5, r3
+	asr r5, r5, #14
+	str r5, [r0]
+	mov r3, #0
+	ldrsh r2, [r2, r3]
+	mov r3, r9
+	mul r3, r3, r2
+	mov r5, #0
+	ldrsh r2, [r4, r5]
+	mov r6, sl
+	mul r6, r6, r2
+	add r2, r6, #0
+	sub r2, r2, r3
+	asr r2, r2, #14
+	str r2, [r0, #8]
+	ldr r1, [r1, #4]
+	str r1, [r0, #4]
+	pop {r3, r4, r5}
+	mov r8, r3
+	mov r9, r4
+	mov sl, r5
+	pop {r4, r5, r6}
+	pop {r0}
+	bx r0
+	.align 2, 0
+.LSpriteVectorRotateYPool:
+	.word gSineTable14
+	.word 0x0FFF
+	.size SpriteVectorRotateY, . - SpriteVectorRotateY
 
-@ 07D138..07D1B4 is decompiled as SpriteVectorRotateZ(); see src/decompiled.json
+	.section .rom.0007D138, "ax"
+	.align 2, 0
+	.thumb_func
+	.thumb
+	.global SpriteVectorRotateZ
+	.type SpriteVectorRotateZ, %function
+SpriteVectorRotateZ:
+	push {r4, r5, r6, lr}
+	mov r6, sl
+	mov r5, r9
+	mov r4, r8
+	push {r4, r5, r6}
+	lsl r2, r2, #16
+	asr r2, r2, #16
+	ldr r3, [r1]
+	mov r9, r3
+	ldr r4, [r1, #4]
+	mov sl, r4
+	ldr r5, .LSpriteVectorRotateZPool
+	mov r8, r5
+	mov r6, #128
+	lsl r6, r6, #3
+	add r4, r2, r6
+	ldr r6, .LSpriteVectorRotateZPool + 4
+	and r4, r4, r6
+	lsl r4, r4, #1
+	add r4, r4, r8
+	mov r5, #0
+	ldrsh r3, [r4, r5]
+	mov r5, r9
+	mul r5, r5, r3
+	and r2, r2, r6
+	lsl r2, r2, #1
+	add r2, r2, r8
+	mov r6, #0
+	ldrsh r3, [r2, r6]
+	mov r6, sl
+	mul r6, r6, r3
+	add r3, r6, #0
+	sub r5, r5, r3
+	asr r5, r5, #14
+	str r5, [r0]
+	mov r3, #0
+	ldrsh r2, [r2, r3]
+	mov r5, r9
+	mul r5, r5, r2
+	add r2, r5, #0
+	mov r6, #0
+	ldrsh r3, [r4, r6]
+	mov r4, sl
+	mul r4, r4, r3
+	add r3, r4, #0
+	add r2, r2, r3
+	asr r2, r2, #14
+	str r2, [r0, #4]
+	ldr r1, [r1, #8]
+	str r1, [r0, #8]
+	pop {r3, r4, r5}
+	mov r8, r3
+	mov r9, r4
+	mov sl, r5
+	pop {r4, r5, r6}
+	pop {r0}
+	bx r0
+	.align 2, 0
+.LSpriteVectorRotateZPool:
+	.word gSineTable14
+	.word 0x0FFF
+	.size SpriteVectorRotateZ, . - SpriteVectorRotateZ
 
 	.section .rom.0007D1B4, "ax"
 	.syntax unified
@@ -6045,9 +6249,158 @@ _0807DA34:
 	.4byte 0xFFFFF000
 
 
-@ 07DA38..07DAD0 is decompiled as SpritePackAffinePosition(); see src/decompiled.json
+	.section .rom.0007DA38, "ax"
+	.syntax divided
+	.align 2, 0
+	.thumb_func
+	.thumb
+	.global SpritePackAffinePosition
+	.type SpritePackAffinePosition, %function
+SpritePackAffinePosition:
+	push {r4, r5, r6, lr}
+	mov r6, r8
+	push {r6}
+	mov r1, #16
+	ldrsh r2, [r0, r1]
+	lsl r2, r2, #8
+	mov r3, #8
+	ldrsh r1, [r0, r3]
+	mov r5, #20
+	ldrsh r4, [r0, r5]
+	mul r1, r1, r4
+	sub r2, r2, r1
+	mov r6, #10
+	ldrsh r1, [r0, r6]
+	mov r5, #22
+	ldrsh r3, [r0, r5]
+	mul r1, r1, r3
+	sub r2, r2, r1
+	mov r6, #18
+	ldrsh r5, [r0, r6]
+	lsl r5, r5, #8
+	mov r6, #12
+	ldrsh r1, [r0, r6]
+	mul r1, r1, r4
+	sub r5, r5, r1
+	mov r4, #14
+	ldrsh r1, [r0, r4]
+	mul r1, r1, r3
+	sub r5, r5, r1
+	strh r2, [r0]
+	ldr r6, .LSpritePackAffinePositionPool
+	mov r8, r6
+	and r2, r2, r6
+	lsr r2, r2, #16
+	ldrh r4, [r0, #2]
+	ldr r3, .LSpritePackAffinePositionPool + 4
+	add r1, r3, #0
+	and r1, r1, r4
+	orr r1, r1, r2
+	strh r1, [r0, #2]
+	ldr r6, .LSpritePackAffinePositionPool + 8
+	and r6, r6, r5
+	mov r1, #15
+	add r2, r6, #0
+	and r2, r2, r1
+	lsl r2, r2, #4
+	ldrb r4, [r0, #3]
+	and r1, r1, r4
+	orr r1, r1, r2
+	strb r1, [r0, #3]
+	lsr r6, r6, #4
+	ldrh r1, [r0, #4]
+	and r3, r3, r1
+	orr r3, r3, r6
+	strh r3, [r0, #4]
+	mov r1, r8
+	and r5, r5, r1
+	lsr r5, r5, #4
+	ldr r1, [r0, #4]
+	ldr r2, .LSpritePackAffinePositionPool + 12
+	and r1, r1, r2
+	orr r1, r1, r5
+	str r1, [r0, #4]
+	pop {r3}
+	mov r8, r3
+	pop {r4, r5, r6}
+	pop {r0}
+	bx r0
+	.align 2, 0
+.LSpritePackAffinePositionPool:
+	.word 0x0FFF0000
+	.word 0xFFFFF000
+	.word 0x0000FFFF
+	.word 0xFF000FFF
+	.size SpritePackAffinePosition, . - SpritePackAffinePosition
 
-@ 07DAD0..07DB4C is decompiled as SpriteBuildAffineMatrix(); see src/decompiled.json
+	.section .rom.0007DAD0, "ax"
+	.align 2, 0
+	.thumb_func
+	.thumb
+	.global SpriteBuildAffineMatrix
+	.type SpriteBuildAffineMatrix, %function
+SpriteBuildAffineMatrix:
+	push {r4, r5, r6, lr}
+	mov r6, r8
+	push {r6}
+	add r5, r0, #0
+	ldr r3, .LSpriteBuildAffineMatrixPool
+	ldrh r1, [r5, #24]
+	ldr r2, .LSpriteBuildAffineMatrixPool + 4
+	add r0, r2, #0
+	and r0, r0, r1
+	lsl r0, r0, #1
+	add r0, r0, r3
+	mov r4, #0
+	ldrsh r1, [r0, r4]
+	mov r8, r1
+	mov r1, #24
+	ldrsh r0, [r5, r1]
+	mov r4, #128
+	lsl r4, r4, #3
+	add r0, r0, r4
+	and r0, r0, r2
+	lsl r0, r0, #1
+	add r0, r0, r3
+	mov r1, #0
+	ldrsh r6, [r0, r1]
+	mov r4, #26
+	ldrsh r0, [r5, r4]
+	bl SpriteMathDivide65536ByS16
+	add r4, r0, #0
+	lsl r4, r4, #16
+	asr r4, r4, #16
+	mov r1, #28
+	ldrsh r0, [r5, r1]
+	bl SpriteMathDivide65536ByS16
+	lsl r0, r0, #16
+	asr r0, r0, #16
+	mov r1, r6
+	mul r1, r1, r4
+	asr r1, r1, #14
+	strh r1, [r5, #8]
+	mov r1, r8
+	mul r1, r1, r4
+	asr r1, r1, #14
+	strh r1, [r5, #10]
+	mov r1, r8
+	mul r1, r1, r0
+	asr r1, r1, #14
+	neg r1, r1
+	strh r1, [r5, #12]
+	mul r0, r0, r6
+	asr r0, r0, #14
+	strh r0, [r5, #14]
+	pop {r3}
+	mov r8, r3
+	pop {r4, r5, r6}
+	pop {r0}
+	bx r0
+	.align 2, 0
+.LSpriteBuildAffineMatrixPool:
+	.word gSineTable14
+	.word 0x00000FFF
+	.size SpriteBuildAffineMatrix, . - SpriteBuildAffineMatrix
 
 @ 07DB4C..07DB54 is decompiled as SpriteRecordSizeForCount(); see src/decompiled.json
 

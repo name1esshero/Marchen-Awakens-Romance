@@ -101,9 +101,9 @@ struct SpriteVector3 {
  * angle is one turn per 4096 units and each scale uses the engine's signed
  * fixed-point reciprocal helper. */
 struct SpriteAffineTransform {
-    u16 packedYLow;
-    u16 packedXAndFlags;
-    u32 packedCoordinateBits;
+    u16 packedXLow;
+    u16 packedXHighAndYLow;
+    u32 packedYHighAndFlags;
     s16 pa;
     s16 pb;
     s16 pc;

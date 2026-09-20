@@ -693,7 +693,7 @@ sound_tables.c pret-standards cleanup: applied the same treatment as game_tables
 
 THUMB-bit rule made general and tooled: docs/PRET_STANDARDS.md section 5 now documents four required safeguards before applying the rule (verify the real address falls in a code region with a real name, always cast to u32 before adding the bit rather than relying on raw `void *` arithmetic, watch for double-indirection pointer-to-pointer tables, and consult a new audit tool) rather than treating it as a one-off game_tables.c discovery. Wrote tools/audit_thumb_ptrs.py, which scans every src/*.c for raw 0x08XXXXXX literals, checks address-1 against decompiled.json, and reports per-file rename candidates. Running it across the whole matching source tree (independent of the game_tables.c/sound_tables.c work, which had already been done by manual inspection) found one more real hit outside either file: src/task_constructors.c passed three raw THUMB-bit-set callback addresses directly to CreateTask that were already-decompiled functions elsewhere (VramFillTask in script_tasks.c, ScriptSpriteResetTask/ScriptSpriteResetAllTask in script_sprite.c) -- these were renamed to `(void *)((u32)Name + 1)` with matching extern declarations added. Verified with make compare.
 
-Register-forcing cleanup, register-order hypothesis retested: tried the "reverse allocation order" idea from docs/PRET_STANDARDS.md section 5a against sprite_affine_matrix.c's SpriteAffineWriteNormal (the three-function Write cluster's representative case) -- stripped every TARGET_REGISTER hint and MATCH_RW/MATCH_OUT/MATCH_IN3 fence, kept the same declaration order, wrote plain natural C. Result: `arm-none-eabi-ld: ROM image is not 16 MB: a fragment changed size` -- a real content mismatch, not just a declaration-order fixable case. Reverted and confirmed still byte-exact. This closes out the cluster as genuinely necessary (not merely assumed by pattern-matching as the earlier round's notes said) -- all three Write functions and the sprite_affine_slots.c/sprite_transform.c fence-backed functions can be considered audited-and-confirmed rather than audited-by-inference.
+Register-forcing cleanup, register-order hypothesis retested: tried the "reverse allocation order" idea from docs/PRET_STANDARDS.md section 5a against sprite_affine_matrix.c's SpriteAffineWriteNormal (the three-function Write cluster's representative case) -- stripped every TARGET_REGISTER hint and MATCH_RW/MATCH_OUT/MATCH_IN3 fence, kept the same declaration order, wrote plain natural C. Result: `arm-none-eabi-ld: ROM image is not 16 MB: a fragment changed size` -- a real content mismatch, not just a declaration-order fixable case. Reverted and confirmed still byte-exact. This proves only that the hints were load-bearing for that tested reconstruction; it does not show that the original source required register constraints. The transform functions have since moved to named assembly with clean C references, and the affine-write cluster remains the final hard-error source.
 
 pret-standards cleanup, remaining audit scope closed out: applied the same raw-hex-elimination treatment to every file flagged in the earlier full-codebase audit. script_native.c named its two shared literal-pool strings (sText_Empty, sText_PercentD) via #define alias, since (as with game_tables.c) the addresses sit in a misdecoded-as-code ASCII region shared with unrelated code. item.c's two consumable-name-table bases were already correctly named; standardized its raw `__attribute__((section(...)))` uses to the shared AT() macro instead, matching every other file. kmp_loader.c was already correctly named (no change needed). map_field.c, map_native.c, and scene_native.c each named their one raw ".KMP"/".NCD" extension-string address (sText_KmpExtension x2, sText_NcdExtension), verified against the actual ROM bytes at each address before naming rather than guessed. script_resources.c's two builtin-function-table registrations were discovered, by inspecting the raw bytes, to be exact type-punned reuses of two already-known tables: 0x081ACB7C is a 24-entry {name, handler} table of core VM/engine commands (dummy/Pad/Wait/GetVar family/CrtFade family/Bgm-Se playback, verified entry-by-entry against ROM bytes) not yet reconstructed as a matching C array so aliased as gScriptEngineFunctions rather than retyped, and 0x081AFEA4 is literally gScriptNativeCommands from game_tables.c reinterpreted through ScriptResourceEntry's compatible layout, re-declared extern under its real name; its third raw address (0x081AC698, a 12-byte zero-filled fallback record) is now sScriptResourceDefaultValue. sound_m4a.c's one remaining raw address followed the established THUMB-bit pattern: subtracting 1 landed on an existing sub_080783DC label already present in asm/code/code_0780C0.s, confirming it as a genuine not-yet-decompiled function rather than data, so it is now `(void *)((u32)sub_080783DC + 1)` with a matching extern declaration. Also fixed the sound_idle_wait.c/sound_tasks.c bonus-scope item flagged during the sound_tables.c work: all nine raw `(struct SoundPlayer *)0x03005F30`/`0x03005FB0` casts across both files now use `&gSoundPlayer0`/`&gSoundPlayer1`. tools/audit_thumb_ptrs.py now reports 0 remaining candidates across all of src/*.c. Verified with make compare after every file; full 140-test suite and audit_provenance.py (1588 compiled C / 1598 total mapped ranges, unchanged) both re-run clean at the end of this pass. Also retested (not just re-affirmed by pattern) the hardest remaining register-forcing cluster -- see the "register-order hypothesis retested" entry above -- confirming sprite_affine_matrix.c's fence-backed Write functions are genuinely necessary, not declaration-order artifacts. [SUPERSEDED: this held only for removing a function's hints all at once. Tested one hint at a time, sprite_affine_matrix.c gave up 24 of them byte-exact; see the REGISTER-HINT CORRECTION at the end of this file.]
 
@@ -2455,3 +2455,33 @@ saved-register values. A direct typed formulation is 96 bytes, and exhaustive
 testing of all 720 declaration orders with the observed assignment order found
 no exact prologue. The exact function remains named assembly; its typed C
 reference is `src/nonmatching/sprite_project_point.c`.
+
+## Fixed-point vector rotations (2026-09-20)
+
+The renderer's three axis rotations use a 4096-step turn and 18.14 sine-table
+values. Their readable formulas are now collected in
+`src/nonmatching/sprite_vector_rotate.c`, with named angle-mask, quarter-turn,
+and fractional-bit constants. The exact ROM forms reload sine and cosine for
+the second output rather than retaining the first pair.
+
+The old matching C forced each table value into r3. Clean agbcc instead retains
+the second input component in r6 and loads table values through r7. Both
+compiler snapshots, typed indexing, a possible fourth parameter, explicit
+scratch flow, and 2,000 declaration orders were tested without recovering the
+ROM's r3/sl lifetime. The exact routines are now named assembly in
+`asm/code/code_0780C0.s` rather than C with an unexplained register request.
+
+## Affine coordinate packing and matrix construction (2026-09-20)
+
+The first eight bytes of `SpriteAffineTransform` encode two signed 28-bit
+coordinates. X bits 0..15 use the first halfword; X bits 16..27 and Y bits 0..3
+share the second; Y bits 4..27 use the low 24 bits of the following word. The
+top byte of that word is preserved for attributes. The fields are now named
+`packedXLow`, `packedXHighAndYLow`, and `packedYHighAndFlags` accordingly.
+
+The previous packing and matrix routines used eleven forced registers and two
+empty barriers. Removing the hints yields 140/116 bytes with new agbcc and
+144/120 with old agbcc, compared with 152/124 bytes in the ROM. Their clean
+fixed-point algorithms and named masks remain in
+`src/nonmatching/sprite_affine_transform.c`; exact named assembly replaces the
+obsolete hint-bearing translation unit.

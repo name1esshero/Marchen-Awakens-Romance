@@ -6678,24 +6678,6 @@
     "file": "src/sprite_engine_state.c"
   },
   {
-    "addr": "0807D044",
-    "size": 124,
-    "name": "SpriteVectorRotateX",
-    "file": "src/sprite_transform.c"
-  },
-  {
-    "addr": "0807D0C0",
-    "size": 120,
-    "name": "SpriteVectorRotateY",
-    "file": "src/sprite_transform.c"
-  },
-  {
-    "addr": "0807D138",
-    "size": 124,
-    "name": "SpriteVectorRotateZ",
-    "file": "src/sprite_transform.c"
-  },
-  {
     "addr": "0807D21C",
     "size": 32,
     "name": "SpriteSetViewportOrigin",
@@ -6814,18 +6796,6 @@
     "size": 172,
     "name": "SpriteVectorLengthFixed",
     "file": "src/sprite_math.c"
-  },
-  {
-    "addr": "0807DA38",
-    "size": 152,
-    "name": "SpritePackAffinePosition",
-    "file": "src/sprite_transform.c"
-  },
-  {
-    "addr": "0807DAD0",
-    "size": 124,
-    "name": "SpriteBuildAffineMatrix",
-    "file": "src/sprite_transform.c"
   },
   {
     "addr": "0807DB4C",

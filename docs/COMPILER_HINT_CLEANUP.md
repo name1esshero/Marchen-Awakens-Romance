@@ -359,8 +359,7 @@ Recorded at the time of writing; regenerate rather than trusting these numbers.
   removals at 149; everything left needs either a structural rewrite (slow,
   one function at a time, as above) or the same real-assembly move.
 - Current concentrations as of 2026-09-20 (regenerate with `make pret-audit`):
-  `sprite_affine_matrix.c` (43) and `sprite_transform.c` (19). These counts
-  include duplicate rule
+  `sprite_affine_matrix.c` (43). This count includes duplicate rule
   classifications where one constrained declaration is both a forced-register
   and inline-assembly finding.
 - `make compare` byte-exact and all host tests passing throughout.
@@ -402,6 +401,41 @@ divisor pointer across the saved registers. A compact typed expression is only
 with assignments held in ROM order; none reproduced even the full entry
 allocation. The exact function is therefore named assembly, with the clean
 typed implementation in `src/nonmatching/sprite_project_point.c`.
+
+## Sprite vector-rotation fallback (2026-09-20)
+
+`SpriteVectorRotateX`, `SpriteVectorRotateY`, and `SpriteVectorRotateZ` apply
+the standard fixed-point axis-rotation formulas with a 4096-entry sine table.
+The ROM deliberately reloads sine and cosine for the second output expression.
+The previous matching reconstruction reproduced that access pattern but pinned
+the shared table value to r3 in all three routines.
+
+Without the pin, both compiler revisions keep the second vector component in
+r6 and the table value in r7, producing 108/112/108-byte sections. The ROM
+keeps the component in sl and routes table values through r3, producing
+124/120/124 bytes. Typed indexing, an otherwise-unused fourth parameter,
+explicit value-copy data flow, and 2,000 declaration orders did not change the
+clean allocation. The exact named routines now live in `code_0780C0.s`; the
+direct fixed-point formulas remain in `src/nonmatching/sprite_vector_rotate.c`.
+
+## Affine packing and matrix fallback (2026-09-20)
+
+The final two functions in `sprite_transform.c` contained eleven register pins
+and two empty assembly barriers. The one-at-a-time cleanup tool confirmed that
+all 13 hints changed the current source's machine code. Removing them together
+makes new agbcc emit 140/116-byte routines and old agbcc emit 144/120 bytes;
+the ROM sections are 152/124 bytes. Compiler selection therefore does not
+explain the missing source lifetimes.
+
+The readable reconstruction now exposes the record's actual packing: X bits
+0..15 occupy the first halfword, X bits 16..27 share the next halfword with Y
+bits 0..3, Y bits 4..27 occupy the low 24 bits of the following word, and that
+word's top byte is preserved. The record fields and masks are named for this
+layout. Matrix construction is expressed directly from sine, cosine, and the
+two reciprocal scales. Exact symbolic implementations live in
+`code_0780C0.s`; the clean reference is
+`src/nonmatching/sprite_affine_transform.c`. The obsolete hint-bearing source
+file was removed.
 
 ## Watch out for
 

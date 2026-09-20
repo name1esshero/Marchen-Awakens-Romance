@@ -666,3 +666,34 @@ declaration-order space shows that another source-shape fact is missing. Do
 not encode the observed r4 choice as C. Keep the exact symbolic assembly and a
 typed nonmatching reference until callers or neighboring state layout reveal
 that missing fact.
+
+### A dead fourth argument does not reserve its ABI register
+
+The three sprite vector rotations formerly pinned a repeatedly loaded sine or
+cosine value to r3. Because r3 is the fourth argument register, a plausible
+prototype-recovery hypothesis was that the routines had an unknown fourth
+parameter which was reused as scratch. agbcc disproves that shape: when the
+incoming value is overwritten before use, it treats the parameter as dead and
+allocates the later table value exactly like an ordinary local. It does not
+reserve r3 merely because the source prototype names a fourth argument.
+
+Routing the first input load through that local also coalesces away, and 2,000
+declaration orders all generate the same shorter allocation. A register choice
+cannot be justified by adding an unused ABI parameter; caller evidence and an
+observable use are required. These routines therefore use the normal PRET
+fallback until a different source-level lifetime is discovered.
+
+### Compiler selection cannot explain the affine-transform hints
+
+Removing all eleven register constraints and both empty barriers from the two
+affine-transform helpers produces different results with the project's two
+compiler snapshots. New agbcc emits 140/116 bytes for position packing and
+matrix construction; old agbcc emits 144/120 bytes; the ROM uses 152/124
+bytes. The one-at-a-time hint tool also reports every remaining hint as
+load-bearing for the old reconstruction.
+
+These results establish only that the current source shape is incomplete.
+They do not justify the constraints or prove that either compiler is wrong.
+When both plausible compiler revisions produce smaller ordinary C, retain the
+typed algorithm as a nonmatching reference and keep the exact symbolic routine
+in assembly until a caller, type, alias, or lifetime supplies new evidence.

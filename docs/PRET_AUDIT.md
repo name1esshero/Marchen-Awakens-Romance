@@ -15,7 +15,7 @@ error. The audit prints known, new, and resolved counts on one line.
 
 - `make compare` reproduces the Japanese ROM byte for byte.
 - `make english` succeeds and all 197 host tests pass.
-- The mechanical PRET audit reports **62 errors / 0 warnings / 17 documented
+- The mechanical PRET audit reports **43 errors / 0 warnings / 17 documented
   exceptions** on one summary line. Every exception is enumerated in the
   generated report.
 
@@ -99,6 +99,23 @@ rotates six live values; all 720 declaration orders for those values failed to
 recover the ROM prologue. The exact symbolic routine is retained in assembly
 and the direct typed projection remains in `src/nonmatching/`, removing one
 more forced-register finding without losing the recovered behavior.
+
+The X/Y/Z sprite-vector rotations no longer pin a shared table scratch to r3.
+Their exact named assembly preserves the ROM's repeated sine-table loads, while
+concise typed implementations remain in `src/nonmatching/`. Both compiler
+revisions, typed indexing, an unused fourth-parameter ABI hypothesis, explicit
+scratch-value flow, and 2,000 declaration orders all produced the same smaller
+allocation family. Moving the exact routines honestly to assembly removes
+three more hard findings without presenting the r3 choice as recovered C.
+
+`SpritePackAffinePosition` and `SpriteBuildAffineMatrix` no longer carry eleven
+fixed-register declarations and two empty assembly barriers. The recovered
+record now names the 28-bit X/Y packing split across its first eight bytes, and
+the clean reference uses direct fixed-point matrix formulas and named masks.
+New and old agbcc emit different smaller routines, while the ROM's exact forms
+remain symbolic assembly. Removing the obsolete matching translation unit
+clears its final 16 findings; `sprite_affine_matrix.c` is now the sole hard
+finding source.
 
 ## Verified snapshot: renderer reference fallback, 2026-09-20
 
