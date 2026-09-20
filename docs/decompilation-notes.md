@@ -2784,3 +2784,82 @@ struct reads back garbage with no error, since both sides compile fine and
 the mismatch only shows up as wrong pointer values at runtime. The fix is for
 test scaffolding to write through the same struct type the real code reads
 through, never a raw offset that assumes the target's field layout.
+
+## Rejected match reversed: consumable inventory scan (2026-09-20)
+
+`CountConsumableInventoryCopies` (0x08057078) had been formally rejected
+earlier this project (see `docs/PRET_AUDIT.md`'s "Rejected match" entry) as
+needing a pointer/`u32` union purely to steer register allocation, with its
+natural candidate parked in `src/nonmatching/consumable_inventory.c`. Revisiting
+it with the two techniques discovered this session -- splitting one compound
+computation into ordered statements to independently control both
+*instruction order* and *register role* -- reproduced it byte-exact using
+only the natural fixed-point-stepping shape the candidate already had:
+
+- The candidate computed `entry = gMapGenerationRoot + 0x31D0;` before
+  `indexFixed = 1 << 16;`. The ROM computes the constant `0x10000` *first*,
+  then the pointer add. Swapping the two statements' order alone flips which
+  variable becomes the register-allocator's `r1` vs `r2`, matching one but not
+  both.
+- Splitting `entry`'s computation further -- reading `gMapGenerationRoot`'s
+  value into its own statement *before* the `1<<16` constant, then adding the
+  `0x31D0` offset *after* -- reproduces the ROM's actual sequence: dereference
+  the root, then compute the constant, then combine root+offset into the loop
+  pointer. Neither "compute entry first" nor "compute the constant first" as a
+  single statement reaches this; the ROM interleaves the two computations, and
+  only a matching three-way split does too.
+
+Confirmed instruction-for-instruction and byte-for-byte via direct
+`arm-none-eabi-objdump` comparison of the assembled candidate against
+`baserom.gba`, not just `agbcc_probe.py`'s printed mnemonics (which showed a
+harmless 2-operand-vs-3-operand-immediate `adds` display difference that
+turned out to be the same encoding at the byte level -- always verify with
+the actual assembled bytes when a probe diff looks like a real mismatch but
+the function is otherwise identical). `src/nonmatching/consumable_inventory.c`
+is now deleted; the real function lives beside its sibling
+`ConsumableInventoryGetSlot`/`ConsumableInventoryClearSlot` in
+`src/runtime_accessors.c`. `audit_provenance.py` now reports 1822/1822.
+
+This is a general lesson beyond this one function: a "rejected match" or
+"needs a register hint" conclusion reached before the shared-statement-order
+technique was known should be treated as provisional, not final, and is
+worth a second attempt with it -- see `docs/COMPILER_HINT_CLEANUP.md` and
+`docs/AGBCC_CODEGEN.md`.
+
+## Partial progress: SpriteAffineAllocate (2026-09-20)
+
+`src/nonmatching/sprite_affine_allocate.c` had two real bugs, both found by
+comparing its generated instructions directly against the ROM disassembly
+rather than re-reading the C: `~(state->flags10 | state->flags14)` computed
+OR-then-NOT where the ROM computes NOT-then-BIC (`~flags14 & ~flags10`, De
+Morgan's law, not just a different spelling of the same OR), and
+`(high << 16) | (u16)low` zero-extended `low` where the ROM's `asrs`
+sign-extends it -- a real behavioral difference for negative `low`, not only
+a codegen one. Both fixed; the candidate is otherwise unchanged and still
+does not match. What remains is that the ROM preserves `key` in r8 (with the
+Thumb high-register push/pop dance that requires), while every C shape tried
+keeps it in the unsaved `ip` register instead, needing no such dance -- a
+register-pressure threshold difference, not an instruction-order one. Recorded
+in the candidate's own header for the next attempt.
+
+## Fixed `make check-modern` (2026-09-20)
+
+`MODERN_CFLAGS` used `-nostdinc` (correct, for a freestanding GBA target) but
+was missing `-Itools/agbcc/include`, so `src/libc/callocr.c`'s `#include
+<stddef.h>` failed even though the real build resolves it from exactly that
+directory. Adding the path only got one file further: `-nostdinc -Iinclude
+-Itools/agbcc/include` alone left `HAVE_MMAP` undefined by the time
+`callocr.c` reaches its `#ifndef HAVE_MMAP / #define HAVE_MMAP 1` fallback,
+taking newlib's host-mmap branch and reaching for `sys/mman.h`, which does
+not exist even in the real agbcc include tree. The real build's own libc
+compile rule (`$(BUILD)/src/libc/%.o` in the Makefile) already defines
+`-DABORT_PROVIDED -DHAVE_GETTIMEOFDAY -DARM_RDI_MONITOR -DINTERNAL_NEWLIB`,
+which correctly gates that branch out; `MODERN_CFLAGS` needed the same
+defines, not code changes to the vendored newlib source. The final blocker
+was `src/libc/findfp.c`'s genuine 1990s K&R-style function definitions
+(`std (ptr, flags, file, data)` with only some parameters typed below),
+which a default-standard modern GCC now treats as a hard `-Wimplicit-int`
+error rather than a warning; `-std=gnu89` restores the older, permissive
+behavior without touching the vendored file. `make check-modern` now exits 0
+(warnings only, its documented purpose) across all 126 tracked sources plus
+every `src/nonmatching/*.c` candidate.

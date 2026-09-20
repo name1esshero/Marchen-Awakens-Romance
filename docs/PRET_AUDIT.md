@@ -11,6 +11,28 @@ ordinary edits above a finding do not create false regressions; duplicates are
 counted independently so one fixed error cannot hide one newly introduced
 error. The audit prints known, new, and resolved counts on one line.
 
+## Verified snapshot: game-state root record getters, 2026-09-20
+
+- `make compare` reproduces the Japanese ROM byte for byte.
+- All 198 host tests pass.
+- The mechanical PRET audit remains at **0 errors / 0 warnings / 18
+  documented exceptions**.
+- `audit_provenance.py` now reports 1822/1822 mapped ranges compiled C.
+
+Five more functions matched this session, all off the same
+`IwramGameStateRootLayout` root or the same game-state base: three record
+getters (`GameStateGetEffectSlot`, `GameStateGetRecord3F3C`,
+`GameStateGetRecord403C`), the real-named `GameStateGetHitRegion` (a third
+sibling whose type and name were already established by existing callers),
+and `CountConsumableInventoryCopies` -- see the "Rejected match, later
+reversed" entry below, which this same pass reopened and matched. A sixth
+candidate (`sub_080099E0`, extern-declared elsewhere as
+`s16 *(u32 actor, u32 group)`) hit a genuine allocator tie -- its trailing
+constant's different immediate-loading strategy flips which register holds
+the actor accumulator versus the dereferenced base -- and was left as
+assembly after six restructurings failed to reach it. Full detail for all six
+in `docs/decompilation-notes.md`.
+
 ## Verified snapshot: compiler-steering audit, 2026-09-20
 
 - `make compare` reproduces the Japanese ROM byte for byte.
@@ -564,15 +586,14 @@ The resolver at 0x08055F4C was deliberately retained in assembly: its clean C
 candidate is behaviorally and structurally correct but swaps two low registers.
 This follows `PRET_STANDARDS.md` rather than forcing a cosmetic match.
 
-## Rejected match: consumable inventory scan (2026-09-20)
+## Rejected match, later reversed: consumable inventory scan (2026-09-20)
 
 The apparent C match for `CountConsumableInventoryCopies` at 0x08057078 used
 a pointer/`u32` union solely to reproduce the ROM's low-register allocation.
 The disassembly instead shows normal pointer formation and pointer increments,
-so the union was rejected as compiler steering. The natural C candidate is
-documented in `src/nonmatching/consumable_inventory.c`, and the exact body
-remains in assembly under the PRET fallback rule. Its assembly callers still
-use the descriptive relocatable symbol.
+so the union was rejected as compiler steering. The natural C candidate was
+initially documented in `src/nonmatching/consumable_inventory.c` with the
+exact body left in assembly under the PRET fallback rule.
 
 The associated trace remains valid: game-state offsets `0x31D0` and `0x33D0`
 are the 256-slot consumable inventory and its snapshot, so four older
@@ -580,3 +601,12 @@ offset-based or map-named helpers retain their inventory-specific public names.
 The native command registered as `ItemInit` is now named
 `ScriptNativeClearConsumableInventory`, replacing its earlier speculative map
 name without changing its still-audited implementation.
+
+**Later reversed**, same day: the union was never necessary. The candidate's
+own natural fixed-point-stepping shape reproduces the ROM byte-for-byte once
+its statements are ordered to match the ROM's actual computation sequence
+(dereference the root pointer, compute the `1<<16` constant, then add the
+table offset -- three separate steps, not one or two). See
+`docs/decompilation-notes.md`'s "Rejected match reversed" entry for the exact
+technique. `src/nonmatching/consumable_inventory.c` is deleted; the real
+function is now `CountConsumableInventoryCopies` in `src/runtime_accessors.c`.

@@ -416,6 +416,48 @@ GAME_STATE_TABLE_GET_S16("000568B4",GameStateGetEntry2768,0x2768)
 GAME_STATE_TABLE_GET_S16("00056EE0",GameStateGetEntry2AE0,0x2AE0)
 GAME_STATE_TABLE_GET_S16("00057138",ConsumableInventoryGetSlot,0x31D0)
 
+/** Count occurrences of a target ARM/item id in the 256-slot game-state
+ * consumable inventory. The 16.16 fixed-point stepping (rather than a plain
+ * int) is the original source shape: it is what reproduces the ROM's
+ * register allocation and instruction order exactly.
+ * @param id Target value, narrowed to 16 bits like the table's own slots.
+ * @return Number of matching slots. */
+AT("00057078") s32 CountConsumableInventoryCopies(s32 id)
+{
+ s32 target;
+ s32 count;
+ u8 *base;
+ u8 *entry;
+ s32 indexFixed;
+ s32 countFixed;
+ s32 step;
+
+ target=(s16)id;
+ count=0;
+ base=gMapGenerationRoot;
+ indexFixed=1<<16;
+ entry=base+0x31D0;
+ countFixed=indexFixed;
+ step=indexFixed;
+ do
+ {
+  if(*(s16 *)entry==target)
+  {
+   s32 previous=countFixed;
+   countFixed+=step;
+   count=previous>>16;
+  }
+  {
+   s32 previous=indexFixed;
+   indexFixed+=step;
+   entry+=sizeof(s16);
+   if((previous>>16)>=256)
+    break;
+  }
+ } while(1);
+ return count;
+}
+
 /** @return A signed 16-bit encounter-related field stored 180 bytes before
  * the game state root. Exact meaning not yet recovered. */
 AT("000577E4") s32 GameStateGetEncounterValue(void)

@@ -15266,51 +15266,10 @@ _08057070:
 	pop {r1}
 	bx r1
 
-	.thumb_func
-	.thumb
-	.global CountConsumableInventoryCopies
-CountConsumableInventoryCopies:
-	push {r4, r5, r6, r7, lr}
-	lsls r0, r0, #16
-	asrs r6, r0, #16
-	movs r5, #0
-	ldr r0, _080570B4
-	ldr r0, [r0, #0]
-	movs r2, #128
-	lsls r2, r2, #9
-	ldr r3, _080570B8
-	adds r1, r0, r3
-	adds r3, r2, #0
-	adds r4, r2, #0
-	.global _08057090
-_08057090:
-	movs r7, #0
-	ldrsh r0, [r1, r7]
-	cmp r0, r6
-	bne _0805709E
-	adds r0, r3, #0
-	adds r3, r3, r4
-	asrs r5, r0, #16
-	.global _0805709E
-_0805709E:
-	adds r0, r2, #0
-	adds r2, r2, r4
-	adds r1, #2
-	asrs r0, r0, #16
-	cmp r0, #255
-	ble _08057090
-	adds r0, r5, #0
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _080570B4
-_080570B4:
-	.4byte 0x03003FDC  @ IWRAM+0x3FDC
-	.global _080570B8
-_080570B8:
-	.4byte 0x000031D0
+@ 057078..0570BC is decompiled as CountConsumableInventoryCopies(); see src/decompiled.json
+
+	.section .rom.000570BC, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb

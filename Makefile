@@ -314,9 +314,16 @@ compare: $(TARGET)
 # The diagnostics are still worth having, so this compiles the same sources
 # with a modern toolchain purely to report on them. It produces no object the
 # ROM uses and cannot affect `make compare`.
+# The libc-specific defines (ABORT_PROVIDED, ARM_RDI_MONITOR, INTERNAL_NEWLIB,
+# ...) match $(BUILD)/src/libc/%.o's real build rule below: they gate which
+# platform branch newlib's vendored sources take, and without them a file
+# like callocr.c takes the mmap-based host branch instead and reaches for
+# headers (sys/mman.h) this freestanding target doesn't have.
 MODERN_CFLAGS := -mcpu=arm7tdmi -mthumb -mthumb-interwork -Os -fno-builtin \
-                 -fno-strict-aliasing -nostdinc -Iinclude -Wall -Wextra \
-                 -Wno-unused-parameter -fsyntax-only
+                 -fno-strict-aliasing -nostdinc -Iinclude -Itools/agbcc/include \
+                 -Isrc/libc -DABORT_PROVIDED -DHAVE_GETTIMEOFDAY \
+                 -DARM_RDI_MONITOR -DINTERNAL_NEWLIB -std=gnu89 \
+                 -Wall -Wextra -Wno-unused-parameter -fsyntax-only
 
 .PHONY: snapshot
 snapshot:
