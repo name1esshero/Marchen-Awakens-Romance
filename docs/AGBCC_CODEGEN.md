@@ -480,6 +480,16 @@ difference is register pressure rather than scheduling.
   source claims. Keep these self-contained library routines in named assembly,
   expose the operation as clean C under `src/nonmatching/`, and use the
   platform `REG_WAITCNT` macro everywhere outside assembly.
+- **Loop-invariant hoisting can change the saved-register frame.** In
+  `SpriteAffineFind` (0x0807CC18), the ROM keeps the engine-root slot address in
+  r8 and materializes `1 << slot` from a fresh r0 value on each pass. Clean
+  agbcc hoists the invariant one into r8, moves the root address to r9, and
+  grows the prologue and epilogue by six bytes. Direct constants, a named unit,
+  plain `register`, global-pointer lifetime changes, and both frontends do not
+  recover the ROM shape. Do not prevent legitimate invariant motion with an
+  empty assembly barrier or force its temporaries into low registers. Keep the
+  exact routine in assembly until a real source abstraction explains why the
+  unit was rematerialized.
 - **After adding a function, run the host tests, not just `make compare`.** The
   tests compile individual `.c` files on their own, so a new reference to a
   symbol the ROM link resolves -- `gSecondaryRuntime`, `gIwramBase`, anything

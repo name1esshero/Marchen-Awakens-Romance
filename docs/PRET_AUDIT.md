@@ -15,7 +15,7 @@ error. The audit prints known, new, and resolved counts on one line.
 
 - `make compare` reproduces the Japanese ROM byte for byte.
 - `make english` succeeds and all 197 host tests pass.
-- The mechanical PRET audit reports **77 errors / 0 warnings / 17 documented
+- The mechanical PRET audit reports **71 errors / 0 warnings / 17 documented
   exceptions** on one summary line. Every exception is enumerated in the
   generated report.
 
@@ -74,6 +74,14 @@ exact symbolic assembly, while their clean volatile-register implementations
 live in `src/nonmatching/sram_access.c`. The shared GBA register header now
 provides `REG_WAITCNT`. This removes all eight findings from `src/sram.c` and
 keeps the fixed hardware address visibly classified as platform I/O.
+
+`SpriteAffineFind` no longer uses the shared `TARGET_REGISTER` macro or three
+fixed low-register temporaries. Its exact 106-byte routine plus two-byte tail
+is named assembly, and its readable wraparound search is retained under
+`src/nonmatching/`. The natural candidate hoists a loop unit into r8 and moves
+the engine-root address to r9, expanding the saved-register frame; the older
+frontend also differs. This removes the six findings from
+`src/sprite_affine_slots.c` without encoding that allocation in C.
 
 ## Verified snapshot: renderer reference fallback, 2026-09-20
 

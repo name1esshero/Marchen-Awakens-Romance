@@ -26,11 +26,6 @@
   },
   {
     "kind": "inline_assembly",
-    "file": "src/sprite_affine_slots.c",
-    "detail": "#define TARGET_REGISTER(name) asm(name)"
-  },
-  {
-    "kind": "inline_assembly",
     "file": "src/sprite_interpolation.c",
     "detail": "#define TARGET_REGISTER(name) asm(name)"
   },
@@ -243,31 +238,6 @@
     "kind": "target_register_macro",
     "file": "src/sprite_affine_matrix.c",
     "detail": "register u32 mask TARGET_REGISTER(\"r1\");"
-  },
-  {
-    "kind": "target_register_macro",
-    "file": "src/sprite_affine_slots.c",
-    "detail": "#define TARGET_REGISTER(name)"
-  },
-  {
-    "kind": "target_register_macro",
-    "file": "src/sprite_affine_slots.c",
-    "detail": "#define TARGET_REGISTER(name) asm(name)"
-  },
-  {
-    "kind": "target_register_macro",
-    "file": "src/sprite_affine_slots.c",
-    "detail": "register struct SpriteAffineSlot *entry TARGET_REGISTER(\"r2\");"
-  },
-  {
-    "kind": "target_register_macro",
-    "file": "src/sprite_affine_slots.c",
-    "detail": "register struct SpriteEngineState **globalReg TARGET_REGISTER(\"r2\");"
-  },
-  {
-    "kind": "target_register_macro",
-    "file": "src/sprite_affine_slots.c",
-    "detail": "register u32 entryOffset TARGET_REGISTER(\"r0\") = slot << 3;"
   },
   {
     "kind": "target_register_macro",

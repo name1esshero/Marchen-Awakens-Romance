@@ -5184,7 +5184,72 @@ _0807CC00:
 
 @ 07CC04..07CC18 is decompiled as SpriteEngineGetBuffer4Entry(); see src/decompiled.json
 
-@ 07CC18..07CC84 is decompiled as SpriteAffineFind(); see src/decompiled.json
+	.section .rom.0007CC18, "ax"
+	.syntax unified
+	.thumb
+	.thumb_func
+	.global SpriteAffineFind
+	.type SpriteAffineFind, %function
+SpriteAffineFind:
+	push {r4, r5, r6, r7, lr}
+	mov r7, r8
+	push {r7}
+	lsls r0, r0, #16
+	lsrs r0, r0, #16
+	mov ip, r0
+	lsls r2, r2, #16
+	asrs r2, r2, #16
+	ldr r3, .LSpriteAffineFindPool
+	ldr r0, [r3]
+	ldr r4, [r0, #24]
+	lsls r6, r1, #16
+	orrs r6, r2
+	ldr r5, [r0, #16]
+	ldr r0, [r0, #20]
+	eors r5, r0
+	movs r7, #0
+	mov r8, r3
+	movs r3, #31
+.LSpriteAffineFindLoop:
+	ands r4, r3
+	movs r0, #1
+	lsls r0, r4
+	ands r0, r5
+	cmp r0, #0
+	beq .LSpriteAffineFindNext
+	lsls r0, r4, #3
+	adds r0, #28
+	mov r2, r8
+	ldr r1, [r2]
+	adds r2, r1, r0
+	ldrh r0, [r2]
+	cmp r0, ip
+	bne .LSpriteAffineFindNext
+	ldr r0, [r2, #4]
+	cmp r0, r6
+	bne .LSpriteAffineFindNext
+	str r4, [r1, #24]
+	adds r0, r4, #0
+	b .LSpriteAffineFindDone
+	.align 2, 0
+.LSpriteAffineFindPool:
+	.4byte gSpriteEngineState
+.LSpriteAffineFindNext:
+	adds r7, #1
+	adds r4, #1
+	cmp r7, #31
+	ble .LSpriteAffineFindLoop
+	movs r0, #1
+	negs r0, r0
+.LSpriteAffineFindDone:
+	pop {r3}
+	mov r8, r3
+	pop {r4, r5, r6, r7}
+	pop {r1}
+	bx r1
+	.size SpriteAffineFind, . - SpriteAffineFind
+	.byte 0
+	.byte 0
 
 	.section .rom.0007CC84, "ax"
 	.syntax unified

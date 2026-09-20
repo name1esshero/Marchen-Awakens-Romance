@@ -2409,3 +2409,19 @@ Their exact implementations are therefore named assembly in
 `REG_WAITCNT`, keeping the physical GBA register address in the hardware layer.
 `WriteSramFast` remains matching C. The change removes eight PRET hard findings
 without attributing r0/r2 constraints to the original source.
+
+## Affine-slot search fallback (2026-09-20)
+
+`SpriteAffineFind` at 0x0807CC18 performs a 32-entry wraparound search over
+occupied affine slots and updates the next-search cursor on success. The ROM
+keeps the mutable sprite-engine root address in r8 and rematerializes the unit
+bit used by `1 << slot` inside the loop. Natural agbcc C instead retains the
+unit in r8, moves the root to r9, and expands the saved-register frame from one
+high register to two.
+
+Direct and named mask expressions, plain `register`, earlier root lifetimes,
+single-root forms, and both compiler frontends were tested. None matched
+without specifying machine registers. The exact 106-byte routine and its
+two-byte tail are now named assembly in `asm/code/code_0780C0.s`; the clean
+typed search is retained in `src/nonmatching/sprite_affine_find.c`. This
+removes all six findings from the former matching source.

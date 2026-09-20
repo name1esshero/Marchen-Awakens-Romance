@@ -360,9 +360,9 @@ Recorded at the time of writing; regenerate rather than trusting these numbers.
   one function at a time, as above) or the same real-assembly move.
 - Current concentrations as of 2026-09-20 (regenerate with `make pret-audit`):
   `sprite_affine_matrix.c` (43), `sprite_transform.c` (20),
-  `sprite_interpolation.c` (8), and `sprite_affine_slots.c` (6). These counts include
-  duplicate rule classifications where one constrained declaration is both a
-  forced-register and inline-assembly finding.
+  and `sprite_interpolation.c` (8). These counts include duplicate rule
+  classifications where one constrained declaration is both a forced-register
+  and inline-assembly finding.
 - `make compare` byte-exact and all host tests passing throughout.
 
 ## Watch out for
@@ -643,6 +643,23 @@ in `asm/code/code_0100C0.s`; the typed candidate remains in
 `src/nonmatching/script_native_copy_map_halfwords.c`. This removes all four
 PRET findings from `mapping.c` while leaving the unresolved source shape
 visible instead of attributing either constraint to the original developers.
+
+## Affine-slot search: rematerialization versus a second saved register
+
+`SpriteAffineFind()` (0x0807CC18) searches all 32 affine slots starting at the
+last successful index. The ROM keeps the mutable `gSpriteEngineState` slot
+address in r8 and rematerializes the unit bit in r0 on every pass. Removing the
+three constrained low-register temporaries makes agbcc hoist that unit bit into
+r8 and move the global-slot address into r9. The result grows from 106 to 112
+code bytes and saves two high registers instead of one.
+
+Direct `1u << slot` syntax, a separately named unit value, plain `register`
+storage, earlier global initialization, one global-pointer local, and both
+compiler frontends were checked. None recovered the ROM frame and loop without
+a machine-register request. The exact routine and two-byte alignment tail now
+live as named assembly in `asm/code/code_0780C0.s`; the typed wraparound search
+remains in `src/nonmatching/sprite_affine_find.c`. This removes all six PRET
+findings formerly attached to `src/sprite_affine_slots.c`.
 
 ## Preserve clean references when ordinary C does not yet match
 

@@ -6600,12 +6600,6 @@
     "file": "src/sprite_engine_state.c"
   },
   {
-    "addr": "0807CC18",
-    "size": 108,
-    "name": "SpriteAffineFind",
-    "file": "src/sprite_affine_slots.c"
-  },
-  {
     "addr": "0807CCEC",
     "size": 56,
     "name": "SpriteEngineSetFlag10",
