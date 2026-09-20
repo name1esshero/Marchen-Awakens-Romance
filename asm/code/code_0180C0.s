@@ -775,7 +775,7 @@ sub_08018590:
 	movs r1, #0
 	ldrsb r1, [r5, r1]
 	mov r2, sp
-	bl sub_0800A724
+	bl RuntimeObjectCopySecondaryHitBounds
 	movs r0, #0
 	ldrsb r0, [r4, r0]
 	movs r1, #0
@@ -4286,7 +4286,7 @@ _0801A068:
 	asrs r1, r1, #24
 	add r5, sp, #48
 	adds r2, r5, #0
-	bl sub_0800A724
+	bl RuntimeObjectCopySecondaryHitBounds
 	mov r0, r8
 	adds r0, #54
 	ldrb r0, [r0, #0]
@@ -4525,7 +4525,7 @@ sub_0801A230:
 	asrs r1, r1, #24
 	add r7, sp, #48
 	adds r2, r7, #0
-	bl sub_0800A724
+	bl RuntimeObjectCopySecondaryHitBounds
 	mov r0, r8
 	adds r0, #54
 	ldrb r0, [r0, #0]
@@ -4673,7 +4673,7 @@ _0801A31C:
 	asrs r1, r1, #24
 	add r5, sp, #48
 	adds r2, r5, #0
-	bl sub_0800A724
+	bl RuntimeObjectCopySecondaryHitBounds
 	mov r0, r8
 	adds r0, #54
 	ldrb r0, [r0, #0]
@@ -5277,7 +5277,7 @@ _0801A734:
 	asrs r1, r1, #24
 	add r7, sp, #48
 	adds r2, r7, #0
-	bl sub_0800A724
+	bl RuntimeObjectCopySecondaryHitBounds
 	mov r0, r8
 	adds r0, #54
 	ldrb r0, [r0, #0]
@@ -16709,7 +16709,7 @@ _0801F382:
 	asrs r1, r1, #24
 	add r5, sp, #48
 	adds r2, r5, #0
-	bl sub_0800A724
+	bl RuntimeObjectCopySecondaryHitBounds
 	ldr r6, [sp, #68]
 	adds r6, #54
 	mov r8, r6
@@ -17697,7 +17697,7 @@ sub_0801FA58:
 	asrs r1, r1, #24
 	add r6, sp, #48
 	adds r2, r6, #0
-	bl sub_0800A724
+	bl RuntimeObjectCopySecondaryHitBounds
 	ldr r0, [sp, #68]
 	adds r0, #54
 	mov r8, r0

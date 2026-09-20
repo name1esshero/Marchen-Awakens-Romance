@@ -1,7 +1,9 @@
 /* Views of the secondary runtime's actor records and its 4-by-4 object table. */
 #include "runtime_objects.h"
+#include "battle_character.h"
 #include "list.h"
 #include "ncd.h"
+#include "runtime_misc.h"
 #include "runtime_state.h"
 #include "rom_section.h"
 extern u8 *gRuntimeObjectTable[];
@@ -15,6 +17,22 @@ extern u8 *gRuntimeObjectTable[];
 #define RUNTIME_LISTS_OFFSET 0x80
 #define RUNTIME_LIST_STRIDE 12
 #define RUNTIME_LIST_POINTERS_OFFSET 0xB0
+
+/** Copy an object's secondary character hit box into caller-owned storage. */
+AT("0000A724")
+void RuntimeObjectCopySecondaryHitBounds(u32 group, u32 slot,
+                                         struct HitBounds *destination)
+{
+    u8 *object = RUNTIME_OBJECT(group, slot);
+    const struct BattleCharacterDefinition *definition =
+        RuntimeGetBattleCharacterDefinition(*(s16 *)(object + 88));
+    const struct HitBounds *bounds = &definition->bounds[1];
+
+    destination->left = bounds->left;
+    destination->top = bounds->top;
+    destination->right = bounds->right;
+    destination->bottom = bounds->bottom;
+}
 
 /** Release the sprite allocation owned by every entry in a runtime list.
  * The list links occupy the first eight bytes of each entry, immediately

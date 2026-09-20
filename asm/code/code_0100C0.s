@@ -14569,7 +14569,7 @@ sub_08017E70:
 	movs r1, #0
 	ldrsb r1, [r5, r1]
 	mov r2, sp
-	bl sub_0800A724
+	bl RuntimeObjectCopySecondaryHitBounds
 	movs r0, #0
 	ldrsb r0, [r4, r0]
 	movs r1, #0

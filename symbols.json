@@ -295,6 +295,7 @@
   "0800A6A4": "RuntimeObjectGetWord24",
   "0800A6B8": "RuntimeObjectSetField36",
   "0800A6D0": "RuntimeObjectGetField36",
+  "0800A724": "RuntimeObjectCopySecondaryHitBounds",
   "0800A75C": "RuntimeObjectGetField3A",
   "0800A774": "RuntimeObjectSetField3A",
   "0800A788": "RuntimeObjectGetField3C",

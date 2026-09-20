@@ -13296,7 +13296,7 @@ _08076580:
 	asrs r1, r1, #24
 	add r4, sp, #48
 	adds r2, r4, #0
-	bl sub_0800A724
+	bl RuntimeObjectCopySecondaryHitBounds
 	movs r0, #0
 	ldrsb r0, [r7, r0]
 	mov r1, r8
@@ -13552,7 +13552,7 @@ sub_080766A4:
 	asrs r1, r1, #24
 	add r4, sp, #48
 	adds r2, r4, #0
-	bl sub_0800A724
+	bl RuntimeObjectCopySecondaryHitBounds
 	mov r0, r10
 	adds r0, #54
 	ldrb r0, [r0, #0]

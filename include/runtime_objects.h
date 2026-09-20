@@ -2,6 +2,10 @@
 #define RUNTIME_OBJECTS_H
 #include "gba/types.h"
 
+struct HitBounds;
+void RuntimeObjectCopySecondaryHitBounds(u32 group, u32 slot,
+                                         struct HitBounds *destination);
+
 void *RuntimeGetPointerEA0(void);
 void RuntimeResetListSlot(u32 slot);
 void RuntimeReleaseListSpriteAllocations(u32 slot);

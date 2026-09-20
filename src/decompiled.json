@@ -1920,6 +1920,12 @@
     "file": "src/runtime_objects.c"
   },
   {
+    "addr": "0800A724",
+    "size": 56,
+    "name": "RuntimeObjectCopySecondaryHitBounds",
+    "file": "src/runtime_objects.c"
+  },
+  {
     "addr": "0800A75C",
     "size": 24,
     "name": "RuntimeObjectGetField3A",

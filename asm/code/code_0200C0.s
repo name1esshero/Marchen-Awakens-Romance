@@ -1780,7 +1780,7 @@ sub_08020B92:
 	asrs r1, r1, #24
 	add r4, sp, #48
 	adds r2, r4, #0
-	bl sub_0800A724
+	bl RuntimeObjectCopySecondaryHitBounds
 	ldr r0, [sp, #60]
 	adds r0, #54
 	ldrb r0, [r0, #0]
@@ -2426,7 +2426,7 @@ sub_08020F5E:
 	asrs r1, r1, #24
 	add r4, sp, #48
 	adds r2, r4, #0
-	bl sub_0800A724
+	bl RuntimeObjectCopySecondaryHitBounds
 	ldr r0, [sp, #60]
 	adds r0, #54
 	ldrb r0, [r0, #0]

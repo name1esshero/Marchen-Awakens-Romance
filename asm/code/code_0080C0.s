@@ -3765,39 +3765,7 @@ sub_0800A6EC:
 _0800A720:
 	.4byte 0x03004024  @ IWRAM+0x4024
 
-	.thumb_func
-	.thumb
-	.global sub_0800A724
-sub_0800A724:
-	push {r4, lr}
-	adds r4, r2, #0
-	ldr r2, _0800A758
-	lsls r0, r0, #2
-	adds r0, r0, r1
-	lsls r0, r0, #2
-	adds r0, r0, r2
-	ldr r0, [r0, #0]
-	adds r0, #88
-	movs r1, #0
-	ldrsh r0, [r0, r1]
-	.2byte 0xF006
-	.4byte 0x3040FF9B
-	ldrh r1, [r0, #0]
-	strh r1, [r4, #0]
-	ldrh r1, [r0, #2]
-	strh r1, [r4, #2]
-	ldrh r1, [r0, #4]
-	strh r1, [r4, #4]
-	ldrh r0, [r0, #6]
-	strh r0, [r4, #6]
-	pop {r4}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _0800A758
-_0800A758:
-	.4byte 0x03004024  @ IWRAM+0x4024
+@ 00A724..00A75C is decompiled as RuntimeObjectCopySecondaryHitBounds(); see src/decompiled.json
 
 @ 00A75C..00A774 is decompiled as RuntimeObjectGetField3A(); see src/decompiled.json
 

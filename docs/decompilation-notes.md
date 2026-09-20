@@ -2588,3 +2588,13 @@ returns `(percentage * value) / 100 + 1`. The source uses an explicit enabled
 path because the ROM places the disabled return before the function's literal
 pool and the percentage calculation after it. That ordinary control flow
 reproduces all 84 bytes exactly and gives five callers a descriptive symbol.
+
+## Secondary object hit-box copy (2026-09-20)
+
+`RuntimeObjectCopySecondaryHitBounds` at 0x0800A724 resolves an object table
+entry's signed character ID, selects `bounds[1]` from its typed
+`BattleCharacterDefinition`, and copies the four signed edges to caller-owned
+storage. It is the secondary-box counterpart to the neighboring primary-box
+routine at 0x0800A6EC. Direct structure members reproduce the ROM's four
+halfword loads and stores across all 56 bytes, replacing thirteen raw assembly
+call sites with a descriptive symbol.
