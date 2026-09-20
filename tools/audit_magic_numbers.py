@@ -25,6 +25,7 @@ DATA_SOURCE_FILES = {
     "src/definition_tables.c",
     "src/game_tables.c",
     "src/menu_text.c",
+    "src/rom_padding.c",
     "src/song_headers.c",
     "src/song_tracks.c",
     "src/sound_tables.c",

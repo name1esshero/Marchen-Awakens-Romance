@@ -37,7 +37,7 @@ CFLAGS      := -mcpu=arm7tdmi -mthumb -mthumb-interwork -Os \
                -fomit-frame-pointer -mlong-calls -Wall
 LDFLAGS     := -T ld_script.ld --no-warn-rwx-segments
 
-ASM_SRCS    := $(wildcard asm/*.s) $(wildcard asm/code/*.s) $(wildcard asm/data/*.s)
+ASM_SRCS    := $(wildcard asm/*.s) $(wildcard asm/code/*.s)
 # src/nonmatching/ holds readable C that does not yet reproduce the original
 # bytes; it is excluded so the default build stays byte-exact.
 C_SRCS      := $(wildcard src/*.c) $(wildcard src/libc/*.c)
@@ -61,7 +61,10 @@ MATH_TABLE_INCS := $(BUILD)/generated/oam_attribute_masks.inc \
 
 ASM_OBJS    := $(patsubst %.s,$(BUILD)/%.o,$(ASM_SRCS))
 C_OBJS      := $(patsubst %.c,$(BUILD)/%.o,$(C_SRCS))
-OBJS        := $(ASM_OBJS) $(C_OBJS)
+ROM_DATA_GROUPS := graphics_assets japanese_localized_assets map_assets padding raw_data script_assets
+ROM_DATA_OBJS := $(addprefix $(BUILD)/generated/rom_data/,$(addsuffix .o,$(ROM_DATA_GROUPS)))
+SOUND_DATA_OBJ := $(BUILD)/generated/sound_samples.o
+OBJS        := $(ASM_OBJS) $(C_OBJS) $(ROM_DATA_OBJS) $(SOUND_DATA_OBJ)
 
 # Recompile matching C when a recovered structure or hardware definition changes.
 -include $(C_OBJS:.o=.d)
@@ -120,20 +123,33 @@ $(BUILD)/asm/code/%.o: asm/code/%.s $(BUILD)/.sound.stamp
 	@echo "AS      $<"
 	@$(AS) $(ASFLAGS) -o $@ $<
 
-$(BUILD)/asm/sound_samples.o: asm/sound_samples.s $(BUILD)/.sound.stamp
+$(BUILD)/generated/sound_samples.s: sound/sample_sections.json \
+                                     tools/rom_data_sections.py $(BUILD)/.sound.stamp
+	@mkdir -p $(dir $@)
+	$(PYTHON) tools/rom_data_sections.py sound/sample_sections.json sound_samples $@
 
-# --- assembly -------------------------------------------------------------
-# Data fragments incbin from build/data and graphics/, so those are real
-# prerequisites and -j stays correct.
-# Uncompressed art is converted from PNG into raw tile data before assembly;
-# RAW_GFX comes from graphics_rules.mk.
-$(BUILD)/asm/data/%.o: asm/data/%.s $(BUILD)/.data.stamp \
-                       $(BUILD)/.graphics.stamp $(RAW_GFX) $(BUILD)/graphics/fonts/font.nft \
-                       $(BUILD)/.palettes.stamp $(BUILD)/.named-scripts.stamp \
-                       $(BUILD)/.ncd.stamp $(BUILD)/.named-maps.stamp
+$(BUILD)/generated/sound_samples.o: $(BUILD)/generated/sound_samples.s
+	@echo "AS      $<"
+	@$(AS) $(ASFLAGS) -o $@ $<
+
+# --- generated ROM data ---------------------------------------------------
+# Decoded assets are source PNG/WAV/PAL/JSON/text rather than assembly. This
+# manifest-driven rule creates disposable linker wrappers under build/ after
+# those human-editable sources have been compiled to their exact ROM payloads.
+$(BUILD)/generated/rom_data/%.s: data/rom_data_sections.json tools/rom_data_sections.py \
+                       $(BUILD)/.data.stamp $(BUILD)/.graphics.stamp $(RAW_GFX) \
+                       $(BUILD)/graphics/fonts/font.nft $(BUILD)/.palettes.stamp \
+                       $(BUILD)/.named-scripts.stamp $(BUILD)/.ncd.stamp \
+                       $(BUILD)/.named-maps.stamp
+	@mkdir -p $(dir $@)
+	$(PYTHON) tools/rom_data_sections.py data/rom_data_sections.json $* $@
+
+$(BUILD)/generated/rom_data/%.o: $(BUILD)/generated/rom_data/%.s
 	@mkdir -p $(dir $@)
 	@echo "AS      $<"
 	@$(AS) $(ASFLAGS) -o $@ $<
+
+# --- assembly -------------------------------------------------------------
 
 $(BUILD)/%.o: %.s
 	@mkdir -p $(dir $@)
@@ -516,7 +532,7 @@ $(BUILD)/.marscript-scripts.stamp: $(wildcard scripts/nfp/*.bin) $(wildcard text
 	$(PYTHON) tools/marscript_rom_build.py
 	@touch $@
 
-build/english/script_assets_english.s build/english/marscript_expansion.s &: asm/data/script_assets.s \
+build/english/script_assets_english.s build/english/marscript_expansion.s &: data/rom_data_sections.json \
                                    tools/split_scripts_english.py $(BUILD)/.marscript-scripts.stamp
 	$(PYTHON) tools/split_scripts_english.py
 
@@ -545,7 +561,7 @@ $(ENGLISH_DIR)/resource_catalog.o: src/english/resource_catalog_english.c includ
 
 $(ENGLISH_DIR)/mar_english.elf: $(OBJS) $(ENGLISH_OBJS) ld_script.ld ld_english.ld
 	@printf '%s\n' $(filter-out $(BUILD)/src/dialogue_start.o $(BUILD)/src/item.o $(BUILD)/src/menu_text.o \
-	    $(BUILD)/asm/data/japanese_localized_assets.o $(BUILD)/asm/data/script_assets.o $(BUILD)/src/resource_catalog.o, \
+	    $(BUILD)/generated/rom_data/japanese_localized_assets.o $(BUILD)/generated/rom_data/script_assets.o $(BUILD)/src/resource_catalog.o, \
 	    $(OBJS)) $(ENGLISH_OBJS) > $(ENGLISH_DIR)/objects.rsp
 	$(LD) -T ld_english.ld --no-warn-rwx-segments -o $@ @$(ENGLISH_DIR)/objects.rsp -Map $(ENGLISH_DIR)/mar_english.map
 

@@ -13,6 +13,7 @@ from pathlib import Path
 import gfx
 import lz77
 import mapped_images as mi
+import rom_data_sections
 
 ROOT = mi.ROOT
 PROFILES = ('NE01', 'NE13', 'NE33', 'SK02', 'SK03')
@@ -77,10 +78,9 @@ def main():
         asset_safety.unlink_generated(ROOT/(old+'.png'))
         converted.append(dict(name=name, old_path=old, new_path=base, frames=len(layers), width=width*8, height=width*8))
     (ROOT/'assets.json').write_text(json.dumps(manifest,indent=2)+'\n')
-    for p in (ROOT/'asm/data').glob('*.s'):
-        s=p.read_text();out=s
-        for e in converted:out=out.replace(e['old_path']+'.lz',e['new_path']+'.lz')
-        if out!=s:p.write_text(out)
+    rom_data_sections.replace_sources(
+        ROOT/'data/rom_data_sections.json',
+        [(e['old_path']+'.lz', e['new_path']+'.lz') for e in converted])
     (ROOT/'reports/graphics/affine-image-migration.json').write_text(json.dumps(converted,indent=2)+'\n')
     print('Converted',len(converted),'resources,',sum(e['frames'] for e in converted),'affine frames')
 

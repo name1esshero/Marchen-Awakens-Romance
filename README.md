@@ -119,6 +119,11 @@ artwork uses an `_en.png` suffix and is included only by `make english`.
 Generated `.lz`, `.4bpp`, NCD, and other intermediate files belong under
 `build/` and are removed by `make clean`.
 
+Assets are linked through [`data/rom_data_sections.json`](data/rom_data_sections.json).
+The build creates disposable linker wrappers under `build/`; graphics, maps,
+tilemaps, palettes, scripts, and sound samples no longer live in tracked
+assembly files. See the [ROM data source guide](docs/rom-data-sources.md).
+
 Useful graphics commands:
 
 | Command | Purpose |
@@ -190,7 +195,7 @@ Use normal build targets for day-to-day editing.
 |---|---|
 | `src/` | Matching readable C used by the ROM build |
 | `src/nonmatching/` | Readable C candidates that are not linked into the matching build |
-| `asm/` | Assembly that has not yet been replaced by matching C |
+| `asm/` | Machine code and low-level symbols still awaiting matching C |
 | `include/` | Shared C headers and recovered structures |
 | `graphics/` | Editable artwork, palettes, layouts, and animation data |
 | `sound/` | Editable samples and sound metadata |

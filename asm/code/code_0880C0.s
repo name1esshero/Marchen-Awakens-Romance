@@ -2677,8 +2677,8 @@ _0808B124:
 
 @ 08B898..08B89C is decompiled as gSongHeader_000(); see src/decompiled.json
 
-@ 08B89C..08E990 is PCM sound data; see asm/sound_samples.s
+@ 08B89C..08E990 is PCM sound data; see sound/sample_sections.json
 
-@ 08E990..08F9AC is PCM sound data; see asm/sound_samples.s
+@ 08E990..08F9AC is PCM sound data; see sound/sample_sections.json
 
-@ 08F9AC..0900C0 is PCM sound data; see asm/sound_samples.s
+@ 08F9AC..0900C0 is PCM sound data; see sound/sample_sections.json

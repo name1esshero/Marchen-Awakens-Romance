@@ -1,0 +1,5886 @@
+{
+  "format": 1,
+  "description": "Placement of generated assets and unresolved raw data in the original ROM.",
+  "sections": [
+    {
+      "group": "raw_data",
+      "start": "001B02A4",
+      "end": "001B096C",
+      "kind": "raw",
+      "source": "build/data/data_1B02A4.bin"
+    },
+    {
+      "group": "raw_data",
+      "start": "001BEC3C",
+      "end": "001BF408",
+      "kind": "raw",
+      "source": "build/data/data_1BEC3C.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "001C3D40",
+      "end": "001C9E00",
+      "kind": "map",
+      "source": "build/maps/nfp/AD0_B_A.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "001C9E00",
+      "end": "001CF7A1",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/AD0_P_0A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "001CF7B0",
+      "end": "001CF8F0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/AD0_P_0A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "001CF8F0",
+      "end": "001D17B0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD0_P_0A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "001D17B0",
+      "end": "001D3670",
+      "kind": "map",
+      "source": "build/maps/nfp/AD0_P_1A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "001D3670",
+      "end": "001D5530",
+      "kind": "map",
+      "source": "build/maps/nfp/AD0_P_2A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "001D5530",
+      "end": "001D73F0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD0_P_3A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "001D73F0",
+      "end": "001DA1B0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD0_P_4A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "001DA1B0",
+      "end": "001DCF70",
+      "kind": "map",
+      "source": "build/maps/nfp/AD0_P_5A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "001DCF70",
+      "end": "001DFD30",
+      "kind": "map",
+      "source": "build/maps/nfp/AD0_P_6A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "001DFD30",
+      "end": "001E2AF0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD0_P_7A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "001E2AF0",
+      "end": "001E8BB0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD0_R_0A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "001E8BB0",
+      "end": "001EEC70",
+      "kind": "map",
+      "source": "build/maps/nfp/AD0_R_1A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "001EEC70",
+      "end": "001F4D30",
+      "kind": "map",
+      "source": "build/maps/nfp/AD0_R_2A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "001F4D30",
+      "end": "001FADF0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD0_R_3A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "001FADF0",
+      "end": "00200EB0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD0_R_4A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00200EB0",
+      "end": "00206F70",
+      "kind": "map",
+      "source": "build/maps/nfp/AD0_R_5A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00206F70",
+      "end": "0020D030",
+      "kind": "map",
+      "source": "build/maps/nfp/AD0_R_6A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0020D030",
+      "end": "002130F0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD0_R_7A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "002130F0",
+      "end": "002191B0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD0_R_8A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "002191B0",
+      "end": "0021F270",
+      "kind": "map",
+      "source": "build/maps/nfp/AD0_R_9A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0021F270",
+      "end": "00225330",
+      "kind": "map",
+      "source": "build/maps/nfp/AD0_R_AA.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00225330",
+      "end": "0022B3F0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD0_R_BA.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0022B3F0",
+      "end": "002314B0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD0_R_CA.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "002314B0",
+      "end": "00237570",
+      "kind": "map",
+      "source": "build/maps/nfp/AD1_B_A.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00237570",
+      "end": "0023BF12",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/AD1_P_0A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0023BF20",
+      "end": "0023C000",
+      "kind": "palette",
+      "source": "build/graphics/palettes/AD1_P_0A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0023C000",
+      "end": "0023DEC0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD1_P_0A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0023DEC0",
+      "end": "0023FD80",
+      "kind": "map",
+      "source": "build/maps/nfp/AD1_P_1A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0023FD80",
+      "end": "00241C40",
+      "kind": "map",
+      "source": "build/maps/nfp/AD1_P_2A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00241C40",
+      "end": "00243B00",
+      "kind": "map",
+      "source": "build/maps/nfp/AD1_P_3A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00243B00",
+      "end": "002468C0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD1_P_4A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "002468C0",
+      "end": "00249680",
+      "kind": "map",
+      "source": "build/maps/nfp/AD1_P_5A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00249680",
+      "end": "0024C440",
+      "kind": "map",
+      "source": "build/maps/nfp/AD1_P_6A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0024C440",
+      "end": "0024F200",
+      "kind": "map",
+      "source": "build/maps/nfp/AD1_P_7A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0024F200",
+      "end": "002552C0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD1_R_0A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "002552C0",
+      "end": "0025B380",
+      "kind": "map",
+      "source": "build/maps/nfp/AD1_R_1A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0025B380",
+      "end": "00261440",
+      "kind": "map",
+      "source": "build/maps/nfp/AD1_R_2A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00261440",
+      "end": "00267500",
+      "kind": "map",
+      "source": "build/maps/nfp/AD1_R_3A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00267500",
+      "end": "0026D5C0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD1_R_4A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0026D5C0",
+      "end": "00273680",
+      "kind": "map",
+      "source": "build/maps/nfp/AD1_R_5A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00273680",
+      "end": "00279740",
+      "kind": "map",
+      "source": "build/maps/nfp/AD1_R_6A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00279740",
+      "end": "0027F800",
+      "kind": "map",
+      "source": "build/maps/nfp/AD1_R_7A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0027F800",
+      "end": "002858C0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD1_R_8A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "002858C0",
+      "end": "0028B980",
+      "kind": "map",
+      "source": "build/maps/nfp/AD1_R_9A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0028B980",
+      "end": "00291A40",
+      "kind": "map",
+      "source": "build/maps/nfp/AD1_R_AA.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00291A40",
+      "end": "00297B00",
+      "kind": "map",
+      "source": "build/maps/nfp/AD1_R_BA.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00297B00",
+      "end": "0029DBC0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD1_R_CA.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0029DBC0",
+      "end": "002A3C80",
+      "kind": "map",
+      "source": "build/maps/nfp/AD3_B_A.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "002A3C80",
+      "end": "002A8908",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/AD3_P_0A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "002A8910",
+      "end": "002A89D0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/AD3_P_0A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "002A89D0",
+      "end": "002AA890",
+      "kind": "map",
+      "source": "build/maps/nfp/AD3_P_0A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "002AA890",
+      "end": "002AC750",
+      "kind": "map",
+      "source": "build/maps/nfp/AD3_P_1A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "002AC750",
+      "end": "002AE610",
+      "kind": "map",
+      "source": "build/maps/nfp/AD3_P_2A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "002AE610",
+      "end": "002B04D0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD3_P_3A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "002B04D0",
+      "end": "002B3290",
+      "kind": "map",
+      "source": "build/maps/nfp/AD3_P_4A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "002B3290",
+      "end": "002B6050",
+      "kind": "map",
+      "source": "build/maps/nfp/AD3_P_5A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "002B6050",
+      "end": "002B8E10",
+      "kind": "map",
+      "source": "build/maps/nfp/AD3_P_6A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "002B8E10",
+      "end": "002BBBD0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD3_P_7A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "002BBBD0",
+      "end": "002C1C90",
+      "kind": "map",
+      "source": "build/maps/nfp/AD3_R_0A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "002C1C90",
+      "end": "002C7D50",
+      "kind": "map",
+      "source": "build/maps/nfp/AD3_R_1A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "002C7D50",
+      "end": "002CDE10",
+      "kind": "map",
+      "source": "build/maps/nfp/AD3_R_2A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "002CDE10",
+      "end": "002D3ED0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD3_R_3A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "002D3ED0",
+      "end": "002D9F90",
+      "kind": "map",
+      "source": "build/maps/nfp/AD3_R_4A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "002D9F90",
+      "end": "002E0050",
+      "kind": "map",
+      "source": "build/maps/nfp/AD3_R_5A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "002E0050",
+      "end": "002E6110",
+      "kind": "map",
+      "source": "build/maps/nfp/AD3_R_6A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "002E6110",
+      "end": "002EC1D0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD3_R_7A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "002EC1D0",
+      "end": "002F2290",
+      "kind": "map",
+      "source": "build/maps/nfp/AD3_R_8A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "002F2290",
+      "end": "002F8350",
+      "kind": "map",
+      "source": "build/maps/nfp/AD3_R_9A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "002F8350",
+      "end": "002FE410",
+      "kind": "map",
+      "source": "build/maps/nfp/AD3_R_AA.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "002FE410",
+      "end": "003044D0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD3_R_BA.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "003044D0",
+      "end": "0030A590",
+      "kind": "map",
+      "source": "build/maps/nfp/AD3_R_CA.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0030A590",
+      "end": "00310650",
+      "kind": "map",
+      "source": "build/maps/nfp/AD4_B_A.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00310650",
+      "end": "00313D8A",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/AD4_P_0A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00313D90",
+      "end": "00313DF0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/AD4_P_0A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00313DF0",
+      "end": "00315CB0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD4_P_0A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00315CB0",
+      "end": "00317B70",
+      "kind": "map",
+      "source": "build/maps/nfp/AD4_P_1A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00317B70",
+      "end": "00319A30",
+      "kind": "map",
+      "source": "build/maps/nfp/AD4_P_2A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00319A30",
+      "end": "0031B8F0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD4_P_3A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0031B8F0",
+      "end": "0031E6B0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD4_P_4A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0031E6B0",
+      "end": "00321470",
+      "kind": "map",
+      "source": "build/maps/nfp/AD4_P_5A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00321470",
+      "end": "00324230",
+      "kind": "map",
+      "source": "build/maps/nfp/AD4_P_6A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00324230",
+      "end": "00326FF0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD4_P_7A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00326FF0",
+      "end": "0032D0B0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD4_R_0A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0032D0B0",
+      "end": "00333170",
+      "kind": "map",
+      "source": "build/maps/nfp/AD4_R_1A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00333170",
+      "end": "00339230",
+      "kind": "map",
+      "source": "build/maps/nfp/AD4_R_2A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00339230",
+      "end": "0033F2F0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD4_R_3A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0033F2F0",
+      "end": "003453B0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD4_R_4A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "003453B0",
+      "end": "0034B470",
+      "kind": "map",
+      "source": "build/maps/nfp/AD4_R_5A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0034B470",
+      "end": "00351530",
+      "kind": "map",
+      "source": "build/maps/nfp/AD4_R_6A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00351530",
+      "end": "003575F0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD4_R_7A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "003575F0",
+      "end": "0035D6B0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD4_R_8A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0035D6B0",
+      "end": "00363770",
+      "kind": "map",
+      "source": "build/maps/nfp/AD4_R_9A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00363770",
+      "end": "00369830",
+      "kind": "map",
+      "source": "build/maps/nfp/AD4_R_AA.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00369830",
+      "end": "0036F8F0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD4_R_BA.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0036F8F0",
+      "end": "003759B0",
+      "kind": "map",
+      "source": "build/maps/nfp/AD4_R_CA.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "003759B0",
+      "end": "0037772F",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/AD_BG01.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00377730",
+      "end": "00377750",
+      "kind": "palette",
+      "source": "build/graphics/palettes/AD_BG01.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00377750",
+      "end": "00378010",
+      "kind": "map",
+      "source": "build/maps/nfp/AD_BG01.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00378010",
+      "end": "00378951",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/AD_BG02.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00378960",
+      "end": "00378980",
+      "kind": "palette",
+      "source": "build/graphics/palettes/AD_BG02.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00378980",
+      "end": "00379240",
+      "kind": "map",
+      "source": "build/maps/nfp/AD_BG02.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00379240",
+      "end": "0037B323",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/AL_BG01.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0037B330",
+      "end": "0037B350",
+      "kind": "palette",
+      "source": "build/graphics/palettes/AL_BG01.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0037B350",
+      "end": "0037BC10",
+      "kind": "map",
+      "source": "build/maps/nfp/AL_BG01.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0037BC10",
+      "end": "0037C692",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/AL_BG02.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0037C6A0",
+      "end": "0037C6C0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/AL_BG02.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0037C6C0",
+      "end": "0037CF80",
+      "kind": "map",
+      "source": "build/maps/nfp/AL_BG02.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0037CF80",
+      "end": "0037F2B7",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/AS_BG01.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0037F2C0",
+      "end": "0037F2E0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/AS_BG01.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0037F2E0",
+      "end": "0037FBA0",
+      "kind": "map",
+      "source": "build/maps/nfp/AS_BG01.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0037FBA0",
+      "end": "00380FB8",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/AS_BG02.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00380FC0",
+      "end": "00380FE0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/AS_BG02.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00380FE0",
+      "end": "003818A0",
+      "kind": "map",
+      "source": "build/maps/nfp/AS_BG02.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "003818A0",
+      "end": "003835C5",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/AT_BG01.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "003835D0",
+      "end": "003835F0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/AT_BG01.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "003835F0",
+      "end": "00383EB0",
+      "kind": "map",
+      "source": "build/maps/nfp/AT_BG01.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00383EB0",
+      "end": "00386CF4",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/BA06.TCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00386D00",
+      "end": "00386D60",
+      "kind": "palette",
+      "source": "build/graphics/palettes/BA06.TCL.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00386D60",
+      "end": "00387560",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/BA06_00.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00387560",
+      "end": "00387D60",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/BA06_01.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00387D60",
+      "end": "0038AC5A",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/BA06_BG.TCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0038AC60",
+      "end": "0038ACC0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/BA06_BG.TCL.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0038ACC0",
+      "end": "0038B4C0",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/BA06_BG0.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0038B4C0",
+      "end": "0038BCC0",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/BA06_BG1.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0038BCC0",
+      "end": "0038C4C0",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/BA06_BG2.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0038C4C0",
+      "end": "0038CEF4",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/BA07.TCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0038CF00",
+      "end": "0038CF60",
+      "kind": "palette",
+      "source": "build/graphics/palettes/BA07.TCL.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0038CF60",
+      "end": "0038D760",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/BA07.TSC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0038D760",
+      "end": "0038E8D0",
+      "kind": "script",
+      "source": "build/scripts/nfp/BGM_SET.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0038E8D0",
+      "end": "0038ECB0",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTIM00.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0038ECB0",
+      "end": "0038F050",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTIM01_3.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0038F050",
+      "end": "0038F0E0",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTIM03.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0038F0E0",
+      "end": "0038FFA0",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTIM04.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0038FFA0",
+      "end": "00390630",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTIM04_4.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00390630",
+      "end": "00390930",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTIM05.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00390930",
+      "end": "00391C50",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTIM07.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00391C50",
+      "end": "003926A0",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTIM24_1.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "003926A0",
+      "end": "00392F90",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTIM24_2.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00392F90",
+      "end": "00393820",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTIM24_4.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00393820",
+      "end": "003946F0",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTIM25_1.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "003946F0",
+      "end": "00395070",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTIM25_2.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00395070",
+      "end": "00396870",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTIM25_4.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00396870",
+      "end": "003972D0",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTIM26_1.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "003972D0",
+      "end": "00398110",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTIM26_3.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00398110",
+      "end": "00399F10",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTIM26_5.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00399F10",
+      "end": "0039A2F0",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTIM40.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039A2F0",
+      "end": "0039A6B0",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTIM41.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039A6B0",
+      "end": "0039AF50",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTIM42.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039AF50",
+      "end": "0039B390",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTI_DUNG.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039B390",
+      "end": "0039C170",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTI_N.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039C170",
+      "end": "0039C7A0",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTI_PSET.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039C7A0",
+      "end": "0039CD30",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTL_ESCP.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039CD30",
+      "end": "0039CD90",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTOM00.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039CD90",
+      "end": "0039CF30",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTOM01_3.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039CF30",
+      "end": "0039D060",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTOM03.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039D060",
+      "end": "0039D0C0",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTOM04.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039D0C0",
+      "end": "0039D120",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTOM04_4.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039D120",
+      "end": "0039D250",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTOM04_6.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039D250",
+      "end": "0039D420",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTOM05.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039D420",
+      "end": "0039D600",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTOM07.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039D600",
+      "end": "0039D6A0",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTOM07_3.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039D6A0",
+      "end": "0039D700",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTOM24_1.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039D700",
+      "end": "0039D760",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTOM24_2.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039D760",
+      "end": "0039D890",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTOM24_4.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039D890",
+      "end": "0039D8F0",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTOM25_1.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039D8F0",
+      "end": "0039D950",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTOM25_2.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039D950",
+      "end": "0039D9B0",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTOM25_4.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039D9B0",
+      "end": "0039DA50",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTOM25_5.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039DA50",
+      "end": "0039DAB0",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTOM26_1.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039DAB0",
+      "end": "0039DB50",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTOM26_2.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039DB50",
+      "end": "0039DBB0",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTOM26_3.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039DBB0",
+      "end": "0039DC10",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTOM26_5.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039DC10",
+      "end": "0039DC70",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTOM26_6.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039DC70",
+      "end": "0039DD70",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTOM40.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039DD70",
+      "end": "0039DDD0",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTOM41.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039DDD0",
+      "end": "0039DED0",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTOM42.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039DED0",
+      "end": "0039E690",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTO_DEF.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039E690",
+      "end": "0039EAF0",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTO_DEF2.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039EAF0",
+      "end": "0039F3B0",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTO_DUNG.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0039F3B0",
+      "end": "0039FFD0",
+      "kind": "script",
+      "source": "build/scripts/nfp/BTO_N.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0039FFD0",
+      "end": "005683C0",
+      "kind": "sprites",
+      "source": "build/graphics/ncd/CHR.ncd"
+    },
+    {
+      "group": "script_assets",
+      "start": "005683C0",
+      "end": "00569C00",
+      "kind": "script",
+      "source": "build/scripts/nfp/CH_ESC.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00569C00",
+      "end": "00569F30",
+      "kind": "script",
+      "source": "build/scripts/nfp/CH_M00A.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00569F30",
+      "end": "0056A220",
+      "kind": "script",
+      "source": "build/scripts/nfp/CH_M01_3.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0056A220",
+      "end": "0056A280",
+      "kind": "script",
+      "source": "build/scripts/nfp/CH_M03A.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0056A280",
+      "end": "0056A600",
+      "kind": "script",
+      "source": "build/scripts/nfp/CH_M05A.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0056A600",
+      "end": "0056A8B0",
+      "kind": "script",
+      "source": "build/scripts/nfp/CH_M08A.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0056A8B0",
+      "end": "0056B610",
+      "kind": "script",
+      "source": "build/scripts/nfp/CH_M09A.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0056B610",
+      "end": "0056B6D0",
+      "kind": "script",
+      "source": "build/scripts/nfp/CH_M10.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0056B6D0",
+      "end": "0056BED0",
+      "kind": "script",
+      "source": "build/scripts/nfp/CH_M11.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0056BED0",
+      "end": "0056BFA0",
+      "kind": "script",
+      "source": "build/scripts/nfp/CH_M24_3.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0056BFA0",
+      "end": "0056C3F0",
+      "kind": "script",
+      "source": "build/scripts/nfp/CH_M24_A.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0056C3F0",
+      "end": "0056DB30",
+      "kind": "script",
+      "source": "build/scripts/nfp/CH_M26_6.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0056DB30",
+      "end": "0056E58E",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/CLPASS.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0056E590",
+      "end": "0056E5B0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/CLPASS.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0056E5B0",
+      "end": "0056EE70",
+      "kind": "map",
+      "source": "build/maps/nfp/CLPASS.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0056EE70",
+      "end": "00570763",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/CM_BG01.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00570770",
+      "end": "00570790",
+      "kind": "palette",
+      "source": "build/graphics/palettes/CM_BG01.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00570790",
+      "end": "00571050",
+      "kind": "map",
+      "source": "build/maps/nfp/CM_BG01.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00571050",
+      "end": "00572165",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/CM_BG02.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00572170",
+      "end": "00572190",
+      "kind": "palette",
+      "source": "build/graphics/palettes/CM_BG02.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00572190",
+      "end": "00572A50",
+      "kind": "map",
+      "source": "build/maps/nfp/CM_BG02.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00572A50",
+      "end": "00573300",
+      "kind": "script",
+      "source": "build/scripts/nfp/D0_BOSS.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00573300",
+      "end": "005744D0",
+      "kind": "script",
+      "source": "build/scripts/nfp/D0_ENEMY.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "005744D0",
+      "end": "00575070",
+      "kind": "script",
+      "source": "build/scripts/nfp/D0_ITEM.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00575070",
+      "end": "005756C0",
+      "kind": "script",
+      "source": "build/scripts/nfp/D0_MAKE.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "005756C0",
+      "end": "00575950",
+      "kind": "script",
+      "source": "build/scripts/nfp/D0_NORM.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00575950",
+      "end": "005761B0",
+      "kind": "script",
+      "source": "build/scripts/nfp/D1_BOSS.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "005761B0",
+      "end": "005783A0",
+      "kind": "script",
+      "source": "build/scripts/nfp/D1_ENEMY.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "005783A0",
+      "end": "00579FF0",
+      "kind": "script",
+      "source": "build/scripts/nfp/D1_ITEM.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00579FF0",
+      "end": "0057AA40",
+      "kind": "script",
+      "source": "build/scripts/nfp/D1_MAKE.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0057AA40",
+      "end": "0057B2A0",
+      "kind": "script",
+      "source": "build/scripts/nfp/D2_BOSS.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0057B2A0",
+      "end": "0057E690",
+      "kind": "script",
+      "source": "build/scripts/nfp/D2_ENEMY.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0057E690",
+      "end": "00582B20",
+      "kind": "script",
+      "source": "build/scripts/nfp/D2_ITEM.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00582B20",
+      "end": "00583970",
+      "kind": "script",
+      "source": "build/scripts/nfp/D2_MAKE.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00583970",
+      "end": "005841D0",
+      "kind": "script",
+      "source": "build/scripts/nfp/D3_BOSS.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "005841D0",
+      "end": "00588620",
+      "kind": "script",
+      "source": "build/scripts/nfp/D3_ENEMY.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00588620",
+      "end": "0058DAE0",
+      "kind": "script",
+      "source": "build/scripts/nfp/D3_ITEM.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0058DAE0",
+      "end": "0058ED30",
+      "kind": "script",
+      "source": "build/scripts/nfp/D3_MAKE.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0058ED30",
+      "end": "0058F590",
+      "kind": "script",
+      "source": "build/scripts/nfp/D4_BOSS.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0058F590",
+      "end": "00594A70",
+      "kind": "script",
+      "source": "build/scripts/nfp/D4_ENEMY.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00594A70",
+      "end": "0059A3B0",
+      "kind": "script",
+      "source": "build/scripts/nfp/D4_ITEM.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0059A3B0",
+      "end": "0059BAF0",
+      "kind": "script",
+      "source": "build/scripts/nfp/D4_MAKE.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0059BAF0",
+      "end": "0059BE70",
+      "kind": "script",
+      "source": "build/scripts/nfp/DBG_BTL.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0059BE70",
+      "end": "0059D2D0",
+      "kind": "script",
+      "source": "build/scripts/nfp/DBG_BTLQ.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0059D2D0",
+      "end": "0059E020",
+      "kind": "script",
+      "source": "build/scripts/nfp/DBG_ESC.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0059E020",
+      "end": "005A62B0",
+      "kind": "script",
+      "source": "build/scripts/nfp/DBG_FACE.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "005A62B0",
+      "end": "005A6FA0",
+      "kind": "script",
+      "source": "build/scripts/nfp/DITEMCOM.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "005A6FA0",
+      "end": "005AA28A",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/DS_BG01.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "005AA290",
+      "end": "005AA2B0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/DS_BG01.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "005AA2B0",
+      "end": "005AAB70",
+      "kind": "map",
+      "source": "build/maps/nfp/DS_BG01.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "005AAB70",
+      "end": "005ABAA3",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/DS_BG02.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "005ABAB0",
+      "end": "005ABAD0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/DS_BG02.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "005ABAD0",
+      "end": "005AC390",
+      "kind": "map",
+      "source": "build/maps/nfp/DS_BG02.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "005AC390",
+      "end": "005AC9A0",
+      "kind": "script",
+      "source": "build/scripts/nfp/DUNG_DEF.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "005AC9A0",
+      "end": "005AD530",
+      "kind": "script",
+      "source": "build/scripts/nfp/DUNG_END.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "005AD530",
+      "end": "005AE230",
+      "kind": "script",
+      "source": "build/scripts/nfp/D_VS_R.SPC.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "005AE230",
+      "end": "005AEAF0",
+      "kind": "map",
+      "source": "build/maps/nfp/EFCSTART.KMP.bin"
+    },
+    {
+      "group": "japanese_localized_assets",
+      "start": "005AEAF0",
+      "end": "00791060",
+      "kind": "sprites",
+      "source": "build/graphics/ncd/EFFECT.ncd"
+    },
+    {
+      "group": "script_assets",
+      "start": "00791060",
+      "end": "00793140",
+      "kind": "script",
+      "source": "build/scripts/nfp/END2.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00793140",
+      "end": "007952D0",
+      "kind": "script",
+      "source": "build/scripts/nfp/ENE_SET.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007952D0",
+      "end": "00796110",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_AL01.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00796110",
+      "end": "00796E90",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_AL02.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00796E90",
+      "end": "007983F0",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_AL02B.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007983F0",
+      "end": "007992B0",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_AL03.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007992B0",
+      "end": "00799570",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_AL04.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00799570",
+      "end": "0079A490",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_BA01.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0079A490",
+      "end": "0079ACF0",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_BA02.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0079ACF0",
+      "end": "0079B340",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_BA03.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0079B340",
+      "end": "0079BB10",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_BA04.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0079BB10",
+      "end": "0079BF50",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_BIN01.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0079BF50",
+      "end": "0079C3B0",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_BIN02.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0079C3B0",
+      "end": "0079C870",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_BIN03.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0079C870",
+      "end": "0079D720",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_EDO01.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0079D720",
+      "end": "0079E2E0",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_GO01.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0079E2E0",
+      "end": "0079EB60",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_GO02.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0079EB60",
+      "end": "0079EFA0",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_GO03.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0079EFA0",
+      "end": "0079FA20",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_GO04.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0079FA20",
+      "end": "007A01E0",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_GO05.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007A01E0",
+      "end": "007A0780",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_GO06.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007A0780",
+      "end": "007A0DB0",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_GO07.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007A0DB0",
+      "end": "007A1170",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_GO08.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007A1170",
+      "end": "007A1BF0",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_GO09.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007A1BF0",
+      "end": "007A2280",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_GO10.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007A2280",
+      "end": "007A32E0",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_GO11.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007A32E0",
+      "end": "007A3AE0",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_GO12.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007A3AE0",
+      "end": "007A43F0",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_GTOB.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007A43F0",
+      "end": "007A4880",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_GTOB2.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007A4880",
+      "end": "007A5270",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_ICE01.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007A5270",
+      "end": "007A6020",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_ICE02.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007A6020",
+      "end": "007A6550",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_ICE03.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007A6550",
+      "end": "007A6870",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_ICE04.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007A6870",
+      "end": "007A6AE0",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_ICE05.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007A6AE0",
+      "end": "007A6D10",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_ICE06.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007A6D10",
+      "end": "007A7520",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_ICE07.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007A7520",
+      "end": "007A77B0",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_ICE08.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007A77B0",
+      "end": "007A8C20",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_ICE09.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007A8C20",
+      "end": "007A9B40",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_ICE10.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007A9B40",
+      "end": "007AA9B0",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_ICE11.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007AA9B0",
+      "end": "007AC390",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_ICE12.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007AC390",
+      "end": "007AC750",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_IWA.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007AC750",
+      "end": "007ADD20",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_JA01.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007ADD20",
+      "end": "007AE570",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_JA02.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007AE570",
+      "end": "007AF030",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_JA03.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007AF030",
+      "end": "007AFA20",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_JA04.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007AFA20",
+      "end": "007B05E0",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_JA04B.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007B05E0",
+      "end": "007B0990",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_JA04C.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007B0990",
+      "end": "007B1000",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_MON01.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007B1000",
+      "end": "007B16B0",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_MON02.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007B16B0",
+      "end": "007B19E0",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_MON03.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007B19E0",
+      "end": "007B1E60",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_MON04.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007B1E60",
+      "end": "007B20C0",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_MON05.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007B20C0",
+      "end": "007B2370",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_MON06.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007B2370",
+      "end": "007B2970",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_PA01.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007B2970",
+      "end": "007B2E20",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_RT01.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007B2E20",
+      "end": "007B36D0",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_RT02.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007B36D0",
+      "end": "007B43A0",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_RT03.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007B43A0",
+      "end": "007B4A40",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_START.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007B4A40",
+      "end": "007B52B0",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_T1KIL.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007B52B0",
+      "end": "007B5D50",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_T2KIL.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007B5D50",
+      "end": "007B7680",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_T3KIL.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007B7680",
+      "end": "007B8820",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_T4KIL.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007B8820",
+      "end": "007B96A0",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_UTA01.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007B96A0",
+      "end": "007B9C80",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_VE01.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007B9C80",
+      "end": "007BA990",
+      "kind": "script",
+      "source": "build/scripts/nfp/EV_VE02.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007BA990",
+      "end": "007CA370",
+      "kind": "font",
+      "source": "build/graphics/fonts/font.nft"
+    },
+    {
+      "group": "script_assets",
+      "start": "007CA370",
+      "end": "007CA760",
+      "kind": "script",
+      "source": "build/scripts/nfp/FULL_ITM.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007CA760",
+      "end": "007CCDBA",
+      "kind": "gfx",
+      "source": "build/graphics/tilesets/GA08.TCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007CCDC0",
+      "end": "007CCE20",
+      "kind": "palette",
+      "source": "build/graphics/palettes/GA08.TCL.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007CCE20",
+      "end": "007CDE20",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA08_00.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007CDE20",
+      "end": "007CEE20",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA08_01.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007CEE20",
+      "end": "007CFE20",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA08_02.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007CFE20",
+      "end": "007D0E20",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA08_03.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007D0E20",
+      "end": "007D1E20",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA08_10.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007D1E20",
+      "end": "007D2E20",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA08_11.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007D2E20",
+      "end": "007D3E20",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA08_12.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007D3E20",
+      "end": "007D4E20",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA08_13.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007D4E20",
+      "end": "007D611A",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/GA13.TCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007D6120",
+      "end": "007D6180",
+      "kind": "palette",
+      "source": "build/graphics/palettes/GA13.TCL.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007D6180",
+      "end": "007D6980",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA13_00.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007D6980",
+      "end": "007D7180",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA13_01.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007D7180",
+      "end": "007D7980",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA13_02.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007D7980",
+      "end": "007D8180",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA13_03.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007D8180",
+      "end": "007D8980",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA13_04.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007D8980",
+      "end": "007D9180",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA13_05.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007D9180",
+      "end": "007D9980",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA13_06.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007D9980",
+      "end": "007DA180",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA13_10.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007DA180",
+      "end": "007DA980",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA13_11.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007DA980",
+      "end": "007DC77B",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/GA24.TCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007DC780",
+      "end": "007DC7E0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/GA24.TCL.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007DC7E0",
+      "end": "007DCFE0",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA24_00.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007DCFE0",
+      "end": "007DD7E0",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA24_01.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007DD7E0",
+      "end": "007DDFE0",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA24_02.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007DDFE0",
+      "end": "007DE7E0",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA24_03.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007DE7E0",
+      "end": "007DEFE0",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA24_10.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007DEFE0",
+      "end": "007DF7E0",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA24_11.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007DF7E0",
+      "end": "007DFFE0",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA24_12.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007DFFE0",
+      "end": "007E07E0",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA24_13.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007E07E0",
+      "end": "007E2814",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/GA25.TCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007E2820",
+      "end": "007E2880",
+      "kind": "palette",
+      "source": "build/graphics/palettes/GA25.TCL.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007E2880",
+      "end": "007E3080",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA25_00.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007E3080",
+      "end": "007E3880",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA25_01.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007E3880",
+      "end": "007E4080",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA25_02.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007E4080",
+      "end": "007E4880",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA25_03.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007E4880",
+      "end": "007E5080",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA25_10.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007E5080",
+      "end": "007E5880",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA25_11.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007E5880",
+      "end": "007E6080",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA25_12.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007E6080",
+      "end": "007E6880",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA25_13.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007E6880",
+      "end": "007E76B2",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/GA26.TCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007E76C0",
+      "end": "007E7720",
+      "kind": "palette",
+      "source": "build/graphics/palettes/GA26.TCL.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007E7720",
+      "end": "007E7F20",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA26_00.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007E7F20",
+      "end": "007E8720",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA26_01.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007E8720",
+      "end": "007E8F20",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA26_10.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007E8F20",
+      "end": "007E9720",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA26_11.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007E9720",
+      "end": "007EAEB8",
+      "kind": "gfx",
+      "source": "build/graphics/tilesets/GA60.TCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007EAEC0",
+      "end": "007EAF20",
+      "kind": "palette",
+      "source": "build/graphics/palettes/GA60.TCL.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007EAF20",
+      "end": "007EB720",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA60_00.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007EB720",
+      "end": "007EBF20",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA60_01.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007EBF20",
+      "end": "007EC720",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA60_02.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007EC720",
+      "end": "007ECF20",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA60_03.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007ECF20",
+      "end": "007ED720",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA60_04.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007ED720",
+      "end": "007EDF20",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA60_05.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007EDF20",
+      "end": "007EE720",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA60_06.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007EE720",
+      "end": "007EEF20",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA60_10.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007EEF20",
+      "end": "007EF720",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA60_11.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007EF720",
+      "end": "007EFF20",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA60_12.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007EFF20",
+      "end": "007F0720",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA60_13.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007F0720",
+      "end": "007F0F20",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA60_14.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007F0F20",
+      "end": "007F1720",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA60_15.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007F1720",
+      "end": "007F1F20",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/GA60_16.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007F1F20",
+      "end": "007F3B27",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/GA_BG01.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "007F3B30",
+      "end": "007F3B50",
+      "kind": "palette",
+      "source": "build/graphics/palettes/GA_BG01.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "007F3B50",
+      "end": "007F4410",
+      "kind": "map",
+      "source": "build/maps/nfp/GA_BG01.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007F4410",
+      "end": "007F4500",
+      "kind": "script",
+      "source": "build/scripts/nfp/GMAP27_A.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007F4500",
+      "end": "007F4A20",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV001.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007F4A20",
+      "end": "007F4E00",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV002.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007F4E00",
+      "end": "007F5F20",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV003.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007F5F20",
+      "end": "007F60D0",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV004.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007F60D0",
+      "end": "007F6E20",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV005.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007F6E20",
+      "end": "007F79A0",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV006.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007F79A0",
+      "end": "007F8230",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV007.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007F8230",
+      "end": "007F85E0",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV010.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007F85E0",
+      "end": "007F9730",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV011.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007F9730",
+      "end": "007F9E60",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV011B.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007F9E60",
+      "end": "007FA990",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV011C.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007FA990",
+      "end": "007FB040",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV012.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007FB040",
+      "end": "007FB650",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV013.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007FB650",
+      "end": "007FC900",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV020.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007FC900",
+      "end": "007FDB00",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV020B.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007FDB00",
+      "end": "007FE4B0",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV020C.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007FE4B0",
+      "end": "007FF440",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV021.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007FF440",
+      "end": "007FF470",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV022.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "007FF470",
+      "end": "00800690",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV023.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00800690",
+      "end": "00800870",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV023B.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00800870",
+      "end": "008011A0",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV023C.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "008011A0",
+      "end": "00802080",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV024.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00802080",
+      "end": "00802AF0",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV025.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00802AF0",
+      "end": "00803E00",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV025B.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00803E00",
+      "end": "00804A40",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV030.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00804A40",
+      "end": "008051C0",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV031.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "008051C0",
+      "end": "008051F0",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV032.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "008051F0",
+      "end": "00805970",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV040.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00805970",
+      "end": "008060F0",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV041.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "008060F0",
+      "end": "008069A0",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV042.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "008069A0",
+      "end": "00807130",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV043.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00807130",
+      "end": "00807780",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV044.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00807780",
+      "end": "008088C0",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV050.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "008088C0",
+      "end": "008095E0",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV051.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "008095E0",
+      "end": "00809980",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV052.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00809980",
+      "end": "0080A2F0",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV060.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0080A2F0",
+      "end": "0080B2D0",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV061.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0080B2D0",
+      "end": "0080D170",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV062.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0080D170",
+      "end": "0080D650",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_EV063.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0080D650",
+      "end": "0080D8F0",
+      "kind": "script",
+      "source": "build/scripts/nfp/G_VS_R.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0080D8F0",
+      "end": "0080DBB0",
+      "kind": "script",
+      "source": "build/scripts/nfp/HI_DUNG.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0080DBB0",
+      "end": "0080E1D0",
+      "kind": "script",
+      "source": "build/scripts/nfp/HI_M00.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0080E1D0",
+      "end": "0080E430",
+      "kind": "script",
+      "source": "build/scripts/nfp/HI_M01_1.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0080E430",
+      "end": "0080E740",
+      "kind": "script",
+      "source": "build/scripts/nfp/HI_M01_2.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0080E740",
+      "end": "0080E970",
+      "kind": "script",
+      "source": "build/scripts/nfp/HI_M04.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0080E970",
+      "end": "0080F210",
+      "kind": "script",
+      "source": "build/scripts/nfp/HI_M07.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0080F210",
+      "end": "0080F2A0",
+      "kind": "script",
+      "source": "build/scripts/nfp/HI_M07_2.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0080F2A0",
+      "end": "0080F4F0",
+      "kind": "script",
+      "source": "build/scripts/nfp/HI_M09.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0080F4F0",
+      "end": "0080FAB0",
+      "kind": "script",
+      "source": "build/scripts/nfp/HI_M11.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0080FAB0",
+      "end": "00810F40",
+      "kind": "script",
+      "source": "build/scripts/nfp/HI_M24.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00810F40",
+      "end": "00811890",
+      "kind": "script",
+      "source": "build/scripts/nfp/HI_M24_1.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00811890",
+      "end": "00812890",
+      "kind": "script",
+      "source": "build/scripts/nfp/HI_M24_2.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00812890",
+      "end": "00813A70",
+      "kind": "script",
+      "source": "build/scripts/nfp/HI_M24_4.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00813A70",
+      "end": "00813E60",
+      "kind": "script",
+      "source": "build/scripts/nfp/HI_M25_1.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00813E60",
+      "end": "00814430",
+      "kind": "script",
+      "source": "build/scripts/nfp/HI_M25_2.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00814430",
+      "end": "00814720",
+      "kind": "script",
+      "source": "build/scripts/nfp/HI_M26_2.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00814720",
+      "end": "008147C0",
+      "kind": "script",
+      "source": "build/scripts/nfp/HI_M42.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "008147C0",
+      "end": "00814B30",
+      "kind": "script",
+      "source": "build/scripts/nfp/HI_NORM.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00814B30",
+      "end": "008161EF",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/IT_BG01.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "008161F0",
+      "end": "00816210",
+      "kind": "palette",
+      "source": "build/graphics/palettes/IT_BG01.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00816210",
+      "end": "00816AD0",
+      "kind": "map",
+      "source": "build/maps/nfp/IT_BG01.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00816AD0",
+      "end": "00817B90",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/IT_BG02.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00817B90",
+      "end": "00817BB0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/IT_BG02.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00817BB0",
+      "end": "00818470",
+      "kind": "map",
+      "source": "build/maps/nfp/IT_BG02.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00818470",
+      "end": "00819C20",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/JA05.TCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00819C20",
+      "end": "00819C80",
+      "kind": "palette",
+      "source": "build/graphics/palettes/JA05.TCL.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00819C80",
+      "end": "0081A480",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/JA05_A.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0081A480",
+      "end": "0081AC80",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/JA05_B.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0081AC80",
+      "end": "0081B480",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/JA05_C.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0081B480",
+      "end": "0081BC80",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/JA05_D.TSC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0081BC80",
+      "end": "0081C2D0",
+      "kind": "script",
+      "source": "build/scripts/nfp/J_HOLE.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0081C2D0",
+      "end": "0081C5D0",
+      "kind": "script",
+      "source": "build/scripts/nfp/J_VS_M.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0081C5D0",
+      "end": "0081D0F0",
+      "kind": "script",
+      "source": "build/scripts/nfp/L11_0_0.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0081D0F0",
+      "end": "0081DB60",
+      "kind": "script",
+      "source": "build/scripts/nfp/L11_0_2.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0081DB60",
+      "end": "0081DFF0",
+      "kind": "script",
+      "source": "build/scripts/nfp/L11_0_3.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0081DFF0",
+      "end": "0081EE80",
+      "kind": "script",
+      "source": "build/scripts/nfp/L24_0_0.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0081EE80",
+      "end": "0081F020",
+      "kind": "script",
+      "source": "build/scripts/nfp/L24_1_0.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0081F020",
+      "end": "0081F7C0",
+      "kind": "script",
+      "source": "build/scripts/nfp/L25_4_0.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0081F7C0",
+      "end": "00824A1E",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP00_A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00824A20",
+      "end": "00824B20",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP00_A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00824B20",
+      "end": "0085ABE0",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP00_A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0085ABE0",
+      "end": "0085AF20",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP00_A.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0085AF20",
+      "end": "00860BE0",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP01_1A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00860BE0",
+      "end": "00860D20",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP01_1A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00860D20",
+      "end": "008667E0",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP01_1A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "008667E0",
+      "end": "00866A30",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP01_1A.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00866A30",
+      "end": "0086C1B1",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP01_2A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0086C1C0",
+      "end": "0086C300",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP01_2A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0086C300",
+      "end": "0086F3C0",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP01_2A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0086F3C0",
+      "end": "0086F4C0",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP01_2A.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0086F4C0",
+      "end": "00875AC9",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP01_3A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00875AD0",
+      "end": "00875C10",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP01_3A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00875C10",
+      "end": "008804D0",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP01_3A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "008804D0",
+      "end": "008807C0",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP01_3A.SPC.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "008807C0",
+      "end": "00886880",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP01_4A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00886880",
+      "end": "00886A30",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP01_4A.SPC.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00886A30",
+      "end": "0088CAF0",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP01_5A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0088CAF0",
+      "end": "0088CD20",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP01_5A.SPC.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0088CD20",
+      "end": "00892240",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP01_6A.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00892240",
+      "end": "008989FC",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP01_A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00898A00",
+      "end": "00898B20",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP01_A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00898B20",
+      "end": "0089EBE0",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP01_A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0089EBE0",
+      "end": "0089EDE0",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP01_A.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0089EDE0",
+      "end": "008A4ACD",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP03_A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "008A4AD0",
+      "end": "008A4C10",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP03_A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "008A4C10",
+      "end": "008AACD0",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP03_A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "008AACD0",
+      "end": "008AAE30",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP03_A.SPC.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "008AAE30",
+      "end": "008CD330",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP04_4A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "008CD330",
+      "end": "008CD520",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP04_4A.SPC.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "008CD520",
+      "end": "008D54A0",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP04_5A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "008D54A0",
+      "end": "008D56F0",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP04_5A.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "008D56F0",
+      "end": "008DBD44",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP04_6A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "008DBD50",
+      "end": "008DBE90",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP04_6A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "008DBE90",
+      "end": "008E1F50",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP04_6A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "008E1F50",
+      "end": "008E2070",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP04_6A.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "008E2070",
+      "end": "008E6275",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP04_7A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "008E6280",
+      "end": "008E63C0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP04_7A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "008E63C0",
+      "end": "008EC480",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP04_7A.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "008EC480",
+      "end": "008F24DD",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP04_A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "008F24E0",
+      "end": "008F2620",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP04_A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "008F2620",
+      "end": "0093A6E0",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP04_A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0093A6E0",
+      "end": "0093ABF0",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP04_A.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0093ABF0",
+      "end": "0093F7F9",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP05_A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0093F800",
+      "end": "0093F920",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP05_A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0093F920",
+      "end": "0094B9E0",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP05_A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0094B9E0",
+      "end": "0094BD50",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP05_A.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0094BD50",
+      "end": "00951D8A",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP06_1A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00951D90",
+      "end": "00951E70",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP06_1A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00951E70",
+      "end": "0095BB30",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP06_1A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0095BB30",
+      "end": "0095BE20",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP06_1A.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0095BE20",
+      "end": "00961BA3",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP06_2A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00961BB0",
+      "end": "00961CD0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP06_2A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00961CD0",
+      "end": "00963B90",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP06_2A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00963B90",
+      "end": "00963D60",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP06_2A.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00963D60",
+      "end": "00969D9A",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP06_A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00969DA0",
+      "end": "00969E80",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP06_A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00969E80",
+      "end": "0096CF40",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP06_A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "0096CF40",
+      "end": "0096D060",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP06_A.SPC.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0096D060",
+      "end": "00980D20",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP07_1A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00980D20",
+      "end": "00980DC0",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP07_1A.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00980DC0",
+      "end": "009859FF",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP07_2A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00985A00",
+      "end": "00985AC0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP07_2A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00985AC0",
+      "end": "00988880",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP07_2A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00988880",
+      "end": "00988960",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP07_2A.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00988960",
+      "end": "0098E8F2",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP07_3A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "0098E900",
+      "end": "0098EA20",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP07_3A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "0098EA20",
+      "end": "009926A0",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP07_3A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "009926A0",
+      "end": "00992740",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP07_3A.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00992740",
+      "end": "00997B0A",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP07_A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00997B10",
+      "end": "00997B90",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP07_A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00997B90",
+      "end": "00A11130",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP07_A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00A11130",
+      "end": "00A11790",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP07_A.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00A11790",
+      "end": "00A16AC5",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP08_A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00A16AD0",
+      "end": "00A16BD0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP08_A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00A16BD0",
+      "end": "00A1CC90",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP08_A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00A1CC90",
+      "end": "00A1CE60",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP08_A.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00A1CE60",
+      "end": "00A22A31",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP09_A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00A22A40",
+      "end": "00A22B80",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP09_A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00A22B80",
+      "end": "00A329C0",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP09_A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00A329C0",
+      "end": "00A32DD0",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP09_A.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00A32DD0",
+      "end": "00A376D2",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP10_1A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00A376E0",
+      "end": "00A377E0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP10_1A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00A377E0",
+      "end": "00A3A2A0",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP10_1A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00A3A2A0",
+      "end": "00A3A480",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP10_1A.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00A3A480",
+      "end": "00A4031F",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP10_A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00A40320",
+      "end": "00A40460",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP10_A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00A40460",
+      "end": "00A47120",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP10_A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00A47120",
+      "end": "00A473C0",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP10_A.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00A473C0",
+      "end": "00A4CCAC",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP11_1A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00A4CCB0",
+      "end": "00A4CDD0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP11_1A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00A4CDD0",
+      "end": "00A52E90",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP11_1A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00A52E90",
+      "end": "00A531A0",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP11_1A.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00A531A0",
+      "end": "00A53290",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP11_2.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00A53290",
+      "end": "00A58D45",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP11_2A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00A58D50",
+      "end": "00A58E10",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP11_2A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00A58E10",
+      "end": "00A5D6D0",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP11_2A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00A5D6D0",
+      "end": "00A5D7C0",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP11_2G.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00A5D7C0",
+      "end": "00A63230",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP11_A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00A63230",
+      "end": "00A63370",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP11_A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00A63370",
+      "end": "00A6F430",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP11_A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00A6F430",
+      "end": "00A6F830",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP11_A.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00A6F830",
+      "end": "00A74372",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP24_1A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00A74380",
+      "end": "00A74460",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP24_1A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00A74460",
+      "end": "00A97320",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP24_1A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00A97320",
+      "end": "00A97750",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP24_1A.SPC.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00A97750",
+      "end": "00AC3010",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP24_2A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00AC3010",
+      "end": "00AC3390",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP24_2A.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00AC3390",
+      "end": "00AC888F",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP24_4A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00AC8890",
+      "end": "00AC89D0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP24_4A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00AC89D0",
+      "end": "00AEA690",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP24_4A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00AEA690",
+      "end": "00AEA9D0",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP24_4A.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00AEA9D0",
+      "end": "00AF05B8",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP24_A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00AF05C0",
+      "end": "00AF0700",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP24_A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00AF0700",
+      "end": "00AF37C0",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP24_A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00AF37C0",
+      "end": "00AF3A60",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP24_A.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00AF3A60",
+      "end": "00AF9C6C",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP25_1A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00AF9C70",
+      "end": "00AF9DB0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP25_1A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00AF9DB0",
+      "end": "00B1EA70",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP25_1A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00B1EA70",
+      "end": "00B1EC50",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP25_1A.SPC.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00B1EC50",
+      "end": "00B4ED10",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP25_2A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00B4ED10",
+      "end": "00B4F220",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP25_2A.SPC.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00B4F220",
+      "end": "00BC72E0",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP25_4A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00BC72E0",
+      "end": "00BC7780",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP25_4A.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00BC7780",
+      "end": "00BCD519",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP25_5A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00BCD520",
+      "end": "00BCD660",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP25_5A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00BCD660",
+      "end": "00BD9120",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP25_5A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00BD9120",
+      "end": "00BD9410",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP25_5A.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00BD9410",
+      "end": "00BDE717",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP26_1A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00BDE720",
+      "end": "00BDE7E0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP26_1A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00BDE7E0",
+      "end": "00C06B90",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP26_1A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00C06B90",
+      "end": "00C06ED0",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP26_1A.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00C06ED0",
+      "end": "00C0CDAF",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP26_2A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00C0CDB0",
+      "end": "00C0CEF0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP26_2A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00C0CEF0",
+      "end": "00C183B0",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP26_2A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00C183B0",
+      "end": "00C185B0",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP26_2A.SPC.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00C185B0",
+      "end": "00C5AC70",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP26_3A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00C5AC70",
+      "end": "00C5B020",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP26_3A.SPC.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00C5B020",
+      "end": "00CB8D10",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP26_5A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00CB8D10",
+      "end": "00CB9310",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP26_5A.SPC.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00CB9310",
+      "end": "00CC8B50",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP26_6A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00CC8B50",
+      "end": "00CC8CC0",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP26_6A.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00CC8CC0",
+      "end": "00CCB832",
+      "kind": "gfx",
+      "source": "build/graphics/tilesets/MAP27_A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00CCB840",
+      "end": "00CCB8A0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP27_A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00CCB8A0",
+      "end": "00CCD160",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP27_A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00CCD160",
+      "end": "00D04D20",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP40_A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00D04D20",
+      "end": "00D05060",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP40_A.SPC.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00D05060",
+      "end": "00D11120",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP41_A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00D11120",
+      "end": "00D112B0",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP41_A.SPC.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00D112B0",
+      "end": "00D49A70",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP42_A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00D49A70",
+      "end": "00D49D50",
+      "kind": "script",
+      "source": "build/scripts/nfp/MAP42_A.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D49D50",
+      "end": "00D49D66",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MAP99_A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D49D70",
+      "end": "00D49D90",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MAP99_A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00D49D90",
+      "end": "00D4B650",
+      "kind": "map",
+      "source": "build/maps/nfp/MAP99_A.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D4B650",
+      "end": "00D4D74C",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/ML_BG01.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D4D750",
+      "end": "00D4D770",
+      "kind": "palette",
+      "source": "build/graphics/palettes/ML_BG01.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00D4D770",
+      "end": "00D4E030",
+      "kind": "map",
+      "source": "build/maps/nfp/ML_BG01.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D4E030",
+      "end": "00D4E455",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/MWA.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D4E460",
+      "end": "00D4E480",
+      "kind": "palette",
+      "source": "build/graphics/palettes/MWA.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00D4E480",
+      "end": "00D4F540",
+      "kind": "map",
+      "source": "build/maps/nfp/MWA.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D4F540",
+      "end": "00D510B5",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/NE01.TCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D510C0",
+      "end": "00D51120",
+      "kind": "palette",
+      "source": "build/graphics/palettes/NE01.TCL.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D51120",
+      "end": "00D51220",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/NE01.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D51220",
+      "end": "00D51280",
+      "kind": "palette",
+      "source": "build/graphics/palettes/NE05.TCL.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D51280",
+      "end": "00D52B7B",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/NE13.TCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D52B80",
+      "end": "00D52BE0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/NE13.TCL.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D52BE0",
+      "end": "00D52CE0",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/NE13_A.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D52CE0",
+      "end": "00D52DE0",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/NE13_B.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D52DE0",
+      "end": "00D52EE0",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/NE13_C.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D52EE0",
+      "end": "00D55DA7",
+      "kind": "gfx",
+      "source": "build/graphics/tilesets/NE21.TCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D55DB0",
+      "end": "00D55E10",
+      "kind": "palette",
+      "source": "build/graphics/palettes/NE21.TCL.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D55E10",
+      "end": "00D56610",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/NE21_00.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D56610",
+      "end": "00D56E10",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/NE21_01.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D56E10",
+      "end": "00D57610",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/NE21_02.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D57610",
+      "end": "00D57E10",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/NE21_03.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D57E10",
+      "end": "00D58610",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/NE21_04.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D58610",
+      "end": "00D58E10",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/NE21_05.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D58E10",
+      "end": "00D5AB90",
+      "kind": "gfx",
+      "source": "build/graphics/tilesets/NE32.TCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D5AB90",
+      "end": "00D5ABF0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/NE32.TCL.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D5ABF0",
+      "end": "00D5CBF0",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/NE32.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D5CBF0",
+      "end": "00D5E49B",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/NE33.TCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D5E4A0",
+      "end": "00D5E500",
+      "kind": "palette",
+      "source": "build/graphics/palettes/NE33.TCL.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D5E500",
+      "end": "00D5E600",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/NE33_A.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D5E600",
+      "end": "00D5E700",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/NE33_B.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D5E700",
+      "end": "00D5E800",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/NE33_C.TSC.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00D5E800",
+      "end": "00D600C0",
+      "kind": "map",
+      "source": "build/maps/nfp/NET_00_A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00D600C0",
+      "end": "00D61980",
+      "kind": "map",
+      "source": "build/maps/nfp/NET_03_A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00D61980",
+      "end": "00D63240",
+      "kind": "map",
+      "source": "build/maps/nfp/NET_04_A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00D63240",
+      "end": "00D64B00",
+      "kind": "map",
+      "source": "build/maps/nfp/NET_05_A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00D64B00",
+      "end": "00D663C0",
+      "kind": "map",
+      "source": "build/maps/nfp/NET_07_A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00D663C0",
+      "end": "00D67C80",
+      "kind": "map",
+      "source": "build/maps/nfp/NET_24_A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00D67C80",
+      "end": "00D69540",
+      "kind": "map",
+      "source": "build/maps/nfp/NET_25_A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00D69540",
+      "end": "00D6AE00",
+      "kind": "map",
+      "source": "build/maps/nfp/NET_26_A.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00D6AE00",
+      "end": "00D6C6C0",
+      "kind": "map",
+      "source": "build/maps/nfp/NET_AD_A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00D6C6C0",
+      "end": "00D6C9C0",
+      "kind": "script",
+      "source": "build/scripts/nfp/OBJ_D.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00D6C9C0",
+      "end": "00D6CCE0",
+      "kind": "script",
+      "source": "build/scripts/nfp/OBJ_G.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00D6CCE0",
+      "end": "00D6D0C0",
+      "kind": "script",
+      "source": "build/scripts/nfp/OBJ_J.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00D6D0C0",
+      "end": "00D6D350",
+      "kind": "script",
+      "source": "build/scripts/nfp/OBJ_S.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00D6D350",
+      "end": "00D6D6E0",
+      "kind": "script",
+      "source": "build/scripts/nfp/OBJ_V.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00D6D6E0",
+      "end": "00D6EAB0",
+      "kind": "script",
+      "source": "build/scripts/nfp/OPEN.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D6EAB0",
+      "end": "00D72769",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/OP_01_A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D72770",
+      "end": "00D727D0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/OP_01_A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00D727D0",
+      "end": "00D736A0",
+      "kind": "map",
+      "source": "build/maps/nfp/OP_01_A.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D736A0",
+      "end": "00D76E63",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/OP_04_A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D76E70",
+      "end": "00D76ED0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/OP_04_A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00D76ED0",
+      "end": "00D77DA0",
+      "kind": "map",
+      "source": "build/maps/nfp/OP_04_A.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D77DA0",
+      "end": "00D7BD73",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/OP_05_A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D7BD80",
+      "end": "00D7BDE0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/OP_05_A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00D7BDE0",
+      "end": "00D7CCB0",
+      "kind": "map",
+      "source": "build/maps/nfp/OP_05_A.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D7CCB0",
+      "end": "00D80082",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/OP_06_A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D80090",
+      "end": "00D80150",
+      "kind": "palette",
+      "source": "build/graphics/palettes/OP_06_A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00D80150",
+      "end": "00D81890",
+      "kind": "map",
+      "source": "build/maps/nfp/OP_06_A.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D81890",
+      "end": "00D83CA2",
+      "kind": "gfx",
+      "source": "build/graphics/tilesets/OP_07_A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D83CB0",
+      "end": "00D83DF0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/OP_07_A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00D83DF0",
+      "end": "00D856B0",
+      "kind": "map",
+      "source": "build/maps/nfp/OP_07_A.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D856B0",
+      "end": "00D87F5C",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/OP_08_A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D87F60",
+      "end": "00D880A0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/OP_08_A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00D880A0",
+      "end": "00D89960",
+      "kind": "map",
+      "source": "build/maps/nfp/OP_08_A.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D89960",
+      "end": "00D8D07A",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/OP_09_A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D8D080",
+      "end": "00D8D1C0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/OP_09_A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00D8D1C0",
+      "end": "00D8EA80",
+      "kind": "map",
+      "source": "build/maps/nfp/OP_09_A.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D8EA80",
+      "end": "00D8FF99",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/OP_0A_A.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D8FFA0",
+      "end": "00D900E0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/OP_0A_A.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00D900E0",
+      "end": "00D919A0",
+      "kind": "map",
+      "source": "build/maps/nfp/OP_0A_A.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00D919A0",
+      "end": "00D91C80",
+      "kind": "script",
+      "source": "build/scripts/nfp/PHANTOM.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D91C80",
+      "end": "00D9529D",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/PS_BG01.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D952A0",
+      "end": "00D952C0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/PS_BG01.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00D952C0",
+      "end": "00D95B80",
+      "kind": "map",
+      "source": "build/maps/nfp/PS_BG01.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D95B80",
+      "end": "00D979B0",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/PV_BG01.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D979B0",
+      "end": "00D979D0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/PV_BG01.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00D979D0",
+      "end": "00D98290",
+      "kind": "map",
+      "source": "build/maps/nfp/PV_BG01.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D98290",
+      "end": "00D986CA",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/PV_BG11.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D986D0",
+      "end": "00D986F0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/PV_BG11.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00D986F0",
+      "end": "00D98FB0",
+      "kind": "map",
+      "source": "build/maps/nfp/PV_BG11.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D98FB0",
+      "end": "00D9A5C4",
+      "kind": "gfx",
+      "source": "build/graphics/tilesets/PW_BG01.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D9A5D0",
+      "end": "00D9A5F0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/PW_BG01.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00D9A5F0",
+      "end": "00D9AEB0",
+      "kind": "map",
+      "source": "build/maps/nfp/PW_BG01.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D9AEB0",
+      "end": "00D9C217",
+      "kind": "gfx",
+      "source": "build/graphics/tilesets/PW_BOX.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D9C220",
+      "end": "00D9C240",
+      "kind": "palette",
+      "source": "build/graphics/palettes/PW_BOX.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00D9C240",
+      "end": "00D9CB00",
+      "kind": "map",
+      "source": "build/maps/nfp/PW_BOX.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D9CB00",
+      "end": "00D9F944",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/SBA06.TCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D9F950",
+      "end": "00D9F9B0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/SBA06.TCL.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00D9F9B0",
+      "end": "00DA01B0",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/SBA06_00.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DA01B0",
+      "end": "00DA09B0",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/SBA06_01.TSC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DA09B0",
+      "end": "00DA0D30",
+      "kind": "script",
+      "source": "build/scripts/nfp/SHOPPA01.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DA0D30",
+      "end": "00DA10C0",
+      "kind": "script",
+      "source": "build/scripts/nfp/SHOPPA02.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DA10C0",
+      "end": "00DA13F0",
+      "kind": "script",
+      "source": "build/scripts/nfp/SHOPPA03.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DA13F0",
+      "end": "00DA1730",
+      "kind": "script",
+      "source": "build/scripts/nfp/SHOPPA04.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DA1730",
+      "end": "00DA1CB0",
+      "kind": "script",
+      "source": "build/scripts/nfp/SHOPPA05.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DA1CB0",
+      "end": "00DA1FF0",
+      "kind": "script",
+      "source": "build/scripts/nfp/SHOPPE01.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DA1FF0",
+      "end": "00DA2370",
+      "kind": "script",
+      "source": "build/scripts/nfp/SHOPPE02.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DA2370",
+      "end": "00DA3577",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/SK02.TCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DA3580",
+      "end": "00DA35E0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/SK02.TCL.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DA35E0",
+      "end": "00DA36E0",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/SK02_00.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DA36E0",
+      "end": "00DA37E0",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/SK02_01.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DA37E0",
+      "end": "00DA38E0",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/SK02_02.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DA38E0",
+      "end": "00DA39E0",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/SK02_03.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DA39E0",
+      "end": "00DA4BE7",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/SK03.TCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DA4BF0",
+      "end": "00DA4C50",
+      "kind": "palette",
+      "source": "build/graphics/palettes/SK03.TCL.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DA4C50",
+      "end": "00DA5050",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/SK03_00.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DA5050",
+      "end": "00DA5450",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/SK03_01.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DA5450",
+      "end": "00DA5850",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/SK03_02.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DA5850",
+      "end": "00DA5C50",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/SK03_03.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DA5C50",
+      "end": "00DA80AC",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/SM_BG01.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DA80B0",
+      "end": "00DA80D0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/SM_BG01.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00DA80D0",
+      "end": "00DA8990",
+      "kind": "map",
+      "source": "build/maps/nfp/SM_BG01.KMP.bin"
+    },
+    {
+      "group": "japanese_localized_assets",
+      "start": "00DA8990",
+      "end": "00DA9BC4",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/SM_BG12.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DA9BD0",
+      "end": "00DA9BF0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/SM_BG12.KCL.bin"
+    },
+    {
+      "group": "japanese_localized_assets",
+      "start": "00DA9BF0",
+      "end": "00DAA4B0",
+      "kind": "map",
+      "source": "build/maps/nfp/SM_BG12.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DAA4B0",
+      "end": "00DAB3D4",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/SN06.TCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DAB3E0",
+      "end": "00DAB440",
+      "kind": "palette",
+      "source": "build/graphics/palettes/SN06.TCL.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DAB440",
+      "end": "00DABC40",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/SN06.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DABC40",
+      "end": "00DAE9E3",
+      "kind": "gfx",
+      "source": "build/graphics/tilesets/SN07.TCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DAE9F0",
+      "end": "00DAEA50",
+      "kind": "palette",
+      "source": "build/graphics/palettes/SN07.TCL.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DAEA50",
+      "end": "00DB0A50",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/SN07_A.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DB0A50",
+      "end": "00DB2A50",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/SN07_B.TSC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DB2A50",
+      "end": "00DB2E10",
+      "kind": "script",
+      "source": "build/scripts/nfp/SPR_DUNG.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DB2E10",
+      "end": "00DB33A0",
+      "kind": "script",
+      "source": "build/scripts/nfp/SPR_NORM.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DB33A0",
+      "end": "00DB5778",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/SP_BG01.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DB5780",
+      "end": "00DB57A0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/SP_BG01.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00DB57A0",
+      "end": "00DB6060",
+      "kind": "map",
+      "source": "build/maps/nfp/SP_BG01.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DB6060",
+      "end": "00DB89C9",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/SP_BG11.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DB89D0",
+      "end": "00DB89F0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/SP_BG11.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00DB89F0",
+      "end": "00DB92B0",
+      "kind": "map",
+      "source": "build/maps/nfp/SP_BG11.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DB92B0",
+      "end": "00DB9D37",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/SP_BG12.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DB9D40",
+      "end": "00DB9D60",
+      "kind": "palette",
+      "source": "build/graphics/palettes/SP_BG12.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00DB9D60",
+      "end": "00DBA620",
+      "kind": "map",
+      "source": "build/maps/nfp/SP_BG12.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DBA620",
+      "end": "00DBC95D",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/SP_BG21.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DBC960",
+      "end": "00DBC980",
+      "kind": "palette",
+      "source": "build/graphics/palettes/SP_BG21.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00DBC980",
+      "end": "00DBD240",
+      "kind": "map",
+      "source": "build/maps/nfp/SP_BG21.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DBD240",
+      "end": "00DBFA01",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/SP_BG22.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DBFA10",
+      "end": "00DBFA30",
+      "kind": "palette",
+      "source": "build/graphics/palettes/SP_BG22.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00DBFA30",
+      "end": "00DC02F0",
+      "kind": "map",
+      "source": "build/maps/nfp/SP_BG22.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC02F0",
+      "end": "00DC0800",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M00.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC0800",
+      "end": "00DC0E10",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M01.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC0E10",
+      "end": "00DC0ED0",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M01_1.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC0ED0",
+      "end": "00DC1400",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M01_3.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC1400",
+      "end": "00DC14C0",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M01_4.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC14C0",
+      "end": "00DC15B0",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M01_5.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC15B0",
+      "end": "00DC1750",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M01_6.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC1750",
+      "end": "00DC1AB0",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M04.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC1AB0",
+      "end": "00DC1B70",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M04_4.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC1B70",
+      "end": "00DC1C50",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M04_5.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC1C50",
+      "end": "00DC1D60",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M05.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC1D60",
+      "end": "00DC2040",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M06_1.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC2040",
+      "end": "00DC2100",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M06_2.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC2100",
+      "end": "00DC22F0",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M07.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC22F0",
+      "end": "00DC28B0",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M07_1.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC28B0",
+      "end": "00DC2C80",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M08.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC2C80",
+      "end": "00DC2D70",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M09.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC2D70",
+      "end": "00DC2E50",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M10.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC2E50",
+      "end": "00DC3060",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M10_1.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC3060",
+      "end": "00DC3180",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M24.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC3180",
+      "end": "00DC3320",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M24_1.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC3320",
+      "end": "00DC34A0",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M24_2.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC34A0",
+      "end": "00DC35E0",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M24_3.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC35E0",
+      "end": "00DC45B0",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M24_4.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC45B0",
+      "end": "00DC46B0",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M25_1.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC46B0",
+      "end": "00DC4870",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M25_2.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC4870",
+      "end": "00DC4E80",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M25_4.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC4E80",
+      "end": "00DC6130",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M25_5.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC6130",
+      "end": "00DC62A0",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M26_1.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC62A0",
+      "end": "00DC6C70",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M26_2.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC6C70",
+      "end": "00DC6E00",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M26_3.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC6E00",
+      "end": "00DC7A00",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M26_5.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC7A00",
+      "end": "00DC7CA0",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M40.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC7CA0",
+      "end": "00DC7D60",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M41.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC7D60",
+      "end": "00DC8080",
+      "kind": "script",
+      "source": "build/scripts/nfp/SP_M42.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00DC8080",
+      "end": "00DC8210",
+      "kind": "script",
+      "source": "build/scripts/nfp/SROLL.SPC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DC8210",
+      "end": "00DCAFB3",
+      "kind": "gfx",
+      "source": "build/graphics/tilesets/SSN07.TCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DCAFC0",
+      "end": "00DCB020",
+      "kind": "palette",
+      "source": "build/graphics/palettes/SSN07.TCL.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DCB020",
+      "end": "00DCD020",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/SSN07_A.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DCD020",
+      "end": "00DCF020",
+      "kind": "tilemap",
+      "source": "build/graphics/tilemaps/nfp/SSN07_B.TSC.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DCF020",
+      "end": "00DD0394",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/ST_BG01.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DD03A0",
+      "end": "00DD03C0",
+      "kind": "palette",
+      "source": "build/graphics/palettes/ST_BG01.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00DD03C0",
+      "end": "00DD0C80",
+      "kind": "map",
+      "source": "build/maps/nfp/ST_BG01.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DD0C80",
+      "end": "00DD1D10",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/ST_BG02.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DD1D10",
+      "end": "00DD1D30",
+      "kind": "palette",
+      "source": "build/graphics/palettes/ST_BG02.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00DD1D30",
+      "end": "00DD25F0",
+      "kind": "map",
+      "source": "build/maps/nfp/ST_BG02.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DD25F0",
+      "end": "00DD3624",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/ST_BG03.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DD3630",
+      "end": "00DD3650",
+      "kind": "palette",
+      "source": "build/graphics/palettes/ST_BG03.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00DD3650",
+      "end": "00DD3F10",
+      "kind": "map",
+      "source": "build/maps/nfp/ST_BG03.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DD3F10",
+      "end": "00DD60F6",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/ST_BG11.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00DD6100",
+      "end": "00DD6120",
+      "kind": "palette",
+      "source": "build/graphics/palettes/ST_BG11.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00DD6120",
+      "end": "00DD69E0",
+      "kind": "map",
+      "source": "build/maps/nfp/ST_BG11.KMP.bin"
+    },
+    {
+      "group": "japanese_localized_assets",
+      "start": "00DD69E0",
+      "end": "00F12390",
+      "kind": "sprites",
+      "source": "build/graphics/ncd/SYSTEM.ncd"
+    },
+    {
+      "group": "script_assets",
+      "start": "00F12390",
+      "end": "00F12490",
+      "kind": "script",
+      "source": "build/scripts/nfp/S_BTLIRQ.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00F12490",
+      "end": "00F12590",
+      "kind": "script",
+      "source": "build/scripts/nfp/S_BTLOUT.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00F12590",
+      "end": "00F12C30",
+      "kind": "script",
+      "source": "build/scripts/nfp/S_CHRIRQ.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00F12C30",
+      "end": "00F13460",
+      "kind": "script",
+      "source": "build/scripts/nfp/S_DUNG.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00F13460",
+      "end": "00F13560",
+      "kind": "script",
+      "source": "build/scripts/nfp/S_HITIRQ.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00F13560",
+      "end": "00F135F0",
+      "kind": "script",
+      "source": "build/scripts/nfp/S_MAIN.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00F135F0",
+      "end": "00F13DD0",
+      "kind": "script",
+      "source": "build/scripts/nfp/S_MAP11.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00F13DD0",
+      "end": "00F195C0",
+      "kind": "script",
+      "source": "build/scripts/nfp/S_MAPIRQ.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00F195C0",
+      "end": "00F19970",
+      "kind": "script",
+      "source": "build/scripts/nfp/S_SIOBTL.SPC.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00F19970",
+      "end": "00F19AA0",
+      "kind": "script",
+      "source": "build/scripts/nfp/S_SPRIRQ.SPC.bin"
+    },
+    {
+      "group": "japanese_localized_assets",
+      "start": "00F19AA0",
+      "end": "00F1A2FB",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/T_C01.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00F1A300",
+      "end": "00F1A320",
+      "kind": "palette",
+      "source": "build/graphics/palettes/T_C01.KCL.bin"
+    },
+    {
+      "group": "japanese_localized_assets",
+      "start": "00F1A320",
+      "end": "00F1ABE0",
+      "kind": "map",
+      "source": "build/maps/nfp/T_C01.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00F1ABE0",
+      "end": "00F1B027",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/T_C02.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00F1B030",
+      "end": "00F1B050",
+      "kind": "palette",
+      "source": "build/graphics/palettes/T_C02.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00F1B050",
+      "end": "00F1B910",
+      "kind": "map",
+      "source": "build/maps/nfp/T_C02.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00F1B910",
+      "end": "00F1E649",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/T_ML_BG.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00F1E650",
+      "end": "00F1E690",
+      "kind": "palette",
+      "source": "build/graphics/palettes/T_ML_BG.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00F1E690",
+      "end": "00F1EF50",
+      "kind": "map",
+      "source": "build/maps/nfp/T_ML_BG.KMP.bin"
+    },
+    {
+      "group": "japanese_localized_assets",
+      "start": "00F1EF50",
+      "end": "00F21395",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/T_TTL06.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00F213A0",
+      "end": "00F21420",
+      "kind": "palette",
+      "source": "build/graphics/palettes/T_TTL06.KCL.bin"
+    },
+    {
+      "group": "japanese_localized_assets",
+      "start": "00F21420",
+      "end": "00F21CE0",
+      "kind": "map",
+      "source": "build/maps/nfp/T_TTL06.KMP.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00F21CE0",
+      "end": "00F23E20",
+      "kind": "map",
+      "source": "build/maps/nfp/VSMAP01.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00F23E20",
+      "end": "00F25C70",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/WM_BG01.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00F25C70",
+      "end": "00F25C90",
+      "kind": "palette",
+      "source": "build/graphics/palettes/WM_BG01.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00F25C90",
+      "end": "00F26550",
+      "kind": "map",
+      "source": "build/maps/nfp/WM_BG01.KMP.bin"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00F26550",
+      "end": "00F27607",
+      "kind": "gfx",
+      "source": "build/graphics/backgrounds/WM_BG02.KCG.lz"
+    },
+    {
+      "group": "graphics_assets",
+      "start": "00F27610",
+      "end": "00F27630",
+      "kind": "palette",
+      "source": "build/graphics/palettes/WM_BG02.KCL.bin"
+    },
+    {
+      "group": "map_assets",
+      "start": "00F27630",
+      "end": "00F27EF0",
+      "kind": "map",
+      "source": "build/maps/nfp/WM_BG02.KMP.bin"
+    },
+    {
+      "group": "script_assets",
+      "start": "00F27EF0",
+      "end": "00F28410",
+      "kind": "script",
+      "source": "build/scripts/nfp/W_MAP.SPC.bin"
+    },
+    {
+      "group": "padding",
+      "start": "00F2B448",
+      "end": "00F6B448",
+      "kind": "fill",
+      "fill": 255
+    },
+    {
+      "group": "padding",
+      "start": "00F6B448",
+      "end": "00FAB448",
+      "kind": "fill",
+      "fill": 255
+    },
+    {
+      "group": "padding",
+      "start": "00FAB448",
+      "end": "00FE0000",
+      "kind": "fill",
+      "fill": 255
+    },
+    {
+      "group": "raw_data",
+      "start": "00FE0000",
+      "end": "00FE4000",
+      "kind": "raw",
+      "source": "build/data/data_FE0000.bin"
+    },
+    {
+      "group": "padding",
+      "start": "00FE4000",
+      "end": "00FEB448",
+      "kind": "fill",
+      "fill": 255
+    },
+    {
+      "group": "padding",
+      "start": "00FEB448",
+      "end": "00FFF000",
+      "kind": "fill",
+      "fill": 255
+    },
+    {
+      "group": "raw_data",
+      "start": "00FFF000",
+      "end": "00FFFF00",
+      "kind": "raw",
+      "source": "build/data/data_FFF000.bin"
+    },
+    {
+      "group": "padding",
+      "start": "00FFFF00",
+      "end": "01000000",
+      "kind": "fill",
+      "fill": 255
+    }
+  ]
+}

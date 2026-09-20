@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Create and verify a complete project recovery archive, excluding build output.
 
-Includes editable assets/text, assembly/data, analysis, bundled agbcc and ROM.
+Includes editable assets/text, ROM-data manifests, analysis, bundled agbcc and ROM.
 Never deletes earlier snapshots. A separate empty directory is safest for restore.
 """
 import hashlib
@@ -78,7 +78,7 @@ def main():
     (dest / 'manifest.json').write_text(json.dumps(records, indent=2) + '\n')
     (dest / 'RESTORE.txt').write_text(
         'Verified project snapshot (UTC ' + stamp + ').\n'
-        'Includes original ROM, agbcc, current assembly/data, editable graphics,\n'
+        'Includes original ROM, agbcc, current assembly and data manifests, editable graphics,\n'
         'translations, analysis, tools, tests and reports. Excludes prior backups,\n'
         'build/, mar.gba, caches and local agent/Git configuration.\n\n'
         'Restore into a new EMPTY directory to avoid stale files:\n'

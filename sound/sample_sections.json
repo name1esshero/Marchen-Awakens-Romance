@@ -1,0 +1,1318 @@
+{
+  "format": 1,
+  "description": "Placement of editable PCM sample spans interleaved with executable ROM.",
+  "sections": [
+    {
+      "group": "sound_samples",
+      "start": "0008B89C",
+      "end": "0008E990",
+      "kind": "pcm",
+      "source": "build/sound/samples/08B89C.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0808B89C"
+    },
+    {
+      "group": "sound_samples",
+      "start": "0008E990",
+      "end": "0008F9AC",
+      "kind": "pcm",
+      "source": "build/sound/samples/08E990.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0808E990"
+    },
+    {
+      "group": "sound_samples",
+      "start": "0008F9AC",
+      "end": "000900C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/08F9AC.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0808F9AC"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000900C0",
+      "end": "00091F80",
+      "kind": "pcm",
+      "source": "build/sound/samples/08F9AC.bin",
+      "source_offset": 1812
+    },
+    {
+      "group": "sound_samples",
+      "start": "00091F80",
+      "end": "00094C24",
+      "kind": "pcm",
+      "source": "build/sound/samples/091F80.bin",
+      "source_offset": 0,
+      "symbol": "gWave_08091F80"
+    },
+    {
+      "group": "sound_samples",
+      "start": "00094C24",
+      "end": "000980C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/094C24.bin",
+      "source_offset": 0,
+      "symbol": "gWave_08094C24"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000980C0",
+      "end": "00098418",
+      "kind": "pcm",
+      "source": "build/sound/samples/094C24.bin",
+      "source_offset": 13468
+    },
+    {
+      "group": "sound_samples",
+      "start": "00098418",
+      "end": "0009A8B4",
+      "kind": "pcm",
+      "source": "build/sound/samples/098418.bin",
+      "source_offset": 0,
+      "symbol": "gWave_08098418"
+    },
+    {
+      "group": "sound_samples",
+      "start": "0009A8B4",
+      "end": "0009D3B8",
+      "kind": "pcm",
+      "source": "build/sound/samples/09A8B4.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0809A8B4"
+    },
+    {
+      "group": "sound_samples",
+      "start": "0009D3B8",
+      "end": "0009FCBC",
+      "kind": "pcm",
+      "source": "build/sound/samples/09D3B8.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0809D3B8"
+    },
+    {
+      "group": "sound_samples",
+      "start": "0009FCBC",
+      "end": "000A00C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/09FCBC.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0809FCBC"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000A00C0",
+      "end": "000A32BC",
+      "kind": "pcm",
+      "source": "build/sound/samples/09FCBC.bin",
+      "source_offset": 1028
+    },
+    {
+      "group": "sound_samples",
+      "start": "000A32BC",
+      "end": "000A5950",
+      "kind": "pcm",
+      "source": "build/sound/samples/0A32BC.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080A32BC"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000A5950",
+      "end": "000A7D4C",
+      "kind": "pcm",
+      "source": "build/sound/samples/0A5950.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080A5950"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000A7D4C",
+      "end": "000A80C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/0A7D4C.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080A7D4C"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000A80C0",
+      "end": "000A9928",
+      "kind": "pcm",
+      "source": "build/sound/samples/0A7D4C.bin",
+      "source_offset": 884
+    },
+    {
+      "group": "sound_samples",
+      "start": "000A9928",
+      "end": "000AAE64",
+      "kind": "pcm",
+      "source": "build/sound/samples/0A9928.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080A9928"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000AAE64",
+      "end": "000AD068",
+      "kind": "pcm",
+      "source": "build/sound/samples/0AAE64.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080AAE64"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000AD068",
+      "end": "000AE1AC",
+      "kind": "pcm",
+      "source": "build/sound/samples/0AD068.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080AD068"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000AE1AC",
+      "end": "000AF4E0",
+      "kind": "pcm",
+      "source": "build/sound/samples/0AE1AC.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080AE1AC"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000AF4E0",
+      "end": "000B00C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/0AF4E0.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080AF4E0"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000B00C0",
+      "end": "000B2BBC",
+      "kind": "pcm",
+      "source": "build/sound/samples/0AF4E0.bin",
+      "source_offset": 3040
+    },
+    {
+      "group": "sound_samples",
+      "start": "000B2BBC",
+      "end": "000B3FF0",
+      "kind": "pcm",
+      "source": "build/sound/samples/0B2BBC.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080B2BBC"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000B3FF0",
+      "end": "000B5144",
+      "kind": "pcm",
+      "source": "build/sound/samples/0B3FF0.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080B3FF0"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000B5144",
+      "end": "000B53DC",
+      "kind": "pcm",
+      "source": "build/sound/samples/0B5144.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080B5144"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000B53DC",
+      "end": "000B5C5C",
+      "kind": "pcm",
+      "source": "build/sound/samples/0B53DC.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080B53DC"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000B5C5C",
+      "end": "000B6F60",
+      "kind": "pcm",
+      "source": "build/sound/samples/0B5C5C.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080B5C5C"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000B6F60",
+      "end": "000B80C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/0B6F60.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080B6F60"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000B80C0",
+      "end": "000B83F4",
+      "kind": "pcm",
+      "source": "build/sound/samples/0B6F60.bin",
+      "source_offset": 4448
+    },
+    {
+      "group": "sound_samples",
+      "start": "000B83F4",
+      "end": "000BBB0C",
+      "kind": "pcm",
+      "source": "build/sound/samples/0B83F4.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080B83F4"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000BBB0C",
+      "end": "000BDD90",
+      "kind": "pcm",
+      "source": "build/sound/samples/0BBB0C.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080BBB0C"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000BDD90",
+      "end": "000C00C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/0BDD90.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080BDD90"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000C00C0",
+      "end": "000C22A4",
+      "kind": "pcm",
+      "source": "build/sound/samples/0BDD90.bin",
+      "source_offset": 9008
+    },
+    {
+      "group": "sound_samples",
+      "start": "000C22A4",
+      "end": "000C3C6C",
+      "kind": "pcm",
+      "source": "build/sound/samples/0C22A4.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080C22A4"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000C3C6C",
+      "end": "000C80C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/0C3C6C.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080C3C6C"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000C80C0",
+      "end": "000C8600",
+      "kind": "pcm",
+      "source": "build/sound/samples/0C3C6C.bin",
+      "source_offset": 17492
+    },
+    {
+      "group": "sound_samples",
+      "start": "000C8600",
+      "end": "000CB454",
+      "kind": "pcm",
+      "source": "build/sound/samples/0C8600.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080C8600"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000CB454",
+      "end": "000CDE0C",
+      "kind": "pcm",
+      "source": "build/sound/samples/0CB454.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080CB454"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000CDE0C",
+      "end": "000CFC68",
+      "kind": "pcm",
+      "source": "build/sound/samples/0CDE0C.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080CDE0C"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000CFC68",
+      "end": "000D00C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/0CFC68.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080CFC68"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000D00C0",
+      "end": "000D69FC",
+      "kind": "pcm",
+      "source": "build/sound/samples/0CFC68.bin",
+      "source_offset": 1112
+    },
+    {
+      "group": "sound_samples",
+      "start": "000D69FC",
+      "end": "000D80C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/0D69FC.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080D69FC"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000D80C0",
+      "end": "000D89D0",
+      "kind": "pcm",
+      "source": "build/sound/samples/0D69FC.bin",
+      "source_offset": 5828
+    },
+    {
+      "group": "sound_samples",
+      "start": "000D89D0",
+      "end": "000DF764",
+      "kind": "pcm",
+      "source": "build/sound/samples/0D89D0.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080D89D0"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000DF764",
+      "end": "000E00C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/0DF764.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080DF764"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000E00C0",
+      "end": "000E146C",
+      "kind": "pcm",
+      "source": "build/sound/samples/0DF764.bin",
+      "source_offset": 2396
+    },
+    {
+      "group": "sound_samples",
+      "start": "000E146C",
+      "end": "000E1538",
+      "kind": "pcm",
+      "source": "build/sound/samples/0E146C.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080E146C"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000E1538",
+      "end": "000E4090",
+      "kind": "pcm",
+      "source": "build/sound/samples/0E1538.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080E1538"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000E4090",
+      "end": "000E5114",
+      "kind": "pcm",
+      "source": "build/sound/samples/0E4090.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080E4090"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000E5114",
+      "end": "000E6620",
+      "kind": "pcm",
+      "source": "build/sound/samples/0E5114.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080E5114"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000E6620",
+      "end": "000E73F8",
+      "kind": "pcm",
+      "source": "build/sound/samples/0E6620.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080E6620"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000E73F8",
+      "end": "000E7F0C",
+      "kind": "pcm",
+      "source": "build/sound/samples/0E73F8.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080E73F8"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000E7F0C",
+      "end": "000E80C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/0E7F0C.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080E7F0C"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000E80C0",
+      "end": "000E8408",
+      "kind": "pcm",
+      "source": "build/sound/samples/0E7F0C.bin",
+      "source_offset": 436
+    },
+    {
+      "group": "sound_samples",
+      "start": "000E8408",
+      "end": "000E989C",
+      "kind": "pcm",
+      "source": "build/sound/samples/0E8408.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080E8408"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000E989C",
+      "end": "000EB138",
+      "kind": "pcm",
+      "source": "build/sound/samples/0E989C.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080E989C"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000EB138",
+      "end": "000EF5CC",
+      "kind": "pcm",
+      "source": "build/sound/samples/0EB138.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080EB138"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000EF5CC",
+      "end": "000EF9A8",
+      "kind": "pcm",
+      "source": "build/sound/samples/0EF5CC.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080EF5CC"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000EF9A8",
+      "end": "000F00C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/0EF9A8.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080EF9A8"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000F00C0",
+      "end": "000F1670",
+      "kind": "pcm",
+      "source": "build/sound/samples/0EF9A8.bin",
+      "source_offset": 1816
+    },
+    {
+      "group": "sound_samples",
+      "start": "000F1670",
+      "end": "000F30AC",
+      "kind": "pcm",
+      "source": "build/sound/samples/0F1670.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080F1670"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000F30AC",
+      "end": "000F35D0",
+      "kind": "pcm",
+      "source": "build/sound/samples/0F30AC.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080F30AC"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000F35D0",
+      "end": "000F3E84",
+      "kind": "pcm",
+      "source": "build/sound/samples/0F35D0.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080F35D0"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000F3E84",
+      "end": "000F72D8",
+      "kind": "pcm",
+      "source": "build/sound/samples/0F3E84.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080F3E84"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000F72D8",
+      "end": "000F80C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/0F72D8.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080F72D8"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000F80C0",
+      "end": "000FB4EC",
+      "kind": "pcm",
+      "source": "build/sound/samples/0F72D8.bin",
+      "source_offset": 3560
+    },
+    {
+      "group": "sound_samples",
+      "start": "000FB4EC",
+      "end": "000FBD14",
+      "kind": "pcm",
+      "source": "build/sound/samples/0FB4EC.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080FB4EC"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000FBD14",
+      "end": "000FF6C8",
+      "kind": "pcm",
+      "source": "build/sound/samples/0FBD14.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080FBD14"
+    },
+    {
+      "group": "sound_samples",
+      "start": "000FF6C8",
+      "end": "001000C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/0FF6C8.bin",
+      "source_offset": 0,
+      "symbol": "gWave_080FF6C8"
+    },
+    {
+      "group": "sound_samples",
+      "start": "001000C0",
+      "end": "001030DC",
+      "kind": "pcm",
+      "source": "build/sound/samples/0FF6C8.bin",
+      "source_offset": 2552
+    },
+    {
+      "group": "sound_samples",
+      "start": "001030DC",
+      "end": "0010594C",
+      "kind": "pcm",
+      "source": "build/sound/samples/1030DC.bin",
+      "source_offset": 0,
+      "symbol": "gWave_081030DC"
+    },
+    {
+      "group": "sound_samples",
+      "start": "0010594C",
+      "end": "00106424",
+      "kind": "pcm",
+      "source": "build/sound/samples/10594C.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0810594C"
+    },
+    {
+      "group": "sound_samples",
+      "start": "00106424",
+      "end": "00107414",
+      "kind": "pcm",
+      "source": "build/sound/samples/106424.bin",
+      "source_offset": 0,
+      "symbol": "gWave_08106424"
+    },
+    {
+      "group": "sound_samples",
+      "start": "00107414",
+      "end": "001080C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/107414.bin",
+      "source_offset": 0,
+      "symbol": "gWave_08107414"
+    },
+    {
+      "group": "sound_samples",
+      "start": "001080C0",
+      "end": "0010A564",
+      "kind": "pcm",
+      "source": "build/sound/samples/107414.bin",
+      "source_offset": 3244
+    },
+    {
+      "group": "sound_samples",
+      "start": "0010A564",
+      "end": "0010B22C",
+      "kind": "pcm",
+      "source": "build/sound/samples/10A564.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0810A564"
+    },
+    {
+      "group": "sound_samples",
+      "start": "0010B22C",
+      "end": "0010C6A8",
+      "kind": "pcm",
+      "source": "build/sound/samples/10B22C.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0810B22C"
+    },
+    {
+      "group": "sound_samples",
+      "start": "0010C6A8",
+      "end": "0010E2BC",
+      "kind": "pcm",
+      "source": "build/sound/samples/10C6A8.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0810C6A8"
+    },
+    {
+      "group": "sound_samples",
+      "start": "0010E2BC",
+      "end": "001100C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/10E2BC.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0810E2BC"
+    },
+    {
+      "group": "sound_samples",
+      "start": "001100C0",
+      "end": "00110EBC",
+      "kind": "pcm",
+      "source": "build/sound/samples/10E2BC.bin",
+      "source_offset": 7684
+    },
+    {
+      "group": "sound_samples",
+      "start": "00110EBC",
+      "end": "00112BD0",
+      "kind": "pcm",
+      "source": "build/sound/samples/110EBC.bin",
+      "source_offset": 0,
+      "symbol": "gWave_08110EBC"
+    },
+    {
+      "group": "sound_samples",
+      "start": "00112BD0",
+      "end": "00115A24",
+      "kind": "pcm",
+      "source": "build/sound/samples/112BD0.bin",
+      "source_offset": 0,
+      "symbol": "gWave_08112BD0"
+    },
+    {
+      "group": "sound_samples",
+      "start": "00115A24",
+      "end": "001165D4",
+      "kind": "pcm",
+      "source": "build/sound/samples/115A24.bin",
+      "source_offset": 0,
+      "symbol": "gWave_08115A24"
+    },
+    {
+      "group": "sound_samples",
+      "start": "001165D4",
+      "end": "00116F9C",
+      "kind": "pcm",
+      "source": "build/sound/samples/1165D4.bin",
+      "source_offset": 0,
+      "symbol": "gWave_081165D4"
+    },
+    {
+      "group": "sound_samples",
+      "start": "00116F9C",
+      "end": "001180C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/116F9C.bin",
+      "source_offset": 0,
+      "symbol": "gWave_08116F9C"
+    },
+    {
+      "group": "sound_samples",
+      "start": "001180C0",
+      "end": "0011D424",
+      "kind": "pcm",
+      "source": "build/sound/samples/116F9C.bin",
+      "source_offset": 4388
+    },
+    {
+      "group": "sound_samples",
+      "start": "0011D424",
+      "end": "001200C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/11D424.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0811D424"
+    },
+    {
+      "group": "sound_samples",
+      "start": "001200C0",
+      "end": "001222F8",
+      "kind": "pcm",
+      "source": "build/sound/samples/11D424.bin",
+      "source_offset": 11420
+    },
+    {
+      "group": "sound_samples",
+      "start": "001222F8",
+      "end": "0012798C",
+      "kind": "pcm",
+      "source": "build/sound/samples/1222F8.bin",
+      "source_offset": 0,
+      "symbol": "gWave_081222F8"
+    },
+    {
+      "group": "sound_samples",
+      "start": "0012798C",
+      "end": "001280C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/12798C.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0812798C"
+    },
+    {
+      "group": "sound_samples",
+      "start": "001280C0",
+      "end": "001282B0",
+      "kind": "pcm",
+      "source": "build/sound/samples/12798C.bin",
+      "source_offset": 1844
+    },
+    {
+      "group": "sound_samples",
+      "start": "001282B0",
+      "end": "0012AB64",
+      "kind": "pcm",
+      "source": "build/sound/samples/1282B0.bin",
+      "source_offset": 0,
+      "symbol": "gWave_081282B0"
+    },
+    {
+      "group": "sound_samples",
+      "start": "0012AB64",
+      "end": "0012ECD8",
+      "kind": "pcm",
+      "source": "build/sound/samples/12AB64.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0812AB64"
+    },
+    {
+      "group": "sound_samples",
+      "start": "0012ECD8",
+      "end": "0012FD0C",
+      "kind": "pcm",
+      "source": "build/sound/samples/12ECD8.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0812ECD8"
+    },
+    {
+      "group": "sound_samples",
+      "start": "0012FD0C",
+      "end": "001300C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/12FD0C.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0812FD0C"
+    },
+    {
+      "group": "sound_samples",
+      "start": "001300C0",
+      "end": "00132310",
+      "kind": "pcm",
+      "source": "build/sound/samples/12FD0C.bin",
+      "source_offset": 948
+    },
+    {
+      "group": "sound_samples",
+      "start": "00132310",
+      "end": "00137498",
+      "kind": "pcm",
+      "source": "build/sound/samples/132310.bin",
+      "source_offset": 0,
+      "symbol": "gWave_08132310"
+    },
+    {
+      "group": "sound_samples",
+      "start": "00137498",
+      "end": "001380C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/137498.bin",
+      "source_offset": 0,
+      "symbol": "gWave_08137498"
+    },
+    {
+      "group": "sound_samples",
+      "start": "001380C0",
+      "end": "00138240",
+      "kind": "pcm",
+      "source": "build/sound/samples/137498.bin",
+      "source_offset": 3112
+    },
+    {
+      "group": "sound_samples",
+      "start": "00138240",
+      "end": "00138730",
+      "kind": "pcm",
+      "source": "build/sound/samples/138240.bin",
+      "source_offset": 0,
+      "symbol": "gWave_08138240"
+    },
+    {
+      "group": "sound_samples",
+      "start": "00138730",
+      "end": "0013C25C",
+      "kind": "pcm",
+      "source": "build/sound/samples/138730.bin",
+      "source_offset": 0,
+      "symbol": "gWave_08138730"
+    },
+    {
+      "group": "sound_samples",
+      "start": "0013C25C",
+      "end": "0013D2D0",
+      "kind": "pcm",
+      "source": "build/sound/samples/13C25C.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0813C25C"
+    },
+    {
+      "group": "sound_samples",
+      "start": "0013D2D0",
+      "end": "0013E10C",
+      "kind": "pcm",
+      "source": "build/sound/samples/13D2D0.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0813D2D0"
+    },
+    {
+      "group": "sound_samples",
+      "start": "0013E10C",
+      "end": "0013F560",
+      "kind": "pcm",
+      "source": "build/sound/samples/13E10C.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0813E10C"
+    },
+    {
+      "group": "sound_samples",
+      "start": "0013F560",
+      "end": "001400C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/13F560.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0813F560"
+    },
+    {
+      "group": "sound_samples",
+      "start": "001400C0",
+      "end": "00141978",
+      "kind": "pcm",
+      "source": "build/sound/samples/13F560.bin",
+      "source_offset": 2912
+    },
+    {
+      "group": "sound_samples",
+      "start": "00141978",
+      "end": "0014718C",
+      "kind": "pcm",
+      "source": "build/sound/samples/141978.bin",
+      "source_offset": 0,
+      "symbol": "gWave_08141978"
+    },
+    {
+      "group": "sound_samples",
+      "start": "0014718C",
+      "end": "001480C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/14718C.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0814718C"
+    },
+    {
+      "group": "sound_samples",
+      "start": "001480C0",
+      "end": "00148270",
+      "kind": "pcm",
+      "source": "build/sound/samples/14718C.bin",
+      "source_offset": 3892
+    },
+    {
+      "group": "sound_samples",
+      "start": "00148270",
+      "end": "0014DF30",
+      "kind": "pcm",
+      "source": "build/sound/samples/148270.bin",
+      "source_offset": 0,
+      "symbol": "gWave_08148270"
+    },
+    {
+      "group": "sound_samples",
+      "start": "0014DF30",
+      "end": "001500C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/14DF30.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0814DF30"
+    },
+    {
+      "group": "sound_samples",
+      "start": "001500C0",
+      "end": "00151FA4",
+      "kind": "pcm",
+      "source": "build/sound/samples/14DF30.bin",
+      "source_offset": 8592
+    },
+    {
+      "group": "sound_samples",
+      "start": "00151FA4",
+      "end": "00153F00",
+      "kind": "pcm",
+      "source": "build/sound/samples/151FA4.bin",
+      "source_offset": 0,
+      "symbol": "gWave_08151FA4"
+    },
+    {
+      "group": "sound_samples",
+      "start": "00153F00",
+      "end": "001580C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/153F00.bin",
+      "source_offset": 0,
+      "symbol": "gWave_08153F00"
+    },
+    {
+      "group": "sound_samples",
+      "start": "001580C0",
+      "end": "00158E14",
+      "kind": "pcm",
+      "source": "build/sound/samples/153F00.bin",
+      "source_offset": 16832
+    },
+    {
+      "group": "sound_samples",
+      "start": "00158E14",
+      "end": "0015B328",
+      "kind": "pcm",
+      "source": "build/sound/samples/158E14.bin",
+      "source_offset": 0,
+      "symbol": "gWave_08158E14"
+    },
+    {
+      "group": "sound_samples",
+      "start": "0015B328",
+      "end": "0015D03C",
+      "kind": "pcm",
+      "source": "build/sound/samples/15B328.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0815B328"
+    },
+    {
+      "group": "sound_samples",
+      "start": "0015D03C",
+      "end": "001600C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/15D03C.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0815D03C"
+    },
+    {
+      "group": "sound_samples",
+      "start": "001600C0",
+      "end": "001612D0",
+      "kind": "pcm",
+      "source": "build/sound/samples/15D03C.bin",
+      "source_offset": 12420
+    },
+    {
+      "group": "sound_samples",
+      "start": "001612D0",
+      "end": "00163564",
+      "kind": "pcm",
+      "source": "build/sound/samples/1612D0.bin",
+      "source_offset": 0,
+      "symbol": "gWave_081612D0"
+    },
+    {
+      "group": "sound_samples",
+      "start": "00163564",
+      "end": "001680C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/163564.bin",
+      "source_offset": 0,
+      "symbol": "gWave_08163564"
+    },
+    {
+      "group": "sound_samples",
+      "start": "001680C0",
+      "end": "0016D8CC",
+      "kind": "pcm",
+      "source": "build/sound/samples/163564.bin",
+      "source_offset": 19292
+    },
+    {
+      "group": "sound_samples",
+      "start": "0016D8CC",
+      "end": "001700C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/16D8CC.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0816D8CC"
+    },
+    {
+      "group": "sound_samples",
+      "start": "001700C0",
+      "end": "00170180",
+      "kind": "pcm",
+      "source": "build/sound/samples/16D8CC.bin",
+      "source_offset": 10228
+    },
+    {
+      "group": "sound_samples",
+      "start": "00170180",
+      "end": "00172AEC",
+      "kind": "pcm",
+      "source": "build/sound/samples/170180.bin",
+      "source_offset": 0,
+      "symbol": "gWave_08170180"
+    },
+    {
+      "group": "sound_samples",
+      "start": "00172AEC",
+      "end": "001780C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/172AEC.bin",
+      "source_offset": 0,
+      "symbol": "gWave_08172AEC"
+    },
+    {
+      "group": "sound_samples",
+      "start": "001780C0",
+      "end": "0017D644",
+      "kind": "pcm",
+      "source": "build/sound/samples/172AEC.bin",
+      "source_offset": 21972
+    },
+    {
+      "group": "sound_samples",
+      "start": "0017D644",
+      "end": "001800C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/17D644.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0817D644"
+    },
+    {
+      "group": "sound_samples",
+      "start": "001800C0",
+      "end": "001833B8",
+      "kind": "pcm",
+      "source": "build/sound/samples/17D644.bin",
+      "source_offset": 10876
+    },
+    {
+      "group": "sound_samples",
+      "start": "001833B8",
+      "end": "00185E8C",
+      "kind": "pcm",
+      "source": "build/sound/samples/1833B8.bin",
+      "source_offset": 0,
+      "symbol": "gWave_081833B8"
+    },
+    {
+      "group": "sound_samples",
+      "start": "00185E8C",
+      "end": "001880C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/185E8C.bin",
+      "source_offset": 0,
+      "symbol": "gWave_08185E8C"
+    },
+    {
+      "group": "sound_samples",
+      "start": "001880C0",
+      "end": "00188608",
+      "kind": "pcm",
+      "source": "build/sound/samples/185E8C.bin",
+      "source_offset": 8756
+    },
+    {
+      "group": "sound_samples",
+      "start": "00188608",
+      "end": "0018A3FC",
+      "kind": "pcm",
+      "source": "build/sound/samples/188608.bin",
+      "source_offset": 0,
+      "symbol": "gWave_08188608"
+    },
+    {
+      "group": "sound_samples",
+      "start": "0018A3FC",
+      "end": "0018C700",
+      "kind": "pcm",
+      "source": "build/sound/samples/18A3FC.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0818A3FC"
+    },
+    {
+      "group": "sound_samples",
+      "start": "0018C700",
+      "end": "0018D564",
+      "kind": "pcm",
+      "source": "build/sound/samples/18C700.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0818C700"
+    },
+    {
+      "group": "sound_samples",
+      "start": "0018D564",
+      "end": "0018D8A8",
+      "kind": "pcm",
+      "source": "build/sound/samples/18D564.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0818D564"
+    },
+    {
+      "group": "sound_samples",
+      "start": "0018D8A8",
+      "end": "0018EA0C",
+      "kind": "pcm",
+      "source": "build/sound/samples/18D8A8.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0818D8A8"
+    },
+    {
+      "group": "sound_samples",
+      "start": "0018EA0C",
+      "end": "001900C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/18EA0C.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0818EA0C"
+    },
+    {
+      "group": "sound_samples",
+      "start": "001900C0",
+      "end": "001930B0",
+      "kind": "pcm",
+      "source": "build/sound/samples/18EA0C.bin",
+      "source_offset": 5812
+    },
+    {
+      "group": "sound_samples",
+      "start": "001930B0",
+      "end": "00194BC4",
+      "kind": "pcm",
+      "source": "build/sound/samples/1930B0.bin",
+      "source_offset": 0,
+      "symbol": "gWave_081930B0"
+    },
+    {
+      "group": "sound_samples",
+      "start": "00194BC4",
+      "end": "00196338",
+      "kind": "pcm",
+      "source": "build/sound/samples/194BC4.bin",
+      "source_offset": 0,
+      "symbol": "gWave_08194BC4"
+    },
+    {
+      "group": "sound_samples",
+      "start": "00196338",
+      "end": "001980C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/196338.bin",
+      "source_offset": 0,
+      "symbol": "gWave_08196338"
+    },
+    {
+      "group": "sound_samples",
+      "start": "001980C0",
+      "end": "00198F6C",
+      "kind": "pcm",
+      "source": "build/sound/samples/196338.bin",
+      "source_offset": 7560
+    },
+    {
+      "group": "sound_samples",
+      "start": "00198F6C",
+      "end": "0019B220",
+      "kind": "pcm",
+      "source": "build/sound/samples/198F6C.bin",
+      "source_offset": 0,
+      "symbol": "gWave_08198F6C"
+    },
+    {
+      "group": "sound_samples",
+      "start": "0019B220",
+      "end": "0019B524",
+      "kind": "pcm",
+      "source": "build/sound/samples/19B220.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0819B220"
+    },
+    {
+      "group": "sound_samples",
+      "start": "0019B524",
+      "end": "0019C2A8",
+      "kind": "pcm",
+      "source": "build/sound/samples/19B524.bin",
+      "source_offset": 0,
+      "symbol": "gWave_0819B524"
+    },
+    {
+      "group": "sound_samples",
+      "start": "0019C2A8",
+      "end": "0019E364",
+      "kind": "pcm",
+      "source": "build/sound/samples/19C2A8.bin",
+      "source_offset": 0
+    },
+    {
+      "group": "sound_samples",
+      "start": "0019E364",
+      "end": "0019EED0",
+      "kind": "pcm",
+      "source": "build/sound/samples/19E364.bin",
+      "source_offset": 0
+    },
+    {
+      "group": "sound_samples",
+      "start": "0019EED0",
+      "end": "001A00C0",
+      "kind": "pcm",
+      "source": "build/sound/samples/19EED0.bin",
+      "source_offset": 0
+    },
+    {
+      "group": "sound_samples",
+      "start": "001A00C0",
+      "end": "001A2564",
+      "kind": "pcm",
+      "source": "build/sound/samples/19EED0.bin",
+      "source_offset": 4592
+    }
+  ]
+}

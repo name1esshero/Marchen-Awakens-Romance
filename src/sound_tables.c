@@ -3,7 +3,7 @@
 #include "rom_section.h"
 
 /* PCM sample and CGB waveform data referenced by the SoundToneData tables
- * below; see asm/sound_samples.s and asm/game_table_handlers.s. */
+ * below; see sound/sample_sections.json and asm/game_table_handlers.s. */
 extern const u8 gCgbWaveform_08089CF0[];
 extern const u8 gCgbWaveform_0808ABB4[];
 extern const u8 gCgbWaveform_0808B034[];
@@ -1130,4 +1130,3 @@ AT("0008B1B0") const struct SoundSongEntry gSongTable[221] = {
     [219] = { .header = gSongHeader_219, .player = 4, .otherPlayer = 4 },
     [220] = { .header = gSongHeader_220, .player = 4, .otherPlayer = 4 },
 };
-

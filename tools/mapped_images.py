@@ -13,6 +13,7 @@ from pathlib import Path
 import struct
 import gfx
 import lz77
+import rom_data_sections
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -202,12 +203,10 @@ def extract():
         print(name, width*8, height*8, len(layers), 'layers', flush=True)
     (ROOT / 'assets.json').write_text(json.dumps(manifest, indent=2)+'\n')
     (ROOT / 'reports/graphics/mapped-image-migration.json').write_text(json.dumps(dict(converted=converted, skipped=skipped), indent=2)+'\n')
-    for path in (ROOT / 'asm/data').glob('*.s'):
-        text = path.read_text();out = text
-        for entry in converted:
-            out = out.replace(entry['old_path']+'.lz', entry['new_path']+'.lz')
-        if out != text:
-            path.write_text(out)
+    rom_data_sections.replace_sources(
+        ROOT/'data/rom_data_sections.json',
+        [(entry['old_path']+'.lz', entry['new_path']+'.lz')
+         for entry in converted])
     print(len(converted), 'converted;', len(skipped), 'require other profiles')
 
 

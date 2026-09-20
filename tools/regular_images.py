@@ -14,6 +14,7 @@ import gfx
 import lz77
 import mapped_images as mi
 import build_assets
+import rom_data_sections
 
 ROOT=mi.ROOT
 
@@ -29,10 +30,9 @@ def build_plane(layout,layer):
 
 def save_progress(manifest,converted,skipped):
     (ROOT/'assets.json').write_text(json.dumps(manifest,indent=2)+'\n')
-    for p in (ROOT/'asm/data').glob('*.s'):
-        text=p.read_text();out=text
-        for e in converted:out=out.replace(e['old_path']+'.lz',e['new_path']+'.lz')
-        if out!=text:p.write_text(out)
+    rom_data_sections.replace_sources(
+        ROOT/'data/rom_data_sections.json',
+        [(e['old_path']+'.lz', e['new_path']+'.lz') for e in converted])
     (ROOT/'reports/graphics/regular-image-migration.json').write_text(json.dumps(dict(converted=converted,skipped=skipped),indent=2)+'\n')
 
 
