@@ -5,14 +5,15 @@ need matching C. Assets use editable source formats and placement manifests.
 
 ## Build path
 
-`data/rom_data_sections.json` records 840 independently placed ROM sections:
+`data/rom_data_sections.json` records 842 independently placed ROM sections:
 
 - 298 graphics, palette, tilemap, font, and sprite-container sections
 - 190 map sections
 - 334 script sections
 - 8 Japanese artwork sections replaced by the English build
-- 4 initialized regions whose formats are still being decoded
-- 6 large erased-ROM spans
+- 3 initialized regions whose formats are still being decoded
+- 2 declarative sections for the decoded high-ROM zero/pointer pattern
+- 7 large uniform padding spans
 
 `sound/sample_sections.json` records 150 PCM spans rebuilt from the WAV files
 and metadata under `sound/samples/`. Some samples cross the old disassembly
@@ -32,11 +33,12 @@ region.
 
 ## What still needs decoding
 
-The four remaining `data/data_*.bin` files are not known assets. Two are UI and
-menu table families suitable for typed C. `data_FE0000.bin` is an embedded
-mixed ARM/Thumb executable image and must be disassembled before its routines
-can become C. `data_FFF000.bin` is a high-ROM table whose consumer still needs
-identification. Their current evidence and exact ranges are documented in
+The two remaining `data/data_*.bin` files are UI and menu table families
+suitable for typed C. The third binary is now accurately named
+`data/agb_debug_monitor.bin`; it is a dormant mixed ARM/Thumb SDK monitor and
+must be disassembled before its routines can become C. Its 3,952-byte zero
+tail and the former `data_FFF000.bin` now build from explicit fill and
+repeated-word records. Current evidence and exact ranges are documented in
 [`raw-data-inventory.md`](raw-data-inventory.md).
 
 Large `0xFF` regions represent erased cartridge capacity, so expanding them

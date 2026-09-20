@@ -501,7 +501,7 @@ the last two types that were still reaching the ROM as anonymous chunks, the
 | Source of the ROM image | Bytes |
 |---|---|
 | Named assets | 14.43 MB |
-| Remaining typed-but-undecoded `data/` chunks | 23,956 bytes |
+| Remaining typed-but-undecoded binary inputs | 16,164 bytes |
 
 A `TSC` member is not always a 2048-byte screenblock. The five decoded 8bpp resources use 256/1024-byte affine maps with one byte per tile. Regular background maps use 16-bit entries,
 with the tile index in bits 0-9, horizontal and vertical flip at bits 10 and
@@ -514,8 +514,12 @@ The bytecode VM's complete 256-entry opcode dispatch and its 19 named built-in
 functions also compile as symbolic C tables.
 The bundled libc's newlib `_reent` initialization and `_impure_ptr` now use their
 real source structures as well. Long erased-flash spans use linker fills, leaving
-four initialized raw regions totalling 23,956 bytes. These include UI/menu tables
-and two unusual high-ROM tables that still need their consumers identified.
+three initialized opaque regions totalling 16,164 bytes: two UI/menu table
+families and one dormant SDK debug-monitor image. The monitor's 3,952-byte
+zero tail and the former 3,840-byte tail binary are now represented by exact
+fill and repeated-pointer patterns. These high-ROM monitor regions are not the
+game's event-flag storage; the retail cartridge header leaves the BIOS debug
+path disabled.
 
 ## Checks and regeneration
 

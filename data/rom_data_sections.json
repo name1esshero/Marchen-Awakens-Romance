@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "description": "Placement of generated assets and unresolved raw data in the original ROM.",
+  "description": "Placement of generated assets, declarative data patterns, and unresolved data in the original ROM.",
   "sections": [
     {
       "group": "raw_data",
@@ -5850,9 +5850,16 @@
     {
       "group": "raw_data",
       "start": "00FE0000",
+      "end": "00FE3090",
+      "kind": "debug_monitor",
+      "source": "build/data/agb_debug_monitor.bin"
+    },
+    {
+      "group": "padding",
+      "start": "00FE3090",
       "end": "00FE4000",
-      "kind": "raw",
-      "source": "build/data/data_FE0000.bin"
+      "kind": "fill",
+      "fill": 0
     },
     {
       "group": "padding",
@@ -5871,9 +5878,16 @@
     {
       "group": "raw_data",
       "start": "00FFF000",
+      "end": "00FFF800",
+      "kind": "fill",
+      "fill": 0
+    },
+    {
+      "group": "raw_data",
+      "start": "00FFF800",
       "end": "00FFFF00",
-      "kind": "raw",
-      "source": "build/data/data_FFF000.bin"
+      "kind": "word_fill",
+      "word_fill": "09FFC000"
     },
     {
       "group": "padding",

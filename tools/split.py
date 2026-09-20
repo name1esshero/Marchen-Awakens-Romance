@@ -30,6 +30,13 @@ CODE_END = 0x1B0000            # first offset past the executable region
 ROM_END = 0xFFFF00             # everything after this is 0xFF padding
 CODE_CHUNK = 0x8000
 DATA_CHUNK = 0x40000
+AGB_DEBUG_MONITOR_START = 0xFE0000
+AGB_DEBUG_MONITOR_DATA_END = 0xFE3090
+AGB_DEBUG_MONITOR_END = 0xFE4000
+DEBUG_VECTOR_TABLE_START = 0xFFF000
+DEBUG_VECTOR_TABLE_WORDS_START = 0xFFF800
+DEBUG_VECTOR_TABLE_END = 0xFFFF00
+DEBUG_VECTOR_ADDRESS = 0x09FFC000
 
 # English builds replace these complete ROM sections with localized artwork.
 # Keep them as independent objects so ld_english can omit only the Japanese
@@ -218,6 +225,9 @@ def write_data(rom, gfx_manifest, decompiled=()):
     shutil.rmtree("asm/data", ignore_errors=True)
     for f in glob.glob("data/data_*.bin"):
         os.remove(f)
+    monitor_path = "data/agb_debug_monitor.bin"
+    if os.path.exists(monitor_path):
+        os.remove(monitor_path)
     os.makedirs("data", exist_ok=True)
 
     # Compressed graphics are linked from generated build/*.lz outputs. Uncompressed
@@ -303,10 +313,41 @@ def write_data(rom, gfx_manifest, decompiled=()):
         regions += raw_regions(rom, pos, ROM_END)
 
     fill_regions = []
+    pattern_regions = []
     grouped = {}
     localized_entries = []
     for start, end, kind, path in regions:
         if kind == "c":
+            continue
+        # The SDK debug monitor is executable ARM/Thumb code followed by a
+        # large zero-filled reservation. Keep the program distinctly named
+        # and describe the reproducible tail without storing it in the binary.
+        if (start == AGB_DEBUG_MONITOR_START
+                and end == AGB_DEBUG_MONITOR_END and kind == "raw"):
+            assert not any(rom[AGB_DEBUG_MONITOR_DATA_END:end])
+            with open(monitor_path, "wb") as f:
+                f.write(rom[start:AGB_DEBUG_MONITOR_DATA_END])
+            grouped.setdefault("debug_monitor", []).append((
+                start, AGB_DEBUG_MONITOR_DATA_END, "debug_monitor",
+                monitor_path, "build/" + monitor_path,
+            ))
+            fill_regions.append((AGB_DEBUG_MONITOR_DATA_END, end, 0))
+            continue
+        # The final initialized island is a regular cartridge-mirror table,
+        # not an opaque asset: 0x800 zero bytes followed by 448 identical
+        # pointers. Keep that structure visible in the placement manifest.
+        if (start == DEBUG_VECTOR_TABLE_START
+                and end == DEBUG_VECTOR_TABLE_END and kind == "raw"):
+            zero_size = DEBUG_VECTOR_TABLE_WORDS_START - start
+            assert rom[start:DEBUG_VECTOR_TABLE_WORDS_START] == bytes(zero_size)
+            encoded_address = DEBUG_VECTOR_ADDRESS.to_bytes(4, "little")
+            word_count = (end - DEBUG_VECTOR_TABLE_WORDS_START) // 4
+            assert rom[DEBUG_VECTOR_TABLE_WORDS_START:end] == encoded_address * word_count
+            pattern_regions.extend([
+                (start, DEBUG_VECTOR_TABLE_WORDS_START, "fill", 0),
+                (DEBUG_VECTOR_TABLE_WORDS_START, end, "word_fill",
+                 DEBUG_VECTOR_ADDRESS),
+            ])
             continue
         if kind == "fill":
             fill_regions.append((start, end, rom[start]))
@@ -334,6 +375,7 @@ def write_data(rom, gfx_manifest, decompiled=()):
         "tilemap": "graphics_assets",
         "map": "map_assets",
         "script": "script_assets",
+        "debug_monitor": "raw_data",
         "raw": "raw_data",
     }
     output_groups = {}
@@ -347,8 +389,11 @@ def write_data(rom, gfx_manifest, decompiled=()):
     # hundreds of KiB of 0xFF initializers in C would be less readable and
     # would make the object files needlessly large.
     fill_regions.append((ROM_END, len(rom), 0xFF))
-    zero_fills = [region for region in fill_regions if region[2] == 0]
-    erased_fills = [region for region in fill_regions if region[2] == 0xFF]
+    zero_fills = [region for region in fill_regions
+                  if region[2] == 0 and region[1] - region[0] < 0x100]
+    generated_fills = [region for region in fill_regions
+                       if region[2] == 0xFF
+                       or (region[2] == 0 and region[1] - region[0] >= 0x100)]
 
     cpath = "src/rom_padding.c"
     if zero_fills:
@@ -373,7 +418,7 @@ def write_data(rom, gfx_manifest, decompiled=()):
                 "kind": kind,
                 "source": incpath,
             })
-    for start, end, value in erased_fills:
+    for start, end, value in generated_fills:
         manifest_sections.append({
             "group": "padding",
             "start": "%08X" % start,
@@ -381,13 +426,22 @@ def write_data(rom, gfx_manifest, decompiled=()):
             "kind": "fill",
             "fill": value,
         })
+    for start, end, kind, value in pattern_regions:
+        entry = {
+            "group": "raw_data",
+            "start": "%08X" % start,
+            "end": "%08X" % end,
+            "kind": kind,
+        }
+        entry[kind] = "%08X" % value if kind == "word_fill" else value
+        manifest_sections.append(entry)
     manifest_sections.sort(key=lambda entry: int(entry["start"], 16))
     manifest_path = "data/rom_data_sections.json"
     with open(manifest_path, "w") as f:
         json.dump({
             "format": 1,
-            "description": ("Placement of generated assets and unresolved raw "
-                            "data in the original ROM."),
+            "description": ("Placement of generated assets, declarative data "
+                            "patterns, and unresolved data in the original ROM."),
             "sections": manifest_sections,
         }, f, indent=2)
         f.write("\n")

@@ -49,6 +49,17 @@ def write_assembly(sections, output, english_scripts=False):
         if "fill" in entry:
             lines.append(f"\t.fill {end - start}, 1, 0x{entry['fill']:02X}")
             continue
+        if "word_fill" in entry:
+            size = end - start
+            if size % 4:
+                raise ValueError(
+                    f"ROM {start:06X}..{end:06X}: word fill is not word-aligned"
+                )
+            value = entry["word_fill"]
+            if isinstance(value, str):
+                value = int(value, 16)
+            lines.append(f"\t.fill {size // 4}, 4, 0x{value:08X}")
+            continue
 
         source = entry["source"]
         if english_scripts:
