@@ -450,6 +450,13 @@ difference is register pressure rather than scheduling.
   region. These results narrow the missing source shape, but none justifies
   three fixed registers. Preserve the exact switch as symbolic assembly and
   keep the readable C candidate available for later whole-function recovery.
+- **Use callers to reject a tempting signature swap.** The ROM's
+  `CreateSaveWriteTask` wrapper preserves `save` in r5 and `size` in r4, while
+  ordinary agbcc C uses r4 and r5 respectively. Swapping the C parameters can
+  change that allocation, but both direct callers independently pass the save
+  pointer in r0, size in r1, and completion pointer in r2. The signature is
+  therefore evidence, not a tuning knob. Keep the verified prototype and move
+  the exact wrapper to symbolic assembly when natural locals still disagree.
 - **After adding a function, run the host tests, not just `make compare`.** The
   tests compile individual `.c` files on their own, so a new reference to a
   symbol the ROM link resolves -- `gSecondaryRuntime`, `gIwramBase`, anything

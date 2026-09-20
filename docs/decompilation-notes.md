@@ -2360,3 +2360,19 @@ initialization produced different lifetimes and moved the jump-table layout.
 The exact implementation is therefore retained as named, relocatable assembly
 in `asm/code/code_0000C0.s`, and the clean candidate is kept in
 `src/nonmatching/sound_idle_wait.c` for later reconstruction.
+
+## Save-write forwarding wrapper fallback (2026-09-20)
+
+`CreateSaveWriteTask` at 0x0806E4BC is a three-argument adapter for
+`CreateSaveTask(0, save, size, completion)`. Its direct callers at 0x0806E32A
+and 0x0806E408 independently prove that `save`, `size`, and `completion` arrive
+in r0, r1, and r2, so swapping the prototype to influence allocation would be
+incorrect.
+
+The ROM preserves `save` in r5 and `size` in r4; ordinary locals, reversed
+declaration and assignment orders, plain `register` storage, and both compiler
+binaries preserve them in the opposite registers. The old source forced r4
+and r3. The exact 24-byte adapter now lives as relocatable assembly in
+`asm/code/code_0680C0.s`, while its clean wrapper is retained in
+`src/nonmatching/create_save_write_task.c`. All other recovered save routines
+remain matching C.

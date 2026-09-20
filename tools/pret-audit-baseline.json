@@ -11,16 +11,6 @@
   },
   {
     "kind": "forced_register",
-    "file": "src/save.c",
-    "detail": "register s32 *localCompletion asm(\"r3\");"
-  },
-  {
-    "kind": "forced_register",
-    "file": "src/save.c",
-    "detail": "register u32 localSize asm(\"r4\");"
-  },
-  {
-    "kind": "forced_register",
     "file": "src/sram.c",
     "detail": "register u16 wait asm(\"r0\") = *waitcnt;"
   },
@@ -48,16 +38,6 @@
     "kind": "inline_assembly",
     "file": "src/mapping.c",
     "detail": "register u8 *destination asm(\"r1\");"
-  },
-  {
-    "kind": "inline_assembly",
-    "file": "src/save.c",
-    "detail": "register s32 *localCompletion asm(\"r3\");"
-  },
-  {
-    "kind": "inline_assembly",
-    "file": "src/save.c",
-    "detail": "register u32 localSize asm(\"r4\");"
   },
   {
     "kind": "inline_assembly",

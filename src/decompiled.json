@@ -5130,12 +5130,6 @@
     "file": "src/save.c"
   },
   {
-    "addr": "0806E4BC",
-    "size": 24,
-    "name": "CreateSaveWriteTask",
-    "file": "src/save.c"
-  },
-  {
     "addr": "0806E4D4",
     "size": 20,
     "name": "ReadSaveBytesAndSignal",

@@ -15,7 +15,7 @@ error. The audit prints known, new, and resolved counts on one line.
 
 - `make compare` reproduces the Japanese ROM byte for byte.
 - `make english` succeeds and all 197 host tests pass.
-- The mechanical PRET audit reports **93 errors / 0 warnings / 17 documented
+- The mechanical PRET audit reports **89 errors / 0 warnings / 17 documented
   exceptions** on one summary line. Every exception is enumerated in the
   generated report.
 
@@ -53,6 +53,11 @@ leaving the unresolved callback lifetime visible to future contributors.
 unresolved register allocations. Its exact 216-byte switch and task creation
 path are symbolic assembly, while its clean behavioral reconstruction remains
 under `src/nonmatching/`. This removes six more duplicated audit findings.
+
+`CreateSaveWriteTask` is now an exact 24-byte symbolic assembly wrapper with
+its ordinary forwarding implementation retained under `src/nonmatching/`.
+Both callers verify the public argument order, so the unresolved r4/r5 swap is
+documented rather than hidden by two C register constraints.
 
 ## Verified snapshot: renderer reference fallback, 2026-09-20
 

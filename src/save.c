@@ -116,20 +116,6 @@ AT("0006E4D4") s32 ReadSaveBytesAndSignal(void *destination, u32 size,
     return ReadSaveBytes(destination, 0, size, completion);
 }
 
-/** CreateSaveTask() with mode fixed to 0 (a plain SRAM write task). */
-AT("0006E4BC") void *CreateSaveWriteTask(struct SaveBlock *save, u32 size,
-                                          s32 *completion)
-{
-    struct SaveBlock *localSave;
-    register u32 localSize asm("r4");
-    register s32 *localCompletion asm("r3");
-
-    localSave = save;
-    localSize = size;
-    localCompletion = completion;
-    return CreateSaveTask(0, localSave, localSize, localCompletion);
-}
-
 /** Create a task that writes size bytes of save to SRAM via SaveWriteTask().
  * @param mode Stored at task state +0; passed through unnamed.
  * @return The new task, or NULL if creation fails. */

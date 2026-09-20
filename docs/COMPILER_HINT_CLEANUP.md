@@ -358,13 +358,12 @@ Recorded at the time of writing; regenerate rather than trusting these numbers.
   `tools/drop_register_hints.py --all` finds 0 further mechanically-safe
   removals at 149; everything left needs either a structural rewrite (slow,
   one function at a time, as above) or the same real-assembly move.
-- Remaining concentrations (150 findings' worth before this session; regenerate
-  with `make pret-audit` rather than trusting a per-file count here):
-  `sprite_affine_matrix.c` (43, largely fixed-point affine/trig -- the single
-  biggest remaining chunk), `sprite_transform.c` (20), `sprite_affine_slots.c`,
-  `sram.c`, `sprite_interpolation.c`, `sound_m4a.c`, `resource_native.c`,
-  `mapping.c`, `sprite_math.c`, `ncd_sprite.c`, `nfp.c`,
-  `sprite_tile_allocator.c`, `sprite_engine_state.c`, `save.c`.
+- Current concentrations as of 2026-09-20 (regenerate with `make pret-audit`):
+  `sprite_affine_matrix.c` (43), `sprite_transform.c` (20),
+  `sprite_interpolation.c` (8), `sram.c` (8),
+  `sprite_affine_slots.c` (6), and `mapping.c` (4). These counts include
+  duplicate rule classifications where one constrained declaration is both a
+  forced-register and inline-assembly finding.
 - `make compare` byte-exact and all host tests passing throughout.
 
 ## Watch out for
@@ -488,6 +487,13 @@ byte count in r1, and the completion pointer in r2 before calling
 `CreateSaveWriteTask()`. The current public parameter order is therefore
 verified from call sites even though an ordinary forwarding wrapper assigns
 its two long-lived arguments to r4/r5 in the opposite order from the ROM.
+
+The wrapper now follows the PRET fallback instead of restoring those pins.
+Its exact 24 bytes are readable symbolic assembly in
+`asm/code/code_0680C0.s`, and the direct forwarding C remains in
+`src/nonmatching/create_save_write_task.c`. The rest of `src/save.c` stays in
+the matching build. This removes the wrapper's four audit findings without
+changing its verified public prototype or either caller.
 
 `ScriptNativeQueryModeResource()` and `ScriptNativeSetModeResource()` are now
 resolved without constraints. Their VM argument pointer is naturally

@@ -10466,7 +10466,25 @@ _0806E14C:
 
 @ 06E438..06E4BC is decompiled as ValidateSaveBlock(); see src/decompiled.json
 
-@ 06E4BC..06E4D4 is decompiled as CreateSaveWriteTask(); see src/decompiled.json
+	.section .rom.0006E4BC, "ax"
+	.syntax unified
+	.thumb
+	.thumb_func
+	.global CreateSaveWriteTask
+	.type CreateSaveWriteTask, %function
+CreateSaveWriteTask:
+	push {r4, r5, lr}
+	adds r5, r0, #0
+	adds r4, r1, #0
+	adds r3, r2, #0
+	movs r0, #0
+	adds r1, r5, #0
+	adds r2, r4, #0
+	bl CreateSaveTask
+	pop {r4, r5}
+	pop {r1}
+	bx r1
+	.size CreateSaveWriteTask, . - CreateSaveWriteTask
 
 @ 06E4D4..06E4E8 is decompiled as ReadSaveBytesAndSignal(); see src/decompiled.json
 
