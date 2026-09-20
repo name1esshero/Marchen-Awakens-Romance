@@ -176,7 +176,7 @@ static int run(void) {
     SpriteEngineSetAllFlags14(1);
     CHECK(SpriteEngineGetFlags14()==0xFFFFFFFF);
     SpriteEngineSetBuffer4(entries+4);
-    CHECK(SpriteEngineGetBuffer4Entry(3)==entries+100);
+    CHECK((u8 *)SpriteEngineGetAffineOamMatrix(3)==entries+100);
     CHECK(SpriteMathDivide65536ByS16(256)==256);
     CHECK(SpriteMathDivide65536ByS16(-256)==-256);
     CHECK(SpriteMathDivide65536ByS16(0x10100)==256);

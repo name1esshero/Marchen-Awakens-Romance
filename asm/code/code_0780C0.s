@@ -5182,7 +5182,7 @@ _0807CBFC:
 _0807CC00:
 	.4byte 0x03006118  @ IWRAM+0x6118
 
-@ 07CC04..07CC18 is decompiled as SpriteEngineGetBuffer4Entry(); see src/decompiled.json
+@ 07CC04..07CC18 is decompiled as SpriteEngineGetAffineOamMatrix(); see src/decompiled.json
 
 	.section .rom.0007CC18, "ax"
 	.syntax unified
@@ -5406,11 +5406,254 @@ _0807CE48:
 	.byte 0x00
 	.byte 0x00
 
-@ 07CE50..07CEE8 is decompiled as SpriteAffineWriteNormal(); see src/decompiled.json
+	.section .rom.0007CE50, "ax"
+	.syntax divided
+	.align 2, 0
+	.thumb_func
+	.thumb
+	.global SpriteAffineWriteNormal
+	.type SpriteAffineWriteNormal, %function
+SpriteAffineWriteNormal:
+	push {r4, r5, r6, r7, lr}
+	mov r7, sl
+	mov r6, r9
+	mov r5, r8
+	push {r5, r6, r7}
+	add r4, r1, #0
+	add r5, r2, #0
+	add r6, r3, #0
+	lsl r4, r4, #16
+	asr r4, r4, #16
+	lsl r5, r5, #16
+	asr r5, r5, #16
+	lsl r6, r6, #16
+	asr r6, r6, #16
+	bl SpriteEngineGetAffineOamMatrix
+	mov r8, r0
+	ldr r2, .LSpriteAffineWriteNormalPool
+	ldr r1, .LSpriteAffineWriteNormalPool + 4
+	add r0, r4, #0
+	and r0, r0, r1
+	lsl r0, r0, #1
+	add r0, r0, r2
+	mov r7, #0
+	ldrsh r3, [r0, r7]
+	mov sl, r3
+	mov r0, #128
+	lsl r0, r0, #3
+	add r4, r4, r0
+	and r4, r4, r1
+	lsl r4, r4, #1
+	add r4, r4, r2
+	mov r2, #0
+	ldrsh r1, [r4, r2]
+	mov r9, r1
+	add r0, r5, #0
+	bl SpriteMathDivide65536ByS16
+	add r4, r0, #0
+	lsl r4, r4, #16
+	asr r4, r4, #16
+	add r0, r6, #0
+	bl SpriteMathDivide65536ByS16
+	lsl r0, r0, #16
+	asr r0, r0, #16
+	mov r1, r9
+	mul r1, r1, r4
+	asr r1, r1, #14
+	mov r3, r8
+	strh r1, [r3, #6]
+	mov r1, sl
+	mul r1, r1, r4
+	asr r1, r1, #14
+	strh r1, [r3, #14]
+	mov r1, sl
+	mul r1, r1, r0
+	asr r1, r1, #14
+	neg r1, r1
+	strh r1, [r3, #22]
+	mov r7, r9
+	mul r7, r7, r0
+	add r0, r7, #0
+	asr r0, r0, #14
+	strh r0, [r3, #30]
+	pop {r3, r4, r5}
+	mov r8, r3
+	mov r9, r4
+	mov sl, r5
+	pop {r4, r5, r6, r7}
+	pop {r0}
+	bx r0
+	.align 2, 0
+.LSpriteAffineWriteNormalPool:
+	.word gSineTable14
+	.word 0x00000FFF
+	.size SpriteAffineWriteNormal, . - SpriteAffineWriteNormal
 
-@ 07CEE8..07CF84 is decompiled as SpriteAffineWriteMirrored(); see src/decompiled.json
+	.section .rom.0007CEE8, "ax"
+	.align 2, 0
+	.thumb_func
+	.thumb
+	.global SpriteAffineWriteMirrored
+	.type SpriteAffineWriteMirrored, %function
+SpriteAffineWriteMirrored:
+	push {r4, r5, r6, r7, lr}
+	mov r7, sl
+	mov r6, r9
+	mov r5, r8
+	push {r5, r6, r7}
+	add r4, r1, #0
+	add r5, r2, #0
+	add r6, r3, #0
+	lsl r4, r4, #16
+	asr r4, r4, #16
+	lsl r5, r5, #16
+	asr r5, r5, #16
+	lsl r6, r6, #16
+	asr r6, r6, #16
+	bl SpriteEngineGetAffineOamMatrix
+	mov r8, r0
+	ldr r2, .LSpriteAffineWriteMirroredPool
+	ldr r1, .LSpriteAffineWriteMirroredPool + 4
+	add r0, r4, #0
+	and r0, r0, r1
+	lsl r0, r0, #1
+	add r0, r0, r2
+	mov r7, #0
+	ldrsh r3, [r0, r7]
+	mov sl, r3
+	mov r0, #128
+	lsl r0, r0, #3
+	add r4, r4, r0
+	and r4, r4, r1
+	lsl r4, r4, #1
+	add r4, r4, r2
+	mov r2, #0
+	ldrsh r1, [r4, r2]
+	mov r9, r1
+	add r0, r5, #0
+	bl SpriteMathDivide65536ByS16
+	add r4, r0, #0
+	lsl r4, r4, #16
+	asr r4, r4, #16
+	add r0, r6, #0
+	bl SpriteMathDivide65536ByS16
+	lsl r0, r0, #16
+	asr r0, r0, #16
+	mov r1, r9
+	mul r1, r1, r4
+	asr r1, r1, #14
+	neg r1, r1
+	mov r3, r8
+	strh r1, [r3, #6]
+	mov r1, sl
+	mul r1, r1, r4
+	asr r1, r1, #14
+	neg r1, r1
+	strh r1, [r3, #14]
+	mov r1, sl
+	mul r1, r1, r0
+	asr r1, r1, #14
+	neg r1, r1
+	strh r1, [r3, #22]
+	mov r7, r9
+	mul r7, r7, r0
+	add r0, r7, #0
+	asr r0, r0, #14
+	strh r0, [r3, #30]
+	pop {r3, r4, r5}
+	mov r8, r3
+	mov r9, r4
+	mov sl, r5
+	pop {r4, r5, r6, r7}
+	pop {r0}
+	bx r0
+	.align 2, 0
+.LSpriteAffineWriteMirroredPool:
+	.word gSineTable14
+	.word 0x00000FFF
+	.size SpriteAffineWriteMirrored, . - SpriteAffineWriteMirrored
 
-@ 07CF84..07D01C is decompiled as SpriteAffineWriteAlternateAxis(); see src/decompiled.json
+	.section .rom.0007CF84, "ax"
+	.align 2, 0
+	.thumb_func
+	.thumb
+	.global SpriteAffineWriteAlternateAxis
+	.type SpriteAffineWriteAlternateAxis, %function
+SpriteAffineWriteAlternateAxis:
+	push {r4, r5, r6, r7, lr}
+	mov r7, sl
+	mov r6, r9
+	mov r5, r8
+	push {r5, r6, r7}
+	add r4, r1, #0
+	add r5, r2, #0
+	add r6, r3, #0
+	lsl r4, r4, #16
+	asr r4, r4, #16
+	lsl r5, r5, #16
+	asr r5, r5, #16
+	lsl r6, r6, #16
+	asr r6, r6, #16
+	bl SpriteEngineGetAffineOamMatrix
+	mov r8, r0
+	ldr r2, .LSpriteAffineWriteAlternateAxisPool
+	ldr r1, .LSpriteAffineWriteAlternateAxisPool + 4
+	add r0, r4, #0
+	and r0, r0, r1
+	lsl r0, r0, #1
+	add r0, r0, r2
+	mov r7, #0
+	ldrsh r3, [r0, r7]
+	mov sl, r3
+	mov r0, #128
+	lsl r0, r0, #3
+	add r4, r4, r0
+	and r4, r4, r1
+	lsl r4, r4, #1
+	add r4, r4, r2
+	mov r2, #0
+	ldrsh r1, [r4, r2]
+	mov r9, r1
+	add r0, r5, #0
+	bl SpriteMathDivide65536ByS16
+	add r4, r0, #0
+	lsl r4, r4, #16
+	asr r4, r4, #16
+	add r0, r6, #0
+	bl SpriteMathDivide65536ByS16
+	lsl r0, r0, #16
+	asr r0, r0, #16
+	mov r1, r9
+	mul r1, r1, r4
+	asr r1, r1, #14
+	mov r3, r8
+	strh r1, [r3, #6]
+	mov r1, sl
+	mul r1, r1, r4
+	asr r1, r1, #14
+	strh r1, [r3, #14]
+	mov r1, sl
+	mul r1, r1, r0
+	asr r1, r1, #14
+	strh r1, [r3, #22]
+	mov r7, r9
+	mul r7, r7, r0
+	add r0, r7, #0
+	asr r0, r0, #14
+	neg r0, r0
+	strh r0, [r3, #30]
+	pop {r3, r4, r5}
+	mov r8, r3
+	mov r9, r4
+	mov sl, r5
+	pop {r4, r5, r6, r7}
+	pop {r0}
+	bx r0
+	.align 2, 0
+.LSpriteAffineWriteAlternateAxisPool:
+	.word gSineTable14
+	.word 0x00000FFF
+	.size SpriteAffineWriteAlternateAxis, . - SpriteAffineWriteAlternateAxis
 
 @ 07D01C..07D030 is decompiled as SpriteEngineSetProjectionDivisor(); see src/decompiled.json
 

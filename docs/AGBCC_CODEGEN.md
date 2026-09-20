@@ -697,3 +697,23 @@ They do not justify the constraints or prove that either compiler is wrong.
 When both plausible compiler revisions produce smaller ordinary C, retain the
 typed algorithm as a nonmatching reference and keep the exact symbolic routine
 in assembly until a caller, type, alias, or lifetime supplies new evidence.
+
+### Exact size is insufficient when saved-register allocation differs
+
+The three affine OAM writers at 0x0807CE50..0x0807D01C use four signed matrix
+coefficients stored in the fourth halfword of four consecutive eight-byte OAM
+entries. Natural typed C compiled by both available agbcc snapshots produces
+148/152/148-byte routines; the ROM uses 152/156/152 bytes. Reusing the angle
+local for the X-scale reciprocal recovers those three section sizes, but it
+rotates the long-lived angle, scales, destination, sine, and cosine through
+different saved registers. Matching section length therefore does not make a
+candidate an exact or authentic recovery.
+
+The former source forced twelve register allocations in each routine and used
+uninitialized `tableHold` and `valueHold` locals as operands to empty inline
+assembly. Those reads are invalid C and cannot represent source-level game
+operations. Typed access, signed-halfword locals, volatile table access,
+parameter reuse, both compiler revisions, and direct versus staged expressions
+did not recover the ROM allocation. The exact routines remain named assembly;
+`src/nonmatching/sprite_affine_matrix.c` preserves the clean algorithm and the
+four-coefficient OAM layout for further source-shape work.

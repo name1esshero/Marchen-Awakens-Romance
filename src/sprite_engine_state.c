@@ -620,12 +620,12 @@ void SpriteGetViewportOrigin(u16 *x, u16 *y)
 /** @return The 32-byte entry at index within buffer4 (the OAM entry
  * array). */
 AT("0007CC04")
-void *SpriteEngineGetBuffer4Entry(u32 index)
+struct SpriteAffineOamMatrix *SpriteEngineGetAffineOamMatrix(u32 index)
 {
-    return (u8 *)SpriteEngineGetBuffer4() + index * 32;
+    return (struct SpriteAffineOamMatrix *)SpriteEngineGetBuffer4() + index;
 }
 
-AT("0007CC04") const u8 SpriteEngineGetBuffer4EntryTail[2] = {0, 0};
+AT("0007CC04") const u8 SpriteEngineGetAffineOamMatrixTail[2] = {0, 0};
 
 /** @return 65536 divided by value (narrowed to s16), narrowed back to
  * s16. */

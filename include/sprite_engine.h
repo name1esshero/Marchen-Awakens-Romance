@@ -97,6 +97,19 @@ struct SpriteVector3 {
     s32 z;
 };
 
+/* A GBA affine matrix occupies the fourth halfword of four consecutive
+ * eight-byte OAM entries. */
+struct SpriteAffineOamMatrix {
+    u8 padding00[6];
+    s16 pa;
+    u8 padding08[6];
+    s16 pb;
+    u8 padding10[6];
+    s16 pc;
+    u8 padding18[6];
+    s16 pd;
+};
+
 /* Affine sprite work record. Matrix coefficients are signed 18.14 values;
  * angle is one turn per 4096 units and each scale uses the engine's signed
  * fixed-point reciprocal helper. */
@@ -209,7 +222,7 @@ s32 SpriteAffineAllocate(u16 key, u32 high, s16 low);
 void SpriteEngineSetProjectionDivisor(s32 divisor);
 s32 SpriteEngineGetProjectionDivisor(void);
 void SpriteGetViewportOrigin(u16 *x, u16 *y);
-void *SpriteEngineGetBuffer4Entry(u32 index);
+struct SpriteAffineOamMatrix *SpriteEngineGetAffineOamMatrix(u32 index);
 s32 SpriteMathDivide65536ByS16(s32 value);
 s32 SpriteFixed8Multiply(s32 left, s32 right);
 s32 SpriteFixed8Divide(s32 dividend, s32 divisor);
@@ -223,6 +236,10 @@ void SpriteVectorRotateY(struct SpriteVector3 *out,
 void SpriteVectorRotateZ(struct SpriteVector3 *out,
                          const struct SpriteVector3 *in, s32 angle);
 void SpriteProjectPoint(struct SpriteVector3 *point);
+void SpriteAffineWriteNormal(s32 index, s32 angle, s32 scaleX, s32 scaleY);
+void SpriteAffineWriteMirrored(s32 index, s32 angle, s32 scaleX, s32 scaleY);
+void SpriteAffineWriteAlternateAxis(s32 index, s32 angle, s32 scaleX,
+                                    s32 scaleY);
 void SpritePackAffinePosition(struct SpriteAffineTransform *transform);
 void SpriteBuildAffineMatrix(struct SpriteAffineTransform *transform);
 void SpriteInterpolationInit(struct SpriteInterpolation *state, s32 *storage,

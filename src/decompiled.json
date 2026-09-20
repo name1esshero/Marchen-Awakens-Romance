@@ -6596,7 +6596,7 @@
   {
     "addr": "0807CC04",
     "size": 20,
-    "name": "SpriteEngineGetBuffer4Entry",
+    "name": "SpriteEngineGetAffineOamMatrix",
     "file": "src/sprite_engine_state.c"
   },
   {
@@ -6646,24 +6646,6 @@
     "size": 12,
     "name": "SpriteEngineGetFlags14",
     "file": "src/sprite_engine_state.c"
-  },
-  {
-    "addr": "0807CE50",
-    "size": 152,
-    "name": "SpriteAffineWriteNormal",
-    "file": "src/sprite_affine_matrix.c"
-  },
-  {
-    "addr": "0807CEE8",
-    "size": 156,
-    "name": "SpriteAffineWriteMirrored",
-    "file": "src/sprite_affine_matrix.c"
-  },
-  {
-    "addr": "0807CF84",
-    "size": 152,
-    "name": "SpriteAffineWriteAlternateAxis",
-    "file": "src/sprite_affine_matrix.c"
   },
   {
     "addr": "0807D01C",

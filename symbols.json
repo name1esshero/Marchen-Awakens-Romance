@@ -1039,7 +1039,7 @@
   "0807BEC0": "NcdRuntimeSpriteReleaseAllocation",
   "0807BF60": "NcdSpriteCopy",
   "0807BF80": "NcdSpriteDeepCopy",
-  "0807CC04": "SpriteEngineGetBuffer4Entry",
+  "0807CC04": "SpriteEngineGetAffineOamMatrix",
   "0807CC18": "SpriteAffineFind",
   "0807CC84": "SpriteAffineAllocate",
   "0807CCEC": "SpriteEngineSetFlag10",

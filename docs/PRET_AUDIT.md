@@ -11,11 +11,11 @@ ordinary edits above a finding do not create false regressions; duplicates are
 counted independently so one fixed error cannot hide one newly introduced
 error. The audit prints known, new, and resolved counts on one line.
 
-## Verified snapshot: pointer/integer authenticity audit, 2026-09-20
+## Verified snapshot: compiler-steering audit, 2026-09-20
 
 - `make compare` reproduces the Japanese ROM byte for byte.
 - `make english` succeeds and all 197 host tests pass.
-- The mechanical PRET audit reports **43 errors / 0 warnings / 17 documented
+- The mechanical PRET audit reports **0 errors / 0 warnings / 17 documented
   exceptions** on one summary line. Every exception is enumerated in the
   generated report.
 
@@ -67,6 +67,14 @@ agbcc snapshots order the index shift and record-offset addition differently
 and select a different left operand for the induction update. This removes the
 last four hard findings from `mapping.c` without presenting compiler steering
 as recovered source.
+
+The final 43 findings came from the three affine OAM matrix writers. Their old
+source forced twelve registers per routine and passed two uninitialized dummy
+locals through empty inline-assembly constraints. The exact routines are now
+named assembly, while a typed reconstruction in
+`src/nonmatching/sprite_affine_matrix.c` records the matrix layout and
+fixed-point formulas. The checked-in hard-error baseline is consequently
+empty; any new hard finding fails CI rather than becoming accepted debt.
 
 `ReadSram`, `WriteSram`, and `VerifySram` no longer force the WAITCNT pointer
 and value into r2 and r0. These cartridge-bus library routines are retained as

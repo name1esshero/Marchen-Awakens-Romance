@@ -358,10 +358,9 @@ Recorded at the time of writing; regenerate rather than trusting these numbers.
   `tools/drop_register_hints.py --all` finds 0 further mechanically-safe
   removals at 149; everything left needs either a structural rewrite (slow,
   one function at a time, as above) or the same real-assembly move.
-- Current concentrations as of 2026-09-20 (regenerate with `make pret-audit`):
-  `sprite_affine_matrix.c` (43). This count includes duplicate rule
-  classifications where one constrained declaration is both a forced-register
-  and inline-assembly finding.
+- Current result as of 2026-09-20 (regenerate with `make pret-audit`): zero
+  hard findings, zero warnings, and 17 enumerated documented exceptions. The
+  hard-error baseline is empty, so CI rejects every newly introduced error.
 - `make compare` byte-exact and all host tests passing throughout.
 
 ## Interpolation initializer fallback (2026-09-20)
