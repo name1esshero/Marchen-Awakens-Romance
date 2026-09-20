@@ -260,6 +260,25 @@ AT("0000D628") void *GameStateGetRecord610(u32 index)
  return GAME_STATE_BASE+0x610+index*44;
 }
 
+/** Same IWRAM root, +0x3F3C, 8-byte stride. Purpose not yet traced. */
+AT("0000D648") void *GameStateGetRecord3F3C(u32 index)
+{
+    struct IwramGameStateRootLayout *iwram =
+        (struct IwramGameStateRootLayout *)gIwramBase;
+
+    return iwram->gameState + 0x3F3C + index * 8;
+}
+
+/** Same IWRAM root, +0x403C, 8-byte stride. Purpose not yet traced. */
+AT("000106E8") void *GameStateGetRecord403C(u32 index)
+{
+    struct IwramGameStateRootLayout *iwram =
+        (struct IwramGameStateRootLayout *)gIwramBase;
+
+    return iwram->gameState + 0x403C + index * 8;
+}
+
+
 /** @return One of the eight 32-byte effect slots in the main game state. */
 AT("0000F994") void *GameStateGetEffectSlot(u32 index)
 {

@@ -731,29 +731,7 @@ _080106C4:
 
 @ 0106C8..0106E8 is decompiled as GameStateGetRecord0B90(); see src/decompiled.json
 
-	.section .rom.000106E8, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_080106E8
-sub_080106E8:
-	ldr r1, _080106FC
-	ldr r2, _08010700
-	adds r1, r1, r2
-	lsls r0, r0, #3
-	adds r2, #96
-	adds r0, r0, r2
-	ldr r1, [r1, #0]
-	adds r1, r1, r0
-	adds r0, r1, #0
-	bx lr
-	.global _080106FC
-_080106FC:
-	.4byte 0x03000000  @ IWRAM
-	.global _08010700
-_08010700:
-	.4byte 0x00003FDC
+@ 0106E8..010704 is decompiled as GameStateGetRecord403C(); see src/decompiled.json
 
 @ 010704..010730 is decompiled as CreateActorTask10704(); see src/decompiled.json
 
@@ -795,7 +773,7 @@ _08010764:
 	.2byte 0xF7FF
 	.4byte 0x1C04FFAF
 	movs r0, #0
-	bl sub_080106E8
+	bl GameStateGetRecord403C
 	mov r10, r0
 	ldrh r1, [r5, #14]
 	cmp r1, #0
@@ -2265,32 +2243,7 @@ _0801140C:
 
 @ 011438..011464 is decompiled as GameStateClearRecord1090IfZero(); see src/decompiled.json
 
-	.section .rom.00011464, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_08011464
-sub_08011464:
-	ldr r1, _08011478
-	ldr r2, _0801147C
-	adds r1, r1, r2
-	lsls r0, r0, #4
-	ldr r2, _08011480
-	adds r0, r0, r2
-	ldr r1, [r1, #0]
-	adds r1, r1, r0
-	adds r0, r1, #0
-	bx lr
-	.global _08011478
-_08011478:
-	.4byte 0x03000000  @ IWRAM
-	.global _0801147C
-_0801147C:
-	.4byte 0x00003FDC
-	.global _08011480
-_08011480:
-	.4byte 0x00001090
+@ 011464..011484 is decompiled as GameStateGetHitRegion(); see src/decompiled.json
 
 @ 011484..0114B0 is decompiled as CreateActorTask11484(); see src/decompiled.json
 
@@ -2366,7 +2319,7 @@ sub_08011554:
 	push {r4, r5, lr}
 	adds r5, r1, #0
 	ldr r4, [sp, #12]
-	bl sub_08011464
+	bl GameStateGetHitRegion
 	adds r2, r0, #0
 	ldr r0, [r2, #0]
 	cmp r0, #0

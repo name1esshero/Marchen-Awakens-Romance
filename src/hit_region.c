@@ -1,5 +1,17 @@
 #include "hit_region.h"
+#include "game_state.h"
 #include "rom_section.h"
+
+extern u8 gIwramBase[];
+
+/** The 16-slot HitRegion table at IWRAM-root +0x1090. */
+AT("00011464") struct HitRegion *GameStateGetHitRegion(s32 id)
+{
+    struct IwramGameStateRootLayout *iwram =
+        (struct IwramGameStateRootLayout *)gIwramBase;
+
+    return (struct HitRegion *)(iwram->gameState + 0x1090 + id * 16);
+}
 
 /** Translate corner bounds by an object's signed world position. */
 AT("00006C2C")
@@ -75,14 +87,14 @@ s32 HitBoundsGetVerticalTileCorrection(enum MapProbeDirection direction,
 /** @brief Disable one indexed hit region. */
 AT("00011504") void HitRegionDisable(s32 id)
 {
-    sub_08011464(id)->active = 0;
+    GameStateGetHitRegion(id)->active = 0;
 }
 AT("00011504") const u8 HitRegionDisableTail[2] = {0, 0};
 
 /** @brief Disable every entry in the sixteen-region hit table. */
 AT("00011514") void HitRegionDisableAll(void)
 {
-    struct HitRegion *region = sub_08011464(0);
+    struct HitRegion *region = GameStateGetHitRegion(0);
     s32 zero = 0;
     s32 i = 15;
     do {
@@ -97,7 +109,7 @@ AT("00011514") const u8 HitRegionDisableAllTail[2] = {0, 0};
  * deliberately retain the original truncation of script integer arguments. */
 AT("00011530") void HitRegionInit(s32 id, s32 x, s32 y, s32 width, s32 height)
 {
-    struct HitRegion *region = sub_08011464(id);
+    struct HitRegion *region = GameStateGetHitRegion(id);
     region->active = 1;
     region->rect.x = x;
     region->rect.y = y;
@@ -110,7 +122,7 @@ AT("00011530") void HitRegionInit(s32 id, s32 x, s32 y, s32 width, s32 height)
  * preserving its mode. Despite its name, this function performs no hit test. */
 AT("00011654") void HitRegionSetRect(s32 id, s32 x, s32 y, s32 width, s32 height)
 {
-    struct HitRegion *region = sub_08011464(id);
+    struct HitRegion *region = GameStateGetHitRegion(id);
     region->active = 1;
     region->rect.x = x;
     region->rect.y = y;
@@ -135,7 +147,7 @@ AT("00018C4C") s32 HitRegionTest(s16 x, s16 y, const struct HitBounds *bounds)
     right = bounds->right + px;
     top = bounds->top + py;
     bottom = bounds->bottom + py;
-    region = sub_08011464(0);
+    region = GameStateGetHitRegion(0);
     for (i = 0; i < 16; i++, region++) {
         if (region->active) {
             rect = &region->rect;

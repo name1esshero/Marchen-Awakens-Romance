@@ -2720,3 +2720,67 @@ pointer arithmetic each time, reproduces the ROM's instruction order and
 register choice directly. `GameStateClearBlock413C` was updated to share the
 same named `GAME_STATE_EFFECT_SLOTS_OFFSET`/`GAME_STATE_EFFECT_SLOT_SIZE`
 constants instead of the bare `0x413C`/`256` literals it used before.
+
+## More game-state root record getters (2026-09-20)
+
+Three more single-stride getters off the same `IwramGameStateRootLayout` root
+used by `GameStateGetEffectSlot`: `GameStateGetRecord3F3C` (0x0800D648,
++0x3F3C, 8-byte stride), `GameStateGetRecord403C` (0x080106E8, +0x403C,
+8-byte stride), and `GameStateGetHitRegion` (0x08011464, +0x1090, 16-byte
+stride). All three matched first try once written through the typed struct
+member rather than raw `gIwramBase + offset` arithmetic -- the same fix that
+unblocked `GameStateGetEffectSlot`, confirming this is a general technique for
+the whole family rather than a one-off.
+
+`GameStateGetHitRegion` is the real name, not an offset placeholder:
+`include/hit_region.h` already declared this exact function under its ROM
+address (`struct HitRegion *sub_08011464(s32 id);`), and `src/hit_region.c`'s
+five other functions were already written calling it by that name. `struct
+HitRegion` (active + HitRect + mode = 16 bytes) matches the recovered stride
+exactly, confirming the identification. The function now lives beside its
+struct in `hit_region.c` rather than with the other offset-named getters in
+`runtime_accessors.c`.
+
+The other two getters' callers give no naming evidence yet, so they keep the
+established `GameStateGetRecordNNNN` convention. `0x0800D648`'s offset
+(`0x3F3C`) is derived in the ROM as `0x3FDC - 160` from the same loaded root
+constant, matching `GameStateGetBuffer3F38`'s already-documented
+constant-reuse pattern; `0x080106E8`'s (`0x403C`) is `0x3FDC + 96` the same
+way. Both reproduce exactly by writing the derivation in C
+(`iwram->gameState + 0x3F3C + ...`) rather than a bare literal -- agbcc
+folds the two-part IWRAM-root address into one pool word when the base is a
+raw address literal, but not when it comes from the `gIwramBase` extern
+symbol, so the symbol form is what lets the derivation show up as a separate
+`sub`/`add` instruction the way the ROM has it.
+
+## Attempted and reverted: fourth root-record getter (2026-09-20)
+
+`sub_080099E0` (real name `group`-indexed per its established extern in
+`src/runtime_buffers.c`: `s16 *sub_080099E0(u32 actor, u32 group)`) was
+attempted with the same `RuntimeGetActorPartRecord` shape used successfully
+for the three getters above. It did not match. The ROM's register choice for
+this specific function is the mirror image of `RuntimeGetActorPartRecord`'s
+(actor accumulates in r0 and the dereferenced base lands in r2, rather than
+the reverse), because its trailing constant (0x538 = 167<<3) fits the
+`movs`+`lsls` immediate-loading pattern while `RuntimeGetActorPartRecord`'s
+0x4DC needed a full pool load -- a different constant-loading strategy that
+changes which register is left free for the other operand. Six declaration
+and addition-order variants were tried; none reproduced it. Left as `extern
+s16 *sub_080099E0(...)` exactly as it was, per this project's rule against
+forcing a register hint into the matching build.
+
+## Test-infrastructure note: struct alignment differs between host and target
+
+Fixing `tests/test_hit_region.py` after `GameStateGetHitRegion` moved from a
+mock stand-in to the real `IwramGameStateRootLayout`-based accessor surfaced
+a genuine host/target ABI difference worth remembering: the struct's
+`gameState` field sits at byte offset 0x3FDC on the real ARM target, which is
+4-byte aligned and needs no padding there. A pointer is 8 bytes on the x86-64
+host used to build test `.so` files, and needs 8-byte alignment, so the host
+compiler silently pads the struct and moves `gameState` to a different real
+offset. Writing test scaffolding through a raw `*(u8 **)(gIwramBase+0x3FDC)`
+byte offset while the real source reads `iwram->gameState` through the typed
+struct reads back garbage with no error, since both sides compile fine and
+the mismatch only shows up as wrong pointer values at runtime. The fix is for
+test scaffolding to write through the same struct type the real code reads
+through, never a raw offset that assumes the target's field layout.

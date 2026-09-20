@@ -11023,30 +11023,7 @@ _0800D624:
 	.4byte 0x03004020  @ IWRAM+0x4020
 
 @ 00D628..00D648 is decompiled as GameStateGetRecord610(); see src/decompiled.json
-
-	.section .rom.0000D648, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_0800D648
-sub_0800D648:
-	ldr r1, _0800D65C
-	ldr r2, _0800D660
-	adds r1, r1, r2
-	lsls r0, r0, #3
-	subs r2, #160
-	adds r0, r0, r2
-	ldr r1, [r1, #0]
-	adds r1, r1, r0
-	adds r0, r1, #0
-	bx lr
-	.global _0800D65C
-_0800D65C:
-	.4byte 0x03000000  @ IWRAM
-	.global _0800D660
-_0800D660:
-	.4byte 0x00003FDC
+@ 00D648..00D664 is decompiled as GameStateGetRecord3F3C(); see src/decompiled.json
 
 @ 00D664..00D690 is decompiled as CreateActorTaskD664(); see src/decompiled.json
 
@@ -11091,7 +11068,7 @@ _0800D6C8:
 	.2byte 0xF7FF
 	.4byte 0x1C05FFAD
 	movs r0, #0
-	bl sub_0800D648
+	bl GameStateGetRecord3F3C
 	str r0, [sp, #4]
 	ldrh r1, [r6, #14]
 	cmp r1, #0

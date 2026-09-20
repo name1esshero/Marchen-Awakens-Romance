@@ -22,7 +22,28 @@ class HitRegionTests(unittest.TestCase):
         folder = Path(cls.temp.name)
         source = (ROOT / 'src/hit_region.c').read_text()
         (folder / 'hit.c').write_text(source)
-        (folder / 'mock.c').write_text('#include "hit_region.h"\nstruct HitRegion regions[17];\nstruct HitRegion *sub_08011464(s32 id){return &regions[id];}\n')
+        # GameStateGetHitRegion now reads through gIwramBase's real IWRAM-root
+        # layout (+0x3FDC gameState pointer, +0x1090 table) rather than a
+        # stand-in wrapper. Point the fictional "game state" at
+        # regions[]-0x1090 so regions[id] is exactly what the real accessor
+        # computes, while keeping the regions[] symbol itself directly
+        # readable by ctypes. The write must go through the same
+        # IwramGameStateRootLayout struct type the real accessor reads
+        # through, not a raw +0x3FDC byte offset: a host u8* needs 8-byte
+        # alignment, so the compiler pads gameState to a different real
+        # offset than 0x3FDC (which is only 4-byte aligned, fine on the
+        # 32-bit GBA target but not here) -- writing/reading through
+        # mismatched offsets silently produces a garbage pointer.
+        (folder / 'mock.c').write_text(
+            '#include "hit_region.h"\n'
+            '#include "game_state.h"\n'
+            'u8 gIwramBase[sizeof(struct IwramGameStateRootLayout)];\n'
+            'struct HitRegion regions[17];\n'
+            '__attribute__((constructor)) static void wireGameState(void) {\n'
+            '    struct IwramGameStateRootLayout *iwram ='
+            ' (struct IwramGameStateRootLayout *)gIwramBase;\n'
+            '    iwram->gameState = (u8 *)regions - 0x1090;\n'
+            '}\n')
         subprocess.run(['gcc', '-shared', '-fPIC', '-O2', '-D', 'AT(x)=', '-I'+str(ROOT/'include'), str(folder/'hit.c'), str(folder/'mock.c'), '-o', str(folder/'hit.so')], check=True)
         cls.lib = ctypes.CDLL(str(folder/'hit.so'))
         cls.lib.HitRegionTest.argtypes = [ctypes.c_int16, ctypes.c_int16, ctypes.POINTER(Bounds)]

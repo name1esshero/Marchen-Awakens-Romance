@@ -1313,7 +1313,7 @@ sub_080189C8:
 	.2byte 0xF7F4
 	.4byte 0x1C04FE19
 	movs r0, #0
-	bl sub_0800D648
+	bl GameStateGetRecord3F3C
 	adds r1, r0, #0
 	movs r3, #0
 	.global _08018A02
@@ -1356,7 +1356,7 @@ _08018A34:
 	.byte 0xFE
 	adds r4, r0, #0
 	movs r0, #0
-	bl sub_080106E8
+	bl GameStateGetRecord403C
 	adds r1, r0, #0
 	movs r3, #0
 	.global _08018A50
@@ -1498,7 +1498,7 @@ _08018AF6:
 	.2byte 0xF7F4
 	.4byte 0x1C05FD7F
 	movs r0, #0
-	bl sub_0800D648
+	bl GameStateGetRecord3F3C
 	adds r4, r0, #0
 	movs r7, #0
 	movs r6, #1
@@ -1564,7 +1564,7 @@ _08018B98:
 	.byte 0xFD
 	adds r6, r0, #0
 	movs r0, #0
-	bl sub_080106E8
+	bl GameStateGetRecord403C
 	adds r4, r0, #0
 	movs r7, #0
 	.global _08018BB4

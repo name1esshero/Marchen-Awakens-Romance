@@ -2070,6 +2070,12 @@
     "file": "src/runtime_accessors.c"
   },
   {
+    "addr": "0800D648",
+    "size": 28,
+    "name": "GameStateGetRecord3F3C",
+    "file": "src/runtime_accessors.c"
+  },
+  {
     "addr": "0800D664",
     "size": 44,
     "name": "CreateActorTaskD664",
@@ -2160,6 +2166,12 @@
     "file": "src/runtime_misc.c"
   },
   {
+    "addr": "080106E8",
+    "size": 28,
+    "name": "GameStateGetRecord403C",
+    "file": "src/runtime_accessors.c"
+  },
+  {
     "addr": "08010704",
     "size": 44,
     "name": "CreateActorTask10704",
@@ -2200,6 +2212,12 @@
     "size": 44,
     "name": "GameStateClearRecord1090IfZero",
     "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "08011464",
+    "size": 32,
+    "name": "GameStateGetHitRegion",
+    "file": "src/hit_region.c"
   },
   {
     "addr": "08011484",

@@ -2763,7 +2763,7 @@ _08071406:
 	movs r3, #44
 	.2byte 0xF7A0
 	.4byte 0x2001F873
-	bl sub_08011464
+	bl GameStateGetHitRegion
 	movs r1, #1
 	str r1, [r0, #12]
 	b _08071460

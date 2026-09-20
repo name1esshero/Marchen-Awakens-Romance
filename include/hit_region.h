@@ -19,7 +19,7 @@ struct HitRegion
     struct HitRect rect;
     s32 mode;
 };
-struct HitRegion *sub_08011464(s32 id);
+struct HitRegion *GameStateGetHitRegion(s32 id);
 
 /* Actor bounds use corner offsets, unlike a region's width/height fields. */
 struct HitBounds
