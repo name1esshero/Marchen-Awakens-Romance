@@ -768,6 +768,7 @@
   "08056548": "ItemGetField62",
   "08056560": "ItemGetField58",
   "080569B0": "CountPmbDeckEntryCopies",
+  "08056CF8": "GameStateShuffleActorPartValues",
   "08057108": "ConsumableGetName",
   "08057120": "ConsumableGetDescription",
   "0805715C": "ConsumableGetResourceName",

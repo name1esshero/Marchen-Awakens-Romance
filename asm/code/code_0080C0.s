@@ -443,7 +443,7 @@ _08008432:
 	mov r1, r9
 	adds r2, r4, #0
 	bl sub_08056E3C
-	bl sub_08056CF8
+	bl GameStateShuffleActorPartValues
 	adds r7, #1
 	ldr r0, [sp, #16]
 	cmp r7, r0
@@ -903,7 +903,7 @@ sub_080087EC:
 	adds r1, r5, #0
 	adds r2, r4, #0
 	bl sub_08056E3C
-	bl sub_08056CF8
+	bl GameStateShuffleActorPartValues
 	adds r0, r7, #0
 	mov r1, r8
 	.2byte 0xF001

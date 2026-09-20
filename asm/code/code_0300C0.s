@@ -2396,7 +2396,7 @@ _08031070:
 	asrs r2, r2, #16
 	movs r0, #0
 	bl sub_08056E3C
-	bl sub_08056CF8
+	bl GameStateShuffleActorPartValues
 	ldr r1, [r5, #64]
 	lsls r1, r1, #16
 	asrs r1, r1, #16

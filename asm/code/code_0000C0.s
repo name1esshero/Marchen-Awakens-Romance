@@ -14205,7 +14205,7 @@ _08007FF0:
 	movs r1, #0
 	movs r2, #0
 	bl sub_08056E3C
-	bl sub_08056CF8
+	bl GameStateShuffleActorPartValues
 	movs r0, #0
 	movs r1, #0
 	movs r2, #0

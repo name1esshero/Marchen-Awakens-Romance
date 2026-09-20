@@ -4938,6 +4938,12 @@
     "file": "src/game_state_records.c"
   },
   {
+    "addr": "08056CF8",
+    "size": 84,
+    "name": "GameStateShuffleActorPartValues",
+    "file": "src/game_state_records.c"
+  },
+  {
     "addr": "08056DFC",
     "size": 64,
     "name": "GameStateGetPartField64C",

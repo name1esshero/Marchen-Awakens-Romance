@@ -583,8 +583,7 @@ extern void *GameStateGetBuffer38C0(void);
 extern char *strcpy(char *, const char *);
 extern void GameStateCopyRecord(s32, s32, const s16 *);
 extern void sub_08056D4C(s32, s32, s32);
-extern void sub_08056E3C(s32, s32, s32);
-extern void sub_08056CF8(void);
+extern s16 *sub_08056E3C(s32, s32, s32);
 extern void sub_0800690C(s32, s32);
 extern void ScriptAddPendingTasks(s32);
 extern void RuntimeSetFieldEB4(s32);
@@ -907,8 +906,8 @@ AT("000129F4") s32 ScriptNativePmbDeckMake(u32 count, const s32 *args,
 #define REFRESH_MAP_VALUES(address, name)                                  \
 AT(address) s32 name(u32 count, const s32 *args, s32 *result)              \
 {                                                                          \
-    sub_08056E3C(0, (s16)args[0], (s16)args[1]);                           \
-    sub_08056CF8();                                                         \
+    GameStateShuffleActorPartValues(                                        \
+        sub_08056E3C(0, (s16)args[0], (s16)args[1]));                       \
     sub_08056D4C(0, (s16)args[0], (s16)args[1]);                           \
     return 1;                                                               \
 }

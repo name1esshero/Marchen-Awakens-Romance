@@ -7,7 +7,9 @@
 
 #include "game_state.h"
 #include "game_tables.h"
+#include "random.h"
 #include "rom_section.h"
+#include "runtime_leaf.h"
 
 extern u8 gIwramBase[];
 extern u8 gMapGenerationRootOffset[];
@@ -363,6 +365,30 @@ AT("000569B0") s32 CountPmbDeckEntryCopies(s32 id)
 #define ACTOR_RECORD_SIZE 1672
 #define PART_RECORD_SIZE 104
 #define ACTOR_PART_VALUE_COUNT 20
+
+/** Randomize the twenty values in an actor/part record in place. */
+AT("00056CF8")
+void GameStateShuffleActorPartValues(s16 *values)
+{
+    s16 shuffled[ACTOR_PART_VALUE_COUNT];
+    u16 remaining = ACTOR_PART_VALUE_COUNT;
+    u16 *pool;
+
+    CpuCopy(shuffled, values, sizeof(shuffled));
+    pool = RandomPoolInitialize(0, &remaining);
+    if (remaining != 0) {
+        u16 *count = &remaining;
+        s16 *output = values;
+
+        do {
+            s32 index = (s16)RandomPoolTake(pool, count);
+
+            *output++ = shuffled[index];
+        } while (*count != 0);
+    }
+    HeapFreeDefault(pool);
+}
+AT("00056CF8") const u8 GameStateShuffleActorPartValuesTail[2] = {0, 0};
 
 /** Count occurrences of a value in one actor/part record's value array. */
 AT("0000997C")

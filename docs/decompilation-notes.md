@@ -889,40 +889,21 @@ Host coverage exercises allocation/reuse, draw uniqueness, first/last removal,
 empty pools, search capacity and scan ordering, out-of-map attributes, mirrored
 bounds, touching edges, field filtering, and entry-state narrowing.
 
-## sub_08056CF8 fully traced; do not decompile it alone (2026-09-15)
+## Actor-part value shuffle (2026-09-20)
 
-sub_08056CF8's logic is now fully recovered by hand-decoding its one
-unresolved `bl` (the raw `.short 0xf7ac` / `.word 0xb00bfd17` pair, which
-is a normal ARMv4T BL followed by the epilogue's `add sp, #44` sharing the
-same word -- decoding the BL alone, not the whole word, gives 0x08003770,
-`HeapFreeDefault`): copy the caller's 20 halfwords onto the stack with
-CpuCopy, RandomPoolInitialize a pool over them, then RandomPoolTake
-repeatedly to write the shuffled values back into the *caller's own array*
-in place, and HeapFreeDefault the pool. This is the DeckShuffle/
-ShuffleDeckMake algorithm the random-pool functions above exist for.
+`GameStateShuffleActorPartValues` at 0x08056CF8 copies twenty signed values to
+a local array, draws every array index exactly once through
+`RandomPoolInitialize` and `RandomPoolTake`, and writes the randomized order
+back in place. Its formerly unresolved call is `HeapFreeDefault`; the raw BL
+and following `add sp, #44` shared one emitted word in the old assembly.
 
-It is not safe to land alone, though. It takes a real pointer argument
-(the array to shuffle, read into r0 at entry and immediately copied to r7)
--- but its only C-level caller, the `REFRESH_MAP_VALUES` macro in
-src/mapping.c, already calls it as `sub_08056CF8();` with *no* argument,
-right after `sub_08056E3C(0, (s16)args[0], (s16)args[1]);` with no
-assignment of that call's result. That only byte-matches because
-sub_08056E3C returns a real pointer in r0 (confirmed: it ends with
-`adds r0, r0, r4; pop {r4}; pop {r1}; bx r1`, not a bare `bx lr`) and
-nothing between the two calls touches r0. The macro is almost certainly
-misrepresenting one nested call, `sub_08056CF8(sub_08056E3C(0, x, y))`, as
-two separate statements that happen to produce the same bytes by register-
-reuse accident. sub_08056E3C itself computes a pointer through gSecondaryRuntime's own 1672-byte
-actor stride plus a second table at the game root's +0x423C (not yet
-named), so decompiling it is its own task.
-
-Whoever picks this up: decompile sub_08056E3C first, confirm what it
-actually returns, then land both together as one nested call and re-verify
-the whole ScriptNativeRefreshMapValuesA/B expansion with a full
-`make compare` (not just an isolated snippet) before trusting either
-alone -- the macro is currently committed, matching code, and changing its
-statement structure carries real risk of a silent mismatch a narrow test
-would miss.
+The `REFRESH_MAP_VALUES` native-command family previously represented the
+resolver and shuffle as two argument-less statements that happened to preserve
+the resolver result in `r0`. It now passes `sub_08056E3C(...)` directly to the
+typed shuffle function. That explicit nested expression emits the same two
+calls byte for byte and exposes the real pointer data flow to contributors.
+The resolver itself remains assembly because the natural typed candidates
+still allocate its game-state base through different registers than the ROM.
 
 ## Field-event constructor: corrected layout and matching C
 

@@ -14885,62 +14885,9 @@ sub_08056CBC:
 
 @ 056CD0..056CF8 is decompiled as GameStateCopyRecord(); see src/decompiled.json
 
-	.section .rom.00056CF8, "ax"
+@ 056CF8..056D4C is decompiled as GameStateShuffleActorPartValues(); see src/decompiled.json
+	.section .rom.00056D4C, "ax"
 	.syntax unified
-
-
-	.thumb_func
-	.thumb
-	.global sub_08056CF8
-sub_08056CF8:
-	push {r4, r5, r6, r7, lr}
-	sub sp, #44
-	adds r7, r0, #0
-	add r4, sp, #40
-	movs r0, #20
-	strh r0, [r4, #0]
-	mov r0, sp
-	adds r1, r7, #0
-	movs r2, #40
-	bl CpuCopy
-	movs r0, #0
-	adds r1, r4, #0
-	bl RandomPoolInitialize
-	adds r5, r0, #0
-	ldrh r0, [r4, #0]
-	cmp r0, #0
-
-	.thumb_func
-	.thumb
-	.global sub_08056D1C
-sub_08056D1C:
-	beq _08056D3C
-	adds r6, r4, #0
-	adds r4, r7, #0
-	.global _08056D22
-_08056D22:
-	adds r0, r5, #0
-	adds r1, r6, #0
-	bl RandomPoolTake
-	lsls r0, r0, #16
-	asrs r0, r0, #15
-	add r0, sp
-	ldrh r0, [r0, #0]
-	strh r0, [r4, #0]
-	adds r4, #2
-	ldrh r0, [r6, #0]
-	cmp r0, #0
-	bne _08056D22
-	.global _08056D3C
-_08056D3C:
-	adds r0, r5, #0
-	.2byte 0xF7AC
-	.4byte 0xB00BFD17
-	pop {r4, r5, r6, r7}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
 
 	.thumb_func
 	.thumb
