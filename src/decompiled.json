@@ -6882,6 +6882,12 @@
     "file": "src/script_resource_table.c"
   },
   {
+    "addr": "0807E9F4",
+    "size": 152,
+    "name": "ScriptResourceSet",
+    "file": "src/script_resource_table.c"
+  },
+  {
     "addr": "0807EA8C",
     "size": 140,
     "name": "ScriptResourceRemove",

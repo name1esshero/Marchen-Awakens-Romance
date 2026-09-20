@@ -9,11 +9,6 @@ struct ScriptResourceNode {
     u8 value[1];
 };
 
-struct ScriptResourceTable {
-    u8 unknown00[8];
-    struct ScriptResourceNode **buckets;
-};
-
 extern s32 __modsi3(s32 dividend, s32 divisor);
 extern u32 strlen(const char *text);
 extern s32 strcmp(const char *left, const char *right);
@@ -37,9 +32,8 @@ AT("0007E97C") s32 ScriptResourceHash(s32 type, const char *name)
 AT("0007E9A8") u8 *ScriptResourceFind(s32 type, const char *name)
 {
     s32 bucket = ScriptResourceHash(type, name);
-    struct ScriptResourceTable *table =
-        (struct ScriptResourceTable *)gScriptBytecodeRoot->context;
-    struct ScriptResourceNode *node = table->buckets[bucket];
+    struct ScriptResourceNode *node =
+        gScriptBytecodeRoot->context->resourceBuckets[bucket];
 
     while (node != 0) {
         if (type == (s8)node->typedName[0] &&
@@ -51,6 +45,41 @@ AT("0007E9A8") u8 *ScriptResourceFind(s32 type, const char *name)
 }
 AT("0007E9A8") const u8 ScriptResourceFindTail[2] = {0, 0};
 
+/** Insert a new class/name pair and a copy of its value in the VM resource
+ * hash table.
+ * @return Zero on success, one if the pair already exists, or negative one
+ * if its node cannot be allocated. */
+AT("0007E9F4") s32 ScriptResourceSet(s32 type, const char *name,
+                                     const void *value, s32 size)
+{
+    s32 bucket = ScriptResourceHash(type, name);
+    struct ScriptBytecodeRoot **root;
+    struct ScriptResourceNode *node;
+    struct ScriptBytecodeContext *context;
+    u32 nameLength;
+
+    if (ScriptResourceFind(type, name) != 0)
+        return 1;
+
+    nameLength = strlen(name);
+    root = &gScriptBytecodeRoot;
+    node = HeapAlloc((*root)->context->resourceHeap,
+                     size + nameLength + 13);
+    if (node == 0)
+        return -1;
+
+    CpuCopy(node->value, value, size);
+    node->typedName = (char *)node + (size + 8);
+    node->typedName[0] = type;
+    strcpy(node->typedName + 1, name);
+
+    context = (*root)->context;
+    node->next = context->resourceBuckets[bucket];
+    context->resourceBuckets[bucket] = node;
+    return 0;
+}
+AT("0007E9F4") const u8 ScriptResourceSetTail[2] = {0, 0};
+
 /** Remove an existing class/name pair and release its table allocation. */
 AT("0007EA8C") s32 ScriptResourceRemove(s32 type, const char *name)
 {
@@ -59,8 +88,7 @@ AT("0007EA8C") s32 ScriptResourceRemove(s32 type, const char *name)
     s32 bucket =
         ScriptResourceHash(localType, localName);
     struct ScriptResourceNode *node =
-        ((struct ScriptResourceTable *)gScriptBytecodeRoot->context)
-            ->buckets[bucket];
+        gScriptBytecodeRoot->context->resourceBuckets[bucket];
     struct ScriptResourceNode *previous = 0;
 
     if (node != 0) {
@@ -76,11 +104,9 @@ AT("0007EA8C") s32 ScriptResourceRemove(s32 type, const char *name)
 
 found:
     if (previous == 0)
-        ((struct ScriptResourceTable *)
-            gScriptBytecodeRoot->context)
-            ->buckets[bucket] = node->next;
+        gScriptBytecodeRoot->context->resourceBuckets[bucket] = node->next;
     else
         previous->next = node->next;
-    HeapFree(*(void **)((u8 *)gScriptBytecodeRoot->context + 4), node);
+    HeapFree(gScriptBytecodeRoot->context->resourceHeap, node);
     return 0;
 }

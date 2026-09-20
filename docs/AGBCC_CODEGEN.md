@@ -632,6 +632,26 @@ becomes the copy count. Replacing either with a conventional integer loop is
 behaviorally correct but does not reproduce this compiler's instruction
 sequence.
 
+### Keep the global slot, then write both indexed operations directly
+
+`ScriptResourceSet` at 0x0807E9F4 retains the address of
+`gScriptBytecodeRoot` across allocation, copy, and string calls. Expressing
+that lifetime with `struct ScriptBytecodeRoot **root =
+&gScriptBytecodeRoot` produces the ROM's r9 value without a register hint.
+The context layout also reveals separate general and resource-node heaps at
+offsets 0 and 4, followed by the resource-bucket pointer at offset 8; naming
+those fields removes the previous raw byte offsets.
+
+The final hash insertion is sensitive to expression shape. Computing a
+temporary typed `head = &buckets[bucket]` makes agbcc load the bucket base into
+r0 and scale the index into r1. The ROM uses the opposite allocation. Writing
+the two natural operations directly,
+`node->next = context->resourceBuckets[bucket]` followed by
+`context->resourceBuckets[bucket] = node`, makes agbcc keep the base in r1 and
+scale the index in r0, matching all 152 bytes. A formerly matching candidate
+cast the bucket pointer through `u32` solely to obtain that allocation; the
+direct typed form proves the cast was unnecessary compiler steering.
+
 ### A shared word type can recover a real alias relationship
 
 `GameStateAddResourceCounter` stores a u32 counter through a runtime address,

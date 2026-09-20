@@ -26,9 +26,12 @@ struct ScriptBytecodeVm {
     u16 activeCallbackFlags;
 };
 
+struct ScriptResourceNode;
+
 struct ScriptBytecodeContext {
     void *heap;
-    u8 unknown04[8];
+    void *resourceHeap;
+    struct ScriptResourceNode **resourceBuckets;
     struct ScriptBytecodeVm *vm;
 };
 

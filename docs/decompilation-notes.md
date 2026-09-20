@@ -2509,3 +2509,19 @@ empty barriers. Removing the hints yields 140/116 bytes with new agbcc and
 fixed-point algorithms and named masks remain in
 `src/nonmatching/sprite_affine_transform.c`; exact named assembly replaces the
 obsolete hint-bearing translation unit.
+
+## Script resource insertion (2026-09-20)
+
+`ScriptResourceSet` at 0x0807E9F4 now compiles from clean typed C. The VM
+context contains a general allocation heap at offset 0, a resource-node heap
+at offset 4, and the 587-entry resource bucket array pointer at offset 8; all
+three are now named fields. Keeping `&gScriptBytecodeRoot` in an ordinary
+pointer-to-pointer local models the global slot that the routine rereads after
+calling `strcpy`.
+
+The previous byte-matching experiment converted the bucket pointer to `u32`
+to exchange two compiler registers. That cast was rejected as steering.
+Writing the linked-list read and write as two direct typed subscripts gives
+agbcc the original r1 bucket-base/r0 scaled-index allocation naturally. The
+152-byte assembly body and its nonmatching candidate were removed after the
+full ROM remained byte-identical.
