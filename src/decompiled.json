@@ -5940,24 +5940,6 @@
     "file": "src/sound_m4a.c"
   },
   {
-    "addr": "08079EDC",
-    "size": 64,
-    "name": "ReadSram",
-    "file": "src/sram.c"
-  },
-  {
-    "addr": "08079F1C",
-    "size": 64,
-    "name": "WriteSram",
-    "file": "src/sram.c"
-  },
-  {
-    "addr": "08079F5C",
-    "size": 76,
-    "name": "VerifySram",
-    "file": "src/sram.c"
-  },
-  {
     "addr": "0807A044",
     "size": 64,
     "name": "WriteSramFast",

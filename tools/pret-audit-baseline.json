@@ -1,25 +1,5 @@
 [
   {
-    "kind": "forced_register",
-    "file": "src/sram.c",
-    "detail": "register u16 wait asm(\"r0\") = *waitcnt;"
-  },
-  {
-    "kind": "forced_register",
-    "file": "src/sram.c",
-    "detail": "register u16 wait asm(\"r0\") = *waitcnt;                                \\"
-  },
-  {
-    "kind": "forced_register",
-    "file": "src/sram.c",
-    "detail": "register vu16 *waitcnt asm(\"r2\") = WAITCNT_ADDRESS;"
-  },
-  {
-    "kind": "forced_register",
-    "file": "src/sram.c",
-    "detail": "register vu16 *waitcnt asm(\"r2\") = WAITCNT_ADDRESS;                    \\"
-  },
-  {
     "kind": "inline_assembly",
     "file": "src/sprite_affine_matrix.c",
     "detail": "#define MATCH_IN3(a, b, c) asm volatile(\"\" : : \"r\"(a), \"r\"(b), \"r\"(c))"
@@ -73,26 +53,6 @@
     "kind": "inline_assembly",
     "file": "src/sprite_transform.c",
     "detail": "asm(\"\" : \"+r\"(product));"
-  },
-  {
-    "kind": "inline_assembly",
-    "file": "src/sram.c",
-    "detail": "register u16 wait asm(\"r0\") = *waitcnt;"
-  },
-  {
-    "kind": "inline_assembly",
-    "file": "src/sram.c",
-    "detail": "register u16 wait asm(\"r0\") = *waitcnt;                                \\"
-  },
-  {
-    "kind": "inline_assembly",
-    "file": "src/sram.c",
-    "detail": "register vu16 *waitcnt asm(\"r2\") = WAITCNT_ADDRESS;"
-  },
-  {
-    "kind": "inline_assembly",
-    "file": "src/sram.c",
-    "detail": "register vu16 *waitcnt asm(\"r2\") = WAITCNT_ADDRESS;                    \\"
   },
   {
     "kind": "target_register_macro",

@@ -360,8 +360,7 @@ Recorded at the time of writing; regenerate rather than trusting these numbers.
   one function at a time, as above) or the same real-assembly move.
 - Current concentrations as of 2026-09-20 (regenerate with `make pret-audit`):
   `sprite_affine_matrix.c` (43), `sprite_transform.c` (20),
-  `sprite_interpolation.c` (8), `sram.c` (8),
-  and `sprite_affine_slots.c` (6). These counts include
+  `sprite_interpolation.c` (8), and `sprite_affine_slots.c` (6). These counts include
   duplicate rule classifications where one constrained declaration is both a
   forced-register and inline-assembly finding.
 - `make compare` byte-exact and all host tests passing throughout.
@@ -470,8 +469,16 @@ The SRAM copy/verify routines were re-tested without register pins. A real
 into r3. The remaining mismatch is narrower: agbcc puts the volatile WAITCNT
 load in r1 and the `0xFFFC` literal in r0, while the ROM uses r0 and r1 in the
 opposite roles. The direct volatile read-modify-write spelling has the same
-swap. The matching pins were restored; this is evidence about the candidates
-tested, not evidence that the original C needed pins.
+swap. This is evidence about the candidates tested, not evidence that the
+original source needed pins.
+
+The three exact routines now live as named, readable assembly in
+`asm/code/code_0780C0.s`, which is also consistent with their role as
+self-contained cartridge-bus library entry points. Their ordinary C remains in
+`src/nonmatching/sram_access.c` and uses the platform's `REG_WAITCNT` macro.
+The C never hides the fixed hardware address in an ordinary software symbol.
+This disposition removes all eight duplicate forced-register/inline-assembly
+findings from `src/sram.c`; `WriteSramFast()` remains matching C.
 
 `CreateSaveWriteTask()` was also tested with ordinary locals and with its
 local declarations and assignments reversed, and with the standard C

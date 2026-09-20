@@ -21,6 +21,7 @@
 #define REG_KEYINPUT (*(vu16 *)REG_ADDR_KEYINPUT)
 #define REG_IE       (*(vu16 *)REG_ADDR_IE)
 #define REG_IF       (*(vu16 *)REG_ADDR_IF)
+#define REG_WAITCNT  (*(vu16 *)REG_ADDR_WAITCNT)
 #define REG_IME      (*(vu16 *)REG_ADDR_IME)
 
 /* memory map */

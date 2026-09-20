@@ -469,6 +469,17 @@ difference is register pressure rather than scheduling.
   explain them. Preserve the exact named assembly and the clean candidate in
   `src/nonmatching/` until a real type, lifetime, macro, or surrounding source
   relationship accounts for both differences.
+- **Hardware-register semantics do not justify C register constraints.** The
+  SRAM copy and verify entry points read and update `REG_WAITCNT`, then perform
+  byte-wise cartridge transfers. Ordinary volatile C expresses that behavior,
+  but both compiler snapshots place the WAITCNT value in r1 and the `0xFFFC`
+  mask in r0; the ROM uses r0 and r1 respectively. A separate remaining-count
+  local recovers the loop's r3 lifetime, and direct read-modify-write forms
+  preserve the same unresolved swap. The address `0x04000204` is legitimate
+  fixed GBA hardware, but `asm("r0")` and `asm("r2")` are still forbidden
+  source claims. Keep these self-contained library routines in named assembly,
+  expose the operation as clean C under `src/nonmatching/`, and use the
+  platform `REG_WAITCNT` macro everywhere outside assembly.
 - **After adding a function, run the host tests, not just `make compare`.** The
   tests compile individual `.c` files on their own, so a new reference to a
   symbol the ROM link resolves -- `gSecondaryRuntime`, `gIwramBase`, anything

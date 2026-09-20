@@ -2393,3 +2393,19 @@ exact body now lives as named, relocatable assembly in
 `src/nonmatching/script_native_copy_map_halfwords.c`. This removes all four
 PRET hard findings from `mapping.c` without claiming that the original source
 used register constraints.
+
+## SRAM cartridge-library fallback (2026-09-20)
+
+`ReadSram`, `WriteSram`, and `VerifySram` at 0x08079EDC..0x08079FA8 are
+self-contained byte-transfer entry points that configure the cartridge bus's
+SRAM wait state before accessing save memory. Natural volatile C recovers the
+loop structure, including the r3 remaining-byte lifetime, but both available
+agbcc snapshots swap the WAITCNT value and mask registers relative to the ROM.
+Direct register read-modify-write forms produce the same difference.
+
+Their exact implementations are therefore named assembly in
+`asm/code/code_0780C0.s`, while readable versions remain in
+`src/nonmatching/sram_access.c`. `include/gba/io_reg.h` now defines
+`REG_WAITCNT`, keeping the physical GBA register address in the hardware layer.
+`WriteSramFast` remains matching C. The change removes eight PRET hard findings
+without attributing r0/r2 constraints to the original source.

@@ -1453,11 +1453,140 @@ SoundDriverCopyJumpTableSwi:
 
 @ 079ED8..079EDC is decompiled as Sqrt(); see src/decompiled.json
 
-@ 079EDC..079F1C is decompiled as ReadSram(); see src/decompiled.json
+	.section .rom.00079EDC, "ax"
+	.syntax unified
+	.thumb
+	.thumb_func
+	.global ReadSram
+	.type ReadSram, %function
+ReadSram:
+	push {r4, r5, lr}
+	adds r5, r0, #0
+	adds r4, r1, #0
+	adds r3, r2, #0
+	ldr r2, .LReadSramPool
+	ldrh r0, [r2]
+	ldr r1, .LReadSramPool + 4
+	ands r0, r0, r1
+	movs r1, #3
+	orrs r0, r0, r1
+	strh r0, [r2]
+	subs r3, r3, #1
+	movs r0, #1
+	negs r0, r0
+	cmp r3, r0
+	beq .LReadSramDone
+	adds r1, r0, #0
+.LReadSramLoop:
+	ldrb r0, [r5]
+	strb r0, [r4]
+	adds r5, r5, #1
+	adds r4, r4, #1
+	subs r3, r3, #1
+	cmp r3, r1
+	bne .LReadSramLoop
+.LReadSramDone:
+	pop {r4, r5}
+	pop {r0}
+	bx r0
+	.align 2, 0
+.LReadSramPool:
+	.4byte 0x04000204 @ REG_WAITCNT
+	.4byte 0x0000FFFC
+	.size ReadSram, . - ReadSram
 
-@ 079F1C..079F5C is decompiled as WriteSram(); see src/decompiled.json
+	.section .rom.00079F1C, "ax"
+	.syntax unified
+	.thumb
+	.thumb_func
+	.global WriteSram
+	.type WriteSram, %function
+WriteSram:
+	push {r4, r5, lr}
+	adds r5, r0, #0
+	adds r4, r1, #0
+	adds r3, r2, #0
+	ldr r2, .LWriteSramPool
+	ldrh r0, [r2]
+	ldr r1, .LWriteSramPool + 4
+	ands r0, r0, r1
+	movs r1, #3
+	orrs r0, r0, r1
+	strh r0, [r2]
+	subs r3, r3, #1
+	movs r0, #1
+	negs r0, r0
+	cmp r3, r0
+	beq .LWriteSramDone
+	adds r1, r0, #0
+.LWriteSramLoop:
+	ldrb r0, [r5]
+	strb r0, [r4]
+	adds r5, r5, #1
+	adds r4, r4, #1
+	subs r3, r3, #1
+	cmp r3, r1
+	bne .LWriteSramLoop
+.LWriteSramDone:
+	pop {r4, r5}
+	pop {r0}
+	bx r0
+	.align 2, 0
+.LWriteSramPool:
+	.4byte 0x04000204 @ REG_WAITCNT
+	.4byte 0x0000FFFC
+	.size WriteSram, . - WriteSram
 
-@ 079F5C..079FA8 is decompiled as VerifySram(); see src/decompiled.json
+	.section .rom.00079F5C, "ax"
+	.syntax unified
+	.thumb
+	.thumb_func
+	.global VerifySram
+	.type VerifySram, %function
+VerifySram:
+	push {r4, r5, lr}
+	adds r5, r0, #0
+	adds r4, r1, #0
+	adds r3, r2, #0
+	ldr r2, .LVerifySramPool
+	ldrh r0, [r2]
+	ldr r1, .LVerifySramPool + 4
+	ands r0, r0, r1
+	movs r1, #3
+	orrs r0, r0, r1
+	strh r0, [r2]
+	subs r3, r3, #1
+	movs r0, #1
+	negs r0, r0
+	cmp r3, r0
+	beq .LVerifySramEqual
+	adds r2, r0, #0
+.LVerifySramLoop:
+	ldrb r1, [r4]
+	ldrb r0, [r5]
+	adds r5, r5, #1
+	adds r4, r4, #1
+	cmp r1, r0
+	beq .LVerifySramNext
+	subs r0, r4, #1
+	b .LVerifySramDone
+	.align 2, 0
+.LVerifySramPool:
+	.4byte 0x04000204 @ REG_WAITCNT
+	.4byte 0x0000FFFC
+.LVerifySramNext:
+	subs r3, r3, #1
+	cmp r3, r2
+	bne .LVerifySramLoop
+.LVerifySramEqual:
+	movs r0, #0
+.LVerifySramDone:
+	pop {r4, r5}
+	pop {r1}
+	bx r1
+	.size VerifySram, . - VerifySram
+	.byte 0
+	.byte 0
 
 	.section .rom.00079FA8, "ax"
 	.syntax unified

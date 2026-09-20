@@ -15,7 +15,7 @@ error. The audit prints known, new, and resolved counts on one line.
 
 - `make compare` reproduces the Japanese ROM byte for byte.
 - `make english` succeeds and all 197 host tests pass.
-- The mechanical PRET audit reports **85 errors / 0 warnings / 17 documented
+- The mechanical PRET audit reports **77 errors / 0 warnings / 17 documented
   exceptions** on one summary line. Every exception is enumerated in the
   generated report.
 
@@ -67,6 +67,13 @@ agbcc snapshots order the index shift and record-offset addition differently
 and select a different left operand for the induction update. This removes the
 last four hard findings from `mapping.c` without presenting compiler steering
 as recovered source.
+
+`ReadSram`, `WriteSram`, and `VerifySram` no longer force the WAITCNT pointer
+and value into r2 and r0. These cartridge-bus library routines are retained as
+exact symbolic assembly, while their clean volatile-register implementations
+live in `src/nonmatching/sram_access.c`. The shared GBA register header now
+provides `REG_WAITCNT`. This removes all eight findings from `src/sram.c` and
+keeps the fixed hardware address visibly classified as platform I/O.
 
 ## Verified snapshot: renderer reference fallback, 2026-09-20
 
