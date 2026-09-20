@@ -470,3 +470,28 @@ explicit result local with `no_match` and `done` labels retains that layout;
 early-return forms cause agbcc to invert the condition and move the success
 block.  The labels represent the observed source control flow and do not add
 dead code or compiler-only behavior.
+
+### Load a global pointer slot before scaling an in-place index
+
+The actor byte accessors at 0x0800943C..0x080094B4 load the address of
+`gSecondaryRuntime` before multiplying the actor index by the 1672-byte record
+stride. Writing `actor += (u32)gSecondaryRuntime` directly lets agbcc defer the
+global load until after the multiplication and changes the instruction order.
+Initializing a real pointer-to-pointer local first, then scaling `actor`, then
+dereferencing that slot reproduces the ROM naturally.
+
+Keeping the running address in the `actor` parameter is also significant for
+signed-byte getters. It makes the load destination and base both r0, so agbcc
+uses `ldrb` followed by explicit sign-extension shifts. A separate base local
+usually keeps the address live in another register and permits `ldrsb` instead.
+Both sequences implement the same C type; the difference comes from register
+lifetime, not from a different compiler or a required register constraint.
+
+### Keep branch results distinct until their shared narrowing
+
+`EncodeHexDigitFromS16` loads its digit into a signed 32-bit local, copies that
+local to a separate result in each branch, applies the branch-specific ASCII
+offset, and narrows the shared result to `s8` at return. Collapsing the result
+into the input lets agbcc merge the branches into `+ '0'` followed by a
+conditional `+ 7`. The explicit result expresses the observed two-result
+source flow and reproduces the ROM without dead code or compiler hints.

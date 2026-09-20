@@ -611,7 +611,7 @@ extern void RuntimeSetFieldE4A(s32);
 extern void sub_0807253C(s32);
 extern void sub_08072710(s32);
 extern void *RuntimeGetActorPartRecord(s32, s32);
-extern void sub_0800945C(s32, s32);
+extern void RuntimeActorSetField234(u32 actor, s32 value);
 extern u8 gBattleFieldRectXOffset[];
 extern u8 gBattleFieldRectYOffset[];
 extern u8 gBattleFieldRectWidthOffset[];
@@ -944,7 +944,7 @@ AT("00012C68") s32 ScriptNativeSetBattleParty(u32 count, const s32 *args,
             party[3] = 100;
         }
     }
-    sub_0800945C(args[0], 1);
+    RuntimeActorSetField234(args[0], 1);
     return 1;
 }
 

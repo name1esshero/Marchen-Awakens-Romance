@@ -7768,7 +7768,7 @@ _08014E88:
 	lsls r0, r0, #24
 	asrs r0, r0, #24
 	movs r1, #1
-	bl sub_0800945C
+	bl RuntimeActorSetField234
 	.global _08014EA8
 _08014EA8:
 	ldr r0, [sp, #52]
@@ -12308,7 +12308,7 @@ sub_08016CA8:
 	.4byte 0x2000FF65
 	ldrsb r0, [r6, r0]
 	movs r1, #1
-	bl sub_0800945C
+	bl RuntimeActorSetField234
 	pop {r3}
 	mov r8, r3
 	pop {r4, r5, r6, r7}

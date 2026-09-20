@@ -2413,7 +2413,7 @@ _080192DA:
 	movs r0, #0
 	ldrsb r0, [r5, r0]
 	movs r1, #1
-	bl sub_0800945C
+	bl RuntimeActorSetField234
 	.global _08019368
 _08019368:
 	ldr r1, _080193A4
@@ -2552,7 +2552,7 @@ sub_08019414:
 	movs r0, #0
 	ldrsb r0, [r6, r0]
 	movs r1, #1
-	bl sub_0800945C
+	bl RuntimeActorSetField234
 	.global _0801945A
 _0801945A:
 	mov r0, r9
@@ -6806,7 +6806,7 @@ _0801B1A4:
 	movs r4, #0
 	ldrsh r0, [r5, r4]
 	movs r1, #1
-	bl sub_0800945C
+	bl RuntimeActorSetField234
 	ldr r0, _0801B204
 	ldr r1, [r0, #0]
 	movs r2, #0
@@ -12305,7 +12305,7 @@ _0801D5E8:
 	bl sub_080092B4
 	movs r0, #0
 	movs r1, #1
-	bl sub_0800945C
+	bl RuntimeActorSetField234
 	movs r0, #2
 	.2byte 0xF7F1
 	.byte 0x42

@@ -16282,7 +16282,7 @@ _08057676:
 	.global _08057686
 _08057686:
 	adds r0, r4, #0
-	bl sub_080577A0
+	bl EncodeHexDigitFromS16
 	mov r2, sp
 	adds r1, r2, r5
 	strb r0, [r1, #0]
@@ -16463,30 +16463,10 @@ _08057792:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_080577A0
-sub_080577A0:
-	push {lr}
-	movs r2, #0
-	ldrsh r1, [r0, r2]
-	lsls r0, r1, #16
-	lsrs r0, r0, #16
-	cmp r0, #9
-	bls _080577B4
-	adds r0, r1, #0
-	adds r0, #55
-	b _080577B8
-	.global _080577B4
-_080577B4:
-	adds r0, r1, #0
-	adds r0, #48
-	.global _080577B8
-_080577B8:
-	lsls r0, r0, #24
-	asrs r0, r0, #24
-	pop {r1}
-	bx r1
+@ 0577A0..0577C0 is decompiled as EncodeHexDigitFromS16(); see src/decompiled.json
+
+	.section .rom.000577C0, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb

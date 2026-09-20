@@ -2188,3 +2188,27 @@ an actor pointer local, initializing the result before the guards, and using
 the signed byte types naturally reproduce the ROM's r2/r3 and `ldrsb` layout.
 The action's higher-level meaning remains unproven, so the function and fields
 use neutral state/update terminology.
+
+## Actor byte accessors and hexadecimal digit helper
+
+Five functions totaling 152 bytes now compile byte-identically from ordinary
+C. `RuntimeActorGetField234`, `RuntimeActorSetField234`,
+`RuntimeActorGetField34C`, and `RuntimeActorSetField34C` cover two signed-byte
+fields in each 1672-byte secondary-runtime actor record. The +0x34C getter at
+0x08009478 had no symbol at all: its complete 32-byte body was previously
+stored as eight anonymous `.4byte` values between the two setters. All known
+raw callers now use the relocatable accessor names.
+
+The matching source takes the address of the `gSecondaryRuntime` pointer slot
+before scaling the actor index, then reuses the index as the running address.
+This gives the original load order and explains the +0x234 getter's
+`ldrb`-plus-sign-extension sequence without register pinning. The previously
+documented idea that this sequence indicated a different compiler path was
+incorrect; it is an ordinary lifetime-dependent agbcc choice.
+
+`EncodeHexDigitFromS16` at 0x080577A0 converts one signed-halfword digit to an
+uppercase hexadecimal character. Keeping the input and branch result as two
+locals prevents agbcc from folding the branches into a base addition plus
+seven, reproducing the ROM's separate `'0'` and `'A' - 10` paths. These five
+functions use named globals and offsets, contain no inline assembly or forced
+registers, pass `make compare`, and do not add any PRET audit violations.

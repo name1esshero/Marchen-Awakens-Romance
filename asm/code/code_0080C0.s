@@ -576,7 +576,7 @@ _08008548:
 _08008552:
 	mov r0, r8
 	movs r1, #1
-	bl sub_0800945C
+	bl RuntimeActorSetField234
 	add sp, #20
 	pop {r3, r4, r5}
 	mov r8, r3
@@ -2635,78 +2635,25 @@ _0800942C:
 	pop {r0}
 	bx r0
 
-	.thumb_func
-	.thumb
-	.global sub_0800943C
-sub_0800943C:
-	ldr r2, _08009458
-	movs r1, #209
-	lsls r1, r1, #3
-	muls r0, r1
-	ldr r1, [r2, #0]
-	adds r0, r0, r1
-	movs r1, #141
-	lsls r1, r1, #2
-	adds r0, r0, r1
-	ldrb r0, [r0, #0]
-	lsls r0, r0, #24
-	asrs r0, r0, #24
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _08009458
-_08009458:
-	.4byte 0x03004020  @ IWRAM+0x4020
+@ 00943C..00945C is decompiled as RuntimeActorGetField234(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0800945C
-sub_0800945C:
-	ldr r3, _08009474
-	movs r2, #209
-	lsls r2, r2, #3
-	muls r0, r2
-	ldr r2, [r3, #0]
-	adds r0, r0, r2
-	movs r2, #141
-	lsls r2, r2, #2
-	adds r0, r0, r2
-	strb r1, [r0, #0]
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _08009474
-_08009474:
-	.4byte 0x03004020  @ IWRAM+0x4020
-	.4byte 0x21D14A06
-	.4byte 0x434800C9
-	.4byte 0x18406811
-	.4byte 0x008921D3
-	.4byte 0x78001840
-	.4byte 0x16000600
-	.4byte 0x00004770
-	.4byte 0x03004020
+	.section .rom.0000945C, "ax"
+	.syntax unified
 
-	.thumb_func
-	.thumb
-	.global sub_08009498
-sub_08009498:
-	ldr r3, _080094B0
-	movs r2, #209
-	lsls r2, r2, #3
-	muls r0, r2
-	ldr r2, [r3, #0]
-	adds r0, r0, r2
-	movs r2, #211
-	lsls r2, r2, #2
-	adds r0, r0, r2
-	strb r1, [r0, #0]
-	bx lr
-	.byte 0x00
-	.byte 0x00
-	.global _080094B0
-_080094B0:
-	.4byte 0x03004020  @ IWRAM+0x4020
+@ 00945C..009478 is decompiled as RuntimeActorSetField234(); see src/decompiled.json
+
+	.section .rom.00009478, "ax"
+	.syntax unified
+
+@ 009478..009498 is decompiled as RuntimeActorGetField34C(); see src/decompiled.json
+
+	.section .rom.00009498, "ax"
+	.syntax unified
+
+@ 009498..0094B4 is decompiled as RuntimeActorSetField34C(); see src/decompiled.json
+
+	.section .rom.000094B4, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -7016,10 +6963,10 @@ _0800B9E0:
 	bl GameStateSetField424C50
 	movs r0, #0
 	movs r1, #1
-	bl sub_0800945C
+	bl RuntimeActorSetField234
 	movs r0, #1
 	movs r1, #1
-	bl sub_0800945C
+	bl RuntimeActorSetField234
 	ldr r1, _0800BB10
 	movs r0, #0
 	.2byte 0xF070
@@ -8668,7 +8615,7 @@ _0800C532:
 	lsls r0, r0, #24
 	lsrs r0, r0, #24
 	movs r1, #1
-	bl sub_0800945C
+	bl RuntimeActorSetField234
 	.2byte 0xF7F8
 	.4byte 0x0600FBB1
 	lsrs r0, r0, #24
@@ -9026,7 +8973,7 @@ _0800C78E:
 _0800C7B0:
 	adds r0, r1, #0
 	movs r1, #1
-	bl sub_0800945C
+	bl RuntimeActorSetField234
 	.2byte 0xF7F8
 	.byte 0x82
 	.byte 0xFA
@@ -9039,7 +8986,7 @@ _0800C7B0:
 _0800C7C6:
 	adds r0, r1, #0
 	movs r1, #1
-	bl sub_08009498
+	bl RuntimeActorSetField34C
 	mov r5, r8
 
 	.thumb_func
@@ -9231,7 +9178,7 @@ _0800C8C4:
 	lsls r0, r0, #24
 	lsrs r0, r0, #24
 	movs r1, #1
-	bl sub_0800945C
+	bl RuntimeActorSetField234
 	mov r1, r10
 	adds r1, #182
 	movs r0, #1
@@ -9276,7 +9223,7 @@ _0800C8C4:
 	.4byte 0x0600F9CD
 	lsrs r0, r0, #24
 	movs r1, #1
-	bl sub_0800945C
+	bl RuntimeActorSetField234
 	ldr r0, _0800CB4C
 	strh r0, [r7, #14]
 
@@ -9524,7 +9471,7 @@ _0800CAAA:
 _0800CACC:
 	adds r0, r1, #0
 	movs r1, #1
-	bl sub_0800945C
+	bl RuntimeActorSetField234
 	.2byte 0xF7F8
 	.byte 0xF4
 	.byte 0xF8
@@ -9537,7 +9484,7 @@ _0800CACC:
 _0800CAE2:
 	adds r0, r1, #0
 	movs r1, #1
-	bl sub_08009498
+	bl RuntimeActorSetField34C
 	movs r0, #0
 	mov r5, r8
 	strh r0, [r5, #16]

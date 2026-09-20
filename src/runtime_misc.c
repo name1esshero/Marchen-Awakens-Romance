@@ -23,6 +23,26 @@ extern u8 gMapGenerationRootOffset[];
 extern void CpuFill(void *destination,u32 size,u32 value);
 extern void CpuCopy(void *destination,const void *source,u32 size);
 
+/** Convert one signed-halfword digit value to an uppercase hexadecimal
+ * character. Values above nine use the A-F offset; callers are responsible
+ * for supplying a valid hexadecimal digit. */
+AT("000577A0")
+s32 EncodeHexDigitFromS16(const s16 *digitAddress)
+{
+    s32 digit;
+    s32 character;
+
+    digit = *digitAddress;
+    if ((u16)digit > 9) {
+        character = digit;
+        character += 'A' - 10;
+    } else {
+        character = digit;
+        character += '0';
+    }
+    return (s8)character;
+}
+
 /** @return The game state's +0x38C0 buffer, used by the battle runtime
  * (see BattleRuntimeSetArena() in simple_adapters.c). */
 AT("00070090") void *GameStateGetBuffer38C0(void)

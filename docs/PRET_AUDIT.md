@@ -20,6 +20,12 @@ code-generation difference documented in `COMPILER_HINT_CLEANUP.md`. This
 follows the required fallback in `PRET_STANDARDS.md` without claiming that the
 original source used compiler hints.
 
+The following clean-C pass added five more functions without increasing the
+112-error backlog: four actor byte-field accessors at 0x0800943C..0x080094B4
+and `EncodeHexDigitFromS16` at 0x080577A0. One accessor had previously been
+misclassified as anonymous word data. The Japanese ROM remains byte-identical,
+the English ROM builds, and all 175 host tests pass after this pass.
+
 ## Verified snapshot: object-cleanup batch, 2026-09-15
 
 - `make compare` reproduces the Japanese ROM byte for byte.

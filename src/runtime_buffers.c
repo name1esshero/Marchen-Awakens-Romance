@@ -33,6 +33,8 @@
 #define ACTOR_PART_GROUP_STRIDE 104
 #define ACTOR_PART_TABLE_BASE_OFFSET 0x120
 #define ACTOR_PART_VALUES_OFFSET 0x538
+#define ACTOR_FIELD_234_OFFSET 0x234
+#define ACTOR_FIELD_34C_OFFSET 0x34C
 
 extern void CpuFill(void *destination, u32 size, u32 value);
 extern u8 *RuntimeGetActorRecord(u32 actor, u32 part);
@@ -95,6 +97,54 @@ AT("00009070") u32 RuntimeGetFieldEB2(void) { return *(u8 *)(gSecondaryRuntime+0
 AT("00009084") void RuntimeSetFieldEB3(u32 v) { *(u8 *)(gSecondaryRuntime+0xEB3)=v; }
 /** @return The secondary runtime's +0xEB3 byte field. */
 AT("00009098") u32 RuntimeGetFieldEB3(void) { return *(u8 *)(gSecondaryRuntime+0xEB3); }
+
+/** @return An actor record's signed byte at +0x234. */
+AT("0000943C")
+s32 RuntimeActorGetField234(u32 actor)
+{
+    u8 **runtime = &gSecondaryRuntime;
+
+    actor *= ACTOR_RECORD_SIZE;
+    actor += (u32)*runtime;
+    actor += ACTOR_FIELD_234_OFFSET;
+    return *(s8 *)actor;
+}
+
+/** Set an actor record's byte at +0x234. */
+AT("0000945C")
+void RuntimeActorSetField234(u32 actor, s32 value)
+{
+    u8 **runtime = &gSecondaryRuntime;
+
+    actor *= ACTOR_RECORD_SIZE;
+    actor += (u32)*runtime;
+    actor += ACTOR_FIELD_234_OFFSET;
+    *(s8 *)actor = value;
+}
+
+/** @return An actor record's signed byte at +0x34C. */
+AT("00009478")
+s32 RuntimeActorGetField34C(u32 actor)
+{
+    u8 **runtime = &gSecondaryRuntime;
+
+    actor *= ACTOR_RECORD_SIZE;
+    actor += (u32)*runtime;
+    actor += ACTOR_FIELD_34C_OFFSET;
+    return *(s8 *)actor;
+}
+
+/** Set an actor record's byte at +0x34C. */
+AT("00009498")
+void RuntimeActorSetField34C(u32 actor, s32 value)
+{
+    u8 **runtime = &gSecondaryRuntime;
+
+    actor *= ACTOR_RECORD_SIZE;
+    actor += (u32)*runtime;
+    actor += ACTOR_FIELD_34C_OFFSET;
+    *(s8 *)actor = value;
+}
 
 /** Set the secondary runtime's +0xEAE byte field. */
 AT("000098F8") void RuntimeSetFieldEAE(s32 v) { *(s8 *)(gSecondaryRuntime+0xEAE)=v; }

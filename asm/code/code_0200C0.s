@@ -6551,7 +6551,7 @@ _08022A42:
 _08022A52:
 	movs r2, #0
 	ldrsh r0, [r4, r2]
-	bl sub_0800943C
+	bl RuntimeActorGetField234
 	cmp r0, #0
 	beq _08022A8E
 	movs r3, #0
@@ -6575,7 +6575,7 @@ _08022A52:
 	movs r1, #0
 	ldrsh r0, [r4, r1]
 	movs r1, #0
-	bl sub_0800945C
+	bl RuntimeActorSetField234
 	b _08022AA2
 	.global _08022A8E
 _08022A8E:

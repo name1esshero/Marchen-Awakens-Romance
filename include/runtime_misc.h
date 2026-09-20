@@ -4,6 +4,8 @@
 #include "gba/types.h"
 #include "battle_character.h"
 
+s32 EncodeHexDigitFromS16(const s16 *digit);
+
 struct InputRepeatState {
     u16 previous;
     u16 mask;

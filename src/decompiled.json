@@ -1230,6 +1230,30 @@
     "file": "src/runtime_buffers.c"
   },
   {
+    "addr": "0800943C",
+    "size": 32,
+    "name": "RuntimeActorGetField234",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "0800945C",
+    "size": 28,
+    "name": "RuntimeActorSetField234",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009478",
+    "size": 32,
+    "name": "RuntimeActorGetField34C",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009498",
+    "size": 28,
+    "name": "RuntimeActorSetField34C",
+    "file": "src/runtime_buffers.c"
+  },
+  {
     "addr": "08009508",
     "size": 24,
     "name": "RuntimeGetPointerE3C",
@@ -4935,6 +4959,12 @@
     "addr": "08057514",
     "size": 40,
     "name": "GameStateClearRecord426A",
+    "file": "src/runtime_misc.c"
+  },
+  {
+    "addr": "080577A0",
+    "size": 32,
+    "name": "EncodeHexDigitFromS16",
     "file": "src/runtime_misc.c"
   },
   {
