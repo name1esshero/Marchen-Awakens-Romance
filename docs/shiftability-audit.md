@@ -10,18 +10,18 @@ As of 2026-09-20:
 
 | Scope | Relocatable ROM references | No raw software addresses |
 | --- | ---: | ---: |
-| Matching build | 106 / 131 (80.92%) | 96 / 131 (73.28%) |
+| Matching build | 111 / 131 (84.73%) | 101 / 131 (77.10%) |
 | English-only C | 3 / 3 (100.00%) | 3 / 3 (100.00%) |
 | Nonmatching candidates | 8 / 9 (88.89%) | 8 / 9 (88.89%) |
-| All tracked C | 117 / 143 (81.82%) | 107 / 143 (74.83%) |
+| All tracked C | 122 / 143 (85.31%) | 112 / 143 (78.32%) |
 
-The matching manifest gives a conservative lower bound of 1,227 / 1,775
-ranges (69.13%) and 187,155 / 229,099 bytes (81.69%) with no detected software
+The matching manifest gives a conservative lower bound of 1,336 / 1,813
+ranges (73.69%) and 190,931 / 229,639 bytes (83.14%) with no detected software
 address dependency. A single finding currently marks every manifest range from
 the containing source file, so this deliberately understates progress in large
 files.
 
-The largest concentration is `src/game_tables.c`: 455 of the 500 ROM findings
+The largest concentration is `src/game_tables.c`: 455 of the 491 ROM findings
 across all tracked C are named handlers or data objects whose linker symbols
 are still absolute `.set` aliases. They are more readable than raw pointer
 literals, but they will not follow code or data when its address moves. This is

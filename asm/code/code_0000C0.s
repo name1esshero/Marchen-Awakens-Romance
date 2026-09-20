@@ -2680,7 +2680,7 @@ _080019B8:
 	.4byte 0x000032F8
 	.global _080019BC
 _080019BC:
-	.4byte 0x08086A14  @ ROM+0x86A14
+	.4byte gDefaultArchiveName
 	.global _080019C0
 _080019C0:
 	.4byte 0x081C0920  @ ROM+0x1C0920
@@ -2692,19 +2692,19 @@ _080019C8:
 	.4byte 0x000032E4
 	.global _080019CC
 _080019CC:
-	.4byte 0x08086A1C  @ ROM+0x86A1C
+	.4byte gFontResourceName
 	.global _080019D0
 _080019D0:
 	.4byte 0x00002C38
 	.global _080019D4
 _080019D4:
-	.4byte 0x08086A28  @ ROM+0x86A28
+	.4byte gSystemNcdResourceName
 	.global _080019D8
 _080019D8:
-	.4byte 0x08086A34  @ ROM+0x86A34
+	.4byte gEffectNcdResourceName
 	.global _080019DC
 _080019DC:
-	.4byte 0x08086A40  @ ROM+0x86A40
+	.4byte gCharacterNcdResourceName
 	.global _080019E0
 _080019E0:
 	.4byte 0x03006118  @ IWRAM+0x6118
@@ -9932,7 +9932,7 @@ _08005354:
 	.4byte 0x00007FFF
 	.global _08005358
 _08005358:
-	.4byte 0x08086A64  @ ROM+0x86A64
+	.4byte gSceneArchiveName
 	.global _0800535C
 _0800535C:
 	.4byte 0x00003F2C

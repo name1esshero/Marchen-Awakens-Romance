@@ -92,4 +92,29 @@ struct ScriptNativeCommand
 extern const struct ScriptNativeCommand
     gScriptNativeCommands[SCRIPT_NATIVE_COMMAND_COUNT];
 
+s32 ScriptNativeDummy(void);
+s32 ScriptNativeStartTask05378(u32 count, const s32 *args, s32 *result);
+s32 ScriptNativeStartTask053E4(u32 count, const s32 *args, s32 *result);
+s32 ScriptNativeTestGameFlag(u32 count, const s32 *args, s32 *result);
+s32 ScriptNativeSetGameValue(u32 count, const s32 *args, s32 *result);
+s32 ScriptNativeGetStatePointer(u32 count, const s32 *args, s32 *result);
+s32 ScriptNativeSetStatePointer(u32 count, const s32 *args, s32 *result);
+s32 ScriptNativeAdvanceStatePointer(u32 count, const s32 *args, s32 *result);
+s32 ScriptNativeLookupResource(u32 count, const s32 *args, s32 *result);
+s32 ScriptNativeFindNamedResource(u32 count, const s32 *args, s32 *result);
+s32 ScriptNativeStartTask05530(u32 count, const s32 *args, s32 *result);
+s32 ScriptNativeSetCrtFade(u32 count, const s32 *args, s32 *result);
+s32 ScriptNativeGetCrtFade(u32 count, const s32 *args, s32 *result);
+s32 ScriptNativeGetSpriteRuntime(u32 count, const s32 *args, s32 *result);
+s32 ScriptNativeSetRuntimeCoordinate(u32 count, const u32 *args, s32 *result);
+s32 ScriptNativeGetRuntimeCoordinate(u32 count, const u32 *args, s32 *result);
+s32 ScriptNativeSelectSceneValue(u32 count, const s32 *args, s32 *result);
+s32 ScriptNativeStartIndexedSong(u32 count, const s32 *args, s32 *result);
+s32 ScriptNativeStartTask056AC(u32 count, const s32 *args, s32 *result);
+s32 ScriptNativeStartTask057C0(u32 count, const s32 *args, s32 *result);
+s32 ScriptNativeSetSoundPlayerVolume(u32 count, const s32 *args, s32 *result);
+s32 ScriptNativeStartTask05848(u32 count, const s32 *args, s32 *result);
+s32 ScriptNativeStopTrackedSong(u32 count, const s32 *args, s32 *result);
+s32 ScriptNativeResetNineChannels(u32 count, const s32 *args, s32 *result);
+
 #endif /* SCRIPT_H */

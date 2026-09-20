@@ -7,6 +7,7 @@
 #include "game_state.h"
 #include "runtime_accessors.h"
 #include "runtime_misc.h"
+#include "script.h"
 #include "sound.h"
 #include "task_constructors.h"
 

@@ -7914,6 +7914,216 @@
     "file": "src/table_accessors.c"
   },
   {
+    "addr": "08086A14",
+    "size": 8,
+    "name": "gDefaultArchiveName",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086A1C",
+    "size": 12,
+    "name": "gFontResourceName",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086A28",
+    "size": 12,
+    "name": "gSystemNcdResourceName",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086A34",
+    "size": 12,
+    "name": "gEffectNcdResourceName",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086A40",
+    "size": 8,
+    "name": "gCharacterNcdResourceName",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086A48",
+    "size": 8,
+    "name": "gSystemMountName",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086A50",
+    "size": 4,
+    "name": "gMainMountName",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086A54",
+    "size": 8,
+    "name": "gMainArchiveName",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086A5C",
+    "size": 8,
+    "name": "gMapArchiveKmpExtension",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086A64",
+    "size": 8,
+    "name": "gSceneArchiveName",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086A6C",
+    "size": 8,
+    "name": "gSceneNcdExtension",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086A74",
+    "size": 12,
+    "name": "gScriptEngineNameBgmPlaySync",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086A80",
+    "size": 8,
+    "name": "gScriptEngineNameBgmVol",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086A88",
+    "size": 12,
+    "name": "gScriptEngineNameBgmFadeSync",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086A94",
+    "size": 8,
+    "name": "gScriptEngineNameBgmFade",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086A9C",
+    "size": 12,
+    "name": "gScriptEngineNameBgmStopAll",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086AA8",
+    "size": 8,
+    "name": "gScriptEngineNameBgmStop",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086AB0",
+    "size": 8,
+    "name": "gScriptEngineNameBgmPlay",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086AB8",
+    "size": 8,
+    "name": "gScriptEngineNameSePlay",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086AC0",
+    "size": 12,
+    "name": "gScriptEngineNameGetCrtRgb",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086ACC",
+    "size": 12,
+    "name": "gScriptEngineNameSetCrtRgb",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086AD8",
+    "size": 12,
+    "name": "gScriptEngineNameGetCrtFade",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086AE4",
+    "size": 12,
+    "name": "gScriptEngineNameSetCrtFade",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086AF0",
+    "size": 12,
+    "name": "gScriptEngineNameCrtFadeSync",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086AFC",
+    "size": 8,
+    "name": "gScriptEngineNameCrtFade",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086B04",
+    "size": 12,
+    "name": "gScriptEngineNameGetAobNo",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086B10",
+    "size": 12,
+    "name": "gScriptEngineNameGetNcdNo",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086B1C",
+    "size": 8,
+    "name": "gScriptEngineNameAddVar",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086B24",
+    "size": 8,
+    "name": "gScriptEngineNameSetVar",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086B2C",
+    "size": 8,
+    "name": "gScriptEngineNameGetVar",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086B34",
+    "size": 8,
+    "name": "gScriptEngineNameSetBool",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086B3C",
+    "size": 8,
+    "name": "gScriptEngineNameGetBool",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086B44",
+    "size": 8,
+    "name": "gScriptEngineNameWait",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086B4C",
+    "size": 4,
+    "name": "gScriptEngineNamePad",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "08086B50",
+    "size": 8,
+    "name": "gScriptEngineNameDummy",
+    "file": "src/script_opcode_table.c"
+  },
+  {
     "addr": "08088460",
     "size": 336,
     "name": "MenuTextConstants",
@@ -10290,6 +10500,18 @@
     "file": "src/song_headers.c"
   },
   {
+    "addr": "081AC698",
+    "size": 12,
+    "name": "gScriptResourceDefaultValue",
+    "file": "src/script_opcode_table.c"
+  },
+  {
+    "addr": "081AC6A4",
+    "size": 4,
+    "name": "gScriptDecimalFormat",
+    "file": "src/script_opcode_table.c"
+  },
+  {
     "addr": "081AC6A8",
     "size": 8,
     "name": "gScriptBuiltinNameResurn",
@@ -10438,6 +10660,12 @@
     "size": 36,
     "name": "gTileRemainderMasks",
     "file": "src/math_tables.c"
+  },
+  {
+    "addr": "081ACB7C",
+    "size": 200,
+    "name": "gScriptEngineFunctions",
+    "file": "src/script_opcode_table.c"
   },
   {
     "addr": "081ACC44",

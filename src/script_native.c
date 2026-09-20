@@ -6,14 +6,13 @@
  * abs(INT_MIN) keeps 0x80000000, and character strings truncate to two bytes.
  */
 #include "script_vm.h"
+#include "script_bytecode.h"
 #include "random.h"
 #include "rom_section.h"
-extern const u8 gScriptEmptyText[];
 extern const char gScriptDecimalFormat[];
 #define VM gScriptContext
-/* Verified ROM string data; aliased rather than AT()-pinned because the
- * literal-pool region they live in is shared with other, unrelated code. */
-#define sText_Empty gScriptEmptyText
+/* Verified ROM string data owned by the script resource table. */
+#define sText_Empty (gScriptResourceDefaultValue + 8)
 #define sText_PercentD gScriptDecimalFormat
 extern void *HeapAlloc(void *,u32);
 extern u32 __umodsi3(u32 dividend,u32 divisor);

@@ -1,25 +1,7 @@
 .global gConsumableNoneDescription
 .set gConsumableNoneDescription, 0x081BE80E
-.global gMainArchiveName
-.set gMainArchiveName, 0x08086A54
-.global gSystemMountName
-.set gSystemMountName, 0x08086A48
-.global gMainMountName
-.set gMainMountName, 0x08086A50
-.global gMapArchiveKmpExtension
-.set gMapArchiveKmpExtension, 0x08086A5C
 .global gScriptKmpExtension
 .set gScriptKmpExtension, 0x08086D88
-.global gSceneNcdExtension
-.set gSceneNcdExtension, 0x08086A6C
-.global gScriptEmptyText
-.set gScriptEmptyText, 0x081AC6A0
-.global gScriptDecimalFormat
-.set gScriptDecimalFormat, 0x081AC6A4
-.global gScriptResourceEntries
-.set gScriptResourceEntries, 0x081ACB7C
-.global gScriptResourceDefaultValue
-.set gScriptResourceDefaultValue, 0x081AC698
 .global gBattleNamedTaskAResourceName
 .set gBattleNamedTaskAResourceName, 0x080877A8
 .global gBattleNamedTaskBResourceName

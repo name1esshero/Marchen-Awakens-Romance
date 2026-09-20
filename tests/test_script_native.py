@@ -21,9 +21,9 @@ class ScriptNativeTests(unittest.TestCase):
 #include <stdarg.h>
 #include <string.h>
 #include <stdlib.h>
-/* The ROM resolves these through asm/game_table_handlers.s; the host
- * build supplies the literals they alias. */
-const u8 gScriptEmptyText[]="";
+/* The production objects live in script_opcode_table.c. This focused host
+ * build supplies only the data referenced by script_native.c. */
+const u8 gScriptResourceDefaultValue[12]={0};
 const char gScriptDecimalFormat[]="%d";
 struct ScriptContext context,*hostVm=&context;
 struct ScriptExecutionState state;

@@ -45,6 +45,8 @@ struct ScriptResourceEntry {
 };
 
 extern const struct ScriptResourceEntry gScriptBuiltinFunctions[];
+extern const struct ScriptResourceEntry gScriptEngineFunctions[];
+extern const u8 gScriptResourceDefaultValue[12];
 
 extern struct ScriptBytecodeRoot *gScriptBytecodeRoot;
 #define gScriptBytecodeVm (gScriptBytecodeRoot->context->vm)

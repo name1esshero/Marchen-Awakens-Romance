@@ -4,19 +4,11 @@
 
 #include "rom_section.h"
 
-extern const struct ScriptResourceEntry gScriptResourceEntries[];
-extern const u8 gScriptResourceDefaultValue[];
 struct ScriptResourceSlot {
     u32 referenceCount;
     void *allocation;
 };
 
-/* 24-entry {name, handler} table of core VM/engine commands (dummy, Pad,
- * Wait, GetBool/SetBool, GetVar/SetVar/AddVar, CrtFade family, Se/Bgm
- * playback) verified against ROM data; not yet reconstructed as a matching
- * C array, so it is aliased rather than re-typed. */
-#define gScriptEngineFunctions \
-    gScriptResourceEntries
 /* Same {name, handler} layout as gScriptNativeCommands, reused here under
  * ScriptResourceEntry's generic type -- the THUMB-bit-set handler addresses
  * verified against decompiled.json in game_tables.c apply here too. */

@@ -577,10 +577,9 @@ _081AC670:
 	.4byte 0x0000746C
 	.4byte 0x6E726373
 	.4byte 0x00656D61
-	.4byte 0x00000000
-	.4byte 0x00000000
-	.4byte 0x00000000
-	.4byte 0x00006425
+
+@ 1AC698..1AC6A8 is decompiled as gScriptResourceDefaultValue and
+@ gScriptDecimalFormat; see src/script_opcode_table.c and src/decompiled.json.
 
 @ 1AC6A8..1AC6B0 is decompiled as gScriptBuiltinNameResurn(); see src/decompiled.json
 
@@ -871,58 +870,8 @@ _081ACB3C:
 @ 1ACB58..1ACB7C is decompiled as gTileRemainderMasks();
 @ see src/decompiled.json
 
-	.section .rom.001ACB7C, "ax"
-	.syntax unified
-	.4byte 0x08086B50
-	.4byte 0x08005B2D
-	.4byte 0x08086B4C
-	.4byte 0x08005B35
-	.4byte 0x08086B44
-	.4byte 0x08005B45
-	.4byte 0x08086B3C
-	.4byte 0x08005B59
-	.4byte 0x08086B34
-	.4byte 0x08005B6D
-	.4byte 0x08086B2C
-	.4byte 0x08005B7D
-	.4byte 0x08086B24
-	.4byte 0x08005B91
-	.4byte 0x08086B1C
-	.4byte 0x08005BA1
-	.4byte 0x08086B10
-	.4byte 0x08005BCD
-	.4byte 0x08086B04
-	.4byte 0x08005BE1
-	.4byte 0x08086AFC
-	.4byte 0x08005C15
-	.4byte 0x08086AF0
-	.4byte ScriptNativeSetCrtFade + 1
-	.4byte 0x08086AE4
-	.4byte ScriptNativeGetCrtFade + 1
-	.4byte 0x08086AD8
-	.4byte 0x08005C75
-	.4byte 0x08086ACC
-	.4byte 0x08005C89
-	.4byte 0x08086AC0
-	.4byte 0x08005CDD
-	.4byte 0x08086AB8
-	.4byte 0x08005D51
-	.4byte 0x08086AB0
-	.4byte 0x08005D25
-	.4byte 0x08086AA8
-	.4byte 0x08005E51
-	.4byte 0x08086A9C
-	.4byte 0x08005E65
-	.4byte 0x08086A94
-	.4byte 0x08005D79
-	.4byte 0x08086A88
-	.4byte 0x08005D99
-	.4byte 0x08086A80
-	.4byte 0x08005DAD
-	.4byte 0x08086A74
-	.4byte 0x08005E3D
-	.4byte 0x00000000
-	.4byte 0x00000000
+@ 1ACB7C..1ACC44 is decompiled as gScriptEngineFunctions(); see
+@ src/script_opcode_table.c and src/decompiled.json.
 
 @ 1ACC44..1ACC50 is decompiled as gDynamicSoundPlayerOrder(); see src/decompiled.json
 

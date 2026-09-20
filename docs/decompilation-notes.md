@@ -2276,3 +2276,27 @@ The native table supplies one more independent confirmation: command 109 is
 named `ItemInit` and points at 0x08012D64, which clears all 256 halfwords at
 `0x31D0`. Its C symbol is therefore `ScriptNativeClearConsumableInventory`;
 the earlier map-oriented name and comment were incorrect.
+
+## Script engine strings and command registry (2026-09-20)
+
+The apparent instructions at ROM 0x08086A14..0x08086B58 were a 324-byte pool
+of NFP archive names, resource names, filename extensions, and script-engine
+command names. The adjacent registry at 0x081ACB7C..0x081ACC44 is a typed array
+of 24 `{ name, THUMB handler }` entries followed by a null terminator. All 24
+handlers were already matching C functions. Both regions now compile from
+named C objects in `src/script_opcode_table.c`; callers use the relocatable
+`gScriptEngineFunctions` symbol, and the obsolete fixed aliases are gone.
+
+The 12-byte zero default record at 0x081AC698 and four-byte decimal format at
+0x081AC6A4 are also C data. Together these changes move 540 confirmed data
+bytes out of disassembly while preserving every byte of the Japanese ROM.
+They also improve the matching-source shiftability lower bound from 1,227 to
+1,336 manifest ranges.
+
+The audit found further likely arrays that remain in assembly pending complete
+ownership and layout evidence: the script chunk/tag pool at
+0x081AC650..0x081AC698 and the resource-name pool beginning at 0x080880C0.
+Some pointers from surrounding runtime tables address their interiors, so
+those ranges must be converted as complete owned structures rather than
+deleted as isolated strings. Jump tables and literal pools remain attached to
+their owning functions and are not counted as standalone data arrays.

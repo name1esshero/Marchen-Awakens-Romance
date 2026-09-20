@@ -8,6 +8,46 @@
 extern s32 ScriptCmdConcatStrings(void);
 extern s32 ScriptCmdCallNative(void);
 
+/* Runtime archive and resource names. This whole ASCII block was previously
+ * misidentified as Thumb instructions in code_0800C0.s. */
+AT("00086A14") const char gDefaultArchiveName[8] = "MAR.NFP";
+AT("00086A1C") const char gFontResourceName[12] = "FONT.NFT";
+AT("00086A28") const char gSystemNcdResourceName[12] = "SYSTEM.NCD";
+AT("00086A34") const char gEffectNcdResourceName[12] = "EFFECT.NCD";
+AT("00086A40") const char gCharacterNcdResourceName[8] = "CHR.NCD";
+AT("00086A48") const char gSystemMountName[8] = "SYSTEM";
+AT("00086A50") const char gMainMountName[4] = "MAR";
+AT("00086A54") const char gMainArchiveName[8] = "MAR.NFP";
+AT("00086A5C") const char gMapArchiveKmpExtension[8] = ".KMP";
+AT("00086A64") const char gSceneArchiveName[8] = "MAR.NFP";
+AT("00086A6C") const char gSceneNcdExtension[8] = ".NCD";
+
+/* Names for the engine-provided native commands. */
+AT("00086A74") const char gScriptEngineNameBgmPlaySync[12] = "BgmPlaySync";
+AT("00086A80") const char gScriptEngineNameBgmVol[8] = "BgmVol";
+AT("00086A88") const char gScriptEngineNameBgmFadeSync[12] = "BgmFadeSync";
+AT("00086A94") const char gScriptEngineNameBgmFade[8] = "BgmFade";
+AT("00086A9C") const char gScriptEngineNameBgmStopAll[12] = "BgmStopAll";
+AT("00086AA8") const char gScriptEngineNameBgmStop[8] = "BgmStop";
+AT("00086AB0") const char gScriptEngineNameBgmPlay[8] = "BgmPlay";
+AT("00086AB8") const char gScriptEngineNameSePlay[8] = "SePlay";
+AT("00086AC0") const char gScriptEngineNameGetCrtRgb[12] = "GetCrtRgb";
+AT("00086ACC") const char gScriptEngineNameSetCrtRgb[12] = "SetCrtRgb";
+AT("00086AD8") const char gScriptEngineNameGetCrtFade[12] = "GetCrtFade";
+AT("00086AE4") const char gScriptEngineNameSetCrtFade[12] = "SetCrtFade";
+AT("00086AF0") const char gScriptEngineNameCrtFadeSync[12] = "CrtFadeSync";
+AT("00086AFC") const char gScriptEngineNameCrtFade[8] = "CrtFade";
+AT("00086B04") const char gScriptEngineNameGetAobNo[12] = "GetAobNo";
+AT("00086B10") const char gScriptEngineNameGetNcdNo[12] = "GetNcdNo";
+AT("00086B1C") const char gScriptEngineNameAddVar[8] = "AddVar";
+AT("00086B24") const char gScriptEngineNameSetVar[8] = "SetVar";
+AT("00086B2C") const char gScriptEngineNameGetVar[8] = "GetVar";
+AT("00086B34") const char gScriptEngineNameSetBool[8] = "SetBool";
+AT("00086B3C") const char gScriptEngineNameGetBool[8] = "GetBool";
+AT("00086B44") const char gScriptEngineNameWait[8] = "Wait";
+AT("00086B4C") const char gScriptEngineNamePad[4] = "Pad";
+AT("00086B50") const char gScriptEngineNameDummy[8] = "dummy";
+
 AT("001AC6A8") const char gScriptBuiltinNameResurn[8] = "resurn";
 AT("001AC6B0") const char gScriptBuiltinNameExit[8] = "exit";
 AT("001AC6B8") const char gScriptBuiltinNameCall[8] = "call";
@@ -28,6 +68,12 @@ AT("001AC71C") const char gScriptBuiltinNameChr[4] = "chr";
 AT("001AC720") const char gScriptBuiltinNameAsc[4] = "asc";
 AT("001AC724") const char gScriptBuiltinNameAbs[4] = "abs";
 
+/* Empty resource fallback followed by the integer formatting string used by
+ * the native string-conversion command. The empty string begins at byte 8 of
+ * the fallback record. */
+AT("001AC698") const u8 gScriptResourceDefaultValue[12] = {0};
+AT("001AC6A4") const char gScriptDecimalFormat[4] = "%d";
+
 extern s32 ScriptNativeAbs(void);
 extern s32 ScriptNativeCharacterCode(void);
 extern s32 ScriptNativeCharacterString(void);
@@ -47,6 +93,63 @@ extern s32 ScriptNativeExec(void);
 extern s32 ScriptNativeCall(void);
 extern s32 ScriptNativeResurn(void);
 extern s32 ScriptNativeExit(void);
+
+#define THUMB_NATIVE(function) ((u32)(function) + 1)
+
+/** Core engine commands registered in every script VM. The order is the
+ * original ROM order; registration stops at the null sentinel. */
+AT("001ACB7C")
+const struct ScriptResourceEntry gScriptEngineFunctions[] = {
+    { .name = gScriptEngineNameDummy,
+      .value = THUMB_NATIVE(ScriptNativeDummy) },
+    { .name = gScriptEngineNamePad,
+      .value = THUMB_NATIVE(ScriptNativeStartTask05378) },
+    { .name = gScriptEngineNameWait,
+      .value = THUMB_NATIVE(ScriptNativeStartTask053E4) },
+    { .name = gScriptEngineNameGetBool,
+      .value = THUMB_NATIVE(ScriptNativeTestGameFlag) },
+    { .name = gScriptEngineNameSetBool,
+      .value = THUMB_NATIVE(ScriptNativeSetGameValue) },
+    { .name = gScriptEngineNameGetVar,
+      .value = THUMB_NATIVE(ScriptNativeGetStatePointer) },
+    { .name = gScriptEngineNameSetVar,
+      .value = THUMB_NATIVE(ScriptNativeSetStatePointer) },
+    { .name = gScriptEngineNameAddVar,
+      .value = THUMB_NATIVE(ScriptNativeAdvanceStatePointer) },
+    { .name = gScriptEngineNameGetNcdNo,
+      .value = THUMB_NATIVE(ScriptNativeLookupResource) },
+    { .name = gScriptEngineNameGetAobNo,
+      .value = THUMB_NATIVE(ScriptNativeFindNamedResource) },
+    { .name = gScriptEngineNameCrtFade,
+      .value = THUMB_NATIVE(ScriptNativeStartTask05530) },
+    { .name = gScriptEngineNameCrtFadeSync,
+      .value = THUMB_NATIVE(ScriptNativeSetCrtFade) },
+    { .name = gScriptEngineNameSetCrtFade,
+      .value = THUMB_NATIVE(ScriptNativeGetCrtFade) },
+    { .name = gScriptEngineNameGetCrtFade,
+      .value = THUMB_NATIVE(ScriptNativeGetSpriteRuntime) },
+    { .name = gScriptEngineNameSetCrtRgb,
+      .value = THUMB_NATIVE(ScriptNativeSetRuntimeCoordinate) },
+    { .name = gScriptEngineNameGetCrtRgb,
+      .value = THUMB_NATIVE(ScriptNativeGetRuntimeCoordinate) },
+    { .name = gScriptEngineNameSePlay,
+      .value = THUMB_NATIVE(ScriptNativeStartIndexedSong) },
+    { .name = gScriptEngineNameBgmPlay,
+      .value = THUMB_NATIVE(ScriptNativeSelectSceneValue) },
+    { .name = gScriptEngineNameBgmStop,
+      .value = THUMB_NATIVE(ScriptNativeStopTrackedSong) },
+    { .name = gScriptEngineNameBgmStopAll,
+      .value = THUMB_NATIVE(ScriptNativeResetNineChannels) },
+    { .name = gScriptEngineNameBgmFade,
+      .value = THUMB_NATIVE(ScriptNativeStartTask056AC) },
+    { .name = gScriptEngineNameBgmFadeSync,
+      .value = THUMB_NATIVE(ScriptNativeStartTask057C0) },
+    { .name = gScriptEngineNameBgmVol,
+      .value = THUMB_NATIVE(ScriptNativeSetSoundPlayerVolume) },
+    { .name = gScriptEngineNameBgmPlaySync,
+      .value = THUMB_NATIVE(ScriptNativeStartTask05848) },
+    { .name = 0, .value = 0 },
+};
 
 /** Built-in expression functions exposed by name to compiled scripts.  The
  * original library misspells "resurn"; keep it for bytecode compatibility. */

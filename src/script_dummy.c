@@ -1,4 +1,5 @@
 #include "gba/types.h"
+#include "script.h"
 
 #include "rom_section.h"
 
