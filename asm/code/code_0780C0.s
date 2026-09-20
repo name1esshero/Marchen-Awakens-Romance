@@ -6128,7 +6128,7 @@ _0807D53C:
 	.4byte 0x4668FE97
 	adds r1, r6, #0
 	adds r2, r7, #0
-	bl sub_0808053C
+	bl SpriteRuntimeGetFields8C4
 	mov r0, sp
 	ldrh r2, [r0, #0]
 	movs r0, #128

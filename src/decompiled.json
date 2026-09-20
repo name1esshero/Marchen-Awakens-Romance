@@ -7758,6 +7758,12 @@
     "file": "src/sprite_runtime_6120.c"
   },
   {
+    "addr": "0808053C",
+    "size": 56,
+    "name": "SpriteRuntimeGetFields8C4",
+    "file": "src/sprite_runtime_6120.c"
+  },
+  {
     "addr": "08080574",
     "size": 64,
     "name": "SpriteRuntimeSetFlag800",

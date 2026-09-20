@@ -14,8 +14,10 @@
  * local -- keeps `previousFlags`'s own register (r1) as the destination
  * instead (`mov r2, ip; and r1, r1, r2`): the AND's logical operands
  * already match, only which one "survives" as the destination register
- * differs. The exact routine remains in asm/code/code_0780C0.s until a
- * natural matching C shape for this one instruction is found.
+ * differs -- a genuine register allocation choice agbcc makes differently
+ * from the ROM, not an instruction-order or expression-grouping gap. The
+ * exact routine remains in asm/code/code_0780C0.s until a natural matching
+ * C shape for this one instruction is found.
  */
 #include "sprite_tile_allocator.h"
 

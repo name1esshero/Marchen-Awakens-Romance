@@ -53,11 +53,26 @@ AT("00080504") void SpriteRuntimeSetFields8C4(s32 first,s32 second,s32 third)
  *(u16 *)(block+SPRITE_RUNTIME_FIELD_8C8)=third;
 }
 
-/** The matching getter for the 0x8C4 triple (0x0808053C) is still in
- * asm/code/code_0800C0.s: the ROM reloads the block pointer before the third
- * field, which agbcc common-subexpression-eliminates away in every natural
- * C spelling tried so far. */
+/** @brief Read the sprite runtime's 0x8C4 triple.
+ * @param first Receives the field at +0x8C4.
+ * @param second Receives the field at +0x8C6.
+ * @param third Receives the field at +0x8C8.
+ *
+ * The ROM re-reads gSpriteRuntime for the third field instead of reusing the
+ * value already cached in `block` for the first two -- reproducing that
+ * exact redundant reload (matching the setter's naming, but reading the
+ * global directly for the last field) is what makes this byte-exact. */
+AT("0008053C") void SpriteRuntimeGetFields8C4(s16 *first,s16 *second,s16 *third)
+{
+ u8 *block=SPRITE_RUNTIME_BLOCK;
+ *first=*(u16 *)(block+SPRITE_RUNTIME_FIELD_8C4);
+ *second=*(u16 *)(block+SPRITE_RUNTIME_FIELD_8C6);
+ *third=*(u16 *)(SPRITE_RUNTIME_BLOCK+SPRITE_RUNTIME_FIELD_8C8);
+}
 
+/** Set or clear a bit in the sprite runtime's 0x800 flag word.
+ * @param bit Bit index to modify.
+ * @param enabled Nonzero to set the bit, zero to clear it. */
 AT("00080574") void SpriteRuntimeSetFlag800(u8 bit,u32 enabled)
 {
  if (enabled)

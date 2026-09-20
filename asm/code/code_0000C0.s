@@ -8153,7 +8153,7 @@ _08004598:
 	adds r1, #40
 	adds r2, r5, #0
 	adds r2, #42
-	bl sub_0808053C
+	bl SpriteRuntimeGetFields8C4
 	movs r0, #128
 	lsls r0, r0, #1
 	strh r0, [r4, #22]
@@ -8176,7 +8176,7 @@ _080045CC:
 	adds r1, #40
 	adds r2, r5, #0
 	adds r2, #42
-	bl sub_0808053C
+	bl SpriteRuntimeGetFields8C4
 	movs r0, #3
 	ldrsb r0, [r4, r0]
 	cmp r0, #1
@@ -10216,7 +10216,7 @@ _080055D6:
 	adds r2, r6, #0
 	adds r2, #44
 	adds r0, r4, #0
-	bl sub_0808053C
+	bl SpriteRuntimeGetFields8C4
 	ldrh r0, [r5, #2]
 	strh r0, [r5, #20]
 	ldrh r0, [r5, #4]

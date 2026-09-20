@@ -33,7 +33,7 @@ extern void sub_08005498(s32 first, void *fadeBuffer, s32 *result,
 extern struct EngineTask *StartSongWithTransition(u32 playerIndex,
                                                   u32 songIndex,
                                                   u32 *completion);
-extern void sub_0808053C(s16 *first, s16 *second, s16 *third);
+extern void SpriteRuntimeGetFields8C4(s16 *first, s16 *second, s16 *third);
 extern void SpriteRuntimeSetFields8C4(s32 first, s32 second, s32 third);
 extern char *strcpy(char *destination, const char *source);
 extern char *strcat(char *destination, const char *source);
@@ -178,7 +178,7 @@ AT("00005C88") s32 ScriptNativeSetRuntimeCoordinate(u32 count,
     s16 first;
     s16 second;
     s16 third;
-    sub_0808053C(&first, &second, &third);
+    SpriteRuntimeGetFields8C4(&first, &second, &third);
     switch (args[0]) {
     case 0:
         first = args[1];
@@ -205,7 +205,7 @@ AT("00005CDC") s32 ScriptNativeGetRuntimeCoordinate(u32 count,
     s16 first;
     s16 second;
     s16 third;
-    sub_0808053C(&first, &second, &third);
+    SpriteRuntimeGetFields8C4(&first, &second, &third);
     switch (args[0]) {
     case 0:
         *result = first;

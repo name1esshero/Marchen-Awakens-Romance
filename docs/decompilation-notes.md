@@ -2928,3 +2928,28 @@ being a long-lived loop-counter register at that point rather than a
 freshly-derived value like the loop's own `middle` -- the loop's identical
 array-indexing C matches byte-for-byte, which rules out the indexing
 approach itself as the problem.
+
+## Resolved: SpriteRuntimeGetFields8C4 (2026-09-20)
+
+Corrects an earlier note in this file (the batch-C entry above) that called
+this one abandoned. It matches. The batch-C attempts all read the cached
+block pointer for the third field too (an inline macro, or a named local),
+which is exactly what agbcc's common-subexpression elimination collapses
+into the same load as the first two fields. The ROM does not do that: after
+using the cached pointer for the first two fields, it re-reads the global
+`gSpriteRuntime` fresh (via `SPRITE_RUNTIME_BLOCK`, not the local `block`)
+for the third. Writing that redundant reload explicitly --
+`*third = *(u16 *)(SPRITE_RUNTIME_BLOCK + SPRITE_RUNTIME_FIELD_8C8);`, right
+next to `*second = *(u16 *)(block + SPRITE_RUNTIME_FIELD_8C6);` which still
+uses the cached local -- reproduces the ROM's own redundant reload instead
+of fighting the optimizer's CSE with `volatile`. No trick was needed beyond
+writing the mismatched-source-identifier shape the ROM's original C
+apparently had. Confirmed byte-for-byte via direct `arm-none-eabi-objdump`
+comparison and then a full `make compare` after integration (asm cut from
+`asm/code/code_0800C0.s`, all five `bl sub_0808053C` call sites across
+`code_0000C0.s`/`code_0780C0.s`/`code_0800C0.s` and the two callers in
+`src/scene_native.c` renamed to `SpriteRuntimeGetFields8C4`, manifest entry
+added). The out-parameters are `s16 *`, matching the pre-existing caller
+convention in `scene_native.c` rather than the `u16 *` used during
+exploration -- purely a signature choice, the mechanism above is unaffected
+by signedness. `audit_provenance.py` now reports 1824/1824.

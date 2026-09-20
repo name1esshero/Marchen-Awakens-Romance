@@ -89,46 +89,7 @@ _080800F8:
 
 @ 080504..08053C is decompiled as SpriteRuntimeSetFields8C4(); see src/decompiled.json
 
-	.section .rom.0008053C, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_0808053C
-sub_0808053C:
-	push {r4, r5, r6, lr}
-	ldr r5, _08080564
-	ldr r3, [r5, #0]
-	ldr r6, _08080568
-	adds r4, r3, r6
-	ldrh r4, [r4, #0]
-	strh r4, [r0, #0]
-	ldr r0, _0808056C
-	adds r3, r3, r0
-	ldrh r0, [r3, #0]
-	strh r0, [r1, #0]
-	ldr r0, [r5, #0]
-	ldr r1, _08080570
-	adds r0, r0, r1
-	ldrh r0, [r0, #0]
-	strh r0, [r2, #0]
-	pop {r4, r5, r6}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _08080564
-_08080564:
-	.4byte 0x03006120  @ IWRAM+0x6120
-	.global _08080568
-_08080568:
-	.4byte 0x000008C4
-	.global _0808056C
-_0808056C:
-	.4byte 0x000008C6
-	.global _08080570
-_08080570:
-	.4byte 0x000008C8
+@ 08053C..080574 is decompiled as SpriteRuntimeGetFields8C4(); see src/decompiled.json
 
 @ 080574..0805B4 is decompiled as SpriteRuntimeSetFlag800(); see src/decompiled.json
 
@@ -236,7 +197,7 @@ sub_0808066C:
 	add r0, sp, #8
 	adds r1, r4, #0
 	adds r2, r5, #0
-	bl sub_0808053C
+	bl SpriteRuntimeGetFields8C4
 	add r0, sp, #8
 	ldrh r2, [r0, #0]
 	movs r0, #128
