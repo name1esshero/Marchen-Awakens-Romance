@@ -558,3 +558,18 @@ type: `u8 * volatile *`. Applying that type to the clear routine expresses the
 mutable IWRAM pointer slot, naturally retains the reload, and reproduces the
 original allocation without a forced register. The 256-entry count, 16.16
 step, and record offsets are now named constants as well.
+
+The matching `ScriptNativeCopyMapHalfwords()` reconstruction still contains
+two register constraints and must not be mistaken for likely original source.
+An ordinary loop using `i = (s16)(i + 1)` makes agbcc generate the ROM's
+apparently fixed-point `0x10000` induction variable by itself. With a volatile
+root slot and a typed `u16 *` destination, the clean candidate has the same
+72-byte size, stack frame, literal pool, argument cursor, destination and value
+registers, and loop branches. It differs only in two code-generation details:
+agbcc adds the record offset before shifting the index (the ROM shifts first),
+and it uses the copied old index rather than the induction register as the left
+operand of the following addition. Both compiler snapshots produce the same
+candidate. This is strong evidence that the current explicit 16.16 locals are
+decompilation scaffolding. Keep the byte-matching implementation until the
+actual source lifetime or expression shape explains those last instructions;
+do not describe either constraint as something the original developers used.

@@ -37,7 +37,9 @@ same-basename script. Direct field, spawn, character-event, history-event, and
 incoming field-load associations are loaded together. Every literal sprite
 placement in those direct sources is drawn with its real decoded NCD frame and
 a source-script label, so objects contributed by companion scripts no longer
-disappear merely because another script is selected. Decoded `chain` and
+disappear merely because another script is selected. Clicking one of those
+actors switches to its owning script and selects its stable source event, so it
+can be inspected or dragged without manually finding the script first. Decoded `chain` and
 `exec` dependencies with decoded map, sprite, or movement events are listed in
 the same source browser and loaded on demand. This puts Dorothy's `EV_BA03` and
 `EV_BA04` scenes one click from `MAP01_3A`, including their real artwork and

@@ -45,7 +45,8 @@ incoming `FldSet` call does not by itself identify that script's owning map.
 The **Map event sources** list combines the map's direct same-name, spawn,
 character, history, and incoming-load scripts. Literal sprite placements from
 all of those sources are drawn together with their real NCD artwork and source
-script names. Click a source to inspect and play that script. Verified chained
+script names. Click an associated actor to switch to its source call, or click
+a source to inspect and play that script. Verified chained
 scripts containing map or sprite activity also appear in the source list and
 load on demand, so scene actors such as Dorothy are reachable without following
 several links by hand. They are not all drawn at once because many are
