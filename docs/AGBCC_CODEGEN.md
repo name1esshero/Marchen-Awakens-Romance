@@ -632,6 +632,25 @@ becomes the copy count. Replacing either with a conventional integer loop is
 behaviorally correct but does not reproduce this compiler's instruction
 sequence.
 
+### A shared word type can recover a real alias relationship
+
+`GameStateAddResourceCounter` stores a u32 counter through a runtime address,
+then reloads that address from its IWRAM root slot before clamping the value.
+A typed `GameStateResourceCounter **` lets agbcc prove the counter store cannot
+modify the pointer slot, so it forwards the first address and emits a shorter
+routine. A pointer/integer union forced the reload but did not model an
+operation and was rejected.
+
+The engine also uses this root as shared 32-bit storage. Expressing the slot as
+`u32 *`, then converting its loaded address to the decoded structure at the
+field access, places both the root and counter in the u32 alias class. The
+counter store may therefore overlap the root word, so agbcc emits the ROM's
+second `ldr`, address add, and exact r2/r3/r4 allocation without a barrier or
+machine-register request. This is a legitimate raw-word representation only
+because the ROM visibly loads the root as a word, adds the field offset as
+integer arithmetic, and reloads after the store; the nearby
+`PRET_PTR_INT_OK` note records that evidence.
+
 ### Do not use an uninitialized register variable to create an allocation cycle
 
 The former `SpriteInterpolationInit` reconstruction initialized a variable

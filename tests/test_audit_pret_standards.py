@@ -83,6 +83,18 @@ class PretPointerIntegerAuditTests(unittest.TestCase):
                       findings[0]["detail"])
         self.assertNotIn("*/", findings[0]["detail"])
 
+    def test_counts_documented_complex_integer_to_pointer_recovery(self):
+        findings = self.audit(
+            "struct State { u32 value; };\n"
+            "void F(u32 *root) {\n"
+            "    // PRET_PTR_INT_OK: operation=read object address word; "
+            "evidence=ROM reloads root after store; typed=shared word may alias field\n"
+            "    ((struct State *)*root)->value = 1;\n"
+            "}\n")
+        self.assertEqual(len(findings), 1)
+        self.assertEqual(findings[0]["severity"], "exception")
+        self.assertIn("read object address word", findings[0]["detail"])
+
     def test_rejects_incomplete_exception_note(self):
         findings = self.audit(
             "void F(u8 *pointer) {\n"

@@ -244,6 +244,7 @@ def audit_pointer_integer_arithmetic(paths=None):
         if relative_path.startswith("asm/") or relative_path == "include/gba/bios.h":
             continue
         lines = list(code_lines(path))
+        documented_lines = set()
         name_kinds = {}
         previous_original = ""
         for number, original, code in lines:
@@ -276,6 +277,9 @@ def audit_pointer_integer_arithmetic(paths=None):
             if cast_names:
                 disposition = pointer_disposition(original, previous_original)
                 severity = "exception" if disposition is not None else "warning"
+                if disposition is not None:
+                    documented_lines.add(
+                        number if POINTER_DISPOSITION.search(original) else number - 1)
                 prefix = ("documented deliberate recovery ("
                           + disposition + "): "
                           if disposition is not None else
@@ -287,8 +291,23 @@ def audit_pointer_integer_arithmetic(paths=None):
                     prefix + original.strip(), severity))
             previous_original = original
 
-        code_text = "\n".join(code for _, _, code in lines)
+        # Complex integer-to-pointer expressions are deliberately outside the
+        # conservative cast regex. Still enumerate every complete evidence
+        # note so an accepted recovery can never become invisible in totals.
         original_lines = path.read_text(errors="replace").splitlines()
+        for number, original in enumerate(original_lines, 1):
+            disposition = POINTER_DISPOSITION.search(original)
+            if disposition is None or number in documented_lines:
+                continue
+            reason = disposition.group(1).strip()
+            if not POINTER_DISPOSITION_FIELDS.match(reason):
+                continue
+            findings.append(issue(
+                "pointer_integer_arithmetic", path, number,
+                "documented deliberate recovery (" + reason + "): "
+                + original.strip(), "exception"))
+
+        code_text = "\n".join(code for _, _, code in lines)
         for match in ADDRESS_UNION.finditer(code_text):
             body = match.group("body")
             if not POINTER_MEMBER.search(body) or not ADDRESS_INTEGER_MEMBER.search(body):

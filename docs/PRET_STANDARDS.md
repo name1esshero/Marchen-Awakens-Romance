@@ -54,7 +54,9 @@ Naming is critical. If a function or variable is named poorly, the entire codeba
     ordinary typed or `u8 *` arithmetic does not express that operation. An
     incomplete note remains a warning. The generated report must show errors,
     warnings, and exceptions together on its summary line and enumerate every
-    exception below it.
+    exception below it. Complete notes on complex integer-to-pointer expressions
+    are enumerated even when the conservative cast scanner cannot classify the
+    expression itself; this keeps accepted recoveries visible to reviewers.
 *   **Audit scope:** A clean pointer/integer report proves only that this one
     class has been reviewed. Unions, extra locals, declaration order, narrower
     or wider integer types, and control-flow spelling can all steer code

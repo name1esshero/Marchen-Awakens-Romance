@@ -1347,20 +1347,26 @@ function waiting for a compiler-shape trick. Its speculative
 named assembly follows the PRET standard: exact matching takes priority, and
 genuine hand-written assembly must not be disguised as forced or artificial C.
 
-## Rejected union match for GameStateAddResourceCounter
+## Shared-word recovery for GameStateAddResourceCounter
 
 `GameStateAddResourceCounter` at 0x080562C8 adds a script delta to the u32
 resource counter at game state +0x38BC, then clamps the unsigned result to
 999999. The ROM reloads the game-state pointer and counter after the first
 store instead of forwarding the value already held in a register.
 
-A union of the typed game-state pointer and its raw word made agbcc retain the
-reloads and emit identical bytes. The union did not model a ROM operation; it
-only changed alias analysis and register allocation. It was therefore rejected
-as compiler steering. The exact routine is restored to named assembly, and
-the ordinary typed-pointer candidate is kept in
-`src/nonmatching/game_state_resource_counter.c`. The candidate is eight bytes
-shorter because agbcc legally reuses the first load.
+A union of the typed game-state pointer and its raw word initially made agbcc
+retain the reloads and emit identical bytes. That union did not model a ROM
+operation; it only changed alias analysis and was correctly rejected.
+
+The missing source model is the engine's shared 32-bit storage view. Declaring
+the IWRAM root slot as `u32 *` means the counter's u32 store can alias the root
+word. agbcc must then reload the runtime address before testing the counter,
+which naturally reproduces the ROM's r2/r3/r4 allocation and all 60 bytes.
+The loaded word is cast to the decoded `GameStateResourceCounter` only when its
+field is accessed. A `PRET_PTR_INT_OK` note records the raw-word operation,
+the reload at 0x080562DC that proves it, and why an ordinary typed root would
+lose the required alias relationship. The obsolete assembly body and
+nonmatching candidate were removed.
 
 The sibling getter at 0x08056290 is now also byte-exact. Its original shape is
 different: it stores the fixed IWRAM root-slot offset `0x3FDC` in a named local,

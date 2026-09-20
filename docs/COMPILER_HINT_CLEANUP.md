@@ -196,13 +196,14 @@ inline assembly, or `volatile` qualifier is involved. Use this pattern only
 when the recovered data model really permits aliasing; adding a union solely
 as an optimizer barrier would be another fakematch.
 
-This pattern improved but did not complete the resource-counter pair at
-0x08056290/0x080562C8. A shared root/counter view makes the add routine perform
-the ROM's second root dereference, address calculation, and counter load, but
-agbcc still rotates the three live values among r2/r3/r4. The tested
-struct-member, moving-pointer, u16-offset, declaration-order, and delayed-
-assignment forms all retain that register mismatch, so both routines remain
-in `src/nonmatching/game_state_resource_counter.c`.
+The resource-counter pair at 0x08056290/0x080562C8 is now complete. Earlier
+struct-member and pointer/integer-union probes either removed the required root
+reload or steered register allocation. The recovered add routine instead views
+the IWRAM root slot as the shared `u32` storage used by the engine, then casts
+the loaded address to the decoded counter structure. Because the counter store
+can alias that root word, agbcc naturally reloads it and chooses the ROM's
+r2/r3/r4 allocation. No forced register, union, volatile qualifier, or inline
+assembly remains.
 
 **Modify the value that the ROM keeps as the arithmetic destination.** The
 newlib `_Bfree` source at 0x08085A24 loads a bucket index into r0 and the bucket
@@ -359,7 +360,7 @@ Recorded at the time of writing; regenerate rather than trusting these numbers.
   removals at 149; everything left needs either a structural rewrite (slow,
   one function at a time, as above) or the same real-assembly move.
 - Current result as of 2026-09-20 (regenerate with `make pret-audit`): zero
-  hard findings, zero warnings, and 17 enumerated documented exceptions. The
+  hard findings, zero warnings, and 18 enumerated documented exceptions. The
   hard-error baseline is empty, so CI rejects every newly introduced error.
 - `make compare` byte-exact and all host tests passing throughout.
 

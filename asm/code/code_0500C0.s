@@ -13774,43 +13774,9 @@ _0805628A:
 @ 056290..0562C8 is decompiled as GameStateGetResourceCounter();
 @ see src/decompiled.json
 
-	.section .rom.000562C8, "ax"
-	.syntax unified
-	.thumb
-	.thumb_func
-	.global GameStateAddResourceCounter
-GameStateAddResourceCounter:
-	push {r4, lr}
-	ldr r3, _080562F4
-	ldr r1, _080562F8
-	adds r3, r3, r1
-	ldr r2, [r3]
-	ldr r4, _080562FC
-	adds r2, r2, r4
-	ldr r1, [r2]
-	adds r1, r1, r0
-	str r1, [r2]
-	ldr r0, [r3]
-	adds r2, r0, r4
-	ldr r1, [r2]
-	ldr r0, _08056300
-	cmp r1, r0
-	bls _080562EC
-	adds r0, #1
-	str r0, [r2]
-_080562EC:
-	pop {r4}
-	pop {r0}
-	bx r0
-	.balign 4, 0
-_080562F4:
-	.4byte gIwramBase
-_080562F8:
-	.4byte gMapGenerationRootOffset
-_080562FC:
-	.4byte 0x000038BC
-_08056300:
-	.4byte 999998
+@ 0562C8..056304 is decompiled as GameStateAddResourceCounter();
+@ see src/decompiled.json
+
 	.section .rom.00056304, "ax"
 
 	.thumb_func

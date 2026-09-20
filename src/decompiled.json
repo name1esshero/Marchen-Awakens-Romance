@@ -4776,6 +4776,12 @@
     "file": "src/game_state_records.c"
   },
   {
+    "addr": "080562C8",
+    "size": 60,
+    "name": "GameStateAddResourceCounter",
+    "file": "src/game_state_records.c"
+  },
+  {
     "addr": "08056464",
     "size": 16,
     "name": "ItemGetDefinition",

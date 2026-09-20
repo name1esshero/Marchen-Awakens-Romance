@@ -14,8 +14,8 @@ error. The audit prints known, new, and resolved counts on one line.
 ## Verified snapshot: compiler-steering audit, 2026-09-20
 
 - `make compare` reproduces the Japanese ROM byte for byte.
-- `make english` succeeds and all 197 host tests pass.
-- The mechanical PRET audit reports **0 errors / 0 warnings / 17 documented
+- `make english` succeeds and all 198 host tests pass.
+- The mechanical PRET audit reports **0 errors / 0 warnings / 18 documented
   exceptions** on one summary line. Every exception is enumerated in the
   generated report.
 
@@ -29,13 +29,19 @@ arithmetic is unsuitable. The report still warns that declaration order,
 local lifetime, integer width, unions, and control-flow spelling can steer
 code generation without an explicit pointer cast.
 
-Fifteen findings were removed through natural types and expressions. Three
+Fifteen findings were removed through natural types and expressions. Two
 previous matches were rejected after exact comparison showed that their
 pointer/integer spelling only selected registers or alias behavior:
-`GameStateAddResourceCounter`, `SpriteAffineAllocate`, and
-`ScriptResourceSet`. Their exact implementations are restored to named
+`SpriteAffineAllocate` and `ScriptResourceSet`. Their exact implementations are restored to named
 assembly and their clean candidates remain in `src/nonmatching/` with the
 specific code-generation differences documented.
+
+`GameStateAddResourceCounter` has since been recovered as exact C without the
+rejected pointer/integer union. The IWRAM root is a shared 32-bit storage word;
+reading the runtime address from that word gives the root and counter field the
+same `u32` alias class. agbcc consequently reloads the root after the counter
+store exactly as the ROM does. The cast back to the typed runtime structure is
+documented and counted as a pointer/integer exception.
 
 `ScriptNativeSetFriendArms` now uses two block-scoped slot pointers for its
 two independent address calculations. The distinct lexical lifetimes make

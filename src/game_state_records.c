@@ -199,6 +199,20 @@ AT("00056290") u32 GameStateGetResourceCounter(void)
     return *(u32 *)(*root + offset);
 }
 
+/** Add to the six-digit resource counter and clamp unsigned overflow. */
+AT("000562C8") void GameStateAddResourceCounter(u32 value)
+{
+    u32 *root;
+    struct GameStateResourceCounter *state;
+
+    root = (u32 *)(gIwramBase + (u32)gMapGenerationRootOffset);
+    /* PRET_PTR_INT_OK: operation=read runtime-object address from shared word storage; evidence=ROM reloads the root word at 080562DC after a u32 field store; typed=the root and counter must share a u32 alias class to model that possible overlap */
+    ((struct GameStateResourceCounter *)*root)->value += value;
+    state = (struct GameStateResourceCounter *)*root;
+    if (state->value >= GAME_STATE_RESOURCE_COUNTER_MAX)
+        state->value = GAME_STATE_RESOURCE_COUNTER_MAX;
+}
+
 /* Record field 4 is the ceiling the field-2 accumulator clamps against;
  * field 6 is a second independent counter with the same 999 ceiling. */
 #define RECORD_SET_CLAMPED(address,name,field) \
