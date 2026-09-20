@@ -1,0 +1,233 @@
+{
+  "totals": {
+    "EWRAM": {
+      "size": 262144,
+      "kinds": {
+        "heap_arena": 262144
+      }
+    },
+    "IWRAM": {
+      "size": 32768,
+      "kinds": {
+        "copied_code": 896,
+        "fixed_runtime": 23800,
+        "heap_arena": 5120,
+        "linked_bss": 176,
+        "stack": 1792,
+        "system": 16,
+        "unassigned": 968
+      }
+    }
+  },
+  "partitions": [
+    {
+      "memory": "EWRAM",
+      "start": 33554432,
+      "size": 65536,
+      "kind": "heap_arena",
+      "name": "gEwramHeap0",
+      "end": 33619968
+    },
+    {
+      "memory": "EWRAM",
+      "start": 33619968,
+      "size": 57344,
+      "kind": "heap_arena",
+      "name": "gEwramHeap1",
+      "end": 33677312
+    },
+    {
+      "memory": "EWRAM",
+      "start": 33677312,
+      "size": 8192,
+      "kind": "heap_arena",
+      "name": "gEwramHeap2",
+      "end": 33685504
+    },
+    {
+      "memory": "EWRAM",
+      "start": 33685504,
+      "size": 32768,
+      "kind": "heap_arena",
+      "name": "gEwramHeap3",
+      "end": 33718272
+    },
+    {
+      "memory": "EWRAM",
+      "start": 33718272,
+      "size": 49152,
+      "kind": "heap_arena",
+      "name": "gEwramHeap4",
+      "end": 33767424
+    },
+    {
+      "memory": "EWRAM",
+      "start": 33767424,
+      "size": 32768,
+      "kind": "heap_arena",
+      "name": "gEwramHeap5",
+      "end": 33800192
+    },
+    {
+      "memory": "EWRAM",
+      "start": 33800192,
+      "size": 16384,
+      "kind": "heap_arena",
+      "name": "gEwramHeap6",
+      "end": 33816576
+    },
+    {
+      "memory": "IWRAM",
+      "start": 50331648,
+      "size": 16352,
+      "kind": "fixed_runtime",
+      "name": "gMainRuntime",
+      "end": 50348000
+    },
+    {
+      "memory": "IWRAM",
+      "start": 50348000,
+      "size": 52,
+      "kind": "fixed_runtime",
+      "name": "gInterruptCallbackTable",
+      "end": 50348052
+    },
+    {
+      "memory": "IWRAM",
+      "start": 50348052,
+      "size": 52,
+      "kind": "fixed_runtime",
+      "name": "gRuntimeRoots",
+      "end": 50348104
+    },
+    {
+      "memory": "IWRAM",
+      "start": 50348104,
+      "size": 3520,
+      "kind": "fixed_runtime",
+      "name": "gSoundTracks",
+      "end": 50351624
+    },
+    {
+      "memory": "IWRAM",
+      "start": 50351624,
+      "size": 352,
+      "kind": "fixed_runtime",
+      "name": "gUndecodedIwram4E08",
+      "end": 50351976
+    },
+    {
+      "memory": "IWRAM",
+      "start": 50351976,
+      "size": 176,
+      "kind": "linked_bss",
+      "name": "gNewlibBss",
+      "end": 50352152
+    },
+    {
+      "memory": "IWRAM",
+      "start": 50352152,
+      "size": 896,
+      "kind": "copied_code",
+      "name": "gSoundMixerCode",
+      "end": 50353048
+    },
+    {
+      "memory": "IWRAM",
+      "start": 50353048,
+      "size": 8,
+      "kind": "fixed_runtime",
+      "name": "gSoundAlignment",
+      "end": 50353056
+    },
+    {
+      "memory": "IWRAM",
+      "start": 50353056,
+      "size": 2432,
+      "kind": "fixed_runtime",
+      "name": "gSoundRuntime",
+      "end": 50355488
+    },
+    {
+      "memory": "IWRAM",
+      "start": 50355488,
+      "size": 144,
+      "kind": "fixed_runtime",
+      "name": "gSoundJumpTable",
+      "end": 50355632
+    },
+    {
+      "memory": "IWRAM",
+      "start": 50355632,
+      "size": 256,
+      "kind": "fixed_runtime",
+      "name": "gCgbChannels",
+      "end": 50355888
+    },
+    {
+      "memory": "IWRAM",
+      "start": 50355888,
+      "size": 592,
+      "kind": "fixed_runtime",
+      "name": "gSoundPlayersAndMemory",
+      "end": 50356480
+    },
+    {
+      "memory": "IWRAM",
+      "start": 50356480,
+      "size": 40,
+      "kind": "fixed_runtime",
+      "name": "gEngineRoots",
+      "end": 50356520
+    },
+    {
+      "memory": "IWRAM",
+      "start": 50356520,
+      "size": 728,
+      "kind": "unassigned",
+      "name": "gIwramGap6128",
+      "end": 50357248
+    },
+    {
+      "memory": "IWRAM",
+      "start": 50357248,
+      "size": 5120,
+      "kind": "heap_arena",
+      "name": "gIwramHeap",
+      "end": 50362368
+    },
+    {
+      "memory": "IWRAM",
+      "start": 50362368,
+      "size": 1536,
+      "kind": "stack",
+      "name": "gIrqStackReserve",
+      "end": 50363904
+    },
+    {
+      "memory": "IWRAM",
+      "start": 50363904,
+      "size": 256,
+      "kind": "stack",
+      "name": "gSystemStackReserve",
+      "end": 50364160
+    },
+    {
+      "memory": "IWRAM",
+      "start": 50364160,
+      "size": 240,
+      "kind": "unassigned",
+      "name": "gIwramGap7F00",
+      "end": 50364400
+    },
+    {
+      "memory": "IWRAM",
+      "start": 50364400,
+      "size": 16,
+      "kind": "system",
+      "name": "gSoundAndIrqVectors",
+      "end": 50364416
+    }
+  ],
+  "symbol_count": 74
+}

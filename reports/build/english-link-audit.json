@@ -1,8 +1,28 @@
 {
-  "sha1": "3418bca801bcd82ffcf0b94334890e221784cf43",
+  "sha1": "4fe80bdc2eebff152b480b3d7b5c757e7ebc4588",
   "size": 33554432,
-  "original_area_differing_bytes": 70255,
-  "change_scope": "Constructor bridge, independently rebuilt EFFECT and SYSTEM UI tiles and explicit English credit layouts; C and strings in ROM expansion",
+  "original_area_differing_bytes": 89074,
+  "change_scope": "Dialogue constructor, item name/description bridges, English menu labels, independently rebuilt EFFECT and SYSTEM UI tiles and explicit English credit layouts, rebuilt startup/shop background tiles and maps; C and strings in ROM expansion",
+  "english_backgrounds": [
+    {
+      "name": "T_C01.KCG",
+      "overrides": {
+        "graphics/backgrounds/T_C01.KCG.png": "graphics/backgrounds/T_C01.KCG_en.png"
+      }
+    },
+    {
+      "name": "T_TTL06.KCG",
+      "overrides": {
+        "graphics/backgrounds/T_TTL06.KCG.png": "graphics/backgrounds/T_TTL06.KCG_en.png"
+      }
+    },
+    {
+      "name": "SM_BG12.KCG",
+      "overrides": {
+        "graphics/backgrounds/SM_BG12.KCG.png": "graphics/backgrounds/SM_BG12.KCG_en.png"
+      }
+    }
+  ],
   "english_effect_changed_frames": [
     386,
     387,
@@ -543,13 +563,16 @@
   "entry_points": {
     "EnglishDialogueStart": "09000000",
     "DialogueStartOriginal": "09000110",
-    "EnglishTranslateRows": "09000628",
+    "EnglishTranslateRows": "0900064C",
+    "EnglishTranslateSingle": "09000628",
+    "EnglishItemGetName": "090006E0",
+    "EnglishItemGetDescription": "090006F8",
     "EnglishPageTask": "090003FC",
     "EnglishClearPage": "09000250",
-    "gEnglishRows": "09029888",
-    "gEnglishRowCount": "090469C4"
+    "gEnglishRows": "0904174C",
+    "gEnglishRowCount": "090757B0"
   },
-  "exact_row_mappings": 3112,
+  "exact_row_mappings": 5184,
   "unallocated_mutable_sections": [],
   "emulator_playthrough_verified": false,
   "limitation": "Static link validation plus separate host C tests; does not establish complete scene or printer coverage."

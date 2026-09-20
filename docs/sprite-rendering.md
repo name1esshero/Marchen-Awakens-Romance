@@ -64,6 +64,119 @@ flags at 27. The transformed path rejects scales <= 4. These drawing
 routines still require full C recovery and verification of OAM allocation,
 affine transforms, clipping, ordering and transfer timing.
 
+### Sprite-engine OAM work state
+
+Eight accessors from `0807B224..0807B32C` now compile from readable C in
+`src/sprite_engine_state.c`. The global pointer at `03006118` leads to the
+renderer state. Its field at +4 points to 8-byte work entries; direct lookup
+computes `base + index * 8`, while allocation increments byte +0 and returns
+the entry selected by the previous value. This identifies byte +0 as the
+current allocation boundary/count.
+
+The indexed boundary API accepts indices 0, 1 and 2. Initialization sets them
+to 0, 128 and 128. Invalid reads return zero and invalid writes do nothing;
+writes truncate to eight bits. Other renderer code temporarily moves the first
+boundary into the second and uses byte +2 to size an 8-byte-per-entry transfer,
+but those observations do not yet establish durable names for boundaries 1
+and 2. The source therefore keeps all three in `oamBoundaries[]` rather than
+inventing separate roles.
+
+The signed halfwords at state offsets `0x610` and `0x612` also have matching
+getters and setters. Their consumers still need tracing, so they intentionally
+remain `value610` and `value612`. A 32-bit host test verifies state layout,
+entry stride, allocation, indexed boundary behavior, byte truncation and signed
+round trips. The exact ROM comparison verifies the agbcc code and literal pools.
+
+Eight more accessors from `0807B618..0807B7D0` now compile from C. A partial
+16-byte resource record contains a data pointer at +0 and a signed handle at
++14. Releasing the record calls `sub_080869B8` only when the handle is nonzero;
+assigning a handle first applies that release rule and then stores the low 16
+bits. Reading it sign-extends the stored halfword. Bytes +4 through +13 still
+have unknown roles.
+
+The renderer state contains a 16-bit flag field at +`0x20C`. Its recovered API
+sets or clears one indexed bit, tests a bit, or returns the full field. The test
+operation returns the bit mask itself, such as 8 for bit 3, rather than reducing
+it to a Boolean. The routine at `0807B728` that changes the whole field remains
+in assembly because the equivalent C has not yet reproduced agbcc's exact
+register and literal-load selection.
+
+State offset +`0x1CC` is addressed as 16 groups of four byte counters. The
+recovered getter and setter truncate the group and stored value to eight bits;
+the index remains a 32-bit argument. Their gameplay meaning still needs tracing,
+so the source uses the neutral `counters` name. The host test now also verifies
+resource lifetime, signed handles, flags, and counter addressing.
+
+The 16 records immediately before those counters, at +`0x14C`, are group
+bindings. Each contains an owner pointer and a signed 32-bit index. The owner
+record has a signed-byte assignment array at +4. Releasing a binding writes
+`-1` into that array at the saved index, resets the binding index to `-1`, and
+clears its owner pointer. A binding whose index is already `-1` only clears the
+owner pointer.
+
+The four byte counters per group are saturating reference counts: incrementing
+255 leaves it unchanged, and decrementing zero leaves it unchanged. A decrement
+from one to zero releases the associated group binding. These three lifecycle
+routines at `0807B760`, `0807B7D0`, and `0807B7F8` account for another 152
+bytes of exact C. Later callers show that owners are selected from 32-byte
+renderer resource records, but the resource kind has not yet been established.
+
+The resource-descriptor array pointer is at renderer-state offset +`0x61C`.
+Each descriptor is 32 bytes: a source/header pointer, a signed-byte binding
+array, and six pointers to related record tables. Seven recovered accessors at
+`0807BA0C..0807BB98` now express their traversal as typed C. The first table
+uses 16-byte records whose +8 word is a base index into an 8-byte second table.
+The second table's +0 word selects an 8-byte third table, whose +0 word selects
+a 20-byte fourth table. Words +4 and +8 in that fourth record independently
+select 32-byte records from the final two tables.
+
+Indices passed at each level are added to the preceding record's base index.
+The resource header's word at +64 is also exposed as an entry count; the nearby
+name lookup uses it as the upper bound of a binary search. Names such as
+`level0` through `level3` intentionally describe only the verified hierarchy.
+The expanded 32-bit host fixture checks every stride, accumulated child index,
+final-table selection, descriptor size, and the state pointer at +`0x61C`.
+
+Renderer-state pointers at +4, +8 and +12 now have matching C getters and
+setters. The +4 pointer is the same 8-byte-entry OAM work buffer used by the
+allocator; the exact roles of the other two buffers remain open. Transfer
+callbacks at +`0x620` and +`0x624` can be replaced independently. Passing null
+restores a dedicated wrapper around `CpuCopy`, so callers never observe a null
+callback after either setter returns. Twelve recovered functions cover the six
+buffer accessors, two callback setters, two callback getters and two defaults.
+
+One existing renderer path branches to `0807D3F6`, two bytes into the +4 buffer
+getter, after it has already loaded the state-pointer address into `r0`. The
+assembly keeps this entry as an alias to `SpriteEngineGetBuffer4 + 2`; the
+getter body itself remains compiled C and the final ROM comparison covers this
+unusual shared tail.
+
+`SpriteEngineCopyToBuffer8` selects `buffer8 + index * 32` and transfers
+`count * 32` bytes through callback +`0x620`. `SpriteEngineCopyToBufferC`
+selects `bufferC + index * 32` and transfers one 32-byte record through callback
++`0x624`. Their host tests install custom callbacks and verify the calculated
+destination, source, and byte count rather than assuming that a callback always
+uses the default copy implementation.
+
+Two independent 32-bit masks at state offsets +`0x10` and +`0x14` now have
+matching per-bit setters, bit tests, whole-mask setters and whole-mask getters.
+Bit tests return the selected mask value rather than a normalized Boolean.
+Passing zero to a whole-mask setter clears every bit; every nonzero argument
+sets all 32 bits. The exact roles of these masks remain under investigation,
+so their names retain the verified state offsets.
+
+Three additional leaf helpers now provide a typed address for a 32-byte entry
+in the +4 OAM work buffer, compute `(count + 1) * 32` bytes for related record
+storage, and calculate a signed `65536 / (s16)value` fixed-point reciprocal.
+The reciprocal truncates its argument before division and sign-extends the
+16-bit result, matching both the caller ABI and original instructions.
+
+`NcdSpriteCopy` is the recovered 52-byte shallow clone. After copying the full
+runtime record it sets the low two bits of byte `0x27` to one and preserves the
+other six bits. Those low bits are now documented as `copyMode27`; the existing
+renderer flag occupies bit 3. The neighboring routine performs a deeper clone
+of the cell-handle allocation and remains assembly.
+
 ## Recovered C and remaining work
 
 `src/ncd_sprite.c` recovers the complete 80-byte initializer at 0807BC2C.
@@ -119,3 +232,17 @@ operations among integer pushes, so the existing integer-only editor correctly
 leaves these calls read-only. Recognizing an embedded name is not yet proof of
 the complete operand stack or executed control flow; automatic scene placement
 must wait for that decoder rather than pairing arbitrary nearby calls.
+
+### Sprite creation worker (08010B6C)
+
+The 160-byte worker now compiles from C to the original bytes. State 0 calls the preparation task at 0801097C with the sprite ID, payload +40, and a completion-word pointer, then transitions to state 16. State 16 waits until payload +44 is nonzero. It then allocates and clears a 72-byte auxiliary block, runs 08008A70 on it, activates the sprite, resolves the named NCD group, copies animation/frame, and updates the original flag bits. Finally it decrements the pending-script-task count, writes -1 through the task result pointer if present, and finishes the task.
+
+The worker itself does not assign X/Y. The preparation task still needs tracing before concluding what an entire SprInit operation does to old position/state. Auxiliary-block and unnamed flag semantics also remain unresolved. Host tests cover waiting, completion, unsupported states, and preservation of coordinates in this worker; these are not an emulator playthrough.
+
+### Deferred sprite reset (080109C4 / 08010A70)
+
+The single-slot (104 bytes) and all-slot (124 bytes) workers are now matching C. An active slot waits while its u16 at +0x1A is nonzero; once ready, its auxiliary block at +0x24 is torn down through 08008BD8 and freed. Reset clears all 40 bytes, then sets the two signed fields at +0x14/+0x16 to 256 and draw-order bits to 3. Completion decrements the pending-operation counter, writes -1 to an optional task result pointer, and finishes the task.
+
+Single reset clears inactive records too. Reset-all scans exactly 32 slots, skips inactive records, and stays pending while any active slot is still busy. Host tests cover these differences, teardown order, waiting, default fields, and optional result pointers.
+
+Consequently the SprInit preparation phase clears X/Y before creation proceeds. A future sprite-placement compiler must account for this asynchronous reset rather than assigning coordinates before it. Trigger dispatch, statement insertion/relocation, and new-map archive registration remain unfinished.

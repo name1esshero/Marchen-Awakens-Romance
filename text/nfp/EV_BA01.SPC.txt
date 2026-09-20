@@ -61,7 +61,7 @@
 @0024D2  C0F04 バトルにはいったら  // EN: Once the battle starts...
 @0024F7  C0904 Ｂボタン C0F04 でこうげきするんじゃ！！  // EN: ...press the B Button to attack!!
 @00254F  C0D04 ［バッボ］  // EN: [Babbo]
-@00256C  C0904 バッボ C0F04 の C0904 Ｂ C0F04 とおぼえるがよい  // EN: Remember it as B for Babbo.
+@00256C  C0904 バッボ C0F04 の C0904 Ｂ C0F04 とおぼえるがよい  // EN: Remember {color:0904}Babbo{color:0F04}'s {color:0904}B{color:0F04}.
 @0025AE わかったか小僧！  // EN: Got it, boy?!
 @0025F8 F01A01  // LITERAL: F01A01 (usage not inferred)
 @002626  C0D04 ［ギンタ］  // EN: [Ginta]

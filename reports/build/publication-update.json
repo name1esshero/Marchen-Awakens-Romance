@@ -1,0 +1,17 @@
+{
+  "pages_commit": "63ebcbd176b198d66d82dbc4d8075cc6ecd1faa2",
+  "wiki_commit": "6c38e3b",
+  "validation": {
+    "html_pages": 347,
+    "animation_frames": 9252,
+    "missing": []
+  },
+  "status": "deployed and live URLs verified",
+  "live_checks": [
+    "English UI viewer",
+    "0386_en.png",
+    "MAP07_A.KCG.png",
+    "PCM WAV sample",
+    "sprite-rendering documentation"
+  ]
+}

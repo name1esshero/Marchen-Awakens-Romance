@@ -128,9 +128,8 @@ at +0x14/+0x18. `FinishTask` marks a task for removal by its scheduler.
 
 The betrayal in `EV_T3KIL.SPC` and its aftermath in `G_EV062.SPC` now have
 English comments for all extracted dialogue, including private ÄRM/heart codes
-and inline-color text. Translations are scoped to each scene. Inline-color
-records still fall back to Japanese in the English ROM until translated
-formatting markup is supported; annotation coverage is not runtime coverage.
+and inline-color text. Translations are scoped to each scene. Annotation
+coverage is not runtime coverage.
 
 `END2.SPC` now has reviewed English comments for all extracted dialogue. Five
 blank/color-only records across the named scripts use `FORMAT:` annotations;
@@ -145,13 +144,15 @@ must be palette indices 00–0F. Attach tags to the affected word; controls do n
 consume glyph width and survive word wrapping and page changes. For example:
 `{color:0F04}What's an {color:0904}'ÄRM'{color:0F04}?!`.
 
-Original leading and trailing C/T controls are retained automatically. Interior
-color changes require explicit English tags because translated words move.
+Original leading and trailing C/T controls are retained automatically. Use
+explicit English tags to place interior emphasis because translated words move.
+If a reviewed translation has no tags, the runtime resets that row to normal
+white text so the translation remains usable rather than displaying Japanese.
 Previously even a trailing speaker-name reset was rejected, and an unmapped
 speaker row caused the whole message to retain Japanese. The opening speaker
 reset now has an actual runtime regression test. Other unreviewed interior
-controls and context-dependent mappings still fall back; static build checks
-alone do not prove complete in-game English coverage.
+text and any future context-dependent mappings still fall back; static build
+checks alone do not prove complete in-game English coverage.
 
 Empty padding rows are also mapped explicitly. OPEN's first narration calls
 MswStr with an empty first and third row; these previously forced fallback

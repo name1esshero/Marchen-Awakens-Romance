@@ -1,9 +1,11 @@
 {
-  "active_pngs": 19394,
+  "active_pngs": 19402,
   "roles": {
-    "mapped_background_source": 160,
-    "unmapped_background_tiles": 63,
-    "named_tile_source": 11,
+    "mapped_background_source": 162,
+    "unmapped_background_tiles": 64,
+    "named_tile_source": 10,
+    "english_background_override": 3,
+    "english_background_generated_reference": 3,
     "sprite_cell_source": 12062,
     "sprite_frame_editing_view": 6627,
     "english_sprite_override": 229,
@@ -494,8 +496,16 @@
       "role": "unmapped_background_tiles",
       "owner": "MAP07_3A.KCG"
     },
-    "graphics/tilesets/MAP07_A.KCG.png": {
-      "role": "named_tile_source",
+    "graphics/backgrounds/MAP07_A.KCG.png": {
+      "role": "mapped_background_source",
+      "owner": "MAP07_A.KCG"
+    },
+    "graphics/backgrounds/MAP07_A.KCG.layer1.png": {
+      "role": "mapped_background_source",
+      "owner": "MAP07_A.KCG"
+    },
+    "graphics/backgrounds/unused/MAP07_A.KCG.png": {
+      "role": "unmapped_background_tiles",
       "owner": "MAP07_A.KCG"
     },
     "graphics/backgrounds/MAP08_A.KCG.png": {
@@ -953,6 +963,30 @@
     "graphics/backgrounds/WM_BG02.KCG.png": {
       "role": "mapped_background_source",
       "owner": "WM_BG02.KCG"
+    },
+    "graphics/backgrounds/T_C01.KCG_en.png": {
+      "role": "english_background_override",
+      "owner": "T_C01.KCG"
+    },
+    "graphics/backgrounds/source/english/T_C01.generated.png": {
+      "role": "english_background_generated_reference",
+      "owner": "T_C01.KCG"
+    },
+    "graphics/backgrounds/T_TTL06.KCG_en.png": {
+      "role": "english_background_override",
+      "owner": "T_TTL06.KCG"
+    },
+    "graphics/backgrounds/source/english/T_TTL06.generated.png": {
+      "role": "english_background_generated_reference",
+      "owner": "T_TTL06.KCG"
+    },
+    "graphics/backgrounds/SM_BG12.KCG_en.png": {
+      "role": "english_background_override",
+      "owner": "SM_BG12.KCG"
+    },
+    "graphics/backgrounds/source/english/SM_BG12.generated.png": {
+      "role": "english_background_generated_reference",
+      "owner": "SM_BG12.KCG"
     },
     "graphics/battle/characters/cells/01A00/tile_00000.png": {
       "role": "sprite_cell_source",

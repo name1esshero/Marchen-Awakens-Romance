@@ -98,9 +98,10 @@ See [the mapped-background guide](backgrounds/README.md) for image editing.
 `assets_rle/` and its build manifest have been removed. The 68 heuristic hits
 were not verified independent graphics assets. Two former image candidates
 were inside already decoded CHR.NCD and MAP26_5A.KMP data. The only linked
-candidate, ROM `0x1B0720..0x1B2BB6`, is now preserved honestly as unclassified
-bytes in `data/data_1B0720.bin`; its purpose and format remain unresolved.
-It is not presented as an editable image or as a proven compressed asset.
+candidate, ROM `0x1B0720..0x1B2BB6`, is not graphics. Follow-up analysis found
+the beginning of the fixed-layout ÄRM/item definition table at `0x1B096C`.
+Its name and description fields are editable in `text/arm_definitions.txt` and `text/item_definitions.txt`; the
+remaining fields stay byte-exact in `data/data_1B0720.bin` until decoded.
 
 `reports/graphics/rle-retirement.json` retains the candidate offsets, sizes,
 original stream hashes and archive ownership. `tools/extract_rle.py baserom.gba`

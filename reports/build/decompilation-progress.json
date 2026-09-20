@@ -1,11 +1,15 @@
 {
-  "compiled_c_functions": 89,
-  "compiled_c_owned_bytes": 3888,
-  "bios_wrapper_functions": 10,
-  "bios_wrapper_bytes": 60,
-  "code_and_data_region_without_known_pcm_bytes": 627320,
-  "compiled_c_percent_of_that_region": 0.6198,
-  "scope": "ROM 0000C0..1B0000 minus known PCM header/payload spans. Includes literals, tables and undecoded data; NOT a pure instruction-byte denominator.",
+  "compiled_c_functions": 1771,
+  "compiled_c_owned_bytes": 229491,
+  "bios_wrapper_functions": 0,
+  "bios_wrapper_bytes": 0,
+  "remaining_assembly_bytes": 487657,
+  "decompilation_provider_bytes": 717148,
+  "compiled_c_percent_of_decompilation": 32.0005,
+  "rom_bytes": 16777216,
+  "compiled_c_percent_of_rom": 1.3679,
+  "progress_denominator": "rom_bytes",
+  "scope": "The authoritative percentage is compiled C bytes divided by the complete ROM image. Every ROM-resident byte counts in the denominator, including code, data, assets, and padding. The narrower assembly-provider percentage is retained only as a diagnostic.",
   "total_function_count": null,
   "limitation": "Historical function starts include false positives and internal labels. Do not report a completion percentage from that count. C-owned sizes include alignment and literal pools."
 }

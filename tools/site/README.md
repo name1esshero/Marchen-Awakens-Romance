@@ -17,7 +17,8 @@ Run the relevant audit commands when you want new evidence. `make galleries`
 only regenerates viewing HTML; it does not extract assets or run ROM audits.
 Then run `make site`. It stages allowed files from `graphics/`, `sound/`,
 `text/`, and `reports/` in `build/site`, checks local HTML links and dynamic
-animation frame paths, and writes `publication.json` with per-file hashes.
+animation frame paths, includes the real map-editor demonstration from
+`docs/media/`, and writes `publication.json` with per-file hashes.
 The ROM, toolchain, credentials, backups, and Git metadata are never staged.
 Generated wiki pages go in `build/wiki`.
 
