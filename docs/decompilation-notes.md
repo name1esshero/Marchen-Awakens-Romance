@@ -2907,3 +2907,24 @@ Confirmed byte-for-byte via direct `arm-none-eabi-objdump` comparison, not
 just probe-tool mnemonics. `src/nonmatching/sprite_fixed_sqrt.c` is deleted;
 the real function lives beside its callers in `src/sprite_math.c`.
 `audit_provenance.py` now reports 1823/1823.
+
+## Sharpened deferral: SpriteResourceFindGroup (2026-09-20)
+
+`src/nonmatching/sprite_resource_find_group.c` had a real bug, not just an
+unmatched shape: its low-path lookup manually computed
+`u32 byteOffset = low << 4; byteOffset = (u32)descriptor->level0 + byteOffset;`,
+which compiles to the wrong instruction encoding entirely (`adds r0,r0,r1`,
+raw bytes `0x1840`) versus the ROM's `adds r0,r1,r0` (`0x1808`) -- genuinely
+different bytes, confirmed by assembling and reading the raw halfword, not
+just comparing objdump's printed mnemonics. Replacing the manual arithmetic
+with plain array indexing, `descriptor->level0[low]`, matches the loop's own
+already-correct `descriptor->level0[middle]` pattern and gets the add's
+logical operand order right (level0 first, the shift second) -- narrowing
+the gap to a swap of which physical register (r0 or r1) holds the shift
+versus the freshly-loaded `level0` pointer at that specific post-loop site.
+Two further restructurings (indexing `low` directly, and copying it into a
+fresh local first) left that swap unchanged, suggesting it is tied to `low`
+being a long-lived loop-counter register at that point rather than a
+freshly-derived value like the loop's own `middle` -- the loop's identical
+array-indexing C matches byte-for-byte, which rules out the indexing
+approach itself as the problem.
