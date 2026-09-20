@@ -13,7 +13,7 @@
 	str r1, [r4, #0]
 	ldr r0, [sp, #40]
 	mov r2, sp
-	bl sub_0800D518
+	bl HitBoundsGetVerticalTileCorrection
 	str r0, [r4, #0]
 	movs r3, #198
 	lsls r3, r3, #1
@@ -124,14 +124,14 @@ _08018172:
 	subs r1, r1, r2
 	ldr r0, [sp, #36]
 	mov r2, sp
-	bl sub_0800D4E8
+	bl HitBoundsGetHorizontalTileCorrection
 	mov r9, r0
 	ldr r1, [r5, #0]
 	ldr r3, [sp, #28]
 	subs r1, r1, r3
 	ldr r0, [sp, #40]
 	mov r2, sp
-	bl sub_0800D518
+	bl HitBoundsGetVerticalTileCorrection
 	mov r8, r0
 	ldr r4, [sp, #36]
 	cmp r4, #3
@@ -273,7 +273,7 @@ _08018288:
 	str r1, [r4, #0]
 	ldr r0, [sp, #36]
 	mov r2, sp
-	bl sub_0800D4E8
+	bl HitBoundsGetHorizontalTileCorrection
 	str r0, [r4, #0]
 	.global _08018294
 _08018294:
@@ -383,7 +383,7 @@ _0801831C:
 	adds r1, r1, r3
 	ldr r0, [sp, #40]
 	mov r2, sp
-	bl sub_0800D518
+	bl HitBoundsGetVerticalTileCorrection
 	str r0, [r4, #0]
 	b _08018580
 	.byte 0x00
@@ -471,14 +471,14 @@ _080183B0:
 	ldr r1, [r4, #0]
 	ldr r0, [sp, #36]
 	mov r2, sp
-	bl sub_0800D4E8
+	bl HitBoundsGetHorizontalTileCorrection
 	mov r9, r0
 	ldr r1, [r5, #0]
 	ldr r2, [sp, #28]
 	subs r1, r1, r2
 	ldr r0, [sp, #40]
 	mov r2, sp
-	bl sub_0800D518
+	bl HitBoundsGetVerticalTileCorrection
 	mov r8, r0
 	ldr r3, [sp, #40]
 	cmp r3, #5
@@ -624,7 +624,7 @@ _080184BC:
 	str r1, [r4, #0]
 	ldr r0, [sp, #40]
 	mov r2, sp
-	bl sub_0800D518
+	bl HitBoundsGetVerticalTileCorrection
 	str r0, [r4, #0]
 	.global _080184C8
 _080184C8:
@@ -708,7 +708,7 @@ _08018528:
 	adds r1, r1, r0
 	ldr r0, [sp, #36]
 	mov r2, sp
-	bl sub_0800D4E8
+	bl HitBoundsGetHorizontalTileCorrection
 	str r0, [r4, #0]
 	b _08018580
 	.byte 0x00
@@ -964,7 +964,7 @@ _08018748:
 	str r1, [r4, #0]
 	mov r0, r10
 	mov r2, sp
-	bl sub_0800D4E8
+	bl HitBoundsGetHorizontalTileCorrection
 	str r0, [r4, #0]
 	movs r1, #198
 	lsls r1, r1, #1
@@ -986,7 +986,7 @@ _08018798:
 	str r1, [r5, #0]
 	ldr r0, [sp, #16]
 	mov r2, sp
-	bl sub_0800D518
+	bl HitBoundsGetVerticalTileCorrection
 	str r0, [r5, #0]
 	movs r1, #198
 	lsls r1, r1, #1
@@ -1005,7 +1005,7 @@ _080187BA:
 	str r1, [r4, #0]
 	mov r0, r10
 	mov r2, sp
-	bl sub_0800D4E8
+	bl HitBoundsGetHorizontalTileCorrection
 	str r0, [r4, #0]
 	movs r1, #184
 	lsls r1, r1, #1
@@ -1016,7 +1016,7 @@ _080187BA:
 	str r1, [r4, #0]
 	ldr r0, [sp, #16]
 	mov r2, sp
-	bl sub_0800D518
+	bl HitBoundsGetVerticalTileCorrection
 	str r0, [r4, #0]
 	movs r3, #198
 	lsls r3, r3, #1
@@ -1042,7 +1042,7 @@ _080187F6:
 	mov r2, r8
 	subs r1, r1, r2
 	mov r2, sp
-	bl sub_0800D4E8
+	bl HitBoundsGetHorizontalTileCorrection
 	str r0, [r4, #0]
 	.global _0801881E
 _0801881E:
@@ -1072,7 +1072,7 @@ _0801881E:
 	mov r2, r9
 	subs r1, r1, r2
 	mov r2, sp
-	bl sub_0800D518
+	bl HitBoundsGetVerticalTileCorrection
 	str r0, [r4, #0]
 	.global _0801885A
 _0801885A:

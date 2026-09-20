@@ -44,6 +44,13 @@ enum MapProbeDirection
     MAP_DIR_NORTHWEST,
 };
 
+s32 HitBoundsGetHorizontalTileCorrection(enum MapProbeDirection direction,
+                                         s32 fixedPosition,
+                                         const struct HitBounds *bounds);
+s32 HitBoundsGetVerticalTileCorrection(enum MapProbeDirection direction,
+                                       s32 fixedPosition,
+                                       const struct HitBounds *bounds);
+
 /* The original lookup does not bounds-check id; valid table indices are 0..15. */
 void HitRegionDisable(s32 id);
 void HitRegionDisableAll(void);

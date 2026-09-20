@@ -318,6 +318,8 @@
   "0800AFCC": "RuntimeGetSignedByteE4C",
   "0800B1B8": "CreateCoordinateTask",
   "0800B478": "CreateTaskB478",
+  "0800D4E8": "HitBoundsGetHorizontalTileCorrection",
+  "0800D518": "HitBoundsGetVerticalTileCorrection",
   "0800D628": "GameStateGetRecord610",
   "0800D664": "CreateActorTaskD664",
   "0800D8EC": "StartPendingEffectB",

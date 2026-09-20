@@ -10870,81 +10870,14 @@ _0800D4D6:
 	bx r1
 	.4byte 0x47702000
 
-	.thumb_func
-	.thumb
-	.global sub_0800D4E8
-sub_0800D4E8:
-	push {r4, r5, lr}
-	movs r3, #0
-	ldrsh r4, [r2, r3]
-	asrs r1, r1, #16
-	adds r3, r4, r1
-	asrs r3, r3, #3
-	movs r5, #4
-	ldrsh r2, [r2, r5]
-	adds r1, r2, r1
-	asrs r1, r1, #3
-	cmp r0, #3
-	bne _0800D50A
-	adds r0, r1, #1
-	lsls r0, r0, #3
+@ 00D4E8..00D518 is decompiled as HitBoundsGetHorizontalTileCorrection();
+@ see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0800D504
-sub_0800D504:
-	subs r0, r0, r2
-	subs r0, #1
-	b _0800D50E
-	.global _0800D50A
-_0800D50A:
-	lsls r0, r3, #3
-	subs r0, r0, r4
-	.global _0800D50E
-_0800D50E:
-	lsls r1, r0, #16
-	adds r0, r1, #0
-	pop {r4, r5}
-	pop {r1}
-	bx r1
+@ 00D518..00D548 is decompiled as HitBoundsGetVerticalTileCorrection();
+@ see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0800D518
-sub_0800D518:
-	push {r4, r5, lr}
-	movs r3, #2
-	ldrsh r4, [r2, r3]
-	asrs r1, r1, #16
-	adds r3, r4, r1
-	asrs r3, r3, #3
-	movs r5, #6
-	ldrsh r2, [r2, r5]
-	adds r1, r2, r1
-	asrs r1, r1, #3
-	cmp r0, #5
-	bne _0800D53A
-	adds r0, r1, #1
-	lsls r0, r0, #3
-	subs r0, r0, r2
-
-	.thumb_func
-	.thumb
-	.global sub_0800D536
-sub_0800D536:
-	subs r0, #1
-	b _0800D53E
-	.global _0800D53A
-_0800D53A:
-	lsls r0, r3, #3
-	subs r0, r0, r4
-	.global _0800D53E
-_0800D53E:
-	lsls r1, r0, #16
-	adds r0, r1, #0
-	pop {r4, r5}
-	pop {r1}
-	bx r1
+	.section .rom.0000D548, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb

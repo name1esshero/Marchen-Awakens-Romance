@@ -14731,7 +14731,7 @@ _0801803A:
 	str r1, [r5, #0]
 	ldr r0, [sp, #36]
 	mov r2, sp
-	bl sub_0800D4E8
+	bl HitBoundsGetHorizontalTileCorrection
 	str r0, [r5, #0]
 	movs r3, #198
 	lsls r3, r3, #1
@@ -14750,7 +14750,7 @@ _08018080:
 	str r1, [r6, #0]
 	ldr r0, [sp, #40]
 	mov r2, sp
-	bl sub_0800D518
+	bl HitBoundsGetVerticalTileCorrection
 	str r0, [r6, #0]
 	movs r1, #198
 	lsls r1, r1, #1
@@ -14768,7 +14768,7 @@ _080180A0:
 	str r1, [r4, #0]
 	ldr r0, [sp, #36]
 	mov r2, sp
-	bl sub_0800D4E8
+	bl HitBoundsGetHorizontalTileCorrection
 	str r0, [r4, #0]
 	movs r1, #184
 	lsls r1, r1, #1

@@ -24,6 +24,54 @@ void HitBoundsTranslate(struct HitBounds *destination, s32 x, s32 y,
     destination->bottom = translatedY;
 }
 
+/** Return the horizontal fixed-point correction that places a bound on an
+ * eight-pixel tile edge. Eastward movement aligns the far edge; every other
+ * direction aligns the near edge. */
+AT("0000D4E8")
+s32 HitBoundsGetHorizontalTileCorrection(enum MapProbeDirection direction,
+                                         s32 fixedPosition,
+                                         const struct HitBounds *bounds)
+{
+    s32 near = bounds->left;
+    s32 offset = fixedPosition >> 16;
+    s32 nearTile = (near + offset) >> 3;
+    s32 far = bounds->right;
+    s32 farTile = (far + offset) >> 3;
+    s32 correction;
+
+    if (direction == MAP_DIR_EAST)
+        correction = ((farTile + 1) << 3) - far - 1;
+    else
+        correction = (nearTile << 3) - near;
+
+    fixedPosition = correction << 16;
+    return fixedPosition;
+}
+
+/** Return the vertical fixed-point correction that places a bound on an
+ * eight-pixel tile edge. Southward movement aligns the far edge; every other
+ * direction aligns the near edge. */
+AT("0000D518")
+s32 HitBoundsGetVerticalTileCorrection(enum MapProbeDirection direction,
+                                       s32 fixedPosition,
+                                       const struct HitBounds *bounds)
+{
+    s32 near = bounds->top;
+    s32 offset = fixedPosition >> 16;
+    s32 nearTile = (near + offset) >> 3;
+    s32 far = bounds->bottom;
+    s32 farTile = (far + offset) >> 3;
+    s32 correction;
+
+    if (direction == MAP_DIR_SOUTH)
+        correction = ((farTile + 1) << 3) - far - 1;
+    else
+        correction = (nearTile << 3) - near;
+
+    fixedPosition = correction << 16;
+    return fixedPosition;
+}
+
 /** @brief Disable one indexed hit region. */
 AT("00011504") void HitRegionDisable(s32 id)
 {

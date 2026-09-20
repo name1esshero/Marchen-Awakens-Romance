@@ -2052,6 +2052,18 @@
     "file": "src/task_adapters.c"
   },
   {
+    "addr": "0800D4E8",
+    "size": 48,
+    "name": "HitBoundsGetHorizontalTileCorrection",
+    "file": "src/hit_region.c"
+  },
+  {
+    "addr": "0800D518",
+    "size": 48,
+    "name": "HitBoundsGetVerticalTileCorrection",
+    "file": "src/hit_region.c"
+  },
+  {
     "addr": "0800D628",
     "size": 32,
     "name": "GameStateGetRecord610",

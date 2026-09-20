@@ -2685,3 +2685,21 @@ pointer arithmetic, contains no raw software address or code-generation hint,
 and has one confirmed caller in the battle setup path. The larger initializer
 at 0x08016BA4 keeps its provisional symbol and remains assembly until its full
 state layout is decoded.
+
+## Directional tile-edge correction pair (2026-09-20)
+
+`HitBoundsGetHorizontalTileCorrection` at 0x0800D4E8 and
+`HitBoundsGetVerticalTileCorrection` at 0x0800D518 are matching 48-byte
+siblings used throughout field collision and movement. Each converts a 16.16
+position to pixels, combines it with the near and far `HitBounds` edges, and
+returns a 16.16 correction to the nearest eight-pixel tile boundary. East and
+south use the far edge; the other directions use the near edge.
+
+The paired bodies establish the field selection and the `MapProbeDirection`
+constants without guesswork. Assigning the shifted correction back to the
+`fixedPosition` parameter before returning is ordinary source-level reuse of a
+dead parameter; it reproduces the ROM's final `lsls r1` followed by `adds r0,
+r1`, while returning the expression directly lets agbcc shift r0 in place.
+Both functions otherwise share the same direct arithmetic source shape and
+need no register declarations, volatile accesses, address casts, or inline
+assembly.
