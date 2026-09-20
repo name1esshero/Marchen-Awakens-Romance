@@ -10477,7 +10477,151 @@ CreateSoundFadeTask:
 
 @ 00581C..005848 is decompiled as SoundWaitTask(); see src/decompiled.json
 
-@ 005848..005920 is decompiled as CreateSoundPlayerIdleWait(); see src/decompiled.json
+	.section .rom.00005848, "ax"
+	.syntax unified
+	.thumb
+	.thumb_func
+	.global CreateSoundPlayerIdleWait
+	.type CreateSoundPlayerIdleWait, %function
+CreateSoundPlayerIdleWait:
+	push {r4, r5, r6, lr}
+	sub sp, #4
+	adds r6, r0, #0
+	adds r4, r1, #0
+	cmp r6, #8
+	bhi .LSoundIdleDefaultPlayer
+	lsls r0, r6, #2
+	ldr r1, .LSoundIdleJumpTablePointer
+	adds r0, r0, r1
+	ldr r0, [r0]
+	mov pc, r0
+
+	.align 2, 0
+.LSoundIdleJumpTablePointer:
+	.4byte .LSoundIdleJumpTable
+.LSoundIdleJumpTable:
+	.4byte .LSoundIdleDefaultPlayer
+	.4byte .LSoundIdlePlayer1
+	.4byte .LSoundIdlePlayer2
+	.4byte .LSoundIdlePlayer3
+	.4byte .LSoundIdlePlayer4
+	.4byte .LSoundIdlePlayer5
+	.4byte .LSoundIdlePlayer6
+	.4byte .LSoundIdlePlayer7
+	.4byte .LSoundIdlePlayer8
+
+.LSoundIdlePlayer1:
+	ldr r0, .LSoundIdlePlayer1Pointer
+	b .LSoundIdlePlayerSelected
+	.align 2, 0
+.LSoundIdlePlayer1Pointer:
+	.4byte gSoundPlayer1
+
+.LSoundIdlePlayer2:
+	ldr r0, .LSoundIdlePlayer2Pointer
+	b .LSoundIdlePlayerSelected
+	.align 2, 0
+.LSoundIdlePlayer2Pointer:
+	.4byte gSoundPlayer2
+
+.LSoundIdlePlayer3:
+	ldr r0, .LSoundIdlePlayer3Pointer
+	b .LSoundIdlePlayerSelected
+	.align 2, 0
+.LSoundIdlePlayer3Pointer:
+	.4byte gSoundPlayer3
+
+.LSoundIdlePlayer4:
+	ldr r0, .LSoundIdlePlayer4Pointer
+	b .LSoundIdlePlayerSelected
+	.align 2, 0
+.LSoundIdlePlayer4Pointer:
+	.4byte gSoundPlayer4
+
+.LSoundIdlePlayer5:
+	ldr r0, .LSoundIdlePlayer5Pointer
+	b .LSoundIdlePlayerSelected
+	.align 2, 0
+.LSoundIdlePlayer5Pointer:
+	.4byte gSoundPlayer5
+
+.LSoundIdlePlayer6:
+	ldr r0, .LSoundIdlePlayer6Pointer
+	b .LSoundIdlePlayerSelected
+	.align 2, 0
+.LSoundIdlePlayer6Pointer:
+	.4byte gSoundPlayer6
+
+.LSoundIdlePlayer7:
+	ldr r0, .LSoundIdlePlayer7Pointer
+	b .LSoundIdlePlayerSelected
+	.align 2, 0
+.LSoundIdlePlayer7Pointer:
+	.4byte gSoundPlayer7
+
+.LSoundIdlePlayer8:
+	ldr r0, .LSoundIdlePlayer8Pointer
+	b .LSoundIdlePlayerSelected
+	.align 2, 0
+.LSoundIdlePlayer8Pointer:
+	.4byte gSoundPlayer8
+
+.LSoundIdleDefaultPlayer:
+	ldr r0, .LSoundIdleDefaultPlayerPointer
+.LSoundIdlePlayerSelected:
+	ldr r0, [r0, #4]
+	cmp r0, #0
+	bge .LSoundIdleActive
+	movs r0, #0
+	str r0, [r2]
+	b .LSoundIdleReturn
+	.align 2, 0
+.LSoundIdleDefaultPlayerPointer:
+	.4byte gSoundPlayer0
+
+.LSoundIdleActive:
+	cmp r4, #0
+	beq .LSoundIdleImmediate
+	ldr r0, .LSoundIdleTaskLiterals
+	ldr r5, .LSoundIdleTaskLiterals + 4
+	movs r1, #12
+	str r1, [sp]
+	adds r1, r5, #0
+	movs r2, #0
+	bl CreateTask
+	adds r4, r0, #0
+	str r6, [r4, #36]
+	movs r0, #1
+	bl ScriptAddPendingTasks
+	adds r0, r4, #0
+	bl sub_08080BD4
+	adds r0, r4, #0
+	b .LSoundIdleEpilogue
+	.align 2, 0
+.LSoundIdleTaskLiterals:
+	.4byte gMainTaskManager
+	.4byte SoundPlayerIdleTask
+
+.LSoundIdleImmediate:
+	lsrs r0, r0, #31
+	movs r1, #1
+	eors r0, r1
+	str r0, [r2]
+	movs r0, #0
+.LSoundIdleReturn:
+.LSoundIdleEpilogue:
+	add sp, #4
+	pop {r4, r5, r6}
+	pop {r1}
+	bx r1
+	.size CreateSoundPlayerIdleWait, . - CreateSoundPlayerIdleWait
+
+	.global CreateSoundPlayerIdleWaitTail
+	.type CreateSoundPlayerIdleWaitTail, %object
+	.size CreateSoundPlayerIdleWaitTail, 2
+CreateSoundPlayerIdleWaitTail:
+	.byte 0
+	.byte 0
 
 @ 005920..0059C8 is decompiled as SoundPlayerIdleTask(); see src/decompiled.json
 

@@ -1,8 +1,6 @@
 #include "sound.h"
 #include "task_manager.h"
 
-#include "rom_section.h"
-
 extern void ScriptAddPendingTasks(u32 count);
 extern void sub_08080BD4(void *task);
 extern void SoundPlayerIdleTask(struct EngineTask *task);
@@ -20,15 +18,20 @@ struct SoundIdleTaskRecord
  * @param result Receives the immediate busy result when no task is created.
  * @param completion Optional task completion word.
  * @return The wait task, or null for an immediate result or inactive player.
+ *
+ * This natural reconstruction has the correct behavior and size, but agbcc
+ * assigns three live values to different registers from the original ROM.
+ * The exact symbolic implementation remains in assembly until the original
+ * source lifetimes are recovered.
  */
-AT("00005848") struct EngineTask *CreateSoundPlayerIdleWait(
+struct EngineTask *CreateSoundPlayerIdleWait(
     u32 playerIndex, u32 wait, s32 *result, u32 *completion)
 {
     struct SoundPlayer *player;
-    register u32 status asm("r0");
+    u32 status;
     u32 index;
-    register u32 waitValue asm("r4");
-    register void (*callback)(struct EngineTask *) asm("r5");
+    u32 waitValue;
+    void (*callback)(struct EngineTask *);
     struct EngineTask *returnTask;
 
     index = playerIndex;
@@ -52,9 +55,9 @@ AT("00005848") struct EngineTask *CreateSoundPlayerIdleWait(
         return 0;
     }
     if (waitValue != 0) {
-        struct TaskManager *manager = &gMainTaskManager;
         callback = SoundPlayerIdleTask;
-        waitValue = (u32)CreateTask(manager, callback, 0, completion, 12);
+        waitValue = (u32)CreateTask(&gMainTaskManager, callback, 0,
+                                    completion, 12);
         ((struct SoundIdleTaskRecord *)waitValue)->playerIndex = index;
         ScriptAddPendingTasks(1);
         sub_08080BD4((void *)waitValue);
@@ -67,5 +70,3 @@ AT("00005848") struct EngineTask *CreateSoundPlayerIdleWait(
     }
     return returnTask;
 }
-
-AT("00005848") const u8 CreateSoundPlayerIdleWaitTail[2] = {0};

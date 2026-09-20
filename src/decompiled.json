@@ -456,12 +456,6 @@
     "file": "src/sound_tasks.c"
   },
   {
-    "addr": "08005848",
-    "size": 216,
-    "name": "CreateSoundPlayerIdleWait",
-    "file": "src/sound_idle_wait.c"
-  },
-  {
     "addr": "08005920",
     "size": 168,
     "name": "SoundPlayerIdleTask",

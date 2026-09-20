@@ -15,7 +15,7 @@ error. The audit prints known, new, and resolved counts on one line.
 
 - `make compare` reproduces the Japanese ROM byte for byte.
 - `make english` succeeds and all 197 host tests pass.
-- The mechanical PRET audit reports **99 errors / 0 warnings / 17 documented
+- The mechanical PRET audit reports **93 errors / 0 warnings / 17 documented
   exceptions** on one summary line. Every exception is enumerated in the
   generated report.
 
@@ -48,6 +48,11 @@ The exact symbolic implementation is retained in assembly and the natural,
 typed reconstruction is kept in `src/nonmatching/sound_fade_create.c`. This
 removes its forced-register and duplicate inline-assembly findings while
 leaving the unresolved callback lifetime visible to future contributors.
+
+`CreateSoundPlayerIdleWait` follows the same honest fallback for its three
+unresolved register allocations. Its exact 216-byte switch and task creation
+path are symbolic assembly, while its clean behavioral reconstruction remains
+under `src/nonmatching/`. This removes six more duplicated audit findings.
 
 ## Verified snapshot: renderer reference fallback, 2026-09-20
 
@@ -121,10 +126,9 @@ per the remediation order below, the next step for each surviving hint is a
 structural C rewrite, not another mechanical pass. Manual attempts at the
 former `src/sound_fade_create.c` r10 pin and `src/sound_idle_wait.c`'s three
 pins via reordering declarations did not reproduce the original register
-allocation. `CreateSoundFadeTask` has since moved to exact assembly with its
-clean candidate retained under `src/nonmatching/`; the sound-idle routines
-remain matching C with unresolved pins. Those probes rule out only the tested
-declaration orders, not a clean-C reconstruction.
+allocation. Both sound constructors have since moved to exact assembly with
+their clean candidates retained under `src/nonmatching/`. Those probes rule
+out only the tested declaration orders, not a future clean-C reconstruction.
 `src/sprite_affine_matrix.c` carries the largest single concentration
 (48 of the 92 TARGET_REGISTER pins) and is the highest-value structural-rewrite
 target for a future pass.

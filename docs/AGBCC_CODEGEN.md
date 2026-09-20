@@ -440,6 +440,16 @@ difference is register pressure rather than scheduling.
   wider structure exposes the real lifetime, keep the exact symbolic function
   in assembly and the readable candidate in `src/nonmatching/`; an r10
   constraint states a machine allocation rather than recovering source.
+- **A switch table can make a local register mismatch global.** In
+  `CreateSoundPlayerIdleWait`, the ROM keeps the player index in r6, the wait
+  value and eventual task pointer in r4, the callback in r5, and the selected
+  player's status in r0. Removing any one constraint changes allocation from
+  the prologue through the jump table or task path even though the function
+  stays 216 bytes. Reusing the input parameters changes the prologue; moving
+  callback initialization earlier moves its literal into the switch-table
+  region. These results narrow the missing source shape, but none justifies
+  three fixed registers. Preserve the exact switch as symbolic assembly and
+  keep the readable C candidate available for later whole-function recovery.
 - **After adding a function, run the host tests, not just `make compare`.** The
   tests compile individual `.c` files on their own, so a new reference to a
   symbol the ROM link resolves -- `gSecondaryRuntime`, `gIwramBase`, anything

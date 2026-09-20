@@ -2343,3 +2343,20 @@ constraint. It has been replaced by the PRET-compliant fallback: the exact
 `ScriptAddPendingTasks`, and `sub_08080BE8` by symbol, and its literal pool
 uses `gMainTaskManager` and `SoundFadeTask`; no raw software address was
 introduced.
+
+## Sound idle-wait constructor fallback (2026-09-20)
+
+`CreateSoundPlayerIdleWait` at 0x08005848 selects one of nine sound players,
+returns an immediate activity result when requested, or creates a 12-byte
+script-visible wait task. Its switch table, default-player path, signed status
+test, task initialization, pending-count update, and return behavior are all
+reconstructed in readable C.
+
+The matching C formerly forced three registers. Individual removal proved
+that the status-only candidate differs in four r0/r1 instructions, while the
+wait and callback candidates change allocation across the prologue and task
+path without changing the 216-byte size. Parameter reuse and earlier callback
+initialization produced different lifetimes and moved the jump-table layout.
+The exact implementation is therefore retained as named, relocatable assembly
+in `asm/code/code_0000C0.s`, and the clean candidate is kept in
+`src/nonmatching/sound_idle_wait.c` for later reconstruction.

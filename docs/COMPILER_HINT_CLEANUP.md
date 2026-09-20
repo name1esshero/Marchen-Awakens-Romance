@@ -363,7 +363,7 @@ Recorded at the time of writing; regenerate rather than trusting these numbers.
   `sprite_affine_matrix.c` (43, largely fixed-point affine/trig -- the single
   biggest remaining chunk), `sprite_transform.c` (20), `sprite_affine_slots.c`,
   `sram.c`, `sprite_interpolation.c`, `sound_m4a.c`, `resource_native.c`,
-  `mapping.c`, `sprite_math.c`, `sound_idle_wait.c`, `ncd_sprite.c`, `nfp.c`,
+  `mapping.c`, `sprite_math.c`, `ncd_sprite.c`, `nfp.c`,
   `sprite_tile_allocator.c`, `sprite_engine_state.c`, `save.c`.
 - `make compare` byte-exact and all host tests passing throughout.
 
@@ -539,6 +539,23 @@ pool reference relocatable symbols. The more readable typed implementation is
 retained in `src/nonmatching/sound_fade_create.c`. This removes the forced
 register and duplicate inline-assembly audit findings without pretending the
 current C shape is authentic.
+
+`CreateSoundPlayerIdleWait()` (0x08005848) had the same issue at a wider
+scope. Its matching reconstruction pinned the selected status to r0, the wait
+value and returned task to r4, and the callback to r5. Removing only the status
+pin preserves every instruction except the status load, comparison, boolean
+conversion, and result store, which move to r1. Removing either of the other
+pins changes allocation from the prologue onward while retaining the same
+216-byte size.
+
+Natural parameter reuse did not recover the ROM: reusing `wait` coalesces it
+with the later callback/task lifetime and removes r6 from the prologue, while
+reusing `playerIndex` introduces a second saved copy. Initializing the callback
+before the switch instead moves its literal into the jump-table pool and
+changes every table address. The exact, fully symbolic switch now lives in
+`asm/code/code_0000C0.s`; clean C remains in
+`src/nonmatching/sound_idle_wait.c`. The fallback removes all six audit
+findings without hiding the unresolved whole-function lifetime problem.
 
 ## Reuse an initialized search value before its loop role
 
