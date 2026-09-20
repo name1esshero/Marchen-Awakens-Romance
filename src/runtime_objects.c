@@ -17,6 +17,26 @@ extern u8 *gRuntimeObjectTable[];
 #define RUNTIME_LISTS_OFFSET 0x80
 #define RUNTIME_LIST_STRIDE 12
 #define RUNTIME_LIST_POINTERS_OFFSET 0xB0
+#define BATTLE_ACTOR_STATE_ACTOR_ID_OFFSET 360
+#define BATTLE_ACTOR_STATE_PART_ID_OFFSET 361
+#define ACTOR_RECORD_HEADER_FIRST_FLAG_OFFSET 0
+#define ACTOR_RECORD_HEADER_SECOND_FLAG_OFFSET 1
+#define ACTOR_RECORD_HEADER_ACTIVE_OFFSET 18
+
+extern void sub_08016BA4(void *state);
+
+/** Initialize an actor state, then clear the live record's header flags. */
+AT("00016B6C") void ResetBattleActorRuntimeHeader(u8 *state)
+{
+    u8 *record = RuntimeGetActorRecord(
+        (s8)state[BATTLE_ACTOR_STATE_ACTOR_ID_OFFSET],
+        (s8)state[BATTLE_ACTOR_STATE_PART_ID_OFFSET]);
+
+    sub_08016BA4(state);
+    record[ACTOR_RECORD_HEADER_FIRST_FLAG_OFFSET] = 0;
+    record[ACTOR_RECORD_HEADER_SECOND_FLAG_OFFSET] = 0;
+    record[ACTOR_RECORD_HEADER_ACTIVE_OFFSET] = 0;
+}
 
 /** Copy an object's primary character hit box into caller-owned storage. */
 AT("0000A6EC")

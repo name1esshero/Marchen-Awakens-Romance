@@ -479,6 +479,7 @@
   "08012FD0": "CreateEncounterSpriteTask",
   "08015268": "BattleActionUnavailable",
   "08016B44": "ApplyBattleCharacterRuntimeSettings",
+  "08016B6C": "ResetBattleActorRuntimeHeader",
   "08017BA8": "FieldActorTryRunStateUpdate",
   "08017E4C": "FieldActorUpdateForMode",
   "08018C4C": "HitRegionTest",

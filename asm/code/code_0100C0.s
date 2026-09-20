@@ -5746,7 +5746,7 @@ _080141A8:
 	ldrsh r0, [r2, r3]
 	bl ApplyBattleCharacterRuntimeSettings
 	adds r0, r7, #0
-	bl sub_08016B6C
+	bl ResetBattleActorRuntimeHeader
 	ldr r1, [sp, #52]
 	adds r1, #55
 	movs r2, #0
@@ -12103,37 +12103,11 @@ _08016B40:
 	.section .rom.00016B6C, "ax"
 	.syntax unified
 
-	.thumb_func
-	.thumb
-	.global sub_08016B6C
-sub_08016B6C:
-	push {r4, r5, lr}
-	adds r5, r0, #0
-	movs r1, #180
-	lsls r1, r1, #1
-	adds r0, r5, r1
-	ldrb r0, [r0, #0]
-	lsls r0, r0, #24
-	asrs r0, r0, #24
-	ldr r2, _08016BA0
-	adds r1, r5, r2
-	ldrb r1, [r1, #0]
-	lsls r1, r1, #24
-	asrs r1, r1, #24
-	.2byte 0xF7F3
-	.4byte 0x1C04FB1D
-	adds r0, r5, #0
-	bl sub_08016BA4
-	movs r0, #0
-	strb r0, [r4, #0]
-	strb r0, [r4, #1]
-	strb r0, [r4, #18]
-	pop {r4, r5}
-	pop {r0}
-	bx r0
-	.global _08016BA0
-_08016BA0:
-	.4byte 0x00000169
+@ 016B6C..016BA4 is decompiled as ResetBattleActorRuntimeHeader();
+@ see src/decompiled.json
+
+	.section .rom.00016BA4, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb

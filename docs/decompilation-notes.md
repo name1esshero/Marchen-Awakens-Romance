@@ -2670,3 +2670,18 @@ remains assembly pending a separate clean-C recovery. The wrapper itself
 reproduces all 40 bytes with ordinary structure access and no compiler hints.
 The stale decompilation-manifest name for the already recovered character-table
 accessor at 0x08011674 was also synchronized with its source and symbol name.
+
+## Battle actor runtime-header reset (2026-09-20)
+
+`ResetBattleActorRuntimeHeader` at 0x08016B6C reads the signed actor and part IDs
+at owner-state offsets 360 and 361, resolves the corresponding live actor
+record, invokes the existing state initializer at 0x08016BA4, and clears record
+bytes 0, 1, and 18. Named offsets preserve what is established without
+inventing meanings for the first two header flags.
+
+The direct byte-pointer form reproduces all 56 bytes, including agbcc's
+construction of offsets 360 and 361 and its literal pool. It uses normal typed
+pointer arithmetic, contains no raw software address or code-generation hint,
+and has one confirmed caller in the battle setup path. The larger initializer
+at 0x08016BA4 keeps its provisional symbol and remains assembly until its full
+state layout is decoded.

@@ -3042,6 +3042,12 @@
     "file": "src/runtime_misc.c"
   },
   {
+    "addr": "08016B6C",
+    "size": 56,
+    "name": "ResetBattleActorRuntimeHeader",
+    "file": "src/runtime_objects.c"
+  },
+  {
     "addr": "08017BA8",
     "size": 48,
     "name": "FieldActorTryRunStateUpdate",

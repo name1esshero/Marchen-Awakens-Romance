@@ -2,6 +2,8 @@
 #define RUNTIME_OBJECTS_H
 #include "gba/types.h"
 
+void ResetBattleActorRuntimeHeader(u8 *state);
+
 struct HitBounds;
 void RuntimeObjectCopyPrimaryHitBounds(u32 group, u32 slot,
                                        struct HitBounds *destination);
