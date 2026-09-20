@@ -26,7 +26,11 @@ struct ScriptBytecodeVm {
     u16 activeCallbackFlags;
 };
 
-struct ScriptResourceNode;
+struct ScriptResourceNode {
+    struct ScriptResourceNode *next;
+    char *typedName;
+    u8 value[1];
+};
 
 struct ScriptBytecodeContext {
     void *heap;
@@ -69,6 +73,14 @@ s32 ScriptResourceHash(s32 type, const char *name);
 u8 *ScriptResourceFind(s32 type, const char *name);
 s32 ScriptResourceSet(s32 type, const char *name, const void *value, s32 size);
 s32 ScriptResourceRemove(s32 type, const char *name);
+u8 *ScriptResourceTableFind(struct ScriptResourceNode **buckets, s32 type,
+                            const char *name);
+s32 ScriptResourceTableSet(void *heap, struct ScriptResourceNode **buckets,
+                           s32 type, const char *name, const void *value,
+                           s32 size);
+s32 ScriptResourceTableRemove(void *heap,
+                              struct ScriptResourceNode **buckets,
+                              s32 type, const char *name);
 
 s32 ScriptCmdJump(void);
 s32 ScriptCmdJumpIfZero(void);

@@ -30,9 +30,6 @@ extern s32 ScriptResourceNameSecond(const char *key);
 extern void *sub_080050A8(const char *name, s32 slot, s32 *status);
 extern void sub_0807E76C(void *resource, const char *name, s32 slot,
                          s32 status);
-extern s32 sub_0807EBE0(s32 heap, void *table, s32 type, const char *name);
-extern s32 sub_0807EB5C(s32 heap, void *table, s32 type, const char *name,
-                        const void *data, s32 size);
 
 /** Register a {name, value} table as type-33 resources, replacing any
  * existing entry of the same name.
@@ -58,12 +55,13 @@ AT("0007EE10") const u8 ScriptResourceRegisterTableTail[2] = {0};
  * @param entry Name-terminated table (a null name ends the table).
  * @return Always 0. */
 AT("0007EE3C") s32 ScriptResourceRegisterTableToHeap(
-    s32 heap, void *table, const struct ScriptResourceEntry *entry)
+    void *heap, struct ScriptResourceNode **buckets,
+    const struct ScriptResourceEntry *entry)
 {
     while (entry->name) {
-        sub_0807EBE0(heap, table, 33, entry->name);
-        sub_0807EB5C(heap, table, 33, entry->name, &entry->value,
-                     sizeof(entry->value));
+        ScriptResourceTableRemove(heap, buckets, 33, entry->name);
+        ScriptResourceTableSet(heap, buckets, 33, entry->name,
+                               &entry->value, sizeof(entry->value));
         entry++;
     }
     return 0;
@@ -71,16 +69,17 @@ AT("0007EE3C") s32 ScriptResourceRegisterTableToHeap(
 AT("0007EE3C") const u8 ScriptResourceRegisterTableToHeapTail[2] = {0};
 
 /** Install the built-in VM, game, and native-command resource tables. */
-AT("0007EE7C") s32 ScriptResourceRegisterBuiltins(s32 heap, void *table)
+AT("0007EE7C") s32 ScriptResourceRegisterBuiltins(
+    void *heap, struct ScriptResourceNode **buckets)
 {
     if (ScriptResourceRegisterTableToHeap(
-            heap, table, gScriptBuiltinFunctions))
+            heap, buckets, gScriptBuiltinFunctions))
         return -1;
     if (ScriptResourceRegisterTableToHeap(
-            heap, table, gScriptEngineFunctions))
+            heap, buckets, gScriptEngineFunctions))
         return -1;
     if (ScriptResourceRegisterTableToHeap(
-            heap, table, gScriptNativeCommands))
+            heap, buckets, gScriptNativeCommands))
         return -1;
     return 0;
 }

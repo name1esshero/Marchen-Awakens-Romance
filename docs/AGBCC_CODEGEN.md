@@ -652,6 +652,16 @@ scale the index in r0, matching all 152 bytes. A formerly matching candidate
 cast the bucket pointer through `u32` solely to obtain that allocation; the
 direct typed form proves the cast was unnecessary compiler steering.
 
+The adjacent generic resource-table family at 0x0807EB18..0x0807EC58 confirms
+the abstraction. Passing the heap and `struct ScriptResourceNode **` bucket
+array explicitly lets the same typed lookup, insertion, and removal bodies
+compile to all 320 original bytes without special source shaping. In
+particular, direct `buckets[bucket]` expressions reproduce the ROM's scaled
+index operations in all three routines. When a global wrapper resists a clean
+match, decode its explicit-context sibling before changing pointer
+representation; the sibling can reveal both the intended types and the
+natural expression form.
+
 ### A shared word type can recover a real alias relationship
 
 `GameStateAddResourceCounter` stores a u32 counter through a runtime address,

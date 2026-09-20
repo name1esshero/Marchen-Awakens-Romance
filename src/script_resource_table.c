@@ -3,12 +3,6 @@
 #include "script_bytecode.h"
 
 #include "rom_section.h"
-struct ScriptResourceNode {
-    struct ScriptResourceNode *next;
-    char *typedName;
-    u8 value[1];
-};
-
 extern s32 __modsi3(s32 dividend, s32 divisor);
 extern u32 strlen(const char *text);
 extern s32 strcmp(const char *left, const char *right);
@@ -110,3 +104,77 @@ found:
     HeapFree(gScriptBytecodeRoot->context->resourceHeap, node);
     return 0;
 }
+
+/** Find a class/name pair in an explicitly supplied resource bucket array. */
+AT("0007EB18") u8 *ScriptResourceTableFind(
+    struct ScriptResourceNode **buckets, s32 type, const char *name)
+{
+    s32 bucket = ScriptResourceHash(type, name);
+    struct ScriptResourceNode *node = buckets[bucket];
+
+    while (node != 0) {
+        if (type == (s8)node->typedName[0] &&
+            strcmp(name, node->typedName + 1) == 0)
+            return node->value;
+        node = node->next;
+    }
+    return 0;
+}
+
+/** Insert a class/name pair using an explicitly supplied heap and resource
+ * bucket array. */
+AT("0007EB5C") s32 ScriptResourceTableSet(
+    void *heap, struct ScriptResourceNode **buckets, s32 type,
+    const char *name, const void *value, s32 size)
+{
+    s32 bucket = ScriptResourceHash(type, name);
+    struct ScriptResourceNode *node;
+    u32 nameLength;
+
+    if (ScriptResourceTableFind(buckets, type, name) != 0)
+        return 1;
+
+    nameLength = strlen(name);
+    node = HeapAlloc(heap, size + nameLength + 13);
+    if (node == 0)
+        return -1;
+
+    CpuCopy(node->value, value, size);
+    node->typedName = (char *)node + (size + 8);
+    node->typedName[0] = type;
+    strcpy(node->typedName + 1, name);
+    node->next = buckets[bucket];
+    buckets[bucket] = node;
+    return 0;
+}
+
+/** Remove a class/name pair from an explicitly supplied bucket array and
+ * release its node to the corresponding heap. */
+AT("0007EBE0") s32 ScriptResourceTableRemove(
+    void *heap, struct ScriptResourceNode **buckets, s32 type,
+    const char *name)
+{
+    s32 bucket = ScriptResourceHash(type, name);
+    struct ScriptResourceNode *node = buckets[bucket];
+    struct ScriptResourceNode *previous = 0;
+
+    if (node != 0) {
+        do {
+            if (type == (s8)node->typedName[0] &&
+                strcmp(name, node->typedName + 1) == 0)
+                goto found;
+            previous = node;
+            node = node->next;
+        } while (node != 0);
+    }
+    return 1;
+
+found:
+    if (previous == 0)
+        buckets[bucket] = node->next;
+    else
+        previous->next = node->next;
+    HeapFree(heap, node);
+    return 0;
+}
+AT("0007EBE0") const u8 ScriptResourceTableRemoveTail[2] = {0, 0};

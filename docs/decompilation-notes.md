@@ -2525,3 +2525,11 @@ Writing the linked-list read and write as two direct typed subscripts gives
 agbcc the original r1 bucket-base/r0 scaled-index allocation naturally. The
 152-byte assembly body and its nonmatching candidate were removed after the
 full ROM remained byte-identical.
+
+The following 320 bytes at 0x0807EB18..0x0807EC58 are the same hash-table
+operations with an explicit heap and bucket array. They now compile as
+`ScriptResourceTableFind`, `ScriptResourceTableSet`, and
+`ScriptResourceTableRemove`. Existing registration callers establish the
+six-argument insertion ABI and use the shared node type directly. All three
+matched from ordinary linked-list traversal and typed bucket indexing on the
+first compile; their raw assembly bodies and placeholder names were removed.
