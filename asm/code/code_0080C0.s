@@ -15225,29 +15225,8 @@ _0800F964:
 	.section .rom.0000F994, "ax"
 	.syntax unified
 
-	.thumb_func
-	.thumb
-	.global sub_0800F994
-sub_0800F994:
-	ldr r1, _0800F9A8
-	ldr r2, _0800F9AC
-	adds r1, r1, r2
-	lsls r0, r0, #5
-	ldr r2, _0800F9B0
-	adds r0, r0, r2
-	ldr r1, [r1, #0]
-	adds r1, r1, r0
-	adds r0, r1, #0
-	bx lr
-	.global _0800F9A8
-_0800F9A8:
-	.4byte 0x03000000  @ IWRAM
-	.global _0800F9AC
-_0800F9AC:
-	.4byte 0x00003FDC
-	.global _0800F9B0
-_0800F9B0:
-	.4byte 0x0000413C
+@ 00F994..00F9B4 is decompiled as GameStateGetEffectSlot();
+@ see src/decompiled.json
 
 @ 00F9B4..00F9EC is decompiled as CreateSpriteTaskF9B4(); see src/decompiled.json
 
@@ -15292,7 +15271,7 @@ sub_0800F9EC:
 	.global _0800FA2A
 _0800FA2A:
 	movs r0, #0
-	bl sub_0800F994
+	bl GameStateGetEffectSlot
 	adds r5, r0, #0
 	ldrh r1, [r4, #14]
 	cmp r1, #0
@@ -15645,7 +15624,7 @@ sub_0800FCC8:
 	push {r4, r5, lr}
 	adds r5, r0, #0
 	ldr r0, [r5, #32]
-	bl sub_0800F994
+	bl GameStateGetEffectSlot
 	adds r4, r0, #0
 	ldrb r1, [r4, #0]
 	movs r0, #1
@@ -15721,7 +15700,7 @@ sub_0800FD70:
 	push {r4, r5, r6, r7, lr}
 	adds r7, r0, #0
 	movs r0, #0
-	bl sub_0800F994
+	bl GameStateGetEffectSlot
 	adds r4, r0, #0
 	movs r6, #0
 	movs r5, #7
@@ -15875,7 +15854,7 @@ sub_0800FE6C:
 	mov r8, r0
 	mov r1, r9
 	ldr r0, [r1, #32]
-	bl sub_0800F994
+	bl GameStateGetEffectSlot
 	adds r6, r0, #0
 	mov r1, r9
 	ldrh r0, [r1, #14]
@@ -16006,7 +15985,7 @@ sub_0800FF64:
 	adds r6, r1, #0
 	adds r5, r2, #0
 	adds r7, r3, #0
-	bl sub_0800F994
+	bl GameStateGetEffectSlot
 	adds r4, r0, #0
 	ldrb r1, [r4, #0]
 	movs r0, #1
@@ -16076,7 +16055,7 @@ sub_0801001C:
 	adds r4, r6, #0
 	adds r4, #32
 	ldr r0, [r4, #4]
-	bl sub_0800F994
+	bl GameStateGetEffectSlot
 	adds r5, r0, #0
 	ldrh r0, [r6, #14]
 	cmp r0, #0

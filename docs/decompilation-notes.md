@@ -2703,3 +2703,20 @@ r1`, while returning the expression directly lets agbcc shift r0 in place.
 Both functions otherwise share the same direct arithmetic source shape and
 need no register declarations, volatile accesses, address casts, or inline
 assembly.
+
+## Game-state effect-slot accessor (2026-09-20)
+
+`GameStateGetEffectSlot` at 0x0800F994 returns one of eight 32-byte effect
+records at game-state offset 0x413C, indexed by the caller. It was previously
+recorded as blocked on register pressure: the ROM keeps the IWRAM root's
+pool address live across the index scale and dereferences it afterward, and
+every arithmetic C shape tried put both operations together instead.
+
+The fix was structural, not a scheduling trick: declaring
+`struct IwramGameStateRootLayout` (a fixed-offset prefix ending in the
+`gameState` pointer) and reading through it as a typed struct member,
+rather than computing `gIwramBase + GAME_STATE_ROOT_IWRAM_OFFSET` as raw
+pointer arithmetic each time, reproduces the ROM's instruction order and
+register choice directly. `GameStateClearBlock413C` was updated to share the
+same named `GAME_STATE_EFFECT_SLOTS_OFFSET`/`GAME_STATE_EFFECT_SLOT_SIZE`
+constants instead of the bare `0x413C`/`256` literals it used before.

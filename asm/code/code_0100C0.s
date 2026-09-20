@@ -131,7 +131,7 @@ sub_08010194:
 	adds r7, r2, #0
 	mov r8, r3
 	ldr r4, [sp, #40]
-	bl sub_0800F994
+	bl GameStateGetEffectSlot
 	adds r3, r0, #0
 	ldrb r1, [r3, #0]
 	movs r0, #1
@@ -298,7 +298,7 @@ sub_08010364:
 	adds r4, r6, #0
 	adds r4, #32
 	ldr r0, [r6, #32]
-	bl sub_0800F994
+	bl GameStateGetEffectSlot
 	adds r5, r0, #0
 	ldrh r0, [r6, #14]
 	cmp r0, #0
@@ -377,7 +377,7 @@ sub_08010410:
 	adds r5, r1, #0
 	adds r4, r2, #0
 	adds r7, r3, #0
-	bl sub_0800F994
+	bl GameStateGetEffectSlot
 	adds r2, r0, #0
 	ldrb r1, [r2, #0]
 	movs r0, #1
@@ -501,7 +501,7 @@ sub_08010568:
 	adds r6, r1, #0
 	adds r4, r2, #0
 	adds r5, r3, #0
-	bl sub_0800F994
+	bl GameStateGetEffectSlot
 	adds r2, r0, #0
 	ldrb r0, [r2, #0]
 	movs r7, #1
@@ -592,7 +592,7 @@ sub_080105FC:
 	adds r4, r5, #0
 	adds r4, #32
 	ldr r0, [r5, #32]
-	bl sub_0800F994
+	bl GameStateGetEffectSlot
 	adds r2, r0, #0
 	ldr r1, [r4, #4]
 	movs r0, #1

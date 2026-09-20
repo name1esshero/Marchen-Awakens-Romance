@@ -6,11 +6,6 @@
 extern u8 gIwramBase[];
 extern u8 gMapGenerationRootOffset[];
 
-struct IwramGameStateRootLayout {
-    u8 unknown00[GAME_STATE_ROOT_IWRAM_OFFSET];
-    u8 *gameState;
-};
-
 struct GameStateFields424C50 {
     u8 unknown00[0x424C];
     u32 field424C;

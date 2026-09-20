@@ -2130,6 +2130,12 @@
     "file": "src/runtime_misc.c"
   },
   {
+    "addr": "0800F994",
+    "size": 32,
+    "name": "GameStateGetEffectSlot",
+    "file": "src/runtime_accessors.c"
+  },
+  {
     "addr": "0800F9B4",
     "size": 56,
     "name": "CreateSpriteTaskF9B4",

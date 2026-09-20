@@ -2,6 +2,7 @@
 #include "runtime_accessors.h"
 #include "runtime_state.h"
 #include "dialogue.h"
+#include "game_state.h"
 
 #include "rom_section.h"
 extern u8 gIwramBase[];
@@ -257,6 +258,16 @@ AT("00008658") void *RuntimeGetBufferE50(void)
 AT("0000D628") void *GameStateGetRecord610(u32 index)
 {
  return GAME_STATE_BASE+0x610+index*44;
+}
+
+/** @return One of the eight 32-byte effect slots in the main game state. */
+AT("0000F994") void *GameStateGetEffectSlot(u32 index)
+{
+    struct IwramGameStateRootLayout *iwram =
+        (struct IwramGameStateRootLayout *)gIwramBase;
+
+    return iwram->gameState + GAME_STATE_EFFECT_SLOTS_OFFSET
+           + index * GAME_STATE_EFFECT_SLOT_SIZE;
 }
 /** Set the byte field at the fixed IWRAM offset named gIwramField3FD5Offset.
  * See IwramGetField3FD5() for the signed reader. */

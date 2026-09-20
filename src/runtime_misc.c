@@ -5,6 +5,7 @@
 #include "runtime_buffers.h"
 #include "sprite_engine.h"
 #include "script_vm.h"
+#include "game_state.h"
 
 #include "rom_section.h"
 extern u8 gIwramBase[];
@@ -259,7 +260,8 @@ AT("00006A1C") void GameStateSetString12F4(const char *source)
 
 AT("0000F96C") void GameStateClearBlock413C(void)
 {
- CpuFill(ORDERED_GAME_STATE_BASE+0x413C,256,0);
+ CpuFill(ORDERED_GAME_STATE_BASE + GAME_STATE_EFFECT_SLOTS_OFFSET,
+         8 * GAME_STATE_EFFECT_SLOT_SIZE, 0);
 }
 
 /** Save the 256-slot consumable inventory into its adjacent snapshot. */

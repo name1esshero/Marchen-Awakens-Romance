@@ -7,6 +7,16 @@
  * layout field, not a ROM address. */
 #define GAME_STATE_ROOT_IWRAM_OFFSET 0x3FDC
 
+#define GAME_STATE_EFFECT_SLOTS_OFFSET 0x413C
+#define GAME_STATE_EFFECT_SLOT_SIZE 32
+
+/** Fixed IWRAM prefix ending in the pointer to the main game-state object. */
+struct IwramGameStateRootLayout
+{
+    u8 unknown00[GAME_STATE_ROOT_IWRAM_OFFSET];
+    u8 *gameState;
+};
+
 /* Main runtime root cached in IWRAM. The historical name is retained from
  * the map-generation code that first recovered this slot. */
 extern u8 *gMapGenerationRoot;

@@ -19,6 +19,7 @@ u32 IwramGetField0810(void);
 void IwramSetFlags0810(s32 mode, s32 enabled);
 void *RuntimeGetBufferE50(void);
 void *GameStateGetRecord610(u32 index);
+void *GameStateGetEffectSlot(u32 index);
 void IwramSetField3FD5(u32 value);
 s32 IwramGetField3FD5(void);
 s32 SoundGetIrqMode(void);
