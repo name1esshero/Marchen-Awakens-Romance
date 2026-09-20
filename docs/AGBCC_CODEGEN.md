@@ -24,6 +24,7 @@ Check any claim here yourself:
 
     python3 tools/agbcc_probe.py --types -f myFunc snippet.c
     python3 tools/agbcc_probe.py --types --diff shapeA.c shapeB.c
+    python3 tools/agbcc_probe.py --types --bytes --diff -f myFunc shapeA.c shapeB.c
 
 ## Signed byte loads: `ldrsb` or `ldrb`+`lsl`+`asr`
 
@@ -357,8 +358,15 @@ difference is register pressure rather than scheduling.
   minute and a half. See `docs/PRET_STANDARDS.md` §8a.
 - Compare **machine code**, not the compiler's assembly text. Inline asm emits
   `.code 16` directives that vanish when you remove it, so identical
-  instructions can read as a difference. `tools/drop_register_hints.py`
-  assembles and diffs `objdump` output for this reason.
+  instructions can read as a difference; and some instructions have more than
+  one valid textual spelling for the identical encoding, or -- the opposite
+  mistake -- an operand-order swap that looks like harmless commutativity in
+  the text (`adds r0, r0, r1` vs `adds r0, r1, r0`) but is a genuinely
+  different encoding (`0x1840` vs `0x1808`). `tools/drop_register_hints.py`
+  assembles and diffs `objdump` output for this reason; `agbcc_probe.py
+  --bytes` does the same for one-off single-file probes, and should be used
+  in place of the default text mode whenever a match/mismatch call is about
+  to be trusted for a real decision, not just a rough first look.
 - `make compare` stays the final authority. Everything above is a way to spend
   fewer of those minute-and-a-half runs.
 - A branch or assignment that is unreachable for every valid input is not an

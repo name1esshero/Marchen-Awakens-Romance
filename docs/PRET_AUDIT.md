@@ -19,6 +19,41 @@ ordinary edits above a finding do not create false regressions; duplicates are
 counted independently so one fixed error cannot hide one newly introduced
 error. The audit prints known, new, and resolved counts on one line.
 
+## Verified snapshot: SpriteRuntimeGetFields8C4 and probe tool bytes mode, 2026-09-20
+
+- `make compare` reproduces the Japanese ROM byte for byte.
+- All 199 host tests pass; `make check-modern` exits clean.
+- The mechanical PRET audit is **0 errors / 0 warnings / 18 documented
+  exceptions** -- two warnings appeared mid-session (`missing_doxygen` on
+  `SpriteRuntimeSetFlag800`, `undocumented_nonmatching` on
+  `sprite_tile_allocator_release.c`), both pre-existing gaps a file-layout
+  accident had been masking from the audit's line-proximity heuristics, not
+  regressions from this session's edits; both fixed.
+- `audit_provenance.py` now reports 1824/1824 mapped ranges compiled C.
+
+`SpriteRuntimeGetFields8C4` (0x0808053C), previously logged as abandoned in
+`docs/decompilation-notes.md`'s batch-C entry, matches: the ROM re-reads the
+global `gSpriteRuntime` fresh for the third output field instead of reusing
+the pointer cached for the first two, and agbcc reproduces that exact
+redundant reload once the C is written with that same mismatched-identifier
+shape rather than a uniformly cached local. See "Resolved:
+SpriteRuntimeGetFields8C4" in `docs/decompilation-notes.md` for the full
+mechanism and integration detail.
+
+Also fixed: `tools/agbcc_probe.py` compared only agbcc's assembly *text*,
+which is not proof of byte-identity in either direction (a scheduling
+fence's removal can change `.code 16` directives without changing any real
+instruction; a commutative operand swap like `adds r0,r0,r1` vs
+`adds r0,r1,r0` looks like harmless reordering in text but is a genuinely
+different encoding). A new `--bytes` flag assembles with `arm-none-eabi-as`
+and diffs `objdump -d` output instead, mirroring
+`tools/drop_register_hints.py`'s existing `compile_unit()`. Verified against
+both failure directions before being trusted: a fence-removal pair reports
+identical in both text and bytes mode, and an `adds r0,r0,r1`/
+`adds r0,r1,r0` pair reports identical in text but genuinely different in
+bytes mode (`0x1840` vs `0x1808`, matching the `SpriteResourceFindGroup`
+case exactly).
+
 ## Verified snapshot: SpriteFixedSqrt and check-modern fixed, 2026-09-20
 
 - `make compare` reproduces the Japanese ROM byte for byte.
