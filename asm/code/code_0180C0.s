@@ -781,7 +781,7 @@ sub_08018590:
 	movs r1, #0
 	ldrsb r1, [r5, r1]
 	add r2, sp, #8
-	bl sub_0800A6EC
+	bl RuntimeObjectCopyPrimaryHitBounds
 	adds r0, r6, #0
 	adds r0, #88
 	movs r2, #0
@@ -1107,7 +1107,7 @@ sub_0801887E:
 	movs r1, #0
 	ldrsb r1, [r5, r1]
 	add r2, sp, #16
-	bl sub_0800A6EC
+	bl RuntimeObjectCopyPrimaryHitBounds
 	movs r0, #0
 	ldrsb r0, [r4, r0]
 	movs r1, #0

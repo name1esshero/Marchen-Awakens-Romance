@@ -14576,7 +14576,7 @@ sub_08017E70:
 	ldrsb r1, [r5, r1]
 	add r4, sp, #8
 	adds r2, r4, #0
-	bl sub_0800A6EC
+	bl RuntimeObjectCopyPrimaryHitBounds
 	movs r2, #0
 	str r2, [sp, #28]
 	movs r3, #0

@@ -3,6 +3,8 @@
 #include "gba/types.h"
 
 struct HitBounds;
+void RuntimeObjectCopyPrimaryHitBounds(u32 group, u32 slot,
+                                       struct HitBounds *destination);
 void RuntimeObjectCopySecondaryHitBounds(u32 group, u32 slot,
                                          struct HitBounds *destination);
 

@@ -362,6 +362,28 @@ AT("000569B0") s32 CountPmbDeckEntryCopies(s32 id)
  * through gSecondaryRuntime; the strides are the same 1672/104 pair. */
 #define ACTOR_RECORD_SIZE 1672
 #define PART_RECORD_SIZE 104
+#define ACTOR_PART_VALUE_COUNT 20
+
+/** Count occurrences of a value in one actor/part record's value array. */
+AT("0000997C")
+s32 GameStateCountActorPartValue(s32 actorArg, s32 partArg, s32 value)
+{
+    s32 actor = actorArg;
+    s32 part = partArg;
+    s32 count = 0;
+    s32 i;
+    s16 *values;
+
+    actor = (s16)actor;
+    part = (s16)part;
+    values = (s16 *)sub_08056E3C(0, actor, part);
+    for (i = ACTOR_PART_VALUE_COUNT - 1; i >= 0; i--, values++) {
+        if (*values == value)
+            count++;
+    }
+    return count;
+}
+AT("0000997C") const u8 GameStateCountActorPartValueTail[2] = {0, 0};
 
 /** Game state get part field64 c using the recovered runtime layout. */
 AT("00056DFC") s32 GameStateGetPartField64C(s16 actorArg,s16 partArg)

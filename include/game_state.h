@@ -60,5 +60,6 @@ void GameStateRecordAddField2(s32 id, s32 value);
 s32 CountPmbDeckEntryCopies(s32 id);
 u32 GameStateGetResourceCounter(void);
 void GameStateAddResourceCounter(u32 value);
+s32 GameStateCountActorPartValue(s32 actor, s32 part, s32 value);
 
 #endif

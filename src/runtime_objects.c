@@ -18,6 +18,22 @@ extern u8 *gRuntimeObjectTable[];
 #define RUNTIME_LIST_STRIDE 12
 #define RUNTIME_LIST_POINTERS_OFFSET 0xB0
 
+/** Copy an object's primary character hit box into caller-owned storage. */
+AT("0000A6EC")
+void RuntimeObjectCopyPrimaryHitBounds(u32 group, u32 slot,
+                                       struct HitBounds *destination)
+{
+    u8 *object = RUNTIME_OBJECT(group, slot);
+    const struct BattleCharacterDefinition *definition =
+        RuntimeGetBattleCharacterDefinition(*(s16 *)(object + 88));
+    const struct HitBounds *bounds = &definition->bounds[0];
+
+    destination->left = bounds->left;
+    destination->top = bounds->top;
+    destination->right = bounds->right;
+    destination->bottom = bounds->bottom;
+}
+
 /** Copy an object's secondary character hit box into caller-owned storage. */
 AT("0000A724")
 void RuntimeObjectCopySecondaryHitBounds(u32 group, u32 slot,

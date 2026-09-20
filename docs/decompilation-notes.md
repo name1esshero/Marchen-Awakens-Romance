@@ -2598,3 +2598,29 @@ storage. It is the secondary-box counterpart to the neighboring primary-box
 routine at 0x0800A6EC. Direct structure members reproduce the ROM's four
 halfword loads and stores across all 56 bytes, replacing thirteen raw assembly
 call sites with a descriptive symbol.
+
+## Primary object hit-box copy (2026-09-20)
+
+`RuntimeObjectCopyPrimaryHitBounds` at 0x0800A6EC performs the same typed
+object and character-definition lookup as the secondary-box routine, then
+copies `bounds[0]` into caller-owned storage. Keeping the primary and
+secondary paths adjacent in `runtime_objects.c` exposes the two-entry use of
+the character definition's bounds array and replaces three raw assembly calls
+with the corresponding descriptive symbol.
+
+### Deferred neighboring lookup
+
+The 0x08011464 hit-region lookup remains in assembly. Several direct typed
+forms correctly index `struct HitRegion`, but agbcc coalesces the result into
+`r0`; the ROM keeps the address in `r1` until its final move to `r0`. No typed
+source shape tested so far reproduces that lifetime naturally, so the routine
+was left intact instead of adding register or expression-order steering.
+
+## Actor-part value counting (2026-09-20)
+
+`GameStateCountActorPartValue` at 0x0800997C retrieves the twenty signed
+halfwords for an actor/part pair and counts entries equal to the requested
+value. Its only caller compares this count with the corresponding five-entry
+runtime count while choosing replacement values. A descending `for` loop and
+typed `s16 *` walk reproduce the ROM directly, including its signed argument
+truncation and two-byte alignment tail.

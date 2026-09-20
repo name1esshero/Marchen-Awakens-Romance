@@ -1410,6 +1410,12 @@
     "file": "src/runtime_buffers.c"
   },
   {
+    "addr": "0800997C",
+    "size": 60,
+    "name": "GameStateCountActorPartValue",
+    "file": "src/game_state_records.c"
+  },
+  {
     "addr": "080099B8",
     "size": 40,
     "name": "RuntimeCountMatchingValues",
@@ -1917,6 +1923,12 @@
     "addr": "0800A6D0",
     "size": 28,
     "name": "RuntimeObjectGetField36",
+    "file": "src/runtime_objects.c"
+  },
+  {
+    "addr": "0800A6EC",
+    "size": 56,
+    "name": "RuntimeObjectCopyPrimaryHitBounds",
     "file": "src/runtime_objects.c"
   },
   {

@@ -2939,47 +2939,7 @@ _080098F2:
 
 @ 009964..00997C is decompiled as RuntimeGetFieldEB0(); see src/decompiled.json
 
-	.section .rom.0000997C, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_0800997C
-sub_0800997C:
-	push {r4, r5, r6, lr}
-	adds r3, r0, #0
-	adds r4, r1, #0
-	adds r6, r2, #0
-	movs r5, #0
-	lsls r3, r3, #16
-	asrs r3, r3, #16
-	lsls r4, r4, #16
-	asrs r4, r4, #16
-	movs r0, #0
-	adds r1, r3, #0
-	adds r2, r4, #0
-	bl sub_08056E3C
-	adds r1, r0, #0
-	movs r2, #19
-	.global _0800999C
-_0800999C:
-	movs r3, #0
-	ldrsh r0, [r1, r3]
-	cmp r0, r6
-	bne _080099A6
-	adds r5, #1
-	.global _080099A6
-_080099A6:
-	subs r2, #1
-	adds r1, #2
-	cmp r2, #0
-	bge _0800999C
-	adds r0, r5, #0
-	pop {r4, r5, r6}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 00997C..0099B8 is decompiled as GameStateCountActorPartValue(); see src/decompiled.json
 
 @ 0099B8..0099E0 is decompiled as RuntimeCountMatchingValues(); see src/decompiled.json
 
@@ -3094,7 +3054,7 @@ sub_08009A9E:
 	ldrsh r2, [r7, r1]
 	mov r0, r8
 	mov r1, r9
-	bl sub_0800997C
+	bl GameStateCountActorPartValue
 	cmp r4, r0
 	bge _08009A76
 	ldr r2, [sp, #0]
@@ -3729,41 +3689,7 @@ _0800A420:
 
 @ 00A6D0..00A6EC is decompiled as RuntimeObjectGetField36(); see src/decompiled.json
 
-	.section .rom.0000A6EC, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_0800A6EC
-sub_0800A6EC:
-	push {r4, lr}
-	adds r4, r2, #0
-	ldr r2, _0800A720
-	lsls r0, r0, #2
-	adds r0, r0, r1
-	lsls r0, r0, #2
-	adds r0, r0, r2
-	ldr r0, [r0, #0]
-	adds r0, #88
-	movs r1, #0
-	ldrsh r0, [r0, r1]
-	.2byte 0xF006
-	.4byte 0x1C01FFB7
-	adds r1, #56
-	ldrh r0, [r0, #56]
-	strh r0, [r4, #0]
-	ldrh r0, [r1, #2]
-	strh r0, [r4, #2]
-	ldrh r0, [r1, #4]
-	strh r0, [r4, #4]
-	ldrh r0, [r1, #6]
-	strh r0, [r4, #6]
-	pop {r4}
-	pop {r0}
-	bx r0
-	.global _0800A720
-_0800A720:
-	.4byte 0x03004024  @ IWRAM+0x4024
+@ 00A6EC..00A724 is decompiled as RuntimeObjectCopyPrimaryHitBounds(); see src/decompiled.json
 
 @ 00A724..00A75C is decompiled as RuntimeObjectCopySecondaryHitBounds(); see src/decompiled.json
 
