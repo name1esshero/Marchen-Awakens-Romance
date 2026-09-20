@@ -217,6 +217,32 @@ void RuntimePartSetFields653And654(u32 actor, u32 part, u16 value,
     *(u16 *)(record + 88) = value;
 }
 
+/** Apply the part's +0x654 percentage when its +0x653 byte is enabled. */
+AT("00009C40")
+s32 RuntimePartApplyField654Percentage(u32 actor, u32 part, s32 value)
+{
+    u8 **root = &gSecondaryRuntime;
+    u32 actorOffset = actor * ACTOR_RECORD_SIZE;
+    u8 *record;
+    u32 partOffset;
+    s32 result;
+
+    actorOffset += ACTOR_PART_TABLE_BASE_OFFSET;
+    record = *root + actorOffset;
+    partOffset = part * ACTOR_PART_GROUP_STRIDE;
+    partOffset += 0x4DC;
+    record += partOffset;
+    if (*(s8 *)(record + 87) != 0)
+        goto enabled;
+    result = value;
+    goto done;
+
+enabled:
+    result = *(s16 *)(record + 88) * value / 100 + 1;
+done:
+    return result;
+}
+
 /** Set a part record's +0xA4 byte field. See RuntimeActorGetByteA4(). */
 AT("00019C50") void RuntimeActorSetByteA4(u32 actor,u32 part,u32 value)
 {

@@ -1470,6 +1470,12 @@
     "file": "src/runtime_buffers.c"
   },
   {
+    "addr": "08009C40",
+    "size": 84,
+    "name": "RuntimePartApplyField654Percentage",
+    "file": "src/runtime_buffers.c"
+  },
+  {
     "addr": "08009C94",
     "size": 48,
     "name": "RuntimeCountReadyParts",

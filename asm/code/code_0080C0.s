@@ -3155,66 +3155,7 @@ sub_08009AD8:
 
 @ 009C08..009C40 is decompiled as RuntimePartSetFields653And654(); see src/decompiled.json
 
-	.section .rom.00009C40, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_08009C40
-sub_08009C40:
-	push {r4, lr}
-	adds r4, r2, #0
-	ldr r3, _08009C74
-	movs r2, #209
-	lsls r2, r2, #3
-	muls r0, r2
-	movs r2, #144
-	lsls r2, r2, #1
-	adds r0, r0, r2
-	ldr r2, [r3, #0]
-	adds r2, r2, r0
-	movs r0, #104
-	muls r0, r1
-	ldr r1, _08009C78
-	adds r0, r0, r1
-	adds r2, r2, r0
-	adds r0, r2, #0
-	adds r0, #87
-	ldrb r0, [r0, #0]
-	lsls r0, r0, #24
-	asrs r0, r0, #24
-	cmp r0, #0
-	bne _08009C7C
-	adds r0, r4, #0
-	b _08009C8E
-	.byte 0x00
-	.byte 0x00
-	.global _08009C74
-_08009C74:
-	.4byte 0x03004020  @ IWRAM+0x4020
-	.global _08009C78
-_08009C78:
-	.4byte 0x000004DC
-	.global _08009C7C
-_08009C7C:
-	adds r0, r2, #0
-	adds r0, #88
-	movs r2, #0
-	ldrsh r0, [r0, r2]
-	muls r0, r4
-
-	.thumb_func
-	.thumb
-	.global sub_08009C86
-sub_08009C86:
-	movs r1, #100
-	bl __divsi3
-	adds r0, #1
-	.global _08009C8E
-_08009C8E:
-	pop {r4}
-	pop {r1}
-	bx r1
+@ 009C40..009C94 is decompiled as RuntimePartApplyField654Percentage(); see src/decompiled.json
 
 @ 009C94..009CC4 is decompiled as RuntimeCountReadyParts(); see src/decompiled.json
 
@@ -4644,7 +4585,7 @@ _0800ACD0:
 	mov r0, r10
 	ldr r1, [sp, #0]
 	adds r2, r6, #0
-	bl sub_08009C40
+	bl RuntimePartApplyField654Percentage
 	adds r6, r0, #0
 	movs r1, #10
 	bl __divsi3
@@ -4687,7 +4628,7 @@ _0800AD10:
 	ldrsh r2, [r0, r3]
 	mov r0, r10
 	ldr r1, [sp, #0]
-	bl sub_08009C40
+	bl RuntimePartApplyField654Percentage
 	lsls r4, r4, #16
 	asrs r4, r4, #16
 	adds r4, r4, r0
@@ -4743,7 +4684,7 @@ _0800AD96:
 	ldrsh r2, [r0, r3]
 	mov r0, r10
 	ldr r1, [sp, #0]
-	bl sub_08009C40
+	bl RuntimePartApplyField654Percentage
 	ldr r2, [sp, #12]
 	movs r3, #8
 	ldrsh r1, [r2, r3]
@@ -4775,7 +4716,7 @@ _0800ADC0:
 	ldrsh r2, [r0, r3]
 	adds r0, r1, #0
 	ldr r1, [sp, #4]
-	bl sub_08009C40
+	bl RuntimePartApplyField654Percentage
 	ldr r2, [sp, #16]
 
 	.thumb_func

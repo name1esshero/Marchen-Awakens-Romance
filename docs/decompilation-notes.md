@@ -2581,3 +2581,10 @@ routine at 0x08009C40. The expanded typed address calculation confirms this is
 the same 104-byte-stride actor/part table used by the neighboring 0x651,
 0x652, and 0x656 accessors. It compiles to all 56 original bytes without
 register hints, integerized pointers, or volatile access.
+
+The adjacent `RuntimePartApplyField654Percentage` at 0x08009C40 reads that
+pair. A clear state byte returns the caller's value unchanged; a set byte
+returns `(percentage * value) / 100 + 1`. The source uses an explicit enabled
+path because the ROM places the disabled return before the function's literal
+pool and the percentage calculation after it. That ordinary control flow
+reproduces all 84 bytes exactly and gives five callers a descriptive symbol.

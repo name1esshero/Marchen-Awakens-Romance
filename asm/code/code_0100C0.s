@@ -11418,7 +11418,7 @@ sub_0801660C:
 	.thumb
 	.global sub_0801661E
 sub_0801661E:
-	bl sub_08009C40
+	bl RuntimePartApplyField654Percentage
 
 	.thumb_func
 	.thumb
