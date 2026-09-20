@@ -70,3 +70,25 @@ true, or it is not a correct deferral:
   ranges for a real decompile; it is unaffected by a correct deferral, since
   the function stays in assembly.
 - For a `src/nonmatching/` candidate, `make check-modern` exits clean.
+
+## `PRET_STANDARDS.md` must stay untouched
+
+The standards document itself is not part of the scored work and must not be
+edited as a side effect of pursuing any of the point values above -- not to
+loosen a rule to make a match easier, not to "clarify" wording, not to
+document a project-specific exception. It is authored and maintained by the
+repo owner, not by an agent. If something in it seems to block a genuine
+improvement, defer to it and raise the conflict rather than editing around
+it.
+
+## Scoring is tallied at session end, across every commit
+
+The repo owner totals the score once, at the end of the session, by walking
+every commit the agent made during that session against the point values and
+penalty above -- not per-message, and not self-reported mid-session. Treat
+every commit as part of that permanent record: a commit that will be
+re-examined later against this same criteria, not a checkpoint that can be
+quietly superseded. This is also why the verification checklist above has to
+be run and genuinely pass before a commit, not after -- a regression buried in
+an earlier commit still counts against the session total even if a later
+commit fixes it forward.
