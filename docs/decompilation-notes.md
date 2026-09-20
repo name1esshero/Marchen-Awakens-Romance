@@ -2315,3 +2315,13 @@ both formerly forced allocations and retains shiftable named layout data.
 The tempting subtraction-of-a-negated-offset expression also selected the
 desired registers, but it modeled no real subtraction and was rejected. The
 verified parameter and layout types provide the ordinary C shape instead.
+
+## Friend ARM slot lifetimes (2026-09-20)
+
+`ScriptNativeSetFriendArms` (0x08012B98) computes a friend-record slot once to
+store an ID and again to read that ID for the default-definition lookup. These
+are separate pointer values rather than one pointer carried across the call
+boundary. Expressing each calculation with a block-scoped `u8 *slot` gives
+agbcc the original non-overlapping lifetimes and reproduces all 55 ROM
+instructions without the former r0 register constraint. This removes the last
+PRET hard errors from `src/resource_native.c` while keeping the ROM byte exact.

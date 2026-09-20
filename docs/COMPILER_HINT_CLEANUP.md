@@ -502,6 +502,22 @@ register declarations and their three duplicate inline-assembly findings.
 The earlier subtraction-of-a-negated-offset probe remains rejected as a
 fakematch; it was a clue about the wrong source type, not the solution.
 
+## Give independent pointer calculations independent scopes
+
+`ScriptNativeSetFriendArms()` (0x08012B98) formerly kept one `slot` local for
+two separate operations. The first calculation stores the incoming friend ARM
+ID; after that pointer is dead, the routine calculates the slot again and
+passes its value to `BattlePartyFindDefaultIndex()`. Extending one C local
+across both calculations made agbcc choose the wrong registers, and the old
+source compensated by pinning it to r0.
+
+The matching C now places each `u8 *slot` in the block that owns its operation.
+Those scopes record the actual non-overlapping lifetimes rather than requesting
+a physical register. agbcc consequently reuses r0 for both calculations and
+emits the original 55 instructions with no differences. The Japanese ROM
+retains its exact SHA-1, and `src/resource_native.c` now contains no forced
+register or inline-assembly findings.
+
 ## Reuse an initialized search value before its loop role
 
 `NfpFindEntryIndex()` (0x0807ACC4) no longer needs its `high` and `zero`

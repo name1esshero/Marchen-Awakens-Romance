@@ -11,11 +11,6 @@
   },
   {
     "kind": "forced_register",
-    "file": "src/resource_native.c",
-    "detail": "register u8 *slot asm(\"r0\");"
-  },
-  {
-    "kind": "forced_register",
     "file": "src/save.c",
     "detail": "register s32 *localCompletion asm(\"r3\");"
   },
@@ -73,11 +68,6 @@
     "kind": "inline_assembly",
     "file": "src/mapping.c",
     "detail": "register u8 *destination asm(\"r1\");"
-  },
-  {
-    "kind": "inline_assembly",
-    "file": "src/resource_native.c",
-    "detail": "register u8 *slot asm(\"r0\");"
   },
   {
     "kind": "inline_assembly",

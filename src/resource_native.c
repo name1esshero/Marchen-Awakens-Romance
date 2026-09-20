@@ -56,7 +56,6 @@ AT("00012B98") s32 ScriptNativeSetFriendArms(u32 count, const s32 *args,
     do {
         s32 byteOffset;
         u8 *firstSlot;
-        register u8 *slot asm("r0");
         s32 definitionIndex;
         s32 ownershipBit;
 
@@ -66,15 +65,20 @@ AT("00012B98") s32 ScriptNativeSetFriendArms(u32 count, const s32 *args,
         firstSlot += byteOffset;
         *(u16 *)firstSlot = 0;
 
-        slot = *root;
-        slot += friendOffset;
-        slot += byteOffset;
-        *(u16 *)slot = *input;
+        {
+            u8 *slot = *root;
+            slot += friendOffset;
+            slot += byteOffset;
+            *(u16 *)slot = *input;
+        }
 
-        slot = *root;
-        slot += friendOffset;
-        slot += byteOffset;
-        definitionIndex = (s16)BattlePartyFindDefaultIndex(*(s16 *)slot);
+        {
+            u8 *slot = *root;
+            slot += friendOffset;
+            slot += byteOffset;
+            definitionIndex =
+                (s16)BattlePartyFindDefaultIndex(*(s16 *)slot);
+        }
         ownershipBit = definitions[definitionIndex];
         if (ownershipBit != invalidDefinition)
             BitSet(*root + GAME_STATE_DECK_FLAGS_OFFSET, ownershipBit, 1);

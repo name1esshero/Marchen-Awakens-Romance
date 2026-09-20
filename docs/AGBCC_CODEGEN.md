@@ -419,6 +419,16 @@ difference is register pressure rather than scheduling.
   from its incoming register, recover that parameter type before attempting
   declaration-order or arithmetic rewrites; use a linker symbol for an object
   address and a named integer constant for a layout displacement.
+- **Separate repeated pointer jobs into their real lexical lifetimes.**
+  `ScriptNativeSetFriendArms` computes the same friend-record slot twice: once
+  to store the incoming ID and later to reload it for a definition lookup.
+  Keeping one `slot` local alive across both jobs makes agbcc retain and
+  coalesce it differently from the ROM. Two nested blocks, each with its own
+  `u8 *slot`, express that neither pointer value survives into the other job;
+  agbcc then uses r0 for both address calculations and reproduces the ROM
+  without a register constraint. This is useful when the repeated values are
+  semantically independent. Do not split one continuous pointer walk merely
+  to influence allocation.
 - **After adding a function, run the host tests, not just `make compare`.** The
   tests compile individual `.c` files on their own, so a new reference to a
   symbol the ROM link resolves -- `gSecondaryRuntime`, `gIwramBase`, anything

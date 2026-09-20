@@ -15,7 +15,7 @@ error. The audit prints known, new, and resolved counts on one line.
 
 - `make compare` reproduces the Japanese ROM byte for byte.
 - `make english` succeeds and all 196 host tests pass.
-- The mechanical PRET audit reports **103 errors / 0 warnings / 17 documented
+- The mechanical PRET audit reports **101 errors / 0 warnings / 17 documented
   exceptions** on one summary line. Every exception is enumerated in the
   generated report.
 
@@ -36,6 +36,12 @@ pointer/integer spelling only selected registers or alias behavior:
 `ScriptResourceSet`. Their exact implementations are restored to named
 assembly and their clean candidates remain in `src/nonmatching/` with the
 specific code-generation differences documented.
+
+`ScriptNativeSetFriendArms` now uses two block-scoped slot pointers for its
+two independent address calculations. The distinct lexical lifetimes make
+agbcc reuse r0 naturally and remove the last forced-register and duplicate
+inline-assembly findings from `src/resource_native.c` without changing the
+ROM.
 
 ## Verified snapshot: renderer reference fallback, 2026-09-20
 
