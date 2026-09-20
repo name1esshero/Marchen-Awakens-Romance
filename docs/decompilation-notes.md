@@ -1,5 +1,13 @@
 # Decompilation and recovery notes
 
+Related load-bearing docs: [PRET_STANDARDS.md](PRET_STANDARDS.md) defines
+acceptable recovered C, [AGBCC_CODEGEN.md](AGBCC_CODEGEN.md) and
+[COMPILER_HINT_CLEANUP.md](COMPILER_HINT_CLEANUP.md) explain recurring codegen
+mechanisms, [PRET_AUDIT.md](PRET_AUDIT.md) tracks current mechanical findings,
+[SCORE_METRIC_CRITERIA.md](SCORE_METRIC_CRITERIA.md) explains how finished
+work and deferrals are judged, and [AGENT_ENVIRONMENT.md](AGENT_ENVIRONMENT.md)
+describes how the documentation funnel fits together.
+
 This document preserves the detailed technical findings, recovery history,
 asset provenance, measurements, and implementation references that were
 previously kept in the project README. The main README is now a practical

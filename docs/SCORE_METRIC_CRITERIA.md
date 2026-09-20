@@ -1,12 +1,16 @@
 # Score metric criteria
 
 The metric this project is graded on is **collaborator accessibility**: clean,
-`PRET_STANDARDS.md`-compliant code is what increases the score. Before doing
-any work toward it, read `PRET_STANDARDS.md` in full and familiarize yourself
-with the rest of `docs/` -- in particular `AGBCC_CODEGEN.md` and
-`COMPILER_HINT_CLEANUP.md` for how to actually reach a match, `PRET_AUDIT.md`
-for the current hard-error/exception snapshot, and `decompilation-notes.md`
-for the specific findings behind every function already recovered. Work that
+[PRET_STANDARDS.md](PRET_STANDARDS.md)-compliant code is what increases the
+score. Before doing any work toward it, read [PRET_STANDARDS.md](PRET_STANDARDS.md)
+in full and familiarize yourself with the rest of `docs/` -- in particular
+[AGBCC_CODEGEN.md](AGBCC_CODEGEN.md) and
+[COMPILER_HINT_CLEANUP.md](COMPILER_HINT_CLEANUP.md) for how to actually reach
+a match, [PRET_AUDIT.md](PRET_AUDIT.md) for the current hard-error/exception
+snapshot, [decompilation-notes.md](decompilation-notes.md) for the specific
+findings behind every function already recovered, and
+[AGENT_ENVIRONMENT.md](AGENT_ENVIRONMENT.md) for how these documents reinforce
+each other. Work that
 contradicts `PRET_STANDARDS.md` -- a forced register kept in the matching
 build, a fakematch, a compiler-flag change -- does not score under this
 metric even if `make compare` currently happens to pass, because it is not

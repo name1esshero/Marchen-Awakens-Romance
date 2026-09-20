@@ -1,5 +1,13 @@
 # PRET standards audit
 
+Related load-bearing docs: [PRET_STANDARDS.md](PRET_STANDARDS.md) defines the
+rules this audit enforces, [SCORE_METRIC_CRITERIA.md](SCORE_METRIC_CRITERIA.md)
+explains how audit regressions are scored, [AGBCC_CODEGEN.md](AGBCC_CODEGEN.md)
+and [COMPILER_HINT_CLEANUP.md](COMPILER_HINT_CLEANUP.md) describe clean fix
+patterns, [decompilation-notes.md](decompilation-notes.md) records the evidence
+behind individual recoveries and deferrals, and [AGENT_ENVIRONMENT.md](AGENT_ENVIRONMENT.md)
+describes how the documentation funnel fits together.
+
 Run `make pret-audit` to regenerate the detailed machine-readable reports at
 `reports/code/pret-standards.json` and `reports/code/pret-standards.md`. Run
 `python3 tools/audit_pret_standards.py --strict` when checking whether the

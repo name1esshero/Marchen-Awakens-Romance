@@ -1,5 +1,13 @@
 # What agbcc does, and why your C didn't match
 
+Related load-bearing docs: [PRET_STANDARDS.md](PRET_STANDARDS.md) defines
+what counts as an acceptable match, [COMPILER_HINT_CLEANUP.md](COMPILER_HINT_CLEANUP.md)
+records hint-removal findings, [PRET_AUDIT.md](PRET_AUDIT.md) tracks the
+current audit state, [decompilation-notes.md](decompilation-notes.md) keeps
+per-function history, [SCORE_METRIC_CRITERIA.md](SCORE_METRIC_CRITERIA.md)
+explains how this work is judged, and [AGENT_ENVIRONMENT.md](AGENT_ENVIRONMENT.md)
+describes how the documentation funnel fits together.
+
 Matching a function is a search over C spellings that mean the same thing but
 compile differently. Guessing is slow. This is what the compiler actually does,
 read out of its own source and confirmed by experiment, so the search can start

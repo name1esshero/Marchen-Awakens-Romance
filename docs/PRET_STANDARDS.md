@@ -1,5 +1,13 @@
 # pret Decompilation Standards & Best Practices Guide
 
+Related load-bearing docs: [SCORE_METRIC_CRITERIA.md](SCORE_METRIC_CRITERIA.md)
+explains how compliant work is judged, [AGBCC_CODEGEN.md](AGBCC_CODEGEN.md)
+and [COMPILER_HINT_CLEANUP.md](COMPILER_HINT_CLEANUP.md) explain how to reach
+matches without compiler steering, [PRET_AUDIT.md](PRET_AUDIT.md) tracks
+mechanical findings, [decompilation-notes.md](decompilation-notes.md) records
+per-function evidence, and [AGENT_ENVIRONMENT.md](AGENT_ENVIRONMENT.md)
+describes how the documentation funnel fits together.
+
 ## Core Philosophy: The Golden Rule
 In `pret` projects, there is one absolute, unbreakable rule that supersedes all others: **The compiled ROM must match the original ROM byte-for-byte (SHA1 hash).** 
 Human readability is the second priority. If you cannot match a function in natural C without using compiler hacks, you must leave it in assembly using `INCLUDE_ASM`. Fake matches, forced registers (`asm("rX")`), naked functions, and compiler flag modifications are strictly forbidden.

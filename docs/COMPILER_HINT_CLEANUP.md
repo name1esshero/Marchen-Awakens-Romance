@@ -1,5 +1,13 @@
 # Compiler-hint cleanup: findings
 
+Related load-bearing docs: [PRET_STANDARDS.md](PRET_STANDARDS.md) defines why
+forced registers and scheduling fences are unacceptable, [AGBCC_CODEGEN.md](AGBCC_CODEGEN.md)
+gives clean C codegen techniques, [PRET_AUDIT.md](PRET_AUDIT.md) tracks the
+current findings, [decompilation-notes.md](decompilation-notes.md) records
+function-specific evidence, [SCORE_METRIC_CRITERIA.md](SCORE_METRIC_CRITERIA.md)
+explains how cleanup work is judged, and [AGENT_ENVIRONMENT.md](AGENT_ENVIRONMENT.md)
+describes how the documentation funnel fits together.
+
 Working notes for the effort to remove forced-register pins and inline-assembly
 scheduling fences from `src/`, so the codebase reads as genuine matching C and
 outside contributors can start on decompilation instead of on cleanup.
