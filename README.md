@@ -218,3 +218,10 @@ More technical documentation is available in
 [docs/game-flags.md](docs/game-flags.md),
 [docs/save-format.md](docs/save-format.md), and
 [docs/ram-layout.md](docs/ram-layout.md).
+
+Contributor work is graded against
+[docs/SCORE_METRIC_CRITERIA.md](docs/SCORE_METRIC_CRITERIA.md), which is
+itself built on [docs/PRET_STANDARDS.md](docs/PRET_STANDARDS.md) -- read both
+before starting, along with [docs/AGBCC_CODEGEN.md](docs/AGBCC_CODEGEN.md)
+and [docs/COMPILER_HINT_CLEANUP.md](docs/COMPILER_HINT_CLEANUP.md) for how to
+actually reach a byte-exact match.
