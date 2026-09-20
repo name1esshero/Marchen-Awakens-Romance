@@ -84,13 +84,14 @@ automatic opening or `--port 8766` to choose another port.
 Basic workflow:
 
 1. Select a map from the catalog on the left.
-2. Use the **Map**, **Collision**, **Connections**, and **Events** tabs to edit or
-   inspect that part of the map.
+2. Use the **Map**, **Collision**, **Connections**, **Events**, and **Scripts**
+   tabs to edit or inspect that part of the map.
 3. Scroll over the viewport to zoom, use **Fit whole map** to see everything,
    and drag to pan.
 4. In **Events**, select a decoded script and press **Play** to preview supported
    sprite movement. The map event-source list also draws literal sprites from
-   direct companion scripts with their real decoded artwork.
+   companion scripts with their real decoded artwork and can inherit a unique
+   literal origin across linked scripts, including Dorothy on `MAP01_3A`.
 5. Press **Save sources** to write editable source overrides.
 6. Run `make -j4` or `make -j4 english` to compile the saved changes.
 

@@ -244,10 +244,11 @@ run the editor itself.
 ## Recording the README demonstration
 
 The tracked `docs/media/map-editor.gif` consists of actual browser screenshots
-of the editor loading a field, changing between its four pages, and running the
-literal movement in EV_ICE02 with the Play button. No replacement UI or
-generated artwork is used. Initial browser network latency is set to 800 ms so
-the real loading state is visible, then removed before interaction.
+of the editor loading fields, changing between all five modes, showing
+Dorothy's inherited `EV_BA02` origin in `EV_BA03`, and running the literal
+movement in `EV_ICE02` with the Play button. No replacement UI or generated
+artwork is used. Initial browser network latency is set to 800 ms so the real
+loading state is visible, then removed before interaction.
 To regenerate it, start the isolated browser fixture
 described above, then run:
 

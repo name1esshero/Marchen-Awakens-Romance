@@ -30,7 +30,7 @@ DOCS = {
     'Translation': 'text/translation/README.md',
     'Documentation-workflow': 'tools/site/README.md',
 }
-ALLOWED = {'.html', '.css', '.js', '.png', '.pal', '.json', '.txt', '.md',
+ALLOWED = {'.html', '.css', '.js', '.png', '.gif', '.pal', '.json', '.txt', '.md',
            '.tsv', '.wav', '.bin', '.nft', '.log'}
 
 
@@ -144,6 +144,11 @@ def stage(site, wiki):
             copied[str(rel)] = {'bytes': len(raw), 'sha256': hashlib.sha256(raw).hexdigest()}
             count += 1
         print(f'Staged {count} {name} files', flush=True)
+    for source in files(ROOT / 'docs' / 'media'):
+        rel=source.relative_to(ROOT);target=site/rel
+        target.parent.mkdir(parents=True,exist_ok=True)
+        raw=source.read_bytes();target.write_bytes(raw)
+        copied[str(rel)]={'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()}
     # Wiki references must also resolve on Pages, including map-editor notes.
     for relative in DOCS.values():
         source=ROOT/relative;target=site/relative
@@ -153,7 +158,7 @@ def stage(site, wiki):
     reports = [p for p in copied if p.startswith('reports/') and Path(p).suffix in ('.json', '.md', '.log')]
     report_links = '\n'.join('<li><a href="' + html.escape(p[8:]) + '">' + html.escape(p[8:]) + '</a></li>' for p in reports)
     (site / 'reports/index.html').write_text('<!doctype html><meta charset="utf-8"><title>MAR reports</title><h1>MAR report snapshots</h1><p>Historical reports describe the state when each audit ran. They are not all current progress claims.</p><a href="../index.html">Documentation home</a><ul>' + report_links + '</ul>')
-    (site / 'index.html').write_text('''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MAR decompilation documentation</title><style>body{font:18px system-ui;background:#19222e;color:#eef3fa;max-width:900px;margin:4rem auto;padding:1rem}a{color:#a6d0ff}li{margin:1.2rem 0}</style><h1>MAR decompilation documentation</h1><p>Recovered graphics, sound samples, translated script reviews, and build evidence.</p><ul><li><a href="''' + WIKI + '''">Project wiki and format documentation</a></li><li><a href="graphics/index.html">Graphics and animation galleries</a></li><li><a href="sound/index.html">Sound sample browser</a></li><li><a href="reports/text/index.html">Japanese / English script review</a></li><li><a href="reports/index.html">Audit and build report snapshots</a></li></ul><p>Published assets are viewing and download copies. Edit the local decomp sources and rebuild to change the game. Snapshots do not establish full decompilation or emulator verification.</p></html>''')
+    (site / 'index.html').write_text('''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MAR decompilation documentation</title><style>body{font:18px system-ui;background:#19222e;color:#eef3fa;max-width:900px;margin:4rem auto;padding:1rem}a{color:#a6d0ff}li{margin:1.2rem 0}img{display:block;max-width:100%;height:auto;border:1px solid #617086}</style><h1>MAR decompilation documentation</h1><p>Recovered graphics, sound samples, translated script reviews, and build evidence.</p><ul><li><a href="''' + WIKI + '''">Project wiki and format documentation</a></li><li><a href="''' + WIKI + '''Map-editor">Map editor guide</a></li><li><a href="graphics/index.html">Graphics and animation galleries</a></li><li><a href="sound/index.html">Sound sample browser</a></li><li><a href="reports/text/index.html">Japanese / English script review</a></li><li><a href="reports/index.html">Audit and build report snapshots</a></li></ul><h2>Map editor</h2><p>The recording below uses the running editor and its decoded game assets.</p><a href="''' + WIKI + '''Map-editor"><img src="docs/media/map-editor.gif" alt="Map editor loading maps, changing modes, and previewing sprite events"></a><p>Published assets are viewing and download copies. Edit the local decomp sources and rebuild to change the game. Snapshots do not establish full decompilation or emulator verification.</p></html>''')
     (site / '.nojekyll').write_text('')
     audit = check_links(site)
     manifest = {'version': 1, 'files': copied, 'validation': audit}

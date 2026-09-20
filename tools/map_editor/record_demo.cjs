@@ -47,23 +47,38 @@ const {chromium} = require(process.env.MAR_PLAYWRIGHT_MODULE || 'playwright-core
             offline: false, latency: 0, downloadThroughput: -1, uploadThroughput: -1,
         });
         await page.waitForFunction(() => typeof map !== 'undefined' && map && !busy);
-        await capture(700);
 
-        // Open a different real field, then demonstrate the four persistent
-        // editing pages without substituting or fabricating page contents.
-        await page.locator('#maps').selectOption('MAP04_A.KMP');
-        await page.waitForFunction(() => map?.name === 'MAP04_A.KMP' && !busy);
+        // Open the real field whose battle-event chain establishes Dorothy's
+        // literal origin, then demonstrate all five persistent editor modes.
+        await page.locator('#maps').selectOption('MAP01_3A.KMP');
+        await page.waitForFunction(() => map?.name === 'MAP01_3A.KMP' && !busy);
         await page.locator('#fit-map').click();await capture(700);
-        for (const mode of ['collision','connections','map','events']) {
+        for (const mode of ['collision','connections','scripts','map','events']) {
             await page.locator(`#modes button[data-mode="${mode}"]`).click();
             await page.waitForTimeout(120);await capture(450);
         }
 
+        // Show the recovered cross-script origin in the actual Events UI and
+        // start its real animation preview before moving to the literal-motion
+        // example below.
+        const dorothySource=page.locator('#event-sources .event-source',{hasText:'EV_BA03.SPC'});
+        await dorothySource.click();
+        await page.waitForFunction(() => script?.name === 'EV_BA03.SPC' && !busy);
+        if (!(await page.locator('#sprite-candidates').textContent()).includes('inherits (530, 308) from EV_BA02.SPC'))
+            throw Error('Dorothy inherited origin is missing from the real event inspector');
+        await page.locator('#preview-play').click();
+        await page.waitForTimeout(180);await page.locator('#preview-pause').click();
+        await capture(800);
+
         // EV_ICE02 contains the only currently proven sequence combining a
         // literal initial position and literal SprMove target. Keep its actor
         // in view and use the real Play control to record the 32-frame move.
+        await page.locator('#maps').selectOption('MAP04_A.KMP');
+        await page.waitForFunction(() => map?.name === 'MAP04_A.KMP' && !busy);
+        await page.locator('#modes button[data-mode="scripts"]').click();
         await page.locator('#scripts').selectOption('EV_ICE02.SPC');
         await page.waitForFunction(() => script?.name === 'EV_ICE02.SPC' && !busy);
+        await page.locator('#modes button[data-mode="events"]').click();
         await page.locator('#zoom').selectOption('1');
         await page.locator('#map-scroll').evaluate(el => {el.scrollLeft=620;el.scrollTop=1660;});
         await capture(700);
@@ -77,14 +92,20 @@ const {chromium} = require(process.env.MAR_PLAYWRIGHT_MODULE || 'playwright-core
         }
         await capture(800);
         if (errors.length) throw Error(errors.join('\n'));
-        for (const mode of ['map','collision','events','connections'])
+        if (frames.some(frame => /could not|error/i.test(frame.status || '')))
+            throw Error('Recording captured an editor error status');
+        for (const mode of ['map','collision','events','connections','scripts'])
             if (!frames.some(frame => frame.mode === mode)) throw Error(`Recording missed ${mode} page`);
+        if (!frames.some(frame => frame.script === 'EV_BA03.SPC'))
+            throw Error('Recording missed Dorothy inherited-origin playback');
         const actorPositions=frames.map(frame=>frame.actorY).filter(Number.isFinite);
         if (new Set(actorPositions.map(Math.round)).size < 2)
             throw Error('Recording did not capture sprite movement');
         fs.writeFileSync(path.join(output, 'frames.json'), JSON.stringify({
             source: 'Unmodified Chromium page screenshots of the running map editor',
-            viewport: {width: 1360, height: 900}, initialNetworkLatencyMs: 800, errors, frames,
+            viewport: {width: 1360, height: 900}, initialNetworkLatencyMs: 800,
+            demonstrations: ['five editor modes','Dorothy inherited origin','EV_ICE02 literal movement'],
+            errors, frames,
         }, null, 2) + '\n');
         console.log(`Captured ${frames.length} screenshots in ${output}`);
     } finally { await browser.close(); }

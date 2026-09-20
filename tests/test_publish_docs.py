@@ -41,15 +41,18 @@ class PublicationTests(unittest.TestCase):
             (root/'reports').mkdir(parents=True);wiki.mkdir()
             (root/'reports/README.md').write_text('# Evidence\n')
             (root/'reports/forbidden.gba').write_bytes(b'ROM')
+            (root/'docs/media').mkdir(parents=True)
+            (root/'docs/media/map-editor.gif').write_bytes(b'GIF89a')
             (root/'secret.txt').write_text('unrelated')
             (wiki/'Home.md').write_text('Existing user documentation\n')
             with patch.object(docs,'ROOT',root),patch.object(docs,'DOCS',{'Evidence':'reports/README.md'}),patch.object(docs,'check_links',return_value={'missing':[]}):
                 docs.stage(site,wiki)
             self.assertFalse((site/'reports/forbidden.gba').exists())
             self.assertFalse((site/'secret.txt').exists())
+            self.assertEqual((site/'docs/media/map-editor.gif').read_bytes(),b'GIF89a')
             self.assertTrue((wiki/'Home.md').read_text().startswith('Existing user documentation'))
             manifest=json.loads((site/'publication.json').read_text())
-            self.assertEqual(set(manifest['files']),{'reports/README.md'})
+            self.assertEqual(set(manifest['files']),{'reports/README.md','docs/media/map-editor.gif'})
 
 
 if __name__=='__main__':unittest.main()

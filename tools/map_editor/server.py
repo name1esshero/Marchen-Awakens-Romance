@@ -64,6 +64,7 @@ def make_server(project, port=8765):
                 if path not in files:return self.reply(404,{'error':'Not found'})
                 name,mime=files[path];self.reply(200,(STATIC/name).read_bytes(),mime)
             except (ValueError,KeyError,TypeError,UnicodeError,IndexError,struct.error) as ex:self.reply(400,{'error':str(ex)})
+            except (BrokenPipeError,ConnectionResetError,ConnectionAbortedError):pass
             except OSError as ex:self.reply(500,{'error':str(ex)})
 
         def do_POST(self):
@@ -85,6 +86,7 @@ def make_server(project, port=8765):
                 self.reply(200,public(data))
             except (ValueError,KeyError,TypeError,UnicodeError,IndexError,struct.error) as ex:
                 self.reply(409 if 'changed on disk' in str(ex) else 400,{'error':str(ex)})
+            except (BrokenPipeError,ConnectionResetError,ConnectionAbortedError):pass
             except OSError as ex:self.reply(500,{'error':str(ex)})
     server=ThreadingHTTPServer(('127.0.0.1',port),Handler)
     return server,token
