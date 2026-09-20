@@ -4,7 +4,16 @@
 #include "runtime_state.h"
 
 #include "rom_section.h"
-#define RUNTIME_ROOT (*(u8 **)0x0300401C)
+#define RUNTIME_ROOT gRuntimeState
+
+#define RUNTIME_RECORD_A_OFFSET 0x14C
+#define RUNTIME_RECORD_B_OFFSET 0x164
+#define RUNTIME_RECEIVE_RECORDS_OFFSET 0x17C
+#define RUNTIME_RECORD_SELECTOR_OFFSET 0x1AC
+#define RUNTIME_TRANSFER_RECORD_COUNT 2
+#define RUNTIME_GROUP_STRIDE 0x100
+#define RUNTIME_GROUP_RECORDS_OFFSET 0x1B0
+#define RUNTIME_GROUP_SELECTOR_OFFSET 0x2AA
 
 struct RuntimeHeader
 {
@@ -37,7 +46,7 @@ AT("00004DA8") s32 RuntimeGetLinkActivityState(void)
     u8 *runtime;
     u32 offset;
 
-    root = &gPrimaryRuntime;
+    root = &gLinkRuntime;
     runtime = *root;
     offset = LINK_STATE_FIELD_OFFSET;
 
@@ -63,7 +72,7 @@ inactive:
 /** A secondary allocation is optional during early startup and teardown. */
 AT("00004E04") void *RuntimeGetOptionalField130(void)
 {
-    u8 *state = gPrimaryRuntime;
+    u8 *state = gLinkRuntime;
     void *result;
     if (state != 0)
         result = *(void **)(state + 0x130);
@@ -81,9 +90,32 @@ AT("00004FF0") void *RuntimeGetRecord17C(s16 index)
     u8 **root;
     u32 offset;
 
-    root = (u8 **)0x0300401C;
+    root = &gRuntimeState;
     offset = narrowed * 24 + 380;
     return *root + offset;
+}
+
+/** Return the selected 24-byte record in one 0x100-byte runtime group. */
+AT("0000500C") void *RuntimeGetSelectedGroupRecord(s32 group)
+{
+    s32 groupOffset = group;
+    u8 **root;
+    s32 recordOffset;
+    u8 *state;
+    u8 *records;
+    u8 *selector;
+    s32 record;
+
+    groupOffset <<= 16;
+    root = &gRuntimeState;
+    groupOffset >>= 8;
+    recordOffset = groupOffset + RUNTIME_GROUP_RECORDS_OFFSET;
+    state = *root;
+    records = state + recordOffset;
+    selector = state + groupOffset;
+    record = *(s8 *)(selector + RUNTIME_GROUP_SELECTOR_OFFSET);
+
+    return records + record * sizeof(struct RuntimeHistoryEntry);
 }
 
 /** Install the main runtime allocation, zero its 0x3B0-byte block, wire up
@@ -92,7 +124,7 @@ AT("00004FF0") void *RuntimeGetRecord17C(s16 index)
  * @return Nothing. */
 AT("00004E24") void RuntimeInitialize(u8 *state)
 {
-    u8 **root = (u8 **)0x0300401C;
+    u8 **root = &gRuntimeState;
     *root = state;
     CpuFill(state, 0x3B0, 0);
     state = *root;
@@ -169,6 +201,37 @@ AT("00004EF8") void RuntimeStop(void)
     *(u16 *)RUNTIME_ROOT = 0;
 }
 
+/** Clear both receive records and both send records used by link transfer. */
+AT("00004F10") void RuntimeClearTransferRecords(void)
+{
+    u8 **root = &gRuntimeState;
+    s32 fixedIndex = 1 << 16;
+    u32 offset = RUNTIME_RECEIVE_RECORDS_OFFSET;
+    s32 index;
+
+    do
+    {
+        CpuFill(*root + offset, sizeof(struct RuntimeHistoryEntry), 0);
+        index = fixedIndex;
+        fixedIndex += 1 << 16;
+        offset += sizeof(struct RuntimeHistoryEntry);
+    } while ((index >> 16) <= RUNTIME_TRANSFER_RECORD_COUNT - 1);
+
+    CpuFill(RUNTIME_ROOT + RUNTIME_RECORD_A_OFFSET,
+            sizeof(struct RuntimeHistoryEntry), 0);
+    CpuFill(RUNTIME_ROOT + RUNTIME_RECORD_B_OFFSET,
+            sizeof(struct RuntimeHistoryEntry), 0);
+}
+
+/** Clear the two records used as outgoing link-transfer payloads. */
+AT("00004F64") void RuntimeClearSendRecords(void)
+{
+    CpuFill(RUNTIME_ROOT + RUNTIME_RECORD_A_OFFSET,
+            sizeof(struct RuntimeHistoryEntry), 0);
+    CpuFill(RUNTIME_ROOT + RUNTIME_RECORD_B_OFFSET,
+            sizeof(struct RuntimeHistoryEntry), 0);
+}
+
 /** @return The 24-byte 0x14C record selected by the index stored at +0x1AC. */
 AT("00004F94") void *RuntimeGetCurrentRecord14C(void)
 {
@@ -183,6 +246,20 @@ AT("00004FB4") void RuntimeAdvanceWord4(void)
 {
     u32 *state = (u32 *)RUNTIME_ROOT;
     state[1]++;
+}
+
+/** Build a packet from the 24-byte record that is not currently selected. */
+AT("00004FC4") void RuntimeBuildInactiveRecordPacket(void)
+{
+    u8 *state = RUNTIME_ROOT;
+    u16 selector = *(u16 *)(state + RUNTIME_RECORD_SELECTOR_OFFSET);
+    struct RuntimeHistoryEntry *entry =
+        (struct RuntimeHistoryEntry *)(state + RUNTIME_RECORD_A_OFFSET);
+
+    if (selector == 0)
+        entry = (struct RuntimeHistoryEntry *)(state + RUNTIME_RECORD_B_OFFSET);
+
+    LinkBuildSendPacket(entry);
 }
 
 /** Does nothing; kept as a callable no-op handler. */

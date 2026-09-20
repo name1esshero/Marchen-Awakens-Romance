@@ -1544,7 +1544,7 @@ _08018B38:
 	ldrsh r3, [r5, r1]
 	mov r0, r9
 	mov r1, r8
-	bl sub_080020EC
+	bl CalculatePointDistance
 	lsls r0, r0, #16
 	lsrs r0, r0, #16
 	cmp r0, r10
@@ -1609,7 +1609,7 @@ _08018BB4:
 	ldrsh r3, [r5, r1]
 	mov r0, r9
 	mov r1, r8
-	bl sub_080020EC
+	bl CalculatePointDistance
 	lsls r0, r0, #16
 	lsrs r0, r0, #16
 	cmp r0, r10
@@ -9274,7 +9274,7 @@ _0801C24C:
 	.2byte 0xF7E8
 	.byte 0x50
 	.byte 0xFE
-	bl sub_08004F10
+	bl RuntimeClearTransferRecords
 	movs r0, #0
 	bl GameStateSetField425A
 	mov r0, r9

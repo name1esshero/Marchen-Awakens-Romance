@@ -1132,9 +1132,9 @@ sub_08008968:
 	movs r1, #0
 	bl RuntimeUpdateFiveParts
 	movs r0, #2
-	bl sub_08008BE4
+	bl RuntimeReleaseListSpriteAllocations
 	movs r0, #2
-	bl sub_08008A44
+	bl RuntimeResetListSlot
 	movs r0, #2
 	movs r1, #1
 	bl RuntimeSetFlagC0
@@ -1226,32 +1226,8 @@ _08008A3C:
 _08008A40:
 	.4byte 0x081ACC50  @ ROM+0x1ACC50
 
-	.thumb_func
-	.thumb
-	.global sub_08008A44
-sub_08008A44:
-	push {r4, r5, lr}
-	adds r4, r0, #0
-	ldr r5, _08008A6C
-	lsls r1, r4, #1
-	adds r1, r1, r4
-	lsls r1, r1, #2
-	adds r1, #128
-	ldr r0, [r5, #0]
-	adds r0, r0, r1
-	.2byte 0xF071
-	.4byte 0x6828FF09
-	lsls r4, r4, #2
-	adds r0, #176
-	adds r0, r0, r4
-	movs r1, #0
-	str r1, [r0, #0]
-	pop {r4, r5}
-	pop {r0}
-	bx r0
-	.global _08008A6C
-_08008A6C:
-	.4byte 0x03004020  @ IWRAM+0x4020
+	@ 008A44..008A70 is decompiled as RuntimeResetListSlot();
+	@ see src/decompiled.json.
 
 @ 008A70..008A98 is decompiled as NcdSpriteContainerReset(); see src/decompiled.json
 
@@ -1463,42 +1439,10 @@ _08008BCC:
 
 @ 008BD8..008BE4 is decompiled as SpriteAuxiliaryReset(); see src/decompiled.json
 
-	.section .rom.00008BE4, "ax"
+@ 008BE4..008C14 is decompiled as RuntimeReleaseListSpriteAllocations();
+@ see src/decompiled.json.
+	.section .rom.00008C14, "ax"
 	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_08008BE4
-sub_08008BE4:
-	push {r4, lr}
-	ldr r1, _08008C10
-	ldr r2, [r1, #0]
-	lsls r1, r0, #1
-	adds r1, r1, r0
-	lsls r1, r1, #2
-	adds r2, #128
-	adds r2, r2, r1
-	ldr r4, [r2, #0]
-	cmp r4, #0
-	beq _08008C08
-	.global _08008BFA
-_08008BFA:
-	adds r0, r4, #0
-	adds r0, #8
-	.2byte 0xF073
-	.4byte 0x6824F95F
-	cmp r4, #0
-	bne _08008BFA
-	.global _08008C08
-_08008C08:
-	pop {r4}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _08008C10
-_08008C10:
-	.4byte 0x03004020  @ IWRAM+0x4020
 
 	.thumb_func
 	.thumb
@@ -3298,33 +3242,8 @@ sub_08009AD8:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_08009AF8
-sub_08009AF8:
-	push {r4, lr}
-	ldr r3, _08009B20
-	ldr r4, [r3, #0]
-	lsls r2, r2, #1
-	movs r3, #104
-	muls r1, r3
-	adds r2, r2, r1
-	movs r1, #209
-	lsls r1, r1, #3
-	muls r0, r1
-	adds r2, r2, r0
-	movs r0, #203
-	lsls r0, r0, #3
-	adds r4, r4, r0
-	adds r4, r4, r2
-	movs r1, #0
-	ldrsh r0, [r4, r1]
-	pop {r4}
-	pop {r1}
-	bx r1
-	.global _08009B20
-_08009B20:
-	.4byte 0x03004020  @ IWRAM+0x4020
+	@ 009AF8..009B24 is decompiled as RuntimeGetPartValue();
+	@ see src/decompiled.json.
 
 @ 009B24..009B4C is decompiled as RuntimePartSetField656(); see src/decompiled.json
 
@@ -5078,7 +4997,7 @@ _0800AE2C:
 	ldrsh r3, [r1, r0]
 	mov r0, r8
 	adds r1, r7, #0
-	bl sub_080020EC
+	bl CalculatePointDistance
 	lsls r0, r0, #16
 	lsrs r0, r0, #16
 	cmp r0, r5
@@ -8176,7 +8095,7 @@ _0800C1BE:
 	.global sub_0800C1C0
 sub_0800C1C0:
 	adds r0, r4, #0
-	bl sub_08008BE4
+	bl RuntimeReleaseListSpriteAllocations
 	adds r4, #1
 	cmp r4, #3
 	ble sub_0800C1C0
@@ -8271,7 +8190,7 @@ _0800C256:
 	ldrsh r2, [r3, r0]
 	adds r0, r5, #0
 	adds r1, r6, #0
-	bl sub_08009AF8
+	bl RuntimeGetPartValue
 	lsls r0, r0, #16
 	asrs r0, r0, #16
 	mov r9, r0
@@ -9985,7 +9904,7 @@ sub_0800CCD6:
 	.2byte 0xF7F8
 	.byte 0x0C
 	.byte 0xF9
-	bl sub_08004F10
+	bl RuntimeClearTransferRecords
 	movs r0, #0
 	bl GameStateSetField425A
 	.2byte 0xF7F8
@@ -10431,7 +10350,7 @@ _0800CFC2:
 	cmp r0, #0
 	bne _0800CFDC
 	adds r0, r4, #0
-	bl sub_08008A44
+	bl RuntimeResetListSlot
 	lsls r1, r4, #5
 	ldr r0, [r5, #0]
 	adds r0, r0, r1

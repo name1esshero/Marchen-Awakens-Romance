@@ -36,7 +36,7 @@ int main(void){
  task.finished=1;ScriptSpriteInitTask(&task);
  assert(allocated==1 && completed==1 && finished==1 && result==-1);
  assert(sprite->active && sprite->container==2 && sprite->group==7 && sprite->animation==4 && sprite->frame==0);
- assert(sprite->x==17 && sprite->y==-20 && sprite->drawOrderBits==3 && !sprite->last);
+ assert(sprite->x==17 && sprite->y==-20 && sprite->drawOrderBits==3 && !sprite->hitBoundsEnabled);
  assert((storage.bytes[0]&2) && (sprite->flags1&1));
  task.state=99;ScriptSpriteInitTask(&task);assert(allocated==1);
  return 0;

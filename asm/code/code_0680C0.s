@@ -7910,7 +7910,7 @@ _0806C540:
 	.2byte 0xF798
 	.byte 0xD4
 	.byte 0xFC
-	bl sub_08004F10
+	bl RuntimeClearTransferRecords
 	.2byte 0xF798
 	.byte 0x7C
 	.byte 0xFC

@@ -5203,7 +5203,7 @@ _0802A698:
 	ldr r0, [r7, #0]
 	ldr r1, [r7, #4]
 	mov r2, r9
-	bl sub_08009AF8
+	bl RuntimeGetPartValue
 	lsls r0, r0, #16
 	asrs r5, r0, #16
 	cmp r5, #0

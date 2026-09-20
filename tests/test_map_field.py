@@ -75,7 +75,10 @@ int main(void) {
  return 0;
 }
 ''')
-            subprocess.run(['gcc','-O2','-D','AT(x)=','-I'+str(ROOT/'include'),str(folder/'field.c'),str(folder/'test.c'),'-o',str(folder/'test')],check=True)
+            subprocess.run(['gcc','-O2','-ffunction-sections','-fdata-sections',
+                            '-D','AT(x)=','-I'+str(ROOT/'include'),
+                            str(folder/'field.c'),str(folder/'test.c'),
+                            '-Wl,--gc-sections','-o',str(folder/'test')],check=True)
             subprocess.run([str(folder/'test')],check=True)
 
 if __name__=='__main__':unittest.main()

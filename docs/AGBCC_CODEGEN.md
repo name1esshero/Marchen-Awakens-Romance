@@ -300,7 +300,7 @@ A global's address and the load through it can be scheduled apart: the ROM
 often keeps the pool address in a register across other work and dereferences
 it later. Two things control this, and both are source-level.
 
-**Hold the address, not the value.** Writing `u8 **root = (u8 **)0x0300401C;`
+**Hold the address, not the value.** Writing `u8 **root = &gRuntimeState;`
 and dereferencing at the point of use gives `ldr r2, pool` early and
 `ldr r0, [r2]` late. Reading the pointer straight into a local
 (`u8 *base = RUNTIME_ROOT;`) emits both loads together, and referencing the
@@ -313,7 +313,7 @@ load lands where the assignment sits relative to the surrounding arithmetic.
     s32 narrowed = index;      /* lsl #16 / asr #16 */
     u8 **root;
     u32 offset;
-    root = (u8 **)0x0300401C;  /* ldr r2, pool lands here */
+    root = &gRuntimeState;     /* ldr r2, pool lands here */
     offset = narrowed * 24 + 380;
     return *root + offset;
 

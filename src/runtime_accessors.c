@@ -1,7 +1,6 @@
 /* Small, typed accessors shared by the map, scene, and link runtimes. */
 #include "runtime_accessors.h"
 #include "runtime_state.h"
-#include "bitset.h"
 
 #include "rom_section.h"
 extern u8 gIwramBase[];
@@ -39,16 +38,16 @@ AT("00004CC0") u32 SioGetPlayerId(void)
  return (*(volatile u32 *)0x04000128<<26)>>30;
 }
 /** @return The byte pointed to by the pointer stored at fixed IWRAM slot
- * gPrimaryRuntime. See RuntimeGetByte4014U8() for the narrowed wrapper. */
+ * gLinkRuntime. See RuntimeGetByte4014U8() for the narrowed wrapper. */
 AT("00004CD0") u32 RuntimeGetByte4014(void)
 {
- return *gPrimaryRuntime;
+ return *gLinkRuntime;
 }
 /** Return the selected bit mask from the primary runtime's flag byte. */
 AT("00004D90") u32 RuntimeTestFlag(u32 bit)
 {
  u32 index=(u8)bit;
- u8 *runtime=gPrimaryRuntime;
+ u8 *runtime=gLinkRuntime;
  u32 result=1;
  result<<=index;
  result&=runtime[3];
@@ -358,43 +357,6 @@ AT("00057844") s32 GameStateGetEncounterMode(void)
  offset-=178;
  return *(s8 *)(base+offset);
 }
-
-/* Packed flag banks inside the map-generation state.  The index is narrowed
- * to 16 bits by the callers' script ABI before it reaches BitSet/BitTest. */
-#define GAME_STATE_FLAG_SET(address,name,bank) \
- AT(address) void name(s32 index) \
- { \
-  u8 *iwram; \
-  u32 offset; \
-  u8 *base; \
-  s32 bit; \
-  bit=index; \
-  bit=(s16)bit; \
-  iwram=gIwramBase; \
-  offset=(u32)gMapGenerationRootOffset; \
-  base=*(u8 **)(iwram+offset); \
-  base+=(bank); \
-  BitSet(base,bit,1); \
- }
-#define GAME_STATE_FLAG_TEST(address,name,bank) \
- AT(address) s32 name(s32 index) \
- { \
-  u8 *iwram; \
-  u32 offset; \
-  u8 *base; \
-  s32 bit; \
-  bit=index; \
-  bit=(s16)bit; \
-  iwram=gIwramBase; \
-  offset=(u32)gMapGenerationRootOffset; \
-  base=*(u8 **)(iwram+offset); \
-  base+=(bank); \
-  return (s16)BitTest(base,bit); \
- }
-
-GAME_STATE_FLAG_SET("00056A34",GameStateSetFlag2730,0x2730)
-GAME_STATE_FLAG_TEST("00056A60",GameStateTestFlag2730,0x2730)
-GAME_STATE_FLAG_TEST("00056B2C",GameStateTestFlag26F8,0x26F8)
 
 /** state+0x38B8 selects which row of the 0x3894 table is current. */
 AT("00056130") s32 GameStateGetCurrentEntry3894(void)

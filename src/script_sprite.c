@@ -28,6 +28,20 @@ AT("00010C0C") void ScriptSpriteSelect(s32 id,s32 container,const char *name,s32
  }
 }
 
+/** Set and enable an indexed script sprite's translated collision bounds. */
+AT("00011414")
+void ScriptSpriteSetHitBounds(s32 id, s32 left, s32 top, s32 right,
+                              s32 bottom)
+{
+    struct ScriptSprite *sprite = GameStateGetRecord0B90(id);
+
+    sprite->hitBounds.left = left;
+    sprite->hitBounds.top = top;
+    sprite->hitBounds.right = right;
+    sprite->hitBounds.bottom = bottom;
+    sprite->hitBoundsEnabled = 1;
+}
+
 /** SprChg script command: forward its five VM arguments to
  * ScriptSpriteSelect(). @return Always 1. */
 AT("00011EF4") s32 ScriptNativeSpriteChange(u32 count,const union SpriteArgument *args,s32 *result)
@@ -108,7 +122,7 @@ AT("00010B6C") void ScriptSpriteInitTask(struct SpriteInitTask *task)
   sprite->container=payload[6];
   sprite->group=SpriteResourceFindGroup(sprite->container,(char *)(payload+1));
   sprite->animation=payload[8];sprite->frame=payload[9];
-  sprite->drawOrderBits=3;sprite->last=0;
+  sprite->drawOrderBits=3;sprite->hitBoundsEnabled=0;
   ((struct SpriteFlagByte *)&sprite->flags1)->enabled=1;*((u8 *)sprite)|=2;
   ScriptCompletePendingTasks(1);
   if(task->result)*task->result=-1;

@@ -20,6 +20,34 @@ extern void sub_08054350(void *, void *, s32, s32, s32, s32, s32);
 
 extern void sub_08018590(void *actorState);
 extern void sub_08017E70(void *actorState, s32 first, s32 second);
+extern void sub_08017BD8(void *actorState, void *actionState);
+
+#define FIELD_ACTOR_ACTION_LOCK_OFFSET 0x27A
+#define FIELD_ACTION_ACTIVE_OFFSET 10
+
+/**
+ * Run the field actor's state update when neither side blocks the action.
+ *
+ * @param actorState Field actor runtime state.
+ * @param actionState State whose signed active byte gates the update.
+ * @return TRUE when the update ran, otherwise FALSE.
+ */
+AT("00017BA8") s32 FieldActorTryRunStateUpdate(void *actorState,
+                                               void *actionState)
+{
+    u8 *actor = actorState;
+    u8 *action = actionState;
+    s32 result = FALSE;
+
+    if (*(s8 *)(actor + FIELD_ACTOR_ACTION_LOCK_OFFSET) == 0
+     && *(s8 *)(action + FIELD_ACTION_ACTIVE_OFFSET) != 0)
+    {
+        sub_08017BD8(actorState, actionState);
+        result = TRUE;
+    }
+
+    return result;
+}
 
 /** Update a field actor using the handler selected by game-state mode 1. */
 AT("00017E4C") void FieldActorUpdateForMode(void *actorState)

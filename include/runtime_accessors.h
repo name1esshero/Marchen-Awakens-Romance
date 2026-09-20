@@ -36,9 +36,6 @@ s32 GameStateGetEntry2AE0(s32 index);
 s32 GameStateGetEntry31D0(s32 index);
 s32 GameStateGetEncounterValue(void);
 s32 GameStateGetEncounterMode(void);
-void GameStateSetFlag2730(s32 index);
-s32 GameStateTestFlag2730(s32 index);
-s32 GameStateTestFlag26F8(s32 index);
 s32 GameStateGetCurrentEntry3894(void);
 void GameStateClearEntry31D0(s32 index);
 

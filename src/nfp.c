@@ -18,12 +18,6 @@
 #include "nfp.h"
 #include "rom_section.h"
 
-#ifdef AGBCC
-#define TARGET_REGISTER(name) asm(name)
-#else
-#define TARGET_REGISTER(name)
-#endif
-
 /** Base of a mounted archive.
  *
  * The global holds a pointer to the filesystem state, whose first field is
@@ -232,13 +226,15 @@ s32 NfpFindEntryIndex(s32 handle, const char *name)
     struct NfpEntry *directory;
     s32 low;
     s32 middle;
-    register s32 high TARGET_REGISTER("r4");
+    s32 high;
     s32 count;
     s32 comparison;
-    register s32 zero TARGET_REGISTER("r5") = 0;
     char candidate[NFP_NAME_SIZE + 1];
 
-    candidate[NFP_NAME_SIZE] = zero;
+    /* The midpoint starts at zero and supplies the directory-name terminator
+     * before the search reuses it for each midpoint calculation. */
+    middle = 0;
+    candidate[NFP_NAME_SIZE] = middle;
     directory = NfpGetDirectory(handle);
     count = NfpGetEntryCount(handle);
     if (count < 0)

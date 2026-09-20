@@ -4,6 +4,7 @@
  * native immediately; 0x7FFF hands control back to the script scheduler.
  */
 #include "gba/types.h"
+#include "flags.h"
 
 #include "rom_section.h"
 #include "runtime_misc.h"

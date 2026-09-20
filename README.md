@@ -204,5 +204,6 @@ More technical documentation is available in
 [docs/decompilation-notes.md](docs/decompilation-notes.md),
 [docs/PRET_AUDIT.md](docs/PRET_AUDIT.md),
 [docs/map-and-script-runtime.md](docs/map-and-script-runtime.md),
+[docs/game-flags.md](docs/game-flags.md),
 [docs/save-format.md](docs/save-format.md), and
 [docs/ram-layout.md](docs/ram-layout.md).

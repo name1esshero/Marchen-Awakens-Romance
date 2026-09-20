@@ -17891,7 +17891,7 @@ _0803F91A:
 	adds r3, #214
 	movs r5, #0
 	ldrsh r3, [r3, r5]
-	bl sub_080020EC
+	bl CalculatePointDistance
 	adds r2, r0, #0
 	lsls r2, r2, #16
 	lsrs r2, r2, #19

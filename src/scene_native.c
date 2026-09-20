@@ -3,6 +3,7 @@
  * interpreter whether to continue immediately or wait for an engine task.
  */
 #include "gba/types.h"
+#include "flags.h"
 #include "game_state.h"
 #include "runtime_accessors.h"
 #include "runtime_misc.h"
@@ -18,13 +19,16 @@ extern const char gSceneNcdExtension[];
 #define SOUND_PLAYER_POINTER_CAPACITY 10
 #define DYNAMIC_SOUND_PLAYER_COUNT 6
 
+extern u8 gIwramBase[];
+extern u8 gCrtFadeValueOffset[];
+
 extern s32 sub_080053E4(s32 first, s32 second, s32 third, s32 mode);
 extern s32 sub_08006E88(s32 value);
 extern s32 SpriteResourceFindGroup(s32 type, const char *name);
 extern void sub_08005530(s32 first, s32 second, s32 third, s32 fourth,
                          s32 fifth, s32 sixth);
-extern void sub_08005498(s32 first, s32 second, s32 third, s32 fourth,
-                         s32 fifth);
+extern void sub_08005498(s32 first, void *fadeBuffer, s32 *result,
+                         s32 fadeValue, s32 mode);
 extern struct EngineTask *StartSongWithTransition(u32 playerIndex,
                                                   u32 songIndex,
                                                   u32 *completion);
@@ -133,6 +137,25 @@ AT("00005C14") s32 ScriptNativeStartTask05530(u32 count, const s32 *args,
 {
     sub_08005530(args[0], (u16)args[1], (u16)args[2], (u16)args[3],
                   args[4], 0);
+    return SCRIPT_CONTINUE;
+}
+
+/** Set the CRT fade using the current game-state fade buffer. */
+AT("00005C38") s32 ScriptNativeSetCrtFade(u32 count, const s32 *args,
+                                          s32 *result)
+{
+    sub_08005498(0, GameStateGetBuffer3F38(), result, args[0], 0);
+    return SCRIPT_CONTINUE;
+}
+
+/** Store the CRT fade value consumed by the display runtime. */
+AT("00005C5C") s32 ScriptNativeGetCrtFade(u32 count, const s32 *args,
+                                          s32 *result)
+{
+    u8 *iwram = gIwramBase;
+    u32 offset = (u32)gCrtFadeValueOffset;
+
+    *(s32 *)(iwram + offset) = args[0];
     return SCRIPT_CONTINUE;
 }
 

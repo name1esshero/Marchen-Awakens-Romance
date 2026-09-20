@@ -5054,14 +5054,14 @@ _080220C6:
 	adds r1, r2, #0
 	mov r2, r9
 	adds r3, r5, #0
-	bl sub_08002118
+	bl CalculatePointAngle
 	adds r4, r0, #0
 	lsls r4, r4, #16
 	ldr r0, [sp, #56]
 	ldr r1, [sp, #60]
 	mov r2, r9
 	adds r3, r5, #0
-	bl sub_080020EC
+	bl CalculatePointDistance
 	ldr r3, _08022154
 	asrs r4, r4, #20
 	movs r5, #128

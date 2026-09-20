@@ -896,9 +896,9 @@ _081ACB3C:
 	.4byte 0x08086AFC
 	.4byte 0x08005C15
 	.4byte 0x08086AF0
-	.4byte 0x08005C39
+	.4byte ScriptNativeSetCrtFade + 1
 	.4byte 0x08086AE4
-	.4byte 0x08005C5D
+	.4byte ScriptNativeGetCrtFade + 1
 	.4byte 0x08086AD8
 	.4byte 0x08005C75
 	.4byte 0x08086ACC

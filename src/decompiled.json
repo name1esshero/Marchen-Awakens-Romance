@@ -84,6 +84,18 @@
     "file": "src/runtime_accessors.c"
   },
   {
+    "addr": "080020EC",
+    "size": 44,
+    "name": "CalculatePointDistance",
+    "file": "src/geometry.c"
+  },
+  {
+    "addr": "08002118",
+    "size": 48,
+    "name": "CalculatePointAngle",
+    "file": "src/geometry.c"
+  },
+  {
     "addr": "08002148",
     "size": 16,
     "name": "Lz77UnCompVramSwapped",
@@ -324,6 +336,18 @@
     "file": "src/runtime_core.c"
   },
   {
+    "addr": "08004F10",
+    "size": 84,
+    "name": "RuntimeClearTransferRecords",
+    "file": "src/runtime_core.c"
+  },
+  {
+    "addr": "08004F64",
+    "size": 48,
+    "name": "RuntimeClearSendRecords",
+    "file": "src/runtime_core.c"
+  },
+  {
     "addr": "08004F94",
     "size": 32,
     "name": "RuntimeGetCurrentRecord14C",
@@ -336,9 +360,21 @@
     "file": "src/runtime_core.c"
   },
   {
+    "addr": "08004FC4",
+    "size": 44,
+    "name": "RuntimeBuildInactiveRecordPacket",
+    "file": "src/runtime_core.c"
+  },
+  {
     "addr": "08004FF0",
     "size": 28,
     "name": "RuntimeGetRecord17C",
+    "file": "src/runtime_core.c"
+  },
+  {
+    "addr": "0800500C",
+    "size": 48,
+    "name": "RuntimeGetSelectedGroupRecord",
     "file": "src/runtime_core.c"
   },
   {
@@ -516,6 +552,18 @@
     "file": "src/scene_native.c"
   },
   {
+    "addr": "08005C38",
+    "size": 36,
+    "name": "ScriptNativeSetCrtFade",
+    "file": "src/scene_native.c"
+  },
+  {
+    "addr": "08005C5C",
+    "size": 24,
+    "name": "ScriptNativeGetCrtFade",
+    "file": "src/scene_native.c"
+  },
+  {
     "addr": "08005C74",
     "size": 20,
     "name": "ScriptNativeGetSpriteRuntime",
@@ -663,13 +711,13 @@
     "addr": "08006760",
     "size": 36,
     "name": "GameStateSetFlagsAC",
-    "file": "src/runtime_misc.c"
+    "file": "src/flags.c"
   },
   {
     "addr": "08006784",
     "size": 32,
     "name": "GameStateTestFlagsAC",
-    "file": "src/runtime_misc.c"
+    "file": "src/flags.c"
   },
   {
     "addr": "080067A4",
@@ -687,25 +735,25 @@
     "addr": "080067DC",
     "size": 48,
     "name": "GameStateInitializeAttributeFlags",
-    "file": "src/runtime_misc.c"
+    "file": "src/flags.c"
   },
   {
     "addr": "0800680C",
     "size": 40,
     "name": "GameStateSetAttributeFlag",
-    "file": "src/runtime_misc.c"
+    "file": "src/flags.c"
   },
   {
     "addr": "08006834",
     "size": 36,
     "name": "GameStateTestAttributeFlag",
-    "file": "src/runtime_misc.c"
+    "file": "src/flags.c"
   },
   {
     "addr": "08006858",
     "size": 64,
     "name": "GameStateSetAttributeFlagRange",
-    "file": "src/runtime_misc.c"
+    "file": "src/flags.c"
   },
   {
     "addr": "08006898",
@@ -1122,6 +1170,12 @@
     "file": "src/runtime_buffers.c"
   },
   {
+    "addr": "08008A44",
+    "size": 44,
+    "name": "RuntimeResetListSlot",
+    "file": "src/runtime_objects.c"
+  },
+  {
     "addr": "08008A70",
     "size": 40,
     "name": "NcdSpriteContainerReset",
@@ -1132,6 +1186,12 @@
     "size": 12,
     "name": "SpriteAuxiliaryReset",
     "file": "src/runtime_leaf.c"
+  },
+  {
+    "addr": "08008BE4",
+    "size": 48,
+    "name": "RuntimeReleaseListSpriteAllocations",
+    "file": "src/runtime_objects.c"
   },
   {
     "addr": "08009048",
@@ -1341,6 +1401,12 @@
     "addr": "08009A04",
     "size": 32,
     "name": "RuntimeUpdateFiveParts",
+    "file": "src/runtime_buffers.c"
+  },
+  {
+    "addr": "08009AF8",
+    "size": 44,
+    "name": "RuntimeGetPartValue",
     "file": "src/runtime_buffers.c"
   },
   {
@@ -2040,6 +2106,12 @@
     "file": "src/script_sprite.c"
   },
   {
+    "addr": "08011414",
+    "size": 36,
+    "name": "ScriptSpriteSetHitBounds",
+    "file": "src/script_sprite.c"
+  },
+  {
     "addr": "08011438",
     "size": 44,
     "name": "GameStateClearRecord1090IfZero",
@@ -2258,7 +2330,7 @@
   {
     "addr": "08011F7C",
     "size": 32,
-    "name": "ScriptNativeSpriteConfigure",
+    "name": "ScriptNativeSpriteSetHitBounds",
     "file": "src/script_effect_native.c"
   },
   {
@@ -2902,6 +2974,12 @@
     "size": 20,
     "name": "BattleActionUnavailable",
     "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "08017BA8",
+    "size": 48,
+    "name": "FieldActorTryRunStateUpdate",
+    "file": "src/map_field.c"
   },
   {
     "addr": "08017E4C",
@@ -4767,19 +4845,19 @@
     "addr": "08056A34",
     "size": 44,
     "name": "GameStateSetFlag2730",
-    "file": "src/runtime_accessors.c"
+    "file": "src/flags.c"
   },
   {
     "addr": "08056A60",
     "size": 44,
     "name": "GameStateTestFlag2730",
-    "file": "src/runtime_accessors.c"
+    "file": "src/flags.c"
   },
   {
     "addr": "08056B2C",
     "size": 44,
     "name": "GameStateTestFlag26F8",
-    "file": "src/runtime_accessors.c"
+    "file": "src/flags.c"
   },
   {
     "addr": "08056CD0",

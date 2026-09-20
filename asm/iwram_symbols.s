@@ -15,8 +15,10 @@
 .set gMapStateOffset, 0x000032F4
 .global gSecondaryRuntime
 .set gSecondaryRuntime, 0x03004020
-.global gPrimaryRuntime
-.set gPrimaryRuntime, 0x03004014
+.global gLinkRuntime
+.set gLinkRuntime, 0x03004014
+.global gRuntimeState
+.set gRuntimeState, 0x0300401C
 .global gRuntimeObjectTable
 .set gRuntimeObjectTable, 0x03004024
 .global gIwramField3FD5Offset
@@ -39,6 +41,8 @@
 .set gIwramPointer2860Offset, 0x00002860
 .global gIwramField0810Offset
 .set gIwramField0810Offset, 0x00000810
+.global gCrtFadeValueOffset
+.set gCrtFadeValueOffset, 0x00003AF8
 .global gBattleFieldRectXOffset
 .set gBattleFieldRectXOffset, 0x00003BE4
 .global gBattleFieldRectYOffset

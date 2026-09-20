@@ -482,3 +482,68 @@ shape and size, but assign the saved input pointer to r4 and size to r5; the
 ROM assigns them to r5 and r4. Its matching declarations were likewise
 restored. Future attempts should look for a real lifetime or type difference,
 not add an artificial dependency merely to exchange registers.
+
+The two direct callers at 0x0806E32A and 0x0806E408 also rule out a swapped
+source signature as the explanation. Both prepare the save pointer in r0, the
+byte count in r1, and the completion pointer in r2 before calling
+`CreateSaveWriteTask()`. The current public parameter order is therefore
+verified from call sites even though an ordinary forwarding wrapper assigns
+its two long-lived arguments to r4/r5 in the opposite order from the ROM.
+
+`ScriptNativeQueryModeResource()` was re-tested one constraint at a time. If
+only the r0 constraint on `base` is removed, the function remains the same
+size and differs solely in the commutative address addition: agbcc emits
+`add r0, r2, r0` where the ROM has `add r0, r0, r2`. Writing that expression
+as subtraction of a negated offset happens to recover the ROM instruction,
+but it obscures a plain pointer addition solely to steer the optimizer. It is
+a fakematch under `PRET_STANDARDS.md` and was rejected. Direct pointer
+addition, indexed-pointer spelling, integer-address temporaries, and both
+operand orders all reproduce the swapped ordinary-C instruction. The pin
+remains pending until a genuine type or lifetime reconstruction explains the
+allocation.
+
+## Reuse an initialized search value before its loop role
+
+`NfpFindEntryIndex()` (0x0807ACC4) no longer needs its `high` and `zero`
+register constraints. The ROM clears r5 before the two archive calls, uses
+that zero to terminate the 12-byte directory name copied to the stack, and
+later assigns every binary-search midpoint to the same register. Those uses
+belong to one real source variable: `middle` starts at zero, supplies the
+terminator, and is reassigned by `(low + high) / 2` inside the loop.
+
+The former reconstruction invented an unrelated `zero` local pinned to r5
+and pinned `high` to r4 to compensate. Initializing `middle` before writing
+the terminator makes agbcc choose r5 for the midpoint and r4 for the upper
+bound naturally. This removes both forced registers and the file's
+`TARGET_REGISTER` macro while producing identical instructions and an exact
+ROM SHA-1. When a ROM register is initialized well before its apparent main
+use, check whether the value begins another later-used variable's lifetime
+instead of adding a dedicated constant local.
+
+## NCD flag lifetime and typed allocation count
+
+Two more NCD routines now reproduce the ROM without compiler hints.
+`NcdQueueSprite()` first reads the typed `NcdSprite::flags26` member, then
+initializes the queue-group mask, and finally applies the mask with `&=`.
+Keeping the raw byte and the evolving masked value simultaneously live makes
+agbcc assign the raw flags to r2 and the group to r0 naturally. The former
+reconstruction computed `rawFlags & 12` in one expression and compensated for
+the shortened lifetime by pinning `rawFlags` to r2.
+
+`NcdRuntimeSpriteReleaseAllocation()` now compares its loop index directly
+with the typed `NcdRuntimeAllocation::partCount` member. That member access
+produces the ROM's pointer calculation and r0-to-r6 preservation without the
+old pinned byte pointer or empty inline-assembly barrier. With these two
+repairs, `src/ncd_sprite.c` contains no register constraints, scheduling
+fences, or private hint macros, and the Japanese ROM remains byte-identical.
+
+`SpriteTileAllocatorRelease()` was rechecked in the same pass. Removing its
+remaining r0 constraint changes only the three-instruction previous-span merge:
+the ROM copies the size mask from `ip` to r0 and masks it with the flags in r1,
+whereas agbcc's clean form copies the mask to r2 and consumes r1 in place.
+Direct and commuted expressions, reuse of each later local, signed and unsigned
+16/32-bit temporaries, a bitfield view, and an equivalent flat-goto control
+flow were tested. None matched without changing other instructions. The
+constraint therefore remains pending a better source model; the failed probes
+are evidence about those spellings only, not proof that original C required a
+fixed register.

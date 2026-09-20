@@ -22,4 +22,8 @@
 #define CPU_SET_16BIT     0x00000000
 #define CPU_SET_32BIT     0x04000000
 
+u32 Sqrt(u32 value);
+s32 ArcTan2(s32 x, s32 y);
+void CpuSet(const void *source, void *destination, u32 control);
+
 #endif /* GBA_BIOS_H */

@@ -18,6 +18,13 @@
  * in r3. One instruction-allocation difference remains: the ROM copies r3
  * to r0 and clears r0, while agbcc clears r3 in place. No register forcing,
  * volatile qualifier, or inline assembly is used.
+ *
+ * Further clean-C probes confirmed that plain/compound assignment, commuted
+ * operands, u16/u32 temporaries, casts, direct pointers, array members,
+ * unions, a full-width bitfield, actual ScriptFrame member access, ordinary
+ * `register` storage classes, and inlined clear-mask helpers all retain the
+ * in-place r3 BIC. Non-inlined helpers introduce a call absent from the ROM,
+ * and old_agbcc changes earlier load scheduling without fixing this BIC.
  */
 
 #include "gba/types.h"

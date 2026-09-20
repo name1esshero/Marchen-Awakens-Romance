@@ -1493,7 +1493,7 @@ sub_080010E8:
 	.2byte 0xF005
 	.4byte 0x2800FF21
 	beq _080010FE
-	bl sub_08004FC4
+	bl RuntimeBuildInactiveRecordPacket
 	.2byte 0xF003
 	.byte 0xB7
 	.byte 0xFE
@@ -3732,62 +3732,9 @@ _080020E0:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_080020EC
-sub_080020EC:
-	push {lr}
-	lsls r0, r0, #16
-	asrs r0, r0, #16
-	lsls r1, r1, #16
-	asrs r1, r1, #16
-	lsls r2, r2, #16
-	asrs r2, r2, #16
-	lsls r3, r3, #16
-	asrs r3, r3, #16
-	subs r2, r2, r0
-	subs r3, r3, r1
-	adds r0, r2, #0
-	muls r0, r2
-	adds r1, r3, #0
-	muls r1, r3
-	adds r0, r0, r1
-	.2byte 0xF077
-	.byte 0xE4
-	.byte 0xFE
-	lsls r0, r0, #16
-	lsrs r0, r0, #16
-	pop {r1}
-	bx r1
-
-	.thumb_func
-	.thumb
-	.global sub_08002118
-sub_08002118:
-	push {lr}
-	lsls r0, r0, #16
-	asrs r0, r0, #16
-	lsls r1, r1, #16
-	asrs r1, r1, #16
-	lsls r2, r2, #16
-	asrs r2, r2, #16
-	lsls r3, r3, #16
-	asrs r3, r3, #16
-	subs r2, r2, r0
-	lsls r2, r2, #16
-	asrs r2, r2, #16
-	subs r3, r3, r1
-	lsls r3, r3, #16
-	asrs r3, r3, #16
-	adds r0, r2, #0
-	adds r1, r3, #0
-	.2byte 0xF077
-	.4byte 0x0400FEAD
-	asrs r0, r0, #16
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 0020EC..002118 is decompiled as CalculatePointDistance();
+@ 002118..002148 is decompiled as CalculatePointAngle();
+@ see src/decompiled.json.
 
 @ 002148..002158 is decompiled as Lz77UnCompVramSwapped(); see src/decompiled.json
 
@@ -8975,8 +8922,8 @@ _080049DA:
 
 	.thumb_func
 	.thumb
-	.global sub_080049F4
-sub_080049F4:
+	.global LinkBuildSendPacket
+LinkBuildSendPacket:
 	push {r4, r5, lr}
 	movs r5, #0
 	ldr r4, _08004A44
@@ -9023,7 +8970,7 @@ _08004A44:
 	.4byte 0x03004014  @ IWRAM+0x4014
 	.global _08004A48
 _08004A48:
-	.4byte 0x04000006  @ REG_VCOUNT
+	.4byte 0x04000006  @ CpuSet 32-bit copy of six words
 
 	.thumb_func
 	.thumb
@@ -9564,149 +9511,20 @@ sub_08004D70:
 
 @ 004EF8..004F10 is decompiled as RuntimeStop(); see src/decompiled.json
 
-	.section .rom.00004F10, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_08004F10
-sub_08004F10:
-	push {r4, r5, r6, lr}
-	ldr r6, _08004F60
-	movs r5, #128
-	lsls r5, r5, #9
-	movs r4, #190
-	lsls r4, r4, #1
-	.global _08004F1C
-_08004F1C:
-	ldr r0, [r6, #0]
-	adds r0, r0, r4
-	movs r1, #24
-	movs r2, #0
-	bl CpuFill
-	adds r0, r5, #0
-	movs r1, #128
-	lsls r1, r1, #9
-	adds r5, r5, r1
-	adds r4, #24
-	asrs r0, r0, #16
-	cmp r0, #1
-	ble _08004F1C
-	ldr r4, _08004F60
-	ldr r0, [r4, #0]
-	movs r1, #166
-	lsls r1, r1, #1
-	adds r0, r0, r1
-	movs r1, #24
-	movs r2, #0
-	bl CpuFill
-	ldr r0, [r4, #0]
-	movs r1, #178
-	lsls r1, r1, #1
-	adds r0, r0, r1
-	movs r1, #24
-	movs r2, #0
-	bl CpuFill
-	pop {r4, r5, r6}
-	pop {r0}
-	bx r0
-	.global _08004F60
-_08004F60:
-	.4byte 0x0300401C  @ IWRAM+0x401C
-	.4byte 0x4C0AB510
-	.4byte 0x21A66820
-	.4byte 0x18400049
-
-	.thumb_func
-	.thumb
-	.global sub_08004F70
-sub_08004F70:
-	movs r1, #24
-	movs r2, #0
-	bl CpuFill
-	ldr r0, [r4, #0]
-	movs r1, #178
-	lsls r1, r1, #1
-	adds r0, r0, r1
-	movs r1, #24
-	movs r2, #0
-	bl CpuFill
-	pop {r4}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.4byte 0x0300401C
+@ 004F10..004F64 is decompiled as RuntimeClearTransferRecords();
+@ 004F64..004F94 is decompiled as RuntimeClearSendRecords();
+@ see src/decompiled.json.
 
 @ 004F94..004FB4 is decompiled as RuntimeGetCurrentRecord14C(); see src/decompiled.json
 
 @ 004FB4..004FC4 is decompiled as RuntimeAdvanceWord4(); see src/decompiled.json
 
-	.section .rom.00004FC4, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_08004FC4
-sub_08004FC4:
-	push {lr}
-	ldr r0, _08004FEC
-	ldr r1, [r0, #0]
-	movs r2, #214
-	lsls r2, r2, #1
-	adds r0, r1, r2
-	ldrh r0, [r0, #0]
-	movs r3, #166
-	lsls r3, r3, #1
-	adds r2, r1, r3
-	cmp r0, #0
-	bne _08004FE2
-	movs r0, #178
-	lsls r0, r0, #1
-	adds r2, r1, r0
-	.global _08004FE2
-_08004FE2:
-	adds r0, r2, #0
-	bl sub_080049F4
-	pop {r0}
-	bx r0
-	.global _08004FEC
-_08004FEC:
-	.4byte 0x0300401C  @ IWRAM+0x401C
+@ 004FC4..004FF0 is decompiled as RuntimeBuildInactiveRecordPacket(); see src/decompiled.json
 
 @ 004FF0..00500C is decompiled as RuntimeGetRecord17C(); see src/decompiled.json
 
-	.section .rom.0000500C, "ax"
-	.syntax unified
-	.4byte 0x49090400
-	.byte 0x00
-	.byte 0x12
-
-	.thumb_func
-	.thumb
-	.global sub_08005012
-sub_08005012:
-	movs r3, #216
-	lsls r3, r3, #1
-	adds r2, r0, r3
-	ldr r1, [r1, #0]
-	adds r2, r1, r2
-	adds r1, r1, r0
-	ldr r0, _08005038
-	adds r1, r1, r0
-	ldrb r1, [r1, #0]
-	lsls r1, r1, #24
-	asrs r1, r1, #24
-	lsls r0, r1, #1
-	adds r0, r0, r1
-	lsls r0, r0, #3
-	adds r2, r2, r0
-	adds r0, r2, #0
-	bx lr
-	.4byte 0x0300401C
-	.global _08005038
-_08005038:
-	.4byte 0x000002AA
+@ 00500C..00503C is decompiled as RuntimeGetSelectedGroupRecord();
+@ see src/decompiled.json.
 
 @ 00503C..005040 is decompiled as RuntimeReturnZero(); see src/decompiled.json
 
@@ -10627,32 +10445,9 @@ _0800569E:
 	.section .rom.00005C38, "ax"
 	.syntax unified
 
-	.thumb_func
-	.thumb
-	.global sub_08005C38
-sub_08005C38:
-	push {r4, r5, lr}
-	sub sp, #4
-	adds r4, r1, #0
-	adds r5, r2, #0
-	bl GameStateGetBuffer3F38
-	adds r1, r0, #0
-	ldr r3, [r4, #0]
-	movs r0, #0
-	str r0, [sp, #0]
-	adds r2, r5, #0
-	bl sub_08005498
-	movs r0, #1
-	add sp, #4
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.4byte 0x4A044803
-	.4byte 0x68091880
-	.4byte 0x20016001
-	.4byte 0x00004770
-	.4byte 0x03000000
-	.4byte 0x00003AF8
+	@ 005C38..005C5C is decompiled as ScriptNativeSetCrtFade();
+	@ 005C5C..005C74 is decompiled as ScriptNativeGetCrtFade();
+	@ see src/decompiled.json.
 
 @ 005C74..005C88 is decompiled as ScriptNativeGetSpriteRuntime(); see src/decompiled.json
 
@@ -12270,7 +12065,7 @@ _080071FE:
 	.2byte 0xF7FD
 	.byte 0x10
 	.byte 0xFE
-	bl sub_08004F10
+	bl RuntimeClearTransferRecords
 	movs r0, #1
 	bl GameStateSetField425A
 	movs r0, #16
@@ -12786,7 +12581,7 @@ _08007594:
 	.2byte 0xF7FD
 	.byte 0xB0
 	.byte 0xFC
-	bl sub_08004F10
+	bl RuntimeClearTransferRecords
 	movs r0, #0
 	bl GameStateSetField425A
 	.2byte 0xF7FD
@@ -12901,7 +12696,7 @@ _080076DE:
 	movs r2, #2
 	.2byte 0xF072
 	.4byte 0x1C28FF87
-	bl sub_08008A44
+	bl RuntimeResetListSlot
 	adds r5, #1
 	cmp r5, #3
 	ble _080076DE
@@ -13318,7 +13113,7 @@ sub_08007A16:
 	.4byte 0x2800FE7B
 	bne _08007A2E
 	adds r0, r4, #0
-	bl sub_08008A44
+	bl RuntimeResetListSlot
 	lsls r1, r4, #5
 	ldr r0, [r5, #0]
 	adds r0, r0, r1
@@ -13548,7 +13343,7 @@ _08007B7C:
 	.global _08007B8E
 _08007B8E:
 	adds r0, r4, #0
-	bl sub_08008BE4
+	bl RuntimeReleaseListSpriteAllocations
 	adds r4, #1
 	cmp r4, #3
 	ble _08007B8E
@@ -13612,7 +13407,7 @@ _08007BF8:
 	ldrsh r2, [r7, r0]
 	adds r0, r5, #0
 	adds r1, r6, #0
-	bl sub_08009AF8
+	bl RuntimeGetPartValue
 	lsls r0, r0, #16
 	asrs r1, r0, #16
 	cmp r1, #0
@@ -13753,7 +13548,7 @@ _08007CE4:
 	.global _08007CE6
 _08007CE6:
 	adds r0, r4, #0
-	bl sub_08008BE4
+	bl RuntimeReleaseListSpriteAllocations
 	adds r4, #1
 	cmp r4, #3
 	ble _08007CE6
@@ -13893,14 +13688,14 @@ _08007DA4:
 	movs r1, #1
 	bl sub_080083E0
 	movs r0, #0
-	bl sub_08008A44
+	bl RuntimeResetListSlot
 	ldr r4, _08007E5C
 	ldr r0, [r4, #0]
 	.2byte 0xF072
 	.byte 0xE8
 	.byte 0xFC
 	movs r0, #2
-	bl sub_08008A44
+	bl RuntimeResetListSlot
 	ldr r0, [r4, #0]
 	adds r0, #64
 	.2byte 0xF072
@@ -13976,7 +13771,7 @@ _08007E68:
 	.4byte 0x2800FC51
 	bne _08007E88
 	adds r0, r4, #0
-	bl sub_08008A44
+	bl RuntimeResetListSlot
 	lsls r1, r4, #5
 	ldr r0, [r5, #0]
 	adds r0, r0, r1
@@ -14041,7 +13836,7 @@ _08007ED8:
 	.global _08007EDA
 _08007EDA:
 	adds r0, r4, #0
-	bl sub_08008BE4
+	bl RuntimeReleaseListSpriteAllocations
 	adds r4, #1
 	cmp r4, #3
 	ble _08007EDA
@@ -14207,12 +14002,12 @@ _08007FF0:
 	movs r2, #0
 	bl sub_08056D4C
 	movs r0, #0
-	bl sub_08008A44
+	bl RuntimeResetListSlot
 	ldr r4, _08008074
 	ldr r0, [r4, #0]
 	.2byte 0xF072
 	.4byte 0x2002FBBF
-	bl sub_08008A44
+	bl RuntimeResetListSlot
 	ldr r0, [r4, #0]
 	adds r0, #64
 	.2byte 0xF072

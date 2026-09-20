@@ -3,6 +3,8 @@
 #include "gba/types.h"
 
 void *RuntimeGetPointerEA0(void);
+void RuntimeResetListSlot(u32 slot);
+void RuntimeReleaseListSpriteAllocations(u32 slot);
 void RuntimeSetPointerEA0(void *value);
 void RuntimeSetFieldsE48ToE4A(s32 first,s32 second,s32 third);
 void RuntimeSetFieldE48(s32 value);

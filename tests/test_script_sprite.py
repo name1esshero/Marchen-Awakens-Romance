@@ -33,12 +33,12 @@ int main(void) {
  memset(&sprite,0,sizeof(sprite));before=sprite;
  ScriptSpriteSelect(16,0,"ps_wk02",2,3);
  assert(!looked && !memcmp(&before,&sprite,sizeof(sprite)));
- sprite.active=1;sprite.last=1;sprite.other=13;sprite.x=200;sprite.y=412;
+ sprite.active=1;sprite.hitBoundsEnabled=1;sprite.other=13;sprite.x=200;sprite.y=412;
  expectedContainer=-1;answer=123;
  ScriptSpriteSelect(16,65535,"ps_wk02",32768,65535);
  assert(looked==1 && sprite.container==-1 && sprite.group==123);
  assert(sprite.animation==-32768 && sprite.frame==-1);
- assert(sprite.x==200 && sprite.y==412 && sprite.active && sprite.last && sprite.other==13);
+ assert(sprite.x==200 && sprite.y==412 && sprite.active && sprite.hitBoundsEnabled && sprite.other==13);
  assert(sprite.drawOrderBits==3);
  expectedContainer=0;answer=-1;
  ScriptSpriteSelect(16,0,"ps_wk02",0,0);

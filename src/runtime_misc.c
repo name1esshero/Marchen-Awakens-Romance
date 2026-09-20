@@ -1,7 +1,6 @@
 /* Small helpers from the map renderer, script VM, and scene runtimes. */
 #include "runtime_misc.h"
 #include "runtime_leaf.h"
-#include "bitset.h"
 #include "runtime_accessors.h"
 #include "sprite_engine.h"
 #include "script_vm.h"
@@ -21,9 +20,6 @@ extern u8 gMapGenerationRootOffset[];
     *(u8 **)(iwram+offset); \
 })
 #define FIXED_16_16_ONE (1 << 16)
-#define GAME_STATE_ATTRIBUTE_FLAGS_OFFSET 0x12C
-#define GAME_STATE_ATTRIBUTE_FLAG_COUNT 10000
-#define GAME_STATE_ATTRIBUTE_FLAGS_SIZE (GAME_STATE_ATTRIBUTE_FLAG_COUNT / 8)
 extern void CpuFill(void *destination,u32 size,u32 value);
 extern void CpuCopy(void *destination,const void *source,u32 size);
 
@@ -160,62 +156,6 @@ AT("000069F8") void GameStateCopyString12F4(char *destination)
 AT("000106C8") void *GameStateGetRecord0B90(u32 index)
 {
  return GAME_STATE_BASE+0x0B90+index*40;
-}
-
-/** Enable or disable a bit in the game state's +0xAC flag bank. */
-AT("00006760") void GameStateSetFlagsAC(u32 bit, s32 enabled)
-{
-    u8 *iwram = gIwramBase;
-    u32 offset = (u32)gMapGenerationRootOffset;
-    u8 *state = *(u8 **)(iwram + offset);
-
-    BitSet(state + 0xAC, bit, enabled);
-}
-
-/** @return Whether the given bit is set in the game state's +0xAC flag
- * bank. */
-AT("00006784") s32 GameStateTestFlagsAC(u32 bit)
-{
- return BitTest(ORDERED_GAME_STATE_BASE+0xAC,bit);
-}
-
-/** Fill the background-attribute enable bank, enabling every attribute, and
- * reset its associated selection field. */
-AT("000067DC") void GameStateInitializeAttributeFlags(void)
-{
-    CpuFill(ORDERED_GAME_STATE_BASE + GAME_STATE_ATTRIBUTE_FLAGS_OFFSET,
-            GAME_STATE_ATTRIBUTE_FLAGS_SIZE, -1);
-    GameStateSetField60E(0);
-}
-
-/** Enable or disable one background attribute. */
-AT("0000680C") void GameStateSetAttributeFlag(s32 index, s32 enabled)
-{
-    BitSet(ORDERED_GAME_STATE_BASE + GAME_STATE_ATTRIBUTE_FLAGS_OFFSET,
-           index, enabled);
-}
-
-/** @return Whether the given background attribute is enabled. */
-AT("00006834") s32 GameStateTestAttributeFlag(u32 bit)
-{
- return BitTest(ORDERED_GAME_STATE_BASE + GAME_STATE_ATTRIBUTE_FLAGS_OFFSET,
-                bit);
-}
-
-/** Set an inclusive range of background-attribute enable bits. */
-AT("00006858") void GameStateSetAttributeFlagRange(s32 first, s32 last,
-                                                    s32 enabled)
-{
-    u8 *flags;
-    s32 index;
-    s32 value;
-
-    if (enabled != 0)
-        enabled = 1;
-    value = enabled;
-    flags = ORDERED_GAME_STATE_BASE + GAME_STATE_ATTRIBUTE_FLAGS_OFFSET;
-    for (index = first; index <= last; index++)
-        BitSet(flags, index, value);
 }
 
 /** Copy a caller-owned string into the fixed game-state text buffer. */

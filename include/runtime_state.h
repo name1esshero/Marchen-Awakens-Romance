@@ -9,15 +9,18 @@
  * address is that fixed IWRAM slot, not a macro over a raw address. */
 extern u8 *gSecondaryRuntime;
 
-/* Fixed IWRAM pointer to the primary runtime allocation used by the link and
- * early-runtime accessors. */
-extern u8 *gPrimaryRuntime;
+/* Fixed IWRAM pointer to the multiplayer-link controller state. */
+extern u8 *gLinkRuntime;
+
+/* Fixed IWRAM pointer to the 0x3B0-byte runtime allocation that owns the
+ * link-transfer record buffers. */
+extern u8 *gRuntimeState;
 
 #define RUNTIME_HISTORY_ENTRY_COUNT 10
 #define RUNTIME_HISTORY_ENTRY_WORD_COUNT 6
 #define RUNTIME_HISTORY_PADDING_SIZE 10
 
-/** A 24-byte snapshot stored in the primary runtime's circular history. */
+/** A 24-byte snapshot stored in a runtime record array. */
 struct RuntimeHistoryEntry
 {
     u32 words[RUNTIME_HISTORY_ENTRY_WORD_COUNT];
@@ -41,9 +44,14 @@ s32 RuntimeHistoryPush(const struct RuntimeHistoryEntry *entry,
                        struct RuntimeHistory *history);
 void RuntimeStart(void);
 void RuntimeStop(void);
+void RuntimeClearTransferRecords(void);
+void RuntimeClearSendRecords(void);
 void *RuntimeGetCurrentRecord14C(void);
 void RuntimeAdvanceWord4(void);
+void LinkBuildSendPacket(const struct RuntimeHistoryEntry *entry);
+void RuntimeBuildInactiveRecordPacket(void);
 void *RuntimeGetRecord17C(s16 index);
+void *RuntimeGetSelectedGroupRecord(s32 group);
 void RuntimeSetModeE4B(s32 value);
 s32 RuntimeGetSignedByteE4B(void);
 s32 RuntimeGetSignedByteE4C(void);

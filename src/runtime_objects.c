@@ -1,5 +1,7 @@
 /* Views of the secondary runtime's actor records and its 4-by-4 object table. */
 #include "runtime_objects.h"
+#include "list.h"
+#include "ncd.h"
 #include "runtime_state.h"
 #include "rom_section.h"
 extern u8 *gRuntimeObjectTable[];
@@ -10,6 +12,46 @@ extern u8 *gRuntimeObjectTable[];
 #define ACTOR_RECORD_HEADER_OFFSET 0x120
 #define ACTOR_PART_RECORD_SIZE 168
 #define ACTOR_PART_RECORDS_OFFSET 0x23C
+#define RUNTIME_LISTS_OFFSET 0x80
+#define RUNTIME_LIST_STRIDE 12
+#define RUNTIME_LIST_POINTERS_OFFSET 0xB0
+
+/** Release the sprite allocation owned by every entry in a runtime list.
+ * The list links occupy the first eight bytes of each entry, immediately
+ * followed by its NCD sprite.  The caller resets the list separately. */
+AT("00008BE4") void RuntimeReleaseListSpriteAllocations(u32 slot)
+{
+    u8 **root = &gSecondaryRuntime;
+    u8 *base = *root;
+    u32 listOffset;
+    ListNode *node;
+
+    listOffset = slot * RUNTIME_LIST_STRIDE;
+    base += RUNTIME_LISTS_OFFSET;
+    base += listOffset;
+    node = ((List *)base)->head;
+
+    while (node != NULL) {
+        NcdRuntimeSpriteReleaseAllocation((struct NcdSprite *)(node + 1));
+        node = node->next;
+    }
+}
+
+/** Reset one of the secondary runtime's four list slots and its owner. */
+AT("00008A44") void RuntimeResetListSlot(u32 slot)
+{
+    u8 **root = &gSecondaryRuntime;
+    u32 listOffset = slot * RUNTIME_LIST_STRIDE;
+    u8 *base;
+
+    listOffset += RUNTIME_LISTS_OFFSET;
+    ListInit((List *)(*root + listOffset));
+    base = *root;
+    slot *= sizeof(void *);
+    base += RUNTIME_LIST_POINTERS_OFFSET;
+    base += slot;
+    *(void **)base = NULL;
+}
 
 /* This expanded address calculation is shared by the paired actor-part
  * accessors below. Its statement order reproduces the original agbcc code. */

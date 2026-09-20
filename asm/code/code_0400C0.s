@@ -10149,7 +10149,7 @@ _0804428C:
 	movs r4, #2
 	ldrsh r3, [r3, r4]
 	mov r12, r3
-	bl sub_08002118
+	bl CalculatePointAngle
 	lsls r0, r0, #16
 	asrs r0, r0, #20
 	strh r0, [r5, #14]
@@ -12574,7 +12574,7 @@ _08045308:
 	ldrsh r2, [r2, r4]
 	movs r5, #0
 	ldrsh r3, [r3, r5]
-	bl sub_08002118
+	bl CalculatePointAngle
 	lsls r0, r0, #16
 	asrs r0, r0, #20
 	strh r0, [r7, #42]
@@ -12850,7 +12850,7 @@ _08045518:
 	adds r3, #150
 	movs r5, #0
 	ldrsh r3, [r3, r5]
-	bl sub_080020EC
+	bl CalculatePointDistance
 	adds r2, r0, #0
 	lsls r2, r2, #16
 	lsrs r2, r2, #19
@@ -16339,7 +16339,7 @@ _08046BE8:
 	movs r6, #0
 	ldrsh r1, [r1, r6]
 	adds r2, r4, #0
-	bl sub_08002118
+	bl CalculatePointAngle
 	adds r4, r0, #0
 	.2byte 0xF033
 	.4byte 0x490FFAD3

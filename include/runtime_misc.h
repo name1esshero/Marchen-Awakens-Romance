@@ -40,12 +40,6 @@ const struct BattleCharacterDefinition *RuntimeGetBattleCharacterDefinition(u32 
 u8 *RuntimeGetBlock6120(u32 slot,u32 group);
 void GameStateCopyString12F4(char *destination);
 void *GameStateGetRecord0B90(u32 index);
-void GameStateSetFlagsAC(u32 bit, s32 enabled);
-s32 GameStateTestFlagsAC(u32 bit);
-void GameStateInitializeAttributeFlags(void);
-void GameStateSetAttributeFlag(s32 index, s32 enabled);
-s32 GameStateTestAttributeFlag(u32 bit);
-void GameStateSetAttributeFlagRange(s32 first, s32 last, s32 enabled);
 void GameStateSetString12F4(const char *source);
 void GameStateClearBlock413C(void);
 void GameStateSnapshotMapBuffer(void);

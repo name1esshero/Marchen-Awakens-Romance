@@ -42,8 +42,10 @@ int main(void) {
 }
 ''')
             exe = str(root/'test')
-            subprocess.run(['cc','-D__attribute__(x)=','-I'+str(ROOT/'include'),
-                            str(source),str(ROOT/'src/item.c'),'-o',exe],check=True)
+            subprocess.run(['cc','-ffunction-sections','-fdata-sections',
+                            '-D__attribute__(x)=','-I'+str(ROOT/'include'),
+                            str(source),str(ROOT/'src/item.c'),
+                            '-Wl,--gc-sections','-o',exe],check=True)
             subprocess.run([exe],check=True)
 
 if __name__=='__main__':unittest.main()

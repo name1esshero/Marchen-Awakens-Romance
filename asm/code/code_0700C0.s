@@ -7264,7 +7264,7 @@ _08073818:
 	movs r4, #0
 	ldrsh r3, [r3, r4]
 	mov r12, r3
-	bl sub_08002118
+	bl CalculatePointAngle
 	lsls r0, r0, #16
 	lsrs r0, r0, #20
 	str r0, [r5, #0]
@@ -10453,7 +10453,7 @@ _08074E70:
 	ldrsh r2, [r5, r3]
 	movs r4, #30
 	ldrsh r3, [r5, r4]
-	bl sub_08002118
+	bl CalculatePointAngle
 	lsls r0, r0, #16
 	lsrs r0, r0, #20
 	adds r1, r5, #0

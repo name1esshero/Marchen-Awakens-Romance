@@ -1,6 +1,7 @@
 /* Procedural map-generation state and its deterministic local RNG. */
 #include "map_generation.h"
 #include "kmp.h"
+#include "flags.h"
 #include "game_state.h"
 
 #include "rom_section.h"
@@ -772,7 +773,6 @@ extern void sub_080083E0(s32 first, s32 second);
 #define PMB_DECK_ENTRY_COUNT 20
 #define PMB_DECK_VALUES_OFFSET 14
 #define PMB_DECK_MAX_ENTRY 98
-#define GAME_STATE_DECK_FLAGS_OFFSET 0x26F8
 
 /** Select one of two adjacent game-state fields used by the deck system
  * (called with mode 1 and 2 from the deck-record initializer at 0x080083E0
@@ -824,7 +824,7 @@ AT("000127F8") s32 ScriptNativeDeckMake(u32 count, const s32 *args,
             values[i] = args[i + 1];
         sub_08001EB4(sub_08055F4C((s16)mode) + 14, values, 40);
         for (i = 0; (u32)i < count; i++)
-            BitSet(GAME_ROOT + 0x26F8, args[i], 1);
+            BitSet(GAME_ROOT + GAME_STATE_DECK_FLAGS_OFFSET, args[i], 1);
     }
     }
     return 1;

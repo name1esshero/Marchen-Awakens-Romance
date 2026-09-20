@@ -58,6 +58,11 @@
  *     r5 and the byte offset in r4. Naming the ROM's real occupied/continue
  *     edge explicitly fixes both registers and the success-block placement;
  *     it does not fix the final two- versus three-register add choice.
+ *   - A typed wrapper containing the 24-byte buffer header followed by a
+ *     64-element room array either recomputes `i * 24` on every pass or keeps
+ *     the explicit offset but still coalesces it directly into r0. Member,
+ *     integer-address, pointer-induction, and nested-room spellings were
+ *     checked. The old_agbcc snapshot makes the same direct add as agbcc.
  *
  * The mode==-1 "found" return path (`return buffer + offset + 24;`) *does*
  * reproduce the ROM's copy-then-add grouping exactly once written as

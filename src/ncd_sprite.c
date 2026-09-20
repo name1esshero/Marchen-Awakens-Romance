@@ -7,13 +7,6 @@ extern void CpuFill(void *,u32,u32);
 extern void CpuCopy(void *,const void *,u32);
 extern void HeapFree(struct Heap *,void *);
 #include "rom_section.h"
-#ifdef __GNUC__
-#define TARGET_REGISTER(name)
-#define NCD_ALLOCATION_BARRIER(value) ((void)0)
-#else
-#define TARGET_REGISTER(name) asm(name)
-#define NCD_ALLOCATION_BARRIER(value) asm volatile("" : "+r"(value))
-#endif
 
 extern void SpriteTileAllocatorRelease(void *allocator, s32 tile);
 
@@ -22,6 +15,7 @@ enum
  NCD_RELEASE_ARRAY_COUNT = 8,
  NCD_RELEASE_COUNTER_SHIFT = 16,
  NCD_RELEASE_COUNTER_UNIT = 1 << NCD_RELEASE_COUNTER_SHIFT,
+ NCD_QUEUE_GROUP_MASK = 12,
 };
 
 /** Release one resource's palette-binding table and clear its four descriptor
@@ -58,7 +52,7 @@ AT("0007BDAC") void NcdQueueSprite(struct NcdSprite *sprite, u32 priority)
  u8 *object;
  u8 **global;
  u8 *state;
- register u32 rawFlags TARGET_REGISTER("r2");
+ u32 rawFlags;
  u32 group;
  u8 *countState;
  List *queue;
@@ -66,8 +60,9 @@ AT("0007BDAC") void NcdQueueSprite(struct NcdSprite *sprite, u32 priority)
  object = (u8 *)sprite;
  global = (u8 **)&gSpriteEngineState;
  state = *global;
- rawFlags = object[38];
- group = rawFlags & 12;
+ rawFlags = sprite->flags26;
+ group = NCD_QUEUE_GROUP_MASK;
+ group &= rawFlags;
  state += 288;
  state += group;
  offset = priority;
@@ -190,11 +185,7 @@ void NcdRuntimeSpriteReleaseAllocation(struct NcdSprite *sprite)
                    + self->resourceIndex * 16;
    u8 *part = allocation;
    u16 i = 0;
-   register u8 *countTemp TARGET_REGISTER("r0") = (u8 *)self + 35;
-   u8 *count;
-   NCD_ALLOCATION_BARRIER(countTemp);
-   count = countTemp;
-   while (i < *count) {
+   while (i < self->partCount) {
     SpriteTileAllocatorRelease(allocator, *(s16 *)part);
     i++;
     part += 4;

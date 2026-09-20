@@ -364,3 +364,35 @@ byte-identical.
   caller uses the relocatable name. Explicit typed locals and a well-defined
   signed expression preserve agbcc's original operand order without a register
   pin, inline assembly, volatile access, dead code, or a fixed address.
+
+- `sub_08005C38` -> `ScriptNativeSetCrtFade` and hidden code at 0x08005C5C
+  -> `ScriptNativeGetCrtFade` (`src/scene_native.c`). The 36- and 24-byte
+  handlers are identified by the native registration table and use a named
+  IWRAM offset for the shared fade value. Their table pointers are symbolic.
+  Neither uses a register pin, inline assembly, volatile access, dead code, or
+  a fixed address.
+- `sub_08009AF8` -> `RuntimeGetPartValue` (`src/runtime_buffers.c`). The
+  44-byte accessor indexes the actor/group signed-halfword table through named
+  layout constants and an ordinary reused offset local. All three callers use
+  its relocatable symbol; no compiler hint or fixed address is present.
+- `sub_08011414` -> `ScriptSpriteSetHitBounds` (`src/script_sprite.c`). The
+  36-byte SprHitRect worker now uses the verified `HitBounds` member and enable
+  bit in `ScriptSprite`; its native adapter was renamed accordingly. It uses no
+  register pin, inline assembly, volatile access, dead code, or fixed address.
+
+- `sub_08008A44` -> `RuntimeResetListSlot` (`src/runtime_objects.c`). The
+  44-byte helper initializes one secondary-runtime intrusive list and clears
+  its parallel owner pointer. All nine callers use the relocatable name. The
+  clean C has no register pin, inline assembly, volatile access, dead code, or
+  fixed address.
+- `sub_08008BE4` -> `RuntimeReleaseListSpriteAllocations`
+  (`src/runtime_objects.c`). The 48-byte helper walks a selected secondary
+  runtime list and releases the NCD allocation embedded after each node's two
+  links. All five callers use the relocatable name. Typed list and sprite
+  records plus an ordinary offset local reproduce the ROM without a register
+  pin, inline assembly, volatile access, dead code, or fixed address.
+- `sub_080020EC` -> `CalculatePointDistance` and `sub_08002118` ->
+  `CalculatePointAngle` (`src/geometry.c`). The 44- and 48-byte helpers use
+  typed signed coordinates and the named BIOS `Sqrt`/`ArcTan2` calls. All raw
+  callers use relocatable symbols. Neither helper contains a register pin,
+  inline assembly, volatile access, dead code, or fixed address.

@@ -678,9 +678,9 @@ libgcc runtime cluster around 0x08080BFC: identified as `__divsi3` (signed divis
 
 sub_08003AE4/sub_08003E94 (0x08003AE4-0x08004230, ~1,600 bytes combined): identified but not yet decompiled to C. This is a task-based interpolation system built on CreateTask/FinishTask (0x0807A77C/0x0807A7AC): sub_08003AE4 creates the task, storing per-axis start/end coordinate pointers, a frame count, and a mode (0-4) selected via a 5-way jump table; sub_08003E94 is the resulting task's per-frame step callback, decrementing the frame counter and, on each call, writing one interpolated coordinate through __divsi3 and (for modes 1-4) a squared/curve lookup table, matching one of five easing curves. This looks like the engine behind smooth multi-frame sprite movement (the map editor's scripted-event movement preview is a plausible caller). Not attempted as matching C yet: the five interpolation-mode bodies are large, near-duplicated, and dispatch through a jump table, which is exactly the class of construct (switch-generated jump tables) most likely to resist agbcc byte-matching without a dedicated session; recorded here so the next pass does not have to re-derive this from scratch.
 
-[PARTLY SUPERSEDED -- the removals stand, but the "confirmed still genuinely necessary" lists do not; see the REGISTER-HINT CORRECTION at the end of this file.] Register-forcing cleanup: audited every `register T x asm("rN")`/`TARGET_REGISTER` use across the matching build (53 functions outside the legitimate BIOS SWI wrappers in src/bios_calls.c) to check which were genuinely load-bearing versus leftover decompiling scaffolding. Removed them (verified with a full `make compare`, not just a section-size check, since several cases matched in size but differed by a handful of bytes in operand order) from: all of src/battle_task_create.c (7 functions, including the DEFINE_SEQUENTIAL_MODE_TASK macro shared by 5 of them), src/encounter_task.c's CreateEncounterSpriteTask (whose header comment claiming the hints were required was stale and has been removed), all of src/save.c except CreateSaveWriteTask, src/font.c's GetFontGlyph, src/sound_m4a.c's SoundTrackReadWavePointer, and src/script_effect_native.c's ScriptNativeFieldEffectStart. Confirmed still genuinely necessary (reverted after testing, left alone): src/font.c's FontCharacterToGlyph, src/save.c's CreateSaveWriteTask, src/sound_fade_create.c's CreateSoundFadeTask, src/sound_m4a.c's SoundPlayerResume/FadeOut/FadeOutTemporary/FadeIn, src/resource_native.c's ScriptNativeQueryModeResource/SetModeResource, src/nfp.c's NfpFindEntryIndex/NfpGetEntrySizeByName, and src/ncd_sprite.c's NcdRuntimeSpriteReleaseAllocation. Also standardized src/nfp.c from raw `__attribute__((section(...)))` to the shared `AT()` macro, matching every other file. Remaining unaudited: the sprite_affine_matrix.c/sprite_transform.c/sprite_affine_slots.c cluster (9-17 register hints per function), sprite_tile_allocator.c, sprite_interpolation.c, script_resource_table.c, script_resources.c, ncd_sprite.c's other functions, and resource_native.c's ScriptNativeSetFriendArms.
+[PARTLY SUPERSEDED -- the removals stand, but the old "confirmed still necessary" list does not; see later structural findings.] Register-forcing cleanup: audited every `register T x asm("rN")`/`TARGET_REGISTER` use across the matching build (53 functions outside the legitimate BIOS SWI wrappers in src/bios_calls.c) to check which were load-bearing versus leftover decompiling scaffolding. Removed them (verified with a full `make compare`, not just a section-size check, since several cases matched in size but differed by a handful of bytes in operand order) from: all of src/battle_task_create.c (7 functions, including the DEFINE_SEQUENTIAL_MODE_TASK macro shared by 5 of them), src/encounter_task.c's CreateEncounterSpriteTask (whose header comment claiming the hints were required was stale and has been removed), all of src/save.c except CreateSaveWriteTask, src/font.c's GetFontGlyph, src/sound_m4a.c's SoundTrackReadWavePointer, and src/script_effect_native.c's ScriptNativeFieldEffectStart. Several other hints failed only the shallow removal forms tested at that stage. Later lifetime reconstruction removed both `NfpFindEntryIndex` constraints by using its midpoint for the initial name terminator, so historical failure lists here are not evidence that any hint is inherently required. Also standardized src/nfp.c from raw `__attribute__((section(...)))` to the shared `AT()` macro, matching every other file. Regenerate the authoritative current backlog with `make pret-audit`.
 
-[PARTLY SUPERSEDED -- the removals stand, but the "confirmed still genuinely necessary" lists do not; see the REGISTER-HINT CORRECTION at the end of this file.] Register-forcing cleanup, round two: continued the audit into script_resources.c, ncd_sprite.c, script_resource_table.c, and sprite_tile_allocator.c. Cleaned (hints removed, byte-exact verified): ScriptResourceResetArray, NcdResetResource, ScriptResourceSet (7 hints, the largest single clean removal so far), SpriteTileAllocatorInit, and SpriteTileAllocatorFreeTotal. Confirmed still genuinely necessary: NcdQueueSprite, SpriteTileAllocatorRelease, SpriteInterpolationInit, and resource_native.c's ScriptNativeSetFriendArms (all tried, all produced real content differences after removal, all reverted). Also standardized ncd_sprite.c from raw `__attribute__((section(...)))` to `AT()`. Combined with the first round, 17 of the originally-flagged 63 register-forced matching functions no longer need the technique. Not attempted this round, and expected to be the hardest remaining cases based on how every dense/loop-heavy candidate has gone so far: sprite_affine_slots.c (both functions combine register forcing with nested nested nested loops across nested register-forced blocks), sprite_transform.c's three SpriteVectorRotate* functions and SpriteProjectPoint/SpritePackAffinePosition/SpriteBuildAffineMatrix (all stack register hints with explicit `asm("" : "+r"(...))` compiler fences, a stronger signal of genuine necessity than a bare register hint alone), and sprite_affine_matrix.c's three 17-hint Write functions.
+[PARTLY SUPERSEDED -- the removals stand, but the "confirmed still genuinely necessary" lists do not; see the REGISTER-HINT CORRECTION at the end of this file.] Register-forcing cleanup, round two: continued the audit into script_resources.c, ncd_sprite.c, script_resource_table.c, and sprite_tile_allocator.c. Cleaned (hints removed, byte-exact verified): ScriptResourceResetArray, NcdResetResource, ScriptResourceSet (7 hints, the largest single clean removal so far), SpriteTileAllocatorInit, and SpriteTileAllocatorFreeTotal. Later structural work also cleaned `NcdQueueSprite` by preserving the raw flags and masked queue group as separate live values, and cleaned `NcdRuntimeSpriteReleaseAllocation` by using its typed `partCount` member directly; `ncd_sprite.c` now has no register-forcing or inline-assembly machinery. The old failed-removal list was only a record of shallow candidates and did not establish necessity. `SpriteTileAllocatorRelease` still differs in a three-instruction operand allocation after a broader clean-C search and remains pending. Also standardized ncd_sprite.c from raw `__attribute__((section(...)))` to `AT()`. Not attempted in that historical round, and expected to be the hardest remaining cases based on how every dense/loop-heavy candidate had gone: sprite_affine_slots.c (both functions combine register forcing with nested loops), sprite_transform.c's three SpriteVectorRotate* functions and SpriteProjectPoint/SpritePackAffinePosition/SpriteBuildAffineMatrix, and sprite_affine_matrix.c's three Write functions. Regenerate the authoritative current state with `make pret-audit` rather than treating this history as a backlog.
 
 game_tables.c pret-standards cleanup: eliminated every raw hex pointer per docs/PRET_STANDARDS.md. Named constants replace magic numbers (FRIEND_ARM_NO_OWNERSHIP_BIT, BATTLE_PRESET_SIZE, bit-shift forms for gResourceSlotMasks, ARRAY_COUNT-style *_COUNT defines for every table). gScriptNativeCommands (128 entries) now uses designated initializers with named string constants (gScriptNativeName_*) and, for 124 of 128 handlers, their real already-decompiled C names (discovered that the stored handler addresses have the THUMB bit set, i.e. real_addr = stored-1, which is what let the cross-reference against decompiled.json succeed) -- the remaining 4 (BgSet, PmbDeckMake, DeckMake, ShuffleDeckCopy) and all of gBattleActionHandlers/gEngineStartupHandlers (267 combined unique addresses, none yet decompiled) use sub_ADDR placeholders. Rather than editing the fragile misdecoded-as-code asm region those names' bytes live in (attempted once, reverted: literal-pool cross-references from unrelated code elsewhere turned out to point into the exact byte ranges being renamed, so deleting them broke distant "ldr rX, =label" loads), sub_ADDR symbols are declared as plain `.set` absolute aliases in the new asm/game_table_handlers.s, the same technique asm/iwram_symbols.s already uses -- zero risk to existing disassembly since no bytes or labels are touched, only a new symbol table entry added. gTwoDigitResourceNames/gGeneratedEffectNames strings are named the same way, via #define aliases over their existing fixed addresses (gTwoDigitName00..47, gEffectNameEF_GEN01..13), rather than AT()-pinning new const char[] copies, because the two tables' bytes turned out to be interleaved with unrelated strings in the same ASCII pool and other code's literal pool loads reference addresses inside that pool too. Verified with make compare after every step; two earlier attempts (deleting the misdecoded asm region outright, and an arithmetic slip that put the array's own AT() at the wrong address) were caught by full byte comparison and reverted before landing the final version.
 
@@ -768,7 +768,7 @@ code_0400C0.s: 0x08042260
 code_0500C0.s: 0x08051BD4, 0x08053ADC, 0x080544CC, 0x08056578, 0x0805685C, 0x080571E8
 code_0580C0.s: 0x0805DBF0
 code_0600C0.s: 0x08065E88 (now `CreateFieldEventModeTask`)
-code_0680C0.s: 0x08068F4C, 0x0806B98C, 0x0806C758, 0x0806D60C, 0x0806DEC0
+code_0680C0.s: 0x08068F4C, 0x0806B98C, 0x0806C758 (now `RuntimeAreFirstFlagsSet`), 0x0806D60C, 0x0806DEC0
 code_0700C0.s: 0x08075ED4, 0x08077370, 0x08077B44
 code_0780C0.s: 0x0807D260, 0x0807EA90, 0x0807F1B8, 0x0807F3DC
 code_0800C0.s: 0x08081554, 0x08082390
@@ -1053,10 +1053,10 @@ independently, exactly matching the ROM. The implementation uses named task
 manager and callback symbols and remains shiftable; it needs no raw address,
 `volatile`, register pin, or inline assembly.
 
-## Primary-runtime flag accessors
+## Link-runtime flag accessors
 
 `RuntimeTestFlag` (0x08004D90) reads a selected bit mask from byte +3 of the
-allocation stored in the fixed IWRAM pointer `gPrimaryRuntime`. Declaring its
+allocation stored in the fixed IWRAM pointer `gLinkRuntime`. Declaring its
 public argument full-width and narrowing it into a local reproduces the ROM's
 argument copy and register allocation without compiler hints. Its caller-side
 adapter, `RuntimeTestFlagU8` (0x08005094), narrows both the argument and return
@@ -1995,3 +1995,191 @@ well-defined signed addition over the field's proven range and prevents agbcc
 from commuting the otherwise equivalent operands. This recovers the exact
 THUMB encoding without a register constraint, inline assembly, volatile
 access, dead code, or a fixed address.
+
+
+## CRT-fade natives, runtime value lookup, and sprite hit bounds recovered
+
+Four functions totaling 140 bytes now build from matching C:
+`ScriptNativeSetCrtFade` (0x08005C38, 36 bytes),
+`ScriptNativeGetCrtFade` (0x08005C5C, 24 bytes),
+`RuntimeGetPartValue` (0x08009AF8, 44 bytes), and
+`ScriptSpriteSetHitBounds` (0x08011414, 36 bytes). Their raw callers and
+function-table entries now use relocatable symbols.
+
+The scene-native registration table provided stronger names than control-flow
+inspection alone: entries `SetCrtFade` and `GetCrtFade` point at 0x08005C39 and
+0x08005C5D. The second address had been emitted as six anonymous words after
+the first handler; disassembly proves it is a complete leaf that stores its
+argument in IWRAM +0x3AF8 and returns script status 1. That IWRAM offset is now
+a named linker symbol. Its natural literal-pool alignment already supplies the
+ROM's two zero bytes; adding a separate tail object grew the section by four
+bytes and was correctly rejected by the link-size check.
+
+The native name `SprHitRect` confirms that script-sprite record offsets
+0x1C..0x22 are a `HitBounds` structure and byte-0 bit 7 enables those bounds.
+The final record word at +0x24 is also now represented as the auxiliary pointer
+already allocated and released by the sprite lifecycle. The worker stores four
+truncated halfwords and enables the flag exactly as the ROM does.
+
+`RuntimeGetPartValue` indexes a signed-halfword table at secondary-runtime
+offset `actor * 1672 + group * 104 + 0x658`. Reusing a single `offset` local is
+load-bearing but still ordinary C: it keeps the incoming element index in r2
+and the long-lived runtime base in r4, naturally matching the original.
+
+The adjacent table-base helper at 0x080099E0 was also reconstructed
+semantically, using both the typed layout shared by
+`RuntimeGetActorPartRecord` and direct/reused offset forms. All versions had
+identical behavior but allocated the actor, group, and base pseudos differently
+from the ROM. Its raw body was restored after testing; no register pin, inline
+assembly, volatile qualifier, or optimizer fence was accepted merely to force
+a match.
+
+
+## Secondary-runtime list-slot reset recovered
+
+The 44-byte function at 0x08008A44 is now matching C as
+`RuntimeResetListSlot`. Each slot owns a 12-byte intrusive list at secondary
+runtime +0x80 and a corresponding owner pointer at +0xB0. The function
+initializes the selected list through the already named `ListInit`, reloads the
+runtime root after that call, and clears the owner pointer. All nine raw callers
+now use its relocatable symbol.
+
+Keeping the address of `gSecondaryRuntime` and the slot in locals naturally
+preserves them in callee-saved registers across `ListInit`; the resulting C
+matches without fixed addresses, register pins, inline assembly, volatile
+access, or dead code.
+
+## Runtime-list sprite-allocation release recovered
+
+The 48-byte function at 0x08008BE4 is now matching C as
+`RuntimeReleaseListSpriteAllocations`. It walks the selected intrusive list at
+secondary-runtime +0x80 and releases the NCD allocation embedded immediately
+after each node's two link pointers. Callers reset the list separately with
+`RuntimeResetListSlot`; this function deliberately leaves the links intact
+while traversing them. All five known callers now use its relocatable symbol.
+
+An explicit `listOffset` local preserves the original calculation order: agbcc
+loads the runtime root, forms `slot * 12`, adds the list-table base, and then
+adds the slot offset. The typed `List`/`ListNode` and `NcdSprite` views produce
+the exact instruction stream without a register pin, inline assembly,
+volatile access, dead code, or a fixed address.
+
+## Host-test section garbage collection and ScriptSprite ABI
+
+Host tests that compile a production source file directly now use
+`-ffunction-sections -fdata-sections` and link with `--gc-sections`. This keeps
+the selected production functions and their dependencies while preventing
+unrelated functions in the same translation unit from imposing ROM-only
+link dependencies. It fixes the item and map-field CI links after source-file
+consolidation without adding test-only stubs for behavior those tests do not
+exercise.
+
+`ScriptSprite::auxiliary` is stored as a 32-bit GBA address rather than a host
+pointer. That preserves the verified 40-byte record size on 64-bit test hosts,
+so `ScriptSprite` array traversal has the same stride as the GBA. Tests also
+use the decoded `hitBoundsEnabled` name for byte-0 bit 7.
+
+## Game-state flag subsystem organized
+
+Nine already matching packed-flag functions are now grouped in `src/flags.c`
+with their public declarations and bank layout in `include/flags.h`. The
+script-visible game flags at +0xAC, 10,000 background-attribute flags at
++0x12C, deck ownership flags at +0x26F8, and the still-unresolved bank at
++0x2730 are no longer scattered across general runtime accessor files. Deck
+callers use the shared offset constant instead of repeating `0x26F8`.
+
+Moving these functions does not alter placement: every body retains its
+address-specific `AT()` section, and the complete ROM remains byte-identical.
+The +0x2730 API deliberately keeps an offset-based name until gameplay
+evidence establishes its role; contributor guidance is in
+`docs/game-flags.md`.
+
+## Point distance and angle helpers recovered
+
+The adjacent helpers at 0x080020EC and 0x08002118 now compile from clean C as
+`CalculatePointDistance` and `CalculatePointAngle`. Both accept two signed
+16-bit points. Distance forms 32-bit deltas and returns the low 16 bits of the
+BIOS integer square root of `dx * dx + dy * dy`; angle narrows each delta back
+to signed 16 bits before calling BIOS `ArcTan2` and returns its signed 16-bit
+result. Two raw definitions and fifteen call references were replaced with
+the relocatable names.
+
+Explicit x/y locals make agbcc perform the four ABI sign extensions in argument
+order. Passing the two narrowed angle expressions directly to `ArcTan2` keeps
+each subtract-and-narrow sequence together, matching the ROM without a
+register pin or evaluation-order trick. The angle section includes its verified
+two-byte zero tail so assembler alignment cannot substitute a THUMB NOP.
+
+## Link packet inactive-record selector
+
+`RuntimeBuildInactiveRecordPacket` (0x08004FC4) now compiles byte-identically
+from ordinary C. The fixed IWRAM root at 0x0300401C is named `gRuntimeState`;
+its selector at +0x1AC chooses between the two adjacent 24-byte records at
++0x14C and +0x164. This function deliberately submits the record that is not
+currently selected to `LinkBuildSendPacket`, rather than returning the current
+record as `RuntimeGetCurrentRecord14C` does.
+
+Tracing `LinkBuildSendPacket` (0x080049F4) established its complete behavior:
+it writes the link sequence and XOR peer identifier into a four-byte header,
+zeros the checksum, copies six 32-bit words of payload with BIOS `CpuSet`, sums
+all 14 halfwords of the resulting 28-byte packet, stores the one's-complement
+checksum minus 16, and raises the send-ready byte. The raw function has been
+renamed accordingly. Several natural struct-based C forms reproduced the same
+88-byte control flow but assigned the persistent IWRAM-root address and checksum
+to r5/r4 instead of the ROM's r4/r5, and assigned the loop counter to r2 instead
+of r3. Forms that kept the root implicit introduced redundant reloads and grew
+to 92 or 96 bytes. Because register pins and inline assembly are forbidden by
+`PRET_STANDARDS.md`, the packet builder remains named assembly until surrounding
+link-runtime types or code expose a natural source shape that matches.
+
+## Link-transfer record reset routines
+
+The raw range at 0x08004F10..0x08004F94 contains two functions, not the two
+starts implied by the old assembly labels. `RuntimeClearTransferRecords`
+(0x08004F10, 84 bytes) clears the two 24-byte receive records at +0x17C and
++0x194, then the two send records at +0x14C and +0x164.
+`RuntimeClearSendRecords` actually begins at 0x08004F64 and clears only the send
+pair. The former `sub_08004F70` label pointed twelve bytes into that second
+function because its prologue and first address calculation had been emitted
+as three `.4byte` values. Re-disassembling bytes from `baserom.gba` exposed the
+real boundary.
+
+Both functions now compile byte-identically as ordinary C. The four-record
+reset uses the ROM's 16.16 induction value: it starts at `1 << 16`, preserves
+the current value for the signed high-half comparison, advances the destination
+by one 24-byte record, and stops after two iterations. This is the verified
+fixed-point loop form documented in `AGBCC_CODEGEN.md`; no register hints or
+inline assembly are involved. For `RuntimeClearSendRecords`, agbcc emits the
+required two-byte zero alignment before the literal pool itself; adding an
+explicit tail would grow the section by four bytes and fail the linker size
+assertion.
+
+## Hidden selected group-record accessor
+
+`RuntimeGetSelectedGroupRecord` begins at 0x0800500C, six bytes before the old
+`sub_08005012` label. Those six bytes narrow the argument to its low signed
+16 bits and scale it by the runtime group's 0x100-byte stride; they had been
+misclassified as one `.4byte` and two `.byte` data directives. The function
+reads the signed selector at group offset +0x2AA and returns the corresponding
+24-byte record from the table at group offset +0x1B0.
+
+The exact, shiftable C keeps the two narrowing shifts as separate statements
+and assigns `&gRuntimeState` between them. That source order reproduces the
+ROM's `lsls; ldr; asrs` schedule, while named stride and field constants make
+the otherwise unusual operation explicit. Building the record-base pointer
+before the selector address also preserves the ROM's r2/r1 arithmetic order.
+No caller was found among direct THUMB `bl` instructions, so the neutral name
+describes only the verified layout and selection behavior.
+
+## Guarded field-actor state update
+
+`FieldActorTryRunStateUpdate` (0x08017BA8, 48 bytes) now compiles
+byte-identically from typed C. It returns false when the actor's signed byte at
++0x27A is nonzero or the action state's signed byte at +10 is zero. Otherwise
+it calls the existing state worker at 0x08017BD8 with both original pointers
+and returns true. Both direct callers are branches of the surrounding field
+actor update routine at 0x08017ABC. The exact source needs no hint: preserving
+an actor pointer local, initializing the result before the guards, and using
+the signed byte types naturally reproduce the ROM's r2/r3 and `ldrsb` layout.
+The action's higher-level meaning remains unproven, so the function and fields
+use neutral state/update terminology.

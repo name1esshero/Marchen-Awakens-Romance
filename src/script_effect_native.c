@@ -7,6 +7,7 @@
  * suspend the script until that task supplies its result.
  */
 #include "gba/types.h"
+#include "script_sprite.h"
 
 #include "rom_section.h"
 
@@ -28,7 +29,6 @@ extern void sub_0800E444(s32, s32, s32, s32 *, s32);
 
 extern void sub_0801097C(s32, s32, s32);
 extern void sub_08010A2C(s32, s32);
-extern void sub_08011414(s32, s32, s32, s32, s32);
 extern void sub_08010E44(s32, s32, s32, s32, s32, s32, s32);
 extern void sub_08011340(s32, s32, s32, s32 *, s32);
 
@@ -188,11 +188,13 @@ AT("00011F14") s32 ScriptNativeSpriteWait(u32 count, const s32 *args, s32 *resul
     return 0x7fff;
 }
 
-/** Native script command: forward five arguments to sub_08011414() for the
- * sprite-effect system. @return Always 1. */
-AT("00011F7C") s32 ScriptNativeSpriteConfigure(u32 count, const s32 *args, s32 *result)
+/** SprHitRect: set and enable a script sprite's collision bounds.
+ * @return Always 1. */
+AT("00011F7C") s32 ScriptNativeSpriteSetHitBounds(u32 count,
+                                                   const s32 *args,
+                                                   s32 *result)
 {
-    sub_08011414(args[0], args[1], args[2], args[3], args[4]);
+    ScriptSpriteSetHitBounds(args[0], args[1], args[2], args[3], args[4]);
     return 1;
 }
 

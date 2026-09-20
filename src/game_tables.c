@@ -687,7 +687,7 @@ extern void ScriptNativeSpriteSet(void);
 extern void ScriptNativeSpriteGet(void);
 extern void ScriptNativeSpriteEffect(void);
 extern void ScriptNativeSpriteCommand(void);
-extern void ScriptNativeSpriteConfigure(void);
+extern void ScriptNativeSpriteSetHitBounds(void);
 extern void ScriptNativeFieldEffectStartFull(void);
 extern void ScriptNativeFieldEffectWait(void);
 extern void ScriptNativeFieldEffectConfigure(void);
@@ -817,7 +817,7 @@ AT("001AFEA4") const struct ScriptNativeCommand
     [21] = { .name = gScriptNativeName_SprGet, .handler = (void *)((u32)ScriptNativeSpriteGet + 1) },
     [22] = { .name = gScriptNativeName_SprMove, .handler = (void *)((u32)ScriptNativeSpriteEffect + 1) },
     [23] = { .name = gScriptNativeName_SprSync, .handler = (void *)((u32)ScriptNativeSpriteCommand + 1) },
-    [24] = { .name = gScriptNativeName_SprHitRect, .handler = (void *)((u32)ScriptNativeSpriteConfigure + 1) },
+    [24] = { .name = gScriptNativeName_SprHitRect, .handler = (void *)((u32)ScriptNativeSpriteSetHitBounds + 1) },
     [25] = { .name = gScriptNativeName_PccInit, .handler = (void *)((u32)ScriptNativeFieldEffectStartFull + 1) },
     [26] = { .name = gScriptNativeName_PccFree, .handler = (void *)((u32)ScriptNativeFieldEffectWait + 1) },
     [27] = { .name = gScriptNativeName_PccChg, .handler = (void *)((u32)ScriptNativeFieldEffectConfigure + 1) },

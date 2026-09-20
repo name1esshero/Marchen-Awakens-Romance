@@ -3,6 +3,7 @@
  * signed bytes or halfwords. Preserve those explicit narrowing operations.
  */
 #include "gba/types.h"
+#include "flags.h"
 #include "game_tables.h"
 #include "game_state.h"
 #include "task_constructors.h"
@@ -78,7 +79,7 @@ AT("00012B98") s32 ScriptNativeSetFriendArms(u32 count, const s32 *args,
         definitionIndex = (s16)sub_08055EC8(*(s16 *)slot);
         ownershipBit = definitions[definitionIndex];
         if (ownershipBit != invalidDefinition)
-            BitSet(*root + 0x26F8, ownershipBit, 1);
+            BitSet(*root + GAME_STATE_DECK_FLAGS_OFFSET, ownershipBit, 1);
 
         input++;
         i++;

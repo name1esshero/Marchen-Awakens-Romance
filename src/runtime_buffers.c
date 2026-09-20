@@ -29,6 +29,10 @@
 #define ARM_FIELD74_BIT5_SIGN_SHIFT 26
 #define ACTOR_PART_FIELD80_OFFSET 0x80
 #define ACTOR_PART_FIELD80_SIZE 0x24
+#define ACTOR_RECORD_SIZE 1672
+#define ACTOR_PART_GROUP_STRIDE 104
+#define ACTOR_PART_TABLE_BASE_OFFSET 0x120
+#define ACTOR_PART_VALUES_OFFSET 0x538
 
 extern void CpuFill(void *destination, u32 size, u32 value);
 extern u8 *RuntimeGetActorRecord(u32 actor, u32 part);
@@ -273,8 +277,9 @@ AT("00009EEC") void *RuntimeActorGetField354Address(u32 actor)
 }
 
 extern u8 *RuntimeGetActorPartRecord(u32 actor,u32 part);
-extern s16 *sub_080099E0(u32 actor,u32 group);
 extern void sub_08009A24(s32 actor, s32 group, s32 part);
+
+extern s16 *sub_080099E0(u32 actor, u32 group);
 
 /** Count occurrences of value in the five-element signed lookup returned for
  * this actor/group pair. */
@@ -301,6 +306,24 @@ AT("00009A04") void RuntimeUpdateFiveParts(s32 actor, s32 group)
         sub_08009A24(actor, group, part);
 }
 AT("00009A04") const u8 RuntimeUpdateFivePartsTail[2] = {0};
+
+/** Read one signed element from an actor/group part-value table. */
+AT("00009AF8") s32 RuntimeGetPartValue(u32 actor, u32 group, u32 entry)
+{
+    u8 **root = &gSecondaryRuntime;
+    u8 *base = *root;
+    u32 offset;
+
+    offset = entry;
+    offset *= 2;
+    group *= ACTOR_PART_GROUP_STRIDE;
+    offset += group;
+    actor *= ACTOR_RECORD_SIZE;
+    offset += actor;
+    base += ACTOR_PART_TABLE_BASE_OFFSET + ACTOR_PART_VALUES_OFFSET;
+    base += offset;
+    return *(s16 *)base;
+}
 
 /** Update actor zero across the first three runtime groups. */
 AT("00075EBC") void RuntimeUpdateFirstThreeGroups(void)

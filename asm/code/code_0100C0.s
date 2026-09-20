@@ -2260,27 +2260,8 @@ _0801140C:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_08011414
-sub_08011414:
-	push {r4, r5, r6, r7, lr}
-	adds r4, r1, #0
-	adds r5, r2, #0
-	adds r6, r3, #0
-	ldr r7, [sp, #20]
-	.2byte 0xF7FF
-	.4byte 0x8384F953
-	strh r5, [r0, #30]
-	strh r6, [r0, #32]
-	strh r7, [r0, #34]
-	ldrb r1, [r0, #0]
-	movs r2, #128
-	orrs r1, r2
-	strb r1, [r0, #0]
-	pop {r4, r5, r6, r7}
-	pop {r0}
-	bx r0
+	@ 011414..011438 is decompiled as ScriptSpriteSetHitBounds();
+	@ see src/decompiled.json.
 
 @ 011438..011464 is decompiled as GameStateClearRecord1090IfZero(); see src/decompiled.json
 
@@ -3048,7 +3029,7 @@ _08011AEE:
 
 @ 011F68..011F7C is decompiled as ScriptNativeSpriteGet(); see src/decompiled.json
 
-@ 011F7C..011F9C is decompiled as ScriptNativeSpriteConfigure(); see src/decompiled.json
+@ 011F7C..011F9C is decompiled as ScriptNativeSpriteSetHitBounds(); see src/decompiled.json
 
 @ 011F9C..011FC4 is decompiled as ScriptNativeSpriteEffect(); see src/decompiled.json
 
@@ -14052,7 +14033,7 @@ _08017B24:
 _08017B28:
 	adds r0, r6, #0
 	adds r1, r4, #0
-	bl sub_08017BA8
+	bl FieldActorTryRunStateUpdate
 	adds r4, r0, #0
 	cmp r4, #0
 	beq _08017B88
@@ -14110,7 +14091,7 @@ _08017B88:
 _08017B94:
 	adds r0, r6, #0
 	adds r1, r4, #0
-	bl sub_08017BA8
+	bl FieldActorTryRunStateUpdate
 	adds r4, r0, #0
 	.global _08017B9E
 _08017B9E:
@@ -14121,36 +14102,11 @@ _08017B9E:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_08017BA8
-sub_08017BA8:
-	push {r4, lr}
-	adds r2, r0, #0
-	movs r3, #0
-	ldr r4, _08017BD4
-	adds r0, r2, r4
-	ldrb r0, [r0, #0]
-	lsls r0, r0, #24
-	asrs r0, r0, #24
-	cmp r0, #0
-	bne _08017BCC
-	movs r0, #10
-	ldrsb r0, [r1, r0]
-	cmp r0, #0
-	beq _08017BCC
-	adds r0, r2, #0
-	bl sub_08017BD8
-	movs r3, #1
-	.global _08017BCC
-_08017BCC:
-	adds r0, r3, #0
-	pop {r4}
-	pop {r1}
-	bx r1
-	.global _08017BD4
-_08017BD4:
-	.4byte 0x0000027A
+@ 017BA8..017BD8 is decompiled as FieldActorTryRunStateUpdate();
+@ see src/decompiled.json.
+
+	.section .rom.00017BD8, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
