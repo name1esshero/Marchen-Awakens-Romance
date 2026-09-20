@@ -1,33 +1,9 @@
 /* Allocation bookkeeping for the renderer's 8 KiB OBJ tile staging area. */
-#include "gba/types.h"
-#include "heap.h"
+#include "sprite_tile_allocator.h"
 
 #include "rom_section.h"
-#ifdef __GNUC__
-#define TARGET_REGISTER(name)
-#else
-#define TARGET_REGISTER(name) asm(name)
-#endif
 
 extern void CpuFill(void *destination, u32 size, u32 value);
-
-struct SpriteTileBlock {
-    u16 link;
-    u16 sizeAndFlags;
-    u32 unknown04;
-};
-
-struct SpriteTileAllocator {
-    struct SpriteTileBlock *blocks;
-    struct Heap *heap;
-    u16 cursor;
-    u16 tileBase;
-    u16 tileCount;
-    s16 mode;
-};
-
-extern u32 SpriteTileBlockIndex(struct SpriteTileBlock *base,
-                                struct SpriteTileBlock *block);
 
 /**
  * @brief Allocate and initialize an 8 KiB OBJ-tile free-list for a tile range.
@@ -130,73 +106,4 @@ void SpriteTileAllocatorReset(struct SpriteTileAllocator *allocator)
     if (allocator->blocks != 0)
         HeapFree(allocator->heap, allocator->blocks);
     CpuFill(allocator, 16, 0);
-}
-
-/** Release an OBJ-tile allocation and merge it with adjacent free spans.  The
- * packed high bits mark allocated/sentinel blocks; the low 13 bits are the
- * span in 8-byte block records. */
-AT("0007B52C")
-void SpriteTileAllocatorRelease(struct SpriteTileAllocator *allocator, s32 tile)
-{
-    struct SpriteTileBlock *block;
-    struct SpriteTileBlock *previous;
-    struct SpriteTileBlock *next;
-    u32 flags;
-    u32 size;
-    u32 last;
-    u32 sizeMask;
-    u32 maskValue;
-    u32 link;
-    u32 previousFlags;
-    register u32 previousSize TARGET_REGISTER("r0");
-    u32 nextFlags;
-    u32 nextSize;
-    u32 combined;
-
-    if (allocator->mode != 0)
-        goto releaseFixedBlock;
-    block = allocator->blocks + (tile - allocator->tileBase);
-    block->sizeAndFlags &= 0x3FFF;
-    flags = block->sizeAndFlags;
-    maskValue = 0x1FFF;
-    sizeMask = maskValue;
-    size = flags & sizeMask;
-    link = block->link;
-    previous = allocator->blocks + link;
-    next = block + size;
-    if (link != 0xFFFF) {
-        previousFlags = previous->sizeAndFlags;
-        if ((previousFlags & 0xC000) == 0) {
-            block = previous;
-            previousSize = sizeMask;
-            previousSize &= previousFlags;
-            size += previousSize;
-            last = flags & 0x2000;
-            block->sizeAndFlags = size | last;
-            if (last != 0)
-                goto updateCursor;
-            next->link = SpriteTileBlockIndex(allocator->blocks, block);
-        }
-    }
-    last = flags & 0x2000;
-    if (last == 0) {
-        nextFlags = next->sizeAndFlags;
-        if ((nextFlags & 0xC000) == 0) {
-            nextSize = nextFlags & 0x1FFF;
-            size = (u16)(size + nextSize);
-            combined = (nextFlags & 0x2000) | size;
-            block->sizeAndFlags = combined;
-            if ((combined & 0x2000) == 0) {
-                next = block + size;
-                next->link = SpriteTileBlockIndex(allocator->blocks, block);
-            }
-        }
-    }
-updateCursor:
-    allocator->cursor = SpriteTileBlockIndex(allocator->blocks, block);
-    return;
-
-releaseFixedBlock:
-    block = allocator->blocks + (tile - allocator->tileBase);
-    block->sizeAndFlags &= 0xBFFF;
 }

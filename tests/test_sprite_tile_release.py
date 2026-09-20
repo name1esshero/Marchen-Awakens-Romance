@@ -15,6 +15,7 @@ class SpriteTileReleaseTests(unittest.TestCase):
 #include <assert.h>
 #include <string.h>
 #include "src/sprite_tile_allocator.c"
+#include "src/nonmatching/sprite_tile_allocator_release.c"
 
 u32 SpriteTileBlockIndex(struct SpriteTileBlock *base,
                          struct SpriteTileBlock *block)

@@ -2,11 +2,6 @@
 #include "gba/types.h"
 
 #include "rom_section.h"
-#ifdef __GNUC__
-#define TARGET_REGISTER(name)
-#else
-#define TARGET_REGISTER(name) asm(name)
-#endif
 
 extern s32 __divsi3(s32 dividend, s32 divisor);
 s32 SpriteFixedSqrt(s32 value);
@@ -106,41 +101,4 @@ s32 SpriteVectorLengthFixed(s32 x, s32 y)
             SpriteFixedSqrt(((absX * absX) >> 12)
                           + ((absY * absY) >> 12)) << 12,
             scale);
-}
-
-/** Square root for signed 20.12 fixed-point values.  Newton iteration starts
- * at max(value, 1.0) and stops as soon as the estimate no longer decreases.
- * Negative inputs use the engine's -1.0 error sentinel. */
-AT("0007D9F0")
-s32 SpriteFixedSqrt(s32 value)
-{
-    s32 previous;
-    s32 input = value;
-    register s32 estimate TARGET_REGISTER("r0");
-
-    if (input > 0) {
-        register s32 one TARGET_REGISTER("r1") = 0x1000;
-
-        if (input >= one)
-            estimate = input;
-        else
-            estimate = one;
-        do {
-            previous = estimate;
-            if (previous != 0) {
-                s32 rounded;
-
-                estimate = __divsi3(input << 12, previous);
-                estimate += previous;
-                rounded = estimate + ((u32)estimate >> 31);
-                estimate = rounded >> 1;
-            } else {
-                estimate = 0;
-            }
-        } while (estimate < previous);
-        return previous;
-    }
-    if (input != 0)
-        return -0x1000;
-    return 0;
 }

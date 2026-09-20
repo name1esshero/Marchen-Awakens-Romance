@@ -6402,12 +6402,6 @@
     "file": "src/sprite_tile_allocator.c"
   },
   {
-    "addr": "0807B52C",
-    "size": 236,
-    "name": "SpriteTileAllocatorRelease",
-    "file": "src/sprite_tile_allocator.c"
-  },
-  {
     "addr": "0807B618",
     "size": 24,
     "name": "SpriteResourceRelease",
@@ -6555,12 +6549,6 @@
     "addr": "0807BB48",
     "size": 80,
     "name": "SpriteResourceGetTable28",
-    "file": "src/sprite_engine_state.c"
-  },
-  {
-    "addr": "0807BB98",
-    "size": 148,
-    "name": "SpriteResourceFindGroup",
     "file": "src/sprite_engine_state.c"
   },
   {
@@ -6831,12 +6819,6 @@
     "addr": "0807D944",
     "size": 172,
     "name": "SpriteVectorLengthFixed",
-    "file": "src/sprite_math.c"
-  },
-  {
-    "addr": "0807D9F0",
-    "size": 72,
-    "name": "SpriteFixedSqrt",
     "file": "src/sprite_math.c"
   },
   {

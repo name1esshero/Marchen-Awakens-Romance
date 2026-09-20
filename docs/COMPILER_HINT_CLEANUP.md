@@ -573,3 +573,31 @@ candidate. This is strong evidence that the current explicit 16.16 locals are
 decompilation scaffolding. Keep the byte-matching implementation until the
 actual source lifetime or expression shape explains those last instructions;
 do not describe either constraint as something the original developers used.
+
+## Preserve clean references when ordinary C does not yet match
+
+Three renderer routines were moved out of the matching build after their
+remaining compiler hints resisted structural cleanup. Their readable,
+shiftable implementations now live in `src/nonmatching/`, while the exact ROM
+instructions are restored in `asm/code/code_0780C0.s`:
+
+- `SpriteTileAllocatorRelease()` differs only in the register selected for the
+  previous free span's size mask. Direct and commuted expressions, local
+  reuse, signed and unsigned temporaries, a bitfield view, and flat control
+  flow all failed to recover the ROM allocation naturally.
+- `SpriteResourceFindGroup()` differs only in the operand encoding of one
+  commutative address addition. The ROM emits `r1 + r0`; clean agbcc output
+  emits `r0 + r1` for the otherwise identical operation.
+- `SpriteFixedSqrt()` assigns the Newton estimate and the 0x1000 fixed-point
+  unit to the opposite registers. More than 120 natural declaration,
+  assignment, conditional, and branch variants were checked, along with both
+  compiler frontends available in this project.
+
+This is the PRET-compliant fallback described by `PRET_STANDARDS.md`: the
+matching build contains honest original assembly instead of C with register
+constraints or inline-assembly scheduling hints, and the clean C remains
+available for review, tests, and future source-shape work. Shared allocator
+types were moved to `include/sprite_tile_allocator.h` so the matching routines,
+reference implementation, and host test use one verified layout. The change
+reduces the mechanical PRET audit from 125 to 112 hard errors while preserving
+the exact Japanese ROM SHA-1.

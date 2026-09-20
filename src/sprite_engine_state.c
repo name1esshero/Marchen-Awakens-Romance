@@ -2,11 +2,6 @@
 #include "sprite_engine.h"
 
 #include "rom_section.h"
-#ifdef __GNUC__
-#define TARGET_REGISTER(name)
-#else
-#define TARGET_REGISTER(name) asm(name)
-#endif
 
 extern void CpuCopy(void *destination, const void *source, u32 size);
 extern s32 __divsi3(s32 dividend, s32 divisor);
@@ -289,51 +284,6 @@ s32 SpriteResourceBindGroup(u32 resource, u32 index)
     }
     return group;
 }
-
-/** Group names occupy the first eight bytes of sorted 16-byte records. */
-AT("0007BB98")
-s32 SpriteResourceFindGroup(u32 resource, const char *name)
-{
-    u32 keyWords[3];
-    char *key;
-    struct SpriteResourceDescriptor *descriptor;
-    s32 low;
-    s32 high;
-    s32 middle;
-    s32 order;
-
-    keyWords[2] = 0;
-    keyWords[1] = 0;
-    keyWords[0] = 0;
-    strcpy((char *)keyWords, name);
-    strupr((char *)keyWords);
-    key = (char *)keyWords;
-    descriptor = &gSpriteEngineState->resources[resource];
-    low = 0;
-    high = descriptor->header->entryCount - 1;
-    while (low != high) {
-        middle = (low + high) / 2;
-        order = memcmp(descriptor->level0[middle].name, key, 8);
-        if (order == 0)
-            goto middleFound;
-        if (order > 0)
-            high = middle;
-        else
-            low = middle + 1;
-    }
-    {
-        register u32 byteOffset TARGET_REGISTER("r0") = low << 4;
-        byteOffset = (u32)descriptor->level0 + byteOffset;
-        if (memcmp((void *)byteOffset, key, 8) == 0)
-            goto lowFound;
-    }
-    return -1;
-middleFound:
-    return middle;
-lowFound:
-    return low;
-}
-AT("0007BB98") const u8 SpriteResourceFindGroupTail[2] = {0, 0};
 
 /** @return One entry of a resource's level-0 (group) table. */
 AT("0007BA0C")

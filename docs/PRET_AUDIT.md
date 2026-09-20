@@ -5,6 +5,21 @@ Run `make pret-audit` to regenerate the detailed machine-readable reports at
 `python3 tools/audit_pret_standards.py --strict` when checking whether the
 hard-error backlog has reached zero.
 
+## Verified snapshot: renderer reference fallback, 2026-09-20
+
+- `make compare` reproduces the Japanese ROM byte for byte.
+- The English ROM builds successfully and all 175 host tests pass.
+- The mechanical PRET audit reports 112 errors, zero warnings, and zero
+  documented exceptions.
+
+`SpriteTileAllocatorRelease`, `SpriteResourceFindGroup`, and
+`SpriteFixedSqrt` no longer use forced registers or inline assembly in linked
+C. Their exact instructions are restored to assembly and their clean C
+implementations are retained under `src/nonmatching/`, with each remaining
+code-generation difference documented in `COMPILER_HINT_CLEANUP.md`. This
+follows the required fallback in `PRET_STANDARDS.md` without claiming that the
+original source used compiler hints.
+
 ## Verified snapshot: object-cleanup batch, 2026-09-15
 
 - `make compare` reproduces the Japanese ROM byte for byte.

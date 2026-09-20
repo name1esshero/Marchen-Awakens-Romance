@@ -2655,7 +2655,139 @@ _0807B51A:
 	.byte 0x00
 	.byte 0x00
 
-@ 07B52C..07B618 is decompiled as SpriteTileAllocatorRelease(); see src/decompiled.json
+	.thumb_func
+	.thumb
+	.global SpriteTileAllocatorRelease
+SpriteTileAllocatorRelease:
+	push {r4, r5, r6, r7, lr}
+	mov r7, r8
+	push {r7}
+	adds r6, r0, #0
+	movs r2, #14
+	ldrsh r0, [r6, r2]
+	cmp r0, #0
+	bne _0807B5F8
+	ldrh r0, [r6, #10]
+	subs r0, r1, r0
+	lsls r0, r0, #3
+	ldr r1, [r6, #0]
+	adds r4, r1, r0
+	ldrh r1, [r4, #2]
+	ldr r0, _0807B5EC
+	ands r0, r1
+	strh r0, [r4, #2]
+	ldrh r7, [r4, #2]
+	ldr r0, _0807B5F0
+	mov r12, r0
+	adds r5, r7, #0
+	ands r5, r0
+	ldrh r2, [r4, #0]
+	lsls r1, r2, #3
+	ldr r0, [r6, #0]
+	adds r3, r0, r1
+	lsls r0, r5, #3
+	adds r0, r0, r4
+	mov r8, r0
+	ldr r0, _0807B5F4
+	cmp r2, r0
+	beq _0807B59C
+	ldrh r1, [r3, #2]
+	movs r0, #192
+	lsls r0, r0, #8
+	ands r0, r1
+	cmp r0, #0
+	bne _0807B59C
+	adds r4, r3, #0
+	mov r0, r12
+	ands r0, r1
+	adds r5, r5, r0
+	movs r1, #128
+	lsls r1, r1, #6
+	ands r1, r7
+	adds r0, r5, #0
+	orrs r0, r1
+	strh r0, [r4, #2]
+	cmp r1, #0
+	bne _0807B5DE
+	ldr r0, [r6, #0]
+	adds r1, r4, #0
+	bl SpriteTileBlockIndex
+	mov r1, r8
+	strh r0, [r1, #0]
+	.global _0807B59C
+_0807B59C:
+	movs r2, #128
+	lsls r2, r2, #6
+	ands r7, r2
+	cmp r7, #0
+	bne _0807B5DE
+	mov r0, r8
+	ldrh r1, [r0, #2]
+	movs r0, #192
+	lsls r0, r0, #8
+	ands r0, r1
+	cmp r0, #0
+	bne _0807B5DE
+	ldr r0, _0807B5F0
+	ands r0, r1
+	adds r0, r5, r0
+	lsls r0, r0, #16
+	lsrs r5, r0, #16
+	adds r0, r2, #0
+	ands r0, r1
+	orrs r0, r5
+	strh r0, [r4, #2]
+	ands r0, r2
+	cmp r0, #0
+	bne _0807B5DE
+	lsls r0, r5, #3
+	adds r0, r0, r4
+	mov r8, r0
+	ldr r0, [r6, #0]
+	adds r1, r4, #0
+	bl SpriteTileBlockIndex
+	mov r1, r8
+	strh r0, [r1, #0]
+	.global _0807B5DE
+_0807B5DE:
+	ldr r0, [r6, #0]
+	adds r1, r4, #0
+	bl SpriteTileBlockIndex
+	strh r0, [r6, #8]
+	b _0807B60A
+	.byte 0x00
+	.byte 0x00
+	.global _0807B5EC
+_0807B5EC:
+	.4byte 0x00003FFF
+	.global _0807B5F0
+_0807B5F0:
+	.4byte 0x00001FFF
+	.global _0807B5F4
+_0807B5F4:
+	.4byte 0x0000FFFF
+	.global _0807B5F8
+_0807B5F8:
+	ldrh r0, [r6, #10]
+	subs r0, r1, r0
+	lsls r0, r0, #3
+	ldr r1, [r6, #0]
+	adds r4, r1, r0
+	ldrh r1, [r4, #2]
+	ldr r0, _0807B614
+	ands r0, r1
+	strh r0, [r4, #2]
+	.global _0807B60A
+_0807B60A:
+	pop {r3}
+	mov r8, r3
+	pop {r4, r5, r6, r7}
+	pop {r0}
+	bx r0
+	.global _0807B614
+_0807B614:
+	.4byte 0x0000BFFF
+
 
 @ 07B618..07B630 is decompiled as SpriteResourceRelease(); see src/decompiled.json
 
@@ -2707,7 +2839,108 @@ _0807B51A:
 
 @ 07BB48..07BB98 is decompiled as SpriteResourceGetTable28(); see src/decompiled.json
 
-@ 07BB98..07BC2C is decompiled as SpriteResourceFindGroup(); see src/decompiled.json
+	.section .rom.0007BB98, "ax"
+	.syntax unified
+
+	.thumb_func
+	.thumb
+	.global SpriteResourceFindGroup
+SpriteResourceFindGroup:
+	push {r4, r5, r6, r7, lr}
+	mov r7, r8
+	push {r7}
+	sub sp, #12
+	adds r4, r0, #0
+	movs r0, #0
+	str r0, [sp, #8]
+	str r0, [sp, #4]
+	str r0, [sp, #0]
+	mov r0, sp
+	.2byte 0xF006
+	.byte 0x5C
+	.byte 0xFE
+	mov r0, sp
+	.2byte 0xF006
+	.4byte 0x46E8FF7D
+	ldr r0, _0807BBF4
+	ldr r0, [r0, #0]
+	ldr r1, _0807BBF8
+	adds r0, r0, r1
+	lsls r4, r4, #5
+	ldr r0, [r0, #0]
+	adds r7, r0, r4
+	movs r6, #0
+	ldr r0, [r7, #0]
+	ldr r0, [r0, #64]
+	subs r5, r0, #1
+	.global _0807BBCE
+_0807BBCE:
+	cmp r6, r5
+	beq _0807BC00
+
+	.thumb_func
+	.thumb
+	.global sub_0807BBD2
+sub_0807BBD2:
+	adds r0, r6, r5
+	lsrs r1, r0, #31
+	adds r0, r0, r1
+	asrs r4, r0, #1
+	lsls r1, r4, #4
+	ldr r0, [r7, #8]
+	adds r0, r0, r1
+	mov r1, r8
+	movs r2, #8
+	.2byte 0xF006
+	.byte 0x32
+	.byte 0xFD
+	cmp r0, #0
+	beq _0807BC18
+	cmp r0, #0
+	ble _0807BBFC
+	adds r5, r4, #0
+	b _0807BBCE
+	.global _0807BBF4
+_0807BBF4:
+	.4byte 0x03006118  @ IWRAM+0x6118
+	.global _0807BBF8
+_0807BBF8:
+	.4byte 0x0000061C
+	.global _0807BBFC
+_0807BBFC:
+	adds r6, r4, #1
+	b _0807BBCE
+	.global _0807BC00
+_0807BC00:
+	lsls r0, r6, #4
+	ldr r1, [r7, #8]
+	adds r0, r1, r0
+	mov r1, r8
+	movs r2, #8
+	.2byte 0xF006
+	.4byte 0x2800FD1F
+	beq _0807BC1C
+	movs r0, #1
+	negs r0, r0
+	b _0807BC1E
+	.global _0807BC18
+_0807BC18:
+	adds r0, r4, #0
+	b _0807BC1E
+	.global _0807BC1C
+_0807BC1C:
+	adds r0, r6, #0
+	.global _0807BC1E
+_0807BC1E:
+	add sp, #12
+	pop {r3}
+	mov r8, r3
+	pop {r4, r5, r6, r7}
+	pop {r1}
+	bx r1
+	.byte 0x00
+	.byte 0x00
+
 
 @ 07BC2C..07BC7C is decompiled as NcdInitSprite(); see src/decompiled.json
 
@@ -5439,7 +5672,65 @@ _0807D8EA:
 
 @ 07D944..07D9F0 is decompiled as SpriteVectorLengthFixed(); see src/decompiled.json
 
-@ 07D9F0..07DA38 is decompiled as SpriteFixedSqrt(); see src/decompiled.json
+	.section .rom.0007D9F0, "ax"
+	.syntax unified
+
+	.thumb_func
+	.thumb
+	.global SpriteFixedSqrt
+SpriteFixedSqrt:
+	push {r4, r5, lr}
+	adds r5, r0, #0
+	cmp r5, #0
+	ble _0807DA24
+	movs r1, #128
+	lsls r1, r1, #5
+	cmp r5, r1
+	bge _0807DA02
+	adds r0, r1, #0
+	.global _0807DA02
+_0807DA02:
+	adds r4, r0, #0
+	cmp r4, #0
+	beq _0807DA1A
+	lsls r0, r5, #12
+	adds r1, r4, #0
+	bl sub_08080BFC
+	adds r0, r0, r4
+	lsrs r1, r0, #31
+	adds r0, r0, r1
+	asrs r0, r0, #1
+	b sub_0807DA1C
+	.global _0807DA1A
+_0807DA1A:
+	movs r0, #0
+
+	.thumb_func
+	.thumb
+	.global sub_0807DA1C
+sub_0807DA1C:
+	cmp r0, r4
+	blt _0807DA02
+	adds r0, r4, #0
+	b _0807DA2E
+	.global _0807DA24
+_0807DA24:
+	cmp r5, #0
+	bne _0807DA2C
+	movs r0, #0
+	b _0807DA2E
+	.global _0807DA2C
+_0807DA2C:
+	ldr r0, _0807DA34
+	.global _0807DA2E
+_0807DA2E:
+	pop {r4, r5}
+	pop {r1}
+	bx r1
+	.global _0807DA34
+_0807DA34:
+	.4byte 0xFFFFF000
+
 
 @ 07DA38..07DAD0 is decompiled as SpritePackAffinePosition(); see src/decompiled.json
 
