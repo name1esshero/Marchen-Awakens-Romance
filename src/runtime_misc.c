@@ -142,6 +142,14 @@ AT("0000F0CC") u8 *GameStateGetRecord1190(u32 index)
 /** Always returns 0. Used as a stubbed-out check by
  * RuntimeStoreCurrentRecord14C() in runtime_core.c. */
 AT("0000503C") u32 RuntimeReturnZero(void) { return 0; }
+
+/** Return the supplied value unchanged. Used as a replaceable task hook. */
+AT("000066B8") u32 RuntimeReturnArgument(u32 value)
+{
+ return value;
+}
+AT("000066B8") const u8 RuntimeReturnArgumentTail[2]={0};
+
 AT("00011674") const struct BattleCharacterDefinition *RuntimeGetBattleCharacterDefinition(u32 index)
 {
  return &gBattleCharacterDefinitions[index];

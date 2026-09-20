@@ -109,6 +109,7 @@
   "08006034": "ResumeSoundPlayer",
   "08006050": "CreateSceneTask",
   "080061F0": "CreateSceneModeTask",
+  "080066B8": "RuntimeReturnArgument",
   "08006760": "GameStateSetFlagsAC",
   "08006784": "GameStateTestFlagsAC",
   "080067A4": "GameStateSetPointer2C",

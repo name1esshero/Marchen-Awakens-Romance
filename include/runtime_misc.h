@@ -38,6 +38,7 @@ void MapObjectResetMotion(struct MapObjectMotion *motion);
 u32 RuntimeAreFirstFlagsSet(s16 flagCount);
 u8 *GameStateGetRecord1190(u32 index);
 u32 RuntimeReturnZero(void);
+u32 RuntimeReturnArgument(u32 value);
 const struct BattleCharacterDefinition *RuntimeGetBattleCharacterDefinition(u32 index);
 u8 *RuntimeGetBlock6120(u32 slot,u32 group);
 void GameStateCopyString12F4(char *destination);

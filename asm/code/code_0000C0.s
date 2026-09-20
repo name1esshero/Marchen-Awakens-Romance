@@ -9958,7 +9958,7 @@ sub_080053E4:
 	adds r7, r1, #0
 	mov r8, r2
 	adds r4, r3, #0
-	bl sub_080066B8
+	bl RuntimeReturnArgument
 	cmp r0, #0
 	bne _08005408
 	cmp r4, #0
@@ -9989,7 +9989,7 @@ _08005408:
 	.thumb
 	.global sub_08005424
 sub_08005424:
-	bl sub_080066B8
+	bl RuntimeReturnArgument
 	str r0, [r5, #32]
 	strh r7, [r4, #4]
 	mov r0, r8
@@ -11732,13 +11732,10 @@ _080066AA:
 	pop {r0}
 	bx r0
 
-	.thumb_func
-	.thumb
-	.global sub_080066B8
-sub_080066B8:
-	bx lr
-	.byte 0x00
-	.byte 0x00
+@ 0066B8..0066BC is decompiled as RuntimeReturnArgument(); see src/decompiled.json
+
+	.section .rom.000066BC, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb

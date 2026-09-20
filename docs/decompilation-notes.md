@@ -2614,3 +2614,12 @@ record while composing its runtime output. The same named offset is now used
 by `GameStateClearRecord426A`, which confirms the accessor and clearing routine
 operate on one object. A direct typed lookup through the IWRAM root pointer
 reproduces all 28 bytes without register hints or integerized addresses.
+
+
+## Task pass-through hook (2026-09-20)
+
+`RuntimeReturnArgument` at 0x080066B8 is a deliberate identity hook: it returns
+its sole argument unchanged. The task-creation path first tests a value through
+this hook and later stores the same hooked value in the new task. The one-line
+C function reproduces the original `bx lr`; an explicit two-byte zero tail
+preserves the following function's alignment.

@@ -696,6 +696,12 @@
     "file": "src/task_constructors.c"
   },
   {
+    "addr": "080066B8",
+    "size": 4,
+    "name": "RuntimeReturnArgument",
+    "file": "src/runtime_misc.c"
+  },
+  {
     "addr": "08006760",
     "size": 36,
     "name": "GameStateSetFlagsAC",
