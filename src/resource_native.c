@@ -97,24 +97,24 @@ AT("00012D98") const u8 ScriptNativeQueryResourceIdTail[2] = {0};
 /** Native script command: read a resource total from one of two tables,
  * selected by the map-generation state's +0x38B8 mode byte.
  * @return Always 1. */
-AT("00012DB4") s32 ScriptNativeQueryModeResource(u32 count, const s32 *args, s32 *result)
+AT("00012DB4") s32 ScriptNativeQueryModeResource(u32 count, const s16 *args,
+                                                  s32 *result)
 {
     s32 *out = result;
-    const s16 *shortArgs = (const s16 *)args;
-    register u8 *base asm("r0");
-    register u32 offset asm("r2");
+    u8 *base;
+    u32 offset;
     s32 value;
 
     base = gIwramBase;
-    offset = (u32)gMapGenerationRootOffset;
+    offset = GAME_STATE_ROOT_IWRAM_OFFSET;
     base += offset;
     base = *(u8 **)base;
     offset = 0x38B8;
     base += offset;
     if (*(u8 *)base == 0)
-        value = GameStateGetEntry2768Total(shortArgs[0]);
+        value = GameStateGetEntry2768Total(args[0]);
     else
-        value = GameStateGetEntry2AE0(shortArgs[0]);
+        value = GameStateGetEntry2AE0(args[0]);
     *out = (s16)value;
     return 1;
 }
@@ -123,22 +123,22 @@ AT("00012DB4") const u8 ScriptNativeQueryModeResourceTail[2] = {0};
 /** Native script command: forward to sub_08056A8C() with a mode of 1 or 2,
  * selected by the map-generation state's +0x38B8 mode byte.
  * @return Always 1. */
-AT("00012DF8") s32 ScriptNativeSetModeResource(u32 count, const s32 *args, s32 *result)
+AT("00012DF8") s32 ScriptNativeSetModeResource(u32 count, const s16 *args,
+                                                s32 *result)
 {
-    register const s16 *shortArgs asm("r1") = (const s16 *)args;
     u8 *base;
     u32 offset;
 
     base = gIwramBase;
-    offset = (u32)gMapGenerationRootOffset;
+    offset = GAME_STATE_ROOT_IWRAM_OFFSET;
     base += offset;
     base = *(u8 **)base;
     offset = 0x38B8;
     base += offset;
     if (*(u8 *)base == 0)
-        sub_08056A8C(shortArgs[0], 1);
+        sub_08056A8C(args[0], 1);
     else
-        sub_08056A8C(shortArgs[0], 2);
+        sub_08056A8C(args[0], 2);
     return 1;
 }
 

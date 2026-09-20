@@ -404,6 +404,21 @@ difference is register pressure rather than scheduling.
   wrong because the compiler folds it to a single relocated pool value. Keep
   fixed RAM-layout offsets centralized and named, and preserve the separate
   locals when the ROM separately materializes the base and offset.
+- **A preserved argument register can reveal both the pointed-to type and the
+  spelling of a layout offset.** `ScriptNativeQueryModeResource` and
+  `ScriptNativeSetModeResource` keep the incoming argument pointer in `r1`,
+  read it with `ldrsh [r1]`, and use `r2` for the two unrelated address
+  offsets. Declaring the parameter as the generic `const s32 *` and casting a
+  local alias to `const s16 *` makes agbcc move that alias to another register;
+  pinning it back to `r1` only hides the wrong type. Declaring the actual
+  `const s16 *` parameter and assigning the named numeric
+  `GAME_STATE_ROOT_IWRAM_OFFSET` to the offset local produces the ROM
+  naturally. Using `(u32)gMapGenerationRootOffset` instead gives agbcc a
+  pointer-valued expression and changes register selection even though the
+  linked number is identical. When the ROM reads a narrow argument directly
+  from its incoming register, recover that parameter type before attempting
+  declaration-order or arithmetic rewrites; use a linker symbol for an object
+  address and a named integer constant for a layout displacement.
 - **After adding a function, run the host tests, not just `make compare`.** The
   tests compile individual `.c` files on their own, so a new reference to a
   symbol the ROM link resolves -- `gSecondaryRuntime`, `gIwramBase`, anything

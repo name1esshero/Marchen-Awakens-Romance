@@ -15,7 +15,7 @@ error. The audit prints known, new, and resolved counts on one line.
 
 - `make compare` reproduces the Japanese ROM byte for byte.
 - `make english` succeeds and all 196 host tests pass.
-- The mechanical PRET audit reports **109 errors / 0 warnings / 17 documented
+- The mechanical PRET audit reports **103 errors / 0 warnings / 17 documented
   exceptions** on one summary line. Every exception is enumerated in the
   generated report.
 

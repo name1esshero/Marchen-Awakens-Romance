@@ -490,17 +490,17 @@ byte count in r1, and the completion pointer in r2 before calling
 verified from call sites even though an ordinary forwarding wrapper assigns
 its two long-lived arguments to r4/r5 in the opposite order from the ROM.
 
-`ScriptNativeQueryModeResource()` was re-tested one constraint at a time. If
-only the r0 constraint on `base` is removed, the function remains the same
-size and differs solely in the commutative address addition: agbcc emits
-`add r0, r2, r0` where the ROM has `add r0, r0, r2`. Writing that expression
-as subtraction of a negated offset happens to recover the ROM instruction,
-but it obscures a plain pointer addition solely to steer the optimizer. It is
-a fakematch under `PRET_STANDARDS.md` and was rejected. Direct pointer
-addition, indexed-pointer spelling, integer-address temporaries, and both
-operand orders all reproduce the swapped ordinary-C instruction. The pin
-remains pending until a genuine type or lifetime reconstruction explains the
-allocation.
+`ScriptNativeQueryModeResource()` and `ScriptNativeSetModeResource()` are now
+resolved without constraints. Their VM argument pointer is naturally
+`const s16 *`: both routines read a signed halfword directly from `r1`, rather
+than indexing the usual 32-bit native-argument slots. The IWRAM root component
+is the numeric layout offset `GAME_STATE_ROOT_IWRAM_OFFSET`, not the address of
+the linker symbol used to carry that value. With those two source types, agbcc
+keeps `r1` live for the argument and selects `r2` for both address offsets,
+reproducing the ROM's `add r0, r0, r2` instructions. This removes three forced
+register declarations and their three duplicate inline-assembly findings.
+The earlier subtraction-of-a-negated-offset probe remains rejected as a
+fakematch; it was a clue about the wrong source type, not the solution.
 
 ## Reuse an initialized search value before its loop role
 

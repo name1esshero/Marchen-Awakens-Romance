@@ -2300,3 +2300,18 @@ Some pointers from surrounding runtime tables address their interiors, so
 those ranges must be converted as complete owned structures rather than
 deleted as isolated strings. Jump tables and literal pools remain attached to
 their owning functions and are not counted as standalone data arrays.
+
+## Halfword resource natives (2026-09-20)
+
+`ScriptNativeQueryModeResource` (0x08012DB4) and
+`ScriptNativeSetModeResource` (0x08012DF8) now match without their three
+register constraints. Their ROM instructions preserve `r1` and load arguments
+with `ldrsh [r1]`; declaring the parameter as `const s16 *` expresses that ABI
+directly instead of introducing a casted alias. Using the named numeric
+`GAME_STATE_ROOT_IWRAM_OFFSET` for the separately loaded IWRAM offset makes
+agbcc naturally use `r2` for the offset while `r1` remains live. This explains
+both formerly forced allocations and retains shiftable named layout data.
+
+The tempting subtraction-of-a-negated-offset expression also selected the
+desired registers, but it modeled no real subtraction and was rejected. The
+verified parameter and layout types provide the ordinary C shape instead.

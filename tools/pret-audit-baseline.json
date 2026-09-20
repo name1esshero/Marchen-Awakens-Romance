@@ -12,21 +12,6 @@
   {
     "kind": "forced_register",
     "file": "src/resource_native.c",
-    "detail": "register const s16 *shortArgs asm(\"r1\") = (const s16 *)args;"
-  },
-  {
-    "kind": "forced_register",
-    "file": "src/resource_native.c",
-    "detail": "register u32 offset asm(\"r2\");"
-  },
-  {
-    "kind": "forced_register",
-    "file": "src/resource_native.c",
-    "detail": "register u8 *base asm(\"r0\");"
-  },
-  {
-    "kind": "forced_register",
-    "file": "src/resource_native.c",
     "detail": "register u8 *slot asm(\"r0\");"
   },
   {
@@ -88,21 +73,6 @@
     "kind": "inline_assembly",
     "file": "src/mapping.c",
     "detail": "register u8 *destination asm(\"r1\");"
-  },
-  {
-    "kind": "inline_assembly",
-    "file": "src/resource_native.c",
-    "detail": "register const s16 *shortArgs asm(\"r1\") = (const s16 *)args;"
-  },
-  {
-    "kind": "inline_assembly",
-    "file": "src/resource_native.c",
-    "detail": "register u32 offset asm(\"r2\");"
-  },
-  {
-    "kind": "inline_assembly",
-    "file": "src/resource_native.c",
-    "detail": "register u8 *base asm(\"r0\");"
   },
   {
     "kind": "inline_assembly",
