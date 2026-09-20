@@ -766,3 +766,19 @@ parameter reuse, both compiler revisions, and direct versus staged expressions
 did not recover the ROM allocation. The exact routines remain named assembly;
 `src/nonmatching/sprite_affine_matrix.c` preserves the clean algorithm and the
 four-coefficient OAM layout for further source-shape work.
+
+### Calls can require reloading a mutable global root
+
+`ScriptExecutionStateInitialize` at 0x0807EEC4 initializes a 0x234-byte
+execution-state object reached through `gScriptBytecodeRoot->context`. A local
+copy of the context pointer looks simpler, but agbcc then retains it across
+calls and emits a 172-byte routine. The ROM is 204 bytes and reloads the global
+root after calls that could change or alias it.
+
+Writing each access through the typed global-root expression reproduces those
+reloads without `volatile`, pointer-to-integer casts, barriers, or requested
+registers. This is source-level alias behavior: an external call can modify a
+global pointer, while it cannot modify an automatic copy of that pointer.
+Prefer the direct global expression when the ROM visibly reloads a mutable
+root after calls; cache it only when the generated code and ownership model
+show that the pointee remains stable.

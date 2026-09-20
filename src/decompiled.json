@@ -6960,6 +6960,12 @@
     "file": "src/script_resources.c"
   },
   {
+    "addr": "0807EEC4",
+    "size": 204,
+    "name": "ScriptExecutionStateInitialize",
+    "file": "src/script_resource_table.c"
+  },
+  {
     "addr": "0807EF94",
     "size": 36,
     "name": "ScriptResourceLoadAndInstall",

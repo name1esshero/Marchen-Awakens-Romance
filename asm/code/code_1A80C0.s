@@ -573,8 +573,12 @@ _081AC670:
 	.4byte 0x00000000
 	.4byte 0x454E494C
 	.4byte 0x00000000
+	.global gScriptResultResourceName
+gScriptResultResourceName:
 	.4byte 0x75736572
 	.4byte 0x0000746C
+	.global gScriptNameResourceName
+gScriptNameResourceName:
 	.4byte 0x6E726373
 	.4byte 0x00656D61
 

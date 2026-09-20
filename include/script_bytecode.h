@@ -32,11 +32,31 @@ struct ScriptResourceNode {
     u8 value[1];
 };
 
+struct ScriptResourceSlot {
+    u32 referenceCount;
+    void *allocation;
+};
+
+struct ScriptPointerRecord {
+    void *value;
+    void *alternate;
+};
+
 struct ScriptBytecodeContext {
     void *heap;
     void *resourceHeap;
     struct ScriptResourceNode **resourceBuckets;
     struct ScriptBytecodeVm *vm;
+    u16 firstNamedResourceCount;
+    u16 secondNamedResourceCount;
+    struct ScriptResourceSlot firstResources[32];
+    struct ScriptResourceSlot secondResources[32];
+    u32 stepBudget;
+    u32 dispatchState;
+    s32 dispatchIndex;
+    u32 pendingTasks;
+    struct ScriptPointerRecord result;
+    struct ScriptPointerRecord scriptName;
 };
 
 struct ScriptBytecodeRoot {
@@ -81,6 +101,11 @@ s32 ScriptResourceTableSet(void *heap, struct ScriptResourceNode **buckets,
 s32 ScriptResourceTableRemove(void *heap,
                               struct ScriptResourceNode **buckets,
                               s32 type, const char *name);
+s32 ScriptResourceRegisterBuiltins(
+    void *heap, struct ScriptResourceNode **buckets);
+s32 ScriptExecutionStateInitialize(
+    void *resourceHeap, struct ScriptResourceNode **resourceBuckets,
+    void *heapMemory, u32 heapSize);
 
 s32 ScriptCmdJump(void);
 s32 ScriptCmdJumpIfZero(void);

@@ -9,7 +9,12 @@ extern s32 strcmp(const char *left, const char *right);
 extern char *strcpy(char *destination, const char *source);
 extern void CpuCopy(void *destination, const void *source, u32 size);
 extern void *HeapAlloc(void *heap, u32 size);
+extern void *HeapCreate(void *memory, u32 size);
 extern void HeapFree(void *heap, void *allocation);
+extern void CpuFill(void *destination, u32 size, u32 value);
+extern void InitializePointerRecord(void **record, void *value);
+extern char gScriptResultResourceName[];
+extern char gScriptNameResourceName[];
 
 /** Fold the resource class and name into one of the VM's 587 buckets. */
 AT("0007E97C") s32 ScriptResourceHash(s32 type, const char *name)
@@ -178,3 +183,46 @@ found:
     return 0;
 }
 AT("0007EBE0") const u8 ScriptResourceTableRemoveTail[2] = {0, 0};
+
+/** Initialize the script execution state and its named-resource tables.
+ * A caller may supply an existing bucket array; otherwise one is allocated
+ * from resourceHeap and populated with the built-in resource definitions. */
+AT("0007EEC4") s32 ScriptExecutionStateInitialize(
+    void *resourceHeap, struct ScriptResourceNode **resourceBuckets,
+    void *heapMemory, u32 heapSize)
+{
+    if ((gScriptBytecodeRoot->context->heap =
+         HeapCreate(heapMemory, heapSize)) == 0)
+        return -1;
+
+    if (resourceBuckets == 0) {
+        gScriptBytecodeRoot->context->resourceHeap = resourceHeap;
+        gScriptBytecodeRoot->context->resourceBuckets =
+            HeapAlloc(resourceHeap,
+                      587 * sizeof(*resourceBuckets));
+        if (gScriptBytecodeRoot->context->resourceBuckets == 0)
+            return -1;
+        ScriptResourceRegisterBuiltins(
+            resourceHeap, gScriptBytecodeRoot->context->resourceBuckets);
+    } else {
+        gScriptBytecodeRoot->context->resourceBuckets = resourceBuckets;
+        gScriptBytecodeRoot->context->resourceHeap = resourceHeap;
+    }
+
+    gScriptBytecodeRoot->context->vm = 0;
+    gScriptBytecodeRoot->context->firstNamedResourceCount = 0;
+    gScriptBytecodeRoot->context->secondNamedResourceCount = 0;
+    CpuFill(gScriptBytecodeRoot->context->firstResources,
+            sizeof(gScriptBytecodeRoot->context->firstResources), 0);
+    CpuFill(gScriptBytecodeRoot->context->secondResources,
+            sizeof(gScriptBytecodeRoot->context->secondResources), 0);
+    gScriptBytecodeRoot->context->stepBudget = 10;
+    InitializePointerRecord(
+        (void **)&gScriptBytecodeRoot->context->result,
+        gScriptResultResourceName);
+    InitializePointerRecord(
+        (void **)&gScriptBytecodeRoot->context->scriptName,
+        gScriptNameResourceName);
+    gScriptBytecodeRoot->context->pendingTasks = 0;
+    return 0;
+}

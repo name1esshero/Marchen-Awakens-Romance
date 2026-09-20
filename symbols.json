@@ -1109,6 +1109,7 @@
   "0807EE10": "ScriptResourceRegisterTable",
   "0807EE3C": "ScriptResourceRegisterTableToHeap",
   "0807EE7C": "ScriptResourceRegisterBuiltins",
+  "0807EEC4": "ScriptExecutionStateInitialize",
   "0807EF94": "ScriptResourceLoadAndInstall",
   "0807EFB8": "ScriptPopFrame",
   "0807F044": "InitializePointerRecord",

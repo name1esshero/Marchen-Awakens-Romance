@@ -4,11 +4,6 @@
 
 #include "rom_section.h"
 
-struct ScriptResourceSlot {
-    u32 referenceCount;
-    void *allocation;
-};
-
 /* Same {name, handler} layout as gScriptNativeCommands, reused here under
  * ScriptResourceEntry's generic type -- the THUMB-bit-set handler addresses
  * verified against decompiled.json in game_tables.c apply here too. */

@@ -2533,3 +2533,18 @@ operations with an explicit heap and bucket array. They now compile as
 six-argument insertion ABI and use the shared node type directly. All three
 matched from ordinary linked-list traversal and typed bucket indexing on the
 first compile; their raw assembly bodies and placeholder names were removed.
+
+## Script execution-state initialization (2026-09-20)
+
+`ScriptExecutionStateInitialize` at 0x0807EEC4 now compiles from clean C. It
+creates the general heap, accepts or allocates the 587-entry named-resource
+bucket array, registers built-in resources when it owns that array, clears two
+32-entry resource-slot banks, and initializes the script result/name records.
+
+This identifies the complete 0x234-byte execution-state layout through offset
+0x22C: two heaps, resource buckets, current frame, two resource counts, two
+resource-slot banks, the step budget and dispatch fields, pending-task state,
+and the two pointer records. Direct typed access through the mutable global
+root preserves the ROM's reloads around calls and gives the exact 204-byte
+function without compiler steering. The word at 0x0807EF90 is a separate
+no-op leaf and remains at its original address in assembly.

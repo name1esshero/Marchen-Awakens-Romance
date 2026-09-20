@@ -7855,7 +7855,7 @@ sub_0807E314:
 	ldr r1, [sp, #28]
 	adds r2, r5, #0
 	mov r3, r8
-	bl sub_0807EEC4
+	bl ScriptExecutionStateInitialize
 	bl sub_0807F0EC
 	ldr r0, [sp, #32]
 	.2byte 0xF000
@@ -8659,130 +8659,10 @@ _0807E960:
 
 @ 07EE7C..07EEC4 is decompiled as ScriptResourceRegisterBuiltins(); see src/decompiled.json
 
-	.section .rom.0007EEC4, "ax"
+	@ 07EEC4..07EF90 is decompiled as ScriptExecutionStateInitialize(); see src/decompiled.json
+	.section .rom.0007EF90, "ax"
 	.syntax unified
-
-	.thumb_func
 	.thumb
-	.global sub_0807EEC4
-sub_0807EEC4:
-	push {r4, r5, r6, lr}
-	adds r4, r0, #0
-	adds r5, r1, #0
-	adds r0, r2, #0
-	adds r1, r3, #0
-	.2byte 0xF7FB
-	.4byte 0x4E0BF9EB
-	ldr r1, [r6, #0]
-	ldr r1, [r1, #12]
-	str r0, [r1, #0]
-	cmp r0, #0
-	beq _0807EEF8
-	cmp r5, #0
-	bne _0807EF10
-	str r4, [r1, #4]
-	ldr r1, _0807EF04
-	adds r0, r4, #0
-	.2byte 0xF7FB
-	.byte 0x00
-	.byte 0xFA
-	adds r1, r0, #0
-	ldr r0, [r6, #0]
-	ldr r0, [r0, #12]
-	str r1, [r0, #8]
-	cmp r1, #0
-	bne _0807EF08
-	.global _0807EEF8
-_0807EEF8:
-	movs r0, #1
-	negs r0, r0
-	b _0807EF7E
-	.byte 0x00
-	.byte 0x00
-	.global _0807EF00
-_0807EF00:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-	.global _0807EF04
-_0807EF04:
-	.4byte 0x0000092C
-	.global _0807EF08
-_0807EF08:
-	adds r0, r4, #0
-	.2byte 0xF7FF
-	.4byte 0xE001FFB7
-	.global _0807EF10
-_0807EF10:
-	str r5, [r1, #8]
-	str r4, [r1, #4]
-	.global _0807EF14
-_0807EF14:
-	ldr r5, _0807EF84
-	ldr r1, [r5, #0]
-	ldr r0, [r1, #12]
-	movs r6, #0
-	str r6, [r0, #12]
-	strh r6, [r0, #16]
-	ldr r0, [r1, #12]
-	strh r6, [r0, #18]
-	ldr r0, [r1, #12]
-	adds r0, #20
-	movs r4, #128
-	lsls r4, r4, #1
-	adds r1, r4, #0
-	movs r2, #0
-	bl CpuFill
-	ldr r0, [r5, #0]
-	ldr r0, [r0, #12]
-	movs r1, #138
-	lsls r1, r1, #1
-	adds r0, r0, r1
-	adds r1, r4, #0
-	movs r2, #0
-	bl CpuFill
-	ldr r0, [r5, #0]
-	ldr r2, [r0, #12]
-	movs r0, #133
-	lsls r0, r0, #2
-	adds r1, r2, r0
-	movs r0, #10
-	str r0, [r1, #0]
-	movs r1, #137
-	lsls r1, r1, #2
-	adds r0, r2, r1
-	ldr r1, _0807EF88
-	.2byte 0xF000
-	.byte 0x72
-	.byte 0xF8
-	ldr r0, [r5, #0]
-	ldr r0, [r0, #12]
-	movs r1, #139
-	lsls r1, r1, #2
-	adds r0, r0, r1
-	ldr r1, _0807EF8C
-	.2byte 0xF000
-	.byte 0x6A
-	.byte 0xF8
-	ldr r0, [r5, #0]
-	ldr r0, [r0, #12]
-	movs r1, #136
-	lsls r1, r1, #2
-	adds r0, r0, r1
-	str r6, [r0, #0]
-	movs r0, #0
-	.global _0807EF7E
-_0807EF7E:
-	pop {r4, r5, r6}
-	pop {r1}
-	bx r1
-	.global _0807EF84
-_0807EF84:
-	.4byte 0x0300611C  @ IWRAM+0x611C
-	.global _0807EF88
-_0807EF88:
-	.4byte 0x081AC688  @ ROM+0x1AC688
-	.global _0807EF8C
-_0807EF8C:
-	.4byte 0x081AC690  @ ROM+0x1AC690
 	.4byte 0x00004770
 
 @ 07EF94..07EFB8 is decompiled as ScriptResourceLoadAndInstall(); see src/decompiled.json
