@@ -109,6 +109,36 @@ class PretPointerIntegerAuditTests(unittest.TestCase):
         self.assertEqual([item["kind"] for item in findings],
                          ["pointer_integer_union"])
 
+    def test_error_baseline_ignores_line_number_changes(self):
+        baseline = [{
+            "kind": "inline_assembly",
+            "file": "src/example.c",
+            "detail": "asm(\"\")",
+        }]
+        findings = [{
+            "severity": "error",
+            "kind": "inline_assembly",
+            "file": "src/example.c",
+            "line": 87,
+            "detail": "asm(\"\")",
+        }]
+        status = AUDIT.compare_error_baseline(findings, baseline)
+        self.assertEqual((status["known"], status["new"], status["resolved"]),
+                         (1, 0, 0))
+
+    def test_error_baseline_counts_duplicate_and_new_errors(self):
+        baseline = [{
+            "kind": "forced_register",
+            "file": "src/example.c",
+            "detail": "register u32 value asm(\"r0\");",
+        }]
+        repeated = dict(baseline[0], severity="error", line=2)
+        findings = [repeated, dict(repeated, line=9)]
+        status = AUDIT.compare_error_baseline(findings, baseline)
+        self.assertEqual((status["known"], status["new"], status["resolved"]),
+                         (1, 1, 0))
+        self.assertEqual(status["new_findings"][0]["line"], 9)
+
 
 if __name__ == "__main__":
     unittest.main()

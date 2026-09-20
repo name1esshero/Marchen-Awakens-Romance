@@ -37,5 +37,15 @@ jobs:
       - name: Build English localization without a base ROM
         run: make -j2 english
 
-      - name: Run Japanese and English tests
-        run: python3 -m unittest discover -s tests
+  tests:
+    name: Tests and audits
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run Japanese and English host tests
+        run: make test
+
+      - name: Run source audits and reject new hard errors
+        run: make ci-audits

@@ -1,0 +1,547 @@
+[
+  {
+    "kind": "forced_register",
+    "file": "src/mapping.c",
+    "detail": "register s32 fixedIndex asm(\"r2\");"
+  },
+  {
+    "kind": "forced_register",
+    "file": "src/mapping.c",
+    "detail": "register u8 *destination asm(\"r1\");"
+  },
+  {
+    "kind": "forced_register",
+    "file": "src/resource_native.c",
+    "detail": "register const s16 *shortArgs asm(\"r1\") = (const s16 *)args;"
+  },
+  {
+    "kind": "forced_register",
+    "file": "src/resource_native.c",
+    "detail": "register u32 offset asm(\"r2\");"
+  },
+  {
+    "kind": "forced_register",
+    "file": "src/resource_native.c",
+    "detail": "register u8 *base asm(\"r0\");"
+  },
+  {
+    "kind": "forced_register",
+    "file": "src/resource_native.c",
+    "detail": "register u8 *slot asm(\"r0\");"
+  },
+  {
+    "kind": "forced_register",
+    "file": "src/save.c",
+    "detail": "register s32 *localCompletion asm(\"r3\");"
+  },
+  {
+    "kind": "forced_register",
+    "file": "src/save.c",
+    "detail": "register u32 localSize asm(\"r4\");"
+  },
+  {
+    "kind": "forced_register",
+    "file": "src/sound_fade_create.c",
+    "detail": "register void (*callback)(struct EngineTask *) asm(\"r10\");"
+  },
+  {
+    "kind": "forced_register",
+    "file": "src/sound_idle_wait.c",
+    "detail": "register u32 status asm(\"r0\");"
+  },
+  {
+    "kind": "forced_register",
+    "file": "src/sound_idle_wait.c",
+    "detail": "register u32 waitValue asm(\"r4\");"
+  },
+  {
+    "kind": "forced_register",
+    "file": "src/sound_idle_wait.c",
+    "detail": "register void (*callback)(struct EngineTask *) asm(\"r5\");"
+  },
+  {
+    "kind": "forced_register",
+    "file": "src/sram.c",
+    "detail": "register u16 wait asm(\"r0\") = *waitcnt;"
+  },
+  {
+    "kind": "forced_register",
+    "file": "src/sram.c",
+    "detail": "register u16 wait asm(\"r0\") = *waitcnt;                                \\"
+  },
+  {
+    "kind": "forced_register",
+    "file": "src/sram.c",
+    "detail": "register vu16 *waitcnt asm(\"r2\") = WAITCNT_ADDRESS;"
+  },
+  {
+    "kind": "forced_register",
+    "file": "src/sram.c",
+    "detail": "register vu16 *waitcnt asm(\"r2\") = WAITCNT_ADDRESS;                    \\"
+  },
+  {
+    "kind": "inline_assembly",
+    "file": "src/mapping.c",
+    "detail": "register s32 fixedIndex asm(\"r2\");"
+  },
+  {
+    "kind": "inline_assembly",
+    "file": "src/mapping.c",
+    "detail": "register u8 *destination asm(\"r1\");"
+  },
+  {
+    "kind": "inline_assembly",
+    "file": "src/resource_native.c",
+    "detail": "register const s16 *shortArgs asm(\"r1\") = (const s16 *)args;"
+  },
+  {
+    "kind": "inline_assembly",
+    "file": "src/resource_native.c",
+    "detail": "register u32 offset asm(\"r2\");"
+  },
+  {
+    "kind": "inline_assembly",
+    "file": "src/resource_native.c",
+    "detail": "register u8 *base asm(\"r0\");"
+  },
+  {
+    "kind": "inline_assembly",
+    "file": "src/resource_native.c",
+    "detail": "register u8 *slot asm(\"r0\");"
+  },
+  {
+    "kind": "inline_assembly",
+    "file": "src/save.c",
+    "detail": "register s32 *localCompletion asm(\"r3\");"
+  },
+  {
+    "kind": "inline_assembly",
+    "file": "src/save.c",
+    "detail": "register u32 localSize asm(\"r4\");"
+  },
+  {
+    "kind": "inline_assembly",
+    "file": "src/sound_fade_create.c",
+    "detail": "register void (*callback)(struct EngineTask *) asm(\"r10\");"
+  },
+  {
+    "kind": "inline_assembly",
+    "file": "src/sound_idle_wait.c",
+    "detail": "register u32 status asm(\"r0\");"
+  },
+  {
+    "kind": "inline_assembly",
+    "file": "src/sound_idle_wait.c",
+    "detail": "register u32 waitValue asm(\"r4\");"
+  },
+  {
+    "kind": "inline_assembly",
+    "file": "src/sound_idle_wait.c",
+    "detail": "register void (*callback)(struct EngineTask *) asm(\"r5\");"
+  },
+  {
+    "kind": "inline_assembly",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "#define MATCH_IN3(a, b, c) asm volatile(\"\" : : \"r\"(a), \"r\"(b), \"r\"(c))"
+  },
+  {
+    "kind": "inline_assembly",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "#define MATCH_OUT(value) asm volatile(\"\" : \"=r\"(value))"
+  },
+  {
+    "kind": "inline_assembly",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "#define MATCH_RW(value) asm volatile(\"\" : \"+r\"(value))"
+  },
+  {
+    "kind": "inline_assembly",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "#define MATCH_RW3(a, b, c) asm volatile(\"\" : \"+r\"(a), \"+r\"(b), \"+r\"(c))"
+  },
+  {
+    "kind": "inline_assembly",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "#define TARGET_REGISTER(name) asm(name)"
+  },
+  {
+    "kind": "inline_assembly",
+    "file": "src/sprite_affine_slots.c",
+    "detail": "#define TARGET_REGISTER(name) asm(name)"
+  },
+  {
+    "kind": "inline_assembly",
+    "file": "src/sprite_interpolation.c",
+    "detail": "#define TARGET_REGISTER(name) asm(name)"
+  },
+  {
+    "kind": "inline_assembly",
+    "file": "src/sprite_interpolation.c",
+    "detail": "asm(\"\" : \"+r\"(output), \"+r\"(inputX), \"+r\"(inputY) : : \"memory\");"
+  },
+  {
+    "kind": "inline_assembly",
+    "file": "src/sprite_transform.c",
+    "detail": "#define TARGET_REGISTER(name) asm(name)"
+  },
+  {
+    "kind": "inline_assembly",
+    "file": "src/sprite_transform.c",
+    "detail": "asm(\"\" : \"+r\"(inverseX));"
+  },
+  {
+    "kind": "inline_assembly",
+    "file": "src/sprite_transform.c",
+    "detail": "asm(\"\" : \"+r\"(product));"
+  },
+  {
+    "kind": "inline_assembly",
+    "file": "src/sram.c",
+    "detail": "register u16 wait asm(\"r0\") = *waitcnt;"
+  },
+  {
+    "kind": "inline_assembly",
+    "file": "src/sram.c",
+    "detail": "register u16 wait asm(\"r0\") = *waitcnt;                                \\"
+  },
+  {
+    "kind": "inline_assembly",
+    "file": "src/sram.c",
+    "detail": "register vu16 *waitcnt asm(\"r2\") = WAITCNT_ADDRESS;"
+  },
+  {
+    "kind": "inline_assembly",
+    "file": "src/sram.c",
+    "detail": "register vu16 *waitcnt asm(\"r2\") = WAITCNT_ADDRESS;                    \\"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "#define TARGET_REGISTER(name)"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "#define TARGET_REGISTER(name) asm(name)"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 angle TARGET_REGISTER(\"r4\") = angle0;"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 angle TARGET_REGISTER(\"r4\") = angle0;"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 angle TARGET_REGISTER(\"r4\") = angle0;"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 cosine TARGET_REGISTER(\"r9\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 cosine TARGET_REGISTER(\"r9\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 cosine TARGET_REGISTER(\"r9\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 invX TARGET_REGISTER(\"r4\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 invX TARGET_REGISTER(\"r4\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 invX TARGET_REGISTER(\"r4\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 invY TARGET_REGISTER(\"r0\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 invY TARGET_REGISTER(\"r0\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 invY TARGET_REGISTER(\"r0\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 scaleX TARGET_REGISTER(\"r5\") = scaleX0;"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 scaleX TARGET_REGISTER(\"r5\") = scaleX0;"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 scaleX TARGET_REGISTER(\"r5\") = scaleX0;"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 scaleY TARGET_REGISTER(\"r6\") = scaleY0;"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 scaleY TARGET_REGISTER(\"r6\") = scaleY0;"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 scaleY TARGET_REGISTER(\"r6\") = scaleY0;"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 sine TARGET_REGISTER(\"r10\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 sine TARGET_REGISTER(\"r10\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 sine TARGET_REGISTER(\"r10\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 sineTemp TARGET_REGISTER(\"r3\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 sineTemp TARGET_REGISTER(\"r3\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 sineTemp TARGET_REGISTER(\"r3\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 tableHold TARGET_REGISTER(\"r7\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 tableHold TARGET_REGISTER(\"r7\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 tableHold TARGET_REGISTER(\"r7\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 valueHold TARGET_REGISTER(\"r0\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 valueHold TARGET_REGISTER(\"r0\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register s32 valueHold TARGET_REGISTER(\"r0\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register struct AffineOamColumns *base TARGET_REGISTER(\"r3\") = entry;"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register struct AffineOamColumns *base TARGET_REGISTER(\"r3\") = entry;"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register struct AffineOamColumns *base TARGET_REGISTER(\"r3\") = entry;"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register u32 mask TARGET_REGISTER(\"r1\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register u32 mask TARGET_REGISTER(\"r1\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_matrix.c",
+    "detail": "register u32 mask TARGET_REGISTER(\"r1\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_slots.c",
+    "detail": "#define TARGET_REGISTER(name)"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_slots.c",
+    "detail": "#define TARGET_REGISTER(name) asm(name)"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_slots.c",
+    "detail": "register struct SpriteAffineSlot *entry TARGET_REGISTER(\"r2\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_slots.c",
+    "detail": "register struct SpriteEngineState **globalReg TARGET_REGISTER(\"r2\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_affine_slots.c",
+    "detail": "register u32 entryOffset TARGET_REGISTER(\"r0\") = slot << 3;"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_interpolation.c",
+    "detail": "#define TARGET_REGISTER(name)"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_interpolation.c",
+    "detail": "#define TARGET_REGISTER(name) asm(name)"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_interpolation.c",
+    "detail": "register s32 *output TARGET_REGISTER(\"r6\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_interpolation.c",
+    "detail": "register s32 *outputX TARGET_REGISTER(\"r1\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_interpolation.c",
+    "detail": "register s32 *outputY TARGET_REGISTER(\"r3\") = output;"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_interpolation.c",
+    "detail": "register u8 *afterX TARGET_REGISTER(\"r1\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_transform.c",
+    "detail": "#define TARGET_REGISTER(name)"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_transform.c",
+    "detail": "#define TARGET_REGISTER(name) asm(name)"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_transform.c",
+    "detail": "register s32 halfHeight TARGET_REGISTER(\"r3\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_transform.c",
+    "detail": "register s32 halfWidth TARGET_REGISTER(\"r4\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_transform.c",
+    "detail": "register s32 index TARGET_REGISTER(\"r0\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_transform.c",
+    "detail": "register s32 inverseX TARGET_REGISTER(\"r4\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_transform.c",
+    "detail": "register s32 inverseY TARGET_REGISTER(\"r0\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_transform.c",
+    "detail": "register s32 origin TARGET_REGISTER(\"r4\") = *(s16 *)(state + 328);"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_transform.c",
+    "detail": "register s32 packedX TARGET_REGISTER(\"r2\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_transform.c",
+    "detail": "register s32 packedY TARGET_REGISTER(\"r5\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_transform.c",
+    "detail": "register s32 value TARGET_REGISTER(\"r3\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_transform.c",
+    "detail": "register s32 value TARGET_REGISTER(\"r3\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_transform.c",
+    "detail": "register s32 value TARGET_REGISTER(\"r3\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_transform.c",
+    "detail": "register u32 flags TARGET_REGISTER(\"r4\") = state->packedXAndFlags;"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_transform.c",
+    "detail": "register u32 highMask TARGET_REGISTER(\"r8\");"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_transform.c",
+    "detail": "register u32 preserve TARGET_REGISTER(\"r3\") = 0xFFFFF000;"
+  },
+  {
+    "kind": "target_register_macro",
+    "file": "src/sprite_transform.c",
+    "detail": "register u32 rawAngle TARGET_REGISTER(\"r1\");"
+  }
+]

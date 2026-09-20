@@ -3,12 +3,18 @@
 Run `make pret-audit` to regenerate the detailed machine-readable reports at
 `reports/code/pret-standards.json` and `reports/code/pret-standards.md`. Run
 `python3 tools/audit_pret_standards.py --strict` when checking whether the
-hard-error backlog has reached zero.
+hard-error backlog has reached zero. GitHub Actions runs
+`make ci-audits`, which compares every current hard error with the explicit
+fingerprinted baseline in `tools/pret-audit-baseline.json`. A rule/file/detail
+combination absent from that baseline fails CI. Line numbers are excluded so
+ordinary edits above a finding do not create false regressions; duplicates are
+counted independently so one fixed error cannot hide one newly introduced
+error. The audit prints known, new, and resolved counts on one line.
 
 ## Verified snapshot: pointer/integer authenticity audit, 2026-09-20
 
 - `make compare` reproduces the Japanese ROM byte for byte.
-- `make english` succeeds and all 187 host tests pass.
+- `make english` succeeds and all 196 host tests pass.
 - The mechanical PRET audit reports **109 errors / 0 warnings / 17 documented
   exceptions** on one summary line. Every exception is enumerated in the
   generated report.
@@ -147,7 +153,10 @@ inherently necessary.
    claimed its branch layout was "not something the source controls", which was
    false. Treat an unverified claim in a nonmatching header as a lead to retest,
    not as a settled result.
-7. Enable the audit's `--strict` mode in CI only after hard errors reach zero.
+7. Keep CI baseline-strict while the historical hard-error backlog is reduced.
+   Remove resolved fingerprints from `tools/pret-audit-baseline.json` as cleanup
+   lands. Once the baseline is empty, plain `--strict` and baseline-strict mode
+   are equivalent.
 
 This order preserves the byte-identical build throughout the cleanup. A lower
 C percentage is preferable to counting C that violates the project's matching

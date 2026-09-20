@@ -69,7 +69,7 @@ OBJS        := $(ASM_OBJS) $(C_OBJS) $(ROM_DATA_OBJS) $(SOUND_DATA_OBJ)
 # Recompile matching C when a recovered structure or hardware definition changes.
 -include $(C_OBJS:.o=.d)
 
-.PHONY: all compare extract clean tidy stats test test-english ci script-sources script-catalog map-audit readability-audit pret-audit shiftability-audit
+.PHONY: all compare extract clean tidy stats test test-english ci ci-build ci-tests ci-audits script-sources script-catalog map-audit readability-audit pret-audit pret-audit-ci shiftability-audit
 .SUFFIXES:
 
 # Keep `all` first: it is the default goal.
@@ -268,12 +268,22 @@ readability-audit:
 pret-audit:
 	@$(PYTHON) tools/audit_pret_standards.py
 
+pret-audit-ci:
+	@$(PYTHON) tools/audit_pret_standards.py --baseline tools/pret-audit-baseline.json --strict
+
 shiftability-audit:
 	@$(PYTHON) tools/audit_shiftability.py
 
 # Public CI deliberately has no baserom. Local compare remains the stronger,
 # byte-for-byte verification when the legally obtained reference is present.
-ci: all english test
+ci-build: all english
+
+ci-tests: test ci-audits
+
+ci-audits: readability-audit pret-audit-ci shiftability-audit
+	@git diff --check
+
+ci: ci-build ci-tests
 
 CUSTOM_SCRIPT_SOURCES := $(wildcard scripts/source/*.json)
 CUSTOM_SCRIPTS := $(patsubst scripts/source/%.json,$(BUILD)/scripts/custom/%.SPC,$(CUSTOM_SCRIPT_SOURCES))

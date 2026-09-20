@@ -45,7 +45,8 @@ Run these commands from the project root:
 | `make compare` | Build `mar.gba` and compare every byte with `baserom.gba` |
 | `make test` | Run the complete host-side test suite |
 | `make test-english` | Run the English translation and runtime tests |
-| `make ci` | Build Japanese and English ROMs and run the tests used by GitHub Actions |
+| `make ci` | Build both ROMs, run all host tests, and run the CI source audits |
+| `make ci-audits` | Run readability, PRET, and shiftability audits with hard-error regression checks |
 | `make check-modern` | Check C sources with modern GCC without using its output in the ROM |
 | `make clean` | Remove generated builds and ROM files |
 
@@ -182,6 +183,7 @@ See the [sound source guide](sound/README.md) and
 | `make readability-audit` | Report unexplained magic numbers in C sources |
 | `make pret-audit` | Audit mechanically enforceable PRET source standards |
 | `make shiftability-audit` | Measure fixed software-address dependencies in C |
+| `make ci-audits` | Run all base-ROM-free CI audits and reject new PRET hard errors |
 | `make site` | Stage galleries and documentation under `build/site` and `build/wiki` |
 | `make docs-fetch` | Restore missing published gallery/report outputs |
 | `make snapshot` | Create a checksummed recovery archive under `backups/` |

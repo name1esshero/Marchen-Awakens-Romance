@@ -69,6 +69,47 @@ POINTER_DISPOSITION_FIELDS = re.compile(
 )
 
 
+def error_fingerprint(item):
+    """Return the stable identity used by CI for one hard error.
+
+    Line numbers are deliberately excluded so an unrelated edit above a
+    finding does not turn known debt into a false new error.  Duplicate
+    findings remain significant because callers compare these as multisets.
+    """
+    return {
+        "kind": item["kind"],
+        "file": item["file"],
+        "detail": item["detail"],
+    }
+
+
+def fingerprint_key(item):
+    return (item["kind"], item["file"], item["detail"])
+
+
+def compare_error_baseline(findings, baseline):
+    """Return known, new, and resolved hard-error counts and new findings."""
+    current_errors = [item for item in findings if item["severity"] == "error"]
+    current_counts = Counter(fingerprint_key(item) for item in current_errors)
+    baseline_counts = Counter(fingerprint_key(item) for item in baseline)
+    new_counts = current_counts - baseline_counts
+    resolved_counts = baseline_counts - current_counts
+    new_findings = []
+    remaining_baseline = baseline_counts.copy()
+    for item in current_errors:
+        key = fingerprint_key(item)
+        if remaining_baseline[key]:
+            remaining_baseline[key] -= 1
+        else:
+            new_findings.append(item)
+    return {
+        "known": sum((current_counts & baseline_counts).values()),
+        "new": sum(new_counts.values()),
+        "resolved": sum(resolved_counts.values()),
+        "new_findings": new_findings,
+    }
+
+
 def load_asm_set_symbols():
     symbols = set()
     for path in (ROOT / "asm").rglob("*.s"):
@@ -331,7 +372,7 @@ def audit_nonmatching():
     return findings
 
 
-def render_markdown(findings, manifest_count):
+def render_markdown(findings, manifest_count, baseline_status=None):
     counts = Counter(item["severity"] for item in findings)
     kinds = Counter(item["kind"] for item in findings)
     lines = [
@@ -348,6 +389,13 @@ def render_markdown(findings, manifest_count):
         f"Manifest ranges reviewed: **{manifest_count}**",
         (f"Audit totals: **{counts['error']} errors / {counts['warning']} warnings / "
          f"{counts['exception']} documented exceptions**"),
+    ]
+    if baseline_status is not None:
+        lines.append(
+            "CI hard-error baseline: "
+            f"**{baseline_status['known']} known / {baseline_status['new']} new / "
+            f"{baseline_status['resolved']} resolved**")
+    lines += [
         "",
         "## Findings by rule",
         "",
@@ -373,7 +421,9 @@ def main():
     parser.add_argument("--json", default="reports/code/pret-standards.json")
     parser.add_argument("--markdown", default="reports/code/pret-standards.md")
     parser.add_argument("--strict", action="store_true",
-                        help="return failure while standards errors remain")
+                        help="fail on every hard error, or only new errors when --baseline is used")
+    parser.add_argument("--baseline",
+                        help="JSON list of known hard-error fingerprints")
     args = parser.parse_args()
 
     entries = load_manifest()
@@ -383,17 +433,29 @@ def main():
     findings.sort(key=lambda item: (item["severity"], item["kind"],
                                     item["file"], item["line"]))
 
+    baseline_status = None
+    if args.baseline:
+        baseline = json.loads((ROOT / args.baseline).read_text())
+        baseline_status = compare_error_baseline(findings, baseline)
+
     json_path = ROOT / args.json
     markdown_path = ROOT / args.markdown
     json_path.parent.mkdir(parents=True, exist_ok=True)
     markdown_path.parent.mkdir(parents=True, exist_ok=True)
     json_path.write_text(json.dumps(findings, indent=2) + "\n")
-    markdown_path.write_text(render_markdown(findings, len(entries)))
+    markdown_path.write_text(render_markdown(findings, len(entries), baseline_status))
 
     counts = Counter(item["severity"] for item in findings)
     print(f"PRET audit: {counts['error']} errors, {counts['warning']} warnings, "
           f"{counts['exception']} documented exceptions")
-    if args.strict and counts["error"]:
+    if baseline_status is not None:
+        print("PRET hard-error baseline: "
+              f"{baseline_status['known']} known, {baseline_status['new']} new, "
+              f"{baseline_status['resolved']} resolved")
+        for item in baseline_status["new_findings"]:
+            print(f"NEW {item['kind']}: {item['file']}:{item['line']}: {item['detail']}")
+    if args.strict and ((baseline_status is None and counts["error"])
+                        or (baseline_status is not None and baseline_status["new"])):
         raise SystemExit(1)
 
 
