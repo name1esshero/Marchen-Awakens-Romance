@@ -19,10 +19,31 @@ struct SoundIdleTaskRecord
  * @param completion Optional task completion word.
  * @return The wait task, or null for an immediate result or inactive player.
  *
- * This natural reconstruction has the correct behavior and size, but agbcc
- * assigns three live values to different registers from the original ROM.
- * The exact symbolic implementation remains in assembly until the original
- * source lifetimes are recovered.
+ * This natural reconstruction has the correct behavior and size. The precise
+ * mechanism: the ROM preserves three values across the whole function
+ * (`push {r4,r5,r6,lr}`) -- `index` in r6 for its entire lifetime (from the
+ * top down to `((SoundIdleTaskRecord*)waitValue)->playerIndex = index;`,
+ * which is reached after the `bl CreateTask` that clobbers r0-r3), `wait` in
+ * r4 (later reused for the returned task pointer), and a transient scratch
+ * in r5 used only within the task-creation branch for CreateTask's manager/
+ * callback arguments. This candidate's `index` and the switch's per-player
+ * pointer temporary do not have overlapping live ranges (the switch's use
+ * ends before `index` is read again), so agbcc coalesces them into the same
+ * register (r5) and needs only two preserved registers (`push {r4,r5,lr}`)
+ * instead of three. The ROM's original source apparently did not permit that
+ * coalescing. This looks like a genuine compiler liveness-analysis choice
+ * rather than an instruction-order or expression-grouping difference, and
+ * none of the shapes in this project's playbook (statement splitting,
+ * declaration order, combined expressions) target that kind of difference;
+ * deliberately extending a variable's live range purely to prevent a
+ * coalescing the optimizer would otherwise make is compiler-steering of the
+ * same kind PRET_STANDARDS.md forbids elsewhere in this project (the
+ * rejected SpriteAffineAllocate/ScriptResourceSet register-forcing unions),
+ * so it was not attempted here either; a genuine fix would need to come
+ * from recovering why the ROM's original source kept these three values
+ * separate, not from a source-level trick aimed at the register allocator.
+ * The exact symbolic implementation remains in assembly until that is
+ * found.
  */
 struct EngineTask *CreateSoundPlayerIdleWait(
     u32 playerIndex, u32 wait, s32 *result, u32 *completion)
