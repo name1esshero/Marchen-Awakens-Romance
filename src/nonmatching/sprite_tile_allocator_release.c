@@ -1,11 +1,21 @@
 /*
  * Clean reference implementation of the OBJ-tile free-list release path.
  *
- * This source is intentionally not linked into the matching ROM.  agbcc
- * assigns the previous-span mask to r2 here, while the original instruction
- * stream assigns it to r0.  The generated code is otherwise equivalent.  The
- * exact routine remains in asm/code/code_0780C0.s until a natural matching C
- * shape is found.
+ * This source is intentionally not linked into the matching ROM. Verified
+ * genuinely close, not just plausible: every instruction in this ~90-
+ * instruction function matches the ROM byte-for-byte except one. At
+ * `previousSize = sizeMask; previousSize &= previousFlags;`, the ROM moves
+ * the mask (already held in r12 from an earlier `mov ip, r0`) into r0 and
+ * ANDs it with the already-live `previousFlags` (r1), keeping the mask's
+ * register as the destination (`mov r0, r12; ands r0, r1`). Every C shape
+ * tried here -- the two-statement form, one combined
+ * `sizeMask & previousFlags` expression (both operand orders), and reading
+ * `previous->sizeAndFlags` fresh instead of the cached `previousFlags`
+ * local -- keeps `previousFlags`'s own register (r1) as the destination
+ * instead (`mov r2, ip; and r1, r1, r2`): the AND's logical operands
+ * already match, only which one "survives" as the destination register
+ * differs. The exact routine remains in asm/code/code_0780C0.s until a
+ * natural matching C shape for this one instruction is found.
  */
 #include "sprite_tile_allocator.h"
 
