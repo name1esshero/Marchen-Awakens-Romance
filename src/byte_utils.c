@@ -3,6 +3,17 @@
 #include "rom_section.h"
 
 /** @brief Count bytes before the first zero terminator. */
+AT("000025A4")
+u32 CoreStringLength(const u8 *text)
+{
+    u32 length = 0;
+
+    while (*text++)
+        length++;
+    return length;
+}
+
+/** @brief Count bytes before the first zero terminator. */
 AT("0007A210")
 u32 ByteStringLength(const u8 *text)
 {

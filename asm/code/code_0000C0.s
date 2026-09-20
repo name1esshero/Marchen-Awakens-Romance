@@ -4208,12 +4208,7 @@ _0800259C:
 	bx r1
 	.byte 0x00
 	.byte 0x00
-	.4byte 0x1C01B500
-	.4byte 0xE0002200
-	.4byte 0x78083201
-	.4byte 0x28003101
-	.4byte 0x1C10D1FA
-	.4byte 0x4708BC02
+@ 0025A4..0025BC is decompiled as CoreStringLength(); see src/decompiled.json
 
 @ 0025BC..0025E4 is decompiled as ReadEngineCharacter(); see src/decompiled.json
 

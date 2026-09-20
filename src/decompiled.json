@@ -120,6 +120,12 @@
     "file": "src/runtime_misc.c"
   },
   {
+    "addr": "080025A4",
+    "size": 24,
+    "name": "CoreStringLength",
+    "file": "src/byte_utils.c"
+  },
+  {
     "addr": "080025BC",
     "size": 40,
     "name": "ReadEngineCharacter",

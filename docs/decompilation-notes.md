@@ -2639,3 +2639,16 @@ single-digit terminator. The reverse loop uses signed character promotion,
 which accounts for the ROM's `ldrsb`. This source reproduces all 108 bytes
 without register constraints, address arithmetic, volatile accesses, or inline
 assembly.
+
+## Hidden core string-length helper (2026-09-20)
+
+The six raw words at 0x080025A4 are a complete 24-byte Thumb function rather
+than literal data. `CoreStringLength` advances through a byte string, counts
+bytes until its zero terminator, and returns that count. The ordinary C loop
+reproduces every instruction exactly and is also the natural source shape used
+by the independently located `ByteStringLength` at 0x0807A210.
+
+No direct branch or stored Thumb pointer to 0x080025A5 was found in the ROM, so
+the recovered descriptive name does not claim a known caller or subsystem.
+The duplicate body is retained because both independently placed functions are
+present in the original ROM.
