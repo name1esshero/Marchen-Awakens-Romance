@@ -7206,7 +7206,7 @@ _0801B428:
 	ands r4, r1
 	orrs r4, r0
 	strb r4, [r3, #1]
-	bl sub_08008358
+	bl InitializeDialogueRuntime
 	ldr r3, _0801B4D4
 	adds r2, r7, r3
 	ldrh r1, [r2, #0]
@@ -10283,7 +10283,7 @@ _0801C930:
 	bl sub_0801D710
 	.global _0801C934
 _0801C934:
-	bl sub_08008358
+	bl InitializeDialogueRuntime
 	ldr r2, _0801CA18
 	mov r8, r2
 	ldr r1, _0801CA1C
@@ -12347,7 +12347,7 @@ _0801D5E8:
 	ands r4, r1
 	orrs r4, r0
 	strb r4, [r7, #1]
-	bl sub_08008358
+	bl InitializeDialogueRuntime
 	ldr r1, _0801D700
 	movs r2, #129
 	lsls r2, r2, #4

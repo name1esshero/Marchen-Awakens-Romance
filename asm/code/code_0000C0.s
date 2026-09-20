@@ -13834,7 +13834,7 @@ _08007D62:
 	b _080080AC
 	.global _08007D6A
 _08007D6A:
-	bl sub_08008358
+	bl InitializeDialogueRuntime
 	adds r4, r7, #0
 	adds r4, #28
 	adds r0, r4, #0
@@ -14141,7 +14141,7 @@ _08007FB0:
 	ldr r0, [r7, #44]
 	cmp r0, #0
 	beq _080080AC
-	bl sub_08008358
+	bl InitializeDialogueRuntime
 	adds r4, r7, #0
 	adds r4, #28
 	adds r0, r4, #0

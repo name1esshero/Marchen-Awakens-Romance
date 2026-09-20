@@ -181,6 +181,7 @@
   "08007664": "RuntimeSetFieldEE9",
   "08007678": "ClearRuntimeStatusBytes",
   "080078E4": "CreateTask078E4",
+  "08008358": "InitializeDialogueRuntime",
   "08008658": "RuntimeGetBufferE50",
   "08008668": "RuntimeClearOffsetBuffer",
   "08008684": "RuntimeAddOffsets",

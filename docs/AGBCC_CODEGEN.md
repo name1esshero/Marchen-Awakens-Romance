@@ -791,3 +791,14 @@ the function section and appears naturally when agbcc and the assembler emit
 the literal pool. Adding a separate two-byte tail object after the C function
 incorrectly grows the section to 116 bytes; the unadorned function produces
 the ROM's exact 112 bytes.
+
+### Adjacent constants can reproduce a subtraction chain naturally
+
+`InitializeDialogueRuntime` assigns the constants 0x1F43, 0x1E42, 0x1D49,
+and 0x1C4C to four consecutive halfwords. agbcc loads the first two constants,
+then derives the latter pair from 0x1E42 with `subs #249` and `subs #253`.
+Writing the four independently named constants in ordinary assignments emits
+that exact ROM sequence; an artificial temporary or explicit subtraction is
+unnecessary. Check the generated object before rewriting related constants as
+source-level arithmetic, because agbcc may already perform the sharing visible
+in the ROM.

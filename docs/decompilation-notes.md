@@ -2557,3 +2557,17 @@ resets every live slot in both named-resource classes, and changes the
 per-slice dispatch budget to 64. This also confirms that the halfwords at
 execution-state offsets 0x10 and 0x12 are the live counts for the first and
 second named-resource slot banks; their accessors now carry those names.
+
+## Dialogue runtime initialization (2026-09-20)
+
+`InitializeDialogueRuntime` at 0x08008358 initializes the shared dialogue and
+window state at IWRAM 0x03000810. It first clears the associated buffer table,
+sets the four tile and map allocation boundaries, installs the default flag
+word, enables modes 0 and 1, disables modes 2 and 3, clears the active-window
+field at offset 0x1C, and loads the default window graphics.
+
+The recovered `DialogueRuntimeConfig` names the fields proved by those stores.
+Bytes 0x0A..0x1B remain unknown and deliberately retain an offset-based name
+until their readers establish the layout. The fixed IWRAM location is exposed
+through the named `gIwramField0810` symbol rather than repeated as a raw address
+in C.

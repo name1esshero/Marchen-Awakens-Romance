@@ -43,6 +43,8 @@
 .set gIwramPointer2860Offset, 0x00002860
 .global gIwramField0810Offset
 .set gIwramField0810Offset, 0x00000810
+.global gIwramField0810
+.set gIwramField0810, 0x03000810
 .global gCrtFadeValueOffset
 .set gCrtFadeValueOffset, 0x00003AF8
 .global gBattleFieldRectXOffset

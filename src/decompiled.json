@@ -1134,6 +1134,12 @@
     "file": "src/random.c"
   },
   {
+    "addr": "08008358",
+    "size": 96,
+    "name": "InitializeDialogueRuntime",
+    "file": "src/runtime_accessors.c"
+  },
+  {
     "addr": "080083B8",
     "size": 40,
     "name": "RuntimeGetActorPartRecord",

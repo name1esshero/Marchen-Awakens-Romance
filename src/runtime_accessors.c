@@ -1,6 +1,7 @@
 /* Small, typed accessors shared by the map, scene, and link runtimes. */
 #include "runtime_accessors.h"
 #include "runtime_state.h"
+#include "dialogue.h"
 
 #include "rom_section.h"
 extern u8 gIwramBase[];
@@ -26,10 +27,58 @@ extern void sub_08056F90(void);
 #define IWRAM_FLAG_0810_MODE_2 (1 << 10)
 #define IWRAM_FLAG_0810_MODE_3 (1 << 11)
 
+#define DIALOGUE_TILE_BASE_DEFAULT  0x1F43
+#define DIALOGUE_TILE_LIMIT_DEFAULT 0x1E42
+#define DIALOGUE_MAP_BASE_DEFAULT   0x1D49
+#define DIALOGUE_MAP_LIMIT_DEFAULT  0x1C4C
+#define DIALOGUE_FLAGS_DEFAULT      0x1040
+
+enum DialogueFlagMode
+{
+    DIALOGUE_FLAG_MODE_0,
+    DIALOGUE_FLAG_MODE_1,
+    DIALOGUE_FLAG_MODE_2,
+    DIALOGUE_FLAG_MODE_3,
+};
+
 struct IwramFlags0810
 {
     u16 value;
 };
+
+struct DialogueRuntimeConfig
+{
+    u16 flags;
+    u16 tileBase;
+    u16 tileLimit;
+    u16 mapBase;
+    u16 mapLimit;
+    u8 unknown0A[18];
+    u16 activeWindow;
+};
+
+extern struct DialogueRuntimeConfig gIwramField0810;
+
+/** Initialize the shared dialogue/window buffers and their display defaults. */
+AT("00008358") void InitializeDialogueRuntime(void)
+{
+    struct DialogueRuntimeConfig *config = &gIwramField0810;
+    s32 zero;
+
+    InitBufferTable2050((u8 *)config);
+    zero = 0;
+    config->tileBase = DIALOGUE_TILE_BASE_DEFAULT;
+    config->tileLimit = DIALOGUE_TILE_LIMIT_DEFAULT;
+    config->mapBase = DIALOGUE_MAP_BASE_DEFAULT;
+    config->mapLimit = DIALOGUE_MAP_LIMIT_DEFAULT;
+    config->flags = DIALOGUE_FLAGS_DEFAULT;
+    IwramSetFlags0810(DIALOGUE_FLAG_MODE_0, TRUE);
+    IwramSetFlags0810(DIALOGUE_FLAG_MODE_1, TRUE);
+    IwramSetFlags0810(DIALOGUE_FLAG_MODE_2, FALSE);
+    IwramSetFlags0810(DIALOGUE_FLAG_MODE_3, FALSE);
+    config->activeWindow = zero;
+    DialogueLoadWindowGraphics(1, TRUE);
+}
 
 /** @return This console's multiplayer id, bits 4-5 of REG_SIOCNT (the
  * hardware multi-play ID field). */

@@ -7044,7 +7044,7 @@ _08014966:
 	movs r0, #1
 	ldr r4, [sp, #52]
 	strb r0, [r4, #3]
-	bl sub_08008358
+	bl InitializeDialogueRuntime
 	ldr r0, _08014A04
 	b sub_08014C2A
 	.global _080149E0

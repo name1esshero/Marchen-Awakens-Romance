@@ -325,58 +325,7 @@ _08008300:
 
 @ 00832C..008358 is decompiled as RuntimeRandom(); see src/decompiled.json
 
-	.section .rom.00008358, "ax"
-	.syntax unified
-	.thumb_func
-	.thumb
-	.global sub_08008358
-sub_08008358:
-	push {r4, r5, lr}
-	ldr r4, _080083AC
-	adds r0, r4, #0
-	bl InitBufferTable2050
-	movs r5, #0
-	ldr r0, _080083B0
-	strh r0, [r4, #2]
-	ldr r0, _080083B4
-	strh r0, [r4, #4]
-	subs r0, #249
-	strh r0, [r4, #6]
-	subs r0, #253
-	strh r0, [r4, #8]
-	movs r0, #130
-	lsls r0, r0, #5
-	strh r0, [r4, #0]
-	movs r0, #0
-	movs r1, #1
-	bl IwramSetFlags0810
-	movs r0, #1
-	movs r1, #1
-	bl IwramSetFlags0810
-	movs r0, #2
-	movs r1, #0
-	bl IwramSetFlags0810
-	movs r0, #3
-	movs r1, #0
-	bl IwramSetFlags0810
-	strh r5, [r4, #28]
-	movs r0, #1
-	movs r1, #1
-	bl DialogueLoadWindowGraphics
-	pop {r4, r5}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _080083AC
-_080083AC:
-	.4byte 0x03000810  @ IWRAM+0x810
-	.global _080083B0
-_080083B0:
-	.4byte 0x00001F43
-	.global _080083B4
-_080083B4:
-	.4byte 0x00001E42
+@ 008358..0083B8 is decompiled as InitializeDialogueRuntime(); see src/decompiled.json
 
 @ 0083B8..0083E0 is decompiled as RuntimeGetActorPartRecord(); see src/decompiled.json
 
