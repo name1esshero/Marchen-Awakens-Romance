@@ -286,7 +286,9 @@ u32 NfpGetEntrySizeByName(const char *archive, const char *member)
     if ((u32)index + 1 >= NfpGetEntryCount(handle))
         end = gNfpState->mounts[handle].size;
     else
+        /* PRET_PTR_INT_OK: operation=compute payload end word; evidence=ROM adds base and next offset as words; typed=end also receives mount size */
         end = (u32)base + *(u32 *)((u8 *)entry + sizeof(*entry) + 12);
+    /* PRET_PTR_INT_OK: operation=subtract payload address words; evidence=ROM uses SUB on end and data; typed=end may be mount size or address */
     return end - (u32)data;
 }
 AT("0007AD4C")

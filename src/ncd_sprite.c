@@ -33,10 +33,7 @@ AT("0007B9CC") void NcdResetResource(u32 resource)
  resourcesOffset=0x61C;
  resources=*(struct SpriteResourceDescriptor **)((u8 *)state+resourcesOffset);
  offset <<=5;
- {
-  u32 slot=offset+(u32)resources;
-  HeapFree(heap,*(void **)(slot+4));
- }
+ HeapFree(heap,resources[resource].bindingIndices);
  {
   struct SpriteResourceDescriptor *resetBase;
   resetBase=*(struct SpriteResourceDescriptor **)

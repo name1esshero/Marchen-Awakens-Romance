@@ -36,6 +36,7 @@ AT("0007F438") s32 ScriptResourceGetFirst(u8 *record, s32 selector)
         if (!slot)
             return -1;
     }
+    /* PRET_PTR_INT_OK: operation=return resource word; evidence=script accessor ABI returns s32; typed=resource slots hold pointers and scalars */
     return (s32)ScriptResourceGetValue(*(u32 **)(record + 4), selector);
 }
 
@@ -61,6 +62,7 @@ AT("0007F470") s32 ScriptResourceGetSecond(u8 *record, s32 selector)
         if (!slot)
             return 0;
     }
+    /* PRET_PTR_INT_OK: operation=return resource word; evidence=script accessor ABI returns s32; typed=resource slots hold pointers and scalars */
     return (s32)ScriptResourceGetValueOrDefault(*(u32 **)(record + 4), selector);
 }
 AT("0007F470") const u8 ScriptResourceGetSecondTail[2] = {0};

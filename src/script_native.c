@@ -253,6 +253,7 @@ AT("0008047C") s32 ScriptNativeExec(
     strcpy(name, (const char *)arguments[0]);
     strupr(name);
     if (ScriptResourceLoadAndInstall(
+            /* PRET_PTR_INT_OK: operation=pass name buffer as word; evidence=ScriptResourceLoadAndInstall second ABI argument is s32; typed=callee is not yet typed as a string */
             VM->state->frame->resourceName, (s32)name) != 0)
         return -1;
     return 1;

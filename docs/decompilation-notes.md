@@ -1333,19 +1333,20 @@ function waiting for a compiler-shape trick. Its speculative
 named assembly follows the PRET standard: exact matching takes priority, and
 genuine hand-written assembly must not be disguised as forced or artificial C.
 
-## Union aliasing recovers GameStateAddResourceCounter
+## Rejected union match for GameStateAddResourceCounter
 
-`GameStateAddResourceCounter` at 0x080562C8 now compiles byte-identically from
-clean C in `src/game_state_records.c`. It adds a possibly signed script delta
-to the u32 resource counter at game state +0x38BC, then clamps the unsigned
-result to 999999. The ROM deliberately reloads the game-state pointer and
-counter after the first store instead of forwarding the value already held in
-a register.
+`GameStateAddResourceCounter` at 0x080562C8 adds a script delta to the u32
+resource counter at game state +0x38BC, then clamps the unsigned result to
+999999. The ROM reloads the game-state pointer and counter after the first
+store instead of forwarding the value already held in a register.
 
-Representing the IWRAM root slot as a union of the typed game-state pointer and
-its raw word gives agbcc the alias relationship needed to retain those reloads.
-That model also produces the ROM's exact r3/r4 root and offset allocation; it
-requires no `volatile`, register pin, inline assembly, or raw address.
+A union of the typed game-state pointer and its raw word made agbcc retain the
+reloads and emit identical bytes. The union did not model a ROM operation; it
+only changed alias analysis and register allocation. It was therefore rejected
+as compiler steering. The exact routine is restored to named assembly, and
+the ordinary typed-pointer candidate is kept in
+`src/nonmatching/game_state_resource_counter.c`. The candidate is eight bytes
+shorter because agbcc legally reuses the first load.
 
 The sibling getter at 0x08056290 is now also byte-exact. Its original shape is
 different: it stores the fixed IWRAM root-slot offset `0x3FDC` in a named local,
@@ -2248,12 +2249,21 @@ or compiler switch was accepted to force the match.
 
 ## Consumable inventory copy counter (2026-09-20)
 
-ROM 0x08057078..0x080570BC is now `CountConsumableInventoryCopies`, a
-byte-identical ordinary-C scan of all 256 signed-halfword slots at game-state
-offset `0x31D0`. The routine maintains one fixed-point counter for the slot
-walk and another that advances only when the requested ID is present; the
-latter is the returned number of copies. Its three callers now branch to the
-relocatable name, and the obsolete assembly body was removed.
+ROM 0x08057078..0x080570BC is identified as
+`CountConsumableInventoryCopies`, a scan of all 256 signed-halfword slots at
+game-state offset `0x31D0`. The routine maintains one fixed-point counter for
+the slot walk and another that advances only when the requested ID is present;
+the latter is the returned number of copies. Its three callers branch to the
+descriptive relocatable assembly symbol.
+
+The ROM forms the first slot address by loading the game-state pointer and
+adding `0x31D0`, then advances that pointer by two bytes. Natural pointer C
+reproduces the behavior and structure but swaps the registers holding the base
+and offset. A pointer/`u32` union could make agbcc emit identical bytes, but it
+served only to steer those registers and was rejected under the PRET rule.
+The clean candidate is retained in `src/nonmatching/consumable_inventory.c`;
+the matching implementation remains assembly until its natural source shape
+is recovered.
 
 This trace corrected an earlier classification: `0x31D0` is the consumable
 inventory, while `0x33D0` is its 512-byte snapshot. The getters, slot clearer,

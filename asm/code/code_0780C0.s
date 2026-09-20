@@ -5057,7 +5057,67 @@ _0807CC00:
 
 @ 07CC18..07CC84 is decompiled as SpriteAffineFind(); see src/decompiled.json
 
-@ 07CC84..07CCEC is decompiled as SpriteAffineAllocate(); see src/decompiled.json
+	.section .rom.0007CC84, "ax"
+	.syntax unified
+	.thumb
+	.thumb_func
+	.global SpriteAffineAllocate
+SpriteAffineAllocate:
+	push {r4, r5, r6, r7, lr}
+	mov r7, r8
+	push {r7}
+	lsls r0, r0, #16
+	lsrs r0, r0, #16
+	mov r8, r0
+	lsls r2, r2, #16
+	asrs r2, r2, #16
+	ldr r4, _0807CCD0
+	ldr r0, [r4]
+	ldr r3, [r0, #16]
+	ldr r0, [r0, #20]
+	mvns r5, r0
+	bics r5, r3
+	movs r3, #0
+	movs r0, #1
+	mov ip, r0
+	adds r7, r4, #0
+	lsls r4, r1, #16
+	orrs r4, r2
+	movs r6, #28
+_0807CCAE:
+	mov r2, ip
+	lsls r2, r3
+	adds r0, r5, #0
+	ands r0, r2
+	cmp r0, #0
+	beq _0807CCD4
+	ldr r0, [r7]
+	ldr r1, [r0, #16]
+	orrs r1, r2
+	str r1, [r0, #16]
+	adds r1, r0, r6
+	mov r2, r8
+	strh r2, [r1]
+	str r4, [r1, #4]
+	str r3, [r0, #24]
+	adds r0, r3, #0
+	b _0807CCE0
+_0807CCD0:
+	.4byte gSpriteEngineState
+_0807CCD4:
+	adds r6, #8
+	adds r3, #1
+	cmp r3, #31
+	ble _0807CCAE
+	movs r0, #1
+	negs r0, r0
+_0807CCE0:
+	pop {r3}
+	mov r8, r3
+	pop {r4, r5, r6, r7}
+	pop {r1}
+	bx r1
+	.balign 4, 0
 
 @ 07CCEC..07CD24 is decompiled as SpriteEngineSetFlag10(); see src/decompiled.json
 
@@ -7665,7 +7725,85 @@ _0807E960:
 
 @ 07E9A8..07E9F4 is decompiled as ScriptResourceFind(); see src/decompiled.json
 
-@ 07E9F4..07EA8C is decompiled as ScriptResourceSet(); see src/decompiled.json
+	.section .rom.0007E9F4, "ax"
+	.syntax unified
+	.thumb
+	.thumb_func
+	.global ScriptResourceSet
+ScriptResourceSet:
+	push {r4, r5, r6, r7, lr}
+	mov r7, sl
+	mov r6, r9
+	mov r5, r8
+	push {r5, r6, r7}
+	adds r7, r0, #0
+	adds r6, r1, #0
+	mov r8, r2
+	adds r5, r3, #0
+	bl ScriptResourceHash
+	mov sl, r0
+	adds r0, r7, #0
+	adds r1, r6, #0
+	bl ScriptResourceFind
+	cmp r0, #0
+	beq _0807EA1C
+	movs r0, #1
+	b _0807EA7C
+_0807EA1C:
+	adds r0, r6, #0
+	bl strlen
+	adds r1, r0, #0
+	ldr r0, _0807EA74
+	mov r9, r0
+	ldr r0, [r0]
+	ldr r0, [r0, #12]
+	ldr r0, [r0, #4]
+	adds r1, r5, r1
+	adds r1, #13
+	bl HeapAlloc
+	adds r4, r0, #0
+	cmp r4, #0
+	beq _0807EA78
+	adds r0, #8
+	mov r1, r8
+	adds r2, r5, #0
+	bl CpuCopy
+	adds r0, r5, #0
+	adds r0, #8
+	adds r0, r4, r0
+	str r0, [r4, #4]
+	strb r7, [r0]
+	ldr r0, [r4, #4]
+	adds r0, #1
+	adds r1, r6, #0
+	bl strcpy
+	mov r1, r9
+	ldr r0, [r1]
+	ldr r0, [r0, #12]
+	ldr r1, [r0, #8]
+	mov r2, sl
+	lsls r0, r2, #2
+	adds r0, r0, r1
+	ldr r1, [r0]
+	str r1, [r4]
+	str r4, [r0]
+	movs r0, #0
+	b _0807EA7C
+	.balign 4, 0
+_0807EA74:
+	.4byte gScriptBytecodeRoot
+_0807EA78:
+	movs r0, #1
+	negs r0, r0
+_0807EA7C:
+	pop {r3, r4, r5}
+	mov r8, r3
+	mov r9, r4
+	mov sl, r5
+	pop {r4, r5, r6, r7}
+	pop {r1}
+	bx r1
+	.balign 4, 0
 
 	@ 07EA8C..07EB18 is decompiled as ScriptResourceRemove().
 	.section .rom.0007EB18, "ax"

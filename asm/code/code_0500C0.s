@@ -13774,7 +13774,43 @@ _0805628A:
 @ 056290..0562C8 is decompiled as GameStateGetResourceCounter();
 @ see src/decompiled.json
 
-@ 0562C8..056304 is decompiled as GameStateAddResourceCounter(); see src/decompiled.json
+	.section .rom.000562C8, "ax"
+	.syntax unified
+	.thumb
+	.thumb_func
+	.global GameStateAddResourceCounter
+GameStateAddResourceCounter:
+	push {r4, lr}
+	ldr r3, _080562F4
+	ldr r1, _080562F8
+	adds r3, r3, r1
+	ldr r2, [r3]
+	ldr r4, _080562FC
+	adds r2, r2, r4
+	ldr r1, [r2]
+	adds r1, r1, r0
+	str r1, [r2]
+	ldr r0, [r3]
+	adds r2, r0, r4
+	ldr r1, [r2]
+	ldr r0, _08056300
+	cmp r1, r0
+	bls _080562EC
+	adds r0, #1
+	str r0, [r2]
+_080562EC:
+	pop {r4}
+	pop {r0}
+	bx r0
+	.balign 4, 0
+_080562F4:
+	.4byte gIwramBase
+_080562F8:
+	.4byte gMapGenerationRootOffset
+_080562FC:
+	.4byte 0x000038BC
+_08056300:
+	.4byte 999998
 	.section .rom.00056304, "ax"
 
 	.thumb_func
@@ -15317,10 +15353,51 @@ _08057070:
 	pop {r1}
 	bx r1
 
-@ 057078..0570BC is decompiled as CountConsumableInventoryCopies(); see src/decompiled.json
-
-	.section .rom.000570BC, "ax"
-	.syntax unified
+	.thumb_func
+	.thumb
+	.global CountConsumableInventoryCopies
+CountConsumableInventoryCopies:
+	push {r4, r5, r6, r7, lr}
+	lsls r0, r0, #16
+	asrs r6, r0, #16
+	movs r5, #0
+	ldr r0, _080570B4
+	ldr r0, [r0, #0]
+	movs r2, #128
+	lsls r2, r2, #9
+	ldr r3, _080570B8
+	adds r1, r0, r3
+	adds r3, r2, #0
+	adds r4, r2, #0
+	.global _08057090
+_08057090:
+	movs r7, #0
+	ldrsh r0, [r1, r7]
+	cmp r0, r6
+	bne _0805709E
+	adds r0, r3, #0
+	adds r3, r3, r4
+	asrs r5, r0, #16
+	.global _0805709E
+_0805709E:
+	adds r0, r2, #0
+	adds r2, r2, r4
+	adds r1, #2
+	asrs r0, r0, #16
+	cmp r0, #255
+	ble _08057090
+	adds r0, r5, #0
+	pop {r4, r5, r6, r7}
+	pop {r1}
+	bx r1
+	.byte 0x00
+	.byte 0x00
+	.global _080570B4
+_080570B4:
+	.4byte 0x03003FDC  @ IWRAM+0x3FDC
+	.global _080570B8
+_080570B8:
+	.4byte 0x000031D0
 
 	.thumb_func
 	.thumb

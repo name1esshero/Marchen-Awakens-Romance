@@ -333,15 +333,13 @@ void SpriteBuildAffineMatrix(struct SpriteAffineTransform *transform)
     index = mask;
     index &= rawAngle;
     index <<= 1;
-    index += (s32)table;
-    sine = *(s16 *)index;
+    sine = *(const s16 *)((const u8 *)table + index);
     index = *(s16 *)&state->angle;
     inverseX = 0x400;
     index += inverseX;
     index &= mask;
     index <<= 1;
-    index += (s32)table;
-    cosine = *(s16 *)index;
+    cosine = *(const s16 *)((const u8 *)table + index);
     inverseX = SpriteMathDivide65536ByS16(state->scaleX);
     asm("" : "+r"(inverseX));
     inverseX = (inverseX << 16) >> 16;

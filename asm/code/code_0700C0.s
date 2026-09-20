@@ -4304,9 +4304,9 @@ _08071DB0:
 
 @ 071EB0..071EBC is decompiled as MapGenerationGetPointer18(); see src/decompiled.json
 
-@ 071EBC..071EC8 is decompiled as MapGenerationGetPointer1C(); see src/decompiled.json
+@ 071EBC..071EC8 is decompiled as MapGenerationGetValue1C(); see src/decompiled.json
 
-@ 071EC8..071ED4 is decompiled as MapGenerationGetPointer20(); see src/decompiled.json
+@ 071EC8..071ED4 is decompiled as MapGenerationGetValue20(); see src/decompiled.json
 
 @ 071ED4..071EE4 is decompiled as MapGenerationSetPointer1C(); see src/decompiled.json
 

@@ -522,16 +522,23 @@ boundary before the surviving resolver. Whenever C replaces bytes from the
 middle of an assembly section, anchor the first surviving byte in its own
 addressed section before trusting a function-level object comparison.
 
-### Preserve a pointer load as an integer until the first offset addition
+### Reject pointer-to-integer steering for a register-only match
 
 `CountConsumableInventoryCopies` at 0x08057078 scans 256 signed-halfword
-inventory slots. A direct `u8 *` initialization makes agbcc load the runtime
-base into r1, while the ROM loads it into r0 and writes the first computed
-entry address to r1. Keeping the loaded RAM address in the integer member of
-a pointer/address union until adding the named inventory offset expresses
-those two distinct values and reproduces the original allocation. The pointer
-member is selected before any dereference. This avoids host pointer-size
-warnings as well as fixed ROM addresses and compiler hints.
+inventory slots. The ROM loads the game-state pointer, adds `0x31D0`, and then
+advances the resulting pointer by two bytes per iteration. This is ordinary
+pointer arithmetic. The natural C candidate in
+`src/nonmatching/consumable_inventory.c` expresses exactly that operation,
+but agbcc assigns the loaded base and offset to different low registers.
+
+A pointer/address union was found that produced identical bytes by retaining
+the pointer temporarily as a `u32`. That representation does not explain an
+operation performed by the ROM; it only changes register allocation. It was
+therefore rejected as compiler steering and the exact function was restored
+to assembly. This is the boundary to apply elsewhere: integer arithmetic is
+faithful when the generated instructions operate on values as integers, but
+an integer spelling used only to exchange registers is a documented
+nonmatching hypothesis, not a completed decompilation.
 
 The two independent fixed-point counters are also significant. One advances
 through all 256 slots; the other advances only on a match and therefore

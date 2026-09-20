@@ -61,9 +61,8 @@ void SpriteAffineWriteNormal(s32 index, s32 angle0, s32 scaleX0, s32 scaleY0)
     angle += 0x400;
     angle &= mask;
     angle <<= 1;
-    angle += (s32)table;
     MATCH_OUT(valueHold);
-    cosine = *(const s16 *)angle;
+    cosine = *(const s16 *)((const u8 *)table + angle);
     MATCH_IN3(sineTemp, tableHold, valueHold);
     invX = SpriteMathDivide65536ByS16(scaleX);
     MATCH_RW(invX);
@@ -114,9 +113,8 @@ void SpriteAffineWriteMirrored(s32 index, s32 angle0, s32 scaleX0, s32 scaleY0)
     angle += 0x400;
     angle &= mask;
     angle <<= 1;
-    angle += (s32)table;
     MATCH_OUT(valueHold);
-    cosine = *(const s16 *)angle;
+    cosine = *(const s16 *)((const u8 *)table + angle);
     MATCH_IN3(sineTemp, tableHold, valueHold);
     invX = SpriteMathDivide65536ByS16(scaleX);
     MATCH_RW(invX);
@@ -168,9 +166,8 @@ void SpriteAffineWriteAlternateAxis(s32 index, s32 angle0, s32 scaleX0, s32 scal
     angle += 0x400;
     angle &= mask;
     angle <<= 1;
-    angle += (s32)table;
     MATCH_OUT(valueHold);
-    cosine = *(const s16 *)angle;
+    cosine = *(const s16 *)((const u8 *)table + angle);
     MATCH_IN3(sineTemp, tableHold, valueHold);
     invX = SpriteMathDivide65536ByS16(scaleX);
     MATCH_RW(invX);

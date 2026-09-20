@@ -60,10 +60,10 @@ AT("00071E8C") void *MapGenerationGetPointer0C(void) { return MapGenerationGetSt
 AT("00071E98") void *MapGenerationGetPointer14(void) { return MapGenerationGetState()->pointer14; }
 AT("00071EA4") void *MapGenerationGetPointer10(void) { return MapGenerationGetState()->pointer10; }
 AT("00071EB0") void *MapGenerationGetPointer18(void) { return MapGenerationGetState()->pointer18; }
-AT("00071EBC") void *MapGenerationGetPointer1C(void) { return MapGenerationGetState()->pointer1C; }
-AT("00071EC8") void *MapGenerationGetPointer20(void) { return MapGenerationGetState()->pointer20; }
-AT("00071ED4") void MapGenerationSetPointer1C(void *v) { MapGenerationGetState()->pointer1C = v; }
-AT("00071EE4") void MapGenerationSetPointer20(void *v) { MapGenerationGetState()->pointer20 = v; }
+AT("00071EBC") u32 MapGenerationGetValue1C(void) { return MapGenerationGetState()->value1C; }
+AT("00071EC8") u32 MapGenerationGetValue20(void) { return MapGenerationGetState()->value20; }
+AT("00071ED4") void MapGenerationSetValue1C(u32 v) { MapGenerationGetState()->value1C = v; }
+AT("00071EE4") void MapGenerationSetValue20(u32 v) { MapGenerationGetState()->value20 = v; }
 
 /** @brief Read an entry's tile X. @param i Entry index. @return Signed tile X. */
 AT("00071EF4") s32 MapGenerationGetTileX(u32 i) { return MapGenerationGetState()->tileX[i]; }
@@ -326,19 +326,19 @@ AT("000124E0") s32 ScriptNativeMapResetActor(u32 count, const s32 *args, s32 *re
     return 1;
 }
 
-/** Native script command: read MapGenerationGetPointer1C() as a pixel
+/** Native script command: read MapGenerationGetValue1C() as a pixel
  * offset (its raw tile value shifted left 3). @return Always 1. */
 AT("00012500") s32 ScriptNativeMapGetPointer1COffset(u32 count, const s32 *args, s32 *result)
 {
-    *result = (u32)MapGenerationGetPointer1C() << 3;
+    *result = MapGenerationGetValue1C() << 3;
     return 1;
 }
 
-/** Native script command: read MapGenerationGetPointer20() as a pixel
+/** Native script command: read MapGenerationGetValue20() as a pixel
  * offset (its raw tile value shifted left 3). @return Always 1. */
 AT("00012514") s32 ScriptNativeMapGetPointer20Offset(u32 count, const s32 *args, s32 *result)
 {
-    *result = (u32)MapGenerationGetPointer20() << 3;
+    *result = MapGenerationGetValue20() << 3;
     return 1;
 }
 

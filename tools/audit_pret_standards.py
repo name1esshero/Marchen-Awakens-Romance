@@ -12,8 +12,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_PATHS = tuple(sorted((ROOT / "src").glob("*.c")))
+ALL_SOURCE_PATHS = tuple(sorted((ROOT / "src").rglob("*.c")))
 HEADER_PATHS = tuple(sorted((ROOT / "include").rglob("*.h")))
 CODE_PATHS = SOURCE_PATHS + HEADER_PATHS
+POINTER_AUDIT_PATHS = ALL_SOURCE_PATHS + HEADER_PATHS
 
 PROHIBITED = (
     ("forced_register", re.compile(r"\bregister\b[^;\n]*\basm\s*\(")),
@@ -29,10 +31,61 @@ NONMATCHING_REASON = re.compile(
     r"mismatch|register allocation|instruction order|codegen|compiler|agbcc",
     re.IGNORECASE,
 )
+POINTER_DECLARATION = re.compile(
+    r"\b(?:const\s+|volatile\s+|struct\s+\w+\s+|union\s+\w+\s+)*"
+    r"(?:void|u8|s8|u16|s16|u32|s32|char|\w+)\s*\*+\s*(\w+)"
+)
+POINTER_ARRAY_DECLARATION = re.compile(
+    r"\b(?:extern\s+)?(?:const\s+|volatile\s+)*"
+    r"(?:void|u8|s8|u16|s16|u32|s32|char|\w+)\s+(\w+)\s*\["
+)
+SCALAR_DECLARATION = re.compile(
+    r"\b(?:const\s+|volatile\s+)*(?:bool8|u8|s8|u16|s16|u32|s32|uintptr_t)"
+    r"\s+(\w+)(?!\s*\()"
+)
+POINTER_INTEGER_CAST = re.compile(
+    r"\(\s*(?:u32|s32|uintptr_t)\s*\)\s*(?:\(\s*)?"
+    r"(?P<address>&\s*)?(?P<name>[A-Za-z_]\w*)"
+    r"(?![A-Za-z0-9_]|\s*(?:->|\.|\[))"
+)
+THUMB_POINTER_ENCODING = re.compile(
+    r"\(\s*void\s*\*\s*\)\s*\(\s*\(\s*u32\s*\)\s*"
+    r"(?P<name>[A-Za-z_]\w*)\s*\+\s*1\s*\)"
+)
+ADDRESS_UNION = re.compile(r"\bunion\s+(\w+)\s*\{(?P<body>.*?)\};", re.DOTALL)
+ADDRESS_INTEGER_MEMBER = re.compile(
+    r"\b(?:u32|s32|uintptr_t)\s+(?:\w*(?:address|addr)\w*|raw)\s*;",
+    re.IGNORECASE,
+)
+POINTER_MEMBER = re.compile(r"\b\w+(?:\s+\w+)?\s*\*+\s*\w+\s*;")
+SERIALIZED_POINTER_FIELD = re.compile(
+    r"\.\s*(?:wave|toneWave)\s*=\s*\(\s*u32\s*\)\s*(?P<name>[A-Za-z_]\w*)"
+)
+POINTER_DISPOSITION = re.compile(
+    r"PRET_PTR_INT_OK:\s*(.*?)(?=\s*(?:\*/|//|\\?$))"
+)
+POINTER_DISPOSITION_FIELDS = re.compile(
+    r"^operation=.+;\s*evidence=.+;\s*typed=.+$"
+)
+
+
+def load_asm_set_symbols():
+    symbols = set()
+    for path in (ROOT / "asm").rglob("*.s"):
+        for match in re.finditer(r"^\s*\.set\s+(\w+)\s*,", path.read_text(errors="replace"),
+                                 re.MULTILINE):
+            symbols.add(match.group(1))
+    return symbols
+
+
+ASM_SET_SYMBOLS = load_asm_set_symbols()
 
 
 def relative(path: Path) -> str:
-    return path.relative_to(ROOT).as_posix()
+    try:
+        return path.relative_to(ROOT).as_posix()
+    except ValueError:
+        return path.as_posix()
 
 
 def code_lines(path: Path):
@@ -84,6 +137,23 @@ def issue(kind: str, path: Path, line: int, detail: str, severity: str = "error"
     }
 
 
+def pointer_disposition(current: str, previous: str):
+    """Return a complete pointer/integer exception note, if present.
+
+    Every accepted note names the modeled operation, the ROM/caller/ABI
+    evidence, and why a typed pointer does not express that operation.
+    """
+    disposition = POINTER_DISPOSITION.search(current)
+    if disposition is None:
+        disposition = POINTER_DISPOSITION.search(previous)
+    if disposition is None:
+        return None
+    reason = disposition.group(1).strip()
+    if not POINTER_DISPOSITION_FIELDS.match(reason):
+        return None
+    return reason
+
+
 def audit_prohibited():
     findings = []
     for path in CODE_PATHS:
@@ -111,6 +181,92 @@ def audit_rom_addresses():
             for match in ROM_ADDRESS.finditer(code):
                 findings.append(issue("raw_rom_address", path, number,
                                       f"{match.group(0)} in {original.strip()}"))
+    return findings
+
+
+def audit_pointer_integer_arithmetic(paths=None):
+    """Flag address values recast as integers for human review.
+
+    Typed pointer addition is normal C and is deliberately not reported. A
+    cast to an integer can be legitimate for a hardware encoding or bit mask,
+    but it can also be a register-allocation steering trick. Regex cannot
+    prove which case applies, so these findings are warnings.
+    """
+    findings = []
+    if paths is None:
+        paths = POINTER_AUDIT_PATHS
+    for path in paths:
+        relative_path = relative(path)
+        # Assembly is not in POINTER_AUDIT_PATHS. Keep the explicit guard so
+        # callers cannot accidentally broaden this audit into source wrappers
+        # whose job is to express fixed machine interfaces.
+        if relative_path.startswith("asm/") or relative_path == "include/gba/bios.h":
+            continue
+        lines = list(code_lines(path))
+        name_kinds = {}
+        previous_original = ""
+        for number, original, code in lines:
+            # The latest declaration before a cast usually belongs to the
+            # current function and supersedes a same-named field or local in
+            # an earlier function. This avoids file-wide name collisions.
+            for name in SCALAR_DECLARATION.findall(code):
+                name_kinds[name] = "scalar"
+            for name in POINTER_DECLARATION.findall(code):
+                name_kinds[name] = "pointer"
+            for name in POINTER_ARRAY_DECLARATION.findall(code):
+                name_kinds[name] = "pointer"
+            thumb_names = {match.group("name")
+                           for match in THUMB_POINTER_ENCODING.finditer(code)}
+            serialized_names = {match.group("name")
+                                for match in SERIALIZED_POINTER_FIELD.finditer(code)}
+            cast_names = set()
+            for match in POINTER_INTEGER_CAST.finditer(code):
+                name = match.group("name")
+                if name in thumb_names or name in serialized_names or name in ASM_SET_SYMBOLS:
+                    continue
+                if match.group("address") is None and name_kinds.get(name) != "pointer":
+                    continue
+                # An address used only with & or % is an alignment/low-bit
+                # test, not integer address traversal.
+                suffix = code[match.end():].lstrip(" )")
+                if suffix.startswith("&") or suffix.startswith("%"):
+                    continue
+                cast_names.add(name)
+            if cast_names:
+                disposition = pointer_disposition(original, previous_original)
+                severity = "exception" if disposition is not None else "warning"
+                prefix = ("documented deliberate recovery ("
+                          + disposition + "): "
+                          if disposition is not None else
+                          "review pointer-to-integer cast(s) "
+                          + ", ".join(sorted(cast_names))
+                          + " for source authenticity: ")
+                findings.append(issue(
+                    "pointer_integer_arithmetic", path, number,
+                    prefix + original.strip(), severity))
+            previous_original = original
+
+        code_text = "\n".join(code for _, _, code in lines)
+        original_lines = path.read_text(errors="replace").splitlines()
+        for match in ADDRESS_UNION.finditer(code_text):
+            body = match.group("body")
+            if not POINTER_MEMBER.search(body) or not ADDRESS_INTEGER_MEMBER.search(body):
+                continue
+            line = code_text.count("\n", 0, match.start()) + 1
+            detail = original_lines[line - 1].strip() if line <= len(original_lines) else match.group(1)
+            nearby = "\n".join(original_lines[max(0, line - 4):line + 1])
+            disposition_match = POINTER_DISPOSITION.search(nearby)
+            disposition = (disposition_match.group(1).strip()
+                           if disposition_match is not None
+                           and POINTER_DISPOSITION_FIELDS.match(
+                               disposition_match.group(1).strip())
+                           else None)
+            findings.append(issue(
+                "pointer_integer_union", path, line,
+                (("documented deliberate recovery (" + disposition
+                  + "): ") if disposition else
+                 "review pointer/integer address union for source authenticity: ")
+                + detail, "exception" if disposition else "warning"))
     return findings
 
 
@@ -185,11 +341,13 @@ def render_markdown(findings, manifest_count):
         "rules in `docs/PRET_STANDARDS.md`. Semantic names, const correctness,",
         "structure accuracy, and whether a match is a fragile optimizer accident",
         "still require human review.",
+        "The pointer/integer rule detects only explicit casts and address unions;",
+        "zero findings do not rule out steering through declaration order, local",
+        "lifetimes, type widths, control-flow spelling, or other C shapes.",
         "",
         f"Manifest ranges reviewed: **{manifest_count}**",
-        f"Errors: **{counts['error']}**",
-        f"Warnings: **{counts['warning']}**",
-        f"Documented low-level exceptions: **{counts['exception']}**",
+        (f"Audit totals: **{counts['error']} errors / {counts['warning']} warnings / "
+         f"{counts['exception']} documented exceptions**"),
         "",
         "## Findings by rule",
         "",
@@ -219,7 +377,8 @@ def main():
     args = parser.parse_args()
 
     entries = load_manifest()
-    findings = (audit_prohibited() + audit_rom_addresses() + audit_headers()
+    findings = (audit_prohibited() + audit_rom_addresses()
+                + audit_pointer_integer_arithmetic() + audit_headers()
                 + audit_manifest(entries) + audit_nonmatching())
     findings.sort(key=lambda item: (item["severity"], item["kind"],
                                     item["file"], item["line"]))

@@ -4794,12 +4794,6 @@
     "file": "src/game_state_records.c"
   },
   {
-    "addr": "080562C8",
-    "size": 60,
-    "name": "GameStateAddResourceCounter",
-    "file": "src/game_state_records.c"
-  },
-  {
     "addr": "08056464",
     "size": 16,
     "name": "ItemGetDefinition",
@@ -4941,12 +4935,6 @@
     "addr": "08056F7C",
     "size": 20,
     "name": "ItemGetField7C",
-    "file": "src/item.c"
-  },
-  {
-    "addr": "08057078",
-    "size": 68,
-    "name": "CountConsumableInventoryCopies",
     "file": "src/item.c"
   },
   {
@@ -5414,25 +5402,25 @@
   {
     "addr": "08071EBC",
     "size": 12,
-    "name": "MapGenerationGetPointer1C",
+    "name": "MapGenerationGetValue1C",
     "file": "src/mapping.c"
   },
   {
     "addr": "08071EC8",
     "size": 12,
-    "name": "MapGenerationGetPointer20",
+    "name": "MapGenerationGetValue20",
     "file": "src/mapping.c"
   },
   {
     "addr": "08071ED4",
     "size": 16,
-    "name": "MapGenerationSetPointer1C",
+    "name": "MapGenerationSetValue1C",
     "file": "src/mapping.c"
   },
   {
     "addr": "08071EE4",
     "size": 16,
-    "name": "MapGenerationSetPointer20",
+    "name": "MapGenerationSetValue20",
     "file": "src/mapping.c"
   },
   {
@@ -6660,12 +6648,6 @@
     "file": "src/sprite_affine_slots.c"
   },
   {
-    "addr": "0807CC84",
-    "size": 104,
-    "name": "SpriteAffineAllocate",
-    "file": "src/sprite_affine_slots.c"
-  },
-  {
     "addr": "0807CCEC",
     "size": 56,
     "name": "SpriteEngineSetFlag10",
@@ -6999,12 +6981,6 @@
     "addr": "0807E9A8",
     "size": 76,
     "name": "ScriptResourceFind",
-    "file": "src/script_resource_table.c"
-  },
-  {
-    "addr": "0807E9F4",
-    "size": 152,
-    "name": "ScriptResourceSet",
     "file": "src/script_resource_table.c"
   },
   {

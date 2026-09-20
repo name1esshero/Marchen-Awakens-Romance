@@ -124,6 +124,7 @@ AT("00005BE0") s32 ScriptNativeFindNamedResource(u32 count,
     char name[16];
     strcpy(name, (const char *)args[0]);
     strcat(name, sText_NcdExtension);
+    /* PRET_PTR_INT_OK: operation=pass stack name as word; evidence=sub_08006E88 ABI takes s32; typed=callee is not yet typed as a string */
     *result = SpriteResourceFindGroup(sub_08006E88((s32)name),
                                  (const char *)args[1]);
     return SCRIPT_CONTINUE;

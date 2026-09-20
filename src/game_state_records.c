@@ -178,16 +178,6 @@ struct GameStateResourceCounter
  u32 value;
 };
 
-/* The runtime root is read again after updating the counter.  The union view
- * expresses that the slot and the state it points at may alias, preserving
- * the reload found in the original code without volatile or an optimizer
- * barrier. */
-union GameStateRootSlot
-{
- struct GameStateResourceCounter *state;
- u32 raw;
-};
-
 /** Read the six-digit resource counter, repairing an out-of-range value. */
 AT("00056290") u32 GameStateGetResourceCounter(void)
 {
@@ -252,19 +242,6 @@ AT("00056050") void GameStateRecordAddField6(s32 id,s32 value)
   stored=RECORD_FIELD_LIMIT;
   *(u16 *)(record+6)=stored;
  }
-}
-
-/** Add to the game-state resource counter and saturate it at six digits. */
-AT("000562C8") void GameStateAddResourceCounter(u32 value)
-{
- union GameStateRootSlot *root;
- struct GameStateResourceCounter *state;
-
- root=(union GameStateRootSlot *)(gIwramBase+(u32)gMapGenerationRootOffset);
- state=root->state;
- state->value+=value;
- if (root->state->value>GAME_STATE_RESOURCE_COUNTER_MAX-1)
-  root->state->value=GAME_STATE_RESOURCE_COUNTER_MAX;
 }
 
 /* state+0x3894 holds s16 entries in 12-byte rows of six. */

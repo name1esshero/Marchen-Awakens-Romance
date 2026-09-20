@@ -22,6 +22,45 @@ Naming is critical. If a function or variable is named poorly, the entire codeba
     *   `s8`, `s16`, `s32` (signed)
     *   `bool8` (boolean, often just `u8`)
 *   **Pointers:** Use `*` attached to the variable name (e.g., `u8 *ptr`, not `u8* ptr`).
+*   **Pointer arithmetic:** Pointer arithmetic is ordinary C. Use a pointer to
+    the real element type when the ROM advances through an array or structure;
+    `ptr + n` then advances by `n * sizeof(*ptr)`. Use `u8 *` when the recovered
+    operation is an arbitrary byte offset or the layout is not understood well
+    enough to assign a stronger type. Prefer structure members once their
+    offsets and meanings are proved. These forms do not require an audit
+    exception.
+*   **Pointer/integer authenticity:** Do not cast a pointer to `u32`, or pass it
+    through a pointer/integer union, merely to
+    influence register allocation or instruction scheduling. That is compiler
+    steering even if it byte-matches. A cast through an integer is acceptable
+    when the recovered operation actually treats the address as a raw 32-bit
+    value: masking, shifting, tagging, alignment tests, signed address-sentinel
+    comparisons, serialization into a word-oriented ABI or file structure, or
+    explicitly setting the THUMB bit. Document that evidence beside the code.
+    Integer casts may be temporary matching scaffolds while a structure remains
+    unknown, but must be revisited when that layout is decoded. The PRET
+    audit reports pointer/integer conversions as review warnings because syntax
+    alone cannot prove intent. It does not report the required
+    `(void *)((u32)Function + 1)` THUMB encoding, address alignment and low-bit
+    tests, assembly, BIOS wrappers, or the documented `gIwramBase +
+    (u32)gMapGenerationRootOffset` linker-symbol recovery. Resolve every other
+    warning by rewriting it as natural pointer C, adding a nearby
+    `PRET_PTR_INT_OK:` explanation for a verified deliberate recovery, or
+    restoring the exact implementation to assembly. A documented recovery is
+    reported and counted as an exception rather than silently ignored. The
+    note format is `PRET_PTR_INT_OK: operation=...; evidence=...; typed=...`.
+    `operation` says what raw-word operation the cast models; `evidence` names
+    the caller, ABI, or ROM instruction that proves it; `typed` explains why
+    ordinary typed or `u8 *` arithmetic does not express that operation. An
+    incomplete note remains a warning. The generated report must show errors,
+    warnings, and exceptions together on its summary line and enumerate every
+    exception below it.
+*   **Audit scope:** A clean pointer/integer report proves only that this one
+    class has been reviewed. Unions, extra locals, declaration order, narrower
+    or wider integer types, and control-flow spelling can all steer code
+    generation without a pointer-to-integer cast. Review those manually; zero
+    warnings must never be described as proof that all compiler steering is
+    absent.
 *   **Volatile:** Use `volatile` only when strictly necessary (e.g., memory-mapped hardware registers or variables modified by interrupts).
 *   **Const Correctness:** Use `const` for any data that should not be modified. Data tables and string literals must be `const`.
 

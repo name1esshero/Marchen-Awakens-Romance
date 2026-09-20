@@ -266,6 +266,7 @@ AT("00078C60") void SoundPlayerImmediateInit(struct SoundPlayer *player)
     while (trackCount > 0) {
         if (track->flags & TRACK_EXISTS) {
             if (track->flags & TRACK_START) {
+                /* PRET_PTR_INT_OK: operation=pass track address as callback word; evidence=SoundCallCallback5DAC takes u32; typed=IWRAM callback ABI is untyped */
                 SoundCallCallback5DAC((u32)track);
                 track->flags = TRACK_EXISTS;
                 track->bendRange = 2;
@@ -418,7 +419,7 @@ AT("00078FF4") void SoundDriverClear(void)
     struct SoundDriverState *sound =
         *(struct SoundDriverState **)0x03007FF0;
     s32 i;
-    void *channel;
+    struct SoundChannel *channel;
 
     if (sound->ident != SOUND_PLAYER_READY)
         return;
@@ -426,18 +427,18 @@ AT("00078FF4") void SoundDriverClear(void)
     i = 12;
     channel = &sound->channels[0];
     while (i > 0) {
-        ((struct SoundChannel *)channel)->status = 0;
+        channel->status = 0;
         i--;
-        channel = (void *)((s32)channel + sizeof(struct SoundChannel));
+        channel++;
     }
-    channel = sound->cgbChannels;
+    channel = (struct SoundChannel *)sound->cgbChannels;
     if (channel) {
         i = 1;
         while (i <= 4) {
             sound->cgbOscillatorOff(i);
-            ((struct SoundChannel *)channel)->status = 0;
+            channel->status = 0;
             i++;
-            channel = (void *)((s32)channel + sizeof(struct SoundChannel));
+            channel++;
         }
     }
     sound->ident = SOUND_PLAYER_READY;
@@ -492,6 +493,7 @@ AT("000790E4") void SoundPlayerOpen(
         return;
     sound->ident++;
 
+    /* PRET_PTR_INT_OK: operation=pass player address as callback word; evidence=SoundCallCallback5DAC takes u32; typed=IWRAM callback ABI is untyped */
     SoundCallCallback5DAC((u32)player);
     player->tracks = tracks;
     player->trackCount = trackCount;

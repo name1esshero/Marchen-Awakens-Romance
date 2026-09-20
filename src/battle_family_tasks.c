@@ -58,6 +58,7 @@ AT(address) u8 *name(s32 owner, s32 slot, void *resource, s32 *result)       \
     do {                                                                     \
         *cursor = empty;                                                     \
         cursor--;                                                            \
+    /* PRET_PTR_INT_OK: operation=signed address sentinel; evidence=ROM loop uses BGE; typed=pointer comparison would be unsigned */ \
     } while ((s32)cursor >= (s32)end);                                       \
     return task;                                                             \
 }

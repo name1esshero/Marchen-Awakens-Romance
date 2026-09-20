@@ -51,55 +51,6 @@ AT("0007E9A8") u8 *ScriptResourceFind(s32 type, const char *name)
 }
 AT("0007E9A8") const u8 ScriptResourceFindTail[2] = {0, 0};
 
-/**
- * @brief Insert a new typed value into the script resource hash table.
- * @param type Resource class stored before the copied name.
- * @param name Null-terminated resource name.
- * @param value Value bytes copied into the new node.
- * @param size Number of value bytes to copy.
- * @return Zero on success, one for a duplicate, or negative one on allocation failure.
- */
-AT("0007E9F4") s32 ScriptResourceSet(s32 type, const char *name,
-                                       const void *value, s32 size)
-{
-    s32 bucket = ScriptResourceHash(type, name);
-    struct ScriptBytecodeRoot **root;
-    struct ScriptResourceNode *node;
-    u32 nameLength;
-
-    if (ScriptResourceFind(type, name) != 0)
-        return 1;
-
-    nameLength = strlen(name);
-    root = &gScriptBytecodeRoot;
-    node = HeapAlloc(*(void **)((u8 *)(*root)->context + 4),
-                     size + nameLength + 13);
-    if (node == 0)
-        return -1;
-
-    CpuCopy(node->value, value, size);
-    node->typedName = (char *)node + (size + 8);
-    node->typedName[0] = type;
-    strcpy(node->typedName + 1, name);
-
-    {
-        struct ScriptBytecodeRoot **rootRead = root;
-        struct ScriptBytecodeRoot *outer = *rootRead;
-        struct ScriptResourceTable *table =
-            (struct ScriptResourceTable *)outer->context;
-        struct ScriptResourceNode **buckets =
-            table->buckets;
-        u32 bucketOffset = (u32)bucket << 2;
-        struct ScriptResourceNode **head;
-        bucketOffset += (u32)buckets;
-        head = (struct ScriptResourceNode **)bucketOffset;
-        node->next = *head;
-        *head = node;
-    }
-    return 0;
-}
-AT("0007E9F4") const u8 ScriptResourceSetTail[2] = {0, 0};
-
 /** Remove an existing class/name pair and release its table allocation. */
 AT("0007EA8C") s32 ScriptResourceRemove(s32 type, const char *name)
 {

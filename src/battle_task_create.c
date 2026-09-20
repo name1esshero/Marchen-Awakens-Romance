@@ -83,6 +83,7 @@ u8 *CreateBattleModeTask2C1(s32 owner, s32 slot, void *resource, s32 *result,
     do {
         *cursor = emptyValue;
         cursor--;
+    /* PRET_PTR_INT_OK: operation=signed address sentinel; evidence=ROM loop uses BGE; typed=pointer comparison would be unsigned */
     } while ((s32)cursor >= (s32)empty);
     return task;
 }
@@ -118,6 +119,7 @@ u8 *CreateBattleModeTask2FC(s32 owner, s32 slot, void *resource, s32 *result,
     do {
         *cursor = emptyValue;
         cursor--;
+    /* PRET_PTR_INT_OK: operation=signed address sentinel; evidence=ROM loop uses BGE; typed=pointer comparison would be unsigned */
     } while ((s32)cursor >= (s32)empty);
     return task;
 }
@@ -178,6 +180,7 @@ u8 *name(s32 owner, s32 slot, void *resource, s32 *result, s32 selectedMode)\
     do {                                                                    \
         *cursor = emptyValue;                                               \
         cursor--;                                                           \
+    /* PRET_PTR_INT_OK: operation=signed address sentinel; evidence=ROM loop uses BGE; typed=pointer comparison would be unsigned */ \
     } while ((s32)cursor >= (s32)empty);                                    \
     return task;                                                            \
 }
@@ -242,6 +245,7 @@ u8 *CreateBattleModeTask4E6(s32 owner, s32 slot, void *resource, s32 *result,
     do {
         *cursor = emptyValue;
         cursor--;
+    /* PRET_PTR_INT_OK: operation=signed address sentinel; evidence=ROM loop uses BGE; typed=pointer comparison would be unsigned */
     } while ((s32)cursor >= (s32)end);
     return (u8 *)task;
 }
@@ -279,6 +283,7 @@ u8 *CreateBattleModeTask483(s32 owner, s32 slot, void *resource, s32 *result,
     do {
         *cursor = emptyValue;
         cursor--;
+    /* PRET_PTR_INT_OK: operation=signed address sentinel; evidence=ROM loop uses BGE; typed=pointer comparison would be unsigned */
     } while ((s32)cursor >= (s32)empty);
     return task;
 }

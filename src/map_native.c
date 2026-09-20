@@ -79,6 +79,7 @@ AT("00012318") s32 ScriptNativeFieldGet(u32 count,const s32 *args,s32 *result)
     heap = **(void ***)(root + offset);
     name = HeapAlloc(heap,18);
     GameStateCopyString12F4(name);
+    /* PRET_PTR_INT_OK: operation=serialize allocated name; evidence=native result ABI returns s32; typed=result cell is a VM word */
     *result=(s32)name;
     return 1;
 }

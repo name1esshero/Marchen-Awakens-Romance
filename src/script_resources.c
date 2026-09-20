@@ -285,6 +285,7 @@ AT("0007F3DC") s32 ScriptResourceSetStringValue(u32 *record, s32 selector,
     if (*slot != 0)
         HeapFree(gScriptBytecodeRoot->context->heap, (void *)*slot);
     copy = HeapAlloc(gScriptBytecodeRoot->context->heap, strlen(value) + 1);
+    /* PRET_PTR_INT_OK: operation=serialize string address; evidence=ScriptResourceGetValue reads the slot as a raw word; typed=slot also holds scalars */
     *slot = (u32)copy;
     if (copy != 0)
         strcpy(copy, value);

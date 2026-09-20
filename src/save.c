@@ -414,8 +414,8 @@ AT("0006E650") void SaveWriteTask(struct EngineTask *task)
             }
         } else {
             u32 finishedState;
-            *(u32 *)(work + 16) = (u32)mismatch;
-            *(u32 *)(work + 20) = (u32)mismatch;
+            *(u32 *)(work + 16) = 0;
+            *(u32 *)(work + 20) = 0;
             GameStateSetField42BC(128);
             finishedState = 0x1000;
             *(u16 *)((u8 *)task + 14) = finishedState;

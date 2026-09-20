@@ -60,6 +60,7 @@ AT("0007EC58") void ScriptFrameReleasePools(void)
  raw=(u8 *)frame;
  frame->field084=*(u32 *)(raw+SCRIPT_FRAME_SOURCE_WORD_A_OFFSET)
                  +*(u32 *)(raw+SCRIPT_FRAME_SOURCE_WORD_B_OFFSET);
+ /* PRET_PTR_INT_OK: operation=store frame address as VM state; evidence=dispatcher consumes dispatchState as u32; typed=state cell also holds nonpointer states */
  VM->state->dispatchState=(u32)frame;
  VM->state->dispatchIndex=0;
 }

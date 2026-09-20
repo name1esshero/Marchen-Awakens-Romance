@@ -5,6 +5,32 @@ Run `make pret-audit` to regenerate the detailed machine-readable reports at
 `python3 tools/audit_pret_standards.py --strict` when checking whether the
 hard-error backlog has reached zero.
 
+## Verified snapshot: pointer/integer authenticity audit, 2026-09-20
+
+- `make compare` reproduces the Japanese ROM byte for byte.
+- `make english` succeeds and all 187 host tests pass.
+- The mechanical PRET audit reports **109 errors / 0 warnings / 17 documented
+  exceptions** on one summary line. Every exception is enumerated in the
+  generated report.
+
+The audit now reviews explicit pointer-to-integer casts and pointer/integer
+address unions across all `src/` C. It deliberately permits typed pointer
+arithmetic, `u8 *` byte offsets, THUMB-bit function encodings, alignment and
+low-bit tests, BIOS wrappers, serialized sound-table pointers, and documented
+linker `.set` offsets. A `PRET_PTR_INT_OK` note is accepted only when it states
+the modeled operation, the caller/ABI/ROM evidence, and why typed pointer
+arithmetic is unsuitable. The report still warns that declaration order,
+local lifetime, integer width, unions, and control-flow spelling can steer
+code generation without an explicit pointer cast.
+
+Fifteen findings were removed through natural types and expressions. Three
+previous matches were rejected after exact comparison showed that their
+pointer/integer spelling only selected registers or alias behavior:
+`GameStateAddResourceCounter`, `SpriteAffineAllocate`, and
+`ScriptResourceSet`. Their exact implementations are restored to named
+assembly and their clean candidates remain in `src/nonmatching/` with the
+specific code-generation differences documented.
+
 ## Verified snapshot: renderer reference fallback, 2026-09-20
 
 - `make compare` reproduces the Japanese ROM byte for byte.
@@ -433,15 +459,19 @@ The resolver at 0x08055F4C was deliberately retained in assembly: its clean C
 candidate is behaviorally and structurally correct but swaps two low registers.
 This follows `PRET_STANDARDS.md` rather than forcing a cosmetic match.
 
-## Verified snapshot: consumable inventory scan (2026-09-20)
+## Rejected match: consumable inventory scan (2026-09-20)
 
-`CountConsumableInventoryCopies` at 0x08057078 now builds from ordinary C,
-removing 68 bytes of assembly. Its three assembly callers use the relocatable
-symbol. The same trace identified game-state offsets `0x31D0` and `0x33D0` as
-the 256-slot consumable inventory and its snapshot, so four older offset-based
-or map-named helpers now have inventory-specific public names. The batch adds
-no raw ROM address, register pin, inline assembly, artificial volatile access,
-dead code, or compiler switch. `make compare` remains byte-identical.
+The apparent C match for `CountConsumableInventoryCopies` at 0x08057078 used
+a pointer/`u32` union solely to reproduce the ROM's low-register allocation.
+The disassembly instead shows normal pointer formation and pointer increments,
+so the union was rejected as compiler steering. The natural C candidate is
+documented in `src/nonmatching/consumable_inventory.c`, and the exact body
+remains in assembly under the PRET fallback rule. Its assembly callers still
+use the descriptive relocatable symbol.
+
+The associated trace remains valid: game-state offsets `0x31D0` and `0x33D0`
+are the 256-slot consumable inventory and its snapshot, so four older
+offset-based or map-named helpers retain their inventory-specific public names.
 The native command registered as `ItemInit` is now named
 `ScriptNativeClearConsumableInventory`, replacing its earlier speculative map
 name without changing its still-audited implementation.
