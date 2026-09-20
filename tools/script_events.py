@@ -208,6 +208,49 @@ def semantic_summary(decoded_calls):
     return result
 
 
+def initial_sprite_placements(decoded_calls):
+    """Recover literal positions established by one script's setup calls."""
+    active = {}
+    result = []
+    for call in decoded_calls:
+        args = call.get('decoded_arguments', [])
+        values = [
+            arg.get('value') if arg.get('kind') in ('integer', 'string') else None
+            for arg in args
+        ]
+        function = call.get('function')
+        sprite = values[0] if values else None
+        if function == 'SprInit' and len(values) == 5 and isinstance(sprite, int):
+            active[sprite] = dict(
+                sprite=sprite,
+                container=values[1],
+                resource=values[2],
+                animation=values[3],
+                x=None,
+                y=None,
+                init_offset=call['offset'],
+                emitted=False,
+            )
+        elif function == 'SprChg' and len(values) == 5 and sprite in active:
+            active[sprite].update(
+                container=values[1], resource=values[2], animation=values[3]
+            )
+        elif function == 'SprSet' and len(values) == 3 and isinstance(sprite, int):
+            item = active.get(sprite)
+            prop = values[1]
+            value = values[2]
+            if item and prop in (0, 1) and isinstance(value, int):
+                axis = 'xy'[prop]
+                item[axis] = ((value + 0x8000) & 0xFFFF) - 0x8000
+                if len(args) > 2 and isinstance(args[2].get('offset'), int):
+                    item[axis + '_argument_offset'] = args[2]['offset']
+                if item['x'] is not None and item['y'] is not None and not item['emitted']:
+                    item['emitted'] = True
+                    result.append({key: value for key, value in item.items()
+                                   if key != 'emitted'})
+    return result
+
+
 def patch_path(name):
     if Path(name).name!=name or not name.endswith('.SPC'):raise ValueError('Invalid script name')
     return Path('maps/events')/(name+'.json')

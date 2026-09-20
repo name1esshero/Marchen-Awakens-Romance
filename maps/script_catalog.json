@@ -5265,7 +5265,27 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 0,
+          "container": 0,
+          "resource": "AD_ALL_O",
+          "animation": 0,
+          "x": 212,
+          "y": 72,
+          "init_offset": 833
+        },
+        {
+          "sprite": 4,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 256,
+          "y": 72,
+          "init_offset": 1163
+        }
+      ]
     },
     {
       "name": "D1_BOSS.SPC",
@@ -5464,7 +5484,27 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 0,
+          "container": 0,
+          "resource": "AD_ALL_O",
+          "animation": 0,
+          "x": 188,
+          "y": 40,
+          "init_offset": 765
+        },
+        {
+          "sprite": 4,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 232,
+          "y": 40,
+          "init_offset": 1095
+        }
+      ]
     },
     {
       "name": "D2_BOSS.SPC",
@@ -5663,7 +5703,27 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 0,
+          "container": 0,
+          "resource": "AD_ALL_O",
+          "animation": 0,
+          "x": 212,
+          "y": 72,
+          "init_offset": 765
+        },
+        {
+          "sprite": 4,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 256,
+          "y": 72,
+          "init_offset": 1095
+        }
+      ]
     },
     {
       "name": "D3_BOSS.SPC",
@@ -5862,7 +5922,27 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 0,
+          "container": 0,
+          "resource": "AD_ALL_O",
+          "animation": 0,
+          "x": 220,
+          "y": 56,
+          "init_offset": 765
+        },
+        {
+          "sprite": 4,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 264,
+          "y": 56,
+          "init_offset": 1095
+        }
+      ]
     },
     {
       "name": "D4_BOSS.SPC",
@@ -6061,7 +6141,27 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 0,
+          "container": 0,
+          "resource": "AD_ALL_O",
+          "animation": 0,
+          "x": 212,
+          "y": 72,
+          "init_offset": 765
+        },
+        {
+          "sprite": 4,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 256,
+          "y": 72,
+          "init_offset": 1095
+        }
+      ]
     },
     {
       "name": "DBG_BTL.SPC",
@@ -6407,6 +6507,17 @@
           ],
           "dynamic": false
         }
+      ],
+      "sprite_origins": [
+        {
+          "sprite": 1,
+          "container": 0,
+          "resource": "OP_06A",
+          "animation": 0,
+          "x": 121,
+          "y": 63,
+          "init_offset": 21789
+        }
       ]
     },
     {
@@ -6500,7 +6611,27 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 0,
+          "container": 2,
+          "resource": "01B07",
+          "animation": 0,
+          "x": 754,
+          "y": 200,
+          "init_offset": 4702
+        },
+        {
+          "sprite": 1,
+          "container": 2,
+          "resource": "03A07",
+          "animation": 0,
+          "x": 722,
+          "y": 232,
+          "init_offset": 5192
+        }
+      ]
     },
     {
       "name": "EV_AL02.SPC",
@@ -6779,7 +6910,18 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 2,
+          "container": 2,
+          "resource": "09A00",
+          "animation": 0,
+          "x": 530,
+          "y": 308,
+          "init_offset": 5418
+        }
+      ]
     },
     {
       "name": "EV_BA03.SPC",
@@ -6924,7 +7066,18 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 10,
+          "container": 1,
+          "resource": "ARM_NE41",
+          "animation": 0,
+          "x": 764,
+          "y": 1752,
+          "init_offset": 2374
+        }
+      ]
     },
     {
       "name": "EV_GO10.SPC",
@@ -7116,6 +7269,26 @@
           ],
           "dynamic": false
         }
+      ],
+      "sprite_origins": [
+        {
+          "sprite": 10,
+          "container": 1,
+          "resource": "ARM_NE08",
+          "animation": 0,
+          "x": 120,
+          "y": 228,
+          "init_offset": 4630
+        },
+        {
+          "sprite": 11,
+          "container": 1,
+          "resource": "ARM_BA05",
+          "animation": 0,
+          "x": 120,
+          "y": 228,
+          "init_offset": 4688
+        }
       ]
     },
     {
@@ -7192,6 +7365,17 @@
             0
           ],
           "dynamic": false
+        }
+      ],
+      "sprite_origins": [
+        {
+          "sprite": 0,
+          "container": 0,
+          "resource": "ST_CON",
+          "animation": 0,
+          "x": 776,
+          "y": 1830,
+          "init_offset": 8067
         }
       ]
     },
@@ -7721,6 +7905,80 @@
           ],
           "dynamic": true
         }
+      ],
+      "sprite_origins": [
+        {
+          "sprite": 0,
+          "container": 1,
+          "resource": "ARM_NE05",
+          "animation": 0,
+          "x": 246,
+          "y": 154,
+          "init_offset": 7661
+        },
+        {
+          "sprite": 1,
+          "container": 1,
+          "resource": "ARM_NE05",
+          "animation": 0,
+          "x": 254,
+          "y": 154,
+          "init_offset": 7818
+        },
+        {
+          "sprite": 2,
+          "container": 1,
+          "resource": "ARM_NE05",
+          "animation": 0,
+          "x": 254,
+          "y": 162,
+          "init_offset": 7975
+        },
+        {
+          "sprite": 3,
+          "container": 1,
+          "resource": "ARM_NE05",
+          "animation": 0,
+          "x": 254,
+          "y": 170,
+          "init_offset": 8132
+        },
+        {
+          "sprite": 4,
+          "container": 1,
+          "resource": "ARM_NE05",
+          "animation": 0,
+          "x": 246,
+          "y": 170,
+          "init_offset": 8289
+        },
+        {
+          "sprite": 5,
+          "container": 1,
+          "resource": "ARM_NE05",
+          "animation": 0,
+          "x": 238,
+          "y": 170,
+          "init_offset": 8446
+        },
+        {
+          "sprite": 6,
+          "container": 1,
+          "resource": "ARM_NE05",
+          "animation": 0,
+          "x": 238,
+          "y": 162,
+          "init_offset": 8603
+        },
+        {
+          "sprite": 7,
+          "container": 1,
+          "resource": "ARM_NE05",
+          "animation": 0,
+          "x": 238,
+          "y": 154,
+          "init_offset": 8760
+        }
       ]
     },
     {
@@ -7862,7 +8120,18 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 0,
+          "container": 1,
+          "resource": "ARM_HO08",
+          "animation": 0,
+          "x": 84,
+          "y": 100,
+          "init_offset": 5123
+        }
+      ]
     },
     {
       "name": "EV_JA04C.SPC",
@@ -8046,6 +8315,17 @@
             0
           ],
           "dynamic": true
+        }
+      ],
+      "sprite_origins": [
+        {
+          "sprite": 1,
+          "container": 1,
+          "resource": "ARM_GA01",
+          "animation": 0,
+          "x": 1436,
+          "y": 634,
+          "init_offset": 2853
         }
       ]
     },
@@ -10433,7 +10713,99 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 16,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 98,
+          "y": 404,
+          "init_offset": 336
+        },
+        {
+          "sprite": 17,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 390,
+          "y": 116,
+          "init_offset": 851
+        },
+        {
+          "sprite": 16,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 180,
+          "y": 146,
+          "init_offset": 1366
+        },
+        {
+          "sprite": 17,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 288,
+          "y": 490,
+          "init_offset": 1881
+        },
+        {
+          "sprite": 18,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 466,
+          "y": 130,
+          "init_offset": 2396
+        },
+        {
+          "sprite": 19,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 826,
+          "y": 416,
+          "init_offset": 2911
+        },
+        {
+          "sprite": 20,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 912,
+          "y": 416,
+          "init_offset": 3297
+        },
+        {
+          "sprite": 21,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 746,
+          "y": 758,
+          "init_offset": 3812
+        },
+        {
+          "sprite": 22,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 834,
+          "y": 714,
+          "init_offset": 4198
+        },
+        {
+          "sprite": 23,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 914,
+          "y": 786,
+          "init_offset": 4584
+        }
+      ]
     },
     {
       "name": "L11_0_2.SPC",
@@ -10590,7 +10962,27 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 1,
+          "container": 0,
+          "resource": "MAP24_o",
+          "animation": 0,
+          "x": 202,
+          "y": 44,
+          "init_offset": 1840
+        },
+        {
+          "sprite": 2,
+          "container": 0,
+          "resource": "MAP24_o",
+          "animation": 0,
+          "x": 306,
+          "y": 44,
+          "init_offset": 2198
+        }
+      ]
     },
     {
       "name": "L11_0_3.SPC",
@@ -10905,7 +11297,27 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 17,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 832,
+          "y": 1104,
+          "init_offset": 783
+        },
+        {
+          "sprite": 2,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 0,
+          "x": 418,
+          "y": 180,
+          "init_offset": 1427
+        }
+      ]
     },
     {
       "name": "MAP01_1A.SPC",
@@ -11101,7 +11513,18 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 17,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 4,
+          "x": 210,
+          "y": 160,
+          "init_offset": 595
+        }
+      ]
     },
     {
       "name": "MAP01_2A.SPC",
@@ -11400,7 +11823,27 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 16,
+          "container": 0,
+          "resource": "EF_TAK2",
+          "animation": 0,
+          "x": 186,
+          "y": 48,
+          "init_offset": 673
+        },
+        {
+          "sprite": 17,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 328,
+          "y": 48,
+          "init_offset": 1129
+        }
+      ]
     },
     {
       "name": "MAP01_4A.SPC",
@@ -11662,7 +12105,18 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 17,
+          "container": 0,
+          "resource": "PS_WK02",
+          "animation": 0,
+          "x": 232,
+          "y": 304,
+          "init_offset": 700
+        }
+      ]
     },
     {
       "name": "MAP01_A.SPC",
@@ -11809,7 +12263,18 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 16,
+          "container": 0,
+          "resource": "PS_WK02",
+          "animation": 0,
+          "x": 200,
+          "y": 412,
+          "init_offset": 601
+        }
+      ]
     },
     {
       "name": "MAP03_A.SPC",
@@ -12080,7 +12545,18 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 17,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 2,
+          "x": 88,
+          "y": 658,
+          "init_offset": 667
+        }
+      ]
     },
     {
       "name": "MAP04_6A.SPC",
@@ -12754,7 +13230,81 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 16,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 222,
+          "y": 206,
+          "init_offset": 332
+        },
+        {
+          "sprite": 17,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 1418,
+          "y": 216,
+          "init_offset": 788
+        },
+        {
+          "sprite": 18,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 298,
+          "y": 884,
+          "init_offset": 1244
+        },
+        {
+          "sprite": 19,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 614,
+          "y": 740,
+          "init_offset": 1700
+        },
+        {
+          "sprite": 20,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 56,
+          "y": 122,
+          "init_offset": 2156
+        },
+        {
+          "sprite": 21,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 2,
+          "x": 1246,
+          "y": 572,
+          "init_offset": 2650
+        },
+        {
+          "sprite": 22,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 2,
+          "x": 1418,
+          "y": 276,
+          "init_offset": 3008
+        },
+        {
+          "sprite": 23,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 2,
+          "x": 614,
+          "y": 800,
+          "init_offset": 3366
+        }
+      ]
     },
     {
       "name": "MAP05_A.SPC",
@@ -13030,7 +13580,27 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 17,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 80,
+          "y": 490,
+          "init_offset": 615
+        },
+        {
+          "sprite": 18,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 4,
+          "x": 424,
+          "y": 46,
+          "init_offset": 1072
+        }
+      ]
     },
     {
       "name": "MAP06_1A.SPC",
@@ -14084,7 +14654,81 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 17,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 2080,
+          "y": 1322,
+          "init_offset": 683
+        },
+        {
+          "sprite": 18,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 1958,
+          "y": 1316,
+          "init_offset": 1139
+        },
+        {
+          "sprite": 19,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 2016,
+          "y": 530,
+          "init_offset": 1595
+        },
+        {
+          "sprite": 20,
+          "container": 0,
+          "resource": "PS_WK02",
+          "animation": 0,
+          "x": 628,
+          "y": 370,
+          "init_offset": 2089
+        },
+        {
+          "sprite": 21,
+          "container": 0,
+          "resource": "PS_WK02",
+          "animation": 0,
+          "x": 360,
+          "y": 1852,
+          "init_offset": 2480
+        },
+        {
+          "sprite": 22,
+          "container": 0,
+          "resource": "PS_WK02",
+          "animation": 0,
+          "x": 2420,
+          "y": 1224,
+          "init_offset": 2871
+        },
+        {
+          "sprite": 23,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 2,
+          "x": 2012,
+          "y": 1140,
+          "init_offset": 3262
+        },
+        {
+          "sprite": 24,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 4,
+          "x": 2532,
+          "y": 1040,
+          "init_offset": 3583
+        }
+      ]
     },
     {
       "name": "MAP08_A.SPC",
@@ -14360,7 +15004,18 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 17,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 532,
+          "y": 144,
+          "init_offset": 628
+        }
+      ]
     },
     {
       "name": "MAP10_1A.SPC",
@@ -14959,7 +15614,126 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 1,
+          "container": 0,
+          "resource": "MAP11_1O",
+          "animation": 0,
+          "x": 96,
+          "y": 256,
+          "init_offset": 299
+        },
+        {
+          "sprite": 2,
+          "container": 0,
+          "resource": "MAP11_1O",
+          "animation": 0,
+          "x": 128,
+          "y": 256,
+          "init_offset": 423
+        },
+        {
+          "sprite": 3,
+          "container": 0,
+          "resource": "MAP11_1O",
+          "animation": 0,
+          "x": 344,
+          "y": 256,
+          "init_offset": 547
+        },
+        {
+          "sprite": 4,
+          "container": 0,
+          "resource": "MAP11_1O",
+          "animation": 0,
+          "x": 376,
+          "y": 256,
+          "init_offset": 671
+        },
+        {
+          "sprite": 5,
+          "container": 0,
+          "resource": "MAP11_1O",
+          "animation": 0,
+          "x": 408,
+          "y": 256,
+          "init_offset": 795
+        },
+        {
+          "sprite": 6,
+          "container": 0,
+          "resource": "MAP11_1O",
+          "animation": 1,
+          "x": 130,
+          "y": 100,
+          "init_offset": 919
+        },
+        {
+          "sprite": 7,
+          "container": 0,
+          "resource": "MAP11_1O",
+          "animation": 1,
+          "x": 122,
+          "y": 170,
+          "init_offset": 1043
+        },
+        {
+          "sprite": 8,
+          "container": 0,
+          "resource": "MAP11_1O",
+          "animation": 1,
+          "x": 122,
+          "y": 208,
+          "init_offset": 1167
+        },
+        {
+          "sprite": 9,
+          "container": 0,
+          "resource": "MAP11_1O",
+          "animation": 1,
+          "x": 352,
+          "y": 96,
+          "init_offset": 1291
+        },
+        {
+          "sprite": 10,
+          "container": 0,
+          "resource": "MAP11_1O",
+          "animation": 1,
+          "x": 352,
+          "y": 150,
+          "init_offset": 1415
+        },
+        {
+          "sprite": 11,
+          "container": 0,
+          "resource": "MAP11_1O",
+          "animation": 1,
+          "x": 352,
+          "y": 182,
+          "init_offset": 1539
+        },
+        {
+          "sprite": 12,
+          "container": 0,
+          "resource": "MAP11_1O",
+          "animation": 2,
+          "x": 144,
+          "y": 240,
+          "init_offset": 1663
+        },
+        {
+          "sprite": 13,
+          "container": 0,
+          "resource": "MAP11_1O",
+          "animation": 2,
+          "x": 320,
+          "y": 240,
+          "init_offset": 1787
+        }
+      ]
     },
     {
       "name": "MAP11_2.SPC",
@@ -15446,7 +16220,54 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 16,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 101,
+          "y": 133,
+          "init_offset": 413
+        },
+        {
+          "sprite": 17,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 951,
+          "y": 447,
+          "init_offset": 869
+        },
+        {
+          "sprite": 18,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 935,
+          "y": 675,
+          "init_offset": 1325
+        },
+        {
+          "sprite": 19,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 0,
+          "x": 117,
+          "y": 279,
+          "init_offset": 1819
+        },
+        {
+          "sprite": 20,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 4,
+          "x": 939,
+          "y": 225,
+          "init_offset": 2140
+        }
+      ]
     },
     {
       "name": "MAP24_2A.SPC",
@@ -15791,7 +16612,45 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 16,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 275,
+          "y": 1155,
+          "init_offset": 375
+        },
+        {
+          "sprite": 17,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 947,
+          "y": 1677,
+          "init_offset": 831
+        },
+        {
+          "sprite": 18,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 473,
+          "y": 908,
+          "init_offset": 1287
+        },
+        {
+          "sprite": 19,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 3,
+          "x": 473,
+          "y": 902,
+          "init_offset": 1781
+        }
+      ]
     },
     {
       "name": "MAP24_4A.SPC",
@@ -16070,7 +16929,27 @@
           "dynamic": true
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 2,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 0,
+          "x": 250,
+          "y": 790,
+          "init_offset": 371
+        },
+        {
+          "sprite": 1,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 768,
+          "y": 40,
+          "init_offset": 752
+        }
+      ]
     },
     {
       "name": "MAP24_A.SPC",
@@ -16220,7 +17099,27 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 1,
+          "container": 0,
+          "resource": "MAP24_o",
+          "animation": 0,
+          "x": 202,
+          "y": 44,
+          "init_offset": 525
+        },
+        {
+          "sprite": 2,
+          "container": 0,
+          "resource": "MAP24_o",
+          "animation": 0,
+          "x": 306,
+          "y": 44,
+          "init_offset": 883
+        }
+      ]
     },
     {
       "name": "MAP25_1A.SPC",
@@ -16325,7 +17224,18 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 16,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 975,
+          "y": 925,
+          "init_offset": 253
+        }
+      ]
     },
     {
       "name": "MAP25_2A.SPC",
@@ -16983,7 +17893,81 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 2,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 3,
+          "x": 218,
+          "y": 78,
+          "init_offset": 291
+        },
+        {
+          "sprite": 16,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 943,
+          "y": 83,
+          "init_offset": 611
+        },
+        {
+          "sprite": 17,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 1947,
+          "y": 390,
+          "init_offset": 1067
+        },
+        {
+          "sprite": 18,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 3270,
+          "y": 94,
+          "init_offset": 1523
+        },
+        {
+          "sprite": 19,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 3910,
+          "y": 392,
+          "init_offset": 1979
+        },
+        {
+          "sprite": 20,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 2,
+          "x": 745,
+          "y": 77,
+          "init_offset": 2473
+        },
+        {
+          "sprite": 21,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 4,
+          "x": 1393,
+          "y": 382,
+          "init_offset": 2794
+        },
+        {
+          "sprite": 22,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 2,
+          "x": 2945,
+          "y": 83,
+          "init_offset": 3321
+        }
+      ]
     },
     {
       "name": "MAP25_4A.SPC",
@@ -17575,7 +18559,72 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 2,
+          "container": 0,
+          "resource": "MAP25_O",
+          "animation": 0,
+          "x": 2040,
+          "y": 702,
+          "init_offset": 570
+        },
+        {
+          "sprite": 3,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 0,
+          "x": 1592,
+          "y": 1032,
+          "init_offset": 862
+        },
+        {
+          "sprite": 4,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 0,
+          "x": 2440,
+          "y": 1040,
+          "init_offset": 1253
+        },
+        {
+          "sprite": 5,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 0,
+          "x": 2424,
+          "y": 1376,
+          "init_offset": 1644
+        },
+        {
+          "sprite": 16,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 990,
+          "y": 1560,
+          "init_offset": 1997
+        },
+        {
+          "sprite": 17,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 2109,
+          "y": 69,
+          "init_offset": 2453
+        },
+        {
+          "sprite": 18,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 2,
+          "x": 2321,
+          "y": 69,
+          "init_offset": 2947
+        }
+      ]
     },
     {
       "name": "MAP25_5A.SPC",
@@ -17837,7 +18886,18 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 17,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 0,
+          "x": 161,
+          "y": 853,
+          "init_offset": 1283
+        }
+      ]
     },
     {
       "name": "MAP26_1A.SPC",
@@ -18179,7 +19239,36 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 17,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 1934,
+          "y": 162,
+          "init_offset": 629
+        },
+        {
+          "sprite": 18,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 4,
+          "x": 843,
+          "y": 554,
+          "init_offset": 1086
+        },
+        {
+          "sprite": 19,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 3,
+          "x": 1935,
+          "y": 156,
+          "init_offset": 1613
+        }
+      ]
     },
     {
       "name": "MAP26_2A.SPC",
@@ -18298,7 +19387,18 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 1,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 256,
+          "y": 32,
+          "init_offset": 281
+        }
+      ]
     },
     {
       "name": "MAP26_3A.SPC",
@@ -18706,7 +19806,45 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 17,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 974,
+          "y": 1838,
+          "init_offset": 629
+        },
+        {
+          "sprite": 18,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 0,
+          "x": 675,
+          "y": 695,
+          "init_offset": 1123
+        },
+        {
+          "sprite": 19,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 4,
+          "x": 1176,
+          "y": 875,
+          "init_offset": 1444
+        },
+        {
+          "sprite": 20,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 3,
+          "x": 975,
+          "y": 1830,
+          "init_offset": 1971
+        }
+      ]
     },
     {
       "name": "MAP26_5A.SPC",
@@ -19559,7 +20697,99 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 3,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 0,
+          "x": 1080,
+          "y": 1018,
+          "init_offset": 570
+        },
+        {
+          "sprite": 4,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 0,
+          "x": 856,
+          "y": 1018,
+          "init_offset": 895
+        },
+        {
+          "sprite": 5,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 0,
+          "x": 382,
+          "y": 1018,
+          "init_offset": 1286
+        },
+        {
+          "sprite": 16,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 1296,
+          "y": 129,
+          "init_offset": 1639
+        },
+        {
+          "sprite": 17,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 1296,
+          "y": 227,
+          "init_offset": 2095
+        },
+        {
+          "sprite": 18,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 1076,
+          "y": 1388,
+          "init_offset": 2551
+        },
+        {
+          "sprite": 19,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 1255,
+          "y": 1283,
+          "init_offset": 3007
+        },
+        {
+          "sprite": 20,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 1351,
+          "y": 1283,
+          "init_offset": 3463
+        },
+        {
+          "sprite": 21,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 3,
+          "x": 1074,
+          "y": 1383,
+          "init_offset": 3957
+        },
+        {
+          "sprite": 22,
+          "container": 0,
+          "resource": "MAP00_O",
+          "animation": 0,
+          "x": 1271,
+          "y": 1771,
+          "init_offset": 4315
+        }
+      ]
     },
     {
       "name": "MAP26_6A.SPC",
@@ -19910,7 +21140,27 @@
           "dynamic": true
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 17,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 1110,
+          "y": 1384,
+          "init_offset": 628
+        },
+        {
+          "sprite": 18,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 664,
+          "y": 554,
+          "init_offset": 1084
+        }
+      ]
     },
     {
       "name": "MAP41_A.SPC",
@@ -20252,7 +21502,27 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 17,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 700,
+          "y": 848,
+          "init_offset": 530
+        },
+        {
+          "sprite": 18,
+          "container": 1,
+          "resource": "TAKARA",
+          "animation": 0,
+          "x": 2296,
+          "y": 420,
+          "init_offset": 986
+        }
+      ]
     },
     {
       "name": "OBJ_D.SPC",
@@ -20581,7 +21851,18 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 10,
+          "container": 1,
+          "resource": "ARM_NE41",
+          "animation": 0,
+          "x": 120,
+          "y": 80,
+          "init_offset": 1410
+        }
+      ]
     },
     {
       "name": "SP_M00.SPC",
@@ -20636,7 +21917,18 @@
           "dynamic": true
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 10,
+          "container": 1,
+          "resource": "TEST_E02",
+          "animation": 0,
+          "x": 422,
+          "y": 180,
+          "init_offset": 1148
+        }
+      ]
     },
     {
       "name": "SP_M01.SPC",
@@ -20670,7 +21962,18 @@
           "dynamic": false
         }
       ],
-      "sprite_moves": []
+      "sprite_moves": [],
+      "sprite_origins": [
+        {
+          "sprite": 2,
+          "container": 1,
+          "resource": "TEST_E02",
+          "animation": 0,
+          "x": 250,
+          "y": 170,
+          "init_offset": 1859
+        }
+      ]
     },
     {
       "name": "SP_M01_3.SPC",

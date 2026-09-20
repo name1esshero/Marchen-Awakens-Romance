@@ -39,7 +39,8 @@ placement in those direct sources is drawn with its real decoded NCD frame and
 a source-script label, so objects contributed by companion scripts no longer
 disappear merely because another script is selected. Clicking one of those
 actors switches to its owning script and selects its stable source event, so it
-can be inspected or dragged without manually finding the script first. Decoded `chain` and
+can be inspected or dragged without manually finding the script first. Decoded
+`chain` and
 `exec` dependencies with decoded map, sprite, or movement events are listed in
 the same source browser and loaded on demand. This puts Dorothy's `EV_BA03` and
 `EV_BA04` scenes one click from `MAP01_3A`, including their real artwork and
@@ -57,15 +58,25 @@ remain required for an emulator-equivalent cutscene preview.
 
 For actors inherited from engine state, the resource tray offers a session-only
 center-map staging position. The preview can then propagate verified X/Y
-`SprGet` results through register 0 into a following `SprMove`. This exposes the
-Dorothy `EV_BA03`/`EV_BA04` movement animation without saving a guessed spawn
-position into source data.
+`SprGet` results through register 0 into a following `SprMove`. Playback also
+uses a literal origin from the map's reachable event sources when every source
+that positions that object ID agrees on one coordinate. Conflicting branch
+positions remain unresolved. Dorothy's object 2 now inherits the unique
+`EV_BA02` origin `(530, 308)`, so the `EV_BA03`/`EV_BA04` animation no longer
+requires manual staging or a guessed source edit.
 
 Numbered maps now list their existing `SP_M...`, `CH_M...`, and `HI_M...`
 companion scripts beside verified same-basename and incoming `FldSet` scripts.
 The filename-family relationship is visibly labeled as inferred. This closes
 the navigation gap that hid Dorothy's EV_BA03/EV_BA04 chain behind CH_M01_3;
 it does not invent a KMP event table or an unproved spawn coordinate.
+
+The same family resolver now includes `BTOM...` battle-event scripts. This is
+significant for `MAP01_3A`: `BTOM01_3.SPC` has a decoded chain to
+`EV_BA02.SPC`, which creates Dorothy as object 2 using `09A00` at the literal
+position `(530, 308)`. Later `EV_BA03` and `EV_BA04` calls change and move that
+same object. The source browser therefore exposes both her verified creation
+position and the later movement scenes without assigning a guessed coordinate.
 
 ## Event mode
 

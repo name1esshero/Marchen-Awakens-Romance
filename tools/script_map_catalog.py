@@ -21,7 +21,9 @@ def build(root=ROOT):
     event_keys=('field_loads','sprite_resources','sprite_properties','sprite_moves')
     totals={k:0 for k in event_keys};totals['script_links']=0
     for entry in manifest:
-        blob=(root/entry['path']).read_bytes();summary=script_events.semantic_summary(script_events.calls(blob))
+        blob=(root/entry['path']).read_bytes()
+        calls=script_events.calls(blob)
+        summary=script_events.semantic_summary(calls)
         record={'name':entry['name'],'source_sha256':hashlib.sha256(blob).hexdigest()}
         record['field_loads']=[clean(x,('destination','x','y')) for x in summary['field_loads']]
         links=[clean(x,('operation','script')) for x in summary['script_links']]
@@ -30,6 +32,11 @@ def build(root=ROOT):
         record['sprite_properties']=[clean(x,('sprite','property','value')) for x in summary['sprite_properties']]
         record['sprite_moves']=[{'offset':x['offset'],'values':x['values'],
                                 'dynamic':any(v is None for v in x['values'])} for x in summary['sprite_moves']]
+        origin_fields=('sprite','container','resource','animation','x','y','init_offset')
+        origins=[{key:item[key] for key in origin_fields}
+                 for item in script_events.initial_sprite_placements(calls)]
+        if origins:
+            record['sprite_origins']=origins
         for key in event_keys:totals[key]+=len(record[key])
         totals['script_links']+=len(links)
         if any(record[k] for k in event_keys):scripts.append(record)

@@ -112,6 +112,22 @@ class MapCodecTests(unittest.TestCase):
         names={item['display_name'] for item in child['sprite_candidates']}
         self.assertIn('Dorothy (moving)',names)
 
+    def test_battle_event_chain_exposes_dorothy_initial_position(self):
+        project=Project(ROOT)
+        data=project.load('MAP01_3A.KMP')
+        relations={item['script']:item for item in data['script_associations']}
+        self.assertEqual(relations['BTOM01_3.SPC']['relation'],'battle_event')
+        sources={item['script']:item for item in data['event_sources']}
+        self.assertEqual(sources['EV_BA02.SPC']['parent'],'BTOM01_3.SPC')
+        self.assertEqual(sources['EV_BA02.SPC']['depth'],1)
+        self.assertEqual(sources['EV_BA02.SPC']['sprite_origins'][0]['sprite'],2)
+        self.assertEqual((sources['EV_BA02.SPC']['sprite_origins'][0]['x'],
+                          sources['EV_BA02.SPC']['sprite_origins'][0]['y']),(530,308))
+        dorothy=next(item for item in project.script_data('EV_BA02.SPC')['sprite_placements']
+                     if item['resource']=='09A00')
+        self.assertEqual((dorothy['sprite'],dorothy['x'],dorothy['y']),(2,530,308))
+        self.assertTrue(dorothy['preview']['image'].startswith('data:image/png;base64,'))
+
     def test_map_event_sources_follow_verified_script_chains(self):
         project=Project(ROOT)
         data=project.load('MAP01_3A.KMP')
@@ -144,6 +160,7 @@ class MapCodecTests(unittest.TestCase):
         self.assertEqual(relations['SP_M01_3.SPC']['relation'],'spawn')
         self.assertEqual(relations['CH_M01_3.SPC']['relation'],'character_event')
         self.assertEqual(relations['CH_M01_3.SPC']['confidence'],'inferred')
+        self.assertEqual(relations['BTOM01_3.SPC']['relation'],'battle_event')
 
     def test_loaded_map_exposes_incoming_field_dependencies(self):
         data=Project(ROOT).load('MAP00_A.KMP')

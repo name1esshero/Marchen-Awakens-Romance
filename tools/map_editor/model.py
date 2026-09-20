@@ -110,26 +110,7 @@ def marscript_identifier(name):
 
 def initial_sprite_placements(calls):
     """Project literal SprInit/SprSet setup sequences into map coordinates."""
-    active={};result=[]
-    for call in calls:
-        args=call.get('decoded_arguments',[])
-        values=[a.get('value') if a.get('kind') in ('integer','string') else None
-                for a in args]
-        if call.get('function')=='SprInit' and len(values)==5 and isinstance(values[0],int):
-            active[values[0]]=dict(sprite=values[0],container=values[1],resource=values[2],
-                                   animation=values[3],x=None,y=None,init_offset=call['offset'],emitted=False)
-        elif call.get('function')=='SprChg' and len(values)==5 and isinstance(values[0],int) and values[0] in active:
-            active[values[0]].update(container=values[1],resource=values[2],animation=values[3])
-        elif call.get('function')=='SprSet' and len(values)==3 and isinstance(values[0],int):
-            item=active.get(values[0]);prop=values[1];value=values[2]
-            if item and prop in (0,1) and isinstance(value,int):
-                item['xy'[prop]]=((value+0x8000)&0xFFFF)-0x8000
-                if len(args)>2 and isinstance(args[2].get('offset'),int):
-                    item['xy'[prop]+'_argument_offset']=args[2]['offset']
-                if item['x'] is not None and item['y'] is not None and not item['emitted']:
-                    item['emitted']=True
-                    result.append({k:v for k,v in item.items() if k!='emitted'})
-    return result
+    return script_events.initial_sprite_placements(calls)
 
 
 class Project:
@@ -183,7 +164,7 @@ class Project:
                 'sprite_resources':len(summary.get('sprite_resources',[])),
                 'sprite_properties':len(summary.get('sprite_properties',[])),
                 'sprite_moves':len(summary.get('sprite_moves',[])),
-            })
+            },sprite_origins=summary.get('sprite_origins',[]))
             result.append(item)
             for link in self.script_links.get(script,[]):
                 target=link.get('script')
@@ -208,6 +189,8 @@ class Project:
             for prefix,relation in (('SP_','spawn'),('CH_','character_event'),('HI_','history_event')):
                 add(prefix+family+'.SPC',relation,'inferred',
                     'script and map share the recovered area-number naming family')
+            add('BTO'+family+'.SPC','battle_event','inferred',
+                'battle-room script and map share the recovered area-number naming family')
         for link in self.incoming.get(name,[]):
             add(link['script'],'loads_field','verified',
                 'decoded FldSet call names this KMP resource')

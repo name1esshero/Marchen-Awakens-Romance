@@ -51,6 +51,10 @@ scripts containing map or sprite activity also appear in the source list and
 load on demand, so scene actors such as Dorothy are reachable without following
 several links by hand. They are not all drawn at once because many are
 conditional alternatives selected by dispatcher logic.
+Numbered fields also include matching `BTOM...` battle-event scripts. On
+`MAP01_3A`, open `EV_BA02.SPC` from that chain to see Dorothy's decoded
+`09A00` sprite at her literal `(530, 308)` creation position; `EV_BA03.SPC`
+and `EV_BA04.SPC` contain the later movement and removal commands for object 2.
 Literal sprite placements and hit rectangles can be dragged in Event mode.
 Their verified SPC integer operands update live, optionally snap to the 8-pixel
 grid, and participate in the same undo/redo and atomic save path as form edits.
@@ -65,10 +69,12 @@ An unplaced literal actor can be staged at the center of the map for a
 non-saving visual preview. This is deliberately session-only because its real
 position may come from another script, a register, or engine-owned battle state.
 The preview also follows the verified `SprGet` X/Y result into register 0 when
-that actor has a known or staged position. This covers Dorothy's `EV_BA03` and
-`EV_BA04` movement-animation intervals: staging her supplies the missing
-engine-owned starting position, her real `09A01` frames run for the command's
-58 or 32 frames, and the script then switches back to `09A00`.
+that actor has a known, inherited, or staged position. A map-level origin is
+inherited only when all reachable literal placements for that object ID agree;
+conflicts stay unresolved. Dorothy's object 2 therefore inherits the unique
+`EV_BA02` position `(530, 308)`. Her real `09A01` frames run for the later
+`EV_BA03`/`EV_BA04` command intervals, and the former switches her back to
+`09A00` without requiring manual staging.
 The default **Game BG order** preview draws the second field plane first and
 plane 0 last, matching the loader's plane-0/BG0 and plane-1/BG1 assignment and
 the GBA's lower-BG-number ordering when priorities tie. Disable it to inspect
