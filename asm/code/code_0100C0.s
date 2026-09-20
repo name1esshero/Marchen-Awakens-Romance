@@ -3205,7 +3205,7 @@ _08011AEE:
 
 @ 012D4C..012D64 is decompiled as ScriptNativeGetMapStatus(); see src/decompiled.json
 
-@ 012D64..012D98 is decompiled as ScriptNativeClearMapHalfwords(); see src/decompiled.json
+@ 012D64..012D98 is decompiled as ScriptNativeClearConsumableInventory(); see src/decompiled.json
 
 @ 012D98..012DB4 is decompiled as ScriptNativeQueryResourceId(); see src/decompiled.json
 

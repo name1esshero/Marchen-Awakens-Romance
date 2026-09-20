@@ -100,5 +100,6 @@ s32 ItemGetField58(s32 id);
 u32 ItemGetField78(s32 id);
 u32 ItemGetField7C(s32 id);
 s32 TryPurchaseArmOrConsumable(s32 id, s32 isConsumable);
+s32 CountConsumableInventoryCopies(s32 id);
 
 #endif

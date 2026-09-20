@@ -11,7 +11,7 @@ extern u8 gMapGenerationRootOffset[];
 
 #define MAP_HALFWORD_COPY_LIMIT 40
 #define MAP_HALFWORD_RECORD_OFFSET 0x426A
-#define MAP_HALFWORD_CLEAR_OFFSET 0x31D0
+#define CONSUMABLE_INVENTORY_OFFSET 0x31D0
 #define MAP_HALFWORD_RECORD_COUNT 256
 #define FIXED_16_16_ONE (1 << 16)
 
@@ -1023,10 +1023,9 @@ AT("00012D4C") s32 ScriptNativeGetMapStatus(u32 count, const s32 *args,
 }
 AT("00012D4C") const u8 ScriptNativeGetMapStatusTail[2] = {0};
 
-/** Native script command: counterpart to ScriptNativeCopyMapHalfwords()
- * that clears the game state's +0x426A record entries instead of copying
- * VM arguments into them. @return Always 1. */
-AT("00012D64") s32 ScriptNativeClearMapHalfwords(u32 count, const s32 *args,
+/** Native script command ItemInit: clear all 256 consumable inventory slots.
+ * @return Always 1. */
+AT("00012D64") s32 ScriptNativeClearConsumableInventory(u32 count, const s32 *args,
                                                   s32 *result)
 {
     s32 i;
@@ -1042,7 +1041,7 @@ AT("00012D64") s32 ScriptNativeClearMapHalfwords(u32 count, const s32 *args,
 
     i = 0;
     root = &gMapGenerationRoot;
-    offset = MAP_HALFWORD_CLEAR_OFFSET;
+    offset = CONSUMABLE_INVENTORY_OFFSET;
     fixed = FIXED_16_16_ONE;
     value = 0;
     step = fixed;

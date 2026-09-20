@@ -2882,7 +2882,7 @@
   {
     "addr": "08012D64",
     "size": 52,
-    "name": "ScriptNativeClearMapHalfwords",
+    "name": "ScriptNativeClearConsumableInventory",
     "file": "src/mapping.c"
   },
   {
@@ -4944,6 +4944,12 @@
     "file": "src/item.c"
   },
   {
+    "addr": "08057078",
+    "size": 68,
+    "name": "CountConsumableInventoryCopies",
+    "file": "src/item.c"
+  },
+  {
     "addr": "08057108",
     "size": 24,
     "name": "ConsumableGetName",
@@ -4958,7 +4964,7 @@
   {
     "addr": "08057138",
     "size": 36,
-    "name": "GameStateGetEntry31D0",
+    "name": "ConsumableInventoryGetSlot",
     "file": "src/runtime_accessors.c"
   },
   {
@@ -4970,19 +4976,19 @@
   {
     "addr": "08057174",
     "size": 44,
-    "name": "GameStateClearEntry31D0",
+    "name": "ConsumableInventoryClearSlot",
     "file": "src/runtime_accessors.c"
   },
   {
     "addr": "080571E8",
     "size": 48,
-    "name": "GameStateSnapshotMapBuffer",
+    "name": "ConsumableInventorySaveSnapshot",
     "file": "src/runtime_misc.c"
   },
   {
     "addr": "08057218",
     "size": 48,
-    "name": "GameStateRestoreMapBuffer",
+    "name": "ConsumableInventoryRestoreSnapshot",
     "file": "src/runtime_misc.c"
   },
   {

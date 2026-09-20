@@ -189,15 +189,15 @@ AT("0000F96C") void GameStateClearBlock413C(void)
  CpuFill(ORDERED_GAME_STATE_BASE+0x413C,256,0);
 }
 
-/** Save the working map buffer at +0x31D0 into its +0x33D0 snapshot. */
-AT("000571E8") void GameStateSnapshotMapBuffer(void)
+/** Save the 256-slot consumable inventory into its adjacent snapshot. */
+AT("000571E8") void ConsumableInventorySaveSnapshot(void)
 {
  u8 *state=ORDERED_GAME_STATE_BASE;
  CpuCopy(state+0x33D0,state+0x31D0,512);
 }
 
-/** Restore the working map buffer at +0x31D0 from its +0x33D0 snapshot. */
-AT("00057218") void GameStateRestoreMapBuffer(void)
+/** Restore the 256-slot consumable inventory from its adjacent snapshot. */
+AT("00057218") void ConsumableInventoryRestoreSnapshot(void)
 {
  u8 *state=ORDERED_GAME_STATE_BASE;
  CpuCopy(state+0x31D0,state+0x33D0,512);

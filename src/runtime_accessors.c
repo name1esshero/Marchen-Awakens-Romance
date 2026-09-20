@@ -335,7 +335,7 @@ AT("00005360") void *GameStateGetBuffer3F38(void)
 
 GAME_STATE_TABLE_GET_S16("000568B4",GameStateGetEntry2768,0x2768)
 GAME_STATE_TABLE_GET_S16("00056EE0",GameStateGetEntry2AE0,0x2AE0)
-GAME_STATE_TABLE_GET_S16("00057138",GameStateGetEntry31D0,0x31D0)
+GAME_STATE_TABLE_GET_S16("00057138",ConsumableInventoryGetSlot,0x31D0)
 
 /** @return A signed 16-bit encounter-related field stored 180 bytes before
  * the game state root. Exact meaning not yet recovered. */
@@ -371,11 +371,11 @@ AT("00056130") s32 GameStateGetCurrentEntry3894(void)
  return (s16)GameStateGetEntry3894(*base,0,0);
 }
 
-/** Clear one entry of the map-generation state's +0x31D0 s16 table and
- * notify the shared invalidation callback.
- * @param index Entry to clear, narrowed to 16 bits.
+/** Clear one slot of the game-state consumable inventory and rebuild its
+ * compacted view.
+ * @param index Inventory slot to clear, narrowed to 16 bits.
  * @return Nothing. */
-AT("00057174") void GameStateClearEntry31D0(s32 index)
+AT("00057174") void ConsumableInventoryClearSlot(s32 index)
 {
  u8 *iwram;
  u32 offset;

@@ -8488,7 +8488,7 @@ _0806CAF0:
 	.4byte 0x312C1C11
 	.4byte 0xF7954A08
 	.2byte 0xF957
-	bl GameStateSnapshotMapBuffer
+	bl ConsumableInventorySaveSnapshot
 	.2byte 0xE00F
 	.4byte 0x00004A0C
 	.4byte 0x03000000
@@ -8497,7 +8497,7 @@ _0806CAF0:
 	.4byte 0x00FF00FF
 	.4byte 0x00001390
 	.4byte 0x00001364
-	bl GameStateRestoreMapBuffer
+	bl ConsumableInventoryRestoreSnapshot
 	.4byte 0xFA30F003
 	.4byte 0x00C921C3
 	.4byte 0x4A0E1840

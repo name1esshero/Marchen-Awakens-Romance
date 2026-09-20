@@ -33,10 +33,10 @@ void IwramSetField2870(u32 value);
 void *GameStateGetBuffer3F38(void);
 s32 GameStateGetEntry2768(s32 index);
 s32 GameStateGetEntry2AE0(s32 index);
-s32 GameStateGetEntry31D0(s32 index);
+s32 ConsumableInventoryGetSlot(s32 index);
 s32 GameStateGetEncounterValue(void);
 s32 GameStateGetEncounterMode(void);
 s32 GameStateGetCurrentEntry3894(void);
-void GameStateClearEntry31D0(s32 index);
+void ConsumableInventoryClearSlot(s32 index);
 
 #endif

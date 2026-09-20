@@ -432,3 +432,16 @@ word directives. Full ROM comparison remains byte-identical.
 The resolver at 0x08055F4C was deliberately retained in assembly: its clean C
 candidate is behaviorally and structurally correct but swaps two low registers.
 This follows `PRET_STANDARDS.md` rather than forcing a cosmetic match.
+
+## Verified snapshot: consumable inventory scan (2026-09-20)
+
+`CountConsumableInventoryCopies` at 0x08057078 now builds from ordinary C,
+removing 68 bytes of assembly. Its three assembly callers use the relocatable
+symbol. The same trace identified game-state offsets `0x31D0` and `0x33D0` as
+the 256-slot consumable inventory and its snapshot, so four older offset-based
+or map-named helpers now have inventory-specific public names. The batch adds
+no raw ROM address, register pin, inline assembly, artificial volatile access,
+dead code, or compiler switch. `make compare` remains byte-identical.
+The native command registered as `ItemInit` is now named
+`ScriptNativeClearConsumableInventory`, replacing its earlier speculative map
+name without changing its still-audited implementation.

@@ -8776,7 +8776,7 @@ _0805B7D8:
 	adds r0, r0, r1
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateGetEntry31D0
+	bl ConsumableInventoryGetSlot
 	ldr r3, _0805B800
 	adds r1, r6, r3
 	b _0805B8F0
@@ -8945,7 +8945,7 @@ _0805B8D4:
 	adds r0, r0, r1
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateGetEntry31D0
+	bl ConsumableInventoryGetSlot
 	ldr r2, _0805B908
 
 	.thumb_func
@@ -9530,7 +9530,7 @@ sub_0805BB52:
 sub_0805BB54:
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateGetEntry31D0
+	bl ConsumableInventoryGetSlot
 
 	.thumb_func
 	.thumb
@@ -9608,7 +9608,7 @@ sub_0805BB70:
 	.thumb
 	.global sub_0805BB7E
 sub_0805BB7E:
-	bl GameStateGetEntry31D0
+	bl ConsumableInventoryGetSlot
 	strh r0, [r7, #0]
 	movs r0, #192
 	lsls r0, r0, #2
@@ -10256,7 +10256,7 @@ sub_0805BE8C:
 	adds r0, r0, r1
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateGetEntry31D0
+	bl ConsumableInventoryGetSlot
 	ldr r2, _0805BF3C
 	adds r7, r6, r2
 	strh r0, [r7, #0]
@@ -10274,7 +10274,7 @@ sub_0805BE8C:
 	adds r0, r0, r1
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateGetEntry31D0
+	bl ConsumableInventoryGetSlot
 	strh r0, [r7, #0]
 	movs r0, #192
 	lsls r0, r0, #2
@@ -10634,7 +10634,7 @@ _0805BFF0:
 	adds r0, r0, r1
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateClearEntry31D0
+	bl ConsumableInventoryClearSlot
 	bl sub_08057018
 	adds r1, r0, #0
 	ldr r4, _0805C030
@@ -10716,7 +10716,7 @@ sub_0805C070:
 	adds r0, r0, r1
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateGetEntry31D0
+	bl ConsumableInventoryGetSlot
 
 	.thumb_func
 	.thumb
@@ -10739,7 +10739,7 @@ sub_0805C090:
 	adds r0, r0, r1
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateGetEntry31D0
+	bl ConsumableInventoryGetSlot
 	strh r0, [r7, #0]
 	movs r0, #192
 	lsls r0, r0, #2
@@ -10763,7 +10763,7 @@ _0805C0CC:
 	adds r0, r0, r1
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateGetEntry31D0
+	bl ConsumableInventoryGetSlot
 	ldr r7, _0805C114
 	adds r1, r6, r7
 	strh r0, [r1, #0]

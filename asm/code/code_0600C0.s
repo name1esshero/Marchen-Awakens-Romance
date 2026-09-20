@@ -10265,7 +10265,7 @@ _08065058:
 	movs r3, #6
 	bl sub_08054350
 	adds r0, r5, #0
-	bl sub_08057078
+	bl CountConsumableInventoryCopies
 	adds r1, r0, #0
 	lsls r1, r1, #16
 	asrs r1, r1, #16
@@ -10714,7 +10714,7 @@ _0806538C:
 	adds r0, r0, r1
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateGetEntry31D0
+	bl ConsumableInventoryGetSlot
 	movs r3, #255
 	lsls r3, r3, #2
 	adds r1, r7, r3
@@ -11156,7 +11156,7 @@ sub_0806594E:
 	adds r0, r0, r1
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateClearEntry31D0
+	bl ConsumableInventoryClearSlot
 	bl sub_08057018
 	adds r1, r0, #0
 	movs r4, #252
@@ -11233,7 +11233,7 @@ _080659BA:
 	.global sub_080659E0
 sub_080659E0:
 	asrs r0, r0, #16
-	bl GameStateGetEntry31D0
+	bl ConsumableInventoryGetSlot
 	movs r2, #255
 	lsls r2, r2, #2
 	adds r7, r6, r2
@@ -11252,7 +11252,7 @@ sub_080659E0:
 	adds r0, r0, r1
 	lsls r0, r0, #16
 	asrs r0, r0, #16
-	bl GameStateGetEntry31D0
+	bl ConsumableInventoryGetSlot
 	strh r0, [r7, #0]
 	ldr r1, _08065A3C
 	movs r2, #0
@@ -15405,7 +15405,7 @@ _08067F6A:
 	ldr r1, [sp, #12]
 	lsls r0, r1, #16
 	asrs r0, r0, #16
-	bl sub_08057078
+	bl CountConsumableInventoryCopies
 	lsls r0, r0, #16
 	asrs r1, r0, #16
 	mov r0, sp

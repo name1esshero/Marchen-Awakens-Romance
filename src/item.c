@@ -22,7 +22,16 @@ enum
     ARM_PURCHASE_MAX_COPIES = 98,
     ARM_INVENTORY_MODE = 1,
     CONSUMABLE_COST_OFFSET = 0x4C,
-    CONSUMABLE_ADD_FAILED = 0xFFFF
+    CONSUMABLE_ADD_FAILED = 0xFFFF,
+    CONSUMABLE_INVENTORY_CAPACITY = 256,
+    CONSUMABLE_INVENTORY_OFFSET = 0x31D0,
+    FIXED_POINT_ONE = 1 << 16
+};
+
+union ConsumableInventoryAddress
+{
+    u8 *pointer;
+    u32 address;
 };
 
 /**
@@ -216,4 +225,52 @@ u32 ItemGetField7C(s32 id)
 {
     id = (s16)id;
     return gArmDefinitions[id].field7C;
+}
+
+/**
+ * @brief Count copies of a consumable ID in the game-state inventory.
+ * @param id Signed consumable identifier.
+ * @return The number of matching entries among the 256 inventory slots.
+ */
+AT("00057078")
+s32 CountConsumableInventoryCopies(s32 id)
+{
+    s32 target;
+    s32 count;
+    union ConsumableInventoryAddress base;
+    union ConsumableInventoryAddress slot;
+    u8 *entry;
+    s32 indexFixed;
+    s32 countFixed;
+    s32 step;
+    s32 offset;
+
+    target = (s16)id;
+    count = 0;
+    base.pointer = gMapGenerationRoot;
+    indexFixed = FIXED_POINT_ONE;
+    offset = CONSUMABLE_INVENTORY_OFFSET;
+    slot.address = base.address + offset;
+    entry = slot.pointer;
+    countFixed = indexFixed;
+    step = indexFixed;
+    do
+    {
+        if (*(s16 *)entry == target)
+        {
+            s32 previous = countFixed;
+
+            countFixed += step;
+            count = previous >> 16;
+        }
+        {
+            s32 previous = indexFixed;
+
+            indexFixed += step;
+            entry += sizeof(s16);
+            if ((previous >> 16) >= CONSUMABLE_INVENTORY_CAPACITY)
+                break;
+        }
+    } while (TRUE);
+    return count;
 }

@@ -550,7 +550,7 @@ fixed register.
 
 ## Reload a mutable root through its real volatile indirection
 
-`ScriptNativeClearMapHalfwords()` (0x08012D64) originally reloads the generated
+`ScriptNativeClearConsumableInventory()` (0x08012D64) originally reloads the generated
 map root pointer on every loop iteration. Declaring the root as an ordinary
 `u8 **` let agbcc hoist the dereference and forced the reconstruction to pin
 that pointer to `r6`. The neighboring copy routine already exposed the actual

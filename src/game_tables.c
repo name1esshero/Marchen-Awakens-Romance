@@ -771,7 +771,7 @@ extern void ScriptNativeBattleStatus(void);
 extern void ScriptNativeMapCoordinateCall(void);
 extern void ScriptNativeSetPendingMapValue(void);
 extern void ScriptNativeCopyMapHalfwords(void);
-extern void ScriptNativeClearMapHalfwords(void);
+extern void ScriptNativeClearConsumableInventory(void);
 extern void ScriptNativeQueryResourceId(void);
 extern void ScriptNativeQueryModeResource(void);
 extern void ScriptNativeSetModeResource(void);
@@ -902,7 +902,7 @@ AT("001AFEA4") const struct ScriptNativeCommand
     [106] = { .name = gScriptNativeName_PopMenu, .handler = (void *)((u32)ScriptNativeMapCoordinateCall + 1) },
     [107] = { .name = gScriptNativeName_SysMenuExec, .handler = (void *)((u32)ScriptNativeSetPendingMapValue + 1) },
     [108] = { .name = gScriptNativeName_ShopListMake, .handler = (void *)((u32)ScriptNativeCopyMapHalfwords + 1) },
-    [109] = { .name = gScriptNativeName_ItemInit, .handler = (void *)((u32)ScriptNativeClearMapHalfwords + 1) },
+    [109] = { .name = gScriptNativeName_ItemInit, .handler = (void *)((u32)ScriptNativeClearConsumableInventory + 1) },
     [110] = { .name = gScriptNativeName_ItemGet, .handler = (void *)((u32)ScriptNativeQueryResourceId + 1) },
     [111] = { .name = gScriptNativeName_GetHaveArm, .handler = (void *)((u32)ScriptNativeQueryModeResource + 1) },
     [112] = { .name = gScriptNativeName_ArmGet, .handler = (void *)((u32)ScriptNativeSetModeResource + 1) },

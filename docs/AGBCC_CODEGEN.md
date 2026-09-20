@@ -521,3 +521,20 @@ one continuous section. The correct fix is a new `.section .rom.00055F4C`
 boundary before the surviving resolver. Whenever C replaces bytes from the
 middle of an assembly section, anchor the first surviving byte in its own
 addressed section before trusting a function-level object comparison.
+
+### Preserve a pointer load as an integer until the first offset addition
+
+`CountConsumableInventoryCopies` at 0x08057078 scans 256 signed-halfword
+inventory slots. A direct `u8 *` initialization makes agbcc load the runtime
+base into r1, while the ROM loads it into r0 and writes the first computed
+entry address to r1. Keeping the loaded RAM address in the integer member of
+a pointer/address union until adding the named inventory offset expresses
+those two distinct values and reproduces the original allocation. The pointer
+member is selected before any dereference. This avoids host pointer-size
+warnings as well as fixed ROM addresses and compiler hints.
+
+The two independent fixed-point counters are also significant. One advances
+through all 256 slots; the other advances only on a match and therefore
+becomes the copy count. Replacing either with a conventional integer loop is
+behaviorally correct but does not reproduce this compiler's instruction
+sequence.

@@ -1192,12 +1192,13 @@ The original native table maps both `BgSetAttrEnable` and
 `BgGetAttrEnable` to the setter adapter at 0x08012994; the separate test
 adapter exists at 0x080129A4 but is not selected by that table. The C table
 keeps this cartridge behavior exactly rather than silently correcting it.
-Hidden-code audit, map-buffer restore: ROM 0x080571E8..0x08057218 was emitted
+Hidden-code audit, consumable-inventory snapshot: ROM
+0x080571E8..0x08057218 was emitted
 as twelve anonymous `.4byte` values in `asm/code/code_0500C0.s`, but direct
-Thumb disassembly shows a complete function. `GameStateSnapshotMapBuffer()`
+Thumb disassembly shows a complete function. `ConsumableInventorySaveSnapshot()`
 copies 512 bytes from game-state offset `0x31D0` into the snapshot at
 `0x33D0`; it is the exact inverse of the adjacent
-`GameStateRestoreMapBuffer()`. The two functions
+`ConsumableInventoryRestoreSnapshot()`. The two functions
 compile from the same shiftable `ORDERED_GAME_STATE_BASE` and `CpuCopy()` C
 shape with only their source and destination offsets exchanged. The known
 caller at 0x0806CC06 and the adjacent snapshot call now branch to the named
@@ -2244,3 +2245,24 @@ candidate has the correct behavior, size, literals, and control flow, but agbcc
 keeps the returned index in r2 and the root slot in r1 while the ROM uses r1
 and r2 respectively. No register pin, inline assembly, fake volatile access,
 or compiler switch was accepted to force the match.
+
+## Consumable inventory copy counter (2026-09-20)
+
+ROM 0x08057078..0x080570BC is now `CountConsumableInventoryCopies`, a
+byte-identical ordinary-C scan of all 256 signed-halfword slots at game-state
+offset `0x31D0`. The routine maintains one fixed-point counter for the slot
+walk and another that advances only when the requested ID is present; the
+latter is the returned number of copies. Its three callers now branch to the
+relocatable name, and the obsolete assembly body was removed.
+
+This trace corrected an earlier classification: `0x31D0` is the consumable
+inventory, while `0x33D0` is its 512-byte snapshot. The getters, slot clearer,
+and snapshot pair were renamed accordingly. Clean candidates for the adjacent
+insert and remove-by-ID functions at 0x080570BC and 0x080571A0 reproduce the
+logic but not the ROM's register allocation, so both remain in assembly under
+the PRET fallback rule.
+
+The native table supplies one more independent confirmation: command 109 is
+named `ItemInit` and points at 0x08012D64, which clears all 256 halfwords at
+`0x31D0`. Its C symbol is therefore `ScriptNativeClearConsumableInventory`;
+the earlier map-oriented name and comment were incorrect.

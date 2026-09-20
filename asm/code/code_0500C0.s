@@ -15317,51 +15317,10 @@ _08057070:
 	pop {r1}
 	bx r1
 
-	.thumb_func
-	.thumb
-	.global sub_08057078
-sub_08057078:
-	push {r4, r5, r6, r7, lr}
-	lsls r0, r0, #16
-	asrs r6, r0, #16
-	movs r5, #0
-	ldr r0, _080570B4
-	ldr r0, [r0, #0]
-	movs r2, #128
-	lsls r2, r2, #9
-	ldr r3, _080570B8
-	adds r1, r0, r3
-	adds r3, r2, #0
-	adds r4, r2, #0
-	.global _08057090
-_08057090:
-	movs r7, #0
-	ldrsh r0, [r1, r7]
-	cmp r0, r6
-	bne _0805709E
-	adds r0, r3, #0
-	adds r3, r3, r4
-	asrs r5, r0, #16
-	.global _0805709E
-_0805709E:
-	adds r0, r2, #0
-	adds r2, r2, r4
-	adds r1, #2
-	asrs r0, r0, #16
-	cmp r0, #255
-	ble _08057090
-	adds r0, r5, #0
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _080570B4
-_080570B4:
-	.4byte 0x03003FDC  @ IWRAM+0x3FDC
-	.global _080570B8
-_080570B8:
-	.4byte 0x000031D0
+@ 057078..0570BC is decompiled as CountConsumableInventoryCopies(); see src/decompiled.json
+
+	.section .rom.000570BC, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -15422,7 +15381,7 @@ _080570FE:
 	.section .rom.00057138, "ax"
 	.syntax unified
 
-@ 057138..05715C is decompiled as GameStateGetEntry31D0(); see src/decompiled.json
+@ 057138..05715C is decompiled as ConsumableInventoryGetSlot(); see src/decompiled.json
 
 
 @ 05715C..057174 is decompiled as ConsumableGetResourceName(); see src/decompiled.json
@@ -15430,7 +15389,7 @@ _080570FE:
 	.section .rom.00057174, "ax"
 	.syntax unified
 
-@ 057174..0571A0 is decompiled as GameStateClearEntry31D0(); see src/decompiled.json
+@ 057174..0571A0 is decompiled as ConsumableInventoryClearSlot(); see src/decompiled.json
 
 	.section .rom.000571A0, "ax"
 	.syntax unified
@@ -15484,9 +15443,9 @@ _080571DE:
 	pop {r4, r5, r6, r7}
 	pop {r0}
 	bx r0
-@ 0571E8..057218 is decompiled as GameStateSnapshotMapBuffer(); see src/decompiled.json
+@ 0571E8..057218 is decompiled as ConsumableInventorySaveSnapshot(); see src/decompiled.json
 
-@ 057218..057248 is decompiled as GameStateRestoreMapBuffer(); see src/decompiled.json
+@ 057218..057248 is decompiled as ConsumableInventoryRestoreSnapshot(); see src/decompiled.json
 
 	.section .rom.00057248, "ax"
 	.syntax unified
@@ -15909,7 +15868,7 @@ _080574FA:
 	.global _080574FE
 _080574FE:
 	mov r0, r9
-	bl GameStateClearEntry31D0
+	bl ConsumableInventoryClearSlot
 	pop {r3, r4}
 	mov r8, r3
 	mov r9, r4
@@ -16069,7 +16028,7 @@ sub_08057608:
 	.global _0805761C
 _0805761C:
 	adds r0, r5, #0
-	bl sub_08057078
+	bl CountConsumableInventoryCopies
 	adds r4, r0, #0
 	mov r0, r9
 	adds r1, r5, #0
