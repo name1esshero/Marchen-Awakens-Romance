@@ -44,6 +44,7 @@ u32 RuntimeActorGetByte66(u32 actor,u32 part);
 u32 RuntimeClearActorPartField80IfArmFlag20(u32 actor, u32 part, s16 armId);
 void RuntimeClearOffsetBuffer(void);
 void RuntimeAddOffsets(u32 first,u32 second);
+void RuntimeQueueOffsetRecord(u32 type, u32 value, u32 duration);
 void RuntimePartInitHeader(u8 *record,const void *resourceName,u32 value);
 s32 RuntimeActorGetField7A0(u32 actor);
 void RuntimeActorSetField7A2(u32 actor,s32 value);

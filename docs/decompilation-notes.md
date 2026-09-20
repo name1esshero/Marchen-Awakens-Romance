@@ -2652,3 +2652,21 @@ No direct branch or stored Thumb pointer to 0x080025A5 was found in the ROM, so
 the recovered descriptive name does not claim a known caller or subsystem.
 The duplicate body is retained because both independently placed functions are
 present in the original ROM.
+
+## Battle-character runtime settings (2026-09-20)
+
+`ApplyBattleCharacterRuntimeSettings` at 0x08016B44 has a live caller in the
+battle setup path. It indexes the typed 120-byte `BattleCharacterDefinition`,
+adds the two unsigned halfword runtime offsets, then conditionally queues the
+following type/value/duration triplet when duration is nonzero. Declaring the
+seven identity fields as `u16` is supported directly by the ROM's five `ldrh`
+instructions; their previous `s16` declaration had no decoded user and was too
+broad. Named indexes now record the field roles established by this caller.
+
+The callee at 0x080086B0 is named `RuntimeQueueOffsetRecord` from its complete
+behavior: it appends a four-byte type/value/duration record to the secondary
+runtime's 16-entry queue and shifts older records when full. Its larger body
+remains assembly pending a separate clean-C recovery. The wrapper itself
+reproduces all 40 bytes with ordinary structure access and no compiler hints.
+The stale decompilation-manifest name for the already recovered character-table
+accessor at 0x08011674 was also synchronized with its source and symbol name.

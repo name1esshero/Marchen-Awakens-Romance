@@ -682,8 +682,8 @@ sub_080085E8:
 
 	.thumb_func
 	.thumb
-	.global sub_080086B0
-sub_080086B0:
+	.global RuntimeQueueOffsetRecord
+RuntimeQueueOffsetRecord:
 	push {r4, r5, r6, r7, lr}
 	mov r7, r9
 	mov r6, r8

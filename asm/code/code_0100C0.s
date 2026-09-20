@@ -5744,7 +5744,7 @@ _080141A8:
 	ldr r2, [sp, #84]
 	movs r3, #0
 	ldrsh r0, [r2, r3]
-	bl sub_08016B44
+	bl ApplyBattleCharacterRuntimeSettings
 	adds r0, r7, #0
 	bl sub_08016B6C
 	ldr r1, [sp, #52]
@@ -12097,32 +12097,11 @@ _08016B3C:
 _08016B40:
 	.4byte 0x000038B8
 
-	.thumb_func
-	.thumb
-	.global sub_08016B44
-sub_08016B44:
-	push {r4, lr}
-	.2byte 0xF7FA
-	.4byte 0x1C04FD95
-	ldrh r0, [r4, #22]
-	ldrh r1, [r4, #24]
-	.2byte 0xF7F1
-	.byte 0x98
-	.byte 0xFD
-	ldrh r0, [r4, #30]
-	cmp r0, #0
-	beq _08016B64
-	ldrh r0, [r4, #26]
-	ldrh r1, [r4, #28]
-	ldrh r2, [r4, #30]
-	bl sub_080086B0
-	.global _08016B64
-_08016B64:
-	pop {r4}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
+@ 016B44..016B6C is decompiled as ApplyBattleCharacterRuntimeSettings();
+@ see src/decompiled.json
+
+	.section .rom.00016B6C, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb

@@ -2,6 +2,7 @@
 #include "runtime_misc.h"
 #include "runtime_leaf.h"
 #include "runtime_accessors.h"
+#include "runtime_buffers.h"
 #include "sprite_engine.h"
 #include "script_vm.h"
 
@@ -201,6 +202,24 @@ AT("00011674") const struct BattleCharacterDefinition *RuntimeGetBattleCharacter
 {
  return &gBattleCharacterDefinitions[index];
 }
+
+/** Apply the position and timed-offset fields from one battle-character
+ * definition to the secondary runtime. */
+AT("00016B44") void ApplyBattleCharacterRuntimeSettings(u32 index)
+{
+ const struct BattleCharacterDefinition *definition;
+
+ definition=RuntimeGetBattleCharacterDefinition(index);
+ RuntimeAddOffsets(
+     definition->identity[BATTLE_CHARACTER_IDENTITY_RUNTIME_OFFSET_FIRST],
+     definition->identity[BATTLE_CHARACTER_IDENTITY_RUNTIME_OFFSET_SECOND]);
+ if (definition->identity[BATTLE_CHARACTER_IDENTITY_QUEUE_DURATION]!=0)
+  RuntimeQueueOffsetRecord(
+      definition->identity[BATTLE_CHARACTER_IDENTITY_QUEUE_TYPE],
+      definition->identity[BATTLE_CHARACTER_IDENTITY_QUEUE_VALUE],
+      definition->identity[BATTLE_CHARACTER_IDENTITY_QUEUE_DURATION]);
+}
+AT("00016B44") const u8 ApplyBattleCharacterRuntimeSettingsTail[2]={0};
 /** @return A slot within a group of the cached sprite runtime block. Each
  * group spans 1024 bytes; slot
  * selects a 32-byte block within it.

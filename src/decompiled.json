@@ -2216,7 +2216,7 @@
   {
     "addr": "08011674",
     "size": 20,
-    "name": "RuntimeGetTable1AD634",
+    "name": "RuntimeGetBattleCharacterDefinition",
     "file": "src/runtime_misc.c"
   },
   {
@@ -3034,6 +3034,12 @@
     "size": 20,
     "name": "BattleActionUnavailable",
     "file": "src/battle_task_adapters.c"
+  },
+  {
+    "addr": "08016B44",
+    "size": 40,
+    "name": "ApplyBattleCharacterRuntimeSettings",
+    "file": "src/runtime_misc.c"
   },
   {
     "addr": "08017BA8",
