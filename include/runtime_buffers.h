@@ -35,6 +35,8 @@ void RuntimePartSetField652(u32 actor,u32 part,s32 value);
 s32 RuntimePartGetField652(u32 actor,u32 part);
 void RuntimePartSetField651(u32 actor,u32 part,s32 value);
 s32 RuntimePartGetField651(u32 actor,u32 part);
+void RuntimePartSetFields653And654(u32 actor, u32 part, u16 value,
+                                   s32 enabled);
 void RuntimeActorSetByteA4(u32 actor,u32 part,u32 value);
 s32 RuntimeActorGetByteA4(u32 actor,u32 part);
 u32 RuntimeActorGetByte66(u32 actor,u32 part);

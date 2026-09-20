@@ -3153,44 +3153,10 @@ sub_08009AD8:
 
 @ 009BE4..009C08 is decompiled as RuntimePartGetField651(); see src/decompiled.json
 
-	.section .rom.00009C08, "ax"
-	.syntax unified
+@ 009C08..009C40 is decompiled as RuntimePartSetFields653And654(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08009C08
-sub_08009C08:
-	push {r4, r5, lr}
-	ldr r5, _08009C38
-	movs r4, #209
-	lsls r4, r4, #3
-	muls r0, r4
-	movs r4, #144
-	lsls r4, r4, #1
-	adds r0, r0, r4
-	ldr r4, [r5, #0]
-	adds r4, r4, r0
-	movs r0, #104
-	muls r0, r1
-	ldr r1, _08009C3C
-	adds r0, r0, r1
-	adds r4, r4, r0
-	adds r0, r4, #0
-	adds r0, #87
-	strb r3, [r0, #0]
-	adds r4, #88
-	strh r2, [r4, #0]
-	pop {r4, r5}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-	.global _08009C38
-_08009C38:
-	.4byte 0x03004020  @ IWRAM+0x4020
-	.global _08009C3C
-_08009C3C:
-	.4byte 0x000004DC
+	.section .rom.00009C40, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb

@@ -198,6 +198,25 @@ PART_GET_S8("00009B98",RuntimePartGetField652,0x652)
 PART_SET_S8("00009BBC",RuntimePartSetField651,0x651)
 PART_GET_S8("00009BE4",RuntimePartGetField651,0x651)
 
+/** Set a part's +0x653 byte and adjacent +0x654 halfword together. */
+AT("00009C08")
+void RuntimePartSetFields653And654(u32 actor, u32 part, u16 value,
+                                   s32 enabled)
+{
+    u8 **root = &gSecondaryRuntime;
+    u32 actorOffset = actor * ACTOR_RECORD_SIZE;
+    u8 *record;
+    u32 partOffset;
+
+    actorOffset += ACTOR_PART_TABLE_BASE_OFFSET;
+    record = *root + actorOffset;
+    partOffset = part * ACTOR_PART_GROUP_STRIDE;
+    partOffset += 0x4DC;
+    record += partOffset;
+    record[87] = enabled;
+    *(u16 *)(record + 88) = value;
+}
+
 /** Set a part record's +0xA4 byte field. See RuntimeActorGetByteA4(). */
 AT("00019C50") void RuntimeActorSetByteA4(u32 actor,u32 part,u32 value)
 {

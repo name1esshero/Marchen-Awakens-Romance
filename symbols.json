@@ -225,6 +225,7 @@
   "08009B98": "RuntimePartGetField652",
   "08009BBC": "RuntimePartSetField651",
   "08009BE4": "RuntimePartGetField651",
+  "08009C08": "RuntimePartSetFields653And654",
   "08009C94": "RuntimeCountReadyParts",
   "08009CC4": "RuntimeSetFieldEB1",
   "08009CD8": "RuntimeGetFieldEB1",

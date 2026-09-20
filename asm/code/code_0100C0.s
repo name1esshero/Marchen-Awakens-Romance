@@ -11391,7 +11391,7 @@ _080165DE:
 	movs r3, #8
 	ldrsh r2, [r4, r3]
 	movs r3, #1
-	bl sub_08009C08
+	bl RuntimePartSetFields653And654
 	movs r0, #1
 	strb r0, [r5, #10]
 	strb r0, [r5, #12]
@@ -12315,7 +12315,7 @@ sub_08016CA8:
 	adds r0, r5, #0
 	adds r1, r4, #0
 	movs r3, #0
-	bl sub_08009C08
+	bl RuntimePartSetFields653And654
 	movs r0, #0
 	ldrsb r0, [r6, r0]
 	movs r1, #0

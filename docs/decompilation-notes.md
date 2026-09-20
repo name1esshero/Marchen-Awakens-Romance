@@ -2571,3 +2571,13 @@ Bytes 0x0A..0x1B remain unknown and deliberately retain an offset-based name
 until their readers establish the layout. The fixed IWRAM location is exposed
 through the named `gIwramField0810` symbol rather than repeated as a raw address
 in C.
+
+## Actor-part paired field setter (2026-09-20)
+
+`RuntimePartSetFields653And654` at 0x08009C08 writes one signed-state byte at
+per-part offset 0x653 and the adjacent halfword at 0x654. Its two callers use
+the pair to enable or disable the adjustment interpreted by the following
+routine at 0x08009C40. The expanded typed address calculation confirms this is
+the same 104-byte-stride actor/part table used by the neighboring 0x651,
+0x652, and 0x656 accessors. It compiles to all 56 original bytes without
+register hints, integerized pointers, or volatile access.

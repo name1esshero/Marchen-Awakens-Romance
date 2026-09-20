@@ -1464,6 +1464,12 @@
     "file": "src/runtime_buffers.c"
   },
   {
+    "addr": "08009C08",
+    "size": 56,
+    "name": "RuntimePartSetFields653And654",
+    "file": "src/runtime_buffers.c"
+  },
+  {
     "addr": "08009C94",
     "size": 48,
     "name": "RuntimeCountReadyParts",
