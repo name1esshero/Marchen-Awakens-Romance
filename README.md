@@ -181,6 +181,7 @@ See the [sound source guide](sound/README.md) and
 |---|---|
 | `make readability-audit` | Report unexplained magic numbers in C sources |
 | `make pret-audit` | Audit mechanically enforceable PRET source standards |
+| `make shiftability-audit` | Measure fixed software-address dependencies in C |
 | `make site` | Stage galleries and documentation under `build/site` and `build/wiki` |
 | `make docs-fetch` | Restore missing published gallery/report outputs |
 | `make snapshot` | Create a checksummed recovery archive under `backups/` |
@@ -210,6 +211,7 @@ Use normal build targets for day-to-day editing.
 More technical documentation is available in
 [docs/decompilation-notes.md](docs/decompilation-notes.md),
 [docs/PRET_AUDIT.md](docs/PRET_AUDIT.md),
+[docs/shiftability-audit.md](docs/shiftability-audit.md),
 [docs/map-and-script-runtime.md](docs/map-and-script-runtime.md),
 [docs/game-flags.md](docs/game-flags.md),
 [docs/save-format.md](docs/save-format.md), and
