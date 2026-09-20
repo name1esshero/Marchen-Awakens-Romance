@@ -1,16 +1,6 @@
 [
   {
     "kind": "forced_register",
-    "file": "src/mapping.c",
-    "detail": "register s32 fixedIndex asm(\"r2\");"
-  },
-  {
-    "kind": "forced_register",
-    "file": "src/mapping.c",
-    "detail": "register u8 *destination asm(\"r1\");"
-  },
-  {
-    "kind": "forced_register",
     "file": "src/sram.c",
     "detail": "register u16 wait asm(\"r0\") = *waitcnt;"
   },
@@ -28,16 +18,6 @@
     "kind": "forced_register",
     "file": "src/sram.c",
     "detail": "register vu16 *waitcnt asm(\"r2\") = WAITCNT_ADDRESS;                    \\"
-  },
-  {
-    "kind": "inline_assembly",
-    "file": "src/mapping.c",
-    "detail": "register s32 fixedIndex asm(\"r2\");"
-  },
-  {
-    "kind": "inline_assembly",
-    "file": "src/mapping.c",
-    "detail": "register u8 *destination asm(\"r1\");"
   },
   {
     "kind": "inline_assembly",

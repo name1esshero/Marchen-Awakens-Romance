@@ -2856,12 +2856,6 @@
     "file": "src/mapping.c"
   },
   {
-    "addr": "08012D04",
-    "size": 72,
-    "name": "ScriptNativeCopyMapHalfwords",
-    "file": "src/mapping.c"
-  },
-  {
     "addr": "08012D4C",
     "size": 24,
     "name": "ScriptNativeGetMapStatus",

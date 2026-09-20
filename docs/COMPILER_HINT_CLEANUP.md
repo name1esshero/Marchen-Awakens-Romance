@@ -361,7 +361,7 @@ Recorded at the time of writing; regenerate rather than trusting these numbers.
 - Current concentrations as of 2026-09-20 (regenerate with `make pret-audit`):
   `sprite_affine_matrix.c` (43), `sprite_transform.c` (20),
   `sprite_interpolation.c` (8), `sram.c` (8),
-  `sprite_affine_slots.c` (6), and `mapping.c` (4). These counts include
+  and `sprite_affine_slots.c` (6). These counts include
   duplicate rule classifications where one constrained declaration is both a
   forced-register and inline-assembly finding.
 - `make compare` byte-exact and all host tests passing throughout.
@@ -620,8 +620,8 @@ mutable IWRAM pointer slot, naturally retains the reload, and reproduces the
 original allocation without a forced register. The 256-entry count, 16.16
 step, and record offsets are now named constants as well.
 
-The matching `ScriptNativeCopyMapHalfwords()` reconstruction still contains
-two register constraints and must not be mistaken for likely original source.
+The former matching `ScriptNativeCopyMapHalfwords()` reconstruction contained
+two register constraints and was not likely original source.
 An ordinary loop using `i = (s16)(i + 1)` makes agbcc generate the ROM's
 apparently fixed-point `0x10000` induction variable by itself. With a volatile
 root slot and a typed `u16 *` destination, the clean candidate has the same
@@ -630,10 +630,12 @@ registers, and loop branches. It differs only in two code-generation details:
 agbcc adds the record offset before shifting the index (the ROM shifts first),
 and it uses the copied old index rather than the induction register as the left
 operand of the following addition. Both compiler snapshots produce the same
-candidate. This is strong evidence that the current explicit 16.16 locals are
-decompilation scaffolding. Keep the byte-matching implementation until the
-actual source lifetime or expression shape explains those last instructions;
-do not describe either constraint as something the original developers used.
+candidate. This is strong evidence that the explicit 16.16 locals were
+decompilation scaffolding. The exact routine is now readable symbolic assembly
+in `asm/code/code_0100C0.s`; the typed candidate remains in
+`src/nonmatching/script_native_copy_map_halfwords.c`. This removes all four
+PRET findings from `mapping.c` while leaving the unresolved source shape
+visible instead of attributing either constraint to the original developers.
 
 ## Preserve clean references when ordinary C does not yet match
 

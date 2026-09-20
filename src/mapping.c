@@ -969,50 +969,6 @@ AT("00012CE8") s32 ScriptNativeSetPendingMapValue(u32 count, const s32 *args,
     return 0x7fff;
 }
 
-/** Native script command: clear the game state's +0x426A record, then copy
- * up to 40 of the VM's own argument slots into it as packed halfwords.
- * @return Always 1. */
-AT("00012D04") s32 ScriptNativeCopyMapHalfwords(u32 count, const s32 *args,
-                                                 s32 *result)
-{
-    u32 itemCount = count;
-    register union {
-        const s32 *source;
-        s32 step;
-    } iteration;
-    s32 index;
-    register s32 fixedIndex asm("r2");
-    const s32 *source;
-    u8 * volatile *root;
-    s32 destinationOffset;
-
-    iteration.source = args;
-    GameStateClearRecord426A();
-    if (itemCount > MAP_HALFWORD_COPY_LIMIT)
-        itemCount = MAP_HALFWORD_COPY_LIMIT;
-    index = 0;
-    if (index < itemCount) {
-        root = (u8 * volatile *)&gMapGenerationRoot;
-        destinationOffset = MAP_HALFWORD_RECORD_OFFSET;
-        fixedIndex = FIXED_16_16_ONE;
-        source = iteration.source;
-        iteration.step = fixedIndex;
-        do {
-            register u8 *destination asm("r1");
-            destination = *root;
-            index <<= 1;
-            destination += destinationOffset;
-            destination += index;
-            index = *source++;
-            *(u16 *)destination = index;
-            index = fixedIndex;
-            fixedIndex += iteration.step;
-            index >>= 16;
-        } while ((u32)index < itemCount);
-    }
-    return 1;
-}
-
 /** Native script command: forward to GameStateGetField42BA().
  * @return Always 1. */
 AT("00012D4C") s32 ScriptNativeGetMapStatus(u32 count, const s32 *args,

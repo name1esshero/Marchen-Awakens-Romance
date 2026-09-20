@@ -457,6 +457,18 @@ difference is register pressure rather than scheduling.
   pointer in r0, size in r1, and completion pointer in r2. The signature is
   therefore evidence, not a tuning knob. Keep the verified prototype and move
   the exact wrapper to symbolic assembly when natural locals still disagree.
+- **A same-size loop can still have an unresolved source shape.**
+  `ScriptNativeCopyMapHalfwords` (0x08012D04) clears a record, clamps its input
+  to 40 entries, reloads a mutable game-state root, and narrows each 32-bit VM
+  argument into a halfword. A typed loop reproduces the 72-byte size, stack
+  frame, literal pool, source cursor, branches, and stores with both available
+  compiler snapshots. It still adds the record offset before shifting the
+  index, while the ROM shifts first, and it uses the copied old index rather
+  than the induction register as the left operand of the following addition.
+  Explicit r2/r1 declarations hide those two unsolved choices; they do not
+  explain them. Preserve the exact named assembly and the clean candidate in
+  `src/nonmatching/` until a real type, lifetime, macro, or surrounding source
+  relationship accounts for both differences.
 - **After adding a function, run the host tests, not just `make compare`.** The
   tests compile individual `.c` files on their own, so a new reference to a
   symbol the ROM link resolves -- `gSecondaryRuntime`, `gIwramBase`, anything

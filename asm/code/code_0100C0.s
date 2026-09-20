@@ -3201,7 +3201,52 @@ _08011AEE:
 
 @ 012CE8..012D04 is decompiled as ScriptNativeSetPendingMapValue(); see src/decompiled.json
 
-@ 012D04..012D4C is decompiled as ScriptNativeCopyMapHalfwords(); see src/decompiled.json
+	.section .rom.00012D04, "ax"
+	.syntax unified
+	.thumb
+	.thumb_func
+	.global ScriptNativeCopyMapHalfwords
+	.type ScriptNativeCopyMapHalfwords, %function
+ScriptNativeCopyMapHalfwords:
+	push {r4, r5, r6, r7, lr}
+	adds r4, r0, #0
+	adds r5, r1, #0
+	bl GameStateClearRecord426A
+	cmp r4, #40
+	bls .LCopyMapHalfwordsCountReady
+	movs r4, #40
+.LCopyMapHalfwordsCountReady:
+	movs r0, #0
+	cmp r0, r4
+	bcs .LCopyMapHalfwordsDone
+	ldr r7, .LCopyMapHalfwordsPool
+	ldr r6, .LCopyMapHalfwordsPool + 4
+	movs r2, #128
+	lsls r2, r2, #9
+	adds r3, r5, #0
+	adds r5, r2, #0
+.LCopyMapHalfwordsLoop:
+	ldr r1, [r7]
+	lsls r0, r0, #1
+	adds r1, r1, r6
+	adds r1, r1, r0
+	ldmia r3!, {r0}
+	strh r0, [r1]
+	adds r0, r2, #0
+	adds r2, r2, r5
+	asrs r0, r0, #16
+	cmp r0, r4
+	bcc .LCopyMapHalfwordsLoop
+.LCopyMapHalfwordsDone:
+	movs r0, #1
+	pop {r4, r5, r6, r7}
+	pop {r1}
+	bx r1
+	.align 2, 0
+.LCopyMapHalfwordsPool:
+	.4byte gMapGenerationRoot
+	.4byte 0x426A
+	.size ScriptNativeCopyMapHalfwords, . - ScriptNativeCopyMapHalfwords
 
 @ 012D4C..012D64 is decompiled as ScriptNativeGetMapStatus(); see src/decompiled.json
 

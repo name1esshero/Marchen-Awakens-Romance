@@ -2376,3 +2376,20 @@ and r3. The exact 24-byte adapter now lives as relocatable assembly in
 `asm/code/code_0680C0.s`, while its clean wrapper is retained in
 `src/nonmatching/create_save_write_task.c`. All other recovered save routines
 remain matching C.
+
+## Map halfword-copy native fallback (2026-09-20)
+
+`ScriptNativeCopyMapHalfwords` at 0x08012D04 clears the game-state halfword
+record at offset 0x426A, clamps the VM argument count to 40, and copies each
+32-bit argument into the record as a narrowed halfword. Its natural typed loop
+retains the volatile root-slot reload and reproduces the ROM's 72-byte size,
+control flow, literal pool, and memory operations.
+
+Both available agbcc snapshots nevertheless order one address calculation
+differently and choose a different operand lifetime for the fixed-point loop
+update. The former linked C forced r2 and r1 to conceal those differences. The
+exact body now lives as named, relocatable assembly in
+`asm/code/code_0100C0.s`, and the readable candidate remains in
+`src/nonmatching/script_native_copy_map_halfwords.c`. This removes all four
+PRET hard findings from `mapping.c` without claiming that the original source
+used register constraints.
