@@ -19,6 +19,29 @@ ordinary edits above a finding do not create false regressions; duplicates are
 counted independently so one fixed error cannot hide one newly introduced
 error. The audit prints known, new, and resolved counts on one line.
 
+## Verified snapshot: SpriteFixedSqrt and check-modern fixed, 2026-09-20
+
+- `make compare` reproduces the Japanese ROM byte for byte.
+- All 198 host tests pass; `make check-modern` exits clean (0) for the first
+  time this session -- see "Fixed `make check-modern`" in
+  `docs/decompilation-notes.md` for the three configuration gaps involved.
+- The mechanical PRET audit remains at **0 errors / 0 warnings / 18
+  documented exceptions**.
+- `audit_provenance.py` now reports 1823/1823 mapped ranges compiled C.
+
+`SpriteFixedSqrt` (0x0807D9F0), previously rejected as needing register-
+steering compiler hints, matches with two fixes: combining the division and
+its `+= previous` into one expression keeps the rounding chain in r0
+throughout instead of relocating through r1, and mirroring the initial
+comparison's branch polarity to match the ROM's actual `bge` (not the
+logically-equivalent but differently-compiled `blt`) fixes the constant's
+register at the same time, since the two were coupled rather than
+independent. `CountConsumableInventoryCopies` (0x08057078) was similarly
+reversed from an earlier rejection: its candidate's own fixed-point-stepping
+shape matches once split into the ROM's exact three-statement order
+(dereference the root, compute the constant, add the offset). Full detail
+for both in `docs/decompilation-notes.md`.
+
 ## Verified snapshot: game-state root record getters, 2026-09-20
 
 - `make compare` reproduces the Japanese ROM byte for byte.

@@ -2871,3 +2871,39 @@ error rather than a warning; `-std=gnu89` restores the older, permissive
 behavior without touching the vendored file. `make check-modern` now exits 0
 (warnings only, its documented purpose) across all 126 tracked sources plus
 every `src/nonmatching/*.c` candidate.
+
+## Nonmatching candidate matched: SpriteFixedSqrt (2026-09-20)
+
+`SpriteFixedSqrt` (0x0807D9F0) had been rejected as needing a compiler-steering
+shape ("Tested natural declaration, assignment, branch, and expression
+shapes... assign the estimate and constant to the opposite registers from the
+original"). It matches byte-for-byte with two changes to the existing
+candidate's shape, both found by tracing register roles through the ROM
+disassembly rather than by trial and error:
+
+- `estimate = __divsi3(input << 12, previous); estimate += previous;` as two
+  statements relocates the division's result out of r0 (where agbcc
+  naturally leaves a call's return value) into a second register for the
+  `+=`. Combining them into one expression,
+  `rounded = __divsi3(input << 12, previous) + previous;`, keeps the whole
+  rounding chain that follows (`+= sign bit; >>= 1`) in r0 throughout,
+  matching the ROM's own `adds r0,r0,r4 / lsrs r1,r0,#31 / adds r0,r0,r1 /
+  asrs r0,r0,#1` exactly. This also produces the ROM's `adds r1, r4, #0`
+  before the `bl` (setting up the divisor argument explicitly) instead of
+  silently reusing whatever `r1` happened to still hold, since that reuse is
+  only valid by coincidence for a specific C shape, not a real invariant --
+  the ROM's redundant-looking copy is functionally necessary across loop
+  iterations, not stylistic.
+- The initial `if (input >= one) estimate = input; else estimate = one;`
+  had its branches in the opposite order from the ROM's actual comparison
+  polarity (`bge`, not `blt`) and consequently put the `0x1000` constant in
+  a different register (r0 instead of r1). Writing the mirror-image
+  `if (input < one) estimate = one; else estimate = input;` -- logically
+  identical, but matching which condition the ROM actually tests -- fixes
+  both at once, since the register choice was downstream of the branch
+  polarity, not independent of it.
+
+Confirmed byte-for-byte via direct `arm-none-eabi-objdump` comparison, not
+just probe-tool mnemonics. `src/nonmatching/sprite_fixed_sqrt.c` is deleted;
+the real function lives beside its callers in `src/sprite_math.c`.
+`audit_provenance.py` now reports 1823/1823.

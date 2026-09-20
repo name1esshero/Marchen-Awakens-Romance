@@ -6432,65 +6432,7 @@ _0807D8EA:
 
 @ 07D944..07D9F0 is decompiled as SpriteVectorLengthFixed(); see src/decompiled.json
 
-	.section .rom.0007D9F0, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global SpriteFixedSqrt
-SpriteFixedSqrt:
-	push {r4, r5, lr}
-	adds r5, r0, #0
-	cmp r5, #0
-	ble _0807DA24
-	movs r1, #128
-	lsls r1, r1, #5
-	cmp r5, r1
-	bge _0807DA02
-	adds r0, r1, #0
-	.global _0807DA02
-_0807DA02:
-	adds r4, r0, #0
-	cmp r4, #0
-	beq _0807DA1A
-	lsls r0, r5, #12
-	adds r1, r4, #0
-	bl sub_08080BFC
-	adds r0, r0, r4
-	lsrs r1, r0, #31
-	adds r0, r0, r1
-	asrs r0, r0, #1
-	b sub_0807DA1C
-	.global _0807DA1A
-_0807DA1A:
-	movs r0, #0
-
-	.thumb_func
-	.thumb
-	.global sub_0807DA1C
-sub_0807DA1C:
-	cmp r0, r4
-	blt _0807DA02
-	adds r0, r4, #0
-	b _0807DA2E
-	.global _0807DA24
-_0807DA24:
-	cmp r5, #0
-	bne _0807DA2C
-	movs r0, #0
-	b _0807DA2E
-	.global _0807DA2C
-_0807DA2C:
-	ldr r0, _0807DA34
-	.global _0807DA2E
-_0807DA2E:
-	pop {r4, r5}
-	pop {r1}
-	bx r1
-	.global _0807DA34
-_0807DA34:
-	.4byte 0xFFFFF000
-
+@ 07D9F0..07DA38 is decompiled as SpriteFixedSqrt(); see src/decompiled.json
 
 	.section .rom.0007DA38, "ax"
 	.syntax divided

@@ -102,3 +102,46 @@ s32 SpriteVectorLengthFixed(s32 x, s32 y)
                           + ((absY * absY) >> 12)) << 12,
             scale);
 }
+
+/** @brief Newton-iteration square root of a 20.12 fixed-point value.
+ * @param value The radicand, in 20.12 fixed-point.
+ * @return The square root, in 20.12 fixed-point; -0x1000 for negative
+ * input; 0 for zero input.
+ *
+ * The loop's `previous`/`estimate` roles are carried through registers
+ * differently depending on exactly how the post-division rounding is
+ * expressed: combining the division and the `+= previous` step into one
+ * expression, rather than two statements, is what keeps the result in the
+ * same register agbcc already had it in instead of relocating it. */
+AT("0007D9F0")
+s32 SpriteFixedSqrt(s32 value)
+{
+    s32 previous;
+    s32 input = value;
+    s32 estimate;
+
+    if (input > 0) {
+        s32 one = 0x1000;
+
+        if (input < one)
+            estimate = one;
+        else
+            estimate = input;
+        do {
+            previous = estimate;
+            if (previous != 0) {
+                s32 rounded;
+
+                rounded = __divsi3(input << 12, previous) + previous;
+                rounded += (u32)rounded >> 31;
+                estimate = rounded >> 1;
+            } else {
+                estimate = 0;
+            }
+        } while (estimate < previous);
+        return previous;
+    }
+    if (input != 0)
+        return -0x1000;
+    return 0;
+}
