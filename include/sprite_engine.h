@@ -62,7 +62,10 @@ struct SpriteEngineState {
         u32 transform;
     } affineSlots[32];               /* 0x01C */
     void *heap11C;                    /* 0x11C: sprite/NCD allocation heap */
-    u8 unknown120[0x2C];
+    u8 unknown120[0x24];
+    s32 projectionDivisor;            /* 0x144: perspective scale divisor */
+    s16 viewportOriginX;              /* 0x148 */
+    s16 viewportOriginY;              /* 0x14A */
     struct SpriteResourceBinding {
         struct SpriteBindingOwner *owner;
         s32 index;

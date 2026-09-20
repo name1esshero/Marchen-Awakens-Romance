@@ -15,7 +15,7 @@ error. The audit prints known, new, and resolved counts on one line.
 
 - `make compare` reproduces the Japanese ROM byte for byte.
 - `make english` succeeds and all 197 host tests pass.
-- The mechanical PRET audit reports **63 errors / 0 warnings / 17 documented
+- The mechanical PRET audit reports **62 errors / 0 warnings / 17 documented
   exceptions** on one summary line. Every exception is enumerated in the
   generated report.
 
@@ -91,6 +91,14 @@ frontends and all 120 declaration orders for the five relevant locals failed
 to recover the ROM's storage/count/output register cycle. This removes all
 eight findings from `src/sprite_interpolation.c`; only the two clean matching
 interpolation evaluators remain in that translation unit.
+
+`SpriteProjectPoint` now exposes the projection divisor and viewport origin as
+typed `SpriteEngineState` fields. Its prior matching source forced the running
+origin into r4. Removing that constraint preserves the 104-byte size but
+rotates six live values; all 720 declaration orders for those values failed to
+recover the ROM prologue. The exact symbolic routine is retained in assembly
+and the direct typed projection remains in `src/nonmatching/`, removing one
+more forced-register finding without losing the recovered behavior.
 
 ## Verified snapshot: renderer reference fallback, 2026-09-20
 

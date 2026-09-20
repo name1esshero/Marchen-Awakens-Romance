@@ -267,11 +267,6 @@
   {
     "kind": "target_register_macro",
     "file": "src/sprite_transform.c",
-    "detail": "register s32 origin TARGET_REGISTER(\"r4\") = *(s16 *)(state + 328);"
-  },
-  {
-    "kind": "target_register_macro",
-    "file": "src/sprite_transform.c",
     "detail": "register s32 packedX TARGET_REGISTER(\"r2\");"
   },
   {

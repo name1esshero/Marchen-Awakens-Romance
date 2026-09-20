@@ -6696,12 +6696,6 @@
     "file": "src/sprite_transform.c"
   },
   {
-    "addr": "0807D1B4",
-    "size": 104,
-    "name": "SpriteProjectPoint",
-    "file": "src/sprite_transform.c"
-  },
-  {
     "addr": "0807D21C",
     "size": 32,
     "name": "SpriteSetViewportOrigin",

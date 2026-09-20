@@ -650,3 +650,19 @@ assignment ordering, direct and incremental layout expressions, and both
 compiler frontends also failed. When an exact match depends on reading an
 uninitialized value, preserve the routine in named assembly and keep the
 well-defined typed C as a nonmatching reference.
+
+### A matching size does not make a forced saved-register cycle natural
+
+Removing the sole r4 constraint from `SpriteProjectPoint` leaves its size at
+104 bytes and retains every arithmetic and memory operation, yet agbcc rotates
+six long-lived values among r4-r9. The direct typed expression is shorter at 96
+bytes, so it does not explain the ROM either. Exhaustively permuting the six
+declarations while preserving assignment order tested all 720 orders without
+recovering the ROM prologue.
+
+This is a useful stopping condition for a local declaration search: exact size
+and semantics show that the candidate is close, while failure across the full
+declaration-order space shows that another source-shape fact is missing. Do
+not encode the observed r4 choice as C. Keep the exact symbolic assembly and a
+typed nonmatching reference until callers or neighboring state layout reveal
+that missing fact.

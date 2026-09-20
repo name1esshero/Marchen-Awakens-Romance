@@ -2442,3 +2442,16 @@ frontends and several layout and assignment spellings were also checked. The
 exact 94-byte routine plus its two-byte tail therefore remains named assembly,
 and `src/nonmatching/sprite_interpolation_init.c` holds the well-defined C
 reference for later source-shape work.
+
+## Sprite projection state and register allocation (2026-09-20)
+
+The sprite-state values at offsets 0x144..0x14B are now identified as a signed
+projection divisor followed by signed X/Y viewport origins. They are used by
+`SpriteProjectPoint`, `SpriteSetViewportOrigin`, and the corresponding getter.
+
+The prior projection reconstruction forced its running origin into r4.
+Removing that constraint preserves the 104-byte function size but rotates six
+saved-register values. A direct typed formulation is 96 bytes, and exhaustive
+testing of all 720 declaration orders with the observed assignment order found
+no exact prologue. The exact function remains named assembly; its typed C
+reference is `src/nonmatching/sprite_project_point.c`.

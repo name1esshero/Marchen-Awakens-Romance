@@ -200,37 +200,6 @@ void SpriteVectorRotateZ(struct SpriteVector3 *out,
     out->z = in->z;
 }
 
-/** Apply the renderer's scale and viewport origin to an X/Y point.
- *
- * The register hints below are load-bearing, not decoration: removing
- * them (tested) changes agbcc's instruction selection and the function
- * no longer matches the ROM byte-for-byte. */
-AT("0007D1B4")
-void SpriteProjectPoint(struct SpriteVector3 *point)
-{
-    struct SpriteVector3 *out = point;
-    s32 oldX = out->x;
-    s32 oldY = out->y;
-    s32 scale = out->z;
-    u8 *state = (u8 *)gSpriteEngineState;
-    register s32 origin TARGET_REGISTER("r4") = *(s16 *)(state + 328);
-    s32 numerator = scale * oldX;
-    s32 *divisor;
-
-    numerator <<= 12;
-    divisor = (s32 *)(state + 324);
-    origin += __divsi3(numerator, *divisor) >> 12;
-    out->x = origin;
-    origin = *(s16 *)(state + 330);
-    {
-        s32 secondScale = scale;
-        numerator = oldY * secondScale;
-    }
-    numerator <<= 12;
-    origin += __divsi3(numerator, *divisor) >> 12;
-    out->y = origin;
-}
-
 /** Transform the sprite's center-to-corner offset and pack the signed 24-bit
  * screen coordinates into the renderer's OAM-shaped work record. Existing
  * affine and attribute flag bits in the record are preserved.

@@ -5422,7 +5422,66 @@ _0807CE48:
 
 @ 07D138..07D1B4 is decompiled as SpriteVectorRotateZ(); see src/decompiled.json
 
-@ 07D1B4..07D21C is decompiled as SpriteProjectPoint(); see src/decompiled.json
+	.section .rom.0007D1B4, "ax"
+	.syntax unified
+
+	.thumb_func
+	.thumb
+	.global SpriteProjectPoint
+	.type SpriteProjectPoint, %function
+SpriteProjectPoint:
+	push {r4, r5, r6, r7, lr}
+	mov r7, r9
+	mov r6, r8
+	push {r6, r7}
+	adds r5, r0, #0
+	ldr r1, [r5, #0]
+	ldr r0, [r5, #4]
+	mov r9, r0
+	ldr r2, [r5, #8]
+	mov r8, r2
+	ldr r0, .LSpriteProjectPointState
+	ldr r7, [r0, #0]
+	movs r2, #164
+	lsls r2, r2, #1
+	adds r0, r7, r2
+	movs r2, #0
+	ldrsh r4, [r0, r2]
+	mov r0, r8
+	muls r0, r1
+	lsls r0, r0, #12
+	movs r1, #162
+	lsls r1, r1, #1
+	adds r6, r7, r1
+	ldr r1, [r6, #0]
+	bl __divsi3
+	asrs r0, r0, #12
+	adds r4, r4, r0
+	str r4, [r5, #0]
+	movs r2, #165
+	lsls r2, r2, #1
+	adds r0, r7, r2
+	movs r1, #0
+	ldrsh r4, [r0, r1]
+	mov r2, r8
+	mov r0, r9
+	muls r0, r2
+	lsls r0, r0, #12
+	ldr r1, [r6, #0]
+	bl __divsi3
+	asrs r0, r0, #12
+	adds r4, r4, r0
+	str r4, [r5, #4]
+	pop {r3, r4}
+	mov r8, r3
+	mov r9, r4
+	pop {r4, r5, r6, r7}
+	pop {r0}
+	bx r0
+	.align 2, 0
+.LSpriteProjectPointState:
+	.4byte gSpriteEngineState
+	.size SpriteProjectPoint, . - SpriteProjectPoint
 
 @ 07D21C..07D23C is decompiled as SpriteSetViewportOrigin(); see src/decompiled.json
 

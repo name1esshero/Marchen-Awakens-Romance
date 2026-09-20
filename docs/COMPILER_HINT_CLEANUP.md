@@ -359,7 +359,7 @@ Recorded at the time of writing; regenerate rather than trusting these numbers.
   removals at 149; everything left needs either a structural rewrite (slow,
   one function at a time, as above) or the same real-assembly move.
 - Current concentrations as of 2026-09-20 (regenerate with `make pret-audit`):
-  `sprite_affine_matrix.c` (43) and `sprite_transform.c` (20). These counts
+  `sprite_affine_matrix.c` (43) and `sprite_transform.c` (19). These counts
   include duplicate rule
   classifications where one constrained declaration is both a forced-register
   and inline-assembly finding.
@@ -387,6 +387,21 @@ The exact routine and its two-byte tail are now named assembly in
 `src/nonmatching/sprite_interpolation_init.c`, and the two matching evaluator
 functions remain in `src/sprite_interpolation.c`. This removes eight hard audit
 findings and leaves the unresolved allocation visible for future work.
+
+## Sprite projection fallback (2026-09-20)
+
+`SpriteProjectPoint` (0x0807D1B4) scales a point around the renderer viewport
+origin using the signed divisor at sprite-state offset 0x144. These fields are
+now named in `SpriteEngineState` as `projectionDivisor`, `viewportOriginX`, and
+`viewportOriginY`, replacing opaque byte-offset access in the readable source.
+
+Removing the old r4 constraint preserves the exact 104-byte size and operation
+order, but rotates the point, Y coordinate, scale, renderer root, origin, and
+divisor pointer across the saved registers. A compact typed expression is only
+96 bytes. All 720 declaration orders for the six long-lived values were tested
+with assignments held in ROM order; none reproduced even the full entry
+allocation. The exact function is therefore named assembly, with the clean
+typed implementation in `src/nonmatching/sprite_project_point.c`.
 
 ## Watch out for
 
