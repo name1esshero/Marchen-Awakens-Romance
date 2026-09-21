@@ -18,9 +18,36 @@ def main():
     localized=(ROOT/'mar_english.gba').read_bytes()
     if len(localized)!=0x2000000:raise ValueError('English ROM must be 32 MB')
     differences=[i for i,(a,b) in enumerate(zip(base,localized)) if a!=b]
+    output=subprocess.check_output(['arm-none-eabi-nm','-n','build/english/mar_english.elf'],cwd=ROOT,text=True)
+    symbols={fields[2]:int(fields[0],16) for line in output.splitlines() if len(fields:=line.split())==3}
     import sys
     sys.path.insert(0,str(ROOT/'tools'))
-    import sprite_sources, ncd, english_credits
+    import sprite_sources, ncd, english_credits, resource_catalog
+    catalog_payload=json.loads(resource_catalog.METADATA.read_text())
+    catalog_records=resource_catalog._validated_records(catalog_payload)
+    catalog_by_name={record['name']:record for record in catalog_records}
+    expanded_catalog_spans=[]
+    expanded_catalog_entries=[]
+    expansion_manifest=resource_catalog.EXPANSION_MANIFEST
+    expanded_catalog_names=json.loads(expansion_manifest.read_text()) if expansion_manifest.exists() else []
+    for name in expanded_catalog_names:
+        record=catalog_by_name[name]
+        index=record['index']
+        offset=resource_catalog.BASE+index*resource_catalog.STRIDE
+        symbol_name='gMarscriptScript_'+resource_catalog.marscript_identifier(name)
+        symbol=symbols[symbol_name]
+        if not 0x09000000<=symbol<0x0A000000:
+            raise ValueError(symbol_name+' not in English extension')
+        expected_offset=symbol-0x08000000
+        raw_name=localized[offset:offset+resource_catalog.NAME_SIZE].rstrip(b'\0').decode('ascii')
+        base_offset=int.from_bytes(base[offset+resource_catalog.NAME_SIZE:offset+resource_catalog.STRIDE],'little')
+        english_offset=int.from_bytes(localized[offset+resource_catalog.NAME_SIZE:offset+resource_catalog.STRIDE],'little')
+        if raw_name!=name or base_offset!=record['rom_offset'] or english_offset!=expected_offset:
+            raise ValueError('English resource catalog relocation mismatch for '+name)
+        expanded_catalog_spans.append((offset+resource_catalog.NAME_SIZE,offset+resource_catalog.STRIDE))
+        expanded_catalog_entries.append(dict(name=name,index=index,base_offset=f'{base_offset:06X}',
+                                            english_offset=f'{english_offset:08X}',
+                                            symbol=symbol_name,address=f'{symbol:08X}'))
     japanese=sprite_sources.compile('SYSTEM')
     english=sprite_sources.compile('SYSTEM',english=True)
     start=0xDD69E0;end=0xF12390
@@ -86,10 +113,8 @@ def main():
         (0x57108, 0x57138),
         (0x5715C, 0x57174),
     )
-    if not differences or any(not (any(a<=i<b for a,b in background_spans) or any(a<=i<b for a,b in bridge_spans) or 0x88460<=i<0x885B0 or start+tile_start<=i<end or i-start in credit_metadata or effect_start+effect_tiles<=i<effect_end) for i in differences):
+    if not differences or any(not (any(a<=i<b for a,b in background_spans) or any(a<=i<b for a,b in bridge_spans) or any(a<=i<b for a,b in expanded_catalog_spans) or 0x88460<=i<0x885B0 or start+tile_start<=i<end or i-start in credit_metadata or effect_start+effect_tiles<=i<effect_end) for i in differences):
         raise ValueError('English build changed bytes outside verified text bridges and UI tiles')
-    output=subprocess.check_output(['arm-none-eabi-nm','-n','build/english/mar_english.elf'],cwd=ROOT,text=True)
-    symbols={fields[2]:int(fields[0],16) for line in output.splitlines() if len(fields:=line.split())==3}
     names=('EnglishDialogueStart','DialogueStartOriginal','EnglishTranslateRows',
            'EnglishTranslateSingle','EnglishItemGetName','EnglishItemGetDescription',
            'EnglishConsumableGetName','EnglishConsumableGetDescription',
@@ -132,6 +157,7 @@ def main():
                 english_backgrounds=background_sources,
                 english_effect_changed_frames=effect_changed,
                 english_effect_variants=[str(p.relative_to(ROOT)) for p in sorted((ROOT/'graphics/battle/effects/frames').glob('*_en.png'))],
+                english_resource_catalog_expansions=expanded_catalog_entries,
                 english_credit_layout_frames=sorted(english_credits.frame_ids()),
                 english_ui_variants=[str(p.relative_to(ROOT)) for p in sorted((ROOT/'graphics/ui').rglob('*_en.png'))],
                 english_ui_differing_bytes=sum(a!=b for a,b in zip(japanese,english)),
