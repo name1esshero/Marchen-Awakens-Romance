@@ -10,3 +10,4 @@
 @0893C4 セーブ中です  // EN: Saving...
 @0893D4 （前のデータに上書きします）  // EN: (Overwrite the previous save data.)
 @0893F4 セーブしますか？  // EN: Would you like to save?
+@0887F4 何もありません。  // EN: Nothing here.

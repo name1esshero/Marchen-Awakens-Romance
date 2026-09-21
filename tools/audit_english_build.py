@@ -80,12 +80,20 @@ def main():
                 raise ValueError('Linked English background differs from PNG/map source: ' + name)
             background_spans.append((offset, offset+len(data)))
         background_sources.append(dict(name=name, overrides=overrides))
-    if not differences or any(not (any(a<=i<b for a,b in background_spans) or 0x11790<=i<0x11870 or 0x56474<=i<0x56494 or 0x88460<=i<0x885B0 or start+tile_start<=i<end or i-start in credit_metadata or effect_start+effect_tiles<=i<effect_end) for i in differences):
+    bridge_spans = (
+        (0x11790, 0x11870),
+        (0x56474, 0x56494),
+        (0x57108, 0x57138),
+        (0x5715C, 0x57174),
+    )
+    if not differences or any(not (any(a<=i<b for a,b in background_spans) or any(a<=i<b for a,b in bridge_spans) or 0x88460<=i<0x885B0 or start+tile_start<=i<end or i-start in credit_metadata or effect_start+effect_tiles<=i<effect_end) for i in differences):
         raise ValueError('English build changed bytes outside verified text bridges and UI tiles')
     output=subprocess.check_output(['arm-none-eabi-nm','-n','build/english/mar_english.elf'],cwd=ROOT,text=True)
     symbols={fields[2]:int(fields[0],16) for line in output.splitlines() if len(fields:=line.split())==3}
     names=('EnglishDialogueStart','DialogueStartOriginal','EnglishTranslateRows',
-           'EnglishTranslateSingle','EnglishItemGetName','EnglishItemGetDescription','EnglishPageTask',
+           'EnglishTranslateSingle','EnglishItemGetName','EnglishItemGetDescription',
+           'EnglishConsumableGetName','EnglishConsumableGetDescription',
+           'EnglishConsumableGetResourceName','EnglishPageTask',
            'EnglishClearPage','gEnglishRows','gEnglishRowCount')
     for name in names:
         if not 0x09000000<=symbols[name]<0x0A000000:raise ValueError(name+' not in English extension')
@@ -108,10 +116,19 @@ def main():
     description_bridge=localized[0x56484:0x56494]
     description_target=symbols['EnglishItemGetDescription']|1
     if struct.pack('<I',description_target) not in description_bridge:raise ValueError('Item-description bridge lacks Thumb entry pointer')
+    consumable_name_bridge=localized[0x57108:0x57120]
+    consumable_name_target=symbols['EnglishConsumableGetName']|1
+    if struct.pack('<I',consumable_name_target) not in consumable_name_bridge:raise ValueError('Consumable-name bridge lacks Thumb entry pointer')
+    consumable_description_bridge=localized[0x57120:0x57138]
+    consumable_description_target=symbols['EnglishConsumableGetDescription']|1
+    if struct.pack('<I',consumable_description_target) not in consumable_description_bridge:raise ValueError('Consumable-description bridge lacks Thumb entry pointer')
+    consumable_resource_name_bridge=localized[0x5715C:0x57174]
+    consumable_resource_name_target=symbols['EnglishConsumableGetResourceName']|1
+    if struct.pack('<I',consumable_resource_name_target) not in consumable_resource_name_bridge:raise ValueError('Consumable-resource-name bridge lacks Thumb entry pointer')
     mappings=json.loads((ROOT/'reports/text/english-runtime.json').read_text())
     report=dict(sha1=hashlib.sha1(localized).hexdigest(),size=len(localized),
                 original_area_differing_bytes=len(differences),
-                change_scope='Dialogue constructor, item name/description bridges, English menu labels, independently rebuilt EFFECT and SYSTEM UI tiles and explicit English credit layouts, rebuilt startup/shop background tiles and maps; C and strings in ROM expansion',
+                change_scope='Dialogue constructor, item and consumable name/description bridges, English menu labels, independently rebuilt EFFECT and SYSTEM UI tiles and explicit English credit layouts, rebuilt startup/shop background tiles and maps; C and strings in ROM expansion',
                 english_backgrounds=background_sources,
                 english_effect_changed_frames=effect_changed,
                 english_effect_variants=[str(p.relative_to(ROOT)) for p in sorted((ROOT/'graphics/battle/effects/frames').glob('*_en.png'))],

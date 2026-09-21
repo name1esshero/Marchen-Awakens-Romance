@@ -48,4 +48,44 @@ int main(void) {
                             '-Wl,--gc-sections','-o',exe],check=True)
             subprocess.run([exe],check=True)
 
+    def test_english_consumable_accessors_translate_table_text(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = pathlib.Path(temp)
+            source = root/'test.c'
+            source.write_text(r'''
+#include <assert.h>
+#include <string.h>
+#include "english.h"
+#include "item.h"
+const char gTranslatedName[] = "Crisp Fruit";
+const char gTranslatedDescription[] = "Restores 50 HP.";
+const struct ConsumableText gConsumableNoneText = { .name="サックリの実" };
+const char gConsumableNoneDescription[] = "体力を５０回復する";
+const struct ArmDefinition gArmDefinitions[ARM_COUNT];
+const struct ItemDefinition gItemDefinitions[ITEM_COUNT] = {
+    [0] = { .name="サックリの実", .description="体力を５０回復する" },
+};
+const char *EnglishConsumableGetName(s32 id);
+const char *EnglishConsumableGetDescription(s32 id);
+const char *EnglishConsumableGetResourceName(s32 id);
+const char *EnglishTranslateSingle(const char *source) {
+    if (!strcmp(source, "サックリの実")) return gTranslatedName;
+    if (!strcmp(source, "体力を５０回復する")) return gTranslatedDescription;
+    return source;
+}
+int main(void) {
+    assert(!strcmp(EnglishConsumableGetName(0), "Crisp Fruit"));
+    assert(!strcmp(EnglishConsumableGetResourceName(0), "Crisp Fruit"));
+    assert(!strcmp(EnglishConsumableGetDescription(0), "Restores 50 HP."));
+    return 0;
+}
+''')
+            exe = str(root/'test')
+            subprocess.run(['cc','-ffunction-sections','-fdata-sections',
+                            '-D__attribute__(x)=','-I'+str(ROOT/'include'),
+                            str(source),str(ROOT/'src/item.c'),
+                            str(ROOT/'src/english/item_name.c'),'-Wl,--gc-sections',
+                            '-o',exe],check=True)
+            subprocess.run([exe],check=True)
+
 if __name__=='__main__':unittest.main()

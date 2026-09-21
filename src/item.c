@@ -177,27 +177,33 @@ s32 ItemGetField58(s32 id)
 }
 
 /** Return a consumable name from the fixed-stride text table. */
+#ifndef ENGLISH
 AT("00057108")
 const char *ConsumableGetName(s32 id)
 {
     return CONSUMABLE_NAME_BASE + (s16)id * CONSUMABLE_RECORD_SIZE;
 }
+#endif
 
 /** Return a consumable description from the fixed-stride text table. */
+#ifndef ENGLISH
 AT("00057120")
 const char *ConsumableGetDescription(s32 id)
 {
     return CONSUMABLE_DESCRIPTION_BASE + (s16)id * CONSUMABLE_RECORD_SIZE;
 }
+#endif
 
 /** Some resource-loading paths use a distinct entry point with the same
  * lookup semantics.  Keep it named separately because callers may be patched
  * independently by the English build. */
+#ifndef ENGLISH
 AT("0005715C")
 const char *ConsumableGetResourceName(s32 id)
 {
     return CONSUMABLE_NAME_BASE + (s16)id * CONSUMABLE_RECORD_SIZE;
 }
+#endif
 
 /** field78 is read through the address of field7C: the original source
  * computed the record address from the 0x7C offset and stepped back one

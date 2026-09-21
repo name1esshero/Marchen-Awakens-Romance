@@ -448,6 +448,7 @@ ENGLISH_DIR := build/english
 ENGLISH_OBJS := $(ENGLISH_DIR)/dialogue_bridge.o $(ENGLISH_DIR)/dialogue_runtime.o \
                 $(ENGLISH_DIR)/dialogue_original.o $(ENGLISH_DIR)/item_accessors.o \
                 $(ENGLISH_DIR)/item_name.o $(ENGLISH_DIR)/item_name_bridge.o $(ENGLISH_DIR)/item_description_bridge.o \
+                $(ENGLISH_DIR)/consumable_name_bridges.o \
                 $(ENGLISH_DIR)/menu_text.o \
                 $(ENGLISH_DIR)/mappings.o $(ENGLISH_DIR)/system_graphics.o $(ENGLISH_DIR)/effect_graphics.o $(ENGLISH_DIR)/background_graphics.o \
                 $(ENGLISH_DIR)/script_assets_english.o $(ENGLISH_DIR)/marscript_expansion.o $(ENGLISH_DIR)/resource_catalog.o
@@ -485,6 +486,10 @@ $(ENGLISH_DIR)/item_name_bridge.o: src/english/item_name_bridge.s
 	$(AS) $(ASFLAGS) -o $@ $<
 
 $(ENGLISH_DIR)/item_description_bridge.o: src/english/item_description_bridge.s
+	@mkdir -p $(ENGLISH_DIR)
+	$(AS) $(ASFLAGS) -o $@ $<
+
+$(ENGLISH_DIR)/consumable_name_bridges.o: src/english/consumable_name_bridges.s
 	@mkdir -p $(ENGLISH_DIR)
 	$(AS) $(ASFLAGS) -o $@ $<
 
