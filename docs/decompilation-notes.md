@@ -2999,3 +2999,128 @@ build, then with a full `make compare` after integration. Now
 bytes including its literal pool), called from over thirty raw `bl` sites
 across six `asm/code/*.s` files plus two `src/*.c` files, all renamed.
 `audit_provenance.py` now reports 1825/1825.
+
+## Bug report: "some items still show Japanese text" in the English build (2026-09-20)
+
+Traced to a confirmed root cause, not a missing translation table (both the
+445-entry ÄRM table and 13-entry consumable table are 100% translated, and
+all five direct name/description accessors are already bridged and working).
+
+`sub_080537D8`, already identified in `src/menu_text.c`'s header as "the ARM
+deck/status renderer", builds an item-description popup: it loads a window
+graphic via KMP, positions it, and for a nonzero id fetches
+`ItemGetDefinition(id)` and `strcpy()`s the description straight out of
+`gArmDefinitions[id].description` -- bypassing `ItemGetDescription()` and
+its English translation hook entirely, because this function is still raw
+asm and cannot call into the C-side hook. The `id == 0` ("nothing here")
+case is worse: it raw-copies a hardcoded Japanese literal at 0x080887F4 with
+no translation path at all. Called from ten sites (two per caller) across
+five separate regions of the ROM: `code_0580C0.s:1410/1458`,
+`code_0580C0.s:6926/6972`, `code_0600C0.s:7753/7803`,
+`code_0680C0.s:2969/3010`, `code_0680C0.s:6038/6082`.
+
+Confirmed via direct `arm-none-eabi-objdump` disassembly of the real ROM
+bytes, not `asm/code/code_0500C0.s`'s own text -- the automated split.py
+recursive-descent tool hex-dumps this entire function as opaque `.4byte`
+data, because its neighbor (the 27-way jump-table dispatcher
+`sub_0805593C` immediately before it in the same section) defeated its
+control-flow boundary detection. The icon labels (category from
+`->field64`, element from `->element`) are *not* part of the bug: they
+already read through pointer tables at 0x081B07CC/0x081B07E4, which
+`src/menu_text.c` already swaps to English text in place.
+
+A full byte-exact decompile was attempted and got very close -- every call
+target, struct field offset, and pool constant confirmed correct against
+the real ROM bytes via `agbcc_probe.py --bytes` -- but diverges from the
+ROM's register allocation starting at the first instruction: the ROM
+sign-extends the narrowed id/x/y parameters (`asrs`) while every C shape
+tried compiles to zero-extension (`lsrs`) for the same two uses (compare-id-
+to-zero, shift-x/y-left-by-16), both of which are genuinely insensitive to
+extension method. Five source shapes were tried and rejected: explicit
+`(s16)` cast, native `s16` parameters, splitting the narrow-before-call from
+the shift-after-call across the one intervening `KmpLoadResource` call
+(matching the ROM's own two-phase instruction order exactly), multiplying
+by 65536 instead of shifting, and cross-checking real caller argument setups
+for a signature hint. Documented as a correct deferral in
+`src/nonmatching/arm_description_popup.c` -- the struct layout, all
+sub-call targets, and both branches' parameter-block differences (field08,
+field12, and the task callback pointer all differ between the id != 0 and
+id == 0 paths) are confirmed, not guessed, making this one of the more
+solidly-understood deferrals in the project despite not reaching a match.
+
+### sub_080537D8 English bridge: confirmed fix, blocked by a linker quirk
+
+The behavioral fix does not need a byte-exact match -- `sub_080537D8` stays
+untouched for the Japanese build, and only the English build needs a
+replacement, following the project's established bridge pattern
+(`item_name_bridge.s` etc.). `src/english/arm_description_popup.c` is that
+replacement: same logic as the nonmatching candidate, but the description
+routes through `EnglishTranslateSingle()` instead of a raw `strcpy()`, and
+the `id == 0` literal now has a translation (`text/runtime_strings.txt`,
+"Nothing here.", added and confirmed picked up by `build_english.py`: 5185
+exact row mappings, 0 rejected, up from 5184).
+
+Every existing bridge target is already-decompiled C, recompiled with
+`-DENGLISH=1` and substituted via `filter-out` in `mar_english.elf`'s
+object list -- clean because the *whole file* gets excluded and replaced,
+so there is never more than one definition of the symbol in the link.
+`sub_080537D8` is raw asm sharing one assembled object
+(`asm/code/code_0500C0.o`) with roughly fifty unrelated, already-correct
+functions, so that pattern does not apply: excluding the whole object would
+lose all fifty.
+
+Five distinct mechanisms were tried to redirect just this one symbol
+without disturbing the other fifty, and all five broke `mar_english.elf`'s
+`.rom` section by exactly 16 bytes (`ld: ROM image is not 16 MB: a fragment
+changed size`, `.english` LMA overlapping `.rom` LMA by 0x10):
+
+1. `objcopy --strip-symbol=sub_080537D8` on a copy of `code_0500C0.o`, used
+   in place of the original via `filter-out` (the same substitution
+   mechanism the C bridges use, applied to an object instead of a source
+   file). Section-by-section byte comparison (`objdump -h`) confirmed the
+   stripped copy is otherwise byte-identical to the original -- same 34
+   `.rom.*` sections, same sizes, same total (30172 bytes) -- so the break
+   is not from any actual content difference.
+2. `objcopy --localize-symbol=sub_080537D8` instead of stripping (keeps the
+   symbol for tooling, just makes it non-global). Same break.
+3. `ld --wrap=sub_080537D8`, `code_0500C0.o` left completely untouched.
+   Same break.
+4. `ld --defsym=sub_080537D8=<bridge symbol>`, `code_0500C0.o` untouched.
+   Same break -- and this is the one that pinned down the actual trigger,
+   see below.
+5. `ld --allow-multiple-definition` with the bridge object's position in
+   `objects.rsp` moved to immediately before `code_0500C0.o` (or before the
+   whole `$(OBJS)` list), so the bridge's definition is encountered first
+   and wins under ld's default multiple-definition resolution. Same break.
+
+The critical isolation: `--allow-multiple-definition` with `objects.rsp` in
+its *default* order ($(OBJS) before $(ENGLISH_OBJS), i.e. the *original*
+`sub_080537D8` encountered first and winning) links a byte-perfect 16 MB
+`.rom` every time -- it just doesn't fix the bug, since callers still reach
+the untranslated original. The moment *any* mechanism, however different,
+succeeds in making the override actually take effect, the same 16-byte
+overflow appears. This was confirmed with `--defsym` pointed at a resolved
+numeric address (a two-pass link: link once to discover the bridge
+function's real address, then re-link with that literal address) rather
+than a symbol name, ruling out symbol-to-symbol cross-referencing as the
+mechanism -- the trigger is specifically "`sub_080537D8`'s resolved value
+differs from wherever `code_0500C0.o`'s own `.rom.000537D8` section
+naturally places it", independent of *how* that's achieved.
+
+This strongly implicates `ld_script.ld`'s `KEEP(*(SORT_BY_NAME(.rom.*)))`
+scheme (every fragment gets a `.rom.<offset>`-named section, concatenated
+in name order with no explicit padding) interacting with symbol overrides
+in a way not fully diagnosed -- possibly the size computation for a
+`.rom.*`-named output section assumes its anchoring symbol resolves inside
+it. Not pursued further: this is `ld_script.ld`/`ld_english.ld`
+infrastructure shared by the whole project, and mis-patching it to chase
+one symbol risks a much larger regression than the bug it would fix.
+
+The confirmed-correct C fix
+(`src/english/arm_description_popup.c`, `src/english/arm_description_popup_bridge.s`)
+is committed but **not wired into the Makefile** -- `make english` builds
+exactly as it did before this investigation. Whoever picks this up next has
+a complete behavioral fix ready and a precise reproduction of the blocker;
+the remaining work is either finding the actual linker-script fix, or a
+different integration mechanism entirely (e.g. a post-link binary patch of
+the five call-site `bl` targets instead of overriding the symbol).
