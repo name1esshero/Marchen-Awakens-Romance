@@ -22,12 +22,13 @@ mapping and compiles to an empty, NUL-terminated English row. It does not insert
 an explanatory placeholder into the game. The audit reports these two entries
 as `empty_english_comments` within its reviewed translation count.
 
-The English runtime table currently accepts 3,089 exact source-row mappings.
-109 ambiguous or unsupported keys remain excluded, with Japanese fallback;
-annotations being complete does not remove the hook's context and printer
-limitations. All 5,562 annotations pass font and word-width validation; four
-need multiple pages. Exhaustive ROM text discovery and emulator verification
-remain outstanding.
+[SUPERSEDED] The English runtime table currently accepts 3,089 exact
+source-row mappings. 109 ambiguous or unsupported keys remain excluded, with
+Japanese fallback -- `python3 tools/build_english.py` now reports 5,185 exact
+row mappings and 0 excluded keys; annotations being complete does not remove
+the hook's context and printer limitations. All 5,562 annotations pass font
+and word-width validation; four need multiple pages. Exhaustive ROM text
+discovery and emulator verification remain outstanding.
 
 ## Actual printer findings
 

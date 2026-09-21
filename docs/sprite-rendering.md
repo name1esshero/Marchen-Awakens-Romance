@@ -97,9 +97,11 @@ have unknown roles.
 The renderer state contains a 16-bit flag field at +`0x20C`. Its recovered API
 sets or clears one indexed bit, tests a bit, or returns the full field. The test
 operation returns the bit mask itself, such as 8 for bit 3, rather than reducing
-it to a Boolean. The routine at `0807B728` that changes the whole field remains
-in assembly because the equivalent C has not yet reproduced agbcc's exact
-register and literal-load selection.
+it to a Boolean. [SUPERSEDED] The routine at `0807B728` that changes the whole
+field remains in assembly because the equivalent C has not yet reproduced
+agbcc's exact register and literal-load selection -- it has since matched as
+`SpriteEngineSetAllFlags20C` in `src/sprite_engine_state.c`; see
+`src/decompiled.json`.
 
 State offset +`0x1CC` is addressed as 16 groups of four byte counters. The
 recovered getter and setter truncate the group and stored value to eight bits;

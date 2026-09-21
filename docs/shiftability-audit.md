@@ -6,7 +6,7 @@ page records the current result and explains what the score means.
 
 ## Current result
 
-As of 2026-09-20:
+[SUPERSEDED] As of 2026-09-20, this table read:
 
 | Scope | Relocatable ROM references | No raw software addresses |
 | --- | ---: | ---: |
@@ -15,8 +15,26 @@ As of 2026-09-20:
 | Nonmatching candidates | 8 / 9 (88.89%) | 8 / 9 (88.89%) |
 | All tracked C | 122 / 143 (85.31%) | 112 / 143 (78.32%) |
 
-The matching manifest gives a conservative lower bound of 1,336 / 1,813
-ranges (73.69%) and 190,931 / 229,639 bytes (83.14%) with no detected software
+Re-running `make shiftability-audit` as of 2026-09-21 gives:
+
+| Scope | Relocatable ROM references | No raw software addresses |
+| --- | ---: | ---: |
+| Matching build | 107 / 126 (84.92%) | 97 / 126 (76.98%) |
+| English-only C | 2 / 4 (50.00%) | 2 / 4 (50.00%) |
+| Nonmatching candidates | 17 / 19 (89.47%) | 17 / 19 (89.47%) |
+| All tracked C | 126 / 149 (84.56%) | 116 / 149 (77.85%) |
+
+The English-only scope's drop from 100% is a real regression, not noise: a
+new, not-yet-wired-into-the-build `src/english/*.c` file added this session
+(see `docs/decompilation-notes.md`'s "sub_080537D8 English bridge" entry)
+uses several raw fixed addresses (a VRAM destination, two label-table bases,
+two task-callback pointers, one literal-string address) that a working bridge
+for that function will eventually need to resolve through named symbols
+instead. The nonmatching-candidate count nearly doubled (9 to 19) from new
+deferral candidates added the same session, not from a change in method.
+
+The matching manifest gives a conservative lower bound of 1,350 / 1,825
+ranges (73.97%) and 191,055 / 229,667 bytes (83.19%) with no detected software
 address dependency. A single finding currently marks every manifest range from
 the containing source file, so this deliberately understates progress in large
 files.
