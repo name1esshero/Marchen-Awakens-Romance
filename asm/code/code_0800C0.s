@@ -4945,45 +4945,10 @@ sub_08086860:
 
 @ 0868E8..0868F4 is decompiled as GetNewlibReentrancyState(); see src/decompiled.json
 
-	.section .rom.000868F4, "ax"
+@ 0868F4..086920 is decompiled as _fstat_r(); see src/decompiled.json
+
+	.section .rom.00086920, "ax"
 	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_080868F4
-sub_080868F4:
-	push {r4, r5, lr}
-	adds r5, r0, #0
-	adds r0, r1, #0
-	adds r1, r2, #0
-	ldr r4, _0808691C
-	movs r2, #0
-	str r2, [r4, #0]
-	.2byte 0xF7FF
-	.4byte 0x1C01FF63
-	movs r0, #1
-	negs r0, r0
-	cmp r1, r0
-	bne sub_08086918
-
-	.thumb_func
-	.thumb
-	.global sub_08086910
-sub_08086910:
-	ldr r0, [r4, #0]
-	cmp r0, #0
-	beq sub_08086918
-	str r0, [r5, #0]
-
-	.thumb_func
-	.thumb
-	.global sub_08086918
-sub_08086918:
-	adds r0, r1, #0
-	pop {r4, r5, pc}
-	.global _0808691C
-_0808691C:
-	.4byte 0x03006124  @ IWRAM+0x6124
 
 	.thumb_func
 	.thumb

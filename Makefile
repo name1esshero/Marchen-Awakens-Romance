@@ -177,6 +177,7 @@ LIBC_ADDR_dtoa     := 00083CFC
 LIBC_ADDR_fflush   := 00084B50
 LIBC_ADDR_findfp   := 00084BE4
 LIBC_ADDR_freer    := 00084D40
+LIBC_ADDR_fstatr   := 000868F4
 LIBC_ADDR_fvwrite  := 00084FC0
 LIBC_ADDR_fwalk    := 000851EC
 LIBC_ADDR_locale   := 0008522C

@@ -718,3 +718,19 @@ errors/0 warnings/18 exceptions; `audit_provenance.py` reports 1826/1826;
 `make compare` confirms the byte-identical ROM. See
 `docs/decompilation-notes.md`'s "New decompile: `_close_r`" entry for the
 full identification and the `agbcc_probe.py` flag pitfall it turned up.
+
+## Verified snapshot: `_fstat_r` decompiled, 2026-09-21
+
+`sub_080868F4` -> `_fstat_r` (`src/libc/fstatr.c`), immediate neighbor of
+`_close_r` above and the same reentrant-wrapper shape with one more
+parameter. `audit_pret_standards.py` reports 0 errors/0 warnings/18
+exceptions; `audit_provenance.py` reports 1827/1827; `make compare`
+confirms the byte-identical ROM. This one also surfaced a real mechanical
+pitfall worth flagging for future cuts: removing this function's raw-asm
+block also removed the only `.section` directive covering the still-raw
+`abort` implementation right after it, which had been silently inheriting
+that section rather than declaring its own -- the build still linked
+(no missing-symbol error) but `make compare` failed with ~45 small
+scattered diffs from re-encoded relative branches. See
+`docs/decompilation-notes.md`'s "New decompile: `_fstat_r`" entry for the
+fix and the general signature to watch for.

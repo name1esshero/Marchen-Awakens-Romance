@@ -7992,6 +7992,12 @@
     "file": "src/table_accessors.c"
   },
   {
+    "addr": "080868F4",
+    "size": 44,
+    "name": "_fstat_r",
+    "file": "src/libc/fstatr.c"
+  },
+  {
     "addr": "08086A14",
     "size": 8,
     "name": "gDefaultArchiveName",

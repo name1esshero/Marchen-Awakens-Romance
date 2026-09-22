@@ -3179,3 +3179,34 @@ New file `src/libc/closer.c`, wired into the Makefile's per-file
 every other `src/libc/*.c`, not the per-function `AT()` macro used by
 ordinary `src/*.c`). The stale `_close_r` alias and the raw asm block are
 both removed. `audit_provenance.py` now reports 1826/1826.
+
+## New decompile: `_fstat_r` (2026-09-21)
+
+Immediate neighbor of `_close_r` above -- `sub_080868F4` (44 bytes,
+right after the newly-decompiled `GetNewlibReentrancyState`) already had a
+`.thumb_set _fstat_r, 0x080868F5` placeholder alias in
+`asm/iwram_symbols.s`. Same reentrant-wrapper shape as `_close_r`, three
+parameters instead of two (`_fstat_r(struct _reent *ptr, int fd, struct
+stat *buf)` forwarding to `_fstat(fd, buf)`), `bl` target confirmed via the
+same manual Thumb `bl`-offset decode used earlier this session
+(`0x08086902` + 4 + imm = `0x080867cc`, which `arm-none-eabi-nm` names
+`_fstat`). New file `src/libc/fstatr.c`, `LIBC_ADDR_fstatr :=
+000868F4`.
+
+This one caught a real mistake before it reached `make compare`: cutting
+`sub_080868F4`'s raw-asm block (and the two internal labels folded into the
+same function, `sub_08086910`/`sub_08086918`) also removed the *only*
+`.section .rom.000868F4, "ax"` directive in that stretch of the file. The
+`abort` implementation right after it has no `.section` line of its own --
+in the original disassembly it silently inherited section placement from
+whatever preceded it, which happened to be `sub_080868F4` before this
+change and became a much earlier, wrong section (`.rom.00086834`, still
+open from three functions back) after the cut. The symptom was not a
+missing-symbol link error but a byte-identical *build* that failed
+`make compare` with ~45 small scattered diffs (every relative branch whose
+displacement crosses the resulting 188-byte gap encodes differently) --
+worth remembering as a signature: a cut that silently swallows a
+`.section` line produces exactly this pattern, not a link failure. Fixed by
+adding `.section .rom.00086920, "ax"` immediately before `abort:`, matching
+the section-per-decompiled-cut convention already used everywhere else in
+this file. `audit_provenance.py` now reports 1827/1827.
