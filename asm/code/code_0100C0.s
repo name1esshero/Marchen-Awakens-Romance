@@ -761,7 +761,7 @@ sub_08010730:
 	adds r1, r5, #0
 	adds r1, #40
 	movs r0, #1
-	bl sub_08010A2C
+	bl CreateSpriteWaitTask
 	movs r0, #1
 	str r0, [r6, #4]
 	movs r0, #128
@@ -1081,51 +1081,7 @@ _0801096A:
 
 @ 0109C4..010A2C is decompiled as ScriptSpriteResetTask(); see src/decompiled.json
 
-	.section .rom.00010A2C, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_08010A2C
-sub_08010A2C:
-	push {r4, r5, r6, lr}
-	sub sp, #4
-	adds r4, r0, #0
-	adds r3, r1, #0
-	ldr r0, _08010A68
-	ldr r0, [r0, #0]
-	adds r0, #64
-	ldr r6, _08010A6C
-	movs r1, #8
-	str r1, [sp, #0]
-	adds r1, r6, #0
-	movs r2, #0
-	.2byte 0xF069
-	.byte 0x9A
-	.byte 0xFE
-	adds r5, r0, #0
-	str r4, [r5, #36]
-	movs r0, #1
-	.2byte 0xF06D
-	.4byte 0x2C00FCE7
-	bne _08010A5C
-	adds r0, r5, #0
-	bl sub_08080BD8
-	.global _08010A5C
-_08010A5C:
-	adds r0, r5, #0
-	add sp, #4
-	pop {r4, r5, r6}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _08010A68
-_08010A68:
-	.4byte 0x03004020  @ IWRAM+0x4020
-	.global _08010A6C
-_08010A6C:
-	.4byte ScriptSpriteResetAllTask
+@ 010A2C..010A70 is decompiled as CreateSpriteWaitTask(); see src/decompiled.json
 
 @ 010A70..010AEC is decompiled as ScriptSpriteResetAllTask(); see src/decompiled.json
 

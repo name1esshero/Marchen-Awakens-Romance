@@ -3773,3 +3773,112 @@ a fresh `.section` for whatever follows, not just cuts that remove a
 section's own declaring line.
 
 `audit_provenance.py` now reports 1839/1839.
+
+## Sound-player idle-wait constructor: three of four registers recovered (2026-09-22)
+
+`CreateSoundPlayerIdleWait` at 0x08005830 (`src/nonmatching/sound_idle_wait.c`)
+had the same misidentified-veneer problem as `CreateSpriteResetTask`,
+`CreateSoundFadeTask`, and `CreateMapGenerationTask` above: the stale
+candidate called `sub_08080BD4(waitValue)` directly, treating the compiler's
+own `bx r5` indirect-call veneer as an opaque separate function instead of
+recognizing that the original source called an already-computed `callback`
+local. Declaring `void (*callback)(struct EngineTask *)`, assigning
+`callback = SoundPlayerIdleTask;`, and calling `callback(task)` after
+`CreateTask` fixed three of the four register mismatches at once: `index`
+now correctly lands in r6 for its full lifetime, the returned task pointer
+correctly reuses r4, and `callback` correctly survives in r5 across the
+immediate `callback(task)` run. `sub_08080BD4`'s `bx r5` veneer is now also
+aliased as `_call_via_r5` in `asm/code/code_0800C0.s`, matching the
+`_call_via_r7`/`_call_via_sl`/`_call_via_r9` precedent established for the
+other three constructors.
+
+The jump table dispatching the nine `gSoundPlayerN` cases (0x08005864,
+9 entries) reads as garbled pseudo-instructions under
+`arm-none-eabi-objdump -D --disassembler-options=force-thumb` because the
+tool misinterprets the table's raw address data as code when disassembling
+it as part of a contiguous instruction stream; reading the same range with
+`xxd` and decoding each 4-byte group as a little-endian address gives the
+real table and confirms it matches a natural `switch` statement's `-O2`
+shape exactly.
+
+One register-choice gap remains and was not resolved: the ROM loads the
+player's `status` field in place, overwriting the same register that
+already held the `player` pointer (`ldr r0, [r0, #4]`), while every natural
+C shape tried here -- a separate `player` pointer variable, folding the
+switch to assign `status` per case with no pointer variable at all (which
+agbcc still correctly re-merges into one shared load site), and `status`
+typed both `u32` and `s32` -- loads into a fresh register instead
+(`ldr r1, [r0, #4]`). This is the same class of narrow, register-choice-only
+gap as `sub_08070DA8` (`GeneratedMapStartGeneration`) and
+`SpriteAffineWriteDispatch`'s register swap elsewhere in this project, not a
+logic error, and deliberately contorting the source to force a specific
+register choice would be exactly the compiler-steering PRET_STANDARDS.md
+prohibits. `sound_idle_wait.c` remains in `src/nonmatching/` with this one
+instruction documented as the reason. `make compare` confirms the complete
+ROM SHA-1 is unchanged (`src/nonmatching/*.c` is excluded from the default
+build), `make check-modern` compiles the candidate cleanly, and
+`audit_pret_standards.py`/`audit_provenance.py` both report clean.
+
+## Two more `_call_via_rN`-shaped task constructors recovered (2026-09-22)
+
+Auditing every unaliased veneer in the `sub_08080BC0`..`sub_08080BE8`
+`_call_via_rN` block (`asm/code/code_0800C0.s`) for live callers turned up
+two more `#ifdef NONMATCHING`-guarded candidates already sitting in
+`src/task_constructors.c`, both with the same misidentified-veneer shape as
+every fix in the two entries above:
+
+- `CreateFieldCommandTask` (`sub_0800ECF8`, 0x0800ECF8) unconditionally runs
+  its callback immediately after creating the task, via `sub_08080BD4` (the
+  `bx r5` veneer, already aliased as `_call_via_r5` above).
+- `CreateSpriteWaitTask` (`sub_08010A2C`, 0x08010A2C) conditionally runs its
+  callback when `mode == 0`, via `sub_08080BD8` (the `bx r6` veneer, now
+  also aliased as `_call_via_r6`). Its stale candidate additionally carried
+  an unnecessary `(void *)((u32)ScriptSpriteResetAllTask + 1)` thumb-bit
+  cast on the callback argument -- agbcc already sets the thumb bit on a
+  thumb function's address automatically, so the cast was dead weight, not
+  a needed fix; it's gone in the recovered version.
+
+Declaring a `callback` local for each (as in every earlier fix here) and
+calling it directly got both most of the way, but left one more mismatch:
+the compiled code initially put a *different* pointer's literal-pool load
+first from how the ROM orders it, because both candidates evaluated
+`callback = <name>;` before computing the task's manager/owner pointer
+expression -- agbcc pools literals in source order, so `callback`'s address
+landed in the pool slot the ROM uses for the manager pointer and vice
+versa, which cascaded into a different register choice for the owner/index
+value and, in `CreateFieldCommandTask`'s case, calling the wrong veneer
+entirely (`_call_via_r6` instead of `_call_via_r5`) because `callback`
+itself ended up in the wrong register. This is exactly the
+`manager`/`callback` local-ordering idiom already established by
+`CreateSpriteResetTask` and `CreateMapGenerationTask` above (compute
+`manager` first, then `callback`, then call `CreateTask(manager, (void
+*)callback, ...)`) -- it just hadn't been applied to these two yet. Once
+applied, both are full, byte-exact matches; the `#ifdef NONMATCHING` guards
+around both are gone, and both are declared in `include/task_constructors.h`.
+
+Both had live callers under their old `sub_` names outside
+`task_constructors.c`: `CreateFieldCommandTask` from one `bl` site in
+`asm/code/code_0080C0.s`; `CreateSpriteWaitTask` from one `bl` site in
+`asm/code/code_0100C0.s` plus three C call sites (two in
+`src/mapping.c`'s `MapGenerationRelease`/`GeneratedMapResize`, one in
+`src/script_effect_native.c`'s `ScriptNativeSpriteWait`). All five are now
+updated to call the descriptive name, matching this project's established
+"all known callers use the descriptive name" convention.
+
+Both functions' raw byte ranges needed removing from `asm/code/*.s` to let
+the new C actually compile in (they were real, uncut assembly bytes under
+`#ifdef NONMATCHING`-guarded candidates that were never wired into the
+default build before). `CreateFieldCommandTask` was the last function
+inside a shared six-function `.rom.0000E7EC` section in `code_0080C0.s`, so
+its cut (through its own two-word literal pool) needed the following code
+(`sub_0800ED5C`, already-existing separate raw assembly, not decompiled)
+given a fresh `.section .rom.0000ED5C, "ax"` -- the same section-boundary
+rule from the `CreateMapGenerationTask` entry above, this time at a
+section's tail rather than its middle. `CreateSpriteWaitTask` already owned
+its own `.rom.00010A2C` section outright (bordered on both sides by
+already-decompiled functions with their own sections), so removing it
+needed no follow-up section fix at all.
+
+`audit_pret_standards.py` reports 0 errors/0 warnings/19 exceptions;
+`audit_provenance.py` reports 1839/1839; `make compare` confirms the
+byte-identical 16 MB ROM.

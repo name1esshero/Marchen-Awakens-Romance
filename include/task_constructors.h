@@ -34,5 +34,7 @@ u8 *CreateObjectMotionTaskB(u8 *object, s32 *result);
 u8 *CreateSpriteResetTask(s32 sprite, s32 mode, s32 *result);
 u8 *CreateMapGenerationTask(s32 state, s32 mode, s32 field644, s32 cell,
                             s32 arg5, s32 arg6, s32 *result);
+u8 *CreateFieldCommandTask(s32 owner, s32 a, s32 b, s32 c, s32 *result);
+u8 *CreateSpriteWaitTask(s32 mode, s32 *result);
 
 #endif /* TASK_CONSTRUCTORS_H */

@@ -35,9 +35,6 @@ extern u8 gMainTaskManager;
 extern u8 gAuxTaskManager;
 extern void ScriptAddPendingTasks(s32 count);
 extern char *strcpy(char *, const char *);
-extern void sub_08080BD8(void *task);
-extern void sub_08080BDC(void *task);
-extern void sub_08080BD4(void *task);
 extern void sub_0805615C(void);
 extern void RuntimeSetFlagC0(u32, s32);
 extern s32 SpriteResourceFindGroup(s32, const char *);
@@ -621,22 +618,34 @@ AT("0000E788") u8 *CreateFieldEffectTask(s32 owner, s32 slot, s32 a, s32 b,
     return task;
 }
 
-#ifdef NONMATCHING
+/** Create a 16-byte field-command task on the owner's per-actor task slot
+ * and run its callback immediately.
+ * @param owner Field object slot; selects the task manager.
+ * @param a Stored at state +4.
+ * @param b Stored at state +8.
+ * @param c Stored at state +12.
+ * @param result Optional task completion word.
+ * @return The new task, after running its own callback once immediately. */
 AT("0000ECF8") u8 *CreateFieldCommandTask(s32 owner, s32 a, s32 b, s32 c,
                                            s32 *result)
 {
-    u8 *task = CreateTask(gSecondaryRuntime + owner * 32,
-                          sub_0800ED5C, 0, result, 16);
-    u8 *state = task + 32;
+    void *manager;
+    void (*callback)(void *);
+    u8 *task;
+    u8 *state;
+
+    manager = gSecondaryRuntime + owner * 32;
+    callback = sub_0800ED5C;
+    task = CreateTask(manager, (void *)callback, 0, result, 16);
+    state = task + 32;
     *(s32 *)(task + 32) = owner;
     *(s32 *)(state + 4) = a;
     *(s32 *)(state + 8) = b;
     *(s32 *)(state + 12) = c;
     ScriptAddPendingTasks(1);
-    sub_08080BD4(task);
+    callback(task);
     return task;
 }
-#endif
 
 #define CREATE_PENDING_TASK(address, name, manager, callback)              \
 AT(address) u8 *name(s32 value, s32 *result)                               \
@@ -672,18 +681,26 @@ AT("00007134") u8 *CreateNamedRuntimeTask(const char *name, s32 value,
     return task;
 }
 
-#ifdef NONMATCHING
+/** Create an 8-byte sprite-wait task running ScriptSpriteResetAllTask().
+ * @param mode Stored at task +36; mode 0 also runs the task's callback
+ * immediately instead of waiting for the scheduler.
+ * @param result Optional task completion word.
+ * @return The new task. */
 AT("00010A2C") u8 *CreateSpriteWaitTask(s32 mode, s32 *result)
 {
-    u8 *task = CreateTask(gSecondaryRuntime + 64, (void *)((u32)ScriptSpriteResetAllTask + 1),
-                          0, result, 8);
+    void *manager;
+    void (*callback)(void *);
+    u8 *task;
+
+    manager = gSecondaryRuntime + 64;
+    callback = ScriptSpriteResetAllTask;
+    task = CreateTask(manager, (void *)callback, 0, result, 8);
     *(s32 *)(task + 36) = mode;
     ScriptAddPendingTasks(1);
     if (mode == 0)
-        sub_08080BD8(task);
+        callback(task);
     return task;
 }
-#endif
 
 /** Create the encounter-transition task and set the secondary runtime's
  * 0x0F24 flag, marking one script wait pending.

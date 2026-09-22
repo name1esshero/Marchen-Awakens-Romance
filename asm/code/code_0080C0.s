@@ -13623,66 +13623,10 @@ _0800ECE4:
 _0800ECF4:
 	.4byte 0x00007FFF
 
-	.thumb_func
-	.thumb
-	.global sub_0800ECF8
-sub_0800ECF8:
-	push {r4, r5, r6, lr}
-	mov r6, r10
-	mov r5, r9
-	mov r4, r8
-	push {r4, r5, r6}
-	sub sp, #4
-	adds r6, r0, #0
-	mov r8, r1
-	mov r9, r2
-	mov r10, r3
-	ldr r3, [sp, #32]
-	ldr r0, sub_0800ED54
-	lsls r1, r6, #5
-	ldr r0, [r0, #0]
-	adds r0, r0, r1
-	ldr r5, _0800ED58
-	movs r1, #16
-	str r1, [sp, #0]
-	adds r1, r5, #0
-	movs r2, #0
-	.2byte 0xF06B
-	.byte 0x2C
-	.byte 0xFD
-	adds r4, r0, #0
-	adds r0, #32
-	str r6, [r4, #32]
-	mov r1, r8
-	str r1, [r0, #4]
-	mov r1, r9
-	str r1, [r0, #8]
-	mov r1, r10
-	str r1, [r0, #12]
-	movs r0, #1
-	.2byte 0xF06F
-	.byte 0x72
-	.byte 0xFB
-	adds r0, r4, #0
-	bl sub_08080BD4
-	adds r0, r4, #0
-	add sp, #4
-	pop {r3, r4, r5}
-	mov r8, r3
-	mov r9, r4
-	mov r10, r5
-	pop {r4, r5, r6}
-	pop {r1}
-	bx r1
+@ 00ECF8..00ED54 is decompiled as CreateFieldCommandTask(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0800ED54
-sub_0800ED54:
-	.4byte 0x03004020  @ IWRAM+0x4020
-	.global _0800ED58
-_0800ED58:
-	.4byte 0x0800ED5D  @ ROM+0xED5D
+	.section .rom.0000ED5C, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -13890,7 +13834,7 @@ sub_0800EEB6:
 	adds r1, r7, #0
 	adds r2, r5, #0
 	adds r3, r4, #0
-	bl sub_0800ECF8
+	bl CreateFieldCommandTask
 	b _0800EF9C
 	.byte 0x01
 	.byte 0x20

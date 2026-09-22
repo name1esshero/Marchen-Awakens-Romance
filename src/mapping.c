@@ -5,6 +5,7 @@
 #include "game_state.h"
 
 #include "rom_section.h"
+#include "task_constructors.h"
 
 extern u8 gIwramBase[];
 extern u8 gMapGenerationRootOffset[];
@@ -1013,7 +1014,6 @@ AT("00012D64") s32 ScriptNativeClearConsumableInventory(u32 count, const s32 *ar
 extern void HeapFree(void *heap, void *allocation);
 extern void *HeapAlloc(void *heap, u32 size);
 extern void HitRegionDisableAll(void);
-extern void sub_08010A2C(s32 arg0, s32 arg1);
 extern void *memset(void *destination, s32 value, u32 size);
 
 /* The two heap blocks the generated map owns, at fixed offsets in the
@@ -1031,7 +1031,7 @@ AT("00070140") void MapGenerationRelease(void *state)
     HeapFree(0, *(void **)(generation + MAP_GENERATION_BLOCK_650));
     HeapFree(0, *(void **)(generation + MAP_GENERATION_BLOCK_654));
     HitRegionDisableAll();
-    sub_08010A2C(0, 0);
+    CreateSpriteWaitTask(0, 0);
 }
 
 #define GENERATED_MAP_RESIZE_CLEAR_SIZE 0x668
@@ -1060,7 +1060,7 @@ AT("0007017C") void GeneratedMapResize(void *state, u32 width, u32 height)
     slot654 = (void **)(generation + MAP_GENERATION_BLOCK_654);
     HeapFree(0, *slot654);
     HitRegionDisableAll();
-    sub_08010A2C(0, 0);
+    CreateSpriteWaitTask(0, 0);
     memset(generation, 0, GENERATED_MAP_RESIZE_CLEAR_SIZE);
     *(u32 *)(generation + GENERATED_MAP_RESIZE_SIZE_CACHE_OFFSET) = GENERATED_MAP_RESIZE_CLEAR_SIZE;
     *(u16 *)(generation + 0) = w;

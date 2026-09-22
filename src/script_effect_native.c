@@ -28,7 +28,6 @@ extern void sub_0800DEE4(s32, s32, s32, s32, s32, s32, s32);
 extern void sub_0800E268(s32, s32, s32 *, s32);
 extern void sub_0800E444(s32, s32, s32, s32 *, s32);
 
-extern void sub_08010A2C(s32, s32);
 extern void sub_08010E44(s32, s32, s32, s32, s32, s32, s32);
 extern void sub_08011340(s32, s32, s32, s32 *, s32);
 
@@ -184,7 +183,7 @@ AT("00011F14") s32 ScriptNativeSpriteWait(u32 count, const s32 *args, s32 *resul
     if (args[0] != -1)
         CreateSpriteResetTask(args[0], 1, 0);
     else
-        sub_08010A2C(1, 0);
+        CreateSpriteWaitTask(1, 0);
     return 0x7fff;
 }
 

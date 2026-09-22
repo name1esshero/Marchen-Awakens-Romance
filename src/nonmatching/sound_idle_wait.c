@@ -2,7 +2,6 @@
 #include "task_manager.h"
 
 extern void ScriptAddPendingTasks(u32 count);
-extern void sub_08080BD4(void *task);
 extern void SoundPlayerIdleTask(struct EngineTask *task);
 
 struct SoundIdleTaskRecord
@@ -19,31 +18,26 @@ struct SoundIdleTaskRecord
  * @param completion Optional task completion word.
  * @return The wait task, or null for an immediate result or inactive player.
  *
- * This natural reconstruction has the correct behavior and size. The precise
- * mechanism: the ROM preserves three values across the whole function
- * (`push {r4,r5,r6,lr}`) -- `index` in r6 for its entire lifetime (from the
- * top down to `((SoundIdleTaskRecord*)waitValue)->playerIndex = index;`,
- * which is reached after the `bl CreateTask` that clobbers r0-r3), `wait` in
- * r4 (later reused for the returned task pointer), and a transient scratch
- * in r5 used only within the task-creation branch for CreateTask's manager/
- * callback arguments. This candidate's `index` and the switch's per-player
- * pointer temporary do not have overlapping live ranges (the switch's use
- * ends before `index` is read again), so agbcc coalesces them into the same
- * register (r5) and needs only two preserved registers (`push {r4,r5,lr}`)
- * instead of three. The ROM's original source apparently did not permit that
- * coalescing. This looks like a genuine compiler liveness-analysis choice
- * rather than an instruction-order or expression-grouping difference, and
- * none of the shapes in this project's playbook (statement splitting,
- * declaration order, combined expressions) target that kind of difference;
- * deliberately extending a variable's live range purely to prevent a
- * coalescing the optimizer would otherwise make is compiler-steering of the
- * same kind PRET_STANDARDS.md forbids elsewhere in this project (the
- * rejected SpriteAffineAllocate/ScriptResourceSet register-forcing unions),
- * so it was not attempted here either; a genuine fix would need to come
- * from recovering why the ROM's original source kept these three values
- * separate, not from a source-level trick aimed at the register allocator.
- * The exact symbolic implementation remains in assembly until that is
- * found.
+ * Behavior, size, and three of four register assignments now match exactly
+ * (`index` in r6, `wait` in r4, the returned task in r4 reused after
+ * `CreateTask`, and `callback` surviving in r5 for the immediate run --
+ * `sub_08080BD4` is agbcc's own `bx r5` indirect-call veneer, not a real
+ * function; calling the already-computed `callback` local through it
+ * instead of the raw trampoline name is what fixed all three of those at
+ * once, the same fix that resolved CreateSpriteResetTask and
+ * CreateSoundFadeTask earlier this session). What remains is a single
+ * instruction: the ROM loads the player's status in place
+ * (`ldr r0, [r0, #4]`, overwriting the same register that already held the
+ * player pointer from the jump-table case body), while every C shape tried
+ * here loads it into a fresh register instead (`ldr r1, [r0, #4]`) --
+ * tried with `player` as its own pointer variable and without one (folding
+ * the switch to assign `status` directly per case, which agbcc still
+ * correctly merges back into one shared load site), with `status` typed
+ * `u32` and `s32`, and with the merge point reached from every case in the
+ * jump table. None recovers the in-place overwrite. This is the same class
+ * of narrow, register-choice-only gap as `sub_08070DA8`
+ * (`GeneratedMapStartGeneration`) and `SpriteAffineWriteDispatch`'s
+ * register swap elsewhere in this project -- not a logic error.
  */
 struct EngineTask *CreateSoundPlayerIdleWait(
     u32 playerIndex, u32 wait, s32 *result, u32 *completion)
@@ -51,12 +45,10 @@ struct EngineTask *CreateSoundPlayerIdleWait(
     struct SoundPlayer *player;
     u32 status;
     u32 index;
-    u32 waitValue;
     void (*callback)(struct EngineTask *);
-    struct EngineTask *returnTask;
+    struct EngineTask *task;
 
     index = playerIndex;
-    waitValue = wait;
     switch (index) {
     case 0: player = &gSoundPlayer0; break;
     case 1: player = &gSoundPlayer1; break;
@@ -75,19 +67,16 @@ struct EngineTask *CreateSoundPlayerIdleWait(
         *result = 0;
         return 0;
     }
-    if (waitValue != 0) {
-        callback = SoundPlayerIdleTask;
-        waitValue = (u32)CreateTask(&gMainTaskManager, callback, 0,
-                                    completion, 12);
-        ((struct SoundIdleTaskRecord *)waitValue)->playerIndex = index;
-        ScriptAddPendingTasks(1);
-        sub_08080BD4((void *)waitValue);
-        returnTask = (struct EngineTask *)waitValue;
-    } else {
+    if (wait == 0) {
         status >>= 31;
         status ^= 1;
         *result = status;
-        returnTask = 0;
+        return 0;
     }
-    return returnTask;
+    callback = SoundPlayerIdleTask;
+    task = CreateTask(&gMainTaskManager, (void *)callback, 0, completion, 12);
+    ((struct SoundIdleTaskRecord *)task)->playerIndex = index;
+    ScriptAddPendingTasks(1);
+    callback(task);
+    return task;
 }
