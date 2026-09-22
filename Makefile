@@ -193,6 +193,7 @@ LIBC_ADDR_mprec    := 000859CC
 LIBC_ADDR_readr    := 00086978
 LIBC_ADDR_s_isinf  := 0008629C
 LIBC_ADDR_s_isnan  := 000862C0
+LIBC_ADDR_sbrkr    := 000862E0
 LIBC_ADDR_strcat   := 000827C4
 LIBC_ADDR_strcmp   := 0008280C
 LIBC_ADDR_strcpy   := 00082868

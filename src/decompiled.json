@@ -7962,6 +7962,12 @@
     "file": "src/libc/s_isnan.c"
   },
   {
+    "addr": "080862E0",
+    "size": 44,
+    "name": "_sbrk_r",
+    "file": "src/libc/sbrkr.c"
+  },
+  {
     "addr": "0808630C",
     "size": 196,
     "name": "__sread",

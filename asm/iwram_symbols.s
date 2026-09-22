@@ -173,8 +173,6 @@
 .thumb_set __malloc_lock, 0x080859C5
 .global __malloc_unlock
 .thumb_set __malloc_unlock, 0x080859C9
-.global _sbrk_r
-.thumb_set _sbrk_r, 0x080862E1
 .global isatty
 .thumb_set isatty, 0x08086941
 .global __errno

@@ -751,3 +751,19 @@ second `bx lr` plus a zero halfword) right after it with no confirmed
 source shape reproducing them. Left as-is rather than guessed. See
 `docs/decompilation-notes.md`'s "Three more newlib reentrant wrappers"
 entry.
+
+## Verified snapshot: `_sbrk_r` decompiled, cluster complete, 2026-09-21
+
+`sub_080862E0` -> `_sbrk_r` (`src/libc/sbrkr.c`), same reentrant-wrapper
+shape as the rest of this cluster, one forwarded argument, `bl` target
+`_sbrk` corroborated independently by `mallocr.c`'s own pre-existing
+`MORECORE(size)` macro. `audit_pret_standards.py` reports 0 errors/0
+warnings/18 exceptions; `audit_provenance.py` reports 1831/1831;
+`make compare` confirms the byte-identical ROM. This closes out every
+`.thumb_set`-aliased-but-undecompiled newlib reentrant wrapper found this
+session (`_close_r`, `_fstat_r`, `_write_r`, `_lseek_r`, `_read_r`,
+`_sbrk_r` -- six decompiles from one method: grep `asm/iwram_symbols.s` for
+placeholder aliases whose address has no `decompiled.json` entry yet).
+`isatty` and `abort` remain, both investigated and left as assembly for
+documented reasons. See `docs/decompilation-notes.md`'s "`_sbrk_r`, the
+last reentrant wrapper in this cluster" entry.

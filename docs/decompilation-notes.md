@@ -3246,3 +3246,38 @@ alias undisturbed, rather than force a match or guess at a source shape
 with no way to confirm it beyond byte count.
 
 `audit_provenance.py` now reports 1830/1830.
+
+## `_sbrk_r`, the last reentrant wrapper in this cluster (2026-09-21)
+
+`sub_080862E0` (44 bytes, immediately before the already-matched `__sread`)
+also had a pre-existing `.thumb_set _sbrk_r, 0x080862E1` placeholder alias.
+Same shape as the others, one forwarded argument instead of two or three:
+`_sbrk_r(reent, incr)` calling `_sbrk(incr)`. `bl` target decoded to
+`0x08086790`, which `arm-none-eabi-nm` names `_sbrk` -- and `mallocr.c`'s
+own `#define MORECORE(size) _sbrk_r(reent_ptr, (size))` (already present in
+this project, gated on `INTERNAL_NEWLIB`) independently corroborates the
+name. The return type is `void *`, and the failure check compares against
+`(void *) -1` rather than a plain `-1` int, matching `_sbrk`'s own
+`caddr_t`/pointer return -- confirmed to compile to the identical
+`movs r0,#1 / negs r0,r0 / cmp` sequence either way, so the pointer
+comparison is the *correct* source shape, not just a coincidentally-equal
+alternative.
+
+The trailing two bytes the original disassembly had labeled as a separate
+tiny function, `sub_0808630A: lsls r0, r0, #12`, are not real code at all --
+they're the upper halfword of `_sbrk_r`'s own 4-byte errno-address literal
+pool word (`0x03006124`), split across two disassembler labels the same way
+`GetNewlibReentrancyState`'s pool word or other "hidden data read as
+instructions" cases earlier in this project were. No separate handling was
+needed: the compiled `errno` literal reference reproduces that whole word,
+`sub_0808630A` included, automatically.
+
+This closes out the whole visible cluster of pre-aliased-but-undecompiled
+newlib reentrant wrappers found this session (`_close_r`, `_fstat_r`,
+`_write_r`, `_lseek_r`, `_read_r`, `_sbrk_r`) -- six real decompiles from
+one identification method (grepping `asm/iwram_symbols.s` for `.thumb_set`
+aliases whose target address still has no matching `decompiled.json`
+entry). `isatty` and `abort`, the two remaining raw-asm functions in this
+same neighborhood, are addressed above and left as assembly (an unexplained
+4 extra bytes, and genuine SWI/r8-handling inline-asm shape, respectively).
+`audit_provenance.py` now reports 1831/1831.

@@ -4842,55 +4842,7 @@ sub_080859C8:
 
 @ 0862C0..0862E0 is decompiled as isnan(); see src/decompiled.json
 
-	.section .rom.000862E0, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_080862E0
-sub_080862E0:
-	push {r4, r5, lr}
-	adds r5, r0, #0
-	adds r0, r1, #0
-	ldr r4, _08086308
-
-	.thumb_func
-	.thumb
-	.global sub_080862E8
-sub_080862E8:
-	movs r1, #0
-	str r1, [r4, #0]
-	.2byte 0xF000
-
-	.thumb_func
-	.thumb
-	.global sub_080862EE
-sub_080862EE:
-	.2byte 0xFA50
-	adds r1, r0, #0
-	movs r0, #1
-	negs r0, r0
-	cmp r1, r0
-	bne _08086302
-	ldr r0, [r4, #0]
-	cmp r0, #0
-	beq _08086302
-	str r0, [r5, #0]
-	.global _08086302
-_08086302:
-	adds r0, r1, #0
-	pop {r4, r5, pc}
-	.byte 0x00
-	.byte 0x00
-	.global _08086308
-_08086308:
-	.2byte 0x6124
-
-	.thumb_func
-	.thumb
-	.global sub_0808630A
-sub_0808630A:
-	lsls r0, r0, #12
+@ 0862E0..08630C is decompiled as _sbrk_r(); see src/decompiled.json
 
 @ 08630C..0863D0 is decompiled as __sread(); see src/decompiled.json
 
