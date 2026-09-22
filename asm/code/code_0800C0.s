@@ -4896,48 +4896,7 @@ sub_0808630A:
 
 @ 0863D0..086834 is decompiled as NewlibSyscalls(); see src/decompiled.json
 
-	.section .rom.00086834, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_08086834
-sub_08086834:
-	push {r4, r5, lr}
-	adds r5, r0, #0
-	adds r0, r1, #0
-	adds r1, r2, #0
-	adds r2, r3, #0
-	ldr r4, sub_08086860
-	movs r3, #0
-	str r3, [r4, #0]
-	.2byte 0xF7FF
-	.byte 0xE2
-	.byte 0xFE
-	adds r1, r0, #0
-	movs r0, #1
-	negs r0, r0
-	cmp r1, r0
-	bne sub_0808685A
-	ldr r0, [r4, #0]
-	cmp r0, #0
-	beq sub_0808685A
-	str r0, [r5, #0]
-
-	.thumb_func
-	.thumb
-	.global sub_0808685A
-sub_0808685A:
-	adds r0, r1, #0
-	pop {r4, r5, pc}
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_08086860
-sub_08086860:
-	.4byte 0x03006124  @ IWRAM+0x6124
+@ 086834..086864 is decompiled as _write_r(); see src/decompiled.json
 
 @ 086864..0868BC is decompiled as _calloc_r(); see src/decompiled.json
 
@@ -4986,93 +4945,12 @@ sub_08086940:
 	bx lr
 	.4byte 0x00004770
 
-	.thumb_func
-	.thumb
-	.global sub_08086948
-sub_08086948:
-	push {r4, r5, lr}
-	adds r5, r0, #0
-	adds r0, r1, #0
-	adds r1, r2, #0
-	adds r2, r3, #0
-	ldr r4, _08086974
-	movs r3, #0
-	str r3, [r4, #0]
-	.2byte 0xF7FF
-	.byte 0x40
-	.byte 0xFE
-	adds r1, r0, #0
-	movs r0, #1
-	negs r0, r0
-	cmp r1, r0
-	bne _0808696E
-	ldr r0, [r4, #0]
-	cmp r0, #0
-	beq _0808696E
+@ 086948..086978 is decompiled as _lseek_r(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0808696C
-sub_0808696C:
-	str r0, [r5, #0]
-	.global _0808696E
-_0808696E:
-	adds r0, r1, #0
-	pop {r4, r5, pc}
-	.byte 0x00
-	.byte 0x00
-	.global _08086974
-_08086974:
-	.4byte 0x03006124  @ IWRAM+0x6124
+@ 086978..0869A8 is decompiled as _read_r(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08086978
-sub_08086978:
-	push {r4, r5, lr}
-	adds r5, r0, #0
-	adds r0, r1, #0
-	adds r1, r2, #0
-	adds r2, r3, #0
-	ldr r4, _080869A4
-	movs r3, #0
-
-	.thumb_func
-	.thumb
-	.global sub_08086986
-sub_08086986:
-	str r3, [r4, #0]
-	.2byte 0xF7FF
-	.byte 0xC2
-	.byte 0xFD
-	adds r1, r0, #0
-	movs r0, #1
-	negs r0, r0
-	cmp r1, r0
-	bne _0808699E
-	ldr r0, [r4, #0]
-
-	.thumb_func
-	.thumb
-	.global sub_08086998
-sub_08086998:
-	cmp r0, #0
-	beq _0808699E
-	str r0, [r5, #0]
-	.global _0808699E
-_0808699E:
-	adds r0, r1, #0
-
-	.thumb_func
-	.thumb
-	.global sub_080869A0
-sub_080869A0:
-	pop {r4, r5, pc}
-	.byte 0x00
-	.byte 0x00
-	.global _080869A4
-_080869A4:
-	.4byte 0x03006124  @ IWRAM+0x6124
+	.section .rom.000869A8, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb

@@ -3210,3 +3210,39 @@ worth remembering as a signature: a cut that silently swallows a
 adding `.section .rom.00086920, "ax"` immediately before `abort:`, matching
 the section-per-decompiled-cut convention already used everywhere else in
 this file. `audit_provenance.py` now reports 1827/1827.
+
+## Three more newlib reentrant wrappers: `_write_r`, `_lseek_r`, `_read_r` (2026-09-21)
+
+Same cluster, same shape as `_close_r`/`_fstat_r` above, each with a
+pre-existing `.thumb_set` placeholder alias already naming them (this whole
+newlib-reentrancy neighborhood had apparently been identified by symbol in
+an earlier session but never actually matched in C). `bl` targets confirmed
+the same way as before (manual Thumb `bl` offset decode, cross-checked
+against `arm-none-eabi-nm`): `_write_r` (`sub_08086834`) calls `_write`
+(`0x0808660c`), `_lseek_r` (`sub_08086948`) calls `_lseek` (`0x080865dc`),
+`_read_r` (`sub_08086978`) calls `_read` (`0x08086510`). New files
+`src/libc/writer.c`, `src/libc/lseekr.c`, `src/libc/readr.c`; `LIBC_ADDR_writer
+:= 00086834`, `LIBC_ADDR_lseekr := 00086948`, `LIBC_ADDR_readr := 00086978`.
+
+Applied the `.section` lesson from the `_fstat_r`/`abort` cut immediately:
+the new trampoline stub right after `_read_r` (`sub_080869A8`, a `bx pc`
+ARM/Thumb mode switch -- left in assembly, it's genuine inline-asm-shaped
+code, not a decompile candidate) got its own explicit
+`.section .rom.000869A8, "ax"` in the same edit that cut `_lseek_r`/`_read_r`,
+avoiding a repeat of the same silent-section-inheritance bug. `make compare`
+passed on the first attempt this time.
+
+`isatty` (`sub_08086940`, between `abort` and `_lseek_r`) was investigated
+and *not* decompiled: its real compiled body is only 4 bytes (`movs r0,#1;
+bx lr`), matching every `int isatty(int fd) { return 1; }`-shaped probe
+tried, but the ROM has 4 extra bytes right after it -- a second, dead
+`bx lr` followed by a zero halfword (confirmed from the raw ROM bytes
+directly, not just objdump's `.word`-grouping, so it isn't a display
+artifact). No source shape found reproduces a duplicate trailing branch;
+this is likely dead code from whatever the real conditional looked like
+(a compare-based `isatty` that both arms happen to reduce to `return 1`
+under `-O2`), but it wasn't identified. Left as the original raw asm,
+alias undisturbed, rather than force a match or guess at a source shape
+with no way to confirm it beyond byte count.
+
+`audit_provenance.py` now reports 1830/1830.

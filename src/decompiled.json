@@ -7974,6 +7974,12 @@
     "file": "src/libc/syscalls.c"
   },
   {
+    "addr": "08086834",
+    "size": 48,
+    "name": "_write_r",
+    "file": "src/libc/writer.c"
+  },
+  {
     "addr": "08086864",
     "size": 88,
     "name": "_calloc_r",
@@ -7996,6 +8002,18 @@
     "size": 44,
     "name": "_fstat_r",
     "file": "src/libc/fstatr.c"
+  },
+  {
+    "addr": "08086948",
+    "size": 48,
+    "name": "_lseek_r",
+    "file": "src/libc/lseekr.c"
+  },
+  {
+    "addr": "08086978",
+    "size": 48,
+    "name": "_read_r",
+    "file": "src/libc/readr.c"
   },
   {
     "addr": "08086A14",

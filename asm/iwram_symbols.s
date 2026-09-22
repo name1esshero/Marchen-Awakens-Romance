@@ -175,14 +175,8 @@
 .thumb_set __malloc_unlock, 0x080859C9
 .global _sbrk_r
 .thumb_set _sbrk_r, 0x080862E1
-.global _write_r
-.thumb_set _write_r, 0x08086835
 .global isatty
 .thumb_set isatty, 0x08086941
-.global _lseek_r
-.thumb_set _lseek_r, 0x08086949
-.global _read_r
-.thumb_set _read_r, 0x08086979
 .global __errno
 .thumb_set __errno, 0x080868E9
 .global end

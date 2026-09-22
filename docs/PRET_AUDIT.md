@@ -734,3 +734,20 @@ that section rather than declaring its own -- the build still linked
 scattered diffs from re-encoded relative branches. See
 `docs/decompilation-notes.md`'s "New decompile: `_fstat_r`" entry for the
 fix and the general signature to watch for.
+
+## Verified snapshot: `_write_r`/`_lseek_r`/`_read_r` decompiled, 2026-09-21
+
+Three more newlib reentrant wrappers in the same cluster as `_close_r`/
+`_fstat_r`, same shape, each with a pre-existing `.thumb_set` alias:
+`_write_r` (`src/libc/writer.c`), `_lseek_r` (`src/libc/lseekr.c`),
+`_read_r` (`src/libc/readr.c`). `audit_pret_standards.py` reports 0
+errors/0 warnings/18 exceptions; `audit_provenance.py` reports 1830/1830;
+`make compare` confirms the byte-identical ROM (passed on the first
+attempt -- the `.section` lesson from the previous `_fstat_r` cut was
+applied up front this time). `isatty`, in the same neighborhood, was
+investigated but not decompiled: its real body is 4 bytes matching every
+`return 1;` probe tried, but the ROM has 4 unexplained extra bytes (a dead
+second `bx lr` plus a zero halfword) right after it with no confirmed
+source shape reproducing them. Left as-is rather than guessed. See
+`docs/decompilation-notes.md`'s "Three more newlib reentrant wrappers"
+entry.
