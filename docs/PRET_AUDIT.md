@@ -876,3 +876,36 @@ per-cell 4-bytes-wide array, parallel to the existing `cellRoomIndices` at
 the full identification, the register-lifetime shape lesson (named pointer
 locals reused across five intervening calls, not recomputed at each site),
 and the harmless unavoidable `memset` built-in-prototype warning.
+
+## Dungeon-generation dependency map and a resolved correct deferral, 2026-09-21
+
+No new decompile this entry -- `sub_08070DA8` (`DungGenStart`'s real
+logic) was investigated but not completed: its structure and two of its
+three call targets are fully understood (see
+`docs/decompilation-notes.md`'s "Dungeon-generation dependency map" entry
+for the full trace, including a `struct GeneratedMapRoomRecord` field
+finding parallel to the `unknown14` one above), but `sub_080714CC` remains
+unresolved and is a real sub-investigation of its own (a five-plus-
+register function that reads two argument registers holding leftover
+caller state, not explicit arguments).
+
+One confirmed result from this pass: `sub_0801097C` is
+`CreateSpriteResetTask`, an existing `#ifdef NONMATCHING`-guarded
+candidate in `src/task_constructors.c`. Re-verified directly against a
+force-thumb disassembly of the raw ROM bytes -- every field write, call,
+and the conditional immediate-run step are correct. The remaining gap
+(the ROM caches the callback address in `r7` across an intervening stack
+setup that clobbers `r1`; six tried C shapes never reproduce that specific
+register choice) is now documented in place as a confirmed correct
+deferral, the same class as `SpriteAffineWriteDispatch`'s register swap
+and this session's newlib reentrant-wrapper gaps -- not a logic error.
+`audit_pret_standards.py` still reports 0 errors/0 warnings/18 exceptions
+and `make compare` still confirms the byte-identical ROM (this file change
+is a comment only, inside the existing `#ifdef NONMATCHING` guard, with no
+effect on the default build).
+
+The dungeon-generation work queue established this session
+(`sub_0807017C` done, `sub_08070DA8`/`sub_08070F80`/`sub_08070620` sized
+and partly surveyed, `sub_08070238` and several much larger functions
+identified beyond that) is recorded in `docs/decompilation-notes.md` so a
+future pass can pick up without re-deriving it.

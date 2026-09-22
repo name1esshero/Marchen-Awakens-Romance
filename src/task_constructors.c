@@ -435,6 +435,24 @@ AT("000256F8") u8 *CreateBattleTrackingTask(s32 owner, s32 slot,
     return task;
 }
 
+/* Re-verified 2026-09-21 against a direct force-thumb read of the raw ROM
+ * bytes at 0x0801097C (not just the stale disassembly): every field write,
+ * call, and the conditional immediate-run are confirmed correct. What
+ * remains is a single register-allocation gap. The ROM loads the callback
+ * address into r7 early (right after `manager`, both loaded back-to-back
+ * as adjacent PC-relative pool reads) and only copies it into r1 right
+ * before the call -- because r1 is needed as scratch in between to store
+ * the literal 8 onto the stack for CreateTask's 5th argument. Six C shapes
+ * were tried against this exact call (this one; a plain `(void
+ * *)ScriptSpriteResetTask` cast, i.e. without the +1; `manager` and
+ * `callback` each pulled out into their own named locals, in every
+ * declaration order; and a named `u32 size = 8;` local for the stack
+ * argument) and every one keeps the callback address in r1 alone, with no
+ * r7 hop, regardless of argument or declaration order -- agbcc never
+ * revisits this specific call's register plan away from the natural one.
+ * This is the same class of correctly-deferred gap as the newlib
+ * reentrant-wrapper and sprite-affine-dispatch cases documented in
+ * docs/decompilation-notes.md this session, not a logic error. */
 #ifdef NONMATCHING
 AT("0001097C") u8 *CreateSpriteResetTask(s32 sprite, s32 mode, s32 *result)
 {

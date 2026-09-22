@@ -3558,3 +3558,96 @@ compiler-flag change, doesn't affect codegen or the audit, and the byte
 match is confirmed directly.
 
 `audit_provenance.py` now reports 1836/1836.
+
+## Dungeon-generation dependency map, and a resolved correct deferral (2026-09-21)
+
+Continuing into the dungeon-generation area (user-directed), the next
+queued item, `sub_08070DA8` (472 bytes, the real logic behind
+`DungGenStart`/`ScriptNativeMapClearDState`), turned out to depend on two
+more undecompiled functions rather than being self-contained. Both were
+investigated; one is now fully resolved (semantics confirmed, a genuine
+correct deferral properly documented), the other remains a real open item.
+`sub_08070DA8` itself is not decompiled yet -- recorded here so the next
+pass doesn't have to re-derive this.
+
+**What `sub_08070DA8` does, confirmed by direct disassembly reading:**
+looks up the room record for the generation state's current cell
+(`cellRoomIndices[currentCell]`, `rooms[roomIndex]`, both established
+fields), calls `KmpLoadField(&rooms[roomIndex].unknown00[2], 0, 0)` --
+revealing that `struct GeneratedMapRoomRecord`'s `unknown00[20]` actually
+begins with a 2-byte prefix followed by a null-terminated resource-name
+string used to load the room's field graphic (not fixed in this pass,
+flagged for whoever next touches that struct, same as the `unknown14`
+finding from the `GeneratedMapResize` entry above) -- then calls
+`sub_080714CC(state, 1)`, sets a flag field at `+0x644` to either 0 or 8
+depending on that call's result, and finally loops 8 times calling
+`CreateSpriteResetTask(*(state+0x64C) + i, 0, 0)` for `i` = 0..7 (a
+sprite/task ID range read from `+0x64C`, immediately run since `mode==0`).
+
+**Resolved: `sub_0801097C` is `CreateSpriteResetTask`.** A
+`#ifdef NONMATCHING`-guarded candidate for this exact address already
+existed in `src/task_constructors.c` (`u8 *CreateSpriteResetTask(s32
+sprite, s32 mode, s32 *result)`, calling `CreateTask(gSecondaryRuntime +
+64, (void *)((u32)ScriptSpriteResetTask + 1), 0, result, 8)`, storing
+`sprite`/`mode` at the new task's +32/+36, calling
+`ScriptAddPendingTasks(1)`, and running the task immediately via
+`sub_08080BDC(task)` when `mode == 0`). Re-verified this candidate's logic
+directly against `arm-none-eabi-objdump -D -b binary
+--disassembler-options=force-thumb` output for the raw ROM bytes (not the
+stale symbol-grouped ELF disassembly, nor the possibly-stale candidate
+comment) -- every field write, call, and the conditional immediate-run
+step are confirmed correct.
+
+The one remaining gap is a single register-allocation choice: the ROM
+loads the callback function's address into `r7` early (immediately after
+`manager`, both as back-to-back PC-relative pool reads), then copies
+`r7`->`r1` only right before the call, because `r1` is needed as a scratch
+register in between to push the literal `8` onto the stack for
+`CreateTask`'s 5th argument. Six C shapes were tried against this one
+call -- the existing cast form; a plain `(void *)ScriptSpriteResetTask`
+cast without the `+1`; `manager` and `callback` each pulled into their own
+named locals in every declaration order; and a named `u32 size = 8;` local
+for the stack argument -- and every one keeps the callback address in
+`r1` alone with no `r7` hop, regardless of argument or declaration order.
+This is the same class of gap as `SpriteAffineWriteDispatch`'s register
+swap and the earlier newlib reentrant-wrapper cases this session: a real,
+confirmed, correctly-deferred candidate, not a logic error. Documented in
+place in `src/task_constructors.c` rather than moved to `src/nonmatching/`,
+since it already had its own `#ifdef NONMATCHING` guard and AT() address.
+
+**Still open:** `sub_080714CC`. Called from `sub_08070DA8` as
+`sub_080714CC(state, 1)`, but the function itself (`push {r4,r5,r6,r7,lr}`
+/ `mov r7,r9` / `mov r6,r8` -- a five-plus-register leaf, genuinely
+substantial) reads *four* argument registers, meaning the other two
+(`r2`, `r3`) carry whatever the caller's own register allocator left in
+them at that specific call site rather than anything explicitly passed --
+understanding it requires reconstructing what `sub_08070DA8` had live in
+`r2`/`r3` at that point, not just reading `sub_080714CC` in isolation.
+Also called from one other site (`asm/code/code_0700C0.s:895`, inside
+whatever function owns that address -- not yet identified). Not attempted
+this pass; a real next step, not a quick win.
+
+**Dungeon-generation work queue**, established this session and worth
+keeping current rather than re-deriving: from `src/mapping.c`'s already-
+decompiled `DungGen*`/`Dung*` native-command wrappers (in
+`src/game_tables.c`'s native table, rows 68-91), the still-raw generator
+internals they call, roughly by size --
+`sub_0807017C` (152 bytes) -- **done**, `GeneratedMapResize`.
+`sub_08070DA8` (472 bytes) -- **structure mapped, one prerequisite
+resolved, one open** (`sub_080714CC`), not yet decompiled itself.
+`sub_08070F80` (316 bytes, `DungDispCoffer`) -- surveyed only; loops while
+its argument is nonzero, calls into `GeneratedMapFindRuntimeRoom`
+(matched) and the already-analyzed-but-blocked
+`GeneratedMapFindFreeRuntimeRoom`/`sub_08070EA0` (`src/nonmatching/
+generated_map_free_runtime_room.c`, a documented 2-byte correct deferral
+from an earlier session), plus several more unidentified calls
+(`strcpy`/`strcat`-adjacent resource-name building, `NfpOpenByName`,
+task creation) -- the most complex of the three sized functions surveyed.
+`sub_08070620` (296 bytes) -- not yet surveyed; no caller found from
+`src/mapping.c`'s native wrappers, so its own caller needs identifying
+first.
+Beyond these: `sub_08070238` (~1000 bytes, `DungGenMake`'s real logic --
+the actual "randomize/generate" entry point) and much larger functions
+still further out (`sub_080710BC` ~4.4KB, `sub_080721D4` ~2KB,
+`sub_08072998` ~636 bytes, `sub_08072C14` ~20KB -- almost certainly the
+core room-layout algorithm).
