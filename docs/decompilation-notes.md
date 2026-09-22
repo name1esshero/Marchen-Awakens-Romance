@@ -3605,8 +3605,14 @@ flagged for whoever next touches that struct, same as the `unknown14`
 finding from the `GeneratedMapResize` entry above) -- then calls
 `sub_080714CC(state, 1)`, sets a flag field at `+0x644` to either 0 or 8
 depending on that call's result, and finally loops 8 times calling
-`CreateSpriteResetTask(*(state+0x64C) + i, 0, 0)` for `i` = 0..7 (a
-sprite/task ID range read from `+0x64C`, immediately run since `mode==0`).
+`CreateSpriteResetTask(*(state+0x644) + i, 0, 0)` for `i` = 0..7 (a
+sprite/task ID range read from the *same* `+0x644` field just toggled,
+immediately run since `mode==0`). **[SUPERSEDED]** this originally said
+`+0x64C`; re-verified against a direct force-thumb disassembly while
+finishing this function below and it's `+0x644`, the field this same
+function just normalized to 0 or 8 -- i.e. the loop is choosing between two
+8-slot sprite-ID ranges (0-7 or 8-15) based on whether the map-generation
+task was just (re)started, not reading an unrelated counter.
 
 **Resolved: `sub_0801097C` is `CreateSpriteResetTask`.** A
 `#ifdef NONMATCHING`-guarded candidate for this exact address already
@@ -3657,8 +3663,16 @@ decompiled `DungGen*`/`Dung*` native-command wrappers (in
 `src/game_tables.c`'s native table, rows 68-91), the still-raw generator
 internals they call, roughly by size --
 `sub_0807017C` (152 bytes) -- **done**, `GeneratedMapResize`.
-`sub_08070DA8` (472 bytes) -- **structure mapped, one prerequisite
-resolved, one open** (`sub_080714CC`), not yet decompiled itself.
+`sub_080714CC` (108 bytes, embedded inside what was thought to be
+`sub_080710BC`'s own byte range -- see below) -- **done**,
+`CreateMapGenerationTask`.
+`sub_08070DA8` (472 bytes) -- **logic fully confirmed, correctly deferred**
+as `src/nonmatching/generated_map_start_generation.c`
+(`GeneratedMapStartGeneration`); both prerequisites are now resolved
+(`CreateSpriteResetTask`, `CreateMapGenerationTask`), but the function
+itself has one remaining register swap (state pointer vs. a computed field
+pointer land in r4/r5 opposite from the ROM) that resisted every C shape
+tried.
 `sub_08070F80` (316 bytes, `DungDispCoffer`) -- surveyed only; loops while
 its argument is nonzero, calls into `GeneratedMapFindRuntimeRoom`
 (matched) and the already-analyzed-but-blocked
@@ -3670,9 +3684,15 @@ task creation) -- the most complex of the three sized functions surveyed.
 `sub_08070620` (296 bytes) -- not yet surveyed; no caller found from
 `src/mapping.c`'s native wrappers, so its own caller needs identifying
 first.
+`sub_080710BC` (`sub_08070DA8`'s and two other callers' shared
+map-generation task callback -- the generator's real state machine) is
+smaller than this session's earlier ~4.4KB estimate, which turned out to
+be measuring the gap to `sub_080721D4` without accounting for
+`sub_080714CC` (now decompiled) sitting inside that same gap; its true
+size is unknown until someone finds its real end boundary.
 Beyond these: `sub_08070238` (~1000 bytes, `DungGenMake`'s real logic --
 the actual "randomize/generate" entry point) and much larger functions
-still further out (`sub_080710BC` ~4.4KB, `sub_080721D4` ~2KB,
+still further out (`sub_080721D4` ~2KB,
 `sub_08072998` ~636 bytes, `sub_08072C14` ~20KB -- almost certainly the
 core room-layout algorithm).
 
@@ -3690,3 +3710,66 @@ The source has no register pin, inline assembly, volatile qualifier, or
 integerized pointer. The stale nonmatching guard and duplicate assembly body
 are gone, and all known callers use the descriptive name. `make compare`
 confirms the complete ROM SHA-1 is unchanged.
+
+## Map-generation task constructor recovered (2026-09-22)
+
+`CreateMapGenerationTask` at 0x080714CC now compiles from ordinary C and
+replaces all 108 original bytes -- the same `_call_via_r9` mode-0-immediate-
+run shape as `CreateSpriteResetTask`/`CreateSoundFadeTask` above, just with a
+larger (308-byte) payload and a different callback (`sub_080710BC`, itself
+still raw assembly and not needed to match this caller). `sub_08080BE4`'s
+`bx r9` veneer is now also aliased as `_call_via_r9`, matching the
+`_call_via_r7`/`_call_via_sl` precedent already established for the other
+two.
+
+Three call sites confirmed via `arm-none-eabi-nm`/direct disassembly reading:
+`sub_08070DA8` (`DungGenStart`'s real logic, `code_0700C0.s`), one caller
+inside `sub_08070748` (`code_0700C0.s`, still unidentified), and one caller
+in `code_0100C0.s` (also unidentified). The `mode` parameter is 1 at the
+first two and 0 at the third, ruling out an earlier guess that it was always
+1.
+
+One real payload-shape lesson: writing the five struct-like field stores as
+`*(s32 *)(task + N) = value;` with absolute task-relative offsets (60, 64,
+68, 72, 76) matches logically but compiles 4 bytes short -- the ROM computes
+an intermediate `payload = task + 32;` pointer once and stores through it
+with small relative offsets (28, 32, 36, 40, 44) instead of folding the +32
+into each store's own immediate. Both forms are valid Thumb encodings (the
+offsets are well within the 5-bit/times-4 immediate range either way), so
+the byte-count difference is a real, not cosmetic, mismatch -- caught
+immediately by `make compare`'s "ROM image is not 16 MB" size-mismatch
+report rather than a silent scrambling, since the assembler resolves it as
+a hard link error when the referenced `_call_via_r9` symbol doesn't exist
+yet, and after adding it, as an explicit size assertion failure.
+
+**A genuine section-boundary bug, distinct from every earlier one this
+session.** `sub_080714CC`'s raw bytes were embedded in the *middle* of the
+`.rom.000710BC` section (i.e. inside `sub_080710BC`'s own address range, not
+owning a `.section` directive of its own) -- confirmed by reading
+`asm/code/code_0700C0.s` for the nearest preceding `.section` line, which
+turned out to be `sub_080710BC`'s own declaration, ~650 lines earlier.
+Cutting the raw bytes without action seemed safe by the same reasoning that
+worked for every earlier cut this session (the section's own declaring line
+was untouched) -- but that reasoning silently fails here specifically
+*because* a new decompiled function's own `.rom.000714CC` section gets
+inserted between the two halves by `SORT_BY_NAME`. Concretely: with nothing
+added, `sub_08071538` (the code originally right after the cut, continuing
+to the real end of `sub_080710BC`'s true byte range at 0x080721D4) silently
+stayed part of the now-shrunk `.rom.000710BC` section; `SORT_BY_NAME` then
+placed the new `.rom.000714CC` section *after* that entire merged blob
+(since `"000714CC" > "000710BC"` alphabetically) instead of *between* the
+two original halves. The result was a scrambled but still-16MB image --
+`make compare` showed ~94 small scattered diffs across a huge address range
+(0x0001xxxx through 0x0007xxxx), the same signature documented for the
+`_fstat_r`/`ActorPartInitTask` cases, but this time from a cut in the
+*middle* of a section rather than at a section's own start. Confirmed by
+stashing the change and rebuilding (byte-exact with the stash applied,
+confirming the diffs were real and not environmental) before finding the
+fix: give the following code its own `.section .rom.00071538, "ax"`, named
+for its own real address, so `SORT_BY_NAME` places all three pieces
+(`000710BC` < `000714CC` < `00071538`) in the correct order. The lesson
+generalizes: *any* cut from inside a shared multi-function raw section needs
+a fresh `.section` for whatever follows, not just cuts that remove a
+section's own declaring line.
+
+`audit_provenance.py` now reports 1839/1839.

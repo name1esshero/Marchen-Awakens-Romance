@@ -892,7 +892,7 @@ sub_080707EC:
 	adds r1, #24
 	str r1, [sp, #8]
 	movs r1, #1
-	bl sub_080714CC
+	bl CreateMapGenerationTask
 	movs r0, #5
 	strh r0, [r6, #14]
 	ldr r0, [r5, #24]
@@ -1711,7 +1711,7 @@ sub_08070DA8:
 	str r6, [sp, #8]
 	adds r0, r5, #0
 	movs r1, #1
-	bl sub_080714CC
+	bl CreateMapGenerationTask
 
 	.thumb_func
 	.thumb
@@ -2760,70 +2760,10 @@ _080714BC:
 	pop {r0}
 	bx r0
 
-	.thumb_func
-	.thumb
-	.global sub_080714CC
-sub_080714CC:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r9
-	mov r6, r8
-	push {r6, r7}
-	sub sp, #4
-	adds r7, r0, #0
-	mov r8, r1
-	adds r5, r2, #0
-	adds r6, r3, #0
-	ldr r3, [sp, #40]
-	ldr r0, _08071520
-	ldr r1, _08071524
-	mov r9, r1
-	movs r1, #154
-	lsls r1, r1, #1
-	str r1, [sp, #0]
-	mov r1, r9
-	movs r2, #0
-	.2byte 0xF009
-	.byte 0x44
-	.byte 0xF9
-	adds r4, r0, #0
-	cmp r4, #0
-	beq _08071528
-	adds r1, r4, #0
-	adds r1, #32
-	str r7, [r1, #28]
-	str r5, [r1, #32]
-	str r6, [r1, #36]
-	ldr r0, [sp, #32]
-	str r0, [r1, #40]
-	ldr r0, [sp, #36]
-	str r0, [r1, #44]
-	movs r1, #168
-	lsls r1, r1, #1
-	adds r0, r4, r1
-	mov r1, r8
-	str r1, [r0, #0]
-	adds r0, r4, #0
-	bl sub_08080BE4
-	adds r0, r4, #0
-	b _0807152A
-	.global _08071520
-_08071520:
-	.4byte 0x030032C4  @ IWRAM+0x32C4
-	.global _08071524
-_08071524:
-	.4byte 0x080710BD  @ ROM+0x710BD
-	.global _08071528
-_08071528:
-	movs r0, #0
-	.global _0807152A
-_0807152A:
-	add sp, #4
-	pop {r3, r4}
-	mov r8, r3
-	mov r9, r4
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
+@ 0714CC..071538 is decompiled as CreateMapGenerationTask(); see src/decompiled.json
+
+	.section .rom.00071538, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb

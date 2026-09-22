@@ -6410,7 +6410,7 @@ _08014656:
 	str r4, [sp, #8]
 	adds r0, r6, #0
 	movs r1, #0
-	bl sub_080714CC
+	bl CreateMapGenerationTask
 	.2byte 0xF05B
 	.4byte 0x1940FD07
 	ldr r0, [r0, #0]

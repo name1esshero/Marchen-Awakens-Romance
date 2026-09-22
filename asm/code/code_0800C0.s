@@ -730,7 +730,10 @@ sub_08080BE0:
 	.thumb_func
 	.thumb
 	.global sub_08080BE4
+	@ agbcc's indirect Thumb-call helper is the original bx-r9 veneer here.
+	.global _call_via_r9
 sub_08080BE4:
+_call_via_r9:
 	bx r9
 	.byte 0xC0
 	.byte 0x46

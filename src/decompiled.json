@@ -5454,6 +5454,12 @@
     "file": "src/mapping.c"
   },
   {
+    "addr": "080714CC",
+    "size": 108,
+    "name": "CreateMapGenerationTask",
+    "file": "src/task_constructors.c"
+  },
+  {
     "addr": "08071DD4",
     "size": 12,
     "name": "MapGenerationSeedRandom",

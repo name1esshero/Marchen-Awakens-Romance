@@ -904,8 +904,45 @@ and `make compare` still confirms the byte-identical ROM (this file change
 is a comment only, inside the existing `#ifdef NONMATCHING` guard, with no
 effect on the default build).
 
+**[SUPERSEDED]** later the same session: the "confirmed correct deferral"
+above was wrong. `sub_08080BDC` isn't an opaque callee -- it's agbcc's own
+`bx r7` indirect-call veneer, meaning the "gap" was really an unrecognized
+indirect call through the *same* callback pointer, not a register-
+allocation limit. See "Sprite-reset task constructor recovered" in
+`docs/decompilation-notes.md`: `CreateSpriteResetTask` is now a full,
+byte-exact match.
+
 The dungeon-generation work queue established this session
 (`sub_0807017C` done, `sub_08070DA8`/`sub_08070F80`/`sub_08070620` sized
 and partly surveyed, `sub_08070238` and several much larger functions
 identified beyond that) is recorded in `docs/decompilation-notes.md` so a
 future pass can pick up without re-deriving it.
+
+## Verified snapshot: `CreateMapGenerationTask` decompiled, 2026-09-22
+
+`sub_080714CC` -> `CreateMapGenerationTask` (`src/task_constructors.c`),
+resolving the second (and last) prerequisite `sub_08070DA8` needed. Same
+`_call_via_r9`-veneer shape as `CreateSpriteResetTask`; `sub_08080BE4`'s
+`bx r9` is now also aliased in `asm/code/code_0800C0.s`.
+`audit_pret_standards.py` reports 0 errors/0 warnings/18 exceptions;
+`audit_provenance.py` reports 1839/1839; `make compare` confirms the
+byte-identical ROM. Caught a new section-boundary bug distinct from every
+earlier one this session: the target function was embedded in the *middle*
+of an existing raw section (owning no `.section` of its own), and cutting
+it without giving the following code (`sub_08071538`) a fresh,
+address-named section let `SORT_BY_NAME` misplace the whole thing --
+~94 scattered diffs across a huge address range, confirmed real (not
+environmental) by stashing and rebuilding clean. See
+`docs/decompilation-notes.md`'s "Map-generation task constructor
+recovered" entry for the full mechanism and the fix.
+
+`sub_08070DA8` itself (`DungGenStart`'s real logic) is now fully understood
+logically -- both prerequisites resolved, every field access and branch
+traced against direct force-thumb disassembly -- but resists an exact
+register match on one swap (the incoming state pointer and a computed
+field pointer land in `r4`/`r5` opposite from the ROM across every C shape
+tried). This also corrects an error in this file's own earlier session
+entry: the loop base is `state->`(`+0x644`), the same field toggled just
+before it, not `+0x64C` as previously written here -- see
+`docs/decompilation-notes.md` for the corrected trace and the
+correctly-deferred candidate.

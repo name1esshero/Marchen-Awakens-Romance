@@ -15,6 +15,15 @@
 #define SPRITE_RESET_TASK_SPRITE_OFFSET 32
 #define SPRITE_RESET_TASK_MODE_OFFSET 36
 
+#define MAP_GENERATION_TASK_SIZE 308
+#define MAP_GENERATION_TASK_PAYLOAD_OFFSET 32
+#define MAP_GENERATION_TASK_STATE_OFFSET 28
+#define MAP_GENERATION_TASK_FIELD644_OFFSET 32
+#define MAP_GENERATION_TASK_CELL_OFFSET 36
+#define MAP_GENERATION_TASK_ARG5_OFFSET 40
+#define MAP_GENERATION_TASK_ARG6_OFFSET 44
+#define MAP_GENERATION_TASK_MODE_OFFSET 336
+
 extern const char gBattleNamedTaskAResourceName[];
 extern const char gBattleNamedTaskBResourceName[];
 extern const char gResource77A03[];
@@ -60,6 +69,7 @@ extern void sub_0806F018(void *task);
 extern void sub_0806F664(void *task);
 
 extern void sub_0806FAC4(void *task);
+extern void sub_080710BC(void *task);
 extern void ScriptCompletePendingTasks(u32 count);
 extern void FinishTask(void *task);
 extern void *CreateFieldEventTask(s16 first, s16 second, s16 third,
@@ -461,6 +471,38 @@ AT("0001097C") u8 *CreateSpriteResetTask(s32 sprite, s32 mode, s32 *result)
     ScriptAddPendingTasks(1);
     if (mode == 0)
         callback(task);
+    return task;
+}
+
+/** Create the 308-byte dungeon-generation task running sub_080710BC(), the
+ * generator's own state machine. Field/parameter names are positional only;
+ * see docs/decompilation-notes.md for caller sites and open questions.
+ * @param result Optional task completion word.
+ * @return NULL if task creation fails; otherwise the new task, after
+ * running its own callback once immediately. */
+AT("000714CC") u8 *CreateMapGenerationTask(s32 state, s32 mode, s32 field644,
+                                           s32 cell, s32 arg5, s32 arg6,
+                                           s32 *result)
+{
+    void *manager;
+    void (*callback)(void *);
+    u8 *task;
+    u8 *payload;
+
+    manager = &gMainTaskManager;
+    callback = sub_080710BC;
+    task = CreateTask(manager, (void *)callback, 0, result,
+                      MAP_GENERATION_TASK_SIZE);
+    if (task == 0)
+        return 0;
+    payload = task + MAP_GENERATION_TASK_PAYLOAD_OFFSET;
+    *(s32 *)(payload + MAP_GENERATION_TASK_STATE_OFFSET) = state;
+    *(s32 *)(payload + MAP_GENERATION_TASK_FIELD644_OFFSET) = field644;
+    *(s32 *)(payload + MAP_GENERATION_TASK_CELL_OFFSET) = cell;
+    *(s32 *)(payload + MAP_GENERATION_TASK_ARG5_OFFSET) = arg5;
+    *(s32 *)(payload + MAP_GENERATION_TASK_ARG6_OFFSET) = arg6;
+    *(s32 *)(task + MAP_GENERATION_TASK_MODE_OFFSET) = mode;
+    callback(task);
     return task;
 }
 
