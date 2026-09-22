@@ -7980,6 +7980,12 @@
     "file": "src/libc/callocr.c"
   },
   {
+    "addr": "080868BC",
+    "size": 44,
+    "name": "_close_r",
+    "file": "src/libc/closer.c"
+  },
+  {
     "addr": "080868E8",
     "size": 12,
     "name": "GetNewlibReentrancyState",

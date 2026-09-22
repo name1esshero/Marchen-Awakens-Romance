@@ -35,6 +35,8 @@
 .set gSpriteEngineState, 0x03006118
 .global gSpriteRuntime
 .set gSpriteRuntime, 0x03006120
+.global errno
+.set errno, 0x03006124
 .global ReadSramFast
 .set ReadSramFast, 0x03006100
 .global VerifySramFast
@@ -175,8 +177,6 @@
 .thumb_set _sbrk_r, 0x080862E1
 .global _write_r
 .thumb_set _write_r, 0x08086835
-.global _close_r
-.thumb_set _close_r, 0x080868BD
 .global _fstat_r
 .thumb_set _fstat_r, 0x080868F5
 .global isatty

@@ -3124,3 +3124,58 @@ a complete behavioral fix ready and a precise reproduction of the blocker;
 the remaining work is either finding the actual linker-script fix, or a
 different integration mechanism entirely (e.g. a post-link binary patch of
 the five call-site `bl` targets instead of overriding the symbol).
+
+## New decompile: `_close_r` (2026-09-21)
+
+Swept `asm/code/*.s` for function-entry `.rom.*` sections that are still
+`sub_08XXXXXX` (never renamed, i.e. never previously attempted, as opposed
+to the many `src/nonmatching/` candidates that already carry a documented
+register-allocation blocker). `sub_080868BC` (44 bytes, between the already-
+matched `_calloc_r` and `GetNewlibReentrancyState`) was one of a handful
+small enough to be worth a quick look.
+
+The disassembly is a two-argument function that zeroes a fixed IWRAM word,
+calls a `bl` target that `arm-none-eabi-nm` resolves to `_close`, and on a
+`-1` result with that IWRAM word still nonzero, stores it through its first
+argument before returning. `asm/iwram_symbols.s` already carried a
+`.thumb_set _close_r, 0x080868BD` placeholder alias -- a previous session
+had already worked out the identification (also visible from
+`src/libc/stdio.c:91`'s existing `_close_r(fp->_data, fp->_file)` call) but
+left the address as an assembly stub. That alias is exactly newlib's
+standard `_close_r(struct _reent *ptr, int fd)` reentrant wrapper:
+`errno = 0; if ((ret = _close(fd)) == -1 && errno != 0) ptr->_errno = errno;
+return ret;` (`_errno` is `struct _reent`'s first member, so storing through
+`ptr` at offset 0 is exactly `ptr->_errno = ...`).
+
+The one real wrinkle: `agbcc_probe.py`'s default flags include
+`-mthumb-interwork`, and probing this function under that flag produces a
+split epilogue (`pop {r4,r5}` / `pop {r1}` / `bx r1`) instead of the ROM's
+single `pop {r4, r5, pc}` -- a real byte-level difference, not a display
+artifact. The actual `$(BUILD)/src/libc/%.o` Makefile rule does not pass
+`-mthumb-interwork` (`old_agbcc -O2 -fno-builtin` only), and compiling
+through that exact pipeline (per `PRET_STANDARDS.md` 8a) reproduces the
+ROM's epilogue exactly. Worth remembering for any other `src/libc/` probe:
+check the real per-directory Makefile flags before trusting the probe
+tool's default invocation for a final decision.
+
+The `errno` reference itself is also notable: plain `#include <errno.h>`
+usage in this project compiles `errno` to `*__errno()` (a real `bl
+__errno`), confirmed by probing `errno = 0;` in isolation. But the ROM's
+`_close_r` has no such call -- it loads a fixed IWRAM literal (`0x03006124`)
+directly. A bare `extern int errno;` (bypassing the `<errno.h>` macro)
+reproduces that directly-addressed shape exactly, confirming the real
+source for this file declared `errno` itself rather than including the
+header. `0x03006124` sits in the previously-unlabelled 4-byte gap between
+`gSpriteRuntime` (`0x03006120`) and the already-aliased `end`
+(`0x03006128`); it's now a named `.set errno, 0x03006124` alias in
+`asm/iwram_symbols.s`, alongside the project's other fixed IWRAM globals,
+rather than an organically-placed `.bss` variable (this project's `.bss`
+section pulls only from `build/src/libc/syscalls.o`, so a new global
+declared in a different file would not land at a chosen address through
+ordinary declaration order).
+
+New file `src/libc/closer.c`, wired into the Makefile's per-file
+`LIBC_ADDR_closer := 000868BC` (same whole-file section-rename mechanism as
+every other `src/libc/*.c`, not the per-function `AT()` macro used by
+ordinary `src/*.c`). The stale `_close_r` alias and the raw asm block are
+both removed. `audit_provenance.py` now reports 1826/1826.

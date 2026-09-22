@@ -172,6 +172,7 @@ $(BUILD)/src/sound_cgb_update.o: CC1 := tools/agbcc/bin/old_agbcc
 # rename only the compiler-produced text section to its fixed ROM section.
 LIBC_ADDR_mbtowc_r := 00085890
 LIBC_ADDR_callocr  := 00086864
+LIBC_ADDR_closer   := 000868BC
 LIBC_ADDR_dtoa     := 00083CFC
 LIBC_ADDR_fflush   := 00084B50
 LIBC_ADDR_findfp   := 00084BE4

@@ -4941,50 +4941,7 @@ sub_08086860:
 
 @ 086864..0868BC is decompiled as _calloc_r(); see src/decompiled.json
 
-	.section .rom.000868BC, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_080868BC
-sub_080868BC:
-	push {r4, r5, lr}
-	adds r5, r0, #0
-	adds r0, r1, #0
-
-	.thumb_func
-	.thumb
-	.global sub_080868C2
-sub_080868C2:
-	ldr r4, _080868E4
-	movs r1, #0
-	str r1, [r4, #0]
-	.2byte 0xF7FF
-	.byte 0x3A
-	.byte 0xFF
-	adds r1, r0, #0
-	movs r0, #1
-	negs r0, r0
-	cmp r1, r0
-	bne _080868DE
-	ldr r0, [r4, #0]
-	cmp r0, #0
-	beq _080868DE
-
-	.thumb_func
-	.thumb
-	.global sub_080868DC
-sub_080868DC:
-	str r0, [r5, #0]
-	.global _080868DE
-_080868DE:
-	adds r0, r1, #0
-	pop {r4, r5, pc}
-	.byte 0x00
-	.byte 0x00
-	.global _080868E4
-_080868E4:
-	.4byte 0x03006124  @ IWRAM+0x6124
+@ 0868BC..0868E8 is decompiled as _close_r(); see src/decompiled.json
 
 @ 0868E8..0868F4 is decompiled as GetNewlibReentrancyState(); see src/decompiled.json
 

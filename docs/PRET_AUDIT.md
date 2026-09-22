@@ -704,3 +704,17 @@ table offset -- three separate steps, not one or two). See
 `docs/decompilation-notes.md`'s "Rejected match reversed" entry for the exact
 technique. `src/nonmatching/consumable_inventory.c` is deleted; the real
 function is now `CountConsumableInventoryCopies` in `src/runtime_accessors.c`.
+
+## Verified snapshot: `_close_r` decompiled, 2026-09-21
+
+`sub_080868BC` -> `_close_r` (`src/libc/closer.c`). The 44-byte newlib
+reentrant wrapper around `_close` had a `.thumb_set` placeholder alias in
+`asm/iwram_symbols.s` (a previous session had already identified it, per
+`src/libc/stdio.c`'s existing call site, but left it as an assembly stub)
+now replaced with a real matching definition. `errno` is a new named
+`.set errno, 0x03006124` IWRAM alias (previously an unlabelled gap between
+`gSpriteRuntime` and `end`). `audit_pret_standards.py` reports 0
+errors/0 warnings/18 exceptions; `audit_provenance.py` reports 1826/1826;
+`make compare` confirms the byte-identical ROM. See
+`docs/decompilation-notes.md`'s "New decompile: `_close_r`" entry for the
+full identification and the `agbcc_probe.py` flag pitfall it turned up.
