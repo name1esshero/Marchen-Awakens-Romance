@@ -3281,3 +3281,35 @@ entry). `isatty` and `abort`, the two remaining raw-asm functions in this
 same neighborhood, are addressed above and left as assembly (an unexplained
 4 extra bytes, and genuine SWI/r8-handling inline-asm shape, respectively).
 `audit_provenance.py` now reports 1831/1831.
+
+## `__malloc_lock`/`__malloc_unlock`: two no-op hooks (2026-09-21)
+
+A different aliased-but-unmatched pair, found by the same
+grep-`asm/iwram_symbols.s`-for-`.thumb_set` method applied to the whole
+file rather than just the newlib-reentrancy neighborhood. `sub_080859C4`
+and `sub_080859C8` (right before `_Balloc`, in the malloc cluster) were
+each already `bx lr` with 2 bytes of padding -- an empty function body.
+`mallocr.c`/`freer.c`/`callocr.c` already declare and use them
+(`#define MALLOC_LOCK __malloc_lock(reent_ptr)` etc., gated on
+`INTERNAL_NEWLIB`), confirming the names and the `struct _reent *`
+parameter; this target has no threads to lock against, so both bodies are
+simply empty. New file `src/libc/malloclock.c`, `LIBC_ADDR_malloclock :=
+000859C4`, holding both functions (they compile into one 8-byte `.text`
+section, same as every other multi-function `src/libc/*.c` file in this
+project).
+
+This is the first multi-function `src/libc/*.c` file added this session,
+and it caught a real manifest-format assumption:
+`tools/audit_provenance.py` keys its linked-section lookup by the *start
+offset of the compiled section*, so it expects exactly one
+`decompiled.json` entry per linked section, not one per function -- the
+same way the existing `stdio.c` entry (`__sread`, size 196) already covers
+four real functions (`__sread`/`__swrite`/`__sseek`/`__sclose`) under one
+name and one combined size. An initial attempt with two separate 4-byte
+entries failed with `Unexpected linked provider: __malloc_lock` (the
+second function's offset has no section of its own to look up). Fixed by
+merging into a single `{"addr": "080859C4", "size": 8, "name":
+"__malloc_lock", ...}` entry, matching the established convention rather
+than inventing a new one.
+
+`audit_provenance.py` now reports 1832/1832.

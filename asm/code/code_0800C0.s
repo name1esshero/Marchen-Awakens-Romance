@@ -4817,24 +4817,7 @@ _080827C0:
 
 @ 08593C..0859C4 is decompiled as memmove(); see src/decompiled.json
 
-	.section .rom.000859C4, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_080859C4
-sub_080859C4:
-	bx lr
-	.byte 0x00
-	.byte 0x00
-
-	.thumb_func
-	.thumb
-	.global sub_080859C8
-sub_080859C8:
-	bx lr
-	.byte 0x00
-	.byte 0x00
+@ 0859C4..0859CC is decompiled as __malloc_lock() and __malloc_unlock(); see src/decompiled.json
 
 @ 0859CC..08629C is decompiled as _Balloc(); see src/decompiled.json
 

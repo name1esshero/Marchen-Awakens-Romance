@@ -184,6 +184,7 @@ LIBC_ADDR_locale   := 0008522C
 LIBC_ADDR_lseekr   := 00086948
 LIBC_ADDR_makebuf  := 00085298
 LIBC_ADDR_mallocr  := 00085374
+LIBC_ADDR_malloclock:= 000859C4
 LIBC_ADDR_memchr   := 000858BC
 LIBC_ADDR_memcmp   := 0008264C
 LIBC_ADDR_memcpy   := 00082694

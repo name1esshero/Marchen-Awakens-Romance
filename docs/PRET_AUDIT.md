@@ -767,3 +767,20 @@ placeholder aliases whose address has no `decompiled.json` entry yet).
 `isatty` and `abort` remain, both investigated and left as assembly for
 documented reasons. See `docs/decompilation-notes.md`'s "`_sbrk_r`, the
 last reentrant wrapper in this cluster" entry.
+
+## Verified snapshot: `__malloc_lock`/`__malloc_unlock` decompiled, 2026-09-21
+
+`sub_080859C4`/`sub_080859C8` -> `__malloc_lock`/`__malloc_unlock`
+(`src/libc/malloclock.c`), two empty-body no-op hooks (`bx lr`) already
+declared and used by `mallocr.c`/`freer.c`/`callocr.c`'s `MALLOC_LOCK`/
+`MALLOC_UNLOCK` macros. `audit_pret_standards.py` reports 0 errors/0
+warnings/18 exceptions; `audit_provenance.py` reports 1832/1832;
+`make compare` confirms the byte-identical ROM. Surfaced a real manifest
+convention worth remembering for any future multi-function `src/libc/*.c`
+file: `audit_provenance.py` expects one `decompiled.json` entry per linked
+*section* (keyed by the section's start offset), not one per function --
+two functions compiled into the same file share one section and need one
+combined entry, the same way the pre-existing `stdio.c`/`__sread` entry
+already covers four functions under one name and size. See
+`docs/decompilation-notes.md`'s "`__malloc_lock`/`__malloc_unlock`: two
+no-op hooks" entry.

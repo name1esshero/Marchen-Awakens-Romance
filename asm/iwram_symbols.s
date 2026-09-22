@@ -169,10 +169,6 @@
 .thumb_set __umodsi3, 0x08080E4D
 .global _call_via_r8
 .thumb_set _call_via_r8, 0x08080BE1
-.global __malloc_lock
-.thumb_set __malloc_lock, 0x080859C5
-.global __malloc_unlock
-.thumb_set __malloc_unlock, 0x080859C9
 .global isatty
 .thumb_set isatty, 0x08086941
 .global __errno

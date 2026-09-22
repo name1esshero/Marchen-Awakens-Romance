@@ -7944,6 +7944,12 @@
     "file": "src/libc/memmove.c"
   },
   {
+    "addr": "080859C4",
+    "size": 8,
+    "name": "__malloc_lock",
+    "file": "src/libc/malloclock.c"
+  },
+  {
     "addr": "080859CC",
     "size": 2256,
     "name": "_Balloc",
