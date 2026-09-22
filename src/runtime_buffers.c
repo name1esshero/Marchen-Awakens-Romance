@@ -36,6 +36,10 @@
 #define ACTOR_PART_VALUES_OFFSET 0x538
 #define ACTOR_FIELD_234_OFFSET 0x234
 #define ACTOR_FIELD_34C_OFFSET 0x34C
+#define ACTOR_FIELD_338_OFFSET 0x338
+#define ACTOR_FIELD_33C_OFFSET 0x33C
+#define ACTOR_FIELD_340_OFFSET 0x340
+#define ACTOR_FIELD_344_OFFSET 0x344
 
 extern void CpuFill(void *destination, u32 size, u32 value);
 extern u8 *RuntimeGetActorRecord(u32 actor, u32 part);
@@ -528,6 +532,33 @@ AT("0000E64C") void ActorPartInitTask(struct EngineTask *task)
     FinishTask(task);
 }
 AT("0000E64C") const u8 ActorPartInitTaskTail[2] = {0, 0};
+
+extern const char gResourceAWinG[];
+
+/** Initialize an actor's +0x338..+0x344 field group: cache the
+ * gResourceAWinG sprite resource group index at +0x338, store the given
+ * values at +0x33C/+0x340, and reset +0x344 to -1. */
+AT("000094B4") void RuntimeActorInitFields338To344(u32 actor, s32 first, s32 second)
+{
+    u8 *base;
+    u32 offset;
+    u32 field;
+
+    base = gSecondaryRuntime;
+    offset = actor * ACTOR_RECORD_SIZE;
+
+    field = ACTOR_FIELD_33C_OFFSET;
+    *(s32 *)(field + base + offset) = first;
+
+    field = ACTOR_FIELD_340_OFFSET;
+    *(s32 *)(field + base + offset) = second;
+
+    field = ACTOR_FIELD_344_OFFSET;
+    *(s32 *)(field + base + offset) = -1;
+
+    field = ACTOR_FIELD_338_OFFSET;
+    *(s32 *)(field + gSecondaryRuntime + offset) = SpriteResourceFindGroup(0, gResourceAWinG);
+}
 
 #define ACTOR_GET_S8(address,name,field) AT(address) s32 name(u32 index) { u8 *base=gSecondaryRuntime; index*=1672; base+=(field); base+=index; return *(s8 *)base; }
 #define ACTOR_SET_S8(address,name,field) AT(address) void name(u32 index,s32 value) { u8 *base=gSecondaryRuntime; index*=1672; base+=(field); base+=index; *(s8 *)base=value; }

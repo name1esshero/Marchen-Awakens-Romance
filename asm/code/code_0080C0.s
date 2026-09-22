@@ -2601,61 +2601,7 @@ _0800942C:
 
 @ 009498..0094B4 is decompiled as RuntimeActorSetField34C(); see src/decompiled.json
 
-	.section .rom.000094B4, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_080094B4
-sub_080094B4:
-	push {r4, r5, lr}
-	ldr r5, _08009500
-	ldr r3, [r5, #0]
-	mov r12, r3
-	movs r3, #209
-	lsls r3, r3, #3
-	adds r4, r0, #0
-	muls r4, r3
-	movs r0, #207
-	lsls r0, r0, #2
-	add r0, r12
-	adds r0, r0, r4
-	str r1, [r0, #0]
-	movs r0, #208
-	lsls r0, r0, #2
-	add r0, r12
-	adds r0, r0, r4
-	str r2, [r0, #0]
-	movs r0, #209
-	lsls r0, r0, #2
-	add r0, r12
-	adds r0, r0, r4
-	movs r1, #1
-	negs r1, r1
-
-	.thumb_func
-	.thumb
-	.global sub_080094E4
-sub_080094E4:
-	str r1, [r0, #0]
-	ldr r1, _08009504
-	movs r0, #0
-	.2byte 0xF072
-	.4byte 0x6829FB55
-	movs r2, #206
-	lsls r2, r2, #2
-	adds r1, r1, r2
-	adds r1, r1, r4
-	str r0, [r1, #0]
-	pop {r4, r5}
-	pop {r0}
-	bx r0
-	.global _08009500
-_08009500:
-	.4byte 0x03004020  @ IWRAM+0x4020
-	.global _08009504
-_08009504:
-	.4byte 0x08086C84  @ ROM+0x86C84
+@ 0094B4..009508 is decompiled as RuntimeActorInitFields338To344(); see src/decompiled.json
 
 @ 009508..009520 is decompiled as RuntimeGetPointerE3C(); see src/decompiled.json
 
@@ -14224,11 +14170,11 @@ _0800F150:
 	movs r0, #0
 	adds r1, r4, #0
 	movs r2, #0
-	bl sub_080094B4
+	bl RuntimeActorInitFields338To344
 	movs r0, #1
 	adds r1, r4, #0
 	movs r2, #0
-	bl sub_080094B4
+	bl RuntimeActorInitFields338To344
 	ldr r1, [r5, #32]
 	adds r2, r5, #0
 	adds r2, #36

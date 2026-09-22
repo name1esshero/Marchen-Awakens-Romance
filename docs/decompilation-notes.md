@@ -3378,3 +3378,62 @@ roles are known" for the callback bodies themselves). `task_adapters.c`
 updated to reference the real name.
 
 `audit_provenance.py` now reports 1833/1833.
+
+## `RuntimeActorInitFields338To344` (2026-09-21)
+
+The second of the two remaining small-standalone-function candidates from
+this session's `asm/code/*.s` scan. `sub_080094B4` (84 bytes) takes an
+actor index and two values; it writes the two values to the actor's
++0x33C/+0x340 fields, resets +0x344 to -1, and caches the return of
+`SpriteResourceFindGroup(0, "A_WIN_G")` at +0x338 -- `SpriteResourceFindGroup`
+is the same function whose own register-allocation blocker was investigated
+(and correctly deferred) earlier this session, so its identity and
+signature were already known, just not this caller.
+
+Two real mechanical lessons, both different from anything hit earlier this
+session:
+
+- **Manual decoding of a `bl` split across a `.4byte` grouping can silently
+  hide a second instruction.** The raw disassembly showed
+  `.2byte 0xF072 / .4byte 0x6829FB55` right after the call setup; the `bl`
+  itself only consumes the first two halfwords (`0xF072`/`0xFB55`) -- the
+  third halfword, `0x6829`, is a separate `ldr r1, [r5, #0]` instruction
+  that a naive "it's one grouped blob" reading would miss entirely (an
+  earlier hand-decode of this exact function briefly concluded r1 was
+  surviving the call unmodified, which would have been invalid codegen).
+  `arm-none-eabi-objdump -D -b binary --disassembler-options=force-thumb`
+  against the raw ROM bytes decodes this correctly where the stale,
+  symbol-grouped ELF disassembly does not; prefer it whenever a `.4byte`
+  or mixed `.2byte`/`.4byte` grouping appears mid-function.
+- **A repeated `base + fieldOffset + actorOffset` pointer expression gets
+  merged by the compiler even when field offsets differ per statement**,
+  because `base + actorOffset` is textually the common piece across all
+  four statements regardless of source-written operand order (addition
+  reassociates freely under `-O2`). The ROM never merges this: it computes
+  each field's offset constant first, adds the cached actor-record base
+  (kept in `ip`, a call-clobbered register reused only because nothing
+  crosses a call boundary except the last field), then adds the actor
+  offset last, for every field independently. The fix wasn't reordering
+  the addition in source (that alone didn't change the compiled order) --
+  it was using a freshly-assigned `u32 field` local for the offset
+  constant, written as `field + base + offset` (constant first), and,
+  critically, *not* caching `base` across the `SpriteResourceFindGroup`
+  call at all: the last field statement reads `gSecondaryRuntime` directly
+  rather than through the cached local, which reproduces the ROM's
+  post-call reload exactly (agbcc rematerializes a cheap global read
+  rather than preserving a call-clobbered register across a call).
+
+Also needed a new named ROM string constant: the `"A_WIN_G"` resource-group
+key is existing raw ROM data at `0x08086C84`, embedded mid-instruction-
+stream in `asm/code/code_0800C0.s` the same "hidden data disguised as
+opcodes" way several other strings already are in this project (compare
+`gResourceSpBa04`/`gResourceTestE02` in `code_0880C0.s`). Using a plain C
+string literal instead produced a *second*, compiler-emitted copy of the
+same 8 bytes and an 8-byte-oversized ROM (caught immediately by
+`make compare`'s size-mismatch report). Fixed the same way those other
+resource-name constants are: added `.global gResourceAWinG` /
+`gResourceAWinG:` at the exact existing byte offset in the `.s` file
+(no byte content changed) and referenced it as `extern const char
+gResourceAWinG[];` from C instead of writing the string inline.
+
+`audit_provenance.py` now reports 1834/1834.

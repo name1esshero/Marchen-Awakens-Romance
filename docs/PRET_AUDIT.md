@@ -805,3 +805,25 @@ padding that came out as a `nop` instead of the ROM's literal zero bytes --
 the first time this specific session needed that technique. See
 `docs/decompilation-notes.md`'s "First real game-logic decompile this
 session" entry.
+
+## Verified snapshot: `RuntimeActorInitFields338To344` decompiled, 2026-09-21
+
+`sub_080094B4` -> `RuntimeActorInitFields338To344` (`src/runtime_buffers.c`),
+the last of this session's small standalone-function candidates.
+`audit_pret_standards.py` reports 0 errors/0 warnings/18 exceptions;
+`audit_provenance.py` reports 1834/1834; `make compare` confirms the
+byte-identical, correctly-16MB ROM (an intermediate attempt using a plain
+C string literal for the `"A_WIN_G"` resource-group key produced a
+compiler-emitted duplicate of those 8 bytes and an 8-byte-oversized ROM,
+caught by `make compare`'s size-mismatch report; fixed by naming the
+*existing* ROM bytes at `0x08086C84`, the same way `gResourceSpBa04`/
+`gResourceTestE02` already do, instead of emitting new ones). Also
+surfaced a real disassembly-reading pitfall: a `bl` instruction immediately
+followed by another instruction can get merged into one `.4byte` grouping
+in the generated `.s` file in a way that hides the second instruction
+entirely from a naive read; `arm-none-eabi-objdump -D -b binary
+--disassembler-options=force-thumb` against the raw ROM bytes decodes it
+correctly where the stale symbol-grouped ELF disassembly does not. See
+`docs/decompilation-notes.md`'s "`RuntimeActorInitFields338To344`" entry
+for both lessons in full, including the CSE-vs-rematerialization shape fix
+needed to match the ROM's actual register allocation.

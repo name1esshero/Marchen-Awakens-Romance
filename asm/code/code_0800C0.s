@@ -5217,6 +5217,8 @@ sub_08086C76:
 	ldr r1, _08086DDC
 	lsls r6, r1, #1
 	movs r0, r0
+	.global gResourceAWinG
+gResourceAWinG:
 	ldrsh r1, [r0, r5]
 	ldr r1, _08086DE4
 	ldrsh r6, [r1, r5]

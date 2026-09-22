@@ -1266,6 +1266,12 @@
     "file": "src/runtime_buffers.c"
   },
   {
+    "addr": "080094B4",
+    "size": 84,
+    "name": "RuntimeActorInitFields338To344",
+    "file": "src/runtime_buffers.c"
+  },
+  {
     "addr": "08009508",
     "size": 24,
     "name": "RuntimeGetPointerE3C",
