@@ -3651,3 +3651,18 @@ the actual "randomize/generate" entry point) and much larger functions
 still further out (`sub_080710BC` ~4.4KB, `sub_080721D4` ~2KB,
 `sub_08072998` ~636 bytes, `sub_08072C14` ~20KB -- almost certainly the
 core room-layout algorithm).
+
+## Sprite-reset task constructor recovered (2026-09-21)
+
+`CreateSpriteResetTask` at 0x0801097C now compiles from ordinary C and replaces
+all 72 original bytes. The earlier candidate passed `ScriptSpriteResetTask` to
+`CreateTask` but treated the immediate mode-0 invocation as a separate call to
+`sub_08080BDC`. That address is actually the compiler's `bx r7` indirect-call
+veneer. Keeping one typed `callback` local and invoking it after task creation
+explains why the original preserves the callback in `r7`, including the
+previously unexplained temporary use of `r1` for the payload size. agbcc emits
+`_call_via_r7`; that symbol is now an alias at the existing veneer address.
+The source has no register pin, inline assembly, volatile qualifier, or
+integerized pointer. The stale nonmatching guard and duplicate assembly body
+are gone, and all known callers use the descriptive name. `make compare`
+confirms the complete ROM SHA-1 is unchanged.

@@ -818,3 +818,14 @@ that exact ROM sequence; an artificial temporary or explicit subtraction is
 unnecessary. Check the generated object before rewriting related constants as
 source-level arithmetic, because agbcc may already perform the sharing visible
 in the ROM.
+
+### A reused callback can explain a saved register and call veneer
+
+At 0x0801097C, the ROM loads a task callback into `r7`, passes it to
+`CreateTask`, and later invokes it through the original `bx r7` veneer. A
+candidate that called the veneer as a separate named function left the
+callback dead after `CreateTask`, so agbcc could use `r1` alone and missed the
+ROM's saved-register layout. Keeping the callback as a typed local and calling
+that same local after task creation gives agbcc the complete original lifetime
+and emits `_call_via_r7`. The linker name is aliased to the existing veneer
+at 0x08080BDC; no compiler option or synthetic C dependency is involved.

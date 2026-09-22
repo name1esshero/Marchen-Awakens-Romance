@@ -7,7 +7,7 @@ class SpriteInitTaskTests(unittest.TestCase):
   with tempfile.TemporaryDirectory() as temp:
    p=Path(temp)
    combined=(ROOT/'src/script_sprite.c').read_text()
-   source='#include "script_sprite.h"\n'+combined[
+   source='#include "script_sprite.h"\n#include "task_constructors.h"\n'+combined[
        combined.index('/* SprInit worker task'):combined.index('/* Deferred script-sprite reset workers')]
    (p/'worker.c').write_text(source)
    (p/'test.c').write_text(r'''
@@ -18,7 +18,7 @@ static union {long double align;u8 bytes[64];} storage;
 static u8 auxiliary[72];
 static int prepared,allocated,completed,finished;
 void *GameStateGetRecord0B90(u32 id){assert(id==3);return storage.bytes;}
-void sub_0801097C(s32 id,s32 wait,s32 *ready){assert(id==3 && wait==1);*ready=0;prepared++;}
+u8 *CreateSpriteResetTask(s32 id,s32 wait,s32 *ready){assert(id==3 && wait==1);*ready=0;prepared++;return 0;}
 void *HeapAlloc(void *heap,u32 size){assert(!heap && size==72);allocated++;return auxiliary;}
 void CpuFill(void *dest,u32 size,u32 value){assert(dest==auxiliary && size==72 && !value);memset(dest,0,size);}
 void NcdSpriteContainerReset(void *block){unsigned i;assert(block==auxiliary);for(i=0;i<72;i++)assert(!auxiliary[i]);}

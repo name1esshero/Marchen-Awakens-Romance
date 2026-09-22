@@ -2190,6 +2190,12 @@
     "file": "src/task_adapters.c"
   },
   {
+    "addr": "0801097C",
+    "size": 72,
+    "name": "CreateSpriteResetTask",
+    "file": "src/task_constructors.c"
+  },
+  {
     "addr": "080109C4",
     "size": 104,
     "name": "ScriptSpriteResetTask",

@@ -1,4 +1,5 @@
 #include "script_sprite.h"
+#include "task_constructors.h"
 #include "runtime_misc.h"
 #include "rom_section.h"
 extern char *strcpy(char *,const char *);
@@ -93,7 +94,6 @@ struct SpriteInitTask {
  u8 header[14];u16 state;u8 reserved[8];s32 *result;u8 reserved1[4];
  s32 id;char name[20];s32 container;u32 unknown;s32 animation,frame,wait,finished;
 };
-extern void sub_0801097C(s32,s32,s32 *);
 extern void *HeapAlloc(void *,u32);
 extern void CpuFill(void *,u32,u32);
 #include "ncd.h"
@@ -113,7 +113,7 @@ AT("00010B6C") void ScriptSpriteInitTask(struct SpriteInitTask *task)
 {
  s32 *payload=&task->id;
  struct ScriptSprite *sprite=GameStateGetRecord0B90(task->id);
- switch(task->state){case 0:sub_0801097C(task->id,payload[10],&task->finished);task->state=16;
+ switch(task->state){case 0:CreateSpriteResetTask(task->id,payload[10],&task->finished);task->state=16;
  case 16:
  if(payload[11]){
   void **extra=(void **)((u8 *)sprite+36);

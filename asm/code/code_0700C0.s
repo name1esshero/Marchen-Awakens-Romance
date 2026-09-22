@@ -1743,7 +1743,7 @@ _08070E08:
 	adds r0, r4, r0
 	movs r1, #0
 	movs r2, #0
-	bl sub_0801097C
+	bl CreateSpriteResetTask
 	adds r4, #1
 	cmp r4, #7
 	ble _08070E08

@@ -336,6 +336,7 @@
   "0800FD3C": "CreatePendingTaskFD3C",
   "080106C8": "GameStateGetRecord0B90",
   "08010704": "CreateActorTask10704",
+  "0801097C": "CreateSpriteResetTask",
   "080109C4": "ScriptSpriteResetTask",
   "08010A70": "ScriptSpriteResetAllTask",
   "08010B6C": "ScriptSpriteInitTask",

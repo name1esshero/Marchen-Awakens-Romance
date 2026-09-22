@@ -1076,48 +1076,8 @@ _0801096A:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_0801097C
-sub_0801097C:
-	push {r4, r5, r6, r7, lr}
-	sub sp, #4
-	adds r5, r0, #0
-	adds r4, r1, #0
-	adds r3, r2, #0
-	ldr r0, _080109BC
-	ldr r0, [r0, #0]
-	adds r0, #64
-	ldr r7, _080109C0
-	movs r1, #8
-	str r1, [sp, #0]
-	adds r1, r7, #0
-	movs r2, #0
-	.2byte 0xF069
-	.4byte 0x1C06FEF1
-	str r5, [r6, #32]
-	str r4, [r6, #36]
-	movs r0, #1
-	.2byte 0xF06D
-	.4byte 0x2C00FD3D
-	bne _080109B0
-	adds r0, r6, #0
-	bl sub_08080BDC
-	.global _080109B0
-_080109B0:
-	adds r0, r6, #0
-	add sp, #4
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-	.global _080109BC
-_080109BC:
-	.4byte 0x03004020  @ IWRAM+0x4020
-	.global _080109C0
-_080109C0:
-	.4byte ScriptSpriteResetTask
+@ 01097C..0109C4 is decompiled as CreateSpriteResetTask();
+@ see src/decompiled.json
 
 @ 0109C4..010A2C is decompiled as ScriptSpriteResetTask(); see src/decompiled.json
 
@@ -6494,7 +6454,7 @@ _080146B0:
 	adds r0, r5, r0
 	movs r1, #0
 	movs r2, #0
-	bl sub_0801097C
+	bl CreateSpriteResetTask
 	adds r5, #1
 	cmp r5, #7
 	ble _080146B0

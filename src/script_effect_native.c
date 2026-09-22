@@ -8,6 +8,7 @@
  */
 #include "gba/types.h"
 #include "script_sprite.h"
+#include "task_constructors.h"
 
 #include "rom_section.h"
 
@@ -27,7 +28,6 @@ extern void sub_0800DEE4(s32, s32, s32, s32, s32, s32, s32);
 extern void sub_0800E268(s32, s32, s32 *, s32);
 extern void sub_0800E444(s32, s32, s32, s32 *, s32);
 
-extern void sub_0801097C(s32, s32, s32);
 extern void sub_08010A2C(s32, s32);
 extern void sub_08010E44(s32, s32, s32, s32, s32, s32, s32);
 extern void sub_08011340(s32, s32, s32, s32 *, s32);
@@ -182,7 +182,7 @@ AT("00011EAC") s32 ScriptNativeEffectBCommand(u32 count, const s32 *args, s32 *r
 AT("00011F14") s32 ScriptNativeSpriteWait(u32 count, const s32 *args, s32 *result)
 {
     if (args[0] != -1)
-        sub_0801097C(args[0], 1, 0);
+        CreateSpriteResetTask(args[0], 1, 0);
     else
         sub_08010A2C(1, 0);
     return 0x7fff;
