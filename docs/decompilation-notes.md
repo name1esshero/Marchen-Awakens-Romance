@@ -2856,6 +2856,31 @@ keeps it in the unsaved `ip` register instead, needing no such dance -- a
 register-pressure threshold difference, not an instruction-order one. Recorded
 in the candidate's own header for the next attempt.
 
+### Affine allocator caller and source-shape follow-up (2026-09-22)
+
+The two call sites at 0x0807C650 and 0x0807CB0E pass the same values first to
+`SpriteAffineFind` and then, after a `-1` result, to `SpriteAffineAllocate`.
+Both sites explicitly sign-extend the second and third values from halfwords.
+This confirms that the two values form a coordinate-like pair used to build
+the stored transform; it is no longer only an inference from the allocator's
+shift and OR instructions.
+
+A by-value coordinate-record hypothesis was compiled and rejected. It makes
+agbcc extract the low component through r0, whereas the ROM narrows the third
+scalar argument in r2 immediately after narrowing the key. Scalar parameters
+remain the better ABI model.
+
+The allocator itself is closer than the earlier note recorded. Ordinary
+promoted `s32` locals for the signed values, together with an explicit shared
+result path, naturally reproduce the high-register save, `key` in r8, the
+unit mask in `ip`, the entry offset in r6, the signed narrowing order, and the
+ROM's success/failure control-flow layout. A search of all 5,040 setup orders
+that respect real data dependencies also found clean forms with the packed
+transform in r4. It did not recover the remaining r3/r5 slot/availability
+allocation or the transient r4-to-r7 global-root handoff. This narrows the
+unresolved problem without adding a compiler control; the exact routine stays
+in named assembly.
+
 ## Fixed `make check-modern` (2026-09-20)
 
 `MODERN_CFLAGS` used `-nostdinc` (correct, for a freestanding GBA target) but

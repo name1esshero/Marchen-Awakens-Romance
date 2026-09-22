@@ -24,16 +24,24 @@
  *    codegen difference. Plain `low` (relying on the parameter's own signed
  *    type) reproduces the ROM's `asrs`.
  *
- * What remains open after both fixes: the ROM preserves `key` across the
- * loop in r8 (with the extra `mov r7,r8`/`push {r7}` prologue dance Thumb
- * needs to save a high register), while this candidate's `key` lives in the
- * unsaved `ip` register instead, needing no such dance. This looks like a
- * register-pressure threshold difference rather than an instruction-order
- * one: something about the ROM's original source shape makes agbcc's
- * allocator decide it is under enough pressure to spill to r8, and nothing
- * tried here reproduces that pressure. Not yet attempted: restructuring the
- * loop to keep more values simultaneously live (e.g. not letting `mask` die
- * before the store), which might be the missing ingredient.
+ * The two callers at 0x0807C650 and 0x0807CB0E narrow the final two arguments
+ * to signed halfwords before calling both SpriteAffineFind and this routine.
+ * They are therefore a related pair of coordinate-like values, rather than
+ * arbitrary halves inferred only from this function. Modeling them as one
+ * by-value structure is not the missing source shape: agbcc then performs the
+ * low-half narrowing through r0, while the ROM performs it through r2.
+ *
+ * A closer clean experiment introduced ordinary promoted `s32` locals for
+ * both signed inputs and kept the result join explicit. That naturally
+ * recovered the ROM's r8 lifetime for `key`, the unit mask in `ip`, the r6
+ * entry offset, signed narrowing order, and control-flow layout. Testing all
+ * 5,040 dependency-valid setup orders also recovered the packed transform in
+ * r4. None recovered the remaining r3/r5 slot/availability allocation or the
+ * ROM's transient r4-to-r7 global-root handoff. Those are now the precise
+ * open differences. No artificial lifetime, volatile qualifier, register
+ * declaration, or inline-assembly barrier is justified by the callers, so the
+ * exact routine remains in assembly until another real data relationship
+ * explains that final allocation.
  */
 #include "sprite_engine.h"
 

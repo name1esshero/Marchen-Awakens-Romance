@@ -508,6 +508,17 @@ difference is register pressure rather than scheduling.
   empty assembly barrier or force its temporaries into low registers. Keep the
   exact routine in assembly until a real source abstraction explains why the
   unit was rematerialized.
+- **Use callers to distinguish scalar parameters from aggregate ABI guesses.**
+  `SpriteAffineAllocate` has two adjacent signed-looking inputs that could be
+  mistaken for one by-value coordinate record. Both real callers explicitly
+  place separately sign-extended values in r1 and r2, and an aggregate probe
+  makes agbcc narrow the low member through r0 instead of the ROM's r2. Keeping
+  scalar inputs and introducing ordinary promoted `s32` locals recovers the
+  ROM's r8 key lifetime and `ip` unit mask without register declarations. This
+  does not finish the match: 5,040 dependency-valid setup orders still leave a
+  final r3/r5 rotation and global-root handoff unresolved. Record partial
+  allocator facts like these rather than preserving a superficially matching
+  but unsupported ABI or compiler hint.
 - **After adding a function, run the host tests, not just `make compare`.** The
   tests compile individual `.c` files on their own, so a new reference to a
   symbol the ROM link resolves -- `gSecondaryRuntime`, `gIwramBase`, anything
