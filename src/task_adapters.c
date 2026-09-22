@@ -20,7 +20,7 @@ extern void sub_0800B1EC(struct EngineTask *);
 extern void sub_0800D9C0(struct EngineTask *);
 extern void sub_0800FD70(struct EngineTask *);
 extern void sub_0800F9EC(struct EngineTask *);
-extern void sub_0800E64C(struct EngineTask *);
+extern void ActorPartInitTask(struct EngineTask *);
 extern void sub_0800B49C(struct EngineTask *);
 extern void sub_0801BB0C(struct EngineTask *);
 extern void sub_08051EB8(struct EngineTask *);
@@ -328,11 +328,11 @@ AT("0000F9B4") struct EngineTask *CreateSpriteTaskF9B4(u32 value,u32 *completion
  return task;
 }
 /** Create an 8-byte actor task (queue 1 of the actor at index*32) running
- * sub_0800E64C(), storing index and value at payload +0/+4, and mark one
- * script wait pending. */
+ * ActorPartInitTask(), storing index and value at payload +0/+4, and mark
+ * one script wait pending. */
 AT("0000E610") struct EngineTask *CreateIndexedPendingTask(u32 index,u32 value,u32 *completion)
 {
- struct EngineTask *task=CreateTask((struct TaskManager *)(gSecondaryRuntime+index*32),sub_0800E64C,1,completion,8);
+ struct EngineTask *task=CreateTask((struct TaskManager *)(gSecondaryRuntime+index*32),ActorPartInitTask,1,completion,8);
  *(u32 *)((u8 *)task+32)=index;
  *(u32 *)((u8 *)task+36)=value;
  ScriptAddPendingTasks(1);

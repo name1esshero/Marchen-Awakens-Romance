@@ -24,6 +24,7 @@
 #include "runtime_state.h"
 #include "item.h"
 #include "rom_section.h"
+#include "task_manager.h"
 
 #define ARM_DEFINITION_FIELD74 0x74
 #define ARM_FIELD74_BIT5_SIGN_SHIFT 26
@@ -39,6 +40,7 @@
 extern void CpuFill(void *destination, u32 size, u32 value);
 extern u8 *RuntimeGetActorRecord(u32 actor, u32 part);
 extern char *strcpy(char *destination, const char *source);
+extern void ScriptCompletePendingTasks(u32 count);
 
 /** @return The secondary runtime's +0xEB8 buffer. */
 AT("000075CC") void *RuntimeGetBufferEB8(void) { return gSecondaryRuntime+0xEB8; }
@@ -494,6 +496,38 @@ u32 RuntimeActorHasPartField37Value6(u32 actor)
 
     return 0;
 }
+
+/** Task callback registered by CreateIndexedPendingTask(): actor and part
+ * indices come from the 8-byte payload at task+32/+36. Does nothing if the
+ * part record is already initialized (signed byte +0 nonzero) and still
+ * busy (signed halfword +0x14 nonzero); otherwise clears the record's first
+ * 168 bytes, sets halfwords +0x28/+0x2A to 256, marks byte +8 as 3, and
+ * completes the task. */
+AT("0000E64C") void ActorPartInitTask(struct EngineTask *task)
+{
+    u8 *record;
+    u32 index;
+    u32 value;
+    u8 *payload;
+    u16 initial;
+
+    payload = (u8 *)task + 32;
+    index = *(u32 *)(payload + 0);
+    value = *(u32 *)(payload + 4);
+    record = RuntimeGetActorRecord(index, value);
+    if (*(s8 *)(record + 0) != 0 && *(s16 *)(record + 0x14) != 0)
+        return;
+    CpuFill(record, 168, 0);
+    initial = 256;
+    *(u16 *)(record + 0x28) = initial;
+    *(u16 *)(record + 0x2A) = initial;
+    record[8] = 3;
+    ScriptCompletePendingTasks(1);
+    if (task->completion)
+        *task->completion = -1;
+    FinishTask(task);
+}
+AT("0000E64C") const u8 ActorPartInitTaskTail[2] = {0, 0};
 
 #define ACTOR_GET_S8(address,name,field) AT(address) s32 name(u32 index) { u8 *base=gSecondaryRuntime; index*=1672; base+=(field); base+=index; return *(s8 *)base; }
 #define ACTOR_SET_S8(address,name,field) AT(address) void name(u32 index,s32 value) { u8 *base=gSecondaryRuntime; index*=1672; base+=(field); base+=index; *(s8 *)base=value; }

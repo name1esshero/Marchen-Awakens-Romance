@@ -784,3 +784,24 @@ combined entry, the same way the pre-existing `stdio.c`/`__sread` entry
 already covers four functions under one name and size. See
 `docs/decompilation-notes.md`'s "`__malloc_lock`/`__malloc_unlock`: two
 no-op hooks" entry.
+
+## Verified snapshot: `ActorPartInitTask` decompiled, 2026-09-21
+
+`sub_0800E64C` -> `ActorPartInitTask` (`src/runtime_buffers.c`), the task
+callback `CreateIndexedPendingTask()` (`src/task_adapters.c`) already named
+by address. First game-logic (not library-wrapper) decompile of this
+session, found by scanning `asm/code/*.s` for small standalone raw-asm
+functions rather than aliased newlib stubs. `audit_pret_standards.py`
+reports 0 errors/0 warnings/18 exceptions; `audit_provenance.py` reports
+1833/1833; `make compare` confirms the byte-identical ROM. Two real
+shape lessons recorded in `docs/decompilation-notes.md`: a dual-condition
+guard must be one short-circuiting `&&`, not nested ifs, to avoid an
+extra ROM-absent load; and a repeated constant assigned to two locations
+needs a named local assigned once, or agbcc materializes it into a scratch
+register and copies it for the second use. Also needed the established
+`AT(<same address>) const u8 ...Tail[2] = {0, 0};` companion-declaration
+convention (`include/rom_section.h`) to fix 2 bytes of trailing alignment
+padding that came out as a `nop` instead of the ROM's literal zero bytes --
+the first time this specific session needed that technique. See
+`docs/decompilation-notes.md`'s "First real game-logic decompile this
+session" entry.

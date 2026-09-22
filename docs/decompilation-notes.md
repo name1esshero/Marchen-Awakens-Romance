@@ -3313,3 +3313,68 @@ merging into a single `{"addr": "080859C4", "size": 8, "name":
 than inventing a new one.
 
 `audit_provenance.py` now reports 1832/1832.
+
+## First real game-logic decompile this session: `ActorPartInitTask` (2026-09-21)
+
+A genuinely different kind of target from the rest of this session's work:
+not a library stub with a pre-existing alias, but an actual task callback
+found by scanning `asm/code/*.s` directly for small (`<=140` byte),
+never-touched (`sub_08XXXXXX`, no alias, no prior nonmatching attempt)
+standalone raw-asm functions -- the same method that first turned up the
+newlib cluster, just continued past it. `sub_0800E64C` (84 bytes) was one
+of three candidates this pass surfaced; the other two
+(`sub_080094B4`, `sub_0807CDE0`) are untried and remain for later.
+
+Identification: `src/task_adapters.c`'s `CreateIndexedPendingTask()`
+already names it as the callback for an 8-byte-payload task
+(`CreateTask(..., sub_0800E64C, 1, completion, 8)`) storing `index` and
+`value` at payload +0/+4 -- exactly matching the ROM reading those same two
+offsets at entry. Its two `bl` targets, decoded the same manual Thumb-offset
+way used throughout this session and cross-checked against
+`arm-none-eabi-nm`, resolve to `RuntimeGetActorRecord` and
+`ScriptCompletePendingTasks` -- both already-named, already-matched
+functions, which fixed the parameter types and confirmed the general
+"task callback that finishes itself" shape already established elsewhere
+in this codebase (`FinishTask`, the `task->completion` sentinel-write
+pattern, etc.).
+
+Logic: skip entirely if the part record is already initialized (signed
+byte +0 nonzero) *and* still busy (signed halfword +0x14 nonzero) --
+otherwise (fresh record, or idle) clear the record's first 168 bytes, set
+halfwords +0x28/+0x2A to 256, mark byte +8 as 3, and complete the task.
+Two real shape lessons from getting this byte-exact:
+
+- The dual-condition guard had to be written as one short-circuiting
+  `if (a != 0 && b != 0) return;` rather than nested ifs, matching the
+  ROM's `beq`-to-init / `bne`-to-skip pair exactly (nesting would read the
+  halfword unconditionally, an extra ROM-absent load).
+- Assigning the repeated `256` constant to two halfwords needs a named
+  `u16` local assigned once and reused, not two separate `= 256` statements
+  or an inlined `128 << 1` written twice -- either of those makes agbcc
+  materialize the constant into a scratch register first (`r1`) and copy it
+  to the real destination register (`r0`) for the second store, one extra
+  instruction the ROM doesn't have. The same "materialize once, assign
+  through a local" fix as the zero/sign-extension issue documented
+  elsewhere in this project's docs, just for a repeated immediate instead
+  of a repeated narrowed value.
+
+The build itself caught one more real thing after the instruction-level
+probe already matched: the function's own trailing 2 bytes (needed to keep
+the next function's section on an even boundary) came out as `c0 46`
+(a Thumb `nop`, the assembler's own default alignment filler) instead of
+the ROM's literal `00 00`. Fixed with the same `AT(<same address>) const
+u8 ...Tail[2] = {0, 0};` companion-declaration convention already used
+throughout this codebase (see `include/rom_section.h`'s own comment on
+sharing one section name between a function and its tail) -- not a new
+technique, just the first time this session needed it, since every libc
+wrapper up to this point either ended in a literal pool (self-aligning) or
+landed on a boundary by chance.
+
+Landed in `src/runtime_buffers.c` (where `RuntimeGetActorRecord`'s other
+callers already live) as `ActorPartInitTask`, not `src/task_adapters.c`
+(that file's own header comment says it is deliberately just the
+constructors, "the address suffix remains until the callbacks' gameplay
+roles are known" for the callback bodies themselves). `task_adapters.c`
+updated to reference the real name.
+
+`audit_provenance.py` now reports 1833/1833.

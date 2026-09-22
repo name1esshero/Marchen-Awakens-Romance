@@ -2100,6 +2100,12 @@
     "file": "src/task_adapters.c"
   },
   {
+    "addr": "0800E64C",
+    "size": 84,
+    "name": "ActorPartInitTask",
+    "file": "src/runtime_buffers.c"
+  },
+  {
     "addr": "0800E6A0",
     "size": 56,
     "name": "StartPendingFieldEffect",

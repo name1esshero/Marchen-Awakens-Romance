@@ -12945,62 +12945,7 @@ _0800E5FA:
 
 @ 00E610..00E64C is decompiled as CreateIndexedPendingTask(); see src/decompiled.json
 
-	.section .rom.0000E64C, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_0800E64C
-sub_0800E64C:
-	push {r4, r5, lr}
-	adds r5, r0, #0
-	ldr r0, [r5, #32]
-	ldr r1, [r5, #36]
-	.2byte 0xF7FB
-	.byte 0xB6
-	.byte 0xFD
-	adds r4, r0, #0
-	movs r0, #0
-	ldrsb r0, [r4, r0]
-	cmp r0, #0
-	beq _0800E66A
-	movs r1, #20
-	ldrsh r0, [r4, r1]
-	cmp r0, #0
-	bne _0800E698
-	.global _0800E66A
-_0800E66A:
-	adds r0, r4, #0
-	movs r1, #168
-	movs r2, #0
-	bl CpuFill
-	movs r0, #128
-	lsls r0, r0, #1
-	strh r0, [r4, #40]
-	strh r0, [r4, #42]
-	movs r0, #3
-	strb r0, [r4, #8]
-	movs r0, #1
-	.2byte 0xF06F
-	.4byte 0x69A9FEE1
-	cmp r1, #0
-	beq _0800E692
-	movs r0, #1
-	negs r0, r0
-	str r0, [r1, #0]
-	.global _0800E692
-_0800E692:
-	adds r0, r5, #0
-	.2byte 0xF06C
-	.byte 0x8A
-	.byte 0xF8
-	.global _0800E698
-_0800E698:
-	pop {r4, r5}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
+@ 00E64C..00E6A0 is decompiled as ActorPartInitTask(); see src/decompiled.json
 
 @ 00E6A0..00E6D8 is decompiled as StartPendingFieldEffect(); see src/decompiled.json
 
