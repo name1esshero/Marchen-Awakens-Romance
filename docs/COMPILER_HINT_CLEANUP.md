@@ -610,28 +610,21 @@ emits the original 55 instructions with no differences. The Japanese ROM
 retains its exact SHA-1, and `src/resource_native.c` now contains no forced
 register or inline-assembly findings.
 
-## Preserve unresolved callback lifetime honestly
+## Preserve a reused callback as a source value
 
-`CreateSoundFadeTask()` (0x080056AC) formerly pinned its callback to r10. The
-ROM loads `SoundFadeTask`, moves it into sl, uses r1 to stage the 16-byte task
-payload size on the stack, then moves the callback back into r1 for
-`CreateTask()`. That choice expands both the high-register save/restore
-sequence and the call setup; the exact function is 116 bytes.
+`CreateSoundFadeTask()` (0x080056AC) formerly pinned its callback to r10 and
+was later kept in symbolic assembly while its source lifetime remained
+unknown. The missing behavior was the callback's second job: after passing
+`SoundFadeTask` to `CreateTask()`, the constructor invokes that same callback
+for the task's initial update.
 
-Without the constraint, agbcc passes the callback directly and emits a
-108-byte function. Explicit signed and unsigned size locals, a separate queue
-local, declaration and initialization orders, direct and local callback forms,
-plain `register` storage, and both `agbcc` and `old_agbcc` were tested. All
-natural candidates retained the shorter call. These failures identify the
-missing fact as a source lifetime or abstraction, but do not prove that the
-original developers requested r10.
-
-Following `PRET_STANDARDS.md`, the matching implementation is now ordinary
-symbolic Thumb assembly in `asm/code/code_0000C0.s`; its calls and literal
-pool reference relocatable symbols. The more readable typed implementation is
-retained in `src/nonmatching/sound_fade_create.c`. This removes the forced
-register and duplicate inline-assembly audit findings without pretending the
-current C shape is authentic.
+Assigning `callback = SoundFadeTask` as `CreateTask()`'s second argument and
+later calling `callback(task)` gives agbcc that complete lifetime. It loads the
+manager into r0, loads the callback into r1, preserves the callback in sl while
+r1 stages the 16-byte payload size, and emits `_call_via_sl` for the later
+indirect call. The existing `bx r10` instruction at 0x08080BE8 now also bears
+that compiler helper name. All 116 bytes compile from typed C with no forced
+register, inline assembly, volatile dependency, or integerized pointer.
 
 `CreateSoundPlayerIdleWait()` (0x08005848) had the same issue at a wider
 scope. Its matching reconstruction pinned the selected status to r0, the wait
@@ -645,8 +638,10 @@ Natural parameter reuse did not recover the ROM: reusing `wait` coalesces it
 with the later callback/task lifetime and removes r6 from the prologue, while
 reusing `playerIndex` introduces a second saved copy. Initializing the callback
 before the switch instead moves its literal into the jump-table pool and
-changes every table address. The exact, fully symbolic switch now lives in
-`asm/code/code_0000C0.s`; clean C remains in
+changes every table address. Reusing the callback after task creation does
+recover the ROM's three-value lifetime, but agbcc assigns callback/task to
+r4/r5 where the ROM assigns them to r5/r4. The exact, fully symbolic switch
+lives in `asm/code/code_0000C0.s`; clean C remains in
 `src/nonmatching/sound_idle_wait.c`. The fallback removes all six audit
 findings without hiding the unresolved whole-function lifetime problem.
 

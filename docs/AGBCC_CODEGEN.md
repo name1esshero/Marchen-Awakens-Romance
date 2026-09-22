@@ -445,27 +445,29 @@ difference is register pressure rather than scheduling.
   without a register constraint. This is useful when the repeated values are
   semantically independent. Do not split one continuous pointer walk merely
   to influence allocation.
-- **Treat unexplained high-register preservation as an unresolved lifetime,
-  not permission to pin it.** `CreateSoundFadeTask` loads its callback before
-  staging the fifth `CreateTask` argument through r1, preserves the callback
-  in sl, and moves it back to r1 for the call. Natural C passes the same
-  callback directly and produces a 108-byte function instead of the ROM's
-  116-byte function. Separate size and queue locals, callback initialization
-  orders, plain `register` storage, direct callback expressions, and both
-  compiler binaries all produce the shorter form. Until a caller, macro, or
-  wider structure exposes the real lifetime, keep the exact symbolic function
-  in assembly and the readable candidate in `src/nonmatching/`; an r10
-  constraint states a machine allocation rather than recovering source.
+- **A callback assignment inside a call argument can expose its complete
+  lifetime.** `CreateSoundFadeTask` both passes `SoundFadeTask` to
+  `CreateTask` and invokes that callback immediately after initializing the
+  task. Writing `callback = SoundFadeTask` as the callback argument records
+  those two jobs in one expression. agbcc evaluates the manager first, loads
+  the callback into r1, preserves it in sl while r1 stages the stack-passed
+  payload size, and later calls it through `_call_via_sl`. This reproduces the
+  ROM's 116-byte function without a register constraint. A separate callback
+  assignment changes literal evaluation order; passing the function directly
+  hides its second use. Use this form only when the callback is truly reused.
 - **A switch table can make a local register mismatch global.** In
   `CreateSoundPlayerIdleWait`, the ROM keeps the player index in r6, the wait
   value and eventual task pointer in r4, the callback in r5, and the selected
   player's status in r0. Removing any one constraint changes allocation from
   the prologue through the jump table or task path even though the function
-  stays 216 bytes. Reusing the input parameters changes the prologue; moving
-  callback initialization earlier moves its literal into the switch-table
-  region. These results narrow the missing source shape, but none justifies
-  three fixed registers. Preserve the exact switch as symbolic assembly and
-  keep the readable C candidate available for later whole-function recovery.
+  stays 216 bytes. Reusing the callback after task creation now explains why
+  a third saved register exists, but agbcc still swaps the callback and task
+  registers relative to the ROM. Reusing the input parameters changes the
+  prologue; moving callback initialization earlier moves its literal into the
+  switch-table region. These results narrow the missing source shape, but none
+  justifies fixed registers. Preserve the exact switch as symbolic assembly
+  and keep the readable C candidate available for later whole-function
+  recovery.
 - **Use callers to reject a tempting signature swap.** The ROM's
   `CreateSaveWriteTask` wrapper preserves `save` in r5 and `size` in r4, while
   ordinary agbcc C uses r4 and r5 respectively. Swapping the C parameters can
@@ -829,3 +831,11 @@ ROM's saved-register layout. Keeping the callback as a typed local and calling
 that same local after task creation gives agbcc the complete original lifetime
 and emits `_call_via_r7`. The linker name is aliased to the existing veneer
 at 0x08080BDC; no compiler option or synthetic C dependency is involved.
+
+The same source pattern recovers `CreateSoundFadeTask` at 0x080056AC. Its
+callback assignment occurs as `CreateTask`'s second argument because the ROM
+loads the manager into r0 before loading the callback into r1. The later typed
+callback call keeps that value live in sl, and agbcc emits `_call_via_sl` at
+the existing `bx r10` veneer at 0x08080BE8. This evidence supersedes the
+earlier hypothesis that the high-register lifetime could not be expressed in
+natural C.

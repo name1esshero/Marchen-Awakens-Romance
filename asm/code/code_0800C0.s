@@ -738,7 +738,10 @@ sub_08080BE4:
 	.thumb_func
 	.thumb
 	.global sub_08080BE8
+	@ agbcc's indirect Thumb-call helper is the original bx-sl veneer here.
+	.global _call_via_sl
 sub_08080BE8:
+_call_via_sl:
 	bx r10
 	.byte 0xC0
 	.byte 0x46

@@ -10315,72 +10315,8 @@ _0800569E:
 	.byte 0x00
 	.byte 0x00
 
-	.section .rom.000056AC, "ax"
-	.syntax unified
-	.thumb
-	.thumb_func
-	.global CreateSoundFadeTask
-	.type CreateSoundFadeTask, %function
-CreateSoundFadeTask:
-	push {r4, r5, r6, r7, lr}
-	mov r7, sl
-	mov r6, r9
-	mov r5, r8
-	push {r5, r6, r7}
-	sub sp, #4
-	adds r7, r0, #0
-	mov r8, r1
-	adds r6, r2, #0
-	mov r9, r3
-	ldr r3, [sp, #36]
-	ldr r0, .LCreateSoundFadeTaskPool
-	ldr r1, .LCreateSoundFadeTaskPool + 4
-	mov sl, r1
-	movs r1, #16
-	str r1, [sp]
-	mov r1, sl
-	movs r2, #0
-	bl CreateTask
-	adds r4, r0, #0
-	cmp r4, #0
-	bne .LCreateSoundFadeTaskInit
-	movs r0, #0
-	b .LCreateSoundFadeTaskDone
-
-	.align 2, 0
-.LCreateSoundFadeTaskPool:
-	.4byte gMainTaskManager
-	.4byte SoundFadeTask
-
-.LCreateSoundFadeTaskInit:
-	adds r5, r4, #0
-	adds r5, #32
-	cmp r6, #0
-	beq .LCreateSoundFadeTaskPending
-	movs r0, #1
-	bl ScriptAddPendingTasks
-.LCreateSoundFadeTaskPending:
-	movs r0, #1
-	bl ScriptAddPendingTasks
-	str r7, [r4, #32]
-	mov r0, r8
-	str r0, [r5, #4]
-	str r6, [r5, #8]
-	mov r1, r9
-	str r1, [r5, #12]
-	adds r0, r4, #0
-	bl sub_08080BE8
-	adds r0, r4, #0
-.LCreateSoundFadeTaskDone:
-	add sp, #4
-	pop {r3, r4, r5}
-	mov r8, r3
-	mov r9, r4
-	mov sl, r5
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.size CreateSoundFadeTask, . - CreateSoundFadeTask
+	@ 0056AC..005720 is decompiled as CreateSoundFadeTask(); see
+	@ src/decompiled.json.
 
 @ 005720..0057C0 is decompiled as SoundFadeTask(); see src/decompiled.json
 

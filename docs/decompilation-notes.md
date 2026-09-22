@@ -2335,23 +2335,19 @@ agbcc the original non-overlapping lifetimes and reproduces all 55 ROM
 instructions without the former r0 register constraint. This removes the last
 PRET hard errors from `src/resource_native.c` while keeping the ROM byte exact.
 
-## Sound fade constructor fallback (2026-09-20)
+## Sound fade constructor recovered (2026-09-21)
 
-`CreateSoundFadeTask` at 0x080056AC is behaviorally reconstructed, but its
-natural C remains eight bytes shorter than the ROM. The ROM preserves the
-`SoundFadeTask` callback in sl while r1 temporarily carries the 16-byte task
-payload size to the stack. Both project compiler binaries and ordinary
-callback, size, queue, initialization-order, and storage-class variants pass
-the callback directly instead.
-
-The former matching source forced that unexplained allocation with an r10
-constraint. It has been replaced by the PRET-compliant fallback: the exact
-116-byte routine is symbolic, relocatable assembly in
-`asm/code/code_0000C0.s`, while the clean typed candidate lives in
-`src/nonmatching/sound_fade_create.c`. Its calls still use `CreateTask`,
-`ScriptAddPendingTasks`, and `sub_08080BE8` by symbol, and its literal pool
-uses `gMainTaskManager` and `SoundFadeTask`; no raw software address was
-introduced.
+`CreateSoundFadeTask` at 0x080056AC now compiles from ordinary C and replaces
+all 116 original bytes. The ROM passes `SoundFadeTask` to `CreateTask`, then
+invokes the same callback after initializing the task. Assigning the typed
+callback in `CreateTask`'s second argument exposes both uses while preserving
+the ROM's evaluation order: agbcc loads the manager into r0, the callback into
+r1, moves the callback to sl while r1 stages the 16-byte payload size, and
+later emits `_call_via_sl`. That compiler helper is an alias at the existing
+`bx r10` veneer at 0x08080BE8. The former nonmatching candidate and duplicate
+assembly body are gone; the source uses no register constraint, inline
+assembly, volatile dependency, or integerized pointer. `make compare` confirms
+the complete Japanese ROM remains byte-identical.
 
 ## Sound idle-wait constructor fallback (2026-09-20)
 
@@ -2366,6 +2362,9 @@ that the status-only candidate differs in four r0/r1 instructions, while the
 wait and callback candidates change allocation across the prologue and task
 path without changing the 216-byte size. Parameter reuse and earlier callback
 initialization produced different lifetimes and moved the jump-table layout.
+Calling a typed callback local after task creation now explains the third saved
+value and the ROM's `bx r5` veneer, but agbcc assigns the callback to r4 and the
+returned task to r5 rather than the ROM's r5/r4 allocation.
 The exact implementation is therefore retained as named, relocatable assembly
 in `asm/code/code_0000C0.s`, and the clean candidate is kept in
 `src/nonmatching/sound_idle_wait.c` for later reconstruction.
