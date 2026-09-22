@@ -5370,6 +5370,12 @@
     "file": "src/mapping.c"
   },
   {
+    "addr": "0807017C",
+    "size": 152,
+    "name": "GeneratedMapResize",
+    "file": "src/mapping.c"
+  },
+  {
     "addr": "08070214",
     "size": 36,
     "name": "BattleRuntimeSetArena",

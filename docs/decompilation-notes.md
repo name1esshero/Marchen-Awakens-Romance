@@ -3489,3 +3489,72 @@ bytes).
 
 `audit_provenance.py` now reports 1835/1835. This closes out every small
 standalone-function candidate this session's initial scan turned up.
+
+## Starting on dungeon generation: `GeneratedMapResize` (2026-09-21)
+
+User-directed shift in scope: dungeon generation specifically. The
+easy-standalone-function method that worked all session doesn't apply
+here -- `asm/game_table_handlers.s`'s ~300 function-pointer-table-referenced
+`sub_*` addresses are large, deeply-interleaved raw-asm blocks (one is over
+20KB), not clean single-function sections. Instead, traced from the
+already-decompiled dungeon-generation *native command table* entries in
+`src/game_tables.c` (the `DungGen*`/`Dung*` script natives, e.g. row 72
+`DungGenResize` -> `ScriptNativeMapConfigure2`) down to the real logic
+those thin wrappers call -- `src/mapping.c` already has ~15 such native
+wrappers, each forwarding to one or two `sub_08070XXX`/`sub_08072XXX`
+functions that are the actual generator internals, still raw. This gives a
+natural, sized-by-difficulty work queue for the rest of this area:
+`sub_0807017C` (152 bytes, done below), `sub_08070DA8` (472 bytes),
+`sub_08070F80` (316 bytes), `sub_08070620` (296 bytes), up through
+`sub_08070238` (~1000 bytes) and much larger ones beyond that
+(`sub_08072C14` alone is ~20KB -- almost certainly the core room-layout
+algorithm, not attempted this pass).
+
+`sub_0807017C` (called by `DungGenResize`/`ScriptNativeMapConfigure2`,
+which forwards the script's two u16-narrowed arguments straight through)
+turned out to be a close sibling of the already-matched
+`MapGenerationRelease()` a few dozen bytes earlier in the same file: it
+frees the *same* two heap blocks at `+0x650`/`+0x654` (reusing
+`MapGenerationRelease`'s own already-established `MAP_GENERATION_BLOCK_650`/
+`654` macros), calls the same `HitRegionDisableAll()`/`sub_08010A2C(0,0)`
+pair, then goes further -- clears the map's core 0x668-byte state via
+`memset`, caches that size at `+0x64C`, writes the new width/height, and
+reallocates the two blocks sized to the new `width*height` cell count
+(4 bytes/cell at `+0x650`, 2 bytes/cell at `+0x654`, matching the already-
+documented `struct GeneratedFieldMap::cellRoomIndices`). In other words:
+`GeneratedMapResize()`.
+
+One real struct-accuracy finding: `struct GeneratedFieldMap`'s existing
+`u8 unknown14[0x640]` field (in `include/map_generation.h`) is 4 bytes too
+long -- it currently swallows what this function reveals is actually a
+distinct field at `+0x650` (the map's own per-cell 4-bytes-wide array,
+parallel to but different from `cellRoomIndices` at `+0x654`). Not fixed
+in this pass (`MAP_GENERATION_BLOCK_650`/`654` offset macros were used
+instead, matching `MapGenerationRelease`'s own existing style exactly,
+since neither function accesses the struct through named fields); flagged
+here for whoever next touches this struct, since shrinking `unknown14` to
+`0x63C` and naming the new field is a safe, purely-additive fix once its
+role is understood.
+
+Getting the exact shape right needed one more subtlety on top of the usual
+narrowing/CSE lessons: the two heap-block addresses (`generation+0x650`,
+`generation+0x654`) had to be computed into **named pointer locals**
+(`slot650`, `slot654`) assigned once near the top and reused for both the
+free and the later allocation-result store, rather than writing
+`generation + MAP_GENERATION_BLOCK_650` as a fresh expression at each site.
+The ROM caches these two addresses in `r9`/`sl` across five intervening
+function calls (two frees, `HitRegionDisableAll`, `sub_08010A2C`,
+`memset`) rather than recomputing them from the still-live `state` pointer
+at the point of use, even though recomputing would be cheaper -- only an
+explicit, reused local variable reproduces that register-lifetime choice.
+
+New file additions live in `src/mapping.c` beside `MapGenerationRelease`,
+reusing its existing extern declarations and macros. `memset` needed its
+own new `extern void *memset(void *, s32, u32);` (no prior usage anywhere
+in this project's `src/`); agbcc emits a harmless "conflicting types for
+built-in function" warning for it regardless of the exact parameter types
+tried (`int`/`unsigned int` also warns) -- not fixable without a forbidden
+compiler-flag change, doesn't affect codegen or the audit, and the byte
+match is confirmed directly.
+
+`audit_provenance.py` now reports 1836/1836.

@@ -849,3 +849,30 @@ candidate this session's `asm/code/*.s` scan turned up
 `__malloc_lock`/`__malloc_unlock`/`ActorPartInitTask`/
 `RuntimeActorInitFields338To344`/`SpriteAffineWriteDispatch`, eleven
 decompiles from eight commits this session).
+
+## Verified snapshot: `GeneratedMapResize` decompiled, dungeon generation started, 2026-09-21
+
+`sub_0807017C` -> `GeneratedMapResize` (`src/mapping.c`), the real logic
+behind the `DungGenResize` script native (`ScriptNativeMapConfigure2`).
+`audit_pret_standards.py` reports 0 errors/0 warnings/18 exceptions;
+`audit_provenance.py` reports 1836/1836; `make compare` confirms the
+byte-identical ROM. User-directed scope change to dungeon generation
+specifically; the approach that worked for the rest of this session (scan
+`asm/code/*.s` for small clean-boundary raw functions) doesn't apply to
+this area (the relevant `game_table_handlers.s`-referenced functions are
+large, deeply-interleaved blocks, one over 20KB), so the entry point was
+instead the already-decompiled `DungGen*`/`Dung*` native-command wrappers
+in `src/game_tables.c`/`src/mapping.c`, traced down to the still-raw
+generator internals they call. This gives a sized work queue for
+continuing (`sub_08070DA8` 472 bytes, `sub_08070F80` 316 bytes,
+`sub_08070620` 296 bytes, up through much larger ones).
+
+One struct-accuracy finding, not yet fixed: `struct GeneratedFieldMap`'s
+`unknown14[0x640]` (`include/map_generation.h`) is 4 bytes too long -- it
+swallows a real, distinct field at `+0x650` this function reveals (a
+per-cell 4-bytes-wide array, parallel to the existing `cellRoomIndices` at
+`+0x654`). Flagged for whoever next touches that struct. See
+`docs/decompilation-notes.md`'s "Starting on dungeon generation" entry for
+the full identification, the register-lifetime shape lesson (named pointer
+locals reused across five intervening calls, not recomputed at each site),
+and the harmless unavoidable `memset` built-in-prototype warning.

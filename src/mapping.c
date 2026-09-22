@@ -153,7 +153,7 @@ extern void sub_0801C820(s32 value);
 extern void *GameStateGetBuffer38C0(void);
 extern void sub_080700A8(void *state, u32 a, u32 b, u32 c);
 extern void MapGenerationRelease(void *state);
-extern void sub_0807017C(void *state, u32 a, u32 b);
+extern void GeneratedMapResize(void *state, u32 width, u32 height);
 extern u32 Random(void);
 extern void sub_08070238(void *state, u32 value, u32 random);
 extern void sub_08070DA8(void *state, s32 a, s32 b);
@@ -362,12 +362,12 @@ AT("00012544") s32 ScriptNativeMapRefresh(u32 count, const s32 *args, s32 *resul
     return 0x7FFF;
 }
 
-/** Native script command: forward two u16-narrowed arguments to
- * sub_0807017C() on the current generated field map. @return Always 1. */
+/** Native script command: resize the current generated field map to the
+ * given width/height via GeneratedMapResize(). @return Always 1. */
 AT("00012558") s32 ScriptNativeMapConfigure2(u32 count, const s32 *args, s32 *result)
 {
     void *state = GameStateGetBuffer38C0();
-    sub_0807017C(state, (u16)args[0], (u16)args[1]);
+    GeneratedMapResize(state, (u16)args[0], (u16)args[1]);
     return 1;
 }
 
@@ -1011,8 +1011,10 @@ AT("00012D64") s32 ScriptNativeClearConsumableInventory(u32 count, const s32 *ar
 }
 
 extern void HeapFree(void *heap, void *allocation);
+extern void *HeapAlloc(void *heap, u32 size);
 extern void HitRegionDisableAll(void);
 extern void sub_08010A2C(s32 arg0, s32 arg1);
+extern void *memset(void *destination, s32 value, u32 size);
 
 /* The two heap blocks the generated map owns, at fixed offsets in the
  * 0x38C0 generation buffer. */
@@ -1030,6 +1032,43 @@ AT("00070140") void MapGenerationRelease(void *state)
     HeapFree(0, *(void **)(generation + MAP_GENERATION_BLOCK_654));
     HitRegionDisableAll();
     sub_08010A2C(0, 0);
+}
+
+#define GENERATED_MAP_RESIZE_CLEAR_SIZE 0x668
+#define GENERATED_MAP_RESIZE_SIZE_CACHE_OFFSET 0x64C
+
+/** Resize the current generated field map: release its two per-cell heap
+ * blocks (the same pair MapGenerationRelease() frees), clear the map's
+ * core 0x668-byte state and cache that size at +0x64C, set the new
+ * width/height, then reallocate the two per-cell blocks for the new
+ * width*height cell count -- 4 bytes/cell at +0x650, 2 bytes/cell
+ * (cellRoomIndices) at +0x654. */
+AT("0007017C") void GeneratedMapResize(void *state, u32 width, u32 height)
+{
+    u8 *generation = state;
+    u16 w;
+    u16 h;
+    void **slot650;
+    void **slot654;
+    u32 area;
+
+    w = (u16)width;
+    h = (u16)height;
+
+    slot650 = (void **)(generation + MAP_GENERATION_BLOCK_650);
+    HeapFree(0, *slot650);
+    slot654 = (void **)(generation + MAP_GENERATION_BLOCK_654);
+    HeapFree(0, *slot654);
+    HitRegionDisableAll();
+    sub_08010A2C(0, 0);
+    memset(generation, 0, GENERATED_MAP_RESIZE_CLEAR_SIZE);
+    *(u32 *)(generation + GENERATED_MAP_RESIZE_SIZE_CACHE_OFFSET) = GENERATED_MAP_RESIZE_CLEAR_SIZE;
+    *(u16 *)(generation + 0) = w;
+    *(u16 *)(generation + 2) = h;
+    area = w * h;
+    *slot650 = HeapAlloc(0, area * 4);
+    area = area * 2;
+    *slot654 = HeapAlloc(0, area);
 }
 
 /**
