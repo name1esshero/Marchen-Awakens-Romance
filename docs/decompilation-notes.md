@@ -3882,3 +3882,23 @@ needed no follow-up section fix at all.
 `audit_pret_standards.py` reports 0 errors/0 warnings/19 exceptions;
 `audit_provenance.py` reports 1839/1839; `make compare` confirms the
 byte-identical 16 MB ROM.
+
+## `CreateSoundWaitTask` cleaned up using the same idiom (2026-09-22)
+
+Not a new decompile -- `src/sound_wait_create.c` already matched -- but a
+followup search (`grep` for `sub_08080B` across `src/*.c`) turned up one
+more already-matching file using a hack the `_call_via_rN` insight makes
+unnecessary. Its old comment read "The original source reused argument
+registers across CreateTask. Keeping those lvalues preserves agbcc's
+allocation while the control flow stays C" -- the C literally repurposed
+the `result`/`wait` *parameters* as disguised temporaries (`result =
+(s32 *)SoundWaitTask; wait = (s32)CreateTask(...);`) to land the callback
+and task pointer in specific registers, then called the veneer by its raw
+`sub_08080BD4` name. Replacing that with the same `manager`/`callback`/
+`task` locals used by every fix in the two entries above -- and calling
+`callback(task)` instead of `sub_08080BD4((void *)wait)` -- keeps the exact
+byte-identical ROM while reading like ordinary C. This confirms the
+variable-reuse hack was never load-bearing: it was standing in for the
+veneer recognition this session's insight now makes explicit. `make
+compare` confirms the byte-identical ROM; `audit_pret_standards.py` and
+`audit_provenance.py` both still report clean.

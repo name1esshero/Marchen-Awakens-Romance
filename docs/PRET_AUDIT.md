@@ -1005,3 +1005,16 @@ cascading into a different owner-value register and (for
 byte-identical ROM. See `docs/decompilation-notes.md`'s "Two more
 `_call_via_rN`-shaped task constructors recovered" entry for the full
 section-boundary and literal-pool-ordering mechanism.
+
+## Cleanup pass on an already-matching veneer workaround, 2026-09-22
+
+`grep`ping `src/*.c` (not just `src/nonmatching/`) for raw `sub_08080B`
+names turned up `src/sound_wait_create.c`: already byte-matching, but via a
+hack (repurposing the `result`/`wait` parameters themselves as disguised
+callback/task-pointer temporaries) that predates this session's veneer
+insight. Replaced with the same `manager`/`callback`/`task`-local idiom
+used throughout the entries above; still byte-identical. Not a new match,
+but confirms the old hack was never necessary -- it was compensating for
+not recognizing `sub_08080BD4` as a veneer. `audit_pret_standards.py`
+reports 0 errors/0 warnings/19 exceptions; `audit_provenance.py` reports
+1839/1839; `make compare` confirms the byte-identical ROM.
