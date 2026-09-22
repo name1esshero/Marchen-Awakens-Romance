@@ -33,9 +33,13 @@ def main():
     assembly=list((ROOT/'asm/code').glob('*.s'))
     literal=sum(p.read_text().count('.inst.n') for p in assembly)
     samples=json.loads((ROOT/'sound/samples/manifest.json').read_text())
-    # Track the remaining assembly body as a useful secondary diagnostic, but
-    # use the complete cartridge image as the progress denominator. Every byte
-    # occupying the ROM therefore counts, including assets, data, and padding.
+    # Code-decompilation progress is compiled-C bytes divided by remaining-plus-
+    # compiled CODE bytes, not by the complete cartridge image: most of the ROM
+    # is graphics, audio, text, and map data that was never assembly to begin
+    # with, and folding it into the denominator would understate progress on
+    # the actual decompilation work. Asset progress (extracted, editable,
+    # rebuildable versus total available) is a separate axis tracked in
+    # docs/decompilation-notes.md's own per-asset-type sections, not here.
     asm_sections=[(off,size) for off,_addr,size,obj in linked_sections
                   if obj.startswith('build/asm/code/')]
     pcm_bytes=sum(max(0,min(off+size,e['rom_offset']+e['size'])
@@ -57,8 +61,8 @@ def main():
                   compiled_c_percent_of_decompilation=round(100*c_bytes/decompilation_bytes,4),
                   rom_bytes=rom_bytes,
                   compiled_c_percent_of_rom=round(100*c_bytes/rom_bytes,4),
-                  progress_denominator='rom_bytes',
-                  scope='The authoritative percentage is compiled C bytes divided by the complete ROM image. Every ROM-resident byte counts in the denominator, including code, data, assets, and padding. The narrower assembly-provider percentage is retained only as a diagnostic.',
+                  progress_denominator='decompilation_provider_bytes',
+                  scope='The authoritative percentage is compiled C bytes divided by decompilation_provider_bytes (remaining assembly plus compiled C plus BIOS wrappers -- code only, sound-sample PCM data already excluded). It answers "how much of the code has been decompiled." The ROM-wide percentage is retained only as a diagnostic; most of the ROM is graphics, audio, text, and map data that was never assembly, and dividing by it understates code progress. Asset decoding progress is a different question, tracked separately per asset type (editable/rebuildable versus total available) in docs/decompilation-notes.md.',
                   total_function_count=None,
                   limitation='Historical function starts include false positives and internal labels. Do not report a completion percentage from that count. C-owned sizes include alignment and literal pools.')
     record=dict(sha1=hashlib.sha1(rom).hexdigest(),byte_matching=True,

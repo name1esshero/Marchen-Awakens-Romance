@@ -947,66 +947,43 @@ before it, not `+0x64C` as previously written here -- see
 `docs/decompilation-notes.md` for the corrected trace and the
 correctly-deferred candidate.
 
-## Sound-player idle-wait constructor: three of four registers recovered, 2026-09-22
+## Verified snapshot: sound-player idle-wait constructor, three of four registers, 2026-09-22
 
 `CreateSoundPlayerIdleWait` (`src/nonmatching/sound_idle_wait.c`,
-`sub_08005830`) had the same misidentified-veneer problem as the
-`CreateSpriteResetTask`/`CreateSoundFadeTask`/`CreateMapGenerationTask`
-entries above: it called `sub_08080BD4` as an opaque function instead of
-recognizing it as agbcc's own `bx r5` indirect-call veneer for an
-already-computed `callback` local. Declaring the `callback` local and
-calling it directly fixed three of four register mismatches at once
-(`index` in r6, the reused task pointer in r4, `callback` surviving in r5).
-`sub_08080BD4` is now also aliased as `_call_via_r5` in
-`asm/code/code_0800C0.s`, matching the `_call_via_r7`/`_call_via_sl`/
-`_call_via_r9` precedent. One register-choice gap remains and was not
-resolved -- the ROM overwrites the `player` pointer's own register with the
-loaded `status` field (`ldr r0, [r0, #4]`) where every C shape tried here
-loads into a fresh register (`ldr r1, [r0, #4]`) -- documented in place as
-a correct deferral of the same class as `sub_08070DA8` above and
-`SpriteAffineWriteDispatch`'s register swap, not pursued further per
-PRET_STANDARDS.md's prohibition on register-allocator steering.
-`audit_pret_standards.py` reports 0 errors/0 warnings/19 exceptions;
+`sub_08005830`) had the same misidentified-veneer problem as the entries
+above: it called `sub_08080BD4` by name instead of recognizing it as
+agbcc's `bx r5` indirect-call veneer. Declaring a `callback` local and
+calling it directly fixed 3 of 4 register mismatches; `sub_08080BD4` is now
+also aliased as `_call_via_r5`. One narrow register-choice gap remains and
+stays a documented correct deferral, the same class as `sub_08070DA8`
+above. `audit_pret_standards.py` reports 0 errors/0 warnings/19 exceptions;
 `audit_provenance.py` reports 1839/1839; `make compare` confirms the
-byte-identical ROM (the candidate lives in `src/nonmatching/`, excluded
-from the default build); `make check-modern` compiles it cleanly. See
+byte-identical ROM; `make check-modern` compiles it cleanly. See
 `docs/decompilation-notes.md`'s "Sound-player idle-wait constructor" entry
 for the full mechanism.
 
-## Two more task constructors decompiled by auditing the veneer block, 2026-09-22
+## Verified snapshot: `CreateFieldCommandTask`/`CreateSpriteWaitTask` decompiled, 2026-09-22
 
-Rather than hunting one candidate at a time, checked every entry in
-`asm/code/code_0800C0.s`'s `sub_08080BC0`..`sub_08080BE8` `_call_via_rN`
-veneer block for live callers by raw `sub_` name. Six were already aliased
-from earlier fixes this session; two of the rest (`sub_08080BD4`/r5,
-`sub_08080BD8`/r6) had live callers -- both already-existing
-`#ifdef NONMATCHING` candidates in `src/task_constructors.c`:
-`CreateFieldCommandTask` (0x0800ECF8) and `CreateSpriteWaitTask`
-(0x08010A2C). Same misidentified-veneer shape as every prior fix. Both are
-now full, byte-exact matches; `#ifdef NONMATCHING` is gone from both,
-`sub_08080BD8` is now also aliased as `_call_via_r6`, and both are declared
-in `include/task_constructors.h`. Five external callers under the old
-`sub_` names (across `asm/code/code_0080C0.s`, `asm/code/code_0100C0.s`,
-`src/mapping.c`, `src/script_effect_native.c`) were updated to the
-descriptive names.
-
-One new lesson, distinct from the section-boundary bugs earlier this
-session: the initial `callback`-local fix for each got 3 of 4 register
-choices matching but not all four, because `callback = <name>;` was
-assigned *before* the manager/owner pointer expression was computed --
-agbcc pools PC-relative literals in source order, so the callback's address
-literal landed in the ROM's manager-pointer pool slot and vice versa,
-cascading into a different owner-value register and (for
-`CreateFieldCommandTask`) a call to the wrong veneer entirely. Computing
-`manager` first, then `callback`, matching the idiom already used by
-`CreateSpriteResetTask`/`CreateMapGenerationTask`, fixed both completely.
+Checked every entry in the `_call_via_rN` veneer block
+(`asm/code/code_0800C0.s`) for live callers instead of waiting to trip over
+them one at a time. Two more misidentified-veneer candidates turned up,
+both pre-existing `#ifdef NONMATCHING` guards in `src/task_constructors.c`:
+`CreateFieldCommandTask` (0x0800ECF8, veneer `_call_via_r5`) and
+`CreateSpriteWaitTask` (0x08010A2C, veneer now aliased `_call_via_r6`).
+Both are now full byte-exact matches, declared in
+`include/task_constructors.h`, with five external callers under old `sub_`
+names updated to the descriptive name. New lesson: computing `manager`
+before `callback` matters, because agbcc pools PC-relative literals in
+source order -- assigning `callback` first put it in the ROM's
+manager-pointer pool slot and vice versa, cascading into a wrong register
+(and, for `CreateFieldCommandTask`, a call to the wrong veneer).
 `audit_pret_standards.py` reports 0 errors/0 warnings/19 exceptions;
 `audit_provenance.py` reports 1839/1839; `make compare` confirms the
 byte-identical ROM. See `docs/decompilation-notes.md`'s "Two more
 `_call_via_rN`-shaped task constructors recovered" entry for the full
-section-boundary and literal-pool-ordering mechanism.
+mechanism.
 
-## Cleanup pass on an already-matching veneer workaround, 2026-09-22
+## Verified snapshot: `CreateSoundWaitTask` cleanup, 2026-09-22
 
 `grep`ping `src/*.c` (not just `src/nonmatching/`) for raw `sub_08080B`
 names turned up `src/sound_wait_create.c`: already byte-matching, but via a

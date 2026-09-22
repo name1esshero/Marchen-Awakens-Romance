@@ -305,9 +305,17 @@ English mappings, including the ÄRM Select names and descriptions.
 
 ## Decompilation status
 
-The provenance audit verifies **1,573 source-compiled C ranges (216,447 bytes,
-1.2901% of the complete 16 MiB ROM) and 10 BIOS assembly wrappers**; each declared
-range is linked from its expected object and matches the Japanese ROM. Recent
+The provenance audit verifies **1,839 source-compiled C ranges (230,679
+bytes), 32.17% of the project's code** (compiled C plus still-raw assembly;
+sound-sample PCM data already excluded); each declared range is linked from
+its expected object and matches the Japanese ROM. This is a code-only
+metric, not a percentage of the ROM image: most of the ROM is graphics,
+audio, text, and map data that was never assembly, and asset progress is
+tracked separately, per asset type, in the sections below. Both counts are
+point-in-time snapshots that drift as new functions are decompiled -- run
+`python3 tools/audit_provenance.py` for the current figures, and treat
+dated entries later in this file and in [PRET_AUDIT.md](PRET_AUDIT.md) as
+the record of what changed since. Recent
 batches decode the save block, CRC-32 validation, asynchronous SRAM write and
 load/verification paths, MusicPlayer2000 sound routines including the complete
 four-channel PSG update loop, script-facing player transitions, instrument
