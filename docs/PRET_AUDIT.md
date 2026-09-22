@@ -827,3 +827,25 @@ correctly where the stale symbol-grouped ELF disassembly does not. See
 `docs/decompilation-notes.md`'s "`RuntimeActorInitFields338To344`" entry
 for both lessons in full, including the CSE-vs-rematerialization shape fix
 needed to match the ROM's actual register allocation.
+
+## Verified snapshot: `SpriteAffineWriteDispatch` decompiled, session's scan complete, 2026-09-21
+
+`sub_0807CDE0` -> `SpriteAffineWriteDispatch` (new file
+`src/sprite_affine_matrix.c`), a `switch`-based dispatcher over the three
+still-assembly `SpriteAffineWrite{Normal,Mirrored,AlternateAxis}` functions
+(their own byte match remains a documented, correctly-deferred blocker;
+this caller matches independently by only needing their names and
+signatures). `audit_pret_standards.py` reports 0 errors/0 warnings/18
+exceptions; `audit_provenance.py` reports 1835/1835; `make compare`
+confirms the byte-identical ROM. Matching both the register allocation and
+instruction order simultaneously required fresh, separately-named locals
+for all three narrowed parameters (not reusing parameter names, not
+narrowing the stack-passed fourth argument either first or via a deferred
+second statement) narrowed in the ROM's own order; see
+`docs/decompilation-notes.md`'s "`SpriteAffineWriteDispatch`" entry for
+the full iteration log. This closes out every small standalone-function
+candidate this session's `asm/code/*.s` scan turned up
+(`_close_r`/`_fstat_r`/`_write_r`/`_lseek_r`/`_read_r`/`_sbrk_r`/
+`__malloc_lock`/`__malloc_unlock`/`ActorPartInitTask`/
+`RuntimeActorInitFields338To344`/`SpriteAffineWriteDispatch`, eleven
+decompiles from eight commits this session).

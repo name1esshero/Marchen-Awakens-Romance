@@ -4396,7 +4396,7 @@ _0807C68C:
 	str r5, [sp, #0]
 	adds r0, r4, #0
 	adds r3, r6, #0
-	bl sub_0807CDE0
+	bl SpriteAffineWriteDispatch
 	.global _0807C6A0
 _0807C6A0:
 	movs r0, #31
@@ -5074,7 +5074,7 @@ _0807CB40:
 	str r5, [sp, #0]
 	adds r0, r4, #0
 	adds r3, r6, #0
-	bl sub_0807CDE0
+	bl SpriteAffineWriteDispatch
 	.global _0807CB54
 _0807CB54:
 	movs r0, #31
@@ -5329,82 +5329,7 @@ _0807CCE0:
 
 @ 07CDD4..07CDE0 is decompiled as SpriteEngineGetFlags14(); see src/decompiled.json
 
-	.section .rom.0007CDE0, "ax"
-	.syntax unified
-
-	.thumb_func
-	.thumb
-	.global sub_0807CDE0
-sub_0807CDE0:
-	push {r4, r5, lr}
-	adds r4, r0, #0
-	ldr r0, [sp, #12]
-	lsls r2, r2, #16
-	asrs r2, r2, #16
-	lsls r3, r3, #16
-	asrs r3, r3, #16
-	lsls r0, r0, #16
-	asrs r5, r0, #16
-	cmp r1, #1
-	beq _0807CE18
-	cmp r1, #1
-	bgt _0807CE00
-	cmp r1, #0
-	beq _0807CE0A
-	b _0807CE48
-	.global _0807CE00
-_0807CE00:
-	cmp r1, #2
-	beq _0807CE26
-	cmp r1, #3
-	beq _0807CE34
-	b _0807CE48
-	.global _0807CE0A
-_0807CE0A:
-	adds r0, r4, #0
-	adds r1, r2, #0
-	adds r2, r3, #0
-	adds r3, r5, #0
-	.2byte 0xF000
-	.4byte 0xE017F81D
-	.global _0807CE18
-_0807CE18:
-	adds r0, r4, #0
-	adds r1, r2, #0
-	adds r2, r3, #0
-	adds r3, r5, #0
-	.2byte 0xF000
-	.byte 0x62
-	.byte 0xF8
-	b _0807CE48
-	.global _0807CE26
-_0807CE26:
-	adds r0, r4, #0
-	adds r1, r2, #0
-	adds r2, r3, #0
-	adds r3, r5, #0
-	.2byte 0xF000
-	.4byte 0xE009F8A9
-	.global _0807CE34
-_0807CE34:
-	movs r0, #128
-	lsls r0, r0, #4
-	adds r1, r2, r0
-	lsls r1, r1, #16
-	asrs r1, r1, #16
-	adds r0, r4, #0
-	adds r2, r3, #0
-	adds r3, r5, #0
-	.2byte 0xF000
-	.byte 0x04
-	.byte 0xF8
-	.global _0807CE48
-_0807CE48:
-	pop {r4, r5}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
+@ 07CDE0..07CE50 is decompiled as SpriteAffineWriteDispatch(); see src/decompiled.json
 
 	.section .rom.0007CE50, "ax"
 	.syntax divided

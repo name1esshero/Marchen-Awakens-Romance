@@ -3437,3 +3437,55 @@ resource-name constants are: added `.global gResourceAWinG` /
 gResourceAWinG[];` from C instead of writing the string inline.
 
 `audit_provenance.py` now reports 1834/1834.
+
+## `SpriteAffineWriteDispatch` (2026-09-21)
+
+The last of the four small-standalone-function candidates identified by
+this session's `asm/code/*.s` scan (`sub_080868BC` through `sub_0807CDE0`).
+`sub_0807CDE0` (112 bytes) is a plain `switch (mode)` dispatcher: it
+narrows `angle`/`scaleX`/`scaleY` to `s16` once, then forwards to one of
+`SpriteAffineWriteNormal`/`SpriteAffineWriteMirrored`/
+`SpriteAffineWriteAlternateAxis` -- mode 3 calls `SpriteAffineWriteNormal`
+again but with `angle` rotated a half turn first (`+2048` of the 4096-unit
+angle space used throughout `src/nonmatching/sprite_affine_matrix.c`).
+Any other mode value falls straight through to the epilogue. All three
+call targets are the ones already investigated (and correctly left in
+assembly) earlier this session in `sprite_affine_matrix.c`'s own header
+comment -- their own byte match remains blocked, but this *caller* matches
+independently: it only needs their names and signatures (recovered from
+`src/nonmatching/sprite_affine_matrix.c`'s existing declarations), not
+their bodies. New file `src/sprite_affine_matrix.c` holds just the
+dispatcher, `extern`-declaring the three still-assembly functions rather
+than duplicating or colliding with the nonmatching candidates (`src/nonmatching/*.c`
+is excluded from the default build, only compiled under `NONMATCHING=1`
+for `make check-modern`, so there is no link conflict either way).
+
+Getting the register allocation *and* instruction order both right at once
+took real iteration -- the two pulled in opposite directions depending on
+how `scaleY` (the fourth, stack-passed argument) was captured:
+
+- Narrowing `scaleY` into its own local *immediately* (`y = (s16)scaleY;`,
+  as its own statement early in the function) reproduced the ROM's actual
+  register choice (`index`->r4, `scaleY`->r5) but put the narrowing
+  instructions in the wrong order (scaleY narrowed before angle/scaleX).
+- Deferring the narrow (`y = scaleY;` early, `y = (s16)y;` as a separate,
+  later statement) reproduced the right *order* but flipped the registers
+  back (`index`->r5, `scaleY`->r4).
+- The fix needed both: separate named locals for *all three* narrowed
+  values (`a`, `x`, `y`, not reusing the parameter names), each narrowed
+  with its own single combined statement, declared and narrowed in the
+  same order the ROM computes them (angle, then scaleX, then scaleY last,
+  even though scaleY's raw stack load happens first for scheduling
+  reasons). Reusing the parameter names for `a`/`x` (as in earlier
+  attempts) or narrowing `y` before `a`/`x` both independently broke the
+  match; only the combination of fresh locals *and* the ROM's own
+  narrowing order for all three at once reproduced it exactly.
+
+Also needed the same `AT(<same address>) const u8 ...Tail[2] = {0, 0};`
+trailing-padding fix as `ActorPartInitTask` earlier this session (the
+function's own last instruction doesn't land on a 4-byte boundary, and the
+assembler's default alignment filler is a `nop`, not the ROM's literal zero
+bytes).
+
+`audit_provenance.py` now reports 1835/1835. This closes out every small
+standalone-function candidate this session's initial scan turned up.

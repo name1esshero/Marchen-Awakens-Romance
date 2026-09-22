@@ -6792,6 +6792,12 @@
     "file": "src/sprite_engine_state.c"
   },
   {
+    "addr": "0807CDE0",
+    "size": 112,
+    "name": "SpriteAffineWriteDispatch",
+    "file": "src/sprite_affine_matrix.c"
+  },
+  {
     "addr": "0807D01C",
     "size": 20,
     "name": "SpriteEngineSetProjectionDivisor",
