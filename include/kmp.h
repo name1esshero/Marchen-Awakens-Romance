@@ -3,6 +3,8 @@
 #include "gba/types.h"
 
 #define KMP_TILE_SIZE 8
+#define KMP_VIEWPORT_SIDE 32
+#define KMP_VIEWPORT_TILE_COUNT (KMP_VIEWPORT_SIDE * KMP_VIEWPORT_SIDE)
 #define KMP_FIXED_SHIFT 16
 #define KMP_FIXED_ONE (1 << KMP_FIXED_SHIFT)
 
@@ -45,8 +47,18 @@ struct KmpViewport
     u8 reserved0B;
     u16 paletteBankOffset;          /* 0C: added to KMP destination palette bank */
     u16 tileIndexOffset;            /* 0E: added to each screen entry */
-    u32 unknown10, unknown14;
-    u32 widthFixed, heightFixed;     /* 18, 1C: 16.16 pixel dimensions */
+    s32 requestedXFixed, requestedYFixed; /* 10, 14: KmpRenderViewport inputs */
+    union
+    {
+        struct
+        {
+            u32 initialWidthFixed, initialHeightFixed;
+        } initial;
+        struct
+        {
+            s32 renderedXFixed, renderedYFixed;
+        } rendered;
+    } extentOrPosition;              /* 18, 1C: init values replaced by render */
     u32 clipX, clipY, clipWidth, clipHeight;
     u8 reserved30[0xCC];             /* complete viewport slot is 0xFC bytes */
 };

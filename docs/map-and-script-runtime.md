@@ -24,6 +24,37 @@ accepts neighboring attribute values 400–499 and 5400–5499 while constructin
 procedural connection mask. These ranges are confirmed for that generator path,
 not yet a complete collision dictionary for normal field movement.
 
+### KMP viewport and camera window
+
+`KmpRenderViewport` at `0x08002630` dispatches to the regular renderer when the
+signed mode byte is zero and to the affine renderer otherwise. The regular path
+at `0x08002650` rebuilds a 32×32 `u16` screen buffer (0x800 bytes): it clears
+the buffer, takes the selected plane offset from header +`0x9C` using the
+viewport's signed plane byte, then copies the map area under the requested
+scroll position. The fixed-point pixel coordinates become tile coordinates by
+arithmetic shift 19, equivalent to dividing 16.16 pixels by the 8-pixel tile
+size. Source rows and columns are clipped to the KMP dimensions; destination
+coordinates wrap modulo 32. Thus the screen buffer is a circular tile window,
+not a cropped bitmap of the whole map. Each copied tile word gets the combined
+palette-bank and tile-index offset `(paletteBankOffset << 12) |
+tileIndexOffset`, preserving the other source entry bits through 16-bit
+addition.
+
+The regular renderer writes its input X/Y pair to viewport offsets +`0x10` and
++`0x14`, and duplicates it at +`0x18` and +`0x1C`. `KmpInitViewport` initially
+puts `map width << 19` and `map height << 19` in the latter pair, so those words
+are phase-dependent storage: initial extents before the first render and the
+last rendered coordinates afterward. `struct KmpViewport` now represents that
+overlap as a union instead of claiming those fields remain dimensions. The
+meaning of the duplicate coordinate pair is still unknown. The affine renderer
+and final display submission path remain assembly; do not infer affine camera
+or layer behavior from this regular-path evidence.
+
+The readable model in `src/nonmatching/kmp_regular_viewport.c` is deliberately
+not linked. It records the recovered loop and coordinate transformations for
+tooling work while leaving the matching implementation in assembly. It must be
+compiled and compared before it can replace the ROM routine.
+
 The script VM is reached through two `+0x0C` pointers from IWRAM
 `0x0300611C`. Its current bytecode buffer is at VM offset `0x30`, instruction
 cursor at `0x44`, and downward-growing stack cursor at `0x84`.

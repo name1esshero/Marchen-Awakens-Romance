@@ -26,8 +26,8 @@ void KmpInitViewport(struct KmpViewport *view, const struct KmpHeader *data,
     view->background = background;
     view->plane = plane;
     view->screenBuffer = screen;
-    view->widthFixed = data->widthTiles << 19;
-    view->heightFixed = data->heightTiles << 19;
+    view->extentOrPosition.initial.initialWidthFixed = data->widthTiles << 19;
+    view->extentOrPosition.initial.initialHeightFixed = data->heightTiles << 19;
     view->clipX = 0;
     view->clipY = 0;
     view->clipWidth = data->widthTiles;
