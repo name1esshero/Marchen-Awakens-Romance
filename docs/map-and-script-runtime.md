@@ -122,6 +122,24 @@ separate engine behavior classes, not enough to call either range walkable,
 blocked, or a warp. The remaining state machine around `0x080130A0` is the
 next source of evidence for those meanings.
 
+The following dispatch points are now pinned down from the force-thumb flow
+in `asm/code/code_0100C0.s`. These are control-flow facts, not friendly
+attribute names:
+
+| Attribute condition | Observed result in the actor update |
+| --- | --- |
+| `100..199` | At `0x08013B92`, writes task mode `0x1000` at task offset `+0x14` and redispatches the actor state machine. |
+| `300..350` | At `0x08013BA4`, calls `sub_08071538` with the attribute and two actor/runtime coordinates; a nonzero return selects task mode `0x2000`. |
+| `400..499` or `5400..5499` | At `0x08013AC2` and `0x08013C10`, stores the current directional hit-bound probe through `MapGenerationSetProbeDirection`. |
+| `500..599` | At `0x0801394A`, when the preceding actor-mode byte allows this path, selects task mode `0x7000` and clears task payload byte `+3`. A later check at `0x08013C48` uses the same range under additional actor-state conditions before calling two unresolved map-generation routines and selecting mode `0x3000`. |
+
+The task-mode values above are copied from the halfword writes and call
+arguments. They identify branches for future tracing; they do not by
+themselves prove concepts such as doors, stairs, blockers, or map exits. The
+`300..350` helper is only partially understood: its exact-value dispatch
+includes attributes `301..304`, but its neighboring generated-grid inputs
+and the resulting map-state updates still need to be decoded together.
+
 ### Procedural map carving grid
 
 `sub_08070238` builds a temporary row-major byte grid whose dimensions are
