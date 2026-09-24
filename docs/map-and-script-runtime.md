@@ -122,6 +122,33 @@ separate engine behavior classes, not enough to call either range walkable,
 blocked, or a warp. The remaining state machine around `0x080130A0` is the
 next source of evidence for those meanings.
 
+### Procedural map carving grid
+
+`sub_08070238` builds a temporary row-major byte grid whose dimensions are
+16-bit width and height fields. It clears each cell to zero, seeds a starting
+cell, then chooses cardinal directions and advances two cells at a time. The
+probe helpers at `0x080718A0` and `0x08071848` are represented as readable,
+non-linked C in `src/nonmatching/generated_map_carving_probe.c`.
+
+The directional probe checks exactly two cells away. East and south require
+the current column or row to be strictly less than the corresponding
+dimension minus three; west and north require the coordinate to be greater
+than two. In each case, the destination byte must still be zero. The
+four-direction helper tests east, south, west, then north and returns as soon
+as one direction qualifies. Its caller retries a selected direction until a
+qualifying destination is found, then marks the intervening/destination cells
+and continues from that destination. This is direct evidence of a
+two-cell-step procedural corridor-carving process with a protected outer
+margin. It does not establish the visual tile IDs or every later byte-grid
+state; a subsequent pass converts this work grid into packed per-cell
+generation records and selects map attributes.
+
+The C file is an explanatory model, not yet a replacement: it is outside the
+matching build, and the original routines remain in assembly pending an
+instruction-level comparison. The bounds assume the generator's valid,
+nonzero dimensions, as enforced by its callers; the probe itself does not
+guard division by zero or malformed grid sizes.
+
 ### Moving-entity overlap query
 
 The field actor update path calls `sub_08018A9C` before committing a
