@@ -623,8 +623,10 @@ extern u8 gIwramBaseRectY[];
 extern u8 gIwramBaseRectWidth[];
 extern u8 gIwramBaseRectHeight[];
 
-/** Native script command: forward two arguments to RuntimeSetFieldE48() and
- * RuntimeSetFieldE4A(). @return Always 1. */
+/** Native registry entry 45 is named CameraMode. It forwards its two
+ * arguments to signed-byte runtime fields +0xE48 and +0xE4A. Their consumers
+ * are not yet identified, so this records the script-facing operation without
+ * assigning meanings to either value. @return Always 1. */
 AT("0001234C") s32 ScriptNativeSetRuntimePair(u32 count, const s32 *args,
                                                 s32 *result)
 {

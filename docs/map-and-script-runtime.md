@@ -50,6 +50,15 @@ meaning of the duplicate coordinate pair is still unknown. The affine renderer
 and final display submission path remain assembly; do not infer affine camera
 or layer behavior from this regular-path evidence.
 
+The script-native registry labels command 45 `CameraMode`. Its handler
+(`ScriptNativeSetRuntimePair`, `0x0801234C`) forwards argument 0 and argument 1
+to setters for signed-byte fields at secondary-runtime offsets +`0xE48` and
++`0xE4A`; the getters sign-extend those bytes. This proves scripts configure a
+two-value camera-mode state, but the code traced so far does not identify the
+values' meanings or show that they are the world-camera coordinates at
+`0x03003BD4`/`0x03003BD8`. Those coordinates remain a separate renderer input
+until a consumer connects the two systems.
+
 The readable model in `src/nonmatching/kmp_regular_viewport.c` is deliberately
 not linked. It records the recovered loop and coordinate transformations for
 tooling work while leaving the matching implementation in assembly. It must be
