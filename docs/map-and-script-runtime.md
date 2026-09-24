@@ -59,3 +59,25 @@ operations on the secondary allocation published at IWRAM `0x03004020`,
 including three buffer addresses and an indexed record whose stride is 1,672
 bytes. Names remain offset-based where the underlying gameplay role is not yet
 proven.
+
+## Field actor input and direction
+
+The large field actor update routine beginning at `0x080130A0` probes
+`MapAttributeProbeDirection` using the actor's position and hit bounds. Its
+direction-selection helper at `0x08017D48` reads the held GBA direction keys
+through `KeyInputAnyHeld`. The readable candidate in
+`src/nonmatching/actor_direction_update.c` records its confirmed behavior:
+up/down take precedence over left/right, combined keys produce eight-way move
+codes 1 through 8, facing is a separate four-way value, and some paths also
+write an auxiliary byte with 3 or 7. No-key input clears the movement code and
+returns zero. The meaning of that auxiliary byte and the map attribute classes
+tested by the parent movement routine still need confirmation from more of
+that caller's control flow.
+
+The actor update routine also tests the sampled KMP attribute against
+`500..599` and `5400..5499` as distinct branches. The latter range is already
+known from the procedural connection-mask helper, while the actor routine
+proves both ranges reach special movement handling. This is evidence for
+separate engine behavior classes, not enough to call either range walkable,
+blocked, or a warp. The remaining state machine around `0x080130A0` is the
+next source of evidence for those meanings.

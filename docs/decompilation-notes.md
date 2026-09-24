@@ -2791,6 +2791,46 @@ and addition-order variants were tried; none reproduced it. Left as `extern
 s16 *sub_080099E0(...)` exactly as it was, per this project's rule against
 forcing a register hint into the matching build.
 
+## Actor state fields at `0x350` (2026-09-24)
+
+The nearby routines `sub_08009F04` and `sub_08009F44` operate on the same
+actor-indexed record used by the existing `RuntimeActor*` accessors. Their
+caller sequences pass an actor index in r0; the functions multiply it by
+1672, then access offsets `0x350`, `0x351`, `0x352`, and `0x354`. The first
+routine sets `0x350` to one, stores the low byte of r1 at `0x351`, and clears
+the word at `0x354`. The second clears the byte at `0x350`, halfword at
+`0x352`, byte at `0x351`, and word at `0x354`. This supports an eight-byte
+record view but does not establish the fields' gameplay meanings.
+
+Readable candidates are in `src/nonmatching/runtime_actor_state_350.c`.
+The field offsets and store order match the disassembly. The candidates remain
+nonmatching: straightforward base reuse emits a different register layout;
+recomputing the base for each typed field access introduces extra callee-saved
+registers for the constants. Neither difference has a source-level explanation
+yet, so the ROM implementations remain assembled. The candidates make the
+confirmed memory behavior available to later caller and layout analysis
+without claiming a completed C match.
+
+## Field actor direction selection (2026-09-24)
+
+`sub_08017D48`, called from the field actor update routine at `0x080130A0`,
+translates held GBA direction keys into movement state. Cross-reference its
+eight calls to `KeyInputAnyHeld` against that matching function at `0x0807A160`:
+the masks are `KEY_UP`, `KEY_LEFT`, `KEY_RIGHT`, and `KEY_DOWN`, with vertical
+input checked first. The second and third pointer arguments receive an
+eight-way movement code and an auxiliary code; the first points to a signed
+four-way facing value. Movement codes are 1 through 8 clockwise from up,
+while zero means no direction. Diagonal input preserves the matching horizontal
+facing when applicable; otherwise it changes facing to the vertical direction.
+The helper's return is one for any direction and zero for none.
+
+This recovers the input-to-movement state mapping but not the full movement
+system. Its auxiliary code values (3 and 7), the next-stage velocity or motion
+selection, and the movement routine's interpretation of KMP attributes remain
+open. The readable candidate is kept outside the build in
+`src/nonmatching/actor_direction_update.c`; more caller analysis is required
+before it can replace the ROM routine.
+
 ## Test-infrastructure note: struct alignment differs between host and target
 
 Fixing `tests/test_hit_region.py` after `GameStateGetHitRegion` moved from a
