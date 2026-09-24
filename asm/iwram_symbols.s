@@ -13,6 +13,8 @@
 .set gMapGenerationSeed, 0x03004044
 .global gKmpViewports
 .set gKmpViewports, 0x03003BC4
+.global gFieldCameraOffset
+.set gFieldCameraOffset, 0x00003BD4
 .global gMapStateOffset
 .set gMapStateOffset, 0x000032F4
 .global gSecondaryRuntime

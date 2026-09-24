@@ -27,12 +27,27 @@ handles property 6. The sprite lookup at 080106C8 returns
 | 24 | Pointer to the higher-level render object |
 
 08010730 copies X/Y to render-object offsets 3E/40. The visibility check at
-0800E518 subtracts the signed integer halves of camera coordinates at
-03003BD4/03003BD8 and accepts `-64 < x <= 303`, `-64 < y <= 223`.
+0800E518 first sign-truncates each supplied coordinate to 16 bits, then
+subtracts the signed whole-pixel halves at IWRAM 03003BD6/03003BDA. It returns
+zero for visible and -1 for culled, with the exact bounds `-64 < x <= 303`,
+`-64 < y <= 223` after camera subtraction. This is the 240×160 field viewport
+expanded by a 64-pixel margin on every side; sprites are retained briefly while
+their cells enter or leave the display. The camera values are a fixed-point
+pair at 03003BD4/03003BD8, and the culling helper reads their integer halves.
+Its callers at 0800D720 and 080107BC skip renderer-object setup when it returns
+nonzero.
 The object traversal at 08008AFC subtracts that camera again to produce the
 NCD instance's screen X/Y at offsets 18/1A, unless object flag 3C bit 0
 requests camera-independent positioning. Therefore script X/Y are pixel
 positions, but not every object must be interpreted as world-relative.
+
+`src/nonmatching/sprite_visibility.c` gives this small culling routine a
+readable C model, and `asm/iwram_symbols.s` names the camera-pair offset used
+with the IWRAM base. A naturally expressed matching-build implementation had
+the correct 0x54-byte section size but emitted different instructions and
+changed neighboring split-assembly output, so the ROM routine remains in
+assembly. The model is not evidence that camera-mode script values control
+these coordinates; that connection remains untraced.
 
 The editor labels these two properties and can project the selected assignment
 as a yellow axis guide. It deliberately does not pair arbitrary nearby X/Y
