@@ -2831,6 +2831,31 @@ open. The readable candidate is kept outside the build in
 `src/nonmatching/actor_direction_update.c`; more caller analysis is required
 before it can replace the ROM routine.
 
+## Field actor overlap selection (2026-09-24)
+
+`sub_08018A9C` receives two output pointers, a four-way step direction, signed
+X/Y coordinates, and the actor's corner-offset bounds. It applies a four-pixel
+cardinal step, then scans 32 records from each of two collections. The first
+collection pairs `GameStateGetRecord610(i)` (44-byte stride; position at +10/+12)
+with `GameStateGetRecord3F3C(i)` (eight-byte rectangle). The second pairs
+`GameStateGetRecord0B90(i)` (script-sprite position at +10/+12 and active /
+hit-bounds bits) with `GameStateGetRecord403C(i)` (eight-byte rectangle).
+Rectangles overlap only when all four comparisons are strict, so touching an
+edge is not a hit. Among overlaps, `CalculatePointDistance` selects the nearest
+candidate. The comparison accepts equal distances, making later records win a
+tie; the second collection is searched last and therefore wins ties against
+the first. The first output is zero for the +0x610 collection and one for the
+script-sprite collection. The second output is the winning index. Neither is
+written when no candidate is found.
+
+The candidate in `src/nonmatching/field_actor_collision_query.c` expresses that
+behavior with named input types and byte offsets. It remains outside the build:
+the corresponding routine has not yet been matched. The +0x3F3C and +0x403C
+rectangles are parallel to the candidate records, but the exact ownership and
+relationship to the script sprite's embedded `HitBounds` are still unknown.
+This is entity-overlap evidence for the field movement path, not evidence about
+KMP collision attributes.
+
 ## Test-infrastructure note: struct alignment differs between host and target
 
 Fixing `tests/test_hit_region.py` after `GameStateGetHitRegion` moved from a

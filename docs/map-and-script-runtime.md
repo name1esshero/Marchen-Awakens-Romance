@@ -81,3 +81,21 @@ proves both ranges reach special movement handling. This is evidence for
 separate engine behavior classes, not enough to call either range walkable,
 blocked, or a warp. The remaining state machine around `0x080130A0` is the
 next source of evidence for those meanings.
+
+### Moving-entity overlap query
+
+The field actor update path calls `sub_08018A9C` before committing a
+four-pixel cardinal step. The readable candidate in
+`src/nonmatching/field_actor_collision_query.c` records the confirmed query:
+it translates the actor's signed `HitBounds` by the proposed step, then scans
+two 32-entry collections. One pairs 44-byte game-state records at `+0x610`
+with eight-byte rectangles at `+0x3F3C`; the other pairs script-sprite records
+at `+0x0B90` with eight-byte rectangles at `+0x403C`. Both require the observed
+enable bits, use strict rectangle overlap (touching edges do not count), and
+select the smallest Euclidean distance from the stepped actor position to the
+candidate position. Equal distances replace the prior result, so later entries
+and then the script-sprite collection win ties. On success the function writes
+the collection selector and entry index; on failure it leaves both outputs
+untouched. The relationship between the two rectangle tables and the embedded
+script-sprite `HitBounds` field still needs investigation. This query detects
+entity overlap; it does not decode the separate KMP tile-attribute behavior.

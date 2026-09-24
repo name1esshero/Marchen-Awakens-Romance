@@ -14,6 +14,7 @@
 #define ACTOR_RECORD_SIZE 1672
 #define ACTOR_STATE_350_OFFSET 0x350
 
+/** Eight consecutive bytes cleared together by the actor-state reset path. */
 struct RuntimeActorState350
 {
     u8 field350;
