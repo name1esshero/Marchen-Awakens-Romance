@@ -297,7 +297,7 @@ _080703A0:
 	adds r0, r6, #0
 	ldr r1, [sp, #288]
 	adds r2, r4, #0
-	bl sub_080718A0
+	bl GeneratedMapCanCarveTwoCellStep
 	lsls r0, r0, #24
 	cmp r0, #0
 	beq _080703A0
@@ -387,7 +387,7 @@ _08070436:
 	.global sub_0807043A
 sub_0807043A:
 	adds r2, r4, #0
-	bl sub_08071848
+	bl GeneratedMapHasCarveDirection
 	lsls r0, r0, #24
 	cmp r0, #0
 	bne _0807039C
@@ -3282,308 +3282,14 @@ _0807183C:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_08071848
-sub_08071848:
-	push {r4, r5, r6, lr}
-	adds r4, r0, #0
-	adds r5, r1, #0
-	adds r6, r2, #0
-	movs r3, #0
-	bl sub_080718A0
-	lsls r0, r0, #24
-	cmp r0, #0
-	bne _08071896
-	adds r0, r4, #0
-	adds r1, r5, #0
-	adds r2, r6, #0
-	movs r3, #1
-	bl sub_080718A0
-	lsls r0, r0, #24
-	cmp r0, #0
-	bne _08071896
-	adds r0, r4, #0
-	adds r1, r5, #0
-	adds r2, r6, #0
-	movs r3, #2
-	bl sub_080718A0
-	lsls r0, r0, #24
-	cmp r0, #0
-	bne _08071896
-	adds r0, r4, #0
-	adds r1, r5, #0
-	adds r2, r6, #0
-	movs r3, #3
-	bl sub_080718A0
-	lsls r0, r0, #24
-	cmp r0, #0
-	bne _08071896
-	movs r0, #0
-	b _08071898
-	.global _08071896
-_08071896:
-	movs r0, #1
-	.global _08071898
-_08071898:
-	pop {r4, r5, r6}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 071848..0718A0 is decompiled as GeneratedMapHasCarveDirection(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_080718A0
-sub_080718A0:
-	push {r4, r5, r6, r7, lr}
-	adds r4, r0, #0
-	adds r7, r1, #0
-	adds r5, r2, #0
-	lsls r3, r3, #24
-	lsrs r3, r3, #24
-	adds r0, r3, #0
-	cmp r3, #1
-	beq _080718DE
-	cmp r3, #1
-	bgt _080718BC
-	cmp r3, #0
-	beq _080718C6
-	b _0807192C
-	.global _080718BC
-_080718BC:
-	cmp r0, #2
-	beq _080718F8
-	cmp r0, #3
-	beq _0807190C
-	b _0807192C
-	.global _080718C6
-_080718C6:
-	ldrh r4, [r4, #0]
-	adds r0, r5, #0
-	adds r1, r4, #0
-	bl __umodsi3
-	adds r1, r0, #0
-	subs r4, #3
-	cmp r1, r4
-	bcs _0807192C
-	adds r0, r5, r7
-	ldrb r0, [r0, #2]
-	b _08071924
-	.global _080718DE
-_080718DE:
-	ldrh r6, [r4, #0]
-	adds r0, r5, #0
-	adds r1, r6, #0
-	bl __udivsi3
-	adds r1, r0, #0
-	ldrh r0, [r4, #2]
-	subs r0, #3
-	cmp r1, r0
-	bcs _0807192C
-	lsls r0, r6, #1
-	adds r0, r0, r5
-	b _08071920
-	.global _080718F8
-_080718F8:
-	ldrh r1, [r4, #0]
-	adds r0, r5, #0
-	bl __umodsi3
-	adds r1, r0, #0
-	cmp r1, #2
-	bls _0807192C
-	adds r0, r5, r7
-	subs r0, #2
-	b _08071922
-	.global _0807190C
-_0807190C:
-	ldrh r4, [r4, #0]
-	adds r0, r5, #0
-	adds r1, r4, #0
-	bl __udivsi3
-	adds r1, r0, #0
-	cmp r1, #2
-	bls _0807192C
-	lsls r0, r4, #1
-	subs r0, r5, r0
-	.global _08071920
-_08071920:
-	adds r0, r7, r0
-	.global _08071922
-_08071922:
-	ldrb r0, [r0, #0]
-	.global _08071924
-_08071924:
-	cmp r0, #0
-	bne _0807192C
-	movs r0, #1
-	b _0807192E
-	.global _0807192C
-_0807192C:
-	movs r0, #0
-	.global _0807192E
-_0807192E:
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
+@ 0718A0..071934 is decompiled as GeneratedMapCanCarveTwoCellStep(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_08071934
-sub_08071934:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r9
-	mov r6, r8
-	push {r6, r7}
-	mov r8, r0
-	adds r7, r1, #0
-	lsls r2, r2, #16
-	lsrs r6, r2, #16
-	lsls r3, r3, #24
-	lsrs r3, r3, #24
-	mov r9, r3
-	movs r4, #0
-	ldrh r5, [r0, #0]
-	adds r0, r6, #0
-	adds r1, r5, #0
-	bl __umodsi3
-	lsls r0, r0, #16
-	lsrs r2, r0, #16
-	cmp r2, #0
+@ 071934..071A20 is decompiled as GeneratedMapGetPathNeighborShape(); see src/decompiled.json
 
-	.thumb_func
-	.thumb
-	.global sub_0807195C
-sub_0807195C:
-	beq _0807196A
-	adds r0, r6, r7
-	subs r0, #1
-	ldrb r1, [r0, #0]
-	negs r0, r1
-	orrs r0, r1
-	lsrs r4, r0, #31
-	.global _0807196A
-_0807196A:
-	subs r0, r5, #1
-	cmp r2, r0
-	bcs _0807197C
-	adds r0, r6, r7
-	ldrb r0, [r0, #1]
-	cmp r0, #0
-	beq _0807197C
-	movs r0, #16
-	orrs r4, r0
-	.global _0807197C
-_0807197C:
-	adds r0, r6, #0
-	adds r1, r5, #0
-	bl __udivsi3
-	lsls r0, r0, #16
-	lsrs r2, r0, #16
-	cmp r2, #0
-	beq _0807199C
-	subs r0, r6, r5
-	adds r0, r7, r0
-	ldrb r0, [r0, #0]
-	cmp r0, #0
-	beq _0807199C
-	movs r0, #128
-	lsls r0, r0, #1
-	orrs r4, r0
-	.global _0807199C
-_0807199C:
-	mov r1, r8
-	ldrh r0, [r1, #2]
-	subs r0, #1
-	cmp r2, r0
-	bcs _080719B6
-	adds r0, r6, r5
-	adds r0, r7, r0
-	ldrb r0, [r0, #0]
-	cmp r0, #0
-	beq _080719B6
-	movs r0, #128
-	lsls r0, r0, #5
-	orrs r4, r0
-	.global _080719B6
-_080719B6:
-	mov r0, r9
-	cmp r0, #0
-	beq _080719C0
-	adds r0, r4, #0
-	b _08071A14
-	.global _080719C0
-_080719C0:
-	movs r0, #136
-	lsls r0, r0, #1
-	cmp r4, r0
-	beq _08071A06
-	cmp r4, r0
-	bhi _080719D8
-	cmp r4, #17
-	beq _080719FA
-	subs r0, #15
-	cmp r4, r0
-	beq _080719FE
-	b _08071A12
-	.global _080719D8
-_080719D8:
-	ldr r0, _080719EC
-	cmp r4, r0
-	beq _08071A0A
-	cmp r4, r0
-	bhi _080719F0
-	subs r0, #15
-	cmp r4, r0
-	beq _08071A02
-	b _08071A12
-	.byte 0x00
-	.byte 0x00
-	.global _080719EC
-_080719EC:
-	.4byte 0x00001010
-	.global _080719F0
-_080719F0:
-	movs r0, #136
-	lsls r0, r0, #5
-	cmp r4, r0
-	beq _08071A0E
-	b _08071A12
-	.global _080719FA
-_080719FA:
-	movs r0, #4
-	b _08071A14
-	.global _080719FE
-_080719FE:
-	movs r0, #6
-	b _08071A14
-	.global _08071A02
-_08071A02:
-	movs r0, #7
-	b _08071A14
-	.global _08071A06
-_08071A06:
-	movs r0, #5
-	b _08071A14
-	.global _08071A0A
-_08071A0A:
-	movs r0, #8
-	b _08071A14
-	.global _08071A0E
-_08071A0E:
-	movs r0, #3
-	b _08071A14
-	.global _08071A12
-_08071A12:
-	movs r0, #9
-	.global _08071A14
-_08071A14:
-	pop {r3, r4}
-	mov r8, r3
-	mov r9, r4
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
+	.section .rom.00071A20, "ax"
+	.syntax unified
 
 	.thumb_func
 	.thumb
@@ -3744,7 +3450,7 @@ _08071B14:
 	mov r0, r8
 	ldr r1, [sp, #0]
 	movs r3, #0
-	bl sub_08071934
+	bl GeneratedMapGetPathNeighborShape
 	adds r4, r0, #0
 	cmp r4, #3
 	bne _08071BEA

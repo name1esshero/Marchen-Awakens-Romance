@@ -145,8 +145,9 @@ and the resulting map-state updates still need to be decoded together.
 `sub_08070238` builds a temporary row-major byte grid whose dimensions are
 16-bit width and height fields. It clears each cell to zero, seeds a starting
 cell, then chooses cardinal directions and advances two cells at a time. The
-probe helpers at `0x080718A0` and `0x08071848` are represented as readable,
-non-linked C in `src/nonmatching/generated_map_carving_probe.c`.
+probe helpers `GeneratedMapCanCarveTwoCellStep` (`0x080718A0`) and
+`GeneratedMapHasCarveDirection` (`0x08071848`) are matching C in
+`src/mapping.c`.
 
 The directional probe checks exactly two cells away. East and south require
 the current column or row to be strictly less than the corresponding
@@ -161,11 +162,21 @@ margin. It does not establish the visual tile IDs or every later byte-grid
 state; a subsequent pass converts this work grid into packed per-cell
 generation records and selects map attributes.
 
-The C file is an explanatory model, not yet a replacement: it is outside the
-matching build, and the original routines remain in assembly pending an
-instruction-level comparison. The bounds assume the generator's valid,
-nonzero dimensions, as enforced by its callers; the probe itself does not
-guard division by zero or malformed grid sizes.
+The next helper, `GeneratedMapGetPathNeighborShape` (`0x08071934`), inspects the four adjacent byte states and
+sets bits west=`0x0001`, east=`0x0010`, north=`0x0100`, and south=`0x1000`.
+When called with a nonzero mode it returns that raw mask. In the generator's
+shape mode, the exact two-neighbor masks become codes: north+south `3`,
+west+east `4`, east+north `5`, west+north `6`, west+south `7`, and
+east+south `8`; any other mask becomes `9`. `sub_08071A20` calls this shape
+mode while converting the byte grid into 32-bit per-cell records. This
+recovers the corridor topology encoding, but those shape codes are not
+themselves visual tile IDs; later code still combines them with generated
+room data and map attributes. The direction and neighbor values are named
+in `include/map_generation.h`.
+
+All three helpers now compile byte-for-byte from `src/mapping.c`. The bounds
+assume the generator's valid, nonzero dimensions, as enforced by its callers;
+the probes themselves do not guard division by zero or malformed grid sizes.
 
 ### Moving-entity overlap query
 

@@ -1074,6 +1074,133 @@ AT("0007017C") void GeneratedMapResize(void *state, u32 width, u32 height)
 }
 
 /**
+ * @brief Test whether any of the four two-cell carve directions is open.
+ * @param map Generated map supplying the grid width and height.
+ * @param cells Row-major byte-state grid used while carving corridors.
+ * @param index Row-major index of the current cell.
+ * @return TRUE as soon as east, south, west, or north (tested in that order)
+ *         can be carved; otherwise FALSE.
+ */
+AT("00071848")
+bool8 GeneratedMapHasCarveDirection(const struct GeneratedFieldMap *map,
+                                    const u8 *cells, u32 index)
+{
+    if (GeneratedMapCanCarveTwoCellStep(map, cells, index, GENERATED_MAP_DIRECTION_EAST))
+        return TRUE;
+    if (GeneratedMapCanCarveTwoCellStep(map, cells, index, GENERATED_MAP_DIRECTION_SOUTH))
+        return TRUE;
+    if (GeneratedMapCanCarveTwoCellStep(map, cells, index, GENERATED_MAP_DIRECTION_WEST))
+        return TRUE;
+    if (GeneratedMapCanCarveTwoCellStep(map, cells, index, GENERATED_MAP_DIRECTION_NORTH))
+        return TRUE;
+    return FALSE;
+}
+AT("00071848") const u8 GeneratedMapHasCarveDirectionTail[2] = {0, 0};
+
+/**
+ * @brief Test whether a two-cell cardinal carve reaches an unused grid cell.
+ * @param map Generated map supplying the grid width and height.
+ * @param cells Row-major byte-state grid; zero denotes an uncarved cell.
+ * @param index Row-major index of the current cell.
+ * @param direction One of the GENERATED_MAP_DIRECTION_* values.
+ * @return TRUE if the destination two cells away stays inside the
+ *         three-cell interior margin and is still zero; otherwise FALSE.
+ * Width is read from the map at each use; the ROM keeps one value per case.
+ */
+AT("000718A0")
+bool8 GeneratedMapCanCarveTwoCellStep(const struct GeneratedFieldMap *map,
+                                      const u8 *cells, u32 index, u8 direction)
+{
+    u32 coordinate;
+    u8 cell;
+
+    switch (direction)
+    {
+    case GENERATED_MAP_DIRECTION_EAST:
+        coordinate = index % map->width;
+        if (coordinate >= map->width - GENERATED_MAP_CARVE_MARGIN)
+            return FALSE;
+        cell = cells[index + GENERATED_MAP_CARVE_STEP];
+        break;
+    case GENERATED_MAP_DIRECTION_SOUTH:
+        coordinate = index / map->width;
+        if (coordinate >= map->height - GENERATED_MAP_CARVE_MARGIN)
+            return FALSE;
+        cell = cells[index + map->width * GENERATED_MAP_CARVE_STEP];
+        break;
+    case GENERATED_MAP_DIRECTION_WEST:
+        coordinate = index % map->width;
+        if (coordinate <= GENERATED_MAP_CARVE_STEP)
+            return FALSE;
+        cell = cells[index - GENERATED_MAP_CARVE_STEP];
+        break;
+    case GENERATED_MAP_DIRECTION_NORTH:
+        coordinate = index / map->width;
+        if (coordinate <= GENERATED_MAP_CARVE_STEP)
+            return FALSE;
+        cell = cells[index - map->width * GENERATED_MAP_CARVE_STEP];
+        break;
+    default:
+        return FALSE;
+    }
+    if (cell != 0)
+        return FALSE;
+    return TRUE;
+}
+
+/**
+ * @brief Read a cell's nonzero cardinal neighbors and classify the pattern.
+ * @param map Generated map supplying the grid width and height.
+ * @param cells Row-major byte-state grid.
+ * @param index Row-major index of the cell being classified.
+ * @param returnNeighborMask When nonzero, return the raw GENERATED_MAP_NEIGHBOR_*
+ *        mask instead of a shape code.
+ * @return The raw mask when requested; otherwise a GENERATED_MAP_PATH_* code
+ *         (a pattern code, not a visual tile ID).
+ * The ROM compares against the last row/column with unsigned branches.
+ */
+AT("00071934")
+u32 GeneratedMapGetPathNeighborShape(const struct GeneratedFieldMap *map,
+                                     const u8 *cells, u16 index,
+                                     u8 returnNeighborMask)
+{
+    u32 neighborMask = 0;
+    u16 coordinate;
+
+    coordinate = index % map->width;
+    if (coordinate != 0 && cells[index - 1] != 0)
+        neighborMask |= GENERATED_MAP_NEIGHBOR_WEST;
+    if (coordinate < (u32)map->width - 1 && cells[index + 1] != 0)
+        neighborMask |= GENERATED_MAP_NEIGHBOR_EAST;
+    coordinate = index / map->width;
+    if (coordinate != 0 && cells[index - map->width] != 0)
+        neighborMask |= GENERATED_MAP_NEIGHBOR_NORTH;
+    if (coordinate < (u32)map->height - 1 && cells[index + map->width] != 0)
+        neighborMask |= GENERATED_MAP_NEIGHBOR_SOUTH;
+
+    if (returnNeighborMask)
+        return neighborMask;
+
+    switch (neighborMask)
+    {
+    case GENERATED_MAP_NEIGHBOR_WEST | GENERATED_MAP_NEIGHBOR_EAST:
+        return GENERATED_MAP_PATH_HORIZONTAL;
+    case GENERATED_MAP_NEIGHBOR_WEST | GENERATED_MAP_NEIGHBOR_NORTH:
+        return GENERATED_MAP_PATH_WEST_NORTH;
+    case GENERATED_MAP_NEIGHBOR_WEST | GENERATED_MAP_NEIGHBOR_SOUTH:
+        return GENERATED_MAP_PATH_WEST_SOUTH;
+    case GENERATED_MAP_NEIGHBOR_EAST | GENERATED_MAP_NEIGHBOR_NORTH:
+        return GENERATED_MAP_PATH_EAST_NORTH;
+    case GENERATED_MAP_NEIGHBOR_EAST | GENERATED_MAP_NEIGHBOR_SOUTH:
+        return GENERATED_MAP_PATH_EAST_SOUTH;
+    case GENERATED_MAP_NEIGHBOR_NORTH | GENERATED_MAP_NEIGHBOR_SOUTH:
+        return GENERATED_MAP_PATH_VERTICAL;
+    default:
+        return GENERATED_MAP_PATH_OTHER;
+    }
+}
+
+/**
  * @brief Clear nonzero generation entries associated with the current field.
  * The low byte of value08 gates this update; value2E identifies the field and
  * value26 holds the cleared state. Their broader gameplay meanings are pending.

@@ -3975,3 +3975,28 @@ variable-reuse hack was never load-bearing: it was standing in for the
 veneer recognition this session's insight now makes explicit. `make
 compare` confirms the byte-identical ROM; `audit_pret_standards.py` and
 `audit_provenance.py` both still report clean.
+
+## Corridor-carving helpers recovered (0x08071848..0x08071A20)
+
+The three generator helpers previously held only as an unlinked model in
+`src/nonmatching/generated_map_carving_probe.c` now compile byte-for-byte in
+`src/mapping.c`: `GeneratedMapHasCarveDirection` (88 bytes, including its
+zero tail), `GeneratedMapCanCarveTwoCellStep` (148), and
+`GeneratedMapGetPathNeighborShape` (236). The model's structure was wrong in
+ways the ROM makes plain: the first argument is the `GeneratedFieldMap`
+itself (width/height at +0/+2), the direction and mask-mode arguments are
+`u8` (callers and callee narrow them), the carve probe is a `switch` with one
+shared zero test after it, and the shape classifier narrows the grid index
+and both coordinates to `u16`.
+
+Two source facts completed the match. The carve probe reads `map->width` at
+each use rather than caching it (see "Library division calls do not force a
+field reload" in AGBCC_CODEGEN.md). The shape classifier compares each
+coordinate with `(u32)map->width - 1` / `(u32)map->height - 1`: the ROM uses
+unsigned `bcs` branches there, while the promoted `u16 - 1` expression is a
+signed comparison. The model file was removed; its direction, neighbor-bit,
+and shape-code values are now named in `include/map_generation.h`.
+`tests/test_map_carving.py` compiles the three functions straight out of
+`src/mapping.c` and checks them against an independent reference model on
+randomized grids of several sizes, including out-of-range directions.
+

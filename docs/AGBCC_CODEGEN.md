@@ -850,3 +850,23 @@ callback call keeps that value live in sl, and agbcc emits `_call_via_sl` at
 the existing `bx r10` veneer at 0x08080BE8. This evidence supersedes the
 earlier hypothesis that the high-register lifetime could not be expressed in
 natural C.
+
+### Library division calls do not force a field reload
+
+`GeneratedMapCanCarveTwoCellStep` (0x080718A0) divides by the map width in
+each switch case. Caching `width = map->width` in one function-wide local
+makes it a single pseudo that conflicts with the map pointer in the south
+case (which still needs `map->height`), so agbcc moves the map pointer to r6
+in every case. The ROM instead overwrites the map pointer with the width in
+the east, west, and north cases. Reading `map->width` directly at each use
+reproduces this: `__umodsi3` and `__udivsi3` are libcalls that agbcc knows
+cannot modify memory, so CSE reuses one load per case and gives each case its
+own short-lived width value. A cached local is not always the "simpler"
+source; when the ROM reuses the pointer register, try the direct field
+expression first.
+
+The same routine's shared `cmp r0, #0; bne false; movs r0, #1` tail comes
+from assigning the probed cell in each case and testing it once after the
+switch (`if (cell != 0) return FALSE; return TRUE;`). Returning the
+comparison inside each case, or writing `return cell == 0`, changes the
+block order.

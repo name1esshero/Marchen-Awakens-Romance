@@ -5460,6 +5460,24 @@
     "file": "src/task_constructors.c"
   },
   {
+    "addr": "08071848",
+    "size": 88,
+    "name": "GeneratedMapHasCarveDirection",
+    "file": "src/mapping.c"
+  },
+  {
+    "addr": "080718A0",
+    "size": 148,
+    "name": "GeneratedMapCanCarveTwoCellStep",
+    "file": "src/mapping.c"
+  },
+  {
+    "addr": "08071934",
+    "size": 236,
+    "name": "GeneratedMapGetPathNeighborShape",
+    "file": "src/mapping.c"
+  },
+  {
     "addr": "08071DD4",
     "size": 12,
     "name": "MapGenerationSeedRandom",

@@ -83,6 +83,35 @@ struct GeneratedFieldMap {
     struct GeneratedMapRoomRecord *rooms;
 };
 
+/* Corridor-carving directions, in the order the generator tries them. */
+enum
+{
+    GENERATED_MAP_DIRECTION_EAST,
+    GENERATED_MAP_DIRECTION_SOUTH,
+    GENERATED_MAP_DIRECTION_WEST,
+    GENERATED_MAP_DIRECTION_NORTH,
+};
+
+/* A carve advances two cells and keeps a three-cell margin from the far
+ * edges of the grid. */
+#define GENERATED_MAP_CARVE_STEP 2
+#define GENERATED_MAP_CARVE_MARGIN 3
+
+/* Nonzero cardinal neighbors reported by GeneratedMapGetPathNeighborShape. */
+#define GENERATED_MAP_NEIGHBOR_WEST  0x0001
+#define GENERATED_MAP_NEIGHBOR_EAST  0x0010
+#define GENERATED_MAP_NEIGHBOR_NORTH 0x0100
+#define GENERATED_MAP_NEIGHBOR_SOUTH 0x1000
+
+/* Corridor shape codes for exactly two neighbors; everything else is OTHER. */
+#define GENERATED_MAP_PATH_VERTICAL   3
+#define GENERATED_MAP_PATH_HORIZONTAL 4
+#define GENERATED_MAP_PATH_EAST_NORTH 5
+#define GENERATED_MAP_PATH_WEST_NORTH 6
+#define GENERATED_MAP_PATH_WEST_SOUTH 7
+#define GENERATED_MAP_PATH_EAST_SOUTH 8
+#define GENERATED_MAP_PATH_OTHER      9
+
 extern u32 gMapGenerationSeed;
 
 void MapGenerationSeedRandom(u32 seed);
@@ -135,5 +164,12 @@ void GeneratedMapSetParameter10(s32 value);
 s32 GeneratedMapGetParameter10(void);
 void GeneratedMapSetCurrentRoomFlag(s32 value);
 s32 GeneratedMapGetCurrentRoomFlag(void);
+bool8 GeneratedMapHasCarveDirection(const struct GeneratedFieldMap *map,
+                                    const u8 *cells, u32 index);
+bool8 GeneratedMapCanCarveTwoCellStep(const struct GeneratedFieldMap *map,
+                                      const u8 *cells, u32 index, u8 direction);
+u32 GeneratedMapGetPathNeighborShape(const struct GeneratedFieldMap *map,
+                                     const u8 *cells, u16 index,
+                                     u8 returnNeighborMask);
 
 #endif
