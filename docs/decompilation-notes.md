@@ -4056,3 +4056,64 @@ an unnatural way and was rejected. The struct forms also emit
 `adds r3, r2, r3` where the ROM has base as the destination. The clear
 routine additionally keeps the scaled index in saved r4 and uses two zero
 registers, which none of the forms reproduce (52 bytes off).
+
+## Cell-record builder (0x08071A20): correct deferral
+
+`sub_08071A20` (796 bytes, still assembly) converts the carving byte grid into
+the 32-bit per-cell records at `GeneratedFieldMap` +0x650, in three passes:
+
+1. Room cells (grid state 2) become `0x100`; wall cells (state 0) become
+   `0x400`, plus a checkerboard parity bit (`2` for odd row/even column, `1`
+   for even row/odd column).
+2. Corridor cells (state 1) are classified with
+   `GeneratedMapGetPathNeighborShape`. A new vertical corridor picks a random
+   variant 0..3, ORs connection bits `0x10000 << (v + 8)` into the cell above
+   and `0x10000 << (3 - v)` into the cell below, and stores `v | 0x200` plus
+   both bits; a horizontal one uses `v + 4` and `15 - v` for the left and
+   right neighbors. An existing corridor record copies its predecessor and
+   forwards its link nibble (`0xF0000` vertically, `0xF0000000`
+   horizontally). Odd rows (vertical) or odd columns/indices (horizontal) add
+   `8` to the low-byte variant.
+3. Every room cell retries `MapGenerationRandom() % 13` until the chosen
+   entry of the 13-word table at 0x081BF9B8 contains all of the cell's
+   connection bits, then ORs that pattern index into the low bits. That table
+   is currently named `gBattleArenaVisibilityMasks`; this use suggests it is
+   really a room connection-pattern table, but it has not been renamed yet.
+
+The clean candidate is `src/nonmatching/generated_map_build_cell_records.c`
+(155 bytes off). Source facts established while getting there, each verified
+against the ROM:
+
+- `GeneratedFieldMap` has a `u32 *cellRecords` at +0x650. The old
+  `unknown14[0x640]` swallowed it; the header now declares
+  `unknown14[0x63C]` followed by `cellRecords`. Accessing the records
+  through that member is required: a `*(u32 **)((u8 *)map + 0x650)` cast
+  lets agbcc skip the ROM's reload of the pointer after each store (744
+  bytes, 636 off).
+- The shifted connection bits are written inline in each store and repeated
+  in the combined OR; agbcc's CSE reproduces the ROM's reuse. Precomputing
+  them in locals changes the order (465 bytes off).
+- One function-scope `value` serves as both the random variant and the copied
+  predecessor record (the ROM keeps both in r5); block-scoped locals cost 140
+  bytes.
+- Each vertical branch has its own `(i / width) % 2` test; the ROM calls
+  `__udivsi3` separately in both.
+- Pass 2 must be `if (cell == 1) { ... }`; a `continue` guard changes the
+  layout (636 off).
+
+What still differs, and what was tried:
+
+- Horizontal-continuation low byte: the ROM computes `value & 0xFF` and then
+  `& 7` into fresh r0/r1 while `value` stays in r5. `(value & 0xFF) % 8`
+  (and `% 8u`, `(value % 256) % 8`) keeps both ANDs but computes them in r5;
+  `(value & 0xFF) & 7` folds to one AND; `(u8)value % 8` emits lsl/lsr. The
+  else branch's `(u8)value + 8` emits lsl/lsr where the ROM has `& 0xFF`, but
+  writing `& 0xFF` there changes the block layout (378 off).
+- Pass 3's outer loop: the ROM jumps to a bottom exit test that reuses the
+  height/width loaded by pass 2's test; agbcc copies the test to the loop top
+  for every for/while/`continue`/no-init spelling and for four inner-loop
+  spellings (`do`/`while`, `for (;;)` + break, `while (1)` + break, and the
+  call inside the condition). A `goto` retry loop suppresses the copy
+  (120 off) but loses the hoisting of the table address into sl, which shows
+  the inner loop is a real loop; a fully `goto`-based outer loop is 184 off;
+  `u32 j = i++` at the top of the body is 687 off. `old_agbcc` is 701 off.

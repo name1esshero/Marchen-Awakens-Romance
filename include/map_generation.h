@@ -78,7 +78,8 @@ struct GeneratedFieldMap {
     u16 currentCell;
     u8 unknown08[8];
     s32 parameter10;
-    u8 unknown14[0x640];
+    u8 unknown14[0x63C];
+    u32 *cellRecords;              /* 650: one 32-bit generation record per cell */
     u16 *cellRoomIndices;
     struct GeneratedMapRoomRecord *rooms;
 };
