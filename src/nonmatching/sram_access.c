@@ -2,62 +2,69 @@
 
 #include "gba/io_reg.h"
 
-#define WAITCNT_SRAM_MASK 0xFFFC
-#define WAITCNT_SRAM_8_CYCLES 3
+#define WAITCNT_SRAM_MASK (3 << 0)
+#define WAITCNT_SRAM_8 (3 << 0)
 
-/* Everything past the WAITCNT setup already matches byte-for-byte: the
- * `while (size--) *destination++ = *source++;` shape reproduces the ROM's
- * distinctive pre-decrement-then-compare-against-(-1) loop sentinel exactly
- * (`subs size,#1; movs r0,#1; negs r0,r0; cmp size,r0; beq done`), not just
- * approximately. What remains is narrow: the ROM loads the WAITCNT value
- * into r0 and the 0xFFFC mask into r1 (`ldrh r0,[waitcnt]; ldr r1,=0xFFFC;
- * ands r0,r0,r1`), while five C shapes tried here -- the compound `wait &=
- * mask;`, one combined `(REG_WAITCNT & 0xFFFC) | 3` expression, a named
- * `mask` local declared before or after the register read, and a raw
- * `volatile u16 *` pointer instead of the `REG_WAITCNT` macro -- all
- * produce the same result with the two registers swapped (mask in r0,
- * WAITCNT's value in r1). The AND's logical operands are already in the
- * ROM's order (WAITCNT's value first, the mask second); only the physical
- * register each lands in differs. */
-/** Configure the cartridge bus for SRAM and copy bytes from source to destination. */
-#define DEFINE_SRAM_COPY(name)                                      \
-void name(const u8 *source, u8 *destination, u32 size)              \
-{                                                                   \
-    u16 wait = REG_WAITCNT;                                         \
-    wait &= WAITCNT_SRAM_MASK;                                      \
-    wait |= WAITCNT_SRAM_8_CYCLES;                                  \
-    REG_WAITCNT = wait;                                             \
-    while (size--)                                                  \
-        *destination++ = *source++;                                 \
+/* These are the Nintendo AGB SDK's agb_sram.c entry points, written here in
+ * the SDK's own shape (the same code pret's pokeemerald/pokefirered keep).
+ *
+ * Why this is nonmatching: the ROM's copies were built with the SDK's
+ * library optimization level, not the game's -O2. Compiled at -O1 with the
+ * project's agbcc, all three functions reproduce the ROM byte for byte
+ * (ReadSram 64 bytes, WriteSram 64, VerifySram 74 plus its zero tail). At
+ * -O2, both agbcc snapshots emit identical code except for the WAITCNT
+ * read-modify-write: -O2 loads the WAITCNT value into r1 and the 0xFFFC
+ * mask into r0 (`ldrh r1; ldr r0, =0xFFFC; ands r0, r1`), while -O1 and the
+ * ROM load the value into r0 and the mask into r1. Earlier probes of five
+ * different C spellings all hit the same swap because it is a property of
+ * the optimization level, not of the source shape.
+ *
+ * PRET_STANDARDS.md forbids per-function compiler-flag changes as a matching
+ * shortcut, so the exact routines remain named assembly in
+ * asm/code/code_0780C0.s. Building a separate SDK object at -O1 (as pret
+ * projects do for their SDK libraries) is a project-level decision for the
+ * repository owner, not something to adopt from here. */
+
+/**
+ * @brief Configure the cartridge bus for SRAM and copy bytes out of it.
+ * @param src SRAM source.
+ * @param dest Destination buffer.
+ * @param size Number of bytes to copy.
+ */
+void ReadSram(const u8 *src, u8 *dest, u32 size)
+{
+    REG_WAITCNT = (REG_WAITCNT & ~WAITCNT_SRAM_MASK) | WAITCNT_SRAM_8;
+    while (--size != -1)
+        *dest++ = *src++;
 }
 
-/* SetSramFastFunc relocates ReadSram to IWRAM, while other callers invoke
- * WriteSram from ROM. The SDK therefore provides two identical entry points. */
-DEFINE_SRAM_COPY(ReadSram)
-DEFINE_SRAM_COPY(WriteSram)
+/**
+ * @brief Configure the cartridge bus for SRAM and copy bytes into it.
+ * @param src Source buffer.
+ * @param dest SRAM destination.
+ * @param size Number of bytes to copy.
+ */
+void WriteSram(const u8 *src, u8 *dest, u32 size)
+{
+    REG_WAITCNT = (REG_WAITCNT & ~WAITCNT_SRAM_MASK) | WAITCNT_SRAM_8;
+    while (--size != -1)
+        *dest++ = *src++;
+}
 
 /**
  * @brief Return the first mismatching SRAM address.
- * @param source Bytes expected in SRAM.
- * @param destination SRAM bytes to compare.
+ * @param src Bytes expected in SRAM.
+ * @param dest SRAM bytes to compare.
  * @param size Number of bytes to compare.
  * @return The first mismatching SRAM address, or null when all bytes agree.
  */
-u8 *VerifySram(const u8 *source, const u8 *destination, u32 size)
+u8 *VerifySram(const u8 *src, const u8 *dest, u32 size)
 {
-    u16 wait = REG_WAITCNT;
-
-    wait &= WAITCNT_SRAM_MASK;
-    wait |= WAITCNT_SRAM_8_CYCLES;
-    REG_WAITCNT = wait;
-
-    while (size--) {
-        u8 actual = *destination;
-        u8 expected = *source;
-        source++;
-        destination++;
-        if (actual != expected)
-            return (u8 *)(destination - 1);
+    REG_WAITCNT = (REG_WAITCNT & ~WAITCNT_SRAM_MASK) | WAITCNT_SRAM_8;
+    while (--size != -1)
+    {
+        if (*dest++ != *src++)
+            return (u8 *)(dest - 1);
     }
     return 0;
 }

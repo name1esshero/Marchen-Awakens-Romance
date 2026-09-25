@@ -4000,3 +4000,59 @@ and shape-code values are now named in `include/map_generation.h`.
 `src/mapping.c` and checks them against an independent reference model on
 randomized grids of several sizes, including out-of-range directions.
 
+
+## Session search log, 2026-09-25: failures worth not repeating
+
+Each entry records what was tried and the specific result, so the next
+attempt starts past it.
+
+**SRAM routines (0x08079EDC, 0x08079F1C, 0x08079F5C): the blocker is the
+optimization level.** The Nintendo SDK `agb_sram.c` source
+(`REG_WAITCNT = (REG_WAITCNT & ~3) | 3; while (--size != -1) ...`) compiled
+at `-O1` matches all three routines byte for byte (VerifySram's only other
+difference is its zero alignment tail). At the project's `-O2`, both agbcc
+snapshots swap the WAITCNT value and `0xFFFC` mask between r0 and r1 for every
+spelling tried, including the SDK's own. This supersedes the older "five C
+shapes all swap registers" explanation: no C spelling can fix a flag-level
+difference. Adopting a per-object `-O1` for SDK code (as pret projects do) is
+an owner decision under PRET_STANDARDS.md, so the routines stay in assembly;
+the candidate in `src/nonmatching/sram_access.c` is now the SDK shape.
+
+**Sprite middleware (0x0807B000..0x0807E000) is not an optimization-level
+case.** Given the SRAM result, the stubborn nonmatching sprite routines
+(`SpriteAffineFind`, `SpriteProjectPoint`, `SpriteVectorRotateX`,
+`SpriteInterpolationInit`, `SpriteResourceFindGroup`,
+`SpriteBuildAffineMatrix`) were recompiled at `-O1`, `-O2`, `-O3`, and `-Os`
+with both agbcc snapshots. None matched and none got materially closer, so
+their blockers remain source-shape problems.
+
+**SpriteResourceFindGroup (0x0807BB98), post-loop add.** Twenty-seven
+spellings of the post-loop comparison (array index, pointer add, `&x[i]`,
+`(u8 *)` byte offset, `low << 4`, `low[level0]`, `level0[high]`, and three
+`if`/`order =`/`!memcmp` forms each) all produce the identical 5-byte
+difference, as do `return`-inverted and `order`-variable tails. `for (;;)`
+with the test inside the loop and a `goto` loop are much worse (116 and 48
+bytes). The post-loop expression spelling is therefore not the variable; the
+remaining difference is which of the shift and `level0` load local-alloc ties
+to the add's output.
+
+**ScriptRunFrameStep (0x08080070), natural typed form.** Writing the loop
+directly through `struct ScriptContext`/`ScriptFrame` members (no union)
+loses the ROM's reload of `state->frame` after the `u16` flag store, because
+agbcc's type-based aliasing proves the halfword store cannot change a
+pointer; the result is 79 bytes off. The existing union candidate's alias
+model is needed for that reload, and its remaining `adds r0, r3; bics r0, r1`
+copy is still unexplained.
+
+**RuntimeActorSetFields350_351 / RuntimeActorClearFields350_357
+(0x08009F04, 0x08009F44).** In both ROM routines every byte/halfword store
+forms `(base + actor * 1672) + field`, but the final word store at +0x354
+forms `(base + 0x354) + actor * 1672`. A typed `struct RuntimeActor` view
+(indexed, macro, and `&array[i]` spellings) is 10 bytes off on the setter;
+all 250 combinations of five per-statement address spellings (struct member,
+two cumulative `u8 *` orders, two raw-sum orders, with and without a
+pre-scaled `actor`) were brute-forced. The best (1 byte off) mixes forms in
+an unnatural way and was rejected. The struct forms also emit
+`adds r3, r2, r3` where the ROM has base as the destination. The clear
+routine additionally keeps the scaled index in saved r4 and uses two zero
+registers, which none of the forms reproduce (52 bytes off).
