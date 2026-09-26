@@ -8,22 +8,21 @@
 /* These are the Nintendo AGB SDK's agb_sram.c entry points, written here in
  * the SDK's own shape (the same code pret's pokeemerald/pokefirered keep).
  *
- * Why this is nonmatching: the ROM's copies were built with the SDK's
- * library optimization level, not the game's -O2. Compiled at -O1 with the
- * project's agbcc, all three functions reproduce the ROM byte for byte
- * (ReadSram 64 bytes, WriteSram 64, VerifySram 74 plus its zero tail). At
- * -O2, both agbcc snapshots emit identical code except for the WAITCNT
- * read-modify-write: -O2 loads the WAITCNT value into r1 and the 0xFFFC
- * mask into r0 (`ldrh r1; ldr r0, =0xFFFC; ands r0, r1`), while -O1 and the
- * ROM load the value into r0 and the mask into r1. Earlier probes of five
- * different C spellings all hit the same swap because it is a property of
- * the optimization level, not of the source shape.
+ * Why this is nonmatching: at the project's -O2, both agbcc snapshots emit
+ * the ROM's code except for the WAITCNT read-modify-write. agbcc loads the
+ * WAITCNT value into r1 and the 0xFFFC mask into r0 (`ldrh r1; ldr r0,
+ * =0xFFFC; ands r0, r1`); the ROM loads the value into r0 and the mask into
+ * r1. This register swap is unresolved.
  *
- * PRET_STANDARDS.md forbids per-function compiler-flag changes as a matching
- * shortcut, so the exact routines remain named assembly in
- * asm/code/code_0780C0.s. Building a separate SDK object at -O1 (as pret
- * projects do for their SDK libraries) is a project-level decision for the
- * repository owner, not something to adopt from here. */
+ * Evidence only, not a resolution: compiled at -O1, this same source
+ * reproduces all three ROM routines byte for byte (ReadSram 64 bytes,
+ * WriteSram 64, VerifySram 74 plus its zero tail). That is consistent with a
+ * different library build policy, but it does not establish one. MAR has
+ * repeatedly seen apparent compiler or configuration requirements disappear
+ * once the source shape was better understood. No independent provenance
+ * shows these routines were built differently, so the -O2 discrepancy stays
+ * open and the build keeps its fixed flags. The exact routines remain named
+ * assembly in asm/code/code_0780C0.s. */
 
 /**
  * @brief Configure the cartridge bus for SRAM and copy bytes out of it.

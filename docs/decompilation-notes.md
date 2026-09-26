@@ -4006,17 +4006,22 @@ randomized grids of several sizes, including out-of-range directions.
 Each entry records what was tried and the specific result, so the next
 attempt starts past it.
 
-**SRAM routines (0x08079EDC, 0x08079F1C, 0x08079F5C): the blocker is the
-optimization level.** The Nintendo SDK `agb_sram.c` source
-(`REG_WAITCNT = (REG_WAITCNT & ~3) | 3; while (--size != -1) ...`) compiled
-at `-O1` matches all three routines byte for byte (VerifySram's only other
-difference is its zero alignment tail). At the project's `-O2`, both agbcc
-snapshots swap the WAITCNT value and `0xFFFC` mask between r0 and r1 for every
-spelling tried, including the SDK's own. This supersedes the older "five C
-shapes all swap registers" explanation: no C spelling can fix a flag-level
-difference. Adopting a per-object `-O1` for SDK code (as pret projects do) is
-an owner decision under PRET_STANDARDS.md, so the routines stay in assembly;
-the candidate in `src/nonmatching/sram_access.c` is now the SDK shape.
+**SRAM routines (0x08079EDC, 0x08079F1C, 0x08079F5C): the -O2 register swap
+is unresolved; an -O1 match is recorded as evidence only.** At the project's
+`-O2`, both agbcc snapshots swap the WAITCNT value and the `0xFFFC` mask
+between r0 and r1 for every spelling tried, including the Nintendo SDK
+`agb_sram.c` shape (`REG_WAITCNT = (REG_WAITCNT & ~3) | 3; while (--size !=
+-1) ...`). Compiled at `-O1`, that same SDK source matches all three
+routines byte for byte (VerifySram's only other difference is its zero
+alignment tail). That fits a different library build policy but does not
+prove one. Apparent compiler or configuration requirements in MAR have
+repeatedly gone away once the source or codegen was better understood (for
+example, `CreateSoundFadeTask`, `ObjectFreeNcdResources`, and
+`CreateFieldEventTask`). Per the repository owner (2026-09-25), per-object
+`-O1` is not to be adopted on this evidence alone. Unless independent
+provenance establishes a different original compilation policy, treat the
+`-O2` difference as an open source-shape problem. The routines stay in
+assembly, and `src/nonmatching/sram_access.c` now holds the SDK shape.
 
 **Sprite middleware (0x0807B000..0x0807E000) is not an optimization-level
 case.** Given the SRAM result, the stubborn nonmatching sprite routines
