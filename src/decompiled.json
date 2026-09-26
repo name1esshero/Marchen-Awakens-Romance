@@ -5460,6 +5460,12 @@
     "file": "src/task_constructors.c"
   },
   {
+    "addr": "080717EC",
+    "size": 92,
+    "name": "GeneratedMapIsValidStartCell",
+    "file": "src/mapping.c"
+  },
+  {
     "addr": "08071848",
     "size": 88,
     "name": "GeneratedMapHasCarveDirection",

@@ -1074,6 +1074,34 @@ AT("0007017C") void GeneratedMapResize(void *state, u32 width, u32 height)
 }
 
 /**
+ * @brief Test whether a cell can seed the maze generator.
+ * @param map Generated map supplying the grid width and height.
+ * @param cell Row-major cell index requested by the caller.
+ * @return TRUE for an even column on an odd row strictly inside the outer
+ *         border (the lattice the two-cell carve steps stay on); otherwise
+ *         FALSE, in which case the generator starts at width + 1.
+ */
+AT("000717EC")
+bool8 GeneratedMapIsValidStartCell(const struct GeneratedFieldMap *map, s32 cell)
+{
+    s32 row;
+    s32 column;
+
+    if (cell % 2 != 0)
+        return FALSE;
+    row = cell / map->width;
+    if (row % 2 == 0)
+        return FALSE;
+    column = cell % map->width;
+    if (column <= 0 || column > map->width - 2)
+        return FALSE;
+    if (row > 0 && row <= map->height - 2)
+        return TRUE;
+    return FALSE;
+}
+AT("000717EC") const u8 GeneratedMapIsValidStartCellTail[2] = {0, 0};
+
+/**
  * @brief Test whether any of the four two-cell carve directions is open.
  * @param map Generated map supplying the grid width and height.
  * @param cells Row-major byte-state grid used while carving corridors.

@@ -13,6 +13,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 FUNCTIONS = (
+    'GeneratedMapIsValidStartCell',
     'GeneratedMapHasCarveDirection',
     'GeneratedMapCanCarveTwoCellStep',
     'GeneratedMapGetPathNeighborShape',
@@ -54,6 +55,13 @@ static int reference_mask(int w, int h, const u8 *cells, int index)
     if (y > 0 && cells[index - w]) mask |= 0x0100;
     if (y < h - 1 && cells[index + w]) mask |= 0x1000;
     return mask;
+}
+
+static int reference_start(int w, int h, int cell)
+{
+    int row = cell / w, column = cell % w;
+    return cell % 2 == 0 && row % 2 == 1 && column > 0 && column <= w - 2
+        && row > 0 && row <= h - 2;
 }
 
 static int reference_shape(int mask)
@@ -103,8 +111,13 @@ int main(void)
                 assert(GeneratedMapGetPathNeighborShape(&map, cells, index, 1) == (u32)mask);
                 assert(GeneratedMapGetPathNeighborShape(&map, cells, index, 0)
                        == (u32)reference_shape(mask));
+                assert(GeneratedMapIsValidStartCell(&map, index)
+                       == reference_start(w, h, index));
             }
         }
+        /* Negative and past-the-end requests are rejected, not wrapped. */
+        assert(GeneratedMapIsValidStartCell(&map, -w - 1) == FALSE);
+        assert(GeneratedMapIsValidStartCell(&map, w * h + w + 1) == FALSE);
         free(cells);
     }
     return 0;

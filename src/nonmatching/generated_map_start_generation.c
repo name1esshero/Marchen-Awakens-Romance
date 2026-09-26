@@ -45,7 +45,7 @@ void GeneratedMapStartGeneration(struct GeneratedFieldMap *map)
     s32 i;
 
     room = &map->rooms[map->cellRoomIndices[map->currentCell]];
-    KmpLoadField((const char *)room->unknown00 + 2, 0, 0);
+    KmpLoadField(room->name, 0, 0);
 
     field644 = (s32 *)((u8 *)map + GENERATED_FIELD_MAP_FIELD644_OFFSET);
     /* PRET_PTR_INT_OK: operation=store the state pointer as a raw word in the new task's payload; evidence=CreateMapGenerationTask stores its first argument unchanged via `str r7,[r1,#28]`, never dereferencing it; typed=the constructor's signature takes s32 to match that raw-word store */

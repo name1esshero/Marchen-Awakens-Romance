@@ -240,7 +240,7 @@ _08070326:
 	.2byte 0xF7A1
 	.4byte 0x1C30F8DF
 	ldr r1, [sp, #284]
-	bl sub_080717EC
+	bl GeneratedMapIsValidStartCell
 	lsls r0, r0, #24
 	cmp r0, #0
 	beq _08070378
@@ -3228,59 +3228,7 @@ _080717E4:
 	.byte 0x00
 	.byte 0x00
 
-	.thumb_func
-	.thumb
-	.global sub_080717EC
-sub_080717EC:
-	push {r4, r5, r6, r7, lr}
-	mov r7, r8
-	push {r7}
-	mov r8, r0
-	adds r4, r1, #0
-	movs r7, #1
-	adds r0, r4, #0
-	ands r0, r7
-	cmp r0, #0
-	bne _0807183A
-	mov r0, r8
-	ldrh r5, [r0, #0]
-	adds r0, r4, #0
-	adds r1, r5, #0
-	bl __divsi3
-	adds r6, r0, #0
-	ands r0, r7
-	cmp r0, #0
-	beq _0807183A
-	adds r0, r4, #0
-	adds r1, r5, #0
-	bl __modsi3
-	adds r1, r0, #0
-	cmp r1, #0
-	ble _0807183A
-	subs r0, r5, #2
-	cmp r1, r0
-	bgt _0807183A
-	cmp r6, #0
-	ble _0807183A
-	mov r1, r8
-	ldrh r0, [r1, #2]
-	subs r0, #2
-	cmp r6, r0
-	bgt _0807183A
-	movs r0, #1
-	b _0807183C
-	.global _0807183A
-_0807183A:
-	movs r0, #0
-	.global _0807183C
-_0807183C:
-	pop {r3}
-	mov r8, r3
-	pop {r4, r5, r6, r7}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
+@ 0717EC..071848 is decompiled as GeneratedMapIsValidStartCell(); see src/decompiled.json
 
 @ 071848..0718A0 is decompiled as GeneratedMapHasCarveDirection(); see src/decompiled.json
 

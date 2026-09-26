@@ -53,9 +53,12 @@ struct MapGenerationState {
     struct MapGenerationVector vectors[4];
 };
 
-/* A generated field's persistent 44-byte room definition. */
+/* A generated field's persistent 44-byte room definition. The arena's
+ * table starts with a header entry whose connections field holds the number
+ * of room templates that follow it. */
 struct GeneratedMapRoomRecord {
-    u8 unknown00[20];
+    s16 connections;               /* 00: required connection bits (0xFFF) */
+    char name[18];                 /* 02: KMP resource name, without ".KMP" */
     s32 property14;
     s32 property18;
     u8 unknown1C[16];
@@ -65,23 +68,38 @@ struct GeneratedMapRoomRecord {
 #define GENERATED_MAP_RUNTIME_ROOM_ACTIVE_OFFSET 20
 struct GeneratedMapRuntimeRoom {
     s16 roomIndex;
-    u8 unknown02[18];
+    u8 unknown02[2];
+    u32 unknown04;
+    s32 x;                         /* 08: spawn position in pixels */
+    s32 y;                         /* 0C */
+    u32 unknown10;
     s8 active;
     s8 scriptFlag;
     u8 unknown16[2];
 };
 
+#define GENERATED_MAP_RUNTIME_ROOM_COUNT 64
+
 struct GeneratedFieldMap {
     u16 width;
     u16 height;
-    u16 unknown04;
+    u16 startCell;                 /* 004: cell the maze generator started from */
     u16 currentCell;
-    u8 unknown08[8];
+    u8 unknown08[4];
+    u32 seed;                      /* 00C: MapGenerationRandom seed */
     s32 parameter10;
-    u8 unknown14[0x63C];
+    u8 unknown14[4];
+    struct GeneratedMapRuntimeRoom runtimeRooms[GENERATED_MAP_RUNTIME_ROOM_COUNT]; /* 018 */
+    u8 unknown618[12];
+    u16 unknown624;
+    u16 unknown626;
+    u16 unknown628;
+    u8 unknown62A[0x1E];
+    u32 arenaIndex;                /* 648: see BattleRuntimeSetArena() */
+    u32 unknown64C;
     u32 *cellRecords;              /* 650: one 32-bit generation record per cell */
-    u16 *cellRoomIndices;
-    struct GeneratedMapRoomRecord *rooms;
+    u16 *cellRoomIndices;          /* 654 */
+    struct GeneratedMapRoomRecord *rooms; /* 658: arena room templates */
 };
 
 /* Corridor-carving directions, in the order the generator tries them. */
@@ -165,6 +183,7 @@ void GeneratedMapSetParameter10(s32 value);
 s32 GeneratedMapGetParameter10(void);
 void GeneratedMapSetCurrentRoomFlag(s32 value);
 s32 GeneratedMapGetCurrentRoomFlag(void);
+bool8 GeneratedMapIsValidStartCell(const struct GeneratedFieldMap *map, s32 cell);
 bool8 GeneratedMapHasCarveDirection(const struct GeneratedFieldMap *map,
                                     const u8 *cells, u32 index);
 bool8 GeneratedMapCanCarveTwoCellStep(const struct GeneratedFieldMap *map,

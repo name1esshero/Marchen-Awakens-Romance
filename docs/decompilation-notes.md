@@ -4117,3 +4117,47 @@ What still differs, and what was tried:
   (120 off) but loses the hoisting of the table address into sl, which shows
   the inner loop is a real loop; a fully `goto`-based outer loop is 184 off;
   `u32 j = i++` at the top of the body is 687 off. `old_agbcc` is 701 off.
+
+## Maze-generator start cell and map layout (0x080717EC)
+
+`GeneratedMapIsValidStartCell` (92 bytes including its zero tail) now
+compiles from `src/mapping.c`. It accepts only an even cell index on an odd
+row whose column and row are strictly inside the border. That is the lattice
+the two-cell carve steps stay on; when it fails, the generator starts at
+`width + 1` instead. The ROM calls the *signed* `__divsi3`/`__modsi3` here
+(the carve helpers use the unsigned forms), so the cell is an `s32`, and the
+`cell % 2` / `row % 2` tests compile to `& 1` because they are only compared
+with zero. The final bound is written `if (row > 0 && row <= height - 2)
+return TRUE;` because the ROM places the TRUE block before the FALSE block;
+four separate early-FALSE returns invert that order (10 bytes off).
+
+Tracing the generator (`sub_08070238`) established the rest of
+`struct GeneratedFieldMap`, now declared in `include/map_generation.h` and
+checked with a compile-time offset test during the change:
+
+| Offset | Field | Evidence |
+|---|---|---|
+| 0x004 | `startCell` | generator stores the chosen start cell |
+| 0x00C | `seed` | generator stores its seed, then calls `MapGenerationSeedRandom` |
+| 0x018 | `runtimeRooms[64]` | generator clears 64 24-byte records here; `sub_08070EA0` and `GeneratedMapFindRuntimeRoom` index them |
+| 0x624/0x626/0x628 | three halfwords | cleared by the generator (meaning unknown) |
+| 0x648 | `arenaIndex` | `BattleRuntimeSetArena` writes it; the generator passes it to `GetBattleDefinition` |
+| 0x650 | `cellRecords` | see the cell-record builder entry |
+| 0x658 | `rooms` | the arena room-template table (`BattleRuntimeSetArena`'s "layout") |
+
+`GeneratedMapRoomRecord` gains `connections` (+0, compared with a cell
+record's low 12 bits; entry 0 holds the template count) and `name` (+2, the
+KMP resource name, passed to `strcpy` before `.KMP` is appended). The
+`GeneratedMapStartGeneration` candidate already loaded a field from +2, so
+it now uses `room->name`. `GeneratedMapRuntimeRoom` gains `x` (+8) and `y`
+(+0xC), which the generator sets to the spawn position in pixels.
+
+`sub_08070EA0` (76 bytes, still assembly) returns `&runtimeRooms[0]` for
+selector 0, the first inactive slot for selector -1, and NULL otherwise.
+Every spelling tried stays 50 bytes off for the same two reasons: the ROM
+keeps the loop index in r4 and the byte offset in r5 (agbcc swaps them), and
+the ROM places the found-slot return block inline after the test where
+agbcc moves it out of line. Tried: struct-member and `(u8 *)buffer + 24`
+casts, `< 64` / `<= 63`, `u32` index, `continue`/`else if`/`switch` control
+flow, `!active`, and `rooms + i` pointer arithmetic (50-55 bytes off); a
+hoisted `room` pointer is 43 off but shorter than the ROM (68 bytes).
