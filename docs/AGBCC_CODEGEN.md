@@ -870,3 +870,13 @@ from assigning the probed cell in each case and testing it once after the
 switch (`if (cell != 0) return FALSE; return TRUE;`). Returning the
 comparison inside each case, or writing `return cell == 0`, changes the
 block order.
+
+### A loop turns `field = -1` into a read-modify-write
+
+Outside a loop, `room->roomIndex = -1` on an `s16` compiles to one `strh`.
+Inside a loop, agbcc hoists the `0xFFFF` constant into a register first, and
+the store becomes `ldrh`, `orr` with that register, `strh`, which looks like
+`|= 0xFFFF` or a bitfield update. The maze generator at 0x08070238 clears 64
+runtime rooms this way. Before inventing a bitfield or a volatile field to
+explain an `ldrh`/`orr`/`strh` of all-ones, check whether the store is in a
+loop and try the plain assignment.

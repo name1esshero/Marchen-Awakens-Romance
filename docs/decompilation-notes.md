@@ -4161,3 +4161,50 @@ agbcc moves it out of line. Tried: struct-member and `(u8 *)buffer + 24`
 casts, `< 64` / `<= 63`, `u32` index, `continue`/`else if`/`switch` control
 flow, `!active`, and `rooms + i` pointer arithmetic (50-55 bytes off); a
 hoisted `room` pointer is 43 off but shorter than the ROM (68 bytes).
+
+## Maze generator (0x08070238): correct deferral
+
+`sub_08070238` (952 bytes, still assembly) is the procedural field generator
+behind the DungGen natives. Its clean candidate is
+`src/nonmatching/generated_map_generate.c`. It allocates a byte grid and a
+`u16` cell stack, seeds `MapGenerationRandom`, loads the arena's room
+templates, clears the grid/records/room indices and the 64 runtime rooms,
+then carves a maze with a recursive backtracker: pick random directions
+until `GeneratedMapCanCarveTwoCellStep` accepts one, push the cell, mark two
+cells, repeat while `GeneratedMapHasCarveDirection`, and pop on dead ends,
+remembering the cell reached at the greatest depth. Afterwards it marks the
+odd-row/even-column lattice as rooms, builds the cell records, assigns each
+room/corridor cell a random template whose connection mask matches, and
+spawns the first runtime room at a tile with attribute 360 in the farthest
+cell's KMP (`MAR.NFP` + template name + `.KMP`, both strings at
+0x08089460/68 and not yet carved out of `code_0880C0.s`).
+
+Source facts that moved the candidate closer (structural mismatch counted
+with registers masked, out of about 450 instructions):
+
+- **Loop-context `= -1` stores.** The ROM clears each runtime room's
+  `roomIndex` with `ldrh`/`orr 0xFFFF`/`strh`. That is what agbcc emits for a
+  plain `room.roomIndex = -1` on an `s16` inside a loop: the constant is
+  hoisted into a register before combine can fold the store. Outside a loop
+  the same statement is a single `strh`. No bitfield is needed; see
+  AGBCC_CODEGEN.md.
+- Runtime-room fields are cleared in the order roomIndex, +4, +0x10, x, y,
+  active, scriptFlag (the ROM's address-register order).
+- **The backtrack loop is goto-based** (`goto carve; backtrack: cell =
+  stack[depth]; carve: while (...) ...; if (--depth >= 0) goto backtrack;`).
+  The ROM enters by jumping over the pop, and the corridor constant `1` is
+  CSE'd from the first store instead of being hoisted into a preheader,
+  which only happens when loop.c doesn't see a loop. do/while and `for (;;)`
+  shapes are 117-136 off; the goto form is 71.
+- `depth` as `s32` with `(s16)` narrowing on the push reaches the ROM's exact
+  952-byte size; an `s16` local sign-extends at every use instead (141 off).
+
+What still differs: agbcc gives `cells` r9 and spills `depth`, while the ROM
+does the reverse. That renames registers throughout (612 bytes) and makes the
+frame 316 bytes instead of 320. Tried: 400 random orders of all 11 local
+declarations (best 612, no improvement); `stack[depth++]`, a precomputed
+`next` depth, and a `for` retry loop (no better); both multiply operand
+orders in all three grid loops (no effect); `u16`/`s32` `cell` (worse or no
+change). All 17 call targets are direct `bl`s, with no `_call_via_rX` veneer
+and no callback lifetime, so the reused-callback explanation from
+AGBCC_CODEGEN.md cannot account for the saved-register choice here.
